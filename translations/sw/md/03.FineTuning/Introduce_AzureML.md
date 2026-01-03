@@ -65,7 +65,7 @@ Azure ML imeongeza kazi nyingi zinazohusiana na LLM/SLM, ikichanganya LLMOps na 
 
 Watumiaji wa kampuni wanaweza kupeleka mifano tofauti kulingana na hali tofauti za biashara kupitia Katalogi ya Mifano, na kutoa huduma kama Mfano kama Huduma kwa waendelezaji wa kampuni au watumiaji kufikia.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.sw.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.sw.png)
 
 Katalogi ya Mifano katika Azure Machine Learning studio ni kitovu cha kugundua na kutumia aina mbalimbali za mifano zinazokuwezesha kujenga programu za AI za kizazi. Katalogi ya mfano ina mamia ya mifano kutoka kwa watoa huduma kama Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, pamoja na mifano iliyofunzwa na Microsoft. Mifano kutoka kwa watoa huduma wengine isipokuwa Microsoft ni Bidhaa zisizo za Microsoft, kama ilivyoainishwa katika Masharti ya Bidhaa ya Microsoft, na zinatawaliwa na masharti yaliyotolewa pamoja na mfano.
 
@@ -75,7 +75,7 @@ Msingi wa mtiririko wa kazi wa kujifunza kwa mashine ni kugawanya kazi kamili ya
 
 Katika kurekebisha kwa kina SLM / LLM, tunaweza kusimamia data zetu, mafunzo, na michakato ya uzalishaji kupitia Mtiririko wa Kazi.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.sw.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.sw.png)
 
 ### **Mtiririko wa Prompt**
 

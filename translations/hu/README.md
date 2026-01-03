@@ -34,7 +34,7 @@ Kövesd ezeket a lépéseket, hogy elkezdhessed ezen erőforrások használatát
 2. **Klónozd le a tárolót**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Csatlakozz a Microsoft AI Discord közösséghez és találkozz szakértőkkel és fejlesztőtársakkal**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![borító](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.hu.png)
+![borító](../../translated_images/cover.eb18d1b9605d754b.hu.png)
 
 ### 🌐 Többnyelvű támogatás
 

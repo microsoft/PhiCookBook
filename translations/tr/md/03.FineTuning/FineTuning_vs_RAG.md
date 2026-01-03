@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG, veri getirme + metin üretimidir. Kuruluşun yapılandırılmış ve yapılandırılmamış verileri vektör veritabanında saklanır. İlgili içerik arandığında, ilgili özet ve içerik bulunarak bir bağlam oluşturulur ve LLM/SLM’nin metin tamamlama yeteneği ile birleştirilerek içerik üretilir.
 
 ## RAG Süreci
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.tr.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.tr.png)
 
 ## İnce Ayar
 İnce ayar, belirli bir modelin geliştirilmesine dayanır. Model algoritmasıyla başlamak gerekmez, ancak verilerin sürekli birikmesi gerekir. Endüstri uygulamalarında daha hassas terimler ve dil ifadeleri istiyorsanız, ince ayar sizin için daha iyi bir seçenektir. Ancak verileriniz sık sık değişiyorsa, ince ayar karmaşık hale gelebilir.

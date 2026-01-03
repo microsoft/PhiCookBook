@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft Olive הוא כלי אופטימיזציה למודלים בקוד פתוח, קל מאוד לשימוש, שיכול לכסות גם כיוונון עדין וגם רפרנס בתחום הבינה המלאכותית הגנרטיבית. הוא דורש רק קונפיגורציה פשוטה, בשילוב עם שימוש במודלים קטנים בקוד פתוח ובסביבות ריצה קשורות (AzureML / GPU מקומי, CPU, DirectML), ומאפשר להשלים את הכיוונון העדין או הרפרנס של המודל דרך אופטימיזציה אוטומטית, ולמצוא את המודל הטוב ביותר לפריסה בענן או על מכשירי קצה. מאפשר לארגונים לבנות מודלים אנכיים תעשייתיים משלהם הן באתר והן בענן.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.he.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.he.png)
 
 ## כיוונון עדין של Phi-3 עם Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.he.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.he.png)
 
 ## דוגמת קוד ודוגמה ל-Phi-3 Olive
 בדוגמה זו תשתמשו ב-Olive כדי:

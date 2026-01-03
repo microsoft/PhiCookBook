@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Scenarii de Fine Tuning
 
-![FineTuning cu Servicii MS](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.ro.png)
+![FineTuning cu Servicii MS](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.ro.png)
 
 **Platformă** Aceasta include diverse tehnologii precum Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito și ONNX Runtime.
 
@@ -24,7 +24,7 @@ Procesul de fine-tuning cu tehnologiile Microsoft implică diverse componente ș
 
 Fine-tunează modelul folosind fine-tuning găzduit, fără a fi nevoie să creezi și să gestionezi resurse de calcul.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.ro.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.ro.png)
 
 Fine-tuning serverless este disponibil pentru modelele Phi-3-mini și Phi-3-medium, permițând dezvoltatorilor să personalizeze rapid și ușor modelele pentru scenarii cloud și edge, fără a fi nevoie să se ocupe de resursele de calcul. De asemenea, am anunțat că Phi-3-small este acum disponibil prin oferta noastră Models-as-a-Service, astfel încât dezvoltatorii să poată începe rapid și ușor dezvoltarea AI fără a gestiona infrastructura de bază.
 
@@ -32,7 +32,7 @@ Fine-tuning serverless este disponibil pentru modelele Phi-3-mini și Phi-3-medi
 
 Utilizatorii își gestionează propriile resurse de calcul pentru a-și fine-tune modelele.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.ro.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.ro.png)
 
 [Exemplu Fine Tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Utilizatorii își gestionează propriile resurse de calcul pentru a-și fine-tu
 
 ## Exemple de Performanță în Fine Tuning
 
-![Performanță Fine Tuning](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.ro.png)
+![Performanță Fine Tuning](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.ro.png)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

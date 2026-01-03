@@ -42,7 +42,7 @@ Prompt Flow 包含內建工具庫、範例和範本，這些資源可作為開�
 
 在 Microsoft Prompt Flow 中，評估在判斷 AI 模型表現上扮演關鍵角色。讓我們來看看如何在 Prompt Flow 中自訂評估流程和指標：
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.hk.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.hk.png)
 
 **理解 Prompt Flow 中的評估**
 

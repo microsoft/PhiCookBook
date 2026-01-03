@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 生成AIの発展に伴い、異なるLLMやSLMの管理、企業データ統合、ファインチューニングやRAG操作、LLMとSLMを統合した後の企業ビジネスの評価などを一元的に行えるプラットフォームを目指しています。これにより、生成AIを活用したスマートなアプリケーションの実現がより容易になります。[Azure AI Foundry](https://ai.azure.com)は、企業向けの生成AIアプリケーションプラットフォームです。
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.ja.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.ja.png)
 
 Azure AI Foundryを使うことで、大規模言語モデル（LLM）の応答を評価し、Prompt Flowを用いてプロンプトアプリケーションのコンポーネントをオーケストレーションし、より良いパフォーマンスを実現できます。このプラットフォームは、PoC（概念実証）から本格的なプロダクションへのスケールアップを容易にし、継続的なモニタリングと改善をサポートして長期的な成功を支えます。
 

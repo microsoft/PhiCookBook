@@ -43,7 +43,7 @@ Prompt Flow כולל ספרייה של כלים, דוגמאות ותבניות �
 
 ב-Microsoft Prompt Flow, הערכה ממלאת תפקיד מרכזי בהערכת ביצועי מודלי ה-AI שלכם. בואו נבחן כיצד ניתן להתאים אישית זרימות ומדדי הערכה בתוך Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.he.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.he.png)
 
 **הבנת הערכה ב-Prompt Flow**
 

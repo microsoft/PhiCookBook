@@ -66,7 +66,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Οι επιχειρησιακοί χρήστες μπορούν να αναπτύξουν διαφορετικά μοντέλα ανάλογα με διαφορετικά επιχειρηματικά σενάρια μέσω του Καταλόγου Μοντέλων, και να παρέχουν υπηρεσίες ως Model as Service για προγραμματιστές ή χρήστες επιχειρήσεων.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.el.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.el.png)
 
 Ο Κατάλογος Μοντέλων στο Azure Machine Learning studio είναι το κέντρο για την ανακάλυψη και χρήση μιας ευρείας γκάμας μοντέλων που σας επιτρέπουν να δημιουργήσετε εφαρμογές Γενετικής Τεχνητής Νοημοσύνης. Ο κατάλογος περιλαμβάνει εκατοντάδες μοντέλα από παρόχους όπως η υπηρεσία Azure OpenAI, Mistral, Meta, Cohere, Nvidia, Hugging Face, συμπεριλαμβανομένων μοντέλων εκπαιδευμένων από τη Microsoft. Τα μοντέλα από παρόχους εκτός Microsoft θεωρούνται Μη-Προϊόντα Microsoft, όπως ορίζεται στους Όρους Προϊόντων της Microsoft, και υπόκεινται στους όρους που συνοδεύουν το μοντέλο.
 
@@ -76,7 +76,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Στην προσαρμογή SLM / LLM, μπορούμε να διαχειριστούμε τα δεδομένα, την εκπαίδευση και τις διαδικασίες παραγωγής μέσω Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.el.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.el.png)
 
 ### **Prompt flow**
 

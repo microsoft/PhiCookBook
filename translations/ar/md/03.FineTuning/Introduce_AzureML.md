@@ -66,7 +66,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يمكن لمستخدمي المؤسسات نشر نماذج مختلفة وفقًا لسيناريوهات الأعمال المختلفة من خلال كتالوج النماذج، وتقديم الخدمات كنموذج كخدمة للمطورين أو المستخدمين في المؤسسة.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.ar.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.ar.png)
 
 كتالوج النماذج في Azure Machine Learning studio هو المركز لاكتشاف واستخدام مجموعة واسعة من النماذج التي تمكنك من بناء تطبيقات الذكاء الاصطناعي التوليدي. يحتوي كتالوج النماذج على مئات النماذج من مزودي النماذج مثل خدمة Azure OpenAI، Mistral، Meta، Cohere، Nvidia، Hugging Face، بما في ذلك النماذج التي تدربتها Microsoft. النماذج من مزودين غير Microsoft تُعتبر منتجات غير تابعة لمايكروسوفت، كما هو معرف في شروط منتجات Microsoft، وتخضع للشروط المقدمة مع النموذج.
 
@@ -76,7 +76,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 في ضبط SLM / LLM الدقيق، يمكننا إدارة بياناتنا، والتدريب، وعمليات التوليد من خلال Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.ar.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.ar.png)
 
 ### **تدفق المطالبات (Prompt flow)**
 

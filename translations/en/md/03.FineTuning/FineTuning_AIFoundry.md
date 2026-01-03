@@ -19,7 +19,7 @@ Let’s explore how to fine-tune Microsoft’s Phi-3 Mini language model using A
 - **Convenience:** How does fine-tuning actually work – do I need to write custom code? Do I need to provide my own compute?
 - **Safety:** Fine-tuned models can have safety risks – are there guardrails to prevent unintended harm?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.en.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.en.png)
 
 ## Preparation for fine-tuning
 
@@ -71,7 +71,7 @@ The supported file type is JSON Lines. Files are uploaded to the default datasto
 
 Azure AI Foundry allows you to customize large language models with your own datasets through fine-tuning. Fine-tuning adds value by enabling customization and optimization for specific tasks and applications. It improves performance, reduces costs and latency, and produces tailored outputs.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.en.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.en.png)
 
 ### Create a New Project
 
@@ -79,14 +79,14 @@ Azure AI Foundry allows you to customize large language models with your own dat
 
 2. Select **+New project** to create a new project in Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.en.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.en.png)
 
 3. Complete the following:
 
     - Enter a unique **Hub name**.
     - Select the **Hub** to use (or create a new one if needed).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.en.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.en.png)
 
 4. To create a new hub, provide:
 
@@ -97,7 +97,7 @@ Azure AI Foundry allows you to customize large language models with your own dat
     - The **Connect Azure AI Services** to use (or create a new one).
     - For **Connect Azure AI Search**, select **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.en.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.en.png)
 
 5. Select **Next**.
 6. Select **Create a project**.
@@ -115,15 +115,15 @@ Before fine-tuning, collect or create a dataset relevant to your task, such as c
 
 2. Search for *phi-3* in the **search bar** and select the Phi-3 model you want to use.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.en.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.en.png)
 
 3. Select **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.en.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.en.png)
 
 4. Enter the **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.en.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.en.png)
 
 5. Select **Next**.
 
@@ -132,13 +132,13 @@ Before fine-tuning, collect or create a dataset relevant to your task, such as c
     - Choose **task type** as **Chat completion**.
     - Select the **Training data** you want to use. You can upload it via Azure AI Foundry’s data or from your local environment.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.en.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.en.png)
 
 7. Select **Next**.
 
 8. Upload the **Validation data** you want to use, or select **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.en.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.en.png)
 
 9. Select **Next**.
 
@@ -148,15 +148,15 @@ Before fine-tuning, collect or create a dataset relevant to your task, such as c
     - Choose the **Learning rate**.
     - Choose the number of **Epochs**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.en.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.en.png)
 
 11. Select **Submit** to start fine-tuning.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.en.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.en.png)
 
 12. When your model is fine-tuned, its status will show as **Completed**, as in the image below. You can now deploy the model and use it in your application, the playground, or prompt flow. For more details, see [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.en.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.en.png)
 
 > [!NOTE]
 > For more detailed information on fine-tuning Phi-3, visit [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

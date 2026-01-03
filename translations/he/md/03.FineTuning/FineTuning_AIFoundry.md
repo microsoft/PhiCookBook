@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **נוחות:** כיצד מתבצע הכיוונון בפועל – האם יש צורך לכתוב קוד מותאם? האם יש צורך לספק משאבי חישוב משלך?
 - **בטיחות:** ידוע כי למודלים מכווננים יש סיכוני בטיחות – האם קיימים אמצעי הגנה למניעת נזק לא מכוון?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.he.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.he.png)
 
 ## הכנה לכיוונון עדין
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry מאפשרת לך להתאים מודלים גדולים של שפה למאגרי הנתונים האישיים שלך באמצעות תהליך שנקרא כיוונון עדין. כיוונון עדין מספק ערך משמעותי על ידי התאמה אישית ואופטימיזציה למשימות ויישומים ספציפיים. זה מוביל לשיפור בביצועים, יעילות עלות, הפחתת השהייה ותוצאות מותאמות.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.he.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.he.png)
 
 ### יצירת פרויקט חדש
 
@@ -79,14 +79,14 @@ Azure AI Foundry מאפשרת לך להתאים מודלים גדולים של �
 
 1. בחר **+New project** כדי ליצור פרויקט חדש ב-Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.he.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.he.png)
 
 1. בצע את המשימות הבאות:
 
     - שם ה-**Hub** של הפרויקט. חייב להיות ערך ייחודי.
     - בחר את ה-**Hub** לשימוש (צור חדש במידת הצורך).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.he.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.he.png)
 
 1. בצע את המשימות הבאות ליצירת hub חדש:
 
@@ -97,7 +97,7 @@ Azure AI Foundry מאפשרת לך להתאים מודלים גדולים של �
     - בחר את **חיבור לשירותי Azure AI** לשימוש (צור חדש במידת הצורך).
     - בחר **חיבור ל-Azure AI Search** כדי **דלג על החיבור**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.he.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.he.png)
 
 1. בחר **Next**.
 1. בחר **Create a project**.
@@ -115,15 +115,15 @@ Azure AI Foundry מאפשרת לך להתאים מודלים גדולים של �
 
 1. הקלד *phi-3* ב**סרגל החיפוש** ובחר את מודל phi-3 שברצונך להשתמש בו.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.he.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.he.png)
 
 1. בחר **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.he.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.he.png)
 
 1. הזן את **שם המודל המכוונן**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.he.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.he.png)
 
 1. בחר **Next**.
 
@@ -132,13 +132,13 @@ Azure AI Foundry מאפשרת לך להתאים מודלים גדולים של �
     - בחר את **סוג המשימה** ל-**Chat completion**.
     - בחר את **נתוני האימון** שברצונך להשתמש בהם. ניתן להעלות אותם דרך Azure AI Foundry או מהסביבה המקומית שלך.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.he.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.he.png)
 
 1. בחר **Next**.
 
 1. העלה את **נתוני האימות** שברצונך להשתמש בהם, או בחר ב**חלוקה אוטומטית של נתוני האימון**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.he.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.he.png)
 
 1. בחר **Next**.
 
@@ -148,15 +148,15 @@ Azure AI Foundry מאפשרת לך להתאים מודלים גדולים של �
     - בחר את **קצב הלמידה** שברצונך להשתמש בו.
     - בחר את **מספר האפוקים** שברצונך להשתמש בהם.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.he.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.he.png)
 
 1. בחר **Submit** כדי להתחיל את תהליך הכיוונון.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.he.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.he.png)
 
 1. לאחר שהמודל שלך מכוונן, הסטטוס יוצג כ-**Completed**, כפי שמוצג בתמונה למטה. כעת תוכל לפרוס את המודל ולהשתמש בו באפליקציה שלך, ב-playground או ב-prompt flow. למידע נוסף, ראה [כיצד לפרוס משפחת מודלי שפה קטנים Phi-3 עם Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.he.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.he.png)
 
 > [!NOTE]
 > למידע מפורט יותר על כיוונון עדין של Phi-3, בקר ב-[Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

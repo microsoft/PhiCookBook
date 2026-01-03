@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يمتلك Phi-4-multimodal قدرات قوية في قراءة الصور. دعونا نجرب استخدام بايثون لتنفيذ الوظائف التالية. الصورة هي صفحة ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.ar.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.ar.png)
 
 ### **كود تجريبي**
 

@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry चा मूल्यांकन प्रक्रिया खालीलप्रमाणे आहे.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.mr.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.mr.png)
 
 *प्रतिमा स्रोत: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Azure AI Foundry चा मूल्यांकन प्रक्रिया 
 
 आपले AI मॉडेल नैतिक आणि सुरक्षित आहे याची खात्री करण्यासाठी, Microsoft च्या जबाबदार AI तत्त्वांनुसार त्याचे मूल्यांकन करणे अत्यंत आवश्यक आहे. Azure AI Foundry मध्ये, सुरक्षा मूल्यांकन आपल्याला मॉडेलच्या jailbreak हल्ल्यांपासून असुरक्षिततेचे आणि हानिकारक सामग्री निर्माण करण्याच्या शक्यतेचे मूल्यांकन करण्याची परवानगी देते, जे थेट या तत्त्वांशी सुसंगत आहे.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.mr.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.mr.png)
 
 *प्रतिमा स्रोत: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 - **जबाबदारी**: AI प्रणाली डिझाइन आणि तैनात करणाऱ्या लोकांनी त्यांच्या प्रणालींच्या कार्यप्रणालीसाठी जबाबदार असणे आवश्यक आहे. संस्था उद्योग मानकांचा आधार घेऊन जबाबदारीचे नियम विकसित करावेत. हे नियम सुनिश्चित करू शकतात की AI प्रणाली लोकांच्या जीवनावर परिणाम करणाऱ्या कोणत्याही निर्णयाचा अंतिम अधिकार नाहीत. तसेच, हे नियम मानवी नियंत्रण AI प्रणालींवर कायम राहील याची खात्री करतात.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.mr.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.mr.png)
 
 *प्रतिमा स्रोत: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 या पैलूंचे मूल्यांकन केल्याने AI मॉडेल हानिकारक किंवा अपमानास्पद सामग्री निर्माण करत नाही याची खात्री होते, जे सामाजिक मूल्ये आणि नियामक मानकांशी सुसंगत आहे.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.mr.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.mr.png)
 
 ### कार्यक्षमता मूल्यांकनाची ओळख
 
 आपले AI मॉडेल अपेक्षेनुसार कार्य करत आहे याची खात्री करण्यासाठी, त्याची कार्यक्षमता कार्यक्षमता मेट्रिक्सच्या आधारे मूल्यांकन करणे महत्त्वाचे आहे. Azure AI Foundry मध्ये, कार्यक्षमता मूल्यांकन आपल्याला मॉडेलच्या अचूक, संबंधित आणि सुसंगत प्रतिसाद निर्माण करण्याच्या कार्यक्षमतेचे मूल्यांकन करण्याची परवानगी देते.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.mr.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.mr.png)
 
 *प्रतिमा स्रोत: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 हे मेट्रिक्स आपल्याला मॉडेलच्या अचूक, संबंधित आणि सुसंगत प्रतिसाद निर्माण करण्याच्या कार्यक्षमतेचे मूल्यांकन करण्यात मदत करतात.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.mr.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.mr.png)
 
 ## **परिस्थिती 2: Azure AI Foundry मध्ये Phi-3 / Phi-3.5 मॉडेलचे मूल्यांकन**
 
@@ -151,7 +151,7 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 1. नेव्हिगेशन मेनूमधून **+ New hub** निवडा.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.mr.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.mr.png)
 
 1. खालील कामे करा:
 
@@ -162,7 +162,7 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
     - वापरण्यासाठी **Connect Azure AI Services** निवडा (गरज असल्यास नवीन तयार करा).
     - **Connect Azure AI Search** साठी **Skip connecting** निवडा.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.mr.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.mr.png)
 
 1. **Next** निवडा.
 
@@ -172,11 +172,11 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 1. नेव्हिगेशन मेनूमधून **+ New project** निवडा.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.mr.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.mr.png)
 
 1. **Project name** टाका. हे नाव अनन्य असावे.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.mr.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.mr.png)
 
 1. **Create a project** निवडा.
 
@@ -192,17 +192,17 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 1. डाव्या बाजूच्या टॅबमधून **Endpoints** निवडा.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.mr.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.mr.png)
 
 1. तुम्ही तयार केलेला endpoint निवडा.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.mr.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.mr.png)
 
 1. नेव्हिगेशन मेनूमधून **Consume** निवडा.
 
 1. तुमचा **REST endpoint** आणि **Primary key** कॉपी करा.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.mr.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.mr.png)
 
 #### कस्टम कनेक्शन जोडा
 
@@ -214,11 +214,11 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 1. **+ New connection** निवडा.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.mr.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.mr.png)
 
 1. नेव्हिगेशन मेनूमधून **Custom keys** निवडा.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.mr.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.mr.png)
 
 1. खालील कामे करा:
 
@@ -228,7 +228,7 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
     - key name साठी **key** टाका आणि Azure ML Studio मधून कॉपी केलेला key value field मध्ये पेस्ट करा.
     - keys जोडल्यावर, key उघड होऊ नये म्हणून **is secret** निवडा.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.mr.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.mr.png)
 
 1. **Add connection** निवडा.
 
@@ -242,15 +242,15 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
 1. नेव्हिगेशन मेनूमधून **+ Create** निवडा.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.mr.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.mr.png)
 
 1. नेव्हिगेशन मेनूमधून **Chat flow** निवडा.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.mr.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.mr.png)
 
 1. वापरण्यासाठी **Folder name** टाका.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.mr.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.mr.png)
 
 1. **Create** निवडा.
 
@@ -287,7 +287,7 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
     - **Save** निवडा.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.mr.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.mr.png)
 
 1. Prompt flow मध्ये कस्टम Phi-3 / Phi-3.5 मॉडेल वापरण्यासाठी *integrate_with_promptflow.py* मध्ये खालील कोड जोडा.
 
@@ -350,14 +350,14 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.mr.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.mr.png)
 
 > [!NOTE]
 > Azure AI Foundry मध्ये Prompt flow वापरण्याबाबत अधिक सविस्तर माहितीकरिता, तुम्ही [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) पाहू शकता.
 
 1. **Chat input**, **Chat output** निवडा जेणेकरून तुमच्या मॉडेलशी चॅट करता येईल.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.mr.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.mr.png)
 
 1. आता तुम्ही तुमच्या कस्टम Phi-3 / Phi-3.5 मॉडेलशी चॅट करण्यास तयार आहात. पुढील व्यायामात, तुम्ही Prompt flow कसे सुरू करायचे आणि फाइन-ट्यून केलेल्या Phi-3 / Phi-3.5 मॉडेलशी कसे चॅट करायचे हे शिकाल.
 
@@ -365,32 +365,32 @@ Microsoft चे जबाबदार AI तत्त्वे यामध्�
 >
 > पुन्हा तयार केलेला flow खालील चित्रासारखा दिसायला हवा:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.mr.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.mr.png)
 >
 
 #### Prompt flow सुरू करा
 
 1. Prompt flow सुरू करण्यासाठी **Start compute sessions** निवडा.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.mr.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.mr.png)
 
 1. पॅरामीटर्स रिन्यू करण्यासाठी **Validate and parse input** निवडा.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.mr.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.mr.png)
 
 1. तुम्ही तयार केलेल्या कस्टम कनेक्शनचा **connection** चा **Value** निवडा. उदाहरणार्थ, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.mr.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.mr.png)
 
 #### तुमच्या कस्टम Phi-3 / Phi-3.5 मॉडेलशी चॅट करा
 
 1. **Chat** निवडा.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.mr.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.mr.png)
 
 1. खाली परिणामांचे उदाहरण आहे: आता तुम्ही तुमच्या कस्टम Phi-3 / Phi-3.5 मॉडेलशी चॅट करू शकता. फाइन-ट्यूनिंगसाठी वापरलेल्या डेटावर आधारित प्रश्न विचारणे शिफारसीय आहे.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.mr.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.mr.png)
 
 ### Phi-3 / Phi-3.5 मॉडेलचे मूल्यमापन करण्यासाठी Azure OpenAI तैनात करा
 
@@ -402,7 +402,7 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
 
 1. तुम्ही तयार केलेल्या Azure AI Foundry प्रोजेक्टमध्ये जा.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.mr.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.mr.png)
 
 1. तयार केलेल्या प्रोजेक्टमध्ये, डाव्या बाजूच्या टॅबमधून **Deployments** निवडा.
 
@@ -410,11 +410,11 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
 
 1. **Deploy base model** निवडा.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.mr.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.mr.png)
 
 1. वापरायचा Azure OpenAI मॉडेल निवडा. उदाहरणार्थ, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.mr.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.mr.png)
 
 1. **Confirm** निवडा.
 
@@ -426,17 +426,17 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
 
 1. तुम्ही तयार केलेल्या Azure AI Foundry प्रोजेक्टमध्ये जा.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.mr.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.mr.png)
 
 1. तयार केलेल्या प्रोजेक्टमध्ये, डाव्या बाजूच्या टॅबमधून **Evaluation** निवडा.
 
 1. नेव्हिगेशन मेनूमधून **+ New evaluation** निवडा.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.mr.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.mr.png)
 
 1. **Prompt flow** evaluation निवडा.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.mr.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.mr.png)
 
 1. खालील कामे करा:
 
@@ -444,7 +444,7 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
     - task type म्हणून **Question and answer without context** निवडा. कारण, या ट्युटोरियलमध्ये वापरलेला **UlTRACHAT_200k** dataset मध्ये context नाही.
     - तुम्हाला मूल्यमापन करायचा असलेला prompt flow निवडा.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.mr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.mr.png)
 
 1. **Next** निवडा.
 
@@ -453,7 +453,7 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
     - dataset अपलोड करण्यासाठी **Add your dataset** निवडा. उदाहरणार्थ, तुम्ही **ULTRACHAT_200k** dataset डाउनलोड करताना मिळालेला *test_data.json1* फाइल अपलोड करू शकता.
     - dataset शी जुळणारा योग्य **Dataset column** निवडा. उदाहरणार्थ, **ULTRACHAT_200k** dataset वापरत असल्यास, **${data.prompt}** निवडा.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.mr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.mr.png)
 
 1. **Next** निवडा.
 
@@ -462,7 +462,7 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
     - वापरायचे कामगिरी आणि गुणवत्ता मेट्रिक्स निवडा.
     - मूल्यमापनासाठी तुम्ही तयार केलेला Azure OpenAI मॉडेल निवडा. उदाहरणार्थ, **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.mr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.mr.png)
 
 1. धोका आणि सुरक्षा मेट्रिक्स कॉन्फिगर करण्यासाठी खालील कामे करा:
 
@@ -472,7 +472,7 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
     - **answer** साठी **Data source** म्हणून **{$run.outputs.answer}** निवडा.
     - **ground_truth** साठी **Data source** म्हणून **{$data.message}** निवडा.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.mr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.mr.png)
 
 1. **Next** निवडा.
 
@@ -489,17 +489,17 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
 
     - मॉडेलच्या सुसंगत, प्रवाही आणि संबंधित प्रतिसाद तयार करण्याच्या कार्यक्षमतेचे मूल्यांकन करा.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.mr.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.mr.png)
 
 1. धोका आणि सुरक्षितता मेट्रिक्स:
 
     - मॉडेलच्या आउटपुट्स सुरक्षित आहेत आणि जबाबदार AI तत्त्वांशी सुसंगत आहेत याची खात्री करा, कोणताही हानिकारक किंवा अपमानास्पद सामग्री टाळा.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.mr.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.mr.png)
 
 1. तुम्ही खाली स्क्रोल करून **तपशीलवार मेट्रिक्स निकाल** पाहू शकता.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.mr.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.mr.png)
 
 1. तुमच्या कस्टम Phi-3 / Phi-3.5 मॉडेलचे कामगिरी आणि सुरक्षितता मेट्रिक्स दोन्हींच्या आधारावर मूल्यांकन करून, तुम्ही खात्री करू शकता की मॉडेल केवळ प्रभावी नाही तर जबाबदार AI पद्धतींचे पालन करते, ज्यामुळे ते प्रत्यक्ष वापरासाठी तयार आहे.
 
@@ -509,7 +509,7 @@ Phi-3 / Phi-3.5 मॉडेलचे Azure AI Foundry मध्ये मूल
 
 तुम्ही यशस्वीपणे Azure AI Foundry मध्ये Prompt flow सह एकत्रित केलेले fine-tuned Phi-3 मॉडेलचे मूल्यांकन केले आहे. हा एक महत्त्वाचा टप्पा आहे ज्यामुळे तुमची AI मॉडेल्स केवळ चांगली कामगिरी करत नाहीत तर Microsoft च्या जबाबदार AI तत्त्वांचे पालन करतात, ज्यामुळे तुम्हाला विश्वासार्ह आणि विश्वसनीय AI अनुप्रयोग तयार करता येतात.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.mr.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.mr.png)
 
 ## Azure संसाधने साफ करा
 

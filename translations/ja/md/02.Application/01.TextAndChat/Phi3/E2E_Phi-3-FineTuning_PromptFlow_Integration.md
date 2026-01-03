@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下はこのE2Eサンプルの概要です。
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.ja.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.ja.png)
 
 ### 目次
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ポータルページ上部の**検索バー**に「azure machine learning」と入力し、表示されたオプションから**Azure Machine Learning**を選択します。
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.ja.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ja.png)
 
 1. ナビゲーションメニューから**+ 作成**を選択します。
 
 1. ナビゲーションメニューから**新しいワークスペース**を選択します。
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.ja.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.ja.png)
 
 1. 以下の項目を設定します：
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 使用する**Application Insights**を選択（必要に応じて新規作成）。
     - 使用する**コンテナレジストリ**を選択（必要に応じて新規作成）。
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.ja.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ja.png)
 
 1. **確認および作成**を選択します。
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 使用する**仮想マシンファミリー**を選択。例として、*Standard NCADSA100v4 Family Cluster Dedicated vCPUs*（*Standard_NC24ads_A100_v4* GPUを含む）を選択。
     - ナビゲーションメニューから**Request quota**を選択。
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.ja.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ja.png)
 
     - Request quotaページで、使用したい**新しいコア数の上限**を入力。例：24。
     - Request quotaページで**送信**を選択し、GPUクォータをリクエスト。
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ポータルページ上部の**検索バー**に「managed identities」と入力し、表示されたオプションから**Managed Identities**を選択します。
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.ja.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ja.png)
 
 1. **+ 作成**を選択します。
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.ja.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.ja.png)
 
 1. 以下の項目を設定します：
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 使用する**リソースグループ**を選択。
     - **ロール**を**Contributor**に設定。
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.ja.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ja.png)
 
 1. **保存**を選択します。
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ポータルページ上部の**検索バー**に「storage accounts」と入力し、表示されたオプションから**Storage accounts**を選択します。
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.ja.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ja.png)
 
 1. 作成したAzure Machine Learningワークスペースに関連付けられたストレージアカウントを選択します。例：*finetunephistorage*。
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ナビゲーションメニューから**+ 追加**を選択。
     - **ロール割り当ての追加**を選択。
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.ja.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ja.png)
 
 1. ロール割り当て追加ページで以下を設定します：
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 作成したManaged Identityを選択。例：*finetunephi-managedidentity*。
     - **選択**を選択。
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.ja.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ja.png)
 
 1. **確認および割り当て**を選択します。
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ポータルページ上部の**検索バー**に「container registries」と入力し、表示されたオプションから**Container registries**を選択します。
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.ja.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ja.png)
 
 1. Azure Machine Learningワークスペースに関連付けられたコンテナレジストリを選択します。例：*finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 作成した *finetune-phi* フォルダーを選択します。場所は *C:\Users\yourUserName\finetune-phi* です。
 
-    ![プロジェクトフォルダーを開く](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.ja.png)
+    ![プロジェクトフォルダーを開く](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ja.png)
 
 1. Visual Studio Codeの左ペインで右クリックし、**New File** を選択して *download_dataset.py* ファイルを作成します。
 
@@ -297,7 +297,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 同様に、*deploy_model.py* ファイルを作成します。
 
-    ![新しいファイルを作成](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.ja.png)
+    ![新しいファイルを作成](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ja.png)
 
 1. 左ペインで右クリックし、**New Folder** を選択して *finetuning_dir* フォルダーを作成します。
 
@@ -373,28 +373,28 @@ CO_OP_TRANSLATOR_METADATA:
     - 現在使用しているAzureサブスクリプションを選択します。
     - Subscription IDをコピーし、*config.py* ファイルに貼り付けます。
 
-    ![サブスクリプションIDの確認](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.ja.png)
+    ![サブスクリプションIDの確認](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ja.png)
 
 1. Azure Workspace Nameを追加する手順：
 
     - 作成したAzure Machine Learningリソースに移動します。
     - アカウント名をコピーし、*config.py* ファイルに貼り付けます。
 
-    ![Azure Machine Learning名の確認](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.ja.png)
+    ![Azure Machine Learning名の確認](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ja.png)
 
 1. Azure Resource Group Nameを追加する手順：
 
     - 作成したAzure Machine Learningリソースに移動します。
     - Azure Resource Group名をコピーし、*config.py* ファイルに貼り付けます。
 
-    ![リソースグループ名の確認](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.ja.png)
+    ![リソースグループ名の確認](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ja.png)
 
 2. Azure Managed Identity名を追加する手順：
 
     - 作成したManaged Identitiesリソースに移動します。
     - Azure Managed Identity名をコピーし、*config.py* ファイルに貼り付けます。
 
-    ![UAIの確認](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.ja.png)
+    ![UAIの確認](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ja.png)
 
 ### ファインチューニング用データセットの準備
 
@@ -508,7 +508,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 使用するAzureサブスクリプションを選択します。
 
-    ![リソースグループ名の確認](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.ja.png)
+    ![リソースグループ名の確認](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ja.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. この演習で、Azure Machine Learningを使ってPhi-3モデルのファインチューニングに成功しました。*setup_ml.py* スクリプトを実行することで、Azure Machine Learning環境がセットアップされ、*fine_tune.py* ファイルで定義したファインチューニング処理が開始されます。ファインチューニングにはかなりの時間がかかる場合があります。`python setup_ml.py` コマンド実行後は処理が完了するまで待機してください。ターミナルに表示されるリンクからAzure Machine Learningポータルでジョブの状況を確認できます。
 
-    ![ファインチューニングジョブの確認](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.ja.png)
+    ![ファインチューニングジョブの確認](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ja.png)
 
 ### ファインチューニング済みモデルのデプロイ
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 左側のタブから **Endpoints** を選択します。
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.ja.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ja.png)
 
 2. 作成したエンドポイントを選択します。
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.ja.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ja.png)
 
 3. このページで、デプロイ時に作成されたエンドポイントを管理できます。
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. **REST endpoint** をコピーし、*config.py* ファイルの `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` をご自身の **REST endpoint** に置き換えて貼り付けます。  
 1. **Primary key** をコピーし、*config.py* ファイルの `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` をご自身の **Primary key** に置き換えて貼り付けます。
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.ja.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ja.png)
 
 #### *flow.dag.yml* ファイルにコードを追加する
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 結果の例はこちらです。これでカスタム Phi-3 モデルとチャットが可能になります。ファインチューニングに使用したデータに基づいた質問をすることをおすすめします。
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.ja.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ja.png)
 
 **免責事項**：  
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

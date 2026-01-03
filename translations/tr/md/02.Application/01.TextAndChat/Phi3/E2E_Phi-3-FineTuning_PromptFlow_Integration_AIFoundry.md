@@ -23,7 +23,7 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Azure AI Fo
 
 İşte bu E2E örneğin genel görünümü.
 
-![Phi-3-FineTuning_PromptFlow_Integration Genel Bakış.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.tr.png)
+![Phi-3-FineTuning_PromptFlow_Integration Genel Bakış.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.tr.png)
 
 ### İçindekiler
 
@@ -48,13 +48,13 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Azure AI Fo
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *azure machine learning* yazın ve çıkan seçeneklerden **Azure Machine Learning**'i seçin.
 
-    ![azure machine learning yazın.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.tr.png)
+    ![azure machine learning yazın.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.tr.png)
 
 2. Navigasyon menüsünden **+ Create** seçeneğini tıklayın.
 
 3. Navigasyon menüsünden **New workspace** seçeneğini seçin.
 
-    ![Yeni workspace seçin.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.tr.png)
+    ![Yeni workspace seçin.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.tr.png)
 
 4. Aşağıdaki işlemleri yapın:
 
@@ -67,7 +67,7 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Azure AI Fo
     - Kullanılacak **Application insights**'ı seçin (gerekirse yenisini oluşturun).
     - Kullanılacak **Container registry**'yi seçin (gerekirse yenisini oluşturun).
 
-    ![Azure machine learning bilgilerini doldurun.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.tr.png)
+    ![Azure machine learning bilgilerini doldurun.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.tr.png)
 
 5. **Review + Create** seçeneğini tıklayın.
 
@@ -90,7 +90,7 @@ Bu eğitimde, Phi-3 modelini ince ayar yapmak ve dağıtmak için GPU kullanmay�
     - Kullanılacak **Virtual machine family**'yi seçin. Örneğin, *Standard_NC24ads_A100_v4* GPU'sunu içeren **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**'u seçin.
     - Navigasyon menüsünden **Request quota**'yı seçin.
 
-        ![Kota talep et.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.tr.png)
+        ![Kota talep et.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.tr.png)
 
     - Request quota sayfasında, kullanmak istediğiniz **New cores limit** değerini girin. Örneğin, 24.
     - Request quota sayfasında, GPU kotası talebi için **Submit**'i seçin.
@@ -111,11 +111,11 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *managed identities* yazın ve çıkan seçeneklerden **Managed Identities**'i seçin.
 
-    ![managed identities yazın.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.tr.png)
+    ![managed identities yazın.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.tr.png)
 
 1. **+ Create** seçeneğini tıklayın.
 
-    ![Create seçin.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.tr.png)
+    ![Create seçin.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -124,7 +124,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Kullanmak istediğiniz **Region**'u seçin.
     - **Name** girin. Benzersiz bir değer olmalıdır.
 
-    ![Bilgileri doldurun.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.tr.png)
+    ![Bilgileri doldurun.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.tr.png)
 
 1. **Review + create** seçeneğini tıklayın.
 
@@ -144,7 +144,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Kullanılacak **Resource group**'u seçin.
     - **Role** olarak **Contributor**'ı seçin.
 
-    ![Contributor rolünü doldurun.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.tr.png)
+    ![Contributor rolünü doldurun.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.tr.png)
 
 2. **Save** seçeneğini tıklayın.
 
@@ -152,7 +152,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *storage accounts* yazın ve çıkan seçeneklerden **Storage accounts**'u seçin.
 
-    ![storage accounts yazın.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.tr.png)
+    ![storage accounts yazın.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.tr.png)
 
 1. Oluşturduğunuz Azure Machine Learning workspace ile ilişkili storage hesabını seçin. Örneğin, *finetunephistorage*.
 
@@ -163,7 +163,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Navigasyon menüsünden **+ Add**'i seçin.
     - Navigasyon menüsünden **Add role assignment**'ı seçin.
 
-    ![Rol ekle.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.tr.png)
+    ![Rol ekle.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.tr.png)
 
 1. Add role assignment sayfasında aşağıdaki işlemleri yapın:
 
@@ -176,7 +176,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Select managed identities sayfasında oluşturduğunuz Manage Identity'yi seçin. Örneğin, *finetunephi-managedidentity*.
     - Select managed identities sayfasında **Select**'i seçin.
 
-    ![Managed identity seçin.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.tr.png)
+    ![Managed identity seçin.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.tr.png)
 
 1. **Review + assign** seçeneğini tıklayın.
 
@@ -184,7 +184,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *container registries* yazın ve çıkan seçeneklerden **Container registries**'i seçin.
 
-    ![container registries yazın.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.tr.png)
+    ![container registries yazın.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.tr.png)
 
 1. Azure Machine Learning workspace ile ilişkili container registry'yi seçin. Örneğin, *finetunephicontainerregistry*
 
@@ -271,11 +271,11 @@ Bu egzersizde,
 
 1. *C:\Users\yourUserName\finetune-phi* konumunda oluşturduğunuz *finetune-phi* klasörünü seçin.
 
-    ![Oluşturduğunuz klasörü seçin.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.tr.png)
+    ![Oluşturduğunuz klasörü seçin.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.tr.png)
 
 1. Visual Studio Code'un sol panelinde sağ tıklayın ve **New File** seçeneği ile *download_dataset.py* adlı yeni bir dosya oluşturun.
 
-    ![Yeni dosya oluşturun.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.tr.png)
+    ![Yeni dosya oluşturun.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.tr.png)
 
 ### İnce ayar için veri setini hazırlama
 
@@ -387,7 +387,7 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. **+ New** seçeneğini seçin.
 
-    ![Compute seçin.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.tr.png)
+    ![Compute seçin.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -397,7 +397,7 @@ Bu alıştırmada şunları yapacaksınız:
     - **Virtual machine size** filtresini **Select from all options** olarak ayarlayın.
     - **Virtual machine size** olarak **Standard_NC24ads_A100_v4** seçin.
 
-    ![Küme oluşturun.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.tr.png)
+    ![Küme oluşturun.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.tr.png)
 
 1. **Next** seçeneğini seçin.
 
@@ -408,7 +408,7 @@ Bu alıştırmada şunları yapacaksınız:
     - **Maximum number of nodes** değerini **1** olarak ayarlayın.
     - **Idle seconds before scale down** değerini **120** olarak ayarlayın.
 
-    ![Küme oluşturun.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.tr.png)
+    ![Küme oluşturun.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.tr.png)
 
 1. **Create** seçeneğini seçin.
 
@@ -418,18 +418,18 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Oluşturduğunuz Azure Machine Learning çalışma alanını seçin.
 
-    ![Oluşturduğunuz çalışma alanını seçin.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.tr.png)
+    ![Oluşturduğunuz çalışma alanını seçin.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
     - Sol taraftaki sekmeden **Model catalog** seçeneğini seçin.
     - **Arama çubuğuna** *phi-3-mini-4k* yazın ve çıkan seçeneklerden **Phi-3-mini-4k-instruct**'i seçin.
 
-    ![phi-3-mini-4k yazın.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.tr.png)
+    ![phi-3-mini-4k yazın.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.tr.png)
 
 1. Navigasyon menüsünden **Fine-tune** seçeneğini seçin.
 
-    ![İnce ayar seçin.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.tr.png)
+    ![İnce ayar seçin.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -438,7 +438,7 @@ Bu alıştırmada şunları yapacaksınız:
     - Doğrulama verisi yükleme türü olarak **Provide different validation data** seçin.
     - **+ Select data** seçeneği ile **Validation data** yükleyin.
 
-    ![İnce ayar sayfasını doldurun.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.tr.png)
+    ![İnce ayar sayfasını doldurun.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.tr.png)
 
     > [!TIP]
     >
@@ -448,7 +448,7 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Bu alıştırmada, Azure Machine Learning kullanarak Phi-3 modelini başarıyla ince ayar yaptınız. İnce ayar işleminin önemli bir süre alabileceğini unutmayın. İnce ayar işi çalıştıktan sonra tamamlanmasını beklemeniz gerekir. İnce ayar işinin durumunu Azure Machine Learning Çalışma Alanınızın sol tarafındaki Jobs sekmesinden takip edebilirsiniz. Sonraki seride, ince ayar yapılmış modeli dağıtacak ve Prompt flow ile entegre edeceksiniz.
 
-    ![İnce ayar işini görün.](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.tr.png)
+    ![İnce ayar işini görün.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.tr.png)
 
 ### İnce ayar yapılmış Phi-3 modelini dağıtma
 
@@ -466,17 +466,17 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Oluşturduğunuz Azure Machine Learning çalışma alanını seçin.
 
-    ![Oluşturduğunuz çalışma alanını seçin.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.tr.png)
+    ![Oluşturduğunuz çalışma alanını seçin.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.tr.png)
 
 1. Sol taraftaki sekmeden **Models** seçeneğini seçin.
 1. **+ Register** seçeneğini seçin.
 1. **From a job output** seçeneğini seçin.
 
-    ![Modeli kaydedin.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.tr.png)
+    ![Modeli kaydedin.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.tr.png)
 
 1. Oluşturduğunuz işi seçin.
 
-    ![İşi seçin.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.tr.png)
+    ![İşi seçin.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.tr.png)
 
 1. **Next** seçeneğini seçin.
 
@@ -484,17 +484,17 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. **Job output** seçeneğinin seçili olduğundan emin olun; otomatik seçilmiş olmalıdır.
 
-    ![Çıktıyı seçin.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.tr.png)
+    ![Çıktıyı seçin.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.tr.png)
 
 2. **Next** seçeneğini seçin.
 
 3. **Register** seçeneğini seçin.
 
-    ![Kaydet seçeneğini seçin.](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.tr.png)
+    ![Kaydet seçeneğini seçin.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.tr.png)
 
 4. Kayıtlı modelinizi sol taraftaki sekmeden **Models** menüsüne giderek görüntüleyebilirsiniz.
 
-    ![Kayıtlı model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.tr.png)
+    ![Kayıtlı model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.tr.png)
 
 #### İnce ayar yapılmış modeli dağıtma
 
@@ -504,13 +504,13 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Navigasyon menüsünden **Real-time endpoints** seçeneğini seçin.
 
-    ![Uç nokta oluşturun.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.tr.png)
+    ![Uç nokta oluşturun.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.tr.png)
 
 1. **Create** seçeneğini seçin.
 
 1. Oluşturduğunuz kayıtlı modeli seçin.
 
-    ![Kayıtlı modeli seçin.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.tr.png)
+    ![Kayıtlı modeli seçin.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.tr.png)
 
 1. **Select** seçeneğini seçin.
 
@@ -522,7 +522,7 @@ Bu alıştırmada şunları yapacaksınız:
     - **Endpoint name** girin. Bu benzersiz bir değer olmalıdır.
     - **Deployment name** girin. Bu benzersiz bir değer olmalıdır.
 
-    ![Dağıtım ayarlarını doldurun.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.tr.png)
+    ![Dağıtım ayarlarını doldurun.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.tr.png)
 
 1. **Deploy** seçeneğini seçin.
 
@@ -538,14 +538,14 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Oluşturduğunuz uç noktayı seçin.
 
-    ![Uç noktaları seçin](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.tr.png)
+    ![Uç noktaları seçin](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.tr.png)
 
 1. Bu sayfada, dağıtım sürecindeki uç noktaları yönetebilirsiniz.
 
 > [!NOTE]
 > Dağıtım tamamlandıktan sonra, **Live traffic** değerinin **%100** olarak ayarlandığından emin olun. Eğer değilse, trafik ayarlarını değiştirmek için **Update traffic** seçeneğini kullanın. Trafik %0 olarak ayarlanmışsa modeli test edemezsiniz.
 >
-> ![Trafiği ayarlayın.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.tr.png)
+> ![Trafiği ayarlayın.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.tr.png)
 >
 
 ## Senaryo 3: Prompt flow ile entegrasyon ve Azure AI Foundry'de özel modelinizle sohbet
@@ -573,7 +573,7 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu 
 
 1. Navigasyon menüsünden **+ New hub** seçeneğini seçin.
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.tr.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -584,7 +584,7 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu 
     - Kullanmak istediğiniz **Connect Azure AI Services** seçin (gerekirse yeni bir tane oluşturun).
     - **Connect Azure AI Search** için **Skip connecting** seçeneğini seçin.
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.tr.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.tr.png)
 
 1. **Next** seçeneğini seçin.
 
@@ -594,11 +594,11 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu 
 
 1. Navigasyon menüsünden **+ New project** seçeneğini seçin.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.tr.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.tr.png)
 
 1. **Project name** girin. Bu benzersiz bir değer olmalıdır.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.tr.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.tr.png)
 
 1. **Create a project** seçeneğini seçin.
 
@@ -614,17 +614,17 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu 
 
 1. Sol taraftaki sekmeden **Endpoints** seçeneğini seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.tr.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.tr.png)
 
 1. Oluşturduğunuz endpoint'i seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.tr.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.tr.png)
 
 1. Navigasyon menüsünden **Consume** seçeneğini seçin.
 
 1. **REST endpoint** ve **Primary key** değerlerini kopyalayın.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.tr.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.tr.png)
 
 #### Özel Bağlantı Ekleme
 
@@ -636,11 +636,11 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu 
 
 1. **+ New connection** seçeneğini seçin.
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.tr.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.tr.png)
 
 1. Navigasyon menüsünden **Custom keys** seçeneğini seçin.
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.tr.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -650,7 +650,7 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu 
     - Anahtar adı olarak **key** girin ve Azure ML Studio’dan kopyaladığınız anahtarı değer alanına yapıştırın.
     - Anahtarları ekledikten sonra, anahtarın görünmesini engellemek için **is secret** seçeneğini işaretleyin.
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.tr.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.tr.png)
 
 1. **Add connection** seçeneğini seçin.
 
@@ -664,15 +664,15 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
 
 1. Navigasyon menüsünden **+ Create** seçeneğini seçin.
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.tr.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.tr.png)
 
 1. Navigasyon menüsünden **Chat flow** seçeneğini seçin.
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.tr.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.tr.png)
 
 1. Kullanmak istediğiniz **Folder name** girin.
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.tr.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.tr.png)
 
 2. **Create** seçeneğini seçin.
 
@@ -709,7 +709,7 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
 
     - **Save** seçeneğini seçin.
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.tr.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.tr.png)
 
 1. Prompt flow içinde özel Phi-3 modelini kullanmak için *integrate_with_promptflow.py* dosyasına aşağıdaki kodu ekleyin.
 
@@ -774,14 +774,14 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.tr.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.tr.png)
 
 > [!NOTE]
 > Azure AI Foundry’de Prompt flow kullanımı hakkında daha ayrıntılı bilgi için [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
 
 1. Modelinizle sohbeti etkinleştirmek için **Chat input**, **Chat output** seçeneklerini seçin.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.tr.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.tr.png)
 
 1. Artık özel Phi-3 modelinizle sohbet etmeye hazırsınız. Bir sonraki alıştırmada, Prompt flow’u nasıl başlatacağınızı ve ince ayarlı Phi-3 modelinizle sohbet etmek için nasıl kullanacağınızı öğreneceksiniz.
 
@@ -789,7 +789,7 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
 >
 > Yeniden oluşturulan akış aşağıdaki görseldeki gibi olmalıdır:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.tr.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.tr.png)
 >
 
 ### Özel Phi-3 modelinizle sohbet etme
@@ -802,25 +802,25 @@ Artık özel Phi-3 modelinizi ince ayarladınız ve Prompt flow ile entegre etti
 
 1. Prompt flow’u başlatmak için **Start compute sessions** seçeneğini seçin.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.tr.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.tr.png)
 
 1. Parametreleri yenilemek için **Validate and parse input** seçeneğini seçin.
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.tr.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.tr.png)
 
 1. Oluşturduğunuz özel bağlantının **connection** değerini seçin. Örneğin, *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.tr.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.tr.png)
 
 #### Özel modelinizle sohbet etme
 
 1. **Chat** seçeneğini seçin.
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.tr.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.tr.png)
 
 1. İşte sonuçlara bir örnek: Artık özel Phi-3 modelinizle sohbet edebilirsiniz. İnce ayar için kullanılan verilere dayalı sorular sormanız önerilir.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.tr.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.tr.png)
 
 **Feragatname**:  
 Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

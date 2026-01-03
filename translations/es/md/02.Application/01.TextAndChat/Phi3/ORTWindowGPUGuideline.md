@@ -43,7 +43,7 @@ El documento ofrece orientación sobre:
 
    ***Nota*** Si no quieres compilar, puedes saltarte este paso
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.es.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.es.png)
 
 ### **4. Instalar el controlador NVIDIA**
 
@@ -83,7 +83,7 @@ Copia las carpetas lib, bin, include de NVIDIA CUDNN 9.4 a NVIDIA CUDA 12.4 lib,
 
    Abre el [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) y ejecútalo
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.es.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.es.png)
 
 ### **8. Compilar ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Copia las carpetas lib, bin, include de NVIDIA CUDNN 9.4 a NVIDIA CUDA 12.4 lib,
 
    - Usando Windows Terminal, abre Developer Command Prompt para VS 2022 y navega a onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.es.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.es.png)
 
    - Compílalo con tu entorno de Python
 

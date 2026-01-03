@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **Convenience:** ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ವಾಸ್ತವವಲ್ಲದೆ ಹೇಗೆ ನಡೆಯುತ್ತದೆ – ನನಗೆ ಕಸ್ಟಮ್ ಕೋಡ್ ಬರೆಯಬೇಕಾಗುತ್ತದಾ? ನನ್ನದೇ ಕಂಪ್ಯೂಟ್ ತರಬೇಕು ಎಲ್ಲ?
 - **Safety:** ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಗಳಿಗೆ ಸುರಕ್ಷತಾ ಅಪಾಯಗಳು ಇರುವಂತೆ ತಿಳಿದು ಬಂದಿದೆ – ಅನೇಕದೋಷವುಂಟಾಗದಿರಲು ಯಾವ ರಕ್ಷಣೆಗಳು ಇದ್ದಾವು?
 
-![AI Foundry ಮಾದರಿಗಳು](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.kn.png)
+![AI Foundry ಮಾದರಿಗಳು](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.kn.png)
 
 ## ಫೈನ್-ಟ್ಯೂನಿಂಗ್‌ಗೆ ತಯಾರಿಕೆ
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry ನಿಮಗೆ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಎಂದು ಕರೆಯಲ್ಪಡುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಬಳಸಿಕೊಂಡು ದೊಡ್ಡ ಭಾಷಾ ಮಾದರಿಗಳನ್ನು ನಿಮ್ಮ ಸ್ವಂತ ಡೇಟಾ ಸೆಟ್‌ಗಳಿಗೆ ಹೊಂದಿಸಿಕೊಳ್ಳಲು ಅನುಮತಿಸುತ್ತದೆ. ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ವಿಶಿಷ್ಟ ಕಾರ್ಯಗಳು ಮತ್ತು ಅಪ್ಲಿಕೇಷನ್ ಗಾಗಿ ಕಸ್ಟಮೈಜೇಷನ್ ಮತ್ತು ಆಪ್ಟಿಮೈಸೇಷನ್‌ ಅನ್ನು ಒದಗಿಸುವ ಮೂಲಕ ಪ್ರಮುಖ ಮೌಲ್ಯವನ್ನು ನೀಡುತ್ತದೆ. ಇದು ಉತ್ತಮ ಕಾರ್ಯಕ್ಷಮತೆ, ವೆಚ್ಚದ ಪರಿಣಾಮಕಾರಿತ್ವ, ಕಡಿಮೆ ವಿಳಂಬ ಮತ್ತು ಕಸ್ಟಮೈಸ್ ಮಾಡಲಾದ ಔಟ್‌ಪುಟ್‌ಗಳನ್ನು ಉಂಟುಮಾಡುತ್ತದೆ.
 
-![AI Foundry ಫೈನ್-ಟ್ಯೂನ್](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.kn.png)
+![AI Foundry ಫೈನ್-ಟ್ಯೂನ್](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.kn.png)
 
 ### ಹೊಸ ಪ್ರಾಜೆಕ್ಟ್ ರಚಿಸಿ
 
@@ -79,14 +79,14 @@ Azure AI Foundry ನಿಮಗೆ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಎಂ
 
 1. Azure AI Foundry ನಲ್ಲಿ ಹೊಸ ಪ್ರಾಜೆಕ್ಟ್ ರಚಿಸಲು **+New project** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಫೈನ್‌ಟ್ಯೂನ್ ಆಯ್ಕೆ](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.kn.png)
+    ![ಫೈನ್‌ಟ್ಯೂನ್ ಆಯ್ಕೆ](../../../../translated_images/select-new-project.cd31c0404088d7a3.kn.png)
 
 1. ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
     - Project **Hub name**. ಇದು ವಿಶಿಷ್ಟವಾದ ಮೌಲ್ಯವಾಗಿರಬೇಕು.
     - ಬಳಸುಬೇಕಾದ **Hub** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ (ಅವಶ್ಯಕರವಿದ್ದಲ್ಲಿ ಹೊಸದನ್ನು ರಚಿಸಿ).
 
-    ![ಪ್ರಾಜೆಕ್ಟ್ ರಚನೆ](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.kn.png)
+    ![ಪ್ರಾಜೆಕ್ಟ್ ರಚನೆ](../../../../translated_images/create-project.ca3b71298b90e420.kn.png)
 
 1. ಹೊಸ ಹಬ್ ರಚಿಸಲು ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
@@ -97,7 +97,7 @@ Azure AI Foundry ನಿಮಗೆ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಎಂ
     - ಬಳಸಲು **Connect Azure AI Services** ಆಯ್ಕೆಮಾಡಿ (ಅವಶ್ಯಕವಿದ್ದರೆ ಹೊಸದನ್ನು ರಚಿಸಿ).
     - **Connect Azure AI Search** ಅನ್ನು **Skip connecting** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಹಬ್ ರಚನೆ](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.kn.png)
+    ![ಹಬ್ ರಚನೆ](../../../../translated_images/create-hub.49e53d235e80779e.kn.png)
 
 1. Select **Next**.
 1. Select **Create a project**.
@@ -115,15 +115,15 @@ Azure AI Foundry ನಿಮಗೆ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಎಂ
 
 1. **search bar** ನಲ್ಲಿ *phi-3* type ಮಾಡಿ ಮತ್ತು ನೀವು ಬಳಸಲು ಬಯಸುವ phi-3 ಮಾದರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಮಾದರಿ ಆಯ್ಕೆ](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.kn.png)
+    ![ಮಾದರಿ ಆಯ್ಕೆ](../../../../translated_images/select-model.60ef2d4a6a3cec57.kn.png)
 
 1. **Fine-tune** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಫೈನ್-ಟ್ಯೂನ್ ಆಯ್ಕೆ](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.kn.png)
+    ![ಫೈನ್-ಟ್ಯೂನ್ ಆಯ್ಕೆ](../../../../translated_images/select-finetune.a976213b543dd9d8.kn.png)
 
 1. **Fine-tuned model name** ನಮೂದಿಸಿ.
 
-    ![ಫೈನ್-ಟ್ಯೂನ್ ಹೆಸರು](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.kn.png)
+    ![ಫೈನ್-ಟ್ಯೂನ್ ಹೆಸರು](../../../../translated_images/finetune1.c2b39463f0d34148.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -132,13 +132,13 @@ Azure AI Foundry ನಿಮಗೆ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಎಂ
     - **task type** ಅನ್ನು **Chat completion** ಗೆ ಆಯ್ಕೆಮಾಡಿ.
     - ನೀವು ಬಳಸಲು ಬಯಸುವ **Training data** ಆಯ್ಕೆಮಾಡಿ. ನೀವು ಅದನ್ನು Azure AI Foundry ನ ಡೇಟಾ ಮೂಲಕ ಅಥವಾ ನಿಮ್ಮ ಲೋಕಲ್ ಪರಿಸರದಿಂದ ಅಪ್‌ಲೋಡ್ ಮಾಡಬಹುದು.
 
-    ![ಟ್ರೈನಿಂಗ್ ಡೇಟಾ ಆಯ್ಕೆ](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.kn.png)
+    ![ಟ್ರೈನಿಂಗ್ ಡೇಟಾ ಆಯ್ಕೆ](../../../../translated_images/finetune2.43cb099b1a94442d.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
 1. ನೀವು ಬಳಸಲು ಬಯಸುವ **Validation data** ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ. ಅಥವಾ ನೀವು **Automatic split of training data** ಆಯ್ಕೆಮಾಡಬಹುದು.
 
-    ![ವೆಲಿಡೇಶನ್ ಡೇಟಾ](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.kn.png)
+    ![ವೆಲಿಡೇಶನ್ ಡೇಟಾ](../../../../translated_images/finetune3.fd96121b67dcdd92.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -148,16 +148,16 @@ Azure AI Foundry ನಿಮಗೆ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಎಂ
     - ನೀವು ಬಳಸಲು ಬಯಸುವ **Learning rate** ಆಯ್ಕೆಮಾಡಿ.
     - ನೀವು ಬಳಸಲು ಬಯಸುವ **Epochs** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಹೈಪರ್‌ಪರಾಮೀಟರ್‌ಗಳು](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.kn.png)
+    ![ಹೈಪರ್‌ಪರಾಮೀಟರ್‌ಗಳು](../../../../translated_images/finetune4.e18b80ffccb5834a.kn.png)
 
 1. ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು **Submit** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಸಲ್ಲಿಸು](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.kn.png)
+    ![ಸಲ್ಲಿಸು](../../../../translated_images/select-submit.0a3802d581bac271.kn.png)
 
 
 1. ನಿಮ್ಮ ಮಾದರಿ ಫೈನ್-ಟ್ಯೂನ್ಡ್ ಆದ ನಂತರ, ಸ್ಥಿತಿಯು **Completed** ಎಂದು ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ, ಕೆಳಗಿನ ಚಿತ್ರದಲ್ಲಿ ತೋರಿರುವಂತೆ. ಈಗ ನೀವು ಮಾದರಿಯನ್ನು ನಿಯೋಜಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಆಪ್‌ನಲ್ಲಿ, ಪ್ಲೇಗ್ರೌಂಡ್‌ನಲ್ಲಿ ಅಥವಾ ಪ್ರಾಂಪ್ ಫ್ಲೋದಲ್ಲಿ ಬಳಸಬಹುದು. ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ, ನೋಡಿ [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![ಸಂಪೂರ್ಣ](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.kn.png)
+    ![ಸಂಪೂರ್ಣ](../../../../translated_images/completed.4dc8d2357144cdef.kn.png)
 
 > [!NOTE]
 > Phi-3ನ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಕುರಿತು ಹೆಚ್ಚಿನ ವಿವರವಾದ ಮಾಹಿತಿಗಾಗಿ, ದಯವಿಟ್ಟು [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) ಅನ್ನು ಭೇಟಿ ಮಾಡಿ.

@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Bruke Azure AI Foundry til evaluering**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.no.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.no.png)
 
 Hvordan evaluere din generative AI-applikasjon ved hjelp av [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Enten du vurderer enkle eller komplekse samtaler med flere runder, gir Azure AI Foundry verktøy for å evaluere modellens ytelse og sikkerhet.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.no.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.no.png)
 
 ## Hvordan evaluere generative AI-apper med Azure AI Foundry
 For mer detaljerte instruksjoner, se [Azure AI Foundry-dokumentasjonen](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

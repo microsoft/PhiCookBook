@@ -23,7 +23,7 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Prompt flow
 
 İşte bu E2E örneğin genel görünümü.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.tr.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.tr.png)
 
 ### İçindekiler
 
@@ -49,13 +49,13 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Prompt flow
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *azure machine learning* yazın ve çıkan seçeneklerden **Azure Machine Learning**'i seçin.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.tr.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.tr.png)
 
 1. Navigasyon menüsünden **+ Create** seçeneğini tıklayın.
 
 1. Navigasyon menüsünden **New workspace** seçeneğini seçin.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.tr.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -68,7 +68,7 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Prompt flow
     - Kullanmak istediğiniz **Application insights**'ı seçin (gerekirse yenisini oluşturun).
     - Kullanmak istediğiniz **Container registry**'yi seçin (gerekirse yenisini oluşturun).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.tr.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.tr.png)
 
 1. **Review + Create** seçeneğini tıklayın.
 
@@ -92,7 +92,7 @@ Bu E2E örnekte, ince ayar için *Standard_NC24ads_A100_v4 GPU* kullanılacak ve
     - Kullanmak istediğiniz **Virtual machine family**'yi seçin. Örneğin, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* seçin; bu, *Standard_NC24ads_A100_v4* GPU'yu içerir.
     - Navigasyon menüsünden **Request quota** seçeneğini seçin.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.tr.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.tr.png)
 
     - Request quota sayfasında, kullanmak istediğiniz **New cores limit** değerini girin. Örneğin, 24.
     - Request quota sayfasında, GPU kotası talebi için **Submit** seçeneğini tıklayın.
@@ -108,11 +108,11 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *managed identities* yazın ve çıkan seçeneklerden **Managed Identities**'i seçin.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.tr.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.tr.png)
 
 1. **+ Create** seçeneğini tıklayın.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.tr.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
@@ -139,7 +139,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Kullanmak istediğiniz **Resource group**'u seçin.
     - **Role** olarak **Contributor** seçin.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.tr.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.tr.png)
 
 1. **Save** seçeneğini tıklayın.
 
@@ -147,7 +147,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *storage accounts* yazın ve çıkan seçeneklerden **Storage accounts**'u seçin.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.tr.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.tr.png)
 
 1. Oluşturduğunuz Azure Machine Learning workspace ile ilişkili storage hesabını seçin. Örneğin, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Navigasyon menüsünden **+ Add** seçeneğini tıklayın.
     - **Add role assignment** seçeneğini seçin.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.tr.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.tr.png)
 
 1. Add role assignment sayfasında aşağıdaki işlemleri yapın:
 
@@ -171,7 +171,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
     - Select managed identities sayfasında oluşturduğunuz Manage Identity'yi seçin. Örneğin, *finetunephi-managedidentity*.
     - Select managed identities sayfasında **Select** seçeneğini tıklayın.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.tr.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.tr.png)
 
 1. **Review + assign** seçeneğini tıklayın.
 
@@ -179,7 +179,7 @@ Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Manag
 
 1. Portal sayfasının üstündeki **arama çubuğuna** *container registries* yazın ve çıkan seçeneklerden **Container registries**'i seçin.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.tr.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.tr.png)
 
 1. Azure Machine Learning workspace ile ilişkili container registry'yi seçin. Örneğin, *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Oluşturduğunuz *finetune-phi* klasörünü seçin. Bu klasör *C:\Users\yourUserName\finetune-phi* konumunda bulunur.
 
-    ![Proje klasörünü açın.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.tr.png)
+    ![Proje klasörünü açın.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.tr.png)
 
 1. Visual Studio Code’un sol panelinde sağ tıklayın ve **New File** seçeneği ile *download_dataset.py* adlı yeni bir dosya oluşturun.
 
@@ -297,7 +297,7 @@ Bu alıştırmada şunları yapacaksınız:
 
 1. Sol panelde sağ tıklayın ve **New File** seçeneği ile *deploy_model.py* adlı yeni bir dosya oluşturun.
 
-    ![Yeni dosya oluşturun.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.tr.png)
+    ![Yeni dosya oluşturun.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.tr.png)
 
 1. Sol panelde sağ tıklayın ve **New Folder** seçeneği ile *finetuning_dir* adlı yeni bir klasör oluşturun.
 
@@ -373,28 +373,28 @@ Bu alıştırmada şunları yapacaksınız:
     - Şu anda kullandığınız Azure Aboneliğini seçin.
     - Abonelik ID’nizi kopyalayıp *config.py* dosyasına yapıştırın.
 
-    ![Abonelik ID’sini bulun.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.tr.png)
+    ![Abonelik ID’sini bulun.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.tr.png)
 
 1. Azure Workspace Adını eklemek için aşağıdaki adımları izleyin:
 
     - Oluşturduğunuz Azure Machine Learning kaynağına gidin.
     - Hesap adınızı kopyalayıp *config.py* dosyasına yapıştırın.
 
-    ![Azure Machine Learning adını bulun.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.tr.png)
+    ![Azure Machine Learning adını bulun.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.tr.png)
 
 1. Azure Kaynak Grubu Adını eklemek için aşağıdaki adımları izleyin:
 
     - Oluşturduğunuz Azure Machine Learning kaynağına gidin.
     - Azure Kaynak Grubu Adınızı kopyalayıp *config.py* dosyasına yapıştırın.
 
-    ![Kaynak grubu adını bulun.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.tr.png)
+    ![Kaynak grubu adını bulun.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.tr.png)
 
 2. Azure Yönetilen Kimlik adını eklemek için aşağıdaki adımları izleyin:
 
     - Oluşturduğunuz Yönetilen Kimlik kaynağına gidin.
     - Azure Yönetilen Kimlik adınızı kopyalayıp *config.py* dosyasına yapıştırın.
 
-    ![UAI’yi bulun.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.tr.png)
+    ![UAI’yi bulun.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.tr.png)
 
 ### İnce ayar için veri setini hazırlayın
 
@@ -508,7 +508,7 @@ Ortamınızı doğrulamak için Azure CLI’yı kurmanız gerekir. Azure CLI, Az
 
 1. Kullanmak istediğiniz Azure aboneliğinizi seçin.
 
-    ![Kaynak grubu adını bulun.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.tr.png)
+    ![Kaynak grubu adını bulun.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.tr.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Bu alıştırmada, sağlanan veri setini kullanarak Phi-3 modelini ince ayar yap
 
 1. Bu alıştırmada, Azure Machine Learning kullanarak Phi-3 modelini başarıyla ince ayar yaptınız. *setup_ml.py* betiğini çalıştırarak Azure Machine Learning ortamını kurdunuz ve *fine_tune.py* dosyasında tanımlanan ince ayar sürecini başlattınız. İnce ayar sürecinin önemli bir zaman alabileceğini unutmayın. `python setup_ml.py` komutunu çalıştırdıktan sonra işlemin tamamlanmasını beklemeniz gerekir. İnce ayar işinin durumunu, terminalde verilen Azure Machine Learning portal bağlantısını takip ederek izleyebilirsiniz.
 
-    ![İnce ayar işini görün.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.tr.png)
+    ![İnce ayar işini görün.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.tr.png)
 
 ### İnce ayar yapılmış modeli dağıtın
 
@@ -1080,11 +1080,11 @@ Bu alıştırmada, sağlanan veri setini kullanarak Phi-3 modelini ince ayar yap
 
 1. Sol taraftaki sekmeden **Endpoints** seçeneğini seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.tr.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.tr.png)
 
 2. Oluşturduğunuz endpoint'i seçin.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.tr.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.tr.png)
 
 3. Bu sayfada, dağıtım sürecinde oluşturulan endpoint'leri yönetebilirsiniz.
 
@@ -1103,7 +1103,7 @@ Bu alıştırmada, sağlanan veri setini kullanarak Phi-3 modelini ince ayar yap
 1. **REST endpoint**'inizi kopyalayıp *config.py* dosyasındaki `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` kısmının yerine yapıştırın.
 1. **Primary key**'inizi kopyalayıp *config.py* dosyasındaki `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` kısmının yerine yapıştırın.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.tr.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.tr.png)
 
 #### *flow.dag.yml* dosyasına kod ekleme
 
@@ -1212,7 +1212,7 @@ Bu alıştırmada, sağlanan veri setini kullanarak Phi-3 modelini ince ayar yap
 
 1. İşte sonuçlara bir örnek: Artık özel Phi-3 modelinizle sohbet edebilirsiniz. İnce ayar için kullanılan verilere dayalı sorular sormanız önerilir.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.tr.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.tr.png)
 
 **Feragatname**:  
 Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

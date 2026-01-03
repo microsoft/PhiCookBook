@@ -43,7 +43,7 @@ Dokument vsebuje navodila za:
 
    ***Note*** Če ne želite prevajati, lahko ta korak preskočite
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.sl.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.sl.png)
 
 ### **4. Namestitev NVIDIA gonilnika**
 
@@ -83,7 +83,7 @@ Kopirajte NVIDIA CUDNN 9.4 datoteke iz map lib, bin, include v ustrezne mape NVI
 
    Odprite [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) in ga zaženite
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.sl.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.sl.png)
 
 ### **8. Prevajanje ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Kopirajte NVIDIA CUDNN 9.4 datoteke iz map lib, bin, include v ustrezne mape NVI
 
    - Uporabite Windows Terminal, odprite Developer Command Prompt za VS 2022 in pojdite v onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.sl.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.sl.png)
 
    - Prevedite z vašim Python okoljem
 

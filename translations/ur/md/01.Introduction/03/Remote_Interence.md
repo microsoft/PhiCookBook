@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 جب ایڈاپٹرز ریموٹ ماحول میں تربیت پا جائیں، تو ماڈل کے ساتھ بات چیت کے لیے ایک سادہ Gradio ایپلیکیشن استعمال کریں۔
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ur.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ur.png)
 
 ### Azure وسائل کی فراہمی  
 ریمورٹ انفیرنس کے لیے Azure وسائل سیٹ اپ کرنے کے لیے کمانڈ پیلیٹ سے `AI Toolkit: Provision Azure Container Apps for inference` کمانڈ چلائیں۔ اس سیٹ اپ کے دوران آپ سے آپ کی Azure سبسکرپشن اور ریسورس گروپ منتخب کرنے کو کہا جائے گا۔  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ur.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ur.png)
 
 عام طور پر، انفیرنس کے لیے سبسکرپشن اور ریسورس گروپ وہی ہونے چاہئیں جو فائن ٹیوننگ کے لیے استعمال ہوئے تھے۔ انفیرنس اسی Azure Container App Environment کو استعمال کرے گا اور ماڈل اور ماڈل ایڈاپٹر تک رسائی حاصل کرے گا جو Azure Files میں محفوظ ہیں، جو فائن ٹیوننگ کے دوران بنائے گئے تھے۔
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### انفیرنس کے لیے تعیناتی  
 اگر آپ انفیرنس کوڈ میں ترمیم کرنا چاہتے ہیں یا انفیرنس ماڈل کو دوبارہ لوڈ کرنا چاہتے ہیں، تو `AI Toolkit: Deploy for inference` کمانڈ چلائیں۔ یہ آپ کے تازہ ترین کوڈ کو ACA کے ساتھ ہم آہنگ کرے گا اور ریپلیکا کو دوبارہ شروع کرے گا۔
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ur.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ur.png)
 
 تعیناتی کامیابی سے مکمل ہونے کے بعد، ماڈل اب اس اینڈ پوائنٹ کے ذریعے جانچ کے لیے تیار ہے۔
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 آپ VSCode کی نوٹیفیکیشن میں دکھائے گئے "*Go to Inference Endpoint*" بٹن پر کلک کر کے انفیرنس API تک رسائی حاصل کر سکتے ہیں۔ متبادل طور پر، ویب API اینڈ پوائنٹ `ACA_APP_ENDPOINT` کے تحت `./infra/inference.config.json` میں اور آؤٹ پٹ پینل میں بھی مل سکتا ہے۔
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ur.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.ur.png)
 
 > **نوٹ:** انفیرنس اینڈ پوائنٹ کو مکمل طور پر فعال ہونے میں چند منٹ لگ سکتے ہیں۔
 

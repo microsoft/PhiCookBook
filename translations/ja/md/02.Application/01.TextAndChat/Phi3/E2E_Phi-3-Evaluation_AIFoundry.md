@@ -19,9 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下はAzure AI Foundryの評価プロセスです。
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ja.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.ja.png)
 
-*画像出典: [生成 AI の可観測性](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*画像出典: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
 >
@@ -55,9 +55,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 AIモデルが倫理的かつ安全であることを保証するために、Microsoftの責任あるAI原則に基づいて評価することが重要です。Azure AI Foundryでは、安全性評価により、モデルがジャイルブレイク攻撃に対してどれほど脆弱か、有害なコンテンツを生成する可能性がどの程度あるかを評価できます。これはこれらの原則に直接沿ったものです。
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.ja.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.ja.png)
 
-*画像出典: [生成 AI の可観測性](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*画像出典: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### Microsoftの責任あるAI原則
 
@@ -75,12 +75,12 @@ Microsoftの責任あるAI原則には以下が含まれます：
 
 - **説明責任**：AIシステムの設計・展開者は、そのシステムの動作に対して責任を負うべきです。組織は業界標準を活用して説明責任の基準を策定すべきです。これにより、AIシステムが人々の生活に影響を与える決定の最終権限とならず、人間が高度に自律的なAIシステムを意味のある形で制御し続けることが保証されます。
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.ja.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.ja.png)
 
-*画像出典: [責任ある AI とは?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
+*画像出典: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> Microsoftの責任あるAI原則について詳しくは、[責任ある AI とは?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)をご覧ください。
+> Microsoftの責任あるAI原則について詳しくは、[What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)をご覧ください。
 
 #### 安全性指標
 
@@ -93,15 +93,15 @@ Microsoftの責任あるAI原則には以下が含まれます：
 
 これらの側面を評価することで、AIモデルが有害または攻撃的なコンテンツを生成しないことを保証し、社会的価値観や規制基準に適合させます。
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.ja.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.ja.png)
 
 ### 性能評価の紹介
 
 AIモデルが期待通りに動作していることを確認するために、性能指標に基づいて評価することが重要です。Azure AI Foundryでは、性能評価により、モデルが正確で関連性があり一貫した応答を生成する効果を評価できます。
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.ja.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.ja.png)
 
-*画像出典: [生成 AI の可観測性](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*画像出典: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### 性能指標
 
@@ -116,7 +116,7 @@ AIモデルが期待通りに動作していることを確認するために、
 
 これらの指標により、モデルが正確で関連性があり一貫した応答を生成する能力を評価できます。
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.ja.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.ja.png)
 
 ## **シナリオ2: Azure AI FoundryでのPhi-3 / Phi-3.5モデルの評価**
 
@@ -151,7 +151,7 @@ AIモデルが期待通りに動作していることを確認するために、
 
 1. ナビゲーションメニューから **+ New hub** を選択します。
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.ja.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.ja.png)
 
 1. 以下の作業を行います：
 
@@ -162,7 +162,7 @@ AIモデルが期待通りに動作していることを確認するために、
     - 使用する **Connect Azure AI Services** を選択します（必要に応じて新規作成）。
     - **Connect Azure AI Search** は **Skip connecting** を選択します。
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.ja.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.ja.png)
 
 1. **Next** を選択します。
 
@@ -172,11 +172,11 @@ AIモデルが期待通りに動作していることを確認するために、
 
 1. ナビゲーションメニューから **+ New project** を選択します。
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ja.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.ja.png)
 
 1. **Project name** を入力します。一意の値である必要があります。
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ja.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.ja.png)
 
 1. **Create a project** を選択します。
 
@@ -192,17 +192,17 @@ AIモデルが期待通りに動作していることを確認するために、
 
 1. 左側のタブから **Endpoints** を選択します。
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.ja.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.ja.png)
 
 1. 作成したエンドポイントを選択します。
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.ja.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.ja.png)
 
 1. ナビゲーションメニューから **Consume** を選択します。
 
 1. **REST endpoint** と **Primary key** をコピーします。
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.ja.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.ja.png)
 
 #### カスタム接続を追加する
 
@@ -214,11 +214,11 @@ AIモデルが期待通りに動作していることを確認するために、
 
 1. **+ New connection** を選択します。
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.ja.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.ja.png)
 
 1. ナビゲーションメニューから **Custom keys** を選択します。
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.ja.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.ja.png)
 
 1. 以下の作業を行います：
 
@@ -228,7 +228,7 @@ AIモデルが期待通りに動作していることを確認するために、
     - キー名に **key** を入力し、Azure ML Studio からコピーしたキーを値の欄に貼り付けます。
     - キーを追加した後、キーが漏洩しないように **is secret** を選択します。
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.ja.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.ja.png)
 
 1. **Add connection** を選択します。
 
@@ -242,15 +242,15 @@ Azure AI Foundry にカスタム接続を追加しました。次に、以下の
 
 1. ナビゲーションメニューから **+ Create** を選択します。
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.ja.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.ja.png)
 
 1. ナビゲーションメニューから **Chat flow** を選択します。
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.ja.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.ja.png)
 
 1. 使用する **Folder name** を入力します。
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.ja.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.ja.png)
 
 1. **Create** を選択します。
 
@@ -287,7 +287,7 @@ Azure AI Foundry にカスタム接続を追加しました。次に、以下の
 
     - **Save** を選択します。
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.ja.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.ja.png)
 
 1. *integrate_with_promptflow.py* に以下のコードを追加し、Prompt flow でカスタム Phi-3 / Phi-3.5 モデルを使用できるようにします。
 
@@ -350,14 +350,14 @@ Azure AI Foundry にカスタム接続を追加しました。次に、以下の
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.ja.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.ja.png)
 
 > [!NOTE]
-> Azure AI Foundry での Prompt flow の詳細な使い方については、[Microsoft Foundry ポータルでのプロンプト フロー](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) を参照してください。
+> Azure AI Foundry での Prompt flow の詳細な使い方については、[Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) を参照してください。
 
 1. **Chat input** と **Chat output** を選択して、モデルとのチャットを有効にします。
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.ja.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.ja.png)
 
 1. これでファインチューニング済み Phi-3 / Phi-3.5 モデルとチャットする準備が整いました。次の演習では、Prompt flow を起動し、ファインチューニング済みモデルとチャットする方法を学びます。
 
@@ -365,32 +365,32 @@ Azure AI Foundry にカスタム接続を追加しました。次に、以下の
 >
 > 再構築したフローは以下の画像のようになります：
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.ja.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.ja.png)
 >
 
 #### Prompt flow の起動
 
 1. **Start compute sessions** を選択して Prompt flow を起動します。
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.ja.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.ja.png)
 
 1. **Validate and parse input** を選択してパラメーターを更新します。
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.ja.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.ja.png)
 
 1. **connection** の **Value** に、作成したカスタム接続を選択します。例：*connection*。
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.ja.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.ja.png)
 
 #### ファインチューニング済み Phi-3 / Phi-3.5 モデルとチャットする
 
 1. **Chat** を選択します。
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.ja.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.ja.png)
 
 1. 結果の例は以下の通りです：これでファインチューニング済み Phi-3 / Phi-3.5 モデルとチャットできます。ファインチューニングに使用したデータに基づいた質問をすることを推奨します。
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.ja.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.ja.png)
 
 ### Phi-3 / Phi-3.5 モデルを評価するための Azure OpenAI のデプロイ
 
@@ -402,7 +402,7 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
 
 1. 作成した Azure AI Foundry プロジェクトに移動します。
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ja.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.ja.png)
 
 1. 作成したプロジェクト内で、左側のタブから **Deployments** を選択します。
 
@@ -410,11 +410,11 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
 
 1. **Deploy base model** を選択します。
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.ja.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.ja.png)
 
 1. 使用したい Azure OpenAI モデルを選択します。例：**gpt-4o**。
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.ja.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.ja.png)
 
 1. **Confirm** を選択します。
 
@@ -426,17 +426,17 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
 
 1. 作成した Azure AI Foundry プロジェクトに移動します。
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ja.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.ja.png)
 
 1. 作成したプロジェクト内で、左側のタブから **Evaluation** を選択します。
 
 1. ナビゲーションメニューから **+ New evaluation** を選択します。
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.ja.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.ja.png)
 
 1. **Prompt flow** 評価を選択します。
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.ja.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.ja.png)
 
 1. 以下の作業を行います：
 
@@ -444,7 +444,7 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
     - タスクタイプとして **Question and answer without context** を選択します。これは、このチュートリアルで使用する **ULTRACHAT_200k** データセットにコンテキストが含まれていないためです。
     - 評価したい Prompt flow を選択します。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.ja.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.ja.png)
 
 1. **Next** を選択します。
 
@@ -453,7 +453,7 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
     - **Add your dataset** を選択してデータセットをアップロードします。例として、**ULTRACHAT_200k** データセットをダウンロードした際に含まれるテストデータファイル *test_data.json1* をアップロードできます。
     - データセットに合った **Dataset column** を選択します。例として、**ULTRACHAT_200k** データセットを使用する場合は **${data.prompt}** を選択します。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.ja.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.ja.png)
 
 1. **Next** を選択します。
 
@@ -462,7 +462,7 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
     - 使用したいパフォーマンスおよび品質のメトリクスを選択します。
     - 評価用に作成した Azure OpenAI モデルを選択します。例：**gpt-4o**。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.ja.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.ja.png)
 
 1. リスクと安全性のメトリクスを設定します：
 
@@ -472,7 +472,7 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
     - **answer** のデータソースを **{$run.outputs.answer}** に設定します。
     - **ground_truth** のデータソースを **{$data.message}** に設定します。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.ja.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.ja.png)
 
 1. **Next** を選択します。
 
@@ -489,17 +489,17 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
 
     - モデルが一貫性があり、流暢で関連性の高い応答を生成する効果を評価します。
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.ja.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.ja.png)
 
 1. リスクと安全性の指標：
 
     - モデルの出力が安全であり、責任あるAIの原則に沿って、有害または攻撃的な内容を避けていることを確認します。
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.ja.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.ja.png)
 
 1. 下にスクロールして**詳細な指標結果**を確認できます。
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.ja.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.ja.png)
 
 1. パフォーマンスと安全性の両方の指標に対してカスタムのPhi-3 / Phi-3.5モデルを評価することで、モデルが効果的であるだけでなく、責任あるAIの実践にも準拠していることを確認でき、実際の運用に適していることがわかります。
 
@@ -509,7 +509,7 @@ Azure AI Foundry で Phi-3 / Phi-3.5 モデルを評価するには、Azure Open
 
 Azure AI FoundryでPrompt flowと統合されたファインチューニング済みのPhi-3モデルを無事に評価できました。これは、AIモデルが高いパフォーマンスを発揮するだけでなく、Microsoftの責任あるAI原則に準拠し、信頼性の高いAIアプリケーションを構築するための重要なステップです。
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ja.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.ja.png)
 
 ## Azureリソースのクリーンアップ
 
@@ -524,7 +524,7 @@ Azure AI FoundryでPrompt flowと統合されたファインチューニング�
 
 #### ドキュメント
 
-- [責任ある AI ダッシュボードを使ったAIシステムの評価](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Responsible AIダッシュボードを使ったAIシステムの評価](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [生成AIの評価と監視指標](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
 - [Azure AI Foundryドキュメント](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flowドキュメント](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
@@ -541,8 +541,4 @@ Azure AI FoundryでPrompt flowと統合されたファインチューニング�
 - [生成AIアプリケーションの評価](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
 **免責事項**：  
-
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
-
-
-

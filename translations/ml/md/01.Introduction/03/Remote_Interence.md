@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 റിമോട്ട് പരിസരത്തിൽ അഡാപ്റ്ററുകൾ ട്രെയിൻ ചെയ്‌തശേഷം, മോഡലുമായി ഇടപെടാൻ ഒരു ലളിതമായ Gradio അപ്ലിക്കേഷൻ ഉപയോഗിക്കുക.
 
-![ഫൈൻ-ട്യൂൺ പൂർത്തിയായി](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ml.png)
+![ഫൈൻ-ട്യൂൺ പൂർത്തിയായി](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ml.png)
 
 ### Azure റിസോഴ്‌സുകൾ പ്രൊവിഷൻ ചെയ്യുക
 റിമോട്ട് ഇൻഫറൻസിനായി Azure റിസോഴ്‌സുകൾ സജ്ജീകരിക്കാൻ, കമാൻഡ് പെലറ്റിൽ നിന്ന് `AI Toolkit: Provision Azure Container Apps for inference` 실행 ചെയ്യേണ്ടതാണ്. ഈ സജ്ജീകരണത്തിനിടെ നിങ്ങളുടെ Azure Subscription અને resource group തിരഞ്ഞെടുക്കാൻ നിങ്ങളോട് ആവശ്യപ്പെടും.  
-![ഇൻഫറൻസ് റിസോഴ്‌സ് പ്രൊവിഷൻ ചെയ്യുക](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ml.png)
+![ഇൻഫറൻസ് റിസോഴ്‌സ് പ്രൊവിഷൻ ചെയ്യുക](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ml.png)
    
  by default, inference-ന്റെ subscription և resource group ഫൈൻ-ട്യൂണിംഗ് സമയത്ത് ഉപയോഗിച്ചവയുമായി സാമ്യം കാണും. ഇൻഫറൻസ് അതേ Azure Container App Environment ഉപയോഗിക്കുകയും ഫൈൻ-ട്യൂണിംഗ് ഘട്ടത്തിൽ സൃഷ്ടിച്ച Azure Files-ൽ സൂക്ഷിച്ചിരിക്കുന്ന മോഡൽ և മോഡൽ അഡാപ്റ്റര്‍ ആക്സസ് ചെയ്യുകയും ചെയ്യും.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### ഇൻഫറൻസിനുള്ള ഡിപ്ലോയ്മെന്റ്  
 നിങ്ങൾ ഇൻഫറൻസ് കോഡ് തിരുത്തണമെങ്കിൽ അല്ലെങ്കിൽ ഇൻഫറൻസ് മോഡൽ റീലോഡ് ചെയ്യണമെങ്കിൽ, ദയവായി `AI Toolkit: Deploy for inference` കമാൻഡ് നിർവഹിക്കണം. ഇത് നിങ്ങളുടെ പുതിയ കോഡ് ACA യുമായി സിംക്രനൈസ് ചെയ്ത് റിപ്ലിക്കയെ പുനരാരംഭിക്കും.  
 
-![ഇൻഫറൻസിനായി ഡിപ്ലോയ് ചെയ്യുക](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ml.png)
+![ഇൻഫറൻസിനായി ഡിപ്ലോയ് ചെയ്യുക](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ml.png)
 
 ഡിപ്ലോയ്മെന്റ് വിജയകരമായി പൂർത്തിയായപ്പോൾ, മോഡൽ ഇപ്പോൾ ഈ എൻഡ്‌പോയിൻറ് ഉപയോഗിച്ച് വിലയിരുത്താൻ റെഡിയാണ്.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 VSCode നോട്ടിഫിക്കേഷനിൽ പ്രദർശിപ്പിക്കുന്ന "*Go to Inference Endpoint*" ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് നിങ്ങൾ ഇൻഫറൻസ് API ആക്‌സസ് ചെയ്യலாம். বিকল্পമായി, വെബ് API എൻഡ്‌പോയിൻറ് `ACA_APP_ENDPOINT` ൽ `./infra/inference.config.json` ഫയലിലും ഔട്ട്‌പുട്ട് പാനലിലും കണ്ടെത്താവുന്നതാണ്.
 
-![ആപ്പ് എൻഡ്‌പോയിന്റ്](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ml.png)
+![ആപ്പ് എൻഡ്‌പോയിന്റ്](../../../../../translated_images/notification-deploy.446e480a44b1be58.ml.png)
 
 > **ശ്രദ്ധിക്കുക:** ഇൻഫറൻസ് എൻഡ്‌പോയിന്റ് പൂര്‍ണമായും പ്രവർത്തിക്കാൻ ചില നിമിഷങ്ങൾ എടുത്തേക്കാം.
 

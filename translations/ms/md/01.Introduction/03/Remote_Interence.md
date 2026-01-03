@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Selepas penyesuaian adapter dilakukan dalam persekitaran jauh, gunakan aplikasi Gradio yang ringkas untuk berinteraksi dengan model.
 
-![Penyesuaian selesai](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ms.png)
+![Penyesuaian selesai](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ms.png)
 
 ### Menyediakan Sumber Azure  
 Anda perlu menyediakan Sumber Azure untuk inferens jauh dengan menjalankan `AI Toolkit: Provision Azure Container Apps for inference` dari palet arahan. Semasa penyediaan ini, anda akan diminta untuk memilih Langganan Azure dan kumpulan sumber anda.  
-![Menyediakan Sumber Inferens](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ms.png)
+![Menyediakan Sumber Inferens](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ms.png)
    
 Secara lalai, langganan dan kumpulan sumber untuk inferens harus sama dengan yang digunakan untuk penyesuaian. Inferens akan menggunakan Persekitaran Azure Container App yang sama dan mengakses model serta adapter model yang disimpan dalam Azure Files, yang dihasilkan semasa langkah penyesuaian. 
 
@@ -24,7 +24,7 @@ Secara lalai, langganan dan kumpulan sumber untuk inferens harus sama dengan yan
 ### Penyebaran untuk Inferens  
 Jika anda ingin mengubah kod inferens atau memuat semula model inferens, sila jalankan arahan `AI Toolkit: Deploy for inference`. Ini akan menyelaraskan kod terkini anda dengan ACA dan memulakan semula replika.  
 
-![Sebarkan untuk inferens](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ms.png)
+![Sebarkan untuk inferens](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ms.png)
 
 Selepas penyebaran berjaya, model kini sedia untuk dinilai menggunakan titik akhir ini.
 
@@ -32,7 +32,7 @@ Selepas penyebaran berjaya, model kini sedia untuk dinilai menggunakan titik akh
 
 Anda boleh mengakses API inferens dengan mengklik butang "*Go to Inference Endpoint*" yang dipaparkan dalam notifikasi VSCode. Sebagai alternatif, titik akhir web API boleh didapati di bawah `ACA_APP_ENDPOINT` dalam `./infra/inference.config.json` dan dalam panel output.
 
-![Titik Akhir Aplikasi](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ms.png)
+![Titik Akhir Aplikasi](../../../../../translated_images/notification-deploy.446e480a44b1be58.ms.png)
 
 > **Note:** Titik akhir inferens mungkin memerlukan beberapa minit untuk beroperasi sepenuhnya.
 

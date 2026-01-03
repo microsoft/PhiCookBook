@@ -23,7 +23,7 @@ In this E2E sample, you will learn how to fine-tune the Phi-3 model and integrat
 
 Here is an overview of this E2E sample.
 
-![Phi-3 ఫైన్‌ట్యూనింగ్_PromptFlow_ఇంటిగ్రేషన్ అవలోకనం](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.te.png)
+![Phi-3 ఫైన్‌ట్యూనింగ్_PromptFlow_ఇంటిగ్రేషన్ అవలోకనం](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.te.png)
 
 ### విషయంలో సూచిక
 
@@ -49,13 +49,13 @@ Here is an overview of this E2E sample.
 
 1. పోర్టల్ పేజీపై ఉన్న **శోధన బార్**లో *azure machine learning* టైప్ చేసి కనిపించే ఎంపికల నుండి **Azure Machine Learning** ను ఎంచుకోండి.
 
-    ![azure machine learning టైప్ చేయండి](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.te.png)
+    ![azure machine learning టైప్ చేయండి](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.te.png)
 
 1. నావిగేషన్ మెనూలోని **+ Create** ను ఎంచుకోండి.
 
 1. నావిగేషన్ మెనూలోని **New workspace** ను ఎంచుకోండి.
 
-    ![New workspace ను ఎంచుకోండి](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.te.png)
+    ![New workspace ను ఎంచుకోండి](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.te.png)
 
 1. క్రింద ఇచ్చిన పనులను చేయండి:
 
@@ -68,7 +68,7 @@ Here is an overview of this E2E sample.
     - ఉపయోగించడానికి కావలసిన **Application insights** ను ఎంచుకోండి (తీసుకోనని జరిగినా కొత్తది సృష్టించండి).
     - ఉపయోగించడానికి కావలసిన **Container registry** ను ఎంచుకోండి (తీసుకోనని జరిగినా కొత్తది సృష్టించండి).
 
-    ![AZML ఫారమ్ ను నింపండి.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.te.png)
+    ![AZML ఫారమ్ ను నింపండి.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.te.png)
 
 1. **Review + Create** ను ఎంచుకోండి.
 
@@ -92,7 +92,7 @@ Here is an overview of this E2E sample.
     - ఉపయోగించవలసిన **Virtual machine family**ను ఎంచుకోండి. ఉదాహరణకు, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* ను ఎంచుకోండి, ఇది *Standard_NC24ads_A100_v4* GPU ని కలిగి ఉంటుంది.
     - నావిగేషన్ మెనూనుండి **Request quota** ని ఎంచుకోండి.
 
-        ![క్వోటా అభ్యర్థించండి.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.te.png)
+        ![క్వోటా అభ్యర్థించండి.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.te.png)
 
     - Request quota పేజీలో, మీరు ఉపయోగించదలిచిన **New cores limit** ను నమోదు చేయండి. ఉదాహరణకు, 24.
     - Request quota పేజీలో, GPU కొటా అభ్యర్థించడానికి **Submit** ను ఎంచుకోండి.
@@ -108,11 +108,11 @@ Here is an overview of this E2E sample.
 
 1. పోర్టల్ పేజీపై ఉన్న **శోధన బార్**లో *managed identities* టైప్ చేసి కనిపించే ఎంపికల నుండి **Managed Identities** ను ఎంచుకోండి.
 
-    ![managed identities టైప్ చేయండి.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.te.png)
+    ![managed identities టైప్ చేయండి.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.te.png)
 
 1. **+ Create** ను ఎంచుకోండి.
 
-    ![Create ఎంచుకోండి.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.te.png)
+    ![Create ఎంచుకోండి.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.te.png)
 
 1. క్రింద ఇచ్చిన పనులను చేయండి:
 
@@ -139,7 +139,7 @@ Here is an overview of this E2E sample.
     - ఉపయోగించవలసిన **Resource group** ను ఎంచుకోండి.
     - **Role** గా **Contributor** ను ఎంచుకోండి.
 
-    ![Contributor రోల్ వివరాలు నింపండి.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.te.png)
+    ![Contributor రోల్ వివరాలు నింపండి.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.te.png)
 
 1. **Save** ను ఎంచుకోండి.
 
@@ -147,7 +147,7 @@ Here is an overview of this E2E sample.
 
 1. పోర్టల్ పేజీపై ఉన్న **శోధన బార్**లో *storage accounts* టైప్ చేసి కనిపించే ఎంపికల నుండి **Storage accounts** ను ఎంచుకోండి.
 
-    ![storage accounts టైప్ చేయండి.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.te.png)
+    ![storage accounts టైప్ చేయండి.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.te.png)
 
 1. మీరు సృష్టించిన Azure Machine Learning workspaceకి సంబంధించి ఉన్న storage account ను ఎంచుకోండి. ఉదాహరణకు, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Here is an overview of this E2E sample.
     - నావిగేషన్ మెనూలోని **+ Add** ను ఎంచుకోండి.
     - నావిగేషన్ మెనూలోని **Add role assignment** ను ఎంచుకోండి.
 
-    ![రోల్ జోడించండి.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.te.png)
+    ![రోల్ జోడించండి.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.te.png)
 
 1. Add role assignment పేజీలో, క్రింద ఇచ్చిన పనులను చేయండి:
 
@@ -171,7 +171,7 @@ Here is an overview of this E2E sample.
     - Select managed identities పేజీలో, మీరు సృష్టించిన Manage Identity ను ఎంచుకోండి. ఉదాహరణకు, *finetunephi-managedidentity*.
     - Select managed identities పేజీలో, **Select** ను ఎంచుకోండి.
 
-    ![Managed identity ఎంచుకోండి.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.te.png)
+    ![Managed identity ఎంచుకోండి.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.te.png)
 
 1. **Review + assign** ను ఎంచుకోండి.
 
@@ -179,7 +179,7 @@ Here is an overview of this E2E sample.
 
 1. పోర్టల్ పేజీపై ఉన్న **శోధన బార్**లో *container registries* టైప్ చేసి కనిపించే ఎంపికల నుండి **Container registries** ను ఎంచుకోండి.
 
-    ![container registries టైప్ చేయండి.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.te.png)
+    ![container registries టైప్ చేయండి.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.te.png)
 
 1. Azure Machine Learning workspaceకి సంబంధించిన container registry ను ఎంచుకోండి. ఉదాహరణకు, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ In this exercise, you will:
 
 1. మీరు సృష్టించిన *finetune-phi* ఫోల్డర్‌ను ఎంచుకోండి, ఇది *C:\Users\yourUserName\finetune-phi* వద్ద ఉంది.
 
-    ![ప్రాజెక్ట్ ఫోల్డర్ తెరవండి.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.te.png)
+    ![ప్రాజెక్ట్ ఫోల్డర్ తెరవండి.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.te.png)
 
 1. Visual Studio Code యొక్క ఎడమ ప్యాన్‌లో రైట్‑క్లిక్ చేసి **New File** ఎంచుకుని *download_dataset.py* নামে ఒక కొత్త ఫైల్ సృష్టించండి.
 
@@ -298,7 +298,7 @@ In this exercise, you will:
 
 1. Visual Studio Code యొక్క ఎడమ ప్యాన్‌లో రైట్‑క్లిక్ చేసి **New File** ఎంచుకుని *deploy_model.py* అనే కొత్త ఫైల్ సృష్టించండి.
 
-    ![కొత్త ఫైల్ సృష్టించండి.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.te.png)
+    ![కొత్త ఫైల్ సృష్టించండి.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.te.png)
 
 1. Visual Studio Code యొక్క ఎడమ ప్యాన్‌లో రైట్‑క్లిక్ చేసి **New Folder** ఎంచుకుని *finetuning_dir* అనే కొత్త ఫోల్డర్ సృష్టించండి.
 
@@ -374,28 +374,28 @@ In this exercise, you will:
     - మీరు ప్రస్తుతం ఉపయోగిస్తున్న Azure Subscription ను ఎంచుకోండి.
     - మీ Subscription IDను కాపీ చేసి *config.py* ఫైల్‌లో పె pasted చేయండి.
 
-    ![సబ్స్క్రిప్షన్ ID కనుగొనండి.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.te.png)
+    ![సబ్స్క్రిప్షన్ ID కనుగొనండి.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.te.png)
 
 1. Azure Workspace Nameను జోడించడానికి ఈ క్రింది పనుల్ని చేయండి:
 
     - మీరు సృష్టించిన Azure Machine Learning రిసోర్స్‌కి నావిగేట్ చేయండి.
     - మీ ఖాతా పేరు ను *config.py* ఫైల్‌లో కాపీ చేసి పేస్ట్ చేయండి.
 
-    ![Azure Machine Learning పేరు కనుగొనండి.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.te.png)
+    ![Azure Machine Learning పేరు కనుగొనండి.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.te.png)
 
 1. Azure Resource Group Nameను జోడించడానికి ఈ క్రింది పనుల్ని చేయండి:
 
     - మీరు సృష్టించిన Azure Machine Learning రిసోర్స్‌కి నావిగేట్ చేయండి.
     - మీ Azure Resource Group Name ను *config.py* ఫైల్‌లో కాపీ చేసి పేస్ట్ చేయండి.
 
-    ![రిసోర్స్ గ్రూప్ పేరు కనుగొనండి.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.te.png)
+    ![రిసోర్స్ గ్రూప్ పేరు కనుగొనండి.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.te.png)
 
 2. Azure Managed Identity పేరును జోడించడానికి ఈ క్రింది పనుల్ని చేయండి:
 
     - మీరు సృష్టించిన Managed Identities రిసోర్స్‌లోకి నావిగేట్ చేయండి.
     - మీ Azure Managed Identity పేరును *config.py* ఫైల్‌లో కాపీ చేసి పేస్ట్ చేయండి.
 
-    ![UAI కనుగొనండి.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.te.png)
+    ![UAI కనుగొనండి.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.te.png)
 
 ### Prepare dataset for fine-tuning
 
@@ -509,7 +509,7 @@ In this exercise, you will:
 
 1. మీరు ఉపయోగించవలసిన Azure subscription ను ఎంచుకోండి.
 
-    ![Azure ఖాతాలో లాగిన్ అవడం.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.te.png)
+    ![Azure ఖాతాలో లాగిన్ అవడం.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.te.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ In this exercise, you will:
 
 1. ఈ వ్యాయామంలో, మీరు Azure Machine Learning ఉపయోగించి విజయవంతంగా Phi-3 మోడల్‌ను ఫైన్‑ట్యూన్ చేశారు. *setup_ml.py* స్క్రిప్ట్‌ను రన్ చేయడం ద్వారా మీరు Azure Machine Learning వాతావరణాన్ని సెటప్ చేసి *fine_tune.py* ఫైల్‌లో నిర్వచించిన ఫైన్‑ట్యూనింగ్ ప్రక్రియను ప్రారంభించారు. దయచేసి గమనించండి ఫైన్‑ట్యూనింగ్ ప్రక్రియకు ఎక్కువ సమయం పట్టవచ్చు. `python setup_ml.py` కమాండ్‌ను రన్ చేసిన తర్వాత ప్రక్రియ పూర్తి అయ్యే వరకు నిరీక్షించాల్సి ఉంటాయి. మీరు టెర్మినల్‌లో అందించిన లింక్ ద్వారా Azure Machine Learning పోర్టల్‌లో ఫైన్‑ట్యూనింగ్ జాబ్ స్థితిని మానిటర్ చేయవచ్చు.
 
-    ![ఫైన్‑ట్యూనింగ్ జాబ్ చూడండి.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.te.png)
+    ![ఫైన్‑ట్యూనింగ్ జాబ్ చూడండి.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.te.png)
 
 ### Deploy the fine-tuned model
 
@@ -1080,11 +1080,11 @@ In this exercise, you will:
 
 1. ఎడమవైపు ట్యాబ్ నుండి **Endpoints**ను ఎంచుకోండి.
 
-    ![ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.te.png)
+    ![ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.te.png)
 
 2. మీరు సృష్టించిన ఎండ్పాయింట్‌ను ఎంచుకోండి.
 
-    ![మీరు సృష్టించిన ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.te.png)
+    ![మీరు సృష్టించిన ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.te.png)
 
 3. この పేజీలో, మీరు డిప్లాయ్‌మెంట్ ప్రక్రియ సమయంలో సృష్టించిన ఎండ్పాయింట్(ల)ను నిర్వహించవచ్చు.
 
@@ -1103,7 +1103,7 @@ In this exercise, you will:
 1. మీ **REST endpoint**ను నకలుచేసి *config.py* ఫైల్‌లో `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ను మీ **REST endpoint**తో మార్చి పేస్ట్ చేయండి.
 1. మీ **Primary key**ను నకలుచేసి *config.py* ఫైల్‌లో `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ను మీ **Primary key**తో మార్చి పేస్ట్ చేయండి.
 
-    ![API కీ మరియు ఎండ్పాయింట్ uriను కాపీ చేయండి.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.te.png)
+    ![API కీ మరియు ఎండ్పాయింట్ uriను కాపీ చేయండి.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.te.png)
 
 #### *flow.dag.yml* ఫైల్‌లో కోడ్ జోడించండి
 
@@ -1212,7 +1212,7 @@ In this exercise, you will:
 
 1. ఫలితాల ఉదాహరణ — ఇప్పుడు మీరు మీ కస్టమ్ Phi-3 మోడల్‌తో చాట్ చేయవచ్చు. ఫైన్-ట్యూనింగ్ కోసం ఉపయోగించిన డేటాపై ఆధారంగా ప్రశ్నలు అడగడం సిఫార్సు చేయబడుతుంది.
 
-    ![Prompt flow ఉదాహరణ.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.te.png)
+    ![Prompt flow ఉదాహరణ.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.te.png)
 
 ---
 

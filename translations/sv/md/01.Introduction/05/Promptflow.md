@@ -41,7 +41,7 @@ Behåll versionskontroll och dela kunskap effektivt. Effektivisera hela prompt e
 
 I Microsoft Prompt Flow spelar utvärdering en avgörande roll för att bedöma hur väl dina AI-modeller presterar. Låt oss utforska hur du kan anpassa utvärderingsflöden och mätvärden inom Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.sv.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.sv.png)
 
 **Förstå utvärdering i Prompt Flow**
 

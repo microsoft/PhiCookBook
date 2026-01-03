@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) ni jukwaa la chanzo huria lililoundwa kusimamia mzunguko mzima wa maisha wa kujifunza mashine.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.sw.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.sw.png)
 
 MLFlow hutumika kusimamia mzunguko wa maisha wa ML, ikiwa ni pamoja na majaribio, kurudisha matokeo, uenezaji na rejista kuu ya modeli. MLflow kwa sasa hutoa vipengele vinne.
 
@@ -22,7 +22,7 @@ MLFlow hutumika kusimamia mzunguko wa maisha wa ML, ikiwa ni pamoja na majaribio
 
 Inajumuisha uwezo wa kufuatilia majaribio, kufunga msimbo kwa utekelezaji unaorudiwa, na kushiriki na kusambaza modeli. MLFlow imeunganishwa na Databricks na inaunga mkono maktaba mbalimbali za ML, hivyo haitegemei maktaba yoyote maalum. Inaweza kutumika na maktaba yoyote ya kujifunza mashine na katika lugha yoyote ya programu, kwani hutoa REST API na CLI kwa urahisi.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.sw.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.sw.png)
 
 Sifa kuu za MLFlow ni pamoja na:
 
@@ -37,7 +37,7 @@ MLFlow pia inaunga mkono mzunguko wa MLOps, unaojumuisha kuandaa data, kusajili 
 
 Katika sampuli hii ya E2E tutaonyesha mbinu mbili tofauti za kujenga wrapper kuzunguka modeli ndogo ya lugha Phi-3 (SLM) kisha kuendesha kama modeli ya MLFlow ama kwa ndani au kwenye wingu, mfano, katika eneo la kazi la Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.sw.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.sw.png)
 
 | Mradi | Maelezo | Mahali |
 | ------------ | ----------- | -------- |

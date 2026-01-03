@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ದೃಶ್ಯಗಳು
 
-![MS ಸೇವೆಗಳೊಂದಿಗೆ ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.kn.png)
+![MS ಸೇವೆಗಳೊಂದಿಗೆ ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.kn.png)
 
 **ಪ್ಲ್ಯಾಟ್‌ಫಾರ್ಮ್** ಇದರಲ್ಲಿ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, ಮತ್ತು ONNX Runtime ಮುಂತಾದ ವಿವಿಧ ತಂತ್ರಜ್ಞಾನಗಳು ಸೇರಿವೆ. 
 
@@ -24,7 +24,7 @@ Microsoft ತಂತ್ರಜ್ಞಾನಗಳೊಂದಿಗೆ ಫೈನ್‑
 
 ಹೋಸ್ಟ್ ಮಾಡಲಾದ ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಬಳಸಿ ಮಾದರಿಯನ್ನು ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಿ, ಗಣನೆ (compute) ಸೃಷ್ಟಿಸಲು ಮತ್ತು ನಿರ್ವಹಿಸಲು ಅಗತ್ಯವಿಲ್ಲದೆ.
 
-![MaaS ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.kn.png)
+![MaaS ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.kn.png)
 
 Serverless ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ Phi-3-mini ಮತ್ತು Phi-3-medium ಮಾದರಿಗಳಿಗಾಗಿ ಲಭ್ಯವಿದೆ, ಇದರಿಂದ ಡೆವಲಪರ್‌ಗಳು ಗಣನೆ ವ್ಯವಸ್ಥೆಗಳನ್ನು ವ್ಯವಸ್ಥೆ ಮಾಡಬೇಕಾಗದೆ ಕ್ಲೌಡ್ ಮತ್ತು ಎಡ್ಜ್ ಸನ್ನಿವೇಶಗಳಿಗೆ ಮಾದರಿಗಳನ್ನು ಬೇಗ ಮತ್ತು ಸುಲಭವಾಗಿ ಕಸ್ಟಮೈಸ್ ಮಾಡಿಕೊಳ್ಳಬಹುದು. ನಾವು Phi-3-small ಅನ್ನು Models-as-a-Service ಮೂಲಕ ಈಗ ಲಭ್ಯವಿದೆ ಎಂದು ಕೂಡ ಪ್ರಕಟಿಸಿದ್ದೇವೆ, ಆದ್ದರಿಂದ ಡೆವಲಪರ್‌ಗಳು ಆಧಾರದ ರಚನೆಯಿಲ್ಲದೆ ಬೇಗ ಮತ್ತು ಸುಲಭವಾಗಿ AI ಅಭಿವೃದ್ಧಿಯನ್ನು ಪ್ರಾರಂಭಿಸಬಹುದು.
 
@@ -32,7 +32,7 @@ Serverless ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ Phi-3-mini ಮತ್ತು
 
 ಬಳಕೆದಾರರು ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಲು ತಮ್ಮದೇ ಗಣನಾ ಸಾಧನಗಳನ್ನು ನಿರ್ವಹಿಸುತ್ತಾರೆ.
 
-![MaaP ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.kn.png)
+![MaaP ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.kn.png)
 
 [ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಉದಾಹರಣೆ](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Serverless ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ Phi-3-mini ಮತ್ತು
 
 ## ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಕಾರ್ಯಕ್ಷಮತೆ ಉದಾಹರಣೆಗಳು
 
-![ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕಾರ್ಯಕ್ಷಮತೆ](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.kn.png)
+![ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕಾರ್ಯಕ್ಷಮತೆ](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.kn.png)
 
 ---
 

@@ -66,7 +66,7 @@ Azure ML har tilføjet mange funktioner relateret til LLM/SLM, som kombinerer LL
 
 Virksomhedsbrugere kan implementere forskellige modeller til forskellige forretningsscenarier via Modelkataloget og tilbyde tjenester som Model as Service, så virksomhedens udviklere eller brugere kan få adgang.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.da.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.da.png)
 
 Modelkataloget i Azure Machine Learning studio er centrum for at opdage og bruge et bredt udvalg af modeller, der gør det muligt at bygge generative AI-applikationer. Modelkataloget indeholder hundredvis af modeller fra leverandører som Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, inklusive modeller trænet af Microsoft. Modeller fra andre leverandører end Microsoft er Non-Microsoft Products, som defineret i Microsofts Product Terms, og er underlagt de vilkår, der følger med modellen.
 
@@ -76,7 +76,7 @@ Kernen i en maskinlæringspipeline er at opdele en komplet maskinlæringsopgave 
 
 Ved finjustering af SLM / LLM kan vi styre vores data, træning og genereringsprocesser gennem Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.da.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.da.png)
 
 ### **Prompt flow**
 

@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Инсталирајте AI Toolkit за VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.sr.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.sr.png)
 
 
 **[Private Preview]** Једним кликом омогућавање Azure Container Apps за покретање фино подешавања и извођења закључака у облаку.

@@ -28,9 +28,9 @@ En resumen, las NPUs son los genios matemáticos que aceleran las computaciones 
 
 El dispositivo Intel® NPU es un acelerador de inferencia de IA integrado con CPUs cliente de Intel, a partir de la generación Intel® Core™ Ultra (anteriormente conocida como Meteor Lake). Permite la ejecución eficiente en energía de tareas de redes neuronales artificiales.
 
-![Latencia](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.es.png)
+![Latencia](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.es.png)
 
-![Latencia770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.es.png)
+![Latencia770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.es.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Al ejecutar el código, podemos ver el estado de ejecución de la NPU a través del Administrador de tareas.
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.es.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.es.png)
 
 ***Ejemplos*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Este es el resultado de la ejecución
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.es.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.es.png)
 
 ***Ejemplos*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 El formato convertido, así:
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.es.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.es.png)
 
 Carga las rutas del modelo (model_dir), configuraciones relacionadas (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) y dispositivos acelerados por hardware (GPU.0) a través de OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Al ejecutar el código, podemos ver el estado de ejecución de la GPU a través del Administrador de tareas.
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.es.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.es.png)
 
 ***Ejemplos*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

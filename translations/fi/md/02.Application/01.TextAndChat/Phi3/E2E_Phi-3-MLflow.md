@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) on avoimen lähdekoodin alusta, joka on suunniteltu hallitsemaan koneoppimisen koko elinkaarta.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.fi.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.fi.png)
 
 MLFlowa käytetään koneoppimisen elinkaaren hallintaan, mukaan lukien kokeilut, toistettavuus, käyttöönotto ja keskitetty mallirekisteri. MLflow tarjoaa tällä hetkellä neljä komponenttia.
 
@@ -22,7 +22,7 @@ MLFlowa käytetään koneoppimisen elinkaaren hallintaan, mukaan lukien kokeilut
 
 Se sisältää ominaisuuksia kokeilujen seurantaan, koodin pakkaamiseen toistettaviksi ajoiksi sekä mallien jakamiseen ja käyttöönottoon. MLFlow on integroitu Databricksiin ja tukee monia koneoppimiskirjastoja, joten se on kirjasto-riippumaton. Sitä voi käyttää minkä tahansa koneoppimiskirjaston kanssa ja millä tahansa ohjelmointikielellä, sillä se tarjoaa REST-rajapinnan ja komentorivityökalun helppokäyttöisyyttä varten.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.fi.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.fi.png)
 
 MLFlow:n keskeisiä ominaisuuksia ovat:
 
@@ -37,7 +37,7 @@ MLFlow tukee myös MLOps-silmukkaa, joka sisältää datan valmistelun, mallien 
 
 Tässä E2E-esimerkissä demonstroimme kahta eri lähestymistapaa wrapperin rakentamiseen Phi-3-pienelle kielimallille (SLM) ja sen ajamiseen MLFlow-mallina joko paikallisesti tai pilvessä, esimerkiksi Azure Machine Learning -työtilassa.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.fi.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.fi.png)
 
 | Projekti | Kuvaus | Sijainti |
 | ------------ | ----------- | -------- |

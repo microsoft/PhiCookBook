@@ -36,7 +36,7 @@ d. Python 3.8+
 
 Bulut ve uç cihazlarda aynı anda gguf kullanmak istiyorsanız, LlamaEdge, WasmEdge olarak düşünülebilir (WasmEdge, bulut yerel, uç ve merkezi olmayan uygulamalar için uygun, hafif, yüksek performanslı ve ölçeklenebilir bir WebAssembly çalışma zamanı ortamıdır. Sunucusuz uygulamaları, gömülü fonksiyonları, mikroservisleri, akıllı sözleşmeleri ve IoT cihazlarını destekler). gguf’nun nicel modelini LlamaEdge aracılığıyla uç cihazlara ve buluta dağıtabilirsiniz.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.tr.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.tr.jpg)
 
 Kullanım adımları:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Çalıştırma sonucu aşağıdaki gibidir
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.tr.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.tr.png)
 
 ***Örnek kod*** [Phi-3 mini WASM Notebook Örneği](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

@@ -41,7 +41,7 @@ Vzdržujte nadzor različic in učinkovito delite znanje. Poenostavite celoten p
 
 V Microsoft Prompt Flow ima evalvacija ključno vlogo pri ocenjevanju uspešnosti vaših AI modelov. Oglejmo si, kako lahko prilagodite evalvacijske delovne tokove in metrike znotraj Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.sl.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.sl.png)
 
 **Razumevanje evalvacije v Prompt Flow**
 

@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft Olive هي أداة مفتوحة المصدر سهلة الاستخدام لتحسين النماذج يمكنها تغطية كل من الضبط الدقيق والمرجعية في مجال الذكاء الاصطناعي التوليدي. تتطلب فقط إعدادًا بسيطًا، وبالاقتران مع استخدام نماذج لغوية صغيرة مفتوحة المصدر وبيئات التشغيل ذات الصلة (AzureML / GPU محلي، CPU، DirectML)، يمكنك إتمام الضبط الدقيق أو المرجعية للنموذج من خلال التحسين التلقائي، والعثور على أفضل نموذج للنشر على السحابة أو على الأجهزة الطرفية. تتيح للمؤسسات بناء نماذجها الخاصة بالقطاعات الصناعية محليًا وفي السحابة.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.ar.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.ar.png)
 
 ## ضبط دقيق لـ Phi-3 باستخدام Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.ar.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.ar.png)
 
 ## مثال على كود Olive لـ Phi-3
 

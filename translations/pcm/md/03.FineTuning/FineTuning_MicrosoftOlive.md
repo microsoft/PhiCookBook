@@ -32,11 +32,11 @@ E dey consider constraints like accuracy and latency when e dey optimize models.
 
 Microsoft Olive na very easy-to-use open-source model optimization tool wey fit handle both fine-tuning and reference work for generative artificial intelligence. E only need small configuration; combine am with open-source small language models and related runtime environments (AzureML / local GPU, CPU, DirectML), you fit complete the fine-tuning or reference of the model through automatic optimization, and find the best model wey you go deploy to the cloud or on edge devices. E dey allow enterprises build their own industry vertical models on-premises and for the cloud.
 
-![introduction](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.pcm.png)
+![introduction](../../../../translated_images/intro.46086a3f16ec48e2.pcm.png)
 
 ## Phi-3 Fine Tuning with Microsoft Olive 
 
-![Fine-tuning wit Olive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.pcm.png)
+![Fine-tuning wit Olive](../../../../translated_images/olivefinetune.76d09e9b68253681.pcm.png)
 
 ## Phi-3 Olive Sample Code and Example
 For this example you go use Olive to:

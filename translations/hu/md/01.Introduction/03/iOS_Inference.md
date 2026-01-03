@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Az alkalmazás fejlesztési módjaként az Objective-C-t választottam, mert az ONNX Runtime C++ API-jával a Generatív AI használata így jobb kompatibilitást biztosít. Természetesen Swift bridging segítségével is megvalósíthatók a hívások.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.hu.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.hu.png)
 
 ## **5. ONNX kvantált INT4 modell másolása az App projektbe**
 
 Importálni kell az ONNX formátumú INT4 kvantált modellt, amelyet először le kell tölteni.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.hu.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.hu.png)
 
 A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ban.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.hu.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.hu.png)
 
 ## **6. C++ API hozzáadása a ViewControllers-hez**
 
@@ -121,11 +121,11 @@ A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ba
 
 - **a.** Add hozzá a megfelelő C++ fejlécfájlokat a projekthez.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.hu.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.hu.png)
 
 - **b.** Illeszd be az `onnxruntime-genai` dinamikus könyvtárat Xcode-ba.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.hu.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.hu.png)
 
 - **c.** Használd a C mintakódot teszteléshez. További funkciókhoz, például ChatUI-hoz is hozzáadhatsz kiegészítéseket.
 
@@ -162,7 +162,7 @@ A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ba
 
 A beállítások elvégzése után futtathatod az alkalmazást, hogy megtekintsd a Phi-3-mini modell inferálásának eredményét.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.hu.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.hu.jpg)
 
 További mintakódokért és részletes útmutatókért látogass el a [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) oldalra.
 

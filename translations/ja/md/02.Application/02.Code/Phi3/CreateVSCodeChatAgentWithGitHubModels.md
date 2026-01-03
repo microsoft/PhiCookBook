@@ -15,11 +15,11 @@ Visual Studio Code Copilotを使っていますか？特にChatでは、さま�
 
 Phi-3/3.5ファミリーのPhi-3/3.5-mini-instructは、強力なコード理解と生成能力を持ち、Gemma-2-9bやMistral-Nemo-12B-instruct-2407よりも優れた点があります。
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.ja.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.ja.png)
 
 最新のGitHub Modelsでは、すでにPhi-3.5-mini-instruct (128k)とPhi-3.5-vision-instruct (128k)モデルへのアクセスが可能です。開発者はOpenAI SDK、Azure AI Inference SDK、REST APIを通じてこれらにアクセスできます。
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.ja.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.ja.png)
 
 ***Note: *** ここではAzure AI Inference SDKの使用を推奨します。なぜなら、本番環境でAzure Model Catalogとの切り替えがよりスムーズに行えるためです。
 
@@ -33,13 +33,13 @@ Phi-3/3.5ファミリーのPhi-3/3.5-mini-instructは、強力なコード理解
 
 GitHub Copilot Chat Agentは、コードに基づいてさまざまなプロジェクトシナリオで異なるタスクを完了できます。システムにはworkspace、github、terminal、vscodeの4つのエージェントがあります。
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.ja.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.ja.png)
 
 エージェント名の前に「@」を付けることで、対応する作業を素早く完了できます。企業向けには、要件、コーディング、テスト仕様、リリースなどの自社ビジネス関連の内容を追加することで、GitHub Copilotをベースにしたより強力な企業向けプライベート機能を持つことが可能です。
 
 Visual Studio Code Chat Agentは現在、公式にAPIを公開しており、企業や企業の開発者が異なるソフトウェアビジネスエコシステムに基づいてエージェントを開発できます。Visual Studio Code Extension開発の手法に基づき、Visual Studio Code Chat Agent APIのインターフェースに簡単にアクセス可能です。このプロセスに基づいて開発が行えます。
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.ja.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.ja.png)
 
 開発シナリオは、GitHub Models、Azure Model Catalog、オープンソースモデルをベースにした自社構築サービスなどのサードパーティモデルAPIへのアクセスをサポートし、GitHub Copilotが提供するgpt-35-turbo、gpt-4、gpt-4oモデルも利用可能です。
 
@@ -53,7 +53,7 @@ Phi-3.5のプログラミング能力を統合し、コード作成や画像生�
 
 3. **Phi-3.5-vision-instruct (128k)**を使い、**@phicoding /image**コマンドで画像に基づくコード生成と補完を実行
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.ja.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.ja.png)
 
 ## **関連手順**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.ja.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.ja.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.ja.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.ja.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.ja.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.ja.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.ja.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.ja.png)
 
 サンプルコードのダウンロードはこちら：[click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

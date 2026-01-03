@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Az [MLflow](https://mlflow.org/) egy nyílt forráskódú platform, amely az egész gépi tanulási életciklus kezelésére szolgál.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.hu.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.hu.png)
 
 Az MLFlow az ML életciklus kezelésére szolgál, beleértve a kísérletezést, reprodukálhatóságot, telepítést és egy központi modellregisztert. Jelenleg négy fő komponensből áll.
 
@@ -22,7 +22,7 @@ Az MLFlow az ML életciklus kezelésére szolgál, beleértve a kísérletezést
 
 Tartalmaz eszközöket a kísérletek nyomon követésére, a kód reprodukálható futtatásokba csomagolására, valamint a modellek megosztására és telepítésére. Az MLFlow beépített a Databricks-be, és számos ML könyvtárat támogat, így könyvtárfüggetlen. Bármely gépi tanulási könyvtárral és programozási nyelvvel használható, mivel REST API-t és CLI-t is biztosít a kényelmes használathoz.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.hu.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.hu.png)
 
 Az MLFlow főbb jellemzői:
 
@@ -37,7 +37,7 @@ Az MLFlow támogatja az MLOps ciklust is, amely magában foglalja az adatelőké
 
 Ebben az E2E példában két különböző megközelítést mutatunk be a Phi-3 kis nyelvi modell (SLM) köré épített wrapper elkészítésére, majd annak MLFlow modellként való futtatására helyben vagy a felhőben, például az Azure Machine Learning munkaterületen.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.hu.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.hu.png)
 
 | Projekt | Leírás | Hely |
 | ------------ | ----------- | -------- |

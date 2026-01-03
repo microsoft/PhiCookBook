@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** သင် compile မလုပ်ချင်ပါက ဤအဆင့်ကို ကျော်လွှားနိုင်သည်။
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.my.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.my.png)
 
 ### **4. NVIDIA Driver တပ်ဆင်ခြင်း**
 
@@ -83,7 +83,7 @@ NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကိ�
 
    [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) ကို ဖွင့်ပြီး အကောင်အထည်ဖော်ပါ။
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.my.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.my.png)
 
 ### **8. ORT GenAI GPU ကို Compile လုပ်ခြင်း**
 
@@ -127,7 +127,7 @@ NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကိ�
 
    - Windows Terminal ကို အသုံးပြု၍ Developer Command Prompt for VS 2022 သို့ ဝင်ပြီး onnxruntime-genai သို့ သွားပါ။
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.my.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.my.png)
 
    - သင့် Python ပတ်ဝန်းကျင်ဖြင့် compile လုပ်ပါ။
 

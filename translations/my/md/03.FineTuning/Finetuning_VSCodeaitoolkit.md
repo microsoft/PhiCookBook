@@ -17,7 +17,7 @@ Toolkit ၏ အဓိက လုပ်ဆောင်ချက်များမ�
 
 [VSCode အတွက် AI Toolkit ကို 설치ပါ](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.my.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.my.png)
 
 **[Private Preview]** Azure Container Apps တွင် မော်ဒယ် fine-tuning နှင့် inference ကို cloud မှာ တစ်ချက်နှိပ်ပြီး စတင်အသုံးပြုနိုင်သည်။
 

@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG combines data retrieval with text generation. Both structured and unstructured enterprise data are stored in a vector database. When searching for relevant information, related summaries and content are retrieved to form a context, which is then combined with the text completion capabilities of LLM/SLM to generate content.
 
 ## RAG Process
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.en.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.en.png)
 
 ## Fine-tuning
 Fine-tuning involves improving a specific model. It doesn’t require starting from the model’s algorithm, but it does require continuous data accumulation. If you want more precise terminology and language use in industry applications, fine-tuning is the better option. However, if your data changes frequently, fine-tuning can become complex.

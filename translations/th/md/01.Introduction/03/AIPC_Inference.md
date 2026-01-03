@@ -28,9 +28,9 @@ GPU มีชื่อเสียงในด้านความสามา�
 
 อุปกรณ์ Intel® NPU คืออุปกรณ์เร่งการทำงาน AI inference ที่ฝังรวมกับ CPU ของ Intel client เริ่มตั้งแต่ Intel® Core™ Ultra รุ่นใหม่ (เดิมชื่อ Meteor Lake) ช่วยให้การทำงานของเครือข่ายประสาทเทียมเป็นไปอย่างประหยัดพลังงาน
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.th.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.th.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.th.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.th.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 เมื่อรันโค้ด เราสามารถดูสถานะการทำงานของ NPU ผ่าน Task Manager
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.th.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.th.png)
 
 ***ตัวอย่าง*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 นี่คือผลลัพธ์การรัน
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.th.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.th.png)
 
 ***ตัวอย่าง*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 รูปแบบที่แปลงแล้วจะเป็นแบบนี้
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.th.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.th.png)
 
 โหลดเส้นทางโมเดล (model_dir), การตั้งค่าที่เกี่ยวข้อง (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) และอุปกรณ์เร่งความเร็วฮาร์ดแวร์ (GPU.0) ผ่าน OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 เมื่อรันโค้ด เราสามารถดูสถานะการทำงานของ GPU ผ่าน Task Manager
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.th.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.th.png)
 
 ***ตัวอย่าง*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
