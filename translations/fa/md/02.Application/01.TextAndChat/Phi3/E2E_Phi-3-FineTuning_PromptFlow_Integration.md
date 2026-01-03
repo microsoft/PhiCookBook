@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 در ادامه، نمای کلی این نمونه جامع را مشاهده می‌کنید.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.fa.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.fa.png)
 
 ### فهرست مطالب
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *azure machine learning* را تایپ کنید و از گزینه‌های نمایش داده شده، **Azure Machine Learning** را انتخاب کنید.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.fa.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.fa.png)
 
 1. از منوی ناوبری، گزینه **+ Create** را انتخاب کنید.
 
 1. از منوی ناوبری، گزینه **New workspace** را انتخاب کنید.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.fa.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.fa.png)
 
 1. موارد زیر را انجام دهید:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Application insights را انتخاب کنید (در صورت نیاز، یک مورد جدید بسازید).
     - Container registry را انتخاب کنید (در صورت نیاز، یک مورد جدید بسازید).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.fa.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.fa.png)
 
 1. گزینه **Review + Create** را انتخاب کنید.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - خانواده ماشین مجازی (Virtual machine family) مورد نظر را انتخاب کنید. به عنوان مثال، **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** که شامل GPU مدل *Standard_NC24ads_A100_v4* است.
     - از منوی ناوبری، گزینه **Request quota** را انتخاب کنید.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.fa.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.fa.png)
 
     - در صفحه درخواست سهمیه، مقدار **New cores limit** مورد نظر خود را وارد کنید. مثلاً ۲۴.
     - سپس روی **Submit** کلیک کنید تا درخواست سهمیه GPU ثبت شود.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *managed identities* را تایپ کنید و از گزینه‌های نمایش داده شده، **Managed Identities** را انتخاب کنید.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.fa.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.fa.png)
 
 1. گزینه **+ Create** را انتخاب کنید.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.fa.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.fa.png)
 
 1. موارد زیر را انجام دهید:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - گروه منابع (Resource group) مورد نظر را انتخاب کنید.
     - نقش (Role) را روی **Contributor** تنظیم کنید.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.fa.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.fa.png)
 
 1. روی **Save** کلیک کنید.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *storage accounts* را تایپ کنید و از گزینه‌های نمایش داده شده، **Storage accounts** را انتخاب کنید.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.fa.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.fa.png)
 
 1. حساب ذخیره‌سازی مرتبط با Azure Machine Learning workspace که ایجاد کرده‌اید را انتخاب کنید. به عنوان مثال، *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - از منوی ناوبری، گزینه **+ Add** را انتخاب کنید.
     - سپس **Add role assignment** را انتخاب کنید.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.fa.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.fa.png)
 
 1. در صفحه افزودن انتساب نقش، موارد زیر را انجام دهید:
 
@@ -170,7 +170,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Managed identity مورد نظر را انتخاب کنید. به عنوان مثال، *finetunephi-managedidentity*.
     - روی **Select** کلیک کنید.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.fa.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.fa.png)
 
 1. روی **Review + assign** کلیک کنید.
 
@@ -178,7 +178,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *container registries* را تایپ کنید و از گزینه‌های نمایش داده شده، **Container registries** را انتخاب کنید.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.fa.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.fa.png)
 
 1. رجیستری کانتینری که به Azure Machine Learning workspace مرتبط است را انتخاب کنید. به عنوان مثال، *finetunephicontainerregistries*
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. پوشه *finetune-phi* که ایجاد کرده‌اید و در مسیر *C:\Users\yourUserName\finetune-phi* قرار دارد را انتخاب کنید.
 
-    ![باز کردن پوشه پروژه.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.fa.png)
+    ![باز کردن پوشه پروژه.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.fa.png)
 
 1. در پنل سمت چپ Visual Studio Code، راست‌کلیک کرده و **New File** را انتخاب کنید تا فایل جدیدی به نام *download_dataset.py* ایجاد شود.
 
@@ -295,7 +295,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در پنل سمت چپ Visual Studio Code، راست‌کلیک کرده و **New File** را انتخاب کنید تا فایل جدیدی به نام *deploy_model.py* ایجاد شود.
 
-    ![ایجاد فایل جدید.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.fa.png)
+    ![ایجاد فایل جدید.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.fa.png)
 
 1. در پنل سمت چپ Visual Studio Code، راست‌کلیک کرده و **New Folder** را انتخاب کنید تا پوشه‌ای به نام *finetuning_dir* ایجاد شود.
 
@@ -371,28 +371,28 @@ CO_OP_TRANSLATOR_METADATA:
     - اشتراک Azure که در حال استفاده هستید را انتخاب کنید.
     - شناسه اشتراک (Subscription ID) را کپی کرده و در فایل *config.py* جای‌گذاری کنید.
 
-    ![یافتن شناسه اشتراک.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.fa.png)
+    ![یافتن شناسه اشتراک.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.fa.png)
 
 1. برای افزودن نام Workspace Azure مراحل زیر را انجام دهید:
 
     - به منبع Azure Machine Learning که ایجاد کرده‌اید بروید.
     - نام حساب خود را کپی کرده و در فایل *config.py* جای‌گذاری کنید.
 
-    ![یافتن نام Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.fa.png)
+    ![یافتن نام Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.fa.png)
 
 1. برای افزودن نام Resource Group Azure مراحل زیر را انجام دهید:
 
     - به منبع Azure Machine Learning که ایجاد کرده‌اید بروید.
     - نام Resource Group خود را کپی کرده و در فایل *config.py* جای‌گذاری کنید.
 
-    ![یافتن نام Resource Group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.fa.png)
+    ![یافتن نام Resource Group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.fa.png)
 
 2. برای افزودن نام Managed Identity Azure مراحل زیر را انجام دهید:
 
     - به منبع Managed Identities که ایجاد کرده‌اید بروید.
     - نام Managed Identity خود را کپی کرده و در فایل *config.py* جای‌گذاری کنید.
 
-    ![یافتن UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.fa.png)
+    ![یافتن UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.fa.png)
 
 ### آماده‌سازی دیتاست برای فاین‌تیون
 
@@ -506,7 +506,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اشتراک Azure خود را برای استفاده انتخاب کنید.
 
-    ![یافتن نام Resource Group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.fa.png)
+    ![یافتن نام Resource Group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.fa.png)
 
 > [!TIP]
 >
@@ -858,7 +858,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در این تمرین، شما با موفقیت مدل Phi-3 را با استفاده از Azure Machine Learning فاین‌تیون کردید. با اجرای اسکریپت *setup_ml.py*، محیط Azure Machine Learning را راه‌اندازی کرده و فرایند فاین‌تیون تعریف شده در فایل *fine_tune.py* را آغاز کردید. توجه داشته باشید که فرایند فاین‌تیون ممکن است زمان قابل توجهی طول بکشد. پس از اجرای دستور `python setup_ml.py` باید منتظر بمانید تا فرایند کامل شود. می‌توانید وضعیت کار فاین‌تیون را با دنبال کردن لینکی که در ترمینال به پورتال Azure Machine Learning داده شده است، مشاهده کنید.
 
-    ![مشاهده کار فاین‌تیون.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.fa.png)
+    ![مشاهده کار فاین‌تیون.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.fa.png)
 
 ### استقرار مدل فاین‌تیون شده
 
@@ -1078,11 +1078,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. از تب سمت چپ، **Endpoints** را انتخاب کنید.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.fa.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.fa.png)
 
 2. نقطه انتهایی که ایجاد کرده‌اید را انتخاب کنید.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.fa.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.fa.png)
 
 3. در این صفحه می‌توانید نقاط انتهایی ایجاد شده در طول فرآیند استقرار را مدیریت کنید.
 
@@ -1101,7 +1101,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. **REST endpoint** خود را کپی کرده و در فایل *config.py* جای‌گذاری کنید، به طوری که مقدار `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` با **REST endpoint** شما جایگزین شود.
 1. **Primary key** خود را کپی کرده و در فایل *config.py* جای‌گذاری کنید، به طوری که مقدار `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` با **Primary key** شما جایگزین شود.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.fa.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.fa.png)
 
 #### افزودن کد به فایل *flow.dag.yml*
 
@@ -1210,7 +1210,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در اینجا نمونه‌ای از نتایج آمده است: اکنون می‌توانید با مدل سفارشی Phi-3 خود گفتگو کنید. توصیه می‌شود سوالات خود را بر اساس داده‌های استفاده شده برای فاین‌تیون مطرح کنید.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.fa.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.fa.png)
 
 **سلب مسئولیت**:  
 این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.

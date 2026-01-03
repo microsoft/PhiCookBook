@@ -36,7 +36,7 @@ Voimme valita [Ollama](https://ollama.com) tai [LlamaEdge](https://llamaedge.com
 
 Jos haluat käyttää gguf:ia sekä pilvessä että reunalaitteissa samanaikaisesti, LlamaEdgeä voi ymmärtää WasmEdgenä (WasmEdge on kevyt, suorituskykyinen ja skaalautuva WebAssembly-ajoympäristö, joka sopii pilvipohjaisiin, reunalaitteisiin ja hajautettuihin sovelluksiin. Se tukee serverless-sovelluksia, sulautettuja toimintoja, mikropalveluita, älysopimuksia ja IoT-laitteita. Voit ottaa gguf:n kvantitatiivisen mallin käyttöön reunalaitteissa ja pilvessä LlamaEdgen kautta.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.fi.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.fi.jpg)
 
 Tässä ovat käyttöohjeet:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Tässä on ajon tulos
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.fi.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.fi.png)
 
 ***Esimerkkikoodi*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal توانایی بالایی در خواندن تصاویر دارد. بیایید با استفاده از پایتون، توابع زیر را پیاده‌سازی کنیم. تصویر یک صفحه ChatGPT است.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.fa.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.fa.png)
 
 ### **نمونه کد**
 
