@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 میں نے App کی ترقی کے لیے Objective-C کو منتخب کیا، کیونکہ ONNX Runtime C++ API کے ساتھ Generative AI استعمال کرتے ہوئے، Objective-C بہتر مطابقت رکھتا ہے۔ ظاہر ہے، آپ Swift bridging کے ذریعے متعلقہ کالز بھی مکمل کر سکتے ہیں۔
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ur.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.ur.png)
 
 ## **5. ONNX quantized INT4 ماڈل کو App ایپلیکیشن پروجیکٹ میں کاپی کریں**
 
 ہمیں ONNX فارمیٹ میں INT4 quantization ماڈل درآمد کرنا ہوگا، جسے پہلے ڈاؤن لوڈ کرنا ضروری ہے۔
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ur.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.ur.png)
 
 ڈاؤن لوڈ کرنے کے بعد، اسے Xcode میں پروجیکٹ کے Resources ڈائریکٹری میں شامل کریں۔
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.ur.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.ur.png)
 
 ## **6. ViewControllers میں C++ API شامل کرنا**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** متعلقہ C++ ہیڈر فائلز کو پروجیکٹ میں شامل کریں۔
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ur.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.ur.png)
 
 - **b.** Xcode میں `onnxruntime-genai` ڈائنامک لائبریری کو شامل کریں۔
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ur.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.ur.png)
 
 - **c.** ٹیسٹنگ کے لیے C Samples کوڈ استعمال کریں۔ آپ مزید فعالیت کے لیے ChatUI جیسی اضافی خصوصیات بھی شامل کر سکتے ہیں۔
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ایک بار سیٹ اپ مکمل ہونے کے بعد، آپ ایپلیکیشن چلا کر Phi-3-mini ماڈل inference کے نتائج دیکھ سکتے ہیں۔
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ur.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.ur.jpg)
 
 مزید نمونہ کوڈ اور تفصیلی ہدایات کے لیے، [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ملاحظہ کریں۔
 

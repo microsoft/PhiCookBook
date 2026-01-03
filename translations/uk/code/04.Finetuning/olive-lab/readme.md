@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Olive (*O*NNX *live*) — це набір інструментів для оптимізації моделей з командним рядком, який дозволяє доставляти моделі для ONNX runtime +++https://onnxruntime.ai+++ з високою якістю та продуктивністю.
 
-![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.uk.png)
+![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2.uk.png)
 
 Вхідними даними для Olive зазвичай є модель PyTorch або Hugging Face, а вихідними — оптимізована ONNX-модель, яка виконується на пристрої (цільовому середовищі розгортання) з ONNX runtime. Olive оптимізує модель під AI-акселератор цільового пристрою (NPU, GPU, CPU), який надає виробник апаратного забезпечення, наприклад Qualcomm, AMD, Nvidia або Intel.
 
