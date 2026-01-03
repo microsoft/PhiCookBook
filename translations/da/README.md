@@ -34,7 +34,7 @@ Følg disse trin for at komme i gang med at bruge disse ressourcer:
 2. **Klon repositoryet**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Deltag i Microsoft AI Discord-fællesskabet og mød eksperter og medudviklere**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![forside](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.da.png)
+![forside](../../translated_images/cover.eb18d1b9605d754b.da.png)
 
 ### 🌐 Understøttelse af flere sprog
 

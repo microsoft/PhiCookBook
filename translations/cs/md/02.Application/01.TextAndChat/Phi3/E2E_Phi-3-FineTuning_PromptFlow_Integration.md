@@ -23,7 +23,7 @@ V tomto E2E příkladu se naučíte, jak doladit model Phi-3 a integrovat ho s P
 
 Zde je přehled tohoto E2E příkladu.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.cs.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.cs.png)
 
 ### Obsah
 
@@ -49,13 +49,13 @@ Zde je přehled tohoto E2E příkladu.
 
 1. Do **vyhledávacího pole** v horní části portálu napište *azure machine learning* a z nabízených možností vyberte **Azure Machine Learning**.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.cs.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.cs.png)
 
 1. V navigačním menu vyberte **+ Create**.
 
 1. V navigačním menu vyberte **New workspace**.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.cs.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.cs.png)
 
 1. Proveďte následující kroky:
 
@@ -68,7 +68,7 @@ Zde je přehled tohoto E2E příkladu.
     - Vyberte **Application insights**, který chcete použít (v případě potřeby vytvořte nový).
     - Vyberte **Container registry**, který chcete použít (v případě potřeby vytvořte nový).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.cs.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.cs.png)
 
 1. Vyberte **Review + Create**.
 
@@ -92,7 +92,7 @@ V tomto E2E příkladu použijete *Standard_NC24ads_A100_v4 GPU* pro doladění,
     - Vyberte **Virtual machine family**, kterou chcete použít. Například **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, která zahrnuje *Standard_NC24ads_A100_v4* GPU.
     - Vyberte **Request quota** v navigačním menu.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.cs.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.cs.png)
 
     - Na stránce Request quota zadejte **New cores limit**, který chcete použít. Například 24.
     - Na stránce Request quota vyberte **Submit** pro odeslání žádosti o kvótu GPU.
@@ -108,11 +108,11 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit User Assigned Manag
 
 1. Do **vyhledávacího pole** v horní části portálu napište *managed identities* a z nabízených možností vyberte **Managed Identities**.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.cs.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.cs.png)
 
 1. Vyberte **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.cs.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.cs.png)
 
 1. Proveďte následující kroky:
 
@@ -140,7 +140,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit User Assigned Manag
     - Vyberte **Resource group**, kterou chcete použít.
     - Vyberte roli **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.cs.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.cs.png)
 
 1. Vyberte **Save**.
 
@@ -148,7 +148,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit User Assigned Manag
 
 1. Do **vyhledávacího pole** v horní části portálu napište *storage accounts* a z nabízených možností vyberte **Storage accounts**.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.cs.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.cs.png)
 
 1. Vyberte storage účet, který je spojený s Azure Machine Learning workspace, který jste vytvořili. Například *finetunephistorage*.
 
@@ -159,7 +159,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit User Assigned Manag
     - V navigačním menu vyberte **+ Add**.
     - Vyberte **Add role assignment**.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.cs.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.cs.png)
 
 1. Na stránce Add role assignment proveďte následující:
 
@@ -172,7 +172,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit User Assigned Manag
     - Vyberte Manage Identity, kterou jste vytvořili, například *finetunephi-managedidentity*.
     - Vyberte **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.cs.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.cs.png)
 
 1. Vyberte **Review + assign**.
 
@@ -180,7 +180,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit User Assigned Manag
 
 1. Do **vyhledávacího pole** v horní části portálu napište *container registries* a z nabízených možností vyberte **Container registries**.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.cs.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.cs.png)
 
 1. Vyberte container registry spojený s Azure Machine Learning workspace, například *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ V tomto cvičení:
 
 1. Vyberte složku *finetune-phi*, kterou jste vytvořili, nacházející se na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Otevřete složku projektu.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.cs.png)
+    ![Otevřete složku projektu.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.cs.png)
 
 1. V levém panelu Visual Studio Code klikněte pravým tlačítkem a vyberte **New File** pro vytvoření nového souboru s názvem *download_dataset.py*.
 
@@ -298,7 +298,7 @@ V tomto cvičení:
 
 1. V levém panelu Visual Studio Code klikněte pravým tlačítkem a vyberte **New File** pro vytvoření nového souboru s názvem *deploy_model.py*.
 
-    ![Vytvoření nového souboru.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.cs.png)
+    ![Vytvoření nového souboru.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.cs.png)
 
 1. V levém panelu Visual Studio Code klikněte pravým tlačítkem a vyberte **New Folder** pro vytvoření nové složky s názvem *finetuning_dir*.
 
@@ -374,28 +374,28 @@ V tomto cvičení:
     - Vyberte Azure Subscription, kterou aktuálně používáte.
     - Zkopírujte a vložte vaše Subscription ID do souboru *config.py*.
 
-    ![Najděte ID předplatného.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.cs.png)
+    ![Najděte ID předplatného.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.cs.png)
 
 1. Pro přidání názvu Azure Workspace proveďte následující kroky:
 
     - Přejděte k Azure Machine Learning zdroji, který jste vytvořili.
     - Zkopírujte a vložte název vašeho workspace do souboru *config.py*.
 
-    ![Najděte název Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.cs.png)
+    ![Najděte název Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.cs.png)
 
 1. Pro přidání názvu Azure Resource Group proveďte následující kroky:
 
     - Přejděte k Azure Machine Learning zdroji, který jste vytvořili.
     - Zkopírujte a vložte název vaší Azure Resource Group do souboru *config.py*.
 
-    ![Najděte název resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.cs.png)
+    ![Najděte název resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.cs.png)
 
 2. Pro přidání názvu Azure Managed Identity proveďte následující kroky:
 
     - Přejděte k Managed Identities zdroji, který jste vytvořili.
     - Zkopírujte a vložte název vaší Azure Managed Identity do souboru *config.py*.
 
-    ![Najděte UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.cs.png)
+    ![Najděte UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.cs.png)
 
 ### Připravte datovou sadu pro doladění
 
@@ -509,7 +509,7 @@ Musíte nastavit Azure CLI pro autentizaci vašeho prostředí. Azure CLI umož�
 
 1. Vyberte Azure subscription, kterou chcete použít.
 
-    ![Najděte název resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.cs.png)
+    ![Najděte název resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.cs.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Spuštěním *setup_ml.py* spustíte proces doladění v prostředí Azure Machi
 
 1. V tomto cvičení jste úspěšně doladili model Phi-3 pomocí Azure Machine Learning. Spuštěním skriptu *setup_ml.py* jste nastavili prostředí Azure Machine Learning a zahájili proces doladění definovaný v souboru *fine_tune.py*. Upozorňujeme, že proces doladění může trvat delší dobu. Po spuštění příkazu `python setup_ml.py` je třeba počkat na dokončení procesu. Stav doladění můžete sledovat pomocí odkazu zobrazeného v terminálu, který vede do portálu Azure Machine Learning.
 
-    ![Zobrazit úlohu doladění.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.cs.png)
+    ![Zobrazit úlohu doladění.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.cs.png)
 
 ### Nasazení doladěného modelu
 
@@ -1081,11 +1081,11 @@ Spuštěním souboru *deploy_model.py* automatizujete celý proces nasazení. Sk
 
 1. Z levého panelu vyberte **Endpoints**.
 
-    ![Vyberte endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.cs.png)
+    ![Vyberte endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.cs.png)
 
 2. Vyberte endpoint, který jste vytvořili.
 
-    ![Vyberte endpoint, který jste vytvořili.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.cs.png)
+    ![Vyberte endpoint, který jste vytvořili.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.cs.png)
 
 3. Na této stránce můžete spravovat endpointy vytvořené během procesu nasazení.
 
@@ -1104,7 +1104,7 @@ Po úspěšném nasazení vašeho doladěného modelu ho nyní můžete integrov
 1. Zkopírujte a vložte svůj **REST endpoint** do souboru *config.py*, nahraďte `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` vaším **REST endpointem**.
 1. Zkopírujte a vložte svůj **Primary key** do souboru *config.py*, nahraďte `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` vaším **Primary key**.
 
-    ![Zkopírujte api klíč a endpoint URI.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.cs.png)
+    ![Zkopírujte api klíč a endpoint URI.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.cs.png)
 
 #### Přidejte kód do souboru *flow.dag.yml*
 
@@ -1213,7 +1213,7 @@ Po úspěšném nasazení vašeho doladěného modelu ho nyní můžete integrov
 
 1. Zde je příklad výsledků: nyní můžete chatovat se svým vlastním modelem Phi-3. Doporučuje se klást otázky založené na datech použitých pro doladění.
 
-    ![Příklad Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.cs.png)
+    ![Příklad Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.cs.png)
 
 **Prohlášení o vyloučení odpovědnosti**:  
 Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
