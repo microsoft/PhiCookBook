@@ -1,45 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-12-22T01:15:35+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T15:07:44+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "ml"
 }
 -->
-## Kaito ഉപയോഗിച്ച് ഇൻഫറൻസ്
+## Kaito ഉപയോഗിച്ചുള്ള നിർണ്ണയം
 
-[Kaito](https://github.com/Azure/kaito) ഒരു ഓപ്പറേറ്ററാണ്, ഇത് Kubernetes ക്ലസ്റ്ററിലെ AI/ML ഇൻഫറൻസ് മോഡൽ ഡിപ്ലോയ്‌മെന്റ് ഓട്ടോമേറ്റുചെയ്യുന്നു.
+[Kaito](https://github.com/Azure/kaito) ഒരു ഓപ്പറೇಟറാണ്, ഇത് Kubernetes ക്ലസ്റ്ററിൽ AI/ML നിർണ്ണയ മോഡൽ വിന്യാസം ഓട്ടോമേറ്റുചെയ്യുന്നു.
 
-Kaito-ന് വെർച്വൽ മെഷീൻ അടിസ്ഥാനത്തിലുള്ള മെയിൻസ്റ്റ്രീം മോഡൽ ഡിപ്ലോയ്‌മെന്റ് രീതികളുമായി താരതമ്യം ചെയ്യുമ്പോൾ താഴെപ്പറയുന്ന പ്രധാന വ്യത്യാസങ്ങൾ ഉണ്ട്:
+സാധാരണമേയുള്ള മിക്ക പ്രധാന മോഡൽ വിന്യാസ രീതി ഫെയർചെയ്യുന്ന വെർച്വൽ മെഷീൻ ഇൻ‌ഫ്രാസ്ട്രക്ചറുകളുടെ മുകളിൽ Kaito-യ്ക്ക് വമ്പിച്ച പ്രധാന വ്യത്യാസങ്ങൾ ഇപ്രകാരം:
 
-- മോഡൽ ഫയലുകൾ കണ്ടെയ്നർ ഇമേജുകൾ ഉപയോഗിച്ച് മാനേജ് ചെയ്യുന്നു. മോഡൽ ലൈബ്രറി ഉപയോഗിച്ച് ഇൻഫറൻസ് വിളിക്കാനുള്ള ഒരു http സെർവർ നൽകப்பட்டுள்ளது.
-- പ്രസെറ്റ് കോൺഫിഗറേഷനുകൾ നൽകുന്നതിലൂടെ GPU ഹാർഡ്‌വെയറിനനുസരിച്ച് ഡിപ്ലോയ്‌മെന്റ് പാരാമീറ്ററുകൾ ട്യൂൺ ചെയ്യേണ്ടതിൽ നിന്ന് ഒഴിവാക്കുന്നു.
-- മോഡൽ ആവശ്യകതകളുടെ അടിസ്ഥാനത്തിൽ GPU നോഡുകൾ സ്വയം പ്രൊവിഷൻ ചെയ്യുന്നു.
-- ലൈസൻസ് അനുവദിക്കുകയാണെങ്കിൽ പൊതു Microsoft Container Registry (MCR)-ൽ വലിയ മോഡൽ ഇമേജുകൾ ഹോസ്റ്റ് ചെയ്യുന്നു.
+- മോഡൽ ഫയലുകൾ കണ്ടെയ്‌നർ ഇമേജുകൾ ഉപയോഗിച്ച് മാനേജ് ചെയ്യും. മോഡൽ ലൈബ്രറി ഉപയോഗിച്ച് നിർണ്ണയ കോളുകൾ നടത്താൻ ഒരു HTTP സർവർ ലഭ്യമാണ്.
+- GPU ഹാർഡ്‌വെയർ ഫിറ്റാക്കാൻ വിന്യാസ പരാമീറ്ററുകൾ ട്യൂൺ ചെയ്യേണ്ടതില്ല, മുൻസ്വീകൃത കോൺഫിഗറേഷനുകൾ നൽകുന്നു.
+- മോഡൽ ആവശ്യകതകൾ അടിസ്ഥാനമാക്കി GPU നോഡുകൾ സ്വയം പ്രോവിഷൻ ചെയ്യുന്നു.
+- ലൈസൻസ് അനുവദിച്ചാൽ, വലുത് മോഡൽ ഇമേജുകൾ പൊതു Microsoft Container Registry (MCR)-ൽ ഹോസ്റ്റ് ചെയ്യുന്നു.
 
-Kaito ഉപയോഗിച്ച്, Kubernetes-ലിലുള്ള വലിയ AI ഇൻഫറൻസ് മോഡലുകൾ ഓൺബോർഡ് ചെയ്യാനുള്ള പ്രവൃത്തി പ്രവാഹം വലിയ തോതിൽ ലളിതമാക്കപ്പെടുന്നു.
+Kaito ഉപയോഗിച്ച്, Kubernetes-ൽ വലുത് AI നിർണ്ണയ മോഡലുകളുടെ ഓൺബോർഡിംഗ് വർക്ക്‌ഫ്ലോ വളരെ ലളിതമാക്കുന്നു.
 
 
 ## ആർക്കിടെക്ചർ
 
-Kaito പരമ്പരാഗത Kubernetes Custom Resource Definition(CRD)/controller ഡിസൈൻ പാറ്റേൺ പിന്തുടരുന്നു. ഉപയോക്താവ് GPU ആവശ്യകതകളും ഇൻഫറൻസ് സ്പെസിഫിക്കേഷനും വിവരണം ചെയ്യുന്ന `workspace` കസ്റ്റം റിസോഴ്‌സ് കൈകാര്യം ചെയ്യുന്നു. Kaito കൺട്രോളറുകൾ `workspace` കസ്റ്റം റിസോഴ്സ് reconcile ചെയ്ത് ഡിപ്ലോയ്‌മെന്റ് ഓട്ടോമേറ്റുചെയ്യും.
+Kaito പരമ്പരാഗത Kubernetes Custom Resource Definition (CRD)/controller രൂപരേഖ പിന്തുടരുന്നു. ഉപയോക്താവ് GPU ആവശ്യകതകളും നിർണ്ണയ നിർദ്ദേശങ്ങളും വിവരണ ചെയ്യുന്ന `workspace` കസ്റ്റം റിസോഴ്‌സ് മാനേജ് ചെയ്യുന്നു. Kaito контроллерുകൾ `workspace` കസ്റ്റം റിസോഴ്‌സ് റെക്കൺസൈൽ ചെയ്ത് വിന്യാസം ഓട്ടോമേറ്റുചെയ്യും.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito ആർക്കിടെക്ചർ" alt="Kaito ആർക്കിടെക്ചർ">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-മുകളിൽ കാണിച്ചിരിക്കുന്ന ചിത്രം Kaito ആർക്കിടെക്ചറിന്റെ അവലോകനം അവതരിപ്പിക്കുന്നു. ഇതിന്റെ പ്രധാന ഘടകങ്ങൾ ഉൾപ്പെടുന്നത്:
+മുകളിൽ കാണുന്ന ചിത്രം Kaito ആർക്കിടെക്ചർ അവലോകനമാണ്. പ്രധാന ഘടകങ്ങൾ:
 
-- **Workspace controller**: ഇത് `workspace` കസ്റ്റം റിസോഴ്‌സ് reconcile ചെയ്യുന്നു, നോഡ് ഓട്ടോ പ്രൊവിഷനിംഗ് ട്രിഗർ ചെയ്യാൻ `machine` (താഴെ വിശദീകരിച്ചിരിക്കുന്നു) കസ്റ്റം റിസോഴ്‌സുകൾ സൃഷ്ടിക്കുന്നു, കൂടാതെ മോഡൽ പ്രിസെറ്റ് കോൺഫിഗറേഷനുകൾ അടിസ്ഥാനമാക്കി ഇൻഫറൻസ് വർക്ലോഡ് (`deployment` അല്ലെങ്കിൽ `statefulset`) സൃഷ്ടിക്കുന്നു.
-- **Node provisioner controller**: കൺട്രോളറിന്റെ പേര് [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) ൽ *gpu-provisioner* ആണ്. അത് workspace controller-നുമായി ഇടപെടാൻ [Karpenter](https://sigs.k8s.io/karpenter)യിൽ നിന്നുള്ള `machine` CRD ഉപയോഗിക്കുന്നു. ഇത് Azure Kubernetes Service(AKS) APIs-നുമായി ഇന്റഗ്രേറ്റ് ചെയ്ത് AKS ക്ലസ്റ്ററിൽ പുതിയ GPU നോഡുകൾ ചേർക്കുന്നു. 
-> കുറിപ്പ്: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ഒരു ഓപ്പൺ-സോഴ്‌സ് ഘടകമാണ്. ഇത് [Karpenter-core](https://sigs.k8s.io/karpenter) APIs പിന്തുണക്കുന്ന മറ്റ് കൺട്രോളറുകൾ ഉപയോഗിച്ച് മാറ്റാവുന്നതാണ്.
+- **Workspace controller**: `workspace` കസ്റ്റം റിസോഴ്‌സ് റെക്കൺസൈൽ ചെയ്യുന്നു, നോഡ് ഓട്ടോ പ്രോവിഷനിംഗ് ട്രിഗർ ചെയ്യാൻ `machine` (താഴെ വിശദീകരിക്കുന്നു) കസ്റ്റം റിസോഴ്‌സുകൾ സൃഷ്ടിക്കുന്നു, മോഡൽ മുൻസ്വീകൃത കോൺഫിഗറേഷനുകൾ അടിസ്ഥാനമാക്കി നിർണ്ണയ വർക്ക്‌ലോഡ് (`deployment` അല്ലെങ്കിൽ `statefulset`) തയാറാക്കുന്നു.
+- **Node provisioner controller**: ഈ കൺട്രോളറിന്റെ പേര് [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) യിൽ *gpu-provisioner* ആണ്. ഇത് [Karpenter](https://sigs.k8s.io/karpenter) നിന്നുള്ള `machine` CRD ഉപയോഗിച്ച് workspace controller-ഉടൻ ഇടപെടുന്നു. Azure Kubernetes Service (AKS) APIകൾ ഉപയോഗിച്ച് AKS ക്ലസ്റ്ററിലേക്ക് പുതിയ GPU നോഡുകൾ ചേർക്കാൻ സഹായിക്കുന്നു. 
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ഒരു തുറന്ന സ്രോതസ്സ് ഘടകമാണ്. ഇത് [Karpenter-core](https://sigs.k8s.io/karpenter) APIകൾ പിന്തുണച്ചാൽ മറ്റ് കൺട്രോളറുകൾ ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കാനാകും.
 
 ## ഇൻസ്റ്റലേഷൻ
 
-ദയവായി ഇൻസ്റ്റലേഷൻ മാർഗനിർദ്ദേശം [ഇവിടെ](https://github.com/Azure/kaito/blob/main/docs/installation.md) പരിശോധിക്കുക.
+ഇൻസ്റ്റലേഷൻ മാർഗ്ഗനിർദ്ദേശം ഇവിടെ [check ചെയ്യുക](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## ക്വിക്ക് സ്റ്റാർട് ഇൻഫറൻസ് Phi-3
-[സാമ്പിൾ കോഡ് ഇൻഫറൻസ് Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## വേഗത്തിലുള്ള തുടക്കം - Inference Phi-3
+[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -77,14 +78,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ട്യൂണിംഗ് ഔട്ട്പുട്ട് ACR പാത
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ഔട്ട്‌പുട്ട് ACR പാത ട്യൂൺ ചെയ്യുന്നു
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-ചുവടെയുള്ള കമാൻഡ് اجرا ചെയ്ത് workspace സ്റ്റാറ്റസ് ട്രാക്ക് ചെയ്യാം. WORKSPACEREADY കോളം `True` ആയാൽ മോഡൽ വിജയകരമായി ഡിപ്ലോയ് ചെയ്തിരിക്കുന്നു.
+താഴെ കാണുന്ന കമാൻഡ് ഉപയോഗിച്ച് workspace നില നിരീക്ഷിക്കാം. WORKSPACEREADY കോളം `True` ആയാൽ, മോഡൽ വിജയകരമായി വിന്യസിച്ചിട്ടുണ്ട്.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +93,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-അടുത്തതായി, ഇൻഫറൻസ് സർവീസിന്റെ ക്ലസ്റ്റർ ip കണ്ടെത്തി ക്ലസ്റ്ററിലെ സർവീസ് എൻഡ്‌പോയിന്റ് ടെസ്റ്റ് ചെയ്യാൻ താത്കാലിക `curl` പോഡ് ഉപയോഗിക്കാം.
+അടുത്തതായി, നിർണ്ണയ സേവനത്തിന്റെ ക്ലസ്റ്റർ IP കണ്ടെത്തി, ക്ലസ്റ്ററിൽ താൽക്കാലിക `curl` പോഡ് ഉപയോഗിച്ച് സേവനത്തിലേക്ക് പരീക്ഷണം നടത്താം.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +104,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## ക്വിക്ക് സ്റ്റാർട്ട് ഇൻഫറൻസ് Phi-3 അഡാപ്റ്ററുകളോടൊപ്പം
+## കൈറ്റോ ഉപയോഗിച്ച് Adapters-സഹിതം വേഗത്തിലുള്ള തുടക്കം - Inference Phi-3
 
-Kaito ഇൻസ്റ്റാൾ ചെയ്തശേഷം, ഇൻഫറൻസ് സർവീസ് ആരംഭിക്കാനായി താഴെപ്പറയുന്ന കമാൻഡുകൾ പരീക്ഷിക്കാം.
+Kaito ഇൻസ്റ്റാൾ ചെയ്തശേഷം, നിർണ്ണയ സേവനം ആരംഭിക്കുന്നതിന് താഴെ കാണുന്ന കമാൻഡുകൾ പരീക്ഷിക്കാം.
 
-[സാമ്പിൾ കോഡ് ഇൻഫറൻസ് Phi-3 അഡാപ്റ്ററുകളോടെ](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Sample Code Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -149,14 +150,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ട്യൂണിംഗ് ഔട്ട്‌പുട്ട് ACR പാത
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ഔട്ട്‌പുട്ട് ACR പാത ട്യൂൺ ചെയ്യൽ
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-ചുവടെയുള്ള കമാൻഡ് 실행 ചെയ്ത് workspace സ്റ്റാറ്റസ് ട്രാക്ക് ചെയ്യാം. WORKSPACEREADY കോളം `True` ആയാൽ മോഡൽ വിജയകരമായി ഡിപ്ലോയ് ചെയ്തിരിക്കുന്നു.
+താഴെ കാണുന്ന കമാൻഡ് ഉപയോഗിച്ച് workspace നില നിരീക്ഷിക്കാം. WORKSPACEREADY കോളം `True` ആയാൽ, മോഡൽ വിജയകരമായി വിന്യസിച്ചിട്ടുണ്ട്.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +165,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-അടുത്തതായി, ഇൻഫറൻസ് സർവീസിന്റെ ക്ലസ്റ്റർ ip കണ്ടെത്തി ക്ലസ്റ്ററിലെ സർവീസ് എൻഡ്‌പോയിന്റ് ടെസ്റ്റ് ചെയ്യാൻ താത്കാലിക `curl` പോഡ് ഉപയോഗിക്കാം.
+അടുത്തതായി, നിർണ്ണയ സേവനത്തിന്റെ ക്ലസ്റ്റർ IP കണ്ടെത്തി, ക്ലസ്റ്ററിൽ താൽക്കാലിക `curl` പോഡ് ഉപയോഗിച്ച് സേവനത്തിലേക്ക് പരീക്ഷണം നടത്താം.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -178,6 +179,6 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-ഡിസ്‌ക്ലെയിമർ:
-ഈ ഡോക്യുമെന്റ് AI പരിഭാഷാ സേവനമായ [Co-op Translator](https://github.com/Azure/co-op-translator) ഉപയോഗിച്ച് പരിഭാഷചെയ്‍തതാണ്. ഞങ്ങൾ കൃത്യതയ്ക്കായി പരിശ്രമിച്ചിരുന്നാലും, സ്വയമത്തിലൂടെ്ഇടക്കുന്ന പരിഭാഷകളിൽ പിശകുകളും അസൂയതകളും ഉണ്ടാകാൻ സാധ്യതയുണ്ടെന്ന് ദയവായി ശ്രദ്ധിക്കുക. ഇതിന്റെ മാതൃഭാഷയിലുള്ള മൂല രേഖ പ്രാമാണിക സ്രോതസ്സായിരുന്നേക്കണം. നിർണായകമായ വിവരങ്ങൾക്ക് പ്രൊഫഷണൽ മാനവപരിഭാഷ നിർദേശിക്കുന്നു. ഈ പരിഭാഷയുടെ ഉപയോഗത്തിൽ നിന്നുണ്ടാകുന്ന任何 തെറ്റിദ്ധാരണങ്ങൾക്കോ വ്യാഖ്യാനഭ്രമങ്ങൾക്കോ ഞങ്ങൾ ഉത്തരവാദികളല്ല.
+**അസംബന്ധിക പ്രസ്താവന**:
+ഈ രേഖ AI ഭാഷാന്തര സേവനം [Co-op Translator](https://github.com/Azure/co-op-translator) ഉപയോഗിച്ച് വിവർത്തനം ചെയ്തതാണ്. നാം കൃത്യതക്ക് ശ്രമിച്ചാൽ എങ്കിലും, സ്വയംകൃതമായ വിവർത്തനങ്ങളിൽ പിശകുകളും തെറ്റികളും ഉണ്ടായേക്കാമെന്ന് ദയവായി ശ്രദ്ധിക്കുക. സ്വതന്ത്ര ഭാഷയിലുള്ള મૂળ രേഖയാണ് പരമാധികാര ഉറവിടം എന്നത് പരിഗണിക്കേണ്ടതാണ്. പ്രധാന വിവരം ലഭിക്കുന്നതിനായി പ്രൊഫഷണൽ മനുഷ്യ വിവർത്തനം ശുപാർശ ആണ്. ഈ വിവർത്തനം ഉപയോഗിക്കുന്നതിൽ നിന്നുണ്ടാകുന്ന ഏതൊരു തെറ്റിദ്ധാരണയ്ക്കും ഞങ്ങൾ ഉത്തരവാദികളല്ല.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

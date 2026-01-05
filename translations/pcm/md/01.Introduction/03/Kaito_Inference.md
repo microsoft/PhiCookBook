@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-12-22T01:11:10+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T14:53:18+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "pcm"
 }
@@ -11,32 +11,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) na operator wey dey automate AI/ML inference model deployment for Kubernetes cluster.
 
-Kaito get the following key differences compared to most of the mainstream model deployment methodologies wey dem build on top of virtual machine infrastructures:
+Kaito get di following key differences compared to most of di main model deployment methods wey dem build on top of virtual machine infrastructure dem:
 
-- Manage model files using container images. One HTTP server dey wey fit perform inference calls using the model library.
-- No need to dey tune deployment parameters to fit GPU hardware because preset configurations don already dey.
-- Auto-provision GPU nodes based on model requirements.
-- Host large model images for the public Microsoft Container Registry (MCR) if the license allow am.
+- Manage model files wit container images. Dem provide http server to run inference calls using di model library.
+- No need to tune deployment parameters to fit GPU hardware, because dem get preset configurations ready.
+- E dey auto-provision GPU nodes based on how model need am.
+- E fit host big model images for public Microsoft Container Registry (MCR) if license allow am.
 
-With Kaito, the workflow to onboard large AI inference models for Kubernetes don become much simpler.
+If you use Kaito, di work to bring big AI inference models enter Kubernetes go dey much simpler.
 
 
 ## Architecture
 
-Kaito dey follow the classic Kubernetes Custom Resource Definition(CRD)/controller design pattern. User dey manage a `workspace` custom resource wey describe the GPU requirements and the inference specification. Kaito controllers go automate the deployment by reconciling the `workspace` custom resource.
+Kaito dey follow di classic Kubernetes Custom Resource Definition(CRD)/controller design pattern. User go manage `workspace` custom resource wey go describe GPU requirements and inference specification. Kaito controllers go automate deployment by matching up to di `workspace` custom resource.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architekcha" alt="Kaito architekcha">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-Di figure wey dey above show Kaito architecture overview. E major components be:
+Di picture wey dey above show Kaito architecture overview. Di main parts be:
 
-- **Workspace controller**: E dey reconcile the `workspace` custom resource, e go create `machine` (explained below) custom resources to trigger node auto provisioning, and e go create the inference workload (`deployment` or `statefulset`) based on the model preset configurations.
-- **Node provisioner controller**: Di controller name na *gpu-provisioner* for [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). E dey use the `machine` CRD wey come from [Karpenter](https://sigs.k8s.io/karpenter) to interact with the workspace controller. E dey integrate with Azure Kubernetes Service(AKS) APIs to add new GPU nodes to the AKS cluster. 
-> Note: The [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) na open sourced component. E fit replace am with other controllers if dem support [Karpenter-core](https://sigs.k8s.io/karpenter) APIs.
+- **Workspace controller**: E dey reconcile di `workspace` custom resource, e dey create `machine` (wey dem go explain below) custom resources to trigger node auto provisioning, and e dey create di inference workload (`deployment` or `statefulset`) based on di model preset configurations.
+- **Node provisioner controller**: Di controller name na *gpu-provisioner* for [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). E dey use `machine` CRD wey come from [Karpenter](https://sigs.k8s.io/karpenter) to interact with di workspace controller. E dey work together wit Azure Kubernetes Service(AKS) APIs to add new GPU nodes enter di AKS cluster. 
+> Note: Di [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) na open source component. You fit change am to other controllers if dem support [Karpenter-core](https://sigs.k8s.io/karpenter) APIs.
 
 ## Installation
 
-Abeg check the installation guidance [here](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Abeg check di installation guide [here](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Quick start Inference Phi-3
 [Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
@@ -77,14 +78,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning di ACR output path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path na so e be
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-You fit track the workspace status by running the following command. When the WORKSPACEREADY column become `True`, the model don deploy successfully.
+You fit track workspace status by running this command. When di WORKSPACEREADY column show `True`, e mean say di model don deploy well.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +93,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Next, you fit find the inference service's cluster ip and use one temporary `curl` pod to test the service endpoint inside the cluster.
+After that, you fit find inference service cluster IP and use temporary `curl` pod to test di service endpoint inside di cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -105,9 +106,9 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 ## Quick start Inference Phi-3 wit adapters
 
-After you install Kaito, you fit try the following commands to start an inference service.
+After you don install Kaito, you fit try these commands to start inference service.
 
-[Sample Code Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Sample Code Inference Phi-3 wit Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -149,14 +150,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tune di output ACR path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning di Output ACR Path
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-You fit track the workspace status by running the following command. When the WORKSPACEREADY column become `True`, the model don deploy successfully.
+You fit track workspace status by running this command. When di WORKSPACEREADY column show `True`, e mean say di model don deploy well.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +165,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Next, you fit find the inference service's cluster ip and use one temporary `curl` pod to test the service endpoint inside the cluster.
+After that, you fit find inference service cluster IP and use temporary `curl` pod to test di service endpoint inside di cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -178,7 +179,6 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Disclaimer:
-
-Dis document na AI translation service wey dem call Co-op Translator do. Even though we dey try make everything correct, abeg sabi say automatic translation fit get mistakes or no too correct. Di original document for im original language na di official one. If na important matter, make you use professional human translator. We no go responsible for any misunderstanding or wrong interpretation wey fit happen because of this translation.
+**Disclaimer**:
+Dis document na translation wey AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) help do. Even though we dey try make am correct, abeg make you sabi say automated translation fit get some mistakes or no too correct. Di original document wey e dey for im original language na di real correct one. If na serious gbege or important tin, e better make person wey sabi human translation help you translate am. We no go responsible if pesin no understand well or if yawa happen because of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

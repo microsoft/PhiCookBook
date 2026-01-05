@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-12-22T01:13:07+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T15:00:05+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "te"
 }
 -->
-## Kaito ద్వారా ఇన్ఫరెన్స్ 
+## కైటోతో సూచన
 
-[Kaito](https://github.com/Azure/kaito) ఒక ఆపరేటర్, ఇది Kubernetes క్లస్టర్‌లో AI/ML ఇన్ఫరెన్స్ మోడల్ డిప్లాయ్‌మెంట్‌ను ఆటోమేట్ చేస్తుంది.
+[కైటో](https://github.com/Azure/kaito) అనేది Kubernetes క్లస్టర్‌లో AI/ML సూచన మోడల్ డిప్లాయ్‌మెంట్‌ను ఆటోమేట్ చేసే ఆపరేటర్.
 
-Kaitoకు వర్చువల్ మెషీన్ ఆధారిత ప్రధాన మోడల్ డిప్లాయ్‌మెంట్ పద్ధతులతో పోలిస్తే క్రింది ముఖ్య తేడాలు ఉన్నాయి:
+వర్చువల్ మిషన్ ఇన్ఫ్రాస్ట్రక్చర్‌లపై నిర్మితమైన ప్రధానధార మోడల్ డిప్లాయ్‌మెంట్ పద్ధతులతో పోల్చితే కైటోకు కింది ముఖ్య తేడాలు ఉన్నాయి:
 
-- కంటైనర్ ఇమేజ్‌ల ద్వారా మోడల్ ఫైళ్లను నిర్వహిస్తుంది. మోడల్ లైబ్రరీ ఉపయోగించి ఇన్ఫరెన్స్ కాల్స్ నిర్వహించడానికి ఒక HTTP సర్వర్ అందించబడింది.
-- ప్రీసెట్ కాన్ఫిగరేషన్లు అందించడం ద్వారా GPU హార్డ్వేర్‌కు సరిపడేలా డిప్లాయ్‌మెంట్ పారామీటర్లను ట్యూన్ చేయాల్సిన అవసరాన్ని తప్పిస్తుంది.
-- మోడల్ అవసరాల ఆధారంగా GPU నోడ్‌లను ఆటో-ప్రొవిజన్ చేస్తుంది.
-- లైసెన్స్ అనుమతిస్తే పెద్ద మోడల్ ఇమేజ్‌లను public Microsoft Container Registry (MCR)లో హోస్ట్ చేస్తుంది.
+- మోడల్ ఫైళ్లను కంటైనర్ ఇమేజెస్ ద్వారా నిర్వహించండి. మోడల్ లైబ్రరీ ఉపయోగించి సూచన కాల్స్ చేయడానికి ఒక http సర్వర్ అందించబడింది.
+- GPU హార్డ్వేర్‌ను సరిపోల్చడానికి డిప్లాయ్‌మెంట్ పరామితులను ట్యూన్ చేయకుండా ప్రిసెట్ కాన్ఫిగరేషన్లను అందించడం.
+- మోడల్ అవసరాల ఆధారంగా GPU నోడ్‌లను ఆటో ప్రావిజన్ చేయడం.
+- లైసెన్సు అనుమతిస్తే, పెద్ద మోడల్ ఇమేజెస్‌ను పబ్లిక్ Microsoft కంటైనర్ రిజిస్ట్రీ (MCR)లో హోస్ట్ చేయండి.
 
-Kaito ఉపయోగించడం ద్వారా Kubernetesలో పెద్ద AI ఇన్ఫరెన్స్ మోడళ్లను ఆన్‌బోర్డింగ్ చేసే వర్క్‌ఫ్లో చాలా సులభతరం అవుతుంది。
+కైటో ఉపయోగించి, Kubernetesలో పెద్ద AI సూచన మోడల్స్‌ను ఆన్‌బోర్డింగ్ చేసే వర్క్‌ఫ్లో చాలా సులభతరం అవుతుంది.
 
+## సాంకేతిక వేళ
 
-## ఆర్కిటెక్చర్
+కైటో క్లాసిక్ Kubernetes కస్టమ్ రిసోర్స్ డిఫినిషన్(CRD)/కంట్రోలర్ డిజైన్ నమూనాను అనుసరిస్తుంది. యూజర్ GPU అవసరాలు మరియు సూచన స్పెసిఫికేషన్‌ను వివరించే `workspace` కస్టమ్ రిసోర్స్‌ను నిర్వహిస్తారు. కైటో కంట్రోలర్‌లు `workspace` కస్టమ్ రిసోర్స్‌ను రీకాంసిల్ చేసి డిప్లాయ్‌మెంట్‌ను ఆటోమేట్ చేస్తాయి.
 
-Kaito సంప్రదాయ Kubernetes Custom Resource Definition(CRD)/controller డిజైన్ ప్యాటర్న్‌ను అనుసరిస్తుంది. యూజర్ GPU అవసరాలు మరియు ఇన్ఫరెన్స్ స్పెసిఫికేషన్‌ను వర్ణించే `workspace` custom resource ను నిర్వహిస్తారు. Kaito కంట్రోలర్లు `workspace` custom resource ను reconcile చేయడం ద్వారా డిప్లాయ్‌మెంట్‌ను ఆటోమేట్ చేస్తాయి.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito ఆర్కిటెక్చర్" alt="Kaito ఆర్కిటెక్చర్">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-పై చిత్రం Kaito ఆర్కిటెక్చర్ అవలోకనాన్ని చూపిస్తుంది. దాని ప్రధాన భాగాలు క్రింది విధంగా ఉన్నాయి:
+పైన ఇచ్చిన ఫిగర్ కైటో ఆర్కిటెక్చర్ అవలోకనాన్ని చూపిస్తుంది. దాని ప్రధాన భాగాలు:
 
-- **Workspace controller**: ఇది `workspace` custom resource ను reconcile చేస్తుంది, నోడ్ ఆటో ప్రొవిజనింగ్‌ను ట్రిగ్గర్ చేయడానికి `machine` (explained below) custom resources ను సృష్టిస్తుంది, మరియు మోడల్ ప్రీసెట్ కాన్ఫిగరేషన్ల ఆధారంగా ఇన్ఫరెన్స్ వర్క్‌లోడ్‌ను (`deployment` లేదా `statefulset`) సృష్టిస్తుంది.
-- **Node provisioner controller**: ఈ కంట్రోలర్ పేరు [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) లో *gpu-provisioner* గా ఉంటుంది. ఇది workspace controller తో పరస్పర చర్యకు [Karpenter](https://sigs.k8s.io/karpenter) నుండి ఉద్భవించిన `machine` CRD ను ఉపయోగిస్తుంది. ఇది Azure Kubernetes Service(AKS) APIs తో అనుసంధానం చేసి AKS క్లస్టర్‌కు కొత్త GPU నోడ్‌లను జోడిస్తుంది. 
-> గమనిక: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ఒక ఓపెన్ సోర్స్ కంపోనెంట్. ఇది [Karpenter-core](https://sigs.k8s.io/karpenter) APIs ను మద్దతు ఇస్తే ఇతర కంట్రోలర్లతో బదిలీ చేయవచ్చు.
+- **వర్క్‌స్పేస్ కంట్రోలర్**: ఇది `workspace` కస్టమ్ రిసోర్స్‌ను రీకాంసిల్ చేస్తుంది, నోడ్ ఆటో ప్రావిజనിംഗ് ప్రారంభించడానికి `machine` (క్రింది మూడు వివరించబడింది) కస్టమ్ రిసోర్స్‌లను సృష్టిస్తుంది మరియు మోడల్ ప్రిసెట్ కాన్ఫిగరేషన్ల ఆధారంగా సూచన వర్క్‌లోడ్ (`deployment` లేదా `statefulset`) సృష్టిస్తుంది.
+- **నోడ్ ప్రావిజనర్ కంట్రోలర్**: కంట్రోలర్ పేరు [gpu-provisioner helm చార్ట్](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)లో *gpu-provisioner*. ఇది [Karpenter](https://sigs.k8s.io/karpenter) నుండి వచ్చిన `machine` CRD ఉపయోగించి వర్క్‌స్పేస్ కంట్రోలర్‌తో ఇంటరాక్ట్ చేస్తుంది. Azure Kubernetes Service(AKS) APIs తో సమన్వయం చేసి AKS క్లస్టర్‌లో కొత్త GPU నోడ్‌లను జోడిస్తుంది.  
+> గమనిక: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ఓపెన్ సోర్స్ కాంపోనెంట్. ఇది [Karpenter-core](https://sigs.k8s.io/karpenter) APIs మద్దతు ఉంటే ఇతర కంట్రోలర్‌లతో మార్చవచ్చు.
 
 ## ఇన్‌స్టాలేషన్
 
-దయచేసి ఇన్‌స్టాలేషన్ మార్గదర్శకత్వాన్ని [ఇక్కడ](https://github.com/Azure/kaito/blob/main/docs/installation.md) చూడండి.
+ఇన్‌స్టాలేషన్ గైడెన్స్ కోసం [ఇక్కడ](https://github.com/Azure/kaito/blob/main/docs/installation.md) చూడండి.
 
-## త్వరిత ప్రారంభం — Phi-3 ఇన్ఫరెన్స్
-[నమూనా కోడ్ Phi-3 ఇన్ఫరెన్స్](https://github.com/Azure/kaito/tree/main/examples/inference)
+## త్వరిత ప్రారంభ సూచన Phi-3
+[సాంపిల్ కోడ్ సూచన Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -77,14 +77,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # అవుట్‌పుట్ ACR మార్గాన్ని సర్దుబాటు చేయడం
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # అవుట్పుట్ ACR మార్గం ట్యూనింగ్ చేయడం
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-workspace స్థితిని క్రింది కమాండ్ 실행 చేయడం ద్వారా ట్రాక్ చేయవచ్చు. WORKSPACEREADY కాలమ్ `True` అవగానే, మోడల్ విజయవంతంగా డిప్లాయ్ చేయబడింది.
+వర్క్‌స్పేస్ స్థితిని క్రింద ఇవ్వబడిన కమాండ్ ద్వారా ట్రాక్ చేయవచ్చు. WORKSPACEREADY కాలమ్ `True` అయితే, మోడల్ విజయవంతంగా డిప్లాయ్ అయింది.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-తదుపరి, ఇన్ఫరెన్స్ సర్వీస్ యొక్క క్లస్టర్ IP కనుగొని క్లస్టర్‌లో సర్వీస్ ఎండ్‌పాయింట్‌ను పరీక్షించడానికి తాత్కాలిక `curl` పోడ్ ఉపయోగించవచ్చు.
+తర్వాత, సూచన సేవ యొక్క క్లస్టర్ IP కనుగొని క్లస్టర్‌లో సర్వీస్ ఎండ్‌పాయింట్‌ను పరీక్షించడానికి తాత్కాలిక `curl` పోడ్ ఉపయోగించవచ్చు.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +103,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## త్వరిత ప్రారంభం — Phi-3 ఇన్ఫరెన్స్ అడాప్టర్లతో
+## అడాప్టర్లతో త్వరిత ప్రారంభ సూచన Phi-3
 
-Kaito ఇన్‌స్టాల్ చేసిన తర్వాత, ఇన్ఫరెన్స్ సర్వీస్ ప్రారంభించడానికి క్రింది కమాండ్స్ ప్రయత్నించవచ్చు.
+కైటో ఇన్‌స్టాల్ చేసిన తరువాత, క్రింది కమాండ్లు ఉపయోగించి సూచన 서비스를 ప్రారంభించవచ్చు.
 
-[నమూనా కోడ్ Phi-3 ఇన్ఫరెన్స్ అడాప్టర్లతో](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[అడాప్టర్లుతో సాంపిల్ కోడ్ సూచన Phi-3](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -149,14 +149,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ట్యూనింగ్ అవుట్‌పుట్ ACR మార్గం
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # అవుట్పుట్ ACR మార్గాన్ని ట్యూనింగ్ చేసుకుంటుంది
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-workspace స్థితిని క్రింది కమాండ్ 실행 చేయడం ద్వారా ట్రాక్ చేయవచ్చు. WORKSPACEREADY కాలమ్ `True` అవగానే, మోడల్ విజయవంతంగా డిప్లాయ్ చేయబడింది.
+వర్క్‌స్పేస్ స్థితిని క్రింద చెప్పిన కమాండ్‌తో ట్రాక్ చేయవచ్చు. WORKSPACEREADY కాలమ్ `True` అయితే, మోడల్ విజయవంతంగా డిప్లాయ్ అయింది.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-తదుపరి, ఇన్ఫరెన్స్ సర్వీస్ యొక్క క్లస్టర్ IP కనుగొని క్లస్టర్‌లో సర్వీస్ ఎండ్‌పాయింట్‌ను పరీక్షించడానికి తాత్కాలిక `curl` పోడ్ ఉపయోగించవచ్చు.
+తర్వాత, సూచన సేవ యొక్క క్లస్టర్ IP కనుగొని క్లస్టర్‌లో సర్వీస్ ఎండ్‌పాయింట్‌ను పరీక్షించడానికి తాత్కాలిక `curl` పోడ్‌ను ఉపయోగించవచ్చు.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -178,6 +178,6 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-నిరాకరణ (Disclaimer):
-ఈ డాక్యుమెంట్‌ను AI అనువాద సేవ [Co-op Translator](https://github.com/Azure/co-op-translator) ఉపయోగించి అనువదించారు. మేము ఖచ్చితత్వానికి శ్రమిస్తున్నప్పటికీ, స్వయంచాలక అనువాదాలలో పొరపాట్లు లేదా అపరిపక్వతలు ఉండవచ్చని దయచేసి గుర్తుంచుకోండి. స్థానిక భాషలోని అసలు డాక్యుమెంట్‌ను అధికారిక మూలంగా పరిగణించాలి. ముఖ్యమైన సమాచారానికి వృత్తిపరమైన మానవ అనువాదం చేయించుకోవాలని సూచించబడుతుంది. ఈ అనువాదం వలన జరిగే ఏవైనా అవగాహనా లోపాలు లేదా తప్పుగా అర్థం చేసుకోవడంపై మేము బాధ్యులు కాదేమో అని తెలియజేస్తున్నాము.
+**అస్వీకరణ**:  
+ఈ పత్రం AI అనువాద సేవ [Co-op Translator](https://github.com/Azure/co-op-translator) ఉపయోగించి అనువాదం చేయబడింది. మేము ఖచ్చితత్వానికి యత్నిస్తున్నప్పటికీ, యాంత్రిక అనువాదాల్లో తప్పులే లేదా అపరిశుద్ధతలు ఉండవచ్చు. అసలు పత్రం దాని స్థానిక భాషలోనే అధికారిక వనరు గా పరిగణించాలి. ముఖ్యమైన సమాచారానికి, ప్రొఫెషనల్ మానవ అనువాదం సిఫారసు చేయబడుతుంది. ఈ అనువాదం వాడకంలో ఏదైనా తప్పుదోవ లేదా తప్పుదోవ తీసుకోవడంపై మేము బాధ్యత వహించము.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

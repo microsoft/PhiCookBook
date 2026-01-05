@@ -1,233 +1,233 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-10-11T12:02:53+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T14:38:34+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "ta"
 }
 -->
-# Fine-tune மற்றும் Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரிகளை ஒருங்கிணைத்தல்
+# Fine-tune மற்றும் Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரிகளை ஒருங்கிணைக்கவும்
 
-இந்த முழுமையான (E2E) மாதிரி Microsoft Tech Community-இன் "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" வழிகாட்டுதலின் அடிப்படையில் உருவாக்கப்பட்டது. இது Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரிகளை fine-tuning, வெளியிடுதல் மற்றும் ஒருங்கிணைத்தல் ஆகிய செயல்முறைகளை அறிமுகப்படுத்துகிறது.
+இந்த End-to-end (E2E) மாதிரி Microsoft Tech Community இன் "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" என்ற வழிகாட்டி அடிப்படையில் உருவாக்கப்பட்டுள்ளது. இது fine-tuning, despleyment மற்றும் Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரிகளை ஒருங்கிணைக்கும் செயல்முறைகளை அறிமுகப்படுத்துகிறது.
 
-## மேலோட்டம்
+## கண்ணோட்டம்
 
-இந்த E2E மாதிரியில், Phi-3 மாதிரியை fine-tune செய்யவும், Prompt flow உடன் ஒருங்கிணைக்கவும் எப்படி என்பதை நீங்கள் கற்றுக்கொள்வீர்கள். Azure Machine Learning மற்றும் Prompt flow-ஐ பயன்படுத்தி, தனிப்பயன் AI மாதிரிகளை வெளியிடவும் பயன்படுத்தவும் ஒரு வேலைப்போக்கு உருவாக்குவீர்கள். இந்த E2E மாதிரி மூன்று சூழல்களாகப் பிரிக்கப்பட்டுள்ளது:
+இந்த E2E மாதிரியில், நீங்கள் Phi-3 மாதிரியை fine-tune செய்யவும், அதனை Prompt flow உடன் ஒருங்கிணைக்கவும் கற்றுக்கொள்வீர்கள். Azure Machine Learning மற்றும் Prompt flow ஐ பயன்படுத்தி, தனிப்பயன் AI மாதிரிகளை despleyment மற்றும் பயன்பாட்டிற்கான ஒரு வேலைநெறியை அமைக்கும். இந்த E2E மாதிரி மூன்று காட்சிகளாகப் பிரிக்கப்பட்டுள்ளது:
 
-**சூழல் 1: Azure வளங்களை அமைத்தல் மற்றும் fine-tuning க்கான தயாரிப்பு**
+**காட்சி 1: Azure வளங்களை அமைத்தல் மற்றும் fine-tuning க்கு தயார் செய்தல்**
 
-**சூழல் 2: Phi-3 மாதிரியை fine-tune செய்து Azure Machine Learning Studio-வில் வெளியிடுதல்**
+**காட்சி 2: Phi-3 மாதிரியை fine-tune செய்யவும் Azure Machine Learning Studio இல் despleyment செய்யவும்**
 
-**சூழல் 3: Prompt flow உடன் ஒருங்கிணைத்தல் மற்றும் உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடுதல்**
+**காட்சி 3: Prompt flow உடன் ஒருங்கிணைத்தல் மற்றும் உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடல்**
 
-இந்த E2E மாதிரியின் மேலோட்டம் இங்கே உள்ளது.
+இதோ இந்த E2E மாதிரியின் ஒரு கண்ணோட்டம்.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../imgs/02/FineTuning-PromptFlow/00-01-architecture.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.ta.png)
 
 ### உள்ளடக்க அட்டவணை
 
-1. **[சூழல் 1: Azure வளங்களை அமைத்தல் மற்றும் fine-tuning க்கான தயாரிப்பு](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure Machine Learning Workspace உருவாக்குதல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Azure Subscription-ல் GPU quotas கோருதல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [பங்கு ஒதுக்கீடு சேர்த்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [திட்டத்தை அமைத்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Fine-tuning க்கான dataset தயாரித்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[காட்சி 1: Azure வளங்களை அமைத்தல் மற்றும் fine-tuning க்கு தயார் செய்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Azure Machine Learning வேலைநிரலிடத்தை உருவாக்குக](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Azure சந்தாவுக்கு GPU வட்டாரங்கள் கோருக](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [பங்கு நியமனம் சேர்க்கவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [திட்டத்தை அமைக்கவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [fine-tuning க்கு தரவுத்தொகுப்பை தயார் செய்க](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[சூழல் 2: Phi-3 மாதிரியை fine-tune செய்து Azure Machine Learning Studio-வில் வெளியிடுதல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure CLI அமைத்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Phi-3 மாதிரியை fine-tune செய்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Fine-tuned மாதிரியை வெளியிடுதல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[காட்சி 2: Phi-3 மாதிரியை fine-tune செய்யவும் Azure Machine Learning Studio இல் despleyment செய்யவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Azure CLI ஐ அமைக்கவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Phi-3 மாதிரியை fine-tune செய்க](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [fine-tuned மாதிரியை despleyment செய்யவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[சூழல் 3: Prompt flow உடன் ஒருங்கிணைத்தல் மற்றும் உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடுதல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரியை ஒருங்கிணைத்தல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடுதல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[காட்சி 3: Prompt flow உடன் ஒருங்கிணைத்தல் மற்றும் உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடல்](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [தனிப்பயன் Phi-3 மாதிரியை Prompt flow உடன் ஒருங்கிணைக்கவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடவும்](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## சூழல் 1: Azure வளங்களை அமைத்தல் மற்றும் fine-tuning க்கான தயாரிப்பு
+## காட்சி 1: Azure வளங்களை அமைத்தல் மற்றும் fine-tuning க்கு தயார் செய்தல்
 
-### Azure Machine Learning Workspace உருவாக்குதல்
+### Azure Machine Learning வேலைநிரலிடத்தை உருவாக்குக
 
-1. **search bar**-ல் *azure machine learning* என டைப் செய்து, தோன்றும் விருப்பங்களில் **Azure Machine Learning**-ஐ தேர்ந்தெடுக்கவும்.
+1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *azure machine learning* என்பதைக் கொடுத்து தோன்றும் விருப்பங்களில் இருந்து **Azure Machine Learning** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Type azure machine learning](../../../../../../imgs/02/FineTuning-PromptFlow/01-01-type-azml.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ta.png)
 
-1. **+ Create** என்பதை navigation menu-ல் தேர்ந்தெடுக்கவும்.
+1. வழிசெலுத்தல் பட்டியில் இருந்து **+ Create** ஐ தேர்ந்தெடுக்கவும்.
 
-1. Navigation menu-ல் **New workspace**-ஐ தேர்ந்தெடுக்கவும்.
+1. வழிசெலுத்தல் பட்டியில் இருந்து **New workspace** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Select new workspace](../../../../../../imgs/02/FineTuning-PromptFlow/01-02-select-new-workspace.png)
-
-1. பின்வரும் பணிகளைச் செய்யவும்:
-
-    - உங்கள் Azure **Subscription**-ஐ தேர்ந்தெடுக்கவும்.
-    - பயன்படுத்த **Resource group**-ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது ஒன்றை உருவாக்கவும்).
-    - **Workspace Name**-ஐ உள்ளிடவும். இது தனித்துவமான மதிப்பாக இருக்க வேண்டும்.
-    - பயன்படுத்த விரும்பும் **Region**-ஐ தேர்ந்தெடுக்கவும்.
-    - பயன்படுத்த **Storage account**-ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது ஒன்றை உருவாக்கவும்).
-    - பயன்படுத்த **Key vault**-ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது ஒன்றை உருவாக்கவும்).
-    - பயன்படுத்த **Application insights**-ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது ஒன்றை உருவாக்கவும்).
-    - பயன்படுத்த **Container registry**-ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது ஒன்றை உருவாக்கவும்).
-
-    ![Fill AZML.](../../../../../../imgs/02/FineTuning-PromptFlow/01-03-fill-AZML.png)
-
-1. **Review + Create** என்பதை தேர்ந்தெடுக்கவும்.
-
-1. **Create** என்பதை தேர்ந்தெடுக்கவும்.
-
-### Azure Subscription-ல் GPU quotas கோருதல்
-
-இந்த E2E மாதிரியில், fine-tuning க்கான *Standard_NC24ads_A100_v4 GPU* மற்றும் deployment க்கான *Standard_E4s_v3* CPU பயன்படுத்தப்படும். GPU quota கோரிக்கையை அனுப்ப வேண்டும், ஆனால் CPU quota கோரிக்கையை அனுப்ப தேவையில்லை.
-
-> [!NOTE]
->
-> GPU ஒதுக்கீட்டுக்கு *Pay-As-You-Go* subscription-கள் மட்டுமே தகுதி வாய்ந்தவை; benefit subscription-கள் தற்போது ஆதரிக்கப்படவில்லை.
->
-> Benefit subscription-களை (Visual Studio Enterprise Subscription போன்றவை) பயன்படுத்துபவர்கள் அல்லது fine-tuning மற்றும் deployment செயல்முறையை விரைவாக சோதிக்க விரும்புபவர்கள், இந்த டுடோரியல் CPU-ஐ பயன்படுத்தி குறைந்த அளவிலான dataset-ஐ fine-tune செய்ய வழிகாட்டுதலையும் வழங்குகிறது. இருப்பினும், பெரிய dataset-களுடன் GPU பயன்படுத்தும்போது fine-tuning முடிவுகள் குறிப்பிடத்தக்க அளவில் மேம்பட்டதாக இருக்கும்.
-
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) ஐ பார்வையிடவும்.
-
-1. *Standard NCADSA100v4 Family* quota-ஐ கோர பின்வரும் பணிகளைச் செய்யவும்:
-
-    - இடது பக்கத்திலுள்ள tab-ல் **Quota**-ஐ தேர்ந்தெடுக்கவும்.
-    - பயன்படுத்த **Virtual machine family**-ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *Standard_NC24ads_A100_v4* GPU-ஐ உள்ளடக்கிய **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**-ஐ தேர்ந்தெடுக்கவும்.
-    - Navigation menu-ல் **Request quota**-ஐ தேர்ந்தெடுக்கவும்.
-
-        ![Request quota.](../../../../../../imgs/02/FineTuning-PromptFlow/01-04-request-quota.png)
-
-    - Request quota பக்கத்தில், பயன்படுத்த விரும்பும் **New cores limit**-ஐ உள்ளிடவும். உதாரணமாக, 24.
-    - Request quota பக்கத்தில், GPU quota-ஐ கோர **Submit**-ஐ தேர்ந்தெடுக்கவும்.
-
-> [!NOTE]
-> உங்கள் தேவைகளுக்கு ஏற்ற GPU அல்லது CPU-ஐ தேர்ந்தெடுக்க [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) ஆவணத்தைப் பார்க்கவும்.
-
-### பங்கு ஒதுக்கீடு சேர்த்தல்
-
-உங்கள் மாதிரிகளை fine-tune மற்றும் deploy செய்ய, முதலில் ஒரு User Assigned Managed Identity (UAI) உருவாக்கி, அதற்கு பொருத்தமான அனுமதிகளை வழங்க வேண்டும். Deployment போது authentication க்காக இந்த UAI பயன்படுத்தப்படும்.
-
-#### User Assigned Managed Identity(UAI) உருவாக்குதல்
-
-1. **search bar**-ல் *managed identities* என டைப் செய்து, தோன்றும் விருப்பங்களில் **Managed Identities**-ஐ தேர்ந்தெடுக்கவும்.
-
-    ![Type managed identities.](../../../../../../imgs/02/FineTuning-PromptFlow/01-05-type-managed-identities.png)
-
-1. **+ Create**-ஐ தேர்ந்தெடுக்கவும்.
-
-    ![Select create.](../../../../../../imgs/02/FineTuning-PromptFlow/01-06-select-create.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.ta.png)
 
 1. பின்வரும் பணிகளைச் செய்யவும்:
 
-    - உங்கள் Azure **Subscription**-ஐ தேர்ந்தெடுக்கவும்.
-    - பயன்படுத்த **Resource group**-ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது ஒன்றை உருவாக்கவும்).
-    - பயன்படுத்த விரும்பும் **Region**-ஐ தேர்ந்தெடுக்கவும்.
-    - **Name**-ஐ உள்ளிடவும். இது தனித்துவமான மதிப்பாக இருக்க வேண்டும்.
+    - உங்கள் Azure **Subscription** ஐத் தேர்ந்தெடுக்கவும்.
+    - பயன்படுத்த வேண்டிய **Resource group** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியதை உருவாக்கவும்).
+    - **Workspace Name** ஐ உள்ளிடவும். இது ஒரு தனித்துவமான மதிப்பாக இருக்க வேண்டும்.
+    - நீங்கள் பயன்படுத்த விருப்பமான **Region** ஐ தேர்ந்தெடுக்கவும்.
+    - பயன்பாட்டுக்குரிய **Storage account** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது).
+    - பயன்பாட்டுக்குரிய **Key vault** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது).
+    - பயன்பாட்டுக்குரிய **Application insights** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது).
+    - பயன்பாட்டுக்குரிய **Container registry** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது).
 
-1. **Review + create**-ஐ தேர்ந்தெடுக்கவும்.
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ta.png)
 
-1. **+ Create**-ஐ தேர்ந்தெடுக்கவும்.
+1. **Review + Create** ஐ தேர்ந்தெடுக்கவும்.
 
-#### Managed Identity-க்கு Contributor பங்கு ஒதுக்கீடு சேர்த்தல்
+1. **Create** ஐ தேர்ந்தெடுக்கவும்.
 
-1. நீங்கள் உருவாக்கிய Managed Identity resource-க்கு செல்லவும்.
+### Azure சந்தாவில் GPU வட்டாரங்களை கோருக
 
-1. இடது பக்கத்திலுள்ள tab-ல் **Azure role assignments**-ஐ தேர்ந்தெடுக்கவும்.
+இந்த E2E மாதிரியில், fine-tuning க்காக *Standard_NC24ads_A100_v4 GPU* பயன்படுத்தப்படும், இது வட்டார கோரிக்கையை தேவைப்படுத்துகிறது, deployment க்காக *Standard_E4s_v3* CPU பயன்படுத்தப்படும், இது வட்டார கோரிக்கையைத் தேவையற்றது.
 
-1. Navigation menu-ல் **+Add role assignment**-ஐ தேர்ந்தெடுக்கவும்.
+> [!NOTE]
+>
+> Pay-As-You-Go சந்தாக்கள் மட்டும் (இயல்பான சந்தை வகை) GPU ஒதுக்கீட்டிற்கு தகுதிபெற்றவை; பயன்திட்ட சந்தாக்கள் இப்போது ஆதரிக்கப்படவில்லை.
+>
+> பயன்திட்ட சந்தைகளை பயன்படுத்துவோருக்கு (Visual Studio Enterprise Subscription போன்றவை) அல்லது fine-tuning மற்றும் deployment செயல்முறையை விரைவாகச் சோதிக்க விரும்புவோருக்கு, இந்த பயிற்சியில் CPU கொண்டு குறைந்த தரவு தொகுப்புடன் fine-tuning செய்வதற்கான வழிகாட்டலும் உள்ளது. எனினும், GPU கொண்டு பெரிய தரவு தொகுப்புகளை பயன்படுத்துவதால் fine-tuning முடிவுகள் முக்கியமாக சிறப்பாக இருக்கும் என்பதை கவனிக்கவும்.
+
+1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) செல்லவும்.
+
+1. *Standard NCADSA100v4 Family* வட்டாரத்தை கோருவதற்கு பின்வரும் பணிகளைச் செய்யவும்:
+
+    - இடது பக்க தாவலில் இருந்து **Quota** ஐத் தேர்ந்தெடுக்கவும்.
+    - பயன்படுத்த வேண்டிய **Virtual machine family** ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *Standard_NC24ads_A100_v4* GPU உட்படிவரும் **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ஐ தேர்ந்தெடுக்கவும்.
+    - வழிசெலுத்தல் பட்டியில் இருந்து **Request quota** ஐ தேர்ந்தெடுக்கவும்.
+
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ta.png)
+
+    - Request quota பக்கத்திலுள்ள **New cores limit** ஐ நீங்கள் தேவையான மதிப்பை உள்ளிடவும். உதாரணமாக, 24.
+    - Request quota பக்கத்தில் **Submit** ஐ தேர்ந்தெடுத்து GPU வட்டாரத்தை கோரவும்.
+
+> [!NOTE]
+> உங்கள் தேவைகளுக்கு ஏற்ப GPU அல்லது CPU ஐ தேர்ந்தெடுக்க [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) ஆவணத்தை காணலாம்.
+
+### பங்கு நியமனத்தைச் சேர்
+
+நீங்கள் உங்கள் மாதிரிகளை fine-tune செய்து despleyment செய்ய User Assigned Managed Identity (UAI) ஒன்றை உருவாக்கி, அதற்கு ஏற்ற அனுமதிகளை வழங்க வேண்டும். இந்த UAI despleyment போது அங்கீகாரத்திற்குப் பயன்படும்.
+
+#### User Assigned Managed Identity(UAI) உருவாக்குக
+
+1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *managed identities* என்று உள்ளிட்டு தோன்றும் விருப்பங்களில் இருந்து **Managed Identities** ஐ தேர்ந்தெடுக்கவும்.
+
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ta.png)
+
+1. **+ Create** ஐ தேர்ந்தெடுக்கவும்.
+
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.ta.png)
+
+1. பின்வரும் பணிகளைச் செய்யவும்:
+
+    - உங்கள் Azure **Subscription** ஐ தேர்ந்தெடுக்கவும்.
+    - பயன்படுத்த வேண்டிய **Resource group** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியதை உருவாக்கவும்).
+    - நீங்கள் பயன்படுத்த விருப்பமான **Region** ஐ தேர்ந்தெடுக்கவும்.
+    - **Name** ஐ உள்ளிடவும். இது தனித்துவமானது ஆக இருக்க வேண்டும்.
+
+1. **Review + create** ஐ தேர்ந்தெடுக்கவும்.
+
+1. **+ Create** ஐ தேர்ந்தெடுக்கவும்.
+
+#### Managed Identityக்கு Contributor பங்கு நியமனத்தைச் சேர்க்கவும்
+
+1. நீங்கள் உருவாக்கிய Managed Identity வளத்திற்கு செல்லவும்.
+
+1. இடது பக்க தாவலில் இருந்து **Azure role assignments** ஐத் தேர்ந்தெடுக்கவும்.
+
+1. வழிசெலுத்தல் பட்டியில் இருந்து **+Add role assignment** ஐ தேர்ந்தெடுக்கவும்.
 
 1. Add role assignment பக்கத்தில் பின்வரும் பணிகளைச் செய்யவும்:
-    - **Scope**-ஐ **Resource group**-க்கு தேர்ந்தெடுக்கவும்.
-    - உங்கள் Azure **Subscription**-ஐ தேர்ந்தெடுக்கவும்.
-    - பயன்படுத்த **Resource group**-ஐ தேர்ந்தெடுக்கவும்.
-    - **Role**-ஐ **Contributor**-க்கு தேர்ந்தெடுக்கவும்.
+    - **Scope** ஐ **Resource group** ஆக தேர்ந்தெடுக்கவும்.
+    - உங்கள் Azure **Subscription** ஐத் தேர்ந்தெடுக்கவும்.
+    - பயன்படுத்த வேண்டிய **Resource group** ஐத் தேர்ந்தெடுக்கவும்.
+    - **Role** ஐ **Contributor** ஆக தேர்ந்தெடுக்கவும்.
 
-    ![Fill contributor role.](../../../../../../imgs/02/FineTuning-PromptFlow/01-07-fill-contributor-role.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ta.png)
 
-1. **Save**-ஐ தேர்ந்தெடுக்கவும்.
+1. **Save** ஐத் தேர்ந்தெடுக்கவும்.
 
-#### Managed Identity-க்கு Storage Blob Data Reader பங்கு ஒதுக்கீடு சேர்த்தல்
+#### Managed Identityக்கு Storage Blob Data Reader பங்கு நியமனத்தைச் சேர்க்கவும்
 
-1. **search bar**-ல் *storage accounts* என டைப் செய்து, தோன்றும் விருப்பங்களில் **Storage accounts**-ஐ தேர்ந்தெடுக்கவும்.
+1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *storage accounts* என்று உள்ளிட்டு தோன்றும் விருப்பங்களில் இருந்து **Storage accounts** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Type storage accounts.](../../../../../../imgs/02/FineTuning-PromptFlow/01-08-type-storage-accounts.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ta.png)
 
-1. நீங்கள் உருவாக்கிய Azure Machine Learning workspace-க்கு தொடர்புடைய storage account-ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephistorage*.
+1. உங்கள் Azure Machine Learning வேலைநிரலிடம் சார்ந்த சேமிப்பக கணக்கை தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephistorage*.
 
-1. Add role assignment பக்கத்திற்குச் செல்ல பின்வரும் பணிகளைச் செய்யவும்:
+1. Add role assignment பக்கத்துக்கு செல்ல பின்வரும் பணிகளைச் செய்யவும்:
 
-    - நீங்கள் உருவாக்கிய Azure Storage account-க்கு செல்லவும்.
-    - இடது பக்கத்திலுள்ள tab-ல் **Access Control (IAM)**-ஐ தேர்ந்தெடுக்கவும்.
-    - Navigation menu-ல் **+ Add**-ஐ தேர்ந்தெடுக்கவும்.
-    - Navigation menu-ல் **Add role assignment**-ஐ தேர்ந்தெடுக்கவும்.
+    - நீங்கள் உருவாக்கிய Azure Storage கணக்குக்கு செல்லவும்.
+    - இடது பக்க தாவலில் இருந்து **Access Control (IAM)** ஐத் தேர்ந்தெடுக்கவும்.
+    - வழிசெலுத்தல் பட்டியில் இருந்து **+ Add** ஐத் தேர்ந்தெடுக்கவும்.
+    - **Add role assignment** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Add role.](../../../../../../imgs/02/FineTuning-PromptFlow/01-09-add-role.png)
-
-1. Add role assignment பக்கத்தில் பின்வரும் பணிகளைச் செய்யவும்:
-
-    - Role பக்கத்தில், **search bar**-ல் *Storage Blob Data Reader* என டைப் செய்து, தோன்றும் விருப்பங்களில் **Storage Blob Data Reader**-ஐ தேர்ந்தெடுக்கவும்.
-    - Role பக்கத்தில் **Next**-ஐ தேர்ந்தெடுக்கவும்.
-    - Members பக்கத்தில், **Assign access to** **Managed identity**-ஐ தேர்ந்தெடுக்கவும்.
-    - Members பக்கத்தில் **+ Select members**-ஐ தேர்ந்தெடுக்கவும்.
-    - Select managed identities பக்கத்தில், உங்கள் Azure **Subscription**-ஐ தேர்ந்தெடுக்கவும்.
-    - Select managed identities பக்கத்தில், **Managed identity**-ஐ **Manage Identity**-க்கு தேர்ந்தெடுக்கவும்.
-    - Select managed identities பக்கத்தில், நீங்கள் உருவாக்கிய Manage Identity-ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephi-managedidentity*.
-    - Select managed identities பக்கத்தில் **Select**-ஐ தேர்ந்தெடுக்கவும்.
-
-    ![Select managed identity.](../../../../../../imgs/02/FineTuning-PromptFlow/01-10-select-managed-identity.png)
-
-1. **Review + assign**-ஐ தேர்ந்தெடுக்கவும்.
-
-#### Managed Identity-க்கு AcrPull பங்கு ஒதுக்கீடு சேர்த்தல்
-
-1. **search bar**-ல் *container registries* என டைப் செய்து, தோன்றும் விருப்பங்களில் **Container registries**-ஐ தேர்ந்தெடுக்கவும்.
-
-    ![Type container registries.](../../../../../../imgs/02/FineTuning-PromptFlow/01-11-type-container-registries.png)
-
-1. Azure Machine Learning workspace-க்கு தொடர்புடைய container registry-ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephicontainerregistries*
-
-1. Add role assignment பக்கத்திற்குச் செல்ல பின்வரும் பணிகளைச் செய்யவும்:
-
-    - இடது பக்கத்திலுள்ள tab-ல் **Access Control (IAM)**-ஐ தேர்ந்தெடுக்கவும்.
-    - Navigation menu-ல் **+ Add**-ஐ தேர்ந்தெடுக்கவும்.
-    - Navigation menu-ல் **Add role assignment**-ஐ தேர்ந்தெடுக்கவும்.
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ta.png)
 
 1. Add role assignment பக்கத்தில் பின்வரும் பணிகளைச் செய்யவும்:
 
-    - Role பக்கத்தில், **search bar**-ல் *AcrPull* என டைப் செய்து, தோன்றும் விருப்பங்களில் **AcrPull**-ஐ தேர்ந்தெடுக்கவும்.
-    - Role பக்கத்தில் **Next**-ஐ தேர்ந்தெடுக்கவும்.
-    - Members பக்கத்தில், **Assign access to** **Managed identity**-ஐ தேர்ந்தெடுக்கவும்.
-    - Members பக்கத்தில் **+ Select members**-ஐ தேர்ந்தெடுக்கவும்.
-    - Select managed identities பக்கத்தில், உங்கள் Azure **Subscription**-ஐ தேர்ந்தெடுக்கவும்.
-    - Select managed identities பக்கத்தில், **Managed identity**-ஐ **Manage Identity**-க்கு தேர்ந்தெடுக்கவும்.
-    - Select managed identities பக்கத்தில், நீங்கள் உருவாக்கிய Manage Identity-ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephi-managedidentity*.
-    - Select managed identities பக்கத்தில் **Select**-ஐ தேர்ந்தெடுக்கவும்.
-    - **Review + assign**-ஐ தேர்ந்தெடுக்கவும்.
+    - Role பக்கத்தில் *Storage Blob Data Reader* என்பதைக் தேடல் பெட்டியில் தட்டச்சு செய்து தோன்றும் விருப்பங்களில் இருந்து **Storage Blob Data Reader** ஐத் தேர்ந்தெடுக்கவும்.
+    - Role பக்கத்தில் **Next** ஐத் தேர்ந்தெடுக்கவும்.
+    - Members பக்கத்தில் **Assign access to** இல் **Managed identity** ஐத் தேர்ந்தெடுக்கவும்.
+    - Members பக்கத்தில் **+ Select members** ஐத் தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் உங்கள் Azure **Subscription** ஐத் தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் **Managed identity** ஐ **Manage Identity** ஆக தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் நீங்கள் உருவாக்கிய Managed Identity ஐ (உதாரணம்: *finetunephi-managedidentity*) தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் **Select** ஐத் தேர்ந்தெடுக்கவும்.
 
-### திட்டத்தை அமைத்தல்
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ta.png)
 
-இப்போது, நீங்கள் வேலை செய்ய ஒரு கோப்பகத்தை உருவாக்கி, Azure Cosmos DB-ல் சேமிக்கப்பட்ட உரையாடல் வரலாற்றைப் பயன்படுத்தி பயனர்களுடன் தொடர்பு கொள்ளும் ஒரு நிரல்தொகுப்பை உருவாக்க ஒரு மெய்நிகர் சூழலை அமைக்க வேண்டும்.
+1. **Review + assign** ஐத் தேர்ந்தெடுக்கவும்.
 
-#### வேலை செய்ய ஒரு கோப்பகத்தை உருவாக்கவும்
+#### Managed Identityக்கு AcrPull பங்கு நியமனத்தைச் சேர்க்கவும்
 
-1. ஒரு terminal window-ஐ திறந்து, *finetune-phi* என்ற பெயரில் default பாதையில் ஒரு கோப்பகத்தை உருவாக்க பின்வரும் கட்டளையை டைப் செய்யவும்.
+1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *container registries* என்று உள்ளிட்டு தோன்றும் விருப்பங்களில் இருந்து **Container registries** ஐத் தேர்ந்தெடுக்கவும்.
+
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ta.png)
+
+1. Azure Machine Learning வேலைநிரலிடம் சார்ந்த container registry ஐத் தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephicontainerregistries*.
+
+1. Add role assignment பக்கத்துக்கு செல்ல பின்வரும் பணிகளைச் செய்யவும்:
+
+    - இடது பக்க தாவலில் இருந்து **Access Control (IAM)** ஐத் தேர்ந்தெடுக்கவும்.
+    - வழிசெலுத்தல் பட்டியில் இருந்து **+ Add** ஐத் தேர்ந்தெடுக்கவும்.
+    - **Add role assignment** ஐத் தேர்ந்தெடுக்கவும்.
+
+1. Add role assignment பக்கத்தில் பின்வரும் பணிகளைச் செய்யவும்:
+
+    - Role பக்கத்தில் *AcrPull* என்பதைக் தேடல் பெட்டியில் தட்டச்சு செய்து தோன்றும் விருப்பங்களில் இருந்து **AcrPull** ஐத் தேர்ந்தெடுக்கவும்.
+    - Role பக்கத்தில் **Next** ஐத் தேர்ந்தெடுக்கவும்.
+    - Members பக்கத்தில் **Assign access to** இல் **Managed identity** ஐத் தேர்ந்தெடுக்கவும்.
+    - Members பக்கத்தில் **+ Select members** ஐத் தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் உங்கள் Azure **Subscription** ஐத் தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் **Managed identity** ஐ **Manage Identity** ஆக தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் நீங்கள் உருவாக்கிய Managed Identity ஐ (உதாரணம்: *finetunephi-managedidentity*) தேர்ந்தெடுக்கவும்.
+    - Select managed identities பக்கத்தில் **Select** ஐத் தேர்ந்தெடுக்கவும்.
+    - **Review + assign** ஐத் தேர்ந்தெடுக்கவும்.
+
+### திட்டத்தை அமைக்கவும்
+
+இப்போது, நீங்கள் ஒரு பணிக்குள் பணிகள் செய்யும் ஒரு கோப்புறையை உருவாக்கி, பயனர்களுடன் தொடர்பு கொண்டு, Azure Cosmos DB இல் சேமிக்கப்பட்ட உரையாடல் வரலாற்றை பயன்படுத்தும் ஒரு விண்டுவிட்ட சுற்றுச்சூழலை அமைத்துச் செயல்படும் ஒரு நிரலை உருவாக்குவீர்கள்.
+
+#### பணிக்குள் பணிகள் செய்ய ஒருகோப்புறையை உருவாக்குக
+
+1. டெர்மினல் விண்டோவை திறந்து கீழ்காணும் கட்டளையைக் கொண்டு இயல்புநிலை பாதையில் *finetune-phi* என்ற கோப்புறை உருவாக்கவும்.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. நீங்கள் உருவாக்கிய *finetune-phi* கோப்பகத்திற்கு செல்ல terminal-ல் பின்வரும் கட்டளையை டைப் செய்யவும்.
+1. கீழ்காணும் கட்டளையைக் கொண்டு நீங்கள் உருவாக்கிய *finetune-phi* கோப்புறைக்குள் செல்லவும்.
 
     ```console
     cd finetune-phi
     ```
 
-#### மெய்நிகர் சூழலை உருவாக்கவும்
+#### விண்டுவிட்ட சுற்றுச்சூழலை உருவாக்குக
 
-1. *.venv* என்ற பெயரில் மெய்நிகர் சூழலை உருவாக்க terminal-ல் பின்வரும் கட்டளையை டைப் செய்யவும்.
+1. கீழ்காணும் கட்டளையைக் கொண்டு *.venv* என்ற பெயரில் விண்டுவிட்ட சுற்றுச்சூழலை உருவாக்கவும்.
 
     ```console
     python -m venv .venv
     ```
 
-1. மெய்நிகர் சூழலை செயல்படுத்த terminal-ல் பின்வரும் கட்டளையை டைப் செய்யவும்.
+1. கீழ்காணும் கட்டளையைக் கொண்டு விண்டுவிட்ட சுற்றுச்சூழலை செயல்படுத்தவும்.
 
     ```console
     .venv\Scripts\activate.bat
@@ -235,11 +235,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!NOTE]
 >
-> இது வேலை செய்தால், *(.venv)* command prompt-க்கு முன் தோன்றும்.
+> இது செயல்பட்டால் கட்டளை முன் *(.venv)* எனும் குறிப்பு தெரியும்.
 
-#### தேவையான தொகுப்புகளை நிறுவவும்
+#### தேவையான தொகுப்புகளை நிறுவுக
 
-1. தேவையான தொகுப்புகளை நிறுவ terminal-ல் பின்வரும் கட்டளைகளை டைப் செய்யவும்.
+1. கீழ்காணும் கட்டளைகளை உங்கள் டெர்மினலில் இயக்கு தேவையான தொகுப்புகளை நிறுவவும்.
 
     ```console
     pip install datasets==2.19.1
@@ -250,23 +250,23 @@ CO_OP_TRANSLATOR_METADATA:
     pip install promptflow==1.12.0
     ```
 
-#### திட்ட கோப்புகளை உருவாக்கவும்
-இந்த பயிற்சியில், நீங்கள் எங்கள் திட்டத்திற்கான முக்கிய கோப்புகளை உருவாக்குவீர்கள். இந்த கோப்புகளில் தரவுத்தொகுப்பை பதிவிறக்க, Azure Machine Learning சூழலை அமைக்க, Phi-3 மாடலை நன்றாகத் தகுக்க, மற்றும் நன்றாகத் தகுக்கப்பட்ட மாடலை வெளியிடுவதற்கான ஸ்கிரிப்ட்கள் அடங்கும். மேலும், நன்றாகத் தகுக்கப்பட்ட சூழலை அமைக்க *conda.yml* கோப்பையும் உருவாக்குவீர்கள்.
+#### திட்ட கோப்புகளை உருவாக்குக
+இந்த பயிற்சியில், உங்கள் திட்டத்தின் முக்கிய கோப்புகளை நீங்கள் உருவாக்குவீர்கள். இந்த கோப்புகளில் தரவுத்தொகுப்பை பதிவிறக்கம் செய்வதற்கான ஸ்கிரிப்ட்கள், Azure இயந்திரக் கற்றல் சூழல் அமைப்பு, Phi-3 மாதிரியின் நுட்பமாக துலக்கல், மற்றும் நுட்பமாக துலக்கப்பட்ட மாதிரியை பயன்பாட்டுக்கு உருவாக்குதல் ஆகியவை அடங்கும். நீங்கள் நுட்பமாக துலக்கல் சூழலை அமைப்பதற்கான *conda.yml* கோப்பையும் உருவாக்குவீர்கள்.
 
 இந்த பயிற்சியில், நீங்கள்:
 
-- தரவுத்தொகுப்பை பதிவிறக்க *download_dataset.py* கோப்பை உருவாக்கவும்.
-- Azure Machine Learning சூழலை அமைக்க *setup_ml.py* கோப்பை உருவாக்கவும்.
-- *finetuning_dir* கோப்பகத்தில் *fine_tune.py* கோப்பை உருவாக்கி, தரவுத்தொகுப்பைப் பயன்படுத்தி Phi-3 மாடலை நன்றாகத் தகுக்கவும்.
-- *conda.yml* கோப்பை உருவாக்கி, நன்றாகத் தகுக்கப்பட்ட சூழலை அமைக்கவும்.
-- நன்றாகத் தகுக்கப்பட்ட மாடலை வெளியிட *deploy_model.py* கோப்பை உருவாக்கவும்.
-- *integrate_with_promptflow.py* கோப்பை உருவாக்கி, Prompt Flow மூலம் மாடலை ஒருங்கிணைத்து இயக்கவும்.
-- Prompt Flow-க்கு வேலைப்பாடுகளை அமைக்க *flow.dag.yml* கோப்பை உருவாக்கவும்.
-- Azure தகவல்களை உள்ளிட *config.py* கோப்பை உருவாக்கவும்.
+- தரவுத்தொகுப்பை பதிவிறக்கம் செய்ய *download_dataset.py* கோப்பை உருவாக்குங்கள்.
+- Azure இயந்திரக் கற்றல் சூழலை அமைக்க *setup_ml.py* கோப்பை உருவாக்குங்கள்.
+- *finetuning_dir* கோப்புறையில் உள்ள *fine_tune.py* கோப்பை பயன்படுத்தி தரவுத்தொகுப்பைப் பயன்படுத்தி Phi-3 மாதிரியை நுட்பமாக துலக்குங்கள்.
+- நுட்பமாக துலக்கல் சூழலை அமைக்க *conda.yml* கோப்பை உருவாக்குங்கள்.
+- நுட்பமாக துலக்கப்பட்ட மாதிரியை பயன்பாட்டுக்கு உருவாக்க *deploy_model.py* கோப்பை உருவாக்குங்கள்.
+- நுட்பமாக துலக்கப்பட்ட மாதிரியை Prompt flow மூலம் இயக்க *integrate_with_promptflow.py* கோப்பை உருவாக்குங்கள்.
+- Prompt flow இன்டெக்ரேஷன் செயல்முறைக்காக *flow.dag.yml* கோப்பை உருவாக்குங்கள்.
+- Azure தகவல்களை உள்ளிட *config.py* கோப்பை உருவாக்குங்கள்.
 
 > [!NOTE]
 >
-> முழு கோப்பக அமைப்பு:
+> முழுமையான கோப்புறை அமைப்பு:
 >
 > ```text
 > └── YourUserName
@@ -282,33 +282,33 @@ CO_OP_TRANSLATOR_METADATA:
 > .        └── setup_ml.py
 > ```
 
-1. **Visual Studio Code**-ஐ திறக்கவும்.
+1. **Visual Studio Code**ஐ திறக்கவும்.
 
-1. மெனு பட்டியில் **File**-ஐ தேர்ந்தெடுக்கவும்.
+1. மேல்நிலை பட்டி (menu bar)இல் இருந்து **File**-ஐ தேர்ந்தெடுக்கவும்.
 
 1. **Open Folder**-ஐ தேர்ந்தெடுக்கவும்.
 
-1. நீங்கள் உருவாக்கிய *finetune-phi* கோப்பகத்தைத் தேர்ந்தெடுக்கவும், இது *C:\Users\yourUserName\finetune-phi* இடத்தில் உள்ளது.
+1. நீங்கள் உருவாக்கிய *finetune-phi* கோப்புறையை தேர்வு செய்யவும், அது *C:\Users\yourUserName\finetune-phi* ல் உள்ளது.
 
-    ![திட்ட கோப்பகத்தைத் திறக்கவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/01-12-open-project-folder.png)
+    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ta.png)
 
-1. Visual Studio Code-இன் இடது பக்கத்தில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *download_dataset.py* என்ற புதிய கோப்பை உருவாக்கவும்.
+1. Visual Studio Code-இன் இடது பகுதியில, வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *download_dataset.py* என்ற பெயரில் புதிய கோப்பை உருவாக்குங்கள்.
 
-1. Visual Studio Code-இன் இடது பக்கத்தில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *setup_ml.py* என்ற புதிய கோப்பை உருவாக்கவும்.
+1. இடது பகுதி-வில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *setup_ml.py* என்ற பெயரில் புதிய கோப்பை உருவாக்குங்கள்.
 
-1. Visual Studio Code-இன் இடது பக்கத்தில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *deploy_model.py* என்ற புதிய கோப்பை உருவாக்கவும்.
+1. இடது பகுதி-வில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *deploy_model.py* என்ற பெயரில் புதிய கோப்பை உருவாக்குங்கள்.
 
-    ![புதிய கோப்பை உருவாக்கவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/01-13-create-new-file.png)
+    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ta.png)
 
-1. Visual Studio Code-இன் இடது பக்கத்தில், வலது கிளிக் செய்து **New Folder**-ஐ தேர்ந்தெடுத்து *finetuning_dir* என்ற புதிய கோப்பகத்தை உருவாக்கவும்.
+1. இடது பகுதி-வில், வலது கிளிக் செய்து **New Folder**-ஐ தேர்ந்தெடுத்து *finetuning_dir* என்ற புதிய கோப்புறையை உருவாக்குங்கள்.
 
-1. *finetuning_dir* கோப்பகத்தில் *fine_tune.py* என்ற புதிய கோப்பை உருவாக்கவும்.
+1. *finetuning_dir* கோப்புறையில், *fine_tune.py* என்ற புதிய கோப்பை உருவாக்குங்கள்.
 
 #### *conda.yml* கோப்பை உருவாக்கி அமைக்கவும்
 
-1. Visual Studio Code-இன் இடது பக்கத்தில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *conda.yml* என்ற புதிய கோப்பை உருவாக்கவும்.
+1. இடது பகுதி-வில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *conda.yml* என்ற புதிய கோப்பை உருவாக்குங்கள்.
 
-1. *conda.yml* கோப்பில் கீழே உள்ள குறியீட்டை சேர்த்து, Phi-3 மாடலுக்கான நன்றாகத் தகுக்கப்பட்ட சூழலை அமைக்கவும்.
+1. *conda.yml* கோப்பில் கீழ்காணும் குறியீட்டை சேர்க்கவும், இது Phi-3 மாதிரிக்கு நுட்பமாக துலக்கல் சூழலை அமைக்கும்.
 
     ```yml
     name: phi-3-training-env
@@ -336,28 +336,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### *config.py* கோப்பை உருவாக்கி அமைக்கவும்
 
-1. Visual Studio Code-இன் இடது பக்கத்தில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *config.py* என்ற புதிய கோப்பை உருவாக்கவும்.
+1. இடது பகுதி-வில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *config.py* என்ற புதிய கோப்பை உருவாக்குங்கள்.
 
-1. *config.py* கோப்பில் உங்கள் Azure தகவல்களைச் சேர்க்க கீழே உள்ள குறியீட்டை சேர்க்கவும்.
+1. உங்கள் Azure தகவல்களுடன் *config.py* கோப்பில் கீழ்க்காணும் குறியீட்டை சேர்க்கவும்.
 
     ```python
-    # Azure settings
+    # Azure அமைப்புகள்
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
     AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
 
-    # Azure Machine Learning settings
+    # Azure மெஷின் லெர்னிங் அமைப்புகள்
     AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
 
-    # Azure Managed Identity settings
+    # Azure மேலாண்மையாளர் அடையாள அமைப்புகள்
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
     AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # தரவுத்தொகுப்பு கோப்பு பாதைகள்
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # நுட்பபடுத்தப்பட்ட மாதிரி அமைப்புகள்
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
     AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
     AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
@@ -366,46 +366,46 @@ CO_OP_TRANSLATOR_METADATA:
     AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
     ```
 
-#### Azure சூழல் மாறிகளைச் சேர்க்கவும்
+#### Azure சூழல் மாறிகள் சேர்க்கவும்
 
-1. Azure Subscription ID சேர்க்க கீழே உள்ள பணிகளைச் செய்யவும்:
+1. Azure Subscription ID சேர்க்க பின்வரும் நடவடிக்கைகள் செய்யவும்:
 
-    - **search bar**-இல் *subscriptions* எனத் தட்டச்சு செய்து, தோன்றும் விருப்பங்களில் **Subscriptions**-ஐ தேர்ந்தெடுக்கவும்.
-    - நீங்கள் தற்போது பயன்படுத்தும் Azure Subscription-ஐ தேர்ந்தெடுக்கவும்.
-    - உங்கள் Subscription ID-ஐ *config.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
+    - போர்டல் பக்கத்தின் மேலே உள்ள **search bar**-இல் *subscriptions* என்று தட்டச்சு செய்து தோன்றும் விருப்பங்களில் **Subscriptions**-ஐ தேர்ந்தெடுக்கவும்.
+    - நீங்கள் தற்போது பயன்படுத்திக் கொண்டிருக்கும் Azure Subscription-ஐ தேர்வு செய்யவும்.
+    - உங்கள் உபசரிச் ஐடியை *config.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
 
-    ![Subscription ID-ஐ கண்டறியவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/01-14-find-subscriptionid.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ta.png)
 
-1. Azure Workspace Name சேர்க்க கீழே உள்ள பணிகளைச் செய்யவும்:
+1. Azure வர்த்தகப்பார்வை பெயரை சேர்க்க பின்வரும் பணிகள் செய்யவும்:
 
-    - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்குச் செல்லவும்.
-    - உங்கள் கணக்கு பெயரை *config.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
+    - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்கு செல்லவும்.
+    - உங்கள் கணக்கு பெயரை *config.py* கோப்பில் நகல் செய்து ஒட்டவும்.
 
-    ![Azure Machine Learning பெயரை கண்டறியவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/01-15-find-AZML-name.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ta.png)
 
-1. Azure Resource Group Name சேர்க்க கீழே உள்ள பணிகளைச் செய்யவும்:
+1. Azure வளக் குழு பெயரை சேர்க்க பின்வரும் பணிகள் செய்யவும்:
 
-    - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்குச் செல்லவும்.
-    - உங்கள் Azure Resource Group Name-ஐ *config.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
+    - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்கு செல்லவும்.
+    - உங்கள் Azure வளக் குழு பெயரை *config.py* கோப்பில் நகல் செய்து ஒட்டவும்.
 
-    ![Resource Group Name-ஐ கண்டறியவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/01-16-find-AZML-resourcegroup.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ta.png)
 
-2. Azure Managed Identity Name சேர்க்க கீழே உள்ள பணிகளைச் செய்யவும்:
+2. Azure மேலாண்மை அடையாளப் பெயரை சேர்க்க பின்வரும் பணிகள் செய்யவும்:
 
-    - நீங்கள் உருவாக்கிய Managed Identities வளத்திற்குச் செல்லவும்.
-    - உங்கள் Azure Managed Identity Name-ஐ *config.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
+    - நீங்கள் உருவாக்கிய மேலாண்மை அடையாளங்கள் வளத்திற்கு செல்லவும்.
+    - உங்கள் Azure மேலாண்மை அடையாளப் பெயரை *config.py* கோப்பில் நகல் செய்து ஒட்டவும்.
 
-    ![Managed Identity-ஐ கண்டறியவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/01-17-find-uai.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ta.png)
 
-### நன்றாகத் தகுக்கப்படுவதற்கான தரவுத்தொகுப்பை தயாரிக்கவும்
+### நுட்பமாக துலக்கலுக்காக தரவுத்தொகுப்பு தயாரித்தல்
 
-இந்த பயிற்சியில், *download_dataset.py* கோப்பை இயக்கி *ULTRACHAT_200k* தரவுத்தொகுப்புகளை உங்கள் உள்ளூர் சூழலுக்கு பதிவிறக்குவீர்கள். பின்னர், இந்த தரவுத்தொகுப்புகளை Azure Machine Learning-இல் Phi-3 மாடலை நன்றாகத் தகுக்க பயன்படுத்துவீர்கள்.
+இந்த பயிற்சியில், *download_dataset.py* கோப்பை இயக்கி *ULTRACHAT_200k* தரவுத்தொகுப்புகளை உங்கள் உள்ளூர் சூழலுக்கு பதிவிறக்கம் செய்வீர்கள். பிறகு, Azure இயந்திரக் கற்றலில் Phi-3 மாதிரியை நுட்பமாக துலக்க இந்த தரவுத்தொகுப்புகளை பயன்படுத்துவீர்கள்.
 
-#### *download_dataset.py* கோப்பைப் பயன்படுத்தி உங்கள் தரவுத்தொகுப்பை பதிவிறக்கவும்
+#### *download_dataset.py* மூலமாக உங்கள் தரவுத்தொகுப்பை பதிவிறக்கவும்
 
-1. Visual Studio Code-இல் *download_dataset.py* கோப்பைத் திறக்கவும்.
+1. Visual Studio Code-இல் *download_dataset.py* கோப்பை திறக்கவும்.
 
-1. *download_dataset.py* கோப்பில் கீழே உள்ள குறியீட்டைச் சேர்க்கவும்.
+1. கீழ்காணும் குறியீட்டை *download_dataset.py*-க்கு சேர்க்கவும்.
 
     ```python
     import json
@@ -419,11 +419,11 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # குறிப்பிடப்பட்ட பெயர், கட்டமைப்பு மற்றும் பிரிவுக் விகிதத்துடன் தரவுத்தொகுப்பு ஏற்றுகொள்ளவும்
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # தரவுத்தொகுப்பை பயிற்சி மற்றும் சோதனை தொகுப்புகளாக பிரிக்கவும் (80% பயிற்சி, 20% சோதனை)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -434,16 +434,16 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # அடைவை அது இல்லாவிட்டால் உருவாக்கவும்
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # கோப்பை எழுத்து முறையில் திறக்கவும்
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # தரவுத்தொகுப்பில் உள்ள ஒவ்வொரு பதிவையும் மீளாய்வு செய்யவும்
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # பதிவை JSON பொருளாக இடவும் மற்றும் கோப்பில் எழுதவும்
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # பதிவுகளை பிரிக்க புதிய வரிசை எழுத்தை எழுதவும்
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -452,17 +452,17 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # ULTRACHAT_200k தரவுத்தொகுப்பை ஒரு குறிப்பிட்ட கட்டமைப்பும் பிரிவுக் விகிதத்துடனும் ஏற்றவும் மற்றும் பிரிக்கவும்
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # பிரிப்பில் இருந்து பயிற்சி மற்றும் சோதனை தரவுத்தொகுப்புகளை எடுத்துக்கொள்ளவும்
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # பயிற்சி தரவுத்தொகுப்பை ஒரு JSONL கோப்பாக சேமிக்கவும்
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # சோதனை தரவுத்தொகுப்பை தனித்த JSONL கோப்பாக சேமிக்கவும்
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -472,65 +472,65 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **CPU-ஐப் பயன்படுத்தி குறைந்த தரவுத்தொகுப்புடன் நன்றாகத் தகுக்க வழிகாட்டுதல்**
+> **CPU பயன்படுத்தி குறைந்தளவு தரவுத்தொகுப்பைப் பயன்படுத்தி நுட்பமாக துலக்கும் வழிகாட்டி**
 >
-> நீங்கள் CPU-ஐப் பயன்படுத்த விரும்பினால், இந்த அணுகுமுறை Visual Studio Enterprise Subscription போன்ற சலுகை சந்தாக்களுடன் அல்லது நன்றாகத் தகுக்க மற்றும் வெளியிடும் செயல்முறையை விரைவாகச் சோதிக்க சிறந்தது.
+> நீங்கள் CPU-ஐ பயன்படுத்தி நுட்பமாக துலக்க விரும்பினால், இந்த முறையை Visual Studio Enterprise Subscription போன்ற பலனுள்ள சந்தாக்களுக்கானவர்கள் அல்லது நுட்பமாக துலக்கும் மற்றும் பயன்பாட்டை வேகமாக சோதிக்க விருப்பவர்கள் பயன்படுத்தலாம்.
 >
-> `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')`-ஐ `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`-ஆக மாற்றவும்.
+> `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` என்பதனை `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')` என மாற்றவும்.
 >
 
-1. உங்கள் டெர்மினலில் கீழே உள்ள கட்டளையைத் தட்டச்சு செய்து ஸ்கிரிப்ட்டை இயக்கி, தரவுத்தொகுப்பை உங்கள் உள்ளூர் சூழலுக்கு பதிவிறக்கவும்.
+1. உங்கள் டெர்மினலில் கீழ்காணும் கட்டளையை தட்டச்சு செய்து ஸ்கிரிப்ட் இயக்கி தரவுத்தொகுப்பை உள்ளூர் சூழலுக்கு பதிவிறக்கம் செய்யவும்.
 
     ```console
     python download_data.py
     ```
 
-1. தரவுத்தொகுப்புகள் உங்கள் உள்ளூர் *finetune-phi/data* கோப்பகத்தில் வெற்றிகரமாக சேமிக்கப்பட்டுள்ளதா என்பதைச் சரிபார்க்கவும்.
+1. தரவுத்தொகுப்புகள் உங்கள் உள்ளூர் *finetune-phi/data* அடைவில் வெற்றிகரமாக சேமிக்கப்பட்டதா என சரிபார்க்கவும்.
 
 > [!NOTE]
 >
-> **தரவுத்தொகுப்பு அளவு மற்றும் நன்றாகத் தகுக்க நேரம்**
+> **தரவுத்தொகுப்பு அளவும் நுட்பமாக துலக்கும் நேரமும்**
 >
-> இந்த E2E மாதிரியில், நீங்கள் தரவுத்தொகுப்பின் 1% மட்டுமே பயன்படுத்துகிறீர்கள் (`train_sft[:1%]`). இது தரவின் அளவைக் குறிப்பிடத்தக்க அளவில் குறைக்கிறது, பதிவேற்றம் மற்றும் நன்றாகத் தகுக்க செயல்முறைகளை வேகமாகச் செய்கிறது. பயிற்சி நேரம் மற்றும் மாடல் செயல்திறனுக்கு இடையில் சரியான சமநிலையை கண்டறிய நீங்கள் சதவீதத்தை சரிசெய்யலாம். குறைந்த தரவுத்தொகுப்பைப் பயன்படுத்துவது நன்றாகத் தகுக்க தேவையான நேரத்தை குறைக்கிறது, இது E2E மாதிரிக்கான செயல்முறையை மேலாண்மை செய்யக்கூடியதாக மாற்றுகிறது.
+> இந்த இறுதி தொடக்க மாதிரியில், நீங்கள் தரவுத்தொகுப்பின் 1% (`train_sft[:1%]`) மட்டுமே பயன்படுத்துகிறீர்கள். இது தரவின் அளவை குறைத்து, பதிவேற்றம் மற்றும் நுட்பமாக துலக்கும் செயல்முறையை வேகமாக்குகிறது. பயிற்சி நேரம் மற்றும் மாதிரி செயல்திறன் ஆகியவற்றுக்கு சரியான சமநிலை காணவதற்காக நீங்கள் இந்த சதவிகிதத்தை மாற்றலாம். குறைந்தளவு தரவுத்தொகுப்பைப் பயன்படுத்துவதால் நுட்பமாக துலக்கும் நேரம் குறைகிறது, இது ஒரு இறுதி தொடக்க மாதிரிக்கு கூடிய சீரான நடைமுறையாகும்.
 
-## சூழல் 2: Phi-3 மாடலை நன்றாகத் தகுக்கவும் மற்றும் Azure Machine Learning Studio-வில் வெளியிடவும்
+## நிகழ்ச்சி 2: Phi-3 மாதிரியை நுட்பமாக துலக்கவும் Azure இயந்திரக் கற்றல் ஸ்டூடியோவில் பயன்பாட்டுக்கு கொண்டு வரவும்
 
-### Azure CLI-ஐ அமைக்கவும்
+### Azure CLI அமைப்பது
 
-உங்கள் சூழலை அங்கீகரிக்க Azure CLI-ஐ அமைக்க வேண்டும். Azure CLI உங்களுக்கு Azure வளங்களை நேரடியாக கட்டளைகள் மூலம் நிர்வகிக்க அனுமதிக்கிறது மற்றும் Azure Machine Learning-க்கு இந்த வளங்களை அணுக தேவையான சான்றுகளை வழங்குகிறது. [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) நிறுவுவதற்கான வழிகாட்டுதலைப் பெற.
+Azure சூழலை அங்கீகரிப்பதற்கு Azure CLI-ஐ அமைக்க வேண்டியுள்ளது. Azure CLI மூலம் கட்டளை வரி மூலம் Azure வளங்களைக் கையாள மற்றும் Azure இயந்திரக் கற்றல் இந்த வளங்களுக்கு அணுகுவதற்கான அங்கீகார விவரங்களைப் பெற முடியும். [Azure CLI ஐ நிறுவ](https://learn.microsoft.com/cli/azure/install-azure-cli) ஆரம்பிக்கவும்.
 
-1. ஒரு டெர்மினல் சாளரத்தைத் திறந்து, உங்கள் Azure கணக்கில் உள்நுழைய கீழே உள்ள கட்டளையைத் தட்டச்சு செய்யவும்.
+1. ஒரு டெர்மினல் விண்டோவைத் திறந்து உங்கள் Azure கணக்கில் உள்நுழைய கீழ்காணும் கட்டளையை தட்டச்சு செய்யவும்.
 
     ```console
     az login
     ```
 
-1. நீங்கள் பயன்படுத்த விரும்பும் Azure கணக்கைத் தேர்ந்தெடுக்கவும்.
+1. உங்களுக்கு தேவையான Azure கணக்கை தேர்ந்தெடுக்கவும்.
 
-1. நீங்கள் பயன்படுத்த விரும்பும் Azure Subscription-ஐத் தேர்ந்தெடுக்கவும்.
+1. உங்களுக்கு தேவையான Azure சந்தாவை தேர்ந்தெடுக்கவும்.
 
-    ![Resource Group Name-ஐ கண்டறியவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/02-01-login-using-azure-cli.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ta.png)
 
 > [!TIP]
 >
-> Azure-இல் உள்நுழைய சிக்கல் இருந்தால், ஒரு சாதன குறியீட்டை பயன்படுத்த முயற்சிக்கவும். ஒரு டெர்மினல் சாளரத்தைத் திறந்து, உங்கள் Azure கணக்கில் உள்நுழைய கீழே உள்ள கட்டளையைத் தட்டச்சு செய்யவும்:
+> Azure-க்கு உள்நுழைய சிக்கல் ஏற்பட்டால், சாதன குறியீட்டை பயன்படுத்த முயற்சிக்கவும். ஒரு டெர்மினல் விண்டோவைத் திறந்து கீழ்காணும் கட்டளையை தட்டச்சு செய்து Azure கணக்கில் உள்நுழையவும்:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Phi-3 மாடலை நன்றாகத் தகுக்கவும்
+### Phi-3 மாதிரியை நுட்பமாக துலக்கல்
 
-இந்த பயிற்சியில், நீங்கள் வழங்கப்பட்ட தரவுத்தொகுப்பைப் பயன்படுத்தி Phi-3 மாடலை நன்றாகத் தகுக்குவீர்கள். முதலில், *fine_tune.py* கோப்பில் நன்றாகத் தகுக்க செயல்முறையை வரையறுக்கவும். பின்னர், Azure Machine Learning சூழலை அமைத்து, *setup_ml.py* கோப்பை இயக்குவதன் மூலம் நன்றாகத் தகுக்க செயல்முறையைத் தொடங்கவும். இந்த ஸ்கிரிப்ட் Azure Machine Learning சூழலில் நன்றாகத் தகுக்க செயல்முறையை உறுதிசெய்கிறது.
+இந்த பயிற்சியில், நீங்கள் வழங்கப்பட்ட தரவுத்தொகுப்பைப் பயன்படுத்தி Phi-3 மாதிரியை நுட்பமாக துலக்குவீர்கள். முதலில், *fine_tune.py* கோப்பில் நுட்பமாக துலக்கும் செயல்முறையை வரையறுப்பீர்கள். பிறகு, Azure இயந்திரக் கற்றல் சூழலை அமைத்து *setup_ml.py* கோப்பை இயக்கி நுட்பமாக துலக்கும் செயல்முறையை துவக்குவீர்கள். இந்த ஸ்கிரிப்ட் Azure இயந்திரக் கற்றல் சூழலில் நுட்பமாக துலக்கல் நடைபெறும் என்பதை உறுதிப்படுத்தும்.
 
-*setup_ml.py* கோப்பை இயக்குவதன் மூலம், Azure Machine Learning சூழலில் நன்றாகத் தகுக்க செயல்முறையை இயக்குவீர்கள்.
+*setup_ml.py*-ஐ இயக்குவதன் மூலம், நீங்கள் Azure இயந்திரக் கற்றல் சூழலில் நுட்பமாக துலக்கும் செயல்முறையை இயங்கவீர்கள்.
 
 #### *fine_tune.py* கோப்பில் குறியீட்டைச் சேர்க்கவும்
 
-1. *finetuning_dir* கோப்பகத்திற்குச் செல்லவும், *fine_tune.py* கோப்பை Visual Studio Code-இல் திறக்கவும்.
+1. *finetuning_dir* கோப்புறைக்கு சென்று Visual Studio Code-இல் *fine_tune.py* கோப்பை திறக்கவும்.
 
-1. *fine_tune.py* கோப்பில் கீழே உள்ள குறியீட்டைச் சேர்க்கவும்.
+1. *fine_tune.py*ல் கீழ்காணும் குறியீட்டை சேர்க்கவும்.
 
     ```python
     import argparse
@@ -543,10 +543,10 @@ CO_OP_TRANSLATOR_METADATA:
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # MLflow இல் INVALID_PARAMETER_VALUE பிழையைத் தவிர்க்க, MLflow ஒருங்கிணைப்பை செயலிழக்கச் செய்யவும்
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # பதிவு அமைப்பு
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -683,21 +683,21 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. *fine_tune.py* கோப்பைச் சேமித்து மூடவும்.
+1. *fine_tune.py* கோப்பை சேமித்து மூடவும்.
 
 > [!TIP]
-> **Phi-3.5 மாடலை நன்றாகத் தகுக்கலாம்**
+> **Phi-3.5 மாதிரியைக் கூட நுட்பமாக துலக்கலாம்**
 >
-> *fine_tune.py* கோப்பில், `pretrained_model_name`-ஐ `"microsoft/Phi-3-mini-4k-instruct"`-இல் இருந்து `"microsoft/Phi-3.5-mini-instruct"`-ஆக மாற்றலாம். இதனால், நீங்கள் Phi-3.5-mini-instruct மாடலை நன்றாகத் தகுக்க பயன்படுத்துவீர்கள். உங்கள் விருப்பமான மாடல் பெயரை கண்டறிந்து பயன்படுத்த [Hugging Face](https://huggingface.co/) இணையதளத்திற்குச் செல்லவும், உங்கள் விருப்பமான மாடலைத் தேடவும், அதன் பெயரை நகலெடுத்து `pretrained_model_name` புலத்தில் ஒட்டவும்.
+> *fine_tune.py* கோப்பில், `pretrained_model_name` ஐ `"microsoft/Phi-3-mini-4k-instruct"` இருந்து உங்கள் விருப்ப மாதிரிக்கே `"microsoft/Phi-3.5-mini-instruct"` என்று மாற்றலாம். உங்கள் விருப்ப மாதிரியின் பெயரை கண்டுபிடிக்க [Hugging Face](https://huggingface.co/)-இல் தேடி, அந்த பெயரை உங்கள் ஸ்கிரிப்டில் `pretrained_model_name` களத்தில் நகல் செய்து ஒட்டுங்கள்.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Phi-3.5 மாடலை நன்றாகத் தகுக்கவும்.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.">
 >
 
 #### *setup_ml.py* கோப்பில் குறியீட்டைச் சேர்க்கவும்
 
-1. *setup_ml.py* கோப்பை Visual Studio Code-இல் திறக்கவும்.
+1. Visual Studio Code-இல் *setup_ml.py* கோப்பை திறக்கவும்.
 
-1. *setup_ml.py* கோப்பில் கீழே உள்ள குறியீட்டைச் சேர்க்கவும்.
+1. *setup_ml.py* கோப்பில் கீழ்காணும் குறியீட்டை சேர்க்கவும்.
 
     ```python
     import logging
@@ -712,25 +712,25 @@ CO_OP_TRANSLATOR_METADATA:
         TEST_DATA_PATH
     )
 
-    # Constants
+    # நிலையானங்கள்
 
-    # Uncomment the following lines to use a CPU instance for training
+    # பயிற்சிக்காக CPU உதாரணத்தை பயன்படுத்த கீழ்க்காணும் வரிகளைக் குறியீட்டில் இருந்து நீக்கு
     # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # பயிற்சிக்காக GPU உதாரணத்தை பயன்படுத்த கீழ்க்காணும் வரிகளைக் குறியீட்டில் இருந்து நீக்கு
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # உங்கள் கணினி கிளஸ்டர் இருப்பிடத்தை மாற்றவும்
+    FINETUNING_DIR = "./finetuning_dir" # நுணுக்கமான முன்னேற்றம் செய்யும் ஸ்கிரிப்டின் பாதை
+    TRAINING_ENV_NAME = "phi-3-training-environment" # பயிற்சிக் சூழலின் பெயர்
+    MODEL_OUTPUT_DIR = "./model_output" # azure ml இல் மாடல் வெளியீட்டு அடைவை பற்றிய பாதை
 
-    # Logging setup to track the process
+    # செயன்முறை பின்தொடர்பதற்கான பதிவேடு அமைப்பு
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -750,9 +750,9 @@ CO_OP_TRANSLATOR_METADATA:
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # சூழலுக்கான டாக்கர் படம்
+            conda_file=CONDA_FILE,  # கண்டா சூழல் கோப்பு
+            name=TRAINING_ENV_NAME,  # சூழலின் பெயர்
         )
         return ml_client.environments.create_or_update(env)
 
@@ -769,11 +769,11 @@ CO_OP_TRANSLATOR_METADATA:
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # கணினி கிளஸ்டரின் நிலை
+                min_instances=0,  # குறைந்தபட்ச உதாரண எண்கள்
+                max_instances=1  # அதிகபட்ச உதாரண எண்கள்
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # கிளஸ்டரை உருவாக்கவைக்கு காத்திருக்கவும்
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -781,18 +781,18 @@ CO_OP_TRANSLATOR_METADATA:
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # fine_tune.py இன் பாதை
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # பயிற்சி சூழல்
+            compute=compute_name,  # பயன்பாட்டுக்கான கணினி கிளஸ்டர்
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # பயிற்சி தரவு கோப்பின் பாதை
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # மதிப்பீடு தரவு கோப்பின் பாதை
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -801,21 +801,21 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # ML கிளையண்டை துவக்குக
         ml_client = get_ml_client()
 
-        # Create Environment
+        # சூழலை உருவாக்குக
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # புதிய கணினி கிளஸ்டரைக் கையாண்டு உருவாக்குக அல்லது ஏற்கனவே உள்ளதைப் பெறுக
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # நுணுக்கமான முன்னேற்றக் வேலை உருவாக்கி சமர்ப்பிக்கவும்
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # வேலையை சமர்ப்பிக்கவும்
+        ml_client.jobs.stream(returned_job.name)  # வேலை பதிவுகளை நேரலை பார்
         
-        # Capture the job name
+        # வேலை பெயரை பதிவு செய்க
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -824,25 +824,25 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, மற்றும் `LOCATION` ஆகியவற்றை உங்கள் குறிப்பிட்ட விவரங்களுடன் மாற்றவும்.
+1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, மற்றும் `LOCATION` ஆகியவற்றை உங்கள் விவரங்களுடன் மாற்றவும்.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # பயிற்சிக்காக GPU இணைப்பை பயன்படுத்த கீழ்க்காணும் வரிகளை அன்கமெண்ட் செய்யவும்
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # உங்கள் கணினித் தொகுதி கிளஸ்டர் இருப்பிடம் மூலம் மாற்றவும்
     ```
 
 > [!TIP]
 >
-> **CPU-ஐப் பயன்படுத்தி குறைந்த தரவுத்தொகுப்புடன் நன்றாகத் தகுக்க வழிகாட்டுதல்**
+> **CPU பயன்படுத்தி குறைந்தளவு தரவுத்தொகுப்பைப் பயன்படுத்தி நுட்பமாக துலக்கும் வழிகாட்டி**
 >
-> நீங்கள் CPU-ஐப் பயன்படுத்த விரும்பினால், இந்த அணுகுமுறை Visual Studio Enterprise Subscription போன்ற சலுகை சந்தாக்களுடன் அல்லது நன்றாகத் தகுக்க மற்றும் வெளியிடும் செயல்முறையை விரைவாகச் சோதிக்க சிறந்தது.
+> நீங்கள் CPU-ஐ பயன்படுத்தி நுட்பமாக துலக்க விரும்பினால், இந்த முறையை Visual Studio Enterprise Subscription போன்ற பலனுள்ள சந்தாக்களுக்கானவர்கள் அல்லது நுட்பமாக துலக்கும் மற்றும் பயன்பாட்டை வேகமாக சோதிக்க விருப்பவர்கள் பயன்படுத்தலாம்.
 >
-> 1. *setup_ml* கோப்பைத் திறக்கவும்.
-> 1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, மற்றும் `DOCKER_IMAGE_NAME` ஆகியவற்றை கீழே உள்ளவாறு மாற்றவும். *Standard_E16s_v3*-க்கு அணுகல் இல்லையெனில், சமமான CPU instance-ஐப் பயன்படுத்தலாம் அல்லது புதிய quota-ஐ கோரலாம்.
-> 1. `LOCATION`-ஐ உங்கள் குறிப்பிட்ட விவரங்களுடன் மாற்றவும்.
+> 1. *setup_ml* கோப்பை திறக்கவும்.
+> 1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, மற்றும் `DOCKER_IMAGE_NAME` ஆகியவற்றை கீழ்க்காணும் மாதிரியில் மாற்றவும். உங்கள் கணக்கில் *Standard_E16s_v3* கிடைக்கவில்லை எனில், இதற்கு இணையான CPU கம்ப்யூட் இன்ஸ்டான்ஸைப் பயன்படுத்தலாம் அல்லது புதிய அங்கீகாரத்தை கோரலாம்.
+> 1. `LOCATION` ஐ உங்கள் விவரங்களுடன் மாற்றவும்.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -853,37 +853,37 @@ CO_OP_TRANSLATOR_METADATA:
 >    ```
 >
 
-1. *setup_ml.py* ஸ்கிரிப்ட்டை இயக்கி Azure Machine Learning-இல் நன்றாகத் தகுக்க செயல்முறையைத் தொடங்க கீழே உள்ள கட்டளையைத் தட்டச்சு செய்யவும்.
+1. *setup_ml.py* கோப்பை இயக்கி Azure இயந்திரக் கற்றல் சூழலில் நுட்பமாக துலக்கும் செயல்முறையை துவக்க கீழ்காணும் கட்டளையை தட்டச்சு செய்யவும்.
 
     ```python
     python setup_ml.py
     ```
 
-1. இந்த பயிற்சியில், நீங்கள் Azure Machine Learning-ஐப் பயன்படுத்தி Phi-3 மாடலை நன்றாகத் தகுக்க வெற்றிகரமாக முடித்தீர்கள். *setup_ml.py* ஸ்கிரிப்ட்டை இயக்குவதன் மூலம், Azure Machine Learning சூழலை அமைத்து, *fine_tune.py* கோப்பில் வரையறுக்கப்பட்ட நன்றாகத் தகுக்க செயல்முறையைத் தொடங்கியுள்ளீர்கள். தயவுசெய்து கவனிக்கவும், நன்றாகத் தகுக்க செயல்முறை குறிப்பிடத்தக்க நேரத்தை எடுத்துக்கொள்ளலாம். `python setup_ml.py` கட்டளையை இயக்கிய பிறகு, செயல்முறை முடிவடையும் வரை காத்திருக்க வேண்டும். டெர்மினலில் வழங்கப்பட்ட Azure Machine Learning போர்ட்டலுக்கான இணைப்பைப் பின்பற்றுவதன் மூலம், நன்றாகத் தகுக்க வேலைக்கான நிலையை கண்காணிக்கலாம்.
+1. இந்த பயிற்சியில், நீங்கள் Azure இயந்திரக் கற்றலைப் பயன்படுத்தி வெற்றிகரமாக Phi-3 மாதிரியை நுட்பமாக துலக்க முயன்றுள்ளீர்கள். *setup_ml.py*-ஐ இயக்கி நீங்கள் Azure இயந்திரக் கற்றல் சூழலை அமைத்துச் *fine_tune.py* கோப்பில் வரையறுக்கப்பட்ட நுட்பமாக துலக்கும் செயல்முறையை துவக்கியுள்ளீர்கள். நுட்பமாக துலக்கும் செயல்முறை சற்று நேரம் எடுத்துக் கொள்ளலாம். `python setup_ml.py` கட்டளை ஓடியபின் செயல்முறை முடிவதற்கு காத்திருக்க வேண்டும். டெர்மினலில் வழங்கப்பட்ட லிங்கைப் பின்பற்றி Azure இயந்திரக் கற்றல் போர்டலைப் பார்க்கலாம்.
 
-    ![நன்றாகத் தகுக்க வேலைக்கான நிலையைப் பார்க்கவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/02-02-see-finetuning-job.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ta.png)
 
-### நன்றாகத் தகுக்கப்பட்ட மாடலை வெளியிடவும்
+### நுட்பமாக துலக்கப்பட்ட மாதிரியை பயன்பாட்டுக்கு கொண்டு வருதல்
 
-Prompt Flow-இன் மூலம் நன்றாகத் தகுக்கப்பட்ட Phi-3 மாடலை ஒருங்கிணைக்க, மாடலை நேரடி முன்னறிவிப்பு பயன்பாட்டிற்கு அணுகக்கூடியதாக மாற்ற வெளியிட வேண்டும். இந்த செயல்முறை மாடலை பதிவு செய்வது, ஆன்லைன் இறுதிப்புள்ளியை உருவாக்குவது, மற்றும் மாடலை வெளியிடுவது ஆகியவற்றை உள்ளடக்கியது.
+நுட்பமாக துலக்கப்பட்ட Phi-3 மாதிரியை Prompt Flow உடன் இணைக்க, மாதிரியை கண்காணிப்பு நேரத்தில் அணுகக்கூடியவாறு பயன்பாட்டுக்கு கொண்டு வர வேண்டும். இதற்கு மாதிரி பதிவுசெய்தல், ஆன்லைன் முடிச்சை உருவாக்கல், மற்றும் மாதிரியை நிறுவல் ஆகியவை அவசியம்.
 
-#### வெளியிட மாடல் பெயர், இறுதிப்புள்ளி பெயர், மற்றும் வெளியீட்டு பெயரை அமைக்கவும்
+#### மாதிரி பெயர், முடிச்சுப் பெயர், நிறுவல் பெயரை அமைக்கவும்
 
-1. *config.py* கோப்பைத் திறக்கவும்.
+1. *config.py* கோப்பை திறக்கவும்.
 
-1. `AZURE_MODEL_NAME = "your_fine_tuned_model_name"`-ஐ உங்கள் மாடலுக்கான விருப்பமான பெயருடன் மாற்றவும்.
+1. `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` என்பதனை உங்கள் விருப்ப மாதிரி பெயராக மாற்றவும்.
 
-1. `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"`-ஐ உங்கள் இறுதிப்புள்ளிக்கான விருப்பமான பெயருடன் மாற்றவும்.
+1. `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` என்பதனை உங்கள் விருப்ப முடிச்சுப் பெயராக மாற்றவும்.
 
-1. `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"`-ஐ உங்கள் வெளியீட்டுக்கான விருப்பமான பெயருடன் மாற்றவும்.
+1. `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` என்பதனை உங்கள் விருப்ப நிறுவல் பெயராக மாற்றவும்.
 
 #### *deploy_model.py* கோப்பில் குறியீட்டைச் சேர்க்கவும்
 
-*deploy_model.py* கோப்பை இயக்குவது முழு வெளியீட்டு செயல்முறையை தானியங்கமாக்குகிறது. இது மாடலை பதிவு செய்கிறது, இறுதிப்புள்ளியை உருவாக்குகிறது, மற்றும் *config.py* கோப்பில் குறிப்பிடப்பட்ட அமைப்புகளின் அடிப்படையில் வெளியீட்டைச் செய்கிறது, இதில் மாடல் பெயர், இறுதிப்புள்ளி பெயர், மற்றும் வெளியீட்டு பெயர் அடங்கும்.
+*deploy_model.py* கோப்பை இயக்குவதன் மூலம் முழு நிறுவல் செயல்முறை தானாக நடைபெறும். இது மாதிரியை பதிவு செய்து, முடிச்சை உருவாக்கி, *config.py* கோப்பில் கொடுக்கப்பட்ட அமைப்புகளின் அடிப்படையில் (மாதிரிப் பெயர், முடிச்சுப் பெயர், நிறுவல் பெயர்) நிறுவல் செய்கிறது.
 
-1. *deploy_model.py* கோப்பை Visual Studio Code-இல் திறக்கவும்.
+1. Visual Studio Code-இல் *deploy_model.py* கோப்பை திறக்கவும்.
 
-1. *deploy_model.py* கோப்பில் கீழே உள்ள குறியீட்டைச் சேர்க்கவும்.
+1. *deploy_model.py*-க்கு கீழ்காணும் குறியீட்டைச் சேர்்கவும்.
 
     ```python
     import logging
@@ -892,7 +892,7 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # கட்டமைப்பு இறக்குமதிகள்
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -904,7 +904,7 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # நிலையான தரவுகள்
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -914,7 +914,7 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # பதிவு அமைப்பு
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1003,25 +1003,25 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # தற்போதைய முடிவு விவரங்களை பெற்றுக்கொள்ளவும்
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # பிழைதிருத்தத்திற்கு தற்போதைய போக்குவரத்து ஒதுக்கீட்டை பதிவு செய்க
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # வெளியீட்டிற்கான போக்குவரத்து ஒதுக்கீட்டை அமைக்கவும்
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # புதிய போக்குவரத்து ஒதுக்கீட்டுடன் முடிவை புதுப்பிக்கவும்
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # பிழைதிருத்தத்திற்கு புதுப்பிக்கப்பட்ட போக்குவரத்து ஒதுக்கீட்டை பதிவு செய்க
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # செயல்முறையில் ஏற்படும் எந்த பிழைகளையும் பதிவு செய்யவும்
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1049,67 +1049,67 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
 
     ```
 
-1. `JOB_NAME`-ஐ பெற கீழே உள்ள பணிகளைச் செய்யவும்:
+1. `JOB_NAME` பெற பின்வரும் நடவடிக்கைகள் செய்யவும்:
 
-    - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்குச் செல்லவும்.
-    - **Studio web URL**-ஐத் தேர்ந்தெடுத்து Azure Machine Learning வேலைப்பகுதியைத் திறக்கவும்.
-    - இடது பக்கத்திலுள்ள **Jobs**-ஐத் தேர்ந்தெடுக்கவும்.
-    - நன்றாகத் தகுக்க முயற்சிக்கான பரிசோதனையைத் தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephi*.
-    - நீங்கள் உருவாக்கிய வேலைப்பாட்டைத் தேர்ந்தெடுக்கவும்.
-- உங்கள் வேலை பெயரை `JOB_NAME = "your-job-name"` என *deploy_model.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
+    - நீங்கள் உருவாக்கிய Azure இயந்திரக் கற்றல் வளத்திற்குச் செல்லவும்.
+    - **Studio web URL**-ஐ தேர்ந்தெடுத்து Azure இயந்திரக் கற்றல் பணிப்பகுதியில் செல்.
+    - இடது பக்கப்பட்டியலில் இருந்து **Jobs**-ஐ தேர்ந்தெடுக்கவும்.
+    - நுட்பமாக துலக்கும் முயற்சியை (எ.கா., *finetunephi*) தேர்ந்தெடுக்கவும்.
+    - நீங்கள் உருவாக்கிய பணியை தேர்ந்தெடுக்கவும்.
+- உங்கள் வேலை பெயரை *deploy_model.py* கோப்பில் உள்ள `JOB_NAME = "your-job-name"` இல் நகல் செய்து ஒட்டவும்.
 
 1. `COMPUTE_INSTANCE_TYPE` ஐ உங்கள் குறிப்பிட்ட விவரங்களுடன் மாற்றவும்.
 
-1. *deploy_model.py* ஸ்கிரிப்டை இயக்கி Azure Machine Learning-ல் பிரசார செயல்முறையை தொடங்க கீழே உள்ள கட்டளையை தட்டச்சு செய்யவும்.
+1. Azure Machine Learning இல் *deploy_model.py* ஸ்கிரிப்டை இயக்கி வெளியீட்டு செயல்முறையை தொடங்க கீழ்காணும் கட்டளையை தட்டச்சு செய்யவும்.
 
     ```python
     python deploy_model.py
     ```
 
 > [!WARNING]
-> உங்கள் கணக்கில் கூடுதல் கட்டணங்களை தவிர்க்க, Azure Machine Learning வேலைப்பிடத்தில் உருவாக்கப்பட்ட endpoint ஐ நீக்க உறுதிப்படுத்தவும்.
+> உங்கள் கணக்கில் கூடுதல் கட்டணங்கள் வராமல் இருக்க, Azure Machine Learning வேலைப்பாத்திரத்தில் உருவாக்கிய endpoints ஐ நீக்க வேண்டும்.
 >
 
-#### Azure Machine Learning Workspace-ல் பிரசார நிலையை சரிபார்க்கவும்
+#### Azure Machine Learning வேலைப்பாத்திரத்தில் வெளியீட்டு நிலையை சரிபார்க்கவும்
 
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) ஐ பார்வையிடவும்.
+1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) செல்லவும்.
 
-1. நீங்கள் உருவாக்கிய Azure Machine Learning வேலைப்பிடத்திற்கு செல்லவும்.
+1. நீங்கள் உருவாக்கிய Azure Machine Learning வேலைப்பாத்திரத்திற்கு செல்லவும்.
 
-1. **Studio web URL** ஐ தேர்வு செய்து Azure Machine Learning வேலைப்பிடத்தை திறக்கவும்.
+1. Azure Machine Learning வேலைப்பாத்திரத்தை திறக்க **Studio web URL** ஐ தேர்ந்தெடுக்கவும்.
 
-1. இடது பக்க தாவலில் இருந்து **Endpoints** ஐ தேர்வு செய்யவும்.
+1. இடது பக்க டேபில் இருந்து **Endpoints** ஐ தேர்ந்தெடுக்கவும்.
 
-    ![Endpoints ஐ தேர்வு செய்யவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/02-03-select-endpoints.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ta.png)
 
-2. நீங்கள் உருவாக்கிய endpoint ஐ தேர்வு செய்யவும்.
+2. நீங்கள் உருவாக்கிய endpoint ஐ தேர்ந்தெடுக்கவும்.
 
-    ![நீங்கள் உருவாக்கிய endpoint ஐ தேர்வு செய்யவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/02-04-select-endpoint-created.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ta.png)
 
-3. இந்த பக்கத்தில், பிரசார செயல்முறையின் போது உருவாக்கப்பட்ட endpoint-களை நிர்வகிக்கலாம்.
+3. இந்த பக்கத்தில், வெளியீட்டு செயல்முறையின் போது உருவாக்கப்பட்ட endpoints ஐ நிர்வகிக்க முடியும்.
 
-## சூழல் 3: Prompt flow உடன் ஒருங்கிணைத்து உங்கள் தனிப்பயன் மாடலுடன் உரையாடவும்
+## நிலை 3: Prompt flow உடன் ஒருங்கிணைத்து உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடல் செய்யவும்
 
-### Prompt flow உடன் தனிப்பயன் Phi-3 மாடலை ஒருங்கிணைக்கவும்
+### தனிப்பயன் Phi-3 மாதிரியை Prompt flow உடன் ஒருங்கிணைக்கவும்
 
-உங்கள் fine-tuned மாடலை வெற்றிகரமாக பிரசாரம் செய்த பிறகு, Prompt flow உடன் அதை ஒருங்கிணைத்து உங்கள் மாடலை நேரடி பயன்பாடுகளில் பயன்படுத்தலாம், இது உங்கள் தனிப்பயன் Phi-3 மாடலுடன் பல்வேறு தொடர்பு பணிகளை செயல்படுத்த உதவுகிறது.
+உங்கள் நுணுக்கமாக பயிற்சி பெற்ற மாதிரியை வெற்றிகரமாக வெளியிட்ட பிறகு, அதை Prompt flow உடன் இணைத்து உங்கள் மாதிரியை நேரடி பயன்பாடுகளில் பயன்படுத்த முடியும், இது உங்கள் தனிப்பயன் Phi-3 மாதிரியுடன் பலவகை நேரடி பணிகளை செய்வதற்கு உதவுகிறது.
 
-#### Fine-tuned Phi-3 மாடலின் api key மற்றும் endpoint uri அமைக்கவும்
+#### நுணுக்கமாக பயிற்சி பெற்ற Phi-3 மாதிரியின் api key மற்றும் endpoint uri-வை அமைக்கவும்
 
-1. நீங்கள் உருவாக்கிய Azure Machine Learning வேலைப்பிடத்திற்கு செல்லவும்.
-1. இடது பக்க தாவலில் இருந்து **Endpoints** ஐ தேர்வு செய்யவும்.
-1. நீங்கள் உருவாக்கிய endpoint ஐ தேர்வு செய்யவும்.
-1. வழிசெலுத்தல் மெனுவில் இருந்து **Consume** ஐ தேர்வு செய்யவும்.
-1. உங்கள் **REST endpoint** ஐ *config.py* கோப்பில் நகலெடுத்து ஒட்டவும், `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ஐ உங்கள் **REST endpoint** உடன் மாற்றவும்.
-1. உங்கள் **Primary key** ஐ *config.py* கோப்பில் நகலெடுத்து ஒட்டவும், `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ஐ உங்கள் **Primary key** உடன் மாற்றவும்.
+1. நீங்கள் உருவாக்கிய Azure Machine Learning வேலைப்பாத்திரத்திற்கு செல்லவும்.
+1. இடது பக்க டேபில் இருந்து **Endpoints** ஐ தேர்ந்தெடுக்கவும்.
+1. நீங்கள் உருவாக்கிய endpoint ஐத் தேர்ந்தெடுக்கவும்.
+1. வழிசெலுத்தும் பட்டியில் இருந்து **Consume** ஐத் தேர்ந்தெடுக்கவும்.
+1. உங்கள் **REST endpoint** ஐ *config.py* கோப்பில் `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ஐ உங்கள் **REST endpoint** மூலம் மாற்றி நகல் செய்து ஒட்டவும்.
+1. உங்கள் **Primary key** ஐ *config.py* கோப்பில் `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ஐ உங்கள் **Primary key** மூலம் மாற்றி நகல் செய்து ஒட்டவும்.
 
-    ![api key மற்றும் endpoint uri ஐ நகலெடுக்கவும்.](../../../../../../imgs/02/FineTuning-PromptFlow/02-05-copy-apikey-endpoint.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ta.png)
 
-#### *flow.dag.yml* கோப்பில் குறியீட்டை சேர்க்கவும்
+#### *flow.dag.yml* கோப்பில் கோடைச் சேர்க்கவும்
 
-1. Visual Studio Code-ல் *flow.dag.yml* கோப்பை திறக்கவும்.
+1. Visual Studio Code இல் *flow.dag.yml* கோப்பை திறக்கவும்.
 
-1. *flow.dag.yml* கோப்பில் கீழே உள்ள குறியீட்டை சேர்க்கவும்.
+1. *flow.dag.yml* கோப்பில் கீழ்காணும் கோடுகளை சேர்.
 
     ```yml
     inputs:
@@ -1132,11 +1132,11 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
         input_data: ${inputs.input_data}
     ```
 
-#### *integrate_with_promptflow.py* கோப்பில் குறியீட்டை சேர்க்கவும்
+#### *integrate_with_promptflow.py* கோப்பில் கோடைச் சேர்க்கவும்
 
-1. Visual Studio Code-ல் *integrate_with_promptflow.py* கோப்பை திறக்கவும்.
+1. Visual Studio Code இல் *integrate_with_promptflow.py* கோப்பை திறக்கவும்.
 
-1. *integrate_with_promptflow.py* கோப்பில் கீழே உள்ள குறியீட்டை சேர்க்கவும்.
+1. *integrate_with_promptflow.py* கோப்பில் கீழ்காணும் கோடுகளைச் சேர்க்கவும்.
 
     ```python
     import logging
@@ -1149,7 +1149,7 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # பதிவு அமைப்பு
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1202,19 +1202,21 @@ Prompt Flow-இன் மூலம் நன்றாகத் தகுக்�
 
     ```
 
-### உங்கள் தனிப்பயன் மாடலுடன் உரையாடவும்
+### உங்கள் தனிப்பயன் மாதிரியுடன் உரையாடல் செய்யவும்
 
-1. *deploy_model.py* ஸ்கிரிப்டை இயக்கி Azure Machine Learning-ல் பிரசார செயல்முறையை தொடங்க கீழே உள்ள கட்டளையை தட்டச்சு செய்யவும்.
+1. Azure Machine Learning இல் *deploy_model.py* ஸ்கிரிப்டை இயக்கி வெளியீட்டு செயல்முறையை தொடங்க கீழ்காணும் கட்டளையை தட்டச்சு செய்யவும்.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. இதோ ஒரு எடுத்துக்காட்டு: இப்போது நீங்கள் உங்கள் தனிப்பயன் Phi-3 மாடலுடன் உரையாடலாம். Fine-tuning செய்ய பயன்படுத்திய தரவின் அடிப்படையில் கேள்விகளை கேட்க பரிந்துரைக்கப்படுகிறது.
+1. இதோ ஒரு முடிவுகளின் உதாரணம்: இப்போது நீங்கள் உங்கள் தனிப்பயன் Phi-3 மாதிரியுடன் உரையாட முடியும். நுணுக்க பயிற்சிக்காக பயன்படுத்திய தரவுகளின் அடிப்படையில் கேள்விகள் கேட்க பரிந்துரைக்கப்படுகிறது.
 
-    ![Prompt flow எடுத்துக்காட்டு.](../../../../../../imgs/02/FineTuning-PromptFlow/02-06-promptflow-example.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ta.png)
 
 ---
 
-**குறிப்பு**:  
-இந்த ஆவணம் [Co-op Translator](https://github.com/Azure/co-op-translator) என்ற AI மொழிபெயர்ப்பு சேவையைப் பயன்படுத்தி மொழிபெயர்க்கப்பட்டுள்ளது. எங்கள் தரச்செயல்முறையை உறுதிப்படுத்த முயற்சிக்கிறோம், ஆனால் தானியக்க மொழிபெயர்ப்புகளில் பிழைகள் அல்லது தவறான தகவல்கள் இருக்கக்கூடும் என்பதை தயவுசெய்து கவனத்தில் கொள்ளவும். அதன் தாய்மொழியில் உள்ள மூல ஆவணம் அதிகாரப்பூர்வ ஆதாரமாக கருதப்பட வேண்டும். முக்கியமான தகவல்களுக்கு, தொழில்முறை மனித மொழிபெயர்ப்பு பரிந்துரைக்கப்படுகிறது. இந்த மொழிபெயர்ப்பைப் பயன்படுத்துவதால் ஏற்படும் எந்த தவறான புரிதல்கள் அல்லது தவறான விளக்கங்களுக்கு நாங்கள் பொறுப்பல்ல.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**விரோதபூர்வம்**:  
+இந்த ஆவணம் AI மொழிபெயர்ப்பு சேவையான [Co-op Translator](https://github.com/Azure/co-op-translator) பயன்பாட்டால் மொழிமாற்றம் செய்யப்பட்டுள்ளது. நாங்கள் துல்லியத்திற்காக முயலுகிறோம் என்றாலும், தானியங்கி மொழிபெயர்ப்புகளில் பிழைகள் அல்லது தவறான தகவல்கள் இருக்கக்கூடும் என்பதைக் கவனத்தில் கொள்ளவும். மொழியின் சொந்த மொழியில் உள்ள அசல் ஆவணம் அதிகாரப்பூர்வமான ஆதாரமாக கருதப்பட வேண்டும். முக்கியமான தகவல்களுக்காக, தொழில்முறை மனித மொழிபெயர்ப்பை பரிந்துரைக்கிறோம். இந்த மொழிபெயர்ப்பின் பயனிலிருந்து ஏற்பட்ட எந்த தவறான புரிதல்கள் அல்லது தவறான விளக்கங்களுக்கு நாங்கள் பொறுப்பேற்றுக்கொள்ளமாட்டோம்.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
