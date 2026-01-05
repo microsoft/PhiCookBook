@@ -1,51 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-17T00:34:04+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T08:39:03+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "nl"
 }
 -->
-# Fijn afstemmen en integreren van aangepaste Phi-3 modellen met Prompt flow
+# Fijn afstemmen en integreren van aangepaste Phi-3-modellen met Prompt flow
 
-Deze end-to-end (E2E) voorbeeld is gebaseerd op de handleiding "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" van de Microsoft Tech Community. Het introduceert de processen van fijn afstemmen, implementeren en integreren van aangepaste Phi-3 modellen met Prompt flow.
+Deze end-to-end (E2E) voorbeeld is gebaseerd op de gids "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" van de Microsoft Tech Community. Het introduceert de processen van fijn afstemmen, implementeren en integreren van aangepaste Phi-3-modellen met Prompt flow.
 
 ## Overzicht
 
-In dit E2E voorbeeld leer je hoe je het Phi-3 model fijn afstemt en integreert met Prompt flow. Door gebruik te maken van Azure Machine Learning en Prompt flow stel je een workflow in voor het implementeren en gebruiken van aangepaste AI-modellen. Dit E2E voorbeeld is verdeeld in drie scenario's:
+In deze E2E-sample leert u hoe u het Phi-3-model fijn afstemt en integreert met Prompt flow. Door gebruik te maken van Azure Machine Learning en Prompt flow stelt u een workflow op voor het implementeren en gebruiken van aangepaste AI-modellen. Deze E2E-sample is verdeeld in drie scenario's:
 
-**Scenario 1: Azure-resources instellen en voorbereiden op fijn afstemmen**
+**Scenario 1: Azure-resources opzetten en voorbereiden voor fijn afstemmen**
 
-**Scenario 2: Het Phi-3 model fijn afstemmen en implementeren in Azure Machine Learning Studio**
+**Scenario 2: Phi-3-model fijn afstemmen en implementeren in Azure Machine Learning Studio**
 
-**Scenario 3: Integreren met Prompt flow en chatten met je aangepaste model**
+**Scenario 3: Integreren met Prompt flow en chatten met uw aangepaste model**
 
-Hier is een overzicht van dit E2E voorbeeld.
+Hier is een overzicht van deze E2E-sample.
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.nl.png)
 
 ### Inhoudsopgave
 
-1. **[Scenario 1: Azure-resources instellen en voorbereiden op fijn afstemmen](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Een Azure Machine Learning Workspace aanmaken](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [GPU-quotum aanvragen in Azure-abonnement](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenario 1: Azure-resources opzetten en voorbereiden voor fijn afstemmen](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Een Azure Machine Learning-werkruimte maken](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [GPU-quotums aanvragen in Azure-abonnement](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Roltoewijzing toevoegen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Project opzetten](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Dataset voorbereiden voor fijn afstemmen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 2: Phi-3 model fijn afstemmen en implementeren in Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenario 2: Phi-3-model fijn afstemmen en implementeren in Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Azure CLI instellen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Het Phi-3 model fijn afstemmen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Het Phi-3-model fijn afstemmen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Het fijn afgestemde model implementeren](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Integreren met Prompt flow en chatten met je aangepaste model](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Het aangepaste Phi-3 model integreren met Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Chatten met je aangepaste model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenario 3: Integreren met Prompt flow en chatten met uw aangepaste model](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Het aangepaste Phi-3-model integreren met Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Chatten met uw aangepaste model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Scenario 1: Azure-resources instellen en voorbereiden op fijn afstemmen
+## Scenario 1: Azure-resources opzetten en voorbereiden voor fijn afstemmen
 
-### Een Azure Machine Learning Workspace aanmaken
+### Een Azure Machine Learning-werkruimte maken
 
 1. Typ *azure machine learning* in de **zoekbalk** bovenaan de portalpagina en selecteer **Azure Machine Learning** uit de opties die verschijnen.
 
@@ -59,14 +59,14 @@ Hier is een overzicht van dit E2E voorbeeld.
 
 1. Voer de volgende taken uit:
 
-    - Selecteer je Azure **Subscription**.
-    - Selecteer de **Resource group** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
-    - Voer een **Workspace Name** in. Dit moet een unieke naam zijn.
-    - Selecteer de **Regio** die je wilt gebruiken.
-    - Selecteer de **Storage account** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
-    - Selecteer de **Key vault** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
-    - Selecteer de **Application insights** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
-    - Selecteer de **Container registry** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
+    - Selecteer uw Azure **Abonnement**.
+    - Selecteer de te gebruiken **Resourcegroep** (maak er een nieuwe aan indien nodig).
+    - Voer een **Werkruimte naam** in. Dit moet een unieke waarde zijn.
+    - Selecteer de **Regio** die u wilt gebruiken.
+    - Selecteer de te gebruiken **Opslagaccount** (maak er een nieuwe aan indien nodig).
+    - Selecteer de te gebruiken **Key vault** (maak er een nieuwe aan indien nodig).
+    - Selecteer de te gebruiken **Application insights** (maak er een nieuwe aan indien nodig).
+    - Selecteer de te gebruiken **Container registry** (maak er een nieuwe aan indien nodig).
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.nl.png)
 
@@ -74,37 +74,37 @@ Hier is een overzicht van dit E2E voorbeeld.
 
 1. Selecteer **Create**.
 
-### GPU-quotum aanvragen in Azure-abonnement
+### GPU-quotums aanvragen in Azure-abonnement
 
-In dit E2E voorbeeld gebruik je de *Standard_NC24ads_A100_v4 GPU* voor fijn afstemmen, waarvoor een quotumaanvraag nodig is, en de *Standard_E4s_v3* CPU voor implementatie, waarvoor geen quotumaanvraag nodig is.
+In deze E2E-sample gebruikt u de *Standard_NC24ads_A100_v4 GPU* voor fijn afstemmen, waarvoor een quotumaanvraag nodig is, en de *Standard_E4s_v3* CPU voor implementatie, waarvoor geen quotumaanvraag vereist is.
 
 > [!NOTE]
 >
-> Alleen Pay-As-You-Go abonnementen (het standaard abonnements type) komen in aanmerking voor GPU-toewijzing; benefit abonnementen worden momenteel niet ondersteund.
+> Alleen Pay-As-You-Go-abonnementen (het standaardabonnementstype) komen in aanmerking voor GPU-toewijzing; benefit-abonnementen worden momenteel niet ondersteund.
 >
-> Voor gebruikers met benefit abonnementen (zoals Visual Studio Enterprise Subscription) of voor wie snel het fijn afstemmen en implementatieproces wil testen, biedt deze handleiding ook richtlijnen voor fijn afstemmen met een minimale dataset op een CPU. Het is echter belangrijk om te weten dat de resultaten van fijn afstemmen aanzienlijk beter zijn bij gebruik van een GPU met grotere datasets.
+> Voor gebruikers met benefit-abonnementen (zoals Visual Studio Enterprise Subscription) of voor degenen die het fijn afstemmen en implementatieproces snel willen testen, biedt deze tutorial ook richtlijnen voor fijn afstemmen met een minimale dataset met een CPU. Het is echter belangrijk op te merken dat de resultaten van het fijn afstemmen aanzienlijk beter zijn bij gebruik van een GPU met grotere datasets.
 
 1. Bezoek [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Voer de volgende stappen uit om het quotum voor *Standard NCADSA100v4 Family* aan te vragen:
+1. Voer de volgende taken uit om een *Standard NCADSA100v4 Family* quotum aan te vragen:
 
-    - Selecteer **Quota** in het tabblad aan de linkerkant.
-    - Selecteer de **Virtual machine family** die je wilt gebruiken. Bijvoorbeeld, selecteer **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, waar de *Standard_NC24ads_A100_v4* GPU onder valt.
+    - Selecteer **Quota** uit het tabblad aan de linkerkant.
+    - Selecteer de te gebruiken **Virtual machine family**. Bijvoorbeeld, selecteer **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, waar de *Standard_NC24ads_A100_v4* GPU onderdeel van is.
     - Selecteer **Request quota** in het navigatiemenu.
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.nl.png)
 
-    - Vul op de pagina Request quota het gewenste aantal **New cores limit** in. Bijvoorbeeld 24.
-    - Selecteer op de pagina Request quota **Submit** om het GPU-quotum aan te vragen.
+    - Voer op de pagina Request quota de **Nieuwe coreslimiet** in die u wilt gebruiken. Bijvoorbeeld 24.
+    - Selecteer op de pagina Request quota **Submit** om de GPU-quotum aan te vragen.
 
 > [!NOTE]
-> Je kunt de juiste GPU of CPU kiezen op basis van je behoeften door te verwijzen naar de documentatie [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> U kunt de juiste GPU of CPU selecteren voor uw behoeften door te verwijzen naar het document [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
 ### Roltoewijzing toevoegen
 
-Om je modellen fijn af te stemmen en te implementeren, moet je eerst een User Assigned Managed Identity (UAI) aanmaken en deze de juiste machtigingen geven. Deze UAI wordt gebruikt voor authenticatie tijdens de implementatie.
+Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Assigned Managed Identity (UAI) aanmaken en deze de juiste rechten toewijzen. Deze UAI wordt gebruikt voor authenticatie tijdens implementatie.
 
-#### User Assigned Managed Identity (UAI) aanmaken
+#### User Assigned Managed Identity (UAI) maken
 
 1. Typ *managed identities* in de **zoekbalk** bovenaan de portalpagina en selecteer **Managed Identities** uit de opties die verschijnen.
 
@@ -116,44 +116,44 @@ Om je modellen fijn af te stemmen en te implementeren, moet je eerst een User As
 
 1. Voer de volgende taken uit:
 
-    - Selecteer je Azure **Subscription**.
-    - Selecteer de **Resource group** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
-    - Selecteer de **Regio** die je wilt gebruiken.
-    - Voer een **Naam** in. Dit moet een unieke naam zijn.
+    - Selecteer uw Azure **Abonnement**.
+    - Selecteer de te gebruiken **Resourcegroep** (maak er een nieuwe aan indien nodig).
+    - Selecteer de **Regio** die u wilt gebruiken.
+    - Voer een **Naam** in. Dit moet een unieke waarde zijn.
 
 1. Selecteer **Review + create**.
 
 1. Selecteer **+ Create**.
 
-#### Contributor roltoewijzing toevoegen aan Managed Identity
+#### Contributor-roltoewijzing toevoegen aan Managed Identity
 
-1. Navigeer naar de Managed Identity resource die je hebt aangemaakt.
+1. Navigeer naar de Managed Identity-resource die u hebt aangemaakt.
 
-1. Selecteer **Azure role assignments** in het tabblad aan de linkerkant.
+1. Selecteer **Azure role assignments** uit het tabblad aan de linkerkant.
 
 1. Selecteer **+Add role assignment** in het navigatiemenu.
 
 1. Voer op de pagina Add role assignment de volgende taken uit:
     - Stel de **Scope** in op **Resource group**.
-    - Selecteer je Azure **Subscription**.
-    - Selecteer de **Resource group** die je wilt gebruiken.
-    - Selecteer de **Role** **Contributor**.
+    - Selecteer uw Azure **Abonnement**.
+    - Selecteer de te gebruiken **Resourcegroep**.
+    - Selecteer de **Rol** voor **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.nl.png)
 
 1. Selecteer **Save**.
 
-#### Storage Blob Data Reader roltoewijzing toevoegen aan Managed Identity
+#### Storage Blob Data Reader-roltoewijzing toevoegen aan Managed Identity
 
 1. Typ *storage accounts* in de **zoekbalk** bovenaan de portalpagina en selecteer **Storage accounts** uit de opties die verschijnen.
 
     ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.nl.png)
 
-1. Selecteer de storage account die gekoppeld is aan de Azure Machine Learning workspace die je hebt aangemaakt. Bijvoorbeeld, *finetunephistorage*.
+1. Selecteer de opslagaccount die is gekoppeld aan de Azure Machine Learning-werkruimte die u hebt gemaakt. Bijvoorbeeld, *finetunephistorage*.
 
-1. Voer de volgende stappen uit om naar de pagina Add role assignment te navigeren:
+1. Voer de volgende taken uit om naar de pagina Add role assignment te navigeren:
 
-    - Navigeer naar de Azure Storage account die je hebt aangemaakt.
+    - Navigeer naar de Azure Storage-account die u hebt aangemaakt.
     - Selecteer **Access Control (IAM)** in het tabblad aan de linkerkant.
     - Selecteer **+ Add** in het navigatiemenu.
     - Selecteer **Add role assignment** in het navigatiemenu.
@@ -162,28 +162,28 @@ Om je modellen fijn af te stemmen en te implementeren, moet je eerst een User As
 
 1. Voer op de pagina Add role assignment de volgende taken uit:
 
-    - Typ op de Role-pagina *Storage Blob Data Reader* in de **zoekbalk** en selecteer **Storage Blob Data Reader** uit de opties die verschijnen.
-    - Selecteer op de Role-pagina **Next**.
-    - Selecteer op de Members-pagina **Assign access to** **Managed identity**.
-    - Selecteer op de Members-pagina **+ Select members**.
-    - Selecteer op de pagina Select managed identities je Azure **Subscription**.
-    - Selecteer op de pagina Select managed identities de **Managed identity** onder **Manage Identity**.
-    - Selecteer de Managed Identity die je hebt aangemaakt. Bijvoorbeeld, *finetunephi-managedidentity*.
-    - Selecteer **Select**.
+    - Typ op de pagina Rol *Storage Blob Data Reader* in de **zoekbalk** en selecteer **Storage Blob Data Reader** uit de opties die verschijnen.
+    - Selecteer op de pagina Rol **Next**.
+    - Selecteer op de pagina Leden bij **Assign access to** **Managed identity**.
+    - Selecteer op de pagina Leden **+ Select members**.
+    - Selecteer op de pagina Select managed identities uw Azure **Abonnement**.
+    - Selecteer op de pagina Select managed identities de **Managed identity** voor **Manage Identity**.
+    - Selecteer op de pagina Select managed identities de Manage Identity die u hebt aangemaakt. Bijvoorbeeld, *finetunephi-managedidentity*.
+    - Selecteer op de pagina Select managed identities **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.nl.png)
 
 1. Selecteer **Review + assign**.
 
-#### AcrPull roltoewijzing toevoegen aan Managed Identity
+#### AcrPull-roltoewijzing toevoegen aan Managed Identity
 
 1. Typ *container registries* in de **zoekbalk** bovenaan de portalpagina en selecteer **Container registries** uit de opties die verschijnen.
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.nl.png)
 
-1. Selecteer de container registry die gekoppeld is aan de Azure Machine Learning workspace. Bijvoorbeeld, *finetunephicontainerregistries*
+1. Selecteer de containerregistry die gekoppeld is aan de Azure Machine Learning-werkruimte. Bijvoorbeeld, *finetunephicontainerregistries*.
 
-1. Voer de volgende stappen uit om naar de pagina Add role assignment te navigeren:
+1. Voer de volgende taken uit om naar de pagina Add role assignment te navigeren:
 
     - Selecteer **Access Control (IAM)** in het tabblad aan de linkerkant.
     - Selecteer **+ Add** in het navigatiemenu.
@@ -191,53 +191,55 @@ Om je modellen fijn af te stemmen en te implementeren, moet je eerst een User As
 
 1. Voer op de pagina Add role assignment de volgende taken uit:
 
-    - Typ op de Role-pagina *AcrPull* in de **zoekbalk** en selecteer **AcrPull** uit de opties die verschijnen.
-    - Selecteer op de Role-pagina **Next**.
-    - Selecteer op de Members-pagina **Assign access to** **Managed identity**.
-    - Selecteer op de Members-pagina **+ Select members**.
-    - Selecteer op de pagina Select managed identities je Azure **Subscription**.
-    - Selecteer op de pagina Select managed identities de **Managed identity** onder **Manage Identity**.
-    - Selecteer de Managed Identity die je hebt aangemaakt. Bijvoorbeeld, *finetunephi-managedidentity*.
-    - Selecteer **Select**.
+    - Typ op de pagina Rol *AcrPull* in de **zoekbalk** en selecteer **AcrPull** uit de opties die verschijnen.
+    - Selecteer op de pagina Rol **Next**.
+    - Selecteer op de pagina Leden bij **Assign access to** **Managed identity**.
+    - Selecteer op de pagina Leden **+ Select members**.
+    - Selecteer op de pagina Select managed identities uw Azure **Abonnement**.
+    - Selecteer op de pagina Select managed identities de **Managed identity** voor **Manage Identity**.
+    - Selecteer op de pagina Select managed identities de Manage Identity die u hebt aangemaakt. Bijvoorbeeld, *finetunephi-managedidentity*.
+    - Selecteer op de pagina Select managed identities **Select**.
     - Selecteer **Review + assign**.
 
 ### Project opzetten
 
-Nu ga je een map aanmaken om in te werken en een virtuele omgeving instellen om een programma te ontwikkelen dat met gebruikers communiceert en gebruikmaakt van opgeslagen chatgeschiedenis uit Azure Cosmos DB om zijn antwoorden te verbeteren.
+Nu maakt u een map om in te werken en stelt u een virtuele omgeving in om een programma te ontwikkelen dat met gebruikers interageert en opgeslagen chatgeschiedenis uit Azure Cosmos DB gebruikt om zijn antwoorden te informeren.
 
-#### Maak een map aan om in te werken
+#### Maak een map om in te werken
 
-1. Open een terminalvenster en typ het volgende commando om een map genaamd *finetune-phi* aan te maken in het standaardpad.
+1. Open een terminalvenster en typ de volgende opdracht om een map genaamd *finetune-phi* te maken in het standaardpad.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. Typ het volgende commando in je terminal om naar de map *finetune-phi* te navigeren die je hebt aangemaakt.
+1. Typ de volgende opdracht in uw terminal om naar de map *finetune-phi* te navigeren die u hebt gemaakt.
 
     ```console
     cd finetune-phi
     ```
 
-#### Maak een virtuele omgeving aan
+#### Maak een virtuele omgeving
 
-1. Typ het volgende commando in je terminal om een virtuele omgeving aan te maken met de naam *.venv*.
+1. Typ de volgende opdracht in uw terminal om een virtuele omgeving genaamd *.venv* te maken.
 
     ```console
     python -m venv .venv
     ```
 
-1. Typ het volgende commando in je terminal om de virtuele omgeving te activeren.
+1. Typ de volgende opdracht in uw terminal om de virtuele omgeving te activeren.
 
     ```console
     .venv\Scripts\activate.bat
     ```
+
 > [!NOTE]
 >
-> Als het gelukt is, zou je *(.venv)* voor de opdrachtprompt moeten zien.
-#### Installeer de benodigde pakketten
+> Als het gelukt is, zou u *(.venv)* vóór de opdrachtprompt moeten zien.
 
-1. Typ de volgende opdrachten in je terminal om de benodigde pakketten te installeren.
+#### Installeer de vereiste pakketten
+
+1. Typ de volgende opdrachten in uw terminal om de vereiste pakketten te installeren.
 
     ```console
     pip install datasets==2.19.1
@@ -249,23 +251,22 @@ Nu ga je een map aanmaken om in te werken en een virtuele omgeving instellen om 
     ```
 
 #### Maak projectbestanden aan
+In deze oefening maakt u de essentiële bestanden voor ons project aan. Deze bestanden bevatten scripts voor het downloaden van de dataset, het opzetten van de Azure Machine Learning-omgeving, het fine-tunen van het Phi-3-model en het implementeren van het fijn-afgestelde model. U maakt ook een *conda.yml* bestand aan om de fine-tuning-omgeving op te zetten.
 
-In deze oefening maak je de essentiële bestanden voor ons project aan. Deze bestanden bevatten scripts voor het downloaden van de dataset, het opzetten van de Azure Machine Learning-omgeving, het fine-tunen van het Phi-3 model en het uitrollen van het fijn-afgestelde model. Je maakt ook een *conda.yml* bestand aan om de fine-tuning omgeving in te stellen.
-
-In deze oefening ga je:
+In deze oefening zult u:
 
 - Een *download_dataset.py* bestand maken om de dataset te downloaden.
 - Een *setup_ml.py* bestand maken om de Azure Machine Learning-omgeving op te zetten.
-- Een *fine_tune.py* bestand maken in de map *finetuning_dir* om het Phi-3 model te fine-tunen met de dataset.
-- Een *conda.yml* bestand maken om de fine-tuning omgeving in te stellen.
-- Een *deploy_model.py* bestand maken om het fijn-afgestelde model uit te rollen.
-- Een *integrate_with_promptflow.py* bestand maken om het fijn-afgestelde model te integreren en uit te voeren met Prompt flow.
-- Een flow.dag.yml bestand maken om de workflowstructuur voor Prompt flow op te zetten.
+- Een *fine_tune.py* bestand maken in de map *finetuning_dir* om het Phi-3-model fijn af te stemmen met behulp van de dataset.
+- Een *conda.yml* bestand maken om de fine-tuning omgeving op te zetten.
+- Een *deploy_model.py* bestand maken om het fijn-afgestelde model te implementeren.
+- Een *integrate_with_promptflow.py* bestand maken, om het fijn-afgestelde model te integreren en het model uit te voeren met Prompt flow.
+- Een flow.dag.yml bestand maken, om de workflow-structuur voor Prompt flow op te zetten.
 - Een *config.py* bestand maken om Azure-informatie in te voeren.
 
 > [!NOTE]
 >
-> Volledige mappenstructuur:
+> Complete mappenstructuur:
 >
 > ```text
 > └── YourUserName
@@ -287,27 +288,27 @@ In deze oefening ga je:
 
 1. Selecteer **Map openen**.
 
-1. Selecteer de map *finetune-phi* die je hebt aangemaakt, deze bevindt zich op *C:\Users\yourUserName\finetune-phi*.
+1. Selecteer de *finetune-phi* map die u hebt gemaakt, die zich bevindt in *C:\Users\yourUserName\finetune-phi*.
 
     ![Open project map.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.nl.png)
 
-1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en kies **Nieuw bestand** om een nieuw bestand aan te maken met de naam *download_dataset.py*.
+1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand genaamd *download_dataset.py* aan te maken.
 
-1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en kies **Nieuw bestand** om een nieuw bestand aan te maken met de naam *setup_ml.py*.
+1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand genaamd *setup_ml.py* aan te maken.
 
-1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en kies **Nieuw bestand** om een nieuw bestand aan te maken met de naam *deploy_model.py*.
+1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand genaamd *deploy_model.py* aan te maken.
 
     ![Nieuw bestand aanmaken.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.nl.png)
 
-1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en kies **Nieuwe map** om een nieuwe map aan te maken met de naam *finetuning_dir*.
+1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuwe map** om een nieuwe map genaamd *finetuning_dir* aan te maken.
 
-1. Maak in de map *finetuning_dir* een nieuw bestand aan met de naam *fine_tune.py*.
+1. Maak in de *finetuning_dir* map een nieuw bestand aan met de naam *fine_tune.py*.
 
 #### Maak en configureer het *conda.yml* bestand
 
-1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en kies **Nieuw bestand** om een nieuw bestand aan te maken met de naam *conda.yml*.
+1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand aan te maken met de naam *conda.yml*.
 
-1. Voeg de volgende code toe aan het *conda.yml* bestand om de fine-tuning omgeving voor het Phi-3 model in te stellen.
+1. Voeg de volgende code toe aan het *conda.yml* bestand om de fine-tuning-omgeving voor het Phi-3-model op te zetten.
 
     ```yml
     name: phi-3-training-env
@@ -335,76 +336,76 @@ In deze oefening ga je:
 
 #### Maak en configureer het *config.py* bestand
 
-1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en kies **Nieuw bestand** om een nieuw bestand aan te maken met de naam *config.py*.
+1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand aan te maken met de naam *config.py*.
 
-1. Voeg de volgende code toe aan het *config.py* bestand om je Azure-informatie toe te voegen.
+1. Voeg de volgende code toe aan het *config.py* bestand om uw Azure-informatie op te nemen.
 
     ```python
-    # Azure settings
+    # Azure-instellingen
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
-    AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
+    AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroep"
 
-    # Azure Machine Learning settings
-    AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
+    # Azure Machine Learning-instellingen
+    AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-werkruimte"
 
-    # Azure Managed Identity settings
+    # Azure Managed Identity-instellingen
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
-    AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
+    AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-managedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # Dataset-bestandspaden
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # Instellingen van het fijn afgestemde model
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
-    AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
-    AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
+    AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-eindpunt"
+    AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-implementatie"
 
     AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"
-    AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
+    AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{uw-eindpunt-naam}.{uw-regio}.inference.ml.azure.com/score"
     ```
 
-#### Voeg Azure-omgevingsvariabelen toe
+#### Voeg Azure omgeving variabelen toe
 
-1. Voer de volgende stappen uit om de Azure Subscription ID toe te voegen:
+1. Voer de volgende taken uit om de Azure Subscription ID toe te voegen:
 
     - Typ *subscriptions* in de **zoekbalk** bovenaan de portalpagina en selecteer **Subscriptions** uit de opties die verschijnen.
-    - Selecteer de Azure Subscription die je momenteel gebruikt.
-    - Kopieer en plak je Subscription ID in het *config.py* bestand.
+    - Selecteer de Azure-abonnementsservice die u momenteel gebruikt.
+    - Kopieer en plak uw Subscription ID in het *config.py* bestand.
 
-    ![Vind subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.nl.png)
+    ![Zoek abonnement id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.nl.png)
 
-1. Voer de volgende stappen uit om de Azure Workspace Naam toe te voegen:
+1. Voer de volgende taken uit om de Azure Workspace Naam toe te voegen:
 
-    - Navigeer naar de Azure Machine Learning resource die je hebt aangemaakt.
-    - Kopieer en plak je accountnaam in het *config.py* bestand.
+    - Navigeer naar de Azure Machine Learning-resource die u hebt gemaakt.
+    - Kopieer en plak uw accountnaam in het *config.py* bestand.
 
-    ![Vind Azure Machine Learning naam.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.nl.png)
+    ![Zoek Azure Machine Learning naam.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.nl.png)
 
-1. Voer de volgende stappen uit om de Azure Resource Group Naam toe te voegen:
+1. Voer de volgende taken uit om de Azure Resource Group Naam toe te voegen:
 
-    - Navigeer naar de Azure Machine Learning resource die je hebt aangemaakt.
-    - Kopieer en plak je Azure Resource Group Naam in het *config.py* bestand.
+    - Navigeer naar de Azure Machine Learning-resource die u hebt gemaakt.
+    - Kopieer en plak uw Azure Resource Group Naam in het *config.py* bestand.
 
-    ![Vind resource group naam.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.nl.png)
+    ![Zoek resource group naam.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.nl.png)
 
-2. Voer de volgende stappen uit om de Azure Managed Identity naam toe te voegen:
+2. Voer de volgende taken uit om de Azure Managed Identity naam toe te voegen:
 
-    - Navigeer naar de Managed Identities resource die je hebt aangemaakt.
-    - Kopieer en plak je Azure Managed Identity naam in het *config.py* bestand.
+    - Navigeer naar de Managed Identities-resource die u hebt gemaakt.
+    - Kopieer en plak uw Azure Managed Identity naam in het *config.py* bestand.
 
-    ![Vind UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.nl.png)
+    ![Zoek UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.nl.png)
 
 ### Bereid dataset voor fine-tuning voor
 
-In deze oefening ga je het *download_dataset.py* bestand uitvoeren om de *ULTRACHAT_200k* datasets te downloaden naar je lokale omgeving. Vervolgens gebruik je deze datasets om het Phi-3 model te fine-tunen in Azure Machine Learning.
+In deze oefening voert u het *download_dataset.py* bestand uit om de *ULTRACHAT_200k* datasets naar uw lokale omgeving te downloaden. U gebruikt deze datasets vervolgens om het Phi-3-model in Azure Machine Learning fijn af te stemmen.
 
-#### Download je dataset met *download_dataset.py*
+#### Download uw dataset met *download_dataset.py*
 
 1. Open het *download_dataset.py* bestand in Visual Studio Code.
 
-1. Voeg de volgende code toe aan *download_dataset.py*.
+1. Voeg de volgende code toe in *download_dataset.py*.
 
     ```python
     import json
@@ -418,11 +419,11 @@ In deze oefening ga je het *download_dataset.py* bestand uitvoeren om de *ULTRAC
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # Laad de dataset met de opgegeven naam, configuratie en splitsingsverhouding
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # Splits de dataset in train- en testsets (80% train, 20% test)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -433,16 +434,16 @@ In deze oefening ga je het *download_dataset.py* bestand uitvoeren om de *ULTRAC
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # Maak de map aan als deze nog niet bestaat
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # Open het bestand in schrijfmethode
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # Itereer over elk record in de dataset
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # Sla het record op als een JSON-object en schrijf het naar het bestand
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # Schrijf een nieuwe-regel teken om de records te scheiden
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -451,17 +452,17 @@ In deze oefening ga je het *download_dataset.py* bestand uitvoeren om de *ULTRAC
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # Laad en splits de ULTRACHAT_200k dataset met een specifieke configuratie en splitsingsverhouding
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # Extraheer de train- en testdatasets uit de splitsing
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # Sla de train dataset op in een JSONL-bestand
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # Sla de test dataset op in een apart JSONL-bestand
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -471,63 +472,63 @@ In deze oefening ga je het *download_dataset.py* bestand uitvoeren om de *ULTRAC
 
 > [!TIP]
 >
-> **Advies voor fine-tuning met een minimale dataset op een CPU**
+> **Richtlijnen voor fijn afstemmen met een minimale dataset op een CPU**
 >
-> Als je een CPU wilt gebruiken voor fine-tuning, is deze aanpak ideaal voor gebruikers met benefit subscriptions (zoals Visual Studio Enterprise Subscription) of om snel het fine-tunen en uitrollen te testen.
+> Als u een CPU wilt gebruiken voor fijn afstemmen, is deze aanpak ideaal voor gebruikers met benefit-abonnementen (zoals Visual Studio Enterprise Subscription) of om het fijn-afstemmen en implementatieproces snel te testen.
 >
 > Vervang `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` door `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Typ de volgende opdracht in je terminal om het script uit te voeren en de dataset naar je lokale omgeving te downloaden.
+1. Typ het volgende commando in uw terminal om het script uit te voeren en de dataset naar uw lokale omgeving te downloaden.
 
     ```console
     python download_data.py
     ```
 
-1. Controleer of de datasets succesvol zijn opgeslagen in je lokale *finetune-phi/data* map.
+1. Controleer of de datasets met succes zijn opgeslagen in uw lokale *finetune-phi/data* map.
 
 > [!NOTE]
 >
 > **Dataset grootte en fine-tuning tijd**
 >
-> In dit E2E voorbeeld gebruik je slechts 1% van de dataset (`train_sft[:1%]`). Dit verkleint de hoeveelheid data aanzienlijk, waardoor zowel het uploaden als het fine-tunen sneller gaat. Je kunt het percentage aanpassen om de juiste balans te vinden tussen trainingstijd en modelprestaties. Het gebruik van een kleinere subset van de dataset verkort de fine-tuning tijd, wat het proces beter beheersbaar maakt voor een E2E voorbeeld.
+> In dit E2E voorbeeld gebruikt u slechts 1% van de dataset (`train_sft[:1%]`). Dit vermindert het datavolume aanzienlijk, waardoor zowel het uploaden als het fine-tunen sneller verloopt. U kunt het percentage aanpassen om de juiste balans te vinden tussen trainingstijd en modelprestaties. Het gebruik van een kleinere subset van de dataset verkort de tijd die nodig is voor fine-tuning, waardoor het proces beter beheersbaar wordt voor een E2E voorbeeld.
 
-## Scenario 2: Fine-tune het Phi-3 model en rol uit in Azure Machine Learning Studio
+## Scenario 2: Fijn afstemmen van het Phi-3 model en implementeren in Azure Machine Learning Studio
 
 ### Stel Azure CLI in
 
-Je moet Azure CLI instellen om je omgeving te authenticeren. Azure CLI stelt je in staat om Azure-resources direct vanaf de opdrachtregel te beheren en levert de benodigde credentials zodat Azure Machine Learning toegang heeft tot deze resources. Om te beginnen, installeer [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+U moet Azure CLI instellen om uw omgeving te authenticeren. Azure CLI stelt u in staat om Azure resources rechtstreeks vanaf de opdrachtregel te beheren en biedt de benodigde referenties zodat Azure Machine Learning toegang heeft tot deze resources. Om te beginnen installeert u [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. Open een terminalvenster en typ de volgende opdracht om in te loggen op je Azure-account.
+1. Open een terminalvenster en typ het volgende commando om in te loggen op uw Azure-account.
 
     ```console
     az login
     ```
 
-1. Selecteer je Azure-account om te gebruiken.
+1. Selecteer de Azure-account die u wilt gebruiken.
 
-1. Selecteer je Azure-subscriptie om te gebruiken.
+1. Selecteer het Azure-abonnement dat u wilt gebruiken.
 
-    ![Vind resource group naam.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.nl.png)
+    ![Zoek resource group naam.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.nl.png)
 
 > [!TIP]
 >
-> Als je problemen hebt met inloggen bij Azure, probeer dan een apparaatcode te gebruiken. Open een terminalvenster en typ de volgende opdracht om in te loggen op je Azure-account:
+> Als u problemen ondervindt met aanmelden bij Azure, probeer dan een apparaatcode te gebruiken. Open een terminalvenster en typ het volgende commando om aan te melden op uw Azure-account:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Fine-tune het Phi-3 model
+### Fijn afstemmen van het Phi-3 model
 
-In deze oefening ga je het Phi-3 model fine-tunen met de meegeleverde dataset. Eerst definieer je het fine-tuning proces in het *fine_tune.py* bestand. Daarna configureer je de Azure Machine Learning-omgeving en start je het fine-tuning proces door het *setup_ml.py* bestand uit te voeren. Dit script zorgt ervoor dat het fine-tunen plaatsvindt binnen de Azure Machine Learning-omgeving.
+In deze oefening gaat u het Phi-3 model fijn afstemmen met behulp van de geleverde dataset. Eerst definieert u het fine-tuning proces in het *fine_tune.py* bestand. Vervolgens configureert u de Azure Machine Learning-omgeving en start u het fine-tuning proces door het *setup_ml.py* bestand uit te voeren. Dit script zorgt ervoor dat het fine-tunen plaatsvindt binnen de Azure Machine Learning-omgeving.
 
-Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Machine Learning-omgeving.
+Door *setup_ml.py* uit te voeren, laat u het fine-tuning proces draaien in de Azure Machine Learning-omgeving.
 
 #### Voeg code toe aan het *fine_tune.py* bestand
 
-1. Navigeer naar de map *finetuning_dir* en open het *fine_tune.py* bestand in Visual Studio Code.
+1. Navigeer naar de *finetuning_dir* map en open het *fine_tune.py* bestand in Visual Studio Code.
 
 1. Voeg de volgende code toe aan *fine_tune.py*.
 
@@ -542,10 +543,10 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # Om de INVALID_PARAMETER_VALUE-fout in MLflow te voorkomen, schakel de MLflow-integratie uit
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # Configuratie van logging
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -685,11 +686,11 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
 1. Sla het *fine_tune.py* bestand op en sluit het.
 
 > [!TIP]
-> **Je kunt ook het Phi-3.5 model fine-tunen**
+> **U kunt het Phi-3.5 model fijn afstemmen**
 >
-> In het *fine_tune.py* bestand kun je de waarde van `pretrained_model_name` wijzigen van `"microsoft/Phi-3-mini-4k-instruct"` naar elk model dat je wilt fine-tunen. Bijvoorbeeld, als je het verandert naar `"microsoft/Phi-3.5-mini-instruct"`, gebruik je het Phi-3.5-mini-instruct model voor fine-tuning. Om het model te vinden en de naam te gebruiken die je wilt, bezoek [Hugging Face](https://huggingface.co/), zoek het gewenste model en kopieer de naam naar het `pretrained_model_name` veld in je script.
+> In het *fine_tune.py* bestand kunt u de `pretrained_model_name` veranderen van `"microsoft/Phi-3-mini-4k-instruct"` naar elk ander model dat u wilt fine-tunen. Bijvoorbeeld, als u het wijzigt naar `"microsoft/Phi-3.5-mini-instruct"`, gebruikt u het Phi-3.5-mini-instruct model voor fijn afstemmen. Om de modelnaam te vinden en te gebruiken die u verkiest, bezoekt u [Hugging Face](https://huggingface.co/), zoekt u naar het gewenste model en kopieert u de naam naar het `pretrained_model_name` veld in uw script.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.">
 >
 
 #### Voeg code toe aan het *setup_ml.py* bestand
@@ -711,25 +712,25 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
         TEST_DATA_PATH
     )
 
-    # Constants
+    # Constanten
 
-    # Uncomment the following lines to use a CPU instance for training
+    # Haal de commentaartekens weg van de volgende regels om een CPU-instantie te gebruiken voor training
     # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # Haal de commentaartekens weg van de volgende regels om een GPU-instantie te gebruiken voor training
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # Vervang door de locatie van jouw compute-cluster
+    FINETUNING_DIR = "./finetuning_dir" # Pad naar het fine-tuning script
+    TRAINING_ENV_NAME = "phi-3-training-environment" # Naam van de trainingsomgeving
+    MODEL_OUTPUT_DIR = "./model_output" # Pad naar de uitvoermap van het model in Azure ML
 
-    # Logging setup to track the process
+    # Logging setup om het proces te volgen
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -749,9 +750,9 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # Docker image voor de omgeving
+            conda_file=CONDA_FILE,  # Conda environment bestand
+            name=TRAINING_ENV_NAME,  # Naam van de omgeving
         )
         return ml_client.environments.create_or_update(env)
 
@@ -768,11 +769,11 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # Laag van het compute-cluster
+                min_instances=0,  # Minimum aantal instanties
+                max_instances=1  # Maximum aantal instanties
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wacht tot het cluster is aangemaakt
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -780,18 +781,18 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # Pad naar fine_tune.py
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # Trainingsomgeving
+            compute=compute_name,  # Te gebruiken compute-cluster
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Pad naar het trainingsdata bestand
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Pad naar het evaluatiedata bestand
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -800,21 +801,21 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # Initialiseer ML Client
         ml_client = get_ml_client()
 
-        # Create Environment
+        # Maak Environment aan
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # Maak aan of verkrijg bestaand compute-cluster
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # Maak en dien Fine-Tuning Job in
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # Dien de job in
+        ml_client.jobs.stream(returned_job.name)  # Stroom de joblogs
         
-        # Capture the job name
+        # Leg de jobnaam vast
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -823,25 +824,25 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
 
     ```
 
-1. Vervang `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` en `LOCATION` door jouw specifieke gegevens.
+1. Vervang `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` en `LOCATION` door uw specifieke gegevens.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # Haal de commentaartekens weg bij de volgende regels om een GPU-instance te gebruiken voor training
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # Vervang door de locatie van je computercluster
     ```
 
 > [!TIP]
 >
-> **Advies voor fine-tuning met een minimale dataset op een CPU**
+> **Richtlijnen voor fijn afstemmen met een minimale dataset op een CPU**
 >
-> Als je een CPU wilt gebruiken voor fine-tuning, is deze aanpak ideaal voor gebruikers met benefit subscriptions (zoals Visual Studio Enterprise Subscription) of om snel het fine-tunen en uitrollen te testen.
+> Als u een CPU wilt gebruiken voor fijn afstemmen, is deze aanpak ideaal voor gebruikers met benefit-abonnementen (zoals Visual Studio Enterprise Subscription) of om het fijn-afstemmen en implementatieproces snel te testen.
 >
 > 1. Open het *setup_ml* bestand.
-> 1. Vervang `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` en `DOCKER_IMAGE_NAME` door het volgende. Als je geen toegang hebt tot *Standard_E16s_v3*, kun je een gelijkwaardige CPU-instance gebruiken of een nieuwe quota aanvragen.
-> 1. Vervang `LOCATION` door jouw specifieke gegevens.
+> 1. Vervang `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` en `DOCKER_IMAGE_NAME` door het volgende. Als u geen toegang hebt tot *Standard_E16s_v3*, kunt u een equivalente CPU-instantie gebruiken of een nieuwe quota aanvragen.
+> 1. Vervang `LOCATION` door uw specifieke gegevens.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -852,33 +853,33 @@ Door *setup_ml.py* uit te voeren, start je het fine-tuning proces in de Azure Ma
 >    ```
 >
 
-1. Typ de volgende opdracht om het *setup_ml.py* script uit te voeren en het fine-tuning proces in Azure Machine Learning te starten.
+1. Typ het volgende commando om het *setup_ml.py* script uit te voeren en het fijn afstemproces in Azure Machine Learning te starten.
 
     ```python
     python setup_ml.py
     ```
 
-1. In deze oefening heb je het Phi-3 model succesvol gefinetuned met Azure Machine Learning. Door het *setup_ml.py* script uit te voeren, heb je de Azure Machine Learning-omgeving opgezet en het fine-tuning proces gestart dat is gedefinieerd in het *fine_tune.py* bestand. Houd er rekening mee dat het fine-tuning proces enige tijd kan duren. Na het uitvoeren van de `python setup_ml.py` opdracht moet je wachten tot het proces is voltooid. Je kunt de status van de fine-tuning taak volgen via de link die in de terminal wordt weergegeven naar de Azure Machine Learning portal.
+1. In deze oefening hebt u met succes het Phi-3 model fijn afgestemd met behulp van Azure Machine Learning. Door het *setup_ml.py* script uit te voeren, hebt u de Azure Machine Learning-omgeving ingesteld en het fijn afstemproces gestart dat is gedefinieerd in het *fine_tune.py* bestand. Houd er rekening mee dat het fijn-afstemproces aanzienlijk wat tijd kan kosten. Na het uitvoeren van de `python setup_ml.py` opdracht moet u wachten tot het proces is voltooid. U kunt de status van de fijn-afstemjob volgen via de link die in de terminal wordt weergegeven naar de Azure Machine Learning-portal.
 
-    ![Bekijk fine-tuning taak.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.nl.png)
+    ![Zie finetuning taak.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.nl.png)
 
-### Rol het fijn-afgestelde model uit
+### Implementeer het fijn-afgestelde model
 
-Om het fijn-afgestelde Phi-3 model te integreren met Prompt Flow, moet je het model uitrollen zodat het toegankelijk is voor realtime inferentie. Dit proces omvat het registreren van het model, het aanmaken van een online endpoint en het uitrollen van het model.
+Om het fijn-afgestelde Phi-3 model te integreren met Prompt Flow, moet u het model implementeren zodat het toegankelijk is voor realtime inferentie. Dit proces omvat het registreren van het model, het maken van een online endpoint en het implementeren van het model.
 
-#### Stel de modelnaam, endpointnaam en deploymentnaam in voor uitrol
+#### Stel de modelnaam, endpointnaam en implementatienaam in voor implementatie
 
 1. Open het *config.py* bestand.
 
-1. Vervang `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` door de gewenste naam voor je model.
+1. Vervang `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` door de gewenste naam voor uw model.
 
-1. Vervang `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` door de gewenste naam voor je endpoint.
+1. Vervang `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` door de gewenste naam voor uw endpoint.
 
-1. Vervang `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` door de gewenste naam voor je deployment.
+1. Vervang `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` door de gewenste naam voor uw implementatie.
 
 #### Voeg code toe aan het *deploy_model.py* bestand
 
-Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitrolproces. Het registreert het model, maakt een endpoint aan en voert de uitrol uit op basis van de instellingen in het *config.py* bestand, waaronder de modelnaam, endpointnaam en deploymentnaam.
+Het uitvoeren van het *deploy_model.py* bestand automatiseert het hele implementatieproces. Het registreert het model, maakt een endpoint aan en voert de implementatie uit op basis van de instellingen die zijn gespecificeerd in het config.py bestand, waaronder de modelnaam, endpointnaam en implementatienaam.
 
 1. Open het *deploy_model.py* bestand in Visual Studio Code.
 
@@ -891,7 +892,7 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitr
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # Configuratie-imports
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -903,7 +904,7 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitr
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # Constanten
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -913,7 +914,7 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitr
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # Logboekconfiguratie
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1002,25 +1003,25 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitr
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # Haal de huidige eindpuntgegevens op
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # Log de huidige verkeersverdeling voor debugging
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # Stel de verkeersverdeling voor de implementatie in
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # Werk het eindpunt bij met de nieuwe verkeersverdeling
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # Log de bijgewerkte verkeersverdeling voor debugging
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # Log eventuele fouten die tijdens het proces optreden
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1048,29 +1049,28 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitr
 
     ```
 
-1. Voer de volgende stappen uit om de `JOB_NAME` te achterhalen:
+1. Voer de volgende taken uit om de `JOB_NAME` te verkrijgen:
 
-    - Navigeer naar de Azure Machine Learning resource die je hebt aangemaakt.
+    - Navigeer naar de Azure Machine Learning-resource die u hebt gemaakt.
     - Selecteer **Studio web URL** om de Azure Machine Learning workspace te openen.
-    - Selecteer **Jobs** in het linker tabblad.
-    - Selecteer het experiment voor fine-tuning, bijvoorbeeld *finetunephi*.
-    - Selecteer de job die je hebt aangemaakt.
-- Kopieer en plak je jobnaam in `JOB_NAME = "your-job-name"` in het *deploy_model.py* bestand.
+    - Selecteer **Jobs** in de linker zijbalk.
+    - Selecteer het experiment voor fijn-afstemmen, bijvoorbeeld *finetunephi*.
+    - Selecteer de taak die u hebt aangemaakt.
+    - Kopieer en plak je functienaam in de `JOB_NAME = "your-job-name"` in het bestand *deploy_model.py*.
 
-1. Vervang `COMPUTE_INSTANCE_TYPE` door jouw specifieke gegevens.
+1. Vervang `COMPUTE_INSTANCE_TYPE` door je specifieke gegevens.
 
-1. Typ het volgende commando om het *deploy_model.py* script uit te voeren en het deploymentproces in Azure Machine Learning te starten.
+1. Typ het volgende commando om het script *deploy_model.py* uit te voeren en het implementatieproces in Azure Machine Learning te starten.
 
     ```python
     python deploy_model.py
     ```
 
-
 > [!WARNING]
 > Om extra kosten op je account te voorkomen, zorg ervoor dat je de aangemaakte endpoint verwijdert in de Azure Machine Learning workspace.
 >
 
-#### Controleer de status van de deployment in Azure Machine Learning Workspace
+#### Controleer de implementatiestatus in de Azure Machine Learning Workspace
 
 1. Bezoek [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
@@ -1084,30 +1084,30 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het volledige uitr
 
 2. Selecteer de endpoint die je hebt aangemaakt.
 
-    ![Selecteer de endpoint die je hebt aangemaakt.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.nl.png)
+    ![Selecteer de endpoints die je hebt aangemaakt.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.nl.png)
 
-3. Op deze pagina kun je de endpoints beheren die tijdens het deploymentproces zijn aangemaakt.
+3. Op deze pagina kun je de endpoints beheren die zijn aangemaakt tijdens het implementatieproces.
 
-## Scenario 3: Integreren met Prompt flow en chatten met je custom model
+## Scenario 3: Integreren met Prompt flow en chatten met je aangepaste model
 
-### Integreer het custom Phi-3 model met Prompt flow
+### Integreer het aangepaste Phi-3 model met Prompt flow
 
-Nadat je je fine-tuned model succesvol hebt gedeployed, kun je het nu integreren met Prompt flow om je model te gebruiken in realtime toepassingen, waarmee je diverse interactieve taken kunt uitvoeren met je custom Phi-3 model.
+Nadat je je fijn-afgestelde model succesvol hebt geïmplementeerd, kun je het nu integreren met Prompt flow om je model te gebruiken in realtime toepassingen, wat een verscheidenheid aan interactieve taken met je aangepaste Phi-3 model mogelijk maakt.
 
-#### Stel de api key en endpoint uri in van het fine-tuned Phi-3 model
+#### Stel de api-sleutel en endpoint-uri in van het fijn-afgestelde Phi-3 model
 
-1. Navigeer naar de Azure Machine Learning workspace die je hebt aangemaakt.  
-1. Selecteer **Endpoints** in het tabblad aan de linkerkant.  
-1. Selecteer de endpoint die je hebt aangemaakt.  
-1. Selecteer **Consume** in het navigatiemenu.  
-1. Kopieer en plak je **REST endpoint** in het *config.py* bestand, waarbij je `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` vervangt door je **REST endpoint**.  
-1. Kopieer en plak je **Primary key** in het *config.py* bestand, waarbij je `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` vervangt door je **Primary key**.
+1. Navigeer naar de Azure Machine learning workspace die je hebt aangemaakt.
+1. Selecteer **Endpoints** in het tabblad aan de linkerkant.
+1. Selecteer de endpoint die je hebt aangemaakt.
+1. Selecteer **Consume** in het navigatiemenu.
+1. Kopieer en plak je **REST endpoint** in het bestand *config.py*, waarbij je `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` vervangt door je **REST endpoint**.
+1. Kopieer en plak je **Primary key** in het bestand *config.py*, waarbij je `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` vervangt door je **Primary key**.
 
-    ![Kopieer api key en endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.nl.png)
+    ![Kopieer api-sleutel en endpoint-uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.nl.png)
 
 #### Voeg code toe aan het *flow.dag.yml* bestand
 
-1. Open het *flow.dag.yml* bestand in Visual Studio Code.
+1. Open het bestand *flow.dag.yml* in Visual Studio Code.
 
 1. Voeg de volgende code toe aan *flow.dag.yml*.
 
@@ -1134,7 +1134,7 @@ Nadat je je fine-tuned model succesvol hebt gedeployed, kun je het nu integreren
 
 #### Voeg code toe aan het *integrate_with_promptflow.py* bestand
 
-1. Open het *integrate_with_promptflow.py* bestand in Visual Studio Code.
+1. Open het bestand *integrate_with_promptflow.py* in Visual Studio Code.
 
 1. Voeg de volgende code toe aan *integrate_with_promptflow.py*.
 
@@ -1149,7 +1149,7 @@ Nadat je je fine-tuned model succesvol hebt gedeployed, kun je het nu integreren
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # Logging configuratie
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1202,17 +1202,21 @@ Nadat je je fine-tuned model succesvol hebt gedeployed, kun je het nu integreren
 
     ```
 
-### Chat met je custom model
+### Chat met je aangepaste model
 
-1. Typ het volgende commando om het *deploy_model.py* script uit te voeren en het deploymentproces in Azure Machine Learning te starten.
+1. Typ het volgende commando om het script *deploy_model.py* uit te voeren en het implementatieproces in Azure Machine Learning te starten.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Hier is een voorbeeld van de resultaten: nu kun je chatten met je custom Phi-3 model. Het wordt aanbevolen om vragen te stellen die gebaseerd zijn op de data die gebruikt is voor het fine-tunen.
+1. Hier is een voorbeeld van de resultaten: nu kun je chatten met je aangepaste Phi-3 model. Het wordt aanbevolen om vragen te stellen op basis van de data die gebruikt is voor het fijn-afstellen.
 
     ![Prompt flow voorbeeld.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.nl.png)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI vertaaldienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel wij streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal wordt beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

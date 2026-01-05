@@ -1,209 +1,209 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-17T00:35:00+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T08:44:21+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "he"
 }
 -->
-# כוונון מדויק ואינטגרציה של מודלים מותאמים אישית Phi-3 עם Prompt flow
+# כיוונון ועדכון מודלים מותאמים אישית Phi-3 עם Prompt flow
 
-דוגמת קצה-לקצה (E2E) זו מבוססת על המדריך "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" מקהילת הטכנולוגיה של מיקרוסופט. היא מציגה את התהליכים של כוונון מדויק, פריסה ואינטגרציה של מודלים מותאמים אישית Phi-3 עם Prompt flow.
+דוגמת קצה-לקצה (E2E) זו מבוססת על המדריך "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" מהקהילה הטכנולוגית של מיקרוסופט. היא מציגה את התהליכים של כיוונון, פריסה ואינטגרציה של מודלים מותאמים אישית של Phi-3 עם Prompt flow.
 
 ## סקירה כללית
 
-בדוגמת E2E זו תלמד כיצד לכוונן מדויק את מודל Phi-3 ולשלב אותו עם Prompt flow. באמצעות Azure Machine Learning ו-Prompt flow תקים זרימת עבודה לפריסה ושימוש במודלים מותאמים אישית של בינה מלאכותית. דוגמת E2E זו מחולקת לשלושה תרחישים:
+בדוגמת קצה-לקצה זו תלמד כיצד לכוונן את מודל Phi-3 ולשלב אותו עם Prompt flow. באמצעות Azure Machine Learning ו-Prompt flow תקים זרימת עבודה לפריסת מודלי AI מותאמים אישית ושימוש בהם. דוגמה זו מחולקת לשלוש תרחישים:
 
-**תרחיש 1: הקמת משאבי Azure והכנה לכוונון מדויק**
+**תרחיש 1: הגדרת משאבי Azure והכנה לכיוונון**
 
-**תרחיש 2: כוונון מדויק של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio**
+**תרחיש 2: כיוונון מודל Phi-3 ופריסתו ב-Azure Machine Learning Studio**
 
-**תרחיש 3: אינטגרציה עם Prompt flow ושיחה עם המודל המותאם שלך**
+**תרחיש 3: אינטגרציה עם Prompt flow וצ'אט עם המודל המותאם שלך**
 
-להלן סקירה כללית של דוגמת E2E זו.
+הנה סקירה כללית של דוגמת קצה-לקצה זו.
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.he.png)
 
 ### תוכן העניינים
 
-1. **[תרחיש 1: הקמת משאבי Azure והכנה לכוונון מדויק](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [יצירת סביבת עבודה ב-Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[תרחיש 1: הגדרת משאבי Azure והכנה לכיוונון](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [יצירת סביבת עבודה של Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [בקשת מכסות GPU במנוי Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [הוספת שיוך תפקיד](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [הקמת פרויקט](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [הכנת מערך נתונים לכוונון מדויק](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [הוספת הקצאת תפקיד](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [הגדרת פרויקט](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [הכנת מערך נתונים לכיוונון](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[תרחיש 2: כוונון מדויק של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [הקמת Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [כוונון מדויק של מודל Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[תרחיש 2: כיוונון מודל Phi-3 ופריסה ב-Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [הגדרת Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [כוונון מודל Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [פריסת המודל המכוונן](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[תרחיש 3: אינטגרציה עם Prompt flow ושיחה עם המודל המותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[תרחיש 3: אינטגרציה עם Prompt flow וצ'אט עם המודל המותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [אינטגרציה של מודל Phi-3 מותאם אישית עם Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [שיחה עם המודל המותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [צ'אט עם המודל המותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## תרחיש 1: הקמת משאבי Azure והכנה לכוונון מדויק
+## תרחיש 1: הגדרת משאבי Azure והכנה לכיוונון
 
-### יצירת סביבת עבודה ב-Azure Machine Learning
+### יצירת סביבת עבודה של Azure Machine Learning
 
-1. הקלד *azure machine learning* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Azure Machine Learning** מתוך האפשרויות שמופיעות.
+1. הקלד *azure machine learning* ב**סרגל החיפוש** שמעל דף הפורטל ובחר **Azure Machine Learning** מתוך האפשרויות המופיעות.
 
     ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.he.png)
 
-1. בחר **+ Create** מתפריט הניווט.
+1. בחר **+ יצירה** מתפריט הניווט.
 
-1. בחר **New workspace** מתפריט הניווט.
+1. בחר **סביבת עבודה חדשה** מתפריט הניווט.
 
     ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.he.png)
 
 1. בצע את המשימות הבאות:
 
-    - בחר את **המנוי** שלך ב-Azure.
-    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה במידת הצורך).
-    - הזן **שם סביבת העבודה**. חייב להיות ערך ייחודי.
+    - בחר את **המנוי** של Azure שלך.
+    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה אם יש צורך).
+    - הזן **שם סביבת העבודה**. הוא חייב להיות ערך ייחודי.
     - בחר את **האזור** שבו תרצה להשתמש.
-    - בחר את **חשבון האחסון** לשימוש (צור חדש במידת הצורך).
-    - בחר את **Key vault** לשימוש (צור חדש במידת הצורך).
-    - בחר את **Application insights** לשימוש (צור חדש במידת הצורך).
-    - בחר את **רישום המכולות** לשימוש (צור חדש במידת הצורך).
+    - בחר את **חשבון האחסון** לשימוש (צור חדש אם יש צורך).
+    - בחר את **מחסן המפתחות** לשימוש (צור חדש אם יש צורך).
+    - בחר את **Application insights** לשימוש (צור חדש אם יש צורך).
+    - בחר את **רשימת המכולות** לשימוש (צור חדשה אם יש צורך).
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.he.png)
 
-1. בחר **Review + Create**.
+1. בחר **סקירה + יצירה**.
 
-1. בחר **Create**.
+1. בחר **יצירה**.
 
 ### בקשת מכסות GPU במנוי Azure
 
-בדוגמת E2E זו תשתמש ב-*Standard_NC24ads_A100_v4 GPU* לכוונון מדויק, שדורש בקשת מכסה, וב-*Standard_E4s_v3* CPU לפריסה, שאינה דורשת בקשת מכסה.
+בדוגמת קצה-לקצה זו, תשתמש ב-*Standard_NC24ads_A100_v4 GPU* לכיוונון, שדורש בקשת מכסה, וב-*Standard_E4s_v3* CPU לפריסה, שאינו דורש בקשת מכסה.
 
 > [!NOTE]
 >
-> רק מנויים מסוג Pay-As-You-Go (המנוי הסטנדרטי) זכאים להקצאת GPU; מנויי הטבות אינם נתמכים כרגע.
+> רק מנויי Pay-As-You-Go (סוג המנוי הסטנדרטי) זכאים להקצאת GPU; מנויי תועלת עדיין לא נתמכים.
 >
-> למשתמשים במנויי הטבות (כגון Visual Studio Enterprise Subscription) או למי שרוצה לבדוק במהירות את תהליך הכוונון והפריסה, מדריך זה מספק גם הנחיות לכוונון מדויק עם מערך נתונים מינימלי באמצעות CPU. עם זאת, חשוב לציין שהתוצאות של הכוונון המדויק טובות משמעותית כאשר משתמשים ב-GPU עם מערכי נתונים גדולים יותר.
+> עבור אלו המשתמשים במנויי תועלת (כגון מנוי Visual Studio Enterprise) או שמעוניינים לבדוק במהירות את תהליך הכיוונון והפריסה, מדריך זה מספק גם הנחיות לכיוונון עם מערך נתונים מזערי באמצעות CPU. עם זאת, חשוב לציין שתוצאות הכיוונון טובות משמעותית כאשר משתמשים ב-GPU עם מערכי נתונים גדולים יותר.
 
-1. בקר ב-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. עבור אל [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. בצע את המשימות הבאות כדי לבקש מכסת *Standard NCADSA100v4 Family*:
+1. בצע את המשימות הבאות לבקשת מכסת *Standard NCADSA100v4 Family*:
 
-    - בחר **Quota** מהכרטיסייה בצד שמאל.
-    - בחר את **משפחת המכונות הווירטואליות** לשימוש. לדוגמה, בחר **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, הכוללת את ה-GPU *Standard_NC24ads_A100_v4*.
-    - בחר **Request quota** מתפריט הניווט.
+    - בחר **מכסות** מהכרטיסיה משמאל.
+    - בחר את **משפחת המכונה הווירטואלית** לשימוש. לדוגמה, בחר **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, שכוללת את *Standard_NC24ads_A100_v4* GPU.
+    - בחר **בקשת מכסה** מתפריט הניווט.
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.he.png)
 
-    - בדף Request quota, הזן את **מגבלת הליבות החדשה** שברצונך להשתמש בה. לדוגמה, 24.
-    - בדף Request quota, בחר **Submit** כדי לבקש את מכסת ה-GPU.
+    - בדף בקשת המכסה, הזן את **המגבלה החדשה על הליבות** שברצונך להשתמש בה. לדוגמה, 24.
+    - בדף בקשת המכסה, בחר **שלח** לבקשת מכסת ה-GPU.
 
 > [!NOTE]
-> ניתן לבחור את ה-GPU או ה-CPU המתאים לצרכיך על ידי עיון במסמך [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> ניתן לבחור את ה-GPU או ה-CPU המתאים לצרכיך לפי העיון במסמך [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
-### הוספת שיוך תפקיד
+### הוספת הקצאת תפקיד
 
-כדי לכוונן מדויק ולפרוס את המודלים שלך, עליך קודם ליצור User Assigned Managed Identity (UAI) ולהקצות לה את ההרשאות המתאימות. UAI זה ישמש לאימות במהלך הפריסה.
+כדי לכוונן ולפרוס את המודלים שלך, עליך קודם ליצור זהות מנוהלת מוקצית למשתמש (UAI) ולהקצות לה את ההרשאות המתאימות. זהות מנוהלת זו תשמש לאימות במהלך הפריסה.
 
-#### יצירת User Assigned Managed Identity (UAI)
+#### יצירת זהות מנוהלת מוקצית למשתמש (UAI)
 
-1. הקלד *managed identities* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Managed Identities** מתוך האפשרויות שמופיעות.
+1. הקלד *managed identities* ב**סרגל החיפוש** שמעל דף הפורטל ובחר **Managed Identities** מתוך האפשרויות המופיעות.
 
     ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.he.png)
 
-1. בחר **+ Create**.
+1. בחר **+ יצירה**.
 
     ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.he.png)
 
 1. בצע את המשימות הבאות:
 
-    - בחר את **המנוי** שלך ב-Azure.
-    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה במידת הצורך).
+    - בחר את **המנוי** של Azure שלך.
+    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה אם יש צורך).
     - בחר את **האזור** שבו תרצה להשתמש.
-    - הזן את ה**שם**. חייב להיות ערך ייחודי.
+    - הזן את **השם**. הוא חייב להיות ערך ייחודי.
 
-1. בחר **Review + create**.
+1. בחר **סקירה + יצירה**.
 
-1. בחר **+ Create**.
+1. בחר **+ יצירה**.
 
-#### הוספת שיוך תפקיד Contributor ל-Managed Identity
+#### הוספת הקצאת תפקיד Contributor לזהות המנוהלת
 
-1. עבור למשאב Managed Identity שיצרת.
+1. עבור למשאב הזהות המנוהלת שיצרת.
 
-1. בחר **Azure role assignments** מהכרטיסייה בצד שמאל.
+1. בחר **הקצאות תפקיד Azure** מהכרטיסיה משמאל.
 
-1. בחר **+Add role assignment** מתפריט הניווט.
+1. בחר **+ הוסף הקצאת תפקיד** מתפריט הניווט.
 
-1. בדף Add role assignment, בצע את המשימות הבאות:
-    - בחר את **היקף** ל-**Resource group**.
-    - בחר את **המנוי** שלך ב-Azure.
+1. בדף הוספת הקצאת תפקיד, בצע את המשימות הבאות:
+    - בחר **טווח** ל**קבוצת משאבים**.
+    - בחר את **המנוי** של Azure שלך.
     - בחר את **קבוצת המשאבים** לשימוש.
-    - בחר את **התפקיד** ל-**Contributor**.
+    - בחר את **התפקיד** ל**Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.he.png)
 
-1. בחר **Save**.
+1. בחר **שמור**.
 
-#### הוספת שיוך תפקיד Storage Blob Data Reader ל-Managed Identity
+#### הוספת הקצאת תפקיד Storage Blob Data Reader לזהות המנוהלת
 
-1. הקלד *storage accounts* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Storage accounts** מתוך האפשרויות שמופיעות.
+1. הקלד *storage accounts* ב**סרגל החיפוש** שמעל דף הפורטל ובחר **Storage accounts** מתוך האפשרויות המופיעות.
 
     ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.he.png)
 
 1. בחר את חשבון האחסון המשויך לסביבת העבודה של Azure Machine Learning שיצרת. לדוגמה, *finetunephistorage*.
 
-1. בצע את המשימות הבאות כדי לנווט לדף Add role assignment:
+1. בצע את המשימות הבאות כדי לנווט לדף הוספת הקצאת תפקיד:
 
     - עבור לחשבון האחסון של Azure שיצרת.
-    - בחר **Access Control (IAM)** מהכרטיסייה בצד שמאל.
-    - בחר **+ Add** מתפריט הניווט.
-    - בחר **Add role assignment** מתפריט הניווט.
+    - בחר **בקרת גישה (IAM)** מהכרטיסיה משמאל.
+    - בחר **+ הוסף** מתפריט הניווט.
+    - בחר **הוסף הקצאת תפקיד** מתפריט הניווט.
 
     ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.he.png)
 
-1. בדף Add role assignment, בצע את המשימות הבאות:
+1. בדף הוספת הקצאת תפקיד, בצע את המשימות הבאות:
 
-    - בדף Role, הקלד *Storage Blob Data Reader* ב**סרגל החיפוש** ובחר **Storage Blob Data Reader** מתוך האפשרויות שמופיעות.
-    - בדף Role, בחר **Next**.
-    - בדף Members, בחר **Assign access to** **Managed identity**.
-    - בדף Members, בחר **+ Select members**.
-    - בדף Select managed identities, בחר את **המנוי** שלך ב-Azure.
-    - בדף Select managed identities, בחר את ה-**Managed identity** ל-**Manage Identity**.
-    - בדף Select managed identities, בחר את ה-Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.
-    - בדף Select managed identities, בחר **Select**.
+    - בדף התפקיד, הקלד *Storage Blob Data Reader* ב**סרגל החיפוש** ובחר **Storage Blob Data Reader** מתוך האפשרויות המופיעות.
+    - בדף התפקיד, בחר **הבא**.
+    - בדף החברים, בחר **הקצה גישה ל** **Managed identity**.
+    - בדף החברים, בחר **+ בחר חברים**.
+    - בדף בחירת זהויות מנוהלות, בחר את **המנוי** של Azure שלך.
+    - בדף בחירת זהויות מנוהלות, בחר את **הזהות המנוהלת** ל**Manage Identity**.
+    - בדף בחירת זהויות מנוהלות, בחר את זהות ניהול שיצרת. לדוגמה, *finetunephi-managedidentity*.
+    - בדף בחירת זהויות מנוהלות, בחר **בחר**.
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.he.png)
 
-1. בחר **Review + assign**.
+1. בחר **סקירה + הקצה**.
 
-#### הוספת שיוך תפקיד AcrPull ל-Managed Identity
+#### הוספת הקצאת תפקיד AcrPull לזהות המנוהלת
 
-1. הקלד *container registries* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Container registries** מתוך האפשרויות שמופיעות.
+1. הקלד *container registries* ב**סרגל החיפוש** שמעל דף הפורטל ובחר **Container registries** מתוך האפשרויות המופיעות.
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.he.png)
 
 1. בחר את רישום המכולות המשויך לסביבת העבודה של Azure Machine Learning. לדוגמה, *finetunephicontainerregistries*
 
-1. בצע את המשימות הבאות כדי לנווט לדף Add role assignment:
+1. בצע את המשימות הבאות כדי לנווט לדף הוספת הקצאת תפקיד:
 
-    - בחר **Access Control (IAM)** מהכרטיסייה בצד שמאל.
-    - בחר **+ Add** מתפריט הניווט.
-    - בחר **Add role assignment** מתפריט הניווט.
+    - בחר **בקרת גישה (IAM)** מהכרטיסיה משמאל.
+    - בחר **+ הוסף** מתפריט הניווט.
+    - בחר **הוסף הקצאת תפקיד** מתפריט הניווט.
 
-1. בדף Add role assignment, בצע את המשימות הבאות:
+1. בדף הוספת הקצאת תפקיד, בצע את המשימות הבאות:
 
-    - בדף Role, הקלד *AcrPull* ב**סרגל החיפוש** ובחר **AcrPull** מתוך האפשרויות שמופיעות.
-    - בדף Role, בחר **Next**.
-    - בדף Members, בחר **Assign access to** **Managed identity**.
-    - בדף Members, בחר **+ Select members**.
-    - בדף Select managed identities, בחר את **המנוי** שלך ב-Azure.
-    - בדף Select managed identities, בחר את ה-**Managed identity** ל-**Manage Identity**.
-    - בדף Select managed identities, בחר את ה-Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.
-    - בדף Select managed identities, בחר **Select**.
-    - בחר **Review + assign**.
+    - בדף התפקיד, הקלד *AcrPull* ב**סרגל החיפוש** ובחר **AcrPull** מתוך האפשרויות המופיעות.
+    - בדף התפקיד, בחר **הבא**.
+    - בדף החברים, בחר **הקצה גישה ל** **Managed identity**.
+    - בדף החברים, בחר **+ בחר חברים**.
+    - בדף בחירת זהויות מנוהלות, בחר את **המנוי** של Azure שלך.
+    - בדף בחירת זהויות מנוהלות, בחר את **הזהות המנוהלת** ל**Manage Identity**.
+    - בדף בחירת זהויות מנוהלות, בחר את זהות ניהול שיצרת. לדוגמה, *finetunephi-managedidentity*.
+    - בדף בחירת זהויות מנוהלות, בחר **בחר**.
+    - בחר **סקירה + הקצה**.
 
-### הקמת פרויקט
+### הגדרת פרויקט
 
-כעת, תיצור תיקייה לעבודה ותקים סביבה וירטואלית לפיתוח תוכנית שמתקשרת עם משתמשים ומשתמשת בהיסטוריית שיחות מאוחסנת ב-Azure Cosmos DB כדי להעשיר את התגובות שלה.
+כעת, תיצור תיקייה לעבודה ותגדיר סביבה וירטואלית לפיתוח תוכנית שמתקשרת עם משתמשים ומשתמשת בהיסטוריית צ'אט מאוחסנת ב-Azure Cosmos DB כדי להעשיר את התגובות שלה.
 
 #### יצירת תיקייה לעבודה בתוכה
 
@@ -213,7 +213,7 @@ CO_OP_TRANSLATOR_METADATA:
     mkdir finetune-phi
     ```
 
-1. הקלד את הפקודה הבאה בטרמינל כדי לנווט לתיקיית *finetune-phi* שיצרת.
+1. הקלד את הפקודה הבאה בתוך הטרמינל כדי לנווט לתיקיית *finetune-phi* שיצרת.
 
     ```console
     cd finetune-phi
@@ -221,23 +221,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### יצירת סביבה וירטואלית
 
-1. הקלד את הפקודה הבאה בטרמינל כדי ליצור סביבה וירטואלית בשם *.venv*.
+1. הקלד את הפקודה הבאה בתוך הטרמינל כדי ליצור סביבה וירטואלית בשם *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. הקלד את הפקודה הבאה בטרמינל כדי להפעיל את הסביבה הווירטואלית.
+1. הקלד את הפקודה הבאה בתוך הטרמינל כדי להפעיל את הסביבה הוירטואלית.
 
     ```console
     .venv\Scripts\activate.bat
     ```
+
 > [!NOTE]
 >
-> אם זה עבד, אמור להופיע *(.venv)* לפני שורת הפקודה.
-#### התקן את החבילות הנדרשות
+> אם זה עבד, תראה *(.venv)* לפני שורת הפקודה.
 
-1. הקלד את הפקודות הבאות בתוך הטרמינל שלך כדי להתקין את החבילות הנדרשות.
+#### התקנת החבילות הנדרשות
+
+1. הקלד את הפקודות הבאות בתוך הטרמינל להתקנת החבילות הנדרשות.
 
     ```console
     pip install datasets==2.19.1
@@ -248,20 +250,19 @@ CO_OP_TRANSLATOR_METADATA:
     pip install promptflow==1.12.0
     ```
 
-#### צור קבצי פרויקט
+#### יצירת קבצי פרויקט
+בתרגיל זה, תיצור את הקבצים החיוניים עבור הפרויקט שלנו. קבצים אלה כוללים סקריפטים להורדת מערך הנתונים, הקמת סביבת Azure Machine Learning, כיוונון עדין של מודל Phi-3, והפעלת המודל המכוונן. בנוסף, תיצור קובץ *conda.yml* כדי להגדיר את סביבת הכיוונון העדין.
 
-בתרגיל זה, תיצור את הקבצים החיוניים לפרויקט שלנו. קבצים אלה כוללים סקריפטים להורדת מערך הנתונים, הגדרת סביבת Azure Machine Learning, כוונון מדויק של מודל Phi-3, ופריסת המודל המכוונן. בנוסף, תיצור קובץ *conda.yml* להגדרת סביבת הכוונון.
+בתרגיל זה, תעשה את הדברים הבאים:
 
-בתרגיל זה תבצע:
-
-- יצירת קובץ *download_dataset.py* להורדת מערך הנתונים.
-- יצירת קובץ *setup_ml.py* להגדרת סביבת Azure Machine Learning.
-- יצירת קובץ *fine_tune.py* בתיקיית *finetuning_dir* לכוונון מדויק של מודל Phi-3 באמצעות מערך הנתונים.
-- יצירת קובץ *conda.yml* להגדרת סביבת הכוונון.
-- יצירת קובץ *deploy_model.py* לפריסת המודל המכוונן.
-- יצירת קובץ *integrate_with_promptflow.py* לשילוב המודל המכוונן והפעלתו באמצעות Prompt flow.
-- יצירת קובץ flow.dag.yml להגדרת מבנה זרימת העבודה עבור Prompt flow.
-- יצירת קובץ *config.py* להזנת פרטי Azure.
+- צור קובץ *download_dataset.py* להורדת מערך הנתונים.
+- צור קובץ *setup_ml.py* להקמת סביבת Azure Machine Learning.
+- צור קובץ *fine_tune.py* בתיקיית *finetuning_dir* כדי לכוון עדין את מודל Phi-3 באמצעות מערך הנתונים.
+- צור קובץ *conda.yml* להגדרת סביבת הכיוונון העדין.
+- צור קובץ *deploy_model.py* לפריסת המודל המכוונן.
+- צור קובץ *integrate_with_promptflow.py* לשילוב המודל המכוונן ולהרצת המודל באמצעות Prompt flow.
+- צור קובץ flow.dag.yml, להקמת מבנה זרימת העבודה של Prompt flow.
+- צור קובץ *config.py* להזנת מידע על Azure.
 
 > [!NOTE]
 >
@@ -289,25 +290,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר את תיקיית *finetune-phi* שיצרת, הממוקמת ב-*C:\Users\yourUserName\finetune-phi*.
 
-    ![פתח תיקיית פרויקט.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.he.png)
+    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.he.png)
 
-1. בלוח השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** ליצירת קובץ חדש בשם *download_dataset.py*.
+1. בפאנל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *download_dataset.py*.
 
-1. בלוח השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** ליצירת קובץ חדש בשם *setup_ml.py*.
+1. בפאנל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *setup_ml.py*.
 
-1. בלוח השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** ליצירת קובץ חדש בשם *deploy_model.py*.
+1. בפאנל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *deploy_model.py*.
 
-    ![צור קובץ חדש.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.he.png)
+    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.he.png)
 
-1. בלוח השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New Folder** ליצירת תיקייה חדשה בשם *finetuning_dir*.
+1. בפאנל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New Folder** כדי ליצור תיקייה חדשה בשם *finetuning_dir*.
 
 1. בתיקיית *finetuning_dir*, צור קובץ חדש בשם *fine_tune.py*.
 
 #### צור והגדר את קובץ *conda.yml*
 
-1. בלוח השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** ליצירת קובץ חדש בשם *conda.yml*.
+1. בפאנל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *conda.yml*.
 
-1. הוסף את הקוד הבא לקובץ *conda.yml* כדי להגדיר את סביבת הכוונון המדויק עבור מודל Phi-3.
+1. הוסף את הקוד הבא לקובץ *conda.yml* כדי להגדיר את סביבת הכיוונון העדין עבור מודל Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -335,28 +336,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### צור והגדר את קובץ *config.py*
 
-1. בלוח השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** ליצירת קובץ חדש בשם *config.py*.
+1. בפאנל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *config.py*.
 
-1. הוסף את הקוד הבא לקובץ *config.py* כדי לכלול את פרטי Azure שלך.
+1. הוסף את הקוד הבא לקובץ *config.py* כדי לכלול את פרטי ה-Azure שלך.
 
     ```python
-    # Azure settings
+    # הגדרות Azure
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
     AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
 
-    # Azure Machine Learning settings
+    # הגדרות Azure Machine Learning
     AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
 
-    # Azure Managed Identity settings
+    # הגדרות זהות מנוהלת של Azure
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
     AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # נתיבי קבצי מערך הנתונים
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # הגדרות מודל מכוּון
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
     AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
     AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
@@ -367,38 +368,38 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### הוסף משתני סביבה של Azure
 
-1. בצע את המשימות הבאות להוספת מזהה המנוי (Subscription ID) של Azure:
+1. בצע את המשימות הבאות כדי להוסיף את מזהה המנוי (Subscription ID) של Azure:
 
-    - הקלד *subscriptions* בשורת החיפוש בראש דף הפורטל ובחר **Subscriptions** מהאפשרויות שמופיעות.
-    - בחר את מנוי Azure שבו אתה משתמש כרגע.
+    - הקלד *subscriptions* בסרגל החיפוש בראש דף הפורטל ובחר **Subscriptions** מתוך האפשרויות שמופיעות.
+    - בחר את המנוי של Azure שבו אתה משתמש כרגע.
     - העתק והדבק את מזהה המנוי שלך לקובץ *config.py*.
 
-    ![מצא מזהה מנוי.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.he.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.he.png)
 
-1. בצע את המשימות הבאות להוספת שם סביבת העבודה (Workspace Name) של Azure:
+1. בצע את המשימות הבאות כדי להוסיף את שם סביבת העבודה של Azure:
 
-    - עבור למשאב Azure Machine Learning שיצרת.
-    - העתק והדבק את שם החשבון שלך לקובץ *config.py*.
+    - נווט למשאב Azure Machine Learning שיצרת.
+    - העתק והדבק את שם סביבת העבודה לקובץ *config.py*.
 
-    ![מצא שם Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.he.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.he.png)
 
-1. בצע את המשימות הבאות להוספת שם קבוצת המשאבים (Resource Group Name) של Azure:
+1. בצע את המשימות הבאות כדי להוסיף את שם קבוצת המשאבים של Azure:
 
-    - עבור למשאב Azure Machine Learning שיצרת.
-    - העתק והדבק את שם קבוצת המשאבים של Azure לקובץ *config.py*.
+    - נווט למשאב Azure Machine Learning שיצרת.
+    - העתק והדבק את שם קבוצת המשאבים לקובץ *config.py*.
 
-    ![מצא שם קבוצת משאבים.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.he.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.he.png)
 
-2. בצע את המשימות הבאות להוספת שם הזהות המנוהלת (Managed Identity) של Azure:
+2. בצע את המשימות הבאות כדי להוסיף את שם זהות מנוהלת (Managed Identity) של Azure:
 
-    - עבור למשאב Managed Identities שיצרת.
-    - העתק והדבק את שם הזהות המנוהלת של Azure לקובץ *config.py*.
+    - נווט למשאב Managed Identities שיצרת.
+    - העתק והדבק את שם זהות מנוהלת לקובץ *config.py*.
 
-    ![מצא UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.he.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.he.png)
 
-### הכנת מערך הנתונים לכוונון מדויק
+### הכנת מערך הנתונים לכיוונון עדין
 
-בתרגיל זה, תריץ את הקובץ *download_dataset.py* להורדת מערכי הנתונים *ULTRACHAT_200k* לסביבת העבודה המקומית שלך. לאחר מכן תשתמש במערכי הנתונים הללו כדי לכוונן את מודל Phi-3 ב-Azure Machine Learning.
+בתרגיל זה, תריץ את הקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים *ULTRACHAT_200k* לסביבה המקומית שלך. לאחר מכן תשתמש במערכי הנתונים כדי לכוון עדין את מודל Phi-3 ב-Azure Machine Learning.
 
 #### הורד את מערך הנתונים שלך באמצעות *download_dataset.py*
 
@@ -418,11 +419,11 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # טען את מערך הנתונים בעל השם, התצורה ושיעור החלוקה שצוינו
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # חלק את מערך הנתונים לקבוצות אימון ובדיקה (80% אימון, 20% בדיקה)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -433,16 +434,16 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # צור את התיקייה אם היא לא קיימת
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # פתח את הקובץ במצב כתיבה
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # עבור על כל רשומה במערך הנתונים
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # המיר את הרשומה לאובייקט JSON וכתוב אותה לקובץ
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # כתוב תו שורה חדשה כדי להפריד בין הרשומות
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -451,17 +452,17 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # טען וחלק את מערך הנתונים ULTRACHAT_200k עם תצורה ושיעור חלוקה ספציפיים
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # הפק את מערכי הנתונים של האימון והבדיקה מהחלוקה
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # שמור את מערך האימון לקובץ JSONL
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # שמור את מערך הבדיקה בקובץ JSONL נפרד
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -471,63 +472,63 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **הנחיות לכוונון מדויק עם מערך נתונים מינימלי באמצעות CPU**
+> **הנחיות לכיוונון עדין עם מערך נתונים מינימלי באמצעות מעבד (CPU)**
 >
-> אם ברצונך להשתמש ב-CPU לכוונון, גישה זו מתאימה למי שיש לו מנויים עם הטבות (כגון Visual Studio Enterprise Subscription) או למי שרוצה לבדוק במהירות את תהליך הכוונון והפריסה.
+> אם ברצונך להשתמש במעבד (CPU) לכיוונון עדין, גישה זו אידיאלית למי שיש לו מינויי הטבה (כגון Visual Studio Enterprise Subscription) או כדי לבדוק במהירות את תהליך הכיוונון והפריסה.
 >
-> החלף את `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` ב-`dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> החלף את `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` ב- `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. הקלד את הפקודה הבאה בתוך הטרמינל שלך כדי להריץ את הסקריפט ולהוריד את מערך הנתונים לסביבת העבודה המקומית.
+1. הקלד את הפקודה הבאה בתוך הטרמינל שלך כדי להריץ את הסקריפט ולהוריד את מערך הנתונים לסביבת העבודה המקומית שלך.
 
     ```console
     python download_data.py
     ```
 
-1. ודא שמערכי הנתונים נשמרו בהצלחה בתיקיית *finetune-phi/data* המקומית שלך.
+1. ודא כי מערכי הנתונים נשמרו בהצלחה בתיקייה המקומית *finetune-phi/data*.
 
 > [!NOTE]
 >
-> **גודל מערך הנתונים וזמן הכוונון המדויק**
+> **גודל מערך הנתונים וזמן הכיוונון העדין**
 >
-> בדוגמת E2E זו, אתה משתמש רק ב-1% ממערך הנתונים (`train_sft[:1%]`). זה מקטין משמעותית את כמות הנתונים, ומאיץ הן את תהליך ההעלאה והן את תהליך הכוונון המדויק. ניתן להתאים את האחוז כדי למצוא את האיזון הנכון בין זמן האימון לביצועי המודל. שימוש בתת-מערך קטן יותר מקטין את זמן הכוונון, מה שהופך את התהליך לנוח יותר לדוגמת E2E.
+> בדוגמת E2E זו, אתה משתמש רק ב-1% ממערך הנתונים (`train_sft[:1%]`). זה מפחית משמעותית את כמות הנתונים, ומאיץ הן את ההעלאה והן את תהליכי הכיוונון העדין. ניתן לכוונן את האחוז כדי למצוא את האיזון המתאים בין זמן האימון לביצועי המודל. שימוש בתת-ערכה קטנה של מערך הנתונים מקטין את הזמן הנדרש לכיוונון, מה שהופך את התהליך לנוח יותר לדוגמת E2E.
 
-## תרחיש 2: כוונון מדויק של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio
+## תרחיש 2: כיוונון עדין של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio
 
 ### הגדרת Azure CLI
 
-עליך להגדיר את Azure CLI כדי לאמת את הסביבה שלך. Azure CLI מאפשר לך לנהל משאבי Azure ישירות משורת הפקודה ומספק את האישורים הדרושים ל-Azure Machine Learning לגישה למשאבים אלה. כדי להתחיל, התקן את [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+עליך להגדיר את Azure CLI כדי לאמת את סביבת העבודה שלך. Azure CLI מאפשר לך לנהל משאבים של Azure ישירות משורת הפקודה ומספק את האישורים הנדרשים ל-Azure Machine Learning לגישה למשאבים אלה. כדי להתחיל התקן את [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. פתח חלון טרמינל והקלד את הפקודה הבאה כדי להתחבר לחשבון Azure שלך.
+1. פתח חלון טרמינל והקלד את הפקודה הבאה כדי להיכנס לחשבון ה-Azure שלך.
 
     ```console
     az login
     ```
 
-1. בחר את חשבון Azure שבו ברצונך להשתמש.
+1. בחר את חשבון ה-Azure שלך לשימוש.
 
-1. בחר את מנוי Azure שבו ברצונך להשתמש.
+1. בחר את המנוי של Azure לשימוש.
 
-    ![מצא שם קבוצת משאבים.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.he.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.he.png)
 
 > [!TIP]
 >
-> אם יש לך קושי להתחבר ל-Azure, נסה להשתמש בקוד מכשיר. פתח חלון טרמינל והקלד את הפקודה הבאה כדי להתחבר לחשבון Azure שלך:
+> אם יש לך בעיות בהתחברות ל-Azure, נסה להשתמש בקוד מכשיר (device code). פתח חלון טרמינל והקלד את הפקודה הבאה כדי להיכנס לחשבון ה-Azure שלך:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### כוונון מדויק של מודל Phi-3
+### כיוונון עדין של מודל Phi-3
 
-בתרגיל זה, תכוונן את מודל Phi-3 באמצעות מערך הנתונים שסופק. תחילה תגדיר את תהליך הכוונון המדויק בקובץ *fine_tune.py*. לאחר מכן תגדיר את סביבת Azure Machine Learning ותתחיל את תהליך הכוונון על ידי הרצת קובץ *setup_ml.py*. סקריפט זה מבטיח שהכוונון יתבצע בתוך סביבת Azure Machine Learning.
+בתרגיל זה, תכוין עדין את מודל Phi-3 באמצעות מערך הנתונים שניתן. תחילה, תגדיר את תהליך הכיוונון העדין בקובץ *fine_tune.py*. לאחר מכן, תגדיר את סביבת ה-Azure Machine Learning ותתחיל את תהליך הכיוונון על ידי הרצת הקובץ *setup_ml.py*. סקריפט זה מוודא שכיוונון העדין מתבצע בתוך סביבת Azure Machine Learning.
 
-בהרצת *setup_ml.py*, תפעיל את תהליך הכוונון המדויק בסביבת Azure Machine Learning.
+בהרצת *setup_ml.py*, תתחיל את תהליך הכיוונון העדין בסביבת Azure Machine Learning.
 
 #### הוסף קוד לקובץ *fine_tune.py*
 
-1. עבור לתיקיית *finetuning_dir* ופתח את הקובץ *fine_tune.py* ב-Visual Studio Code.
+1. נווט לתיקיית *finetuning_dir* ופתח את הקובץ *fine_tune.py* ב-Visual Studio Code.
 
 1. הוסף את הקוד הבא לקובץ *fine_tune.py*.
 
@@ -542,10 +543,10 @@ CO_OP_TRANSLATOR_METADATA:
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # כדי להימנע משגיאת INVALID_PARAMETER_VALUE ב-MLflow, יש לנטרל את שילוב ה-MLflow
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # הגדרת רישום
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -682,14 +683,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. שמור וסגור את הקובץ *fine_tune.py*.
+1. שמור וסגור את קובץ *fine_tune.py*.
 
 > [!TIP]
-> **ניתן לכוונן את מודל Phi-3.5**
+> **ניתן לכוונן עדין את מודל Phi-3.5**
 >
-> בקובץ *fine_tune.py*, ניתן לשנות את `pretrained_model_name` מ-`"microsoft/Phi-3-mini-4k-instruct"` לכל מודל שתרצה לכוונן. לדוגמה, אם תשנה ל-`"microsoft/Phi-3.5-mini-instruct"`, תשתמש במודל Phi-3.5-mini-instruct לכוונון. כדי למצוא ולהשתמש בשם המודל המועדף עליך, בקר ב-[Hugging Face](https://huggingface.co/), חפש את המודל שמעניין אותך, והעתק את שמו לשדה `pretrained_model_name` בסקריפט שלך.
+> בקובץ *fine_tune.py*, ניתן לשנות את `pretrained_model_name` מ- `"microsoft/Phi-3-mini-4k-instruct"` לכל מודל שתרצה לכוונן. לדוגמה, אם תשנה אותו ל- `"microsoft/Phi-3.5-mini-instruct"`, תשמש במודל Phi-3.5-mini-instruct לכיוונון עדין. כדי למצוא ולשימוש בשם המודל שאתה מעוניין בו, בקר ב-[Hugging Face](https://huggingface.co/), חפש את המודל הרצוי, ואז העתק והדבק את שמו לשדה `pretrained_model_name` בסקריפט שלך.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="כוונון מדויק של Phi-3.5.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.">
 >
 
 #### הוסף קוד לקובץ *setup_ml.py*
@@ -711,25 +712,25 @@ CO_OP_TRANSLATOR_METADATA:
         TEST_DATA_PATH
     )
 
-    # Constants
+    # קבועים
 
-    # Uncomment the following lines to use a CPU instance for training
-    # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
+    # הסר את ההערה מהשורות הבאות כדי להשתמש במחשב CPU לאימון
+    # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # מעבד
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # הסר את ההערה מהשורות הבאות כדי להשתמש במחשב GPU לאימון
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # החלף למיקום של אשכול המחשוב שלך
+    FINETUNING_DIR = "./finetuning_dir" # נתיב לסקריפט הכוונון המדויק
+    TRAINING_ENV_NAME = "phi-3-training-environment" # שם סביבה לאימון
+    MODEL_OUTPUT_DIR = "./model_output" # נתיב לתיקיית הפלט של המודל ב-azure ml
 
-    # Logging setup to track the process
+    # הגדרת רישום למעקב אחר התהליך
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -749,9 +750,9 @@ CO_OP_TRANSLATOR_METADATA:
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # תמונת דוקר עבור הסביבה
+            conda_file=CONDA_FILE,  # קובץ סביבה Conda
+            name=TRAINING_ENV_NAME,  # שם הסביבה
         )
         return ml_client.environments.create_or_update(env)
 
@@ -768,11 +769,11 @@ CO_OP_TRANSLATOR_METADATA:
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # דרגת אשכול המחשוב
+                min_instances=0,  # מספר מינימלי של מופעים
+                max_instances=1  # מספר מקסימלי של מופעים
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # המתן ליצירת האשכול
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -780,18 +781,18 @@ CO_OP_TRANSLATOR_METADATA:
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # נתיב ל-fine_tune.py
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # סביבה לאימון
+            compute=compute_name,  # אשכול המחשוב לשימוש
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # נתיב לקובץ נתוני האימון
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # נתיב לקובץ נתוני ההערכה
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -800,21 +801,21 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # אתחל לקוח ML
         ml_client = get_ml_client()
 
-        # Create Environment
+        # צור סביבה
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # צור או השג אשכול מחשוב קיים
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # צור ושלח משימת כוונון מדויק
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # שלח את המשימה
+        ml_client.jobs.stream(returned_job.name)  # הזרם את יומני המשימה
         
-        # Capture the job name
+        # תפס את שם המשימה
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -823,24 +824,24 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. החלף את `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, ו-`LOCATION` בפרטים הספציפיים שלך.
+1. החלף את `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` ו-`LOCATION` בפרטים הספציפיים שלך.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # הסר את ההערה מהשורות הבאות כדי להשתמש במכונת GPU לאימון
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # החלף במיקום אשכול המחשב שלך
     ```
 
 > [!TIP]
 >
-> **הנחיות לכוונון מדויק עם מערך נתונים מינימלי באמצעות CPU**
+> **הנחיות לכיוונון עדין עם מערך נתונים מינימלי באמצעות מעבד (CPU)**
 >
-> אם ברצונך להשתמש ב-CPU לכוונון, גישה זו מתאימה למי שיש לו מנויים עם הטבות (כגון Visual Studio Enterprise Subscription) או למי שרוצה לבדוק במהירות את תהליך הכוונון והפריסה.
+> אם ברצונך להשתמש במעבד (CPU) לכיוונון עדין, גישה זו אידיאלית למי שיש לו מינויי הטבה (כגון Visual Studio Enterprise Subscription) או כדי לבדוק במהירות את תהליך הכיוונון והפריסה.
 >
 > 1. פתח את קובץ *setup_ml*.
-> 1. החלף את `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, ו-`DOCKER_IMAGE_NAME` עם הערכים הבאים. אם אין לך גישה ל-*Standard_E16s_v3*, תוכל להשתמש במכונה שווה ערך עם CPU או לבקש הקצאת משאבים חדשה.
+> 1. החלף את `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` ו-`DOCKER_IMAGE_NAME` בהתאם לזה להלן. אם אין לך גישה ל-*Standard_E16s_v3*, תוכל להשתמש במכונה שוות ערך עם CPU או לבקש הקצאת זכות חדשה.
 > 1. החלף את `LOCATION` בפרטים הספציפיים שלך.
 >
 >    ```python
@@ -852,33 +853,33 @@ CO_OP_TRANSLATOR_METADATA:
 >    ```
 >
 
-1. הקלד את הפקודה הבאה כדי להריץ את סקריפט *setup_ml.py* ולהתחיל את תהליך הכוונון המדויק ב-Azure Machine Learning.
+1. הקלד את הפקודה הבאה כדי להריץ את סקריפט *setup_ml.py* ולהתחיל את תהליך הכיוונון העדין ב-Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. בתרגיל זה, כווננת בהצלחה את מודל Phi-3 באמצעות Azure Machine Learning. בהרצת סקריפט *setup_ml.py*, הגדרת את סביבת Azure Machine Learning והתחלת את תהליך הכוונון שהוגדר בקובץ *fine_tune.py*. שים לב שתהליך הכוונון עשוי לקחת זמן משמעותי. לאחר הרצת הפקודה `python setup_ml.py`, עליך להמתין לסיום התהליך. ניתן לעקוב אחר מצב עבודת הכוונון באמצעות הקישור שמופיע בטרמינל לפורטל Azure Machine Learning.
+1. בתרגיל זה כיווננת בהצלחה את מודל Phi-3 באמצעות Azure Machine Learning. בהרצת קובץ *setup_ml.py*, הקמת את סביבת Azure Machine Learning והתחלת את תהליך הכיוונון שהוגדר בקובץ *fine_tune.py*. שים לב שתהליך הכיוונון העדין יכול לקחת זמן ניכר. לאחר הרצת הפקודה `python setup_ml.py`, עליך להמתין לסיום התהליך. ניתן לנטר את סטטוס עבודת הכיוונון דרך הקישור המסופק בטרמינל אל פורטל Azure Machine Learning.
 
-    ![צפה בעבודת הכוונון.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.he.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.he.png)
 
 ### פריסת המודל המכוונן
 
-כדי לשלב את מודל Phi-3 המכוונן עם Prompt Flow, עליך לפרוס את המודל כדי שיהיה נגיש לביצוע חיזוי בזמן אמת. תהליך זה כולל רישום המודל, יצירת נקודת קצה מקוונת, ופריסת המודל.
+כדי לשלב את מודל Phi-3 המכוונן עם Prompt Flow, עליך לפרוס את המודל כך שיהיה נגיש לניתוח בזמן אמת. תהליך זה כולל רישום המודל, יצירת נקודת קצה מקוונת, ופריסת המודל.
 
-#### הגדר את שם המודל, שם נקודת הקצה ושם הפריסה
+#### הגדר את שם המודל, שם נקודת הקצה, ושם הפריסה לפריסה
 
-1. פתח את קובץ *config.py*.
+1. פתח את הקובץ *config.py*.
 
-1. החלף את `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` בשם הרצוי למודל שלך.
+1. החלף את `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` בשם הרצוי עבור המודל שלך.
 
-1. החלף את `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` בשם הרצוי לנקודת הקצה שלך.
+1. החלף את `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` בשם הרצוי לנקודת הקצה.
 
-1. החלף את `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` בשם הרצוי לפריסה שלך.
+1. החלף את `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` בשם הרצוי לפריסה.
 
 #### הוסף קוד לקובץ *deploy_model.py*
 
-הרצת קובץ *deploy_model.py* מאוטומטת את כל תהליך הפריסה. היא מבצעת רישום של המודל, יוצרת נקודת קצה, ומבצעת את הפריסה בהתאם להגדרות שבקובץ *config.py*, הכוללות את שם המודל, שם נקודת הקצה ושם הפריסה.
+הרצת הקובץ *deploy_model.py* מאוטומטת את כל תהליך הפריסה. היא מבצעת רישום של המודל, יוצרת נקודת קצה, ומבצעת את ההפעלה בהתאם להגדרות המצוינות בקובץ config.py, הכוללות את שם המודל, שם נקודת הקצה ושם הפריסה.
 
 1. פתח את הקובץ *deploy_model.py* ב-Visual Studio Code.
 
@@ -891,7 +892,7 @@ CO_OP_TRANSLATOR_METADATA:
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # ייבוא הגדרות
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -903,7 +904,7 @@ CO_OP_TRANSLATOR_METADATA:
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # קבועים
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -913,7 +914,7 @@ CO_OP_TRANSLATOR_METADATA:
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # הגדרת רישום לוג
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1002,25 +1003,25 @@ CO_OP_TRANSLATOR_METADATA:
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # משוך את פרטי הנקודת קצה הנוכחית
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # רישום הקצאת התנועה הנוכחית לצורך איתור שגיאות
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # הגדר את הקצאת התנועה לפריסה
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # עדכן את נקודת הקצה עם הקצאת התנועה החדשה
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # רישום עדכון הקצאת התנועה לצורך איתור שגיאות
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # רישום שגיאות שמתרחשות במהלך התהליך
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1050,24 +1051,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בצע את המשימות הבאות כדי לקבל את `JOB_NAME`:
 
-    - עבור למשאב Azure Machine Learning שיצרת.
+    - נווט למשאב Azure Machine Learning שיצרת.
     - בחר **Studio web URL** כדי לפתוח את סביבת העבודה של Azure Machine Learning.
     - בחר **Jobs** מהטאב בצד שמאל.
-    - בחר את הניסוי לכוונון המדויק. לדוגמה, *finetunephi*.
-    - בחר את העבודה שיצרת.
+    - בחר בניסוי לכיוונון עדין, לדוגמה *finetunephi*.
+    - בחר בעבודה שיצרת.
 - העתק והדבק את שם העבודה שלך ל-`JOB_NAME = "your-job-name"` בקובץ *deploy_model.py*.
 
 1. החלף את `COMPUTE_INSTANCE_TYPE` בפרטים הספציפיים שלך.
 
-1. הקלד את הפקודה הבאה כדי להריץ את הסקריפט *deploy_model.py* ולהתחיל את תהליך הפריסה ב-Azure Machine Learning.
+1. הקלד את הפקודה הבאה כדי להריץ את הסקריפט *deploy_model.py* ולהתחיל בתהליך הפריסה ב-Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
 
-
 > [!WARNING]
-> כדי למנוע חיובים נוספים בחשבונך, ודא שאתה מוחק את נקודת הקצה שנוצרה במרחב העבודה של Azure Machine Learning.
+> כדי למנוע חיובים נוספים לחשבונך, ודא למחוק את נקודת הקצה שנוצרה במרחב העבודה של Azure Machine Learning.
 >
 
 #### בדוק את מצב הפריסה במרחב העבודה של Azure Machine Learning
@@ -1078,32 +1078,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **Studio web URL** כדי לפתוח את מרחב העבודה של Azure Machine Learning.
 
-1. בחר **Endpoints** מהטאב בצד שמאל.
+1. בחר **Endpoints** מהכרטיסייה בצד שמאל.
 
     ![בחר נקודות קצה.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.he.png)
 
-2. בחר את נקודת הקצה שיצרת.
+2. בחר נקודת קצה שיצרת.
 
     ![בחר נקודות קצה שיצרת.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.he.png)
 
-3. בעמוד זה, תוכל לנהל את נקודות הקצה שנוצרו במהלך תהליך הפריסה.
+3. בדף זה, תוכל לנהל את נקודות הקצה שנוצרו במהלך תהליך הפריסה.
 
 ## תרחיש 3: אינטגרציה עם Prompt flow ושיחה עם המודל המותאם אישית שלך
 
-### אינטגרציה של מודל Phi-3 המותאם אישית עם Prompt flow
+### אינטגרציה של המודל המותאם Phi-3 עם Prompt flow
 
-לאחר שהפרסת בהצלחה את המודל המותאם שלך, כעת תוכל לשלב אותו עם Prompt flow כדי להשתמש במודל שלך באפליקציות בזמן אמת, מה שמאפשר מגוון משימות אינטראקטיביות עם מודל Phi-3 המותאם אישית שלך.
+לאחר שהפרסת בהצלחה את המודל שעבר כוונון עדין, כעת תוכל לשלב אותו עם Prompt flow לשימוש במודל שלך באפליקציות בזמן אמת, המאפשרות מגוון משימות אינטראקטיביות עם מודל Phi-3 המותאם אישית שלך.
 
-#### הגדר את מפתח ה-API וכתובת נקודת הקצה של מודל Phi-3 המותאם
+#### הגדרת מפתח API וכתובת נקודת הקצה של מודל Phi-3 שכונן עדין
 
 1. עבור למרחב העבודה של Azure Machine Learning שיצרת.
-1. בחר **Endpoints** מהטאב בצד שמאל.
-1. בחר את נקודת הקצה שיצרת.
+1. בחר **Endpoints** מהכרטיסייה בצד שמאל.
+1. בחר נקודת קצה שיצרת.
 1. בחר **Consume** מתפריט הניווט.
-1. העתק והדבק את **REST endpoint** שלך לקובץ *config.py*, והחלף את `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` בכתובת ה-**REST endpoint** שלך.
-1. העתק והדבק את **Primary key** שלך לקובץ *config.py*, והחלף את `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` במפתח הראשי שלך.
+1. העתק והדבק את **נקודת הקצה של REST** לתוך קובץ *config.py*, והחלף את `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` בכתובת **נקודת הקצה של REST** שלך.
+1. העתק והדבק את **המפתח הראשי** לתוך קובץ *config.py*, והחלף את `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` במפתח הראשי שלך.
 
-    ![העתק מפתח API וכתובת נקודת קצה.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.he.png)
+    ![העתק מפתח API וכתובת נקודת הקצה.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.he.png)
 
 #### הוסף קוד לקובץ *flow.dag.yml*
 
@@ -1149,7 +1149,7 @@ CO_OP_TRANSLATOR_METADATA:
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # הגדרת רישום
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1204,15 +1204,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### שיחה עם המודל המותאם אישית שלך
 
-1. הקלד את הפקודה הבאה כדי להריץ את הסקריפט *deploy_model.py* ולהתחיל את תהליך הפריסה ב-Azure Machine Learning.
+1. הקלד את הפקודה הבאה כדי להריץ את הסקריפט *deploy_model.py* ולהתחיל בתהליך הפריסה ב-Azure Machine Learning.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. הנה דוגמה לתוצאות: כעת תוכל לשוחח עם מודל Phi-3 המותאם אישית שלך. מומלץ לשאול שאלות המבוססות על הנתונים ששימשו לכוונון המדויק.
+1. הנה דוגמה לתוצאות: כעת תוכל לשוחח עם מודל Phi-3 המותאם שלך. מומלץ לשאול שאלות המבוססות על הנתונים ששימשו לכוונון העדין.
 
-    ![דוגמה ל-Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.he.png)
+    ![דוגמת Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.he.png)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדייק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש לראות במסמך המקורי בשפת המקור את המקור הסמכותי. למידע קריטי מומלץ להיעזר בתרגום מקצועי של אדם. איננו אחראים לכל אי-הבנות או פרשנויות שגויות הנובעות מהשימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

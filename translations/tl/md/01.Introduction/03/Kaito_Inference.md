@@ -1,44 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:52:30+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T09:10:42+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "tl"
 }
 -->
-## Inference gamit ang Kaito
+## Pagsusuri gamit ang Kaito
 
-Ang [Kaito](https://github.com/Azure/kaito) ay isang operator na nag-a-automate ng AI/ML inference model deployment sa isang Kubernetes cluster.
+Ang [Kaito](https://github.com/Azure/kaito) ay isang operator na nag-automate ng AI/ML inference model deployment sa isang Kubernetes cluster.
 
-May mga sumusunod na pangunahing pagkakaiba ang Kaito kumpara sa karamihan ng mga karaniwang pamamaraan ng model deployment na nakabase sa virtual machine infrastructures:
+Ang Kaito ay may mga sumusunod na pangunahing pagkakaiba kumpara sa karamihan ng mga karaniwang metodolohiyang deployment ng modelo na binuo sa ibabaw ng virtual machine infrastructures:
 
-- Pinamamahalaan ang mga model file gamit ang container images. Mayroong http server na ibinibigay para magsagawa ng inference calls gamit ang model library.
-- Hindi na kailangang i-tune ang deployment parameters para umangkop sa GPU hardware dahil may preset configurations na.
-- Awtomatikong nagpo-provision ng GPU nodes base sa pangangailangan ng modelo.
-- Ina-host ang malalaking model images sa public Microsoft Container Registry (MCR) kung pinapayagan ng lisensya.
+- Pamahalaan ang mga modelong file gamit ang container images. Mayroong isang http server na ibinibigay para magsagawa ng inference calls gamit ang model library.
+- Iwasan ang pag-tune ng deployment parameters para umangkop sa GPU hardware sa pamamagitan ng pagbibigay ng mga preset configurations.
+- Auto-provision ng mga GPU nodes base sa mga kinakailangan ng modelo.
+- I-host ang malalaking model images sa pampublikong Microsoft Container Registry (MCR) kung pinapayagan ng lisensya.
 
-Sa paggamit ng Kaito, mas pinasimple ang workflow ng pag-onboard ng malalaking AI inference models sa Kubernetes.
+Gamit ang Kaito, ang workflow ng pag-onboard ng malalaking AI inference models sa Kubernetes ay malaki ang pinasimple.
 
 ## Arkitektura
 
-Sinasunod ng Kaito ang klasikong Kubernetes Custom Resource Definition (CRD)/controller design pattern. Ang user ang nagma-manage ng `workspace` custom resource na naglalarawan ng GPU requirements at inference specification. Awtomatikong ino-operate ng Kaito controllers ang deployment sa pamamagitan ng pag-reconcile ng `workspace` custom resource.
+Sinusunod ng Kaito ang klasikong Kubernetes Custom Resource Definition (CRD)/controller design pattern. Pinamamahalaan ng user ang isang `workspace` custom resource na naglalarawan ng mga kinakailangan sa GPU at ang inferensyang espesipikasyon. Awtomatikong gagawin ng Kaito controllers ang deployment sa pamamagitan ng pag-reconcile ng `workspace` custom resource.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-Ipinapakita ng larawan sa itaas ang pangkalahatang arkitektura ng Kaito. Ang mga pangunahing bahagi nito ay:
+Ipinapakita ng larawang nasa itaas ang pangkalahatang arkitektura ng Kaito. Ang mga pangunahing bahagi nito ay binubuo ng:
 
-- **Workspace controller**: Inaayos nito ang `workspace` custom resource, lumilikha ng `machine` (ipinaliwanag sa ibaba) custom resources para mag-trigger ng node auto provisioning, at lumilikha ng inference workload (`deployment` o `statefulset`) base sa preset configurations ng modelo.
-- **Node provisioner controller**: Ang pangalan ng controller ay *gpu-provisioner* sa [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ginagamit nito ang `machine` CRD na nagmula sa [Karpenter](https://sigs.k8s.io/karpenter) para makipag-ugnayan sa workspace controller. Nakikipag-integrate ito sa Azure Kubernetes Service (AKS) APIs para magdagdag ng bagong GPU nodes sa AKS cluster.
-> Note: Ang [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ay isang open sourced na bahagi. Maaari itong palitan ng ibang controllers kung sinusuportahan nila ang [Karpenter-core](https://sigs.k8s.io/karpenter) APIs.
+- **Workspace controller**: Pinag-uugnay nito ang `workspace` custom resource, lumilikha ng mga `machine` (ipinaliwanag sa ibaba) custom resources upang mag-trigger ng node auto provisioning, at lumilikha ng inference workload (`deployment` o `statefulset`) base sa mga preset na configuration ng modelo.
+- **Node provisioner controller**: Ang pangalan ng controller na ito ay *gpu-provisioner* sa [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ginagamit nito ang `machine` CRD na pinagmulan mula sa [Karpenter](https://sigs.k8s.io/karpenter) upang makipag-ugnayan sa workspace controller. Nakikipag-integrate ito sa Azure Kubernetes Service (AKS) APIs para magdagdag ng mga bagong GPU nodes sa AKS cluster.
+> Tandaan: Ang [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ay isang open sourced na bahagi. Maaari itong palitan ng ibang controllers kung sinusuportahan nila ang [Karpenter-core](https://sigs.k8s.io/karpenter) APIs.
 
 ## Pag-install
 
 Mangyaring tingnan ang gabay sa pag-install [dito](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Mabilisang pagsisimula sa Inference Phi-3
-[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Mabilisang Simula sa Pagsusuri ng Phi-3
+[Sample Code Pagsusuri ng Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +77,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Pag-aayos ng Output ACR Path
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Maaaring subaybayan ang status ng workspace sa pamamagitan ng pagpapatakbo ng sumusunod na utos. Kapag ang WORKSPACEREADY na kolum ay naging `True`, matagumpay nang na-deploy ang modelo.
+Maaaring subaybayan ang status ng workspace sa pamamagitan ng pagpapatakbo ng sumusunod na utos. Kapag ang WORKSPACEREADY column ay naging `True`, matagumpay nang na-deploy ang modelo.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Sunod, maaaring hanapin ang cluster ip ng inference service at gumamit ng pansamantalang `curl` pod para subukan ang service endpoint sa cluster.
+Susunod, maaari mong hanapin ang cluster ip ng inference service at gamitin ang isang panandaliang `curl` pod para subukan ang service endpoint sa cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +103,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Mabilisang pagsisimula sa Inference Phi-3 gamit ang mga adapter
+## Mabilisang Simula sa Pagsusuri ng Phi-3 gamit ang mga adapters
 
-Pagkatapos ma-install ang Kaito, maaaring subukan ang mga sumusunod na utos para simulan ang inference service.
+Pagkatapos i-install ang Kaito, maaaring subukan ang mga sumusunod na utos upang simulan ang isang inference service.
 
-[Sample Code Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Sample Code Pagsusuri ng Phi-3 gamit ang Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +149,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Pag-aayos ng Output ACR Path
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Maaaring subaybayan ang status ng workspace sa pamamagitan ng pagpapatakbo ng sumusunod na utos. Kapag ang WORKSPACEREADY na kolum ay naging `True`, matagumpay nang na-deploy ang modelo.
+Maaaring subaybayan ang status ng workspace sa pamamagitan ng pagpapatakbo ng sumusunod na utos. Kapag ang WORKSPACEREADY column ay naging `True`, matagumpay nang na-deploy ang modelo.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Sunod, maaaring hanapin ang cluster ip ng inference service at gumamit ng pansamantalang `curl` pod para subukan ang service endpoint sa cluster.
+Susunod, maaari mong hanapin ang cluster ip ng inference service at gamitin ang isang panandaliang `curl` pod para subukan ang service endpoint sa cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +175,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Pagtataya**:
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagaman nagsusumikap kami para sa katumpakan, pakiusap na tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi eksaktong impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pinakamaaasahang sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
