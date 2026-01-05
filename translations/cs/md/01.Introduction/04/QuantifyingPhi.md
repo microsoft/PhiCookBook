@@ -1,51 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-07-16T21:49:49+00:00",
+  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+  "translation_date": "2026-01-05T09:36:15+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "cs"
 }
 -->
-# **Kvantifikace rodiny Phi**
+# **Kvantisace rodiny Phi**
 
-Kvantizace modelu označuje proces mapování parametrů (jako jsou váhy a aktivační hodnoty) v neuronové síti z rozsáhlého rozsahu hodnot (obvykle spojitého) na menší konečný rozsah hodnot. Tato technologie může snížit velikost a výpočetní náročnost modelu a zlepšit jeho provozní efektivitu v prostředích s omezenými zdroji, jako jsou mobilní zařízení nebo vestavěné systémy. Kvantizace modelu dosahuje komprese snížením přesnosti parametrů, ale zároveň přináší určitou ztrátu přesnosti. Proto je při kvantizaci nutné vyvážit velikost modelu, výpočetní náročnost a přesnost. Mezi běžné metody kvantizace patří kvantizace na pevný počet bitů, kvantizace s plovoucí desetinnou čárkou a další. Podle konkrétního scénáře a potřeb si můžete vybrat vhodnou kvantizační strategii.
+Kvantisace modelu označuje proces mapování parametrů (jako jsou váhy a hodnoty aktivace) v modelu neuronové sítě z velkého rozsahu hodnot (obvykle spojitého rozsahu hodnot) na menší konečný rozsah hodnot. Tato technologie může zmenšit velikost a výpočetně složitost modelu a zlepšit provozní efektivitu modelu v prostředích s omezenými zdroji, jako jsou mobilní zařízení nebo zabudované systémy. Kvantisace modelu dosahuje komprese snížením přesnosti parametrů, ale zároveň zavádí určitou ztrátu přesnosti. Proto je při procesu kvantisace nutné vyvážit velikost modelu, výpočetní složitost a přesnost. Běžné metody kvantisace zahrnují kvantisaci s pevnou čárkou, kvantisaci s pohyblivou desetinnou čárkou atd. Můžete si vybrat vhodnou kvantisovací strategii podle konkrétní situace a potřeb.
 
-Chceme nasadit GenAI modely na edge zařízení a umožnit tak více zařízením vstoupit do GenAI scénářů, jako jsou mobilní zařízení, AI PC/Copilot+PC a tradiční IoT zařízení. Díky kvantizovanému modelu je můžeme nasadit na různá edge zařízení podle jejich specifikací. Ve spojení s frameworkem pro akceleraci modelů a kvantizačními modely poskytovanými výrobci hardwaru můžeme vytvářet lepší aplikační scénáře SLM.
+Doufáme, že nasadíme model GenAI na okrajová zařízení a umožníme více zařízením vstoupit do scénářů GenAI, jako jsou mobilní zařízení, AI PC/Copilot+PC a tradiční IoT zařízení. Prostřednictvím kvantizovaného modelu jej můžeme nasadit na různá okrajová zařízení na základě různých zařízení. V kombinaci s frameworkem pro akceleraci modelů a kvantizovaným modelem poskytovaným výrobci hardwaru můžeme vytvořit lepší scénáře aplikací SLM.
 
-V kvantizačních scénářích používáme různé přesnosti (INT4, INT8, FP16, FP32). Níže je vysvětlení běžně používaných kvantizačních přesností.
+Ve scénáři kvantisace máme různé přesnosti (INT4, INT8, FP16, FP32). Následuje vysvětlení běžně používaných kvantisacích přesností
 
 ### **INT4**
 
-Kvantizace INT4 je radikální metoda, která kvantizuje váhy a aktivační hodnoty modelu na 4bitová celá čísla. Kvantizace INT4 obvykle vede k větší ztrátě přesnosti kvůli menšímu rozsahu reprezentace a nižší přesnosti. Na druhou stranu oproti INT8 kvantizaci může INT4 dále snížit požadavky na úložiště a výpočetní náročnost modelu. Je však třeba poznamenat, že kvantizace INT4 je v praxi poměrně vzácná, protože příliš nízká přesnost může výrazně zhoršit výkon modelu. Navíc ne všechny hardwarové platformy podporují operace s INT4, takže je třeba při výběru kvantizační metody zvážit kompatibilitu hardwaru.
+Kvantisace INT4 je radikální kvantisovací metoda, která kvantizuje váhy a hodnoty aktivace modelu na 4-bitová celá čísla. Kvantisace INT4 obvykle vede k větší ztrátě přesnosti kvůli menšímu rozsahu reprezentace a nižší přesnosti. Nicméně ve srovnání s kvantisací INT8 může kvantisace INT4 dále snížit požadavky na úložiště a výpočetní složitost modelu. Je třeba poznamenat, že kvantisace INT4 je v praktických aplikacích poměrně vzácná, protože příliš nízká přesnost může způsobit významné zhoršení výkonu modelu. Navíc ne veškerý hardware podporuje operace INT4, proto je při výběru kvantisace třeba zvážit kompatibilitu hardwaru.
 
 ### **INT8**
 
-Kvantizace INT8 znamená převod vah a aktivačních hodnot modelu z čísel s plovoucí desetinnou čárkou na 8bitová celá čísla. Přestože je číselný rozsah INT8 menší a méně přesný, výrazně snižuje požadavky na úložiště a výpočty. Při kvantizaci INT8 procházejí váhy a aktivační hodnoty procesem kvantizace, který zahrnuje škálování a posun, aby se co nejvíce zachovala původní informace s plovoucí desetinnou čárkou. Při inferenci jsou tyto kvantizované hodnoty dekvantizovány zpět na čísla s plovoucí desetinnou čárkou pro výpočty a poté opět kvantizovány na INT8 pro další krok. Tato metoda poskytuje dostatečnou přesnost ve většině aplikací při zachování vysoké výpočetní efektivity.
+Kvantisace INT8 je proces převodu vah a aktivací modelu z plovoucích desetinných čísel na 8-bitová celá čísla. Přestože číselný rozsah reprezentovaný celými čísly INT8 je menší a méně přesný, může výrazně snížit požadavky na úložiště a výpočty. Při kvantisaci INT8 procházejí váhy a hodnoty aktivací modelu kvantisovacím procesem, včetně škálování a posunu, aby byla zachována původní informace v plovoucí desetinné čárce co nejvíce. Během inference jsou tyto kvantizované hodnoty dequantizovány zpět na plovoucí desetinná čísla pro výpočty a poté kvantizovány zpět na INT8 pro další krok. Tato metoda může poskytnout dostatečnou přesnost ve většině aplikací při zachování vysoké výpočetní efektivity.
 
 ### **FP16**
 
-Formát FP16, tedy 16bitová čísla s plovoucí desetinnou čárkou (float16), snižuje paměťovou náročnost na polovinu oproti 32bitovým číslům s plovoucí desetinnou čárkou (float32), což má významné výhody v rozsáhlých aplikacích hlubokého učení. Formát FP16 umožňuje načítat větší modely nebo zpracovávat více dat v rámci stejné kapacity GPU paměti. Moderní GPU hardware stále více podporuje operace FP16, takže použití tohoto formátu může také zlepšit rychlost výpočtů. Na druhou stranu FP16 formát má inherentní nevýhodu nižší přesnosti, což může v některých případech vést k numerické nestabilitě nebo ztrátě přesnosti.
+Formát FP16, tedy 16-bitová plovoucí desetinná čísla (float16), snižuje paměťovou stopu na polovinu ve srovnání s 32-bitovými plovoucími desetinnými čísly (float32), což má významné výhody v rozsáhlých aplikacích hlubokého učení. Formát FP16 umožňuje načítání větších modelů nebo zpracování více dat v rámci stejných omezení paměti GPU. Vzhledem k tomu, že moderní hardwarové GPU stále více podporují operace FP16, použití formátu FP16 může také přinést zlepšení rychlosti výpočtů. Formát FP16 však má i své inherentní nevýhody, jmenovitě nižší přesnost, což může vést v některých případech k numerické nestabilitě nebo ztrátě přesnosti.
 
 ### **FP32**
 
-Formát FP32 nabízí vyšší přesnost a dokáže přesně reprezentovat široký rozsah hodnot. V situacích, kdy se provádějí složité matematické operace nebo je potřeba vysoká přesnost výsledků, je preferován formát FP32. Vyšší přesnost však znamená větší nároky na paměť a delší dobu výpočtu. U rozsáhlých modelů hlubokého učení, zejména pokud obsahují mnoho parametrů a obrovské množství dat, může formát FP32 způsobit nedostatek paměti GPU nebo zpomalení inferenčního procesu.
+Formát FP32 poskytuje vyšší přesnost a dokáže přesně reprezentovat širokou škálu hodnot. Ve scénářích, kde se provádějí složité matematické operace nebo je požadován výsledek s vysokou přesností, je formát FP32 preferován. Vyšší přesnost však znamená také větší využití paměti a delší dobu výpočtu. U rozsáhlých modelů hlubokého učení, zejména když je mnoho parametrů modelu a obrovské množství dat, může formát FP32 způsobovat nedostatek paměti GPU nebo pokles rychlosti inference.
 
-Na mobilních zařízeních nebo IoT zařízeních můžeme převádět modely Phi-3.x na INT4, zatímco AI PC / Copilot PC mohou používat vyšší přesnosti jako INT8, FP16 nebo FP32.
+Na mobilních zařízeních nebo IoT zařízeních můžeme převádět modely Phi-3.x na INT4, zatímco AI PC / Copilot PC mohou používat vyšší přesnosti jako INT8, FP16, FP 32.
 
-V současnosti různí výrobci hardwaru nabízejí různé frameworky pro podporu generativních modelů, například Intel OpenVINO, Qualcomm QNN, Apple MLX a Nvidia CUDA, které v kombinaci s kvantizací modelu umožňují lokální nasazení.
+V současnosti mají různí výrobci hardwaru různé frameworky na podporu generativních modelů, jako jsou Intel OpenVINO, Qualcomm QNN, Apple MLX a Nvidia CUDA atd., v kombinaci s kvantisací modelů pro lokální nasazení.
 
-Z technologického hlediska podporujeme po kvantizaci různé formáty, jako jsou PyTorch / Tensorflow, GGUF a ONNX. Provedl jsem srovnání formátů a aplikačních scénářů mezi GGUF a ONNX. Doporučuji kvantizační formát ONNX, který má dobrou podporu od frameworků až po hardware. V této kapitole se zaměříme na ONNX Runtime pro GenAI, OpenVINO a Apple MLX pro provádění kvantizace modelů (pokud máte lepší metodu, můžete nám ji také zaslat prostřednictvím PR).
+Z hlediska technologie máme po kvantisaci podporu různých formátů, například formáty PyTorch / TensorFlow, GGUF a ONNX. Provedl jsem srovnání formátů a aplikačních scénářů mezi GGUF a ONNX. Zde doporučuji kvantisovací formát ONNX, který má dobrou podporu jak od frameworku modelu, tak od hardwaru. V této kapitole se zaměříme na ONNX Runtime pro GenAI, OpenVINO a Apple MLX pro provádění kvantisace modelů (pokud máte lepší způsob, můžete nám jej také poskytnout zasláním PR).
 
 **Tato kapitola obsahuje**
 
-1. [Kvantizace Phi-3.5 / 4 pomocí llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [Kvantisace Phi-3.5 / 4 pomocí llama.cpp](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Kvantizace Phi-3.5 / 4 pomocí rozšíření Generative AI pro onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
+2. [Kvantisace Phi-3.5 / 4 pomocí Generative AI extensions for onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Kvantizace Phi-3.5 / 4 pomocí Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [Kvantisace Phi-3.5 / 4 pomocí Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Kvantizace Phi-3.5 / 4 pomocí Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
+4. [Kvantisace Phi-3.5 / 4 pomocí Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
 
-**Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Upozornění**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli usilujeme o přesnost, vezměte prosím na vědomí, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro kritické informace doporučujeme profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,44 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:52:49+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T09:29:05+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "hu"
 }
 -->
-## Inference Kaito-val
+## Inference a Kaitóval
 
-A [Kaito](https://github.com/Azure/kaito) egy operátor, amely automatizálja az AI/ML inferencia modellek telepítését Kubernetes klaszterben.
+A [Kaito](https://github.com/Azure/kaito) egy olyan operátor, amely automatizálja az AI/ML inferencia modellek telepítését egy Kubernetes klaszterben.
 
-A Kaito a következő főbb különbségekkel rendelkezik a legtöbb, virtuális gép infrastruktúrákra épülő modelltelepítési módszerhez képest:
+A Kaito a következő főbb különbségekkel rendelkezik a legtöbb, virtuális gép infrastruktúrákra épülő mainstream modelltelepítési módszerhez képest:
 
-- A modellfájlokat konténerképek segítségével kezeli. Egy HTTP szerver áll rendelkezésre az inferencia hívások végrehajtásához a modellkönyvtár használatával.
-- Előre beállított konfigurációkat kínál, így nem kell a telepítési paramétereket a GPU hardverhez igazítani.
+- A modellfájlokat konténer képek segítségével kezeli. Egy http szerver áll rendelkezésre, amely az inferencia hívásokat a modellkönyvtár használatával végzi.
+- Elkerüli a GPU hardverhez való illeszkedő telepítési paraméterek hangolását előre beállított konfigurációk biztosításával.
 - Automatikusan biztosít GPU node-okat a modell igényei alapján.
-- Nagy modellképeket a licenc engedélye esetén a nyilvános Microsoft Container Registry-ben (MCR) tárol.
+- Nagy modell képeket helyez el a nyilvános Microsoft Container Registry-ben (MCR), ha a licenc engedi.
 
-A Kaitoval az AI inferencia nagy modellek Kubernetesbe való integrálása jelentősen egyszerűsödik.
+A Kaitóval az AI inferencia modellek Kubernetes-be történő bekerülési folyamata nagymértékben egyszerűsödik.
 
 ## Architektúra
 
-A Kaito a klasszikus Kubernetes Custom Resource Definition (CRD)/controller tervezési mintát követi. A felhasználó egy `workspace` egyedi erőforrást kezel, amely leírja a GPU igényeket és az inferencia specifikációt. A Kaito kontrollerek automatikusan végrehajtják a telepítést a `workspace` egyedi erőforrás egyeztetésével.
+A Kaito követi a klasszikus Kubernetes Custom Resource Definition(CRD)/controller tervezési mintát. A felhasználó egy `workspace` egyedi erőforrást kezel, amely leírja a GPU követelményeket és az inferencia specifikációt. A Kaito kontroller automatikusan elvégzi a telepítést a `workspace` egyedi erőforrás összehangolásával.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architektúra" alt="KAITO RAGEngine architektúra">
 </div>
 
-A fenti ábra a Kaito architektúra áttekintését mutatja. Főbb komponensei:
+A fenti ábra a Kaito architektúra áttekintését mutatja. Fő összetevői:
 
-- **Workspace controller**: Egyezteti a `workspace` egyedi erőforrást, létrehozza a `machine` (lentebb magyarázva) egyedi erőforrásokat a node automatikus biztosításának elindításához, és létrehozza az inferencia munkaterhelést (`deployment` vagy `statefulset`) a modell előre beállított konfigurációi alapján.
-- **Node provisioner controller**: A kontroller neve *gpu-provisioner* a [gpu-provisioner helm chartban](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). A `machine` CRD-t használja, amely a [Karpenter](https://sigs.k8s.io/karpenter)-ből származik, hogy kommunikáljon a workspace controllerrel. Integrálódik az Azure Kubernetes Service (AKS) API-kkal, hogy új GPU node-okat adjon az AKS klaszterhez.
-> Megjegyzés: A [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) egy nyílt forráskódú komponens. Más kontrollerek is használhatók helyette, ha támogatják a [Karpenter-core](https://sigs.k8s.io/karpenter) API-kat.
+- **Workspace kontroller**: Összehangolja a `workspace` egyedi erőforrást, létrehozza a `machine` (lentebb magyarázva) egyedi erőforrásokat a node automatikus biztosításának elindítására, és a modell előre beállított konfigurációi alapján létrehozza az inferencia munkaterhelést (`deployment` vagy `statefulset`).
+- **Node biztosító kontroller**: A kontroller neve *gpu-provisioner* a [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) alatt. A `machine` CRD-t használja, amely a [Karpenter](https://sigs.k8s.io/karpenter)-től származik, hogy kommunikáljon a workspace kontrollerrel. Integrálódik az Azure Kubernetes Service (AKS) API-kkal, hogy új GPU node-okat adjon az AKS klaszterhez.
+> Megjegyzés: A [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) nyílt forráskódú komponens. Más kontrollerek is helyettesíthetik, ha támogatják a [Karpenter-core](https://sigs.k8s.io/karpenter) API-kat.
 
 ## Telepítés
 
 Kérjük, tekintse meg a telepítési útmutatót [itt](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Gyors kezdés Inference Phi-3-mal
-[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Gyors indítás Inference Phi-3
+[Phi-3 példa kód](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +77,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ACR kimeneti út hangolása
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-A workspace állapotát a következő parancs futtatásával lehet nyomon követni. Amikor a WORKSPACEREADY oszlop értéke `True` lesz, a modell sikeresen telepítve lett.
+A workspace állapotát az alábbi paranccsal lehet nyomon követni. Amikor a WORKSPACEREADY oszlop `True` értéket vesz fel, a modell sikeresen telepítve lett.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ezután meg lehet keresni az inferencia szolgáltatás klaszter IP-címét, és egy ideiglenes `curl` pod segítségével tesztelni a szolgáltatás végpontját a klaszterben.
+Ezután meg lehet találni az inferencia szolgáltatás klaszter IP-címét, és egy ideiglenes `curl` pod használatával tesztelni lehet a szolgáltatás végpontját a klaszterben.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +103,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Gyors kezdés Inference Phi-3-mal adapterekkel
+## Gyors indítás Inference Phi-3 adapterekkel
 
-A Kaito telepítése után a következő parancsokkal elindítható egy inferencia szolgáltatás.
+A Kaito telepítése után az alábbi parancsokkal elindítható egy inferencia szolgáltatás.
 
-[Sample Code Inference Phi-3 adapterekkel](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Phi-3 példa kód adapterekkel](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +149,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Kimenő ACR útvonal hangolása
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-A workspace állapotát a következő parancs futtatásával lehet nyomon követni. Amikor a WORKSPACEREADY oszlop értéke `True` lesz, a modell sikeresen telepítve lett.
+A workspace állapotát az alábbi paranccsal lehet nyomon követni. Amikor a WORKSPACEREADY oszlop `True` értéket vesz fel, a modell sikeresen telepítve lett.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ezután meg lehet keresni az inferencia szolgáltatás klaszter IP-címét, és egy ideiglenes `curl` pod segítségével tesztelni a szolgáltatás végpontját a klaszterben.
+Ezután meg lehet találni az inferencia szolgáltatás klaszter IP-címét, és egy ideiglenes `curl` pod használatával tesztelni lehet a szolgáltatás végpontját a klaszterben.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +175,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi nyilatkozat**:
+Jelen dokumentumot az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum anyanyelvű változata tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javasolt igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő bármilyen félreértésért vagy félreértelmezésért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
