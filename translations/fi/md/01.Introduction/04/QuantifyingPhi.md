@@ -1,51 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-07-16T21:47:50+00:00",
+  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+  "translation_date": "2026-01-05T12:46:07+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "fi"
 }
 -->
 # **Phi-perheen kvantifiointi**
 
-Mallin kvantifiointi tarkoittaa prosessia, jossa neuroverkkopohjaisen mallin parametrit (kuten painot ja aktivaatioarvot) muunnetaan laajasta arvoalueesta (yleensä jatkuvasta arvoalueesta) pienempään, rajalliseen arvoalueeseen. Tämä teknologia voi pienentää mallin kokoa ja laskennallista monimutkaisuutta sekä parantaa mallin suorituskykyä resurssirajoitteisissa ympäristöissä, kuten mobiililaitteissa tai sulautetuissa järjestelmissä. Mallin kvantifiointi saavuttaa pakkaamisen vähentämällä parametrien tarkkuutta, mutta se tuo mukanaan myös tietyn tarkkuuden menetyksen. Siksi kvantifiointiprosessissa on tasapainotettava mallin koko, laskennallinen monimutkaisuus ja tarkkuus. Yleisiä kvantifiointimenetelmiä ovat muun muassa kiinteäpistekvantifiointi ja liukulukukvantifiointi. Voit valita sopivan kvantifiointistrategian tilanteen ja tarpeiden mukaan.
+Mallin kvantifiointi tarkoittaa parametrien (kuten painojen ja aktivaatioarvojen) kuvaamista neuroverkon mallissa suuresta arvovälistä (yleensä jatkuvasta arvovälistä) pienempään äärelliseen arvoväliin. Tämä teknologia voi vähentää mallin kokoa ja laskennallista monimutkaisuutta sekä parantaa mallin toiminnan tehokkuutta resursseiltaan rajatuissa ympäristöissä, kuten mobiililaitteissa tai sulautetuissa järjestelmissä. Mallin kvantifiointi saavuttaa pakkauksen vähentämällä parametrien tarkkuutta, mutta se tuo mukanaan myös tiettyä tarkkuuden menetystä. Siksi kvantifiointiprosessissa on tasapainotettava mallin koko, laskennallinen monimutkaisuus ja tarkkuus. Yleisiä kvantifiointimenetelmiä ovat esimerkiksi kiinteäpistekvantifiointi, liukulukukvantifiointi jne. Voit valita sopivan kvantifiointistrategian käyttötarkoituksen ja tarpeiden mukaan.
 
-Toivomme voivamme ottaa GenAI-mallit käyttöön reunalaitteissa ja mahdollistaa useampien laitteiden pääsy GenAI-skenaarioihin, kuten mobiililaitteisiin, AI PC/Copilot+PC:hin ja perinteisiin IoT-laitteisiin. Kvantifioidun mallin avulla voimme ottaa sen käyttöön eri reunalaitteissa laitteesta riippuen. Yhdistämällä laitteistovalmistajien tarjoamat mallin kiihdytys- ja kvantifiointikehykset voimme rakentaa parempia SLM-sovellusskenaarioita.
+Toivomme saavuttavamme GenAI-mallien käyttöönoton reunalaitteissa ja sallivamme useampien laitteiden pääsyn GenAI-skenaarioihin, kuten mobiililaitteet, AI PC/Copilot+PC sekä perinteiset IoT-laitteet. Kvantifiointimallin avulla voimme ottaa sen käyttöön eri reunalaitteissa laitteen mukaan. Yhdistämällä laitteistovalmistajien tarjoamat malliakselerointikehykset ja kvantifiointimallit voimme rakentaa parempia SLM-sovellusskenaarioita.
 
-Kvantifiointiskenaariossa käytämme eri tarkkuuksia (INT4, INT8, FP16, FP32). Seuraavassa on selitys yleisesti käytetyistä kvantifiointitarkkuuksista.
+Kvantifiointiskenaariossa meillä on eri tarkkuuksia (INT4, INT8, FP16, FP32). Seuraavassa on selitys yleisesti käytetyistä kvantifiointitarkkuuksista.
 
 ### **INT4**
 
-INT4-kvantifiointi on radikaali kvantifiointimenetelmä, jossa mallin painot ja aktivaatioarvot kvantifioidaan 4-bittisiksi kokonaisluvuiksi. INT4-kvantifiointi aiheuttaa yleensä suuremman tarkkuuden menetyksen pienemmän esitysalueen ja alhaisemman tarkkuuden vuoksi. Verrattuna INT8-kvantifiointiin INT4 voi kuitenkin edelleen vähentää mallin tallennustarvetta ja laskennallista monimutkaisuutta. On syytä huomioida, että INT4-kvantifiointi on käytännössä melko harvinaista, koska liian alhainen tarkkuus voi heikentää mallin suorituskykyä merkittävästi. Lisäksi kaikki laitteistot eivät tue INT4-operaatioita, joten laitteistoyhteensopivuus on otettava huomioon kvantifiointimenetelmää valittaessa.
+INT4-kvantifiointi on radikaali kvantifiointimenetelmä, joka kvantifioi mallin painot ja aktivaatiot 4-bittisiksi kokonaisluvuiksi. INT4-kvantifiointi johtaa yleensä suurempaan tarkkuuden menetykseen pienen tiedon esityksen rajan ja alaistarkkuuden takia. INT8-kvantifiointiin verrattuna INT4-kvantifiointi voi kuitenkin edelleen vähentää mallin tallennustarvetta ja laskennallista monimutkaisuutta. On huomattava, että INT4-kvantifiointi on käytännön sovelluksissa melko harvinainen, koska liian alhainen tarkkuus voi aiheuttaa merkittävää heikkenemistä mallin suorituskyvyssä. Lisäksi kaikki laitteistot eivät tue INT4-operaatioita, joten laitteen yhteensopivuus on otettava huomioon kvantifiointimenetelmän valinnassa.
 
 ### **INT8**
 
-INT8-kvantifiointi tarkoittaa mallin painojen ja aktivaatioiden muuntamista liukuluvuista 8-bittisiksi kokonaisluvuiksi. Vaikka INT8-kokonaislukujen esitysalue on pienempi ja vähemmän tarkka, se voi merkittävästi vähentää tallennus- ja laskentavaatimuksia. INT8-kvantifioinnissa mallin painot ja aktivaatioarvot käyvät läpi kvantifiointiprosessin, joka sisältää skaalaamisen ja siirron, jotta alkuperäinen liukulukutieto säilyy mahdollisimman hyvin. Päättelyvaiheessa nämä kvantifioidut arvot muunnetaan takaisin liukuluvuiksi laskentaa varten ja sen jälkeen uudelleen INT8-muotoon seuraavaa vaihetta varten. Tämä menetelmä tarjoaa useimmissa sovelluksissa riittävän tarkkuuden säilyttäen samalla korkean laskentatehokkuuden.
+INT8-kvantifiointi on prosessi, jossa mallin painot ja aktivaatioarvot muunnetaan liukuluvuista 8-bittisiksi kokonaisluvuiksi. Vaikka INT8-kokonaisluvut edustavat pienempää ja vähemmän tarkkaa numeerista aluetta, ne voivat merkittävästi vähentää tallennus- ja laskentavaatimuksia. INT8-kvantifioinnissa mallin painot ja aktivaatiot käyvät läpi kvantifiointiprosessin, joka sisältää skaalaamista ja siirtymää, säilyttääkseen alkuperäisen liukulukuinformaation mahdollisimman hyvin. Päättelyn aikana nämä kvantifioidut arvot dekvantifioidaan takaisin liukuluvuiksi laskentaa varten ja kvantifioidaan sitten takaisin INT8:ksi seuraavaa vaihetta varten. Tämä menetelmä tarjoaa useimmissa sovelluksissa riittävän tarkkuuden samalla kun se ylläpitää korkean laskennallisen tehokkuuden.
 
 ### **FP16**
 
-FP16-muoto, eli 16-bittiset liukuluvut (float16), puolittaa muistinkäytön verrattuna 32-bittisiin liukulukuihin (float32), mikä on merkittävä etu suurissa syväoppimissovelluksissa. FP16-muoto mahdollistaa suurempien mallien lataamisen tai suuremman datamäärän käsittelyn samalla GPU-muistirajoituksella. Koska nykyaikaiset GPU-laitteistot tukevat yhä enemmän FP16-operaatioita, FP16-muodon käyttö voi myös nopeuttaa laskentaa. FP16-muodolla on kuitenkin myös omat haittansa, kuten alhaisempi tarkkuus, mikä voi joissain tapauksissa johtaa numeeriseen epävakauteen tai tarkkuuden menetykseen.
+FP16-muoto, eli 16-bittiset liukuluvut (float16), puolittaa muistitilan verrattuna 32-bittisiin liukulukuihin (float32), mikä tuo merkittäviä etuja suurissa syväoppimissovelluksissa. FP16-muoto mahdollistaa suurempien mallien lataamisen tai suuremman datamäärän käsittelyn samojen GPU-muistirajojen puitteissa. Kun nykyaikaiset GPU-laitteistot tukevat FP16-operaatioita, FP16-muodon käyttö voi myös parantaa laskennan nopeutta. FP16-muodolla on kuitenkin omaa heikkoutensa eli alhaisempi tarkkuus, joka voi johtaa numeeriseen epävakauteen tai tarkkuuden menetykseen joissakin tapauksissa.
 
 ### **FP32**
 
-FP32-muoto tarjoaa korkeamman tarkkuuden ja pystyy tarkasti esittämään laajan arvovalikoiman. Monimutkaisia matemaattisia operaatioita suoritettaessa tai kun tarvitaan erittäin tarkkoja tuloksia, FP32-muoto on suositeltava. Korkea tarkkuus tarkoittaa kuitenkin myös suurempaa muistinkulutusta ja pidempiä laskenta-aikoja. Suurissa syväoppimismalleissa, erityisesti kun malliparametreja ja datamäärä on paljon, FP32-muoto voi aiheuttaa GPU-muistin riittämättömyyttä tai hidastaa päättelyä.
+FP32-muoto tarjoaa korkeamman tarkkuuden ja voi tarkasti edustaa laajaa arvoaluetta. Monimutkaisten matemaattisten operaatioiden tai korkean tarkkuuden tulosten tarvittaessa FP32 on ensisijainen valinta. Korkea tarkkuus kuitenkin merkitsee enemmän muistinkulutusta ja pidempiä laskenta-aikoja. Suurissa syväoppimismalleissa, erityisesti kun parametreja on paljon ja dataa on valtavasti, FP32-muoto voi aiheuttaa riittämättömän GPU-muistin tai pienen suoritusnopeuden.
 
-Mobiililaitteissa tai IoT-laitteissa voimme muuntaa Phi-3.x -mallit INT4-muotoon, kun taas AI PC / Copilot PC voi käyttää korkeampaa tarkkuutta, kuten INT8, FP16 tai FP32.
+Mobiililaitteissa tai IoT-laitteissa voimme muuntaa Phi-3.x-mallit INT4-muotoon, kun taas AI PC / Copilot PC -laitteet voivat hyödyntää korkeampia tarkkuuksia kuten INT8, FP16, FP32.
 
-Tällä hetkellä eri laitteistovalmistajilla on erilaisia kehyksiä generatiivisten mallien tukemiseen, kuten Intelin OpenVINO, Qualcommin QNN, Applen MLX ja Nvidian CUDA, joita yhdistetään mallin kvantifiointiin paikallisen käyttöönoton toteuttamiseksi.
+Tällä hetkellä eri laitteistovalmistajilla on erilaiset kehykset generatiivisten mallien tukemiseen, kuten Intelin OpenVINO, Qualcommin QNN, Applen MLX ja Nvidian CUDA, joita yhdistetään mallin kvantifiointiin paikallista käyttöönottoa varten.
 
-Teknologian osalta meillä on kvantifioinnin jälkeen tuki eri formaateille, kuten PyTorch / Tensorflow, GGUF ja ONNX. Olen tehnyt vertailun GGUF:n ja ONNX:n formaattien välillä sekä niiden sovellusskenaarioista. Tässä suosittelen ONNX-kvantifiointiformaattia, joka saa hyvän tuen mallikehyksiltä aina laitteistoon asti. Tässä luvussa keskitymme ONNX Runtimeen GenAI:lle, OpenVINOon ja Apple MLX:ään mallin kvantifioinnissa (jos sinulla on parempi tapa, voit myös lähettää meille PR:n).
+Teknologian kannalta meillä on kvantifioinnin jälkeen erilaisia muototukea, kuten PyTorch/TensorFlow-muoto, GGUF ja ONNX. Olen tehnyt vertailun GGUF:n ja ONNX:n muodoista ja käyttöskenaarioista. Tässä suosittelen ONNX-kvantifiointimuotoa, joka saa hyvän tuen mallikehystä ja laitteistoa myöten. Tässä luvussa keskitymme ONNX Runtimeen GenAI:lle, OpenVINOon ja Apple MLX:ään mallin kvantifioinnissa (jos sinulla on parempi menetelmä, voit toimittaa sen meille PR:n kautta).
 
-**Tässä luvussa käsitellään**
+**Tämä luku sisältää**
 
-1. [Phi-3.5 / 4 kvantifiointi käyttäen llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [Quantizing Phi-3.5 / 4 using llama.cpp](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Phi-3.5 / 4 kvantifiointi käyttäen Generative AI -laajennuksia onnxruntimeen](./UsingORTGenAIQuantifyingPhi.md)
+2. [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Phi-3.5 / 4 kvantifiointi käyttäen Intel OpenVINOa](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [Quantizing Phi-3.5 / 4 using Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Phi-3.5 / 4 kvantifiointi käyttäen Apple MLX -kehystä](./UsingAppleMLXQuantifyingPhi.md)
+4. [Quantizing Phi-3.5 / 4 using Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ota huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Kriittisissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinkäsityksistä tai tulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

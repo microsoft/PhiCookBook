@@ -1,43 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:51:30+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T12:45:22+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "fi"
 }
 -->
-## Päättely Kaito:n kanssa
+## Päättely Kaiton kanssa
 
-[Kaito](https://github.com/Azure/kaito) on operaattori, joka automatisoi AI/ML-päättelymallien käyttöönoton Kubernetes-klusterissa.
+[Kaito](https://github.com/Azure/kaito) on operaattori, joka automatisoi AI/ML päättelymallien käyttöönoton Kubernetes-klusterissa.
 
-Kaito eroaa seuraavilla tavoilla useimmista virtuaalikoneinfrastruktuurien päälle rakennetuista mallien käyttöönoton menetelmistä:
+Kaitolla on seuraavat keskeiset erot verrattuna useimpiin yleisiin mallien käyttöönoton menetelmiin, jotka perustuvat virtuaalikoneinfrastruktuureihin:
 
-- Mallitiedostojen hallinta konttikuvien avulla. HTTP-palvelin tarjoaa päättelykutsujen suorittamisen mallikirjastoa käyttäen.
-- Välttää käyttöönoton parametrien säätämisen GPU-laitteistolle esiasetettujen konfiguraatioiden avulla.
+- Mallitiedostojen hallinta konttien kuvien avulla. HTTP-palvelin on käytettävissä päättelykutsujen tekemiseen mallikirjastoa hyödyntäen.
+- Välttää käyttöönoton parametrien säätämisen GPU-laitteistolle tarjoamalla valmiita kokoonpanoja.
 - GPU-solmujen automaattinen provisiointi mallin vaatimusten perusteella.
-- Suurten mallikuvien isännöinti julkisessa Microsoft Container Registryssä (MCR), jos lisenssi sen sallii.
+- Suurten mallikuvien isännöinti julkisessa Microsoft Container Registryssä (MCR), mikäli lisenssi sallii.
 
-Kaito:n avulla suurten AI-päättelymallien käyttöönoton työnkulku Kubernetesissa yksinkertaistuu merkittävästi.
+Kaiton avulla suurten AI-päättelymallien käyttöönoton työnkulku Kubernetesissa on merkittävästi yksinkertaistettu.
+
 
 ## Arkkitehtuuri
 
-Kaito noudattaa perinteistä Kubernetesin Custom Resource Definition (CRD) / controller -suunnittelumallia. Käyttäjä hallinnoi `workspace`-custom resourcea, joka kuvaa GPU-vaatimukset ja päättelymäärittelyn. Kaito-controllerit automatisoivat käyttöönoton sovittamalla `workspace`-custom resourcen tilan.
+Kaito noudattaa klassista Kubernetes Custom Resource Definition (CRD) / controller -suunnittelumallia. Käyttäjä hallinnoi `workspace`-erikoisresurssia, joka kuvaa GPU-vaatimukset ja päättelymäärityksen. Kaiton kontrollerit automatisoivat käyttöönoton sovittamalla `workspace`-erikoisresurssin.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-Yllä oleva kuva esittää Kaito-arkkitehtuurin yleiskuvan. Sen pääkomponentit ovat:
+Yllä oleva kuva esittää Kaiton arkkitehtuurin yleiskatsauksen. Sen keskeiset osat ovat:
 
-- **Workspace controller**: Sovittaa `workspace`-custom resourcen tilan, luo `machine` (selitetty alla) custom resourcet solmujen automaattista provisiointia varten ja luo päättelytyönkuorman (`deployment` tai `statefulset`) mallin esiasetettujen konfiguraatioiden perusteella.
-- **Node provisioner controller**: Controllerin nimi on *gpu-provisioner* [gpu-provisioner helm chartissa](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Se käyttää [Karpenter](https://sigs.k8s.io/karpenter) -projektin `machine` CRD:tä kommunikoidakseen workspace-controllerin kanssa. Se integroituu Azure Kubernetes Service (AKS) -rajapintoihin lisätäkseen uusia GPU-solmuja AKS-klusteriin.
-> Huom: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) on avoimen lähdekoodin komponentti. Sen voi korvata muilla controllereilla, jos ne tukevat [Karpenter-core](https://sigs.k8s.io/karpenter) -rajapintoja.
+- **Workspace controller**: Se sovittaa `workspace`-erikoisresurssin, luo `machine` (selitetty alla) -erikoisresursseja noden automaattista provisiointia varten sekä luo päättelytyökuorman (`deployment` tai `statefulset`) mallin valmiisiin asetuksiin perustuen.
+- **Node provisioner controller**: Kontrollerin nimi on *gpu-provisioner* [gpu-provisioner helm chartissa](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Se käyttää `machine` CRD:tä, joka on peräisin [Karpenteriltä](https://sigs.k8s.io/karpenter) ja toimii yhdessä workspace-kontrollerin kanssa. Se integroituu Azure Kubernetes Servicen (AKS) API:hin lisätäkseen uusia GPU-nodeja AKS-klusteriin.
+> Huomautus: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) on avoimen lähdekoodin komponentti. Sen voi korvata muilla kontrollerilla, jos ne tukevat [Karpenter-core](https://sigs.k8s.io/karpenter) API:a.
 
 ## Asennus
 
-Katso asennusohjeet [täältä](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Tarkista asennusohjeet [tästä](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Nopeasti käyntiin Inference Phi-3:n kanssa
+## Nopeasti käyntiin Inference Phi-3
 [Esimerkkikoodi Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -76,14 +78,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Säädetään ulostulon ACR-polku
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Workspace-tilaa voi seurata ajamalla seuraavan komennon. Kun WORKSPACEREADY-sarake muuttuu arvoksi `True`, malli on otettu käyttöön onnistuneesti.
+Workspace-tilaa voi seurata suorittamalla seuraavan komennon. Kun WORKSPACEREADY-sarake muuttuu `True`:ksi, malli on otettu käyttöön onnistuneesti.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +93,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Seuraavaksi voi hakea päättelypalvelun klusterin IP-osoitteen ja käyttää väliaikaista `curl`-podia testatakseen palvelun päätepistettä klusterissa.
+Seuraavaksi voi löytää päättelypalvelun klusterin IP-osoitteen ja käyttää tilapäistä `curl`-podia palvelun päätepisteen testaamiseen klusterissa.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +104,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Nopeasti käyntiin Inference Phi-3 adaptereiden kanssa
+## Nopeasti käyntiin Inference Phi-3 adaptereilla
 
-Kaito:n asennuksen jälkeen voi kokeilla seuraavia komentoja käynnistääkseen päättelypalvelun.
+Kaiton asennuksen jälkeen voi kokeilla seuraavia komentoja käynnistääkseen päättelypalvelun.
 
-[Esimerkkikoodi Inference Phi-3 adaptereiden kanssa](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Esimerkkikoodi Inference Phi-3 adaptereilla](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +150,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Säätö Output ACR -polku
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Workspace-tilaa voi seurata ajamalla seuraavan komennon. Kun WORKSPACEREADY-sarake muuttuu arvoksi `True`, malli on otettu käyttöön onnistuneesti.
+Workspace-tilaa voi seurata suorittamalla seuraavan komennon. Kun WORKSPACEREADY-sarake muuttuu `True`:ksi, malli on otettu käyttöön onnistuneesti.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +165,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Seuraavaksi voi hakea päättelypalvelun klusterin IP-osoitteen ja käyttää väliaikaista `curl`-podia testatakseen palvelun päätepistettä klusterissa.
+Seuraavaksi voi löytää päättelypalvelun klusterin IP-osoitteen ja käyttää tilapäistä `curl`-podia palvelun päätepisteen testaamiseen klusterissa.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +176,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastuuvapauslauseke**:
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulisi pitää luotettavana lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tästä käännöksestä mahdollisesti aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
