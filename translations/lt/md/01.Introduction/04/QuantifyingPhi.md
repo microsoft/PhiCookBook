@@ -1,53 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-09-12T14:52:29+00:00",
+  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+  "translation_date": "2026-01-05T16:10:13+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "lt"
 }
 -->
-# **Phi šeimos kvantifikavimas**
+# **Phi šeimos kiekinimas**
 
-Modelio kvantifikavimas reiškia procesą, kai neuroninio tinklo modelio parametrai (tokie kaip svoriai ir aktyvavimo reikšmės) yra perkelti iš didelio reikšmių diapazono (dažniausiai nenutrūkstamo diapazono) į mažesnį, baigtinį reikšmių diapazoną. Ši technologija gali sumažinti modelio dydį ir skaičiavimo sudėtingumą bei pagerinti modelio veikimo efektyvumą aplinkose, kuriose riboti resursai, pavyzdžiui, mobiliuosiuose įrenginiuose ar įterptinėse sistemose. Modelio kvantifikavimas pasiekia suspaudimą sumažindamas parametrų tikslumą, tačiau tai taip pat sukelia tam tikrą tikslumo praradimą. Todėl kvantifikavimo procese būtina subalansuoti modelio dydį, skaičiavimo sudėtingumą ir tikslumą. Dažniausiai naudojami kvantifikavimo metodai apima fiksuoto taško kvantifikavimą, slankiojo taško kvantifikavimą ir kt. Galite pasirinkti tinkamą kvantifikavimo strategiją pagal konkrečią situaciją ir poreikius.
+Modelio kiekinimas reiškia procesą, kai neuroninio tinklo modelio parametrai (pvz., svoriai ir aktyvacijos reikšmės) perskaičiuojami iš didelės reikšmių srities (dažniausiai tęstinės reikšmių srities) į mažesnę galutinę reikšmių sritį. Ši technologija gali sumažinti modelio dydį ir skaičiavimo sudėtingumą bei pagerinti modelio veikimo efektyvumą išteklių ribotose aplinkose, tokiose kaip mobilieji įrenginiai arba įterptinės sistemos. Modelio kiekinimas pasiekia suspaudimą sumažindamas parametrų tikslumą, tačiau taip pat įveda tam tikrą tikslumo nuostolį. Todėl kiekinimo procese būtina subalansuoti modelio dydį, skaičiavimo sudėtingumą ir tikslumą. Įprasti kiekinimo metodai apima fiksuoto kablelio kiekinimą, plaukiojančio kablelio kiekinimą ir kt. Galite pasirinkti tinkamą kiekinimo strategiją pagal konkretų scenarijų ir poreikius.
 
-Tikimės, kad GenAI modelį galėsime diegti kraštiniuose įrenginiuose ir leisti daugiau įrenginių dalyvauti GenAI scenarijuose, tokiuose kaip mobilieji įrenginiai, AI PC / Copilot+PC ir tradiciniai IoT įrenginiai. Naudodami kvantifikavimo modelį, galime jį pritaikyti skirtingiems kraštiniams įrenginiams, atsižvelgiant į jų specifikacijas. Derinant su modelio spartinimo sistemomis ir kvantifikavimo modeliais, kuriuos teikia techninės įrangos gamintojai, galime sukurti geresnius SLM taikymo scenarijus.
+Trokštame diegti GenAI modelį į krašto įrenginius ir leisti daugiau įrenginių patekti į GenAI scenarijus, kaip mobilieji įrenginiai, AI PC/Copilot+PC, tradiciniai IoT įrenginiai. Per kiekinimo modelį galime jį diegti įvairiuose krašto įrenginiuose, remdamiesi skirtingais įrenginiais. Derindami su modelio pagreitinimo sistema ir kiekinimo modeliu, kurį teikia aparatūros gamintojai, galime kurti geresnius SLM programų scenarijus.
 
-Kvantifikavimo scenarijuose turime skirtingus tikslumo lygius (INT4, INT8, FP16, FP32). Toliau pateikiamas dažniausiai naudojamų kvantifikavimo tikslumo lygių paaiškinimas.
+Kiekinimo scenarijuje turime skirtingą tikslumą (INT4, INT8, FP16, FP32). Toliau pateikiamas dažniausiai naudojamų kiekinimo tikslumų paaiškinimas.
 
 ### **INT4**
 
-INT4 kvantifikavimas yra radikalus kvantifikavimo metodas, kuris modelio svorius ir aktyvavimo reikšmes kvantifikuoja į 4 bitų sveikuosius skaičius. INT4 kvantifikavimas dažniausiai sukelia didesnį tikslumo praradimą dėl mažesnio reprezentavimo diapazono ir žemesnio tikslumo. Tačiau, palyginti su INT8 kvantifikavimu, INT4 kvantifikavimas gali dar labiau sumažinti modelio saugojimo reikalavimus ir skaičiavimo sudėtingumą. Reikėtų pažymėti, kad INT4 kvantifikavimas praktiniuose taikymuose yra gana retas, nes per mažas tikslumas gali sukelti reikšmingą modelio veikimo pablogėjimą. Be to, ne visa techninė įranga palaiko INT4 operacijas, todėl renkantis kvantifikavimo metodą reikia atsižvelgti į techninės įrangos suderinamumą.
+INT4 kiekinimas yra radikalus kiekinimo metodas, kuriuo modelio svoriai ir aktyvacijos reikšmės kiekinamos į 4 bitų sveikuosius skaičius. Dėl mažesnės atstovavimo srities ir mažesnio tikslumo INT4 kiekinimas paprastai sukelia didesnį tikslumo praradimą. Tačiau, palyginus su INT8 kiekinimu, INT4 kiekinimas gali dar labiau sumažinti modelio saugojimo reikalavimus ir skaičiavimo sudėtingumą. Reikėtų pažymėti, kad INT4 kiekinimas praktikoje yra gana retas, nes per mažas tikslumas gali sukelti reikšmingą modelio našumo sumažėjimą. Be to, ne visa aparatūra palaiko INT4 operacijas, todėl renkantis kiekinimo metodą reikia atsižvelgti į aparatinę suderinamumą.
 
 ### **INT8**
 
-INT8 kvantifikavimas yra procesas, kai modelio svoriai ir aktyvavimo reikšmės iš slankiojo taško skaičių konvertuojami į 8 bitų sveikuosius skaičius. Nors INT8 sveikieji skaičiai turi mažesnį reprezentavimo diapazoną ir mažesnį tikslumą, jie gali reikšmingai sumažinti saugojimo ir skaičiavimo reikalavimus. INT8 kvantifikavimo metu modelio svoriai ir aktyvavimo reikšmės pereina kvantifikavimo procesą, įskaitant skalavimą ir poslinkį, kad būtų kuo labiau išsaugota pradinė slankiojo taško informacija. Inference metu šios kvantifikuotos reikšmės bus dekvantifikuotos atgal į slankiojo taško skaičius skaičiavimui, o vėliau vėl kvantifikuotos į INT8 kitam žingsniui. Šis metodas daugumoje taikymų gali užtikrinti pakankamą tikslumą, išlaikant aukštą skaičiavimo efektyvumą.
+INT8 kiekinimas yra procesas, kai modelio svoriai ir aktyvacijos skaičiuojami iš plaukiojančio kablelio skaičių į 8 bitų sveikuosius skaičius. Nors INT8 sveikųjų skaičių atstovaujama skaitinė reikšmių sritis yra mažesnė ir mažiau tiksli, jis gerokai sumažina saugojimo ir skaičiavimo reikalavimus. INT8 kiekinimo metu modelio svoriai ir aktyvacijos reikšmės pereina kiekinimo procesą, įskaitant mastelį ir poslinkį, kad būtų išsaugota kuo daugiau originalios plaukiojančio kablelio informacijos. Infernso metu šios kiekinamos reikšmės dekiuinuojamos atgal į plaukiojančio kablelio skaičius skaičiavimui, o po to vėl kiekinamos į INT8 kitam žingsniui. Šis metodas daugeliu atvejų gali suteikti pakankamą tikslumą išlaikant aukštą skaičiavimo efektyvumą.
 
 ### **FP16**
 
-FP16 formatas, tai yra 16 bitų slankiojo taško skaičiai (float16), sumažina atminties naudojimą perpus, palyginti su 32 bitų slankiojo taško skaičiais (float32), ir turi reikšmingų pranašumų didelio masto giluminio mokymosi taikymuose. FP16 formatas leidžia įkelti didesnius modelius arba apdoroti daugiau duomenų, esant tiems patiems GPU atminties apribojimams. Kadangi moderni GPU techninė įranga vis dažniau palaiko FP16 operacijas, FP16 formato naudojimas taip pat gali pagerinti skaičiavimo greitį. Tačiau FP16 formatas turi ir savo trūkumų, būtent mažesnį tikslumą, kuris kai kuriais atvejais gali sukelti skaitmeninį nestabilumą arba tikslumo praradimą.
+FP16 formatas, tai yra 16 bitų plaukiojantieji skaičiai (float16), sumažina atminties naudojimą perpus, palyginti su 32 bitų plaukiojančio kablelio skaičiais (float32), kas turi reikšmingų privalumų didelio masto giluminio mokymosi programose. FP16 formatas leidžia įkelti didesnius modelius arba apdoroti daugiau duomenų toje pačioje GPU atminties ribose. Kadangi šiuolaikinė GPU aparatinė įranga toliau palaiko FP16 operacijas, FP16 formato naudojimas gali taip pat pagerinti skaičiavimo greitį. Tačiau FP16 formate taip pat yra savo trūkumų, būtent mažesnis tikslumas, kuris kai kuriais atvejais gali sukelti skaitmeninius nestabilumus ar tikslumo praradimą.
 
 ### **FP32**
 
-FP32 formatas užtikrina didesnį tikslumą ir gali tiksliai reprezentuoti platų reikšmių diapazoną. Scenarijuose, kuriuose atliekamos sudėtingos matematinės operacijos arba reikalingi aukšto tikslumo rezultatai, pirmenybė teikiama FP32 formatui. Tačiau didelis tikslumas taip pat reiškia didesnį atminties naudojimą ir ilgesnį skaičiavimo laiką. Didelio masto giluminio mokymosi modeliams, ypač kai yra daug modelio parametrų ir didžiulis duomenų kiekis, FP32 formatas gali sukelti GPU atminties trūkumą arba sumažinti inference greitį.
+FP32 formatas suteikia didesnį tikslumą ir gali tiksliai atstovauti platų reikšmių spektrą. Sudėtingų matematinių operacijų atlikimo arba aukšto tikslumo rezultatams reikalaujančiuose scenarijuose pageidaujamas FP32 formatas. Tačiau didelis tikslumas reiškia ir didesnį atminties naudojimą bei ilgesnį skaičiavimo laiką. Didelio masto giluminio mokymosi modeliuose, ypač kai daug modelio parametrų ir didelis duomenų kiekis, FP32 formatas gali sukelti GPU atminties nepakankamumą arba sumažinti inferenso greitį.
 
-Mobiliesiems įrenginiams ar IoT įrenginiams galime konvertuoti Phi-3.x modelius į INT4, o AI PC / Copilot PC gali naudoti didesnį tikslumą, pavyzdžiui, INT8, FP16, FP32.
+Mobiliose ar IoT įrenginiuose galime Phi-3.x modelius konvertuoti į INT4, o AI PC / Copilot PC gali naudoti aukštesnį tikslumą, pvz., INT8, FP16, FP32.
 
-Šiuo metu skirtingi techninės įrangos gamintojai turi skirtingas sistemas, palaikančias generatyvinius modelius, tokias kaip Intel OpenVINO, Qualcomm QNN, Apple MLX ir Nvidia CUDA, ir kartu su modelio kvantifikavimu galima atlikti vietinį diegimą.
+Šiuo metu įvairūs aparatūros gamintojai turi skirtingus pagrindus generatyviniams modeliams palaikyti, tokius kaip Intel OpenVINO, Qualcomm QNN, Apple MLX ir Nvidia CUDA, derindami su modelio kiekinimu, kad atliktų vietinį diegimą.
 
-Technologiniu požiūriu, po kvantifikavimo turime skirtingų formatų palaikymą, tokių kaip PyTorch / Tensorflow formatas, GGUF ir ONNX. Atlikau formatų palyginimą ir taikymo scenarijus tarp GGUF ir ONNX. Čia rekomenduoju ONNX kvantifikavimo formatą, kuris turi gerą palaikymą nuo modelio sistemos iki techninės įrangos. Šiame skyriuje daugiausia dėmesio skirsime ONNX Runtime GenAI, OpenVINO ir Apple MLX modelio kvantifikavimui (jei turite geresnį būdą, galite jį pateikti mums, pateikdami PR).
+Technologijų požiūriu, po kiekinimo palaikome skirtingus formatus, pavyzdžiui, PyTorch / TensorFlow formatą, GGUF ir ONNX. Parengiau formatų palyginimą ir taikymo scenarijus tarp GGUF ir ONNX. Čia rekomenduoju ONNX kiekinimo formatą, kuris turi gerą palaikymą nuo modelio pagrindo iki aparatinės įrangos. Šiame skyriuje sutelksime dėmesį į ONNX Runtime GenAI, OpenVINO ir Apple MLX modelio kiekinimui (jei turite geresnį būdą, galite jį pateikti, siųsdami PR).
 
 **Šis skyrius apima**
 
-1. [Phi-3.5 / 4 kvantifikavimas naudojant llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [Phi-3.5 / 4 kiekinimą naudojant llama.cpp](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Phi-3.5 / 4 kvantifikavimas naudojant generatyvinius AI plėtinius onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
+2. [Phi-3.5 / 4 kiekinimą naudojant Generatyvinių AI plėtinius onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Phi-3.5 / 4 kvantifikavimas naudojant Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [Phi-3.5 / 4 kiekinimą naudojant Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Phi-3.5 / 4 kvantifikavimas naudojant Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
+4. [Phi-3.5 / 4 kiekinimą naudojant Apple MLX sistemą](./UsingAppleMLXQuantifyingPhi.md)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas gimtąja kalba turi būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už bet kokius nesusipratimus ar neteisingą interpretavimą, kilusį dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
