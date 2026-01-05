@@ -1,44 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:47:12+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T08:28:20+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "ru"
 }
 -->
 ## Вывод с помощью Kaito
 
-[Kaito](https://github.com/Azure/kaito) — это оператор, который автоматизирует развертывание моделей AI/ML для инференса в кластере Kubernetes.
+[Kaito](https://github.com/Azure/kaito) — это оператор, который автоматизирует развертывание моделей инференса AI/ML в кластере Kubernetes.
 
-Kaito имеет следующие ключевые отличия по сравнению с большинством популярных методов развертывания моделей, основанных на инфраструктуре виртуальных машин:
+Kaito имеет следующие ключевые отличия по сравнению с большинством основных методов развертывания моделей, построенных на основе инфраструктуры виртуальных машин:
 
-- Управление файлами моделей с помощью контейнерных образов. Предоставляется HTTP-сервер для выполнения вызовов инференса с использованием библиотеки модели.
-- Избегание настройки параметров развертывания под конкретное GPU-оборудование за счёт предустановленных конфигураций.
-- Автоматическое выделение GPU-узлов в зависимости от требований модели.
-- Размещение больших образов моделей в публичном Microsoft Container Registry (MCR), если лицензия это позволяет.
+- Управление файлами моделей с использованием контейнерных образов. Предоставляется HTTP-сервер для выполнения вызовов инференса с использованием библиотеки моделей.
+- Избегание настройки параметров развертывания под конкретное GPU-оборудование с помощью предустановленных конфигураций.
+- Автоматическое выделение узлов с GPU в зависимости от требований модели.
+- Размещение больших образов моделей в публичном реестре контейнеров Microsoft Container Registry (MCR), если позволяет лицензия.
 
-Используя Kaito, процесс интеграции крупных AI-моделей для инференса в Kubernetes значительно упрощается.
+Используя Kaito, процесс подключения больших моделей AI инференса в Kubernetes значительно упрощается.
 
 ## Архитектура
 
-Kaito следует классическому паттерну проектирования Kubernetes Custom Resource Definition (CRD)/контроллер. Пользователь управляет кастомным ресурсом `workspace`, который описывает требования к GPU и спецификацию инференса. Контроллеры Kaito автоматизируют развертывание, синхронизируя состояние ресурса `workspace`.
+Kaito следует классическому паттерну проектирования Kubernetes Custom Resource Definition (CRD)/контроллера. Пользователь управляет собственным ресурсом `workspace`, который описывает требования к GPU и спецификацию инференса. Контроллеры Kaito автоматизируют развертывание, приводя в соответствие ресурс `workspace`.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Архитектура Kaito" alt="Архитектура Kaito">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-На рисунке выше показан обзор архитектуры Kaito. Основные компоненты включают:
+На рисунке выше представлена обзорная архитектура Kaito. Основные компоненты включают:
 
-- **Контроллер workspace**: Синхронизирует кастомный ресурс `workspace`, создаёт кастомные ресурсы `machine` (описаны ниже) для запуска автоматического выделения узлов и создаёт нагрузку для инференса (`deployment` или `statefulset`) на основе предустановленных конфигураций модели.
-- **Контроллер provisioner узлов**: Контроллер называется *gpu-provisioner* в [helm-чарте gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Он использует CRD `machine`, взятый из [Karpenter](https://sigs.k8s.io/karpenter), для взаимодействия с контроллером workspace. Интегрируется с API Azure Kubernetes Service (AKS) для добавления новых GPU-узлов в кластер AKS.  
+- **Контроллер Workspace**: Он приводит в соответствие ресурс `workspace`, создает пользовательские ресурсы `machine` (описанные ниже) для запуска автоматического выделения узлов и создает рабочую нагрузку инференса (`deployment` или `statefulset`) на основе предустановленных конфигураций модели.
+- **Контроллер выделения узлов**: Контроллер называется *gpu-provisioner* в [helm-чарте gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Он использует CRD ресурса `machine`, появившийся из проекта [Karpenter](https://sigs.k8s.io/karpenter), для взаимодействия с контроллером workspace. Интегрируется с API Azure Kubernetes Service (AKS) для добавления новых GPU-узлов в кластер AKS.
 > Примечание: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) — это компонент с открытым исходным кодом. Его можно заменить другими контроллерами, если они поддерживают API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Установка
 
-Пожалуйста, ознакомьтесь с инструкцией по установке [здесь](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Пожалуйста, ознакомьтесь с руководством по установке [здесь](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Быстрый старт: инференс Phi-3  
-[Пример кода для инференса Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Быстрый старт с инференсом Phi-3
+[Пример кода инференса Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +77,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Настройка выходного пути ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Статус workspace можно отслеживать с помощью следующей команды. Когда в столбце WORKSPACEREADY появится значение `True`, модель успешно развернута.
+Статус рабочего пространства можно отследить, выполнив следующую команду. Когда в столбце WORKSPACEREADY появляется значение `True`, модель успешно развернута.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Далее можно узнать IP-адрес сервиса инференса в кластере и использовать временный pod с `curl` для тестирования конечной точки сервиса внутри кластера.
+Далее можно найти IP-адрес службы инференса в кластере и использовать временный pod с `curl` для тестирования конечной точки сервиса внутри кластера.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +103,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Быстрый старт: инференс Phi-3 с адаптерами
+## Быстрый старт с инференсом Phi-3 с адаптерами
 
-После установки Kaito можно выполнить следующие команды для запуска сервиса инференса.
+После установки Kaito можно выполнить следующие команды, чтобы запустить службу инференса.
 
-[Пример кода для инференса Phi-3 с адаптерами](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Пример кода инференса Phi-3 с адаптерами](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +149,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Настройка выходного пути ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Статус workspace можно отслеживать с помощью следующей команды. Когда в столбце WORKSPACEREADY появится значение `True`, модель успешно развернута.
+Статус рабочего пространства можно отследить, выполнив следующую команду. Когда в столбце WORKSPACEREADY появляется значение `True`, модель успешно развернута.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Далее можно узнать IP-адрес сервиса инференса в кластере и использовать временный pod с `curl` для тестирования конечной точки сервиса внутри кластера.
+Далее можно найти IP-адрес службы инференса в кластере и использовать временный pod с `curl` для тестирования конечной точки сервиса внутри кластера.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +175,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Хотя мы стремимся к точности, просим учитывать, что машинный перевод может содержать ошибки и неточности. Оригинальный документ на исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
