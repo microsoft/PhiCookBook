@@ -1,53 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-17T00:07:15+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T08:31:04+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "ar"
 }
 -->
-# ضبط وتحسين نماذج Phi-3 المخصصة ودمجها مع Prompt flow
+# تعديل وتكامل نماذج Phi-3 المخصصة مع Prompt flow
 
-يعتمد هذا المثال الشامل (E2E) على الدليل "[ضبط وتحسين نماذج Phi-3 المخصصة مع Prompt Flow: دليل خطوة بخطوة](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع مايكروسوفت التقني. يشرح هذا المثال عمليات ضبط النماذج، نشرها، ودمج نماذج Phi-3 المخصصة مع Prompt flow.
+يعتمد هذا المثال الشامل (E2E) على الدليل "[تعديل وتكامل نماذج Phi-3 المخصصة مع Prompt Flow: دليل خطوة بخطوة](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft Tech. يقدم العمليات الخاصة بتعديل النماذج بنعومة، نشرها، وتكامل نماذج Phi-3 المخصصة مع Prompt flow.
 
 ## نظرة عامة
 
-في هذا المثال الشامل، ستتعلم كيفية ضبط نموذج Phi-3 ودمجه مع Prompt flow. من خلال الاستفادة من Azure Machine Learning وPrompt flow، ستنشئ سير عمل لنشر واستخدام نماذج الذكاء الاصطناعي المخصصة. ينقسم هذا المثال إلى ثلاث سيناريوهات:
+في هذا المثال الشامل، ستتعلم كيفية تعديل نموذج Phi-3 ودمجه مع Prompt flow. من خلال الاستفادة من Azure Machine Learning و Prompt flow، ستؤسس سير عمل لنشر واستخدام نماذج الذكاء الاصطناعي المخصصة. ينقسم هذا المثال إلى ثلاث سيناريوهات:
 
-**السيناريو 1: إعداد موارد Azure والتحضير لعملية الضبط**
+**السيناريو 1: إعداد موارد Azure والاستعداد للتعديل**
 
-**السيناريو 2: ضبط نموذج Phi-3 ونشره في Azure Machine Learning Studio**
+**السيناريو 2: تعديل نموذج Phi-3 ونشره في Azure Machine Learning Studio**
 
-**السيناريو 3: الدمج مع Prompt flow والدردشة مع نموذجك المخصص**
+**السيناريو 3: التكامل مع Prompt flow والدردشة مع نموذجك المخصص**
 
-فيما يلي نظرة عامة على هذا المثال الشامل.
+إليك نظرة عامة على هذا المثال الشامل.
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.ar.png)
 
 ### جدول المحتويات
 
-1. **[السيناريو 1: إعداد موارد Azure والتحضير لعملية الضبط](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[السيناريو 1: إعداد موارد Azure والاستعداد للتعديل](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [إنشاء مساحة عمل Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [طلب حصص GPU في اشتراك Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [إضافة تعيين دور](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [إضافة تعيين الدور](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [إعداد المشروع](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [تحضير مجموعة البيانات للضبط](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [تحضير مجموعة البيانات للتعديل](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[السيناريو 2: ضبط نموذج Phi-3 ونشره في Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[السيناريو 2: تعديل نموذج Phi-3 ونشره في Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [إعداد Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [ضبط نموذج Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [نشر النموذج المضبوط](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [تعديل نموذج Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [نشر النموذج المعدل](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[السيناريو 3: الدمج مع Prompt flow والدردشة مع نموذجك المخصص](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[السيناريو 3: التكامل مع Prompt flow والدردشة مع نموذجك المخصص](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [دمج نموذج Phi-3 المخصص مع Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [الدردشة مع نموذجك المخصص](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## السيناريو 1: إعداد موارد Azure والتحضير لعملية الضبط
+## السيناريو 1: إعداد موارد Azure والاستعداد للتعديل
 
 ### إنشاء مساحة عمل Azure Machine Learning
 
-1. اكتب *azure machine learning* في **شريط البحث** أعلى صفحة البوابة واختر **Azure Machine Learning** من الخيارات التي تظهر.
+1. اكتب *azure machine learning* في **شريط البحث** في أعلى صفحة البوابة واختر **Azure Machine Learning** من الخيارات التي تظهر.
 
     ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ar.png)
 
@@ -60,13 +60,13 @@ CO_OP_TRANSLATOR_METADATA:
 1. قم بالمهام التالية:
 
     - اختر **الاشتراك** الخاص بك في Azure.
-    - اختر **مجموعة الموارد** التي تريد استخدامها (أنشئ واحدة جديدة إذا لزم الأمر).
-    - أدخل **اسم مساحة العمل**. يجب أن يكون قيمة فريدة.
-    - اختر **المنطقة** التي ترغب في استخدامها.
-    - اختر **حساب التخزين** الذي تريد استخدامه (أنشئ واحدًا جديدًا إذا لزم الأمر).
-    - اختر **مخزن المفاتيح** الذي تريد استخدامه (أنشئ واحدًا جديدًا إذا لزم الأمر).
-    - اختر **Application insights** الذي تريد استخدامه (أنشئ واحدًا جديدًا إذا لزم الأمر).
-    - اختر **سجل الحاويات** الذي تريد استخدامه (أنشئ واحدًا جديدًا إذا لزم الأمر).
+    - اختر **مجموعة الموارد** التي ستستخدمها (أنشئ واحدة جديدة إذا لزم الأمر).
+    - أدخل **اسم مساحة العمل**. يجب أن تكون قيمة فريدة.
+    - اختر **المنطقة** التي تود استخدامها.
+    - اختر **حساب التخزين** الذي ستستخدمه (أنشئ حسابًا جديدًا إذا لزم الأمر).
+    - اختر **المخزن الرئيسي للمفاتيح (Key vault)** الذي ستستخدمه (أنشئ واحدًا جديدًا إذا لزم الأمر).
+    - اختر **Application insights** التي ستستخدمها (أنشئ واحدة جديدة إذا لزم الأمر).
+    - اختر **سجل الحاويات (Container registry)** الذي ستستخدمه (أنشئ واحدًا جديدًا إذا لزم الأمر).
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ar.png)
 
@@ -76,37 +76,37 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### طلب حصص GPU في اشتراك Azure
 
-في هذا المثال الشامل، ستستخدم *Standard_NC24ads_A100_v4 GPU* لعملية الضبط، والتي تتطلب طلب حصة، و*Standard_E4s_v3* CPU للنشر، والتي لا تتطلب طلب حصة.
+في هذا المثال الشامل، ستستخدم *Standard_NC24ads_A100_v4 GPU* للتعديل، والتي تتطلب طلب حصة، و*Standard_E4s_v3* CPU للنشر، والتي لا تحتاج لطلب حصة.
 
 > [!NOTE]
 >
-> فقط اشتراكات الدفع حسب الاستخدام (نوع الاشتراك القياسي) مؤهلة لتخصيص GPU؛ الاشتراكات المميزة غير مدعومة حاليًا.
+> لا يحق لحسابات الاشتراك من نوع "الدفع حسب الاستخدام" (نوع الاشتراك القياسي) الحصول على تخصيص GPU؛ الاشتراكات الاستفادية غير مدعومة حاليًا.
 >
-> بالنسبة لأولئك الذين يستخدمون اشتراكات مميزة (مثل اشتراك Visual Studio Enterprise) أو الذين يرغبون في اختبار عملية الضبط والنشر بسرعة، يوفر هذا الدليل أيضًا إرشادات لضبط نموذج باستخدام مجموعة بيانات صغيرة باستخدام CPU. ومع ذلك، من المهم ملاحظة أن نتائج الضبط تكون أفضل بكثير عند استخدام GPU مع مجموعات بيانات أكبر.
+> للمستخدمين الذين لديهم اشتراكات استفادية (مثل اشتراك Visual Studio Enterprise) أو الراغبين في تجربة عملية التعديل والنشر بسرعة، يقدم هذا الدليل أيضًا إرشادات لتعديل باستخدام مجموعة بيانات صغيرة باستخدام CPU. ومع ذلك، من المهم ملاحظة أن نتائج التعديل تكون أفضل بكثير عند استخدام GPU مع مجموعات بيانات أكبر.
 
-1. قم بزيارة [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. زر [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. قم بالمهام التالية لطلب حصة *Standard NCADSA100v4 Family*:
 
-    - اختر **الحصة** من علامة التبويب على الجانب الأيسر.
-    - اختر **عائلة الأجهزة الافتراضية** التي تريد استخدامها. على سبيل المثال، اختر **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**، والتي تشمل *Standard_NC24ads_A100_v4* GPU.
+    - اختر **الحصة (Quota)** من علامة الجانب الأيسر.
+    - اختر **عائلة الآلة الافتراضية** التي تريد استخدامها. مثال، اختر **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** والتي تشمل *Standard_NC24ads_A100_v4* GPU.
     - اختر **طلب الحصة** من قائمة التنقل.
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ar.png)
 
-    - داخل صفحة طلب الحصة، أدخل **الحد الجديد للأنوية** التي ترغب في استخدامها. على سبيل المثال، 24.
-    - داخل صفحة طلب الحصة، اختر **إرسال** لطلب حصة GPU.
+    - في صفحة طلب الحصة، أدخل **الحد الأقصى للأنوية الجديدة** التي تريد استخدامها. مثلًا، 24.
+    - في صفحة طلب الحصة، اختر **إرسال** لطلب حصة GPU.
 
 > [!NOTE]
-> يمكنك اختيار GPU أو CPU المناسب لاحتياجاتك بالرجوع إلى وثيقة [أحجام الأجهزة الافتراضية في Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> يمكنك اختيار GPU أو CPU المناسب لاحتياجاتك بالرجوع إلى وثيقة [أحجام الآلات الافتراضية في Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
-### إضافة تعيين دور
+### إضافة تعيين الدور
 
-لضبط ونشر نماذجك، يجب أولاً إنشاء هوية مُدارة مخصصة للمستخدم (UAI) ومنحها الأذونات المناسبة. ستُستخدم هذه الهوية للمصادقة أثناء النشر.
+لتعديل ونشر نماذجك، يجب أولاً إنشاء هوية مُدارة معينة للمستخدم (User Assigned Managed Identity - UAI) ومنحها الأذونات المناسبة. ستستخدم هذه الهوية للمصادقة أثناء النشر.
 
-#### إنشاء هوية مُدارة مخصصة للمستخدم (UAI)
+#### إنشاء هوية مُدارة معينه للمستخدم (UAI)
 
-1. اكتب *managed identities* في **شريط البحث** أعلى صفحة البوابة واختر **Managed Identities** من الخيارات التي تظهر.
+1. اكتب *managed identities* في **شريط البحث** في أعلى صفحة البوابة واختر **Managed Identities** من الخيارات التي تظهر.
 
     ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ar.png)
 
@@ -116,60 +116,60 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. قم بالمهام التالية:
 
-    - اختر **الاشتراك** الخاص بك في Azure.
-    - اختر **مجموعة الموارد** التي تريد استخدامها (أنشئ واحدة جديدة إذا لزم الأمر).
-    - اختر **المنطقة** التي ترغب في استخدامها.
+    - اختر اشتراك Azure الخاص بك.
+    - اختر مجموعة الموارد التي تريد استخدامها (أنشئ واحدة جديدة إذا لزم الأمر).
+    - اختر المنطقة التي تريد استخدامها.
     - أدخل **الاسم**. يجب أن يكون قيمة فريدة.
 
 1. اختر **مراجعة + إنشاء**.
 
 1. اختر **+ إنشاء**.
 
-#### إضافة تعيين دور Contributor إلى الهوية المُدارة
+#### إضافة تعيين دور "المساهم" إلى الهوية المُدارة
 
-1. انتقل إلى مورد الهوية المُدارة الذي أنشأته.
+1. انتقل إلى مورد الهوية المُدارة الذي قمت بإنشائه.
 
-1. اختر **تعيينات أدوار Azure** من علامة التبويب على الجانب الأيسر.
+1. اختر **تعيينات الأدوار في Azure (Azure role assignments)** من علامة الجانب الأيسر.
 
 1. اختر **+ إضافة تعيين دور** من قائمة التنقل.
 
-1. داخل صفحة إضافة تعيين دور، قم بالمهام التالية:
-    - اختر **النطاق** إلى **مجموعة الموارد**.
-    - اختر **الاشتراك** الخاص بك في Azure.
-    - اختر **مجموعة الموارد** التي تريد استخدامها.
-    - اختر **الدور** إلى **Contributor**.
+1. في صفحة إضافة تعيين دور، قم بالمهام التالية:
+    - حدد **النطاق (Scope)** ليكون **مجموعة الموارد (Resource group)**.
+    - اختر اشتراك Azure الخاص بك.
+    - اختر مجموعة الموارد التي ستستخدمها.
+    - اختر الدور **مساهم (Contributor)**.
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ar.png)
 
 1. اختر **حفظ**.
 
-#### إضافة تعيين دور Storage Blob Data Reader إلى الهوية المُدارة
+#### إضافة تعيين دور "قارئ بيانات تخزين الكائنات (Storage Blob Data Reader)" إلى الهوية المُدارة
 
-1. اكتب *storage accounts* في **شريط البحث** أعلى صفحة البوابة واختر **Storage accounts** من الخيارات التي تظهر.
+1. اكتب *storage accounts* في **شريط البحث** في أعلى صفحة البوابة واختر **Storage accounts** من الخيارات التي تظهر.
 
     ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ar.png)
 
-1. اختر حساب التخزين المرتبط بمساحة عمل Azure Machine Learning التي أنشأتها. على سبيل المثال، *finetunephistorage*.
+1. اختر حساب التخزين المرتبط بمساحة عمل Azure Machine Learning التي أنشأتها. مثال، *finetunephistorage*.
 
-1. قم بالمهام التالية للانتقال إلى صفحة إضافة تعيين دور:
+1. قم بالمهام التالية للانتقال إلى صفحة إضافة تعيين الدور:
 
-    - انتقل إلى حساب التخزين الذي أنشأته.
-    - اختر **التحكم في الوصول (IAM)** من علامة التبويب على الجانب الأيسر.
+    - انتقل إلى حساب التخزين Azure الذي أنشأته.
+    - اختر **التحكم في الوصول (IAM)** من علامة الجانب الأيسر.
     - اختر **+ إضافة** من قائمة التنقل.
     - اختر **إضافة تعيين دور** من قائمة التنقل.
 
     ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ar.png)
 
-1. داخل صفحة إضافة تعيين دور، قم بالمهام التالية:
+1. في صفحة إضافة تعيين دور، قم بالمهام التالية:
 
-    - داخل صفحة الدور، اكتب *Storage Blob Data Reader* في **شريط البحث** واختر **Storage Blob Data Reader** من الخيارات التي تظهر.
-    - داخل صفحة الدور، اختر **التالي**.
-    - داخل صفحة الأعضاء، اختر **تعيين الوصول إلى** **Managed identity**.
-    - داخل صفحة الأعضاء، اختر **+ اختيار الأعضاء**.
-    - داخل صفحة اختيار الهويات المُدارة، اختر **الاشتراك** الخاص بك في Azure.
-    - داخل صفحة اختيار الهويات المُدارة، اختر **الهوية المُدارة** إلى **Manage Identity**.
-    - داخل صفحة اختيار الهويات المُدارة، اختر الهوية المُدارة التي أنشأتها. على سبيل المثال، *finetunephi-managedidentity*.
-    - داخل صفحة اختيار الهويات المُدارة، اختر **اختيار**.
+    - في صفحة الدور، اكتب *Storage Blob Data Reader* في **شريط البحث** واختر **Storage Blob Data Reader** من الخيارات التي تظهر.
+    - في صفحة الدور، اختر **التالي**.
+    - في صفحة الأعضاء، اختر **تعيين الوصول إلى** **هوية مُدارة (Managed identity)**.
+    - في صفحة الأعضاء، اختر **+ اختيار الأعضاء**.
+    - في صفحة اختيار الهويات المُدارة، اختر اشتراك Azure الخاص بك.
+    - في صفحة اختيار الهويات المُدارة، اختر **الهوية المُدارة** إلى **Manage Identity**.
+    - في صفحة اختيار الهويات المُدارة، اختر الهوية المُدارة التي أنشأتها. مثال، *finetunephi-managedidentity*.
+    - في صفحة اختيار الهويات المُدارة، اختر **تحديد**.
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ar.png)
 
@@ -177,43 +177,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### إضافة تعيين دور AcrPull إلى الهوية المُدارة
 
-1. اكتب *container registries* في **شريط البحث** أعلى صفحة البوابة واختر **Container registries** من الخيارات التي تظهر.
+1. اكتب *container registries* في **شريط البحث** في أعلى صفحة البوابة واختر **Container registries** من الخيارات التي تظهر.
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ar.png)
 
-1. اختر سجل الحاويات المرتبط بمساحة عمل Azure Machine Learning. على سبيل المثال، *finetunephicontainerregistries*
+1. اختر سجل الحاويات المرتبط بمساحة عمل Azure Machine Learning. مثال، *finetunephicontainerregistries*.
 
-1. قم بالمهام التالية للانتقال إلى صفحة إضافة تعيين دور:
+1. قم بالمهام التالية للانتقال إلى صفحة إضافة تعيين الدور:
 
-    - اختر **التحكم في الوصول (IAM)** من علامة التبويب على الجانب الأيسر.
+    - اختر **التحكم في الوصول (IAM)** من علامة الجانب الأيسر.
     - اختر **+ إضافة** من قائمة التنقل.
     - اختر **إضافة تعيين دور** من قائمة التنقل.
 
-1. داخل صفحة إضافة تعيين دور، قم بالمهام التالية:
+1. في صفحة إضافة تعيين دور، قم بالمهام التالية:
 
-    - داخل صفحة الدور، اكتب *AcrPull* في **شريط البحث** واختر **AcrPull** من الخيارات التي تظهر.
-    - داخل صفحة الدور، اختر **التالي**.
-    - داخل صفحة الأعضاء، اختر **تعيين الوصول إلى** **Managed identity**.
-    - داخل صفحة الأعضاء، اختر **+ اختيار الأعضاء**.
-    - داخل صفحة اختيار الهويات المُدارة، اختر **الاشتراك** الخاص بك في Azure.
-    - داخل صفحة اختيار الهويات المُدارة، اختر **الهوية المُدارة** إلى **Manage Identity**.
-    - داخل صفحة اختيار الهويات المُدارة، اختر الهوية المُدارة التي أنشأتها. على سبيل المثال، *finetunephi-managedidentity*.
-    - داخل صفحة اختيار الهويات المُدارة، اختر **اختيار**.
+    - في صفحة الدور، اكتب *AcrPull* في **شريط البحث** واختر **AcrPull** من الخيارات التي تظهر.
+    - في صفحة الدور، اختر **التالي**.
+    - في صفحة الأعضاء، اختر **تعيين الوصول إلى** **هوية مُدارة (Managed identity)**.
+    - في صفحة الأعضاء، اختر **+ اختيار الأعضاء**.
+    - في صفحة اختيار الهويات المُدارة، اختر اشتراك Azure الخاص بك.
+    - في صفحة اختيار الهويات المُدارة، اختر **الهوية المُدارة** إلى **Manage Identity**.
+    - في صفحة اختيار الهويات المُدارة، اختر الهوية المُدارة التي أنشأتها. مثال، *finetunephi-managedidentity*.
+    - في صفحة اختيار الهويات المُدارة، اختر **تحديد**.
     - اختر **مراجعة + تعيين**.
 
 ### إعداد المشروع
 
-الآن، ستقوم بإنشاء مجلد للعمل بداخله وإعداد بيئة افتراضية لتطوير برنامج يتفاعل مع المستخدمين ويستخدم محفوظات الدردشة المخزنة من Azure Cosmos DB لإثراء ردوده.
+الآن، ستقوم بإنشاء مجلد للعمل فيه وإعداد بيئة افتراضية لتطوير برنامج يتفاعل مع المستخدمين ويستخدم محفوظات الدردشة المخزنة في Azure Cosmos DB لإثراء ردوده.
 
 #### إنشاء مجلد للعمل بداخله
 
-1. افتح نافذة الطرفية واكتب الأمر التالي لإنشاء مجلد باسم *finetune-phi* في المسار الافتراضي.
+1. افتح نافذة المحطة (Terminal) واكتب الأمر التالي لإنشاء مجلد باسم *finetune-phi* في المسار الافتراضي.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. اكتب الأمر التالي داخل الطرفية للانتقال إلى مجلد *finetune-phi* الذي أنشأته.
+1. اكتب الأمر التالي داخل المحطة للتنقل إلى مجلد *finetune-phi* الذي أنشأته.
 
     ```console
     cd finetune-phi
@@ -221,23 +221,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### إنشاء بيئة افتراضية
 
-1. اكتب الأمر التالي داخل الطرفية لإنشاء بيئة افتراضية باسم *.venv*.
+1. اكتب الأمر التالي داخل المحطة لإنشاء بيئة افتراضية باسم *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. اكتب الأمر التالي داخل الطرفية لتفعيل البيئة الافتراضية.
+1. اكتب الأمر التالي داخل المحطة لتفعيل البيئة الافتراضية.
 
     ```console
     .venv\Scripts\activate.bat
     ```
+
 > [!NOTE]
 >
-> إذا نجح الأمر، يجب أن ترى *(.venv)* قبل موجه الأوامر.
+> إذا نجح الأمر، يجب أن ترى *(.venv)* قبل موجه الأمر.
+
 #### تثبيت الحزم المطلوبة
 
-1. اكتب الأوامر التالية داخل الطرفية لتثبيت الحزم المطلوبة.
+1. اكتب الأوامر التالية داخل المحطة لتثبيت الحزم المطلوبة.
 
     ```console
     pip install datasets==2.19.1
@@ -249,23 +251,22 @@ CO_OP_TRANSLATOR_METADATA:
     ```
 
 #### إنشاء ملفات المشروع
+في هذا التمرين، سوف تقوم بإنشاء الملفات الأساسية لمشروعنا. تتضمن هذه الملفات سكريبتات لتحميل مجموعة البيانات، إعداد بيئة Azure Machine Learning، تحسين نموذج Phi-3، ونشر النموذج المحسن. ستقوم أيضًا بإنشاء ملف *conda.yml* لإعداد بيئة التحسين.
 
-في هذا التمرين، ستقوم بإنشاء الملفات الأساسية لمشروعنا. تشمل هذه الملفات سكريبتات لتحميل مجموعة البيانات، إعداد بيئة Azure Machine Learning، ضبط نموذج Phi-3 بدقة، ونشر النموذج بعد ضبطه. كما ستقوم بإنشاء ملف *conda.yml* لإعداد بيئة الضبط الدقيق.
-
-في هذا التمرين، ستقوم بـ:
+في هذا التمرين، سوف:
 
 - إنشاء ملف *download_dataset.py* لتحميل مجموعة البيانات.
 - إنشاء ملف *setup_ml.py* لإعداد بيئة Azure Machine Learning.
-- إنشاء ملف *fine_tune.py* داخل مجلد *finetuning_dir* لضبط نموذج Phi-3 باستخدام مجموعة البيانات.
-- إنشاء ملف *conda.yml* لإعداد بيئة الضبط الدقيق.
-- إنشاء ملف *deploy_model.py* لنشر النموذج بعد ضبطه.
-- إنشاء ملف *integrate_with_promptflow.py* لدمج النموذج المضبوط وتنفيذه باستخدام Prompt flow.
-- إنشاء ملف flow.dag.yml لإعداد هيكل سير العمل لـ Prompt flow.
-- إنشاء ملف *config.py* لإدخال معلومات Azure.
+- إنشاء ملف *fine_tune.py* داخل مجلد *finetuning_dir* لتحسين نموذج Phi-3 باستخدام مجموعة البيانات.
+- إنشاء ملف *conda.yml* لإعداد بيئة التحسين.
+- إنشاء ملف *deploy_model.py* لنشر النموذج المحسن.
+- إنشاء ملف *integrate_with_promptflow.py*، لدمج النموذج المحسن وتنفيذ النموذج باستخدام Prompt flow.
+- إنشاء ملف flow.dag.yml، لإعداد هيكل سير العمل في Prompt flow.
+- إنشاء ملف *config.py* لإدخال معلومات Azure الخاصة بك.
 
 > [!NOTE]
 >
-> هيكل المجلدات الكامل:
+> هيكل المجلد الكامل:
 >
 > ```text
 > └── YourUserName
@@ -283,11 +284,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. افتح **Visual Studio Code**.
 
-1. اختر **File** من شريط القوائم.
+1. اختر **File** من شريط القائمة.
 
 1. اختر **Open Folder**.
 
-1. اختر مجلد *finetune-phi* الذي أنشأته، والموجود في *C:\Users\yourUserName\finetune-phi*.
+1. اختر مجلد *finetune-phi* الذي قمت بإنشائه، والذي يقع في *C:\Users\yourUserName\finetune-phi*.
 
     ![فتح مجلد المشروع.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ar.png)
 
@@ -301,13 +302,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. في الجزء الأيسر من Visual Studio Code، انقر بزر الماوس الأيمن واختر **New Folder** لإنشاء مجلد جديد باسم *finetuning_dir*.
 
-1. داخل مجلد *finetuning_dir*، أنشئ ملفًا جديدًا باسم *fine_tune.py*.
+1. في مجلد *finetuning_dir*، أنشئ ملفًا جديدًا باسم *fine_tune.py*.
 
-#### إنشاء وتكوين ملف *conda.yml*
+#### إنشاء وضبط ملف *conda.yml*
 
 1. في الجزء الأيسر من Visual Studio Code، انقر بزر الماوس الأيمن واختر **New File** لإنشاء ملف جديد باسم *conda.yml*.
 
-1. أضف الكود التالي إلى ملف *conda.yml* لإعداد بيئة الضبط الدقيق لنموذج Phi-3.
+1. أضف الكود التالي إلى ملف *conda.yml* لإعداد بيئة التحسين لنموذج Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -333,30 +334,30 @@ CO_OP_TRANSLATOR_METADATA:
           - azureml-mlflow==1.57.0
     ```
 
-#### إنشاء وتكوين ملف *config.py*
+#### إنشاء وضبط ملف *config.py*
 
 1. في الجزء الأيسر من Visual Studio Code، انقر بزر الماوس الأيمن واختر **New File** لإنشاء ملف جديد باسم *config.py*.
 
 1. أضف الكود التالي إلى ملف *config.py* لإدخال معلومات Azure الخاصة بك.
 
     ```python
-    # Azure settings
+    # إعدادات أزور
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
     AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
 
-    # Azure Machine Learning settings
+    # إعدادات التعلم الآلي في أزور
     AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
 
-    # Azure Managed Identity settings
+    # إعدادات الهوية المُدارة لأزور
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
     AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # مسارات ملفات مجموعة البيانات
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # إعدادات النموذج المُحسّن
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
     AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
     AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
@@ -367,40 +368,40 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### إضافة متغيرات بيئة Azure
 
-1. قم بالمهام التالية لإضافة معرف اشتراك Azure:
+1. قم بتنفيذ المهام التالية لإضافة معرف الاشتراك الخاص بك في Azure:
 
-    - اكتب *subscriptions* في **شريط البحث** أعلى صفحة البوابة واختر **Subscriptions** من الخيارات الظاهرة.
-    - اختر اشتراك Azure الذي تستخدمه حاليًا.
+    - اكتب *subscriptions* في **شريط البحث** في أعلى صفحة البوابة واختر **Subscriptions** من الخيارات الظاهرة.
+    - اختر الاشتراك في Azure الذي تستخدمه حاليًا.
     - انسخ والصق معرف الاشتراك في ملف *config.py*.
 
     ![العثور على معرف الاشتراك.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ar.png)
 
-1. قم بالمهام التالية لإضافة اسم مساحة عمل Azure:
+1. قم بتنفيذ المهام التالية لإضافة اسم مساحة العمل في Azure:
 
     - انتقل إلى مورد Azure Machine Learning الذي أنشأته.
-    - انسخ والصق اسم حسابك في ملف *config.py*.
+    - انسخ والصق اسم الحساب الخاص بك في ملف *config.py*.
 
     ![العثور على اسم Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ar.png)
 
-1. قم بالمهام التالية لإضافة اسم مجموعة موارد Azure:
+1. قم بتنفيذ المهام التالية لإضافة اسم مجموعة الموارد في Azure:
 
     - انتقل إلى مورد Azure Machine Learning الذي أنشأته.
-    - انسخ والصق اسم مجموعة موارد Azure في ملف *config.py*.
+    - انسخ والصق اسم مجموعة الموارد الخاص بك في ملف *config.py*.
 
     ![العثور على اسم مجموعة الموارد.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ar.png)
 
-2. قم بالمهام التالية لإضافة اسم الهوية المُدارة لـ Azure
+2. قم بتنفيذ المهام التالية لإضافة اسم الهوية المُدارة في Azure
 
     - انتقل إلى مورد Managed Identities الذي أنشأته.
-    - انسخ والصق اسم الهوية المُدارة في ملف *config.py*.
+    - انسخ والصق اسم الهوية المُدارة في Azure في ملف *config.py*.
 
     ![العثور على UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ar.png)
 
-### تحضير مجموعة البيانات للضبط الدقيق
+### إعداد مجموعة البيانات للتحسين
 
-في هذا التمرين، ستشغل ملف *download_dataset.py* لتحميل مجموعة بيانات *ULTRACHAT_200k* إلى بيئتك المحلية. بعد ذلك، ستستخدم هذه المجموعة لضبط نموذج Phi-3 في Azure Machine Learning.
+في هذا التمرين، سوف تقوم بتشغيل ملف *download_dataset.py* لتحميل مجموعات بيانات *ULTRACHAT_200k* إلى بيئتك المحلية. ثم ستستخدم هذه المجموعات لتحسين نموذج Phi-3 في Azure Machine Learning.
 
-#### تحميل مجموعة البيانات باستخدام *download_dataset.py*
+#### تحميل مجموعة البيانات الخاصة بك باستخدام *download_dataset.py*
 
 1. افتح ملف *download_dataset.py* في Visual Studio Code.
 
@@ -418,11 +419,11 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # تحميل مجموعة البيانات بالاسم المحدد، التكوين، ونسبة التقسيم
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # تقسيم مجموعة البيانات إلى مجموعات تدريب واختبار (٨٠٪ تدريب، ٢٠٪ اختبار)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -433,16 +434,16 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # إنشاء الدليل إذا لم يكن موجودًا
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # فتح الملف بوضع الكتابة
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # التكرار على كل سجل في مجموعة البيانات
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # تفريغ السجل ككائن JSON وكتابته في الملف
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # كتابة حرف سطر جديد لفصل السجلات
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -451,17 +452,17 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # تحميل وتقسيم مجموعة بيانات ULTRACHAT_200k بتكوين ونسبة تقسيم محددة
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # استخراج مجموعات بيانات التدريب والاختبار من التقسيم
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # حفظ مجموعة بيانات التدريب في ملف JSONL
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # حفظ مجموعة بيانات الاختبار في ملف JSONL منفصل
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -471,14 +472,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **إرشادات للضبط الدقيق باستخدام مجموعة بيانات صغيرة على وحدة معالجة مركزية (CPU)**
+> **إرشادات للتحسين باستخدام مجموعة بيانات صغيرة باستخدام وحدة معالجة مركزية CPU**
 >
-> إذا كنت ترغب في استخدام وحدة معالجة مركزية للضبط الدقيق، فهذه الطريقة مناسبة لمن لديهم اشتراكات مميزة (مثل اشتراك Visual Studio Enterprise) أو لاختبار عملية الضبط والنشر بسرعة.
+> إذا كنت ترغب في استخدام وحدة معالجة مركزية لتحسين النموذج، فإن هذا الأسلوب مثالي لأولئك الذين يمتلكون اشتراكات فائدة (مثل اشتراك Visual Studio Enterprise) أو لاختبار سريع لعملية التحسين والنشر.
 >
 > استبدل `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` بـ `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. اكتب الأمر التالي داخل الطرفية لتشغيل السكريبت وتحميل مجموعة البيانات إلى بيئتك المحلية.
+1. اكتب الأمر التالي داخل طرفية الأوامر لتشغيل السكريبت وتحميل مجموعة البيانات إلى بيئتك المحلية.
 
     ```console
     python download_data.py
@@ -488,48 +489,48 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!NOTE]
 >
-> **حجم مجموعة البيانات ووقت الضبط الدقيق**
+> **حجم مجموعة البيانات ووقت التحسين**
 >
-> في هذا المثال الشامل، تستخدم فقط 1% من مجموعة البيانات (`train_sft[:1%]`). هذا يقلل بشكل كبير من حجم البيانات، مما يسرع من عمليات الرفع والضبط الدقيق. يمكنك تعديل النسبة لإيجاد التوازن المناسب بين وقت التدريب وأداء النموذج. استخدام جزء أصغر من مجموعة البيانات يقلل من الوقت المطلوب للضبط الدقيق، مما يجعل العملية أكثر سهولة في هذا المثال الشامل.
+> في هذا المثال شامل النهاية للنهاية (E2E)، تستخدم فقط 1% من مجموعة البيانات (`train_sft[:1%]`). هذا يقلل بشكل كبير من كمية البيانات، مما يسرِّع كلًا من تحميل البيانات وعمليات التحسين. يمكنك تعديل النسبة لإيجاد التوازن المناسب بين وقت التدريب وأداء النموذج. استخدام جزء أصغر من مجموعة البيانات يقلل من الوقت المطلوب للتحسين، مما يجعل العملية أكثر قابلية للإدارة لعينة شاملة النهاية للنهاية.
 
-## السيناريو 2: ضبط نموذج Phi-3 ونشره في Azure Machine Learning Studio
+## السيناريو 2: تحسين نموذج Phi-3 ونشره في استوديو Azure Machine Learning
 
 ### إعداد Azure CLI
 
-تحتاج إلى إعداد Azure CLI للمصادقة على بيئتك. يسمح Azure CLI بإدارة موارد Azure مباشرة من سطر الأوامر ويوفر بيانات الاعتماد اللازمة لـ Azure Machine Learning للوصول إلى هذه الموارد. للبدء، قم بتثبيت [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+تحتاج إلى إعداد Azure CLI للمصادقة على بيئتك. يسمح لك Azure CLI بإدارة موارد Azure مباشرة من سطر الأوامر ويزودك بالأذونات اللازمة لـ Azure Machine Learning للوصول إلى هذه الموارد. للبدء، قم بتثبيت [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. افتح نافذة طرفية واكتب الأمر التالي لتسجيل الدخول إلى حساب Azure الخاص بك.
+1. افتح نافذة الطرفية واكتب الأمر التالي لتسجيل الدخول إلى حساب Azure الخاص بك.
 
     ```console
     az login
     ```
 
-1. اختر حساب Azure الذي تريد استخدامه.
+1. اختر حساب Azure الخاص بك للاستخدام.
 
-1. اختر اشتراك Azure الذي تريد استخدامه.
+1. اختر الاشتراك في Azure للاستخدام.
 
     ![العثور على اسم مجموعة الموارد.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ar.png)
 
 > [!TIP]
 >
-> إذا واجهت مشكلة في تسجيل الدخول إلى Azure، جرب استخدام رمز الجهاز. افتح نافذة طرفية واكتب الأمر التالي لتسجيل الدخول إلى حساب Azure الخاص بك:
+> إذا كنت تواجه مشكلة في تسجيل الدخول إلى Azure، جرب استخدام رمز الجهاز. افتح نافذة الطرفية واكتب الأمر التالي لتسجيل الدخول إلى حساب Azure الخاص بك:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### ضبط نموذج Phi-3
+### تحسين نموذج Phi-3
 
-في هذا التمرين، ستقوم بضبط نموذج Phi-3 باستخدام مجموعة البيانات المقدمة. أولاً، ستحدد عملية الضبط الدقيق في ملف *fine_tune.py*. ثم ستقوم بتكوين بيئة Azure Machine Learning وبدء عملية الضبط الدقيق بتشغيل ملف *setup_ml.py*. يضمن هذا السكريبت أن تتم عملية الضبط داخل بيئة Azure Machine Learning.
+في هذا التمرين، سوف تقوم بتحسين نموذج Phi-3 باستخدام مجموعة البيانات المتوفرة. أولاً، ستقوم بتعريف عملية التحسين في ملف *fine_tune.py*. ثم، ستقوم بضبط بيئة Azure Machine Learning وبدء عملية التحسين عن طريق تشغيل ملف *setup_ml.py*. هذا السكريبت يضمن أن تتم عملية التحسين داخل بيئة Azure Machine Learning.
 
-بتشغيل *setup_ml.py*، ستبدأ عملية الضبط الدقيق في بيئة Azure Machine Learning.
+بتشغيل *setup_ml.py*، ستقوم بتشغيل عملية التحسين في بيئة Azure Machine Learning.
 
-#### إضافة الكود إلى ملف *fine_tune.py*
+#### أضف الكود إلى ملف *fine_tune.py*
 
 1. انتقل إلى مجلد *finetuning_dir* وافتح ملف *fine_tune.py* في Visual Studio Code.
 
-1. أضف الكود التالي داخل *fine_tune.py*.
+1. أضف الكود التالي داخل ملف *fine_tune.py*.
 
     ```python
     import argparse
@@ -542,10 +543,10 @@ CO_OP_TRANSLATOR_METADATA:
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # لتجنب خطأ INVALID_PARAMETER_VALUE في MLflow، قم بتعطيل تكامل MLflow
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # إعداد التسجيل
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -682,17 +683,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. احفظ وأغلق ملف *fine_tune.py*.
+1. قم بحفظ وإغلاق ملف *fine_tune.py*.
 
 > [!TIP]
-> **يمكنك ضبط نموذج Phi-3.5**
+> **يمكنك تحسين نموذج Phi-3.5**
 >
-> في ملف *fine_tune.py*، يمكنك تغيير `pretrained_model_name` من `"microsoft/Phi-3-mini-4k-instruct"` إلى أي نموذج ترغب في ضبطه. على سبيل المثال، إذا غيرته إلى `"microsoft/Phi-3.5-mini-instruct"`، ستستخدم نموذج Phi-3.5-mini-instruct للضبط الدقيق. للعثور على اسم النموذج الذي تفضله واستخدامه، قم بزيارة [Hugging Face](https://huggingface.co/)، وابحث عن النموذج الذي تهتم به، ثم انسخ والصق اسمه في حقل `pretrained_model_name` في السكريبت الخاص بك.
+> في ملف *fine_tune.py*، يمكنك تغيير القيمة `pretrained_model_name` من `"microsoft/Phi-3-mini-4k-instruct"` إلى أي نموذج ترغب في تحسينه. على سبيل المثال، إذا قمت بتغييره إلى `"microsoft/Phi-3.5-mini-instruct"`، فستستخدم نموذج Phi-3.5-mini-instruct للتحسين. للعثور على اسم النموذج الذي تفضله واستخدامه، قم بزيارة [Hugging Face](https://huggingface.co/)، وابحث عن النموذج الذي تهتم به، ثم انسخ والصق اسمه في الحقل `pretrained_model_name` في سكريبتك.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="ضبط نموذج Phi-3.5.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="تحسين Phi-3.5.">
 >
 
-#### إضافة الكود إلى ملف *setup_ml.py*
+#### أضف الكود إلى ملف *setup_ml.py*
 
 1. افتح ملف *setup_ml.py* في Visual Studio Code.
 
@@ -711,25 +712,25 @@ CO_OP_TRANSLATOR_METADATA:
         TEST_DATA_PATH
     )
 
-    # Constants
+    # ثوابت
 
-    # Uncomment the following lines to use a CPU instance for training
-    # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
+    # قم بإلغاء تعليق الأسطر التالية لاستخدام وحدة معالجة مركزية للتدريب
+    # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # وحدة المعالجة المركزية
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # قم بإلغاء تعليق الأسطر التالية لاستخدام وحدة معالجة رسومات للتدريب
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # استبدل بموقع عنقود الحوسبة الخاص بك
+    FINETUNING_DIR = "./finetuning_dir" # المسار إلى برنامج ضبط النموذج الدقيق
+    TRAINING_ENV_NAME = "phi-3-training-environment" # اسم بيئة التدريب
+    MODEL_OUTPUT_DIR = "./model_output" # المسار إلى دليل مخرجات النموذج في Azure ML
 
-    # Logging setup to track the process
+    # إعداد التسجيل لتتبع العملية
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -749,9 +750,9 @@ CO_OP_TRANSLATOR_METADATA:
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # صورة دوكر للبيئة
+            conda_file=CONDA_FILE,  # ملف بيئة Conda
+            name=TRAINING_ENV_NAME,  # اسم البيئة
         )
         return ml_client.environments.create_or_update(env)
 
@@ -768,11 +769,11 @@ CO_OP_TRANSLATOR_METADATA:
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # طبقة عنقود الحوسبة
+                min_instances=0,  # الحد الأدنى لعدد الحالات
+                max_instances=1  # الحد الأقصى لعدد الحالات
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # الانتظار لإنشاء العنقود
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -780,18 +781,18 @@ CO_OP_TRANSLATOR_METADATA:
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # المسار إلى fine_tune.py
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # بيئة التدريب
+            compute=compute_name,  # عنقود الحوسبة للاستخدام
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # المسار إلى ملف بيانات التدريب
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # المسار إلى ملف بيانات التقييم
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -800,21 +801,21 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # تهيئة عميل ML
         ml_client = get_ml_client()
 
-        # Create Environment
+        # إنشاء البيئة
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # إنشاء أو الحصول على عنقود الحوسبة الحالي
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # إنشاء وتقديم مهمة الضبط الدقيق
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # تقديم المهمة
+        ml_client.jobs.stream(returned_job.name)  # بث سجلات المهمة
         
-        # Capture the job name
+        # التقاط اسم المهمة
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -823,24 +824,24 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. استبدل `COMPUTE_INSTANCE_TYPE`، `COMPUTE_NAME`، و`LOCATION` بالتفاصيل الخاصة بك.
+1. استبدل `COMPUTE_INSTANCE_TYPE`، و `COMPUTE_NAME`، و `LOCATION` بالتفاصيل الخاصة بك.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # قم بإلغاء التعليق عن الأسطر التالية لاستخدام وحدة معالجة الرسوميات للتدريب
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # استبدل بموقع تجمع الحوسبة الخاص بك
     ```
 
 > [!TIP]
 >
-> **إرشادات للضبط الدقيق باستخدام مجموعة بيانات صغيرة على وحدة معالجة مركزية (CPU)**
+> **إرشادات للتحسين باستخدام مجموعة بيانات صغيرة باستخدام وحدة معالجة مركزية CPU**
 >
-> إذا كنت ترغب في استخدام وحدة معالجة مركزية للضبط الدقيق، فهذه الطريقة مناسبة لمن لديهم اشتراكات مميزة (مثل اشتراك Visual Studio Enterprise) أو لاختبار عملية الضبط والنشر بسرعة.
+> إذا كنت ترغب في استخدام وحدة معالجة مركزية لتحسين النموذج، فإن هذا الأسلوب مثالي لأولئك الذين يمتلكون اشتراكات فائدة (مثل اشتراك Visual Studio Enterprise) أو لاختبار سريع لعملية التحسين والنشر.
 >
 > 1. افتح ملف *setup_ml*.
-> 1. استبدل `COMPUTE_INSTANCE_TYPE`، `COMPUTE_NAME`، و`DOCKER_IMAGE_NAME` بالتالي. إذا لم يكن لديك وصول إلى *Standard_E16s_v3*، يمكنك استخدام مثيل CPU مكافئ أو طلب حصة جديدة.
+> 1. استبدل `COMPUTE_INSTANCE_TYPE`، و `COMPUTE_NAME`، و `DOCKER_IMAGE_NAME` بالتالي. إذا لم يكن لديك وصول إلى *Standard_E16s_v3*، يمكنك استخدام مثيل CPU معادل أو طلب حصة جديدة.
 > 1. استبدل `LOCATION` بالتفاصيل الخاصة بك.
 >
 >    ```python
@@ -852,33 +853,33 @@ CO_OP_TRANSLATOR_METADATA:
 >    ```
 >
 
-1. اكتب الأمر التالي لتشغيل سكريبت *setup_ml.py* وبدء عملية الضبط الدقيق في Azure Machine Learning.
+1. اكتب الأمر التالي لتشغيل سكريبت *setup_ml.py* وبدء عملية التحسين في Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. في هذا التمرين، نجحت في ضبط نموذج Phi-3 باستخدام Azure Machine Learning. بتشغيل سكريبت *setup_ml.py*، قمت بإعداد بيئة Azure Machine Learning وبدأت عملية الضبط الدقيق المعرفة في ملف *fine_tune.py*. يرجى ملاحظة أن عملية الضبط الدقيق قد تستغرق وقتًا طويلاً. بعد تشغيل الأمر `python setup_ml.py`، عليك الانتظار حتى تكتمل العملية. يمكنك متابعة حالة مهمة الضبط الدقيق عبر الرابط المقدم في الطرفية إلى بوابة Azure Machine Learning.
+1. في هذا التمرين، قمت بنجاح بتحسين نموذج Phi-3 باستخدام Azure Machine Learning. عبر تشغيل سكريبت *setup_ml.py*، قمت بإعداد بيئة Azure Machine Learning وبدأت عملية التحسين المعرفة في ملف *fine_tune.py*. يرجى ملاحظة أن عملية التحسين قد تستغرق وقتًا طويلاً. بعد تشغيل الأمر `python setup_ml.py`، تحتاج إلى الانتظار حتى تكتمل العملية. يمكنك مراقبة حالة مهمة التحسين بمتابعة الرابط المقدم في الطرفية إلى بوابة Azure Machine Learning.
 
-    ![عرض مهمة الضبط الدقيق.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ar.png)
+    ![مشاهدة مهمة التحسين.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ar.png)
 
-### نشر النموذج المضبوط
+### نشر النموذج المحسن
 
-لدمج نموذج Phi-3 المضبوط مع Prompt Flow، تحتاج إلى نشر النموذج ليكون متاحًا للاستدلال في الوقت الحقيقي. تتضمن هذه العملية تسجيل النموذج، إنشاء نقطة نهاية عبر الإنترنت، ونشر النموذج.
+لدمج نموذج Phi-3 المحسن مع Prompt Flow، تحتاج إلى نشر النموذج لجعله متاحًا للاستدلال في الوقت الحقيقي. تتضمن هذه العملية تسجيل النموذج، إنشاء نقطة نهاية على الإنترنت، ونشر النموذج.
 
-#### تعيين اسم النموذج، اسم نقطة النهاية، واسم النشر للنشر
+#### تحديد اسم النموذج واسم نقطة النهاية واسم النشر
 
 1. افتح ملف *config.py*.
 
-1. استبدل `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` بالاسم الذي تريده لنموذجك.
+1. استبدل `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` بالاسم المرغوب لنموذجك.
 
-1. استبدل `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` بالاسم الذي تريده لنقطة النهاية.
+1. استبدل `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` بالاسم المرغوب لنقطة النهاية الخاصة بك.
 
-1. استبدل `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` بالاسم الذي تريده للنشر.
+1. استبدل `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` بالاسم المرغوب للنشر الخاص بك.
 
-#### إضافة الكود إلى ملف *deploy_model.py*
+#### أضف الكود إلى ملف *deploy_model.py*
 
-تشغيل ملف *deploy_model.py* يقوم بأتمتة عملية النشر بالكامل. يسجل النموذج، ينشئ نقطة نهاية، وينفذ النشر بناءً على الإعدادات المحددة في ملف *config.py*، والتي تشمل اسم النموذج، اسم نقطة النهاية، واسم النشر.
+تشغيل ملف *deploy_model.py* يؤتمت عملية النشر بأكملها. فهو يقوم بتسجيل النموذج، إنشاء نقطة نهاية، وتنفيذ النشر استنادًا إلى الإعدادات المحددة في ملف config.py، والذي يشمل اسم النموذج، اسم نقطة النهاية، واسم النشر.
 
 1. افتح ملف *deploy_model.py* في Visual Studio Code.
 
@@ -891,7 +892,7 @@ CO_OP_TRANSLATOR_METADATA:
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # استيرادات التهيئة
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -903,7 +904,7 @@ CO_OP_TRANSLATOR_METADATA:
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # الثوابت
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -913,7 +914,7 @@ CO_OP_TRANSLATOR_METADATA:
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # إعداد التسجيل
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1002,25 +1003,25 @@ CO_OP_TRANSLATOR_METADATA:
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # جلب تفاصيل نقطة النهاية الحالية
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # تسجيل تخصيص المرور الحالي لأغراض التصحيح
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # تعيين تخصيص المرور للنشر
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # تحديث نقطة النهاية بتخصيص المرور الجديد
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # تسجيل تخصيص المرور المحدث لأغراض التصحيح
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # تسجيل أي أخطاء تحدث أثناء العملية
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1048,16 +1049,16 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. قم بالمهام التالية للحصول على `JOB_NAME`:
+1. قم بتنفيذ المهام التالية للحصول على `JOB_NAME`:
 
     - انتقل إلى مورد Azure Machine Learning الذي أنشأته.
     - اختر **Studio web URL** لفتح مساحة عمل Azure Machine Learning.
-    - اختر **Jobs** من علامة التبويب الجانبية.
-    - اختر التجربة الخاصة بالضبط الدقيق، مثل *finetunephi*.
+    - اختر **Jobs** من علامة التبويب على الجانب الأيسر.
+    - اختر التجربة الخاصة بالتحسين. على سبيل المثال، *finetunephi*.
     - اختر المهمة التي أنشأتها.
-- انسخ والصق اسم وظيفتك في `JOB_NAME = "your-job-name"` في ملف *deploy_model.py*.
+- انسخ و الصق اسم وظيفتك في `JOB_NAME = "your-job-name"` في ملف *deploy_model.py*.
 
-1. استبدل `COMPUTE_INSTANCE_TYPE` بالتفاصيل الخاصة بك.
+1. استبدل `COMPUTE_INSTANCE_TYPE` بتفاصيلك الخاصة.
 
 1. اكتب الأمر التالي لتشغيل سكريبت *deploy_model.py* وبدء عملية النشر في Azure Machine Learning.
 
@@ -1065,20 +1066,19 @@ CO_OP_TRANSLATOR_METADATA:
     python deploy_model.py
     ```
 
-
 > [!WARNING]
 > لتجنب رسوم إضافية على حسابك، تأكد من حذف نقطة النهاية التي تم إنشاؤها في مساحة عمل Azure Machine Learning.
 >
 
-#### التحقق من حالة النشر في مساحة عمل Azure Machine Learning
+#### تحقق من حالة النشر في مساحة عمل Azure Machine Learning
 
 1. قم بزيارة [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. انتقل إلى مساحة عمل Azure Machine Learning التي أنشأتها.
+1. انتقل إلى مساحة عمل Azure Machine Learning التي قمت بإنشائها.
 
 1. اختر **Studio web URL** لفتح مساحة عمل Azure Machine Learning.
 
-1. اختر **Endpoints** من القائمة الجانبية.
+1. اختر **Endpoints** من تبويب الجانب الأيسر.
 
     ![اختر نقاط النهاية.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ar.png)
 
@@ -1086,26 +1086,26 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![اختر نقاط النهاية التي أنشأتها.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ar.png)
 
-3. في هذه الصفحة، يمكنك إدارة نقاط النهاية التي تم إنشاؤها خلال عملية النشر.
+3. في هذه الصفحة، يمكنك إدارة نقاط النهاية التي تم إنشاؤها أثناء عملية النشر.
 
 ## السيناريو 3: التكامل مع Prompt flow والدردشة مع نموذجك المخصص
 
 ### دمج نموذج Phi-3 المخصص مع Prompt flow
 
-بعد نشر نموذجك المعدل بنجاح، يمكنك الآن دمجه مع Prompt flow لاستخدام نموذجك في التطبيقات الحية، مما يتيح مجموعة متنوعة من المهام التفاعلية مع نموذج Phi-3 المخصص الخاص بك.
+بعد نشر نموذجك المعَدّل بنجاح، يمكنك الآن دمجه مع Prompt flow لاستخدام نموذجك في تطبيقات الوقت الحقيقي، مما يتيح مجموعة متنوعة من المهام التفاعلية باستخدام نموذج Phi-3 المخصص الخاص بك.
 
-#### تعيين مفتاح api و URI نقطة النهاية لنموذج Phi-3 المعدل
+#### تعيين مفتاح api وعنوان URI لنقطة النهاية لنموذج Phi-3 المعَدّل
 
 1. انتقل إلى مساحة عمل Azure Machine Learning التي أنشأتها.
-1. اختر **Endpoints** من القائمة الجانبية.
+1. اختر **Endpoints** من تبويب الجانب الأيسر.
 1. اختر نقطة النهاية التي أنشأتها.
 1. اختر **Consume** من قائمة التنقل.
-1. انسخ والصق **REST endpoint** الخاص بك في ملف *config.py*، مع استبدال `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` بـ **REST endpoint** الخاص بك.
+1. انسخ والصق **REST endpoint** في ملف *config.py*، مع استبدال `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` بـ **REST endpoint** الخاص بك.
 1. انسخ والصق **المفتاح الأساسي** في ملف *config.py*، مع استبدال `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` بـ **المفتاح الأساسي** الخاص بك.
 
-    ![انسخ مفتاح api و URI نقطة النهاية.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ar.png)
+    ![انسخ مفتاح api وعنوان نقطة النهاية.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ar.png)
 
-#### إضافة الكود إلى ملف *flow.dag.yml*
+#### أضف الكود إلى ملف *flow.dag.yml*
 
 1. افتح ملف *flow.dag.yml* في Visual Studio Code.
 
@@ -1132,7 +1132,7 @@ CO_OP_TRANSLATOR_METADATA:
         input_data: ${inputs.input_data}
     ```
 
-#### إضافة الكود إلى ملف *integrate_with_promptflow.py*
+#### أضف الكود إلى ملف *integrate_with_promptflow.py*
 
 1. افتح ملف *integrate_with_promptflow.py* في Visual Studio Code.
 
@@ -1149,7 +1149,7 @@ CO_OP_TRANSLATOR_METADATA:
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # إعداد التسجيل
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1210,9 +1210,13 @@ CO_OP_TRANSLATOR_METADATA:
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. إليك مثال على النتائج: الآن يمكنك الدردشة مع نموذج Phi-3 المخصص الخاص بك. يُنصح بطرح أسئلة بناءً على البيانات المستخدمة في التعديل الدقيق.
+1. إليك مثال على النتائج: يمكنك الآن الدردشة مع نموذج Phi-3 المخصص الخاص بك. يُنصح بطرح الأسئلة بناءً على البيانات المستخدمة في التهيئة الدقيقة.
 
-    ![مثال على Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ar.png)
+    ![مثال على تدفق المطالبات.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ar.png)
 
-**إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**تنبيه**:
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى التنبه إلى أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق والمعتمد. للمعلومات الحرجة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

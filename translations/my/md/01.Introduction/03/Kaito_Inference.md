@@ -1,44 +1,47 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:54:15+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T15:54:57+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "my"
 }
 -->
-## Kaito ဖြင့် အနုတ်ယူခြင်း
+## Kaito ဖြင့် အနုတ်ထုတ်ခြင်း
 
-[Kaito](https://github.com/Azure/kaito) သည် Kubernetes cluster အတွင်း AI/ML အနုတ်ယူမှု မော်ဒယ်များကို အလိုအလျောက် တပ်ဆင်ပေးသော operator တစ်ခုဖြစ်သည်။
+[Kaito](https://github.com/Azure/kaito) သည် Kubernetes ကလပ်စတာတွင် AI/ML အနုတ်ထုတ်မော်ဒယ်များကို အလိုအလျောက်ဖြန့်ဝေသည့် operator တစ်ခုဖြစ်သည်။
 
-Kaito သည် virtual machine အခြေခံ အဆောက်အအုံများပေါ်တွင် တည်ဆောက်ထားသော မော်ဒယ် တပ်ဆင်မှုနည်းလမ်းများအများစုနှင့် နှိုင်းယှဉ်လျှင် အောက်ပါ အထူးကွဲပြားချက်များရှိသည်-
+Kaito တွင် virtual machine အခြေပြု အထောက်အထားများအထက် တည်ဆောက်ထားသော mainstream model deployment နည်းလမ်းများနှင့်နှိုင်းယှဉ်သောအခါ အောက်ပါအချက်များတွင် အဓိကကွာခြားချက်များရှိသည်-
 
-- မော်ဒယ်ဖိုင်များကို container image များဖြင့် စီမံခန့်ခွဲသည်။ မော်ဒယ်စာကြည့်တိုက်ကို အသုံးပြု၍ အနုတ်ယူခေါ်ဆိုမှုများ ပြုလုပ်နိုင်ရန် http server တစ်ခု ပံ့ပိုးပေးသည်။
-- GPU hardware ကို ကိုက်ညီစေရန် deployment parameter များကို ချိန်ညှိရန် မလိုအပ်ဘဲ ကြိုတင်သတ်မှတ်ထားသော configuration များ ပေးသည်။
-- မော်ဒယ်လိုအပ်ချက်အရ GPU node များကို အလိုအလျောက် provision ပြုလုပ်ပေးသည်။
-- လိုင်စင်ခွင့်ရှိပါက Microsoft Container Registry (MCR) တွင် ကြီးမားသော မော်ဒယ် image များကို တင်ဆက်ထားနိုင်သည်။
+- မော်ဒယ်ဖိုင်များကို container images အသုံးပြု၍ စီမံခန့်ခွဲသည်။ http စာကြောင်းမောင်းဆာဘာ ရရှိပြီး မော်ဒယ်စာကြောင်းစာကြည့်တိုက်မှ inferenceခေါ်ဆိုမှုများကို လုပ်ဆောင်သည်။
+- GPU hardware နှင့် ကိုက်ညီစေရေး deployment parameters ကို ချိန်ညှိရန် မလိုအပ်ပဲ မျှော်မှန်းထားသော configuration များကို ဖြည့်စွက်ပေးသည်။
+- မော်ဒယ်လိုအပ်ချက်အရ GPU node များကို အလိုအလျောက် ပံ့ပိုးပေးသည်။
+- မူပိုင်ခွင့် ကျင့်ကြံခွင့်ရှိပါက Microsoft Container Registry (MCR) တွင် ကြီးမားသော မော်ဒယ် image များကို တင်ဆက်ပေးသည်။
 
-Kaito ကို အသုံးပြုခြင်းဖြင့် Kubernetes တွင် ကြီးမားသော AI အနုတ်ယူမှု မော်ဒယ်များကို တင်သွင်းခြင်းလုပ်ငန်းစဉ်ကို အလွန်လွယ်ကူစေသည်။
+Kaito ကို အသုံးပြုခြင်းဖြင့် Kubernetes တွင် ကြီးမားသော AI အနုတ်ထုတ်မော်ဒယ်များကို အလွန်လွယ်ကူစွာ ကောင်းမွန်စွာ တင်သွင်းနိုင်သည်။
 
-## ဖွဲ့စည်းပုံ
 
-Kaito သည် ရိုးရာ Kubernetes Custom Resource Definition (CRD) / controller ဒီဇိုင်းပုံစံကို လိုက်နာသည်။ အသုံးပြုသူသည် GPU လိုအပ်ချက်များနှင့် အနုတ်ယူမှု ဖော်ပြချက်များကို ဖော်ပြထားသော `workspace` custom resource ကို စီမံခန့်ခွဲသည်။ Kaito controller များသည် `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းခြင်းဖြင့် deployment ကို အလိုအလျောက် ပြုလုပ်ပေးသည်။
+## ဝိဇ္ဇာတည်ဆောက်ပုံ
+
+Kaito သည် classic Kubernetes Custom Resource Definition (CRD) / controller ဒီဇိုင်းပုံစံကို လိုက်နာသည်။ အသုံးပြုသူသည် GPU လိုအပ်ချက်များနှင့် အနုတ်ထုတ် ဆွဲကြောင်းကို ဖော်ပြသည့် `workspace` custom resource ကို စီမံခန့်ခွဲသည်။ Kaito controller များသည် `workspace` custom resource ကို အလိုအလျောက်စစ်ဆေးပြီး deployment ကို အလိုအလျောက်ပြုလုပ်ပေးသည်။
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-အထက်ပါ ပုံသည် Kaito ၏ ဖွဲ့စည်းပုံ အနှစ်ချုပ်ကို ဖော်ပြထားသည်။ ၎င်း၏ အဓိက အစိတ်အပိုင်းများမှာ-
+အထက်တွင် ပြထားသော ပုံသည် Kaito architecture အနှစ်ချုပ်ဖြစ်သည်။ ၎င်း၏ အဓိကအစိတ်အပိုင်းများမှာ-
 
-- **Workspace controller**: `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းပြီး `machine` (အောက်တွင်ရှင်းပြထားသည်) custom resource များကို ဖန်တီးကာ node auto provisioning ကို စတင်ပေးသည်။ မော်ဒယ် preset configuration များအရ အနုတ်ယူမှု workload (`deployment` သို့မဟုတ် `statefulset`) ကို ဖန်တီးပေးသည်။
-- **Node provisioner controller**: controller ၏ အမည်မှာ [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) တွင် *gpu-provisioner* ဖြစ်သည်။ ၎င်းသည် [Karpenter](https://sigs.k8s.io/karpenter) မှ ရရှိသော `machine` CRD ကို အသုံးပြုကာ workspace controller နှင့် ဆက်သွယ်သည်။ Azure Kubernetes Service (AKS) API များနှင့် ပေါင်းစည်းကာ AKS cluster တွင် GPU node အသစ်များ ထည့်သွင်းပေးသည်။
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) သည် open source component ဖြစ်သည်။ [Karpenter-core](https://sigs.k8s.io/karpenter) API များကို ထောက်ပံ့သော အခြား controller များဖြင့် အစားထိုးနိုင်သည်။
+- **Workspace controller**: `workspace` custom resource ကို စစ်ဆေးပြီး node auto provisioning ကို စတင်ရန် `machine` (အောက်တွင်ရှင်းပြထားသည်) custom resources များကို ဖန်တီးပြီး၊ မော်ဒယ်အခြေခံပျော်ပြီ configuration များနှင့်အညီ အနုတ်ထုတ်လုပ်ငန်း (`deployment` သို့မဟုတ် `statefulset`) ကို တည်ဆောက်ပေးသည်။
+- **Node provisioner controller**: controller ၏နာမည်မှာ [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) တွင် *gpu-provisioner* ဖြစ်သည်။ ၎င်းသည် Karpenter မှ ရရှိသော `machine` CRD ကို အသုံးပြု၍ workspace controller နှင့် ဆက်သွယ်သည်။ Azure Kubernetes Service (AKS) API များနှင့် ပေါင်းစည်းကာ AKS ကလပ်စတာတွင် GPU node အသစ်များ ထည့်သွင်းပေးသည်။
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) သည် ဖွင့်ဆိုဒ်အစိတ်အပိုင်းဖြစ်သည်။ [Karpenter-core](https://sigs.k8s.io/karpenter) API များကို ထောက်ပံ့ပါက အခြား controller များဖြင့် အစားထိုးနိုင်သည်။
 
-## တပ်ဆင်ခြင်း
 
-တပ်ဆင်ခြင်း လမ်းညွှန်ကို [ဒီနေရာမှာ](https://github.com/Azure/kaito/blob/main/docs/installation.md) ကြည့်ရှုနိုင်ပါသည်။
+## ထည့်သွင်းခြင်း
 
-## အမြန်စတင်ခြင်း Inference Phi-3
-[နမူနာကုဒ် Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+ထည့်သွင်းနည်းလမ်းညွှန်ကို [ဒီမှာ](https://github.com/Azure/kaito/blob/main/docs/installation.md) စစ်ဆေးနိုင်ပါသည်။
+
+## အမြန်စတင်၍ Inference Phi-3  
+[နမူနာ ကုဒ် Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +79,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ထွက်ရှိမည့် ACR လမ်းကြောင်းကို ချိန်ညှိခြင်း
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-workspace အခြေအနေကို အောက်ပါ command ဖြင့် စစ်ဆေးနိုင်သည်။ WORKSPACEREADY ကော်လံသည် `True` ဖြစ်လာသည်နှင့် မော်ဒယ်ကို အောင်မြင်စွာ တပ်ဆင်ပြီးဖြစ်သည်။
+workspace အခြေအနေနှင့် စောင့်ကြည့်ရန်အတွက် အောက်ပါ command ကို ပြေးရန်ဖြစ်သည်။ WORKSPACEREADY ကော်လံသည် `True` ဖြစ်လာသည့်အခါ မော်ဒယ်အားအောင်မြင်စွာ ဖြန့်ချိပြီးဖြစ်ပါသည်။
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +94,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-နောက်တစ်ဆင့်တွင် အနုတ်ယူမှု ဝန်ဆောင်မှု၏ cluster ip ကို ရှာဖွေပြီး cluster အတွင်းရှိ ယာယီ `curl` pod ကို အသုံးပြုကာ ဝန်ဆောင်မှု endpoint ကို စမ်းသပ်နိုင်သည်။
+ထို့နောက်အနုတ်ထုတ် ဝန်ဆောင်မှု၏ cluster ip ကို ရှာဖွေပြီး တာဝန်ထမ်း `curl` pod ဖြင့် cluster အတွင်း ဝန်ဆောင်မှု endpoint ကို စမ်းသပ်နိုင်ပါသည်။
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +105,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## အမြန်စတင်ခြင်း Inference Phi-3 နှင့် adapters
+## အမြန်စတင်၍ Inference Phi-3 ကို adapters ဖြင့်
 
-Kaito တပ်ဆင်ပြီးနောက် အောက်ပါ command များကို အသုံးပြုကာ အနုတ်ယူမှု ဝန်ဆောင်မှုကို စတင်နိုင်သည်။
+Kaito ကို ထည့်သွင်းပြီးနောက် အောက်ပါ command များကို အသုံးပြု၍ inference ဝန်ဆောင်မှုကို စတင်နိုင်သည်။
 
-[နမူနာကုဒ် Inference Phi-3 နှင့် Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[နမူနာ ကုဒ် Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +151,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # သင့်တင်မှု Output ACR လမ်းကြောင်း
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-workspace အခြေအနေကို အောက်ပါ command ဖြင့် စစ်ဆေးနိုင်သည်။ WORKSPACEREADY ကော်လံသည် `True` ဖြစ်လာသည်နှင့် မော်ဒယ်ကို အောင်မြင်စွာ တပ်ဆင်ပြီးဖြစ်သည်။
+workspace အခြေအနေကို စောင့်ကြည့်ရန် အောက်ပါ command ကို ပြေးနိုင်သည်။ WORKSPACEREADY ကော်လံသည် `True` ဖြစ်လာသည်နှင့် မော်ဒယ်အားအောင်မြင်စွာ ဖြန့်ချိပြီးဖြစ်သည်။
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +166,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-နောက်တစ်ဆင့်တွင် အနုတ်ယူမှု ဝန်ဆောင်မှု၏ cluster ip ကို ရှာဖွေပြီး cluster အတွင်းရှိ ယာယီ `curl` pod ကို အသုံးပြုကာ ဝန်ဆောင်မှု endpoint ကို စမ်းသပ်နိုင်သည်။
+ထို့နောက် inference ဝန်ဆောင်မှု cluster ip ကို ရှာဖွေ၍ တာဝန်ထမ်း `curl` pod ဖြင့် cluster အတွင်း ဝန်ဆောင်မှု endpoint ကို စမ်းသပ်နိုင်ပါသည်။
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +177,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**အကြောင်းတရား ထုတ်ပြန်ချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှုဖြစ်သော [Co-op Translator](https://github.com/Azure/co-op-translator) မှတစ်ဆင့် ဘာသာပြန်ထားခြင်းဖြစ်သည်။ ကျွန်ုပ်တို့သည် တိကျမှုကို ကြိုးပမ်းပါသည်၊ သို့သော် စက်ရုပ်ဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုကြပါရန် အဓိကထားပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အရင်းအမြစ်လို့ သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော သတင်းအချက်အလက်များအတွက် လူ့ဘာသာပြန်သူ ပညာရှင်မှ ပြန်ဆိုခြင်း အကြံပြုပါသည်။ ဤဘာသာပြန်မှုအသုံးပြုမှုကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားမလည်မှုများ သို့မဟုတ် မှားဖွင့်မြင်မှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

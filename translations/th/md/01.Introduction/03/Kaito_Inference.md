@@ -1,44 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:50:50+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T12:19:40+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "th"
 }
 -->
-## การทำ Inference ด้วย Kaito
+## การอนุมานด้วย Kaito
 
-[Kaito](https://github.com/Azure/kaito) คือ operator ที่ช่วยอัตโนมัติการติดตั้งโมเดล AI/ML สำหรับการทำ inference ในคลัสเตอร์ Kubernetes
+[Kaito](https://github.com/Azure/kaito) เป็นโอเปอเรเตอร์ที่ช่วยอัตโนมัติการปรับใช้งานโมเดล AI/ML สำหรับการอนุมานในคลัสเตอร์ Kubernetes
 
-Kaito มีความแตกต่างที่สำคัญเมื่อเทียบกับวิธีการติดตั้งโมเดลทั่วไปที่ใช้โครงสร้างพื้นฐานแบบเครื่องเสมือน (virtual machine) ดังนี้:
+Kaito มีความแตกต่างสำคัญดังต่อไปนี้เมื่อเทียบกับวิธีการปรับใช้โมเดลที่เป็นกระแสหลักส่วนใหญ่ซึ่งสร้างมาบนโครงสร้างพื้นฐานของเครื่องเสมือน:
 
-- จัดการไฟล์โมเดลโดยใช้ container images พร้อมให้บริการ http server สำหรับเรียกใช้งาน inference ผ่านไลบรารีโมเดล
-- ไม่ต้องปรับแต่งพารามิเตอร์การติดตั้งให้เหมาะกับฮาร์ดแวร์ GPU โดยมีการตั้งค่าล่วงหน้าให้แล้ว
+- จัดการไฟล์โมเดลโดยใช้ภาพคอนเทนเนอร์ เซิร์ฟเวอร์ http ถูกจัดเตรียมเพื่อดำเนินการเรียกอนุมานโดยใช้ไลบรารีโมเดล
+- หลีกเลี่ยงการปรับแต่งพารามิเตอร์การปรับใช้ให้เหมาะสมกับฮาร์ดแวร์ GPU โดยให้การกำหนดค่าล่วงหน้า
 - จัดเตรียมโหนด GPU อัตโนมัติตามความต้องการของโมเดล
-- โฮสต์ภาพโมเดลขนาดใหญ่ใน Microsoft Container Registry (MCR) สาธารณะ หากใบอนุญาตอนุญาตให้ทำได้
+- โฮสต์ภาพโมเดลขนาดใหญ่ใน Microsoft Container Registry (MCR) สาธารณะ หากใบอนุญาตอนุญาต
 
-ด้วย Kaito กระบวนการนำโมเดล AI ขนาดใหญ่เข้ามาใช้งานใน Kubernetes จะง่ายขึ้นมาก
+ด้วย Kaito เวิร์กโฟลว์ของการนำโมเดล AI สำหรับอนุมานขนาดใหญ่มาใช้ใน Kubernetes จะง่ายขึ้นอย่างมาก
 
 
 ## สถาปัตยกรรม
 
-Kaito ใช้รูปแบบการออกแบบ Kubernetes Custom Resource Definition (CRD) และ controller แบบคลาสสิก ผู้ใช้จะจัดการ custom resource ชื่อ `workspace` ซึ่งระบุความต้องการ GPU และสเปคของการทำ inference จากนั้น Kaito controllers จะช่วยอัตโนมัติการติดตั้งโดยทำการ reconcile กับ custom resource `workspace`
+Kaito ปฏิบัติตามรูปแบบการออกแบบคลาสสิกของ Kubernetes Custom Resource Definition(CRD)/controller ผู้ใช้จัดการทรัพยากรแบบกำหนดเอง `workspace` ซึ่งอธิบายความต้องการ GPU และข้อกำหนดการอนุมาน ตัวควบคุม Kaito จะดำเนินการปรับใช้โดยการกระทบยอดทรัพยากรแบบกำหนดเอง `workspace`
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-ภาพด้านบนแสดงภาพรวมสถาปัตยกรรมของ Kaito ส่วนประกอบหลักประกอบด้วย:
+รูปภาพข้างต้นนำเสนอภาพรวมสถาปัตยกรรมของ Kaito ส่วนประกอบหลักประกอบด้วย:
 
-- **Workspace controller**: ทำหน้าที่ reconcile custom resource `workspace` สร้าง custom resource `machine` (อธิบายด้านล่าง) เพื่อกระตุ้นการจัดเตรียมโหนดอัตโนมัติ และสร้าง workload สำหรับ inference (`deployment` หรือ `statefulset`) ตามการตั้งค่าล่วงหน้าของโมเดล
-- **Node provisioner controller**: ตัว controller นี้ชื่อ *gpu-provisioner* ใน [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) ใช้ `machine` CRD ที่มาจาก [Karpenter](https://sigs.k8s.io/karpenter) เพื่อสื่อสารกับ workspace controller และเชื่อมต่อกับ Azure Kubernetes Service (AKS) API เพื่อเพิ่มโหนด GPU ใหม่ในคลัสเตอร์ AKS
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) เป็นคอมโพเนนต์แบบโอเพนซอร์ส สามารถแทนที่ด้วย controller อื่นได้หากรองรับ API ของ [Karpenter-core](https://sigs.k8s.io/karpenter)
+- **ตัวควบคุม Workspace**: กระทบยอดทรัพยากรแบบกำหนดเอง `workspace` สร้างทรัพยากรแบบกำหนดเอง `machine` (อธิบายด้านล่าง) เพื่อกระตุ้นการจัดเตรียมโหนดอัตโนมัติ และสร้างงานอนุมาน (`deployment` หรือ `statefulset`) ตามการกำหนดค่าล่วงหน้าของโมเดล
+- **ตัวควบคุมตัวจัดหาโหนด**: ตัวควบคุมนี้มีชื่อว่า *gpu-provisioner* ใน [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) ใช้ CRD `machine` ที่มาจาก [Karpenter](https://sigs.k8s.io/karpenter) เพื่อติดต่อกับตัวควบคุม workspace มันรวมกับ Azure Kubernetes Service(AKS) APIs เพื่อเพิ่มโหนด GPU ใหม่ไปยังคลัสเตอร์ AKS 
+> หมายเหตุ: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) เป็นคอมโพเนนต์แบบโอเพนซอร์ส สามารถแทนที่ด้วยตัวควบคุมอื่นถ้ารองรับ APIs ของ [Karpenter-core](https://sigs.k8s.io/karpenter)
 
 ## การติดตั้ง
 
-โปรดดูคำแนะนำการติดตั้งได้ที่ [นี่](https://github.com/Azure/kaito/blob/main/docs/installation.md)
+โปรดตรวจสอบคำแนะนำการติดตั้งได้ที่ [นี่](https://github.com/Azure/kaito/blob/main/docs/installation.md)
 
-## เริ่มต้นใช้งาน Inference Phi-3 อย่างรวดเร็ว
+## เริ่มต้นอย่างรวดเร็วกับ Inference Phi-3
 [ตัวอย่างโค้ด Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -77,14 +78,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ปรับแต่งเส้นทางเอาต์พุต ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-สถานะของ workspace สามารถตรวจสอบได้โดยรันคำสั่งด้านล่าง เมื่อคอลัมน์ WORKSPACEREADY แสดงค่า `True` หมายความว่าโมเดลถูกติดตั้งเรียบร้อยแล้ว
+สถานะของ workspace สามารถติดตามได้โดยรันคำสั่งดังต่อไปนี้ เมื่อคอลัมน์ WORKSPACEREADY เป็น `True` แสดงว่าโมเดลถูกปรับใช้เรียบร้อยแล้ว
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +93,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-จากนั้นสามารถค้นหา cluster ip ของบริการ inference และใช้ pod ชั่วคราวที่มีคำสั่ง `curl` เพื่อทดสอบ endpoint ของบริการในคลัสเตอร์ได้
+ถัดไป สามารถค้นหาไอพีคลัสเตอร์ของบริการอนุมานและใช้ pod `curl` ชั่วคราวเพื่อทดสอบ endpoint ของบริการภายในคลัสเตอร์ได้
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +104,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## เริ่มต้นใช้งาน Inference Phi-3 พร้อม adapters
+## เริ่มต้นอย่างรวดเร็วกับ Inference Phi-3 พร้อมอะแดปเตอร์
 
-หลังจากติดตั้ง Kaito แล้ว สามารถลองรันคำสั่งต่อไปนี้เพื่อเริ่มบริการ inference
+หลังจากติดตั้ง Kaito แล้ว สามารถลองใช้คำสั่งต่อไปนี้เพื่อเริ่มบริการอนุมาน
 
-[ตัวอย่างโค้ด Inference Phi-3 พร้อม Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[ตัวอย่างโค้ด Inference Phi-3 พร้อมอะแดปเตอร์](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -149,14 +150,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # ปรับแต่งเส้นทาง ACR เอาต์พุต
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-สถานะของ workspace สามารถตรวจสอบได้โดยรันคำสั่งด้านล่าง เมื่อคอลัมน์ WORKSPACEREADY แสดงค่า `True` หมายความว่าโมเดลถูกติดตั้งเรียบร้อยแล้ว
+สถานะของ workspace สามารถติดตามได้โดยรันคำสั่งดังต่อไปนี้ เมื่อคอลัมน์ WORKSPACEREADY เป็น `True` แสดงว่าโมเดลถูกปรับใช้เรียบร้อยแล้ว
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +165,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-จากนั้นสามารถค้นหา cluster ip ของบริการ inference และใช้ pod ชั่วคราวที่มีคำสั่ง `curl` เพื่อทดสอบ endpoint ของบริการในคลัสเตอร์ได้
+ถัดไป สามารถค้นหาไอพีคลัสเตอร์ของบริการอนุมานและใช้ pod `curl` ชั่วคราวเพื่อทดสอบ endpoint ของบริการภายในคลัสเตอร์ได้
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,5 +176,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ข้อจำกัดความรับผิดชอบ**:
+เอกสารฉบับนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ความแม่นยำสูงสุด โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อน เอกสารต้นฉบับในภาษาต้นฉบับถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

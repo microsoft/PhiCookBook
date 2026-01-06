@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-17T00:38:18+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T09:01:28+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "ms"
 }
 -->
-# Laraskan dan Integrasikan model Phi-3 tersuai dengan Prompt flow
+# Laraskan dan Gabungkan model Phi-3 tersuai dengan Prompt flow
 
-Contoh hujung-ke-hujung (E2E) ini berdasarkan panduan "[Laraskan dan Integrasikan Model Phi-3 Tersuai dengan Prompt Flow: Panduan Langkah demi Langkah](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" dari Microsoft Tech Community. Ia memperkenalkan proses melaraskan, menyebarkan, dan mengintegrasikan model Phi-3 tersuai dengan Prompt flow.
+Contoh hujung ke hujung (E2E) ini berdasarkan panduan "[Laraskan dan Gabungkan Model Phi-3 Tersuai dengan Prompt Flow: Panduan Langkah demi Langkah](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" dari Komuniti Teknologi Microsoft. Ia memperkenalkan proses larasan halus, penerapan, dan penggabungan model Phi-3 tersuai dengan Prompt flow.
 
 ## Gambaran Keseluruhan
 
-Dalam contoh E2E ini, anda akan belajar cara melaraskan model Phi-3 dan mengintegrasikannya dengan Prompt flow. Dengan memanfaatkan Azure Machine Learning dan Prompt flow, anda akan membina aliran kerja untuk menyebarkan dan menggunakan model AI tersuai. Contoh E2E ini dibahagikan kepada tiga senario:
+Dalam contoh E2E ini, anda akan belajar cara untuk melaraskan halus model Phi-3 dan menggabungkannya dengan Prompt flow. Dengan memanfaatkan Azure Machine Learning dan Prompt flow, anda akan mewujudkan aliran kerja untuk menerapkan dan menggunakan model AI tersuai. Contoh E2E ini dibahagikan kepada tiga senario:
 
-**Senario 1: Sediakan sumber Azure dan Bersedia untuk melaraskan**
+**Senario 1: Sediakan sumber Azure dan Bersedia untuk pelarasan halus**
 
-**Senario 2: Laraskan model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio**
+**Senario 2: Laraskan halus model Phi-3 dan Terbitkan dalam Azure Machine Learning Studio**
 
-**Senario 3: Integrasikan dengan Prompt flow dan Berbual dengan model tersuai anda**
+**Senario 3: Gabungkan dengan Prompt flow dan Berbual dengan model tersuai anda**
 
 Berikut adalah gambaran keseluruhan contoh E2E ini.
 
@@ -27,27 +27,27 @@ Berikut adalah gambaran keseluruhan contoh E2E ini.
 
 ### Jadual Kandungan
 
-1. **[Senario 1: Sediakan sumber Azure dan Bersedia untuk melaraskan](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Cipta Workspace Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senario 1: Sediakan sumber Azure dan Bersedia untuk pelarasan halus](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Buat Workspace Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Mohon kuota GPU dalam Langganan Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Tambah penugasan peranan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Tambah penetapan peranan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Sediakan projek](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Sediakan set data untuk melaraskan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Sediakan set data untuk pelarasan halus](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Senario 2: Laraskan model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Senario 2: Laraskan halus model Phi-3 dan Terbitkan dalam Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Sediakan Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Laraskan model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Sebarkan model yang telah dilaraskan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Laraskan halus model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Terbitkan model yang telah dilaraskan halus](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Senario 3: Integrasikan dengan Prompt flow dan Berbual dengan model tersuai anda](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Integrasikan model Phi-3 tersuai dengan Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senario 3: Gabungkan dengan Prompt flow dan Berbual dengan model tersuai anda](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Gabungkan model Phi-3 tersuai dengan Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Berbual dengan model tersuai anda](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Senario 1: Sediakan sumber Azure dan Bersedia untuk melaraskan
+## Senario 1: Sediakan sumber Azure dan Bersedia untuk pelarasan halus
 
-### Cipta Workspace Azure Machine Learning
+### Buat Workspace Azure Machine Learning
 
-1. Taip *azure machine learning* dalam **bar carian** di bahagian atas halaman portal dan pilih **Azure Machine Learning** daripada pilihan yang muncul.
+1. Taip *azure machine learning* dalam **bar carian** di bahagian atas halaman portal dan pilih **Azure Machine Learning** dari pilihan yang muncul.
 
     ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ms.png)
 
@@ -60,13 +60,13 @@ Berikut adalah gambaran keseluruhan contoh E2E ini.
 1. Lakukan tugasan berikut:
 
     - Pilih **Subscription** Azure anda.
-    - Pilih **Resource group** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Resource group** untuk digunakan (cipta baru jika perlu).
     - Masukkan **Workspace Name**. Ia mesti nilai unik.
     - Pilih **Region** yang anda ingin gunakan.
-    - Pilih **Storage account** yang ingin digunakan (cipta baru jika perlu).
-    - Pilih **Key vault** yang ingin digunakan (cipta baru jika perlu).
-    - Pilih **Application insights** yang ingin digunakan (cipta baru jika perlu).
-    - Pilih **Container registry** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Storage account** untuk digunakan (cipta baru jika perlu).
+    - Pilih **Key vault** untuk digunakan (cipta baru jika perlu).
+    - Pilih **Application insights** untuk digunakan (cipta baru jika perlu).
+    - Pilih **Container registry** untuk digunakan (cipta baru jika perlu).
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ms.png)
 
@@ -76,37 +76,37 @@ Berikut adalah gambaran keseluruhan contoh E2E ini.
 
 ### Mohon kuota GPU dalam Langganan Azure
 
-Dalam contoh E2E ini, anda akan menggunakan *Standard_NC24ads_A100_v4 GPU* untuk melaraskan, yang memerlukan permohonan kuota, dan *Standard_E4s_v3* CPU untuk penyebaran, yang tidak memerlukan permohonan kuota.
+Dalam contoh E2E ini, anda akan menggunakan *Standard_NC24ads_A100_v4 GPU* untuk pelarasan halus, yang memerlukan permohonan kuota, dan *Standard_E4s_v3* CPU untuk penerapan, yang tidak memerlukan permohonan kuota.
 
 > [!NOTE]
 >
-> Hanya langganan Pay-As-You-Go (jenis langganan standard) layak untuk peruntukan GPU; langganan manfaat tidak disokong buat masa ini.
+> Hanya langganan Pay-As-You-Go (jenis langganan standard) layak untuk pengagihan GPU; langganan manfaat tidak disokong buat masa ini.
 >
-> Bagi mereka yang menggunakan langganan manfaat (seperti Visual Studio Enterprise Subscription) atau yang ingin menguji proses melaraskan dan penyebaran dengan cepat, tutorial ini juga menyediakan panduan untuk melaraskan dengan set data minimum menggunakan CPU. Namun, penting untuk diingat bahawa hasil pelarasan jauh lebih baik apabila menggunakan GPU dengan set data yang lebih besar.
+> Bagi mereka yang menggunakan langganan manfaat (seperti Visual Studio Enterprise Subscription) atau yang ingin menguji proses pelarasan halus dan penerapan dengan cepat, tutorial ini juga memberikan panduan untuk pelarasan halus menggunakan set data minimal dengan CPU. Namun, penting untuk memahami bahawa hasil pelarasan halus adalah jauh lebih baik apabila menggunakan GPU dengan set data yang lebih besar.
 
 1. Lawati [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Lakukan tugasan berikut untuk memohon kuota *Standard NCADSA100v4 Family*:
 
     - Pilih **Quota** dari tab sebelah kiri.
-    - Pilih **Virtual machine family** yang ingin digunakan. Contohnya, pilih **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, yang merangkumi *Standard_NC24ads_A100_v4* GPU.
+    - Pilih **Virtual machine family** yang hendak digunakan. Contohnya, pilih **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, yang termasuk *Standard_NC24ads_A100_v4* GPU.
     - Pilih **Request quota** dari menu navigasi.
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ms.png)
 
-    - Dalam halaman Request quota, masukkan **New cores limit** yang anda ingin gunakan. Contohnya, 24.
-    - Dalam halaman Request quota, pilih **Submit** untuk memohon kuota GPU.
+    - Di halaman Request quota, masukkan **New cores limit** yang ingin digunakan. Contohnya, 24.
+    - Di halaman Request quota, pilih **Submit** untuk memohon kuota GPU.
 
 > [!NOTE]
-> Anda boleh memilih GPU atau CPU yang sesuai mengikut keperluan dengan merujuk kepada dokumen [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> Anda boleh memilih GPU atau CPU yang sesuai untuk keperluan anda dengan merujuk dokumen [Saiz untuk Mesin Maya di Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
-### Tambah penugasan peranan
+### Tambah penetapan peranan
 
-Untuk melaraskan dan menyebarkan model anda, anda mesti terlebih dahulu mencipta User Assigned Managed Identity (UAI) dan memberikan kebenaran yang sesuai. UAI ini akan digunakan untuk pengesahan semasa penyebaran.
+Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu mencipta User Assigned Managed Identity (UAI) dan memberi kebenaran yang sesuai kepadanya. UAI ini akan digunakan untuk pengesahan semasa penerapan.
 
-#### Cipta User Assigned Managed Identity (UAI)
+#### Cipta User Assigned Managed Identity(UAI)
 
-1. Taip *managed identities* dalam **bar carian** di bahagian atas halaman portal dan pilih **Managed Identities** daripada pilihan yang muncul.
+1. Taip *managed identities* dalam **bar carian** di bahagian atas halaman portal dan pilih **Managed Identities** dari pilihan yang muncul.
 
     ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ms.png)
 
@@ -117,15 +117,15 @@ Untuk melaraskan dan menyebarkan model anda, anda mesti terlebih dahulu mencipta
 1. Lakukan tugasan berikut:
 
     - Pilih **Subscription** Azure anda.
-    - Pilih **Resource group** yang ingin digunakan (cipta baru jika perlu).
-    - Pilih **Region** yang anda ingin gunakan.
+    - Pilih **Resource group** untuk digunakan (cipta baru jika perlu).
+    - Pilih **Region** yang ingin anda gunakan.
     - Masukkan **Name**. Ia mesti nilai unik.
 
 1. Pilih **Review + create**.
 
 1. Pilih **+ Create**.
 
-#### Tambah penugasan peranan Contributor kepada Managed Identity
+#### Tambah penetapan peranan Contributor kepada Managed Identity
 
 1. Navigasi ke sumber Managed Identity yang anda cipta.
 
@@ -136,24 +136,24 @@ Untuk melaraskan dan menyebarkan model anda, anda mesti terlebih dahulu mencipta
 1. Dalam halaman Add role assignment, lakukan tugasan berikut:
     - Pilih **Scope** kepada **Resource group**.
     - Pilih **Subscription** Azure anda.
-    - Pilih **Resource group** yang ingin digunakan.
+    - Pilih **Resource group** yang hendak digunakan.
     - Pilih **Role** kepada **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ms.png)
 
 1. Pilih **Save**.
 
-#### Tambah penugasan peranan Storage Blob Data Reader kepada Managed Identity
+#### Tambah penetapan peranan Storage Blob Data Reader kepada Managed Identity
 
-1. Taip *storage accounts* dalam **bar carian** di bahagian atas halaman portal dan pilih **Storage accounts** daripada pilihan yang muncul.
+1. Taip *storage accounts* dalam **bar carian** di bahagian atas halaman portal dan pilih **Storage accounts** dari pilihan yang muncul.
 
     ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ms.png)
 
-1. Pilih akaun storan yang berkaitan dengan workspace Azure Machine Learning yang anda cipta. Contohnya, *finetunephistorage*.
+1. Pilih akaun storan yang berkait dengan workspace Azure Machine Learning yang anda cipta. Contohnya, *finetunephistorage*.
 
 1. Lakukan tugasan berikut untuk navigasi ke halaman Add role assignment:
 
-    - Navigasi ke akaun storan Azure yang anda cipta.
+    - Navigasi ke akaun Azure Storage yang anda cipta.
     - Pilih **Access Control (IAM)** dari tab sebelah kiri.
     - Pilih **+ Add** dari menu navigasi.
     - Pilih **Add role assignment** dari menu navigasi.
@@ -162,26 +162,26 @@ Untuk melaraskan dan menyebarkan model anda, anda mesti terlebih dahulu mencipta
 
 1. Dalam halaman Add role assignment, lakukan tugasan berikut:
 
-    - Dalam halaman Role, taip *Storage Blob Data Reader* dalam **bar carian** dan pilih **Storage Blob Data Reader** daripada pilihan yang muncul.
+    - Dalam halaman Role, taip *Storage Blob Data Reader* dalam **bar carian** dan pilih **Storage Blob Data Reader** dari pilihan yang muncul.
     - Dalam halaman Role, pilih **Next**.
     - Dalam halaman Members, pilih **Assign access to** **Managed identity**.
     - Dalam halaman Members, pilih **+ Select members**.
     - Dalam halaman Select managed identities, pilih **Subscription** Azure anda.
     - Dalam halaman Select managed identities, pilih **Managed identity** kepada **Manage Identity**.
-    - Dalam halaman Select managed identities, pilih Managed Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
+    - Dalam halaman Select managed identities, pilih Manage Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
     - Dalam halaman Select managed identities, pilih **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ms.png)
 
 1. Pilih **Review + assign**.
 
-#### Tambah penugasan peranan AcrPull kepada Managed Identity
+#### Tambah penetapan peranan AcrPull kepada Managed Identity
 
-1. Taip *container registries* dalam **bar carian** di bahagian atas halaman portal dan pilih **Container registries** daripada pilihan yang muncul.
+1. Taip *container registries* dalam **bar carian** di bahagian atas halaman portal dan pilih **Container registries** dari pilihan yang muncul.
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ms.png)
 
-1. Pilih container registry yang berkaitan dengan workspace Azure Machine Learning. Contohnya, *finetunephicontainerregistries*
+1. Pilih registry kontena yang berkait dengan workspace Azure Machine Learning. Contohnya, *finetunephicontainerregistries*
 
 1. Lakukan tugasan berikut untuk navigasi ke halaman Add role assignment:
 
@@ -191,19 +191,19 @@ Untuk melaraskan dan menyebarkan model anda, anda mesti terlebih dahulu mencipta
 
 1. Dalam halaman Add role assignment, lakukan tugasan berikut:
 
-    - Dalam halaman Role, taip *AcrPull* dalam **bar carian** dan pilih **AcrPull** daripada pilihan yang muncul.
+    - Dalam halaman Role, Taip *AcrPull* dalam **bar carian** dan pilih **AcrPull** dari pilihan yang muncul.
     - Dalam halaman Role, pilih **Next**.
     - Dalam halaman Members, pilih **Assign access to** **Managed identity**.
     - Dalam halaman Members, pilih **+ Select members**.
     - Dalam halaman Select managed identities, pilih **Subscription** Azure anda.
     - Dalam halaman Select managed identities, pilih **Managed identity** kepada **Manage Identity**.
-    - Dalam halaman Select managed identities, pilih Managed Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
+    - Dalam halaman Select managed identities, pilih Manage Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
     - Dalam halaman Select managed identities, pilih **Select**.
     - Pilih **Review + assign**.
 
 ### Sediakan projek
 
-Sekarang, anda akan mencipta folder untuk bekerja di dalamnya dan menyediakan persekitaran maya untuk membangunkan program yang berinteraksi dengan pengguna dan menggunakan sejarah sembang yang disimpan dari Azure Cosmos DB untuk memaklumkan responsnya.
+Sekarang, anda akan mencipta folder untuk bekerja di dalamnya dan menyediakan persekitaran maya untuk membangunkan program yang berinteraksi dengan pengguna serta menggunakan sejarah sembang yang disimpan dari Azure Cosmos DB untuk memaklumkan balasannya.
 
 #### Cipta folder untuk bekerja di dalamnya
 
@@ -232,9 +232,11 @@ Sekarang, anda akan mencipta folder untuk bekerja di dalamnya dan menyediakan pe
     ```console
     .venv\Scripts\activate.bat
     ```
+
 > [!NOTE]
 >
-> Jika berjaya, anda akan melihat *(.venv)* sebelum prompt arahan.
+> Jika berjaya, anda harus melihat *(.venv)* sebelum prompt arahan.
+
 #### Pasang pakej yang diperlukan
 
 1. Taip arahan berikut dalam terminal anda untuk memasang pakej yang diperlukan.
@@ -249,19 +251,18 @@ Sekarang, anda akan mencipta folder untuk bekerja di dalamnya dan menyediakan pe
     ```
 
 #### Cipta fail projek
-
-Dalam latihan ini, anda akan mencipta fail penting untuk projek kita. Fail-fail ini termasuk skrip untuk memuat turun set data, menyediakan persekitaran Azure Machine Learning, melatih semula model Phi-3, dan menyebarkan model yang telah dilatih semula. Anda juga akan mencipta fail *conda.yml* untuk menyediakan persekitaran latihan semula.
+Dalam latihan ini, anda akan mencipta fail penting untuk projek kami. Fail-fail ini termasuk skrip untuk memuat turun set data, menyediakan persekitaran Azure Machine Learning, menala halus model Phi-3, dan menerapkan model yang telah ditala halus. Anda juga akan mencipta fail *conda.yml* untuk menyediakan persekitaran tala halus.
 
 Dalam latihan ini, anda akan:
 
-- Cipta fail *download_dataset.py* untuk memuat turun set data.
-- Cipta fail *setup_ml.py* untuk menyediakan persekitaran Azure Machine Learning.
-- Cipta fail *fine_tune.py* dalam folder *finetuning_dir* untuk melatih semula model Phi-3 menggunakan set data.
-- Cipta fail *conda.yml* untuk menyediakan persekitaran latihan semula.
-- Cipta fail *deploy_model.py* untuk menyebarkan model yang telah dilatih semula.
-- Cipta fail *integrate_with_promptflow.py* untuk mengintegrasikan model yang telah dilatih semula dan menjalankan model menggunakan Prompt flow.
-- Cipta fail flow.dag.yml untuk menyediakan struktur aliran kerja bagi Prompt flow.
-- Cipta fail *config.py* untuk memasukkan maklumat Azure.
+- Mencipta fail *download_dataset.py* untuk memuat turun set data.
+- Mencipta fail *setup_ml.py* untuk menyediakan persekitaran Azure Machine Learning.
+- Mencipta fail *fine_tune.py* dalam folder *finetuning_dir* untuk menala halus model Phi-3 menggunakan set data.
+- Mencipta fail *conda.yml* untuk menyediakan persekitaran tala halus.
+- Mencipta fail *deploy_model.py* untuk menerapkan model yang telah ditala halus.
+- Mencipta fail *integrate_with_promptflow.py*, untuk mengintegrasikan model yang telah ditala halus dan melaksanakan model menggunakan Prompt flow.
+- Mencipta fail flow.dag.yml, untuk menyediakan struktur aliran kerja bagi Prompt flow.
+- Mencipta fail *config.py* untuk memasukkan maklumat Azure.
 
 > [!NOTE]
 >
@@ -307,7 +308,7 @@ Dalam latihan ini, anda akan:
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *conda.yml*.
 
-1. Tambahkan kod berikut ke dalam fail *conda.yml* untuk menyediakan persekitaran latihan semula bagi model Phi-3.
+1. Tambahkan kod berikut ke fail *conda.yml* untuk menyediakan persekitaran tala halus bagi model Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -337,26 +338,26 @@ Dalam latihan ini, anda akan:
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *config.py*.
 
-1. Tambahkan kod berikut ke dalam fail *config.py* untuk memasukkan maklumat Azure anda.
+1. Tambahkan kod berikut ke fail *config.py* untuk memasukkan maklumat Azure anda.
 
     ```python
-    # Azure settings
+    # Tetapan Azure
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
     AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
 
-    # Azure Machine Learning settings
+    # Tetapan Pembelajaran Mesin Azure
     AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
 
-    # Azure Managed Identity settings
+    # Tetapan Identiti Terurus Azure
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
     AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # Laluan fail set data
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # Tetapan model yang telah dilatih halus
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
     AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
     AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
@@ -367,38 +368,38 @@ Dalam latihan ini, anda akan:
 
 #### Tambah pembolehubah persekitaran Azure
 
-1. Lakukan tugas berikut untuk menambah Azure Subscription ID:
+1. Laksanakan tugas berikut untuk menambah ID Langganan Azure:
 
-    - Taip *subscriptions* dalam **bar carian** di bahagian atas halaman portal dan pilih **Subscriptions** dari pilihan yang muncul.
-    - Pilih Azure Subscription yang anda sedang gunakan.
-    - Salin dan tampal Subscription ID anda ke dalam fail *config.py*.
+    - Taip *subscriptions* di **bar carian** di bahagian atas halaman portal dan pilih **Subscriptions** dari pilihan yang muncul.
+    - Pilih Langganan Azure yang anda gunakan sekarang.
+    - Salin dan tampal ID Langganan anda ke dalam fail *config.py*.
 
-    ![Cari subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ms.png)
+    ![Cari ID langganan.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ms.png)
 
-1. Lakukan tugas berikut untuk menambah Nama Workspace Azure:
+1. Laksanakan tugas berikut untuk menambah Nama Workspace Azure:
 
     - Navigasi ke sumber Azure Machine Learning yang anda cipta.
     - Salin dan tampal nama akaun anda ke dalam fail *config.py*.
 
     ![Cari nama Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ms.png)
 
-1. Lakukan tugas berikut untuk menambah Nama Kumpulan Sumber Azure:
+1. Laksanakan tugas berikut untuk menambah Nama Kumpulan Sumber Azure:
 
     - Navigasi ke sumber Azure Machine Learning yang anda cipta.
     - Salin dan tampal Nama Kumpulan Sumber Azure anda ke dalam fail *config.py*.
 
     ![Cari nama kumpulan sumber.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ms.png)
 
-2. Lakukan tugas berikut untuk menambah nama Identiti Terurus Azure
+2. Laksanakan tugas berikut untuk menambah nama Identiti Terurus Azure
 
-    - Navigasi ke sumber Managed Identities yang anda cipta.
+    - Navigasi ke sumber Identiti Terurus yang anda cipta.
     - Salin dan tampal nama Identiti Terurus Azure anda ke dalam fail *config.py*.
 
     ![Cari UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ms.png)
 
-### Sediakan set data untuk latihan semula
+### Sediakan set data untuk tala halus
 
-Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat turun set data *ULTRACHAT_200k* ke persekitaran tempatan anda. Anda kemudian akan menggunakan set data ini untuk melatih semula model Phi-3 dalam Azure Machine Learning.
+Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat turun set data *ULTRACHAT_200k* ke persekitaran tempatan anda. Anda kemudian akan menggunakan set data ini untuk menala halus model Phi-3 dalam Azure Machine Learning.
 
 #### Muat turun set data anda menggunakan *download_dataset.py*
 
@@ -418,11 +419,11 @@ Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # Muatkan set data dengan nama, konfigurasi, dan nisbah pecahan yang ditetapkan
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # Bahagikan set data kepada set latihan dan ujian (80% latihan, 20% ujian)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -433,16 +434,16 @@ Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # Cipta direktori jika ia tidak wujud
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # Buka fail dalam mod tulis
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # Ulang setiap rekod dalam set data
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # Buang rekod sebagai objek JSON dan tulis ke dalam fail
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # Tulis aksara baris baru untuk memisahkan rekod
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -451,17 +452,17 @@ Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # Muatkan dan bahagi set data ULTRACHAT_200k dengan konfigurasi dan nisbah pecahan tertentu
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # Ekstrak set data latihan dan ujian daripada pecahan
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # Simpan set data latihan ke fail JSONL
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # Simpan set data ujian ke fail JSONL berasingan
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -471,9 +472,9 @@ Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat
 
 > [!TIP]
 >
-> **Panduan untuk melatih semula dengan set data minimum menggunakan CPU**
+> **Panduan untuk menala halus dengan set data minimal menggunakan CPU**
 >
-> Jika anda ingin menggunakan CPU untuk latihan semula, pendekatan ini sesuai untuk mereka yang mempunyai langganan manfaat (seperti Visual Studio Enterprise Subscription) atau untuk menguji proses latihan semula dan penyebaran dengan cepat.
+> Jika anda ingin menggunakan CPU untuk menala halus, pendekatan ini sesuai untuk mereka yang mempunyai langganan manfaat (seperti Langganan Visual Studio Enterprise) atau untuk menguji proses tala halus dan penerapan dengan cepat.
 >
 > Gantikan `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` dengan `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
@@ -484,19 +485,19 @@ Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat
     python download_data.py
     ```
 
-1. Sahkan bahawa set data telah berjaya disimpan ke direktori *finetune-phi/data* tempatan anda.
+1. Sahihkan bahawa set data telah berjaya disimpan ke direktori *finetune-phi/data* tempatan anda.
 
 > [!NOTE]
 >
-> **Saiz set data dan masa latihan semula**
+> **Saiz set data dan masa tala halus**
 >
-> Dalam contoh E2E ini, anda hanya menggunakan 1% daripada set data (`train_sft[:1%]`). Ini mengurangkan jumlah data dengan ketara, mempercepatkan proses muat naik dan latihan semula. Anda boleh laraskan peratusan untuk mencari keseimbangan yang sesuai antara masa latihan dan prestasi model. Menggunakan subset yang lebih kecil daripada set data mengurangkan masa yang diperlukan untuk latihan semula, menjadikan proses lebih mudah diurus untuk contoh E2E.
+> Dalam contoh E2E ini, anda hanya menggunakan 1% daripada set data (`train_sft[:1%]`). Ini secara signifikan mengurangkan jumlah data, mempercepatkan proses muat naik dan tala halus. Anda boleh laraskan peratusan untuk mencari keseimbangan yang tepat antara masa latihan dan prestasi model. Menggunakan subset set data yang lebih kecil mengurangkan masa yang diperlukan untuk tala halus, menjadikan proses lebih mudah diurus untuk contoh E2E.
 
-## Senario 2: Latih semula model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio
+## Senario 2: Tala halus model Phi-3 dan Terapkan dalam Azure Machine Learning Studio
 
 ### Sediakan Azure CLI
 
-Anda perlu menyediakan Azure CLI untuk mengesahkan persekitaran anda. Azure CLI membolehkan anda mengurus sumber Azure terus dari baris arahan dan menyediakan kelayakan yang diperlukan untuk Azure Machine Learning mengakses sumber ini. Untuk bermula, pasang [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Anda perlu menyediakan Azure CLI untuk mengesahkan persekitaran anda. Azure CLI membolehkan anda mengurus sumber Azure terus dari baris perintah dan menyediakan kelayakan yang diperlukan agar Azure Machine Learning dapat mengakses sumber ini. Untuk memulakan, pasang [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
 1. Buka tetingkap terminal dan taip arahan berikut untuk log masuk ke akaun Azure anda.
 
@@ -504,9 +505,9 @@ Anda perlu menyediakan Azure CLI untuk mengesahkan persekitaran anda. Azure CLI 
     az login
     ```
 
-1. Pilih akaun Azure anda untuk digunakan.
+1. Pilih akaun Azure yang anda ingin gunakan.
 
-1. Pilih langganan Azure anda untuk digunakan.
+1. Pilih langganan Azure yang anda ingin gunakan.
 
     ![Cari nama kumpulan sumber.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ms.png)
 
@@ -519,11 +520,11 @@ Anda perlu menyediakan Azure CLI untuk mengesahkan persekitaran anda. Azure CLI 
 > ```
 >
 
-### Latih semula model Phi-3
+### Tala halus model Phi-3
 
-Dalam latihan ini, anda akan melatih semula model Phi-3 menggunakan set data yang disediakan. Pertama, anda akan mentakrifkan proses latihan semula dalam fail *fine_tune.py*. Kemudian, anda akan mengkonfigurasi persekitaran Azure Machine Learning dan memulakan proses latihan semula dengan menjalankan fail *setup_ml.py*. Skrip ini memastikan latihan semula berlaku dalam persekitaran Azure Machine Learning.
+Dalam latihan ini, anda akan menala halus model Phi-3 menggunakan set data yang disediakan. Pertama, anda akan mentakrifkan proses tala halus dalam fail *fine_tune.py*. Kemudian, anda akan mengkonfigurasikan persekitaran Azure Machine Learning dan memulakan proses tala halus dengan menjalankan fail *setup_ml.py*. Skrip ini memastikan proses tala halus berlaku dalam persekitaran Azure Machine Learning.
 
-Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula dalam persekitaran Azure Machine Learning.
+Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses tala halus dalam persekitaran Azure Machine Learning.
 
 #### Tambah kod ke fail *fine_tune.py*
 
@@ -542,10 +543,10 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # Untuk mengelakkan ralat INVALID_PARAMETER_VALUE dalam MLflow, lumpuhkan integrasi MLflow
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # Tetapan log
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -685,11 +686,11 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
 1. Simpan dan tutup fail *fine_tune.py*.
 
 > [!TIP]
-> **Anda boleh melatih semula model Phi-3.5**
+> **Anda boleh menala halus model Phi-3.5**
 >
-> Dalam fail *fine_tune.py*, anda boleh menukar `pretrained_model_name` dari `"microsoft/Phi-3-mini-4k-instruct"` ke mana-mana model yang anda ingin latih semula. Contohnya, jika anda menukarnya kepada `"microsoft/Phi-3.5-mini-instruct"`, anda akan menggunakan model Phi-3.5-mini-instruct untuk latihan semula. Untuk mencari dan menggunakan nama model yang anda suka, lawati [Hugging Face](https://huggingface.co/), cari model yang anda minati, dan salin serta tampal namanya ke dalam medan `pretrained_model_name` dalam skrip anda.
+> Dalam fail *fine_tune.py*, anda boleh menukar `pretrained_model_name` dari `"microsoft/Phi-3-mini-4k-instruct"` kepada mana-mana model yang anda mahu tala halus. Sebagai contoh, jika anda menukarnya kepada `"microsoft/Phi-3.5-mini-instruct"`, anda akan menggunakan model Phi-3.5-mini-instruct untuk tala halus. Untuk mencari dan menggunakan nama model yang anda suka, lawati [Hugging Face](https://huggingface.co/), cari model yang anda minati, dan kemudian salin dan tampal namanya ke medan `pretrained_model_name` dalam skrip anda.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Latih semula Phi-3.5.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Tala halus Phi-3.5.">
 >
 
 #### Tambah kod ke fail *setup_ml.py*
@@ -711,25 +712,25 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
         TEST_DATA_PATH
     )
 
-    # Constants
+    # Pemalar
 
-    # Uncomment the following lines to use a CPU instance for training
+    # Buka komen baris berikut untuk menggunakan instans CPU untuk latihan
     # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # Buka komen baris berikut untuk menggunakan instans GPU untuk latihan
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # Gantikan dengan lokasi kluster pengkomputeran anda
+    FINETUNING_DIR = "./finetuning_dir" # Laluan ke skrip penyelarasan halus
+    TRAINING_ENV_NAME = "phi-3-training-environment" # Nama persekitaran latihan
+    MODEL_OUTPUT_DIR = "./model_output" # Laluan ke direktori output model dalam azure ml
 
-    # Logging setup to track the process
+    # Persediaan log untuk menjejaki proses
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -749,9 +750,9 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # Imej Docker untuk persekitaran
+            conda_file=CONDA_FILE,  # Fail persekitaran Conda
+            name=TRAINING_ENV_NAME,  # Nama persekitaran
         )
         return ml_client.environments.create_or_update(env)
 
@@ -768,11 +769,11 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # Peringkat kluster pengkomputeran
+                min_instances=0,  # Bilangan instans minimum
+                max_instances=1  # Bilangan instans maksimum
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Tunggu kluster untuk dicipta
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -780,18 +781,18 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # Laluan ke fine_tune.py
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # Persekitaran latihan
+            compute=compute_name,  # Kluster pengkomputeran untuk digunakan
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Laluan ke fail data latihan
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Laluan ke fail data penilaian
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -800,21 +801,21 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # Inisialisasi ML Client
         ml_client = get_ml_client()
 
-        # Create Environment
+        # Cipta Persekitaran
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # Cipta atau dapatkan kluster pengkomputeran sedia ada
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # Cipta dan Hantar Tugas Penyelarasan Halus
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # Hantar tugas
+        ml_client.jobs.stream(returned_job.name)  # Alirkan log tugas
         
-        # Capture the job name
+        # Tangkap nama tugas
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -826,22 +827,22 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
 1. Gantikan `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, dan `LOCATION` dengan butiran khusus anda.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # Nyahkomen baris berikut untuk menggunakan instance GPU bagi latihan
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # Gantikan dengan lokasi kluster pengiraan anda
     ```
 
 > [!TIP]
 >
-> **Panduan untuk melatih semula dengan set data minimum menggunakan CPU**
+> **Panduan untuk menala halus dengan set data minimal menggunakan CPU**
 >
-> Jika anda ingin menggunakan CPU untuk latihan semula, pendekatan ini sesuai untuk mereka yang mempunyai langganan manfaat (seperti Visual Studio Enterprise Subscription) atau untuk menguji proses latihan semula dan penyebaran dengan cepat.
+> Jika anda ingin menggunakan CPU untuk menala halus, pendekatan ini sesuai untuk mereka yang mempunyai langganan manfaat (seperti Langganan Visual Studio Enterprise) atau untuk menguji proses tala halus dan penerapan dengan cepat.
 >
 > 1. Buka fail *setup_ml*.
-> 2. Gantikan `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, dan `DOCKER_IMAGE_NAME` dengan yang berikut. Jika anda tidak mempunyai akses ke *Standard_E16s_v3*, anda boleh menggunakan instans CPU yang setara atau memohon kuota baru.
-> 3. Gantikan `LOCATION` dengan butiran khusus anda.
+> 1. Gantikan `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, dan `DOCKER_IMAGE_NAME` dengan yang berikut. Jika anda tidak mempunyai akses kepada *Standard_E16s_v3*, anda boleh menggunakan instans CPU yang setara atau memohon kuota baru.
+> 1. Gantikan `LOCATION` dengan butiran khusus anda.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -852,33 +853,33 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula da
 >    ```
 >
 
-1. Taip arahan berikut untuk menjalankan skrip *setup_ml.py* dan mulakan proses latihan semula dalam Azure Machine Learning.
+1. Taip arahan berikut untuk menjalankan skrip *setup_ml.py* dan mulakan proses tala halus dalam Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. Dalam latihan ini, anda berjaya melatih semula model Phi-3 menggunakan Azure Machine Learning. Dengan menjalankan skrip *setup_ml.py*, anda telah menyediakan persekitaran Azure Machine Learning dan memulakan proses latihan semula yang ditakrifkan dalam fail *fine_tune.py*. Sila ambil perhatian bahawa proses latihan semula boleh mengambil masa yang agak lama. Selepas menjalankan arahan `python setup_ml.py`, anda perlu menunggu proses selesai. Anda boleh memantau status kerja latihan semula dengan mengikuti pautan yang disediakan dalam terminal ke portal Azure Machine Learning.
+1. Dalam latihan ini, anda berjaya menala halus model Phi-3 menggunakan Azure Machine Learning. Dengan menjalankan skrip *setup_ml.py*, anda telah menyediakan persekitaran Azure Machine Learning dan memulakan proses tala halus yang ditakrifkan dalam fail *fine_tune.py*. Sila ambil perhatian bahawa proses tala halus boleh mengambil masa yang cukup lama. Selepas menjalankan arahan `python setup_ml.py`, anda perlu menunggu proses selesai. Anda boleh memantau status kerja tala halus dengan mengikuti pautan yang disediakan dalam terminal ke portal Azure Machine Learning.
 
-    ![Lihat kerja latihan semula.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ms.png)
+    ![Lihat kerja tala halus.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ms.png)
 
-### Sebarkan model yang telah dilatih semula
+### Terapkan model yang telah ditala halus
 
-Untuk mengintegrasikan model Phi-3 yang telah dilatih semula dengan Prompt Flow, anda perlu menyebarkan model tersebut supaya ia boleh diakses untuk inferens masa nyata. Proses ini melibatkan pendaftaran model, mencipta endpoint dalam talian, dan menyebarkan model.
+Untuk mengintegrasikan model Phi-3 yang telah ditala halus dengan Prompt Flow, anda perlu menerapkan model itu agar boleh diakses untuk inferens masa nyata. Proses ini melibatkan pendaftaran model, mencipta titik hujung dalam talian, dan menerapkan model.
 
-#### Tetapkan nama model, nama endpoint, dan nama penyebaran untuk penyebaran
+#### Tetapkan nama model, nama titik hujung, dan nama penerapan untuk penerapan
 
 1. Buka fail *config.py*.
 
 1. Gantikan `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` dengan nama yang anda inginkan untuk model anda.
 
-1. Gantikan `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` dengan nama yang anda inginkan untuk endpoint anda.
+1. Gantikan `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` dengan nama yang anda inginkan untuk titik hujung anda.
 
-1. Gantikan `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` dengan nama yang anda inginkan untuk penyebaran anda.
+1. Gantikan `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` dengan nama yang anda inginkan untuk penerapan anda.
 
 #### Tambah kod ke fail *deploy_model.py*
 
-Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran. Ia mendaftar model, mencipta endpoint, dan melaksanakan penyebaran berdasarkan tetapan yang ditentukan dalam fail config.py, yang merangkumi nama model, nama endpoint, dan nama penyebaran.
+Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penerapan. Ia mendaftar model, mencipta titik hujung, dan melaksanakan penerapan berdasarkan tetapan yang dinyatakan dalam fail config.py, yang termasuk nama model, nama titik hujung, dan nama penerapan.
 
 1. Buka fail *deploy_model.py* dalam Visual Studio Code.
 
@@ -891,7 +892,7 @@ Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # Import konfigurasi
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -903,7 +904,7 @@ Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # Pemalar
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -913,7 +914,7 @@ Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # Penyediaan log
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1002,25 +1003,25 @@ Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # Dapatkan butiran titik akhir semasa
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # Log peruntukan trafik semasa untuk penyahpepijatan
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # Tetapkan peruntukan trafik untuk penempatan
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # Kemas kini titik akhir dengan peruntukan trafik baru
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # Log peruntukan trafik yang dikemas kini untuk penyahpepijatan
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # Log sebarang ralat yang berlaku semasa proses
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1048,64 +1049,63 @@ Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran
 
     ```
 
-1. Lakukan tugas berikut untuk mendapatkan `JOB_NAME`:
+1. Laksanakan tugas berikut untuk mendapatkan `JOB_NAME`:
 
     - Navigasi ke sumber Azure Machine Learning yang anda cipta.
     - Pilih **Studio web URL** untuk membuka ruang kerja Azure Machine Learning.
     - Pilih **Jobs** dari tab sebelah kiri.
-    - Pilih eksperimen untuk latihan semula. Contohnya, *finetunephi*.
+    - Pilih eksperimen untuk tala halus. Sebagai contoh, *finetunephi*.
     - Pilih kerja yang anda cipta.
-- Salin dan tampal Nama kerja anda ke dalam `JOB_NAME = "your-job-name"` dalam fail *deploy_model.py*.
+- Salin dan tampal Nama kerja anda ke dalam `JOB_NAME = "nama-kerja-anda"` dalam fail *deploy_model.py*.
 
 1. Gantikan `COMPUTE_INSTANCE_TYPE` dengan butiran khusus anda.
 
-1. Taip arahan berikut untuk menjalankan skrip *deploy_model.py* dan mulakan proses penyebaran dalam Azure Machine Learning.
+1. Taip arahan berikut untuk menjalankan skrip *deploy_model.py* dan mulakan proses penghasilan di Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
 
-
 > [!WARNING]
-> Untuk mengelakkan caj tambahan ke akaun anda, pastikan untuk memadamkan endpoint yang telah dibuat dalam ruang kerja Azure Machine Learning.
+> Untuk mengelakkan caj tambahan ke akaun anda, pastikan untuk memadamkan titik hujung yang telah dibuat dalam ruang kerja Azure Machine Learning.
 >
 
-#### Semak status penyebaran dalam Azure Machine Learning Workspace
+#### Semak status penghasilan di Azure Machine Learning Workspace
 
 1. Lawati [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Navigasi ke ruang kerja Azure Machine Learning yang anda telah cipta.
+1. Navigasi ke ruang kerja Azure Machine Learning yang anda buat.
 
 1. Pilih **Studio web URL** untuk membuka ruang kerja Azure Machine Learning.
 
-1. Pilih **Endpoints** dari tab sebelah kiri.
+1. Pilih **Endpoints** daripada tab sebelah kiri.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ms.png)
+    ![Pilih endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ms.png)
 
-2. Pilih endpoint yang anda telah cipta.
+2. Pilih titik hujung yang anda buat.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ms.png)
+    ![Pilih endpoints yang anda buat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ms.png)
 
-3. Pada halaman ini, anda boleh menguruskan endpoint yang dibuat semasa proses penyebaran.
+3. Pada halaman ini, anda boleh menguruskan titik hujung yang dibuat semasa proses penghasilan.
 
-## Senario 3: Integrasi dengan Prompt flow dan Berbual dengan model tersuai anda
+## Senario 3: Integrasi dengan Prompt flow dan Bersembang dengan model khusus anda
 
-### Integrasi model Phi-3 tersuai dengan Prompt flow
+### Integrasikan model Phi-3 khusus dengan Prompt flow
 
-Selepas berjaya menyebarkan model yang telah ditala halus, anda kini boleh mengintegrasikannya dengan Prompt flow untuk menggunakan model anda dalam aplikasi masa nyata, membolehkan pelbagai tugasan interaktif dengan model Phi-3 tersuai anda.
+Setelah berjaya menghasil model yang telah disesuaikan, anda kini boleh mengintegrasikannya dengan Prompt flow untuk menggunakan model anda dalam aplikasi masa nyata, membolehkan pelbagai tugasan interaktif dengan model Phi-3 khusus anda.
 
-#### Tetapkan kunci api dan uri endpoint model Phi-3 yang telah ditala halus
+#### Tetapkan kunci api dan URI titik hujung model Phi-3 yang telah disesuaikan
 
-1. Navigasi ke ruang kerja Azure Machine Learning yang anda telah cipta.
-1. Pilih **Endpoints** dari tab sebelah kiri.
-1. Pilih endpoint yang anda telah cipta.
-1. Pilih **Consume** dari menu navigasi.
+1. Navigasi ke ruang kerja Azure Machine Learning yang anda buat.
+1. Pilih **Endpoints** daripada tab sebelah kiri.
+1. Pilih titik hujung yang anda buat.
+1. Pilih **Consume** daripada menu navigasi.
 1. Salin dan tampal **REST endpoint** anda ke dalam fail *config.py*, gantikan `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` dengan **REST endpoint** anda.
 1. Salin dan tampal **Primary key** anda ke dalam fail *config.py*, gantikan `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` dengan **Primary key** anda.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ms.png)
+    ![Salin kunci api dan uri titik hujung.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ms.png)
 
-#### Tambah kod ke dalam fail *flow.dag.yml*
+#### Tambah kod ke fail *flow.dag.yml*
 
 1. Buka fail *flow.dag.yml* dalam Visual Studio Code.
 
@@ -1132,7 +1132,7 @@ Selepas berjaya menyebarkan model yang telah ditala halus, anda kini boleh mengi
         input_data: ${inputs.input_data}
     ```
 
-#### Tambah kod ke dalam fail *integrate_with_promptflow.py*
+#### Tambah kod ke fail *integrate_with_promptflow.py*
 
 1. Buka fail *integrate_with_promptflow.py* dalam Visual Studio Code.
 
@@ -1149,7 +1149,7 @@ Selepas berjaya menyebarkan model yang telah ditala halus, anda kini boleh mengi
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # Tetapan log
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1202,17 +1202,21 @@ Selepas berjaya menyebarkan model yang telah ditala halus, anda kini boleh mengi
 
     ```
 
-### Berbual dengan model tersuai anda
+### Bersembang dengan model khusus anda
 
-1. Taip arahan berikut untuk menjalankan skrip *deploy_model.py* dan mulakan proses penyebaran dalam Azure Machine Learning.
+1. Taip arahan berikut untuk menjalankan skrip *deploy_model.py* dan mulakan proses penghasilan di Azure Machine Learning.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Berikut adalah contoh hasilnya: Kini anda boleh berbual dengan model Phi-3 tersuai anda. Disarankan untuk bertanya soalan berdasarkan data yang digunakan untuk tala halus.
+1. Berikut adalah contoh hasil: Kini anda boleh bersembang dengan model Phi-3 khusus anda. Disarankan untuk bertanya soalan berdasarkan data yang digunakan untuk penalaan halus.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ms.png)
+    ![Contoh prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ms.png)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sah dan utama. Untuk maklumat yang penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsiran yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

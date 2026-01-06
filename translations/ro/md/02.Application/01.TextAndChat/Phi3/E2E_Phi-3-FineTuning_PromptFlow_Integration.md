@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-17T00:44:49+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T09:52:58+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "ro"
 }
 -->
-# Ajustați și integrați modelele personalizate Phi-3 cu Prompt flow
+# Reglarea fină și integrarea modelelor personalizate Phi-3 cu Prompt flow
 
-Acest exemplu end-to-end (E2E) se bazează pe ghidul „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)” din Microsoft Tech Community. Acesta prezintă procesele de ajustare fină, implementare și integrare a modelelor personalizate Phi-3 cu Prompt flow.
+Acest exemplu end-to-end (E2E) este bazat pe ghidul "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" din Microsoft Tech Community. Acesta introduce procesele de reglare fină, implementare și integrare a modelelor personalizate Phi-3 cu Prompt flow.
 
 ## Prezentare generală
 
-În acest exemplu E2E, veți învăța cum să ajustați fin modelul Phi-3 și să îl integrați cu Prompt flow. Folosind Azure Machine Learning și Prompt flow, veți stabili un flux de lucru pentru implementarea și utilizarea modelelor AI personalizate. Acest exemplu E2E este împărțit în trei scenarii:
+În acest exemplu E2E, veți învăța cum să reglați fin modelul Phi-3 și să-l integrați cu Prompt flow. Folosind Azure Machine Learning și Prompt flow, veți stabili un flux de lucru pentru implementarea și utilizarea modelelor AI personalizate. Acest exemplu E2E este împărțit în trei scenarii:
 
-**Scenariul 1: Configurarea resurselor Azure și pregătirea pentru ajustarea fină**
+**Scenariul 1: Configurarea resurselor Azure și pregătirea pentru reglarea fină**
 
-**Scenariul 2: Ajustarea fină a modelului Phi-3 și implementarea în Azure Machine Learning Studio**
+**Scenariul 2: Reglarea fină a modelului Phi-3 și implementarea în Azure Machine Learning Studio**
 
-**Scenariul 3: Integrarea cu Prompt flow și conversația cu modelul personalizat**
+**Scenariul 3: Integrarea cu Prompt flow și chat cu modelul personalizat**
 
 Iată o prezentare generală a acestui exemplu E2E.
 
@@ -27,23 +27,23 @@ Iată o prezentare generală a acestui exemplu E2E.
 
 ### Cuprins
 
-1. **[Scenariul 1: Configurarea resurselor Azure și pregătirea pentru ajustarea fină](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenariul 1: Configurarea resurselor Azure și pregătirea pentru reglarea fină](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Crearea unui Workspace Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Solicitarea cotelor GPU în abonamentul Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Adăugarea unei atribuiri de rol](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Configurarea proiectului](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Pregătirea setului de date pentru ajustarea fină](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Pregătirea setului de date pentru reglarea fină](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenariul 2: Ajustarea fină a modelului Phi-3 și implementarea în Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenariul 2: Reglarea fină a modelului Phi-3 și implementarea în Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Configurarea Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Ajustarea fină a modelului Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Implementarea modelului ajustat](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Reglarea fină a modelului Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Implementarea modelului reglat fin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenariul 3: Integrarea cu Prompt flow și conversația cu modelul personalizat](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenariul 3: Integrarea cu Prompt flow și chat cu modelul personalizat](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrarea modelului personalizat Phi-3 cu Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Conversația cu modelul personalizat](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Chat cu modelul tău personalizat](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Scenariul 1: Configurarea resurselor Azure și pregătirea pentru ajustarea fină
+## Scenariul 1: Configurarea resurselor Azure și pregătirea pentru reglarea fină
 
 ### Crearea unui Workspace Azure Machine Learning
 
@@ -57,16 +57,16 @@ Iată o prezentare generală a acestui exemplu E2E.
 
     ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.ro.png)
 
-1. Efectuați următoarele acțiuni:
+1. Efectuați următoarele sarcini:
 
-    - Selectați **Subscription** Azure.
-    - Selectați **Resource group** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
+    - Selectați **Subscription**-ul Azure.
+    - Selectați **Resource group**-ul pe care doriți să îl utilizați (creați unul nou dacă este necesar).
     - Introduceți **Workspace Name**. Trebuie să fie o valoare unică.
     - Selectați **Region** pe care doriți să o utilizați.
-    - Selectați **Storage account** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
-    - Selectați **Key vault** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
-    - Selectați **Application insights** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
-    - Selectați **Container registry** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
+    - Selectați contul de **Storage** pe care doriți să îl utilizați (creați unul nou dacă este necesar).
+    - Selectați **Key vault** pe care doriți să îl utilizați (creați unul nou dacă este necesar).
+    - Selectați **Application insights** pe care doriți să îl utilizați (creați unul nou dacă este necesar).
+    - Selectați **Container registry** pe care doriți să îl utilizați (creați unul nou dacă este necesar).
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ro.png)
 
@@ -76,33 +76,33 @@ Iată o prezentare generală a acestui exemplu E2E.
 
 ### Solicitarea cotelor GPU în abonamentul Azure
 
-În acest exemplu E2E, veți folosi *Standard_NC24ads_A100_v4 GPU* pentru ajustarea fină, care necesită o solicitare de cotă, și *Standard_E4s_v3* CPU pentru implementare, care nu necesită solicitare de cotă.
+În acest exemplu E2E, veți folosi *Standard_NC24ads_A100_v4 GPU* pentru reglarea fină, care necesită o solicitare de cotă, și *Standard_E4s_v3* CPU pentru implementare, care nu necesită solicitare de cotă.
 
 > [!NOTE]
 >
-> Doar abonamentele Pay-As-You-Go (tipul standard de abonament) sunt eligibile pentru alocarea GPU; abonamentele de tip beneficii nu sunt acceptate în prezent.
+> Doar abonamentele Pay-As-You-Go (tipul standard de abonament) sunt eligibile pentru alocarea GPU; abonamentele de tip beneficiu nu sunt în prezent suportate.
 >
-> Pentru cei care folosesc abonamente de tip beneficii (cum ar fi Visual Studio Enterprise Subscription) sau doresc să testeze rapid procesul de ajustare fină și implementare, acest tutorial oferă și indicații pentru ajustarea fină cu un set minim de date folosind CPU. Totuși, este important de menționat că rezultatele ajustării fine sunt semnificativ mai bune când se folosește GPU cu seturi de date mai mari.
+> Pentru cei care utilizează abonamente de tip beneficiu (cum ar fi Visual Studio Enterprise Subscription) sau care doresc să testeze rapid procesul de reglare fină și implementare, acest tutorial oferă și un ghid pentru reglarea fină cu un set minim de date folosind un CPU. Totuși, este important de menționat că rezultatele reglarii fine sunt semnificativ mai bune când se folosește un GPU cu seturi de date mai mari.
 
-1. Accesați [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Vizitați [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Efectuați următoarele acțiuni pentru a solicita cota *Standard NCADSA100v4 Family*:
+1. Efectuați următoarele sarcini pentru a solicita cota de *Standard NCADSA100v4 Family*:
 
-    - Selectați **Quota** din fila din stânga.
-    - Selectați **Virtual machine family** pe care doriți să o folosiți. De exemplu, selectați **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, care include GPU-ul *Standard_NC24ads_A100_v4*.
+    - Selectați **Quota** din fila din partea stângă.
+    - Selectați **Virtual machine family** pe care doriți să o utilizați. De exemplu, selectați **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, care include *Standard_NC24ads_A100_v4* GPU.
     - Selectați **Request quota** din meniul de navigare.
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ro.png)
 
-    - În pagina Request quota, introduceți **New cores limit** pe care doriți să îl utilizați. De exemplu, 24.
-    - În pagina Request quota, selectați **Submit** pentru a trimite cererea de cotă GPU.
+    - În pagina Request quota, introduceți **New cores limit** pe care doriți să o utilizați. De exemplu, 24.
+    - În pagina Request quota, selectați **Submit** pentru a solicita cota GPU.
 
 > [!NOTE]
-> Puteți selecta GPU-ul sau CPU-ul potrivit nevoilor dvs. consultând documentul [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> Puteți selecta GPU-ul sau CPU-ul potrivit pentru nevoile dvs. consultând documentul [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
 ### Adăugarea unei atribuiri de rol
 
-Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o Identitate Gestionată Atribuită Utilizatorului (User Assigned Managed Identity - UAI) și să îi atribuiți permisiunile corespunzătoare. Această UAI va fi folosită pentru autentificare în timpul implementării.
+Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Identitate Gestionată Atribuită Utilizatorului (User Assigned Managed Identity - UAI) și să îi atribuiți permisiunile corespunzătoare. Această UAI va fi folosită pentru autentificare în timpul implementării.
 
 #### Crearea unei User Assigned Managed Identity (UAI)
 
@@ -114,12 +114,12 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
     ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.ro.png)
 
-1. Efectuați următoarele acțiuni:
+1. Efectuați următoarele sarcini:
 
-    - Selectați **Subscription** Azure.
-    - Selectați **Resource group** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
+    - Selectați **Subscription**-ul Azure.
+    - Selectați **Resource group**-ul pe care doriți să îl utilizați (creați unul nou dacă este necesar).
     - Selectați **Region** pe care doriți să o utilizați.
-    - Introduceți **Name**. Trebuie să fie o valoare unică.
+    - Introduceți un **Nume**. Trebuie să fie o valoare unică.
 
 1. Selectați **Review + create**.
 
@@ -129,14 +129,14 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Navigați la resursa Managed Identity pe care ați creat-o.
 
-1. Selectați **Azure role assignments** din fila din stânga.
+1. Selectați **Azure role assignments** din fila din partea stângă.
 
 1. Selectați **+Add role assignment** din meniul de navigare.
 
-1. În pagina Add role assignment, efectuați următoarele acțiuni:
+1. În pagina Add role assignment, efectuați următoarele:
     - Selectați **Scope** la **Resource group**.
-    - Selectați **Subscription** Azure.
-    - Selectați **Resource group** pe care doriți să îl folosiți.
+    - Selectați **Subscription**-ul Azure.
+    - Selectați **Resource group**-ul pe care doriți să îl folosiți.
     - Selectați **Role** la **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ro.png)
@@ -151,24 +151,24 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Selectați contul de stocare asociat cu workspace-ul Azure Machine Learning pe care l-ați creat. De exemplu, *finetunephistorage*.
 
-1. Efectuați următoarele acțiuni pentru a naviga la pagina Add role assignment:
+1. Efectuați următoarele pentru a naviga la pagina Add role assignment:
 
-    - Navigați la contul Azure Storage pe care l-ați creat.
+    - Navigați la contul de Azure Storage pe care l-ați creat.
     - Selectați **Access Control (IAM)** din fila din stânga.
     - Selectați **+ Add** din meniul de navigare.
     - Selectați **Add role assignment** din meniul de navigare.
 
     ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ro.png)
 
-1. În pagina Add role assignment, efectuați următoarele acțiuni:
+1. În pagina Add role assignment, efectuați următoarele:
 
     - În pagina Role, tastați *Storage Blob Data Reader* în **bara de căutare** și selectați **Storage Blob Data Reader** din opțiunile afișate.
     - În pagina Role, selectați **Next**.
     - În pagina Members, selectați **Assign access to** **Managed identity**.
     - În pagina Members, selectați **+ Select members**.
-    - În pagina Select managed identities, selectați **Subscription** Azure.
+    - În pagina Select managed identities, selectați **Subscription**-ul Azure.
     - În pagina Select managed identities, selectați **Managed identity** la **Manage Identity**.
-    - În pagina Select managed identities, selectați Managed Identity pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
+    - În pagina Select managed identities, selectați identitatea gestionată pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
     - În pagina Select managed identities, selectați **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ro.png)
@@ -181,29 +181,29 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ro.png)
 
-1. Selectați container registry asociat cu workspace-ul Azure Machine Learning. De exemplu, *finetunephicontainerregistries*
+1. Selectați registrul de containere asociat cu workspace-ul Azure Machine Learning. De exemplu, *finetunephicontainerregistries*
 
-1. Efectuați următoarele acțiuni pentru a naviga la pagina Add role assignment:
+1. Efectuați următoarele pentru a naviga la pagina Add role assignment:
 
     - Selectați **Access Control (IAM)** din fila din stânga.
     - Selectați **+ Add** din meniul de navigare.
     - Selectați **Add role assignment** din meniul de navigare.
 
-1. În pagina Add role assignment, efectuați următoarele acțiuni:
+1. În pagina Add role assignment, efectuați următoarele:
 
     - În pagina Role, tastați *AcrPull* în **bara de căutare** și selectați **AcrPull** din opțiunile afișate.
     - În pagina Role, selectați **Next**.
     - În pagina Members, selectați **Assign access to** **Managed identity**.
     - În pagina Members, selectați **+ Select members**.
-    - În pagina Select managed identities, selectați **Subscription** Azure.
+    - În pagina Select managed identities, selectați **Subscription**-ul Azure.
     - În pagina Select managed identities, selectați **Managed identity** la **Manage Identity**.
-    - În pagina Select managed identities, selectați Managed Identity pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
+    - În pagina Select managed identities, selectați identitatea gestionată pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
     - În pagina Select managed identities, selectați **Select**.
     - Selectați **Review + assign**.
 
 ### Configurarea proiectului
 
-Acum, veți crea un folder în care să lucrați și veți configura un mediu virtual pentru a dezvolta un program care interacționează cu utilizatorii și folosește istoricul conversațiilor stocat în Azure Cosmos DB pentru a-și informa răspunsurile.
+Acum, veți crea un folder în care să lucrați și veți configura un mediu virtual pentru a dezvolta un program care interacționează cu utilizatorii și folosește istoricul de chat stocat în Azure Cosmos DB pentru a informa răspunsurile.
 
 #### Crearea unui folder în care să lucrați
 
@@ -232,12 +232,14 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
     ```console
     .venv\Scripts\activate.bat
     ```
+
 > [!NOTE]
 >
-> Dacă a funcționat, ar trebui să vezi *(.venv)* înaintea promptului de comandă.
-#### Instalează pachetele necesare
+> Dacă a funcționat, ar trebui să vedeți *(.venv)* înaintea promptului de comandă.
 
-1. Tastează următoarele comenzi în terminal pentru a instala pachetele necesare.
+#### Instalarea pachetelor necesare
+
+1. Tastați următoarele comenzi în terminal pentru a instala pachetele necesare.
 
     ```console
     pip install datasets==2.19.1
@@ -248,19 +250,18 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
     pip install promptflow==1.12.0
     ```
 
-#### Creează fișierele proiectului
+#### Crearea fișierelor proiectului
+În acest exercițiu, veți crea fișierele esențiale pentru proiectul nostru. Aceste fișiere includ scripturi pentru descărcarea setului de date, configurarea mediului Azure Machine Learning, reglarea fină a modelului Phi-3 și implementarea modelului reglat fin. De asemenea, veți crea un fișier *conda.yml* pentru a configura mediul de reglare fină.
 
-În acest exercițiu, vei crea fișierele esențiale pentru proiectul nostru. Aceste fișiere includ scripturi pentru descărcarea setului de date, configurarea mediului Azure Machine Learning, ajustarea fină a modelului Phi-3 și implementarea modelului ajustat. De asemenea, vei crea un fișier *conda.yml* pentru a configura mediul de fine-tuning.
+În acest exercițiu, veți:
 
-În acest exercițiu vei:
-
-- Crea un fișier *download_dataset.py* pentru descărcarea setului de date.
-- Crea un fișier *setup_ml.py* pentru configurarea mediului Azure Machine Learning.
-- Crea un fișier *fine_tune.py* în folderul *finetuning_dir* pentru ajustarea fină a modelului Phi-3 folosind setul de date.
-- Crea un fișier *conda.yml* pentru configurarea mediului de fine-tuning.
-- Crea un fișier *deploy_model.py* pentru implementarea modelului ajustat.
-- Crea un fișier *integrate_with_promptflow.py* pentru integrarea modelului ajustat și rularea acestuia folosind Prompt flow.
-- Crea un fișier *flow.dag.yml* pentru configurarea structurii fluxului de lucru în Prompt flow.
+- Crea un fișier *download_dataset.py* pentru a descărca setul de date.
+- Crea un fișier *setup_ml.py* pentru a configura mediul Azure Machine Learning.
+- Crea un fișier *fine_tune.py* în folderul *finetuning_dir* pentru a regla fin modelul Phi-3 folosind setul de date.
+- Crea un fișier *conda.yml* pentru configurarea mediului de reglare fină.
+- Crea un fișier *deploy_model.py* pentru a implementa modelul reglat fin.
+- Crea un fișier *integrate_with_promptflow.py*, pentru a integra modelul reglat fin și a executa modelul folosind Prompt flow.
+- Crea un fișier flow.dag.yml, pentru a configura structura fluxului de lucru pentru Prompt flow.
 - Crea un fișier *config.py* pentru a introduce informațiile Azure.
 
 > [!NOTE]
@@ -281,33 +282,33 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
 > .        └── setup_ml.py
 > ```
 
-1. Deschide **Visual Studio Code**.
+1. Deschideți **Visual Studio Code**.
 
-1. Selectează **File** din bara de meniu.
+1. Selectați **File** din bara de meniu.
 
-1. Selectează **Open Folder**.
+1. Selectați **Open Folder**.
 
-1. Selectează folderul *finetune-phi* pe care l-ai creat, situat la *C:\Users\yourUserName\finetune-phi*.
+1. Selectați folderul *finetune-phi* pe care l-ați creat, care se află la *C:\Users\yourUserName\finetune-phi*.
 
-    ![Deschide folderul proiectului.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ro.png)
+    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ro.png)
 
-1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *download_dataset.py*.
+1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *download_dataset.py*.
 
-1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *setup_ml.py*.
+1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *setup_ml.py*.
 
-1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *deploy_model.py*.
+1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *deploy_model.py*.
 
-    ![Creează fișier nou.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ro.png)
+    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ro.png)
 
-1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New Folder** pentru a crea un folder nou numit *finetuning_dir*.
+1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New Folder** pentru a crea un folder nou numit *finetuning_dir*.
 
-1. În folderul *finetuning_dir*, creează un fișier nou numit *fine_tune.py*.
+1. În folderul *finetuning_dir*, creați un fișier nou numit *fine_tune.py*.
 
-#### Creează și configurează fișierul *conda.yml*
+#### Creați și configurați fișierul *conda.yml*
 
-1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *conda.yml*.
+1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *conda.yml*.
 
-1. Adaugă următorul cod în fișierul *conda.yml* pentru a configura mediul de fine-tuning pentru modelul Phi-3.
+1. Adăugați următorul cod în fișierul *conda.yml* pentru a configura mediul de reglare fină pentru modelul Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -333,30 +334,30 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
           - azureml-mlflow==1.57.0
     ```
 
-#### Creează și configurează fișierul *config.py*
+#### Creați și configurați fișierul *config.py*
 
-1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *config.py*.
+1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *config.py*.
 
-1. Adaugă următorul cod în fișierul *config.py* pentru a introduce informațiile tale Azure.
+1. Adăugați următorul cod în fișierul *config.py* pentru a include informațiile dvs. Azure.
 
     ```python
-    # Azure settings
+    # Setări Azure
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
     AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
 
-    # Azure Machine Learning settings
+    # Setări Azure Machine Learning
     AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
 
-    # Azure Managed Identity settings
+    # Setări Azure Managed Identity
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
     AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # Căi fișiere set de date
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # Setări model ajustat fin
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
     AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
     AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
@@ -365,46 +366,46 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
     AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
     ```
 
-#### Adaugă variabilele de mediu Azure
+#### Adăugați variabile de mediu Azure
 
-1. Urmează pașii de mai jos pentru a adăuga Azure Subscription ID:
+1. Efectuați următoarele sarcini pentru a adăuga ID-ul de abonament Azure:
 
-    - Tastează *subscriptions* în **bara de căutare** din partea de sus a paginii portalului și selectează **Subscriptions** din opțiunile afișate.
-    - Selectează abonamentul Azure pe care îl folosești.
-    - Copiază și lipește Subscription ID în fișierul *config.py*.
+    - Tastați *subscriptions* în **bara de căutare** din partea de sus a paginii portalului și selectați **Subscriptions** din opțiunile care apar.
+    - Selectați Abonamentul Azure pe care îl utilizați în prezent.
+    - Copiați și inserați ID-ul Abonamentului în fișierul *config.py*.
 
-    ![Găsește subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ro.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ro.png)
 
-1. Urmează pașii de mai jos pentru a adăuga Azure Workspace Name:
+1. Efectuați următoarele sarcini pentru a adăuga numele spațiului de lucru Azure:
 
-    - Navighează la resursa Azure Machine Learning pe care ai creat-o.
-    - Copiază și lipește numele contului în fișierul *config.py*.
+    - Navigați la resursa Azure Machine Learning pe care ați creat-o.
+    - Copiați și inserați numele contului dvs. în fișierul *config.py*.
 
-    ![Găsește numele Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ro.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ro.png)
 
-1. Urmează pașii de mai jos pentru a adăuga Azure Resource Group Name:
+1. Efectuați următoarele sarcini pentru a adăuga numele grupului de resurse Azure:
 
-    - Navighează la resursa Azure Machine Learning pe care ai creat-o.
-    - Copiază și lipește numele grupului de resurse Azure în fișierul *config.py*.
+    - Navigați la resursa Azure Machine Learning pe care ați creat-o.
+    - Copiați și inserați numele grupului dvs. de resurse Azure în fișierul *config.py*.
 
-    ![Găsește numele grupului de resurse.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ro.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ro.png)
 
-2. Urmează pașii de mai jos pentru a adăuga numele Azure Managed Identity:
+2. Efectuați următoarele sarcini pentru a adăuga numele identității administrate Azure
 
-    - Navighează la resursa Managed Identities pe care ai creat-o.
-    - Copiază și lipește numele Azure Managed Identity în fișierul *config.py*.
+    - Navigați la resursa Managed Identities pe care ați creat-o.
+    - Copiați și inserați numele identității administrate Azure în fișierul *config.py*.
 
-    ![Găsește UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ro.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ro.png)
 
-### Pregătește setul de date pentru fine-tuning
+### Pregătiți setul de date pentru reglarea fină
 
-În acest exercițiu, vei rula fișierul *download_dataset.py* pentru a descărca seturile de date *ULTRACHAT_200k* în mediul tău local. Apoi vei folosi aceste seturi de date pentru a ajusta fin modelul Phi-3 în Azure Machine Learning.
+În acest exercițiu, veți rula fișierul *download_dataset.py* pentru a descărca seturile de date *ULTRACHAT_200k* în mediul dvs. local. Veți folosi apoi aceste seturi de date pentru a regla fin modelul Phi-3 în Azure Machine Learning.
 
-#### Descarcă setul de date folosind *download_dataset.py*
+#### Descărcați setul de date folosind *download_dataset.py*
 
-1. Deschide fișierul *download_dataset.py* în Visual Studio Code.
+1. Deschideți fișierul *download_dataset.py* în Visual Studio Code.
 
-1. Adaugă următorul cod în *download_dataset.py*.
+1. Adăugați următorul cod în *download_dataset.py*.
 
     ```python
     import json
@@ -418,11 +419,11 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # Încarcă setul de date cu numele specificat, configurația și raportul de împărțire
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # Împarte setul de date în seturi de antrenament și test (80% antrenament, 20% test)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -433,16 +434,16 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # Creează directorul dacă nu există
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # Deschide fișierul în modul de scriere
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # Parcurge fiecare înregistrare din setul de date
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # Salvează înregistrarea ca obiect JSON și scrie-o în fișier
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # Scrie un caracter de newline pentru a separa înregistrările
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -451,17 +452,17 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # Încarcă și împarte setul de date ULTRACHAT_200k cu o configurație specifică și raport de împărțire
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # Extrage seturile de date de antrenament și test din împărțire
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # Salvează setul de date de antrenament într-un fișier JSONL
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # Salvează setul de date de test într-un fișier JSONL separat
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -471,65 +472,65 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
 
 > [!TIP]
 >
-> **Recomandări pentru fine-tuning cu un set de date minim folosind CPU**
+> **Ghid pentru reglarea fină cu un set minim de date folosind un CPU**
 >
-> Dacă dorești să folosești un CPU pentru fine-tuning, această metodă este ideală pentru cei cu abonamente benefice (cum ar fi Visual Studio Enterprise Subscription) sau pentru a testa rapid procesul de fine-tuning și implementare.
+> Dacă doriți să utilizați un CPU pentru reglarea fină, această abordare este ideală pentru cei cu abonamente benefice (cum ar fi Visual Studio Enterprise Subscription) sau pentru a testa rapid procesul de reglare fină și implementare.
 >
-> Înlocuiește `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` cu `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Înlocuiți `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` cu `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Tastează următoarea comandă în terminal pentru a rula scriptul și a descărca setul de date în mediul local.
+1. Tastați următoarea comandă în terminalul dvs. pentru a rula scriptul și a descărca setul de date în mediul local.
 
     ```console
     python download_data.py
     ```
 
-1. Verifică dacă seturile de date au fost salvate cu succes în directorul local *finetune-phi/data*.
+1. Verificați că seturile de date au fost salvate cu succes în directorul local *finetune-phi/data*.
 
 > [!NOTE]
 >
-> **Dimensiunea setului de date și timpul de fine-tuning**
+> **Dimensiunea setului de date și timpul de reglare fină**
 >
-> În acest exemplu E2E, folosești doar 1% din setul de date (`train_sft[:1%]`). Aceasta reduce semnificativ cantitatea de date, accelerând atât încărcarea, cât și procesul de fine-tuning. Poți ajusta procentajul pentru a găsi echilibrul potrivit între timpul de antrenare și performanța modelului. Folosirea unui subset mai mic din setul de date reduce timpul necesar pentru fine-tuning, făcând procesul mai ușor de gestionat pentru un exemplu E2E.
+> În acest exemplu E2E, folosiți doar 1% din setul de date (`train_sft[:1%]`). Aceasta reduce semnificativ cantitatea de date, accelerând atât încărcarea, cât și procesul de reglare fină. Puteți ajusta procentajul pentru a găsi echilibrul potrivit între timpul de antrenament și performanța modelului. Folosirea unui subset mai mic al setului de date reduce timpul necesar pentru reglarea fină, făcând procesul mai ușor de gestionat pentru un exemplu E2E.
 
-## Scenariul 2: Ajustarea fină a modelului Phi-3 și implementarea în Azure Machine Learning Studio
+## Scenariul 2: Reglarea fină a modelului Phi-3 și implementarea în Azure Machine Learning Studio
 
-### Configurează Azure CLI
+### Configurarea Azure CLI
 
-Trebuie să configurezi Azure CLI pentru a autentifica mediul tău. Azure CLI îți permite să gestionezi resursele Azure direct din linia de comandă și oferă acreditările necesare pentru ca Azure Machine Learning să acceseze aceste resurse. Pentru a începe, instalează [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Trebuie să configurați Azure CLI pentru a vă autentifica mediul. Azure CLI vă permite să gestionați resursele Azure direct din linia de comandă și oferă acreditările necesare pentru Azure Machine Learning pentru a accesa aceste resurse. Pentru a începe, instalați [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. Deschide o fereastră de terminal și tastează următoarea comandă pentru a te autentifica în contul tău Azure.
+1. Deschideți o fereastră de terminal și tastați următoarea comandă pentru a vă autentifica în contul dvs. Azure.
 
     ```console
     az login
     ```
 
-1. Selectează contul Azure pe care dorești să îl folosești.
+1. Selectați contul dvs. Azure pe care doriți să îl utilizați.
 
-1. Selectează abonamentul Azure pe care dorești să îl folosești.
+1. Selectați abonamentul dvs. Azure pe care doriți să îl utilizați.
 
-    ![Găsește numele grupului de resurse.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ro.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ro.png)
 
 > [!TIP]
 >
-> Dacă întâmpini probleme la autentificarea în Azure, încearcă să folosești un cod de dispozitiv. Deschide o fereastră de terminal și tastează următoarea comandă pentru a te autentifica în contul tău Azure:
+> Dacă întâmpinați dificultăți la autentificarea în Azure, încercați să utilizați un cod de dispozitiv. Deschideți o fereastră de terminal și tastați următoarea comandă pentru a vă autentifica în contul dvs. Azure:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Ajustează fin modelul Phi-3
+### Reglarea fină a modelului Phi-3
 
-În acest exercițiu, vei ajusta fin modelul Phi-3 folosind setul de date furnizat. Mai întâi, vei defini procesul de fine-tuning în fișierul *fine_tune.py*. Apoi, vei configura mediul Azure Machine Learning și vei iniția procesul de fine-tuning rulând fișierul *setup_ml.py*. Acest script asigură că fine-tuning-ul are loc în mediul Azure Machine Learning.
+În acest exercițiu, veți regla fin modelul Phi-3 folosind setul de date furnizat. Mai întâi, veți defini procesul de reglare fină în fișierul *fine_tune.py*. Apoi, veți configura mediul Azure Machine Learning și veți iniția procesul de reglare fină rulând fișierul *setup_ml.py*. Acest script asigură că reglarea fină are loc în cadrul mediului Azure Machine Learning.
 
-Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure Machine Learning.
+Rulând *setup_ml.py*, veți executa procesul de reglare fină în mediul Azure Machine Learning.
 
-#### Adaugă cod în fișierul *fine_tune.py*
+#### Adăugați cod în fișierul *fine_tune.py*
 
-1. Navighează în folderul *finetuning_dir* și deschide fișierul *fine_tune.py* în Visual Studio Code.
+1. Navigați la folderul *finetuning_dir* și deschideți fișierul *fine_tune.py* în Visual Studio Code.
 
-1. Adaugă următorul cod în *fine_tune.py*.
+1. Adăugați următorul cod în *fine_tune.py*.
 
     ```python
     import argparse
@@ -542,10 +543,10 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # Pentru a evita eroarea INVALID_PARAMETER_VALUE în MLflow, dezactivează integrarea MLflow
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # Configurarea jurnalizării
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -682,21 +683,21 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
 
     ```
 
-1. Salvează și închide fișierul *fine_tune.py*.
+1. Salvați și închideți fișierul *fine_tune.py*.
 
 > [!TIP]
-> **Poți ajusta fin modelul Phi-3.5**
+> **Puteți regla fin modelul Phi-3.5**
 >
-> În fișierul *fine_tune.py*, poți schimba `pretrained_model_name` din `"microsoft/Phi-3-mini-4k-instruct"` în orice model dorești să ajustezi fin. De exemplu, dacă îl schimbi în `"microsoft/Phi-3.5-mini-instruct"`, vei folosi modelul Phi-3.5-mini-instruct pentru fine-tuning. Pentru a găsi și folosi numele modelului preferat, vizitează [Hugging Face](https://huggingface.co/), caută modelul care te interesează și apoi copiază și lipește numele său în câmpul `pretrained_model_name` din scriptul tău.
+> În fișierul *fine_tune.py*, puteți modifica `pretrained_model_name` de la `"microsoft/Phi-3-mini-4k-instruct"` la orice model doriți să reglați fin. De exemplu, dacă îl schimbați în `"microsoft/Phi-3.5-mini-instruct"`, veți folosi modelul Phi-3.5-mini-instruct pentru reglarea fină. Pentru a găsi și a folosi numele modelului preferat, vizitați [Hugging Face](https://huggingface.co/), căutați modelul care vă interesează, apoi copiați și inserați numele său în câmpul `pretrained_model_name` din scriptul dvs.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.">
 >
 
-#### Adaugă cod în fișierul *setup_ml.py*
+#### Adăugați cod în fișierul *setup_ml.py*
 
-1. Deschide fișierul *setup_ml.py* în Visual Studio Code.
+1. Deschideți fișierul *setup_ml.py* în Visual Studio Code.
 
-1. Adaugă următorul cod în *setup_ml.py*.
+1. Adăugați următorul cod în *setup_ml.py*.
 
     ```python
     import logging
@@ -711,25 +712,25 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
         TEST_DATA_PATH
     )
 
-    # Constants
+    # Constante
 
-    # Uncomment the following lines to use a CPU instance for training
+    # Deblocați următoarele linii pentru a utiliza o instanță CPU pentru antrenament
     # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # Deblocați următoarele linii pentru a utiliza o instanță GPU pentru antrenament
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # Înlocuiți cu locația clusterului dumneavoastră de calcul
+    FINETUNING_DIR = "./finetuning_dir" # Calea către scriptul de ajustare fină
+    TRAINING_ENV_NAME = "phi-3-training-environment" # Numele mediului de antrenament
+    MODEL_OUTPUT_DIR = "./model_output" # Calea către directorul de ieșire al modelului în Azure ML
 
-    # Logging setup to track the process
+    # Configurare jurnalizare pentru urmărirea procesului
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -749,9 +750,9 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # Imagine Docker pentru mediu
+            conda_file=CONDA_FILE,  # Fișierul mediului Conda
+            name=TRAINING_ENV_NAME,  # Numele mediului
         )
         return ml_client.environments.create_or_update(env)
 
@@ -768,11 +769,11 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # Nivelul clusterului de calcul
+                min_instances=0,  # Numărul minim de instanțe
+                max_instances=1  # Numărul maxim de instanțe
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Așteptați crearea clusterului
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -780,18 +781,18 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # Calea către fine_tune.py
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # Mediu de antrenament
+            compute=compute_name,  # Clusterul de calcul de utilizat
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Calea către fișierul de date pentru antrenament
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Calea către fișierul de date pentru evaluare
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -800,21 +801,21 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # Inițializați clientul ML
         ml_client = get_ml_client()
 
-        # Create Environment
+        # Creează mediu
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # Creează sau obține clusterul de calcul existent
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # Creează și trimite sarcina de ajustare fină
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # Trimite sarcina
+        ml_client.jobs.stream(returned_job.name)  # Redă în flux jurnalele sarcinii
         
-        # Capture the job name
+        # Capturați numele sarcinii
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -823,25 +824,25 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
 
     ```
 
-1. Înlocuiește `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` și `LOCATION` cu detaliile tale specifice.
+1. Înlocuiți `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` și `LOCATION` cu detaliile dvs. specifice.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # Deblocați liniile următoare pentru a utiliza o instanță GPU pentru antrenament
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # Înlocuiți cu locația clusterului dvs. de calcul
     ```
 
 > [!TIP]
 >
-> **Recomandări pentru fine-tuning cu un set de date minim folosind CPU**
+> **Ghid pentru reglarea fină cu un set minim de date folosind un CPU**
 >
-> Dacă dorești să folosești un CPU pentru fine-tuning, această metodă este ideală pentru cei cu abonamente benefice (cum ar fi Visual Studio Enterprise Subscription) sau pentru a testa rapid procesul de fine-tuning și implementare.
+> Dacă doriți să utilizați un CPU pentru reglarea fină, această abordare este ideală pentru cei cu abonamente benefice (cum ar fi Visual Studio Enterprise Subscription) sau pentru a testa rapid procesul de reglare fină și implementare.
 >
-> 1. Deschide fișierul *setup_ml*.
-> 1. Înlocuiește `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` și `DOCKER_IMAGE_NAME` cu următoarele. Dacă nu ai acces la *Standard_E16s_v3*, poți folosi o instanță CPU echivalentă sau poți solicita o cotă nouă.
-> 1. Înlocuiește `LOCATION` cu detaliile tale specifice.
+> 1. Deschideți fișierul *setup_ml*.
+> 1. Înlocuiți `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` și `DOCKER_IMAGE_NAME` cu următoarele. Dacă nu aveți acces la *Standard_E16s_v3*, puteți folosi o instanță CPU echivalentă sau puteți solicita o nouă cotă.
+> 1. Înlocuiți `LOCATION` cu detaliile dvs. specifice.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -852,37 +853,37 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
 >    ```
 >
 
-1. Tastează următoarea comandă pentru a rula scriptul *setup_ml.py* și a începe procesul de fine-tuning în Azure Machine Learning.
+1. Tastați următoarea comandă pentru a rula scriptul *setup_ml.py* și a începe procesul de reglare fină în Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. În acest exercițiu, ai ajustat cu succes modelul Phi-3 folosind Azure Machine Learning. Prin rularea scriptului *setup_ml.py*, ai configurat mediul Azure Machine Learning și ai inițiat procesul de fine-tuning definit în fișierul *fine_tune.py*. Reține că procesul de fine-tuning poate dura destul de mult timp. După ce rulezi comanda `python setup_ml.py`, trebuie să aștepți finalizarea procesului. Poți monitoriza starea jobului de fine-tuning urmând linkul oferit în terminal către portalul Azure Machine Learning.
+1. În acest exercițiu, ați reglat cu succes fin modelul Phi-3 folosind Azure Machine Learning. Rulând scriptul *setup_ml.py*, ați configurat mediul Azure Machine Learning și ați inițiat procesul de reglare fină definit în fișierul *fine_tune.py*. Rețineți că procesul de reglare fină poate dura o perioadă considerabilă de timp. După ce rulați comanda `python setup_ml.py`, trebuie să așteptați finalizarea procesului. Puteți monitoriza starea sarcinii de reglare fină urmând linkul furnizat în terminal către portalul Azure Machine Learning.
 
-    ![Vezi jobul de fine-tuning.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ro.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ro.png)
 
-### Implementează modelul ajustat
+### Implementați modelul reglat fin
 
-Pentru a integra modelul Phi-3 ajustat cu Prompt Flow, trebuie să implementezi modelul pentru a-l face accesibil pentru inferență în timp real. Acest proces implică înregistrarea modelului, crearea unui endpoint online și implementarea modelului.
+Pentru a integra modelul Phi-3 reglat fin cu Prompt Flow, trebuie să implementați modelul pentru a-l face accesibil pentru inferență în timp real. Acest proces implică înregistrarea modelului, crearea unui endpoint online și implementarea modelului.
 
-#### Setează numele modelului, numele endpoint-ului și numele implementării pentru implementare
+#### Setarea numelui modelului, numelui endpoint-ului și numelui implementării pentru implementare
 
-1. Deschide fișierul *config.py*.
+1. Deschideți fișierul *config.py*.
 
-1. Înlocuiește `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` cu numele dorit pentru modelul tău.
+1. Înlocuiți `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` cu numele dorit pentru modelul dvs.
 
-1. Înlocuiește `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` cu numele dorit pentru endpoint-ul tău.
+1. Înlocuiți `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` cu numele dorit pentru endpoint-ul dvs.
 
-1. Înlocuiește `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` cu numele dorit pentru implementarea ta.
+1. Înlocuiți `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` cu numele dorit pentru implementarea dvs.
 
-#### Adaugă cod în fișierul *deploy_model.py*
+#### Adăugați cod în fișierul *deploy_model.py*
 
-Rularea fișierului *deploy_model.py* automatizează întregul proces de implementare. Acesta înregistrează modelul, creează un endpoint și execută implementarea pe baza setărilor specificate în fișierul *config.py*, care include numele modelului, numele endpoint-ului și numele implementării.
+Rularea fișierului *deploy_model.py* automatizează întregul proces de implementare. Acesta înregistrează modelul, creează un endpoint și execută implementarea pe baza setărilor specificate în fișierul config.py, care include numele modelului, numele endpoint-ului și numele implementării.
 
-1. Deschide fișierul *deploy_model.py* în Visual Studio Code.
+1. Deschideți fișierul *deploy_model.py* în Visual Studio Code.
 
-1. Adaugă următorul cod în *deploy_model.py*.
+1. Adăugați următorul cod în *deploy_model.py*.
 
     ```python
     import logging
@@ -891,7 +892,7 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # Importări de configurare
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -903,7 +904,7 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # Constante
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -913,7 +914,7 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # Configurare logare
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1002,25 +1003,25 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # Preia detaliile endpoint-ului curent
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # Înregistrează alocarea actuală a traficului pentru depanare
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # Setează alocarea traficului pentru implementare
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # Actualizează endpoint-ul cu noua alocare a traficului
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # Înregistrează alocarea actualizată a traficului pentru depanare
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # Înregistrează orice erori care apar în timpul procesului
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1048,16 +1049,16 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
 
     ```
 
-1. Urmează pașii de mai jos pentru a obține `JOB_NAME`:
+1. Efectuați următoarele sarcini pentru a obține `JOB_NAME`:
 
-    - Navighează la resursa Azure Machine Learning pe care ai creat-o.
-    - Selectează **Studio web URL** pentru a deschide workspace-ul Azure Machine Learning.
-    - Selectează **Jobs** din tab-ul din partea stângă.
-    - Selectează experimentul pentru fine-tuning. De exemplu, *finetunephi*.
-    - Selectează jobul pe care l-ai creat.
-- Copiază și lipește numele jobului tău în `JOB_NAME = "your-job-name"` din fișierul *deploy_model.py*.
+    - Navigați la resursa Azure Machine Learning pe care ați creat-o.
+    - Selectați **Studio web URL** pentru a deschide spațiul de lucru Azure Machine Learning.
+    - Selectați **Jobs** din tab-ul din partea stângă.
+    - Selectați experimentul pentru reglare fină. De exemplu, *finetunephi*.
+    - Selectați jobul pe care l-ați creat.
+- Copiază și lipește numele jobului tău în `JOB_NAME = "your-job-name"` în fișierul *deploy_model.py*.
 
-1. Înlocuiește `COMPUTE_INSTANCE_TYPE` cu detaliile tale specifice.
+1. Înlocuiește `COMPUTE_INSTANCE_TYPE` cu detaliile specifice ție.
 
 1. Tastează următoarea comandă pentru a rula scriptul *deploy_model.py* și a începe procesul de implementare în Azure Machine Learning.
 
@@ -1065,47 +1066,46 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
     python deploy_model.py
     ```
 
-
 > [!WARNING]
 > Pentru a evita costuri suplimentare pe contul tău, asigură-te că ștergi endpoint-ul creat în workspace-ul Azure Machine Learning.
 >
 
 #### Verifică starea implementării în Azure Machine Learning Workspace
 
-1. Accesează [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Vizitează [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Navighează la workspace-ul Azure Machine Learning pe care l-ai creat.
+1. Navighează către workspace-ul Azure Machine Learning pe care l-ai creat.
 
 1. Selectează **Studio web URL** pentru a deschide workspace-ul Azure Machine Learning.
 
-1. Selectează **Endpoints** din meniul din partea stângă.
+1. Selectează **Endpoints** din bara laterală din stânga.
 
-    ![Selectează endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ro.png)
+    ![Selectați endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ro.png)
 
 2. Selectează endpoint-ul pe care l-ai creat.
 
-    ![Selectează endpoint-ul creat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ro.png)
+    ![Selectați endpoint-ul pe care l-ați creat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ro.png)
 
-3. Pe această pagină poți gestiona endpoint-urile create în timpul procesului de implementare.
+3. Pe această pagină, poți gestiona endpoint-urile create în timpul procesului de implementare.
 
-## Scenariul 3: Integrează cu Prompt flow și discută cu modelul tău personalizat
+## Scenariul 3: Integrarea cu Prompt flow și dialogul cu modelul personalizat
 
 ### Integrează modelul personalizat Phi-3 cu Prompt flow
 
-După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum cu Prompt flow pentru a-l folosi în aplicații în timp real, permițând o varietate de sarcini interactive cu modelul tău personalizat Phi-3.
+După ce ai implementat cu succes modelul tău fin-tuned, poți acum să-l integrezi cu Prompt flow pentru a folosi modelul în aplicații în timp real, permițând o varietate de sarcini interactive cu modelul tău personalizat Phi-3.
 
-#### Setează cheia API și URI-ul endpoint-ului modelului Phi-3 ajustat
+#### Setează cheia api și uri-ul endpoint-ului modelului fin-tuned Phi-3
 
 1. Navighează la workspace-ul Azure Machine Learning pe care l-ai creat.
-1. Selectează **Endpoints** din meniul din partea stângă.
+1. Selectează **Endpoints** din bara laterală din stânga.
 1. Selectează endpoint-ul pe care l-ai creat.
 1. Selectează **Consume** din meniul de navigare.
-1. Copiază și lipește **REST endpoint** în fișierul *config.py*, înlocuind `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` cu **REST endpoint**-ul tău.
-1. Copiază și lipește **Primary key** în fișierul *config.py*, înlocuind `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` cu **Primary key**-ul tău.
+1. Copiază și lipește **REST endpoint** în fișierul *config.py*, înlocuind `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` cu **REST endpoint**.
+1. Copiază și lipește **Primary key** în fișierul *config.py*, înlocuind `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` cu **Primary key**.
 
-    ![Copiază cheia API și URI-ul endpoint-ului.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ro.png)
+    ![Copiați cheia api și uri-ul endpoint-ului.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ro.png)
 
-#### Adaugă cod în fișierul *flow.dag.yml*
+#### Adaugă codul în fișierul *flow.dag.yml*
 
 1. Deschide fișierul *flow.dag.yml* în Visual Studio Code.
 
@@ -1132,7 +1132,7 @@ După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum c
         input_data: ${inputs.input_data}
     ```
 
-#### Adaugă cod în fișierul *integrate_with_promptflow.py*
+#### Adaugă codul în fișierul *integrate_with_promptflow.py*
 
 1. Deschide fișierul *integrate_with_promptflow.py* în Visual Studio Code.
 
@@ -1149,7 +1149,7 @@ După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum c
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # Configurarea jurnalizării
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1202,7 +1202,7 @@ După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum c
 
     ```
 
-### Discută cu modelul tău personalizat
+### Dialoghează cu modelul tău personalizat
 
 1. Tastează următoarea comandă pentru a rula scriptul *deploy_model.py* și a începe procesul de implementare în Azure Machine Learning.
 
@@ -1210,9 +1210,13 @@ După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum c
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Iată un exemplu de rezultate: Acum poți discuta cu modelul tău personalizat Phi-3. Se recomandă să pui întrebări bazate pe datele folosite pentru ajustare.
+1. Iată un exemplu de rezultate: Acum poți dialoga cu modelul tău personalizat Phi-3. Este recomandat să pui întrebări bazate pe datele folosite pentru fine-tuning.
 
     ![Exemplu Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ro.png)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă folosirea unei traduceri profesionale realizate de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite cauzate de utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

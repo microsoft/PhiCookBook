@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:50:28+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T14:32:31+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "tr"
 }
@@ -11,31 +11,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito), Kubernetes kümesinde AI/ML çıkarım modeli dağıtımını otomatikleştiren bir operatördür.
 
-Kaito, sanal makine altyapıları üzerine kurulu çoğu yaygın model dağıtım yöntemine kıyasla şu önemli farklara sahiptir:
+Kaito, sanal makine altyapıları üzerinde inşa edilmiş çoğu yaygın model dağıtım metodolojisine kıyasla şu önemli farklılıklara sahiptir:
 
-- Model dosyalarını konteyner imajları kullanarak yönetir. Model kütüphanesi üzerinden çıkarım çağrıları yapmak için bir http sunucusu sağlar.
-- GPU donanımına uyacak şekilde dağıtım parametrelerini ayarlamaktan kaçınmak için önceden tanımlanmış yapılandırmalar sunar.
-- Model gereksinimlerine göre GPU düğümlerini otomatik olarak sağlar.
-- Lisans izin veriyorsa, büyük model imajlarını Microsoft Container Registry (MCR) üzerinde barındırır.
+- Model dosyalarını konteyner görüntüleri kullanarak yönetir. Model kütüphanesini kullanarak çıkarım çağrıları yapmak için bir http sunucusu sağlar.
+- Ön ayarlı konfigürasyonlar sağlayarak GPU donanımına uyan dağıtım parametrelerini ayarlamaktan kaçınır.
+- Model gereksinimlerine göre otomatik GPU düğümü sağlar.
+- Lisans izin veriyorsa, büyük model görüntülerini Microsoft Container Registry (MCR) genel havuzunda barındırır.
 
-Kaito kullanarak, Kubernetes'te büyük AI çıkarım modellerinin entegrasyon iş akışı büyük ölçüde basitleşir.
+Kaito kullanarak, Kubernetes'te büyük AI çıkarım modellerinin devreye alınma iş akışı büyük ölçüde basitleşir.
 
 ## Mimari
 
-Kaito, klasik Kubernetes Custom Resource Definition (CRD)/controller tasarım desenini takip eder. Kullanıcı, GPU gereksinimlerini ve çıkarım spesifikasyonunu tanımlayan bir `workspace` özel kaynağını yönetir. Kaito controller'ları, `workspace` özel kaynağını uzlaştırarak dağıtımı otomatikleştirir.
+Kaito, klasik Kubernetes Özel Kaynak Tanımı (CRD)/kontrolcü tasarım desenini takip eder. Kullanıcı, GPU gereksinimlerini ve çıkarım spesifikasyonunu tanımlayan bir `workspace` özel kaynağını yönetir. Kaito kontrolcüleri `workspace` özel kaynağını sağlama yoluyla dağıtımı otomatikleştirir.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito mimarisi" alt="Kaito mimarisi">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine mimarisi" alt="KAITO RAGEngine mimarisi">
 </div>
 
-Yukarıdaki şekil, Kaito mimarisinin genel görünümünü sunar. Ana bileşenleri şunlardır:
+Yukarıdaki şekil Kaito mimarisinin genel görünümünü sunmaktadır. Ana bileşenleri şunlardan oluşur:
 
-- **Workspace controller**: `workspace` özel kaynağını uzlaştırır, düğüm otomatik sağlama tetiklemek için `machine` (aşağıda açıklanmıştır) özel kaynakları oluşturur ve model ön ayar yapılandırmalarına göre çıkarım iş yükünü (`deployment` veya `statefulset`) oluşturur.
-- **Node provisioner controller**: Controller'ın adı [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) içinde *gpu-provisioner* olarak geçer. [Karpenter](https://sigs.k8s.io/karpenter) kaynaklı `machine` CRD'sini kullanarak workspace controller ile etkileşime girer. Azure Kubernetes Service (AKS) API'leri ile entegre olarak AKS kümesine yeni GPU düğümleri ekler.
-> Not: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) açık kaynaklı bir bileşendir. Eğer destekliyorsa, [Karpenter-core](https://sigs.k8s.io/karpenter) API'lerini kullanan diğer controller'larla değiştirilebilir.
+- **Workspace kontrolcüsü**: `workspace` özel kaynağını sağlamakla görevli olup, düğüm otomatik sağlama tetiklemek için `machine` (aşağıda açıklanmıştır) özel kaynakları oluşturur ve model ön ayarlı konfigürasyonlarına göre çıkarım iş yükünü (`deployment` veya `statefulset`) oluşturur.
+- **Düğüm sağlama kontrolcüsü**: Kontrolcünün adı [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) içinde *gpu-provisioner* olarak geçer. Bu kontrolcü, workspace kontrolcüsü ile etkileşmek için [Karpenter](https://sigs.k8s.io/karpenter) kökenli `machine` CRD'sini kullanır. Ayrıca Azure Kubernetes Service (AKS) API'leriyle entegre olur ve AKS kümesine yeni GPU düğümleri ekler.
+> Not: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) açık kaynaklı bir bileşendir. Eğer diğer kontrolcüler [Karpenter-core](https://sigs.k8s.io/karpenter) API'lerini destekliyorsa, bu bileşenler ile değiştirilebilir.
 
 ## Kurulum
 
-Kurulum rehberine [buradan](https://github.com/Azure/kaito/blob/main/docs/installation.md) ulaşabilirsiniz.
+Kurulum rehberini lütfen [buradan](https://github.com/Azure/kaito/blob/main/docs/installation.md) kontrol edin.
 
 ## Hızlı Başlangıç Çıkarım Phi-3
 [Örnek Kod Çıkarım Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
@@ -76,14 +77,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Çıktı ACR Yolunu Ayarlama
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Workspace durumunu aşağıdaki komutla takip edebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda, model başarıyla dağıtılmış demektir.
+`workspace` durumunu aşağıdaki komutu çalıştırarak izleyebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda, model başarıyla dağıtılmıştır.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Sonrasında, çıkarım servisinin küme IP'si bulunabilir ve geçici bir `curl` pod'u kullanılarak küme içindeki servis uç noktası test edilebilir.
+Sonrasında, çıkarım servisinin küme IP'si bulunabilir ve küme içindeki bir geçici `curl` pod'u kullanılarak servis uç noktası test edilebilir.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -106,7 +107,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 Kaito kurulduktan sonra, çıkarım servisini başlatmak için aşağıdaki komutlar denenebilir.
 
-[Örnek Kod Adaptörlü Çıkarım Phi-3](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Adaptörlü Örnek Kod Çıkarım Phi-3](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +149,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Çıkış ACR Yolunun Ayarlanması
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Workspace durumunu aşağıdaki komutla takip edebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda, model başarıyla dağıtılmış demektir.
+`workspace` durumunu aşağıdaki komutu çalıştırarak izleyebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda, model başarıyla dağıtılmıştır.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Sonrasında, çıkarım servisinin küme IP'si bulunabilir ve geçici bir `curl` pod'u kullanılarak küme içindeki servis uç noktası test edilebilir.
+Sonrasında, çıkarım servisinin küme IP'si bulunabilir ve küme içindeki bir geçici `curl` pod'u kullanılarak servis uç noktası test edilebilir.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +175,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstermemize rağmen, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi diliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum farklılıklarından sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

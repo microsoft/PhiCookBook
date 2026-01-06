@@ -1,63 +1,73 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ef3a50368712b1a7483d0def1f70c490",
-  "translation_date": "2025-12-21T14:11:58+00:00",
+  "original_hash": "c2e4b490f4bd424b095f21e38c6af33b",
+  "translation_date": "2026-01-05T15:45:02+00:00",
   "source_file": "README.md",
   "language_code": "my"
 }
 -->
-# Phi Cookbook: Microsoft ၏ Phi မော်ဒယ်များဖြင့် လက်တွေ့ အလုပ်လုပ်နိုင်သော ဥပမာများ
+# Phi Cookbook: Microsoft's Phi မော်ဒယ်များဖြင့် လက်တွေ့ဥပမာများ
 
-[![GitHub Codespaces မှ နမူနာများ ဖွင့်၍ အသုံးပြုပါ](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
-[![Dev Containers တွင် ဖွင့်ပါ](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
+[![Open and use the samples in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
+[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
 
-[![GitHub ပါဝင်သူများ](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub ပြဿနာများ](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
-[![PRs ကြိုဆိုပါသည်](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![GitHub ကြည့်သူများ](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub Forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Phi သည် Microsoft မှ ဖန်တီးထားသော ဖွင့်လှစ် ရင်းမြစ် AI မော်ဒယ် စီးရီးတစ်ခုဖြစ်သည်။ 
+Phi သည် Microsoft က ဖန်တီးထားသည့် အခမဲ့ AI မော်ဒယ်များ စီးရီးဖြစ်သည်။
 
-လက်ရှိတွင် Phi သည် အင်အားရှင်ရှေ့ဆက် ရှိပြီး ကုန်ကျစရိတ်သက်သာသော သေးငယ်သော ဘာသာစကား မော်ဒယ် (SLM) တစ်ခုဖြစ်သည်။ ဘာသာစကားအမျိုးမျိုး၊ အတွေးအခေါ်နှင့် ရည်ရွယ်ချက်၊ စာသား/စကားပြော ဖန်တီးမှု၊ ကုဒ်ရေးခြင်း၊ ဓာတ်ပုံများ၊ အသံနှင့် အခြား ကိုယ်ပိုင်အခြေအနေများတွင် သတ်မှတ်ချက်များကောင်းမွန်သည်။
+Phi သည် လက်ရှိအချိန်မှာ အလွန်ထိရောက်ပြီး စျေးနှုန်းသက်သာဆုံးသော သင်္ကေတအသေးစား ဘာသာစကားမော်ဒယ် (SLM) ဖြစ်ပြီး ဘာသာစကားစုံ၊ စဉ်းစားနားလည်မှု၊ စာသား/စကားပြောထုတ်လုပ်မှု၊ ကုဒ်ရေးခြင်း၊ ပုံများ၊ အသံနှင့် အခြား ရလဒ်စုံအတွက် benchmarks ကောင်းများရှိသည်။
 
-Phi ကို cloud သို့မဟုတ် edge စက်ပစ္စည်းများပေါ်တွင် တပ်ဆင်နိုင်ပြီး ကွန်ပျူတာစွမ်းအား ကန့်သတ်မှုရှိသော်လည်း generative AI အက်ပလီကေးရှင်းများကို လွယ်ကူစွာ တည်ဆောက်နိုင်ပါသည်။
+Phi ကို cloud သို့မဟုတ် အနားစွန်းကိရိယာများပေါ်သို့ ဖြန့်ချိနိုင်ပြီး ကွန်ပျူတာစွမ်းအားကန့်သတ်ချက်ရှိသော generative AI လျှောက်လွှာများကို လွယ်ကူစွာ တည်ဆောက်နိုင်သည်။
 
-ဤ ရင်းမြစ်များကို အသုံးပြု၍ စတင်ရန် အောက်ပါ အဆင့်များကို လိုက်နာပါ။
-1. **Repository ကို Fork လုပ်ပါ**: နှိပ်ပါ [![GitHub Forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **Repository ကို Clone ချပါ**:   `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Microsoft AI Discord သို့ ဝင်ပါ၊ ကျွမ်းကျင်သူများနှင့် အခြား ဖွံ့ဖြိုးသူများကို တွေ့ဆုံပါ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+ဒီအရင်းအမြစ်များကို အသုံးပြုဖို့ စတင်လိုက်ပါ။
+1. **သိုလှောင်မှုကို Fork လုပ်ပါ**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. **သိုလှောင်မှုကို Clone လုပ်ပါ**: `git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**Microsoft AI Discord Community တို့ကို ဝင်ရောက်ပြီး ကျွမ်းကျင်သူများနှင့် မိတ်ဆွေဖွဲ့ပါ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![ကာဗာ](../../translated_images/cover.eb18d1b9605d754b.my.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b.my.png)
 
-### 🌐 ဘာသာစကား မျိုးစုံ အထောက်အပံ့
+### 🌐 ဘာသာစကားစုံကို ထောက်ပံ့ခြင်း
 
-#### GitHub Action ဖြင့် ထောက်ပံ့ (အလိုအလျောက်နှင့် အမြဲနောက်ဆုံး)
+#### GitHub Action ဖြင့် ထောက်ပံ့ထားခြင်း (အလိုအလျောက် & အမြဲတမ်းနောက်ဆုံးပေါ်)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[အာရေဗစ်](../ar/README.md) | [ဘင်္ဂါလီ](../bn/README.md) | [ဘူလ္ဂေးရီးယန်](../bg/README.md) | [မြန်မာ (Myanmar)](./README.md) | [တရုတ် (ရိုးရှင်း)](../zh/README.md) | [တရုတ် (ရိုးရာ, ဟောင်ကောင်)](../hk/README.md) | [တရုတ် (ရိုးရာ, မကာအို)](../mo/README.md) | [တရုတ် (ရိုးရာ, ထိုင္ဝမ်)](../tw/README.md) | [ခရွိုအေရှား](../hr/README.md) | [ချက်](../cs/README.md) | [ဒီနမတ်](../da/README.md) | [နယ်သာလန်](../nl/README.md) | [အက်စတိုးနီးယား](../et/README.md) | [ဖင်လန်](../fi/README.md) | [ပြင်သစ်](../fr/README.md) | [ဂျာမနီ](../de/README.md) | [ဂရိ](../el/README.md) | [ဟီဘရူး](../he/README.md) | [ဟင်ဒီ](../hi/README.md) | [ဟန်ဂေရီယန်](../hu/README.md) | [အင်ဒိုနီးရှား](../id/README.md) | [အီတလီ](../it/README.md) | [ဂျပန်](../ja/README.md) | [ကန့်နာဒါ](../kn/README.md) | [ကိုရီးယား](../ko/README.md) | [လစ်ထူးအေးနီးယား](../lt/README.md) | [မလေး](../ms/README.md) | [မလေးလမ်](../ml/README.md) | [မာရာသီ](../mr/README.md) | [နီဘေါ်လီ](../ne/README.md) | [နိုင်ဂျီးရီးယား ပစ်ဂင်](../pcm/README.md) | [နော်ဝေ](../no/README.md) | [ပါရှန် (ဖာရှီ)](../fa/README.md) | [ပိုလန်](../pl/README.md) | [ပို르တူဂီส (ဘရာဇီး)](../br/README.md) | [ပို르တူဂီส (ပိုတူဂီ)](../pt/README.md) | [ပန်ဂျာဘီ (ဂူမူခီ)](../pa/README.md) | [ရိုမေးနီးယား](../ro/README.md) | [ရုရှား](../ru/README.md) | [ဆားဘီးယား (စायरလစ်လစ်)](../sr/README.md) | [ဆလိုဗက်](../sk/README.md) | [ဆလိုවැနီးယား](../sl/README.md) | [စပိန်](../es/README.md) | [ဆွါဟီလီ](../sw/README.md) | [ဆွီဒင်](../sv/README.md) | [တာဂလိုဂ် (ဖိလစ်ပိုင်)](../tl/README.md) | [တမီးလ်](../ta/README.md) | [တယ်လူဂူ](../te/README.md) | [ထိုင်း](../th/README.md) | [တူရကီ](../tr/README.md) | [ယူကရိန်း](../uk/README.md) | [အူဒူး](../ur/README.md) | [ဗီယက်နမ်](../vi/README.md)
+[အာရပ်](../ar/README.md) | [ဘင်္ဂါလီ](../bn/README.md) | [ဘူလ်ဂေးရီးယား](../bg/README.md) | [မြန်မာ (မြန်မာ)](./README.md) | [တရုတ် (ရိုးရိုး)](../zh/README.md) | [တရုတ် (ရိုးရိုး၊ ဟောင်ကောင်)](../hk/README.md) | [တရုတ် (ရိုးရိုး၊ မကာအို)](../mo/README.md) | [တရုတ် (ရိုးရိုး၊ ထိုင်ဝမ်)](../tw/README.md) | [ခရိုအေးရှား](../hr/README.md) | [ချက်](../cs/README.md) | [ဒိန်းမတ်](../da/README.md) | [ဒတ်ချ်](../nl/README.md) | [အက်စတိုးနီးယား](../et/README.md) | [ဖင်နစ်](../fi/README.md) | [ပြင်သစ်](../fr/README.md) | [ဂျာမန်](../de/README.md) | [ဂရိ](../el/README.md) | [ဟီဘရူး](../he/README.md) | [ဟိန္ဒီ](../hi/README.md) | [ဟန်ဂေရီ](../hu/README.md) | [အင်ဒိုနီးရှား](../id/README.md) | [အီတလီ](../it/README.md) | [ဂျပန်](../ja/README.md) | [ကန်နာဒါ](../kn/README.md) | [ကိုရီးယား](../ko/README.md) | [လီသူနီးယား](../lt/README.md) | [မလေး](../ms/README.md) | [မလာရမ်](../ml/README.md) | [မာရသီ](../mr/README.md) | [နေပါလီ](../ne/README.md) | [ไนဂျီရီးယား Pidgin](../pcm/README.md) | [နော်ရဝေ](../no/README.md) | [ပါရှန် (ဖာစီ)](../fa/README.md) | [ပိုလန်](../pl/README.md) | [ပေါ်တူဂီ (ဘရာဇီးလ်)](../br/README.md) | [ပေါ်တူဂီ (ပိုက်တူဂီ)](../pt/README.md) | [ပန်ဂျာဘီ (ဂူမူခီ)](../pa/README.md) | [ရိုမေးနီးယား](../ro/README.md) | [ရုရှား](../ru/README.md) | [ဆားဘီးယား (ဆိုရီလစ်လစ်)](../sr/README.md) | [စလိုဗက်](../sk/README.md) | [စလိုဗေးနီးယား](../sl/README.md) | [စပိန်](../es/README.md) | [စွာဟီလီ](../sw/README.md) | [ဆွီဒင်](../sv/README.md) | [တာဂလို (ဖိလစ်ပိုင်)](../tl/README.md) | [သမီး](../ta/README.md) | [တယ်လူးဂူ](../te/README.md) | [ထိုင်း](../th/README.md) | [တူရကီ](../tr/README.md) | [ယူကရိန်း](../uk/README.md) | [ဥရုဒူး](../ur/README.md) | [ဗီယက်နမ်](../vi/README.md)
+
+> **ဒေသတွင် Clone လုပ်လိုပါသလား?**
+
+> ဒီသိုလှောင်မှုမှာ ဘာသာစကား ၅၀ ထက်မပိုသော ဘာသာပြန်ချက်များပါဝင်ပြီး ဒါကြောင့် ဒေါင်းလုပ်အရွယ်အစားကို အကြီးစားတိုးစေသည်။ ဘာသာပြန်ချက်များမပါဘဲ Clone လုပ်ရန် sparse checkout ကို အသုံးပြုပါ:
+> ```bash
+> git clone --filter=blob:none --sparse https://github.com/microsoft/PhiCookBook.git
+> cd PhiCookBook
+> git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
+> ```
+> ဒါက သင်ဟာသင်တန်းကို အပြီးသတ်ဖို့ လိုအပ်တဲ့ အရာအားလုံးကို နည်းလမ်းများဖြင့် အရမ်းလျင်မြန်စွာ ဒေါင်းလုပ်ဆွဲနိုင်ပါတယ်။
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-## အကြောင်းအရာ စာရင်း
+## အကြောင်းအရာဇယား
 
-- မိတ်ဆက်
+- နိဒါန်း
   - [Phi မိသားစုသို့ ကြိုဆိုပါသည်](./md/01.Introduction/01/01.PhiFamily.md)
-  - [သင့် ပတ်ဝန်းကျင် အဆင်သင့်ပြုခြင်း](./md/01.Introduction/01/01.EnvironmentSetup.md)
-  - [အဓိက နည်းပညာများကို နားလည်ခြင်း](./md/01.Introduction/01/01.Understandingtech.md)
+  - [သင့်ပတ်ဝန်းကျင်ကို စနစ်တကျပြင်ဆင်ခြင်း](./md/01.Introduction/01/01.EnvironmentSetup.md)
+  - [အဓိကနည်းပညာများကိုနားလည်ခြင်း](./md/01.Introduction/01/01.Understandingtech.md)
   - [Phi မော်ဒယ်များအတွက် AI လုံခြုံရေး](./md/01.Introduction/01/01.AISafety.md)
-  - [Phi Hardware ထောက်ပံ့မှု](./md/01.Introduction/01/01.Hardwaresupport.md)
-  - [Phi မော်ဒယ်များနှင့် ပလက်ဖောင်းအလိုက် ရရှိနိုင်မှု](./md/01.Introduction/01/01.Edgeandcloud.md)
-  - [Guidance-ai နှင့် Phi ကို အသုံးချခြင်း](./md/01.Introduction/01/01.Guidance.md)
+  - [Phi hardware ထောက်ပံ့မှု](./md/01.Introduction/01/01.Hardwaresupport.md)
+  - [Phi မော်ဒယ်များနှင့် platform များပေါ်တွင် ရရှိနိုင်မှု](./md/01.Introduction/01/01.Edgeandcloud.md)
+  - [Guidance-ai နှင့် Phi အသုံးပြုခြင်း](./md/01.Introduction/01/01.Guidance.md)
   - [GitHub Marketplace မော်ဒယ်များ](https://github.com/marketplace/models)
-  - [Azure AI မော်ဒယ် ကတ်တလော့ဂ်](https://ai.azure.com)
+  - [Azure AI Model Catalog](https://ai.azure.com)
 
-- မတူညီသော ပတ်ဝန်းကျင်များတွင် Phi ကို inference ပြုလုပ်ခြင်း
+- အသီးသီးသော ပတ်ဝန်းကျင်များတွင် Phi ကို inference လုပ်ခြင်း
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)
     -  [Azure AI Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
@@ -66,117 +76,117 @@ Phi ကို cloud သို့မဟုတ် edge စက်ပစ္စည်
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
     -  [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md)
 
-- Phi မိသားစုအတွက် Inference
-    - [iOS တွင် Phi Inference](./md/01.Introduction/03/iOS_Inference.md)
-    - [Android တွင် Phi Inference](./md/01.Introduction/03/Android_Inference.md)
-    - [Jetson တွင် Phi Inference](./md/01.Introduction/03/Jetson_Inference.md)
-    - [AI PC တွင် Phi Inference](./md/01.Introduction/03/AIPC_Inference.md)
-    - [Apple MLX Framework ဖြင့် Phi Inference](./md/01.Introduction/03/MLX_Inference.md)
-    - [Local Server တွင် Phi Inference](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [AI Toolkit ဖြင့် Remote Server တွင် Phi Inference](./md/01.Introduction/03/Remote_Interence.md)
-    - [Rust ဖြင့် Phi Inference](./md/01.Introduction/03/Rust_Inference.md)
-    - [ဒေသခံတွင် Phi--Vision Inference](./md/01.Introduction/03/Vision_Inference.md)
-    - [Kaito AKS, Azure Containers ဖြင့် Phi Inference (တရားဝင် ထောက်ပံ့မှု)](./md/01.Introduction/03/Kaito_Inference.md)
--  [Phi မိသားစု အတွက် Quantifying](./md/01.Introduction/04/QuantifyingPhi.md)
-    - [llama.cpp ကိုအသုံးပြုပြီး Phi-3.5 / 4 ကို Quantize ပြုလုပ်ခြင်း](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
-    - [onnxruntime အတွက် Generative AI extensions ကိုအသုံးပြုပြီး Phi-3.5 / 4 ကို Quantize ပြုလုပ်ခြင်း](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [Intel OpenVINO အသုံးပြု၍ Phi-3.5 / 4 ကို Quantize ပြုလုပ်ခြင်း](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [Apple MLX Framework ကိုအသုံးပြု၍ Phi-3.5 / 4 ကို Quantize ပြုလုပ်ခြင်း](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+- Phi မိသားစုကို Inference လုပ်ခြင်း
+    - [iOS တွင် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/iOS_Inference.md)
+    - [Android တွင် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Android_Inference.md)
+    - [Jetson တွင် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Jetson_Inference.md)
+    - [AI PC တွင် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/AIPC_Inference.md)
+    - [Apple MLX Framework နှင့် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/MLX_Inference.md)
+    - [Local Server တွင် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Local_Server_Inference.md)
+    - [Remote Server တွင် AI Toolkit အသုံးပြု၍ Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Remote_Interence.md)
+    - [Rust ဖြင့် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Rust_Inference.md)
+    - [Local သည် Phi--Vision ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Vision_Inference.md)
+    - [Kaito AKS, Azure Containers (တရားဝင်ထောက်ပံ့မှု) နှင့် Phi ကို inference လုပ်ခြင်း](./md/01.Introduction/03/Kaito_Inference.md)
+-  [Phi မိသားစုကို Quantifying လုပ်ခြင်း](./md/01.Introduction/04/QuantifyingPhi.md)
+    - [llama.cpp အသုံးပြု၍ Phi-3.5 / 4 ကို Quantizing လုပ်ခြင်း](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
+    - [onnxruntime အတွက် Generative AI extension များ အသုံးပြု၍ Phi-3.5 / 4 ကို Quantizing လုပ်ခြင်း](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
+    - [Intel OpenVINO ကို အသုံးပြု၍ Phi-3.5 / 4 ကို Quantizing လုပ်ခြင်း](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
+    - [Apple MLX Framework ကို အသုံးပြု၍ Phi-3.5 / 4 ကို Quantizing လုပ်ခြင်း](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
--  Phi အကဲဖြတ်ခြင်း
-    - [တာဝန်ရှိသော AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [အကဲဖြတ်ရေးအတွက် Azure AI Foundry](./md/01.Introduction/05/AIFoundry.md)
-    - [အကဲဖြတ်ရေးအတွက် Promptflow ကို အသုံးပြုခြင်း](./md/01.Introduction/05/Promptflow.md)
+-  Phi ကို သုံးသပ်ခြင်း
+    - [တုန့်ပြန်မှု AI](./md/01.Introduction/05/ResponsibleAI.md)
+    - [Azure AI Foundry တွင် သုံးသပ်ခြင်း](./md/01.Introduction/05/AIFoundry.md)
+    - [Promptflow ဖြင့် သုံးသပ်ခြင်း](./md/01.Introduction/05/Promptflow.md)
  
-- RAG နှင့် Azure AI Search
-    - [Phi-4-mini နှင့် Phi-4-multimodal(RAG) ကို Azure AI Search နှင့် မည်သို့ အသုံးပြုမည်](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+- Azure AI Search နှင့် RAG
+    - [Phi-4-mini နှင့် Phi-4-multimodal (RAG) ကို Azure AI Search နှင့် အသုံးပြုနည်း](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
-- Phi အက်ပလီကေးရှင်း တိုးတက်ရေး နမူနာများ
-  - စာသား & စကားပြော အက်ပလီကေးရှင်းများ
+- Phi လျှောက်လွှာဖွံ့ဖြိုးတိုးတက်မှုနမူနာများ
+  - စာသားနှင့် စကားပြောစနစ်များ
     - Phi-4 နမူနာများ 🆕
-      - [📓] [Phi-4-mini ONNX မော်ဒယ်ဖြင့် စကားပြော](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [Phi-4 local ONNX မော်ဒယ်ဖြင့် .NET တွင် စကားပြော](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [Semantic Kernel အသုံးပြု၍ Phi-4 ONNX ဖြင့် Chat .NET Console App](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
+      - [📓] [Phi-4-mini ONNX မော်ဒယ်ဖြင့် စကားပြောခြင်း](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
+      - [Phi-4 local ONNX မော်ဒယ်ဖြင့် Chat .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
+      - [Semantic Kernel ကို အသုံးပြု၍ Phi-4 ONNX ဖြင့် Chat .NET Console App](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
     - Phi-3 / 3.5 နမူနာများ
-      - [Phi3၊ ONNX Runtime Web နှင့် WebGPU အသုံးပြု၍ ဘရောက်ဇာတွင် ဒေသခံ Chatbot](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
-      - [OpenVino ဖြင့် စကားပြော](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
-      - [မော်ဒယ်များစုံ - အပြန်အလှန် Phi-3-mini နှင့် OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
-      - [MLFlow - wrapper တစ်ခု တည်ဆောက်ခြင်းနှင့် Phi-3 ကို MLFlow နဲ့ အသုံးပြုခြင်း](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
-      - [Model Optimization - Olive ဖြင့် ONNX Runtime Web အတွက် Phi-3-min မော်ဒယ်ကို မည်သို့ မြှင့်တင်မည်](https://github.com/microsoft/Olive/tree/main/examples/phi3)
-      - [Phi-3 mini-4k-instruct-onnx ဖြင့် WinUI3 အက်ပ်](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      -[WinUI3 Multi Model AI Powered Notes အက်ပ် ဥပမာ](https://github.com/microsoft/ai-powered-notes-winui3-sample)
-      - [Prompt flow ဖြင့် စိတ်ကြိုက် Phi-3 မော်ဒယ်များကို Fine-tune နှင့် ပေါင်းစည်းခြင်း](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Azure AI Foundry တွင် Prompt flow ဖြင့် စိတ်ကြိုက် Phi-3 မော်ဒယ်များကို Fine-tune နှင့် ပေါင်းစည်းခြင်း](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Microsoft ၏ တာဝန်ရှိသော AI စံသတ်မှတ်ချက်များကို ဦးတည်၍ Azure AI Foundry တွင် Fine-tuned Phi-3 / Phi-3.5 မော်ဒယ်ကို အကဲဖြတ်ခြင်း](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
-      - [📓] [Phi-3.5-mini-instruct ဘာသာစကား ခန့်မှန်းမှု ဥပမာ (တရုတ်/အင်္ဂလိပ်)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
-      - [Phi-3.5-Instruct WebGPU RAG စကားပြောဘော့](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
-      - [Phi-3.5-Instruct ONNX ဖြင့် Prompt flow ဖြေရှင်းချက်ကို Windows GPU အသုံးပြု၍ ဖန်တီးခြင်း](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
-      - [Microsoft Phi-3.5 tflite ကိုအသုံးပြု၍ Android အက်ပ် ဖန်တီးခြင်း](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-      - [Microsoft.ML.OnnxRuntime ကိုအသုံးပြုပြီး ဒေသීය ONNX Phi-3 မော်ဒယ်နှင့် Q&A .NET ဥပမာ](../../md/04.HOL/dotnet/src/LabsPhi301)
-      - [Semantic Kernel နှင့် Phi-3 ပါသည့် Console chat .NET အက်ပ်](../../md/04.HOL/dotnet/src/LabsPhi302)
+      - [Phi3, ONNX Runtime Web နှင့် WebGPU အသုံးပြုပြီး Browser တွင် ဒေသခံ Chatbot](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
+      - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
+      - [Multi Model - အပြန်အလှန် Phi-3-mini နှင့် OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
+      - [MLFlow - wrapper တည်ဆောက်ခြင်းနှင့် Phi-3 ကို MLFlow နှင့် အသုံးပြုခြင်း](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
+      - [Model Optimization - ONNX Runtime Web အတွက် Phi-3-min မော်ဒယ်ကို Olive ဖြင့် မည်သို့ optimized ပြုလုပ်မည်နည်း](https://github.com/microsoft/Olive/tree/main/examples/phi3)
+      - [Phi-3 mini-4k-instruct-onnx ဖြင့် WinUI3 App](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
+      -[WinUI3 Multi Model AI Powered Notes App နမူနာ](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [Prompt flow ဖြင့် စိတ်တိုင်းကျ Phi-3 မော်ဒယ်များကို Fine-tune ပြုလုပ်ခြင်းနှင့် ပေါင်းစပ်ခြင်း](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
+      - [Azure AI Foundry တွင် Prompt flow ဖြင့် စိတ်တိုင်းကျ Phi-3 မော်ဒယ်များကို Fine-tune ပြုလုပ်ခြင်းနှင့် ပေါင်းစပ်ခြင်း](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Microsoft ၏ တာဝန်ရှိသော AI အခြေခံအယူများအား အာရုံစိုက်၍ Azure AI Foundry တွင် Fine-tuned Phi-3 / Phi-3.5 မော်ဒယ်ကို သုံးသပ်ခြင်း](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [📓] [Phi-3.5-mini-instruct ဘာသာပြန်နမူနာ (တရုတ်/အင်္ဂလိပ်)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
+      - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
+      - [Windows GPU ကို အသုံးပြု၍ Phi-3.5-Instruct ONNX ဖြင့် Prompt flow ဖြေရှင်းချက် ဖန်တီးခြင်း](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
+      - [Microsoft Phi-3.5 tflite ကို အသုံးပြု၍ Android app ဖန်တီးခြင်း](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
+      - [Microsoft.ML.OnnxRuntime ဖြင့် ဒေသတွင်း ONNX Phi-3 မော်ဒယ်ကို အသုံးပြုသော Q&A .NET နမူနာ](../../md/04.HOL/dotnet/src/LabsPhi301)
+      - [Semantic Kernel နှင့် Phi-3 ဖြင့် Console chat .NET app](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-  - Azure AI Inference SDK အခြေခံ အကုဒ် ဥပမာများ 
-    - Phi-4 ဥပမာများ 🆕
-      - [📓] [Phi-4-multimodal ကို အသုံးပြုပြီး ပရောဂျက်ကုဒ် ထုတ်ယူခြင်း](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
-    - Phi-3 / 3.5 ဥပမာများ
-      - [သင့်ကိုယ်ပိုင် Visual Studio Code GitHub Copilot Chat ကို Microsoft Phi-3 Family ဖြင့် တည်ဆောက်ခြင်း](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-      - [GitHub Models မှ Phi-3.5 ဖြင့် သင့်ရဲ့ Visual Studio Code Chat Copilot Agent ကို ဖန်တီးခြင်း](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+  - Azure AI Inference SDK ကုဒ်အခြေခံ နမူနာများ 
+    - Phi-4 နမူနာများ 🆕
+      - [📓] [Phi-4-multimodal ဖြင့် စာရင်းစီမံကိန်းကုဒ် ဖန်တီးခြင်း](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
+    - Phi-3 / 3.5 နမူနာများ
+      - [Microsoft Phi-3 ကွတ်သားတန်းအုပ်စုနှင့် Visual Studio Code GitHub Copilot Chat ကို ကိုယ်ပိုင်ဆောက်ခြင်း](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
+      - [GitHub မော်ဒယ်များဖြင့် ကိုယ်ပိုင် Visual Studio Code Chat Copilot Agent ဖန်တီးခြင်း Phi-3.5ဖြင့်](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
 
-  - အဆင့်မြင့် အတွေးအခေါ် ဥပမာများ
-    - Phi-4 ဥပမာများ 🆕
-      - [📓] [Phi-4-mini-reasoning သို့မဟုတ် Phi-4-reasoning ဥပမာများ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
+  - အဆင့်မြင့် သဘောထားနမူနာများ
+    - Phi-4 နမူနာများ 🆕
+      - [📓] [Phi-4-mini-reasoning သို့မဟုတ် Phi-4-reasoning နမူနာများ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
       - [📓] [Microsoft Olive ဖြင့် Phi-4-mini-reasoning ကို Fine-tuning ပြုလုပ်ခြင်း](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Apple MLX ဖြင့် Phi-4-mini-reasoning ကို Fine-tuning ပြုလုပ်ခြင်း](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [GitHub Models ဖြင့် Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Azure AI Foundry Models ဖြင့် Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
-  - Demos
-      - [Hugging Face Spaces တွင် ဟော့စ်ထားသော Phi-4-mini ဒီမိုများ](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-      - [Hugginge Face Spaces တွင် ဟော့စ်ထားသော Phi-4-multimodal ဒီမိုများ](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
-  - ဗစ်ရှင်း ဥပမာများ
-    - Phi-4 ဥပမာများ 🆕
-      - [📓] [Phi-4-multimodal ကို အသုံးပြုပြီး ပုံများ ဖတ်၍ ကုဒ် ဖန်တီးခြင်း](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
-    - Phi-3 / 3.5 ဥပမာများ
-      -  [📓][Phi-3-vision - ပုံမှ စာသား သို့ စာသား ပြောင်းရန်](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
+      - [📓] [GitHub မော်ဒယ်များနှင့် Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
+      - [📓] [Azure AI Foundry မော်ဒယ်များနှင့် Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+  - ဒေမိုများ
+      - [Phi-4-mini demos များ Hugging Face Spaces တွင် ဖျော်ဖြေထားသည်](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
+      - [Phi-4-multimodal demos များ Hugginge Face Spaces တွင် ဖျော်ဖြေထားသည်](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
+  - အမြင် နမူနာများ
+    - Phi-4 နမူနာများ 🆕
+      - [📓] [Phi-4-multimodal ကို အသုံးပြု၍ ပုံများ ဖတ်ပြီး ကုဒ် ဖန်တီးခြင်း](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
+    - Phi-3 / 3.5 နမူနာများ
+      -  [📓][Phi-3-vision- ပုံအကြောင်းအရာ စာလုံးမှ စာလုံးသို့](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
       - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
-      - [📓][Phi-3-vision CLIP Embedding](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [DEMO: Phi-3 Recycling](https://github.com/jennifermarsman/PhiRecycling/)
-      - [Phi-3-vision - Visual language assistant - Phi3-Vision နှင့် OpenVINO ဖြင့်](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
+      - [📓][Phi-3-vision CLIP စုပေါင်း](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
+      - [DEMO: Phi-3 ပြန်လည်ထုတ်လုပ်ခြင်း](https://github.com/jennifermarsman/PhiRecycling/)
+      - [Phi-3-vision - မြင်ကွင်းဘာသာစကား အကူအညီပေးသူ - Phi3-Vision နှင့် OpenVINO ဖြင့်](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
       - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
       - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
-      - [📓][Phi-3.5 Vision multi-frame သို့မဟုတ် multi-image ဥပမာ](./md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
-      - [Microsoft.ML.OnnxRuntime .NET ကို အသုံးပြုပြီး ဒေသဆိုင်ရာ Phi-3 Vision ONNX မော်ဒယ်](../../md/04.HOL/dotnet/src/LabsPhi303)
-      - [မီနူး အခြေပြု Phi-3 Vision ဒေသীয় ONNX မော်ဒယ် Microsoft.ML.OnnxRuntime .NET ဖြင့်](../../md/04.HOL/dotnet/src/LabsPhi304)
+      - [📓][Phi-3.5 Vision multi-frame သို့မဟုတ် multi-image နမူနာ](./md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
+      - [Microsoft.ML.OnnxRuntime .NET ကို အသုံးပြု၍ Phi-3 Vision ဒေသခံ ONNX မော်ဒယ်](../../md/04.HOL/dotnet/src/LabsPhi303)
+      - [မီနူးအခြေခံ Phi-3 Vision ဒေသခံ ONNX မော်ဒယ် Microsoft.ML.OnnxRuntime .NET ဖြင့်](../../md/04.HOL/dotnet/src/LabsPhi304)
 
-  - သင်္ချာ ဥပမာများ
-    -  Phi-4-Mini-Flash-Reasoning-Instruct ဥပမာများ 🆕 [Phi-4-Mini-Flash-Reasoning-Instruct ဖြင့် သင်္ချာ ဒီမို](./md/02.Application/09.Math/MathDemo.ipynb)
+  - သင်္ချာ နမူနာများ
+    -  Phi-4-Mini-Flash-Reasoning-Instruct နမူနာများ 🆕 [Phi-4-Mini-Flash-Reasoning-Instruct ဖြင့် သင်္ချာ ဒေမို](./md/02.Application/09.Math/MathDemo.ipynb)
 
-  - အသံ ဥပမာများ
-    - Phi-4 ဥပမာများ 🆕
-      - [📓] [Phi-4-multimodal ကို အသုံးပြုပြီး အသံစာတမ်းများ ထုတ်ယူခြင်း](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
-      - [📓] [Phi-4-multimodal အသံ ဥပမာ](./md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
-      - [📓] [Phi-4-multimodal စကားပြော ဘာသာပြန် ဥပမာ](./md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
-      - [.NET console အက်ပ် - Phi-4-multimodal အသံကိုအသုံးပြုပြီး အသံဖိုင်ကို သုံးသပ်၍ transcript ဖန်တီးခြင်း](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
+  - အသံ နမူနာများ
+    - Phi-4 နမူနာများ 🆕
+      - [📓] [Phi-4-multimodal ဖြင့် အသံစာသားများထုတ်ယူခြင်း](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
+      - [📓] [Phi-4-multimodal အသံနမူနာ](./md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
+      - [📓] [Phi-4-multimodal စကားပြန်ဟောပြော ပြောင်းဆိုခြင်း နမူနာ](./md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
+      - [.NET console application အသုံးပြု၍ Phi-4-multimodal အသံဖိုင် စိစစ် ထုတ်ယူပြီး စာသားထုတ်လုပ်ခြင်း](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
 
-  - MOE ဥပမာများ
-    - Phi-3 / 3.5 ဥပမာများ
-      - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) လူမှုမီဒီယာ ဥပမာ](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
-      - [📓] [NVIDIA NIM Phi-3 MOE, Azure AI Search နှင့် LlamaIndex ကို သုံးပြီး Retrieval-Augmented Generation (RAG) Pipeline တည်ဆောက်ခြင်း](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
+  - MOE နမူနာများ
+    - Phi-3 / 3.5 နမူနာများ
+      - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) လူမှုမီဒီယာ နမူနာ](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
+      - [📓] [NVIDIA NIM Phi-3 MOE, Azure AI Search နှင့် LlamaIndex တို့ဖြင့် Retrieval-Augmented Generation (RAG) Pipeline တည်ဆောက်ခြင်း](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
       - 
-  - Function Calling ဥပမာများ
-    - Phi-4 ဥပမာများ 🆕
-      -  [📓] [Phi-4-mini နှင့် Function Calling ကို အသုံးပြုခြင်း](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
-      -  [📓] [Phi-4-mini ဖြင့် multi-agents ဖန်တီးရန် Function Calling အသုံးပြုခြင်း](./md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
-      -  [📓] [Ollama နှင့် အတူ Function Calling အသုံးပြုခြင်း](./md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
-      -  [📓] [ONNX နှင့် Function Calling အသုံးပြုခြင်း](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling_ipynb)
-  - Multimodal Mixing ဥပမာများ
-    - Phi-4 ဥပမာများ 🆕
-      -  [📓] [နည်းပညာ သတင်းထောက်အဖြစ် Phi-4-multimodal ကို အသုံးပြုခြင်း](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news_ipynb)
-      - [.NET console အက်ပ် - Phi-4-multimodal ကို အသုံးပြုပြီး ပုံများ ကို ခွဲခြမ်းစိတ်ဖြာခြင်း](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
+  - Function Calling နမူနာများ
+    - Phi-4 နမူနာများ 🆕
+      -  [📓] [Phi-4-mini နှင့် Function Calling အသုံးပြုခြင်း](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
+      -  [📓] [Function Calling ဖြင့် Phi-4-mini အသုံးပြု multi-agents ဖန်တီးခြင်း](./md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
+      -  [📓] [Ollama နှင့် Function Calling အသုံးပြုခြင်း](./md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
+      -  [📓] [ONNX နှင့် Function Calling အသုံးပြုခြင်း](./md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)
+  - Multimodal Mixing နမူနာများ
+    - Phi-4 နမူနာများ 🆕
+      -  [📓] [နည်းပညာ သတင်းထောက်အဖြစ် Phi-4-multimodal အသုံးပြုခြင်း](./md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
+      - [.NET console application Phi-4-multimodal အသုံးပြု၍ ပုံများ စိစစ်ခြင်း](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
 
 - Phi မော်ဒယ်များ Fine-tuning
-  - [Fine-tuning ဖြစ်စဉ်များ](./md/03.FineTuning/FineTuning_Scenarios.md)
-  - [Fine-tuning နှင့် RAG တို့၏ ကြားကွာခြားချက်](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [Fine-tuning - Phi-3 ကို စက်မှုလုပ်ငန်း ကျွမ်းကျင်သူအဖြစ် ဖြစ်လာစေခြင်း](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
+  - [Fine-tuning များအကြောင်း](./md/03.FineTuning/FineTuning_Scenarios.md)
+  - [Fine-tuning နှင့် RAG အပြိုင်အဆိုင်](./md/03.FineTuning/FineTuning_vs_RAG.md)
+  - [Phi-3 ကို စက်မှု လုပ်ငန်း တက်ကြွကျွမ်းကျင်သူအဖြစ် Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
   - [VS Code အတွက် AI Toolkit ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
   - [Azure Machine Learning Service ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/Introduce_AzureML.md)
   - [Lora ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_Lora.md)
@@ -184,124 +194,123 @@ Phi ကို cloud သို့မဟုတ် edge စက်ပစ္စည်
   - [Azure AI Foundry ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Azure ML CLI/SDK ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Microsoft Olive ဖြင့် Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
-  - [Microsoft Olive Hands-On Lab ဖြင့် Fine-tuning လေ့ကျင့်ခန်း](./md/03.FineTuning/olive-lab/readme.md)
+  - [Microsoft Olive Hands-On Lab ဖြင့် Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/olive-lab/readme.md)
   - [Weights and Bias ဖြင့် Phi-3-vision ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
   - [Apple MLX Framework ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_MLX.md)
-  - [Phi-3-vision ကို Fine-tuning ပြုလုပ်ခြင်း (တရားဝင် ထောက်ခံချက်)](./md/03.FineTuning/FineTuning_Vision.md)
-  - [Kaito AKS နှင့် Azure Containers ဖြင့် Phi-3 ကို Fine-Tuning (တရားဝင် ထောက်ခံချက်)](./md/03.FineTuning/FineTuning_Kaito.md)
-  - [Phi-3 နှင့် 3.5 Vision များကို Fine-Tuning](https://github.com/2U1/Phi3-Vision-Finetune)
+  - [Phi-3-vision (တရားဝင် အထောက်အပံ့) ကို Fine-tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_Vision.md)
+  - [Kaito AKS၊ Azure Containers (တရားဝင် အထောက်အပံ့) ဖြင့် Phi-3 ကို Fine-Tuning ပြုလုပ်ခြင်း](./md/03.FineTuning/FineTuning_Kaito.md)
+  - [Phi-3 နှင့် 3.5 Vision ကို Fine-Tuning ပြုလုပ်ခြင်း](https://github.com/2U1/Phi3-Vision-Finetune)
 
-- လက်တွေ့ လေ့ကျင့်ခန်း
-  - [နောက်ဆုံးပေါ် မော်ဒယ်များကို ရှာဖွေခြင်း: LLMs, SLMs, ဒေသဆိုင်ရာ ဖွံ့ဖြိုးမှု နှင့် အခြားများ](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [NLP စွမ်းရည်များ ကို ဖွင့်ချခြင်း: Microsoft Olive ဖြင့် Fine-Tuning](https://github.com/azure/Ignite_FineTuning_workshop)
+- လက်တွေ့ လေ့လာခန်း
+  - [နောက်ဆုံးပေါ် မော်ဒယ်များ စမ်းသပ်ခြင်း: LLMs, SLMs, ဒေသတွင်း ဖွံ့ဖြိုးတိုးတက်မှု နှင့် အခြားများ](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
+  - [NLP စွမ်းရည် ဖော်ဆောင်ခြင်း: Microsoft Olive ဖြင့် Fine-Tuning](https://github.com/azure/Ignite_FineTuning_workshop)
 
-- အတက္ကသိုလ် သုတေသန စာတမ်းများ နှင့် ထုတ်ဝေစာများ
-  - [Textbooks Are All You Need II: phi-1.5 နည်းပညာ အစီရင်ခံစာ](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 နည်းပညာအစီရင်ခံစာ: သင်၏ ဖုန်းပေါ်တွင် ဒေသဆိုင်ရာ အလွန်ထင်ရှားစွမ်းဆောင်ရည်ရှိသော ဘာသာစကား မော်ဒယ်](https://arxiv.org/abs/2404.14219)
+- တက္ကသိုလ် သုတေသနစာတမ်းများနှင့် စာစဉ်များ
+  - [စာအုပ်များသာလိုအပ်သည် II: phi-1.5 နည်းပညာအစီရင်ခံစာ](https://arxiv.org/abs/2309.05463)
+  - [Phi-3 နည်းပညာအစီရင်ခံစာ: မိုဘိုင်းဖုန်းတွင် ဒေသဆိုင်ရာ အလွန်စွမ်းဆောင်ရည်မြင့် ဘာသာစကားမော်ဒယ်](https://arxiv.org/abs/2404.14219)
   - [Phi-4 နည်းပညာအစီရင်ခံစာ](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini Technical Report: Mixture-of-LoRAs ဖြင့် သေးသိပ်သော်လည်း အင်အားပြင်းသော မော်ဒယ်များ](https://arxiv.org/abs/2503.01743)
-  - [ယာဉ်အတွင်း Function-Calling အတွက် သေးငယ်သော ဘာသာစကား မော်ဒယ်များကို ထိရောက်စေရန် ညွှန်ကြားချက်များ](https://arxiv.org/abs/2501.02342)
-  - [(WhyPHI) PHI-3 ကို Multiple-Choice မေးခွန်း ဖြေဆိုရန် Fine-Tuning: နည်းစနစ်များ၊ ရလဒ်များနှင့် စိန်ခေါ်မှုများ](https://arxiv.org/abs/2501.01588)
-  - [Phi-4-reasoning နည်းပညာအစီရင်ခံစာ](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
-  - [Phi-4-mini-reasoning နည်းပညာအစီရင်ခံစာ](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+  - [Phi-4-Mini နည်းပညာအစီရင်ခံစာ: Mixture-of-LoRAs ဖြင့် တိုတောင်းသော်လည်း ခိုင်မာသော มူလ်တီမိုဒယ် ဘာသာစကားမော်ဒယ်များ](https://arxiv.org/abs/2503.01743)
+  - [ယာဉ်အတွင်း လုပ်ဆောင်ချက်ခေါ်ယူမှုအတွက် စမောလ်ဘာသာစကားမော်ဒယ်များ တိုးတက်အောင်လုပ်ခြင်း](https://arxiv.org/abs/2501.02342)
+  - [(WhyPHI) ပြိုင်ပွဲမေးခွန်း ဖြေဆိုခြင်းအတွက် PHI-3 ကို တိကျစွာ ပြင်ဆင်ခြင်း: နည်းဗျူဟာ၊ ရလဒ်များနှင့် စိန်ခေါ်မှုများ](https://arxiv.org/abs/2501.01588)
+  - [Phi-4-အတွေးမြှင့် နည်းပညာအစီရင်ခံစာ](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
+  - [Phi-4-mini-အတွေးမြှင့် နည်းပညာအစီရင်ခံစာ](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
 
-## Phi မော်ဒယ်များကို အသုံးပြုခြင်း
+## Phi မော်ဒယ်များ အသုံးပြုခြင်း
 
-### Azure AI Foundry တွင် Phi
+### Azure AI Foundry တွင် Phi 
 
-Microsoft Phi ကို မည်သို့ အသုံးပြုရမည်နှင့် သင့်၏ မတူညီသော ဟာ့ဒ်ဝဲ စက်ပစ္စည်းများပေါ်တွင် E2E ဖြေရှင်းချက်များကို မည်သို့ တည်ဆောက်မည်ကို သင်လေ့လာနိုင်သည်။ Phi ကို ကိုယ်တိုင် စမ်းသပ်လိုပါက မော်ဒယ်များနှင့် ကစားပြီး သင့်ရည်ရွယ်ချက်များအတွက် Phi ကို စိတ်ကြိုက်ပြင်ဆင်ခြင်းဖြင့် စတင်ပါ။ စတင်ရန် [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) ကို အသုံးပြုနိုင်ပြီး ပိုမိုသိရှိလိုပါက [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) ဖြင့် စတင်ရန် စာမျက်နှာကို ကြည့်ပါ။
+Microsoft Phi ကို မည်သို့အသုံးပြုရမည်နှင့် သင့်နည်းပညာပစ္စည်းများ၌ End-to-End လုပ်ဆောင်ချက်များကို မည်သို့တည်ဆောက်ရမည်ကို သင်ယူနိုင်သည်။ Phi ကိုကိုယ်တိုင်ခံစားလိုပါက မော်ဒယ်များဖြင့် ကစား၍ သင့်ရဲ့ အခြေအနေများအတွက် Phi ကို လိုက်ဖက်အောင် ပြင်ဆင်နိုင်သည့် [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) ကို အသုံးပြုပါ၊ [Azure AI Foundry စတင်အသုံးပြုခြင်း](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) တွင် ပိုမိုသိရှိနိုင်သည်။
 
-**ကစားကွင်း**
-မော်ဒယ်တိုင်းတွင် မော်ဒယ်ကို စမ်းသပ်ရန် သီးသန့် ကစားကွင်း တစ်ခုရှိသည် [Azure AI Playground](https://aka.ms/try-phi3).
+**ကစားကြည့်ရန်နေရာ**  
+မော်ဒယ်တိုင်းအတွက် စမ်းသပ်ရန် သီးခြားနေရာရှိသည် [Azure AI Playground](https://aka.ms/try-phi3)။
 
-### GitHub Models တွင် Phi
+### GitHub မော်ဒယ်များတွင် Phi 
 
-Microsoft Phi ကို မည်သို့ အသုံးပြုရမည်နှင့် သင့်၏ မတူညီသော ဟာ့ဒ်ဝဲ စက်ပစ္စည်းများပေါ်တွင် E2E ဖြေရှင်းချက်များကို မည်သို့ တည်ဆောက်မည်ကို သင်လေ့လာနိုင်သည်။ Phi ကို ကိုယ်တိုင် အတွေ့အကြုံယူလိုပါက မော်ဒယ်နှင့် ကစားပြီး သင့် ရည်ရွယ်ချက်များအတွက် Phi ကို စိတ်ကြိုက်ပြင်ဆင်နိုင်သည်။ စတင်ရန် [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) ကို အသုံးပြုနိုင်ပြီး ပိုမိုသိရှိလိုပါက Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md) ကို ကြည့်ပါ။
+Microsoft Phi ကို မည်သို့အသုံးပြုရမည်နှင့် သင့်နည်းပညာပစ္စည်းများ၌ End-to-End လုပ်ဆောင်ချက်များကို မည်သို့တည်ဆောက်ရမည်ကို သင်ယူနိုင်သည်။ Phi ကိုကိုယ်တိုင်ခံစားလိုပါက မော်ဒယ်ဖြင့် ကစား၍ သင့်အခြေအနေများအတွက် Phi ကို ပြင်ဆင်နိုင်သည့် [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) ကို အသုံးပြုပါ၊ [GitHub Model Catalog စတင်အသုံးပြုခြင်း](/md/02.QuickStart/GitHubModel_QuickStart.md) တွင် ပိုမိုသိရှိနိုင်သည်။
 
-**ကစားကွင်း**
-မော်ဒယ်တိုင်းတွင် သီးသန့် [မော်ဒယ်ကို စမ်းသပ်ရန် ကစားကွင်း](/md/02.QuickStart/GitHubModel_QuickStart.md) ရှိသည်။
+**ကစားကြည့်ရန်နေရာ**  
+မော်ဒယ်တိုင်းတွင် စမ်းသပ်ရန် သီးခြား [ကစားရန်နေရာ](/md/02.QuickStart/GitHubModel_QuickStart.md) ရှိသည်။
 
-### Hugging Face တွင် Phi
+### Hugging Face တွင် Phi 
 
-မော်ဒယ်ကို [Hugging Face](https://huggingface.co/microsoft) တွင်လည်း ရှာဖွေနိုင်ပါသည်။
+မော်ဒယ်ကို [Hugging Face](https://huggingface.co/microsoft) တွင်လည်း ရနိုင်သည်။
 
-**ကစားကွင်း**
-[Hugging Chat ကစားကွင်း](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
+**ကစားကြည့်ရန်နေရာ**  
+[Hugging Chat ကစားရန်နေရာ](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
- ## 🎒 အခြားသင်တန်းများ
+ ## 🎒 အခြား သင်တန်းများ
 
-ကျွန်ုပ်တို့ အဖွဲ့က အခြားသင်တန်းများကို ထုတ်လုပ်ထားသည်! ကြည့်ရှုပါ။
+ကျွန်ုပ်တို့အသင်းအဖွဲ့သည် အခြားသင်တန်းများထုတ်လုပ်ထားပါသည်။ စစ်ဆေးကြည့်ပါ။
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### LangChain
-[![LangChain4j ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
-[![LangChain.js ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
+### LangChain  
+[![စတင်လေ့လာသူများအတွက် LangChain4j](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
+[![စတင်လေ့လာသူများအတွက် LangChain.js](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
 
 ---
 
-### Azure / Edge / MCP / Agents
-[![AZD ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI Agents ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Azure / Edge / MCP / Agents  
+[![စတင်လေ့လာသူများအတွက် AZD](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် Edge AI](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် MCP](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် AI Agents](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Generative AI Series
-[![Generative AI ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+### Generative AI ကန့်သတ်မှုလမ်းကြောင်း  
+[![စတင်လေ့လာသူများအတွက် Generative AI](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Core Learning
-[![ML ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Cybersecurity ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Web Dev ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-[![XR Development ကို စတင်လေ့လာသူများအတွက်](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Core Learning  
+[![စတင်လေ့လာသူများအတွက် ML](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် ဒေတာသိပ္ပံ](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် AI](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် စိုင်ဘာလုံခြုံရေး](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![စတင်လေ့လာသူများအတွက် ဝက်ဘ်ဖွံ့ဖြိုးတိုးတက်ရေး](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် IoT](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+[![စတင်လေ့လာသူများအတွက် XR ဖြံ့ဖြိုးတိုးတက်ရေး](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### Copilot Series
-[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+### Copilot စီးရီး  
+[![AI စနစ်နှင့်ဖက်စားသံတော်ဆောင်ရေးအတွက် Copilot](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![C#/.NET အတွက် Copilot](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot စွန့်စားခန်း](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
 ## တာဝန်ရှိသော AI
 
-Microsoft သည် ဖောက်သည်များအား ကျွန်ုပ်တို့၏ AI ထုတ်ကုန်များကို တာဝန်ရှိစွာ အသုံးချနိုင်ရန် ကူညီပေးခြင်း၊ လေ့လာချက်များကို မျှဝေခြင်းနှင့် Transparency Notes နှင့် Impact Assessments ကဲ့သို့သော ကိရိယာများဖြင့် ယုံကြည်မှုအခြေပြု မိတ်ဖက်ဆက်ဆံရေးများကို တည်ဆောက်ပေးရန် ပူးပေါင်းဆောင်ရွက်နေပါသည်။ ဤအရင်းအမြစ်များအများစုကို [https://aka.ms/RAI](https://aka.ms/RAI) တွင် တွေ့နိုင်ပါသည်။
-Microsoft ၏ တာဝန်ရှိသော AI သဘောတရားသည် တရားမျှတမှု၊ ယုံကြည်ရမှုနှင့် လုံခြုံမှု၊ ကိုယ်ရေးကိုယ်တာနှင့် လုံခြုံရေး၊ ပါဝင်မှု၊ မြင်သာမှုနှင့် တာဝန်ယူမှုတို့ကို အခြေခံသည်။
+Microsoft သည် AI ထုတ်ကုန်များကို တာဝန်ရှိစွာ အသုံးပြုနိုင်ရန် အောက်အစီအစဉ်များကို ဖန်တီးပေးရန်၊ သင်ယူမှုများကို ဝေမျှရန်၊ Transparency Notes နှင့် Impact Assessments ကဲ့သို့သော ကိရိယာများမှတဆင့် ယုံကြည်မှုအခြေပြု လက်တွဲဆက်ဆံမှုများ တည်ဆောက်ပေးရန် ကြိုးပမ်းလျက်ရှိပါသည်။ ဤအရင်းအမြစ်များစွာကို [https://aka.ms/RAI](https://aka.ms/RAI) တွင် ရရှိနိုင်ပါသည်။  
+Microsoft ၏ တာဝန်ရှိသော AI ဆောင်ရွက်ချက်မှာ တရားမျှတမှု၊ ယုံကြည်ရမှုနှင့် လုံခြုံမှု၊ ကိုယ်ရေးကာကွယ်မှုနှင့် လုံခြုံရေး၊ အပါအဝင်မှု၊ ရိုးရှင်းပြတ်သားမှုနှင့် တာဝန်ယူမှုတို့အပေါ် အခြေခံထားသည်။
 
-ဤ နမူနာတွင် အသုံးပြုထားသော ကြီးမားသော သဘာဝဘာသာစကား၊ ပုံနှင့် အသံ မော်ဒယ်များသည် အချို့အခါ မတရားသော၊ ယုံကြည်စိတ်မရှိသော သို့မဟုတ် ထိခိုက်စေသော အပြုအမူများ ပြုလုပ်နိုင်ပြီး ထိုကြောင့် ထိခိုက်မှုများ ဖြစ်ပေါ်နိုင်သည်။ အန္တရာယ်များနှင့် ကန့်သတ်ချက်များအောက်တွင် သတင်းအချက်အလက် ရရှိရန် [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) ကို ကြည့်ပါ။
+ဤနမူနာတွင် အသုံးပြုထားသော ကြီးမားသော ဘာသာစကား၊ ဓာတ်ပုံနှင့် အသံမော်ဒယ်များသည် မတရား၊ ယုံကြည်ရမည်မဟုတ်သော သို့မဟုတ် မေတ္တာမရှိသော စတိုင်ဖြင့် ပြုမူနိုင်ပြီး ထိခိုက်မှုများ ဖြစ်နိုင်သည်။ ထောက်လှမ်းဖို့ အရေးကြီးသောအချက်များနှင့် ကန့်သတ်ချက်များ အကြောင်း သိရှိရန် [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) ကို ကြည့်ရှုပါ။
 
-ဤအန္တရာယ်များကို လျော့ချရန်အတွက် အကြံပြုထားသော နည်းလမ်းမှာ သင့်စနစ်ဖွဲ့စည်းမှုတွင် ပထမကာကွယ်ရေး စနစ်တစ်ခု ထည့်သွင်း၍ ထိခိုက်စေနိုင်သည့် အပြုအမူများကို ရှာဖွေတားဆီးနိုင်စေရန်ဖြစ်သည်။ [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) သည် လွတ်လပ်သော အကာအကွယ် အလွှာကို ထောက်ပံ့ပေးကာ အပလီကေးရှင်းများနှင့် ဝန်ဆောင်မှုများ၌ အသုံးပြုသူဖန်တီးထားသောနှင့် AI ဖန်တီးထားသော ထိခိုက်စေနိုင်သော အကြောင်းအရာများကို ရှာဖွေနိုင်သည်။ Azure AI Content Safety သည် ထိခိုက်စေနိုင်သော အကြောင်းအရာများကို စစ်ဆေးရန် စာသားနှင့် ပုံ API များကို ပါဝင်ကူညီပေးသည်။ Azure AI Foundry အတွင်း၌ Content Safety ဝန်ဆောင်မှုသည် မတူကွဲပြားသော မော်ဒယ်များအတွင်း ထိခိုက်စေနိုင်သော အကြောင်းအရာများကို ရှာဖွေရန်နှင့် စမ်းသပ်ရန် ဥပမာကုဒ်များကို ကြည့်ရှု၊ စူးစမ်းနှင့် လက်တွေ့ အသုံးပြုနိုင်စေသည်။ အောက်ပါ [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) သည် ၎င်းဝန်ဆောင်မှုသို့ တောင်းဆိုမှုများ ဆောင်ရွက်ပုံကို လမ်းညွန်ပေးပါသည်။
+ဤအန္တရာယ်များကို လျှော့ချရန် အကြံပြုချက်မှာ သင်၏ နည်းပညာဆောက်လုပ်မှုတွင် ထိခိုက်မှုရှိစေနိုင်သည့် ဆိုးကျိုးရှိသော ဆက်ဆံမှုများကို ဖော်ထုတ်၍ ကာကွယ်နိုင်သော လုံခြုံရေး စနစ်တစ်ခု ထည့်သွင်းရန် ဖြစ်ပါသည်။ [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) သည် လွတ်လပ်စွာ ကာကွယ်ရေးအလွှာတစ်ခု ဖြစ်ပြီး အသုံးပြုသူထုတ်ဖန်သော၊ AI ထုတ်ဖန်သော မလိုလားအပ်သော အကြောင်းအရာများကို လျင်မြန်စွာ ဖော်ထုတ်နိုင်သည်။ Azure AI Content Safety တွင် စာသားနှင့် ဓာတ်ပုံ API များ ပါရှိပြီး ထိခိုက်မှုရှိနိုင်သော အကြောင်းအရာများကို စစ်ဆေးနိုင်သည်။ Azure AI Foundry အတွင်း Content Safety ဝန်ဆောင်မှုသည် မတူညီသော မော်ဒယ်လ်များတွင်ထိခိုက်မှုရှိသော အကြောင်းအရာများကို တွေ့မြင်ရန်၊ ရှာဖွေရန်နှင့် နမူနာကုဒ်များ စမ်းသပ်ရန် ခွင့်ပြုသည်။ အောက်ပါ [quickstart စာတမ်း](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) သည် ဝန်ဆောင်မှုအား တောင်းဆိုမည့်အထိမ်းအမှတ် အဆင့်များကို လမ်းညွှန်ပေးပါသည်။
 
-တခြားစိတ်စေ့ဖို့ယူရမည့် အချက်မှာ အကယ်၍ မျိုးစုံမော်ဒယ်နှင့် မျိုးစုံစာရင်းမော်ဒယ်များကို အသုံးပြုသော အပလီကေးရှင်းများတွင် မူလအားဖြင့် စနစ်သည် သင်နှင့် သင့်အသုံးပြုသူများ မျှော်မွန်းသလို ပြုလုပ်နိုင်ရမည်ဟု အဆိုပါလုပ်ဆောင်မှုကို အဓိပ္ပာယ်ရသည်၊ ထို့အပြင် ထိခိုက်စေသော ထုတ်လွှင့်ချက်များ မထုတ်ရန်လည်း ပါဝင်သည်။ သင့်အပလီကေးရှင်း၏ ပေါင်းစုံလုပ်ဆောင်မှုကို [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ကို အသုံးပြု၍ တိုင်းတာခြင်း အရေးကြီးသည်။ သင်သည် [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) များကိုဖန်တီး၍ အကဲဖြတ်နိုင်ပါသည်။
+အခြားတစ်ချက်မှာ ဝန်ဆောင်မှုလုံးဝ၏ လုပ်ဆောင်မှုစွမ်းအင်ကို တွက်ချက်ရမည်ဖြစ်သည်။ မူလတန်းစနစ်များနှင့် မော်ဒယ် များစွာပါဝင်သည့် လျှောက်လွှာများတွင် ယေဘုယျလျှောက်လွှာသည် သင့်နှင့် သုံးစွဲသူများ၏ မျှော်မှန်းချက်များကို ပြည့်မီစေရမည်ဖြစ်ပြီး ထိခိုက်စေသော ရလဒ်များ မထုတ်ပေးရပါ။ သင်၏ လျှောက်လွှာ စုစုပေါင်း၏ လုပ်ဆောင်မှုစွမ်းအားကို [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ဖြင့် သပ်ရပ်စွာ ချွေတာသင့်သည်။ ထိုအပြင် သင့်ကိုယ်ပိုင် စစ်ဆေးသူများဖြင့် [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) ဖန်တီး၍ စစ်ဆေးနိုင်ရန် လည်း နှုတ်ခွန်းဆက်ပေးပါသည်။
+သင်၏ AI application ကို သင်၏ဖွံ့ဖြိုးမှုပတ်ဝန်းကျင်တွင် [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ကို အသုံးပြုပြီး အကဲဖြတ်နိုင်သည်။ စမ်းသပ်ရန် ဒေတာစနစ် သို့မဟုတ် ရည်မှန်းထားသည့် အချက်အလက် တစ်ခုကို ပေးပြီး သင်၏ generative AI application ၏ ထုတ်ဖြစ်မှုများကို built-in evaluators သို့မဟုတ် သင်လိုအပ်သလို custom evaluators ဖြင့် ပမာဏနှိပ်သတ်နိုင်သည်။ သင့်စနစ်ကို အကဲဖြတ်ရန် azure ai evaluation sdk ဖြင့် စတင်လိုပါက [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ကို လိုက်နာနိုင်ပါသည်။ အကဲဖြတ်မှု run ကို အသုံးပြုပြီးနောက်တွင် [Azure AI Foundry တွင် ရလဒ်များကို ဧည့်ကြည့်နိုင်ပါသည်](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)။
 
-သင့် AI အက်ပ်ကို ဖွံ့ဖြိုးရေး ပတ်ဝန်းကျင်တွင် [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ဖြင့် အကဲဖြတ်နိုင်သည်။ စမ်းသပ်ရေး ဒေတာစုစည်းတိုင်း သို့မဟုတ် လक्षितချက် တစ်ခုကို အသေးစိတ် ပေးလိုက်ပါက သင့် generative AI အက်ပ်၏ စီမံထုတ်လုပ်ချက်များကို built-in evaluators သို့မဟုတ် သင်ရွေးချယ်ထားသည့် custom evaluators များဖြင့် အရေအတွက်အရ တိုင်းတာနိုင်ပါသည်။ စနစ်ကို အကဲဖြတ်ရန် azure ai evaluation sdk နှင့် စတင်လိုပါက [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ကို လိုက်နာပါ။ အကဲဖြတ် run တစ်ခုကို အကောင်အထည်ဖော်လျှင် [Azure AI Foundry တွင် ရလဒ်များကို မြင်ကွင်းဆန်းကြည့်နိုင်ပါသည်](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)။
+## အမှတ်တံဆိပ်များ
 
-## ကုန်အမှတ်တံဆိပ်များ
-ဤပရောဂျက်တွင် ပရောဂျက်များ၊ ထုတ်ကုန်များ သို့မဟုတ် ဝန်ဆောင်မှုများနှင့် ဆိုင်သော ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများ ပါဝင်နိုင်သည်။ ခွင့်ပြုချက်ရရှိသော Microsoft ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများ အသုံးပြုခြင်းသည် [Microsoft ၏ ကုန်အမှတ်တံဆိပ်နှင့် အမှတ်တံဆိပ် လမ်းညွှန်ချက်များ](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) အတိုင်းသာ လိုက်နာရမည်။  
-ဤပရောဂျက်ကို ပြင်ဆင်ပြောင်းလဲထားသော ဗားရှင်းများတွင် Microsoft ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုရာတွင် ရှုပ်ထွေးမှုဖြစ်ပေါ်စေရန် သို့မဟုတ် Microsoft ပံ့ပိုးနေကြောင်း ထင်မြင်စေသည့် အခြေအနေ မဖြစ်စေရန် ဂရုစိုက်ရမည်။ တတိယပါတီများ၏ ကုန်အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများကို အသုံးပြုခြင်းသည် ထိုတတိယပါတီများ၏ မူဝါဒများအတိုင်းသာ ဖြစ်မည်။
+ဤ project တွင် စီမံကိန်းများ၊ ထုတ်ကုန်များ သို့မဟုတ် ၀န်ဆောင်မှုများအတွက် အမှတ်တံဆိပ်များ သို့မဟုတ် လိုဂိုများ ပါဝင်နိုင်ပါသည်။ Microsoft ၏ အမှတ်တံဆိပ် သို့မဟုတ် လိုဂိုအသုံးပြုမှုသည် [Microsoft ၏ Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) အတိုင်း လိုက်နာရမည်ဖြစ်ပြီး ခွင့်ပြုချက်ရှိမှုအပေါ် မူတည်ပါသည်။ ဤ project ၏ ပြင်ဆင်ထားသော ဗားရှင်းများတွင် Microsoft အမှတ်တံဆိပ် သို့မဟုတ် လိုဂိုများကို အသုံးမပြုသင့်ပါ၊ Microsoft ၏ ပံ့ပိုးမှုရှိသည်ဟု လွဲမှားသဘောထား ဖြစ်စေသင့်မည်မဟုတ်ပါ။ တတိယပါတီ၏ အမှတ်တံဆိပ် သို့မဟုတ် လိုဂိုများကို အသုံးပြုခြင်းသည် အဆိုပါ တတိယပါတီ၏ မူဝါဒများအား အညီ ဖြစ်ပါသည်။
 
 ## ကူညီမှု ရယူရန်
 
-AI အက်ပ်များ တည်ဆောက်ရာတွင် အခက်အခဲတွေ့ပါက သို့မဟုတ် မေးခွန်းများရှိပါက ပါဝင်ဆောင်ရွက်ရန်:
+AI apps ဖန်တီးရာတွင် ပြဿနာတက်ပါက သို့မဟုတ် မေးခွန်းများရှိပါက အောက်ပါနေရာသို့ လက်ခံပါ။
 
 [![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-ထုတ်ကုန်အတွက် တုံ့ပြန်ချက်များ သို့မဟုတ် တည်ဆောက်စဉ် အမှားများရှိပါက အောက်ပါနေရာကို သွားကြည့်ပါ:
+ထုတ်ကုန်ဆိုင်ရာတုံ့ပြန်ချက် သို့မဟုတ် အမှားများရှိပါက အောက်ပါနေရာသို့ သွားရောက်ပါ။
 
 [![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-ငြင်းပယ်ချက်
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှုဖြစ်သည့် [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းထားသော်လည်း အလိုအလျောက် ဘာသာပြန်ချက်များတွင် အမှား သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း ကျေးဇူးပြု၍ သတိပြုပါ။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ တရားဝင် အာဏာရှိသော ရင်းမြစ်အဖြစ် သတ်မှတ်ရပါမည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူ့ဘာသာပြန်ဝန်ဆောင်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်နိုင်သည့် နားမလည်မှုများ သို့မဟုတ် အဓိပ္ပာယ်မှားဖော်ပြချက်များအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါကြောင်း အသိပေးပါသည်။
+**တာဝန်မရှိခြင်းကြေညာချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်စနစ်ဖြစ်သော [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးပမ်းသောကြောင့်ပါ၊ သို့သော် အလိုအလျောက်ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် တိကျမှုလျော့နည်းမှုများ ရှိနိုင်ကြောင်း သတိပြုခံစားပါ။ မူလစာတမ်းကို မိခင်ဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆရန် အကြံပြုပါသည်။ အရေးကြီးသောအချက်အလက်များအတွက် လူ့အလုပ်သမားဘာသာပြန် များဖြင့် ဘာသာပြန်ရန် အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်သည့် နားမလည်မှုများ သို့မဟုတ် မမှန်မှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်လွှဲမပေးပါ။
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

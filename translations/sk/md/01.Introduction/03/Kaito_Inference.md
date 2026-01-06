@@ -1,44 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:53:10+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T09:48:00+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "sk"
 }
 -->
-## Inferencia s Kaito
+## Inference s Kaito
 
-[Kaito](https://github.com/Azure/kaito) je operátor, ktorý automatizuje nasadenie AI/ML inferenčných modelov v Kubernetes klastri.
+[Kaito](https://github.com/Azure/kaito) je operátor, ktorý automatizuje nasadenie AI/ML inference modelov v Kubernetes klastri.
 
-Kaito sa od väčšiny bežných metód nasadenia modelov postavených na infraštruktúre virtuálnych strojov odlišuje nasledujúcimi kľúčovými vlastnosťami:
+Kaito má nasledujúce kľúčové odlišnosti v porovnaní s väčšinou bežných metód nasadenia modelov postavených na infraštruktúrach virtuálnych strojov:
 
-- Správa modelových súborov pomocou kontajnerových obrazov. Poskytuje HTTP server na vykonávanie inferenčných volaní pomocou knižnice modelov.
-- Vyhýba sa ladeniu parametrov nasadenia pre konkrétny GPU hardvér vďaka prednastaveným konfiguráciám.
-- Automaticky zabezpečuje GPU uzly podľa požiadaviek modelu.
-- Umožňuje hosťovanie veľkých modelových obrazov v verejnom Microsoft Container Registry (MCR), ak to licencia umožňuje.
+- Správa modelových súborov pomocou kontajnerových obrazov. Poskytuje HTTP server na vykonávanie inference volaní s využitím knižnice modelu.
+- Vyhýbanie sa ladeniu parametrov nasadenia podľa GPU hardvéru prostredníctvom prednastavených konfigurácií.
+- Automatické zabezpečenie GPU uzlov na základe požiadaviek modelu.
+- Hostovanie veľkých modelových obrazov v verejnom Microsoft Container Registry (MCR), ak to licencia povoľuje.
 
-Použitím Kaito je proces zavádzania veľkých AI inferenčných modelov v Kubernetes výrazne zjednodušený.
+Použitím Kaito je pracovný postup nahrávania veľkých AI inference modelov v Kubernetes výrazne zjednodušený.
 
 ## Architektúra
 
-Kaito nasleduje klasický dizajnový vzor Kubernetes Custom Resource Definition (CRD)/controller. Používateľ spravuje vlastný zdroj `workspace`, ktorý popisuje požiadavky na GPU a špecifikáciu inferencie. Kaito controllery automatizujú nasadenie tým, že synchronizujú stav vlastného zdroja `workspace`.
+Kaito nasleduje klasický Kubernetes vzor návrhu Custom Resource Definition(CRD)/controller. Používateľ spravuje vlastný zdroj `workspace`, ktorý popisuje požiadavky na GPU a špecifikáciu inference. Kaito kontroléry automatizujú nasadenie zosúladzovaním vlastného zdroja `workspace`.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architektúra" alt="Kaito architektúra">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-Na obrázku vyššie je zobrazený prehľad architektúry Kaito. Jej hlavné komponenty zahŕňajú:
+Vyššie uvedený obrázok prezentuje prehľad architektúry Kaito. Jej hlavné komponenty tvoria:
 
-- **Workspace controller**: Synchronizuje vlastný zdroj `workspace`, vytvára vlastné zdroje `machine` (vysvetlené nižšie) na spustenie automatického zabezpečenia uzlov a vytvára inferenčné pracovné zaťaženie (`deployment` alebo `statefulset`) na základe prednastavených konfigurácií modelu.
-- **Node provisioner controller**: Tento controller sa nazýva *gpu-provisioner* v [gpu-provisioner helm charte](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Používa CRD `machine` pochádzajúci z [Karpenter](https://sigs.k8s.io/karpenter) na komunikáciu s workspace controllerom. Integruje sa s API Azure Kubernetes Service (AKS) na pridávanie nových GPU uzlov do AKS klastra.
-> Poznámka: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open source komponent. Môže byť nahradený inými controllermi, ak podporujú [Karpenter-core](https://sigs.k8s.io/karpenter) API.
+- **Workspace kontrolér**: zosúlaďuje vlastný zdroj `workspace`, vytvára vlastné zdroje `machine` (popísané nižšie) na vyvolanie automatického zabezpečenia uzlov a vytvára inference záťaž (`deployment` alebo `statefulset`) na základe predvolených konfigurácií modelu.
+- **Node provisioner kontrolér**: Kontrolér sa nazýva *gpu-provisioner* v [gpu-provisioner helm charte](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Používa CRD `machine` pochádzajúci z [Karpenter](https://sigs.k8s.io/karpenter), aby komunikoval s workspace kontrolérom. Integruje sa s Azure Kubernetes Service (AKS) API na pridávanie nových GPU uzlov do AKS klastra.
+> Poznámka: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open-source komponent. Môže byť nahradený inými kontrolérmi, ak podporujú [Karpenter-core](https://sigs.k8s.io/karpenter) API.
 
 ## Inštalácia
 
-Inštalačný návod nájdete [tu](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Prosím, skontrolujte návod na inštaláciu [tu](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Rýchly štart Inferencie Phi-3
-[Ukážkový kód Inferencie Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Rýchly štart Inference Phi-3
+[Vzorový kód Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +77,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Ladenie výstupnej cesty ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Stav workspace je možné sledovať spustením nasledujúceho príkazu. Keď sa v stĺpci WORKSPACEREADY zobrazí `True`, model bol úspešne nasadený.
+Stav workspace je možné sledovať spustením nasledujúceho príkazu. Keď stĺpec WORKSPACEREADY nadobudne hodnotu `True`, model bol úspešne nasadený.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ďalej je možné nájsť IP adresu inferenčnej služby v klastri a použiť dočasný `curl` pod na otestovanie koncového bodu služby v klastri.
+Ďalej je možné nájsť cluster IP inference služby a použiť dočasný `curl` pod na otestovanie koncového bodu služby v klastri.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +103,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Rýchly štart Inferencie Phi-3 s adaptéry
+## Rýchly štart Inference Phi-3 s adaptérmi
 
-Po inštalácii Kaito môžete vyskúšať nasledujúce príkazy na spustenie inferenčnej služby.
+Po inštalácii Kaito je možné skúsiť nasledujúce príkazy na spustenie inference služby.
 
-[Ukážkový kód Inferencie Phi-3 s adaptéry](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Vzorový kód Inference Phi-3 s adaptérmi](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +149,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Ladenie výstupnej cesty ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Stav workspace je možné sledovať spustením nasledujúceho príkazu. Keď sa v stĺpci WORKSPACEREADY zobrazí `True`, model bol úspešne nasadený.
+Stav workspace je možné sledovať spustením nasledujúceho príkazu. Keď stĺpec WORKSPACEREADY nadobudne hodnotu `True`, model bol úspešne nasadený.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ďalej je možné nájsť IP adresu inferenčnej služby v klastri a použiť dočasný `curl` pod na otestovanie koncového bodu služby v klastri.
+Ďalej je možné nájsť cluster IP inference služby a použiť dočasný `curl` pod na otestovanie koncového bodu služby v klastri.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +175,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Zrieknutie sa zodpovednosti**:
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu nenesieme zodpovednosť.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

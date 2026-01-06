@@ -1,44 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:49:12+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T16:47:16+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "mr"
 }
 -->
 ## Kaito सह अनुमान
 
-[Kaito](https://github.com/Azure/kaito) हा एक ऑपरेटर आहे जो Kubernetes क्लस्टरमध्ये AI/ML अनुमान मॉडेल तैनात करण्याचे स्वयंचलितीकरण करतो.
+[Kaito](https://github.com/Azure/kaito) हा एक ऑपरेटर आहे जो Kubernetes क्लस्टरमध्ये AI/ML अनुमान मॉडेल तैनाती स्वयंचलित करतो.
 
-Kaito मध्ये बहुतेक मुख्य प्रवाहातील मॉडेल तैनाती पद्धतींपेक्षा खालील महत्त्वाचे फरक आहेत, जे वर्चुअल मशीन इन्फ्रास्ट्रक्चरवर आधारित आहेत:
+Kaito मध्ये खालील मुख्य फरक आहेत जे बहुसंख्य प्रमुख मॉडेल तैनात करण्याच्या पद्धतींपेक्षा वेगळे आहेत जे आभासी मशीन इन्फ्रास्ट्रक्चरवर आधारित आहेत:
 
-- कंटेनर इमेजेस वापरून मॉडेल फाइल्स व्यवस्थापित करा. मॉडेल लायब्ररी वापरून अनुमान कॉल करण्यासाठी http सर्व्हर प्रदान केला जातो.
-- GPU हार्डवेअरशी जुळवून घेण्यासाठी तैनातीचे पॅरामीटर्स ट्यून करण्याची गरज नाही, कारण पूर्वनिर्धारित कॉन्फिगरेशन दिलेले आहे.
-- मॉडेलच्या गरजेनुसार GPU नोड्स आपोआप पुरवठा करा.
-- परवानगी असल्यास मोठ्या मॉडेल इमेजेस सार्वजनिक Microsoft Container Registry (MCR) मध्ये होस्ट करा.
+- कंटेनर इमेजेस वापरून मॉडेल फाईल्स व्यवस्थापित करा. मॉडेल लायब्ररी वापरून अनुमान कॉल करण्यासाठी एक http सर्व्हर दिला आहे.
+- GPU हार्डवेअरशी जुळवण्यासाठी तैनात करण्याचे पॅरामीटर्स ट्यून करण्याचे टाळा, पूर्वनिर्धारित कॉन्फिगरेशन प्रदान करून.
+- मॉडेल आवश्यकतांनुसार GPU नोड्स आपोआप उपलब्ध करा.
+- परवानगी असल्यास मोठ्या मॉडेल इमेजेस Microsoft Container Registry (MCR) मध्ये होस्ट करा.
 
 Kaito वापरून, Kubernetes मध्ये मोठ्या AI अनुमान मॉडेल्सचे ऑनबोर्डिंग कार्यप्रवाह मोठ्या प्रमाणात सुलभ होते.
 
+
 ## आर्किटेक्चर
 
-Kaito पारंपरिक Kubernetes Custom Resource Definition(CRD)/controller डिझाइन पॅटर्नचे पालन करतो. वापरकर्ता `workspace` नावाचा कस्टम रिसोर्स व्यवस्थापित करतो जो GPU गरजा आणि अनुमान तपशील वर्णन करतो. Kaito कंट्रोलर्स `workspace` कस्टम रिसोर्सचे समन्वय करून तैनाती स्वयंचलित करतात.
+Kaito पारंपरिक Kubernetes कस्टम रिसोर्स डिफिनिशन(CRD)/कंट्रोलर डिझाइन पॅटर्नचे पालन करते. वापरकर्ता GPU आवश्यकतांचे आणि अनुमान तपशीलांचे वर्णन करणारा `workspace` कस्टम रिसोर्स व्यवस्थापित करतो. Kaito कंट्रोलर्स `workspace` कस्टम रिसोर्सची एकत्रित तपासणी करून तैनात करण्याचे स्वयंचलन करेल.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="KAITO RAGEngine architecture">
 </div>
 
-वरील आकृती Kaito आर्किटेक्चरचा आढावा दर्शवते. त्याचे मुख्य घटक खालीलप्रमाणे आहेत:
+वरील आकृती Kaito आर्किटेक्चरचे सारांश दर्शवते. त्याचे प्रमुख घटक पुढीलप्रमाणे आहेत:
 
-- **Workspace controller**: हा `workspace` कस्टम रिसोर्सचे समन्वय करतो, नोड ऑटो प्रोव्हिजनिंगसाठी `machine` (खाली समजावलेले) कस्टम रिसोर्स तयार करतो, आणि मॉडेलच्या पूर्वनिर्धारित कॉन्फिगरेशननुसार अनुमान वर्कलोड (`deployment` किंवा `statefulset`) तयार करतो.
-- **Node provisioner controller**: या कंट्रोलरचे नाव [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) मध्ये *gpu-provisioner* आहे. हा `machine` CRD वापरतो जो [Karpenter](https://sigs.k8s.io/karpenter) कडून आला आहे आणि workspace controller शी संवाद साधतो. तो Azure Kubernetes Service(AKS) API सह एकत्रित होऊन AKS क्लस्टरमध्ये नवीन GPU नोड्स जोडतो.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) हा एक मुक्त स्रोत घटक आहे. जर इतर कंट्रोलर्स [Karpenter-core](https://sigs.k8s.io/karpenter) API ला समर्थन देत असतील तर त्याने तो बदलता येऊ शकतो.
+- **Workspace कंट्रोलर**: तो `workspace` कस्टम रिसोर्सची एकत्रित तपासणी करतो, नोड आपोआप पुरवठा सुरू करण्यासाठी `machine` (खाली समजावलेले) कस्टम रिसोर्स तयार करतो, आणि मॉडेलच्या पूर्वनिर्धारित कॉन्फिगरेशन नुसार अनुमान वर्कलोड (`deployment` किंवा `statefulset`) तयार करतो.
+- **Node provisioner कंट्रोलर**: कंट्रोलरचे नाव [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) मध्ये *gpu-provisioner* आहे. तो Karpenter कडून घेतलेला `machine` CRD वापरून workspace कंट्रोलरशी संवाद साधतो. तो Azure Kubernetes Service(AKS) APIs सोबत एकत्र होऊन AKS क्लस्टरमध्ये नवीन GPU नोड्स जोडतो.
+> नोंद: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) हा एक मुक्त स्त्रोत घटक आहे. तो अन्य कंट्रोलर्सने बदला जाऊ शकतो, जे [Karpenter-core](https://sigs.k8s.io/karpenter) APIsना सपोर्ट करतात.
 
 ## स्थापना
 
 कृपया स्थापना मार्गदर्शन [येथे](https://github.com/Azure/kaito/blob/main/docs/installation.md) तपासा.
 
-## जलद प्रारंभ अनुमान Phi-3
-[नमुना कोड अनुमान Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## जलद सुरुवात Inference Phi-3
+[नमुना कोड Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +78,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # आउटपुट ACR मार्ग ट्यून करत आहे
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-खालील कमांड चालवून workspace ची स्थिती तपासू शकता. जेव्हा WORKSPACEREADY कॉलम `True` होतो, तेव्हा मॉडेल यशस्वीपणे तैनात झालेले असते.
+खालील कमांड चालवून workspace स्थिती ट्रॅक करता येते. जेव्हा WORKSPACEREADY कॉलम `True` होतो, तेव्हा मॉडेल यशस्वीरित्या तैनात झालेले असते.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +93,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-यानंतर, अनुमान सेवेसाठी क्लस्टर आयपी शोधून क्लस्टरमधील सेवा एंडपॉइंट तपासण्यासाठी तात्पुरता `curl` pod वापरू शकता.
+यानंतर, अनुमान सेव्हिसचा क्लस्टर ip शोधून क्लस्टरमधील सेव्हिस एंडपॉइंटची चाचणी करण्यासाठी तात्पुरता `curl` पॉड वापरता येतो.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +104,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## जलद प्रारंभ अनुमान Phi-3 अ‍ॅडॉप्टर्ससह
+## जलद सुरुवात Inference Phi-3 अ‍ॅडॉप्टर्ससह
 
-Kaito स्थापित केल्यानंतर, खालील कमांड वापरून अनुमान सेवा सुरू करू शकता.
+Kaito स्थापित केल्यानंतर, खालील कमांड वापरून अनुमान सेवा सुरु करू शकतो.
 
-[नमुना कोड अनुमान Phi-3 अ‍ॅडॉप्टर्ससह](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[नमुना कोड Inference Phi-3 अ‍ॅडॉप्टर्ससह](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +150,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # आउटपुट ACR पथ ट्यून करणे
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-खालील कमांड चालवून workspace ची स्थिती तपासू शकता. जेव्हा WORKSPACEREADY कॉलम `True` होतो, तेव्हा मॉडेल यशस्वीपणे तैनात झालेले असते.
+खालील कमांड चालवून workspace स्थिती ट्रॅक करता येते. जेव्हा WORKSPACEREADY कॉलम `True` होतो, तेव्हा मॉडेल यशस्वीरित्या तैनात झालेले असते.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +165,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-यानंतर, अनुमान सेवेसाठी क्लस्टर आयपी शोधून क्लस्टरमधील सेवा एंडपॉइंट तपासण्यासाठी तात्पुरता `curl` pod वापरू शकता.
+यानंतर, अनुमान सेव्हिसचा क्लस्टर ip शोधून क्लस्टरमधील सेव्हिस एंडपॉइंटची चाचणी करण्यासाठी तात्पुरता `curl` पॉड वापरता येतो.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +176,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**सरणीपत्रक**:
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील आहोत, तरी कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेतील त्रुटी असू शकतात. मूळ दस्तऐवज त्याच्या मूळ भाषेत अधिकृत स्रोत म्हणून मानले जावे. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद केलेला असल्यास उत्तम. या अनुवादाच्या वापरामुळे उद्भवणार्‍या कोणत्याही गैरसमजुतीसाठी किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार नाही.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

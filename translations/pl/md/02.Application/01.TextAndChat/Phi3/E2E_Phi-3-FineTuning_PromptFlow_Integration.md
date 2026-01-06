@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-17T00:26:03+00:00",
+  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+  "translation_date": "2026-01-05T14:23:02+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "pl"
 }
 -->
-# Dostosuj i zintegrować niestandardowe modele Phi-3 z Prompt flow
+# Dostosuj i Zintegruj niestandardowe modele Phi-3 z Prompt flow
 
-Ten kompleksowy (E2E) przykład opiera się na przewodniku "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Przedstawia procesy dostrajania, wdrażania i integracji niestandardowych modeli Phi-3 z Prompt flow.
+Ten kompletny (E2E) przykład oparty jest na przewodniku "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Przedstawia procesy dostrajania, wdrażania i integracji niestandardowych modeli Phi-3 z Prompt flow.
 
 ## Przegląd
 
-W tym przykładzie E2E nauczysz się, jak dostroić model Phi-3 i zintegrować go z Prompt flow. Wykorzystując Azure Machine Learning oraz Prompt flow, stworzysz przepływ pracy do wdrażania i korzystania z niestandardowych modeli AI. Ten przykład E2E podzielony jest na trzy scenariusze:
+W tym przykładzie E2E nauczysz się, jak dostroić model Phi-3 i zintegrować go z Prompt flow. Wykorzystując Azure Machine Learning i Prompt flow, stworzysz przepływ pracy do wdrażania i używania niestandardowych modeli AI. Ten przykład E2E podzielony jest na trzy scenariusze:
 
 **Scenariusz 1: Konfiguracja zasobów Azure i przygotowanie do dostrajania**
 
 **Scenariusz 2: Dostrajanie modelu Phi-3 i wdrażanie w Azure Machine Learning Studio**
 
-**Scenariusz 3: Integracja z Prompt flow i rozmowa z niestandardowym modelem**
+**Scenariusz 3: Integracja z Prompt flow i rozmowa z własnym modelem**
 
 Oto przegląd tego przykładu E2E.
 
@@ -39,34 +39,34 @@ Oto przegląd tego przykładu E2E.
     - [Dostrój model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Wdróż dostrojony model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenariusz 3: Integracja z Prompt flow i rozmowa z niestandardowym modelem](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenariusz 3: Integracja z Prompt flow i rozmowa z własnym modelem](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Zintegruj niestandardowy model Phi-3 z Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Rozmawiaj ze swoim niestandardowym modelem](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Rozmawiaj z własnym modelem](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 ## Scenariusz 1: Konfiguracja zasobów Azure i przygotowanie do dostrajania
 
 ### Utwórz Azure Machine Learning Workspace
 
-1. Wpisz *azure machine learning* w **pasku wyszukiwania** u góry strony portalu i wybierz **Azure Machine Learning** z dostępnych opcji.
+1. Wpisz *azure machine learning* w **pasku wyszukiwania** u góry strony portalu i wybierz **Azure Machine Learning** z pojawiających się opcji.
 
     ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.pl.png)
 
-1. Wybierz **+ Create** z menu nawigacyjnego.
+1. Wybierz **+ Utwórz** z menu nawigacyjnego.
 
-1. Wybierz **New workspace** z menu nawigacyjnego.
+1. Wybierz **Nowy workspace** z menu nawigacyjnego.
 
     ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.pl.png)
 
-1. Wykonaj następujące czynności:
+1. Wykonaj następujące zadania:
 
     - Wybierz swoją subskrypcję Azure **Subscription**.
-    - Wybierz **Resource group** do użycia (utwórz nową, jeśli to konieczne).
-    - Wprowadź **Workspace Name**. Musi to być unikalna nazwa.
+    - Wybierz **Resource group**, której chcesz użyć (utwórz nową, jeśli to konieczne).
+    - Wprowadź **Nazwa workspace**. Musi to być unikalna wartość.
     - Wybierz **Region**, którego chcesz użyć.
-    - Wybierz **Storage account** do użycia (utwórz nowy, jeśli to konieczne).
-    - Wybierz **Key vault** do użycia (utwórz nowy, jeśli to konieczne).
-    - Wybierz **Application insights** do użycia (utwórz nowy, jeśli to konieczne).
-    - Wybierz **Container registry** do użycia (utwórz nowy, jeśli to konieczne).
+    - Wybierz **Konto magazynu** (Storage account) do użytku (utwórz nowe, jeśli to konieczne).
+    - Wybierz **Key vault** do użytku (utwórz nowy, jeśli to konieczne).
+    - Wybierz **Application insights** do użytku (utwórz nowy, jeśli to konieczne).
+    - Wybierz **Container registry** do użytku (utwórz nowy, jeśli to konieczne).
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.pl.png)
 
@@ -76,33 +76,33 @@ Oto przegląd tego przykładu E2E.
 
 ### Złóż wniosek o limity GPU w subskrypcji Azure
 
-W tym przykładzie E2E użyjesz *Standard_NC24ads_A100_v4 GPU* do dostrajania, co wymaga złożenia wniosku o limit, oraz *Standard_E4s_v3* CPU do wdrożenia, które nie wymaga wniosku o limit.
+W tym przykładzie E2E użyjesz *Standard_NC24ads_A100_v4 GPU* do dostrajania, co wymaga zgłoszenia limitu, oraz *Standard_E4s_v3* CPU do wdrożenia, co nie wymaga zgłoszenia limitu.
 
 > [!NOTE]
 >
-> Tylko subskrypcje Pay-As-You-Go (standardowy typ subskrypcji) kwalifikują się do przydziału GPU; subskrypcje benefitowe nie są obecnie obsługiwane.
+> Tylko subskrypcje typu Pay-As-You-Go (standardowy typ subskrypcji) mają prawo do przydziału GPU; subskrypcje benefitowe nie są obecnie obsługiwane.
 >
-> Dla użytkowników subskrypcji benefitowych (np. Visual Studio Enterprise Subscription) lub tych, którzy chcą szybko przetestować proces dostrajania i wdrażania, ten przewodnik zawiera również wskazówki dotyczące dostrajania z minimalnym zestawem danych przy użyciu CPU. Należy jednak pamiętać, że wyniki dostrajania są znacznie lepsze przy użyciu GPU i większych zestawów danych.
+> Dla osób korzystających z subskrypcji benefitowych (takich jak Visual Studio Enterprise Subscription) lub chcących szybko przetestować proces dostrajania i wdrożenia, ten samouczek zawiera również wskazówki dotyczące dostrajania z minimalnym zestawem danych przy użyciu CPU. Jednak warto zauważyć, że wyniki dostrajania są znacznie lepsze przy użyciu GPU z większymi zbiorami danych.
 
 1. Odwiedź [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Wykonaj następujące czynności, aby złożyć wniosek o limit *Standard NCADSA100v4 Family*:
+1. Wykonaj następujące zadania, aby zgłosić limit dla *Standard NCADSA100v4 Family*:
 
-    - Wybierz **Quota** z lewego panelu.
-    - Wybierz **Virtual machine family** do użycia. Na przykład wybierz **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, który obejmuje GPU *Standard_NC24ads_A100_v4*.
+    - Wybierz **Quota** z lewego menu.
+    - Wybierz **Virtual machine family**, które chcesz użyć. Na przykład wybierz **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, które zawiera *Standard_NC24ads_A100_v4* GPU.
     - Wybierz **Request quota** z menu nawigacyjnego.
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.pl.png)
 
-    - Na stronie Request quota wpisz **New cores limit**, którego chcesz użyć. Na przykład 24.
-    - Na stronie Request quota wybierz **Submit**, aby złożyć wniosek o limit GPU.
+    - Na stronie Request quota wpisz **Nowy limit rdzeni** (New cores limit), którego chcesz użyć. Na przykład 24.
+    - Na stronie Request quota wybierz **Submit**, aby zgłosić limit GPU.
 
 > [!NOTE]
 > Możesz wybrać odpowiedni GPU lub CPU dla swoich potrzeb, odwołując się do dokumentu [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
 ### Dodaj przypisanie roli
 
-Aby dostroić i wdrożyć modele, musisz najpierw utworzyć User Assigned Managed Identity (UAI) i przypisać jej odpowiednie uprawnienia. Ta UAI będzie używana do uwierzytelniania podczas wdrażania.
+Aby dostroić i wdrożyć swoje modele, musisz najpierw utworzyć User Assigned Managed Identity (UAI) i przypisać jej odpowiednie uprawnienia. Ta UAI będzie używana do uwierzytelniania podczas wdrożenia.
 
 #### Utwórz User Assigned Managed Identity (UAI)
 
@@ -110,38 +110,38 @@ Aby dostroić i wdrożyć modele, musisz najpierw utworzyć User Assigned Manage
 
     ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.pl.png)
 
-1. Wybierz **+ Create**.
+1. Wybierz **+ Utwórz**.
 
     ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.pl.png)
 
-1. Wykonaj następujące czynności:
+1. Wykonaj następujące zadania:
 
     - Wybierz swoją subskrypcję Azure **Subscription**.
-    - Wybierz **Resource group** do użycia (utwórz nową, jeśli to konieczne).
+    - Wybierz **Resource group**, której chcesz użyć (utwórz nową, jeśli to konieczne).
     - Wybierz **Region**, którego chcesz użyć.
-    - Wprowadź **Name**. Musi to być unikalna nazwa.
+    - Wprowadź **Nazwa**. Musi być unikalna.
 
 1. Wybierz **Review + create**.
 
-1. Wybierz **+ Create**.
+1. Wybierz **+ Utwórz**.
 
 #### Dodaj przypisanie roli Contributor do Managed Identity
 
 1. Przejdź do zasobu Managed Identity, który utworzyłeś.
 
-1. Wybierz **Azure role assignments** z lewego panelu.
+1. Wybierz **Azure role assignments** z lewego menu.
 
-1. Wybierz **+Add role assignment** z menu nawigacyjnego.
+1. Wybierz **+ Dodaj przypisanie roli** z menu nawigacyjnego.
 
-1. Na stronie Add role assignment wykonaj następujące czynności:
-    - Wybierz **Scope** na **Resource group**.
+1. Na stronie Dodaj przypisanie roli wykonaj następujące czynności:
+    - Wybierz **Zakres** (Scope) na **Resource group**.
     - Wybierz swoją subskrypcję Azure **Subscription**.
-    - Wybierz **Resource group** do użycia.
+    - Wybierz **Resource group**, której chcesz użyć.
     - Wybierz rolę **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.pl.png)
 
-1. Wybierz **Save**.
+1. Wybierz **Zapisz**.
 
 #### Dodaj przypisanie roli Storage Blob Data Reader do Managed Identity
 
@@ -149,27 +149,27 @@ Aby dostroić i wdrożyć modele, musisz najpierw utworzyć User Assigned Manage
 
     ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.pl.png)
 
-1. Wybierz konto storage powiązane z Azure Machine Learning workspace, które utworzyłeś. Na przykład *finetunephistorage*.
+1. Wybierz konto magazynu powiązane z Azure Machine Learning workspace, które utworzyłeś. Na przykład *finetunephistorage*.
 
-1. Wykonaj następujące czynności, aby przejść do strony Add role assignment:
+1. Wykonaj następujące zadania, aby przejść do strony Dodaj przypisanie roli:
 
-    - Przejdź do utworzonego konta Azure Storage.
-    - Wybierz **Access Control (IAM)** z lewego panelu.
-    - Wybierz **+ Add** z menu nawigacyjnego.
-    - Wybierz **Add role assignment** z menu nawigacyjnego.
+    - Przejdź do konta Azure Storage, które utworzyłeś.
+    - Wybierz **Access Control (IAM)** z lewego menu.
+    - Wybierz **+ Dodaj** z menu nawigacyjnego.
+    - Wybierz **Dodaj przypisanie roli** z menu nawigacyjnego.
 
     ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.pl.png)
 
-1. Na stronie Add role assignment wykonaj następujące czynności:
+1. Na stronie Dodaj przypisanie roli wykonaj następujące zadania:
 
-    - W polu roli wpisz *Storage Blob Data Reader* w **pasku wyszukiwania** i wybierz **Storage Blob Data Reader** z dostępnych opcji.
-    - Wybierz **Next**.
-    - Na stronie Members wybierz **Assign access to** **Managed identity**.
-    - Wybierz **+ Select members**.
-    - Na stronie Select managed identities wybierz swoją subskrypcję Azure **Subscription**.
-    - Wybierz **Managed identity** jako **Manage Identity**.
-    - Wybierz utworzoną Managed Identity, np. *finetunephi-managedidentity*.
-    - Wybierz **Select**.
+    - Na stronie roli wpisz *Storage Blob Data Reader* w **pasku wyszukiwania** i wybierz **Storage Blob Data Reader** z pojawiających się opcji.
+    - Na stronie roli wybierz **Dalej** (Next).
+    - Na stronie członków (Members) wybierz **Przydziel dostęp do** **Managed identity**.
+    - Na stronie członków wybierz **+ Wybierz członków**.
+    - Na stronie wyboru zarządzanych tożsamości (Select managed identities) wybierz swoją subskrypcję Azure **Subscription**.
+    - Na stronie wyboru zarządzanych tożsamości wybierz **Managed identity**.
+    - Na stronie wyboru zarządzanych tożsamości wybierz zarządzaną tożsamość, którą utworzyłeś. Na przykład *finetunephi-managedidentity*.
+    - Na stronie wyboru zarządzanych tożsamości wybierz **Wybierz**.
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.pl.png)
 
@@ -181,63 +181,65 @@ Aby dostroić i wdrożyć modele, musisz najpierw utworzyć User Assigned Manage
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.pl.png)
 
-1. Wybierz rejestr kontenerów powiązany z Azure Machine Learning workspace. Na przykład *finetunephicontainerregistries*.
+1. Wybierz rejestr kontenerów powiązany z Azure Machine Learning workspace. Na przykład *finetunephicontainerregistries*
 
-1. Wykonaj następujące czynności, aby przejść do strony Add role assignment:
+1. Wykonaj następujące zadania, aby przejść do strony Dodaj przypisanie roli:
 
-    - Wybierz **Access Control (IAM)** z lewego panelu.
-    - Wybierz **+ Add** z menu nawigacyjnego.
-    - Wybierz **Add role assignment** z menu nawigacyjnego.
+    - Wybierz **Access Control (IAM)** z lewego menu.
+    - Wybierz **+ Dodaj** z menu nawigacyjnego.
+    - Wybierz **Dodaj przypisanie roli** z menu nawigacyjnego.
 
-1. Na stronie Add role assignment wykonaj następujące czynności:
+1. Na stronie Dodaj przypisanie roli wykonaj następujące zadania:
 
-    - W polu roli wpisz *AcrPull* w **pasku wyszukiwania** i wybierz **AcrPull** z dostępnych opcji.
-    - Wybierz **Next**.
-    - Na stronie Members wybierz **Assign access to** **Managed identity**.
-    - Wybierz **+ Select members**.
-    - Na stronie Select managed identities wybierz swoją subskrypcję Azure **Subscription**.
-    - Wybierz **Managed identity** jako **Manage Identity**.
-    - Wybierz utworzoną Managed Identity, np. *finetunephi-managedidentity*.
-    - Wybierz **Select**.
+    - Na stronie roli wpisz *AcrPull* w **pasku wyszukiwania** i wybierz **AcrPull** z pojawiających się opcji.
+    - Na stronie roli wybierz **Dalej** (Next).
+    - Na stronie członków (Members) wybierz **Przydziel dostęp do** **Managed identity**.
+    - Na stronie członków wybierz **+ Wybierz członków**.
+    - Na stronie wyboru zarządzanych tożsamości (Select managed identities) wybierz swoją subskrypcję Azure **Subscription**.
+    - Na stronie wyboru zarządzanych tożsamości wybierz **Managed identity**.
+    - Na stronie wyboru zarządzanych tożsamości wybierz zarządzaną tożsamość, którą utworzyłeś. Na przykład *finetunephi-managedidentity*.
+    - Na stronie wyboru zarządzanych tożsamości wybierz **Wybierz**.
     - Wybierz **Review + assign**.
 
 ### Skonfiguruj projekt
 
-Teraz utworzysz folder do pracy i skonfigurujesz środowisko wirtualne, aby opracować program, który będzie wchodził w interakcję z użytkownikami i korzystał z zapisanej historii czatu z Azure Cosmos DB, aby lepiej odpowiadać.
+Teraz utworzysz folder do pracy i skonfigurujesz wirtualne środowisko do tworzenia programu, który będzie wchodził w interakcję z użytkownikami i używał zapisanego historii rozmów z Azure Cosmos DB, aby wspierać swoje odpowiedzi.
 
 #### Utwórz folder do pracy
 
-1. Otwórz okno terminala i wpisz następujące polecenie, aby utworzyć folder o nazwie *finetune-phi* w domyślnej ścieżce.
+1. Otwórz okno terminala i wpisz następującą komendę, aby utworzyć folder o nazwie *finetune-phi* w domyślnej ścieżce.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. Wpisz następujące polecenie w terminalu, aby przejść do utworzonego folderu *finetune-phi*.
+1. Wpisz następującą komendę w terminalu, aby przejść do utworzonego folderu *finetune-phi*.
 
     ```console
     cd finetune-phi
     ```
 
-#### Utwórz środowisko wirtualne
+#### Utwórz wirtualne środowisko
 
-1. Wpisz następujące polecenie w terminalu, aby utworzyć środowisko wirtualne o nazwie *.venv*.
+1. Wpisz następującą komendę w terminalu, aby utworzyć wirtualne środowisko o nazwie *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. Wpisz następujące polecenie w terminalu, aby aktywować środowisko wirtualne.
+1. Wpisz następującą komendę w terminalu, aby aktywować wirtualne środowisko.
 
     ```console
     .venv\Scripts\activate.bat
     ```
+
 > [!NOTE]
 >
-> Jeśli wszystko poszło dobrze, powinieneś zobaczyć *(.venv)* przed znakiem zachęty.
+> Jeśli się powiodło, powinieneś zobaczyć *(.venv)* przed znakiem zachęty poleceń.
+
 #### Zainstaluj wymagane pakiety
 
-1. Wpisz następujące polecenia w terminalu, aby zainstalować wymagane pakiety.
+1. Wpisz następujące komendy w terminalu, aby zainstalować wymagane pakiety.
 
     ```console
     pip install datasets==2.19.1
@@ -249,19 +251,18 @@ Teraz utworzysz folder do pracy i skonfigurujesz środowisko wirtualne, aby opra
     ```
 
 #### Utwórz pliki projektu
-
-W tym ćwiczeniu utworzysz niezbędne pliki dla naszego projektu. Pliki te zawierają skrypty do pobierania zbioru danych, konfiguracji środowiska Azure Machine Learning, dostrajania modelu Phi-3 oraz wdrażania dostrojonego modelu. Utworzysz także plik *conda.yml* do skonfigurowania środowiska dostrajania.
+W tym ćwiczeniu utworzysz niezbędne pliki dla naszego projektu. Te pliki obejmują skrypty do pobierania zestawu danych, konfiguracji środowiska Azure Machine Learning, dopasowywania modelu Phi-3 oraz wdrażania dopasowanego modelu. Stworzysz również plik *conda.yml* do skonfigurowania środowiska dopasowywania.
 
 W tym ćwiczeniu wykonasz:
 
-- Utworzenie pliku *download_dataset.py* do pobierania zbioru danych.
-- Utworzenie pliku *setup_ml.py* do konfiguracji środowiska Azure Machine Learning.
-- Utworzenie pliku *fine_tune.py* w folderze *finetuning_dir* do dostrajania modelu Phi-3 przy użyciu zbioru danych.
-- Utworzenie pliku *conda.yml* do konfiguracji środowiska dostrajania.
-- Utworzenie pliku *deploy_model.py* do wdrożenia dostrojonego modelu.
-- Utworzenie pliku *integrate_with_promptflow.py* do integracji dostrojonego modelu i uruchamiania go za pomocą Prompt flow.
-- Utworzenie pliku flow.dag.yml do skonfigurowania struktury workflow dla Prompt flow.
-- Utworzenie pliku *config.py* do wprowadzenia informacji o Azure.
+- Utworzenie pliku *download_dataset.py* do pobrania zestawu danych.
+- Utworzenie pliku *setup_ml.py* do utworzenia środowiska Azure Machine Learning.
+- Utworzenie pliku *fine_tune.py* w folderze *finetuning_dir* do dopasowania modelu Phi-3 przy użyciu zestawu danych.
+- Utworzenie pliku *conda.yml* do konfiguracji środowiska dopasowywania.
+- Utworzenie pliku *deploy_model.py* do wdrożenia dopasowanego modelu.
+- Utworzenie pliku *integrate_with_promptflow.py* do integracji dopasowanego modelu i uruchamiania modelu za pomocą Prompt flow.
+- Utworzenie pliku flow.dag.yml do ustawienia struktury przepływu pracy dla Prompt flow.
+- Utworzenie pliku *config.py* do wpisania informacji o Azure.
 
 > [!NOTE]
 >
@@ -287,27 +288,27 @@ W tym ćwiczeniu wykonasz:
 
 1. Wybierz **Open Folder**.
 
-1. Wybierz folder *finetune-phi*, który utworzyłeś, znajdujący się pod ścieżką *C:\Users\yourUserName\finetune-phi*.
+1. Wybierz folder *finetune-phi*, który utworzyłeś, znajdujący się w *C:\Users\yourUserName\finetune-phi*.
 
     ![Otwórz folder projektu.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.pl.png)
 
-1. W lewym panelu Visual Studio Code kliknij prawym przyciskiem myszy i wybierz **New File**, aby utworzyć nowy plik o nazwie *download_dataset.py*.
+1. Po lewej stronie w Visual Studio Code, kliknij prawym przyciskiem i wybierz **New File**, aby utworzyć nowy plik o nazwie *download_dataset.py*.
 
-1. W lewym panelu Visual Studio Code kliknij prawym przyciskiem myszy i wybierz **New File**, aby utworzyć nowy plik o nazwie *setup_ml.py*.
+1. Po lewej stronie w Visual Studio Code, kliknij prawym przyciskiem i wybierz **New File**, aby utworzyć nowy plik o nazwie *setup_ml.py*.
 
-1. W lewym panelu Visual Studio Code kliknij prawym przyciskiem myszy i wybierz **New File**, aby utworzyć nowy plik o nazwie *deploy_model.py*.
+1. Po lewej stronie w Visual Studio Code, kliknij prawym przyciskiem i wybierz **New File**, aby utworzyć nowy plik o nazwie *deploy_model.py*.
 
     ![Utwórz nowy plik.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.pl.png)
 
-1. W lewym panelu Visual Studio Code kliknij prawym przyciskiem myszy i wybierz **New Folder**, aby utworzyć nowy folder o nazwie *finetuning_dir*.
+1. Po lewej stronie w Visual Studio Code, kliknij prawym przyciskiem i wybierz **New Folder**, aby utworzyć nowy folder o nazwie *finetuning_dir*.
 
 1. W folderze *finetuning_dir* utwórz nowy plik o nazwie *fine_tune.py*.
 
 #### Utwórz i skonfiguruj plik *conda.yml*
 
-1. W lewym panelu Visual Studio Code kliknij prawym przyciskiem myszy i wybierz **New File**, aby utworzyć nowy plik o nazwie *conda.yml*.
+1. Po lewej stronie w Visual Studio Code, kliknij prawym przyciskiem i wybierz **New File**, aby utworzyć nowy plik o nazwie *conda.yml*.
 
-1. Dodaj następujący kod do pliku *conda.yml*, aby skonfigurować środowisko dostrajania dla modelu Phi-3.
+1. Dodaj następujący kod do pliku *conda.yml*, aby skonfigurować środowisko dopasowywania dla modelu Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -335,28 +336,28 @@ W tym ćwiczeniu wykonasz:
 
 #### Utwórz i skonfiguruj plik *config.py*
 
-1. W lewym panelu Visual Studio Code kliknij prawym przyciskiem myszy i wybierz **New File**, aby utworzyć nowy plik o nazwie *config.py*.
+1. Po lewej stronie w Visual Studio Code, kliknij prawym przyciskiem i wybierz **New File**, aby utworzyć nowy plik o nazwie *config.py*.
 
-1. Dodaj następujący kod do pliku *config.py*, aby wprowadzić informacje o Azure.
+1. Dodaj następujący kod do pliku *config.py*, aby umieścić swoje informacje o Azure.
 
     ```python
-    # Azure settings
+    # Ustawienia Azure
     AZURE_SUBSCRIPTION_ID = "your_subscription_id"
     AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
 
-    # Azure Machine Learning settings
+    # Ustawienia Azure Machine Learning
     AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
 
-    # Azure Managed Identity settings
+    # Ustawienia zarządzanej tożsamości Azure
     AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
     AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
     AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
 
-    # Dataset file paths
+    # Ścieżki do plików zestawu danych
     TRAIN_DATA_PATH = "data/train_data.jsonl"
     TEST_DATA_PATH = "data/test_data.jsonl"
 
-    # Fine-tuned model settings
+    # Ustawienia modelu dostrojonego
     AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
     AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
     AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
@@ -367,40 +368,40 @@ W tym ćwiczeniu wykonasz:
 
 #### Dodaj zmienne środowiskowe Azure
 
-1. Wykonaj następujące kroki, aby dodać Azure Subscription ID:
+1. Wykonaj następujące czynności, aby dodać identyfikator subskrypcji Azure:
 
-    - Wpisz *subscriptions* w **pasku wyszukiwania** u góry strony portalu i wybierz **Subscriptions** z dostępnych opcji.
+    - Wpisz *subscriptions* w **pasku wyszukiwania** na górze strony portalowej i wybierz **Subscriptions** z pojawiających się opcji.
     - Wybierz subskrypcję Azure, której aktualnie używasz.
-    - Skopiuj i wklej swój Subscription ID do pliku *config.py*.
+    - Skopiuj i wklej swój identyfikator subskrypcji do pliku *config.py*.
 
-    ![Znajdź ID subskrypcji.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.pl.png)
+    ![Znajdź identyfikator subskrypcji.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.pl.png)
 
-1. Wykonaj następujące kroki, aby dodać nazwę Azure Workspace:
+1. Wykonaj następujące czynności, aby dodać nazwę Azure Workspace:
 
     - Przejdź do zasobu Azure Machine Learning, który utworzyłeś.
-    - Skopiuj i wklej nazwę swojego konta do pliku *config.py*.
+    - Skopiuj i wklej swoją nazwę konta do pliku *config.py*.
 
     ![Znajdź nazwę Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.pl.png)
 
-1. Wykonaj następujące kroki, aby dodać nazwę Azure Resource Group:
+1. Wykonaj następujące czynności, aby dodać nazwę grupy zasobów Azure:
 
     - Przejdź do zasobu Azure Machine Learning, który utworzyłeś.
     - Skopiuj i wklej nazwę swojej grupy zasobów Azure do pliku *config.py*.
 
     ![Znajdź nazwę grupy zasobów.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.pl.png)
 
-2. Wykonaj następujące kroki, aby dodać nazwę Azure Managed Identity:
+2. Wykonaj następujące czynności, aby dodać nazwę Managed Identity Azure:
 
     - Przejdź do zasobu Managed Identities, który utworzyłeś.
-    - Skopiuj i wklej nazwę swojej Azure Managed Identity do pliku *config.py*.
+    - Skopiuj i wklej nazwę swojej Managed Identity Azure do pliku *config.py*.
 
     ![Znajdź UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.pl.png)
 
-### Przygotuj zbiór danych do dostrajania
+### Przygotuj zestaw danych do dopasowywania
 
-W tym ćwiczeniu uruchomisz plik *download_dataset.py*, aby pobrać zbiory danych *ULTRACHAT_200k* do lokalnego środowiska. Następnie użyjesz tych danych do dostrojenia modelu Phi-3 w Azure Machine Learning.
+W tym ćwiczeniu uruchomisz plik *download_dataset.py*, aby pobrać zestawy danych *ULTRACHAT_200k* do swojego lokalnego środowiska. Następnie użyjesz tych zestawów danych do dopasowania modelu Phi-3 w Azure Machine Learning.
 
-#### Pobierz swój zbiór danych za pomocą *download_dataset.py*
+#### Pobierz swój zestaw danych używając *download_dataset.py*
 
 1. Otwórz plik *download_dataset.py* w Visual Studio Code.
 
@@ -418,11 +419,11 @@ W tym ćwiczeniu uruchomisz plik *download_dataset.py*, aby pobrać zbiory danyc
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # Załaduj zestaw danych o określonej nazwie, konfiguracji i proporcji podziału
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # Podziel zestaw danych na zbiór treningowy i testowy (80% trening, 20% test)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -433,16 +434,16 @@ W tym ćwiczeniu uruchomisz plik *download_dataset.py*, aby pobrać zbiory danyc
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # Utwórz katalog, jeśli nie istnieje
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # Otwórz plik w trybie do zapisu
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # Iteruj po każdym rekordzie w zestawie danych
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # Zrzutuj rekord jako obiekt JSON i zapisz go do pliku
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # Zapisz znak nowej linii, aby oddzielić rekordy
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -451,17 +452,17 @@ W tym ćwiczeniu uruchomisz plik *download_dataset.py*, aby pobrać zbiory danyc
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # Załaduj i podziel zestaw danych ULTRACHAT_200k z określoną konfiguracją i proporcją podziału
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # Wyodrębnij z podziału zbiory treningowy i testowy
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # Zapisz zbiór treningowy do pliku JSONL
         save_dataset_to_jsonl(train_dataset, TRAIN_DATA_PATH)
         
-        # Save the test dataset to a separate JSONL file
+        # Zapisz zbiór testowy do osobnego pliku JSONL
         save_dataset_to_jsonl(test_dataset, TEST_DATA_PATH)
 
     if __name__ == "__main__":
@@ -471,59 +472,59 @@ W tym ćwiczeniu uruchomisz plik *download_dataset.py*, aby pobrać zbiory danyc
 
 > [!TIP]
 >
-> **Wskazówki dotyczące dostrajania z minimalnym zbiorem danych przy użyciu CPU**
+> **Wskazówki dotyczące dopasowywania z minimalnym zestawem danych używając CPU**
 >
-> Jeśli chcesz użyć CPU do dostrajania, to podejście jest idealne dla osób posiadających subskrypcje benefitowe (np. Visual Studio Enterprise Subscription) lub do szybkiego przetestowania procesu dostrajania i wdrożenia.
+> Jeśli chcesz użyć CPU do dopasowywania, to podejście jest idealne dla osób z subskrypcjami benefitowymi (takimi jak Visual Studio Enterprise Subscription) lub do szybkiego przetestowania procesu dopasowywania i wdrażania.
 >
 > Zamień `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` na `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Wpisz następujące polecenie w terminalu, aby uruchomić skrypt i pobrać zbiór danych do lokalnego środowiska.
+1. Wpisz następujące polecenie w terminalu, aby uruchomić skrypt i pobrać zestaw danych do lokalnego środowiska.
 
     ```console
     python download_data.py
     ```
 
-1. Sprawdź, czy zbiory danych zostały pomyślnie zapisane w lokalnym katalogu *finetune-phi/data*.
+1. Sprawdź, czy zestawy danych zostały poprawnie zapisane w lokalnym katalogu *finetune-phi/data*.
 
 > [!NOTE]
 >
-> **Rozmiar zbioru danych i czas dostrajania**
+> **Rozmiar zestawu danych i czas dopasowywania**
 >
-> W tym przykładzie E2E używasz tylko 1% zbioru danych (`train_sft[:1%]`). Znacznie zmniejsza to ilość danych, przyspieszając zarówno przesyłanie, jak i proces dostrajania. Możesz dostosować procent, aby znaleźć odpowiedni balans między czasem treningu a wydajnością modelu. Użycie mniejszej części zbioru danych skraca czas potrzebny na dostrajanie, co ułatwia pracę z przykładem E2E.
+> W tym próbce E2E używasz tylko 1% zestawu danych (`train_sft[:1%]`). To znacząco zmniejsza ilość danych, przyspieszając zarówno proces przesyłania, jak i dopasowywania. Możesz dostosować procent, aby znaleźć właściwy balans między czasem treningu a wydajnością modelu. Użycie mniejszego podzbioru zestawu danych skraca czas dopasowywania, czyniąc proces bardziej wykonalnym dla próbki E2E.
 
-## Scenariusz 2: Dostrajanie modelu Phi-3 i wdrożenie w Azure Machine Learning Studio
+## Scenariusz 2: Dopasuj model Phi-3 i wdroż go w Azure Machine Learning Studio
 
 ### Skonfiguruj Azure CLI
 
-Musisz skonfigurować Azure CLI, aby uwierzytelnić swoje środowisko. Azure CLI pozwala zarządzać zasobami Azure bezpośrednio z linii poleceń i dostarcza poświadczenia niezbędne do uzyskania dostępu do tych zasobów przez Azure Machine Learning. Aby rozpocząć, zainstaluj [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Musisz skonfigurować Azure CLI, aby uwierzytelnić swoje środowisko. Azure CLI pozwala zarządzać zasobami Azure bezpośrednio z wiersza polecenia i dostarcza poświadczenia niezbędne do dostępu Azure Machine Learning do tych zasobów. Aby zacząć, zainstaluj [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli).
 
-1. Otwórz okno terminala i wpisz następujące polecenie, aby zalogować się do swojego konta Azure.
+1. Otwórz okno terminala i wpisz następujące polecenie, aby zalogować się na swoje konto Azure.
 
     ```console
     az login
     ```
 
-1. Wybierz konto Azure, którego chcesz użyć.
+1. Wybierz konto Azure, którego chcesz używać.
 
-1. Wybierz subskrypcję Azure, której chcesz użyć.
+1. Wybierz subskrypcję Azure, której chcesz używać.
 
     ![Znajdź nazwę grupy zasobów.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.pl.png)
 
 > [!TIP]
 >
-> Jeśli masz problemy z zalogowaniem się do Azure, spróbuj użyć kodu urządzenia. Otwórz okno terminala i wpisz następujące polecenie, aby zalogować się do swojego konta Azure:
+> Jeśli masz problemy z zalogowaniem do Azure, spróbuj użyć kodu urządzenia. Otwórz okno terminala i wpisz następujące polecenie, aby zalogować się do Azure:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Dostrój model Phi-3
+### Dopasuj model Phi-3
 
-W tym ćwiczeniu dostroisz model Phi-3 przy użyciu dostarczonego zbioru danych. Najpierw zdefiniujesz proces dostrajania w pliku *fine_tune.py*. Następnie skonfigurujesz środowisko Azure Machine Learning i rozpoczniesz proces dostrajania, uruchamiając plik *setup_ml.py*. Ten skrypt zapewnia, że dostrajanie odbywa się w środowisku Azure Machine Learning.
+W tym ćwiczeniu dopasujesz model Phi-3 przy użyciu dostarczonego zestawu danych. Najpierw zdefiniujesz proces dopasowywania w pliku *fine_tune.py*. Następnie skonfigurujesz środowisko Azure Machine Learning i zainicjujesz proces dopasowywania, uruchamiając plik *setup_ml.py*. Ten skrypt zapewnia, że dopasowanie odbywa się w środowisku Azure Machine Learning.
 
-Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure Machine Learning.
+Uruchamiając *setup_ml.py*, przeprowadzisz proces dopasowywania w środowisku Azure Machine Learning.
 
 #### Dodaj kod do pliku *fine_tune.py*
 
@@ -542,10 +543,10 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
     from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
     from trl import SFTTrainer
 
-    # To avoid the INVALID_PARAMETER_VALUE error in MLflow, disable MLflow integration
+    # Aby uniknąć błędu INVALID_PARAMETER_VALUE w MLflow, wyłącz integrację MLflow
     os.environ["DISABLE_MLFLOW_INTEGRATION"] = "True"
 
-    # Logging setup
+    # Konfiguracja logowania
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -685,11 +686,11 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
 1. Zapisz i zamknij plik *fine_tune.py*.
 
 > [!TIP]
-> **Możesz dostroić model Phi-3.5**
+> **Możesz dopasować model Phi-3.5**
 >
-> W pliku *fine_tune.py* możesz zmienić `pretrained_model_name` z `"microsoft/Phi-3-mini-4k-instruct"` na dowolny model, który chcesz dostroić. Na przykład, jeśli zmienisz go na `"microsoft/Phi-3.5-mini-instruct"`, będziesz używać modelu Phi-3.5-mini-instruct do dostrajania. Aby znaleźć i użyć preferowaną nazwę modelu, odwiedź [Hugging Face](https://huggingface.co/), wyszukaj interesujący Cię model, a następnie skopiuj i wklej jego nazwę do pola `pretrained_model_name` w swoim skrypcie.
+> W pliku *fine_tune.py* możesz zmienić `pretrained_model_name` z `"microsoft/Phi-3-mini-4k-instruct"` na dowolny model, który chcesz dopasować. Na przykład, jeśli zmienisz go na `"microsoft/Phi-3.5-mini-instruct"`, użyjesz modelu Phi-3.5-mini-instruct do dopasowywania. Aby znaleźć i użyć preferowaną nazwę modelu, odwiedź [Hugging Face](https://huggingface.co/), wyszukaj interesujący Cię model, a następnie skopiuj i wklej jego nazwę do pola `pretrained_model_name` w swoim skrypcie.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Dostrajanie Phi-3.5.":::
+> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Dopasowanie Phi-3.5.">
 >
 
 #### Dodaj kod do pliku *setup_ml.py*
@@ -711,25 +712,25 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
         TEST_DATA_PATH
     )
 
-    # Constants
+    # Stałe
 
-    # Uncomment the following lines to use a CPU instance for training
+    # Odkomentuj poniższe linie, aby użyć instancji CPU do trenowania
     # COMPUTE_INSTANCE_TYPE = "Standard_E16s_v3" # cpu
     # COMPUTE_NAME = "cpu-e16s-v3"
     # DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest"
 
-    # Uncomment the following lines to use a GPU instance for training
+    # Odkomentuj poniższe linie, aby użyć instancji GPU do trenowania
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     DOCKER_IMAGE_NAME = "mcr.microsoft.com/azureml/curated/acft-hf-nlp-gpu:59"
 
     CONDA_FILE = "conda.yml"
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
-    FINETUNING_DIR = "./finetuning_dir" # Path to the fine-tuning script
-    TRAINING_ENV_NAME = "phi-3-training-environment" # Name of the training environment
-    MODEL_OUTPUT_DIR = "./model_output" # Path to the model output directory in azure ml
+    LOCATION = "eastus2" # Zamień na lokalizację twojego klastra obliczeniowego
+    FINETUNING_DIR = "./finetuning_dir" # Ścieżka do skryptu dostrajania
+    TRAINING_ENV_NAME = "phi-3-training-environment" # Nazwa środowiska treningowego
+    MODEL_OUTPUT_DIR = "./model_output" # Ścieżka do katalogu wyjściowego modelu w Azure ML
 
-    # Logging setup to track the process
+    # Konfiguracja logowania do śledzenia procesu
     logger = logging.getLogger(__name__)
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -749,9 +750,9 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
         Create or update the training environment in Azure ML.
         """
         env = Environment(
-            image=DOCKER_IMAGE_NAME,  # Docker image for the environment
-            conda_file=CONDA_FILE,  # Conda environment file
-            name=TRAINING_ENV_NAME,  # Name of the environment
+            image=DOCKER_IMAGE_NAME,  # Obraz Dockera dla środowiska
+            conda_file=CONDA_FILE,  # Plik środowiska Conda
+            name=TRAINING_ENV_NAME,  # Nazwa środowiska
         )
         return ml_client.environments.create_or_update(env)
 
@@ -768,11 +769,11 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
                 name=compute_name,
                 size=COMPUTE_INSTANCE_TYPE,
                 location=location,
-                tier="Dedicated",  # Tier of the compute cluster
-                min_instances=0,  # Minimum number of instances
-                max_instances=1  # Maximum number of instances
+                tier="Dedicated",  # Poziom klastra obliczeniowego
+                min_instances=0,  # Minimalna liczba instancji
+                max_instances=1  # Maksymalna liczba instancji
             )
-            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Wait for the cluster to be created
+            ml_client.compute.begin_create_or_update(compute_cluster).wait()  # Czekaj na utworzenie klastra
         return compute_cluster
 
     def create_fine_tuning_job(env, compute_name):
@@ -780,18 +781,18 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
         Set up the fine-tuning job in Azure ML.
         """
         return command(
-            code=FINETUNING_DIR,  # Path to fine_tune.py
+            code=FINETUNING_DIR,  # Ścieżka do fine_tune.py
             command=(
                 "python fine_tune.py "
                 "--train-file ${{inputs.train_file}} "
                 "--eval-file ${{inputs.eval_file}} "
                 "--model_output_dir ${{inputs.model_output}}"
             ),
-            environment=env,  # Training environment
-            compute=compute_name,  # Compute cluster to use
+            environment=env,  # Środowisko treningowe
+            compute=compute_name,  # Klastr obliczeniowy do użycia
             inputs={
-                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Path to the training data file
-                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Path to the evaluation data file
+                "train_file": Input(type="uri_file", path=TRAIN_DATA_PATH),  # Ścieżka do pliku danych treningowych
+                "eval_file": Input(type="uri_file", path=TEST_DATA_PATH),  # Ścieżka do pliku danych ewaluacyjnych
                 "model_output": MODEL_OUTPUT_DIR
             }
         )
@@ -800,21 +801,21 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
         """
         Main function to set up and run the fine-tuning job in Azure ML.
         """
-        # Initialize ML Client
+        # Inicjalizuj klienta ML
         ml_client = get_ml_client()
 
-        # Create Environment
+        # Utwórz środowisko
         env = create_or_get_environment(ml_client)
         
-        # Create or get existing compute cluster
+        # Utwórz lub pobierz istniejący klaster obliczeniowy
         create_or_get_compute_cluster(ml_client, COMPUTE_NAME, COMPUTE_INSTANCE_TYPE, LOCATION)
 
-        # Create and Submit Fine-Tuning Job
+        # Utwórz i wyślij zadanie dostrajania
         job = create_fine_tuning_job(env, COMPUTE_NAME)
-        returned_job = ml_client.jobs.create_or_update(job)  # Submit the job
-        ml_client.jobs.stream(returned_job.name)  # Stream the job logs
+        returned_job = ml_client.jobs.create_or_update(job)  # Wyślij zadanie
+        ml_client.jobs.stream(returned_job.name)  # Strumieniuj logi zadania
         
-        # Capture the job name
+        # Przechwyć nazwę zadania
         job_name = returned_job.name
         print(f"Job name: {job_name}")
 
@@ -826,22 +827,22 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
 1. Zamień `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` oraz `LOCATION` na swoje konkretne dane.
 
     ```python
-   # Uncomment the following lines to use a GPU instance for training
+   # Odkomentuj poniższe linie, aby użyć instancji GPU do treningu
     COMPUTE_INSTANCE_TYPE = "Standard_NC24ads_A100_v4"
     COMPUTE_NAME = "gpu-nc24s-a100-v4"
     ...
-    LOCATION = "eastus2" # Replace with the location of your compute cluster
+    LOCATION = "eastus2" # Zamień na lokalizację swojego klastra obliczeniowego
     ```
 
 > [!TIP]
 >
-> **Wskazówki dotyczące dostrajania z minimalnym zbiorem danych przy użyciu CPU**
+> **Wskazówki dotyczące dopasowywania z minimalnym zestawem danych używając CPU**
 >
-> Jeśli chcesz użyć CPU do dostrajania, to podejście jest idealne dla osób posiadających subskrypcje benefitowe (np. Visual Studio Enterprise Subscription) lub do szybkiego przetestowania procesu dostrajania i wdrożenia.
+> Jeśli chcesz użyć CPU do dopasowywania, to podejście jest idealne dla osób z subskrypcjami benefitowymi (takimi jak Visual Studio Enterprise Subscription) lub do szybkiego przetestowania procesu dopasowywania i wdrażania.
 >
 > 1. Otwórz plik *setup_ml*.
-> 2. Zamień `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` oraz `DOCKER_IMAGE_NAME` na poniższe wartości. Jeśli nie masz dostępu do *Standard_E16s_v3*, możesz użyć równoważnej instancji CPU lub poprosić o nową kwotę.
-> 3. Zamień `LOCATION` na swoje konkretne dane.
+> 1. Zamień `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` oraz `DOCKER_IMAGE_NAME` zgodnie z poniższym. Jeżeli nie masz dostępu do *Standard_E16s_v3*, możesz użyć równoważnej instancji CPU lub poprosić o nową kwotę.
+> 1. Zamień `LOCATION` na swoje dane.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -852,33 +853,33 @@ Uruchamiając *setup_ml.py*, rozpoczniesz proces dostrajania w środowisku Azure
 >    ```
 >
 
-1. Wpisz następujące polecenie, aby uruchomić skrypt *setup_ml.py* i rozpocząć proces dostrajania w Azure Machine Learning.
+1. Wpisz następujące polecenie, aby uruchomić skrypt *setup_ml.py* i rozpocząć proces dopasowywania w Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. W tym ćwiczeniu pomyślnie dostroiłeś model Phi-3 przy użyciu Azure Machine Learning. Uruchamiając skrypt *setup_ml.py*, skonfigurowałeś środowisko Azure Machine Learning i rozpocząłeś proces dostrajania zdefiniowany w pliku *fine_tune.py*. Pamiętaj, że proces dostrajania może zająć sporo czasu. Po uruchomieniu polecenia `python setup_ml.py` musisz poczekać na zakończenie procesu. Status zadania dostrajania możesz monitorować, korzystając z linku podanego w terminalu do portalu Azure Machine Learning.
+1. W tym ćwiczeniu skutecznie dopasowałeś model Phi-3 przy użyciu Azure Machine Learning. Uruchamiając skrypt *setup_ml.py*, skonfigurowałeś środowisko Azure Machine Learning oraz zainicjowałeś proces dopasowywania określony w pliku *fine_tune.py*. Należy pamiętać, że proces dopasowywania może potrwać dość długo. Po uruchomieniu polecenia `python setup_ml.py` musisz poczekać na jego zakończenie. Możesz monitorować status zadania dopasowywania, śledząc link podany w terminalu do portalu Azure Machine Learning.
 
-    ![Zobacz zadanie dostrajania.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.pl.png)
+    ![Zobacz zadanie dopasowywania.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.pl.png)
 
-### Wdróż dostrojony model
+### Wdróż dopasowany model
 
-Aby zintegrować dostrojony model Phi-3 z Prompt Flow, musisz wdrożyć model, aby był dostępny do inferencji w czasie rzeczywistym. Proces ten obejmuje rejestrację modelu, utworzenie punktu końcowego online oraz wdrożenie modelu.
+Aby zintegrować dopasowany model Phi-3 z Prompt Flow, musisz wdrożyć model, by był dostępny do inferencji w czasie rzeczywistym. Proces ten obejmuje zarejestrowanie modelu, utworzenie punktu końcowego online oraz wdrożenie modelu.
 
-#### Ustaw nazwę modelu, nazwę punktu końcowego i nazwę wdrożenia
+#### Ustaw nazwę modelu, nazwę punktu końcowego i nazwę wdrożenia do wdrożenia
 
 1. Otwórz plik *config.py*.
 
-1. Zamień `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` na wybraną nazwę swojego modelu.
+1. Zamień `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` na pożądaną nazwę swojego modelu.
 
-1. Zamień `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` na wybraną nazwę punktu końcowego.
+1. Zamień `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` na pożądaną nazwę punktu końcowego.
 
-1. Zamień `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` na wybraną nazwę wdrożenia.
+1. Zamień `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` na pożądaną nazwę swojego wdrożenia.
 
 #### Dodaj kod do pliku *deploy_model.py*
 
-Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejestruje model, tworzy punkt końcowy i wykonuje wdrożenie na podstawie ustawień określonych w pliku *config.py*, które obejmują nazwę modelu, nazwę punktu końcowego i nazwę wdrożenia.
+Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejestruje model, tworzy punkt końcowy oraz realizuje wdrożenie na podstawie ustawień określonych w pliku config.py, które obejmują nazwę modelu, nazwę punktu końcowego oraz nazwę wdrożenia.
 
 1. Otwórz plik *deploy_model.py* w Visual Studio Code.
 
@@ -891,7 +892,7 @@ Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejes
     from azure.ai.ml.entities import Model, ProbeSettings, ManagedOnlineEndpoint, ManagedOnlineDeployment, IdentityConfiguration, ManagedIdentityConfiguration, OnlineRequestSettings
     from azure.ai.ml.constants import AssetTypes
 
-    # Configuration imports
+    # Importy konfiguracji
     from config import (
         AZURE_SUBSCRIPTION_ID,
         AZURE_RESOURCE_GROUP_NAME,
@@ -903,7 +904,7 @@ Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejes
         AZURE_DEPLOYMENT_NAME
     )
 
-    # Constants
+    # Stałe
     JOB_NAME = "your-job-name"
     COMPUTE_INSTANCE_TYPE = "Standard_E4s_v3"
 
@@ -913,7 +914,7 @@ Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejes
         "UAI_CLIENT_ID": AZURE_MANAGED_IDENTITY_CLIENT_ID,
     }
 
-    # Logging setup
+    # Konfiguracja logowania
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1002,25 +1003,25 @@ Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejes
     def set_traffic_to_deployment(ml_client, endpoint_name, deployment_name):
         """Set traffic to the specified deployment."""
         try:
-            # Fetch the current endpoint details
+            # Pobierz bieżące szczegóły punktu końcowego
             endpoint = ml_client.online_endpoints.get(name=endpoint_name)
             
-            # Log the current traffic allocation for debugging
+            # Zaloguj bieżący przydział ruchu do celów debugowania
             logger.info(f"Current traffic allocation: {endpoint.traffic}")
             
-            # Set the traffic allocation for the deployment
+            # Ustaw przydział ruchu dla wdrożenia
             endpoint.traffic = {deployment_name: 100}
             
-            # Update the endpoint with the new traffic allocation
+            # Zaktualizuj punkt końcowy z nowym przydziałem ruchu
             endpoint_poller = ml_client.online_endpoints.begin_create_or_update(endpoint)
             updated_endpoint = endpoint_poller.result()
             
-            # Log the updated traffic allocation for debugging
+            # Zaloguj zaktualizowany przydział ruchu do celów debugowania
             logger.info(f"Updated traffic allocation: {updated_endpoint.traffic}")
             logger.info(f"Set traffic to deployment {deployment_name} at endpoint {endpoint_name}.")
             return updated_endpoint
         except Exception as e:
-            # Log any errors that occur during the process
+            # Zaloguj wszelkie błędy, które wystąpią podczas procesu
             logger.error(f"Failed to set traffic to deployment: {e}")
             raise
 
@@ -1048,14 +1049,14 @@ Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejes
 
     ```
 
-1. Wykonaj następujące kroki, aby uzyskać `JOB_NAME`:
+1. Wykonaj następujące czynności, aby uzyskać `JOB_NAME`:
 
     - Przejdź do zasobu Azure Machine Learning, który utworzyłeś.
-    - Wybierz **Studio web URL**, aby otworzyć workspace Azure Machine Learning.
+    - Wybierz **Studio web URL**, aby otworzyć przestrzeń roboczą Azure Machine Learning.
     - Wybierz **Jobs** z lewego panelu.
-    - Wybierz eksperyment dotyczący dostrajania, np. *finetunephi*.
+    - Wybierz eksperyment dotyczacy dopasowywania, na przykład *finetunephi*.
     - Wybierz utworzone zadanie.
-- Skopiuj i wklej nazwę swojego zadania do `JOB_NAME = "your-job-name"` w pliku *deploy_model.py*.
+    - Skopiuj i wklej nazwę swojego zadania do `JOB_NAME = "twoja-nazwa-zadania"` w pliku *deploy_model.py*.
 
 1. Zamień `COMPUTE_INSTANCE_TYPE` na swoje konkretne dane.
 
@@ -1065,45 +1066,44 @@ Uruchomienie pliku *deploy_model.py* automatyzuje cały proces wdrożenia. Rejes
     python deploy_model.py
     ```
 
-
 > [!WARNING]
-> Aby uniknąć dodatkowych opłat na swoim koncie, upewnij się, że usuniesz utworzony endpoint w obszarze roboczym Azure Machine Learning.
+> Aby uniknąć dodatkowych opłat na swoim koncie, upewnij się, że usuniesz utworzony punkt końcowy w przestrzeni roboczej Azure Machine Learning.
 >
 
-#### Sprawdź status wdrożenia w Azure Machine Learning Workspace
+#### Sprawdź status wdrożenia w przestrzeni roboczej Azure Machine Learning
 
 1. Odwiedź [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Przejdź do utworzonego przez siebie obszaru roboczego Azure Machine Learning.
+1. Przejdź do utworzonej przez siebie przestrzeni roboczej Azure Machine Learning.
 
-1. Wybierz **Studio web URL**, aby otworzyć obszar roboczy Azure Machine Learning.
+1. Wybierz **Studio web URL**, aby otworzyć przestrzeń roboczą Azure Machine Learning.
 
-1. Wybierz **Endpoints** z zakładki po lewej stronie.
+1. Wybierz **Endpoints** z lewego panelu.
 
-    ![Wybierz endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.pl.png)
+    ![Wybierz punkty końcowe.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.pl.png)
 
-2. Wybierz endpoint, który utworzyłeś.
+2. Wybierz punkt końcowy, który utworzyłeś.
 
-    ![Wybierz utworzony endpoint.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.pl.png)
+    ![Wybierz utworzone punkty końcowe.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.pl.png)
 
-3. Na tej stronie możesz zarządzać endpointami utworzonymi podczas procesu wdrażania.
+3. Na tej stronie możesz zarządzać punktami końcowymi utworzonymi podczas procesu wdrażania.
 
 ## Scenariusz 3: Integracja z Prompt flow i rozmowa z własnym modelem
 
-### Integracja niestandardowego modelu Phi-3 z Prompt flow
+### Integracja własnego modelu Phi-3 z Prompt flow
 
-Po pomyślnym wdrożeniu modelu dostrojonego możesz teraz zintegrować go z Prompt flow, aby używać swojego modelu w aplikacjach działających w czasie rzeczywistym, umożliwiając różnorodne interaktywne zadania z Twoim niestandardowym modelem Phi-3.
+Po pomyślnym wdrożeniu wytrenowanego modelu możesz teraz zintegrować go z Prompt flow, aby używać modelu w aplikacjach w czasie rzeczywistym, umożliwiając różnorodne interaktywne zadania z Twoim niestandardowym modelem Phi-3.
 
-#### Ustaw klucz api i URI endpointu dostrojonego modelu Phi-3
+#### Ustaw klucz API i URI punktu końcowego wytrenowanego modelu Phi-3
 
-1. Przejdź do utworzonego obszaru roboczego Azure Machine Learning.
-1. Wybierz **Endpoints** z zakładki po lewej stronie.
-1. Wybierz endpoint, który utworzyłeś.
+1. Przejdź do utworzonej przestrzeni roboczej Azure Machine Learning.
+1. Wybierz **Endpoints** z lewego panelu.
+1. Wybierz punkt końcowy, który utworzyłeś.
 1. Wybierz **Consume** z menu nawigacyjnego.
-1. Skopiuj i wklej swój **REST endpoint** do pliku *config.py*, zastępując `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` swoim **REST endpointem**.
+1. Skopiuj i wklej swój **REST endpoint** do pliku *config.py*, zastępując `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` swoim **REST endpoint**.
 1. Skopiuj i wklej swój **Primary key** do pliku *config.py*, zastępując `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` swoim **Primary key**.
 
-    ![Skopiuj klucz api i URI endpointu.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.pl.png)
+    ![Kopiuj klucz API i URI punktu końcowego.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.pl.png)
 
 #### Dodaj kod do pliku *flow.dag.yml*
 
@@ -1149,7 +1149,7 @@ Po pomyślnym wdrożeniu modelu dostrojonego możesz teraz zintegrować go z Pro
         AZURE_ML_API_KEY
     )
 
-    # Logging setup
+    # Konfiguracja logowania
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -1210,9 +1210,13 @@ Po pomyślnym wdrożeniu modelu dostrojonego możesz teraz zintegrować go z Pro
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Oto przykład wyników: Teraz możesz rozmawiać ze swoim niestandardowym modelem Phi-3. Zaleca się zadawanie pytań opartych na danych użytych do dostrojenia.
+1. Oto przykład wyników: teraz możesz rozmawiać ze swoim niestandardowym modelem Phi-3. Zaleca się zadawanie pytań opartych na danych użytych do dostrojenia.
 
-    ![Przykład Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.pl.png)
+    ![Przykład prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.pl.png)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Dokument ten został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że staramy się zapewnić dokładność, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego, tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

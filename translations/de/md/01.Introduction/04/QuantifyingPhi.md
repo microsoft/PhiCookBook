@@ -1,51 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-07-16T21:41:33+00:00",
+  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+  "translation_date": "2026-01-05T08:23:19+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "de"
 }
 -->
 # **Quantifizierung der Phi-Familie**
 
-Modellquantisierung bezeichnet den Prozess, bei dem die Parameter (wie Gewichte und Aktivierungswerte) eines neuronalen Netzmodells von einem großen Wertebereich (meist ein kontinuierlicher Wertebereich) auf einen kleineren, endlichen Wertebereich abgebildet werden. Diese Technologie kann die Größe und die Rechenkomplexität des Modells reduzieren und die Betriebseffizienz des Modells in ressourcenbeschränkten Umgebungen wie mobilen Geräten oder eingebetteten Systemen verbessern. Modellquantisierung erreicht Kompression durch Verringerung der Genauigkeit der Parameter, führt jedoch auch zu einem gewissen Präzisionsverlust. Daher ist es im Quantisierungsprozess notwendig, eine Balance zwischen Modellgröße, Rechenkomplexität und Genauigkeit zu finden. Übliche Quantisierungsmethoden sind Fixed-Point-Quantisierung, Floating-Point-Quantisierung usw. Je nach spezifischem Szenario und Bedarf kann die passende Quantisierungsstrategie gewählt werden.
+Modellquantisierung bezieht sich auf den Prozess, die Parameter (wie Gewichte und Aktivierungswerte) in einem neuronalen Netzmodell von einem großen Wertebereich (in der Regel ein kontinuierlicher Wertebereich) auf einen kleineren endlichen Wertebereich abzubilden. Diese Technologie kann die Größe und die Rechenkomplexität des Modells reduzieren und die Betriebseffizienz des Modells in ressourcenbeschränkten Umgebungen wie Mobilgeräten oder eingebetteten Systemen verbessern. Die Modellquantisierung erreicht Kompression, indem die Präzision der Parameter verringert wird, führt aber auch zu einem gewissen Genauigkeitsverlust. Daher ist es im Quantisierungsprozess notwendig, Größe, Rechenkomplexität und Präzision des Modells auszubalancieren. Übliche Quantisierungsmethoden sind Festkommquantisierung, Fließkommquantisierung usw. Je nach Szenario und Bedarf kann die passende Quantisierungsstrategie ausgewählt werden.
 
-Wir möchten GenAI-Modelle auf Edge-Geräte bringen und so mehr Geräte in GenAI-Szenarien integrieren, wie mobile Geräte, AI PC/Copilot+PC und traditionelle IoT-Geräte. Durch das quantisierte Modell können wir es je nach Gerätetyp auf verschiedenen Edge-Geräten bereitstellen. In Kombination mit dem von Hardwareherstellern bereitgestellten Modellbeschleunigungs-Framework und Quantisierungsmodell können wir bessere SLM-Anwendungsszenarien schaffen.
+Wir wollen GenAI-Modelle auf Edge-Geräten einsetzen und mehr Geräte in GenAI-Szenarien einbinden, wie Mobilgeräte, AI-PC/Copilot+PC und traditionelle IoT-Geräte. Durch das quantisierte Modell können wir dieses je nach Gerätetyp auf verschiedene Edge-Geräte ausrollen. In Kombination mit dem von Hardwareherstellern bereitgestellten Modellbeschleunigungs-Framework und dem quantisierten Modell können wir bessere SLM-Anwendungsszenarien aufbauen.
 
-Im Quantisierungsszenario gibt es verschiedene Genauigkeiten (INT4, INT8, FP16, FP32). Im Folgenden werden die gängigen Quantisierungsgenauigkeiten erläutert.
+Im Quantisierungsszenario gibt es verschiedene Genauigkeiten (INT4, INT8, FP16, FP32). Nachfolgend eine Erklärung der häufig verwendeten Quantisierungspräzisionen.
 
 ### **INT4**
 
-INT4-Quantisierung ist eine radikale Quantisierungsmethode, bei der die Gewichte und Aktivierungswerte des Modells in 4-Bit-Ganzzahlen umgewandelt werden. INT4-Quantisierung führt aufgrund des kleineren Darstellungsbereichs und der geringeren Genauigkeit meist zu einem größeren Präzisionsverlust. Im Vergleich zur INT8-Quantisierung kann INT4 jedoch den Speicherbedarf und die Rechenkomplexität des Modells weiter reduzieren. Es ist zu beachten, dass INT4-Quantisierung in der Praxis eher selten verwendet wird, da die zu geringe Genauigkeit die Modellleistung deutlich verschlechtern kann. Außerdem unterstützen nicht alle Hardwareplattformen INT4-Operationen, weshalb die Hardwarekompatibilität bei der Wahl der Quantisierungsmethode berücksichtigt werden muss.
+INT4-Quantisierung ist eine radikale Quantisierungsmethode, die die Gewichte und Aktivierungswerte des Modells in 4-Bit-Ganzzahlen quantisiert. INT4-Quantisierung führt aufgrund des kleineren Darstellungsbereichs und der niedrigeren Präzision meist zu einem größeren Genauigkeitsverlust. Allerdings reduziert INT4-Quantisierung im Vergleich zu INT8 die Speicheranforderungen und die Rechenkomplexität des Modells weiter. Es sei jedoch darauf hingewiesen, dass INT4-Quantisierung in der Praxis relativ selten ist, da die zu geringe Genauigkeit die Modellleistung wesentlich verschlechtern kann. Zudem unterstützen nicht alle Hardware INT4-Operationen, weshalb die Hardwarekompatibilität bei der Wahl der Quantisierungsmethode berücksichtigt werden muss.
 
 ### **INT8**
 
-INT8-Quantisierung wandelt die Gewichte und Aktivierungen eines Modells von Gleitkommazahlen in 8-Bit-Ganzzahlen um. Obwohl der durch INT8-Ganzzahlen dargestellte Wertebereich kleiner und weniger präzise ist, kann dies den Speicher- und Rechenaufwand erheblich reduzieren. Bei der INT8-Quantisierung durchlaufen die Gewichte und Aktivierungswerte einen Quantisierungsprozess, der Skalierung und Offset umfasst, um die ursprünglichen Gleitkommadaten möglichst gut zu erhalten. Während der Inferenz werden diese quantisierten Werte wieder in Gleitkommazahlen zurückverwandelt, um Berechnungen durchzuführen, und anschließend erneut in INT8 quantisiert für den nächsten Schritt. Diese Methode bietet in den meisten Anwendungen ausreichend Genauigkeit bei gleichzeitig hoher Recheneffizienz.
+INT8-Quantisierung ist der Prozess, die Gewichte und Aktivierungen eines Modells von Fließkommazahlen auf 8-Bit-Ganzzahlen zu konvertieren. Obwohl der durch INT8-Ganzzahlen repräsentierte Wertebereich kleiner und weniger präzise ist, lässt sich der Speicher- und Rechenbedarf erheblich reduzieren. Bei der INT8-Quantisierung durchlaufen die Gewichte und Aktivierungswerte des Modells einen Quantisierungsprozess, der Skalierung und Offset umfasst, um die ursprünglichen Fließkommainformationen so gut wie möglich zu erhalten. Während der Inferenz werden diese quantisierten Werte zurück in Fließkommazahlen dequantisiert, um Berechnungen durchzuführen, und dann für den nächsten Schritt wieder in INT8 quantisiert. Diese Methode bietet in den meisten Anwendungen ausreichend Genauigkeit bei gleichzeitig hoher Recheneffizienz.
 
 ### **FP16**
 
-Das FP16-Format, also 16-Bit-Gleitkommazahlen (float16), halbiert den Speicherbedarf im Vergleich zu 32-Bit-Gleitkommazahlen (float32) und bietet damit erhebliche Vorteile bei groß angelegten Deep-Learning-Anwendungen. Das FP16-Format ermöglicht es, größere Modelle zu laden oder mehr Daten innerhalb derselben GPU-Speichergrenzen zu verarbeiten. Da moderne GPU-Hardware zunehmend FP16-Operationen unterstützt, kann die Verwendung von FP16 auch zu einer Verbesserung der Rechengeschwindigkeit führen. Allerdings hat das FP16-Format auch seine Nachteile, nämlich eine geringere Genauigkeit, die in manchen Fällen zu numerischer Instabilität oder Präzisionsverlust führen kann.
+Das FP16-Format, also 16-Bit-Fließkommazahlen (float16), reduziert den Speicherbedarf im Vergleich zu 32-Bit-Fließkommazahlen (float32) um die Hälfte, was große Vorteile bei groß angelegten Deep-Learning-Anwendungen hat. Das FP16-Format ermöglicht es, größere Modelle zu laden oder mehr Daten innerhalb derselben GPU-Speicherbegrenzungen zu verarbeiten. Da moderne GPU-Hardware FP16-Operationen zunehmend unterstützt, kann die Verwendung des FP16-Formats zudem Verbesserungen bei der Rechengeschwindigkeit bringen. Allerdings besitzt das FP16-Format auch inhärente Nachteile, nämlich eine geringere Präzision, die in manchen Fällen zu numerischer Instabilität oder Genauigkeitsverlust führen kann.
 
 ### **FP32**
 
-Das FP32-Format bietet eine höhere Genauigkeit und kann einen großen Wertebereich präzise darstellen. In Szenarien, in denen komplexe mathematische Operationen durchgeführt werden oder hohe Genauigkeit erforderlich ist, wird das FP32-Format bevorzugt. Allerdings bedeutet die hohe Genauigkeit auch einen höheren Speicherverbrauch und längere Rechenzeiten. Bei groß angelegten Deep-Learning-Modellen, insbesondere wenn viele Modellparameter und große Datenmengen vorliegen, kann das FP32-Format zu unzureichendem GPU-Speicher oder einer Verringerung der Inferenzgeschwindigkeit führen.
+Das FP32-Format bietet höhere Präzision und kann einen breiten Wertebereich genau darstellen. In Szenarien mit komplexen mathematischen Operationen oder wenn hochpräzise Ergebnisse erforderlich sind, wird das FP32-Format bevorzugt. Hohe Genauigkeit bedeutet jedoch auch höheren Speicherverbrauch und längere Rechenzeit. Für groß angelegte Deep-Learning-Modelle, insbesondere mit vielen Modellparametern und großen Datenmengen, kann das FP32-Format zu unzureichendem GPU-Speicher oder einer Verlangsamung der Inferenzgeschwindigkeit führen.
 
-Auf mobilen Geräten oder IoT-Geräten können wir Phi-3.x-Modelle in INT4 konvertieren, während AI PC / Copilot PC höhere Genauigkeiten wie INT8, FP16 oder FP32 verwenden können.
+Auf Mobilgeräten oder IoT-Geräten können wir Phi-3.x-Modelle auf INT4 umwandeln, während AI-PCs/Copilot-PCs höhere Genauigkeiten wie INT8, FP16 oder FP32 verwenden können.
 
-Derzeit bieten verschiedene Hardwarehersteller unterschiedliche Frameworks zur Unterstützung generativer Modelle an, wie Intels OpenVINO, Qualcomms QNN, Apples MLX und Nvidias CUDA, die in Kombination mit Modellquantisierung eine lokale Bereitstellung ermöglichen.
+Derzeit bieten verschiedene Hardwarehersteller verschiedene Frameworks zur Unterstützung generativer Modelle an, wie Intels OpenVINO, Qualcomms QNN, Apples MLX sowie Nvidias CUDA, kombiniert mit Modellquantisierung für die lokale Bereitstellung.
 
-Technologisch gesehen unterstützen wir nach der Quantisierung verschiedene Formate, wie PyTorch / Tensorflow, GGUF und ONNX. Ich habe einen Formatvergleich und Anwendungsszenarien zwischen GGUF und ONNX durchgeführt. Hier empfehle ich das ONNX-Quantisierungsformat, das eine gute Unterstützung vom Modell-Framework bis zur Hardware bietet. In diesem Kapitel konzentrieren wir uns auf ONNX Runtime für GenAI, OpenVINO und Apple MLX zur Modellquantisierung (wenn Sie eine bessere Methode haben, können Sie uns diese gerne per PR zukommen lassen).
+Technisch bieten wir nach der Quantisierung verschiedene Formatunterstützungen an, etwa PyTorch / TensorFlow-Format, GGUF und ONNX. Ich habe einen Formatvergleich und Anwendungsszenarien zwischen GGUF und ONNX durchgeführt. Hier empfehle ich das ONNX-Quantisierungsformat, das eine gute Unterstützung vom Modellframework bis zur Hardware bietet. In diesem Kapitel konzentrieren wir uns auf ONNX Runtime für GenAI, OpenVINO und Apple MLX zur Modellquantisierung (wenn Sie einen besseren Weg haben, können Sie uns gern mit einer PR unterstützen).
 
-**Dieses Kapitel umfasst**
+**Dieses Kapitel beinhaltet**
 
-1. [Quantisierung von Phi-3.5 / 4 mit llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [Quantifizierung von Phi-3.5 / 4 mit llama.cpp](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Quantisierung von Phi-3.5 / 4 mit Generative AI Extensions für onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
+2. [Quantifizierung von Phi-3.5 / 4 mit Generative AI-Erweiterungen für onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Quantisierung von Phi-3.5 / 4 mit Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [Quantifizierung von Phi-3.5 / 4 mit Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Quantisierung von Phi-3.5 / 4 mit Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
+4. [Quantifizierung von Phi-3.5 / 4 mit Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir um Genauigkeit bemüht sind, kann es bei automatisierten Übersetzungen zu Fehlern oder Ungenauigkeiten kommen. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

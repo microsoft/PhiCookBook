@@ -1,51 +1,55 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-07-16T21:49:34+00:00",
+  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+  "translation_date": "2026-01-05T09:29:52+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "hu"
 }
 -->
 # **Phi család kvantálása**
 
-A modell kvantálása azt a folyamatot jelenti, amikor egy neurális hálózati modell paramétereit (például súlyokat és aktivációs értékeket) egy nagy értéktartományból (általában folytonos értéktartományból) egy kisebb, véges értéktartományba térképezzük át. Ez a technológia csökkentheti a modell méretét és számítási összetettségét, valamint javíthatja a modell működési hatékonyságát erőforrás-korlátozott környezetekben, például mobil eszközökön vagy beágyazott rendszerekben. A modell kvantálása a paraméterek pontosságának csökkentésével éri el a tömörítést, ugyanakkor bizonyos pontosságvesztéssel is jár. Ezért a kvantálási folyamat során egyensúlyt kell találni a modell mérete, számítási összetettsége és pontossága között. Gyakori kvantálási módszerek közé tartozik a fixpontos kvantálás, a lebegőpontos kvantálás stb. A konkrét helyzet és igények alapján választható a megfelelő kvantálási stratégia.
+A modell kvantálása azt a folyamatot jelenti, amikor egy neurális hálózati modellben található paramétereket (például súlyokat és aktivációs értékeket) egy nagy értéktartományból (általában folytonos értéktartományból) egy kisebb véges értéktartományba térképezünk át. Ez a technológia csökkentheti a modell méretét és számítási összetettségét, valamint javíthatja a modell működési hatékonyságát erőforrás-korlátozott környezetekben, mint például mobil eszközökön vagy beágyazott rendszerekben. A modell kvantálás a paraméterek pontosságának csökkentésével éri el a tömörítést, de ez pontosságvesztéssel is jár. Ezért a kvantálási folyamat során egyensúlyt kell találni a modell mérete, számítási komplexitása és pontossága között. A gyakori kvantálási módszerek közé tartozik a fixpontos kvantálás, lebegőpontos kvantálás stb. A konkrét helyzet és igények szerint lehet kiválasztani a megfelelő kvantálási stratégiát.
 
-Célunk, hogy a GenAI modelleket élő eszközökre telepítsük, és több eszközt vonjunk be GenAI forgatókönyvekbe, például mobil eszközöket, AI PC/Copilot+PC-ket és hagyományos IoT eszközöket. A kvantált modellek segítségével különböző élő eszközökre telepíthetjük a modellt az eszközök sajátosságai szerint. A hardvergyártók által biztosított modellgyorsító keretrendszerekkel és kvantált modellekkel kombinálva jobb SLM alkalmazási forgatókönyveket építhetünk ki.
+Arra törekszünk, hogy a GenAI modellt él- eszközökre telepítsük, és több eszközt juttassunk el a GenAI felhasználási környezetekhez, mint például mobil eszközök, AI PC/Copilot+PC és a hagyományos IoT eszközök. A kvantált modelleken keresztül különböző él-eszközökre telepíthetjük őket az eszközök alapján. A hardvergyártók által biztosított modellgyorsító keretrendszerekkel és kvantált modellekkel együtt jobb SLM alkalmazási forgatókönyveket építhetünk.
 
-A kvantálási forgatókönyvben különböző pontosságokkal dolgozunk (INT4, INT8, FP16, FP32). Az alábbiakban ismertetjük a leggyakrabban használt kvantálási pontosságokat.
+A kvantálási forgatókönyvben különböző pontosságokat használunk (INT4, INT8, FP16, FP32). Az alábbiakban a gyakran használt kvantálási pontosságokat ismertetjük
 
 ### **INT4**
 
-Az INT4 kvantálás egy radikális kvantálási módszer, amely a modell súlyait és aktivációs értékeit 4 bites egész számokká alakítja. Az INT4 kvantálás általában nagyobb pontosságvesztéssel jár a kisebb ábrázolási tartomány és alacsonyabb pontosság miatt. Ugyanakkor az INT8 kvantáláshoz képest tovább csökkentheti a modell tárolási igényét és számítási összetettségét. Fontos megjegyezni, hogy az INT4 kvantálás a gyakorlatban viszonylag ritka, mert a túl alacsony pontosság jelentős teljesítményromláshoz vezethet. Emellett nem minden hardver támogatja az INT4 műveleteket, ezért a kvantálási módszer kiválasztásakor figyelembe kell venni a hardver kompatibilitását.
+Az INT4 kvantálás egy radikális kvantálási módszer, amely a modell súlyait és aktivációs értékeit 4 bites egész számokká kvantálja. Az INT4 kvantálás általában nagyobb pontosságvesztéssel jár a kisebb ábrázolási tartomány és alacsonyabb precizitás miatt. Ugyanakkor az INT8 kvantáláshoz képest az INT4 további csökkentést tesz lehetővé a modell tárolási igényeiben és számítási komplexitásában. Fontos megjegyezni, hogy az INT4 kvantálás a gyakorlatban viszonylag ritka, mert az túl alacsony pontosság jelentős teljesítményromlást okozhat a modellben. Továbbá nem minden hardver támogatja az INT4 műveleteket, így a hardver-kompatibilitást is figyelembe kell venni a kvantálási módszer kiválasztásakor.
 
 ### **INT8**
 
-Az INT8 kvantálás során a modell súlyait és aktivációit lebegőpontos számokról 8 bites egész számokra alakítjuk át. Bár az INT8 egész számok által ábrázolt numerikus tartomány kisebb és kevésbé pontos, jelentősen csökkenti a tárolási és számítási igényeket. Az INT8 kvantálás során a modell súlyai és aktivációs értékei egy kvantálási folyamaton mennek keresztül, amely magában foglalja a skálázást és az eltolást, hogy a lehető legjobban megőrizzék az eredeti lebegőpontos információt. Az inferencia során ezek a kvantált értékek visszaalakításra kerülnek lebegőpontos számokká a számításhoz, majd ismét INT8 formátumba kvantálódnak a következő lépéshez. Ez a módszer a legtöbb alkalmazásban elegendő pontosságot biztosít, miközben magas számítási hatékonyságot tart fenn.
+Az INT8 kvantálás a modell súlyainak és aktivációinak lebegőpontos számokról 8 bites egész számokra való átalakítása. Bár az INT8 egész számok ábrázolási tartománya kisebb és kevésbé pontos, jelentősen csökkentheti a tárolási és számítási igényeket. Az INT8 kvantálás során a modell súlyai és aktivációs értékei egy kvantálási folyamaton mennek keresztül, amely skálázást és eltolást tartalmaz a lebegőpontos eredeti információ lehető legteljesebb megőrzése érdekében. A kiértékelés során ezek a kvantált értékek visszaalakításra kerülnek lebegőpontos számokká a számításokhoz, majd újra kvantálásra kerülnek INT8 formátumba a következő lépéshez. Ez a módszer a legtöbb alkalmazásban elegendő pontosságot biztosít, miközben magas számítási hatékonyságot tart fenn.
 
 ### **FP16**
 
-Az FP16 formátum, azaz a 16 bites lebegőpontos számok (float16) a 32 bites lebegőpontos számokhoz (float32) képest a memóriahasználatot felére csökkenti, ami jelentős előnyt jelent a nagyméretű mélytanulási alkalmazásokban. Az FP16 formátum lehetővé teszi nagyobb modellek betöltését vagy több adat feldolgozását ugyanazon GPU memóriahatárok között. Mivel a modern GPU hardverek egyre inkább támogatják az FP16 műveleteket, az FP16 formátum használata javíthatja a számítási sebességet is. Ugyanakkor az FP16 formátumnak megvannak a maga hátrányai is, nevezetesen az alacsonyabb pontosság, ami bizonyos esetekben numerikus instabilitáshoz vagy pontosságvesztéshez vezethet.
+Az FP16 formátum, azaz 16 bites lebegőpontos számok (float16) a 32 bites lebegőpontos (float32) számokhoz képest a memóriahasználatot felére csökkenti, ami jelentős előnyt jelent nagyméretű mélytanulási alkalmazásokban. Az FP16 formátum lehetővé teszi nagyobb modellek betöltését vagy több adat feldolgozását ugyanazon GPU memória korlátok között. A modern GPU hardverek egyre inkább támogatják az FP16 műveleteket, így az FP16 formátum használata akár a számítási sebesség javulásához is vezethet. Ugyanakkor az FP16 formátum inherens hátránya az alacsonyabb precizitás, ami bizonyos esetekben számtani instabilitást vagy pontosságvesztést okozhat.
 
 ### **FP32**
 
-Az FP32 formátum magasabb pontosságot biztosít, és széles értéktartományt képes pontosan ábrázolni. Olyan helyzetekben, ahol összetett matematikai műveleteket végeznek vagy nagy pontosságú eredmények szükségesek, az FP32 formátum az előnyösebb. Ugyanakkor a magas pontosság több memóriahasználatot és hosszabb számítási időt jelent. Nagyméretű mélytanulási modellek esetén, különösen ha sok modellparaméter és hatalmas adatállomány van, az FP32 formátum GPU memóriahiányt vagy az inferencia sebességének csökkenését okozhatja.
+Az FP32 formátum nagyobb pontosságot biztosít, és széles értéktartományt képes pontosan ábrázolni. Olyan esetekben, amikor összetett matematikai műveleteket kell végrehajtani vagy nagy pontosságú eredmények szükségesek, az FP32 formátum előnyös. Ugyanakkor a nagy pontosság több memóriafelhasználást és hosszabb számítási időt jelent. Nagyméretű mélytanulási modellek esetében, különösen sok modellparaméter és nagy mennyiségű adat esetén az FP32 formátum okozhat GPU memória elégtelenséget vagy a kiértékelési sebesség csökkenését.
 
-Mobil eszközökön vagy IoT eszközökön a Phi-3.x modelleket INT4-re konvertálhatjuk, míg AI PC / Copilot PC esetén magasabb pontosságok, például INT8, FP16 vagy FP32 használhatók.
+Mobil eszközökön vagy IoT eszközökön a Phi-3.x modelleket átalakíthatjuk INT4-re, míg AI PC / Copilot PC esetén magasabb pontosságokat lehet alkalmazni, például INT8, FP16, FP32.
 
-Jelenleg különböző hardvergyártók eltérő keretrendszereket kínálnak generatív modellek támogatására, mint például az Intel OpenVINO, Qualcomm QNN, Apple MLX és Nvidia CUDA, amelyeket a modell kvantálással kombinálva helyi telepítésre használhatunk.
+Jelenleg különböző hardvergyártóknak eltérő keretrendszerei vannak a generatív modellek támogatására, például az Intel OpenVINO, Qualcomm QNN, Apple MLX és Nvidia CUDA, melyeket a modell kvantálással kombinálva lehet helyben telepíteni.
 
-Technológiai szempontból a kvantálás után különböző formátumtámogatások állnak rendelkezésre, például PyTorch / Tensorflow formátum, GGUF és ONNX. Készítettem egy formátum összehasonlítást és alkalmazási forgatókönyveket a GGUF és az ONNX között. Itt az ONNX kvantálási formátumot ajánlom, amely jó támogatást élvez a modellkeretrendszertől a hardverig. Ebben a fejezetben az ONNX Runtime GenAI, OpenVINO és Apple MLX használatára fókuszálunk a modell kvantálásához (ha jobb megoldásod van, PR beküldésével megoszthatod velünk).
+Technológiai oldalról a kvantálás után különböző formátumtámogatásokkal rendelkezünk, mint például PyTorch / TensorFlow formátum, GGUF és ONNX. Elvégeztem egy formátum összehasonlítást és alkalmazási forgatókönyveket a GGUF és ONNX között. Itt az ONNX kvantálási formátumot ajánlom, amely jó támogatottsággal rendelkezik a modell keretrendszertől a hardverig. Ebben a fejezetben az ONNX Runtime for GenAI, OpenVINO és Apple MLX használatára fókuszálunk a modell kvantálás elvégzéséhez (ha jobb megoldásod van, azt PR beküldésével megoszthatod velünk).
 
 **Ez a fejezet tartalmazza**
 
 1. [Phi-3.5 / 4 kvantálása llama.cpp használatával](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Phi-3.5 / 4 kvantálása Generative AI kiterjesztésekkel onnxruntime-hoz](./UsingORTGenAIQuantifyingPhi.md)
+2. [Phi-3.5 / 4 kvantálása Generatív AI kiterjesztésekkel onnxruntime-hoz](./UsingORTGenAIQuantifyingPhi.md)
 
 3. [Phi-3.5 / 4 kvantálása Intel OpenVINO használatával](./UsingIntelOpenVINOQuantifyingPhi.md)
 
 4. [Phi-3.5 / 4 kvantálása Apple MLX keretrendszerrel](./UsingAppleMLXQuantifyingPhi.md)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy hibás értelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

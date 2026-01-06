@@ -1,44 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-16T20:50:39+00:00",
+  "original_hash": "aca91084bc440431571e00bf30d96ab8",
+  "translation_date": "2026-01-05T12:12:02+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "el"
 }
 -->
-## Εκτέλεση inference με το Kaito
+## Συμπεράσματα με το Kaito 
 
-Το [Kaito](https://github.com/Azure/kaito) είναι ένας operator που αυτοματοποιεί την ανάπτυξη μοντέλων AI/ML για inference σε ένα Kubernetes cluster.
+Το [Kaito](https://github.com/Azure/kaito) είναι ένας χειριστής που αυτοματοποιεί την ανάπτυξη μοντέλων AI/ML συμπερασμάτων σε ένα σύμπλεγμα Kubernetes.
 
-Το Kaito έχει τα εξής βασικά πλεονεκτήματα σε σχέση με τις περισσότερες από τις συνηθισμένες μεθόδους ανάπτυξης μοντέλων που βασίζονται σε υποδομές εικονικών μηχανών:
+Το Kaito έχει τις ακόλουθες βασικές διαφορές σε σύγκριση με τις περισσότερες παραδοσιακές μεθοδολογίες ανάπτυξης μοντέλων που βασίζονται σε υποδομές εικονικών μηχανών:
 
-- Διαχείριση αρχείων μοντέλων μέσω container images. Παρέχεται ένας http server για την εκτέλεση κλήσεων inference χρησιμοποιώντας τη βιβλιοθήκη μοντέλων.
-- Αποφυγή ρύθμισης παραμέτρων ανάπτυξης για να ταιριάζουν στο υλικό GPU, μέσω προκαθορισμένων ρυθμίσεων.
+- Διαχείριση αρχείων μοντέλου χρησιμοποιώντας εικόνες κοντέινερ. Παρέχεται ένας http server για εκτέλεση κλήσεων συμπερασμάτων χρησιμοποιώντας τη βιβλιοθήκη μοντέλου.
+- Αποφυγή ρύθμισης παραμέτρων ανάπτυξης για προσαρμογή σε hardware GPU με την παροχή προκαθορισμένων ρυθμίσεων.
 - Αυτόματη παροχή κόμβων GPU βάσει των απαιτήσεων του μοντέλου.
 - Φιλοξενία μεγάλων εικόνων μοντέλων στο δημόσιο Microsoft Container Registry (MCR), εφόσον το επιτρέπει η άδεια χρήσης.
 
-Με το Kaito, η διαδικασία ενσωμάτωσης μεγάλων μοντέλων AI για inference σε Kubernetes απλοποιείται σημαντικά.
+Με τη χρήση του Kaito, η ροή εργασίας για την ενσωμάτωση μεγάλων μοντέλων AI συμπερασμάτων στο Kubernetes απλοποιείται σημαντικά.
+
 
 ## Αρχιτεκτονική
 
-Το Kaito ακολουθεί το κλασικό πρότυπο σχεδίασης Kubernetes Custom Resource Definition (CRD)/controller. Ο χρήστης διαχειρίζεται έναν custom resource `workspace` που περιγράφει τις απαιτήσεις GPU και τις προδιαγραφές του inference. Οι controllers του Kaito αυτοματοποιούν την ανάπτυξη, συγχρονίζοντας τον custom resource `workspace`.
+Το Kaito ακολουθεί την κλασική σχεδίαση Kubernetes Custom Resource Definition(CRD)/controller. Ο χρήστης διαχειρίζεται έναν προσαρμοσμένο πόρο `workspace` που περιγράφει τις απαιτήσεις GPU και τις προδιαγραφές συμπερασμού. Οι χειριστές του Kaito αυτοματοποιούν την ανάπτυξη εναρμονίζοντας τον προσαρμοσμένο πόρο `workspace`.
+
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/website/static/img/ragarch.png" width=80% title="KAITO RAGEngine architecture" alt="Αρχιτεκτονική KAITO RAGEngine">
 </div>
 
-Η παραπάνω εικόνα παρουσιάζει μια επισκόπηση της αρχιτεκτονικής του Kaito. Τα βασικά της στοιχεία είναι:
+Το παραπάνω σχήμα παρουσιάζει μια επισκόπηση της αρχιτεκτονικής του Kaito. Τα κύρια συστατικά του αποτελούνται από:
 
-- **Workspace controller**: Συγχρονίζει τον custom resource `workspace`, δημιουργεί custom resources `machine` (περιγράφονται παρακάτω) για να ενεργοποιήσει την αυτόματη παροχή κόμβων, και δημιουργεί το workload inference (`deployment` ή `statefulset`) βάσει των προκαθορισμένων ρυθμίσεων του μοντέλου.
-- **Node provisioner controller**: Ο controller ονομάζεται *gpu-provisioner* στο [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Χρησιμοποιεί το CRD `machine` που προέρχεται από το [Karpenter](https://sigs.k8s.io/karpenter) για να αλληλεπιδράσει με τον workspace controller. Ενσωματώνεται με τα APIs του Azure Kubernetes Service (AKS) για να προσθέτει νέους κόμβους GPU στο AKS cluster.  
-> Σημείωση: Το [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) είναι ένα ανοιχτού κώδικα συστατικό. Μπορεί να αντικατασταθεί από άλλους controllers εφόσον υποστηρίζουν τα APIs του [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Χειριστής Workspace**: Εναρμονίζει τον προσαρμοσμένο πόρο `workspace`, δημιουργεί προσαρμοσμένους πόρους `machine` (εξηγούνται παρακάτω) για να εκκινήσει την αυτόματη παροχή κόμβων, και δημιουργεί το φορτίο εργασίας συμπερασμού (`deployment` ή `statefulset`) βάσει των προκαθορισμένων ρυθμίσεων του μοντέλου.
+- **Χειριστής παροχής κόμβου**: Το όνομα του χειριστή είναι *gpu-provisioner* στο [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Χρησιμοποιεί το CRD `machine` που προέρχεται από το [Karpenter](https://sigs.k8s.io/karpenter) για να αλληλεπιδράσει με τον χειριστή workspace. Ενσωματώνεται με τα APIs του Azure Kubernetes Service (AKS) για να προσθέσει νέους κόμβους GPU στο σύμπλεγμα AKS. 
+> Σημείωση: Ο [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) είναι εξαρτημα ανοιχτού κώδικα. Μπορεί να αντικατασταθεί από άλλους χειριστές αν υποστηρίζουν τα APIs του [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Εγκατάσταση
 
-Παρακαλώ δείτε τις οδηγίες εγκατάστασης [εδώ](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Παρακαλώ ελέγξτε τις οδηγίες εγκατάστασης [εδώ](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Γρήγορη εκκίνηση Inference Phi-3
-[Παράδειγμα κώδικα Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Γρήγορη εκκίνηση Συμπερασμάτων Phi-3
+[Δείγμα Κώδικα Συμπερασμάτων Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -76,14 +78,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Ρύθμιση της διαδρομής εξόδου ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Η κατάσταση του workspace μπορεί να παρακολουθηθεί εκτελώντας την παρακάτω εντολή. Όταν η στήλη WORKSPACEREADY γίνει `True`, το μοντέλο έχει αναπτυχθεί επιτυχώς.
+Η κατάσταση του workspace μπορεί να παρακολουθείται εκτελώντας την ακόλουθη εντολή. Όταν η στήλη WORKSPACEREADY γίνει `True`, το μοντέλο έχει αναπτυχθεί με επιτυχία.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +93,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Στη συνέχεια, μπορείτε να βρείτε το cluster ip της υπηρεσίας inference και να χρησιμοποιήσετε ένα προσωρινό pod `curl` για να δοκιμάσετε το endpoint της υπηρεσίας μέσα στο cluster.
+Στη συνέχεια, μπορεί κανείς να βρει το IP του συμπλέγματος της υπηρεσίας συμπερασμού και να χρησιμοποιήσει ένα προσωρινό pod `curl` για να δοκιμάσει το σημείο πρόσβασης της υπηρεσίας στο σύμπλεγμα.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +104,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Γρήγορη εκκίνηση Inference Phi-3 με adapters
+## Γρήγορη εκκίνηση Συμπερασμάτων Phi-3 με προσαρμογείς
 
-Μετά την εγκατάσταση του Kaito, μπορείτε να δοκιμάσετε τις παρακάτω εντολές για να ξεκινήσετε μια υπηρεσία inference.
+Μετά την εγκατάσταση του Kaito, μπορεί κανείς να δοκιμάσει τις ακόλουθες εντολές για να ξεκινήσει μια υπηρεσία συμπερασμών.
 
-[Παράδειγμα κώδικα Inference Phi-3 με Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Δείγμα Κώδικα Συμπερασμών Phi-3 με Προσαρμογείς](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -148,14 +150,14 @@ tuning:
     urls:
       - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
   output:
-    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Ρύθμιση Διαδρομής Έξοδου ACR
     imagePushSecret: ACR_REGISTRY_SECRET_HERE
     
 
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Η κατάσταση του workspace μπορεί να παρακολουθηθεί εκτελώντας την παρακάτω εντολή. Όταν η στήλη WORKSPACEREADY γίνει `True`, το μοντέλο έχει αναπτυχθεί επιτυχώς.
+Η κατάσταση του workspace μπορεί να παρακολουθείται εκτελώντας την ακόλουθη εντολή. Όταν η στήλη WORKSPACEREADY γίνει `True`, το μοντέλο έχει αναπτυχθεί με επιτυχία.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +165,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Στη συνέχεια, μπορείτε να βρείτε το cluster ip της υπηρεσίας inference και να χρησιμοποιήσετε ένα προσωρινό pod `curl` για να δοκιμάσετε το endpoint της υπηρεσίας μέσα στο cluster.
+Στη συνέχεια, μπορεί κανείς να βρει το IP του συμπλέγματος της υπηρεσίας συμπερασμού και να χρησιμοποιήσει ένα προσωρινό pod `curl` για να δοκιμάσει το σημείο πρόσβασης της υπηρεσίας στο σύμπλεγμα.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +176,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Αποποίηση Ευθυνών**:  
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλείσθε να γνωρίζετε ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για οποιεσδήποτε παρανοήσεις ή λανθασμένες ερμηνείες προκύψουν από τη χρήση αυτής της μετάφρασης.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
