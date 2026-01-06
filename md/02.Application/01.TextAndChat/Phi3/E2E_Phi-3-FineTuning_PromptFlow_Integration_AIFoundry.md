@@ -436,9 +436,9 @@ In this exercise, you will:
 
     ![Fill fine-tuning page.](../../../../imgs/02/FineTuning-PromptFlow-AIFoundry/06-07-fill-finetuning.png)
 
-    > [!TIP]
-    >
-    > You can select **Advanced settings** to customize configurations such as **learning_rate** and **lr_scheduler_type** to optimize the fine-tuning process according to your specific needs.
+> [!TIP]
+>
+> You can select **Advanced settings** to customize configurations such as **learning_rate** and **lr_scheduler_type** to optimize the fine-tuning process according to your specific needs.
 
 1. Select **Finish**.
 
