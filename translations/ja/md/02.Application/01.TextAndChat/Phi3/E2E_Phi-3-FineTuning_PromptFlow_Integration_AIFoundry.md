@@ -442,9 +442,9 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![ファインチューニングページを入力します。](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.ja.png)
 
-    > [!TIP]
-    >
-    > **Advanced settings** を選択すると、**learning_rate** や **lr_scheduler_type** などの設定をカスタマイズでき、ファインチューニングを最適化できます。
+> [!TIP]
+>
+> **Advanced settings** を選択すると、**learning_rate** や **lr_scheduler_type** などの設定をカスタマイズでき、ファインチューニングを最適化できます。
 
 1. **Finish** を選択します。
 
