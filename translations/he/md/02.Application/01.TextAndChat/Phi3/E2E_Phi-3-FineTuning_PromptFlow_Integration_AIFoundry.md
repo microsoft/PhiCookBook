@@ -1,72 +1,72 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-07-17T01:40:22+00:00",
+  "original_hash": "0df910a227098303cc392b6ad204c271",
+  "translation_date": "2026-01-06T04:51:14+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "he"
 }
 -->
-# כוונון מדויק ואינטגרציה של מודלים מותאמים אישית Phi-3 עם Prompt flow ב-Azure AI Foundry
+# כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt flow ב- Azure AI Foundry
 
-דוגמת קצה-לקצה (E2E) זו מבוססת על המדריך "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" מתוך קהילת הטכנולוגיה של מיקרוסופט. היא מציגה את התהליכים של כוונון מדויק, פריסה ואינטגרציה של מודלים מותאמים אישית Phi-3 עם Prompt flow ב-Azure AI Foundry.  
-בשונה מדוגמת ה-E2E, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", שכללה הרצת קוד מקומית, המדריך הזה מתמקד כולו בכוונון מדויק ואינטגרציה של המודל שלך בתוך Azure AI / ML Studio.
+דוגמת הקצה-לקצה (E2E) הזו מבוססת על המדריך "[כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt Flow ב- Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" מקהילת הטכנולוגיה של מיקרוסופט. היא מציגה את התהליכים של כוונון, פריסה, ושילוב של מודלים מותאמים אישית של Phi-3 עם Prompt flow ב- Azure AI Foundry.
+בניגוד לדוגמת הקצה-לקצה, "[כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", שכללה הרצת קוד באופן מקומי, הדרכה זו מתמקדת כולו בכוונון ושילוב המודל שלך בתוך Azure AI / ML Studio.
 
 ## סקירה כללית
 
-בדוגמת ה-E2E הזו תלמד כיצד לכוונן מדויק את מודל Phi-3 ולשלב אותו עם Prompt flow ב-Azure AI Foundry. באמצעות Azure AI / ML Studio, תקים תהליך עבודה לפריסה ושימוש במודלים מותאמים אישית של בינה מלאכותית. דוגמת ה-E2E מחולקת לשלושה תרחישים:
+בדוגמת הקצה-לקצה הזו תלמד כיצד לכוונן את מודל Phi-3 ולשלב אותו עם Prompt flow ב- Azure AI Foundry. באמצעות Azure AI / ML Studio, תיצור זרימת עבודה לפריסה ושימוש במודלים מותאמים אישית של AI. דוגמת הקצה-לקצה הזו מחולקת לשלושה תרחישים:
 
-**תרחיש 1: הקמת משאבי Azure והכנה לכוונון מדויק**
+**תרחיש 1: הקמת משאבי Azure והכנה לכוונון**
 
-**תרחיש 2: כוונון מדויק של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio**
+**תרחיש 2: כוונון מודל Phi-3 ופריסה ב- Azure Machine Learning Studio**
 
-**תרחיש 3: אינטגרציה עם Prompt flow ושיחה עם המודל המותאם שלך ב-Azure AI Foundry**
+**תרחיש 3: שילוב עם Prompt flow וצ'אט עם המודל המותאם שלך ב- Azure AI Foundry**
 
-להלן סקירה של דוגמת ה-E2E הזו.
+להלן סקירה של דוגמת הקצה-לקצה הזו.
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.he.png)
 
 ### תוכן העניינים
 
-1. **[תרחיש 1: הקמת משאבי Azure והכנה לכוונון מדויק](../../../../../../md/02.Application/01.TextAndChat/Phi3)**  
-    - [יצירת Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [בקשת מכסות GPU במנוי Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [הוספת שיוך תפקידים](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [הקמת פרויקט](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [הכנת מערך נתונים לכוונון מדויק](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
+1. **[תרחיש 1: הקמת משאבי Azure והכנה לכוונון](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [יצירת סביבת עבודה ב-Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [בקשת מכסות GPU במנוי Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [הוספת שיוך תפקיד](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [הקמת הפרויקט](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [הכנת מערך נתונים לכוונון](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[תרחיש 2: כוונון מדויק של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**  
-    - [כוונון מדויק של מודל Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [פריסת מודל Phi-3 המכוונן](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
+1. **[תרחיש 2: כוונון מודל Phi-3 ופריסה ב- Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [כוונון מודל Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [פריסת מודל Phi-3 המכוונן](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[תרחיש 3: אינטגרציה עם Prompt flow ושיחה עם המודל המותאם שלך ב-Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**  
-    - [אינטגרציה של מודל Phi-3 מותאם אישית עם Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [שיחה עם מודל Phi-3 המותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
+1. **[תרחיש 3: שילוב עם Prompt flow וצ'אט עם המודל המותאם שלך ב- Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [שילוב מודל Phi-3 מותאם עם Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [צ'אט עם מודל Phi-3 מותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## תרחיש 1: הקמת משאבי Azure והכנה לכוונון מדויק
+## תרחיש 1: הקמת משאבי Azure והכנה לכוונון
 
-### יצירת Azure Machine Learning Workspace
+### יצירת סביבת עבודה ב-Azure Machine Learning
 
-1. הקלד *azure machine learning* בשורת החיפוש בראש דף הפורטל ובחר **Azure Machine Learning** מתוך האפשרויות שמופיעות.
+1. הקלד *azure machine learning* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Azure Machine Learning** מהאפשרויות שמופיעות.
 
     ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.he.png)
 
-2. בחר **+ Create** מתפריט הניווט.
+2. בחר **+ Create** בתפריט הניווט.
 
-3. בחר **New workspace** מתפריט הניווט.
+3. בחר **New workspace** בתפריט הניווט.
 
     ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.he.png)
 
-4. בצע את המשימות הבאות:
+4. בצע את הפעולות הבאות:
 
-    - בחר את **Subscription** של Azure שלך.  
-    - בחר את **Resource group** לשימוש (צור חדש במידת הצורך).  
-    - הזן **Workspace Name**. חייב להיות ערך ייחודי.  
-    - בחר את **Region** שבו תרצה להשתמש.  
-    - בחר את **Storage account** לשימוש (צור חדש במידת הצורך).  
-    - בחר את **Key vault** לשימוש (צור חדש במידת הצורך).  
-    - בחר את **Application insights** לשימוש (צור חדש במידת הצורך).  
-    - בחר את **Container registry** לשימוש (צור חדש במידת הצורך).  
+    - בחר את **המנוי** שלך ב-Azure.
+    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה במידת הצורך).
+    - הזן **שם סביבת העבודה**. חייב להיות ערך ייחודי.
+    - בחר את **האזור** שבו תרצה להשתמש.
+    - בחר את **חשבון האחסון** לשימוש (צור חדש במידת הצורך).
+    - בחר את **Key vault** לשימוש (צור חדש במידת הצורך).
+    - בחר את **Application insights** לשימוש (צור חדש במידת הצורך).
+    - בחר את **מרשם המכולות** לשימוש (צור חדש במידת הצורך).
 
     ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.he.png)
 
@@ -76,40 +76,41 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### בקשת מכסות GPU במנוי Azure
 
-במדריך זה תלמד כיצד לכוונן מדויק ולפרוס מודל Phi-3, תוך שימוש ב-GPU. לכוונון מדויק תשתמש ב-GPU מסוג *Standard_NC24ads_A100_v4*, שדורש בקשת מכסה. לפריסה תשתמש ב-GPU מסוג *Standard_NC6s_v3*, שגם הוא דורש בקשת מכסה.
+בהדרכה זו תלמד כיצד לכוונן ולפרוס מודל Phi-3, באמצעות GPUs. עבור כוונון, תשתמש ב-GPU מסוג *Standard_NC24ads_A100_v4*, שדורש בקשת מכסה. עבור פריסה, תשתמש ב-GPU מסוג *Standard_NC6s_v3*, שגם הוא דורש בקשת מכסה.
 
-> [!NOTE]  
-> רק מנויי Pay-As-You-Go (סוג המנוי הסטנדרטי) זכאים להקצאת GPU; מנויי הטבות אינם נתמכים כרגע.  
+> [!NOTE]
+>
+> רק מנויי Pay-As-You-Go (סוג המנוי הסטנדרטי) זכאים להקצאת GPU; מנויי זכאות אינם נתמכים כרגע.
 >
 
 1. בקר ב-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. בצע את המשימות הבאות כדי לבקש מכסת *Standard NCADSA100v4 Family*:
+1. בצע את הפעולות הבאות לבקשת מכסת *Standard NCADSA100v4 Family*:
 
-    - בחר **Quota** מהטאב בצד שמאל.  
-    - בחר את **Virtual machine family** לשימוש. לדוגמה, בחר **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, הכולל את ה-GPU *Standard_NC24ads_A100_v4*.  
-    - בחר **Request quota** מתפריט הניווט.  
+    - בחר **Quota** בכרטיסייה בצד שמאל.
+    - בחר את **משפחת מכונות וירטואליות** לשימוש. לדוגמה, בחר **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, הכוללת את ה-GPU מסוג *Standard_NC24ads_A100_v4*.
+    - בחר **Request quota** מתפריט הניווט.
 
         ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.he.png)
 
-    - בדף Request quota, הזן את **New cores limit** שברצונך להשתמש בו. לדוגמה, 24.  
-    - בדף Request quota, בחר **Submit** כדי לבקש את מכסת ה-GPU.  
+    - בדף בקשת המכסה, הזן את **מכסת הליבות החדשה** שברצונך להשתמש בה. לדוגמה, 24.
+    - בדף בקשת המכסה, בחר **Submit** כדי לבקש את המכסה ל-GPU.
 
-1. בצע את המשימות הבאות כדי לבקש מכסת *Standard NCSv3 Family*:
+1. בצע את הפעולות הבאות לבקשת מכסת *Standard NCSv3 Family*:
 
-    - בחר **Quota** מהטאב בצד שמאל.  
-    - בחר את **Virtual machine family** לשימוש. לדוגמה, בחר **Standard NCSv3 Family Cluster Dedicated vCPUs**, הכולל את ה-GPU *Standard_NC6s_v3*.  
-    - בחר **Request quota** מתפריט הניווט.  
-    - בדף Request quota, הזן את **New cores limit** שברצונך להשתמש בו. לדוגמה, 24.  
-    - בדף Request quota, בחר **Submit** כדי לבקש את מכסת ה-GPU.  
+    - בחר **Quota** בכרטיסייה בצד שמאל.
+    - בחר את **משפחת מכונות וירטואליות** לשימוש. לדוגמה, בחר **Standard NCSv3 Family Cluster Dedicated vCPUs**, הכוללת את ה-GPU מסוג *Standard_NC6s_v3*.
+    - בחר **Request quota** מתפריט הניווט.
+    - בדף בקשת המכסה, הזן את **מכסת הליבות החדשה** שברצונך להשתמש בה. לדוגמה, 24.
+    - בדף בקשת המכסה, בחר **Submit** כדי לבקש את המכסה ל-GPU.
 
-### הוספת שיוך תפקידים
+### הוספת שיוך תפקיד
 
-כדי לכוונן מדויק ולפרוס את המודלים שלך, עליך קודם ליצור User Assigned Managed Identity (UAI) ולהקצות לה את ההרשאות המתאימות. ה-UAI ישמש לאימות במהלך הפריסה.
+כדי לכוונן ולפרוס את המודלים שלך, עליך קודם ליצור זהות מנוהלת שהוקצתה למשתמש (User Assigned Managed Identity - UAI) ולהעניק לה את ההרשאות המתאימות. ה-UAI הזה ישמש לאימות במהלך הפריסה.
 
 #### יצירת User Assigned Managed Identity (UAI)
 
-1. הקלד *managed identities* בשורת החיפוש בראש דף הפורטל ובחר **Managed Identities** מתוך האפשרויות שמופיעות.
+1. הקלד *managed identities* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Managed Identities** מהאפשרויות שמופיעות.
 
     ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.he.png)
 
@@ -117,12 +118,12 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.he.png)
 
-1. בצע את המשימות הבאות:
+1. בצע את הפעולות הבאות:
 
-    - בחר את **Subscription** של Azure שלך.  
-    - בחר את **Resource group** לשימוש (צור חדש במידת הצורך).  
-    - בחר את **Region** שבו תרצה להשתמש.  
-    - הזן את ה-**Name**. חייב להיות ערך ייחודי.  
+    - בחר את **המנוי** שלך ב-Azure.
+    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה במידת הצורך).
+    - בחר את **האזור** שבו תרצה להשתמש.
+    - הזן את ה**שם**. חייב להיות ערך ייחודי.
 
     ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.he.png)
 
@@ -130,92 +131,92 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ Create**.
 
-#### הוספת שיוך תפקיד Contributor ל-Managed Identity
+#### הוספת שיוך תפקיד Contributor לזהות מנוהלת
 
-1. עבור למשאב Managed Identity שיצרת.
+1. נווט למשאב זהות מנוהלת שיצרת.
 
-1. בחר **Azure role assignments** מהטאב בצד שמאל.
+1. בחר **Azure role assignments** בכרטיסייה בצד שמאל.
 
 1. בחר **+Add role assignment** מתפריט הניווט.
 
-1. בדף Add role assignment, בצע את המשימות הבאות:  
-    - בחר את **Scope** ל-**Resource group**.  
-    - בחר את **Subscription** של Azure שלך.  
-    - בחר את **Resource group** לשימוש.  
-    - בחר את **Role** ל-**Contributor**.  
+1. בדף הוספת שיוך תפקיד, בצע את הפעולות הבאות:
+    - בחר את **היקף** ל**קבוצת המשאבים**.
+    - בחר את **המנוי** שלך ב-Azure.
+    - בחר את **קבוצת המשאבים** לשימוש.
+    - בחר את **התפקיד** ל**Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.he.png)
 
 2. בחר **Save**.
 
-#### הוספת שיוך תפקיד Storage Blob Data Reader ל-Managed Identity
+#### הוספת שיוך תפקיד Storage Blob Data Reader לזהות מנוהלת
 
-1. הקלד *storage accounts* בשורת החיפוש בראש דף הפורטל ובחר **Storage accounts** מתוך האפשרויות שמופיעות.
+1. הקלד *storage accounts* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Storage accounts** מהאפשרויות שמופיעות.
 
     ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.he.png)
 
-1. בחר את חשבון האחסון המשויך ל-Azure Machine Learning workspace שיצרת. לדוגמה, *finetunephistorage*.
+1. בחר את חשבון האחסון המשויך לסביבת העבודה ב-Azure Machine Learning שיצרת. לדוגמה, *finetunephistorage*.
 
-1. בצע את המשימות הבאות כדי לנווט לדף Add role assignment:
+1. בצע את הפעולות הבאות לניווט לדף הוספת שיוך תפקיד:
 
-    - עבור לחשבון האחסון של Azure שיצרת.  
-    - בחר **Access Control (IAM)** מהטאב בצד שמאל.  
-    - בחר **+ Add** מתפריט הניווט.  
-    - בחר **Add role assignment** מתפריט הניווט.  
+    - נווט לחשבון האחסון של Azure שיצרת.
+    - בחר **Access Control (IAM)** בכרטיסייה בצד שמאל.
+    - בחר **+ Add** מתפריט הניווט.
+    - בחר **Add role assignment** מתפריט הניווט.
 
     ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.he.png)
 
-1. בדף Add role assignment, בצע את המשימות הבאות:
+1. בדף הוספת שיוך תפקיד, בצע את הפעולות הבאות:
 
-    - בדף Role, הקלד *Storage Blob Data Reader* בשורת החיפוש ובחר **Storage Blob Data Reader** מתוך האפשרויות שמופיעות.  
-    - בדף Role, בחר **Next**.  
-    - בדף Members, בחר **Assign access to** **Managed identity**.  
-    - בדף Members, בחר **+ Select members**.  
-    - בדף Select managed identities, בחר את **Subscription** של Azure שלך.  
-    - בדף Select managed identities, בחר את ה-**Managed identity** ל-**Manage Identity**.  
-    - בדף Select managed identities, בחר את ה-Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.  
-    - בדף Select managed identities, בחר **Select**.  
+    - בדף התפקיד, הקלד *Storage Blob Data Reader* ב**סרגל החיפוש** ובחר **Storage Blob Data Reader** מהאפשרויות שמופיעות.
+    - בדף התפקיד, בחר **Next**.
+    - בדף החברים, בחר **Assign access to** **Managed identity**.
+    - בדף החברים, בחר **+ Select members**.
+    - בדף בחירת זהויות מנוהלות, בחר את **המנוי** שלך ב-Azure.
+    - בדף בחירת זהויות מנוהלות, בחר את ה**זהות המנוהלת** ל**Manage Identity**.
+    - בדף בחירת זהויות מנוהלות, בחר את Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.
+    - בדף בחירת זהויות מנוהלות, בחר **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.he.png)
 
 1. בחר **Review + assign**.
 
-#### הוספת שיוך תפקיד AcrPull ל-Managed Identity
+#### הוספת שיוך תפקיד AcrPull לזהות מנוהלת
 
-1. הקלד *container registries* בשורת החיפוש בראש דף הפורטל ובחר **Container registries** מתוך האפשרויות שמופיעות.
+1. הקלד *container registries* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Container registries** מהאפשרויות שמופיעות.
 
     ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.he.png)
 
-1. בחר את רישום המכולות המשויך ל-Azure Machine Learning workspace. לדוגמה, *finetunephicontainerregistry*
+1. בחר את מרשם המכולות המשויך לסביבת העבודה ב-Azure Machine Learning. לדוגמה, *finetunephicontainerregistry*
 
-1. בצע את המשימות הבאות כדי לנווט לדף Add role assignment:
+1. בצע את הפעולות הבאות לניווט לדף הוספת שיוך תפקיד:
 
-    - בחר **Access Control (IAM)** מהטאב בצד שמאל.  
-    - בחר **+ Add** מתפריט הניווט.  
-    - בחר **Add role assignment** מתפריט הניווט.  
+    - בחר **Access Control (IAM)** בכרטיסייה בצד שמאל.
+    - בחר **+ Add** מתפריט הניווט.
+    - בחר **Add role assignment** מתפריט הניווט.
 
-1. בדף Add role assignment, בצע את המשימות הבאות:
+1. בדף הוספת שיוך תפקיד, בצע את הפעולות הבאות:
 
-    - בדף Role, הקלד *AcrPull* בשורת החיפוש ובחר **AcrPull** מתוך האפשרויות שמופיעות.  
-    - בדף Role, בחר **Next**.  
-    - בדף Members, בחר **Assign access to** **Managed identity**.  
-    - בדף Members, בחר **+ Select members**.  
-    - בדף Select managed identities, בחר את **Subscription** של Azure שלך.  
-    - בדף Select managed identities, בחר את ה-**Managed identity** ל-**Manage Identity**.  
-    - בדף Select managed identities, בחר את ה-Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.  
-    - בדף Select managed identities, בחר **Select**.  
+    - בדף התפקיד, הקלד *AcrPull* ב**סרגל החיפוש** ובחר **AcrPull** מהאפשרויות שמופיעות.
+    - בדף התפקיד, בחר **Next**.
+    - בדף החברים, בחר **Assign access to** **Managed identity**.
+    - בדף החברים, בחר **+ Select members**.
+    - בדף בחירת זהויות מנוהלות, בחר את **המנוי** שלך ב-Azure.
+    - בדף בחירת זהויות מנוהלות, בחר את ה**זהות המנוהלת** ל**Manage Identity**.
+    - בדף בחירת זהויות מנוהלות, בחר את Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.
+    - בדף בחירת זהויות מנוהלות, בחר **Select**.
     - בחר **Review + assign**.
 
-### הקמת פרויקט
+### הקמת הפרויקט
 
-כדי להוריד את מערכי הנתונים הדרושים לכוונון מדויק, תקים סביבה מקומית.
+להורדת מערכי הנתונים הדרושים לכוונון, תקים סביבה מקומית.
 
-בתרגיל זה תעשה את הדברים הבאים:
+בתרגיל זה, תבצע
 
-- תיצור תיקייה לעבודה בתוכה.  
-- תקים סביבה וירטואלית.  
-- תתקין את החבילות הנדרשות.  
-- תיצור קובץ *download_dataset.py* להורדת מערך הנתונים.
+- יצירת תיקייה לעבודה בתוכה.
+- יצירת סביבה וירטואלית.
+- התקנת החבילות הנדרשות.
+- יצירת קובץ *download_dataset.py* להורדת מערך הנתונים.
 
 #### יצירת תיקייה לעבודה בתוכה
 
@@ -225,314 +226,399 @@ CO_OP_TRANSLATOR_METADATA:
     mkdir finetune-phi
     ```
 
-2. הקלד את הפקודה הבאה בטרמינל כדי לנווט לתיקיית *finetune-phi* שיצרת.
-#### יצירת סביבה וירטואלית
+2. הקלד את הפקודה הבאה בתוך הטרמינל שלך כדי לנווט לתיקיית *finetune-phi* שיצרת.
+
+    ```console
+    cd finetune-phi
+    ```
+
+#### צור סביבה וירטואלית
 
 1. הקלד את הפקודה הבאה בתוך הטרמינל שלך כדי ליצור סביבה וירטואלית בשם *.venv*.
 
+    ```console
+    python -m venv .venv
+    ```
+
 2. הקלד את הפקודה הבאה בתוך הטרמינל שלך כדי להפעיל את הסביבה הווירטואלית.
 
+    ```console
+    .venv\Scripts\activate.bat
+    ```
 
 > [!NOTE]
-> אם זה עבד, תראה את *(.venv)* לפני שורת הפקודה.
+> אם זה עבד, אתה אמור לראות את *(.venv)* לפני שורת הפקודה.
 
-#### התקנת החבילות הנדרשות
+#### התקן את החבילות הנדרשות
 
 1. הקלד את הפקודות הבאות בתוך הטרמינל שלך כדי להתקין את החבילות הנדרשות.
 
-#### יצירת `donload_dataset.py`
+    ```console
+    pip install datasets==2.19.1
+    ```
+
+#### צור את `donload_dataset.py`
 
 > [!NOTE]
-> מבנה התיקייה המלא:
+> מבנה התיקיה המלא:
 >
+> ```text
+> └── YourUserName
+> .    └── finetune-phi
+> .        └── download_dataset.py
+> ```
+
 1. פתח את **Visual Studio Code**.
 
-1. בחר ב-**File** בסרגל התפריטים.
+1. בחר **File** בסרגל התפריטים.
 
-1. בחר ב-**Open Folder**.
+1. בחר **Open Folder**.
 
-1. בחר בתיקיית *finetune-phi* שיצרת, שנמצאת ב-*C:\Users\yourUserName\finetune-phi*.
+1. בחר את תיקיית *finetune-phi* שיצרת, שנמצאת ב-*C:\Users\yourUserName\finetune-phi*.
 
-    ![בחר את התיקייה שיצרת.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.he.png)
+    ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.he.png)
 
-1. בחלונית השמאלית של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *download_dataset.py*.
+1. בסרגל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *download_dataset.py*.
 
-    ![צור קובץ חדש.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.he.png)
+    ![Create a new file.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.he.png)
 
 ### הכנת מערך הנתונים לכוונון עדין
 
-בתרגיל זה, תריץ את הקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים *ultrachat_200k* לסביבה המקומית שלך. לאחר מכן תשתמש במערכי הנתונים האלה כדי לכוונן עדין את מודל Phi-3 ב-Azure Machine Learning.
+בתרגיל זה, תריץ את הקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים *ultrachat_200k* לסביבה המקומית שלך. לאחר מכן תשתמש במערכי הנתונים האלה כדי לכוונן עדין את הדגם Phi-3 ב-Azure Machine Learning.
 
-בתרגיל זה תעשה את הדברים הבאים:
+בתרגיל זה, תעשה את הפעולות הבאות:
 
-- תוסיף קוד לקובץ *download_dataset.py* להורדת מערכי הנתונים.
-- תריץ את הקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים לסביבה המקומית שלך.
+- הוסף קוד לקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים.
+- הרץ את הקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים לסביבה המקומית שלך.
 
-#### הורדת מערך הנתונים שלך באמצעות *download_dataset.py*
+#### הורד את מערך הנתונים שלך באמצעות *download_dataset.py*
 
 1. פתח את הקובץ *download_dataset.py* ב-Visual Studio Code.
 
 1. הוסף את הקוד הבא לתוך הקובץ *download_dataset.py*.
 
+    ```python
+    import json
+    import os
+    from datasets import load_dataset
+
+    def load_and_split_dataset(dataset_name, config_name, split_ratio):
+        """
+        Load and split a dataset.
+        """
+        # טען את מערך הנתונים עם השם, התצורה ויחס החלוקה שצוינו
+        dataset = load_dataset(dataset_name, config_name, split=split_ratio)
+        print(f"Original dataset size: {len(dataset)}")
+        
+        # חלק את מערך הנתונים לסטים של אימון ובדיקה (80% אימון, 20% בדיקה)
+        split_dataset = dataset.train_test_split(test_size=0.2)
+        print(f"Train dataset size: {len(split_dataset['train'])}")
+        print(f"Test dataset size: {len(split_dataset['test'])}")
+        
+        return split_dataset
+
+    def save_dataset_to_jsonl(dataset, filepath):
+        """
+        Save a dataset to a JSONL file.
+        """
+        # צור את התיקיה אם היא לא קיימת
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        
+        # פתח את הקובץ במצב כתיבה
+        with open(filepath, 'w', encoding='utf-8') as f:
+            # עבור על כל רשומה במערך הנתונים
+            for record in dataset:
+                # המר את הרשומה לאובייקט JSON וכתוב אותה בקובץ
+                json.dump(record, f)
+                # כתוב תו שורה חדשה להפרדת רשומות
+                f.write('\n')
+        
+        print(f"Dataset saved to {filepath}")
+
+    def main():
+        """
+        Main function to load, split, and save the dataset.
+        """
+        # טען וחלק את מערך הנתונים ULTRACHAT_200k עם תצורה מסוימת ויחס חלוקה
+        dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
+        
+        # חלץ את מערכי האימון והבדיקה מהחלוקה
+        train_dataset = dataset['train']
+        test_dataset = dataset['test']
+
+        # שמור את מערך האימון בקובץ JSONL
+        save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
+        
+        # שמור את מערך הבדיקה בקובץ JSONL נפרד
+        save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
+
+    if __name__ == "__main__":
+        main()
+
+    ```
+
 1. הקלד את הפקודה הבאה בתוך הטרמינל שלך כדי להריץ את הסקריפט ולהוריד את מערך הנתונים לסביבה המקומית שלך.
 
-1. ודא שמערכי הנתונים נשמרו בהצלחה בתיקיית *finetune-phi/data* המקומית שלך.
+    ```console
+    python download_dataset.py
+    ```
+
+1. אמת כי מערכי הנתונים נשמרו בהצלחה בתיקיית *finetune-phi/data* המקומית שלך.
 
 > [!NOTE]
 >
-> #### הערה לגבי גודל מערך הנתונים וזמן הכוונון העדין
+> #### הערה על גודל מערך הנתונים וזמן הכוונון העדין
 >
-> במדריך זה, אתה משתמש רק ב-1% ממערך הנתונים (`split='train[:1%]'`). זה מקטין משמעותית את כמות הנתונים, ומאיץ הן את תהליך ההעלאה והן את תהליך הכוונון העדין. ניתן לשנות את האחוז כדי למצוא את האיזון הנכון בין זמן האימון לביצועי המודל. שימוש בתת-קבוצה קטנה יותר של מערך הנתונים מקטין את הזמן הנדרש לכוונון, מה שהופך את התהליך לנוח יותר למדריך.
+> במדריך זה, אתה משתמש רק ב-1% ממערך הנתונים (`split='train[:1%]'`). זה מצמצם משמעותית את גודל הנתונים, מה שמאיץ הן את תהליך ההעלאה והן את תהליך הכוונון העדין. אתה יכול לכוונן את האחוז כדי למצוא את האיזון הנכון בין זמן האימון לביצועי המודל. שימוש בתת-מערך קטן יותר של הנתונים מקצר את זמן הכוונון העדין, ומקל על ביצוע התהליך במסגרת הדרכה.
 
-## תרחיש 2: כוונון עדין של מודל Phi-3 ופריסה ב-Azure Machine Learning Studio
+## תרחיש 2: כוונון עדין של דגם Phi-3 ופריסה ב-Azure Machine Learning Studio
 
-### כוונון עדין של מודל Phi-3
+### כוונן עדין את דגם Phi-3
 
-בתרגיל זה, תכוונן עדין את מודל Phi-3 ב-Azure Machine Learning Studio.
+בתרגיל זה תכוין עדין את דגם Phi-3 ב-Azure Machine Learning Studio.
 
-בתרגיל זה תעשה את הדברים הבאים:
+בתרגיל זה, תעשה את הפעולות הבאות:
 
-- יצירת אשכול מחשבים לכוונון עדין.
-- כוונון עדין של מודל Phi-3 ב-Azure Machine Learning Studio.
+- צור אשכול מחשבים עבור כוונון עדין.
+- כוונן עדין את דגם Phi-3 ב-Azure Machine Learning Studio.
 
-#### יצירת אשכול מחשבים לכוונון עדין
+#### צור אשכול מחשבים עבור כוונון עדין
 
-1. בקר ב-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. עבור ל-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. בחר ב-**Compute** מהכרטיסייה בצד שמאל.
+1. בחר **Compute** מהטאב הצדדי השמאלי.
 
-1. בחר ב-**Compute clusters** מתפריט הניווט.
+1. בחר **Compute clusters** מתפריט הניווט.
 
-1. בחר ב-**+ New**.
+1. בחר **+ New**.
 
-    ![בחר מחשוב.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.he.png)
+    ![Select compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.he.png)
 
-1. בצע את המשימות הבאות:
+1. בצע את הפעולות הבאות:
 
-    - בחר את **Region** שברצונך להשתמש בו.
+    - בחר את **Region** הרצוי.
     - בחר את **Virtual machine tier** ל-**Dedicated**.
     - בחר את **Virtual machine type** ל-**GPU**.
     - בחר את סינון **Virtual machine size** ל-**Select from all options**.
     - בחר את **Virtual machine size** ל-**Standard_NC24ads_A100_v4**.
 
-    ![צור אשכול.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.he.png)
+    ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.he.png)
 
 1. בחר **Next**.
 
-1. בצע את המשימות הבאות:
+1. בצע את הפעולות הבאות:
 
-    - הזן **Compute name**. חייב להיות ערך ייחודי.
+    - הזן **Compute name**. חייב להיות שם ייחודי.
     - בחר את **Minimum number of nodes** ל-**0**.
     - בחר את **Maximum number of nodes** ל-**1**.
     - בחר את **Idle seconds before scale down** ל-**120**.
 
-    ![צור אשכול.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.he.png)
+    ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.he.png)
 
 1. בחר **Create**.
 
-#### כוונון עדין של מודל Phi-3
+#### כוונן עדין את דגם Phi-3
 
-1. בקר ב-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. עבור ל-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. בחר את סביבת העבודה של Azure Machine Learning שיצרת.
+1. בחר את סביבת העבודה Azure Machine Learning שיצרת.
 
-    ![בחר את סביבת העבודה שיצרת.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.he.png)
+    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.he.png)
 
-1. בצע את המשימות הבאות:
+1. בצע את הפעולות הבאות:
 
-    - בחר ב-**Model catalog** מהכרטיסייה בצד שמאל.
-    - הקלד *phi-3-mini-4k* בשורת החיפוש ובחר ב-**Phi-3-mini-4k-instruct** מהאפשרויות שמופיעות.
+    - בחר **Model catalog** מהטאב הצדדי השמאלי.
+    - הקלד *phi-3-mini-4k* בשורת החיפוש ובחר **Phi-3-mini-4k-instruct** מתוך האפשרויות שמופיעות.
 
-    ![הקלד phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.he.png)
+    ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.he.png)
 
-1. בחר ב-**Fine-tune** מתפריט הניווט.
+1. בחר **Fine-tune** מתפריט הניווט.
 
-    ![בחר כוונון עדין.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.he.png)
+    ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.he.png)
 
-1. בצע את המשימות הבאות:
+1. בצע את הפעולות הבאות:
 
-    - בחר ב-**Select task type** ל-**Chat completion**.
-    - בחר ב-**+ Select data** להעלאת **Traning data**.
+    - בחר **Select task type** ל-**Chat completion**.
+    - בחר **+ Select data** כדי להעלות **Training data**.
     - בחר את סוג העלאת נתוני האימות ל-**Provide different validation data**.
-    - בחר ב-**+ Select data** להעלאת **Validation data**.
+    - בחר **+ Select data** כדי להעלות **Validation data**.
 
-    ![מלא את דף הכוונון העדין.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.he.png)
+    ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.he.png)
 
-    > [!TIP]
-    >
-    > ניתן לבחור ב-**Advanced settings** כדי להתאים אישית הגדרות כמו **learning_rate** ו-**lr_scheduler_type** כדי לייעל את תהליך הכוונון העדין בהתאם לצרכים הספציפיים שלך.
+> [!TIP]
+>
+> ניתן לבחור **Advanced settings** כדי להתאים אישית פרמטרים כמו **learning_rate** ו-**lr_scheduler_type** כדי לייעל את תהליך הכוונון העדין לפי הצרכים הספציפיים שלך.
 
 1. בחר **Finish**.
 
-1. בתרגיל זה, הצלחת לכוונן עדין את מודל Phi-3 באמצעות Azure Machine Learning. שים לב שתהליך הכוונון העדין עלול לקחת זמן משמעותי. לאחר הרצת משימת הכוונון, יש להמתין לסיומה. ניתן לעקוב אחר מצב המשימה בכרטיסיית Jobs בצד שמאל של סביבת העבודה שלך ב-Azure Machine Learning. בסדרה הבאה, תפרוס את המודל המכוונן ותשלב אותו עם Prompt flow.
+1. בתרגיל זה, ביצעת בהצלחה כוונון עדין לדגם Phi-3 באמצעות Azure Machine Learning. שים לב שתהליך הכוונון העדין עלול לקחת זמן מה. לאחר הפעלת משימת הכוונון, עליך לחכות עד שתסתיים. ניתן לעקוב אחר מצב משימת הכוונון על ידי כניסה לטאב Jobs בצד השמאלי בסביבת העבודה שלך ב-Azure Machine Learning. בסדרה הבאה תפרוס את הדגם המכוון ותשלב אותו עם Prompt flow.
 
-    ![ראה את משימת הכוונון העדין.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.he.png)
+    ![See finetuning job.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.he.png)
 
-### פריסת מודל Phi-3 המכוונן עדין
+### פרוס את דגם Phi-3 המכוון
 
-כדי לשלב את מודל Phi-3 המכוונן עם Prompt flow, יש לפרוס את המודל כדי שיהיה נגיש להסקת מסקנות בזמן אמת. תהליך זה כולל רישום המודל, יצירת נקודת קצה מקוונת ופריסת המודל.
+כדי לשלב את דגם Phi-3 המכוון עם Prompt flow, עליך לפרוס את הדגם כך שיהיה נגיש עבור ביצועי שחזור בזמן אמת. תהליך זה כולל רישום הדגם, יצירת נקודת קצה מקוונת ופריסת הדגם.
 
-בתרגיל זה תעשה את הדברים הבאים:
+בתרגיל זה תעשה את הפעולות הבאות:
 
-- רישום המודל המכוונן בסביבת העבודה של Azure Machine Learning.
-- יצירת נקודת קצה מקוונת.
-- פריסת מודל Phi-3 המכוונן שנרשם.
+- רשום את הדגם המכוון בסביבת העבודה של Azure Machine Learning.
+- צור נקודת קצה מקוונת.
+- פרוס את דגם Phi-3 המכוון שנרשם.
 
-#### רישום המודל המכוונן
+#### רשום את הדגם המכוון
 
-1. בקר ב-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. עבור ל-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. בחר את סביבת העבודה של Azure Machine Learning שיצרת.
+1. בחר את סביבת העבודה Azure Machine Learning שיצרת.
 
-    ![בחר את סביבת העבודה שיצרת.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.he.png)
+    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.he.png)
 
-1. בחר ב-**Models** מהכרטיסייה בצד שמאל.
+1. בחר **Models** מהטאב הצדדי השמאלי.
+1. בחר **+ Register**.
+1. בחר **From a job output**.
 
-1. בחר ב-**+ Register**.
-
-1. בחר ב-**From a job output**.
-
-    ![רשום מודל.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.he.png)
+    ![Register model.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.he.png)
 
 1. בחר את המשימה שיצרת.
 
-    ![בחר משימה.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.he.png)
+    ![Select job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.he.png)
 
 1. בחר **Next**.
 
-1. בחר את **Model type** ל-**MLflow**.
+1. בחר את סוג הדגם ל-**MLflow**.
 
-1. ודא ש-**Job output** מסומן; זה אמור להיבחר אוטומטית.
+1. ודא שה-**Job output** מסומן; זה צריך להיות מסומן אוטומטית.
 
-    ![בחר פלט.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.he.png)
+    ![Select output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.he.png)
 
 2. בחר **Next**.
 
 3. בחר **Register**.
 
-    ![בחר רישום.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.he.png)
+    ![Select register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.he.png)
 
-4. ניתן לצפות במודל שנרשם על ידי ניווט לתפריט **Models** מהכרטיסייה בצד שמאל.
+4. ניתן לראות את הדגם שנרשם דרך תפריט **Models** בטאב הצדדי השמאלי.
 
-    ![מודל שנרשם.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.he.png)
+    ![Registered model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.he.png)
 
-#### פריסת המודל המכוונן
+#### פרוס את הדגם המכוון
 
-1. עבור לסביבת העבודה של Azure Machine Learning שיצרת.
+1. עבור לסביבת העבודה Azure Machine Learning שיצרת.
 
-1. בחר ב-**Endpoints** מהכרטיסייה בצד שמאל.
+1. בחר **Endpoints** בטאב הצדדי השמאלי.
 
-1. בחר ב-**Real-time endpoints** מתפריט הניווט.
+1. בחר **Real-time endpoints** מתפריט הניווט.
 
-    ![צור נקודת קצה.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.he.png)
+    ![Create endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.he.png)
 
 1. בחר **Create**.
 
-1. בחר את המודל שנרשם שיצרת.
+1. בחר את הדגם שנרשם שיצרת.
 
-    ![בחר מודל שנרשם.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.he.png)
+    ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.he.png)
 
 1. בחר **Select**.
 
-1. בצע את המשימות הבאות:
+1. בצע את הפעולות הבאות:
 
-    - בחר ב-**Virtual machine** ל-*Standard_NC6s_v3*.
-    - בחר את מספר המופעים שברצונך להשתמש בו. לדוגמה, *1*.
-    - בחר את **Endpoint** ל-**New** כדי ליצור נקודת קצה חדשה.
-    - הזן **Endpoint name**. חייב להיות ערך ייחודי.
-    - הזן **Deployment name**. חייב להיות ערך ייחודי.
+    - בחר **Virtual machine** ל-*Standard_NC6s_v3*.
+    - בחר את **Instance count** הרצוי. לדוגמה, *1*.
+    - בחר את **Endpoint** ל-**New** כדי ליצור נקודת קצה.
+    - הזן **Endpoint name**. חייב להיות שם ייחודי.
+    - הזן **Deployment name**. חייב להיות שם ייחודי.
 
-    ![מלא את הגדרות הפריסה.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.he.png)
+    ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.he.png)
 
 1. בחר **Deploy**.
 
 > [!WARNING]
-> כדי למנוע חיובים נוספים בחשבונך, ודא למחוק את נקודת הקצה שיצרת בסביבת העבודה של Azure Machine Learning.
+> כדי למנוע חיובים נוספים בחשבונך, וודא למחוק את נקודת הקצה שנוצרה בסביבת העבודה של Azure Machine Learning.
 >
 
-#### בדיקת מצב הפריסה בסביבת העבודה של Azure Machine Learning
+#### בדוק את מצב הפריסה בסביבת העבודה של Azure Machine Learning
 
-1. עבור לסביבת העבודה של Azure Machine Learning שיצרת.
+1. עבור לסביבת העבודה Azure Machine Learning שיצרת.
 
-1. בחר ב-**Endpoints** מהכרטיסייה בצד שמאל.
+1. בחר **Endpoints** בטאב הצדדי השמאלי.
 
 1. בחר את נקודת הקצה שיצרת.
 
-    ![בחר נקודות קצה](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.he.png)
+    ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.he.png)
 
-1. בדף זה ניתן לנהל את נקודות הקצה במהלך תהליך הפריסה.
+1. בדף זה, ניתן לנהל את נקודות הקצה במהלך תהליך הפריסה.
 
 > [!NOTE]
-> לאחר שהפריסה הושלמה, ודא ש-**Live traffic** מוגדר ל-**100%**. אם לא, בחר ב-**Update traffic** כדי לעדכן את הגדרות התנועה. שים לב שלא ניתן לבדוק את המודל אם התנועה מוגדרת ל-0%.
+> לאחר שהפריסה הושלמה, ודא כי **Live traffic** מוגדר ל-**100%**. אם לא, בחר **Update traffic** כדי לשנות את הגדרות התעבורה. שים לב שאי אפשר לבדוק את הדגם אם תעבורה מוגדרת ל-0%.
 >
-> ![הגדר תנועה.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.he.png)
+> ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.he.png)
 >
 
-## תרחיש 3: שילוב עם Prompt flow ושיחה עם המודל המותאם שלך ב-Azure AI Foundry
+## תרחיש 3: אינטגרציה עם Prompt flow ויצירת שיחה עם הדגם המותאם שלך ב-Azure AI Foundry
 
-### שילוב מודל Phi-3 המותאם עם Prompt flow
+### אינטגרציה של דגם Phi-3 מותאם עם Prompt flow
 
-לאחר שהפרסת בהצלחה את המודל המכוונן שלך, כעת תוכל לשלב אותו עם Prompt Flow כדי להשתמש במודל שלך באפליקציות בזמן אמת, מה שמאפשר מגוון משימות אינטראקטיביות עם מודל Phi-3 המותאם שלך.
+לאחר שפרסת בהצלחה את הדגם המכוון, כעת תוכל לשלב אותו עם Prompt Flow לשימוש באפליקציות בזמן אמת, המאפשרות מגוון משימות אינטראקטיביות עם הדגם המותאם שלך Phi-3.
 
-בתרגיל זה תעשה את הדברים הבאים:
+בתרגיל זה תעשה את הפעולות הבאות:
 
-- יצירת Azure AI Foundry Hub.
-- יצירת פרויקט ב-Azure AI Foundry.
-- יצירת Prompt flow.
-- הוספת חיבור מותאם למודל Phi-3 המכוונן.
-- הגדרת Prompt flow לשיחה עם מודל Phi-3 המותאם שלך.
+- צור Azure AI Foundry Hub.
+- צור פרויקט ב-Azure AI Foundry.
+- צור Prompt flow.
+- הוסף חיבור מותאם לדגם Phi-3 המכוון.
+- הגדר את Prompt flow לשיחה עם דגם Phi-3 המותאם שלך.
+
 > [!NOTE]
-> ניתן גם לשלב עם Promptflow באמצעות Azure ML Studio. ניתן ליישם את אותו תהליך השילוב גם ב-Azure ML Studio.
-#### יצירת Azure AI Foundry Hub
+> ניתן גם לשלב עם Promptflow באמצעות Azure ML Studio. אותו תהליך אינטגרציה תקף ל-Azure ML Studio.
 
-עליך ליצור Hub לפני יצירת הפרויקט. ה-Hub מתפקד כמו Resource Group, ומאפשר לך לארגן ולנהל מספר פרויקטים בתוך Azure AI Foundry.
+#### צור Azure AI Foundry Hub
 
-1. בקר ב-[Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+יש ליצור Hub לפני יצירת הפרויקט. ה-Hub פועל כמו קבוצת משאבים, ומאפשר לארגן ולנהל מספר פרויקטים בתוך Azure AI Foundry.
 
-1. בחר **All hubs** מהטאב בצד שמאל.
+1. עבור ל-[Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+
+1. בחר **All hubs** בטאב הצדדי השמאלי.
 
 1. בחר **+ New hub** מתפריט הניווט.
-
     ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.he.png)
 
 1. בצע את המשימות הבאות:
 
-    - הזן **Hub name**. חייב להיות ערך ייחודי.
-    - בחר את **Subscription** שלך ב-Azure.
-    - בחר את **Resource group** לשימוש (צור חדש במידת הצורך).
-    - בחר את **Location** הרצוי.
-    - בחר את **Connect Azure AI Services** לשימוש (צור חדש במידת הצורך).
-    - בחר ב-**Connect Azure AI Search** את האפשרות **Skip connecting**.
+    - הזן **שם המרכז**. חייב להיות ערך ייחודי.
+    - בחר את **המנוי** שלך ב-Azure.
+    - בחר את **קבוצת המשאבים** לשימוש (צור חדשה אם יש צורך).
+    - בחר את **מיקום** שבו תרצה להשתמש.
+    - בחר את **חיבור שירותי AI של Azure** לשימוש (צור חדש אם יש צורך).
+    - בחר ב-**חיבור Azure AI Search** את האפשרות **דלג על חיבור**.
 
     ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.he.png)
 
-1. בחר **Next**.
+1. בחר **הבא**.
 
-#### יצירת פרויקט ב-Azure AI Foundry
+#### צור פרויקט Azure AI Foundry
 
-1. ב-Hub שיצרת, בחר **All projects** מהטאב בצד שמאל.
+1. במרכז שיצרת, בחר **כל הפרויקטים** מהכרטיסייה בצדו השמאלי.
 
-1. בחר **+ New project** מתפריט הניווט.
+1. בחר **+ פרויקט חדש** מתפריט הניווט.
 
     ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.he.png)
 
-1. הזן **Project name**. חייב להיות ערך ייחודי.
+1. הזן **שם הפרויקט**. חייב להיות ערך ייחודי.
 
     ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.he.png)
 
-1. בחר **Create a project**.
+1. בחר **צור פרויקט**.
 
-#### הוספת חיבור מותאם אישית למודל Phi-3 המותאם
+#### הוסף חיבור מותאם אישית למודל Phi-3 המותאם
 
-כדי לשלב את מודל Phi-3 המותאם שלך עם Prompt flow, עליך לשמור את נקודת הקצה והמפתח של המודל בחיבור מותאם אישית. הגדרה זו מבטיחה גישה למודל Phi-3 המותאם שלך בתוך Prompt flow.
+כדי לשלב את מודל Phi-3 המותאם שלך עם Prompt flow, עליך לשמור את נקודת הקצה ומפתח המודל בחיבור מותאם אישית. הגדרה זו מבטיחה גישה למודל Phi-3 המותאם שלך ב-Prompt flow.
 
-#### הגדרת api key ו-endpoint uri של מודל Phi-3 המותאם
+#### הגדר את מפתח ה-API וכתובת נקודת הקצה של מודל Phi-3 המותאם
 
 1. בקר ב-[Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
 1. עבור לסביבת העבודה של Azure Machine learning שיצרת.
 
-1. בחר **Endpoints** מהטאב בצד שמאל.
+1. בחר **Endpoints** מהכרטיסייה בצדו השמאלי.
 
     ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.he.png)
 
@@ -542,67 +628,67 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **Consume** מתפריט הניווט.
 
-1. העתק את **REST endpoint** ואת **Primary key** שלך.
+1. העתק את **נקודת הקצה REST** ואת ה-**מפתח הראשי** שלך.
 
     ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.he.png)
 
-#### הוספת החיבור המותאם
+#### הוסף את החיבור המותאם אישית
 
 1. בקר ב-[Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. עבור לפרויקט Azure AI Foundry שיצרת.
 
-1. בפרויקט שיצרת, בחר **Settings** מהטאב בצד שמאל.
+1. בפרויקט שיצרת, בחר **הגדרות** מהכרטיסייה בצדו השמאלי.
 
-1. בחר **+ New connection**.
+1. בחר **+ חיבור חדש**.
 
     ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.he.png)
 
-1. בחר **Custom keys** מתפריט הניווט.
+1. בחר **מפתחות מותאמים אישית** מתפריט הניווט.
 
     ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.he.png)
 
 1. בצע את המשימות הבאות:
 
-    - בחר **+ Add key value pairs**.
+    - בחר **+ הוסף זוגות מפתח-ערך**.
     - עבור שם המפתח, הזן **endpoint** והדבק את נקודת הקצה שהעתקת מ-Azure ML Studio בשדה הערך.
-    - בחר שוב **+ Add key value pairs**.
+    - בחר שוב **+ הוסף זוגות מפתח-ערך**.
     - עבור שם המפתח, הזן **key** והדבק את המפתח שהעתקת מ-Azure ML Studio בשדה הערך.
-    - לאחר הוספת המפתחות, סמן **is secret** כדי למנוע חשיפת המפתח.
+    - לאחר הוספת המפתחות, בחר **הוא סודי** כדי למנוע את החשיפה של המפתח.
 
     ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.he.png)
 
-1. בחר **Add connection**.
+1. בחר **הוסף חיבור**.
 
-#### יצירת Prompt flow
+#### צור Prompt flow
 
-הוספת חיבור מותאם אישית ב-Azure AI Foundry. כעת, ניצור Prompt flow באמצעות השלבים הבאים. לאחר מכן, תחבר את ה-Prompt flow לחיבור המותאם כדי שתוכל להשתמש במודל המותאם בתוך ה-Prompt flow.
+הוספת חיבור מותאם אישית ב-Azure AI Foundry. כעת, בוא ניצור Prompt flow באמצעות השלבים הבאים. לאחר מכן, תחבר את ה-Prompt flow הזה לחיבור המותאם אישית כדי שתוכל להשתמש במודל המותאם במסגרת ה-Prompt flow.
 
 1. עבור לפרויקט Azure AI Foundry שיצרת.
 
-1. בחר **Prompt flow** מהטאב בצד שמאל.
+1. בחר **Prompt flow** מהכרטיסייה בצדו השמאלי.
 
-1. בחר **+ Create** מתפריט הניווט.
+1. בחר **+ צור** מתפריט הניווט.
 
     ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.he.png)
 
-1. בחר **Chat flow** מתפריט הניווט.
+1. בחר **זרם שיחה** מתפריט הניווט.
 
     ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.he.png)
 
-1. הזן **Folder name** לשימוש.
+1. הזן **שם התיקייה** לשימוש.
 
     ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.he.png)
 
-2. בחר **Create**.
+2. בחר **צור**.
 
-#### הגדרת Prompt flow לשיחה עם מודל Phi-3 המותאם שלך
+#### הגדר את Prompt flow לשיחה עם מודל Phi-3 המותאם שלך
 
-עליך לשלב את מודל Phi-3 המותאם לתוך Prompt flow. עם זאת, ה-Prompt flow הקיים אינו מותאם למטרה זו. לכן, יש לעצב מחדש את ה-Prompt flow כדי לאפשר את השילוב של המודל המותאם.
+עליך לשלב את מודל Phi-3 המותאם ל-Prompt flow. עם זאת, ה-Prompt flow הקיים אינו מיועד למטרה זו. לכן, עליך לעצב מחדש את ה-Prompt flow כדי לאפשר את השילוב של המודל המותאם.
 
-1. ב-Prompt flow, בצע את המשימות הבאות כדי לבנות מחדש את הזרימה הקיימת:
+1. ב-Prompt flow, בצע את המשימות הבאות כדי לבנות מחדש את הזרם הקיים:
 
-    - בחר **Raw file mode**.
+    - בחר **מצב קובץ גולמי**.
     - מחק את כל הקוד הקיים בקובץ *flow.dag.yml*.
     - הוסף את הקוד הבא לקובץ *flow.dag.yml*.
 
@@ -627,7 +713,7 @@ CO_OP_TRANSLATOR_METADATA:
             input_data: ${inputs.input_data}
         ```
 
-    - בחר **Save**.
+    - בחר **שמירה**.
 
     ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.he.png)
 
@@ -639,7 +725,7 @@ CO_OP_TRANSLATOR_METADATA:
     from promptflow import tool
     from promptflow.connections import CustomConnection
 
-    # Logging setup
+    # הגדרת רישום
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -652,7 +738,7 @@ CO_OP_TRANSLATOR_METADATA:
         Send a request to the Phi-3 model endpoint with the given input data using Custom Connection.
         """
 
-        # "connection" is the name of the Custom Connection, "endpoint", "key" are the keys in the Custom Connection
+        # "connection" הוא שם החיבור המותאם, "endpoint", "key" הם המפתחות בחיבור המותאם
         endpoint_url = connection.endpoint
         api_key = connection.key
 
@@ -675,7 +761,7 @@ CO_OP_TRANSLATOR_METADATA:
             response = requests.post(endpoint_url, json=data, headers=headers)
             response.raise_for_status()
             
-            # Log the full JSON response
+            # רישום תגובת JSON מלאה
             logger.debug(f"Full JSON response: {response.json()}")
 
             result = response.json()["output"]
@@ -697,50 +783,54 @@ CO_OP_TRANSLATOR_METADATA:
     ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.he.png)
 
 > [!NOTE]
-> למידע מפורט יותר על שימוש ב-Prompt flow ב-Azure AI Foundry, ניתן לעיין ב-[Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> לקבלת מידע מפורט יותר על השימוש ב-Prompt flow ב-Azure AI Foundry, ניתן לעיין ב-[Prompt flow ב-Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. בחר **Chat input**, **Chat output** כדי לאפשר שיחה עם המודל שלך.
+1. בחר **קלט שיחה**, **פלט שיחה** כדי לאפשר שיחה עם המודל שלך.
 
     ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.he.png)
 
-1. כעת אתה מוכן לשוחח עם מודל Phi-3 המותאם שלך. בתרגיל הבא תלמד כיצד להפעיל את ה-Prompt flow ולהשתמש בו לשיחה עם מודל Phi-3 המותאם שלך.
+1. כעת אתה מוכן לנהל שיחה עם מודל Phi-3 המותאם שלך. בתרגיל הבא תלמד כיצד להפעיל את ה-Prompt flow ולהשתמש בו לשיחה עם מודל Phi-3 המותאם שלך.
 
 > [!NOTE]
 >
-> הזרימה המחודשת אמורה להיראות כמו בתמונה למטה:
+> הזרם המחודש אמור להיראות כמו התמונה למטה:
 >
 > ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.he.png)
 >
 
 ### שיחה עם מודל Phi-3 המותאם שלך
 
-כעת, לאחר שהכנת ושילבת את מודל Phi-3 המותאם שלך עם Prompt flow, אתה מוכן להתחיל באינטראקציה איתו. תרגיל זה ינחה אותך בתהליך ההגדרה וההפעלה של שיחה עם המודל באמצעות Prompt flow. על ידי ביצוע השלבים, תוכל לנצל במלואן את היכולות של מודל Phi-3 המותאם שלך למשימות ושיחות שונות.
+כעת לאחר שעברת התאמה אישית ושילבת את מודל Phi-3 המותאם שלך עם Prompt flow, אתה מוכן להתחיל באינטראקציה איתו. תרגיל זה ינחה אותך בתהליך הקמת והפעלת שיחה עם המודל שלך באמצעות Prompt flow. על ידי ביצוע שלבים אלה תוכל לנצל את תכונות מודל Phi-3 המותאם שלך במלואן למשימות ושיחות שונות.
 
 - שוחח עם מודל Phi-3 המותאם שלך באמצעות Prompt flow.
 
-#### הפעלת Prompt flow
+#### הפעל את Prompt flow
 
-1. בחר **Start compute sessions** כדי להפעיל את ה-Prompt flow.
+1. בחר **הפעל מושבי חישוב** כדי להפעיל את Prompt flow.
 
     ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.he.png)
 
-1. בחר **Validate and parse input** כדי לעדכן את הפרמטרים.
+1. בחר **אשר ופרש קלט** כדי לחדש פרמטרים.
 
     ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.he.png)
 
-1. בחר את **Value** של **connection** לחיבור המותאם שיצרת. לדוגמה, *connection*.
+1. בחר את **ערך** ה-**חיבור** לחיבור המותאם אישית שיצרת. לדוגמה, *connection*.
 
     ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.he.png)
 
 #### שיחה עם המודל המותאם שלך
 
-1. בחר **Chat**.
+1. בחר **שיחה**.
 
     ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.he.png)
 
-1. הנה דוגמה לתוצאות: כעת תוכל לשוחח עם מודל Phi-3 המותאם שלך. מומלץ לשאול שאלות המבוססות על הנתונים ששימשו לאימון המודל.
+1. הנה דוגמה לתוצאות: כעת אתה יכול לשוחח עם מודל Phi-3 המותאם שלך. מומלץ לשאול שאלות בהתבסס על הנתונים שבהם השתמשת להתאמה אישית.
 
     ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.he.png)
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפת המקור כמקור הסמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**הצהרת אחריות**:
+מסמך זה תורגם בעזרת שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל טעויות או אי-דיוקים. המסמך המקורי בשפה המקורית נחשב כמקור הסמכותי. למידע קריטי מומלץ להיעזר בתרגום מקצועי לבני אדם. אנו לא אחראים על כל אי הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

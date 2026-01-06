@@ -1,20 +1,20 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-07-17T00:55:08+00:00",
+  "original_hash": "0df910a227098303cc392b6ad204c271",
+  "translation_date": "2026-01-06T04:00:47+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "en"
 }
 -->
 # Fine-tune and Integrate custom Phi-3 models with Prompt flow in Azure AI Foundry
 
-This end-to-end (E2E) sample is based on the guide "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" from the Microsoft Tech Community. It walks you through the process of fine-tuning, deploying, and integrating custom Phi-3 models with Prompt flow in Azure AI Foundry.  
-Unlike the E2E sample, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", which involved running code locally, this tutorial focuses entirely on fine-tuning and integrating your model within Azure AI / ML Studio.
+This end-to-end (E2E) sample is based on the guide "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" from the Microsoft Tech Community. It introduces the processes of fine-tuning, deploying, and integrating custom Phi-3 models with Prompt flow in Azure AI Foundry.
+Unlike the E2E sample, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", which involved running code locally, this tutorial focuses entirely on fine-tuning and integrating your model within the Azure AI / ML Studio.
 
 ## Overview
 
-In this E2E sample, you will learn how to fine-tune the Phi-3 model and integrate it with Prompt flow in Azure AI Foundry. Using Azure AI / ML Studio, you will set up a workflow for deploying and using custom AI models. This E2E sample is divided into three scenarios:
+In this E2E sample, you will learn how to fine-tune the Phi-3 model and integrate it with Prompt flow in Azure AI Foundry. By leveraging Azure AI / ML Studio, you will establish a workflow for deploying and utilizing custom AI models. This E2E sample is divided into three scenarios:
 
 **Scenario 1: Set up Azure resources and Prepare for fine-tuning**
 
@@ -57,11 +57,11 @@ Here is an overview of this E2E sample.
 
     ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.en.png)
 
-4. Complete the following:
+4. Perform the following tasks:
 
     - Select your Azure **Subscription**.
     - Select the **Resource group** to use (create a new one if needed).
-    - Enter a **Workspace Name**. It must be unique.
+    - Enter **Workspace Name**. It must be a unique value.
     - Select the **Region** you'd like to use.
     - Select the **Storage account** to use (create a new one if needed).
     - Select the **Key vault** to use (create a new one if needed).
@@ -76,7 +76,7 @@ Here is an overview of this E2E sample.
 
 ### Request GPU quotas in Azure Subscription
 
-In this tutorial, you will fine-tune and deploy a Phi-3 model using GPUs. For fine-tuning, you will use the *Standard_NC24ads_A100_v4* GPU, which requires a quota request. For deployment, you will use the *Standard_NC6s_v3* GPU, which also requires a quota request.
+In this tutorial, you will learn how to fine-tune and deploy a Phi-3 model, using GPUs. For fine-tuning, you will use the *Standard_NC24ads_A100_v4* GPU, which requires a quota request. For deployment, you will use the *Standard_NC6s_v3* GPU, which also requires a quota request.
 
 > [!NOTE]
 >
@@ -85,30 +85,30 @@ In this tutorial, you will fine-tune and deploy a Phi-3 model using GPUs. For fi
 
 1. Visit [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. To request *Standard NCADSA100v4 Family* quota, do the following:
+1. Perform the following tasks to request *Standard NCADSA100v4 Family* quota:
 
     - Select **Quota** from the left side tab.
     - Select the **Virtual machine family** to use. For example, select **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, which includes the *Standard_NC24ads_A100_v4* GPU.
-    - Select **Request quota** from the navigation menu.
+    - Select the **Request quota** from the navigation menu.
 
         ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.en.png)
 
-    - On the Request quota page, enter the **New cores limit** you'd like to request. For example, 24.
-    - On the Request quota page, select **Submit** to request the GPU quota.
+    - Inside the Request quota page, enter the **New cores limit** you'd like to use. For example, 24.
+    - Inside the Request quota page, select **Submit** to request the GPU quota.
 
-1. To request *Standard NCSv3 Family* quota, do the following:
+1. Perform the following tasks to request *Standard NCSv3 Family* quota:
 
     - Select **Quota** from the left side tab.
     - Select the **Virtual machine family** to use. For example, select **Standard NCSv3 Family Cluster Dedicated vCPUs**, which includes the *Standard_NC6s_v3* GPU.
-    - Select **Request quota** from the navigation menu.
-    - On the Request quota page, enter the **New cores limit** you'd like to request. For example, 24.
-    - On the Request quota page, select **Submit** to request the GPU quota.
+    - Select the **Request quota** from the navigation menu.
+    - Inside the Request quota page, enter the **New cores limit** you'd like to use. For example, 24.
+    - Inside the Request quota page, select **Submit** to request the GPU quota.
 
 ### Add role assignment
 
-To fine-tune and deploy your models, you first need to create a User Assigned Managed Identity (UAI) and assign it the necessary permissions. This UAI will be used for authentication during deployment.
+To fine-tune and deploy your models, you must first create a User Assigned Managed Identity (UAI) and assign it the appropriate permissions. This UAI will be used for authentication during deployment
 
-#### Create User Assigned Managed Identity (UAI)
+#### Create User Assigned Managed Identity(UAI)
 
 1. Type *managed identities* in the **search bar** at the top of the portal page and select **Managed Identities** from the options that appear.
 
@@ -118,12 +118,12 @@ To fine-tune and deploy your models, you first need to create a User Assigned Ma
 
     ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.en.png)
 
-1. Complete the following:
+1. Perform the following tasks:
 
     - Select your Azure **Subscription**.
     - Select the **Resource group** to use (create a new one if needed).
     - Select the **Region** you'd like to use.
-    - Enter a **Name**. It must be unique.
+    - Enter the **Name**. It must be a unique value.
 
     ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.en.png)
 
@@ -133,17 +133,17 @@ To fine-tune and deploy your models, you first need to create a User Assigned Ma
 
 #### Add Contributor role assignment to Managed Identity
 
-1. Navigate to the Managed Identity resource you created.
+1. Navigate to the Managed Identity resource that you created.
 
 1. Select **Azure role assignments** from the left side tab.
 
-1. Select **+ Add role assignment** from the navigation menu.
+1. Select **+Add role assignment** from the navigation menu.
 
-1. On the Add role assignment page, complete the following:
-    - Set the **Scope** to **Resource group**.
+1. Inside Add role assignment page, Perform the following tasks:
+    - Select the **Scope** to **Resource group**.
     - Select your Azure **Subscription**.
     - Select the **Resource group** to use.
-    - Select the **Role** as **Contributor**.
+    - Select the **Role** to **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.en.png)
 
@@ -155,27 +155,27 @@ To fine-tune and deploy your models, you first need to create a User Assigned Ma
 
     ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.en.png)
 
-1. Select the storage account associated with the Azure Machine Learning workspace you created. For example, *finetunephistorage*.
+1. Select the storage account that associated with the Azure Machine Learning workspace that you created. For example, *finetunephistorage*.
 
-1. To navigate to the Add role assignment page, do the following:
+1. Perform the following tasks to navigate to Add role assignment page:
 
-    - Go to the Azure Storage account you created.
+    - Navigate to the Azure Storage account that you created.
     - Select **Access Control (IAM)** from the left side tab.
     - Select **+ Add** from the navigation menu.
     - Select **Add role assignment** from the navigation menu.
 
     ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.en.png)
 
-1. On the Add role assignment page, complete the following:
+1. Inside Add role assignment page, Perform the following tasks:
 
-    - In the Role search bar, type *Storage Blob Data Reader* and select **Storage Blob Data Reader** from the options.
-    - Select **Next**.
-    - On the Members page, set **Assign access to** to **Managed identity**.
-    - Select **+ Select members**.
-    - On the Select managed identities page, select your Azure **Subscription**.
-    - Select the **Managed identity** option.
-    - Select the Managed Identity you created. For example, *finetunephi-managedidentity*.
-    - Select **Select**.
+    - Inside the Role page, type *Storage Blob Data Reader* in the **search bar** and select **Storage Blob Data Reader** from the options that appear.
+    - Inside the Role page, select **Next**.
+    - Inside the Members page, select **Assign access to** **Managed identity**.
+    - Inside the Members page, select **+ Select members**.
+    - Inside Select managed identities page, select your Azure **Subscription**.
+    - Inside Select managed identities page, select the **Managed identity** to **Manage Identity**.
+    - Inside Select managed identities page, select the Manage Identity that you created. For example, *finetunephi-managedidentity*.
+    - Inside Select managed identities page, select **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.en.png)
 
@@ -187,71 +187,94 @@ To fine-tune and deploy your models, you first need to create a User Assigned Ma
 
     ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.en.png)
 
-1. Select the container registry associated with the Azure Machine Learning workspace. For example, *finetunephicontainerregistry*.
+1. Select the container registry that associated with the Azure Machine Learning workspace. For example, *finetunephicontainerregistry*
 
-1. To navigate to the Add role assignment page, do the following:
+1. Perform the following tasks to navigate to Add role assignment page:
 
     - Select **Access Control (IAM)** from the left side tab.
     - Select **+ Add** from the navigation menu.
     - Select **Add role assignment** from the navigation menu.
 
-1. On the Add role assignment page, complete the following:
+1. Inside Add role assignment page, Perform the following tasks:
 
-    - In the Role search bar, type *AcrPull* and select **AcrPull** from the options.
-    - Select **Next**.
-    - On the Members page, set **Assign access to** to **Managed identity**.
-    - Select **+ Select members**.
-    - On the Select managed identities page, select your Azure **Subscription**.
-    - Select the **Managed identity** option.
-    - Select the Managed Identity you created. For example, *finetunephi-managedidentity*.
-    - Select **Select**.
+    - Inside the Role page, Type *AcrPull* in the **search bar** and select **AcrPull** from the options that appear.
+    - Inside the Role page, select **Next**.
+    - Inside the Members page, select **Assign access to** **Managed identity**.
+    - Inside the Members page, select **+ Select members**.
+    - Inside Select managed identities page, select your Azure **Subscription**.
+    - Inside Select managed identities page, select the **Managed identity** to **Manage Identity**.
+    - Inside Select managed identities page, select the Manage Identity that you created. For example, *finetunephi-managedidentity*.
+    - Inside Select managed identities page, select **Select**.
     - Select **Review + assign**.
 
 ### Set up project
 
 To download the datasets needed for fine-tuning, you will set up a local environment.
 
-In this exercise, you will:
+In this exercise, you will
 
-- Create a folder to work in.
+- Create a folder to work inside it.
 - Create a virtual environment.
 - Install the required packages.
 - Create a *download_dataset.py* file to download the dataset.
 
-#### Create a folder to work in
+#### Create a folder to work inside it
 
-1. Open a terminal window and run the following command to create a folder named *finetune-phi* in the default path.
+1. Open a terminal window and type the following command to create a folder named *finetune-phi* in the default path.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. Run the following command in your terminal to navigate to the *finetune-phi* folder you created.
+2. Type the following command inside your terminal to navigate to the *finetune-phi* folder you created.
+
+    ```console
+    cd finetune-phi
+    ```
+
 #### Create a virtual environment
 
-1. Run the following command in your terminal to create a virtual environment named *.venv*.
+1. Type the following command inside your terminal to create a virtual environment named *.venv*.
 
-2. Run the following command in your terminal to activate the virtual environment.
+    ```console
+    python -m venv .venv
+    ```
+
+2. Type the following command inside your terminal to activate the virtual environment.
+
+    ```console
+    .venv\Scripts\activate.bat
+    ```
 
 > [!NOTE]
-> If successful, you should see *(.venv)* before the command prompt.
+> If it worked, you should see *(.venv)* before the command prompt.
 
 #### Install the required packages
 
-1. Run the following commands in your terminal to install the required packages.
+1. Type the following commands inside your terminal to install the required packages.
 
-#### Create `download_dataset.py`
+    ```console
+    pip install datasets==2.19.1
+    ```
+
+#### Create `donload_dataset.py`
 
 > [!NOTE]
 > Complete folder structure:
 >
-> 1. Open **Visual Studio Code**.
+> ```text
+> └── YourUserName
+> .    └── finetune-phi
+> .        └── download_dataset.py
+> ```
+
+1. Open **Visual Studio Code**.
 
 1. Select **File** from the menu bar.
 
 1. Select **Open Folder**.
 
-1. Choose the *finetune-phi* folder you created, located at *C:\Users\yourUserName\finetune-phi*.
+1. Select the *finetune-phi* folder that you created, which is located at *C:\Users\yourUserName\finetune-phi*.
 
     ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.en.png)
 
@@ -261,7 +284,7 @@ In this exercise, you will:
 
 ### Prepare dataset for fine-tuning
 
-In this exercise, you will run the *download_dataset.py* file to download the *ultrachat_200k* datasets to your local environment. You will then use these datasets to fine-tune the Phi-3 model in Azure Machine Learning.
+In this exercise, you will run the *download_dataset.py* file to download the *ultrachat_200k* datasets to your local environment. You will then use this datasets to fine-tune the Phi-3 model in Azure Machine Learning.
 
 In this exercise, you will:
 
@@ -272,9 +295,73 @@ In this exercise, you will:
 
 1. Open the *download_dataset.py* file in Visual Studio Code.
 
-1. Add the following code into the *download_dataset.py* file.
+1. Add the following code into *download_dataset.py* file.
 
-1. Run the following command in your terminal to execute the script and download the dataset to your local environment.
+    ```python
+    import json
+    import os
+    from datasets import load_dataset
+
+    def load_and_split_dataset(dataset_name, config_name, split_ratio):
+        """
+        Load and split a dataset.
+        """
+        # Load the dataset with the specified name, configuration, and split ratio
+        dataset = load_dataset(dataset_name, config_name, split=split_ratio)
+        print(f"Original dataset size: {len(dataset)}")
+        
+        # Split the dataset into train and test sets (80% train, 20% test)
+        split_dataset = dataset.train_test_split(test_size=0.2)
+        print(f"Train dataset size: {len(split_dataset['train'])}")
+        print(f"Test dataset size: {len(split_dataset['test'])}")
+        
+        return split_dataset
+
+    def save_dataset_to_jsonl(dataset, filepath):
+        """
+        Save a dataset to a JSONL file.
+        """
+        # Create the directory if it does not exist
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        
+        # Open the file in write mode
+        with open(filepath, 'w', encoding='utf-8') as f:
+            # Iterate over each record in the dataset
+            for record in dataset:
+                # Dump the record as a JSON object and write it to the file
+                json.dump(record, f)
+                # Write a newline character to separate records
+                f.write('\n')
+        
+        print(f"Dataset saved to {filepath}")
+
+    def main():
+        """
+        Main function to load, split, and save the dataset.
+        """
+        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
+        
+        # Extract the train and test datasets from the split
+        train_dataset = dataset['train']
+        test_dataset = dataset['test']
+
+        # Save the train dataset to a JSONL file
+        save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
+        
+        # Save the test dataset to a separate JSONL file
+        save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
+
+    if __name__ == "__main__":
+        main()
+
+    ```
+
+1. Type the following command inside your terminal to run the script and download the dataset to your local environment.
+
+    ```console
+    python download_dataset.py
+    ```
 
 1. Verify that the datasets were saved successfully to your local *finetune-phi/data* directory.
 
@@ -292,10 +379,10 @@ In this exercise, you will fine-tune the Phi-3 model in Azure Machine Learning S
 
 In this exercise, you will:
 
-- Create a compute cluster for fine-tuning.
+- Create computer cluster for fine-tuning.
 - Fine-tune the Phi-3 model in Azure Machine Learning Studio.
 
-#### Create compute cluster for fine-tuning
+#### Create computer cluster for fine-tuning
 
 1. Visit [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
@@ -307,24 +394,24 @@ In this exercise, you will:
 
     ![Select compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.en.png)
 
-1. Complete the following:
+1. Perform the following tasks:
 
-    - Choose the **Region** you want to use.
-    - Set the **Virtual machine tier** to **Dedicated**.
-    - Set the **Virtual machine type** to **GPU**.
-    - Set the **Virtual machine size** filter to **Select from all options**.
-    - Choose the **Virtual machine size** as **Standard_NC24ads_A100_v4**.
+    - Select the **Region** you'd like to use.
+    - Select the **Virtual machine tier** to **Dedicated**.
+    - Select the **Virtual machine type** to **GPU**.
+    - Select the **Virtual machine size** filter to **Select from all options**.
+    - Select the **Virtual machine size** to **Standard_NC24ads_A100_v4**.
 
     ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.en.png)
 
 1. Select **Next**.
 
-1. Complete the following:
+1. Perform the following tasks:
 
-    - Enter a unique **Compute name**.
-    - Set the **Minimum number of nodes** to **0**.
-    - Set the **Maximum number of nodes** to **1**.
-    - Set the **Idle seconds before scale down** to **120**.
+    - Enter **Compute name**. It must be a unique value.
+    - Select the **Minimum number of nodes** to **0**.
+    - Select the **Maximum number of nodes** to **1**.
+    - Select the **Idle seconds before scale down** to **120**.
 
     ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.en.png)
 
@@ -334,14 +421,14 @@ In this exercise, you will:
 
 1. Visit [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Select the Azure Machine Learning workspace you created.
+1. Select the Azure Machine Learning workspace that you created.
 
     ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.en.png)
 
-1. Complete the following:
+1. Perform the following tasks:
 
     - Select **Model catalog** from the left side tab.
-    - Type *phi-3-mini-4k* in the **search bar** and select **Phi-3-mini-4k-instruct** from the options.
+    - Type *phi-3-mini-4k* in the **search bar** and select **Phi-3-mini-4k-instruct** from the options that appear.
 
     ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.en.png)
 
@@ -349,28 +436,28 @@ In this exercise, you will:
 
     ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.en.png)
 
-1. Complete the following:
+1. Perform the following tasks:
 
-    - Set **Select task type** to **Chat completion**.
+    - Select **Select task type** to **Chat completion**.
     - Select **+ Select data** to upload **Training data**.
-    - Set the Validation data upload type to **Provide different validation data**.
+    - Select the Validation data upload type to **Provide different validation data**.
     - Select **+ Select data** to upload **Validation data**.
 
     ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.en.png)
 
-    > [!TIP]
-    >
-    > You can select **Advanced settings** to customize configurations such as **learning_rate** and **lr_scheduler_type** to optimize the fine-tuning process according to your specific needs.
+> [!TIP]
+>
+> You can select **Advanced settings** to customize configurations such as **learning_rate** and **lr_scheduler_type** to optimize the fine-tuning process according to your specific needs.
 
 1. Select **Finish**.
 
-1. In this exercise, you have successfully fine-tuned the Phi-3 model using Azure Machine Learning. Please note that fine-tuning can take a significant amount of time. After starting the fine-tuning job, wait for it to complete. You can monitor the job status by going to the Jobs tab on the left side of your Azure Machine Learning Workspace. In the next part, you will deploy the fine-tuned model and integrate it with Prompt flow.
+1. In this exercise, you successfully fine-tuned the Phi-3 model using Azure Machine Learning. Please note that the fine-tuning process can take a considerable amount of time. After running the fine-tuning job, you need to wait for it to complete. You can monitor the status of the fine-tuning job by navigating to the Jobs tab on the left side of your Azure Machine Learning Workspace. In the next series, you will deploy the fine-tuned model and integrate it with Prompt flow.
 
     ![See finetuning job.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.en.png)
 
 ### Deploy the fine-tuned Phi-3 model
 
-To integrate the fine-tuned Phi-3 model with Prompt flow, you need to deploy the model so it can be accessed for real-time inference. This involves registering the model, creating an online endpoint, and deploying the model.
+To integrate the fine-tuned Phi-3 model with Prompt flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
 
 In this exercise, you will:
 
@@ -382,27 +469,25 @@ In this exercise, you will:
 
 1. Visit [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Select the Azure Machine Learning workspace you created.
+1. Select the Azure Machine Learning workspace that you created.
 
     ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.en.png)
 
 1. Select **Models** from the left side tab.
-
 1. Select **+ Register**.
-
 1. Select **From a job output**.
 
     ![Register model.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.en.png)
 
-1. Select the job you created.
+1. Select the job that you created.
 
     ![Select job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.en.png)
 
 1. Select **Next**.
 
-1. Set **Model type** to **MLflow**.
+1. Select **Model type** to **MLflow**.
 
-1. Ensure **Job output** is selected; it should be selected automatically.
+1. Ensure that **Job output** is selected; it should be automatically selected.
 
     ![Select output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.en.png)
 
@@ -412,13 +497,13 @@ In this exercise, you will:
 
     ![Select register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.en.png)
 
-4. You can view your registered model by going to the **Models** menu on the left side tab.
+4. You can view your registered model by navigating to the **Models** menu from the left side tab.
 
     ![Registered model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.en.png)
 
 #### Deploy the fine-tuned model
 
-1. Go to the Azure Machine Learning workspace you created.
+1. Navigate to the Azure Machine Learning workspace that you created.
 
 1. Select **Endpoints** from the left side tab.
 
@@ -428,41 +513,42 @@ In this exercise, you will:
 
 1. Select **Create**.
 
-1. Select the registered model you created.
+1. select the registered model that you created.
 
     ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.en.png)
 
 1. Select **Select**.
 
-1. Complete the following:
+1. Perform the following tasks:
 
-    - Set **Virtual machine** to *Standard_NC6s_v3*.
-    - Choose the **Instance count** you want to use, for example, *1*.
-    - Set **Endpoint** to **New** to create a new endpoint.
-    - Enter a unique **Endpoint name**.
-    - Enter a unique **Deployment name**.
+    - Select **Virtual machine** to *Standard_NC6s_v3*.
+    - Select the **Instance count** you'd like to use. For example, *1*.
+    - Select the **Endpoint** to **New** to create an endpoint.
+    - Enter **Endpoint name**. It must be a unique value.
+    - Enter **Deployment name**. It must be a unique value.
 
     ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.en.png)
 
 1. Select **Deploy**.
 
 > [!WARNING]
-> To avoid extra charges, be sure to delete the endpoint you created in the Azure Machine Learning workspace when you no longer need it.
+> To avoid additional charges to your account, make sure to delete the created endpoint in the Azure Machine Learning workspace.
+>
 
 #### Check deployment status in Azure Machine Learning Workspace
 
-1. Go to the Azure Machine Learning workspace you created.
+1. Navigate to Azure Machine Learning workspace that you created.
 
 1. Select **Endpoints** from the left side tab.
 
-1. Select the endpoint you created.
+1. Select the endpoint that you created.
 
     ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.en.png)
 
-1. On this page, you can manage the endpoints during deployment.
+1. On this page, you can manage the endpoints during the deployment process.
 
 > [!NOTE]
-> Once deployment is complete, make sure **Live traffic** is set to **100%**. If not, select **Update traffic** to adjust the settings. You cannot test the model if traffic is set to 0%.
+> Once the deployment is complete, ensure that **Live traffic** is set to **100%**. If it is not, select **Update traffic** to adjust the traffic settings. Note that you cannot test the model if the traffic is set to 0%.
 >
 > ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.en.png)
 >
@@ -475,33 +561,34 @@ After successfully deploying your fine-tuned model, you can now integrate it wit
 
 In this exercise, you will:
 
-- Create an Azure AI Foundry Hub.
-- Create an Azure AI Foundry Project.
-- Create a Prompt flow.
+- Create Azure AI Foundry Hub.
+- Create Azure AI Foundry Project.
+- Create Prompt flow.
 - Add a custom connection for the fine-tuned Phi-3 model.
-- Set up Prompt flow to chat with your custom Phi-3 model.
-> [!NOTE]  
-> You can also integrate with Promptflow using Azure ML Studio. The same integration process applies to Azure ML Studio.
+- Set up Prompt flow to chat with your custom Phi-3 model
+
+> [!NOTE]
+> You can also integrate with Promptflow using Azure ML Studio. The same integration process can be applied to Azure ML Studio.
+
 #### Create Azure AI Foundry Hub
 
-You need to create a Hub before creating the Project. A Hub functions like a Resource Group, allowing you to organize and manage multiple Projects within Azure AI Foundry.
+You need to create a Hub before creating the Project. A Hub acts like a Resource Group, allowing you to organize and manage multiple Projects within Azure AI Foundry.
 
 1. Visit [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Select **All hubs** from the left side tab.
 
 1. Select **+ New hub** from the navigation menu.
-
     ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.en.png)
 
-1. Complete the following:
+1. Perform the following tasks:
 
-    - Enter a **Hub name**. It must be unique.
+    - Enter **Hub name**. It must be a unique value.
     - Select your Azure **Subscription**.
-    - Choose the **Resource group** to use (create a new one if needed).
-    - Select the **Location** you want to use.
-    - Choose the **Connect Azure AI Services** to use (create a new one if needed).
-    - For **Connect Azure AI Search**, select **Skip connecting**.
+    - Select the **Resource group** to use (create a new one if needed).
+    - Select the **Location** you'd like to use.
+    - Select the **Connect Azure AI Services** to use (create a new one if needed).
+    - Select **Connect Azure AI Search** to **Skip connecting**.
 
     ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.en.png)
 
@@ -509,13 +596,13 @@ You need to create a Hub before creating the Project. A Hub functions like a Res
 
 #### Create Azure AI Foundry Project
 
-1. In the Hub you created, select **All projects** from the left side tab.
+1. In the Hub that you created, select **All projects** from the left side tab.
 
 1. Select **+ New project** from the navigation menu.
 
     ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.en.png)
 
-1. Enter a **Project name**. It must be unique.
+1. Enter **Project name**. It must be a unique value.
 
     ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.en.png)
 
@@ -523,19 +610,19 @@ You need to create a Hub before creating the Project. A Hub functions like a Res
 
 #### Add a custom connection for the fine-tuned Phi-3 model
 
-To connect your custom Phi-3 model with Prompt flow, you need to save the model’s endpoint and key in a custom connection. This setup ensures Prompt flow can access your custom Phi-3 model.
+To integrate your custom Phi-3 model with Prompt flow, you need to save the model's endpoint and key in a custom connection. This setup ensures access to your custom Phi-3 model in Prompt flow.
 
-#### Set API key and endpoint URI of the fine-tuned Phi-3 model
+#### Set api key and endpoint uri of the fine-tuned Phi-3 model
 
 1. Visit [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Go to the Azure Machine Learning workspace you created.
+1. Navigate to the Azure Machine learning workspace that you created.
 
 1. Select **Endpoints** from the left side tab.
 
     ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.en.png)
 
-1. Select the endpoint you created.
+1. Select endpoint that you created.
 
     ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.en.png)
 
@@ -549,9 +636,9 @@ To connect your custom Phi-3 model with Prompt flow, you need to save the model�
 
 1. Visit [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Navigate to the Azure AI Foundry project you created.
+1. Navigate to the Azure AI Foundry project that you created.
 
-1. In your Project, select **Settings** from the left side tab.
+1. In the Project that you created, select **Settings** from the left side tab.
 
 1. Select **+ New connection**.
 
@@ -561,13 +648,13 @@ To connect your custom Phi-3 model with Prompt flow, you need to save the model�
 
     ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.en.png)
 
-1. Complete the following:
+1. Perform the following tasks:
 
     - Select **+ Add key value pairs**.
     - For the key name, enter **endpoint** and paste the endpoint you copied from Azure ML Studio into the value field.
     - Select **+ Add key value pairs** again.
     - For the key name, enter **key** and paste the key you copied from Azure ML Studio into the value field.
-    - After adding the keys, select **is secret** to keep the key hidden.
+    - After adding the keys, select **is secret** to prevent the key from being exposed.
 
     ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.en.png)
 
@@ -575,9 +662,9 @@ To connect your custom Phi-3 model with Prompt flow, you need to save the model�
 
 #### Create Prompt flow
 
-You have added a custom connection in Azure AI Foundry. Now, let’s create a Prompt flow using the following steps. Then, you will link this Prompt flow to the custom connection so you can use the fine-tuned model within the Prompt flow.
+You have added a custom connection in Azure AI Foundry. Now, let's create a Prompt flow using the following steps. Then, you will connect this Prompt flow to the custom connection so that you can use the fine-tuned model within the Prompt flow.
 
-1. Navigate to the Azure AI Foundry project you created.
+1. Navigate to the Azure AI Foundry project that you created.
 
 1. Select **Prompt flow** from the left side tab.
 
@@ -589,7 +676,7 @@ You have added a custom connection in Azure AI Foundry. Now, let’s create a Pr
 
     ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.en.png)
 
-1. Enter a **Folder name** to use.
+1. Enter **Folder name** to use.
 
     ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.en.png)
 
@@ -597,13 +684,13 @@ You have added a custom connection in Azure AI Foundry. Now, let’s create a Pr
 
 #### Set up Prompt flow to chat with your custom Phi-3 model
 
-You need to integrate the fine-tuned Phi-3 model into a Prompt flow. However, the existing Prompt flow isn’t designed for this, so you must redesign it to enable integration with your custom model.
+You need to integrate the fine-tuned Phi-3 model into a Prompt flow. However, the existing Prompt flow provided is not designed for this purpose. Therefore, you must redesign the Prompt flow to enable the integration of the custom model.
 
-1. In the Prompt flow, rebuild the existing flow by doing the following:
+1. In the Prompt flow, perform the following tasks to rebuild the existing flow:
 
     - Select **Raw file mode**.
     - Delete all existing code in the *flow.dag.yml* file.
-    - Add the following code to the *flow.dag.yml* file.
+    - Add the following code to *flow.dag.yml* file.
 
         ```yml
         inputs:
@@ -630,7 +717,7 @@ You need to integrate the fine-tuned Phi-3 model into a Prompt flow. However, th
 
     ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.en.png)
 
-1. Add the following code to the *integrate_with_promptflow.py* file to use the custom Phi-3 model in Prompt flow.
+1. Add the following code to *integrate_with_promptflow.py* file to use the custom Phi-3 model in Prompt flow.
 
     ```python
     import logging
@@ -696,13 +783,13 @@ You need to integrate the fine-tuned Phi-3 model into a Prompt flow. However, th
     ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.en.png)
 
 > [!NOTE]
-> For more detailed information on using Prompt flow in Azure AI Foundry, see [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> For more detailed information on using Prompt flow in Azure AI Foundry, you can refer to [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Select **Chat input** and **Chat output** to enable chatting with your model.
+1. Select **Chat input**, **Chat output** to enable chat with your model.
 
     ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.en.png)
 
-1. Now you’re ready to chat with your custom Phi-3 model. In the next exercise, you’ll learn how to start Prompt flow and use it to chat with your fine-tuned Phi-3 model.
+1. Now you are ready to chat with your custom Phi-3 model. In the next exercise, you will learn how to start Prompt flow and use it to chat with your fine-tuned Phi-3 model.
 
 > [!NOTE]
 >
@@ -713,21 +800,21 @@ You need to integrate the fine-tuned Phi-3 model into a Prompt flow. However, th
 
 ### Chat with your custom Phi-3 model
 
-Now that you’ve fine-tuned and integrated your custom Phi-3 model with Prompt flow, you’re ready to start interacting with it. This exercise will guide you through setting up and initiating a chat with your model using Prompt flow. By following these steps, you’ll be able to fully leverage your fine-tuned Phi-3 model for various tasks and conversations.
+Now that you have fine-tuned and integrated your custom Phi-3 model with Prompt flow, you are ready to start interacting with it. This exercise will guide you through the process of setting up and initiating a chat with your model using Prompt flow. By following these steps, you will be able to fully utilize the capabilities of your fine-tuned Phi-3 model for various tasks and conversations.
 
 - Chat with your custom Phi-3 model using Prompt flow.
 
 #### Start Prompt flow
 
-1. Select **Start compute sessions** to launch Prompt flow.
+1. Select **Start compute sessions** to start Prompt flow.
 
     ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.en.png)
 
-1. Select **Validate and parse input** to refresh parameters.
+1. Select **Validate and parse input** to renew parameters.
 
     ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.en.png)
 
-1. Select the **Value** of the **connection** to the custom connection you created, for example, *connection*.
+1. Select the **Value** of the **connection** to the custom connection you created. For example, *connection*.
 
     ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.en.png)
 
@@ -737,9 +824,13 @@ Now that you’ve fine-tuned and integrated your custom Phi-3 model with Prompt 
 
     ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.en.png)
 
-1. Here’s an example of the results: You can now chat with your custom Phi-3 model. It’s recommended to ask questions based on the data used for fine-tuning.
+1. Here's an example of the results: Now you can chat with your custom Phi-3 model. It is recommended to ask questions based on the data used for fine-tuning.
 
     ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.en.png)
 
-**Disclaimer**:  
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

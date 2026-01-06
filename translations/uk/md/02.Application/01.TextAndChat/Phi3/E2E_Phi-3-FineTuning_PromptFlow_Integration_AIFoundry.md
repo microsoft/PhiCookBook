@@ -1,72 +1,72 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-07-17T02:11:00+00:00",
+  "original_hash": "0df910a227098303cc392b6ad204c271",
+  "translation_date": "2026-01-06T05:24:43+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "uk"
 }
 -->
 # Налаштування та інтеграція кастомних моделей Phi-3 з Prompt flow в Azure AI Foundry
 
-Цей покроковий (E2E) приклад базується на керівництві "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" з Microsoft Tech Community. Він демонструє процеси тонкого налаштування, розгортання та інтеграції кастомних моделей Phi-3 з Prompt flow в Azure AI Foundry.  
-На відміну від E2E прикладу "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", де код запускався локально, цей посібник повністю зосереджений на тонкому налаштуванні та інтеграції вашої моделі в Azure AI / ML Studio.
+Цей приклад end-to-end (E2E) базується на посібнику "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" із Microsoft Tech Community. Він представляє процеси тонкого налаштування, розгортання та інтеграції кастомних моделей Phi-3 з Prompt flow в Azure AI Foundry.
+На відміну від E2E прикладу "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", який передбачав запуск коду локально, цей посібник повністю зосереджений на тонкому налаштуванні та інтеграції вашої моделі в середовищі Azure AI / ML Studio.
 
 ## Огляд
 
-У цьому E2E прикладі ви навчитеся тонко налаштовувати модель Phi-3 та інтегрувати її з Prompt flow в Azure AI Foundry. Використовуючи Azure AI / ML Studio, ви створите робочий процес для розгортання та використання кастомних AI моделей. Цей E2E приклад поділено на три сценарії:
+У цьому прикладі E2E ви навчитеся тонко налаштовувати модель Phi-3 та інтегрувати її з Prompt flow в Azure AI Foundry. Використовуючи Azure AI / ML Studio, ви створите робочий процес для розгортання та використання кастомних AI-моделей. Цей приклад E2E поділений на три сценарії:
 
 **Сценарій 1: Налаштування ресурсів Azure та підготовка до тонкого налаштування**
 
 **Сценарій 2: Тонке налаштування моделі Phi-3 та розгортання в Azure Machine Learning Studio**
 
-**Сценарій 3: Інтеграція з Prompt flow та спілкування з вашою кастомною моделлю в Azure AI Foundry**
+**Сценарій 3: Інтеграція з Prompt flow та чат з вашою кастомною моделлю в Azure AI Foundry**
 
-Ось загальний огляд цього E2E прикладу.
+Ось огляд цього прикладу E2E.
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.uk.png)
 
 ### Зміст
 
 1. **[Сценарій 1: Налаштування ресурсів Azure та підготовка до тонкого налаштування](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Створення Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Запит квот на GPU в підписці Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Створення робочої області Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Запит квот на GPU у підписці Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Додавання призначення ролі](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Налаштування проєкту](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Підготовка датасету для тонкого налаштування](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Підготовка набору даних для тонкого налаштування](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. **[Сценарій 2: Тонке налаштування моделі Phi-3 та розгортання в Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Тонке налаштування моделі Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Розгортання тонко налаштованої моделі Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Сценарій 3: Інтеграція з Prompt flow та спілкування з вашою кастомною моделлю в Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Сценарій 3: Інтеграція з Prompt flow та чат з вашою кастомною моделлю в Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Інтеграція кастомної моделі Phi-3 з Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Спілкування з вашою кастомною моделлю Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 ## Сценарій 1: Налаштування ресурсів Azure та підготовка до тонкого налаштування
 
-### Створення Azure Machine Learning Workspace
+### Створення робочої області Azure Machine Learning
 
-1. Введіть *azure machine learning* у **рядок пошуку** у верхній частині порталу та оберіть **Azure Machine Learning** зі списку.
+1. Введіть у **рядку пошуку** вгорі порталу *azure machine learning* та виберіть **Azure Machine Learning** зі списку варіантів.
 
     ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.uk.png)
 
-2. Оберіть **+ Create** у навігаційному меню.
+2. Оберіть **+ Create** у меню навігації.
 
-3. Оберіть **New workspace** у навігаційному меню.
+3. Оберіть **New workspace** у меню навігації.
 
     ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.uk.png)
 
 4. Виконайте наступні дії:
 
-    - Оберіть вашу Azure **Subscription**.
-    - Оберіть **Resource group** для використання (створіть нову, якщо потрібно).
-    - Введіть **Workspace Name**. Ім’я має бути унікальним.
-    - Оберіть **Region**, яку хочете використовувати.
-    - Оберіть **Storage account** для використання (створіть новий, якщо потрібно).
-    - Оберіть **Key vault** для використання (створіть новий, якщо потрібно).
-    - Оберіть **Application insights** для використання (створіть новий, якщо потрібно).
-    - Оберіть **Container registry** для використання (створіть новий, якщо потрібно).
+    - Виберіть вашу підписку Azure (**Subscription**).
+    - Виберіть **Resource group**, яку хочете використати (створіть нову, якщо потрібно).
+    - Введіть **Workspace Name**. Воно повинно бути унікальним.
+    - Виберіть регіон (**Region**), який бажаєте використовувати.
+    - Виберіть обліковий запис сховища (**Storage account**) (створіть новий, якщо потрібно).
+    - Виберіть сховище ключів (**Key vault**) (створіть нове, якщо потрібно).
+    - Виберіть **Application insights** (створіть новий, якщо потрібно).
+    - Виберіть реєстр контейнерів (**Container registry**) (створіть новий, якщо потрібно).
 
     ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.uk.png)
 
@@ -74,43 +74,43 @@ CO_OP_TRANSLATOR_METADATA:
 
 6. Оберіть **Create**.
 
-### Запит квот на GPU в підписці Azure
+### Запит квот на GPU у підписці Azure
 
-У цьому посібнику ви навчитеся тонко налаштовувати та розгортати модель Phi-3, використовуючи GPU. Для тонкого налаштування буде використано GPU *Standard_NC24ads_A100_v4*, для якого потрібно подати запит на квоту. Для розгортання буде використано GPU *Standard_NC6s_v3*, для якого також потрібен запит квоти.
+У цьому посібнику ви навчитеся тонко налаштовувати та розгортати модель Phi-3, використовуючи GPU. Для тонкого налаштування використовується GPU *Standard_NC24ads_A100_v4*, що вимагає запиту квоти. Для розгортання використовується GPU *Standard_NC6s_v3*, що також вимагає запиту квоти.
 
 > [!NOTE]
 >
-> Квоти на GPU доступні лише для підписок типу Pay-As-You-Go (стандартний тип підписки); підписки з пільгами наразі не підтримуються.
+> Виділення GPU доступне лише для підписок типу Pay-As-You-Go; підписки з пільгами наразі не підтримуються.
 >
 
-1. Перейдіть на [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Відвідайте [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Виконайте наступні дії, щоб подати запит на квоту для *Standard NCADSA100v4 Family*:
+1. Виконайте дії, щоб запросити квоту для *Standard NCADSA100v4 Family*:
 
-    - Оберіть **Quota** у лівому меню.
-    - Оберіть **Virtual machine family** для використання. Наприклад, оберіть **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, що включає GPU *Standard_NC24ads_A100_v4*.
-    - Оберіть **Request quota** у навігаційному меню.
+    - Оберіть **Quota** у вкладці зліва.
+    - Оберіть сімейство віртуальних машин (*Virtual machine family*), наприклад **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, яке включає GPU *Standard_NC24ads_A100_v4*.
+    - Оберіть **Request quota** у меню навігації.
 
         ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.uk.png)
 
-    - На сторінці Request quota введіть бажаний **New cores limit**. Наприклад, 24.
-    - Натисніть **Submit**, щоб подати запит на квоту GPU.
+    - На сторінці Request quota введіть бажаний **New cores limit**, наприклад, 24.
+    - Натисніть **Submit** для запиту квоти.
 
-1. Виконайте наступні дії, щоб подати запит на квоту для *Standard NCSv3 Family*:
+1. Аналогічно, виконайте дії для запиту квоти *Standard NCSv3 Family*:
 
-    - Оберіть **Quota** у лівому меню.
-    - Оберіть **Virtual machine family** для використання. Наприклад, оберіть **Standard NCSv3 Family Cluster Dedicated vCPUs**, що включає GPU *Standard_NC6s_v3*.
-    - Оберіть **Request quota** у навігаційному меню.
-    - На сторінці Request quota введіть бажаний **New cores limit**. Наприклад, 24.
-    - Натисніть **Submit**, щоб подати запит на квоту GPU.
+    - Оберіть **Quota** зліва.
+    - Оберіть сімейство віртуальних машин, наприклад, **Standard NCSv3 Family Cluster Dedicated vCPUs**, яке містить GPU *Standard_NC6s_v3*.
+    - Оберіть **Request quota**.
+    - Введіть бажаний **New cores limit**, наприклад, 24.
+    - Натисніть **Submit** для запиту квоти.
 
 ### Додавання призначення ролі
 
-Для тонкого налаштування та розгортання моделей спочатку потрібно створити User Assigned Managed Identity (UAI) та надати їй відповідні дозволи. Ця UAI буде використовуватися для автентифікації під час розгортання.
+Щоб тонко налаштовувати і розгортати моделі, потрібно створити User Assigned Managed Identity (UAI) та призначити їй відповідні дозволи. Ця UAI буде використовуватися для аутентифікації під час розгортання.
 
 #### Створення User Assigned Managed Identity (UAI)
 
-1. Введіть *managed identities* у **рядок пошуку** у верхній частині порталу та оберіть **Managed Identities** зі списку.
+1. Введіть у **рядку пошуку** вгорі порталу *managed identities* і виберіть **Managed Identities** з варіантів.
 
     ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.uk.png)
 
@@ -118,12 +118,12 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.uk.png)
 
-1. Виконайте наступні дії:
+1. Виконайте наступні кроки:
 
-    - Оберіть вашу Azure **Subscription**.
+    - Оберіть вашу підписку Azure (**Subscription**).
     - Оберіть **Resource group** для використання (створіть нову, якщо потрібно).
-    - Оберіть **Region**, яку хочете використовувати.
-    - Введіть **Name**. Ім’я має бути унікальним.
+    - Оберіть регіон (**Region**).
+    - Введіть унікальне ім'я (**Name**).
 
     ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.uk.png)
 
@@ -131,121 +131,125 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Оберіть **+ Create**.
 
-#### Додавання ролі Contributor до Managed Identity
+#### Призначення ролі Contributor для Managed Identity
 
-1. Перейдіть до ресурсу Managed Identity, який ви створили.
+1. Перейдіть до ресурсу Managed Identity, який створили.
 
-1. Оберіть **Azure role assignments** у лівому меню.
+1. Оберіть **Azure role assignments** у вкладці зліва.
 
-1. Оберіть **+Add role assignment** у навігаційному меню.
+1. Оберіть **+Add role assignment** у меню навігації.
 
-1. На сторінці Add role assignment виконайте наступні дії:
-    - Оберіть **Scope** як **Resource group**.
-    - Оберіть вашу Azure **Subscription**.
-    - Оберіть **Resource group** для використання.
-    - Оберіть роль **Contributor**.
+1. На сторінці додавання призначення ролі виконайте наступне:
+    - Виберіть область (**Scope**) – **Resource group**.
+    - Виберіть підписку Azure.
+    - Оберіть ресурсну групу.
+    - Виберіть роль (**Role**) – **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.uk.png)
 
 2. Оберіть **Save**.
 
-#### Додавання ролі Storage Blob Data Reader до Managed Identity
+#### Призначення ролі Storage Blob Data Reader для Managed Identity
 
-1. Введіть *storage accounts* у **рядок пошуку** у верхній частині порталу та оберіть **Storage accounts** зі списку.
+1. Введіть у **рядку пошуку** вгорі порталу *storage accounts* і оберіть **Storage accounts** із варіантів.
 
     ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.uk.png)
 
-1. Оберіть обліковий запис зберігання, пов’язаний з Azure Machine Learning workspace, який ви створили. Наприклад, *finetunephistorage*.
+1. Оберіть обліковий запис зберігання, який пов’язаний із робочою областю Azure Machine Learning, наприклад *finetunephistorage*.
 
-1. Виконайте наступні дії, щоб перейти на сторінку додавання ролі:
+1. Виконайте дії для переходу на сторінку додавання призначення ролі:
 
-    - Перейдіть до створеного облікового запису Azure Storage.
-    - Оберіть **Access Control (IAM)** у лівому меню.
-    - Оберіть **+ Add** у навігаційному меню.
-    - Оберіть **Add role assignment** у навігаційному меню.
+    - Перейдіть до облікового запису Azure Storage, який створили.
+    - Оберіть **Access Control (IAM)** з лівого меню.
+    - Оберіть **+ Add** у меню навігації.
+    - Оберіть **Add role assignment** у меню навігації.
 
     ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.uk.png)
 
-1. На сторінці Add role assignment виконайте наступні дії:
+1. На сторінці додавання призначення ролі виконайте:
 
-    - У полі ролей введіть *Storage Blob Data Reader* у **рядок пошуку** та оберіть **Storage Blob Data Reader** зі списку.
-    - Оберіть **Next**.
-    - На сторінці Members оберіть **Assign access to** — **Managed identity**.
-    - Оберіть **+ Select members**.
-    - На сторінці вибору Managed identities оберіть вашу Azure **Subscription**.
-    - Оберіть **Managed identity** як **Manage Identity**.
-    - Оберіть створену Managed Identity. Наприклад, *finetunephi-managedidentity*.
-    - Оберіть **Select**.
+    - У рядку пошуку ролей введіть *Storage Blob Data Reader* і виберіть цю роль.
+    - Натисніть **Next**.
+    - У вікні вибору членів оберіть **Assign access to** – **Managed identity**.
+    - Натисніть **+ Select members**.
+    - Виберіть вашу підписку Azure.
+    - Оберіть Managed identity для управління (**Manage Identity**).
+    - Оберіть Managed Identity, яку створили, наприклад *finetunephi-managedidentity*.
+    - Натисніть **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.uk.png)
 
 1. Оберіть **Review + assign**.
 
-#### Додавання ролі AcrPull до Managed Identity
+#### Призначення ролі AcrPull для Managed Identity
 
-1. Введіть *container registries* у **рядок пошуку** у верхній частині порталу та оберіть **Container registries** зі списку.
+1. Введіть у **рядку пошуку** вгорі порталу *container registries* і оберіть **Container registries** із варіантів.
 
     ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.uk.png)
 
-1. Оберіть контейнерний реєстр, пов’язаний з Azure Machine Learning workspace. Наприклад, *finetunephicontainerregistry*.
+1. Оберіть контейнерний реєстр, пов’язаний із робочою областю Azure Machine Learning, наприклад *finetunephicontainerregistry*.
 
-1. Виконайте наступні дії, щоб перейти на сторінку додавання ролі:
+1. Виконайте дії для переходу на сторінку додавання ролі:
 
-    - Оберіть **Access Control (IAM)** у лівому меню.
-    - Оберіть **+ Add** у навігаційному меню.
-    - Оберіть **Add role assignment** у навігаційному меню.
+    - Оберіть у лівому меню **Access Control (IAM)**.
+    - Оберіть **+ Add** у меню навігації.
+    - Оберіть **Add role assignment**.
 
-1. На сторінці Add role assignment виконайте наступні дії:
+1. На сторінці додавання ролі виконайте:
 
-    - У полі ролей введіть *AcrPull* у **рядок пошуку** та оберіть **AcrPull** зі списку.
-    - Оберіть **Next**.
-    - На сторінці Members оберіть **Assign access to** — **Managed identity**.
-    - Оберіть **+ Select members**.
-    - На сторінці вибору Managed identities оберіть вашу Azure **Subscription**.
-    - Оберіть **Managed identity** як **Manage Identity**.
-    - Оберіть створену Managed Identity. Наприклад, *finetunephi-managedidentity*.
-    - Оберіть **Select**.
+    - У рядку пошуку ролей введіть *AcrPull* і виберіть цю роль.
+    - Натисніть **Next**.
+    - Виберіть **Assign access to** – **Managed identity**.
+    - Натисніть **+ Select members**.
+    - Оберіть вашу підписку Azure.
+    - Оберіть Managed identity для управління.
+    - Оберіть Managed Identity, яку створили (наприклад, *finetunephi-managedidentity*).
+    - Натисніть **Select**.
     - Оберіть **Review + assign**.
 
 ### Налаштування проєкту
 
-Щоб завантажити датасети, необхідні для тонкого налаштування, налаштуйте локальне середовище.
+Для завантаження наборів даних, потрібних для тонкого налаштування, налаштуйте локальне середовище.
 
-У цьому завданні ви:
+В цьому завданні ви:
 
 - Створите папку для роботи.
 - Створите віртуальне середовище.
 - Встановите необхідні пакети.
-- Створите файл *download_dataset.py* для завантаження датасету.
+- Створите файл *download_dataset.py* для завантаження набору даних.
 
 #### Створення папки для роботи
 
-1. Відкрийте термінал і введіть команду для створення папки з назвою *finetune-phi* у стандартному каталозі.
+1. Відкрийте вікно терміналу та виконайте команду для створення папки з ім'ям *finetune-phi* у стандартному шляху.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. Введіть наступну команду у терміналі, щоб перейти до створеної папки *finetune-phi*.
-#### Створення віртуального середовища
+2. Введіть наступну команду у вашому терміналі, щоб перейти до папки *finetune-phi*, яку ви створили.
 
-1. Введіть наступну команду у вашому терміналі, щоб створити віртуальне середовище з назвою *.venv*.
+    ```console
+    cd finetune-phi
+    ```
+
+#### Створіть віртуальне оточення
+
+1. Введіть наступну команду у вашому терміналі, щоб створити віртуальне оточення з назвою *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-2. Введіть наступну команду у вашому терміналі, щоб активувати віртуальне середовище.
+2. Введіть наступну команду у вашому терміналі, щоб активувати віртуальне оточення.
 
     ```console
     .venv\Scripts\activate.bat
     ```
 
-
 > [!NOTE]
-> Якщо все спрацювало, ви повинні побачити *(.venv)* перед рядком введення команд.
+> Якщо все спрацювало, ви повинні побачити *(.venv)* перед командним рядком.
 
-#### Встановлення необхідних пакетів
+#### Встановіть необхідні пакети
 
 1. Введіть наступні команди у вашому терміналі, щоб встановити необхідні пакети.
 
@@ -253,7 +257,7 @@ CO_OP_TRANSLATOR_METADATA:
     pip install datasets==2.19.1
     ```
 
-#### Створення `download_dataset.py`
+#### Створіть `donload_dataset.py`
 
 > [!NOTE]
 > Повна структура папок:
@@ -278,16 +282,16 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![Створіть новий файл.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.uk.png)
 
-### Підготовка датасету для донавчання
+### Підготуйте датасет для донавчання
 
-У цьому завданні ви запустите файл *download_dataset.py*, щоб завантажити датасети *ultrachat_200k* у ваше локальне середовище. Потім ви використаєте ці датасети для донавчання моделі Phi-3 в Azure Machine Learning.
+У цьому завданні ви запустите файл *download_dataset.py*, щоб завантажити набори даних *ultrachat_200k* у ваше локальне середовище. Потім ви використаєте ці набори даних для донавчання моделі Phi-3 у Azure Machine Learning.
 
 У цьому завданні ви:
 
-- Додасте код у файл *download_dataset.py* для завантаження датасетів.
-- Запустите файл *download_dataset.py* для завантаження датасетів у локальне середовище.
+- Додасте код у файл *download_dataset.py* для завантаження наборів даних.
+- Запустите файл *download_dataset.py*, щоб завантажити набори даних у ваше локальне середовище.
 
-#### Завантаження датасету за допомогою *download_dataset.py*
+#### Завантажте ваш датасет за допомогою *download_dataset.py*
 
 1. Відкрийте файл *download_dataset.py* у Visual Studio Code.
 
@@ -302,11 +306,11 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # Завантажити набір даних із вказаною назвою, конфігурацією та співвідношенням розбиття
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # Розбити набір даних на тренувальний та тестовий набори (80% тренування, 20% тест)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -317,16 +321,16 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # Створити каталог, якщо він не існує
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # Відкрити файл у режимі запису
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # Ітеруватися по кожному запису у наборі даних
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # Записати запис у форматі JSON та записати його у файл
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # Записати символ нового рядка для розділення записів
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -335,17 +339,17 @@ CO_OP_TRANSLATOR_METADATA:
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # Завантажити та розбити набір даних ULTRACHAT_200k зі специфічною конфігурацією та співвідношенням розбиття
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # Витягти тренувальний та тестовий набори з розбиття
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # Зберегти тренувальний набір у файл формату JSONL
         save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
         
-        # Save the test dataset to a separate JSONL file
+        # Зберегти тестовий набір у окремий файл формату JSONL
         save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
 
     if __name__ == "__main__":
@@ -353,36 +357,36 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. Введіть наступну команду у вашому терміналі, щоб запустити скрипт і завантажити датасет у локальне середовище.
+1. Введіть наступну команду у вашому терміналі, щоб запустити скрипт і завантажити датасет у ваше локальне середовище.
 
     ```console
     python download_dataset.py
     ```
 
-1. Перевірте, що датасети успішно збережені у локальній директорії *finetune-phi/data*.
+1. Перевірте, чи були набори даних успішно збережені у вашій локальній директорії *finetune-phi/data*.
 
 > [!NOTE]
 >
-> #### Примітка щодо розміру датасету та часу донавчання
+> #### Примітка про розмір датасету та час донавчання
 >
-> У цьому посібнику ви використовуєте лише 1% датасету (`split='train[:1%]'`). Це значно зменшує обсяг даних, прискорюючи як завантаження, так і процес донавчання. Ви можете регулювати цей відсоток, щоб знайти оптимальний баланс між часом навчання та продуктивністю моделі. Використання меншої частини датасету скорочує час донавчання, роблячи процес більш зручним для навчального посібника.
+> У цьому посібнику ви використовуєте лише 1% датасету (`split='train[:1%]'`). Це суттєво зменшує обсяг даних, прискорюючи як завантаження, так і процес донавчання. Ви можете коригувати відсоток, щоб знайти оптимальний баланс між часом навчання та продуктивністю моделі. Використання меншого піднабору датасету зменшує час, необхідний для донавчання, роблячи процес більш керованим для навчального посібника.
 
-## Сценарій 2: Донавчання моделі Phi-3 та розгортання в Azure Machine Learning Studio
+## Сценарій 2: Донавчання моделі Phi-3 і розгортання в Azure Machine Learning Studio
 
 ### Донавчання моделі Phi-3
 
-У цьому завданні ви донавчите модель Phi-3 в Azure Machine Learning Studio.
+У цьому завданні ви донатимете модель Phi-3 у Azure Machine Learning Studio.
 
 У цьому завданні ви:
 
-- Створите кластер обчислювальних ресурсів для донавчання.
-- Донавчите модель Phi-3 в Azure Machine Learning Studio.
+- Створите комп’ютерний кластер для донавчання.
+- Донатимете модель Phi-3 у Azure Machine Learning Studio.
 
-#### Створення кластера обчислювальних ресурсів для донавчання
+#### Створіть комп’ютерний кластер для донавчання
 
 1. Відвідайте [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Виберіть **Compute** у лівій панелі.
+1. Виберіть **Compute** у лівому меню.
 
 1. Виберіть **Compute clusters** у навігаційному меню.
 
@@ -392,24 +396,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виконайте наступні дії:
 
-    - Виберіть **Region**, який хочете використовувати.
-    - Виберіть **Virtual machine tier** як **Dedicated**.
-    - Виберіть **Virtual machine type** як **GPU**.
-    - Виберіть фільтр **Virtual machine size** на **Select from all options**.
-    - Виберіть розмір віртуальної машини **Standard_NC24ads_A100_v4**.
+    - Виберіть регіон (**Region**), який ви хочете використовувати.
+    - Виберіть рівень віртуальної машини (**Virtual machine tier**) як **Dedicated**.
+    - Виберіть тип віртуальної машини (**Virtual machine type**) як **GPU**.
+    - Для фільтру розміру віртуальної машини (**Virtual machine size**) виберіть **Select from all options**.
+    - Виберіть розмір віртуальної машини (**Virtual machine size**) як **Standard_NC24ads_A100_v4**.
 
-    ![Створення кластера.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.uk.png)
+    ![Створіть кластер.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.uk.png)
 
 1. Виберіть **Next**.
 
 1. Виконайте наступні дії:
 
-    - Введіть унікальне ім’я для **Compute name**.
-    - Встановіть **Minimum number of nodes** на **0**.
-    - Встановіть **Maximum number of nodes** на **1**.
-    - Встановіть **Idle seconds before scale down** на **120**.
+    - Введіть назву кластера (**Compute name**). Вона має бути унікальною.
+    - Виберіть мінімальну кількість вузлів (**Minimum number of nodes**) як **0**.
+    - Виберіть максимальну кількість вузлів (**Maximum number of nodes**) як **1**.
+    - Встановіть час бездіяльності перед зменшенням масштабування (**Idle seconds before scale down**) на **120**.
 
-    ![Створення кластера.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.uk.png)
+    ![Створіть кластер.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.uk.png)
 
 1. Виберіть **Create**.
 
@@ -417,14 +421,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Відвідайте [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Виберіть робоче середовище Azure Machine Learning, яке ви створили.
+1. Виберіть створений вами робочий простір Azure Machine Learning.
 
-    ![Виберіть створене робоче середовище.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.uk.png)
+    ![Виберіть створений робочий простір.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.uk.png)
 
 1. Виконайте наступні дії:
 
-    - Виберіть **Model catalog** у лівій панелі.
-    - Введіть *phi-3-mini-4k* у **search bar** і виберіть **Phi-3-mini-4k-instruct** зі списку.
+    - Виберіть **Model catalog** у лівому меню.
+    - Введіть *phi-3-mini-4k* у рядок пошуку і виберіть **Phi-3-mini-4k-instruct** зі списку.
 
     ![Введіть phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.uk.png)
 
@@ -435,41 +439,41 @@ CO_OP_TRANSLATOR_METADATA:
 1. Виконайте наступні дії:
 
     - Виберіть **Select task type** як **Chat completion**.
-    - Виберіть **+ Select data** для завантаження **Training data**.
-    - Виберіть тип завантаження Validation data як **Provide different validation data**.
+    - Виберіть **+ Select data** для завантаження **Traning data**.
+    - Виберіть тип завантаження даних для перевірки як **Provide different validation data**.
     - Виберіть **+ Select data** для завантаження **Validation data**.
 
     ![Заповніть сторінку донавчання.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.uk.png)
 
-    > [!TIP]
-    >
-    > Ви можете вибрати **Advanced settings**, щоб налаштувати параметри, такі як **learning_rate** та **lr_scheduler_type**, для оптимізації процесу донавчання відповідно до ваших потреб.
+> [!TIP]
+>
+> Ви можете вибрати **Advanced settings**, щоб налаштувати параметри, такі як **learning_rate** та **lr_scheduler_type**, щоб оптимізувати процес донавчання відповідно до ваших потреб.
 
 1. Виберіть **Finish**.
 
-1. У цьому завданні ви успішно донавчили модель Phi-3 за допомогою Azure Machine Learning. Зверніть увагу, що процес донавчання може зайняти значний час. Після запуску завдання донавчання потрібно дочекатися його завершення. Ви можете відстежувати статус завдання у вкладці Jobs у лівій панелі вашого Azure Machine Learning Workspace. У наступній серії ви розгорнете донавчену модель і інтегруєте її з Prompt flow.
+1. У цьому завданні ви успішно донатили модель Phi-3 за допомогою Azure Machine Learning. Зверніть увагу, що процес донавчання може зайняти значний час. Після запуску завдання донавчання, потрібно дочекатися його завершення. Ви можете спостерігати статус завдання у вкладці Jobs у лівому меню вашого Azure Machine Learning Workspace. У наступній серії ви розгорнете донавчену модель і інтегруєте її з Prompt flow.
 
     ![Перегляд завдання донавчання.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.uk.png)
 
-### Розгортання донавченої моделі Phi-3
+### Розгорніть донавчену модель Phi-3
 
-Щоб інтегрувати донавчену модель Phi-3 з Prompt flow, потрібно розгорнути модель, щоб зробити її доступною для інференсу в реальному часі. Цей процес включає реєстрацію моделі, створення онлайн-ендпоінту та розгортання моделі.
+Щоб інтегрувати донавчену модель Phi-3 з Prompt flow, потрібно розгорнути модель, щоб мати доступ до неї для реального часу. Цей процес включає реєстрацію моделі, створення онлайн-точки доступу та розгортання моделі.
 
 У цьому завданні ви:
 
-- Зареєструєте донавчену модель у робочому середовищі Azure Machine Learning.
-- Створите онлайн-ендпоінт.
+- Зареєструєте донавчену модель у робочому просторі Azure Machine Learning.
+- Створите онлайн-точку доступу.
 - Розгорнете зареєстровану донавчену модель Phi-3.
 
-#### Реєстрація донавченої моделі
+#### Зареєструйте донавчену модель
 
 1. Відвідайте [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Виберіть робоче середовище Azure Machine Learning, яке ви створили.
+1. Виберіть створений вами робочий простір Azure Machine Learning.
 
-    ![Виберіть створене робоче середовище.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.uk.png)
+    ![Виберіть робочий простір, який ви створили.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.uk.png)
 
-1. Виберіть **Models** у лівій панелі.
+1. Виберіть **Models** у лівому меню.
 1. Виберіть **+ Register**.
 1. Виберіть **From a job output**.
 
@@ -481,31 +485,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **Next**.
 
-1. Виберіть тип моделі **MLflow**.
+1. Виберіть **Model type** як **MLflow**.
 
-1. Переконайтеся, що вибрано **Job output**; це має бути вибрано автоматично.
+1. Переконайтеся, що вибрано **Job output**; це має бути обрано автоматично.
 
-    ![Виберіть вихідні дані.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.uk.png)
+    ![Виберіть вихід.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.uk.png)
 
 2. Виберіть **Next**.
 
 3. Виберіть **Register**.
 
-    ![Виберіть реєстрацію.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.uk.png)
+    ![Натисніть "Register".](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.uk.png)
 
-4. Ви можете переглянути зареєстровану модель, перейшовши до меню **Models** у лівій панелі.
+4. Ви можете переглянути зареєстровану модель у меню **Models** у лівому меню.
 
     ![Зареєстрована модель.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.uk.png)
 
-#### Розгортання донавченої моделі
+#### Розгорніть донавчену модель
 
-1. Перейдіть до робочого середовища Azure Machine Learning, яке ви створили.
+1. Перейдіть до створеного вами робочого простору Azure Machine Learning.
 
-1. Виберіть **Endpoints** у лівій панелі.
+1. Виберіть **Endpoints** у лівому меню.
 
 1. Виберіть **Real-time endpoints** у навігаційному меню.
 
-    ![Створення ендпоінту.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.uk.png)
+    ![Створіть точку доступу.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.uk.png)
 
 1. Виберіть **Create**.
 
@@ -517,173 +521,174 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виконайте наступні дії:
 
-    - Виберіть **Virtual machine** як *Standard_NC6s_v3*.
-    - Виберіть кількість інстансів, яку хочете використовувати, наприклад, *1*.
-    - Виберіть **Endpoint** як **New** для створення нового ендпоінту.
-    - Введіть унікальне ім’я для **Endpoint name**.
-    - Введіть унікальне ім’я для **Deployment name**.
+    - Виберіть віртуальну машину (**Virtual machine**) як *Standard_NC6s_v3*.
+    - Виберіть кількість екземплярів (**Instance count**), яку хочете використовувати, наприклад, *1*.
+    - Виберіть **Endpoint** як **New**, щоб створити точку доступу.
+    - Введіть унікальну назву точки доступу (**Endpoint name**).
+    - Введіть унікальну назву розгортання (**Deployment name**).
 
     ![Заповніть налаштування розгортання.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.uk.png)
 
 1. Виберіть **Deploy**.
 
 > [!WARNING]
-> Щоб уникнути додаткових витрат, обов’язково видаліть створений ендпоінт у робочому середовищі Azure Machine Learning.
+> Щоб уникнути додаткових витрат на ваш рахунок, обов’язково видаліть створену точку доступу в робочому просторі Azure Machine Learning.
 >
 
-#### Перевірка статусу розгортання в Azure Machine Learning Workspace
+#### Перевірте статус розгортання у робочому просторі Azure Machine Learning
 
-1. Перейдіть до робочого середовища Azure Machine Learning, яке ви створили.
+1. Перейдіть до створеного вами робочого простору Azure Machine Learning.
 
-1. Виберіть **Endpoints** у лівій панелі.
+1. Виберіть **Endpoints** у лівому меню.
 
-1. Виберіть створений вами ендпоінт.
+1. Виберіть створену вами точку доступу.
 
-    ![Виберіть ендпоінти](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.uk.png)
+    ![Виберіть точки доступу](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.uk.png)
 
-1. На цій сторінці ви можете керувати ендпоінтами під час процесу розгортання.
+1. На цій сторінці ви можете керувати точками доступу під час процесу розгортання.
 
 > [!NOTE]
-> Після завершення розгортання переконайтеся, що **Live traffic** встановлено на **100%**. Якщо ні, виберіть **Update traffic**, щоб налаштувати трафік. Зверніть увагу, що тестувати модель неможливо, якщо трафік встановлено на 0%.
+> Після завершення розгортання переконайтеся, що **Live traffic** встановлено на **100%**. Якщо ні, виберіть **Update traffic**, щоб відрегулювати налаштування трафіку. Зверніть увагу, що ви не зможете тестувати модель, якщо трафік встановлено на 0%.
 >
-> ![Налаштування трафіку.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.uk.png)
+> ![Встановіть трафік.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.uk.png)
 >
 
 ## Сценарій 3: Інтеграція з Prompt flow та спілкування з вашою кастомною моделлю в Azure AI Foundry
 
-### Інтеграція кастомної моделі Phi-3 з Prompt flow
+### Інтегруйте кастомну модель Phi-3 з Prompt flow
 
-Після успішного розгортання донавченої моделі ви можете інтегрувати її з Prompt Flow, щоб використовувати модель у реальних додатках, що дозволяє виконувати різноманітні інтерактивні завдання з вашою кастомною моделлю Phi-3.
+Після успішного розгортання донавченої моделі ви можете інтегрувати її з Prompt Flow для використання у реальних програмах, що дозволяє виконувати різноманітні інтерактивні завдання з вашою кастомною моделлю Phi-3.
 
 У цьому завданні ви:
 
 - Створите Azure AI Foundry Hub.
-- Створите проект Azure AI Foundry.
+- Створите Azure AI Foundry Project.
 - Створите Prompt flow.
 - Додасте кастомне підключення для донавченої моделі Phi-3.
 - Налаштуєте Prompt flow для спілкування з вашою кастомною моделлю Phi-3.
+
 > [!NOTE]
 > Ви також можете інтегруватися з Promptflow, використовуючи Azure ML Studio. Той самий процес інтеграції можна застосувати до Azure ML Studio.
-#### Створення Azure AI Foundry Hub
 
-Спочатку потрібно створити Hub перед створенням Проєкту. Hub працює як Група ресурсів, дозволяючи організовувати та керувати кількома Проєктами в Azure AI Foundry.
+#### Створіть Azure AI Foundry Hub
 
-1. Перейдіть на [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+Потрібно створити Hub перед створенням Project. Hub виконує роль групи ресурсів, дозволяючи організовувати й управляти кількома проектами в Azure AI Foundry.
 
-1. Виберіть **All hubs** у лівій вкладці.
+1. Відвідайте [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+
+1. Виберіть **All hubs** у лівому меню.
 
 1. Виберіть **+ New hub** у навігаційному меню.
+    ![Створення хабу.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.uk.png)
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.uk.png)
+1. Виконайте наступні завдання:
 
-1. Виконайте наступні дії:
+    - Введіть **Назву хабу**. Вона має бути унікальною.
+    - Виберіть вашу підписку Azure (**Subscription**).
+    - Виберіть **Групу ресурсів** для використання (створіть нову за потреби).
+    - Виберіть **Локацію** для використання.
+    - Виберіть **Підключення до Azure AI Services** для використання (створіть нове за потреби).
+    - Виберіть **Підключення до Azure AI Search** як **Пропустити підключення**.
 
-    - Введіть **Hub name**. Він має бути унікальним.
-    - Виберіть вашу Azure **Subscription**.
-    - Виберіть **Resource group** для використання (створіть нову, якщо потрібно).
-    - Виберіть **Location**, яку хочете використовувати.
-    - Виберіть **Connect Azure AI Services** для підключення (створіть нову, якщо потрібно).
-    - Виберіть **Connect Azure AI Search** і оберіть **Skip connecting**.
+    ![Заповнення хабу.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.uk.png)
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.uk.png)
+1. Виберіть **Далі**.
 
-1. Натисніть **Next**.
+#### Створення проекту в Azure AI Foundry
 
-#### Створення Azure AI Foundry Проєкту
+1. У створеному хабі виберіть **Всі проекти** у вкладці зліва.
 
-1. У створеному Hub виберіть **All projects** у лівій вкладці.
+1. Виберіть **+ Новий проект** у навігаційному меню.
 
-1. Виберіть **+ New project** у навігаційному меню.
+    ![Вибір нового проекту.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.uk.png)
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.uk.png)
+1. Введіть **Назву проекту**. Вона має бути унікальною.
 
-1. Введіть **Project name**. Він має бути унікальним.
+    ![Створення проекту.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.uk.png)
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.uk.png)
+1. Виберіть **Створити проект**.
 
-1. Натисніть **Create a project**.
+#### Додавання власного підключення для донавченої моделі Phi-3
 
-#### Додавання кастомного підключення для тонко налаштованої моделі Phi-3
+Щоб інтегрувати вашу власну модель Phi-3 з Prompt flow, потрібно зберегти кінцеву точку (endpoint) моделі та ключ у власному підключенні. Це налаштування забезпечує доступ до вашої власної моделі Phi-3 у Prompt flow.
 
-Щоб інтегрувати вашу кастомну модель Phi-3 з Prompt flow, потрібно зберегти endpoint і ключ моделі у кастомному підключенні. Це забезпечить доступ до вашої моделі Phi-3 у Prompt flow.
+#### Встановлення api key та endpoint uri для донавченої моделі Phi-3
 
-#### Встановлення api key та endpoint uri для тонко налаштованої моделі Phi-3
+1. Відвідайте [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Перейдіть на [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
+1. Перейдіть до простору робочих ресурсів Azure Machine learning, який ви створили.
 
-1. Перейдіть до робочого простору Azure Machine learning, який ви створили.
+1. Оберіть **Endpoints** у вкладці зліва.
 
-1. Виберіть **Endpoints** у лівій вкладці.
+    ![Вибір endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.uk.png)
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.uk.png)
+1. Виберіть кінцеву точку, яку ви створили.
 
-1. Виберіть створений вами endpoint.
-
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.uk.png)
+    ![Вибір створеної кінцевої точки.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.uk.png)
 
 1. Виберіть **Consume** у навігаційному меню.
 
-1. Скопіюйте ваш **REST endpoint** та **Primary key**.
+1. Скопіюйте ваш **REST endpoint** та **Первинний ключ**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.uk.png)
+    ![Копіювання api ключа та endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.uk.png)
 
-#### Додавання кастомного підключення
+#### Додавання власного підключення
 
-1. Перейдіть на [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Відвідайте [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Перейдіть до створеного вами проєкту Azure AI Foundry.
+1. Перейдіть до проекту Azure AI Foundry, який ви створили.
 
-1. У створеному Проєкті виберіть **Settings** у лівій вкладці.
+1. У створеному проекті виберіть **Налаштування** у вкладці зліва.
 
-1. Виберіть **+ New connection**.
+1. Виберіть **+ Нове підключення**.
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.uk.png)
+    ![Вибір нового підключення.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.uk.png)
 
-1. Виберіть **Custom keys** у навігаційному меню.
+1. Оберіть **Власні ключі** у навігаційному меню.
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.uk.png)
+    ![Вибір власних ключів.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.uk.png)
 
-1. Виконайте наступні дії:
+1. Виконайте наступні завдання:
 
-    - Виберіть **+ Add key value pairs**.
-    - Для імені ключа введіть **endpoint** і вставте скопійований endpoint з Azure ML Studio у поле значення.
-    - Знову виберіть **+ Add key value pairs**.
-    - Для імені ключа введіть **key** і вставте скопійований ключ з Azure ML Studio у поле значення.
-    - Після додавання ключів виберіть **is secret**, щоб приховати ключ від відображення.
+    - Виберіть **+ Додати пару ключ-значення**.
+    - В полі назви ключа введіть **endpoint** і вставте endpoint, який скопіювали з Azure ML Studio, у поле значення.
+    - Знову виберіть **+ Додати пару ключ-значення**.
+    - В полі назви ключа введіть **key** і вставте ключ, який скопіювали з Azure ML Studio, у поле значення.
+    - Після додавання ключів виберіть опцію **is secret**, щоб запобігти відображенню ключа.
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.uk.png)
+    ![Додавання підключення.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.uk.png)
 
-1. Натисніть **Add connection**.
+1. Виберіть **Додати підключення**.
 
 #### Створення Prompt flow
 
-Ви додали кастомне підключення в Azure AI Foundry. Тепер створимо Prompt flow за наступними кроками. Потім ви підключите цей Prompt flow до кастомного підключення, щоб використовувати тонко налаштовану модель у Prompt flow.
+Ви додали власне підключення в Azure AI Foundry. Тепер створимо Prompt flow за наступними кроками. Після цього ви підключите цей Prompt flow до власного підключення, щоб мати змогу використовувати донавчену модель у Prompt flow.
 
-1. Перейдіть до створеного вами проєкту Azure AI Foundry.
+1. Перейдіть до проекту Azure AI Foundry, який ви створили.
 
-1. Виберіть **Prompt flow** у лівій вкладці.
+1. Виберіть **Prompt flow** у вкладці зліва.
 
-1. Виберіть **+ Create** у навігаційному меню.
+1. Виберіть **+ Створити** у навігаційному меню.
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.uk.png)
+    ![Вибір Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.uk.png)
 
 1. Виберіть **Chat flow** у навігаційному меню.
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.uk.png)
+    ![Вибір chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.uk.png)
 
-1. Введіть **Folder name** для використання.
+1. Введіть **Назву папки** для використання.
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.uk.png)
+    ![Введення назви.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.uk.png)
 
-2. Натисніть **Create**.
+2. Виберіть **Створити**.
 
-#### Налаштування Prompt flow для спілкування з вашою кастомною моделлю Phi-3
+#### Налаштування Prompt flow для спілкування з власною моделлю Phi-3
 
-Потрібно інтегрувати тонко налаштовану модель Phi-3 у Prompt flow. Однак існуючий Prompt flow не призначений для цього, тому його потрібно переробити, щоб забезпечити інтеграцію кастомної моделі.
+Вам потрібно інтегрувати донавчену модель Phi-3 до Prompt flow. Однак поточний Prompt flow не призначений для цього, тому потрібно перепроектувати Prompt flow для підтримки інтеграції власної моделі.
 
 1. У Prompt flow виконайте наступні дії для перебудови існуючого потоку:
 
-    - Виберіть **Raw file mode**.
+    - Виберіть **Режим сирого файлу (Raw file mode)**.
     - Видаліть увесь існуючий код у файлі *flow.dag.yml*.
     - Додайте наступний код у файл *flow.dag.yml*.
 
@@ -708,11 +713,11 @@ CO_OP_TRANSLATOR_METADATA:
             input_data: ${inputs.input_data}
         ```
 
-    - Натисніть **Save**.
+    - Виберіть **Зберегти**.
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.uk.png)
+    ![Вибір режиму сирого файлу.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.uk.png)
 
-1. Додайте наступний код у файл *integrate_with_promptflow.py* для використання кастомної моделі Phi-3 у Prompt flow.
+1. Додайте наступний код до файлу *integrate_with_promptflow.py*, щоб використовувати власну модель Phi-3 у Prompt flow.
 
     ```python
     import logging
@@ -720,7 +725,7 @@ CO_OP_TRANSLATOR_METADATA:
     from promptflow import tool
     from promptflow.connections import CustomConnection
 
-    # Logging setup
+    # Налаштування ведення журналу
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -733,7 +738,7 @@ CO_OP_TRANSLATOR_METADATA:
         Send a request to the Phi-3 model endpoint with the given input data using Custom Connection.
         """
 
-        # "connection" is the name of the Custom Connection, "endpoint", "key" are the keys in the Custom Connection
+        # "connection" — це назва Користувацького З'єднання, "endpoint", "key" — ключі у Користувацькому З'єднанні
         endpoint_url = connection.endpoint
         api_key = connection.key
 
@@ -756,7 +761,7 @@ CO_OP_TRANSLATOR_METADATA:
             response = requests.post(endpoint_url, json=data, headers=headers)
             response.raise_for_status()
             
-            # Log the full JSON response
+            # Записати повну відповідь у форматі JSON
             logger.debug(f"Full JSON response: {response.json()}")
 
             result = response.json()["output"]
@@ -775,53 +780,57 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.uk.png)
+    ![Вставка коду prompt flow.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.uk.png)
 
 > [!NOTE]
-> Для детальнішої інформації про використання Prompt flow в Azure AI Foundry зверніться до [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Для отримання більш детальної інформації щодо використання Prompt flow у Azure AI Foundry зверніться до [Prompt flow у Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Виберіть **Chat input**, **Chat output**, щоб увімкнути чат з вашою моделлю.
+1. Виберіть **Chat input**, **Chat output** для увімкнення чату з вашою моделлю.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.uk.png)
+    ![Вхідний та вихідний потоки.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.uk.png)
 
-1. Тепер ви готові спілкуватися з вашою кастомною моделлю Phi-3. У наступному завданні ви дізнаєтеся, як запустити Prompt flow і використовувати його для спілкування з тонко налаштованою моделлю Phi-3.
+1. Тепер ви готові спілкуватися з вашою власною моделлю Phi-3. У наступній вправі ви навчитеся запускати Prompt flow і використовувати його для спілкування з донавченою моделлю Phi-3.
 
 > [!NOTE]
 >
-> Перебудований потік має виглядати, як на зображенні нижче:
+> Перебудований потік має виглядати як на зображенні нижче:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.uk.png)
+> ![Приклад потоку.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.uk.png)
 >
 
-### Спілкування з вашою кастомною моделлю Phi-3
+### Спілкування з власною моделлю Phi-3
 
-Тепер, коли ви тонко налаштували та інтегрували кастомну модель Phi-3 з Prompt flow, ви готові почати взаємодію з нею. Це завдання допоможе вам налаштувати та розпочати чат з моделлю через Prompt flow. Дотримуючись цих кроків, ви зможете повністю використовувати можливості вашої тонко налаштованої моделі Phi-3 для різних завдань і розмов.
+Тепер, коли ви донавчили та інтегрували власну модель Phi-3 з Prompt flow, ви готові розпочати з нею взаємодію. Ця вправа проведе вас кроками налаштування та запуску чату з вашою моделлю через Prompt flow. Виконуючи ці кроки, ви зможете повною мірою використовувати можливості вашої донавченої моделі Phi-3 для різних завдань і діалогів.
 
-- Спілкуйтеся з вашою кастомною моделлю Phi-3 за допомогою Prompt flow.
+- Спілкуйтеся з власною моделлю Phi-3 за допомогою Prompt flow.
 
 #### Запуск Prompt flow
 
-1. Виберіть **Start compute sessions**, щоб запустити Prompt flow.
+1. Виберіть **Почати сесії обчислень (Start compute sessions)**, щоб запустити Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.uk.png)
+    ![Запуск сесії обчислень.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.uk.png)
 
-1. Виберіть **Validate and parse input**, щоб оновити параметри.
+1. Виберіть **Підтвердити та розпарсити вхідні дані (Validate and parse input)** для оновлення параметрів.
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.uk.png)
+    ![Підтвердження вхідних даних.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.uk.png)
 
-1. Виберіть **Value** для **connection**, що відповідає створеному кастомному підключенню. Наприклад, *connection*.
+1. Виберіть **Значення** для **connection** зі створеного вами власного підключення. Наприклад, *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.uk.png)
+    ![Підключення.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.uk.png)
 
-#### Спілкування з вашою кастомною моделлю
+#### Спілкування з власною моделлю
 
 1. Виберіть **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.uk.png)
+    ![Вибір чату.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.uk.png)
 
-1. Ось приклад результатів: тепер ви можете спілкуватися з вашою кастомною моделлю Phi-3. Рекомендується ставити питання, базуючись на даних, використаних для тонкого налаштування.
+1. Ось приклад результатів: тепер ви можете спілкуватися з власною моделлю Phi-3. Рекомендується ставити питання на основі даних, використаних для донавчання.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.uk.png)
+    ![Чат з prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.uk.png)
 
-**Відмова від відповідальності**:  
-Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Відмова від відповідальності**:
+Цей документ було перекладено із використанням сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоч ми й прагнемо до точності, будь ласка, враховуйте, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатись до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння чи неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
