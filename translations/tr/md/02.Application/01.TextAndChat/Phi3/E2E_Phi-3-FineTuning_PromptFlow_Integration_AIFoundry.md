@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-07-17T01:27:22+00:00",
+  "original_hash": "0df910a227098303cc392b6ad204c271",
+  "translation_date": "2026-01-06T04:38:05+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "tr"
 }
 -->
 # Azure AI Foundry'de Prompt flow ile özel Phi-3 modellerini ince ayar yapma ve entegre etme
 
-Bu uçtan uca (E2E) örnek, Microsoft Tech Community'den "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" rehberine dayanmaktadır. Azure AI Foundry'de Prompt flow ile özel Phi-3 modellerinin ince ayar, dağıtım ve entegrasyon süreçlerini tanıtmaktadır. Yerel olarak kod çalıştırmayı içeren "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" E2E örneğinin aksine, bu eğitim tamamen Azure AI / ML Studio içinde modelinizi ince ayar yapma ve entegre etmeye odaklanmaktadır.
+Bu uçtan uca (E2E) örnek, Microsoft Tech Community'den "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" rehberine dayanmaktadır. Azure AI Foundry'de özel Phi-3 modellerinin ince ayar yapılması, dağıtılması ve Prompt flow ile entegrasyonu süreçlerini tanıtmaktadır. Yerel olarak kod çalıştırmayı içeren "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" E2E örneğinin aksine, bu öğreticide modelinizi tamamen Azure AI / ML Studio içinde ince ayar yapmaya ve entegre etmeye odaklanılmaktadır.
 
 ## Genel Bakış
 
-Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Azure AI Foundry'de Prompt flow ile nasıl entegre edeceğinizi öğreneceksiniz. Azure AI / ML Studio'yu kullanarak özel AI modellerini dağıtmak ve kullanmak için bir iş akışı oluşturacaksınız. Bu E2E örnek üç senaryoya ayrılmıştır:
+Bu E2E örnekte, Phi-3 modelinin nasıl ince ayar yapılacağını ve Azure AI Foundry'de Prompt flow ile nasıl entegre edileceğini öğreneceksiniz. Azure AI / ML Studio'yu kullanarak, özel yapay zeka modellerini dağıtmak ve kullanmak için bir iş akışı oluşturacaksınız. Bu E2E örnek üç senaryoya ayrılmıştır:
 
-**Senaryo 1: Azure kaynaklarını kurma ve ince ayar için hazırlık**
+**Senaryo 1: Azure kaynaklarını kurun ve ince ayar için hazırlanın**
 
-**Senaryo 2: Phi-3 modelini ince ayar yapma ve Azure Machine Learning Studio'da dağıtma**
+**Senaryo 2: Phi-3 modelini ince ayar yapın ve Azure Machine Learning Studio'da dağıtın**
 
-**Senaryo 3: Prompt flow ile entegrasyon ve Azure AI Foundry'de özel modelinizle sohbet etme**
+**Senaryo 3: Prompt flow ile entegre edin ve Azure AI Foundry'de özel modelinizle sohbet edin**
 
 İşte bu E2E örneğin genel görünümü.
 
@@ -27,206 +27,211 @@ Bu E2E örnekte, Phi-3 modelini nasıl ince ayar yapacağınızı ve Azure AI Fo
 
 ### İçindekiler
 
-1. **[Senaryo 1: Azure kaynaklarını kurma ve ince ayar için hazırlık](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure Machine Learning Workspace oluşturma](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Azure Aboneliğinde GPU kotası talep etme](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Rol ataması ekleme](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Projeyi kurma](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [İnce ayar için veri setini hazırlama](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senaryo 1: Azure kaynaklarını kurun ve ince ayar için hazırlanın](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Azure Machine Learning Workspace oluşturun](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Azure Aboneliğinde GPU kotalarını talep edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Rol ataması ekleyin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Projeyi kurun](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [İnce ayar için veri setini hazırlayın](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Senaryo 2: Phi-3 modelini ince ayar yapma ve Azure Machine Learning Studio'da dağıtma](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Phi-3 modelini ince ayar yapma](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [İnce ayar yapılmış Phi-3 modelini dağıtma](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senaryo 2: Phi-3 modelini ince ayar yapın ve Azure Machine Learning Studio'da dağıtın](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Phi-3 modelini ince ayar yapın](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [İnce ayar yapılmış Phi-3 modelini dağıtın](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Senaryo 3: Prompt flow ile entegrasyon ve Azure AI Foundry'de özel modelinizle sohbet etme](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Özel Phi-3 modelini Prompt flow ile entegre etme](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Özel Phi-3 modelinizle sohbet etme](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senaryo 3: Prompt flow ile entegre edin ve Azure AI Foundry'de özel modelinizle sohbet edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Özel Phi-3 modelini Prompt flow ile entegre edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Özel Phi-3 modelinizle sohbet edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Senaryo 1: Azure kaynaklarını kurma ve ince ayar için hazırlık
+## Senaryo 1: Azure kaynaklarını kurun ve ince ayar için hazırlanın
 
-### Azure Machine Learning Workspace oluşturma
+### Azure Machine Learning Workspace oluşturun
 
-1. Portal sayfasının üstündeki **arama çubuğuna** *azure machine learning* yazın ve çıkan seçeneklerden **Azure Machine Learning**'i seçin.
+1. Portal sayfasının üst kısmındaki **arama çubuğuna** *azure machine learning* yazın ve çıkan seçeneklerden **Azure Machine Learning**'i seçin.
 
-    ![azure machine learning yazın.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.tr.png)
+    ![Azure machine learning yazın.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.tr.png)
 
-2. Navigasyon menüsünden **+ Create** seçeneğini tıklayın.
+2. Gezinti menüsünden **+ Oluştur**'u seçin.
 
-3. Navigasyon menüsünden **New workspace** seçeneğini seçin.
+3. Gezinti menüsünden **Yeni çalışma alanı**'nı seçin.
 
-    ![Yeni workspace seçin.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.tr.png)
+    ![Yeni çalışma alanı seçin.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.tr.png)
 
-4. Aşağıdaki işlemleri yapın:
+4. Aşağıdaki görevleri gerçekleştirin:
 
-    - Azure **Subscription**'ınızı seçin.
-    - Kullanılacak **Resource group**'u seçin (gerekirse yenisini oluşturun).
-    - **Workspace Name** girin. Benzersiz bir değer olmalıdır.
-    - Kullanmak istediğiniz **Region**'u seçin.
-    - Kullanılacak **Storage account**'u seçin (gerekirse yenisini oluşturun).
-    - Kullanılacak **Key vault**'u seçin (gerekirse yenisini oluşturun).
-    - Kullanılacak **Application insights**'ı seçin (gerekirse yenisini oluşturun).
-    - Kullanılacak **Container registry**'yi seçin (gerekirse yenisini oluşturun).
+    - Azure **Aboneliğinizi** seçin.
+    - Kullanmak istediğiniz **Kaynak grubunu** seçin (gerekirse yeni bir tane oluşturun).
+    - **Çalışma Alanı Adı** girin. Benzersiz bir değer olmalıdır.
+    - Kullanmak istediğiniz **Bölgeyi** seçin.
+    - Kullanmak istediğiniz **Depolama hesabını** seçin (gerekirse yeni bir tane oluşturun).
+    - Kullanmak istediğiniz **Anahtar kasasını** seçin (gerekirse yeni bir tane oluşturun).
+    - Kullanmak istediğiniz **Uygulama içgörülerini** seçin (gerekirse yeni bir tane oluşturun).
+    - Kullanmak istediğiniz **Kapsayıcı kayıt defterini** seçin (gerekirse yeni bir tane oluşturun).
 
     ![Azure machine learning bilgilerini doldurun.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.tr.png)
 
-5. **Review + Create** seçeneğini tıklayın.
+5. **İncele + oluştur**'u seçin.
 
-6. **Create** seçeneğini tıklayın.
+6. **Oluştur**'u seçin.
 
-### Azure Aboneliğinde GPU kotası talep etme
+### Azure Aboneliğinde GPU kotalarını talep edin
 
-Bu eğitimde, Phi-3 modelini ince ayar yapmak ve dağıtmak için GPU kullanmayı öğreneceksiniz. İnce ayar için *Standard_NC24ads_A100_v4* GPU'sunu kullanacaksınız ve bu GPU için kota talebinde bulunmanız gerekmektedir. Dağıtım için ise *Standard_NC6s_v3* GPU'sunu kullanacaksınız ve bu GPU için de kota talebi gereklidir.
+Bu öğreticide, Phi-3 modelini ince ayar yapmak ve dağıtmak için GPU'lar kullanılacaktır. İnce ayar için *Standard_NC24ads_A100_v4* GPU'sunu kullanacaksınız, bu da kota talebini gerektirir. Dağıtım için ise *Standard_NC6s_v3* GPU'sunu kullanacaksınız; bu da kota talebini gerektirir.
 
 > [!NOTE]
 >
-> Sadece Pay-As-You-Go abonelikleri (standart abonelik türü) GPU tahsisi için uygundur; avantaj abonelikleri şu anda desteklenmemektedir.
+> Yalnızca Ödemeye Göre (Pay-As-You-Go) abonelikler (standart abonelik türü) GPU tahsisi için uygundur; avantaj abonelikleri şu anda desteklenmemektedir.
 >
 
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) adresini ziyaret edin.
+1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) adresine gidin.
 
-1. *Standard NCADSA100v4 Family* kotası talep etmek için aşağıdaki adımları izleyin:
+1. *Standard NCADSA100v4 Family* kotasını talep etmek için aşağıdaki görevleri gerçekleştirin:
 
-    - Sol taraftaki sekmeden **Quota**'yı seçin.
-    - Kullanılacak **Virtual machine family**'yi seçin. Örneğin, *Standard_NC24ads_A100_v4* GPU'sunu içeren **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**'u seçin.
-    - Navigasyon menüsünden **Request quota**'yı seçin.
+    - Sol taraftaki sekmeden **Kota**'yı seçin.
+    - Kullanılacak **Sanal makine ailesi**ni seçin. Örneğin, *Standard_NC24ads_A100_v4* GPU'sunu içeren **Standard NCADSA100v4 Family Cluster Dedicated vCPU** ailesini seçin.
+    - Gezinti menüsünden **Kota talep et**'i seçin.
 
         ![Kota talep et.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.tr.png)
 
-    - Request quota sayfasında, kullanmak istediğiniz **New cores limit** değerini girin. Örneğin, 24.
-    - Request quota sayfasında, GPU kotası talebi için **Submit**'i seçin.
+    - Kota talep sayfasında, kullanmak istediğiniz **Yeni çekirdek limiti** değerini girin. Örnek: 24.
+    - Kota talep sayfasında, GPU kotalarını talep etmek için **Gönder**'i seçin.
 
-1. *Standard NCSv3 Family* kotası talep etmek için aşağıdaki adımları izleyin:
+1. *Standard NCSv3 Family* kotasını talep etmek için aşağıdaki görevleri gerçekleştirin:
 
-    - Sol taraftaki sekmeden **Quota**'yı seçin.
-    - Kullanılacak **Virtual machine family**'yi seçin. Örneğin, *Standard_NC6s_v3* GPU'sunu içeren **Standard NCSv3 Family Cluster Dedicated vCPUs**'u seçin.
-    - Navigasyon menüsünden **Request quota**'yı seçin.
-    - Request quota sayfasında, kullanmak istediğiniz **New cores limit** değerini girin. Örneğin, 24.
-    - Request quota sayfasında, GPU kotası talebi için **Submit**'i seçin.
+    - Sol taraftaki sekmeden **Kota**'yı seçin.
+    - Kullanılacak **Sanal makine ailesi**ni seçin. Örneğin, *Standard_NC6s_v3* GPU'sunu içeren **Standard NCSv3 Family Cluster Dedicated vCPU** ailesini seçin.
+    - Gezinti menüsünden **Kota talep et**'i seçin.
+    - Kota talep sayfasında, kullanmak istediğiniz **Yeni çekirdek limiti** değerini girin. Örnek: 24.
+    - Kota talep sayfasında, GPU kotalarını talep etmek için **Gönder**'i seçin.
 
-### Rol ataması ekleme
+### Rol ataması ekleyin
 
-Modellerinizi ince ayar yapmak ve dağıtmak için önce bir User Assigned Managed Identity (UAI) oluşturmalı ve ona uygun izinleri atamalısınız. Bu UAI, dağıtım sırasında kimlik doğrulama için kullanılacaktır.
+Modellerinizi ince ayar yapmak ve dağıtmak için önce bir Kullanıcı Atanmış Yönetilen Kimlik (UAI) oluşturmalı ve ona uygun izinleri vermelisiniz. Bu UAI, dağıtım sırasında kimlik doğrulama için kullanılacaktır.
 
-#### User Assigned Managed Identity (UAI) oluşturma
+#### Kullanıcı Atanmış Yönetilen Kimlik (UAI) oluşturun
 
-1. Portal sayfasının üstündeki **arama çubuğuna** *managed identities* yazın ve çıkan seçeneklerden **Managed Identities**'i seçin.
+1. Portal sayfasının üst kısmındaki **arama çubuğuna** *managed identities* yazın ve çıkan seçeneklerden **Managed Identities**'i seçin.
 
-    ![managed identities yazın.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.tr.png)
+    ![Managed identities yazın.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.tr.png)
 
-1. **+ Create** seçeneğini tıklayın.
+1. **+ Oluştur**'u seçin.
 
-    ![Create seçin.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.tr.png)
+    ![Oluştur'u seçin.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.tr.png)
 
-1. Aşağıdaki işlemleri yapın:
+1. Aşağıdaki görevleri gerçekleştirin:
 
-    - Azure **Subscription**'ınızı seçin.
-    - Kullanılacak **Resource group**'u seçin (gerekirse yenisini oluşturun).
-    - Kullanmak istediğiniz **Region**'u seçin.
-    - **Name** girin. Benzersiz bir değer olmalıdır.
+    - Azure **Aboneliğinizi** seçin.
+    - Kullanmak istediğiniz **Kaynak grubunu** seçin (gerekirse yeni oluşturun).
+    - Kullanmak istediğiniz **Bölgeyi** seçin.
+    - **Ad** girin. Benzersiz bir değer olmalıdır.
 
     ![Bilgileri doldurun.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.tr.png)
 
-1. **Review + create** seçeneğini tıklayın.
+1. **İncele + oluştur**'u seçin.
 
-1. **+ Create** seçeneğini tıklayın.
+1. **+ Oluştur**'u seçin.
 
-#### Managed Identity'ye Contributor rolü atama
+#### Yönetilen Kimlik için Katkıda Bulunan rolü atanması ekleyin
 
-1. Oluşturduğunuz Managed Identity kaynağına gidin.
+1. Oluşturduğunuz Yönetilen Kimlik kaynağına gidin.
 
-1. Sol taraftaki sekmeden **Azure role assignments**'ı seçin.
+1. Sol taraftaki sekmeden **Azure rol atamaları**'nı seçin.
 
-1. Navigasyon menüsünden **+Add role assignment**'ı seçin.
+1. Gezinti menüsünden **+ Rol ataması ekle**'yi seçin.
 
-1. Add role assignment sayfasında aşağıdaki işlemleri yapın:
-    - **Scope**'u **Resource group** olarak seçin.
-    - Azure **Subscription**'ınızı seçin.
-    - Kullanılacak **Resource group**'u seçin.
-    - **Role** olarak **Contributor**'ı seçin.
+1. Rol ataması ekle sayfasında aşağıdaki görevleri yapın:
+    - **Kapsam** olarak **Kaynak grubu**'nu seçin.
+    - Azure **Aboneliğinizi** seçin.
+    - Kullanmak istediğiniz **Kaynak grubunu** seçin.
+    - **Rol** olarak **Katkıda Bulunan** (Contributor) seçin.
 
-    ![Contributor rolünü doldurun.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.tr.png)
+    ![Katkıda bulunan rolünü doldurun.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.tr.png)
 
-2. **Save** seçeneğini tıklayın.
+2. **Kaydet**'i seçin.
 
-#### Managed Identity'ye Storage Blob Data Reader rolü atama
+#### Yönetilen Kimlik için Storage Blob Data Reader rol atamasını ekleyin
 
-1. Portal sayfasının üstündeki **arama çubuğuna** *storage accounts* yazın ve çıkan seçeneklerden **Storage accounts**'u seçin.
+1. Portal sayfasının üst kısmındaki **arama çubuğuna** *storage accounts* yazın ve çıkan seçeneklerden **Storage accounts**'u seçin.
 
-    ![storage accounts yazın.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.tr.png)
+    ![Storage accounts yazın.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.tr.png)
 
-1. Oluşturduğunuz Azure Machine Learning workspace ile ilişkili storage hesabını seçin. Örneğin, *finetunephistorage*.
+1. Oluşturduğunuz Azure Machine Learning çalışma alanıyla ilişkili depolama hesabını seçin. Örneğin, *finetunephistorage*.
 
-1. Add role assignment sayfasına gitmek için aşağıdaki adımları izleyin:
+1. Rol ataması ekleme sayfasına gitmek için aşağıdaki görevleri yapın:
 
-    - Oluşturduğunuz Azure Storage hesabına gidin.
-    - Sol taraftaki sekmeden **Access Control (IAM)**'ı seçin.
-    - Navigasyon menüsünden **+ Add**'i seçin.
-    - Navigasyon menüsünden **Add role assignment**'ı seçin.
+    - Oluşturduğunuz Azure Depolama hesabına gidin.
+    - Sol taraftaki sekmeden **Erişim Denetimi (IAM)**'yı seçin.
+    - Gezinti menüsünden **+ Ekle**'yi seçin.
+    - Gezinti menüsünden **Rol ataması ekle**'yi seçin.
 
     ![Rol ekle.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.tr.png)
 
-1. Add role assignment sayfasında aşağıdaki işlemleri yapın:
+1. Rol ataması ekle sayfasında aşağıdaki görevleri yapın:
 
-    - Rol sayfasında, **arama çubuğuna** *Storage Blob Data Reader* yazın ve çıkan seçeneklerden **Storage Blob Data Reader**'ı seçin.
-    - Rol sayfasında **Next**'i seçin.
-    - Üyeler sayfasında, **Assign access to** olarak **Managed identity**'yi seçin.
-    - Üyeler sayfasında **+ Select members**'ı seçin.
-    - Select managed identities sayfasında Azure **Subscription**'ınızı seçin.
-    - Select managed identities sayfasında **Managed identity** olarak **Manage Identity**'yi seçin.
-    - Select managed identities sayfasında oluşturduğunuz Manage Identity'yi seçin. Örneğin, *finetunephi-managedidentity*.
-    - Select managed identities sayfasında **Select**'i seçin.
+    - Rol sayfasında **arama çubuğuna** *Storage Blob Data Reader* yazın ve çıkan seçeneklerden **Storage Blob Data Reader**'ı seçin.
+    - Rol sayfasında **İleri**'yi seçin.
+    - Üyeler sayfasında **Erişimi ata** olarak **Yönetilen kimlik**'i seçin.
+    - Üyeler sayfasında **+ Üyeleri seç**'i seçin.
+    - Yönetilen kimlik seçme sayfasında Azure **Aboneliğinizi** seçin.
+    - Yönetilen kimlik seçme sayfasında **Yönetilen kimlik** olarak **Manage Identity**'yi seçin.
+    - Yönetilen kimlik seçme sayfasında oluşturduğunuz Yönetilen Kimliği seçin. Örneğin, *finetunephi-managedidentity*.
+    - Yönetilen kimlik seçme sayfasında **Seç**'i seçin.
 
-    ![Managed identity seçin.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.tr.png)
+    ![Yönetilen kimliği seçin.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.tr.png)
 
-1. **Review + assign** seçeneğini tıklayın.
+1. **İncele + ata**'yı seçin.
 
-#### Managed Identity'ye AcrPull rolü atama
+#### Yönetilen Kimlik için AcrPull rol ataması ekleyin
 
-1. Portal sayfasının üstündeki **arama çubuğuna** *container registries* yazın ve çıkan seçeneklerden **Container registries**'i seçin.
+1. Portal sayfasının üst kısmındaki **arama çubuğuna** *container registries* yazın ve çıkan seçeneklerden **Container registries**'i seçin.
 
-    ![container registries yazın.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.tr.png)
+    ![Container registries yazın.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.tr.png)
 
-1. Azure Machine Learning workspace ile ilişkili container registry'yi seçin. Örneğin, *finetunephicontainerregistry*
+1. Azure Machine Learning çalışma alanıyla ilişkili kapsayıcı kayıt defterini seçin. Örneğin, *finetunephicontainerregistry*.
 
-1. Add role assignment sayfasına gitmek için aşağıdaki adımları izleyin:
+1. Rol ataması ekleme sayfasına gitmek için aşağıdaki görevleri yapın:
 
-    - Sol taraftaki sekmeden **Access Control (IAM)**'ı seçin.
-    - Navigasyon menüsünden **+ Add**'i seçin.
-    - Navigasyon menüsünden **Add role assignment**'ı seçin.
+    - Sol taraftaki sekmeden **Erişim Denetimi (IAM)**'ı seçin.
+    - Gezinti menüsünden **+ Ekle**'yi seçin.
+    - Gezinti menüsünden **Rol ataması ekle**'yi seçin.
 
-1. Add role assignment sayfasında aşağıdaki işlemleri yapın:
+1. Rol ataması ekle sayfasında aşağıdaki görevleri yapın:
 
-    - Rol sayfasında, **arama çubuğuna** *AcrPull* yazın ve çıkan seçeneklerden **AcrPull**'u seçin.
-    - Rol sayfasında **Next**'i seçin.
-    - Üyeler sayfasında, **Assign access to** olarak **Managed identity**'yi seçin.
-    - Üyeler sayfasında **+ Select members**'ı seçin.
-    - Select managed identities sayfasında Azure **Subscription**'ınızı seçin.
-    - Select managed identities sayfasında **Managed identity** olarak **Manage Identity**'yi seçin.
-    - Select managed identities sayfasında oluşturduğunuz Manage Identity'yi seçin. Örneğin, *finetunephi-managedidentity*.
-    - Select managed identities sayfasında **Select**'i seçin.
-    - **Review + assign** seçeneğini tıklayın.
+    - Rol sayfasında **arama çubuğuna** *AcrPull* yazın ve çıkan seçeneklerden **AcrPull**'u seçin.
+    - Rol sayfasında **İleri**'yi seçin.
+    - Üyeler sayfasında **Erişimi ata** olarak **Yönetilen kimlik**'i seçin.
+    - Üyeler sayfasında **+ Üyeleri seç**'i seçin.
+    - Yönetilen kimlik seçme sayfasında Azure **Aboneliğinizi** seçin.
+    - Yönetilen kimlik seçme sayfasında **Yönetilen kimlik** olarak **Manage Identity**'yi seçin.
+    - Yönetilen kimlik seçme sayfasında oluşturduğunuz Yönetilen Kimliği seçin. Örneğin, *finetunephi-managedidentity*.
+    - Yönetilen kimlik seçme sayfasında **Seç**'i seçin.
+    - **İncele + ata**'yı seçin.
 
-### Projeyi kurma
+### Projeyi kurun
 
 İnce ayar için gereken veri setlerini indirmek üzere yerel bir ortam kuracaksınız.
 
-Bu egzersizde,
+Bu alıştırmada:
 
-- İçinde çalışmak için bir klasör oluşturacaksınız.
+- İçinde çalışmak üzere bir klasör oluşturacaksınız.
 - Sanal bir ortam oluşturacaksınız.
 - Gerekli paketleri yükleyeceksiniz.
 - Veri setini indirmek için *download_dataset.py* dosyası oluşturacaksınız.
 
-#### İçinde çalışmak için bir klasör oluşturma
+#### İçinde çalışmak için bir klasör oluşturun
 
-1. Bir terminal penceresi açın ve varsayılan yolda *finetune-phi* adında bir klasör oluşturmak için aşağıdaki komutu yazın.
+1. Bir terminal penceresi açın ve varsayılan yolda *finetune-phi* adlı bir klasör oluşturmak için aşağıdaki komutu yazın.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. Oluşturduğunuz *finetune-phi* klasörüne gitmek için terminalde aşağıdaki komutu yazın.
-#### Sanal ortam oluşturma
+2. Terminalinizde oluşturduğunuz *finetune-phi* klasörüne gitmek için aşağıdaki komutu yazın.
+
+    ```console
+    cd finetune-phi
+    ```
+
+#### Sanal ortam oluşturun
 
 1. Terminalinizde *.venv* adlı bir sanal ortam oluşturmak için aşağıdaki komutu yazın.
 
@@ -234,25 +239,24 @@ Bu egzersizde,
     python -m venv .venv
     ```
 
-2. Sanal ortamı etkinleştirmek için terminalinize aşağıdaki komutu yazın.
+2. Terminalinizde sanal ortamı aktifleştirmek için aşağıdaki komutu yazın.
 
     ```console
     .venv\Scripts\activate.bat
     ```
 
-
 > [!NOTE]
 > Eğer başarılı olduysa, komut isteminden önce *(.venv)* görmelisiniz.
 
-#### Gerekli paketleri yükleme
+#### Gerekli paketleri yükleyin
 
-1. Gerekli paketleri yüklemek için terminalinize aşağıdaki komutları yazın.
+1. Gerekli paketleri yüklemek için terminalinizde aşağıdaki komutları yazın.
 
     ```console
     pip install datasets==2.19.1
     ```
 
-#### `download_dataset.py` dosyasını oluşturma
+#### `download_dataset.py` dosyasını oluşturun
 
 > [!NOTE]
 > Tam klasör yapısı:
@@ -265,30 +269,30 @@ Bu egzersizde,
 
 1. **Visual Studio Code**'u açın.
 
-1. Menü çubuğundan **File** seçeneğini seçin.
+1. Menü çubuğundan **File**'ı seçin.
 
-1. **Open Folder** seçeneğini seçin.
+1. **Open Folder**'ı seçin.
 
-1. *C:\Users\yourUserName\finetune-phi* konumunda oluşturduğunuz *finetune-phi* klasörünü seçin.
+1. *finetune-phi* klasörünü seçin. Bu klasör *C:\Users\yourUserName\finetune-phi* yolunda bulunur.
 
     ![Oluşturduğunuz klasörü seçin.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.tr.png)
 
-1. Visual Studio Code'un sol panelinde sağ tıklayın ve **New File** seçeneği ile *download_dataset.py* adlı yeni bir dosya oluşturun.
+1. Visual Studio Code'un sol panelinde sağ tıklayın ve *download_dataset.py* adında yeni bir dosya oluşturmak için **New File**'ı seçin.
 
     ![Yeni dosya oluşturun.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.tr.png)
 
-### İnce ayar için veri setini hazırlama
+### İnce ayar için veri setini hazırlayın
 
-Bu alıştırmada, *download_dataset.py* dosyasını çalıştırarak *ultrachat_200k* veri setlerini yerel ortamınıza indireceksiniz. Daha sonra bu veri setlerini Azure Machine Learning'de Phi-3 modelini ince ayar yapmak için kullanacaksınız.
+Bu egzersizde, *download_dataset.py* dosyasını çalıştırarak *ultrachat_200k* veri kümelerini yerel ortamınıza indireceksiniz. Daha sonra bu veri kümelerini Azure Machine Learning içinde Phi-3 modelini ince ayar yapmak için kullanacaksınız.
 
-Bu alıştırmada şunları yapacaksınız:
+Bu egzersizde yapacaklarınız:
 
-- Veri setlerini indirmek için *download_dataset.py* dosyasına kod eklemek.
-- *download_dataset.py* dosyasını çalıştırarak veri setlerini yerel ortamınıza indirmek.
+- *download_dataset.py* dosyasına veri kümelerini indirmek için kod eklemek.
+- *download_dataset.py* dosyasını çalıştırarak veri kümelerini yerel ortamınıza indirmek.
 
-#### *download_dataset.py* ile veri setinizi indirin
+#### *download_dataset.py* kullanarak veri kümenizi indirin
 
-1. Visual Studio Code'da *download_dataset.py* dosyasını açın.
+1. *download_dataset.py* dosyasını Visual Studio Code'da açın.
 
 1. Aşağıdaki kodu *download_dataset.py* dosyasına ekleyin.
 
@@ -301,11 +305,11 @@ Bu alıştırmada şunları yapacaksınız:
         """
         Load and split a dataset.
         """
-        # Load the dataset with the specified name, configuration, and split ratio
+        # Belirtilen isim, yapılandırma ve bölme oranı ile veri setini yükle
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Split the dataset into train and test sets (80% train, 20% test)
+        # Veri setini eğitim ve test setlerine böl (yüzde 80 eğitim, yüzde 20 test)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -316,16 +320,16 @@ Bu alıştırmada şunları yapacaksınız:
         """
         Save a dataset to a JSONL file.
         """
-        # Create the directory if it does not exist
+        # Dizini yoksa oluştur
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Open the file in write mode
+        # Dosyayı yazma modunda aç
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
+            # Veri setindeki her kaydı yinele
             for record in dataset:
-                # Dump the record as a JSON object and write it to the file
+                # Kaydı JSON nesnesi olarak dök ve dosyaya yaz
                 json.dump(record, f)
-                # Write a newline character to separate records
+                # Kayıtları ayırmak için yeni satır karakteri yaz
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -334,17 +338,17 @@ Bu alıştırmada şunları yapacaksınız:
         """
         Main function to load, split, and save the dataset.
         """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
+        # ULTRACHAT_200k veri setini belirli bir yapılandırma ve bölme oranı ile yükle ve böl
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extract the train and test datasets from the split
+        # Bölmeden eğitim ve test veri setlerini çıkar
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Save the train dataset to a JSONL file
+        # Eğitim veri setini bir JSONL dosyasına kaydet
         save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
         
-        # Save the test dataset to a separate JSONL file
+        # Test veri setini ayrı bir JSONL dosyasına kaydet
         save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
 
     if __name__ == "__main__":
@@ -352,67 +356,67 @@ Bu alıştırmada şunları yapacaksınız:
 
     ```
 
-1. Terminalinize aşağıdaki komutu yazarak scripti çalıştırın ve veri setini yerel ortamınıza indirin.
+1. Terminalinizde aşağıdaki komutu yazarak scripti çalıştırın ve veri kümesini yerel ortamınıza indirin.
 
     ```console
     python download_dataset.py
     ```
 
-1. Veri setlerinin yerel *finetune-phi/data* dizinine başarıyla kaydedildiğini doğrulayın.
+1. Veri kümelerinin yerel *finetune-phi/data* dizinine başarıyla kaydedildiğini doğrulayın.
 
 > [!NOTE]
 >
-> #### Veri seti boyutu ve ince ayar süresi hakkında not
+> #### Veri kümesi boyutu ve ince ayar süresi hakkında not
 >
-> Bu eğitimde, veri setinin sadece %1'ini kullanıyorsunuz (`split='train[:1%]'`). Bu, veri miktarını önemli ölçüde azaltarak hem yükleme hem de ince ayar süreçlerini hızlandırır. Eğitim süresi ile model performansı arasında doğru dengeyi bulmak için bu yüzdeyi ayarlayabilirsiniz. Veri setinin daha küçük bir alt kümesini kullanmak, ince ayar için gereken süreyi azaltır ve süreci eğitim için daha yönetilebilir hale getirir.
+> Bu öğreticide, veri kümesinin sadece %1'ini (`split='train[:1%]'`) kullanıyorsunuz. Bu, veri miktarını önemli ölçüde azaltır ve yükleme ile ince ayar süreçlerini hızlandırır. Eğitim süresi ile model performansı arasında doğru dengeyi bulmak için yüzdeyi ayarlayabilirsiniz. Daha küçük bir veri kümesi alt kümesi kullanmak, ince ayar süresini azaltır ve öğreticiyi daha yönetilebilir hale getirir.
 
-## Senaryo 2: Phi-3 modelini ince ayar yapma ve Azure Machine Learning Studio'da dağıtma
+## Senaryo 2: Phi-3 modelini ince ayar yapın ve Azure Machine Learning Studio'da Yayınlayın
 
-### Phi-3 modelini ince ayar yapma
+### Phi-3 modelini ince ayar yapın
 
-Bu alıştırmada, Phi-3 modelini Azure Machine Learning Studio'da ince ayar yapacaksınız.
+Bu egzersizde, Phi-3 modelini Azure Machine Learning Studio'da ince ayar yapacaksınız.
 
-Bu alıştırmada şunları yapacaksınız:
+Bu egzersizde yapacaklarınız:
 
-- İnce ayar için bilgisayar kümesi oluşturma.
-- Azure Machine Learning Studio'da Phi-3 modelini ince ayar yapma.
+- İnce ayar için bilgisayar kümesi oluşturmak.
+- Azure Machine Learning Studio'da Phi-3 modelini ince ayar yapmak.
 
-#### İnce ayar için bilgisayar kümesi oluşturma
+#### İnce ayar için bilgisayar kümesi oluşturun
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) sitesini ziyaret edin.
 
-1. Sol taraftaki sekmeden **Compute** seçeneğini seçin.
+1. Sol taraftaki sekmeden **Compute**'u seçin.
 
-1. Navigasyon menüsünden **Compute clusters** seçeneğini seçin.
+1. Navigasyon menüsünden **Compute clusters**'ı seçin.
 
-1. **+ New** seçeneğini seçin.
+1. **+ New**'i seçin.
 
-    ![Compute seçin.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.tr.png)
+    ![Compute'u seçin.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.tr.png)
 
-1. Aşağıdaki işlemleri yapın:
+1. Şu işlemleri yapın:
 
-    - Kullanmak istediğiniz **Region**'ı seçin.
+    - Kullanmak istediğiniz **Region**'u seçin.
     - **Virtual machine tier** olarak **Dedicated** seçin.
     - **Virtual machine type** olarak **GPU** seçin.
     - **Virtual machine size** filtresini **Select from all options** olarak ayarlayın.
-    - **Virtual machine size** olarak **Standard_NC24ads_A100_v4** seçin.
+    - **Virtual machine size** olarak **Standard_NC24ads_A100_v4**'ü seçin.
 
     ![Küme oluşturun.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.tr.png)
 
-1. **Next** seçeneğini seçin.
+1. **Next**'i seçin.
 
-1. Aşağıdaki işlemleri yapın:
+1. Şu işlemleri yapın:
 
-    - **Compute name** girin. Bu benzersiz bir değer olmalıdır.
-    - **Minimum number of nodes** değerini **0** olarak ayarlayın.
-    - **Maximum number of nodes** değerini **1** olarak ayarlayın.
-    - **Idle seconds before scale down** değerini **120** olarak ayarlayın.
+    - **Compute name**'i yazın. Bu benzersiz bir değer olmalıdır.
+    - **Minimum number of nodes**'u **0** olarak seçin.
+    - **Maximum number of nodes**'u **1** olarak seçin.
+    - **Idle seconds before scale down**'u **120** olarak seçin.
 
     ![Küme oluşturun.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.tr.png)
 
-1. **Create** seçeneğini seçin.
+1. **Create**'i seçin.
 
-#### Phi-3 modelini ince ayar yapma
+#### Phi-3 modelini ince ayar yapın
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) sitesini ziyaret edin.
 
@@ -420,47 +424,47 @@ Bu alıştırmada şunları yapacaksınız:
 
     ![Oluşturduğunuz çalışma alanını seçin.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.tr.png)
 
-1. Aşağıdaki işlemleri yapın:
+1. Şu işlemleri yapın:
 
-    - Sol taraftaki sekmeden **Model catalog** seçeneğini seçin.
-    - **Arama çubuğuna** *phi-3-mini-4k* yazın ve çıkan seçeneklerden **Phi-3-mini-4k-instruct**'i seçin.
+    - Sol taraftaki sekmeden **Model catalog**'u seçin.
+    - **Arama çubuğuna** *phi-3-mini-4k* yazın ve çıkan seçeneklerden **Phi-3-mini-4k-instruct**'ı seçin.
 
     ![phi-3-mini-4k yazın.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.tr.png)
 
-1. Navigasyon menüsünden **Fine-tune** seçeneğini seçin.
+1. Navigasyon menüsünden **Fine-tune**'u seçin.
 
-    ![İnce ayar seçin.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.tr.png)
+    ![İnce ayarı seçin.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.tr.png)
 
-1. Aşağıdaki işlemleri yapın:
+1. Şu işlemleri yapın:
 
-    - **Select task type** olarak **Chat completion** seçin.
-    - **+ Select data** seçeneği ile **Training data** yükleyin.
-    - Doğrulama verisi yükleme türü olarak **Provide different validation data** seçin.
-    - **+ Select data** seçeneği ile **Validation data** yükleyin.
+    - **Select task type**'ı **Chat completion** olarak ayarlayın.
+    - **+ Select data**'yı seçerek **Eğitim verisi** yükleyin.
+    - Doğrulama verisi yükleme türünü **Provide different validation data** olarak seçin.
+    - **+ Select data**'yı seçerek **Doğrulama verisi** yükleyin.
 
     ![İnce ayar sayfasını doldurun.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.tr.png)
 
-    > [!TIP]
-    >
-    > İnce ayar sürecini ihtiyaçlarınıza göre optimize etmek için **learning_rate** ve **lr_scheduler_type** gibi ayarları değiştirmek üzere **Advanced settings** seçeneğini kullanabilirsiniz.
+> [!TIP]
+>
+> İleri ayarlar bölümünden (**Advanced settings**) **learning_rate** ve **lr_scheduler_type** gibi ayarları özelleştirerek ince ayar sürecini ihtiyacınıza göre optimize edebilirsiniz.
 
-1. **Finish** seçeneğini seçin.
+1. **Finish**'i seçin.
 
-1. Bu alıştırmada, Azure Machine Learning kullanarak Phi-3 modelini başarıyla ince ayar yaptınız. İnce ayar işleminin önemli bir süre alabileceğini unutmayın. İnce ayar işi çalıştıktan sonra tamamlanmasını beklemeniz gerekir. İnce ayar işinin durumunu Azure Machine Learning Çalışma Alanınızın sol tarafındaki Jobs sekmesinden takip edebilirsiniz. Sonraki seride, ince ayar yapılmış modeli dağıtacak ve Prompt flow ile entegre edeceksiniz.
+1. Bu egzersizde, Azure Machine Learning kullanarak Phi-3 modelini başarıyla ince ayar yaptınız. Lütfen ince ayar işleminin önemli bir süre alabileceğini unutmayın. İnce ayar işi çalıştırıldıktan sonra tamamlanmasını beklemeniz gerekmektedir. İnce ayar işinin durumunu Azure Machine Learning Çalışma Alanınızın sol tarafındaki İşler (Jobs) sekmesinden takip edebilirsiniz. Bir sonraki bölümde, ince ayar yapılmış modeli yayınlayacak ve Prompt flow ile entegre edeceksiniz.
 
     ![İnce ayar işini görün.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.tr.png)
 
-### İnce ayar yapılmış Phi-3 modelini dağıtma
+### İnce ayarlanmış Phi-3 modelini yayınlayın
 
-İnce ayar yapılmış Phi-3 modelini Prompt flow ile entegre etmek için modeli gerçek zamanlı çıkarım için erişilebilir hale getirmek üzere dağıtmanız gerekir. Bu süreç modelin kaydedilmesini, çevrimiçi bir uç nokta oluşturulmasını ve modelin dağıtılmasını içerir.
+İnce ayarlanmış Phi-3 modelini Prompt flow ile entegre etmek için modeli gerçek zamanlı çıkarım için erişilebilir hale getirmeniz gerekir. Bu işlem modelin kaydedilmesini, çevrimiçi bir uç nokta oluşturulmasını ve modelin dağıtımını içerir.
 
-Bu alıştırmada şunları yapacaksınız:
+Bu egzersizde yapacaklarınız:
 
-- İnce ayar yapılmış modeli Azure Machine Learning çalışma alanına kaydetmek.
+- Azure Machine Learning çalışma alanında ince ayar yapılmış modeli kaydetmek.
 - Çevrimiçi bir uç nokta oluşturmak.
-- Kayıtlı ince ayar yapılmış Phi-3 modelini dağıtmak.
+- Kaydedilmiş ince ayar yapılmış Phi-3 modelini dağıtmak.
 
-#### İnce ayar yapılmış modeli kaydetme
+#### İnce ayar yapılmış modeli kaydedin
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) sitesini ziyaret edin.
 
@@ -468,9 +472,9 @@ Bu alıştırmada şunları yapacaksınız:
 
     ![Oluşturduğunuz çalışma alanını seçin.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.tr.png)
 
-1. Sol taraftaki sekmeden **Models** seçeneğini seçin.
-1. **+ Register** seçeneğini seçin.
-1. **From a job output** seçeneğini seçin.
+1. Sol taraftaki sekmeden **Models**'i seçin.
+1. **+ Register**'ı seçin.
+1. **From a job output**'u seçin.
 
     ![Modeli kaydedin.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.tr.png)
 
@@ -478,211 +482,212 @@ Bu alıştırmada şunları yapacaksınız:
 
     ![İşi seçin.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.tr.png)
 
-1. **Next** seçeneğini seçin.
+1. **Next**'i seçin.
 
-1. **Model type** olarak **MLflow** seçin.
+1. **Model type** olarak **MLflow**'u seçin.
 
-1. **Job output** seçeneğinin seçili olduğundan emin olun; otomatik seçilmiş olmalıdır.
+1. **Job output**'un seçili olduğundan emin olun; otomatik seçili olmalıdır.
 
     ![Çıktıyı seçin.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.tr.png)
 
-2. **Next** seçeneğini seçin.
+2. **Next**'i seçin.
 
-3. **Register** seçeneğini seçin.
+3. **Register**'ı seçin.
 
-    ![Kaydet seçeneğini seçin.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.tr.png)
+    ![Kayıt yapın.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.tr.png)
 
-4. Kayıtlı modelinizi sol taraftaki sekmeden **Models** menüsüne giderek görüntüleyebilirsiniz.
+4. Kayıtlı modelinizi sol taraftaki sekmeden **Models** menüsüne giderek görebilirsiniz.
 
     ![Kayıtlı model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.tr.png)
 
-#### İnce ayar yapılmış modeli dağıtma
+#### İnce ayarlanmış modeli yayınlayın
 
 1. Oluşturduğunuz Azure Machine Learning çalışma alanına gidin.
 
-1. Sol taraftaki sekmeden **Endpoints** seçeneğini seçin.
+1. Sol taraftaki sekmeden **Endpoints**'i seçin.
 
-1. Navigasyon menüsünden **Real-time endpoints** seçeneğini seçin.
+1. Navigasyon menüsünden **Real-time endpoints**'i seçin.
 
-    ![Uç nokta oluşturun.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.tr.png)
+    ![Uç noktası oluşturun.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.tr.png)
 
-1. **Create** seçeneğini seçin.
+1. **Create**'i seçin.
 
 1. Oluşturduğunuz kayıtlı modeli seçin.
 
     ![Kayıtlı modeli seçin.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.tr.png)
 
-1. **Select** seçeneğini seçin.
+1. **Select**'i seçin.
 
-1. Aşağıdaki işlemleri yapın:
+1. Şu işlemleri yapın:
 
-    - **Virtual machine** olarak *Standard_NC6s_v3* seçin.
-    - Kullanmak istediğiniz **Instance count** değerini seçin. Örneğin, *1*.
-    - **Endpoint** olarak **New** seçeneğini seçerek yeni bir uç nokta oluşturun.
-    - **Endpoint name** girin. Bu benzersiz bir değer olmalıdır.
-    - **Deployment name** girin. Bu benzersiz bir değer olmalıdır.
+    - **Virtual machine** olarak *Standard_NC6s_v3*'ü seçin.
+    - Kullanmaya karar verdiğiniz **Instance count** değerini seçin. Örneğin, *1*.
+    - Uç nokta için **Endpoint**'i **New** olarak seçin.
+    - **Endpoint name** girin. Benzersiz bir değer olmalıdır.
+    - **Deployment name** girin. Benzersiz bir değer olmalıdır.
 
     ![Dağıtım ayarlarını doldurun.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.tr.png)
 
-1. **Deploy** seçeneğini seçin.
+1. **Deploy**'ı seçin.
 
 > [!WARNING]
-> Hesabınıza ek ücret yansımaması için Azure Machine Learning çalışma alanında oluşturduğunuz uç noktayı silmeyi unutmayın.
+> Hesabınıza ek ücretler yansımasını önlemek için Azure Machine Learning çalışma alanında oluşturduğunuz uç noktayı silmeyi unutmayın.
 >
 
-#### Azure Machine Learning Çalışma Alanında dağıtım durumunu kontrol etme
+#### Azure Machine Learning Çalışma Alanında dağıtım durumunu kontrol edin
 
 1. Oluşturduğunuz Azure Machine Learning çalışma alanına gidin.
 
-1. Sol taraftaki sekmeden **Endpoints** seçeneğini seçin.
+1. Sol taraftaki sekmeden **Endpoints**'i seçin.
 
 1. Oluşturduğunuz uç noktayı seçin.
 
     ![Uç noktaları seçin](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.tr.png)
 
-1. Bu sayfada, dağıtım sürecindeki uç noktaları yönetebilirsiniz.
+1. Bu sayfada, dağıtım sürecinde uç noktaları yönetebilirsiniz.
 
 > [!NOTE]
-> Dağıtım tamamlandıktan sonra, **Live traffic** değerinin **%100** olarak ayarlandığından emin olun. Eğer değilse, trafik ayarlarını değiştirmek için **Update traffic** seçeneğini kullanın. Trafik %0 olarak ayarlanmışsa modeli test edemezsiniz.
+> Dağıtım tamamlandığında, **Live traffic** ayarının **%100** olduğundan emin olun. Değilse, trafik ayarlarını değiştirmek için **Update traffic** seçeneğini kullanın. Trafik %0 iken modeli test edemezsiniz.
 >
 > ![Trafiği ayarlayın.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.tr.png)
 >
 
-## Senaryo 3: Prompt flow ile entegrasyon ve Azure AI Foundry'de özel modelinizle sohbet
+## Senaryo 3: Prompt flow ile entegrasyon ve özel modelinizle Azure AI Foundry'de sohbet
 
-### Özel Phi-3 modelini Prompt flow ile entegre etme
+### Özel Phi-3 modelini Prompt flow ile entegre edin
 
-İnce ayar yapılmış modelinizi başarıyla dağıttıktan sonra, modelinizi gerçek zamanlı uygulamalarda kullanmak için Prompt Flow ile entegre edebilirsiniz. Bu sayede özel Phi-3 modelinizle çeşitli etkileşimli görevler gerçekleştirebilirsiniz.
+İnce ayarlı modelinizi başarıyla yayınladıktan sonra, Prompt Flow ile entegre ederek modelinizi gerçek zamanlı uygulamalarda kullanabilir ve özel Phi-3 modelinizle çeşitli etkileşimli görevler gerçekleştirebilirsiniz.
 
-Bu alıştırmada şunları yapacaksınız:
+Bu egzersizde yapacaklarınız:
 
-- Azure AI Foundry Hub oluşturma.
-- Azure AI Foundry Projesi oluşturma.
-- Prompt flow oluşturma.
-- İnce ayar yapılmış Phi-3 modeli için özel bağlantı ekleme.
-- Prompt flow'u özel Phi-3 modelinizle sohbet edecek şekilde ayarlama.
+- Azure AI Foundry Hub oluşturmak.
+- Azure AI Foundry Projesi oluşturmak.
+- Prompt flow oluşturmak.
+- İnce ayarlı Phi-3 modeli için özel bağlantı eklemek.
+- Özel Phi-3 modelinizle sohbet etmek için Prompt flow'u yapılandırmak.
+
 > [!NOTE]
-> Azure ML Studio kullanarak Promptflow ile entegrasyon da yapabilirsiniz. Aynı entegrasyon süreci Azure ML Studio için de geçerlidir.
-#### Azure AI Foundry Hub Oluşturma
+> Azure ML Studio kullanarak da Promptflow ile entegre olabilirsiniz. Aynı entegrasyon süreci Azure ML Studio için de geçerlidir.
 
-Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, bir Kaynak Grubu gibi davranır ve Azure AI Foundry içinde birden fazla Projeyi organize edip yönetmenizi sağlar.
+#### Azure AI Foundry Hub oluşturun
+
+Proje oluşturmadan önce bir Hub oluşturmalısınız. Hub, kaynak grubu gibi davranarak Azure AI Foundry içinde birden fazla projeyi organize etmenize ve yönetmenize olanak tanır.
 
 1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesini ziyaret edin.
 
-1. Sol taraftaki sekmeden **All hubs** seçeneğini seçin.
+1. Sol taraftaki sekmeden **All hubs**'u seçin.
 
-1. Navigasyon menüsünden **+ New hub** seçeneğini seçin.
+1. Navigasyon menüsünden **+ New hub**'ı seçin.
+![Hub oluştur.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.tr.png)
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.tr.png)
+1. Aşağıdaki görevleri gerçekleştirin:
 
-1. Aşağıdaki işlemleri yapın:
+    - **Hub adı** girin. Benzersiz bir değer olmalıdır.
+    - Azure **Aboneliğinizi** seçin.
+    - Kullanılacak **Kaynak grubunu** seçin (gerekirse yenisini oluşturun).
+    - Kullanmak istediğiniz **Konumu** seçin.
+    - Kullanılacak **Azure AI Hizmetlerini Bağla** seçin (gerekirse yenisini oluşturun).
+    - **Azure AI Arama Bağlantısı** için **Bağlantıyı atla** seçin.
 
-    - **Hub name** girin. Bu benzersiz bir değer olmalıdır.
-    - Azure **Subscription** seçin.
-    - Kullanmak istediğiniz **Resource group** seçin (gerekirse yeni bir tane oluşturun).
-    - Kullanmak istediğiniz **Location** seçin.
-    - Kullanmak istediğiniz **Connect Azure AI Services** seçin (gerekirse yeni bir tane oluşturun).
-    - **Connect Azure AI Search** için **Skip connecting** seçeneğini seçin.
+![Hub doldur.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.tr.png)
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.tr.png)
-
-1. **Next** seçeneğini seçin.
+1. **İleri** seçeneğini tıklayın.
 
 #### Azure AI Foundry Projesi Oluşturma
 
-1. Oluşturduğunuz Hub içinde, sol taraftaki sekmeden **All projects** seçeneğini seçin.
+1. Oluşturduğunuz Hub'da, sol taraftaki sekmeden **Tüm projeler**i seçin.
 
-1. Navigasyon menüsünden **+ New project** seçeneğini seçin.
+1. Gezinme menüsünden **+ Yeni proje** seçin.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.tr.png)
+![Yeni proje seç.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.tr.png)
 
-1. **Project name** girin. Bu benzersiz bir değer olmalıdır.
+1. **Proje adı** girin. Benzersiz bir değer olmalıdır.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.tr.png)
+![Proje oluştur.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.tr.png)
 
-1. **Create a project** seçeneğini seçin.
+1. **Bir proje oluştur** seçeneğini tıklayın.
 
-#### İnce Ayarlanmış Phi-3 modeli için özel bağlantı ekleme
+#### Fine-tuning yapılmış Phi-3 modeli için özel bağlantı ekleme
 
-Özel Phi-3 modelinizi Prompt flow ile entegre etmek için modelin endpoint ve anahtarını özel bir bağlantıda kaydetmeniz gerekir. Bu yapılandırma, Prompt flow içinde özel Phi-3 modelinize erişimi sağlar.
+Özel Phi-3 modelinizi Prompt flow ile entegre etmek için modelin uç noktası ve anahtarını özel bir bağlantıda kaydetmeniz gerekmektedir. Bu kurulum, Prompt flow'da özel Phi-3 modelinize erişim sağlar.
 
-#### İnce ayarlanmış Phi-3 modelinin api anahtarı ve endpoint uri'sini ayarlama
+#### Fine-tuning yapılmış Phi-3 modelinin api anahtarı ve uç nokta URI'sını ayarlama
 
-1. [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo) sitesini ziyaret edin.
+1. [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo) sitesine gidin.
 
-1. Oluşturduğunuz Azure Machine learning çalışma alanına gidin.
+1. Oluşturduğunuz Azure Makine öğrenimi çalışma alanına gidin.
 
-1. Sol taraftaki sekmeden **Endpoints** seçeneğini seçin.
+1. Sol taraftaki sekmeden **Uç Noktalar**ı seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.tr.png)
+![Uç nokta seç.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.tr.png)
 
-1. Oluşturduğunuz endpoint'i seçin.
+1. Oluşturduğunuz uç noktayı seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.tr.png)
+![Oluşturulan uç noktayı seç.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.tr.png)
 
-1. Navigasyon menüsünden **Consume** seçeneğini seçin.
+1. Gezinme menüsünden **Tüket** seçeneğini seçin.
 
-1. **REST endpoint** ve **Primary key** değerlerini kopyalayın.
+1. **REST uç noktası** ve **Birincil anahtarı** kopyalayın.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.tr.png)
+![Api anahtarı ve uç nokta URI'yı kopyala.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.tr.png)
 
 #### Özel Bağlantı Ekleme
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesini ziyaret edin.
+1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesine gidin.
 
 1. Oluşturduğunuz Azure AI Foundry projesine gidin.
 
-1. Oluşturduğunuz Proje içinde, sol taraftaki sekmeden **Settings** seçeneğini seçin.
+1. Oluşturduğunuz projede, sol taraftaki sekmeden **Ayarlar**ı seçin.
 
-1. **+ New connection** seçeneğini seçin.
+1. **+ Yeni bağlantı** seçeneğini seçin.
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.tr.png)
+![Yeni bağlantı seç.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.tr.png)
 
-1. Navigasyon menüsünden **Custom keys** seçeneğini seçin.
+1. Gezinme menüsünden **Özel anahtarlar**ı seçin.
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.tr.png)
+![Özel anahtarları seç.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.tr.png)
 
-1. Aşağıdaki işlemleri yapın:
+1. Aşağıdaki görevleri gerçekleştirin:
 
-    - **+ Add key value pairs** seçeneğini seçin.
-    - Anahtar adı olarak **endpoint** girin ve Azure ML Studio’dan kopyaladığınız endpoint’i değer alanına yapıştırın.
-    - Tekrar **+ Add key value pairs** seçeneğini seçin.
-    - Anahtar adı olarak **key** girin ve Azure ML Studio’dan kopyaladığınız anahtarı değer alanına yapıştırın.
-    - Anahtarları ekledikten sonra, anahtarın görünmesini engellemek için **is secret** seçeneğini işaretleyin.
+    - **+ Anahtar değer çiftleri ekle** seçin.
+    - Anahtar adı olarak **endpoint** girin ve Azure ML Studio'dan kopyaladığınız uç noktayı değer alanına yapıştırın.
+    - Tekrar **+ Anahtar değer çiftleri ekle** seçin.
+    - Anahtar adı olarak **key** girin ve Azure ML Studio'dan kopyaladığınız anahtarı değer alanına yapıştırın.
+    - Anahtarları ekledikten sonra, anahtarın görünmesini engellemek için **gizli olarak işaretle** seçeneğini seçin.
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.tr.png)
+![Bağlantı ekle.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.tr.png)
 
-1. **Add connection** seçeneğini seçin.
+1. **Bağlantı ekle** seçeneğini tıklayın.
 
-#### Prompt flow Oluşturma
+#### Prompt flow oluşturma
 
-Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki adımları izleyerek bir Prompt flow oluşturacağız. Daha sonra bu Prompt flow’u özel bağlantıya bağlayarak ince ayarlı modeli Prompt flow içinde kullanabileceksiniz.
+Azure AI Foundry'de özel bir bağlantı eklediniz. Şimdi aşağıdaki adımları kullanarak bir Prompt flow oluşturalım. Daha sonra bu Prompt flow'u özel bağlantıya bağlayarak fine-tuning yapılmış modeli Prompt flow içerisinde kullanabileceksiniz.
 
 1. Oluşturduğunuz Azure AI Foundry projesine gidin.
 
-1. Sol taraftaki sekmeden **Prompt flow** seçeneğini seçin.
+1. Sol taraftaki sekmeden **Prompt flow** seçin.
 
-1. Navigasyon menüsünden **+ Create** seçeneğini seçin.
+1. Gezinme menüsünden **+ Oluştur** seçeneğini tıklayın.
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.tr.png)
+![Promptflow seç.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.tr.png)
 
-1. Navigasyon menüsünden **Chat flow** seçeneğini seçin.
+1. Gezinme menüsünden **Sohbet akışı** seçeneğini seçin.
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.tr.png)
+![Sohbet akışı seç.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.tr.png)
 
-1. Kullanmak istediğiniz **Folder name** girin.
+1. Kullanmak istediğiniz **Klasör adını** girin.
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.tr.png)
+![Ad gir.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.tr.png)
 
-2. **Create** seçeneğini seçin.
+2. **Oluştur** seçeneğini tıklayın.
 
-#### Prompt flow’u özel Phi-3 modelinizle sohbet edecek şekilde ayarlama
+#### Prompt flow'u fine-tuning yapılmış Phi-3 modelinizle sohbet için ayarlama
 
-İnce ayarlı Phi-3 modelinizi Prompt flow’a entegre etmeniz gerekiyor. Ancak mevcut Prompt flow bu amaç için tasarlanmamıştır. Bu nedenle, özel modelin entegrasyonunu sağlamak için Prompt flow’u yeniden tasarlamanız gerekir.
+Fine-tuning yapılmış Phi-3 modelini Prompt flow'a entegre etmeniz gerekiyor. Ancak, mevcut sağlanan Prompt flow bunun için tasarlanmamıştır. Bu nedenle, özel modelin entegrasyonunu mümkün kılmak amacıyla Prompt flow'u yeniden tasarlamalısınız.
 
-1. Prompt flow içinde, mevcut akışı yeniden oluşturmak için aşağıdaki işlemleri yapın:
+1. Prompt flow'da, mevcut akışı yeniden oluşturmak için şu görevleri gerçekleştirin:
 
-    - **Raw file mode** seçeneğini seçin.
+    - **Ham dosya modu**nu seçin.
     - *flow.dag.yml* dosyasındaki tüm mevcut kodu silin.
     - Aşağıdaki kodu *flow.dag.yml* dosyasına ekleyin.
 
@@ -707,11 +712,11 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
             input_data: ${inputs.input_data}
         ```
 
-    - **Save** seçeneğini seçin.
+    - **Kaydet** seçeneğini tıklayın.
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.tr.png)
+![Ham dosya modunu seç.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.tr.png)
 
-1. Prompt flow içinde özel Phi-3 modelini kullanmak için *integrate_with_promptflow.py* dosyasına aşağıdaki kodu ekleyin.
+1. Prompt flow'da özel Phi-3 modelini kullanmak için *integrate_with_promptflow.py* dosyasına aşağıdaki kodu ekleyin.
 
     ```python
     import logging
@@ -719,7 +724,7 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
     from promptflow import tool
     from promptflow.connections import CustomConnection
 
-    # Logging setup
+    # Günlük kaydı kurulumu
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -732,7 +737,7 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
         Send a request to the Phi-3 model endpoint with the given input data using Custom Connection.
         """
 
-        # "connection" is the name of the Custom Connection, "endpoint", "key" are the keys in the Custom Connection
+        # "connection", Özel Bağlantının adıdır, "endpoint", "key" Özel Bağlantıdaki anahtarlardır
         endpoint_url = connection.endpoint
         api_key = connection.key
 
@@ -755,7 +760,7 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
             response = requests.post(endpoint_url, json=data, headers=headers)
             response.raise_for_status()
             
-            # Log the full JSON response
+            # Tam JSON yanıtını günlükle
             logger.debug(f"Full JSON response: {response.json()}")
 
             result = response.json()["output"]
@@ -774,53 +779,57 @@ Azure AI Foundry içinde özel bir bağlantı eklediniz. Şimdi aşağıdaki ad�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.tr.png)
+![Prompt flow kodunu yapıştır.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.tr.png)
 
 > [!NOTE]
-> Azure AI Foundry’de Prompt flow kullanımı hakkında daha ayrıntılı bilgi için [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
+> Azure AI Foundry'de Prompt flow kullanımı hakkında daha ayrıntılı bilgi için [Azure AI Foundry'de Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
 
-1. Modelinizle sohbeti etkinleştirmek için **Chat input**, **Chat output** seçeneklerini seçin.
+1. Modelinizle sohbeti etkinleştirmek için **Sohbet girişi**, **Sohbet çıkışı** seçeneklerini seçin.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.tr.png)
+![Girdi çıktı seç.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.tr.png)
 
-1. Artık özel Phi-3 modelinizle sohbet etmeye hazırsınız. Bir sonraki alıştırmada, Prompt flow’u nasıl başlatacağınızı ve ince ayarlı Phi-3 modelinizle sohbet etmek için nasıl kullanacağınızı öğreneceksiniz.
+1. Artık özel Phi-3 modelinizle sohbet etmeye hazırsınız. Bir sonraki egzersizde, Prompt flow'u nasıl başlatacağınızı ve fine-tuning yapılmış Phi-3 modelinizle nasıl sohbet edeceğinizi öğreneceksiniz.
 
 > [!NOTE]
 >
 > Yeniden oluşturulan akış aşağıdaki görseldeki gibi olmalıdır:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.tr.png)
+> ![Akış örneği.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.tr.png)
 >
 
 ### Özel Phi-3 modelinizle sohbet etme
 
-Artık özel Phi-3 modelinizi ince ayarladınız ve Prompt flow ile entegre ettiniz, modelinizle etkileşime geçmeye hazırsınız. Bu alıştırma, Prompt flow kullanarak modelinizle sohbet başlatma ve ayarlama sürecinde size rehberlik edecektir. Bu adımları takip ederek, ince ayarlı Phi-3 modelinizin çeşitli görevler ve sohbetler için sunduğu yeteneklerden tam olarak faydalanabileceksiniz.
+Fine-tuning işlemini tamamlayıp özel Phi-3 modelinizi Prompt flow ile entegre ettiğinize göre, modelinizle etkileşim başlatmaya hazırsınız. Bu egzersiz, Prompt flow kullanarak modelinizle sohbeti ayarlayıp başlatma sürecini size adım adım gösterecektir. Bu adımları izleyerek, fine-tuning yapılmış Phi-3 modelinizin çeşitli görevler ve sohbetler için yeteneklerini tam olarak kullanabileceksiniz.
 
 - Prompt flow kullanarak özel Phi-3 modelinizle sohbet edin.
 
-#### Prompt flow’u başlatma
+#### Prompt flow'u başlatma
 
-1. Prompt flow’u başlatmak için **Start compute sessions** seçeneğini seçin.
+1. Prompt flow'u başlatmak için **Hesaplama oturumlarını başlat** seçeneğini tıklayın.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.tr.png)
+![Hesaplama oturumunu başlat.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.tr.png)
 
-1. Parametreleri yenilemek için **Validate and parse input** seçeneğini seçin.
+1. Parametreleri yenilemek için **Girişi doğrula ve ayrıştır** seçeneğini seçin.
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.tr.png)
+![Girişi doğrula.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.tr.png)
 
-1. Oluşturduğunuz özel bağlantının **connection** değerini seçin. Örneğin, *connection*.
+1. Oluşturduğunuz özel bağlantıya ait **connection** değerini seçin. Örneğin, *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.tr.png)
+![Bağlantı.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.tr.png)
 
-#### Özel modelinizle sohbet etme
+#### Özel modelinizle sohbet edin
 
-1. **Chat** seçeneğini seçin.
+1. **Sohbet** seçeneğini seçin.
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.tr.png)
+![Sohbeti seç.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.tr.png)
 
-1. İşte sonuçlara bir örnek: Artık özel Phi-3 modelinizle sohbet edebilirsiniz. İnce ayar için kullanılan verilere dayalı sorular sormanız önerilir.
+1. İşte sonuçlara bir örnek: Artık özel Phi-3 modelinizle sohbet edebilirsiniz. Fine-tuning için kullanılan verilere dayalı sorular sorulması önerilir.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.tr.png)
+![Prompt flow ile sohbet.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.tr.png)
 
-**Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde otoritatif kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi tavsiye edilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek herhangi bir yanlış anlama veya yanlış yorumdan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
