@@ -82,7 +82,7 @@ Installing Cuda GPU drivers
     - Enter project **Name** you want to use.
     - Select **Type** to **Write**.
 
-> **Note**
+> [!NOTE]
 >
 > If you encounter the following error:
 >
