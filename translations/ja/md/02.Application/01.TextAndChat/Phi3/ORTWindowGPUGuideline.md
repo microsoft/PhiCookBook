@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** Python環境には[Miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe)の使用を推奨します
+   ***注記*** Python環境には[Miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe)の使用を推奨します
 
    ```bash
 
@@ -41,7 +41,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **3. Visual Studio 2022 - C++によるデスクトップ開発をインストール**
 
-   ***Note*** コンパイルしない場合はこのステップをスキップできます
+   ***注記*** コンパイルしない場合はこのステップをスキップできます
 
 ![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.ja.png)
 
@@ -87,7 +87,7 @@ NVIDIA CUDNN 9.4のlib、bin、includeフォルダの内容をNVIDIA CUDA 12.4�
 
 ### **8. ORT GenAI GPUのコンパイル**
 
-   ***Note*** 
+   ***注記*** 
    
    1. まず、onnx、onnxruntime、onnxruntime-genaiに関するすべてをアンインストールしてください
 
