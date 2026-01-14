@@ -19,7 +19,7 @@ Microsoft’un Phi-3 Mini dil modelini Azure AI Foundry kullanarak nasıl ince a
 - **Kullanım Kolaylığı:** İnce ayar nasıl gerçekleşir – özel kod yazmam gerekir mi? Kendi hesaplama kaynaklarımı getirmem gerekir mi?
 - **Güvenlik:** İnce ayarlanmış modellerin güvenlik riskleri olduğu biliniyor – istenmeyen zararlara karşı koruma için herhangi bir önlem var mı?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.tr.png)
+![AIFoundry Models](../../../../translated_images/tr/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## İnce Ayar İçin Hazırlık
 
@@ -71,7 +71,7 @@ Desteklenen dosya türü JSON Lines’dır. Dosyalar varsayılan veri deposuna y
 
 Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince ayarlamanıza olanak tanır. İnce ayar, belirli görevler ve uygulamalar için özelleştirme ve optimizasyon sağlayarak önemli faydalar sunar. Bu, geliştirilmiş performans, maliyet etkinliği, azalan gecikme süresi ve kişiselleştirilmiş çıktılar anlamına gelir.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.tr.png)
+![Finetune AI Foundry](../../../../translated_images/tr/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Yeni Proje Oluşturma
 
@@ -79,14 +79,14 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
 
 1. Azure AI Foundry’da yeni proje oluşturmak için **+New project** seçeneğini tıklayın.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/select-new-project.cd31c0404088d7a3.png)
 
 1. Aşağıdaki işlemleri yapın:
 
     - Proje **Hub adı**. Benzersiz bir değer olmalıdır.
     - Kullanılacak **Hub**’ı seçin (gerekirse yenisini oluşturun).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/create-project.ca3b71298b90e420.png)
 
 1. Yeni bir hub oluşturmak için aşağıdaki adımları gerçekleştirin:
 
@@ -97,7 +97,7 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
     - Kullanmak istediğiniz **Azure AI Hizmetlerini Bağla** seçeneğini seçin (gerekirse yenisini oluşturun).
     - **Azure AI Arama Bağlantısını** **Bağlantıyı atla** olarak seçin.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/create-hub.49e53d235e80779e.png)
 
 1. **Next** seçeneğine tıklayın.
 1. **Create a project** seçeneğini seçin.
@@ -115,15 +115,15 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
 
 1. **Arama çubuğuna** *phi-3* yazın ve kullanmak istediğiniz phi-3 modelini seçin.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/select-model.60ef2d4a6a3cec57.png)
 
 1. **Fine-tune** seçeneğini tıklayın.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/select-finetune.a976213b543dd9d8.png)
 
 1. **Fine-tuned model name** (İnce ayarlı model adı) girin.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/finetune1.c2b39463f0d34148.png)
 
 1. **Next** seçeneğine tıklayın.
 
@@ -132,13 +132,13 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
     - **Görev türü** olarak **Chat completion** seçin.
     - Kullanmak istediğiniz **Eğitim verisini** seçin. Azure AI Foundry veri deposundan veya yerel ortamınızdan yükleyebilirsiniz.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/finetune2.43cb099b1a94442d.png)
 
 1. **Next** seçeneğine tıklayın.
 
 1. Kullanmak istediğiniz **Doğrulama verisini** yükleyin veya **Eğitim verisinin otomatik bölünmesi** seçeneğini seçin.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/finetune3.fd96121b67dcdd92.png)
 
 1. **Next** seçeneğine tıklayın.
 
@@ -148,15 +148,15 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
     - Kullanmak istediğiniz **Learning rate** (Öğrenme hızı).
     - Kullanmak istediğiniz **Epochs** (Eğitim döngüsü sayısı).
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/finetune4.e18b80ffccb5834a.png)
 
 1. İnce ayar işlemini başlatmak için **Submit** seçeneğine tıklayın.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/select-submit.0a3802d581bac271.png)
 
 1. Modeliniz ince ayarlandıktan sonra durumu **Completed** olarak gösterilecektir. Artık modeli dağıtabilir ve kendi uygulamanızda, playground’da veya prompt flow’da kullanabilirsiniz. Daha fazla bilgi için bkz. [Azure AI Foundry ile Phi-3 ailesi küçük dil modellerinin dağıtımı](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.tr.png)
+    ![FineTuneSelect](../../../../translated_images/tr/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Phi-3 ince ayarı hakkında daha ayrıntılı bilgi için lütfen [Azure AI Foundry’de Phi-3 modellerini ince ayarlama](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) sayfasını ziyaret edin.

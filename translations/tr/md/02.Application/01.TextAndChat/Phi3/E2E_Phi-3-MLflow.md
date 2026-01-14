@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/), uçtan uca makine öğrenimi yaşam döngüsünü yönetmek için tasarlanmış açık kaynaklı bir platformdur.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.tr.png)
+![MLFlow](../../../../../../translated_images/tr/MlFlowmlops.ed16f47809d74d9a.png)
 
 MLFlow, deneyler, tekrarlanabilirlik, dağıtım ve merkezi model kayıt defteri dahil olmak üzere ML yaşam döngüsünü yönetmek için kullanılır. MLflow şu anda dört bileşen sunmaktadır.
 
@@ -22,7 +22,7 @@ MLFlow, deneyler, tekrarlanabilirlik, dağıtım ve merkezi model kayıt defteri
 
 Deneyleri takip etme, kodu tekrarlanabilir çalıştırmalara paketleme ve modelleri paylaşma ve dağıtma yeteneklerini içerir. MLFlow, Databricks ile entegre olup çeşitli ML kütüphanelerini destekler, böylece kütüphane bağımsızdır. Herhangi bir makine öğrenimi kütüphanesi ve programlama dili ile kullanılabilir; kullanım kolaylığı için REST API ve CLI sağlar.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.tr.png)
+![MLFlow](../../../../../../translated_images/tr/MLflow2.5a22eb718f6311d1.png)
 
 MLFlow’un temel özellikleri şunlardır:
 
@@ -37,7 +37,7 @@ MLFlow ayrıca veri hazırlama, modelleri kaydetme ve yönetme, modelleri çalı
 
 Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı sarmalayıcı oluşturma yaklaşımını ve ardından bunu MLFlow modeli olarak yerel veya bulutta, örneğin Azure Machine Learning çalışma alanında çalıştırmayı göstereceğiz.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.tr.png)
+![MLFlow](../../../../../../translated_images/tr/MlFlow1.fd745e47dbd3fecf.png)
 
 | Proje | Açıklama | Konum |
 | ------------ | ----------- | -------- |

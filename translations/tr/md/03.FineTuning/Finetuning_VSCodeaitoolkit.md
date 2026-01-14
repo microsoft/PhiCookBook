@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [VSCode için AI Toolkit’i Yükleyin](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.tr.png)
+![AIToolkit FineTuning](../../../../translated_images/tr/Aitoolkit.7157953df04812dc.png)
 
 **[Private Preview]** Model ince ayarı ve çıkarımı bulutta çalıştırmak için Azure Container Apps’e tek tıkla kaynak sağlama.
 

@@ -15,11 +15,11 @@ Visual Studio Code Copilot kullanıyor musunuz? Özellikle Chat bölümünde, Vi
 
 Phi-3/3.5 Ailesindeki Phi-3/3.5-mini-instruct modelinin güçlü kod anlama ve üretme yeteneklerine sahip olduğunu ve Gemma-2-9b ile Mistral-Nemo-12B-instruct-2407 modellerine göre avantajları olduğunu biliyoruz.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.tr.png)
+![codegen](../../../../../../translated_images/tr/codegen.53be1150ee54d969.png)
 
 En son GitHub Modelleri, Phi-3.5-mini-instruct (128k) ve Phi-3.5-vision-instruct (128k) modellerine erişim sağlamaktadır. Geliştiriciler bu modellere OpenAI SDK, Azure AI Inference SDK ve REST API üzerinden ulaşabilirler.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d5.tr.png)
+![gh](../../../../../../translated_images/tr/gh.459640c7ceba01d5.png)
 
 ***Not:*** Üretim ortamında Azure Model Catalog ile daha iyi geçiş yapabildiği için burada Azure AI Inference SDK kullanılması önerilir.
 
@@ -34,13 +34,13 @@ Aşağıda, GitHub Modelleri ile entegre edildikten sonra kod üretme senaryosun
 
 GitHub Copilot Chat Ajanı, kod temelinde farklı proje senaryolarında çeşitli görevleri tamamlayabilir. Sistem dört ajan içerir: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.tr.png)
+![agent](../../../../../../translated_images/tr/agent.3dbb06228f9a6189.png)
 
 Ajan adını ‘@’ ile ekleyerek ilgili işi hızlıca tamamlayabilirsiniz. Kuruluşlar için, gereksinimler, kodlama, test spesifikasyonları ve sürüm gibi kendi işlerine dair içerikleri ekleyerek GitHub Copilot tabanlı daha güçlü kurumsal özel fonksiyonlara sahip olunabilir.
 
 Visual Studio Code Chat Ajanı artık resmi olarak API’sini yayınladı ve bu sayede şirketler veya kurumsal geliştiriciler farklı yazılım iş ekosistemlerine dayalı ajanlar geliştirebilir. Visual Studio Code Extension Development geliştirme yöntemi temel alınarak, Visual Studio Code Chat Ajan API arayüzüne kolayca erişilebilir. Bu süreç üzerinden geliştirme yapabiliriz.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.tr.png)
+![diagram](../../../../../../translated_images/tr/diagram.ca70d2866762f115.png)
 
 Geliştirme senaryosu, üçüncü taraf model API’lerine (örneğin GitHub Modelleri, Azure Model Catalog ve açık kaynak modeller üzerine kurulu kendi servisleriniz) erişimi destekler ve ayrıca GitHub Copilot tarafından sağlanan gpt-35-turbo, gpt-4 ve gpt-4o modellerini kullanabilir.
 
@@ -54,7 +54,7 @@ Phi-3.5’in programlama yeteneklerini kod yazma, görüntüden kod üretme ve d
 
 3. **Phi-3.5-vision-instruct (128k)** ve görüntü tamamlama tabanlı kod üretme, **@phicoding /image** komutu ile
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.tr.png)
+![arch](../../../../../../translated_images/tr/arch.5a58a0adfa959a2d.png)
 
 ## **İlgili Adımlar**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a9541.tr.png)
+![help](../../../../../../translated_images/tr/help.04c134d2bf9a9541.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.tr.png)
+![agenthelp](../../../../../../translated_images/tr/agenthelp.60c68767c941a3fe.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.tr.png)
+![agentgen](../../../../../../translated_images/tr/agentgen.a16e7735790f764b.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.tr.png)
+![agentimage](../../../../../../translated_images/tr/agentimage.f5cb52b45ab7d0d1.png)
 
 Örnek kodları indirebilirsiniz: [tıklayın](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
