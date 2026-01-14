@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 در اینجا فرآیند ارزیابی Azure AI Foundry آمده است.
 
-![معماری آموزش.](../../../../../../translated_images/architecture.10bec55250f5d6a4.fa.png)
+![معماری آموزش.](../../../../../../translated_images/fa/architecture.10bec55250f5d6a4.png)
 
 *منبع تصویر: [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 برای اطمینان از اخلاقی و ایمن بودن مدل هوش مصنوعی شما، ارزیابی آن بر اساس اصول هوش مصنوعی مسئولانه مایکروسافت بسیار مهم است. در Azure AI Foundry، ارزیابی‌های ایمنی به شما امکان می‌دهد آسیب‌پذیری مدل خود در برابر حملات jailbreak و پتانسیل آن برای تولید محتوای مضر را ارزیابی کنید که مستقیماً با این اصول همسو است.
 
-![ارزیابی ایمنی.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.fa.png)
+![ارزیابی ایمنی.](../../../../../../translated_images/fa/safety-evaluation.083586ec88dfa950.png)
 
 *منبع تصویر: [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **پاسخگویی**: افرادی که سیستم‌های هوش مصنوعی را طراحی و استقرار می‌دهند باید مسئول عملکرد سیستم‌های خود باشند. سازمان‌ها باید از استانداردهای صنعتی برای توسعه هنجارهای پاسخگویی بهره ببرند. این هنجارها می‌توانند تضمین کنند که سیستم‌های هوش مصنوعی مرجع نهایی در هیچ تصمیمی که بر زندگی افراد تأثیر می‌گذارد، نباشند و همچنین اطمینان دهند که انسان‌ها کنترل معناداری بر سیستم‌های هوش مصنوعی بسیار خودکار دارند.
 
-![مرکز پر کردن.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.fa.png)
+![مرکز پر کردن.](../../../../../../translated_images/fa/responsibleai2.c07ef430113fad8c.png)
 
 *منبع تصویر: [هوش مصنوعی مسئولانه چیست؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ارزیابی این جنبه‌ها تضمین می‌کند که مدل هوش مصنوعی محتوای مضر یا توهین‌آمیز تولید نکند و با ارزش‌های اجتماعی و استانداردهای قانونی همسو باشد.
 
-![ارزیابی بر اساس ایمنی.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.fa.png)
+![ارزیابی بر اساس ایمنی.](../../../../../../translated_images/fa/evaluate-based-on-safety.c5df819f5b0bfc07.png)
 
 ### معرفی ارزیابی عملکرد
 
 برای اطمینان از اینکه مدل هوش مصنوعی شما طبق انتظار عمل می‌کند، ارزیابی عملکرد آن بر اساس معیارهای عملکرد اهمیت دارد. در Azure AI Foundry، ارزیابی‌های عملکرد به شما امکان می‌دهد اثربخشی مدل خود را در تولید پاسخ‌های دقیق، مرتبط و منسجم بسنجید.
 
-![ارزیابی ایمنی.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.fa.png)
+![ارزیابی ایمنی.](../../../../../../translated_images/fa/performance-evaluation.48b3e7e01a098740.png)
 
 *منبع تصویر: [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 این معیارها به شما کمک می‌کنند اثربخشی مدل را در تولید پاسخ‌های دقیق، مرتبط و منسجم ارزیابی کنید.
 
-![ارزیابی بر اساس عملکرد.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.fa.png)
+![ارزیابی بر اساس عملکرد.](../../../../../../translated_images/fa/evaluate-based-on-performance.3e801c647c7554e8.png)
 
 ## **سناریو ۲: ارزیابی مدل Phi-3 / Phi-3.5 در Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. از منوی ناوبری، **+ New hub** را انتخاب کنید.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.fa.png)
+    ![Create hub.](../../../../../../translated_images/fa/create-hub.5be78fb1e21ffbf1.png)
 
 1. کارهای زیر را انجام دهید:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - سرویس‌های Azure AI که می‌خواهید متصل کنید را انتخاب کنید (در صورت نیاز یک سرویس جدید بسازید).
     - گزینه **Connect Azure AI Search** را روی **Skip connecting** تنظیم کنید.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.fa.png)
+    ![Fill hub.](../../../../../../translated_images/fa/fill-hub.baaa108495c71e34.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. از منوی ناوبری، **+ New project** را انتخاب کنید.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.fa.png)
+    ![Select new project.](../../../../../../translated_images/fa/select-new-project.cd31c0404088d7a3.png)
 
 1. نام پروژه (**Project name**) را وارد کنید. این نام باید منحصر به فرد باشد.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.fa.png)
+    ![Create project.](../../../../../../translated_images/fa/create-project.ca3b71298b90e420.png)
 
 1. روی **Create a project** کلیک کنید.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. از تب سمت چپ، **Endpoints** را انتخاب کنید.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.fa.png)
+    ![Select endpoints.](../../../../../../translated_images/fa/select-endpoints.ee7387ecd68bd18d.png)
 
 1. نقطه پایانی که ساخته‌اید را انتخاب کنید.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.fa.png)
+    ![Select endpoints.](../../../../../../translated_images/fa/select-endpoint-created.9f63af5e4cf98b2e.png)
 
 1. از منوی ناوبری، **Consume** را انتخاب کنید.
 
 1. **REST endpoint** و **Primary key** خود را کپی کنید.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.fa.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/fa/copy-endpoint-key.0650c3786bd646ab.png)
 
 #### افزودن اتصال سفارشی
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. روی **+ New connection** کلیک کنید.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.fa.png)
+    ![Select new connection.](../../../../../../translated_images/fa/select-new-connection.fa0f35743758a74b.png)
 
 1. از منوی ناوبری، **Custom keys** را انتخاب کنید.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.fa.png)
+    ![Select custom keys.](../../../../../../translated_images/fa/select-custom-keys.5a3c6b25580a9b67.png)
 
 1. کارهای زیر را انجام دهید:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - برای نام کلید، **key** را وارد کنید و کلیدی که از Azure ML Studio کپی کرده‌اید را در فیلد مقدار قرار دهید.
     - پس از افزودن کلیدها، گزینه **is secret** را فعال کنید تا کلیدها مخفی بمانند.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.fa.png)
+    ![Add connection.](../../../../../../translated_images/fa/add-connection.ac7f5faf8b10b0df.png)
 
 1. روی **Add connection** کلیک کنید.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. از منوی ناوبری، **+ Create** را انتخاب کنید.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.fa.png)
+    ![Select Promptflow.](../../../../../../translated_images/fa/select-promptflow.18ff2e61ab9173eb.png)
 
 1. از منوی ناوبری، **Chat flow** را انتخاب کنید.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.fa.png)
+    ![Select chat flow.](../../../../../../translated_images/fa/select-flow-type.28375125ec9996d3.png)
 
 1. نام پوشه (**Folder name**) مورد نظر را وارد کنید.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.fa.png)
+    ![Select chat flow.](../../../../../../translated_images/fa/enter-name.02ddf8fb840ad430.png)
 
 1. روی **Create** کلیک کنید.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - روی **Save** کلیک کنید.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.fa.png)
+    ![Select raw file mode.](../../../../../../translated_images/fa/select-raw-file-mode.06c1eca581ce4f53.png)
 
 1. کد زیر را به فایل *integrate_with_promptflow.py* اضافه کنید تا از مدل سفارشی Phi-3 / Phi-3.5 در Prompt flow استفاده شود.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.fa.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/fa/paste-promptflow-code.cd6d95b101c0ec28.png)
 
 > [!NOTE]
 > برای اطلاعات بیشتر درباره استفاده از Prompt flow در Azure AI Foundry، می‌توانید به [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) مراجعه کنید.
 
 1. گزینه‌های **Chat input** و **Chat output** را برای فعال‌سازی گفتگو با مدل خود انتخاب کنید.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.fa.png)
+    ![Select Input Output.](../../../../../../translated_images/fa/select-input-output.c187fc58f25fbfc3.png)
 
 1. اکنون آماده‌اید تا با مدل سفارشی Phi-3 / Phi-3.5 خود گفتگو کنید. در تمرین بعدی، یاد می‌گیرید چگونه Prompt flow را اجرا کرده و از آن برای گفتگو با مدل تنظیم‌شده استفاده کنید.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > جریان بازسازی شده باید شبیه تصویر زیر باشد:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.fa.png)
+> ![Flow example](../../../../../../translated_images/fa/graph-example.82fd1bcdd3fc545b.png)
 >
 
 #### شروع Prompt flow
 
 1. روی **Start compute sessions** کلیک کنید تا Prompt flow شروع شود.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.fa.png)
+    ![Start compute session.](../../../../../../translated_images/fa/start-compute-session.9acd8cbbd2c43df1.png)
 
 1. روی **Validate and parse input** کلیک کنید تا پارامترها به‌روزرسانی شوند.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.fa.png)
+    ![Validate input.](../../../../../../translated_images/fa/validate-input.c1adb9543c6495be.png)
 
 1. مقدار **connection** را به اتصال سفارشی که ساخته‌اید انتخاب کنید. برای مثال، *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.fa.png)
+    ![Connection.](../../../../../../translated_images/fa/select-connection.1f2b59222bcaafef.png)
 
 #### گفتگو با مدل سفارشی Phi-3 / Phi-3.5
 
 1. روی **Chat** کلیک کنید.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.fa.png)
+    ![Select chat.](../../../../../../translated_images/fa/select-chat.0406bd9687d0c49d.png)
 
 1. در اینجا نمونه‌ای از نتایج آمده است: اکنون می‌توانید با مدل سفارشی Phi-3 / Phi-3.5 خود گفتگو کنید. توصیه می‌شود سوالات خود را بر اساس داده‌های استفاده شده برای تنظیم مدل مطرح کنید.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.fa.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/fa/chat-with-promptflow.1cf8cea112359ada.png)
 
 ### استقرار Azure OpenAI برای ارزیابی مدل Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. به پروژه Azure AI Foundry که ساخته‌اید بروید.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.fa.png)
+    ![Select Project.](../../../../../../translated_images/fa/select-project-created.5221e0e403e2c9d6.png)
 
 1. در پروژه ساخته شده، از تب سمت چپ **Deployments** را انتخاب کنید.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. گزینه **Deploy base model** را انتخاب کنید.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.fa.png)
+    ![Select Deployments.](../../../../../../translated_images/fa/deploy-openai-model.95d812346b25834b.png)
 
 1. مدل Azure OpenAI مورد نظر خود را انتخاب کنید. برای مثال، **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.fa.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/fa/select-openai-model.959496d7e311546d.png)
 
 1. روی **Confirm** کلیک کنید.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. به پروژه Azure AI Foundry که ساخته‌اید بروید.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.fa.png)
+    ![Select Project.](../../../../../../translated_images/fa/select-project-created.5221e0e403e2c9d6.png)
 
 1. در پروژه ساخته شده، از تب سمت چپ **Evaluation** را انتخاب کنید.
 
 1. از منوی ناوبری، **+ New evaluation** را انتخاب کنید.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.fa.png)
+    ![Select evaluation.](../../../../../../translated_images/fa/select-evaluation.2846ad7aaaca7f4f.png)
 
 1. ارزیابی **Prompt flow** را انتخاب کنید.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.fa.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/fa/promptflow-evaluation.cb9758cc19b4760f.png)
 
 1. کارهای زیر را انجام دهید:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - نوع کار را روی **Question and answer without context** تنظیم کنید، زیرا مجموعه داده **UlTRACHAT_200k** استفاده شده در این آموزش فاقد زمینه است.
     - Prompt flow مورد نظر برای ارزیابی را انتخاب کنید.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.fa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/fa/evaluation-setting1.4aa08259ff7a536e.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - روی **Add your dataset** کلیک کنید تا مجموعه داده را بارگذاری کنید. برای مثال، می‌توانید فایل مجموعه داده آزمایشی مانند *test_data.json1* را که همراه با مجموعه داده **ULTRACHAT_200k** ارائه شده است، بارگذاری کنید.
     - ستون مناسب مجموعه داده را انتخاب کنید که با داده‌های شما مطابقت دارد. برای مثال، اگر از مجموعه داده **ULTRACHAT_200k** استفاده می‌کنید، ستون **${data.prompt}** را انتخاب کنید.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.fa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/fa/evaluation-setting2.07036831ba58d64e.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - معیارهای عملکرد و کیفیت مورد نظر خود را انتخاب کنید.
     - مدل Azure OpenAI که برای ارزیابی ساخته‌اید را انتخاب کنید. برای مثال، **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.fa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/fa/evaluation-setting3-1.d1ae69e3bf80914e.png)
 
 1. برای پیکربندی معیارهای ریسک و ایمنی، کارهای زیر را انجام دهید:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - برای **answer**، منبع داده را روی **{$run.outputs.answer}** تنظیم کنید.
     - برای **ground_truth**، منبع داده را روی **{$data.message}** تنظیم کنید.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.fa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/fa/evaluation-setting3-2.d53bd075c60a45a2.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - اثربخشی مدل در تولید پاسخ‌های منسجم، روان و مرتبط را ارزیابی کنید.
 
-    ![نتیجه ارزیابی.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.fa.png)
+    ![نتیجه ارزیابی.](../../../../../../translated_images/fa/evaluation-result-gpu.85f48b42dfb74254.png)
 
 1. معیارهای ریسک و ایمنی:
 
     - اطمینان حاصل کنید که خروجی‌های مدل ایمن بوده و با اصول هوش مصنوعی مسئولانه هم‌راستا هستند و از هرگونه محتوای مضر یا توهین‌آمیز اجتناب می‌کنند.
 
-    ![نتیجه ارزیابی.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.fa.png)
+    ![نتیجه ارزیابی.](../../../../../../translated_images/fa/evaluation-result-gpu-2.1b74e336118f4fd0.png)
 
 1. می‌توانید برای مشاهده **نتایج دقیق معیارها** به پایین صفحه اسکرول کنید.
 
-    ![نتیجه ارزیابی.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.fa.png)
+    ![نتیجه ارزیابی.](../../../../../../translated_images/fa/detailed-metrics-result.afa2f5c39a4f5f17.png)
 
 1. با ارزیابی مدل سفارشی Phi-3 / Phi-3.5 خود بر اساس معیارهای عملکرد و ایمنی، می‌توانید تأیید کنید که مدل نه تنها مؤثر است، بلکه به اصول هوش مصنوعی مسئولانه پایبند بوده و آماده استفاده در دنیای واقعی است.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 شما با موفقیت مدل Phi-3 تنظیم‌شده را که با Prompt flow در Azure AI Foundry یکپارچه شده است، ارزیابی کردید. این گامی مهم در اطمینان از این است که مدل‌های هوش مصنوعی شما نه تنها عملکرد خوبی دارند، بلکه به اصول هوش مصنوعی مسئولانه مایکروسافت پایبند بوده و به شما کمک می‌کنند برنامه‌های هوش مصنوعی قابل اعتماد و مطمئن بسازید.
 
-![معماری.](../../../../../../translated_images/architecture.10bec55250f5d6a4.fa.png)
+![معماری.](../../../../../../translated_images/fa/architecture.10bec55250f5d6a4.png)
 
 ## پاک‌سازی منابع Azure
 

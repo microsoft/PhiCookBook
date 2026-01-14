@@ -23,7 +23,7 @@ Selles E2E näidises õpid, kuidas Phi-3 mudelit täpsustada ja integreerida see
 
 Siin on selle E2E näidise ülevaade.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.et.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/et/00-01-architecture.02fc569e266d468c.png)
 
 ### Sisukord
 
@@ -49,13 +49,13 @@ Siin on selle E2E näidise ülevaade.
 
 1. Tippige portaalilehe ülaosas otsiribale *azure machine learning* ja valige kuvatud valikute hulgast **Azure Machine Learning**.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.et.png)
+    ![Type azure machine learning](../../../../../../translated_images/et/01-01-type-azml.a5116f8454d98c60.png)
 
 1. Valige navigeerimismenüüst **+ Create**.
 
 1. Valige navigeerimismenüüst **New workspace**.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.et.png)
+    ![Select new workspace](../../../../../../translated_images/et/01-02-select-new-workspace.83e17436f8898dc4.png)
 
 1. Täitke järgmised ülesanded:
 
@@ -68,7 +68,7 @@ Siin on selle E2E näidise ülevaade.
     - Valige kasutatav **Application insights** (looge vajadusel uus).
     - Valige kasutatav **Container registry** (looge vajadusel uus).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.et.png)
+    ![Fill AZML.](../../../../../../translated_images/et/01-03-fill-AZML.730a5177757bbebb.png)
 
 1. Valige **Review + Create**.
 
@@ -92,7 +92,7 @@ Selles E2E näidises kasutate täpsustamiseks *Standard_NC24ads_A100_v4 GPU*-d, 
     - Valige kasutatav **Virtual machine family**. Näiteks valige **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, mis sisaldab *Standard_NC24ads_A100_v4* GPU-d.
     - Valige navigeerimismenüüst **Request quota**.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.et.png)
+        ![Request quota.](../../../../../../translated_images/et/01-04-request-quota.3d3670c3221ab834.png)
 
     - Kvandi taotlemise lehel sisestage soovitav **New cores limit**. Näiteks 24.
     - Kvandi taotlemise lehel valige **Submit**, et taotleda GPU kvanti.
@@ -108,11 +108,11 @@ Mudelite täpsustamiseks ja juurutamiseks peate esmalt looma kasutajale määrat
 
 1. Tippige portaalilehe ülaosas otsiribale *managed identities* ja valige kuvatud valikute hulgast **Managed Identities**.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.et.png)
+    ![Type managed identities.](../../../../../../translated_images/et/01-05-type-managed-identities.9297b6039874eff8.png)
 
 1. Valige **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.et.png)
+    ![Select create.](../../../../../../translated_images/et/01-06-select-create.936d8d66d7144f9a.png)
 
 1. Täitke järgmised ülesanded:
 
@@ -139,7 +139,7 @@ Mudelite täpsustamiseks ja juurutamiseks peate esmalt looma kasutajale määrat
     - Valige kasutatav **Resource group**.
     - Valige rolliks **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.et.png)
+    ![Fill contributor role.](../../../../../../translated_images/et/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
 
 1. Valige **Save**.
 
@@ -147,7 +147,7 @@ Mudelite täpsustamiseks ja juurutamiseks peate esmalt looma kasutajale määrat
 
 1. Tippige portaalilehe ülaosas otsiribale *storage accounts* ja valige kuvatud valikute hulgast **Storage accounts**.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.et.png)
+    ![Type storage accounts.](../../../../../../translated_images/et/01-08-type-storage-accounts.1186c8e42933e49b.png)
 
 1. Valige see salvestuskonto, mis on seotud loodud Azure Machine Learning tööruumiga. Näiteks *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Mudelite täpsustamiseks ja juurutamiseks peate esmalt looma kasutajale määrat
     - Valige navigeerimismenüüst **+ Add**.
     - Valige navigeerimismenüüst **Add role assignment**.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.et.png)
+    ![Add role.](../../../../../../translated_images/et/01-09-add-role.d2db22fec1b187f0.png)
 
 1. Rolli määramise lisamise lehel täitke järgmised ülesanded:
 
@@ -171,7 +171,7 @@ Mudelite täpsustamiseks ja juurutamiseks peate esmalt looma kasutajale määrat
     - Hallatud identiteetide lehel valige loodud haldatud identiteet, nt *finetunephi-managedidentity*.
     - Hallatud identiteetide lehel valige **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.et.png)
+    ![Select managed identity.](../../../../../../translated_images/et/01-10-select-managed-identity.5ce5ba181f72a4df.png)
 
 1. Valige **Review + assign**.
 
@@ -179,7 +179,7 @@ Mudelite täpsustamiseks ja juurutamiseks peate esmalt looma kasutajale määrat
 
 1. Tippige portaalilehe ülaosas otsiribale *container registries* ja valige kuvatud valikute hulgast **Container registries**.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.et.png)
+    ![Type container registries.](../../../../../../translated_images/et/01-11-type-container-registries.ff3b8bdc49dc596c.png)
 
 1. Valige konteineriregister, mis on seotud Azure Machine Learning tööruumiga. Näiteks *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ Selles harjutuses teete järgmist:
 
 1. Valige loodud *finetune-phi* kaust, mis asub aadressil *C:\Users\yourUserName\finetune-phi*.
 
-    ![Ava projekti kaust.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.et.png)
+    ![Ava projekti kaust.](../../../../../../translated_images/et/01-12-open-project-folder.1fff9c7f41dd1639.png)
 
 1. Visual Studio Code vasaku paneeli sees paremklõpsake ja valige **New File**, et luua uus fail nimega *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Selles harjutuses teete järgmist:
 
 1. Visual Studio Code vasaku paneeli sees paremklõpsake ja valige **New File**, et luua uus fail nimega *deploy_model.py*.
 
-    ![Loo uus fail.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.et.png)
+    ![Loo uus fail.](../../../../../../translated_images/et/01-13-create-new-file.c17c150fff384a39.png)
 
 1. Visual Studio Code vasaku paneeli sees paremklõpsake ja valige **New Folder**, et luua uus kaust nimega *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Selles harjutuses teete järgmist:
     - Valige Azure tellimus, mida hetkel kasutate.
     - Kopeerige ja kleepige oma tellimuse ID *config.py* faili.
 
-    ![Leia tellimuse ID.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.et.png)
+    ![Leia tellimuse ID.](../../../../../../translated_images/et/01-14-find-subscriptionid.4f4ca33555f1e637.png)
 
 1. Tehke järgmised toimingud Azure tööruumi nime lisamiseks:
 
     - Navigeerige loodud Azure Machine Learning ressursile.
     - Kopeerige ja kleepige oma konto nimi *config.py* faili.
 
-    ![Leia Azure Machine Learning nimi.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.et.png)
+    ![Leia Azure Machine Learning nimi.](../../../../../../translated_images/et/01-15-find-AZML-name.1975f0422bca19a7.png)
 
 1. Tehke järgmised toimingud Azure ressursside grupi nime lisamiseks:
 
     - Navigeerige loodud Azure Machine Learning ressursile.
     - Kopeerige ja kleepige oma Azure ressursside grupi nimi *config.py* faili.
 
-    ![Leia ressursside grupi nimi.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.et.png)
+    ![Leia ressursside grupi nimi.](../../../../../../translated_images/et/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
 
 2. Tehke järgmised toimingud Azure hallatava identiteedi nime lisamiseks:
 
     - Navigeerige loodud Hallatavate identiteetide ressursile.
     - Kopeerige ja kleepige oma Azure hallatava identiteedi nimi *config.py* faili.
 
-    ![Leia UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.et.png)
+    ![Leia UAI.](../../../../../../translated_images/et/01-17-find-uai.3529464f53499827.png)
 
 ### Valmistage andmekogum ette peenhäälestuseks
 
@@ -509,7 +509,7 @@ Peate seadistama Azure CLI, et autentida oma keskkond. Azure CLI võimaldab hall
 
 1. Valige kasutatav Azure tellimus.
 
-    ![Leia ressursside grupi nimi.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.et.png)
+    ![Leia ressursside grupi nimi.](../../../../../../translated_images/et/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Käivitades *setup_ml.py*, käivitate peenhäälestusprotsessi Azure Machine Lea
 
 1. Selles harjutuses peenhäälestasite edukalt Phi-3 mudeli, kasutades Azure Machine Learningut. Käivitades skripti *setup_ml.py*, seadistasite Azure Machine Learning keskkonna ja käivitasite *fine_tune.py* failis määratletud peenhäälestusprotsessi. Pange tähele, et peenhäälestus võib võtta märkimisväärselt aega. Pärast `python setup_ml.py` käivitamist peate protsessi lõpuni ootama. Peenhäälestuse töö olekut saate jälgida terminalis kuvatava lingi kaudu Azure Machine Learning portaali.
 
-    ![Vaata peenhäälestustöö olekut.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.et.png)
+    ![Vaata peenhäälestustöö olekut.](../../../../../../translated_images/et/02-02-see-finetuning-job.59393bc3b143871e.png)
 
 ### Juurutage peenhäälestatud mudel
 
@@ -1080,11 +1080,11 @@ Faili *deploy_model.py* käivitamine automatiseerib kogu juurutamisprotsessi. Se
 
 1. Vali vasakpoolsest menüüst **Endpoints**.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.et.png)
+    ![Select endpoints.](../../../../../../translated_images/et/02-03-select-endpoints.c3136326510baff1.png)
 
 2. Vali loodud otspunkt.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.et.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/et/02-04-select-endpoint-created.0363e7dca51dabb4.png)
 
 3. Sellel lehel saad hallata paigalduse protsessi käigus loodud otspunkte.
 
@@ -1103,7 +1103,7 @@ Pärast edukat peenhäälestatud mudeli paigaldust saad selle nüüd integreerid
 1. Kopeeri ja kleebi oma **REST endpoint** faili *config.py*, asendades `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` oma **REST endpoint**-i aadressiga.
 1. Kopeeri ja kleebi oma **Primary key** faili *config.py*, asendades `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` oma **Primary key**-ga.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.et.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/et/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
 
 #### Lisa kood faili *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Pärast edukat peenhäälestatud mudeli paigaldust saad selle nüüd integreerid
 
 1. Näide tulemustest: nüüd saad suhelda oma kohandatud Phi-3 mudeliga. Soovitatav on esitada küsimusi, mis põhinevad peenhäälestamiseks kasutatud andmetel.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.et.png)
+    ![Prompt flow example.](../../../../../../translated_images/et/02-06-promptflow-example.89384abaf3ad71f6.png)
 
 ---
 

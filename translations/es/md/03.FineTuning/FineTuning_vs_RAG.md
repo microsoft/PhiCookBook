@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG es recuperación de datos + generación de texto. Los datos estructurados y no estructurados de la empresa se almacenan en la base de datos vectorial. Al buscar contenido relevante, se encuentra el resumen y contenido pertinente para formar un contexto, y se combina con la capacidad de completado de texto de LLM/SLM para generar contenido.
 
 ## Proceso RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.es.png)
+![FinetuningvsRAG](../../../../translated_images/es/rag.2014adc59e6f6007.png)
 
 ## Ajuste fino
 El ajuste fino se basa en la mejora de un modelo específico. No es necesario partir del algoritmo del modelo, pero sí se requiere acumular datos de forma continua. Si buscas terminología y expresiones lingüísticas más precisas para aplicaciones industriales, el ajuste fino es la mejor opción. Sin embargo, si tus datos cambian con frecuencia, el ajuste fino puede volverse complicado.
