@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft Olive 是一款非常易用的開源模型優化工具，涵蓋生成式人工智能領域的微調與推理。只需簡單配置，結合開源小型語言模型及相關運行環境（AzureML / 本地 GPU、CPU、DirectML），即可透過自動優化完成模型的微調或推理，並找到最佳模型部署於雲端或邊緣設備。讓企業能夠在本地及雲端構建自有的行業垂直模型。
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e2.hk.png)
+![intro](../../../../translated_images/hk/intro.46086a3f16ec48e2.png)
 
 ## 使用 Microsoft Olive 微調 Phi-3
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.hk.png)
+![FinetuningwithOlive](../../../../translated_images/hk/olivefinetune.76d09e9b68253681.png)
 
 ## Phi-3 Olive 範例程式碼與示例
 在此範例中，你將使用 Olive 來：

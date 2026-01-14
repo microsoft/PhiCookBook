@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 在此範例中，我們將對 Phi-3-mini-4k-instruct 模型進行微調，以使用 ultrachat_200k 資料集完成兩人對話。
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.hk.png)
+![MLFineTune](../../../../translated_images/hk/MLFineTune.928d4c6b3767dd35.png)
 
 此範例將示範如何使用 Azure ML SDK 和 Python 進行微調，然後將微調後的模型部署到線上端點以進行即時推論。
 

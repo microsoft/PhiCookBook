@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **便利性：** 微調的流程是怎樣的？我需要寫自訂程式碼嗎？需要自備運算資源嗎？
 - **安全性：** 微調後的模型存在安全風險嗎？有沒有防護機制避免意外傷害？
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.hk.png)
+![AIFoundry Models](../../../../translated_images/hk/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## 微調準備
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry 讓你能透過微調流程，將大型語言模型調整至個人資料集。微調能帶來顯著價值，讓模型針對特定任務和應用進行客製化與優化，提升效能、降低成本、減少延遲，並產生更符合需求的輸出。
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.hk.png)
+![Finetune AI Foundry](../../../../translated_images/hk/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### 建立新專案
 
@@ -79,14 +79,14 @@ Azure AI Foundry 讓你能透過微調流程，將大型語言模型調整至個
 
 2. 選擇 **+New project** 以在 Azure AI Foundry 建立新專案。
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/select-new-project.cd31c0404088d7a3.png)
 
 3. 執行以下操作：
 
     - 專案 **Hub name**，必須是唯一值。
     - 選擇要使用的 **Hub**（如有需要可新建）。
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/create-project.ca3b71298b90e420.png)
 
 4. 建立新 hub 時，請執行以下操作：
 
@@ -97,7 +97,7 @@ Azure AI Foundry 讓你能透過微調流程，將大型語言模型調整至個
     - 選擇要連接的 **Azure AI Services**（如有需要可新建）。
     - 選擇 **Connect Azure AI Search**，並選擇 **Skip connecting**。
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/create-hub.49e53d235e80779e.png)
 
 5. 選擇 **Next**。
 6. 選擇 **Create a project**。
@@ -115,15 +115,15 @@ Azure AI Foundry 讓你能透過微調流程，將大型語言模型調整至個
 
 2. 在 **搜尋欄** 輸入 *phi-3*，並選擇你想使用的 phi-3 模型。
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/select-model.60ef2d4a6a3cec57.png)
 
 3. 選擇 **Fine-tune**。
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/select-finetune.a976213b543dd9d8.png)
 
 4. 輸入 **Fine-tuned model name**。
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/finetune1.c2b39463f0d34148.png)
 
 5. 選擇 **Next**。
 
@@ -132,13 +132,13 @@ Azure AI Foundry 讓你能透過微調流程，將大型語言模型調整至個
     - 選擇 **task type** 為 **Chat completion**。
     - 選擇你想使用的 **Training data**。你可以透過 Azure AI Foundry 的資料或本地環境上傳。
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/finetune2.43cb099b1a94442d.png)
 
 7. 選擇 **Next**。
 
 8. 上傳你想使用的 **Validation data**，或選擇 **Automatic split of training data**。
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/finetune3.fd96121b67dcdd92.png)
 
 9. 選擇 **Next**。
 
@@ -148,15 +148,15 @@ Azure AI Foundry 讓你能透過微調流程，將大型語言模型調整至個
     - 選擇你想使用的 **Learning rate**。
     - 選擇你想使用的 **Epochs**。
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/finetune4.e18b80ffccb5834a.png)
 
 11. 選擇 **Submit** 開始微調流程。
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/select-submit.0a3802d581bac271.png)
 
 12. 微調完成後，狀態會顯示為 **Completed**，如下圖所示。你現在可以部署模型，並在自己的應用程式、遊樂場或提示流程中使用。更多資訊請參考 [如何使用 Azure AI Foundry 部署 Phi-3 系列小型語言模型](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)。
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.hk.png)
+    ![FineTuneSelect](../../../../translated_images/hk/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > 想了解更詳細的 Phi-3 微調資訊，請參考 [在 Azure AI Foundry 微調 Phi-3 模型](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)。
