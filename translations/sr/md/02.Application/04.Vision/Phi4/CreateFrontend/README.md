@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal има јаке могућности читања слика. Хајде да покушамо да користимо Python за имплементацију следећих функција. Слика је страница ChatGPT-а.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.sr.png)
+![demo](../../../../../../../translated_images/sr/demo.609a55a7a2b9ed27.png)
 
 ### **Пример кода**
 

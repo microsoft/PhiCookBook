@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Finjusteringsscenarier
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.sv.png)
+![FineTuning with MS Services](../../../../translated_images/sv/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Plattform** Detta inkluderar olika teknologier såsom Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito och ONNX Runtime.
 
@@ -24,7 +24,7 @@ Finjusteringsprocessen med Microsoft-teknologier involverar olika komponenter oc
 
 Finjustera modellen med hjälp av hostad finjustering, utan behov av att skapa och hantera beräkningsresurser.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.sv.png)
+![MaaS Fine Tuning](../../../../translated_images/sv/MaaSfinetune.3eee4630607aff0d.png)
 
 Serverlös finjustering finns tillgänglig för Phi-3-mini och Phi-3-medium modeller, vilket gör det möjligt för utvecklare att snabbt och enkelt anpassa modellerna för moln- och edge-scenarier utan att behöva ordna med beräkningsresurser. Vi har också meddelat att Phi-3-small nu finns tillgänglig via vårt Models-as-a-Service-erbjudande, så att utvecklare snabbt och enkelt kan komma igång med AI-utveckling utan att behöva hantera underliggande infrastruktur.
 
@@ -32,7 +32,7 @@ Serverlös finjustering finns tillgänglig för Phi-3-mini och Phi-3-medium mode
 
 Användare hanterar sina egna beräkningsresurser för att finjustera sina modeller.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.sv.png)
+![Maap Fine Tuning](../../../../translated_images/sv/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Användare hanterar sina egna beräkningsresurser för att finjustera sina model
 
 ## Exempel på finjusteringsprestanda
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.sv.png)
+![Finetuning Performance](../../../../translated_images/sv/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Ansvarsfriskrivning**:  
 Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
