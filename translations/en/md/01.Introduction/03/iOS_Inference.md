@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 I chose Objective-C for app development because using Generative AI with the ONNX Runtime C++ API works better with Objective-C. Of course, you can also handle related calls through Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.en.png)
+![xcode](../../../../../translated_images/en/xcode.8147789e6c25e3e2.png)
 
 ## **5. Copy the ONNX quantized INT4 model to the App project**
 
 We need to import the INT4 quantized ONNX model, which must be downloaded first.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.en.png)
+![hf](../../../../../translated_images/en/hf.6b8504fd88ee48dd.png)
 
 After downloading, add it to the Resources folder of your Xcode project.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.en.png)
+![model](../../../../../translated_images/en/model.3b879b14e0be877d.png)
 
 ## **6. Adding the C++ API in ViewControllers**
 
@@ -121,11 +121,11 @@ After downloading, add it to the Resources folder of your Xcode project.
 
 - **a.** Add the corresponding C++ header files to the project.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.en.png)
+  ![Header File](../../../../../translated_images/en/head.64cad021ce70a333.png)
 
 - **b.** Include the `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.en.png)
+  ![Library](../../../../../translated_images/en/lib.a4209b9f21ddf344.png)
 
 - **c.** Use the C sample code for testing. You can also add extra features like ChatUI for more functionality.
 
@@ -162,7 +162,7 @@ After downloading, add it to the Resources folder of your Xcode project.
 
 Once everything is set up, you can run the app to see the results of the Phi-3-mini model inference.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.en.jpg)
+![Running Result](../../../../../translated_images/en/result.326a947a6a2b9c51.jpg)
 
 For more sample code and detailed instructions, visit the [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

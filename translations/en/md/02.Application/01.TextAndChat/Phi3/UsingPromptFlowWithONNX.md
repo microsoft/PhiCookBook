@@ -33,33 +33,33 @@ Read this guideline to set ONNX Runtime GenAI for Windows GPU  [click here](./OR
 
 1. Install Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.en.png)
+![pfvscode](../../../../../../translated_images/en/pfvscode.eff93dfc66a42cbe.png)
 
 2. After installing the Prompt flow VS Code Extension, click the extension and choose **Installation dependencies**. Follow this guideline to install the Prompt flow SDK in your environment.
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.en.png)
+![pfsetup](../../../../../../translated_images/en/pfsetup.b46e93096f5a254f.png)
 
 3. Download [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) and open this sample in VS Code.
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.en.png)
+![pfsample](../../../../../../translated_images/en/pfsample.8d89e70584ffe7c4.png)
 
 4. Open **flow.dag.yaml** to select your Python environment.
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.en.png)
+![pfdag](../../../../../../translated_images/en/pfdag.264a77f7366458ff.png)
 
    Open **chat_phi3_ort.py** to update the location of your Phi-3.5-instruct ONNX Model.
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.en.png)
+![pfphi](../../../../../../translated_images/en/pfphi.72da81d74244b45f.png)
 
 5. Run your prompt flow to test it.
 
 Open **flow.dag.yaml** and click the visual editor.
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.en.png)
+![pfv](../../../../../../translated_images/en/pfv.ba8a81f34b20f603.png)
 
 After clicking this, run it to test.
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.en.png)
+![pfflow](../../../../../../translated_images/en/pfflow.4e1135a089b1ce1b.png)
 
 1. You can run batch commands in the terminal to check more results.
 
@@ -71,7 +71,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 You can view the results in your default browser.
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.en.png)
+![pfresult](../../../../../../translated_images/en/pfresult.c22c826f8062d7cb.png)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

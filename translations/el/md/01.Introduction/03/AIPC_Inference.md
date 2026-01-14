@@ -28,9 +28,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Η συσκευή Intel® NPU είναι ένας επιταχυντής AI inference ενσωματωμένος με τους Intel client CPUs, ξεκινώντας από τη γενιά Intel® Core™ Ultra (πρώην γνωστή ως Meteor Lake). Επιτρέπει την ενεργειακά αποδοτική εκτέλεση εργασιών τεχνητών νευρωνικών δικτύων.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.el.png)
+![Latency](../../../../../translated_images/el/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.el.png)
+![Latency770](../../../../../translated_images/el/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Κατά την εκτέλεση του κώδικα, μπορούμε να δούμε την κατάσταση λειτουργίας του NPU μέσω του Task Manager
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.el.png)
+![NPU](../../../../../translated_images/el/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***Δείγματα*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Αυτό είναι το αποτέλεσμα εκτέλεσης
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.el.png)
+![DML](../../../../../translated_images/el/aipc_DML.52a44180393ab491.png)
 
 ***Δείγματα*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 το μετατρεπόμενο φορμάτ, όπως αυτό
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.el.png)
+![openvino_convert](../../../../../translated_images/el/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 Φορτώστε τις διαδρομές μοντέλου (model_dir), τις σχετικές ρυθμίσεις (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) και τις συσκευές επιτάχυνσης υλικού (GPU.0) μέσω OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Κατά την εκτέλεση του κώδικα, μπορούμε να δούμε την κατάσταση λειτουργίας της GPU μέσω του Task Manager
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.el.png)
+![openvino_gpu](../../../../../translated_images/el/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***Δείγματα*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

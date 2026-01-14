@@ -34,7 +34,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. **Κλωνοποιήστε το Αποθετήριο**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Γίνετε μέλος της Microsoft AI Discord Κοινότητας και γνωρίστε ειδικούς και άλλους προγραμματιστές**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.el.png)
+![cover](../../translated_images/el/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Υποστήριξη Πολυγλωσσικότητας
 

@@ -41,7 +41,7 @@ Fine-Tuning basiert auf der Verbesserung eines bestimmten Modells. Es ist nicht 
 
 ## **Wie man RAG verwendet**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007.de.png)
+![rag](../../../../translated_images/de/rag.2014adc59e6f6007.png)
 
 Eine Vektordatenbank ist eine Sammlung von Daten, die in mathematischer Form gespeichert sind. Vektordatenbanken erleichtern es Machine-Learning-Modellen, sich an vorherige Eingaben zu erinnern, wodurch Machine Learning für Anwendungsfälle wie Suche, Empfehlungen und Textgenerierung unterstützt wird. Daten können anhand von Ähnlichkeitsmetriken identifiziert werden, anstatt auf exakten Übereinstimmungen zu basieren, was es Computermodellen ermöglicht, den Kontext der Daten zu verstehen.
 
@@ -57,7 +57,7 @@ Die häufig verwendeten Algorithmen im Fine-Tuning sind Lora und QLora. Wie wäh
 
 ### **Lora und QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca0.de.png)
+![lora](../../../../translated_images/de/qlora.e6446c988ee04ca0.png)
 
 LoRA (Low-Rank Adaptation) und QLoRA (Quantized Low-Rank Adaptation) sind Techniken, die verwendet werden, um große Sprachmodelle (LLMs) mit Parameter Efficient Fine Tuning (PEFT) zu verfeinern. PEFT-Techniken sind darauf ausgelegt, Modelle effizienter zu trainieren als traditionelle Methoden.  
 LoRA ist eine eigenständige Fine-Tuning-Technik, die den Speicherbedarf reduziert, indem sie eine Niedrigrang-Approximation auf die Gewichtsmatrix anwendet. Sie bietet schnelle Trainingszeiten und hält die Leistung nahe an traditionellen Fine-Tuning-Methoden.

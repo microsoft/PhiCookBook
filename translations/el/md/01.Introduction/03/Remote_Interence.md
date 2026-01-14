@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Αφού εκπαιδευτούν οι adapters στο απομακρυσμένο περιβάλλον, χρησιμοποιήστε μια απλή εφαρμογή Gradio για να αλληλεπιδράσετε με το μοντέλο.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.el.png)
+![Fine-tune complete](../../../../../translated_images/el/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Παροχή Πόρων Azure  
 Πρέπει να ρυθμίσετε τους πόρους Azure για απομακρυσμένη inferencing εκτελώντας την εντολή `AI Toolkit: Provision Azure Container Apps for inference` από την παλέτα εντολών. Κατά τη διάρκεια αυτής της διαδικασίας, θα σας ζητηθεί να επιλέξετε τη συνδρομή Azure και την ομάδα πόρων σας.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.el.png)
+![Provision Inference Resource](../../../../../translated_images/el/command-provision-inference.467afc8d351642fc.png)
 
 Από προεπιλογή, η συνδρομή και η ομάδα πόρων για το inference θα πρέπει να είναι οι ίδιες με αυτές που χρησιμοποιήθηκαν για το fine-tuning. Το inference θα χρησιμοποιήσει το ίδιο Azure Container App Environment και θα έχει πρόσβαση στο μοντέλο και τον adapter μοντέλου που αποθηκεύονται στα Azure Files, τα οποία δημιουργήθηκαν κατά το βήμα του fine-tuning.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### Ανάπτυξη για Inference  
 Αν θέλετε να τροποποιήσετε τον κώδικα του inference ή να φορτώσετε ξανά το μοντέλο inference, εκτελέστε την εντολή `AI Toolkit: Deploy for inference`. Αυτό θα συγχρονίσει τον πιο πρόσφατο κώδικά σας με το ACA και θα επανεκκινήσει το αντίγραφο.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.el.png)
+![Deploy for inference](../../../../../translated_images/el/command-deploy.9adb4e310dd0b0ae.png)
 
 Μετά την επιτυχή ολοκλήρωση της ανάπτυξης, το μοντέλο είναι πλέον έτοιμο για αξιολόγηση μέσω αυτού του endpoint.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Μπορείτε να αποκτήσετε πρόσβαση στο API του inference πατώντας το κουμπί "*Go to Inference Endpoint*" που εμφανίζεται στην ειδοποίηση του VSCode. Εναλλακτικά, το web API endpoint βρίσκεται στο `ACA_APP_ENDPOINT` μέσα στο αρχείο `./infra/inference.config.json` και στο πάνελ εξόδου.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.el.png)
+![App Endpoint](../../../../../translated_images/el/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** Το endpoint του inference μπορεί να χρειαστεί μερικά λεπτά για να γίνει πλήρως λειτουργικό.
 
