@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal मध्ये प्रतिमा वाचण्याची जबरदस्त क्षमता आहे. चला Python वापरून खालील फंक्शन्स अंमलात आणण्याचा प्रयत्न करूया. ही प्रतिमा ChatGPT पृष्ठाची आहे.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.mr.png)
+![demo](../../../../../../../translated_images/mr/demo.609a55a7a2b9ed27.png)
 
 ### **नमुना कोड**
 

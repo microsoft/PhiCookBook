@@ -36,7 +36,7 @@ d. Python 3.8+
 
 जर तुम्हाला क्लाउड आणि एज डिव्हाइसेसवर एकाच वेळी gguf वापरायचे असेल, तर LlamaEdge ला WasmEdge म्हणून समजले जाऊ शकते (WasmEdge हा एक हलका, उच्च कार्यक्षम, स्केलेबल WebAssembly रनटाइम आहे जो क्लाउड नेटिव्ह, एज आणि विकेंद्रित अ‍ॅप्लिकेशन्ससाठी योग्य आहे. तो सर्व्हरलेस अ‍ॅप्लिकेशन्स, एम्बेडेड फंक्शन्स, मायक्रोसर्व्हिसेस, स्मार्ट कॉन्ट्रॅक्ट्स आणि IoT डिव्हाइसेसना समर्थन देतो. तुम्ही gguf चा क्वांटिटेटिव्ह मॉडेल एज डिव्हाइसेस आणि क्लाउडवर LlamaEdge द्वारे तैनात करू शकता.)
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.mr.jpg)
+![llamaedge](../../../../../translated_images/mr/llamaedge.e9d6ff96dff11cf7.jpg)
 
 इथे वापरण्याचे टप्पे आहेत:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 इथे चालवलेले निकाल आहे
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.mr.png)
+![llamaedgerun](../../../../../translated_images/mr/llamaedgerun.bed921516c9a821c.png)
 
 ***नमुना कोड*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

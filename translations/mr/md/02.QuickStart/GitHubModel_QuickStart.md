@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [GitHub Models](https://github.com/marketplace/models) मध्ये आपले स्वागत आहे! Azure AI वर होस्ट केलेल्या AI मॉडेल्सचा शोध घेण्यासाठी सर्व काही तयार आहे.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.mr.png)
+![GitHubModel](../../../../translated_images/mr/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 GitHub Models वर उपलब्ध मॉडेल्सबद्दल अधिक माहितीसाठी, [GitHub Model Marketplace](https://github.com/marketplace/models) पहा.
 
@@ -45,7 +45,7 @@ GitHub Models वर उपलब्ध मॉडेल्सबद्दल अ
 
 नमुने आणि मॉडेल्स चालवण्यासाठी एक समर्पित Codespaces Environment देखील आहे.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.mr.png)
+![Getting Started](../../../../translated_images/mr/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## नमुना कोड
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Models साठी मोफत वापर आणि दर मर्यादा
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.mr.png)
+![Model Catalog](../../../../translated_images/mr/GitHub_Model.ca6c125cb3117d0e.png)
 
 [प्लेग्राउंड आणि मोफत API वापरासाठी दर मर्यादा](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) आपल्याला मॉडेल्ससह प्रयोग करण्यास आणि आपले AI अॅप्लिकेशन प्रोटोटाइप करण्यास मदत करण्यासाठी आहेत. या मर्यादेपलीकडे वापरासाठी, आणि आपले अॅप्लिकेशन स्केल करण्यासाठी, आपल्याला Azure खात्यातून संसाधने प्रदान करावी लागतील आणि GitHub वैयक्तिक प्रवेश टोकनऐवजी तिथून प्रमाणीकरण करावे लागेल. आपल्या कोडमध्ये इतर काहीही बदल करण्याची गरज नाही. Azure AI मध्ये मोफत स्तराच्या मर्यादेपलीकडे जाण्यासाठी हा दुवा वापरा.
 
