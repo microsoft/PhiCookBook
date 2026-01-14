@@ -28,9 +28,9 @@ GPU-গুলি প্যারালাল কম্পিউটিংয়�
 
 Intel® NPU ডিভাইস হলো একটি AI ইনফারেন্স অ্যাক্সিলারেটর যা Intel ক্লায়েন্ট CPU-র সাথে ইন্টিগ্রেটেড, Intel® Core™ Ultra প্রজন্মের CPU থেকে শুরু করে (যা পূর্বে Meteor Lake নামে পরিচিত ছিল)। এটি কৃত্রিম নিউরাল নেটওয়ার্ক টাস্কের জন্য শক্তি-দক্ষ এক্সিকিউশন সক্ষম করে।
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.bn.png)
+![Latency](../../../../../translated_images/bn/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.bn.png)
+![Latency770](../../../../../translated_images/bn/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 কোড চালানোর সময়, Task Manager থেকে NPU-এর রানিং স্ট্যাটাস দেখা যায়।
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.bn.png)
+![NPU](../../../../../translated_images/bn/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***Samples*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 এটি চালানোর ফলাফল
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.bn.png)
+![DML](../../../../../translated_images/bn/aipc_DML.52a44180393ab491.png)
 
 ***Samples*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 রূপান্তরিত ফরম্যাট, এরকম
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.bn.png)
+![openvino_convert](../../../../../translated_images/bn/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 মডেল পাথ (model_dir), সংশ্লিষ্ট কনফিগারেশন (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), এবং হার্ডওয়্যার-অ্যাক্সিলারেটেড ডিভাইস (GPU.0) OVModelForCausalLM এর মাধ্যমে লোড করুন।
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 কোড চালানোর সময়, Task Manager থেকে GPU-এর রানিং স্ট্যাটাস দেখা যায়।
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.bn.png)
+![openvino_gpu](../../../../../translated_images/bn/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***Samples*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

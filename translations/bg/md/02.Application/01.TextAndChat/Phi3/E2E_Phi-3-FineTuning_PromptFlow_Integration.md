@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ето един преглед на този E2E пример.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.bg.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/bg/00-01-architecture.02fc569e266d468c.png)
 
 ### Съдържание
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Въведете *azure machine learning* в **лента за търсене** в горната част на портала и изберете **Azure Machine Learning** от появилите се опции.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.bg.png)
+    ![Type azure machine learning](../../../../../../translated_images/bg/01-01-type-azml.a5116f8454d98c60.png)
 
 1. Изберете **+ Create** от навигационното меню.
 
 1. Изберете **New workspace** от навигационното меню.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.bg.png)
+    ![Select new workspace](../../../../../../translated_images/bg/01-02-select-new-workspace.83e17436f8898dc4.png)
 
 1. Изпълнете следните задачи:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **Application insights**, който да използвате (създайте нов, ако е необходимо).
     - Изберете **регистър на контейнери**, който да използвате (създайте нов, ако е необходимо).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.bg.png)
+    ![Fill AZML.](../../../../../../translated_images/bg/01-03-fill-AZML.730a5177757bbebb.png)
 
 1. Изберете **Review + Create**.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **Виртуално семейство машини**, което искате да използвате. Например, изберете **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, което включва *Standard_NC24ads_A100_v4* GPU.
     - Изберете **Request quota** от навигационното меню.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.bg.png)
+        ![Request quota.](../../../../../../translated_images/bg/01-04-request-quota.3d3670c3221ab834.png)
 
     - В страницата за заявка на квота въведете **Нов лимит на ядрата**, който искате да използвате. Например, 24.
     - В страницата за заявка на квота изберете **Submit**, за да поискате квотата за GPU.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Въведете *managed identities* в **лента за търсене** в горната част на портала и изберете **Managed Identities** от появилите се опции.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.bg.png)
+    ![Type managed identities.](../../../../../../translated_images/bg/01-05-type-managed-identities.9297b6039874eff8.png)
 
 1. Изберете **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.bg.png)
+    ![Select create.](../../../../../../translated_images/bg/01-06-select-create.936d8d66d7144f9a.png)
 
 1. Изпълнете следните задачи:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **група ресурси** за използване.
     - Изберете **Роля** на **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.bg.png)
+    ![Fill contributor role.](../../../../../../translated_images/bg/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
 
 1. Изберете **Save**.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Въведете *storage accounts* в **лента за търсене** в горната част на портала и изберете **Storage accounts** от появилите се опции.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.bg.png)
+    ![Type storage accounts.](../../../../../../translated_images/bg/01-08-type-storage-accounts.1186c8e42933e49b.png)
 
 1. Изберете акаунта за съхранение, свързан с Azure Machine Learning работното пространство, което създадохте. Например, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **+ Add** от навигационното меню.
     - Изберете **Add role assignment** от навигационното меню.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.bg.png)
+    ![Add role.](../../../../../../translated_images/bg/01-09-add-role.d2db22fec1b187f0.png)
 
 1. В страницата Add role assignment изпълнете следните задачи:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - В страницата Select managed identities изберете управляваната идентичност, която създадохте. Например, *finetunephi-managedidentity*.
     - В страницата Select managed identities изберете **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.bg.png)
+    ![Select managed identity.](../../../../../../translated_images/bg/01-10-select-managed-identity.5ce5ba181f72a4df.png)
 
 1. Изберете **Review + assign**.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Въведете *container registries* в **лента за търсене** в горната част на портала и изберете **Container registries** от появилите се опции.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.bg.png)
+    ![Type container registries.](../../../../../../translated_images/bg/01-11-type-container-registries.ff3b8bdc49dc596c.png)
 
 1. Изберете регистъра на контейнери, свързан с Azure Machine Learning работното пространство. Например, *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете папката *finetune-phi*, която сте създали, намираща се в *C:\Users\yourUserName\finetune-phi*.
 
-    ![Отворете папката на проекта.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.bg.png)
+    ![Отворете папката на проекта.](../../../../../../translated_images/bg/01-12-open-project-folder.1fff9c7f41dd1639.png)
 
 1. В лявата част на Visual Studio Code, кликнете с десен бутон и изберете **New File**, за да създадете нов файл с име *download_dataset.py*.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. В лявата част на Visual Studio Code, кликнете с десен бутон и изберете **New File**, за да създадете нов файл с име *deploy_model.py*.
 
-    ![Създаване на нов файл.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.bg.png)
+    ![Създаване на нов файл.](../../../../../../translated_images/bg/01-13-create-new-file.c17c150fff384a39.png)
 
 1. В лявата част на Visual Studio Code, кликнете с десен бутон и изберете **New Folder**, за да създадете нова папка с име *finetuning_dir*.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете абонамента за Azure, който използвате в момента.
     - Копирайте и поставете вашия Subscription ID във файла *config.py*.
 
-    ![Намерете subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.bg.png)
+    ![Намерете subscription id.](../../../../../../translated_images/bg/01-14-find-subscriptionid.4f4ca33555f1e637.png)
 
 1. Изпълнете следните стъпки, за да добавите името на Azure Workspace:
 
     - Навигирайте до ресурса Azure Machine Learning, който сте създали.
     - Копирайте и поставете името на вашия акаунт във файла *config.py*.
 
-    ![Намерете името на Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.bg.png)
+    ![Намерете името на Azure Machine Learning.](../../../../../../translated_images/bg/01-15-find-AZML-name.1975f0422bca19a7.png)
 
 1. Изпълнете следните стъпки, за да добавите името на Azure Resource Group:
 
     - Навигирайте до ресурса Azure Machine Learning, който сте създали.
     - Копирайте и поставете името на вашата Azure Resource Group във файла *config.py*.
 
-    ![Намерете името на resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.bg.png)
+    ![Намерете името на resource group.](../../../../../../translated_images/bg/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
 
 2. Изпълнете следните стъпки, за да добавите името на Azure Managed Identity:
 
     - Навигирайте до ресурса Managed Identities, който сте създали.
     - Копирайте и поставете името на вашата Azure Managed Identity във файла *config.py*.
 
-    ![Намерете UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.bg.png)
+    ![Намерете UAI.](../../../../../../translated_images/bg/01-17-find-uai.3529464f53499827.png)
 
 ### Подготовка на набора от данни за донастройка
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете абонамента за Azure, който искате да използвате.
 
-    ![Намерете името на resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.bg.png)
+    ![Намерете името на resource group.](../../../../../../translated_images/bg/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. В това упражнение успешно донастроихте модела Phi-3, използвайки Azure Machine Learning. Като стартирахте скрипта *setup_ml.py*, настроихте средата за машинно обучение в Azure и инициирахте процеса на донастройка, дефиниран във файла *fine_tune.py*. Моля, имайте предвид, че процесът на донастройка може да отнеме значително време. След стартиране на командата `python setup_ml.py`, трябва да изчакате процесът да завърши. Можете да проследите статуса на задачата по донастройка, като използвате линка в терминала към портала на Azure Machine Learning.
 
-    ![Вижте задачата за донастройка.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.bg.png)
+    ![Вижте задачата за донастройка.](../../../../../../translated_images/bg/02-02-see-finetuning-job.59393bc3b143871e.png)
 
 ### Разгръщане на донастройвания модел
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **Endpoints** от страничния таб.
 
-    ![Изберете крайни точки.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.bg.png)
+    ![Изберете крайни точки.](../../../../../../translated_images/bg/02-03-select-endpoints.c3136326510baff1.png)
 
 2. Изберете крайна точка, която сте създали.
 
-    ![Изберете създадените крайни точки.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.bg.png)
+    ![Изберете създадените крайни точки.](../../../../../../translated_images/bg/02-04-select-endpoint-created.0363e7dca51dabb4.png)
 
 3. На тази страница можете да управлявате крайните точки, създадени по време на процеса на разгръщане.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Копирайте и поставете вашия **REST endpoint** във файла *config.py*, като замените `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` с вашия **REST endpoint**.
 1. Копирайте и поставете вашия **Primary key** във файла *config.py*, като замените `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` с вашия **Primary key**.
 
-    ![Копирайте api ключ и uri на крайната точка.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.bg.png)
+    ![Копирайте api ключ и uri на крайната точка.](../../../../../../translated_images/bg/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
 
 #### Добавете код във файла *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Ето един пример за резултатите: сега можете да чатите с вашия персонализиран Phi-3 модел. Препоръчително е да задавате въпроси, базирани на данните, използвани за финото настройване.
 
-    ![Пример за Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.bg.png)
+    ![Пример за Prompt flow.](../../../../../../translated_images/bg/02-06-promptflow-example.89384abaf3ad71f6.png)
 
 ---
 
