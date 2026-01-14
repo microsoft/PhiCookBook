@@ -73,7 +73,7 @@ GitHub Copilot výrazne zlepšil efektivitu programovania v podnikoch a každý 
 
 Tento workshop využíva model Phi-3 v kombinácii s lokálnym NPU a hybridom Azure na vytvorenie vlastného agenta v GitHub Copilot Chat ***@PHI3***, ktorý pomáha podnikovým vývojárom dokončiť generovanie kódu ***(@PHI3 /gen)*** a generovanie kódu na základe obrázkov ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.sk.png)
+![PHI3](../../../../../../../translated_images/sk/cover.1017ebc9a7c46d09.png)
 
 ### ***Poznámka:***
 
