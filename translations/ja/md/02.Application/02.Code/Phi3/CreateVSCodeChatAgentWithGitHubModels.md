@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **GitHub ModelsのPhi-3.5で自分だけのVisual Studio Code Chat Copilotエージェントを作成しよう**
 
-Visual Studio Code Copilotを使っていますか？特にChatでは、さまざまなエージェントを利用して、Visual Studio Codeでのプロジェクト作成、執筆、保守の能力を向上させることができます。Visual Studio Codeは、企業や個人が自社のビジネスに基づいて異なるエージェントを作成し、独自の分野での機能を拡張できるAPIを提供しています。この記事では、GitHub Modelsの**Phi-3.5-mini-instruct (128k)**と**Phi-3.5-vision-instruct (128k)**に焦点を当てて、自分だけのVisual Studio Codeエージェントを作成する方法を紹介します。
+Visual Studio Code Copilotを使っていますか？特にChatでは、さまざまなエージェントを利用して、Visual Studio Codeでのプロジェクト作成、執筆、保守の能力を向上させることができます。Visual Studio Codeは、企業や個人が自社のビジネスに基づいて異なるエージェントを作成し、独自の分野での機能を拡張できるAPIを提供しています。この記事では、GitHub Modelsの**Phi-3.5-mini-instruct (128k)** と**Phi-3.5-vision-instruct (128k)** に焦点を当てて、自分だけのVisual Studio Codeエージェントを作成する方法を紹介します。
 
 ## **GitHub ModelsのPhi-3.5について**
 
@@ -21,9 +21,9 @@ Phi-3/3.5ファミリーのPhi-3/3.5-mini-instructは、強力なコード理解
 
 ![gh](../../../../../../translated_images/gh.459640c7ceba01d5.ja.png)
 
-***Note: *** ここではAzure AI Inference SDKの使用を推奨します。なぜなら、本番環境でAzure Model Catalogとの切り替えがよりスムーズに行えるためです。
+***注記:*** ここではAzure AI Inference SDKの使用を推奨します。なぜなら、本番環境でAzure Model Catalogとの切り替えがよりスムーズに行えるためです。
 
-以下は、GitHub Modelsと連携した後のコード生成シナリオにおける**Phi-3.5-mini-instruct (128k)**と**Phi-3.5-vision-instruct (128k)**の結果で、以降の例の準備にもなっています。
+以下は、GitHub Modelsと連携した後のコード生成シナリオにおける**Phi-3.5-mini-instruct (128k)** と**Phi-3.5-vision-instruct (128k)** の結果で、以降の例の準備にもなっています。
 
 **デモ：GitHub Models Phi-3.5-mini-instruct (128k)によるプロンプトからのコード生成**（[こちらをクリック](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb)）
 
