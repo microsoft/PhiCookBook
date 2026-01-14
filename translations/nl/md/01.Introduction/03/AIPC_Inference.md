@@ -28,9 +28,9 @@ Samengevat zijn NPU's de rekenwonders die AI-berekeningen versnellen en spelen z
 
 Intel® NPU-apparaat is een AI-inferentieversneller geïntegreerd met Intel client-CPU's, vanaf de Intel® Core™ Ultra generatie CPU's (voorheen bekend als Meteor Lake). Het maakt energiezuinige uitvoering van kunstmatige neurale netwerk taken mogelijk.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.nl.png)
+![Latency](../../../../../translated_images/nl/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.nl.png)
+![Latency770](../../../../../translated_images/nl/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Tijdens het uitvoeren van de code kunnen we de status van de NPU bekijken via Taakbeheer
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.nl.png)
+![NPU](../../../../../translated_images/nl/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***Voorbeelden*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Dit is het uitvoeringsresultaat
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.nl.png)
+![DML](../../../../../translated_images/nl/aipc_DML.52a44180393ab491.png)
 
 ***Voorbeelden*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 het geconverteerde formaat, zoals dit
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.nl.png)
+![openvino_convert](../../../../../translated_images/nl/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 Laad modelpaden (model_dir), gerelateerde configuraties (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) en hardware-versnelde apparaten (GPU.0) via OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Tijdens het uitvoeren van de code kunnen we de status van de GPU bekijken via Taakbeheer
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.nl.png)
+![openvino_gpu](../../../../../translated_images/nl/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***Voorbeelden*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

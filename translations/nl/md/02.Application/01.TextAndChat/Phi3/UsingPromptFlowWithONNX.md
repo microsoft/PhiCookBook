@@ -33,33 +33,33 @@ Lees deze richtlijn om ONNX Runtime GenAI voor Windows GPU in te stellen [klik h
 
 1. Installeer de Prompt flow VS Code-extensie
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.nl.png)
+![pfvscode](../../../../../../translated_images/nl/pfvscode.eff93dfc66a42cbe.png)
 
 2. Na het installeren van de Prompt flow VS Code-extensie, klik op de extensie en kies **Installation dependencies** volg deze richtlijn om de Prompt flow SDK in je omgeving te installeren
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.nl.png)
+![pfsetup](../../../../../../translated_images/nl/pfsetup.b46e93096f5a254f.png)
 
 3. Download [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) en open deze sample met VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.nl.png)
+![pfsample](../../../../../../translated_images/nl/pfsample.8d89e70584ffe7c4.png)
 
 4. Open **flow.dag.yaml** om je Python-omgeving te kiezen
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.nl.png)
+![pfdag](../../../../../../translated_images/nl/pfdag.264a77f7366458ff.png)
 
    Open **chat_phi3_ort.py** om de locatie van je Phi-3.5-instruct ONNX-model aan te passen
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.nl.png)
+![pfphi](../../../../../../translated_images/nl/pfphi.72da81d74244b45f.png)
 
 5. Voer je prompt flow uit om te testen
 
 Open **flow.dag.yaml** en klik op visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.nl.png)
+![pfv](../../../../../../translated_images/nl/pfv.ba8a81f34b20f603.png)
 
 Klik hierna op uitvoeren om te testen
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.nl.png)
+![pfflow](../../../../../../translated_images/nl/pfflow.4e1135a089b1ce1b.png)
 
 1. Je kunt batch uitvoeren in de terminal om meer resultaten te bekijken
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Je kunt de resultaten bekijken in je standaardbrowser
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.nl.png)
+![pfresult](../../../../../../translated_images/nl/pfresult.c22c826f8062d7cb.png)
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

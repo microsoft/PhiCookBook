@@ -36,7 +36,7 @@ We kunnen kiezen voor [Ollama](https://ollama.com) of [LlamaEdge](https://llamae
 
 Als je gguf zowel in de cloud als op edge-apparaten tegelijk wilt gebruiken, kan LlamaEdge worden gezien als WasmEdge (WasmEdge is een lichtgewicht, hoogpresterende, schaalbare WebAssembly runtime die geschikt is voor cloud native, edge en gedecentraliseerde applicaties. Het ondersteunt serverless applicaties, embedded functies, microservices, smart contracts en IoT-apparaten). Je kunt het kwantitatieve model van gguf via LlamaEdge naar edge-apparaten en de cloud uitrollen.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.nl.jpg)
+![llamaedge](../../../../../translated_images/nl/llamaedge.e9d6ff96dff11cf7.jpg)
 
 Hier zijn de stappen om het te gebruiken
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Hier is het resultaat van de uitvoering
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.nl.png)
+![llamaedgerun](../../../../../translated_images/nl/llamaedgerun.bed921516c9a821c.png)
 
 ***Voorbeeldcode*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

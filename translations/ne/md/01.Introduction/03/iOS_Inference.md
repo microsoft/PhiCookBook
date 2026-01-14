@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 मैले App विकास विधिको रूपमा Objective-C रोजें, किनभने ONNX Runtime C++ API सँग Generative AI प्रयोग गर्दा Objective-C राम्रोसँग मिल्छ। पक्कै पनि, तपाईं Swift bridging मार्फत पनि सम्बन्धित कलहरू पूरा गर्न सक्नुहुन्छ।
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.ne.png)
+![xcode](../../../../../translated_images/ne/xcode.8147789e6c25e3e2.png)
 
 ## **5. ONNX quantized INT4 मोडेल App एप्लिकेसन प्रोजेक्टमा कपी गर्ने**
 
 हामीले ONNX ढाँचामा INT4 quantization मोडेल आयात गर्नुपर्छ, जुन पहिले डाउनलोड गर्न आवश्यक छ।
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.ne.png)
+![hf](../../../../../translated_images/ne/hf.6b8504fd88ee48dd.png)
 
 डाउनलोड गरेपछि, यसलाई Xcode प्रोजेक्टको Resources डाइरेक्टरीमा थप्नुपर्छ।
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.ne.png)
+![model](../../../../../translated_images/ne/model.3b879b14e0be877d.png)
 
 ## **6. ViewControllers मा C++ API थप्ने**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** सम्बन्धित C++ हेडर फाइलहरू प्रोजेक्टमा थप्नुहोस्।
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.ne.png)
+  ![Header File](../../../../../translated_images/ne/head.64cad021ce70a333.png)
 
 - **b.** Xcode मा `onnxruntime-genai` डायनामिक लाइब्रेरी समावेश गर्नुहोस्।
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.ne.png)
+  ![Library](../../../../../translated_images/ne/lib.a4209b9f21ddf344.png)
 
 - **c.** परीक्षणका लागि C Samples कोड प्रयोग गर्नुहोस्। थप कार्यक्षमताका लागि ChatUI जस्ता अतिरिक्त सुविधाहरू पनि थप्न सकिन्छ।
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 सेटअप पूरा भएपछि, Phi-3-mini मोडेल इन्फरेन्सको परिणाम हेर्न एप्लिकेसन चलाउन सक्नुहुन्छ।
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.ne.jpg)
+![Running Result](../../../../../translated_images/ne/result.326a947a6a2b9c51.jpg)
 
 थप नमूना कोड र विस्तृत निर्देशनहरूका लागि, [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) भ्रमण गर्नुहोस्।
 

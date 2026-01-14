@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Gebruik van Azure AI Foundry voor evaluatie**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.nl.png)
+![aistudo](../../../../../translated_images/nl/AIFoundry.9e0b513e999a1c5a.png)
 
 Hoe je je generatieve AI-toepassing kunt evalueren met [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Of je nu enkelvoudige of meervoudige gesprekken beoordeelt, Azure AI Foundry biedt tools om de prestaties en veiligheid van modellen te evalueren.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.nl.png)
+![aistudo](../../../../../translated_images/nl/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Hoe generatieve AI-apps te evalueren met Azure AI Foundry
 Voor meer gedetailleerde instructies, zie de [Azure AI Foundry Documentatie](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
