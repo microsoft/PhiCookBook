@@ -23,7 +23,7 @@ Acest exemplu complet (E2E) este bazat pe ghidul "[Fine-Tune and Integrate Custo
 
 Iată o prezentare generală a acestui exemplu E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.ro.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ro/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Cuprins
 
@@ -48,13 +48,13 @@ Iată o prezentare generală a acestui exemplu E2E.
 
 1. Tastați *azure machine learning* în **bara de căutare** din partea de sus a paginii portalului și selectați **Azure Machine Learning** din opțiunile care apar.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.ro.png)
+    ![Type azure machine learning.](../../../../../../translated_images/ro/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Selectați **+ Create** din meniul de navigare.
 
 3. Selectați **New workspace** din meniul de navigare.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.ro.png)
+    ![Select new workspace.](../../../../../../translated_images/ro/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Efectuați următoarele acțiuni:
 
@@ -67,7 +67,7 @@ Iată o prezentare generală a acestui exemplu E2E.
     - Selectați **Application insights** pe care doriți să-l utilizați (creați unul nou dacă este necesar).
     - Selectați **Container registry-ul** pe care doriți să-l utilizați (creați unul nou dacă este necesar).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.ro.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/ro/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Selectați **Review + Create**.
 
@@ -90,7 +90,7 @@ Iată o prezentare generală a acestui exemplu E2E.
     - Selectați **Familia mașinii virtuale** pe care doriți să o utilizați. De exemplu, selectați **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, care include GPU-ul *Standard_NC24ads_A100_v4*.
     - Selectați **Request quota** din meniul de navigare.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.ro.png)
+        ![Request quota.](../../../../../../translated_images/ro/02-02-request-quota.c0428239a63ffdd5.png)
 
     - În pagina Request quota introduceți **Limita nouă de nuclee** pe care doriți să o utilizați. De exemplu, 24.
     - În pagina Request quota selectați **Submit** pentru a trimite solicitarea de cotă GPU.
@@ -111,11 +111,11 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Tastați *managed identities* în **bara de căutare** din partea de sus a paginii portalului și selectați **Managed Identities** din opțiunile care apar.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.ro.png)
+    ![Type managed identities.](../../../../../../translated_images/ro/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Selectați **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.ro.png)
+    ![Select create.](../../../../../../translated_images/ro/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Efectuați următoarele acțiuni:
 
@@ -124,7 +124,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - Selectați regiunea pe care doriți să o utilizați.
     - Introduceți **Numele**. Trebuie să fie o valoare unică.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.ro.png)
+    ![Select create.](../../../../../../translated_images/ro/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Selectați **Review + create**.
 
@@ -145,7 +145,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - Selectați **Grupul de resurse** pe care doriți să-l utilizați.
     - Selectați rolul **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.ro.png)
+    ![Fill contributor role.](../../../../../../translated_images/ro/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Selectați **Save**.
 
@@ -153,7 +153,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Tastați *storage accounts* în **bara de căutare** din partea de sus a paginii portalului și selectați **Storage accounts** din opțiunile care apar.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.ro.png)
+    ![Type storage accounts.](../../../../../../translated_images/ro/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Selectați contul de stocare asociat workspace-ului Azure Machine Learning pe care l-ați creat. De exemplu, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - Selectați **+ Add** din meniul de navigare.
     - Selectați **Add role assignment** din meniul de navigare.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.ro.png)
+    ![Add role.](../../../../../../translated_images/ro/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. În pagina Add role assignment, efectuați următoarele:
 
@@ -177,7 +177,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - În pagina Select managed identities, selectați Identitatea Gestionată pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
     - În pagina Select managed identities, selectați **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.ro.png)
+    ![Select managed identity.](../../../../../../translated_images/ro/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Selectați **Review + assign**.
 
@@ -185,7 +185,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Tastați *container registries* în **bara de căutare** din partea de sus a paginii portalului și selectați **Container registries** din opțiunile care apar.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.ro.png)
+    ![Type container registries.](../../../../../../translated_images/ro/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Selectați registrul de containere asociat workspace-ului Azure Machine Learning. De exemplu, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
 
 1. Selectați folderul *finetune-phi* pe care l-ați creat, aflat la *C:\Users\yourUserName\finetune-phi*.
 
-    ![Selectați folderul pe care l-ați creat.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.ro.png)
+    ![Selectați folderul pe care l-ați creat.](../../../../../../translated_images/ro/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *download_dataset.py*.
 
-    ![Creați un fișier nou.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.ro.png)
+    ![Creați un fișier nou.](../../../../../../translated_images/ro/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Pregătiți setul de date pentru ajustare fină
 
@@ -392,7 +392,7 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
 
 1. Selectați **+ New**.
 
-    ![Selectați compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.ro.png)
+    ![Selectați compute.](../../../../../../translated_images/ro/06-01-select-compute.a29cff290b480252.png)
 
 1. Efectuați următoarele operațiuni:
 
@@ -402,7 +402,7 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
     - Filtrați pentru **Virtual machine size** la **Select from all options**.
     - Selectați **Virtual machine size** la **Standard_NC24ads_A100_v4**.
 
-    ![Creați cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.ro.png)
+    ![Creați cluster.](../../../../../../translated_images/ro/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Selectați **Next**.
 
@@ -413,7 +413,7 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
     - Selectați **Maximum number of nodes** la **1**.
     - Selectați **Idle seconds before scale down** la **120**.
 
-    ![Creați cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.ro.png)
+    ![Creați cluster.](../../../../../../translated_images/ro/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Selectați **Create**.
 
@@ -423,18 +423,18 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
 
 1. Selectați workspace-ul Azure Machine Learning pe care l-ați creat.
 
-    ![Selectați workspace-ul pe care l-ați creat.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ro.png)
+    ![Selectați workspace-ul pe care l-ați creat.](../../../../../../translated_images/ro/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Efectuați următoarele operațiuni:
 
     - Selectați **Model catalog** din tab-ul din partea stângă.
     - Tastați *phi-3-mini-4k* în **bara de căutare** și selectați **Phi-3-mini-4k-instruct** din opțiunile afișate.
 
-    ![Tastați phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.ro.png)
+    ![Tastați phi-3-mini-4k.](../../../../../../translated_images/ro/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Selectați **Fine-tune** din meniul de navigare.
 
-    ![Selectați fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.ro.png)
+    ![Selectați fine tune.](../../../../../../translated_images/ro/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Efectuați următoarele operațiuni:
 
@@ -443,7 +443,7 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
     - Selectați tipul de upload pentru datele de validare la **Provide different validation data**.
     - Selectați **+ Select data** pentru a încărca **Validation data**.
 
-    ![Completați pagina de fine-tuning.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.ro.png)
+    ![Completați pagina de fine-tuning.](../../../../../../translated_images/ro/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ Pentru a descărca seturile de date necesare pentru ajustarea fină, veți confi
 
 1. În acest exercițiu, ați ajustat cu succes modelul Phi-3 folosind Azure Machine Learning. Rețineți că procesul de ajustare fină poate dura o perioadă considerabilă de timp. După ce porniți jobul de ajustare fină, trebuie să așteptați să se finalizeze. Puteți monitoriza starea jobului în fila Jobs din partea stângă a workspace-ului Azure Machine Learning. În următoarea serie, veți implementa modelul ajustat și îl veți integra cu Prompt flow.
 
-    ![Vezi jobul de finetuning.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.ro.png)
+    ![Vezi jobul de finetuning.](../../../../../../translated_images/ro/06-08-output.2bd32e59930672b1.png)
 
 ### Implementați modelul Phi-3 ajustat
 
@@ -471,17 +471,17 @@ Pentru a integra modelul Phi-3 ajustat cu Prompt flow, trebuie să implementați
 
 1. Selectați workspace-ul Azure Machine Learning pe care l-ați creat.
 
-    ![Selectați workspace-ul pe care l-ați creat.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ro.png)
+    ![Selectați workspace-ul pe care l-ați creat.](../../../../../../translated_images/ro/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Selectați **Models** din tab-ul din partea stângă.
 1. Selectați **+ Register**.
 1. Selectați **From a job output**.
 
-    ![Înregistrați modelul.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.ro.png)
+    ![Înregistrați modelul.](../../../../../../translated_images/ro/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Selectați jobul pe care l-ați creat.
 
-    ![Selectați jobul.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.ro.png)
+    ![Selectați jobul.](../../../../../../translated_images/ro/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Selectați **Next**.
 
@@ -489,17 +489,17 @@ Pentru a integra modelul Phi-3 ajustat cu Prompt flow, trebuie să implementați
 
 1. Asigurați-vă că este selectat **Job output**; ar trebui să fie selectat automat.
 
-    ![Selectați ieșirea.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.ro.png)
+    ![Selectați ieșirea.](../../../../../../translated_images/ro/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Selectați **Next**.
 
 3. Selectați **Register**.
 
-    ![Selectați register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.ro.png)
+    ![Selectați register.](../../../../../../translated_images/ro/07-04-register.fd82a3b293060bc7.png)
 
 4. Puteți vizualiza modelul înregistrat accesând meniul **Models** din tab-ul din partea stângă.
 
-    ![Model înregistrat.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.ro.png)
+    ![Model înregistrat.](../../../../../../translated_images/ro/07-05-registered-model.7db9775f58dfd591.png)
 
 #### Implementați modelul ajustat
 
@@ -509,13 +509,13 @@ Pentru a integra modelul Phi-3 ajustat cu Prompt flow, trebuie să implementați
 
 1. Selectați **Real-time endpoints** din meniul de navigare.
 
-    ![Creați endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.ro.png)
+    ![Creați endpoint.](../../../../../../translated_images/ro/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Selectați **Create**.
 
 1. Selectați modelul înregistrat pe care l-ați creat.
 
-    ![Selectați modelul înregistrat.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.ro.png)
+    ![Selectați modelul înregistrat.](../../../../../../translated_images/ro/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Selectați **Select**.
 
@@ -527,7 +527,7 @@ Pentru a integra modelul Phi-3 ajustat cu Prompt flow, trebuie să implementați
     - Introduceți **Endpoint name**. Trebuie să fie o valoare unică.
     - Introduceți **Deployment name**. Trebuie să fie o valoare unică.
 
-    ![Completați setările de implementare.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.ro.png)
+    ![Completați setările de implementare.](../../../../../../translated_images/ro/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Selectați **Deploy**.
 
@@ -543,14 +543,14 @@ Pentru a integra modelul Phi-3 ajustat cu Prompt flow, trebuie să implementați
 
 1. Selectați endpointul pe care l-ați creat.
 
-    ![Selectați endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.ro.png)
+    ![Selectați endpoints](../../../../../../translated_images/ro/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. Pe această pagină, puteți gestiona endpointurile pe durata procesului de implementare.
 
 > [!NOTE]
 > După ce implementarea este completă, asigurați-vă că **Live traffic** este setat la **100%**. Dacă nu este, selectați **Update traffic** pentru a ajusta setările traficului. Rețineți că nu puteți testa modelul dacă traficul este setat la 0%.
 >
-> ![Setați traficul.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.ro.png)
+> ![Setați traficul.](../../../../../../translated_images/ro/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## Scenariul 3: Integrați cu Prompt flow și conversați cu modelul personalizat în Azure AI Foundry
@@ -579,7 +579,7 @@ Trebuie să creați un Hub înainte de a crea un Proiect. Un Hub funcționează 
 1. Selectați **All hubs** din tab-ul din partea stângă.
 
 1. Selectați **+ New hub** din meniul de navigare.
-![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.ro.png)
+![Create hub.](../../../../../../translated_images/ro/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Realizați următoarele sarcini:
 
@@ -590,7 +590,7 @@ Trebuie să creați un Hub înainte de a crea un Proiect. Un Hub funcționează 
     - Selectați **Conectare la Azure AI Services** pe care să o utilizați (creați una nouă dacă este necesar).
     - Selectați **Conectare la Azure AI Search** pentru a **Sări peste conectare**.
 
-![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.ro.png)
+![Fill hub.](../../../../../../translated_images/ro/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Selectați **Next**.
 
@@ -600,11 +600,11 @@ Trebuie să creați un Hub înainte de a crea un Proiect. Un Hub funcționează 
 
 1. Selectați **+ Proiect nou** din meniul de navigare.
 
-![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.ro.png)
+![Select new project.](../../../../../../translated_images/ro/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Introduceți **Numele proiectului**. Trebuie să fie o valoare unică.
 
-![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.ro.png)
+![Create project.](../../../../../../translated_images/ro/08-05-create-project.4d97f0372f03375a.png)
 
 1. Selectați **Creează un proiect**.
 
@@ -620,17 +620,17 @@ Pentru a integra modelul dvs. personalizat Phi-3 cu Prompt flow, trebuie să sal
 
 1. Selectați **Endpoints** din fila din stânga.
 
-![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.ro.png)
+![Select endpoints.](../../../../../../translated_images/ro/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Selectați endpoint-ul pe care l-ați creat.
 
-![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.ro.png)
+![Select endpoints.](../../../../../../translated_images/ro/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. Selectați **Consume** din meniul de navigare.
 
 1. Copiați **REST endpoint** și **Cheia primară**.
 
-![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.ro.png)
+![Copy api key and endpoint uri.](../../../../../../translated_images/ro/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Adăugați Conexiunea Personalizată
 
@@ -642,11 +642,11 @@ Pentru a integra modelul dvs. personalizat Phi-3 cu Prompt flow, trebuie să sal
 
 1. Selectați **+ Conexiune nouă**.
 
-![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.ro.png)
+![Select new connection.](../../../../../../translated_images/ro/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. Selectați **Chei personalizate** din meniul de navigare.
 
-![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.ro.png)
+![Select custom keys.](../../../../../../translated_images/ro/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Efectuați următoarele sarcini:
 
@@ -656,7 +656,7 @@ Pentru a integra modelul dvs. personalizat Phi-3 cu Prompt flow, trebuie să sal
     - Pentru numele cheii introduceți **key** și lipiți cheia copiată din Azure ML Studio în câmpul de valoare.
     - După ce ați adăugat cheile, selectați **este secret** pentru a preveni expunerea cheii.
 
-![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.ro.png)
+![Add connection.](../../../../../../translated_images/ro/08-11-add-connection.785486badb4d2d26.png)
 
 1. Selectați **Adaugă conexiune**.
 
@@ -670,15 +670,15 @@ Ați adăugat o conexiune personalizată în Azure AI Foundry. Acum, să creăm 
 
 1. Selectați **+ Creează** din meniul de navigare.
 
-![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.ro.png)
+![Select Promptflow.](../../../../../../translated_images/ro/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. Selectați **Flux de chat** din meniul de navigare.
 
-![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.ro.png)
+![Select chat flow.](../../../../../../translated_images/ro/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Introduceți **Numele dosarului** pe care să îl folosiți.
 
-![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.ro.png)
+![Enter name.](../../../../../../translated_images/ro/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Selectați **Creează**.
 
@@ -715,7 +715,7 @@ Trebuie să integrați modelul fine-tuned Phi-3 într-un Prompt flow. Totuși, P
 
     - Selectați **Salvează**.
 
-![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.ro.png)
+![Select raw file mode.](../../../../../../translated_images/ro/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Adăugați următorul cod în fișierul *integrate_with_promptflow.py* pentru a folosi modelul personalizat Phi-3 în Prompt flow.
 
@@ -780,14 +780,14 @@ Trebuie să integrați modelul fine-tuned Phi-3 într-un Prompt flow. Totuși, P
 
     ```
 
-![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.ro.png)
+![Paste prompt flow code.](../../../../../../translated_images/ro/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Pentru informații mai detaliate despre folosirea Prompt flow în Azure AI Foundry, puteți consulta [Prompt flow în Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Selectați **Intrare chat**, **Ieșire chat** pentru a activa chat-ul cu modelul dvs.
 
-![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.ro.png)
+![Input Output.](../../../../../../translated_images/ro/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. Acum sunteți gata să discutați cu modelul dvs. personalizat Phi-3. În exercițiul următor, veți învăța cum să porniți Prompt flow și să îl folosiți pentru a discuta cu modelul dvs. fine-tuned Phi-3.
 
@@ -795,7 +795,7 @@ Trebuie să integrați modelul fine-tuned Phi-3 într-un Prompt flow. Totuși, P
 >
 > Fluxul reconstruit ar trebui să arate ca în imaginea de mai jos:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.ro.png)
+> ![Flow example.](../../../../../../translated_images/ro/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Discutați cu modelul dvs. personalizat Phi-3
@@ -808,25 +808,25 @@ Acum că ați fine-tuned și integrat modelul dvs. personalizat Phi-3 cu Prompt 
 
 1. Selectați **Start compute sessions** pentru a porni Prompt flow.
 
-![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.ro.png)
+![Start compute session.](../../../../../../translated_images/ro/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Selectați **Validate and parse input** pentru a actualiza parametrii.
 
-![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.ro.png)
+![Validate input.](../../../../../../translated_images/ro/09-02-validate-input.317c76ef766361e9.png)
 
 1. Selectați **Valoarea** conexiunii către conexiunea personalizată pe care ați creat-o. De exemplu, *conexiune*.
 
-![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.ro.png)
+![Connection.](../../../../../../translated_images/ro/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Discutați cu modelul personalizat
 
 1. Selectați **Chat**.
 
-![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.ro.png)
+![Select chat.](../../../../../../translated_images/ro/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Iată un exemplu al rezultatelor: Acum puteți discuta cu modelul dvs. personalizat Phi-3. Este recomandat să puneți întrebări bazate pe datele folosite pentru fine-tuning.
 
-![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.ro.png)
+![Chat with prompt flow.](../../../../../../translated_images/ro/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

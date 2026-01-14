@@ -34,7 +34,7 @@ Phi в настоящее время является самой мощной и
 2. **Клонируйте репозиторий**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Присоединяйтесь к сообществу Microsoft AI Discord и встречайте экспертов и коллег разработчиков**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.ru.png)
+![cover](../../translated_images/ru/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Многоязычная поддержка
 

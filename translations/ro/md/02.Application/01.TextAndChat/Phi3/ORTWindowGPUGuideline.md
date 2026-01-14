@@ -43,7 +43,7 @@ Documentul oferă îndrumări privind:
 
    ***Note*** Dacă nu dorești să compilezi, poți sări peste acest pas
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.ro.png)
+![CPP](../../../../../../translated_images/ro/01.42f52a2b2aedff02.png)
 
 ### **4. Instalare driver NVIDIA**
 
@@ -83,7 +83,7 @@ Copiază fișierele lib, bin, include din NVIDIA CUDNN 9.4 în folderele corespu
 
    Deschide [Notebook-ul](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) și execută-l
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.ro.png)
+![RESULT](../../../../../../translated_images/ro/02.b9b06996cf7255d5.png)
 
 ### **8. Compilare ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Copiază fișierele lib, bin, include din NVIDIA CUDNN 9.4 în folderele corespu
 
    - Folosind Windows Terminal, deschide Developer Command Prompt pentru VS 2022 și navighează la onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.ro.png)
+![RESULT](../../../../../../translated_images/ro/03.b83ce473d5ff9b9b.png)
 
    - Compilează folosind mediul tău Python
 

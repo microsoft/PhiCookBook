@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 После того как адаптеры обучены в удалённой среде, используйте простое приложение Gradio для взаимодействия с моделью.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ru.png)
+![Fine-tune complete](../../../../../translated_images/ru/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Подготовка ресурсов Azure  
 Для удалённого инференса необходимо настроить ресурсы Azure, выполнив команду `AI Toolkit: Provision Azure Container Apps for inference` из палитры команд. Во время настройки вам будет предложено выбрать подписку Azure и группу ресурсов.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ru.png)
+![Provision Inference Resource](../../../../../translated_images/ru/command-provision-inference.467afc8d351642fc.png)
    
 По умолчанию подписка и группа ресурсов для инференса должны совпадать с теми, что использовались для дообучения. Инференс будет использовать ту же среду Azure Container App и получать доступ к модели и адаптеру модели, сохранённым в Azure Files, которые были созданы на этапе дообучения.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### Развёртывание для инференса  
 Если вы хотите изменить код инференса или перезагрузить модель инференса, выполните команду `AI Toolkit: Deploy for inference`. Это синхронизирует ваш последний код с ACA и перезапустит реплику.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ru.png)
+![Deploy for inference](../../../../../translated_images/ru/command-deploy.9adb4e310dd0b0ae.png)
 
 После успешного завершения развёртывания модель готова к оценке через этот endpoint.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Вы можете получить доступ к API инференса, нажав на кнопку "*Go to Inference Endpoint*" в уведомлении VSCode. Также веб-адрес API можно найти в `ACA_APP_ENDPOINT` в файле `./infra/inference.config.json` и в панели вывода.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.ru.png)
+![App Endpoint](../../../../../translated_images/ru/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** Endpoint инференса может потребовать несколько минут для полной готовности.
 

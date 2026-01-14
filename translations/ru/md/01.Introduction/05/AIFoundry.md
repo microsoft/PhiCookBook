@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Использование Azure AI Foundry для оценки**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.ru.png)
+![aistudo](../../../../../translated_images/ru/AIFoundry.9e0b513e999a1c5a.png)
 
 Как оценить ваше приложение с генеративным ИИ с помощью [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Независимо от того, оцениваете ли вы односторонние или многоступенчатые диалоги, Azure AI Foundry предоставляет инструменты для проверки производительности модели и безопасности.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.ru.png)
+![aistudo](../../../../../translated_images/ru/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Как оценивать приложения с генеративным ИИ с помощью Azure AI Foundry  
 Подробные инструкции смотрите в [документации Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
