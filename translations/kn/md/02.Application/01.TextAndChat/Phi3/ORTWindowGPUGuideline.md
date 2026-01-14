@@ -44,7 +44,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***ಗಮನಿಸಿ*** ನೀವು ಸಂಯೋಜಿಸಲು ಇಚ್ಛಿಸದಿದ್ದರೆ ಈ ಹಂತವನ್ನು ಬಿಡಬಹುದು
 
-![C++](../../../../../../translated_images/01.42f52a2b2aedff02.kn.png)
+![C++](../../../../../../translated_images/kn/01.42f52a2b2aedff02.png)
 
 
 ### **4. Install NVIDIA Driver**
@@ -88,7 +88,7 @@ NVIDIA CUDNN 9.4 ನ lib, bin, include ಫೈಲ್‌ಗಳನ್ನು NVIDIA 
    [ನೋಟ್‌ಬುಕ್](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) ಅನ್ನು ತೆರೆಯಿ ಮತ್ತು ನಿರ್ವಹಿಸಿ
 
 
-![ಫಲಿತಾಂಶ](../../../../../../translated_images/02.b9b06996cf7255d5.kn.png)
+![ಫಲಿತಾಂಶ](../../../../../../translated_images/kn/02.b9b06996cf7255d5.png)
 
 
 ### **8. Compile ORT GenAI GPU**
@@ -142,7 +142,7 @@ NVIDIA CUDNN 9.4 ನ lib, bin, include ಫೈಲ್‌ಗಳನ್ನು NVIDIA 
 
    - Windows Terminal ಅನ್ನು ಬಳಸಿಕೊಂಡು, VS 2022 ಗಾಗಿ Developer Command Prompt ಗೆ ಹೋಗಿ ಮತ್ತು onnxruntime-genai ಗೆ ಹೋಗಿ
 
-![ಫಲಿತಾಂಶ](../../../../../../translated_images/03.b83ce473d5ff9b9b.kn.png)
+![ಫಲಿತಾಂಶ](../../../../../../translated_images/kn/03.b83ce473d5ff9b9b.png)
 
    - ನಿಮ್ಮ python ಪರಿಸರದೊಂದಿಗೆ ಅದನ್ನು ಕಂಪೈಲ್ ಮಾಡಿ
 

@@ -67,7 +67,7 @@ Azure MLは多くのLLM/SLM関連機能を追加し、LLMOpsとSLMOpsを組み�
 
 企業ユーザーは、モデルカタログを通じて異なるビジネスシナリオに応じたモデルを展開し、企業の開発者やユーザーがアクセスできるModel as Serviceとしてサービスを提供できます。
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.ja.png)
+![models](../../../../translated_images/ja/models.e6c7ff50a51806fd.png)
 
 Azure Machine Learning Studioのモデルカタログは、生成AIアプリケーション構築に役立つ多様なモデルを発見・利用するハブです。  
 モデルカタログには、Azure OpenAIサービス、Mistral、Meta、Cohere、Nvidia、Hugging Faceなどのモデルプロバイダーによる数百のモデルが含まれており、Microsoftがトレーニングしたモデルもあります。  
@@ -82,7 +82,7 @@ Azure Machine Learningのパイプラインサービスは、パイプライン�
 
 SLM / LLMのファインチューニングでは、パイプラインを通じてデータ、トレーニング、生成プロセスを管理できます。
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.ja.png)
+![finetuning](../../../../translated_images/ja/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

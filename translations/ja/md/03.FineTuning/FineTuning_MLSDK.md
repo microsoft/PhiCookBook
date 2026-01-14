@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 この例では、Phi-3-mini-4k-instruct モデルを ultrachat_200k データセットを使って2人の会話を完結させるタスクでファインチューニングします。
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.ja.png)
+![MLFineTune](../../../../translated_images/ja/MLFineTune.928d4c6b3767dd35.png)
 
 この例では、Azure ML SDK と Python を使ってファインチューニングを行い、その後ファインチューニング済みモデルをオンラインエンドポイントにデプロイしてリアルタイム推論を行う方法を示します。
 

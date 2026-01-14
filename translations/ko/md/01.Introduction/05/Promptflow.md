@@ -44,7 +44,7 @@ Prompt Flow는 내장 도구, 샘플, 템플릿 라이브러리를 포함합니�
 
 Microsoft Prompt Flow에서 평가는 AI 모델의 성능을 평가하는 데 중요한 역할을 합니다. Prompt Flow 내에서 평가 플로우와 지표를 어떻게 맞춤 설정할 수 있는지 살펴보겠습니다:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.ko.png)
+![PFVizualise](../../../../../translated_images/ko/pfvisualize.c1d9ca75baa2a222.png)
 
 **Prompt Flow에서 평가 이해하기**
 

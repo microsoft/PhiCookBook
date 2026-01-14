@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-3/3.5 ಫ್ಯಾಮಿಲಿಯಲ್ಲಿರುವ Phi-3/3.5-mini-instruct ಗೆ ಕೋಡ್ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಮತ್ತು ಜನರೇಷನ್ ಸಾಮರ್ಥ್ಯದಲ್ಲಿ ಶಕ್ತಿಯಿದೆ ಎಂದು ನಾವು ತಿಳಿದಿದ್ದೇವೆ, ಮತ್ತು ಅದು Gemma-2-9b ಮತ್ತು Mistral-Nemo-12B-instruct-2407 шақಿಂತ ಉತ್ತಮವಾಗಿದೆ.
 
-![ಕೋಡ್ ಜನರೇಷನ್](../../../../../../translated_images/codegen.53be1150ee54d969.kn.png)
+![ಕೋಡ್ ಜನರೇಷನ್](../../../../../../translated_images/kn/codegen.53be1150ee54d969.png)
 
 ಇತ್ತೀಚಿನ GitHub Models ಈಗ Phi-3.5-mini-instruct (128k) ಮತ್ತು Phi-3.5-vision-instruct (128k) ಮಾಡೆಲ್ಗಳಿಗೆ ಪ್ರವೇಶವನ್ನು ಒದಗಿಸುತ್ತವೆ. ಡೆವಲಪರ್‌ಗಳು ಅವುಗಳನ್ನು OpenAI SDK, Azure AI Inference SDK, ಮತ್ತು REST API ಮೂಲಕ ಪ್ರಾಪ್ತಿಸಬಲ್ಲರು.
 
-![GitHub Models](../../../../../../translated_images/gh.459640c7ceba01d5.kn.png)
+![GitHub Models](../../../../../../translated_images/kn/gh.459640c7ceba01d5.png)
 
 ***Note: ***production ಪರಿಸರದಲ್ಲಿ Azure Model Catalog ಜೊತೆಗೆ ಉತ್ತಮವಾಗಿ ಸ್ವಿಚ್ ಮಾಡಲು ಹಲವಾರು ಕಾರಣಗಳಿಂದ ಇಲ್ಲಿ Azure AI Inference SDK ಬಳಸುವುದು ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ
 
@@ -34,13 +34,13 @@ Phi-3/3.5 ಫ್ಯಾಮಿಲಿಯಲ್ಲಿರುವ Phi-3/3.5-mini-instru
 
 GitHub Copilot Chat Agent ಕೋಡ್ ಆಧಾರಿತ ವಿಭಿನ್ನ ಪ್ರಾಜೆಕ್ಟ್ ದೃಶ್ಯಗಳಲ್ಲಿ ವಿವಿಧ ಕಾರ್ಯಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಬಹುದು. ಸಿಸ್ಟಂಗಳಲ್ಲಿ ನಾಲ್ಕು ಏಜೆಂಟ್‌ಗಳಿವೆ: workspace, github, terminal, vscode
 
-![ಏಜೆಂಟ್](../../../../../../translated_images/agent.3dbb06228f9a6189.kn.png)
+![ಏಜೆಂಟ್](../../../../../../translated_images/kn/agent.3dbb06228f9a6189.png)
 
 ಏಜೆಂಟ್‌ನ ಹೆಸರನ್ನು ‘@’ ಜೊತೆಗೆ ಸೇರಿಸುವ ಮೂಲಕ, ನೀವು ಸಂಬಂಧಿಸಿದ ಕೆಲಸವನ್ನು ವೇಗವಾಗಿ ಪೂರ್ಣಗೊಳಿಸಬಹುದು. ಉಧ್ಯಮಗಳಿಗಾಗಿ, ನೀವು ನಿಮ್ಮ ಸ್ವಂತ ವ್ಯವಹಾರ-ಸಂಬಂಧಿತ ವಿಷಯಗಳನ್ನು (ಅರ್ಹತೆಗಳು, ಕೋಡಿಂಗ್, ಪರೀಕ್ಷಾ ನಿರ್ದಿಷ್ಟತೆಗಳು, ಬಿಡುಗಡೆ ಇತ್ಯಾದಿ) ಸೇರಿಸಿದರೆ, GitHub Copilot ಆಧಾರಿತ 더욱 ಶಕ್ತಿಶಾಲಿ ಏಜೆಂಟ್‌ಗಳನ್ನೂ ಹೊಂದಬಹುದು.
 
 Visua Studio Code Chat Agent ಈಗ ಅಧಿಕೃತವಾಗಿ ಅದರ API ಅನ್ನು ಬಿಡುಗಡೆ ಮಾಡಿದೆ, ಇದು ಉಧ್ಯಮಗಳು ಅಥವಾ ಉಧ್ಯಮ ಡೆವಲಪರ್‌ಗಳಿಗೆ ವಿಭಿನ್ನ ಸಾಫ್ಟ್‌ವೇರ್ ವ್ಯವಹಾರ ಪರಿಸರಗಳ ಆಧಾರದ ಮೇಲೆ ಏಜೆಂಟ್‌ಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಲು ಅನುಮತಿಸುತ್ತದೆ. Visual Studio Code Extension Development 的 ಅಭಿವೃದ್ಧಿ ವಿಧಾನವನ್ನು ಆಧರಿಸಿ, ನೀವು Visua Studio Code Chat Agent API ನ ಇಂಟರ್ಫೇಸ್ ಅನ್ನು ಸುಲಭವಾಗಿ ಪ್ರವೇಶಿಸಬಹುದು. ನಾವು ಈ ಪ್ರಕ್ರಿಯೆಯ ಆಧಾರದ ಮೇಲೆ ಅಭಿವೃದ್ಧಿ ಮಾಡಬಹುದು
 
-![ಯೋಜನೆ ರೇಖೆ](../../../../../../translated_images/diagram.ca70d2866762f115.kn.png)
+![ಯೋಜನೆ ರೇಖೆ](../../../../../../translated_images/kn/diagram.ca70d2866762f115.png)
 
 ಈ ಅಭಿವೃದ್ಧಿ ದೃಶ್ಯವು ತೃತೀಯ-পಕ್ಷದ ಮಾಡೆಲ್ API ಗಳಿಗೆ (ಉದಾಹರಣೆಗಾಗಿ GitHub Models, Azure Model Catalog, ಮತ್ತು open source ಮಾಡೆಲ್ ಗಳ ಆಧಾರದ ಮೇಲೆ ಸ್ವಂತ ನಿರ್ಮಿತ ಸರ್ವಿಸ್‌ಗಳು) ಪ್ರವೇಶವನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ ಮತ್ತು GitHub Copilot ಒದಗಿಸುವ gpt-35-turbo, gpt-4, ಮತ್ತು gpt-4o ಮಾಡೆಲ್‌ಗಳನ್ನೂ ಬಳಸಬಹುದು.
 
@@ -54,7 +54,7 @@ Visua Studio Code Chat Agent ಈಗ ಅಧಿಕೃತವಾಗಿ ಅದರ API
 
 3. **Phi-3.5-vision-instruct (128k)** ಮತ್ತು ಚಿತ್ರ ಪೂರ್ಣಗೊಳಿಸುವಿಕೆಯ ಮೂಲಕ ಕೋಡ್ ರಚಿಸುವುದನ್ನು **@phicoding /image** ಕಮಾಂಡ್ ಮೂಲಕ ನೆರವೇರಿಸು
 
-![ವಾಸ್ತುಶಿಲ್ಪ ವಿಸ್ತಾರ](../../../../../../translated_images/arch.5a58a0adfa959a2d.kn.png)
+![ವಾಸ್ತುಶಿಲ್ಪ ವಿಸ್ತಾರ](../../../../../../translated_images/kn/arch.5a58a0adfa959a2d.png)
 
 ## **ಸಂಬಂಧಿತ ಹಂತಗಳು**
 
@@ -367,20 +367,20 @@ export function deactivate() {}
 
 ***/help***
 
-![ಹೇಳಿಕೆ](../../../../../../translated_images/help.04c134d2bf9a9541.kn.png)
+![ಹೇಳಿಕೆ](../../../../../../translated_images/kn/help.04c134d2bf9a9541.png)
 
 ***@phicoding /help***
 
-![ಏಜೆಂಟ್ ಸಹಾಯ](../../../../../../translated_images/agenthelp.60c68767c941a3fe.kn.png)
+![ಏಜೆಂಟ್ ಸಹಾಯ](../../../../../../translated_images/kn/agenthelp.60c68767c941a3fe.png)
 
 ***@phicoding /gen***
 
-![ಏಜೆಂಟ್ ಜನರേറ്റ്](../../../../../../translated_images/agentgen.a16e7735790f764b.kn.png)
+![ಏಜೆಂಟ್ ಜನರേറ്റ്](../../../../../../translated_images/kn/agentgen.a16e7735790f764b.png)
 
 
 ***@phicoding /image***
 
-![ಏಜೆಂಟ್ ಚಿತ್ರ](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.kn.png)
+![ಏಜೆಂಟ್ ಚಿತ್ರ](../../../../../../translated_images/kn/agentimage.f5cb52b45ab7d0d1.png)
 
 
 ನೀವು ಸಂಭಾವ್ಯ ಕೋಡ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಬಹುದು :[클ಿಕ್](../../../../../../code/09.UpdateSamples/Aug/vscode)
