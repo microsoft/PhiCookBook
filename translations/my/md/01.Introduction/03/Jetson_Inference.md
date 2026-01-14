@@ -36,7 +36,7 @@ d. Python 3.8+
 
 cloud နှင့် edge device များတွင် gguf ကို တပြိုင်နက် အသုံးပြုလိုပါက LlamaEdge ကို WasmEdge အဖြစ် နားလည်နိုင်သည် (WasmEdge သည် cloud native, edge နှင့် decentralized application များအတွက် သင့်တော်သော အလေးချိန်နည်း၊ မြန်ဆန်ပြီး တိုးချဲ့နိုင်သော WebAssembly runtime ဖြစ်သည်။ serverless application များ၊ embedded function များ၊ microservice များ၊ smart contract များနှင့် IoT device များကို ထောက်ပံ့သည်။ gguf ၏ quantitative model ကို LlamaEdge မှတဆင့် edge device များနှင့် cloud တွင် တပ်ဆင်နိုင်သည်)။
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.my.jpg)
+![llamaedge](../../../../../translated_images/my/llamaedge.e9d6ff96dff11cf7.jpg)
 
 အသုံးပြုရန် အဆင့်များမှာ
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 အောက်တွင် လည်ပတ်မှုရလဒ်ကို မြင်ရမည်
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.my.png)
+![llamaedgerun](../../../../../translated_images/my/llamaedgerun.bed921516c9a821c.png)
 
 ***နမူနာကုဒ်*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

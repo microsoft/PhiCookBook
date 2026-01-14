@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Microsoft Responsible AI အကြောင်းအကျဉ်း
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d33.my.png)
+![RAIPrinciples](../../../../../translated_images/my/RAIPrinciples.bf9c9bc6ca160d33.png)
 
 **သဘာဝကျသော သဘောတရားများ**
 

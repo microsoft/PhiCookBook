@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Menggunakan Azure AI Foundry untuk penilaian**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.ms.png)
+![aistudo](../../../../../translated_images/ms/AIFoundry.9e0b513e999a1c5a.png)
 
 Cara menilai aplikasi AI generatif anda menggunakan [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Sama ada anda menilai perbualan satu pusingan atau berbilang pusingan, Azure AI Foundry menyediakan alat untuk menilai prestasi dan keselamatan model.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.ms.png)
+![aistudo](../../../../../translated_images/ms/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Cara menilai aplikasi AI generatif dengan Azure AI Foundry
 Untuk arahan lebih terperinci, lihat [Dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

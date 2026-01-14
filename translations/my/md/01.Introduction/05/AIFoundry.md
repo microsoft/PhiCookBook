@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry ကို အသုံးပြုပြီး အကဲဖြတ်ခြင်း**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.my.png)
+![aistudo](../../../../../translated_images/my/AIFoundry.9e0b513e999a1c5a.png)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ကို အသုံးပြုပြီး သင်၏ generative AI အက်ပလီကေးရှင်းကို မည်သို့ အကဲဖြတ်ရမည်နည်း။ တစ်ကြိမ်ပြောဆိုမှုဖြစ်စေ၊ မျိုးစုံပြောဆိုမှုဖြစ်စေ Azure AI Foundry သည် မော်ဒယ်၏ စွမ်းဆောင်ရည်နှင့် လုံခြုံမှုကို အကဲဖြတ်ရန် ကိရိယာများကို ပံ့ပိုးပေးသည်။
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.my.png)
+![aistudo](../../../../../translated_images/my/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Azure AI Foundry ဖြင့် generative AI အက်ပလီကေးရှင်းများကို မည်သို့ အကဲဖြတ်မည်နည်း
 အသေးစိတ်လမ်းညွှန်ချက်များအတွက် [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) ကို ကြည့်ရှုပါ။

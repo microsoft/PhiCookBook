@@ -19,7 +19,7 @@ Microsoft ၏ Phi-3 Mini ဘာသာစကားမော်ဒယ်ကို 
 - **အဆင်ပြေမှု:** Fine-tuning ကို ဘယ်လိုလုပ်ရမလဲ၊ ကိုယ်ပိုင်ကုဒ်ရေးရမလား? ကိုယ်ပိုင်ကွန်ပျူတာလိုအပ်မလား?
 - **လုံခြုံရေး:** Fine-tuned မော်ဒယ်တွေမှာ လုံခြုံရေးဆိုင်ရာ အန္တရာယ်ရှိနိုင်တာကြောင့် မလိုလားအပ်တဲ့ထိခိုက်မှုမှ ကာကွယ်ဖို့ ဘာတွေရှိသလဲ?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.my.png)
+![AIFoundry Models](../../../../translated_images/my/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Fine-tuning အတွက် ပြင်ဆင်မှု
 
@@ -71,7 +71,7 @@ Subscription သည် `Microsoft.Network` resource provider တွင် မှ
 
 Azure AI Foundry သည် fine-tuning ဟုခေါ်သော လုပ်ငန်းစဉ်ဖြင့် မိမိ၏ dataset များအတွက် ဘာသာစကားမော်ဒယ်ကြီးများကို ကိုက်ညီစေရန် ခွင့်ပြုသည်။ Fine-tuning သည် အထူးပြုလုပ်ခြင်းနှင့် အကောင်းဆုံးစွမ်းဆောင်ရည်ရရှိစေရန် အရေးကြီးသော တန်ဖိုးများကို ပေးစွမ်းသည်။ ၎င်းက စွမ်းဆောင်ရည်တိုးတက်မှု၊ ကုန်ကျစရိတ်သက်သာမှု၊ အချိန်လျှော့ချမှုနှင့် စိတ်ကြိုက်ထွက်ရှိမှုများကို ဖြစ်စေသည်။
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.my.png)
+![Finetune AI Foundry](../../../../translated_images/my/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Project အသစ် ဖန်တီးခြင်း
 
@@ -79,14 +79,14 @@ Azure AI Foundry သည် fine-tuning ဟုခေါ်သော လုပ်�
 
 2. Azure AI Foundry တွင် project အသစ် ဖန်တီးရန် **+New project** ကို ရွေးချယ်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/select-new-project.cd31c0404088d7a3.png)
 
 3. အောက်ပါအချက်များကို ပြုလုပ်ပါ။
 
     - Project **Hub name** ကို ထည့်ပါ။ ထူးခြားသောတန်ဖိုးဖြစ်ရမည်။
     - အသုံးပြုမည့် **Hub** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်ဖန်တီးပါ)။
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/create-project.ca3b71298b90e420.png)
 
 4. Hub အသစ် ဖန်တီးရန် အောက်ပါအချက်များကို ပြုလုပ်ပါ။
 
@@ -97,7 +97,7 @@ Azure AI Foundry သည် fine-tuning ဟုခေါ်သော လုပ်�
     - အသုံးပြုမည့် **Connect Azure AI Services** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်ဖန်တီးပါ)။
     - **Connect Azure AI Search** ကို **Skip connecting** အဖြစ် ရွေးချယ်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/create-hub.49e53d235e80779e.png)
 
 5. **Next** ကို ရွေးချယ်ပါ။
 6. **Create a project** ကို ရွေးချယ်ပါ။
@@ -115,15 +115,15 @@ Fine-tuning မပြုလုပ်မီ သင့်အလုပ်အတွ�
 
 2. **search bar** တွင် *phi-3* ဟု ရိုက်ထည့်ပြီး အသုံးပြုလိုသော phi-3 မော်ဒယ်ကို ရွေးချယ်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/select-model.60ef2d4a6a3cec57.png)
 
 3. **Fine-tune** ကို ရွေးချယ်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/select-finetune.a976213b543dd9d8.png)
 
 4. **Fine-tuned model name** ကို ထည့်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/finetune1.c2b39463f0d34148.png)
 
 5. **Next** ကို ရွေးချယ်ပါ။
 
@@ -132,13 +132,13 @@ Fine-tuning မပြုလုပ်မီ သင့်အလုပ်အတွ�
     - **task type** ကို **Chat completion** အဖြစ် ရွေးချယ်ပါ။
     - အသုံးပြုမည့် **Training data** ကို ရွေးချယ်ပါ။ Azure AI Foundry ၏ ဒေတာမှ သို့မဟုတ် ကိုယ်ပိုင်ပတ်ဝန်းကျင်မှ တင်နိုင်သည်။
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/finetune2.43cb099b1a94442d.png)
 
 7. **Next** ကို ရွေးချယ်ပါ။
 
 8. အသုံးပြုမည့် **Validation data** ကို တင်ပါ၊ သို့မဟုတ် **Automatic split of training data** ကို ရွေးချယ်နိုင်သည်။
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/finetune3.fd96121b67dcdd92.png)
 
 9. **Next** ကို ရွေးချယ်ပါ။
 
@@ -148,15 +148,15 @@ Fine-tuning မပြုလုပ်မီ သင့်အလုပ်အတွ�
     - အသုံးပြုမည့် **Learning rate** ကို ရွေးချယ်ပါ။
     - အသုံးပြုမည့် **Epochs** ကို ရွေးချယ်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/finetune4.e18b80ffccb5834a.png)
 
 11. Fine-tuning လုပ်ငန်းစဉ် စတင်ရန် **Submit** ကို နှိပ်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/select-submit.0a3802d581bac271.png)
 
 12. မော်ဒယ် fine-tune ပြီးပါက အခြေအနေကို **Completed** ဟု ပြသမည်။ ယခု မော်ဒယ်ကို deploy ပြုလုပ်၍ ကိုယ်ပိုင် application, playground သို့မဟုတ် prompt flow တွင် အသုံးပြုနိုင်ပါသည်။ အသေးစိတ်အချက်အလက်များအတွက် [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ကို ကြည့်ပါ။
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.my.png)
+    ![FineTuneSelect](../../../../translated_images/my/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Phi-3 မော်ဒယ်များကို fine-tune ပြုလုပ်ခြင်းနှင့် ပတ်သက်၍ အသေးစိတ်အချက်အလက်များအတွက် [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) ကို လေ့လာပါ။

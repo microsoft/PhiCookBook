@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 အောက်တွင် Azure AI Foundry ၏ သုံးသပ်မှု လုပ်ငန်းစဉ်ကို ဖော်ပြထားသည်။
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.my.png)
+![Architecture of tutorial.](../../../../../../translated_images/my/architecture.10bec55250f5d6a4.png)
 
 *ပုံရိပ်ရင်းမြစ်: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 သင့် AI မော်ဒယ်သည် သမာဓိရှိပြီး လုံခြုံကြောင်း သေချာစေရန် Microsoft ၏ တာဝန်ရှိသော AI စည်းကမ်းများနှင့် ကိုက်ညီမှုရှိမရှိ သုံးသပ်ရမည်။ Azure AI Foundry တွင် လုံခြုံမှု သုံးသပ်မှုများက မော်ဒယ်၏ jailbreak တိုက်ခိုက်မှုများအပေါ် အားနည်းချက်နှင့် အန္တရာယ်ရှိသော အကြောင်းအရာများ ထုတ်ပေးနိုင်မှုကို သုံးသပ်နိုင်စေပြီး၊ ၎င်းသည် တိုက်ရိုက် Microsoft ၏ တာဝန်ရှိသော AI စည်းကမ်းများနှင့် ကိုက်ညီသည်။
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.my.png)
+![Safaty evaluation.](../../../../../../translated_images/my/safety-evaluation.083586ec88dfa950.png)
 
 *ပုံရိပ်ရင်းမြစ်: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft ၏ တာဝန်ရှိသော AI စည်းကမ်းမ�
 
 - **တာဝန်ယူမှု**: AI စနစ်များကို ဒီဇိုင်းဆွဲပြီး တပ်ဆင်သူများသည် ၎င်းတို့၏ စနစ်များ လည်ပတ်ပုံအပေါ် တာဝန်ယူရမည်။ အဖွဲ့အစည်းများသည် စက်မှုလုပ်ငန်းစံနှုန်းများကို အသုံးပြု၍ တာဝန်ယူမှု စံနှုန်းများ ဖန်တီးသင့်သည်။ ဤစံနှုန်းများက AI စနစ်များသည် လူများ၏ ဘဝကို သက်ရောက်စေသော ဆုံးဖြတ်ချက်များတွင် နောက်ဆုံးအာဏာပိုင် မဖြစ်စေရန်၊ ထို AI စနစ်များကို လူများက ထိန်းချုပ်မှုရှိစေရန် အာမခံပေးနိုင်သည်။
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.my.png)
+![Fill hub.](../../../../../../translated_images/my/responsibleai2.c07ef430113fad8c.png)
 
 *ပုံရိပ်ရင်းမြစ်: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Microsoft ၏ တာဝန်ရှိသော AI စည်းကမ်းမ�
 
 ဤအချက်များကို သုံးသပ်ခြင်းဖြင့် AI မော်ဒယ်သည် အန္တရာယ်ရှိ သို့မဟုတ် မသင့်တော်သော အကြောင်းအရာ မထုတ်ပေးစေရန်၊ လူမှုတန်ဖိုးများနှင့် စည်းမျဉ်းစည်းကမ်းများနှင့် ကိုက်ညီစေရန် အာမခံသည်။
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.my.png)
+![Evaluate based on safety.](../../../../../../translated_images/my/evaluate-based-on-safety.c5df819f5b0bfc07.png)
 
 ### စွမ်းဆောင်ရည် သုံးသပ်မှု မိတ်ဆက်
 
 သင့် AI မော်ဒယ်သည် မျှော်မှန်းထားသည့်အတိုင်း လည်ပတ်နေကြောင်း သေချာစေရန်၊ စွမ်းဆောင်ရည် မီထရစ်များအပေါ် မော်ဒယ်၏ စွမ်းဆောင်ရည်ကို သုံးသပ်ရမည်။ Azure AI Foundry တွင် စွမ်းဆောင်ရည် သုံးသပ်မှုများက မော်ဒယ်မှ တိကျမှန်ကန်ပြီး သက်ဆိုင်မှုရှိသော၊ စည်းလုံးညီညွတ်သော တုံ့ပြန်ချက်များ ထုတ်ပေးနိုင်မှုကို သုံးသပ်နိုင်စေသည်။
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.my.png)
+![Safaty evaluation.](../../../../../../translated_images/my/performance-evaluation.48b3e7e01a098740.png)
 
 *ပုံရိပ်ရင်းမြစ်: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -132,7 +132,7 @@ Project တည်ဆောက်မည့်အရင်မှာ Hub တစ်�
 
 1. နေရာပြောင်းမီနူးမှ **+ New hub** ကို ရွေးချယ်ပါ။
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.my.png)
+    ![Create hub.](../../../../../../translated_images/my/create-hub.5be78fb1e21ffbf1.png)
 
 1. အောက်ပါအချက်များကို ပြုလုပ်ပါ-
 
@@ -143,7 +143,7 @@ Project တည်ဆောက်မည့်အရင်မှာ Hub တစ်�
     - အသုံးပြုမည့် **Connect Azure AI Services** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်ဖန်တီးပါ)။
     - **Connect Azure AI Search** ကို **Skip connecting** အဖြစ် ရွေးချယ်ပါ။
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.my.png)
+    ![Fill hub.](../../../../../../translated_images/my/fill-hub.baaa108495c71e34.png)
 
 1. **Next** ကို နှိပ်ပါ။
 
@@ -153,11 +153,11 @@ Project တည်ဆောက်မည့်အရင်မှာ Hub တစ်�
 
 1. နေရာပြောင်းမီနူးမှ **+ New project** ကို ရွေးချယ်ပါ။
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.my.png)
+    ![Select new project.](../../../../../../translated_images/my/select-new-project.cd31c0404088d7a3.png)
 
 1. **Project name** ထည့်ပါ။ ထူးခြားသော အမည်ဖြစ်ရပါမည်။
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.my.png)
+    ![Create project.](../../../../../../translated_images/my/create-project.ca3b71298b90e420.png)
 
 1. **Create a project** ကို ရွေးချယ်ပါ။
 
@@ -173,17 +173,17 @@ Project တည်ဆောက်မည့်အရင်မှာ Hub တစ်�
 
 1. ဘယ်ဘက်ဘားမှ **Endpoints** ကို ရွေးချယ်ပါ။
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.my.png)
+    ![Select endpoints.](../../../../../../translated_images/my/select-endpoints.ee7387ecd68bd18d.png)
 
 1. ဖန်တီးထားသော endpoint ကို ရွေးချယ်ပါ။
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.my.png)
+    ![Select endpoints.](../../../../../../translated_images/my/select-endpoint-created.9f63af5e4cf98b2e.png)
 
 1. နေရာပြောင်းမီနူးမှ **Consume** ကို ရွေးချယ်ပါ။
 
 1. သင့် **REST endpoint** နှင့် **Primary key** ကို ကူးယူပါ။
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.my.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/my/copy-endpoint-key.0650c3786bd646ab.png)
 
 #### Custom Connection ထည့်သွင်းခြင်း
 
@@ -195,11 +195,11 @@ Project တည်ဆောက်မည့်အရင်မှာ Hub တစ်�
 
 1. **+ New connection** ကို ရွေးချယ်ပါ။
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.my.png)
+    ![Select new connection.](../../../../../../translated_images/my/select-new-connection.fa0f35743758a74b.png)
 
 1. နေရာပြောင်းမီနူးမှ **Custom keys** ကို ရွေးချယ်ပါ။
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.my.png)
+    ![Select custom keys.](../../../../../../translated_images/my/select-custom-keys.5a3c6b25580a9b67.png)
 
 1. အောက်ပါအချက်များကို ပြုလုပ်ပါ-
 
@@ -209,7 +209,7 @@ Project တည်ဆောက်မည့်အရင်မှာ Hub တစ်�
     - key အမည်အဖြစ် **key** ထည့်ပြီး Azure ML Studio မှ ကူးယူထားသော key ကို value အဖြစ် ထည့်ပါ။
     - key များ ထည့်ပြီးနောက် **is secret** ကို ရွေးချယ်၍ key များ ဖော်ပြခြင်းမှ ကာကွယ်ပါ။
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.my.png)
+    ![Add connection.](../../../../../../translated_images/my/add-connection.ac7f5faf8b10b0df.png)
 
 1. **Add connection** ကို နှိပ်ပါ။
 
@@ -223,15 +223,15 @@ Azure AI Foundry တွင် custom connection ထည့်သွင်းပ�
 
 1. နေရာပြောင်းမီနူးမှ **+ Create** ကို ရွေးချယ်ပါ။
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.my.png)
+    ![Select Promptflow.](../../../../../../translated_images/my/select-promptflow.18ff2e61ab9173eb.png)
 
 1. နေရာပြောင်းမီနူးမှ **Chat flow** ကို ရွေးချယ်ပါ။
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.my.png)
+    ![Select chat flow.](../../../../../../translated_images/my/select-flow-type.28375125ec9996d3.png)
 
 1. အသုံးပြုမည့် **Folder name** ထည့်ပါ။
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.my.png)
+    ![Select chat flow.](../../../../../../translated_images/my/enter-name.02ddf8fb840ad430.png)
 
 1. **Create** ကို ရွေးချယ်ပါ။
 
@@ -268,7 +268,7 @@ fine-tuned Phi-3 / Phi-3.5 မော်ဒယ်ကို Prompt flow ထဲသ�
 
     - **Save** ကို နှိပ်ပါ။
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.my.png)
+    ![Select raw file mode.](../../../../../../translated_images/my/select-raw-file-mode.06c1eca581ce4f53.png)
 
 1. Prompt flow တွင် သင့် custom Phi-3 / Phi-3.5 မော်ဒယ်ကို အသုံးပြုရန် *integrate_with_promptflow.py* ထဲသို့ အောက်ပါကုဒ်ကို ထည့်ပါ။
 
@@ -331,14 +331,14 @@ fine-tuned Phi-3 / Phi-3.5 မော်ဒယ်ကို Prompt flow ထဲသ�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.my.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/my/paste-promptflow-code.cd6d95b101c0ec28.png)
 
 > [!NOTE]
 > Azure AI Foundry တွင် Prompt flow အသုံးပြုနည်း ပိုမိုအသေးစိတ် သိရှိလိုပါက [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ကို ကြည့်ရှုနိုင်ပါသည်။
 
 1. **Chat input**, **Chat output** ကို ရွေးချယ်၍ မော်ဒယ်နှင့် စကားပြောနိုင်ရန် ဖွင့်ပါ။
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.my.png)
+    ![Select Input Output.](../../../../../../translated_images/my/select-input-output.c187fc58f25fbfc3.png)
 
 1. ယခု သင့် custom Phi-3 / Phi-3.5 မော်ဒယ်နှင့် စကားပြောရန် အသင့်ဖြစ်ပါပြီ။ နောက်တစ်ခုသော လေ့ကျင့်မှုတွင် Prompt flow ကို စတင်အသုံးပြုနည်းနှင့် fine-tuned Phi-3 / Phi-3.5 မော်ဒယ်နှင့် စကားပြောနည်းကို သင်ယူပါမည်။
 
@@ -346,32 +346,32 @@ fine-tuned Phi-3 / Phi-3.5 မော်ဒယ်ကို Prompt flow ထဲသ�
 >
 > ပြန်လည်တည်ဆောက်ထားသော flow သည် အောက်ပါပုံစံကဲ့သို့ ဖြစ်ရပါမည်-
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.my.png)
+> ![Flow example](../../../../../../translated_images/my/graph-example.82fd1bcdd3fc545b.png)
 >
 
 #### Prompt flow စတင်ခြင်း
 
 1. Prompt flow စတင်ရန် **Start compute sessions** ကို နှိပ်ပါ။
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.my.png)
+    ![Start compute session.](../../../../../../translated_images/my/start-compute-session.9acd8cbbd2c43df1.png)
 
 1. ပါရာမီတာများကို ပြန်လည်သတ်မှတ်ရန် **Validate and parse input** ကို နှိပ်ပါ။
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.my.png)
+    ![Validate input.](../../../../../../translated_images/my/validate-input.c1adb9543c6495be.png)
 
 1. ဖန်တီးထားသော custom connection ၏ **connection** အတွက် **Value** ကို ရွေးချယ်ပါ။ ဥပမာ - *connection*။
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.my.png)
+    ![Connection.](../../../../../../translated_images/my/select-connection.1f2b59222bcaafef.png)
 
 #### သင့် custom Phi-3 / Phi-3.5 မော်ဒယ်နှင့် စကားပြောခြင်း
 
 1. **Chat** ကို ရွေးချယ်ပါ။
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.my.png)
+    ![Select chat.](../../../../../../translated_images/my/select-chat.0406bd9687d0c49d.png)
 
 1. ဤမှာ ရလဒ်ဥပမာတစ်ခုဖြစ်သည်- ယခု သင့် custom Phi-3 / Phi-3.5 မော်ဒယ်နှင့် စကားပြောနိုင်ပါပြီ။ fine-tuning အတွက် အသုံးပြုထားသော ဒေတာအပေါ် အခြေခံ၍ မေးခွန်းများ မေးရန် အကြံပြုပါသည်။
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.my.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/my/chat-with-promptflow.1cf8cea112359ada.png)
 
 ### Phi-3 / Phi-3.5 မော်ဒယ်ကို သုံးသပ်ရန် Azure OpenAI ကို တပ်ဆင်ခြင်း
 
@@ -383,7 +383,7 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
 
 1. ဖန်တီးထားသော Azure AI Foundry project သို့ သွားပါ။
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.my.png)
+    ![Select Project.](../../../../../../translated_images/my/select-project-created.5221e0e403e2c9d6.png)
 
 1. ဖန်တီးထားသော Project အတွင်း ဘယ်ဘက်ဘားမှ **Deployments** ကို ရွေးချယ်ပါ။
 
@@ -391,11 +391,11 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
 
 1. **Deploy base model** ကို ရွေးချယ်ပါ။
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.my.png)
+    ![Select Deployments.](../../../../../../translated_images/my/deploy-openai-model.95d812346b25834b.png)
 
 1. အသုံးပြုလိုသော Azure OpenAI မော်ဒယ်ကို ရွေးချယ်ပါ။ ဥပမာ - **gpt-4o**။
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.my.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/my/select-openai-model.959496d7e311546d.png)
 
 1. **Confirm** ကို နှိပ်ပါ။
 
@@ -407,17 +407,17 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
 
 1. ဖန်တီးထားသော Azure AI Foundry project သို့ သွားပါ။
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.my.png)
+    ![Select Project.](../../../../../../translated_images/my/select-project-created.5221e0e403e2c9d6.png)
 
 1. ဖန်တီးထားသော Project အတွင်း ဘယ်ဘက်ဘားမှ **Evaluation** ကို ရွေးချယ်ပါ။
 
 1. နေရာပြောင်းမီနူးမှ **+ New evaluation** ကို ရွေးချယ်ပါ။
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.my.png)
+    ![Select evaluation.](../../../../../../translated_images/my/select-evaluation.2846ad7aaaca7f4f.png)
 
 1. **Prompt flow** evaluation ကို ရွေးချယ်ပါ။
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.my.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/my/promptflow-evaluation.cb9758cc19b4760f.png)
 
 1. အောက်ပါအချက်များကို ပြုလုပ်ပါ-
 
@@ -425,7 +425,7 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
     - အလုပ်အမျိုးအစားအဖြစ် **Question and answer without context** ကို ရွေးချယ်ပါ။ ဤသင်ခန်းစာတွင် အသုံးပြုသော **UlTRACHAT_200k** ဒေတာစုံတွင် context မပါဝင်ပါ။
     - သုံးသပ်လိုသော prompt flow ကို ရွေးချယ်ပါ။
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.my.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/my/evaluation-setting1.4aa08259ff7a536e.png)
 
 1. **Next** ကို နှိပ်ပါ။
 
@@ -434,7 +434,7 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
     - ဒေတာစုံကို တင်ရန် **Add your dataset** ကို ရွေးချယ်ပါ။ ဥပမာ - **ULTRACHAT_200k** ဒေတာစုံကို ဒေါင်းလုပ်လုပ်ရာတွင် ပါဝင်သော *test_data.json1* ဖိုင်ကို တင်နိုင်ပါသည်။
     - သင့်ဒေတာစုံနှင့် ကိုက်ညီသော **Dataset column** ကို ရွေးချယ်ပါ။ ဥပမာ - **ULTRACHAT_200k** ဒေတာစုံကို အသုံးပြုပါက **${data.prompt}** ကို ရွေးချယ်ပါ။
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.my.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/my/evaluation-setting2.07036831ba58d64e.png)
 
 1. **Next** ကို နှိပ်ပါ။
 
@@ -443,7 +443,7 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
     - အသုံးပြုလိုသော စွမ်းဆောင်ရည်နှင့် အရည်အသွေး မီထရစ်များကို ရွေးချယ်ပါ။
     - သုံးသပ်မှုအတွက် ဖန်တီးထားသော Azure OpenAI မော်ဒယ်ကို ရွေးချယ်ပါ။ ဥပမာ - **gpt-4o** ကို ရွေးချယ်ပါ။
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.my.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/my/evaluation-setting3-1.d1ae69e3bf80914e.png)
 
 1. အန္တရာယ်နှင့် လုံခြုံရေး မီထရစ်များကို သတ်မှတ်ရန် အောက်ပါအချက်များကို ပြုလုပ်ပါ-
 
@@ -453,7 +453,7 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
     - **answer** အတွက် **Data source** ကို **{$run.outputs.answer}** သို့ သတ်မှတ်ပါ။
     - **ground_truth** အတွက် **Data source** ကို **{$data.message}** သို့ သတ်မှတ်ပါ။
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.my.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/my/evaluation-setting3-2.d53bd075c60a45a2.png)
 
 1. **Next** ကို နှိပ်ပါ။
 
@@ -470,17 +470,17 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
 
     - မော်ဒယ်သည် ဆက်စပ်ပြီး၊ စကားလုံးချောမွေ့ပြီး၊ သင့်တော်သော တုံ့ပြန်ချက်များ ထုတ်ပေးနိုင်မှုကို အကဲဖြတ်ပါ။
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.my.png)
+    ![Evaluation result.](../../../../../../translated_images/my/evaluation-result-gpu.85f48b42dfb74254.png)
 
 1. အန္တရာယ်နှင့် လုံခြုံရေး မီထရစ်များ -
 
     - မော်ဒယ်ထုတ်လွှင့်ချက်များသည် လုံခြုံပြီး၊ တာဝန်ရှိသော AI စည်းကမ်းများနှင့် ကိုက်ညီမှုရှိစေရန်၊ ထိခိုက်မှုရှိသော သို့မဟုတ် မလေးစားဖွယ် အကြောင်းအရာများ မပါဝင်စေရန် သေချာစေပါ။
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.my.png)
+    ![Evaluation result.](../../../../../../translated_images/my/evaluation-result-gpu-2.1b74e336118f4fd0.png)
 
 1. **အသေးစိတ် မီထရစ် ရလဒ်များ** ကို ကြည့်ရှုရန် အောက်သို့ ဆွဲချနိုင်ပါသည်။
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.my.png)
+    ![Evaluation result.](../../../../../../translated_images/my/detailed-metrics-result.afa2f5c39a4f5f17.png)
 
 1. သင်၏ စိတ်ကြိုက် Phi-3 / Phi-3.5 မော်ဒယ်ကို စွမ်းဆောင်ရည်နှင့် လုံခြုံရေး မီထရစ်များနှစ်ခုစလုံးဖြင့် အကဲဖြတ်ခြင်းအားဖြင့်၊ မော်ဒယ်သည် ထိရောက်မှုရှိသည့်အပြင် တာဝန်ရှိသော AI လုပ်ထုံးလုပ်နည်းများကိုလည်း လိုက်နာထားကြောင်း အတည်ပြုနိုင်ပြီး၊ အမှန်တကယ် အသုံးချနိုင်ရန် အသင့်ဖြစ်ပါသည်။
 
@@ -490,7 +490,7 @@ Phi-3 / Phi-3.5 မော်ဒယ်ကို Azure AI Foundry တွင် သ
 
 သင်သည် Azure AI Foundry တွင် Prompt flow ဖြင့် ပေါင်းစပ်ထားသော fine-tuned Phi-3 မော်ဒယ်ကို အောင်မြင်စွာ အကဲဖြတ်နိုင်ခဲ့ပါသည်။ ၎င်းသည် သင်၏ AI မော်ဒယ်များသည် ကောင်းမွန်စွာ လုပ်ဆောင်နိုင်ခြင်းသာမက Microsoft ၏ တာဝန်ရှိသော AI စည်းကမ်းများကိုလည်း လိုက်နာကာ ယုံကြည်စိတ်ချရပြီး ယုံကြည်စိတ်ချရသော AI အက်ပလီကေးရှင်းများ တည်ဆောက်ရာတွင် အရေးကြီးသော အဆင့်ဖြစ်ပါသည်။
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.my.png)
+![Architecture.](../../../../../../translated_images/my/architecture.10bec55250f5d6a4.png)
 
 ## Azure အရင်းအမြစ်များကို သန့်ရှင်းပါ
 

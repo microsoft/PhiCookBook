@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [GitHub Models](https://github.com/marketplace/models) သို့ ကြိုဆိုပါသည်! Azure AI ပေါ်တွင် တင်ထားသော AI မော်ဒယ်များကို စူးစမ်းလေ့လာနိုင်ရန် အားလုံး ပြင်ဆင်ပြီး ဖြစ်ပါပြီ။
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.my.png)
+![GitHubModel](../../../../translated_images/my/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 GitHub Models တွင် ရရှိနိုင်သော မော်ဒယ်များအကြောင်း ပိုမိုသိရှိလိုပါက [GitHub Model Marketplace](https://github.com/marketplace/models) ကို ကြည့်ရှုနိုင်ပါသည်။
 
@@ -45,7 +45,7 @@ GitHub Models တွင် ရရှိနိုင်သော မော်ဒ�
 
 နမူနာများနှင့် မော်ဒယ်များကို လည်ပတ်ရန် Codespaces Environment သီးသန့်လည်း ရှိပါသည်။
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.my.png)
+![Getting Started](../../../../translated_images/my/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## နမူနာကုဒ်
 
@@ -429,7 +429,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Models အတွက် အခမဲ့အသုံးပြုမှုနှင့် အမြန်နှုန်းကန့်သတ်ချက်များ
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.my.png)
+![Model Catalog](../../../../translated_images/my/GitHub_Model.ca6c125cb3117d0e.png)
 
 [playground နှင့် အခမဲ့ API အသုံးပြုမှုအတွက် အမြန်နှုန်းကန့်သတ်ချက်များ](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) သည် မော်ဒယ်များကို စမ်းသပ်ရန်နှင့် AI application များကို prototype ပြုလုပ်ရန် အထောက်အကူပြုရန် ရည်ရွယ်ထားသည်။ ထိုကန့်သတ်ချက်များ ကျော်လွန်၍ သင့် application ကို အရွယ်အစားကြီးစေရန်အတွက် Azure အကောင့်မှ အရင်းအမြစ်များကို စီမံခန့်ခွဲပြီး GitHub ကိုယ်ပိုင် access token အစား အဲဒီနေရာမှ authentication ပြုလုပ်ရမည်ဖြစ်သည်။ သင့်ကုဒ်တွင် အခြားပြောင်းလဲရန် မလိုအပ်ပါ။ Azure AI တွင် အခမဲ့အဆင့်ကန့်သတ်ချက်များ ကျော်လွန်နည်းကို သိရှိလိုပါက ဤလင့်ခ်ကို အသုံးပြုပါ။
 
