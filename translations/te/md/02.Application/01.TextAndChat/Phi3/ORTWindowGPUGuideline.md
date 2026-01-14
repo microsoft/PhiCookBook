@@ -44,7 +44,7 @@ The document provides guidance on:
 
    ***Note*** మీరు కంపైల్ చేయకూడదనుకుంటే ఈ దశను దాటవేయవచ్చు
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.te.png)
+![CPP](../../../../../../translated_images/te/01.42f52a2b2aedff02.png)
 
 
 ### **4. Install NVIDIA Driver**
@@ -85,7 +85,7 @@ NVIDIA CUDNN 9.4 యొక్క lib, bin, include ఫైళ్లను NVIDIA 
    [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) ని తెరిచి అమలు చేయండి 
 
 
-![ఫలితం](../../../../../../translated_images/02.b9b06996cf7255d5.te.png)
+![ఫలితం](../../../../../../translated_images/te/02.b9b06996cf7255d5.png)
 
 
 ### **8. Compile ORT GenAI GPU**
@@ -139,7 +139,7 @@ NVIDIA CUDNN 9.4 యొక్క lib, bin, include ఫైళ్లను NVIDIA 
 
    - Windows Terminal ఉపయోగించి, Developer Command Prompt for VS 2022 కి వెళ్లి onnxruntime-genai ఫోల్డర్‌లోకి వెళ్లండి
 
-![ఫలితం](../../../../../../translated_images/03.b83ce473d5ff9b9b.te.png)
+![ఫలితం](../../../../../../translated_images/te/03.b83ce473d5ff9b9b.png)
 
    - మీ python env తో దీన్ని కంపైల్ చేయండి
 

@@ -33,33 +33,33 @@ Soma mwongozo huu kuweka ONNX Runtime GenAI kwa Windows GPU  [bonyeza hapa](./OR
 
 1. Sakinisha Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.sw.png)
+![pfvscode](../../../../../../translated_images/sw/pfvscode.eff93dfc66a42cbe.png)
 
 2. Baada ya kusakinisha Prompt flow VS Code Extension, bonyeza extension hiyo, kisha chagua **Installation dependencies** fuata mwongozo huu kusakinisha Prompt flow SDK katika mazingira yako
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.sw.png)
+![pfsetup](../../../../../../translated_images/sw/pfsetup.b46e93096f5a254f.png)
 
 3. Pakua [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) na tumia VS Code kufungua sampuli hii
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.sw.png)
+![pfsample](../../../../../../translated_images/sw/pfsample.8d89e70584ffe7c4.png)
 
 4. Fungua **flow.dag.yaml** kuchagua mazingira yako ya Python
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.sw.png)
+![pfdag](../../../../../../translated_images/sw/pfdag.264a77f7366458ff.png)
 
    Fungua **chat_phi3_ort.py** kubadilisha eneo la Phi-3.5-instruct ONNX Model yako
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.sw.png)
+![pfphi](../../../../../../translated_images/sw/pfphi.72da81d74244b45f.png)
 
 5. Endesha prompt flow yako kwa ajili ya upimaji
 
 Fungua **flow.dag.yaml** bonyeza mhariri wa kuona
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.sw.png)
+![pfv](../../../../../../translated_images/sw/pfv.ba8a81f34b20f603.png)
 
 baada ya kubonyeza hii, endesha kujaribu
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.sw.png)
+![pfflow](../../../../../../translated_images/sw/pfflow.4e1135a089b1ce1b.png)
 
 1. Unaweza kuendesha batch kwenye terminal kuangalia matokeo zaidi
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Unaweza kuangalia matokeo katika kivinjari chako cha kawaida
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.sw.png)
+![pfresult](../../../../../../translated_images/sw/pfresult.c22c826f8062d7cb.png)
 
 **Kiarifu cha Kutotegemea**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

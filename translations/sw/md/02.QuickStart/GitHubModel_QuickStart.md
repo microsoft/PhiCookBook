@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Karibu kwenye [GitHub Models](https://github.com/marketplace/models)! Tumeandaa kila kitu tayari kwa ajili yako kuchunguza Modeli za AI zinazohudumiwa kwenye Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.sw.png)
+![GitHubModel](../../../../translated_images/sw/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 Kwa maelezo zaidi kuhusu Modeli zinazopatikana kwenye GitHub Models, angalia [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Kuna mifano michache ya msingi tayari kwa ajili yako kuendesha. Unaweza kuipata 
 
 Pia kuna Mazingira maalum ya Codespaces kwa ajili ya kuendesha mifano na modeli.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.sw.png)
+![Getting Started](../../../../translated_images/sw/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## Mifano ya Msimbo
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Matumizi ya BURE na Mipaka ya Kiwango kwa GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.sw.png)
+![Model Catalog](../../../../translated_images/sw/GitHub_Model.ca6c125cb3117d0e.png)
 
 [Mipaka ya kiwango kwa eneo la majaribio na matumizi ya bure ya API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) yamekusudiwa kusaidia kujaribu modeli na kuunda mfano wa programu yako ya AI. Kwa matumizi zaidi ya mipaka hiyo, na kupeleka programu yako kwa kiwango kikubwa, lazima upange rasilimali kutoka kwa akaunti ya Azure, na uthibitishe kutoka hapo badala ya tokeni yako ya upatikanaji binafsi ya GitHub. Huhitaji kubadilisha kitu kingine chochote kwenye msimbo wako. Tumia kiungo hiki kujifunza jinsi ya kupita mipaka ya kiwango cha bure katika Azure AI.
 

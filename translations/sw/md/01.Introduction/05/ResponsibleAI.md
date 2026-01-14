@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Muhtasari wa Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d33.sw.png)
+![RAIPrinciples](../../../../../translated_images/sw/RAIPrinciples.bf9c9bc6ca160d33.png)
 
 **Kanuni za maadili**
 

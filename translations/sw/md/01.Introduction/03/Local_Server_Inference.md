@@ -15,11 +15,11 @@ Tunaweza kupeleka Phi-3 kwenye seva ya ndani. Watumiaji wanaweza kuchagua suluhi
 
 Katika programu ya Copilot, tunaunda programu kupitia Semantic Kernel / LangChain. Aina hii ya mfumo wa programu kwa ujumla inafaa na Azure OpenAI Service / mifano ya OpenAI, na pia inaweza kuunga mkono mifano ya chanzo huria kwenye Hugging Face na mifano ya ndani. Tunapaswa kufanya nini tunapotaka kutumia Semantic Kernel kufikia Phi-3-mini? Kwa kutumia .NET kama mfano, tunaweza kuichanganya na Hugging Face Connector katika Semantic Kernel. Kwa kawaida, inaweza kuendana na kitambulisho cha mfano kwenye Hugging Face (mara ya kwanza unapotumia, mfano utapakuliwa kutoka Hugging Face, jambo ambalo huchukua muda mrefu). Pia unaweza kuungana na huduma ya ndani iliyojengwa. Tukilinganisha hizi mbili, tunapendekeza kutumia ya mwisho kwa sababu ina uhuru zaidi, hasa katika programu za biashara.
 
-![sk](../../../../../translated_images/sk.d03785c25edc6d44.sw.png)
+![sk](../../../../../translated_images/sw/sk.d03785c25edc6d44.png)
 
 Kutoka kwenye picha, kufikia huduma za ndani kupitia Semantic Kernel kunaweza kuunganisha kwa urahisi na seva ya mfano wa Phi-3-mini uliyojijengea mwenyewe. Hapa ni matokeo ya kuendesha
 
-![skrun](../../../../../translated_images/skrun.5aafc1e7197dca20.sw.png)
+![skrun](../../../../../translated_images/sw/skrun.5aafc1e7197dca20.png)
 
 ***Msimbo wa Mfano*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
