@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Velkommen til [GitHub Models](https://github.com/marketplace/models)! Vi har alt klart for at du skal utforske AI-modeller som hostes på Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.no.png)
+![GitHubModel](../../../../translated_images/no/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 For mer informasjon om modellene som er tilgjengelige på GitHub Models, se [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Det finnes noen grunnleggende eksempler klare til å kjøre. Du finner dem i sam
 
 Det finnes også et dedikert Codespaces-miljø for å kjøre eksemplene og modellene.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.no.png)
+![Getting Started](../../../../translated_images/no/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## Eksempel-kode
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GRATIS bruk og begrensninger for GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.no.png)
+![Model Catalog](../../../../translated_images/no/GitHub_Model.ca6c125cb3117d0e.png)
 
 [Begrensningene for lekeplassen og gratis API-bruk](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) er ment for at du skal kunne eksperimentere med modeller og prototype AI-applikasjonen din. For bruk utover disse grensene, og for å skalere applikasjonen, må du sette opp ressurser fra en Azure-konto og autentisere derfra i stedet for med din personlige GitHub-token. Du trenger ikke å endre noe annet i koden din. Bruk denne lenken for å finne ut hvordan du kan gå utover gratisnivåets begrensninger i Azure AI.
 

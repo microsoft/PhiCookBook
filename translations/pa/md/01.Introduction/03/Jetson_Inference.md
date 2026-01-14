@@ -36,7 +36,7 @@ d. Python 3.8+
 
 ਜੇ ਤੁਸੀਂ ਇੱਕੋ ਸਮੇਂ ਕਲਾਉਡ ਅਤੇ ਐਜ ਡਿਵਾਈਸਾਂ ਵਿੱਚ gguf ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ LlamaEdge ਨੂੰ WasmEdge ਵਜੋਂ ਸਮਝਿਆ ਜਾ ਸਕਦਾ ਹੈ (WasmEdge ਇੱਕ ਹਲਕਾ, ਉੱਚ-ਕਾਰਗੁਜ਼ਾਰੀ, ਸਕੇਲ ਕਰਨ ਯੋਗ WebAssembly ਰਨਟਾਈਮ ਹੈ ਜੋ ਕਲਾਉਡ ਨੈਟਿਵ, ਐਜ ਅਤੇ ਵਿਖੰਡਿਤ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਉਚਿਤ ਹੈ। ਇਹ ਸਰਵਰਲੈੱਸ ਐਪਲੀਕੇਸ਼ਨਾਂ, ਐਮਬੈਡਿਡ ਫੰਕਸ਼ਨਾਂ, ਮਾਈਕ੍ਰੋਸਰਵਿਸਿਜ਼, ਸਮਾਰਟ ਕਾਂਟ੍ਰੈਕਟ ਅਤੇ IoT ਡਿਵਾਈਸਾਂ ਨੂੰ ਸਹਾਰਾ ਦਿੰਦਾ ਹੈ। ਤੁਸੀਂ gguf ਦਾ ਮਾਤਰਾਤਮਕ ਮਾਡਲ LlamaEdge ਰਾਹੀਂ ਐਜ ਡਿਵਾਈਸਾਂ ਅਤੇ ਕਲਾਉਡ 'ਤੇ ਤਾਇਨਾਤ ਕਰ ਸਕਦੇ ਹੋ।
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.pa.jpg)
+![llamaedge](../../../../../translated_images/pa/llamaedge.e9d6ff96dff11cf7.jpg)
 
 ਇਹ ਰਹੇ ਵਰਤੋਂ ਦੇ ਕਦਮ:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ਇਹ ਰਹੀ ਚਲਾਉਣ ਦੀ ਨਤੀਜਾ
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.pa.png)
+![llamaedgerun](../../../../../translated_images/pa/llamaedgerun.bed921516c9a821c.png)
 
 ***ਨਮੂਨਾ ਕੋਡ*** [Phi-3 mini WASM ਨੋਟਬੁੱਕ ਨਮੂਨਾ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

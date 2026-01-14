@@ -43,7 +43,7 @@ Dokumentet gir veiledning om:
 
    ***Note*** Hvis du ikke ønsker å kompilere, kan du hoppe over dette steget
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.no.png)
+![CPP](../../../../../../translated_images/no/01.42f52a2b2aedff02.png)
 
 ### **4. Installer NVIDIA-driver**
 
@@ -83,7 +83,7 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    Åpne [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) og kjør den
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.no.png)
+![RESULT](../../../../../../translated_images/no/02.b9b06996cf7255d5.png)
 
 ### **8. Kompiler ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    - Bruk Windows Terminal, gå til Developer Command Prompt for VS 2022 og naviger til onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.no.png)
+![RESULT](../../../../../../translated_images/no/03.b83ce473d5ff9b9b.png)
 
    - Kompiler med ditt Python-miljø
 
