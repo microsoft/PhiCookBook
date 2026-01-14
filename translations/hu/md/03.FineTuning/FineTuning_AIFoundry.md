@@ -19,7 +19,7 @@ Nézzük meg, hogyan lehet finomhangolni a Microsoft Phi-3 Mini nyelvi modellt a
 - **Kényelem:** Hogyan zajlik a finomhangolás – kell-e egyedi kódot írni? Kell-e saját számítási kapacitást biztosítani?
 - **Biztonság:** A finomhangolt modellek ismerten biztonsági kockázatokat hordoznak – vannak-e védőintézkedések a nem kívánt károk elkerülésére?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.hu.png)
+![AIFoundry Models](../../../../translated_images/hu/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Előkészületek a finomhangoláshoz
 
@@ -71,7 +71,7 @@ A támogatott fájltípus a JSON Lines. A fájlokat a alapértelmezett adattáro
 
 Az Azure AI Foundry lehetővé teszi, hogy nagy nyelvi modelleket személyes adatkészleteidhez igazíts finomhangolás segítségével. A finomhangolás jelentős értéket ad azáltal, hogy testreszabást és optimalizálást tesz lehetővé specifikus feladatokra és alkalmazásokra. Ez jobb teljesítményt, költséghatékonyságot, csökkentett késleltetést és személyre szabott eredményeket eredményez.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.hu.png)
+![Finetune AI Foundry](../../../../translated_images/hu/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Új projekt létrehozása
 
@@ -79,14 +79,14 @@ Az Azure AI Foundry lehetővé teszi, hogy nagy nyelvi modelleket személyes ada
 
 1. Válaszd a **+New project** lehetőséget egy új projekt létrehozásához az Azure AI Foundry-ban.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/select-new-project.cd31c0404088d7a3.png)
 
 1. Végezze el a következő lépéseket:
 
     - Projekt **Hub neve**. Egyedi érték kell legyen.
     - Válaszd ki a használni kívánt **Hubot** (ha szükséges, hozz létre újat).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/create-project.ca3b71298b90e420.png)
 
 1. Új hub létrehozásához végezd el a következőket:
 
@@ -97,7 +97,7 @@ Az Azure AI Foundry lehetővé teszi, hogy nagy nyelvi modelleket személyes ada
     - Válaszd ki a használni kívánt **Connect Azure AI Services**-t (ha szükséges, hozz létre újat).
     - A **Connect Azure AI Search** esetén válaszd a **Skip connecting** lehetőséget.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/create-hub.49e53d235e80779e.png)
 
 1. Válaszd a **Next** gombot.
 1. Válaszd a **Create a project** lehetőséget.
@@ -115,15 +115,15 @@ A finomhangolás előtt gyűjts vagy hozz létre egy a feladatodhoz releváns ad
 
 1. Írd be a keresősávba a *phi-3* kifejezést, majd válaszd ki a használni kívánt phi-3 modellt.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/select-model.60ef2d4a6a3cec57.png)
 
 1. Válaszd a **Fine-tune** lehetőséget.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/select-finetune.a976213b543dd9d8.png)
 
 1. Add meg a **Finomhangolt modell nevét**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/finetune1.c2b39463f0d34148.png)
 
 1. Válaszd a **Next** gombot.
 
@@ -132,13 +132,13 @@ A finomhangolás előtt gyűjts vagy hozz létre egy a feladatodhoz releváns ad
     - Válaszd ki a **feladattípust**: **Chat completion**.
     - Válaszd ki a használni kívánt **tanító adatokat**. Feltöltheted az Azure AI Foundry adatain keresztül vagy a helyi környezetedből.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/finetune2.43cb099b1a94442d.png)
 
 1. Válaszd a **Next** gombot.
 
 1. Töltsd fel a használni kívánt **validációs adatokat**, vagy válaszd az **Automatic split of training data** lehetőséget.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/finetune3.fd96121b67dcdd92.png)
 
 1. Válaszd a **Next** gombot.
 
@@ -148,15 +148,15 @@ A finomhangolás előtt gyűjts vagy hozz létre egy a feladatodhoz releváns ad
     - Válaszd ki a használni kívánt **Learning rate** értéket.
     - Válaszd ki a használni kívánt **Epochs** számát.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/finetune4.e18b80ffccb5834a.png)
 
 1. Válaszd a **Submit** gombot a finomhangolási folyamat elindításához.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/select-submit.0a3802d581bac271.png)
 
 1. Amint a modell finomhangolása befejeződik, az állapot **Completed** lesz, ahogy az alábbi képen látható. Ekkor telepítheted a modellt, és használhatod saját alkalmazásodban, a playground-ban vagy prompt flow-ban. További információért lásd: [Hogyan telepítsük a Phi-3 család kis nyelvi modelljeit Azure AI Foundry-val](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.hu.png)
+    ![FineTuneSelect](../../../../translated_images/hu/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Részletesebb információkért a Phi-3 finomhangolásáról látogass el a [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) oldalra.

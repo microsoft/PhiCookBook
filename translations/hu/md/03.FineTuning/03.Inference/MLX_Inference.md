@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Az eredmény (az én környezetem Apple M1 Max, 64GB) a következő:
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.hu.png)
+![Terminal](../../../../../translated_images/hu/01.5cf57df8f7407cf9.png)
 
 ### **3. Phi-3-mini kvantálása MLX-szel terminálban**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Az eredmény:
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.hu.png)
+![INT4](../../../../../translated_images/hu/02.7b188681a8eadbc1.png)
 
 
 ### **4. Phi-3-mini futtatása MLX-szel Jupyter Notebookban**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.hu.png)
+![Notebook](../../../../../translated_images/hu/03.b9705a3a5aaa89f9.png)
 
 ***Megjegyzés:*** Kérjük, olvassa el ezt a példát [kattintson ide](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

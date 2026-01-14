@@ -15,11 +15,11 @@ Használod a Visual Studio Code Copilotot? Különösen a Chat funkcióban kül�
 
 Tudjuk, hogy a Phi-3/3.5-mini-instruct a Phi-3/3.5 családban erős kódértési és generálási képességekkel rendelkezik, és előnyökkel bír a Gemma-2-9b és a Mistral-Nemo-12B-instruct-2407 modellekkel szemben.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.hu.png)
+![codegen](../../../../../../translated_images/hu/codegen.53be1150ee54d969.png)
 
 A legújabb GitHub Models már elérhetővé teszi a Phi-3.5-mini-instruct (128k) és a Phi-3.5-vision-instruct (128k) modelleket. A fejlesztők az OpenAI SDK-n, az Azure AI Inference SDK-n és a REST API-n keresztül férhetnek hozzájuk.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d5.hu.png)
+![gh](../../../../../../translated_images/hu/gh.459640c7ceba01d5.png)
 
 ***Megjegyzés:*** Ajánlott itt az Azure AI Inference SDK használata, mert a gyártási környezetben jobban tud váltani az Azure Model Cataloggal.
 
@@ -34,13 +34,13 @@ Az alábbiakban a **Phi-3.5-mini-instruct (128k)** és a **Phi-3.5-vision-instru
 
 A GitHub Copilot Chat Agent különböző feladatokat képes elvégezni különböző projekt szcenáriókban a kód alapján. A rendszer négy agentből áll: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.hu.png)
+![agent](../../../../../../translated_images/hu/agent.3dbb06228f9a6189.png)
 
 Az agent nevének '@' jellel történő megadásával gyorsan elvégezheted a hozzá tartozó feladatokat. Vállalatok számára, ha hozzáadod saját üzleti tartalmadat, például követelményeket, kódolást, teszt specifikációkat és kiadást, akkor erősebb vállalati privát funkciókat érhetsz el a GitHub Copilot alapjain.
 
 A Visual Studio Code Chat Agent most hivatalosan is kiadta az API-ját, amely lehetővé teszi vállalatok vagy vállalati fejlesztők számára, hogy különböző szoftver üzleti ökoszisztémák alapján fejlesszenek agenteket. A Visual Studio Code Extension fejlesztési módszerén alapulva könnyen hozzáférhetsz a Visual Studio Code Chat Agent API felületéhez. Ezen a folyamaton alapulva fejleszthetünk.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.hu.png)
+![diagram](../../../../../../translated_images/hu/diagram.ca70d2866762f115.png)
 
 A fejlesztési szcenárió támogatja harmadik fél modell API-khoz való hozzáférést (például GitHub Models, Azure Model Catalog, és nyílt forráskódú modellekre épülő saját szolgáltatások), valamint használhatja a GitHub Copilot által biztosított gpt-35-turbo, gpt-4 és gpt-4o modelleket is.
 
@@ -54,7 +54,7 @@ Megpróbáljuk integrálni a Phi-3.5 programozási képességeit, hogy kódírá
 
 3. Kód generálása a **Phi-3.5-vision-instruct (128k)** modell és kép alapján a **@phicoding /image** parancs segítségével
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.hu.png)
+![arch](../../../../../../translated_images/hu/arch.5a58a0adfa959a2d.png)
 
 ## **Kapcsolódó lépések**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a9541.hu.png)
+![help](../../../../../../translated_images/hu/help.04c134d2bf9a9541.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.hu.png)
+![agenthelp](../../../../../../translated_images/hu/agenthelp.60c68767c941a3fe.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.hu.png)
+![agentgen](../../../../../../translated_images/hu/agentgen.a16e7735790f764b.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.hu.png)
+![agentimage](../../../../../../translated_images/hu/agentimage.f5cb52b45ab7d0d1.png)
 
 Letöltheted a mintakódot: [kattints ide](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

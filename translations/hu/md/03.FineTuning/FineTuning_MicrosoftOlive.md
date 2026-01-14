@@ -32,11 +32,11 @@ Figyelembe veszi a pontosság és késleltetés korlátait a modellek optimaliz�
 
 A Microsoft Olive egy nagyon könnyen használható, nyílt forráskódú modelloptimalizáló eszköz, amely lefedi mind a finomhangolást, mind a referenciaalkalmazásokat a generatív mesterséges intelligencia területén. Egyszerű konfigurációt igényel, és nyílt forráskódú kis nyelvi modellekkel, valamint kapcsolódó futtatókörnyezetekkel (AzureML / helyi GPU, CPU, DirectML) kombinálva automatikus optimalizációval végezhető el a modell finomhangolása vagy referenciája, így megtalálható a legjobb modell, amelyet felhőbe vagy élő eszközökre lehet telepíteni. Lehetővé teszi a vállalatok számára, hogy saját iparági vertikális modelljeiket helyben és a felhőben is felépítsék.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e2.hu.png)
+![intro](../../../../translated_images/hu/intro.46086a3f16ec48e2.png)
 
 ## Phi-3 finomhangolása Microsoft Olive-dal
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.hu.png)
+![FinetuningwithOlive](../../../../translated_images/hu/olivefinetune.76d09e9b68253681.png)
 
 ## Phi-3 Olive példa kód és példa
 Ebben a példában az Olive segítségével:
