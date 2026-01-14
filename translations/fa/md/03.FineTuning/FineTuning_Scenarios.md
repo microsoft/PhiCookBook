@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## سناریوهای تنظیم دقیق
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.fa.png)
+![FineTuning with MS Services](../../../../translated_images/fa/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **پلتفرم** این شامل فناوری‌های مختلفی مانند Azure AI Foundry، Azure Machine Learning، AI Tools، Kaito و ONNX Runtime است.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 مدل را با استفاده از تنظیم دقیق میزبانی شده، بدون نیاز به ایجاد و مدیریت محاسبات، تنظیم دقیق کنید.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.fa.png)
+![MaaS Fine Tuning](../../../../translated_images/fa/MaaSfinetune.3eee4630607aff0d.png)
 
 تنظیم دقیق بدون سرور برای مدل‌های Phi-3-mini و Phi-3-medium در دسترس است که به توسعه‌دهندگان امکان می‌دهد به سرعت و به آسانی مدل‌ها را برای سناریوهای ابری و لبه‌ای سفارشی کنند بدون اینکه نیاز به ترتیب دادن محاسبات باشد. همچنین اعلام کرده‌ایم که Phi-3-small اکنون از طریق سرویس Models-as-a-Service ما در دسترس است تا توسعه‌دهندگان بتوانند به سرعت و به آسانی توسعه هوش مصنوعی را بدون نیاز به مدیریت زیرساخت‌های پایه آغاز کنند.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 کاربران محاسبات خود را مدیریت می‌کنند تا مدل‌های خود را تنظیم دقیق کنند.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.fa.png)
+![Maap Fine Tuning](../../../../translated_images/fa/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [نمونه تنظیم دقیق](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## نمونه‌های عملکرد تنظیم دقیق
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.fa.png)
+![Finetuning Performance](../../../../translated_images/fa/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **سلب مسئولیت**:  
 این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.

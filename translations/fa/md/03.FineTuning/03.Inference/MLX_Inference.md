@@ -40,7 +40,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 نتیجه (محیط من Apple M1 Max با 64 گیگابایت رم است) به شکل زیر است:
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.fa.png)
+![Terminal](../../../../../translated_images/fa/01.5cf57df8f7407cf9.png)
 
 ### **3. کم‌دقت‌سازی Phi-3-mini با MLX در ترمینال**
 
@@ -64,11 +64,11 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 نتیجه به شکل زیر است:
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.fa.png)
+![INT4](../../../../../translated_images/fa/02.7b188681a8eadbc1.png)
 
 ### **4. اجرای Phi-3-mini با MLX در Jupyter Notebook**
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.fa.png)
+![Notebook](../../../../../translated_images/fa/03.b9705a3a5aaa89f9.png)
 
 ***توجه:*** لطفاً این نمونه را مطالعه کنید [برای مشاهده اینجا کلیک کنید](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

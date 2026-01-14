@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tervetuloa [GitHub Models](https://github.com/marketplace/models) -palveluun! Olemme valmiina, jotta voit tutustua Azure AI:lla isännöityihin tekoälymalleihin.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.fi.png)
+![GitHubModel](../../../../translated_images/fi/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 Lisätietoja GitHub Models -palvelussa saatavilla olevista malleista löydät osoitteesta [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Saatavilla on muutama perusesimerkki, jotka voit ajaa heti. Löydät ne samples-
 
 Saatavilla on myös oma Codespaces-ympäristö, jossa voit ajaa esimerkkejä ja malleja.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.fi.png)
+![Getting Started](../../../../translated_images/fi/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## Esimerkkikoodi
 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## ILMAINEN käyttö ja rajoitukset GitHub Models -palvelussa
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.fi.png)
+![Model Catalog](../../../../translated_images/fi/GitHub_Model.ca6c125cb3117d0e.png)
 
 [Leikkikentän ja ilmaisen API-käytön rajoitukset](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) on tarkoitettu auttamaan sinua kokeilemaan malleja ja prototyyppien tekoon AI-sovelluksessasi. Näiden rajojen ylittävässä käytössä ja sovelluksen skaalaamisessa sinun tulee varata resursseja Azure-tililtä ja autentikoitua sieltä henkilökohtaisen GitHub-käyttöoikeustunnuksen sijaan. Koodissasi ei tarvitse tehdä muita muutoksia. Käytä tätä linkkiä oppiaksesi, miten voit ylittää ilmaiskäytön rajat Azure AI:ssa.
 

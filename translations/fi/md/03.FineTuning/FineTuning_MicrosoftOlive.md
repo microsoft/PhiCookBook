@@ -32,11 +32,11 @@ Se ottaa huomioon rajoitteet kuten tarkkuuden ja viiveen mallien optimoinnin aik
 
 Microsoft Olive on erittäin helppokäyttöinen avoimen lähdekoodin mallin optimointityökalu, joka kattaa sekä hienosäädön että referenssin generatiivisen tekoälyn alalla. Se vaatii vain yksinkertaisen konfiguraation, ja yhdistettynä avoimen lähdekoodin pieniin kielimalleihin ja niihin liittyviin ajoympäristöihin (AzureML / paikallinen GPU, CPU, DirectML) voit suorittaa mallin hienosäädön tai referenssin automaattisen optimoinnin avulla ja löytää parhaan mallin käyttöönotettavaksi pilveen tai reunalaitteisiin. Tämä mahdollistaa yrityksille oman toimialakohtaisten mallien rakentamisen sekä paikallisesti että pilvessä.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e2.fi.png)
+![intro](../../../../translated_images/fi/intro.46086a3f16ec48e2.png)
 
 ## Phi-3:n hienosäätö Microsoft Olivella
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.fi.png)
+![FinetuningwithOlive](../../../../translated_images/fi/olivefinetune.76d09e9b68253681.png)
 
 ## Phi-3 Olive -esimerkkikoodi ja esimerkki
 Tässä esimerkissä käytät Olivea:

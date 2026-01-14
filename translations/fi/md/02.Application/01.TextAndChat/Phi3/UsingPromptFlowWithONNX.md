@@ -33,33 +33,33 @@ Lue tämä ohje ONNX Runtime GenAI:n asentamiseksi Windows GPU:lle [klikkaa täs
 
 1. Asenna Prompt flow VS Code -laajennus
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.fi.png)
+![pfvscode](../../../../../../translated_images/fi/pfvscode.eff93dfc66a42cbe.png)
 
 2. Asennuksen jälkeen avaa Prompt flow VS Code -laajennus, valitse **Installation dependencies** ja seuraa ohjeita Prompt flow SDK:n asentamiseksi ympäristöösi
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.fi.png)
+![pfsetup](../../../../../../translated_images/fi/pfsetup.b46e93096f5a254f.png)
 
 3. Lataa [Esimerkkikoodi](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ja avaa se VS Codessa
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.fi.png)
+![pfsample](../../../../../../translated_images/fi/pfsample.8d89e70584ffe7c4.png)
 
 4. Avaa **flow.dag.yaml** ja valitse Python-ympäristösi
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.fi.png)
+![pfdag](../../../../../../translated_images/fi/pfdag.264a77f7366458ff.png)
 
    Avaa **chat_phi3_ort.py** ja muuta Phi-3.5-instruct ONNX -mallin sijainti
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.fi.png)
+![pfphi](../../../../../../translated_images/fi/pfphi.72da81d74244b45f.png)
 
 5. Suorita prompt flow testataksesi
 
 Avaa **flow.dag.yaml** ja klikkaa visual editoria
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.fi.png)
+![pfv](../../../../../../translated_images/fi/pfv.ba8a81f34b20f603.png)
 
 Klikkaa tätä ja suorita testi
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.fi.png)
+![pfflow](../../../../../../translated_images/fi/pfflow.4e1135a089b1ce1b.png)
 
 1. Voit ajaa eräajon terminaalissa saadaksesi lisää tuloksia
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Tulokset voit tarkistaa oletusselaimessasi
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.fi.png)
+![pfresult](../../../../../../translated_images/fi/pfresult.c22c826f8062d7cb.png)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -29,7 +29,7 @@ Labran lopuksi osaat käyttää OLIVEa:
 
 Olive (*O*NNX *live*) on mallin optimointityökalu, johon kuuluu komentorivityökalu (CLI), jonka avulla voit toimittaa malleja ONNX Runtime +++https://onnxruntime.ai+++ -ympäristöön laadukkaasti ja tehokkaasti.
 
-![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2.fi.png)
+![Olive Flow](../../../../../translated_images/fi/olive-flow.c4f76d9142c579b2.png)
 
 Olive ottaa syötteenä tyypillisesti PyTorch- tai Hugging Face -mallin ja tuottaa optimoidun ONNX-mallin, jota suoritetaan laitteella (käyttökohde) ONNX Runtime -ympäristössä. Olive optimoi mallin käyttökohteen tekoälykiihdyttimelle (NPU, GPU, CPU), jonka tarjoaa laitevalmistaja kuten Qualcomm, AMD, Nvidia tai Intel.
 

@@ -19,7 +19,7 @@ Tutustutaan, miten Microsoftin Phi-3 Mini -kielimallia voi hienosäätää Azure
 - **Käytettävyys:** Miten hienosäätö käytännössä tapahtuu – pitääkö kirjoittaa omaa koodia? Tarvitseeko tuoda oma laskentateho?
 - **Turvallisuus:** Hienosäädetyt mallit voivat sisältää turvallisuusriskejä – onko olemassa suojakeinoja vahinkojen estämiseksi?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.fi.png)
+![AIFoundry Models](../../../../translated_images/fi/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Valmistautuminen hienosäätöön
 
@@ -71,7 +71,7 @@ Tuettu tiedostotyyppi on JSON Lines. Tiedostot ladataan oletustietovarastoon ja 
 
 Azure AI Foundry mahdollistaa suurten kielimallien räätälöinnin omien aineistojen pohjalta hienosäätöprosessin avulla. Hienosäätö tarjoaa merkittävää lisäarvoa mahdollistamalla mallin mukauttamisen ja optimoinnin tiettyihin tehtäviin ja sovelluksiin. Se parantaa suorituskykyä, kustannustehokkuutta, vähentää viivettä ja tuottaa räätälöityjä vastauksia.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.fi.png)
+![Finetune AI Foundry](../../../../translated_images/fi/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Luo uusi projekti
 
@@ -79,14 +79,14 @@ Azure AI Foundry mahdollistaa suurten kielimallien räätälöinnin omien aineis
 
 1. Valitse **+New project** luodaksesi uuden projektin Azure AI Foundryyn.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/select-new-project.cd31c0404088d7a3.png)
 
 1. Suorita seuraavat tehtävät:
 
     - Projektin **Hub name**. Sen on oltava yksilöllinen.
     - Valitse käytettävä **Hub** (luo uusi tarvittaessa).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/create-project.ca3b71298b90e420.png)
 
 1. Luo uusi hub seuraavasti:
 
@@ -97,7 +97,7 @@ Azure AI Foundry mahdollistaa suurten kielimallien räätälöinnin omien aineis
     - Valitse käytettävä **Connect Azure AI Services** (luo uusi tarvittaessa).
     - Valitse **Connect Azure AI Search** ja valitse **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/create-hub.49e53d235e80779e.png)
 
 1. Valitse **Next**.
 1. Valitse **Create a project**.
@@ -115,15 +115,15 @@ Ennen hienosäätöä kerää tai luo tehtävääsi liittyvä aineisto, kuten ch
 
 1. Kirjoita hakupalkkiin *phi-3* ja valitse haluamasi phi-3 -malli.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/select-model.60ef2d4a6a3cec57.png)
 
 1. Valitse **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/select-finetune.a976213b543dd9d8.png)
 
 1. Syötä **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/finetune1.c2b39463f0d34148.png)
 
 1. Valitse **Next**.
 
@@ -132,13 +132,13 @@ Ennen hienosäätöä kerää tai luo tehtävääsi liittyvä aineisto, kuten ch
     - Valitse **task type** arvoksi **Chat completion**.
     - Valitse käytettävä **Training data**. Voit ladata sen Azure AI Foundryn datan kautta tai paikallisesta ympäristöstäsi.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/finetune2.43cb099b1a94442d.png)
 
 1. Valitse **Next**.
 
 1. Lataa käytettävä **Validation data** tai valitse **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/finetune3.fd96121b67dcdd92.png)
 
 1. Valitse **Next**.
 
@@ -148,15 +148,15 @@ Ennen hienosäätöä kerää tai luo tehtävääsi liittyvä aineisto, kuten ch
     - Valitse haluamasi **Learning rate**.
     - Valitse haluamasi **Epochs**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/finetune4.e18b80ffccb5834a.png)
 
 1. Valitse **Submit** aloittaaksesi hienosäätöprosessin.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/select-submit.0a3802d581bac271.png)
 
 1. Kun mallisi on hienosäädetty, tila näkyy **Completed**-merkintänä, kuten alla olevassa kuvassa. Nyt voit ottaa mallin käyttöön ja käyttää sitä omassa sovelluksessasi, playgroundissa tai prompt flow’ssa. Lisätietoja löytyy kohdasta [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.fi.png)
+    ![FineTuneSelect](../../../../translated_images/fi/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Tarkempia tietoja Phi-3:n hienosäädöstä löydät osoitteesta [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
