@@ -1,54 +1,54 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
-  "translation_date": "2025-07-17T02:23:54+00:00",
+  "original_hash": "7f72d7981ed3640865700f51ae407da4",
+  "translation_date": "2026-01-14T16:13:51+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "sl"
 }
 -->
-# Interaktivni Phi 3 Mini 4K Instruct Chatbot z Whisper
+# Interaktivni Phi 3 Mini 4K Instruct klepetalnik z Whisper
 
 ## Pregled
 
-Interaktivni Phi 3 Mini 4K Instruct Chatbot je orodje, ki uporabnikom omogoča interakcijo z Microsoft Phi 3 Mini 4K instruct demo preko besedilnega ali zvočnega vnosa. Chatbot se lahko uporablja za različne naloge, kot so prevajanje, vremenske napovedi in zbiranje splošnih informacij.
+Interaktivni Phi 3 Mini 4K Instruct klepetalnik je orodje, ki uporabnikom omogoča interakcijo z Microsoft Phi 3 Mini 4K instruct demo preko besedilnega ali zvočnega vnosa. Klepetalnik se lahko uporablja za različne naloge, kot so prevajanje, vremenske napovedi in zbiranje splošnih informacij.
 
 ### Začetek
 
-Za uporabo tega chatbota sledite naslednjim navodilom:
+Za uporabo tega klepetalnika preprosto sledite tem navodilom:
 
 1. Odprite nov [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
-2. V glavnem oknu zvezka boste videli vmesnik klepetalnice z besedilnim vnosnim poljem in gumbom "Send".
-3. Za uporabo besedilnega chatbota preprosto vnesite svoje sporočilo v besedilno polje in kliknite gumb "Send". Chatbot bo odgovoril z zvočno datoteko, ki jo lahko predvajate neposredno znotraj zvezka.
+2. V glavnem oknu zvezka boste videli vmesnik klepetalnika z vnosnim poljem za besedilo in gumbom "Send".
+3. Za uporabo klepetalnika na osnovi besedila preprosto vtipkajte svoje sporočilo v vnosno polje in kliknite gumb "Send". Klepetalnik bo odgovoril z zvočno datoteko, ki jo lahko predvajate neposredno znotraj zvezka.
 
-**Note**: To orodje zahteva GPU in dostop do Microsoft Phi-3 ter OpenAI Whisper modelov, ki se uporabljata za prepoznavanje govora in prevajanje.
+**Opomba**: To orodje zahteva GPU in dostop do Microsoft Phi-3 ter OpenAI Whisper modelov, ki se uporabljajo za prepoznavanje govora in prevajanje.
 
 ### Zahteve za GPU
 
-Za zagon te predstavitve potrebujete 12 GB pomnilnika na GPU.
+Za zagon te predstavitve potrebujete 12 GB grafičnega pomnilnika.
 
-Zahteve po pomnilniku za zagon **Microsoft-Phi-3-Mini-4K instruct** demo na GPU bodo odvisne od več dejavnikov, kot so velikost vhodnih podatkov (zvok ali besedilo), jezik prevajanja, hitrost modela in razpoložljivi pomnilnik na GPU.
+Zahteve po pomnilniku za zagon **Microsoft-Phi-3-Mini-4K instruct** predstavitve na GPU bodo odvisne od več dejavnikov, kot so velikost vhodnih podatkov (zvok ali besedilo), jezik, ki se uporablja za prevajanje, hitrost modela in razpoložljivi pomnilnik na GPU.
 
-Na splošno je Whisper model zasnovan za delovanje na GPU-jih. Priporočena minimalna količina pomnilnika za zagon Whisper modela je 8 GB, vendar lahko obvladuje tudi večje količine pomnilnika, če je potrebno.
+Na splošno je Whisper model zasnovan za delovanje na GPU-jih. Priporočena minimalna količina GPU pomnilnika za zagon Whisper modela je 8 GB, vendar lahko obvladuje tudi večje količine pomnilnika, če je potrebno.
 
-Pomembno je vedeti, da lahko obdelava velike količine podatkov ali veliko število zahtevkov povzroči potrebo po več pomnilnika na GPU in/ali vpliva na zmogljivost. Priporočamo, da preizkusite svoj primer uporabe z različnimi nastavitvami in spremljate porabo pomnilnika, da določite optimalne nastavitve za vaše specifične potrebe.
+Pomembno je opozoriti, da zagon velike količine podatkov ali velika uporaba modela morda zahteva več GPU pomnilnika in/ali lahko povzroči težave z zmogljivostjo. Priporočljivo je preizkusiti svoj primer uporabe z različnimi konfiguracijami in spremljati uporabo pomnilnika, da določite optimalne nastavitve za vaše posebne potrebe.
 
-## E2E primer za Interaktivni Phi 3 Mini 4K Instruct Chatbot z Whisper
+## E2E primer za Interaktivni Phi 3 Mini 4K Instruct klepetalnik z Whisper
 
-Jupyter zvezek z naslovom [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) prikazuje, kako uporabiti Microsoft Phi 3 Mini 4K instruct Demo za generiranje besedila iz zvočnega ali pisnega vnosa. Zvezek definira več funkcij:
+Jupyter zvezek z naslovom [Interaktivni Phi 3 Mini 4K Instruct klepetalnik z Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) prikazuje, kako uporabiti Microsoft Phi 3 Mini 4K instruct demo za generiranje besedila iz zvoka ali pisanega besedilnega vnosa. Zvezek definira več funkcij:
 
-1. `tts_file_name(text)`: Ta funkcija ustvari ime datoteke na podlagi vhodnega besedila za shranjevanje generirane zvočne datoteke.
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Ta funkcija uporablja Edge TTS API za generiranje zvočne datoteke iz seznama delov vhodnega besedila. Vhodni parametri so seznam delov, hitrost govora, ime glasu in pot za shranjevanje generirane zvočne datoteke.
-1. `talk(input_text)`: Ta funkcija generira zvočno datoteko z uporabo Edge TTS API in jo shrani pod naključno ime v imenik /content/audio. Vhodni parameter je besedilo, ki ga želimo pretvoriti v govor.
-1. `run_text_prompt(message, chat_history)`: Ta funkcija uporablja Microsoft Phi 3 Mini 4K instruct demo za generiranje zvočne datoteke iz sporočila in jo doda v zgodovino klepeta.
-1. `run_audio_prompt(audio, chat_history)`: Ta funkcija pretvori zvočno datoteko v besedilo z uporabo Whisper model API in ga posreduje funkciji `run_text_prompt()`.
-1. Koda zažene Gradio aplikacijo, ki uporabnikom omogoča interakcijo z Phi 3 Mini 4K instruct demo tako, da vnašajo sporočila ali nalagajo zvočne datoteke. Izhod se prikaže kot besedilno sporočilo znotraj aplikacije.
+1. `tts_file_name(text)`: Ta funkcija generira ime datoteke na podlagi vhodnega besedila za shranjevanje generirane zvočne datoteke.
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Ta funkcija uporablja Edge TTS API za generiranje zvočne datoteke iz seznama delcev vhodnega besedila. Vhodni parametri so seznam delcev, hitrost govora, ime glasu in izhodna pot za shranjevanje generirane zvočne datoteke.
+1. `talk(input_text)`: Ta funkcija generira zvočno datoteko z uporabo Edge TTS API in jo shrani v naključno ime datoteke v imeniku /content/audio. Vhodni parameter je vhodno besedilo za pretvorbo v govor.
+1. `run_text_prompt(message, chat_history)`: Ta funkcija uporablja Microsoft Phi 3 Mini 4K instruct demo za generiranje zvočne datoteke iz vnosnega sporočila in jo doda v zgodovino klepeta.
+1. `run_audio_prompt(audio, chat_history)`: Ta funkcija pretvori zvočno datoteko v besedilo z uporabo Whisper model API in jo posreduje funkciji `run_text_prompt()`.
+1. Koda zažene aplikacijo Gradio, ki uporabnikom omogoča interakcijo z Phi 3 Mini 4K instruct demo z vnašanjem sporočil ali nalaganjem zvočnih datotek. Izhod se prikaže kot besedilno sporočilo znotraj aplikacije.
 
-## Reševanje težav
+## Odpravljanje težav
 
-Namestitev Cuda GPU gonilnikov
+Namestitev gonilnikov Cuda GPU
 
-1. Poskrbite, da so vaše Linux aplikacije posodobljene
+1. Prepričajte se, da so vaše Linux aplikacije posodobljene
 
     ```bash
     sudo apt update
@@ -72,7 +72,7 @@ Namestitev Cuda GPU gonilnikov
     nvidia-smi
     ```
 
-1. Počistite predpomnilnik: Če uporabljate PyTorch, lahko pokličete torch.cuda.empty_cache(), da sprostite ves neuporabljen predpomnilnik, ki ga lahko nato uporabljajo druge GPU aplikacije
+1. Praznjenje predpomnilnika: Če uporabljate PyTorch, lahko pokličete torch.cuda.empty_cache(), da sprostite ves neuporabljeni predpomnilnik, ki ga lahko uporabijo druge GPU aplikacije
 
     ```python
     torch.cuda.empty_cache() 
@@ -84,14 +84,14 @@ Namestitev Cuda GPU gonilnikov
     nvcc --version
     ```
 
-1. Izvedite naslednje korake za ustvarjanje Hugging Face žetona.
+1. Za ustvarjanje žetona Hugging Face izvedite naslednja opravila.
 
-    - Obiščite [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
+    - Obiščite stran [Hugging Face Token Settings](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
     - Izberite **New token**.
     - Vnesite ime projekta, ki ga želite uporabiti.
     - Izberite **Type** na **Write**.
 
-> **Note**
+> [!NOTE]
 >
 > Če naletite na naslednjo napako:
 >
@@ -99,11 +99,15 @@ Namestitev Cuda GPU gonilnikov
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Za rešitev vnesite naslednji ukaz v terminal.
+> Za rešitev vnosa v terminal vtipkajte naslednji ukaz.
 >
 > ```bash
 > sudo ldconfig
 > ```
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Omejitev odgovornosti**:
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, prosimo, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvornem jeziku velja za zavezujoč vir. Za kritične informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
