@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **استخدام Azure AI Foundry للتقييم**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.ar.png)
+![aistudo](../../../../../translated_images/ar/AIFoundry.9e0b513e999a1c5a.png)
 
 كيفية تقييم تطبيق الذكاء الاصطناعي التوليدي الخاص بك باستخدام [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). سواء كنت تقوم بتقييم محادثات ذات جولة واحدة أو متعددة الجولات، يوفر Azure AI Foundry أدوات لتقييم أداء النموذج وسلامته.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.ar.png)
+![aistudo](../../../../../translated_images/ar/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## كيفية تقييم تطبيقات الذكاء الاصطناعي التوليدي باستخدام Azure AI Foundry
 للحصول على تعليمات أكثر تفصيلاً، راجع [توثيق Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 مرحبًا بك في [نماذج GitHub](https://github.com/marketplace/models)! لقد جهزنا كل شيء لتستكشف نماذج الذكاء الاصطناعي المستضافة على Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.ar.png)
+![GitHubModel](../../../../translated_images/ar/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 لمزيد من المعلومات حول النماذج المتاحة على نماذج GitHub، اطلع على [سوق نماذج GitHub](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يوجد أيضًا بيئة Codespaces مخصصة لتشغيل العينات والنماذج.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.ar.png)
+![Getting Started](../../../../translated_images/ar/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## كود العينة
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## الاستخدام المجاني وحدود المعدل لنماذج GitHub
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.ar.png)
+![Model Catalog](../../../../translated_images/ar/GitHub_Model.ca6c125cb3117d0e.png)
 
 [حدود المعدل لمساحة التجربة والاستخدام المجاني لواجهة برمجة التطبيقات](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) تهدف إلى مساعدتك في تجربة النماذج وتصميم تطبيقات الذكاء الاصطناعي الخاصة بك. لاستخدام يتجاوز هذه الحدود، ولتوسيع تطبيقك، يجب أن توفر موارد من حساب Azure، وتوثق من هناك بدلاً من رمز الوصول الشخصي الخاص بـ GitHub. لا تحتاج إلى تغيير أي شيء آخر في كودك. استخدم هذا الرابط لاكتشاف كيفية تجاوز حدود الطبقة المجانية في Azure AI.
 

@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## نظرة عامة على Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d33.ar.png)
+![RAIPrinciples](../../../../../translated_images/ar/RAIPrinciples.bf9c9bc6ca160d33.png)
 
 **المبادئ الأخلاقية**
 
