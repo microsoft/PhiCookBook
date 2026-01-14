@@ -34,7 +34,7 @@ Phiはクラウドまたはエッジデバイスに展開でき、限られた�
 2. **リポジトリをクローンする**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Microsoft AI Discordコミュニティに参加して、専門家や開発者仲間と交流する**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.ja.png)
+![cover](../../translated_images/ja/cover.eb18d1b9605d754b.png)
 
 ### 🌐 多言語対応
 

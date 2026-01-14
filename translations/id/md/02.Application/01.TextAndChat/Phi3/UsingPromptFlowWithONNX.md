@@ -33,33 +33,33 @@ Baca panduan ini untuk mengatur ONNX Runtime GenAI untuk Windows GPU [klik di si
 
 1. Instal ekstensi Prompt flow di VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.id.png)
+![pfvscode](../../../../../../translated_images/id/pfvscode.eff93dfc66a42cbe.png)
 
 2. Setelah menginstal ekstensi Prompt flow di VS Code, klik ekstensi tersebut, dan pilih **Installation dependencies** ikuti panduan ini untuk menginstal Prompt flow SDK di lingkungan Anda
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.id.png)
+![pfsetup](../../../../../../translated_images/id/pfsetup.b46e93096f5a254f.png)
 
 3. Unduh [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) dan buka contoh ini menggunakan VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.id.png)
+![pfsample](../../../../../../translated_images/id/pfsample.8d89e70584ffe7c4.png)
 
 4. Buka **flow.dag.yaml** untuk memilih lingkungan Python Anda
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.id.png)
+![pfdag](../../../../../../translated_images/id/pfdag.264a77f7366458ff.png)
 
    Buka **chat_phi3_ort.py** untuk mengubah lokasi Model Phi-3.5-instruct ONNX Anda
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.id.png)
+![pfphi](../../../../../../translated_images/id/pfphi.72da81d74244b45f.png)
 
 5. Jalankan prompt flow Anda untuk pengujian
 
 Buka **flow.dag.yaml** klik visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.id.png)
+![pfv](../../../../../../translated_images/id/pfv.ba8a81f34b20f603.png)
 
 setelah klik ini, jalankan untuk menguji
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.id.png)
+![pfflow](../../../../../../translated_images/id/pfflow.4e1135a089b1ce1b.png)
 
 1. Anda dapat menjalankan batch di terminal untuk memeriksa hasil lebih banyak
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Anda dapat memeriksa hasil di browser default Anda
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.id.png)
+![pfresult](../../../../../../translated_images/id/pfresult.c22c826f8062d7cb.png)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

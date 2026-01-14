@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Scenari di Fine Tuning
 
-![FineTuning con i Servizi MS](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.it.png)
+![FineTuning con i Servizi MS](../../../../translated_images/it/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Piattaforma** Include diverse tecnologie come Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito e ONNX Runtime.
 
@@ -24,7 +24,7 @@ Il processo di fine-tuning con le tecnologie Microsoft coinvolge vari componenti
 
 Esegui il fine-tuning del modello utilizzando il fine-tuning ospitato, senza la necessità di creare e gestire risorse di calcolo.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.it.png)
+![MaaS Fine Tuning](../../../../translated_images/it/MaaSfinetune.3eee4630607aff0d.png)
 
 Il fine-tuning serverless è disponibile per i modelli Phi-3-mini e Phi-3-medium, permettendo agli sviluppatori di personalizzare rapidamente e facilmente i modelli per scenari cloud e edge senza dover gestire risorse di calcolo. Abbiamo inoltre annunciato che Phi-3-small è ora disponibile tramite la nostra offerta Models-as-a-Service, così gli sviluppatori possono iniziare rapidamente e facilmente con lo sviluppo AI senza dover gestire l’infrastruttura sottostante.
 
@@ -32,7 +32,7 @@ Il fine-tuning serverless è disponibile per i modelli Phi-3-mini e Phi-3-medium
 
 Gli utenti gestiscono le proprie risorse di calcolo per eseguire il fine-tuning dei loro modelli.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.it.png)
+![Maap Fine Tuning](../../../../translated_images/it/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Gli utenti gestiscono le proprie risorse di calcolo per eseguire il fine-tuning 
 
 ## Esempi di Prestazioni del Fine Tuning
 
-![Prestazioni Fine Tuning](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.it.png)
+![Prestazioni Fine Tuning](../../../../translated_images/it/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Disclaimer**:  
 Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
