@@ -1,60 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
-  "translation_date": "2025-07-17T02:18:30+00:00",
+  "original_hash": "7f72d7981ed3640865700f51ae407da4",
+  "translation_date": "2026-01-14T15:33:42+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "tr"
 }
 -->
-# Whisper ile Etkileşimli Phi 3 Mini 4K Instruct Chatbot
+# Whisper ile Etkileşimli Phi 3 Mini 4K Yönergeli Sohbet Botu
 
 ## Genel Bakış
 
-Etkileşimli Phi 3 Mini 4K Instruct Chatbot, kullanıcıların Microsoft Phi 3 Mini 4K instruct demo ile metin veya ses girişi kullanarak etkileşimde bulunmasını sağlayan bir araçtır. Chatbot, çeviri, hava durumu güncellemeleri ve genel bilgi toplama gibi çeşitli görevler için kullanılabilir.
+Etkileşimli Phi 3 Mini 4K Yönergeli Sohbet Botu, kullanıcıların Microsoft Phi 3 Mini 4K yönergeli demoyla metin veya sesli giriş kullanarak etkileşimde bulunmasını sağlayan bir araçtır. Sohbet botu, çeviri, hava durumu güncellemeleri ve genel bilgi toplama gibi çeşitli görevler için kullanılabilir.
 
 ### Başlarken
 
-Bu chatbot'u kullanmak için aşağıdaki adımları izleyin:
+Bu sohbet botunu kullanmak için şu talimatları izleyin:
 
-1. Yeni bir [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) dosyası açın.
-2. Notebook’un ana penceresinde, bir metin giriş kutusu ve "Send" butonunun bulunduğu bir sohbet kutusu arayüzü göreceksiniz.
-3. Metin tabanlı chatbot’u kullanmak için, mesajınızı metin giriş kutusuna yazın ve "Send" butonuna tıklayın. Chatbot, notebook içinde doğrudan oynatılabilen bir ses dosyası ile yanıt verecektir.
+1. Yeni bir [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) açın.
+2. Defterin ana penceresinde, bir metin giriş kutusu ve bir "Gönder" düğmesi içeren bir sohbet kutusu arayüzü göreceksiniz.
+3. Metne dayalı sohbet botunu kullanmak için, mesajınızı metin giriş kutusuna yazın ve "Gönder" düğmesine tıklayın. Sohbet botu, doğrudan defter içinden oynatılabilecek bir ses dosyası ile yanıt verecektir.
 
-**Not**: Bu araç, GPU ve konuşma tanıma ile çeviri için kullanılan Microsoft Phi-3 ve OpenAI Whisper modellerine erişim gerektirir.
+**Not**: Bu araç GPU ve konuşma tanıma ile çeviri için kullanılan Microsoft Phi-3 ve OpenAI Whisper modellerine erişim gerektirir.
 
 ### GPU Gereksinimleri
 
-Bu demoyu çalıştırmak için 12 GB GPU belleğine ihtiyacınız var.
+Bu demoyu çalıştırmak için 12GB GPU belleğine ihtiyacınız vardır.
 
-**Microsoft-Phi-3-Mini-4K instruct** demosunu GPU üzerinde çalıştırmak için gereken bellek miktarı, giriş verisinin boyutu (ses veya metin), çeviri için kullanılan dil, modelin hızı ve GPU üzerindeki mevcut bellek gibi çeşitli faktörlere bağlıdır.
+**Microsoft-Phi-3-Mini-4K instruct** demosunu bir GPU üzerinde çalıştırmak için gereken bellek, giriş verisinin boyutu (ses veya metin), kullanılan dil, modelin hızı ve GPU üzerindeki mevcut bellek gibi çeşitli faktörlere bağlıdır.
 
-Genel olarak, Whisper modeli GPU’larda çalışacak şekilde tasarlanmıştır. Whisper modelini çalıştırmak için önerilen minimum GPU bellek miktarı 8 GB’dır, ancak gerekirse daha büyük bellek miktarlarını da kullanabilir.
+Genel olarak, Whisper modeli GPU'lar üzerinde çalışacak şekilde tasarlanmıştır. Whisper modelini çalıştırmak için önerilen minimum GPU belleği 8 GB'dir, ancak gerekirse daha büyük bellek miktarlarını da kullanabilir.
 
-Model üzerinde çok büyük veri veya yüksek hacimli istekler çalıştırmak daha fazla GPU belleği gerektirebilir ve/veya performans sorunlarına yol açabilir. Kendi kullanım senaryonuzu farklı yapılandırmalarla test etmeniz ve bellek kullanımını izleyerek ihtiyaçlarınıza en uygun ayarları belirlemeniz önerilir.
+Model üzerinde büyük miktarda veri veya yüksek istek hacmi çalıştırmanın daha fazla GPU belleği gerektirebileceğini ve/veya performans sorunlarına yol açabileceğini not etmek önemlidir. Özel ihtiyaçlarınız için en uygun ayarları belirlemek amacıyla kullanım durumunuzu farklı yapılandırmalarla test etmek ve bellek kullanımını izlemek önerilir.
 
-## Whisper ile Etkileşimli Phi 3 Mini 4K Instruct Chatbot için E2E Örneği
+## Whisper ile Etkileşimli Phi 3 Mini 4K Yönergeli Sohbet Botu için E2E Örneği
 
-[Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) başlıklı jupyter notebook, Microsoft Phi 3 Mini 4K instruct Demo’yu ses veya yazılı metin girdisinden metin üretmek için nasıl kullanacağınızı gösterir. Notebook birkaç fonksiyon tanımlar:
+[Whisper ile Etkileşimli Phi 3 Mini 4K Yönergeli Sohbet Botu](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) adlı jupyter defteri, Microsoft Phi 3 Mini 4K yönergeli demoyu ses veya yazılı metin girdisinden metin üretmek için nasıl kullanacağınızı gösterir. Defter birkaç fonksiyon tanımlar:
 
-1. `tts_file_name(text)`: Bu fonksiyon, oluşturulan ses dosyasını kaydetmek için giriş metnine dayalı bir dosya adı oluşturur.
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Bu fonksiyon, Edge TTS API’sini kullanarak giriş metni parçalarından bir ses dosyası oluşturur. Girdi parametreleri, metin parçalarının listesi, konuşma hızı, ses adı ve oluşturulan ses dosyasının kaydedileceği yoldur.
-1. `talk(input_text)`: Bu fonksiyon, Edge TTS API’sini kullanarak bir ses dosyası oluşturur ve /content/audio dizininde rastgele bir dosya adına kaydeder. Girdi parametresi, konuşmaya dönüştürülecek metindir.
-1. `run_text_prompt(message, chat_history)`: Bu fonksiyon, Microsoft Phi 3 Mini 4K instruct demo’yu kullanarak bir mesaj girdisinden ses dosyası oluşturur ve bunu sohbet geçmişine ekler.
-1. `run_audio_prompt(audio, chat_history)`: Bu fonksiyon, Whisper model API’sini kullanarak bir ses dosyasını metne dönüştürür ve sonucu `run_text_prompt()` fonksiyonuna iletir.
-1. Kod, kullanıcıların mesaj yazarak veya ses dosyası yükleyerek Phi 3 Mini 4K instruct demo ile etkileşimde bulunmasını sağlayan bir Gradio uygulaması başlatır. Çıktı, uygulama içinde metin mesajı olarak gösterilir.
+1. `tts_file_name(text)`: Bu fonksiyon, oluşturulan ses dosyasını kaydetmek için giriş metnine dayalı bir dosya adı üretir.
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Bu fonksiyon, Edge TTS API'sini kullanarak giriş metni parçalardan oluşan bir listeden ses dosyası üretir. Girdi parametreleri parça listesi, konuşma hızı, ses adı ve oluşturulan ses dosyasının kaydedileceği çıkış yoludur.
+1. `talk(input_text)`: Bu fonksiyon, Edge TTS API'sini kullanarak ses dosyası üretir ve /content/audio dizininde rastgele bir dosya adına kaydeder. Girdi parametresi, sese dönüştürülecek giriş metnidir.
+1. `run_text_prompt(message, chat_history)`: Bu fonksiyon, mesaj girdisinden Microsoft Phi 3 Mini 4K yönergeli demoyu kullanarak bir ses dosyası oluşturur ve bunu sohbet geçmişine ekler.
+1. `run_audio_prompt(audio, chat_history)`: Bu fonksiyon, bir ses dosyasını Whisper model API'si kullanarak metne dönüştürür ve `run_text_prompt()` fonksiyonuna iletir.
+1. Kod, kullanıcıların Phi 3 Mini 4K yönergeli demoyla mesaj yazarak veya ses dosyası yükleyerek etkileşim kurmasını sağlayan bir Gradio uygulaması başlatır. Çıktı, uygulama içinde bir metin mesajı olarak görüntülenir.
 
 ## Sorun Giderme
 
-Cuda GPU sürücülerinin kurulumu
+Cuda GPU sürücülerinin kurulması
 
-1. Linux uygulamalarınızın güncel olduğundan emin olun
+1. Linux uygulamanızın güncel olduğundan emin olun
 
     ```bash
     sudo apt update
     ```
 
-1. Cuda Sürücülerini yükleyin
+1. Cuda Sürücülerini Yükleyin
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
@@ -72,26 +72,26 @@ Cuda GPU sürücülerinin kurulumu
     nvidia-smi
     ```
 
-1. Önbelleği Boşaltma: PyTorch kullanıyorsanız, diğer GPU uygulamalarının kullanabilmesi için tüm kullanılmayan önbellek belleğini serbest bırakmak amacıyla torch.cuda.empty_cache() fonksiyonunu çağırabilirsiniz
+1. Boş Önbellek: PyTorch kullanıyorsanız, diğer GPU uygulamalarının kullanabilmesi için kullanılmayan önbellek belleğini boşaltmak amaçlı torch.cuda.empty_cache() çağrısı yapabilirsiniz
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-1. Nvidia Cuda’yı kontrol edin
+1. Nvidia Cuda'yı kontrol edin
 
     ```bash
     nvcc --version
     ```
 
-1. Hugging Face token oluşturmak için aşağıdaki adımları gerçekleştirin.
+1. Hugging Face token oluşturmak için aşağıdaki işlemleri yapın.
 
     - [Hugging Face Token Ayarları sayfasına](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo) gidin.
-    - **New token** seçeneğini seçin.
-    - Kullanmak istediğiniz proje **Adı**nı girin.
-    - **Type** olarak **Write** seçin.
+    - **Yeni token** seçin.
+    - Kullanmak istediğiniz proje **Adı** girin.
+    - **Tür**ü **Yazma** olarak seçin.
 
-> **Not**
+> [!NOTE]
 >
 > Aşağıdaki hatayla karşılaşırsanız:
 >
@@ -99,11 +99,15 @@ Cuda GPU sürücülerinin kurulumu
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Bunu çözmek için terminalinize aşağıdaki komutu yazın.
+> Bunu çözmek için terminalinizde aşağıdaki komutu yazın.
 >
 > ```bash
 > sudo ldconfig
 > ```
 
-**Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
