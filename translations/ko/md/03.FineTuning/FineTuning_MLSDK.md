@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 이 예제에서는 ultrachat_200k 데이터셋을 사용해 Phi-3-mini-4k-instruct 모델을 두 사람 간의 대화를 완성하는 작업에 맞게 미세 조정하는 과정을 다룹니다.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.ko.png)
+![MLFineTune](../../../../translated_images/ko/MLFineTune.928d4c6b3767dd35.png)
 
 이 예제는 Azure ML SDK와 Python을 사용해 미세 조정을 수행하고, 미세 조정된 모델을 실시간 추론을 위한 온라인 엔드포인트에 배포하는 방법을 보여줍니다.
 

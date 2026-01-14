@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Čia pateikiama šio E2E pavyzdžio apžvalga.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.lt.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/lt/00-01-architecture.02fc569e266d468c.png)
 
 ### Turinys
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portalas lange viršuje esančiame **paieškos langelyje** įveskite *azure machine learning* ir iš pasirodžiusių pasirinkimų pasirinkite **Azure Machine Learning**.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.lt.png)
+    ![Type azure machine learning](../../../../../../translated_images/lt/01-01-type-azml.a5116f8454d98c60.png)
 
 1. Iš navigacijos meniu pasirinkite **+ Create**.
 
 1. Iš navigacijos meniu pasirinkite **New workspace**.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.lt.png)
+    ![Select new workspace](../../../../../../translated_images/lt/01-02-select-new-workspace.83e17436f8898dc4.png)
 
 1. Atlikite šiuos veiksmus:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Pasirinkite naudoti **Application insights** (jei reikia, sukurkite naują).
     - Pasirinkite naudoti **Container registry** (jei reikia, sukurkite naują).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.lt.png)
+    ![Fill AZML.](../../../../../../translated_images/lt/01-03-fill-AZML.730a5177757bbebb.png)
 
 1. Pasirinkite **Review + Create**.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Pasirinkite norimą naudoti **Virtual machine family**. Pavyzdžiui, pasirinkite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, kuriame yra *Standard_NC24ads_A100_v4* GPU.
     - Iš navigacijos meniu pasirinkite **Request quota**.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.lt.png)
+        ![Request quota.](../../../../../../translated_images/lt/01-04-request-quota.3d3670c3221ab834.png)
 
     - Užklausos puslapyje įveskite norimą **New cores limit**. Pavyzdžiui, 24.
     - Užklausos puslapyje pasirinkite **Submit** GPU kvotos užklausai pateikti.
@@ -108,11 +108,11 @@ Norėdami tiksliai reguliuoti ir diegti savo modelius, pirmiausia turite sukurti
 
 1. Portalas lange viršuje esančiame **paieškos langelyje** įveskite *managed identities* ir iš pasirodžiusių pasirinkimų pasirinkite **Managed Identities**.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.lt.png)
+    ![Type managed identities.](../../../../../../translated_images/lt/01-05-type-managed-identities.9297b6039874eff8.png)
 
 1. Pasirinkite **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.lt.png)
+    ![Select create.](../../../../../../translated_images/lt/01-06-select-create.936d8d66d7144f9a.png)
 
 1. Atlikite šiuos veiksmus:
 
@@ -139,7 +139,7 @@ Norėdami tiksliai reguliuoti ir diegti savo modelius, pirmiausia turite sukurti
     - Pasirinkite naudoti **Resource group**.
     - Pasirinkite rolę **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.lt.png)
+    ![Fill contributor role.](../../../../../../translated_images/lt/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
 
 1. Pasirinkite **Save**.
 
@@ -147,7 +147,7 @@ Norėdami tiksliai reguliuoti ir diegti savo modelius, pirmiausia turite sukurti
 
 1. Portalas lange viršuje esančiame **paieškos langelyje** įveskite *storage accounts* ir iš pasirodžiusių pasirinkimų pasirinkite **Storage accounts**.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.lt.png)
+    ![Type storage accounts.](../../../../../../translated_images/lt/01-08-type-storage-accounts.1186c8e42933e49b.png)
 
 1. Pasirinkite saugojimo abonementą, susietą su jūsų Azure Machine Learning darbo sritimi, kurią sukūrėte. Pavyzdžiui, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Norėdami tiksliai reguliuoti ir diegti savo modelius, pirmiausia turite sukurti
     - Iš navigacijos meniu pasirinkite **+ Add**.
     - Iš navigacijos meniu pasirinkite **Add role assignment**.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.lt.png)
+    ![Add role.](../../../../../../translated_images/lt/01-09-add-role.d2db22fec1b187f0.png)
 
 1. Pridėjimo rolės puslapyje atlikite šiuos veiksmus:
 
@@ -171,7 +171,7 @@ Norėdami tiksliai reguliuoti ir diegti savo modelius, pirmiausia turite sukurti
     - Valdomų identitetų pasirinkimo puslapyje pasirinkite sukurtą valdomą identitetą, pvz., *finetunephi-managedidentity*.
     - Valdomų identitetų pasirinkimo puslapyje pasirinkite **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.lt.png)
+    ![Select managed identity.](../../../../../../translated_images/lt/01-10-select-managed-identity.5ce5ba181f72a4df.png)
 
 1. Pasirinkite **Review + assign**.
 
@@ -179,7 +179,7 @@ Norėdami tiksliai reguliuoti ir diegti savo modelius, pirmiausia turite sukurti
 
 1. Portalas lange viršuje esančiame **paieškos langelyje** įveskite *container registries* ir iš pasirodžiusių pasirinkimų pasirinkite **Container registries**.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.lt.png)
+    ![Type container registries.](../../../../../../translated_images/lt/01-11-type-container-registries.ff3b8bdc49dc596c.png)
 
 1. Pasirinkite konteinerių registrą, susietą su jūsų Azure Machine Learning darbo sritimi. Pavyzdžiui, *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ Dabar sukursite aplanką darbui ir nustatysite virtualią aplinką programos, ku
 
 1. Pasirinkite anksčiau sukurtą *finetune-phi* aplanką, kuris yra vietoje *C:\Users\yourUserName\finetune-phi*.
 
-    ![Atidaryti projekto aplanką.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.lt.png)
+    ![Atidaryti projekto aplanką.](../../../../../../translated_images/lt/01-12-open-project-folder.1fff9c7f41dd1639.png)
 
 1. Visual Studio Code kairiajame skydelyje spustelėkite dešinį pelės klavišą ir pasirinkite **New File**, kad sukurtumėte naują failą pavadinimu *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Dabar sukursite aplanką darbui ir nustatysite virtualią aplinką programos, ku
 
 1. Visual Studio Code kairiajame skydelyje spustelėkite dešinį pelės klavišą ir pasirinkite **New File**, kad sukurtumėte naują failą pavadinimu *deploy_model.py*.
 
-    ![Sukurti naują failą.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.lt.png)
+    ![Sukurti naują failą.](../../../../../../translated_images/lt/01-13-create-new-file.c17c150fff384a39.png)
 
 1. Visual Studio Code kairiajame skydelyje spustelėkite dešinį pelės klavišą ir pasirinkite **New Folder**, kad sukurtumėte naują aplanką pavadinimu *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Dabar sukursite aplanką darbui ir nustatysite virtualią aplinką programos, ku
     - Pasirinkite Azure prenumeratą, kurią šiuo metu naudojate.
     - Nukopijuokite ir įklijuokite savo Prenumeratos ID į *config.py* failą.
 
-    ![Rasti prenumeratos ID.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.lt.png)
+    ![Rasti prenumeratos ID.](../../../../../../translated_images/lt/01-14-find-subscriptionid.4f4ca33555f1e637.png)
 
 1. Atlikite šiuos veiksmus, kad pridėtumėte Azure darbo srities pavadinimą:
 
     - Pereikite prie jūsų sukurtos Azure Machine Learning išteklių grupės.
     - Nukopijuokite ir įklijuokite paskyros pavadinimą į *config.py* failą.
 
-    ![Rasti Azure Machine Learning vardą.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.lt.png)
+    ![Rasti Azure Machine Learning vardą.](../../../../../../translated_images/lt/01-15-find-AZML-name.1975f0422bca19a7.png)
 
 1. Atlikite šiuos veiksmus, kad pridėtumėte Azure Išteklų grupės pavadinimą:
 
     - Pereikite prie jūsų sukurtos Azure Machine Learning išteklių grupės.
     - Nukopijuokite ir įklijuokite savo Azure Išteklų grupės pavadinimą į *config.py* failą.
 
-    ![Rasti išteklių grupės pavadinimą.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.lt.png)
+    ![Rasti išteklių grupės pavadinimą.](../../../../../../translated_images/lt/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
 
 2. Atlikite šiuos veiksmus, kad pridėtumėte Azure Valdomos Tapatybės pavadinimą
 
     - Pereikite prie jūsų sukurtos Valdomų Tapatybių išteklių.
     - Nukopijuokite ir įklijuokite savo Azure Valdomos Tapatybės pavadinimą į *config.py* failą.
 
-    ![Rasti UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.lt.png)
+    ![Rasti UAI.](../../../../../../translated_images/lt/01-17-find-uai.3529464f53499827.png)
 
 ### Paruoškite duomenų rinkinį tikslinimui
 
@@ -509,7 +509,7 @@ Turite nustatyti Azure CLI autentifikacijai. Azure CLI leidžia valdyti Azure i�
 
 1. Pasirinkite Azure prenumeratą, kurią naudosite.
 
-    ![Rasti išteklių grupės pavadinimą.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.lt.png)
+    ![Rasti išteklių grupės pavadinimą.](../../../../../../translated_images/lt/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Paleidę *setup_ml.py*, pradėsite tikslinimo procesą Azure Machine Learning ap
 
 1. Šiame pratime sėkmingai tikslinote Phi-3 modelį naudodami Azure Machine Learning. Paleidę *setup_ml.py* scenarijų, nustatėte Azure Machine Learning aplinką ir inicijavote tikslinimą, apibrėžtą *fine_tune.py* faile. Atkreipkite dėmesį, kad tikslinimo procesas gali užtrukti nemažai laiko. Po komandos `python setup_ml.py` paleidimo turėsite palaukti proceso pabaigos. Tikslinimo užduoties būseną galite stebėti spustelėję terminale pateiktą nuorodą į Azure Machine Learning portalą.
 
-    ![Žiūrėti tikslinimo užduotį.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.lt.png)
+    ![Žiūrėti tikslinimo užduotį.](../../../../../../translated_images/lt/02-02-see-finetuning-job.59393bc3b143871e.png)
 
 ### Diegti tikslintą modelį
 
@@ -1080,11 +1080,11 @@ Paleidus *deploy_model.py* failą, visas diegimo procesas bus automatizuotas. Ji
 
 1. Kairėje pusėje esančiame skirtuke pasirinkite **Endpoints**.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.lt.png)
+    ![Select endpoints.](../../../../../../translated_images/lt/02-03-select-endpoints.c3136326510baff1.png)
 
 2. Pasirinkite sukurtą galinį tašką.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.lt.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/lt/02-04-select-endpoint-created.0363e7dca51dabb4.png)
 
 3. Šiame puslapyje galite tvarkyti diegimo metu sukurtus galinius taškus.
 
@@ -1103,7 +1103,7 @@ Sėkmingai įdiegę savo patobulintą modelį, dabar galite jį integruoti su Pr
 1. Nukopijuokite ir įklijuokite savo **REST endpoint** į *config.py* failą, pakeisdami `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` savo **REST endpoint**.
 1. Nukopijuokite ir įklijuokite savo **Primary key** į *config.py* failą, pakeisdami `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` savo **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.lt.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/lt/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
 
 #### Pridėkite kodą į *flow.dag.yml* failą
 
@@ -1212,7 +1212,7 @@ Sėkmingai įdiegę savo patobulintą modelį, dabar galite jį integruoti su Pr
 
 1. Štai pavyzdys rezultatų: dabar galite bendrauti su savo pasirinktu Phi-3 modeliu. Rekomenduojama užduoti klausimus, remiantis duomenimis, naudotais patobulinimui.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.lt.png)
+    ![Prompt flow example.](../../../../../../translated_images/lt/02-06-promptflow-example.89384abaf3ad71f6.png)
 
 ---
 

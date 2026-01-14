@@ -34,7 +34,7 @@ Sekite šiuos žingsnius, kad pradėtumėte naudoti šiuos išteklius:
 2. **Klonuokite saugyklą**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Prisijunkite prie Microsoft AI Discord bendruomenės ir susipažinkite su ekspertais bei kitais kūrėjais**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.lt.png)
+![cover](../../translated_images/lt/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Daugakalbė Parama
 

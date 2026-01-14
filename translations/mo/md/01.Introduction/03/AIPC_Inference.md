@@ -28,9 +28,9 @@ GPU 以其平行運算能力聞名，但並非所有 GPU 在處理圖形以外�
 
 Intel® NPU 裝置是整合於 Intel 客戶端 CPU 的 AI 推理加速器，從 Intel® Core™ Ultra 世代 CPU（前稱 Meteor Lake）開始支援。它能以節能方式執行人工神經網路任務。
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.mo.png)
+![Latency](../../../../../translated_images/mo/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.mo.png)
+![Latency770](../../../../../translated_images/mo/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU 加速函式庫**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 執行程式時，可透過工作管理員查看 NPU 運行狀態。
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.mo.png)
+![NPU](../../../../../translated_images/mo/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***範例***：[AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 以下為執行結果
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.mo.png)
+![DML](../../../../../translated_images/mo/aipc_DML.52a44180393ab491.png)
 
 ***範例***：[AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 轉換後的格式如下圖
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.mo.png)
+![openvino_convert](../../../../../translated_images/mo/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 透過 OVModelForCausalLM 載入模型路徑（model_dir）、相關設定（ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}）及硬體加速裝置（GPU.0）
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 執行程式時，可透過工作管理員查看 GPU 運行狀態
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.mo.png)
+![openvino_gpu](../../../../../translated_images/mo/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***範例***：[AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
