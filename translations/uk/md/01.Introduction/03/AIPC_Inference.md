@@ -28,9 +28,9 @@ GPU відомі своїми можливостями паралельних о
 
 Пристрій Intel® NPU — це прискорювач інференсу ШІ, інтегрований з клієнтськими CPU Intel, починаючи з покоління Intel® Core™ Ultra (раніше відомого як Meteor Lake). Він забезпечує енергоефективне виконання завдань штучних нейронних мереж.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.uk.png)
+![Latency](../../../../../translated_images/uk/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.uk.png)
+![Latency770](../../../../../translated_images/uk/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Під час виконання коду можна переглядати стан роботи NPU через Диспетчер завдань
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.uk.png)
+![NPU](../../../../../translated_images/uk/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***Приклади*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ось результат виконання
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.uk.png)
+![DML](../../../../../translated_images/uk/aipc_DML.52a44180393ab491.png)
 
 ***Приклади*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 конвертований формат виглядає так
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.uk.png)
+![openvino_convert](../../../../../translated_images/uk/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 Завантажте шляхи до моделі (model_dir), відповідні конфігурації (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) та апаратно-прискорені пристрої (GPU.0) через OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Під час виконання коду можна переглядати стан роботи GPU через Диспетчер завдань
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.uk.png)
+![openvino_gpu](../../../../../translated_images/uk/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***Приклади*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

@@ -33,33 +33,33 @@ Prompt flow OpenAI، Azure OpenAI Service، اور حسب ضرورت ماڈلز 
 
 1. Prompt flow VS Code ایکسٹینشن انسٹال کریں
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.ur.png)
+![pfvscode](../../../../../../translated_images/ur/pfvscode.eff93dfc66a42cbe.png)
 
 2. Prompt flow VS Code ایکسٹینشن انسٹال کرنے کے بعد، ایکسٹینشن پر کلک کریں، اور **Installation dependencies** منتخب کریں، اس رہنما کے مطابق اپنے ماحول میں Prompt flow SDK انسٹال کریں
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.ur.png)
+![pfsetup](../../../../../../translated_images/ur/pfsetup.b46e93096f5a254f.png)
 
 3. [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ڈاؤن لوڈ کریں اور VS Code میں یہ سیمپل کھولیں
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.ur.png)
+![pfsample](../../../../../../translated_images/ur/pfsample.8d89e70584ffe7c4.png)
 
 4. **flow.dag.yaml** کھولیں اور اپنا Python ماحول منتخب کریں
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.ur.png)
+![pfdag](../../../../../../translated_images/ur/pfdag.264a77f7366458ff.png)
 
    **chat_phi3_ort.py** کھولیں اور اپنے Phi-3.5-instruct ONNX ماڈل کی جگہ تبدیل کریں
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.ur.png)
+![pfphi](../../../../../../translated_images/ur/pfphi.72da81d74244b45f.png)
 
 5. اپنے prompt flow کو ٹیسٹ کرنے کے لیے چلائیں
 
 **flow.dag.yaml** کھولیں اور visual editor پر کلک کریں
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.ur.png)
+![pfv](../../../../../../translated_images/ur/pfv.ba8a81f34b20f603.png)
 
 اس پر کلک کرنے کے بعد، اسے چلائیں اور ٹیسٹ کریں
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.ur.png)
+![pfflow](../../../../../../translated_images/ur/pfflow.4e1135a089b1ce1b.png)
 
 1. آپ ٹرمینل میں بیچ چلا کر مزید نتائج چیک کر سکتے ہیں
 
@@ -71,7 +71,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 آپ اپنے ڈیفالٹ براؤزر میں نتائج دیکھ سکتے ہیں
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.ur.png)
+![pfresult](../../../../../../translated_images/ur/pfresult.c22c826f8062d7cb.png)
 
 **دستخطی نوٹ**:  
 یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
