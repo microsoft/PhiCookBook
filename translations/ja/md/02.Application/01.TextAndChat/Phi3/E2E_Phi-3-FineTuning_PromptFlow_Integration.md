@@ -689,7 +689,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > *fine_tune.py* ファイル内の `pretrained_model_name` を `"microsoft/Phi-3-mini-4k-instruct"` から任意のファインチューニングしたいモデル名に変更できます。例えば、`"microsoft/Phi-3.5-mini-instruct"` に変更すると Phi-3.5-mini-instruct モデルでファインチューニングします。希望するモデル名を見つけるには [Hugging Face](https://huggingface.co/) にアクセスし、興味のあるモデルを検索してその名前をスクリプト内の `pretrained_model_name` フィールドにコピー＆ペーストしてください。
 >
-> <image type="content" src="../../../../imgs/02/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Phi-3.5 をファインチューニング。">
+> <image type="content" src="../../../../../../translated_images/finetunephi3.5.a55fc02962430af5.ja.png" alt-text="Phi-3.5 をファインチューニング。">
 >
 
 #### *setup_ml.py* ファイルにコードを追加する
