@@ -42,7 +42,7 @@ Behalten Sie die Versionskontrolle im Blick und teilen Sie Wissen effektiv. Opti
 
 In Microsoft Prompt Flow spielt die Evaluation eine entscheidende Rolle bei der Beurteilung der Leistung Ihrer KI-Modelle. Schauen wir uns an, wie Sie Evaluations-Flows und Metriken innerhalb von Prompt Flow anpassen können:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.de.png)
+![PFVizualise](../../../../../translated_images/de/pfvisualize.c1d9ca75baa2a222.png)
 
 **Verständnis der Evaluation in Prompt Flow**
 
