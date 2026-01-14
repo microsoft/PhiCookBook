@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## فائن ٹیوننگ کے منظرنامے
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.ur.png)
+![FineTuning with MS Services](../../../../translated_images/ur/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **پلیٹ فارم** اس میں مختلف ٹیکنالوجیز شامل ہیں جیسے Azure AI Foundry، Azure Machine Learning، AI Tools، Kaito، اور ONNX Runtime۔
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ماڈل کو ہوسٹڈ فائن ٹیوننگ کے ذریعے فائن ٹیون کریں، بغیر کمپیوٹ بنانے اور منظم کرنے کی ضرورت کے۔
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.ur.png)
+![MaaS Fine Tuning](../../../../translated_images/ur/MaaSfinetune.3eee4630607aff0d.png)
 
 سرورلیس فائن ٹیوننگ Phi-3-mini اور Phi-3-medium ماڈلز کے لیے دستیاب ہے، جو ڈویلپرز کو کلاؤڈ اور ایج کے منظرناموں کے لیے ماڈلز کو تیزی اور آسانی سے حسب ضرورت بنانے کی سہولت دیتی ہے، بغیر کمپیوٹ کے انتظام کے۔ ہم نے یہ بھی اعلان کیا ہے کہ Phi-3-small اب Models-as-a-Service آفرنگ کے ذریعے دستیاب ہے تاکہ ڈویلپرز بغیر بنیادی انفراسٹرکچر کے انتظام کے AI ڈیولپمنٹ کا آغاز جلدی اور آسانی سے کر سکیں۔
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 صارفین اپنے کمپیوٹ کا انتظام کرتے ہیں تاکہ اپنے ماڈلز کو فائن ٹیون کر سکیں۔
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.ur.png)
+![Maap Fine Tuning](../../../../translated_images/ur/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## فائن ٹیوننگ کی کارکردگی کی مثالیں
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.ur.png)
+![Finetuning Performance](../../../../translated_images/ur/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **دستخطی دستبرداری**:  
 یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

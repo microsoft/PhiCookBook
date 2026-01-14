@@ -36,7 +36,7 @@ Chúng ta có thể chọn [Ollama](https://ollama.com) hoặc [LlamaEdge](https
 
 Nếu bạn muốn sử dụng gguf trên cả đám mây và thiết bị edge cùng lúc, LlamaEdge có thể được hiểu như WasmEdge (WasmEdge là một runtime WebAssembly nhẹ, hiệu năng cao và có khả năng mở rộng, phù hợp cho các ứng dụng đám mây gốc, edge và phi tập trung. Nó hỗ trợ các ứng dụng serverless, hàm nhúng, microservices, hợp đồng thông minh và thiết bị IoT). Bạn có thể triển khai mô hình lượng tử gguf lên thiết bị edge và đám mây thông qua LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.vi.jpg)
+![llamaedge](../../../../../translated_images/vi/llamaedge.e9d6ff96dff11cf7.jpg)
 
 Dưới đây là các bước sử dụng
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Kết quả chạy như sau
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.vi.png)
+![llamaedgerun](../../../../../translated_images/vi/llamaedgerun.bed921516c9a821c.png)
 
 ***Mã mẫu*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

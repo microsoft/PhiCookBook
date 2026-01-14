@@ -19,7 +19,7 @@ Hãy cùng khám phá cách tinh chỉnh mô hình ngôn ngữ Phi-3 Mini của 
 - **Tiện lợi:** Quá trình tinh chỉnh diễn ra như thế nào – tôi có cần viết mã riêng không? Tôi có cần chuẩn bị tài nguyên tính toán không?
 - **An toàn:** Các mô hình tinh chỉnh có thể gặp rủi ro về an toàn – có các biện pháp bảo vệ nào để tránh gây hại ngoài ý muốn không?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.vi.png)
+![AIFoundry Models](../../../../translated_images/vi/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Chuẩn bị cho việc tinh chỉnh
 
@@ -71,7 +71,7 @@ Loại file được hỗ trợ là JSON Lines. Các file được tải lên kh
 
 Azure AI Foundry cho phép bạn tùy chỉnh các mô hình ngôn ngữ lớn dựa trên bộ dữ liệu cá nhân thông qua quá trình gọi là tinh chỉnh. Tinh chỉnh mang lại giá trị lớn bằng cách cho phép tùy biến và tối ưu hóa cho các nhiệm vụ và ứng dụng cụ thể. Điều này giúp cải thiện hiệu suất, tiết kiệm chi phí, giảm độ trễ và tạo ra kết quả phù hợp hơn.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.vi.png)
+![Finetune AI Foundry](../../../../translated_images/vi/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Tạo dự án mới
 
@@ -79,14 +79,14 @@ Azure AI Foundry cho phép bạn tùy chỉnh các mô hình ngôn ngữ lớn d
 
 1. Chọn **+New project** để tạo dự án mới trong Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/select-new-project.cd31c0404088d7a3.png)
 
 1. Thực hiện các bước sau:
 
     - Tên **Hub** của dự án. Phải là giá trị duy nhất.
     - Chọn **Hub** để sử dụng (tạo mới nếu cần).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/create-project.ca3b71298b90e420.png)
 
 1. Thực hiện các bước sau để tạo một hub mới:
 
@@ -97,7 +97,7 @@ Azure AI Foundry cho phép bạn tùy chỉnh các mô hình ngôn ngữ lớn d
     - Chọn **Connect Azure AI Services** để sử dụng (tạo mới nếu cần).
     - Chọn **Connect Azure AI Search** và chọn **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/create-hub.49e53d235e80779e.png)
 
 1. Chọn **Next**.
 1. Chọn **Create a project**.
@@ -115,15 +115,15 @@ Trước khi tinh chỉnh, thu thập hoặc tạo bộ dữ liệu liên quan �
 
 1. Gõ *phi-3* vào **thanh tìm kiếm** và chọn mô hình phi-3 bạn muốn sử dụng.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/select-model.60ef2d4a6a3cec57.png)
 
 1. Chọn **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/select-finetune.a976213b543dd9d8.png)
 
 1. Nhập **Tên mô hình đã tinh chỉnh**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/finetune1.c2b39463f0d34148.png)
 
 1. Chọn **Next**.
 
@@ -132,13 +132,13 @@ Trước khi tinh chỉnh, thu thập hoặc tạo bộ dữ liệu liên quan �
     - Chọn **task type** là **Chat completion**.
     - Chọn **Training data** bạn muốn sử dụng. Bạn có thể tải lên qua dữ liệu của Azure AI Foundry hoặc từ môi trường cục bộ.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/finetune2.43cb099b1a94442d.png)
 
 1. Chọn **Next**.
 
 1. Tải lên **Validation data** bạn muốn sử dụng hoặc chọn **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/finetune3.fd96121b67dcdd92.png)
 
 1. Chọn **Next**.
 
@@ -148,15 +148,15 @@ Trước khi tinh chỉnh, thu thập hoặc tạo bộ dữ liệu liên quan �
     - Chọn **Learning rate** bạn muốn sử dụng.
     - Chọn **Epochs** bạn muốn sử dụng.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/finetune4.e18b80ffccb5834a.png)
 
 1. Chọn **Submit** để bắt đầu quá trình tinh chỉnh.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/select-submit.0a3802d581bac271.png)
 
 1. Khi mô hình của bạn được tinh chỉnh xong, trạng thái sẽ hiển thị là **Completed**, như hình dưới đây. Bây giờ bạn có thể triển khai mô hình và sử dụng nó trong ứng dụng của mình, trong playground hoặc trong prompt flow. Để biết thêm thông tin, xem [Cách triển khai dòng mô hình ngôn ngữ nhỏ Phi-3 với Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.vi.png)
+    ![FineTuneSelect](../../../../translated_images/vi/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Để biết thông tin chi tiết hơn về tinh chỉnh Phi-3, vui lòng truy cập [Tinh chỉnh mô hình Phi-3 trong Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

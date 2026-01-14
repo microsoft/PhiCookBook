@@ -36,7 +36,7 @@ d. Python 3.8+
 
 如果你想同时在云端和边缘设备使用 gguf，LlamaEdge 可以理解为 WasmEdge（WasmEdge 是一个轻量级、高性能、可扩展的 WebAssembly 运行时，适用于云原生、边缘和去中心化应用。它支持无服务器应用、嵌入式函数、微服务、智能合约和物联网设备）。你可以通过 LlamaEdge 将 gguf 的量化模型部署到边缘设备和云端。
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.zh.jpg)
+![llamaedge](../../../../../translated_images/zh/llamaedge.e9d6ff96dff11cf7.jpg)
 
 以下是使用步骤：
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 运行结果如下
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.zh.png)
+![llamaedgerun](../../../../../translated_images/zh/llamaedgerun.bed921516c9a821c.png)
 
 ***示例代码*** [Phi-3 mini WASM Notebook 示例](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

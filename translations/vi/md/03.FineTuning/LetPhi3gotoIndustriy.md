@@ -41,7 +41,7 @@ Fine-tuning dựa trên việc cải tiến một mô hình nhất định. Nó 
 
 ## **Cách sử dụng RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007.vi.png)
+![rag](../../../../translated_images/vi/rag.2014adc59e6f6007.png)
 
 Cơ sở dữ liệu vector là tập hợp dữ liệu được lưu trữ dưới dạng toán học. Cơ sở dữ liệu vector giúp các mô hình học máy dễ dàng ghi nhớ các đầu vào trước đó, cho phép học máy được sử dụng để hỗ trợ các trường hợp như tìm kiếm, đề xuất và tạo văn bản. Dữ liệu có thể được nhận diện dựa trên các chỉ số tương đồng thay vì khớp chính xác, giúp mô hình máy tính hiểu được ngữ cảnh của dữ liệu.
 
@@ -57,7 +57,7 @@ Các thuật toán thường dùng trong Fine-tuning là Lora và QLora. Làm th
 
 ### **Lora và QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca0.vi.png)
+![lora](../../../../translated_images/vi/qlora.e6446c988ee04ca0.png)
 
 LoRA (Low-Rank Adaptation) và QLoRA (Quantized Low-Rank Adaptation) đều là kỹ thuật dùng để fine-tune các mô hình ngôn ngữ lớn (LLMs) bằng phương pháp Parameter Efficient Fine Tuning (PEFT). Các kỹ thuật PEFT được thiết kế để huấn luyện mô hình hiệu quả hơn so với các phương pháp truyền thống.
 

@@ -68,7 +68,7 @@ Azure ML đã bổ sung nhiều chức năng liên quan đến LLM/SLM, kết h�
 
 Người dùng doanh nghiệp có thể triển khai các mô hình khác nhau theo từng kịch bản kinh doanh thông qua Danh mục mô hình, và cung cấp dịch vụ dưới dạng Model as Service để các nhà phát triển hoặc người dùng doanh nghiệp truy cập.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.vi.png)
+![models](../../../../translated_images/vi/models.e6c7ff50a51806fd.png)
 
 Danh mục mô hình trong Azure Machine Learning studio là trung tâm để khám phá và sử dụng nhiều loại mô hình giúp bạn xây dựng các ứng dụng Generative AI. Danh mục mô hình có hàng trăm mô hình từ các nhà cung cấp như Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, bao gồm cả các mô hình được Microsoft huấn luyện. Các mô hình từ nhà cung cấp không phải Microsoft được gọi là Non-Microsoft Products, theo Điều khoản Sản phẩm của Microsoft, và chịu các điều khoản đi kèm với mô hình.
 
@@ -78,7 +78,7 @@ Cốt lõi của pipeline học máy là chia một nhiệm vụ học máy hoà
 
 Khi tinh chỉnh SLM / LLM, chúng ta có thể quản lý dữ liệu, huấn luyện và quy trình tạo ra thông qua Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.vi.png)
+![finetuning](../../../../translated_images/vi/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

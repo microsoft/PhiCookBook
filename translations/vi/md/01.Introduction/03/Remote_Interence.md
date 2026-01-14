@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Sau khi các adapter được huấn luyện trong môi trường từ xa, hãy sử dụng một ứng dụng Gradio đơn giản để tương tác với mô hình.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.vi.png)
+![Fine-tune complete](../../../../../translated_images/vi/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Cấp phát tài nguyên Azure  
 Bạn cần thiết lập các tài nguyên Azure cho suy luận từ xa bằng cách thực thi lệnh `AI Toolkit: Provision Azure Container Apps for inference` từ bảng lệnh. Trong quá trình thiết lập này, bạn sẽ được yêu cầu chọn Azure Subscription và nhóm tài nguyên của mình.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.vi.png)
+![Provision Inference Resource](../../../../../translated_images/vi/command-provision-inference.467afc8d351642fc.png)
 
 Mặc định, subscription và nhóm tài nguyên cho suy luận nên trùng với những cái đã dùng cho bước tinh chỉnh. Quá trình suy luận sẽ sử dụng cùng một Azure Container App Environment và truy cập mô hình cùng adapter mô hình được lưu trong Azure Files, được tạo ra trong bước tinh chỉnh.
 
@@ -24,7 +24,7 @@ Mặc định, subscription và nhóm tài nguyên cho suy luận nên trùng v�
 ### Triển khai cho suy luận  
 Nếu bạn muốn chỉnh sửa mã suy luận hoặc tải lại mô hình suy luận, hãy thực thi lệnh `AI Toolkit: Deploy for inference`. Lệnh này sẽ đồng bộ mã mới nhất của bạn với ACA và khởi động lại bản sao.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.vi.png)
+![Deploy for inference](../../../../../translated_images/vi/command-deploy.9adb4e310dd0b0ae.png)
 
 Sau khi triển khai thành công, mô hình đã sẵn sàng để đánh giá qua endpoint này.
 
@@ -32,7 +32,7 @@ Sau khi triển khai thành công, mô hình đã sẵn sàng để đánh giá 
 
 Bạn có thể truy cập API suy luận bằng cách nhấn nút "*Go to Inference Endpoint*" hiển thị trong thông báo của VSCode. Ngoài ra, endpoint web API có thể được tìm thấy trong `ACA_APP_ENDPOINT` ở file `./infra/inference.config.json` và trong bảng đầu ra.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.vi.png)
+![App Endpoint](../../../../../translated_images/vi/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** Endpoint suy luận có thể mất vài phút để hoạt động hoàn toàn.
 

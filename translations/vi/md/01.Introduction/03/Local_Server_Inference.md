@@ -15,11 +15,11 @@ Chúng ta có thể triển khai Phi-3 trên một máy chủ cục bộ. Ngư�
 
 Trong ứng dụng Copilot, chúng ta tạo ứng dụng thông qua Semantic Kernel / LangChain. Loại khung ứng dụng này thường tương thích với Azure OpenAI Service / các mô hình OpenAI, đồng thời cũng hỗ trợ các mô hình mã nguồn mở trên Hugging Face và các mô hình cục bộ. Vậy nếu muốn sử dụng Semantic Kernel để truy cập Phi-3-mini thì làm thế nào? Lấy ví dụ với .NET, chúng ta có thể kết hợp nó với Hugging Face Connector trong Semantic Kernel. Theo mặc định, nó sẽ tương ứng với model id trên Hugging Face (lần đầu sử dụng, mô hình sẽ được tải xuống từ Hugging Face, mất khá nhiều thời gian). Bạn cũng có thể kết nối với dịch vụ cục bộ đã được xây dựng sẵn. So với hai cách, chúng tôi khuyên bạn nên dùng cách sau vì nó có tính tự chủ cao hơn, đặc biệt trong các ứng dụng doanh nghiệp.
 
-![sk](../../../../../translated_images/sk.d03785c25edc6d44.vi.png)
+![sk](../../../../../translated_images/vi/sk.d03785c25edc6d44.png)
 
 Từ hình trên, việc truy cập dịch vụ cục bộ qua Semantic Kernel có thể dễ dàng kết nối với máy chủ mô hình Phi-3-mini tự xây dựng. Dưới đây là kết quả chạy thử:
 
-![skrun](../../../../../translated_images/skrun.5aafc1e7197dca20.vi.png)
+![skrun](../../../../../translated_images/vi/skrun.5aafc1e7197dca20.png)
 
 ***Mã mẫu*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
