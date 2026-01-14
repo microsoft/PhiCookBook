@@ -42,7 +42,7 @@ Panatilihin ang version control at epektibong maibahagi ang kaalaman. Pabilisin 
 
 Sa Microsoft Prompt Flow, mahalaga ang evaluation sa pagtukoy kung gaano kahusay ang performance ng iyong AI models. Tingnan natin kung paano mo maiaangkop ang evaluation flows at metrics sa loob ng Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.tl.png)
+![PFVizualise](../../../../../translated_images/tl/pfvisualize.c1d9ca75baa2a222.png)
 
 **Pag-unawa sa Evaluation sa Prompt Flow**
 

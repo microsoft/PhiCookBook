@@ -24,7 +24,7 @@ Sa E2E sample na ito, matututunan mo kung paano i-fine-tune ang Phi-3 model at i
 
 Narito ang pangkalahatang ideya ng E2E sample na ito.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.tl.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/tl/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Talaan ng Nilalaman
 
@@ -49,13 +49,13 @@ Narito ang pangkalahatang ideya ng E2E sample na ito.
 
 1. I-type ang *azure machine learning* sa **search bar** sa itaas ng portal page at piliin ang **Azure Machine Learning** mula sa mga opsyon na lalabas.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.tl.png)
+    ![Type azure machine learning.](../../../../../../translated_images/tl/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Piliin ang **+ Create** mula sa navigation menu.
 
 3. Piliin ang **New workspace** mula sa navigation menu.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.tl.png)
+    ![Select new workspace.](../../../../../../translated_images/tl/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Gawin ang mga sumusunod na gawain:
 
@@ -68,7 +68,7 @@ Narito ang pangkalahatang ideya ng E2E sample na ito.
     - Piliin ang **Application insights** na gagamitin (gumawa ng bago kung kinakailangan).
     - Piliin ang **Container registry** na gagamitin (gumawa ng bago kung kinakailangan).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.tl.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/tl/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Piliin ang **Review + Create**.
 
@@ -91,7 +91,7 @@ Sa tutorial na ito, matututunan mo kung paano i-fine-tune at ideploy ang isang P
     - Piliin ang **Virtual machine family** na gagamitin. Halimbawa, piliin ang **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, na kinabibilangan ng *Standard_NC24ads_A100_v4* GPU.
     - Piliin ang **Request quota** mula sa navigation menu.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.tl.png)
+        ![Request quota.](../../../../../../translated_images/tl/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Sa loob ng Request quota page, ilagay ang **New cores limit** na gusto mong gamitin. Halimbawa, 24.
     - Sa loob ng Request quota page, piliin ang **Submit** para humiling ng GPU quota.
@@ -112,11 +112,11 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
 
 1. I-type ang *managed identities* sa **search bar** sa itaas ng portal page at piliin ang **Managed Identities** mula sa mga opsyon na lalabas.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.tl.png)
+    ![Type managed identities.](../../../../../../translated_images/tl/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Piliin ang **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.tl.png)
+    ![Select create.](../../../../../../translated_images/tl/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Gawin ang mga sumusunod:
 
@@ -125,7 +125,7 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
     - Piliin ang **Region** na gusto mong gamitin.
     - Ilagay ang **Name**. Dapat ito ay isang natatanging halaga.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.tl.png)
+    ![Select create.](../../../../../../translated_images/tl/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Piliin ang **Review + create**.
 
@@ -145,7 +145,7 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
     - Piliin ang **Resource group** na gagamitin.
     - Piliin ang **Role** sa **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.tl.png)
+    ![Fill contributor role.](../../../../../../translated_images/tl/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Piliin ang **Save**.
 
@@ -153,7 +153,7 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
 
 1. I-type ang *storage accounts* sa **search bar** sa itaas ng portal page at piliin ang **Storage accounts** mula sa mga opsyon na lalabas.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.tl.png)
+    ![Type storage accounts.](../../../../../../translated_images/tl/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Piliin ang storage account na kaugnay ng Azure Machine Learning workspace na ginawa mo. Halimbawa, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
     - Piliin ang **+ Add** mula sa navigation menu.
     - Piliin ang **Add role assignment** mula sa navigation menu.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.tl.png)
+    ![Add role.](../../../../../../translated_images/tl/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Sa loob ng Add role assignment page, gawin ang mga sumusunod:
 
@@ -177,7 +177,7 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
     - Sa loob ng Select managed identities page, piliin ang Manage Identity na ginawa mo. Halimbawa, *finetunephi-managedidentity*.
     - Sa loob ng Select managed identities page, piliin ang **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.tl.png)
+    ![Select managed identity.](../../../../../../translated_images/tl/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Piliin ang **Review + assign**.
 
@@ -185,7 +185,7 @@ Para sa fine-tuning at pag-deploy ng iyong mga modelo, kailangan mo munang gumaw
 
 1. I-type ang *container registries* sa **search bar** sa itaas ng portal page at piliin ang **Container registries** mula sa mga opsyon na lalabas.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.tl.png)
+    ![Type container registries.](../../../../../../translated_images/tl/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Piliin ang container registry na kaugnay ng Azure Machine Learning workspace. Halimbawa, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod
 
 1. Piliin ang *finetune-phi* folder na iyong ginawa, na matatagpuan sa *C:\Users\yourUserName\finetune-phi*.
 
-    ![Piliin ang folder na iyong ginawa.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.tl.png)
+    ![Piliin ang folder na iyong ginawa.](../../../../../../translated_images/tl/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Sa kaliwang pane ng Visual Studio Code, i-right-click at piliin ang **New File** upang gumawa ng bagong file na pinangalanang *download_dataset.py*.
 
-    ![Gumawa ng bagong file.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.tl.png)
+    ![Gumawa ng bagong file.](../../../../../../translated_images/tl/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Ihanda ang dataset para sa fine-tuning
 
@@ -392,7 +392,7 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang **+ New**.
 
-    ![Piliin ang compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.tl.png)
+    ![Piliin ang compute.](../../../../../../translated_images/tl/06-01-select-compute.a29cff290b480252.png)
 
 1. Isagawa ang mga sumusunod:
 
@@ -402,7 +402,7 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
     - Piliin ang **Virtual machine size** filter sa **Select from all options**.
     - Piliin ang **Virtual machine size** sa **Standard_NC24ads_A100_v4**.
 
-    ![Gumawa ng cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.tl.png)
+    ![Gumawa ng cluster.](../../../../../../translated_images/tl/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Piliin ang **Next**.
 
@@ -413,7 +413,7 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
     - Piliin ang **Maximum number of nodes** sa **1**.
     - Piliin ang **Idle seconds before scale down** sa **120**.
 
-    ![Gumawa ng cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.tl.png)
+    ![Gumawa ng cluster.](../../../../../../translated_images/tl/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Piliin ang **Create**.
 
@@ -423,18 +423,18 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang Azure Machine Learning workspace na iyong ginawa.
 
-    ![Piliin ang workspace na iyong ginawa.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.tl.png)
+    ![Piliin ang workspace na iyong ginawa.](../../../../../../translated_images/tl/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Isagawa ang mga sumusunod:
 
     - Piliin ang **Model catalog** mula sa kaliwang tab.
     - I-type ang *phi-3-mini-4k* sa **search bar** at piliin ang **Phi-3-mini-4k-instruct** mula sa lumalabas na mga opsyon.
 
-    ![I-type ang phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.tl.png)
+    ![I-type ang phi-3-mini-4k.](../../../../../../translated_images/tl/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Piliin ang **Fine-tune** mula sa navigation menu.
 
-    ![Piliin ang fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.tl.png)
+    ![Piliin ang fine tune.](../../../../../../translated_images/tl/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Isagawa ang mga sumusunod:
 
@@ -443,7 +443,7 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
     - Piliin ang Validation data upload type sa **Provide different validation data**.
     - Piliin ang **+ Select data** upang i-upload ang **Validation data**.
 
-    ![Punan ang fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.tl.png)
+    ![Punan ang fine-tuning page.](../../../../../../translated_images/tl/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Sa ehersisyong ito, matagumpay mong na-fine-tune ang Phi-3 model gamit ang Azure Machine Learning. Pakitandaan na ang proseso ng fine-tuning ay maaaring tumagal ng isang konsiderableng oras. Matapos patakbuhin ang fine-tuning job, kailangan mong maghintay para sa pagkakatapos nito. Maaari mong subaybayan ang status ng fine-tuning job sa pamamagitan ng pagpunta sa Jobs tab sa kaliwang bahagi ng iyong Azure Machine Learning Workspace. Sa susunod na bahagi, i-deploy mo ang fine-tuned model at i-integrate ito sa Prompt flow.
 
-    ![Tingnan ang finetuning job.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.tl.png)
+    ![Tingnan ang finetuning job.](../../../../../../translated_images/tl/06-08-output.2bd32e59930672b1.png)
 
 ### I-deploy ang fine-tuned na Phi-3 model
 
@@ -471,17 +471,17 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang Azure Machine Learning workspace na iyong ginawa.
 
-    ![Piliin ang workspace na iyong ginawa.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.tl.png)
+    ![Piliin ang workspace na iyong ginawa.](../../../../../../translated_images/tl/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Piliin ang **Models** mula sa kaliwang tab.
 1. Piliin ang **+ Register**.
 1. Piliin ang **From a job output**.
 
-    ![Irehistro ang modelo.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.tl.png)
+    ![Irehistro ang modelo.](../../../../../../translated_images/tl/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Piliin ang job na iyong ginawa.
 
-    ![Piliin ang job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.tl.png)
+    ![Piliin ang job.](../../../../../../translated_images/tl/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Piliin ang **Next**.
 
@@ -489,17 +489,17 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Siguraduhing naka-select ang **Job output**; karaniwang ito ay awtomatikong naka-select.
 
-    ![Piliin ang output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.tl.png)
+    ![Piliin ang output.](../../../../../../translated_images/tl/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Piliin ang **Next**.
 
 3. Piliin ang **Register**.
 
-    ![Piliin ang register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.tl.png)
+    ![Piliin ang register.](../../../../../../translated_images/tl/07-04-register.fd82a3b293060bc7.png)
 
 4. Maaari mong tingnan ang iyong narehistrong modelo sa pamamagitan ng pagpunta sa **Models** menu mula sa kaliwang tab.
 
-    ![Narehistrong modelo.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.tl.png)
+    ![Narehistrong modelo.](../../../../../../translated_images/tl/07-05-registered-model.7db9775f58dfd591.png)
 
 #### I-deploy ang fine-tuned na modelo
 
@@ -509,13 +509,13 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang **Real-time endpoints** mula sa navigation menu.
 
-    ![Gumawa ng endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.tl.png)
+    ![Gumawa ng endpoint.](../../../../../../translated_images/tl/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Piliin ang **Create**.
 
 1. Piliin ang narehistrong modelo na ginawa mo.
 
-    ![Piliin ang narehistrong modelo.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.tl.png)
+    ![Piliin ang narehistrong modelo.](../../../../../../translated_images/tl/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Piliin ang **Select**.
 
@@ -527,7 +527,7 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
     - Ilagay ang **Endpoint name**. Dapat ito ay natatanging halaga.
     - Ilagay ang **Deployment name**. Dapat ito ay natatanging halaga.
 
-    ![Punan ang deployment setting.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.tl.png)
+    ![Punan ang deployment setting.](../../../../../../translated_images/tl/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Piliin ang **Deploy**.
 
@@ -543,14 +543,14 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang endpoint na ginawa mo.
 
-    ![Piliin ang endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.tl.png)
+    ![Piliin ang endpoints](../../../../../../translated_images/tl/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. Sa pahinang ito, maaari mong pamahalaan ang mga endpoints habang ipinapagawa ang deployment.
 
 > [!NOTE]
 > Kapag natapos na ang deployment, tiyakin na ang **Live traffic** ay nakaset sa **100%**. Kung hindi, piliin ang **Update traffic** upang ayusin ang mga setting ng traffic. Tandaan na hindi mo maaaring subukan ang modelo kung ang traffic ay nakaset sa 0%.
 >
-> ![Itakda ang traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.tl.png)
+> ![Itakda ang traffic.](../../../../../../translated_images/tl/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## Scenario 3: Integrate sa Prompt flow at Makipag-chat gamit ang iyong custom na modelo sa Azure AI Foundry
@@ -579,7 +579,7 @@ Kailangan mong gumawa ng Hub bago gumawa ng Project. Ang Hub ay parang isang Res
 1. Piliin ang **All hubs** mula sa kaliwang tab.
 
 1. Piliin ang **+ New hub** mula sa navigation menu.
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.tl.png)
+    ![Create hub.](../../../../../../translated_images/tl/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Gawin ang mga sumusunod na gawain:
 
@@ -590,7 +590,7 @@ Kailangan mong gumawa ng Hub bago gumawa ng Project. Ang Hub ay parang isang Res
     - Piliin ang **Connect Azure AI Services** na gagamitin (gumawa ng bago kung kinakailangan).
     - Piliin ang **Connect Azure AI Search** sa **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.tl.png)
+    ![Fill hub.](../../../../../../translated_images/tl/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Piliin ang **Next**.
 
@@ -600,11 +600,11 @@ Kailangan mong gumawa ng Hub bago gumawa ng Project. Ang Hub ay parang isang Res
 
 1. Piliin ang **+ New project** mula sa navigation menu.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.tl.png)
+    ![Select new project.](../../../../../../translated_images/tl/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Ipasok ang **Project name**. Dapat ito ay natatanging halaga.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.tl.png)
+    ![Create project.](../../../../../../translated_images/tl/08-05-create-project.4d97f0372f03375a.png)
 
 1. Piliin ang **Create a project**.
 
@@ -620,17 +620,17 @@ Para isama ang iyong custom na Phi-3 model sa Prompt flow, kailangan mong i-save
 
 1. Piliin ang **Endpoints** mula sa kaliwang tab.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.tl.png)
+    ![Select endpoints.](../../../../../../translated_images/tl/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Piliin ang endpoint na ginawa mo.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.tl.png)
+    ![Select endpoints.](../../../../../../translated_images/tl/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. Piliin ang **Consume** mula sa navigation menu.
 
 1. Kopyahin ang iyong **REST endpoint** at **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.tl.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/tl/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Idagdag ang Custom Connection
 
@@ -642,11 +642,11 @@ Para isama ang iyong custom na Phi-3 model sa Prompt flow, kailangan mong i-save
 
 1. Piliin ang **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.tl.png)
+    ![Select new connection.](../../../../../../translated_images/tl/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. Piliin ang **Custom keys** mula sa navigation menu.
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.tl.png)
+    ![Select custom keys.](../../../../../../translated_images/tl/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Gawin ang mga sumusunod na hakbang:
 
@@ -656,7 +656,7 @@ Para isama ang iyong custom na Phi-3 model sa Prompt flow, kailangan mong i-save
     - Para sa pangalan ng key, ipasok ang **key** at i-paste ang key na kinopya mo mula sa Azure ML Studio sa field na value.
     - Pagkatapos idagdag ang mga keys, piliin ang **is secret** para maiwasang mailantad ang key.
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.tl.png)
+    ![Add connection.](../../../../../../translated_images/tl/08-11-add-connection.785486badb4d2d26.png)
 
 1. Piliin ang **Add connection**.
 
@@ -670,15 +670,15 @@ Nagdagdag ka na ng custom na koneksyon sa Azure AI Foundry. Ngayon, gumawa tayo 
 
 1. Piliin ang **+ Create** mula sa navigation menu.
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.tl.png)
+    ![Select Promptflow.](../../../../../../translated_images/tl/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. Piliin ang **Chat flow** mula sa navigation menu.
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.tl.png)
+    ![Select chat flow.](../../../../../../translated_images/tl/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Ipasok ang **Folder name** na gagamitin.
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.tl.png)
+    ![Enter name.](../../../../../../translated_images/tl/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Piliin ang **Create**.
 
@@ -715,7 +715,7 @@ Kailangan mong isama ang fine-tuned Phi-3 model sa isang Prompt flow. Gayunpaman
 
     - Piliin ang **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.tl.png)
+    ![Select raw file mode.](../../../../../../translated_images/tl/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Idagdag ang sumusunod na code sa *integrate_with_promptflow.py* file para magamit ang custom na Phi-3 model sa Prompt flow.
 
@@ -780,14 +780,14 @@ Kailangan mong isama ang fine-tuned Phi-3 model sa isang Prompt flow. Gayunpaman
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.tl.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/tl/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Para sa mas detalyadong impormasyon sa paggamit ng Prompt flow sa Azure AI Foundry, maaari kang tumingin sa [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Piliin ang **Chat input**, **Chat output** para paganahin ang chat sa iyong modelo.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.tl.png)
+    ![Input Output.](../../../../../../translated_images/tl/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. Handa ka nang makipag-chat sa iyong custom Phi-3 model. Sa susunod na ehersisyo, matututuhan mo kung paano simulan ang Prompt flow at gamitin ito upang makipag-chat sa iyong fine-tuned na Phi-3 model.
 
@@ -795,7 +795,7 @@ Kailangan mong isama ang fine-tuned Phi-3 model sa isang Prompt flow. Gayunpaman
 >
 > Ang muling binuong flow ay dapat magmukhang tulad ng nasa larawan sa ibaba:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.tl.png)
+> ![Flow example.](../../../../../../translated_images/tl/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Makipag-chat sa iyong custom Phi-3 model
@@ -808,25 +808,25 @@ Ngayon na na-fine-tune at naisama mo na ang iyong custom na Phi-3 model sa Promp
 
 1. Piliin ang **Start compute sessions** para simulan ang Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.tl.png)
+    ![Start compute session.](../../../../../../translated_images/tl/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Piliin ang **Validate and parse input** para i-renew ang mga parameters.
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.tl.png)
+    ![Validate input.](../../../../../../translated_images/tl/09-02-validate-input.317c76ef766361e9.png)
 
 1. Piliin ang **Value** ng **connection** sa custom connection na ginawa mo. Halimbawa, *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.tl.png)
+    ![Connection.](../../../../../../translated_images/tl/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Makipag-chat sa iyong custom na modelo
 
 1. Piliin ang **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.tl.png)
+    ![Select chat.](../../../../../../translated_images/tl/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Narito ang halimbawa ng mga resulta: Ngayon ay maaari ka nang makipag-chat sa iyong custom Phi-3 model. Inirerekomenda na magtanong ka batay sa data na ginamit sa fine-tuning.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.tl.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/tl/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

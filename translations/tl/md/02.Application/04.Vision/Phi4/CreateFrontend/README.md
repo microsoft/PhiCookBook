@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Malakas ang kakayahan ng Phi-4-multimodal sa pagbasa ng mga larawan. Subukan nating gamitin ang Python para ipatupad ang mga sumusunod na function. Ang larawan ay isang pahina ng ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.tl.png)
+![demo](../../../../../../../translated_images/tl/demo.609a55a7a2b9ed27.png)
 
 ### **Halimbawang Code**
 

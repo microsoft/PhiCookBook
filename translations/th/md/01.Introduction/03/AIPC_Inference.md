@@ -28,9 +28,9 @@ GPU มีชื่อเสียงในด้านความสามา�
 
 อุปกรณ์ Intel® NPU คืออุปกรณ์เร่งการทำงาน AI inference ที่ฝังรวมกับ CPU ของ Intel client เริ่มตั้งแต่ Intel® Core™ Ultra รุ่นใหม่ (เดิมชื่อ Meteor Lake) ช่วยให้การทำงานของเครือข่ายประสาทเทียมเป็นไปอย่างประหยัดพลังงาน
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.th.png)
+![Latency](../../../../../translated_images/th/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.th.png)
+![Latency770](../../../../../translated_images/th/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 เมื่อรันโค้ด เราสามารถดูสถานะการทำงานของ NPU ผ่าน Task Manager
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.th.png)
+![NPU](../../../../../translated_images/th/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***ตัวอย่าง*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 นี่คือผลลัพธ์การรัน
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.th.png)
+![DML](../../../../../translated_images/th/aipc_DML.52a44180393ab491.png)
 
 ***ตัวอย่าง*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 รูปแบบที่แปลงแล้วจะเป็นแบบนี้
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.th.png)
+![openvino_convert](../../../../../translated_images/th/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 โหลดเส้นทางโมเดล (model_dir), การตั้งค่าที่เกี่ยวข้อง (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) และอุปกรณ์เร่งความเร็วฮาร์ดแวร์ (GPU.0) ผ่าน OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 เมื่อรันโค้ด เราสามารถดูสถานะการทำงานของ GPU ผ่าน Task Manager
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.th.png)
+![openvino_gpu](../../../../../translated_images/th/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***ตัวอย่าง*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

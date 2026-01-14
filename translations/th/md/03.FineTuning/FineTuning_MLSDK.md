@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ในตัวอย่างนี้เราจะทำการปรับแต่งโมเดล Phi-3-mini-4k-instruct เพื่อให้สามารถสนทนาระหว่างคนสองคนได้โดยใช้ชุดข้อมูล ultrachat_200k
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.th.png)
+![MLFineTune](../../../../translated_images/th/MLFineTune.928d4c6b3767dd35.png)
 
 ตัวอย่างนี้จะแสดงวิธีการปรับแต่งโมเดลโดยใช้ Azure ML SDK และ Python จากนั้นนำโมเดลที่ปรับแต่งแล้วไปใช้งานบน endpoint ออนไลน์สำหรับการทำนายแบบเรียลไทม์
 

@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ผลลัพธ์ (สภาพแวดล้อมของผมคือ Apple M1 Max, 64GB) เป็นดังนี้
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.th.png)
+![Terminal](../../../../../translated_images/th/01.5cf57df8f7407cf9.png)
 
 ### **3. การทำ Quantize Phi-3-mini ด้วย MLX ใน Terminal**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ผลลัพธ์คือ
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.th.png)
+![INT4](../../../../../translated_images/th/02.7b188681a8eadbc1.png)
 
 
 ### **4. รัน Phi-3-mini ด้วย MLX ใน Jupyter Notebook**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.th.png)
+![Notebook](../../../../../translated_images/th/03.b9705a3a5aaa89f9.png)
 
 ***Note:*** กรุณาอ่านตัวอย่างนี้ [คลิกที่ลิงก์นี้](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
