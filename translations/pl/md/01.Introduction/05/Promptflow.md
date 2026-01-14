@@ -41,7 +41,7 @@ Zachowuj kontrolę wersji i efektywnie dziel się wiedzą. Usprawnij cały proce
 
 W Microsoft Prompt Flow ocena odgrywa kluczową rolę w mierzeniu efektywności Twoich modeli AI. Sprawdźmy, jak możesz dostosować przepływy oceny i metryki w Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.pl.png)
+![PFVizualise](../../../../../translated_images/pl/pfvisualize.c1d9ca75baa2a222.png)
 
 **Zrozumienie oceny w Prompt Flow**
 

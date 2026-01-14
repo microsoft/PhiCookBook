@@ -34,7 +34,7 @@ Urmează acești pași pentru a începe să folosești aceste resurse:
 2. **Clonați Repository-ul**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Alătură-te comunității Microsoft AI pe Discord și întâlnește experți și dezvoltatori**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.ro.png)
+![cover](../../translated_images/ro/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Suport Multi-Limbaj
 

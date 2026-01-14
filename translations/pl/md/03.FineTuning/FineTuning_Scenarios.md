@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Scenariusze Fine Tuningu
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.pl.png)
+![FineTuning with MS Services](../../../../translated_images/pl/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Platforma** Obejmuje różne technologie, takie jak Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito oraz ONNX Runtime.
 
@@ -24,7 +24,7 @@ Proces fine tuningu z wykorzystaniem technologii Microsoft obejmuje różne komp
 
 Dostrój model korzystając z hostowanego fine tuningu, bez konieczności tworzenia i zarządzania zasobami obliczeniowymi.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.pl.png)
+![MaaS Fine Tuning](../../../../translated_images/pl/MaaSfinetune.3eee4630607aff0d.png)
 
 Serverless fine tuning jest dostępny dla modeli Phi-3-mini i Phi-3-medium, co pozwala deweloperom szybko i łatwo dostosować modele do scenariuszy chmurowych i edge bez konieczności organizowania zasobów obliczeniowych. Ogłosiliśmy również, że Phi-3-small jest teraz dostępny w ramach naszej oferty Models-as-a-Service, dzięki czemu deweloperzy mogą szybko i łatwo rozpocząć pracę z AI bez konieczności zarządzania infrastrukturą.
 
@@ -32,7 +32,7 @@ Serverless fine tuning jest dostępny dla modeli Phi-3-mini i Phi-3-medium, co p
 
 Użytkownicy zarządzają własnymi zasobami obliczeniowymi, aby dostroić swoje modele.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.pl.png)
+![Maap Fine Tuning](../../../../translated_images/pl/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Przykład Fine Tuningu](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Użytkownicy zarządzają własnymi zasobami obliczeniowymi, aby dostroić swoje
 
 ## Przykłady Wydajności Fine Tuningu
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.pl.png)
+![Finetuning Performance](../../../../translated_images/pl/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Zastrzeżenie**:  
 Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
