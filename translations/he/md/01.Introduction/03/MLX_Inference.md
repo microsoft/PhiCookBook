@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 התוצאה (הסביבה שלי היא Apple M1 Max, 64GB) היא
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.he.png)
+![Terminal](../../../../../translated_images/he/01.5cf57df8f7407cf9.png)
 
 ### **3. כימות Phi-3-mini עם MLX בטרמינל**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 התוצאה היא
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.he.png)
+![INT4](../../../../../translated_images/he/02.7b188681a8eadbc1.png)
 
 
 ### **4. הרצת Phi-3-mini עם MLX ב-Jupyter Notebook**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.he.png)
+![Notebook](../../../../../translated_images/he/03.b9705a3a5aaa89f9.png)
 
 ***Note:*** אנא קראו את הדוגמה הזו [לחצו כאן](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 בחרתי ב-Objective-C כשיטת פיתוח האפליקציה, כי בשימוש עם Generative AI דרך ONNX Runtime C++ API, Objective-C תואם יותר. כמובן, ניתן גם להשלים קריאות רלוונטיות דרך גישור Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.he.png)
+![xcode](../../../../../translated_images/he/xcode.8147789e6c25e3e2.png)
 
 ## **5. העתקת מודל ONNX מקוונט INT4 לפרויקט האפליקציה**
 
 יש לייבא את מודל הקוונטיזציה INT4 בפורמט ONNX, שצריך להוריד קודם.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.he.png)
+![hf](../../../../../translated_images/he/hf.6b8504fd88ee48dd.png)
 
 לאחר ההורדה, יש להוסיף אותו לתיקיית Resources של הפרויקט ב-Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.he.png)
+![model](../../../../../translated_images/he/model.3b879b14e0be877d.png)
 
 ## **6. הוספת API של C++ ב-ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **א.** הוסף את קבצי הכותרת המתאימים של C++ לפרויקט.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.he.png)
+  ![Header File](../../../../../translated_images/he/head.64cad021ce70a333.png)
 
 - **ב.** כלול את ספריית ה-dynamic `onnxruntime-genai` ב-Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.he.png)
+  ![Library](../../../../../translated_images/he/lib.a4209b9f21ddf344.png)
 
 - **ג.** השתמש בקוד דוגמאות C לצורך בדיקות. ניתן גם להוסיף תכונות נוספות כמו ChatUI לפונקציונליות מורחבת.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 לאחר השלמת ההגדרות, ניתן להריץ את האפליקציה ולראות את תוצאות ההסקה של מודל Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.he.jpg)
+![Running Result](../../../../../translated_images/he/result.326a947a6a2b9c51.jpg)
 
 לקוד דוגמאות נוסף והוראות מפורטות, בקרו ב-[מאגר דוגמאות Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

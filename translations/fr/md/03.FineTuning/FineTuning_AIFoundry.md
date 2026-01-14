@@ -19,7 +19,7 @@ Explorons comment affiner le modèle de langage Phi-3 Mini de Microsoft en utili
 - **Praticité :** Comment se déroule concrètement l’affinage – dois-je écrire du code personnalisé ? Dois-je fournir ma propre puissance de calcul ?
 - **Sécurité :** Les modèles affinés présentent des risques de sécurité – existe-t-il des garde-fous pour éviter des dommages involontaires ?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.fr.png)
+![AIFoundry Models](../../../../translated_images/fr/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Préparation à l’affinage
 
@@ -71,7 +71,7 @@ Le type de fichier supporté est JSON Lines. Les fichiers sont téléchargés da
 
 Azure AI Foundry vous permet d’adapter les grands modèles de langage à vos propres jeux de données via un processus appelé affinage. L’affinage apporte une valeur significative en permettant la personnalisation et l’optimisation pour des tâches et applications spécifiques. Il améliore les performances, réduit les coûts, diminue la latence et produit des résultats sur mesure.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.fr.png)
+![Finetune AI Foundry](../../../../translated_images/fr/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Créer un nouveau projet
 
@@ -79,14 +79,14 @@ Azure AI Foundry vous permet d’adapter les grands modèles de langage à vos p
 
 1. Sélectionnez **+New project** pour créer un nouveau projet dans Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/select-new-project.cd31c0404088d7a3.png)
 
 1. Effectuez les opérations suivantes :
 
     - Nom du **Hub** du projet. Il doit être unique.
     - Sélectionnez le **Hub** à utiliser (créez-en un nouveau si nécessaire).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/create-project.ca3b71298b90e420.png)
 
 1. Effectuez les opérations suivantes pour créer un nouveau hub :
 
@@ -97,7 +97,7 @@ Azure AI Foundry vous permet d’adapter les grands modèles de langage à vos p
     - Sélectionnez le **Connect Azure AI Services** à utiliser (créez-en un nouveau si nécessaire).
     - Sélectionnez **Connect Azure AI Search** puis **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/create-hub.49e53d235e80779e.png)
 
 1. Sélectionnez **Next**.
 1. Sélectionnez **Create a project**.
@@ -115,15 +115,15 @@ Avant l’affinage, rassemblez ou créez un jeu de données pertinent pour votre
 
 1. Tapez *phi-3* dans la **barre de recherche** et sélectionnez le modèle phi-3 que vous souhaitez utiliser.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/select-model.60ef2d4a6a3cec57.png)
 
 1. Sélectionnez **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/select-finetune.a976213b543dd9d8.png)
 
 1. Saisissez le **Nom du modèle affiné**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/finetune1.c2b39463f0d34148.png)
 
 1. Sélectionnez **Next**.
 
@@ -132,13 +132,13 @@ Avant l’affinage, rassemblez ou créez un jeu de données pertinent pour votre
     - Sélectionnez le **type de tâche** : **Chat completion**.
     - Sélectionnez les **données d’entraînement** que vous souhaitez utiliser. Vous pouvez les télécharger via les données d’Azure AI Foundry ou depuis votre environnement local.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/finetune2.43cb099b1a94442d.png)
 
 1. Sélectionnez **Next**.
 
 1. Téléchargez les **données de validation** que vous souhaitez utiliser, ou sélectionnez **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/finetune3.fd96121b67dcdd92.png)
 
 1. Sélectionnez **Next**.
 
@@ -148,15 +148,15 @@ Avant l’affinage, rassemblez ou créez un jeu de données pertinent pour votre
     - Sélectionnez le **taux d’apprentissage** que vous souhaitez utiliser.
     - Sélectionnez le nombre d’**époques** que vous souhaitez utiliser.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/finetune4.e18b80ffccb5834a.png)
 
 1. Sélectionnez **Submit** pour lancer le processus d’affinage.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/select-submit.0a3802d581bac271.png)
 
 1. Une fois votre modèle affiné, le statut s’affichera comme **Completed**, comme illustré ci-dessous. Vous pouvez alors déployer le modèle et l’utiliser dans votre propre application, dans le playground, ou dans prompt flow. Pour plus d’informations, consultez [Comment déployer la famille de petits modèles de langage Phi-3 avec Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.fr.png)
+    ![FineTuneSelect](../../../../translated_images/fr/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Pour plus de détails sur l’affinage de Phi-3, veuillez consulter [Affiner les modèles Phi-3 dans Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
