@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal possui fortes capacidades de leitura de imagens. Vamos tentar usar Python para implementar as seguintes funções. A imagem é uma página do ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.br.png)
+![demo](../../../../../../../translated_images/br/demo.609a55a7a2b9ed27.png)
 
 ### **Código de Exemplo**
 

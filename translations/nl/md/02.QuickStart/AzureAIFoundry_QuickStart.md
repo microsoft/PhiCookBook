@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Met de ontwikkeling van Generative AI hopen we een uniform platform te gebruiken om verschillende LLM- en SLM-modellen, integratie van bedrijfsdata, fine-tuning/RAG-operaties en de evaluatie van verschillende bedrijfsprocessen na integratie van LLM en SLM te beheren, zodat generatieve AI beter kan worden toegepast in slimme applicaties. [Azure AI Foundry](https://ai.azure.com) is een generatief AI-toepassingsplatform op ondernemingsniveau.
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.nl.png)
+![aistudo](../../../../translated_images/nl/aifoundry_home.f28a8127c96c7d93.png)
 
 Met Azure AI Foundry kun je de reacties van grote taalmodellen (LLM) evalueren en promptapplicatiecomponenten orkestreren met prompt flow voor betere prestaties. Het platform maakt schaalbaarheid mogelijk om proof of concepts eenvoudig om te zetten naar volledige productie. Continue monitoring en verfijning ondersteunen langdurig succes.
 

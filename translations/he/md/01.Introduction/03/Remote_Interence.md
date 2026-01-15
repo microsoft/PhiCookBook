@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 לאחר שה-adapters אומנו בסביבה מרוחקת, השתמשו באפליקציית Gradio פשוטה כדי לתקשר עם המודל.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.he.png)
+![Fine-tune complete](../../../../../translated_images/he/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### הקצאת משאבי Azure  
 יש להגדיר את משאבי Azure עבור הסקת מסקנות מרחוק על ידי ביצוע הפקודה `AI Toolkit: Provision Azure Container Apps for inference` מפלטת הפקודות. במהלך ההגדרה תתבקשו לבחור את המנוי ואת קבוצת המשאבים שלכם ב-Azure.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.he.png)
+![Provision Inference Resource](../../../../../translated_images/he/command-provision-inference.467afc8d351642fc.png)
 
 ברירת המחדל היא שהמנוי וקבוצת המשאבים עבור ההסקה יתאימו לאלו ששימשו לאימון המודל. ההסקה תשתמש באותו Azure Container App Environment ותיגש למודל ול-adapter של המודל המאוחסנים ב-Azure Files, שנוצרו במהלך שלב האימון.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### פריסה עבור הסקה  
 אם ברצונכם לעדכן את קוד ההסקה או לטעון מחדש את מודל ההסקה, יש להריץ את הפקודה `AI Toolkit: Deploy for inference`. פעולה זו תסנכרן את הקוד העדכני שלכם עם ACA ותאתחל מחדש את הרפליקה.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.he.png)
+![Deploy for inference](../../../../../translated_images/he/command-deploy.9adb4e310dd0b0ae.png)
 
 לאחר השלמת הפריסה בהצלחה, המודל מוכן להערכה דרך נקודת הקצה הזו.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ניתן לגשת ל-API של ההסקה על ידי לחיצה על כפתור "*Go to Inference Endpoint*" שמופיע בהתראה ב-VSCode. לחלופין, ניתן למצוא את נקודת הקצה של ה-API תחת `ACA_APP_ENDPOINT` בקובץ `./infra/inference.config.json` ובחלונית הפלט.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.he.png)
+![App Endpoint](../../../../../translated_images/he/notification-deploy.446e480a44b1be58.png)
 
 > **[!NOTE]:** ייתכן שלוקח כמה דקות עד שנקודת הקצה של ההסקה תהיה פעילה במלואה.
 

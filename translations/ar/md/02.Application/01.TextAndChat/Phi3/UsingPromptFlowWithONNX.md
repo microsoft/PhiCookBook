@@ -33,33 +33,33 @@ PromptFlow هي مجموعة أدوات تطوير تهدف إلى تبسيط د
 
 1. تثبيت امتداد Prompt flow في VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.ar.png)
+![pfvscode](../../../../../../translated_images/ar/pfvscode.eff93dfc66a42cbe.png)
 
 2. بعد تثبيت امتداد Prompt flow في VS Code، انقر على الامتداد واختر **Installation dependencies** واتبع هذا الدليل لتثبيت SDK الخاص بـ Prompt flow في بيئتك
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.ar.png)
+![pfsetup](../../../../../../translated_images/ar/pfsetup.b46e93096f5a254f.png)
 
 3. قم بتحميل [كود العينة](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) وافتح هذا المثال باستخدام VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.ar.png)
+![pfsample](../../../../../../translated_images/ar/pfsample.8d89e70584ffe7c4.png)
 
 4. افتح **flow.dag.yaml** لاختيار بيئة Python الخاصة بك
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.ar.png)
+![pfdag](../../../../../../translated_images/ar/pfdag.264a77f7366458ff.png)
 
    افتح **chat_phi3_ort.py** لتغيير موقع نموذج Phi-3.5-instruct ONNX الخاص بك
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.ar.png)
+![pfphi](../../../../../../translated_images/ar/pfphi.72da81d74244b45f.png)
 
 5. شغّل prompt flow للاختبار
 
 افتح **flow.dag.yaml** وانقر على المحرر المرئي
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.ar.png)
+![pfv](../../../../../../translated_images/ar/pfv.ba8a81f34b20f603.png)
 
 بعد النقر، قم بتشغيله للاختبار
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.ar.png)
+![pfflow](../../../../../../translated_images/ar/pfflow.4e1135a089b1ce1b.png)
 
 1. يمكنك تشغيل الدُفعات في الطرفية لمراجعة المزيد من النتائج
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 يمكنك مراجعة النتائج في متصفحك الافتراضي
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.ar.png)
+![pfresult](../../../../../../translated_images/ar/pfresult.c22c826f8062d7cb.png)
 
 **إخلاء مسؤولية**:  
 تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

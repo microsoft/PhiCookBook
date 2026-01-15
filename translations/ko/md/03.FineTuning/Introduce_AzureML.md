@@ -67,7 +67,7 @@ Azure ML은 LLMOps와 SLMOps를 결합하여 기업 전반에 걸친 생성형 �
 
 기업 사용자는 모델 카탈로그를 통해 다양한 비즈니스 시나리오에 맞는 여러 모델을 배포할 수 있으며, 기업 개발자나 사용자가 접근할 수 있도록 Model as Service 형태로 서비스를 제공합니다.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.ko.png)
+![models](../../../../translated_images/ko/models.e6c7ff50a51806fd.png)
 
 Azure Machine Learning Studio의 모델 카탈로그는 생성형 AI 애플리케이션 구축에 필요한 다양한 모델을 발견하고 사용할 수 있는 허브입니다.  
 모델 카탈로그에는 Azure OpenAI 서비스, Mistral, Meta, Cohere, Nvidia, Hugging Face 등 다양한 모델 제공자의 수백 개 모델이 포함되어 있으며, Microsoft가 직접 학습시킨 모델도 포함되어 있습니다.  
@@ -81,7 +81,7 @@ Azure Machine Learning 파이프라인 서비스는 파이프라인 단계 간 �
 
 SLM / LLM 미세 조정 시, 파이프라인을 통해 데이터, 학습, 생성 과정을 관리할 수 있습니다.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.ko.png)
+![finetuning](../../../../translated_images/ko/finetuning.6559da198851fa52.png)
 
 ### **프롬프트 플로우**
 

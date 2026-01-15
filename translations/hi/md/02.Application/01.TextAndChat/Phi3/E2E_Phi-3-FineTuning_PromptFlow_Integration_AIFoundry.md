@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 यहाँ इस E2E सैंपल का एक अवलोकन है।
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.hi.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/hi/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### सामग्री तालिका
 
@@ -48,13 +48,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पेज के शीर्ष पर **सर्च बार** में *azure machine learning* टाइप करें और दिखाए गए विकल्पों में से **Azure Machine Learning** चुनें।
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.hi.png)
+    ![Type azure machine learning.](../../../../../../translated_images/hi/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. नेविगेशन मेनू से **+ Create** चुनें।
 
 3. नेविगेशन मेनू से **New workspace** चुनें।
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.hi.png)
+    ![Select new workspace.](../../../../../../translated_images/hi/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. निम्नलिखित कार्य करें:
 
@@ -67,7 +67,7 @@ CO_OP_TRANSLATOR_METADATA:
     - उपयोग के लिए **Application insights** चुनें (आवश्यक होने पर नया बनाएं)।
     - उपयोग के लिए **Container registry** चुनें (आवश्यक होने पर नया बनाएं)।
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.hi.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/hi/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. **Review + Create** चुनें।
 
@@ -90,7 +90,7 @@ CO_OP_TRANSLATOR_METADATA:
     - उपयोग के लिए **Virtual machine family** चुनें। उदाहरण के लिए, **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** चुनें, जिसमें *Standard_NC24ads_A100_v4* GPU शामिल है।
     - नेविगेशन मेनू से **Request quota** चुनें।
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.hi.png)
+        ![Request quota.](../../../../../../translated_images/hi/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Request quota पेज पर, उपयोग के लिए **New cores limit** दर्ज करें। उदाहरण के लिए, 24।
     - Request quota पेज पर, GPU कोटा का अनुरोध करने के लिए **Submit** चुनें।
@@ -111,11 +111,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पेज के शीर्ष पर **सर्च बार** में *managed identities* टाइप करें और दिखाए गए विकल्पों में से **Managed Identities** चुनें।
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.hi.png)
+    ![Type managed identities.](../../../../../../translated_images/hi/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. **+ Create** चुनें।
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.hi.png)
+    ![Select create.](../../../../../../translated_images/hi/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. निम्नलिखित कार्य करें:
 
@@ -124,7 +124,7 @@ CO_OP_TRANSLATOR_METADATA:
     - वह **Region** चुनें जिसका आप उपयोग करना चाहते हैं।
     - **Name** दर्ज करें। यह एक अद्वितीय मान होना चाहिए।
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.hi.png)
+    ![Select create.](../../../../../../translated_images/hi/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. **Review + create** चुनें।
 
@@ -144,7 +144,7 @@ CO_OP_TRANSLATOR_METADATA:
     - उपयोग के लिए **Resource group** चुनें।
     - **Role** के रूप में **Contributor** चुनें।
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.hi.png)
+    ![Fill contributor role.](../../../../../../translated_images/hi/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. **Save** चुनें।
 
@@ -152,7 +152,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पेज के शीर्ष पर **सर्च बार** में *storage accounts* टाइप करें और दिखाए गए विकल्पों में से **Storage accounts** चुनें।
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.hi.png)
+    ![Type storage accounts.](../../../../../../translated_images/hi/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. उस Storage account को चुनें जो Azure Machine Learning वर्कस्पेस से जुड़ा है जिसे आपने बनाया है। उदाहरण के लिए, *finetunephistorage*।
 
@@ -163,7 +163,7 @@ CO_OP_TRANSLATOR_METADATA:
     - नेविगेशन मेनू से **+ Add** चुनें।
     - नेविगेशन मेनू से **Add role assignment** चुनें।
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.hi.png)
+    ![Add role.](../../../../../../translated_images/hi/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Add role assignment पेज में, निम्नलिखित करें:
 
@@ -176,7 +176,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities पेज में, वह Manage Identity चुनें जिसे आपने बनाया है। उदाहरण के लिए, *finetunephi-managedidentity*।
     - Select managed identities पेज में, **Select** चुनें।
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.hi.png)
+    ![Select managed identity.](../../../../../../translated_images/hi/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. **Review + assign** चुनें।
 
@@ -184,7 +184,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पेज के शीर्ष पर **सर्च बार** में *container registries* टाइप करें और दिखाए गए विकल्पों में से **Container registries** चुनें।
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.hi.png)
+    ![Type container registries.](../../../../../../translated_images/hi/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. उस Container registry को चुनें जो Azure Machine Learning वर्कस्पेस से जुड़ा है। उदाहरण के लिए, *finetunephicontainerregistry*
 
@@ -275,11 +275,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. उस *finetune-phi* फोल्डर को चुनें जिसे आपने बनाया है, जो *C:\Users\yourUserName\finetune-phi* स्थित है।
 
-    ![जिस फोल्डर को आपने बनाया है उसे चुनें।](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.hi.png)
+    ![जिस फोल्डर को आपने बनाया है उसे चुनें।](../../../../../../translated_images/hi/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Visual Studio Code के बाएं पैनल में, राइट-क्लिक करें और **New File** चुनें ताकि *download_dataset.py* नाम की एक नई फाइल बनाई जा सके।
 
-    ![नई फाइल बनाएं।](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.hi.png)
+    ![नई फाइल बनाएं।](../../../../../../translated_images/hi/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### फाइन-ट्यूनिंग के लिए डेटासेट तैयार करें
 
@@ -391,7 +391,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **+ New** चुनें।
 
-    ![कंप्यूट चुनें।](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.hi.png)
+    ![कंप्यूट चुनें।](../../../../../../translated_images/hi/06-01-select-compute.a29cff290b480252.png)
 
 1. निम्नलिखित कार्य करें:
 
@@ -401,7 +401,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Virtual machine size** फिल्टर को **Select from all options** पर सेट करें।
     - **Virtual machine size** को **Standard_NC24ads_A100_v4** चुनें।
 
-    ![क्लस्टर बनाएं।](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.hi.png)
+    ![क्लस्टर बनाएं।](../../../../../../translated_images/hi/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. **Next** चुनें।
 
@@ -412,7 +412,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Maximum number of nodes** को **1** पर सेट करें।
     - **Idle seconds before scale down** को **120** पर सेट करें।
 
-    ![क्लस्टर बनाएं।](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.hi.png)
+    ![क्लस्टर बनाएं।](../../../../../../translated_images/hi/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. **Create** चुनें।
 
@@ -422,18 +422,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. वह Azure Machine Learning वर्कस्पेस चुनें जिसे आपने बनाया है।
 
-    ![जो वर्कस्पेस आपने बनाया है उसे चुनें।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.hi.png)
+    ![जो वर्कस्पेस आपने बनाया है उसे चुनें।](../../../../../../translated_images/hi/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. निम्नलिखित कार्य करें:
 
     - बाएँ साइड टैब से **Model catalog** चुनें।
     - **search bar** में *phi-3-mini-4k* टाइप करें और दिखाई देने वाले विकल्पों में से **Phi-3-mini-4k-instruct** चुनें।
 
-    ![phi-3-mini-4k टाइप करें।](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.hi.png)
+    ![phi-3-mini-4k टाइप करें।](../../../../../../translated_images/hi/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. नेविगेशन मेनू से **Fine-tune** चुनें।
 
-    ![फाइन-ट्यून चुनें।](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.hi.png)
+    ![फाइन-ट्यून चुनें।](../../../../../../translated_images/hi/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. निम्नलिखित कार्य करें:
 
@@ -442,7 +442,7 @@ CO_OP_TRANSLATOR_METADATA:
     - वैलिडेशन डेटा अपलोड प्रकार को **Provide different validation data** पर सेट करें।
     - **+ Select data** पर क्लिक करें और **Validation data** अपलोड करें।
 
-    ![फाइन-ट्यूनिंग पेज भरें।](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.hi.png)
+    ![फाइन-ट्यूनिंग पेज भरें।](../../../../../../translated_images/hi/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -452,7 +452,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. इस अभ्यास में, आपने सफलतापूर्वक Azure Machine Learning का उपयोग करके Phi-3 मॉडल को फाइन-ट्यून किया है। कृपया ध्यान दें कि फाइन-ट्यूनिंग प्रक्रिया में काफी समय लग सकता है। फाइन-ट्यूनिंग जॉब चलाने के बाद, आपको इसके पूर्ण होने तक प्रतीक्षा करनी होगी। आप Azure Machine Learning Workspace में बाएँ साइड के Jobs टैब पर जाकर फाइन-ट्यूनिंग जॉब की स्थिति देख सकते हैं। अगले सेरीज में, आप फाइन-ट्यून किए गए मॉडल को डिप्लॉय करेंगे और इसे Prompt flow के साथ इंटीग्रेट करेंगे।
 
-    ![फाइन-ट्यूनिंग जॉब देखें।](../../../../../../translated_images/06-08-output.2bd32e59930672b1.hi.png)
+    ![फाइन-ट्यूनिंग जॉब देखें।](../../../../../../translated_images/hi/06-08-output.2bd32e59930672b1.png)
 
 ### फाइन-ट्यून किए गए Phi-3 मॉडल को डिप्लॉय करें
 
@@ -470,17 +470,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. वह Azure Machine Learning वर्कस्पेस चुनें जिसे आपने बनाया है।
 
-    ![जो वर्कस्पेस आपने बनाया है उसे चुनें।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.hi.png)
+    ![जो वर्कस्पेस आपने बनाया है उसे चुनें।](../../../../../../translated_images/hi/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. बाएँ साइड टैब से **Models** चुनें।
 1. **+ Register** चुनें।
 1. **From a job output** चुनें।
 
-    ![मॉडल रजिस्टर करें।](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.hi.png)
+    ![मॉडल रजिस्टर करें।](../../../../../../translated_images/hi/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. उस जॉब को चुनें जिसे आपने बनाया है।
 
-    ![जॉब चुनें।](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.hi.png)
+    ![जॉब चुनें।](../../../../../../translated_images/hi/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. **Next** चुनें।
 
@@ -488,17 +488,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. सुनिश्चित करें कि **Job output** चुना हुआ हो; यह स्वचालित रूप से चुना जाना चाहिए।
 
-    ![आउटपुट चुनें।](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.hi.png)
+    ![आउटपुट चुनें।](../../../../../../translated_images/hi/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. **Next** चुनें।
 
 3. **Register** चुनें।
 
-    ![रजिस्टर चुनें।](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.hi.png)
+    ![रजिस्टर चुनें।](../../../../../../translated_images/hi/07-04-register.fd82a3b293060bc7.png)
 
 4. आप अपने रजिस्टर किए हुए मॉडल को बाएं साइड के **Models** मेनू में जाकर देख सकते हैं।
 
-    ![रजिस्टर मॉडल।](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.hi.png)
+    ![रजिस्टर मॉडल।](../../../../../../translated_images/hi/07-05-registered-model.7db9775f58dfd591.png)
 
 #### फाइन-ट्यून मॉडल को डिप्लॉय करें
 
@@ -508,13 +508,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. नेविगेशन मेनू से **Real-time endpoints** चुनें।
 
-    ![एंडपॉइंट बनाएं।](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.hi.png)
+    ![एंडपॉइंट बनाएं।](../../../../../../translated_images/hi/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. **Create** चुनें।
 
 1. उस रजिस्टर किए गए मॉडल को चुनें जिसे आपने बनाया है।
 
-    ![रजिस्टर मॉडल चुनें।](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.hi.png)
+    ![रजिस्टर मॉडल चुनें।](../../../../../../translated_images/hi/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. **Select** चुनें।
 
@@ -526,7 +526,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Endpoint name** दर्ज करें। यह एक अद्वितीय मान होना चाहिए।
     - **Deployment name** दर्ज करें। यह एक अद्वितीय मान होना चाहिए।
 
-    ![डिप्लॉयमेंट सेटिंग भरें।](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.hi.png)
+    ![डिप्लॉयमेंट सेटिंग भरें।](../../../../../../translated_images/hi/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. **Deploy** चुनें।
 
@@ -542,14 +542,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. उस एंडपॉइंट को चुनें जिसे आपने बनाया है।
 
-    ![एंडपॉइंट चुनें](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.hi.png)
+    ![एंडपॉइंट चुनें](../../../../../../translated_images/hi/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. इस पेज पर, आप डिप्लॉयमेंट प्रक्रिया के दौरान एंडपॉइंट्स को प्रबंधित कर सकते हैं।
 
 > [!NOTE]
 > एक बार डिप्लॉयमेंट पूरा हो जाने पर, सुनिश्चित करें कि **Live traffic** को **100%** पर सेट किया गया है। यदि नहीं है, तो ट्रैफिक सेटिंग्स को समायोजित करने के लिए **Update traffic** चुनें। ध्यान दें कि यदि ट्रैफिक 0% पर सेट है, तो आप मॉडल का परीक्षण नहीं कर सकते।
 >
-> ![ट्रैफिक सेट करें।](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.hi.png)
+> ![ट्रैफिक सेट करें।](../../../../../../translated_images/hi/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## परिदृश्य 3: Prompt flow के साथ इंटीग्रेट करें और Azure AI Foundry में अपने कस्टम मॉडल से चैट करें
@@ -578,7 +578,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. बाएँ साइड टैब से **All hubs** चुनें।
 
 1. नेविगेशन मेनू से **+ New hub** चुनें।
-    ![हब बनाएं।](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.hi.png)
+    ![हब बनाएं।](../../../../../../translated_images/hi/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. निम्नलिखित कार्य करें:
 
@@ -589,7 +589,7 @@ CO_OP_TRANSLATOR_METADATA:
     - उपयोग करने के लिए **Azure AI सेवाओं से कनेक्ट करें** चुनें (यदि आवश्यक हो तो नया बनाएं)।
     - **Azure AI खोज से कनेक्ट करें** को **कनेक्ट करना छोड़ें** पर चुनें।
 
-    ![हब भरें।](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.hi.png)
+    ![हब भरें।](../../../../../../translated_images/hi/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. **अगला** चुनें।
 
@@ -599,11 +599,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. नेविगेशन मेनू से **+ नई परियोजना** चुनें।
 
-    ![नई परियोजना चुनें।](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.hi.png)
+    ![नई परियोजना चुनें।](../../../../../../translated_images/hi/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. **परियोजना नाम** दर्ज करें। यह एक अनूठा मान होना चाहिए।
 
-    ![परियोजना बनाएं।](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.hi.png)
+    ![परियोजना बनाएं।](../../../../../../translated_images/hi/08-05-create-project.4d97f0372f03375a.png)
 
 1. **परियोजना बनाएं** चुनें।
 
@@ -619,17 +619,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. बाएँ तरफ के टैब से **एंडपॉइंट्स** चुनें।
 
-    ![एंडपॉइंट्स चुनें।](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.hi.png)
+    ![एंडपॉइंट्स चुनें।](../../../../../../translated_images/hi/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. उस एंडपॉइंट का चयन करें जिसे आपने बनाया है।
 
-    ![बनाया गया एंडपॉइंट चुनें।](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.hi.png)
+    ![बनाया गया एंडपॉइंट चुनें।](../../../../../../translated_images/hi/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. नेविगेशन मेनू से **उपयोग करें** चुनें।
 
 1. अपनी **REST एंडपॉइंट** और **प्राथमिक कुंजी** कॉपी करें।
 
-    ![API कुंजी और एंडपॉइंट URI कॉपी करें।](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.hi.png)
+    ![API कुंजी और एंडपॉइंट URI कॉपी करें।](../../../../../../translated_images/hi/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### कस्टम कनेक्शन जोड़ें
 
@@ -641,11 +641,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **+ नया कनेक्शन** चुनें।
 
-    ![नया कनेक्शन चुनें।](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.hi.png)
+    ![नया कनेक्शन चुनें।](../../../../../../translated_images/hi/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. नेविगेशन मेनू से **कस्टम कुंजी** चुनें।
 
-    ![कस्टम कुंजी चुनें।](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.hi.png)
+    ![कस्टम कुंजी चुनें।](../../../../../../translated_images/hi/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. निम्नलिखित कार्य करें:
 
@@ -655,7 +655,7 @@ CO_OP_TRANSLATOR_METADATA:
     - कुंजी नाम के लिए **key** दर्ज करें और Azure ML Studio से कॉपी किया गया कुंजी मान क्षेत्र में चिपकाएं।
     - कुंजियाँ जोड़ने के बाद, कुंजी के उजागर होने से रोकने के लिए **is secret** चुनें।
 
-    ![कनेक्शन जोड़ें।](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.hi.png)
+    ![कनेक्शन जोड़ें।](../../../../../../translated_images/hi/08-11-add-connection.785486badb4d2d26.png)
 
 1. **कनेक्शन जोड़ें** चुनें।
 
@@ -669,15 +669,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. नेविगेशन मेनू से **+ बनाएं** चुनें।
 
-    ![Promptflow चुनें।](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.hi.png)
+    ![Promptflow चुनें।](../../../../../../translated_images/hi/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. नेविगेशन मेनू से **चैट फ्लो** चुनें।
 
-    ![चैट फ्लो चुनें।](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.hi.png)
+    ![चैट फ्लो चुनें।](../../../../../../translated_images/hi/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. उपयोग करने के लिए **फ़ोल्डर नाम** दर्ज करें।
 
-    ![नाम दर्ज करें।](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.hi.png)
+    ![नाम दर्ज करें।](../../../../../../translated_images/hi/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. **बनाएं** चुनें।
 
@@ -714,7 +714,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - **सहेजें** चुनें।
 
-    ![कच्ची फ़ाइल मोड चुनें।](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.hi.png)
+    ![कच्ची फ़ाइल मोड चुनें।](../../../../../../translated_images/hi/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. *integrate_with_promptflow.py* फ़ाइल में निम्न कोड जोड़ें ताकि Prompt flow में कस्टम Phi-3 मॉडल का उपयोग किया जा सके।
 
@@ -779,14 +779,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Prompt flow कोड चिपकाएं।](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.hi.png)
+    ![Prompt flow कोड चिपकाएं।](../../../../../../translated_images/hi/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Azure AI Foundry में Prompt flow का उपयोग करने की अधिक विस्तृत जानकारी के लिए, आप [Azure AI Foundry में Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) देख सकते हैं।
 
 1. **Chat input**, **Chat output** चुनें ताकि अपने मॉडल के साथ चैट सक्षम हो सके।
 
-    ![इनपुट आउटपुट चुनें।](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.hi.png)
+    ![इनपुट आउटपुट चुनें।](../../../../../../translated_images/hi/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. अब आप अपने कस्टम Phi-3 मॉडल के साथ चैट करने के लिए तैयार हैं। अगली एक्सरसाइज में, आप सीखेंगे कि Prompt flow कैसे शुरू करें और इसका उपयोग अपने फ़ाइन-ट्यून किए गए Phi-3 मॉडल के साथ चैट करने के लिए कैसे करें।
 
@@ -794,7 +794,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > पुनर्निर्मित फ्लो नीचे दी गई छवि जैसा दिखना चाहिए:
 >
-> ![फ्लो उदाहरण।](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.hi.png)
+> ![फ्लो उदाहरण।](../../../../../../translated_images/hi/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### अपने कस्टम Phi-3 मॉडल के साथ चैट करें
@@ -807,25 +807,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Prompt flow शुरू करने के लिए **स्टार्ट कंप्यूट सेशंस** चुनें।
 
-    ![कंप्यूट सेशन शुरू करें।](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.hi.png)
+    ![कंप्यूट सेशन शुरू करें।](../../../../../../translated_images/hi/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. पैरामीटर को नवीनीकृत करने के लिए **इनपुट सत्यापित करें और पार्स करें** चुनें।
 
-    ![इनपुट सत्यापित करें।](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.hi.png)
+    ![इनपुट सत्यापित करें।](../../../../../../translated_images/hi/09-02-validate-input.317c76ef766361e9.png)
 
 1. आपने जो कस्टम कनेक्शन बनाया है, उसके **connection** के **मान** को चुनें। उदाहरण के लिए, *connection*।
 
-    ![कनेक्शन।](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.hi.png)
+    ![कनेक्शन।](../../../../../../translated_images/hi/09-03-select-connection.99bdddb4b1844023.png)
 
 #### अपने कस्टम मॉडल के साथ चैट करें
 
 1. **चैट** चुनें।
 
-    ![चैट चुनें।](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.hi.png)
+    ![चैट चुनें।](../../../../../../translated_images/hi/09-04-select-chat.61936dce6612a1e6.png)
 
 1. परिणामों का एक उदाहरण यहाँ है: अब आप अपने कस्टम Phi-3 मॉडल के साथ चैट कर सकते हैं। इसे फ़ाइन-ट्यूनिंग के लिए उपयोग किए गए डेटा के आधार पर प्रश्न पूछने की सिफारिश की जाती है।
 
-    ![Prompt flow के साथ चैट करें।](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.hi.png)
+    ![Prompt flow के साथ चैट करें।](../../../../../../translated_images/hi/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

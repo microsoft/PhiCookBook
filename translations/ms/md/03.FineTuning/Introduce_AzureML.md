@@ -66,7 +66,7 @@ Azure ML telah menambah banyak fungsi berkaitan LLM/SLM, menggabungkan LLMOps da
 
 Pengguna perusahaan boleh menyebarkan model yang berbeza mengikut senario perniagaan yang berbeza melalui Katalog Model, dan menyediakan perkhidmatan sebagai Model sebagai Perkhidmatan untuk pembangun atau pengguna perusahaan mengakses.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.ms.png)
+![models](../../../../translated_images/ms/models.e6c7ff50a51806fd.png)
 
 Katalog Model dalam Azure Machine Learning studio adalah pusat untuk menemui dan menggunakan pelbagai model yang membolehkan anda membina aplikasi AI Generatif. Katalog model menampilkan ratusan model dari penyedia model seperti perkhidmatan Azure OpenAI, Mistral, Meta, Cohere, Nvidia, Hugging Face, termasuk model yang dilatih oleh Microsoft. Model dari penyedia selain Microsoft adalah Produk Bukan Microsoft, seperti yang ditakrifkan dalam Terma Produk Microsoft, dan tertakluk kepada terma yang disediakan bersama model tersebut.
 
@@ -76,7 +76,7 @@ Teras saluran paip pembelajaran mesin adalah untuk memecahkan tugasan pembelajar
 
 Dalam penyetelan halus SLM / LLM, kita boleh mengurus data, latihan, dan proses penjanaan melalui Saluran Paip.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.ms.png)
+![finetuning](../../../../translated_images/ms/finetuning.6559da198851fa52.png)
 
 ### **Aliran Prompt**
 

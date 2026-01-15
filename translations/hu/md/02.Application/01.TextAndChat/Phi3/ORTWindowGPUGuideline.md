@@ -43,7 +43,7 @@ A dokumentum az alábbiakról nyújt tájékoztatást:
 
    ***Megjegyzés*** Ha nem szeretnél fordítani, ezt a lépést kihagyhatod
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.hu.png)
+![CPP](../../../../../../translated_images/hu/01.42f52a2b2aedff02.png)
 
 ### **4. NVIDIA Driver telepítése**
 
@@ -83,7 +83,7 @@ Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 
 
    Nyisd meg a [Notebookot](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) és futtasd
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.hu.png)
+![RESULT](../../../../../../translated_images/hu/02.b9b06996cf7255d5.png)
 
 ### **8. ORT GenAI GPU fordítása**
 
@@ -129,7 +129,7 @@ Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 
 
    - Windows Terminalban nyisd meg a Developer Command Prompt for VS 2022-t, majd lépj be az onnxruntime-genai mappába
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.hu.png)
+![RESULT](../../../../../../translated_images/hu/03.b83ce473d5ff9b9b.png)
 
    - Fordítsd le a projektet a python környezeteddel
 

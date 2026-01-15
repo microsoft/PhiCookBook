@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Σενάρια Fine Tuning
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.el.png)
+![FineTuning with MS Services](../../../../translated_images/el/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Πλατφόρμα** Περιλαμβάνει διάφορες τεχνολογίες όπως Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito και ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Κάντε fine-tune το μοντέλο χρησιμοποιώντας hosted fine-tuning, χωρίς την ανάγκη δημιουργίας και διαχείρισης υπολογιστικής ισχύος.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.el.png)
+![MaaS Fine Tuning](../../../../translated_images/el/MaaSfinetune.3eee4630607aff0d.png)
 
 Το serverless fine-tuning είναι διαθέσιμο για τα μοντέλα Phi-3-mini και Phi-3-medium, επιτρέποντας στους προγραμματιστές να προσαρμόζουν γρήγορα και εύκολα τα μοντέλα για σενάρια cloud και edge χωρίς να χρειάζεται να οργανώσουν υπολογιστική ισχύ. Έχουμε επίσης ανακοινώσει ότι το Phi-3-small είναι πλέον διαθέσιμο μέσω της υπηρεσίας Models-as-a-Service, ώστε οι προγραμματιστές να μπορούν να ξεκινήσουν γρήγορα και εύκολα την ανάπτυξη AI χωρίς να διαχειρίζονται την υποκείμενη υποδομή.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Οι χρήστες διαχειρίζονται τη δική τους υπολογιστική ισχύ για να κάνουν fine-tune τα μοντέλα τους.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.el.png)
+![Maap Fine Tuning](../../../../translated_images/el/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Παράδειγμα Fine Tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Παραδείγματα Απόδοσης Fine Tuning
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.el.png)
+![Finetuning Performance](../../../../translated_images/el/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Αποποίηση ευθυνών**:  
 Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

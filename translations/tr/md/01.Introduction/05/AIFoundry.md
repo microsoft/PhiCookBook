@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry ile Değerlendirme Yapmak**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.tr.png)
+![aistudo](../../../../../translated_images/tr/AIFoundry.9e0b513e999a1c5a.png)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) kullanarak üretken yapay zeka uygulamanızı nasıl değerlendireceğinizi öğrenin. Tek seferlik veya çok aşamalı sohbetleri değerlendiriyor olun, Azure AI Foundry model performansı ve güvenliği için araçlar sunar.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.tr.png)
+![aistudo](../../../../../translated_images/tr/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Azure AI Foundry ile Üretken Yapay Zeka Uygulamalarını Değerlendirme
 Daha ayrıntılı talimatlar için [Azure AI Foundry Dokümantasyonu](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) sayfasına bakabilirsiniz.

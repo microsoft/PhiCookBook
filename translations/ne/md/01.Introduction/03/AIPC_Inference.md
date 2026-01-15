@@ -28,9 +28,9 @@ GPU हरू समानान्तर कम्प्युटिङ क्�
 
 Intel® NPU डिभाइस Intel क्लाइन्ट CPU हरूसँग एकीकृत AI inference एक्सेलेरेटर हो, जुन Intel® Core™ Ultra CPU पुस्तादेखि (पहिले Meteor Lake भनेर चिनिन्थ्यो) उपलब्ध छ। यसले कृत्रिम न्यूरल नेटवर्क कार्यहरूको ऊर्जा-कुशल कार्यान्वयन सक्षम बनाउँछ।
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.ne.png)
+![Latency](../../../../../translated_images/ne/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.ne.png)
+![Latency770](../../../../../translated_images/ne/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 कोड चलाउँदा, हामी Task Manager मार्फत NPU को चलिरहेको स्थिति हेर्न सक्छौं।
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.ne.png)
+![NPU](../../../../../translated_images/ne/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***Samples*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 यो चलिरहेको परिणाम हो
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.ne.png)
+![DML](../../../../../translated_images/ne/aipc_DML.52a44180393ab491.png)
 
 ***Samples*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 परिवर्तित फर्म्याट यसरी देखिन्छ
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.ne.png)
+![openvino_convert](../../../../../translated_images/ne/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 मोडेल पथहरू (model_dir), सम्बन्धित कन्फिगरेसनहरू (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), र हार्डवेयर-एक्सेलेरेटेड डिभाइसहरू (GPU.0) OVModelForCausalLM मार्फत लोड गर्नुहोस्।
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 कोड चलाउँदा, हामी Task Manager मार्फत GPU को चलिरहेको स्थिति हेर्न सक्छौं।
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.ne.png)
+![openvino_gpu](../../../../../translated_images/ne/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***Samples*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

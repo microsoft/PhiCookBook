@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal má silné schopnosti čtení obrázků. Zkusme pomocí Pythonu implementovat následující funkce. Obrázek je stránka ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.cs.png)
+![demo](../../../../../../../translated_images/cs/demo.609a55a7a2b9ed27.png)
 
 ### **Ukázkový kód**
 

@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG er datainnhenting + tekstgenerering. Den strukturerte og ustrukturerte dataen i virksomheten lagres i vektordatabasen. Når man søker etter relevant innhold, finner man relevante sammendrag og innhold som danner en kontekst, og kombinerer dette med tekstfullføringskapasiteten til LLM/SLM for å generere innhold.
 
 ## RAG-prosessen
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.no.png)
+![FinetuningvsRAG](../../../../translated_images/no/rag.2014adc59e6f6007.png)
 
 ## Finetuning
 Finetuning handler om å forbedre en bestemt modell. Det er ikke nødvendig å starte med modellalgoritmen, men data må kontinuerlig samles inn. Hvis du ønsker mer presis terminologi og språklig uttrykk i bransjeapplikasjoner, er finetuning det beste valget. Men hvis dataene dine endres ofte, kan finetuning bli komplisert.

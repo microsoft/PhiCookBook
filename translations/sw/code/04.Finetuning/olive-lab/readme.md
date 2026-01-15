@@ -29,7 +29,7 @@ Mwisho wa maabara hii, utaweza kutumia OLIVE kufanya:
 
 Olive (*O*NNX *live*) ni zana ya kuboresha mifano yenye CLI inayokuwezesha kusafirisha mifano kwa ONNX runtime +++https://onnxruntime.ai+++ kwa ubora na utendaji.
 
-![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2.sw.png)
+![Olive Flow](../../../../../translated_images/sw/olive-flow.c4f76d9142c579b2.png)
 
 Kuingia kwa Olive kawaida ni mfano wa PyTorch au Hugging Face na matokeo ni mfano wa ONNX ulioboreshwa unaotekelezwa kwenye kifaa (lengo la usambazaji) kinachotumia ONNX runtime. Olive itaboresha mfano kwa kiendeshi cha AI cha kifaa hicho (NPU, GPU, CPU) kinachotolewa na muuzaji wa vifaa kama Qualcomm, AMD, Nvidia au Intel.
 

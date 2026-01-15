@@ -34,7 +34,7 @@ Phi — це серія моделей штучного інтелекту з в
 2. **Клонуйте репозиторій**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Приєднайтесь до спільноти Microsoft AI Discord і поспілкуйтесь з експертами та іншими розробниками**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.uk.png)
+![cover](../../translated_images/uk/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Підтримка багатьох мов
 

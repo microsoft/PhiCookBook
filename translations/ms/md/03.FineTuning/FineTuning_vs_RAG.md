@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG adalah gabungan pengambilan data + penjanaan teks. Data berstruktur dan tidak berstruktur dalam perusahaan disimpan dalam pangkalan data vektor. Apabila mencari kandungan yang relevan, ringkasan dan kandungan yang berkaitan akan ditemui untuk membentuk konteks, dan keupayaan pelengkap teks LLM/SLM digabungkan untuk menghasilkan kandungan.
 
 ## Proses RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.ms.png)
+![FinetuningvsRAG](../../../../translated_images/ms/rag.2014adc59e6f6007.png)
 
 ## Penalaan Halus
 Penalaan halus adalah berdasarkan penambahbaikan model tertentu. Ia tidak perlu bermula dengan algoritma model, tetapi data perlu dikumpul secara berterusan. Jika anda mahukan istilah dan ungkapan bahasa yang lebih tepat dalam aplikasi industri, penalaan halus adalah pilihan yang lebih baik. Tetapi jika data anda kerap berubah, penalaan halus boleh menjadi rumit.

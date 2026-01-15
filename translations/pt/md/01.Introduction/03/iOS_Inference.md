@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Escolhi Objective-C como método de desenvolvimento da App, porque ao usar a API C++ do ONNX Runtime para IA Generativa, o Objective-C é mais compatível. Claro que também pode completar as chamadas relacionadas através do bridging com Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.pt.png)
+![xcode](../../../../../translated_images/pt/xcode.8147789e6c25e3e2.png)
 
 ## **5. Copiar o modelo ONNX quantizado INT4 para o projeto da aplicação App**
 
 Precisamos importar o modelo de quantização INT4 em formato ONNX, que deve ser descarregado primeiro.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.pt.png)
+![hf](../../../../../translated_images/pt/hf.6b8504fd88ee48dd.png)
 
 Depois de descarregar, é necessário adicioná-lo à diretoria Resources do projeto no Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.pt.png)
+![model](../../../../../translated_images/pt/model.3b879b14e0be877d.png)
 
 ## **6. Adicionar a API C++ nos ViewControllers**
 
@@ -121,11 +121,11 @@ Depois de descarregar, é necessário adicioná-lo à diretoria Resources do pro
 
 - **a.** Adicione os ficheiros header C++ correspondentes ao projeto.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.pt.png)
+  ![Header File](../../../../../translated_images/pt/head.64cad021ce70a333.png)
 
 - **b.** Inclua a biblioteca dinâmica `onnxruntime-genai` no Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.pt.png)
+  ![Library](../../../../../translated_images/pt/lib.a4209b9f21ddf344.png)
 
 - **c.** Use o código de exemplos em C para testes. Pode também adicionar funcionalidades adicionais como ChatUI para mais funcionalidades.
 
@@ -162,7 +162,7 @@ Depois de descarregar, é necessário adicioná-lo à diretoria Resources do pro
 
 Depois de concluir a configuração, pode executar a aplicação para ver os resultados da inferência do modelo Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.pt.jpg)
+![Running Result](../../../../../translated_images/pt/result.326a947a6a2b9c51.jpg)
 
 Para mais código de exemplo e instruções detalhadas, visite o [repositório Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

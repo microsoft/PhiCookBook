@@ -66,7 +66,7 @@ Azure ML додав багато функцій, пов’язаних з LLM/SL
 
 Корпоративні користувачі можуть розгортати різні моделі відповідно до різних бізнес-сценаріїв через Каталог моделей і надавати послуги як Model as Service для розробників або користувачів підприємства.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.uk.png)
+![models](../../../../translated_images/uk/models.e6c7ff50a51806fd.png)
 
 Каталог моделей в Azure Machine Learning studio — це центр для пошуку та використання широкого спектру моделей, які дозволяють створювати генеративні AI-застосунки. Каталог містить сотні моделей від таких провайдерів, як Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, включно з моделями, навченими Microsoft. Моделі від провайдерів, окрім Microsoft, є Non-Microsoft Products згідно з Product Terms Microsoft і підпадають під умови, надані разом із моделлю.
 
@@ -76,7 +76,7 @@ Azure ML додав багато функцій, пов’язаних з LLM/SL
 
 Під час тонкого налаштування SLM / LLM ми можемо керувати даними, навчанням і процесами генерації через Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.uk.png)
+![finetuning](../../../../translated_images/uk/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

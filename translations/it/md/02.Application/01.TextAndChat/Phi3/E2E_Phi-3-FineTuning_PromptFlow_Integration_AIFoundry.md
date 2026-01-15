@@ -24,7 +24,7 @@ In questo esempio E2E, imparerai come effettuare il fine-tuning del modello Phi-
 
 Ecco una panoramica di questo esempio E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.it.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/it/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Indice
 
@@ -49,13 +49,13 @@ Ecco una panoramica di questo esempio E2E.
 
 1. Digita *azure machine learning* nella **barra di ricerca** in alto alla pagina del portale e seleziona **Azure Machine Learning** dalle opzioni che appaiono.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.it.png)
+    ![Type azure machine learning.](../../../../../../translated_images/it/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Seleziona **+ Create** dal menu di navigazione.
 
 3. Seleziona **New workspace** dal menu di navigazione.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.it.png)
+    ![Select new workspace.](../../../../../../translated_images/it/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Esegui le seguenti operazioni:
 
@@ -68,7 +68,7 @@ Ecco una panoramica di questo esempio E2E.
     - Seleziona gli **Application insights** da usare (creane uno nuovo se necessario).
     - Seleziona il **Container registry** da usare (creane uno nuovo se necessario).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.it.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/it/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Seleziona **Review + Create**.
 
@@ -91,7 +91,7 @@ In questo tutorial, imparerai come effettuare il fine-tuning e distribuire un mo
     - Seleziona la **famiglia di macchine virtuali** da utilizzare. Ad esempio, seleziona **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, che include la GPU *Standard_NC24ads_A100_v4*.
     - Seleziona **Request quota** dal menu di navigazione.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.it.png)
+        ![Request quota.](../../../../../../translated_images/it/02-02-request-quota.c0428239a63ffdd5.png)
 
     - All’interno della pagina Request quota, inserisci il **Limite di nuovi core** che desideri utilizzare. Ad esempio, 24.
     - All’interno della pagina Request quota, seleziona **Submit** per richiedere la quota GPU.
@@ -112,11 +112,11 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
 
 1. Digita *managed identities* nella **barra di ricerca** in alto alla pagina del portale e seleziona **Managed Identities** dalle opzioni che appaiono.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.it.png)
+    ![Type managed identities.](../../../../../../translated_images/it/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Seleziona **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.it.png)
+    ![Select create.](../../../../../../translated_images/it/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Esegui le seguenti operazioni:
 
@@ -125,7 +125,7 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
     - Seleziona la **Regione** che desideri usare.
     - Inserisci il **Nome**. Deve essere un valore univoco.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.it.png)
+    ![Select create.](../../../../../../translated_images/it/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Seleziona **Review + create**.
 
@@ -145,7 +145,7 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
     - Seleziona il **Gruppo di risorse** da usare.
     - Seleziona il **Ruolo** su **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.it.png)
+    ![Fill contributor role.](../../../../../../translated_images/it/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Seleziona **Save**.
 
@@ -153,7 +153,7 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
 
 1. Digita *storage accounts* nella **barra di ricerca** in alto alla pagina del portale e seleziona **Storage accounts** dalle opzioni che appaiono.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.it.png)
+    ![Type storage accounts.](../../../../../../translated_images/it/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Seleziona l'account di archiviazione associato al workspace Azure Machine Learning che hai creato. Ad esempio, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
     - Seleziona **+ Add** dal menu di navigazione.
     - Seleziona **Add role assignment** dal menu di navigazione.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.it.png)
+    ![Add role.](../../../../../../translated_images/it/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. All’interno della pagina Aggiungi assegnazione di ruolo, esegui le seguenti operazioni:
 
@@ -177,7 +177,7 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
     - All’interno della pagina Seleziona identità gestite, seleziona l’identità gestita che hai creato. Ad esempio, *finetunephi-managedidentity*.
     - All’interno della pagina Seleziona identità gestite, seleziona **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.it.png)
+    ![Select managed identity.](../../../../../../translated_images/it/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Seleziona **Review + assign**.
 
@@ -185,7 +185,7 @@ Per effettuare il fine-tuning e distribuire i tuoi modelli, devi prima creare un
 
 1. Digita *container registries* nella **barra di ricerca** in alto alla pagina del portale e seleziona **Container registries** dalle opzioni che appaiono.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.it.png)
+    ![Type container registries.](../../../../../../translated_images/it/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Seleziona il container registry associato al workspace Azure Machine Learning. Ad esempio, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ In questo esercizio, dovrai
 
 1. Seleziona la cartella *finetune-phi* che hai creato, che si trova in *C:\Users\yourUserName\finetune-phi*.
 
-    ![Seleziona la cartella che hai creato.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.it.png)
+    ![Seleziona la cartella che hai creato.](../../../../../../translated_images/it/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Nel riquadro a sinistra di Visual Studio Code, fai clic con il tasto destro e seleziona **Nuovo file** per creare un nuovo file chiamato *download_dataset.py*.
 
-    ![Crea un nuovo file.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.it.png)
+    ![Crea un nuovo file.](../../../../../../translated_images/it/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Prepara il dataset per il fine-tuning
 
@@ -392,7 +392,7 @@ In questo esercizio:
 
 1. Seleziona **+ New**.
 
-    ![Seleziona compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.it.png)
+    ![Seleziona compute.](../../../../../../translated_images/it/06-01-select-compute.a29cff290b480252.png)
 
 1. Esegui le seguenti azioni:
 
@@ -402,7 +402,7 @@ In questo esercizio:
     - Seleziona il filtro **Dimensione macchina virtuale** su **Select from all options**.
     - Seleziona la **Dimensione macchina virtuale** su **Standard_NC24ads_A100_v4**.
 
-    ![Crea cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.it.png)
+    ![Crea cluster.](../../../../../../translated_images/it/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Seleziona **Next**.
 
@@ -413,7 +413,7 @@ In questo esercizio:
     - Seleziona il **Numero massimo di nodi** su **1**.
     - Seleziona il tempo di inattività **Idle seconds before scale down** su **120**.
 
-    ![Crea cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.it.png)
+    ![Crea cluster.](../../../../../../translated_images/it/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Seleziona **Create**.
 
@@ -423,18 +423,18 @@ In questo esercizio:
 
 1. Seleziona lo spazio di lavoro di Azure Machine Learning che hai creato.
 
-    ![Seleziona lo spazio di lavoro che hai creato.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.it.png)
+    ![Seleziona lo spazio di lavoro che hai creato.](../../../../../../translated_images/it/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Esegui le seguenti azioni:
 
     - Seleziona **Catalogo modelli** dal tab a sinistra.
     - Digita *phi-3-mini-4k* nella **barra di ricerca** e seleziona **Phi-3-mini-4k-instruct** tra le opzioni che appaiono.
 
-    ![Digita phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.it.png)
+    ![Digita phi-3-mini-4k.](../../../../../../translated_images/it/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Seleziona **Fine-tune** dal menu di navigazione.
 
-    ![Seleziona fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.it.png)
+    ![Seleziona fine tune.](../../../../../../translated_images/it/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Esegui le seguenti azioni:
 
@@ -443,7 +443,7 @@ In questo esercizio:
     - Seleziona il tipo di caricamento dei dati di validazione su **Provide different validation data**.
     - Seleziona **+ Select data** per caricare i **Dati di validazione**.
 
-    ![Compila la pagina del fine-tuning.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.it.png)
+    ![Compila la pagina del fine-tuning.](../../../../../../translated_images/it/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ In questo esercizio:
 
 1. In questo esercizio, hai effettuato con successo il fine-tuning del modello Phi-3 utilizzando Azure Machine Learning. Nota che il processo di fine-tuning può richiedere un tempo considerevole. Dopo aver avviato il lavoro di fine-tuning, dovrai attendere il suo completamento. Puoi monitorare lo stato del lavoro navigando alla scheda Jobs nel lato sinistro del tuo spazio di lavoro Azure Machine Learning. Nella serie successiva, distribuirai il modello fine-tuned e lo integrerai con Prompt flow.
 
-    ![Guarda il job di fine-tuning.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.it.png)
+    ![Guarda il job di fine-tuning.](../../../../../../translated_images/it/06-08-output.2bd32e59930672b1.png)
 
 ### Distribuisci il modello Phi-3 fine-tuned
 
@@ -471,17 +471,17 @@ In questo esercizio:
 
 1. Seleziona lo spazio di lavoro di Azure Machine Learning che hai creato.
 
-    ![Seleziona lo spazio di lavoro che hai creato.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.it.png)
+    ![Seleziona lo spazio di lavoro che hai creato.](../../../../../../translated_images/it/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Seleziona **Models** dal tab a sinistra.
 1. Seleziona **+ Register**.
 1. Seleziona **From a job output**.
 
-    ![Registra modello.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.it.png)
+    ![Registra modello.](../../../../../../translated_images/it/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Seleziona il job che hai creato.
 
-    ![Seleziona job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.it.png)
+    ![Seleziona job.](../../../../../../translated_images/it/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Seleziona **Next**.
 
@@ -489,17 +489,17 @@ In questo esercizio:
 
 1. Assicurati che **Job output** sia selezionato; dovrebbe essere selezionato automaticamente.
 
-    ![Seleziona output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.it.png)
+    ![Seleziona output.](../../../../../../translated_images/it/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Seleziona **Next**.
 
 3. Seleziona **Register**.
 
-    ![Seleziona registra.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.it.png)
+    ![Seleziona registra.](../../../../../../translated_images/it/07-04-register.fd82a3b293060bc7.png)
 
 4. Puoi visualizzare il modello registrato navigando nel menu **Models** dal tab a sinistra.
 
-    ![Modello registrato.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.it.png)
+    ![Modello registrato.](../../../../../../translated_images/it/07-05-registered-model.7db9775f58dfd591.png)
 
 #### Distribuisci il modello fine-tuned
 
@@ -509,13 +509,13 @@ In questo esercizio:
 
 1. Seleziona **Real-time endpoints** dal menu di navigazione.
 
-    ![Crea endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.it.png)
+    ![Crea endpoint.](../../../../../../translated_images/it/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Seleziona **Create**.
 
 1. Seleziona il modello registrato che hai creato.
 
-    ![Seleziona modello registrato.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.it.png)
+    ![Seleziona modello registrato.](../../../../../../translated_images/it/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Seleziona **Select**.
 
@@ -527,7 +527,7 @@ In questo esercizio:
     - Inserisci **Nome endpoint**. Deve essere un valore univoco.
     - Inserisci **Nome deployment**. Deve essere un valore univoco.
 
-    ![Compila la configurazione del deployment.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.it.png)
+    ![Compila la configurazione del deployment.](../../../../../../translated_images/it/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Seleziona **Deploy**.
 
@@ -543,14 +543,14 @@ In questo esercizio:
 
 1. Seleziona l'endpoint che hai creato.
 
-    ![Seleziona endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.it.png)
+    ![Seleziona endpoints](../../../../../../translated_images/it/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. In questa pagina puoi gestire gli endpoint durante il processo di deployment.
 
 > [!NOTE]
 > Una volta che il deployment è completo, assicurati che **Live traffic** sia impostato al **100%**. Se non è così, seleziona **Update traffic** per regolare le impostazioni di traffico. Nota che non puoi testare il modello se il traffico è impostato a 0%.
 >
-> ![Imposta traffico.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.it.png)
+> ![Imposta traffico.](../../../../../../translated_images/it/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## Scenario 3: Integra con Prompt flow e Chatta con il tuo modello personalizzato in Azure AI Foundry
@@ -579,7 +579,7 @@ Devi creare un Hub prima di creare il Progetto. Un Hub funziona come un Gruppo d
 1. Seleziona **Tutti gli hub** dal tab a sinistra.
 
 1. Seleziona **+ Nuovo hub** dal menu di navigazione.
-    ![Crea hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.it.png)
+    ![Crea hub.](../../../../../../translated_images/it/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Esegui le seguenti operazioni:
 
@@ -590,7 +590,7 @@ Devi creare un Hub prima di creare il Progetto. Un Hub funziona come un Gruppo d
     - Seleziona **Connetti servizi Azure AI** da utilizzare (creane uno nuovo se necessario).
     - Seleziona **Connetti Azure AI Search** su **Salta la connessione**.
 
-    ![Compila hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.it.png)
+    ![Compila hub.](../../../../../../translated_images/it/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Seleziona **Avanti**.
 
@@ -600,11 +600,11 @@ Devi creare un Hub prima di creare il Progetto. Un Hub funziona come un Gruppo d
 
 1. Seleziona **+ Nuovo progetto** dal menu di navigazione.
 
-    ![Seleziona nuovo progetto.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.it.png)
+    ![Seleziona nuovo progetto.](../../../../../../translated_images/it/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Inserisci **Nome progetto**. Deve essere un valore univoco.
 
-    ![Crea progetto.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.it.png)
+    ![Crea progetto.](../../../../../../translated_images/it/08-05-create-project.4d97f0372f03375a.png)
 
 1. Seleziona **Crea un progetto**.
 
@@ -620,17 +620,17 @@ Per integrare il tuo modello Phi-3 personalizzato con Prompt flow, devi salvare 
 
 1. Seleziona **Endpoint** dalla scheda a sinistra.
 
-    ![Seleziona endpoint.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.it.png)
+    ![Seleziona endpoint.](../../../../../../translated_images/it/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Seleziona l'endpoint che hai creato.
 
-    ![Seleziona endpoint.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.it.png)
+    ![Seleziona endpoint.](../../../../../../translated_images/it/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. Seleziona **Consuma** dal menu di navigazione.
 
 1. Copia il tuo **endpoint REST** e la **Chiave primaria**.
 
-    ![Copia chiave API e URI endpoint.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.it.png)
+    ![Copia chiave API e URI endpoint.](../../../../../../translated_images/it/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Aggiungi la Connessione Personalizzata
 
@@ -642,11 +642,11 @@ Per integrare il tuo modello Phi-3 personalizzato con Prompt flow, devi salvare 
 
 1. Seleziona **+ Nuova connessione**.
 
-    ![Seleziona nuova connessione.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.it.png)
+    ![Seleziona nuova connessione.](../../../../../../translated_images/it/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. Seleziona **Chiavi personalizzate** dal menu di navigazione.
 
-    ![Seleziona chiavi personalizzate.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.it.png)
+    ![Seleziona chiavi personalizzate.](../../../../../../translated_images/it/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Esegui le seguenti operazioni:
 
@@ -656,7 +656,7 @@ Per integrare il tuo modello Phi-3 personalizzato con Prompt flow, devi salvare 
     - Per il nome della chiave, inserisci **key** e incolla la chiave copiata da Azure ML Studio nel campo valore.
     - Dopo aver aggiunto le chiavi, seleziona **è segreto** per evitare che la chiave venga esposta.
 
-    ![Aggiungi connessione.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.it.png)
+    ![Aggiungi connessione.](../../../../../../translated_images/it/08-11-add-connection.785486badb4d2d26.png)
 
 1. Seleziona **Aggiungi connessione**.
 
@@ -670,15 +670,15 @@ Hai aggiunto una connessione personalizzata in Azure AI Foundry. Ora, creiamo un
 
 1. Seleziona **+ Crea** dal menu di navigazione.
 
-    ![Seleziona Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.it.png)
+    ![Seleziona Promptflow.](../../../../../../translated_images/it/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. Seleziona **Chat flow** dal menu di navigazione.
 
-    ![Seleziona chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.it.png)
+    ![Seleziona chat flow.](../../../../../../translated_images/it/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Inserisci **Nome cartella** da utilizzare.
 
-    ![Inserisci nome.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.it.png)
+    ![Inserisci nome.](../../../../../../translated_images/it/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Seleziona **Crea**.
 
@@ -715,7 +715,7 @@ Devi integrare il modello Phi-3 fine-tuned in un Prompt flow. Tuttavia, il Promp
 
     - Seleziona **Salva**.
 
-    ![Seleziona modalità file grezzo.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.it.png)
+    ![Seleziona modalità file grezzo.](../../../../../../translated_images/it/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Aggiungi il seguente codice al file *integrate_with_promptflow.py* per utilizzare il modello Phi-3 personalizzato in Prompt flow.
 
@@ -780,14 +780,14 @@ Devi integrare il modello Phi-3 fine-tuned in un Prompt flow. Tuttavia, il Promp
 
     ```
 
-    ![Incolla codice prompt flow.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.it.png)
+    ![Incolla codice prompt flow.](../../../../../../translated_images/it/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Per informazioni più dettagliate sull'uso di Prompt flow in Azure AI Foundry, puoi fare riferimento a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Seleziona **Chat input**, **Chat output** per abilitare la chat con il tuo modello.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.it.png)
+    ![Input Output.](../../../../../../translated_images/it/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. Ora sei pronto per chattare con il tuo modello Phi-3 personalizzato. Nel prossimo esercizio, imparerai come avviare Prompt flow e usarlo per chattare con il tuo modello Phi-3 fine-tuned.
 
@@ -795,7 +795,7 @@ Devi integrare il modello Phi-3 fine-tuned in un Prompt flow. Tuttavia, il Promp
 >
 > Il flusso ricostruito dovrebbe assomigliare all'immagine seguente:
 >
-> ![Esempio flusso.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.it.png)
+> ![Esempio flusso.](../../../../../../translated_images/it/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Chatta con il tuo modello Phi-3 personalizzato
@@ -808,25 +808,25 @@ Ora che hai fine-tuned e integrato il tuo modello Phi-3 personalizzato con Promp
 
 1. Seleziona **Avvia sessioni di calcolo** per avviare Prompt flow.
 
-    ![Avvia sessione di calcolo.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.it.png)
+    ![Avvia sessione di calcolo.](../../../../../../translated_images/it/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Seleziona **Convalida e analizza input** per rinnovare i parametri.
 
-    ![Convalida input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.it.png)
+    ![Convalida input.](../../../../../../translated_images/it/09-02-validate-input.317c76ef766361e9.png)
 
 1. Seleziona il **Valore** della **connessione** corrispondente alla connessione personalizzata che hai creato. Per esempio, *connection*.
 
-    ![Connessione.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.it.png)
+    ![Connessione.](../../../../../../translated_images/it/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Chatta con il tuo modello personalizzato
 
 1. Seleziona **Chat**.
 
-    ![Seleziona chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.it.png)
+    ![Seleziona chat.](../../../../../../translated_images/it/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Ecco un esempio dei risultati: ora puoi chattare con il tuo modello Phi-3 personalizzato. Si consiglia di fare domande basate sui dati utilizzati per il fine-tuning.
 
-    ![Chatta con prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.it.png)
+    ![Chatta con prompt flow.](../../../../../../translated_images/it/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

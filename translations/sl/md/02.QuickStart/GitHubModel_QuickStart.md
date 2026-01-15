@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dobrodošli na [GitHub Models](https://github.com/marketplace/models)! Vse je pripravljeno, da raziščete AI modele, gostovane na Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.sl.png)
+![GitHubModel](../../../../translated_images/sl/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 Za več informacij o modelih, ki so na voljo na GitHub Models, si oglejte [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Na voljo je nekaj osnovnih primerov, ki jih lahko takoj zaženete. Najdete jih v
 
 Na voljo je tudi namensko Codespaces okolje za izvajanje primerov in modelov.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.sl.png)
+![Getting Started](../../../../translated_images/sl/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## Vzorec kode
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## BREZPLAČNA uporaba in omejitve hitrosti za GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.sl.png)
+![Model Catalog](../../../../translated_images/sl/GitHub_Model.ca6c125cb3117d0e.png)
 
 [Omejitve hitrosti za playground in brezplačno uporabo API-ja](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) so namenjene temu, da lahko preizkušate modele in prototipirate svojo AI aplikacijo. Za uporabo nad temi omejitvami in za razširitev vaše aplikacije morate zagotoviti vire iz Azure računa in se tam tudi avtenticirati namesto z vašim GitHub osebnim dostopnim žetonom. V kodi ni potrebno spreminjati ničesar drugega. Uporabite to povezavo, da odkrijete, kako preseči brezplačne omejitve v Azure AI.
 

@@ -67,7 +67,7 @@ Azure ML 增加了许多与 LLM/SLM 相关的功能，结合 LLMOps 和 SLMOps�
 
 企业用户可以通过模型目录根据不同业务场景部署不同模型，并以模型即服务的形式为企业开发者或用户提供访问。
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.zh.png)
+![models](../../../../translated_images/zh/models.e6c7ff50a51806fd.png)
 
 Azure 机器学习 Studio 中的模型目录是发现和使用各种模型的中心，帮助你构建生成式 AI 应用。模型目录包含数百个模型，涵盖 Azure OpenAI 服务、Mistral、Meta、Cohere、Nvidia、Hugging Face 等模型提供商，包括微软训练的模型。除微软外的模型提供商属于非微软产品，受微软产品条款定义，并遵守模型附带的条款。
 
@@ -77,7 +77,7 @@ Azure 机器学习 Studio 中的模型目录是发现和使用各种模型的中
 
 在微调 SLM / LLM 时，我们可以通过流水线管理数据、训练和生成过程。
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.zh.png)
+![finetuning](../../../../translated_images/zh/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

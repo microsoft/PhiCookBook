@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Korištenje Azure AI Foundry za evaluaciju**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.hr.png)
+![aistudo](../../../../../translated_images/hr/AIFoundry.9e0b513e999a1c5a.png)
 
 Kako evaluirati svoju generativnu AI aplikaciju koristeći [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Bilo da procjenjujete jednokratne ili višekratne razgovore, Azure AI Foundry nudi alate za procjenu performansi i sigurnosti modela.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.hr.png)
+![aistudo](../../../../../translated_images/hr/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Kako evaluirati generativne AI aplikacije s Azure AI Foundry
 Za detaljnije upute pogledajte [Azure AI Foundry dokumentaciju](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

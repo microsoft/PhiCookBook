@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Изабрао сам Objective-C као метод развоја апликације, јер је коришћење генеративне вештачке интелигенције са ONNX Runtime C++ API-јем боље компатибилно са Objective-C. Наравно, можете и преко Swift bridging-а обавити релевантне позиве.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.sr.png)
+![xcode](../../../../../translated_images/sr/xcode.8147789e6c25e3e2.png)
 
 ## **5. Копирање ONNX квантованог INT4 модела у пројекат апликације**
 
 Потребно је да увеземо INT4 квантовани модел у ONNX формату, који је потребно прво преузети.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.sr.png)
+![hf](../../../../../translated_images/sr/hf.6b8504fd88ee48dd.png)
 
 Након преузимања, потребно је додати га у Resources директоријум пројекта у Xcode-у.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.sr.png)
+![model](../../../../../translated_images/sr/model.3b879b14e0be877d.png)
 
 ## **6. Додавање C++ API у ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** Додајте одговарајуће C++ заглављене фајлове у пројекат.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.sr.png)
+  ![Header File](../../../../../translated_images/sr/head.64cad021ce70a333.png)
 
 - **b.** Укључите `onnxruntime-genai` динамичку библиотеку у Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.sr.png)
+  ![Library](../../../../../translated_images/sr/lib.a4209b9f21ddf344.png)
 
 - **c.** Користите C Samples код за тестирање. Такође можете додати додатне функције као што је ChatUI за више функционалности.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Када је подешавање завршено, можете покренути апликацију и видети резултате извођења Phi-3-mini модела.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.sr.jpg)
+![Running Result](../../../../../translated_images/sr/result.326a947a6a2b9c51.jpg)
 
 За више примера кода и детаљна упутства посетите [Phi-3 Mini Samples репозиторијум](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

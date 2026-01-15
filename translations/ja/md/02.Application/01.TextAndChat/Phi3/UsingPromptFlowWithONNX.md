@@ -33,33 +33,33 @@ Windows GPU用ONNX Runtime GenAIの設定方法はこのガイドを参照して
 
 1. Prompt flowのVS Code拡張機能をインストールします
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.ja.png)
+![pfvscode](../../../../../../translated_images/ja/pfvscode.eff93dfc66a42cbe.png)
 
 2. Prompt flowのVS Code拡張機能をインストール後、拡張機能をクリックし、**Installation dependencies**を選択して、このガイドに従い環境にPrompt flow SDKをインストールします
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.ja.png)
+![pfsetup](../../../../../../translated_images/ja/pfsetup.b46e93096f5a254f.png)
 
 3. [サンプルコード](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf)をダウンロードし、VS Codeで開きます
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.ja.png)
+![pfsample](../../../../../../translated_images/ja/pfsample.8d89e70584ffe7c4.png)
 
 4. **flow.dag.yaml**を開いてPython環境を選択します
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.ja.png)
+![pfdag](../../../../../../translated_images/ja/pfdag.264a77f7366458ff.png)
 
    **chat_phi3_ort.py**を開いてPhi-3.5-instruct ONNXモデルの場所を変更します
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.ja.png)
+![pfphi](../../../../../../translated_images/ja/pfphi.72da81d74244b45f.png)
 
 5. Prompt flowを実行してテストします
 
 **flow.dag.yaml**を開き、ビジュアルエディターをクリックします
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.ja.png)
+![pfv](../../../../../../translated_images/ja/pfv.ba8a81f34b20f603.png)
 
 クリック後、実行してテストします
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.ja.png)
+![pfflow](../../../../../../translated_images/ja/pfflow.4e1135a089b1ce1b.png)
 
 1. ターミナルでバッチ実行してさらに結果を確認できます
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 結果はデフォルトのブラウザで確認可能です
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.ja.png)
+![pfresult](../../../../../../translated_images/ja/pfresult.c22c826f8062d7cb.png)
 
 **免責事項**：  
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

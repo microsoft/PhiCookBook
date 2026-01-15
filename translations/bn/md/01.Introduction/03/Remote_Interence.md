@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 অ্যাডাপ্টারগুলো রিমোট পরিবেশে প্রশিক্ষিত হওয়ার পর, মডেলের সাথে ইন্টারঅ্যাক্ট করার জন্য একটি সহজ Gradio অ্যাপ্লিকেশন ব্যবহার করুন।
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.bn.png)
+![Fine-tune complete](../../../../../translated_images/bn/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Azure রিসোর্স প্রোভিশন করা  
 রিমোট ইনফারেন্সের জন্য Azure রিসোর্স সেটআপ করতে কমান্ড প্যালেট থেকে `AI Toolkit: Provision Azure Container Apps for inference` চালান। এই সেটআপের সময় আপনাকে আপনার Azure সাবস্ক্রিপশন এবং রিসোর্স গ্রুপ নির্বাচন করতে বলা হবে।  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.bn.png)
+![Provision Inference Resource](../../../../../translated_images/bn/command-provision-inference.467afc8d351642fc.png)
 
 ডিফল্টভাবে, ইনফারেন্সের জন্য সাবস্ক্রিপশন এবং রিসোর্স গ্রুপ ফাইন-টিউনিংয়ের জন্য ব্যবহৃত সেটির সাথে মিলে যাবে। ইনফারেন্স একই Azure Container App Environment ব্যবহার করবে এবং মডেল ও মডেল অ্যাডাপ্টার অ্যাক্সেস করবে যা Azure Files-এ সংরক্ষিত, যা ফাইন-টিউনিং ধাপে তৈরি হয়েছিল।
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### ইনফারেন্সের জন্য ডিপ্লয়মেন্ট  
 যদি আপনি ইনফারেন্স কোড সংশোধন করতে চান বা ইনফারেন্স মডেল পুনরায় লোড করতে চান, তাহলে `AI Toolkit: Deploy for inference` কমান্ডটি চালান। এটি আপনার সর্বশেষ কোড ACA-র সাথে সিঙ্ক্রোনাইজ করবে এবং রেপ্লিকা রিস্টার্ট করবে।
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.bn.png)
+![Deploy for inference](../../../../../translated_images/bn/command-deploy.9adb4e310dd0b0ae.png)
 
 ডিপ্লয়মেন্ট সফলভাবে সম্পন্ন হওয়ার পর, মডেলটি এই এন্ডপয়েন্ট ব্যবহার করে মূল্যায়নের জন্য প্রস্তুত।
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 VSCode নোটিফিকেশনে প্রদর্শিত "*Go to Inference Endpoint*" বোতামে ক্লিক করে আপনি ইনফারেন্স API-তে প্রবেশ করতে পারেন। বিকল্পভাবে, ওয়েব API এন্ডপয়েন্ট `ACA_APP_ENDPOINT`-এ পাওয়া যাবে `./infra/inference.config.json` ফাইলে এবং আউটপুট প্যানেলে।
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.bn.png)
+![App Endpoint](../../../../../translated_images/bn/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** ইনফারেন্স এন্ডপয়েন্ট সম্পূর্ণ কার্যকর হতে কয়েক মিনিট সময় নিতে পারে।
 

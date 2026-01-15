@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Scenariji za fino nastavljanje
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.sl.png)
+![FineTuning with MS Services](../../../../translated_images/sl/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Platforma** Vključuje različne tehnologije, kot so Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito in ONNX Runtime.
 
@@ -24,7 +24,7 @@ Proces fine nastavljanja z Microsoftovimi tehnologijami vključuje različne kom
 
 Fino nastavite model z uporabo gostovanega fine nastavljanja, brez potrebe po ustvarjanju in upravljanju računalniških virov.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.sl.png)
+![MaaS Fine Tuning](../../../../translated_images/sl/MaaSfinetune.3eee4630607aff0d.png)
 
 Brezstrežni način fine nastavljanja je na voljo za modele Phi-3-mini in Phi-3-medium, kar razvijalcem omogoča hitro in enostavno prilagajanje modelov za oblačne in robne scenarije, brez skrbi glede računalniških virov. Prav tako smo napovedali, da je model Phi-3-small zdaj na voljo prek naše ponudbe Models-as-a-Service, kar razvijalcem omogoča hiter in enostaven začetek z razvojem AI brez upravljanja osnovne infrastrukture.
 
@@ -32,7 +32,7 @@ Brezstrežni način fine nastavljanja je na voljo za modele Phi-3-mini in Phi-3-
 
 Uporabniki upravljajo svoje računalniške vire, da lahko fino nastavijo svoje modele.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.sl.png)
+![Maap Fine Tuning](../../../../translated_images/sl/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Primer fine nastavljanja](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Uporabniki upravljajo svoje računalniške vire, da lahko fino nastavijo svoje m
 
 ## Primeri zmogljivosti fine nastavljanja
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.sl.png)
+![Finetuning Performance](../../../../translated_images/sl/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Omejitev odgovornosti**:  
 Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

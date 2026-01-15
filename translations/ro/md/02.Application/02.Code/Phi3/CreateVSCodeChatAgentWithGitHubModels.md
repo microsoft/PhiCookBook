@@ -15,11 +15,11 @@ Folosești Visual Studio Code Copilot? Mai ales în Chat, poți utiliza diferiț
 
 Știm că Phi-3/3.5-mini-instruct din familia Phi-3/3.5 are capacități puternice de înțelegere și generare a codului și are avantaje față de Gemma-2-9b și Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.ro.png)
+![codegen](../../../../../../translated_images/ro/codegen.53be1150ee54d969.png)
 
 Cele mai recente GitHub Models oferă deja acces la modelele Phi-3.5-mini-instruct (128k) și Phi-3.5-vision-instruct (128k). Dezvoltatorii le pot accesa prin OpenAI SDK, Azure AI Inference SDK și REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d5.ro.png)
+![gh](../../../../../../translated_images/ro/gh.459640c7ceba01d5.png)
 
 ***Note:*** Se recomandă utilizarea Azure AI Inference SDK aici, deoarece permite o comutare mai bună cu Azure Model Catalog în mediul de producție.
 
@@ -34,13 +34,13 @@ Mai jos sunt rezultatele pentru **Phi-3.5-mini-instruct (128k)** și **Phi-3.5-v
 
 GitHub Copilot Chat Agent poate îndeplini diverse sarcini în diferite scenarii de proiect, bazându-se pe cod. Sistemul are patru agenți: workspace, github, terminal, vscode.
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.ro.png)
+![agent](../../../../../../translated_images/ro/agent.3dbb06228f9a6189.png)
 
 Adăugând numele agentului cu ‘@’, poți finaliza rapid sarcina corespunzătoare. Pentru companii, dacă adaugi conținut specific afacerii tale, cum ar fi cerințe, codare, specificații de testare și lansare, poți beneficia de funcții private mai puternice bazate pe GitHub Copilot.
 
 Visual Studio Code Chat Agent a lansat oficial API-ul său, permițând companiilor sau dezvoltatorilor enterprise să creeze agenți adaptați diferitelor ecosisteme software de business. Bazându-te pe metoda de dezvoltare Visual Studio Code Extension Development, poți accesa cu ușurință interfața API a Visual Studio Code Chat Agent. Putem dezvolta pe baza acestui proces.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.ro.png)
+![diagram](../../../../../../translated_images/ro/diagram.ca70d2866762f115.png)
 
 Scenariul de dezvoltare poate suporta accesul la API-uri de modele terțe (cum ar fi GitHub Models, Azure Model Catalog și servicii proprii bazate pe modele open source) și poate folosi modelele gpt-35-turbo, gpt-4 și gpt-4o oferite de GitHub Copilot.
 
@@ -54,7 +54,7 @@ Scenariul de dezvoltare poate suporta accesul la API-uri de modele terțe (cum a
 
 3. Generează cod bazat pe **Phi-3.5-vision-instruct (128k)** și completare de imagine prin comanda **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.ro.png)
+![arch](../../../../../../translated_images/ro/arch.5a58a0adfa959a2d.png)
 
 ## **Pași asociați**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a9541.ro.png)
+![help](../../../../../../translated_images/ro/help.04c134d2bf9a9541.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.ro.png)
+![agenthelp](../../../../../../translated_images/ro/agenthelp.60c68767c941a3fe.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.ro.png)
+![agentgen](../../../../../../translated_images/ro/agentgen.a16e7735790f764b.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.ro.png)
+![agentimage](../../../../../../translated_images/ro/agentimage.f5cb52b45ab7d0d1.png)
 
 Poți descărca codul exemplu: [click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

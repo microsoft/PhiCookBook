@@ -23,7 +23,7 @@ In deze E2E-sample leert u hoe u het Phi-3-model fijn afstemt en integreert met 
 
 Hier is een overzicht van deze E2E-sample.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.nl.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/nl/00-01-architecture.02fc569e266d468c.png)
 
 ### Inhoudsopgave
 
@@ -49,13 +49,13 @@ Hier is een overzicht van deze E2E-sample.
 
 1. Typ *azure machine learning* in de **zoekbalk** bovenaan de portalpagina en selecteer **Azure Machine Learning** uit de opties die verschijnen.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.nl.png)
+    ![Type azure machine learning](../../../../../../translated_images/nl/01-01-type-azml.a5116f8454d98c60.png)
 
 1. Selecteer **+ Create** in het navigatiemenu.
 
 1. Selecteer **New workspace** in het navigatiemenu.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.nl.png)
+    ![Select new workspace](../../../../../../translated_images/nl/01-02-select-new-workspace.83e17436f8898dc4.png)
 
 1. Voer de volgende taken uit:
 
@@ -68,7 +68,7 @@ Hier is een overzicht van deze E2E-sample.
     - Selecteer de te gebruiken **Application insights** (maak er een nieuwe aan indien nodig).
     - Selecteer de te gebruiken **Container registry** (maak er een nieuwe aan indien nodig).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.nl.png)
+    ![Fill AZML.](../../../../../../translated_images/nl/01-03-fill-AZML.730a5177757bbebb.png)
 
 1. Selecteer **Review + Create**.
 
@@ -92,7 +92,7 @@ In deze E2E-sample gebruikt u de *Standard_NC24ads_A100_v4 GPU* voor fijn afstem
     - Selecteer de te gebruiken **Virtual machine family**. Bijvoorbeeld, selecteer **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, waar de *Standard_NC24ads_A100_v4* GPU onderdeel van is.
     - Selecteer **Request quota** in het navigatiemenu.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.nl.png)
+        ![Request quota.](../../../../../../translated_images/nl/01-04-request-quota.3d3670c3221ab834.png)
 
     - Voer op de pagina Request quota de **Nieuwe coreslimiet** in die u wilt gebruiken. Bijvoorbeeld 24.
     - Selecteer op de pagina Request quota **Submit** om de GPU-quotum aan te vragen.
@@ -108,11 +108,11 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
 
 1. Typ *managed identities* in de **zoekbalk** bovenaan de portalpagina en selecteer **Managed Identities** uit de opties die verschijnen.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.nl.png)
+    ![Type managed identities.](../../../../../../translated_images/nl/01-05-type-managed-identities.9297b6039874eff8.png)
 
 1. Selecteer **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.nl.png)
+    ![Select create.](../../../../../../translated_images/nl/01-06-select-create.936d8d66d7144f9a.png)
 
 1. Voer de volgende taken uit:
 
@@ -139,7 +139,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer de te gebruiken **Resourcegroep**.
     - Selecteer de **Rol** voor **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.nl.png)
+    ![Fill contributor role.](../../../../../../translated_images/nl/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
 
 1. Selecteer **Save**.
 
@@ -147,7 +147,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
 
 1. Typ *storage accounts* in de **zoekbalk** bovenaan de portalpagina en selecteer **Storage accounts** uit de opties die verschijnen.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.nl.png)
+    ![Type storage accounts.](../../../../../../translated_images/nl/01-08-type-storage-accounts.1186c8e42933e49b.png)
 
 1. Selecteer de opslagaccount die is gekoppeld aan de Azure Machine Learning-werkruimte die u hebt gemaakt. Bijvoorbeeld, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer **+ Add** in het navigatiemenu.
     - Selecteer **Add role assignment** in het navigatiemenu.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.nl.png)
+    ![Add role.](../../../../../../translated_images/nl/01-09-add-role.d2db22fec1b187f0.png)
 
 1. Voer op de pagina Add role assignment de volgende taken uit:
 
@@ -171,7 +171,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer op de pagina Select managed identities de Manage Identity die u hebt aangemaakt. Bijvoorbeeld, *finetunephi-managedidentity*.
     - Selecteer op de pagina Select managed identities **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.nl.png)
+    ![Select managed identity.](../../../../../../translated_images/nl/01-10-select-managed-identity.5ce5ba181f72a4df.png)
 
 1. Selecteer **Review + assign**.
 
@@ -179,7 +179,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
 
 1. Typ *container registries* in de **zoekbalk** bovenaan de portalpagina en selecteer **Container registries** uit de opties die verschijnen.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.nl.png)
+    ![Type container registries.](../../../../../../translated_images/nl/01-11-type-container-registries.ff3b8bdc49dc596c.png)
 
 1. Selecteer de containerregistry die gekoppeld is aan de Azure Machine Learning-werkruimte. Bijvoorbeeld, *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ In deze oefening zult u:
 
 1. Selecteer de *finetune-phi* map die u hebt gemaakt, die zich bevindt in *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project map.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.nl.png)
+    ![Open project map.](../../../../../../translated_images/nl/01-12-open-project-folder.1fff9c7f41dd1639.png)
 
 1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand genaamd *download_dataset.py* aan te maken.
 
@@ -298,7 +298,7 @@ In deze oefening zult u:
 
 1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuw bestand** om een nieuw bestand genaamd *deploy_model.py* aan te maken.
 
-    ![Nieuw bestand aanmaken.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.nl.png)
+    ![Nieuw bestand aanmaken.](../../../../../../translated_images/nl/01-13-create-new-file.c17c150fff384a39.png)
 
 1. Klik met de rechtermuisknop in het linkerdeelvenster van Visual Studio Code en selecteer **Nieuwe map** om een nieuwe map genaamd *finetuning_dir* aan te maken.
 
@@ -374,28 +374,28 @@ In deze oefening zult u:
     - Selecteer de Azure-abonnementsservice die u momenteel gebruikt.
     - Kopieer en plak uw Subscription ID in het *config.py* bestand.
 
-    ![Zoek abonnement id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.nl.png)
+    ![Zoek abonnement id.](../../../../../../translated_images/nl/01-14-find-subscriptionid.4f4ca33555f1e637.png)
 
 1. Voer de volgende taken uit om de Azure Workspace Naam toe te voegen:
 
     - Navigeer naar de Azure Machine Learning-resource die u hebt gemaakt.
     - Kopieer en plak uw accountnaam in het *config.py* bestand.
 
-    ![Zoek Azure Machine Learning naam.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.nl.png)
+    ![Zoek Azure Machine Learning naam.](../../../../../../translated_images/nl/01-15-find-AZML-name.1975f0422bca19a7.png)
 
 1. Voer de volgende taken uit om de Azure Resource Group Naam toe te voegen:
 
     - Navigeer naar de Azure Machine Learning-resource die u hebt gemaakt.
     - Kopieer en plak uw Azure Resource Group Naam in het *config.py* bestand.
 
-    ![Zoek resource group naam.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.nl.png)
+    ![Zoek resource group naam.](../../../../../../translated_images/nl/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
 
 2. Voer de volgende taken uit om de Azure Managed Identity naam toe te voegen:
 
     - Navigeer naar de Managed Identities-resource die u hebt gemaakt.
     - Kopieer en plak uw Azure Managed Identity naam in het *config.py* bestand.
 
-    ![Zoek UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.nl.png)
+    ![Zoek UAI.](../../../../../../translated_images/nl/01-17-find-uai.3529464f53499827.png)
 
 ### Bereid dataset voor fine-tuning voor
 
@@ -509,7 +509,7 @@ U moet Azure CLI instellen om uw omgeving te authenticeren. Azure CLI stelt u in
 
 1. Selecteer het Azure-abonnement dat u wilt gebruiken.
 
-    ![Zoek resource group naam.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.nl.png)
+    ![Zoek resource group naam.](../../../../../../translated_images/nl/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Door *setup_ml.py* uit te voeren, laat u het fine-tuning proces draaien in de Az
 
 1. In deze oefening hebt u met succes het Phi-3 model fijn afgestemd met behulp van Azure Machine Learning. Door het *setup_ml.py* script uit te voeren, hebt u de Azure Machine Learning-omgeving ingesteld en het fijn afstemproces gestart dat is gedefinieerd in het *fine_tune.py* bestand. Houd er rekening mee dat het fijn-afstemproces aanzienlijk wat tijd kan kosten. Na het uitvoeren van de `python setup_ml.py` opdracht moet u wachten tot het proces is voltooid. U kunt de status van de fijn-afstemjob volgen via de link die in de terminal wordt weergegeven naar de Azure Machine Learning-portal.
 
-    ![Zie finetuning taak.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.nl.png)
+    ![Zie finetuning taak.](../../../../../../translated_images/nl/02-02-see-finetuning-job.59393bc3b143871e.png)
 
 ### Implementeer het fijn-afgestelde model
 
@@ -1080,11 +1080,11 @@ Het uitvoeren van het *deploy_model.py* bestand automatiseert het hele implement
 
 1. Selecteer **Endpoints** in het tabblad aan de linkerkant.
 
-    ![Selecteer endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.nl.png)
+    ![Selecteer endpoints.](../../../../../../translated_images/nl/02-03-select-endpoints.c3136326510baff1.png)
 
 2. Selecteer de endpoint die je hebt aangemaakt.
 
-    ![Selecteer de endpoints die je hebt aangemaakt.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.nl.png)
+    ![Selecteer de endpoints die je hebt aangemaakt.](../../../../../../translated_images/nl/02-04-select-endpoint-created.0363e7dca51dabb4.png)
 
 3. Op deze pagina kun je de endpoints beheren die zijn aangemaakt tijdens het implementatieproces.
 
@@ -1103,7 +1103,7 @@ Nadat je je fijn-afgestelde model succesvol hebt geïmplementeerd, kun je het nu
 1. Kopieer en plak je **REST endpoint** in het bestand *config.py*, waarbij je `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` vervangt door je **REST endpoint**.
 1. Kopieer en plak je **Primary key** in het bestand *config.py*, waarbij je `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` vervangt door je **Primary key**.
 
-    ![Kopieer api-sleutel en endpoint-uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.nl.png)
+    ![Kopieer api-sleutel en endpoint-uri.](../../../../../../translated_images/nl/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
 
 #### Voeg code toe aan het *flow.dag.yml* bestand
 
@@ -1212,7 +1212,7 @@ Nadat je je fijn-afgestelde model succesvol hebt geïmplementeerd, kun je het nu
 
 1. Hier is een voorbeeld van de resultaten: nu kun je chatten met je aangepaste Phi-3 model. Het wordt aanbevolen om vragen te stellen op basis van de data die gebruikt is voor het fijn-afstellen.
 
-    ![Prompt flow voorbeeld.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.nl.png)
+    ![Prompt flow voorbeeld.](../../../../../../translated_images/nl/02-06-promptflow-example.89384abaf3ad71f6.png)
 
 ---
 

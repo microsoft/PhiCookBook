@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry ব্যবহার করে মূল্যায়ন**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.bn.png)
+![aistudo](../../../../../translated_images/bn/AIFoundry.9e0b513e999a1c5a.png)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ব্যবহার করে আপনার জেনারেটিভ AI অ্যাপ্লিকেশন কীভাবে মূল্যায়ন করবেন। আপনি একক-টর্ন বা বহু-টর্ন কথোপকথন মূল্যায়ন করুক না কেন, Azure AI Foundry মডেলের কর্মক্ষমতা এবং নিরাপত্তা যাচাই করার জন্য প্রয়োজনীয় সরঞ্জাম সরবরাহ করে।
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.bn.png)
+![aistudo](../../../../../translated_images/bn/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Azure AI Foundry দিয়ে জেনারেটিভ AI অ্যাপ্লিকেশন মূল্যায়ন করার পদ্ধতি
 বিস্তারিত নির্দেশনার জন্য দেখুন [Azure AI Foundry ডকুমেন্টেশন](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

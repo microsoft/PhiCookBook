@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ebben a példában a Phi-3-mini-4k-instruct modellt finomhangoljuk, hogy egy két személy közötti beszélgetést fejezzen be az ultrachat_200k adathalmaz segítségével.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.hu.png)
+![MLFineTune](../../../../translated_images/hu/MLFineTune.928d4c6b3767dd35.png)
 
 A példa bemutatja, hogyan végezhetünk finomhangolást az Azure ML SDK és Python használatával, majd hogyan telepíthetjük a finomhangolt modellt egy online végpontra valós idejű lekérdezéshez.
 

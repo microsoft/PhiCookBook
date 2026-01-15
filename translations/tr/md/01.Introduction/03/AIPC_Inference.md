@@ -28,9 +28,9 @@ GPU'lar paralel hesaplama yetenekleriyle bilinir, ancak tüm GPU'lar grafik işl
 
 Intel® NPU cihazı, Intel® Core™ Ultra nesil CPU'lardan (eski adıyla Meteor Lake) itibaren Intel istemci CPU'larına entegre edilmiş bir yapay zekâ çıkarım hızlandırıcısıdır. Yapay sinir ağı görevlerinin enerji verimli şekilde yürütülmesini sağlar.
 
-![Gecikme](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.tr.png)
+![Gecikme](../../../../../translated_images/tr/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Gecikme770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.tr.png)
+![Gecikme770](../../../../../translated_images/tr/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Hızlandırma Kütüphanesi**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Kod çalıştırılırken, Görev Yöneticisi üzerinden NPU'nun çalışma durumu izlenebilir.
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.tr.png)
+![NPU](../../../../../translated_images/tr/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***Örnekler*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Çalıştırma sonucu
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.tr.png)
+![DML](../../../../../translated_images/tr/aipc_DML.52a44180393ab491.png)
 
 ***Örnekler*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 Dönüştürülmüş format aşağıdaki gibidir
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.tr.png)
+![openvino_convert](../../../../../translated_images/tr/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 Model yolları (model_dir), ilgili konfigürasyonlar (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) ve donanım hızlandırmalı cihazlar (GPU.0) OVModelForCausalLM aracılığıyla yüklenir.
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Kod çalıştırılırken, Görev Yöneticisi üzerinden GPU'nun çalışma durumu izlenebilir.
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.tr.png)
+![openvino_gpu](../../../../../translated_images/tr/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***Örnekler*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

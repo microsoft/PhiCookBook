@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [VSCode용 AI Toolkit 설치하기](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.ko.png)
+![AIToolkit FineTuning](../../../../translated_images/ko/Aitoolkit.7157953df04812dc.png)
 
 **[Private Preview]** Azure Container Apps를 원클릭으로 프로비저닝하여 클라우드에서 모델 미세 조정과 추론을 실행할 수 있습니다.
 

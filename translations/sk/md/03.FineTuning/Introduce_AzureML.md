@@ -66,7 +66,7 @@ Azure ML pridalo množstvo funkcií súvisiacich s LLM/SLM, ktoré kombinujú LL
 
 Podnikový používatelia môžu nasadzovať rôzne modely podľa rôznych obchodných scenárov cez Katalóg modelov a poskytovať služby ako Model ako službu pre podnikových vývojárov alebo používateľov.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.sk.png)
+![models](../../../../translated_images/sk/models.e6c7ff50a51806fd.png)
 
 Katalóg modelov v Azure Machine Learning studiu je centrum na objavovanie a používanie širokej škály modelov, ktoré vám umožňujú vytvárať generatívne AI aplikácie. Katalóg obsahuje stovky modelov od poskytovateľov ako Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, vrátane modelov trénovaných Microsoftom. Modely od iných poskytovateľov než Microsoft sú považované za Ne-Microsoft produkty podľa podmienok Microsoftu a podliehajú podmienkam dodaným s modelom.
 
@@ -76,7 +76,7 @@ Jadro pipeline strojového učenia spočíva v rozdelení kompletného úlohy st
 
 Pri dolaďovaní SLM / LLM môžeme spravovať naše dáta, trénovanie a generovanie prostredníctvom Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.sk.png)
+![finetuning](../../../../translated_images/sk/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

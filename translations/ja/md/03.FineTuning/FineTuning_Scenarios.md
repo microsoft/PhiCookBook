@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## ファインチューニングのシナリオ
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.ja.png)
+![FineTuning with MS Services](../../../../translated_images/ja/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **プラットフォーム** には、Azure AI Foundry、Azure Machine Learning、AI Tools、Kaito、ONNX Runtimeなどのさまざまな技術が含まれます。
 
@@ -24,7 +24,7 @@ Microsoftの技術を使ったファインチューニングプロセスは、�
 
 ホスト型ファインチューニングを使ってモデルを調整し、計算リソースの作成や管理は不要です。
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.ja.png)
+![MaaS Fine Tuning](../../../../translated_images/ja/MaaSfinetune.3eee4630607aff0d.png)
 
 Phi-3-miniおよびPhi-3-mediumモデル向けにサーバーレスファインチューニングが利用可能で、開発者は計算リソースを手配することなく、クラウドやエッジのシナリオに合わせてモデルを素早く簡単にカスタマイズできます。また、Phi-3-smallがModels-as-a-Serviceとして利用可能になったことも発表しており、開発者は基盤となるインフラを管理せずにAI開発をすぐに始められます。
 
@@ -32,7 +32,7 @@ Phi-3-miniおよびPhi-3-mediumモデル向けにサーバーレスファイン�
 
 ユーザー自身が計算リソースを管理し、モデルのファインチューニングを行います。
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.ja.png)
+![Maap Fine Tuning](../../../../translated_images/ja/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Phi-3-miniおよびPhi-3-mediumモデル向けにサーバーレスファイン�
 
 ## ファインチューニングのパフォーマンス例
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.ja.png)
+![Finetuning Performance](../../../../translated_images/ja/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **免責事項**：  
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

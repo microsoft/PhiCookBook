@@ -73,7 +73,7 @@ GitHub Copilot imeboresha sana ufanisi wa programu katika mashirika, na kila shi
 
 Maabara hii inatumia hasa mfano wa Phi-3 uliounganishwa na NPU ya eneo la karibu na Azure hybrid kujenga Wakala maalum katika GitHub Copilot Chat ***@PHI3*** kusaidia waendelezaji wa mashirika kukamilisha uzalishaji wa msimbo***(@PHI3 /gen)*** na kuzalisha msimbo kulingana na picha ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.sw.png)
+![PHI3](../../../../../../../translated_images/sw/cover.1017ebc9a7c46d09.png)
 
 ### ***Kumbuka:***
 

@@ -33,33 +33,33 @@ Windows GPU కోసం ONNX Runtime GenAI అమర్చడానికి �
 
 1. Install Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.te.png)
+![pfvscode](../../../../../../translated_images/te/pfvscode.eff93dfc66a42cbe.png)
 
 2. After install Prompt flow VS Code Extension， click the extension，and choose **Installation dependencies** follow this guideline to install Prompt flow SDK in your env
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.te.png)
+![pfsetup](../../../../../../translated_images/te/pfsetup.b46e93096f5a254f.png)
 
 3. Download [నమూనా కోడ్](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) and use VS Code to open this sample
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.te.png)
+![pfsample](../../../../../../translated_images/te/pfsample.8d89e70584ffe7c4.png)
 
 4. Open **flow.dag.yaml** to choose your Python env
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.te.png)
+![pfdag](../../../../../../translated_images/te/pfdag.264a77f7366458ff.png)
 
    Open **chat_phi3_ort.py** to change your Phi-3.5-instruct ONNX Model location
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.te.png)
+![pfphi](../../../../../../translated_images/te/pfphi.72da81d74244b45f.png)
 
 5. Run your prompt flow to testing
 
 Open **flow.dag.yaml** click visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.te.png)
+![pfv](../../../../../../translated_images/te/pfv.ba8a81f34b20f603.png)
 
 after click this,and run it to test
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.te.png)
+![pfflow](../../../../../../translated_images/te/pfflow.4e1135a089b1ce1b.png)
 
 1. You can run batch in terminal to check more result
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 You can check results in your default browser
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.te.png)
+![pfresult](../../../../../../translated_images/te/pfresult.c22c826f8062d7cb.png)
 
 ---
 

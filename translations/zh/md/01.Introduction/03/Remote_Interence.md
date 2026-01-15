@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 在远程环境中训练好适配器后，可以使用一个简单的 Gradio 应用与模型进行交互。
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.zh.png)
+![Fine-tune complete](../../../../../translated_images/zh/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### 配置 Azure 资源
 你需要通过命令面板执行 `AI Toolkit: Provision Azure Container Apps for inference` 来设置远程推理所需的 Azure 资源。设置过程中会要求你选择 Azure 订阅和资源组。  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.zh.png)
+![Provision Inference Resource](../../../../../translated_images/zh/command-provision-inference.467afc8d351642fc.png)
    
 默认情况下，推理所用的订阅和资源组应与微调时使用的保持一致。推理将使用相同的 Azure Container App 环境，并访问存储在 Azure Files 中的模型和模型适配器，这些都是在微调步骤中生成的。
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### 推理部署  
 如果你想修改推理代码或重新加载推理模型，请执行 `AI Toolkit: Deploy for inference` 命令。此操作会将你最新的代码同步到 ACA 并重启副本。
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.zh.png)
+![Deploy for inference](../../../../../translated_images/zh/command-deploy.9adb4e310dd0b0ae.png)
 
 部署成功后，模型即可通过该端点进行评估。
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 你可以通过点击 VSCode 通知中显示的“*Go to Inference Endpoint*”按钮访问推理 API。或者，也可以在 `./infra/inference.config.json` 文件中的 `ACA_APP_ENDPOINT` 以及输出面板中找到 Web API 端点。
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.zh.png)
+![App Endpoint](../../../../../translated_images/zh/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** 推理端点可能需要几分钟时间才能完全启动。
 

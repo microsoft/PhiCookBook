@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ဤဥပမာတွင် ultrachat_200k ဒေတာစုံစုကို အသုံးပြု၍ လူနှစ်ဦးအကြား စကားပြောပြီးဆုံးရန် Phi-3-mini-4k-instruct မော်ဒယ်ကို အတိအကျ ပြင်ဆင်မည်ဖြစ်သည်။
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.my.png)
+![MLFineTune](../../../../translated_images/my/MLFineTune.928d4c6b3767dd35.png)
 
 ဥပမာတွင် Azure ML SDK နှင့် Python ကို အသုံးပြုပြီး အတိအကျ ပြင်ဆင်ခြင်းကို ပြသပြီး ပြင်ဆင်ပြီးသော မော်ဒယ်ကို အွန်လိုင်း endpoint တွင် တိုက်ရိုက်ခန့်မှန်းမှုအတွက် တပ်ဆင်ပေးမည်ဖြစ်သည်။
 

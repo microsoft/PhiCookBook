@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Matokeo (mazingira yangu ni Apple M1 Max, 64GB) ni
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.sw.png)
+![Terminal](../../../../../translated_images/sw/01.5cf57df8f7407cf9.png)
 
 ### **3. Kufanya quantization ya Phi-3-mini kwa MLX kwenye Terminal**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Matokeo ni
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.sw.png)
+![INT4](../../../../../translated_images/sw/02.7b188681a8eadbc1.png)
 
 
 ### **4. Kuendesha Phi-3-mini kwa MLX kwenye Jupyter Notebook**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.sw.png)
+![Notebook](../../../../../translated_images/sw/03.b9705a3a5aaa89f9.png)
 
 ***Note:*** Tafadhali soma sampuli hii [bonyeza kiungo hiki](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

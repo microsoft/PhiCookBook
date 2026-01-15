@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **الراحة:** كيف يتم الضبط الدقيق فعليًا – هل أحتاج لكتابة كود مخصص؟ هل أحتاج إلى توفير موارد حوسبة خاصة بي؟
 - **السلامة:** النماذج المضبوطة بدقة قد تحمل مخاطر تتعلق بالسلامة – هل هناك ضوابط لحمايتي من الأضرار غير المقصودة؟
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.ar.png)
+![AIFoundry Models](../../../../translated_images/ar/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## التحضير للضبط الدقيق
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يتيح Azure AI Foundry تخصيص نماذج اللغة الكبيرة لمجموعات بياناتك الشخصية من خلال عملية تعرف بالضبط الدقيق. يوفر الضبط الدقيق قيمة كبيرة من خلال تمكين التخصيص والتحسين لمهام وتطبيقات محددة. يؤدي ذلك إلى تحسين الأداء، وكفاءة التكلفة، وتقليل زمن الاستجابة، وإخراج مخصص.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.ar.png)
+![Finetune AI Foundry](../../../../translated_images/ar/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### إنشاء مشروع جديد
 
@@ -79,14 +79,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+مشروع جديد** لإنشاء مشروع جديد في Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/select-new-project.cd31c0404088d7a3.png)
 
 1. قم بالمهام التالية:
 
     - اسم **مركز المشروع**. يجب أن يكون قيمة فريدة.
     - اختر **المركز** الذي تريد استخدامه (أنشئ مركزًا جديدًا إذا لزم الأمر).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/create-project.ca3b71298b90e420.png)
 
 1. قم بالمهام التالية لإنشاء مركز جديد:
 
@@ -97,7 +97,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **ربط خدمات Azure AI** التي تريد استخدامها (أنشئ واحدة جديدة إذا لزم الأمر).
     - اختر **ربط Azure AI Search** ثم **تخطي الربط**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/create-hub.49e53d235e80779e.png)
 
 1. اختر **التالي**.
 1. اختر **إنشاء مشروع**.
@@ -115,15 +115,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *phi-3* في **شريط البحث** واختر نموذج phi-3 الذي ترغب في استخدامه.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/select-model.60ef2d4a6a3cec57.png)
 
 1. اختر **ضبط دقيق**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/select-finetune.a976213b543dd9d8.png)
 
 1. أدخل **اسم النموذج المضبوط**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/finetune1.c2b39463f0d34148.png)
 
 1. اختر **التالي**.
 
@@ -132,13 +132,13 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **نوع المهمة** إلى **إكمال المحادثة**.
     - اختر **بيانات التدريب** التي تريد استخدامها. يمكنك رفعها من خلال بيانات Azure AI Foundry أو من بيئتك المحلية.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/finetune2.43cb099b1a94442d.png)
 
 1. اختر **التالي**.
 
 1. ارفع **بيانات التحقق** التي تريد استخدامها، أو يمكنك اختيار **التقسيم التلقائي لبيانات التدريب**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/finetune3.fd96121b67dcdd92.png)
 
 1. اختر **التالي**.
 
@@ -148,15 +148,15 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **معدل التعلم** الذي تريد استخدامه.
     - اختر **عدد العصور (Epochs)** التي تريد استخدامها.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/finetune4.e18b80ffccb5834a.png)
 
 1. اختر **إرسال** لبدء عملية الضبط الدقيق.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/select-submit.0a3802d581bac271.png)
 
 1. بمجرد الانتهاء من ضبط النموذج، ستظهر الحالة على أنها **مكتمل**، كما هو موضح في الصورة أدناه. يمكنك الآن نشر النموذج واستخدامه في تطبيقك الخاص، أو في بيئة اللعب، أو في تدفق المطالبات. لمزيد من المعلومات، راجع [كيفية نشر عائلة نماذج Phi-3 الصغيرة باستخدام Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.ar.png)
+    ![FineTuneSelect](../../../../translated_images/ar/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > لمزيد من المعلومات التفصيلية حول ضبط Phi-3، يرجى زيارة [ضبط نماذج Phi-3 في Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

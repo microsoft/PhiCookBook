@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਇਹ ਹੈ Azure AI Foundry ਦਾ ਮੁਲਾਂਕਣ ਪ੍ਰਕਿਰਿਆ।
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.pa.png)
+![Architecture of tutorial.](../../../../../../translated_images/pa/architecture.10bec55250f5d6a4.png)
 
 *ਚਿੱਤਰ ਸਰੋਤ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਆਪਣੇ AI ਮਾਡਲ ਨੂੰ ਨੈਤਿਕ ਅਤੇ ਸੁਰੱਖਿਅਤ ਬਣਾਉਣ ਲਈ, Microsoft ਦੇ Responsible AI ਸਿਧਾਂਤਾਂ ਦੇ ਖਿਲਾਫ ਇਸ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨਾ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ। Azure AI Foundry ਵਿੱਚ, ਸੁਰੱਖਿਆ ਮੁਲਾਂਕਣ ਤੁਹਾਨੂੰ ਆਪਣੇ ਮਾਡਲ ਦੀ jailbreak ਹਮਲਿਆਂ ਵੱਲ ਸੰਵੇਦਨਸ਼ੀਲਤਾ ਅਤੇ ਨੁਕਸਾਨਦਾਇਕ ਸਮੱਗਰੀ ਬਣਾਉਣ ਦੀ ਸੰਭਾਵਨਾ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੇ ਹਨ, ਜੋ ਸਿੱਧੇ ਤੌਰ ‘ਤੇ ਇਨ੍ਹਾਂ ਸਿਧਾਂਤਾਂ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹਨ।
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.pa.png)
+![Safaty evaluation.](../../../../../../translated_images/pa/safety-evaluation.083586ec88dfa950.png)
 
 *ਚਿੱਤਰ ਸਰੋਤ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft ਦੇ Responsible AI ਸਿਧਾਂਤਾਂ ਵਿੱਚ ਸ਼ਾ�
 
 - **ਜ਼ਿੰਮੇਵਾਰੀ**: ਜੋ ਲੋਕ AI ਸਿਸਟਮਾਂ ਨੂੰ ਡਿਜ਼ਾਈਨ ਅਤੇ ਤਾਇਨਾਤ ਕਰਦੇ ਹਨ, ਉਹਨਾਂ ਨੂੰ ਇਹਨਾਂ ਸਿਸਟਮਾਂ ਦੇ ਚਾਲੂ ਹੋਣ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਸੰਗਠਨਾਂ ਨੂੰ ਉਦਯੋਗ ਮਿਆਰਾਂ ਤੋਂ ਸਹਾਇਤਾ ਲੈ ਕੇ ਜ਼ਿੰਮੇਵਾਰੀ ਦੇ ਨਿਯਮ ਬਣਾਉਣੇ ਚਾਹੀਦੇ ਹਨ। ਇਹ ਨਿਯਮ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹਨ ਕਿ AI ਸਿਸਟਮ ਕਿਸੇ ਵੀ ਫੈਸਲੇ ‘ਤੇ ਆਖਰੀ ਅਥਾਰਟੀ ਨਾ ਬਣਨ ਜੋ ਲੋਕਾਂ ਦੀ ਜ਼ਿੰਦਗੀ ਨੂੰ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ। ਇਹ ਇਹ ਵੀ ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹਨ ਕਿ ਮਨੁੱਖ ਅਜੇ ਵੀ ਬਹੁਤ ਜ਼ਿਆਦਾ ਖੁਦਮੁਖਤਿਆਰ AI ਸਿਸਟਮਾਂ ‘ਤੇ ਅਰਥਪੂਰਨ ਨਿਯੰਤਰਣ ਰੱਖਦੇ ਹਨ।
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.pa.png)
+![Fill hub.](../../../../../../translated_images/pa/responsibleai2.c07ef430113fad8c.png)
 
 *ਚਿੱਤਰ ਸਰੋਤ: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Microsoft ਦੇ Responsible AI ਸਿਧਾਂਤਾਂ ਵਿੱਚ ਸ਼ਾ�
 
 ਇਹ ਪੱਖਾਂ ਦਾ ਮੁਲਾਂਕਣ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦਾ ਹੈ ਕਿ AI ਮਾਡਲ ਨੁਕਸਾਨਦਾਇਕ ਜਾਂ ਅਪਮਾਨਜਨਕ ਸਮੱਗਰੀ ਨਹੀਂ ਬਣਾਉਂਦਾ, ਜੋ ਸਮਾਜਕ ਮੁੱਲਾਂ ਅਤੇ ਨਿਯਮਾਂ ਦੇ ਅਨੁਕੂਲ ਹੈ।
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.pa.png)
+![Evaluate based on safety.](../../../../../../translated_images/pa/evaluate-based-on-safety.c5df819f5b0bfc07.png)
 
 ### ਪ੍ਰਦਰਸ਼ਨ ਮੁਲਾਂਕਣ ਦਾ ਪਰਿਚਯ
 
 ਆਪਣੇ AI ਮਾਡਲ ਦੇ ਉਮੀਦ ਅਨੁਸਾਰ ਕੰਮ ਕਰਨ ਨੂੰ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ, ਇਸ ਦਾ ਪ੍ਰਦਰਸ਼ਨ ਪ੍ਰਦਰਸ਼ਨ ਮੈਟਰਿਕਸ ਦੇ ਖਿਲਾਫ ਮੁਲਾਂਕਣ ਕਰਨਾ ਜ਼ਰੂਰੀ ਹੈ। Azure AI Foundry ਵਿੱਚ, ਪ੍ਰਦਰਸ਼ਨ ਮੁਲਾਂਕਣ ਤੁਹਾਨੂੰ ਮਾਡਲ ਦੀ ਸਹੀ, ਸਬੰਧਤ ਅਤੇ ਸੰਗਠਿਤ ਜਵਾਬ ਬਣਾਉਣ ਦੀ ਸਮਰੱਥਾ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੇ ਹਨ।
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.pa.png)
+![Safaty evaluation.](../../../../../../translated_images/pa/performance-evaluation.48b3e7e01a098740.png)
 
 *ਚਿੱਤਰ ਸਰੋਤ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Microsoft ਦੇ Responsible AI ਸਿਧਾਂਤਾਂ ਵਿੱਚ ਸ਼ਾ�
 
 ਇਹ ਮੈਟਰਿਕਸ ਤੁਹਾਨੂੰ ਮਾਡਲ ਦੀ ਸਹੀ, ਸਬੰਧਤ ਅਤੇ ਸੰਗਠਿਤ ਜਵਾਬ ਬਣਾਉਣ ਦੀ ਸਮਰੱਥਾ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੇ ਹਨ।
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.pa.png)
+![Evaluate based on performance.](../../../../../../translated_images/pa/evaluate-based-on-performance.3e801c647c7554e8.png)
 
 ## **ਦ੍ਰਿਸ਼ 2: Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾਂਕਣ**
 
@@ -154,7 +154,7 @@ IMPORTANT RULES:
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **+ New hub** ਚੁਣੋ।
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.pa.png)
+    ![Create hub.](../../../../../../translated_images/pa/create-hub.5be78fb1e21ffbf1.png)
 
 1. ਹੇਠਾਂ ਦਿੱਤੇ ਕੰਮ ਕਰੋ:
 
@@ -165,7 +165,7 @@ IMPORTANT RULES:
     - ਵਰਤਣ ਲਈ **Connect Azure AI Services** ਚੁਣੋ (ਲੋੜ ਹੋਵੇ ਤਾਂ ਨਵਾਂ ਬਣਾਓ)।
     - **Connect Azure AI Search** ਲਈ **Skip connecting** ਚੁਣੋ।
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.pa.png)
+    ![Fill hub.](../../../../../../translated_images/pa/fill-hub.baaa108495c71e34.png)
 
 1. **Next** ਚੁਣੋ।
 
@@ -175,11 +175,11 @@ IMPORTANT RULES:
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **+ New project** ਚੁਣੋ।
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.pa.png)
+    ![Select new project.](../../../../../../translated_images/pa/select-new-project.cd31c0404088d7a3.png)
 
 1. **Project name** ਦਿਓ। ਇਹ ਇੱਕ ਵਿਲੱਖਣ ਮੁੱਲ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.pa.png)
+    ![Create project.](../../../../../../translated_images/pa/create-project.ca3b71298b90e420.png)
 
 1. **Create a project** ਚੁਣੋ।
 
@@ -195,17 +195,17 @@ IMPORTANT RULES:
 
 1. ਖੱਬੇ ਪਾਸੇ ਟੈਬ ਤੋਂ **Endpoints** ਚੁਣੋ।
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.pa.png)
+    ![Select endpoints.](../../../../../../translated_images/pa/select-endpoints.ee7387ecd68bd18d.png)
 
 1. ਬਣਾਇਆ ਹੋਇਆ endpoint ਚੁਣੋ।
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.pa.png)
+    ![Select endpoints.](../../../../../../translated_images/pa/select-endpoint-created.9f63af5e4cf98b2e.png)
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **Consume** ਚੁਣੋ।
 
 1. ਆਪਣਾ **REST endpoint** ਅਤੇ **Primary key** ਕਾਪੀ ਕਰੋ।
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.pa.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/pa/copy-endpoint-key.0650c3786bd646ab.png)
 
 #### ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਸ਼ਾਮਲ ਕਰੋ
 
@@ -217,11 +217,11 @@ IMPORTANT RULES:
 
 1. **+ New connection** ਚੁਣੋ।
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.pa.png)
+    ![Select new connection.](../../../../../../translated_images/pa/select-new-connection.fa0f35743758a74b.png)
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **Custom keys** ਚੁਣੋ।
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.pa.png)
+    ![Select custom keys.](../../../../../../translated_images/pa/select-custom-keys.5a3c6b25580a9b67.png)
 
 1. ਹੇਠਾਂ ਦਿੱਤੇ ਕੰਮ ਕਰੋ:
 
@@ -231,7 +231,7 @@ IMPORTANT RULES:
     - key name ਲਈ **key** ਦਿਓ ਅਤੇ Azure ML Studio ਤੋਂ ਕਾਪੀ ਕੀਤਾ key value ਫੀਲਡ ਵਿੱਚ ਪੇਸਟ ਕਰੋ।
     - keys ਸ਼ਾਮਲ ਕਰਨ ਤੋਂ ਬਾਅਦ, key ਨੂੰ ਪ੍ਰਕਾਸ਼ਿਤ ਹੋਣ ਤੋਂ ਬਚਾਉਣ ਲਈ **is secret** ਚੁਣੋ।
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.pa.png)
+    ![Add connection.](../../../../../../translated_images/pa/add-connection.ac7f5faf8b10b0df.png)
 
 1. **Add connection** ਚੁਣੋ।
 
@@ -245,15 +245,15 @@ IMPORTANT RULES:
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **+ Create** ਚੁਣੋ।
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.pa.png)
+    ![Select Promptflow.](../../../../../../translated_images/pa/select-promptflow.18ff2e61ab9173eb.png)
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **Chat flow** ਚੁਣੋ।
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.pa.png)
+    ![Select chat flow.](../../../../../../translated_images/pa/select-flow-type.28375125ec9996d3.png)
 
 1. ਵਰਤਣ ਲਈ **Folder name** ਦਿਓ।
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.pa.png)
+    ![Select chat flow.](../../../../../../translated_images/pa/enter-name.02ddf8fb840ad430.png)
 
 1. **Create** ਚੁਣੋ।
 
@@ -290,7 +290,7 @@ IMPORTANT RULES:
 
     - **Save** ਚੁਣੋ।
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.pa.png)
+    ![Select raw file mode.](../../../../../../translated_images/pa/select-raw-file-mode.06c1eca581ce4f53.png)
 
 1. Prompt flow ਵਿੱਚ ਕਸਟਮ Phi-3 / Phi-3.5 ਮਾਡਲ ਵਰਤਣ ਲਈ *integrate_with_promptflow.py* ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤਾ ਕੋਡ ਸ਼ਾਮਲ ਕਰੋ।
 
@@ -353,14 +353,14 @@ IMPORTANT RULES:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.pa.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/pa/paste-promptflow-code.cd6d95b101c0ec28.png)
 
 > [!NOTE]
 > Azure AI Foundry ਵਿੱਚ Prompt flow ਵਰਤਣ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰ ਨਾਲ ਜਾਣਕਾਰੀ ਲਈ, ਤੁਸੀਂ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ਵੇਖ ਸਕਦੇ ਹੋ।
 
 1. ਆਪਣੇ ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰਨ ਲਈ **Chat input**, **Chat output** ਚੁਣੋ।
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.pa.png)
+    ![Select Input Output.](../../../../../../translated_images/pa/select-input-output.c187fc58f25fbfc3.png)
 
 1. ਹੁਣ ਤੁਸੀਂ ਆਪਣੇ ਕਸਟਮ Phi-3 / Phi-3.5 ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ। ਅਗਲੇ ਅਭਿਆਸ ਵਿੱਚ, ਤੁਸੀਂ ਸਿੱਖੋਗੇ ਕਿ Prompt flow ਕਿਵੇਂ ਸ਼ੁਰੂ ਕਰਨਾ ਹੈ ਅਤੇ ਇਸਨੂੰ ਆਪਣੇ ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਲਈ ਕਿਵੇਂ ਵਰਤਣਾ ਹੈ।
 
@@ -368,32 +368,32 @@ IMPORTANT RULES:
 >
 > ਮੁੜ ਬਣਾਇਆ ਗਿਆ flow ਹੇਠਾਂ ਦਿੱਤੀ ਤਸਵੀਰ ਵਾਂਗ ਲੱਗਣਾ ਚਾਹੀਦਾ ਹੈ:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.pa.png)
+> ![Flow example](../../../../../../translated_images/pa/graph-example.82fd1bcdd3fc545b.png)
 >
 
 #### Prompt flow ਸ਼ੁਰੂ ਕਰੋ
 
 1. Prompt flow ਸ਼ੁਰੂ ਕਰਨ ਲਈ **Start compute sessions** ਚੁਣੋ।
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.pa.png)
+    ![Start compute session.](../../../../../../translated_images/pa/start-compute-session.9acd8cbbd2c43df1.png)
 
 1. ਪੈਰਾਮੀਟਰਾਂ ਨੂੰ ਨਵੀਨਤਮ ਕਰਨ ਲਈ **Validate and parse input** ਚੁਣੋ।
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.pa.png)
+    ![Validate input.](../../../../../../translated_images/pa/validate-input.c1adb9543c6495be.png)
 
 1. ਤੁਸੀਂ ਬਣਾਈ ਹੋਈ ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਦੀ **connection** ਦੀ **Value** ਚੁਣੋ। ਉਦਾਹਰਨ ਵਜੋਂ, *connection*।
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.pa.png)
+    ![Connection.](../../../../../../translated_images/pa/select-connection.1f2b59222bcaafef.png)
 
 #### ਆਪਣੇ ਕਸਟਮ Phi-3 / Phi-3.5 ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰੋ
 
 1. **Chat** ਚੁਣੋ।
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.pa.png)
+    ![Select chat.](../../../../../../translated_images/pa/select-chat.0406bd9687d0c49d.png)
 
 1. ਨਤੀਜਿਆਂ ਦਾ ਉਦਾਹਰਨ: ਹੁਣ ਤੁਸੀਂ ਆਪਣੇ ਕਸਟਮ Phi-3 / Phi-3.5 ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰ ਸਕਦੇ ਹੋ। ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਤੁਸੀਂ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਲਈ ਵਰਤੇ ਡੇਟਾ ਦੇ ਆਧਾਰ 'ਤੇ ਸਵਾਲ ਪੁੱਛੋ।
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.pa.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/pa/chat-with-promptflow.1cf8cea112359ada.png)
 
 ### Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨ ਲਈ Azure OpenAI ਤੈਨਾਤ ਕਰੋ
 
@@ -405,7 +405,7 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
 
 1. ਉਸ Azure AI Foundry ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਜਾਓ ਜੋ ਤੁਸੀਂ ਬਣਾਇਆ ਹੈ।
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.pa.png)
+    ![Select Project.](../../../../../../translated_images/pa/select-project-created.5221e0e403e2c9d6.png)
 
 1. ਉਸ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਖੱਬੇ ਪਾਸੇ ਟੈਬ ਤੋਂ **Deployments** ਚੁਣੋ।
 
@@ -413,11 +413,11 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
 
 1. **Deploy base model** ਚੁਣੋ।
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.pa.png)
+    ![Select Deployments.](../../../../../../translated_images/pa/deploy-openai-model.95d812346b25834b.png)
 
 1. ਵਰਤਣ ਲਈ Azure OpenAI ਮਾਡਲ ਚੁਣੋ। ਉਦਾਹਰਨ ਵਜੋਂ, **gpt-4o**।
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.pa.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/pa/select-openai-model.959496d7e311546d.png)
 
 1. **Confirm** ਚੁਣੋ।
 
@@ -429,17 +429,17 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
 
 1. ਉਸ Azure AI Foundry ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਜਾਓ ਜੋ ਤੁਸੀਂ ਬਣਾਇਆ ਹੈ।
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.pa.png)
+    ![Select Project.](../../../../../../translated_images/pa/select-project-created.5221e0e403e2c9d6.png)
 
 1. ਉਸ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਖੱਬੇ ਪਾਸੇ ਟੈਬ ਤੋਂ **Evaluation** ਚੁਣੋ।
 
 1. ਨੈਵੀਗੇਸ਼ਨ ਮੀਨੂ ਤੋਂ **+ New evaluation** ਚੁਣੋ।
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.pa.png)
+    ![Select evaluation.](../../../../../../translated_images/pa/select-evaluation.2846ad7aaaca7f4f.png)
 
 1. **Prompt flow** ਮੁਲਾਂਕਣ ਚੁਣੋ।
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.pa.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/pa/promptflow-evaluation.cb9758cc19b4760f.png)
 
 1. ਹੇਠਾਂ ਦਿੱਤੇ ਕੰਮ ਕਰੋ:
 
@@ -447,7 +447,7 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
     - ਟਾਸਕ ਟਾਈਪ ਵਜੋਂ **Question and answer without context** ਚੁਣੋ। ਕਿਉਂਕਿ ਇਸ ਟਿਊਟੋਰਿਯਲ ਵਿੱਚ ਵਰਤੀ ਗਈ **UlTRACHAT_200k** ਡੇਟਾਸੈੱਟ ਵਿੱਚ ਸੰਦਰਭ ਨਹੀਂ ਹੈ।
     - ਉਹ prompt flow ਚੁਣੋ ਜਿਸਦਾ ਤੁਸੀਂ ਮੁਲਾਂਕਣ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ।
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.pa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/pa/evaluation-setting1.4aa08259ff7a536e.png)
 
 1. **Next** ਚੁਣੋ।
 
@@ -456,7 +456,7 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
     - ਡੇਟਾਸੈੱਟ ਅਪਲੋਡ ਕਰਨ ਲਈ **Add your dataset** ਚੁਣੋ। ਉਦਾਹਰਨ ਵਜੋਂ, ਤੁਸੀਂ ਟੈਸਟ ਡੇਟਾਸੈੱਟ ਫਾਈਲ ਜਿਵੇਂ *test_data.json1* ਅਪਲੋਡ ਕਰ ਸਕਦੇ ਹੋ, ਜੋ **ULTRACHAT_200k** ਡੇਟਾਸੈੱਟ ਨਾਲ ਸ਼ਾਮਲ ਹੈ।
     - ਆਪਣੇ ਡੇਟਾਸੈੱਟ ਨਾਲ ਮੇਲ ਖਾਂਦਾ **Dataset column** ਚੁਣੋ। ਉਦਾਹਰਨ ਵਜੋਂ, ਜੇ ਤੁਸੀਂ **ULTRACHAT_200k** ਡੇਟਾਸੈੱਟ ਵਰਤ ਰਹੇ ਹੋ, ਤਾਂ **${data.prompt}** ਨੂੰ ਡੇਟਾਸੈੱਟ ਕਾਲਮ ਵਜੋਂ ਚੁਣੋ।
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.pa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/pa/evaluation-setting2.07036831ba58d64e.png)
 
 1. **Next** ਚੁਣੋ।
 
@@ -465,7 +465,7 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
     - ਵਰਤਣ ਲਈ ਪ੍ਰਦਰਸ਼ਨ ਅਤੇ ਗੁਣਵੱਤਾ ਮੈਟਰਿਕਸ ਚੁਣੋ।
     - ਮੁਲਾਂਕਣ ਲਈ ਬਣਾਇਆ ਗਿਆ Azure OpenAI ਮਾਡਲ ਚੁਣੋ। ਉਦਾਹਰਨ ਵਜੋਂ, **gpt-4o**।
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.pa.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/pa/evaluation-setting3-1.d1ae69e3bf80914e.png)
 
 1. ਜੋਖਮ ਅਤੇ ਸੁਰੱਖਿਆ ਮੈਟਰਿਕਸ ਸੈੱਟ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਕੰਮ ਕਰੋ:
 
@@ -482,17 +482,17 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
 
     - ਮਾਡਲ ਦੀ ਸਮਰੱਥਾ ਦਾ ਮੁਲਾਂਕਣ ਕਰੋ ਕਿ ਉਹ ਸੰਗਠਿਤ, ਸੁਚੱਜੇ ਅਤੇ ਸਬੰਧਤ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਕਿੰਨਾ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਹੈ।
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.pa.png)
+    ![Evaluation result.](../../../../../../translated_images/pa/evaluation-result-gpu.85f48b42dfb74254.png)
 
 1. ਜੋਖਮ ਅਤੇ ਸੁਰੱਖਿਆ ਮੈਟ੍ਰਿਕਸ:
 
     - ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਮਾਡਲ ਦੇ ਨਤੀਜੇ ਸੁਰੱਖਿਅਤ ਹਨ ਅਤੇ Responsible AI Principles ਦੇ ਅਨੁਕੂਲ ਹਨ, ਕਿਸੇ ਵੀ ਨੁਕਸਾਨਦਾਇਕ ਜਾਂ ਅਪਮਾਨਜਨਕ ਸਮੱਗਰੀ ਤੋਂ ਬਚਦੇ ਹੋਏ।
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.pa.png)
+    ![Evaluation result.](../../../../../../translated_images/pa/evaluation-result-gpu-2.1b74e336118f4fd0.png)
 
 1. ਤੁਸੀਂ ਹੇਠਾਂ ਸਕ੍ਰੋਲ ਕਰਕੇ **ਵਿਸਤ੍ਰਿਤ ਮੈਟ੍ਰਿਕਸ ਨਤੀਜੇ** ਵੇਖ ਸਕਦੇ ਹੋ।
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.pa.png)
+    ![Evaluation result.](../../../../../../translated_images/pa/detailed-metrics-result.afa2f5c39a4f5f17.png)
 
 1. ਆਪਣੇ ਕਸਟਮ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਪ੍ਰਦਰਸ਼ਨ ਅਤੇ ਸੁਰੱਖਿਆ ਮੈਟ੍ਰਿਕਸ ਦੇ ਖਿਲਾਫ ਮੁਲਾਂਕਣ ਕਰਕੇ, ਤੁਸੀਂ ਇਹ ਪੁਸ਼ਟੀ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਮਾਡਲ ਨਾ ਸਿਰਫ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਹੈ, ਸਗੋਂ Responsible AI ਅਮਲਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਅਸਲੀ ਦੁਨੀਆ ਵਿੱਚ ਤਾਇਨਾਤੀ ਲਈ ਤਿਆਰ ਹੈ।
 
@@ -502,7 +502,7 @@ Azure AI Foundry ਵਿੱਚ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾ�
 
 ਤੁਸੀਂ ਸਫਲਤਾਪੂਰਵਕ Azure AI Foundry ਵਿੱਚ Prompt flow ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕੀਤੇ ਗਏ fine-tuned Phi-3 ਮਾਡਲ ਦਾ ਮੁਲਾਂਕਣ ਕੀਤਾ ਹੈ। ਇਹ ਇੱਕ ਮਹੱਤਵਪੂਰਨ ਕਦਮ ਹੈ ਇਹ ਯਕੀਨੀ ਬਣਾਉਣ ਲਈ ਕਿ ਤੁਹਾਡੇ AI ਮਾਡਲ ਨਾ ਸਿਰਫ ਚੰਗਾ ਪ੍ਰਦਰਸ਼ਨ ਕਰਦੇ ਹਨ, ਸਗੋਂ Microsoft ਦੇ Responsible AI ਸਿਧਾਂਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦੇ ਹੋਏ ਭਰੋਸੇਯੋਗ ਅਤੇ ਵਿਸ਼ਵਾਸਯੋਗ AI ਐਪਲੀਕੇਸ਼ਨਾਂ ਬਣਾਉਣ ਵਿੱਚ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦੇ ਹਨ।
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.pa.png)
+![Architecture.](../../../../../../translated_images/pa/architecture.10bec55250f5d6a4.png)
 
 ## Azure ਸਰੋਤਾਂ ਦੀ ਸਫਾਈ ਕਰੋ
 

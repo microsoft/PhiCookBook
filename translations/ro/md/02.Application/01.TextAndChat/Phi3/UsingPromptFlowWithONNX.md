@@ -33,33 +33,33 @@ Citește acest ghid pentru a configura ONNX Runtime GenAI pentru Windows GPU [cl
 
 1. Instalează extensia Prompt flow pentru VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.ro.png)
+![pfvscode](../../../../../../translated_images/ro/pfvscode.eff93dfc66a42cbe.png)
 
 2. După instalarea extensiei Prompt flow pentru VS Code, dă click pe extensie și alege **Installation dependencies** urmează acest ghid pentru a instala Prompt flow SDK în mediul tău
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.ro.png)
+![pfsetup](../../../../../../translated_images/ro/pfsetup.b46e93096f5a254f.png)
 
 3. Descarcă [Codul Exemplu](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) și folosește VS Code pentru a deschide acest exemplu
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.ro.png)
+![pfsample](../../../../../../translated_images/ro/pfsample.8d89e70584ffe7c4.png)
 
 4. Deschide **flow.dag.yaml** pentru a alege mediul tău Python
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.ro.png)
+![pfdag](../../../../../../translated_images/ro/pfdag.264a77f7366458ff.png)
 
    Deschide **chat_phi3_ort.py** pentru a schimba locația modelului tău Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.ro.png)
+![pfphi](../../../../../../translated_images/ro/pfphi.72da81d74244b45f.png)
 
 5. Rulează prompt flow pentru testare
 
 Deschide **flow.dag.yaml** și dă click pe editorul vizual
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.ro.png)
+![pfv](../../../../../../translated_images/ro/pfv.ba8a81f34b20f603.png)
 
 după ce dai click, rulează-l pentru testare
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.ro.png)
+![pfflow](../../../../../../translated_images/ro/pfflow.4e1135a089b1ce1b.png)
 
 1. Poți rula batch în terminal pentru a verifica mai multe rezultate
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Poți verifica rezultatele în browserul tău implicit
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.ro.png)
+![pfresult](../../../../../../translated_images/ro/pfresult.c22c826f8062d7cb.png)
 
 **Declinare a responsabilității**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

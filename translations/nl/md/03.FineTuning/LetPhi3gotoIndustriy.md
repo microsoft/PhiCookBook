@@ -41,7 +41,7 @@ Fine-tuning is gebaseerd op het verbeteren van een bepaald model. Het hoeft niet
 
 ## **Hoe RAG te gebruiken**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007.nl.png)
+![rag](../../../../translated_images/nl/rag.2014adc59e6f6007.png)
 
 Een vector database is een verzameling data die wiskundig wordt opgeslagen. Vector databases maken het makkelijker voor machine learning modellen om eerdere input te onthouden, waardoor machine learning kan worden ingezet voor toepassingen zoals zoeken, aanbevelingen en tekstgeneratie. Data kan worden geïdentificeerd op basis van gelijkenis in plaats van exacte overeenkomsten, waardoor computermodellen de context van de data beter begrijpen.
 
@@ -58,7 +58,7 @@ De meest gebruikte algoritmes bij Fine-tuning zijn Lora en QLora. Hoe kies je?
 
 ### **Lora en QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca0.nl.png)
+![lora](../../../../translated_images/nl/qlora.e6446c988ee04ca0.png)
 
 LoRA (Low-Rank Adaptation) en QLoRA (Quantized Low-Rank Adaptation) zijn technieken om grote taalmodellen (LLM’s) fijn af te stemmen met Parameter Efficient Fine Tuning (PEFT). PEFT-technieken zijn ontworpen om modellen efficiënter te trainen dan traditionele methoden.
 

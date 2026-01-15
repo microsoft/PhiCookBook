@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Olive (*O*NNX *live*) हा एक मॉडेल ऑप्टिमायझेशन टूलकिट आहे ज्यासोबत CLI देखील आहे, जे ONNX runtime +++https://onnxruntime.ai+++ साठी गुणवत्ता आणि कार्यक्षमतेसह मॉडेल्स वितरित करण्यास मदत करते.
 
-![Olive Flow](../../../../../translated_images/olive-flow.5daf97340275f8b6.mr.png)
+![Olive Flow](../../../../../translated_images/mr/olive-flow.5daf97340275f8b6.png)
 
 Olive मध्ये इनपुट सहसा PyTorch किंवा Hugging Face मॉडेल असतो आणि आउटपुट म्हणजे ऑप्टिमाइझ केलेले ONNX मॉडेल जे ONNX runtime चालवणाऱ्या डिव्हाइसवर (डिप्लॉयमेंट टार्गेट) चालवले जाते. Olive मॉडेलला डिप्लॉयमेंट टार्गेटच्या AI अ‍ॅक्सेलरेटरसाठी (NPU, GPU, CPU) ऑप्टिमाइझ करेल, जे Qualcomm, AMD, Nvidia किंवा Intel सारख्या हार्डवेअर विक्रेत्याद्वारे पुरवले जाते.
 

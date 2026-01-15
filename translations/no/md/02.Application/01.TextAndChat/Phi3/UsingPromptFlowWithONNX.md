@@ -33,33 +33,33 @@ Les denne veiledningen for å sette opp ONNX Runtime GenAI for Windows GPU [klik
 
 1. Installer Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.no.png)
+![pfvscode](../../../../../../translated_images/no/pfvscode.eff93dfc66a42cbe.png)
 
 2. Etter å ha installert Prompt flow VS Code Extension, klikk på utvidelsen og velg **Installation dependencies**. Følg denne veiledningen for å installere Prompt flow SDK i ditt miljø.
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.no.png)
+![pfsetup](../../../../../../translated_images/no/pfsetup.b46e93096f5a254f.png)
 
 3. Last ned [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) og åpne dette eksempelet i VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.no.png)
+![pfsample](../../../../../../translated_images/no/pfsample.8d89e70584ffe7c4.png)
 
 4. Åpne **flow.dag.yaml** for å velge ditt Python-miljø
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.no.png)
+![pfdag](../../../../../../translated_images/no/pfdag.264a77f7366458ff.png)
 
    Åpne **chat_phi3_ort.py** for å endre plasseringen av din Phi-3.5-instruct ONNX-modell
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.no.png)
+![pfphi](../../../../../../translated_images/no/pfphi.72da81d74244b45f.png)
 
 5. Kjør din prompt flow for testing
 
 Åpne **flow.dag.yaml** og klikk på visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.no.png)
+![pfv](../../../../../../translated_images/no/pfv.ba8a81f34b20f603.png)
 
 etter å ha klikket på dette, kjør den for å teste
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.no.png)
+![pfflow](../../../../../../translated_images/no/pfflow.4e1135a089b1ce1b.png)
 
 1. Du kan kjøre batch i terminalen for å sjekke flere resultater
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Du kan sjekke resultatene i din standard nettleser
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.no.png)
+![pfresult](../../../../../../translated_images/no/pfresult.c22c826f8062d7cb.png)
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

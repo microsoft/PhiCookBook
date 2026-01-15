@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Сценарії тонкого налаштування
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.uk.png)
+![FineTuning with MS Services](../../../../translated_images/uk/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Платформа** Включає різні технології, такі як Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito та ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Тонке налаштування моделі за допомогою хостингового тонкого налаштування, без необхідності створювати та керувати обчислювальними ресурсами.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.uk.png)
+![MaaS Fine Tuning](../../../../translated_images/uk/MaaSfinetune.3eee4630607aff0d.png)
 
 Безсерверне тонке налаштування доступне для моделей Phi-3-mini та Phi-3-medium, що дозволяє розробникам швидко та легко налаштовувати моделі для хмарних та edge-сценаріїв без необхідності організовувати обчислення. Ми також оголосили, що Phi-3-small тепер доступна через нашу пропозицію Models-as-a-Service, щоб розробники могли швидко та просто почати розробку AI без необхідності керувати базовою інфраструктурою.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Користувачі керують власними обчислювальними ресурсами для тонкого налаштування своїх моделей.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.uk.png)
+![Maap Fine Tuning](../../../../translated_images/uk/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Приклад тонкого налаштування](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Приклади продуктивності тонкого налаштування
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.uk.png)
+![Finetuning Performance](../../../../translated_images/uk/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Відмова від відповідальності**:  
 Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.

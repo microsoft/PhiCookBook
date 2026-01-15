@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Valitsin Objective-C:n sovelluskehitykseen, koska Generative AI ONNX Runtime C++ API:n kanssa Objective-C on paremmin yhteensopiva. Tietenkin voit myös tehdä vastaavat kutsut Swift-sillan kautta.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.fi.png)
+![xcode](../../../../../translated_images/fi/xcode.8147789e6c25e3e2.png)
 
 ## **5. Kopioi ONNX kvantisoitu INT4 -malli App-sovellusprojektiin**
 
 Meidän täytyy tuoda INT4-kvantisointimalli ONNX-muodossa, joka täytyy ensin ladata.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.fi.png)
+![hf](../../../../../translated_images/fi/hf.6b8504fd88ee48dd.png)
 
 Lataamisen jälkeen lisää se projektin Resources-kansioon Xcodessa.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.fi.png)
+![model](../../../../../translated_images/fi/model.3b879b14e0be877d.png)
 
 ## **6. Lisää C++ API ViewControllers-luokkiin**
 
@@ -121,11 +121,11 @@ Lataamisen jälkeen lisää se projektin Resources-kansioon Xcodessa.
 
 - **a.** Lisää vastaavat C++-otsikkotiedostot projektiin.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.fi.png)
+  ![Header File](../../../../../translated_images/fi/head.64cad021ce70a333.png)
 
 - **b.** Sisällytä `onnxruntime-genai`-dynaaminen kirjasto Xcode-projektiin.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.fi.png)
+  ![Library](../../../../../translated_images/fi/lib.a4209b9f21ddf344.png)
 
 - **c.** Käytä C-esimerkkikoodia testaukseen. Voit myös lisätä lisäominaisuuksia, kuten ChatUI:n, laajempaan toiminnallisuuteen.
 
@@ -162,7 +162,7 @@ Lataamisen jälkeen lisää se projektin Resources-kansioon Xcodessa.
 
 Kun asennus on valmis, voit käynnistää sovelluksen ja nähdä Phi-3-mini-mallin päätelmän tulokset.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.fi.jpg)
+![Running Result](../../../../../translated_images/fi/result.326a947a6a2b9c51.jpg)
 
 Lisää esimerkkikoodeja ja yksityiskohtaiset ohjeet löydät [Phi-3 Mini Samples -varastosta](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

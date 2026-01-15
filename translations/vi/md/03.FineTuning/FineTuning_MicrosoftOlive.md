@@ -32,11 +32,11 @@ Nó cân nhắc các ràng buộc như độ chính xác và độ trễ trong q
 
 Microsoft Olive là một công cụ tối ưu hóa mô hình mã nguồn mở rất dễ sử dụng, có thể bao phủ cả tinh chỉnh và tham chiếu trong lĩnh vực trí tuệ nhân tạo sinh tạo. Chỉ cần cấu hình đơn giản, kết hợp với việc sử dụng các mô hình ngôn ngữ nhỏ mã nguồn mở và môi trường runtime liên quan (AzureML / GPU, CPU cục bộ, DirectML), bạn có thể hoàn thành việc tinh chỉnh hoặc tham chiếu mô hình thông qua tối ưu hóa tự động, và tìm ra mô hình tốt nhất để triển khai lên đám mây hoặc trên các thiết bị biên. Giúp doanh nghiệp xây dựng các mô hình chuyên ngành riêng của mình tại chỗ và trên đám mây.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e2.vi.png)
+![intro](../../../../translated_images/vi/intro.46086a3f16ec48e2.png)
 
 ## Tinh chỉnh Phi-3 với Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.vi.png)
+![FinetuningwithOlive](../../../../translated_images/vi/olivefinetune.76d09e9b68253681.png)
 
 ## Mã mẫu và ví dụ Phi-3 Olive
 Trong ví dụ này, bạn sẽ sử dụng Olive để:

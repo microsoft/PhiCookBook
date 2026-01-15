@@ -24,7 +24,7 @@ In dit E2E voorbeeld leert u hoe u het Phi-3 model fijn afstemt en integreert me
 
 Hier is een overzicht van dit E2E voorbeeld.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.nl.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/nl/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Inhoudsopgave
 
@@ -49,13 +49,13 @@ Hier is een overzicht van dit E2E voorbeeld.
 
 1. Typ *azure machine learning* in de **zoekbalk** bovenaan de portalpagina en selecteer **Azure Machine Learning** uit de opties die verschijnen.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.nl.png)
+    ![Type azure machine learning.](../../../../../../translated_images/nl/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Selecteer **+ Maak aan** in het navigatiemenu.
 
 3. Selecteer **Nieuwe werkruimte** in het navigatiemenu.
 
-    ![Selecteer nieuwe werkruimte.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.nl.png)
+    ![Selecteer nieuwe werkruimte.](../../../../../../translated_images/nl/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Voer de volgende taken uit:
 
@@ -68,7 +68,7 @@ Hier is een overzicht van dit E2E voorbeeld.
     - Selecteer de **Application insights** om te gebruiken (maak er een nieuwe aan indien nodig).
     - Selecteer de **Containerregistratie** om te gebruiken (maak er een nieuwe aan indien nodig).
 
-    ![Vul azure machine learning in.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.nl.png)
+    ![Vul azure machine learning in.](../../../../../../translated_images/nl/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Selecteer **Controleren + aanmaken**.
 
@@ -91,7 +91,7 @@ In deze tutorial leert u hoe u een Phi-3 model fijn afstemt en implementeert met
     - Selecteer de **Virtual machine family** die u wilt gebruiken. Bijvoorbeeld, selecteer **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, dat de *Standard_NC24ads_A100_v4* GPU omvat.
     - Selecteer **Quotum aanvragen** in het navigatiemenu.
 
-        ![Quotum aanvragen.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.nl.png)
+        ![Quotum aanvragen.](../../../../../../translated_images/nl/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Vul op de pagina Quotum aanvragen de gewenste **Nieuwe kernlimiet** in. Bijvoorbeeld 24.
     - Selecteer **Verzenden** om het GPU-quotum aan te vragen.
@@ -112,11 +112,11 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
 
 1. Typ *managed identities* in de **zoekbalk** bovenaan de portalpagina en selecteer **Managed Identities** uit de opties die verschijnen.
 
-    ![Typ managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.nl.png)
+    ![Typ managed identities.](../../../../../../translated_images/nl/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Selecteer **+ Aanmaken**.
 
-    ![Selecteer aanmaken.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.nl.png)
+    ![Selecteer aanmaken.](../../../../../../translated_images/nl/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Voer de volgende taken uit:
 
@@ -125,7 +125,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer de **Regio** die u wilt gebruiken.
     - Voer de **Naam** in. Deze moet een unieke waarde zijn.
 
-    ![Selecteer aanmaken.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.nl.png)
+    ![Selecteer aanmaken.](../../../../../../translated_images/nl/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Selecteer **Controleren + aanmaken**.
 
@@ -145,7 +145,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer de **Resourcegroep** die u wilt gebruiken.
     - Stel de **Rol** in op **Contributor**.
 
-    ![Vul contributor rol in.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.nl.png)
+    ![Vul contributor rol in.](../../../../../../translated_images/nl/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Selecteer **Opslaan**.
 
@@ -153,7 +153,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
 
 1. Typ *storage accounts* in de **zoekbalk** bovenaan de portalpagina en selecteer **Storage accounts** uit de opties die verschijnen.
 
-    ![Typ storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.nl.png)
+    ![Typ storage accounts.](../../../../../../translated_images/nl/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Selecteer het opslagaccount dat is gekoppeld aan de Azure Machine Learning werkruimte die u hebt gemaakt. Bijvoorbeeld *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer **+ Toevoegen** in het navigatiemenu.
     - Selecteer **Roltoewijzing toevoegen** in het navigatiemenu.
 
-    ![Rol toevoegen.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.nl.png)
+    ![Rol toevoegen.](../../../../../../translated_images/nl/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Voer op de pagina Roltoewijzing toevoegen de volgende taken uit:
 
@@ -177,7 +177,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
     - Selecteer de Manage Identity die u hebt aangemaakt. Bijvoorbeeld *finetunephi-managedidentity*.
     - Selecteer **Selecteren** op de pagina Managed identities selecteren.
 
-    ![Selecteer managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.nl.png)
+    ![Selecteer managed identity.](../../../../../../translated_images/nl/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Selecteer **Controleren + toewijzen**.
 
@@ -185,7 +185,7 @@ Om uw modellen fijn af te stemmen en te implementeren, moet u eerst een User Ass
 
 1. Typ *container registries* in de **zoekbalk** bovenaan de portalpagina en selecteer **Container registries** uit de opties die verschijnen.
 
-    ![Typ container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.nl.png)
+    ![Typ container registries.](../../../../../../translated_images/nl/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Selecteer de containerregistratie die gekoppeld is aan de Azure Machine Learning werkruimte. Bijvoorbeeld *finetunephicontainerregistry*.
 
@@ -276,11 +276,11 @@ In deze oefening gaat u
 
 1. Selecteer de *finetune-phi* map die je hebt aangemaakt, die zich bevindt op *C:\Users\yourUserName\finetune-phi*.
 
-    ![Selecteer de map die je hebt aangemaakt.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.nl.png)
+    ![Selecteer de map die je hebt aangemaakt.](../../../../../../translated_images/nl/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Klik in het linker paneel van Visual Studio Code met de rechtermuisknop en selecteer **Nieuw bestand** om een nieuw bestand aan te maken met de naam *download_dataset.py*.
 
-    ![Maak een nieuw bestand aan.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.nl.png)
+    ![Maak een nieuw bestand aan.](../../../../../../translated_images/nl/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Bereid dataset voor fine-tuning voor
 
@@ -392,7 +392,7 @@ In deze oefening ga je:
 
 1. Selecteer **+ Nieuw**.
 
-    ![Selecteer compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.nl.png)
+    ![Selecteer compute.](../../../../../../translated_images/nl/06-01-select-compute.a29cff290b480252.png)
 
 1. Voer de volgende taken uit:
 
@@ -402,7 +402,7 @@ In deze oefening ga je:
     - Selecteer het filter voor **Virtual machine size** op **Selecteer uit alle opties**.
     - Selecteer de **Virtual machine size** op **Standard_NC24ads_A100_v4**.
 
-    ![Maak cluster aan.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.nl.png)
+    ![Maak cluster aan.](../../../../../../translated_images/nl/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Selecteer **Volgende**.
 
@@ -413,7 +413,7 @@ In deze oefening ga je:
     - Stel het **Maximum aantal nodes** in op **1**.
     - Stel de **Idle seconden voor schalen omlaag** in op **120**.
 
-    ![Maak cluster aan.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.nl.png)
+    ![Maak cluster aan.](../../../../../../translated_images/nl/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Selecteer **Maken**.
 
@@ -423,18 +423,18 @@ In deze oefening ga je:
 
 1. Selecteer de Azure Machine Learning workspace die je hebt aangemaakt.
 
-    ![Selecteer workspace die je hebt aangemaakt.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.nl.png)
+    ![Selecteer workspace die je hebt aangemaakt.](../../../../../../translated_images/nl/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Voer de volgende taken uit:
 
     - Selecteer **Model catalog** in het linker zijmenu.
     - Typ *phi-3-mini-4k* in de **zoekbalk** en selecteer **Phi-3-mini-4k-instruct** uit de opties die verschijnen.
 
-    ![Typ phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.nl.png)
+    ![Typ phi-3-mini-4k.](../../../../../../translated_images/nl/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Selecteer **Fine-tune** in het navigatiemenu.
 
-    ![Selecteer fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.nl.png)
+    ![Selecteer fine tune.](../../../../../../translated_images/nl/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Voer de volgende taken uit:
 
@@ -443,7 +443,7 @@ In deze oefening ga je:
     - Selecteer het uploadtype voor Validatiegegevens op **Bied verschillende validatiegegevens aan**.
     - Selecteer **+ Select data** om **Validation data** te uploaden.
 
-    ![Vul fine-tuning pagina in.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.nl.png)
+    ![Vul fine-tuning pagina in.](../../../../../../translated_images/nl/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ In deze oefening ga je:
 
 1. In deze oefening heb je het Phi-3 model succesvol gefinetuned met behulp van Azure Machine Learning. Houd er rekening mee dat het fine-tuning proces aanzienlijke tijd kan kosten. Na het starten van de fine-tuning taak moet je wachten tot deze is voltooid. Je kunt de status van de fine-tuning taak volgen door naar het tabblad Taken (Jobs) aan de linkerzijde van je Azure Machine Learning Workspace te navigeren. In de volgende serie ga je het gefinetunede model implementeren en integreren met Prompt flow.
 
-    ![Bekijk fine-tuning taak.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.nl.png)
+    ![Bekijk fine-tuning taak.](../../../../../../translated_images/nl/06-08-output.2bd32e59930672b1.png)
 
 ### Implementeer het gefinetunede Phi-3 model
 
@@ -471,17 +471,17 @@ In deze oefening ga je:
 
 1. Selecteer de Azure Machine Learning workspace die je hebt aangemaakt.
 
-    ![Selecteer workspace die je hebt aangemaakt.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.nl.png)
+    ![Selecteer workspace die je hebt aangemaakt.](../../../../../../translated_images/nl/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Selecteer **Modellen** in het linker zijmenu.
 1. Selecteer **+ Registreren**.
 1. Selecteer **Vanuit output van een taak**.
 
-    ![Model registreren.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.nl.png)
+    ![Model registreren.](../../../../../../translated_images/nl/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Selecteer de taak die je hebt uitgevoerd.
 
-    ![Selecteer taak.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.nl.png)
+    ![Selecteer taak.](../../../../../../translated_images/nl/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Selecteer **Volgende**.
 
@@ -489,17 +489,17 @@ In deze oefening ga je:
 
 1. Zorg ervoor dat **Output van taak** is geselecteerd; dit zou automatisch geselecteerd moeten zijn.
 
-    ![Selecteer output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.nl.png)
+    ![Selecteer output.](../../../../../../translated_images/nl/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Selecteer **Volgende**.
 
 3. Selecteer **Registreren**.
 
-    ![Selecteer registreren.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.nl.png)
+    ![Selecteer registreren.](../../../../../../translated_images/nl/07-04-register.fd82a3b293060bc7.png)
 
 4. Je kunt je geregistreerde model bekijken door te navigeren naar het **Modellen** menu in het linker zijmenu.
 
-    ![Geregistreerd model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.nl.png)
+    ![Geregistreerd model.](../../../../../../translated_images/nl/07-05-registered-model.7db9775f58dfd591.png)
 
 #### Implementeer het gefinetunede model
 
@@ -509,13 +509,13 @@ In deze oefening ga je:
 
 1. Selecteer **Realtime endpoints** in het navigatiemenu.
 
-    ![Maak endpoint aan.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.nl.png)
+    ![Maak endpoint aan.](../../../../../../translated_images/nl/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Selecteer **Maken**.
 
 1. Selecteer het geregistreerde model dat je hebt aangemaakt.
 
-    ![Selecteer geregistreerd model.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.nl.png)
+    ![Selecteer geregistreerd model.](../../../../../../translated_images/nl/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Selecteer **Selecteren**.
 
@@ -527,7 +527,7 @@ In deze oefening ga je:
     - Vul **Endpoint naam** in. Dit moet een unieke waarde zijn.
     - Vul **Implementatienaam** in. Dit moet een unieke waarde zijn.
 
-    ![Vul de implementatie instellingen in.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.nl.png)
+    ![Vul de implementatie instellingen in.](../../../../../../translated_images/nl/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Selecteer **Implementeren**.
 
@@ -543,14 +543,14 @@ In deze oefening ga je:
 
 1. Selecteer het endpoint dat je hebt aangemaakt.
 
-    ![Selecteer endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.nl.png)
+    ![Selecteer endpoints](../../../../../../translated_images/nl/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. Op deze pagina kun je de endpoints beheren tijdens het implementatieproces.
 
 > [!NOTE]
 > Zodra de implementatie is voltooid, zorg ervoor dat **Live verkeer** is ingesteld op **100%**. Indien dit niet zo is, selecteer **Verkeer bijwerken** om de verkeersinstellingen aan te passen. Houd er rekening mee dat je het model niet kunt testen als het verkeer op 0% staat.
 >
-> ![Stel verkeer in.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.nl.png)
+> ![Stel verkeer in.](../../../../../../translated_images/nl/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## Scenario 3: Integreren met Prompt flow en chatten met je aangepaste model in Azure AI Foundry
@@ -579,7 +579,7 @@ Je moet eerst een Hub aanmaken voordat je een Project maakt. Een Hub fungeert al
 1. Selecteer **Alle hubs** in het linker zijmenu.
 
 1. Selecteer **+ Nieuwe hub** in het navigatiemenu.
-    ![Maak hub aan.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.nl.png)
+    ![Maak hub aan.](../../../../../../translated_images/nl/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Voer de volgende taken uit:
 
@@ -590,7 +590,7 @@ Je moet eerst een Hub aanmaken voordat je een Project maakt. Een Hub fungeert al
     - Selecteer de **Connect Azure AI Services** die u wilt gebruiken (maak er indien nodig een nieuwe aan).
     - Selecteer **Connect Azure AI Search** om **Verbinding overslaan** te kiezen.
 
-    ![Vul hub in.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.nl.png)
+    ![Vul hub in.](../../../../../../translated_images/nl/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Selecteer **Volgende**.
 
@@ -600,11 +600,11 @@ Je moet eerst een Hub aanmaken voordat je een Project maakt. Een Hub fungeert al
 
 1. Selecteer **+ Nieuw project** in het navigatiemenu.
 
-    ![Selecteer nieuw project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.nl.png)
+    ![Selecteer nieuw project.](../../../../../../translated_images/nl/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Voer een **Projectnaam** in. Dit moet een unieke waarde zijn.
 
-    ![Maak project aan.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.nl.png)
+    ![Maak project aan.](../../../../../../translated_images/nl/08-05-create-project.4d97f0372f03375a.png)
 
 1. Selecteer **Maak een project aan**.
 
@@ -620,17 +620,17 @@ Om uw aangepaste Phi-3 model te integreren met Prompt flow, moet u het eindpunt 
 
 1. Selecteer **Eindpunten** in het tabblad aan de linkerzijde.
 
-    ![Selecteer eindpunten.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.nl.png)
+    ![Selecteer eindpunten.](../../../../../../translated_images/nl/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Selecteer het eindpunt dat u hebt aangemaakt.
 
-    ![Selecteer aangemaakt eindpunt.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.nl.png)
+    ![Selecteer aangemaakt eindpunt.](../../../../../../translated_images/nl/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. Selecteer **Consumeren** in het navigatiemenu.
 
 1. Kopieer uw **REST-eindpunt** en **Primaire sleutel**.
 
-    ![Kopieer api key en eindpunt uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.nl.png)
+    ![Kopieer api key en eindpunt uri.](../../../../../../translated_images/nl/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Voeg de aangepaste verbinding toe
 
@@ -642,11 +642,11 @@ Om uw aangepaste Phi-3 model te integreren met Prompt flow, moet u het eindpunt 
 
 1. Selecteer **+ Nieuwe verbinding**.
 
-    ![Selecteer nieuwe verbinding.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.nl.png)
+    ![Selecteer nieuwe verbinding.](../../../../../../translated_images/nl/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. Selecteer **Aangepaste sleutels** in het navigatiemenu.
 
-    ![Selecteer aangepaste sleutels.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.nl.png)
+    ![Selecteer aangepaste sleutels.](../../../../../../translated_images/nl/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Voer de volgende taken uit:
 
@@ -656,7 +656,7 @@ Om uw aangepaste Phi-3 model te integreren met Prompt flow, moet u het eindpunt 
     - Voer voor de sleutelnaam **key** in en plak de sleutel die u gekopieerd hebt uit Azure ML Studio in het veld waarde.
     - Nadat u de sleutels hebt toegevoegd, selecteert u **is geheim** om te voorkomen dat de sleutel zichtbaar wordt.
 
-    ![Voeg verbinding toe.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.nl.png)
+    ![Voeg verbinding toe.](../../../../../../translated_images/nl/08-11-add-connection.785486badb4d2d26.png)
 
 1. Selecteer **Verbinding toevoegen**.
 
@@ -670,15 +670,15 @@ U hebt een aangepaste verbinding toegevoegd in Azure AI Foundry. Laten we nu een
 
 1. Selecteer **+ Aanmaken** in het navigatiemenu.
 
-    ![Selecteer Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.nl.png)
+    ![Selecteer Promptflow.](../../../../../../translated_images/nl/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. Selecteer **Chat flow** in het navigatiemenu.
 
-    ![Selecteer chatflow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.nl.png)
+    ![Selecteer chatflow.](../../../../../../translated_images/nl/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Voer een **Mapnaam** in om te gebruiken.
 
-    ![Voer naam in.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.nl.png)
+    ![Voer naam in.](../../../../../../translated_images/nl/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Selecteer **Aanmaken**.
 
@@ -715,7 +715,7 @@ U moet het fijn afgestelde Phi-3 model integreren in een Prompt flow. De bestaan
 
     - Selecteer **Opslaan**.
 
-    ![Selecteer ruwe bestandsmodus.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.nl.png)
+    ![Selecteer ruwe bestandsmodus.](../../../../../../translated_images/nl/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Voeg de volgende code toe aan het bestand *integrate_with_promptflow.py* om het aangepaste Phi-3 model in Prompt flow te gebruiken.
 
@@ -780,14 +780,14 @@ U moet het fijn afgestelde Phi-3 model integreren in een Prompt flow. De bestaan
 
     ```
 
-    ![Plak prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.nl.png)
+    ![Plak prompt flow code.](../../../../../../translated_images/nl/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Voor meer gedetailleerde informatie over het gebruik van Prompt flow in Azure AI Foundry, kunt u kijken op [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Selecteer **Chat invoer**, **Chat uitvoer** om chatten met uw model mogelijk te maken.
 
-    ![Invoer Uitvoer.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.nl.png)
+    ![Invoer Uitvoer.](../../../../../../translated_images/nl/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. U bent nu klaar om te chatten met uw aangepaste Phi-3 model. In de volgende oefening leert u hoe u Prompt flow start en gebruikt om te chatten met uw fijn afgestelde Phi-3 model.
 
@@ -795,7 +795,7 @@ U moet het fijn afgestelde Phi-3 model integreren in een Prompt flow. De bestaan
 >
 > De herbouwde flow zou eruit moeten zien als op de onderstaande afbeelding:
 >
-> ![Flow voorbeeld.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.nl.png)
+> ![Flow voorbeeld.](../../../../../../translated_images/nl/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Chatten met uw aangepaste Phi-3 model
@@ -808,25 +808,25 @@ Nu u uw aangepaste Phi-3 model hebt fijn afgestemd en geïntegreerd met Prompt f
 
 1. Selecteer **Compute sessies starten** om Prompt flow te starten.
 
-    ![Start compute sessie.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.nl.png)
+    ![Start compute sessie.](../../../../../../translated_images/nl/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Selecteer **Invoer valideren en parsen** om parameters te vernieuwen.
 
-    ![Valideer invoer.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.nl.png)
+    ![Valideer invoer.](../../../../../../translated_images/nl/09-02-validate-input.317c76ef766361e9.png)
 
 1. Selecteer de **Waarde** van de **verbinding** die u hebt gemaakt als aangepaste verbinding. Bijvoorbeeld *connection*.
 
-    ![Verbinding.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.nl.png)
+    ![Verbinding.](../../../../../../translated_images/nl/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Chat met uw aangepaste model
 
 1. Selecteer **Chat**.
 
-    ![Selecteer chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.nl.png)
+    ![Selecteer chat.](../../../../../../translated_images/nl/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Hier is een voorbeeld van de resultaten: U kunt nu chatten met uw aangepaste Phi-3 model. Het wordt aangeraden om vragen te stellen die betrekking hebben op de data die is gebruikt voor het fijn afstemmen.
 
-    ![Chat met prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.nl.png)
+    ![Chat met prompt flow.](../../../../../../translated_images/nl/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

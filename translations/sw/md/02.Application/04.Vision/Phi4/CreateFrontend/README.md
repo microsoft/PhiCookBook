@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal ina uwezo mkubwa wa kusoma picha. Hebu tujaribu kutumia Python kutekeleza kazi zifuatazo. Picha ni ukurasa wa ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.sw.png)
+![demo](../../../../../../../translated_images/sw/demo.609a55a7a2b9ed27.png)
 
 ### **Mfano wa Msimbo**
 

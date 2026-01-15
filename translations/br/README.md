@@ -34,7 +34,7 @@ Siga estes passos para começar a usar esses recursos:
 2. **Clone o Repositório**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Junte-se à Comunidade Microsoft AI no Discord e conheça especialistas e outros desenvolvedores**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.br.png)
+![cover](../../translated_images/br/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Suporte Multilíngue
 

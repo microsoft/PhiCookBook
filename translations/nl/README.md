@@ -34,7 +34,7 @@ Volg deze stappen om te beginnen met het gebruiken van deze bronnen:
 2. **Clone de repository**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Word lid van de Microsoft AI Discord Community en ontmoet experts en mede-ontwikkelaars**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.nl.png)
+![cover](../../translated_images/nl/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Meertalige ondersteuning
 

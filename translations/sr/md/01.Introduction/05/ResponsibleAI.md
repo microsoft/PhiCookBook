@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Преглед Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d33.sr.png)
+![RAIPrinciples](../../../../../translated_images/sr/RAIPrinciples.bf9c9bc6ca160d33.png)
 
 **Етички принципи**
 

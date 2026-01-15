@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Χρήση του Azure AI Foundry για αξιολόγηση**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.el.png)
+![aistudo](../../../../../translated_images/el/AIFoundry.9e0b513e999a1c5a.png)
 
 Πώς να αξιολογήσετε την εφαρμογή γεννητικής AI χρησιμοποιώντας το [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Είτε αξιολογείτε συνομιλίες μιας μόνο ανταλλαγής είτε πολλαπλών ανταλλαγών, το Azure AI Foundry παρέχει εργαλεία για την αξιολόγηση της απόδοσης και της ασφάλειας του μοντέλου.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.el.png)
+![aistudo](../../../../../translated_images/el/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Πώς να αξιολογήσετε εφαρμογές γεννητικής AI με το Azure AI Foundry
 Για πιο αναλυτικές οδηγίες δείτε την [Τεκμηρίωση του Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

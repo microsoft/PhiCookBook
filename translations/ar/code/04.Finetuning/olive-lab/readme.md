@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Olive (*O*NNX *live*) هو مجموعة أدوات لتحسين النماذج مع واجهة سطر أوامر مرافقة تتيح لك نشر النماذج على ONNX runtime +++https://onnxruntime.ai+++ مع جودة وأداء عاليين.
 
-![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2.ar.png)
+![Olive Flow](../../../../../translated_images/ar/olive-flow.c4f76d9142c579b2.png)
 
 عادةً ما يكون الإدخال إلى Olive نموذج PyTorch أو Hugging Face، والإخراج هو نموذج ONNX محسن يتم تنفيذه على جهاز (هدف النشر) يعمل بنظام ONNX runtime. يقوم Olive بتحسين النموذج لمسرع الذكاء الاصطناعي الخاص بجهاز النشر (NPU، GPU، CPU) المقدم من بائع الأجهزة مثل Qualcomm أو AMD أو Nvidia أو Intel.
 

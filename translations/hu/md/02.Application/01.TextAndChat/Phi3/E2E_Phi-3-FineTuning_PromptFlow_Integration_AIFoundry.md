@@ -24,7 +24,7 @@ Ebben az E2E példában megtanulod, hogyan kell finomhangolni a Phi-3 modellt é
 
 Itt egy áttekintés erről az E2E példáról.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.hu.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/hu/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Tartalomjegyzék
 
@@ -49,13 +49,13 @@ Itt egy áttekintés erről az E2E példáról.
 
 1. Írd be az *azure machine learning* kifejezést a **keresősávba** az oldal tetején, és válaszd ki az opciók közül az **Azure Machine Learning** lehetőséget.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.hu.png)
+    ![Type azure machine learning.](../../../../../../translated_images/hu/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Válaszd a **+ Create** lehetőséget a navigációs menüből.
 
 3. Válaszd ki a **New workspace** lehetőséget a navigációs menüből.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.hu.png)
+    ![Select new workspace.](../../../../../../translated_images/hu/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Végezze el a következő feladatokat:
 
@@ -68,7 +68,7 @@ Itt egy áttekintés erről az E2E példáról.
     - Válaszd ki a használni kívánt **Application insights** szolgáltatást (ha szükséges, hozz létre újat).
     - Válaszd ki a használni kívánt **Konténeregység-regisztrációt** (ha szükséges, hozz létre újat).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.hu.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/hu/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Válaszd a **Review + Create** lehetőséget.
 
@@ -91,7 +91,7 @@ Ebben a bemutatóban megtanulod, hogyan finomhangolhatsz és telepíthetsz egy P
     - Válaszd ki a használni kívánt **Virtuális gép családot**. Például válaszd a **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** lehetőséget, amely tartalmazza a *Standard_NC24ads_A100_v4* GPU-t.
     - Válaszd a navigációs menüből a **Request quota** lehetőséget.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.hu.png)
+        ![Request quota.](../../../../../../translated_images/hu/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Az Request quota oldalon add meg a használni kívánt **Új magkorlátot**. Például 24.
     - Az Request quota oldalon válaszd a **Submit** gombot a GPU kvóta igényléséhez.
@@ -112,11 +112,11 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
 
 1. Írd be a *managed identities* kifejezést a **keresősávba** az oldal tetején, és válaszd ki az opciók közül a **Managed Identities** lehetőséget.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.hu.png)
+    ![Type managed identities.](../../../../../../translated_images/hu/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Válaszd a **+ Create** gombot.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.hu.png)
+    ![Select create.](../../../../../../translated_images/hu/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Végezze el a következő feladatokat:
 
@@ -125,7 +125,7 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
     - Válaszd ki a kívánt **Régiót**.
     - Add meg a **Nevet**. Egyedi értéknek kell lennie.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.hu.png)
+    ![Select create.](../../../../../../translated_images/hu/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Válaszd a **Review + create** lehetőséget.
 
@@ -145,7 +145,7 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
     - Válaszd ki a használni kívánt **Erőforráscsoportot**.
     - Válaszd a **Contributor** szerepkört.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.hu.png)
+    ![Fill contributor role.](../../../../../../translated_images/hu/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Válaszd a **Save** gombot.
 
@@ -153,7 +153,7 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
 
 1. Írd be a *storage accounts* kifejezést a **keresősávba** az oldal tetején, és válaszd ki az opciók közül a **Storage accounts** lehetőséget.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.hu.png)
+    ![Type storage accounts.](../../../../../../translated_images/hu/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Válaszd ki azt a tárhelyfiókot, amely az Azure Machine Learning munkaterülethez kapcsolódik, amelyet létrehoztál. Például: *finetunephistorage*.
 
@@ -164,7 +164,7 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
     - Válaszd a navigációs menüből a **+ Add** lehetőséget.
     - Válaszd a **Add role assignment** lehetőséget.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.hu.png)
+    ![Add role.](../../../../../../translated_images/hu/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Az Add role assignment oldalon végezd el a következőket:
 
@@ -177,7 +177,7 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
     - A Select managed identities oldalon válaszd ki az általad létrehozott Manage Identity-t. Például: *finetunephi-managedidentity*.
     - A Select managed identities oldalon válaszd a **Select** gombot.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.hu.png)
+    ![Select managed identity.](../../../../../../translated_images/hu/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Válaszd a **Review + assign** lehetőséget.
 
@@ -185,7 +185,7 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
 
 1. Írd be a *container registries* kifejezést a **keresősávba** az oldal tetején, és válaszd ki az opciók közül a **Container registries** lehetőséget.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.hu.png)
+    ![Type container registries.](../../../../../../translated_images/hu/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Válaszd ki azt a konténeregység-regisztrációt, amely az Azure Machine Learning munkaterülethez tartozik. Például: *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ Ebben a gyakorlatban a következőket fogod megtenni:
 
 1. Válassza ki a létrehozott *finetune-phi* mappát, amely helyileg a *C:\Users\yourUserName\finetune-phi* útvonalon található.
 
-    ![Válassza ki a létrehozott mappát.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.hu.png)
+    ![Válassza ki a létrehozott mappát.](../../../../../../translated_images/hu/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. A Visual Studio Code bal oldali ablaktábláján kattintson jobb gombbal, és válassza a **New File** opciót, hogy létrehozzon egy új fájlt *download_dataset.py* néven.
 
-    ![Új fájl létrehozása.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.hu.png)
+    ![Új fájl létrehozása.](../../../../../../translated_images/hu/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Adatkészlet előkészítése finomhangoláshoz
 
@@ -392,7 +392,7 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Kattintson a **+ New** gombra.
 
-    ![Számítás kiválasztása.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.hu.png)
+    ![Számítás kiválasztása.](../../../../../../translated_images/hu/06-01-select-compute.a29cff290b480252.png)
 
 1. Végezze el a következő lépéseket:
 
@@ -402,7 +402,7 @@ Ebben a gyakorlatban a következőket teszi:
     - A **Virtual machine size** szűrőt állítsa **Select from all options**-ra.
     - Válassza a **Virtual machine size**-t **Standard_NC24ads_A100_v4** értékre.
 
-    ![Klaszter létrehozása.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.hu.png)
+    ![Klaszter létrehozása.](../../../../../../translated_images/hu/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Kattintson a **Next** gombra.
 
@@ -413,7 +413,7 @@ Ebben a gyakorlatban a következőket teszi:
     - Állítsa be a **Maximum number of nodes** értékét **1**-re.
     - Állítsa be az **Idle seconds before scale down** értékét **120**-ra.
 
-    ![Klaszter létrehozása.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.hu.png)
+    ![Klaszter létrehozása.](../../../../../../translated_images/hu/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Kattintson a **Create** gombra.
 
@@ -423,18 +423,18 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Válassza ki az Ön által létrehozott Azure Machine Learning munkaterületet.
 
-    ![Válassza ki a létrehozott munkaterületet.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.hu.png)
+    ![Válassza ki a létrehozott munkaterületet.](../../../../../../translated_images/hu/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Végezze el a következőket:
 
     - Válassza ki a bal oldali fülön a **Model catalog** menüpontot.
     - Gépelje be a keresőmezőbe a *phi-3-mini-4k* kifejezést, majd a megjelenő opciók közül válassza ki a **Phi-3-mini-4k-instruct**-ot.
 
-    ![Írja be a phi-3-mini-4k-t.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.hu.png)
+    ![Írja be a phi-3-mini-4k-t.](../../../../../../translated_images/hu/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Válassza a navigációs menüből a **Fine-tune** opciót.
 
-    ![Válassza a finomhangolást.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.hu.png)
+    ![Válassza a finomhangolást.](../../../../../../translated_images/hu/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Végezze el a következő beállításokat:
 
@@ -443,7 +443,7 @@ Ebben a gyakorlatban a következőket teszi:
     - A validációs adatfeltöltés típusánál válassza a **Provide different validation data** opciót.
     - Kattintson a **+ Select data** gombra a **Validation data** feltöltéséhez.
 
-    ![Töltse ki a finomhangolási oldal adatait.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.hu.png)
+    ![Töltse ki a finomhangolási oldal adatait.](../../../../../../translated_images/hu/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Ebben a gyakorlatban sikeresen finomhangolta a Phi-3 modellt az Azure Machine Learning segítségével. Fontos megjegyezni, hogy a finomhangolási folyamat jelentős időt vehet igénybe. A finomhangolási feladat futtatása után várnia kell a folyamat befejezésére. A finomhangolási feladat státuszát a munkaterület bal oldalán található Jobs fülön követheti nyomon. A következő részben telepíti a finomhangolt modellt, és integrálja azt a Prompt flow-val.
 
-    ![Finomhangolási feladat kimenete.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.hu.png)
+    ![Finomhangolási feladat kimenete.](../../../../../../translated_images/hu/06-08-output.2bd32e59930672b1.png)
 
 ### A finomhangolt Phi-3 modell telepítése
 
@@ -471,17 +471,17 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Válassza ki az Ön által létrehozott Azure Machine Learning munkaterületet.
 
-    ![Válassza ki a létrehozott munkaterületet.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.hu.png)
+    ![Válassza ki a létrehozott munkaterületet.](../../../../../../translated_images/hu/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Válassza ki a bal oldali fülön a **Models** menüpontot.
 1. Kattintson a **+ Register** gombra.
 1. Válassza a **From a job output** opciót.
 
-    ![Modell regisztrálása.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.hu.png)
+    ![Modell regisztrálása.](../../../../../../translated_images/hu/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Válassza ki a létrehozott futási feladatot.
 
-    ![Futási feladat kiválasztása.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.hu.png)
+    ![Futási feladat kiválasztása.](../../../../../../translated_images/hu/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Kattintson a **Next** gombra.
 
@@ -489,17 +489,17 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Győződjön meg róla, hogy a **Job output** be van jelölve; ez automatikusan ki kell legyen választva.
 
-    ![Kimenet kiválasztása.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.hu.png)
+    ![Kimenet kiválasztása.](../../../../../../translated_images/hu/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Kattintson a **Next** gombra.
 
 3. Kattintson a **Register** gombra.
 
-    ![Regisztrálás kiválasztása.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.hu.png)
+    ![Regisztrálás kiválasztása.](../../../../../../translated_images/hu/07-04-register.fd82a3b293060bc7.png)
 
 4. A regisztrált modell megtekintéséhez navigáljon a bal oldali fülön a **Models** menüpontra.
 
-    ![Regisztrált modell.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.hu.png)
+    ![Regisztrált modell.](../../../../../../translated_images/hu/07-05-registered-model.7db9775f58dfd591.png)
 
 #### A finomhangolt modell telepítése
 
@@ -509,13 +509,13 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Válassza a navigációs menüből a **Real-time endpoints** opciót.
 
-    ![Végpont létrehozása.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.hu.png)
+    ![Végpont létrehozása.](../../../../../../translated_images/hu/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Kattintson a **Create** gombra.
 
 1. Válassza ki a korábban regisztrált modellt.
 
-    ![Regisztrált modell kiválasztása.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.hu.png)
+    ![Regisztrált modell kiválasztása.](../../../../../../translated_images/hu/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Kattintson a **Select** gombra.
 
@@ -527,7 +527,7 @@ Ebben a gyakorlatban a következőket teszi:
     - Adja meg az **Endpoint name**-et. Egyedi értéknek kell lennie.
     - Adja meg a **Deployment name**-et. Egyedi értéknek kell lennie.
 
-    ![Telepítési beállítások kitöltése.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.hu.png)
+    ![Telepítési beállítások kitöltése.](../../../../../../translated_images/hu/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Kattintson a **Deploy** gombra.
 
@@ -543,14 +543,14 @@ Ebben a gyakorlatban a következőket teszi:
 
 1. Válassza ki a létrehozott végpontot.
 
-    ![Végpontok kiválasztása](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.hu.png)
+    ![Végpontok kiválasztása](../../../../../../translated_images/hu/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. Ezen az oldalon kezelheti a végpontokat a telepítési folyamat során.
 
 > [!NOTE]
 > Amint a telepítés befejeződik, győződjön meg róla, hogy a **Live traffic** értéke **100%**. Ha nem, válassza az **Update traffic** lehetőséget a forgalom beállításainak módosításához. Megjegyzés: a modellt nem lehet tesztelni, ha a forgalom 0%-ra van állítva.
 >
-> ![Forgalom beállítása.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.hu.png)
+> ![Forgalom beállítása.](../../../../../../translated_images/hu/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## 3. forgatókönyv: Integráció a Prompt flow-val és beszélgetés a saját modellen az Azure AI Foundry-ban
@@ -579,7 +579,7 @@ A projekt létrehozása előtt létre kell hozni egy Hub-ot. A Hub olyan, mint e
 1. Válassza a bal oldali menüben az **All hubs** lehetőséget.
 
 1. Válassza a navigációs menüből a **+ New hub** opciót.
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.hu.png)
+    ![Create hub.](../../../../../../translated_images/hu/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Végezze el a következő feladatokat:
 
@@ -590,7 +590,7 @@ A projekt létrehozása előtt létre kell hozni egy Hub-ot. A Hub olyan, mint e
     - Válassza ki a használandó **Connect Azure AI Services**-t (szükség esetén hozzon létre újat).
     - Válassza ki a **Connect Azure AI Search** lehetőséget a **Kapcsolat kihagyása** opcióra.
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.hu.png)
+    ![Fill hub.](../../../../../../translated_images/hu/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Válassza a **Tovább** lehetőséget.
 
@@ -600,11 +600,11 @@ A projekt létrehozása előtt létre kell hozni egy Hub-ot. A Hub olyan, mint e
 
 1. A navigációs menüből válassza az **+ Új projekt** lehetőséget.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.hu.png)
+    ![Select new project.](../../../../../../translated_images/hu/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Adja meg a **Projekt nevét**. Egyedi értéknek kell lennie.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.hu.png)
+    ![Create project.](../../../../../../translated_images/hu/08-05-create-project.4d97f0372f03375a.png)
 
 1. Válassza a **Projekt létrehozása** lehetőséget.
 
@@ -620,17 +620,17 @@ Ahhoz, hogy a saját, finomhangolt Phi-3 modelljét integrálhassa a Prompt flow
 
 1. Az oldalsó fülön válassza az **Endpoints** lehetőséget.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.hu.png)
+    ![Select endpoints.](../../../../../../translated_images/hu/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Válassza ki a létrehozott végpontot.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.hu.png)
+    ![Select endpoints.](../../../../../../translated_images/hu/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. A navigációs menüből válassza a **Consume** lehetőséget.
 
 1. Másolja le a **REST endpoint**-ot és a **Primary key**-t.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.hu.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/hu/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Az egyedi kapcsolat hozzáadása
 
@@ -642,11 +642,11 @@ Ahhoz, hogy a saját, finomhangolt Phi-3 modelljét integrálhassa a Prompt flow
 
 1. Válassza az **+ Új kapcsolat** lehetőséget.
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.hu.png)
+    ![Select new connection.](../../../../../../translated_images/hu/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. A navigációs menüből válassza a **Custom keys** lehetőséget.
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.hu.png)
+    ![Select custom keys.](../../../../../../translated_images/hu/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Végezze el a következő lépéseket:
 
@@ -656,7 +656,7 @@ Ahhoz, hogy a saját, finomhangolt Phi-3 modelljét integrálhassa a Prompt flow
     - A kulcsnévhez írja be a **key** nevet, és illessze be a másolt kulcsot az értékmezőbe.
     - A kulcsok hozzáadása után jelölje be az **is secret** opciót, hogy megakadályozza a kulcs felfedését.
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.hu.png)
+    ![Add connection.](../../../../../../translated_images/hu/08-11-add-connection.785486badb4d2d26.png)
 
 1. Válassza az **Add connection** lehetőséget.
 
@@ -670,15 +670,15 @@ Hozzáadta az egyedi kapcsolatot az Azure AI Foundry-ban. Most hozzunk létre eg
 
 1. A navigációs menüből válassza az **+ Létrehozás** lehetőséget.
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.hu.png)
+    ![Select Promptflow.](../../../../../../translated_images/hu/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. A navigációs menüből válassza a **Chat flow** lehetőséget.
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.hu.png)
+    ![Select chat flow.](../../../../../../translated_images/hu/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Adja meg a használandó **Mappa nevét**.
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.hu.png)
+    ![Enter name.](../../../../../../translated_images/hu/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Válassza a **Létrehozás** lehetőséget.
 
@@ -715,7 +715,7 @@ Integrálni kell a finomhangolt Phi-3 modellt a Prompt flow-ba. Azonban az alap�
 
     - Válassza a **Mentés** lehetőséget.
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.hu.png)
+    ![Select raw file mode.](../../../../../../translated_images/hu/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Másolja be az alábbi kódot az *integrate_with_promptflow.py* fájlba, hogy használni tudja az egyedi Phi-3 modellt a Prompt flow-ban.
 
@@ -780,14 +780,14 @@ Integrálni kell a finomhangolt Phi-3 modellt a Prompt flow-ba. Azonban az alap�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.hu.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/hu/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Az Azure AI Foundry-ban a Prompt flow használatáról bővebb információt talál a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) oldalon.
 
 1. Válassza a **Csevegő bemenet**, **Csevegő kimenet** lehetőségeket, hogy engedélyezze a modellel való csevegést.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.hu.png)
+    ![Input Output.](../../../../../../translated_images/hu/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. Most már készen áll arra, hogy csevegjünk az egyedi Phi-3 modelljével. A következő gyakorlatban megtanulja, hogyan indítsa el a Prompt flow-t, és hogyan használja a finomhangolt Phi-3 modellel való csevegéshez.
 
@@ -795,7 +795,7 @@ Integrálni kell a finomhangolt Phi-3 modellt a Prompt flow-ba. Azonban az alap�
 >
 > Az újjáépített folyamatnak a következő képre kell hasonlítania:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.hu.png)
+> ![Flow example.](../../../../../../translated_images/hu/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Csevegjünk az egyedi Phi-3 modellel
@@ -808,25 +808,25 @@ Most, hogy finomhangolta és integrálta az egyedi Phi-3 modelljét a Prompt flo
 
 1. Válassza a **Számítási munkamenetek indítása** lehetőséget a Prompt flow elindításához.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.hu.png)
+    ![Start compute session.](../../../../../../translated_images/hu/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Válassza a **Érvényesítés és bemenet elemzése** lehetőséget a paraméterek frissítéséhez.
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.hu.png)
+    ![Validate input.](../../../../../../translated_images/hu/09-02-validate-input.317c76ef766361e9.png)
 
 1. Válassza ki a **connection** értékét az Ön által létrehozott egyedi kapcsolathoz. Például: *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.hu.png)
+    ![Connection.](../../../../../../translated_images/hu/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Csevegjünk az egyedi modellel
 
 1. Válassza a **Csevegés** lehetőséget.
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.hu.png)
+    ![Select chat.](../../../../../../translated_images/hu/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Íme egy példa az eredményekre: Most már cseveghet az egyedi Phi-3 modelljével. Ajánlott olyan kérdéseket feltenni, amelyek a finomhangoláshoz használt adatokon alapulnak.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.hu.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/hu/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

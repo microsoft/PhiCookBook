@@ -28,9 +28,9 @@ GPU समांतर संगणनासाठी ओळखले जात�
 
 Intel® NPU डिव्हाइस हा Intel क्लायंट CPU सोबत समाकलित AI inference accelerator आहे, जो Intel® Core™ Ultra CPU पिढीपासून (पूर्वी Meteor Lake म्हणून ओळखला जात असे) सुरू होतो. हे कृत्रिम न्यूरल नेटवर्क कार्यांची ऊर्जा कार्यक्षम अंमलबजावणी सक्षम करते.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.mr.png)
+![Latency](../../../../../translated_images/mr/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.mr.png)
+![Latency770](../../../../../translated_images/mr/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 कोड चालवताना, Task Manager मधून NPU ची चालू स्थिती पाहू शकतो.
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.mr.png)
+![NPU](../../../../../translated_images/mr/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***नमुने*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 हे चालवलेले निकाल आहे
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.mr.png)
+![DML](../../../../../translated_images/mr/aipc_DML.52a44180393ab491.png)
 
 ***नमुने*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 रूपांतरित फॉरमॅट, असे दिसते
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.mr.png)
+![openvino_convert](../../../../../translated_images/mr/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 मॉडेल पथ (model_dir), संबंधित कॉन्फिगरेशन (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), आणि हार्डवेअर-त्वरित डिव्हाइसेस (GPU.0) OVModelForCausalLM द्वारे लोड करा
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 कोड चालवताना, Task Manager मधून GPU ची चालू स्थिती पाहू शकतो
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.mr.png)
+![openvino_gpu](../../../../../translated_images/mr/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***नमुने*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

@@ -33,33 +33,33 @@ Prompt flow יכולה להתחבר ל-OpenAI, Azure OpenAI Service, ולמוד�
 
 1. התקינו את תוסף Prompt flow ל-VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.he.png)
+![pfvscode](../../../../../../translated_images/he/pfvscode.eff93dfc66a42cbe.png)
 
 2. לאחר התקנת התוסף, לחצו עליו ובחרו **Installation dependencies** ופעלו לפי ההנחיות להתקנת Prompt flow SDK בסביבת העבודה שלכם
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.he.png)
+![pfsetup](../../../../../../translated_images/he/pfsetup.b46e93096f5a254f.png)
 
 3. הורידו את [קוד הדוגמה](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ופתחו אותו ב-VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.he.png)
+![pfsample](../../../../../../translated_images/he/pfsample.8d89e70584ffe7c4.png)
 
 4. פתחו את הקובץ **flow.dag.yaml** כדי לבחור את סביבת הפייתון שלכם
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.he.png)
+![pfdag](../../../../../../translated_images/he/pfdag.264a77f7366458ff.png)
 
    פתחו את **chat_phi3_ort.py** כדי לשנות את מיקום מודל Phi-3.5-instruct ONNX שלכם
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.he.png)
+![pfphi](../../../../../../translated_images/he/pfphi.72da81d74244b45f.png)
 
 5. הריצו את ה-prompt flow שלכם לבדיקה
 
 פתחו את **flow.dag.yaml** ולחצו על העורך הוויזואלי
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.he.png)
+![pfv](../../../../../../translated_images/he/pfv.ba8a81f34b20f603.png)
 
 לאחר הלחיצה, הריצו את הפתרון לבדיקה
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.he.png)
+![pfflow](../../../../../../translated_images/he/pfflow.4e1135a089b1ce1b.png)
 
 1. ניתן להריץ אצווה בטרמינל כדי לבדוק תוצאות נוספות
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 ניתן לבדוק את התוצאות בדפדפן המוגדר כברירת מחדל
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.he.png)
+![pfresult](../../../../../../translated_images/he/pfresult.c22c826f8062d7cb.png)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

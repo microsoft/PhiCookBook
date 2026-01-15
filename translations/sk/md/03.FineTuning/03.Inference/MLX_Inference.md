@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Výsledok (moje prostredie je Apple M1 Max, 64GB) je
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.sk.png)
+![Terminal](../../../../../translated_images/sk/01.5cf57df8f7407cf9.png)
 
 ### **3. Kvantizácia Phi-3-mini s MLX v termináli**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Výsledok je
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.sk.png)
+![INT4](../../../../../translated_images/sk/02.7b188681a8eadbc1.png)
 
 
 ### **4. Spustenie Phi-3-mini s MLX v Jupyter Notebooku**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.sk.png)
+![Notebook](../../../../../translated_images/sk/03.b9705a3a5aaa89f9.png)
 
 ***Poznámka:*** Prečítajte si tento príklad [kliknite na tento odkaz](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

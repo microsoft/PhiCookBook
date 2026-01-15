@@ -40,7 +40,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 परिणाम (मेरा पर्यावरण Apple M1 Max, 64GB है)
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.hi.png)
+![Terminal](../../../../../translated_images/hi/01.5cf57df8f7407cf9.png)
 
 ### **3. टर्मिनल में MLX के साथ Phi-3-mini को Quantize करना**
 
@@ -64,11 +64,11 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 परिणाम है
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.hi.png)
+![INT4](../../../../../translated_images/hi/02.7b188681a8eadbc1.png)
 
 ### **4. Jupyter Notebook में MLX के साथ Phi-3-mini चलाना**
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.hi.png)
+![Notebook](../../../../../translated_images/hi/03.b9705a3a5aaa89f9.png)
 
 ***Note:*** कृपया इस सैंपल को पढ़ें [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

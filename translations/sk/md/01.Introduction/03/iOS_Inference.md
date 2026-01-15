@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Zvolil som Objective-C ako spôsob vývoja aplikácie, pretože pri používaní Generatívnej AI s ONNX Runtime C++ API je Objective-C lepšie kompatibilný. Samozrejme, sú možné aj volania cez Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.sk.png)
+![xcode](../../../../../translated_images/sk/xcode.8147789e6c25e3e2.png)
 
 ## **5. Skopírovanie ONNX kvantizovaného INT4 modelu do projektu App aplikácie**
 
 Potrebujeme importovať INT4 kvantizačný model v ONNX formáte, ktorý je potrebné najprv stiahnuť.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.sk.png)
+![hf](../../../../../translated_images/sk/hf.6b8504fd88ee48dd.png)
 
 Po stiahnutí ho pridajte do priečinka Resources v projekte v Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.sk.png)
+![model](../../../../../translated_images/sk/model.3b879b14e0be877d.png)
 
 ## **6. Pridanie C++ API do ViewControllers**
 
@@ -121,11 +121,11 @@ Po stiahnutí ho pridajte do priečinka Resources v projekte v Xcode.
 
 - **a.** Pridajte príslušné C++ hlavičkové súbory do projektu.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.sk.png)
+  ![Header File](../../../../../translated_images/sk/head.64cad021ce70a333.png)
 
 - **b.** Zahrňte dynamickú knižnicu `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.sk.png)
+  ![Library](../../../../../translated_images/sk/lib.a4209b9f21ddf344.png)
 
 - **c.** Použite C Samples kód na testovanie. Môžete tiež pridať ďalšie funkcie ako ChatUI pre rozšírenú funkcionalitu.
 
@@ -162,7 +162,7 @@ Po stiahnutí ho pridajte do priečinka Resources v projekte v Xcode.
 
 Po dokončení nastavenia môžete aplikáciu spustiť a vidieť výsledky inferencie modelu Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.sk.jpg)
+![Running Result](../../../../../translated_images/sk/result.326a947a6a2b9c51.jpg)
 
 Pre viac ukážkového kódu a podrobné inštrukcie navštívte [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

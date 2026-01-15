@@ -33,33 +33,33 @@ Baca panduan ini untuk menetapkan ONNX Runtime GenAI untuk Windows GPU [klik di 
 
 1. Pasang Sambungan Prompt flow VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.ms.png)
+![pfvscode](../../../../../../translated_images/ms/pfvscode.eff93dfc66a42cbe.png)
 
 2. Selepas memasang Sambungan Prompt flow VS Code, klik sambungan tersebut, dan pilih **Installation dependencies** ikut panduan ini untuk memasang Prompt flow SDK dalam persekitaran anda
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.ms.png)
+![pfsetup](../../../../../../translated_images/ms/pfsetup.b46e93096f5a254f.png)
 
 3. Muat turun [Kod Contoh](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) dan gunakan VS Code untuk membuka contoh ini
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.ms.png)
+![pfsample](../../../../../../translated_images/ms/pfsample.8d89e70584ffe7c4.png)
 
 4. Buka **flow.dag.yaml** untuk memilih persekitaran Python anda
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.ms.png)
+![pfdag](../../../../../../translated_images/ms/pfdag.264a77f7366458ff.png)
 
    Buka **chat_phi3_ort.py** untuk menukar lokasi Model Phi-3.5-instruct ONNX anda
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.ms.png)
+![pfphi](../../../../../../translated_images/ms/pfphi.72da81d74244b45f.png)
 
 5. Jalankan prompt flow anda untuk ujian
 
 Buka **flow.dag.yaml** klik editor visual
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.ms.png)
+![pfv](../../../../../../translated_images/ms/pfv.ba8a81f34b20f603.png)
 
 selepas klik ini, dan jalankan untuk menguji
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.ms.png)
+![pfflow](../../../../../../translated_images/ms/pfflow.4e1135a089b1ce1b.png)
 
 1. Anda boleh jalankan batch dalam terminal untuk memeriksa lebih banyak keputusan
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Anda boleh semak keputusan dalam pelayar lalai anda
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.ms.png)
+![pfresult](../../../../../../translated_images/ms/pfresult.c22c826f8062d7cb.png)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

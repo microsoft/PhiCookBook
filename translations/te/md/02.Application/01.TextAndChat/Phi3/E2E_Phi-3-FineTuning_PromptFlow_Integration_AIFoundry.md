@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ఇది ఈ E2E సాంపిల్ యొక్క సమీక్ష.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.te.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/te/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### పట్టిక
 
@@ -48,13 +48,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ టాప్‌లోని **search bar** లో *azure machine learning* టైప్ చేసి, కనిపించిన ఎంపికల నుండి **Azure Machine Learning**ని ఎంచుకోండి.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.te.png)
+    ![Type azure machine learning.](../../../../../../translated_images/te/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. నావిగేషన్ మెనూ నుండి **+ Create**ను ఎంచుకోండి.
 
 3. నావిగేషన్ మెనూ నుండి **New workspace** ఎంచుకోండి.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.te.png)
+    ![Select new workspace.](../../../../../../translated_images/te/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. దిగువలాంటి పనులు చేయండి:
 
@@ -67,7 +67,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ఉపయోగించేందుకు **Application insights** ఎంచుకోండి (తనిఖీకి అవసరమైతే సృష్టించండి).
     - ఉపయోగించేందుకు **Container registry** ఎంచుకోండి (కొత్తదానిని సృష్టించవచ్చు).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.te.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/te/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. **Review + Create** ఎంచుకోండి.
 
@@ -90,7 +90,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ఉపయోగించాల్సిన **Virtual machine family** ఎంచుకోండి. ఉదాహరణకు, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* ఎంచుకోండి; ఇది *Standard_NC24ads_A100_v4* GPU కలిగి ఉంటుంది.
     - నావిగేషన్ మెనూ నుండి **Request quota** ఎంచుకోండి.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.te.png)
+        ![Request quota.](../../../../../../translated_images/te/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Request quota పేజీలో మీరు కావలసిన **New cores limit** నమోదు చేయండి. ఉదాహరణకు, 24.
     - Request quota పేజీలో **Submit** ఎంచుకుని GPU క్వాటాను అభ్యర్థించండి.
@@ -111,11 +111,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ టాప్‌లోని **search bar** లో *managed identities* టైప్ చేసి కనిపించిన ఎంపికల నుండి **Managed Identities** ఎంచుకోండి.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.te.png)
+    ![Type managed identities.](../../../../../../translated_images/te/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. **+ Create** ఎంచుకోండి.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.te.png)
+    ![Select create.](../../../../../../translated_images/te/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. ఈ క్రింది పనులు చేయండి:
 
@@ -124,7 +124,7 @@ CO_OP_TRANSLATOR_METADATA:
     - మీరు ఉపయోగించదలచుకున్న **Region** ఎంచుకోండి.
     - **Name** నమోదు చేయండి. ఇది ప్రత్యేకమైనది కావాలి.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.te.png)
+    ![Select create.](../../../../../../translated_images/te/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. **Review + create** ఎంచుకోండి.
 
@@ -144,7 +144,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ఉపయోగించాల్సిన **Resource group** ఎంచుకోండి.
     - **Role**ని **Contributor**గా ఎంచుకోండి.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.te.png)
+    ![Fill contributor role.](../../../../../../translated_images/te/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. **Save** ఎంచుకోండి.
 
@@ -152,7 +152,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ టాప్‌లోని **search bar** లో *storage accounts* టైప్ చేసి కనిపించిన ఎంపికల నుండి **Storage accounts** ఎంచుకోండి.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.te.png)
+    ![Type storage accounts.](../../../../../../translated_images/te/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. మీరు సృష్టించిన Azure Machine Learning వర్క్‌స్పేస్‌కు సంబంధించిన storage అకౌంట్ ఎంచుకోండి. ఉదాహరణకు, *finetunephistorage*.
 
@@ -163,7 +163,7 @@ CO_OP_TRANSLATOR_METADATA:
     - నావిగేషన్ మెనూ నుండి **+ Add** ఎంచుకోండి.
     - **Add role assignment** ఎంచుకోండి.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.te.png)
+    ![Add role.](../../../../../../translated_images/te/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Add role assignment పేజీలో ఈ క్రింది పనులు చేయండి:
 
@@ -176,7 +176,7 @@ CO_OP_TRANSLATOR_METADATA:
     - మీరు సృష్టించిన Manage Identityని ఎంచుకోండి. ఉదాహరణకు, *finetunephi-managedidentity*.
     - Select managed identities పేజీలో **Select** ఎంచుకోండి.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.te.png)
+    ![Select managed identity.](../../../../../../translated_images/te/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. **Review + assign** ఎంచుకోండి.
 
@@ -184,7 +184,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ టాప్‌లోని **search bar** లో *container registries* టైప్ చేసి కనిపించిన ఎంపికల నుండి **Container registries** ఎంచుకోండి.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.te.png)
+    ![Type container registries.](../../../../../../translated_images/te/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. మీరు సృష్టించిన Azure Machine Learning వర్క్‌స్పేస్‌కు సంబంధించిన container registry ఎంచుకోండి. ఉదాహరణకు, *finetunephicontainerregistry*
 
@@ -275,11 +275,11 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. మీరు సృష్టించిన *finetune-phi* ఫోల్డర్‌ను ఎంచుకోండి, ఇది *C:\Users\yourUserName\finetune-phi* లో ఉంది.
 
-    ![మీరు సృష్టించిన ఫోల్డర్‌ను ఎంచుకోండి.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.te.png)
+    ![మీరు సృష్టించిన ఫోల్డర్‌ను ఎంచుకోండి.](../../../../../../translated_images/te/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Visual Studio Code ఎడమ ప్యానెల్లో, రైట్ క్లిక్ చేసి **New File** ఎంచుకొని *download_dataset.py* అనే కొత్త ఫైల్‌ను సృష్టించండి.
 
-    ![కొత్త ఫైల్ సృష్టించండి.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.te.png)
+    ![కొత్త ఫైల్ సృష్టించండి.](../../../../../../translated_images/te/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### ఫైన్-ట్యూనింగ్ కోసం డేటాసెట్ సిద్ధం చేయండి
 
@@ -391,7 +391,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. **+ New** ఎంచుకోండి.
 
-    ![కంప్యూట్ ఎంచుకోండి.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.te.png)
+    ![కంప్యూట్ ఎంచుకోండి.](../../../../../../translated_images/te/06-01-select-compute.a29cff290b480252.png)
 
 1. కింది పనులను చేయండి:
 
@@ -401,7 +401,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     - **Virtual machine size** ఫిల్టర్‌ను **Select from all options** గా ఎంచుకోండి.
     - **Virtual machine size** ను **Standard_NC24ads_A100_v4** గా ఎంచుకోండి.
 
-    ![క్లస్టర్ సృష్టించండి.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.te.png)
+    ![క్లస్టర్ సృష్టించండి.](../../../../../../translated_images/te/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. **Next** ఎంచుకోండి.
 
@@ -412,7 +412,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     - **Maximum number of nodes** ను **1** గా ఎంచుకోండి.
     - **Idle seconds before scale down** ను **120** గా ఎంచుకోండి.
 
-    ![క్లస్టర్ సృష్టించండి.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.te.png)
+    ![క్లస్టర్ సృష్టించండి.](../../../../../../translated_images/te/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. **Create** ఎంచుకోండి.
 
@@ -422,18 +422,18 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. మీరు సృష్టించిన Azure Machine Learning వర్క్‌స్పేస్‌ను ఎంచుకోండి.
 
-    ![మీరు సృష్టించిన వర్క్‌స్పేస్‌ను ఎంచుకోండి.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.te.png)
+    ![మీరు సృష్టించిన వర్క్‌స్పేస్‌ను ఎంచుకోండి.](../../../../../../translated_images/te/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. క్రింది పనులు చేయండి:
 
     - ఎడమ వైపు టాబ్ నుండి **Model catalog** ఎంచుకోండి.
     - **search bar** లో *phi-3-mini-4k* టైప్ చేసి కనిపించే ఎంపికల నుండి **Phi-3-mini-4k-instruct** ఎంచుకోండి.
 
-    ![phi-3-mini-4k టైప్ చేయండి.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.te.png)
+    ![phi-3-mini-4k టైప్ చేయండి.](../../../../../../translated_images/te/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. నావిగేషన్ మెనూ నుండి **Fine-tune** ఎంచుకోండి.
 
-    ![ఫైన్-ట్యూన్ ఎంచుకోండి.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.te.png)
+    ![ఫైన్-ట్యూన్ ఎంచుకోండి.](../../../../../../translated_images/te/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. క్రింది పనులు చేయండి:
 
@@ -442,7 +442,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     - వాలిడేషన్ డేటా అప్లోడ్ రకం ను **Provide different validation data** గా ఎంచుకోండి.
     - **+ Select data** ఎంచుకుని **Validation data** అప్లోడ్ చేయండి.
 
-    ![ఫైన్-ట్యూనింగ్ పేజీని పూరించండి.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.te.png)
+    ![ఫైన్-ట్యూనింగ్ పేజీని పూరించండి.](../../../../../../translated_images/te/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -452,7 +452,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. ఈ వ్యాయామంలో, మీరు విజయవంతంగా Azure Machine Learning ఉపయోగించి Phi-3 మోడల్‌ను ఫైన్-ట్యూన్ చేసారు. దయచేసి గమనించండి, ఫైన్-ట్యూనింగ్ ప్రక్రియకు గణనీయమైన సమయం పట్టవచ్చు. ఫైన్-ట్యూనింగ్ జాబ్ నడుపిన తర్వాత, అది పూర్తి కావడానికి వేచి ఉండాలి. Azure Machine Learning వర్క్‌స్పేస్ ఎడమ వైపు టాబ్‌లోని Jobs టాబ్‌లో ఫైన్-ట్యూనింగ్ జాబ్ స్థితిని మీరు పరిశీలించవచ్చు. తదుపరి శ్రేణిలో, మీరు ఫైన్-ట్యూన్ చేసిన మోడల్‌ను డిప్లాయ్ చేసి Prompt flow తో ఇంటిగ్రేట్ చేస్తారు.
 
-    ![ఫైన్‌ట్యూనింగ్ జాబ్‌ను చూడండి.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.te.png)
+    ![ఫైన్‌ట్యూనింగ్ జాబ్‌ను చూడండి.](../../../../../../translated_images/te/06-08-output.2bd32e59930672b1.png)
 
 ### ఫైన్-ట్యూన్ చేసిన Phi-3 మోడల్‌ను డిప్లాయ్ చేయండి
 
@@ -470,17 +470,17 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. మీరు సృష్టించిన Azure Machine Learning వర్క్‌స్పేస్‌ను ఎంచుకోండి.
 
-    ![మీరు సృష్టించిన వర్క్‌స్పేస్‌ను ఎంచుకోండి.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.te.png)
+    ![మీరు సృష్టించిన వర్క్‌స్పేస్‌ను ఎంచుకోండి.](../../../../../../translated_images/te/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. ఎడమ వైపు టాబ్ నుండి **Models** ఎంచుకోండి.
 1. **+ Register** ఎంచుకోండి.
 1. **From a job output** ఎంచుకోండి.
 
-    ![మోడల్ రిజిస్ట్ చేయండి.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.te.png)
+    ![మోడల్ రిజిస్ట్ చేయండి.](../../../../../../translated_images/te/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. మీరు సృష్టించిన జాబ్‌ను ఎంచుకోండి.
 
-    ![జాబ్ ఎంచుకోండి.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.te.png)
+    ![జాబ్ ఎంచుకోండి.](../../../../../../translated_images/te/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. **Next** ఎంచుకోండి.
 
@@ -488,17 +488,17 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. **Job output** ఎంచుకోబడిందని నిర్ధారించుకోండి; ఇది ఆటోమేటిక్గా ఎంచుకోబడాలి.
 
-    ![అవుట్‌పుట్ ఎంచుకోండి.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.te.png)
+    ![అవుట్‌పుట్ ఎంచుకోండి.](../../../../../../translated_images/te/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. **Next** ఎంచుకోండి.
 
 3. **Register** ఎంచుకోండి.
 
-    ![రిజిస్టర్ ఎంచుకోండి.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.te.png)
+    ![రిజిస్టర్ ఎంచుకోండి.](../../../../../../translated_images/te/07-04-register.fd82a3b293060bc7.png)
 
 4. ఎడమ వైపు టాబ్ నుండి **Models** మెనూకి వెళ్లండి, అక్కడ మీరు మీ రిజిస్టర్ చేసిన మోడల్‌ను చూడవచ్చు.
 
-    ![రిజిస్టర్ చేసిన మోడల్.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.te.png)
+    ![రిజిస్టర్ చేసిన మోడల్.](../../../../../../translated_images/te/07-05-registered-model.7db9775f58dfd591.png)
 
 #### ఫైన్-ట్యూన్ చేసిన మోడల్‌ను డిప్లాయ్ చేయండి
 
@@ -508,13 +508,13 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. నావిగేషన్ మెనూ నుండి **Real-time endpoints** ఎంచుకోండి.
 
-    ![ఎండ్పాయింట్ సృష్టించండి.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.te.png)
+    ![ఎండ్పాయింట్ సృష్టించండి.](../../../../../../translated_images/te/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. **Create** ఎంచుకోండి.
 
 1. మీరు సృష్టించిన రిజిస్టర్ చేసిన మోడల్‌ను ఎంచుకోండి.
 
-    ![రిజిస్టర్ చేసిన మోడల్ ఎంచుకోండి.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.te.png)
+    ![రిజిస్టర్ చేసిన మోడల్ ఎంచుకోండి.](../../../../../../translated_images/te/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. **Select** ఎంచుకోండి.
 
@@ -526,7 +526,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     - **Endpoint name** నమోదు చేయండి. ఇది ప్రత్యేకమైన విలువ కావాలి.
     - **Deployment name** నమోదు చేయండి. ఇది ప్రత్యేకమైన విలువ కావాలి.
 
-    ![డిప్లాయ్‌మెంట్ సెట్టింగ్‌ను పూరించండి.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.te.png)
+    ![డిప్లాయ్‌మెంట్ సెట్టింగ్‌ను పూరించండి.](../../../../../../translated_images/te/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. **Deploy** ఎంచుకోండి.
 
@@ -542,14 +542,14 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. మీరు సృష్టించిన ఎండ్పాయింట్‌ను ఎంచుకోండి.
 
-    ![ఎండ్పాయింట్లను ఎంచుకోండి](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.te.png)
+    ![ఎండ్పాయింట్లను ఎంచుకోండి](../../../../../../translated_images/te/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. ఈ పేజీపై, మీరు డిప్లాయ్‌మెంట్ ప్రక్రియలో ఎండ్పాయింట్లను నిర్వహించవచ్చు.
 
 > [!NOTE]
 > డిప్లాయ్‌మెంట్ పూర్తయిన తరువాత, **Live traffic** ను **100%** గా సెట్ చేయండి. అది కాకుంటే, ట్రాఫిక్ సెట్టింగ్‌లను సవరించేందుకు **Update traffic** ను ఎంచుకోండి. ట్రాఫిక్ 0% గా ఉన్నప్పుడు మోడల్‌ను పరీక్షించలేరు.
 >
-> ![ట్రాఫిక్ సెట్ చేయండి.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.te.png)
+> ![ట్రాఫిక్ సెట్ చేయండి.](../../../../../../translated_images/te/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## సన్నివేశం 3: Prompt flow తో ఇంటిగ్రేట్ చేసి Azure AI Foundry లో మీ కస్టమ్ మోడల్‌తో చాట్ చేయండి
@@ -578,7 +578,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 1. ఎడమ వైపు టాబ్ నుండి **All hubs** ఎంచుకోండి.
 
 1. నావిగేషన్ మెనూ నుండి **+ New hub** ఎంచుకోండి.
-    ![హబ్ సృష్టించండి.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.te.png)
+    ![హబ్ సృష్టించండి.](../../../../../../translated_images/te/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. క్రింది పనులు చేయండి:
 
@@ -589,7 +589,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     - ఉపయోగించదలచిన **Azure AI సేవలను కనెక్ట్ చేయండి** ను ఎంచుకోండి (అవసరమైతే కొత్తది సృష్టించండి).
     - **Azure AI సెర్చ్ కనెక్ట్ చేయడం** ను **స్కిప్ చేయండి** అని ఎంచుకోండి.
 
-    ![హబ్ పూరించండి.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.te.png)
+    ![హబ్ పూరించండి.](../../../../../../translated_images/te/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. **తరువాత** ను ఎంచుకోండి.
 
@@ -599,11 +599,11 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. నావిగేషన్ మెనులో నుండి **+ కొత్త ప్రాజెక్ట్** ఎంచుకోండి.
 
-    ![కొత్త ప్రాజెక్ట్ ఎంచుకోండి.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.te.png)
+    ![కొత్త ప్రాజెక్ట్ ఎంచుకోండి.](../../../../../../translated_images/te/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. **ప్రాజెక్ట్ పేరు** నమోదు చేయండి. ఇది ప్రత్యేకమైన విలువ కావాలి.
 
-    ![ప్రాజెక్ట్ సృష్టించండి.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.te.png)
+    ![ప్రాజెక్ట్ సృష్టించండి.](../../../../../../translated_images/te/08-05-create-project.4d97f0372f03375a.png)
 
 1. **ప్రాజెక్ట్ సృష్టించండి** ను ఎంచుకోండి.
 
@@ -619,17 +619,17 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. ఎడమ వైపు ట్యాబ్ నుండి **ఎండ్పాయింట్లు** ను ఎంచుకోండి.
 
-    ![ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.te.png)
+    ![ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/te/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. మీరు సృష్టించిన ఎండ్పాయింట్ ని ఎంచుకోండి.
 
-    ![ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.te.png)
+    ![ఎండ్పాయింట్లు ఎంచుకోండి.](../../../../../../translated_images/te/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. నావిగేషన్ మెనూ నుండి **ఉపయోగించండి** ను ఎంచుకోండి.
 
 1. మీ **REST ఎండ్పాయింట్** మరియు **ప్రాథమిక కీ** ని కాపీ చేసుకోండి.
 
-    ![API కీ మరియు ఎండ్పాయింట్ URI కాపీ చేసుకోండి.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.te.png)
+    ![API కీ మరియు ఎండ్పాయింట్ URI కాపీ చేసుకోండి.](../../../../../../translated_images/te/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### కస్టమ్ కనెక్షన్ జోడించండి
 
@@ -641,11 +641,11 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. **+ కొత్త కనెక్షన్** ను ఎంచుకోండి.
 
-    ![నూతన కనెక్షన్ ఎంచుకోండి.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.te.png)
+    ![నూతన కనెక్షన్ ఎంచుకోండి.](../../../../../../translated_images/te/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. నావిగేషన్ మెనూ నుండి **కస్టమ్ కీస్**ను ఎంచుకోండి.
 
-    ![కస్టమ్ కీస్ ఎంచుకోండి.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.te.png)
+    ![కస్టమ్ కీస్ ఎంచుకోండి.](../../../../../../translated_images/te/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. క్రింది పనులు చేయండి:
 
@@ -655,7 +655,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     - కీ పేరు గా **key** ను నమోదు చేసి, Azure ML Studio నుండి కాపీ చేసిన కీని విలువ ఫీల్డ్ లో పేస్ట్ చేయండి.
     - కీలు జోడించిన తర్వాత, కీ డేటాను లీక్ కాకుండా **is secret** ఎంచుకోండి.
 
-    ![కనెక్షన్ జోడించండి.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.te.png)
+    ![కనెక్షన్ జోడించండి.](../../../../../../translated_images/te/08-11-add-connection.785486badb4d2d26.png)
 
 1. **కనెక్షన్ జోడించండి** ను ఎంచుకోండి.
 
@@ -669,15 +669,15 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. నావిగేషన్ మెనూ నుండి **+ సృష్టించండి** ను ఎంచుకోండి.
 
-    ![Promptflow ఎంచుకోండి.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.te.png)
+    ![Promptflow ఎంచుకోండి.](../../../../../../translated_images/te/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. నావిగేషన్ మెనూ నుండి **చాట్ ఫ్లో** ను ఎంచుకోండి.
 
-    ![చాట్ ఫ్లో ఎంచుకోండి.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.te.png)
+    ![చాట్ ఫ్లో ఎంచుకోండి.](../../../../../../translated_images/te/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. ఉపయోగించదలచిన **ఫోల్డర్ పేరు** ను నమోదు చేయండి.
 
-    ![పేరు నమోదు చేయండి.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.te.png)
+    ![పేరు నమోదు చేయండి.](../../../../../../translated_images/te/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. **సృష్టించండి** ను ఎంచుకోండి.
 
@@ -714,7 +714,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
     - **సేవ్ చేయండి** ను ఎంచుకోండి.
 
-    ![రా ఫైల్ మోడ్ ఎంచుకోండి.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.te.png)
+    ![రా ఫైల్ మోడ్ ఎంచుకోండి.](../../../../../../translated_images/te/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. క్రింది కోడ్‌ను *integrate_with_promptflow.py* ఫైల్ లో జోడించి, Prompt flowలో మీ కస్టమ్ Phi-3 మోడల్ ఉపయోగించండి.
 
@@ -779,14 +779,14 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
     ```
 
-    ![Prompt flow కోడ్ పేస్ట్ చేయండి.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.te.png)
+    ![Prompt flow కోడ్ పేస్ట్ చేయండి.](../../../../../../translated_images/te/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Azure AI Foundryలో Prompt flow ఉపయోగించే సందర్భంగా మరింత వివరమైన సమాచారానికి, మీరు [Azure AI Foundry లో Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ను చూడవచ్చు.
 
 1. **చాట్ ఇన్‌పుట్**, **చాట్ అవుట్పుట్** ను ఎంచుకుని మీ మోడల్ తో చాట్ ప్రారంభించండి.
 
-    ![ఇన్‌పుట్ అవుట్పుట్ ఎంచుకోండి.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.te.png)
+    ![ఇన్‌పుట్ అవుట్పుట్ ఎంచుకోండి.](../../../../../../translated_images/te/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. ఇప్పుడు మీరు మీ కస్టమ్ Phi-3 మోడల్ తో చాట్ చేయడానికి సిద్ధంగా ఉన్నారు. తదుపరి వ్యాయామంలో, Prompt flow ప్రారంభించి, ఫైన్-ట్యూన్ చేసిన Phi-3 మోడల్ తో చాట్ చేయడం నేర్చుకుంటారు.
 
@@ -794,7 +794,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 >
 > తిరిగి తయారు చేసిన ఫ్లో క్రింది చిత్రం లాగా ఉండాలి:
 >
-> ![ఫ్లో ఉదాహరణ.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.te.png)
+> ![ఫ్లో ఉదాహరణ.](../../../../../../translated_images/te/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### మీ కస్టమ్ Phi-3 మోడల్ తో చాట్ చేయండి
@@ -807,25 +807,25 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. Prompt flow ప్రారంభించడానికి **స్టార్ట్ కంప్యూట్ సెషన్స్** ను ఎంచుకోండి.
 
-    ![కంప్యూట్ సెషన్ ప్రారంభించండి.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.te.png)
+    ![కంప్యూట్ సెషన్ ప్రారంభించండి.](../../../../../../translated_images/te/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. పారామీటర్లను అప్‌డేట్ చేయడానికి **వెలిడేట్ మరియు ఇన్‌పుట్ విన్యాసం** ను ఎంచుకోండి.
 
-    ![ఇన్‌పుట్ చెక్ చేయండి.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.te.png)
+    ![ఇన్‌పుట్ చెక్ చేయండి.](../../../../../../translated_images/te/09-02-validate-input.317c76ef766361e9.png)
 
 1. మీరు సృష్టించిన కస్టమ్ కానెక్షన్ కు చెందిన **కనెక్షన్** విలువను ఎంచుకోండి. ఉదాహరణకు, *connection*.
 
-    ![కనెక్షన్.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.te.png)
+    ![కనెక్షన్.](../../../../../../translated_images/te/09-03-select-connection.99bdddb4b1844023.png)
 
 #### మీ కస్టమ్ మోడల్ తో చాట్ చేయండి
 
 1. **చాట్** ను ఎంచుకోండి.
 
-    ![చాట్ ఎంచుకోండి.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.te.png)
+    ![చాట్ ఎంచుకోండి.](../../../../../../translated_images/te/09-04-select-chat.61936dce6612a1e6.png)
 
 1. ఫలితాల ఉదాహరణగా: ఇప్పుడు మీరు మీ కస్టమ్ Phi-3 మోడల్ తో చాట్ చేయవచ్చు. ఫైన్-ట్యూనింగ్ కోసం ఉపయోగించిన డేటా ఆధారంగా ప్రశ్నలు అడగడం మంచిది.
 
-    ![Prompt flow తో చాట్ చేయండి.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.te.png)
+    ![Prompt flow తో చాట్ చేయండి.](../../../../../../translated_images/te/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Após os adapters serem treinados no ambiente remoto, use uma aplicação simples do Gradio para interagir com o modelo.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.br.png)
+![Fine-tune complete](../../../../../translated_images/br/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Provisionar Recursos do Azure  
 Você precisa configurar os Recursos do Azure para inferência remota executando o comando `AI Toolkit: Provision Azure Container Apps for inference` a partir da paleta de comandos. Durante essa configuração, será solicitado que você selecione sua Assinatura do Azure e o grupo de recursos.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.br.png)
+![Provision Inference Resource](../../../../../translated_images/br/command-provision-inference.467afc8d351642fc.png)
    
 Por padrão, a assinatura e o grupo de recursos para inferência devem ser os mesmos usados para o fine-tuning. A inferência usará o mesmo Ambiente do Azure Container App e acessará o modelo e o adapter do modelo armazenados no Azure Files, que foram gerados durante a etapa de fine-tuning.
 
@@ -24,7 +24,7 @@ Por padrão, a assinatura e o grupo de recursos para inferência devem ser os me
 ### Implantação para Inferência  
 Se desejar revisar o código de inferência ou recarregar o modelo de inferência, execute o comando `AI Toolkit: Deploy for inference`. Isso sincronizará seu código mais recente com o ACA e reiniciará a réplica.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.br.png)
+![Deploy for inference](../../../../../translated_images/br/command-deploy.9adb4e310dd0b0ae.png)
 
 Após a conclusão bem-sucedida da implantação, o modelo estará pronto para avaliação usando este endpoint.
 
@@ -32,7 +32,7 @@ Após a conclusão bem-sucedida da implantação, o modelo estará pronto para a
 
 Você pode acessar a API de inferência clicando no botão "*Go to Inference Endpoint*" exibido na notificação do VSCode. Alternativamente, o endpoint da API web pode ser encontrado em `ACA_APP_ENDPOINT` no arquivo `./infra/inference.config.json` e no painel de saída.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.br.png)
+![App Endpoint](../../../../../translated_images/br/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** O endpoint de inferência pode levar alguns minutos para ficar totalmente operacional.
 

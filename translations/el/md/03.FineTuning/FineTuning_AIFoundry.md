@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **Ευκολία:** Πώς γίνεται το fine-tuning στην πράξη – χρειάζεται να γράψω δικό μου κώδικα; Χρειάζεται να φέρω δικούς μου υπολογιστικούς πόρους;
 - **Ασφάλεια:** Τα μοντέλα μετά το fine-tuning έχουν γνωστούς κινδύνους ασφάλειας – υπάρχουν μηχανισμοί προστασίας για να αποτρέψουν ανεπιθύμητες βλάβες;
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.el.png)
+![AIFoundry Models](../../../../translated_images/el/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Προετοιμασία για fine-tuning
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Το Azure AI Foundry σας επιτρέπει να προσαρμόσετε μεγάλα γλωσσικά μοντέλα στα δικά σας δεδομένα μέσω της διαδικασίας που ονομάζεται fine-tuning. Το fine-tuning προσφέρει σημαντική αξία επιτρέποντας την εξατομίκευση και βελτιστοποίηση για συγκεκριμένες εργασίες και εφαρμογές. Αυτό οδηγεί σε βελτιωμένη απόδοση, οικονομία κόστους, μειωμένη καθυστέρηση και προσαρμοσμένα αποτελέσματα.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.el.png)
+![Finetune AI Foundry](../../../../translated_images/el/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Δημιουργία νέου project
 
@@ -79,14 +79,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+New project** για να δημιουργήσετε νέο project στο Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/select-new-project.cd31c0404088d7a3.png)
 
 1. Εκτελέστε τις παρακάτω ενέργειες:
 
     - Όνομα **Hub** του project. Πρέπει να είναι μοναδικό.
     - Επιλέξτε το **Hub** που θα χρησιμοποιήσετε (δημιουργήστε νέο αν χρειάζεται).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/create-project.ca3b71298b90e420.png)
 
 1. Εκτελέστε τις παρακάτω ενέργειες για να δημιουργήσετε νέο hub:
 
@@ -97,7 +97,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε το **Connect Azure AI Services** που θα χρησιμοποιήσετε (δημιουργήστε νέο αν χρειάζεται).
     - Επιλέξτε **Connect Azure AI Search** και επιλέξτε **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/create-hub.49e53d235e80779e.png)
 
 1. Επιλέξτε **Next**.
 1. Επιλέξτε **Create a project**.
@@ -115,15 +115,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *phi-3* στη **γραμμή αναζήτησης** και επιλέξτε το μοντέλο phi-3 που θέλετε να χρησιμοποιήσετε.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/select-model.60ef2d4a6a3cec57.png)
 
 1. Επιλέξτε **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/select-finetune.a976213b543dd9d8.png)
 
 1. Εισάγετε το **Όνομα του fine-tuned μοντέλου**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/finetune1.c2b39463f0d34148.png)
 
 1. Επιλέξτε **Next**.
 
@@ -132,13 +132,13 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε τον **τύπο εργασίας** ως **Chat completion**.
     - Επιλέξτε τα **δεδομένα εκπαίδευσης** που θέλετε να χρησιμοποιήσετε. Μπορείτε να τα ανεβάσετε μέσω του Azure AI Foundry ή από το τοπικό σας περιβάλλον.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/finetune2.43cb099b1a94442d.png)
 
 1. Επιλέξτε **Next**.
 
 1. Ανεβάστε τα **δεδομένα επικύρωσης** που θέλετε να χρησιμοποιήσετε ή επιλέξτε **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/finetune3.fd96121b67dcdd92.png)
 
 1. Επιλέξτε **Next**.
 
@@ -148,15 +148,15 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε το **ρυθμό μάθησης** που θέλετε να χρησιμοποιήσετε.
     - Επιλέξτε τον αριθμό **Epochs** που θέλετε να χρησιμοποιήσετε.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/finetune4.e18b80ffccb5834a.png)
 
 1. Επιλέξτε **Submit** για να ξεκινήσει η διαδικασία fine-tuning.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/select-submit.0a3802d581bac271.png)
 
 1. Μόλις το μοντέλο σας ολοκληρώσει το fine-tuning, η κατάσταση θα εμφανιστεί ως **Completed**, όπως φαίνεται στην εικόνα παρακάτω. Τώρα μπορείτε να αναπτύξετε το μοντέλο και να το χρησιμοποιήσετε στην εφαρμογή σας, στο playground ή στο prompt flow. Για περισσότερες πληροφορίες, δείτε [Πώς να αναπτύξετε την οικογένεια μικρών γλωσσικών μοντέλων Phi-3 με το Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.el.png)
+    ![FineTuneSelect](../../../../translated_images/el/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Για πιο αναλυτικές πληροφορίες σχετικά με το fine-tuning του Phi-3, επισκεφθείτε το [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

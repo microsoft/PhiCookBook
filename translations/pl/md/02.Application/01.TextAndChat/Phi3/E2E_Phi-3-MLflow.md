@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) to otwartoźródłowa platforma zaprojektowana do zarządzania pełnym cyklem życia uczenia maszynowego.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.pl.png)
+![MLFlow](../../../../../../translated_images/pl/MlFlowmlops.ed16f47809d74d9a.png)
 
 MLFlow służy do zarządzania cyklem życia ML, obejmującym eksperymentowanie, powtarzalność, wdrażanie oraz centralny rejestr modeli. Obecnie MLflow oferuje cztery komponenty.
 
@@ -22,7 +22,7 @@ MLFlow służy do zarządzania cyklem życia ML, obejmującym eksperymentowanie,
 
 Platforma oferuje funkcje śledzenia eksperymentów, pakowania kodu w powtarzalne uruchomienia oraz udostępniania i wdrażania modeli. MLFlow jest zintegrowany z Databricks i wspiera różne biblioteki ML, dzięki czemu jest niezależny od konkretnej biblioteki. Można go używać z dowolną biblioteką uczenia maszynowego i w dowolnym języku programowania, ponieważ udostępnia REST API oraz CLI dla wygody.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.pl.png)
+![MLFlow](../../../../../../translated_images/pl/MLflow2.5a22eb718f6311d1.png)
 
 Kluczowe cechy MLFlow to:
 
@@ -37,7 +37,7 @@ MLFlow wspiera również pętlę MLOps, która obejmuje przygotowanie danych, re
 
 W tym przykładzie E2E pokażemy dwa różne podejścia do budowy wrappera wokół małego modelu językowego Phi-3 (SLM), a następnie uruchomimy go jako model MLFlow lokalnie lub w chmurze, np. w Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.pl.png)
+![MLFlow](../../../../../../translated_images/pl/MlFlow1.fd745e47dbd3fecf.png)
 
 | Projekt | Opis | Lokalizacja |
 | ------------ | ----------- | -------- |

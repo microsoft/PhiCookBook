@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG är datainhämtning + textgenerering. Den strukturerade och ostrukturerade datan i företaget lagras i en vektordatabas. Vid sökning efter relevant innehåll hittas en sammanfattning och innehåll som bildar en kontext, och LLM/SLM:s textkompletteringsförmåga kombineras för att generera innehåll.
 
 ## RAG-processen
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.sv.png)
+![FinetuningvsRAG](../../../../translated_images/sv/rag.2014adc59e6f6007.png)
 
 ## Finjustering
 Finjustering bygger på förbättring av en viss modell. Det kräver inte att man börjar från modellalgoritmen, men data behöver kontinuerligt samlas in. Om du vill ha mer exakt terminologi och språklig uttryck i branschapplikationer är finjustering ett bättre val. Men om din data ändras ofta kan finjustering bli komplicerat.

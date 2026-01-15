@@ -24,7 +24,7 @@ I dette E2E-eksemplet vil du lære hvordan du finjusterer Phi-3-modellen og inte
 
 Her er en oversikt over dette E2E-eksemplet.
 
-![Phi-3-FineTuning_PromptFlow_Integration Oversikt.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.no.png)
+![Phi-3-FineTuning_PromptFlow_Integration Oversikt.](../../../../../../translated_images/no/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Innholdsfortegnelse
 
@@ -49,13 +49,13 @@ Her er en oversikt over dette E2E-eksemplet.
 
 1. Skriv *azure machine learning* i **søkelinjen** øverst på portalens side og velg **Azure Machine Learning** fra alternativene som vises.
 
-    ![Skriv azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.no.png)
+    ![Skriv azure machine learning.](../../../../../../translated_images/no/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Velg **+ Opprett** fra navigasjonsmenyen.
 
 3. Velg **Nytt arbeidsområde** fra navigasjonsmenyen.
 
-    ![Velg nytt arbeidsområde.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.no.png)
+    ![Velg nytt arbeidsområde.](../../../../../../translated_images/no/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Utfør følgende oppgaver:
 
@@ -68,7 +68,7 @@ Her er en oversikt over dette E2E-eksemplet.
     - Velg **Application insights** som skal brukes (opprett en ny om nødvendig).
     - Velg **Container register** som skal brukes (opprett et nytt om nødvendig).
 
-    ![Fyll ut Azure Machine Learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.no.png)
+    ![Fyll ut Azure Machine Learning.](../../../../../../translated_images/no/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Velg **Gjennomgå + Opprett**.
 
@@ -91,7 +91,7 @@ I denne veiledningen vil du lære hvordan du finjusterer og distribuerer en Phi-
     - Velg **Virtuelle maskinfamilie** som skal brukes. For eksempel, velg **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC24ads_A100_v4* GPU.
     - Velg **Be om kvote** fra navigasjonsmenyen.
 
-        ![Be om kvote.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.no.png)
+        ![Be om kvote.](../../../../../../translated_images/no/02-02-request-quota.c0428239a63ffdd5.png)
 
     - På siden Be om kvote, skriv inn den **Nye kjernelimitten** du ønsker å bruke. For eksempel 24.
     - På siden Be om kvote, velg **Send inn** for å be om GPU-kvoten.
@@ -112,11 +112,11 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
 
 1. Skriv *managed identities* i **søkelinjen** øverst på portalens side og velg **Managed Identities** fra alternativene som vises.
 
-    ![Skriv managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.no.png)
+    ![Skriv managed identities.](../../../../../../translated_images/no/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Velg **+ Opprett**.
 
-    ![Velg opprett.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.no.png)
+    ![Velg opprett.](../../../../../../translated_images/no/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Utfør følgende oppgaver:
 
@@ -125,7 +125,7 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
     - Velg **Region** du ønsker å bruke.
     - Skriv inn **Navn**. Det må være en unik verdi.
 
-    ![Velg opprett.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.no.png)
+    ![Velg opprett.](../../../../../../translated_images/no/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Velg **Gjennomgå + opprett**.
 
@@ -145,7 +145,7 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
     - Velg **Ressursgruppen** som skal brukes.
     - Sett **Rolle** til **Contributor**.
 
-    ![Fyll ut contributor-rollen.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.no.png)
+    ![Fyll ut contributor-rollen.](../../../../../../translated_images/no/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Velg **Lagre**.
 
@@ -153,7 +153,7 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
 
 1. Skriv *storage accounts* i **søkelinjen** øverst på portalens side og velg **Storage accounts** fra alternativene som vises.
 
-    ![Skriv storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.no.png)
+    ![Skriv storage accounts.](../../../../../../translated_images/no/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Velg lagringskontoen som er tilknyttet Azure Machine Learning-arbeidsområdet du opprettet. For eksempel, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
     - Velg **+ Legg til** fra navigasjonsmenyen.
     - Velg **Legg til rolleoppgave** fra navigasjonsmenyen.
 
-    ![Legg til rolle.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.no.png)
+    ![Legg til rolle.](../../../../../../translated_images/no/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. På siden Legg til rolleoppgave, utfør følgende oppgaver:
 
@@ -177,7 +177,7 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
     - På Velg administrerte identiteter-siden, velg Managed Identity du opprettet. For eksempel, *finetunephi-managedidentity*.
     - På Velg administrerte identiteter-siden, velg **Velg**.
 
-    ![Velg administrert identitet.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.no.png)
+    ![Velg administrert identitet.](../../../../../../translated_images/no/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Velg **Gjennomgå + tilordne**.
 
@@ -185,7 +185,7 @@ For å finjustere og distribuere modellene dine, må du først opprette en Bruke
 
 1. Skriv *container registries* i **søkelinjen** øverst på portalens side og velg **Container registries** fra alternativene som vises.
 
-    ![Skriv container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.no.png)
+    ![Skriv container registries.](../../../../../../translated_images/no/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Velg containerregisteret som er tilknyttet Azure Machine Learning-arbeidsområdet. For eksempel, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ I denne øvelsen vil du
 
 1. Velg *finetune-phi*-mappen du opprettet, som ligger på *C:\Users\yourUserName\finetune-phi*.
 
-    ![Velg mappen du opprettet.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.no.png)
+    ![Velg mappen du opprettet.](../../../../../../translated_images/no/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. I venstre panel i Visual Studio Code, høyreklikk og velg **Ny fil** for å opprette en ny fil med navnet *download_dataset.py*.
 
-    ![Opprett en ny fil.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.no.png)
+    ![Opprett en ny fil.](../../../../../../translated_images/no/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Forbered datasett for finjustering
 
@@ -392,7 +392,7 @@ I denne øvelsen skal du:
 
 1. Velg **+ New**.
 
-    ![Velg compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.no.png)
+    ![Velg compute.](../../../../../../translated_images/no/06-01-select-compute.a29cff290b480252.png)
 
 1. Utfør følgende oppgaver:
 
@@ -402,7 +402,7 @@ I denne øvelsen skal du:
     - Velg **Virtual machine size** filter til **Select from all options**.
     - Velg **Virtual machine size** til **Standard_NC24ads_A100_v4**.
 
-    ![Opprett klynge.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.no.png)
+    ![Opprett klynge.](../../../../../../translated_images/no/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Velg **Neste**.
 
@@ -413,7 +413,7 @@ I denne øvelsen skal du:
     - Sett **Maximum number of nodes** til **1**.
     - Sett **Idle seconds before scale down** til **120**.
 
-    ![Opprett klynge.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.no.png)
+    ![Opprett klynge.](../../../../../../translated_images/no/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Velg **Opprett**.
 
@@ -423,18 +423,18 @@ I denne øvelsen skal du:
 
 1. Velg Azure Machine Learning arbeidsområdet du opprettet.
 
-    ![Velg arbeidsområde du opprettet.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.no.png)
+    ![Velg arbeidsområde du opprettet.](../../../../../../translated_images/no/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Utfør følgende oppgaver:
 
     - Velg **Model catalog** fra menyfanen til venstre.
     - Skriv *phi-3-mini-4k* i **søkelinjen** og velg **Phi-3-mini-4k-instruct** fra alternativene som dukker opp.
 
-    ![Skriv phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.no.png)
+    ![Skriv phi-3-mini-4k.](../../../../../../translated_images/no/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Velg **Fine-tune** fra navigasjonsmenyen.
 
-    ![Velg finjuster.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.no.png)
+    ![Velg finjuster.](../../../../../../translated_images/no/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Utfør følgende oppgaver:
 
@@ -443,7 +443,7 @@ I denne øvelsen skal du:
     - Velg valideringstype for dataopplasting til **Provide different validation data**.
     - Velg **+ Select data** for å laste opp **Valideringsdata**.
 
-    ![Fyll ut finjusteringsside.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.no.png)
+    ![Fyll ut finjusteringsside.](../../../../../../translated_images/no/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ I denne øvelsen skal du:
 
 1. I denne øvelsen har du finjustert Phi-3-modellen i Azure Machine Learning. Vær oppmerksom på at finjusteringsprosessen kan ta en god del tid. Etter at du har startet finjusteringsjobben, må du vente på at den fullføres. Du kan overvåke statusen til finjusteringsjobben ved å navigere til Jobs-fanen på venstre side i Azure Machine Learning-arbeidsområdet ditt. I neste del skal vi distribuere den finjusterte modellen og integrere den med Prompt flow.
 
-    ![Se finjusteringsjobb.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.no.png)
+    ![Se finjusteringsjobb.](../../../../../../translated_images/no/06-08-output.2bd32e59930672b1.png)
 
 ### Distribuer den finjusterte Phi-3-modellen
 
@@ -471,17 +471,17 @@ I denne øvelsen skal du:
 
 1. Velg Azure Machine Learning arbeidsområdet du opprettet.
 
-    ![Velg arbeidsområde du opprettet.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.no.png)
+    ![Velg arbeidsområde du opprettet.](../../../../../../translated_images/no/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Velg **Models** fra menyfanen til venstre.
 1. Velg **+ Register**.
 1. Velg **From a job output**.
 
-    ![Registrer modell.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.no.png)
+    ![Registrer modell.](../../../../../../translated_images/no/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Velg jobben du opprettet.
 
-    ![Velg jobb.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.no.png)
+    ![Velg jobb.](../../../../../../translated_images/no/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Velg **Neste**.
 
@@ -489,17 +489,17 @@ I denne øvelsen skal du:
 
 1. Sørg for at **Job output** er valgt; det skal velges automatisk.
 
-    ![Velg output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.no.png)
+    ![Velg output.](../../../../../../translated_images/no/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Velg **Neste**.
 
 3. Velg **Register**.
 
-    ![Velg registrer.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.no.png)
+    ![Velg registrer.](../../../../../../translated_images/no/07-04-register.fd82a3b293060bc7.png)
 
 4. Du kan se den registrerte modellen din ved å navigere til **Models**-menyen til venstre.
 
-    ![Registrert modell.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.no.png)
+    ![Registrert modell.](../../../../../../translated_images/no/07-05-registered-model.7db9775f58dfd591.png)
 
 #### Distribuer den finjusterte modellen
 
@@ -509,13 +509,13 @@ I denne øvelsen skal du:
 
 1. Velg **Real-time endpoints** fra navigasjonsmenyen.
 
-    ![Opprett endepunkt.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.no.png)
+    ![Opprett endepunkt.](../../../../../../translated_images/no/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Velg **Opprett**.
 
 1. Velg den registrerte modellen du opprettet.
 
-    ![Velg registrert modell.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.no.png)
+    ![Velg registrert modell.](../../../../../../translated_images/no/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Velg **Velg**.
 
@@ -527,7 +527,7 @@ I denne øvelsen skal du:
     - Skriv inn **Endpoint name**. Det må være en unik verdi.
     - Skriv inn **Deployment name**. Det må være en unik verdi.
 
-    ![Fyll ut distribusjonsinnstillingene.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.no.png)
+    ![Fyll ut distribusjonsinnstillingene.](../../../../../../translated_images/no/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Velg **Distribuer**.
 
@@ -543,14 +543,14 @@ I denne øvelsen skal du:
 
 1. Velg endepunktet du opprettet.
 
-    ![Velg endepunkter](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.no.png)
+    ![Velg endepunkter](../../../../../../translated_images/no/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. På denne siden kan du administrere endepunktene under distribusjonsprosessen.
 
 > [!NOTE]
 > Når distribusjonen er fullført, sørg for at **Live traffic** er satt til **100%**. Hvis det ikke er det, velg **Update traffic** for å justere trafikkinnstillingene. Merk at du ikke kan teste modellen hvis trafikken er satt til 0%.
 >
-> ![Sett trafikk.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.no.png)
+> ![Sett trafikk.](../../../../../../translated_images/no/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## Scenario 3: Integrer med Prompt flow og chat med din egendefinerte modell i Azure AI Foundry
@@ -579,7 +579,7 @@ Du må opprette en Hub før du oppretter prosjektet. En Hub fungerer som en Reso
 1. Velg **All hubs** fra menyfanen til venstre.
 
 1. Velg **+ Ny hub** fra navigasjonsmenyen.
-    ![Opprett hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.no.png)
+    ![Opprett hub.](../../../../../../translated_images/no/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Utfør følgende oppgaver:
 
@@ -590,7 +590,7 @@ Du må opprette en Hub før du oppretter prosjektet. En Hub fungerer som en Reso
     - Velg **Koble til Azure AI-tjenester** som skal brukes (opprett en ny om nødvendig).
     - Velg **Koble til Azure AI Search** for å **Hoppe over tilkobling**.
 
-    ![Fyll hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.no.png)
+    ![Fyll hub.](../../../../../../translated_images/no/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Velg **Neste**.
 
@@ -600,11 +600,11 @@ Du må opprette en Hub før du oppretter prosjektet. En Hub fungerer som en Reso
 
 1. Velg **+ Nytt prosjekt** fra navigasjonsmenyen.
 
-    ![Velg nytt prosjekt.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.no.png)
+    ![Velg nytt prosjekt.](../../../../../../translated_images/no/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Skriv inn **Prosjektnavn**. Det må være en unik verdi.
 
-    ![Opprett prosjekt.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.no.png)
+    ![Opprett prosjekt.](../../../../../../translated_images/no/08-05-create-project.4d97f0372f03375a.png)
 
 1. Velg **Opprett et prosjekt**.
 
@@ -620,17 +620,17 @@ For å integrere din egendefinerte Phi-3-modell med Prompt flow, må du lagre mo
 
 1. Velg **Endepunkter** fra venstremenyen.
 
-    ![Velg endepunkter.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.no.png)
+    ![Velg endepunkter.](../../../../../../translated_images/no/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Velg endepunktet du opprettet.
 
-    ![Velg endepunkt opprettet.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.no.png)
+    ![Velg endepunkt opprettet.](../../../../../../translated_images/no/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. Velg **Forbruk** fra navigasjonsmenyen.
 
 1. Kopier din **REST-endepunkt** og **Primærnøkkel**.
 
-    ![Kopier API-nøkkel og endepunkt-URI.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.no.png)
+    ![Kopier API-nøkkel og endepunkt-URI.](../../../../../../translated_images/no/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Legg til den egendefinerte tilkoblingen
 
@@ -642,11 +642,11 @@ For å integrere din egendefinerte Phi-3-modell med Prompt flow, må du lagre mo
 
 1. Velg **+ Ny tilkobling**.
 
-    ![Velg ny tilkobling.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.no.png)
+    ![Velg ny tilkobling.](../../../../../../translated_images/no/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. Velg **Egendefinerte nøkler** fra navigasjonsmenyen.
 
-    ![Velg egendefinerte nøkler.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.no.png)
+    ![Velg egendefinerte nøkler.](../../../../../../translated_images/no/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Utfør følgende oppgaver:
 
@@ -656,7 +656,7 @@ For å integrere din egendefinerte Phi-3-modell med Prompt flow, må du lagre mo
     - For nøkkelnavnet, skriv **key** og lim inn nøkkelen du kopierte fra Azure ML Studio i verdifeltet.
     - Etter å ha lagt til nøklene, velg **er hemmelig** for å forhindre at nøkkelen eksponeres.
 
-    ![Legg til tilkobling.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.no.png)
+    ![Legg til tilkobling.](../../../../../../translated_images/no/08-11-add-connection.785486badb4d2d26.png)
 
 1. Velg **Legg til tilkobling**.
 
@@ -670,15 +670,15 @@ Du har lagt til en egendefinert tilkobling i Azure AI Foundry. Nå la oss oppret
 
 1. Velg **+ Opprett** fra navigasjonsmenyen.
 
-    ![Velg Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.no.png)
+    ![Velg Promptflow.](../../../../../../translated_images/no/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. Velg **Chat flow** fra navigasjonsmenyen.
 
-    ![Velg chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.no.png)
+    ![Velg chat flow.](../../../../../../translated_images/no/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Skriv inn **Mappenavn** som skal brukes.
 
-    ![Skriv inn navn.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.no.png)
+    ![Skriv inn navn.](../../../../../../translated_images/no/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Velg **Opprett**.
 
@@ -715,7 +715,7 @@ Du må integrere den finjusterte Phi-3-modellen i en Prompt flow. Men den eksist
 
     - Velg **Lagre**.
 
-    ![Velg rå filmodus.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.no.png)
+    ![Velg rå filmodus.](../../../../../../translated_images/no/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Legg til følgende kode i *integrate_with_promptflow.py*-filen for å bruke den egendefinerte Phi-3-modellen i Prompt flow.
 
@@ -780,14 +780,14 @@ Du må integrere den finjusterte Phi-3-modellen i en Prompt flow. Men den eksist
 
     ```
 
-    ![Lim inn prompt flow-kode.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.no.png)
+    ![Lim inn prompt flow-kode.](../../../../../../translated_images/no/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > For mer detaljert informasjon om bruk av Prompt flow i Azure AI Foundry, kan du se [Prompt flow i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Velg **Chat input**, **Chat output** for å aktivere chatting med modellen din.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.no.png)
+    ![Input Output.](../../../../../../translated_images/no/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. Nå er du klar til å chatte med din egendefinerte Phi-3-modell. I den neste øvelsen vil du lære hvordan du starter Prompt flow og bruker den til å chatte med din finjusterte Phi-3-modell.
 
@@ -795,7 +795,7 @@ Du må integrere den finjusterte Phi-3-modellen i en Prompt flow. Men den eksist
 >
 > Den ombygde flyten skal se ut som bildet nedenfor:
 >
-> ![Flyteksempel.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.no.png)
+> ![Flyteksempel.](../../../../../../translated_images/no/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Chat med din egendefinerte Phi-3-modell
@@ -808,25 +808,25 @@ Nå som du har finjustert og integrert din egendefinerte Phi-3-modell med Prompt
 
 1. Velg **Start Compute Sessions** for å starte Prompt flow.
 
-    ![Start databehandlingsøkt.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.no.png)
+    ![Start databehandlingsøkt.](../../../../../../translated_images/no/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Velg **Valider og analyser input** for å fornye parametere.
 
-    ![Valider input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.no.png)
+    ![Valider input.](../../../../../../translated_images/no/09-02-validate-input.317c76ef766361e9.png)
 
 1. Velg **Verdien** for **tilkoblingen** til den egendefinerte tilkoblingen du opprettet. For eksempel *connection*.
 
-    ![Tilkobling.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.no.png)
+    ![Tilkobling.](../../../../../../translated_images/no/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Chat med din egendefinerte modell
 
 1. Velg **Chat**.
 
-    ![Velg chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.no.png)
+    ![Velg chat.](../../../../../../translated_images/no/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Her er et eksempel på resultatene: Nå kan du chatte med din egendefinerte Phi-3-modell. Det anbefales å stille spørsmål basert på dataene som ble brukt til finjusteringen.
 
-    ![Chat med prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.no.png)
+    ![Chat med prompt flow.](../../../../../../translated_images/no/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

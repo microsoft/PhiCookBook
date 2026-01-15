@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Відомо, що Phi-3/3.5-mini-instruct у сімействі Phi-3/3.5 має потужні можливості розуміння та генерації коду, і має переваги над Gemma-2-9b та Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.uk.png)
+![codegen](../../../../../../translated_images/uk/codegen.53be1150ee54d969.png)
 
 Останні GitHub Models вже надають доступ до моделей Phi-3.5-mini-instruct (128k) та Phi-3.5-vision-instruct (128k). Розробники можуть отримати до них доступ через OpenAI SDK, Azure AI Inference SDK та REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d5.uk.png)
+![gh](../../../../../../translated_images/uk/gh.459640c7ceba01d5.png)
 
 ***Note: *** Рекомендується використовувати Azure AI Inference SDK, оскільки він краще інтегрується з Azure Model Catalog у виробничому середовищі.
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot Chat Agent може виконувати різні завдання у різних проєктних сценаріях на основі коду. Система має чотири агенти: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.uk.png)
+![agent](../../../../../../translated_images/uk/agent.3dbb06228f9a6189.png)
 
 Додаючи ім’я агента з ‘@’, ви можете швидко виконати відповідну роботу. Для підприємств, якщо додати власний бізнес-контент, такий як вимоги, кодування, тестові специфікації та релізи, можна отримати більш потужні приватні функції на базі GitHub Copilot.
 
 Visual Studio Code Chat Agent офіційно випустив свій API, що дозволяє підприємствам або розробникам створювати агентів на основі різних екосистем програмного забезпечення. Використовуючи метод розробки розширень Visual Studio Code, ви легко можете отримати доступ до інтерфейсу API Visual Studio Code Chat Agent. Ми можемо розробляти на основі цього процесу.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.uk.png)
+![diagram](../../../../../../translated_images/uk/diagram.ca70d2866762f115.png)
 
 Сценарій розробки підтримує доступ до API сторонніх моделей (наприклад, GitHub Models, Azure Model Catalog, а також власних сервісів на базі відкритих моделей) і може також використовувати моделі gpt-35-turbo, gpt-4 та gpt-4o, які надає GitHub Copilot.
 
@@ -54,7 +54,7 @@ Visual Studio Code Chat Agent офіційно випустив свій API, щ
 
 3. Генерація коду на основі **Phi-3.5-vision-instruct (128k)** та доповнення зображень через команду **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.uk.png)
+![arch](../../../../../../translated_images/uk/arch.5a58a0adfa959a2d.png)
 
 ## **Пов’язані кроки**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a9541.uk.png)
+![help](../../../../../../translated_images/uk/help.04c134d2bf9a9541.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.uk.png)
+![agenthelp](../../../../../../translated_images/uk/agenthelp.60c68767c941a3fe.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.uk.png)
+![agentgen](../../../../../../translated_images/uk/agentgen.a16e7735790f764b.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.uk.png)
+![agentimage](../../../../../../translated_images/uk/agentimage.f5cb52b45ab7d0d1.png)
 
 Ви можете завантажити приклади коду: [перейти](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

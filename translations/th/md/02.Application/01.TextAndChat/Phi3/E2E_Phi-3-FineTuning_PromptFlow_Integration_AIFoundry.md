@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 นี่คือภาพรวมของตัวอย่าง E2E นี้
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.th.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/th/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### สารบัญ
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *azure machine learning* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Azure Machine Learning** จากตัวเลือกที่แสดง
 
-    ![พิมพ์ azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.th.png)
+    ![พิมพ์ azure machine learning.](../../../../../../translated_images/th/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. เลือก **+ Create** จากเมนูนำทาง
 
 3. เลือก **New workspace** จากเมนูนำทาง
 
-    ![เลือก workspace ใหม่.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.th.png)
+    ![เลือก workspace ใหม่.](../../../../../../translated_images/th/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. ดำเนินการดังนี้:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Application insights** ที่จะใช้ (สร้างใหม่หากจำเป็น)
     - เลือก **Container registry** ที่จะใช้ (สร้างใหม่หากจำเป็น)
 
-    ![กรอกข้อมูล azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.th.png)
+    ![กรอกข้อมูล azure machine learning.](../../../../../../translated_images/th/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. เลือก **Review + Create**
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Virtual machine family** ที่ต้องการใช้ เช่น เลือก **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ซึ่งรวมถึง GPU *Standard_NC24ads_A100_v4*
     - เลือก **Request quota** จากเมนูนำทาง
 
-        ![ขอจำกัดโควต้า.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.th.png)
+        ![ขอจำกัดโควต้า.](../../../../../../translated_images/th/02-02-request-quota.c0428239a63ffdd5.png)
 
     - ในหน้าขอจำกัดโควต้า ให้ใส่ **New cores limit** ที่ต้องการใช้ เช่น 24
     - ในหน้าขอจำกัดโควต้า ให้เลือก **Submit** เพื่อส่งคำขอจำกัด GPU
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *managed identities* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Managed Identities** จากตัวเลือกที่แสดง
 
-    ![พิมพ์ managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.th.png)
+    ![พิมพ์ managed identities.](../../../../../../translated_images/th/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. เลือก **+ Create**
 
-    ![เลือก create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.th.png)
+    ![เลือก create.](../../../../../../translated_images/th/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. ดำเนินการดังนี้:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Region** ที่ต้องการใช้
     - ใส่ **ชื่อ** ต้องเป็นค่าที่ไม่ซ้ำ
 
-    ![เลือก create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.th.png)
+    ![เลือก create.](../../../../../../translated_images/th/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. เลือก **Review + create**
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Resource group** ที่ใช้
     - เลือก **Role** เป็น **Contributor**
 
-    ![กรอกบทบาท contributor.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.th.png)
+    ![กรอกบทบาท contributor.](../../../../../../translated_images/th/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. เลือก **Save**
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *storage accounts* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Storage accounts** จากตัวเลือกที่แสดง
 
-    ![พิมพ์ storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.th.png)
+    ![พิมพ์ storage accounts.](../../../../../../translated_images/th/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. เลือกบัญชี storage ที่เชื่อมกับ Azure Machine Learning workspace ที่คุณสร้าง เช่น *finetunephistorage*
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **+ Add** จากเมนูนำทาง
     - เลือก **Add role assignment** จากเมนูนำทาง
 
-    ![เพิ่มบทบาท.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.th.png)
+    ![เพิ่มบทบาท.](../../../../../../translated_images/th/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. ในหน้า Add role assignment ดำเนินการดังนี้:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ในหน้า Select managed identities เลือก Manage Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
     - ในหน้า Select managed identities เลือก **Select**
 
-    ![เลือก managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.th.png)
+    ![เลือก managed identity.](../../../../../../translated_images/th/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. เลือก **Review + assign**
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *container registries* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Container registries** จากตัวเลือกที่แสดง
 
-    ![พิมพ์ container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.th.png)
+    ![พิมพ์ container registries.](../../../../../../translated_images/th/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. เลือก container registry ที่เชื่อมกับ Azure Machine Learning workspace เช่น *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือกโฟลเดอร์ *finetune-phi* ที่คุณสร้างไว้ ซึ่งอยู่ที่ *C:\Users\yourUserName\finetune-phi*
 
-    ![เลือกโฟลเดอร์ที่คุณสร้าง](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.th.png)
+    ![เลือกโฟลเดอร์ที่คุณสร้าง](../../../../../../translated_images/th/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. ที่แถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *download_dataset.py*
 
-    ![สร้างไฟล์ใหม่](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.th.png)
+    ![สร้างไฟล์ใหม่](../../../../../../translated_images/th/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### เตรียมชุดข้อมูลสำหรับการปรับแต่ง
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ New**
 
-    ![เลือก compute](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.th.png)
+    ![เลือก compute](../../../../../../translated_images/th/06-01-select-compute.a29cff290b480252.png)
 
 1. ดำเนินการดังนี้:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือกตัวกรอง **Virtual machine size** เป็น **Select from all options**
     - เลือก **Virtual machine size** เป็น **Standard_NC24ads_A100_v4**
 
-    ![สร้างคลัสเตอร์](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.th.png)
+    ![สร้างคลัสเตอร์](../../../../../../translated_images/th/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. เลือก **Next**
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ตั้งค่า **Maximum number of nodes** เป็น **1**
     - ตั้งค่า **Idle seconds before scale down** เป็น **120**
 
-    ![สร้างคลัสเตอร์](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.th.png)
+    ![สร้างคลัสเตอร์](../../../../../../translated_images/th/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. เลือก **Create**
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก workspace ของ Azure Machine Learning ที่คุณสร้างไว้
 
-    ![เลือก workspace ที่คุณสร้าง](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.th.png)
+    ![เลือก workspace ที่คุณสร้าง](../../../../../../translated_images/th/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. ดำเนินการดังนี้:
 
     - เลือก **Model catalog** จากแท็บทางซ้าย
     - พิมพ์ *phi-3-mini-4k* ใน **แถบค้นหา** และเลือก **Phi-3-mini-4k-instruct** จากตัวเลือกที่ปรากฏ
 
-    ![พิมพ์ phi-3-mini-4k](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.th.png)
+    ![พิมพ์ phi-3-mini-4k](../../../../../../translated_images/th/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. เลือก **Fine-tune** จากเมนูนำทาง
 
-    ![เลือก fine tune](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.th.png)
+    ![เลือก fine tune](../../../../../../translated_images/th/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. ดำเนินการดังนี้:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือกประเภทการอัปโหลดข้อมูล Validation เป็น **Provide different validation data**
     - เลือก **+ Select data** เพื่ออัปโหลด **Validation data**
 
-    ![กรอกข้อมูลหน้าปรับแต่ง](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.th.png)
+    ![กรอกข้อมูลหน้าปรับแต่ง](../../../../../../translated_images/th/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ในการฝึกนี้ คุณได้ปรับแต่งโมเดล Phi-3 สำเร็จโดยใช้ Azure Machine Learning โปรดทราบว่ากระบวนการปรับแต่งอาจใช้เวลานาน หลังจากรันงานปรับแต่งแล้ว คุณต้องรอให้กระบวนการเสร็จสมบูรณ์ คุณสามารถติดตามสถานะของงานปรับแต่งได้โดยไปที่แท็บ Jobs ทางด้านซ้ายของ Azure Machine Learning Workspace ของคุณ ในชุดถัดไป คุณจะนำโมเดลที่ปรับแต่งแล้วไปปรับใช้และผสานรวมกับ Prompt flow
 
-    ![ดูงาน finetuning](../../../../../../translated_images/06-08-output.2bd32e59930672b1.th.png)
+    ![ดูงาน finetuning](../../../../../../translated_images/th/06-08-output.2bd32e59930672b1.png)
 
 ### ปรับใช้โมเดล Phi-3 ที่ปรับแต่งแล้ว
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก workspace ของ Azure Machine Learning ที่คุณสร้างไว้
 
-    ![เลือก workspace ที่คุณสร้าง](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.th.png)
+    ![เลือก workspace ที่คุณสร้าง](../../../../../../translated_images/th/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. เลือก **Models** จากแท็บทางซ้าย
 1. เลือก **+ Register**
 1. เลือก **From a job output**
 
-    ![ลงทะเบียนโมเดล](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.th.png)
+    ![ลงทะเบียนโมเดล](../../../../../../translated_images/th/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. เลือกงาน (job) ที่คุณสร้างไว้
 
-    ![เลือกงาน](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.th.png)
+    ![เลือกงาน](../../../../../../translated_images/th/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. เลือก **Next**
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ตรวจสอบให้แน่ใจว่าเลือก **Job output** แล้ว ซึ่งควรถูกเลือกโดยอัตโนมัติ
 
-    ![เลือก output](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.th.png)
+    ![เลือก output](../../../../../../translated_images/th/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. เลือก **Next**
 
 3. เลือก **Register**
 
-    ![เลือก register](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.th.png)
+    ![เลือก register](../../../../../../translated_images/th/07-04-register.fd82a3b293060bc7.png)
 
 4. คุณสามารถดูโมเดลที่ลงทะเบียนได้โดยไปที่เมนู **Models** จากแท็บทางซ้าย
 
-    ![โมเดลที่ลงทะเบียน](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.th.png)
+    ![โมเดลที่ลงทะเบียน](../../../../../../translated_images/th/07-05-registered-model.7db9775f58dfd591.png)
 
 #### ปรับใช้โมเดลที่ปรับแต่งแล้ว
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **Real-time endpoints** จากเมนูนำทาง
 
-    ![สร้าง endpoint](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.th.png)
+    ![สร้าง endpoint](../../../../../../translated_images/th/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. เลือก **Create**
 
 1. เลือกโมเดลที่ลงทะเบียนไว้ที่คุณสร้างไว้
 
-    ![เลือกโมเดลที่ลงทะเบียนแล้ว](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.th.png)
+    ![เลือกโมเดลที่ลงทะเบียนแล้ว](../../../../../../translated_images/th/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. เลือก **Select**
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - กรอกชื่อ **Endpoint name** ซึ่งต้องไม่ซ้ำกัน
     - กรอกชื่อ **Deployment name** ซึ่งต้องไม่ซ้ำกัน
 
-    ![กรอกการตั้งค่าการปรับใช้](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.th.png)
+    ![กรอกการตั้งค่าการปรับใช้](../../../../../../translated_images/th/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. เลือก **Deploy**
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก endpoint ที่คุณสร้างไว้
 
-    ![เลือก endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.th.png)
+    ![เลือก endpoints](../../../../../../translated_images/th/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. บนหน้านี้ คุณสามารถจัดการ endpoints ในระหว่างกระบวนการปรับใช้ได้
 
 > [!NOTE]
 > เมื่อการปรับใช้เสร็จสมบูรณ์ ให้แน่ใจว่า **Live traffic** ถูกตั้งเป็น **100%** หากไม่เป็นเช่นนั้น ให้เลือก **Update traffic** เพื่อปรับการตั้งค่าการรับส่งข้อมูล โปรดทราบว่าคุณไม่สามารถทดสอบโมเดลได้ถ้าการรับส่งข้อมูลตั้งเป็น 0%
 >
-> ![ตั้งค่า traffic](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.th.png)
+> ![ตั้งค่า traffic](../../../../../../translated_images/th/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และแชทกับโมเดลที่กำหนดเองใน Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. เลือก **All hubs** จากแท็บทางซ้าย
 
 1. เลือก **+ New hub** จากเมนูนำทาง
-    ![สร้างศูนย์ข้อมูล](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.th.png)
+    ![สร้างศูนย์ข้อมูล](../../../../../../translated_images/th/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. ดำเนินการดังต่อไปนี้:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **เชื่อมต่อบริการ Azure AI** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **เชื่อมต่อ Azure AI Search** เพื่อ **ข้ามการเชื่อมต่อ**
 
-    ![กรอกศูนย์ข้อมูล](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.th.png)
+    ![กรอกศูนย์ข้อมูล](../../../../../../translated_images/th/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. เลือก **ถัดไป**
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ โปรเจกต์ใหม่** จากเมนูนำทาง
 
-    ![เลือกโปรเจกต์ใหม่](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.th.png)
+    ![เลือกโปรเจกต์ใหม่](../../../../../../translated_images/th/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. ป้อน **ชื่อโปรเจกต์** ซึ่งต้องเป็นค่าที่ไม่ซ้ำกัน
 
-    ![สร้างโปรเจกต์](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.th.png)
+    ![สร้างโปรเจกต์](../../../../../../translated_images/th/08-05-create-project.4d97f0372f03375a.png)
 
 1. เลือก **สร้างโปรเจกต์**
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-    ![เลือก endpoints](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.th.png)
+    ![เลือก endpoints](../../../../../../translated_images/th/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. เลือก endpoint ที่คุณสร้าง
 
-    ![เลือก endpoints](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.th.png)
+    ![เลือก endpoints](../../../../../../translated_images/th/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. เลือก **Consume** จากเมนูนำทาง
 
 1. คัดลอก **REST endpoint** และ **Primary key** ของคุณ
 
-    ![คัดลอกคีย์ API และ URI จุดสิ้นสุด](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.th.png)
+    ![คัดลอกคีย์ API และ URI จุดสิ้นสุด](../../../../../../translated_images/th/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### เพิ่มการเชื่อมต่อแบบกำหนดเอง
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ การเชื่อมต่อใหม่**
 
-    ![เลือกการเชื่อมต่อใหม่](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.th.png)
+    ![เลือกการเชื่อมต่อใหม่](../../../../../../translated_images/th/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. เลือก **คีย์แบบกำหนดเอง** จากเมนูนำทาง
 
-    ![เลือกคีย์แบบกำหนดเอง](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.th.png)
+    ![เลือกคีย์แบบกำหนดเอง](../../../../../../translated_images/th/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. ดำเนินการดังต่อไปนี้:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - สำหรับชื่อคีย์ ให้ป้อน **key** และวางคีย์ที่คุณคัดลอกจาก Azure ML Studio ในช่องค่า
     - หลังจากเพิ่มคีย์แล้ว ให้เลือก **เป็นความลับ** เพื่อป้องกันไม่ให้คีย์ถูกเปิดเผย
 
-    ![เพิ่มการเชื่อมต่อ](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.th.png)
+    ![เพิ่มการเชื่อมต่อ](../../../../../../translated_images/th/08-11-add-connection.785486badb4d2d26.png)
 
 1. เลือก **เพิ่มการเชื่อมต่อ**
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ สร้าง** จากเมนูนำทาง
 
-    ![เลือก Promptflow](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.th.png)
+    ![เลือก Promptflow](../../../../../../translated_images/th/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. เลือก **Chat flow** จากเมนูนำทาง
 
-    ![เลือก chat flow](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.th.png)
+    ![เลือก chat flow](../../../../../../translated_images/th/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. ป้อน **ชื่อโฟลเดอร์** ที่จะใช้
 
-    ![ป้อนชื่อ](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.th.png)
+    ![ป้อนชื่อ](../../../../../../translated_images/th/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. เลือก **สร้าง**
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - เลือก **บันทึก**
 
-    ![เลือกโหมดไฟล์ดิบ](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.th.png)
+    ![เลือกโหมดไฟล์ดิบ](../../../../../../translated_images/th/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. เพิ่มโค้ดต่อไปนี้ในไฟล์ *integrate_with_promptflow.py* เพื่อใช้โมเดล Phi-3 แบบกำหนดเองใน Prompt flow
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![วางโค้ด prompt flow](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.th.png)
+    ![วางโค้ด prompt flow](../../../../../../translated_images/th/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > สำหรับข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับการใช้ Prompt flow ใน Azure AI Foundry คุณสามารถดูได้ที่ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)
 
 1. เลือก **Chat input**, **Chat output** เพื่อเปิดใช้งานการสนทนากับโมเดลของคุณ
 
-    ![อินพุต เอาต์พุต](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.th.png)
+    ![อินพุต เอาต์พุต](../../../../../../translated_images/th/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. ตอนนี้คุณพร้อมที่จะสนทนากับโมเดล Phi-3 แบบกำหนดเองของคุณแล้ว ในแบบฝึกหัดถัดไป คุณจะได้เรียนรู้วิธีเริ่มใช้ Prompt flow และใช้มันเพื่อสนทนากับโมเดล Phi-3 ที่ปรับแต่งของคุณ
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > โฟลวที่สร้างใหม่นี้ควรมีลักษณะเหมือนภาพด้านล่าง:
 >
-> ![ตัวอย่างโฟลว](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.th.png)
+> ![ตัวอย่างโฟลว](../../../../../../translated_images/th/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### สนทนากับโมเดล Phi-3 แบบกำหนดเองของคุณ
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **เริ่มต้นเซสชันการคำนวณ** เพื่อเริ่ม Prompt flow
 
-    ![เริ่มเซสชันคำนวณ](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.th.png)
+    ![เริ่มเซสชันคำนวณ](../../../../../../translated_images/th/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. เลือก **ตรวจสอบและแยกวิเคราะห์อินพุต** เพื่อปรับปรุงพารามิเตอร์
 
-    ![ตรวจสอบอินพุต](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.th.png)
+    ![ตรวจสอบอินพุต](../../../../../../translated_images/th/09-02-validate-input.317c76ef766361e9.png)
 
 1. เลือก **ค่า** ของ **การเชื่อมต่อ** ไปยังการเชื่อมต่อแบบกำหนดเองที่คุณสร้าง เช่น *connection*
 
-    ![การเชื่อมต่อ](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.th.png)
+    ![การเชื่อมต่อ](../../../../../../translated_images/th/09-03-select-connection.99bdddb4b1844023.png)
 
 #### สนทนากับโมเดลแบบกำหนดเองของคุณ
 
 1. เลือก **สนทนา**
 
-    ![เลือกสนทนา](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.th.png)
+    ![เลือกสนทนา](../../../../../../translated_images/th/09-04-select-chat.61936dce6612a1e6.png)
 
 1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถสนทนากับโมเดล Phi-3 แบบกำหนดเองของคุณได้ แนะนำให้ถามคำถามตามข้อมูลที่ใช้สำหรับการปรับแต่งเพิ่มเติม
 
-    ![สนทนากับ prompt flow](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.th.png)
+    ![สนทนากับ prompt flow](../../../../../../translated_images/th/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

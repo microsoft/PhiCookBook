@@ -41,7 +41,7 @@ Fine-tuning se temelji na poboljšanju određenog modela. Nije potrebno započin
 
 ## **Kako koristiti RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007.hr.png)
+![rag](../../../../translated_images/hr/rag.2014adc59e6f6007.png)
 
 Vektorska baza podataka je skup podataka pohranjenih u matematičkom obliku. Vektorske baze podataka olakšavaju modelima strojnog učenja pamćenje prethodnih unosa, omogućujući njihovu primjenu u slučajevima poput pretraživanja, preporuka i generiranja teksta. Podaci se mogu identificirati na temelju mjera sličnosti, a ne točnih podudaranja, što omogućuje računalnim modelima razumijevanje konteksta podataka.
 
@@ -57,7 +57,7 @@ Najčešće korišteni algoritmi u Fine-tuningu su Lora i QLora. Kako odabrati?
 
 ### **Lora i QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca0.hr.png)
+![lora](../../../../translated_images/hr/qlora.e6446c988ee04ca0.png)
 
 LoRA (Low-Rank Adaptation) i QLoRA (Quantized Low-Rank Adaptation) su tehnike za fino podešavanje velikih jezičnih modela (LLM) koristeći Parameter Efficient Fine Tuning (PEFT). PEFT tehnike su dizajnirane za učinkovitije treniranje modela u odnosu na tradicionalne metode.  
 LoRA je samostalna tehnika fine-tuninga koja smanjuje memorijski otisak primjenom niskorazredne aproksimacije na matricu ažuriranja težina. Nudi brze treninge i održava performanse blizu tradicionalnim metodama fine-tuninga.

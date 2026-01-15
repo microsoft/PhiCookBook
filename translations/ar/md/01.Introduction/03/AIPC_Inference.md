@@ -28,9 +28,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 جهاز Intel® NPU هو مسرع استدلال ذكاء اصطناعي مدمج مع معالجات Intel للعملاء، بدءًا من جيل معالجات Intel® Core™ Ultra (المعروف سابقًا باسم Meteor Lake). يتيح تنفيذ مهام الشبكات العصبية الاصطناعية بكفاءة في استهلاك الطاقة.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.ar.png)
+![Latency](../../../../../translated_images/ar/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.ar.png)
+![Latency770](../../../../../translated_images/ar/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **مكتبة تسريع Intel NPU**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 عند تنفيذ الكود، يمكننا مشاهدة حالة تشغيل NPU من خلال مدير المهام
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.ar.png)
+![NPU](../../../../../translated_images/ar/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***عينات*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 هذه هي نتيجة التشغيل
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.ar.png)
+![DML](../../../../../translated_images/ar/aipc_DML.52a44180393ab491.png)
 
 ***عينات*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 الصيغة المحولة، مثل هذه
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.ar.png)
+![openvino_convert](../../../../../translated_images/ar/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 تحميل مسارات النموذج (model_dir)، الإعدادات ذات الصلة (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""})، والأجهزة المعجلة بالعتاد (GPU.0) عبر OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 عند تنفيذ الكود، يمكننا مشاهدة حالة تشغيل GPU من خلال مدير المهام
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.ar.png)
+![openvino_gpu](../../../../../translated_images/ar/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***عينات*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

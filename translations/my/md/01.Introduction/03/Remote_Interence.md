@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 အဒပ်တာတွေကို remote ပတ်ဝန်းကျင်မှာ သင်ကြားပြီးနောက်၊ မော်ဒယ်နဲ့ အပြန်အလှန် ဆက်သွယ်ဖို့ ရိုးရှင်းတဲ့ Gradio အက်ပ်လီကေးရှင်းကို အသုံးပြုပါ။
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.my.png)
+![Fine-tune complete](../../../../../translated_images/my/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Azure အရင်းအမြစ်များ ပြင်ဆင်ခြင်း  
 Remote inference အတွက် Azure အရင်းအမြစ်များကို စီစဉ်ဖို့ `AI Toolkit: Provision Azure Container Apps for inference` ကို command palette မှာ အကောင်အထည်ဖော်ပါ။ ဒီလုပ်ငန်းစဉ်အတွင်းမှာ သင့် Azure Subscription နဲ့ resource group ကို ရွေးချယ်ဖို့ တောင်းခံပါလိမ့်မယ်။  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.my.png)
+![Provision Inference Resource](../../../../../translated_images/my/command-provision-inference.467afc8d351642fc.png)
 
 ပုံမှန်အားဖြင့် subscription နဲ့ resource group တွေဟာ fine-tuning အတွက် အသုံးပြုထားတဲ့ အတိုင်း ဖြစ်သင့်ပါတယ်။ Inference ကတော့ fine-tuning အဆင့်မှာ ဖန်တီးထားတဲ့ Azure Files ထဲမှာ သိမ်းဆည်းထားတဲ့ မော်ဒယ်နဲ့ မော်ဒယ်အဒပ်တာကို အသုံးပြုမယ့် Azure Container App Environment ကို အသုံးပြုပါလိမ့်မယ်။
 
@@ -24,7 +24,7 @@ Remote inference အတွက် Azure အရင်းအမြစ်မျာ�
 ### Inference အတွက် Deployment  
 Inference ကုဒ်ကို ပြန်လည်ပြင်ဆင်ချင်တာ သို့မဟုတ် inference မော်ဒယ်ကို ပြန်လည်တင်ချင်ရင် `AI Toolkit: Deploy for inference` command ကို အကောင်အထည်ဖော်ပါ။ ဒါက သင့်ရဲ့ နောက်ဆုံးကုဒ်ကို ACA နဲ့ đồng bộ လုပ်ပြီး replica ကို ပြန်စတင်ပေးပါလိမ့်မယ်။
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.my.png)
+![Deploy for inference](../../../../../translated_images/my/command-deploy.9adb4e310dd0b0ae.png)
 
 Deployment အောင်မြင်ပြီးနောက် မော်ဒယ်ကို ဒီ endpoint မှတဆင့် သုံးသပ်နိုင်ပါပြီ။
 
@@ -32,7 +32,7 @@ Deployment အောင်မြင်ပြီးနောက် မော်�
 
 VSCode notification မှာ ပြသထားတဲ့ "*Go to Inference Endpoint*" ခလုတ်ကို နှိပ်ပြီး inference API ကို ဝင်ရောက်အသုံးပြုနိုင်ပါတယ်။ ဒါမှမဟုတ် `./infra/inference.config.json` ဖိုင်ထဲရှိ `ACA_APP_ENDPOINT` မှာ သို့မဟုတ် output panel မှာ web API endpoint ကို ရှာဖွေနိုင်ပါတယ်။
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.my.png)
+![App Endpoint](../../../../../translated_images/my/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** Inference endpoint က အပြည့်အဝ လည်ပတ်ဖို့ မိနစ်အနည်းငယ် ကြာနိုင်ပါတယ်။
 

@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry प्रयोग गरेर मूल्याङ्कन गर्ने तरिका**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.ne.png)
+![aistudo](../../../../../translated_images/ne/AIFoundry.9e0b513e999a1c5a.png)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) प्रयोग गरेर तपाईंको जनरेटिभ AI एप्लिकेशन कसरी मूल्याङ्कन गर्ने। तपाईं एकल-चरण वा बहु-चरण संवादहरू मूल्याङ्कन गर्दै हुनुहुन्छ भने पनि, Azure AI Foundry ले मोडेलको प्रदर्शन र सुरक्षा मूल्याङ्कन गर्नका लागि उपकरणहरू प्रदान गर्दछ।
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.ne.png)
+![aistudo](../../../../../translated_images/ne/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Azure AI Foundry सँग जनरेटिभ AI एपहरू कसरी मूल्याङ्कन गर्ने
 थप विस्तृत निर्देशनका लागि [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) हेर्नुहोस्।

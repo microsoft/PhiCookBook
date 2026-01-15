@@ -23,7 +23,7 @@ Dans cet exemple E2E, vous apprendrez à affiner le modèle Phi-3 et à l’int�
 
 Voici un aperçu de cet exemple E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.fr.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/fr/00-01-architecture.02fc569e266d468c.png)
 
 ### Table des matières
 
@@ -49,13 +49,13 @@ Voici un aperçu de cet exemple E2E.
 
 1. Tapez *azure machine learning* dans la **barre de recherche** en haut de la page du portail et sélectionnez **Azure Machine Learning** parmi les options qui apparaissent.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.fr.png)
+    ![Type azure machine learning](../../../../../../translated_images/fr/01-01-type-azml.a5116f8454d98c60.png)
 
 1. Sélectionnez **+ Créer** dans le menu de navigation.
 
 1. Sélectionnez **Nouvel espace de travail** dans le menu de navigation.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.fr.png)
+    ![Select new workspace](../../../../../../translated_images/fr/01-02-select-new-workspace.83e17436f8898dc4.png)
 
 1. Effectuez les opérations suivantes :
 
@@ -68,7 +68,7 @@ Voici un aperçu de cet exemple E2E.
     - Sélectionnez l'**Application Insights** à utiliser (créez-en un nouveau si nécessaire).
     - Sélectionnez le **Registre de conteneurs** à utiliser (créez-en un nouveau si nécessaire).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.fr.png)
+    ![Fill AZML.](../../../../../../translated_images/fr/01-03-fill-AZML.730a5177757bbebb.png)
 
 1. Sélectionnez **Vérifier + créer**.
 
@@ -92,7 +92,7 @@ Dans cet exemple E2E, vous utiliserez le *GPU Standard_NC24ads_A100_v4* pour l�
     - Sélectionnez la **Famille de machines virtuelles** à utiliser. Par exemple, sélectionnez **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, qui comprend le GPU *Standard_NC24ads_A100_v4*.
     - Sélectionnez **Demander un quota** dans le menu de navigation.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.fr.png)
+        ![Request quota.](../../../../../../translated_images/fr/01-04-request-quota.3d3670c3221ab834.png)
 
     - Dans la page Demande de quota, entrez la **Nouvelle limite de cœurs** que vous souhaitez utiliser. Par exemple, 24.
     - Dans la page Demande de quota, sélectionnez **Soumettre** pour demander le quota GPU.
@@ -108,11 +108,11 @@ Pour affiner et déployer vos modèles, vous devez d’abord créer une identit�
 
 1. Tapez *managed identities* dans la **barre de recherche** en haut de la page du portail et sélectionnez **Identités gérées** parmi les options qui apparaissent.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.fr.png)
+    ![Type managed identities.](../../../../../../translated_images/fr/01-05-type-managed-identities.9297b6039874eff8.png)
 
 1. Sélectionnez **+ Créer**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.fr.png)
+    ![Select create.](../../../../../../translated_images/fr/01-06-select-create.936d8d66d7144f9a.png)
 
 1. Effectuez les opérations suivantes :
 
@@ -139,7 +139,7 @@ Pour affiner et déployer vos modèles, vous devez d’abord créer une identit�
     - Sélectionnez le **Groupe de ressources** à utiliser.
     - Sélectionnez le **Rôle** sur **Collaborateur**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.fr.png)
+    ![Fill contributor role.](../../../../../../translated_images/fr/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
 
 1. Sélectionnez **Enregistrer**.
 
@@ -147,7 +147,7 @@ Pour affiner et déployer vos modèles, vous devez d’abord créer une identit�
 
 1. Tapez *storage accounts* dans la **barre de recherche** en haut de la page du portail et sélectionnez **Comptes de stockage** parmi les options qui apparaissent.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.fr.png)
+    ![Type storage accounts.](../../../../../../translated_images/fr/01-08-type-storage-accounts.1186c8e42933e49b.png)
 
 1. Sélectionnez le compte de stockage associé à l’espace de travail Azure Machine Learning que vous avez créé. Par exemple, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Pour affiner et déployer vos modèles, vous devez d’abord créer une identit�
     - Sélectionnez **+ Ajouter** dans le menu de navigation.
     - Sélectionnez **Ajouter une affectation de rôle** dans le menu de navigation.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.fr.png)
+    ![Add role.](../../../../../../translated_images/fr/01-09-add-role.d2db22fec1b187f0.png)
 
 1. Dans la page Ajouter une affectation de rôle, effectuez les opérations suivantes :
 
@@ -171,7 +171,7 @@ Pour affiner et déployer vos modèles, vous devez d’abord créer une identit�
     - Dans la page Sélectionner des identités gérées, sélectionnez l’identité gérée que vous avez créée. Par exemple, *finetunephi-managedidentity*.
     - Dans la page Sélectionner des identités gérées, sélectionnez **Sélectionner**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.fr.png)
+    ![Select managed identity.](../../../../../../translated_images/fr/01-10-select-managed-identity.5ce5ba181f72a4df.png)
 
 1. Sélectionnez **Vérifier + attribuer**.
 
@@ -179,7 +179,7 @@ Pour affiner et déployer vos modèles, vous devez d’abord créer une identit�
 
 1. Tapez *container registries* dans la **barre de recherche** en haut de la page du portail et sélectionnez **Registres de conteneurs** parmi les options qui apparaissent.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.fr.png)
+    ![Type container registries.](../../../../../../translated_images/fr/01-11-type-container-registries.ff3b8bdc49dc596c.png)
 
 1. Sélectionnez le registre de conteneurs associé à l’espace de travail Azure Machine Learning. Par exemple, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ Dans cet exercice, vous allez :
 
 1. Sélectionnez le dossier *finetune-phi* que vous avez créé, situé à *C:\Users\yourUserName\finetune-phi*.
 
-    ![Ouvrir le dossier du projet.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.fr.png)
+    ![Ouvrir le dossier du projet.](../../../../../../translated_images/fr/01-12-open-project-folder.1fff9c7f41dd1639.png)
 
 1. Dans le volet gauche de Visual Studio Code, faites un clic droit et sélectionnez **Nouveau fichier** pour créer un nouveau fichier nommé *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Dans cet exercice, vous allez :
 
 1. Dans le volet gauche de Visual Studio Code, faites un clic droit et sélectionnez **Nouveau fichier** pour créer un nouveau fichier nommé *deploy_model.py*.
 
-    ![Créer un nouveau fichier.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.fr.png)
+    ![Créer un nouveau fichier.](../../../../../../translated_images/fr/01-13-create-new-file.c17c150fff384a39.png)
 
 1. Dans le volet gauche de Visual Studio Code, faites un clic droit et sélectionnez **Nouveau dossier** pour créer un nouveau dossier nommé *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Dans cet exercice, vous allez :
     - Sélectionnez l’abonnement Azure que vous utilisez actuellement.
     - Copiez et collez votre ID d’abonnement dans le fichier *config.py*.
 
-    ![Trouver l’ID d’abonnement.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.fr.png)
+    ![Trouver l’ID d’abonnement.](../../../../../../translated_images/fr/01-14-find-subscriptionid.4f4ca33555f1e637.png)
 
 1. Effectuez les tâches suivantes pour ajouter le nom de l’espace de travail Azure :
 
     - Naviguez vers la ressource Azure Machine Learning que vous avez créée.
     - Copiez et collez le nom de votre compte dans le fichier *config.py*.
 
-    ![Trouver le nom Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.fr.png)
+    ![Trouver le nom Azure Machine Learning.](../../../../../../translated_images/fr/01-15-find-AZML-name.1975f0422bca19a7.png)
 
 1. Effectuez les tâches suivantes pour ajouter le nom du groupe de ressources Azure :
 
     - Naviguez vers la ressource Azure Machine Learning que vous avez créée.
     - Copiez et collez le nom du groupe de ressources Azure dans le fichier *config.py*.
 
-    ![Trouver le nom du groupe de ressources.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.fr.png)
+    ![Trouver le nom du groupe de ressources.](../../../../../../translated_images/fr/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
 
 2. Effectuez les tâches suivantes pour ajouter le nom de l’identité managée Azure
 
     - Naviguez vers la ressource des identités managées que vous avez créée.
     - Copiez et collez le nom de votre identité managée Azure dans le fichier *config.py*.
 
-    ![Trouver l’UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.fr.png)
+    ![Trouver l’UAI.](../../../../../../translated_images/fr/01-17-find-uai.3529464f53499827.png)
 
 ### Préparer le jeu de données pour l’affinage
 
@@ -509,7 +509,7 @@ Vous devez configurer Azure CLI pour authentifier votre environnement. Azure CLI
 
 1. Sélectionnez l’abonnement Azure à utiliser.
 
-    ![Trouver le nom du groupe de ressources.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.fr.png)
+    ![Trouver le nom du groupe de ressources.](../../../../../../translated_images/fr/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ En exécutant *setup_ml.py*, vous lancerez le processus d’affinage dans l’en
 
 1. Dans cet exercice, vous avez affiné avec succès le modèle Phi-3 en utilisant Azure Machine Learning. En exécutant le script *setup_ml.py*, vous avez configuré l’environnement Azure Machine Learning et lancé le processus d’affinage défini dans le fichier *fine_tune.py*. Notez que le processus d’affinage peut prendre un temps considérable. Après avoir lancé la commande `python setup_ml.py`, vous devez attendre la fin du processus. Vous pouvez suivre l’état du travail d’affinage en suivant le lien fourni dans le terminal vers le portail Azure Machine Learning.
 
-    ![Voir le travail d’affinage.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.fr.png)
+    ![Voir le travail d’affinage.](../../../../../../translated_images/fr/02-02-see-finetuning-job.59393bc3b143871e.png)
 
 ### Déployer le modèle affiné
 
@@ -1080,11 +1080,11 @@ L’exécution du fichier *deploy_model.py* automatise l’ensemble du processus
 
 1. Sélectionnez **Endpoints** dans l’onglet du côté gauche.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.fr.png)
+    ![Select endpoints.](../../../../../../translated_images/fr/02-03-select-endpoints.c3136326510baff1.png)
 
 2. Sélectionnez le point de terminaison que vous avez créé.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.fr.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/fr/02-04-select-endpoint-created.0363e7dca51dabb4.png)
 
 3. Sur cette page, vous pouvez gérer les points de terminaison créés pendant le processus de déploiement.
 
@@ -1103,7 +1103,7 @@ Après avoir déployé avec succès votre modèle affiné, vous pouvez maintenan
 1. Copiez et collez votre **REST endpoint** dans le fichier *config.py*, en remplaçant `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` par votre **REST endpoint**.
 1. Copiez et collez votre **Primary key** dans le fichier *config.py*, en remplaçant `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` par votre **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.fr.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/fr/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
 
 #### Ajouter du code au fichier *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Après avoir déployé avec succès votre modèle affiné, vous pouvez maintenan
 
 1. Voici un exemple des résultats : Vous pouvez maintenant discuter avec votre modèle personnalisé Phi-3. Il est recommandé de poser des questions basées sur les données utilisées pour l’affinage.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.fr.png)
+    ![Prompt flow example.](../../../../../../translated_images/fr/02-06-promptflow-example.89384abaf3ad71f6.png)
 
 ---
 

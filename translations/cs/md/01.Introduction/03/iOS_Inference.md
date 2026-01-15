@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Zvolil jsem Objective-C jako způsob vývoje aplikace, protože při použití Generative AI s ONNX Runtime C++ API je Objective-C lépe kompatibilní. Samozřejmě můžete také provádět příslušné volání přes Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.cs.png)
+![xcode](../../../../../translated_images/cs/xcode.8147789e6c25e3e2.png)
 
 ## **5. Zkopírujte kvantovaný INT4 ONNX model do projektu aplikace**
 
 Potřebujeme importovat INT4 kvantovaný model ve formátu ONNX, který je potřeba nejprve stáhnout.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.cs.png)
+![hf](../../../../../translated_images/cs/hf.6b8504fd88ee48dd.png)
 
 Po stažení je potřeba jej přidat do složky Resources v projektu v Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d.cs.png)
+![model](../../../../../translated_images/cs/model.3b879b14e0be877d.png)
 
 ## **6. Přidání C++ API do ViewControllers**
 
@@ -121,11 +121,11 @@ Po stažení je potřeba jej přidat do složky Resources v projektu v Xcode.
 
 - **a.** Přidejte odpovídající C++ hlavičkové soubory do projektu.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333.cs.png)
+  ![Header File](../../../../../translated_images/cs/head.64cad021ce70a333.png)
 
 - **b.** Zahrňte dynamickou knihovnu `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.cs.png)
+  ![Library](../../../../../translated_images/cs/lib.a4209b9f21ddf344.png)
 
 - **c.** Pro testování použijte C Samples kód. Můžete také přidat další funkce, jako je ChatUI, pro rozšířenou funkcionalitu.
 
@@ -162,7 +162,7 @@ Po stažení je potřeba jej přidat do složky Resources v projektu v Xcode.
 
 Po dokončení nastavení můžete aplikaci spustit a zobrazit výsledky inference modelu Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.cs.jpg)
+![Running Result](../../../../../translated_images/cs/result.326a947a6a2b9c51.jpg)
 
 Pro více ukázkového kódu a podrobné instrukce navštivte [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

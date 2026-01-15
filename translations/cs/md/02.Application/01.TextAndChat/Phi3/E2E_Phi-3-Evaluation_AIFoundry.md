@@ -19,7 +19,7 @@ Doladění modelu může někdy vést k nechtěným nebo nežádoucím odpověd�
 
 Zde je proces vyhodnocení v Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.cs.png)
+![Architecture of tutorial.](../../../../../../translated_images/cs/architecture.10bec55250f5d6a4.png)
 
 *Zdroj obrázku: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Zde je proces vyhodnocení v Azure AI Foundry.
 
 Aby byl váš AI model etický a bezpečný, je zásadní jej vyhodnotit podle principů odpovědné AI od Microsoftu. V Azure AI Foundry umožňují bezpečnostní vyhodnocení posoudit zranitelnost modelu vůči jailbreak útokům a jeho potenciál generovat škodlivý obsah, což přímo odpovídá těmto principům.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.cs.png)
+![Safaty evaluation.](../../../../../../translated_images/cs/safety-evaluation.083586ec88dfa950.png)
 
 *Zdroj obrázku: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Principy odpovědné AI od Microsoftu zahrnují:
 
 - **Zodpovědnost**: Lidé, kteří navrhují a nasazují AI systémy, musí být zodpovědní za jejich fungování. Organizace by měly využívat průmyslové standardy k vytvoření norem zodpovědnosti. Tyto normy zajistí, že AI systémy nebudou konečnou autoritou v žádném rozhodnutí, které ovlivňuje životy lidí. Také zajistí, že lidé budou mít smysluplnou kontrolu nad vysoce autonomními AI systémy.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.cs.png)
+![Fill hub.](../../../../../../translated_images/cs/responsibleai2.c07ef430113fad8c.png)
 
 *Zdroj obrázku: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ V tomto tutoriálu budete vyhodnocovat bezpečnost doladěného modelu Phi-3 pom
 
 Vyhodnocení těchto aspektů zajišťuje, že AI model nevytváří škodlivý nebo urážlivý obsah, což odpovídá společenským hodnotám a regulačním normám.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.cs.png)
+![Evaluate based on safety.](../../../../../../translated_images/cs/evaluate-based-on-safety.c5df819f5b0bfc07.png)
 
 ### Úvod do vyhodnocení výkonu
 
 Aby váš AI model fungoval podle očekávání, je důležité vyhodnotit jeho výkon pomocí metrik výkonu. V Azure AI Foundry umožňují vyhodnocení výkonu posoudit efektivitu modelu při generování přesných, relevantních a koherentních odpovědí.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.cs.png)
+![Safaty evaluation.](../../../../../../translated_images/cs/performance-evaluation.48b3e7e01a098740.png)
 
 *Zdroj obrázku: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ V tomto tutoriálu budete vyhodnocovat výkon doladěného modelu Phi-3 / Phi-3.
 
 Tyto metriky vám pomohou vyhodnotit efektivitu modelu při generování přesných, relevantních a koherentních odpovědí.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.cs.png)
+![Evaluate based on performance.](../../../../../../translated_images/cs/evaluate-based-on-performance.3e801c647c7554e8.png)
 
 ## **Scénář 2: Vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Než vytvoříte projekt, musíte nejprve vytvořit Hub. Hub funguje jako Resour
 
 1. V navigačním menu vyberte **+ New hub**.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.cs.png)
+    ![Create hub.](../../../../../../translated_images/cs/create-hub.5be78fb1e21ffbf1.png)
 
 1. Proveďte následující kroky:
 
@@ -162,7 +162,7 @@ Než vytvoříte projekt, musíte nejprve vytvořit Hub. Hub funguje jako Resour
     - Vyberte **Connect Azure AI Services**, které chcete použít (v případě potřeby vytvořte nové).
     - U **Connect Azure AI Search** vyberte **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.cs.png)
+    ![Fill hub.](../../../../../../translated_images/cs/fill-hub.baaa108495c71e34.png)
 
 1. Klikněte na **Next**.
 
@@ -172,11 +172,11 @@ Než vytvoříte projekt, musíte nejprve vytvořit Hub. Hub funguje jako Resour
 
 1. V navigačním menu vyberte **+ New project**.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.cs.png)
+    ![Select new project.](../../../../../../translated_images/cs/select-new-project.cd31c0404088d7a3.png)
 
 1. Zadejte **Project name**. Musí být jedinečný.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.cs.png)
+    ![Create project.](../../../../../../translated_images/cs/create-project.ca3b71298b90e420.png)
 
 1. Klikněte na **Create a project**.
 
@@ -192,17 +192,17 @@ Pro integraci vašeho vlastního modelu Phi-3 / Phi-3.5 do Prompt flow je potře
 
 1. V levém panelu vyberte **Endpoints**.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.cs.png)
+    ![Select endpoints.](../../../../../../translated_images/cs/select-endpoints.ee7387ecd68bd18d.png)
 
 1. Vyberte endpoint, který jste vytvořili.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.cs.png)
+    ![Select endpoints.](../../../../../../translated_images/cs/select-endpoint-created.9f63af5e4cf98b2e.png)
 
 1. V navigačním menu vyberte **Consume**.
 
 1. Zkopírujte váš **REST endpoint** a **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.cs.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/cs/copy-endpoint-key.0650c3786bd646ab.png)
 
 #### Přidání vlastního připojení
 
@@ -214,11 +214,11 @@ Pro integraci vašeho vlastního modelu Phi-3 / Phi-3.5 do Prompt flow je potře
 
 1. Klikněte na **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.cs.png)
+    ![Select new connection.](../../../../../../translated_images/cs/select-new-connection.fa0f35743758a74b.png)
 
 1. V navigačním menu vyberte **Custom keys**.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.cs.png)
+    ![Select custom keys.](../../../../../../translated_images/cs/select-custom-keys.5a3c6b25580a9b67.png)
 
 1. Proveďte následující kroky:
 
@@ -228,7 +228,7 @@ Pro integraci vašeho vlastního modelu Phi-3 / Phi-3.5 do Prompt flow je potře
     - Do pole pro název klíče zadejte **key** a vložte klíč z Azure ML Studia do pole hodnoty.
     - Po přidání klíčů zaškrtněte **is secret**, aby klíč nebyl veřejně viditelný.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.cs.png)
+    ![Add connection.](../../../../../../translated_images/cs/add-connection.ac7f5faf8b10b0df.png)
 
 1. Klikněte na **Add connection**.
 
@@ -242,15 +242,15 @@ Přidali jste vlastní připojení v Azure AI Foundry. Nyní vytvoříme Prompt 
 
 1. V navigačním menu klikněte na **+ Create**.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.cs.png)
+    ![Select Promptflow.](../../../../../../translated_images/cs/select-promptflow.18ff2e61ab9173eb.png)
 
 1. V navigačním menu vyberte **Chat flow**.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.cs.png)
+    ![Select chat flow.](../../../../../../translated_images/cs/select-flow-type.28375125ec9996d3.png)
 
 1. Zadejte **Folder name**, který chcete použít.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.cs.png)
+    ![Select chat flow.](../../../../../../translated_images/cs/enter-name.02ddf8fb840ad430.png)
 
 1. Klikněte na **Create**.
 
@@ -287,7 +287,7 @@ Je potřeba integrovat doladěný model Phi-3 / Phi-3.5 do Prompt flow. Existuj�
 
     - Klikněte na **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.cs.png)
+    ![Select raw file mode.](../../../../../../translated_images/cs/select-raw-file-mode.06c1eca581ce4f53.png)
 
 1. Přidejte následující kód do *integrate_with_promptflow.py* pro použití vlastního modelu Phi-3 / Phi-3.5 v Prompt flow.
 
@@ -350,14 +350,14 @@ Je potřeba integrovat doladěný model Phi-3 / Phi-3.5 do Prompt flow. Existuj�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.cs.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/cs/paste-promptflow-code.cd6d95b101c0ec28.png)
 
 > [!NOTE]
 > Pro podrobnější informace o používání Prompt flow v Azure AI Foundry můžete navštívit [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Vyberte **Chat input**, **Chat output** pro povolení chatu s vaším modelem.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.cs.png)
+    ![Select Input Output.](../../../../../../translated_images/cs/select-input-output.c187fc58f25fbfc3.png)
 
 1. Nyní jste připraveni chatovat s vaším vlastním modelem Phi-3 / Phi-3.5. V dalším cvičení se naučíte, jak spustit Prompt flow a používat ho k chatování s vaším doladěným modelem Phi-3 / Phi-3.5.
 
@@ -365,32 +365,32 @@ Je potřeba integrovat doladěný model Phi-3 / Phi-3.5 do Prompt flow. Existuj�
 >
 > Přestavěný flow by měl vypadat jako na obrázku níže:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.cs.png)
+> ![Flow example](../../../../../../translated_images/cs/graph-example.82fd1bcdd3fc545b.png)
 >
 
 #### Spuštění Prompt flow
 
 1. Klikněte na **Start compute sessions** pro spuštění Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.cs.png)
+    ![Start compute session.](../../../../../../translated_images/cs/start-compute-session.9acd8cbbd2c43df1.png)
 
 1. Klikněte na **Validate and parse input** pro obnovení parametrů.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.cs.png)
+    ![Validate input.](../../../../../../translated_images/cs/validate-input.c1adb9543c6495be.png)
 
 1. Vyberte **Value** u **connection** na vámi vytvořené vlastní připojení, například *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.cs.png)
+    ![Connection.](../../../../../../translated_images/cs/select-connection.1f2b59222bcaafef.png)
 
 #### Chatování s vaším vlastním modelem Phi-3 / Phi-3.5
 
 1. Klikněte na **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.cs.png)
+    ![Select chat.](../../../../../../translated_images/cs/select-chat.0406bd9687d0c49d.png)
 
 1. Zde je příklad výsledků: nyní můžete chatovat s vaším vlastním modelem Phi-3 / Phi-3.5. Doporučuje se klást otázky založené na datech použitých pro doladění.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.cs.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/cs/chat-with-promptflow.1cf8cea112359ada.png)
 
 ### Nasazení Azure OpenAI pro vyhodnocení modelu Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
 
 1. Přejděte do Azure AI Foundry projektu, který jste vytvořili.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.cs.png)
+    ![Select Project.](../../../../../../translated_images/cs/select-project-created.5221e0e403e2c9d6.png)
 
 1. V projektu vyberte v levém panelu **Deployments**.
 
@@ -410,11 +410,11 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
 
 1. Vyberte **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.cs.png)
+    ![Select Deployments.](../../../../../../translated_images/cs/deploy-openai-model.95d812346b25834b.png)
 
 1. Vyberte Azure OpenAI model, který chcete použít, například **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.cs.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/cs/select-openai-model.959496d7e311546d.png)
 
 1. Klikněte na **Confirm**.
 
@@ -426,17 +426,17 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
 
 1. Přejděte do Azure AI Foundry projektu, který jste vytvořili.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.cs.png)
+    ![Select Project.](../../../../../../translated_images/cs/select-project-created.5221e0e403e2c9d6.png)
 
 1. V projektu vyberte v levém panelu **Evaluation**.
 
 1. V navigačním menu klikněte na **+ New evaluation**.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.cs.png)
+    ![Select evaluation.](../../../../../../translated_images/cs/select-evaluation.2846ad7aaaca7f4f.png)
 
 1. Vyberte **Prompt flow** evaluaci.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.cs.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/cs/promptflow-evaluation.cb9758cc19b4760f.png)
 
 1. Proveďte následující kroky:
 
@@ -444,7 +444,7 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
     - Vyberte typ úlohy **Question and answer without context**, protože dataset **ULTRACHAT_200k** použitý v tomto tutoriálu neobsahuje kontext.
     - Vyberte prompt flow, které chcete vyhodnotit.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.cs.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/cs/evaluation-setting1.4aa08259ff7a536e.png)
 
 1. Klikněte na **Next**.
 
@@ -453,7 +453,7 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
     - Klikněte na **Add your dataset** pro nahrání datasetu. Například můžete nahrát testovací datasetový soubor, jako je *test_data.json1*, který je součástí staženého datasetu **ULTRACHAT_200k**.
     - Vyberte odpovídající **Dataset column**, která odpovídá vašemu datasetu. Například pokud používáte dataset **ULTRACHAT_200k**, vyberte **${data.prompt}** jako datasetovou kolonku.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.cs.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/cs/evaluation-setting2.07036831ba58d64e.png)
 
 1. Klikněte na **Next**.
 
@@ -462,7 +462,7 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
     - Vyberte metriky výkonu a kvality, které chcete použít.
     - Vyberte Azure OpenAI model, který jste vytvořili pro vyhodnocení, například **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.cs.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/cs/evaluation-setting3-1.d1ae69e3bf80914e.png)
 
 1. Proveďte následující kroky pro nastavení metrik rizika a bezpečnosti:
 
@@ -472,7 +472,7 @@ Pro vyhodnocení modelu Phi-3 / Phi-3.5 v Azure AI Foundry je potřeba nasadit m
     - Pro **answer** vyberte **Data source** na **{$run.outputs.answer}**.
     - Pro **ground_truth** vyberte **Data source** na **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.cs.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/cs/evaluation-setting3-2.d53bd075c60a45a2.png)
 
 1. Klikněte na **Next**.
 
@@ -489,17 +489,17 @@ Po dokončení hodnocení můžete zkontrolovat výsledky jak pro metriky výkon
 
     - zhodnoťte efektivitu modelu při generování koherentních, plynulých a relevantních odpovědí.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.cs.png)
+    ![Evaluation result.](../../../../../../translated_images/cs/evaluation-result-gpu.85f48b42dfb74254.png)
 
 1. Metriky rizika a bezpečnosti:
 
     - zajistěte, aby výstupy modelu byly bezpečné a odpovídaly zásadám Responsible AI, vyhýbající se škodlivému nebo urážlivému obsahu.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.cs.png)
+    ![Evaluation result.](../../../../../../translated_images/cs/evaluation-result-gpu-2.1b74e336118f4fd0.png)
 
 1. Můžete posunout stránku dolů a zobrazit **Podrobné výsledky metrik**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.cs.png)
+    ![Evaluation result.](../../../../../../translated_images/cs/detailed-metrics-result.afa2f5c39a4f5f17.png)
 
 1. Hodnocením vašeho vlastního modelu Phi-3 / Phi-3.5 podle metrik výkonu i bezpečnosti můžete potvrdit, že model není jen efektivní, ale také dodržuje zásady odpovědné AI, což ho připravuje na nasazení v reálném světě.
 
@@ -509,7 +509,7 @@ Po dokončení hodnocení můžete zkontrolovat výsledky jak pro metriky výkon
 
 Úspěšně jste vyhodnotili doladěný model Phi-3 integrovaný s Prompt flow v Azure AI Foundry. Tento krok je důležitý pro zajištění, že vaše AI modely nejen dobře fungují, ale také dodržují zásady Responsible AI od Microsoftu, což vám pomůže vytvářet důvěryhodné a spolehlivé AI aplikace.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.cs.png)
+![Architecture.](../../../../../../translated_images/cs/architecture.10bec55250f5d6a4.png)
 
 ## Úklid Azure zdrojů
 

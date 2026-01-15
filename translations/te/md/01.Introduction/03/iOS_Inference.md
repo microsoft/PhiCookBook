@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 నేను App అభివృద్ధి విధంగా Objective-Cను ఎంచుకున్నాను, ఎందుకంటే ONNX Runtime C++ APIతో జనరేటివ్ AI ఉపయోగించినప్పుడు Objective-C బెటర్ అనుకూలత కలిగి ఉంటుంది. ఖచ్చితంగా, మీరు Swift బ్రిడ్జింగ్ ద్వారా సంబంధిత కాల్‌లను కూడా పూర్తి చేయవచ్చు.
 
-![Xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.te.png)
+![Xcode](../../../../../translated_images/te/xcode.8147789e6c25e3e2.png)
 
 ## **5. ONNX క్వాంటైజ్డ్ INT4 మోడల్‌ను App ప్రాజెక్ట్‌లోకి కాపీ చేయడం**
 
 మా వద్ద ONNX ఫార్మాట్‌లోని INT4 క్వాంటైజేషన్ మోడల్‌ను దిగుమతి చేయాల్సి ఉంటుంది, దానిని ముందుగా డౌన్లోడ్ చేయాలి
 
-![Hugging Face](../../../../../translated_images/hf.6b8504fd88ee48dd.te.png)
+![Hugging Face](../../../../../translated_images/te/hf.6b8504fd88ee48dd.png)
 
 డౌన్లోడ్ చేసిన తర్వాత, దాన్ని Xcodeలో ప్రాజెక్ట్ యొక్క Resources డైరెక్టరీలో జత చేయాలి.
 
-![మోడల్](../../../../../translated_images/model.3b879b14e0be877d.te.png)
+![మోడల్](../../../../../translated_images/te/model.3b879b14e0be877d.png)
 
 ## **6. ViewControllersలో C++ API చేర్చడం**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** సంబంధిత C++ హెడ్డర్ ఫైళ్లను ప్రాజెక్ట్‌లో జత చేయండి.
 
-  ![హెడ్డర్ ఫైల్](../../../../../translated_images/head.64cad021ce70a333.te.png)
+  ![హెడ్డర్ ఫైల్](../../../../../translated_images/te/head.64cad021ce70a333.png)
 
 - **b.** Xcodeలో `onnxruntime-genai` డైనమిక్ లైబ్రరీని చేర్చండి.
 
-  ![లైబ్రరీ](../../../../../translated_images/lib.a4209b9f21ddf344.te.png)
+  ![లైబ్రరీ](../../../../../translated_images/te/lib.a4209b9f21ddf344.png)
 
 - **c.** టెస్టింగ్ కోసం C Samples కో드를 ఉపయోగించండి.您 మీరు ఎక్కువ ఫంక్షనాలిటీ కోసం ChatUI వంటి అదనపు ఫీచర్లను కూడా జోడించవచ్చు.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 సెట్‌అప్ పూర్తయిన తర్వాత, Phi-3-mini మోడల్ ఇన్ఫరెన్స్ ఫలితాలను చూడటానికి మీరు అప్లికేషన్‌ను రన్ చేయవచ్చు.
 
-![రన్ ఫలితం](../../../../../translated_images/result.326a947a6a2b9c51.te.jpg)
+![రన్ ఫలితం](../../../../../translated_images/te/result.326a947a6a2b9c51.jpg)
 
 మరింత నమూనా కోడ్ మరియు విస్తృత సూచనల కోసం, [Phi-3 Mini నమూనా రిపోజిటరీ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ను సందర్శించండి.
 

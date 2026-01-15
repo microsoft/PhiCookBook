@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** Ако не желите да компајлирате, можете прескочити овај корак
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.sr.png)
+![CPP](../../../../../../translated_images/sr/01.42f52a2b2aedff02.png)
 
 ### **4. Инсталирајте NVIDIA драјвер**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    Отворите [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) и извршите
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.sr.png)
+![RESULT](../../../../../../translated_images/sr/02.b9b06996cf7255d5.png)
 
 ### **8. Компилација ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - Користећи Windows Terminal, отворите Developer Command Prompt за VS 2022 и идите у onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.sr.png)
+![RESULT](../../../../../../translated_images/sr/03.b83ce473d5ff9b9b.png)
 
    - Компилирајте користећи ваше Python окружење
 

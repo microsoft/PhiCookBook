@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Copilot অ্যাপ্লিকেশনে, আমরা Semantic Kernel / LangChain এর মাধ্যমে অ্যাপ্লিকেশন তৈরি করি। এই ধরনের অ্যাপ্লিকেশন ফ্রেমওয়ার্ক সাধারণত Azure OpenAI Service / OpenAI মডেলগুলোর সাথে সামঞ্জস্যপূর্ণ, এবং Hugging Face এর ওপেন সোর্স মডেল এবং লোকাল মডেলগুলোকেও সাপোর্ট করতে পারে। যদি আমরা Semantic Kernel ব্যবহার করে Phi-3-mini অ্যাক্সেস করতে চাই, তাহলে কী করা উচিত? .NET উদাহরণ হিসেবে নিয়ে, আমরা এটিকে Semantic Kernel এর Hugging Face Connector এর সাথে মিলিয়ে ব্যবহার করতে পারি। ডিফল্ট হিসেবে, এটি Hugging Face এর মডেল আইডির সাথে মিলে যায় (প্রথমবার ব্যবহার করলে মডেলটি Hugging Face থেকে ডাউনলোড হবে, যা কিছুটা সময় নেয়)। এছাড়াও, আপনি নিজে তৈরি করা লোকাল সার্ভিসের সাথে সংযুক্ত হতে পারেন। এই দুইটির মধ্যে তুলনা করলে, আমরা পরেরটি ব্যবহার করার পরামর্শ দিই কারণ এতে স্বায়ত্তশাসনের মাত্রা বেশি থাকে, বিশেষ করে এন্টারপ্রাইজ অ্যাপ্লিকেশনগুলোর ক্ষেত্রে।
 
-![sk](../../../../../translated_images/sk.d03785c25edc6d44.bn.png)
+![sk](../../../../../translated_images/bn/sk.d03785c25edc6d44.png)
 
 চিত্র থেকে দেখা যাচ্ছে, Semantic Kernel এর মাধ্যমে লোকাল সার্ভিস অ্যাক্সেস করে সহজেই নিজে তৈরি করা Phi-3-mini মডেল সার্ভারের সাথে সংযোগ করা যায়। নিচে রানিং ফলাফল দেওয়া হলো।
 
-![skrun](../../../../../translated_images/skrun.5aafc1e7197dca20.bn.png)
+![skrun](../../../../../translated_images/bn/skrun.5aafc1e7197dca20.png)
 
 ***Sample Code*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 

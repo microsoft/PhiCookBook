@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
-  "translation_date": "2025-09-12T14:29:01+00:00",
+  "original_hash": "7f72d7981ed3640865700f51ae407da4",
+  "translation_date": "2026-01-14T16:17:08+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "lt"
 }
@@ -11,68 +11,68 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Apžvalga
 
-Interaktyvus Phi 3 Mini 4K Instruct pokalbių robotas yra įrankis, leidžiantis vartotojams bendrauti su Microsoft Phi 3 Mini 4K instruct demonstracine versija naudojant tekstinį arba garso įvestį. Pokalbių robotas gali būti naudojamas įvairioms užduotims, tokioms kaip vertimas, orų prognozės ir bendros informacijos rinkimas.
+Interaktyvus Phi 3 Mini 4K Instruct pokalbių robotas yra įrankis, leidžiantis vartotojams bendrauti su Microsoft Phi 3 Mini 4K instruct demonstracija naudojant teksto arba garso įvestį. Šis pokalbių robotas gali būti naudojamas įvairioms užduotims, tokioms kaip vertimas, orų atnaujinimai ir bendros informacijos rinkimas.
 
 ### Pradžia
 
-Norėdami naudotis šiuo pokalbių robotu, atlikite šiuos veiksmus:
+Norėdami naudoti šį pokalbių robotą, tiesiog vadovaukitės šiomis instrukcijomis:
 
 1. Atidarykite naują [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
-2. Pagrindiniame užrašinės lange pamatysite pokalbių lango sąsają su tekstinės įvesties laukeliu ir mygtuku „Siųsti“.
-3. Norėdami naudotis tekstiniu pokalbių robotu, tiesiog įveskite savo žinutę į tekstinės įvesties laukelį ir spustelėkite mygtuką „Siųsti“. Pokalbių robotas atsakys garso failu, kurį galima paleisti tiesiogiai užrašinėje.
+2. Užrašo pagrindiniame lange pamatysite pokalbių lango sąsają su teksto įvesties laukeliu ir mygtuku „Send“.
+3. Norėdami naudoti teksto pagrindu veikiantį pokalbių robotą, tiesiog įveskite savo žinutę į teksto įvesties laukelį ir spustelėkite mygtuką „Send“. Pokalbių robotas atsakys garso failu, kurį galima tiesiogiai leisti užraše.
 
 **Pastaba**: Šiam įrankiui reikalinga GPU ir prieiga prie Microsoft Phi-3 bei OpenAI Whisper modelių, kurie naudojami kalbos atpažinimui ir vertimui.
 
 ### GPU reikalavimai
 
-Norint paleisti šią demonstracinę versiją, reikia 12 GB GPU atminties.
+Norint paleisti šią demonstraciją, reikia 12 GB GPU atminties.
 
-Atminties reikalavimai, skirti **Microsoft-Phi-3-Mini-4K instruct** demonstracinei versijai GPU, priklausys nuo kelių veiksnių, tokių kaip įvesties duomenų dydis (garso ar teksto), naudojama vertimo kalba, modelio greitis ir GPU turima atmintis.
+Atminties poreikiai paleidžiant **Microsoft-Phi-3-Mini-4K instruct** demonstraciją GPU priklausys nuo kelių veiksnių, tokių kaip įvesties duomenų dydis (garso ar teksto), vertimui naudojama kalba, modelio greitis ir prieinama atmintis GPU.
 
-Apskritai, Whisper modelis yra sukurtas veikti su GPU. Rekomenduojamas minimalus GPU atminties kiekis Whisper modeliui yra 8 GB, tačiau jis gali apdoroti ir didesnį atminties kiekį, jei reikia.
+Paprastai Whisper modelis sukurtas veikti GPU. Rekomenduojamas minimalus GPU atminties kiekis Whisper modeliui paleisti yra 8 GB, tačiau jis gali naudoti ir didesnę atmintį, jei to reikia.
 
-Svarbu pažymėti, kad didelio duomenų kiekio ar didelio užklausų srauto apdorojimas modelyje gali reikalauti daugiau GPU atminties ir/arba sukelti našumo problemų. Rekomenduojama išbandyti savo naudojimo atvejį su skirtingomis konfigūracijomis ir stebėti atminties naudojimą, kad nustatytumėte optimalias nuostatas savo specifiniams poreikiams.
+Svarbu pažymėti, kad didelio duomenų kiekio ar didelio užklausų srauto paleidimas modeliui gali prireikti daugiau GPU atminties ir/ar gali sukelti našumo problemų. Rekomenduojama išbandyti savo naudojimo scenarijų su skirtingomis konfigūracijomis ir stebėti atminties naudojimą, kad nustatytumėte optimalias nustatymų reikšmes jūsų konkretiems poreikiams.
 
 ## E2E pavyzdys interaktyviam Phi 3 Mini 4K Instruct pokalbių robotui su Whisper
 
-Užrašinė pavadinimu [Interaktyvus Phi 3 Mini 4K Instruct pokalbių robotas su Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) demonstruoja, kaip naudoti Microsoft Phi 3 Mini 4K instruct demonstracinę versiją tekstui generuoti iš garso ar rašytinės teksto įvesties. Užrašinėje apibrėžiamos kelios funkcijos:
+Jupyter užrašas pavadinimu [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) demonstruoja, kaip naudoti Microsoft Phi 3 Mini 4K instruct demonstraciją tekstui sugeneruoti iš garso arba rašytinio teksto įvesties. Užraše apibrėžtos kelios funkcijos:
 
-1. `tts_file_name(text)`: Ši funkcija generuoja failo pavadinimą pagal įvesties tekstą, skirtą sugeneruotam garso failui išsaugoti.
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Ši funkcija naudoja Edge TTS API, kad sugeneruotų garso failą iš teksto dalių sąrašo. Įvesties parametrai yra dalių sąrašas, kalbėjimo greitis, balso pavadinimas ir išsaugojimo kelias sugeneruotam garso failui.
-1. `talk(input_text)`: Ši funkcija generuoja garso failą naudodama Edge TTS API ir išsaugo jį atsitiktiniu failo pavadinimu kataloge /content/audio. Įvesties parametras yra tekstas, kurį reikia konvertuoti į kalbą.
-1. `run_text_prompt(message, chat_history)`: Ši funkcija naudoja Microsoft Phi 3 Mini 4K instruct demonstracinę versiją, kad sugeneruotų garso failą iš žinutės įvesties ir prideda jį prie pokalbių istorijos.
-1. `run_audio_prompt(audio, chat_history)`: Ši funkcija konvertuoja garso failą į tekstą naudodama Whisper modelio API ir perduoda jį funkcijai `run_text_prompt()`.
-1. Kodas paleidžia Gradio programą, leidžiančią vartotojams bendrauti su Phi 3 Mini 4K instruct demonstracine versija, įvedant žinutes arba įkeliant garso failus. Rezultatas rodomas kaip tekstinė žinutė programos viduje.
+1. `tts_file_name(text)`: ši funkcija sukuria failo pavadinimą pagal įvestą tekstą, skirtą sugeneruotam garso failui išsaugoti.
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: ši funkcija naudoja Edge TTS API, kad sugeneruotų garso failą iš tekstinių dalių sąrašo. Įvesties parametrai – dalių sąrašas, kalbėjimo greitis, balso pavadinimas ir išvesties kelias sugeneruotam garso failui išsaugoti.
+1. `talk(input_text)`: ši funkcija sugeneruoja garso failą naudodama Edge TTS API ir išsaugo jį atsitiktiniu pavadinimu kataloge /content/audio. Įvesties parametras yra tekstas, kuris bus paverstas kalba.
+1. `run_text_prompt(message, chat_history)`: ši funkcija naudoja Microsoft Phi 3 Mini 4K instruct demonstraciją, kad sugeneruotų garso failą iš žinutės įvesties ir prideda jį prie pokalbio istorijos.
+1. `run_audio_prompt(audio, chat_history)`: ši funkcija paverčia garso failą tekstu naudodama Whisper modelio API ir perduoda rezultatą funkcijai `run_text_prompt()`.
+1. Kodas paleidžia Gradio programėlę, leidžiančią vartotojams bendrauti su Phi 3 Mini 4K instruct demonstracija tiek rašant žinutes, tiek įkelti garso failus. Išvestis rodoma kaip teksto žinutė programėlėje.
 
 ## Trikčių šalinimas
 
-Cuda GPU tvarkyklių diegimas
+Cuda GPU vairuotojų įdiegimas
 
-1. Įsitikinkite, kad jūsų Linux programos yra atnaujintos
+1. Įsitikinkite, kad jūsų Linux sistema yra atnaujinta
 
     ```bash
     sudo apt update
     ```
 
-1. Įdiekite Cuda tvarkykles
+1. Įdiekite Cuda vairuotojus
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-1. Užregistruokite Cuda tvarkyklių vietą
+1. Užregistruokite cuda vairuotojo vietą
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-1. Patikrinkite Nvidia GPU atminties dydį (Reikalinga 12 GB GPU atminties)
+1. Patikrinkite Nvidia GPU atminties dydį (reikalaujama 12GB GPU atminties)
 
     ```bash
     nvidia-smi
     ```
 
-1. Išvalykite talpyklą: Jei naudojate PyTorch, galite iškviesti torch.cuda.empty_cache(), kad atlaisvintumėte visą nenaudojamą talpyklos atmintį, kad ją galėtų naudoti kitos GPU programos.
+1. Ištuštinkite talpyklą: jei naudojate PyTorch, galite iškviesti torch.cuda.empty_cache(), kad atlaisvintumėte nenaudojamą talpyklos atmintį, kad ją galėtų naudoti kitos GPU programos
 
     ```python
     torch.cuda.empty_cache() 
@@ -86,12 +86,12 @@ Cuda GPU tvarkyklių diegimas
 
 1. Atlikite šiuos veiksmus, kad sukurtumėte Hugging Face tokeną.
 
-    - Eikite į [Hugging Face Token Settings puslapį](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
+    - Eikite į [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
     - Pasirinkite **New token**.
-    - Įveskite projekto **Name**, kurį norite naudoti.
-    - Pasirinkite **Type** kaip **Write**.
+    - Įveskite norimo naudoti projekto **Name**.
+    - Pasirinkite **Type** – **Write**.
 
-> **Pastaba**
+> [!NOTE]
 >
 > Jei susiduriate su šia klaida:
 >
@@ -99,7 +99,7 @@ Cuda GPU tvarkyklių diegimas
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Norėdami ją išspręsti, įveskite šią komandą savo terminale.
+> Norėdami ją išspręsti, terminale įveskite šią komandą.
 >
 > ```bash
 > sudo ldconfig
@@ -107,5 +107,7 @@ Cuda GPU tvarkyklių diegimas
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Autentiškas šio dokumento šaltinis yra originali kalba. Svarbiai informacijai rekomenduojamas profesionalus vertimas žmogaus. Mes neatsakome už bet kokius nesusipratimus ar klaidingus aiškinimus, kilusius iš šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

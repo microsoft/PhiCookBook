@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ఫలితం (నా env Apple M1 Max,64GB) ఈ విధంగా ఉంది
 
-![టెర్మినల్](../../../../../translated_images/01.5cf57df8f7407cf9.te.png)
+![టెర్మినల్](../../../../../translated_images/te/01.5cf57df8f7407cf9.png)
 
 ### **3. Terminal లో MLX తో Phi-3-mini ను క్వాంటైజ్ చేయడం**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ఫలితం ఇదే
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.te.png)
+![INT4](../../../../../translated_images/te/02.7b188681a8eadbc1.png)
 
 
 ### **4. Jupyter Notebook లో MLX తో Phi-3-mini అమలు చేయడం**
 
 
-![నోట్‌బుక్](../../../../../translated_images/03.b9705a3a5aaa89f9.te.png)
+![నోట్‌బుక్](../../../../../translated_images/te/03.b9705a3a5aaa89f9.png)
 
 ***Note:*** దయచేసి ఈ సాంపిల్‌ను చదవండి [ఈ లింక్‌ను క్లిక్ చేయండి](../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

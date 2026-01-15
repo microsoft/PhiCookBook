@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 एडाप्टरहरू रिमोट वातावरणमा तालिम दिइसकेपछि, मोडेलसँग अन्तरक्रिया गर्न एक सरल Gradio एप्लिकेशन प्रयोग गर्नुहोस्।
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ne.png)
+![Fine-tune complete](../../../../../translated_images/ne/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Azure स्रोतहरू प्रावधान गर्नुहोस्  
 रिमोट इन्फरेन्सका लागि Azure स्रोतहरू सेटअप गर्न, कमाण्ड प्यालेटबाट `AI Toolkit: Provision Azure Container Apps for inference` कमाण्ड चलाउनुहोस्। यस सेटअपको क्रममा, तपाईंलाई आफ्नो Azure Subscription र resource group चयन गर्न भनिनेछ।  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ne.png)
+![Provision Inference Resource](../../../../../translated_images/ne/command-provision-inference.467afc8d351642fc.png)
 
 डिफल्ट रूपमा, इन्फरेन्सका लागि प्रयोग हुने subscription र resource group फाइन-ट्यूनिङमा प्रयोग भएका समान हुनुपर्छ। इन्फरेन्सले फाइन-ट्यूनिङ चरणमा सिर्जना गरिएको Azure Files मा भण्डारण गरिएको मोडेल र मोडेल एडाप्टर पहुँच गर्नका लागि उही Azure Container App Environment प्रयोग गर्नेछ।
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### इन्फरेन्सका लागि डिप्लोयमेन्ट  
 यदि तपाईं इन्फरेन्स कोड पुनः संशोधन गर्न वा इन्फरेन्स मोडेल पुनः लोड गर्न चाहनुहुन्छ भने, कृपया `AI Toolkit: Deploy for inference` कमाण्ड चलाउनुहोस्। यसले तपाईंको पछिल्लो कोडलाई ACA सँग समक्रमण गर्नेछ र रेप्लिका पुनः सुरु गर्नेछ।
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ne.png)
+![Deploy for inference](../../../../../translated_images/ne/command-deploy.9adb4e310dd0b0ae.png)
 
 डिप्लोयमेन्ट सफलतापूर्वक सम्पन्न भएपछि, मोडेल मूल्याङ्कनका लागि यो एन्डपोइन्ट प्रयोग गर्न तयार हुन्छ।
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 VSCode नोटिफिकेसनमा देखिने "*Go to Inference Endpoint*" बटनमा क्लिक गरेर तपाईं इन्फरेन्स API पहुँच गर्न सक्नुहुन्छ। वैकल्पिक रूपमा, वेब API एन्डपोइन्ट `ACA_APP_ENDPOINT` अन्तर्गत `./infra/inference.config.json` फाइलमा र आउटपुट प्यानलमा फेला पार्न सकिन्छ।
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.ne.png)
+![App Endpoint](../../../../../translated_images/ne/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** इन्फरेन्स एन्डपोइन्ट पूर्ण रूपमा सञ्चालनमा आउन केही मिनेट लाग्न सक्छ।
 

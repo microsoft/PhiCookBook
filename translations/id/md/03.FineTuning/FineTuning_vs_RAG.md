@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG adalah pengambilan data + pembuatan teks. Data terstruktur dan tidak terstruktur dari perusahaan disimpan dalam database vektor. Saat mencari konten yang relevan, ringkasan dan konten yang sesuai ditemukan untuk membentuk konteks, lalu kemampuan penyelesaian teks dari LLM/SLM digabungkan untuk menghasilkan konten.
 
 ## Proses RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.id.png)
+![FinetuningvsRAG](../../../../translated_images/id/rag.2014adc59e6f6007.png)
 
 ## Fine-tuning
 Fine-tuning didasarkan pada peningkatan model tertentu. Tidak perlu memulai dari algoritma model, tetapi data harus terus dikumpulkan. Jika Anda menginginkan terminologi dan ekspresi bahasa yang lebih tepat dalam aplikasi industri, fine-tuning adalah pilihan yang lebih baik. Namun, jika data Anda sering berubah, fine-tuning bisa menjadi rumit.

@@ -42,7 +42,7 @@ Prompt Flow တွင် အတွင်းပိုင်းကိရိယာ�
 
 Microsoft Prompt Flow တွင် သုံးသပ်ခြင်းသည် သင့် AI မော်ဒယ်များ၏ စွမ်းဆောင်ရည်ကို သုံးသပ်ရာတွင် အရေးကြီးသော အခန်းကဏ္ဍတစ်ခုဖြစ်သည်။ Prompt Flow အတွင်း သုံးသပ်မှု flow များနှင့် မီထရစ်များကို မည်သို့ စိတ်ကြိုက်ပြင်ဆင်နိုင်သည်ကို ကြည့်ကြရအောင်-
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.my.png)
+![PFVizualise](../../../../../translated_images/my/pfvisualize.c1d9ca75baa2a222.png)
 
 **Prompt Flow တွင် သုံးသပ်မှုကို နားလည်ခြင်း**
 

@@ -67,7 +67,7 @@ Azure ML သည် LLMOps နှင့် SLMOps ကို ပေါင်းစ
 
 လုပ်ငန်းအသုံးပြုသူများသည် Model Catalog မှတဆင့် ကွဲပြားသော စီးပွားရေးအခြေအနေများအလိုက် မော်ဒယ်များကို တပ်ဆင်နိုင်ပြီး၊ လုပ်ငန်းဖန်တီးသူများ သို့မဟုတ် အသုံးပြုသူများအတွက် Model as Service အဖြစ် ဝန်ဆောင်မှုပေးနိုင်သည်။
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.my.png)
+![models](../../../../translated_images/my/models.e6c7ff50a51806fd.png)
 
 Azure Machine Learning studio တွင်ရှိသော Model Catalog သည် Generative AI အပလီကေးရှင်းများ ဖန်တီးရန် အသုံးပြုနိုင်သော မော်ဒယ်အမျိုးမျိုးကို ရှာဖွေ အသုံးပြုနိုင်သော ဗဟိုစင်တာဖြစ်သည်။ Model Catalog တွင် Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face ကဲ့သို့သော မော်ဒယ်ပံ့ပိုးသူများမှ မော်ဒယ်များနှင့် Microsoft မှ လေ့ကျင့်ထားသော မော်ဒယ်များ ရှိသည်။ Microsoft မဟုတ်သော ပံ့ပိုးသူများမှ မော်ဒယ်များကို Microsoft ၏ Product Terms အရ Non-Microsoft Products ဟု သတ်မှတ်ပြီး မော်ဒယ်နှင့်အတူ ပေးထားသော စည်းမျဉ်းများအရ အသုံးပြုရမည်ဖြစ်သည်။
 
@@ -77,7 +77,7 @@ machine learning pipeline ၏ အဓိကအချက်မှာ machine learn
 
 SLM / LLM ကို fine-tuning ပြုလုပ်ရာတွင် Pipeline မှတဆင့် ဒေတာ၊ လေ့ကျင့်မှုနှင့် ဖန်တီးမှု လုပ်ငန်းစဉ်များကို စီမံနိုင်သည်။
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.my.png)
+![finetuning](../../../../translated_images/my/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

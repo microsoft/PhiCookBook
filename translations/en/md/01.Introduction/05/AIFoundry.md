@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Using Azure AI Foundry for Evaluation**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.en.png)
+![aistudo](../../../../../translated_images/en/AIFoundry.9e0b513e999a1c5a.png)
 
 Learn how to evaluate your generative AI application using [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Whether you're testing single-turn or multi-turn conversations, Azure AI Foundry offers tools to assess model performance and safety.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.en.png)
+![aistudo](../../../../../translated_images/en/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## How to Evaluate Generative AI Apps with Azure AI Foundry
 For detailed instructions, see the [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

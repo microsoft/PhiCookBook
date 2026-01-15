@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ево прегледа овог E2E примера.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.sr.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/sr/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### Садржај
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *azure machine learning* у **претраживач мени** на врху странице портала и изаберите **Azure Machine Learning** из појављених опција.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.sr.png)
+    ![Type azure machine learning.](../../../../../../translated_images/sr/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. Изаберите **+ Create** из навигационог менија.
 
 3. Изаберите **New workspace** из навигационог менија.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.sr.png)
+    ![Select new workspace.](../../../../../../translated_images/sr/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. Извршите следеће задатке:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Application insights** за коришћење (направите нову ако је потребно).
     - Изаберите **Container registry** за коришћење (направите нову ако је потребно).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.sr.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/sr/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. Изаберите **Review + Create**.
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Virtual machine family** коју желите да користите. На пример, изаберите **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, који укључује *Standard_NC24ads_A100_v4* GPU.
     - Изаберите **Request quota** из навигационог менија.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.sr.png)
+        ![Request quota.](../../../../../../translated_images/sr/02-02-request-quota.c0428239a63ffdd5.png)
 
     - На страници Request quota унесите **New cores limit** коју желите да користите. На пример, 24.
     - На страници Request quota изаберите **Submit** да пошаљете захтев за GPU квоту.
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *managed identities* у **претраживач мени** на врху странице портала и изаберите **Managed Identities** из појављених опција.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.sr.png)
+    ![Type managed identities.](../../../../../../translated_images/sr/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. Изаберите **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.sr.png)
+    ![Select create.](../../../../../../translated_images/sr/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. Извршите следеће задатке:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Region** коју желите да користите.
     - Унесите **Name**. Мора бити јединствено име.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.sr.png)
+    ![Select create.](../../../../../../translated_images/sr/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. Изаберите **Review + create**.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Resource group** коју користите.
     - Изаберите улогу **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.sr.png)
+    ![Fill contributor role.](../../../../../../translated_images/sr/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. Изаберите **Save**.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *storage accounts* у **претраживач мени** на врху странице портала и изаберите **Storage accounts** из појављених опција.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.sr.png)
+    ![Type storage accounts.](../../../../../../translated_images/sr/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Изаберите налог за складиштење који је повезан са Azure Machine Learning workspace-ом који сте креирали. На пример, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **+ Add** из навигационог менија.
     - Изаберите **Add role assignment** из навигационог менија.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.sr.png)
+    ![Add role.](../../../../../../translated_images/sr/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. На страници Add role assignment, извршите следеће задатке:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите Manage Identity коју сте креирали. На пример, *finetunephi-managedidentity*.
     - Кликните **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.sr.png)
+    ![Select managed identity.](../../../../../../translated_images/sr/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. Изаберите **Review + assign**.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *container registries* у **претраживач мени** на врху странице и изаберите **Container registries** из појављених опција.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.sr.png)
+    ![Type container registries.](../../../../../../translated_images/sr/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Изаберите регистратор контејнера који је повезан са Azure Machine Learning workspace-ом. На пример, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите фасциклу *finetune-phi* коју сте креирали, која се налази на *C:\Users\yourUserName\finetune-phi*.
 
-    ![Изаберите фасциклу коју сте креирали.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.sr.png)
+    ![Изаберите фасциклу коју сте креирали.](../../../../../../translated_images/sr/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. У левом панелу Visual Studio Code, кликните десним тастером мишa и изаберите **New File** да бисте креирали нову датотеку са именом *download_dataset.py*.
 
-    ![Креирајте нову датотеку.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.sr.png)
+    ![Креирајте нову датотеку.](../../../../../../translated_images/sr/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### Припрема скупа података за финетјунинг
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **+ New**.
 
-    ![Изаберите compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.sr.png)
+    ![Изаберите compute.](../../../../../../translated_images/sr/06-01-select-compute.a29cff290b480252.png)
 
 1. Урадите следеће:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Филтрирајте **Virtual machine size** на **Select from all options**.
     - Изаберите величину виртуелне машине **Standard_NC24ads_A100_v4**.
 
-    ![Креирање кластера.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.sr.png)
+    ![Креирање кластера.](../../../../../../translated_images/sr/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. Изаберите **Next**.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Maximum number of nodes** као **1**.
     - Поставите **Idle seconds before scale down** на **120**.
 
-    ![Креирање кластера.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.sr.png)
+    ![Креирање кластера.](../../../../../../translated_images/sr/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. Изаберите **Create**.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите Azure Machine Learning радно окружење које сте креирали.
 
-    ![Изаберите радно окружење које сте креирали.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.sr.png)
+    ![Изаберите радно окружење које сте креирали.](../../../../../../translated_images/sr/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Урадите следеће:
 
     - Изаберите **Model catalog** са левог менија.
     - У траку за претрагу укуцајте *phi-3-mini-4k* и изаберите **Phi-3-mini-4k-instruct** из понуђених опција.
 
-    ![Укуцајте phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.sr.png)
+    ![Укуцајте phi-3-mini-4k.](../../../../../../translated_images/sr/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. Изаберите **Fine-tune** из навигационог менија.
 
-    ![Изаберите финетјунинг.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.sr.png)
+    ![Изаберите финетјунинг.](../../../../../../translated_images/sr/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. Урадите следеће:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - За тип отпремања Validation података изаберите **Provide different validation data**.
     - Изаберите **+ Select data** да бисте отпремили **Validation data**.
 
-    ![Попуните страницу финетјунинга.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.sr.png)
+    ![Попуните страницу финетјунинга.](../../../../../../translated_images/sr/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. У овом вежбању успешно сте финетјунирали Phi-3 модел користећи Azure Machine Learning. Имајте у виду да процес финетјунинга може потрајати значајно време. Након покретања финетјунинг задатка, сачекајте да се заврши. Статус можете пратити у опцији Jobs на левој страни Azure Machine Learning Workspace-а. У следећем делу ћете урадити деплој финетјунираног модела и интегрисати га са Prompt flow.
 
-    ![Преглед финетјунинг задатка.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.sr.png)
+    ![Преглед финетјунинг задатка.](../../../../../../translated_images/sr/06-08-output.2bd32e59930672b1.png)
 
 ### Деплуј финетјунирани Phi-3 модел
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите Azure Machine Learning workspace који сте креирали.
 
-    ![Изаберите радно окружење које сте креирали.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.sr.png)
+    ![Изаберите радно окружење које сте креирали.](../../../../../../translated_images/sr/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. Изаберите **Models** са левог менија.
 1. Изаберите **+ Register**.
 1. Изаберите **From a job output**.
 
-    ![Региструјте модел.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.sr.png)
+    ![Региструјте модел.](../../../../../../translated_images/sr/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. Изаберите задатак који сте креирали.
 
-    ![Изаберите задатак.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.sr.png)
+    ![Изаберите задатак.](../../../../../../translated_images/sr/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. Изаберите **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Проверите да је изабран **Job output**; требало би да буде аутоматски одабран.
 
-    ![Изаберите излаз.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.sr.png)
+    ![Изаберите излаз.](../../../../../../translated_images/sr/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. Изаберите **Next**.
 
 3. Изаберите **Register**.
 
-    ![Изаберите регистрацију.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.sr.png)
+    ![Изаберите регистрацију.](../../../../../../translated_images/sr/07-04-register.fd82a3b293060bc7.png)
 
 4. Можете видети регистрован модел тако што ћете отићи у мени **Models** са левог панела.
 
-    ![Регистрован модел.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.sr.png)
+    ![Регистрован модел.](../../../../../../translated_images/sr/07-05-registered-model.7db9775f58dfd591.png)
 
 #### Деплој финетјунираног модела
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **Real-time endpoints** из навигационог менија.
 
-    ![Креирање крајње тачке.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.sr.png)
+    ![Креирање крајње тачке.](../../../../../../translated_images/sr/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. Изаберите **Create**.
 
 1. Изаберите регистровани модел који сте креирали.
 
-    ![Изаберите регистровани модел.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.sr.png)
+    ![Изаберите регистровани модел.](../../../../../../translated_images/sr/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. Изаберите **Select**.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Унесите **Endpoint name**. Мора бити јединствен.
     - Унесите **Deployment name**. Мора бити јединствен.
 
-    ![Попуните подешавања деплоја.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.sr.png)
+    ![Попуните подешавања деплоја.](../../../../../../translated_images/sr/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. Изаберите **Deploy**.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите крајњу тачку коју сте креирали.
 
-    ![Изаберите крајње тачке](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.sr.png)
+    ![Изаберите крајње тачке](../../../../../../translated_images/sr/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. На овој страници можете управљати крајњим тачкама током процеса деплоја.
 
 > [!NOTE]
 > Након што је деплој завршен, уверите се да је **Live traffic** постављен на **100%**. Ако није, изаберите **Update traffic** да бисте подесили саобраћај. Имајте у виду да не можете тестирати модел ако је саобраћај постављен на 0%.
 >
-> ![Подесите саобраћај.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.sr.png)
+> ![Подесите саобраћај.](../../../../../../translated_images/sr/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## Сценарио 3: Интеграција са Prompt flow и ћаскање са вашим прилагођеним моделом у Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Изаберите **All hubs** са левог менија.
 
 1. Изаберите **+ New hub** из навигационог менија.
-    ![Направите хаб.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.sr.png)
+    ![Направите хаб.](../../../../../../translated_images/sr/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. Извршите следеће задатке:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Повежите Azure AI услуге** које желите да користите (направите нову ако је потребно).
     - Изаберите **Повежите Azure AI претрагу** да бисте **прескочили повезивање**.
 
-    ![Попуните хаб.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.sr.png)
+    ![Попуните хаб.](../../../../../../translated_images/sr/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. Изаберите **Даље**.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **+ Нови пројекат** из навигационог менија.
 
-    ![Изаберите нови пројекат.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.sr.png)
+    ![Изаберите нови пројекат.](../../../../../../translated_images/sr/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. Унесите **Име пројекта**. Мора бити јединствена вредност.
 
-    ![Направите пројекат.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.sr.png)
+    ![Направите пројекат.](../../../../../../translated_images/sr/08-05-create-project.4d97f0372f03375a.png)
 
 1. Изаберите **Креирај пројекат**.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **Endpoints** са леве стране картице.
 
-    ![Изаберите endpoint.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.sr.png)
+    ![Изаберите endpoint.](../../../../../../translated_images/sr/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. Изаберите endpoint који сте креирали.
 
-    ![Изаберите endpoint.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.sr.png)
+    ![Изаберите endpoint.](../../../../../../translated_images/sr/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. Изаберите **Consume** из навигационог менија.
 
 1. Копирајте ваш **REST endpoint** и **Примарни кључ**.
 
-    ![Копирајте api кључ и endpoint URI.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.sr.png)
+    ![Копирајте api кључ и endpoint URI.](../../../../../../translated_images/sr/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### Додајте прилагођену конекцију
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **+ Нова конекција**.
 
-    ![Изаберите нову конекцију.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.sr.png)
+    ![Изаберите нову конекцију.](../../../../../../translated_images/sr/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. Изаберите **Прилагођени кључеви** из навигационог менија.
 
-    ![Изаберите прилагођене кључеве.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.sr.png)
+    ![Изаберите прилагођене кључеве.](../../../../../../translated_images/sr/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. Извршите следеће задатке:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - За име кључа унесите **key** и залепите кључ који сте копирали из Azure ML Studio у поље за вредност.
     - Након додавања кључева, изаберите **је тајна вредност** да бисте спречили да кључ буде откривен.
 
-    ![Додајте конекцију.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.sr.png)
+    ![Додајте конекцију.](../../../../../../translated_images/sr/08-11-add-connection.785486badb4d2d26.png)
 
 1. Изаберите **Додај конекцију**.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **+ Креирај** из навигационог менија.
 
-    ![Изаберите Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.sr.png)
+    ![Изаберите Promptflow.](../../../../../../translated_images/sr/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. Изаберите **Chat flow** из навигационог менија.
 
-    ![Изаберите chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.sr.png)
+    ![Изаберите chat flow.](../../../../../../translated_images/sr/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. Унесите **Име фолдера** за коришћење.
 
-    ![Унесите име.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.sr.png)
+    ![Унесите име.](../../../../../../translated_images/sr/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. Изаберите **Креирај**.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Изаберите **Сачувај**.
 
-    ![Изаберите режим сирове датотеке.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.sr.png)
+    ![Изаберите режим сирове датотеке.](../../../../../../translated_images/sr/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Додајте следећи код у датотеку *integrate_with_promptflow.py* да бисте користили прилагођени Phi-3 модел у Prompt flow.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Налепите Prompt flow код.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.sr.png)
+    ![Налепите Prompt flow код.](../../../../../../translated_images/sr/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > За детаљније информације о коришћењу Prompt flow у Azure AI Foundry, можете погледати [Prompt flow у Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Изаберите **Улаз у ћаскање**, **Излаз из ћаскања** да бисте омогућили ћаскање са вашим моделом.
 
-    ![Улаз и излаз.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.sr.png)
+    ![Улаз и излаз.](../../../../../../translated_images/sr/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. Сада сте спремни за ћаскање са вашим прилагођеним Phi-3 моделом. У следећој вежби ћете научити како да покренете Prompt flow и користите га за ћаскање са вашим фино подешеним Phi-3 моделом.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Поново изграђени ток треба да изгледа као на слици испод:
 >
-> ![Пример тока.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.sr.png)
+> ![Пример тока.](../../../../../../translated_images/sr/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### Ћаскајте са вашим прилагођеним Phi-3 моделом
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **Покрени session за рачунарство** да бисте започели Prompt flow.
 
-    ![Покрени session за рачунарство.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.sr.png)
+    ![Покрени session за рачунарство.](../../../../../../translated_images/sr/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. Изаберите **Валидирај и анализирај улаз** да обновите параметре.
 
-    ![Валидирај улаз.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.sr.png)
+    ![Валидирај улаз.](../../../../../../translated_images/sr/09-02-validate-input.317c76ef766361e9.png)
 
 1. Изаберите **Вредност** за **конекцију** до прилагођене конекције коју сте креирали. На пример, *connection*.
 
-    ![Конекција.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.sr.png)
+    ![Конекција.](../../../../../../translated_images/sr/09-03-select-connection.99bdddb4b1844023.png)
 
 #### Ћаскајте са вашим прилагођеним моделом
 
 1. Изаберите **Ћаскање**.
 
-    ![Изаберите ћаскање.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.sr.png)
+    ![Изаберите ћаскање.](../../../../../../translated_images/sr/09-04-select-chat.61936dce6612a1e6.png)
 
 1. Ево примера резултата: сада можете ћаскати са вашим прилагођеним Phi-3 моделом. Препоручује се да постављате питања на основу података коришћених за финог подешавање.
 
-    ![Ћаскање са Prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.sr.png)
+    ![Ћаскање са Prompt flow.](../../../../../../translated_images/sr/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

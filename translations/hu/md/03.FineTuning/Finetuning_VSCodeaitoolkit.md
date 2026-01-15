@@ -16,7 +16,7 @@ Az [AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/
 
 [AI Toolkit for VSCode telepítése](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.hu.png)
+![AIToolkit FineTuning](../../../../translated_images/hu/Aitoolkit.7157953df04812dc.png)
 
 **[Private Preview]** Egykattintásos Azure Container Apps előkészítés a modell finomhangolás és inferencia futtatásához a felhőben.
 

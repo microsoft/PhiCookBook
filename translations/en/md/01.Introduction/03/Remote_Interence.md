@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 After training the adapters in the remote environment, use a simple Gradio app to interact with the model.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.en.png)
+![Fine-tune complete](../../../../../translated_images/en/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Provision Azure Resources
 Set up the Azure Resources for remote inference by running the `AI Toolkit: Provision Azure Container Apps for inference` command from the command palette. During this process, you will be prompted to select your Azure Subscription and resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.en.png)
+![Provision Inference Resource](../../../../../translated_images/en/command-provision-inference.467afc8d351642fc.png)
    
 By default, the subscription and resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were created during the fine-tuning step.
 
@@ -24,7 +24,7 @@ By default, the subscription and resource group for inference should match those
 ### Deployment for Inference  
 If you want to update the inference code or reload the inference model, run the `AI Toolkit: Deploy for inference` command. This will sync your latest code with ACA and restart the replica.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.en.png)
+![Deploy for inference](../../../../../translated_images/en/command-deploy.9adb4e310dd0b0ae.png)
 
 Once deployment completes successfully, the model is ready for evaluation through this endpoint.
 
@@ -32,7 +32,7 @@ Once deployment completes successfully, the model is ready for evaluation throug
 
 You can access the inference API by clicking the "*Go to Inference Endpoint*" button shown in the VSCode notification. Alternatively, the web API endpoint is available under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` and in the output panel.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.en.png)
+![App Endpoint](../../../../../translated_images/en/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** It may take a few minutes for the inference endpoint to become fully operational.
 

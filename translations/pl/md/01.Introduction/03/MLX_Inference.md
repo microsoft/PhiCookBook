@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Wynik (moje środowisko to Apple M1 Max, 64GB) to
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.pl.png)
+![Terminal](../../../../../translated_images/pl/01.5cf57df8f7407cf9.png)
 
 ### **3. Kwantyzacja Phi-3-mini z MLX w terminalu**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Wynik to
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc1.pl.png)
+![INT4](../../../../../translated_images/pl/02.7b188681a8eadbc1.png)
 
 
 ### **4. Uruchamianie Phi-3-mini z MLX w Jupyter Notebook**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.pl.png)
+![Notebook](../../../../../translated_images/pl/03.b9705a3a5aaa89f9.png)
 
 ***Note:*** Proszę zapoznać się z tym przykładem [klikając ten link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

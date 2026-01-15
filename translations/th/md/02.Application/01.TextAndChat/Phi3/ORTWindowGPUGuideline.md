@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** หากคุณไม่ต้องการคอมไพล์ สามารถข้ามขั้นตอนนี้ได้
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.th.png)
+![CPP](../../../../../../translated_images/th/01.42f52a2b2aedff02.png)
 
 ### **4. ติดตั้ง NVIDIA Driver**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    เปิด [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) และรันคำสั่ง
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.th.png)
+![RESULT](../../../../../../translated_images/th/02.b9b06996cf7255d5.png)
 
 ### **8. คอมไพล์ ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - ใช้ Windows Terminal เปิด Developer Command Prompt for VS 2022 และไปที่โฟลเดอร์ onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.th.png)
+![RESULT](../../../../../../translated_images/th/03.b83ce473d5ff9b9b.png)
 
    - คอมไพล์ด้วยสภาพแวดล้อม Python ของคุณ
 

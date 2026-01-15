@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 در ادامه یک مرور کلی از این نمونه E2E ارائه شده است.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.fa.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/fa/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### فهرست مطالب
 
@@ -48,13 +48,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در قسمت **نوار جستجو** در بالای صفحه پورتال، عبارت *azure machine learning* را تایپ کنید و از گزینه‌های نمایش داده شده، **Azure Machine Learning** را انتخاب کنید.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.fa.png)
+    ![Type azure machine learning.](../../../../../../translated_images/fa/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. از منوی ناوبری گزینه **+ ایجاد** را انتخاب کنید.
 
 3. از منوی ناوبری، **Workspace جدید** را انتخاب کنید.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.fa.png)
+    ![Select new workspace.](../../../../../../translated_images/fa/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. موارد زیر را انجام دهید:
 
@@ -67,7 +67,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Application insights مورد استفاده را انتخاب یا جدید بسازید.
     - رجیستری کانتینر (Container registry) مورد استفاده را انتخاب یا جدید بسازید.
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.fa.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/fa/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. گزینه **بررسی + ایجاد** را انتخاب کنید.
 
@@ -90,7 +90,7 @@ CO_OP_TRANSLATOR_METADATA:
     - خانواده ماشین مجازی (Virtual machine family) مورد نظر را انتخاب کنید. به عنوان مثال، گزینه **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** را انتخاب کنید که شامل GPU *Standard_NC24ads_A100_v4* است.
     - از منوی ناوبری، **Request quota** را انتخاب کنید.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.fa.png)
+        ![Request quota.](../../../../../../translated_images/fa/02-02-request-quota.c0428239a63ffdd5.png)
 
     - در صفحه درخواست سهمیه، **حداکثر هسته‌های جدید** مورد نظر خود را وارد کنید. به عنوان مثال، 24.
     - در همان صفحه، گزینه **ارسال** (Submit) را انتخاب کنید تا سهمیه GPU درخواست شود.
@@ -111,11 +111,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *managed identities* را تایپ کنید و از گزینه‌های نمایش داده شده، **Managed Identities** را انتخاب کنید.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.fa.png)
+    ![Type managed identities.](../../../../../../translated_images/fa/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 2. گزینه **+ ایجاد** را انتخاب کنید.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.fa.png)
+    ![Select create.](../../../../../../translated_images/fa/03-02-select-create.92bf8989a5cd98f2.png)
 
 3. موارد زیر را انجام دهید:
 
@@ -124,7 +124,7 @@ CO_OP_TRANSLATOR_METADATA:
     - منطقه (Region) مورد نظر را انتخاب کنید.
     - نام (Name) را وارد کنید که باید یک مقدار یکتا باشد.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.fa.png)
+    ![Select create.](../../../../../../translated_images/fa/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 4. گزینه **بررسی + ایجاد** را انتخاب کنید.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - گروه منابع مورد استفاده را انتخاب کنید.
     - نقش (Role) را روی **Contributor** قرار دهید.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.fa.png)
+    ![Fill contributor role.](../../../../../../translated_images/fa/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. گزینه **ذخیره** را انتخاب کنید.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *storage accounts* را تایپ کنید و از گزینه‌های نمایش داده شده، **Storage accounts** را انتخاب کنید.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.fa.png)
+    ![Type storage accounts.](../../../../../../translated_images/fa/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 2. حساب ذخیره‌سازی مرتبط با Workspace Azure Machine Learning که ساخته‌اید را انتخاب کنید. مثلاً *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - از منوی ناوبری، **+ افزودن** را انتخاب کنید.
     - از منوی ناوبری، **افزودن انتصاب نقش** را انتخاب کنید.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.fa.png)
+    ![Add role.](../../../../../../translated_images/fa/03-06-add-role.353ccbfdcf0789c2.png)
 
 4. در صفحه افزودن انتصاب نقش، موارد زیر را انجام دهید:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Managed Identity که ساخته‌اید را انتخاب کنید. به عنوان مثال، *finetunephi-managedidentity*.
     - گزینه **انتخاب** (Select) را بزنید.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.fa.png)
+    ![Select managed identity.](../../../../../../translated_images/fa/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 5. گزینه **بررسی + اختصاص** (Review + assign) را انتخاب کنید.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در نوار جستجو در بالای صفحه پورتال، عبارت *container registries* را تایپ کنید و از گزینه‌ها، **Container registries** را انتخاب کنید.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.fa.png)
+    ![Type container registries.](../../../../../../translated_images/fa/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 2. رجیستری کانتینری که مرتبط با Azure Machine Learning workspace است را انتخاب کنید. مثلاً *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. پوشه *finetune-phi* که ساخته‌اید و در مسیر *C:\Users\yourUserName\finetune-phi* قرار دارد را انتخاب کنید.
 
-    ![پوشه‌ای که ساختید را انتخاب کنید.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.fa.png)
+    ![پوشه‌ای که ساختید را انتخاب کنید.](../../../../../../translated_images/fa/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. در پنل سمت چپ Visual Studio Code روی فضای خالی کلیک راست کرده و **New File** را انتخاب کنید تا یک فایل جدید به نام *download_dataset.py* ایجاد کنید.
 
-    ![یک فایل جدید ایجاد کنید.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.fa.png)
+    ![یک فایل جدید ایجاد کنید.](../../../../../../translated_images/fa/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### آماده‌سازی داده‌ها برای فاین‌تیونینگ
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. روی **+ New** کلیک کنید.
 
-    ![Compute را انتخاب کنید.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.fa.png)
+    ![Compute را انتخاب کنید.](../../../../../../translated_images/fa/06-01-select-compute.a29cff290b480252.png)
 
 1. موارد زیر را انجام دهید:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - فیلتر اندازه ماشین مجازی را روی **Select from all options** بگذارید.
     - اندازه ماشین مجازی را روی **Standard_NC24ads_A100_v4** تنظیم کنید.
 
-    ![کلاستر را ایجاد کنید.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.fa.png)
+    ![کلاستر را ایجاد کنید.](../../../../../../translated_images/fa/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - حداکثر تعداد گره‌ها (Maximum number of nodes) را روی **1** قرار دهید.
     - زمان بیکاری قبل از کاهش مقیاس (Idle seconds before scale down) را روی **120** تنظیم کنید.
 
-    ![کلاستر را ایجاد کنید.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.fa.png)
+    ![کلاستر را ایجاد کنید.](../../../../../../translated_images/fa/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. روی **Create** کلیک کنید.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. فضای کاری Azure Machine Learning که ساخته‌اید را انتخاب کنید.
 
-    ![فضای کاری که ساختید را انتخاب کنید.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.fa.png)
+    ![فضای کاری که ساختید را انتخاب کنید.](../../../../../../translated_images/fa/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. موارد زیر را انجام دهید:
 
     - از تب سمت چپ، **Model catalog** را انتخاب کنید.
     - در نوار جستجو، *phi-3-mini-4k* را تایپ کنید و گزینه **Phi-3-mini-4k-instruct** را از گزینه‌های ظاهر شده انتخاب کنید.
 
-    ![phi-3-mini-4k را تایپ کنید.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.fa.png)
+    ![phi-3-mini-4k را تایپ کنید.](../../../../../../translated_images/fa/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. از منوی ناوبری، **Fine-tune** را انتخاب کنید.
 
-    ![Fine-tune را انتخاب کنید.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.fa.png)
+    ![Fine-tune را انتخاب کنید.](../../../../../../translated_images/fa/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. موارد زیر را انجام دهید:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - نوع آپلود داده‌های اعتبارسنجی (Validation data) را روی **Provide different validation data** بگذارید.
     - برای آپلود داده‌های اعتبارسنجی، **+ Select data** را انتخاب کنید.
 
-    ![صفحه فاین‌تیونینگ را پر کنید.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.fa.png)
+    ![صفحه فاین‌تیونینگ را پر کنید.](../../../../../../translated_images/fa/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. در این تمرین، شما موفق شدید مدل Phi-3 را با استفاده از Azure Machine Learning فاین‌تیون کنید. توجه داشته باشید که فرایند فاین‌تیونینگ ممکن است زمان قابل توجهی طول بکشد. پس از اجرای کار فاین‌تیونینگ باید منتظر بمانید تا کامل شود. می‌توانید وضعیت کار فاین‌تیونینگ را با رفتن به تب Jobs در سمت چپ فضای کاری Azure Machine Learning خود مشاهده کنید. در سری بعدی، مدل فاین‌تیون شده را مستقر و با Prompt flow ادغام خواهید کرد.
 
-    ![کار فاین‌تیونینگ را ببینید.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.fa.png)
+    ![کار فاین‌تیونینگ را ببینید.](../../../../../../translated_images/fa/06-08-output.2bd32e59930672b1.png)
 
 ### استقرار مدل Phi-3 فاین‌تیون شده
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. فضای کاری Azure Machine Learning که ساخته‌اید را انتخاب کنید.
 
-    ![فضای کاری که ساختید را انتخاب کنید.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.fa.png)
+    ![فضای کاری که ساختید را انتخاب کنید.](../../../../../../translated_images/fa/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. از تب سمت چپ، گزینه **Models** را انتخاب کنید.
 1. روی **+ Register** کلیک کنید.
 1. گزینه **From a job output** را انتخاب کنید.
 
-    ![ثبت مدل.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.fa.png)
+    ![ثبت مدل.](../../../../../../translated_images/fa/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. کاری که ساخته‌اید را انتخاب کنید.
 
-    ![کار را انتخاب کنید.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.fa.png)
+    ![کار را انتخاب کنید.](../../../../../../translated_images/fa/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. مطمئن شوید که **Job output** انتخاب شده است؛ این گزینه به صورت خودکار انتخاب خواهد شد.
 
-    ![خروجی را انتخاب کنید.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.fa.png)
+    ![خروجی را انتخاب کنید.](../../../../../../translated_images/fa/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. روی **Next** کلیک کنید.
 
 3. روی **Register** کلیک کنید.
 
-    ![روی Register کلیک کنید.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.fa.png)
+    ![روی Register کلیک کنید.](../../../../../../translated_images/fa/07-04-register.fd82a3b293060bc7.png)
 
 4. می‌توانید مدل ثبت شده خود را با رفتن به منوی **Models** از تب سمت چپ مشاهده کنید.
 
-    ![مدل ثبت شده.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.fa.png)
+    ![مدل ثبت شده.](../../../../../../translated_images/fa/07-05-registered-model.7db9775f58dfd591.png)
 
 #### استقرار مدل فاین‌تیون شده
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. از منوی ناوبری، **Real-time endpoints** را انتخاب کنید.
 
-    ![ایجاد نقطه پایان.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.fa.png)
+    ![ایجاد نقطه پایان.](../../../../../../translated_images/fa/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. روی **Create** کلیک کنید.
 
 1. مدل ثبت شده‌ای که ایجاد کرده‌اید را انتخاب کنید.
 
-    ![مدل ثبت شده را انتخاب کنید.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.fa.png)
+    ![مدل ثبت شده را انتخاب کنید.](../../../../../../translated_images/fa/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. روی **Select** کلیک کنید.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - نام نقطه پایان (**Endpoint name**) را وارد کنید. این مقدار باید یکتا باشد.
     - نام استقرار (**Deployment name**) را وارد کنید. این مقدار باید یکتا باشد.
 
-    ![تنظیمات استقرار را پر کنید.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.fa.png)
+    ![تنظیمات استقرار را پر کنید.](../../../../../../translated_images/fa/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. روی **Deploy** کلیک کنید.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. نقطه پایانی که ایجاد کرده‌اید را انتخاب کنید.
 
-    ![نقاط پایان را انتخاب کنید](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.fa.png)
+    ![نقاط پایان را انتخاب کنید](../../../../../../translated_images/fa/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. در این صفحه، می‌توانید نقاط پایان را در طول فرایند استقرار مدیریت کنید.
 
 > [!NOTE]
 > پس از تکمیل استقرار، مطمئن شوید که **Live traffic** روی **100٪** تنظیم شده است. اگر اینطور نیست، برای تنظیم، **Update traffic** را انتخاب کنید. توجه داشته باشید که اگر ترافیک روی 0٪ تنظیم شده باشد، نمی‌توانید مدل را آزمایش کنید.
 >
-> ![تنظیم ترافیک.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.fa.png)
+> ![تنظیم ترافیک.](../../../../../../translated_images/fa/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## سناریو ۳: ادغام با Prompt flow و چت با مدل سفارشی خود در Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. از تب سمت چپ، گزینه **All hubs** را انتخاب کنید.
 
 1. از منوی ناوبری، **+ New hub** را انتخاب کنید.
-![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.fa.png)
+![Create hub.](../../../../../../translated_images/fa/08-01-create-hub.8f7dd615bb8d9834.png)
 
 ۱. کارهای زیر را انجام دهید:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **اتصال به خدمات هوش مصنوعی Azure** را انتخاب کنید (در صورت نیاز یک اتصال جدید ایجاد کنید).
     - اتصال به **جستجوی هوش مصنوعی Azure** را به **رد کردن اتصال** تنظیم کنید.
 
-![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.fa.png)
+![Fill hub.](../../../../../../translated_images/fa/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 ۱. روی **بعدی** کلیک کنید.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ۱. از منوی ناوبری **+ پروژه جدید** را انتخاب کنید.
 
-![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.fa.png)
+![Select new project.](../../../../../../translated_images/fa/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 ۱. **نام پروژه** را وارد کنید. باید یک مقدار یکتا باشد.
 
-![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.fa.png)
+![Create project.](../../../../../../translated_images/fa/08-05-create-project.4d97f0372f03375a.png)
 
 ۱. روی **ایجاد پروژه** کلیک کنید.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ۱. از تب سمت چپ، **Endpoints** را انتخاب کنید.
 
-![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.fa.png)
+![Select endpoints.](../../../../../../translated_images/fa/08-06-select-endpoints.aff38d453bcf9605.png)
 
 ۱. نقطه پایانی که ایجاد کرده‌اید را انتخاب کنید.
 
-![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.fa.png)
+![Select endpoints.](../../../../../../translated_images/fa/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 ۱. از منوی ناوبری **Consume** را انتخاب کنید.
 
 ۱. **REST endpoint** و **کلید اولیه** خود را کپی کنید.
 
-![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.fa.png)
+![Copy api key and endpoint uri.](../../../../../../translated_images/fa/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### افزودن اتصال سفارشی
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ۱. روی **+ اتصال جدید** کلیک کنید.
 
-![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.fa.png)
+![Select new connection.](../../../../../../translated_images/fa/08-09-select-new-connection.02eb45deadc401fc.png)
 
 ۱. از منوی ناوبری **کلیدهای سفارشی** را انتخاب کنید.
 
-![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.fa.png)
+![Select custom keys.](../../../../../../translated_images/fa/08-10-select-custom-keys.856f6b2966460551.png)
 
 ۱. کارهای زیر را انجام دهید:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - برای نام کلید، **key** را وارد کنید و کلیدی که از Azure ML Studio کپی کرده‌اید را در قسمت مقدار الصاق کنید.
     - پس از افزودن کلیدها، گزینه **is secret** را انتخاب کنید تا از افشای کلید جلوگیری شود.
 
-![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.fa.png)
+![Add connection.](../../../../../../translated_images/fa/08-11-add-connection.785486badb4d2d26.png)
 
 ۱. روی **افزودن اتصال** کلیک کنید.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ۱. از منوی ناوبری **+ ایجاد** را انتخاب کنید.
 
-![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.fa.png)
+![Select Promptflow.](../../../../../../translated_images/fa/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 ۱. از منوی ناوبری **Chat flow** را انتخاب کنید.
 
-![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.fa.png)
+![Select chat flow.](../../../../../../translated_images/fa/08-13-select-flow-type.2ec689b22da32591.png)
 
 ۱. **نام پوشه** مورد استفاده را وارد کنید.
 
-![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.fa.png)
+![Enter name.](../../../../../../translated_images/fa/08-14-enter-name.ff9520fefd89f40d.png)
 
 ۲. روی **ایجاد** کلیک کنید.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - روی **ذخیره** کلیک کنید.
 
-![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.fa.png)
+![Select raw file mode.](../../../../../../translated_images/fa/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 ۱. کد زیر را به فایل *integrate_with_promptflow.py* اضافه کنید تا از مدل سفارشی Phi-3 در Prompt flow استفاده شود.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.fa.png)
+![Paste prompt flow code.](../../../../../../translated_images/fa/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > برای اطلاعات دقیق‌تر در مورد استفاده از Prompt flow در Azure AI Foundry، می‌توانید به [Prompt flow در Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) مراجعه کنید.
 
 ۱. برای فعال کردن چت با مدل خود، گزینه‌های **Chat input** و **Chat output** را انتخاب کنید.
 
-![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.fa.png)
+![Input Output.](../../../../../../translated_images/fa/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 ۱. اکنون آماده‌اید تا با مدل سفارشی Phi-3 خود چت کنید. در تمرین بعدی، خواهید آموخت چگونه Prompt flow را شروع کرده و از آن برای چت با مدل فاین‌تیون شده Phi-3 خود استفاده کنید.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > جریان بازسازی شده باید شبیه تصویر زیر باشد:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.fa.png)
+> ![Flow example.](../../../../../../translated_images/fa/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### چت با مدل سفارشی Phi-3 شما
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ۱. برای شروع Prompt flow روی **Start compute sessions** کلیک کنید.
 
-![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.fa.png)
+![Start compute session.](../../../../../../translated_images/fa/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 ۱. برای تازه‌سازی پارامترها، روی **Validate and parse input** کلیک کنید.
 
-![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.fa.png)
+![Validate input.](../../../../../../translated_images/fa/09-02-validate-input.317c76ef766361e9.png)
 
 ۱. مقدار **connection** را به اتصال سفارشی که ایجاد کرده‌اید انتخاب کنید. به عنوان مثال، *connection*.
 
-![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.fa.png)
+![Connection.](../../../../../../translated_images/fa/09-03-select-connection.99bdddb4b1844023.png)
 
 #### چت با مدل سفارشی شما
 
 ۱. روی **Chat** کلیک کنید.
 
-![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.fa.png)
+![Select chat.](../../../../../../translated_images/fa/09-04-select-chat.61936dce6612a1e6.png)
 
 ۱. در اینجا یک نمونه از نتایج نشان داده شده است: اکنون می‌توانید با مدل سفارشی Phi-3 خود چت کنید. توصیه می‌شود سوالاتی بر اساس داده‌های مورد استفاده برای فاین‌تیون مطرح کنید.
 
-![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.fa.png)
+![Chat with prompt flow.](../../../../../../translated_images/fa/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

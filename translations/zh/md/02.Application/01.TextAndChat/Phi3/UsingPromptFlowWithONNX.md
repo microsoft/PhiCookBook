@@ -33,33 +33,33 @@ Prompt flow 可以连接 OpenAI、Azure OpenAI 服务以及可定制模型（Hug
 
 1. 安装 Prompt flow VS Code 扩展
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.zh.png)
+![pfvscode](../../../../../../translated_images/zh/pfvscode.eff93dfc66a42cbe.png)
 
 2. 安装 Prompt flow VS Code 扩展后，点击扩展，选择 **Installation dependencies**，按照指南在你的环境中安装 Prompt flow SDK
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.zh.png)
+![pfsetup](../../../../../../translated_images/zh/pfsetup.b46e93096f5a254f.png)
 
 3. 下载 [示例代码](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf)，并使用 VS Code 打开该示例
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.zh.png)
+![pfsample](../../../../../../translated_images/zh/pfsample.8d89e70584ffe7c4.png)
 
 4. 打开 **flow.dag.yaml** 选择你的 Python 环境
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.zh.png)
+![pfdag](../../../../../../translated_images/zh/pfdag.264a77f7366458ff.png)
 
    打开 **chat_phi3_ort.py** 修改你的 Phi-3.5-instruct ONNX 模型路径
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.zh.png)
+![pfphi](../../../../../../translated_images/zh/pfphi.72da81d74244b45f.png)
 
 5. 运行你的 prompt flow 进行测试
 
 打开 **flow.dag.yaml**，点击可视化编辑器
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.zh.png)
+![pfv](../../../../../../translated_images/zh/pfv.ba8a81f34b20f603.png)
 
 点击后运行测试
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.zh.png)
+![pfflow](../../../../../../translated_images/zh/pfflow.4e1135a089b1ce1b.png)
 
 1. 你也可以在终端批量运行以查看更多结果
 
@@ -71,7 +71,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 你可以在默认浏览器中查看结果
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.zh.png)
+![pfresult](../../../../../../translated_images/zh/pfresult.c22c826f8062d7cb.png)
 
 **免责声明**：  
 本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。

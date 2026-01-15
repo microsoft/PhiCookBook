@@ -15,11 +15,11 @@ Bruker du Visual Studio Code Copilot? Spesielt i Chat kan du bruke forskjellige 
 
 Vi vet at Phi-3/3.5-mini-instruct i Phi-3/3.5-familien har sterke evner innen kodeforståelse og generering, og har fordeler sammenlignet med Gemma-2-9b og Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.no.png)
+![codegen](../../../../../../translated_images/no/codegen.53be1150ee54d969.png)
 
 De nyeste GitHub Models gir allerede tilgang til Phi-3.5-mini-instruct (128k) og Phi-3.5-vision-instruct (128k) modellene. Utviklere kan få tilgang til dem via OpenAI SDK, Azure AI Inference SDK og REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d5.no.png)
+![gh](../../../../../../translated_images/no/gh.459640c7ceba01d5.png)
 
 ***Note:*** Det anbefales å bruke Azure AI Inference SDK her, fordi det gir bedre byttefunksjonalitet med Azure Model Catalog i produksjonsmiljøet.
 
@@ -34,13 +34,13 @@ Nedenfor vises resultatene av **Phi-3.5-mini-instruct (128k)** og **Phi-3.5-visi
 
 GitHub Copilot Chat Agent kan utføre ulike oppgaver i forskjellige prosjektmiljøer basert på koden. Systemet har fire agenter: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.no.png)
+![agent](../../../../../../translated_images/no/agent.3dbb06228f9a6189.png)
 
 Ved å legge til agentens navn med ‘@’ kan du raskt utføre den tilsvarende oppgaven. For bedrifter, hvis du legger til egen forretningsrelatert informasjon som krav, koding, testspesifikasjoner og utgivelser, kan du få kraftigere private bedriftsfunksjoner basert på GitHub Copilot.
 
 Visual Studio Code Chat Agent har nå offisielt lansert sitt API, som gjør det mulig for bedrifter eller bedriftsutviklere å utvikle agenter basert på ulike programvareøkosystemer. Basert på utviklingsmetoden for Visual Studio Code Extension Development, kan du enkelt få tilgang til grensesnittet til Visual Studio Code Chat Agent API. Vi kan utvikle basert på denne prosessen.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.no.png)
+![diagram](../../../../../../translated_images/no/diagram.ca70d2866762f115.png)
 
 Utviklingsscenariet støtter tilgang til tredjeparts modell-APIer (som GitHub Models, Azure Model Catalog og selvbygde tjenester basert på open source-modeller) og kan også bruke gpt-35-turbo, gpt-4 og gpt-4o modellene levert av GitHub Copilot.
 
@@ -54,7 +54,7 @@ Vi prøver å integrere programmeringsevnen til Phi-3.5 for å fullføre kodeskr
 
 3. Generer kode basert på **Phi-3.5-vision-instruct (128k)** og fullfør bildeoppgaver gjennom **@phicoding /image**-kommandoen
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.no.png)
+![arch](../../../../../../translated_images/no/arch.5a58a0adfa959a2d.png)
 
 ## **Relaterte steg**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a9541.no.png)
+![help](../../../../../../translated_images/no/help.04c134d2bf9a9541.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.no.png)
+![agenthelp](../../../../../../translated_images/no/agenthelp.60c68767c941a3fe.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.no.png)
+![agentgen](../../../../../../translated_images/no/agentgen.a16e7735790f764b.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.no.png)
+![agentimage](../../../../../../translated_images/no/agentimage.f5cb52b45ab7d0d1.png)
 
 Du kan laste ned eksempel-kode her: [klikk](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

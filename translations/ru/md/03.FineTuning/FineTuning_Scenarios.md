@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Сценарии дообучения
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.ru.png)
+![FineTuning with MS Services](../../../../translated_images/ru/FinetuningwithMS.3d0cec8ae693e094.png)
 
 **Платформа** Включает различные технологии, такие как Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito и ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Дообучайте модель с помощью хостинга для дообучения, без необходимости создавать и управлять вычислительными ресурсами.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.ru.png)
+![MaaS Fine Tuning](../../../../translated_images/ru/MaaSfinetune.3eee4630607aff0d.png)
 
 Безсерверное дообучение доступно для моделей Phi-3-mini и Phi-3-medium, что позволяет разработчикам быстро и легко настраивать модели для облачных и edge-сценариев без необходимости организовывать вычисления. Мы также объявили, что Phi-3-small теперь доступна через наше предложение Models-as-a-Service, чтобы разработчики могли быстро и просто начать работу с ИИ без управления базовой инфраструктурой.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Пользователи управляют собственными вычислительными ресурсами для дообучения своих моделей.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.ru.png)
+![Maap Fine Tuning](../../../../translated_images/ru/MaaPFinetune.fd3829c1122f5d1c.png)
 
 [Пример дообучения](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Примеры производительности дообучения
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.ru.png)
+![Finetuning Performance](../../../../translated_images/ru/Finetuningexamples.a9a41214f8f5afc1.png)
 
 **Отказ от ответственности**:  
 Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному человеческому переводу. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

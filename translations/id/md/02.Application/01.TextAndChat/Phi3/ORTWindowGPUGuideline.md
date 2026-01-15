@@ -43,7 +43,7 @@ Dokumen ini memberikan panduan tentang:
 
    ***Note*** Jika Anda tidak ingin melakukan kompilasi, langkah ini bisa dilewati
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.id.png)
+![CPP](../../../../../../translated_images/id/01.42f52a2b2aedff02.png)
 
 ### **4. Instal Driver NVIDIA**
 
@@ -83,7 +83,7 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke folder lib, bin, include N
 
    Buka [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) dan jalankan
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.id.png)
+![RESULT](../../../../../../translated_images/id/02.b9b06996cf7255d5.png)
 
 ### **8. Kompilasi ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke folder lib, bin, include N
 
    - Gunakan Windows Terminal, buka Developer Command Prompt for VS 2022 dan masuk ke folder onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.id.png)
+![RESULT](../../../../../../translated_images/id/03.b83ce473d5ff9b9b.png)
 
    - Kompilasi dengan lingkungan python Anda
 

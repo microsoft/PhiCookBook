@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) là một nền tảng mã nguồn mở được thiết kế để quản lý toàn bộ vòng đời của máy học.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.vi.png)
+![MLFlow](../../../../../../translated_images/vi/MlFlowmlops.ed16f47809d74d9a.png)
 
 MLFlow được sử dụng để quản lý vòng đời ML, bao gồm thí nghiệm, khả năng tái tạo, triển khai và một kho lưu trữ mô hình trung tâm. Hiện tại MLflow cung cấp bốn thành phần.
 
@@ -22,7 +22,7 @@ MLFlow được sử dụng để quản lý vòng đời ML, bao gồm thí ngh
 
 Nó bao gồm các khả năng theo dõi thí nghiệm, đóng gói mã thành các lần chạy có thể tái tạo, cũng như chia sẻ và triển khai mô hình. MLFlow được tích hợp trong Databricks và hỗ trợ nhiều thư viện ML, giúp nó không phụ thuộc vào thư viện cụ thể nào. Bạn có thể sử dụng nó với bất kỳ thư viện máy học nào và trong bất kỳ ngôn ngữ lập trình nào, vì nó cung cấp API REST và CLI để thuận tiện.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.vi.png)
+![MLFlow](../../../../../../translated_images/vi/MLflow2.5a22eb718f6311d1.png)
 
 Các tính năng chính của MLFlow bao gồm:
 
@@ -37,7 +37,7 @@ MLFlow cũng hỗ trợ vòng lặp MLOps, bao gồm chuẩn bị dữ liệu, �
 
 Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác nhau để xây dựng một wrapper cho mô hình ngôn ngữ nhỏ Phi-3 (SLM) và sau đó chạy nó như một mô hình MLFlow, có thể chạy cục bộ hoặc trên đám mây, ví dụ như trong workspace Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.vi.png)
+![MLFlow](../../../../../../translated_images/vi/MlFlow1.fd745e47dbd3fecf.png)
 
 | Dự án | Mô tả | Vị trí |
 | ------------ | ----------- | -------- |

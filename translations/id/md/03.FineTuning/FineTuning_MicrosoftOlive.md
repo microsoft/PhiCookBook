@@ -32,11 +32,11 @@ Alat ini mempertimbangkan batasan seperti akurasi dan latensi saat mengoptimalka
 
 Microsoft Olive adalah alat optimasi model open source yang sangat mudah digunakan dan dapat mencakup fine-tuning serta referensi di bidang kecerdasan buatan generatif. Hanya diperlukan konfigurasi sederhana, dikombinasikan dengan penggunaan model bahasa kecil open source dan lingkungan runtime terkait (AzureML / GPU lokal, CPU, DirectML), Anda dapat menyelesaikan fine-tuning atau referensi model melalui optimasi otomatis, dan menemukan model terbaik untuk diterapkan di cloud atau perangkat edge. Memungkinkan perusahaan membangun model vertikal industri mereka sendiri baik secara on-premises maupun di cloud.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e2.id.png)
+![intro](../../../../translated_images/id/intro.46086a3f16ec48e2.png)
 
 ## Fine Tuning Phi-3 dengan Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.id.png)
+![FinetuningwithOlive](../../../../translated_images/id/olivefinetune.76d09e9b68253681.png)
 
 ## Contoh Kode dan Contoh Phi-3 Olive
 Dalam contoh ini Anda akan menggunakan Olive untuk:

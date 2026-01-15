@@ -34,7 +34,7 @@ Følg disse trinnene for å komme i gang med å bruke disse ressursene:
 2. **Klone depotet**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Bli med i Microsoft AI Discord Community og møt eksperter og medutviklere**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.no.png)
+![cover](../../translated_images/no/cover.eb18d1b9605d754b.png)
 
 ### 🌐 Flerspråklig støtte
 

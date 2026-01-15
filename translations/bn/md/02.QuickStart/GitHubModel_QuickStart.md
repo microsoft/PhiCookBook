@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [GitHub Models](https://github.com/marketplace/models)-এ আপনাকে স্বাগতম! আমরা Azure AI-তে হোস্ট করা AI মডেলগুলি অন্বেষণ করার জন্য সবকিছু প্রস্তুত করে রেখেছি।
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.bn.png)
+![GitHubModel](../../../../translated_images/bn/GitHub_ModelCatalog.aa43c51c36454747.png)
 
 GitHub Models-এ উপলব্ধ মডেলগুলোর সম্পর্কে আরও তথ্যের জন্য, [GitHub Model Marketplace](https://github.com/marketplace/models) দেখুন।
 
@@ -45,7 +45,7 @@ GitHub Models-এ উপলব্ধ মডেলগুলোর সম্পর
 
 নমুনা এবং মডেল চালানোর জন্য একটি নির্দিষ্ট Codespaces Environment-ও রয়েছে।
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.bn.png)
+![Getting Started](../../../../translated_images/bn/GitHub_ModelGetStarted.150220a802da6fb6.png)
 
 ## নমুনা কোড
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Models-এর জন্য ফ্রি ব্যবহার এবং রেট সীমা
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.bn.png)
+![Model Catalog](../../../../translated_images/bn/GitHub_Model.ca6c125cb3117d0e.png)
 
 [প্লেগ্রাউন্ড এবং ফ্রি API ব্যবহারের রেট সীমা](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) আপনাকে মডেলগুলো পরীক্ষা-নিরীক্ষা এবং AI অ্যাপ্লিকেশন প্রোটোটাইপ করার জন্য সাহায্য করে। এই সীমার বাইরে ব্যবহারের জন্য এবং আপনার অ্যাপ্লিকেশনকে স্কেলে নিয়ে যেতে, আপনাকে Azure অ্যাকাউন্ট থেকে রিসোর্স প্রোভিশন করতে হবে এবং GitHub personal access token-এর পরিবর্তে সেখান থেকে প্রমাণীকরণ করতে হবে। আপনার কোডে অন্য কোনো পরিবর্তন করার দরকার নেই। Azure AI-তে ফ্রি টিয়ার সীমার বাইরে যাওয়ার জন্য এই লিঙ্কটি ব্যবহার করুন।
 

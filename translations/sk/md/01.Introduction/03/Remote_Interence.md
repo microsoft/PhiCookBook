@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Po natrénovaní adaptér v diaľkovom prostredí použite jednoduchú aplikáciu Gradio na interakciu s modelom.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.sk.png)
+![Fine-tune complete](../../../../../translated_images/sk/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Zabezpečenie Azure zdrojov
 Pre vzdialené inferovanie je potrebné nastaviť Azure zdroje spustením príkazu `AI Toolkit: Provision Azure Container Apps for inference` z príkazovej palety. Počas tohto nastavenia budete vyzvaní na výber Azure predplatného a skupiny zdrojov.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.sk.png)
+![Provision Inference Resource](../../../../../translated_images/sk/command-provision-inference.467afc8d351642fc.png)
    
 Predvolene by predplatné a skupina zdrojov pre inferovanie mali zodpovedať tým, ktoré sa použili pri doladení modelu. Inferovanie bude využívať rovnaké prostredie Azure Container App a pristupovať k modelu a adaptérovi modelu uloženým v Azure Files, ktoré boli vytvorené počas kroku doladenia.
 
@@ -24,7 +24,7 @@ Predvolene by predplatné a skupina zdrojov pre inferovanie mali zodpovedať tý
 ### Nasadenie pre inferovanie  
 Ak chcete upraviť inferenčný kód alebo znovu načítať inferenčný model, spustite príkaz `AI Toolkit: Deploy for inference`. Tým sa synchronizuje váš najnovší kód s ACA a reštartuje sa replika.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.sk.png)
+![Deploy for inference](../../../../../translated_images/sk/command-deploy.9adb4e310dd0b0ae.png)
 
 Po úspešnom nasadení je model pripravený na vyhodnotenie cez tento endpoint.
 
@@ -32,7 +32,7 @@ Po úspešnom nasadení je model pripravený na vyhodnotenie cez tento endpoint.
 
 K inferenčnému API sa dostanete kliknutím na tlačidlo „*Go to Inference Endpoint*“ v notifikácii VSCode. Alternatívne nájdete webový API endpoint v `ACA_APP_ENDPOINT` v súbore `./infra/inference.config.json` a v paneli výstupu.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.sk.png)
+![App Endpoint](../../../../../translated_images/sk/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** Endpoint pre inferovanie môže chvíľu trvať, kým bude plne funkčný.
 

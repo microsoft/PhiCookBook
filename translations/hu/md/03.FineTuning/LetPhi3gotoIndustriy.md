@@ -41,7 +41,7 @@ A Fine-tuning egy adott modell továbbfejlesztésén alapul. Nem kell a modell a
 
 ## **Hogyan használjuk a RAG-ot**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007.hu.png)
+![rag](../../../../translated_images/hu/rag.2014adc59e6f6007.png)
 
 A vektoralapú adatbázis olyan adatgyűjtemény, amely matematikai formában tárolja az adatokat. A vektoralapú adatbázisok megkönnyítik a gépi tanulási modellek számára a korábbi bemenetek megjegyzését, lehetővé téve a gépi tanulás alkalmazását olyan esetekben, mint a keresés, ajánlások és szöveggenerálás. Az adatok hasonlósági metrikák alapján azonosíthatók, nem pedig pontos egyezés alapján, így a számítógépes modellek jobban megértik az adatok kontextusát.
 
@@ -57,7 +57,7 @@ A Fine-tuningban gyakran használt algoritmusok a Lora és a QLora. Hogyan vála
 
 ### **Lora és QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca0.hu.png)
+![lora](../../../../translated_images/hu/qlora.e6446c988ee04ca0.png)
 
 A LoRA (Low-Rank Adaptation) és a QLoRA (Quantized Low-Rank Adaptation) olyan technikák, amelyeket nagy nyelvi modellek (LLM-ek) finomhangolására használnak a Parameter Efficient Fine Tuning (PEFT) módszerével. A PEFT technikák célja, hogy hatékonyabban képezzék a modelleket, mint a hagyományos módszerek.
 

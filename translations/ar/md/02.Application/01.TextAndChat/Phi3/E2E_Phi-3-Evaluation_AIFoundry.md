@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 فيما يلي عملية التقييم في Azure AI Foundry.
 
-![هيكل الدرس.](../../../../../../translated_images/architecture.10bec55250f5d6a4.ar.png)
+![هيكل الدرس.](../../../../../../translated_images/ar/architecture.10bec55250f5d6a4.png)
 
 *مصدر الصورة: [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 لضمان أن نموذج الذكاء الاصطناعي الخاص بك أخلاقي وآمن، من الضروري تقييمه وفقًا لمبادئ الذكاء الاصطناعي المسؤول من مايكروسوفت. في Azure AI Foundry، تتيح لك تقييمات السلامة فحص مدى تعرض نموذجك لهجمات كسر الحماية (jailbreak) وإمكانية توليده لمحتوى ضار، وهو ما يتماشى مباشرة مع هذه المبادئ.
 
-![تقييم السلامة.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.ar.png)
+![تقييم السلامة.](../../../../../../translated_images/ar/safety-evaluation.083586ec88dfa950.png)
 
 *مصدر الصورة: [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **المساءلة**: يجب أن يكون الأشخاص الذين يصممون وينشرون أنظمة الذكاء الاصطناعي مسؤولين عن كيفية عمل أنظمتهم. يجب على المؤسسات الاستناد إلى معايير الصناعة لتطوير معايير المساءلة. يمكن لهذه المعايير ضمان ألا تكون أنظمة الذكاء الاصطناعي هي السلطة النهائية في أي قرار يؤثر على حياة الناس. كما يمكنها ضمان بقاء البشر مسيطرين بشكل فعّال على أنظمة الذكاء الاصطناعي ذات الاستقلالية العالية.
 
-![مركز الملء.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.ar.png)
+![مركز الملء.](../../../../../../translated_images/ar/responsibleai2.c07ef430113fad8c.png)
 
 *مصدر الصورة: [ما هو الذكاء الاصطناعي المسؤول؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 يضمن تقييم هذه الجوانب ألا ينتج نموذج الذكاء الاصطناعي محتوى ضارًا أو مسيئًا، مما يجعله متوافقًا مع القيم المجتمعية والمعايير التنظيمية.
 
-![التقييم بناءً على السلامة.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.ar.png)
+![التقييم بناءً على السلامة.](../../../../../../translated_images/ar/evaluate-based-on-safety.c5df819f5b0bfc07.png)
 
 ### مقدمة لتقييم الأداء
 
 للتأكد من أن نموذج الذكاء الاصطناعي الخاص بك يعمل كما هو متوقع، من المهم تقييم أدائه مقابل مقاييس الأداء. في Azure AI Foundry، تتيح لك تقييمات الأداء فحص فعالية نموذجك في توليد استجابات دقيقة وذات صلة ومتسقة.
 
-![تقييم السلامة.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.ar.png)
+![تقييم السلامة.](../../../../../../translated_images/ar/performance-evaluation.48b3e7e01a098740.png)
 
 *مصدر الصورة: [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 تساعدك هذه المقاييس على تقييم فعالية النموذج في توليد استجابات دقيقة وذات صلة ومتسقة.
 
-![التقييم بناءً على الأداء.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.ar.png)
+![التقييم بناءً على الأداء.](../../../../../../translated_images/ar/evaluate-based-on-performance.3e801c647c7554e8.png)
 
 ## **السيناريو 2: تقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ New hub** من قائمة التنقل.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.ar.png)
+    ![Create hub.](../../../../../../translated_images/ar/create-hub.5be78fb1e21ffbf1.png)
 
 1. قم بالمهام التالية:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **Connect Azure AI Services** التي تريد استخدامها (يمكنك إنشاء واحدة جديدة إذا لزم الأمر).
     - اختر **Connect Azure AI Search** ثم **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.ar.png)
+    ![Fill hub.](../../../../../../translated_images/ar/fill-hub.baaa108495c71e34.png)
 
 1. اختر **Next**.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ New project** من قائمة التنقل.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.ar.png)
+    ![Select new project.](../../../../../../translated_images/ar/select-new-project.cd31c0404088d7a3.png)
 
 1. أدخل **Project name**. يجب أن يكون اسمًا فريدًا.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.ar.png)
+    ![Create project.](../../../../../../translated_images/ar/create-project.ca3b71298b90e420.png)
 
 1. اختر **Create a project**.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **Endpoints** من القائمة الجانبية اليسرى.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.ar.png)
+    ![Select endpoints.](../../../../../../translated_images/ar/select-endpoints.ee7387ecd68bd18d.png)
 
 1. اختر نقطة النهاية التي أنشأتها.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.ar.png)
+    ![Select endpoints.](../../../../../../translated_images/ar/select-endpoint-created.9f63af5e4cf98b2e.png)
 
 1. اختر **Consume** من قائمة التنقل.
 
 1. انسخ **REST endpoint** و**Primary key** الخاصين بك.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.ar.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/ar/copy-endpoint-key.0650c3786bd646ab.png)
 
 #### إضافة الاتصال المخصص
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.ar.png)
+    ![Select new connection.](../../../../../../translated_images/ar/select-new-connection.fa0f35743758a74b.png)
 
 1. اختر **Custom keys** من قائمة التنقل.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.ar.png)
+    ![Select custom keys.](../../../../../../translated_images/ar/select-custom-keys.5a3c6b25580a9b67.png)
 
 1. قم بالمهام التالية:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - لأسم المفتاح، أدخل **key** والصق المفتاح الذي نسخته من Azure ML Studio في حقل القيمة.
     - بعد إضافة المفاتيح، اختر **is secret** لمنع كشف المفتاح.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.ar.png)
+    ![Add connection.](../../../../../../translated_images/ar/add-connection.ac7f5faf8b10b0df.png)
 
 1. اختر **Add connection**.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ Create** من قائمة التنقل.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.ar.png)
+    ![Select Promptflow.](../../../../../../translated_images/ar/select-promptflow.18ff2e61ab9173eb.png)
 
 1. اختر **Chat flow** من قائمة التنقل.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.ar.png)
+    ![Select chat flow.](../../../../../../translated_images/ar/select-flow-type.28375125ec9996d3.png)
 
 1. أدخل **Folder name** الذي تريد استخدامه.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.ar.png)
+    ![Select chat flow.](../../../../../../translated_images/ar/enter-name.02ddf8fb840ad430.png)
 
 1. اختر **Create**.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - اختر **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.ar.png)
+    ![Select raw file mode.](../../../../../../translated_images/ar/select-raw-file-mode.06c1eca581ce4f53.png)
 
 1. أضف الكود التالي إلى *integrate_with_promptflow.py* لاستخدام نموذج Phi-3 / Phi-3.5 المخصص في Prompt flow.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.ar.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/ar/paste-promptflow-code.cd6d95b101c0ec28.png)
 
 > [!NOTE]
 > لمزيد من المعلومات التفصيلية حول استخدام Prompt flow في Azure AI Foundry، يمكنك الرجوع إلى [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. اختر **Chat input** و**Chat output** لتمكين الدردشة مع نموذجك.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.ar.png)
+    ![Select Input Output.](../../../../../../translated_images/ar/select-input-output.c187fc58f25fbfc3.png)
 
 1. الآن أنت جاهز للدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك. في التمرين التالي، ستتعلم كيفية بدء Prompt flow واستخدامه للدردشة مع نموذج Phi-3 / Phi-3.5 المُحسّن.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > يجب أن يبدو التدفق المعاد بناؤه كما في الصورة أدناه:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.ar.png)
+> ![Flow example](../../../../../../translated_images/ar/graph-example.82fd1bcdd3fc545b.png)
 >
 
 #### بدء Prompt flow
 
 1. اختر **Start compute sessions** لبدء Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.ar.png)
+    ![Start compute session.](../../../../../../translated_images/ar/start-compute-session.9acd8cbbd2c43df1.png)
 
 1. اختر **Validate and parse input** لتحديث المعلمات.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.ar.png)
+    ![Validate input.](../../../../../../translated_images/ar/validate-input.c1adb9543c6495be.png)
 
 1. اختر **Value** الخاص بـ **connection** للاتصال المخصص الذي أنشأته. على سبيل المثال، *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.ar.png)
+    ![Connection.](../../../../../../translated_images/ar/select-connection.1f2b59222bcaafef.png)
 
 #### الدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك
 
 1. اختر **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.ar.png)
+    ![Select chat.](../../../../../../translated_images/ar/select-chat.0406bd9687d0c49d.png)
 
 1. إليك مثال على النتائج: الآن يمكنك الدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك. يُنصح بطرح الأسئلة بناءً على البيانات المستخدمة في تحسين النموذج.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.ar.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/ar/chat-with-promptflow.1cf8cea112359ada.png)
 
 ### نشر Azure OpenAI لتقييم نموذج Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.ar.png)
+    ![Select Project.](../../../../../../translated_images/ar/select-project-created.5221e0e403e2c9d6.png)
 
 1. في المشروع الذي أنشأته، اختر **Deployments** من القائمة الجانبية اليسرى.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.ar.png)
+    ![Select Deployments.](../../../../../../translated_images/ar/deploy-openai-model.95d812346b25834b.png)
 
 1. اختر نموذج Azure OpenAI الذي تريد استخدامه. على سبيل المثال، **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.ar.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/ar/select-openai-model.959496d7e311546d.png)
 
 1. اختر **Confirm**.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.ar.png)
+    ![Select Project.](../../../../../../translated_images/ar/select-project-created.5221e0e403e2c9d6.png)
 
 1. في المشروع الذي أنشأته، اختر **Evaluation** من القائمة الجانبية اليسرى.
 
 1. اختر **+ New evaluation** من قائمة التنقل.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.ar.png)
+    ![Select evaluation.](../../../../../../translated_images/ar/select-evaluation.2846ad7aaaca7f4f.png)
 
 1. اختر تقييم **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.ar.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/ar/promptflow-evaluation.cb9758cc19b4760f.png)
 
 1. قم بالمهام التالية:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **Question and answer without context** كنوع المهمة، لأن مجموعة بيانات **UlTRACHAT_200k** المستخدمة في هذا الدليل لا تحتوي على سياق.
     - اختر الـ Prompt flow الذي تريد تقييمه.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ar/evaluation-setting1.4aa08259ff7a536e.png)
 
 1. اختر **Next**.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **Add your dataset** لتحميل مجموعة البيانات. على سبيل المثال، يمكنك تحميل ملف مجموعة البيانات التجريبية مثل *test_data.json1*، المرفق عند تنزيل مجموعة بيانات **ULTRACHAT_200k**.
     - اختر العمود المناسب من مجموعة البيانات الذي يتطابق مع بياناتك. على سبيل المثال، إذا كنت تستخدم مجموعة بيانات **ULTRACHAT_200k**، اختر **${data.prompt}** كعمود البيانات.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ar/evaluation-setting2.07036831ba58d64e.png)
 
 1. اختر **Next**.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر مقاييس الأداء والجودة التي تريد استخدامها.
     - اختر نموذج Azure OpenAI الذي أنشأته للتقييم. على سبيل المثال، اختر **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ar/evaluation-setting3-1.d1ae69e3bf80914e.png)
 
 1. قم بالمهام التالية لتكوين مقاييس المخاطر والسلامة:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - بالنسبة لـ **answer**، اختر **Data source** إلى **{$run.outputs.answer}**.
     - بالنسبة لـ **ground_truth**، اختر **Data source** إلى **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ar/evaluation-setting3-2.d53bd075c60a45a2.png)
 
 1. اختر **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - تقييم فعالية النموذج في توليد استجابات متماسكة، سلسة وذات صلة.
 
-    ![نتيجة التقييم.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.ar.png)
+    ![نتيجة التقييم.](../../../../../../translated_images/ar/evaluation-result-gpu.85f48b42dfb74254.png)
 
 1. مقاييس المخاطر والسلامة:
 
     - التأكد من أن مخرجات النموذج آمنة وتتوافق مع مبادئ الذكاء الاصطناعي المسؤول، مع تجنب أي محتوى ضار أو مسيء.
 
-    ![نتيجة التقييم.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.ar.png)
+    ![نتيجة التقييم.](../../../../../../translated_images/ar/evaluation-result-gpu-2.1b74e336118f4fd0.png)
 
 1. يمكنك التمرير لأسفل لعرض **نتيجة المقاييس التفصيلية**.
 
-    ![نتيجة التقييم.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.ar.png)
+    ![نتيجة التقييم.](../../../../../../translated_images/ar/detailed-metrics-result.afa2f5c39a4f5f17.png)
 
 1. من خلال تقييم نموذج Phi-3 / Phi-3.5 المخصص الخاص بك مقابل كل من مقاييس الأداء والسلامة، يمكنك التأكد من أن النموذج ليس فعالًا فحسب، بل يلتزم أيضًا بممارسات الذكاء الاصطناعي المسؤول، مما يجعله جاهزًا للنشر في العالم الحقيقي.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 لقد قمت بتقييم نموذج Phi-3 المحسن والمُدمج مع Prompt flow في Azure AI Foundry بنجاح. هذه خطوة مهمة لضمان أن نماذج الذكاء الاصطناعي الخاصة بك لا تؤدي أداءً جيدًا فحسب، بل تلتزم أيضًا بمبادئ الذكاء الاصطناعي المسؤول من مايكروسوفت لمساعدتك في بناء تطبيقات ذكاء اصطناعي موثوقة وجديرة بالثقة.
 
-![الهيكلية.](../../../../../../translated_images/architecture.10bec55250f5d6a4.ar.png)
+![الهيكلية.](../../../../../../translated_images/ar/architecture.10bec55250f5d6a4.png)
 
 ## تنظيف موارد Azure
 

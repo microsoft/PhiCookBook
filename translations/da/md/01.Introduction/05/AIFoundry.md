@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Brug af Azure AI Foundry til evaluering**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.da.png)
+![aistudo](../../../../../translated_images/da/AIFoundry.9e0b513e999a1c5a.png)
 
 Sådan evaluerer du din generative AI-applikation ved hjælp af [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Uanset om du vurderer enkelt-turn eller multi-turn samtaler, tilbyder Azure AI Foundry værktøjer til at evaluere modelpræstation og sikkerhed.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.da.png)
+![aistudo](../../../../../translated_images/da/AIPortfolio.69da59a8e1eaa70f.png)
 
 ## Sådan evaluerer du generative AI-apps med Azure AI Foundry
 For mere detaljerede instruktioner, se [Azure AI Foundry Dokumentationen](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

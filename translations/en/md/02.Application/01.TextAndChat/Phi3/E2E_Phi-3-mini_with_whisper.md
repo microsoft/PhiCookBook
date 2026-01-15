@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
-  "translation_date": "2025-07-17T02:12:33+00:00",
+  "original_hash": "7f72d7981ed3640865700f51ae407da4",
+  "translation_date": "2026-01-14T14:59:42+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "en"
 }
@@ -11,99 +11,103 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-The Interactive Phi 3 Mini 4K Instruct Chatbot is a tool that lets users interact with the Microsoft Phi 3 Mini 4K instruct demo using either text or audio input. This chatbot can be used for various tasks such as translation, weather updates, and general information retrieval.
+The Interactive Phi 3 Mini 4K Instruct Chatbot is a tool that allows users to interact with the Microsoft Phi 3 Mini 4K instruct demo using text or audio input. The chatbot can be used for a variety of tasks, such as translation, weather updates, and general information gathering.
 
 ### Getting Started
 
-To use this chatbot, just follow these steps:
+To use this chatbot, simply follow these instructions:
 
-1. Open the [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) notebook.
-2. In the main notebook window, you’ll see a chatbox interface with a text input field and a "Send" button.
-3. To use the text-based chatbot, simply type your message into the input box and click "Send." The chatbot will reply with an audio file that you can play directly within the notebook.
+1. Open a new [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
+2. In the main window of the notebook, you'll see a chatbox interface with a text input box and a "Send" button.
+3. To use the text-based chatbot, simply type your message into the text input box and click the "Send" button. The chatbot will respond with an audio file that can be played directly from within the notebook.
 
-**Note**: This tool requires a GPU and access to the Microsoft Phi-3 and OpenAI Whisper models, which are used for speech recognition and translation.
+**Note**: This tool requires a GPU and access to the Microsoft Phi-3 and OpenAI Whisper models, which is used for speech recognition and translation.
 
 ### GPU Requirements
 
-To run this demo, you need at least 12GB of GPU memory.
+To run this demo you need 12Gb of GPU memory.
 
-The memory needed to run the **Microsoft-Phi-3-Mini-4K instruct** demo on a GPU depends on several factors, including the size of the input data (audio or text), the language used for translation, the model’s speed, and the available GPU memory.
+The memory requirements for running the **Microsoft-Phi-3-Mini-4K instruct** demo on a GPU will depend on several factors, such as the size of the input data (audio or text), the language used for translation, the speed of the model, and the available memory on the GPU.
 
-Generally, the Whisper model is designed to run on GPUs. The recommended minimum GPU memory for running Whisper is 8 GB, but it can handle larger amounts if necessary.
+In general, the Whisper model is designed to run on GPUs. The recommended minimum amount of GPU memory for running the Whisper model is 8 GB, but it can handle larger amounts of memory if needed.
 
-Keep in mind that processing large amounts of data or handling many requests simultaneously may require more GPU memory and could affect performance. It’s best to test your use case with different settings and monitor memory usage to find the optimal configuration for your needs.
+It's important to note that running a large amount of data or a high volume of requests on the model may require more GPU memory and/or may cause performance issues. It's recommended to test your use case with different configurations and monitor the memory usage to determine the optimal settings for your specific needs.
 
 ## E2E Sample for Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper
 
-The Jupyter notebook titled [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) shows how to use the Microsoft Phi 3 Mini 4K instruct demo to generate text from audio or written input. The notebook defines several functions:
+The jupyter notebook titled [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) demonstrates how to use the Microsoft Phi 3 Mini 4K instruct Demo to generate text from audio or written text input The notebook defines several functions:
 
-1. `tts_file_name(text)`: Generates a file name based on the input text for saving the generated audio file.
-2. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Uses the Edge TTS API to create an audio file from a list of text chunks. The inputs are the list of chunks, speech rate, voice name, and the output path for saving the audio.
-3. `talk(input_text)`: Generates an audio file using the Edge TTS API and saves it with a random file name in the /content/audio directory. The input is the text to convert to speech.
-4. `run_text_prompt(message, chat_history)`: Uses the Microsoft Phi 3 Mini 4K instruct demo to generate an audio file from a text message and appends it to the chat history.
-5. `run_audio_prompt(audio, chat_history)`: Converts an audio file to text using the Whisper model API and passes it to the `run_text_prompt()` function.
-6. The code launches a Gradio app that lets users interact with the Phi 3 Mini 4K instruct demo by typing messages or uploading audio files. The output is shown as a text message within the app.
+1. `tts_file_name(text)`: This function generates a file name based on the input text for saving the generated audio file.
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: This function uses the Edge TTS API to generate an audio file from a list of chunks of input text. The input parameters are the list of chunks, the speech rate, the voice name, and the output path for saving the generated audio file.
+1. `talk(input_text)`: This function generates an audio file by using the Edge TTS API and saving it to a random file name in the /content/audio directory. The input parameter is the input text to be converted to speech.
+1. `run_text_prompt(message, chat_history)`: This function uses the Microsoft Phi 3 Mini 4K instruct demo to generate an audio file from a message input and appends it to the chat history.
+1. `run_audio_prompt(audio, chat_history)`: This function converts an audio file into text using the Whisper model API and passes it to the `run_text_prompt()` function.
+1. The code launches a Gradio app that allows users to interact with the Phi 3 Mini 4K instruct demo by either typing in messages or uploading audio files. The output is displayed as a text message within the app.
 
 ## Troubleshooting
 
 Installing Cuda GPU drivers
 
-1. Make sure your Linux system is up to date
+1. Ensure your Linux application are upto date
 
     ```bash
     sudo apt update
     ```
 
-2. Install Cuda Drivers
+1. Install Cuda Drivers
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-3. Register the CUDA driver location
+1. Register the cuda driver location
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-4. Check Nvidia GPU memory size (12GB of GPU memory required)
+1. Checking Nvidia GPU memory size (Required 12GB of GPU Memory)
 
     ```bash
     nvidia-smi
     ```
 
-5. Clear Cache: If you’re using PyTorch, call torch.cuda.empty_cache() to free all unused cached memory so other GPU applications can use it
+1. Empty Cache: If you’re using PyTorch, you can call torch.cuda.empty_cache() to release all unused cached memory so that it can be used by other GPU applications
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-6. Check Nvidia CUDA
+1. Checking Nvidia Cuda
 
     ```bash
     nvcc --version
     ```
 
-7. Follow these steps to create a Hugging Face token:
+1. Perform the following tasks to create a Hugging Face token.
 
-    - Go to the [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
-    - Click **New token**.
-    - Enter the project **Name** you want to use.
-    - Set **Type** to **Write**.
+    - Navigate to the [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
+    - Select **New token**.
+    - Enter project **Name** you want to use.
+    - Select **Type** to **Write**.
 
-> **Note**
+> [!NOTE]
 >
-> If you see the following error:
+> If you encounter the following error:
 >
 > ```bash
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> To fix this, run the following command in your terminal:
+> To resolve this, type the following command inside your terminal.
 >
 > ```bash
 > sudo ldconfig
 > ```
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

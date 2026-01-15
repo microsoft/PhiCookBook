@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ακολουθεί μια επισκόπηση αυτού του δείγματος E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.el.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/el/00-01-architecture.02fc569e266d468c.png)
 
 ### Περιεχόμενα
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *azure machine learning* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Azure Machine Learning** από τις διαθέσιμες επιλογές.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.el.png)
+    ![Type azure machine learning](../../../../../../translated_images/el/01-01-type-azml.a5116f8454d98c60.png)
 
 1. Επιλέξτε **+ Δημιουργία** από το μενού πλοήγησης.
 
 1. Επιλέξτε **Νέο πεδίο εργασίας** από το μενού πλοήγησης.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.el.png)
+    ![Select new workspace](../../../../../../translated_images/el/01-02-select-new-workspace.83e17436f8898dc4.png)
 
 1. Εκτελέστε τις ακόλουθες ενέργειες:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε το **Application insights** που θα χρησιμοποιήσετε (δημιουργήστε νέο αν χρειάζεται).
     - Επιλέξτε το **Ντοκιμαντέρ κοντέινερ (Container registry)** που θα χρησιμοποιήσετε (δημιουργήστε νέο αν χρειάζεται).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.el.png)
+    ![Fill AZML.](../../../../../../translated_images/el/01-03-fill-AZML.730a5177757bbebb.png)
 
 1. Επιλέξτε **Ανασκόπηση + Δημιουργία**.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε την **Οικογένεια εικονικών μηχανών** που θα χρησιμοποιήσετε. Για παράδειγμα, επιλέξτε **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, που περιλαμβάνει την *Standard_NC24ads_A100_v4* GPU.
     - Επιλέξτε το **Request quota** από το μενού πλοήγησης.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.el.png)
+        ![Request quota.](../../../../../../translated_images/el/01-04-request-quota.3d3670c3221ab834.png)
 
     - Στην σελίδα αίτησης ορίου (Request quota), καταχωρήστε το **Νέο όριο πυρήνων** που θέλετε να χρησιμοποιήσετε. Για παράδειγμα, 24.
     - Στην σελίδα αίτησης ορίου, επιλέξτε **Υποβολή** για να κάνετε την αίτηση για το όριο GPU.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *managed identities* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Managed Identities** από τις διαθέσιμες επιλογές.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.el.png)
+    ![Type managed identities.](../../../../../../translated_images/el/01-05-type-managed-identities.9297b6039874eff8.png)
 
 1. Επιλέξτε **+ Δημιουργία**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.el.png)
+    ![Select create.](../../../../../../translated_images/el/01-06-select-create.936d8d66d7144f9a.png)
 
 1. Εκτελέστε τις ακόλουθες ενέργειες:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε την **Ομάδα πόρων** που θα χρησιμοποιήσετε.
     - Επιλέξτε τον **Ρόλο (Role)** σε **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.el.png)
+    ![Fill contributor role.](../../../../../../translated_images/el/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
 
 1. Επιλέξτε **Αποθήκευση**.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *storage accounts* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Storage accounts** από τις διαθέσιμες επιλογές.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.el.png)
+    ![Type storage accounts.](../../../../../../translated_images/el/01-08-type-storage-accounts.1186c8e42933e49b.png)
 
 1. Επιλέξτε τον λογαριασμό αποθήκευσης που σχετίζεται με το πεδίο εργασίας Azure Machine Learning που δημιουργήσατε. Για παράδειγμα, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε **+ Προσθήκη** από το μενού πλοήγησης.
     - Επιλέξτε **Προσθήκη ανάθεσης ρόλου** από το μενού πλοήγησης.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.el.png)
+    ![Add role.](../../../../../../translated_images/el/01-09-add-role.d2db22fec1b187f0.png)
 
 1. Στη σελίδα προσθήκης ανάθεσης ρόλου (Add role assignment), εκτελέστε τις ακόλουθες ενέργειες:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Στη σελίδα Επιλογής διαχειριζόμενων ταυτοτήτων, επιλέξτε τη Διαχειριζόμενη ταυτότητα που δημιουργήσατε. Για παράδειγμα, *finetunephi-managedidentity*.
     - Στη σελίδα Επιλογής διαχειριζόμενων ταυτοτήτων, επιλέξτε **Επιλογή (Select)**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.el.png)
+    ![Select managed identity.](../../../../../../translated_images/el/01-10-select-managed-identity.5ce5ba181f72a4df.png)
 
 1. Επιλέξτε **Ανασκόπηση + ανάθεση**.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *container registries* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Container registries** από τις διαθέσιμες επιλογές.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.el.png)
+    ![Type container registries.](../../../../../../translated_images/el/01-11-type-container-registries.ff3b8bdc49dc596c.png)
 
 1. Επιλέξτε το container registry που σχετίζεται με το πεδίο εργασίας Azure Machine Learning. Για παράδειγμα, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε τον φάκελο *finetune-phi* που δημιουργήσατε, ο οποίος βρίσκεται στο *C:\Users\yourUserName\finetune-phi*.
 
-    ![Άνοιγμα φακέλου έργου.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.el.png)
+    ![Άνοιγμα φακέλου έργου.](../../../../../../translated_images/el/01-12-open-project-folder.1fff9c7f41dd1639.png)
 
 1. Στο αριστερό παράθυρο του Visual Studio Code, κάντε δεξί κλικ και επιλέξτε **Νέο Αρχείο** για να δημιουργήσετε ένα νέο αρχείο με όνομα *download_dataset.py*.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Στο αριστερό παράθυρο του Visual Studio Code, κάντε δεξί κλικ και επιλέξτε **Νέο Αρχείο** για να δημιουργήσετε ένα νέο αρχείο με όνομα *deploy_model.py*.
 
-    ![Δημιουργία νέου αρχείου.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.el.png)
+    ![Δημιουργία νέου αρχείου.](../../../../../../translated_images/el/01-13-create-new-file.c17c150fff384a39.png)
 
 1. Στο αριστερό παράθυρο του Visual Studio Code, κάντε δεξί κλικ και επιλέξτε **Νέος φάκελος** για να δημιουργήσετε ένα νέο φάκελο με όνομα *finetuning_dir*.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε την συνδρομή Azure που χρησιμοποιείτε αυτήν τη στιγμή.
     - Αντιγράψτε και επικολλήστε το Subscription ID σας στο αρχείο *config.py*.
 
-    ![Εύρεση ID συνδρομής.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.el.png)
+    ![Εύρεση ID συνδρομής.](../../../../../../translated_images/el/01-14-find-subscriptionid.4f4ca33555f1e637.png)
 
 1. Εκτελέστε τις ακόλουθες εργασίες για να προσθέσετε το όνομα του Azure Workspace:
 
     - Μεταβείτε στην πηγή Azure Machine Learning που δημιουργήσατε.
     - Αντιγράψτε και επικολλήστε το όνομα του λογαριασμού σας στο αρχείο *config.py*.
 
-    ![Εύρεση ονόματος Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.el.png)
+    ![Εύρεση ονόματος Azure Machine Learning.](../../../../../../translated_images/el/01-15-find-AZML-name.1975f0422bca19a7.png)
 
 1. Εκτελέστε τις ακόλουθες εργασίες για να προσθέσετε το όνομα Azure Resource Group:
 
     - Μεταβείτε στην πηγή Azure Machine Learning που δημιουργήσατε.
     - Αντιγράψτε και επικολλήστε το όνομα του Azure Resource Group στο αρχείο *config.py*.
 
-    ![Εύρεση ονόματος Resource Group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.el.png)
+    ![Εύρεση ονόματος Resource Group.](../../../../../../translated_images/el/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
 
 2. Εκτελέστε τις ακόλουθες εργασίες για να προσθέσετε το όνομα Azure Managed Identity:
 
     - Μεταβείτε στην πηγή Managed Identities που δημιουργήσατε.
     - Αντιγράψτε και επικολλήστε το όνομα της Azure Managed Identity στο αρχείο *config.py*.
 
-    ![Εύρεση UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.el.png)
+    ![Εύρεση UAI.](../../../../../../translated_images/el/01-17-find-uai.3529464f53499827.png)
 
 ### Προετοιμασία συνόλου δεδομένων για προσαρμογή
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε τη συνδρομή Azure που θέλετε να χρησιμοποιήσετε.
 
-    ![Εύρεση ονόματος Resource Group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.el.png)
+    ![Εύρεση ονόματος Resource Group.](../../../../../../translated_images/el/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Σε αυτή την άσκηση, προσαρμόσατε με επιτυχία το μοντέλο Phi-3 χρησιμοποιώντας το Azure Machine Learning. Τρέχοντας το σενάριο *setup_ml.py*, ρυθμίσατε το περιβάλλον Azure Machine Learning και ξεκινήσατε τη διαδικασία προσαρμογής που ορίστηκε στο αρχείο *fine_tune.py*. Λάβετε υπόψη ότι η διαδικασία προσαρμογής μπορεί να πάρει σημαντικό χρόνο. Μετά την εκτέλεση της εντολής `python setup_ml.py`, πρέπει να περιμένετε μέχρι να ολοκληρωθεί η διαδικασία. Μπορείτε να παρακολουθήσετε την κατάσταση της εργασίας προσαρμογής ακολουθώντας τον σύνδεσμο που παρέχεται στο τερματικό προς το Azure Machine Learning portal.
 
-    ![Προβολή εργασίας προσαρμογής.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.el.png)
+    ![Προβολή εργασίας προσαρμογής.](../../../../../../translated_images/el/02-02-see-finetuning-job.59393bc3b143871e.png)
 
 ### Ανάπτυξη του προσαρμοσμένου μοντέλου
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **Endpoints** από την καρτέλα στα αριστερά.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.el.png)
+    ![Select endpoints.](../../../../../../translated_images/el/02-03-select-endpoints.c3136326510baff1.png)
 
 2. Επιλέξτε το endpoint που δημιουργήσατε.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.el.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/el/02-04-select-endpoint-created.0363e7dca51dabb4.png)
 
 3. Σε αυτήν τη σελίδα, μπορείτε να διαχειρίζεστε τα endpoints που δημιουργήθηκαν κατά τη διαδικασία ανάπτυξης.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Αντιγράψτε και επικολλήστε το **REST endpoint** σας στο αρχείο *config.py*, αντικαθιστώντας το `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` με το δικό σας **REST endpoint**.
 1. Αντιγράψτε και επικολλήστε το **Primary key** σας στο αρχείο *config.py*, αντικαθιστώντας το `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` με το δικό σας **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.el.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/el/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
 
 #### Προσθήκη κώδικα στο αρχείο *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Να ένα παράδειγμα αποτελεσμάτων: Τώρα μπορείτε να συνομιλείτε με το προσαρμοσμένο μοντέλο Phi-3. Συνιστάται να κάνετε ερωτήσεις βάσει των δεδομένων που χρησιμοποιήθηκαν για την λεπτομερή προσαρμογή.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.el.png)
+    ![Prompt flow example.](../../../../../../translated_images/el/02-06-promptflow-example.89384abaf3ad71f6.png)
 
 ---
 

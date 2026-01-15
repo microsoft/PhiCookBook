@@ -66,7 +66,7 @@ Azure ML je dodal številne funkcije, povezane z LLM/SLM, ki združujejo LLMOps 
 
 Uporabniki v podjetjih lahko prek Kataloga modelov uvajajo različne modele glede na različne poslovne scenarije in nudijo storitve kot Model kot storitev za dostop razvijalcev ali uporabnikov v podjetju.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd.sl.png)
+![models](../../../../translated_images/sl/models.e6c7ff50a51806fd.png)
 
 Katalog modelov v Azure Machine Learning studiu je središče za odkrivanje in uporabo širokega nabora modelov, ki omogočajo gradnjo generativnih AI aplikacij. Katalog modelov vsebuje stotine modelov različnih ponudnikov, kot so Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, vključno z modeli, ki jih je usposobil Microsoft. Modeli ponudnikov, ki niso Microsoftovi, so Ne-Microsoftovi izdelki, kot je določeno v Microsoftovih pogojih za izdelke, in so predmet pogojev, priloženih modelu.
 
@@ -76,7 +76,7 @@ Jedro cevovoda strojnega učenja je razdelitev celotne naloge strojnega učenja 
 
 Pri fino nastavitvi SLM / LLM lahko upravljamo naše podatke, učenje in procese generiranja prek cevovoda.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa52.sl.png)
+![finetuning](../../../../translated_images/sl/finetuning.6559da198851fa52.png)
 
 ### **Prompt flow**
 

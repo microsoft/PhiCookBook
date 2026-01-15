@@ -33,33 +33,33 @@ Windows GPU için ONNX Runtime GenAI'yi kurmak için bu kılavuzu okuyun [buraya
 
 1. Prompt flow VS Code Eklentisini yükleyin
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.tr.png)
+![pfvscode](../../../../../../translated_images/tr/pfvscode.eff93dfc66a42cbe.png)
 
 2. Prompt flow VS Code Eklentisini yükledikten sonra, eklentiye tıklayın ve **Installation dependencies** seçeneğini seçin, bu kılavuzu takip ederek ortamınıza Prompt flow SDK'yı kurun
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.tr.png)
+![pfsetup](../../../../../../translated_images/tr/pfsetup.b46e93096f5a254f.png)
 
 3. [Örnek Kodu](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) indirin ve VS Code ile bu örneği açın
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.tr.png)
+![pfsample](../../../../../../translated_images/tr/pfsample.8d89e70584ffe7c4.png)
 
 4. Python ortamınızı seçmek için **flow.dag.yaml** dosyasını açın
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.tr.png)
+![pfdag](../../../../../../translated_images/tr/pfdag.264a77f7366458ff.png)
 
    Phi-3.5-instruct ONNX Model konumunuzu değiştirmek için **chat_phi3_ort.py** dosyasını açın
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.tr.png)
+![pfphi](../../../../../../translated_images/tr/pfphi.72da81d74244b45f.png)
 
 5. Prompt flow'u test etmek için çalıştırın
 
 **flow.dag.yaml** dosyasını açın ve görsel editöre tıklayın
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.tr.png)
+![pfv](../../../../../../translated_images/tr/pfv.ba8a81f34b20f603.png)
 
 Buna tıkladıktan sonra çalıştırarak testi başlatın
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.tr.png)
+![pfflow](../../../../../../translated_images/tr/pfflow.4e1135a089b1ce1b.png)
 
 1. Daha fazla sonuç kontrol etmek için terminalde toplu çalıştırma yapabilirsiniz
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Sonuçları varsayılan tarayıcınızda kontrol edebilirsiniz
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.tr.png)
+![pfresult](../../../../../../translated_images/tr/pfresult.c22c826f8062d7cb.png)
 
 **Feragatname**:  
 Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

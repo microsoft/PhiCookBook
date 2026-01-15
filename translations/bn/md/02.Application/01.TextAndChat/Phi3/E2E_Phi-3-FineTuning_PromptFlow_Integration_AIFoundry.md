@@ -24,7 +24,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 এখানে এই E2E স্যাম্পলের একটি ওভারভিউ দেওয়া হলো।
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.bn.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/bn/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### বিষয়সূচি
 
@@ -49,13 +49,13 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. পোর্টালের শীর্ষে **search bar** এ *azure machine learning* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Azure Machine Learning** নির্বাচন করুন।
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.bn.png)
+    ![Type azure machine learning.](../../../../../../translated_images/bn/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. নেভিগেশন মেনু থেকে **+ Create** নির্বাচন করুন।
 
 3. নেভিগেশন মেনু থেকে **New workspace** নির্বাচন করুন।
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.bn.png)
+    ![Select new workspace.](../../../../../../translated_images/bn/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. নিম্নলিখিত কাজগুলো সম্পন্ন করুন:
 
@@ -68,7 +68,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - ব্যবহার করার জন্য **Application insights** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
     - ব্যবহার করার জন্য **Container registry** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.bn.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/bn/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. **Review + Create** নির্বাচন করুন।
 
@@ -91,7 +91,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - ব্যবহার করার জন্য **Virtual machine family** নির্বাচন করুন। উদাহরণস্বরূপ, **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** নির্বাচন করুন, যা অন্তর্ভুক্ত করে *Standard_NC24ads_A100_v4* GPU।
     - নেভিগেশন মেনু থেকে **Request quota** নির্বাচন করুন।
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.bn.png)
+        ![Request quota.](../../../../../../translated_images/bn/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Request quota পৃষ্ঠায়, আপনি ব্যবহার করতে চান এমন **New cores limit** লিখুন। যেমন, 24।
     - Request quota পৃষ্ঠায়, GPU কোটা অনুরোধের জন্য **Submit** নির্বাচন করুন।
@@ -112,11 +112,11 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. পোর্টালের শীর্ষে **search bar** এ *managed identities* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Managed Identities** নির্বাচন করুন।
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.bn.png)
+    ![Type managed identities.](../../../../../../translated_images/bn/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. **+ Create** নির্বাচন করুন।
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.bn.png)
+    ![Select create.](../../../../../../translated_images/bn/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. নিম্নলিখিত কাজ করুন:
 
@@ -125,7 +125,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - ব্যবহার করার জন্য **Region** নির্বাচন করুন।
     - একটি **Name** লিখুন। এটি অবশ্যই একটি ইউনিক মান হতে হবে।
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.bn.png)
+    ![Select create.](../../../../../../translated_images/bn/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. **Review + create** নির্বাচন করুন।
 
@@ -145,7 +145,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - ব্যবহার করার জন্য **Resource group** নির্বাচন করুন।
     - রোল নির্বাচন করুন **Contributor**।
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.bn.png)
+    ![Fill contributor role.](../../../../../../translated_images/bn/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. **Save** নির্বাচন করুন।
 
@@ -153,7 +153,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. পোর্টালের শীর্ষে **search bar** এ *storage accounts* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Storage accounts** নির্বাচন করুন।
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.bn.png)
+    ![Type storage accounts.](../../../../../../translated_images/bn/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. Azure Machine Learning workspace এর সাথে যুক্ত স্টোরেজ অ্যাকাউন্ট নির্বাচন করুন, যেমন *finetunephistorage*।
 
@@ -164,7 +164,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - নেভিগেশন মেনু থেকে **+ Add** নির্বাচন করুন।
     - নেভিগেশন মেনু থেকে **Add role assignment** নির্বাচন করুন।
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.bn.png)
+    ![Add role.](../../../../../../translated_images/bn/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Add role assignment পৃষ্ঠায় নিম্নলিখিত কাজ করুন:
 
@@ -177,7 +177,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - Select managed identities পৃষ্ঠায় আপনি তৈরি করা Manage Identity নির্বাচন করুন, যেমন *finetunephi-managedidentity*।
     - Select managed identities পৃষ্ঠায় **Select** নির্বাচন করুন।
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.bn.png)
+    ![Select managed identity.](../../../../../../translated_images/bn/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. **Review + assign** নির্বাচন করুন।
 
@@ -185,7 +185,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. পোর্টালের শীর্ষে **search bar** এ *container registries* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Container registries** নির্বাচন করুন।
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.bn.png)
+    ![Type container registries.](../../../../../../translated_images/bn/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. Azure Machine Learning workspace এর সাথে যুক্ত container registry নির্বাচন করুন, যেমন *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. আপনি যে *finetune-phi* ফোল্ডারটি তৈরি করেছেন তা নির্বাচন করুন, যা *C:\Users\yourUserName\finetune-phi* -এ অবস্থিত।
 
-    ![আপনি যে ফোল্ডারটি তৈরি করেছেন তা নির্বাচন করুন।](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.bn.png)
+    ![আপনি যে ফোল্ডারটি তৈরি করেছেন তা নির্বাচন করুন।](../../../../../../translated_images/bn/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Visual Studio Code-এর বাম পাশের প্যানে ডান-ক্লিক করুন এবং **New File** নির্বাচন করে *download_dataset.py* নামে একটি নতুন ফাইল তৈরি করুন।
 
-    ![নতুন একটি ফাইল তৈরি করুন।](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.bn.png)
+    ![নতুন একটি ফাইল তৈরি করুন।](../../../../../../translated_images/bn/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### ফাইন-টিউনিংয়ের জন্য ডেটাসেট প্রস্তুত করুন
 
@@ -392,7 +392,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. **+ New** নির্বাচন করুন।
 
-    ![কম্পিউট নির্বাচন করুন।](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.bn.png)
+    ![কম্পিউট নির্বাচন করুন।](../../../../../../translated_images/bn/06-01-select-compute.a29cff290b480252.png)
 
 1. নিম্নলিখিত কাজগুলো করুন:
 
@@ -402,7 +402,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - **Virtual machine size** ফিল্টার থেকে **Select from all options** নির্বাচন করুন।
     - **Virtual machine size** হিসেবে **Standard_NC24ads_A100_v4** নির্বাচন করুন।
 
-    ![ক্লাস্টার তৈরি করুন।](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.bn.png)
+    ![ক্লাস্টার তৈরি করুন।](../../../../../../translated_images/bn/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. **Next** নির্বাচন করুন।
 
@@ -413,7 +413,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - **Maximum number of nodes** হিসাবে **1** নির্বাচন করুন।
     - **Idle seconds before scale down** হিসাবে **120** নির্বাচন করুন।
 
-    ![ক্লাস্টার তৈরি করুন।](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.bn.png)
+    ![ক্লাস্টার তৈরি করুন।](../../../../../../translated_images/bn/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. **Create** নির্বাচন করুন।
 
@@ -423,18 +423,18 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. আপনি যে Azure Machine Learning workspace তৈরি করেছেন তা নির্বাচন করুন।
 
-    ![আপনি যে ওয়ার্কস্পেস তৈরি করেছেন তা নির্বাচন করুন।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.bn.png)
+    ![আপনি যে ওয়ার্কস্পেস তৈরি করেছেন তা নির্বাচন করুন।](../../../../../../translated_images/bn/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. নিম্নলিখিত কাজগুলো করুন:
 
     - বাম পাশের ট্যাব থেকে **Model catalog** নির্বাচন করুন।
     - **search bar**-এ *phi-3-mini-4k* টাইপ করুন এবং প্রদত্ত বিকল্পগুলি থেকে **Phi-3-mini-4k-instruct** নির্বাচন করুন।
 
-    ![phi-3-mini-4k টাইপ করুন।](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.bn.png)
+    ![phi-3-mini-4k টাইপ করুন।](../../../../../../translated_images/bn/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. নাভিগেশন মেনু থেকে **Fine-tune** নির্বাচন করুন।
 
-    ![ফাইন-টিউন নির্বাচন করুন।](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.bn.png)
+    ![ফাইন-টিউন নির্বাচন করুন।](../../../../../../translated_images/bn/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. নিম্নলিখিত কাজগুলো করুন:
 
@@ -443,7 +443,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - Validation data আপলোড টাইপ হিসেবে **Provide different validation data** নির্বাচন করুন।
     - **+ Select data** নির্বাচন করে **Validation data** আপলোড করুন।
 
-    ![ফাইন-টিউনিং পৃষ্ঠা পূরণ করুন।](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.bn.png)
+    ![ফাইন-টিউনিং পৃষ্ঠা পূরণ করুন।](../../../../../../translated_images/bn/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. এই অনুশীলনে, আপনি সফলভাবে Azure Machine Learning ব্যবহার করে Phi-3 মডেলটি ফাইন-টিউন করেছেন। দয়া করে নোট করুন যে ফাইন-টিউনিং প্রক্রিয়া যথেষ্ট সময় নিতে পারে। ফাইন-টিউনিং কাজ চালানোর পর এটি সম্পন্ন হওয়ার জন্য অপেক্ষা করতে হবে। আপনি Azure Machine Learning ওয়ার্কস্পেসের বাম পাশের Jobs ট্যাবে গিয়ে ফাইন-টিউনিং কাজের অবস্থা পর্যবেক্ষণ করতে পারেন। পরবর্তী ধারাবাহিকে, আপনি ফাইন-টিউন করা মডেলটি ডিপ্লয় করবেন এবং সেটি Prompt flow-এর সাথে ইন্টিগ্রেট করবেন।
 
-    ![ফাইনটিউনিং কাজ দেখুন।](../../../../../../translated_images/06-08-output.2bd32e59930672b1.bn.png)
+    ![ফাইনটিউনিং কাজ দেখুন।](../../../../../../translated_images/bn/06-08-output.2bd32e59930672b1.png)
 
 ### ফাইন-টিউন করা Phi-3 মডেল ডিপ্লয় করুন
 
@@ -471,17 +471,17 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. আপনি যে Azure Machine Learning ওয়ার্কস্পেস তৈরি করেছেন তা নির্বাচন করুন।
 
-    ![আপনি যে ওয়ার্কস্পেস তৈরি করেছেন তা নির্বাচন করুন।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.bn.png)
+    ![আপনি যে ওয়ার্কস্পেস তৈরি করেছেন তা নির্বাচন করুন।](../../../../../../translated_images/bn/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. বাম পাশের ট্যাব থেকে **Models** নির্বাচন করুন।
 1. **+ Register** নির্বাচন করুন।
 1. **From a job output** নির্বাচন করুন।
 
-    ![মডেল রেজিস্টার করুন।](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.bn.png)
+    ![মডেল রেজিস্টার করুন।](../../../../../../translated_images/bn/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. আপনি যে কাজটি করেছেন তা নির্বাচন করুন।
 
-    ![কাজ নির্বাচন করুন।](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.bn.png)
+    ![কাজ নির্বাচন করুন।](../../../../../../translated_images/bn/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. **Next** নির্বাচন করুন।
 
@@ -489,17 +489,17 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. নিশ্চিত করুন যে **Job output** নির্বাচিত আছে; এটি স্বয়ংক্রিয়ভাবে নির্বাচিত হওয়া উচিত।
 
-    ![আউটপুট নির্বাচন করুন।](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.bn.png)
+    ![আউটপুট নির্বাচন করুন।](../../../../../../translated_images/bn/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. **Next** নির্বাচন করুন।
 
 3. **Register** নির্বাচন করুন।
 
-    ![রেজিস্টার নির্বাচন করুন।](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.bn.png)
+    ![রেজিস্টার নির্বাচন করুন।](../../../../../../translated_images/bn/07-04-register.fd82a3b293060bc7.png)
 
 4. বাম পাশের ট্যাব থেকে **Models** মেনুতে গিয়ে আপনার রেজিস্টার করা মডেলটি দেখতে পারেন।
 
-    ![রেজিস্টার করা মডেল।](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.bn.png)
+    ![রেজিস্টার করা মডেল।](../../../../../../translated_images/bn/07-05-registered-model.7db9775f58dfd591.png)
 
 #### ফাইন-টিউন করা মডেল ডিপ্লয় করুন
 
@@ -509,13 +509,13 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. নাভিগেশন মেনু থেকে **Real-time endpoints** নির্বাচন করুন।
 
-    ![এন্ডপয়েন্ট তৈরি করুন।](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.bn.png)
+    ![এন্ডপয়েন্ট তৈরি করুন।](../../../../../../translated_images/bn/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. **Create** নির্বাচন করুন।
 
 1. আপনি যে রেজিস্টার করা মডেলটি তৈরি করেছেন তা নির্বাচন করুন।
 
-    ![রেজিস্টার করা মডেল নির্বাচন করুন।](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.bn.png)
+    ![রেজিস্টার করা মডেল নির্বাচন করুন।](../../../../../../translated_images/bn/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. **Select** নির্বাচন করুন।
 
@@ -527,7 +527,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - **Endpoint name** লিখুন। এটি একটি ইউনিক মান হতে হবে।
     - **Deployment name** লিখুন। এটি একটি ইউনিক মান হতে হবে।
 
-    ![ডিপ্লয়মেন্ট সেটিং পূরণ করুন।](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.bn.png)
+    ![ডিপ্লয়মেন্ট সেটিং পূরণ করুন।](../../../../../../translated_images/bn/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. **Deploy** নির্বাচন করুন।
 
@@ -543,14 +543,14 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. আপনি যে এন্ডপয়েন্টটি তৈরি করেছেন তা নির্বাচন করুন।
 
-    ![এন্ডপয়েন্ট নির্বাচন করুন](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.bn.png)
+    ![এন্ডপয়েন্ট নির্বাচন করুন](../../../../../../translated_images/bn/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. এই পৃষ্ঠায়, আপনি ডিপ্লয়মেন্ট প্রক্রিয়া চলাকালীন এন্ডপয়েন্টগুলি পরিচালনা করতে পারবেন।
 
 > [!NOTE]
 > একবার ডিপ্লয়মেন্ট সম্পন্ন হলে নিশ্চিত করুন যে **Live traffic** সেট করা আছে **100%**। যদি না থাকে, তবে **Update traffic** নির্বাচন করে ট্র্যাফিক সেটিংস পরিবর্তন করুন। মনে রাখবেন ট্র্যাফিক 0% হলে আপনি মডেলটি পরীক্ষা করতে পারবেন না।
 >
-> ![ট্র্যাফিক সেট করুন।](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.bn.png)
+> ![ট্র্যাফিক সেট করুন।](../../../../../../translated_images/bn/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## সিনারিও ৩: Prompt flow-এর সাথে ইন্টিগ্রেট করুন এবং Azure AI Foundry-তে আপনার কাস্টম মডেলের সাথে চ্যাট করুন
@@ -579,7 +579,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 1. বাম পাশের ট্যাব থেকে **All hubs** নির্বাচন করুন।
 
 1. নাভিগেশন মেনু থেকে **+ New hub** নির্বাচন করুন।
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.bn.png)
+    ![Create hub.](../../../../../../translated_images/bn/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. নিম্নলিখিত কাজগুলো সম্পাদন করুন:
 
@@ -590,7 +590,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - ব্যবহারের জন্য **Connect Azure AI Services** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
     - **Connect Azure AI Search** নির্বাচন করুন এবং **Skip connecting** নির্বাচন করুন।
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.bn.png)
+    ![Fill hub.](../../../../../../translated_images/bn/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. **Next** নির্বাচন করুন।
 
@@ -600,11 +600,11 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. নেভিগেশন মেনু থেকে **+ New project** নির্বাচন করুন।
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.bn.png)
+    ![Select new project.](../../../../../../translated_images/bn/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. **Project name** লিখুন। এটি একটি অনন্য মান হতে হবে।
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.bn.png)
+    ![Create project.](../../../../../../translated_images/bn/08-05-create-project.4d97f0372f03375a.png)
 
 1. **Create a project** নির্বাচন করুন।
 
@@ -620,17 +620,17 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. বাম পাশের ট্যাব থেকে **Endpoints** নির্বাচন করুন।
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.bn.png)
+    ![Select endpoints.](../../../../../../translated_images/bn/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. আপনি যে endpoint তৈরি করেছেন তা নির্বাচন করুন।
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.bn.png)
+    ![Select endpoints.](../../../../../../translated_images/bn/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. নেভিগেশন মেনু থেকে **Consume** নির্বাচন করুন।
 
 1. আপনার **REST endpoint** এবং **Primary key** কপি করুন।
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.bn.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/bn/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### কাস্টম কানেকশন যোগ করুন
 
@@ -642,11 +642,11 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. **+ New connection** নির্বাচন করুন।
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.bn.png)
+    ![Select new connection.](../../../../../../translated_images/bn/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. নেভিগেশন মেনু থেকে **Custom keys** নির্বাচন করুন।
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.bn.png)
+    ![Select custom keys.](../../../../../../translated_images/bn/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. নিম্নলিখিত কাজগুলো সম্পাদন করুন:
 
@@ -656,7 +656,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - key name হিসেবে **key** লিখুন এবং Azure ML Studio থেকে কপি করা key value ফিল্ডে পেস্ট করুন।
     - keys যোগ করার পর, **is secret** নির্বাচন করুন যাতে key প্রকাশ না হয়।
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.bn.png)
+    ![Add connection.](../../../../../../translated_images/bn/08-11-add-connection.785486badb4d2d26.png)
 
 1. **Add connection** নির্বাচন করুন।
 
@@ -670,15 +670,15 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. নেভিগেশন মেনু থেকে **+ Create** নির্বাচন করুন।
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.bn.png)
+    ![Select Promptflow.](../../../../../../translated_images/bn/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. নেভিগেশন মেনু থেকে **Chat flow** নির্বাচন করুন।
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.bn.png)
+    ![Select chat flow.](../../../../../../translated_images/bn/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. ব্যবহারের জন্য **Folder name** লিখুন।
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.bn.png)
+    ![Enter name.](../../../../../../translated_images/bn/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. **Create** নির্বাচন করুন।
 
@@ -715,7 +715,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
     - **Save** নির্বাচন করুন।
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.bn.png)
+    ![Select raw file mode.](../../../../../../translated_images/bn/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. Prompt flow-তে কাস্টম Phi-3 মডেল ব্যবহার করতে *integrate_with_promptflow.py* ফাইলে নিম্নলিখিত কোডটি যোগ করুন।
 
@@ -780,14 +780,14 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.bn.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/bn/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Azure AI Foundry-তে Prompt flow ব্যবহার সম্পর্কিত আরও বিস্তারিত তথ্যের জন্য, আপনি [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) দেখতে পারেন।
 
 1. **Chat input**, **Chat output** নির্বাচন করুন যাতে আপনার মডেলের সাথে চ্যাট সক্ষম হয়।
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.bn.png)
+    ![Input Output.](../../../../../../translated_images/bn/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. এখন আপনি আপনার কাস্টম Phi-3 মডেলের সাথে চ্যাট করার জন্য প্রস্তুত। পরবর্তী অনুশীলনে, আপনি শিখবেন কীভাবে Prompt flow শুরু করতে হয় এবং এটি ব্যবহার করে fine-tuned Phi-3 মডেলের সাথে চ্যাট করতে হয়।
 
@@ -795,7 +795,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 >
 > পুনর্নির্মিত ফ্লোটি নিচের ছবির মতো হওয়া উচিত:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.bn.png)
+> ![Flow example.](../../../../../../translated_images/bn/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### আপনার কাস্টম Phi-3 মডেলের সাথে চ্যাট করুন
@@ -808,25 +808,25 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. Prompt flow শুরু করতে **Start compute sessions** নির্বাচন করুন।
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.bn.png)
+    ![Start compute session.](../../../../../../translated_images/bn/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. প্যারামিটার রিফ্রেশ করতে **Validate and parse input** নির্বাচন করুন।
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.bn.png)
+    ![Validate input.](../../../../../../translated_images/bn/09-02-validate-input.317c76ef766361e9.png)
 
 1. আপনি যে কাস্টম কানেকশন তৈরি করেছেন তার **connection** এর **Value** নির্বাচন করুন। উদাহরণস্বরূপ, *connection*।
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.bn.png)
+    ![Connection.](../../../../../../translated_images/bn/09-03-select-connection.99bdddb4b1844023.png)
 
 #### আপনার কাস্টম মডেলের সাথে চ্যাট করুন
 
 1. **Chat** নির্বাচন করুন।
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.bn.png)
+    ![Select chat.](../../../../../../translated_images/bn/09-04-select-chat.61936dce6612a1e6.png)
 
 1. ফলাফলের একটি উদাহরণ এখানে দেওয়া হলো: এখন আপনি আপনার কাস্টম Phi-3 মডেলের সাথে চ্যাট করতে পারেন। fine-tuning-এর জন্য ব্যবহৃত ডেটার ভিত্তিতে প্রশ্ন করতে পরামর্শ দেওয়া হয়।
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.bn.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/bn/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

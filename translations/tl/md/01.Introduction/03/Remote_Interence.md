@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Pagkatapos ma-train ang mga adapter sa remote na kapaligiran, gamitin ang isang simpleng Gradio application para makipag-ugnayan sa modelo.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.tl.png)
+![Fine-tune complete](../../../../../translated_images/tl/log-finetuning-res.7b92254e7e822c7f.png)
 
 ### Pag-provision ng Azure Resources  
 Kailangan mong i-setup ang Azure Resources para sa remote inference sa pamamagitan ng pagpapatakbo ng `AI Toolkit: Provision Azure Container Apps for inference` mula sa command palette. Sa proseso ng setup na ito, hihilingin kang pumili ng iyong Azure Subscription at resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.tl.png)
+![Provision Inference Resource](../../../../../translated_images/tl/command-provision-inference.467afc8d351642fc.png)
    
 Sa default, ang subscription at resource group para sa inference ay dapat tumugma sa mga ginamit sa fine-tuning. Gagamitin ng inference ang parehong Azure Container App Environment at maa-access ang modelo at model adapter na naka-imbak sa Azure Files, na nalikha noong fine-tuning na hakbang. 
 
@@ -24,7 +24,7 @@ Sa default, ang subscription at resource group para sa inference ay dapat tumugm
 ### Deployment para sa Inference  
 Kung nais mong baguhin ang inference code o i-reload ang inference model, patakbuhin ang `AI Toolkit: Deploy for inference` na command. Ito ay magsi-synchronize ng iyong pinakabagong code sa ACA at ire-restart ang replica.  
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.tl.png)
+![Deploy for inference](../../../../../translated_images/tl/command-deploy.9adb4e310dd0b0ae.png)
 
 Pagkatapos ng matagumpay na deployment, handa na ang modelo para sa pagsusuri gamit ang endpoint na ito.
 
@@ -32,7 +32,7 @@ Pagkatapos ng matagumpay na deployment, handa na ang modelo para sa pagsusuri ga
 
 Maaari mong ma-access ang inference API sa pamamagitan ng pag-click sa "*Go to Inference Endpoint*" na button na makikita sa VSCode notification. Bilang alternatibo, ang web API endpoint ay matatagpuan sa ilalim ng `ACA_APP_ENDPOINT` sa `./infra/inference.config.json` at sa output panel.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.tl.png)
+![App Endpoint](../../../../../translated_images/tl/notification-deploy.446e480a44b1be58.png)
 
 > **Note:** Maaaring tumagal ng ilang minuto bago tuluyang maging operational ang inference endpoint.
 

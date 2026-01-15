@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ето процеса на оценка в Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.bg.png)
+![Architecture of tutorial.](../../../../../../translated_images/bg/architecture.10bec55250f5d6a4.png)
 
 *Източник на изображението: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 За да сте сигурни, че вашият AI модел е етичен и безопасен, е от съществено значение да го оцените спрямо принципите за отговорен AI на Microsoft. В Azure AI Foundry оценките за безопасност ви позволяват да проверите уязвимостта на модела към jailbreak атаки и потенциала му да генерира вредно съдържание, което е в пълно съответствие с тези принципи.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.bg.png)
+![Safaty evaluation.](../../../../../../translated_images/bg/safety-evaluation.083586ec88dfa950.png)
 
 *Източник на изображението: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **Отговорност**: Хората, които проектират и внедряват AI системи, трябва да носят отговорност за начина, по който техните системи функционират. Организациите трябва да се основават на индустриални стандарти за разработване на норми за отговорност. Тези норми гарантират, че AI системите не са окончателният авторитет при решения, които засягат живота на хората, и че хората запазват значим контрол върху иначе силно автономни AI системи.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.bg.png)
+![Fill hub.](../../../../../../translated_images/bg/responsibleai2.c07ef430113fad8c.png)
 
 *Източник на изображението: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Оценката на тези аспекти гарантира, че AI моделът не произвежда вредно или обидно съдържание, съобразено с обществените ценности и регулаторните изисквания.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.bg.png)
+![Evaluate based on safety.](../../../../../../translated_images/bg/evaluate-based-on-safety.c5df819f5b0bfc07.png)
 
 ### Въведение в оценката на представянето
 
 За да сте сигурни, че вашият AI модел работи според очакванията, е важно да оцените представянето му спрямо метрики за ефективност. В Azure AI Foundry оценките на представянето ви позволяват да прецените ефективността на модела при генериране на точни, релевантни и свързани отговори.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.bg.png)
+![Safaty evaluation.](../../../../../../translated_images/bg/performance-evaluation.48b3e7e01a098740.png)
 
 *Източник на изображението: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Тези метрики ви помагат да оцените ефективността на модела при генериране на точни, релевантни и свързани отговори.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.bg.png)
+![Evaluate based on performance.](../../../../../../translated_images/bg/evaluate-based-on-performance.3e801c647c7554e8.png)
 
 ## **Сценарий 2: Оценка на модела Phi-3 / Phi-3.5 в Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **+ New hub** от навигационното меню.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.bg.png)
+    ![Create hub.](../../../../../../translated_images/bg/create-hub.5be78fb1e21ffbf1.png)
 
 1. Изпълнете следните задачи:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **Connect Azure AI Services**, които да използвате (създайте нови, ако е необходимо).
     - Изберете **Connect Azure AI Search** и изберете **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.bg.png)
+    ![Fill hub.](../../../../../../translated_images/bg/fill-hub.baaa108495c71e34.png)
 
 1. Изберете **Next**.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **+ New project** от навигационното меню.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.bg.png)
+    ![Select new project.](../../../../../../translated_images/bg/select-new-project.cd31c0404088d7a3.png)
 
 1. Въведете **Project name**. Трябва да е уникално име.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.bg.png)
+    ![Create project.](../../../../../../translated_images/bg/create-project.ca3b71298b90e420.png)
 
 1. Изберете **Create a project**.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **Endpoints** от лявата странична лента.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.bg.png)
+    ![Select endpoints.](../../../../../../translated_images/bg/select-endpoints.ee7387ecd68bd18d.png)
 
 1. Изберете endpoint, който сте създали.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.bg.png)
+    ![Select endpoints.](../../../../../../translated_images/bg/select-endpoint-created.9f63af5e4cf98b2e.png)
 
 1. Изберете **Consume** от навигационното меню.
 
 1. Копирайте вашия **REST endpoint** и **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.bg.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/bg/copy-endpoint-key.0650c3786bd646ab.png)
 
 #### Добавяне на персонализираната връзка
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.bg.png)
+    ![Select new connection.](../../../../../../translated_images/bg/select-new-connection.fa0f35743758a74b.png)
 
 1. Изберете **Custom keys** от навигационното меню.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.bg.png)
+    ![Select custom keys.](../../../../../../translated_images/bg/select-custom-keys.5a3c6b25580a9b67.png)
 
 1. Изпълнете следните задачи:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - За името на ключа въведете **key** и поставете ключа, който копирахте от Azure ML Studio, в полето за стойност.
     - След добавяне на ключовете, маркирайте **is secret**, за да предотвратите излагането на ключа.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.bg.png)
+    ![Add connection.](../../../../../../translated_images/bg/add-connection.ac7f5faf8b10b0df.png)
 
 1. Изберете **Add connection**.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **+ Create** от навигационното меню.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.bg.png)
+    ![Select Promptflow.](../../../../../../translated_images/bg/select-promptflow.18ff2e61ab9173eb.png)
 
 1. Изберете **Chat flow** от навигационното меню.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.bg.png)
+    ![Select chat flow.](../../../../../../translated_images/bg/select-flow-type.28375125ec9996d3.png)
 
 1. Въведете **Folder name**, който искате да използвате.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.bg.png)
+    ![Select chat flow.](../../../../../../translated_images/bg/enter-name.02ddf8fb840ad430.png)
 
 1. Изберете **Create**.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Изберете **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.bg.png)
+    ![Select raw file mode.](../../../../../../translated_images/bg/select-raw-file-mode.06c1eca581ce4f53.png)
 
 1. Добавете следния код в *integrate_with_promptflow.py*, за да използвате персонализирания модел Phi-3 / Phi-3.5 в Prompt flow.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.bg.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/bg/paste-promptflow-code.cd6d95b101c0ec28.png)
 
 > [!NOTE]
 > За по-подробна информация относно използването на Prompt flow в Azure AI Foundry, можете да се обърнете към [Prompt flow в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Изберете **Chat input**, **Chat output**, за да активирате чата с вашия модел.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.bg.png)
+    ![Select Input Output.](../../../../../../translated_images/bg/select-input-output.c187fc58f25fbfc3.png)
 
 1. Сега сте готови да чатите с вашия персонализиран модел Phi-3 / Phi-3.5. В следващото упражнение ще научите как да стартирате Prompt flow и да го използвате за чат с вашия фино настроен модел Phi-3 / Phi-3.5.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Преработеният flow трябва да изглежда като на изображението по-долу:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.bg.png)
+> ![Flow example](../../../../../../translated_images/bg/graph-example.82fd1bcdd3fc545b.png)
 >
 
 #### Стартиране на Prompt flow
 
 1. Изберете **Start compute sessions**, за да стартирате Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.bg.png)
+    ![Start compute session.](../../../../../../translated_images/bg/start-compute-session.9acd8cbbd2c43df1.png)
 
 1. Изберете **Validate and parse input**, за да обновите параметрите.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.bg.png)
+    ![Validate input.](../../../../../../translated_images/bg/validate-input.c1adb9543c6495be.png)
 
 1. Изберете **Value** на **connection** към персонализираната връзка, която сте създали. Например, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.bg.png)
+    ![Connection.](../../../../../../translated_images/bg/select-connection.1f2b59222bcaafef.png)
 
 #### Чат с вашия персонализиран модел Phi-3 / Phi-3.5
 
 1. Изберете **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.bg.png)
+    ![Select chat.](../../../../../../translated_images/bg/select-chat.0406bd9687d0c49d.png)
 
 1. Ето пример за резултатите: Сега можете да чатите с вашия персонализиран модел Phi-3 / Phi-3.5. Препоръчително е да задавате въпроси, базирани на данните, използвани за фино настройване.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.bg.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/bg/chat-with-promptflow.1cf8cea112359ada.png)
 
 ### Деплойване на Azure OpenAI за оценка на модела Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Отидете в Azure AI Foundry проекта, който сте създали.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.bg.png)
+    ![Select Project.](../../../../../../translated_images/bg/select-project-created.5221e0e403e2c9d6.png)
 
 1. В проекта, който сте създали, изберете **Deployments** от лявата странична лента.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изберете **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.bg.png)
+    ![Select Deployments.](../../../../../../translated_images/bg/deploy-openai-model.95d812346b25834b.png)
 
 1. Изберете Azure OpenAI модела, който искате да използвате. Например, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.bg.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/bg/select-openai-model.959496d7e311546d.png)
 
 1. Изберете **Confirm**.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Отидете в Azure AI Foundry проекта, който сте създали.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.bg.png)
+    ![Select Project.](../../../../../../translated_images/bg/select-project-created.5221e0e403e2c9d6.png)
 
 1. В проекта, който сте създали, изберете **Evaluation** от лявата странична лента.
 
 1. Изберете **+ New evaluation** от навигационното меню.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.bg.png)
+    ![Select evaluation.](../../../../../../translated_images/bg/select-evaluation.2846ad7aaaca7f4f.png)
 
 1. Изберете **Prompt flow** evaluation.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.bg.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/bg/promptflow-evaluation.cb9758cc19b4760f.png)
 
 1. Изпълнете следните задачи:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **Question and answer without context** като тип задача, тъй като наборът от данни **ULTRACHAT_200k**, използван в това ръководство, не съдържа контекст.
     - Изберете prompt flow, който искате да оцените.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.bg.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/bg/evaluation-setting1.4aa08259ff7a536e.png)
 
 1. Изберете **Next**.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете **Add your dataset**, за да качите набора от данни. Например, можете да качите тестовия файл, като *test_data.json1*, който е включен при изтегляне на **ULTRACHAT_200k** набора.
     - Изберете подходящата **Dataset column**, която съответства на вашия набор от данни. Например, ако използвате **ULTRACHAT_200k**, изберете **${data.prompt}** като колона.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.bg.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/bg/evaluation-setting2.07036831ba58d64e.png)
 
 1. Изберете **Next**.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изберете метриките за производителност и качество, които искате да използвате.
     - Изберете Azure OpenAI модела, който създадохте за оценка. Например, изберете **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.bg.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/bg/evaluation-setting3-1.d1ae69e3bf80914e.png)
 
 1. Изпълнете следните задачи за конфигуриране на метриките за риск и безопасност:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - За **answer**, изберете **Data source** да бъде **{$run.outputs.answer}**.
     - За **ground_truth**, изберете **Data source** да бъде **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.bg.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/bg/evaluation-setting3-2.d53bd075c60a45a2.png)
 
 1. Изберете **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - оценете ефективността на модела при генериране на свързани, плавни и релевантни отговори.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.bg.png)
+    ![Evaluation result.](../../../../../../translated_images/bg/evaluation-result-gpu.85f48b42dfb74254.png)
 
 1. Показатели за риск и безопасност:
 
     - Уверете се, че изходите на модела са безопасни и съответстват на Принципите за отговорен ИИ, като избягват всякакво вредно или обидно съдържание.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.bg.png)
+    ![Evaluation result.](../../../../../../translated_images/bg/evaluation-result-gpu-2.1b74e336118f4fd0.png)
 
 1. Можете да превъртите надолу, за да видите **Подробни резултати от показателите**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.bg.png)
+    ![Evaluation result.](../../../../../../translated_images/bg/detailed-metrics-result.afa2f5c39a4f5f17.png)
 
 1. Чрез оценка на вашия персонализиран модел Phi-3 / Phi-3.5 спрямо показатели за производителност и безопасност, можете да потвърдите, че моделът не само е ефективен, но и спазва практиките за отговорен ИИ, което го прави готов за реално внедряване.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Успешно оценихте финно настроения модел Phi-3, интегриран с Prompt flow в Azure AI Foundry. Това е важна стъпка за гарантиране, че вашите AI модели не само работят добре, но и спазват Принципите за отговорен ИИ на Microsoft, за да ви помогнат да изградите надеждни и доверени AI приложения.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.bg.png)
+![Architecture.](../../../../../../translated_images/bg/architecture.10bec55250f5d6a4.png)
 
 ## Почистване на Azure ресурси
 

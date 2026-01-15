@@ -28,9 +28,9 @@ GPUs తమ సమాంతర కంప్యూటింగ్ సామర్
 
 Intel® NPU డివైస్ అనేది Intel క్లయింట్ CPUలతో ఏకీకృతమైన AI ఇన్ఫరెన్స్ ఆక్సిలెరేటర్, Intel® Core™ Ultra తరం CPUలతో మొదలైనది (మునుపటి పేరు Meteor Lake). ఇది ఆర్టిఫిషియల్ న్యూరల్ నెట్‌వర్క్ పనులను ఎనర్జీ-ఎఫిషియెంట్‌గా నిర్వహించడానికి సహాయపడుతుంది.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.te.png)
+![Latency](../../../../../translated_images/te/aipcphitokenlatency.2be14f04f30a3bf7.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.te.png)
+![Latency770](../../../../../translated_images/te/aipcphitokenlatency770.e923609a57c5d394.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 కోడ్ అమలుపరచేటప్పుడు, Task Manager ద్వారా NPU యొక్క రన్ స్థితిని చూడవచ్చు
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.te.png)
+![NPU](../../../../../translated_images/te/aipc_NPU.7a3cb6db47b377e1.png)
 
 ***నమూనాలు*** : [AIPC_NPU_DEMO.ipynb](../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ఇది అమలులో ఉన్న ఫలితం
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.te.png)
+![DML](../../../../../translated_images/te/aipc_DML.52a44180393ab491.png)
 
 ***నమూనాలు*** : [AIPC_DirectML_DEMO.ipynb](../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 కన్వర్ట్ చేయబడిన ఫార్మాట్ ఇలా ఉంటాయి
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.te.png)
+![openvino_convert](../../../../../translated_images/te/aipc_OpenVINO_convert.9e6360b65331ffca.png)
 
 Load model paths(model_dir), related configurations(ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), and hardware-accelerated devices(GPU.0) through OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 కోడ్ అమలు చేసినప్పుడు, Task Manager ద్వారా GPU యొక్క రన్ స్థితిని చూడవచ్చు
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.te.png)
+![openvino_gpu](../../../../../translated_images/te/aipc_OpenVINO_GPU.20180edfffd91e55.png)
 
 ***నమూనాలు*** : [AIPC_OpenVino_Demo.ipynb](../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

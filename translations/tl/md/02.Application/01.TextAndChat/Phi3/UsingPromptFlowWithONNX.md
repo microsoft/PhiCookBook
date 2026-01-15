@@ -33,33 +33,33 @@ Basahin ang gabay na ito para i-set up ang ONNX Runtime GenAI para sa Windows GP
 
 1. I-install ang Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.tl.png)
+![pfvscode](../../../../../../translated_images/tl/pfvscode.eff93dfc66a42cbe.png)
 
 2. Pagkatapos ma-install ang Prompt flow VS Code Extension, i-click ang extension at piliin ang **Installation dependencies** sundin ang gabay na ito para i-install ang Prompt flow SDK sa iyong environment
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.tl.png)
+![pfsetup](../../../../../../translated_images/tl/pfsetup.b46e93096f5a254f.png)
 
 3. I-download ang [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) at buksan ito gamit ang VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.tl.png)
+![pfsample](../../../../../../translated_images/tl/pfsample.8d89e70584ffe7c4.png)
 
 4. Buksan ang **flow.dag.yaml** para piliin ang iyong Python environment
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.tl.png)
+![pfdag](../../../../../../translated_images/tl/pfdag.264a77f7366458ff.png)
 
    Buksan ang **chat_phi3_ort.py** para baguhin ang lokasyon ng iyong Phi-3.5-instruct ONNX Model
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.tl.png)
+![pfphi](../../../../../../translated_images/tl/pfphi.72da81d74244b45f.png)
 
 5. Patakbuhin ang iyong prompt flow para sa testing
 
 Buksan ang **flow.dag.yaml** at i-click ang visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.tl.png)
+![pfv](../../../../../../translated_images/tl/pfv.ba8a81f34b20f603.png)
 
 Pagkatapos i-click ito, patakbuhin ito para subukan
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.tl.png)
+![pfflow](../../../../../../translated_images/tl/pfflow.4e1135a089b1ce1b.png)
 
 1. Maaari kang magpatakbo ng batch sa terminal para makita ang mas maraming resulta
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Maaari mong tingnan ang mga resulta sa iyong default browser
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.tl.png)
+![pfresult](../../../../../../translated_images/tl/pfresult.c22c826f8062d7cb.png)
 
 **Paalala**:  
 Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

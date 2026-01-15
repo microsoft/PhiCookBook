@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ഞാൻ ആപ്പ് ഡെവലപ്‌മെന്റിനായി Objective-C തിരഞ്ഞെടുക്കുകയാണ്, കാരണം ONNX Runtime C++ API ഉപയോഗിച്ചുള്ള Generative AI-യിൽ Objective-C കൂടുതൽ അനുയോജ്യമാണ്. φυσικά, നിങ്ങൾ Swift bridging വഴി ബന്ധപ്പെട്ട কলുകൾ പൂര്‍ത്തിയാക്കുകയും ചെയ്യാം.
 
-![Xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.ml.png)
+![Xcode](../../../../../translated_images/ml/xcode.8147789e6c25e3e2.png)
 
 ## **5. ONNX ക്വാന്റൈസ്ഡ് INT4 മോഡൽ App ആപ്ലിക്കേഷൻ പ്രോജക്റ്റിലേക്ക് കോപ്പി ചെയ്യുക**
 
 ഞങ്ങൾയ്ക്ക് ആദ്യം ഡൗൺലോഡ് ചെയ്യേണ്ട ONNX ഫോർമാറ്റിലുള്ള INT4 ക്വാന്റൈസേഷൻ മോഡൽ ഇറക്കുമതി ചെയ്യേണ്ടതുണ്ട്
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.ml.png)
+![hf](../../../../../translated_images/ml/hf.6b8504fd88ee48dd.png)
 
 ഡൗൺലോഡ് കഴിഞ്ഞ്, അത് Xcode പ്രോജക്റ്റിലെ Resources ഡയറക്ടറിയിലേക്ക് ചേർക്കേണ്ടതുണ്ട്.
 
-![മോഡൽ](../../../../../translated_images/model.3b879b14e0be877d.ml.png)
+![മോഡൽ](../../../../../translated_images/ml/model.3b879b14e0be877d.png)
 
 ## **6. ViewControllers-ലിൽ C++ API ചേർക്കൽ**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** അനുയോജ്യമായ C++ ഹെഡർ ഫയലുകൾ പ്രോജക്റ്റിലേക്ക് ചേർക്കുക.
 
-  ![ഹെഡർ ഫയൽ](../../../../../translated_images/head.64cad021ce70a333.ml.png)
+  ![ഹെഡർ ഫയൽ](../../../../../translated_images/ml/head.64cad021ce70a333.png)
 
 - **b.** Xcode-ൽ `onnxruntime-genai` ഡൈനാമിക് ലൈബ്രറി ഉൾപ്പെടുത്തുക.
 
-  ![ലൈബ്രറി](../../../../../translated_images/lib.a4209b9f21ddf344.ml.png)
+  ![ലൈബ്രറി](../../../../../translated_images/ml/lib.a4209b9f21ddf344.png)
 
 - **c.** ടെസ്റ്റിംഗിന് C Samples കോഡ് ഉപയോഗിക്കുക. കൂടുതൽ പ്രവർത്തനക്ഷമതക്കായി ChatUI പോലുള്ള അധിക ഫീച്ചറുകൾ നിങ്ങൾക്ക് ചേർക്കാവുന്നതാണ്.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 സെറ്റപ്പ് പൂര്‍ത്തിയായ ശേഷം, Phi-3-mini മോഡൽ ഇൻഫറൻസിന്റെ ഫലങ്ങൾ കാണാൻ നിങ്ങൾ ആപ്പ് റൺ ചെയ്യാം.
 
-![പ്രവർത്തന ഫലം](../../../../../translated_images/result.326a947a6a2b9c51.ml.jpg)
+![പ്രവർത്തന ഫലം](../../../../../translated_images/ml/result.326a947a6a2b9c51.jpg)
 
 കൂടുതൽ സാമ്പിൾ കോഡ് மற்றும் വിശദമായ നിർദേശങ്ങൾക്ക്, സന്ദർശിക്കുക [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

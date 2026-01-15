@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 یہاں اس E2E نمونے کا جائزہ ہے۔
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.ur.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ur/00-01-architecture.198ba0f1ae6d841a.png)
 
 ### فہرست مضامین
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. پورٹل صفحے کے اوپر **تلاش بار** میں *azure machine learning* ٹائپ کریں اور ظاہر ہونے والے اختیارات میں سے **Azure Machine Learning** منتخب کریں۔
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.ur.png)
+    ![Type azure machine learning.](../../../../../../translated_images/ur/01-01-type-azml.acae6c5455e67b4b.png)
 
 2. نیویگیشن مینو سے **+ Create** منتخب کریں۔
 
 3. نیویگیشن مینو سے **New workspace** منتخب کریں۔
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.ur.png)
+    ![Select new workspace.](../../../../../../translated_images/ur/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
 
 4. درج ذیل کام انجام دیں:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - استعمال کرنے کے لیے **Application insights** منتخب کریں (نیا بنائیں اگر ضروری ہو)۔
     - استعمال کرنے کے لیے **Container registry** منتخب کریں (نیا بنائیں اگر ضروری ہو)۔
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.ur.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/ur/01-03-fill-AZML.a1b6fd944be0090f.png)
 
 5. **Review + Create** منتخب کریں۔
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - آپ جس **Virtual machine family** کا استعمال کرنا چاہتے ہیں اسے منتخب کریں۔ مثال کے طور پر، **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** منتخب کریں، جس میں *Standard_NC24ads_A100_v4* GPU شامل ہے۔
     - نیویگیشن مینو سے **Request quota** منتخب کریں۔
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.ur.png)
+        ![Request quota.](../../../../../../translated_images/ur/02-02-request-quota.c0428239a63ffdd5.png)
 
     - Request quota صفحے میں، اپنے مطلوبہ **New cores limit** درج کریں، مثلاً 24۔
     - Request quota صفحے میں، GPU کووٹا کی درخواست کرنے کے لیے **Submit** منتخب کریں۔
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. پورٹل صفحے کے اوپر **تلاش بار** میں *managed identities* ٹائپ کریں اور ظاہر ہونے والے اختیارات میں سے **Managed Identities** منتخب کریں۔
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.ur.png)
+    ![Type managed identities.](../../../../../../translated_images/ur/03-01-type-managed-identities.24de763e0f1f37e5.png)
 
 1. **+ Create** منتخب کریں۔
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.ur.png)
+    ![Select create.](../../../../../../translated_images/ur/03-02-select-create.92bf8989a5cd98f2.png)
 
 1. درج ذیل کام کریں:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - استعمال کے لیے **Region** منتخب کریں۔
     - **Name** درج کریں۔ یہ منفرد ہونا چاہیے۔
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.ur.png)
+    ![Select create.](../../../../../../translated_images/ur/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
 
 1. **Review + create** منتخب کریں۔
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - استعمال کے لیے **Resource group** منتخب کریں۔
     - **Role** کو **Contributor** پر منتخب کریں۔
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.ur.png)
+    ![Fill contributor role.](../../../../../../translated_images/ur/03-04-fill-contributor-role.73990bc6a32e140d.png)
 
 2. **Save** منتخب کریں۔
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. پورٹل صفحے کے اوپر **تلاش بار** میں *storage accounts* ٹائپ کریں اور ظاہر ہونے والے اختیارات میں سے **Storage accounts** منتخب کریں۔
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.ur.png)
+    ![Type storage accounts.](../../../../../../translated_images/ur/03-05-type-storage-accounts.9303de485e65e1e5.png)
 
 1. اس اسٹوریج اکاؤنٹ کو منتخب کریں جو آپ نے Azure Machine Learning ورک اسپیس کے ساتھ منسلک کیا ہے۔ مثال کے طور پر، *finetunephistorage*۔
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - نیویگیشن مینو سے **+ Add** منتخب کریں۔
     - نیویگیشن مینو سے **Add role assignment** منتخب کریں۔
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.ur.png)
+    ![Add role.](../../../../../../translated_images/ur/03-06-add-role.353ccbfdcf0789c2.png)
 
 1. Add role assignment صفحے میں درج ذیل کام کریں:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities پیج میں، جو Manage Identity آپ نے بنائی ہے اسے منتخب کریں۔ مثال کے طور پر، *finetunephi-managedidentity*۔
     - Select managed identities پیج میں، **Select** منتخب کریں۔
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.ur.png)
+    ![Select managed identity.](../../../../../../translated_images/ur/03-08-select-managed-identity.e80a2aad5247eb25.png)
 
 1. **Review + assign** منتخب کریں۔
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. پورٹل صفحے کے اوپر **تلاش بار** میں *container registries* ٹائپ کریں اور ظاہر ہونے والے اختیارات میں سے **Container registries** منتخب کریں۔
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.ur.png)
+    ![Type container registries.](../../../../../../translated_images/ur/03-09-type-container-registries.7a4180eb2110e5a6.png)
 
 1. اس container registry کو منتخب کریں جو Azure Machine Learning ورک اسپیس کے ساتھ منسلک ہے۔ مثال کے طور پر، *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
 
 1. *finetune-phi* فولڈر منتخب کریں جو آپ نے بنایا ہے، جو *C:\Users\yourUserName\finetune-phi* پر واقع ہے۔
 
-    ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.ur.png)
+    ![Select the folder that you created.](../../../../../../translated_images/ur/04-01-open-project-folder.f734374bcfd5f9e6.png)
 
 1. Visual Studio Code کے بائیں پین میں رائٹ کلک کریں اور **New File** منتخب کریں تاکہ *download_dataset.py* نامی نیا فائل بنایا جا سکے۔
 
-    ![Create a new file.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.ur.png)
+    ![Create a new file.](../../../../../../translated_images/ur/04-02-create-new-file.cf9a330a3a9cff92.png)
 
 ### fine-tuning کے لئے ڈیٹاسیٹ تیار کریں
 
@@ -392,7 +392,7 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
 
 1. **+ New** منتخب کریں۔
 
-    ![Select compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.ur.png)
+    ![Select compute.](../../../../../../translated_images/ur/06-01-select-compute.a29cff290b480252.png)
 
 1. درج ذیل کام کریں:
 
@@ -402,7 +402,7 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
     - **Virtual machine size** فلٹر میں **Select from all options** منتخب کریں۔
     - **Virtual machine size** کو **Standard_NC24ads_A100_v4** منتخب کریں۔
 
-    ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.ur.png)
+    ![Create cluster.](../../../../../../translated_images/ur/06-02-create-cluster.f221b65ae1221d4e.png)
 
 1. **Next** منتخب کریں۔
 
@@ -413,7 +413,7 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
     - **Maximum number of nodes** کو **1** منتخب کریں۔
     - **Idle seconds before scale down** کو **120** منتخب کریں۔
 
-    ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.ur.png)
+    ![Create cluster.](../../../../../../translated_images/ur/06-03-create-cluster.4a54ba20914f3662.png)
 
 1. **Create** منتخب کریں۔
 
@@ -423,18 +423,18 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
 
 1. جو Azure Machine Learning ورک اسپیس آپ نے بنایا ہے اسے منتخب کریں۔
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ur.png)
+    ![Select workspace that you created.](../../../../../../translated_images/ur/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. درج ذیل کام کریں:
 
     - بائیں جانب کے ٹیب سے **Model catalog** منتخب کریں۔
     - **search bar** میں *phi-3-mini-4k* ٹائپ کریں اور جو آپشن ظاہر ہو اس میں سے **Phi-3-mini-4k-instruct** منتخب کریں۔
 
-    ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.ur.png)
+    ![Type phi-3-mini-4k.](../../../../../../translated_images/ur/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
 
 1. نیویگیشن مینو سے **Fine-tune** منتخب کریں۔
 
-    ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.ur.png)
+    ![Select fine tune.](../../../../../../translated_images/ur/06-06-select-fine-tune.2918a59be55dfeec.png)
 
 1. درج ذیل کام کریں:
 
@@ -443,7 +443,7 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
     - Validation data اپلوڈ کی قسم کو **Provide different validation data** منتخب کریں۔
     - **+ Select data** پر کلک کریں تاکہ **Validation data** اپلوڈ کیا جا سکے۔
 
-    ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.ur.png)
+    ![Fill fine-tuning page.](../../../../../../translated_images/ur/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ Fine-tuning کے لیے درکار ڈیٹاسیٹس کو ڈاؤن لوڈ کرن�
 
 1. اس مشق میں، آپ نے کامیابی سے Azure Machine Learning میں Phi-3 ماڈل کو fine-tune کیا۔ براہ کرم نوٹ کریں کہ fine-tuning کا عمل کافی وقت لے سکتا ہے۔ fine-tuning جاب چلانے کے بعد، آپ کو اسے مکمل ہونے تک انتظار کرنا ہوگا۔ آپ Azure Machine Learning ورک اسپیس کے بائیں جانب کے ٹیب سے Jobs ٹیب میں جا کر fine-tuning جاب کی حالت مانیٹر کر سکتے ہیں۔ اگلے سلسلے میں، آپ fine-tuned ماڈل کو ڈیپلائے کریں گے اور اسے Prompt flow کے ساتھ مربوط کریں گے۔
 
-    ![See finetuning job.](../../../../../../translated_images/06-08-output.2bd32e59930672b1.ur.png)
+    ![See finetuning job.](../../../../../../translated_images/ur/06-08-output.2bd32e59930672b1.png)
 
 ### fine-tuned Phi-3 ماڈل کو ڈیپلائے کریں
 
@@ -471,17 +471,17 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. اپنے بنائے ہوئے Azure Machine Learning ورک اسپیس کو منتخب کریں۔
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ur.png)
+    ![Select workspace that you created.](../../../../../../translated_images/ur/06-04-select-workspace.a92934ac04f4f181.png)
 
 1. بائیں جانب کے ٹیب سے **Models** منتخب کریں۔
 1. **+ Register** منتخب کریں۔
 1. **From a job output** منتخب کریں۔
 
-    ![Register model.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.ur.png)
+    ![Register model.](../../../../../../translated_images/ur/07-01-register-model.ad1e7cc05e4b2777.png)
 
 1. اپنی تخلیق کردہ جاب کو منتخب کریں۔
 
-    ![Select job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.ur.png)
+    ![Select job.](../../../../../../translated_images/ur/07-02-select-job.3e2e1144cd6cd093.png)
 
 1. **Next** منتخب کریں۔
 
@@ -489,17 +489,17 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. یقینی بنائیں کہ **Job output** منتخب ہے؛ اس کا خود بخود انتخاب ہونا چاہیے۔
 
-    ![Select output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.ur.png)
+    ![Select output.](../../../../../../translated_images/ur/07-03-select-output.4cf1a0e645baea1f.png)
 
 2. **Next** منتخب کریں۔
 
 3. **Register** منتخب کریں۔
 
-    ![Select register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.ur.png)
+    ![Select register.](../../../../../../translated_images/ur/07-04-register.fd82a3b293060bc7.png)
 
 4. آپ اپنی رجسٹر شدہ ماڈل کو بائیں جانب کے ٹیب میں **Models** مینو میں جا کر دیکھ سکتے ہیں۔
 
-    ![Registered model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.ur.png)
+    ![Registered model.](../../../../../../translated_images/ur/07-05-registered-model.7db9775f58dfd591.png)
 
 #### fine-tuned ماڈل کو ڈیپلائے کریں
 
@@ -509,13 +509,13 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. نیویگیشن مینو سے **Real-time endpoints** منتخب کریں۔
 
-    ![Create endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.ur.png)
+    ![Create endpoint.](../../../../../../translated_images/ur/07-06-create-endpoint.1ba865c606551f09.png)
 
 1. **Create** منتخب کریں۔
 
 1. اپنا رجسٹر شدہ ماڈل منتخب کریں۔
 
-    ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.ur.png)
+    ![Select registered model.](../../../../../../translated_images/ur/07-07-select-registered-model.29c947c37fa30cb4.png)
 
 1. **Select** منتخب کریں۔
 
@@ -527,7 +527,7 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
     - **Endpoint name** درج کریں۔ یہ منفرد ہونا چاہیے۔
     - **Deployment name** درج کریں۔ یہ بھی منفرد ہونا چاہیے۔
 
-    ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.ur.png)
+    ![Fill the deployment setting.](../../../../../../translated_images/ur/07-08-deployment-setting.43ddc4209e673784.png)
 
 1. **Deploy** منتخب کریں۔
 
@@ -543,14 +543,14 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. وہ اینڈپوائنٹ منتخب کریں جو آپ نے بنایا ہے۔
 
-    ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.ur.png)
+    ![Select endpoints](../../../../../../translated_images/ur/07-09-check-deployment.325d18cae8475ef4.png)
 
 1. اس صفحہ پر، آپ تعیناتی کے عمل کے دوران اینڈپوائنٹس کا انتظام کر سکتے ہیں۔
 
 > [!NOTE]
 > تعیناتی مکمل ہونے کے بعد، یقینی بنائیں کہ **Live traffic** کو **100%** پر سیٹ کیا گیا ہے۔ اگر ایسا نہیں ہے، تو ٹریفک کی ترتیبات کو ایڈجسٹ کرنے کے لیے **Update traffic** منتخب کریں۔ یاد رکھیں کہ اگر ٹریفک 0% پر ہو تو آپ ماڈل کی جانچ نہیں کر سکتے۔
 >
-> ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.ur.png)
+> ![Set traffic.](../../../../../../translated_images/ur/07-10-set-traffic.085b847e5751ff3d.png)
 >
 
 ## منظرنامہ 3: Prompt flow کے ساتھ انٹیگریٹ کریں اور Azure AI Foundry میں اپنے کسٹم ماڈل کے ساتھ چیٹ کریں
@@ -579,7 +579,7 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 1. بائیں جانب کے ٹیب سے **All hubs** منتخب کریں۔
 
 1. نیویگیشن مینو سے **+ New hub** منتخب کریں۔
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.ur.png)
+    ![Create hub.](../../../../../../translated_images/ur/08-01-create-hub.8f7dd615bb8d9834.png)
 
 1. درج ذیل کام انجام دیں:
 
@@ -590,7 +590,7 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
     - وہ **Connect Azure AI Services** منتخب کریں جو آپ استعمال کرنا چاہتے ہیں (ضرورت پڑنے پر نیا بنائیں)۔
     - **Connect Azure AI Search** کو **Skip connecting** منتخب کریں۔
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.ur.png)
+    ![Fill hub.](../../../../../../translated_images/ur/08-02-fill-hub.c2d3b505bbbdba7c.png)
 
 1. **Next** منتخب کریں۔
 
@@ -600,11 +600,11 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. نیویگیشن مینو سے **+ New project** منتخب کریں۔
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.ur.png)
+    ![Select new project.](../../../../../../translated_images/ur/08-04-select-new-project.390fadfc9c8f8f12.png)
 
 1. **Project name** درج کریں۔ یہ منفرد ہونا چاہیے۔
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.ur.png)
+    ![Create project.](../../../../../../translated_images/ur/08-05-create-project.4d97f0372f03375a.png)
 
 1. **Create a project** منتخب کریں۔
 
@@ -620,17 +620,17 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. بائیں طرف کے ٹیب سے **Endpoints** منتخب کریں۔
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.ur.png)
+    ![Select endpoints.](../../../../../../translated_images/ur/08-06-select-endpoints.aff38d453bcf9605.png)
 
 1. بنایا ہوا اینڈ پوائنٹ منتخب کریں۔
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.ur.png)
+    ![Select endpoints.](../../../../../../translated_images/ur/08-07-select-endpoint-created.47f0dc09df2e275e.png)
 
 1. نیویگیشن مینو سے **Consume** منتخب کریں۔
 
 1. اپنا **REST endpoint** اور **Primary key** کاپی کریں۔
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.ur.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/ur/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
 
 #### کسٹم کنکشن شامل کریں
 
@@ -642,11 +642,11 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. **+ New connection** منتخب کریں۔
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.ur.png)
+    ![Select new connection.](../../../../../../translated_images/ur/08-09-select-new-connection.02eb45deadc401fc.png)
 
 1. نیویگیشن مینو سے **Custom keys** منتخب کریں۔
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.ur.png)
+    ![Select custom keys.](../../../../../../translated_images/ur/08-10-select-custom-keys.856f6b2966460551.png)
 
 1. درج ذیل کام کریں:
 
@@ -656,7 +656,7 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
     - کلید کے لیے **key** لکھیں اور Azure ML Studio سے کاپی کیا ہوا کلید ویلیو فیلڈ میں چسپاں کریں۔
     - کلید شامل کرنے کے بعد، اسے ظاہر ہونے سے بچانے کے لیے **is secret** منتخب کریں۔
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.ur.png)
+    ![Add connection.](../../../../../../translated_images/ur/08-11-add-connection.785486badb4d2d26.png)
 
 1. **Add connection** منتخب کریں۔
 
@@ -670,15 +670,15 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. نیویگیشن مینو سے **+ Create** منتخب کریں۔
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.ur.png)
+    ![Select Promptflow.](../../../../../../translated_images/ur/08-12-select-promptflow.6f4b451cb9821e5b.png)
 
 1. نیویگیشن مینو سے **Chat flow** منتخب کریں۔
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.ur.png)
+    ![Select chat flow.](../../../../../../translated_images/ur/08-13-select-flow-type.2ec689b22da32591.png)
 
 1. استعمال کے لیے **Folder name** درج کریں۔
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.ur.png)
+    ![Enter name.](../../../../../../translated_images/ur/08-14-enter-name.ff9520fefd89f40d.png)
 
 2. **Create** منتخب کریں۔
 
@@ -715,7 +715,7 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
     - **Save** منتخب کریں۔
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.ur.png)
+    ![Select raw file mode.](../../../../../../translated_images/ur/08-15-select-raw-file-mode.61d988b41df28985.png)
 
 1. /* integrate_with_promptflow.py */ فائل میں درج ذیل کوڈ شامل کریں تاکہ کسٹم Phi-3 ماڈل Prompt flow میں استعمال کیا جا سکے۔
 
@@ -780,14 +780,14 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.ur.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/ur/08-16-paste-promptflow-code.a6041b74a7d09777.png)
 
 > [!NOTE]
 > Azure AI Foundry میں Prompt flow کے استعمال کی مزید تفصیلی معلومات کے لیے آپ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) کا حوالہ دے سکتے ہیں۔
 
 1. چیٹ ان پٹ اور چیٹ آؤٹ پٹ کو منتخب کریں تاکہ آپ ماڈل سے چیٹ کر سکیں۔
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.ur.png)
+    ![Input Output.](../../../../../../translated_images/ur/08-17-select-input-output.64dbb39bbe59d03b.png)
 
 1. اب آپ اپنے کسٹم Phi-3 ماڈل سے چیٹ کے لیے تیار ہیں۔ اگلے مشق میں، آپ سیکھیں گے کہ Prompt flow کو کیسے شروع کیا جائے اور اس کے ذریعے اپنے fine-tuned Phi-3 ماڈل سے کیسے چیٹ کی جائے۔
 
@@ -795,7 +795,7 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 >
 > دوبارہ بنائی گئی فلو کچھ یوں نظر آئے گی:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.ur.png)
+> ![Flow example.](../../../../../../translated_images/ur/08-18-graph-example.d6457533952e690c.png)
 >
 
 ### اپنے کسٹم Phi-3 ماڈل سے چیٹ کریں
@@ -808,25 +808,25 @@ fine-tuned Phi-3 ماڈل کو Prompt flow کے ساتھ مربوط کرنے ک�
 
 1. Prompt flow شروع کرنے کے لیے **Start compute sessions** منتخب کریں۔
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.ur.png)
+    ![Start compute session.](../../../../../../translated_images/ur/09-01-start-compute-session.a86fcf5be68e386b.png)
 
 1. پیرامیٹرز کو تازہ کرنے کے لیے **Validate and parse input** منتخب کریں۔
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.ur.png)
+    ![Validate input.](../../../../../../translated_images/ur/09-02-validate-input.317c76ef766361e9.png)
 
 1. اپنی بنائی گئی کسٹم کنکشن کے **connection** کی **Value** منتخب کریں، مثلاً *connection*۔
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.ur.png)
+    ![Connection.](../../../../../../translated_images/ur/09-03-select-connection.99bdddb4b1844023.png)
 
 #### اپنے کسٹم ماڈل سے چیٹ کریں
 
 1. **Chat** منتخب کریں۔
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.ur.png)
+    ![Select chat.](../../../../../../translated_images/ur/09-04-select-chat.61936dce6612a1e6.png)
 
 1. یہاں نتائج کی ایک مثال ہے: اب آپ اپنے کسٹم Phi-3 ماڈل سے چیٹ کر سکتے ہیں۔ مشورہ دیا جاتا ہے کہ آپ fine-tuning کے لیے استعمال ہونے والے ڈیٹا کی بنیاد پر سوالات پوچھیں۔
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.ur.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/ur/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
 
 ---
 

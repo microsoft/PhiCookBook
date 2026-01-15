@@ -19,7 +19,7 @@ Mari kita jelajahi cara melakukan fine-tuning pada model bahasa Phi-3 Mini dari 
 - **Kemudahan:** Bagaimana proses fine-tuning sebenarnya – apakah saya perlu menulis kode khusus? Apakah saya perlu menyediakan komputasi sendiri?
 - **Keamanan:** Model yang sudah di-fine-tune diketahui memiliki risiko keamanan – apakah ada pengaman untuk mencegah dampak negatif yang tidak diinginkan?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.id.png)
+![AIFoundry Models](../../../../translated_images/id/AIFoundryModels.0e1b16f7d0b09b73.png)
 
 ## Persiapan untuk fine-tuning
 
@@ -71,7 +71,7 @@ Tipe file yang didukung adalah JSON Lines. File diunggah ke datastore default da
 
 Azure AI Foundry memungkinkan Anda menyesuaikan model bahasa besar dengan dataset pribadi melalui proses yang dikenal sebagai fine-tuning. Fine-tuning memberikan nilai signifikan dengan memungkinkan kustomisasi dan optimasi untuk tugas dan aplikasi tertentu. Ini menghasilkan peningkatan performa, efisiensi biaya, pengurangan latensi, dan keluaran yang disesuaikan.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.id.png)
+![Finetune AI Foundry](../../../../translated_images/id/AIFoundryfinetune.193aaddce48d553c.png)
 
 ### Membuat Proyek Baru
 
@@ -79,14 +79,14 @@ Azure AI Foundry memungkinkan Anda menyesuaikan model bahasa besar dengan datase
 
 1. Pilih **+New project** untuk membuat proyek baru di Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/select-new-project.cd31c0404088d7a3.png)
 
 1. Lakukan tugas berikut:
 
     - Nama **Hub** proyek. Harus unik.
     - Pilih **Hub** yang akan digunakan (buat baru jika perlu).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/create-project.ca3b71298b90e420.png)
 
 1. Lakukan tugas berikut untuk membuat hub baru:
 
@@ -97,7 +97,7 @@ Azure AI Foundry memungkinkan Anda menyesuaikan model bahasa besar dengan datase
     - Pilih **Connect Azure AI Services** yang akan digunakan (buat baru jika perlu).
     - Pilih **Connect Azure AI Search** ke **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/create-hub.49e53d235e80779e.png)
 
 1. Pilih **Next**.
 1. Pilih **Create a project**.
@@ -115,15 +115,15 @@ Sebelum fine-tuning, kumpulkan atau buat dataset yang relevan dengan tugas Anda,
 
 1. Ketik *phi-3* di **search bar** dan pilih model phi-3 yang ingin Anda gunakan.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/select-model.60ef2d4a6a3cec57.png)
 
 1. Pilih **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/select-finetune.a976213b543dd9d8.png)
 
 1. Masukkan **Nama model fine-tuned**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/finetune1.c2b39463f0d34148.png)
 
 1. Pilih **Next**.
 
@@ -132,13 +132,13 @@ Sebelum fine-tuning, kumpulkan atau buat dataset yang relevan dengan tugas Anda,
     - Pilih **jenis tugas** menjadi **Chat completion**.
     - Pilih **Data pelatihan** yang ingin digunakan. Anda bisa mengunggahnya melalui data Azure AI Foundry atau dari lingkungan lokal Anda.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/finetune2.43cb099b1a94442d.png)
 
 1. Pilih **Next**.
 
 1. Unggah **Data validasi** yang ingin digunakan, atau pilih **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/finetune3.fd96121b67dcdd92.png)
 
 1. Pilih **Next**.
 
@@ -148,15 +148,15 @@ Sebelum fine-tuning, kumpulkan atau buat dataset yang relevan dengan tugas Anda,
     - Pilih **Learning rate** yang ingin digunakan.
     - Pilih **Epochs** yang ingin digunakan.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/finetune4.e18b80ffccb5834a.png)
 
 1. Pilih **Submit** untuk memulai proses fine-tuning.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/select-submit.0a3802d581bac271.png)
 
 1. Setelah model Anda selesai di-fine-tune, status akan ditampilkan sebagai **Completed**, seperti pada gambar di bawah. Sekarang Anda bisa menerapkan model dan menggunakannya dalam aplikasi Anda sendiri, di playground, atau di prompt flow. Untuk informasi lebih lanjut, lihat [Cara menerapkan keluarga model bahasa kecil Phi-3 dengan Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.id.png)
+    ![FineTuneSelect](../../../../translated_images/id/completed.4dc8d2357144cdef.png)
 
 > [!NOTE]
 > Untuk informasi lebih rinci tentang fine-tuning Phi-3, kunjungi [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
