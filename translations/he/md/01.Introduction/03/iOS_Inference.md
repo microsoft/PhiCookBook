@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 בחרתי ב-Objective-C כשיטת פיתוח האפליקציה, כי בשימוש עם Generative AI דרך ONNX Runtime C++ API, Objective-C תואם יותר. כמובן, ניתן גם להשלים קריאות רלוונטיות דרך גישור Swift.
 
-![xcode](../../../../../translated_images/he/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/he/xcode.8147789e6c25e3e2.webp)
 
 ## **5. העתקת מודל ONNX מקוונט INT4 לפרויקט האפליקציה**
 
 יש לייבא את מודל הקוונטיזציה INT4 בפורמט ONNX, שצריך להוריד קודם.
 
-![hf](../../../../../translated_images/he/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/he/hf.6b8504fd88ee48dd.webp)
 
 לאחר ההורדה, יש להוסיף אותו לתיקיית Resources של הפרויקט ב-Xcode.
 
-![model](../../../../../translated_images/he/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/he/model.3b879b14e0be877d.webp)
 
 ## **6. הוספת API של C++ ב-ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **א.** הוסף את קבצי הכותרת המתאימים של C++ לפרויקט.
 
-  ![Header File](../../../../../translated_images/he/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/he/head.64cad021ce70a333.webp)
 
 - **ב.** כלול את ספריית ה-dynamic `onnxruntime-genai` ב-Xcode.
 
-  ![Library](../../../../../translated_images/he/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/he/lib.a4209b9f21ddf344.webp)
 
 - **ג.** השתמש בקוד דוגמאות C לצורך בדיקות. ניתן גם להוסיף תכונות נוספות כמו ChatUI לפונקציונליות מורחבת.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 לאחר השלמת ההגדרות, ניתן להריץ את האפליקציה ולראות את תוצאות ההסקה של מודל Phi-3-mini.
 
-![Running Result](../../../../../translated_images/he/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/he/result.326a947a6a2b9c51.webp)
 
 לקוד דוגמאות נוסף והוראות מפורטות, בקרו ב-[מאגר דוגמאות Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

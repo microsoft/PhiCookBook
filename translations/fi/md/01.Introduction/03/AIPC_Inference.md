@@ -28,9 +28,9 @@ Yhteenvetona: NPU:t ovat matemaattisia neroja, jotka kiihdyttävät tekoälyn la
 
 Intel® NPU-laite on tekoälyn päätelmäkiihdytin, joka on integroitu Intelin asiakasprosessoreihin alkaen Intel® Core™ Ultra -sukupolvesta (entinen Meteor Lake). Se mahdollistaa energiatehokkaan keinotekoisten hermoverkkojen tehtävien suorittamisen.
 
-![Latency](../../../../../translated_images/fi/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/fi/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/fi/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/fi/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Koodia suoritettaessa voimme tarkastella NPU:n toimintatilaa Tehtävienhallinnan kautta
 
-![NPU](../../../../../translated_images/fi/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/fi/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Esimerkit*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Tässä ajon tulos
 
-![DML](../../../../../translated_images/fi/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/fi/aipc_DML.52a44180393ab491.webp)
 
 ***Esimerkit*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 Muunnettu formaatti näyttää tältä
 
-![openvino_convert](../../../../../translated_images/fi/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/fi/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Lataa mallin polut (model_dir), siihen liittyvät asetukset (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) ja laitteistokiihdytetyt laitteet (GPU.0) OVModelForCausalLM:n kautta
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Koodia suoritettaessa voimme tarkastella GPU:n toimintatilaa Tehtävienhallinnan kautta
 
-![openvino_gpu](../../../../../translated_images/fi/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/fi/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Esimerkit*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 اخترت Objective-C كطريقة لتطوير التطبيق، لأن استخدام الذكاء الاصطناعي التوليدي مع ONNX Runtime API الخاص بـ C++ يتوافق بشكل أفضل مع Objective-C. بالطبع، يمكنك أيضًا إتمام الاستدعاءات ذات الصلة عبر جسر Swift.
 
-![xcode](../../../../../translated_images/ar/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ar/xcode.8147789e6c25e3e2.webp)
 
 ## **5. نسخ نموذج ONNX المكمم INT4 إلى مشروع تطبيق App**
 
 نحتاج إلى استيراد نموذج الكمّية INT4 بصيغة ONNX، والذي يجب تنزيله أولاً.
 
-![hf](../../../../../translated_images/ar/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ar/hf.6b8504fd88ee48dd.webp)
 
 بعد التنزيل، يجب إضافته إلى مجلد Resources في المشروع داخل Xcode.
 
-![model](../../../../../translated_images/ar/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ar/model.3b879b14e0be877d.webp)
 
 ## **6. إضافة API الخاص بـ C++ في ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **أ.** أضف ملفات الرأس الخاصة بـ C++ المناسبة إلى المشروع.
 
-  ![Header File](../../../../../translated_images/ar/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ar/head.64cad021ce70a333.webp)
 
 - **ب.** أدرج مكتبة `onnxruntime-genai` الديناميكية في Xcode.
 
-  ![Library](../../../../../translated_images/ar/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ar/lib.a4209b9f21ddf344.webp)
 
 - **ج.** استخدم كود عينات C للاختبار. يمكنك أيضًا إضافة ميزات إضافية مثل ChatUI لمزيد من الوظائف.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 بمجرد الانتهاء من الإعداد، يمكنك تشغيل التطبيق لرؤية نتائج استدلال نموذج Phi-3-mini.
 
-![Running Result](../../../../../translated_images/ar/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ar/result.326a947a6a2b9c51.webp)
 
 لمزيد من أكواد العينات والتعليمات التفصيلية، قم بزيارة [مستودع عينات Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

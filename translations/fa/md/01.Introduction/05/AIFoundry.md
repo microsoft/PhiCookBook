@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **استفاده از Azure AI Foundry برای ارزیابی**
 
-![aistudo](../../../../../translated_images/fa/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/fa/AIFoundry.9e0b513e999a1c5a.webp)
 
 چگونه برنامه هوش مصنوعی مولد خود را با استفاده از [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ارزیابی کنیم. چه در حال ارزیابی مکالمات تک‌مرحله‌ای باشید و چه چندمرحله‌ای، Azure AI Foundry ابزارهایی برای سنجش عملکرد و ایمنی مدل در اختیار شما قرار می‌دهد.
 
-![aistudo](../../../../../translated_images/fa/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/fa/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## نحوه ارزیابی برنامه‌های هوش مصنوعی مولد با Azure AI Foundry
 برای دستورالعمل‌های دقیق‌تر به [مستندات Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) مراجعه کنید.

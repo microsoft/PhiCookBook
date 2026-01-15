@@ -42,7 +42,7 @@ Hallitse versionhallintaa ja jaa tietoa tehokkaasti. Virtaviivaista koko prompt-
 
 Microsoft Prompt Flow’ssa arvioinnilla on keskeinen rooli tekoälymallien suorituskyvyn mittaamisessa. Tarkastellaan, miten voit mukauttaa arviointityönkulkuja ja mittareita Prompt Flow’ssa:
 
-![PFVizualise](../../../../../translated_images/fi/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/fi/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Arvioinnin ymmärtäminen Prompt Flow’ssa**
 

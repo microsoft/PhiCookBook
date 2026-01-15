@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 J’ai choisi Objective-C comme méthode de développement de l’application, car en utilisant l’API C++ d’ONNX Runtime pour l’IA générative, Objective-C offre une meilleure compatibilité. Bien sûr, vous pouvez aussi réaliser les appels nécessaires via un pont Swift.
 
-![xcode](../../../../../translated_images/fr/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/fr/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Copier le modèle ONNX quantifié INT4 dans le projet de l’application**
 
 Nous devons importer le modèle quantifié INT4 au format ONNX, qui doit d’abord être téléchargé.
 
-![hf](../../../../../translated_images/fr/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/fr/hf.6b8504fd88ee48dd.webp)
 
 Après le téléchargement, il faut l’ajouter au répertoire Resources du projet dans Xcode.
 
-![model](../../../../../translated_images/fr/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/fr/model.3b879b14e0be877d.webp)
 
 ## **6. Ajouter l’API C++ dans les ViewControllers**
 
@@ -121,11 +121,11 @@ Après le téléchargement, il faut l’ajouter au répertoire Resources du proj
 
 - **a.** Ajoutez les fichiers d’en-tête C++ correspondants au projet.
 
-  ![Header File](../../../../../translated_images/fr/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/fr/head.64cad021ce70a333.webp)
 
 - **b.** Incluez la bibliothèque dynamique `onnxruntime-genai` dans Xcode.
 
-  ![Library](../../../../../translated_images/fr/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/fr/lib.a4209b9f21ddf344.webp)
 
 - **c.** Utilisez le code d’exemples en C pour les tests. Vous pouvez aussi ajouter des fonctionnalités supplémentaires comme ChatUI pour plus de possibilités.
 
@@ -162,7 +162,7 @@ Après le téléchargement, il faut l’ajouter au répertoire Resources du proj
 
 Une fois la configuration terminée, vous pouvez lancer l’application pour voir les résultats de l’inférence du modèle Phi-3-mini.
 
-![Running Result](../../../../../translated_images/fr/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/fr/result.326a947a6a2b9c51.webp)
 
 Pour plus d’exemples de code et des instructions détaillées, consultez le [dépôt Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

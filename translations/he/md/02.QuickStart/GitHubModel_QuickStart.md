@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ברוכים הבאים ל-[GitHub Models](https://github.com/marketplace/models)! הכל מוכן ומזומן בשבילכם לחקור דגמי AI המתארחים ב-Azure AI.
 
-![GitHubModel](../../../../translated_images/he/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/he/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 למידע נוסף על הדגמים הזמינים ב-GitHub Models, עיינו ב-[GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 קיימת גם סביבת Codespaces ייעודית להרצת הדוגמאות והדגמים.
 
-![Getting Started](../../../../translated_images/he/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/he/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## קוד לדוגמה
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## שימוש חינמי ומגבלות קצב עבור GitHub Models
 
-![Model Catalog](../../../../translated_images/he/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/he/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [מגבלות הקצב עבור סביבת הניסוי והשימוש החינמי ב-API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) נועדו לאפשר לכם להתנסות בדגמים ולפתח אב-טיפוס של יישום ה-AI שלכם. לשימוש מעבר למגבלות אלו, ולהרחבת היישום בקנה מידה, יש לספק משאבים מחשבון Azure ולאמת דרכו במקום להשתמש ב-Personal Access Token של GitHub. אין צורך לשנות דבר בקוד שלכם. השתמשו בקישור זה כדי ללמוד כיצד לעבור את מגבלות השכבה החינמית ב-Azure AI.
 

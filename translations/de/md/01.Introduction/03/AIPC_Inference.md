@@ -28,9 +28,9 @@ Zusammengefasst sind NPUs die Mathe-Genies, die KI-Berechnungen beschleunigen, u
 
 Das Intel® NPU-Gerät ist ein KI-Inferenzbeschleuniger, der in Intel-Client-CPUs ab der Intel® Core™ Ultra Generation (früher bekannt als Meteor Lake) integriert ist. Es ermöglicht eine energieeffiziente Ausführung künstlicher neuronaler Netzwerke.
 
-![Latenz](../../../../../translated_images/de/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latenz](../../../../../translated_images/de/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latenz770](../../../../../translated_images/de/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latenz770](../../../../../translated_images/de/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Während der Codeausführung kann der Status der NPU über den Task-Manager eingesehen werden.
 
-![NPU](../../../../../translated_images/de/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/de/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Beispiele*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Dies ist das Ergebnis der Ausführung
 
-![DML](../../../../../translated_images/de/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/de/aipc_DML.52a44180393ab491.webp)
 
 ***Beispiele*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 Das konvertierte Format sieht so aus
 
-![openvino_convert](../../../../../translated_images/de/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/de/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Laden Sie Modellpfade (model_dir), zugehörige Konfigurationen (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) und hardwarebeschleunigte Geräte (GPU.0) über OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Während der Codeausführung kann der Status der GPU über den Task-Manager eingesehen werden.
 
-![openvino_gpu](../../../../../translated_images/de/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/de/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Beispiele*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

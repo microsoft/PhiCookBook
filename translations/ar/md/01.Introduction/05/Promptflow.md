@@ -41,7 +41,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 في Microsoft Prompt Flow، يلعب التقييم دورًا حيويًا في قياس مدى أداء نماذج الذكاء الاصطناعي الخاصة بك. دعونا نستعرض كيف يمكنك تخصيص تدفقات التقييم والمؤشرات داخل Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/ar/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/ar/pfvisualize.c1d9ca75baa2a222.webp)
 
 **فهم التقييم في Prompt Flow**
 

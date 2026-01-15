@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 In diesem Beispiel werden wir das Phi-3-mini-4k-instruct Modell feinjustieren, um ein Gespräch zwischen zwei Personen mit dem ultrachat_200k Datensatz zu vervollständigen.
 
-![MLFineTune](../../../../translated_images/de/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/de/MLFineTune.928d4c6b3767dd35.webp)
 
 Das Beispiel zeigt, wie man mit dem Azure ML SDK und Python eine Feinjustierung durchführt und anschließend das feinjustierte Modell für Echtzeit-Inferenz an einem Online-Endpunkt bereitstellt.
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 من Objective-C را به عنوان روش توسعه اپلیکیشن انتخاب کردم، چون استفاده از هوش مصنوعی مولد با API C++ ONNX Runtime در Objective-C سازگاری بهتری دارد. البته می‌توانید فراخوانی‌های مرتبط را از طریق Swift bridging هم انجام دهید.
 
-![xcode](../../../../../translated_images/fa/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/fa/xcode.8147789e6c25e3e2.webp)
 
 ## **5. کپی مدل کوانتیزه شده INT4 ONNX به پروژه اپلیکیشن**
 
 ما باید مدل کوانتیزه شده INT4 در فرمت ONNX را وارد کنیم که ابتدا باید آن را دانلود کنید.
 
-![hf](../../../../../translated_images/fa/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/fa/hf.6b8504fd88ee48dd.webp)
 
 پس از دانلود، باید آن را به دایرکتوری Resources پروژه در Xcode اضافه کنید.
 
-![model](../../../../../translated_images/fa/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/fa/model.3b879b14e0be877d.webp)
 
 ## **6. افزودن API C++ در ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **الف.** فایل‌های هدر مربوط به C++ را به پروژه اضافه کنید.
 
-  ![Header File](../../../../../translated_images/fa/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/fa/head.64cad021ce70a333.webp)
 
 - **ب.** کتابخانه داینامیک `onnxruntime-genai` را در Xcode وارد کنید.
 
-  ![Library](../../../../../translated_images/fa/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/fa/lib.a4209b9f21ddf344.webp)
 
 - **ج.** از کد نمونه C برای تست استفاده کنید. همچنین می‌توانید ویژگی‌های اضافی مانند ChatUI را برای عملکرد بیشتر اضافه کنید.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 پس از اتمام تنظیمات، می‌توانید اپلیکیشن را اجرا کنید و نتایج استنتاج مدل Phi-3-mini را مشاهده کنید.
 
-![Running Result](../../../../../translated_images/fa/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/fa/result.326a947a6a2b9c51.webp)
 
 برای نمونه کدهای بیشتر و دستورالعمل‌های دقیق‌تر، به [مخزن نمونه‌های Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) مراجعه کنید.
 

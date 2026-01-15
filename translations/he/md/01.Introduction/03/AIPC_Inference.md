@@ -28,9 +28,9 @@ NPU (יחידת עיבוד עצבית) הוא מעבד ייעודי או יחי�
 
 מכשיר Intel® NPU הוא מאיץ הסקה של AI המשולב עם מעבדי הלקוח של אינטל, החל מדור מעבדי Intel® Core™ Ultra (שנקרא בעבר Meteor Lake). הוא מאפשר ביצוע חסכוני באנרגיה של משימות רשתות עצביות מלאכותיות.
 
-![Latency](../../../../../translated_images/he/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/he/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/he/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/he/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **ספריית האצת Intel NPU**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 בעת הרצת הקוד, ניתן לצפות במצב הריצה של ה-NPU דרך מנהל המשימות
 
-![NPU](../../../../../translated_images/he/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/he/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***דוגמאות*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 זהו תוצאת הריצה
 
-![DML](../../../../../translated_images/he/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/he/aipc_DML.52a44180393ab491.webp)
 
 ***דוגמאות*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 הפורמט שהומר, כך נראה
 
-![openvino_convert](../../../../../translated_images/he/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/he/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 טוענים נתיבי מודל (model_dir), קונפיגורציות קשורות (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), ומכשירי חומרה מואצים (GPU.0) דרך OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 בעת הרצת הקוד, ניתן לצפות במצב הריצה של ה-GPU דרך מנהל המשימות
 
-![openvino_gpu](../../../../../translated_images/he/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/he/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***דוגמאות*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

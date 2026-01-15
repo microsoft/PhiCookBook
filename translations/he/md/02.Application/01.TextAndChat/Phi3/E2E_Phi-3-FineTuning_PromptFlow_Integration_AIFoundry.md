@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 להלן סקירה של דוגמת הקצה-לקצה הזו.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/he/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/he/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### תוכן העניינים
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. הקלד *azure machine learning* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Azure Machine Learning** מהאפשרויות שמופיעות.
 
-    ![Type azure machine learning.](../../../../../../translated_images/he/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/he/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. בחר **+ Create** בתפריט הניווט.
 
 3. בחר **New workspace** בתפריט הניווט.
 
-    ![Select new workspace.](../../../../../../translated_images/he/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/he/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. בצע את הפעולות הבאות:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **Application insights** לשימוש (צור חדש במידת הצורך).
     - בחר את **מרשם המכולות** לשימוש (צור חדש במידת הצורך).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/he/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/he/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. בחר **Review + Create**.
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **משפחת מכונות וירטואליות** לשימוש. לדוגמה, בחר **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, הכוללת את ה-GPU מסוג *Standard_NC24ads_A100_v4*.
     - בחר **Request quota** מתפריט הניווט.
 
-        ![Request quota.](../../../../../../translated_images/he/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/he/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - בדף בקשת המכסה, הזן את **מכסת הליבות החדשה** שברצונך להשתמש בה. לדוגמה, 24.
     - בדף בקשת המכסה, בחר **Submit** כדי לבקש את המכסה ל-GPU.
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. הקלד *managed identities* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Managed Identities** מהאפשרויות שמופיעות.
 
-    ![Type managed identities.](../../../../../../translated_images/he/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/he/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. בחר **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/he/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/he/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. בצע את הפעולות הבאות:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **האזור** שבו תרצה להשתמש.
     - הזן את ה**שם**. חייב להיות ערך ייחודי.
 
-    ![Select create.](../../../../../../translated_images/he/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/he/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. בחר **Review + create**.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **קבוצת המשאבים** לשימוש.
     - בחר את **התפקיד** ל**Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/he/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/he/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. בחר **Save**.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. הקלד *storage accounts* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Storage accounts** מהאפשרויות שמופיעות.
 
-    ![Type storage accounts.](../../../../../../translated_images/he/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/he/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. בחר את חשבון האחסון המשויך לסביבת העבודה ב-Azure Machine Learning שיצרת. לדוגמה, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר **+ Add** מתפריט הניווט.
     - בחר **Add role assignment** מתפריט הניווט.
 
-    ![Add role.](../../../../../../translated_images/he/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/he/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. בדף הוספת שיוך תפקיד, בצע את הפעולות הבאות:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בדף בחירת זהויות מנוהלות, בחר את Manage Identity שיצרת. לדוגמה, *finetunephi-managedidentity*.
     - בדף בחירת זהויות מנוהלות, בחר **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/he/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/he/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. בחר **Review + assign**.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. הקלד *container registries* ב**סרגל החיפוש** בראש דף הפורטל ובחר **Container registries** מהאפשרויות שמופיעות.
 
-    ![Type container registries.](../../../../../../translated_images/he/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/he/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. בחר את מרשם המכולות המשויך לסביבת העבודה ב-Azure Machine Learning. לדוגמה, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר את תיקיית *finetune-phi* שיצרת, שנמצאת ב-*C:\Users\yourUserName\finetune-phi*.
 
-    ![Select the folder that you created.](../../../../../../translated_images/he/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Select the folder that you created.](../../../../../../translated_images/he/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. בסרגל השמאלי של Visual Studio Code, לחץ קליק ימני ובחר **New File** כדי ליצור קובץ חדש בשם *download_dataset.py*.
 
-    ![Create a new file.](../../../../../../translated_images/he/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Create a new file.](../../../../../../translated_images/he/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### הכנת מערך הנתונים לכוונון עדין
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ New**.
 
-    ![Select compute.](../../../../../../translated_images/he/06-01-select-compute.a29cff290b480252.png)
+    ![Select compute.](../../../../../../translated_images/he/06-01-select-compute.a29cff290b480252.webp)
 
 1. בצע את הפעולות הבאות:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את סינון **Virtual machine size** ל-**Select from all options**.
     - בחר את **Virtual machine size** ל-**Standard_NC24ads_A100_v4**.
 
-    ![Create cluster.](../../../../../../translated_images/he/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Create cluster.](../../../../../../translated_images/he/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. בחר **Next**.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **Maximum number of nodes** ל-**1**.
     - בחר את **Idle seconds before scale down** ל-**120**.
 
-    ![Create cluster.](../../../../../../translated_images/he/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Create cluster.](../../../../../../translated_images/he/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. בחר **Create**.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר את סביבת העבודה Azure Machine Learning שיצרת.
 
-    ![Select workspace that you created.](../../../../../../translated_images/he/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Select workspace that you created.](../../../../../../translated_images/he/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. בצע את הפעולות הבאות:
 
     - בחר **Model catalog** מהטאב הצדדי השמאלי.
     - הקלד *phi-3-mini-4k* בשורת החיפוש ובחר **Phi-3-mini-4k-instruct** מתוך האפשרויות שמופיעות.
 
-    ![Type phi-3-mini-4k.](../../../../../../translated_images/he/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Type phi-3-mini-4k.](../../../../../../translated_images/he/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. בחר **Fine-tune** מתפריט הניווט.
 
-    ![Select fine tune.](../../../../../../translated_images/he/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Select fine tune.](../../../../../../translated_images/he/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. בצע את הפעולות הבאות:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את סוג העלאת נתוני האימות ל-**Provide different validation data**.
     - בחר **+ Select data** כדי להעלות **Validation data**.
 
-    ![Fill fine-tuning page.](../../../../../../translated_images/he/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Fill fine-tuning page.](../../../../../../translated_images/he/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בתרגיל זה, ביצעת בהצלחה כוונון עדין לדגם Phi-3 באמצעות Azure Machine Learning. שים לב שתהליך הכוונון העדין עלול לקחת זמן מה. לאחר הפעלת משימת הכוונון, עליך לחכות עד שתסתיים. ניתן לעקוב אחר מצב משימת הכוונון על ידי כניסה לטאב Jobs בצד השמאלי בסביבת העבודה שלך ב-Azure Machine Learning. בסדרה הבאה תפרוס את הדגם המכוון ותשלב אותו עם Prompt flow.
 
-    ![See finetuning job.](../../../../../../translated_images/he/06-08-output.2bd32e59930672b1.png)
+    ![See finetuning job.](../../../../../../translated_images/he/06-08-output.2bd32e59930672b1.webp)
 
 ### פרוס את דגם Phi-3 המכוון
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר את סביבת העבודה Azure Machine Learning שיצרת.
 
-    ![Select workspace that you created.](../../../../../../translated_images/he/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Select workspace that you created.](../../../../../../translated_images/he/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. בחר **Models** מהטאב הצדדי השמאלי.
 1. בחר **+ Register**.
 1. בחר **From a job output**.
 
-    ![Register model.](../../../../../../translated_images/he/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Register model.](../../../../../../translated_images/he/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. בחר את המשימה שיצרת.
 
-    ![Select job.](../../../../../../translated_images/he/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Select job.](../../../../../../translated_images/he/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. בחר **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ודא שה-**Job output** מסומן; זה צריך להיות מסומן אוטומטית.
 
-    ![Select output.](../../../../../../translated_images/he/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Select output.](../../../../../../translated_images/he/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. בחר **Next**.
 
 3. בחר **Register**.
 
-    ![Select register.](../../../../../../translated_images/he/07-04-register.fd82a3b293060bc7.png)
+    ![Select register.](../../../../../../translated_images/he/07-04-register.fd82a3b293060bc7.webp)
 
 4. ניתן לראות את הדגם שנרשם דרך תפריט **Models** בטאב הצדדי השמאלי.
 
-    ![Registered model.](../../../../../../translated_images/he/07-05-registered-model.7db9775f58dfd591.png)
+    ![Registered model.](../../../../../../translated_images/he/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### פרוס את הדגם המכוון
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **Real-time endpoints** מתפריט הניווט.
 
-    ![Create endpoint.](../../../../../../translated_images/he/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Create endpoint.](../../../../../../translated_images/he/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. בחר **Create**.
 
 1. בחר את הדגם שנרשם שיצרת.
 
-    ![Select registered model.](../../../../../../translated_images/he/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Select registered model.](../../../../../../translated_images/he/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. בחר **Select**.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - הזן **Endpoint name**. חייב להיות שם ייחודי.
     - הזן **Deployment name**. חייב להיות שם ייחודי.
 
-    ![Fill the deployment setting.](../../../../../../translated_images/he/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Fill the deployment setting.](../../../../../../translated_images/he/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. בחר **Deploy**.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר את נקודת הקצה שיצרת.
 
-    ![Select endpoints](../../../../../../translated_images/he/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Select endpoints](../../../../../../translated_images/he/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. בדף זה, ניתן לנהל את נקודות הקצה במהלך תהליך הפריסה.
 
 > [!NOTE]
 > לאחר שהפריסה הושלמה, ודא כי **Live traffic** מוגדר ל-**100%**. אם לא, בחר **Update traffic** כדי לשנות את הגדרות התעבורה. שים לב שאי אפשר לבדוק את הדגם אם תעבורה מוגדרת ל-0%.
 >
-> ![Set traffic.](../../../../../../translated_images/he/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Set traffic.](../../../../../../translated_images/he/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## תרחיש 3: אינטגרציה עם Prompt flow ויצירת שיחה עם הדגם המותאם שלך ב-Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. בחר **All hubs** בטאב הצדדי השמאלי.
 
 1. בחר **+ New hub** מתפריט הניווט.
-    ![Create hub.](../../../../../../translated_images/he/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Create hub.](../../../../../../translated_images/he/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. בצע את המשימות הבאות:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **חיבור שירותי AI של Azure** לשימוש (צור חדש אם יש צורך).
     - בחר ב-**חיבור Azure AI Search** את האפשרות **דלג על חיבור**.
 
-    ![Fill hub.](../../../../../../translated_images/he/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Fill hub.](../../../../../../translated_images/he/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. בחר **הבא**.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ פרויקט חדש** מתפריט הניווט.
 
-    ![Select new project.](../../../../../../translated_images/he/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Select new project.](../../../../../../translated_images/he/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. הזן **שם הפרויקט**. חייב להיות ערך ייחודי.
 
-    ![Create project.](../../../../../../translated_images/he/08-05-create-project.4d97f0372f03375a.png)
+    ![Create project.](../../../../../../translated_images/he/08-05-create-project.4d97f0372f03375a.webp)
 
 1. בחר **צור פרויקט**.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **Endpoints** מהכרטיסייה בצדו השמאלי.
 
-    ![Select endpoints.](../../../../../../translated_images/he/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Select endpoints.](../../../../../../translated_images/he/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. בחר את נקודת הקצה שיצרת.
 
-    ![Select endpoints.](../../../../../../translated_images/he/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Select endpoints.](../../../../../../translated_images/he/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. בחר **Consume** מתפריט הניווט.
 
 1. העתק את **נקודת הקצה REST** ואת ה-**מפתח הראשי** שלך.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/he/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/he/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### הוסף את החיבור המותאם אישית
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ חיבור חדש**.
 
-    ![Select new connection.](../../../../../../translated_images/he/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Select new connection.](../../../../../../translated_images/he/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. בחר **מפתחות מותאמים אישית** מתפריט הניווט.
 
-    ![Select custom keys.](../../../../../../translated_images/he/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Select custom keys.](../../../../../../translated_images/he/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. בצע את המשימות הבאות:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - עבור שם המפתח, הזן **key** והדבק את המפתח שהעתקת מ-Azure ML Studio בשדה הערך.
     - לאחר הוספת המפתחות, בחר **הוא סודי** כדי למנוע את החשיפה של המפתח.
 
-    ![Add connection.](../../../../../../translated_images/he/08-11-add-connection.785486badb4d2d26.png)
+    ![Add connection.](../../../../../../translated_images/he/08-11-add-connection.785486badb4d2d26.webp)
 
 1. בחר **הוסף חיבור**.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ צור** מתפריט הניווט.
 
-    ![Select Promptflow.](../../../../../../translated_images/he/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Select Promptflow.](../../../../../../translated_images/he/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. בחר **זרם שיחה** מתפריט הניווט.
 
-    ![Select chat flow.](../../../../../../translated_images/he/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Select chat flow.](../../../../../../translated_images/he/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. הזן **שם התיקייה** לשימוש.
 
-    ![Enter name.](../../../../../../translated_images/he/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Enter name.](../../../../../../translated_images/he/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. בחר **צור**.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - בחר **שמירה**.
 
-    ![Select raw file mode.](../../../../../../translated_images/he/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Select raw file mode.](../../../../../../translated_images/he/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. הוסף את הקוד הבא לקובץ *integrate_with_promptflow.py* כדי להשתמש במודל Phi-3 המותאם ב-Prompt flow.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/he/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/he/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > לקבלת מידע מפורט יותר על השימוש ב-Prompt flow ב-Azure AI Foundry, ניתן לעיין ב-[Prompt flow ב-Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. בחר **קלט שיחה**, **פלט שיחה** כדי לאפשר שיחה עם המודל שלך.
 
-    ![Input Output.](../../../../../../translated_images/he/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Input Output.](../../../../../../translated_images/he/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. כעת אתה מוכן לנהל שיחה עם מודל Phi-3 המותאם שלך. בתרגיל הבא תלמד כיצד להפעיל את ה-Prompt flow ולהשתמש בו לשיחה עם מודל Phi-3 המותאם שלך.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > הזרם המחודש אמור להיראות כמו התמונה למטה:
 >
-> ![Flow example.](../../../../../../translated_images/he/08-18-graph-example.d6457533952e690c.png)
+> ![Flow example.](../../../../../../translated_images/he/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### שיחה עם מודל Phi-3 המותאם שלך
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **הפעל מושבי חישוב** כדי להפעיל את Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/he/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Start compute session.](../../../../../../translated_images/he/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. בחר **אשר ופרש קלט** כדי לחדש פרמטרים.
 
-    ![Validate input.](../../../../../../translated_images/he/09-02-validate-input.317c76ef766361e9.png)
+    ![Validate input.](../../../../../../translated_images/he/09-02-validate-input.317c76ef766361e9.webp)
 
 1. בחר את **ערך** ה-**חיבור** לחיבור המותאם אישית שיצרת. לדוגמה, *connection*.
 
-    ![Connection.](../../../../../../translated_images/he/09-03-select-connection.99bdddb4b1844023.png)
+    ![Connection.](../../../../../../translated_images/he/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### שיחה עם המודל המותאם שלך
 
 1. בחר **שיחה**.
 
-    ![Select chat.](../../../../../../translated_images/he/09-04-select-chat.61936dce6612a1e6.png)
+    ![Select chat.](../../../../../../translated_images/he/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. הנה דוגמה לתוצאות: כעת אתה יכול לשוחח עם מודל Phi-3 המותאם שלך. מומלץ לשאול שאלות בהתבסס על הנתונים שבהם השתמשת להתאמה אישית.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/he/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/he/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

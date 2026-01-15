@@ -41,7 +41,7 @@ Prompt Flow شامل کتابخانه‌ای از ابزارها، نمونه‌
 
 در Microsoft Prompt Flow، ارزیابی نقش مهمی در سنجش عملکرد مدل‌های هوش مصنوعی شما دارد. بیایید ببینیم چگونه می‌توانید جریان‌ها و معیارهای ارزیابی را در Prompt Flow سفارشی کنید:
 
-![PFVizualise](../../../../../translated_images/fa/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/fa/pfvisualize.c1d9ca75baa2a222.webp)
 
 **درک ارزیابی در Prompt Flow**
 

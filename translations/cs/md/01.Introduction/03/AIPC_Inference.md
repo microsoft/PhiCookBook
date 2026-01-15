@@ -28,9 +28,9 @@ Stručně řečeno, NPUs jsou matematickými experty, kteří výrazně zrychluj
 
 Zařízení Intel® NPU je AI inference akcelerátor integrovaný s Intel klientskými CPU, počínaje generací Intel® Core™ Ultra (dříve známou jako Meteor Lake). Umožňuje energeticky efektivní provádění úloh umělých neuronových sítí.
 
-![Latency](../../../../../translated_images/cs/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/cs/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/cs/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/cs/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Při spouštění kódu můžeme sledovat stav běhu NPU přes Správce úloh
 
-![NPU](../../../../../translated_images/cs/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/cs/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Ukázky*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Toto je výsledek běhu
 
-![DML](../../../../../translated_images/cs/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/cs/aipc_DML.52a44180393ab491.webp)
 
 ***Ukázky*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 převedený formát vypadá takto
 
-![openvino_convert](../../../../../translated_images/cs/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/cs/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Načtěte cesty k modelu (model_dir), související konfigurace (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) a hardwarově akcelerovaná zařízení (GPU.0) přes OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Při spouštění kódu můžeme sledovat stav běhu GPU přes Správce úloh
 
-![openvino_gpu](../../../../../translated_images/cs/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/cs/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Ukázky*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

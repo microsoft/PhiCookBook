@@ -34,7 +34,7 @@ Alustamiseks tehke järgmist:
 2. **Kloonige hoidla**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Liituge Microsoft AI Discord kogukonnaga ja kohtuge ekspertide ning kaasaarendajatega**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/et/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/et/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 Mitmekeelne tugi
 

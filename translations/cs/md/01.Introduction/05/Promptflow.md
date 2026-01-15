@@ -41,7 +41,7 @@ Udržujte kontrolu verzí a efektivně sdílejte znalosti. Zjednodušte celý pr
 
 V Microsoft Prompt Flow hraje hodnocení klíčovou roli při posuzování výkonu vašich AI modelů. Podívejme se, jak můžete přizpůsobit hodnotící toky a metriky v Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/cs/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/cs/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Pochopení hodnocení v Prompt Flow**
 

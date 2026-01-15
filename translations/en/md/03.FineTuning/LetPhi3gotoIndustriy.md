@@ -41,7 +41,7 @@ Fine-tuning involves improving an existing model. It doesn’t require starting 
 
 ## **How to use RAG**
 
-![rag](../../../../translated_images/en/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/en/rag.2014adc59e6f6007.webp)
 
 A vector database stores data in mathematical form. Vector databases help machine learning models remember previous inputs, enabling use cases like search, recommendations, and text generation. Data is identified based on similarity metrics rather than exact matches, allowing models to understand the context.
 
@@ -57,7 +57,7 @@ Common algorithms used in Fine-tuning are Lora and QLora. How to choose?
 
 ### **Lora and QLora**
 
-![lora](../../../../translated_images/en/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/en/qlora.e6446c988ee04ca0.webp)
 
 LoRA (Low-Rank Adaptation) and QLoRA (Quantized Low-Rank Adaptation) are techniques for fine-tuning large language models (LLMs) using Parameter Efficient Fine Tuning (PEFT). PEFT methods train models more efficiently than traditional approaches.
 

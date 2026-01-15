@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Generatiivisen tekoälyn kehittyessä toivomme käyttävämme yhtenäistä alustaa erilaisten LLM- ja SLM-mallien, yritysdatan integroinnin, hienosäädön/RAG-toimintojen sekä eri yritystoimintojen arvioinnin hallintaan LLM- ja SLM-mallien yhdistämisen jälkeen, jotta generatiivisen tekoälyn älykkäät sovellukset voidaan toteuttaa entistä paremmin. [Azure AI Foundry](https://ai.azure.com) on yritystason generatiivisen tekoälyn sovellusalusta.
 
-![aistudo](../../../../translated_images/fi/aifoundry_home.f28a8127c96c7d93.png)
+![aistudo](../../../../translated_images/fi/aifoundry_home.f28a8127c96c7d93.webp)
 
 Azure AI Foundryn avulla voit arvioida suurten kielimallien (LLM) vastauksia ja orkestroida kehotteiden sovelluskomponentteja prompt flow’n avulla paremman suorituskyvyn saavuttamiseksi. Alusta tukee skaalautuvuutta, mikä helpottaa konseptien muuttamista täysimittaisiksi tuotantojärjestelmiksi. Jatkuva seuranta ja hienosäätö tukevat pitkäaikaista menestystä.
 

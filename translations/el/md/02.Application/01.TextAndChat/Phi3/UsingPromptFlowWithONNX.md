@@ -33,33 +33,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Εγκαταστήστε την επέκταση Prompt flow για VS Code
 
-![pfvscode](../../../../../../translated_images/el/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/el/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Μετά την εγκατάσταση της επέκτασης Prompt flow για VS Code, κάντε κλικ στην επέκταση και επιλέξτε **Installation dependencies** ακολουθώντας αυτόν τον οδηγό για να εγκαταστήσετε το Prompt flow SDK στο περιβάλλον σας
 
-![pfsetup](../../../../../../translated_images/el/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/el/pfsetup.b46e93096f5a254f.webp)
 
 3. Κατεβάστε τον [Κώδικα Δείγματος](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) και ανοίξτε το δείγμα με το VS Code
 
-![pfsample](../../../../../../translated_images/el/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/el/pfsample.8d89e70584ffe7c4.webp)
 
 4. Ανοίξτε το **flow.dag.yaml** για να επιλέξετε το Python περιβάλλον σας
 
-![pfdag](../../../../../../translated_images/el/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/el/pfdag.264a77f7366458ff.webp)
 
    Ανοίξτε το **chat_phi3_ort.py** για να αλλάξετε τη θέση του μοντέλου Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/el/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/el/pfphi.72da81d74244b45f.webp)
 
 5. Εκτελέστε το prompt flow για δοκιμή
 
 Ανοίξτε το **flow.dag.yaml** και κάντε κλικ στον οπτικό επεξεργαστή
 
-![pfv](../../../../../../translated_images/el/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/el/pfv.ba8a81f34b20f603.webp)
 
 Μετά το κλικ, εκτελέστε το για να το δοκιμάσετε
 
-![pfflow](../../../../../../translated_images/el/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/el/pfflow.4e1135a089b1ce1b.webp)
 
 1. Μπορείτε να εκτελέσετε batch στο τερματικό για να δείτε περισσότερα αποτελέσματα
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Μπορείτε να δείτε τα αποτελέσματα στον προεπιλεγμένο περιηγητή σας
 
 
-![pfresult](../../../../../../translated_images/el/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/el/pfresult.c22c826f8062d7cb.webp)
 
 **Αποποίηση ευθυνών**:  
 Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

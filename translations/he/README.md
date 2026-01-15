@@ -34,7 +34,7 @@ Phi הוא כיום דגם שפה קטן (SLM) החזק והיעיל ביותר 
 2. **שכפל את המאגר**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**הצטרף לקהילת Discord של מייקרוסופט AI ופגוש מומחים ומפתחים נוספים**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![כריכה](../../translated_images/he/cover.eb18d1b9605d754b.png)
+![כריכה](../../translated_images/he/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 תמיכת רב-שפתית
 

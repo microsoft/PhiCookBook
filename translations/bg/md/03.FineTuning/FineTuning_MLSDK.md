@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 В този пример ще извършим фино настройване на модела Phi-3-mini-4k-instruct, за да завърши разговор между двама души, използвайки набора от данни ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/bg/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/bg/MLFineTune.928d4c6b3767dd35.webp)
 
 Примерът ще ви покаже как да извършите фино настройване с помощта на Azure ML SDK и Python, а след това как да разположите фино настроения модел на онлайн крайна точка за реално време на извеждане.
 

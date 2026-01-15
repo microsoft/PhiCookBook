@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Kun adapterit on koulutettu etäympäristössä, käytä yksinkertaista Gradio-sovellusta mallin kanssa vuorovaikutukseen.
 
-![Fine-tune complete](../../../../../translated_images/fi/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/fi/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Azure-resurssien määrittäminen  
 Sinun täytyy määrittää Azure-resurssit etäinferenzsiä varten suorittamalla `AI Toolkit: Provision Azure Container Apps for inference` komentopalettista. Tämän asetuksen aikana sinua pyydetään valitsemaan Azure-tilauksesi ja resurssiryhmäsi.  
-![Provision Inference Resource](../../../../../translated_images/fi/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/fi/command-provision-inference.467afc8d351642fc.webp)
 
 Oletuksena inferenssin tilaus ja resurssiryhmä tulisi olla samat kuin hienosäädössä käytetyt. Inferenssi käyttää samaa Azure Container App Environment -ympäristöä ja pääsee käsiksi malliin ja mallin adapteriin, jotka on tallennettu Azure Filesiin ja jotka luotiin hienosäätövaiheessa.
 
@@ -24,7 +24,7 @@ Oletuksena inferenssin tilaus ja resurssiryhmä tulisi olla samat kuin hienosä�
 ### Julkaisu inferenssiä varten  
 Jos haluat muokata inferenssikoodia tai ladata inferenssimallin uudelleen, suorita `AI Toolkit: Deploy for inference` -komento. Tämä synkronoi viimeisimmän koodisi ACA:n kanssa ja käynnistää replikan uudelleen.
 
-![Deploy for inference](../../../../../translated_images/fi/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/fi/command-deploy.9adb4e310dd0b0ae.webp)
 
 Julkaisun onnistuttua malli on valmis arvioitavaksi tämän päätepisteen kautta.
 
@@ -32,7 +32,7 @@ Julkaisun onnistuttua malli on valmis arvioitavaksi tämän päätepisteen kautt
 
 Pääset inferenssi-API:iin napsauttamalla VSCode-ilmoituksessa näkyvää "*Go to Inference Endpoint*" -painiketta. Vaihtoehtoisesti web-API-päätepiste löytyy `ACA_APP_ENDPOINT`-kentästä tiedostossa `./infra/inference.config.json` sekä tulospaneelista.
 
-![App Endpoint](../../../../../translated_images/fi/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/fi/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** Inferenssipäätepisteen täysi toiminta voi kestää muutaman minuutin.
 

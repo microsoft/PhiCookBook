@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Εγκαταστήστε το AI Toolkit για VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/el/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/el/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** Παροχή με ένα κλικ για Azure Container Apps για εκτέλεση fine-tuning και inference μοντέλων στο cloud.
 

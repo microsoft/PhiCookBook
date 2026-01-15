@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bem-vindo ao [GitHub Models](https://github.com/marketplace/models)! Tudo está pronto para você explorar os Modelos de IA hospedados no Azure AI.
 
-![GitHubModel](../../../../translated_images/br/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/br/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 Para mais informações sobre os Modelos disponíveis no GitHub Models, confira o [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Existem alguns exemplos básicos prontos para você executar. Você pode encontr
 
 Também há um ambiente Codespaces dedicado para rodar os exemplos e modelos.
 
-![Getting Started](../../../../translated_images/br/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/br/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Código de Exemplo
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Uso GRATUITO e Limites de Taxa para GitHub Models
 
-![Model Catalog](../../../../translated_images/br/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/br/GitHub_Model.ca6c125cb3117d0e.webp)
 
 Os [limites de taxa para o playground e uso gratuito da API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) são pensados para ajudar você a experimentar os modelos e prototipar sua aplicação de IA. Para uso além desses limites, e para escalar sua aplicação, você deve provisionar recursos a partir de uma conta Azure e autenticar por lá, em vez de usar seu token pessoal do GitHub. Não é necessário alterar mais nada no seu código. Use este link para descobrir como ultrapassar os limites da camada gratuita no Azure AI.
 

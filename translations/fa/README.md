@@ -34,7 +34,7 @@ Phi در حال حاضر قوی‌ترین و مقرون‌به‌صرفه‌ت�
 2. **کلونه کردن مخزن**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**به انجمن Discord هوش مصنوعی مایکروسافت بپیوندید و با کارشناسان و توسعه‌دهندگان هم‌سطح ملاقات کنید**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/fa/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/fa/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 پشتیبانی چندزبانه
 

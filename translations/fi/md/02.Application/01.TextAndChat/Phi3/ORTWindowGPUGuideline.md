@@ -43,7 +43,7 @@ Dokumentti kattaa:
 
    ***Note*** Jos et halua kääntää itse, voit ohittaa tämän vaiheen
 
-![CPP](../../../../../../translated_images/fi/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/fi/01.42f52a2b2aedff02.webp)
 
 ### **4. Asenna NVIDIA-ajuri**
 
@@ -83,7 +83,7 @@ Kopioi NVIDIA CUDNN 9.4:n lib-, bin- ja include-kansiot NVIDIA CUDA 12.4:n vasta
 
    Avaa [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) ja suorita se
 
-![RESULT](../../../../../../translated_images/fi/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/fi/02.b9b06996cf7255d5.webp)
 
 ### **8. Käännä ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Kopioi NVIDIA CUDNN 9.4:n lib-, bin- ja include-kansiot NVIDIA CUDA 12.4:n vasta
 
    - Käynnistä Windows Terminal, avaa Developer Command Prompt for VS 2022 ja siirry onnxruntime-genai -kansioon
 
-![RESULT](../../../../../../translated_images/fi/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/fi/03.b83ce473d5ff9b9b.webp)
 
    - Käännä se Python-ympäristössäsi
 

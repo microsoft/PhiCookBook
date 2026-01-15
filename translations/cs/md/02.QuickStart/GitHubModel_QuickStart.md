@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Vítejte na [GitHub Models](https://github.com/marketplace/models)! Vše je připraveno a můžete začít objevovat AI modely hostované na Azure AI.
 
-![GitHubModel](../../../../translated_images/cs/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/cs/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 Pro více informací o modelech dostupných na GitHub Models navštivte [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ K dispozici je několik základních příkladů, které můžete rovnou spustit
 
 K dispozici je také speciální Codespaces prostředí pro spouštění příkladů a modelů.
 
-![Getting Started](../../../../translated_images/cs/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/cs/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Ukázkový kód
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## BEZPLATNÉ použití a limity pro GitHub Models
 
-![Model Catalog](../../../../translated_images/cs/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/cs/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [Limity pro playground a bezplatné API použití](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) jsou nastaveny tak, aby vám umožnily experimentovat s modely a prototypovat AI aplikace. Pro použití nad rámec těchto limitů a pro škálování aplikace je potřeba zajistit prostředky z Azure účtu a autentizovat se tam místo pomocí osobního GitHub tokenu. V kódu není potřeba nic dalšího měnit. Použijte tento odkaz, kde zjistíte, jak překročit limity bezplatné úrovně v Azure AI.
 

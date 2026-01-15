@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry का उपयोग करके मूल्यांकन**
 
-![aistudo](../../../../../translated_images/hi/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/hi/AIFoundry.9e0b513e999a1c5a.webp)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) का उपयोग करके अपनी जनरेटिव AI एप्लिकेशन का मूल्यांकन कैसे करें। चाहे आप सिंगल-टर्न या मल्टी-टर्न बातचीत का आकलन कर रहे हों, Azure AI Foundry मॉडल के प्रदर्शन और सुरक्षा का मूल्यांकन करने के लिए उपकरण प्रदान करता है।
 
-![aistudo](../../../../../translated_images/hi/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/hi/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Azure AI Foundry के साथ जनरेटिव AI ऐप्स का मूल्यांकन कैसे करें
 अधिक विस्तृत निर्देशों के लिए [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) देखें।

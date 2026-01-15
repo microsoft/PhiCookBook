@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 إليك نظرة عامة على هذا المثال الشامل.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ar/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ar/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### جدول المحتويات
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *azure machine learning* في **شريط البحث** أعلى صفحة البوابة واختر **Azure Machine Learning** من الخيارات التي تظهر.
 
-    ![Type azure machine learning.](../../../../../../translated_images/ar/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/ar/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. اختر **+ إنشاء** من قائمة التنقل.
 
 3. اختر **مساحة عمل جديدة** من قائمة التنقل.
 
-    ![Select new workspace.](../../../../../../translated_images/ar/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/ar/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. قم بالمهام التالية:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **رؤى التطبيق** التي تريد استخدامها (قم بإنشاء واحدة جديدة إذا لزم الأمر).
     - اختر **سجل الحاويات** الذي تريد استخدامه (قم بإنشاء واحد جديد إذا لزم الأمر).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/ar/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/ar/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. اختر **مراجعة + إنشاء**.
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **عائلة الأجهزة الافتراضية** المراد استخدامها. على سبيل المثال، اختر **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**، التي تشمل وحدة GPU *Standard_NC24ads_A100_v4*.
     - اختر **طلب الحصة** من قائمة التنقل.
 
-        ![Request quota.](../../../../../../translated_images/ar/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/ar/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - في صفحة طلب الحصة، أدخل **الحد الأقصى للنوى الجديد** الذي ترغب في استخدامه. على سبيل المثال، 24.
     - في صفحة طلب الحصة، اختر **إرسال** لطلب حصة وحدة GPU.
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *managed identities* في **شريط البحث** أعلى صفحة البوابة واختر **Managed Identities** من الخيارات التي تظهر.
 
-    ![Type managed identities.](../../../../../../translated_images/ar/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/ar/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. اختر **+ إنشاء**.
 
-    ![Select create.](../../../../../../translated_images/ar/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/ar/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. قم بالمهام التالية:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **المنطقة** التي تود استخدامها.
     - أدخل **الاسم**. يجب أن يكون قيمة فريدة.
 
-    ![Select create.](../../../../../../translated_images/ar/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/ar/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. اختر **مراجعة + إنشاء**.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **مجموعة الموارد** التي تريد استخدامها.
     - اختر **الدور** ليكون **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/ar/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/ar/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. اختر **حفظ**.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *storage accounts* في **شريط البحث** أعلى صفحة البوابة واختر **Storage accounts** من الخيارات التي تظهر.
 
-    ![Type storage accounts.](../../../../../../translated_images/ar/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/ar/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. اختر حساب التخزين المرتبط بمساحة عمل Azure Machine Learning التي أنشأتها. على سبيل المثال، *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **+ إضافة** من قائمة التنقل.
     - اختر **إضافة تعيين دور** من قائمة التنقل.
 
-    ![Add role.](../../../../../../translated_images/ar/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/ar/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. في صفحة إضافة تعيين الدور، قم بالمهام التالية:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - داخل صفحة اختيار الهويات المُدارة، اختر الهوية المُدارة التي أنشأتها، على سبيل المثال *finetunephi-managedidentity*.
     - داخل صفحة اختيار الهويات المُدارة، اختر **اختيار**.
 
-    ![Select managed identity.](../../../../../../translated_images/ar/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/ar/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. اختر **مراجعة + تعيين**.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *container registries* في **شريط البحث** أعلى صفحة البوابة واختر **Container registries** من الخيارات التي تظهر.
 
-    ![Type container registries.](../../../../../../translated_images/ar/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/ar/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. اختر سجل الحاويات المرتبط بمساحة عمل Azure Machine Learning. على سبيل المثال، *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر مجلد *finetune-phi* الذي أنشأته، الموجود في *C:\Users\yourUserName\finetune-phi*.
 
-    ![اختر المجلد الذي أنشأته.](../../../../../../translated_images/ar/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![اختر المجلد الذي أنشأته.](../../../../../../translated_images/ar/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. في اللوحة اليسرى من Visual Studio Code، انقر بزر الفأرة الأيمن واختر **ملف جديد** لإنشاء ملف جديد باسم *download_dataset.py*.
 
-    ![إنشاء ملف جديد.](../../../../../../translated_images/ar/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![إنشاء ملف جديد.](../../../../../../translated_images/ar/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### إعداد بيانات التدريب لضبط النموذج
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ جديد**.
 
-    ![اختر الحوسبة.](../../../../../../translated_images/ar/06-01-select-compute.a29cff290b480252.png)
+    ![اختر الحوسبة.](../../../../../../translated_images/ar/06-01-select-compute.a29cff290b480252.webp)
 
 1. قم بالمهام التالية:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر فلتر **حجم الجهاز الافتراضي** إلى **اختر من جميع الخيارات**.
     - اختر **حجم الجهاز الافتراضي** إلى **Standard_NC24ads_A100_v4**.
 
-    ![إنشاء المجموعة.](../../../../../../translated_images/ar/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![إنشاء المجموعة.](../../../../../../translated_images/ar/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. اختر **التالي**.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **الحد الأقصى لعدد العقد** إلى **1**.
     - اختر **الثواني قبل تقليل الحجم** إلى **120**.
 
-    ![إنشاء المجموعة.](../../../../../../translated_images/ar/06-03-create-cluster.4a54ba20914f3662.png)
+    ![إنشاء المجموعة.](../../../../../../translated_images/ar/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. اختر **إنشاء**.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر مساحة عمل Azure Machine Learning التي أنشأتها.
 
-    ![اختر مساحة العمل التي أنشأتها.](../../../../../../translated_images/ar/06-04-select-workspace.a92934ac04f4f181.png)
+    ![اختر مساحة العمل التي أنشأتها.](../../../../../../translated_images/ar/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. قم بالمهام التالية:
 
     - اختر **كتالوج النماذج** من القائمة الجانبية اليمنى.
     - اكتب *phi-3-mini-4k* في شريط البحث واختر **Phi-3-mini-4k-instruct** من الخيارات التي تظهر.
 
-    ![اكتب phi-3-mini-4k.](../../../../../../translated_images/ar/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![اكتب phi-3-mini-4k.](../../../../../../translated_images/ar/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. اختر **ضبط** من قائمة التنقل.
 
-    ![اختر ضبط.](../../../../../../translated_images/ar/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![اختر ضبط.](../../../../../../translated_images/ar/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. قم بالمهام التالية:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر نوع تحميل بيانات التحقق إلى **توفير بيانات تحقق مختلفة**.
     - اختر **+ اختيار بيانات** لتحميل **بيانات التحقق**.
 
-    ![املأ صفحة الضبط.](../../../../../../translated_images/ar/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![املأ صفحة الضبط.](../../../../../../translated_images/ar/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. في هذا التمرين، قمت بضبط نموذج Phi-3 بنجاح باستخدام Azure Machine Learning. يرجى ملاحظة أن عملية الضبط قد تستغرق وقتًا طويلاً. بعد تشغيل مهمة الضبط، تحتاج إلى الانتظار حتى تكتمل. يمكنك مراقبة حالة مهمة الضبط عن طريق الانتقال إلى تبويب الوظائف على الجانب الأيسر من مساحة عمل Azure Machine Learning الخاصة بك. في السلسلة التالية، ستقوم بنشر النموذج الذي تم ضبطه ودمجه مع Prompt flow.
 
-    ![عرض مهمة الضبط.](../../../../../../translated_images/ar/06-08-output.2bd32e59930672b1.png)
+    ![عرض مهمة الضبط.](../../../../../../translated_images/ar/06-08-output.2bd32e59930672b1.webp)
 
 ### نشر نموذج Phi-3 الذي تم ضبطه
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر مساحة عمل Azure Machine Learning التي أنشأتها.
 
-    ![اختر مساحة العمل التي أنشأتها.](../../../../../../translated_images/ar/06-04-select-workspace.a92934ac04f4f181.png)
+    ![اختر مساحة العمل التي أنشأتها.](../../../../../../translated_images/ar/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. اختر **النماذج** من القائمة الجانبية اليمنى.
 1. اختر **+ تسجيل**.
 1. اختر **من مخرجات المهمة**.
 
-    ![تسجيل النموذج.](../../../../../../translated_images/ar/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![تسجيل النموذج.](../../../../../../translated_images/ar/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. اختر المهمة التي أنشأتها.
 
-    ![اختر المهمة.](../../../../../../translated_images/ar/07-02-select-job.3e2e1144cd6cd093.png)
+    ![اختر المهمة.](../../../../../../translated_images/ar/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. اختر **التالي**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. تأكد من اختيار **مخرجات المهمة**؛ يجب أن تكون مختارة تلقائيًا.
 
-    ![اختر المخرجات.](../../../../../../translated_images/ar/07-03-select-output.4cf1a0e645baea1f.png)
+    ![اختر المخرجات.](../../../../../../translated_images/ar/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. اختر **التالي**.
 
 3. اختر **تسجيل**.
 
-    ![اختر تسجيل.](../../../../../../translated_images/ar/07-04-register.fd82a3b293060bc7.png)
+    ![اختر تسجيل.](../../../../../../translated_images/ar/07-04-register.fd82a3b293060bc7.webp)
 
 4. يمكنك عرض نموذجك المسجل بالانتقال إلى قائمة **النماذج** من القائمة الجانبية اليمنى.
 
-    ![النموذج المسجل.](../../../../../../translated_images/ar/07-05-registered-model.7db9775f58dfd591.png)
+    ![النموذج المسجل.](../../../../../../translated_images/ar/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### نشر النموذج الذي تم ضبطه
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **نقاط النهاية في الوقت الحقيقي** من قائمة التنقل.
 
-    ![إنشاء نقطة نهاية.](../../../../../../translated_images/ar/07-06-create-endpoint.1ba865c606551f09.png)
+    ![إنشاء نقطة نهاية.](../../../../../../translated_images/ar/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. اختر **إنشاء**.
 
 1. اختر النموذج المسجل الذي أنشأته.
 
-    ![اختر النموذج المسجل.](../../../../../../translated_images/ar/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![اختر النموذج المسجل.](../../../../../../translated_images/ar/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. اختر **اختيار**.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - أدخل **اسم نقطة النهاية**. يجب أن يكون قيمة فريدة.
     - أدخل **اسم النشر**. يجب أن يكون قيمة فريدة.
 
-    ![املأ إعدادات النشر.](../../../../../../translated_images/ar/07-08-deployment-setting.43ddc4209e673784.png)
+    ![املأ إعدادات النشر.](../../../../../../translated_images/ar/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. اختر **نشر**.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر نقطة النهاية التي أنشأتها.
 
-    ![اختر نقاط النهاية](../../../../../../translated_images/ar/07-09-check-deployment.325d18cae8475ef4.png)
+    ![اختر نقاط النهاية](../../../../../../translated_images/ar/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. في هذه الصفحة، يمكنك إدارة نقاط النهاية أثناء عملية النشر.
 
 > [!NOTE]
 > بمجرد اكتمال النشر، تأكد من أن **حركة المرور الحية** مضبوطة على **100%**. إذا لم تكن كذلك، اختر **تحديث حركة المرور** لضبط الإعدادات. لاحظ أنه لا يمكن اختبار النموذج إذا كانت حركة المرور مضبوطة على 0%.
 >
-> ![ضبط حركة المرور.](../../../../../../translated_images/ar/07-10-set-traffic.085b847e5751ff3d.png)
+> ![ضبط حركة المرور.](../../../../../../translated_images/ar/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## السيناريو 3: الدمج مع Prompt flow والمحادثة مع نموذجك المخصص في Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. اختر **كل المراكز** من القائمة الجانبية اليمنى.
 
 1. اختر **+ مركز جديد** من قائمة التنقل.
-    ![إنشاء المحور.](../../../../../../translated_images/ar/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![إنشاء المحور.](../../../../../../translated_images/ar/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. قم بتنفيذ المهام التالية:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **الاتصال بخدمات Azure AI** التي تريد استخدامها (أنشئ واحدة جديدة إذا لزم الأمر).
     - اختر **الاتصال بـ Azure AI Search** لتحديد **تخطي الاتصال**.
 
-    ![املأ المحور.](../../../../../../translated_images/ar/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![املأ المحور.](../../../../../../translated_images/ar/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. اختر **التالي**.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ مشروع جديد** من قائمة التنقل.
 
-    ![اختر مشروع جديد.](../../../../../../translated_images/ar/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![اختر مشروع جديد.](../../../../../../translated_images/ar/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. أدخل **اسم المشروع**. يجب أن يكون قيمة فريدة.
 
-    ![إنشاء المشروع.](../../../../../../translated_images/ar/08-05-create-project.4d97f0372f03375a.png)
+    ![إنشاء المشروع.](../../../../../../translated_images/ar/08-05-create-project.4d97f0372f03375a.webp)
 
 1. اختر **إنشاء مشروع**.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **نقاط النهاية** من تبويب الجانب الأيسر.
 
-    ![اختر نقاط النهاية.](../../../../../../translated_images/ar/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![اختر نقاط النهاية.](../../../../../../translated_images/ar/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. اختر نقطة النهاية التي أنشأتها.
 
-    ![اختر نقطة النهاية التي أنشأتها.](../../../../../../translated_images/ar/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![اختر نقطة النهاية التي أنشأتها.](../../../../../../translated_images/ar/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. اختر **الاستهلاك** من قائمة التنقل.
 
 1. انسخ **نقطة نهاية REST** و **المفتاح الأساسي** الخاص بك.
 
-    ![انسخ مفتاح API وعنوان URI لنقطة النهاية.](../../../../../../translated_images/ar/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![انسخ مفتاح API وعنوان URI لنقطة النهاية.](../../../../../../translated_images/ar/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### إضافة الاتصال المخصص
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ اتصال جديد**.
 
-    ![اختر اتصال جديد.](../../../../../../translated_images/ar/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![اختر اتصال جديد.](../../../../../../translated_images/ar/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. اختر **المفاتيح المخصصة** من قائمة التنقل.
 
-    ![اختر المفاتيح المخصصة.](../../../../../../translated_images/ar/08-10-select-custom-keys.856f6b2966460551.png)
+    ![اختر المفاتيح المخصصة.](../../../../../../translated_images/ar/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. قم بتنفيذ المهام التالية:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - لأسم المفتاح، أدخل **key** والصق المفتاح الذي نسخته من Azure ML Studio في حقل القيمة.
     - بعد إضافة المفاتيح، اختر **هو سرّي** لمنع الكشف عن المفتاح.
 
-    ![أضف الاتصال.](../../../../../../translated_images/ar/08-11-add-connection.785486badb4d2d26.png)
+    ![أضف الاتصال.](../../../../../../translated_images/ar/08-11-add-connection.785486badb4d2d26.webp)
 
 1. اختر **إضافة اتصال**.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **+ إنشاء** من قائمة التنقل.
 
-    ![اختر Promptflow.](../../../../../../translated_images/ar/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![اختر Promptflow.](../../../../../../translated_images/ar/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. اختر **تدفق الدردشة** من قائمة التنقل.
 
-    ![اختر تدفق الدردشة.](../../../../../../translated_images/ar/08-13-select-flow-type.2ec689b22da32591.png)
+    ![اختر تدفق الدردشة.](../../../../../../translated_images/ar/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. أدخل **اسم المجلد** للاستخدام.
 
-    ![أدخل الاسم.](../../../../../../translated_images/ar/08-14-enter-name.ff9520fefd89f40d.png)
+    ![أدخل الاسم.](../../../../../../translated_images/ar/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. اختر **إنشاء**.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - اختر **حفظ**.
 
-    ![اختر وضع الملف الخام.](../../../../../../translated_images/ar/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![اختر وضع الملف الخام.](../../../../../../translated_images/ar/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. أضف الكود التالي إلى ملف *integrate_with_promptflow.py* لاستخدام نموذج Phi-3 المخصص في Prompt flow.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![الصق كود Prompt flow.](../../../../../../translated_images/ar/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![الصق كود Prompt flow.](../../../../../../translated_images/ar/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > لمزيد من المعلومات التفصيلية حول استخدام Prompt flow في Azure AI Foundry، يمكنك الرجوع إلى [Prompt flow في Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. اختر **إدخال الدردشة**، و **إخراج الدردشة** لتمكين الدردشة مع نموذجك.
 
-    ![إدخال وإخراج.](../../../../../../translated_images/ar/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![إدخال وإخراج.](../../../../../../translated_images/ar/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. الآن أنت جاهز للدردشة مع نموذج Phi-3 المخصص الخاص بك. في التمرين التالي، ستتعلم كيفية بدء Prompt flow واستخدامه للدردشة مع نموذج Phi-3 المحسّن الخاص بك.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > يجب أن يبدو التدفق المعاد بناؤه مثل الصورة أدناه:
 >
-> ![مثال على التدفق.](../../../../../../translated_images/ar/08-18-graph-example.d6457533952e690c.png)
+> ![مثال على التدفق.](../../../../../../translated_images/ar/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### الدردشة مع نموذج Phi-3 المخصص الخاص بك
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **بدء جلسات الحوسبة** لبدء Prompt flow.
 
-    ![بدء جلسة الحوسبة.](../../../../../../translated_images/ar/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![بدء جلسة الحوسبة.](../../../../../../translated_images/ar/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. اختر **التحقق من صحة وتحليل الإدخال** لتحديث المعلمات.
 
-    ![التحقق من صحة الإدخال.](../../../../../../translated_images/ar/09-02-validate-input.317c76ef766361e9.png)
+    ![التحقق من صحة الإدخال.](../../../../../../translated_images/ar/09-02-validate-input.317c76ef766361e9.webp)
 
 1. اختر **قيمة** الـ **connection** للاتصال المخصص الذي أنشأته. على سبيل المثال، *connection*.
 
-    ![الاتصال.](../../../../../../translated_images/ar/09-03-select-connection.99bdddb4b1844023.png)
+    ![الاتصال.](../../../../../../translated_images/ar/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### دردش مع نموذجك المخصص
 
 1. اختر **الدردشة**.
 
-    ![اختر الدردشة.](../../../../../../translated_images/ar/09-04-select-chat.61936dce6612a1e6.png)
+    ![اختر الدردشة.](../../../../../../translated_images/ar/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. فيما يلي مثال على النتائج: الآن يمكنك الدردشة مع نموذج Phi-3 المخصص الخاص بك. يُنصح بطرح أسئلة بناءً على البيانات المستخدمة لضبط النموذج.
 
-    ![الدردشة مع Prompt flow.](../../../../../../translated_images/ar/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![الدردشة مع Prompt flow.](../../../../../../translated_images/ar/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

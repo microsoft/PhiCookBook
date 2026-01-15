@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 بعد تدريب المحولات في البيئة البعيدة، استخدم تطبيق Gradio بسيط للتفاعل مع النموذج.
 
-![اكتمل التخصيص](../../../../../translated_images/ar/log-finetuning-res.7b92254e7e822c7f.png)
+![اكتمل التخصيص](../../../../../translated_images/ar/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### توفير موارد Azure  
 يجب عليك إعداد موارد Azure للاستدلال عن بُعد من خلال تنفيذ الأمر `AI Toolkit: Provision Azure Container Apps for inference` من لوحة الأوامر. خلال هذه العملية، سيُطلب منك اختيار اشتراك Azure ومجموعة الموارد الخاصة بك.  
-![توفير مورد الاستدلال](../../../../../translated_images/ar/command-provision-inference.467afc8d351642fc.png)
+![توفير مورد الاستدلال](../../../../../translated_images/ar/command-provision-inference.467afc8d351642fc.webp)
 
 بشكل افتراضي، يجب أن يتطابق الاشتراك ومجموعة الموارد الخاصة بالاستدلال مع تلك المستخدمة في التخصيص. سيستخدم الاستدلال نفس بيئة تطبيق Azure Container App ويصل إلى النموذج ومحول النموذج المخزن في Azure Files، والتي تم إنشاؤها أثناء خطوة التخصيص.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### النشر للاستدلال  
 إذا رغبت في تعديل كود الاستدلال أو إعادة تحميل نموذج الاستدلال، يرجى تنفيذ الأمر `AI Toolkit: Deploy for inference`. سيؤدي ذلك إلى مزامنة أحدث كود لديك مع ACA وإعادة تشغيل النسخة.
 
-![النشر للاستدلال](../../../../../translated_images/ar/command-deploy.9adb4e310dd0b0ae.png)
+![النشر للاستدلال](../../../../../translated_images/ar/command-deploy.9adb4e310dd0b0ae.webp)
 
 بعد إتمام النشر بنجاح، يصبح النموذج جاهزًا للتقييم باستخدام نقطة النهاية هذه.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يمكنك الوصول إلى واجهة برمجة تطبيقات الاستدلال بالنقر على زر "*الانتقال إلى نقطة نهاية الاستدلال*" المعروض في إشعار VSCode. بدلاً من ذلك، يمكن العثور على نقطة نهاية واجهة الويب API تحت `ACA_APP_ENDPOINT` في ملف `./infra/inference.config.json` وفي لوحة الإخراج.
 
-![نقطة نهاية التطبيق](../../../../../translated_images/ar/notification-deploy.446e480a44b1be58.png)
+![نقطة نهاية التطبيق](../../../../../translated_images/ar/notification-deploy.446e480a44b1be58.webp)
 
 > **ملاحظة:** قد يستغرق تفعيل نقطة نهاية الاستدلال بضع دقائق لتصبح جاهزة تمامًا.
 

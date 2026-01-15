@@ -41,7 +41,7 @@ Fine-tuning bygger på forbedring af en bestemt model. Det kræver ikke, at man 
 
 ## **Sådan bruger du RAG**
 
-![rag](../../../../translated_images/da/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/da/rag.2014adc59e6f6007.webp)
 
 En vektordatabase er en samling af data, der er lagret i matematisk form. Vektordatabaser gør det lettere for maskinlæringsmodeller at huske tidligere input, hvilket muliggør brug af maskinlæring til at understøtte anvendelsestilfælde som søgning, anbefalinger og tekstgenerering. Data kan identificeres baseret på lighedsmål frem for eksakte matches, hvilket gør det muligt for computermodeller at forstå konteksten af dataene.
 
@@ -57,7 +57,7 @@ De mest anvendte algoritmer i Fine-tuning er Lora og QLora. Hvordan vælger man?
 
 ### **Lora og QLora**
 
-![lora](../../../../translated_images/da/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/da/qlora.e6446c988ee04ca0.webp)
 
 LoRA (Low-Rank Adaptation) og QLoRA (Quantized Low-Rank Adaptation) er begge teknikker, der bruges til at finjustere store sprogmodeller (LLMs) ved hjælp af Parameter Efficient Fine Tuning (PEFT). PEFT-teknikker er designet til at træne modeller mere effektivt end traditionelle metoder.  
 LoRA er en selvstændig finjusteringsteknik, der reducerer hukommelsesforbruget ved at anvende en lav-rangs-tilnærmelse på vægtopdateringsmatricen. Den tilbyder hurtige træningstider og bevarer ydeevnen tæt på traditionelle finjusteringsmetoder.

@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Επισκόπηση του Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/el/RAIPrinciples.bf9c9bc6ca160d33.png)
+![RAIPrinciples](../../../../../translated_images/el/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **Ηθικές αρχές**
 

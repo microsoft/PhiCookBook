@@ -23,7 +23,7 @@ In this E2E sample, you will learn how to fine-tune the Phi-3 model and integrat
 
 Here is an overview of this E2E sample.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/en/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/en/00-01-architecture.02fc569e266d468c.webp)
 
 ### Table of Contents
 
@@ -49,13 +49,13 @@ Here is an overview of this E2E sample.
 
 1. Type *azure machine learning* in the **search bar** at the top of the portal page and select **Azure Machine Learning** from the options that appear.
 
-    ![Type azure machine learning](../../../../../../translated_images/en/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/en/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. Select **+ Create** from the navigation menu.
 
 1. Select **New workspace** from the navigation menu.
 
-    ![Select new workspace](../../../../../../translated_images/en/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/en/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. Perform the following tasks:
 
@@ -68,7 +68,7 @@ Here is an overview of this E2E sample.
     - Select the **Application insights** to use (create a new one if needed).
     - Select the **Container registry** to use (create a new one if needed).
 
-    ![Fill AZML.](../../../../../../translated_images/en/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/en/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. Select **Review + Create**.
 
@@ -92,7 +92,7 @@ In this E2E sample, you will use the *Standard_NC24ads_A100_v4 GPU* for fine-tun
     - Select the **Virtual machine family** to use. For example, select **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, which includes the *Standard_NC24ads_A100_v4* GPU.
     - Select the **Request quota** from the navigation menu.
 
-        ![Request quota.](../../../../../../translated_images/en/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/en/01-04-request-quota.3d3670c3221ab834.webp)
 
     - Inside the Request quota page, enter the **New cores limit** you'd like to use. For example, 24.
     - Inside the Request quota page, select **Submit** to request the GPU quota.
@@ -108,11 +108,11 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
 
 1. Type *managed identities* in the **search bar** at the top of the portal page and select **Managed Identities** from the options that appear.
 
-    ![Type managed identities.](../../../../../../translated_images/en/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/en/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. Select **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/en/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/en/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. Perform the following tasks:
 
@@ -139,7 +139,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Select the **Resource group** to use.
     - Select the **Role** to **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/en/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/en/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. Select **Save**.
 
@@ -147,7 +147,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
 
 1. Type *storage accounts* in the **search bar** at the top of the portal page and select **Storage accounts** from the options that appear.
 
-    ![Type storage accounts.](../../../../../../translated_images/en/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/en/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Select the storage account that associated with the Azure Machine Learning workspace that you created. For example, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Select **+ Add** from the navigation menu.
     - Select **Add role assignment** from the navigation menu.
 
-    ![Add role.](../../../../../../translated_images/en/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/en/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. Inside Add role assignment page, Perform the following tasks:
 
@@ -171,7 +171,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Inside Select managed identities page, select the Manage Identity that you created. For example, *finetunephi-managedidentity*.
     - Inside Select managed identities page, select **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/en/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/en/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. Select **Review + assign**.
 
@@ -179,7 +179,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
 
 1. Type *container registries* in the **search bar** at the top of the portal page and select **Container registries** from the options that appear.
 
-    ![Type container registries.](../../../../../../translated_images/en/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/en/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Select the container registry that associated with the Azure Machine Learning workspace. For example, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ In this exercise, you will:
 
 1. Select the *finetune-phi* folder that you created, which is located at *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/en/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Open project floder.](../../../../../../translated_images/en/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. In the left pane of Visual Studio Code, right-click and select **New File** to create a new file named *download_dataset.py*.
 
@@ -298,7 +298,7 @@ In this exercise, you will:
 
 1. In the left pane of Visual Studio Code, right-click and select **New File** to create a new file named *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/en/01-13-create-new-file.c17c150fff384a39.png)
+    ![Create new file.](../../../../../../translated_images/en/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. In the left pane of Visual Studio Code, right-click and select **New Folder** to create a new forder named *finetuning_dir*.
 
@@ -374,28 +374,28 @@ In this exercise, you will:
     - Select the Azure Subscription you are currently using.
     - Copy and paste your Subscription ID into the *config.py* file.
 
-    ![Find subscription id.](../../../../../../translated_images/en/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Find subscription id.](../../../../../../translated_images/en/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Perform the following tasks to add the Azure Workspace Name:
 
     - Navigate to the Azure Machine Learning resource that you created.
     - Copy and paste your account name into the *config.py* file.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/en/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/en/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Perform the following tasks to add the Azure Resource Group Name:
 
     - Navigate to the Azure Machine Learning resource that you created.
     - Copy and paste your Azure Resource Group Name into the *config.py* file.
 
-    ![Find resource group name.](../../../../../../translated_images/en/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Find resource group name.](../../../../../../translated_images/en/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Perform the following tasks to add the Azure Managed Identity name
 
     - Navigate to the Managed Identities resource that you created.
     - Copy and paste your Azure Managed Identity name into the *config.py* file.
 
-    ![Find UAI.](../../../../../../translated_images/en/01-17-find-uai.3529464f53499827.png)
+    ![Find UAI.](../../../../../../translated_images/en/01-17-find-uai.3529464f53499827.webp)
 
 ### Prepare dataset for fine-tuning
 
@@ -509,7 +509,7 @@ You need to set up Azure CLI to authenticate your environment. Azure CLI allows 
 
 1. Select your Azure subscription to use.
 
-    ![Find resource group name.](../../../../../../translated_images/en/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Find resource group name.](../../../../../../translated_images/en/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ By running *setup_ml.py*, you will run the fine-tuning process in the Azure Mach
 
 1. In this exercise, you successfully fine-tuned the Phi-3 model using Azure Machine Learning. By running the *setup_ml.py* script, you have set up the Azure Machine Learning environment and initiated the fine-tuning process defined in *fine_tune.py* file. Please note that the fine-tuning process can take a considerable amount of time. After running the `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
 
-    ![See finetuning job.](../../../../../../translated_images/en/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![See finetuning job.](../../../../../../translated_images/en/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### Deploy the fine-tuned model
 
@@ -1080,11 +1080,11 @@ Running the *deploy_model.py* file automates the entire deployment process. It r
 
 1. Select **Endpoints** from the left side tab.
 
-    ![Select endpoints.](../../../../../../translated_images/en/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/en/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. Select endpoint that you created.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/en/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/en/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. On this page, you can manage the endpoints created during the deployment process.
 
@@ -1103,7 +1103,7 @@ After successfully deploying your fine-tuned model, you can now integrate it wit
 1. Copy and paste your **REST endpoint** into the *config.py* file, replacing `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
 1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` with your **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/en/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/en/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### Add code to the *flow.dag.yml* file
 
@@ -1212,7 +1212,7 @@ After successfully deploying your fine-tuned model, you can now integrate it wit
 
 1. Here's an example of the results: Now you can chat with your custom Phi-3 model. It is recommended to ask questions based on the data used for fine-tuning.
 
-    ![Prompt flow example.](../../../../../../translated_images/en/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/en/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 
