@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Hali za Urekebishaji wa Kina
 
-![FineTuning with MS Services](../../../../translated_images/sw/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/sw/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Jukwaa** Hii inajumuisha teknolojia mbalimbali kama Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, na ONNX Runtime.
 
@@ -24,7 +24,7 @@ Mchakato wa urekebishaji wa kina kwa kutumia teknolojia za Microsoft unahusisha 
 
 Rekebisha mfano kwa kutumia urekebishaji uliowekwa, bila haja ya kuunda na kusimamia kompyuta.
 
-![MaaS Fine Tuning](../../../../translated_images/sw/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/sw/MaaSfinetune.3eee4630607aff0d.webp)
 
 Urekebishaji usio na seva unapatikana kwa mifano ya Phi-3-mini na Phi-3-medium, ukiruhusu watengenezaji kubinafsisha mifano kwa haraka na kwa urahisi kwa hali za wingu na edge bila kuhitaji kupanga kompyuta. Pia tumetangaza kuwa, Phi-3-small, sasa inapatikana kupitia huduma yetu ya Models-as-a-Service ili watengenezaji waanze haraka na kwa urahisi maendeleo ya AI bila kusimamia miundombinu ya msingi.
 
@@ -32,7 +32,7 @@ Urekebishaji usio na seva unapatikana kwa mifano ya Phi-3-mini na Phi-3-medium, 
 
 Watumiaji husimamia kompyuta zao wenyewe ili kurekebisha mifano yao.
 
-![Maap Fine Tuning](../../../../translated_images/sw/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/sw/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Mfano wa Urekebishaji wa Kina](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Watumiaji husimamia kompyuta zao wenyewe ili kurekebisha mifano yao.
 
 ## Mifano ya Utendaji wa Urekebishaji wa Kina
 
-![Finetuning Performance](../../../../translated_images/sw/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/sw/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **Kiarifu cha Msamaha**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebwi dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Install AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AI Toolkit ಫೈನ್‌ಟ್ಯೂನಿಂಗ್](../../../../translated_images/kn/Aitoolkit.7157953df04812dc.png)
+![AI Toolkit ಫೈನ್‌ಟ್ಯೂನಿಂಗ್](../../../../translated_images/kn/Aitoolkit.7157953df04812dc.webp)
 
 
 **[ಪ್ರೈವೇಟ್ ಪ್ರಿವ್ಯೂ]** ಒಂದು ಕ್ಲಿಕ್‌ನಲ್ಲಿ ಮಾದರಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಮತ್ತು ಇನ್ಫರೆನ್ಸ್ ಅನ್ನು ಕ್ಲೌಡ್‌ನಲ್ಲಿ ನಡೆಯಿಸುವಂತೆ Azure Container Apps ಗಾಗಿ ಪ್ರಾವಿಷನಿಂಗ್.

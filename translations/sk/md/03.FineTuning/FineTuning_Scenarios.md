@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Scenáre doladenia
 
-![Doladenie s MS službami](../../../../translated_images/sk/FinetuningwithMS.3d0cec8ae693e094.png)
+![Doladenie s MS službami](../../../../translated_images/sk/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Platforma** Zahŕňa rôzne technológie ako Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito a ONNX Runtime.
 
@@ -24,7 +24,7 @@ Proces doladenia s technológiami Microsoft zahŕňa rôzne komponenty a nástro
 
 Doladte model pomocou hosťovaného doladenia bez potreby vytvárať a spravovať výpočtové zdroje.
 
-![MaaS Doladenie](../../../../translated_images/sk/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Doladenie](../../../../translated_images/sk/MaaSfinetune.3eee4630607aff0d.webp)
 
 Serverless doladenie je dostupné pre modely Phi-3-mini a Phi-3-medium, čo umožňuje vývojárom rýchlo a jednoducho prispôsobiť modely pre cloudové a edge scenáre bez nutnosti zabezpečovať výpočtové zdroje. Tiež sme oznámili, že Phi-3-small je teraz dostupný prostredníctvom našej ponuky Models-as-a-Service, takže vývojári môžu rýchlo a jednoducho začať s vývojom AI bez starostí o správu infraštruktúry.
 
@@ -32,7 +32,7 @@ Serverless doladenie je dostupné pre modely Phi-3-mini a Phi-3-medium, čo umo�
 
 Používatelia spravujú vlastné výpočtové zdroje, aby mohli doladiť svoje modely.
 
-![Maap Doladenie](../../../../translated_images/sk/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Doladenie](../../../../translated_images/sk/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Príklad doladenia](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Používatelia spravujú vlastné výpočtové zdroje, aby mohli doladiť svoje 
 
 ## Príklady výkonu doladenia
 
-![Výkon doladenia](../../../../translated_images/sk/Finetuningexamples.a9a41214f8f5afc1.png)
+![Výkon doladenia](../../../../translated_images/sk/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **Vyhlásenie o zodpovednosti**:  
 Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

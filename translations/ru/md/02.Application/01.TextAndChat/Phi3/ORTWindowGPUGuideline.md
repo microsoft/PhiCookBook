@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Примечание*** Если вы не планируете компилировать, этот шаг можно пропустить
 
-![CPP](../../../../../../translated_images/ru/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/ru/01.42f52a2b2aedff02.webp)
 
 ### **4. Установка драйвера NVIDIA**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    Откройте [блокнот](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) и выполните
 
-![RESULT](../../../../../../translated_images/ru/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/ru/02.b9b06996cf7255d5.webp)
 
 ### **8. Компиляция ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - В Windows Terminal откройте Developer Command Prompt для VS 2022 и перейдите в папку onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/ru/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/ru/03.b83ce473d5ff9b9b.webp)
 
    - Скомпилируйте с использованием вашей среды Python
 

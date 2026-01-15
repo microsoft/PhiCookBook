@@ -33,33 +33,33 @@ Prompt flow може да се повеже са OpenAI, Azure OpenAI Service и
 
 1. Инсталирајте Prompt flow VS Code екстензију
 
-![pfvscode](../../../../../../translated_images/sr/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/sr/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Након инсталације Prompt flow VS Code екстензије, кликните на екстензију и изаберите **Installation dependencies** пратите овај водич да инсталирате Prompt flow SDK у вашем окружењу
 
-![pfsetup](../../../../../../translated_images/sr/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/sr/pfsetup.b46e93096f5a254f.webp)
 
 3. Преузмите [пример кода](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) и отворите га у VS Code-у
 
-![pfsample](../../../../../../translated_images/sr/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/sr/pfsample.8d89e70584ffe7c4.webp)
 
 4. Отворите **flow.dag.yaml** да изаберете ваше Python окружење
 
-![pfdag](../../../../../../translated_images/sr/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/sr/pfdag.264a77f7366458ff.webp)
 
    Отворите **chat_phi3_ort.py** да промените локацију вашег Phi-3.5-instruct ONNX модела
 
-![pfphi](../../../../../../translated_images/sr/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/sr/pfphi.72da81d74244b45f.webp)
 
 5. Покрените ваш prompt flow за тестирање
 
 Отворите **flow.dag.yaml** и кликните на визуелни едитор
 
-![pfv](../../../../../../translated_images/sr/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/sr/pfv.ba8a81f34b20f603.webp)
 
 Након клика, покрените га за тестирање
 
-![pfflow](../../../../../../translated_images/sr/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/sr/pfflow.4e1135a089b1ce1b.webp)
 
 1. Можете покренути batch у терминалу да проверите више резултата
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Резултате можете проверити у вашем подразумеваном прегледачу
 
 
-![pfresult](../../../../../../translated_images/sr/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/sr/pfresult.c22c826f8062d7cb.webp)
 
 **Одрицање од одговорности**:  
 Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

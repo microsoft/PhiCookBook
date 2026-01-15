@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Etter at adapterne er trent i det eksterne miljøet, kan du bruke en enkel Gradio-applikasjon for å samhandle med modellen.
 
-![Fine-tune complete](../../../../../translated_images/no/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/no/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Opprett Azure-ressurser  
 Du må sette opp Azure-ressursene for fjerninferens ved å kjøre `AI Toolkit: Provision Azure Container Apps for inference` fra kommandopaletten. Under denne oppsettprosessen blir du bedt om å velge Azure-abonnement og ressursgruppe.  
-![Provision Inference Resource](../../../../../translated_images/no/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/no/command-provision-inference.467afc8d351642fc.webp)
    
 Som standard bør abonnementet og ressursgruppen for inferens være de samme som de som ble brukt til finjusteringen. Inferensen vil bruke det samme Azure Container App-miljøet og få tilgang til modellen og modelladapteren som er lagret i Azure Files, og som ble generert under finjusteringssteget.
 
@@ -24,7 +24,7 @@ Som standard bør abonnementet og ressursgruppen for inferens være de samme som
 ### Distribusjon for inferens  
 Hvis du ønsker å endre inferenskoden eller laste inn inferensmodellen på nytt, kjør kommandoen `AI Toolkit: Deploy for inference`. Dette vil synkronisere din nyeste kode med ACA og starte replikatet på nytt.
 
-![Deploy for inference](../../../../../translated_images/no/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/no/command-deploy.9adb4e310dd0b0ae.webp)
 
 Etter at distribusjonen er fullført, er modellen klar for evaluering via dette endepunktet.
 
@@ -32,7 +32,7 @@ Etter at distribusjonen er fullført, er modellen klar for evaluering via dette 
 
 Du kan få tilgang til inferens-API-et ved å klikke på "*Go to Inference Endpoint*" knappen som vises i VSCode-varslingen. Alternativt kan web-API-endepunktet finnes under `ACA_APP_ENDPOINT` i `./infra/inference.config.json` og i utgangspanelet.
 
-![App Endpoint](../../../../../translated_images/no/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/no/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** Inferens-endepunktet kan ta noen minutter før det er fullt operativt.
 

@@ -43,7 +43,7 @@ Het document geeft advies over:
 
    ***Note*** Als je niet wilt compileren, kun je deze stap overslaan
 
-![CPP](../../../../../../translated_images/nl/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/nl/01.42f52a2b2aedff02.webp)
 
 ### **4. Installeer NVIDIA Driver**
 
@@ -83,7 +83,7 @@ Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, inclu
 
    Open [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) en voer uit
 
-![RESULT](../../../../../../translated_images/nl/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/nl/02.b9b06996cf7255d5.webp)
 
 ### **8. Compileer ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, inclu
 
    - Gebruik Windows Terminal, open Developer Command Prompt voor VS 2022 en ga naar onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/nl/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/nl/03.b83ce473d5ff9b9b.webp)
 
    - Compileer het met je Python-omgeving
 

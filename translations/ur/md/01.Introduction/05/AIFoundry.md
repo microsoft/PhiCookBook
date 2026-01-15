@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry کا استعمال کرتے ہوئے جائزہ لینا**
 
-![aistudo](../../../../../translated_images/ur/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/ur/AIFoundry.9e0b513e999a1c5a.webp)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) کے ذریعے اپنی جنریٹو AI ایپلیکیشن کا جائزہ کیسے لیں۔ چاہے آپ سنگل ٹرن یا ملٹی ٹرن گفتگو کا جائزہ لے رہے ہوں، Azure AI Foundry ماڈل کی کارکردگی اور حفاظت کے لیے ٹولز فراہم کرتا ہے۔
 
-![aistudo](../../../../../translated_images/ur/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/ur/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Azure AI Foundry کے ساتھ جنریٹو AI ایپس کا جائزہ لینے کا طریقہ
 مزید تفصیلی ہدایات کے لیے [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) دیکھیں۔

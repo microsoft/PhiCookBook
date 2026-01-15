@@ -36,7 +36,7 @@ Kita bisa memilih [Ollama](https://ollama.com) atau [LlamaEdge](https://llamaedg
 
 Jika ingin menggunakan gguf di cloud dan perangkat edge secara bersamaan, LlamaEdge bisa dipahami sebagai WasmEdge (WasmEdge adalah runtime WebAssembly yang ringan, berperforma tinggi, dan skalabel, cocok untuk aplikasi cloud native, edge, dan terdesentralisasi. Mendukung aplikasi serverless, fungsi embedded, microservices, smart contracts, dan perangkat IoT). Anda dapat mendepoy model kuantitatif gguf ke perangkat edge dan cloud melalui LlamaEdge.
 
-![llamaedge](../../../../../translated_images/id/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/id/llamaedge.e9d6ff96dff11cf7.webp)
 
 Berikut langkah-langkah penggunaannya
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Berikut hasil jalannya
 
-![llamaedgerun](../../../../../translated_images/id/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/id/llamaedgerun.bed921516c9a821c.webp)
 
 ***Kode contoh*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

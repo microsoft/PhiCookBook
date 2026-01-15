@@ -34,7 +34,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. **ਰਿਪੋਜ਼ਟਰੀ ਨੂੰ ਕਲੋਨ ਕਰੋ**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Microsoft AI Discord ਕਮਿਊਨਿਟੀ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ ਅਤੇ ਵਿਸ਼ੇਸ਼ਜ্ঞান ਅਤੇ ਹੋਰ ਵਿਕਾਸਕਾਰਾਂ ਨੂੰ ਮਿਲੋ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/pa/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/pa/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 ਬਹੁਭਾਸ਼ਾਈ ਸਮਰਥਨ
 

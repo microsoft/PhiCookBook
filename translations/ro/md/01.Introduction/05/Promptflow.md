@@ -42,7 +42,7 @@ Mențineți controlul versiunilor și partajați cunoștințe eficient. Simplifi
 
 În Microsoft Prompt Flow, evaluarea joacă un rol esențial în aprecierea performanței modelelor AI. Să explorăm cum puteți personaliza fluxurile și metricile de evaluare în Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/ro/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/ro/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Înțelegerea Evaluării în Prompt Flow**
 

@@ -43,7 +43,7 @@ Doküman aşağıdaki konularda rehberlik sunar:
 
    ***Note*** Derleme yapmak istemiyorsanız bu adımı atlayabilirsiniz
 
-![CPP](../../../../../../translated_images/tr/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/tr/01.42f52a2b2aedff02.webp)
 
 ### **4. NVIDIA Sürücüsünü Kurun**
 
@@ -83,7 +83,7 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
 
    [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) dosyasını açın ve çalıştırın
 
-![RESULT](../../../../../../translated_images/tr/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/tr/02.b9b06996cf7255d5.webp)
 
 ### **8. ORT GenAI GPU Derlemesi**
 
@@ -129,7 +129,7 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
 
    - Windows Terminal kullanarak VS 2022 için Geliştirici Komut İstemi'ne gidin ve onnxruntime-genai klasörüne geçin
 
-![RESULT](../../../../../../translated_images/tr/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/tr/03.b83ce473d5ff9b9b.webp)
 
    - Python ortamınız ile derleyin
 

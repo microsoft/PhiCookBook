@@ -40,7 +40,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Kết quả (môi trường của tôi là Apple M1 Max, 64GB) như sau
 
-![Terminal](../../../../../translated_images/vi/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/vi/01.5cf57df8f7407cf9.webp)
 
 ### **3. Lượng tử hóa Phi-3-mini với MLX trên Terminal**
 
@@ -64,11 +64,11 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Kết quả là
 
-![INT4](../../../../../translated_images/vi/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/vi/02.7b188681a8eadbc1.webp)
 
 ### **4. Chạy Phi-3-mini với MLX trong Jupyter Notebook**
 
-![Notebook](../../../../../translated_images/vi/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/vi/03.b9705a3a5aaa89f9.webp)
 
 ***Lưu ý:*** Vui lòng xem mẫu này [nhấn vào đây](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ево прегледа овог E2E примера.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/sr/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/sr/00-01-architecture.02fc569e266d468c.webp)
 
 ### Садржај
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *azure machine learning* у **претраживачу** на врху странице портала и изаберите **Azure Machine Learning** из понуђених опција.
 
-    ![Type azure machine learning](../../../../../../translated_images/sr/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/sr/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. Изаберите **+ Create** из навигационог менија.
 
 1. Изаберите **New workspace** из навигационог менија.
 
-    ![Select new workspace](../../../../../../translated_images/sr/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/sr/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. Извршите следеће радње:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Application insights** који ћете користити (креирајте нови ако је потребно).
     - Изаберите **Container registry** који ћете користити (креирајте нови ако је потребно).
 
-    ![Fill AZML.](../../../../../../translated_images/sr/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/sr/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. Изаберите **Review + Create**.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Virtual machine family** коју желите да користите. На пример, изаберите **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, која укључује *Standard_NC24ads_A100_v4* GPU.
     - Изаберите **Request quota** из навигационог менија.
 
-        ![Request quota.](../../../../../../translated_images/sr/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/sr/01-04-request-quota.3d3670c3221ab834.webp)
 
     - На страници Request quota унесите **New cores limit** коју желите да користите. На пример, 24.
     - На страници Request quota изаберите **Submit** да бисте захтевали GPU квоту.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *managed identities* у **претраживачу** на врху странице портала и изаберите **Managed Identities** из понуђених опција.
 
-    ![Type managed identities.](../../../../../../translated_images/sr/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/sr/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. Изаберите **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/sr/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/sr/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. Извршите следеће радње:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **Resource group** за коришћење.
     - Изаберите **Role** на **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/sr/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/sr/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. Изаберите **Save**.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *storage accounts* у **претраживачу** на врху странице портала и изаберите **Storage accounts** из понуђених опција.
 
-    ![Type storage accounts.](../../../../../../translated_images/sr/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/sr/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Изаберите storage account који је повезан са Azure Machine Learning workspace-ом који сте креирали. На пример, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите **+ Add** из навигационог менија.
     - Изаберите **Add role assignment** из навигационог менија.
 
-    ![Add role.](../../../../../../translated_images/sr/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/sr/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. На страници Add role assignment извршите следеће радње:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - На страници Select managed identities изаберите Manage Identity коју сте креирали. На пример, *finetunephi-managedidentity*.
     - На страници Select managed identities изаберите **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/sr/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/sr/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. Изаберите **Review + assign**.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Укуцајте *container registries* у **претраживачу** на врху странице портала и изаберите **Container registries** из понуђених опција.
 
-    ![Type container registries.](../../../../../../translated_images/sr/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/sr/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Изаберите container registry који је повезан са Azure Machine Learning workspace-ом. На пример, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите фасциклу *finetune-phi* коју сте креирали, која се налази на путу *C:\Users\yourUserName\finetune-phi*.
 
-    ![Отворите фасциклу пројекта.](../../../../../../translated_images/sr/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Отворите фасциклу пројекта.](../../../../../../translated_images/sr/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. У левом панелу Visual Studio Code-а, кликните десним тастером и изаберите **New File** да бисте креирали нову датотеку под именом *download_dataset.py*.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. У левом панелу Visual Studio Code-а, кликните десним тастером и изаберите **New File** да бисте креирали нову датотеку под именом *deploy_model.py*.
 
-    ![Креирајте нову датотеку.](../../../../../../translated_images/sr/01-13-create-new-file.c17c150fff384a39.png)
+    ![Креирајте нову датотеку.](../../../../../../translated_images/sr/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. У левом панелу Visual Studio Code-а, кликните десним тастером и изаберите **New Folder** да бисте креирали нову фасциклу под именом *finetuning_dir*.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - Изаберите Azure претплату коју тренутно користите.
     - Копирајте и залепите ваш Subscription ID у датотеку *config.py*.
 
-    ![Пронађите subscription id.](../../../../../../translated_images/sr/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Пронађите subscription id.](../../../../../../translated_images/sr/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Извршите следеће кораке да бисте додали Azure Workspace име:
 
     - Идите на Azure Machine Learning ресурс који сте креирали.
     - Копирајте и залепите име вашег рачуна у датотеку *config.py*.
 
-    ![Пронађите Azure Machine Learning име.](../../../../../../translated_images/sr/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Пронађите Azure Machine Learning име.](../../../../../../translated_images/sr/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Извршите следеће кораке да бисте додали Azure Resource Group име:
 
     - Идите на Azure Machine Learning ресурс који сте креирали.
     - Копирајте и залепите име ваше Azure Resource Group у датотеку *config.py*.
 
-    ![Пронађите име resource group.](../../../../../../translated_images/sr/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Пронађите име resource group.](../../../../../../translated_images/sr/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Извршите следеће кораке да бисте додали Azure Managed Identity име:
 
     - Идите на ресурс Managed Identities који сте креирали.
     - Копирајте и залепите име ваше Azure Managed Identity у датотеку *config.py*.
 
-    ![Пронађите UAI.](../../../../../../translated_images/sr/01-17-find-uai.3529464f53499827.png)
+    ![Пронађите UAI.](../../../../../../translated_images/sr/01-17-find-uai.3529464f53499827.webp)
 
 ### Припрема сета података за фино подешавање
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите своју Azure претплату за коришћење.
 
-    ![Пронађите име resource group.](../../../../../../translated_images/sr/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Пронађите име resource group.](../../../../../../translated_images/sr/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. У овом задатку успешно сте фино подесили Phi-3 модел користећи Azure Machine Learning. Покретањем скрипте *setup_ml.py*, подесили сте Azure Machine Learning окружење и иницирали процес фино подешавања дефинисан у датотеци *fine_tune.py*. Имајте на уму да процес фино подешавања може трајати одређено време. Након покретања команде `python setup_ml.py`, морате сачекати да се процес заврши. Статус посла фино подешавања можете пратити путем линка који ће бити приказан у терминалу ка Azure Machine Learning порталу.
 
-    ![Погледајте посао фино подешавања.](../../../../../../translated_images/sr/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![Погледајте посао фино подешавања.](../../../../../../translated_images/sr/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### Деплојмент фино подешеног модела
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Изаберите **Endpoints** са леве бочне траке.
 
-    ![Изаберите крајње тачке.](../../../../../../translated_images/sr/02-03-select-endpoints.c3136326510baff1.png)
+    ![Изаберите крајње тачке.](../../../../../../translated_images/sr/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. Изаберите крајњу тачку коју сте креирали.
 
-    ![Изаберите креиране крајње тачке.](../../../../../../translated_images/sr/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Изаберите креиране крајње тачке.](../../../../../../translated_images/sr/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. На овој страници можете управљати крајњим тачкама креираним током процеса деплоирања.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Копирајте и налепите свој **REST endpoint** у фајл *config.py*, заменивши `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` вашим **REST endpoint-ом**.  
 1. Копирајте и налепите свој **Primary key** у фајл *config.py*, заменивши `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` вашим **Primary key-јем**.
 
-    ![Копирајте api кључ и endpoint URI.](../../../../../../translated_images/sr/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Копирајте api кључ и endpoint URI.](../../../../../../translated_images/sr/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### Додајте код у фајл *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Ево примера резултата: Сада можете ћаскати са вашим прилагођеним Phi-3 моделом. Препоручује се да постављате питања која се базирају на подацима коришћеним за финетјунирање.
 
-    ![Пример Prompt flow-а.](../../../../../../translated_images/sr/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Пример Prompt flow-а.](../../../../../../translated_images/sr/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

@@ -41,7 +41,7 @@ Fine-tuning은 특정 모델을 개선하는 방식입니다. 모델 알고리�
 
 ## **RAG 사용법**
 
-![rag](../../../../translated_images/ko/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/ko/rag.2014adc59e6f6007.webp)
 
 벡터 데이터베이스는 데이터를 수학적 형태로 저장한 집합입니다. 벡터 데이터베이스는 머신러닝 모델이 이전 입력을 기억하기 쉽게 만들어, 검색, 추천, 텍스트 생성 등 다양한 활용 사례를 지원할 수 있게 합니다. 데이터는 정확한 일치가 아닌 유사도 기준으로 식별되어 컴퓨터 모델이 데이터의 맥락을 이해할 수 있습니다.
 
@@ -57,7 +57,7 @@ Fine-tuning에서 주로 사용하는 알고리즘은 Lora와 QLora입니다. �
 
 ### **Lora와 QLora**
 
-![lora](../../../../translated_images/ko/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/ko/qlora.e6446c988ee04ca0.webp)
 
 LoRA(Low-Rank Adaptation)와 QLoRA(Quantized Low-Rank Adaptation)는 모두 Parameter Efficient Fine Tuning(PEFT)을 사용해 대형 언어 모델(LLM)을 미세 조정하는 기술입니다. PEFT는 전통적인 방법보다 더 효율적으로 모델을 학습시키도록 설계되었습니다.  
 LoRA는 가중치 업데이트 행렬에 저랭크 근사를 적용해 메모리 사용량을 줄이는 독립적인 미세 조정 기법입니다. 빠른 학습 속도를 제공하며 전통적인 미세 조정 방법과 거의 비슷한 성능을 유지합니다.

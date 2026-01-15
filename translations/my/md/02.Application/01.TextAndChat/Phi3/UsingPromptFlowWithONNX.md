@@ -33,33 +33,33 @@ Windows GPU အတွက် ONNX Runtime GenAI ကို တပ်ဆင်ရ�
 
 1. Prompt flow VS Code Extension ကို တပ်ဆင်ပါ
 
-![pfvscode](../../../../../../translated_images/my/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/my/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Prompt flow VS Code Extension တပ်ဆင်ပြီးနောက်၊ extension ကို နှိပ်ပြီး **Installation dependencies** ကို ရွေးချယ်ပါ၊ ဤလမ်းညွှန်အတိုင်း Prompt flow SDK ကို သင့်ပတ်ဝန်းကျင်တွင် တပ်ဆင်ပါ
 
-![pfsetup](../../../../../../translated_images/my/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/my/pfsetup.b46e93096f5a254f.webp)
 
 3. [နမူနာကုဒ်](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ကို ဒေါင်းလုပ်လုပ်ပြီး VS Code ဖြင့် ဖွင့်ပါ
 
-![pfsample](../../../../../../translated_images/my/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/my/pfsample.8d89e70584ffe7c4.webp)
 
 4. **flow.dag.yaml** ကို ဖွင့်ပြီး သင့် Python ပတ်ဝန်းကျင်ကို ရွေးချယ်ပါ
 
-![pfdag](../../../../../../translated_images/my/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/my/pfdag.264a77f7366458ff.webp)
 
    **chat_phi3_ort.py** ကို ဖွင့်ပြီး သင့် Phi-3.5-instruct ONNX မော်ဒယ် တည်နေရာကို ပြောင်းလဲပါ
 
-![pfphi](../../../../../../translated_images/my/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/my/pfphi.72da81d74244b45f.webp)
 
 5. သင့် prompt flow ကို စမ်းသပ်ရန် ပြေးပါ
 
 **flow.dag.yaml** ကို ဖွင့်ပြီး visual editor ကို နှိပ်ပါ
 
-![pfv](../../../../../../translated_images/my/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/my/pfv.ba8a81f34b20f603.webp)
 
 နှိပ်ပြီးနောက် စမ်းသပ်ရန် ပြေးပါ
 
-![pfflow](../../../../../../translated_images/my/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/my/pfflow.4e1135a089b1ce1b.webp)
 
 1. terminal တွင် batch ကို ပြေး၍ ပိုမိုသော ရလဒ်များကို စစ်ဆေးနိုင်သည်
 
@@ -71,7 +71,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 သင့်ပုံမှန် browser တွင် ရလဒ်များကို စစ်ဆေးနိုင်သည်
 
-![pfresult](../../../../../../translated_images/my/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/my/pfresult.c22c826f8062d7cb.webp)
 
 **အကြောင်းကြားချက်**  
 ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Fine Tuning Scenarios
 
-![FineTuning with MS Services](../../../../translated_images/my/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/my/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Platform** ဒီမှာ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, နဲ့ ONNX Runtime တို့လို နည်းပညာမျိုးစုံ ပါဝင်ပါတယ်။
 
@@ -24,7 +24,7 @@ Microsoft နည်းပညာတွေနဲ့ fine-tuning လုပ်ငန
 
 Hosted fine-tuning ကို အသုံးပြုပြီး compute ကို ဖန်တီးစီမံရန် မလိုဘဲ မော်ဒယ်ကို fine-tune လုပ်နိုင်ပါတယ်။
 
-![MaaS Fine Tuning](../../../../translated_images/my/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/my/MaaSfinetune.3eee4630607aff0d.webp)
 
 Serverless fine-tuning ကို Phi-3-mini နဲ့ Phi-3-medium မော်ဒယ်များအတွက် အသုံးပြုနိုင်ပြီး developer များအတွက် cloud နဲ့ edge စနစ်များအတွက် မော်ဒယ်များကို လျင်မြန်လွယ်ကူစွာ စိတ်ကြိုက်ပြင်ဆင်နိုင်စေပါတယ်။ ထို့အပြင် Phi-3-small ကို Models-as-a-Service အဖြစ် ထုတ်ပြန်ထားပြီး developer များအတွက် အခြေခံအင်ဖရာစတပ်ချာကို စီမံခန့်ခွဲရန် မလိုဘဲ AI ဖွံ့ဖြိုးတိုးတက်မှုကို လျင်မြန်စွာ စတင်နိုင်ပါပြီ။
 
@@ -32,7 +32,7 @@ Serverless fine-tuning ကို Phi-3-mini နဲ့ Phi-3-medium မော်�
 
 အသုံးပြုသူများသည် မိမိတို့ compute ကို ကိုယ်တိုင် စီမံခန့်ခွဲပြီး မော်ဒယ်များကို fine-tune လုပ်ကြသည်။
 
-![Maap Fine Tuning](../../../../translated_images/my/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/my/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Serverless fine-tuning ကို Phi-3-mini နဲ့ Phi-3-medium မော်�
 
 ## Fine Tuning Performance Examples
 
-![Finetuning Performance](../../../../translated_images/my/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/my/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **အကြောင်းကြားချက်**  
 ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ပညာရှင်များ၏ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

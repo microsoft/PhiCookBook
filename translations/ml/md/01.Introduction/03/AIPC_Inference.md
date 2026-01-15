@@ -28,9 +28,9 @@ GPU-കൾ പരലൽ കമ്പ്യൂട്ടിങ്ങിന് പ�
 
 Intel® NPU ഡിവൈസ് Intel ക്ലയന്റ് CPU-കളുമായി ഇന്റിഗ്രേറ്റ് ചെയ്ത ഒരു AI ഇൻഫറൻസ് ആക്സിലറേറ്ററാണ്, Intel® Core™ Ultra തലമുറയിലെ CPU-കളിൽ (മുൻപ് Meteor Lake എന്നറിയപ്പെടുന്നത്) ആരംഭിച്ച് കാണപ്പെടുന്നു. ഇത് ആർട്ടിഫിഷ്യൽ ന്യൂറൽ നെറ്റ്‌വർക്ക് ടാസ്കുകൾ എനർജി-ഫലപ്രദമായി പ്രയോഗിക്കാൻ സഹായിക്കുന്നു.
 
-![താമസം](../../../../../translated_images/ml/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![താമസം](../../../../../translated_images/ml/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![താമസം770](../../../../../translated_images/ml/aipcphitokenlatency770.e923609a57c5d394.png)
+![താമസം770](../../../../../translated_images/ml/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 കോഡ് നടപ്പാക്കുമ്പോൾ, Task Manager വഴി NPU-യുടെ പ്രവർത്തന നില കാണാൻ സാധിക്കും
 
-![NPU](../../../../../translated_images/ml/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/ml/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Samples*** : [AIPC_NPU_DEMO.ipynb](../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ഇത് റൺ ഫലമാണ്
 
-![DML](../../../../../translated_images/ml/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/ml/aipc_DML.52a44180393ab491.webp)
 
 ***Samples*** : [AIPC_DirectML_DEMO.ipynb](../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 മാറ്റിയിട്ടുള്ള ഫോർമാറ്റ് ഇൗ പടി പോലെയായിരിക്കും
 
-![openvino_convert](../../../../../translated_images/ml/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/ml/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 OVModelForCausalLM മുഖാന്തിരം model paths(model_dir), ബന്ധപ്പെട്ട കോൺഫിഗറേഷനുകൾ(ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), ഹാർഡ്‌വെയർ-ആക്സിലറേറ്റഡ് ഡിവൈസുകൾ(GPU.0) ലോഡ് ചെയ്യുക
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 കോഡ് നടപ്പാക്കുമ്പോൾ, Task Manager വഴി GPU-യുടെ പ്രവർത്തന നില കണ്ടെത്താൻ കഴിയും
 
-![openvino_gpu](../../../../../translated_images/ml/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/ml/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Samples*** : [AIPC_OpenVino_Demo.ipynb](../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

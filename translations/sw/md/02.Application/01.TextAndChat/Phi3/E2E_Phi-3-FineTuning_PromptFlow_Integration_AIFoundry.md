@@ -24,7 +24,7 @@ Katika mfano huu wa E2E, utajifunza jinsi ya kufanya uboreshaji wa mfano wa Phi-
 
 Hapa kuna muhtasari wa mfano huu wa E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/sw/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/sw/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Jedwali la Yaliyomo
 
@@ -49,13 +49,13 @@ Hapa kuna muhtasari wa mfano huu wa E2E.
 
 1. Andika *azure machine learning* kwenye **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Azure Machine Learning** kutoka kwa chaguo linaloonekana.
 
-    ![Type azure machine learning.](../../../../../../translated_images/sw/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/sw/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Chagua **+ Create** kutoka kwenye menyu ya kuvinjari.
 
 3. Chagua **New workspace** kutoka kwenye menyu ya kuvinjari.
 
-    ![Select new workspace.](../../../../../../translated_images/sw/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/sw/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Fanya kazi zifuatazo:
 
@@ -68,7 +68,7 @@ Hapa kuna muhtasari wa mfano huu wa E2E.
     - Chagua **Application insights** utakayotumia (tengeneza mpya ikiwa inahitajika).
     - Chagua **Container registry** utakayotumia (tengeneza mpya ikiwa inahitajika).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/sw/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/sw/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Chagua **Review + Create**.
 
@@ -91,7 +91,7 @@ Katika mafunzo haya, utajifunza jinsi ya kufanya uboreshaji na kutuma mfano wa P
     - Chagua **Virtual machine family** utakayotumia. Kwa mfano, chagua **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, inayojumuisha GPU ya *Standard_NC24ads_A100_v4*.
     - Chagua **Request quota** kutoka kwenye menyu ya kuvinjari.
 
-        ![Request quota.](../../../../../../translated_images/sw/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/sw/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Ndani ya ukurasa wa Request quota, ingiza **New cores limit** unayotaka kutumia. Kwa mfano, 24.
     - Ndani ya ukurasa wa Request quota, chagua **Submit** kuomba vikwazo vya GPU.
@@ -112,11 +112,11 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
 
 1. Andika *managed identities* kwenye **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Managed Identities** kutoka kwa chaguo linaloonekana.
 
-    ![Type managed identities.](../../../../../../translated_images/sw/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/sw/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Chagua **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/sw/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/sw/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Fanya kazi zifuatazo:
 
@@ -125,7 +125,7 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
     - Chagua **Region** unayotaka kuitumia.
     - Weka **Name**. Lazima iwe thamani ya kipekee.
 
-    ![Select create.](../../../../../../translated_images/sw/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/sw/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Chagua **Review + create**.
 
@@ -145,7 +145,7 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
     - Chagua **Resource group** utakayotumia.
     - Chagua **Role** kuwa **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/sw/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/sw/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Chagua **Save**.
 
@@ -153,7 +153,7 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
 
 1. Andika *storage accounts* kwenye **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Storage accounts** kutoka kwa chaguo linaloonekana.
 
-    ![Type storage accounts.](../../../../../../translated_images/sw/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/sw/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Chagua akaunti ya kuhifadhi inayohusiana na nafasi ya kazi ya Azure Machine Learning uliyounda. Kwa mfano, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
     - Chagua **+ Add** kutoka kwenye menyu ya kuvinjari.
     - Chagua **Add role assignment** kutoka kwenye menyu ya kuvinjari.
 
-    ![Add role.](../../../../../../translated_images/sw/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/sw/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Ndani ya ukurasa wa Ongeza kazi ya jukumu, fanya kazi zifuatazo:
 
@@ -177,7 +177,7 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
     - Ndani ya ukurasa wa Select managed identities, chagua Manage Identity uliyotengeneza. Kwa mfano, *finetunephi-managedidentity*.
     - Ndani ya ukurasa wa Select managed identities, chagua **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/sw/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/sw/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Chagua **Review + assign**.
 
@@ -185,7 +185,7 @@ Ili kufanya uboreshaji na kutuma mifano yako, lazima kwanza uunde User Assigned 
 
 1. Andika *container registries* kwenye **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Container registries** kutoka kwa chaguo linaloonekana.
 
-    ![Type container registries.](../../../../../../translated_images/sw/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/sw/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Chagua rejista ya kontena inayohusiana na nafasi ya kazi ya Azure Machine Learning. Kwa mfano, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ Katika mazoezi haya, utakuwa
 
 1. Chagua folda ya *finetune-phi* uliyotengeneza, ambayo iko *C:\Users\yourUserName\finetune-phi*.
 
-    ![Chagua folda uliyotengeneza.](../../../../../../translated_images/sw/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Chagua folda uliyotengeneza.](../../../../../../translated_images/sw/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia kisha chagua **New File** kuunda faili mpya inayoitwa *download_dataset.py*.
 
-    ![Tengeneza faili mpya.](../../../../../../translated_images/sw/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Tengeneza faili mpya.](../../../../../../translated_images/sw/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Andaa dataset kwa ajili ya kufine-tune
 
@@ -392,7 +392,7 @@ Katika zoezi hili, utafanya:
 
 1. Chagua **+ New**.
 
-    ![Chagua compute.](../../../../../../translated_images/sw/06-01-select-compute.a29cff290b480252.png)
+    ![Chagua compute.](../../../../../../translated_images/sw/06-01-select-compute.a29cff290b480252.webp)
 
 1. Fanya yafuatayo:
 
@@ -402,7 +402,7 @@ Katika zoezi hili, utafanya:
     - Chagua kichujio cha **Virtual machine size** kwa **Select from all options**.
     - Chagua ukubwa wa **Virtual machine size** kuwa **Standard_NC24ads_A100_v4**.
 
-    ![Tengeneza klasta.](../../../../../../translated_images/sw/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Tengeneza klasta.](../../../../../../translated_images/sw/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Chagua **Next**.
 
@@ -413,7 +413,7 @@ Katika zoezi hili, utafanya:
     - Chagua **Idadi kubwa ya nodes** kuwa **1**.
     - Chagua **Idle seconds before scale down** kuwa **120**.
 
-    ![Tengeneza klasta.](../../../../../../translated_images/sw/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Tengeneza klasta.](../../../../../../translated_images/sw/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Chagua **Create**.
 
@@ -423,18 +423,18 @@ Katika zoezi hili, utafanya:
 
 1. Chagua anga kazi (workspace) ya Azure Machine Learning uliyotengeneza.
 
-    ![Chagua anga kazi uliyotengeneza.](../../../../../../translated_images/sw/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Chagua anga kazi uliyotengeneza.](../../../../../../translated_images/sw/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Fanya yafuatayo:
 
     - Chagua **Model catalog** kutoka kwenye kichupo cha upande wa kushoto.
     - Andika *phi-3-mini-4k* kwenye **kibandiko cha utafutaji** na chagua **Phi-3-mini-4k-instruct** kutoka kwenye chaguzi zilizojitokeza.
 
-    ![Andika phi-3-mini-4k.](../../../../../../translated_images/sw/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Andika phi-3-mini-4k.](../../../../../../translated_images/sw/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Chagua **Fine-tune** kutoka kwenye menyu ya urambazaji.
 
-    ![Chagua fine tune.](../../../../../../translated_images/sw/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Chagua fine tune.](../../../../../../translated_images/sw/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Fanya yafuatayo:
 
@@ -443,7 +443,7 @@ Katika zoezi hili, utafanya:
     - Chagua aina ya kupakia data ya uhakiki kuwa **Provide different validation data**.
     - Chagua **+ Select data** kupakia **Data ya Uhakiki**.
 
-    ![Jaza ukurasa wa fine-tuning.](../../../../../../translated_images/sw/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Jaza ukurasa wa fine-tuning.](../../../../../../translated_images/sw/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ Katika zoezi hili, utafanya:
 
 1. Katika zoezi hili, umefanikiwa kufine-tune model ya Phi-3 kwa kutumia Azure Machine Learning. Tafadhali fahamu kuwa mchakato wa fine-tuning unaweza kuchukua muda mwingi. Baada ya kuendesha kazi ya fine-tuning, inabidi usubiri ikamilike. Unaweza kufuatilia hali ya kazi ya fine-tuning kwa kwenda kwenye kichupo cha Jobs upande wa kushoto wa Azure Machine Learning Workspace yako. Katika safu inayofuata, utatuma model iliyofine-tune na kuunganisha na Prompt Flow.
 
-    ![Angalia kazi ya fine-tuning.](../../../../../../translated_images/sw/06-08-output.2bd32e59930672b1.png)
+    ![Angalia kazi ya fine-tuning.](../../../../../../translated_images/sw/06-08-output.2bd32e59930672b1.webp)
 
 ### Tuma model iliyofine-tune ya Phi-3
 
@@ -471,17 +471,17 @@ Katika zoezi hili, utafanya:
 
 1. Chagua anga kazi ya Azure Machine Learning uliyotengeneza.
 
-    ![Chagua anga kazi uliyotengeneza.](../../../../../../translated_images/sw/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Chagua anga kazi uliyotengeneza.](../../../../../../translated_images/sw/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Chagua **Models** kutoka kwenye kichupo cha upande wa kushoto.
 1. Chagua **+ Register**.
 1. Chagua **From a job output**.
 
-    ![Sajili model.](../../../../../../translated_images/sw/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Sajili model.](../../../../../../translated_images/sw/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Chagua kazi uliyotengeneza.
 
-    ![Chagua kazi.](../../../../../../translated_images/sw/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Chagua kazi.](../../../../../../translated_images/sw/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Chagua **Next**.
 
@@ -489,17 +489,17 @@ Katika zoezi hili, utafanya:
 
 1. Hakikisha **Job output** imechaguliwa; inapaswa kuchaguliwa moja kwa moja.
 
-    ![Chagua matokeo.](../../../../../../translated_images/sw/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Chagua matokeo.](../../../../../../translated_images/sw/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Chagua **Next**.
 
 3. Chagua **Register**.
 
-    ![Chagua sajili.](../../../../../../translated_images/sw/07-04-register.fd82a3b293060bc7.png)
+    ![Chagua sajili.](../../../../../../translated_images/sw/07-04-register.fd82a3b293060bc7.webp)
 
 4. Unaweza kutazama model yako iliyosajiliwa kwa kwenda kwenye menyu ya **Models** kutoka upande wa kushoto.
 
-    ![Model iliyosajiliwa.](../../../../../../translated_images/sw/07-05-registered-model.7db9775f58dfd591.png)
+    ![Model iliyosajiliwa.](../../../../../../translated_images/sw/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Tuma model iliyofine-tune
 
@@ -509,13 +509,13 @@ Katika zoezi hili, utafanya:
 
 1. Chagua **Real-time endpoints** kutoka kwenye menyu ya urambazaji.
 
-    ![Tengeneza endpoint.](../../../../../../translated_images/sw/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Tengeneza endpoint.](../../../../../../translated_images/sw/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Chagua **Create**.
 
 1. Chagua model iliyosajiliwa uliyotengeneza.
 
-    ![Chagua model iliyosajiliwa.](../../../../../../translated_images/sw/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Chagua model iliyosajiliwa.](../../../../../../translated_images/sw/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Chagua **Select**.
 
@@ -527,7 +527,7 @@ Katika zoezi hili, utafanya:
     - Weka **Endpoint name**. Lazima liwe la kipekee.
     - Weka **Deployment name**. Lazima liwe la kipekee.
 
-    ![Jaza mpangilio wa deployment.](../../../../../../translated_images/sw/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Jaza mpangilio wa deployment.](../../../../../../translated_images/sw/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Chagua **Deploy**.
 
@@ -543,14 +543,14 @@ Katika zoezi hili, utafanya:
 
 1. Chagua endpoint uliyotengeneza.
 
-    ![Chagua endpoints](../../../../../../translated_images/sw/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Chagua endpoints](../../../../../../translated_images/sw/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. Ukurasa huu unaweza kusimamia endpoints wakati wa mchakato wa deployment.
 
 > [!NOTE]
 > Mara kazi ya deployment itakapokamilika, hakikisha **Live traffic** imewekwa kwa **100%**. Ikiwa haijafanyika, chagua **Update traffic** kurekebisha mipangilio ya trafiki. Kumbuka huwezi kupima model ikiwa trafiki imewekwa kwa 0%.
 >
-> ![Weka trafiki.](../../../../../../translated_images/sw/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Weka trafiki.](../../../../../../translated_images/sw/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Hali ya 3: Unganisha na Prompt flow na Zungumza na model yako maalum katika Azure AI Foundry
@@ -579,7 +579,7 @@ Unahitaji kutengeneza Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Kikundi c
 1. Chagua **All hubs** kutoka kwenye kichupo cha upande wa kushoto.
 
 1. Chagua **+ New hub** kutoka kwenye menyu ya urambazaji.
-    ![Create hub.](../../../../../../translated_images/sw/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Create hub.](../../../../../../translated_images/sw/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Fanya kazi zifuatazo:
 
@@ -590,7 +590,7 @@ Unahitaji kutengeneza Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Kikundi c
     - Chagua **Unganisha Huduma za Azure AI** za kutumia (tengeneza kipya ikiwa kinahitajika).
     - Chagua **Unganisha Azure AI Search** kwenda **Ruka kuunganisha**.
 
-    ![Fill hub.](../../../../../../translated_images/sw/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Fill hub.](../../../../../../translated_images/sw/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Chagua **Ifuatayo**.
 
@@ -600,11 +600,11 @@ Unahitaji kutengeneza Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Kikundi c
 
 1. Chagua **+ Mradi mpya** kutoka kwenye menyu ya urambazaji.
 
-    ![Select new project.](../../../../../../translated_images/sw/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Select new project.](../../../../../../translated_images/sw/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Ingiza **Jina la Mradi**. Lazima iwe thamani ya kipekee.
 
-    ![Create project.](../../../../../../translated_images/sw/08-05-create-project.4d97f0372f03375a.png)
+    ![Create project.](../../../../../../translated_images/sw/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Chagua **Tengeneza mradi**.
 
@@ -620,17 +620,17 @@ Ili kuunganisha modeli yako maalum ya Phi-3 na mtiririko wa Prompt, unahitaji ku
 
 1. Chagua **Endpoints** kutoka kwenye kichupo cha upande wa kushoto.
 
-    ![Select endpoints.](../../../../../../translated_images/sw/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Select endpoints.](../../../../../../translated_images/sw/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Chagua anwani ya mwisho uliyotengeneza.
 
-    ![Select endpoints.](../../../../../../translated_images/sw/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Select endpoints.](../../../../../../translated_images/sw/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Chagua **Consume** kutoka kwenye menyu ya urambazaji.
 
 1. Nakili **REST endpoint** na **Ufunguo wa Msingi** wako.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/sw/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/sw/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Ongeza Muunganisho Maalum
 
@@ -642,11 +642,11 @@ Ili kuunganisha modeli yako maalum ya Phi-3 na mtiririko wa Prompt, unahitaji ku
 
 1. Chagua **+ Muunganisho mpya**.
 
-    ![Select new connection.](../../../../../../translated_images/sw/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Select new connection.](../../../../../../translated_images/sw/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Chagua **Funguo maalum** kutoka kwenye menyu ya urambazaji.
 
-    ![Select custom keys.](../../../../../../translated_images/sw/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Select custom keys.](../../../../../../translated_images/sw/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Fanya kazi zifuatazo:
 
@@ -656,7 +656,7 @@ Ili kuunganisha modeli yako maalum ya Phi-3 na mtiririko wa Prompt, unahitaji ku
     - Kwa jina la ufunguo, ingiza **key** na weka ufunguo uliyoinakili kutoka Azure ML Studio kwenye eneo la thamani.
     - Baada ya kuongeza funguo, chagua **is secret** ili kuzuia ufunguo kuonyeshwa.
 
-    ![Add connection.](../../../../../../translated_images/sw/08-11-add-connection.785486badb4d2d26.png)
+    ![Add connection.](../../../../../../translated_images/sw/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Chagua **Ongeza muunganisho**.
 
@@ -670,15 +670,15 @@ Umeongeza muunganisho maalum katika Azure AI Foundry. Sasa, tuunde Mtiririko wa 
 
 1. Chagua **+ Unda** kutoka kwenye menyu ya urambazaji.
 
-    ![Select Promptflow.](../../../../../../translated_images/sw/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Select Promptflow.](../../../../../../translated_images/sw/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Chagua **Mtiririko wa mazungumzo** kutoka kwenye menyu ya urambazaji.
 
-    ![Select chat flow.](../../../../../../translated_images/sw/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Select chat flow.](../../../../../../translated_images/sw/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Ingiza **Jina la folda** ya kutumia.
 
-    ![Enter name.](../../../../../../translated_images/sw/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Enter name.](../../../../../../translated_images/sw/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Chagua **Tengeneza**.
 
@@ -715,7 +715,7 @@ Unahitaji kuunganisha modeli iliyosasishwa vizuri ya Phi-3 katika Mtiririko wa P
 
     - Chagua **Hifadhi**.
 
-    ![Select raw file mode.](../../../../../../translated_images/sw/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Select raw file mode.](../../../../../../translated_images/sw/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Ongeza msimbo ufuatao kwenye faili *integrate_with_promptflow.py* kutumia modeli maalum ya Phi-3 katika Mtiririko wa Prompt.
 
@@ -780,14 +780,14 @@ Unahitaji kuunganisha modeli iliyosasishwa vizuri ya Phi-3 katika Mtiririko wa P
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/sw/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/sw/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Kwa habari za kina zaidi kuhusu kutumia Mtiririko wa Prompt katika Azure AI Foundry, unaweza rejelea [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Chagua **Kiingilio cha mazungumzo**, **Matokeo ya mazungumzo** kuwezesha mazungumzo na modeli yako.
 
-    ![Input Output.](../../../../../../translated_images/sw/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Input Output.](../../../../../../translated_images/sw/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Sasa uko tayari kuzungumza na modeli yako maalum ya Phi-3. Katika zoezi lijalo, utajifunza jinsi ya kuanzisha Mtiririko wa Prompt na kuutumia kuzungumza na modeli yako iliyosasishwa vizuri ya Phi-3.
 
@@ -795,7 +795,7 @@ Unahitaji kuunganisha modeli iliyosasishwa vizuri ya Phi-3 katika Mtiririko wa P
 >
 > Mtiririko uliojengwa upya unapaswa kuonekana kama picha iliyo hapa chini:
 >
-> ![Flow example.](../../../../../../translated_images/sw/08-18-graph-example.d6457533952e690c.png)
+> ![Flow example.](../../../../../../translated_images/sw/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Zungumza na modeli yako maalum ya Phi-3
@@ -808,25 +808,25 @@ Sasa baada ya kusasisha na kuunganisha modeli yako maalum ya Phi-3 na Mtiririko 
 
 1. Chagua **Anzisha vikao vya hesabu** kuanzisha Mtiririko wa Prompt.
 
-    ![Start compute session.](../../../../../../translated_images/sw/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Start compute session.](../../../../../../translated_images/sw/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Chagua **Thibitisha na uchambue kiingilio** ili kusasisha vigezo.
 
-    ![Validate input.](../../../../../../translated_images/sw/09-02-validate-input.317c76ef766361e9.png)
+    ![Validate input.](../../../../../../translated_images/sw/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Chagua **Thamani** ya **muunganisho** kwa muunganisho maalum uliyotengeneza. Kwa mfano, *connection*.
 
-    ![Connection.](../../../../../../translated_images/sw/09-03-select-connection.99bdddb4b1844023.png)
+    ![Connection.](../../../../../../translated_images/sw/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Zungumza na modeli yako maalum
 
 1. Chagua **Mazungumzo**.
 
-    ![Select chat.](../../../../../../translated_images/sw/09-04-select-chat.61936dce6612a1e6.png)
+    ![Select chat.](../../../../../../translated_images/sw/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Hapa kuna mfano wa matokeo: Sasa unaweza kuzungumza na modeli yako maalum ya Phi-3. Inashauriwa kuuliza maswali yanayotegemea data iliyotumika kwa usasaishaji mzuri.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/sw/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/sw/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

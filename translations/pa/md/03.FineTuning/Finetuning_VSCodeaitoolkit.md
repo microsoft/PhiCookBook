@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [VSCode ਲਈ AI Toolkit ਇੰਸਟਾਲ ਕਰੋ](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/pa/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/pa/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** Azure Container Apps ਲਈ ਇੱਕ-ਕਲਿੱਕ ਪ੍ਰੋਵਿਜ਼ਨਿੰਗ, ਜੋ ਮਾਡਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਅਤੇ ਇਨਫਰੈਂਸ ਨੂੰ ਕਲਾਉਡ ਵਿੱਚ ਚਲਾਉਂਦਾ ਹੈ।
 

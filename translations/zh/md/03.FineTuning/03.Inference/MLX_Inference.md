@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 结果（我的环境是 Apple M1 Max，64GB）如下
 
-![Terminal](../../../../../translated_images/zh/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/zh/01.5cf57df8f7407cf9.webp)
 
 ### **3. 在终端使用 MLX 对 Phi-3-mini 进行量化**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 结果如下
 
-![INT4](../../../../../translated_images/zh/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/zh/02.7b188681a8eadbc1.webp)
 
 
 ### **4. 在 Jupyter Notebook 中使用 MLX 运行 Phi-3-mini**
 
 
-![Notebook](../../../../../translated_images/zh/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/zh/03.b9705a3a5aaa89f9.webp)
 
 ***注意：*** 请阅读此示例 [点击此链接](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

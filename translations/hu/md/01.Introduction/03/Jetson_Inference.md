@@ -36,7 +36,7 @@ Választhatunk az [Ollama](https://ollama.com) vagy a [LlamaEdge](https://llamae
 
 Ha egyszerre szeretnéd használni a gguf-ot felhőben és élő eszközökön, a LlamaEdge úgy érthető, mint a WasmEdge (a WasmEdge egy könnyű, nagy teljesítményű, skálázható WebAssembly futtatókörnyezet, amely alkalmas felhő natív, élő és decentralizált alkalmazásokhoz. Támogatja a szerver nélküli alkalmazásokat, beágyazott funkciókat, mikroszolgáltatásokat, okosszerződéseket és IoT eszközöket. A gguf kvantitatív modelljét telepítheted élő eszközökre és a felhőbe a LlamaEdge segítségével.
 
-![llamaedge](../../../../../translated_images/hu/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/hu/llamaedge.e9d6ff96dff11cf7.webp)
 
 Íme a használat lépései:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Íme a futtatás eredménye
 
-![llamaedgerun](../../../../../translated_images/hu/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/hu/llamaedgerun.bed921516c9a821c.webp)
 
 ***Minta kód*** [Phi-3 mini WASM Notebook minta](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

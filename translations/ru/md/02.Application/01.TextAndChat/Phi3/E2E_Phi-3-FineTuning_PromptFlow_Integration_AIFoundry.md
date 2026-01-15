@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Вот обзор этого примера E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ru/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ru/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Содержание
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *azure machine learning* в **строке поиска** в верхней части страницы портала и выберите **Azure Machine Learning** из появившихся вариантов.
 
-    ![Type azure machine learning.](../../../../../../translated_images/ru/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/ru/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Выберите **+ Создать** в навигационном меню.
 
 3. Выберите **Новая рабочая область** в навигационном меню.
 
-    ![Select new workspace.](../../../../../../translated_images/ru/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/ru/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Выполните следующие действия:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите **Application insights** для использования (создайте новый при необходимости).
     - Выберите **Container registry** для использования (создайте новый при необходимости).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/ru/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/ru/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Выберите **Проверить + создать**.
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите нужное семейство виртуальных машин. Например, выберите **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, включающее GPU *Standard_NC24ads_A100_v4*.
     - Выберите **Запросить квоту (Request quota)** в меню навигации.
 
-        ![Request quota.](../../../../../../translated_images/ru/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/ru/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - На странице запроса квоты введите **Новый лимит ядер** (New cores limit), который вы хотите использовать. Например, 24.
     - На странице запроса квоты нажмите **Отправить (Submit)**, чтобы запросить квоту GPU.
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *управляемые идентичности* в **строке поиска** в верхней части портала и выберите **Managed Identities** из появившихся вариантов.
 
-    ![Type managed identities.](../../../../../../translated_images/ru/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/ru/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Выберите **+ Создать (Create)**.
 
-    ![Select create.](../../../../../../translated_images/ru/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/ru/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Выполните следующие действия:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите регион **Region**, который хотите использовать.
     - Введите название **Name**. Оно должно быть уникальным.
 
-    ![Select create.](../../../../../../translated_images/ru/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/ru/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Нажмите **Проверить + создать (Review + create)**.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите **Группу ресурсов (Resource group)**.
     - Выберите роль **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/ru/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/ru/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Нажмите **Сохранить (Save)**.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *учетные записи хранения* в **строке поиска** в верхней части портала и выберите **Storage accounts** из появившихся вариантов.
 
-    ![Type storage accounts.](../../../../../../translated_images/ru/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/ru/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Выберите учетную запись хранения, связанную с рабочей областью Azure Machine Learning, которую вы создали. Например, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Нажмите **+ Добавить** в меню навигации.
     - Выберите **Добавить назначение роли (Add role assignment)**.
 
-    ![Add role.](../../../../../../translated_images/ru/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/ru/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. На странице добавления назначения роли выполните следующие действия:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите управляемую личность, которую вы создали, например, *finetunephi-managedidentity*.
     - Нажмите **Выбрать (Select)**.
 
-    ![Select managed identity.](../../../../../../translated_images/ru/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/ru/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Нажмите **Проверить + назначить (Review + assign)**.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *реестры контейнеров* в **строке поиска** в верхней части портала и выберите **Container registries** из появившихся вариантов.
 
-    ![Type container registries.](../../../../../../translated_images/ru/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/ru/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Выберите реестр контейнеров, связанный с рабочей областью Azure Machine Learning. Например, *finetunephicontainerregistry*.
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите папку *finetune-phi*, которую вы создали, расположенную по пути *C:\Users\yourUserName\finetune-phi*.
 
-    ![Выберите папку, которую вы создали.](../../../../../../translated_images/ru/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Выберите папку, которую вы создали.](../../../../../../translated_images/ru/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. В левой панели Visual Studio Code щёлкните правой кнопкой мыши и выберите **Новый файл**, чтобы создать новый файл с именем *download_dataset.py*.
 
-    ![Создайте новый файл.](../../../../../../translated_images/ru/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Создайте новый файл.](../../../../../../translated_images/ru/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Подготовка датасета для дообучения
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **+ New**.
 
-    ![Выберите вычислительные ресурсы.](../../../../../../translated_images/ru/06-01-select-compute.a29cff290b480252.png)
+    ![Выберите вычислительные ресурсы.](../../../../../../translated_images/ru/06-01-select-compute.a29cff290b480252.webp)
 
 1. Выполните следующие задачи:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите фильтр **Размер виртуальной машины** на **Выбрать из всех опций**.
     - Выберите размер виртуальной машины **Standard_NC24ads_A100_v4**.
 
-    ![Создайте кластер.](../../../../../../translated_images/ru/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Создайте кластер.](../../../../../../translated_images/ru/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Выберите **Next**.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Установите **Максимальное количество узлов** в **1**.
     - Установите **Время бездействия перед масштабированием вниз** в **120**.
 
-    ![Создайте кластер.](../../../../../../translated_images/ru/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Создайте кластер.](../../../../../../translated_images/ru/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Выберите **Create**.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите рабочее пространство Azure Machine Learning, которое вы создали.
 
-    ![Выберите созданное рабочее пространство.](../../../../../../translated_images/ru/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Выберите созданное рабочее пространство.](../../../../../../translated_images/ru/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Выполните следующие задачи:
 
     - Выберите **Model catalog** в левой боковой панели.
     - Введите *phi-3-mini-4k* в **строку поиска** и выберите **Phi-3-mini-4k-instruct** из появившихся вариантов.
 
-    ![Введите phi-3-mini-4k.](../../../../../../translated_images/ru/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Введите phi-3-mini-4k.](../../../../../../translated_images/ru/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Выберите **Fine-tune** в навигационном меню.
 
-    ![Выберите дообучение.](../../../../../../translated_images/ru/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Выберите дообучение.](../../../../../../translated_images/ru/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Выполните следующие задачи:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите тип загрузки валидационных данных как **Предоставить отдельные данные для валидации**.
     - Нажмите **+ Select data** для загрузки **валидационных данных**.
 
-    ![Заполните страницу дообучения.](../../../../../../translated_images/ru/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Заполните страницу дообучения.](../../../../../../translated_images/ru/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. В этом упражнении вы успешно дообучили модель Phi-3 с помощью Azure Machine Learning. Обратите внимание, что процесс дообучения может занять значительное время. После запуска задания на дообучение следует дождаться его завершения. Вы можете отслеживать статус задания на вкладке Jobs в левой части вашего рабочего пространства Azure Machine Learning. В следующем разделе вы развернете дообученную модель и интегрируете её с Prompt flow.
 
-    ![Просмотр задания дообучения.](../../../../../../translated_images/ru/06-08-output.2bd32e59930672b1.png)
+    ![Просмотр задания дообучения.](../../../../../../translated_images/ru/06-08-output.2bd32e59930672b1.webp)
 
 ### Развертывание дообученной модели Phi-3
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите рабочее пространство Azure Machine Learning, которое вы создали.
 
-    ![Выберите созданное рабочее пространство.](../../../../../../translated_images/ru/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Выберите созданное рабочее пространство.](../../../../../../translated_images/ru/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Выберите **Models** в левой боковой панели.
 1. Выберите **+ Register**.
 1. Выберите **From a job output**.
 
-    ![Зарегистрируйте модель.](../../../../../../translated_images/ru/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Зарегистрируйте модель.](../../../../../../translated_images/ru/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Выберите созданное вами задание.
 
-    ![Выберите задание.](../../../../../../translated_images/ru/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Выберите задание.](../../../../../../translated_images/ru/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Нажмите **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Убедитесь, что выбран параметр **Job output**; он должен быть выбран автоматически.
 
-    ![Выберите вывод.](../../../../../../translated_images/ru/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Выберите вывод.](../../../../../../translated_images/ru/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Нажмите **Next**.
 
 3. Нажмите **Register**.
 
-    ![Нажмите зарегистрировать.](../../../../../../translated_images/ru/07-04-register.fd82a3b293060bc7.png)
+    ![Нажмите зарегистрировать.](../../../../../../translated_images/ru/07-04-register.fd82a3b293060bc7.webp)
 
 4. Вы можете просмотреть зарегистрированные модели, перейдя в меню **Models** в левой боковой панели.
 
-    ![Зарегистрированная модель.](../../../../../../translated_images/ru/07-05-registered-model.7db9775f58dfd591.png)
+    ![Зарегистрированная модель.](../../../../../../translated_images/ru/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Развертывание дообученной модели
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **Real-time endpoints** в навигационном меню.
 
-    ![Создание конечного узла.](../../../../../../translated_images/ru/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Создание конечного узла.](../../../../../../translated_images/ru/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Нажмите **Create**.
 
 1. Выберите зарегистрированную модель, которую вы создали.
 
-    ![Выберите зарегистрированную модель.](../../../../../../translated_images/ru/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Выберите зарегистрированную модель.](../../../../../../translated_images/ru/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Нажмите **Select**.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Введите имя конечного узла **Endpoint name**. Оно должно быть уникальным.
     - Введите имя развертывания **Deployment name**. Оно должно быть уникальным.
 
-    ![Заполните настройки развертывания.](../../../../../../translated_images/ru/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Заполните настройки развертывания.](../../../../../../translated_images/ru/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Нажмите **Deploy**.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите созданный вами конечный узел.
 
-    ![Выберите конечные узлы](../../../../../../translated_images/ru/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Выберите конечные узлы](../../../../../../translated_images/ru/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. На этой странице вы можете управлять конечными узлами во время процесса развертывания.
 
 > [!NOTE]
 > После завершения развертывания убедитесь, что значение **Live traffic** установлено на **100%**. Если это не так, выберите **Update traffic** для корректировки настроек трафика. Обратите внимание, что тестировать модель нельзя, если трафик установлен в 0%.
 >
-> ![Установите трафик.](../../../../../../translated_images/ru/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Установите трафик.](../../../../../../translated_images/ru/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Сценарий 3: Интеграция с Prompt flow и чат с вашей пользовательской моделью в Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Выберите **Все хабы (All hubs)** в левой боковой панели.
 
 1. Выберите **+ Новый хаб (New hub)** в навигационном меню.
-    ![Создать hub.](../../../../../../translated_images/ru/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Создать hub.](../../../../../../translated_images/ru/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Выполните следующие действия:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите **Подключить Azure AI Services** для использования (при необходимости создайте новую).
     - Выберите **Подключить Azure AI Search** и выберите **Пропустить подключение**.
 
-    ![Заполните hub.](../../../../../../translated_images/ru/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Заполните hub.](../../../../../../translated_images/ru/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Выберите **Далее**.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **+ Новый проект** в навигационном меню.
 
-    ![Выберите новый проект.](../../../../../../translated_images/ru/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Выберите новый проект.](../../../../../../translated_images/ru/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Введите **Имя проекта**. Оно должно быть уникальным.
 
-    ![Создать проект.](../../../../../../translated_images/ru/08-05-create-project.4d97f0372f03375a.png)
+    ![Создать проект.](../../../../../../translated_images/ru/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Выберите **Создать проект**.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **Конечные точки** в левой вкладке.
 
-    ![Выберите конечные точки.](../../../../../../translated_images/ru/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Выберите конечные точки.](../../../../../../translated_images/ru/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Выберите созданную конечную точку.
 
-    ![Выберите конечную точку.](../../../../../../translated_images/ru/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Выберите конечную точку.](../../../../../../translated_images/ru/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. В навигационном меню выберите **Использовать**.
 
 1. Скопируйте ваш **REST endpoint** и **Основной ключ**.
 
-    ![Скопируйте api-ключ и URI конечной точки.](../../../../../../translated_images/ru/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Скопируйте api-ключ и URI конечной точки.](../../../../../../translated_images/ru/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Добавление пользовательского подключения
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **+ Новое подключение**.
 
-    ![Выберите новое подключение.](../../../../../../translated_images/ru/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Выберите новое подключение.](../../../../../../translated_images/ru/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. В навигационном меню выберите **Пользовательские ключи**.
 
-    ![Выберите пользовательские ключи.](../../../../../../translated_images/ru/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Выберите пользовательские ключи.](../../../../../../translated_images/ru/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Выполните следующие действия:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Введите имя ключа **key** и вставьте скопированный из Azure ML Studio ключ в поле значения.
     - После добавления ключей выберите **is secret**, чтобы ключ не отображался.
 
-    ![Добавьте подключение.](../../../../../../translated_images/ru/08-11-add-connection.785486badb4d2d26.png)
+    ![Добавьте подключение.](../../../../../../translated_images/ru/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Выберите **Добавить подключение**.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **+ Создать** в навигационном меню.
 
-    ![Выберите Promptflow.](../../../../../../translated_images/ru/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Выберите Promptflow.](../../../../../../translated_images/ru/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. В навигационном меню выберите **Чат-флоу**.
 
-    ![Выберите чат-флоу.](../../../../../../translated_images/ru/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Выберите чат-флоу.](../../../../../../translated_images/ru/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Введите **Имя папки** для использования.
 
-    ![Введите имя.](../../../../../../translated_images/ru/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Введите имя.](../../../../../../translated_images/ru/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Выберите **Создать**.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Выберите **Сохранить**.
 
-    ![Выберите режим редактирования сырого файла.](../../../../../../translated_images/ru/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Выберите режим редактирования сырого файла.](../../../../../../translated_images/ru/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Добавьте следующий код в файл *integrate_with_promptflow.py* для использования пользовательской модели Phi-3 в Prompt flow.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Вставьте код prompt flow.](../../../../../../translated_images/ru/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Вставьте код prompt flow.](../../../../../../translated_images/ru/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Для более подробной информации по использованию Prompt flow в Azure AI Foundry вы можете обратиться к [Prompt flow в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Выберите **Ввод чата**, **Вывод чата**, чтобы включить чат с вашей моделью.
 
-    ![Ввод и вывод.](../../../../../../translated_images/ru/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Ввод и вывод.](../../../../../../translated_images/ru/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Теперь вы готовы начать чат с вашей пользовательской моделью Phi-3. В следующем упражнении вы узнаете, как запустить Prompt flow и использовать его для общения с вашей дообученной моделью Phi-3.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Перестроенный поток должен выглядеть, как на изображении ниже:
 >
-> ![Пример потока.](../../../../../../translated_images/ru/08-18-graph-example.d6457533952e690c.png)
+> ![Пример потока.](../../../../../../translated_images/ru/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Общение с вашей пользовательской моделью Phi-3
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **Запустить сеансы вычислений**, чтобы запустить Prompt flow.
 
-    ![Запуск вычислительной сессии.](../../../../../../translated_images/ru/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Запуск вычислительной сессии.](../../../../../../translated_images/ru/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Выберите **Проверить и проанализировать ввод**, чтобы обновить параметры.
 
-    ![Проверка ввода.](../../../../../../translated_images/ru/09-02-validate-input.317c76ef766361e9.png)
+    ![Проверка ввода.](../../../../../../translated_images/ru/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Выберите **Значение** параметра **connection**, укажите созданное вами пользовательское подключение. Например, *connection*.
 
-    ![Подключение.](../../../../../../translated_images/ru/09-03-select-connection.99bdddb4b1844023.png)
+    ![Подключение.](../../../../../../translated_images/ru/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Общение с вашей пользовательской моделью
 
 1. Выберите **Чат**.
 
-    ![Выберите чат.](../../../../../../translated_images/ru/09-04-select-chat.61936dce6612a1e6.png)
+    ![Выберите чат.](../../../../../../translated_images/ru/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Вот пример результатов: теперь вы можете общаться с вашей пользовательской моделью Phi-3. Рекомендуется задавать вопросы, основанные на данных, использованных для дообучения.
 
-    ![Чат в prompt flow.](../../../../../../translated_images/ru/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Чат в prompt flow.](../../../../../../translated_images/ru/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

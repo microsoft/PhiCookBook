@@ -33,33 +33,33 @@ Olvassa el ezt az útmutatót az ONNX Runtime GenAI Windows GPU-hoz történő b
 
 1. Telepítse a Prompt flow VS Code bővítményt
 
-![pfvscode](../../../../../../translated_images/hu/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/hu/pfvscode.eff93dfc66a42cbe.webp)
 
 2. A Prompt flow VS Code bővítmény telepítése után kattintson a bővítményre, majd válassza az **Installation dependencies** lehetőséget, és kövesse az útmutatót a Prompt flow SDK környezetbe történő telepítéséhez
 
-![pfsetup](../../../../../../translated_images/hu/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/hu/pfsetup.b46e93096f5a254f.webp)
 
 3. Töltse le a [példakódot](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) és nyissa meg VS Code-ban ezt a mintát
 
-![pfsample](../../../../../../translated_images/hu/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/hu/pfsample.8d89e70584ffe7c4.webp)
 
 4. Nyissa meg a **flow.dag.yaml** fájlt, és válassza ki a Python környezetét
 
-![pfdag](../../../../../../translated_images/hu/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/hu/pfdag.264a77f7366458ff.webp)
 
    Nyissa meg a **chat_phi3_ort.py** fájlt, és módosítsa a Phi-3.5-instruct ONNX modell helyét
 
-![pfphi](../../../../../../translated_images/hu/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/hu/pfphi.72da81d74244b45f.webp)
 
 5. Futtassa a prompt flow-t teszteléshez
 
 Nyissa meg a **flow.dag.yaml** fájlt, és kattintson a vizuális szerkesztőre
 
-![pfv](../../../../../../translated_images/hu/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/hu/pfv.ba8a81f34b20f603.webp)
 
 Kattintás után futtassa a tesztelést
 
-![pfflow](../../../../../../translated_images/hu/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/hu/pfflow.4e1135a089b1ce1b.webp)
 
 1. Terminálban is futtathat batch-et a további eredmények ellenőrzéséhez
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Az eredményeket az alapértelmezett böngészőben tekintheti meg
 
 
-![pfresult](../../../../../../translated_images/hu/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/hu/pfresult.c22c826f8062d7cb.webp)
 
 **Jogi nyilatkozat**:  
 Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

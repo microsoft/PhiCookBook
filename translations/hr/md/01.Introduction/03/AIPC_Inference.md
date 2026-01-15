@@ -28,9 +28,9 @@ Ukratko, NPU-i su matematički geniji koji ubrzavaju AI izračune i igraju klju�
 
 Intel® NPU uređaj je AI inferencijski akcelerator integriran s Intel klijentskim CPU-ima, počevši od Intel® Core™ Ultra generacije CPU-a (ranije poznat kao Meteor Lake). Omogućuje energetski učinkovito izvođenje zadataka umjetnih neuronskih mreža.
 
-![Latency](../../../../../translated_images/hr/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/hr/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/hr/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/hr/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Tijekom izvršavanja koda, status rada NPU-a možemo pratiti putem Upravitelja zadataka
 
-![NPU](../../../../../translated_images/hr/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/hr/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Primjeri*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ovo je rezultat izvođenja
 
-![DML](../../../../../translated_images/hr/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/hr/aipc_DML.52a44180393ab491.webp)
 
 ***Primjeri*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 konvertirani format izgleda ovako
 
-![openvino_convert](../../../../../translated_images/hr/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/hr/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Učitajte putove modela (model_dir), povezane konfiguracije (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) i hardverski ubrzane uređaje (GPU.0) putem OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Tijekom izvršavanja koda, status rada GPU-a možemo pratiti putem Upravitelja zadataka
 
-![openvino_gpu](../../../../../translated_images/hr/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/hr/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Primjeri*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

@@ -19,7 +19,7 @@ Kufanya fine-tuning kwa mfano kunaweza wakati mwingine kusababisha majibu yasiyo
 
 Hapa kuna mchakato wa tathmini wa Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/sw/architecture.10bec55250f5d6a4.png)
+![Architecture of tutorial.](../../../../../../translated_images/sw/architecture.10bec55250f5d6a4.webp)
 
 *Chanzo cha Picha: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Hapa kuna mchakato wa tathmini wa Azure AI Foundry.
 
 Ili kuhakikisha kwamba mfano wako wa AI ni wa maadili na salama, ni muhimu kuutathmini dhidi ya Kanuni za AI Zinazowajibika za Microsoft. Katika Azure AI Foundry, tathmini za usalama zinakuwezesha kutathmini udhaifu wa mfano wako dhidi ya mashambulizi ya jailbreak na uwezo wake wa kutoa maudhui hatarishi, ambayo ni sambamba moja kwa moja na kanuni hizi.
 
-![Safaty evaluation.](../../../../../../translated_images/sw/safety-evaluation.083586ec88dfa950.png)
+![Safaty evaluation.](../../../../../../translated_images/sw/safety-evaluation.083586ec88dfa950.webp)
 
 *Chanzo cha Picha: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Kanuni za AI Zinazowajibika za Microsoft ni pamoja na:
 
 - **Uwajibikaji**: Watu wanaounda na kuanzisha mifumo ya AI wanapaswa kuwajibika kwa jinsi mifumo yao inavyofanya kazi. Mashirika yanapaswa kutumia viwango vya sekta kuendeleza kanuni za uwajibikaji. Kanuni hizi zinaweza kuhakikisha kwamba mifumo ya AI si mamlaka ya mwisho katika maamuzi yoyote yanayoathiri maisha ya watu. Pia zinaweza kuhakikisha kwamba binadamu wanadumisha udhibiti wa maana juu ya mifumo ya AI yenye uhuru mkubwa.
 
-![Fill hub.](../../../../../../translated_images/sw/responsibleai2.c07ef430113fad8c.png)
+![Fill hub.](../../../../../../translated_images/sw/responsibleai2.c07ef430113fad8c.webp)
 
 *Chanzo cha Picha: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Katika mafunzo haya, utatathmini usalama wa mfano wa Phi-3 ulioboreshwa kwa kutu
 
 Kutathmini vipengele hivi kunahakikisha kwamba mfano wa AI hauzalishi maudhui hatarishi au ya kuudhi, na kuendana na maadili ya jamii na viwango vya udhibiti.
 
-![Evaluate based on safety.](../../../../../../translated_images/sw/evaluate-based-on-safety.c5df819f5b0bfc07.png)
+![Evaluate based on safety.](../../../../../../translated_images/sw/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
 ### Utangulizi wa tathmini ya utendaji
 
 Ili kuhakikisha kwamba mfano wako wa AI unafanya kazi kama inavyotarajiwa, ni muhimu kutathmini utendaji wake dhidi ya vipimo vya utendaji. Katika Azure AI Foundry, tathmini za utendaji zinakuwezesha kutathmini ufanisi wa mfano wako katika kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri.
 
-![Safaty evaluation.](../../../../../../translated_images/sw/performance-evaluation.48b3e7e01a098740.png)
+![Safaty evaluation.](../../../../../../translated_images/sw/performance-evaluation.48b3e7e01a098740.webp)
 
 *Chanzo cha Picha: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Katika mafunzo haya, utatathmini utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboresh
 
 Vipimo hivi vinakusaidia kutathmini ufanisi wa mfano katika kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri.
 
-![Evaluate based on performance.](../../../../../../translated_images/sw/evaluate-based-on-performance.3e801c647c7554e8.png)
+![Evaluate based on performance.](../../../../../../translated_images/sw/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
 ## **Hali ya Pili: Kutathmini mfano wa Phi-3 / Phi-3.5 katika Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Unahitaji kuunda Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Resource Group
 
 1. Chagua **+ New hub** kutoka kwenye menyu ya urambazaji.
 
-    ![Create hub.](../../../../../../translated_images/sw/create-hub.5be78fb1e21ffbf1.png)
+    ![Create hub.](../../../../../../translated_images/sw/create-hub.5be78fb1e21ffbf1.webp)
 
 1. Fanya kazi zifuatazo:
 
@@ -162,7 +162,7 @@ Unahitaji kuunda Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Resource Group
     - Chagua **Connect Azure AI Services** utakayotumia (unda mpya ikiwa inahitajika).
     - Chagua **Connect Azure AI Search** kisha **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/sw/fill-hub.baaa108495c71e34.png)
+    ![Fill hub.](../../../../../../translated_images/sw/fill-hub.baaa108495c71e34.webp)
 
 1. Chagua **Next**.
 
@@ -172,11 +172,11 @@ Unahitaji kuunda Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Resource Group
 
 1. Chagua **+ New project** kutoka kwenye menyu ya urambazaji.
 
-    ![Select new project.](../../../../../../translated_images/sw/select-new-project.cd31c0404088d7a3.png)
+    ![Select new project.](../../../../../../translated_images/sw/select-new-project.cd31c0404088d7a3.webp)
 
 1. Weka **Project name**. Lazima iwe jina la kipekee.
 
-    ![Create project.](../../../../../../translated_images/sw/create-project.ca3b71298b90e420.png)
+    ![Create project.](../../../../../../translated_images/sw/create-project.ca3b71298b90e420.webp)
 
 1. Chagua **Create a project**.
 
@@ -192,17 +192,17 @@ Ili kuunganisha modeli yako maalum ya Phi-3 / Phi-3.5 na Prompt flow, unahitaji 
 
 1. Chagua **Endpoints** kutoka kwenye kichupo cha upande wa kushoto.
 
-    ![Select endpoints.](../../../../../../translated_images/sw/select-endpoints.ee7387ecd68bd18d.png)
+    ![Select endpoints.](../../../../../../translated_images/sw/select-endpoints.ee7387ecd68bd18d.webp)
 
 1. Chagua endpoint uliyounda.
 
-    ![Select endpoints.](../../../../../../translated_images/sw/select-endpoint-created.9f63af5e4cf98b2e.png)
+    ![Select endpoints.](../../../../../../translated_images/sw/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
 1. Chagua **Consume** kutoka kwenye menyu ya urambazaji.
 
 1. Nakili **REST endpoint** na **Primary key** zako.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/sw/copy-endpoint-key.0650c3786bd646ab.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/sw/copy-endpoint-key.0650c3786bd646ab.webp)
 
 #### Ongeza Muunganisho Maalum
 
@@ -214,11 +214,11 @@ Ili kuunganisha modeli yako maalum ya Phi-3 / Phi-3.5 na Prompt flow, unahitaji 
 
 1. Chagua **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/sw/select-new-connection.fa0f35743758a74b.png)
+    ![Select new connection.](../../../../../../translated_images/sw/select-new-connection.fa0f35743758a74b.webp)
 
 1. Chagua **Custom keys** kutoka kwenye menyu ya urambazaji.
 
-    ![Select custom keys.](../../../../../../translated_images/sw/select-custom-keys.5a3c6b25580a9b67.png)
+    ![Select custom keys.](../../../../../../translated_images/sw/select-custom-keys.5a3c6b25580a9b67.webp)
 
 1. Fanya kazi zifuatazo:
 
@@ -228,7 +228,7 @@ Ili kuunganisha modeli yako maalum ya Phi-3 / Phi-3.5 na Prompt flow, unahitaji 
     - Kwa jina la ufunguo, andika **key** na bandika ufunguo uliyokopa kutoka Azure ML Studio kwenye sehemu ya thamani.
     - Baada ya kuongeza funguo, chagua **is secret** ili kuzuia ufunguo kuonekana wazi.
 
-    ![Add connection.](../../../../../../translated_images/sw/add-connection.ac7f5faf8b10b0df.png)
+    ![Add connection.](../../../../../../translated_images/sw/add-connection.ac7f5faf8b10b0df.webp)
 
 1. Chagua **Add connection**.
 
@@ -242,15 +242,15 @@ Umeongeza muunganisho maalum katika Azure AI Foundry. Sasa, hebu tuunde Prompt f
 
 1. Chagua **+ Create** kutoka kwenye menyu ya urambazaji.
 
-    ![Select Promptflow.](../../../../../../translated_images/sw/select-promptflow.18ff2e61ab9173eb.png)
+    ![Select Promptflow.](../../../../../../translated_images/sw/select-promptflow.18ff2e61ab9173eb.webp)
 
 1. Chagua **Chat flow** kutoka kwenye menyu ya urambazaji.
 
-    ![Select chat flow.](../../../../../../translated_images/sw/select-flow-type.28375125ec9996d3.png)
+    ![Select chat flow.](../../../../../../translated_images/sw/select-flow-type.28375125ec9996d3.webp)
 
 1. Weka **Folder name** utakayotumia.
 
-    ![Select chat flow.](../../../../../../translated_images/sw/enter-name.02ddf8fb840ad430.png)
+    ![Select chat flow.](../../../../../../translated_images/sw/enter-name.02ddf8fb840ad430.webp)
 
 1. Chagua **Create**.
 
@@ -287,7 +287,7 @@ Unahitaji kuunganisha modeli iliyoboreshwa ya Phi-3 / Phi-3.5 ndani ya Prompt fl
 
     - Chagua **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/sw/select-raw-file-mode.06c1eca581ce4f53.png)
+    ![Select raw file mode.](../../../../../../translated_images/sw/select-raw-file-mode.06c1eca581ce4f53.webp)
 
 1. Ongeza msimbo ufuatao kwenye *integrate_with_promptflow.py* ili kutumia modeli maalum ya Phi-3 / Phi-3.5 katika Prompt flow.
 
@@ -350,14 +350,14 @@ Unahitaji kuunganisha modeli iliyoboreshwa ya Phi-3 / Phi-3.5 ndani ya Prompt fl
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/sw/paste-promptflow-code.cd6d95b101c0ec28.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/sw/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
 > Kwa maelezo zaidi kuhusu kutumia Prompt flow katika Azure AI Foundry, unaweza rejelea [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Chagua **Chat input**, **Chat output** kuwezesha mazungumzo na modeli yako.
 
-    ![Select Input Output.](../../../../../../translated_images/sw/select-input-output.c187fc58f25fbfc3.png)
+    ![Select Input Output.](../../../../../../translated_images/sw/select-input-output.c187fc58f25fbfc3.webp)
 
 1. Sasa uko tayari kuzungumza na modeli yako maalum ya Phi-3 / Phi-3.5. Katika zoezi lijalo, utajifunza jinsi ya kuanzisha Prompt flow na kuitumia kuzungumza na modeli yako iliyoboreshwa ya Phi-3 / Phi-3.5.
 
@@ -365,32 +365,32 @@ Unahitaji kuunganisha modeli iliyoboreshwa ya Phi-3 / Phi-3.5 ndani ya Prompt fl
 >
 > Mtiririko ulioumbwa upya unapaswa kuonekana kama picha iliyo hapa chini:
 >
-> ![Flow example](../../../../../../translated_images/sw/graph-example.82fd1bcdd3fc545b.png)
+> ![Flow example](../../../../../../translated_images/sw/graph-example.82fd1bcdd3fc545b.webp)
 >
 
 #### Anzisha Prompt flow
 
 1. Chagua **Start compute sessions** kuanzisha Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/sw/start-compute-session.9acd8cbbd2c43df1.png)
+    ![Start compute session.](../../../../../../translated_images/sw/start-compute-session.9acd8cbbd2c43df1.webp)
 
 1. Chagua **Validate and parse input** ili kusasisha vigezo.
 
-    ![Validate input.](../../../../../../translated_images/sw/validate-input.c1adb9543c6495be.png)
+    ![Validate input.](../../../../../../translated_images/sw/validate-input.c1adb9543c6495be.webp)
 
 1. Chagua **Value** ya **connection** kwa muunganisho maalum uliouunda. Kwa mfano, *connection*.
 
-    ![Connection.](../../../../../../translated_images/sw/select-connection.1f2b59222bcaafef.png)
+    ![Connection.](../../../../../../translated_images/sw/select-connection.1f2b59222bcaafef.webp)
 
 #### Zungumza na modeli yako maalum ya Phi-3 / Phi-3.5
 
 1. Chagua **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/sw/select-chat.0406bd9687d0c49d.png)
+    ![Select chat.](../../../../../../translated_images/sw/select-chat.0406bd9687d0c49d.webp)
 
 1. Hapa kuna mfano wa matokeo: Sasa unaweza kuzungumza na modeli yako maalum ya Phi-3 / Phi-3.5. Inashauriwa kuuliza maswali yanayotegemea data iliyotumika kwa ajili ya kuboresha modeli.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/sw/chat-with-promptflow.1cf8cea112359ada.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/sw/chat-with-promptflow.1cf8cea112359ada.webp)
 
 ### Sambaza Azure OpenAI ili kutathmini modeli ya Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
 
 1. Nenda kwenye mradi wa Azure AI Foundry ulilounda.
 
-    ![Select Project.](../../../../../../translated_images/sw/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/sw/select-project-created.5221e0e403e2c9d6.webp)
 
 1. Katika Mradi ulilounda, chagua **Deployments** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -410,11 +410,11 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
 
 1. Chagua **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/sw/deploy-openai-model.95d812346b25834b.png)
+    ![Select Deployments.](../../../../../../translated_images/sw/deploy-openai-model.95d812346b25834b.webp)
 
 1. Chagua modeli ya Azure OpenAI unayotaka kutumia. Kwa mfano, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/sw/select-openai-model.959496d7e311546d.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/sw/select-openai-model.959496d7e311546d.webp)
 
 1. Chagua **Confirm**.
 
@@ -426,17 +426,17 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
 
 1. Nenda kwenye mradi wa Azure AI Foundry ulilounda.
 
-    ![Select Project.](../../../../../../translated_images/sw/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/sw/select-project-created.5221e0e403e2c9d6.webp)
 
 1. Katika Mradi ulilounda, chagua **Evaluation** kutoka kwenye kichupo cha upande wa kushoto.
 
 1. Chagua **+ New evaluation** kutoka kwenye menyu ya urambazaji.
 
-    ![Select evaluation.](../../../../../../translated_images/sw/select-evaluation.2846ad7aaaca7f4f.png)
+    ![Select evaluation.](../../../../../../translated_images/sw/select-evaluation.2846ad7aaaca7f4f.webp)
 
 1. Chagua tathmini ya **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/sw/promptflow-evaluation.cb9758cc19b4760f.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/sw/promptflow-evaluation.cb9758cc19b4760f.webp)
 
 1. Fanya kazi zifuatazo:
 
@@ -444,7 +444,7 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
     - Chagua **Question and answer without context** kama aina ya kazi. Kwa sababu, dataset ya **ULTRACHAT_200k** inayotumika katika mafunzo haya haina muktadha.
     - Chagua prompt flow unayotaka kutathmini.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting1.4aa08259ff7a536e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting1.4aa08259ff7a536e.webp)
 
 1. Chagua **Next**.
 
@@ -453,7 +453,7 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
     - Chagua **Add your dataset** kupakia dataset. Kwa mfano, unaweza kupakia faili ya dataset ya mtihani, kama *test_data.json1*, ambayo inajumuishwa unapo download dataset ya **ULTRACHAT_200k**.
     - Chagua safu sahihi ya **Dataset column** inayolingana na dataset yako. Kwa mfano, ikiwa unatumia dataset ya **ULTRACHAT_200k**, chagua **${data.prompt}** kama safu ya dataset.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting2.07036831ba58d64e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting2.07036831ba58d64e.webp)
 
 1. Chagua **Next**.
 
@@ -462,7 +462,7 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
     - Chagua vipimo vya utendaji na ubora unavyotaka kutumia.
     - Chagua modeli ya Azure OpenAI uliyounda kwa ajili ya tathmini. Kwa mfano, chagua **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting3-1.d1ae69e3bf80914e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
 1. Fanya kazi zifuatazo kusanidi vipimo vya hatari na usalama:
 
@@ -472,7 +472,7 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
     - Kwa **answer**, chagua **Data source** kuwa **{$run.outputs.answer}**.
     - Kwa **ground_truth**, chagua **Data source** kuwa **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting3-2.d53bd075c60a45a2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/sw/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
 1. Chagua **Next**.
 
@@ -489,17 +489,17 @@ Mara baada ya tathmini kukamilika, unaweza kupitia matokeo kwa vigezo vya utenda
 
     - tathmini ufanisi wa modeli katika kutoa majibu yanayofanana, yenye mtiririko mzuri, na yanayohusiana.
 
-    ![Evaluation result.](../../../../../../translated_images/sw/evaluation-result-gpu.85f48b42dfb74254.png)
+    ![Evaluation result.](../../../../../../translated_images/sw/evaluation-result-gpu.85f48b42dfb74254.webp)
 
 1. Vigezo vya hatari na usalama:
 
     - Hakikisha matokeo ya modeli ni salama na yanaendana na Kanuni za AI Zinazowajibika, kuepuka maudhui yoyote hatarishi au ya kuudhi.
 
-    ![Evaluation result.](../../../../../../translated_images/sw/evaluation-result-gpu-2.1b74e336118f4fd0.png)
+    ![Evaluation result.](../../../../../../translated_images/sw/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
 1. Unaweza kusogeza chini kuona **Matokeo ya vigezo kwa undani**.
 
-    ![Evaluation result.](../../../../../../translated_images/sw/detailed-metrics-result.afa2f5c39a4f5f17.png)
+    ![Evaluation result.](../../../../../../translated_images/sw/detailed-metrics-result.afa2f5c39a4f5f17.webp)
 
 1. Kwa kutathmini modeli yako maalum ya Phi-3 / Phi-3.5 dhidi ya vigezo vya utendaji na usalama, unaweza kuthibitisha kuwa modeli si tu ina ufanisi, bali pia inazingatia mazoea ya AI yanayowajibika, na hivyo kuifanya kuwa tayari kwa matumizi halisi.
 
@@ -509,7 +509,7 @@ Mara baada ya tathmini kukamilika, unaweza kupitia matokeo kwa vigezo vya utenda
 
 Umefanikiwa kutathmini modeli ya Phi-3 iliyoboreshwa na kuunganishwa na Prompt flow katika Azure AI Foundry. Huu ni hatua muhimu kuhakikisha kuwa modeli zako za AI si tu zinafanya kazi vizuri, bali pia zinafuata kanuni za AI Zinazowajibika za Microsoft kusaidia kujenga programu za AI zinazotegemewa na kuaminika.
 
-![Architecture.](../../../../../../translated_images/sw/architecture.10bec55250f5d6a4.png)
+![Architecture.](../../../../../../translated_images/sw/architecture.10bec55250f5d6a4.webp)
 
 ## Safisha Rasilimali za Azure
 

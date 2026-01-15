@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ось огляд цього прикладу E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/uk/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/uk/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Зміст
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введіть у **рядку пошуку** вгорі порталу *azure machine learning* та виберіть **Azure Machine Learning** зі списку варіантів.
 
-    ![Type azure machine learning.](../../../../../../translated_images/uk/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/uk/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Оберіть **+ Create** у меню навігації.
 
 3. Оберіть **New workspace** у меню навігації.
 
-    ![Select new workspace.](../../../../../../translated_images/uk/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/uk/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Виконайте наступні дії:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть **Application insights** (створіть новий, якщо потрібно).
     - Виберіть реєстр контейнерів (**Container registry**) (створіть новий, якщо потрібно).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/uk/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/uk/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Оберіть **Review + Create**.
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Оберіть сімейство віртуальних машин (*Virtual machine family*), наприклад **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, яке включає GPU *Standard_NC24ads_A100_v4*.
     - Оберіть **Request quota** у меню навігації.
 
-        ![Request quota.](../../../../../../translated_images/uk/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/uk/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - На сторінці Request quota введіть бажаний **New cores limit**, наприклад, 24.
     - Натисніть **Submit** для запиту квоти.
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введіть у **рядку пошуку** вгорі порталу *managed identities* і виберіть **Managed Identities** з варіантів.
 
-    ![Type managed identities.](../../../../../../translated_images/uk/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/uk/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Оберіть **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/uk/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/uk/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Виконайте наступні кроки:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Оберіть регіон (**Region**).
     - Введіть унікальне ім'я (**Name**).
 
-    ![Select create.](../../../../../../translated_images/uk/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/uk/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Оберіть **Review + create**.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Оберіть ресурсну групу.
     - Виберіть роль (**Role**) – **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/uk/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/uk/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Оберіть **Save**.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введіть у **рядку пошуку** вгорі порталу *storage accounts* і оберіть **Storage accounts** із варіантів.
 
-    ![Type storage accounts.](../../../../../../translated_images/uk/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/uk/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Оберіть обліковий запис зберігання, який пов’язаний із робочою областю Azure Machine Learning, наприклад *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Оберіть **+ Add** у меню навігації.
     - Оберіть **Add role assignment** у меню навігації.
 
-    ![Add role.](../../../../../../translated_images/uk/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/uk/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. На сторінці додавання призначення ролі виконайте:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Оберіть Managed Identity, яку створили, наприклад *finetunephi-managedidentity*.
     - Натисніть **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/uk/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/uk/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Оберіть **Review + assign**.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введіть у **рядку пошуку** вгорі порталу *container registries* і оберіть **Container registries** із варіантів.
 
-    ![Type container registries.](../../../../../../translated_images/uk/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/uk/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Оберіть контейнерний реєстр, пов’язаний із робочою областю Azure Machine Learning, наприклад *finetunephicontainerregistry*.
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть папку *finetune-phi*, яку ви створили, розташовану за адресою *C:\Users\yourUserName\finetune-phi*.
 
-    ![Виберіть папку, яку ви створили.](../../../../../../translated_images/uk/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Виберіть папку, яку ви створили.](../../../../../../translated_images/uk/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. У лівій панелі Visual Studio Code клацніть правою кнопкою миші та виберіть **New File**, щоб створити новий файл з назвою *download_dataset.py*.
 
-    ![Створіть новий файл.](../../../../../../translated_images/uk/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Створіть новий файл.](../../../../../../translated_images/uk/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Підготуйте датасет для донавчання
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ New**.
 
-    ![Виберіть compute.](../../../../../../translated_images/uk/06-01-select-compute.a29cff290b480252.png)
+    ![Виберіть compute.](../../../../../../translated_images/uk/06-01-select-compute.a29cff290b480252.webp)
 
 1. Виконайте наступні дії:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Для фільтру розміру віртуальної машини (**Virtual machine size**) виберіть **Select from all options**.
     - Виберіть розмір віртуальної машини (**Virtual machine size**) як **Standard_NC24ads_A100_v4**.
 
-    ![Створіть кластер.](../../../../../../translated_images/uk/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Створіть кластер.](../../../../../../translated_images/uk/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Виберіть **Next**.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть максимальну кількість вузлів (**Maximum number of nodes**) як **1**.
     - Встановіть час бездіяльності перед зменшенням масштабування (**Idle seconds before scale down**) на **120**.
 
-    ![Створіть кластер.](../../../../../../translated_images/uk/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Створіть кластер.](../../../../../../translated_images/uk/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Виберіть **Create**.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть створений вами робочий простір Azure Machine Learning.
 
-    ![Виберіть створений робочий простір.](../../../../../../translated_images/uk/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Виберіть створений робочий простір.](../../../../../../translated_images/uk/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Виконайте наступні дії:
 
     - Виберіть **Model catalog** у лівому меню.
     - Введіть *phi-3-mini-4k* у рядок пошуку і виберіть **Phi-3-mini-4k-instruct** зі списку.
 
-    ![Введіть phi-3-mini-4k.](../../../../../../translated_images/uk/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Введіть phi-3-mini-4k.](../../../../../../translated_images/uk/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Виберіть **Fine-tune** у навігаційному меню.
 
-    ![Виберіть fine tune.](../../../../../../translated_images/uk/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Виберіть fine tune.](../../../../../../translated_images/uk/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Виконайте наступні дії:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть тип завантаження даних для перевірки як **Provide different validation data**.
     - Виберіть **+ Select data** для завантаження **Validation data**.
 
-    ![Заповніть сторінку донавчання.](../../../../../../translated_images/uk/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Заповніть сторінку донавчання.](../../../../../../translated_images/uk/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. У цьому завданні ви успішно донатили модель Phi-3 за допомогою Azure Machine Learning. Зверніть увагу, що процес донавчання може зайняти значний час. Після запуску завдання донавчання, потрібно дочекатися його завершення. Ви можете спостерігати статус завдання у вкладці Jobs у лівому меню вашого Azure Machine Learning Workspace. У наступній серії ви розгорнете донавчену модель і інтегруєте її з Prompt flow.
 
-    ![Перегляд завдання донавчання.](../../../../../../translated_images/uk/06-08-output.2bd32e59930672b1.png)
+    ![Перегляд завдання донавчання.](../../../../../../translated_images/uk/06-08-output.2bd32e59930672b1.webp)
 
 ### Розгорніть донавчену модель Phi-3
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть створений вами робочий простір Azure Machine Learning.
 
-    ![Виберіть робочий простір, який ви створили.](../../../../../../translated_images/uk/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Виберіть робочий простір, який ви створили.](../../../../../../translated_images/uk/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Виберіть **Models** у лівому меню.
 1. Виберіть **+ Register**.
 1. Виберіть **From a job output**.
 
-    ![Реєстрація моделі.](../../../../../../translated_images/uk/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Реєстрація моделі.](../../../../../../translated_images/uk/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Виберіть створене вами завдання.
 
-    ![Виберіть завдання.](../../../../../../translated_images/uk/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Виберіть завдання.](../../../../../../translated_images/uk/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Виберіть **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Переконайтеся, що вибрано **Job output**; це має бути обрано автоматично.
 
-    ![Виберіть вихід.](../../../../../../translated_images/uk/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Виберіть вихід.](../../../../../../translated_images/uk/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Виберіть **Next**.
 
 3. Виберіть **Register**.
 
-    ![Натисніть "Register".](../../../../../../translated_images/uk/07-04-register.fd82a3b293060bc7.png)
+    ![Натисніть "Register".](../../../../../../translated_images/uk/07-04-register.fd82a3b293060bc7.webp)
 
 4. Ви можете переглянути зареєстровану модель у меню **Models** у лівому меню.
 
-    ![Зареєстрована модель.](../../../../../../translated_images/uk/07-05-registered-model.7db9775f58dfd591.png)
+    ![Зареєстрована модель.](../../../../../../translated_images/uk/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Розгорніть донавчену модель
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **Real-time endpoints** у навігаційному меню.
 
-    ![Створіть точку доступу.](../../../../../../translated_images/uk/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Створіть точку доступу.](../../../../../../translated_images/uk/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Виберіть **Create**.
 
 1. Виберіть зареєстровану модель, яку ви створили.
 
-    ![Виберіть зареєстровану модель.](../../../../../../translated_images/uk/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Виберіть зареєстровану модель.](../../../../../../translated_images/uk/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Виберіть **Select**.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Введіть унікальну назву точки доступу (**Endpoint name**).
     - Введіть унікальну назву розгортання (**Deployment name**).
 
-    ![Заповніть налаштування розгортання.](../../../../../../translated_images/uk/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Заповніть налаштування розгортання.](../../../../../../translated_images/uk/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Виберіть **Deploy**.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть створену вами точку доступу.
 
-    ![Виберіть точки доступу](../../../../../../translated_images/uk/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Виберіть точки доступу](../../../../../../translated_images/uk/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. На цій сторінці ви можете керувати точками доступу під час процесу розгортання.
 
 > [!NOTE]
 > Після завершення розгортання переконайтеся, що **Live traffic** встановлено на **100%**. Якщо ні, виберіть **Update traffic**, щоб відрегулювати налаштування трафіку. Зверніть увагу, що ви не зможете тестувати модель, якщо трафік встановлено на 0%.
 >
-> ![Встановіть трафік.](../../../../../../translated_images/uk/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Встановіть трафік.](../../../../../../translated_images/uk/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Сценарій 3: Інтеграція з Prompt flow та спілкування з вашою кастомною моделлю в Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Виберіть **All hubs** у лівому меню.
 
 1. Виберіть **+ New hub** у навігаційному меню.
-    ![Створення хабу.](../../../../../../translated_images/uk/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Створення хабу.](../../../../../../translated_images/uk/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Виконайте наступні завдання:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть **Підключення до Azure AI Services** для використання (створіть нове за потреби).
     - Виберіть **Підключення до Azure AI Search** як **Пропустити підключення**.
 
-    ![Заповнення хабу.](../../../../../../translated_images/uk/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Заповнення хабу.](../../../../../../translated_images/uk/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Виберіть **Далі**.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ Новий проект** у навігаційному меню.
 
-    ![Вибір нового проекту.](../../../../../../translated_images/uk/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Вибір нового проекту.](../../../../../../translated_images/uk/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Введіть **Назву проекту**. Вона має бути унікальною.
 
-    ![Створення проекту.](../../../../../../translated_images/uk/08-05-create-project.4d97f0372f03375a.png)
+    ![Створення проекту.](../../../../../../translated_images/uk/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Виберіть **Створити проект**.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Оберіть **Endpoints** у вкладці зліва.
 
-    ![Вибір endpoints.](../../../../../../translated_images/uk/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Вибір endpoints.](../../../../../../translated_images/uk/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Виберіть кінцеву точку, яку ви створили.
 
-    ![Вибір створеної кінцевої точки.](../../../../../../translated_images/uk/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Вибір створеної кінцевої точки.](../../../../../../translated_images/uk/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Виберіть **Consume** у навігаційному меню.
 
 1. Скопіюйте ваш **REST endpoint** та **Первинний ключ**.
 
-    ![Копіювання api ключа та endpoint uri.](../../../../../../translated_images/uk/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Копіювання api ключа та endpoint uri.](../../../../../../translated_images/uk/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Додавання власного підключення
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ Нове підключення**.
 
-    ![Вибір нового підключення.](../../../../../../translated_images/uk/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Вибір нового підключення.](../../../../../../translated_images/uk/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Оберіть **Власні ключі** у навігаційному меню.
 
-    ![Вибір власних ключів.](../../../../../../translated_images/uk/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Вибір власних ключів.](../../../../../../translated_images/uk/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Виконайте наступні завдання:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - В полі назви ключа введіть **key** і вставте ключ, який скопіювали з Azure ML Studio, у поле значення.
     - Після додавання ключів виберіть опцію **is secret**, щоб запобігти відображенню ключа.
 
-    ![Додавання підключення.](../../../../../../translated_images/uk/08-11-add-connection.785486badb4d2d26.png)
+    ![Додавання підключення.](../../../../../../translated_images/uk/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Виберіть **Додати підключення**.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ Створити** у навігаційному меню.
 
-    ![Вибір Promptflow.](../../../../../../translated_images/uk/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Вибір Promptflow.](../../../../../../translated_images/uk/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Виберіть **Chat flow** у навігаційному меню.
 
-    ![Вибір chat flow.](../../../../../../translated_images/uk/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Вибір chat flow.](../../../../../../translated_images/uk/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Введіть **Назву папки** для використання.
 
-    ![Введення назви.](../../../../../../translated_images/uk/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Введення назви.](../../../../../../translated_images/uk/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Виберіть **Створити**.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Виберіть **Зберегти**.
 
-    ![Вибір режиму сирого файлу.](../../../../../../translated_images/uk/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Вибір режиму сирого файлу.](../../../../../../translated_images/uk/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Додайте наступний код до файлу *integrate_with_promptflow.py*, щоб використовувати власну модель Phi-3 у Prompt flow.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Вставка коду prompt flow.](../../../../../../translated_images/uk/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Вставка коду prompt flow.](../../../../../../translated_images/uk/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Для отримання більш детальної інформації щодо використання Prompt flow у Azure AI Foundry зверніться до [Prompt flow у Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Виберіть **Chat input**, **Chat output** для увімкнення чату з вашою моделлю.
 
-    ![Вхідний та вихідний потоки.](../../../../../../translated_images/uk/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Вхідний та вихідний потоки.](../../../../../../translated_images/uk/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Тепер ви готові спілкуватися з вашою власною моделлю Phi-3. У наступній вправі ви навчитеся запускати Prompt flow і використовувати його для спілкування з донавченою моделлю Phi-3.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Перебудований потік має виглядати як на зображенні нижче:
 >
-> ![Приклад потоку.](../../../../../../translated_images/uk/08-18-graph-example.d6457533952e690c.png)
+> ![Приклад потоку.](../../../../../../translated_images/uk/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Спілкування з власною моделлю Phi-3
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **Почати сесії обчислень (Start compute sessions)**, щоб запустити Prompt flow.
 
-    ![Запуск сесії обчислень.](../../../../../../translated_images/uk/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Запуск сесії обчислень.](../../../../../../translated_images/uk/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Виберіть **Підтвердити та розпарсити вхідні дані (Validate and parse input)** для оновлення параметрів.
 
-    ![Підтвердження вхідних даних.](../../../../../../translated_images/uk/09-02-validate-input.317c76ef766361e9.png)
+    ![Підтвердження вхідних даних.](../../../../../../translated_images/uk/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Виберіть **Значення** для **connection** зі створеного вами власного підключення. Наприклад, *connection*.
 
-    ![Підключення.](../../../../../../translated_images/uk/09-03-select-connection.99bdddb4b1844023.png)
+    ![Підключення.](../../../../../../translated_images/uk/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Спілкування з власною моделлю
 
 1. Виберіть **Chat**.
 
-    ![Вибір чату.](../../../../../../translated_images/uk/09-04-select-chat.61936dce6612a1e6.png)
+    ![Вибір чату.](../../../../../../translated_images/uk/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Ось приклад результатів: тепер ви можете спілкуватися з власною моделлю Phi-3. Рекомендується ставити питання на основі даних, використаних для донавчання.
 
-    ![Чат з prompt flow.](../../../../../../translated_images/uk/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Чат з prompt flow.](../../../../../../translated_images/uk/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

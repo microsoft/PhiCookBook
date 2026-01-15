@@ -73,7 +73,7 @@ GitHub Copilot đã cải thiện đáng kể hiệu suất lập trình của c
 
 Lab này chủ yếu sử dụng mô hình Phi-3 kết hợp với NPU cục bộ và Azure hybrid để xây dựng một Agent tùy chỉnh trong GitHub Copilot Chat ***@PHI3*** nhằm hỗ trợ các nhà phát triển doanh nghiệp hoàn thành việc tạo mã ***(@PHI3 /gen)*** và tạo mã dựa trên hình ảnh ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/vi/cover.1017ebc9a7c46d09.png)
+![PHI3](../../../../../../../translated_images/vi/cover.1017ebc9a7c46d09.webp)
 
 ### ***Lưu ý:***
 

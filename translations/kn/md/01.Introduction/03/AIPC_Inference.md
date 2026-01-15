@@ -28,9 +28,9 @@ GPU ಗಳನ್ನು ಅವರ ಸಮಾನಾಂತರ ಗಣನೆ ಸಾಮ
 
 Intel® NPU ಸಾಧನವು Intel ಕ್ಲೈಂಟ್ CPUಗಳೊಂದಿಗೆ ಸಂಯೋಜಿತವಾದ AI ಇನ್ಫರೆನ್ಸ್ ಆಕ್ಸಲೆರೇಟರ್ ಆಗಿದ್ದು, Intel® Core™ Ultra ತಲೆಮೊದಲು (ಹಿಂದೆ Meteor Lake ಎಂದು ಪರಿಚಿತರಾಗಿದ್ದು) ಆಗಿ CPU ಗಳಲ್ಲಿ ಪ್ರಾರಂಭವಾಗಿದೆ. ಇದು ಕೃತಕ ನರಜಾಲದ ಕಾರ್ಯಗಳನ್ನು ಎನರ್ಜಿ-ಕಾರ್ಯಕ್ಷಮವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.
 
-![ವಿಲಂಬ](../../../../../translated_images/kn/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![ವಿಲಂಬ](../../../../../translated_images/kn/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![ವಿಲಂಬ770](../../../../../translated_images/kn/aipcphitokenlatency770.e923609a57c5d394.png)
+![ವಿಲಂಬ770](../../../../../translated_images/kn/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 ಕೋಡ್ ಅನ್ನು 실행ಿಸುತ್ತಿರುವಾಗ, ನಾವು Task Manager ಮುಖಾಂತರ NPU ರನ್ನಿಂಗ್ ಸ್ಥಿತಿಯನ್ನು ವೀಕ್ಷಿಸಬಹುದು
 
-![NPU](../../../../../translated_images/kn/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/kn/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Samples*** : [AIPC_NPU_DEMO.ipynb](../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ಇದು ರನ್ ಆದ ಫಲಿತಾಂಶ
 
-![DML](../../../../../translated_images/kn/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/kn/aipc_DML.52a44180393ab491.webp)
 
 ***Samples*** : [AIPC_DirectML_DEMO.ipynb](../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ಪರಿವರ್ತಿತ ಫಾರ್ಮಾಟ್, ಇಂತಹುದು
 
-![openvino_convert](../../../../../translated_images/kn/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/kn/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 ಮಾದರಿ ಮಾರ್ಗಗಳನ್ನು (model_dir), ಸಂಬಂಧಿತ ಸಂರಚನೆಗಳನ್ನು (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), ಮತ್ತು ಹಾರ್ಡ್‌ವೇರ್-ಆಕ್ಸಲೆರೇಟ್ ಸಾಧನಗಳನ್ನು (GPU.0) OVModelForCausalLM ಮೂಲಕ ಲೋಡ್ ಮಾಡಿ
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ಕೋಡ್ ಅನ್ನು 실행ಿಸುವಾಗ, ನಾವು Task Manager ಮೂಲಕ GPU ರನ್ ಸ್ಥಿತಿಯನ್ನು ವೀಕ್ಷಿಸಬಹುದು
 
-![openvino_gpu](../../../../../translated_images/kn/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/kn/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Samples*** : [AIPC_OpenVino_Demo.ipynb](../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

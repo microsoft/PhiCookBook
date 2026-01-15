@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry를 사용한 평가 방법**
 
-![aistudo](../../../../../translated_images/ko/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/ko/AIFoundry.9e0b513e999a1c5a.webp)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)를 사용하여 생성형 AI 애플리케이션을 평가하는 방법입니다. 단일 대화 또는 다중 대화를 평가하든, Azure AI Foundry는 모델 성능과 안전성을 평가할 수 있는 도구를 제공합니다.
 
-![aistudo](../../../../../translated_images/ko/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/ko/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Azure AI Foundry로 생성형 AI 앱 평가하기
 자세한 내용은 [Azure AI Foundry 문서](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)를 참고하세요.

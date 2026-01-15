@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) adalah platform open-source yang dirancang untuk mengelola siklus hidup machine learning secara menyeluruh.
 
-![MLFlow](../../../../../../translated_images/id/MlFlowmlops.ed16f47809d74d9a.png)
+![MLFlow](../../../../../../translated_images/id/MlFlowmlops.ed16f47809d74d9a.webp)
 
 MLFlow digunakan untuk mengelola siklus hidup ML, termasuk eksperimen, reproduksibilitas, deployment, dan registri model pusat. Saat ini MLflow menawarkan empat komponen.
 
@@ -22,7 +22,7 @@ MLFlow digunakan untuk mengelola siklus hidup ML, termasuk eksperimen, reproduks
 
 MLFlow memiliki kemampuan untuk melacak eksperimen, mengemas kode menjadi eksekusi yang dapat direproduksi, serta berbagi dan mendeploy model. MLFlow terintegrasi dengan Databricks dan mendukung berbagai pustaka ML, sehingga bersifat agnostik terhadap pustaka. MLFlow dapat digunakan dengan pustaka machine learning apapun dan dalam bahasa pemrograman apapun, karena menyediakan REST API dan CLI untuk kemudahan penggunaan.
 
-![MLFlow](../../../../../../translated_images/id/MLflow2.5a22eb718f6311d1.png)
+![MLFlow](../../../../../../translated_images/id/MLflow2.5a22eb718f6311d1.webp)
 
 Fitur utama MLFlow meliputi:
 
@@ -37,7 +37,7 @@ MLFlow juga mendukung siklus MLOps, yang mencakup persiapan data, pendaftaran da
 
 Dalam contoh E2E ini, kami akan menunjukkan dua pendekatan berbeda untuk membangun wrapper di sekitar model bahasa kecil Phi-3 (SLM) dan kemudian menjalankannya sebagai model MLFlow baik secara lokal maupun di cloud, misalnya di workspace Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/id/MlFlow1.fd745e47dbd3fecf.png)
+![MLFlow](../../../../../../translated_images/id/MlFlow1.fd745e47dbd3fecf.webp)
 
 | Proyek | Deskripsi | Lokasi |
 | ------------ | ----------- | -------- |

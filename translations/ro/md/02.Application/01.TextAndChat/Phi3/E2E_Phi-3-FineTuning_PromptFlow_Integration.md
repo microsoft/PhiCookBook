@@ -23,7 +23,7 @@ Acest exemplu end-to-end (E2E) este bazat pe ghidul "[Fine-Tune and Integrate Cu
 
 Iată o prezentare generală a acestui exemplu E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ro/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ro/00-01-architecture.02fc569e266d468c.webp)
 
 ### Cuprins
 
@@ -49,13 +49,13 @@ Iată o prezentare generală a acestui exemplu E2E.
 
 1. Tastați *azure machine learning* în **bara de căutare** din partea de sus a paginii portalului și selectați **Azure Machine Learning** din opțiunile afișate.
 
-    ![Type azure machine learning](../../../../../../translated_images/ro/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/ro/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. Selectați **+ Create** din meniul de navigare.
 
 1. Selectați **New workspace** din meniul de navigare.
 
-    ![Select new workspace](../../../../../../translated_images/ro/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/ro/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. Efectuați următoarele sarcini:
 
@@ -68,7 +68,7 @@ Iată o prezentare generală a acestui exemplu E2E.
     - Selectați **Application insights** pe care doriți să îl utilizați (creați unul nou dacă este necesar).
     - Selectați **Container registry** pe care doriți să îl utilizați (creați unul nou dacă este necesar).
 
-    ![Fill AZML.](../../../../../../translated_images/ro/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/ro/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. Selectați **Review + Create**.
 
@@ -92,7 +92,7 @@ Iată o prezentare generală a acestui exemplu E2E.
     - Selectați **Virtual machine family** pe care doriți să o utilizați. De exemplu, selectați **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, care include *Standard_NC24ads_A100_v4* GPU.
     - Selectați **Request quota** din meniul de navigare.
 
-        ![Request quota.](../../../../../../translated_images/ro/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/ro/01-04-request-quota.3d3670c3221ab834.webp)
 
     - În pagina Request quota, introduceți **New cores limit** pe care doriți să o utilizați. De exemplu, 24.
     - În pagina Request quota, selectați **Submit** pentru a solicita cota GPU.
@@ -108,11 +108,11 @@ Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Id
 
 1. Tastați *managed identities* în **bara de căutare** din partea de sus a paginii portalului și selectați **Managed Identities** din opțiunile afișate.
 
-    ![Type managed identities.](../../../../../../translated_images/ro/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/ro/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. Selectați **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/ro/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/ro/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. Efectuați următoarele sarcini:
 
@@ -139,7 +139,7 @@ Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Id
     - Selectați **Resource group**-ul pe care doriți să îl folosiți.
     - Selectați **Role** la **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/ro/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/ro/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. Selectați **Save**.
 
@@ -147,7 +147,7 @@ Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Id
 
 1. Tastați *storage accounts* în **bara de căutare** din partea de sus a paginii portalului și selectați **Storage accounts** din opțiunile afișate.
 
-    ![Type storage accounts.](../../../../../../translated_images/ro/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/ro/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Selectați contul de stocare asociat cu workspace-ul Azure Machine Learning pe care l-ați creat. De exemplu, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Id
     - Selectați **+ Add** din meniul de navigare.
     - Selectați **Add role assignment** din meniul de navigare.
 
-    ![Add role.](../../../../../../translated_images/ro/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/ro/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. În pagina Add role assignment, efectuați următoarele:
 
@@ -171,7 +171,7 @@ Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Id
     - În pagina Select managed identities, selectați identitatea gestionată pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
     - În pagina Select managed identities, selectați **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/ro/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/ro/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. Selectați **Review + assign**.
 
@@ -179,7 +179,7 @@ Pentru a regla fin și implementa modelele, trebuie mai întâi să creați o Id
 
 1. Tastați *container registries* în **bara de căutare** din partea de sus a paginii portalului și selectați **Container registries** din opțiunile afișate.
 
-    ![Type container registries.](../../../../../../translated_images/ro/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/ro/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Selectați registrul de containere asociat cu workspace-ul Azure Machine Learning. De exemplu, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
 
 1. Selectați folderul *finetune-phi* pe care l-ați creat, care se află la *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/ro/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Open project floder.](../../../../../../translated_images/ro/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
 
 1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New File** pentru a crea un fișier nou numit *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/ro/01-13-create-new-file.c17c150fff384a39.png)
+    ![Create new file.](../../../../../../translated_images/ro/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. În panoul din stânga al Visual Studio Code, faceți clic dreapta și selectați **New Folder** pentru a crea un folder nou numit *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
     - Selectați Abonamentul Azure pe care îl utilizați în prezent.
     - Copiați și inserați ID-ul Abonamentului în fișierul *config.py*.
 
-    ![Find subscription id.](../../../../../../translated_images/ro/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Find subscription id.](../../../../../../translated_images/ro/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Efectuați următoarele sarcini pentru a adăuga numele spațiului de lucru Azure:
 
     - Navigați la resursa Azure Machine Learning pe care ați creat-o.
     - Copiați și inserați numele contului dvs. în fișierul *config.py*.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/ro/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/ro/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Efectuați următoarele sarcini pentru a adăuga numele grupului de resurse Azure:
 
     - Navigați la resursa Azure Machine Learning pe care ați creat-o.
     - Copiați și inserați numele grupului dvs. de resurse Azure în fișierul *config.py*.
 
-    ![Find resource group name.](../../../../../../translated_images/ro/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Find resource group name.](../../../../../../translated_images/ro/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Efectuați următoarele sarcini pentru a adăuga numele identității administrate Azure
 
     - Navigați la resursa Managed Identities pe care ați creat-o.
     - Copiați și inserați numele identității administrate Azure în fișierul *config.py*.
 
-    ![Find UAI.](../../../../../../translated_images/ro/01-17-find-uai.3529464f53499827.png)
+    ![Find UAI.](../../../../../../translated_images/ro/01-17-find-uai.3529464f53499827.webp)
 
 ### Pregătiți setul de date pentru reglarea fină
 
@@ -509,7 +509,7 @@ Trebuie să configurați Azure CLI pentru a vă autentifica mediul. Azure CLI v�
 
 1. Selectați abonamentul dvs. Azure pe care doriți să îl utilizați.
 
-    ![Find resource group name.](../../../../../../translated_images/ro/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Find resource group name.](../../../../../../translated_images/ro/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Rulând *setup_ml.py*, veți executa procesul de reglare fină în mediul Azure 
 
 1. În acest exercițiu, ați reglat cu succes fin modelul Phi-3 folosind Azure Machine Learning. Rulând scriptul *setup_ml.py*, ați configurat mediul Azure Machine Learning și ați inițiat procesul de reglare fină definit în fișierul *fine_tune.py*. Rețineți că procesul de reglare fină poate dura o perioadă considerabilă de timp. După ce rulați comanda `python setup_ml.py`, trebuie să așteptați finalizarea procesului. Puteți monitoriza starea sarcinii de reglare fină urmând linkul furnizat în terminal către portalul Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/ro/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![See finetuning job.](../../../../../../translated_images/ro/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### Implementați modelul reglat fin
 
@@ -1080,11 +1080,11 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
 
 1. Selectează **Endpoints** din bara laterală din stânga.
 
-    ![Selectați endpoints.](../../../../../../translated_images/ro/02-03-select-endpoints.c3136326510baff1.png)
+    ![Selectați endpoints.](../../../../../../translated_images/ro/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. Selectează endpoint-ul pe care l-ai creat.
 
-    ![Selectați endpoint-ul pe care l-ați creat.](../../../../../../translated_images/ro/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Selectați endpoint-ul pe care l-ați creat.](../../../../../../translated_images/ro/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. Pe această pagină, poți gestiona endpoint-urile create în timpul procesului de implementare.
 
@@ -1103,7 +1103,7 @@ După ce ai implementat cu succes modelul tău fin-tuned, poți acum să-l integ
 1. Copiază și lipește **REST endpoint** în fișierul *config.py*, înlocuind `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` cu **REST endpoint**.
 1. Copiază și lipește **Primary key** în fișierul *config.py*, înlocuind `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` cu **Primary key**.
 
-    ![Copiați cheia api și uri-ul endpoint-ului.](../../../../../../translated_images/ro/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copiați cheia api și uri-ul endpoint-ului.](../../../../../../translated_images/ro/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### Adaugă codul în fișierul *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ După ce ai implementat cu succes modelul tău fin-tuned, poți acum să-l integ
 
 1. Iată un exemplu de rezultate: Acum poți dialoga cu modelul tău personalizat Phi-3. Este recomandat să pui întrebări bazate pe datele folosite pentru fine-tuning.
 
-    ![Exemplu Prompt flow.](../../../../../../translated_images/ro/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Exemplu Prompt flow.](../../../../../../translated_images/ro/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

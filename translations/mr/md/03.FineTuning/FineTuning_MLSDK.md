@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 या उदाहरणात आपण ultrachat_200k डेटासेट वापरून Phi-3-mini-4k-instruct मॉडेलचे दोन लोकांमधील संभाषण पूर्ण करण्यासाठी फाइन ट्यूनिंग करू.
 
-![MLFineTune](../../../../translated_images/mr/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/mr/MLFineTune.928d4c6b3767dd35.webp)
 
 हे उदाहरण तुम्हाला Azure ML SDK आणि Python वापरून फाइन ट्यूनिंग कसे करायचे आणि नंतर फाइन ट्यून केलेले मॉडेल रिअल टाइम इन्फरन्ससाठी ऑनलाइन एंडपॉइंटवर कसे डिप्लॉय करायचे हे दाखवेल.
 

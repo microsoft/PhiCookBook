@@ -36,7 +36,7 @@ Možemo odabrati [Ollama](https://ollama.com) ili [LlamaEdge](https://llamaedge.
 
 Ako želite koristiti gguf u oblaku i na edge uređajima istovremeno, LlamaEdge se može shvatiti kao WasmEdge (WasmEdge je lagano, visokoučinkovito i skalabilno WebAssembly runtime okruženje pogodno za cloud native, edge i decentralizirane aplikacije. Podržava serverless aplikacije, ugrađene funkcije, mikroservise, pametne ugovore i IoT uređaje. Kroz LlamaEdge možete implementirati kvantitativni model gguf-a na edge uređaje i u oblak.
 
-![llamaedge](../../../../../translated_images/hr/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/hr/llamaedge.e9d6ff96dff11cf7.webp)
 
 Evo koraka za korištenje:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Ovo je rezultat pokretanja
 
-![llamaedgerun](../../../../../translated_images/hr/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/hr/llamaedgerun.bed921516c9a821c.webp)
 
 ***Primjer koda*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

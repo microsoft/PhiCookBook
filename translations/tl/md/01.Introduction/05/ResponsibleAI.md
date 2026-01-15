@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya ng Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/tl/RAIPrinciples.bf9c9bc6ca160d33.png)
+![RAIPrinciples](../../../../../translated_images/tl/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **Mga etikal na prinsipyo**
 

@@ -23,7 +23,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 ഇതാണ് ഈ E2E സാമ്പിളിന്റെ അവലോകനം.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ml/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ml/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### വിഷയങ്ങൾ
 
@@ -48,13 +48,13 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. പോർട്ടലിന്റെ മുകളിൽ ഉള്ള **search bar**-ൽ *azure machine learning* ടൈപ്പ് ചെയ്ത് ഉപയോഗിക്കാവുന്ന ഓപ്ഷനുകളിൽ നിന്ന് **Azure Machine Learning** തിരഞ്ഞെടുക്കുക.
 
-    ![Type azure machine learning.](../../../../../../translated_images/ml/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/ml/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. navegarive മെനുവിൽ നിന്നു **+ Create** തിരഞ്ഞെടുക്കുക.
 
 3. **New workspace** തിരഞ്ഞെടുക്കുക.
 
-    ![Select new workspace.](../../../../../../translated_images/ml/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/ml/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. താഴെ പറയുന്ന പ്രവൃത്തികൾ ചെയ്യുക:
 
@@ -67,7 +67,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - ഉപയോഗിക്കാനുള്ള **Application insights** തിരഞ്ഞെടുക്കുക (പുതിയത് സൃഷ്ടിക്കാം).
     - გამოყენാനുള്ള **Container registry** തിരഞ്ഞെടുക്കുക (പുതിയത് സൃഷ്ടിക്കാം).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/ml/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/ml/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. **Review + Create** തിരഞ്ഞെടുക്കുക.
 
@@ -90,7 +90,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - ഉപയോഗിക്കാനുള്ള **Virtual machine family** തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* തിരഞ്ഞെടുക്കുക, ഇത് *Standard_NC24ads_A100_v4* GPU ഉൾപ്പെടുന്നു.
     - **Request quota** നാവിഗേഷൻ മენുവിൽ നിർവഹിക്കുക.
 
-        ![Request quota.](../../../../../../translated_images/ml/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/ml/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Request quota പേജിൽ **New cores limit** നൽകുക. ഉദാഹരണത്തിന്, 24.
     - Request quota പേജിൽ GPU ക്വോട്ടാ അപേക്ഷിപ്പിക്കാൻ **Submit** തിരഞ്ഞെടുക്കുക.
@@ -111,11 +111,11 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. പോർട്ടലിന്റെ മുകളിൽ ഉള്ള **search bar**-ൽ *managed identities* ടൈപ്പ് ചെയ്തു ലഭിക്കുന്ന ഓപ്ഷനുകളിൽ നിന്നു **Managed Identities** തിരഞ്ഞെടുക്കുക.
 
-    ![Type managed identities.](../../../../../../translated_images/ml/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/ml/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. **+ Create** തിരഞ്ഞെടുക്കുക.
 
-    ![Select create.](../../../../../../translated_images/ml/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/ml/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. താഴെ പറയുന്ന പ്രവൃത്തികൾ ചെയ്യുക:
 
@@ -124,7 +124,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - ഉപയോഗിക്കാനുള്ള **Region** തിരഞ്ഞെടുക്കുക.
     - **Name** നൽകുക. ഇത് പ്രത്യേകമായിരിക്കണം.
 
-    ![Select create.](../../../../../../translated_images/ml/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/ml/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. **Review + create** തിരഞ്ഞെടുക്കുക.
 
@@ -144,7 +144,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - ഉപയോഗിക്കാനുള്ള **Resource group** തിരഞ്ഞെടുക്കുക.
     - Role ആയി **Contributor** തിരഞ്ഞെടുക്കുക.
 
-    ![Fill contributor role.](../../../../../../translated_images/ml/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/ml/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. **Save** തിരഞ്ഞെടുക്കുക.
 
@@ -152,7 +152,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. പോർട്ടലിന്റെ മുകളിൽ ഉള്ള **search bar**-ൽ *storage accounts* ടൈപ്പ് ചെയ്ത് ലഭിക്കുന്ന ഓപ്ഷനുകളിൽ നിന്നു **Storage accounts** തിരഞ്ഞെടുക്കുക.
 
-    ![Type storage accounts.](../../../../../../translated_images/ml/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/ml/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച Azure Machine Learning workspace-നൊപ്പം ബന്ധമുള്ള storage account തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *finetunephistorage*.
 
@@ -163,7 +163,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - നാവിഗേഷൻ മენുവിൽ നിന്നും **+ Add**-യിലേക്കു പോവുക.
     - **Add role assignment** തിരഞ്ഞെടുക്കുക.
 
-    ![Add role.](../../../../../../translated_images/ml/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/ml/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Add role assignment പേജിൽ നിർവഹിക്കുക:
 
@@ -176,7 +176,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - Select managed identities പേജിൽ നിങ്ങൾ സൃഷ്ടിച്ച Manage Identity തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *finetunephi-managedidentity*.
     - Select managed identities പേജിൽ **Select** തിരഞ്ഞെടുക്കുക.
 
-    ![Select managed identity.](../../../../../../translated_images/ml/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/ml/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. **Review + assign** തിരഞ്ഞെടുക്കുക.
 
@@ -184,7 +184,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. പോർട്ടലിന്റെ മുകളിൽ ഉള്ള **search bar**-ൽ *container registries* ടൈപ്പ് ചെയ്ത് ലഭിക്കുന്ന ഓപ്ഷനുകളിൽ നിന്നു **Container registries** തിരഞ്ഞെടുക്കുക.
 
-    ![Type container registries.](../../../../../../translated_images/ml/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/ml/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Azure Machine Learning workspace-യുമായി ബന്ധപ്പെട്ട container registry തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *finetunephicontainerregistry*
 
@@ -275,11 +275,11 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച *finetune-phi* ഫോൾഡർ തിരഞ്ഞെടുക്കുക, അത് സ്ഥിതി ചെയ്യുന്നത് *C:\Users\yourUserName\finetune-phi* എന്ന സ്ഥലത്ത് ആണ്.
 
-    ![നിങ്ങൾ സൃഷ്ടിച്ച ഫോൾഡർ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![നിങ്ങൾ സൃഷ്ടിച്ച ഫോൾഡർ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Visual Studio Code-ന്റെ ഇടതു പാനലിൽ റൈറ്റ് ക്ലിക്ക് ചെയ്ത് **New File** തിരഞ്ഞെടുക്കുക, അതിലൂടെ *download_dataset.py* എന്ന പുതിയ ഫയൽ സൃഷ്ടിക്കുക.
 
-    ![പുതിയ ഫയൽ സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![പുതിയ ഫയൽ സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### ഫൈൻ-ട്യൂണിംഗിന് ഡാറ്റാസെറ്റ് തയ്യാറാക്കുക
 
@@ -391,7 +391,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. **+ New** തിരഞ്ഞെടുക്കുക.
 
-    ![കമ്പ്യൂട്ട് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-01-select-compute.a29cff290b480252.png)
+    ![കമ്പ്യൂട്ട് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-01-select-compute.a29cff290b480252.webp)
 
 1. താഴെപ്പറയുന്ന ജോലികൾ ചെയ്യുക:
 
@@ -401,7 +401,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - **Virtual machine size** ഫിൽട്ടർ **Select from all options** ആയി തിരഞ്ഞെടുക്കുക.
     - **Virtual machine size** **Standard_NC24ads_A100_v4** ആയി തിരഞ്ഞെടുക്കുക.
 
-    ![ക്ലസ്റ്റർ സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![ക്ലസ്റ്റർ സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. **Next** തിരഞ്ഞെടുക്കുക.
 
@@ -412,7 +412,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - **Maximum number of nodes** 1 ആാക്കി തിരഞ്ഞെടുക്കുക.
     - **Idle seconds before scale down** 120 ആക്കി തിരഞ്ഞെടുക്കുക.
 
-    ![ക്ലസ്റ്റർ സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/06-03-create-cluster.4a54ba20914f3662.png)
+    ![ക്ലസ്റ്റർ സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. **Create** തിരഞ്ഞെടുക്കുക.
 
@@ -422,18 +422,18 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച Azure Machine Learning വർക്ക്സ്പേസിനെ തിരഞ്ഞെടുക്കുക.
 
-    ![നിങ്ങൾ സൃഷ്ടിച്ച വർക്ക്സ്പേസ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-04-select-workspace.a92934ac04f4f181.png)
+    ![നിങ്ങൾ സൃഷ്ടിച്ച വർക്ക്സ്പേസ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. താഴെപ്പറയുന്ന ജോലികൾ ചെയ്യുക:
 
     - ഇടത് ടാബിൽ നിന്ന് **Model catalog** തിരഞ്ഞെടുക്കുക.
     - **search bar**-ലിൽ *phi-3-mini-4k* ടൈപ്പ് ചെയ്ത് കാണുന്ന ഓപ്ഷനുകളിൽ നിന്ന് **Phi-3-mini-4k-instruct** തിരഞ്ഞെടുക്കുക.
 
-    ![phi-3-mini-4k ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/ml/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![phi-3-mini-4k ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/ml/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. നാവിഗേഷൻ മെനുവിൽ നിന്ന് **Fine-tune** തിരഞ്ഞെടുക്കുക.
 
-    ![ഫൈൻ ട്യൂൺ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![ഫൈൻ ട്യൂൺ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. താഴെപ്പറയുന്ന ജോലികൾ ചെയ്യുക:
 
@@ -442,7 +442,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - Validation data അപ്‌ലോഡ് തരത്തിൽ **Provide different validation data** തിരഞ്ഞെടുക്കുക.
     - **+ Select data** ക്ലിക്ക് ചെയ്ത് **Validation data** അപ്‌ലോഡ് ചെയ്യുക.
 
-    ![ഫൈൻ-ട്യൂണിംഗ് പേജ് പൂർത്തിയാക്കുക.](../../../../../../translated_images/ml/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![ഫൈൻ-ട്യൂണിംഗ് പേജ് പൂർത്തിയാക്കുക.](../../../../../../translated_images/ml/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -452,7 +452,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. ഈ അഭ്യാസത്തിൽ, നിങ്ങൾ വിജയകരമായി Azure Machine Learning ഉപയോഗിച്ച് Phi-3 മോഡൽ ഫൈൻ-ട്യൂൺ ചെയ്തു. ദയവായി ശ്രദ്ധിക്കുക ഫൈൻ-ട്യൂണിംഗ് പ്രക്രിയക്ക് കുറച്ച് സമയം ലഭ്യമാണ്. ഫൈൻ-ട്യൂണിംഗ് ജോബ് പ്രവർത്തിപ്പിച്ച ശേഷം അത് പൂർത്തിയാകാനുള്ള കാത്തിരിപ്പ് വേണം. Azure Machine Learning വർക്ക്സ്പേസ്-ന്റെ ഇടതു പുറമെ ജോബ്സ് ടാബിൽ ചലനം പരിശോധിക്കാം. അടുത്ത ഭാഗത്തിൽ, നിങ്ങൾ ഫൈൻ-ട്യൂൺ ചെയ്തത് ഡിപ്ലോയ് ചെയ്ത് Prompt flow-യുമായി ഏകീകരിക്കും.
 
-    ![ഫൈൻട്യൂണിംഗ് ജോബ് കാണുക.](../../../../../../translated_images/ml/06-08-output.2bd32e59930672b1.png)
+    ![ഫൈൻട്യൂണിംഗ് ജോബ് കാണുക.](../../../../../../translated_images/ml/06-08-output.2bd32e59930672b1.webp)
 
 ### ഫൈൻ-ട്യൂൺ ചെയ്ത Phi-3 മോഡൽ ഡിപ്ലോയ് ചെയ്യുക
 
@@ -470,17 +470,17 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച Azure Machine Learning വർക്ക്സ്പേസിനെ തിരഞ്ഞെടുക്കുക.
 
-    ![നിങ്ങൾ സൃഷ്ടിച്ച വർക്ക്സ്പേസ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-04-select-workspace.a92934ac04f4f181.png)
+    ![നിങ്ങൾ സൃഷ്ടിച്ച വർക്ക്സ്പേസ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. ഇടത് ടാബിൽ നിന്നും **Models** തിരഞ്ഞെടുക്കുക.
 1. **+ Register** തിരഞ്ഞെടുക്കുക.
 1. **From a job output** തിരഞ്ഞെടുക്കുക.
 
-    ![മോഡൽ രജിസ്റ്റർ ചെയ്യുക.](../../../../../../translated_images/ml/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![മോഡൽ രജിസ്റ്റർ ചെയ്യുക.](../../../../../../translated_images/ml/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച ജോബ് തിരഞ്ഞെടുക്കുക.
 
-    ![ജോബ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-02-select-job.3e2e1144cd6cd093.png)
+    ![ജോബ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. **Next** തിരഞ്ഞെടുക്കുക.
 
@@ -488,17 +488,17 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. **Job output** ഓട്ടോമാറ്റിക്കായി തിരഞ്ഞെടുക്കപ്പെട്ടിരിക്കണം എന്ന് ഉറപ്പാക്കുക.
 
-    ![ഔട്ട്പുട്ട് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-03-select-output.4cf1a0e645baea1f.png)
+    ![ഔട്ട്പുട്ട് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. **Next** തിരഞ്ഞെടുക്കുക.
 
 3. **Register** തിരഞ്ഞെടുക്കുക.
 
-    ![Register തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-04-register.fd82a3b293060bc7.png)
+    ![Register തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-04-register.fd82a3b293060bc7.webp)
 
 4. നിങ്ങൾ രജിസ്റ്റർ ചെയ്ത മോഡൽ ഇടത് ടാബിൽ നിന്നുള്ള **Models** മെനുവിലേക്ക് പോയി കാണാം.
 
-    ![രജിസ്റ്റർ ചെയ്ത മോഡൽ.](../../../../../../translated_images/ml/07-05-registered-model.7db9775f58dfd591.png)
+    ![രജിസ്റ്റർ ചെയ്ത മോഡൽ.](../../../../../../translated_images/ml/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### ഫൈൻ-ട്യൂൺ ചെയ്ത മോഡൽ ഡിപ്ലോയ് ചെയ്യുക
 
@@ -508,13 +508,13 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നാവിഗേഷൻ മെനുവിൽ നിന്ന് **Real-time endpoints** തിരഞ്ഞെടുക്കുക.
 
-    ![എൻഡ്പോയിന്റ് സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/07-06-create-endpoint.1ba865c606551f09.png)
+    ![എൻഡ്പോയിന്റ് സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. **Create** തിരഞ്ഞെടുക്കുക.
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച രജിസ്റ്റർ ചെയ്ത മോഡൽ തിരഞ്ഞെടുക്കുക.
 
-    ![രജിസ്റ്റർ ചെയ്ത മോഡൽ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![രജിസ്റ്റർ ചെയ്ത മോഡൽ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. **Select** തിരഞ്ഞെടുക്കുക.
 
@@ -526,7 +526,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - **Endpoint name** നൽകുക. ഇത് യൂണികായിരിക്കണം.
     - **Deployment name** നൽകിയുതരുക. ഇത് യൂണികായിരിക്കണം.
 
-    ![ഡിപ്ലോയ്മെന്റ് ക്രമീകരണം പൂർത്തിയാക്കുക.](../../../../../../translated_images/ml/07-08-deployment-setting.43ddc4209e673784.png)
+    ![ഡിപ്ലോയ്മെന്റ് ക്രമീകരണം പൂർത്തിയാക്കുക.](../../../../../../translated_images/ml/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. **Deploy** തിരഞ്ഞെടുക്കുക.
 
@@ -542,14 +542,14 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച എൻഡ്പോയിന്റ് തിരഞ്ഞെടുക്കുക.
 
-    ![എൻഡ്പോയിന്റുകൾ തിരഞ്ഞെടുക്കുക](../../../../../../translated_images/ml/07-09-check-deployment.325d18cae8475ef4.png)
+    ![എൻഡ്പോയിന്റുകൾ തിരഞ്ഞെടുക്കുക](../../../../../../translated_images/ml/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. ഈ പേജിൽ, നിങ്ങൾ ഡിപ്ലോയ്മെന്റ് പ്രക്രിയയ്ക്കിടെ എൻഡ്പോയിന്റുകൾ നിയന്ത്രിക്കാം.
 
 > [!NOTE]
 > ഡിപ്ലോയ്മെന്റ് പൂർത്തിയായ ശേഷം, **Live traffic** **100%** ആയി സജ്ജമാക്കുകയാണെന്ന് ഉറപ്പാക്കുക. അല്ലെങ്കിൽ, ട്രാഫിക് ക്രമീകരിക്കാൻ **Update traffic** തിരഞ്ഞെടുക്കുക. ട്രാഫിക് 0% ആയിരുന്നാൽ മോഡൽ ടെസ്റ്റ് ചെയ്യാനാകില്ല.
 >
-> ![ട്രാഫിക് സജ്ജമാക്കുക.](../../../../../../translated_images/ml/07-10-set-traffic.085b847e5751ff3d.png)
+> ![ട്രാഫിക് സജ്ജമാക്കുക.](../../../../../../translated_images/ml/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## സീനാരിയോ 3: Prompt flow-യുമായി ഏകീകരിച്ച് Azure AI Foundry-യിൽ നിങ്ങളുടെ കസ്റ്റം മോഡലുമായി ചാറ്റ് ചെയ്യുക
@@ -578,7 +578,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 1. ഇടത് ടാബിൽ നിന്ന് **All hubs** തിരഞ്ഞെടുക്കുക.
 
 1. നാവിഗേഷൻ മെനുവിൽ നിന്ന് **+ New hub** തിരഞ്ഞെടുക്കുക.
-    ![ഹബ് സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![ഹബ് സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. താഴെപ്പറയുന്ന പ്രവൃത്തികളും നിർവഹിക്കുക:
 
@@ -589,7 +589,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന **കണക്‍ट്അസ്യൂർ എഐ സർവീസുകൾ** തിരഞ്ഞെടുക്കുക (ആവശ്യമായെങ്കിൽ പുതിയതായി സൃഷ്ടിക്കുക).
     - **കണക്‌ട് അസ്യൂർ എഐ സെർച്ചിൽ** നിന്ന് **Skip connecting** തിരഞ്ഞെടുക്കുക.
 
-    ![ഹബ് നിവർത്തിക്കുക.](../../../../../../translated_images/ml/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![ഹബ് നിവർത്തിക്കുക.](../../../../../../translated_images/ml/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. **Next** തിരഞ്ഞെടുക്കുക.
 
@@ -599,11 +599,11 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നാനിഗേഷൻ മെനുവിൽ നിന്നുള്ള **+ New project** തിരഞ്ഞെടുക്കുക.
 
-    ![പുതിയ പ്രോജക്റ്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![പുതിയ പ്രോജക്റ്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. **പ്രോജക്റ്റ് നാമം** നൽകുക. അതിന് പ്രത്യേകം വ്യത്യസ്തമായ മൂല്യം വേണം.
 
-    ![പ്രോജക്റ്റ് സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/08-05-create-project.4d97f0372f03375a.png)
+    ![പ്രോജക്റ്റ് സൃഷ്ടിക്കുക.](../../../../../../translated_images/ml/08-05-create-project.4d97f0372f03375a.webp)
 
 1. **Create a project** തിരഞ്ഞെടുക്കുക.
 
@@ -619,17 +619,17 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. ഇടത് പാനലിൽ നിന്നുള്ള **Endpoints** തിരഞ്ഞെടുക്കുക.
 
-    ![എൻഡ്പോയിന്റുകൾ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![എൻഡ്പോയിന്റുകൾ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച എന്റ്പോയിന്റ് തിരഞ്ഞെടുക്കുക.
 
-    ![നിർമിച്ച എൻഡ്പോയിന്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![നിർമിച്ച എൻഡ്പോയിന്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. നാനിഗേഷൻ മെനുവിൽ നിന്നുള്ള **Consume** തിരഞ്ഞെടുക്കുക.
 
 1. നിങ്ങളുടെ **REST endpoint**യും **Primary key**യും കോപ്പി ചെയ്യുക.
 
-    ![API കീയും എൻഡ്പോയിന്റ് URIയും കോപ്പി ചെയ്യുക.](../../../../../../translated_images/ml/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![API കീയും എൻഡ്പോയിന്റ് URIയും കോപ്പി ചെയ്യുക.](../../../../../../translated_images/ml/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### കസ്റ്റം കണക്ഷൻ ചേർക്കുക
 
@@ -641,11 +641,11 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. **+ New connection** തിരഞ്ഞെടുക്കുക.
 
-    ![പുതിയ കണക്ഷൻ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![പുതിയ കണക്ഷൻ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. നാനിഗേഷൻ മെനുവിൽ നിന്നുള്ള **Custom keys** തിരഞ്ഞെടുക്കുക.
 
-    ![കസ്റ്റം കീകൾ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-10-select-custom-keys.856f6b2966460551.png)
+    ![കസ്റ്റം കീകൾ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. താഴെപ്പറയുന്ന പ്രവർത്തനങ്ങൾ ചെയ്യുക:
 
@@ -655,7 +655,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - കീ നാമത്തിന് **key** നൽകി Azure ML സ്റ്റുഡിയോയിൽ നിന്നു കോപ്പി ചെയ്ത കീ മൂല്യ ഭാഗത്ത് പേസ്റ്റ് ചെയ്യുക.
     - കീകൾ ചേർത്ത ശേഷം കി വരികൾ **is secret** ആയി അടയാളപ്പെടുത്തുക, കീ പുറത്ത് കാണാതിരിക്കാൻ.
 
-    ![കണക്ഷൻ ചേർക്കുക.](../../../../../../translated_images/ml/08-11-add-connection.785486badb4d2d26.png)
+    ![കണക്ഷൻ ചേർക്കുക.](../../../../../../translated_images/ml/08-11-add-connection.785486badb4d2d26.webp)
 
 1. **Add connection** തിരഞ്ഞെടുക്കുക.
 
@@ -669,15 +669,15 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. നാനിഗേഷൻ മെനുവിൽ നിന്നുള്ള **+ Create** തിരഞ്ഞെടുക്കുക.
 
-    ![Promptflow തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Promptflow തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. നാനിഗേഷൻ മെനുവിൽ നിന്നുള്ള **Chat flow** തിരഞ്ഞെടുക്കുക.
 
-    ![ചാറ്റ് ഫ്ലോ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-13-select-flow-type.2ec689b22da32591.png)
+    ![ചാറ്റ് ഫ്ലോ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. ഉപയോഗിക്കാൻ **Folder name** നൽകുക.
 
-    ![നാമം നൽകുക.](../../../../../../translated_images/ml/08-14-enter-name.ff9520fefd89f40d.png)
+    ![നാമം നൽകുക.](../../../../../../translated_images/ml/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. **Create** തിരഞ്ഞെടുക്കുക.
 
@@ -714,7 +714,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
     - **Save** തിരഞ്ഞെടുക്കുക.
 
-    ![Raw file mode തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Raw file mode തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Prompt flow-യിൽ കസ്റ്റം Phi-3 മോഡൽ ഉപയോഗിക്കാൻ *integrate_with_promptflow.py* ഫയലിൽ താഴെ കൊടുത്തിരിക്കുന്ന കോഡ് ചേർക്കുക.
 
@@ -779,14 +779,14 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
     ```
 
-    ![Prompt flow കോഡ് പേസ്റ്റ് ചെയ്യുക.](../../../../../../translated_images/ml/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Prompt flow കോഡ് പേസ്റ്റ് ചെയ്യുക.](../../../../../../translated_images/ml/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Azure AI Foundry-യിൽ Prompt flow ഉപയോഗിക്കുന്നതിനെക്കുറിച്ച് കൂടുതൽ വിവരങ്ങൾക്ക്, [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) സന്ദർശിക്കുക.
 
 1. **Chat input**, **Chat output** തിരഞ്ഞെടുക്കുക, നിങ്ങളുടെ മോഡലുമായി ചാറ്റ് ചെയ്യാൻ.
 
-    ![ഇൻപുട്ടും ഔട്ട്പുട്ടും തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![ഇൻപുട്ടും ഔട്ട്പുട്ടും തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. ഇപ്പോൾ നിങ്ങൾക്ക് നിങ്ങളുടെ കസ്റ്റം Phi-3 മോഡലുമായി ചാറ്റ് ചെയ്യാൻ തയ്യാറാണ്. അടുത്ത അഭ്യാസത്തിൽ, Prompt flow ആരംഭിക്കുകയും നിങ്ങളുടെ ഫൈൻ-ട്യൂൺ ചെയ്ത Phi-3 മോഡലുമായി അത് ഉപയോഗിച്ച് ചാറ്റ് ചെയ്യാനും പഠിക്കും.
 
@@ -794,7 +794,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 >
 > പുനർനിർമ്മിച്ച ഫ്ലോ താഴെ കാണിച്ച ചിത്രം പോലെയാണ്:
 >
-> ![ഫ്ലോ ഉദാഹരണം.](../../../../../../translated_images/ml/08-18-graph-example.d6457533952e690c.png)
+> ![ഫ്ലോ ഉദാഹരണം.](../../../../../../translated_images/ml/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### നിങ്ങളുടെ കസ്റ്റം Phi-3 മോഡലുമായി ചാറ്റ് ചെയ്യുക
@@ -807,25 +807,25 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. Prompt flow ആരംഭിക്കാൻ **Start compute sessions** തിരഞ്ഞെടുക്കുക.
 
-    ![കമ്പ്യൂട്ട് സെഷൻ ആരംഭിക്കുക.](../../../../../../translated_images/ml/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![കമ്പ്യൂട്ട് സെഷൻ ആരംഭിക്കുക.](../../../../../../translated_images/ml/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. പാരാമീറ്ററുകൾ പുതുക്കാൻ **Validate and parse input** തിരഞ്ഞെടുക്കുക.
 
-    ![ഇൻപുട്ട് സ്ഥിരീകരിക്കുക.](../../../../../../translated_images/ml/09-02-validate-input.317c76ef766361e9.png)
+    ![ഇൻപുട്ട് സ്ഥിരീകരിക്കുക.](../../../../../../translated_images/ml/09-02-validate-input.317c76ef766361e9.webp)
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച കസ്റ്റം കണക്ഷന്റെ **connection** മൂല്യം തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *connection*.
 
-    ![കണക്ഷൻ.](../../../../../../translated_images/ml/09-03-select-connection.99bdddb4b1844023.png)
+    ![കണക്ഷൻ.](../../../../../../translated_images/ml/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### നിങ്ങളുടെ കസ്റ്റം മോഡലുമായി ചാറ്റ് ചെയ്യുക
 
 1. **Chat** തിരഞ്ഞെടുക്കുക.
 
-    ![ചാറ്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/09-04-select-chat.61936dce6612a1e6.png)
+    ![ചാറ്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/ml/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. ഫലങ്ങളുടെ ഒരു ഉദാഹരണം: ഇപ്പോള്‍ നിങ്ങൾക്ക് നിങ്ങളുടെ കസ്റ്റം Phi-3 മോഡലിന് ചാറ്റ് ചെയ്യാം. ഫൈൻ-ട്യൂണിനായി ഉപയോഗിച്ച ഡാറ്റയുടെ അടിസ്ഥാനത്തിൽ ചോദ്യം ചോദിക്കാനാണ് നിർദ്ദേശിക്കുന്നത്.
 
-    ![Prompt flow-യുമായി ചാറ്റ് ചെയ്യുക.](../../../../../../translated_images/ml/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Prompt flow-യുമായി ചാറ്റ് ചെയ്യുക.](../../../../../../translated_images/ml/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

@@ -24,7 +24,7 @@ Trong ví dụ E2E này, bạn sẽ học cách tinh chỉnh mô hình Phi-3 và
 
 Dưới đây là tổng quan về ví dụ E2E này.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/vi/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/vi/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Mục lục
 
@@ -49,13 +49,13 @@ Dưới đây là tổng quan về ví dụ E2E này.
 
 1. Gõ *azure machine learning* vào **thanh tìm kiếm** phía trên trang portal và chọn **Azure Machine Learning** từ các tùy chọn hiện ra.
 
-    ![Type azure machine learning.](../../../../../../translated_images/vi/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/vi/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Chọn **+ Create** từ menu điều hướng.
 
 3. Chọn **New workspace** từ menu điều hướng.
 
-    ![Select new workspace.](../../../../../../translated_images/vi/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/vi/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Thực hiện các bước sau:
 
@@ -68,7 +68,7 @@ Dưới đây là tổng quan về ví dụ E2E này.
     - Chọn **Application insights** để sử dụng (tạo mới nếu cần).
     - Chọn **Container registry** để sử dụng (tạo mới nếu cần).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/vi/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/vi/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Chọn **Review + Create**.
 
@@ -91,7 +91,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
     - Chọn **Virtual machine family** để sử dụng. Ví dụ, chọn **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, bao gồm GPU *Standard_NC24ads_A100_v4*.
     - Chọn **Request quota** từ menu điều hướng.
 
-        ![Request quota.](../../../../../../translated_images/vi/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/vi/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Trong trang Request quota, nhập **New cores limit** mà bạn muốn sử dụng. Ví dụ, 24.
     - Trong trang Request quota, chọn **Submit** để gửi yêu cầu hạn mức GPU.
@@ -112,11 +112,11 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
 
 1. Gõ *managed identities* vào **thanh tìm kiếm** phía trên trang portal và chọn **Managed Identities** từ các tùy chọn hiện ra.
 
-    ![Type managed identities.](../../../../../../translated_images/vi/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/vi/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Chọn **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/vi/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/vi/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Thực hiện các bước sau:
 
@@ -125,7 +125,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
     - Chọn **Region** bạn muốn sử dụng.
     - Nhập **Name**. Nó phải là giá trị duy nhất.
 
-    ![Select create.](../../../../../../translated_images/vi/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/vi/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Chọn **Review + create**.
 
@@ -145,7 +145,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
     - Chọn **Resource group** để sử dụng.
     - Chọn **Role** là **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/vi/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/vi/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Chọn **Save**.
 
@@ -153,7 +153,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
 
 1. Gõ *storage accounts* vào **thanh tìm kiếm** phía trên trang portal và chọn **Storage accounts** từ các tùy chọn hiện ra.
 
-    ![Type storage accounts.](../../../../../../translated_images/vi/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/vi/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Chọn tài khoản storage liên kết với Azure Machine Learning workspace bạn đã tạo. Ví dụ, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
     - Chọn **+ Add** từ menu điều hướng.
     - Chọn **Add role assignment** từ menu điều hướng.
 
-    ![Add role.](../../../../../../translated_images/vi/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/vi/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Trong trang Add role assignment, thực hiện các bước sau:
 
@@ -177,7 +177,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
     - Trong trang Select managed identities, chọn Managed Identity bạn đã tạo. Ví dụ, *finetunephi-managedidentity*.
     - Trong trang Select managed identities, chọn **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/vi/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/vi/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Chọn **Review + assign**.
 
@@ -185,7 +185,7 @@ Trong hướng dẫn này, bạn sẽ học cách tinh chỉnh và triển khai 
 
 1. Gõ *container registries* vào **thanh tìm kiếm** phía trên trang portal và chọn **Container registries** từ các tùy chọn hiện ra.
 
-    ![Type container registries.](../../../../../../translated_images/vi/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/vi/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Chọn container registry liên kết với Azure Machine Learning workspace. Ví dụ, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ Trong bài tập này, bạn sẽ
 
 1. Chọn thư mục *finetune-phi* mà bạn đã tạo, nằm ở *C:\Users\yourUserName\finetune-phi*.
 
-    ![Chọn thư mục mà bạn đã tạo.](../../../../../../translated_images/vi/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Chọn thư mục mà bạn đã tạo.](../../../../../../translated_images/vi/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo một file mới tên là *download_dataset.py*.
 
-    ![Tạo một file mới.](../../../../../../translated_images/vi/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Tạo một file mới.](../../../../../../translated_images/vi/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Chuẩn bị bộ dữ liệu để fine-tuning
 
@@ -392,7 +392,7 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn **+ New**.
 
-    ![Chọn compute.](../../../../../../translated_images/vi/06-01-select-compute.a29cff290b480252.png)
+    ![Chọn compute.](../../../../../../translated_images/vi/06-01-select-compute.a29cff290b480252.webp)
 
 1. Thực hiện các nhiệm vụ sau:
 
@@ -402,7 +402,7 @@ Trong bài tập này, bạn sẽ:
     - Chọn bộ lọc **Virtual machine size** thành **Select from all options**.
     - Chọn kích thước **Virtual machine size** là **Standard_NC24ads_A100_v4**.
 
-    ![Tạo cụm.](../../../../../../translated_images/vi/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Tạo cụm.](../../../../../../translated_images/vi/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Chọn **Next**.
 
@@ -413,7 +413,7 @@ Trong bài tập này, bạn sẽ:
     - Chọn số lượng **Maximum number of nodes** là **1**.
     - Chọn **Idle seconds before scale down** thành **120**.
 
-    ![Tạo cụm.](../../../../../../translated_images/vi/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Tạo cụm.](../../../../../../translated_images/vi/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Chọn **Create**.
 
@@ -423,18 +423,18 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn workspace Azure Machine Learning mà bạn đã tạo.
 
-    ![Chọn workspace mà bạn đã tạo.](../../../../../../translated_images/vi/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Chọn workspace mà bạn đã tạo.](../../../../../../translated_images/vi/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Thực hiện các nhiệm vụ sau:
 
     - Chọn **Model catalog** từ tab bên trái.
     - Gõ *phi-3-mini-4k* trong thanh **search bar** và chọn **Phi-3-mini-4k-instruct** từ các tùy chọn xuất hiện.
 
-    ![Gõ phi-3-mini-4k.](../../../../../../translated_images/vi/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Gõ phi-3-mini-4k.](../../../../../../translated_images/vi/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Chọn **Fine-tune** từ menu điều hướng.
 
-    ![Chọn fine tune.](../../../../../../translated_images/vi/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Chọn fine tune.](../../../../../../translated_images/vi/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Thực hiện các nhiệm vụ sau:
 
@@ -443,7 +443,7 @@ Trong bài tập này, bạn sẽ:
     - Chọn loại tải dữ liệu Validation là **Provide different validation data**.
     - Chọn **+ Select data** để tải lên **Validation data**.
 
-    ![Điền thông tin trang fine-tuning.](../../../../../../translated_images/vi/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Điền thông tin trang fine-tuning.](../../../../../../translated_images/vi/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ Trong bài tập này, bạn sẽ:
 
 1. Trong bài tập này, bạn đã thành công fine-tune mô hình Phi-3 bằng Azure Machine Learning. Lưu ý rằng quá trình fine-tuning có thể mất khá nhiều thời gian. Sau khi chạy công việc fine-tuning, bạn cần chờ cho nó hoàn thành. Bạn có thể theo dõi trạng thái của công việc fine-tuning bằng cách vào tab Jobs ở bên trái trong Azure Machine Learning Workspace của bạn. Trong phần tiếp theo, bạn sẽ triển khai mô hình đã fine-tune và tích hợp nó với Prompt flow.
 
-    ![Xem công việc finetuning.](../../../../../../translated_images/vi/06-08-output.2bd32e59930672b1.png)
+    ![Xem công việc finetuning.](../../../../../../translated_images/vi/06-08-output.2bd32e59930672b1.webp)
 
 ### Triển khai mô hình Phi-3 đã fine-tune
 
@@ -471,17 +471,17 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn workspace Azure Machine Learning mà bạn đã tạo.
 
-    ![Chọn workspace mà bạn đã tạo.](../../../../../../translated_images/vi/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Chọn workspace mà bạn đã tạo.](../../../../../../translated_images/vi/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Chọn **Models** từ tab bên trái.
 1. Chọn **+ Register**.
 1. Chọn **From a job output**.
 
-    ![Đăng ký mô hình.](../../../../../../translated_images/vi/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Đăng ký mô hình.](../../../../../../translated_images/vi/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Chọn công việc mà bạn đã tạo.
 
-    ![Chọn công việc.](../../../../../../translated_images/vi/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Chọn công việc.](../../../../../../translated_images/vi/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Chọn **Next**.
 
@@ -489,17 +489,17 @@ Trong bài tập này, bạn sẽ:
 
 1. Đảm bảo rằng **Job output** được chọn; nó sẽ được chọn tự động.
 
-    ![Chọn output.](../../../../../../translated_images/vi/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Chọn output.](../../../../../../translated_images/vi/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Chọn **Next**.
 
 3. Chọn **Register**.
 
-    ![Chọn đăng ký.](../../../../../../translated_images/vi/07-04-register.fd82a3b293060bc7.png)
+    ![Chọn đăng ký.](../../../../../../translated_images/vi/07-04-register.fd82a3b293060bc7.webp)
 
 4. Bạn có thể xem mô hình đã đăng ký bằng cách chuyển đến menu **Models** từ tab bên trái.
 
-    ![Mô hình đã đăng ký.](../../../../../../translated_images/vi/07-05-registered-model.7db9775f58dfd591.png)
+    ![Mô hình đã đăng ký.](../../../../../../translated_images/vi/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Triển khai mô hình đã fine-tune
 
@@ -509,13 +509,13 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn **Real-time endpoints** từ menu điều hướng.
 
-    ![Tạo endpoint.](../../../../../../translated_images/vi/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Tạo endpoint.](../../../../../../translated_images/vi/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Chọn **Create**.
 
 1. Chọn mô hình đã đăng ký mà bạn đã tạo.
 
-    ![Chọn mô hình đã đăng ký.](../../../../../../translated_images/vi/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Chọn mô hình đã đăng ký.](../../../../../../translated_images/vi/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Chọn **Select**.
 
@@ -527,7 +527,7 @@ Trong bài tập này, bạn sẽ:
     - Nhập **Endpoint name**. Nó phải là giá trị duy nhất.
     - Nhập **Deployment name**. Nó cũng phải là giá trị duy nhất.
 
-    ![Điền cấu hình triển khai.](../../../../../../translated_images/vi/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Điền cấu hình triển khai.](../../../../../../translated_images/vi/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Chọn **Deploy**.
 
@@ -543,14 +543,14 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn endpoint mà bạn đã tạo.
 
-    ![Chọn endpoints](../../../../../../translated_images/vi/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Chọn endpoints](../../../../../../translated_images/vi/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. Trên trang này, bạn có thể quản lý các endpoints trong quá trình triển khai.
 
 > [!NOTE]
 > Khi việc triển khai hoàn tất, hãy đảm bảo rằng **Live traffic** được đặt ở mức **100%**. Nếu không phải, hãy chọn **Update traffic** để điều chỉnh cấu hình lưu lượng. Lưu ý bạn không thể kiểm tra mô hình nếu lưu lượng được đặt 0%.
 >
-> ![Điều chỉnh lưu lượng.](../../../../../../translated_images/vi/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Điều chỉnh lưu lượng.](../../../../../../translated_images/vi/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Kịch bản 3: Tích hợp với Prompt flow và Hội thoại với mô hình tùy chỉnh của bạn trong Azure AI Foundry
@@ -579,7 +579,7 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 1. Chọn **All hubs** từ tab bên trái.
 
 1. Chọn **+ New hub** từ menu điều hướng.
-    ![Create hub.](../../../../../../translated_images/vi/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Create hub.](../../../../../../translated_images/vi/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Thực hiện các tác vụ sau:
 
@@ -590,7 +590,7 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
     - Chọn **Kết nối Dịch vụ AI Azure** để sử dụng (tạo mới nếu cần).
     - Chọn **Kết nối Azure AI Search** để **Bỏ qua kết nối**.
 
-    ![Fill hub.](../../../../../../translated_images/vi/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Fill hub.](../../../../../../translated_images/vi/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Chọn **Tiếp theo**.
 
@@ -600,11 +600,11 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 
 1. Chọn **+ Dự án mới** từ menu điều hướng.
 
-    ![Select new project.](../../../../../../translated_images/vi/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Select new project.](../../../../../../translated_images/vi/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Nhập **Tên dự án**. Nó phải là một giá trị duy nhất.
 
-    ![Create project.](../../../../../../translated_images/vi/08-05-create-project.4d97f0372f03375a.png)
+    ![Create project.](../../../../../../translated_images/vi/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Chọn **Tạo dự án**.
 
@@ -620,17 +620,17 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 
 1. Chọn **Endpoints** từ tab bên trái.
 
-    ![Select endpoints.](../../../../../../translated_images/vi/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Select endpoints.](../../../../../../translated_images/vi/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Chọn điểm cuối mà bạn đã tạo.
 
-    ![Select endpoints.](../../../../../../translated_images/vi/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Select endpoints.](../../../../../../translated_images/vi/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Chọn **Consume** từ menu điều hướng.
 
 1. Sao chép **REST endpoint** và **Primary key** của bạn.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/vi/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/vi/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Thêm kết nối tùy chỉnh
 
@@ -642,11 +642,11 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 
 1. Chọn **+ Kết nối mới**.
 
-    ![Select new connection.](../../../../../../translated_images/vi/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Select new connection.](../../../../../../translated_images/vi/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Chọn **Khóa tùy chỉnh** từ menu điều hướng.
 
-    ![Select custom keys.](../../../../../../translated_images/vi/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Select custom keys.](../../../../../../translated_images/vi/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Thực hiện các tác vụ sau:
 
@@ -656,7 +656,7 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
     - Đối với tên khóa, nhập **key** và dán khóa mà bạn đã sao chép từ Azure ML Studio vào trường giá trị.
     - Sau khi thêm các khóa, chọn **is secret** để ngăn khóa bị lộ.
 
-    ![Add connection.](../../../../../../translated_images/vi/08-11-add-connection.785486badb4d2d26.png)
+    ![Add connection.](../../../../../../translated_images/vi/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Chọn **Thêm kết nối**.
 
@@ -670,15 +670,15 @@ Bạn đã thêm một kết nối tùy chỉnh trong Azure AI Foundry. Bây gi�
 
 1. Chọn **+ Tạo** từ menu điều hướng.
 
-    ![Select Promptflow.](../../../../../../translated_images/vi/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Select Promptflow.](../../../../../../translated_images/vi/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Chọn **Chat flow** từ menu điều hướng.
 
-    ![Select chat flow.](../../../../../../translated_images/vi/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Select chat flow.](../../../../../../translated_images/vi/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Nhập **Tên thư mục** để sử dụng.
 
-    ![Enter name.](../../../../../../translated_images/vi/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Enter name.](../../../../../../translated_images/vi/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Chọn **Tạo**.
 
@@ -715,7 +715,7 @@ Bạn cần tích hợp mô hình Phi-3 được tinh chỉnh vào một Prompt 
 
     - Chọn **Lưu**.
 
-    ![Select raw file mode.](../../../../../../translated_images/vi/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Select raw file mode.](../../../../../../translated_images/vi/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Thêm đoạn mã sau vào tệp *integrate_with_promptflow.py* để sử dụng mô hình Phi-3 tùy chỉnh trong Prompt flow.
 
@@ -780,14 +780,14 @@ Bạn cần tích hợp mô hình Phi-3 được tinh chỉnh vào một Prompt 
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/vi/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/vi/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Để biết thêm thông tin chi tiết về cách sử dụng Prompt flow trong Azure AI Foundry, bạn có thể tham khảo [Prompt flow trong Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Chọn **Đầu vào chat**, **Đầu ra chat** để kích hoạt trò chuyện với mô hình của bạn.
 
-    ![Input Output.](../../../../../../translated_images/vi/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Input Output.](../../../../../../translated_images/vi/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Bây giờ bạn đã sẵn sàng để trò chuyện với mô hình Phi-3 tùy chỉnh của bạn. Trong bài tập tiếp theo, bạn sẽ học cách khởi động Prompt flow và sử dụng nó để trò chuyện với mô hình Phi-3 được tinh chỉnh của bạn.
 
@@ -795,7 +795,7 @@ Bạn cần tích hợp mô hình Phi-3 được tinh chỉnh vào một Prompt 
 >
 > Luồng được xây dựng lại sẽ trông giống như hình dưới đây:
 >
-> ![Flow example.](../../../../../../translated_images/vi/08-18-graph-example.d6457533952e690c.png)
+> ![Flow example.](../../../../../../translated_images/vi/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Trò chuyện với mô hình Phi-3 tùy chỉnh của bạn
@@ -808,25 +808,25 @@ Bây giờ bạn đã tinh chỉnh và tích hợp mô hình Phi-3 tùy chỉnh 
 
 1. Chọn **Bắt đầu phiên tính toán** để khởi động Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/vi/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Start compute session.](../../../../../../translated_images/vi/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Chọn **Xác thực và phân tích đầu vào** để làm mới các tham số.
 
-    ![Validate input.](../../../../../../translated_images/vi/09-02-validate-input.317c76ef766361e9.png)
+    ![Validate input.](../../../../../../translated_images/vi/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Chọn **Giá trị** của **kết nối** đến kết nối tùy chỉnh mà bạn đã tạo. Ví dụ, *connection*.
 
-    ![Connection.](../../../../../../translated_images/vi/09-03-select-connection.99bdddb4b1844023.png)
+    ![Connection.](../../../../../../translated_images/vi/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Trò chuyện với mô hình tùy chỉnh của bạn
 
 1. Chọn **Trò chuyện**.
 
-    ![Select chat.](../../../../../../translated_images/vi/09-04-select-chat.61936dce6612a1e6.png)
+    ![Select chat.](../../../../../../translated_images/vi/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Đây là ví dụ kết quả: Bây giờ bạn có thể trò chuyện với mô hình Phi-3 tùy chỉnh. Nên đặt câu hỏi dựa trên dữ liệu đã dùng để tinh chỉnh.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/vi/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/vi/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

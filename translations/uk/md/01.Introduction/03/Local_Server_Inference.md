@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 У додатку Copilot ми створюємо програми через Semantic Kernel / LangChain. Такий тип фреймворку зазвичай сумісний із Azure OpenAI Service / моделями OpenAI, а також може підтримувати open source моделі на Hugging Face і локальні моделі. Що робити, якщо ми хочемо використовувати Semantic Kernel для доступу до Phi-3-mini? На прикладі .NET ми можемо поєднати його з Hugging Face Connector у Semantic Kernel. За замовчуванням він відповідає ідентифікатору моделі на Hugging Face (при першому використанні модель буде завантажена з Hugging Face, що займає багато часу). Також можна підключитися до власноруч створеного локального сервісу. Порівняно з двома варіантами, ми рекомендуємо використовувати другий, оскільки він забезпечує більшу автономність, особливо у корпоративних додатках.
 
-![sk](../../../../../translated_images/uk/sk.d03785c25edc6d44.png)
+![sk](../../../../../translated_images/uk/sk.d03785c25edc6d44.webp)
 
 З рисунка видно, що доступ до локальних сервісів через Semantic Kernel легко підключається до самостійно створеного сервера моделі Phi-3-mini. Ось результат виконання
 
-![skrun](../../../../../translated_images/uk/skrun.5aafc1e7197dca20.png)
+![skrun](../../../../../translated_images/uk/skrun.5aafc1e7197dca20.webp)
 
 ***Приклад коду*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 

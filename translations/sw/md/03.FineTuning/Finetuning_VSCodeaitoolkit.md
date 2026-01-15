@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Sakinisha AI Toolkit kwa VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/sw/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/sw/Aitoolkit.7157953df04812dc.webp)
 
 
 **[Private Preview]** Utoaji kwa bonyeza moja kwa Azure Container Apps kuendesha urekebishaji wa modeli na utambuzi katika wingu.

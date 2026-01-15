@@ -33,33 +33,33 @@ Prompt flow может подключаться к OpenAI, Azure OpenAI Service 
 
 1. Установите расширение Prompt flow для VS Code
 
-![pfvscode](../../../../../../translated_images/ru/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/ru/pfvscode.eff93dfc66a42cbe.webp)
 
 2. После установки расширения Prompt flow для VS Code, кликните по нему и выберите **Installation dependencies**, следуйте этому руководству для установки Prompt flow SDK в вашем окружении
 
-![pfsetup](../../../../../../translated_images/ru/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/ru/pfsetup.b46e93096f5a254f.webp)
 
 3. Скачайте [пример кода](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) и откройте его в VS Code
 
-![pfsample](../../../../../../translated_images/ru/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/ru/pfsample.8d89e70584ffe7c4.webp)
 
 4. Откройте **flow.dag.yaml** и выберите ваше Python-окружение
 
-![pfdag](../../../../../../translated_images/ru/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/ru/pfdag.264a77f7366458ff.webp)
 
    Откройте **chat_phi3_ort.py** и укажите путь к вашей модели Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/ru/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/ru/pfphi.72da81d74244b45f.webp)
 
 5. Запустите prompt flow для тестирования
 
 Откройте **flow.dag.yaml**, нажмите на визуальный редактор
 
-![pfv](../../../../../../translated_images/ru/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/ru/pfv.ba8a81f34b20f603.webp)
 
 после этого запустите выполнение для теста
 
-![pfflow](../../../../../../translated_images/ru/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/ru/pfflow.4e1135a089b1ce1b.webp)
 
 1. Вы также можете запускать пакетные задания в терминале для получения дополнительных результатов
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Результаты можно просмотреть в вашем браузере по умолчанию
 
 
-![pfresult](../../../../../../translated_images/ru/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/ru/pfresult.c22c826f8062d7cb.webp)
 
 **Отказ от ответственности**:  
 Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

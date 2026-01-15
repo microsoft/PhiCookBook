@@ -28,9 +28,9 @@ Singkatnya, NPU adalah ahli matematika yang mempercepat komputasi AI, dan mereka
 
 Perangkat Intel® NPU adalah akselerator inferensi AI yang terintegrasi dengan CPU klien Intel, mulai dari generasi CPU Intel® Core™ Ultra (sebelumnya dikenal sebagai Meteor Lake). Ini memungkinkan eksekusi tugas jaringan saraf buatan dengan efisiensi energi.
 
-![Latency](../../../../../translated_images/id/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/id/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/id/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/id/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Saat menjalankan kode, kita dapat melihat status NPU melalui Task Manager
 
-![NPU](../../../../../translated_images/id/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/id/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Contoh*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ini adalah hasil eksekusi
 
-![DML](../../../../../translated_images/id/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/id/aipc_DML.52a44180393ab491.webp)
 
 ***Contoh*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 Format hasil konversi, seperti ini
 
-![openvino_convert](../../../../../translated_images/id/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/id/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Muat jalur model (model_dir), konfigurasi terkait (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), dan perangkat yang dipercepat perangkat keras (GPU.0) melalui OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Saat menjalankan kode, kita dapat melihat status GPU melalui Task Manager
 
-![openvino_gpu](../../../../../translated_images/id/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/id/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Contoh*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

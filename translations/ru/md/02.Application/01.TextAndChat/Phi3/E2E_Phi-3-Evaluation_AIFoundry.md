@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ниже представлен процесс оценки в Azure AI Foundry.
 
-![Архитектура руководства.](../../../../../../translated_images/ru/architecture.10bec55250f5d6a4.png)
+![Архитектура руководства.](../../../../../../translated_images/ru/architecture.10bec55250f5d6a4.webp)
 
 *Источник изображения: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Чтобы убедиться, что ваша модель ИИ этична и безопасна, важно оценить её в соответствии с принципами ответственного ИИ Microsoft. В Azure AI Foundry оценки безопасности позволяют проверить уязвимость модели к атакам jailbreak и её потенциал к генерации вредоносного контента, что напрямую соответствует этим принципам.
 
-![Оценка безопасности.](../../../../../../translated_images/ru/safety-evaluation.083586ec88dfa950.png)
+![Оценка безопасности.](../../../../../../translated_images/ru/safety-evaluation.083586ec88dfa950.webp)
 
 *Источник изображения: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **Ответственность**: Люди, разрабатывающие и внедряющие системы ИИ, должны нести ответственность за их работу. Организации должны опираться на отраслевые стандарты для формирования норм ответственности. Эти нормы гарантируют, что системы ИИ не являются окончательным авторитетом в решениях, влияющих на жизнь людей, и что человек сохраняет значимый контроль над высокоавтономными системами ИИ.
 
-![Fill hub.](../../../../../../translated_images/ru/responsibleai2.c07ef430113fad8c.png)
+![Fill hub.](../../../../../../translated_images/ru/responsibleai2.c07ef430113fad8c.webp)
 
 *Источник изображения: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Оценка этих аспектов помогает убедиться, что модель не генерирует вредоносный или оскорбительный контент, что соответствует общественным ценностям и нормативным требованиям.
 
-![Оценка на основе безопасности.](../../../../../../translated_images/ru/evaluate-based-on-safety.c5df819f5b0bfc07.png)
+![Оценка на основе безопасности.](../../../../../../translated_images/ru/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
 ### Введение в оценку производительности
 
 Чтобы убедиться, что ваша модель ИИ работает как ожидается, важно оценить её производительность с помощью соответствующих метрик. В Azure AI Foundry оценки производительности позволяют проверить эффективность модели в генерации точных, релевантных и связных ответов.
 
-![Оценка безопасности.](../../../../../../translated_images/ru/performance-evaluation.48b3e7e01a098740.png)
+![Оценка безопасности.](../../../../../../translated_images/ru/performance-evaluation.48b3e7e01a098740.webp)
 
 *Источник изображения: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Эти метрики помогают оценить эффективность модели в генерации точных, релевантных и связных ответов.
 
-![Оценка на основе производительности.](../../../../../../translated_images/ru/evaluate-based-on-performance.3e801c647c7554e8.png)
+![Оценка на основе производительности.](../../../../../../translated_images/ru/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
 ## **Сценарий 2: Оценка модели Phi-3 / Phi-3.5 в Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **+ New hub** в навигационном меню.
 
-    ![Создание хаба.](../../../../../../translated_images/ru/create-hub.5be78fb1e21ffbf1.png)
+    ![Создание хаба.](../../../../../../translated_images/ru/create-hub.5be78fb1e21ffbf1.webp)
 
 1. Выполните следующие действия:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите **Connect Azure AI Services** для подключения (создайте новую, если нужно).
     - Выберите **Connect Azure AI Search** и установите **Skip connecting**.
 
-    ![Заполнение хаба.](../../../../../../translated_images/ru/fill-hub.baaa108495c71e34.png)
+    ![Заполнение хаба.](../../../../../../translated_images/ru/fill-hub.baaa108495c71e34.webp)
 
 1. Нажмите **Next**.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **+ New project** в навигационном меню.
 
-    ![Выбор нового проекта.](../../../../../../translated_images/ru/select-new-project.cd31c0404088d7a3.png)
+    ![Выбор нового проекта.](../../../../../../translated_images/ru/select-new-project.cd31c0404088d7a3.webp)
 
 1. Введите **Project name**. Имя должно быть уникальным.
 
-    ![Создание проекта.](../../../../../../translated_images/ru/create-project.ca3b71298b90e420.png)
+    ![Создание проекта.](../../../../../../translated_images/ru/create-project.ca3b71298b90e420.webp)
 
 1. Нажмите **Create a project**.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **Endpoints** в левой панели.
 
-    ![Выбор endpoints.](../../../../../../translated_images/ru/select-endpoints.ee7387ecd68bd18d.png)
+    ![Выбор endpoints.](../../../../../../translated_images/ru/select-endpoints.ee7387ecd68bd18d.webp)
 
 1. Выберите созданный вами endpoint.
 
-    ![Выбор созданного endpoint.](../../../../../../translated_images/ru/select-endpoint-created.9f63af5e4cf98b2e.png)
+    ![Выбор созданного endpoint.](../../../../../../translated_images/ru/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
 1. Выберите **Consume** в навигационном меню.
 
 1. Скопируйте ваш **REST endpoint** и **Primary key**.
 
-    ![Копирование api key и endpoint uri.](../../../../../../translated_images/ru/copy-endpoint-key.0650c3786bd646ab.png)
+    ![Копирование api key и endpoint uri.](../../../../../../translated_images/ru/copy-endpoint-key.0650c3786bd646ab.webp)
 
 #### Добавление пользовательского подключения
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Нажмите **+ New connection**.
 
-    ![Выбор нового подключения.](../../../../../../translated_images/ru/select-new-connection.fa0f35743758a74b.png)
+    ![Выбор нового подключения.](../../../../../../translated_images/ru/select-new-connection.fa0f35743758a74b.webp)
 
 1. Выберите **Custom keys** в навигационном меню.
 
-    ![Выбор custom keys.](../../../../../../translated_images/ru/select-custom-keys.5a3c6b25580a9b67.png)
+    ![Выбор custom keys.](../../../../../../translated_images/ru/select-custom-keys.5a3c6b25580a9b67.webp)
 
 1. Выполните следующие действия:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Введите имя ключа **key** и вставьте скопированный ключ из Azure ML Studio в поле значения.
     - После добавления ключей отметьте **is secret**, чтобы ключи не были видны.
 
-    ![Добавление подключения.](../../../../../../translated_images/ru/add-connection.ac7f5faf8b10b0df.png)
+    ![Добавление подключения.](../../../../../../translated_images/ru/add-connection.ac7f5faf8b10b0df.webp)
 
 1. Нажмите **Add connection**.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Нажмите **+ Create** в навигационном меню.
 
-    ![Выбор Promptflow.](../../../../../../translated_images/ru/select-promptflow.18ff2e61ab9173eb.png)
+    ![Выбор Promptflow.](../../../../../../translated_images/ru/select-promptflow.18ff2e61ab9173eb.webp)
 
 1. Выберите **Chat flow** в навигационном меню.
 
-    ![Выбор chat flow.](../../../../../../translated_images/ru/select-flow-type.28375125ec9996d3.png)
+    ![Выбор chat flow.](../../../../../../translated_images/ru/select-flow-type.28375125ec9996d3.webp)
 
 1. Введите имя папки (**Folder name**), которую хотите использовать.
 
-    ![Ввод имени папки.](../../../../../../translated_images/ru/enter-name.02ddf8fb840ad430.png)
+    ![Ввод имени папки.](../../../../../../translated_images/ru/enter-name.02ddf8fb840ad430.webp)
 
 1. Нажмите **Create**.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Нажмите **Save**.
 
-    ![Выбор raw file mode.](../../../../../../translated_images/ru/select-raw-file-mode.06c1eca581ce4f53.png)
+    ![Выбор raw file mode.](../../../../../../translated_images/ru/select-raw-file-mode.06c1eca581ce4f53.webp)
 
 1. Добавьте следующий код в *integrate_with_promptflow.py* для использования кастомной модели Phi-3 / Phi-3.5 в Prompt flow.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Вставка кода prompt flow.](../../../../../../translated_images/ru/paste-promptflow-code.cd6d95b101c0ec28.png)
+    ![Вставка кода prompt flow.](../../../../../../translated_images/ru/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
 > Для более подробной информации по использованию Prompt flow в Azure AI Foundry обратитесь к [Prompt flow в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Выберите **Chat input** и **Chat output**, чтобы включить чат с вашей моделью.
 
-    ![Выбор Input Output.](../../../../../../translated_images/ru/select-input-output.c187fc58f25fbfc3.png)
+    ![Выбор Input Output.](../../../../../../translated_images/ru/select-input-output.c187fc58f25fbfc3.webp)
 
 1. Теперь вы готовы общаться с вашей кастомной моделью Phi-3 / Phi-3.5. В следующем упражнении вы узнаете, как запустить Prompt flow и использовать его для общения с вашей дообученной моделью.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Переделанный поток должен выглядеть примерно так:
 >
-> ![Пример потока](../../../../../../translated_images/ru/graph-example.82fd1bcdd3fc545b.png)
+> ![Пример потока](../../../../../../translated_images/ru/graph-example.82fd1bcdd3fc545b.webp)
 >
 
 #### Запуск Prompt flow
 
 1. Нажмите **Start compute sessions** для запуска Prompt flow.
 
-    ![Запуск compute session.](../../../../../../translated_images/ru/start-compute-session.9acd8cbbd2c43df1.png)
+    ![Запуск compute session.](../../../../../../translated_images/ru/start-compute-session.9acd8cbbd2c43df1.webp)
 
 1. Нажмите **Validate and parse input** для обновления параметров.
 
-    ![Валидация ввода.](../../../../../../translated_images/ru/validate-input.c1adb9543c6495be.png)
+    ![Валидация ввода.](../../../../../../translated_images/ru/validate-input.c1adb9543c6495be.webp)
 
 1. Выберите значение **connection** для пользовательского подключения, которое вы создали. Например, *connection*.
 
-    ![Выбор подключения.](../../../../../../translated_images/ru/select-connection.1f2b59222bcaafef.png)
+    ![Выбор подключения.](../../../../../../translated_images/ru/select-connection.1f2b59222bcaafef.webp)
 
 #### Общение с вашей кастомной моделью Phi-3 / Phi-3.5
 
 1. Нажмите **Chat**.
 
-    ![Выбор чата.](../../../../../../translated_images/ru/select-chat.0406bd9687d0c49d.png)
+    ![Выбор чата.](../../../../../../translated_images/ru/select-chat.0406bd9687d0c49d.webp)
 
 1. Пример результата: теперь вы можете общаться с вашей кастомной моделью Phi-3 / Phi-3.5. Рекомендуется задавать вопросы, основанные на данных, использованных для дообучения.
 
-    ![Чат с prompt flow.](../../../../../../translated_images/ru/chat-with-promptflow.1cf8cea112359ada.png)
+    ![Чат с prompt flow.](../../../../../../translated_images/ru/chat-with-promptflow.1cf8cea112359ada.webp)
 
 ### Развертывание Azure OpenAI для оценки модели Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Откройте созданный вами проект Azure AI Foundry.
 
-    ![Выбор проекта.](../../../../../../translated_images/ru/select-project-created.5221e0e403e2c9d6.png)
+    ![Выбор проекта.](../../../../../../translated_images/ru/select-project-created.5221e0e403e2c9d6.webp)
 
 1. В проекте выберите **Deployments** в левой панели.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **Deploy base model**.
 
-    ![Выбор Deployments.](../../../../../../translated_images/ru/deploy-openai-model.95d812346b25834b.png)
+    ![Выбор Deployments.](../../../../../../translated_images/ru/deploy-openai-model.95d812346b25834b.webp)
 
 1. Выберите модель Azure OpenAI, которую хотите использовать. Например, **gpt-4o**.
 
-    ![Выбор модели Azure OpenAI.](../../../../../../translated_images/ru/select-openai-model.959496d7e311546d.png)
+    ![Выбор модели Azure OpenAI.](../../../../../../translated_images/ru/select-openai-model.959496d7e311546d.webp)
 
 1. Нажмите **Confirm**.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Откройте созданный вами проект Azure AI Foundry.
 
-    ![Выбор проекта.](../../../../../../translated_images/ru/select-project-created.5221e0e403e2c9d6.png)
+    ![Выбор проекта.](../../../../../../translated_images/ru/select-project-created.5221e0e403e2c9d6.webp)
 
 1. В проекте выберите **Evaluation** в левой панели.
 
 1. Нажмите **+ New evaluation** в навигационном меню.
 
-    ![Выбор оценки.](../../../../../../translated_images/ru/select-evaluation.2846ad7aaaca7f4f.png)
+    ![Выбор оценки.](../../../../../../translated_images/ru/select-evaluation.2846ad7aaaca7f4f.webp)
 
 1. Выберите оценку **Prompt flow**.
 
-    ![Выбор оценки Prompt flow.](../../../../../../translated_images/ru/promptflow-evaluation.cb9758cc19b4760f.png)
+    ![Выбор оценки Prompt flow.](../../../../../../translated_images/ru/promptflow-evaluation.cb9758cc19b4760f.webp)
 
 1. Выполните следующие действия:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите тип задачи **Question and answer without context**, так как датасет **ULTRACHAT_200k**, используемый в этом руководстве, не содержит контекста.
     - Выберите Prompt flow, который хотите оценить.
 
-    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting1.4aa08259ff7a536e.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting1.4aa08259ff7a536e.webp)
 
 1. Нажмите **Next**.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Нажмите **Add your dataset** для загрузки датасета. Например, можно загрузить тестовый файл *test_data.json1*, который входит в состав датасета **ULTRACHAT_200k**.
     - Выберите соответствующий **Dataset column**, который соответствует вашему датасету. Например, для **ULTRACHAT_200k** выберите **${data.prompt}**.
 
-    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting2.07036831ba58d64e.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting2.07036831ba58d64e.webp)
 
 1. Нажмите **Next**.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите метрики производительности и качества, которые хотите использовать.
     - Выберите модель Azure OpenAI, созданную для оценки. Например, **gpt-4o**.
 
-    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting3-1.d1ae69e3bf80914e.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
 1. Выполните следующие действия для настройки метрик риска и безопасности:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Для **answer** выберите источник данных **{$run.outputs.answer}**.
     - Для **ground_truth** выберите источник данных **{$data.message}**.
 
-    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting3-2.d53bd075c60a45a2.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/ru/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
 1. Нажмите **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - оцените эффективность модели в генерации связных, плавных и релевантных ответов.
 
-    ![Evaluation result.](../../../../../../translated_images/ru/evaluation-result-gpu.85f48b42dfb74254.png)
+    ![Evaluation result.](../../../../../../translated_images/ru/evaluation-result-gpu.85f48b42dfb74254.webp)
 
 1. Метрики риска и безопасности:
 
     - убедитесь, что выводы модели безопасны и соответствуют принципам Ответственного ИИ, избегая любого вредоносного или оскорбительного контента.
 
-    ![Evaluation result.](../../../../../../translated_images/ru/evaluation-result-gpu-2.1b74e336118f4fd0.png)
+    ![Evaluation result.](../../../../../../translated_images/ru/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
 1. Вы можете прокрутить страницу вниз, чтобы увидеть **Подробные результаты метрик**.
 
-    ![Evaluation result.](../../../../../../translated_images/ru/detailed-metrics-result.afa2f5c39a4f5f17.png)
+    ![Evaluation result.](../../../../../../translated_images/ru/detailed-metrics-result.afa2f5c39a4f5f17.webp)
 
 1. Оценивая вашу кастомную модель Phi-3 / Phi-3.5 по показателям производительности и безопасности, вы подтверждаете, что модель не только эффективна, но и соответствует принципам ответственного ИИ, что делает её готовой к реальному применению.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Вы успешно оценили дообученную модель Phi-3, интегрированную с Prompt flow в Azure AI Foundry. Это важный шаг для того, чтобы ваши ИИ-модели не только хорошо работали, но и соответствовали принципам Ответственного ИИ Microsoft, помогая создавать надёжные и заслуживающие доверия ИИ-приложения.
 
-![Architecture.](../../../../../../translated_images/ru/architecture.10bec55250f5d6a4.png)
+![Architecture.](../../../../../../translated_images/ru/architecture.10bec55250f5d6a4.webp)
 
 ## Очистка ресурсов Azure
 

@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Microsoft Responsible AI పరిచయం
 
-![RAI సూత్రాలు](../../../../../translated_images/te/RAIPrinciples.bf9c9bc6ca160d33.png)
+![RAI సూత్రాలు](../../../../../translated_images/te/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **నైతిక సూత్రాలు** 
 

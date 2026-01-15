@@ -28,9 +28,9 @@ GPU су познати по својим паралелним рачунарс�
 
 Intel® NPU уређај је AI инференцијски акцелератор интегрисан са Intel клијентским CPU-има, почев од Intel® Core™ Ultra генерације процесора (раније познат као Meteor Lake). Омогућава енергетски ефикасно извршавање задатака вештачких неуронских мрежа.
 
-![Latency](../../../../../translated_images/sr/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/sr/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/sr/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/sr/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 При извршавању кода можемо пратити статус рада NPU преко Task Manager-а
 
-![NPU](../../../../../translated_images/sr/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/sr/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Примери*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ово је резултат извршавања
 
-![DML](../../../../../translated_images/sr/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/sr/aipc_DML.52a44180393ab491.webp)
 
 ***Примери*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 конвертовани формат изгледа овако
 
-![openvino_convert](../../../../../translated_images/sr/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/sr/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Учитајте путање модела (model_dir), релевантне конфигурације (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) и хардверски убрзане уређаје (GPU.0) преко OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 При извршавању кода можемо пратити статус рада GPU преко Task Manager-а
 
-![openvino_gpu](../../../../../translated_images/sr/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/sr/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Примери*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

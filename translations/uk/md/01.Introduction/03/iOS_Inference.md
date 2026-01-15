@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Я обрав Objective-C для розробки додатку, оскільки використання Generative AI через ONNX Runtime C++ API краще сумісне з Objective-C. Звісно, можна також реалізувати виклики через Swift bridging.
 
-![xcode](../../../../../translated_images/uk/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/uk/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Копіювання квантизованої моделі ONNX INT4 у проект додатку**
 
 Потрібно імпортувати модель квантизації INT4 у форматі ONNX, яку спочатку потрібно завантажити.
 
-![hf](../../../../../translated_images/uk/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/uk/hf.6b8504fd88ee48dd.webp)
 
 Після завантаження додайте її до каталогу Resources у проекті Xcode.
 
-![model](../../../../../translated_images/uk/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/uk/model.3b879b14e0be877d.webp)
 
 ## **6. Додавання C++ API у ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** Додайте відповідні заголовочні файли C++ до проекту.
 
-  ![Header File](../../../../../translated_images/uk/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/uk/head.64cad021ce70a333.webp)
 
 - **b.** Підключіть динамічну бібліотеку `onnxruntime-genai` у Xcode.
 
-  ![Library](../../../../../translated_images/uk/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/uk/lib.a4209b9f21ddf344.webp)
 
 - **c.** Використовуйте код з C Samples для тестування. Також можна додати додаткові функції, наприклад ChatUI, для розширення можливостей.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Після завершення налаштувань ви можете запустити додаток і побачити результати інференсу моделі Phi-3-mini.
 
-![Running Result](../../../../../translated_images/uk/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/uk/result.326a947a6a2b9c51.webp)
 
 Для отримання додаткових прикладів коду та детальних інструкцій відвідайте репозиторій [Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

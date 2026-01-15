@@ -24,7 +24,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 이 E2E 샘플의 개요는 다음과 같습니다.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ko/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/ko/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### 목차
 
@@ -49,13 +49,13 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 포털 페이지 상단의 **검색창**에 *azure machine learning*을 입력하고 표시되는 옵션 중 **Azure Machine Learning**을 선택합니다.
 
-    ![Type azure machine learning.](../../../../../../translated_images/ko/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/ko/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. 네비게이션 메뉴에서 **+ 만들기**를 선택합니다.
 
 3. 네비게이션 메뉴에서 **새 작업 영역**을 선택합니다.
 
-    ![Select new workspace.](../../../../../../translated_images/ko/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/ko/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. 다음 작업을 수행합니다:
 
@@ -68,7 +68,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 사용할 **응용 프로그램 인사이트(Application insights)**를 선택합니다(필요 시 새로 만듦).
     - 사용할 **컨테이너 레지스트리**를 선택합니다(필요 시 새로 만듦).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/ko/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/ko/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. **검토 + 만들기**를 선택합니다.
 
@@ -91,7 +91,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들어, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* (여기에는 *Standard_NC24ads_A100_v4* GPU가 포함됨)를 선택합니다.
     - 네비게이션 메뉴에서 **할당량 요청(Request quota)**을 선택합니다.
 
-        ![Request quota.](../../../../../../translated_images/ko/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/ko/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - 할당량 요청 페이지에서 사용할 **새 코어 제한(New cores limit)**을 입력합니다. 예: 24.
     - 할당량 요청 페이지에서 **제출(Submit)**을 선택하여 GPU 할당량을 요청합니다.
@@ -112,11 +112,11 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 포털 페이지 상단의 **검색창**에 *managed identities*를 입력하고 표시되는 옵션 중 **Managed Identities**를 선택합니다.
 
-    ![Type managed identities.](../../../../../../translated_images/ko/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/ko/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. **+ 만들기**를 선택합니다.
 
-    ![Select create.](../../../../../../translated_images/ko/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/ko/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -125,7 +125,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 사용할 **지역**을 선택합니다.
     - **이름**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![Select create.](../../../../../../translated_images/ko/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/ko/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. **검토 + 만들기**를 선택합니다.
 
@@ -145,7 +145,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 사용할 **리소스 그룹**을 선택합니다.
     - **역할(Role)**을 **기여자(Contributor)**로 선택합니다.
 
-    ![Fill contributor role.](../../../../../../translated_images/ko/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/ko/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. **저장(Save)**을 선택합니다.
 
@@ -153,7 +153,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 포털 페이지 상단의 **검색창**에 *storage accounts*를 입력하고 표시되는 옵션 중 **Storage accounts**를 선택합니다.
 
-    ![Type storage accounts.](../../../../../../translated_images/ko/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/ko/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. 생성한 Azure Machine Learning 작업 영역과 연결된 스토리지 계정을 선택합니다. 예: *finetunephistorage*.
 
@@ -164,7 +164,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 네비게이션 메뉴에서 **+ 추가**를 선택합니다.
     - **역할 할당 추가**를 선택합니다.
 
-    ![Add role.](../../../../../../translated_images/ko/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/ko/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. 역할 할당 추가 페이지에서 다음 작업을 수행합니다:
 
@@ -177,7 +177,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 관리 ID 선택 페이지에서 생성한 관리 ID를 선택합니다. 예: *finetunephi-managedidentity*.
     - 관리 ID 선택 페이지에서 **선택(Select)**을 선택합니다.
 
-    ![Select managed identity.](../../../../../../translated_images/ko/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/ko/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. **검토 + 할당(Review + assign)**을 선택합니다.
 
@@ -185,7 +185,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 포털 페이지 상단의 **검색창**에 *container registries*를 입력하고 표시되는 옵션 중 **Container registries**를 선택합니다.
 
-    ![Type container registries.](../../../../../../translated_images/ko/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/ko/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Azure Machine Learning 작업 영역과 연결된 컨테이너 레지스트리를 선택합니다. 예: *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. *C:\Users\yourUserName\finetune-phi* 경로에 생성한 *finetune-phi* 폴더를 선택합니다.
 
-    ![생성한 폴더를 선택합니다.](../../../../../../translated_images/ko/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![생성한 폴더를 선택합니다.](../../../../../../translated_images/ko/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Visual Studio Code 왼쪽 창에서 마우스 오른쪽 버튼을 클릭 후 **새 파일**을 선택하여 *download_dataset.py*라는 새 파일을 생성합니다.
 
-    ![새 파일 생성하기.](../../../../../../translated_images/ko/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![새 파일 생성하기.](../../../../../../translated_images/ko/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### 파인튜닝용 데이터셋 준비
 
@@ -392,7 +392,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. **+ 새로 만들기**를 선택합니다.
 
-    ![컴퓨트 선택.](../../../../../../translated_images/ko/06-01-select-compute.a29cff290b480252.png)
+    ![컴퓨트 선택.](../../../../../../translated_images/ko/06-01-select-compute.a29cff290b480252.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -402,7 +402,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - **가상 머신 크기** 필터를 **모든 옵션에서 선택**으로 설정합니다.
     - **가상 머신 크기**를 **Standard_NC24ads_A100_v4**로 선택합니다.
 
-    ![클러스터 생성.](../../../../../../translated_images/ko/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![클러스터 생성.](../../../../../../translated_images/ko/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. **다음**을 선택합니다.
 
@@ -413,7 +413,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - **최대 노드 수**를 **1**로 설정합니다.
     - **스케일 다운 전 유휴 시간(초)**를 **120**으로 설정합니다.
 
-    ![클러스터 생성.](../../../../../../translated_images/ko/06-03-create-cluster.4a54ba20914f3662.png)
+    ![클러스터 생성.](../../../../../../translated_images/ko/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. **만들기**를 선택합니다.
 
@@ -423,18 +423,18 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 생성한 Azure Machine Learning 작업 영역을 선택합니다.
 
-    ![생성한 작업 영역 선택.](../../../../../../translated_images/ko/06-04-select-workspace.a92934ac04f4f181.png)
+    ![생성한 작업 영역 선택.](../../../../../../translated_images/ko/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. 다음 작업을 수행합니다:
 
     - 좌측 탭에서 **모델 카탈로그**를 선택합니다.
     - **검색 창**에 *phi-3-mini-4k*를 입력하고 나타나는 옵션 중 **Phi-3-mini-4k-instruct**를 선택합니다.
 
-    ![phi-3-mini-4k 입력.](../../../../../../translated_images/ko/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![phi-3-mini-4k 입력.](../../../../../../translated_images/ko/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. 내비게이션 메뉴에서 **파인튜닝**을 선택합니다.
 
-    ![파인튜닝 선택.](../../../../../../translated_images/ko/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![파인튜닝 선택.](../../../../../../translated_images/ko/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -443,7 +443,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 검증 데이터 업로드 유형을 **다른 검증 데이터 제공**으로 설정합니다.
     - **+ 데이터 선택**을 클릭하여 **검증 데이터**를 업로드합니다.
 
-    ![파인튜닝 페이지 작성.](../../../../../../translated_images/ko/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![파인튜닝 페이지 작성.](../../../../../../translated_images/ko/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 이 실습에서는 Azure Machine Learning을 사용하여 Phi-3 모델을 성공적으로 파인튜닝했습니다. 파인튜닝 작업은 상당한 시간이 걸릴 수 있으니 작업이 완료될 때까지 기다려야 합니다. 작업 상태는 Azure Machine Learning 작업 영역 왼쪽 탭의 작업 탭에서 모니터링할 수 있습니다. 다음 시리즈에서는 파인튜닝된 모델을 배포하고 Prompt flow와 통합할 예정입니다.
 
-    ![파인튜닝 작업 확인.](../../../../../../translated_images/ko/06-08-output.2bd32e59930672b1.png)
+    ![파인튜닝 작업 확인.](../../../../../../translated_images/ko/06-08-output.2bd32e59930672b1.webp)
 
 ### 파인튜닝된 Phi-3 모델 배포
 
@@ -471,17 +471,17 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 생성한 Azure Machine Learning 작업 영역을 선택합니다.
 
-    ![생성한 작업 영역 선택.](../../../../../../translated_images/ko/06-04-select-workspace.a92934ac04f4f181.png)
+    ![생성한 작업 영역 선택.](../../../../../../translated_images/ko/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. 좌측 탭에서 **모델**을 선택합니다.
 1. **+ 등록**을 선택합니다.
 1. **작업 출력에서**를 선택합니다.
 
-    ![모델 등록.](../../../../../../translated_images/ko/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![모델 등록.](../../../../../../translated_images/ko/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. 생성한 작업을 선택합니다.
 
-    ![작업 선택.](../../../../../../translated_images/ko/07-02-select-job.3e2e1144cd6cd093.png)
+    ![작업 선택.](../../../../../../translated_images/ko/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. **다음**을 선택합니다.
 
@@ -489,17 +489,17 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. **작업 출력**이 자동으로 선택되어 있는지 확인합니다.
 
-    ![출력 선택.](../../../../../../translated_images/ko/07-03-select-output.4cf1a0e645baea1f.png)
+    ![출력 선택.](../../../../../../translated_images/ko/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. **다음**을 선택합니다.
 
 3. **등록**을 선택합니다.
 
-    ![등록 선택.](../../../../../../translated_images/ko/07-04-register.fd82a3b293060bc7.png)
+    ![등록 선택.](../../../../../../translated_images/ko/07-04-register.fd82a3b293060bc7.webp)
 
 4. 좌측 탭의 **모델** 메뉴에서 등록된 모델을 조회할 수 있습니다.
 
-    ![등록된 모델.](../../../../../../translated_images/ko/07-05-registered-model.7db9775f58dfd591.png)
+    ![등록된 모델.](../../../../../../translated_images/ko/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### 파인튜닝된 모델 배포
 
@@ -509,13 +509,13 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 내비게이션 메뉴에서 **실시간 엔드포인트**를 선택합니다.
 
-    ![엔드포인트 생성.](../../../../../../translated_images/ko/07-06-create-endpoint.1ba865c606551f09.png)
+    ![엔드포인트 생성.](../../../../../../translated_images/ko/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. **생성**을 선택합니다.
 
 1. 생성한 등록 모델을 선택합니다.
 
-    ![등록된 모델 선택.](../../../../../../translated_images/ko/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![등록된 모델 선택.](../../../../../../translated_images/ko/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. **선택**을 클릭합니다.
 
@@ -527,7 +527,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - **엔드포인트 이름**을 입력합니다. 고유한 값이어야 합니다.
     - **배포 이름**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![배포 설정 작성.](../../../../../../translated_images/ko/07-08-deployment-setting.43ddc4209e673784.png)
+    ![배포 설정 작성.](../../../../../../translated_images/ko/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. **배포**를 선택합니다.
 
@@ -543,14 +543,14 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 생성한 엔드포인트를 선택합니다.
 
-    ![엔드포인트 선택](../../../../../../translated_images/ko/07-09-check-deployment.325d18cae8475ef4.png)
+    ![엔드포인트 선택](../../../../../../translated_images/ko/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. 이 페이지에서 배포 과정 중 엔드포인트를 관리할 수 있습니다.
 
 > [!NOTE]
 > 배포가 완료되면 **라이브 트래픽**이 **100%**로 설정되어 있는지 확인하세요. 그렇지 않으면 **트래픽 업데이트**를 선택하여 설정을 조정해야 합니다. 트래픽이 0%이면 모델 테스트가 불가능합니다.
 >
-> ![트래픽 설정.](../../../../../../translated_images/ko/07-10-set-traffic.085b847e5751ff3d.png)
+> ![트래픽 설정.](../../../../../../translated_images/ko/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## 시나리오 3: Prompt flow와 통합하여 Azure AI Foundry에서 커스텀 모델과 대화하기
@@ -579,7 +579,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 1. 좌측 탭에서 **모든 허브**를 선택합니다.
 
 1. 내비게이션 메뉴에서 **+ 새 허브**를 선택합니다.
-![Create hub.](../../../../../../translated_images/ko/08-01-create-hub.8f7dd615bb8d9834.png)
+![Create hub.](../../../../../../translated_images/ko/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -590,7 +590,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 사용할 **Connect Azure AI Services**를 선택합니다(필요한 경우 새로 만듭니다).
     - **Connect Azure AI Search**는 **Skip connecting**을 선택합니다.
 
-![Fill hub.](../../../../../../translated_images/ko/08-02-fill-hub.c2d3b505bbbdba7c.png)
+![Fill hub.](../../../../../../translated_images/ko/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. **Next**를 선택합니다.
 
@@ -600,11 +600,11 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 네비게이션 메뉴에서 **+ New project**를 선택합니다.
 
-![Select new project.](../../../../../../translated_images/ko/08-04-select-new-project.390fadfc9c8f8f12.png)
+![Select new project.](../../../../../../translated_images/ko/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. **Project name**을 입력합니다. 고유한 값이어야 합니다.
 
-![Create project.](../../../../../../translated_images/ko/08-05-create-project.4d97f0372f03375a.png)
+![Create project.](../../../../../../translated_images/ko/08-05-create-project.4d97f0372f03375a.webp)
 
 1. **Create a project**를 선택합니다.
 
@@ -620,17 +620,17 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. 왼쪽 탭에서 **Endpoints**를 선택합니다.
 
-![Select endpoints.](../../../../../../translated_images/ko/08-06-select-endpoints.aff38d453bcf9605.png)
+![Select endpoints.](../../../../../../translated_images/ko/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. 생성한 엔드포인트를 선택합니다.
 
-![Select endpoints.](../../../../../../translated_images/ko/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+![Select endpoints.](../../../../../../translated_images/ko/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. 네비게이션 메뉴에서 **Consume**을 선택합니다.
 
 1. **REST endpoint**와 **Primary key**를 복사합니다.
 
-![Copy api key and endpoint uri.](../../../../../../translated_images/ko/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+![Copy api key and endpoint uri.](../../../../../../translated_images/ko/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### 사용자 지정 연결 추가
 
@@ -642,11 +642,11 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
 
 1. **+ New connection**을 선택합니다.
 
-![Select new connection.](../../../../../../translated_images/ko/08-09-select-new-connection.02eb45deadc401fc.png)
+![Select new connection.](../../../../../../translated_images/ko/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. 네비게이션 메뉴에서 **Custom keys**를 선택합니다.
 
-![Select custom keys.](../../../../../../translated_images/ko/08-10-select-custom-keys.856f6b2966460551.png)
+![Select custom keys.](../../../../../../translated_images/ko/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -656,7 +656,7 @@ E2E 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E
     - 키 이름에 **key**를 입력하고 Azure ML Studio에서 복사한 키를 값 필드에 붙여넣기 합니다.
     - 키를 추가한 후, 키가 노출되지 않도록 **is secret**를 선택합니다.
 
-![Add connection.](../../../../../../translated_images/ko/08-11-add-connection.785486badb4d2d26.png)
+![Add connection.](../../../../../../translated_images/ko/08-11-add-connection.785486badb4d2d26.webp)
 
 1. **Add connection**을 선택합니다.
 
@@ -670,15 +670,15 @@ Azure AI Foundry에서 사용자 지정 연결을 추가했습니다. 이제 다
 
 1. 네비게이션 메뉴에서 **+ Create**를 선택합니다.
 
-![Select Promptflow.](../../../../../../translated_images/ko/08-12-select-promptflow.6f4b451cb9821e5b.png)
+![Select Promptflow.](../../../../../../translated_images/ko/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. 네비게이션 메뉴에서 **Chat flow**를 선택합니다.
 
-![Select chat flow.](../../../../../../translated_images/ko/08-13-select-flow-type.2ec689b22da32591.png)
+![Select chat flow.](../../../../../../translated_images/ko/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. 사용할 **Folder name**을 입력합니다.
 
-![Enter name.](../../../../../../translated_images/ko/08-14-enter-name.ff9520fefd89f40d.png)
+![Enter name.](../../../../../../translated_images/ko/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. **Create**를 선택합니다.
 
@@ -715,7 +715,7 @@ fine-tuned Phi-3 모델을 Prompt flow에 통합해야 합니다. 하지만 기�
 
     - **Save**를 선택합니다.
 
-![Select raw file mode.](../../../../../../translated_images/ko/08-15-select-raw-file-mode.61d988b41df28985.png)
+![Select raw file mode.](../../../../../../translated_images/ko/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Prompt flow에서 커스텀 Phi-3 모델을 사용하려면 *integrate_with_promptflow.py* 파일에 아래 코드를 추가합니다.
 
@@ -780,14 +780,14 @@ fine-tuned Phi-3 모델을 Prompt flow에 통합해야 합니다. 하지만 기�
 
     ```
 
-![Paste prompt flow code.](../../../../../../translated_images/ko/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+![Paste prompt flow code.](../../../../../../translated_images/ko/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Azure AI Foundry에서 Prompt flow 사용에 관한 자세한 내용은 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) 문서를 참조하세요.
 
 1. **Chat input**, **Chat output**을 선택하여 모델과 채팅을 활성화합니다.
 
-![Input Output.](../../../../../../translated_images/ko/08-17-select-input-output.64dbb39bbe59d03b.png)
+![Input Output.](../../../../../../translated_images/ko/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. 이제 사용자 지정 Phi-3 모델과 채팅할 준비가 되었습니다. 다음 연습에서는 Prompt flow를 시작하고 fine-tuned Phi-3 모델과 채팅하는 방법을 배웁니다.
 
@@ -795,7 +795,7 @@ fine-tuned Phi-3 모델을 Prompt flow에 통합해야 합니다. 하지만 기�
 >
 > 재구성된 플로우는 아래 이미지와 유사해야 합니다:
 >
-> ![Flow example.](../../../../../../translated_images/ko/08-18-graph-example.d6457533952e690c.png)
+> ![Flow example.](../../../../../../translated_images/ko/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### 사용자 지정 Phi-3 모델과 채팅하기
@@ -808,25 +808,25 @@ fine-tuned Phi-3 모델을 Prompt flow에 통합해야 합니다. 하지만 기�
 
 1. **Start compute sessions**를 선택하여 Prompt flow를 시작합니다.
 
-![Start compute session.](../../../../../../translated_images/ko/09-01-start-compute-session.a86fcf5be68e386b.png)
+![Start compute session.](../../../../../../translated_images/ko/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. **Validate and parse input**을 선택하여 매개변수를 갱신합니다.
 
-![Validate input.](../../../../../../translated_images/ko/09-02-validate-input.317c76ef766361e9.png)
+![Validate input.](../../../../../../translated_images/ko/09-02-validate-input.317c76ef766361e9.webp)
 
 1. 생성한 사용자 지정 연결의 **connection** 값을 선택합니다. 예: *connection*.
 
-![Connection.](../../../../../../translated_images/ko/09-03-select-connection.99bdddb4b1844023.png)
+![Connection.](../../../../../../translated_images/ko/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### 사용자 지정 모델과 채팅하기
 
 1. **Chat**을 선택합니다.
 
-![Select chat.](../../../../../../translated_images/ko/09-04-select-chat.61936dce6612a1e6.png)
+![Select chat.](../../../../../../translated_images/ko/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. 결과 예시는 다음과 같습니다: 이제 사용자 지정 Phi-3 모델과 채팅할 수 있습니다. fine-tuning에 사용된 데이터를 기반으로 질문하는 것이 좋습니다.
 
-![Chat with prompt flow.](../../../../../../translated_images/ko/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+![Chat with prompt flow.](../../../../../../translated_images/ko/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

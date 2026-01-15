@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## İnce Ayar Senaryoları
 
-![MS Hizmetleri ile İnce Ayar](../../../../translated_images/tr/FinetuningwithMS.3d0cec8ae693e094.png)
+![MS Hizmetleri ile İnce Ayar](../../../../translated_images/tr/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Platform** Azure AI Foundry, Azure Machine Learning, AI Araçları, Kaito ve ONNX Runtime gibi çeşitli teknolojileri içerir.
 
@@ -24,7 +24,7 @@ Microsoft teknolojileriyle ince ayar süreci çeşitli bileşenler ve araçlar i
 
 Hesaplama oluşturup yönetmeye gerek kalmadan barındırılan ince ayar ile modeli ince ayarlayın.
 
-![MaaS İnce Ayar](../../../../translated_images/tr/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS İnce Ayar](../../../../translated_images/tr/MaaSfinetune.3eee4630607aff0d.webp)
 
 Phi-3-mini ve Phi-3-medium modelleri için sunucusuz ince ayar mevcuttur; bu sayede geliştiriciler, bulut ve uç senaryolar için modelleri hızlı ve kolayca özelleştirebilir, hesaplama ayarlamak zorunda kalmazlar. Ayrıca, Phi-3-small modelinin artık Hizmet Olarak Modeller (Models-as-a-Service) kapsamında sunulduğunu duyurduk; böylece geliştiriciler, altyapıyı yönetmeden yapay zeka geliştirmeye hızlıca başlayabilirler.
 
@@ -32,7 +32,7 @@ Phi-3-mini ve Phi-3-medium modelleri için sunucusuz ince ayar mevcuttur; bu say
 
 Kullanıcılar, modellerini ince ayarlamak için kendi hesaplamalarını yönetirler.
 
-![Maap İnce Ayar](../../../../translated_images/tr/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap İnce Ayar](../../../../translated_images/tr/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [İnce Ayar Örneği](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Kullanıcılar, modellerini ince ayarlamak için kendi hesaplamalarını yöneti
 
 ## İnce Ayar Performans Örnekleri
 
-![İnce Ayar Performansı](../../../../translated_images/tr/Finetuningexamples.a9a41214f8f5afc1.png)
+![İnce Ayar Performansı](../../../../translated_images/tr/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **Feragatname**:  
 Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

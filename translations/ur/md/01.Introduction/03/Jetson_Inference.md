@@ -36,7 +36,7 @@ d. Python 3.8+
 
 اگر آپ بیک وقت کلاؤڈ اور ایج ڈیوائسز میں gguf استعمال کرنا چاہتے ہیں، تو LlamaEdge کو WasmEdge کے طور پر سمجھا جا سکتا ہے (WasmEdge ایک ہلکا پھلکا، اعلیٰ کارکردگی والا، اسکیل ایبل WebAssembly رن ٹائم ہے جو کلاؤڈ نیٹو، ایج اور غیر مرکزی ایپلیکیشنز کے لیے موزوں ہے۔ یہ سرور لیس ایپلیکیشنز، ایمبیڈڈ فنکشنز، مائیکرو سروسز، اسمارٹ کنٹریکٹس اور IoT ڈیوائسز کو سپورٹ کرتا ہے۔ آپ gguf کے مقداری ماڈل کو LlamaEdge کے ذریعے ایج ڈیوائسز اور کلاؤڈ دونوں پر تعینات کر سکتے ہیں۔
 
-![llamaedge](../../../../../translated_images/ur/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/ur/llamaedge.e9d6ff96dff11cf7.webp)
 
 استعمال کے لیے اقدامات درج ذیل ہیں:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 یہاں چلانے کا نتیجہ ہے
 
-![llamaedgerun](../../../../../translated_images/ur/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/ur/llamaedgerun.bed921516c9a821c.webp)
 
 ***نمونہ کوڈ*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下是這個 E2E 範例的概覽。
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/tw/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/tw/00-01-architecture.02fc569e266d468c.webp)
 
 ### 目錄
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在入口網站頁面頂端的**搜尋列**輸入 *azure machine learning*，並從出現的選項中選擇 **Azure Machine Learning**。
 
-    ![輸入 azure machine learning](../../../../../../translated_images/tw/01-01-type-azml.a5116f8454d98c60.png)
+    ![輸入 azure machine learning](../../../../../../translated_images/tw/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. 從導覽選單中選擇 **+ 建立**。
 
 1. 從導覽選單中選擇 **新工作區**。
 
-    ![選擇新工作區](../../../../../../translated_images/tw/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![選擇新工作區](../../../../../../translated_images/tw/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. 執行以下操作：
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇要使用的 **應用程式洞察**（如需，可建立新的）。
     - 選擇要使用的 **容器註冊表**（如需，可建立新的）。
 
-    ![填寫 AZML](../../../../../../translated_images/tw/01-03-fill-AZML.730a5177757bbebb.png)
+    ![填寫 AZML](../../../../../../translated_images/tw/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. 選擇 **審查 + 建立**。
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇要使用的 **虛擬機器系列**，例如選擇含有 *Standard_NC24ads_A100_v4* GPU 的 **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**。
     - 從導覽選單選擇 **申請配額**。
 
-        ![申請配額](../../../../../../translated_images/tw/01-04-request-quota.3d3670c3221ab834.png)
+        ![申請配額](../../../../../../translated_images/tw/01-04-request-quota.3d3670c3221ab834.webp)
 
     - 在申請配額頁面，輸入您想使用的 **新核心限制**，例如 24。
     - 在申請配額頁面，選擇 **提交** 申請 GPU 配額。
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在入口網站頁面頂端搜尋列輸入 *managed identities*，並從選項中選擇 **Managed Identities**。
 
-    ![輸入 managed identities](../../../../../../translated_images/tw/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![輸入 managed identities](../../../../../../translated_images/tw/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. 選擇 **+ 建立**。
 
-    ![選擇建立](../../../../../../translated_images/tw/01-06-select-create.936d8d66d7144f9a.png)
+    ![選擇建立](../../../../../../translated_images/tw/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. 執行以下操作：
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇要使用的 **資源群組**。
     - 選擇 **角色**為 **貢獻者**。
 
-    ![填寫貢獻者角色](../../../../../../translated_images/tw/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![填寫貢獻者角色](../../../../../../translated_images/tw/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. 選擇 **儲存**。
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在入口網站頁面頂端搜尋列輸入 *storage accounts*，並從選項中選擇 **Storage accounts**。
 
-    ![輸入 storage accounts](../../../../../../translated_images/tw/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![輸入 storage accounts](../../../../../../translated_images/tw/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. 選擇與您建立的 Azure Machine Learning 工作區相關聯的儲存帳戶。例如 *finetunephistorage*。
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 從導覽選單選擇 **+ 新增**。
     - 從導覽選單選擇 **新增角色指派**。
 
-    ![新增角色](../../../../../../translated_images/tw/01-09-add-role.d2db22fec1b187f0.png)
+    ![新增角色](../../../../../../translated_images/tw/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. 在新增角色指派頁面中，執行以下操作：
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇您建立的管理身份，例如 *finetunephi-managedidentity*。
     - 點選 **選擇**。
 
-    ![選擇管理身份](../../../../../../translated_images/tw/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![選擇管理身份](../../../../../../translated_images/tw/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. 點選 **審查 + 指派**。
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在入口網站頁面頂端搜尋列輸入 *container registries*，並從選項中選擇 **Container registries**。
 
-    ![輸入 container registries](../../../../../../translated_images/tw/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![輸入 container registries](../../../../../../translated_images/tw/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. 選擇與 Azure Machine Learning 工作區相關聯的容器註冊，例：*finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 選擇您建立的 *finetune-phi* 資料夾，位於 *C:\Users\yourUserName\finetune-phi*。
 
-    ![打開專案資料夾。](../../../../../../translated_images/tw/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![打開專案資料夾。](../../../../../../translated_images/tw/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. 在 Visual Studio Code 左側窗格中，右鍵點擊並選擇 **New File** 以建立名為 *download_dataset.py* 的新檔案。
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在 Visual Studio Code 左側窗格中，右鍵點擊並選擇 **New File** 以建立名為 *deploy_model.py* 的新檔案。
 
-    ![建立新檔案。](../../../../../../translated_images/tw/01-13-create-new-file.c17c150fff384a39.png)
+    ![建立新檔案。](../../../../../../translated_images/tw/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. 在 Visual Studio Code 左側窗格中，右鍵點擊並選擇 **New Folder** 以建立名為 *finetuning_dir* 的新資料夾。
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇您目前正在使用的 Azure 訂閱。
     - 複製並貼上您的訂閱 ID 至 *config.py* 檔案。
 
-    ![找到訂閱 id。](../../../../../../translated_images/tw/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![找到訂閱 id。](../../../../../../translated_images/tw/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. 執行以下操作以新增 Azure 工作區名稱：
 
     - 導航至您建立的 Azure 機器學習資源。
     - 複製並貼上您的帳戶名稱至 *config.py* 檔案。
 
-    ![找到 Azure 機器學習名稱。](../../../../../../translated_images/tw/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![找到 Azure 機器學習名稱。](../../../../../../translated_images/tw/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. 執行以下操作以新增 Azure 資源群組名稱：
 
     - 導航至您建立的 Azure 機器學習資源。
     - 複製並貼上您的 Azure 資源群組名稱至 *config.py* 檔案。
 
-    ![找到資源群組名稱。](../../../../../../translated_images/tw/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![找到資源群組名稱。](../../../../../../translated_images/tw/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. 執行以下操作以新增 Azure 託管識別名稱
 
     - 導航至您建立的 託管識別 (Managed Identities) 資源。
     - 複製並貼上您的 Azure 託管識別名稱至 *config.py* 檔案。
 
-    ![找到 UAI。](../../../../../../translated_images/tw/01-17-find-uai.3529464f53499827.png)
+    ![找到 UAI。](../../../../../../translated_images/tw/01-17-find-uai.3529464f53499827.webp)
 
 ### 準備微調用資料集
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 選擇您要使用的 Azure 訂閱。
 
-    ![找到資源群組名稱。](../../../../../../translated_images/tw/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![找到資源群組名稱。](../../../../../../translated_images/tw/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在此練習中，您成功使用 Azure 機器學習微調了 Phi-3 模型。執行 *setup_ml.py* 腳本後，您已設定 Azure 機器學習環境並啟動 *fine_tune.py* 中定義的微調流程。請注意，微調過程可能需要相當長的時間。執行 `python setup_ml.py` 指令後，您需要等待該流程完成。您可以透過終端列中提供的連結到 Azure 機器學習入口網站，監控微調工作的狀態。
 
-    ![查看微調工作。](../../../../../../translated_images/tw/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![查看微調工作。](../../../../../../translated_images/tw/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### 部署微調後模型
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 從左側標籤選擇 **Endpoints**。
 
-    ![Select endpoints.](../../../../../../translated_images/tw/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/tw/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. 選擇您建立的端點。
 
-    ![Select endpoints that you created.](../../../../../../translated_images/tw/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/tw/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. 在此頁面中，您可以管理在部署過程中建立的端點。
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. 複製並貼上您的 **REST endpoint** 至 *config.py* 檔案，將 `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` 替換為您的 **REST endpoint**。
 1. 複製並貼上您的 **Primary key** 至 *config.py* 檔案，將 `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` 替換為您的 **Primary key**。
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/tw/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/tw/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### 新增程式碼至 *flow.dag.yml* 檔案
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 以下是結果範例：現在您可以與您的自訂 Phi-3 模型聊天。建議根據用於精調的資料提出相關問題。
 
-    ![Prompt flow example.](../../../../../../translated_images/tw/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/tw/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Izbral sem Objective-C kot način razvoja aplikacije, ker je uporaba Generative AI z ONNX Runtime C++ API-jem v Objective-C bolj združljiva. Seveda lahko ustrezne klice izvedete tudi preko Swift bridginga.
 
-![xcode](../../../../../translated_images/sl/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/sl/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Kopirajte ONNX kvantizirani INT4 model v projekt aplikacije**
 
 Potrebno je uvoziti INT4 kvantizacijski model v ONNX formatu, ki ga je treba najprej prenesti.
 
-![hf](../../../../../translated_images/sl/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/sl/hf.6b8504fd88ee48dd.webp)
 
 Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
-![model](../../../../../translated_images/sl/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/sl/model.3b879b14e0be877d.webp)
 
 ## **6. Dodajanje C++ API v ViewControllers**
 
@@ -121,11 +121,11 @@ Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
 - **a.** Dodajte ustrezne C++ glave datotek v projekt.
 
-  ![Header File](../../../../../translated_images/sl/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/sl/head.64cad021ce70a333.webp)
 
 - **b.** Vključite dinamično knjižnico `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/sl/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/sl/lib.a4209b9f21ddf344.webp)
 
 - **c.** Za testiranje uporabite C vzorčno kodo. Dodate lahko tudi dodatne funkcije, kot je ChatUI, za večjo funkcionalnost.
 
@@ -162,7 +162,7 @@ Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
 Ko je nastavitev končana, lahko zaženete aplikacijo in si ogledate rezultate inference modela Phi-3-mini.
 
-![Running Result](../../../../../translated_images/sl/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/sl/result.326a947a6a2b9c51.webp)
 
 Za več vzorčne kode in podrobna navodila obiščite [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

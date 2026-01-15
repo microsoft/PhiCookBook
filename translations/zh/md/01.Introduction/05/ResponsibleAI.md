@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Microsoft Responsible AI 概述
 
-![RAIPrinciples](../../../../../translated_images/zh/RAIPrinciples.bf9c9bc6ca160d33.png)
+![RAIPrinciples](../../../../../translated_images/zh/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **伦理原则**
 

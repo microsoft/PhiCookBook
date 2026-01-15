@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal, güçlü görüntü okuma yeteneklerine sahiptir. Aşağıdaki fonksiyonları Python ile gerçekleştirmeyi deneyelim. Görüntü, bir ChatGPT sayfasıdır.
 
-![demo](../../../../../../../translated_images/tr/demo.609a55a7a2b9ed27.png)
+![demo](../../../../../../../translated_images/tr/demo.609a55a7a2b9ed27.webp)
 
 ### **Örnek Kod**
 

@@ -33,33 +33,33 @@ Prompt flow สามารถเชื่อมต่อกับ OpenAI, Azure
 
 1. ติดตั้ง Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/th/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/th/pfvscode.eff93dfc66a42cbe.webp)
 
 2. หลังจากติดตั้ง Prompt flow VS Code Extension แล้ว คลิกที่ส่วนขยาย และเลือก **Installation dependencies** ทำตามคำแนะนำนี้เพื่อติดตั้ง Prompt flow SDK ในสภาพแวดล้อมของคุณ
 
-![pfsetup](../../../../../../translated_images/th/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/th/pfsetup.b46e93096f5a254f.webp)
 
 3. ดาวน์โหลด [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) และใช้ VS Code เปิดตัวอย่างนี้
 
-![pfsample](../../../../../../translated_images/th/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/th/pfsample.8d89e70584ffe7c4.webp)
 
 4. เปิดไฟล์ **flow.dag.yaml** เพื่อเลือกสภาพแวดล้อม Python ของคุณ
 
-![pfdag](../../../../../../translated_images/th/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/th/pfdag.264a77f7366458ff.webp)
 
    เปิดไฟล์ **chat_phi3_ort.py** เพื่อเปลี่ยนตำแหน่งโมเดล Phi-3.5-instruct ONNX ของคุณ
 
-![pfphi](../../../../../../translated_images/th/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/th/pfphi.72da81d74244b45f.webp)
 
 5. รัน prompt flow ของคุณเพื่อทดสอบ
 
 เปิดไฟล์ **flow.dag.yaml** แล้วคลิก visual editor
 
-![pfv](../../../../../../translated_images/th/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/th/pfv.ba8a81f34b20f603.webp)
 
 หลังจากคลิกแล้ว ให้รันเพื่อทดสอบ
 
-![pfflow](../../../../../../translated_images/th/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/th/pfflow.4e1135a089b1ce1b.webp)
 
 1. คุณสามารถรันแบบ batch ในเทอร์มินัลเพื่อตรวจสอบผลลัพธ์เพิ่มเติม
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 คุณสามารถตรวจสอบผลลัพธ์ในเบราว์เซอร์เริ่มต้นของคุณ
 
 
-![pfresult](../../../../../../translated_images/th/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/th/pfresult.c22c826f8062d7cb.webp)
 
 **ข้อจำกัดความรับผิดชอบ**:  
 เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดขึ้นจากการใช้การแปลนี้

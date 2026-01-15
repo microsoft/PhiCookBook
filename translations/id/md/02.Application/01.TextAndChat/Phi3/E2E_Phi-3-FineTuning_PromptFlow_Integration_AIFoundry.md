@@ -23,7 +23,7 @@ Dalam contoh E2E ini, Anda akan mempelajari cara menyesuaikan model Phi-3 dan me
 
 Berikut adalah ikhtisar dari contoh E2E ini.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/id/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/id/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Daftar Isi
 
@@ -48,13 +48,13 @@ Berikut adalah ikhtisar dari contoh E2E ini.
 
 1. Ketik *azure machine learning* di **bar pencarian** di bagian atas halaman portal dan pilih **Azure Machine Learning** dari opsi yang muncul.
 
-    ![Ketik azure machine learning.](../../../../../../translated_images/id/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Ketik azure machine learning.](../../../../../../translated_images/id/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Pilih **+ Create** dari menu navigasi.
 
 3. Pilih **New workspace** dari menu navigasi.
 
-    ![Pilih new workspace.](../../../../../../translated_images/id/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Pilih new workspace.](../../../../../../translated_images/id/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Lakukan tugas berikut:
 
@@ -67,7 +67,7 @@ Berikut adalah ikhtisar dari contoh E2E ini.
     - Pilih **Application insights** yang akan digunakan (buat yang baru jika perlu).
     - Pilih **Container registry** yang akan digunakan (buat yang baru jika perlu).
 
-    ![Isi azure machine learning.](../../../../../../translated_images/id/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Isi azure machine learning.](../../../../../../translated_images/id/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Pilih **Review + Create**.
 
@@ -90,7 +90,7 @@ Dalam tutorial ini, Anda akan belajar cara menyesuaikan dan menyebarkan model Ph
     - Pilih **Virtual machine family** yang akan digunakan. Contohnya, pilih **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, yang mencakup GPU *Standard_NC24ads_A100_v4*.
     - Pilih **Request quota** dari menu navigasi.
 
-        ![Permintaan kuota.](../../../../../../translated_images/id/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Permintaan kuota.](../../../../../../translated_images/id/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Di halaman Request quota, masukkan **New cores limit** yang ingin Anda gunakan. Contohnya, 24.
     - Di halaman Request quota, pilih **Submit** untuk mengirim permintaan kuota GPU.
@@ -111,11 +111,11 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
 
 1. Ketik *managed identities* di **bar pencarian** di bagian atas halaman portal dan pilih **Managed Identities** dari opsi yang muncul.
 
-    ![Ketik managed identities.](../../../../../../translated_images/id/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Ketik managed identities.](../../../../../../translated_images/id/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Pilih **+ Create**.
 
-    ![Pilih create.](../../../../../../translated_images/id/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Pilih create.](../../../../../../translated_images/id/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Lakukan tugas berikut:
 
@@ -124,7 +124,7 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
     - Pilih **Region** yang ingin Anda gunakan.
     - Masukkan **Name**. Harus berupa nilai unik.
 
-    ![Pilih create.](../../../../../../translated_images/id/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Pilih create.](../../../../../../translated_images/id/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Pilih **Review + create**.
 
@@ -144,7 +144,7 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
     - Pilih **Resource group** yang akan digunakan.
     - Pilih **Role** ke **Contributor**.
 
-    ![Isi peran contributor.](../../../../../../translated_images/id/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Isi peran contributor.](../../../../../../translated_images/id/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Pilih **Save**.
 
@@ -152,7 +152,7 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
 
 1. Ketik *storage accounts* di **bar pencarian** di bagian atas halaman portal dan pilih **Storage accounts** dari opsi yang muncul.
 
-    ![Ketik storage accounts.](../../../../../../translated_images/id/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Ketik storage accounts.](../../../../../../translated_images/id/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Pilih storage account yang terkait dengan Azure Machine Learning workspace yang Anda buat. Contohnya, *finetunephistorage*.
 
@@ -163,7 +163,7 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
     - Pilih **+ Add** dari menu navigasi.
     - Pilih **Add role assignment** dari menu navigasi.
 
-    ![Tambah peran.](../../../../../../translated_images/id/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Tambah peran.](../../../../../../translated_images/id/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Di halaman Add role assignment, lakukan tugas berikut:
 
@@ -176,7 +176,7 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
     - Di halaman Select managed identities, pilih Manage Identity yang Anda buat. Contohnya, *finetunephi-managedidentity*.
     - Di halaman Select managed identities, pilih **Select**.
 
-    ![Pilih managed identity.](../../../../../../translated_images/id/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Pilih managed identity.](../../../../../../translated_images/id/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Pilih **Review + assign**.
 
@@ -184,7 +184,7 @@ Untuk menyesuaikan dan menyebarkan model Anda, Anda harus terlebih dahulu membua
 
 1. Ketik *container registries* di **bar pencarian** di bagian atas halaman portal dan pilih **Container registries** dari opsi yang muncul.
 
-    ![Ketik container registries.](../../../../../../translated_images/id/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Ketik container registries.](../../../../../../translated_images/id/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Pilih container registry yang terkait dengan Azure Machine Learning workspace. Contohnya, *finetunephicontainerregistry*
 
@@ -275,11 +275,11 @@ Dalam latihan ini, Anda akan
 
 1. Pilih folder *finetune-phi* yang telah Anda buat, yang terletak di *C:\Users\yourUserName\finetune-phi*.
 
-    ![Pilih folder yang telah Anda buat.](../../../../../../translated_images/id/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Pilih folder yang telah Anda buat.](../../../../../../translated_images/id/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk membuat file baru bernama *download_dataset.py*.
 
-    ![Buat file baru.](../../../../../../translated_images/id/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Buat file baru.](../../../../../../translated_images/id/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Persiapkan dataset untuk fine-tuning
 
@@ -391,7 +391,7 @@ Dalam latihan ini, Anda akan:
 
 1. Pilih **+ New**.
 
-    ![Pilih compute.](../../../../../../translated_images/id/06-01-select-compute.a29cff290b480252.png)
+    ![Pilih compute.](../../../../../../translated_images/id/06-01-select-compute.a29cff290b480252.webp)
 
 1. Lakukan tugas berikut:
 
@@ -401,7 +401,7 @@ Dalam latihan ini, Anda akan:
     - Pilih filter **Virtual machine size** ke **Select from all options**.
     - Pilih **Virtual machine size** menjadi **Standard_NC24ads_A100_v4**.
 
-    ![Buat klaster.](../../../../../../translated_images/id/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Buat klaster.](../../../../../../translated_images/id/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Pilih **Next**.
 
@@ -412,7 +412,7 @@ Dalam latihan ini, Anda akan:
     - Pilih **Maximum number of nodes** menjadi **1**.
     - Pilih **Idle seconds before scale down** menjadi **120**.
 
-    ![Buat klaster.](../../../../../../translated_images/id/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Buat klaster.](../../../../../../translated_images/id/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Pilih **Create**.
 
@@ -422,18 +422,18 @@ Dalam latihan ini, Anda akan:
 
 1. Pilih workspace Azure Machine Learning yang telah Anda buat.
 
-    ![Pilih workspace yang telah Anda buat.](../../../../../../translated_images/id/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Pilih workspace yang telah Anda buat.](../../../../../../translated_images/id/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Lakukan tugas berikut:
 
     - Pilih **Model catalog** dari tab sisi kiri.
     - Ketik *phi-3-mini-4k* di **search bar** dan pilih **Phi-3-mini-4k-instruct** dari opsi yang muncul.
 
-    ![Ketik phi-3-mini-4k.](../../../../../../translated_images/id/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Ketik phi-3-mini-4k.](../../../../../../translated_images/id/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Pilih **Fine-tune** dari menu navigasi.
 
-    ![Pilih fine tune.](../../../../../../translated_images/id/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Pilih fine tune.](../../../../../../translated_images/id/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Lakukan tugas berikut:
 
@@ -442,7 +442,7 @@ Dalam latihan ini, Anda akan:
     - Pilih tipe unggahan Validation data ke **Provide different validation data**.
     - Pilih **+ Select data** untuk mengunggah **Validation data**.
 
-    ![Isi halaman fine-tuning.](../../../../../../translated_images/id/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Isi halaman fine-tuning.](../../../../../../translated_images/id/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -452,7 +452,7 @@ Dalam latihan ini, Anda akan:
 
 1. Dalam latihan ini, Anda berhasil melakukan fine-tune model Phi-3 menggunakan Azure Machine Learning. Harap dicatat bahwa proses fine-tuning bisa memakan waktu cukup lama. Setelah menjalankan pekerjaan fine-tuning, Anda perlu menunggu hingga selesai. Anda dapat memantau status pekerjaan fine-tuning dengan membuka tab Jobs di sisi kiri Workspace Azure Machine Learning Anda. Dalam seri berikutnya, Anda akan melakukan deploy model yang telah di-fine-tune dan mengintegrasikannya dengan Prompt flow.
 
-    ![Lihat pekerjaan fine-tuning.](../../../../../../translated_images/id/06-08-output.2bd32e59930672b1.png)
+    ![Lihat pekerjaan fine-tuning.](../../../../../../translated_images/id/06-08-output.2bd32e59930672b1.webp)
 
 ### Deploy model Phi-3 yang telah di-fine-tune
 
@@ -470,17 +470,17 @@ Dalam latihan ini, Anda akan:
 
 1. Pilih workspace Azure Machine Learning yang telah Anda buat.
 
-    ![Pilih workspace yang telah Anda buat.](../../../../../../translated_images/id/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Pilih workspace yang telah Anda buat.](../../../../../../translated_images/id/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Pilih **Models** dari tab sisi kiri.
 1. Pilih **+ Register**.
 1. Pilih **From a job output**.
 
-    ![Daftarkan model.](../../../../../../translated_images/id/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Daftarkan model.](../../../../../../translated_images/id/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Pilih pekerjaan yang telah Anda buat.
 
-    ![Pilih pekerjaan.](../../../../../../translated_images/id/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Pilih pekerjaan.](../../../../../../translated_images/id/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Pilih **Next**.
 
@@ -488,17 +488,17 @@ Dalam latihan ini, Anda akan:
 
 1. Pastikan **Job output** dipilih; ini akan terpilih secara otomatis.
 
-    ![Pilih output.](../../../../../../translated_images/id/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Pilih output.](../../../../../../translated_images/id/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Pilih **Next**.
 
 3. Pilih **Register**.
 
-    ![Pilih register.](../../../../../../translated_images/id/07-04-register.fd82a3b293060bc7.png)
+    ![Pilih register.](../../../../../../translated_images/id/07-04-register.fd82a3b293060bc7.webp)
 
 4. Anda dapat melihat model yang terdaftar dengan menavigasi ke menu **Models** dari tab sisi kiri.
 
-    ![Model terdaftar.](../../../../../../translated_images/id/07-05-registered-model.7db9775f58dfd591.png)
+    ![Model terdaftar.](../../../../../../translated_images/id/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Deploy model yang telah di-fine-tune
 
@@ -508,13 +508,13 @@ Dalam latihan ini, Anda akan:
 
 1. Pilih **Real-time endpoints** dari menu navigasi.
 
-    ![Buat endpoint.](../../../../../../translated_images/id/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Buat endpoint.](../../../../../../translated_images/id/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Pilih **Create**.
 
 1. Pilih model yang telah Anda daftarkan.
 
-    ![Pilih model yang terdaftar.](../../../../../../translated_images/id/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Pilih model yang terdaftar.](../../../../../../translated_images/id/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Pilih **Select**.
 
@@ -526,7 +526,7 @@ Dalam latihan ini, Anda akan:
     - Masukkan **Endpoint name**. Harus unik.
     - Masukkan **Deployment name**. Harus unik.
 
-    ![Isi pengaturan deployment.](../../../../../../translated_images/id/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Isi pengaturan deployment.](../../../../../../translated_images/id/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Pilih **Deploy**.
 
@@ -542,14 +542,14 @@ Dalam latihan ini, Anda akan:
 
 1. Pilih endpoint yang telah Anda buat.
 
-    ![Pilih endpoints](../../../../../../translated_images/id/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Pilih endpoints](../../../../../../translated_images/id/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. Pada halaman ini, Anda dapat mengelola endpoints selama proses deployment.
 
 > [!NOTE]
 > Setelah deployment selesai, pastikan **Live traffic** diatur ke **100%**. Jika belum, pilih **Update traffic** untuk menyesuaikan pengaturan lalu lintas. Perlu dicatat bahwa Anda tidak dapat menguji model jika lalu lintas diatur ke 0%.
 >
-> ![Atur lalu lintas.](../../../../../../translated_images/id/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Atur lalu lintas.](../../../../../../translated_images/id/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Skenario 3: Integrasi dengan Prompt flow dan Mengobrol dengan model kustom Anda di Azure AI Foundry
@@ -578,7 +578,7 @@ Anda perlu membuat Hub sebelum membuat Proyek. Hub berfungsi seperti Resource Gr
 1. Pilih **All hubs** dari tab sisi kiri.
 
 1. Pilih **+ New hub** dari menu navigasi.
-    ![Buat hub.](../../../../../../translated_images/id/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Buat hub.](../../../../../../translated_images/id/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Lakukan tugas-tugas berikut:
 
@@ -589,7 +589,7 @@ Anda perlu membuat Hub sebelum membuat Proyek. Hub berfungsi seperti Resource Gr
     - Pilih **Connect Azure AI Services** yang akan digunakan (buat yang baru jika diperlukan).
     - Pilih **Connect Azure AI Search** ke **Skip connecting**.
 
-    ![Isi hub.](../../../../../../translated_images/id/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Isi hub.](../../../../../../translated_images/id/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Pilih **Next**.
 
@@ -599,11 +599,11 @@ Anda perlu membuat Hub sebelum membuat Proyek. Hub berfungsi seperti Resource Gr
 
 1. Pilih **+ New project** dari menu navigasi.
 
-    ![Pilih proyek baru.](../../../../../../translated_images/id/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Pilih proyek baru.](../../../../../../translated_images/id/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Masukkan **Nama Proyek**. Ini harus berupa nilai unik.
 
-    ![Buat proyek.](../../../../../../translated_images/id/08-05-create-project.4d97f0372f03375a.png)
+    ![Buat proyek.](../../../../../../translated_images/id/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Pilih **Create a project**.
 
@@ -619,17 +619,17 @@ Untuk mengintegrasikan model Phi-3 kustom Anda dengan Prompt flow, Anda perlu me
 
 1. Pilih **Endpoints** dari tab sisi kiri.
 
-    ![Pilih endpoints.](../../../../../../translated_images/id/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Pilih endpoints.](../../../../../../translated_images/id/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Pilih endpoint yang Anda buat.
 
-    ![Pilih endpoints.](../../../../../../translated_images/id/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Pilih endpoints.](../../../../../../translated_images/id/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Pilih **Consume** dari menu navigasi.
 
 1. Salin **REST endpoint** dan **Primary key** Anda.
 
-    ![Salin kunci api dan URI endpoint.](../../../../../../translated_images/id/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Salin kunci api dan URI endpoint.](../../../../../../translated_images/id/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Tambahkan Koneksi Kustom
 
@@ -641,11 +641,11 @@ Untuk mengintegrasikan model Phi-3 kustom Anda dengan Prompt flow, Anda perlu me
 
 1. Pilih **+ New connection**.
 
-    ![Pilih koneksi baru.](../../../../../../translated_images/id/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Pilih koneksi baru.](../../../../../../translated_images/id/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Pilih **Custom keys** dari menu navigasi.
 
-    ![Pilih kunci kustom.](../../../../../../translated_images/id/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Pilih kunci kustom.](../../../../../../translated_images/id/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Lakukan tugas-tugas berikut:
 
@@ -655,7 +655,7 @@ Untuk mengintegrasikan model Phi-3 kustom Anda dengan Prompt flow, Anda perlu me
     - Untuk nama kunci, masukkan **key** dan tempel kunci yang Anda salin dari Azure ML Studio ke dalam bidang nilai.
     - Setelah menambahkan kunci, pilih **is secret** untuk mencegah kunci terekspos.
 
-    ![Tambahkan koneksi.](../../../../../../translated_images/id/08-11-add-connection.785486badb4d2d26.png)
+    ![Tambahkan koneksi.](../../../../../../translated_images/id/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Pilih **Add connection**.
 
@@ -669,15 +669,15 @@ Anda telah menambahkan koneksi kustom di Azure AI Foundry. Sekarang, mari buat P
 
 1. Pilih **+ Create** dari menu navigasi.
 
-    ![Pilih Promptflow.](../../../../../../translated_images/id/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Pilih Promptflow.](../../../../../../translated_images/id/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Pilih **Chat flow** dari menu navigasi.
 
-    ![Pilih chat flow.](../../../../../../translated_images/id/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Pilih chat flow.](../../../../../../translated_images/id/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Masukkan **Nama Folder** yang akan digunakan.
 
-    ![Masukkan nama.](../../../../../../translated_images/id/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Masukkan nama.](../../../../../../translated_images/id/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Pilih **Create**.
 
@@ -714,7 +714,7 @@ Anda perlu mengintegrasikan model Phi-3 yang di-fine-tune ke dalam Prompt flow. 
 
     - Pilih **Save**.
 
-    ![Pilih raw file mode.](../../../../../../translated_images/id/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Pilih raw file mode.](../../../../../../translated_images/id/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Tambahkan kode berikut ke file *integrate_with_promptflow.py* untuk menggunakan model Phi-3 kustom di Prompt flow.
 
@@ -779,14 +779,14 @@ Anda perlu mengintegrasikan model Phi-3 yang di-fine-tune ke dalam Prompt flow. 
 
     ```
 
-    ![Tempel kode prompt flow.](../../../../../../translated_images/id/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Tempel kode prompt flow.](../../../../../../translated_images/id/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Untuk informasi lebih rinci mengenai penggunaan Prompt flow di Azure AI Foundry, Anda dapat merujuk ke [Prompt flow di Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Pilih **Chat input**, **Chat output** untuk mengaktifkan chat dengan model Anda.
 
-    ![Input Output.](../../../../../../translated_images/id/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Input Output.](../../../../../../translated_images/id/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Sekarang Anda siap untuk mengobrol dengan model Phi-3 kustom Anda. Pada latihan berikutnya, Anda akan mempelajari cara memulai Prompt flow dan menggunakannya untuk mengobrol dengan model Phi-3 yang telah di-fine-tune.
 
@@ -794,7 +794,7 @@ Anda perlu mengintegrasikan model Phi-3 yang di-fine-tune ke dalam Prompt flow. 
 >
 > Flow yang dibangun ulang harus terlihat seperti gambar berikut:
 >
-> ![Contoh flow.](../../../../../../translated_images/id/08-18-graph-example.d6457533952e690c.png)
+> ![Contoh flow.](../../../../../../translated_images/id/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Mengobrol dengan model Phi-3 kustom Anda
@@ -807,25 +807,25 @@ Sekarang setelah Anda melakukan fine-tuning dan mengintegrasikan model Phi-3 kus
 
 1. Pilih **Start compute sessions** untuk memulai Prompt flow.
 
-    ![Mulai sesi komputasi.](../../../../../../translated_images/id/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Mulai sesi komputasi.](../../../../../../translated_images/id/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Pilih **Validate and parse input** untuk memperbarui parameter.
 
-    ![Validasi input.](../../../../../../translated_images/id/09-02-validate-input.317c76ef766361e9.png)
+    ![Validasi input.](../../../../../../translated_images/id/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Pilih **Value** dari **connection** ke koneksi kustom yang Anda buat. Misalnya, *connection*.
 
-    ![Koneksi.](../../../../../../translated_images/id/09-03-select-connection.99bdddb4b1844023.png)
+    ![Koneksi.](../../../../../../translated_images/id/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Mengobrol dengan model kustom Anda
 
 1. Pilih **Chat**.
 
-    ![Pilih chat.](../../../../../../translated_images/id/09-04-select-chat.61936dce6612a1e6.png)
+    ![Pilih chat.](../../../../../../translated_images/id/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Berikut adalah contoh hasilnya: Sekarang Anda dapat mengobrol dengan model Phi-3 kustom Anda. Disarankan untuk mengajukan pertanyaan berdasarkan data yang digunakan untuk fine-tuning.
 
-    ![Chat dengan prompt flow.](../../../../../../translated_images/id/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat dengan prompt flow.](../../../../../../translated_images/id/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

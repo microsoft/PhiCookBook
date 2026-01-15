@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 இதோ இந்த E2E மாதிரியின் ஒரு கண்ணோட்டம்.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ta/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ta/00-01-architecture.02fc569e266d468c.webp)
 
 ### உள்ளடக்க அட்டவணை
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *azure machine learning* என்பதைக் கொடுத்து தோன்றும் விருப்பங்களில் இருந்து **Azure Machine Learning** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Type azure machine learning](../../../../../../translated_images/ta/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/ta/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. வழிசெலுத்தல் பட்டியில் இருந்து **+ Create** ஐ தேர்ந்தெடுக்கவும்.
 
 1. வழிசெலுத்தல் பட்டியில் இருந்து **New workspace** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Select new workspace](../../../../../../translated_images/ta/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/ta/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. பின்வரும் பணிகளைச் செய்யவும்:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - பயன்பாட்டுக்குரிய **Application insights** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது).
     - பயன்பாட்டுக்குரிய **Container registry** ஐ தேர்ந்தெடுக்கவும் (தேவைப்பட்டால் புதியது).
 
-    ![Fill AZML.](../../../../../../translated_images/ta/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/ta/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. **Review + Create** ஐ தேர்ந்தெடுக்கவும்.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - பயன்படுத்த வேண்டிய **Virtual machine family** ஐ தேர்ந்தெடுக்கவும். உதாரணமாக, *Standard_NC24ads_A100_v4* GPU உட்படிவரும் **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ஐ தேர்ந்தெடுக்கவும்.
     - வழிசெலுத்தல் பட்டியில் இருந்து **Request quota** ஐ தேர்ந்தெடுக்கவும்.
 
-        ![Request quota.](../../../../../../translated_images/ta/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/ta/01-04-request-quota.3d3670c3221ab834.webp)
 
     - Request quota பக்கத்திலுள்ள **New cores limit** ஐ நீங்கள் தேவையான மதிப்பை உள்ளிடவும். உதாரணமாக, 24.
     - Request quota பக்கத்தில் **Submit** ஐ தேர்ந்தெடுத்து GPU வட்டாரத்தை கோரவும்.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *managed identities* என்று உள்ளிட்டு தோன்றும் விருப்பங்களில் இருந்து **Managed Identities** ஐ தேர்ந்தெடுக்கவும்.
 
-    ![Type managed identities.](../../../../../../translated_images/ta/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/ta/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. **+ Create** ஐ தேர்ந்தெடுக்கவும்.
 
-    ![Select create.](../../../../../../translated_images/ta/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/ta/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. பின்வரும் பணிகளைச் செய்யவும்:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - பயன்படுத்த வேண்டிய **Resource group** ஐத் தேர்ந்தெடுக்கவும்.
     - **Role** ஐ **Contributor** ஆக தேர்ந்தெடுக்கவும்.
 
-    ![Fill contributor role.](../../../../../../translated_images/ta/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/ta/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. **Save** ஐத் தேர்ந்தெடுக்கவும்.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *storage accounts* என்று உள்ளிட்டு தோன்றும் விருப்பங்களில் இருந்து **Storage accounts** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Type storage accounts.](../../../../../../translated_images/ta/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/ta/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. உங்கள் Azure Machine Learning வேலைநிரலிடம் சார்ந்த சேமிப்பக கணக்கை தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - வழிசெலுத்தல் பட்டியில் இருந்து **+ Add** ஐத் தேர்ந்தெடுக்கவும்.
     - **Add role assignment** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Add role.](../../../../../../translated_images/ta/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/ta/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. Add role assignment பக்கத்தில் பின்வரும் பணிகளைச் செய்யவும்:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities பக்கத்தில் நீங்கள் உருவாக்கிய Managed Identity ஐ (உதாரணம்: *finetunephi-managedidentity*) தேர்ந்தெடுக்கவும்.
     - Select managed identities பக்கத்தில் **Select** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Select managed identity.](../../../../../../translated_images/ta/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/ta/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. **Review + assign** ஐத் தேர்ந்தெடுக்கவும்.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. போர்டல் பக்கத்தின் மேல் உள்ள **தேடல் பெட்டியில்** *container registries* என்று உள்ளிட்டு தோன்றும் விருப்பங்களில் இருந்து **Container registries** ஐத் தேர்ந்தெடுக்கவும்.
 
-    ![Type container registries.](../../../../../../translated_images/ta/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/ta/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Azure Machine Learning வேலைநிரலிடம் சார்ந்த container registry ஐத் தேர்ந்தெடுக்கவும். உதாரணமாக, *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. நீங்கள் உருவாக்கிய *finetune-phi* கோப்புறையை தேர்வு செய்யவும், அது *C:\Users\yourUserName\finetune-phi* ல் உள்ளது.
 
-    ![Open project floder.](../../../../../../translated_images/ta/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Open project floder.](../../../../../../translated_images/ta/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. Visual Studio Code-இன் இடது பகுதியில, வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *download_dataset.py* என்ற பெயரில் புதிய கோப்பை உருவாக்குங்கள்.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. இடது பகுதி-வில், வலது கிளிக் செய்து **New File**-ஐ தேர்ந்தெடுத்து *deploy_model.py* என்ற பெயரில் புதிய கோப்பை உருவாக்குங்கள்.
 
-    ![Create new file.](../../../../../../translated_images/ta/01-13-create-new-file.c17c150fff384a39.png)
+    ![Create new file.](../../../../../../translated_images/ta/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. இடது பகுதி-வில், வலது கிளிக் செய்து **New Folder**-ஐ தேர்ந்தெடுத்து *finetuning_dir* என்ற புதிய கோப்புறையை உருவாக்குங்கள்.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - நீங்கள் தற்போது பயன்படுத்திக் கொண்டிருக்கும் Azure Subscription-ஐ தேர்வு செய்யவும்.
     - உங்கள் உபசரிச் ஐடியை *config.py* கோப்பில் நகலெடுத்து ஒட்டவும்.
 
-    ![Find subscription id.](../../../../../../translated_images/ta/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Find subscription id.](../../../../../../translated_images/ta/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Azure வர்த்தகப்பார்வை பெயரை சேர்க்க பின்வரும் பணிகள் செய்யவும்:
 
     - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்கு செல்லவும்.
     - உங்கள் கணக்கு பெயரை *config.py* கோப்பில் நகல் செய்து ஒட்டவும்.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/ta/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/ta/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Azure வளக் குழு பெயரை சேர்க்க பின்வரும் பணிகள் செய்யவும்:
 
     - நீங்கள் உருவாக்கிய Azure Machine Learning வளத்திற்கு செல்லவும்.
     - உங்கள் Azure வளக் குழு பெயரை *config.py* கோப்பில் நகல் செய்து ஒட்டவும்.
 
-    ![Find resource group name.](../../../../../../translated_images/ta/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Find resource group name.](../../../../../../translated_images/ta/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Azure மேலாண்மை அடையாளப் பெயரை சேர்க்க பின்வரும் பணிகள் செய்யவும்:
 
     - நீங்கள் உருவாக்கிய மேலாண்மை அடையாளங்கள் வளத்திற்கு செல்லவும்.
     - உங்கள் Azure மேலாண்மை அடையாளப் பெயரை *config.py* கோப்பில் நகல் செய்து ஒட்டவும்.
 
-    ![Find UAI.](../../../../../../translated_images/ta/01-17-find-uai.3529464f53499827.png)
+    ![Find UAI.](../../../../../../translated_images/ta/01-17-find-uai.3529464f53499827.webp)
 
 ### நுட்பமாக துலக்கலுக்காக தரவுத்தொகுப்பு தயாரித்தல்
 
@@ -509,7 +509,7 @@ Azure சூழலை அங்கீகரிப்பதற்கு Azure CLI
 
 1. உங்களுக்கு தேவையான Azure சந்தாவை தேர்ந்தெடுக்கவும்.
 
-    ![Find resource group name.](../../../../../../translated_images/ta/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Find resource group name.](../../../../../../translated_images/ta/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Azure சூழலை அங்கீகரிப்பதற்கு Azure CLI
 
 1. இந்த பயிற்சியில், நீங்கள் Azure இயந்திரக் கற்றலைப் பயன்படுத்தி வெற்றிகரமாக Phi-3 மாதிரியை நுட்பமாக துலக்க முயன்றுள்ளீர்கள். *setup_ml.py*-ஐ இயக்கி நீங்கள் Azure இயந்திரக் கற்றல் சூழலை அமைத்துச் *fine_tune.py* கோப்பில் வரையறுக்கப்பட்ட நுட்பமாக துலக்கும் செயல்முறையை துவக்கியுள்ளீர்கள். நுட்பமாக துலக்கும் செயல்முறை சற்று நேரம் எடுத்துக் கொள்ளலாம். `python setup_ml.py` கட்டளை ஓடியபின் செயல்முறை முடிவதற்கு காத்திருக்க வேண்டும். டெர்மினலில் வழங்கப்பட்ட லிங்கைப் பின்பற்றி Azure இயந்திரக் கற்றல் போர்டலைப் பார்க்கலாம்.
 
-    ![See finetuning job.](../../../../../../translated_images/ta/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![See finetuning job.](../../../../../../translated_images/ta/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### நுட்பமாக துலக்கப்பட்ட மாதிரியை பயன்பாட்டுக்கு கொண்டு வருதல்
 
@@ -1080,11 +1080,11 @@ Azure சூழலை அங்கீகரிப்பதற்கு Azure CLI
 
 1. இடது பக்க டேபில் இருந்து **Endpoints** ஐ தேர்ந்தெடுக்கவும்.
 
-    ![Select endpoints.](../../../../../../translated_images/ta/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/ta/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. நீங்கள் உருவாக்கிய endpoint ஐ தேர்ந்தெடுக்கவும்.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/ta/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/ta/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. இந்த பக்கத்தில், வெளியீட்டு செயல்முறையின் போது உருவாக்கப்பட்ட endpoints ஐ நிர்வகிக்க முடியும்.
 
@@ -1103,7 +1103,7 @@ Azure சூழலை அங்கீகரிப்பதற்கு Azure CLI
 1. உங்கள் **REST endpoint** ஐ *config.py* கோப்பில் `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ஐ உங்கள் **REST endpoint** மூலம் மாற்றி நகல் செய்து ஒட்டவும்.
 1. உங்கள் **Primary key** ஐ *config.py* கோப்பில் `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ஐ உங்கள் **Primary key** மூலம் மாற்றி நகல் செய்து ஒட்டவும்.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/ta/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/ta/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### *flow.dag.yml* கோப்பில் கோடைச் சேர்க்கவும்
 
@@ -1212,7 +1212,7 @@ Azure சூழலை அங்கீகரிப்பதற்கு Azure CLI
 
 1. இதோ ஒரு முடிவுகளின் உதாரணம்: இப்போது நீங்கள் உங்கள் தனிப்பயன் Phi-3 மாதிரியுடன் உரையாட முடியும். நுணுக்க பயிற்சிக்காக பயன்படுத்திய தரவுகளின் அடிப்படையில் கேள்விகள் கேட்க பரிந்துரைக்கப்படுகிறது.
 
-    ![Prompt flow example.](../../../../../../translated_images/ta/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/ta/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

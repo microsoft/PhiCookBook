@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 हे या E2E नमुन्याचे एक आढावा आहे.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/mr/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/mr/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### अनुक्रमणिका
 
@@ -48,13 +48,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पृष्ठाच्या शीर्षस्थित **शोध पट्टी** मध्ये *azure machine learning* टाका आणि दिसणाऱ्या पर्यायांमधून **Azure Machine Learning** निवडा.
 
-    ![Type azure machine learning.](../../../../../../translated_images/mr/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/mr/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. नेव्हिगेशन मेनूमधून **+ Create** निवडा.
 
 3. नेव्हिगेशन मेनूमधून **New workspace** निवडा.
 
-    ![Select new workspace.](../../../../../../translated_images/mr/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/mr/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. खालील कार्ये पार पाडा:
 
@@ -67,7 +67,7 @@ CO_OP_TRANSLATOR_METADATA:
     - वापरण्यासाठी **Application insights** निवडा (आवश्यक असल्यास नवीन तयार करा).
     - वापरण्यासाठी **Container registry** निवडा (आवश्यक असल्यास नवीन तयार करा).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/mr/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/mr/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. **Review + Create** निवडा.
 
@@ -90,7 +90,7 @@ CO_OP_TRANSLATOR_METADATA:
     - वापरण्यासाठी **Virtual machine family** निवडा. उदाहरणार्थ, **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** निवडा, ज्यात *Standard_NC24ads_A100_v4* GPU समाविष्ट आहे.
     - नेव्हिगेशन मेनूमधून **Request quota** निवडा.
 
-        ![Request quota.](../../../../../../translated_images/mr/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/mr/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Request quota पृष्ठावर, तुम्ही वापरू इच्छित असलेली **New cores limit** प्रविष्ट करा. उदाहरणार्थ, 24.
     - Request quota पृष्ठावर, GPU कोटा मागण्यासाठी **Submit** निवडा.
@@ -111,11 +111,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पृष्ठाच्या शीर्षस्थित **शोध पट्टी** मध्ये *managed identities* टाका आणि दिसणाऱ्या पर्यायांमधून **Managed Identities** निवडा.
 
-    ![Type managed identities.](../../../../../../translated_images/mr/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/mr/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. **+ Create** निवडा.
 
-    ![Select create.](../../../../../../translated_images/mr/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/mr/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. खालील कार्ये करा:
 
@@ -124,7 +124,7 @@ CO_OP_TRANSLATOR_METADATA:
     - तुम्हाला हवा असलेला **Region** निवडा.
     - **Name** प्रविष्ट करा. हा एक अद्वितीय मूल्य असावा.
 
-    ![Select create.](../../../../../../translated_images/mr/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/mr/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. **Review + create** निवडा.
 
@@ -144,7 +144,7 @@ CO_OP_TRANSLATOR_METADATA:
     - वापरण्यासाठी **Resource group** निवडा.
     - **Role** म्हणून **Contributor** निवडा.
 
-    ![Fill contributor role.](../../../../../../translated_images/mr/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/mr/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. **Save** निवडा.
 
@@ -152,7 +152,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पृष्ठाच्या शीर्षस्थित **शोध पट्टी** मध्ये *storage accounts* टाका आणि दिसणाऱ्या पर्यायांमधून **Storage accounts** निवडा.
 
-    ![Type storage accounts.](../../../../../../translated_images/mr/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/mr/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Azure Machine Learning workspace शी संलग्न असलेला स्टोरेज अकाउंट निवडा. उदाहरणार्थ, *finetunephistorage*.
 
@@ -163,7 +163,7 @@ CO_OP_TRANSLATOR_METADATA:
     - नेव्हिगेशन मेनूमधून **+ Add** निवडा.
     - नेव्हिगेशन मेनूमधून **Add role assignment** निवडा.
 
-    ![Add role.](../../../../../../translated_images/mr/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/mr/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Add role assignment पृष्ठावर, खालीलप्रमाणे कार्य करा:
 
@@ -176,7 +176,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities पृष्ठावर, तुम्ही तयार केलेली Managed Identity निवडा. उदाहरणार्थ, *finetunephi-managedidentity*.
     - Select managed identities पृष्ठावर, **Select** निवडा.
 
-    ![Select managed identity.](../../../../../../translated_images/mr/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/mr/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. **Review + assign** निवडा.
 
@@ -184,7 +184,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. पोर्टल पृष्ठाच्या शीर्षस्थित **शोध पट्टी** मध्ये *container registries* टाका आणि दिसणाऱ्या पर्यायांमधून **Container registries** निवडा.
 
-    ![Type container registries.](../../../../../../translated_images/mr/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/mr/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Azure Machine Learning workspace शी संलग्न असलेला container registry निवडा. उदाहरणार्थ, *finetunephicontainerregistry*
 
@@ -275,11 +275,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. आपण तयार केलेला *finetune-phi* फोल्डर निवडा, जो *C:\Users\yourUserName\finetune-phi* येथे आहे.
 
-    ![आपण तयार केलेला फोल्डर निवडा.](../../../../../../translated_images/mr/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![आपण तयार केलेला फोल्डर निवडा.](../../../../../../translated_images/mr/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Visual Studio Code च्या डाव्या पॅनेलमध्ये उजवे क्लिक करा आणि **New File** निवडा, ज्यामुळे *download_dataset.py* नावाचा नवीन फाइल तयार होईल.
 
-    ![नवीन फाइल तयार करा.](../../../../../../translated_images/mr/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![नवीन फाइल तयार करा.](../../../../../../translated_images/mr/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### फाईन-ट्युनिंगसाठी डेटासेट तयार करा
 
@@ -391,7 +391,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **+ New** निवडा.
 
-    ![Compute निवडा.](../../../../../../translated_images/mr/06-01-select-compute.a29cff290b480252.png)
+    ![Compute निवडा.](../../../../../../translated_images/mr/06-01-select-compute.a29cff290b480252.webp)
 
 1. खालील कार्ये करा:
 
@@ -401,7 +401,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Virtual machine size** फिल्टर ला **Select from all options** निवडा.
     - **Virtual machine size** ला **Standard_NC24ads_A100_v4** निवडा.
 
-    ![क्लस्टर तयार करा.](../../../../../../translated_images/mr/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![क्लस्टर तयार करा.](../../../../../../translated_images/mr/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. **Next** निवडा.
 
@@ -412,7 +412,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Maximum number of nodes** ला **1** निवडा.
     - **Idle seconds before scale down** ला **120** निवडा.
 
-    ![क्लस्टर तयार करा.](../../../../../../translated_images/mr/06-03-create-cluster.4a54ba20914f3662.png)
+    ![क्लस्टर तयार करा.](../../../../../../translated_images/mr/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. **Create** निवडा.
 
@@ -422,18 +422,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. आपण तयार केलेला Azure Machine Learning workspace निवडा.
 
-    ![आपण तयार केलेला workspace निवडा.](../../../../../../translated_images/mr/06-04-select-workspace.a92934ac04f4f181.png)
+    ![आपण तयार केलेला workspace निवडा.](../../../../../../translated_images/mr/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. खालील कार्ये करा:
 
     - डाव्या बाजूच्या टॅबमधून **Model catalog** निवडा.
     - **search bar** मध्ये *phi-3-mini-4k* टाइप करा आणि दिसलेल्या पर्यायांमधून **Phi-3-mini-4k-instruct** निवडा.
 
-    ![phi-3-mini-4k टाइप करा.](../../../../../../translated_images/mr/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![phi-3-mini-4k टाइप करा.](../../../../../../translated_images/mr/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. नेविगेशन मेनूमधून **Fine-tune** निवडा.
 
-    ![फाईन-ट्युन निवडा.](../../../../../../translated_images/mr/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![फाईन-ट्युन निवडा.](../../../../../../translated_images/mr/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. खालील कार्ये करा:
 
@@ -442,7 +442,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Validation data अपलोड प्रकार म्हणून **Provide different validation data** निवडा.
     - **+ Select data** निवडा आणि **Validation data** अपलोड करा.
 
-    ![फाईन-ट्युनिंग पान भरा.](../../../../../../translated_images/mr/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![फाईन-ट्युनिंग पान भरा.](../../../../../../translated_images/mr/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -452,7 +452,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. या ऍक्सरसाइजमध्ये, आपण Azure Machine Learning वापरून यशस्वीपणे Phi-3 मॉडेल फाईन-ट्युन केले. कृपया लक्षात ठेवा की, फाईन-ट्युनिंग प्रक्रियेस बरेच वेळ लागू शकतो. फाईन-ट्युनिंग जॉब चालवल्यानंतर, त्याच्या पूर्ण होईपर्यंत प्रतीक्षा करावी लागेल. आपण आपला Azure Machine Learning Workspace च्या डाव्या बाजूच्या Jobs टॅबमध्ये जाऊन फाईन-ट्युनिंग जॉबचे स्थिती पहू शकता. पुढील सत्रांमध्ये, आपण फाईन-ट्युन केलेले मॉडेल तैनात कराल आणि ते Prompt flow सोबत एकत्रित कराल.
 
-    ![फाईन-ट्युनिंग जॉब पहा.](../../../../../../translated_images/mr/06-08-output.2bd32e59930672b1.png)
+    ![फाईन-ट्युनिंग जॉब पहा.](../../../../../../translated_images/mr/06-08-output.2bd32e59930672b1.webp)
 
 ### फाईन-ट्युन केलेले Phi-3 मॉडेल तैनात करा
 
@@ -470,17 +470,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. आपण तयार केलेला Azure Machine Learning workspace निवडा.
 
-    ![आपण तयार केलेला workspace निवडा.](../../../../../../translated_images/mr/06-04-select-workspace.a92934ac04f4f181.png)
+    ![आपण तयार केलेला workspace निवडा.](../../../../../../translated_images/mr/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. डाव्या बाजूच्या टॅबमधून **Models** निवडा.
 1. **+ Register** निवडा.
 1. **From a job output** निवडा.
 
-    ![मॉडेल नोंदणी करा.](../../../../../../translated_images/mr/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![मॉडेल नोंदणी करा.](../../../../../../translated_images/mr/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. आपण तयार केलेला जॉब निवडा.
 
-    ![जॉब निवडा.](../../../../../../translated_images/mr/07-02-select-job.3e2e1144cd6cd093.png)
+    ![जॉब निवडा.](../../../../../../translated_images/mr/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. **Next** निवडा.
 
@@ -488,17 +488,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **Job output** निवडले असल्याची खात्री करा; हे आपोआप निवडले जाईल.
 
-    ![आउटपुट निवडा.](../../../../../../translated_images/mr/07-03-select-output.4cf1a0e645baea1f.png)
+    ![आउटपुट निवडा.](../../../../../../translated_images/mr/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. **Next** निवडा.
 
 3. **Register** निवडा.
 
-    ![नोंदणी करा.](../../../../../../translated_images/mr/07-04-register.fd82a3b293060bc7.png)
+    ![नोंदणी करा.](../../../../../../translated_images/mr/07-04-register.fd82a3b293060bc7.webp)
 
 4. नोंदणीकृत मॉडेल पाहण्यासाठी डाव्या बाजूच्या टॅबमधील **Models** मेनूमध्ये जा.
 
-    ![नोंदणीकृत मॉडेल.](../../../../../../translated_images/mr/07-05-registered-model.7db9775f58dfd591.png)
+    ![नोंदणीकृत मॉडेल.](../../../../../../translated_images/mr/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### फाईन-ट्युन केलेले मॉडेल तैनात करा
 
@@ -508,13 +508,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. नेविगेशन मेनूमधून **Real-time endpoints** निवडा.
 
-    ![एंडपॉईंट तयार करा.](../../../../../../translated_images/mr/07-06-create-endpoint.1ba865c606551f09.png)
+    ![एंडपॉईंट तयार करा.](../../../../../../translated_images/mr/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. **Create** निवडा.
 
 1. आपण तयार केलेले नोंदणीकृत मॉडेल निवडा.
 
-    ![नोंदणीकृत मॉडेल निवडा.](../../../../../../translated_images/mr/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![नोंदणीकृत मॉडेल निवडा.](../../../../../../translated_images/mr/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. **Select** निवडा.
 
@@ -526,7 +526,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Endpoint name** प्रविष्ट करा. हे अद्वितीय मूल्य असले पाहिजे.
     - **Deployment name** प्रविष्ट करा. हे अद्वितीय मूल्य असले पाहिजे.
 
-    ![तैनाती सेटिंग भरा.](../../../../../../translated_images/mr/07-08-deployment-setting.43ddc4209e673784.png)
+    ![तैनाती सेटिंग भरा.](../../../../../../translated_images/mr/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. **Deploy** निवडा.
 
@@ -542,14 +542,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. आपण तयार केलेला एंडपॉईंट निवडा.
 
-    ![एंडपॉईंट निवडा.](../../../../../../translated_images/mr/07-09-check-deployment.325d18cae8475ef4.png)
+    ![एंडपॉईंट निवडा.](../../../../../../translated_images/mr/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. या पानावर, आपण तैनाती प्रक्रिये दरम्यान एंडपॉईंट्स व्यवस्थापित करू शकता.
 
 > [!NOTE]
 > एकदा तैनाती पूर्ण झाल्यावर, खात्री करा की **Live traffic** **100%** वर सेट आहे. जर तसे नसेल तर **Update traffic** निवडून ट्रॅफिक सेटिंग्ज समायोजित करा. लक्षात ठेवा की ट्रॅफिक 0% असल्यास आपण मॉडेलची चाचणी करू शकत नाही.
 >
-> ![ट्रॅफिक सेट करा.](../../../../../../translated_images/mr/07-10-set-traffic.085b847e5751ff3d.png)
+> ![ट्रॅफिक सेट करा.](../../../../../../translated_images/mr/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## प्रसंग 3: Prompt flow सोबत एकत्रित करा आणि Azure AI Foundry मध्ये आपल्या कस्टम मॉडेलशी गप्पा मारा
@@ -578,7 +578,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. डाव्या बाजूच्या टॅबमधून **All hubs** निवडा.
 
 1. नेविगेशन मेनूमधून **+ New hub** निवडा.
-    ![हब तयार करा.](../../../../../../translated_images/mr/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![हब तयार करा.](../../../../../../translated_images/mr/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. खालील कार्ये करा:
 
@@ -589,7 +589,7 @@ CO_OP_TRANSLATOR_METADATA:
     - वापरण्यासाठी **Connect Azure AI Services** निवडा (आवश्यक असल्यास नवीन तयार करा).
     - **Connect Azure AI Search** साठी **कनेक्ट करणे स्किप करा** निवडा.
 
-    ![हब भरा.](../../../../../../translated_images/mr/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![हब भरा.](../../../../../../translated_images/mr/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. **Next** निवडा.
 
@@ -599,11 +599,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. नेव्हिगेशन मेनूमधून **+ New project** निवडा.
 
-    ![नवीन प्रोजेक्ट निवडा.](../../../../../../translated_images/mr/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![नवीन प्रोजेक्ट निवडा.](../../../../../../translated_images/mr/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. **Project name** प्रविष्ट करा. ते एक अद्वितीय मूल्य असावे.
 
-    ![प्रोजेक्ट तयार करा.](../../../../../../translated_images/mr/08-05-create-project.4d97f0372f03375a.png)
+    ![प्रोजेक्ट तयार करा.](../../../../../../translated_images/mr/08-05-create-project.4d97f0372f03375a.webp)
 
 1. **Create a project** निवडा.
 
@@ -619,17 +619,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. डाव्या बाजूच्या टॅबमधून **Endpoints** निवडा.
 
-    ![एंडपॉइंट्स निवडा.](../../../../../../translated_images/mr/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![एंडपॉइंट्स निवडा.](../../../../../../translated_images/mr/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. आपण तयार केलेला endpoint निवडा.
 
-    ![एंडपॉइंट्स निवडा.](../../../../../../translated_images/mr/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![एंडपॉइंट्स निवडा.](../../../../../../translated_images/mr/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. नेव्हिगेशन मेनूमधून **Consume** निवडा.
 
 1. आपला **REST endpoint** आणि **Primary key** कॉपी करा.
 
-    ![api key आणि endpoint uri कॉपी करा.](../../../../../../translated_images/mr/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![api key आणि endpoint uri कॉपी करा.](../../../../../../translated_images/mr/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### कस्टम कनेक्शन जोडा
 
@@ -641,11 +641,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **+ New connection** निवडा.
 
-    ![नवीन कनेक्शन निवडा.](../../../../../../translated_images/mr/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![नवीन कनेक्शन निवडा.](../../../../../../translated_images/mr/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. नेव्हिगेशन मेनूमधून **Custom keys** निवडा.
 
-    ![कस्टम कीज निवडा.](../../../../../../translated_images/mr/08-10-select-custom-keys.856f6b2966460551.png)
+    ![कस्टम कीज निवडा.](../../../../../../translated_images/mr/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. खालील कार्ये करा:
 
@@ -655,7 +655,7 @@ CO_OP_TRANSLATOR_METADATA:
     - की नावासाठी, **key** टाका आणि Azure ML Studio मधून कॉपी केलेली key मूल्य फील्डमध्ये पेस्ट करा.
     - की जोडल्यावर, की उघडकीस येण्यापासून प्रतिबंधित करण्यासाठी **is secret** निवडा.
 
-    ![कनेक्शन जोडा.](../../../../../../translated_images/mr/08-11-add-connection.785486badb4d2d26.png)
+    ![कनेक्शन जोडा.](../../../../../../translated_images/mr/08-11-add-connection.785486badb4d2d26.webp)
 
 1. **Add connection** निवडा.
 
@@ -669,15 +669,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. नेव्हिगेशन मेनूमधून **+ Create** निवडा.
 
-    ![Promptflow निवडा.](../../../../../../translated_images/mr/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Promptflow निवडा.](../../../../../../translated_images/mr/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. नेव्हिगेशन मेनूमधून **Chat flow** निवडा.
 
-    ![चॅट फ्लो निवडा.](../../../../../../translated_images/mr/08-13-select-flow-type.2ec689b22da32591.png)
+    ![चॅट फ्लो निवडा.](../../../../../../translated_images/mr/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. वापरण्यासाठी **फोल्डर नाव** प्रविष्ट करा.
 
-    ![नाव प्रविष्ट करा.](../../../../../../translated_images/mr/08-14-enter-name.ff9520fefd89f40d.png)
+    ![नाव प्रविष्ट करा.](../../../../../../translated_images/mr/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. **Create** निवडा.
 
@@ -714,7 +714,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - **Save** निवडा.
 
-    ![Raw file mode निवडा.](../../../../../../translated_images/mr/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Raw file mode निवडा.](../../../../../../translated_images/mr/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Prompt flow मध्ये कस्टम Phi-3 मॉडेल वापरण्यासाठी *integrate_with_promptflow.py* फाईलमध्ये खालील कोड जोडा.
 
@@ -779,14 +779,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Prompt flow कोड पेस्ट करा.](../../../../../../translated_images/mr/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Prompt flow कोड पेस्ट करा.](../../../../../../translated_images/mr/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Azure AI Foundry मध्ये Prompt flow वापरण्याबाबत अधिक तपशीलवार माहिती साठी, आपण [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) पाहू शकता.
 
 1. **Chat input**, **Chat output** निवडा जेणेकरून आपल्या मॉडेलशी चॅट करता येईल.
 
-    ![इनपुट आऊटपुट.](../../../../../../translated_images/mr/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![इनपुट आऊटपुट.](../../../../../../translated_images/mr/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. आता आपण आपल्या कस्टम Phi-3 मॉडेलशी चॅट करण्यासाठी तयार आहात. पुढील व्यायामात, आपण Prompt flow कसा सुरू करायचा व फाइन-ट्यून केलेल्या Phi-3 मॉडेलसह चॅट कसा करायचा हे शिकाल.
 
@@ -794,7 +794,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > पुनर्बांधणी केलेला फ्लो खालील चित्रासारखा दिसायला हवा:
 >
-> ![फ्लो उदाहरण.](../../../../../../translated_images/mr/08-18-graph-example.d6457533952e690c.png)
+> ![फ्लो उदाहरण.](../../../../../../translated_images/mr/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### आपल्या कस्टम Phi-3 मॉडेलशी चॅट करा
@@ -807,25 +807,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Prompt flow सुरू करण्यासाठी **Start compute sessions** निवडा.
 
-    ![कंप्युट सत्र सुरू करा.](../../../../../../translated_images/mr/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![कंप्युट सत्र सुरू करा.](../../../../../../translated_images/mr/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. पॅरामीटर्स नूतनीकृत करण्यासाठी **Validate and parse input** निवडा.
 
-    ![इनपुटच्या पडताळणी करा.](../../../../../../translated_images/mr/09-02-validate-input.317c76ef766361e9.png)
+    ![इनपुटच्या पडताळणी करा.](../../../../../../translated_images/mr/09-02-validate-input.317c76ef766361e9.webp)
 
 1. आपण तयार केलेल्या कस्टम कनेक्शनची **connection** ची **Value** निवडा. उदाहरणार्थ, *connection*.
 
-    ![कनेक्शन.](../../../../../../translated_images/mr/09-03-select-connection.99bdddb4b1844023.png)
+    ![कनेक्शन.](../../../../../../translated_images/mr/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### आपल्या कस्टम मॉडेलशी चॅट करा
 
 1. **Chat** निवडा.
 
-    ![चॅट निवडा.](../../../../../../translated_images/mr/09-04-select-chat.61936dce6612a1e6.png)
+    ![चॅट निवडा.](../../../../../../translated_images/mr/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. खाली दिलेला उदाहरण परिणाम आहे: आता आपण आपल्या कस्टम Phi-3 मॉडेलशी चॅट करू शकता. फाइन-ट्यूनिंगसाठी वापरलेल्या डेटाच्या आधारावर प्रश्न विचारणे शिफारसीय आहे.
 
-    ![Prompt flow सह चॅट करा.](../../../../../../translated_images/mr/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Prompt flow सह चॅट करा.](../../../../../../translated_images/mr/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

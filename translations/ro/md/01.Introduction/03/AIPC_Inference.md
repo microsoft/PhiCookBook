@@ -28,9 +28,9 @@ Pe scurt, NPU-urile sunt experții matematici care accelerează calculele AI și
 
 Dispozitivul Intel® NPU este un accelerator de inferență AI integrat cu CPU-urile client Intel, începând cu generația Intel® Core™ Ultra (cunoscută anterior ca Meteor Lake). Acesta permite execuția eficientă din punct de vedere energetic a sarcinilor rețelelor neuronale artificiale.
 
-![Latency](../../../../../translated_images/ro/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/ro/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/ro/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/ro/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 În timpul execuției codului, putem vedea starea de funcționare a NPU-ului prin Managerul de activități
 
-![NPU](../../../../../translated_images/ro/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/ro/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Exemple*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Acesta este rezultatul rulării
 
-![DML](../../../../../translated_images/ro/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/ro/aipc_DML.52a44180393ab491.webp)
 
 ***Exemple*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 formatul convertit, așa
 
-![openvino_convert](../../../../../translated_images/ro/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/ro/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Încarcă căile modelului (model_dir), configurațiile aferente (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) și dispozitivele accelerate hardware (GPU.0) prin OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 În timpul execuției codului, putem vedea starea de funcționare a GPU-ului prin Managerul de activități
 
-![openvino_gpu](../../../../../translated_images/ro/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/ro/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Exemple*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

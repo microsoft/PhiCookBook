@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Katika mfano huu tutafanya marekebisho ya modeli ya Phi-3-mini-4k-instruct ili kumalizia mazungumzo kati ya watu 2 tukitumia dataset ya ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/sw/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/sw/MLFineTune.928d4c6b3767dd35.webp)
 
 Mfano huu utaonyesha jinsi ya kufanya marekebisho kwa kutumia Azure ML SDK na Python kisha kupeleka modeli iliyorekebishwa kwenye endpoint mtandaoni kwa ajili ya utambuzi wa wakati halisi.
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 生成AIをONNX RuntimeのC++ APIで利用するため、App開発にはObjective-Cを選びました。もちろんSwiftのブリッジングを使って関連呼び出しを行うことも可能です。
 
-![xcode](../../../../../translated_images/ja/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ja/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNXの量子化INT4モデルをAppプロジェクトにコピー**
 
 ONNX形式のINT4量子化モデルをインポートする必要があり、まずはダウンロードしてください。
 
-![hf](../../../../../translated_images/ja/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ja/hf.6b8504fd88ee48dd.webp)
 
 ダウンロード後、Xcodeのプロジェクト内のResourcesディレクトリに追加します。
 
-![model](../../../../../translated_images/ja/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ja/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllersにC++ APIを追加**
 
@@ -121,11 +121,11 @@ ONNX形式のINT4量子化モデルをインポートする必要があり、ま
 
 - **a.** 対応するC++ヘッダーファイルをプロジェクトに追加します。
 
-  ![Header File](../../../../../translated_images/ja/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ja/head.64cad021ce70a333.webp)
 
 - **b.** Xcodeに`onnxruntime-genai`の動的ライブラリを含めます。
 
-  ![Library](../../../../../translated_images/ja/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ja/lib.a4209b9f21ddf344.webp)
 
 - **c.** テストにはC Samplesコードを使用します。ChatUIなどの追加機能も組み込めます。
 
@@ -162,7 +162,7 @@ ONNX形式のINT4量子化モデルをインポートする必要があり、ま
 
 セットアップが完了したら、アプリを実行してPhi-3-miniモデルの推論結果を確認できます。
 
-![Running Result](../../../../../translated_images/ja/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ja/result.326a947a6a2b9c51.webp)
 
 より多くのサンプルコードや詳細な手順は、[Phi-3 Mini Samplesリポジトリ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)をご覧ください。
 

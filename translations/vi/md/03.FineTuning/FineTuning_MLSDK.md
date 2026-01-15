@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Trong ví dụ này, chúng ta sẽ thực hiện tinh chỉnh mô hình Phi-3-mini-4k-instruct để hoàn thành cuộc hội thoại giữa 2 người sử dụng bộ dữ liệu ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/vi/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/vi/MLFineTune.928d4c6b3767dd35.webp)
 
 Ví dụ sẽ hướng dẫn bạn cách thực hiện tinh chỉnh bằng Azure ML SDK và Python, sau đó triển khai mô hình đã tinh chỉnh lên endpoint trực tuyến để suy luận thời gian thực.
 

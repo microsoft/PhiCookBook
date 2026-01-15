@@ -75,7 +75,7 @@ GitHub Copilot har kraftigt förbättrat programmeringseffektiviteten i företag
 
 Denna labb använder främst Phi-3-modellen i kombination med lokal NPU och Azure hybrid för att bygga en anpassad Agent i GitHub Copilot Chat ***@PHI3*** för att hjälpa företagsutvecklare att slutföra kodgenerering ***(@PHI3 /gen)*** och generera kod baserat på bilder ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/sv/cover.1017ebc9a7c46d09.png)
+![PHI3](../../../../../../../translated_images/sv/cover.1017ebc9a7c46d09.webp)
 
 ### ***Notera:*** 
 

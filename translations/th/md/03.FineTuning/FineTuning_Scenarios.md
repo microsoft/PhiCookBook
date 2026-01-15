@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## กรณีการปรับแต่งแบบละเอียด
 
-![FineTuning with MS Services](../../../../translated_images/th/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/th/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **แพลตฟอร์ม** ประกอบด้วยเทคโนโลยีหลากหลาย เช่น Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito และ ONNX Runtime
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ปรับแต่งโมเดลโดยใช้การปรับแต่งแบบโฮสต์ โดยไม่ต้องสร้างและจัดการคอมพิวต์
 
-![MaaS Fine Tuning](../../../../translated_images/th/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/th/MaaSfinetune.3eee4630607aff0d.webp)
 
 การปรับแต่งแบบไม่มีเซิร์ฟเวอร์พร้อมใช้งานสำหรับโมเดล Phi-3-mini และ Phi-3-medium ช่วยให้นักพัฒนาสามารถปรับแต่งโมเดลได้อย่างรวดเร็วและง่ายดายสำหรับสถานการณ์คลาวด์และเอดจ์โดยไม่ต้องจัดเตรียมคอมพิวต์ นอกจากนี้ เรายังประกาศว่า Phi-3-small พร้อมให้บริการผ่าน Models-as-a-Service เพื่อให้นักพัฒนาสามารถเริ่มต้นพัฒนา AI ได้อย่างรวดเร็วและง่ายดายโดยไม่ต้องจัดการโครงสร้างพื้นฐานเบื้องหลัง
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ผู้ใช้จัดการคอมพิวต์ของตนเองเพื่อปรับแต่งโมเดล
 
-![Maap Fine Tuning](../../../../translated_images/th/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/th/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [ตัวอย่างการปรับแต่งแบบละเอียด](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ตัวอย่างประสิทธิภาพการปรับแต่งแบบละเอียด
 
-![Finetuning Performance](../../../../translated_images/th/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/th/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **ข้อจำกัดความรับผิดชอบ**:  
 เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

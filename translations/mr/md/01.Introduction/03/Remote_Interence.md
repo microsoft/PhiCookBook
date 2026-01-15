@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 रिमोट वातावरणात अ‍ॅडॉप्टर्स प्रशिक्षित केल्यानंतर, मॉडेलशी संवाद साधण्यासाठी एक सोपी Gradio अ‍ॅप्लिकेशन वापरा.
 
-![Fine-tune complete](../../../../../translated_images/mr/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/mr/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Azure संसाधने तयार करणे  
 रिमोट इन्फरन्ससाठी Azure संसाधने सेटअप करण्यासाठी, कमांड पॅलेटमधून `AI Toolkit: Provision Azure Container Apps for inference` चालवा. या सेटअप दरम्यान, आपल्याला आपली Azure सबस्क्रिप्शन आणि रिसोर्स ग्रुप निवडण्यास सांगितले जाईल.  
-![Provision Inference Resource](../../../../../translated_images/mr/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/mr/command-provision-inference.467afc8d351642fc.webp)
 
 डिफॉल्टनुसार, इन्फरन्ससाठी सबस्क्रिप्शन आणि रिसोर्स ग्रुप फाइन-ट्यूनिंगसाठी वापरलेल्या त्या प्रमाणेच असावेत. इन्फरन्ससाठी त्याच Azure Container App Environment चा वापर होईल आणि फाइन-ट्यूनिंग दरम्यान तयार केलेले मॉडेल आणि मॉडेल अ‍ॅडॉप्टर Azure Files मध्ये संग्रहित असतील, ज्याचा वापर केला जाईल.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### इन्फरन्ससाठी डिप्लॉयमेंट  
 जर तुम्हाला इन्फरन्स कोडमध्ये बदल करायचा असेल किंवा इन्फरन्स मॉडेल पुन्हा लोड करायचे असेल, तर `AI Toolkit: Deploy for inference` कमांड चालवा. यामुळे तुमचा नवीनतम कोड ACA सोबत सिंक्रोनाइझ होईल आणि रेप्लिका पुन्हा सुरू होईल.
 
-![Deploy for inference](../../../../../translated_images/mr/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/mr/command-deploy.9adb4e310dd0b0ae.webp)
 
 डिप्लॉयमेंट यशस्वी झाल्यानंतर, मॉडेल आता या एंडपॉइंटचा वापर करून मूल्यांकनासाठी तयार आहे.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 VSCode नोटिफिकेशनमध्ये दिसणाऱ्या "*Go to Inference Endpoint*" बटणावर क्लिक करून तुम्ही इन्फरन्स API वापरू शकता. पर्यायीपणे, वेब API एंडपॉइंट `ACA_APP_ENDPOINT` मध्ये `./infra/inference.config.json` फाईलमध्ये आणि आउटपुट पॅनेलमध्ये सापडेल.
 
-![App Endpoint](../../../../../translated_images/mr/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/mr/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** इन्फरन्स एंडपॉइंट पूर्णपणे कार्यरत होण्यासाठी काही मिनिटे लागू शकतात.
 

@@ -19,7 +19,7 @@ Het fijn-afstellen van een model kan soms leiden tot onbedoelde of ongewenste re
 
 Hier is het evaluatieproces van Azure AI Foundry.
 
-![Architectuur van de tutorial.](../../../../../../translated_images/nl/architecture.10bec55250f5d6a4.png)
+![Architectuur van de tutorial.](../../../../../../translated_images/nl/architecture.10bec55250f5d6a4.webp)
 
 *Afbeeldingsbron: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Hier is het evaluatieproces van Azure AI Foundry.
 
 Om te waarborgen dat je AI-model ethisch en veilig is, is het cruciaal om het te toetsen aan Microsoft's Responsible AI Principles. In Azure AI Foundry kun je met veiligheidsevaluaties beoordelen hoe kwetsbaar je model is voor jailbreak-aanvallen en of het schadelijke inhoud kan genereren, wat direct aansluit bij deze principes.
 
-![Veiligheidsevaluatie.](../../../../../../translated_images/nl/safety-evaluation.083586ec88dfa950.png)
+![Veiligheidsevaluatie.](../../../../../../translated_images/nl/safety-evaluation.083586ec88dfa950.webp)
 
 *Afbeeldingsbron: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft's Responsible AI Principles omvatten:
 
 - **Verantwoordingsplicht**: De mensen die AI-systemen ontwerpen en implementeren moeten verantwoordelijk zijn voor hoe hun systemen functioneren. Organisaties moeten gebruikmaken van industriestandaarden om normen voor verantwoordelijkheid te ontwikkelen. Deze normen zorgen ervoor dat AI-systemen niet de uiteindelijke autoriteit zijn bij beslissingen die het leven van mensen beïnvloeden. Ze zorgen er ook voor dat mensen betekenisvolle controle behouden over anderszins zeer autonome AI-systemen.
 
-![Fill hub.](../../../../../../translated_images/nl/responsibleai2.c07ef430113fad8c.png)
+![Fill hub.](../../../../../../translated_images/nl/responsibleai2.c07ef430113fad8c.webp)
 
 *Afbeeldingsbron: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ In deze tutorial evalueer je de veiligheid van het fijn-afgestelde Phi-3 model m
 
 Door deze aspecten te evalueren, zorg je ervoor dat het AI-model geen schadelijke of aanstootgevende inhoud genereert, wat in lijn is met maatschappelijke waarden en regelgeving.
 
-![Evalueren op basis van veiligheid.](../../../../../../translated_images/nl/evaluate-based-on-safety.c5df819f5b0bfc07.png)
+![Evalueren op basis van veiligheid.](../../../../../../translated_images/nl/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
 ### Introductie tot prestatie-evaluatie
 
 Om te waarborgen dat je AI-model presteert zoals verwacht, is het belangrijk om de prestaties te meten aan de hand van prestatie-indicatoren. In Azure AI Foundry kun je met prestatie-evaluaties beoordelen hoe effectief je model is in het genereren van nauwkeurige, relevante en samenhangende antwoorden.
 
-![Veiligheidsevaluatie.](../../../../../../translated_images/nl/performance-evaluation.48b3e7e01a098740.png)
+![Veiligheidsevaluatie.](../../../../../../translated_images/nl/performance-evaluation.48b3e7e01a098740.webp)
 
 *Afbeeldingsbron: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ In deze tutorial evalueer je de prestaties van het fijn-afgestelde Phi-3 / Phi-3
 
 Deze metriek helpt je om de effectiviteit van het model te beoordelen in het genereren van nauwkeurige, relevante en samenhangende antwoorden.
 
-![Evalueren op basis van prestaties.](../../../../../../translated_images/nl/evaluate-based-on-performance.3e801c647c7554e8.png)
+![Evalueren op basis van prestaties.](../../../../../../translated_images/nl/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
 ## **Scenario 2: Evaluatie van het Phi-3 / Phi-3.5 model in Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Je moet een Hub aanmaken voordat je een Project maakt. Een Hub werkt als een Res
 
 1. Selecteer **+ New hub** in het navigatiemenu.
 
-    ![Create hub.](../../../../../../translated_images/nl/create-hub.5be78fb1e21ffbf1.png)
+    ![Create hub.](../../../../../../translated_images/nl/create-hub.5be78fb1e21ffbf1.webp)
 
 1. Voer de volgende taken uit:
 
@@ -162,7 +162,7 @@ Je moet een Hub aanmaken voordat je een Project maakt. Een Hub werkt als een Res
     - Selecteer de **Connect Azure AI Services** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
     - Selecteer **Connect Azure AI Search** en kies **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/nl/fill-hub.baaa108495c71e34.png)
+    ![Fill hub.](../../../../../../translated_images/nl/fill-hub.baaa108495c71e34.webp)
 
 1. Selecteer **Next**.
 
@@ -172,11 +172,11 @@ Je moet een Hub aanmaken voordat je een Project maakt. Een Hub werkt als een Res
 
 1. Selecteer **+ New project** in het navigatiemenu.
 
-    ![Select new project.](../../../../../../translated_images/nl/select-new-project.cd31c0404088d7a3.png)
+    ![Select new project.](../../../../../../translated_images/nl/select-new-project.cd31c0404088d7a3.webp)
 
 1. Voer een **Project name** in. Dit moet een unieke waarde zijn.
 
-    ![Create project.](../../../../../../translated_images/nl/create-project.ca3b71298b90e420.png)
+    ![Create project.](../../../../../../translated_images/nl/create-project.ca3b71298b90e420.webp)
 
 1. Selecteer **Create a project**.
 
@@ -192,17 +192,17 @@ Om je aangepaste Phi-3 / Phi-3.5 model te integreren met Prompt flow, moet je de
 
 1. Selecteer **Endpoints** in het tabblad aan de linkerkant.
 
-    ![Select endpoints.](../../../../../../translated_images/nl/select-endpoints.ee7387ecd68bd18d.png)
+    ![Select endpoints.](../../../../../../translated_images/nl/select-endpoints.ee7387ecd68bd18d.webp)
 
 1. Selecteer de endpoint die je hebt aangemaakt.
 
-    ![Select endpoints.](../../../../../../translated_images/nl/select-endpoint-created.9f63af5e4cf98b2e.png)
+    ![Select endpoints.](../../../../../../translated_images/nl/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
 1. Selecteer **Consume** in het navigatiemenu.
 
 1. Kopieer je **REST endpoint** en **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/nl/copy-endpoint-key.0650c3786bd646ab.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/nl/copy-endpoint-key.0650c3786bd646ab.webp)
 
 #### Voeg de Aangepaste Verbinding toe
 
@@ -214,11 +214,11 @@ Om je aangepaste Phi-3 / Phi-3.5 model te integreren met Prompt flow, moet je de
 
 1. Selecteer **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/nl/select-new-connection.fa0f35743758a74b.png)
+    ![Select new connection.](../../../../../../translated_images/nl/select-new-connection.fa0f35743758a74b.webp)
 
 1. Selecteer **Custom keys** in het navigatiemenu.
 
-    ![Select custom keys.](../../../../../../translated_images/nl/select-custom-keys.5a3c6b25580a9b67.png)
+    ![Select custom keys.](../../../../../../translated_images/nl/select-custom-keys.5a3c6b25580a9b67.webp)
 
 1. Voer de volgende taken uit:
 
@@ -228,7 +228,7 @@ Om je aangepaste Phi-3 / Phi-3.5 model te integreren met Prompt flow, moet je de
     - Voer voor de sleutelnaam **key** in en plak de sleutel die je hebt gekopieerd uit Azure ML Studio in het waardeveld.
     - Nadat je de sleutels hebt toegevoegd, selecteer je **is secret** om te voorkomen dat de sleutel wordt blootgesteld.
 
-    ![Add connection.](../../../../../../translated_images/nl/add-connection.ac7f5faf8b10b0df.png)
+    ![Add connection.](../../../../../../translated_images/nl/add-connection.ac7f5faf8b10b0df.webp)
 
 1. Selecteer **Add connection**.
 
@@ -242,15 +242,15 @@ Je hebt een aangepaste verbinding toegevoegd in Azure AI Foundry. Laten we nu ee
 
 1. Selecteer **+ Create** in het navigatiemenu.
 
-    ![Select Promptflow.](../../../../../../translated_images/nl/select-promptflow.18ff2e61ab9173eb.png)
+    ![Select Promptflow.](../../../../../../translated_images/nl/select-promptflow.18ff2e61ab9173eb.webp)
 
 1. Selecteer **Chat flow** in het navigatiemenu.
 
-    ![Select chat flow.](../../../../../../translated_images/nl/select-flow-type.28375125ec9996d3.png)
+    ![Select chat flow.](../../../../../../translated_images/nl/select-flow-type.28375125ec9996d3.webp)
 
 1. Voer een **Folder name** in die je wilt gebruiken.
 
-    ![Select chat flow.](../../../../../../translated_images/nl/enter-name.02ddf8fb840ad430.png)
+    ![Select chat flow.](../../../../../../translated_images/nl/enter-name.02ddf8fb840ad430.webp)
 
 1. Selecteer **Create**.
 
@@ -287,7 +287,7 @@ Je moet het fijn-afgestelde Phi-3 / Phi-3.5 model integreren in een Prompt flow.
 
     - Selecteer **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/nl/select-raw-file-mode.06c1eca581ce4f53.png)
+    ![Select raw file mode.](../../../../../../translated_images/nl/select-raw-file-mode.06c1eca581ce4f53.webp)
 
 1. Voeg de volgende code toe aan *integrate_with_promptflow.py* om het aangepaste Phi-3 / Phi-3.5 model in Prompt flow te gebruiken.
 
@@ -350,14 +350,14 @@ Je moet het fijn-afgestelde Phi-3 / Phi-3.5 model integreren in een Prompt flow.
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/nl/paste-promptflow-code.cd6d95b101c0ec28.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/nl/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
 > Voor meer gedetailleerde informatie over het gebruik van Prompt flow in Azure AI Foundry, kun je terecht bij [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Selecteer **Chat input**, **Chat output** om chatten met je model mogelijk te maken.
 
-    ![Select Input Output.](../../../../../../translated_images/nl/select-input-output.c187fc58f25fbfc3.png)
+    ![Select Input Output.](../../../../../../translated_images/nl/select-input-output.c187fc58f25fbfc3.webp)
 
 1. Je bent nu klaar om te chatten met je aangepaste Phi-3 / Phi-3.5 model. In de volgende oefening leer je hoe je Prompt flow start en gebruikt om te chatten met je fijn-afgestelde Phi-3 / Phi-3.5 model.
 
@@ -365,32 +365,32 @@ Je moet het fijn-afgestelde Phi-3 / Phi-3.5 model integreren in een Prompt flow.
 >
 > De herbouwde flow zou eruit moeten zien zoals in de afbeelding hieronder:
 >
-> ![Flow example](../../../../../../translated_images/nl/graph-example.82fd1bcdd3fc545b.png)
+> ![Flow example](../../../../../../translated_images/nl/graph-example.82fd1bcdd3fc545b.webp)
 >
 
 #### Start Prompt flow
 
 1. Selecteer **Start compute sessions** om Prompt flow te starten.
 
-    ![Start compute session.](../../../../../../translated_images/nl/start-compute-session.9acd8cbbd2c43df1.png)
+    ![Start compute session.](../../../../../../translated_images/nl/start-compute-session.9acd8cbbd2c43df1.webp)
 
 1. Selecteer **Validate and parse input** om de parameters te vernieuwen.
 
-    ![Validate input.](../../../../../../translated_images/nl/validate-input.c1adb9543c6495be.png)
+    ![Validate input.](../../../../../../translated_images/nl/validate-input.c1adb9543c6495be.webp)
 
 1. Selecteer de **Value** van de **connection** naar de aangepaste verbinding die je hebt aangemaakt. Bijvoorbeeld *connection*.
 
-    ![Connection.](../../../../../../translated_images/nl/select-connection.1f2b59222bcaafef.png)
+    ![Connection.](../../../../../../translated_images/nl/select-connection.1f2b59222bcaafef.webp)
 
 #### Chat met je aangepaste Phi-3 / Phi-3.5 model
 
 1. Selecteer **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/nl/select-chat.0406bd9687d0c49d.png)
+    ![Select chat.](../../../../../../translated_images/nl/select-chat.0406bd9687d0c49d.webp)
 
 1. Hier is een voorbeeld van de resultaten: nu kun je chatten met je aangepaste Phi-3 / Phi-3.5 model. Het is aan te raden om vragen te stellen op basis van de data die gebruikt is voor het fijn-afstellen.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/nl/chat-with-promptflow.1cf8cea112359ada.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/nl/chat-with-promptflow.1cf8cea112359ada.webp)
 
 ### Zet Azure OpenAI in om het Phi-3 / Phi-3.5 model te evalueren
 
@@ -402,7 +402,7 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
 
 1. Navigeer naar het Azure AI Foundry project dat je hebt aangemaakt.
 
-    ![Select Project.](../../../../../../translated_images/nl/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/nl/select-project-created.5221e0e403e2c9d6.webp)
 
 1. Selecteer in het project dat je hebt aangemaakt **Deployments** in het tabblad aan de linkerkant.
 
@@ -410,11 +410,11 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
 
 1. Selecteer **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/nl/deploy-openai-model.95d812346b25834b.png)
+    ![Select Deployments.](../../../../../../translated_images/nl/deploy-openai-model.95d812346b25834b.webp)
 
 1. Selecteer het Azure OpenAI model dat je wilt gebruiken. Bijvoorbeeld **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/nl/select-openai-model.959496d7e311546d.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/nl/select-openai-model.959496d7e311546d.webp)
 
 1. Selecteer **Confirm**.
 
@@ -426,17 +426,17 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
 
 1. Navigeer naar het Azure AI Foundry project dat je hebt aangemaakt.
 
-    ![Select Project.](../../../../../../translated_images/nl/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/nl/select-project-created.5221e0e403e2c9d6.webp)
 
 1. Selecteer in het project dat je hebt aangemaakt **Evaluation** in het tabblad aan de linkerkant.
 
 1. Selecteer **+ New evaluation** in het navigatiemenu.
 
-    ![Select evaluation.](../../../../../../translated_images/nl/select-evaluation.2846ad7aaaca7f4f.png)
+    ![Select evaluation.](../../../../../../translated_images/nl/select-evaluation.2846ad7aaaca7f4f.webp)
 
 1. Selecteer **Prompt flow** evaluatie.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/nl/promptflow-evaluation.cb9758cc19b4760f.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/nl/promptflow-evaluation.cb9758cc19b4760f.webp)
 
 1. Voer de volgende taken uit:
 
@@ -444,7 +444,7 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
     - Selecteer **Question and answer without context** als taaktype. Dit omdat de **UlTRACHAT_200k** dataset die in deze tutorial wordt gebruikt geen context bevat.
     - Selecteer de prompt flow die je wilt evalueren.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting1.4aa08259ff7a536e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting1.4aa08259ff7a536e.webp)
 
 1. Selecteer **Next**.
 
@@ -453,7 +453,7 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
     - Selecteer **Add your dataset** om de dataset te uploaden. Bijvoorbeeld, je kunt het testdatasetbestand uploaden, zoals *test_data.json1*, dat is inbegrepen bij het downloaden van de **ULTRACHAT_200k** dataset.
     - Selecteer de juiste **Dataset column** die overeenkomt met je dataset. Bijvoorbeeld, als je de **ULTRACHAT_200k** dataset gebruikt, selecteer dan **${data.prompt}** als datasetkolom.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting2.07036831ba58d64e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting2.07036831ba58d64e.webp)
 
 1. Selecteer **Next**.
 
@@ -462,7 +462,7 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
     - Selecteer de prestatie- en kwaliteitsmetingen die je wilt gebruiken.
     - Selecteer het Azure OpenAI model dat je hebt aangemaakt voor de evaluatie. Bijvoorbeeld, selecteer **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting3-1.d1ae69e3bf80914e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
 1. Voer de volgende taken uit om de risico- en veiligheidsmetingen te configureren:
 
@@ -472,7 +472,7 @@ Om het Phi-3 / Phi-3.5 model te evalueren in Azure AI Foundry, moet je een Azure
     - Voor **answer**, selecteer **Data source** als **{$run.outputs.answer}**.
     - Voor **ground_truth**, selecteer **Data source** als **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting3-2.d53bd075c60a45a2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/nl/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
 1. Selecteer **Next**.
 
@@ -489,17 +489,17 @@ Zodra de evaluatie is voltooid, kunt u de resultaten bekijken voor zowel prestat
 
     - evalueer de effectiviteit van het model bij het genereren van samenhangende, vloeiende en relevante antwoorden.
 
-    ![Evaluation result.](../../../../../../translated_images/nl/evaluation-result-gpu.85f48b42dfb74254.png)
+    ![Evaluation result.](../../../../../../translated_images/nl/evaluation-result-gpu.85f48b42dfb74254.webp)
 
 1. Risico- en veiligheidsmetingen:
 
     - Zorg ervoor dat de output van het model veilig is en in lijn met de Responsible AI Principles, waarbij schadelijke of aanstootgevende inhoud wordt vermeden.
 
-    ![Evaluation result.](../../../../../../translated_images/nl/evaluation-result-gpu-2.1b74e336118f4fd0.png)
+    ![Evaluation result.](../../../../../../translated_images/nl/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
 1. U kunt naar beneden scrollen om **Gedetailleerde meetresultaten** te bekijken.
 
-    ![Evaluation result.](../../../../../../translated_images/nl/detailed-metrics-result.afa2f5c39a4f5f17.png)
+    ![Evaluation result.](../../../../../../translated_images/nl/detailed-metrics-result.afa2f5c39a4f5f17.webp)
 
 1. Door uw aangepaste Phi-3 / Phi-3.5-model te evalueren op zowel prestatie- als veiligheidsmetingen, kunt u bevestigen dat het model niet alleen effectief is, maar ook voldoet aan verantwoordelijke AI-praktijken, waardoor het klaar is voor gebruik in de praktijk.
 
@@ -509,7 +509,7 @@ Zodra de evaluatie is voltooid, kunt u de resultaten bekijken voor zowel prestat
 
 U heeft met succes het fijn-afgestelde Phi-3-model geëvalueerd, geïntegreerd met Prompt flow in Azure AI Foundry. Dit is een belangrijke stap om ervoor te zorgen dat uw AI-modellen niet alleen goed presteren, maar ook voldoen aan de Responsible AI-principes van Microsoft, zodat u betrouwbare en vertrouwde AI-toepassingen kunt bouwen.
 
-![Architecture.](../../../../../../translated_images/nl/architecture.10bec55250f5d6a4.png)
+![Architecture.](../../../../../../translated_images/nl/architecture.10bec55250f5d6a4.webp)
 
 ## Azure-resources opruimen
 

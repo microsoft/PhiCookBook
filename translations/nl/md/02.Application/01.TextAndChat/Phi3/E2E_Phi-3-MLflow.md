@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) is een open-source platform dat is ontworpen om de volledige machine learning levenscyclus te beheren.
 
-![MLFlow](../../../../../../translated_images/nl/MlFlowmlops.ed16f47809d74d9a.png)
+![MLFlow](../../../../../../translated_images/nl/MlFlowmlops.ed16f47809d74d9a.webp)
 
 MLFlow wordt gebruikt om de ML-levenscyclus te beheren, inclusief experimenten, reproduceerbaarheid, deployment en een centraal modelregister. MLflow biedt momenteel vier componenten.
 
@@ -22,7 +22,7 @@ MLFlow wordt gebruikt om de ML-levenscyclus te beheren, inclusief experimenten, 
 
 Het bevat mogelijkheden voor het bijhouden van experimenten, het verpakken van code in reproduceerbare runs, en het delen en inzetten van modellen. MLFlow is geïntegreerd in Databricks en ondersteunt verschillende ML-bibliotheken, waardoor het bibliotheek-agnostisch is. Het kan gebruikt worden met elke machine learning bibliotheek en in elke programmeertaal, omdat het een REST API en CLI biedt voor gebruiksgemak.
 
-![MLFlow](../../../../../../translated_images/nl/MLflow2.5a22eb718f6311d1.png)
+![MLFlow](../../../../../../translated_images/nl/MLflow2.5a22eb718f6311d1.webp)
 
 Belangrijke kenmerken van MLFlow zijn onder andere:
 
@@ -37,7 +37,7 @@ MLFlow ondersteunt ook de MLOps-cyclus, die het voorbereiden van data, registrer
 
 In dit E2E voorbeeld laten we twee verschillende benaderingen zien om een wrapper te bouwen rond het Phi-3 small language model (SLM) en dit vervolgens als MLFlow model te draaien, lokaal of in de cloud, bijvoorbeeld in een Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/nl/MlFlow1.fd745e47dbd3fecf.png)
+![MLFlow](../../../../../../translated_images/nl/MlFlow1.fd745e47dbd3fecf.webp)
 
 | Project | Beschrijving | Locatie |
 | ------------ | ----------- | -------- |

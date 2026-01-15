@@ -31,11 +31,11 @@ Cloud အခြေပြု application များဖြစ်စေ edge devi
 
 Microsoft Olive သည် generative artificial intelligence လောကတွင် fine-tuning နှင့် reference နှစ်မျိုးလုံးကို ဖုံးလွှမ်းနိုင်သော လွယ်ကူစွာ အသုံးပြုနိုင်သော open source မော်ဒယ် optimization ကိရိယာတစ်ခုဖြစ်သည်။ ရိုးရှင်းသော configuration တစ်ခုသာ လိုအပ်ပြီး open source small language model များနှင့် runtime ပတ်ဝန်းကျင်များ (AzureML / local GPU, CPU, DirectML) ကို ပေါင်းစပ်အသုံးပြုခြင်းဖြင့် မော်ဒယ်ကို အလိုအလျောက် optimize ပြုလုပ်ပြီး fine-tuning သို့မဟုတ် reference ပြုလုပ်နိုင်သည်။ ထို့နောက် cloud သို့မဟုတ် edge device များတွင် ထည့်သွင်းအသုံးပြုရန် အကောင်းဆုံး မော်ဒယ်ကို ရှာဖွေနိုင်သည်။ စီးပွားရေးလုပ်ငန်းများအနေဖြင့် မိမိတို့၏ စက်မှုလုပ်ငန်းအထူးပြု မော်ဒယ်များကို on-premises နှင့် cloud ပေါ်တွင် တည်ဆောက်နိုင်စေသည်။
 
-![intro](../../../../translated_images/my/intro.46086a3f16ec48e2.png)
+![intro](../../../../translated_images/my/intro.46086a3f16ec48e2.webp)
 
 ## Phi-3 ကို Microsoft Olive ဖြင့် Fine-tuning ပြုလုပ်ခြင်း
 
-![FinetuningwithOlive](../../../../translated_images/my/olivefinetune.76d09e9b68253681.png)
+![FinetuningwithOlive](../../../../translated_images/my/olivefinetune.76d09e9b68253681.webp)
 
 ## Phi-3 Olive နမူနာကုဒ်နှင့် ဥပမာ
 ဤဥပမာတွင် Olive ကို အသုံးပြု၍ -

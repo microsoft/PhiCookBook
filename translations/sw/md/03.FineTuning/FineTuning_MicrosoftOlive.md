@@ -32,11 +32,11 @@ Inazingatia vizingiti kama usahihi na ucheleweshaji wakati wa kuboresha modeli.
 
 Microsoft Olive ni chombo rahisi sana cha chanzo huria cha kuboresha modeli kinachoweza kufunika kurekebisha na marejeleo katika uwanja wa akili bandia ya kizazi. Inahitaji tu usanidi rahisi, ikichanganywa na matumizi ya modeli ndogo za lugha za chanzo huria na mazingira yanayohusiana ya utekelezaji (AzureML / GPU ya ndani, CPU, DirectML), unaweza kukamilisha kurekebisha au marejeleo ya modeli kupitia uboreshaji wa moja kwa moja, na kupata modeli bora ya kupeleka kwenye wingu au kwenye vifaa vya edge. Inaruhusu makampuni kujenga modeli zao za sekta mahususi ndani ya makazi na kwenye wingu.
 
-![intro](../../../../translated_images/sw/intro.46086a3f16ec48e2.png)
+![intro](../../../../translated_images/sw/intro.46086a3f16ec48e2.webp)
 
 ## Kurekebisha Phi-3 kwa Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/sw/olivefinetune.76d09e9b68253681.png)
+![FinetuningwithOlive](../../../../translated_images/sw/olivefinetune.76d09e9b68253681.webp)
 
 ## Mfano wa Msimbo wa Phi-3 Olive na Mfano
 Katika mfano huu utatumia Olive ili:

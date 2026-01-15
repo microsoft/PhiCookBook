@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Я выбрал Objective-C для разработки приложения, так как при использовании Generative AI с ONNX Runtime C++ API Objective-C обеспечивает лучшую совместимость. Конечно, можно также реализовать вызовы через Swift bridging.
 
-![xcode](../../../../../translated_images/ru/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ru/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Копирование квантизированной модели ONNX INT4 в проект приложения**
 
 Нужно импортировать модель с квантизацией INT4 в формате ONNX, которую необходимо сначала скачать.
 
-![hf](../../../../../translated_images/ru/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ru/hf.6b8504fd88ee48dd.webp)
 
 После загрузки добавьте её в папку Resources проекта в Xcode.
 
-![model](../../../../../translated_images/ru/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ru/model.3b879b14e0be877d.webp)
 
 ## **6. Добавление C++ API в ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** Добавьте соответствующие заголовочные файлы C++ в проект.
 
-  ![Header File](../../../../../translated_images/ru/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ru/head.64cad021ce70a333.webp)
 
 - **b.** Подключите динамическую библиотеку `onnxruntime-genai` в Xcode.
 
-  ![Library](../../../../../translated_images/ru/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ru/lib.a4209b9f21ddf344.webp)
 
 - **c.** Используйте пример кода на C для тестирования. Также можно добавить дополнительные функции, например ChatUI, для расширения возможностей.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 После завершения настройки можно запустить приложение и увидеть результаты инференса модели Phi-3-mini.
 
-![Running Result](../../../../../translated_images/ru/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ru/result.326a947a6a2b9c51.webp)
 
 Для получения дополнительного примера кода и подробных инструкций посетите репозиторий [Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

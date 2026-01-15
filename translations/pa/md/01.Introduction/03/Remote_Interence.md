@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਜਦੋਂ ਅਡੈਪਟਰ ਰਿਮੋਟ ਵਾਤਾਵਰਣ ਵਿੱਚ ਟ੍ਰੇਨ ਹੋ ਜਾਂਦੇ ਹਨ, ਤਾਂ ਮਾਡਲ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰਨ ਲਈ ਇੱਕ ਸਧਾਰਣ Gradio ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰੋ।
 
-![Fine-tune complete](../../../../../translated_images/pa/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/pa/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Azure ਰਿਸੋਰਸز ਦੀ ਪ੍ਰੋਵਿਜ਼ਨ ਕਰੋ  
 ਰਿਮੋਟ ਇੰਫਰੈਂਸ ਲਈ Azure ਰਿਸੋਰਸਜ਼ ਸੈੱਟਅਪ ਕਰਨ ਲਈ ਕਮਾਂਡ ਪੈਲੇਟ ਤੋਂ `AI Toolkit: Provision Azure Container Apps for inference` ਚਲਾਓ। ਇਸ ਸੈੱਟਅਪ ਦੌਰਾਨ, ਤੁਹਾਨੂੰ ਆਪਣੀ Azure ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਅਤੇ ਰਿਸੋਰਸ ਗਰੁੱਪ ਚੁਣਨ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ।  
-![Provision Inference Resource](../../../../../translated_images/pa/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/pa/command-provision-inference.467afc8d351642fc.webp)
 
 ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ, ਇੰਫਰੈਂਸ ਲਈ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਅਤੇ ਰਿਸੋਰਸ ਗਰੁੱਪ ਉਹੀ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਲਈ ਵਰਤੇ ਗਏ ਸਨ। ਇੰਫਰੈਂਸ ਉਹੀ Azure Container App Environment ਵਰਤੇਗਾ ਅਤੇ ਮਾਡਲ ਅਤੇ ਮਾਡਲ ਅਡੈਪਟਰ ਨੂੰ ਐਕਸੈਸ ਕਰੇਗਾ ਜੋ Azure Files ਵਿੱਚ ਸਟੋਰ ਕੀਤੇ ਗਏ ਹਨ, ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਦੌਰਾਨ ਬਣਾਏ ਗਏ ਸਨ।
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### ਇੰਫਰੈਂਸ ਲਈ ਡਿਪਲੋਇਮੈਂਟ  
 ਜੇ ਤੁਸੀਂ ਇੰਫਰੈਂਸ ਕੋਡ ਨੂੰ ਸੋਧਣਾ ਜਾਂ ਇੰਫਰੈਂਸ ਮਾਡਲ ਨੂੰ ਰੀਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ `AI Toolkit: Deploy for inference` ਕਮਾਂਡ ਚਲਾਓ। ਇਹ ਤੁਹਾਡੇ ਤਾਜ਼ਾ ਕੋਡ ਨੂੰ ACA ਨਾਲ ਸਿੰਕ੍ਰੋਨਾਈਜ਼ ਕਰੇਗਾ ਅਤੇ ਰੇਪਲਿਕਾ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੇਗਾ।
 
-![Deploy for inference](../../../../../translated_images/pa/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/pa/command-deploy.9adb4e310dd0b0ae.webp)
 
 ਡਿਪਲੋਇਮੈਂਟ ਸਫਲਤਾਪੂਰਵਕ ਮੁਕੰਮਲ ਹੋਣ ਤੋਂ ਬਾਅਦ, ਮਾਡਲ ਹੁਣ ਇਸ ਐਂਡਪੌਇੰਟ ਰਾਹੀਂ ਮੁਲਾਂਕਣ ਲਈ ਤਿਆਰ ਹੈ।
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਤੁਸੀਂ VSCode ਨੋਟੀਫਿਕੇਸ਼ਨ ਵਿੱਚ ਦਿਖਾਏ ਗਏ "*Go to Inference Endpoint*" ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਇੰਫਰੈਂਸ API ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦੇ ਹੋ। ਵਿਕਲਪ ਵਜੋਂ, ਵੈੱਬ API ਐਂਡਪੌਇੰਟ `ACA_APP_ENDPOINT` ਵਿੱਚ `./infra/inference.config.json` ਅਤੇ ਆਉਟਪੁੱਟ ਪੈਨਲ ਵਿੱਚ ਮਿਲ ਸਕਦਾ ਹੈ।
 
-![App Endpoint](../../../../../translated_images/pa/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/pa/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** ਇੰਫਰੈਂਸ ਐਂਡਪੌਇੰਟ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਚਾਲੂ ਹੋਣ ਵਿੱਚ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।
 

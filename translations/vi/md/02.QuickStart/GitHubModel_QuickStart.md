@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Chào mừng bạn đến với [GitHub Models](https://github.com/marketplace/models)! Chúng tôi đã chuẩn bị sẵn sàng để bạn khám phá các Mô hình AI được lưu trữ trên Azure AI.
 
-![GitHubModel](../../../../translated_images/vi/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/vi/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 Để biết thêm thông tin về các Mô hình có trên GitHub Models, hãy xem tại [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Có một vài ví dụ cơ bản sẵn sàng để bạn chạy thử. Bạn c�
 
 Ngoài ra còn có một môi trường Codespaces riêng để chạy các mẫu và mô hình.
 
-![Getting Started](../../../../translated_images/vi/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/vi/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Mã Mẫu
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Sử dụng MIỄN PHÍ và Giới hạn tốc độ cho GitHub Models
 
-![Model Catalog](../../../../translated_images/vi/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/vi/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [Giới hạn tốc độ cho khu vực thử nghiệm và sử dụng API miễn phí](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) được thiết kế để giúp bạn thử nghiệm các mô hình và tạo nguyên mẫu ứng dụng AI. Để sử dụng vượt quá các giới hạn này và mở rộng ứng dụng của bạn, bạn cần cấp phát tài nguyên từ tài khoản Azure và xác thực từ đó thay vì dùng personal access token của GitHub. Bạn không cần thay đổi gì khác trong mã của mình. Sử dụng liên kết này để tìm hiểu cách vượt qua giới hạn tầng miễn phí trong Azure AI.
 

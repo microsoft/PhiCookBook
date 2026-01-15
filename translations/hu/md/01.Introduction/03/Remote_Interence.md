@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Miután az adaptereket a távoli környezetben betanítottuk, egy egyszerű Gradio alkalmazással léphetünk kapcsolatba a modellel.
 
-![Finomhangolás befejezve](../../../../../translated_images/hu/log-finetuning-res.7b92254e7e822c7f.png)
+![Finomhangolás befejezve](../../../../../translated_images/hu/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Azure erőforrások előkészítése  
 A távoli inferencia beállításához futtassa az `AI Toolkit: Provision Azure Container Apps for inference` parancsot a parancspalettából. A beállítás során ki kell választania az Azure-előfizetését és az erőforráscsoportot.  
-![Inferenciához erőforrás előkészítése](../../../../../translated_images/hu/command-provision-inference.467afc8d351642fc.png)
+![Inferenciához erőforrás előkészítése](../../../../../translated_images/hu/command-provision-inference.467afc8d351642fc.webp)
 
 Alapértelmezés szerint az inferenciához használt előfizetésnek és erőforráscsoportnak meg kell egyeznie a finomhangoláshoz használtakkal. Az inferencia ugyanazt az Azure Container App környezetet használja, és hozzáfér a finomhangolás során létrehozott modellhez és adapterhez, amelyek az Azure Files-ban vannak tárolva.
 
@@ -24,7 +24,7 @@ Alapértelmezés szerint az inferenciához használt előfizetésnek és erőfor
 ### Telepítés inferenciához  
 Ha módosítani szeretné az inferencia kódját vagy újratölteni az inferencia modellt, futtassa az `AI Toolkit: Deploy for inference` parancsot. Ez szinkronizálja a legfrissebb kódot az ACA-val, és újraindítja a replikát.
 
-![Inferenciához telepítés](../../../../../translated_images/hu/command-deploy.9adb4e310dd0b0ae.png)
+![Inferenciához telepítés](../../../../../translated_images/hu/command-deploy.9adb4e310dd0b0ae.webp)
 
 A telepítés sikeres befejezése után a modell készen áll az értékelésre ezen a végponton keresztül.
 
@@ -32,7 +32,7 @@ A telepítés sikeres befejezése után a modell készen áll az értékelésre 
 
 Az inferencia API-hoz a VSCode értesítésében megjelenő "*Go to Inference Endpoint*" gombra kattintva férhet hozzá. Alternatív megoldásként a web API végpont megtalálható az `ACA_APP_ENDPOINT` alatt a `./infra/inference.config.json` fájlban, illetve a kimeneti panelen.
 
-![Alkalmazás végpont](../../../../../translated_images/hu/notification-deploy.446e480a44b1be58.png)
+![Alkalmazás végpont](../../../../../translated_images/hu/notification-deploy.446e480a44b1be58.webp)
 
 > **Megjegyzés:** Az inferencia végpontnak eltarthat néhány percig, mire teljesen működőképes lesz.
 

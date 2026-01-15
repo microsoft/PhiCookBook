@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 În acest exemplu vom realiza ajustarea modelului Phi-3-mini-4k-instruct pentru a completa o conversație între 2 persoane folosind setul de date ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/ro/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/ro/MLFineTune.928d4c6b3767dd35.webp)
 
 Exemplul îți va arăta cum să faci ajustarea folosind Azure ML SDK și Python, apoi cum să implementezi modelul ajustat la un endpoint online pentru inferență în timp real.
 

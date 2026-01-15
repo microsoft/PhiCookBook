@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Po wytrenowaniu adapterów w środowisku zdalnym, użyj prostej aplikacji Gradio, aby wchodzić w interakcję z modelem.
 
-![Fine-tune complete](../../../../../translated_images/pl/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/pl/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Przygotowanie zasobów Azure  
 Musisz skonfigurować zasoby Azure do zdalnego wnioskowania, wykonując polecenie `AI Toolkit: Provision Azure Container Apps for inference` z palety poleceń. Podczas tej konfiguracji zostaniesz poproszony o wybranie subskrypcji Azure oraz grupy zasobów.  
-![Provision Inference Resource](../../../../../translated_images/pl/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/pl/command-provision-inference.467afc8d351642fc.webp)
 
 Domyślnie subskrypcja i grupa zasobów dla wnioskowania powinny być takie same, jak te użyte podczas dostrajania. Wnioskowanie będzie korzystać z tego samego środowiska Azure Container App oraz uzyska dostęp do modelu i adaptera modelu przechowywanych w Azure Files, które zostały wygenerowane podczas etapu dostrajania.
 
@@ -24,7 +24,7 @@ Domyślnie subskrypcja i grupa zasobów dla wnioskowania powinny być takie same
 ### Wdrażanie do wnioskowania  
 Jeśli chcesz zmodyfikować kod wnioskowania lub ponownie załadować model wnioskowania, wykonaj polecenie `AI Toolkit: Deploy for inference`. Spowoduje to synchronizację najnowszego kodu z ACA i ponowne uruchomienie repliki.
 
-![Deploy for inference](../../../../../translated_images/pl/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/pl/command-deploy.9adb4e310dd0b0ae.webp)
 
 Po pomyślnym wdrożeniu model jest gotowy do oceny za pomocą tego punktu końcowego.
 
@@ -32,7 +32,7 @@ Po pomyślnym wdrożeniu model jest gotowy do oceny za pomocą tego punktu końc
 
 Do API wnioskowania możesz uzyskać dostęp, klikając przycisk "*Go to Inference Endpoint*" wyświetlany w powiadomieniu VSCode. Alternatywnie, adres punktu końcowego API webowego znajdziesz pod `ACA_APP_ENDPOINT` w pliku `./infra/inference.config.json` oraz w panelu wyjściowym.
 
-![App Endpoint](../../../../../translated_images/pl/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/pl/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** Punkt końcowy wnioskowania może wymagać kilku minut, aby stać się w pełni operacyjnym.
 

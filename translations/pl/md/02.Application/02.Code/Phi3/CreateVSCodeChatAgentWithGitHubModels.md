@@ -15,11 +15,11 @@ Czy korzystasz z Visual Studio Code Copilot? Szczególnie w Chat możesz używa�
 
 Wiemy, że Phi-3/3.5-mini-instruct z rodziny Phi-3/3.5 ma silne zdolności rozumienia i generowania kodu, i przewyższa Gemma-2-9b oraz Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/pl/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/pl/codegen.53be1150ee54d969.webp)
 
 Najnowsze GitHub Models udostępniają już dostęp do modeli Phi-3.5-mini-instruct (128k) oraz Phi-3.5-vision-instruct (128k). Deweloperzy mogą korzystać z nich przez OpenAI SDK, Azure AI Inference SDK oraz REST API.
 
-![gh](../../../../../../translated_images/pl/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/pl/gh.459640c7ceba01d5.webp)
 
 ***Note:*** Zaleca się używanie tutaj Azure AI Inference SDK, ponieważ lepiej współpracuje z Azure Model Catalog w środowisku produkcyjnym.
 
@@ -34,13 +34,13 @@ Poniżej przedstawiono wyniki **Phi-3.5-mini-instruct (128k)** oraz **Phi-3.5-vi
 
 Agent GitHub Copilot Chat może wykonywać różne zadania w różnych scenariuszach projektowych na podstawie kodu. System posiada cztery agenty: workspace, github, terminal, vscode.
 
-![agent](../../../../../../translated_images/pl/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/pl/agent.3dbb06228f9a6189.webp)
 
 Dodając nazwę agenta poprzedzoną ‘@’, możesz szybko wykonać odpowiadające mu zadanie. Dla firm, jeśli dodasz własne treści związane z biznesem, takie jak wymagania, kodowanie, specyfikacje testów i wydania, możesz uzyskać bardziej zaawansowane, prywatne funkcje firmowe oparte na GitHub Copilot.
 
 Visual Studio Code Chat Agent oficjalnie udostępnił swoje API, pozwalając firmom lub deweloperom firmowym tworzyć agentów opartych na różnych ekosystemach oprogramowania biznesowego. Bazując na metodzie rozwoju rozszerzeń Visual Studio Code, możesz łatwo uzyskać dostęp do interfejsu API Visual Studio Code Chat Agent. Możemy rozwijać się w oparciu o ten proces.
 
-![diagram](../../../../../../translated_images/pl/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/pl/diagram.ca70d2866762f115.webp)
 
 Scenariusz rozwoju może obsługiwać dostęp do API modeli firm trzecich (takich jak GitHub Models, Azure Model Catalog oraz własne usługi oparte na modelach open source) oraz może korzystać z modeli gpt-35-turbo, gpt-4 i gpt-4o udostępnianych przez GitHub Copilot.
 
@@ -54,7 +54,7 @@ Próbujemy zintegrować możliwości programistyczne Phi-3.5, aby realizować pi
 
 3. Generowanie kodu na podstawie **Phi-3.5-vision-instruct (128k)** oraz uzupełnianie obrazów za pomocą polecenia **@phicoding /image**
 
-![arch](../../../../../../translated_images/pl/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/pl/arch.5a58a0adfa959a2d.webp)
 
 ## **Powiązane kroki**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/pl/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/pl/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/pl/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/pl/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/pl/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/pl/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/pl/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/pl/agentimage.f5cb52b45ab7d0d1.webp)
 
 Możesz pobrać przykładowy kod: [kliknij](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

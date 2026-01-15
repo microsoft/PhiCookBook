@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 मी App विकासासाठी Objective-C निवडले कारण ONNX Runtime C++ API सह Generative AI वापरताना Objective-C अधिक सुसंगत आहे. अर्थात, Swift ब्रिजिंगद्वारे संबंधित कॉल्स पूर्ण करणे देखील शक्य आहे.
 
-![xcode](../../../../../translated_images/mr/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/mr/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX quantized INT4 मॉडेल App प्रोजेक्टमध्ये कॉपी करा**
 
 आपल्याला ONNX फॉरमॅटमधील INT4 quantization मॉडेल आयात करायचे आहे, जे आधी डाउनलोड करणे आवश्यक आहे.
 
-![hf](../../../../../translated_images/mr/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/mr/hf.6b8504fd88ee48dd.webp)
 
 डाउनलोड केल्यानंतर, ते Xcode मधील प्रोजेक्टच्या Resources डायरेक्टरीमध्ये जोडावे लागेल.
 
-![model](../../../../../translated_images/mr/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/mr/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllers मध्ये C++ API जोडणे**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** संबंधित C++ हेडर फाइल्स प्रोजेक्टमध्ये जोडा.
 
-  ![Header File](../../../../../translated_images/mr/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/mr/head.64cad021ce70a333.webp)
 
 - **b.** Xcode मध्ये `onnxruntime-genai` डायनॅमिक लायब्ररी समाविष्ट करा.
 
-  ![Library](../../../../../translated_images/mr/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/mr/lib.a4209b9f21ddf344.webp)
 
 - **c.** चाचणीसाठी C Samples कोड वापरा. अधिक कार्यक्षमतेसाठी ChatUI सारखे अतिरिक्त फीचर्स देखील जोडू शकता.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 सेटअप पूर्ण झाल्यानंतर, अ‍ॅप्लिकेशन चालवून Phi-3-mini मॉडेल इन्फरन्सचे परिणाम पाहू शकता.
 
-![Running Result](../../../../../translated_images/mr/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/mr/result.326a947a6a2b9c51.webp)
 
 अधिक नमुना कोड आणि सविस्तर सूचना पाहण्यासाठी, [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) भेट द्या.
 

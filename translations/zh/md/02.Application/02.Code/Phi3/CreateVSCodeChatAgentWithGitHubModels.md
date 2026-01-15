@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 我们知道 Phi-3/3.5-mini-instruct 属于 Phi-3/3.5 家族，具备强大的代码理解和生成能力，相较于 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407 有明显优势。
 
-![codegen](../../../../../../translated_images/zh/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/zh/codegen.53be1150ee54d969.webp)
 
 最新的 GitHub Models 已经提供了 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型。开发者可以通过 OpenAI SDK、Azure AI Inference SDK 以及 REST API 访问它们。
 
-![gh](../../../../../../translated_images/zh/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/zh/gh.459640c7ceba01d5.webp)
 
 ***Note: *** 建议这里使用 Azure AI Inference SDK，因为它在生产环境中可以更好地与 Azure Model Catalog 切换。
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot 聊天助手可以基于代码完成不同项目场景下的多种任务。系统内置四个助手：workspace、github、terminal、vscode。
 
-![agent](../../../../../../translated_images/zh/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/zh/agent.3dbb06228f9a6189.webp)
 
 通过在助手名称前加‘@’，你可以快速完成对应的工作。对于企业来说，如果添加与自身业务相关的内容，如需求、编码、测试规范和发布，就能基于 GitHub Copilot 拥有更强大的企业私有功能。
 
 Visual Studio Code 聊天助手现已正式发布其 API，允许企业或企业开发者基于不同的软件业务生态开发助手。基于 Visual Studio Code 扩展开发的方式，你可以轻松接入 Visual Studio Code 聊天助手 API 的接口。我们可以基于此流程进行开发。
 
-![diagram](../../../../../../translated_images/zh/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/zh/diagram.ca70d2866762f115.webp)
 
 开发场景支持接入第三方模型 API（如 GitHub Models、Azure Model Catalog 以及基于开源模型自建的服务），也可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
 
@@ -54,7 +54,7 @@ Visual Studio Code 聊天助手现已正式发布其 API，允许企业或企业
 
 3. 通过 **@phicoding /image** 命令，基于 **Phi-3.5-vision-instruct (128k)** 和图片完成代码生成
 
-![arch](../../../../../../translated_images/zh/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/zh/arch.5a58a0adfa959a2d.webp)
 
 ## **相关步骤**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/zh/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/zh/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/zh/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/zh/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/zh/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/zh/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/zh/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/zh/agentimage.f5cb52b45ab7d0d1.webp)
 
 你可以下载示例代码：[点击这里](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

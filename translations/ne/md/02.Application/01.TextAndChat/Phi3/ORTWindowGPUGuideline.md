@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** यदि तपाईंले कम्पाइल गर्न चाहनुहुन्न भने यो चरण छोड्न सक्नुहुन्छ
 
-![CPP](../../../../../../translated_images/ne/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/ne/01.42f52a2b2aedff02.webp)
 
 ### **4. NVIDIA ड्राइभर स्थापना गर्नुहोस्**
 
@@ -83,7 +83,7 @@ NVIDIA CUDNN 9.4 को lib, bin, include फोल्डरहरू NVIDIA CUD
 
    [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) खोल्नुहोस् र कार्यान्वयन गर्नुहोस्
 
-![RESULT](../../../../../../translated_images/ne/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/ne/02.b9b06996cf7255d5.webp)
 
 ### **8. ORT GenAI GPU कम्पाइल गर्नुहोस्**
 
@@ -129,7 +129,7 @@ NVIDIA CUDNN 9.4 को lib, bin, include फोल्डरहरू NVIDIA CUD
 
    - Windows Terminal प्रयोग गरी VS 2022 को Developer Command Prompt खोल्नुहोस् र onnxruntime-genai मा जानुहोस्
 
-![RESULT](../../../../../../translated_images/ne/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/ne/03.b83ce473d5ff9b9b.webp)
 
    - तपाईंको Python वातावरणसँग कम्पाइल गर्नुहोस्
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Az alkalmazás fejlesztési módjaként az Objective-C-t választottam, mert az ONNX Runtime C++ API-jával a Generatív AI használata így jobb kompatibilitást biztosít. Természetesen Swift bridging segítségével is megvalósíthatók a hívások.
 
-![xcode](../../../../../translated_images/hu/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/hu/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX kvantált INT4 modell másolása az App projektbe**
 
 Importálni kell az ONNX formátumú INT4 kvantált modellt, amelyet először le kell tölteni.
 
-![hf](../../../../../translated_images/hu/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/hu/hf.6b8504fd88ee48dd.webp)
 
 A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ban.
 
-![model](../../../../../translated_images/hu/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/hu/model.3b879b14e0be877d.webp)
 
 ## **6. C++ API hozzáadása a ViewControllers-hez**
 
@@ -121,11 +121,11 @@ A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ba
 
 - **a.** Add hozzá a megfelelő C++ fejlécfájlokat a projekthez.
 
-  ![Header File](../../../../../translated_images/hu/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/hu/head.64cad021ce70a333.webp)
 
 - **b.** Illeszd be az `onnxruntime-genai` dinamikus könyvtárat Xcode-ba.
 
-  ![Library](../../../../../translated_images/hu/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/hu/lib.a4209b9f21ddf344.webp)
 
 - **c.** Használd a C mintakódot teszteléshez. További funkciókhoz, például ChatUI-hoz is hozzáadhatsz kiegészítéseket.
 
@@ -162,7 +162,7 @@ A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ba
 
 A beállítások elvégzése után futtathatod az alkalmazást, hogy megtekintsd a Phi-3-mini modell inferálásának eredményét.
 
-![Running Result](../../../../../translated_images/hu/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/hu/result.326a947a6a2b9c51.webp)
 
 További mintakódokért és részletes útmutatókért látogass el a [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) oldalra.
 

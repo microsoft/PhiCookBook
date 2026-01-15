@@ -19,7 +19,7 @@ Ajustarea fină a unui model poate duce uneori la răspunsuri neintenționate sa
 
 Iată procesul de evaluare din Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/ro/architecture.10bec55250f5d6a4.png)
+![Architecture of tutorial.](../../../../../../translated_images/ro/architecture.10bec55250f5d6a4.webp)
 
 *Sursa imaginii: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Iată procesul de evaluare din Azure AI Foundry.
 
 Pentru a te asigura că modelul tău AI este etic și sigur, este esențial să îl evaluezi în raport cu principiile Responsible AI ale Microsoft. În Azure AI Foundry, evaluările de siguranță îți permit să analizezi vulnerabilitatea modelului la atacuri de tip jailbreak și potențialul său de a genera conținut dăunător, ceea ce este direct aliniat cu aceste principii.
 
-![Safaty evaluation.](../../../../../../translated_images/ro/safety-evaluation.083586ec88dfa950.png)
+![Safaty evaluation.](../../../../../../translated_images/ro/safety-evaluation.083586ec88dfa950.webp)
 
 *Sursa imaginii: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Principiile Responsible AI ale Microsoft includ:
 
 - **Responsabilitate**: Persoanele care proiectează și implementează sistemele AI trebuie să fie responsabile pentru modul în care acestea funcționează. Organizațiile ar trebui să se bazeze pe standarde din industrie pentru a dezvolta norme de responsabilitate. Aceste norme pot asigura că sistemele AI nu sunt autoritatea finală în nicio decizie care afectează viețile oamenilor. De asemenea, pot garanta că oamenii păstrează un control semnificativ asupra sistemelor AI altfel foarte autonome.
 
-![Fill hub.](../../../../../../translated_images/ro/responsibleai2.c07ef430113fad8c.png)
+![Fill hub.](../../../../../../translated_images/ro/responsibleai2.c07ef430113fad8c.webp)
 
 *Sursa imaginii: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Principiile Responsible AI ale Microsoft includ:
 
 Evaluarea acestor aspecte asigură că modelul AI nu generează conținut dăunător sau ofensator, aliniindu-se astfel cu valorile societale și standardele de reglementare.
 
-![Evaluate based on safety.](../../../../../../translated_images/ro/evaluate-based-on-safety.c5df819f5b0bfc07.png)
+![Evaluate based on safety.](../../../../../../translated_images/ro/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
 ### Introducere în evaluarea performanței
 
 Pentru a te asigura că modelul tău AI funcționează conform așteptărilor, este important să îi evaluezi performanța în raport cu metricele de performanță. În Azure AI Foundry, evaluările de performanță îți permit să analizezi eficacitatea modelului în generarea de răspunsuri corecte, relevante și coerente.
 
-![Safaty evaluation.](../../../../../../translated_images/ro/performance-evaluation.48b3e7e01a098740.png)
+![Safaty evaluation.](../../../../../../translated_images/ro/performance-evaluation.48b3e7e01a098740.webp)
 
 *Sursa imaginii: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Pentru a te asigura că modelul tău AI funcționează conform așteptărilor, e
 
 Aceste metrice te ajută să evaluezi eficacitatea modelului în generarea de răspunsuri corecte, relevante și coerente.
 
-![Evaluate based on performance.](../../../../../../translated_images/ro/evaluate-based-on-performance.3e801c647c7554e8.png)
+![Evaluate based on performance.](../../../../../../translated_images/ro/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
 ## **Scenariul 2: Evaluarea modelului Phi-3 / Phi-3.5 în Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Trebuie să creezi un Hub înainte de a crea Proiectul. Un Hub funcționează ca
 
 1. Selectează **+ New hub** din meniul de navigare.
 
-    ![Create hub.](../../../../../../translated_images/ro/create-hub.5be78fb1e21ffbf1.png)
+    ![Create hub.](../../../../../../translated_images/ro/create-hub.5be78fb1e21ffbf1.webp)
 
 1. Efectuează următoarele sarcini:
 
@@ -162,7 +162,7 @@ Trebuie să creezi un Hub înainte de a crea Proiectul. Un Hub funcționează ca
     - Selectează **Connect Azure AI Services** pe care vrei să le folosești (creează unul nou dacă este necesar).
     - Selectează **Connect Azure AI Search** și alege **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/ro/fill-hub.baaa108495c71e34.png)
+    ![Fill hub.](../../../../../../translated_images/ro/fill-hub.baaa108495c71e34.webp)
 
 1. Selectează **Next**.
 
@@ -172,11 +172,11 @@ Trebuie să creezi un Hub înainte de a crea Proiectul. Un Hub funcționează ca
 
 1. Selectează **+ New project** din meniul de navigare.
 
-    ![Select new project.](../../../../../../translated_images/ro/select-new-project.cd31c0404088d7a3.png)
+    ![Select new project.](../../../../../../translated_images/ro/select-new-project.cd31c0404088d7a3.webp)
 
 1. Introdu **Project name**. Trebuie să fie o valoare unică.
 
-    ![Create project.](../../../../../../translated_images/ro/create-project.ca3b71298b90e420.png)
+    ![Create project.](../../../../../../translated_images/ro/create-project.ca3b71298b90e420.webp)
 
 1. Selectează **Create a project**.
 
@@ -192,17 +192,17 @@ Pentru a integra modelul tău personalizat Phi-3 / Phi-3.5 cu Prompt flow, trebu
 
 1. Selectează **Endpoints** din meniul lateral stânga.
 
-    ![Select endpoints.](../../../../../../translated_images/ro/select-endpoints.ee7387ecd68bd18d.png)
+    ![Select endpoints.](../../../../../../translated_images/ro/select-endpoints.ee7387ecd68bd18d.webp)
 
 1. Selectează endpoint-ul pe care l-ai creat.
 
-    ![Select endpoints.](../../../../../../translated_images/ro/select-endpoint-created.9f63af5e4cf98b2e.png)
+    ![Select endpoints.](../../../../../../translated_images/ro/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
 1. Selectează **Consume** din meniul de navigare.
 
 1. Copiază **REST endpoint** și **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/ro/copy-endpoint-key.0650c3786bd646ab.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/ro/copy-endpoint-key.0650c3786bd646ab.webp)
 
 #### Adaugă conexiunea personalizată
 
@@ -214,11 +214,11 @@ Pentru a integra modelul tău personalizat Phi-3 / Phi-3.5 cu Prompt flow, trebu
 
 1. Selectează **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/ro/select-new-connection.fa0f35743758a74b.png)
+    ![Select new connection.](../../../../../../translated_images/ro/select-new-connection.fa0f35743758a74b.webp)
 
 1. Selectează **Custom keys** din meniul de navigare.
 
-    ![Select custom keys.](../../../../../../translated_images/ro/select-custom-keys.5a3c6b25580a9b67.png)
+    ![Select custom keys.](../../../../../../translated_images/ro/select-custom-keys.5a3c6b25580a9b67.webp)
 
 1. Efectuează următoarele sarcini:
 
@@ -228,7 +228,7 @@ Pentru a integra modelul tău personalizat Phi-3 / Phi-3.5 cu Prompt flow, trebu
     - Pentru numele cheii, introdu **key** și lipește cheia copiată din Azure ML Studio în câmpul de valoare.
     - După adăugarea cheilor, bifează **is secret** pentru a preveni expunerea cheii.
 
-    ![Add connection.](../../../../../../translated_images/ro/add-connection.ac7f5faf8b10b0df.png)
+    ![Add connection.](../../../../../../translated_images/ro/add-connection.ac7f5faf8b10b0df.webp)
 
 1. Selectează **Add connection**.
 
@@ -242,15 +242,15 @@ Ai adăugat o conexiune personalizată în Azure AI Foundry. Acum, să creăm un
 
 1. Selectează **+ Create** din meniul de navigare.
 
-    ![Select Promptflow.](../../../../../../translated_images/ro/select-promptflow.18ff2e61ab9173eb.png)
+    ![Select Promptflow.](../../../../../../translated_images/ro/select-promptflow.18ff2e61ab9173eb.webp)
 
 1. Selectează **Chat flow** din meniul de navigare.
 
-    ![Select chat flow.](../../../../../../translated_images/ro/select-flow-type.28375125ec9996d3.png)
+    ![Select chat flow.](../../../../../../translated_images/ro/select-flow-type.28375125ec9996d3.webp)
 
 1. Introdu **Folder name** pe care vrei să îl folosești.
 
-    ![Select chat flow.](../../../../../../translated_images/ro/enter-name.02ddf8fb840ad430.png)
+    ![Select chat flow.](../../../../../../translated_images/ro/enter-name.02ddf8fb840ad430.webp)
 
 1. Selectează **Create**.
 
@@ -287,7 +287,7 @@ Trebuie să integrezi modelul Phi-3 / Phi-3.5 ajustat fin într-un Prompt flow. 
 
     - Selectează **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/ro/select-raw-file-mode.06c1eca581ce4f53.png)
+    ![Select raw file mode.](../../../../../../translated_images/ro/select-raw-file-mode.06c1eca581ce4f53.webp)
 
 1. Adaugă următorul cod în *integrate_with_promptflow.py* pentru a folosi modelul personalizat Phi-3 / Phi-3.5 în Prompt flow.
 
@@ -350,14 +350,14 @@ Trebuie să integrezi modelul Phi-3 / Phi-3.5 ajustat fin într-un Prompt flow. 
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/ro/paste-promptflow-code.cd6d95b101c0ec28.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/ro/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
 > Pentru informații mai detaliate despre utilizarea Prompt flow în Azure AI Foundry, poți consulta [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Selectează **Chat input**, **Chat output** pentru a activa conversația cu modelul tău.
 
-    ![Select Input Output.](../../../../../../translated_images/ro/select-input-output.c187fc58f25fbfc3.png)
+    ![Select Input Output.](../../../../../../translated_images/ro/select-input-output.c187fc58f25fbfc3.webp)
 
 1. Acum ești gata să conversezi cu modelul tău personalizat Phi-3 / Phi-3.5. În exercițiul următor vei învăța cum să pornești Prompt flow și să îl folosești pentru a conversa cu modelul tău ajustat fin.
 
@@ -365,32 +365,32 @@ Trebuie să integrezi modelul Phi-3 / Phi-3.5 ajustat fin într-un Prompt flow. 
 >
 > Fluxul reconstruit ar trebui să arate ca în imaginea de mai jos:
 >
-> ![Flow example](../../../../../../translated_images/ro/graph-example.82fd1bcdd3fc545b.png)
+> ![Flow example](../../../../../../translated_images/ro/graph-example.82fd1bcdd3fc545b.webp)
 >
 
 #### Pornește Prompt flow
 
 1. Selectează **Start compute sessions** pentru a porni Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/ro/start-compute-session.9acd8cbbd2c43df1.png)
+    ![Start compute session.](../../../../../../translated_images/ro/start-compute-session.9acd8cbbd2c43df1.webp)
 
 1. Selectează **Validate and parse input** pentru a reînnoi parametrii.
 
-    ![Validate input.](../../../../../../translated_images/ro/validate-input.c1adb9543c6495be.png)
+    ![Validate input.](../../../../../../translated_images/ro/validate-input.c1adb9543c6495be.webp)
 
 1. Selectează **Value** al **connection** către conexiunea personalizată creată de tine. De exemplu, *connection*.
 
-    ![Connection.](../../../../../../translated_images/ro/select-connection.1f2b59222bcaafef.png)
+    ![Connection.](../../../../../../translated_images/ro/select-connection.1f2b59222bcaafef.webp)
 
 #### Conversează cu modelul tău personalizat Phi-3 / Phi-3.5
 
 1. Selectează **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/ro/select-chat.0406bd9687d0c49d.png)
+    ![Select chat.](../../../../../../translated_images/ro/select-chat.0406bd9687d0c49d.webp)
 
 1. Iată un exemplu de rezultate: Acum poți conversa cu modelul tău personalizat Phi-3 / Phi-3.5. Este recomandat să pui întrebări bazate pe datele folosite pentru ajustarea fină.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/ro/chat-with-promptflow.1cf8cea112359ada.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/ro/chat-with-promptflow.1cf8cea112359ada.webp)
 
 ### Desfășoară Azure OpenAI pentru a evalua modelul Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
 
 1. Navighează la proiectul Azure AI Foundry pe care l-ai creat.
 
-    ![Select Project.](../../../../../../translated_images/ro/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/ro/select-project-created.5221e0e403e2c9d6.webp)
 
 1. În proiectul creat, selectează **Deployments** din meniul lateral stânga.
 
@@ -410,11 +410,11 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
 
 1. Selectează **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/ro/deploy-openai-model.95d812346b25834b.png)
+    ![Select Deployments.](../../../../../../translated_images/ro/deploy-openai-model.95d812346b25834b.webp)
 
 1. Selectează modelul Azure OpenAI pe care dorești să îl folosești. De exemplu, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/ro/select-openai-model.959496d7e311546d.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/ro/select-openai-model.959496d7e311546d.webp)
 
 1. Selectează **Confirm**.
 
@@ -426,17 +426,17 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
 
 1. Navighează la proiectul Azure AI Foundry pe care l-ai creat.
 
-    ![Select Project.](../../../../../../translated_images/ro/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/ro/select-project-created.5221e0e403e2c9d6.webp)
 
 1. În proiectul creat, selectează **Evaluation** din meniul lateral stânga.
 
 1. Selectează **+ New evaluation** din meniul de navigare.
 
-    ![Select evaluation.](../../../../../../translated_images/ro/select-evaluation.2846ad7aaaca7f4f.png)
+    ![Select evaluation.](../../../../../../translated_images/ro/select-evaluation.2846ad7aaaca7f4f.webp)
 
 1. Selectează evaluarea **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/ro/promptflow-evaluation.cb9758cc19b4760f.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/ro/promptflow-evaluation.cb9758cc19b4760f.webp)
 
 1. Efectuează următoarele sarcini:
 
@@ -444,7 +444,7 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
     - Selectează **Question and answer without context** ca tip de sarcină. Deoarece setul de date **ULTRACHAT_200k** folosit în acest tutorial nu conține context.
     - Selectează prompt flow-ul pe care dorești să îl evaluezi.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting1.4aa08259ff7a536e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting1.4aa08259ff7a536e.webp)
 
 1. Selectează **Next**.
 
@@ -453,7 +453,7 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
     - Selectează **Add your dataset** pentru a încărca setul de date. De exemplu, poți încărca fișierul de test, cum ar fi *test_data.json1*, inclus când descarci setul de date **ULTRACHAT_200k**.
     - Selectează coloana corespunzătoare din setul de date. De exemplu, dacă folosești setul de date **ULTRACHAT_200k**, selectează **${data.prompt}** ca și coloană.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting2.07036831ba58d64e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting2.07036831ba58d64e.webp)
 
 1. Selectează **Next**.
 
@@ -462,7 +462,7 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
     - Selectează metricile de performanță și calitate pe care dorești să le folosești.
     - Selectează modelul Azure OpenAI creat pentru evaluare. De exemplu, selectează **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting3-1.d1ae69e3bf80914e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
 1. Efectuează următoarele sarcini pentru a configura metricile de risc și siguranță:
 
@@ -472,7 +472,7 @@ Pentru a evalua modelul Phi-3 / Phi-3.5 în Azure AI Foundry, trebuie să desfă
     - Pentru **answer**, selectează **Data source** ca **{$run.outputs.answer}**.
     - Pentru **ground_truth**, selectează **Data source** ca **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting3-2.d53bd075c60a45a2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ro/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
 1. Selectează **Next**.
 
@@ -489,17 +489,17 @@ Odată ce evaluarea este finalizată, poți analiza rezultatele atât pentru met
 
     - evaluează eficiența modelului în generarea unor răspunsuri coerente, fluente și relevante.
 
-    ![Evaluation result.](../../../../../../translated_images/ro/evaluation-result-gpu.85f48b42dfb74254.png)
+    ![Evaluation result.](../../../../../../translated_images/ro/evaluation-result-gpu.85f48b42dfb74254.webp)
 
 1. Metrici de risc și siguranță:
 
     - Asigură-te că rezultatele modelului sunt sigure și respectă Principiile Responsible AI, evitând orice conținut dăunător sau ofensator.
 
-    ![Evaluation result.](../../../../../../translated_images/ro/evaluation-result-gpu-2.1b74e336118f4fd0.png)
+    ![Evaluation result.](../../../../../../translated_images/ro/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
 1. Poți derula în jos pentru a vedea **Rezultatele detaliate ale metricilor**.
 
-    ![Evaluation result.](../../../../../../translated_images/ro/detailed-metrics-result.afa2f5c39a4f5f17.png)
+    ![Evaluation result.](../../../../../../translated_images/ro/detailed-metrics-result.afa2f5c39a4f5f17.webp)
 
 1. Prin evaluarea modelului tău personalizat Phi-3 / Phi-3.5 atât în funcție de metricile de performanță, cât și de cele de siguranță, poți confirma că modelul nu este doar eficient, ci respectă și practicile responsabile AI, fiind pregătit pentru implementarea în lumea reală.
 
@@ -509,7 +509,7 @@ Odată ce evaluarea este finalizată, poți analiza rezultatele atât pentru met
 
 Ai evaluat cu succes modelul Phi-3 ajustat fin, integrat cu Prompt flow în Azure AI Foundry. Acesta este un pas important pentru a te asigura că modelele tale AI nu doar performează bine, ci respectă și principiile Responsible AI ale Microsoft, ajutându-te să construiești aplicații AI de încredere și fiabile.
 
-![Architecture.](../../../../../../translated_images/ro/architecture.10bec55250f5d6a4.png)
+![Architecture.](../../../../../../translated_images/ro/architecture.10bec55250f5d6a4.webp)
 
 ## Curățarea resurselor Azure
 

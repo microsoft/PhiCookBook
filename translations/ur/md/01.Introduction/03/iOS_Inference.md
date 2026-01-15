@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 میں نے App کی ترقی کے لیے Objective-C کو منتخب کیا، کیونکہ ONNX Runtime C++ API کے ساتھ Generative AI استعمال کرتے ہوئے، Objective-C بہتر مطابقت رکھتا ہے۔ ظاہر ہے، آپ Swift bridging کے ذریعے متعلقہ کالز بھی مکمل کر سکتے ہیں۔
 
-![xcode](../../../../../translated_images/ur/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ur/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX quantized INT4 ماڈل کو App ایپلیکیشن پروجیکٹ میں کاپی کریں**
 
 ہمیں ONNX فارمیٹ میں INT4 quantization ماڈل درآمد کرنا ہوگا، جسے پہلے ڈاؤن لوڈ کرنا ضروری ہے۔
 
-![hf](../../../../../translated_images/ur/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ur/hf.6b8504fd88ee48dd.webp)
 
 ڈاؤن لوڈ کرنے کے بعد، اسے Xcode میں پروجیکٹ کے Resources ڈائریکٹری میں شامل کریں۔
 
-![model](../../../../../translated_images/ur/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ur/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllers میں C++ API شامل کرنا**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** متعلقہ C++ ہیڈر فائلز کو پروجیکٹ میں شامل کریں۔
 
-  ![Header File](../../../../../translated_images/ur/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ur/head.64cad021ce70a333.webp)
 
 - **b.** Xcode میں `onnxruntime-genai` ڈائنامک لائبریری کو شامل کریں۔
 
-  ![Library](../../../../../translated_images/ur/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ur/lib.a4209b9f21ddf344.webp)
 
 - **c.** ٹیسٹنگ کے لیے C Samples کوڈ استعمال کریں۔ آپ مزید فعالیت کے لیے ChatUI جیسی اضافی خصوصیات بھی شامل کر سکتے ہیں۔
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ایک بار سیٹ اپ مکمل ہونے کے بعد، آپ ایپلیکیشن چلا کر Phi-3-mini ماڈل inference کے نتائج دیکھ سکتے ہیں۔
 
-![Running Result](../../../../../translated_images/ur/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ur/result.326a947a6a2b9c51.webp)
 
 مزید نمونہ کوڈ اور تفصیلی ہدایات کے لیے، [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ملاحظہ کریں۔
 

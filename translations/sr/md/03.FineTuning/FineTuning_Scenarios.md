@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Сценарији фино подешавање
 
-![FineTuning with MS Services](../../../../translated_images/sr/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/sr/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Платформа** Ово обухвата различите технологије као што су Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito и ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Фино подесите модел користећи хостовано фино подешавање, без потребе за креирањем и управљањем рачунарским ресурсима.
 
-![MaaS Fine Tuning](../../../../translated_images/sr/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/sr/MaaSfinetune.3eee4630607aff0d.webp)
 
 Безсерверско фино подешавање је доступно за Phi-3-mini и Phi-3-medium моделе, омогућавајући програмерима да брзо и лако прилагоде моделе за облачне и edge сценарије без потребе за обезбеђивањем рачунарских ресурса. Такође смо најавили да је Phi-3-small сада доступан кроз нашу понуду Models-as-a-Service, тако да програмери могу брзо и лако започети са развојем вештачке интелигенције без потребе за управљањем основном инфраструктуром.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Корисници управљају својим рачунарским ресурсима како би фино подесили своје моделе.
 
-![Maap Fine Tuning](../../../../translated_images/sr/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/sr/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Примери перформанси фино подешавања
 
-![Finetuning Performance](../../../../translated_images/sr/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/sr/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **Одрицање од одговорности**:  
 Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
