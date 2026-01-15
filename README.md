@@ -38,8 +38,8 @@ Follow these steps to get started using these resource :
 
 > This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
 > ```bash
-> git clone --filter=blob:none --sparse https://github.com/microsoft/PhiCookBook.git
-> cd PhiCookBook
+> git clone --filter=blob:none --sparse https://github.com/*****.git
+> cd *****
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
 > This gives you everything you need to complete the course with a much faster download.
