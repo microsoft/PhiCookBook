@@ -1,26 +1,176 @@
 {
-  "cover.eb18d1b9605d754b.webp": {
-    "original_hash": "7458a4d38df5b6e1254deec43097a810",
-    "translation_date": "2026-01-16T10:59:15+00:00",
-    "source_file": "imgs/cover.png",
+  "00-01-architecture.02fc569e266d468c.webp": {
+    "original_hash": "b2ac03edc1b706a1490e68bb0073cc35",
+    "translation_date": "2026-01-16T11:48:42+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/00-01-architecture.png",
     "language_code": "bn"
   },
-  "01.phi3miniinstructlanguagesupport.6e65bbbd4188e505.webp": {
-    "original_hash": "79e24c4b58de1ec7d8f94bb4e9d7cec0",
-    "translation_date": "2026-01-16T10:59:46+00:00",
-    "source_file": "imgs/01/01/01.phi3miniinstructlanguagesupport.png",
+  "00-01-architecture.198ba0f1ae6d841a.webp": {
+    "original_hash": "e583a2c4abd13cf5017d497c401dd3e1",
+    "translation_date": "2026-01-16T12:14:10+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/00-01-architecture.png",
     "language_code": "bn"
   },
-  "01.phi3smallbenchmark128.9b463983ad850e0c.webp": {
-    "original_hash": "88af04a3f3dde41d6a057ddb778a914a",
-    "translation_date": "2026-01-16T11:00:08+00:00",
-    "source_file": "imgs/01/01/01.phi3smallbenchmark128.png",
+  "01-01-type-azml.a5116f8454d98c60.webp": {
+    "original_hash": "b1e1267f4a4348779727fab42692707c",
+    "translation_date": "2026-01-16T11:45:20+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-01-type-azml.png",
     "language_code": "bn"
   },
-  "01.phi3minibenchmark.7f7808b14a8eda9b.webp": {
-    "original_hash": "747ea7db87c0909e2f80cc3c186f5f9e",
-    "translation_date": "2026-01-16T11:00:29+00:00",
-    "source_file": "imgs/01/01/01.phi3minibenchmark.png",
+  "01-01-type-azml.acae6c5455e67b4b.webp": {
+    "original_hash": "b1e1267f4a4348779727fab42692707c",
+    "translation_date": "2026-01-16T12:04:58+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/01-01-type-azml.png",
+    "language_code": "bn"
+  },
+  "01-02-select-new-workspace.83e17436f8898dc4.webp": {
+    "original_hash": "c2f73f04249004304a2ef2e0a23b45b1",
+    "translation_date": "2026-01-16T11:50:10+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-02-select-new-workspace.png",
+    "language_code": "bn"
+  },
+  "01-02-select-new-workspace.cd09cd0ec4a60ef2.webp": {
+    "original_hash": "c2f73f04249004304a2ef2e0a23b45b1",
+    "translation_date": "2026-01-16T12:14:58+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/01-02-select-new-workspace.png",
+    "language_code": "bn"
+  },
+  "01-03-fill-AZML.730a5177757bbebb.webp": {
+    "original_hash": "d832325458cb724f19bae9c7266f8094",
+    "translation_date": "2026-01-16T11:47:44+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-03-fill-AZML.png",
+    "language_code": "bn"
+  },
+  "01-03-fill-AZML.a1b6fd944be0090f.webp": {
+    "original_hash": "c325da609206846ca36a95fe3c5e28a8",
+    "translation_date": "2026-01-16T12:13:43+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/01-03-fill-AZML.png",
+    "language_code": "bn"
+  },
+  "01-04-request-quota.3d3670c3221ab834.webp": {
+    "original_hash": "b21a25528ab7d41658550bbbce9a8078",
+    "translation_date": "2026-01-16T11:47:14+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-04-request-quota.png",
+    "language_code": "bn"
+  },
+  "01-05-type-managed-identities.9297b6039874eff8.webp": {
+    "original_hash": "0335feac44a43f02f7d7430fcc04328c",
+    "translation_date": "2026-01-16T11:47:30+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-05-type-managed-identities.png",
+    "language_code": "bn"
+  },
+  "01-06-select-create.936d8d66d7144f9a.webp": {
+    "original_hash": "241c83760584f72bdbdccb53e77d9c98",
+    "translation_date": "2026-01-16T11:46:29+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-06-select-create.png",
+    "language_code": "bn"
+  },
+  "01-07-fill-contributor-role.29ca99b7c9f687e0.webp": {
+    "original_hash": "154c44a6ec81ecfb2fa47af05840f3e6",
+    "translation_date": "2026-01-16T11:50:23+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-07-fill-contributor-role.png",
+    "language_code": "bn"
+  },
+  "01-08-type-storage-accounts.1186c8e42933e49b.webp": {
+    "original_hash": "e166f6af1b91eb765e48b5273e540185",
+    "translation_date": "2026-01-16T11:45:15+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-08-type-storage-accounts.png",
+    "language_code": "bn"
+  },
+  "01-09-add-role.d2db22fec1b187f0.webp": {
+    "original_hash": "08ad5880170f23125a016609c3dcf245",
+    "translation_date": "2026-01-16T11:50:44+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-09-add-role.png",
+    "language_code": "bn"
+  },
+  "01-10-select-managed-identity.5ce5ba181f72a4df.webp": {
+    "original_hash": "ca271720d1525f1d365155508481419e",
+    "translation_date": "2026-01-16T11:46:03+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-10-select-managed-identity.png",
+    "language_code": "bn"
+  },
+  "01-11-type-container-registries.ff3b8bdc49dc596c.webp": {
+    "original_hash": "893cfe9f2c44c3756124ca3bc708720f",
+    "translation_date": "2026-01-16T11:46:14+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-11-type-container-registries.png",
+    "language_code": "bn"
+  },
+  "01-12-open-project-folder.1fff9c7f41dd1639.webp": {
+    "original_hash": "9b31d274f2fca2ae606a235696e06bb5",
+    "translation_date": "2026-01-16T11:45:45+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-12-open-project-folder.png",
+    "language_code": "bn"
+  },
+  "01-13-create-new-file.c17c150fff384a39.webp": {
+    "original_hash": "d66a88695da15a9c3e2f136a3a562295",
+    "translation_date": "2026-01-16T11:44:56+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-13-create-new-file.png",
+    "language_code": "bn"
+  },
+  "01-14-find-subscriptionid.4f4ca33555f1e637.webp": {
+    "original_hash": "10c3e0beb41344a15fd4e1503a93b43d",
+    "translation_date": "2026-01-16T11:45:25+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-14-find-subscriptionid.png",
+    "language_code": "bn"
+  },
+  "01-15-find-AZML-name.1975f0422bca19a7.webp": {
+    "original_hash": "7a4652c985e65824920014be23bebfe6",
+    "translation_date": "2026-01-16T11:45:52+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-15-find-AZML-name.png",
+    "language_code": "bn"
+  },
+  "01-16-find-AZML-resourcegroup.855a349d0af134a3.webp": {
+    "original_hash": "785154614cdb1b55f2458c264d0b0951",
+    "translation_date": "2026-01-16T11:46:46+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-16-find-AZML-resourcegroup.png",
+    "language_code": "bn"
+  },
+  "01-17-find-uai.3529464f53499827.webp": {
+    "original_hash": "d3b7d6f2b424f58db7fa54cf1df6b23f",
+    "translation_date": "2026-01-16T11:45:06+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/01-17-find-uai.png",
+    "language_code": "bn"
+  },
+  "01.42f52a2b2aedff02.webp": {
+    "original_hash": "39c2734d3b385a7747c26344649b3221",
+    "translation_date": "2026-01-16T11:54:12+00:00",
+    "source_file": "imgs/02/pfonnx/01.png",
+    "language_code": "bn"
+  },
+  "01.5cf57df8f7407cf9.webp": {
+    "original_hash": "04df8d15438df7e769590e121ed67b56",
+    "translation_date": "2026-01-16T11:33:25+00:00",
+    "source_file": "imgs/01/03/MLX/01.png",
+    "language_code": "bn"
+  },
+  "01.AIcontentsafety.a288819b8ce8da1a.webp": {
+    "original_hash": "e2f8752399f5be3515732af98a29794d",
+    "translation_date": "2026-01-16T11:06:47+00:00",
+    "source_file": "imgs/01/01/01.AIcontentsafety.png",
+    "language_code": "bn"
+  },
+  "01.phi35miniinstructbenchmark.3695819d3e3cafe4.webp": {
+    "original_hash": "6826b4be12538b71951ea16ec21db97d",
+    "translation_date": "2026-01-16T11:04:11+00:00",
+    "source_file": "imgs/01/01/01.phi35miniinstructbenchmark.png",
+    "language_code": "bn"
+  },
+  "01.phi35moebenchmark.717d9f5831ba2919.webp": {
+    "original_hash": "7b7a7daacdf9b4c379579f4578d9fa12",
+    "translation_date": "2026-01-16T11:07:43+00:00",
+    "source_file": "imgs/01/01/01.phi35moebenchmark.png",
+    "language_code": "bn"
+  },
+  "01.phi35visionbenchmark.fee06ce9adaadf03.webp": {
+    "original_hash": "b5e05c41bcbef0e46e6416aa15c14770",
+    "translation_date": "2026-01-16T11:01:35+00:00",
+    "source_file": "imgs/01/01/01.phi35visionbenchmark.png",
+    "language_code": "bn"
+  },
+  "01.phi3aisafety.c0d7fc42f5a5c405.webp": {
+    "original_hash": "adbd3f7a0937f9886e5ed35a0ac2c206",
+    "translation_date": "2026-01-16T11:02:26+00:00",
+    "source_file": "imgs/01/01/01.phi3aisafety.png",
     "language_code": "bn"
   },
   "01.phi3mediumbenchmark.c1b77c98dbd1e95c.webp": {
@@ -35,28 +185,10 @@
     "source_file": "imgs/01/01/01.phi3mediumbenchmark128.png",
     "language_code": "bn"
   },
-  "01.phi35visionbenchmark.fee06ce9adaadf03.webp": {
-    "original_hash": "b5e05c41bcbef0e46e6416aa15c14770",
-    "translation_date": "2026-01-16T11:01:35+00:00",
-    "source_file": "imgs/01/01/01.phi35visionbenchmark.png",
-    "language_code": "bn"
-  },
-  "01.phi3miniinstructbenchmark.ea34d9486b869950.webp": {
-    "original_hash": "6826b4be12538b71951ea16ec21db97d",
-    "translation_date": "2026-01-16T11:02:05+00:00",
-    "source_file": "imgs/01/01/01.phi3miniinstructbenchmark.png",
-    "language_code": "bn"
-  },
-  "01.phi3aisafety.c0d7fc42f5a5c405.webp": {
-    "original_hash": "adbd3f7a0937f9886e5ed35a0ac2c206",
-    "translation_date": "2026-01-16T11:02:26+00:00",
-    "source_file": "imgs/01/01/01.phi3aisafety.png",
-    "language_code": "bn"
-  },
-  "01.phi3visionbenchmark.d9beac55cf1192ef.webp": {
-    "original_hash": "907ca006645d18066061260211401400",
-    "translation_date": "2026-01-16T11:02:43+00:00",
-    "source_file": "imgs/01/01/01.phi3visionbenchmark.png",
+  "01.phi3minibenchmark.7f7808b14a8eda9b.webp": {
+    "original_hash": "747ea7db87c0909e2f80cc3c186f5f9e",
+    "translation_date": "2026-01-16T11:00:29+00:00",
+    "source_file": "imgs/01/01/01.phi3minibenchmark.png",
     "language_code": "bn"
   },
   "01.phi3minibenchmark128.9624d099a2112b05.webp": {
@@ -65,22 +197,16 @@
     "source_file": "imgs/01/01/01.phi3minibenchmark128.png",
     "language_code": "bn"
   },
-  "01.phihardware.5d51b2377cba18af.webp": {
-    "original_hash": "0981a20ceeb401a5421c1f69b0b7b59f",
-    "translation_date": "2026-01-16T11:03:30+00:00",
-    "source_file": "imgs/01/01/01.phihardware.png",
-    "language_code": "bn"
-  },
-  "01.phi35miniinstructbenchmark.3695819d3e3cafe4.webp": {
+  "01.phi3miniinstructbenchmark.ea34d9486b869950.webp": {
     "original_hash": "6826b4be12538b71951ea16ec21db97d",
-    "translation_date": "2026-01-16T11:04:11+00:00",
-    "source_file": "imgs/01/01/01.phi35miniinstructbenchmark.png",
+    "translation_date": "2026-01-16T11:02:05+00:00",
+    "source_file": "imgs/01/01/01.phi3miniinstructbenchmark.png",
     "language_code": "bn"
   },
-  "01.phiedgecloud.8bf97c622feae80b.webp": {
-    "original_hash": "0df41f9ceeb174db2b1268974e94f1e7",
-    "translation_date": "2026-01-16T11:06:12+00:00",
-    "source_file": "imgs/01/01/01.phiedgecloud.png",
+  "01.phi3miniinstructlanguagesupport.6e65bbbd4188e505.webp": {
+    "original_hash": "79e24c4b58de1ec7d8f94bb4e9d7cec0",
+    "translation_date": "2026-01-16T10:59:46+00:00",
+    "source_file": "imgs/01/01/01.phi3miniinstructlanguagesupport.png",
     "language_code": "bn"
   },
   "01.phi3smallbenchmark.0f5f3a0cae6d884c.webp": {
@@ -89,10 +215,16 @@
     "source_file": "imgs/01/01/01.phi3smallbenchmark.png",
     "language_code": "bn"
   },
-  "01.AIcontentsafety.a288819b8ce8da1a.webp": {
-    "original_hash": "e2f8752399f5be3515732af98a29794d",
-    "translation_date": "2026-01-16T11:06:47+00:00",
-    "source_file": "imgs/01/01/01.AIcontentsafety.png",
+  "01.phi3smallbenchmark128.9b463983ad850e0c.webp": {
+    "original_hash": "88af04a3f3dde41d6a057ddb778a914a",
+    "translation_date": "2026-01-16T11:00:08+00:00",
+    "source_file": "imgs/01/01/01.phi3smallbenchmark128.png",
+    "language_code": "bn"
+  },
+  "01.phi3visionbenchmark.d9beac55cf1192ef.webp": {
+    "original_hash": "907ca006645d18066061260211401400",
+    "translation_date": "2026-01-16T11:02:43+00:00",
+    "source_file": "imgs/01/01/01.phi3visionbenchmark.png",
     "language_code": "bn"
   },
   "01.phi4benchmark.e0322a26ae900304.webp": {
@@ -101,40 +233,424 @@
     "source_file": "imgs/01/01/01.phi4benchmark.png",
     "language_code": "bn"
   },
-  "01.phi35moebenchmark.717d9f5831ba2919.webp": {
-    "original_hash": "7b7a7daacdf9b4c379579f4578d9fa12",
-    "translation_date": "2026-01-16T11:07:43+00:00",
-    "source_file": "imgs/01/01/01.phi35moebenchmark.png",
+  "01.phiedgecloud.8bf97c622feae80b.webp": {
+    "original_hash": "0df41f9ceeb174db2b1268974e94f1e7",
+    "translation_date": "2026-01-16T11:06:12+00:00",
+    "source_file": "imgs/01/01/01.phiedgecloud.png",
     "language_code": "bn"
   },
-  "completed.c7ce8b6065fdf93d.webp": {
-    "original_hash": "d1efc32dc226a67b7d7b0f861a9b3587",
-    "translation_date": "2026-01-16T11:08:05+00:00",
-    "source_file": "imgs/01/05/AIFoundry/completed.png",
+  "01.phihardware.5d51b2377cba18af.webp": {
+    "original_hash": "0981a20ceeb401a5421c1f69b0b7b59f",
+    "translation_date": "2026-01-16T11:03:30+00:00",
+    "source_file": "imgs/01/01/01.phihardware.png",
     "language_code": "bn"
   },
-  "AIFoundryfinetune.2e45e489db180a8f.webp": {
-    "original_hash": "3efab648eee0f16d144f5d38b72cea62",
-    "translation_date": "2026-01-16T11:08:29+00:00",
-    "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetune.png",
+  "02-01-login-using-azure-cli.dfde31cb75e58a87.webp": {
+    "original_hash": "4d4dc8aed9ea408062bc3d69cdeabc5f",
+    "translation_date": "2026-01-16T11:50:56+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/02-01-login-using-azure-cli.png",
     "language_code": "bn"
   },
-  "select-finetune.806bc452505f07aa.webp": {
-    "original_hash": "352c78a09f0058be9f34d970d408b422",
-    "translation_date": "2026-01-16T11:08:48+00:00",
-    "source_file": "imgs/01/05/AIFoundry/select-finetune.png",
+  "02-01-select-studio-url.140f0679f1e27060.webp": {
+    "original_hash": "19c2ec9ed490ac389c66c265685b7389",
+    "translation_date": "2026-01-16T12:05:05+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/02-01-select-studio-url.png",
     "language_code": "bn"
   },
-  "finetune1.40eb19890cfcbee5.webp": {
-    "original_hash": "51ab8343b72ef4d175d9af009a59d09a",
-    "translation_date": "2026-01-16T11:09:03+00:00",
-    "source_file": "imgs/01/05/AIFoundry/finetune1.png",
+  "02-02-request-quota.c0428239a63ffdd5.webp": {
+    "original_hash": "b21a25528ab7d41658550bbbce9a8078",
+    "translation_date": "2026-01-16T12:08:57+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/02-02-request-quota.png",
     "language_code": "bn"
   },
-  "select-model.50398dcff2de8e95.webp": {
-    "original_hash": "f93c268d458071014702e6c2977fe52c",
-    "translation_date": "2026-01-16T11:09:16+00:00",
-    "source_file": "imgs/01/05/AIFoundry/select-model.png",
+  "02-02-see-finetuning-job.59393bc3b143871e.webp": {
+    "original_hash": "962582c365d53ee10a80f83a4c072e46",
+    "translation_date": "2026-01-16T11:46:57+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/02-02-see-finetuning-job.png",
+    "language_code": "bn"
+  },
+  "02-03-select-all-workspaces.b5d0006317fbd0f5.webp": {
+    "original_hash": "9afe63dd38e890f2dea8d58d53afdc81",
+    "translation_date": "2026-01-16T12:09:34+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/02-03-select-all-workspaces.png",
+    "language_code": "bn"
+  },
+  "02-03-select-endpoints.c3136326510baff1.webp": {
+    "original_hash": "ff5c54767cbe87e5d3998184bced1944",
+    "translation_date": "2026-01-16T11:44:50+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/02-03-select-endpoints.png",
+    "language_code": "bn"
+  },
+  "02-04-select-endpoint-created.0363e7dca51dabb4.webp": {
+    "original_hash": "dc5056222ee04681a06c8500c08bccdc",
+    "translation_date": "2026-01-16T11:46:37+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/02-04-select-endpoint-created.png",
+    "language_code": "bn"
+  },
+  "02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp": {
+    "original_hash": "5fae9ce07914f86238b4219c20f58997",
+    "translation_date": "2026-01-16T11:45:34+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/02-05-copy-apikey-endpoint.png",
+    "language_code": "bn"
+  },
+  "02-06-promptflow-example.89384abaf3ad71f6.webp": {
+    "original_hash": "5446cef1a6112f595627b7daebe1fedb",
+    "translation_date": "2026-01-16T11:46:21+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow/02-06-promptflow-example.png",
+    "language_code": "bn"
+  },
+  "02.7b188681a8eadbc1.webp": {
+    "original_hash": "caaff8184f3ea356a063c79bc665d180",
+    "translation_date": "2026-01-16T11:32:24+00:00",
+    "source_file": "imgs/01/03/MLX/02.png",
+    "language_code": "bn"
+  },
+  "02.b9b06996cf7255d5.webp": {
+    "original_hash": "88a4be0fd97ec397015fe4ca72b5c43b",
+    "translation_date": "2026-01-16T11:51:38+00:00",
+    "source_file": "imgs/02/pfonnx/02.png",
+    "language_code": "bn"
+  },
+  "03-01-type-managed-identities.24de763e0f1f37e5.webp": {
+    "original_hash": "0335feac44a43f02f7d7430fcc04328c",
+    "translation_date": "2026-01-16T12:08:48+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-01-type-managed-identities.png",
+    "language_code": "bn"
+  },
+  "03-02-select-create.92bf8989a5cd98f2.webp": {
+    "original_hash": "241c83760584f72bdbdccb53e77d9c98",
+    "translation_date": "2026-01-16T12:09:40+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-02-select-create.png",
+    "language_code": "bn"
+  },
+  "03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp": {
+    "original_hash": "61eca49596ac4daa201e5e90f6573658",
+    "translation_date": "2026-01-16T12:12:21+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-03-fill-managed-identities-1.png",
+    "language_code": "bn"
+  },
+  "03-04-fill-contributor-role.73990bc6a32e140d.webp": {
+    "original_hash": "154c44a6ec81ecfb2fa47af05840f3e6",
+    "translation_date": "2026-01-16T12:05:46+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-04-fill-contributor-role.png",
+    "language_code": "bn"
+  },
+  "03-05-type-storage-accounts.9303de485e65e1e5.webp": {
+    "original_hash": "e166f6af1b91eb765e48b5273e540185",
+    "translation_date": "2026-01-16T12:15:05+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-05-type-storage-accounts.png",
+    "language_code": "bn"
+  },
+  "03-06-add-role.353ccbfdcf0789c2.webp": {
+    "original_hash": "08ad5880170f23125a016609c3dcf245",
+    "translation_date": "2026-01-16T12:07:05+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-06-add-role.png",
+    "language_code": "bn"
+  },
+  "03-07-select-data-reader-role.e386c836a6ab278a.webp": {
+    "original_hash": "cdc94ccdf0e42b7a339e3ffcc0b9bbb5",
+    "translation_date": "2026-01-16T12:16:02+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-07-select-data-reader-role.png",
+    "language_code": "bn"
+  },
+  "03-08-select-managed-identity.e80a2aad5247eb25.webp": {
+    "original_hash": "ca271720d1525f1d365155508481419e",
+    "translation_date": "2026-01-16T12:04:17+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-08-select-managed-identity.png",
+    "language_code": "bn"
+  },
+  "03-08-select-member.78cd25d1bc89d77e.webp": {
+    "original_hash": "ddb189978c7948b95438c2715fc22b38",
+    "translation_date": "2026-01-16T12:15:22+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-08-select-member.png",
+    "language_code": "bn"
+  },
+  "03-09-type-container-registries.7a4180eb2110e5a6.webp": {
+    "original_hash": "893cfe9f2c44c3756124ca3bc708720f",
+    "translation_date": "2026-01-16T12:10:58+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-09-type-container-registries.png",
+    "language_code": "bn"
+  },
+  "03.b83ce473d5ff9b9b.webp": {
+    "original_hash": "cf2b567f4f59b5b75f7a81dfe190d834",
+    "translation_date": "2026-01-16T11:53:16+00:00",
+    "source_file": "imgs/02/pfonnx/03.png",
+    "language_code": "bn"
+  },
+  "03.b9705a3a5aaa89f9.webp": {
+    "original_hash": "9d1412fee2c26ec1a309dc020807d047",
+    "translation_date": "2026-01-16T11:32:46+00:00",
+    "source_file": "imgs/01/03/MLX/03.png",
+    "language_code": "bn"
+  },
+  "04-01-open-project-folder.f734374bcfd5f9e6.webp": {
+    "original_hash": "9b31d274f2fca2ae606a235696e06bb5",
+    "translation_date": "2026-01-16T12:08:42+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/04-01-open-project-folder.png",
+    "language_code": "bn"
+  },
+  "04-02-create-new-file.cf9a330a3a9cff92.webp": {
+    "original_hash": "d66a88695da15a9c3e2f136a3a562295",
+    "translation_date": "2026-01-16T12:12:30+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/04-02-create-new-file.png",
+    "language_code": "bn"
+  },
+  "06-01-select-compute.a29cff290b480252.webp": {
+    "original_hash": "fd88c8405439192ac1e361b2c235e4b1",
+    "translation_date": "2026-01-16T12:11:09+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-01-select-compute.png",
+    "language_code": "bn"
+  },
+  "06-02-create-cluster.f221b65ae1221d4e.webp": {
+    "original_hash": "59281264c03a78fa8f10e3f8927949e1",
+    "translation_date": "2026-01-16T12:07:17+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-02-create-cluster.png",
+    "language_code": "bn"
+  },
+  "06-03-create-cluster.4a54ba20914f3662.webp": {
+    "original_hash": "3ae52aa8585eeac1bed6e1635eb1bf7d",
+    "translation_date": "2026-01-16T12:12:40+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-03-create-cluster.png",
+    "language_code": "bn"
+  },
+  "06-04-select-workspace.a92934ac04f4f181.webp": {
+    "original_hash": "e4bd3dc721435ae89aa2cb7cb1b87c31",
+    "translation_date": "2026-01-16T12:04:51+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-04-select-workspace.png",
+    "language_code": "bn"
+  },
+  "06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp": {
+    "original_hash": "ab6621cb10af3a01f87b5c3d051e96f2",
+    "translation_date": "2026-01-16T12:09:47+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-05-type-phi-3-mini-4k.png",
+    "language_code": "bn"
+  },
+  "06-06-select-fine-tune.2918a59be55dfeec.webp": {
+    "original_hash": "5be36d7a5e8744bc225b69a08180229f",
+    "translation_date": "2026-01-16T12:04:42+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-06-select-fine-tune.png",
+    "language_code": "bn"
+  },
+  "06-07-fill-finetuning.b6d14c89e7c27d0b.webp": {
+    "original_hash": "4cbced950762191e63ef546033ea4950",
+    "translation_date": "2026-01-16T12:10:19+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-07-fill-finetuning.png",
+    "language_code": "bn"
+  },
+  "06-08-output.2bd32e59930672b1.webp": {
+    "original_hash": "18e735ca801617398cbc8cdb16cd4a20",
+    "translation_date": "2026-01-16T12:05:20+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-08-output.png",
+    "language_code": "bn"
+  },
+  "07-01-register-model.ad1e7cc05e4b2777.webp": {
+    "original_hash": "8f02f22c61dfea48781d068e253f47b7",
+    "translation_date": "2026-01-16T12:15:53+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-01-register-model.png",
+    "language_code": "bn"
+  },
+  "07-02-select-job.3e2e1144cd6cd093.webp": {
+    "original_hash": "98c2de765418b9bd857656b8a5155edf",
+    "translation_date": "2026-01-16T12:16:16+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-02-select-job.png",
+    "language_code": "bn"
+  },
+  "07-03-select-output.4cf1a0e645baea1f.webp": {
+    "original_hash": "34af93d68b3ad07e1be85a55eb008bd3",
+    "translation_date": "2026-01-16T12:14:49+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-03-select-output.png",
+    "language_code": "bn"
+  },
+  "07-04-register.fd82a3b293060bc7.webp": {
+    "original_hash": "e1c804f854dd98c4e7f0cd7f3a8aa9f2",
+    "translation_date": "2026-01-16T12:03:36+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-04-register.png",
+    "language_code": "bn"
+  },
+  "07-05-registered-model.7db9775f58dfd591.webp": {
+    "original_hash": "2268fb40588d9d468461cd3c812ed96a",
+    "translation_date": "2026-01-16T12:11:29+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-05-registered-model.png",
+    "language_code": "bn"
+  },
+  "07-06-create-endpoint.1ba865c606551f09.webp": {
+    "original_hash": "bb2ed197971c6a2b3e7e15814a614b58",
+    "translation_date": "2026-01-16T12:04:00+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-06-create-endpoint.png",
+    "language_code": "bn"
+  },
+  "07-07-select-registered-model.29c947c37fa30cb4.webp": {
+    "original_hash": "d33a58328d465bcbc1607bcb187e4fd7",
+    "translation_date": "2026-01-16T12:09:17+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-07-select-registered-model.png",
+    "language_code": "bn"
+  },
+  "07-08-deployment-setting.43ddc4209e673784.webp": {
+    "original_hash": "1500b9e4a74a3860b4f0385de2c4fee5",
+    "translation_date": "2026-01-16T12:06:08+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-08-deployment-setting.png",
+    "language_code": "bn"
+  },
+  "07-09-check-deployment.325d18cae8475ef4.webp": {
+    "original_hash": "28b0222397fac3815369450bd89c79eb",
+    "translation_date": "2026-01-16T12:07:30+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-09-check-deployment.png",
+    "language_code": "bn"
+  },
+  "07-10-set-traffic.085b847e5751ff3d.webp": {
+    "original_hash": "5d62367bbe9c207ab4b0233f3c583e30",
+    "translation_date": "2026-01-16T12:08:37+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-10-set-traffic.png",
+    "language_code": "bn"
+  },
+  "08-01-create-hub.8f7dd615bb8d9834.webp": {
+    "original_hash": "87711b3d323bbeebceb3c88d074419f9",
+    "translation_date": "2026-01-16T12:06:55+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-01-create-hub.png",
+    "language_code": "bn"
+  },
+  "08-02-fill-hub.c2d3b505bbbdba7c.webp": {
+    "original_hash": "cadb4291728c5ec35a1888210e1da680",
+    "translation_date": "2026-01-16T12:13:25+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-02-fill-hub.png",
+    "language_code": "bn"
+  },
+  "08-03-select-create-hub.7527cff31089d1bf.webp": {
+    "original_hash": "2ad590bda1dd8b4b4d6d0cf93bacb3ba",
+    "translation_date": "2026-01-16T12:03:47+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-03-select-create-hub.png",
+    "language_code": "bn"
+  },
+  "08-04-select-new-project.390fadfc9c8f8f12.webp": {
+    "original_hash": "110a9da540c217900d56744fb185782f",
+    "translation_date": "2026-01-16T12:12:58+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-04-select-new-project.png",
+    "language_code": "bn"
+  },
+  "08-05-create-project.4d97f0372f03375a.webp": {
+    "original_hash": "17418aec2f331b0e6102046024b345bb",
+    "translation_date": "2026-01-16T12:09:26+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-05-create-project.png",
+    "language_code": "bn"
+  },
+  "08-06-select-endpoints.aff38d453bcf9605.webp": {
+    "original_hash": "ff5c54767cbe87e5d3998184bced1944",
+    "translation_date": "2026-01-16T12:04:31+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-06-select-endpoints.png",
+    "language_code": "bn"
+  },
+  "08-06-select-project.2318771205ca6c72.webp": {
+    "original_hash": "e7ec226543744ca60ae8886deae07a42",
+    "translation_date": "2026-01-16T12:06:41+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-06-select-project.png",
+    "language_code": "bn"
+  },
+  "08-07-select-endpoint-created.47f0dc09df2e275e.webp": {
+    "original_hash": "dc5056222ee04681a06c8500c08bccdc",
+    "translation_date": "2026-01-16T12:15:12+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-07-select-endpoint-created.png",
+    "language_code": "bn"
+  },
+  "08-08-copy-endpoint-key.18f934b5953ae8cb.webp": {
+    "original_hash": "17a24e0d094a71b473c72a52b07bff8d",
+    "translation_date": "2026-01-16T12:12:04+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-08-copy-endpoint-key.png",
+    "language_code": "bn"
+  },
+  "08-09-select-new-connection.02eb45deadc401fc.webp": {
+    "original_hash": "7a0f0ec9566f59b52a836db0178a355e",
+    "translation_date": "2026-01-16T12:10:01+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-09-select-new-connection.png",
+    "language_code": "bn"
+  },
+  "08-10-select-custom-keys.856f6b2966460551.webp": {
+    "original_hash": "04ab24c2280cc6958a23d160d7eff5c3",
+    "translation_date": "2026-01-16T12:07:56+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-10-select-custom-keys.png",
+    "language_code": "bn"
+  },
+  "08-11-add-connection.785486badb4d2d26.webp": {
+    "original_hash": "49acbbd979ccd7fbebc0da5250fb79b7",
+    "translation_date": "2026-01-16T12:15:30+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-11-add-connection.png",
+    "language_code": "bn"
+  },
+  "08-12-select-promptflow.6f4b451cb9821e5b.webp": {
+    "original_hash": "7fa802cf85cbf44d19fce5d60516a173",
+    "translation_date": "2026-01-16T12:11:40+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-12-select-promptflow.png",
+    "language_code": "bn"
+  },
+  "08-13-select-flow-type.2ec689b22da32591.webp": {
+    "original_hash": "c44ce4827800f32ed3c77e30b3396fae",
+    "translation_date": "2026-01-16T12:08:21+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-13-select-flow-type.png",
+    "language_code": "bn"
+  },
+  "08-14-enter-name.ff9520fefd89f40d.webp": {
+    "original_hash": "9b2a4b9cd2e8a63b8a3507a7e19bba0e",
+    "translation_date": "2026-01-16T12:08:12+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-14-enter-name.png",
+    "language_code": "bn"
+  },
+  "08-15-select-raw-file-mode.61d988b41df28985.webp": {
+    "original_hash": "5874d12e3524134b8138bf0bdf7c2542",
+    "translation_date": "2026-01-16T12:10:39+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-15-select-raw-file-mode.png",
+    "language_code": "bn"
+  },
+  "08-16-paste-promptflow-code.a6041b74a7d09777.webp": {
+    "original_hash": "72f0d50a7b64684f042a5baa3cb3120c",
+    "translation_date": "2026-01-16T12:11:53+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-16-paste-promptflow-code.png",
+    "language_code": "bn"
+  },
+  "08-17-select-input-output.64dbb39bbe59d03b.webp": {
+    "original_hash": "4a28dbbbceeb97b69d689eb76b7d8314",
+    "translation_date": "2026-01-16T12:03:25+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-17-select-input-output.png",
+    "language_code": "bn"
+  },
+  "08-18-graph-example.d6457533952e690c.webp": {
+    "original_hash": "65496f873f30f23b12e9d9c2f5b5d823",
+    "translation_date": "2026-01-16T12:10:53+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-18-graph-example.png",
+    "language_code": "bn"
+  },
+  "09-01-start-compute-session.a86fcf5be68e386b.webp": {
+    "original_hash": "b3c66315d6041f7e3e8f6a2414e79a6f",
+    "translation_date": "2026-01-16T12:13:09+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-01-start-compute-session.png",
+    "language_code": "bn"
+  },
+  "09-02-validate-input.317c76ef766361e9.webp": {
+    "original_hash": "86a4aea3d96ca5428b68698108fe9d13",
+    "translation_date": "2026-01-16T12:15:40+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-02-validate-input.png",
+    "language_code": "bn"
+  },
+  "09-03-select-connection.99bdddb4b1844023.webp": {
+    "original_hash": "97916d8d4f26bcaa70b072a222688aef",
+    "translation_date": "2026-01-16T12:08:31+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-03-select-connection.png",
+    "language_code": "bn"
+  },
+  "09-04-select-chat.61936dce6612a1e6.webp": {
+    "original_hash": "c888bc5c738c8901bfe790c09bd0adc8",
+    "translation_date": "2026-01-16T12:16:32+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-04-select-chat.png",
+    "language_code": "bn"
+  },
+  "09-05-chat-with-promptflow.c8ca404c07ab126f.webp": {
+    "original_hash": "14773647fa4f56a3152502921ab40ace",
+    "translation_date": "2026-01-16T12:07:40+00:00",
+    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-05-chat-with-promptflow.png",
+    "language_code": "bn"
+  },
+  "AIFoundry.81f82cc930ffd851.webp": {
+    "original_hash": "2c69967544ff499da1ba8ddbcdbe3283",
+    "translation_date": "2026-01-16T12:19:55+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundry.png",
     "language_code": "bn"
   },
   "AIFoundry.9e0b513e999a1c5a.webp": {
@@ -143,22 +659,16 @@
     "source_file": "imgs/01/05/AIFoundry/AIFoundry.png",
     "language_code": "bn"
   },
-  "select-submit.7a211c8ea5c7be9b.webp": {
-    "original_hash": "5432600211d5c3a920fd688a1bf128fa",
-    "translation_date": "2026-01-16T11:09:32+00:00",
-    "source_file": "imgs/01/05/AIFoundry/select-submit.png",
+  "AIFoundryModelCatalog.3923945fa7be5b5f.webp": {
+    "original_hash": "cccc0c7e311b1b84dc64e11e9fe2a8c9",
+    "translation_date": "2026-01-16T11:22:11+00:00",
+    "source_file": "imgs/01/02/03/AIFoundryModelCatalog.png",
     "language_code": "bn"
   },
-  "AIFoundryfintunetask.dcba9c6692238f70.webp": {
-    "original_hash": "139d25ca6acb04fa4924f541c528a5f8",
-    "translation_date": "2026-01-16T11:09:49+00:00",
-    "source_file": "imgs/01/05/AIFoundry/AIFoundryfintunetask.png",
-    "language_code": "bn"
-  },
-  "AIFoundrydatafintuneselect.e05162762d5cca4d.webp": {
-    "original_hash": "f9bfe1054e1bde01a5889d056e33be39",
-    "translation_date": "2026-01-16T11:10:25+00:00",
-    "source_file": "imgs/01/05/AIFoundry/AIFoundrydatafintuneselect.png",
+  "AIFoundryModels.0e1b16f7d0b09b73.webp": {
+    "original_hash": "91277a39859be02e3bf2c6e004f9cdff",
+    "translation_date": "2026-01-16T12:21:18+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundryModels.png",
     "language_code": "bn"
   },
   "AIFoundryModels.b05d6e47cd0d938c.webp": {
@@ -167,22 +677,46 @@
     "source_file": "imgs/01/05/AIFoundry/AIFoundryModels.png",
     "language_code": "bn"
   },
-  "finetune4.0ae22e31c666d7a2.webp": {
-    "original_hash": "1ce50d3602f1d1d3d63ff39ab56354c2",
-    "translation_date": "2026-01-16T11:11:21+00:00",
-    "source_file": "imgs/01/05/AIFoundry/finetune4.png",
+  "AIFoundryPhi4.eece9ddb0d817a03.webp": {
+    "original_hash": "15117a6ea667df22e7ce760d7c462648",
+    "translation_date": "2026-01-16T11:21:50+00:00",
+    "source_file": "imgs/01/02/03/AIFoundryPhi4.png",
     "language_code": "bn"
   },
-  "AIFoundryfinetunepreview.3781ad8da6ded3ae.webp": {
-    "original_hash": "25c0bcd1e8b53584daf3e16383fe63ff",
-    "translation_date": "2026-01-16T11:11:42+00:00",
-    "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetunepreview.png",
+  "AIFoundryPlayground.193b81a9e472c5d1.webp": {
+    "original_hash": "bb48811fad40b0a68abbe6732c68316a",
+    "translation_date": "2026-01-16T11:21:30+00:00",
+    "source_file": "imgs/01/02/03/AIFoundryPlayground.png",
     "language_code": "bn"
   },
-  "AIFoundryfinetuneselect.58a882e9f20acb55.webp": {
-    "original_hash": "9b990cb697e7fe37ab205a11859468c5",
-    "translation_date": "2026-01-16T11:12:24+00:00",
-    "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetuneselect.png",
+  "AIFoundryPorral.6b1094b101dd499e.webp": {
+    "original_hash": "98f19c5b750227238fcf76cfe375bbbb",
+    "translation_date": "2026-01-16T11:22:31+00:00",
+    "source_file": "imgs/01/02/03/AIFoundryPorral.png",
+    "language_code": "bn"
+  },
+  "AIFoundrydatafintuneselect.37dfc5a21d7098b3.webp": {
+    "original_hash": "f9bfe1054e1bde01a5889d056e33be39",
+    "translation_date": "2026-01-16T12:20:50+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundrydatafintuneselect.png",
+    "language_code": "bn"
+  },
+  "AIFoundrydatafintuneselect.e05162762d5cca4d.webp": {
+    "original_hash": "f9bfe1054e1bde01a5889d056e33be39",
+    "translation_date": "2026-01-16T11:10:25+00:00",
+    "source_file": "imgs/01/05/AIFoundry/AIFoundrydatafintuneselect.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfinetune.193aaddce48d553c.webp": {
+    "original_hash": "3efab648eee0f16d144f5d38b72cea62",
+    "translation_date": "2026-01-16T12:18:57+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundryfinetune.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfinetune.2e45e489db180a8f.webp": {
+    "original_hash": "3efab648eee0f16d144f5d38b72cea62",
+    "translation_date": "2026-01-16T11:08:29+00:00",
+    "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetune.png",
     "language_code": "bn"
   },
   "AIFoundryfinetuneadvanced.d7a902fa4c50fd2c.webp": {
@@ -191,16 +725,46 @@
     "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetuneadvanced.png",
     "language_code": "bn"
   },
-  "finetune3.d9efecc754350f06.webp": {
-    "original_hash": "5082bdcf9fbe804aec9b23880a8de81c",
-    "translation_date": "2026-01-16T11:13:24+00:00",
-    "source_file": "imgs/01/05/AIFoundry/finetune3.png",
+  "AIFoundryfinetuneadvanced.e03e174ddf6fa04d.webp": {
+    "original_hash": "59d95bf0191a467ae40cd954344e5dc3",
+    "translation_date": "2026-01-16T12:23:27+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundryfinetuneadvanced.png",
     "language_code": "bn"
   },
-  "finetune2.e3595cbe065f6137.webp": {
-    "original_hash": "83ba77e528090f709cef88cac3ec1b98",
-    "translation_date": "2026-01-16T11:13:39+00:00",
-    "source_file": "imgs/01/05/AIFoundry/finetune2.png",
+  "AIFoundryfinetunepreview.3781ad8da6ded3ae.webp": {
+    "original_hash": "25c0bcd1e8b53584daf3e16383fe63ff",
+    "translation_date": "2026-01-16T11:11:42+00:00",
+    "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetunepreview.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfinetunepreview.7d2e63f4f2b921ea.webp": {
+    "original_hash": "25c0bcd1e8b53584daf3e16383fe63ff",
+    "translation_date": "2026-01-16T12:22:08+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundryfinetunepreview.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfinetuneselect.373dd68882c47cab.webp": {
+    "original_hash": "9b990cb697e7fe37ab205a11859468c5",
+    "translation_date": "2026-01-16T12:22:48+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundryfinetuneselect.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfinetuneselect.58a882e9f20acb55.webp": {
+    "original_hash": "9b990cb697e7fe37ab205a11859468c5",
+    "translation_date": "2026-01-16T11:12:24+00:00",
+    "source_file": "imgs/01/05/AIFoundry/AIFoundryfinetuneselect.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfintunetask.b88192eaca0e7105.webp": {
+    "original_hash": "139d25ca6acb04fa4924f541c528a5f8",
+    "translation_date": "2026-01-16T12:20:17+00:00",
+    "source_file": "imgs/03/AIFoundry/AIFoundryfintunetask.png",
+    "language_code": "bn"
+  },
+  "AIFoundryfintunetask.dcba9c6692238f70.webp": {
+    "original_hash": "139d25ca6acb04fa4924f541c528a5f8",
+    "translation_date": "2026-01-16T11:09:49+00:00",
+    "source_file": "imgs/01/05/AIFoundry/AIFoundryfintunetask.png",
     "language_code": "bn"
   },
   "AIPortfolio.69da59a8e1eaa70f.webp": {
@@ -209,34 +773,16 @@
     "source_file": "imgs/01/05/AIFoundry/AIPortfolio.png",
     "language_code": "bn"
   },
-  "select-new-project.0867e38b813724b0.webp": {
-    "original_hash": "fdab4206829b56a71e0f12ae61e2e4cb",
-    "translation_date": "2026-01-16T11:14:07+00:00",
-    "source_file": "imgs/01/05/AIFoundry/select-new-project.png",
+  "AIPortfolio.aa6435a752c6ea6c.webp": {
+    "original_hash": "b944cd2a6d52df85878efdeea5d91d9c",
+    "translation_date": "2026-01-16T12:24:14+00:00",
+    "source_file": "imgs/03/AIFoundry/AIPortfolio.png",
     "language_code": "bn"
   },
-  "create-hub.21b34ae89ec61978.webp": {
-    "original_hash": "bf5ecbd9f6b6c1cff6552ca864fb1abe",
-    "translation_date": "2026-01-16T11:14:16+00:00",
-    "source_file": "imgs/01/05/AIFoundry/create-hub.png",
-    "language_code": "bn"
-  },
-  "create-project.609a8407a142be9b.webp": {
-    "original_hash": "d186654cee5076db185180b129b627a3",
-    "translation_date": "2026-01-16T11:14:31+00:00",
-    "source_file": "imgs/01/05/AIFoundry/create-project.png",
-    "language_code": "bn"
-  },
-  "RAIPrinciples.bf9c9bc6ca160d33.webp": {
-    "original_hash": "6d34140d6eab127e10ae188cd2b98479",
-    "translation_date": "2026-01-16T11:14:40+00:00",
-    "source_file": "imgs/01/05/RAI/RAIPrinciples.png",
-    "language_code": "bn"
-  },
-  "pfvisualize.c1d9ca75baa2a222.webp": {
-    "original_hash": "79588dd9640197263dc95c96a9f08fe8",
-    "translation_date": "2026-01-16T11:15:08+00:00",
-    "source_file": "imgs/01/05/PromptFlow/pfvisualize.png",
+  "AItoolkitload_model_into_playground.dcef5355b1653b52.webp": {
+    "original_hash": "dcbf4eaeab3e41c87799932e5c394461",
+    "translation_date": "2026-01-16T11:17:11+00:00",
+    "source_file": "imgs/01/02/05/AItoolkitload_model_into_playground.png",
     "language_code": "bn"
   },
   "AItoolkitmodel_catalog.7a7be6a7d8468d31.webp": {
@@ -245,10 +791,88 @@
     "source_file": "imgs/01/02/05/AItoolkitmodel_catalog.png",
     "language_code": "bn"
   },
-  "AItoolkitload_model_into_playground.dcef5355b1653b52.webp": {
-    "original_hash": "dcbf4eaeab3e41c87799932e5c394461",
-    "translation_date": "2026-01-16T11:17:11+00:00",
-    "source_file": "imgs/01/02/05/AItoolkitload_model_into_playground.png",
+  "Aitoolkit.7157953df04812dc.webp": {
+    "original_hash": "eb9df878b521236c94cbb61ab93e3fb2",
+    "translation_date": "2026-01-16T12:28:13+00:00",
+    "source_file": "imgs/03/intro/Aitoolkit.png",
+    "language_code": "bn"
+  },
+  "Finetuningexamples.a9a41214f8f5afc1.webp": {
+    "original_hash": "ffac28d588445f7d341f2479bd454abd",
+    "translation_date": "2026-01-16T12:28:57+00:00",
+    "source_file": "imgs/03/intro/Finetuningexamples.png",
+    "language_code": "bn"
+  },
+  "FinetuningwithMS.3d0cec8ae693e094.webp": {
+    "original_hash": "d5a52f3ce5987965bd0e28fee8254471",
+    "translation_date": "2026-01-16T12:27:58+00:00",
+    "source_file": "imgs/03/intro/FinetuningwithMS.png",
+    "language_code": "bn"
+  },
+  "GitHub_Model.ca6c125cb3117d0e.webp": {
+    "original_hash": "9d9fd090ff90c84165a7cc0fcf68ab95",
+    "translation_date": "2026-01-16T11:19:18+00:00",
+    "source_file": "imgs/01/02/02/GitHub_Model.png",
+    "language_code": "bn"
+  },
+  "GitHub_ModelCatalog.aa43c51c36454747.webp": {
+    "original_hash": "b0b563aa1c9b362cb4b90a5ad020cc48",
+    "translation_date": "2026-01-16T11:19:52+00:00",
+    "source_file": "imgs/01/02/02/GitHub_ModelCatalog.png",
+    "language_code": "bn"
+  },
+  "GitHub_ModelGetStarted.150220a802da6fb6.webp": {
+    "original_hash": "e8ba28b7dd7534d99f0f66f4d817e842",
+    "translation_date": "2026-01-16T11:18:54+00:00",
+    "source_file": "imgs/01/02/02/GitHub_ModelGetStarted.png",
+    "language_code": "bn"
+  },
+  "GitHub_ModelPlay.cf6a9f1106e04853.webp": {
+    "original_hash": "a40fa8b2c471dc9df5b42f85a32c29ba",
+    "translation_date": "2026-01-16T11:18:27+00:00",
+    "source_file": "imgs/01/02/02/GitHub_ModelPlay.png",
+    "language_code": "bn"
+  },
+  "MLFineTune.928d4c6b3767dd35.webp": {
+    "original_hash": "1e3625c1cbe2ff4146d36b105317949d",
+    "translation_date": "2026-01-16T12:16:39+00:00",
+    "source_file": "imgs/03/ft/MLFineTune.png",
+    "language_code": "bn"
+  },
+  "MLflow2.5a22eb718f6311d1.webp": {
+    "original_hash": "910797c4ac338239e2e30eea721e7f73",
+    "translation_date": "2026-01-16T11:51:18+00:00",
+    "source_file": "imgs/02/mlflow/MLflow2.png",
+    "language_code": "bn"
+  },
+  "MaaPFinetune.fd3829c1122f5d1c.webp": {
+    "original_hash": "8e264249cb8bed80ec6bc489b0d94930",
+    "translation_date": "2026-01-16T12:29:16+00:00",
+    "source_file": "imgs/03/intro/MaaPFinetune.png",
+    "language_code": "bn"
+  },
+  "MaaSfinetune.3eee4630607aff0d.webp": {
+    "original_hash": "eb7fa2506c6cf6ef95cb599ddbc090f9",
+    "translation_date": "2026-01-16T12:29:41+00:00",
+    "source_file": "imgs/03/intro/MaaSfinetune.png",
+    "language_code": "bn"
+  },
+  "MlFlow1.fd745e47dbd3fecf.webp": {
+    "original_hash": "6cbeffa70b690cb485747e8a07db13f5",
+    "translation_date": "2026-01-16T11:51:26+00:00",
+    "source_file": "imgs/02/mlflow/MlFlow1.png",
+    "language_code": "bn"
+  },
+  "MlFlowmlops.ed16f47809d74d9a.webp": {
+    "original_hash": "836f0e9659d68a2faab8147b6c7e24f1",
+    "translation_date": "2026-01-16T11:51:10+00:00",
+    "source_file": "imgs/02/mlflow/MlFlowmlops.png",
+    "language_code": "bn"
+  },
+  "Phi-NIM.09bebb743387ee4a.webp": {
+    "original_hash": "5c7092c05cec62056ab89f2fa976c906",
+    "translation_date": "2026-01-16T11:20:32+00:00",
+    "source_file": "imgs/01/02/06/Phi-NIM.png",
     "language_code": "bn"
   },
   "Phi.67be2c0ea9ef888e.webp": {
@@ -269,34 +893,46 @@
     "source_file": "imgs/01/02/01/Phi4.png",
     "language_code": "bn"
   },
-  "GitHub_ModelPlay.cf6a9f1106e04853.webp": {
-    "original_hash": "a40fa8b2c471dc9df5b42f85a32c29ba",
-    "translation_date": "2026-01-16T11:18:27+00:00",
-    "source_file": "imgs/01/02/02/GitHub_ModelPlay.png",
+  "RAGintro.e47aa73428ea2b7f.webp": {
+    "original_hash": "fe091b1a3bd61a84531d05393299092a",
+    "translation_date": "2026-01-16T12:29:33+00:00",
+    "source_file": "imgs/03/intro/RAGintro.png",
     "language_code": "bn"
   },
-  "GitHub_ModelGetStarted.150220a802da6fb6.webp": {
-    "original_hash": "e8ba28b7dd7534d99f0f66f4d817e842",
-    "translation_date": "2026-01-16T11:18:54+00:00",
-    "source_file": "imgs/01/02/02/GitHub_ModelGetStarted.png",
+  "RAIPrinciples.bf9c9bc6ca160d33.webp": {
+    "original_hash": "6d34140d6eab127e10ae188cd2b98479",
+    "translation_date": "2026-01-16T11:14:40+00:00",
+    "source_file": "imgs/01/05/RAI/RAIPrinciples.png",
     "language_code": "bn"
   },
-  "GitHub_Model.ca6c125cb3117d0e.webp": {
-    "original_hash": "9d9fd090ff90c84165a7cc0fcf68ab95",
-    "translation_date": "2026-01-16T11:19:18+00:00",
-    "source_file": "imgs/01/02/02/GitHub_Model.png",
+  "add-connection.ac7f5faf8b10b0df.webp": {
+    "original_hash": "49acbbd979ccd7fbebc0da5250fb79b7",
+    "translation_date": "2026-01-16T11:36:05+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/add-connection.png",
     "language_code": "bn"
   },
-  "GitHub_ModelCatalog.aa43c51c36454747.webp": {
-    "original_hash": "b0b563aa1c9b362cb4b90a5ad020cc48",
-    "translation_date": "2026-01-16T11:19:52+00:00",
-    "source_file": "imgs/01/02/02/GitHub_ModelCatalog.png",
+  "agent.3dbb06228f9a6189.webp": {
+    "original_hash": "c634724a7ca7bdecaea1495771454aef",
+    "translation_date": "2026-01-16T12:00:37+00:00",
+    "source_file": "imgs/02/phi35vscode/agent.png",
     "language_code": "bn"
   },
-  "Phi-NIM.09bebb743387ee4a.webp": {
-    "original_hash": "5c7092c05cec62056ab89f2fa976c906",
-    "translation_date": "2026-01-16T11:20:32+00:00",
-    "source_file": "imgs/01/02/06/Phi-NIM.png",
+  "agentgen.a16e7735790f764b.webp": {
+    "original_hash": "658b82f614d7e1b8230819feddefe711",
+    "translation_date": "2026-01-16T12:02:54+00:00",
+    "source_file": "imgs/02/phi35vscode/agentgen.png",
+    "language_code": "bn"
+  },
+  "agenthelp.60c68767c941a3fe.webp": {
+    "original_hash": "dc00368c09ae1ceb147107f5e9db7f6b",
+    "translation_date": "2026-01-16T12:01:51+00:00",
+    "source_file": "imgs/02/phi35vscode/agenthelp.png",
+    "language_code": "bn"
+  },
+  "agentimage.f5cb52b45ab7d0d1.webp": {
+    "original_hash": "8de8d358c1d2cd0b0b6a44dbea4fc3e8",
+    "translation_date": "2026-01-16T12:03:13+00:00",
+    "source_file": "imgs/02/phi35vscode/agentimage.png",
     "language_code": "bn"
   },
   "aifoundry_home.f28a8127c96c7d93.webp": {
@@ -305,124 +941,16 @@
     "source_file": "imgs/01/02/03/aifoundry_home.png",
     "language_code": "bn"
   },
-  "AIFoundryPlayground.193b81a9e472c5d1.webp": {
-    "original_hash": "bb48811fad40b0a68abbe6732c68316a",
-    "translation_date": "2026-01-16T11:21:30+00:00",
-    "source_file": "imgs/01/02/03/AIFoundryPlayground.png",
+  "aipc_DML.52a44180393ab491.webp": {
+    "original_hash": "14a54246f35a7cd2c40ee92bbd6cefb4",
+    "translation_date": "2026-01-16T11:31:42+00:00",
+    "source_file": "imgs/01/03/AIPC/aipc_DML.png",
     "language_code": "bn"
   },
-  "AIFoundryPhi4.eece9ddb0d817a03.webp": {
-    "original_hash": "15117a6ea667df22e7ce760d7c462648",
-    "translation_date": "2026-01-16T11:21:50+00:00",
-    "source_file": "imgs/01/02/03/AIFoundryPhi4.png",
-    "language_code": "bn"
-  },
-  "AIFoundryModelCatalog.3923945fa7be5b5f.webp": {
-    "original_hash": "cccc0c7e311b1b84dc64e11e9fe2a8c9",
-    "translation_date": "2026-01-16T11:22:11+00:00",
-    "source_file": "imgs/01/02/03/AIFoundryModelCatalog.png",
-    "language_code": "bn"
-  },
-  "AIFoundryPorral.6b1094b101dd499e.webp": {
-    "original_hash": "98f19c5b750227238fcf76cfe375bbbb",
-    "translation_date": "2026-01-16T11:22:31+00:00",
-    "source_file": "imgs/01/02/03/AIFoundryPorral.png",
-    "language_code": "bn"
-  },
-  "cli.862ec6b55c2b5d91.webp": {
-    "original_hash": "9a973cf240bc75dfa8d3059f0b5e26b5",
-    "translation_date": "2026-01-16T11:23:11+00:00",
-    "source_file": "imgs/01/02/07/cli.png",
-    "language_code": "bn"
-  },
-  "foundry-local-arch.8823e321dd8258d7.webp": {
-    "original_hash": "833a6752b645d467a26a8b3c11aa8262",
-    "translation_date": "2026-01-16T11:23:36+00:00",
-    "source_file": "imgs/01/02/07/foundry-local-arch.png",
-    "language_code": "bn"
-  },
-  "ollama_run.e9755172b162b381.webp": {
-    "original_hash": "2512a85fd1212dc512b59ba87c00ded3",
-    "translation_date": "2026-01-16T11:23:52+00:00",
-    "source_file": "imgs/01/02/04/ollama_run.png",
-    "language_code": "bn"
-  },
-  "ollama_gen.bda5d4e715366cc9.webp": {
-    "original_hash": "99cffaf5d4e610d0f9b785c8d0cf9b92",
-    "translation_date": "2026-01-16T11:24:29+00:00",
-    "source_file": "imgs/01/02/04/ollama_gen.png",
-    "language_code": "bn"
-  },
-  "sk.d03785c25edc6d44.webp": {
-    "original_hash": "516af8c357b87075fdd657330c92fae1",
-    "translation_date": "2026-01-16T11:25:14+00:00",
-    "source_file": "imgs/01/03/LocalServer/sk.png",
-    "language_code": "bn"
-  },
-  "skrun.5aafc1e7197dca20.webp": {
-    "original_hash": "4d5d88fc00ae0ca0c1af5b76aae5b21d",
-    "translation_date": "2026-01-16T11:25:26+00:00",
-    "source_file": "imgs/01/03/LocalServer/skrun.png",
-    "language_code": "bn"
-  },
-  "result.326a947a6a2b9c51.webp": {
-    "original_hash": "d775f00e9af56b92075e59a2e75b7c6b",
-    "translation_date": "2026-01-16T11:25:54+00:00",
-    "source_file": "imgs/01/03/iOS/result.jpg",
-    "language_code": "bn"
-  },
-  "xcode.8147789e6c25e3e2.webp": {
-    "original_hash": "dc7dc3df2980ec5ed4096101a80c6d2d",
-    "translation_date": "2026-01-16T11:26:24+00:00",
-    "source_file": "imgs/01/03/iOS/xcode.png",
-    "language_code": "bn"
-  },
-  "hf.6b8504fd88ee48dd.webp": {
-    "original_hash": "4b97ef1a081d2dbb12ac449da7bbc30c",
-    "translation_date": "2026-01-16T11:26:45+00:00",
-    "source_file": "imgs/01/03/iOS/hf.png",
-    "language_code": "bn"
-  },
-  "head.64cad021ce70a333.webp": {
-    "original_hash": "d02901800380944ede8d1e47bdd10b23",
-    "translation_date": "2026-01-16T11:27:18+00:00",
-    "source_file": "imgs/01/03/iOS/head.png",
-    "language_code": "bn"
-  },
-  "model.3b879b14e0be877d.webp": {
-    "original_hash": "8be1d6eae1bee0be1868ce38c9eb9b6d",
-    "translation_date": "2026-01-16T11:27:24+00:00",
-    "source_file": "imgs/01/03/iOS/model.png",
-    "language_code": "bn"
-  },
-  "lib.a4209b9f21ddf344.webp": {
-    "original_hash": "37633757e3e952430f485da6c2b04350",
-    "translation_date": "2026-01-16T11:27:34+00:00",
-    "source_file": "imgs/01/03/iOS/lib.png",
-    "language_code": "bn"
-  },
-  "command-deploy.9adb4e310dd0b0ae.webp": {
-    "original_hash": "3906c9e31721567430553598c1745623",
-    "translation_date": "2026-01-16T11:27:55+00:00",
-    "source_file": "imgs/01/03/RemoteServer/command-deploy.png",
-    "language_code": "bn"
-  },
-  "notification-deploy.446e480a44b1be58.webp": {
-    "original_hash": "8c38a7d49376dcd2bc4d180ac0c70a35",
-    "translation_date": "2026-01-16T11:28:38+00:00",
-    "source_file": "imgs/01/03/RemoteServer/notification-deploy.png",
-    "language_code": "bn"
-  },
-  "log-finetuning-res.16566a28ef6eebad.webp": {
-    "original_hash": "1555aa7bab4113195c9857a0eb615da0",
-    "translation_date": "2026-01-16T11:29:28+00:00",
-    "source_file": "imgs/01/03/RemoteServer/log-finetuning-res.png",
-    "language_code": "bn"
-  },
-  "command-provision-inference.8ff5acb22efe9c86.webp": {
-    "original_hash": "18b92e88aec22e019f1193c8e2cd0ccd",
-    "translation_date": "2026-01-16T11:30:11+00:00",
-    "source_file": "imgs/01/03/RemoteServer/command-provision-inference.png",
+  "aipc_NPU.7a3cb6db47b377e1.webp": {
+    "original_hash": "43c5d4275663a9430de168b133d0693d",
+    "translation_date": "2026-01-16T11:31:19+00:00",
+    "source_file": "imgs/01/03/AIPC/aipc_NPU.png",
     "language_code": "bn"
   },
   "aipc_OpenVINO_GPU.20180edfffd91e55.webp": {
@@ -443,196 +971,16 @@
     "source_file": "imgs/01/03/AIPC/aipcphitokenlatency.png",
     "language_code": "bn"
   },
-  "aipc_NPU.7a3cb6db47b377e1.webp": {
-    "original_hash": "43c5d4275663a9430de168b133d0693d",
-    "translation_date": "2026-01-16T11:31:19+00:00",
-    "source_file": "imgs/01/03/AIPC/aipc_NPU.png",
-    "language_code": "bn"
-  },
   "aipcphitokenlatency770.e923609a57c5d394.webp": {
     "original_hash": "f96dca7a12a959353f80c1235851da4e",
     "translation_date": "2026-01-16T11:31:32+00:00",
     "source_file": "imgs/01/03/AIPC/aipcphitokenlatency770.png",
     "language_code": "bn"
   },
-  "aipc_DML.52a44180393ab491.webp": {
-    "original_hash": "14a54246f35a7cd2c40ee92bbd6cefb4",
-    "translation_date": "2026-01-16T11:31:42+00:00",
-    "source_file": "imgs/01/03/AIPC/aipc_DML.png",
-    "language_code": "bn"
-  },
-  "llamaedgerun.bed921516c9a821c.webp": {
-    "original_hash": "3ff513133868a71717f2b326d740d3e5",
-    "translation_date": "2026-01-16T11:32:01+00:00",
-    "source_file": "imgs/01/03/Jetson/llamaedgerun.png",
-    "language_code": "bn"
-  },
-  "llamaedge.e9d6ff96dff11cf7.webp": {
-    "original_hash": "0c1b93720321538e98999b67ec85ae69",
-    "translation_date": "2026-01-16T11:32:18+00:00",
-    "source_file": "imgs/01/03/Jetson/llamaedge.jpg",
-    "language_code": "bn"
-  },
-  "02.7b188681a8eadbc1.webp": {
-    "original_hash": "caaff8184f3ea356a063c79bc665d180",
-    "translation_date": "2026-01-16T11:32:24+00:00",
-    "source_file": "imgs/01/03/MLX/02.png",
-    "language_code": "bn"
-  },
-  "03.b9705a3a5aaa89f9.webp": {
-    "original_hash": "9d1412fee2c26ec1a309dc020807d047",
-    "translation_date": "2026-01-16T11:32:46+00:00",
-    "source_file": "imgs/01/03/MLX/03.png",
-    "language_code": "bn"
-  },
-  "01.5cf57df8f7407cf9.webp": {
-    "original_hash": "04df8d15438df7e769590e121ed67b56",
-    "translation_date": "2026-01-16T11:33:25+00:00",
-    "source_file": "imgs/01/03/MLX/01.png",
-    "language_code": "bn"
-  },
-  "validate-input.c1adb9543c6495be.webp": {
-    "original_hash": "86a4aea3d96ca5428b68698108fe9d13",
-    "translation_date": "2026-01-16T11:33:37+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/validate-input.png",
-    "language_code": "bn"
-  },
-  "select-evaluation.2846ad7aaaca7f4f.webp": {
-    "original_hash": "1f5dad76dcdfea00e22d44332a2522f8",
-    "translation_date": "2026-01-16T11:33:53+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-evaluation.png",
-    "language_code": "bn"
-  },
-  "select-new-connection.fa0f35743758a74b.webp": {
-    "original_hash": "7a0f0ec9566f59b52a836db0178a355e",
-    "translation_date": "2026-01-16T11:34:08+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-new-connection.png",
-    "language_code": "bn"
-  },
-  "deploy-openai-model.95d812346b25834b.webp": {
-    "original_hash": "58d95c20b10b7de298a99ae9b7238f51",
-    "translation_date": "2026-01-16T11:34:24+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/deploy-openai-model.png",
-    "language_code": "bn"
-  },
-  "performance-evaluation.48b3e7e01a098740.webp": {
-    "original_hash": "cbd9e52617c695720c6b96799da63d5f",
-    "translation_date": "2026-01-16T11:34:42+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/performance-evaluation.png",
-    "language_code": "bn"
-  },
-  "select-flow-type.28375125ec9996d3.webp": {
-    "original_hash": "c44ce4827800f32ed3c77e30b3396fae",
-    "translation_date": "2026-01-16T11:34:53+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-flow-type.png",
-    "language_code": "bn"
-  },
-  "select-endpoint-created.9f63af5e4cf98b2e.webp": {
-    "original_hash": "dc5056222ee04681a06c8500c08bccdc",
-    "translation_date": "2026-01-16T11:35:05+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-endpoint-created.png",
-    "language_code": "bn"
-  },
-  "select-custom-keys.5a3c6b25580a9b67.webp": {
-    "original_hash": "04ab24c2280cc6958a23d160d7eff5c3",
-    "translation_date": "2026-01-16T11:35:20+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-custom-keys.png",
-    "language_code": "bn"
-  },
-  "evaluate-based-on-safety.c5df819f5b0bfc07.webp": {
-    "original_hash": "ded38beba3d163590d0c23a64478b2d5",
-    "translation_date": "2026-01-16T11:35:35+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluate-based-on-safety.png",
-    "language_code": "bn"
-  },
-  "evaluation-setting1.4aa08259ff7a536e.webp": {
-    "original_hash": "1686d368283ff63b8cc92618087f9143",
-    "translation_date": "2026-01-16T11:35:50+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting1.png",
-    "language_code": "bn"
-  },
-  "add-connection.ac7f5faf8b10b0df.webp": {
-    "original_hash": "49acbbd979ccd7fbebc0da5250fb79b7",
-    "translation_date": "2026-01-16T11:36:05+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/add-connection.png",
-    "language_code": "bn"
-  },
-  "enter-name.02ddf8fb840ad430.webp": {
-    "original_hash": "9b2a4b9cd2e8a63b8a3507a7e19bba0e",
-    "translation_date": "2026-01-16T11:36:12+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/enter-name.png",
-    "language_code": "bn"
-  },
-  "responsibleai2.c07ef430113fad8c.webp": {
-    "original_hash": "ed9aed5f7f2d13cc1595351fde43ed43",
-    "translation_date": "2026-01-16T11:36:20+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/responsibleai2.png",
-    "language_code": "bn"
-  },
-  "start-compute-session.9acd8cbbd2c43df1.webp": {
-    "original_hash": "b3c66315d6041f7e3e8f6a2414e79a6f",
-    "translation_date": "2026-01-16T11:36:28+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/start-compute-session.png",
-    "language_code": "bn"
-  },
-  "select-promptflow.18ff2e61ab9173eb.webp": {
-    "original_hash": "7fa802cf85cbf44d19fce5d60516a173",
-    "translation_date": "2026-01-16T11:36:44+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-promptflow.png",
-    "language_code": "bn"
-  },
-  "evaluate-based-on-performance.3e801c647c7554e8.webp": {
-    "original_hash": "aaece96014e15fb9d32a6b3615da5d6b",
-    "translation_date": "2026-01-16T11:37:00+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluate-based-on-performance.png",
-    "language_code": "bn"
-  },
-  "evaluation-setting3-2.d53bd075c60a45a2.webp": {
-    "original_hash": "b76576a5e79e5024d136f6d7f898dce2",
-    "translation_date": "2026-01-16T11:37:24+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting3-2.png",
-    "language_code": "bn"
-  },
-  "graph-example.82fd1bcdd3fc545b.webp": {
-    "original_hash": "65496f873f30f23b12e9d9c2f5b5d823",
-    "translation_date": "2026-01-16T11:37:41+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/graph-example.png",
-    "language_code": "bn"
-  },
-  "select-chat.0406bd9687d0c49d.webp": {
-    "original_hash": "c888bc5c738c8901bfe790c09bd0adc8",
-    "translation_date": "2026-01-16T11:37:49+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-chat.png",
-    "language_code": "bn"
-  },
-  "safety-evaluation.083586ec88dfa950.webp": {
-    "original_hash": "d5024675f3ad1d8e5d29357bdd457346",
-    "translation_date": "2026-01-16T11:37:58+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/safety-evaluation.png",
-    "language_code": "bn"
-  },
-  "evaluation-result1.fc40693fa4bba109.webp": {
-    "original_hash": "404766f436a149cd3f8ff235d2526e3e",
-    "translation_date": "2026-01-16T11:38:14+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result1.png",
-    "language_code": "bn"
-  },
-  "select-project-created.5221e0e403e2c9d6.webp": {
-    "original_hash": "8456f8c20528fb997fbd808e0341c357",
-    "translation_date": "2026-01-16T11:38:32+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-project-created.png",
-    "language_code": "bn"
-  },
-  "evaluation-result.2115fbd368cf0dd2.webp": {
-    "original_hash": "2c520d85daf2085b8566db3398a1feba",
-    "translation_date": "2026-01-16T11:38:50+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result.png",
-    "language_code": "bn"
-  },
-  "select-openai-model.959496d7e311546d.webp": {
-    "original_hash": "c4421ebcace9e123e618555893211a45",
-    "translation_date": "2026-01-16T11:39:21+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-openai-model.png",
+  "arch.5a58a0adfa959a2d.webp": {
+    "original_hash": "5a364a5612e5d121731ea39d9ef3403d",
+    "translation_date": "2026-01-16T12:03:02+00:00",
+    "source_file": "imgs/02/phi35vscode/arch.png",
     "language_code": "bn"
   },
   "architecture.10bec55250f5d6a4.webp": {
@@ -641,64 +989,58 @@
     "source_file": "imgs/02/Evaluation-AIFoundry/architecture.png",
     "language_code": "bn"
   },
-  "select-input-output.c187fc58f25fbfc3.webp": {
-    "original_hash": "4a28dbbbceeb97b69d689eb76b7d8314",
-    "translation_date": "2026-01-16T11:40:00+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-input-output.png",
-    "language_code": "bn"
-  },
-  "evaluation-result-gpu-2.1b74e336118f4fd0.webp": {
-    "original_hash": "6014c53fa59216df8744a379b5477191",
-    "translation_date": "2026-01-16T11:40:14+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result-gpu-2.png",
-    "language_code": "bn"
-  },
-  "fill-hub.baaa108495c71e34.webp": {
-    "original_hash": "ddadd480df1f1cf77817eab6d39ed2c6",
-    "translation_date": "2026-01-16T11:40:32+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/fill-hub.png",
-    "language_code": "bn"
-  },
-  "type-subscriptions.fe914da67f28ad3f.webp": {
-    "original_hash": "721df68bef27b86040341a982b1ca6b9",
-    "translation_date": "2026-01-16T11:40:44+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/type-subscriptions.png",
-    "language_code": "bn"
-  },
-  "evaluation-setting3-1.d1ae69e3bf80914e.webp": {
-    "original_hash": "0c37d427b88783e1bee64a4aebe1ad4e",
-    "translation_date": "2026-01-16T11:40:52+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting3-1.png",
-    "language_code": "bn"
-  },
   "chat-with-promptflow.1cf8cea112359ada.webp": {
     "original_hash": "14773647fa4f56a3152502921ab40ace",
     "translation_date": "2026-01-16T11:41:09+00:00",
     "source_file": "imgs/02/Evaluation-AIFoundry/chat-with-promptflow.png",
     "language_code": "bn"
   },
-  "detailed-metrics-result.afa2f5c39a4f5f17.webp": {
-    "original_hash": "b5ca670a731e399b8564882913d5440d",
-    "translation_date": "2026-01-16T11:41:25+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/detailed-metrics-result.png",
+  "cli.862ec6b55c2b5d91.webp": {
+    "original_hash": "9a973cf240bc75dfa8d3059f0b5e26b5",
+    "translation_date": "2026-01-16T11:23:11+00:00",
+    "source_file": "imgs/01/02/07/cli.png",
     "language_code": "bn"
   },
-  "select-microsoft-network.b1814e3500e8dacc.webp": {
-    "original_hash": "df24b5d2131baaf848c11dfc8b03451e",
-    "translation_date": "2026-01-16T11:41:46+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-microsoft-network.png",
+  "codegen.53be1150ee54d969.webp": {
+    "original_hash": "f58e32aebbdd267a18dce34cd770c43c",
+    "translation_date": "2026-01-16T12:02:14+00:00",
+    "source_file": "imgs/02/phi35vscode/codegen.png",
     "language_code": "bn"
   },
-  "promptflow-evaluation.cb9758cc19b4760f.webp": {
-    "original_hash": "27c8c5ad81fa7ce6167c2be542baaa04",
-    "translation_date": "2026-01-16T11:42:04+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/promptflow-evaluation.png",
+  "command-deploy.621420434acf494e.webp": {
+    "original_hash": "3906c9e31721567430553598c1745623",
+    "translation_date": "2026-01-16T12:25:14+00:00",
+    "source_file": "imgs/03/RemoteServer/command-deploy.png",
     "language_code": "bn"
   },
-  "select-raw-file-mode.06c1eca581ce4f53.webp": {
-    "original_hash": "5874d12e3524134b8138bf0bdf7c2542",
-    "translation_date": "2026-01-16T11:42:17+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-raw-file-mode.png",
+  "command-deploy.9adb4e310dd0b0ae.webp": {
+    "original_hash": "3906c9e31721567430553598c1745623",
+    "translation_date": "2026-01-16T11:27:55+00:00",
+    "source_file": "imgs/01/03/RemoteServer/command-deploy.png",
+    "language_code": "bn"
+  },
+  "command-provision-inference.467afc8d351642fc.webp": {
+    "original_hash": "18b92e88aec22e019f1193c8e2cd0ccd",
+    "translation_date": "2026-01-16T12:27:32+00:00",
+    "source_file": "imgs/03/RemoteServer/command-provision-inference.png",
+    "language_code": "bn"
+  },
+  "command-provision-inference.8ff5acb22efe9c86.webp": {
+    "original_hash": "18b92e88aec22e019f1193c8e2cd0ccd",
+    "translation_date": "2026-01-16T11:30:11+00:00",
+    "source_file": "imgs/01/03/RemoteServer/command-provision-inference.png",
+    "language_code": "bn"
+  },
+  "completed.4dc8d2357144cdef.webp": {
+    "original_hash": "d1efc32dc226a67b7d7b0f861a9b3587",
+    "translation_date": "2026-01-16T12:18:34+00:00",
+    "source_file": "imgs/03/AIFoundry/completed.png",
+    "language_code": "bn"
+  },
+  "completed.c7ce8b6065fdf93d.webp": {
+    "original_hash": "d1efc32dc226a67b7d7b0f861a9b3587",
+    "translation_date": "2026-01-16T11:08:05+00:00",
+    "source_file": "imgs/01/05/AIFoundry/completed.png",
     "language_code": "bn"
   },
   "copy-endpoint-key.0650c3786bd646ab.webp": {
@@ -707,46 +1049,28 @@
     "source_file": "imgs/02/Evaluation-AIFoundry/copy-endpoint-key.png",
     "language_code": "bn"
   },
-  "evaluation-result-gpu.85f48b42dfb74254.webp": {
-    "original_hash": "d00c36221c501afea4713f8ce92effb0",
-    "translation_date": "2026-01-16T11:42:52+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result-gpu.png",
+  "cover.1017ebc9a7c46d09.webp": {
+    "original_hash": "2b47b8024d2e5b11abad3b6141b5c896",
+    "translation_date": "2026-01-16T11:56:01+00:00",
+    "source_file": "imgs/02/vscodeext/cover.png",
     "language_code": "bn"
   },
-  "paste-promptflow-code.cd6d95b101c0ec28.webp": {
-    "original_hash": "72f0d50a7b64684f042a5baa3cb3120c",
-    "translation_date": "2026-01-16T11:43:05+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png",
+  "cover.eb18d1b9605d754b.webp": {
+    "original_hash": "7458a4d38df5b6e1254deec43097a810",
+    "translation_date": "2026-01-16T10:59:15+00:00",
+    "source_file": "imgs/cover.png",
     "language_code": "bn"
   },
-  "select-endpoints.ee7387ecd68bd18d.webp": {
-    "original_hash": "ff5c54767cbe87e5d3998184bced1944",
-    "translation_date": "2026-01-16T11:43:16+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-endpoints.png",
+  "create-hub.21b34ae89ec61978.webp": {
+    "original_hash": "bf5ecbd9f6b6c1cff6552ca864fb1abe",
+    "translation_date": "2026-01-16T11:14:16+00:00",
+    "source_file": "imgs/01/05/AIFoundry/create-hub.png",
     "language_code": "bn"
   },
-  "responsibleai1.3133643062d80c8f.webp": {
-    "original_hash": "6d34140d6eab127e10ae188cd2b98479",
-    "translation_date": "2026-01-16T11:43:23+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/responsibleai1.png",
-    "language_code": "bn"
-  },
-  "evaluation-setting2.07036831ba58d64e.webp": {
-    "original_hash": "8a8d943f1ac0a376bc668797259ee946",
-    "translation_date": "2026-01-16T11:43:35+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting2.png",
-    "language_code": "bn"
-  },
-  "select-new-project.b47d2015615a6f6c.webp": {
-    "original_hash": "110a9da540c217900d56744fb185782f",
-    "translation_date": "2026-01-16T11:43:58+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-new-project.png",
-    "language_code": "bn"
-  },
-  "select-connection.1f2b59222bcaafef.webp": {
-    "original_hash": "97916d8d4f26bcaa70b072a222688aef",
-    "translation_date": "2026-01-16T11:44:07+00:00",
-    "source_file": "imgs/02/Evaluation-AIFoundry/select-connection.png",
+  "create-hub.49e53d235e80779e.webp": {
+    "original_hash": "bf5ecbd9f6b6c1cff6552ca864fb1abe",
+    "translation_date": "2026-01-16T12:24:38+00:00",
+    "source_file": "imgs/03/AIFoundry/create-hub.png",
     "language_code": "bn"
   },
   "create-hub.5be78fb1e21ffbf1.webp": {
@@ -761,142 +1085,178 @@
     "source_file": "imgs/02/Evaluation-AIFoundry/create-project.png",
     "language_code": "bn"
   },
+  "create-project.609a8407a142be9b.webp": {
+    "original_hash": "d186654cee5076db185180b129b627a3",
+    "translation_date": "2026-01-16T11:14:31+00:00",
+    "source_file": "imgs/01/05/AIFoundry/create-project.png",
+    "language_code": "bn"
+  },
+  "create-project.ca3b71298b90e420.webp": {
+    "original_hash": "d186654cee5076db185180b129b627a3",
+    "translation_date": "2026-01-16T12:24:52+00:00",
+    "source_file": "imgs/03/AIFoundry/create-project.png",
+    "language_code": "bn"
+  },
+  "demo.06d5a4246f057d1b.webp": {
+    "original_hash": "3045e84037b75853e8d5cbc95b674c71",
+    "translation_date": "2026-01-16T11:55:39+00:00",
+    "source_file": "imgs/02/android-tf/demo.png",
+    "language_code": "bn"
+  },
+  "demo.609a55a7a2b9ed27.webp": {
+    "original_hash": "9f74b923e0a9b64827a12ced9ce6cd4b",
+    "translation_date": "2026-01-16T12:30:28+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/demo.png",
+    "language_code": "bn"
+  },
+  "demo.d4038540c7564285.webp": {
+    "original_hash": "b604f3358831383f795eb727a64e2e63",
+    "translation_date": "2026-01-16T12:30:00+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/imgs/demo.png",
+    "language_code": "bn"
+  },
+  "deploy-openai-model.95d812346b25834b.webp": {
+    "original_hash": "58d95c20b10b7de298a99ae9b7238f51",
+    "translation_date": "2026-01-16T11:34:24+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/deploy-openai-model.png",
+    "language_code": "bn"
+  },
+  "detailed-metrics-result.afa2f5c39a4f5f17.webp": {
+    "original_hash": "b5ca670a731e399b8564882913d5440d",
+    "translation_date": "2026-01-16T11:41:25+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/detailed-metrics-result.png",
+    "language_code": "bn"
+  },
+  "diagram.ca70d2866762f115.webp": {
+    "original_hash": "dd363e4eaedeb975904b29fa1ef4118c",
+    "translation_date": "2026-01-16T12:01:41+00:00",
+    "source_file": "imgs/02/phi35vscode/diagram.png",
+    "language_code": "bn"
+  },
+  "enter-name.02ddf8fb840ad430.webp": {
+    "original_hash": "9b2a4b9cd2e8a63b8a3507a7e19bba0e",
+    "translation_date": "2026-01-16T11:36:12+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/enter-name.png",
+    "language_code": "bn"
+  },
+  "evaluate-based-on-performance.3e801c647c7554e8.webp": {
+    "original_hash": "aaece96014e15fb9d32a6b3615da5d6b",
+    "translation_date": "2026-01-16T11:37:00+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluate-based-on-performance.png",
+    "language_code": "bn"
+  },
+  "evaluate-based-on-safety.c5df819f5b0bfc07.webp": {
+    "original_hash": "ded38beba3d163590d0c23a64478b2d5",
+    "translation_date": "2026-01-16T11:35:35+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluate-based-on-safety.png",
+    "language_code": "bn"
+  },
+  "evaluation-result-gpu-2.1b74e336118f4fd0.webp": {
+    "original_hash": "6014c53fa59216df8744a379b5477191",
+    "translation_date": "2026-01-16T11:40:14+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result-gpu-2.png",
+    "language_code": "bn"
+  },
+  "evaluation-result-gpu.85f48b42dfb74254.webp": {
+    "original_hash": "d00c36221c501afea4713f8ce92effb0",
+    "translation_date": "2026-01-16T11:42:52+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result-gpu.png",
+    "language_code": "bn"
+  },
+  "evaluation-result.2115fbd368cf0dd2.webp": {
+    "original_hash": "2c520d85daf2085b8566db3398a1feba",
+    "translation_date": "2026-01-16T11:38:50+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result.png",
+    "language_code": "bn"
+  },
+  "evaluation-result1.fc40693fa4bba109.webp": {
+    "original_hash": "404766f436a149cd3f8ff235d2526e3e",
+    "translation_date": "2026-01-16T11:38:14+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result1.png",
+    "language_code": "bn"
+  },
   "evaluation-result2.1d95928753c1e2e0.webp": {
     "original_hash": "ef5064fc20fec3c5b5421455e1ab941e",
     "translation_date": "2026-01-16T11:44:36+00:00",
     "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-result2.png",
     "language_code": "bn"
   },
-  "02-03-select-endpoints.c3136326510baff1.webp": {
-    "original_hash": "ff5c54767cbe87e5d3998184bced1944",
-    "translation_date": "2026-01-16T11:44:50+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/02-03-select-endpoints.png",
+  "evaluation-setting1.4aa08259ff7a536e.webp": {
+    "original_hash": "1686d368283ff63b8cc92618087f9143",
+    "translation_date": "2026-01-16T11:35:50+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting1.png",
     "language_code": "bn"
   },
-  "01-13-create-new-file.c17c150fff384a39.webp": {
-    "original_hash": "d66a88695da15a9c3e2f136a3a562295",
-    "translation_date": "2026-01-16T11:44:56+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-13-create-new-file.png",
+  "evaluation-setting2.07036831ba58d64e.webp": {
+    "original_hash": "8a8d943f1ac0a376bc668797259ee946",
+    "translation_date": "2026-01-16T11:43:35+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting2.png",
     "language_code": "bn"
   },
-  "01-17-find-uai.3529464f53499827.webp": {
-    "original_hash": "d3b7d6f2b424f58db7fa54cf1df6b23f",
-    "translation_date": "2026-01-16T11:45:06+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-17-find-uai.png",
+  "evaluation-setting3-1.d1ae69e3bf80914e.webp": {
+    "original_hash": "0c37d427b88783e1bee64a4aebe1ad4e",
+    "translation_date": "2026-01-16T11:40:52+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting3-1.png",
     "language_code": "bn"
   },
-  "01-08-type-storage-accounts.1186c8e42933e49b.webp": {
-    "original_hash": "e166f6af1b91eb765e48b5273e540185",
-    "translation_date": "2026-01-16T11:45:15+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-08-type-storage-accounts.png",
+  "evaluation-setting3-2.d53bd075c60a45a2.webp": {
+    "original_hash": "b76576a5e79e5024d136f6d7f898dce2",
+    "translation_date": "2026-01-16T11:37:24+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/evaluation-setting3-2.png",
     "language_code": "bn"
   },
-  "01-01-type-azml.a5116f8454d98c60.webp": {
-    "original_hash": "b1e1267f4a4348779727fab42692707c",
-    "translation_date": "2026-01-16T11:45:20+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-01-type-azml.png",
+  "fill-hub.baaa108495c71e34.webp": {
+    "original_hash": "ddadd480df1f1cf77817eab6d39ed2c6",
+    "translation_date": "2026-01-16T11:40:32+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/fill-hub.png",
     "language_code": "bn"
   },
-  "01-14-find-subscriptionid.4f4ca33555f1e637.webp": {
-    "original_hash": "10c3e0beb41344a15fd4e1503a93b43d",
-    "translation_date": "2026-01-16T11:45:25+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-14-find-subscriptionid.png",
+  "finetune1.40eb19890cfcbee5.webp": {
+    "original_hash": "51ab8343b72ef4d175d9af009a59d09a",
+    "translation_date": "2026-01-16T11:09:03+00:00",
+    "source_file": "imgs/01/05/AIFoundry/finetune1.png",
     "language_code": "bn"
   },
-  "02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp": {
-    "original_hash": "5fae9ce07914f86238b4219c20f58997",
-    "translation_date": "2026-01-16T11:45:34+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/02-05-copy-apikey-endpoint.png",
+  "finetune1.c2b39463f0d34148.webp": {
+    "original_hash": "51ab8343b72ef4d175d9af009a59d09a",
+    "translation_date": "2026-01-16T12:19:26+00:00",
+    "source_file": "imgs/03/AIFoundry/finetune1.png",
     "language_code": "bn"
   },
-  "01-12-open-project-folder.1fff9c7f41dd1639.webp": {
-    "original_hash": "9b31d274f2fca2ae606a235696e06bb5",
-    "translation_date": "2026-01-16T11:45:45+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-12-open-project-folder.png",
+  "finetune2.43cb099b1a94442d.webp": {
+    "original_hash": "83ba77e528090f709cef88cac3ec1b98",
+    "translation_date": "2026-01-16T12:24:00+00:00",
+    "source_file": "imgs/03/AIFoundry/finetune2.png",
     "language_code": "bn"
   },
-  "01-15-find-AZML-name.1975f0422bca19a7.webp": {
-    "original_hash": "7a4652c985e65824920014be23bebfe6",
-    "translation_date": "2026-01-16T11:45:52+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-15-find-AZML-name.png",
+  "finetune2.e3595cbe065f6137.webp": {
+    "original_hash": "83ba77e528090f709cef88cac3ec1b98",
+    "translation_date": "2026-01-16T11:13:39+00:00",
+    "source_file": "imgs/01/05/AIFoundry/finetune2.png",
     "language_code": "bn"
   },
-  "01-10-select-managed-identity.5ce5ba181f72a4df.webp": {
-    "original_hash": "ca271720d1525f1d365155508481419e",
-    "translation_date": "2026-01-16T11:46:03+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-10-select-managed-identity.png",
+  "finetune3.d9efecc754350f06.webp": {
+    "original_hash": "5082bdcf9fbe804aec9b23880a8de81c",
+    "translation_date": "2026-01-16T11:13:24+00:00",
+    "source_file": "imgs/01/05/AIFoundry/finetune3.png",
     "language_code": "bn"
   },
-  "01-11-type-container-registries.ff3b8bdc49dc596c.webp": {
-    "original_hash": "893cfe9f2c44c3756124ca3bc708720f",
-    "translation_date": "2026-01-16T11:46:14+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-11-type-container-registries.png",
+  "finetune3.fd96121b67dcdd92.webp": {
+    "original_hash": "5082bdcf9fbe804aec9b23880a8de81c",
+    "translation_date": "2026-01-16T12:23:49+00:00",
+    "source_file": "imgs/03/AIFoundry/finetune3.png",
     "language_code": "bn"
   },
-  "02-06-promptflow-example.89384abaf3ad71f6.webp": {
-    "original_hash": "5446cef1a6112f595627b7daebe1fedb",
-    "translation_date": "2026-01-16T11:46:21+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/02-06-promptflow-example.png",
+  "finetune4.0ae22e31c666d7a2.webp": {
+    "original_hash": "1ce50d3602f1d1d3d63ff39ab56354c2",
+    "translation_date": "2026-01-16T11:11:21+00:00",
+    "source_file": "imgs/01/05/AIFoundry/finetune4.png",
     "language_code": "bn"
   },
-  "01-06-select-create.936d8d66d7144f9a.webp": {
-    "original_hash": "241c83760584f72bdbdccb53e77d9c98",
-    "translation_date": "2026-01-16T11:46:29+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-06-select-create.png",
-    "language_code": "bn"
-  },
-  "02-04-select-endpoint-created.0363e7dca51dabb4.webp": {
-    "original_hash": "dc5056222ee04681a06c8500c08bccdc",
-    "translation_date": "2026-01-16T11:46:37+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/02-04-select-endpoint-created.png",
-    "language_code": "bn"
-  },
-  "01-16-find-AZML-resourcegroup.855a349d0af134a3.webp": {
-    "original_hash": "785154614cdb1b55f2458c264d0b0951",
-    "translation_date": "2026-01-16T11:46:46+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-16-find-AZML-resourcegroup.png",
-    "language_code": "bn"
-  },
-  "02-02-see-finetuning-job.59393bc3b143871e.webp": {
-    "original_hash": "962582c365d53ee10a80f83a4c072e46",
-    "translation_date": "2026-01-16T11:46:57+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/02-02-see-finetuning-job.png",
-    "language_code": "bn"
-  },
-  "01-04-request-quota.3d3670c3221ab834.webp": {
-    "original_hash": "b21a25528ab7d41658550bbbce9a8078",
-    "translation_date": "2026-01-16T11:47:14+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-04-request-quota.png",
-    "language_code": "bn"
-  },
-  "01-05-type-managed-identities.9297b6039874eff8.webp": {
-    "original_hash": "0335feac44a43f02f7d7430fcc04328c",
-    "translation_date": "2026-01-16T11:47:30+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-05-type-managed-identities.png",
-    "language_code": "bn"
-  },
-  "01-03-fill-AZML.730a5177757bbebb.webp": {
-    "original_hash": "d832325458cb724f19bae9c7266f8094",
-    "translation_date": "2026-01-16T11:47:44+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-03-fill-AZML.png",
-    "language_code": "bn"
-  },
-  "00-01-architecture.02fc569e266d468c.webp": {
-    "original_hash": "b2ac03edc1b706a1490e68bb0073cc35",
-    "translation_date": "2026-01-16T11:48:42+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/00-01-architecture.png",
-    "language_code": "bn"
-  },
-  "01-02-select-new-workspace.83e17436f8898dc4.webp": {
-    "original_hash": "c2f73f04249004304a2ef2e0a23b45b1",
-    "translation_date": "2026-01-16T11:50:10+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-02-select-new-workspace.png",
-    "language_code": "bn"
-  },
-  "01-07-fill-contributor-role.29ca99b7c9f687e0.webp": {
-    "original_hash": "154c44a6ec81ecfb2fa47af05840f3e6",
-    "translation_date": "2026-01-16T11:50:23+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-07-fill-contributor-role.png",
+  "finetune4.e18b80ffccb5834a.webp": {
+    "original_hash": "1ce50d3602f1d1d3d63ff39ab56354c2",
+    "translation_date": "2026-01-16T12:21:50+00:00",
+    "source_file": "imgs/03/AIFoundry/finetune4.png",
     "language_code": "bn"
   },
   "finetunephi3.5.a55fc02962430af5.webp": {
@@ -905,58 +1265,238 @@
     "source_file": "imgs/02/FineTuning-PromptFlow/finetunephi3.5.png",
     "language_code": "bn"
   },
-  "01-09-add-role.d2db22fec1b187f0.webp": {
-    "original_hash": "08ad5880170f23125a016609c3dcf245",
-    "translation_date": "2026-01-16T11:50:44+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/01-09-add-role.png",
+  "finetuning.6559da198851fa52.webp": {
+    "original_hash": "b4f98abb50547528ed3ed2bdf9846e65",
+    "translation_date": "2026-01-16T12:17:04+00:00",
+    "source_file": "imgs/03/ft/finetuning.png",
     "language_code": "bn"
   },
-  "02-01-login-using-azure-cli.dfde31cb75e58a87.webp": {
-    "original_hash": "4d4dc8aed9ea408062bc3d69cdeabc5f",
-    "translation_date": "2026-01-16T11:50:56+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow/02-01-login-using-azure-cli.png",
+  "foggyday.4d452cf5dd4b3ec3.webp": {
+    "original_hash": "fa785f4fe2dab1db1fb67493865e89b9",
+    "translation_date": "2026-01-16T12:30:45+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/foggyday.png",
     "language_code": "bn"
   },
-  "MlFlowmlops.ed16f47809d74d9a.webp": {
-    "original_hash": "836f0e9659d68a2faab8147b6c7e24f1",
-    "translation_date": "2026-01-16T11:51:10+00:00",
-    "source_file": "imgs/02/mlflow/MlFlowmlops.png",
+  "foggyday.b64a5c61fc480aca.webp": {
+    "original_hash": "fa785f4fe2dab1db1fb67493865e89b9",
+    "translation_date": "2026-01-16T12:30:40+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images/imgs/foggyday.png",
     "language_code": "bn"
   },
-  "MLflow2.5a22eb718f6311d1.webp": {
-    "original_hash": "910797c4ac338239e2e30eea721e7f73",
-    "translation_date": "2026-01-16T11:51:18+00:00",
-    "source_file": "imgs/02/mlflow/MLflow2.png",
+  "foggyday.f63d173161945f33.webp": {
+    "original_hash": "fa785f4fe2dab1db1fb67493865e89b9",
+    "translation_date": "2026-01-16T12:30:43+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi303/imgs/foggyday.png",
     "language_code": "bn"
   },
-  "MlFlow1.fd745e47dbd3fecf.webp": {
-    "original_hash": "6cbeffa70b690cb485747e8a07db13f5",
-    "translation_date": "2026-01-16T11:51:26+00:00",
-    "source_file": "imgs/02/mlflow/MlFlow1.png",
+  "foggydaysmall.95ddc8185f61dcf2.webp": {
+    "original_hash": "5b9504e2ec87c7e23cec77ca446a90d0",
+    "translation_date": "2026-01-16T12:30:46+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/foggydaysmall.png",
     "language_code": "bn"
   },
-  "02.b9b06996cf7255d5.webp": {
-    "original_hash": "88a4be0fd97ec397015fe4ca72b5c43b",
-    "translation_date": "2026-01-16T11:51:38+00:00",
-    "source_file": "imgs/02/pfonnx/02.png",
+  "foundry-local-arch.8823e321dd8258d7.webp": {
+    "original_hash": "833a6752b645d467a26a8b3c11aa8262",
+    "translation_date": "2026-01-16T11:23:36+00:00",
+    "source_file": "imgs/01/02/07/foundry-local-arch.png",
     "language_code": "bn"
   },
-  "pfsetup.b46e93096f5a254f.webp": {
-    "original_hash": "73235ecb9b8abcdc48693aae18d1dd83",
-    "translation_date": "2026-01-16T11:52:07+00:00",
-    "source_file": "imgs/02/pfonnx/pfsetup.png",
+  "gh.459640c7ceba01d5.webp": {
+    "original_hash": "ed30a4e76ab2a1e3ded34c36c1b63a00",
+    "translation_date": "2026-01-16T12:01:21+00:00",
+    "source_file": "imgs/02/phi35vscode/gh.png",
     "language_code": "bn"
   },
-  "pfvscode.eff93dfc66a42cbe.webp": {
-    "original_hash": "35436813256c78f0dbf9f3e7aaca2aed",
-    "translation_date": "2026-01-16T11:52:47+00:00",
-    "source_file": "imgs/02/pfonnx/pfvscode.png",
+  "graph-example.82fd1bcdd3fc545b.webp": {
+    "original_hash": "65496f873f30f23b12e9d9c2f5b5d823",
+    "translation_date": "2026-01-16T11:37:41+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/graph-example.png",
     "language_code": "bn"
   },
-  "03.b83ce473d5ff9b9b.webp": {
-    "original_hash": "cf2b567f4f59b5b75f7a81dfe190d834",
-    "translation_date": "2026-01-16T11:53:16+00:00",
-    "source_file": "imgs/02/pfonnx/03.png",
+  "head.64cad021ce70a333.webp": {
+    "original_hash": "d02901800380944ede8d1e47bdd10b23",
+    "translation_date": "2026-01-16T11:27:18+00:00",
+    "source_file": "imgs/01/03/iOS/head.png",
+    "language_code": "bn"
+  },
+  "help.04c134d2bf9a9541.webp": {
+    "original_hash": "f9e22b6b9a5cf53b6bb810ffbd6ca2c9",
+    "translation_date": "2026-01-16T12:00:56+00:00",
+    "source_file": "imgs/02/phi35vscode/help.png",
+    "language_code": "bn"
+  },
+  "hf.6b8504fd88ee48dd.webp": {
+    "original_hash": "4b97ef1a081d2dbb12ac449da7bbc30c",
+    "translation_date": "2026-01-16T11:26:45+00:00",
+    "source_file": "imgs/01/03/iOS/hf.png",
+    "language_code": "bn"
+  },
+  "intro.46086a3f16ec48e2.webp": {
+    "original_hash": "89dc9d019f1dd3da62a30546e0242a62",
+    "translation_date": "2026-01-16T12:16:46+00:00",
+    "source_file": "imgs/03/ft/intro.png",
+    "language_code": "bn"
+  },
+  "lib.a4209b9f21ddf344.webp": {
+    "original_hash": "37633757e3e952430f485da6c2b04350",
+    "translation_date": "2026-01-16T11:27:34+00:00",
+    "source_file": "imgs/01/03/iOS/lib.png",
+    "language_code": "bn"
+  },
+  "llamaedge.e9d6ff96dff11cf7.webp": {
+    "original_hash": "0c1b93720321538e98999b67ec85ae69",
+    "translation_date": "2026-01-16T11:32:18+00:00",
+    "source_file": "imgs/01/03/Jetson/llamaedge.jpg",
+    "language_code": "bn"
+  },
+  "llamaedgerun.bed921516c9a821c.webp": {
+    "original_hash": "3ff513133868a71717f2b326d740d3e5",
+    "translation_date": "2026-01-16T11:32:01+00:00",
+    "source_file": "imgs/01/03/Jetson/llamaedgerun.png",
+    "language_code": "bn"
+  },
+  "llm_inference.3730480a33f8dd24.webp": {
+    "original_hash": "7d85ed7177ede800fc12b8b2b63e0c39",
+    "translation_date": "2026-01-16T12:30:06+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/llm_inference.png",
+    "language_code": "bn"
+  },
+  "log-finetuning-res.16566a28ef6eebad.webp": {
+    "original_hash": "1555aa7bab4113195c9857a0eb615da0",
+    "translation_date": "2026-01-16T11:29:28+00:00",
+    "source_file": "imgs/01/03/RemoteServer/log-finetuning-res.png",
+    "language_code": "bn"
+  },
+  "log-finetuning-res.7b92254e7e822c7f.webp": {
+    "original_hash": "1555aa7bab4113195c9857a0eb615da0",
+    "translation_date": "2026-01-16T12:26:48+00:00",
+    "source_file": "imgs/03/RemoteServer/log-finetuning-res.png",
+    "language_code": "bn"
+  },
+  "model.3b879b14e0be877d.webp": {
+    "original_hash": "8be1d6eae1bee0be1868ce38c9eb9b6d",
+    "translation_date": "2026-01-16T11:27:24+00:00",
+    "source_file": "imgs/01/03/iOS/model.png",
+    "language_code": "bn"
+  },
+  "models.e6c7ff50a51806fd.webp": {
+    "original_hash": "760714d1484826b8ae62a3e755e57d0c",
+    "translation_date": "2026-01-16T12:17:46+00:00",
+    "source_file": "imgs/03/ft/models.png",
+    "language_code": "bn"
+  },
+  "notification-deploy.446e480a44b1be58.webp": {
+    "original_hash": "8c38a7d49376dcd2bc4d180ac0c70a35",
+    "translation_date": "2026-01-16T11:28:38+00:00",
+    "source_file": "imgs/01/03/RemoteServer/notification-deploy.png",
+    "language_code": "bn"
+  },
+  "notification-deploy.7f2cf8f34190622a.webp": {
+    "original_hash": "8c38a7d49376dcd2bc4d180ac0c70a35",
+    "translation_date": "2026-01-16T12:25:57+00:00",
+    "source_file": "imgs/03/RemoteServer/notification-deploy.png",
+    "language_code": "bn"
+  },
+  "olive-flow.5daf97340275f8b6.webp": {
+    "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
+    "translation_date": "2026-01-16T12:30:34+00:00",
+    "source_file": "md/03.FineTuning/olive-lab/images/olive-flow.png",
+    "language_code": "bn"
+  },
+  "olive-flow.a47985655a756dcb.webp": {
+    "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
+    "translation_date": "2026-01-16T12:30:22+00:00",
+    "source_file": "code/03.Finetuning/olive-lab/images/olive-flow.png",
+    "language_code": "bn"
+  },
+  "olive-flow.c4f76d9142c579b2.webp": {
+    "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
+    "translation_date": "2026-01-16T12:29:51+00:00",
+    "source_file": "code/04.Finetuning/olive-lab/images/olive-flow.png",
+    "language_code": "bn"
+  },
+  "olivefinetune.76d09e9b68253681.webp": {
+    "original_hash": "837ce243d25e265040008ac6db5e711f",
+    "translation_date": "2026-01-16T12:18:19+00:00",
+    "source_file": "imgs/03/ft/olivefinetune.png",
+    "language_code": "bn"
+  },
+  "ollama_gen.bda5d4e715366cc9.webp": {
+    "original_hash": "99cffaf5d4e610d0f9b785c8d0cf9b92",
+    "translation_date": "2026-01-16T11:24:29+00:00",
+    "source_file": "imgs/01/02/04/ollama_gen.png",
+    "language_code": "bn"
+  },
+  "ollama_run.e9755172b162b381.webp": {
+    "original_hash": "2512a85fd1212dc512b59ba87c00ded3",
+    "translation_date": "2026-01-16T11:23:52+00:00",
+    "source_file": "imgs/01/02/04/ollama_run.png",
+    "language_code": "bn"
+  },
+  "paste-promptflow-code.cd6d95b101c0ec28.webp": {
+    "original_hash": "72f0d50a7b64684f042a5baa3cb3120c",
+    "translation_date": "2026-01-16T11:43:05+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png",
+    "language_code": "bn"
+  },
+  "performance-evaluation.48b3e7e01a098740.webp": {
+    "original_hash": "cbd9e52617c695720c6b96799da63d5f",
+    "translation_date": "2026-01-16T11:34:42+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/performance-evaluation.png",
+    "language_code": "bn"
+  },
+  "petsmusic.2f88f67afa95af07.webp": {
+    "original_hash": "b529dd168b7f508870fa427a243ced75",
+    "translation_date": "2026-01-16T12:30:41+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images/imgs/petsmusic.png",
+    "language_code": "bn"
+  },
+  "petsmusic.6cfa2d20428d7a29.webp": {
+    "original_hash": "b529dd168b7f508870fa427a243ced75",
+    "translation_date": "2026-01-16T12:30:44+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi303/imgs/petsmusic.png",
+    "language_code": "bn"
+  },
+  "petsmusic.80c52cc676cdf53a.webp": {
+    "original_hash": "b529dd168b7f508870fa427a243ced75",
+    "translation_date": "2026-01-16T12:30:46+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/petsmusic.png",
+    "language_code": "bn"
+  },
+  "pf_create.bde888dc83502eba.webp": {
+    "original_hash": "cb15ba3a1d9e99c5e6a0a356b3498b13",
+    "translation_date": "2026-01-16T12:00:17+00:00",
+    "source_file": "imgs/02/vscodeext/pf_create.png",
+    "language_code": "bn"
+  },
+  "pf_ext.8cf76b5846e9b856.webp": {
+    "original_hash": "de7ae29100a2a84babf0398152fe4e43",
+    "translation_date": "2026-01-16T11:56:31+00:00",
+    "source_file": "imgs/02/vscodeext/pf_ext.png",
+    "language_code": "bn"
+  },
+  "pf_flow.520824c0969f2a94.webp": {
+    "original_hash": "6048b6644229bfa4b3b91fab32b1e2f3",
+    "translation_date": "2026-01-16T11:57:56+00:00",
+    "source_file": "imgs/02/vscodeext/pf_flow.png",
+    "language_code": "bn"
+  },
+  "pf_python.098884718500736d.webp": {
+    "original_hash": "6db35719dc0ac5fc6ec593a5dc0980fb",
+    "translation_date": "2026-01-16T11:56:52+00:00",
+    "source_file": "imgs/02/vscodeext/pf_python.png",
+    "language_code": "bn"
+  },
+  "pf_run.4239e8a0b420a582.webp": {
+    "original_hash": "65223dffb139d2034765273d4f0559fe",
+    "translation_date": "2026-01-16T12:00:31+00:00",
+    "source_file": "imgs/02/vscodeext/pf_run.png",
+    "language_code": "bn"
+  },
+  "pfdag.264a77f7366458ff.webp": {
+    "original_hash": "d0a5859bffba410a33c051ba106580ad",
+    "translation_date": "2026-01-16T11:55:23+00:00",
+    "source_file": "imgs/02/pfonnx/pfdag.png",
     "language_code": "bn"
   },
   "pfflow.4e1135a089b1ce1b.webp": {
@@ -971,10 +1511,10 @@
     "source_file": "imgs/02/pfonnx/pfphi.png",
     "language_code": "bn"
   },
-  "01.42f52a2b2aedff02.webp": {
-    "original_hash": "39c2734d3b385a7747c26344649b3221",
-    "translation_date": "2026-01-16T11:54:12+00:00",
-    "source_file": "imgs/02/pfonnx/01.png",
+  "pfresult.c22c826f8062d7cb.webp": {
+    "original_hash": "b2a176216eae0ad94a54399c772650ab",
+    "translation_date": "2026-01-16T11:54:58+00:00",
+    "source_file": "imgs/02/pfonnx/pfresult.png",
     "language_code": "bn"
   },
   "pfsample.8d89e70584ffe7c4.webp": {
@@ -983,748 +1523,28 @@
     "source_file": "imgs/02/pfonnx/pfsample.png",
     "language_code": "bn"
   },
+  "pfsetup.b46e93096f5a254f.webp": {
+    "original_hash": "73235ecb9b8abcdc48693aae18d1dd83",
+    "translation_date": "2026-01-16T11:52:07+00:00",
+    "source_file": "imgs/02/pfonnx/pfsetup.png",
+    "language_code": "bn"
+  },
   "pfv.ba8a81f34b20f603.webp": {
     "original_hash": "147247632f5742e0b643c361d239bca4",
     "translation_date": "2026-01-16T11:54:48+00:00",
     "source_file": "imgs/02/pfonnx/pfv.png",
     "language_code": "bn"
   },
-  "pfresult.c22c826f8062d7cb.webp": {
-    "original_hash": "b2a176216eae0ad94a54399c772650ab",
-    "translation_date": "2026-01-16T11:54:58+00:00",
-    "source_file": "imgs/02/pfonnx/pfresult.png",
-    "language_code": "bn"
-  },
-  "pfdag.264a77f7366458ff.webp": {
-    "original_hash": "d0a5859bffba410a33c051ba106580ad",
-    "translation_date": "2026-01-16T11:55:23+00:00",
-    "source_file": "imgs/02/pfonnx/pfdag.png",
-    "language_code": "bn"
-  },
-  "demo.06d5a4246f057d1b.webp": {
-    "original_hash": "3045e84037b75853e8d5cbc95b674c71",
-    "translation_date": "2026-01-16T11:55:39+00:00",
-    "source_file": "imgs/02/android-tf/demo.png",
-    "language_code": "bn"
-  },
-  "cover.1017ebc9a7c46d09.webp": {
-    "original_hash": "2b47b8024d2e5b11abad3b6141b5c896",
-    "translation_date": "2026-01-16T11:56:01+00:00",
-    "source_file": "imgs/02/vscodeext/cover.png",
-    "language_code": "bn"
-  },
-  "pf_ext.8cf76b5846e9b856.webp": {
-    "original_hash": "de7ae29100a2a84babf0398152fe4e43",
-    "translation_date": "2026-01-16T11:56:31+00:00",
-    "source_file": "imgs/02/vscodeext/pf_ext.png",
-    "language_code": "bn"
-  },
-  "pf_python.098884718500736d.webp": {
-    "original_hash": "6db35719dc0ac5fc6ec593a5dc0980fb",
-    "translation_date": "2026-01-16T11:56:52+00:00",
-    "source_file": "imgs/02/vscodeext/pf_python.png",
-    "language_code": "bn"
-  },
-  "result_img.436817a2bb3a34cf.webp": {
-    "original_hash": "ae60a9fbefbbf51032782f7421c10063",
-    "translation_date": "2026-01-16T11:57:03+00:00",
-    "source_file": "imgs/02/vscodeext/result_img.png",
-    "language_code": "bn"
-  },
-  "vision_test.0b9c1b1d414131d0.webp": {
-    "original_hash": "5058e67839a10848bdc5964ae7754a09",
-    "translation_date": "2026-01-16T11:57:25+00:00",
-    "source_file": "imgs/02/vscodeext/vision_test.png",
-    "language_code": "bn"
-  },
-  "pf_flow.520824c0969f2a94.webp": {
-    "original_hash": "6048b6644229bfa4b3b91fab32b1e2f3",
-    "translation_date": "2026-01-16T11:57:56+00:00",
-    "source_file": "imgs/02/vscodeext/pf_flow.png",
-    "language_code": "bn"
-  },
-  "vison_catalog.f979823d5bde8aef.webp": {
-    "original_hash": "a0759cdfa55956c1744845a6b91fe8cf",
-    "translation_date": "2026-01-16T11:58:19+00:00",
-    "source_file": "imgs/02/vscodeext/vison_catalog.png",
-    "language_code": "bn"
-  },
-  "result_code.ae0d053b45202798.webp": {
-    "original_hash": "6c99f90dd44c4e7d22ca65b71caae3c3",
-    "translation_date": "2026-01-16T11:58:40+00:00",
-    "source_file": "imgs/02/vscodeext/result_code.png",
-    "language_code": "bn"
-  },
-  "vision_deploy.a8114ccd849a9572.webp": {
-    "original_hash": "5684182ba918e1c8565c8093b32b6cfb",
-    "translation_date": "2026-01-16T11:59:16+00:00",
-    "source_file": "imgs/02/vscodeext/vision_deploy.png",
-    "language_code": "bn"
-  },
-  "vscode_agent.746efdf2e81957c2.webp": {
-    "original_hash": "a8052af5efe3d8aa09821d481b39492b",
-    "translation_date": "2026-01-16T11:59:54+00:00",
-    "source_file": "imgs/02/vscodeext/vscode_agent.png",
-    "language_code": "bn"
-  },
-  "pf_create.bde888dc83502eba.webp": {
-    "original_hash": "cb15ba3a1d9e99c5e6a0a356b3498b13",
-    "translation_date": "2026-01-16T12:00:17+00:00",
-    "source_file": "imgs/02/vscodeext/pf_create.png",
-    "language_code": "bn"
-  },
-  "pf_run.4239e8a0b420a582.webp": {
-    "original_hash": "65223dffb139d2034765273d4f0559fe",
-    "translation_date": "2026-01-16T12:00:31+00:00",
-    "source_file": "imgs/02/vscodeext/pf_run.png",
-    "language_code": "bn"
-  },
-  "agent.3dbb06228f9a6189.webp": {
-    "original_hash": "c634724a7ca7bdecaea1495771454aef",
-    "translation_date": "2026-01-16T12:00:37+00:00",
-    "source_file": "imgs/02/phi35vscode/agent.png",
-    "language_code": "bn"
-  },
-  "help.04c134d2bf9a9541.webp": {
-    "original_hash": "f9e22b6b9a5cf53b6bb810ffbd6ca2c9",
-    "translation_date": "2026-01-16T12:00:56+00:00",
-    "source_file": "imgs/02/phi35vscode/help.png",
-    "language_code": "bn"
-  },
-  "gh.459640c7ceba01d5.webp": {
-    "original_hash": "ed30a4e76ab2a1e3ded34c36c1b63a00",
-    "translation_date": "2026-01-16T12:01:21+00:00",
-    "source_file": "imgs/02/phi35vscode/gh.png",
-    "language_code": "bn"
-  },
-  "diagram.ca70d2866762f115.webp": {
-    "original_hash": "dd363e4eaedeb975904b29fa1ef4118c",
-    "translation_date": "2026-01-16T12:01:41+00:00",
-    "source_file": "imgs/02/phi35vscode/diagram.png",
-    "language_code": "bn"
-  },
-  "agenthelp.60c68767c941a3fe.webp": {
-    "original_hash": "dc00368c09ae1ceb147107f5e9db7f6b",
-    "translation_date": "2026-01-16T12:01:51+00:00",
-    "source_file": "imgs/02/phi35vscode/agenthelp.png",
-    "language_code": "bn"
-  },
-  "codegen.53be1150ee54d969.webp": {
-    "original_hash": "f58e32aebbdd267a18dce34cd770c43c",
-    "translation_date": "2026-01-16T12:02:14+00:00",
-    "source_file": "imgs/02/phi35vscode/codegen.png",
-    "language_code": "bn"
-  },
-  "agentgen.a16e7735790f764b.webp": {
-    "original_hash": "658b82f614d7e1b8230819feddefe711",
-    "translation_date": "2026-01-16T12:02:54+00:00",
-    "source_file": "imgs/02/phi35vscode/agentgen.png",
-    "language_code": "bn"
-  },
-  "arch.5a58a0adfa959a2d.webp": {
-    "original_hash": "5a364a5612e5d121731ea39d9ef3403d",
-    "translation_date": "2026-01-16T12:03:02+00:00",
-    "source_file": "imgs/02/phi35vscode/arch.png",
-    "language_code": "bn"
-  },
-  "agentimage.f5cb52b45ab7d0d1.webp": {
-    "original_hash": "8de8d358c1d2cd0b0b6a44dbea4fc3e8",
-    "translation_date": "2026-01-16T12:03:13+00:00",
-    "source_file": "imgs/02/phi35vscode/agentimage.png",
-    "language_code": "bn"
-  },
-  "08-17-select-input-output.64dbb39bbe59d03b.webp": {
-    "original_hash": "4a28dbbbceeb97b69d689eb76b7d8314",
-    "translation_date": "2026-01-16T12:03:25+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-17-select-input-output.png",
-    "language_code": "bn"
-  },
-  "07-04-register.fd82a3b293060bc7.webp": {
-    "original_hash": "e1c804f854dd98c4e7f0cd7f3a8aa9f2",
-    "translation_date": "2026-01-16T12:03:36+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-04-register.png",
-    "language_code": "bn"
-  },
-  "08-03-select-create-hub.7527cff31089d1bf.webp": {
-    "original_hash": "2ad590bda1dd8b4b4d6d0cf93bacb3ba",
-    "translation_date": "2026-01-16T12:03:47+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-03-select-create-hub.png",
-    "language_code": "bn"
-  },
-  "07-06-create-endpoint.1ba865c606551f09.webp": {
-    "original_hash": "bb2ed197971c6a2b3e7e15814a614b58",
-    "translation_date": "2026-01-16T12:04:00+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-06-create-endpoint.png",
-    "language_code": "bn"
-  },
-  "03-08-select-managed-identity.e80a2aad5247eb25.webp": {
-    "original_hash": "ca271720d1525f1d365155508481419e",
-    "translation_date": "2026-01-16T12:04:17+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-08-select-managed-identity.png",
-    "language_code": "bn"
-  },
-  "08-06-select-endpoints.aff38d453bcf9605.webp": {
-    "original_hash": "ff5c54767cbe87e5d3998184bced1944",
-    "translation_date": "2026-01-16T12:04:31+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-06-select-endpoints.png",
-    "language_code": "bn"
-  },
-  "06-06-select-fine-tune.2918a59be55dfeec.webp": {
-    "original_hash": "5be36d7a5e8744bc225b69a08180229f",
-    "translation_date": "2026-01-16T12:04:42+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-06-select-fine-tune.png",
-    "language_code": "bn"
-  },
-  "06-04-select-workspace.a92934ac04f4f181.webp": {
-    "original_hash": "e4bd3dc721435ae89aa2cb7cb1b87c31",
-    "translation_date": "2026-01-16T12:04:51+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-04-select-workspace.png",
-    "language_code": "bn"
-  },
-  "01-01-type-azml.acae6c5455e67b4b.webp": {
-    "original_hash": "b1e1267f4a4348779727fab42692707c",
-    "translation_date": "2026-01-16T12:04:58+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/01-01-type-azml.png",
-    "language_code": "bn"
-  },
-  "02-01-select-studio-url.140f0679f1e27060.webp": {
-    "original_hash": "19c2ec9ed490ac389c66c265685b7389",
-    "translation_date": "2026-01-16T12:05:05+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/02-01-select-studio-url.png",
-    "language_code": "bn"
-  },
-  "06-08-output.2bd32e59930672b1.webp": {
-    "original_hash": "18e735ca801617398cbc8cdb16cd4a20",
-    "translation_date": "2026-01-16T12:05:20+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-08-output.png",
-    "language_code": "bn"
-  },
-  "03-04-fill-contributor-role.73990bc6a32e140d.webp": {
-    "original_hash": "154c44a6ec81ecfb2fa47af05840f3e6",
-    "translation_date": "2026-01-16T12:05:46+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-04-fill-contributor-role.png",
-    "language_code": "bn"
-  },
-  "07-08-deployment-setting.43ddc4209e673784.webp": {
-    "original_hash": "1500b9e4a74a3860b4f0385de2c4fee5",
-    "translation_date": "2026-01-16T12:06:08+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-08-deployment-setting.png",
-    "language_code": "bn"
-  },
-  "08-06-select-project.2318771205ca6c72.webp": {
-    "original_hash": "e7ec226543744ca60ae8886deae07a42",
-    "translation_date": "2026-01-16T12:06:41+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-06-select-project.png",
-    "language_code": "bn"
-  },
-  "08-01-create-hub.8f7dd615bb8d9834.webp": {
-    "original_hash": "87711b3d323bbeebceb3c88d074419f9",
-    "translation_date": "2026-01-16T12:06:55+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-01-create-hub.png",
-    "language_code": "bn"
-  },
-  "03-06-add-role.353ccbfdcf0789c2.webp": {
-    "original_hash": "08ad5880170f23125a016609c3dcf245",
-    "translation_date": "2026-01-16T12:07:05+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-06-add-role.png",
-    "language_code": "bn"
-  },
-  "06-02-create-cluster.f221b65ae1221d4e.webp": {
-    "original_hash": "59281264c03a78fa8f10e3f8927949e1",
-    "translation_date": "2026-01-16T12:07:17+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-02-create-cluster.png",
-    "language_code": "bn"
-  },
-  "07-09-check-deployment.325d18cae8475ef4.webp": {
-    "original_hash": "28b0222397fac3815369450bd89c79eb",
-    "translation_date": "2026-01-16T12:07:30+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-09-check-deployment.png",
-    "language_code": "bn"
-  },
-  "09-05-chat-with-promptflow.c8ca404c07ab126f.webp": {
-    "original_hash": "14773647fa4f56a3152502921ab40ace",
-    "translation_date": "2026-01-16T12:07:40+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-05-chat-with-promptflow.png",
-    "language_code": "bn"
-  },
-  "08-10-select-custom-keys.856f6b2966460551.webp": {
-    "original_hash": "04ab24c2280cc6958a23d160d7eff5c3",
-    "translation_date": "2026-01-16T12:07:56+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-10-select-custom-keys.png",
-    "language_code": "bn"
-  },
-  "08-14-enter-name.ff9520fefd89f40d.webp": {
-    "original_hash": "9b2a4b9cd2e8a63b8a3507a7e19bba0e",
-    "translation_date": "2026-01-16T12:08:12+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-14-enter-name.png",
-    "language_code": "bn"
-  },
-  "08-13-select-flow-type.2ec689b22da32591.webp": {
-    "original_hash": "c44ce4827800f32ed3c77e30b3396fae",
-    "translation_date": "2026-01-16T12:08:21+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-13-select-flow-type.png",
-    "language_code": "bn"
-  },
-  "09-03-select-connection.99bdddb4b1844023.webp": {
-    "original_hash": "97916d8d4f26bcaa70b072a222688aef",
-    "translation_date": "2026-01-16T12:08:31+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-03-select-connection.png",
-    "language_code": "bn"
-  },
-  "07-10-set-traffic.085b847e5751ff3d.webp": {
-    "original_hash": "5d62367bbe9c207ab4b0233f3c583e30",
-    "translation_date": "2026-01-16T12:08:37+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-10-set-traffic.png",
-    "language_code": "bn"
-  },
-  "04-01-open-project-folder.f734374bcfd5f9e6.webp": {
-    "original_hash": "9b31d274f2fca2ae606a235696e06bb5",
-    "translation_date": "2026-01-16T12:08:42+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/04-01-open-project-folder.png",
-    "language_code": "bn"
-  },
-  "03-01-type-managed-identities.24de763e0f1f37e5.webp": {
-    "original_hash": "0335feac44a43f02f7d7430fcc04328c",
-    "translation_date": "2026-01-16T12:08:48+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-01-type-managed-identities.png",
-    "language_code": "bn"
-  },
-  "02-02-request-quota.c0428239a63ffdd5.webp": {
-    "original_hash": "b21a25528ab7d41658550bbbce9a8078",
-    "translation_date": "2026-01-16T12:08:57+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/02-02-request-quota.png",
-    "language_code": "bn"
-  },
-  "07-07-select-registered-model.29c947c37fa30cb4.webp": {
-    "original_hash": "d33a58328d465bcbc1607bcb187e4fd7",
-    "translation_date": "2026-01-16T12:09:17+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-07-select-registered-model.png",
-    "language_code": "bn"
-  },
-  "08-05-create-project.4d97f0372f03375a.webp": {
-    "original_hash": "17418aec2f331b0e6102046024b345bb",
-    "translation_date": "2026-01-16T12:09:26+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-05-create-project.png",
-    "language_code": "bn"
-  },
-  "02-03-select-all-workspaces.b5d0006317fbd0f5.webp": {
-    "original_hash": "9afe63dd38e890f2dea8d58d53afdc81",
-    "translation_date": "2026-01-16T12:09:34+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/02-03-select-all-workspaces.png",
-    "language_code": "bn"
-  },
-  "03-02-select-create.92bf8989a5cd98f2.webp": {
-    "original_hash": "241c83760584f72bdbdccb53e77d9c98",
-    "translation_date": "2026-01-16T12:09:40+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-02-select-create.png",
-    "language_code": "bn"
-  },
-  "06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp": {
-    "original_hash": "ab6621cb10af3a01f87b5c3d051e96f2",
-    "translation_date": "2026-01-16T12:09:47+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-05-type-phi-3-mini-4k.png",
-    "language_code": "bn"
-  },
-  "08-09-select-new-connection.02eb45deadc401fc.webp": {
-    "original_hash": "7a0f0ec9566f59b52a836db0178a355e",
-    "translation_date": "2026-01-16T12:10:01+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-09-select-new-connection.png",
-    "language_code": "bn"
-  },
-  "06-07-fill-finetuning.b6d14c89e7c27d0b.webp": {
-    "original_hash": "4cbced950762191e63ef546033ea4950",
-    "translation_date": "2026-01-16T12:10:19+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-07-fill-finetuning.png",
-    "language_code": "bn"
-  },
-  "08-15-select-raw-file-mode.61d988b41df28985.webp": {
-    "original_hash": "5874d12e3524134b8138bf0bdf7c2542",
-    "translation_date": "2026-01-16T12:10:39+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-15-select-raw-file-mode.png",
-    "language_code": "bn"
-  },
-  "08-18-graph-example.d6457533952e690c.webp": {
-    "original_hash": "65496f873f30f23b12e9d9c2f5b5d823",
-    "translation_date": "2026-01-16T12:10:53+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-18-graph-example.png",
-    "language_code": "bn"
-  },
-  "03-09-type-container-registries.7a4180eb2110e5a6.webp": {
-    "original_hash": "893cfe9f2c44c3756124ca3bc708720f",
-    "translation_date": "2026-01-16T12:10:58+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-09-type-container-registries.png",
-    "language_code": "bn"
-  },
-  "06-01-select-compute.a29cff290b480252.webp": {
-    "original_hash": "fd88c8405439192ac1e361b2c235e4b1",
-    "translation_date": "2026-01-16T12:11:09+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-01-select-compute.png",
-    "language_code": "bn"
-  },
-  "07-05-registered-model.7db9775f58dfd591.webp": {
-    "original_hash": "2268fb40588d9d468461cd3c812ed96a",
-    "translation_date": "2026-01-16T12:11:29+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-05-registered-model.png",
-    "language_code": "bn"
-  },
-  "08-12-select-promptflow.6f4b451cb9821e5b.webp": {
-    "original_hash": "7fa802cf85cbf44d19fce5d60516a173",
-    "translation_date": "2026-01-16T12:11:40+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-12-select-promptflow.png",
-    "language_code": "bn"
-  },
-  "08-16-paste-promptflow-code.a6041b74a7d09777.webp": {
-    "original_hash": "72f0d50a7b64684f042a5baa3cb3120c",
-    "translation_date": "2026-01-16T12:11:53+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-16-paste-promptflow-code.png",
-    "language_code": "bn"
-  },
-  "08-08-copy-endpoint-key.18f934b5953ae8cb.webp": {
-    "original_hash": "17a24e0d094a71b473c72a52b07bff8d",
-    "translation_date": "2026-01-16T12:12:04+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-08-copy-endpoint-key.png",
-    "language_code": "bn"
-  },
-  "03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp": {
-    "original_hash": "61eca49596ac4daa201e5e90f6573658",
-    "translation_date": "2026-01-16T12:12:21+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-03-fill-managed-identities-1.png",
-    "language_code": "bn"
-  },
-  "04-02-create-new-file.cf9a330a3a9cff92.webp": {
-    "original_hash": "d66a88695da15a9c3e2f136a3a562295",
-    "translation_date": "2026-01-16T12:12:30+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/04-02-create-new-file.png",
-    "language_code": "bn"
-  },
-  "06-03-create-cluster.4a54ba20914f3662.webp": {
-    "original_hash": "3ae52aa8585eeac1bed6e1635eb1bf7d",
-    "translation_date": "2026-01-16T12:12:40+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/06-03-create-cluster.png",
-    "language_code": "bn"
-  },
-  "08-04-select-new-project.390fadfc9c8f8f12.webp": {
-    "original_hash": "110a9da540c217900d56744fb185782f",
-    "translation_date": "2026-01-16T12:12:58+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-04-select-new-project.png",
-    "language_code": "bn"
-  },
-  "09-01-start-compute-session.a86fcf5be68e386b.webp": {
-    "original_hash": "b3c66315d6041f7e3e8f6a2414e79a6f",
-    "translation_date": "2026-01-16T12:13:09+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-01-start-compute-session.png",
-    "language_code": "bn"
-  },
-  "08-02-fill-hub.c2d3b505bbbdba7c.webp": {
-    "original_hash": "cadb4291728c5ec35a1888210e1da680",
-    "translation_date": "2026-01-16T12:13:25+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-02-fill-hub.png",
-    "language_code": "bn"
-  },
-  "01-03-fill-AZML.a1b6fd944be0090f.webp": {
-    "original_hash": "c325da609206846ca36a95fe3c5e28a8",
-    "translation_date": "2026-01-16T12:13:43+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/01-03-fill-AZML.png",
-    "language_code": "bn"
-  },
-  "00-01-architecture.198ba0f1ae6d841a.webp": {
-    "original_hash": "e583a2c4abd13cf5017d497c401dd3e1",
-    "translation_date": "2026-01-16T12:14:10+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/00-01-architecture.png",
-    "language_code": "bn"
-  },
-  "07-03-select-output.4cf1a0e645baea1f.webp": {
-    "original_hash": "34af93d68b3ad07e1be85a55eb008bd3",
-    "translation_date": "2026-01-16T12:14:49+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-03-select-output.png",
-    "language_code": "bn"
-  },
-  "01-02-select-new-workspace.cd09cd0ec4a60ef2.webp": {
-    "original_hash": "c2f73f04249004304a2ef2e0a23b45b1",
-    "translation_date": "2026-01-16T12:14:58+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/01-02-select-new-workspace.png",
-    "language_code": "bn"
-  },
-  "03-05-type-storage-accounts.9303de485e65e1e5.webp": {
-    "original_hash": "e166f6af1b91eb765e48b5273e540185",
-    "translation_date": "2026-01-16T12:15:05+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-05-type-storage-accounts.png",
-    "language_code": "bn"
-  },
-  "08-07-select-endpoint-created.47f0dc09df2e275e.webp": {
-    "original_hash": "dc5056222ee04681a06c8500c08bccdc",
-    "translation_date": "2026-01-16T12:15:12+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-07-select-endpoint-created.png",
-    "language_code": "bn"
-  },
-  "03-08-select-member.78cd25d1bc89d77e.webp": {
-    "original_hash": "ddb189978c7948b95438c2715fc22b38",
-    "translation_date": "2026-01-16T12:15:22+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-08-select-member.png",
-    "language_code": "bn"
-  },
-  "08-11-add-connection.785486badb4d2d26.webp": {
-    "original_hash": "49acbbd979ccd7fbebc0da5250fb79b7",
-    "translation_date": "2026-01-16T12:15:30+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/08-11-add-connection.png",
-    "language_code": "bn"
-  },
-  "09-02-validate-input.317c76ef766361e9.webp": {
-    "original_hash": "86a4aea3d96ca5428b68698108fe9d13",
-    "translation_date": "2026-01-16T12:15:40+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-02-validate-input.png",
-    "language_code": "bn"
-  },
-  "07-01-register-model.ad1e7cc05e4b2777.webp": {
-    "original_hash": "8f02f22c61dfea48781d068e253f47b7",
-    "translation_date": "2026-01-16T12:15:53+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-01-register-model.png",
-    "language_code": "bn"
-  },
-  "03-07-select-data-reader-role.e386c836a6ab278a.webp": {
-    "original_hash": "cdc94ccdf0e42b7a339e3ffcc0b9bbb5",
-    "translation_date": "2026-01-16T12:16:02+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/03-07-select-data-reader-role.png",
-    "language_code": "bn"
-  },
-  "07-02-select-job.3e2e1144cd6cd093.webp": {
-    "original_hash": "98c2de765418b9bd857656b8a5155edf",
-    "translation_date": "2026-01-16T12:16:16+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/07-02-select-job.png",
-    "language_code": "bn"
-  },
-  "09-04-select-chat.61936dce6612a1e6.webp": {
-    "original_hash": "c888bc5c738c8901bfe790c09bd0adc8",
-    "translation_date": "2026-01-16T12:16:32+00:00",
-    "source_file": "imgs/02/FineTuning-PromptFlow-AIFoundry/09-04-select-chat.png",
-    "language_code": "bn"
-  },
-  "MLFineTune.928d4c6b3767dd35.webp": {
-    "original_hash": "1e3625c1cbe2ff4146d36b105317949d",
-    "translation_date": "2026-01-16T12:16:39+00:00",
-    "source_file": "imgs/03/ft/MLFineTune.png",
-    "language_code": "bn"
-  },
-  "intro.46086a3f16ec48e2.webp": {
-    "original_hash": "89dc9d019f1dd3da62a30546e0242a62",
-    "translation_date": "2026-01-16T12:16:46+00:00",
-    "source_file": "imgs/03/ft/intro.png",
-    "language_code": "bn"
-  },
-  "finetuning.6559da198851fa52.webp": {
-    "original_hash": "b4f98abb50547528ed3ed2bdf9846e65",
-    "translation_date": "2026-01-16T12:17:04+00:00",
-    "source_file": "imgs/03/ft/finetuning.png",
-    "language_code": "bn"
-  },
-  "models.e6c7ff50a51806fd.webp": {
-    "original_hash": "760714d1484826b8ae62a3e755e57d0c",
-    "translation_date": "2026-01-16T12:17:46+00:00",
-    "source_file": "imgs/03/ft/models.png",
-    "language_code": "bn"
-  },
-  "olivefinetune.76d09e9b68253681.webp": {
-    "original_hash": "837ce243d25e265040008ac6db5e711f",
-    "translation_date": "2026-01-16T12:18:19+00:00",
-    "source_file": "imgs/03/ft/olivefinetune.png",
-    "language_code": "bn"
-  },
-  "completed.4dc8d2357144cdef.webp": {
-    "original_hash": "d1efc32dc226a67b7d7b0f861a9b3587",
-    "translation_date": "2026-01-16T12:18:34+00:00",
-    "source_file": "imgs/03/AIFoundry/completed.png",
-    "language_code": "bn"
-  },
-  "AIFoundryfinetune.193aaddce48d553c.webp": {
-    "original_hash": "3efab648eee0f16d144f5d38b72cea62",
-    "translation_date": "2026-01-16T12:18:57+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundryfinetune.png",
-    "language_code": "bn"
-  },
-  "select-finetune.a976213b543dd9d8.webp": {
-    "original_hash": "352c78a09f0058be9f34d970d408b422",
-    "translation_date": "2026-01-16T12:19:13+00:00",
-    "source_file": "imgs/03/AIFoundry/select-finetune.png",
-    "language_code": "bn"
-  },
-  "finetune1.c2b39463f0d34148.webp": {
-    "original_hash": "51ab8343b72ef4d175d9af009a59d09a",
-    "translation_date": "2026-01-16T12:19:26+00:00",
-    "source_file": "imgs/03/AIFoundry/finetune1.png",
-    "language_code": "bn"
-  },
-  "select-model.60ef2d4a6a3cec57.webp": {
-    "original_hash": "f93c268d458071014702e6c2977fe52c",
-    "translation_date": "2026-01-16T12:19:43+00:00",
-    "source_file": "imgs/03/AIFoundry/select-model.png",
-    "language_code": "bn"
-  },
-  "AIFoundry.81f82cc930ffd851.webp": {
-    "original_hash": "2c69967544ff499da1ba8ddbcdbe3283",
-    "translation_date": "2026-01-16T12:19:55+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundry.png",
-    "language_code": "bn"
-  },
-  "select-submit.0a3802d581bac271.webp": {
-    "original_hash": "5432600211d5c3a920fd688a1bf128fa",
-    "translation_date": "2026-01-16T12:20:02+00:00",
-    "source_file": "imgs/03/AIFoundry/select-submit.png",
-    "language_code": "bn"
-  },
-  "AIFoundryfintunetask.b88192eaca0e7105.webp": {
-    "original_hash": "139d25ca6acb04fa4924f541c528a5f8",
-    "translation_date": "2026-01-16T12:20:17+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundryfintunetask.png",
-    "language_code": "bn"
-  },
-  "AIFoundrydatafintuneselect.37dfc5a21d7098b3.webp": {
-    "original_hash": "f9bfe1054e1bde01a5889d056e33be39",
-    "translation_date": "2026-01-16T12:20:50+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundrydatafintuneselect.png",
-    "language_code": "bn"
-  },
-  "AIFoundryModels.0e1b16f7d0b09b73.webp": {
-    "original_hash": "91277a39859be02e3bf2c6e004f9cdff",
-    "translation_date": "2026-01-16T12:21:18+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundryModels.png",
-    "language_code": "bn"
-  },
-  "finetune4.e18b80ffccb5834a.webp": {
-    "original_hash": "1ce50d3602f1d1d3d63ff39ab56354c2",
-    "translation_date": "2026-01-16T12:21:50+00:00",
-    "source_file": "imgs/03/AIFoundry/finetune4.png",
-    "language_code": "bn"
-  },
-  "AIFoundryfinetunepreview.7d2e63f4f2b921ea.webp": {
-    "original_hash": "25c0bcd1e8b53584daf3e16383fe63ff",
-    "translation_date": "2026-01-16T12:22:08+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundryfinetunepreview.png",
-    "language_code": "bn"
-  },
-  "AIFoundryfinetuneselect.373dd68882c47cab.webp": {
-    "original_hash": "9b990cb697e7fe37ab205a11859468c5",
-    "translation_date": "2026-01-16T12:22:48+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundryfinetuneselect.png",
-    "language_code": "bn"
-  },
-  "AIFoundryfinetuneadvanced.e03e174ddf6fa04d.webp": {
-    "original_hash": "59d95bf0191a467ae40cd954344e5dc3",
-    "translation_date": "2026-01-16T12:23:27+00:00",
-    "source_file": "imgs/03/AIFoundry/AIFoundryfinetuneadvanced.png",
-    "language_code": "bn"
-  },
-  "finetune3.fd96121b67dcdd92.webp": {
-    "original_hash": "5082bdcf9fbe804aec9b23880a8de81c",
-    "translation_date": "2026-01-16T12:23:49+00:00",
-    "source_file": "imgs/03/AIFoundry/finetune3.png",
-    "language_code": "bn"
-  },
-  "finetune2.43cb099b1a94442d.webp": {
-    "original_hash": "83ba77e528090f709cef88cac3ec1b98",
-    "translation_date": "2026-01-16T12:24:00+00:00",
-    "source_file": "imgs/03/AIFoundry/finetune2.png",
-    "language_code": "bn"
-  },
-  "AIPortfolio.aa6435a752c6ea6c.webp": {
-    "original_hash": "b944cd2a6d52df85878efdeea5d91d9c",
-    "translation_date": "2026-01-16T12:24:14+00:00",
-    "source_file": "imgs/03/AIFoundry/AIPortfolio.png",
-    "language_code": "bn"
-  },
-  "select-new-project.cd31c0404088d7a3.webp": {
-    "original_hash": "fdab4206829b56a71e0f12ae61e2e4cb",
-    "translation_date": "2026-01-16T12:24:28+00:00",
-    "source_file": "imgs/03/AIFoundry/select-new-project.png",
-    "language_code": "bn"
-  },
-  "create-hub.49e53d235e80779e.webp": {
-    "original_hash": "bf5ecbd9f6b6c1cff6552ca864fb1abe",
-    "translation_date": "2026-01-16T12:24:38+00:00",
-    "source_file": "imgs/03/AIFoundry/create-hub.png",
-    "language_code": "bn"
-  },
-  "create-project.ca3b71298b90e420.webp": {
-    "original_hash": "d186654cee5076db185180b129b627a3",
-    "translation_date": "2026-01-16T12:24:52+00:00",
-    "source_file": "imgs/03/AIFoundry/create-project.png",
-    "language_code": "bn"
-  },
-  "command-deploy.621420434acf494e.webp": {
-    "original_hash": "3906c9e31721567430553598c1745623",
-    "translation_date": "2026-01-16T12:25:14+00:00",
-    "source_file": "imgs/03/RemoteServer/command-deploy.png",
-    "language_code": "bn"
-  },
-  "notification-deploy.7f2cf8f34190622a.webp": {
-    "original_hash": "8c38a7d49376dcd2bc4d180ac0c70a35",
-    "translation_date": "2026-01-16T12:25:57+00:00",
-    "source_file": "imgs/03/RemoteServer/notification-deploy.png",
-    "language_code": "bn"
-  },
-  "log-finetuning-res.7b92254e7e822c7f.webp": {
-    "original_hash": "1555aa7bab4113195c9857a0eb615da0",
-    "translation_date": "2026-01-16T12:26:48+00:00",
-    "source_file": "imgs/03/RemoteServer/log-finetuning-res.png",
-    "language_code": "bn"
-  },
-  "command-provision-inference.467afc8d351642fc.webp": {
-    "original_hash": "18b92e88aec22e019f1193c8e2cd0ccd",
-    "translation_date": "2026-01-16T12:27:32+00:00",
-    "source_file": "imgs/03/RemoteServer/command-provision-inference.png",
-    "language_code": "bn"
-  },
-  "FinetuningwithMS.3d0cec8ae693e094.webp": {
-    "original_hash": "d5a52f3ce5987965bd0e28fee8254471",
-    "translation_date": "2026-01-16T12:27:58+00:00",
-    "source_file": "imgs/03/intro/FinetuningwithMS.png",
-    "language_code": "bn"
-  },
-  "Aitoolkit.7157953df04812dc.webp": {
-    "original_hash": "eb9df878b521236c94cbb61ab93e3fb2",
-    "translation_date": "2026-01-16T12:28:13+00:00",
-    "source_file": "imgs/03/intro/Aitoolkit.png",
-    "language_code": "bn"
-  },
-  "qlora.e6446c988ee04ca0.webp": {
-    "original_hash": "04ce426b83a1fb8263411067b4315e47",
-    "translation_date": "2026-01-16T12:28:39+00:00",
-    "source_file": "imgs/03/intro/qlora.png",
-    "language_code": "bn"
-  },
-  "Finetuningexamples.a9a41214f8f5afc1.webp": {
-    "original_hash": "ffac28d588445f7d341f2479bd454abd",
-    "translation_date": "2026-01-16T12:28:57+00:00",
-    "source_file": "imgs/03/intro/Finetuningexamples.png",
-    "language_code": "bn"
-  },
-  "MaaPFinetune.fd3829c1122f5d1c.webp": {
-    "original_hash": "8e264249cb8bed80ec6bc489b0d94930",
-    "translation_date": "2026-01-16T12:29:16+00:00",
-    "source_file": "imgs/03/intro/MaaPFinetune.png",
-    "language_code": "bn"
-  },
-  "rag.2014adc59e6f6007.webp": {
-    "original_hash": "75a1886a32cb121790ab21c363832d88",
-    "translation_date": "2026-01-16T12:29:27+00:00",
-    "source_file": "imgs/03/intro/rag.png",
-    "language_code": "bn"
-  },
-  "RAGintro.e47aa73428ea2b7f.webp": {
-    "original_hash": "fe091b1a3bd61a84531d05393299092a",
-    "translation_date": "2026-01-16T12:29:33+00:00",
-    "source_file": "imgs/03/intro/RAGintro.png",
-    "language_code": "bn"
-  },
-  "MaaSfinetune.3eee4630607aff0d.webp": {
-    "original_hash": "eb7fa2506c6cf6ef95cb599ddbc090f9",
-    "translation_date": "2026-01-16T12:29:41+00:00",
-    "source_file": "imgs/03/intro/MaaSfinetune.png",
-    "language_code": "bn"
-  },
-  "olive-flow.c4f76d9142c579b2.webp": {
-    "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
-    "translation_date": "2026-01-16T12:29:51+00:00",
-    "source_file": "code/04.Finetuning/olive-lab/images/olive-flow.png",
+  "pfvisualize.c1d9ca75baa2a222.webp": {
+    "original_hash": "79588dd9640197263dc95c96a9f08fe8",
+    "translation_date": "2026-01-16T11:15:08+00:00",
+    "source_file": "imgs/01/05/PromptFlow/pfvisualize.png",
+    "language_code": "bn"
+  },
+  "pfvscode.eff93dfc66a42cbe.webp": {
+    "original_hash": "35436813256c78f0dbf9f3e7aaca2aed",
+    "translation_date": "2026-01-16T11:52:47+00:00",
+    "source_file": "imgs/02/pfonnx/pfvscode.png",
     "language_code": "bn"
   },
   "phi3.081c6903687cce0e.webp": {
@@ -1733,64 +1553,220 @@
     "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/phi3.jpeg",
     "language_code": "bn"
   },
-  "demo.d4038540c7564285.webp": {
-    "original_hash": "b604f3358831383f795eb727a64e2e63",
-    "translation_date": "2026-01-16T12:30:00+00:00",
-    "source_file": "code/09.UpdateSamples/Aug/imgs/demo.png",
+  "promptflow-evaluation.cb9758cc19b4760f.webp": {
+    "original_hash": "27c8c5ad81fa7ce6167c2be542baaa04",
+    "translation_date": "2026-01-16T11:42:04+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/promptflow-evaluation.png",
     "language_code": "bn"
   },
-  "llm_inference.3730480a33f8dd24.webp": {
-    "original_hash": "7d85ed7177ede800fc12b8b2b63e0c39",
-    "translation_date": "2026-01-16T12:30:06+00:00",
-    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/llm_inference.png",
+  "qlora.e6446c988ee04ca0.webp": {
+    "original_hash": "04ce426b83a1fb8263411067b4315e47",
+    "translation_date": "2026-01-16T12:28:39+00:00",
+    "source_file": "imgs/03/intro/qlora.png",
     "language_code": "bn"
   },
-  "olive-flow.a47985655a756dcb.webp": {
-    "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
-    "translation_date": "2026-01-16T12:30:22+00:00",
-    "source_file": "code/03.Finetuning/olive-lab/images/olive-flow.png",
+  "rag.2014adc59e6f6007.webp": {
+    "original_hash": "75a1886a32cb121790ab21c363832d88",
+    "translation_date": "2026-01-16T12:29:27+00:00",
+    "source_file": "imgs/03/intro/rag.png",
     "language_code": "bn"
   },
-  "demo.609a55a7a2b9ed27.webp": {
-    "original_hash": "9f74b923e0a9b64827a12ced9ce6cd4b",
-    "translation_date": "2026-01-16T12:30:28+00:00",
-    "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/demo.png",
+  "responsibleai1.3133643062d80c8f.webp": {
+    "original_hash": "6d34140d6eab127e10ae188cd2b98479",
+    "translation_date": "2026-01-16T11:43:23+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/responsibleai1.png",
     "language_code": "bn"
   },
-  "olive-flow.5daf97340275f8b6.webp": {
-    "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
-    "translation_date": "2026-01-16T12:30:34+00:00",
-    "source_file": "md/03.FineTuning/olive-lab/images/olive-flow.png",
+  "responsibleai2.c07ef430113fad8c.webp": {
+    "original_hash": "ed9aed5f7f2d13cc1595351fde43ed43",
+    "translation_date": "2026-01-16T11:36:20+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/responsibleai2.png",
     "language_code": "bn"
   },
-  "foggyday.b64a5c61fc480aca.webp": {
-    "original_hash": "fa785f4fe2dab1db1fb67493865e89b9",
-    "translation_date": "2026-01-16T12:30:40+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images/imgs/foggyday.png",
+  "result.326a947a6a2b9c51.webp": {
+    "original_hash": "d775f00e9af56b92075e59a2e75b7c6b",
+    "translation_date": "2026-01-16T11:25:54+00:00",
+    "source_file": "imgs/01/03/iOS/result.jpg",
     "language_code": "bn"
   },
-  "petsmusic.2f88f67afa95af07.webp": {
-    "original_hash": "b529dd168b7f508870fa427a243ced75",
-    "translation_date": "2026-01-16T12:30:41+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images/imgs/petsmusic.png",
+  "result_code.ae0d053b45202798.webp": {
+    "original_hash": "6c99f90dd44c4e7d22ca65b71caae3c3",
+    "translation_date": "2026-01-16T11:58:40+00:00",
+    "source_file": "imgs/02/vscodeext/result_code.png",
     "language_code": "bn"
   },
-  "ultrarunningmug.8bbdc8961fcf3a49.webp": {
-    "original_hash": "208f222de31b8d3fceeef539c6d67a15",
-    "translation_date": "2026-01-16T12:30:42+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images/imgs/ultrarunningmug.png",
+  "result_img.436817a2bb3a34cf.webp": {
+    "original_hash": "ae60a9fbefbbf51032782f7421c10063",
+    "translation_date": "2026-01-16T11:57:03+00:00",
+    "source_file": "imgs/02/vscodeext/result_img.png",
     "language_code": "bn"
   },
-  "foggyday.f63d173161945f33.webp": {
-    "original_hash": "fa785f4fe2dab1db1fb67493865e89b9",
-    "translation_date": "2026-01-16T12:30:43+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi303/imgs/foggyday.png",
+  "safety-evaluation.083586ec88dfa950.webp": {
+    "original_hash": "d5024675f3ad1d8e5d29357bdd457346",
+    "translation_date": "2026-01-16T11:37:58+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/safety-evaluation.png",
     "language_code": "bn"
   },
-  "petsmusic.6cfa2d20428d7a29.webp": {
-    "original_hash": "b529dd168b7f508870fa427a243ced75",
-    "translation_date": "2026-01-16T12:30:44+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi303/imgs/petsmusic.png",
+  "select-chat.0406bd9687d0c49d.webp": {
+    "original_hash": "c888bc5c738c8901bfe790c09bd0adc8",
+    "translation_date": "2026-01-16T11:37:49+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-chat.png",
+    "language_code": "bn"
+  },
+  "select-connection.1f2b59222bcaafef.webp": {
+    "original_hash": "97916d8d4f26bcaa70b072a222688aef",
+    "translation_date": "2026-01-16T11:44:07+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-connection.png",
+    "language_code": "bn"
+  },
+  "select-custom-keys.5a3c6b25580a9b67.webp": {
+    "original_hash": "04ab24c2280cc6958a23d160d7eff5c3",
+    "translation_date": "2026-01-16T11:35:20+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-custom-keys.png",
+    "language_code": "bn"
+  },
+  "select-endpoint-created.9f63af5e4cf98b2e.webp": {
+    "original_hash": "dc5056222ee04681a06c8500c08bccdc",
+    "translation_date": "2026-01-16T11:35:05+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-endpoint-created.png",
+    "language_code": "bn"
+  },
+  "select-endpoints.ee7387ecd68bd18d.webp": {
+    "original_hash": "ff5c54767cbe87e5d3998184bced1944",
+    "translation_date": "2026-01-16T11:43:16+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-endpoints.png",
+    "language_code": "bn"
+  },
+  "select-evaluation.2846ad7aaaca7f4f.webp": {
+    "original_hash": "1f5dad76dcdfea00e22d44332a2522f8",
+    "translation_date": "2026-01-16T11:33:53+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-evaluation.png",
+    "language_code": "bn"
+  },
+  "select-finetune.806bc452505f07aa.webp": {
+    "original_hash": "352c78a09f0058be9f34d970d408b422",
+    "translation_date": "2026-01-16T11:08:48+00:00",
+    "source_file": "imgs/01/05/AIFoundry/select-finetune.png",
+    "language_code": "bn"
+  },
+  "select-finetune.a976213b543dd9d8.webp": {
+    "original_hash": "352c78a09f0058be9f34d970d408b422",
+    "translation_date": "2026-01-16T12:19:13+00:00",
+    "source_file": "imgs/03/AIFoundry/select-finetune.png",
+    "language_code": "bn"
+  },
+  "select-flow-type.28375125ec9996d3.webp": {
+    "original_hash": "c44ce4827800f32ed3c77e30b3396fae",
+    "translation_date": "2026-01-16T11:34:53+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-flow-type.png",
+    "language_code": "bn"
+  },
+  "select-input-output.c187fc58f25fbfc3.webp": {
+    "original_hash": "4a28dbbbceeb97b69d689eb76b7d8314",
+    "translation_date": "2026-01-16T11:40:00+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-input-output.png",
+    "language_code": "bn"
+  },
+  "select-microsoft-network.b1814e3500e8dacc.webp": {
+    "original_hash": "df24b5d2131baaf848c11dfc8b03451e",
+    "translation_date": "2026-01-16T11:41:46+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-microsoft-network.png",
+    "language_code": "bn"
+  },
+  "select-model.50398dcff2de8e95.webp": {
+    "original_hash": "f93c268d458071014702e6c2977fe52c",
+    "translation_date": "2026-01-16T11:09:16+00:00",
+    "source_file": "imgs/01/05/AIFoundry/select-model.png",
+    "language_code": "bn"
+  },
+  "select-model.60ef2d4a6a3cec57.webp": {
+    "original_hash": "f93c268d458071014702e6c2977fe52c",
+    "translation_date": "2026-01-16T12:19:43+00:00",
+    "source_file": "imgs/03/AIFoundry/select-model.png",
+    "language_code": "bn"
+  },
+  "select-new-connection.fa0f35743758a74b.webp": {
+    "original_hash": "7a0f0ec9566f59b52a836db0178a355e",
+    "translation_date": "2026-01-16T11:34:08+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-new-connection.png",
+    "language_code": "bn"
+  },
+  "select-new-project.0867e38b813724b0.webp": {
+    "original_hash": "fdab4206829b56a71e0f12ae61e2e4cb",
+    "translation_date": "2026-01-16T11:14:07+00:00",
+    "source_file": "imgs/01/05/AIFoundry/select-new-project.png",
+    "language_code": "bn"
+  },
+  "select-new-project.b47d2015615a6f6c.webp": {
+    "original_hash": "110a9da540c217900d56744fb185782f",
+    "translation_date": "2026-01-16T11:43:58+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-new-project.png",
+    "language_code": "bn"
+  },
+  "select-new-project.cd31c0404088d7a3.webp": {
+    "original_hash": "fdab4206829b56a71e0f12ae61e2e4cb",
+    "translation_date": "2026-01-16T12:24:28+00:00",
+    "source_file": "imgs/03/AIFoundry/select-new-project.png",
+    "language_code": "bn"
+  },
+  "select-openai-model.959496d7e311546d.webp": {
+    "original_hash": "c4421ebcace9e123e618555893211a45",
+    "translation_date": "2026-01-16T11:39:21+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-openai-model.png",
+    "language_code": "bn"
+  },
+  "select-project-created.5221e0e403e2c9d6.webp": {
+    "original_hash": "8456f8c20528fb997fbd808e0341c357",
+    "translation_date": "2026-01-16T11:38:32+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-project-created.png",
+    "language_code": "bn"
+  },
+  "select-promptflow.18ff2e61ab9173eb.webp": {
+    "original_hash": "7fa802cf85cbf44d19fce5d60516a173",
+    "translation_date": "2026-01-16T11:36:44+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-promptflow.png",
+    "language_code": "bn"
+  },
+  "select-raw-file-mode.06c1eca581ce4f53.webp": {
+    "original_hash": "5874d12e3524134b8138bf0bdf7c2542",
+    "translation_date": "2026-01-16T11:42:17+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/select-raw-file-mode.png",
+    "language_code": "bn"
+  },
+  "select-submit.0a3802d581bac271.webp": {
+    "original_hash": "5432600211d5c3a920fd688a1bf128fa",
+    "translation_date": "2026-01-16T12:20:02+00:00",
+    "source_file": "imgs/03/AIFoundry/select-submit.png",
+    "language_code": "bn"
+  },
+  "select-submit.7a211c8ea5c7be9b.webp": {
+    "original_hash": "5432600211d5c3a920fd688a1bf128fa",
+    "translation_date": "2026-01-16T11:09:32+00:00",
+    "source_file": "imgs/01/05/AIFoundry/select-submit.png",
+    "language_code": "bn"
+  },
+  "sk.d03785c25edc6d44.webp": {
+    "original_hash": "516af8c357b87075fdd657330c92fae1",
+    "translation_date": "2026-01-16T11:25:14+00:00",
+    "source_file": "imgs/01/03/LocalServer/sk.png",
+    "language_code": "bn"
+  },
+  "skrun.5aafc1e7197dca20.webp": {
+    "original_hash": "4d5d88fc00ae0ca0c1af5b76aae5b21d",
+    "translation_date": "2026-01-16T11:25:26+00:00",
+    "source_file": "imgs/01/03/LocalServer/skrun.png",
+    "language_code": "bn"
+  },
+  "start-compute-session.9acd8cbbd2c43df1.webp": {
+    "original_hash": "b3c66315d6041f7e3e8f6a2414e79a6f",
+    "translation_date": "2026-01-16T11:36:28+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/start-compute-session.png",
+    "language_code": "bn"
+  },
+  "type-subscriptions.fe914da67f28ad3f.webp": {
+    "original_hash": "721df68bef27b86040341a982b1ca6b9",
+    "translation_date": "2026-01-16T11:40:44+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/type-subscriptions.png",
     "language_code": "bn"
   },
   "ultrarunningmug.1f79a641900310e3.webp": {
@@ -1799,28 +1775,52 @@
     "source_file": "md/04.HOL/dotnet/src/LabsPhi303/imgs/ultrarunningmug.png",
     "language_code": "bn"
   },
-  "foggyday.4d452cf5dd4b3ec3.webp": {
-    "original_hash": "fa785f4fe2dab1db1fb67493865e89b9",
-    "translation_date": "2026-01-16T12:30:45+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/foggyday.png",
-    "language_code": "bn"
-  },
-  "foggydaysmall.95ddc8185f61dcf2.webp": {
-    "original_hash": "5b9504e2ec87c7e23cec77ca446a90d0",
-    "translation_date": "2026-01-16T12:30:46+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/foggydaysmall.png",
-    "language_code": "bn"
-  },
-  "petsmusic.80c52cc676cdf53a.webp": {
-    "original_hash": "b529dd168b7f508870fa427a243ced75",
-    "translation_date": "2026-01-16T12:30:46+00:00",
-    "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/petsmusic.png",
-    "language_code": "bn"
-  },
   "ultrarunningmug.2a247e849aa3b3e8.webp": {
     "original_hash": "208f222de31b8d3fceeef539c6d67a15",
     "translation_date": "2026-01-16T12:30:47+00:00",
     "source_file": "md/04.HOL/dotnet/src/LabsPhi304/imgs/ultrarunningmug.png",
+    "language_code": "bn"
+  },
+  "ultrarunningmug.8bbdc8961fcf3a49.webp": {
+    "original_hash": "208f222de31b8d3fceeef539c6d67a15",
+    "translation_date": "2026-01-16T12:30:42+00:00",
+    "source_file": "md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images/imgs/ultrarunningmug.png",
+    "language_code": "bn"
+  },
+  "validate-input.c1adb9543c6495be.webp": {
+    "original_hash": "86a4aea3d96ca5428b68698108fe9d13",
+    "translation_date": "2026-01-16T11:33:37+00:00",
+    "source_file": "imgs/02/Evaluation-AIFoundry/validate-input.png",
+    "language_code": "bn"
+  },
+  "vision_deploy.a8114ccd849a9572.webp": {
+    "original_hash": "5684182ba918e1c8565c8093b32b6cfb",
+    "translation_date": "2026-01-16T11:59:16+00:00",
+    "source_file": "imgs/02/vscodeext/vision_deploy.png",
+    "language_code": "bn"
+  },
+  "vision_test.0b9c1b1d414131d0.webp": {
+    "original_hash": "5058e67839a10848bdc5964ae7754a09",
+    "translation_date": "2026-01-16T11:57:25+00:00",
+    "source_file": "imgs/02/vscodeext/vision_test.png",
+    "language_code": "bn"
+  },
+  "vison_catalog.f979823d5bde8aef.webp": {
+    "original_hash": "a0759cdfa55956c1744845a6b91fe8cf",
+    "translation_date": "2026-01-16T11:58:19+00:00",
+    "source_file": "imgs/02/vscodeext/vison_catalog.png",
+    "language_code": "bn"
+  },
+  "vscode_agent.746efdf2e81957c2.webp": {
+    "original_hash": "a8052af5efe3d8aa09821d481b39492b",
+    "translation_date": "2026-01-16T11:59:54+00:00",
+    "source_file": "imgs/02/vscodeext/vscode_agent.png",
+    "language_code": "bn"
+  },
+  "xcode.8147789e6c25e3e2.webp": {
+    "original_hash": "dc7dc3df2980ec5ed4096101a80c6d2d",
+    "translation_date": "2026-01-16T11:26:24+00:00",
+    "source_file": "imgs/01/03/iOS/xcode.png",
     "language_code": "bn"
   }
 }
