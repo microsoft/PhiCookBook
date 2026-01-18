@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Wybrałem Objective-C jako metodę tworzenia aplikacji, ponieważ korzystając z Generative AI z ONNX Runtime C++ API, Objective-C jest lepiej kompatybilny. Oczywiście, możesz też wykonać odpowiednie wywołania przez mostek Swift.
 
-![xcode](../../../../../translated_images/pl/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/pl/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Skopiuj kwantyzowany model ONNX INT4 do projektu aplikacji**
 
 Musimy zaimportować model kwantyzacji INT4 w formacie ONNX, który należy najpierw pobrać.
 
-![hf](../../../../../translated_images/pl/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/pl/hf.6b8504fd88ee48dd.webp)
 
 Po pobraniu dodaj go do katalogu Resources w projekcie w Xcode.
 
-![model](../../../../../translated_images/pl/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/pl/model.3b879b14e0be877d.webp)
 
 ## **6. Dodanie API C++ w ViewControllers**
 
@@ -121,11 +121,11 @@ Po pobraniu dodaj go do katalogu Resources w projekcie w Xcode.
 
 - **a.** Dodaj odpowiednie pliki nagłówkowe C++ do projektu.
 
-  ![Header File](../../../../../translated_images/pl/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/pl/head.64cad021ce70a333.webp)
 
 - **b.** Dołącz dynamiczną bibliotekę `onnxruntime-genai` w Xcode.
 
-  ![Library](../../../../../translated_images/pl/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/pl/lib.a4209b9f21ddf344.webp)
 
 - **c.** Użyj przykładowego kodu w C do testów. Możesz też dodać dodatkowe funkcje, takie jak ChatUI, dla większej funkcjonalności.
 
@@ -162,7 +162,7 @@ Po pobraniu dodaj go do katalogu Resources w projekcie w Xcode.
 
 Po zakończeniu konfiguracji możesz uruchomić aplikację, aby zobaczyć wyniki inferencji modelu Phi-3-mini.
 
-![Running Result](../../../../../translated_images/pl/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/pl/result.326a947a6a2b9c51.webp)
 
 Więcej przykładowego kodu i szczegółowe instrukcje znajdziesz w repozytorium [Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

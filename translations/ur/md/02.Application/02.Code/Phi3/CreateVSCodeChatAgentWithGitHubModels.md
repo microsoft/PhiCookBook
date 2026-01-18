@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ہم جانتے ہیں کہ Phi-3/3.5-mini-instruct فیملی میں مضبوط کوڈ سمجھنے اور تخلیق کرنے کی صلاحیتیں ہیں، اور یہ Gemma-2-9b اور Mistral-Nemo-12B-instruct-2407 کے مقابلے میں بہتر ہے۔
 
-![codegen](../../../../../../translated_images/ur/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/ur/codegen.53be1150ee54d969.webp)
 
 تازہ ترین GitHub Models پہلے ہی Phi-3.5-mini-instruct (128k) اور Phi-3.5-vision-instruct (128k) ماڈلز تک رسائی فراہم کرتے ہیں۔ ڈویلپرز انہیں OpenAI SDK، Azure AI Inference SDK، اور REST API کے ذریعے استعمال کر سکتے ہیں۔
 
-![gh](../../../../../../translated_images/ur/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/ur/gh.459640c7ceba01d5.webp)
 
 ***نوٹ:*** یہاں Azure AI Inference SDK استعمال کرنے کی سفارش کی جاتی ہے، کیونکہ یہ پروڈکشن ماحول میں Azure Model Catalog کے ساتھ بہتر سوئچ کر سکتا ہے۔
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot Chat Agent مختلف پروجیکٹ کے منظرناموں میں کوڈ کی بنیاد پر مختلف کام مکمل کر سکتا ہے۔ سسٹم میں چار ایجنٹس ہیں: workspace، github، terminal، vscode
 
-![agent](../../../../../../translated_images/ur/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/ur/agent.3dbb06228f9a6189.webp)
 
 ایجنٹ کے نام کے ساتھ ‘@’ شامل کر کے آپ متعلقہ کام کو جلدی مکمل کر سکتے ہیں۔ اداروں کے لیے، اگر آپ اپنے کاروبار سے متعلق مواد جیسے کہ ضروریات، کوڈنگ، ٹیسٹ کی وضاحتیں، اور ریلیز شامل کریں، تو آپ GitHub Copilot کی بنیاد پر زیادہ طاقتور ادارہ جاتی نجی خصوصیات حاصل کر سکتے ہیں۔
 
 Visual Studio Code Chat Agent نے اب باضابطہ طور پر اپنا API جاری کر دیا ہے، جو اداروں یا ادارہ جاتی ڈویلپرز کو مختلف سافٹ ویئر کاروباری ماحولیاتی نظام کی بنیاد پر ایجنٹس تیار کرنے کی اجازت دیتا ہے۔ Visual Studio Code Extension Development کے ترقیاتی طریقہ کار کی بنیاد پر، آپ آسانی سے Visual Studio Code Chat Agent API کے انٹرفیس تک رسائی حاصل کر سکتے ہیں۔ ہم اس عمل کی بنیاد پر ترقی کر سکتے ہیں۔
 
-![diagram](../../../../../../translated_images/ur/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/ur/diagram.ca70d2866762f115.webp)
 
 یہ ترقیاتی منظرنامہ تیسرے فریق کے ماڈل APIs (جیسے GitHub Models، Azure Model Catalog، اور اوپن سورس ماڈلز کی بنیاد پر خود بنائی گئی خدمات) تک رسائی کی حمایت کرتا ہے اور GitHub Copilot کی طرف سے فراہم کردہ gpt-35-turbo، gpt-4، اور gpt-4o ماڈلز بھی استعمال کر سکتا ہے۔
 
@@ -54,7 +54,7 @@ Visual Studio Code Chat Agent نے اب باضابطہ طور پر اپنا API 
 
 3. **Phi-3.5-vision-instruct (128k)** اور تصویر کی تکمیل کی بنیاد پر کوڈ **@phicoding /image** کمانڈ کے ذریعے تیار کریں۔
 
-![arch](../../../../../../translated_images/ur/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/ur/arch.5a58a0adfa959a2d.webp)
 
 ## **متعلقہ مراحل**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/ur/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/ur/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/ur/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/ur/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/ur/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/ur/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/ur/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/ur/agentimage.f5cb52b45ab7d0d1.webp)
 
 آپ نمونہ کوڈ ڈاؤن لوڈ کر سکتے ہیں: [کلک کریں](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

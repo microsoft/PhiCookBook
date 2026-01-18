@@ -41,7 +41,7 @@ Il fine-tuning si basa sul miglioramento di un modello esistente. Non è necessa
 
 ## **Come usare RAG**
 
-![rag](../../../../translated_images/it/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/it/rag.2014adc59e6f6007.webp)
 
 Un database vettoriale è una raccolta di dati memorizzati in forma matematica. I database vettoriali facilitano ai modelli di machine learning la memorizzazione degli input precedenti, permettendo di supportare casi d’uso come ricerca, raccomandazioni e generazione di testo. I dati possono essere identificati in base a metriche di similarità anziché corrispondenze esatte, consentendo ai modelli di comprendere il contesto dei dati.
 
@@ -57,7 +57,7 @@ Gli algoritmi comunemente usati nel Fine-tuning sono Lora e QLora. Come sceglier
 
 ### **Lora e QLora**
 
-![lora](../../../../translated_images/it/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/it/qlora.e6446c988ee04ca0.webp)
 
 LoRA (Low-Rank Adaptation) e QLoRA (Quantized Low-Rank Adaptation) sono entrambe tecniche utilizzate per il fine-tuning di grandi modelli linguistici (LLM) tramite Parameter Efficient Fine Tuning (PEFT). Le tecniche PEFT sono progettate per addestrare i modelli in modo più efficiente rispetto ai metodi tradizionali.  
 LoRA è una tecnica di fine-tuning autonoma che riduce l’uso di memoria applicando un’approssimazione a basso rango alla matrice di aggiornamento dei pesi. Offre tempi di addestramento rapidi e mantiene prestazioni vicine ai metodi tradizionali di fine-tuning.

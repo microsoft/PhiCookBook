@@ -34,7 +34,7 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 2. **Depoyu Kopyala (Clone)**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Microsoft AI Discord Topluluğuna Katılın, Uzmanlar ve Diğer Geliştiricilerle Tanışın**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![kapak](../../translated_images/tr/cover.eb18d1b9605d754b.png)
+![kapak](../../translated_images/tr/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 Çok Dilli Destek
 

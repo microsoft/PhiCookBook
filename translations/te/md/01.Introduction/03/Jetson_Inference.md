@@ -37,7 +37,7 @@ d. Python 3.8+
 
  మీరు gguf ను క్లౌడ్ మరియు ఎడ్జ్ పరికరాల్లో ఒకేసారి ఉపయోగించాలనుకుంటే, LlamaEdge ను WasmEdge గా భావించవచ్చు (WasmEdge ఒక లైట్‌వెయిట్, హై-పర్ఫార్మెన్స్, స్కేలబుల్ WebAssembly రన్‌టైమ్, ఇది క్లౌడ్ నేటివ్, ఎడ్జ్ మరియు decentralized అప్లికేషన్లకు తగినది. ఇది serverless అప్లికేషన్లు, ఎంబెడెడ్ ఫంక్షన్లు, మైక్రోసర్వీసులు, స్మార్ట్ కాంట్రాక్టులు మరియు IoT పరికరాలను మద్దతు ఇస్తుంది. మీరు gguf యొక్క క్వాంటిటేటివ్ మోడల్‌ను LlamaEdge ద్వారా ఎడ్జ్ పరికరాలకు మరియు క్లౌడ్‌కు డిప్లాయ్ చేయవచ్చు.)
 
-![llamaedge](../../../../../translated_images/te/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/te/llamaedge.e9d6ff96dff11cf7.webp)
 
 ఇక్కడ ఉపయోగించడానికి స్టెప్పులు ఉన్నాయి 
 
@@ -69,7 +69,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 ఇది నడిచే ఫలితం
 
 
-![llamaedgerun](../../../../../translated_images/te/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/te/llamaedgerun.bed921516c9a821c.webp)
 
 ***నమూనా కోడ్*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

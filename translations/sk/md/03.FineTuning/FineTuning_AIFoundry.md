@@ -19,7 +19,7 @@ Pozrime sa, ako doladiť jazykový model Phi-3 Mini od Microsoftu pomocou Azure 
 - **Pohodlie:** Ako vlastne prebieha doladenie – musím písať vlastný kód? Potrebujem vlastný výpočtový výkon?
 - **Bezpečnosť:** Doladené modely môžu predstavovať bezpečnostné riziká – sú zavedené nejaké ochranné opatrenia, ktoré zabraňujú neúmyselnému poškodeniu?
 
-![AIFoundry Models](../../../../translated_images/sk/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/sk/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## Príprava na doladenie
 
@@ -71,7 +71,7 @@ Podporovaný typ súboru je JSON Lines. Súbory sa nahrávajú do predvoleného 
 
 Azure AI Foundry vám umožňuje prispôsobiť veľké jazykové modely vašim vlastným dátam pomocou procesu nazývaného doladenie. Doladenie prináša významnú hodnotu tým, že umožňuje prispôsobenie a optimalizáciu pre konkrétne úlohy a aplikácie. Vedie k lepšiemu výkonu, úspore nákladov, zníženiu latencie a prispôsobeným výstupom.
 
-![Finetune AI Foundry](../../../../translated_images/sk/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/sk/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Vytvorenie nového projektu
 
@@ -79,14 +79,14 @@ Azure AI Foundry vám umožňuje prispôsobiť veľké jazykové modely vašim v
 
 1. Vyberte **+New project** pre vytvorenie nového projektu v Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/sk/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/sk/select-new-project.cd31c0404088d7a3.webp)
 
 1. Vykonajte nasledujúce kroky:
 
     - Názov projektu **Hub name**. Musí byť jedinečný.
     - Vyberte **Hub**, ktorý chcete použiť (v prípade potreby vytvorte nový).
 
-    ![FineTuneSelect](../../../../translated_images/sk/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/sk/create-project.ca3b71298b90e420.webp)
 
 1. Vykonajte nasledujúce kroky na vytvorenie nového hubu:
 
@@ -97,7 +97,7 @@ Azure AI Foundry vám umožňuje prispôsobiť veľké jazykové modely vašim v
     - Vyberte **Connect Azure AI Services**, ktoré chcete použiť (v prípade potreby vytvorte nové).
     - Pri **Connect Azure AI Search** vyberte **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/sk/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/sk/create-hub.49e53d235e80779e.webp)
 
 1. Vyberte **Next**.
 1. Vyberte **Create a project**.
@@ -115,15 +115,15 @@ Pred doladením zozbierajte alebo vytvorte dataset relevantný pre vašu úlohu,
 
 1. Do **search bar** zadajte *phi-3* a vyberte model phi-3, ktorý chcete použiť.
 
-    ![FineTuneSelect](../../../../translated_images/sk/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/sk/select-model.60ef2d4a6a3cec57.webp)
 
 1. Vyberte **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/sk/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/sk/select-finetune.a976213b543dd9d8.webp)
 
 1. Zadajte názov **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../translated_images/sk/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/sk/finetune1.c2b39463f0d34148.webp)
 
 1. Vyberte **Next**.
 
@@ -132,13 +132,13 @@ Pred doladením zozbierajte alebo vytvorte dataset relevantný pre vašu úlohu,
     - Vyberte typ úlohy **task type** ako **Chat completion**.
     - Vyberte **Training data**, ktoré chcete použiť. Dáta môžete nahrať cez Azure AI Foundry alebo z lokálneho prostredia.
 
-    ![FineTuneSelect](../../../../translated_images/sk/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/sk/finetune2.43cb099b1a94442d.webp)
 
 1. Vyberte **Next**.
 
 1. Nahrajte **Validation data**, ktoré chcete použiť, alebo vyberte **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/sk/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/sk/finetune3.fd96121b67dcdd92.webp)
 
 1. Vyberte **Next**.
 
@@ -148,15 +148,15 @@ Pred doladením zozbierajte alebo vytvorte dataset relevantný pre vašu úlohu,
     - Vyberte **Learning rate**, ktorý chcete použiť.
     - Vyberte počet **Epochs**, ktoré chcete použiť.
 
-    ![FineTuneSelect](../../../../translated_images/sk/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/sk/finetune4.e18b80ffccb5834a.webp)
 
 1. Vyberte **Submit** na spustenie procesu doladenia.
 
-    ![FineTuneSelect](../../../../translated_images/sk/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/sk/select-submit.0a3802d581bac271.webp)
 
 1. Po dokončení doladenia sa stav zobrazí ako **Completed**, ako je znázornené na obrázku nižšie. Teraz môžete model nasadiť a používať ho vo svojej aplikácii, v playgrounde alebo v prompt flow. Pre viac informácií pozrite [Ako nasadiť rodinu malých jazykových modelov Phi-3 pomocou Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/sk/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/sk/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > Pre podrobnejšie informácie o doladení Phi-3 navštívte [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

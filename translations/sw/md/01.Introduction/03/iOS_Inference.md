@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Nilichagua Objective-C kama njia ya kuendeleza App, kwa sababu kutumia Generative AI na ONNX Runtime C++ API, Objective-C ina ulinganifu bora. Bila shaka, unaweza pia kukamilisha simu zinazohusiana kupitia daraja la Swift.
 
-![xcode](../../../../../translated_images/sw/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/sw/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Nakili mfano wa ONNX uliopunguzwa wa INT4 kwenye mradi wa App**
 
 Tunahitaji kuingiza mfano wa quantization wa INT4 katika muundo wa ONNX, ambao unahitaji kupakuliwa kwanza
 
-![hf](../../../../../translated_images/sw/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/sw/hf.6b8504fd88ee48dd.webp)
 
 Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika Xcode.
 
-![model](../../../../../translated_images/sw/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/sw/model.3b879b14e0be877d.webp)
 
 ## **6. Kuongeza API ya C++ katika ViewControllers**
 
@@ -121,11 +121,11 @@ Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika X
 
 - **a.** Ongeza faili za kichwa za C++ zinazohusiana kwenye mradi.
 
-  ![Header File](../../../../../translated_images/sw/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/sw/head.64cad021ce70a333.webp)
 
 - **b.** Jumuisha maktaba ya `onnxruntime-genai` inayobadilika katika Xcode.
 
-  ![Library](../../../../../translated_images/sw/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/sw/lib.a4209b9f21ddf344.webp)
 
 - **c.** Tumia msimbo wa Sampuli za C kwa majaribio. Pia unaweza kuongeza vipengele zaidi kama ChatUI kwa utendaji zaidi.
 
@@ -162,7 +162,7 @@ Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika X
 
 Mara tu maandalizi yatakapokamilika, unaweza kuendesha programu kuona matokeo ya inference ya mfano wa Phi-3-mini.
 
-![Running Result](../../../../../translated_images/sw/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/sw/result.326a947a6a2b9c51.webp)
 
 Kwa msimbo zaidi wa sampuli na maelekezo ya kina, tembelea [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

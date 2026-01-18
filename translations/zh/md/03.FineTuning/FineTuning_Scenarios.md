@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## 微调场景
 
-![FineTuning with MS Services](../../../../translated_images/zh/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/zh/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **平台** 包括 Azure AI Foundry、Azure Machine Learning、AI 工具、Kaito 和 ONNX Runtime 等多种技术。
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 通过托管微调功能对模型进行微调，无需创建和管理计算资源。
 
-![MaaS Fine Tuning](../../../../translated_images/zh/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/zh/MaaSfinetune.3eee4630607aff0d.webp)
 
 无服务器微调支持 Phi-3-mini 和 Phi-3-medium 模型，使开发者能够快速轻松地为云端和边缘场景定制模型，无需安排计算资源。我们还宣布，Phi-3-small 现已通过我们的模型即服务（Models-as-a-Service）提供，开发者可以快速轻松地开始 AI 开发，无需管理底层基础设施。
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 用户自行管理计算资源以微调模型。
 
-![Maap Fine Tuning](../../../../translated_images/zh/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/zh/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [微调示例](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 微调性能示例
 
-![Finetuning Performance](../../../../translated_images/zh/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/zh/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **免责声明**：  
 本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

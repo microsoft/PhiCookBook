@@ -28,9 +28,9 @@ Kwa muhtasari, NPUs ni wataalamu wa hisabati wanaoimarisha hesabu za AI, na wana
 
 Kifaa cha Intel® NPU ni kiimarishaji cha inference ya AI kilichojumuishwa na CPU za Intel kwa wateja, kuanzia kizazi cha Intel® Core™ Ultra (ambacho awali kilijulikana kama Meteor Lake). Hutoa utekelezaji wa kazi za mitandao ya neva kwa ufanisi wa nishati.
 
-![Latency](../../../../../translated_images/sw/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/sw/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/sw/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/sw/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Maktaba ya Kuimarisha Intel NPU**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya NPU kupitia Task Manager
 
-![NPU](../../../../../translated_images/sw/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/sw/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Mifano*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Huu ni matokeo ya kuendesha
 
-![DML](../../../../../translated_images/sw/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/sw/aipc_DML.52a44180393ab491.webp)
 
 ***Mifano*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 muundo uliobadilishwa, kama huu
 
-![openvino_convert](../../../../../translated_images/sw/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/sw/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Pakia njia za mfano (model_dir), usanidi unaohusiana (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), na vifaa vilivyoimarishwa na vifaa (GPU.0) kupitia OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya GPU kupitia Task Manager
 
-![openvino_gpu](../../../../../translated_images/sw/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/sw/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Mifano*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

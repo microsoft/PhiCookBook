@@ -24,7 +24,7 @@ U ovom E2E primjeru naučit ćete kako doraditi Phi-3 model i integrirati ga s P
 
 Evo pregleda ovog E2E primjera.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/hr/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/hr/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Sadržaj
 
@@ -49,13 +49,13 @@ Evo pregleda ovog E2E primjera.
 
 1. Upišite *azure machine learning* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Azure Machine Learning** iz ponuđenih opcija.
 
-    ![Type azure machine learning.](../../../../../../translated_images/hr/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/hr/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Odaberite **+ Create** u navigacijskom izborniku.
 
 3. Odaberite **New workspace** u navigacijskom izborniku.
 
-    ![Select new workspace.](../../../../../../translated_images/hr/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/hr/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Izvršite sljedeće zadatke:
 
@@ -68,7 +68,7 @@ Evo pregleda ovog E2E primjera.
     - Odaberite **Application insights** koji ćete koristiti (ako treba, stvorite novi).
     - Odaberite **Container registry** koji ćete koristiti (ako treba, stvorite novi).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/hr/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/hr/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Odaberite **Review + Create**.
 
@@ -91,7 +91,7 @@ U ovom vodiču naučit ćete kako doraditi i implementirati Phi-3 model koriste�
     - Odaberite **Virtual machine family** koju želite koristiti. Na primjer, odaberite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, koji uključuje GPU *Standard_NC24ads_A100_v4*.
     - Odaberite **Request quota** u navigacijskom izborniku.
 
-        ![Request quota.](../../../../../../translated_images/hr/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/hr/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Na stranici Request quota unesite **New cores limit** koju želite koristiti. Na primjer, 24.
     - Na stranici Request quota odaberite **Submit** kako biste zatražili GPU kvotu.
@@ -112,11 +112,11 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
 
 1. Upišite *managed identities* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Managed Identities** iz ponuđenih opcija.
 
-    ![Type managed identities.](../../../../../../translated_images/hr/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/hr/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Odaberite **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/hr/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/hr/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Izvršite sljedeće zadatke:
 
@@ -125,7 +125,7 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
     - Odaberite **Regiju** koju želite koristiti.
     - Unesite **Naziv**. Mora biti jedinstvena vrijednost.
 
-    ![Select create.](../../../../../../translated_images/hr/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/hr/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Odaberite **Review + create**.
 
@@ -145,7 +145,7 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
     - Odaberite **Resource group** koju želite koristiti.
     - Odaberite ulogu **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/hr/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/hr/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Odaberite **Save**.
 
@@ -153,7 +153,7 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
 
 1. Upišite *storage accounts* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Storage accounts** iz ponuđenih opcija.
 
-    ![Type storage accounts.](../../../../../../translated_images/hr/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/hr/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Odaberite storage account povezan s Azure Machine Learning workspaceom koji ste stvorili. Na primjer, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
     - Odaberite **+ Add** u navigacijskom izborniku.
     - Odaberite **Add role assignment** u navigacijskom izborniku.
 
-    ![Add role.](../../../../../../translated_images/hr/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/hr/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Na stranici Add role assignment izvršite sljedeće zadatke:
 
@@ -177,7 +177,7 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
     - Odaberite Manage Identity koji ste napravili, na primjer *finetunephi-managedidentity*.
     - Odaberite **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/hr/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/hr/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Odaberite **Review + assign**.
 
@@ -185,7 +185,7 @@ Da biste doradili i implementirali svoje modele, prvo morate stvoriti User Assig
 
 1. Upišite *container registries* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Container registries** iz ponuđenih opcija.
 
-    ![Type container registries.](../../../../../../translated_images/hr/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/hr/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Odaberite container registry povezan s Azure Machine Learning workspaceom. Na primjer, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ U ovom zadatku ćete:
 
 1. Odaberite mapu *finetune-phi* koju ste kreirali, a koja se nalazi na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Odaberite mapu koju ste kreirali.](../../../../../../translated_images/hr/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Odaberite mapu koju ste kreirali.](../../../../../../translated_images/hr/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. U lijevom panelu Visual Studio Codea kliknite desnom tipkom miša i odaberite **New File** kako biste kreirali novu datoteku pod nazivom *download_dataset.py*.
 
-    ![Kreirajte novu datoteku.](../../../../../../translated_images/hr/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Kreirajte novu datoteku.](../../../../../../translated_images/hr/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Pripremite skup podataka za fino podešavanje
 
@@ -392,7 +392,7 @@ U ovoj vježbi ćete:
 
 1. Odaberite **+ New**.
 
-    ![Odaberite compute.](../../../../../../translated_images/hr/06-01-select-compute.a29cff290b480252.png)
+    ![Odaberite compute.](../../../../../../translated_images/hr/06-01-select-compute.a29cff290b480252.webp)
 
 1. Izvršite sljedeće zadatke:
 
@@ -402,7 +402,7 @@ U ovoj vježbi ćete:
     - Za filtar **Virtual machine size** odaberite **Select from all options**.
     - Odaberite veličinu virtualnog stroja **Standard_NC24ads_A100_v4**.
 
-    ![Kreirajte klaster.](../../../../../../translated_images/hr/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Kreirajte klaster.](../../../../../../translated_images/hr/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Odaberite **Next**.
 
@@ -413,7 +413,7 @@ U ovoj vježbi ćete:
     - Odaberite **Maksimalni broj čvorova** na **1**.
     - Odaberite **Neaktivni sekundi prije smanjenja** na **120**.
 
-    ![Kreirajte klaster.](../../../../../../translated_images/hr/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Kreirajte klaster.](../../../../../../translated_images/hr/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Odaberite **Create**.
 
@@ -423,18 +423,18 @@ U ovoj vježbi ćete:
 
 1. Odaberite Azure Machine Learning workspace koji ste kreirali.
 
-    ![Odaberite workspace koji ste kreirali.](../../../../../../translated_images/hr/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Odaberite workspace koji ste kreirali.](../../../../../../translated_images/hr/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Izvršite sljedeće zadatke:
 
     - Odaberite **Model catalog** s lijevog izbornika.
     - Upišite *phi-3-mini-4k* u **tražilicu** i odaberite **Phi-3-mini-4k-instruct** iz ponuđenih opcija.
 
-    ![Upišite phi-3-mini-4k.](../../../../../../translated_images/hr/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Upišite phi-3-mini-4k.](../../../../../../translated_images/hr/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Odaberite **Fine-tune** iz navigacijskog izbornika.
 
-    ![Odaberite fino podešavanje.](../../../../../../translated_images/hr/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Odaberite fino podešavanje.](../../../../../../translated_images/hr/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Izvršite sljedeće zadatke:
 
@@ -443,7 +443,7 @@ U ovoj vježbi ćete:
     - Za tip učitavanja validacijskih podataka odaberite **Provide different validation data**.
     - Odaberite **+ Select data** za učitavanje **Validacijskih podataka**.
 
-    ![Ispunite stranicu za fino podešavanje.](../../../../../../translated_images/hr/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Ispunite stranicu za fino podešavanje.](../../../../../../translated_images/hr/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ U ovoj vježbi ćete:
 
 1. U ovoj vježbi ste uspješno fino podesili Phi-3 model koristeći Azure Machine Learning. Napomena: proces finog podešavanja može potrajati znatno vremena. Nakon pokretanja posla za fino podešavanje, morate pričekati da se dovrši. Status posla možete pratiti u kartici Jobs na lijevoj strani vašeg Azure Machine Learning Workspacea. U sljedećem nizu vježbi implementirat ćete fino podešeni model i integrirati ga s Prompt flowom.
 
-    ![Pogledajte posao finog podešavanja.](../../../../../../translated_images/hr/06-08-output.2bd32e59930672b1.png)
+    ![Pogledajte posao finog podešavanja.](../../../../../../translated_images/hr/06-08-output.2bd32e59930672b1.webp)
 
 ### Implementirajte fino podešeni Phi-3 model
 
@@ -471,17 +471,17 @@ U ovoj vježbi ćete:
 
 1. Odaberite Azure Machine Learning workspace koji ste kreirali.
 
-    ![Odaberite workspace koji ste kreirali.](../../../../../../translated_images/hr/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Odaberite workspace koji ste kreirali.](../../../../../../translated_images/hr/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Odaberite **Models** sa lijevog izbornika.
 1. Odaberite **+ Register**.
 1. Odaberite **From a job output**.
 
-    ![Registrirajte model.](../../../../../../translated_images/hr/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Registrirajte model.](../../../../../../translated_images/hr/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Odaberite posao koji ste kreirali.
 
-    ![Odaberite posao.](../../../../../../translated_images/hr/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Odaberite posao.](../../../../../../translated_images/hr/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Odaberite **Next**.
 
@@ -489,17 +489,17 @@ U ovoj vježbi ćete:
 
 1. Provjerite je li odabrano **Job output**; obično je automatski odabran.
 
-    ![Odaberite izlaz.](../../../../../../translated_images/hr/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Odaberite izlaz.](../../../../../../translated_images/hr/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Odaberite **Next**.
 
 3. Odaberite **Register**.
 
-    ![Odaberite registriraj.](../../../../../../translated_images/hr/07-04-register.fd82a3b293060bc7.png)
+    ![Odaberite registriraj.](../../../../../../translated_images/hr/07-04-register.fd82a3b293060bc7.webp)
 
 4. Registrirani model možete pregledati tako da odete na izbornik **Models** s lijevog izbornika.
 
-    ![Registrirani model.](../../../../../../translated_images/hr/07-05-registered-model.7db9775f58dfd591.png)
+    ![Registrirani model.](../../../../../../translated_images/hr/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Implementirajte fino podešeni model
 
@@ -509,13 +509,13 @@ U ovoj vježbi ćete:
 
 1. Odaberite **Real-time endpoints** iz navigacijskog izbornika.
 
-    ![Kreirajte endpoint.](../../../../../../translated_images/hr/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Kreirajte endpoint.](../../../../../../translated_images/hr/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Odaberite **Create**.
 
 1. Odaberite registrirani model koji ste kreirali.
 
-    ![Odaberite registrirani model.](../../../../../../translated_images/hr/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Odaberite registrirani model.](../../../../../../translated_images/hr/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Odaberite **Select**.
 
@@ -527,7 +527,7 @@ U ovoj vježbi ćete:
     - Unesite **Ime endpointa**. Mora biti jedinstveno.
     - Unesite **Ime implementacije**. Mora biti jedinstveno.
 
-    ![Ispunite postavke implementacije.](../../../../../../translated_images/hr/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Ispunite postavke implementacije.](../../../../../../translated_images/hr/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Odaberite **Deploy**.
 
@@ -543,14 +543,14 @@ U ovoj vježbi ćete:
 
 1. Odaberite endpoint koji ste kreirali.
 
-    ![Odaberite endpoints](../../../../../../translated_images/hr/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Odaberite endpoints](../../../../../../translated_images/hr/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. Na ovoj stranici možete upravljati endpointima tijekom procesa implementacije.
 
 > [!NOTE]
 > Nakon što je implementacija dovršena, pobrinite se da je **Live traffic** postavljen na **100%**. Ako nije, odaberite **Update traffic** za prilagodbu postavki prometa. Napomena: ne možete testirati model ako je promet postavljen na 0%.
 >
-> ![Postavite promet.](../../../../../../translated_images/hr/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Postavite promet.](../../../../../../translated_images/hr/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Scenarij 3: Integrirajte s Prompt flowom i razgovarajte sa svojim prilagođenim modelom u Azure AI Foundry
@@ -579,7 +579,7 @@ Morate kreirati Hub prije nego što kreirate Projekt. Hub funkcionira kao grupa 
 1. Odaberite **All hubs** sa lijevog izbornika.
 
 1. Odaberite **+ New hub** iz navigacijskog izbornika.
-    ![Kreiraj hub.](../../../../../../translated_images/hr/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Kreiraj hub.](../../../../../../translated_images/hr/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Izvršite sljedeće zadatke:
 
@@ -590,7 +590,7 @@ Morate kreirati Hub prije nego što kreirate Projekt. Hub funkcionira kao grupa 
     - Odaberite **Connect Azure AI Services** za korištenje (kreirajte novu ako je potrebno).
     - Odaberite **Connect Azure AI Search** na **Preskoči povezivanje**.
 
-    ![Popunite hub.](../../../../../../translated_images/hr/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Popunite hub.](../../../../../../translated_images/hr/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Odaberite **Dalje**.
 
@@ -600,11 +600,11 @@ Morate kreirati Hub prije nego što kreirate Projekt. Hub funkcionira kao grupa 
 
 1. Odaberite **+ Novi projekt** iz navigacijskog izbornika.
 
-    ![Odaberite novi projekt.](../../../../../../translated_images/hr/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Odaberite novi projekt.](../../../../../../translated_images/hr/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Unesite **Ime projekta**. Mora biti jedinstvena vrijednost.
 
-    ![Kreirajte projekt.](../../../../../../translated_images/hr/08-05-create-project.4d97f0372f03375a.png)
+    ![Kreirajte projekt.](../../../../../../translated_images/hr/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Odaberite **Kreiraj projekt**.
 
@@ -620,17 +620,17 @@ Da biste integrirali svoj prilagođeni Phi-3 model s Prompt flow, trebate spremi
 
 1. Odaberite **Endpoints** s lijevog izbornika.
 
-    ![Odaberite endpointse.](../../../../../../translated_images/hr/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Odaberite endpointse.](../../../../../../translated_images/hr/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Odaberite endpoint koji ste kreirali.
 
-    ![Odaberite kreirani endpoint.](../../../../../../translated_images/hr/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Odaberite kreirani endpoint.](../../../../../../translated_images/hr/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Odaberite **Consume** iz navigacijskog izbornika.
 
 1. Kopirajte svoj **REST endpoint** i **Primarni ključ**.
 
-    ![Kopirajte api ključ i uri endpointa.](../../../../../../translated_images/hr/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Kopirajte api ključ i uri endpointa.](../../../../../../translated_images/hr/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Dodajte prilagođenu vezu
 
@@ -642,11 +642,11 @@ Da biste integrirali svoj prilagođeni Phi-3 model s Prompt flow, trebate spremi
 
 1. Odaberite **+ Nova veza**.
 
-    ![Odaberite novu vezu.](../../../../../../translated_images/hr/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Odaberite novu vezu.](../../../../../../translated_images/hr/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Odaberite **Custom keys** iz navigacijskog izbornika.
 
-    ![Odaberite prilagođene ključeve.](../../../../../../translated_images/hr/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Odaberite prilagođene ključeve.](../../../../../../translated_images/hr/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Izvršite sljedeće zadatke:
 
@@ -656,7 +656,7 @@ Da biste integrirali svoj prilagođeni Phi-3 model s Prompt flow, trebate spremi
     - Za naziv ključa, unesite **key** i zalijepite ključ koji ste kopirali iz Azure ML Studia u polje vrijednosti.
     - Nakon dodavanja ključeva, odaberite **je tajna** kako biste spriječili otkrivanje ključa.
 
-    ![Dodajte vezu.](../../../../../../translated_images/hr/08-11-add-connection.785486badb4d2d26.png)
+    ![Dodajte vezu.](../../../../../../translated_images/hr/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Odaberite **Dodaj vezu**.
 
@@ -670,15 +670,15 @@ Dodali ste prilagođenu vezu u Azure AI Foundry. Sada ćemo kreirati Prompt flow
 
 1. Odaberite **+ Kreiraj** iz navigacijskog izbornika.
 
-    ![Odaberite Promptflow.](../../../../../../translated_images/hr/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Odaberite Promptflow.](../../../../../../translated_images/hr/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Odaberite **Chat flow** iz navigacijskog izbornika.
 
-    ![Odaberite chat flow.](../../../../../../translated_images/hr/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Odaberite chat flow.](../../../../../../translated_images/hr/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Unesite **Ime mape** za korištenje.
 
-    ![Unesite ime.](../../../../../../translated_images/hr/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Unesite ime.](../../../../../../translated_images/hr/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Odaberite **Kreiraj**.
 
@@ -715,7 +715,7 @@ Trebate integrirati fino podešeni Phi-3 model u Prompt flow. Međutim, postoje�
 
     - Odaberite **Spremi**.
 
-    ![Odaberite način neobrađene datoteke.](../../../../../../translated_images/hr/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Odaberite način neobrađene datoteke.](../../../../../../translated_images/hr/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Dodajte sljedeći kod u datoteku *integrate_with_promptflow.py* da biste koristili prilagođeni Phi-3 model u Prompt flow-u.
 
@@ -780,14 +780,14 @@ Trebate integrirati fino podešeni Phi-3 model u Prompt flow. Međutim, postoje�
 
     ```
 
-    ![Zalijepite kod prompt flow-a.](../../../../../../translated_images/hr/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Zalijepite kod prompt flow-a.](../../../../../../translated_images/hr/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Za detaljnije informacije o korištenju Prompt flow-a u Azure AI Foundry-u, možete se obratiti dokumentaciji [Prompt flow u Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Odaberite **Chat ulaz**, **Chat izlaz** da omogućite razgovor s vašim modelom.
 
-    ![Ulaz Izlaz.](../../../../../../translated_images/hr/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Ulaz Izlaz.](../../../../../../translated_images/hr/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Sada ste spremni za razgovor s vašim prilagođenim Phi-3 modelom. U sljedećoj vježbi naučit ćete kako započeti Prompt flow i koristiti ga za razgovor s vašim fino podešenim Phi-3 modelom.
 
@@ -795,7 +795,7 @@ Trebate integrirati fino podešeni Phi-3 model u Prompt flow. Međutim, postoje�
 >
 > Rekonstruirani tijek trebao bi izgledati kao na slici ispod:
 >
-> ![Primjer toka.](../../../../../../translated_images/hr/08-18-graph-example.d6457533952e690c.png)
+> ![Primjer toka.](../../../../../../translated_images/hr/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Razgovarajte s vašim prilagođenim Phi-3 modelom
@@ -808,25 +808,25 @@ Sad kad ste fino podesili i integrirali svoj prilagođeni Phi-3 model s Prompt f
 
 1. Odaberite **Pokreni računalne sesije** za pokretanje Prompt flow-a.
 
-    ![Pokreni računsku sesiju.](../../../../../../translated_images/hr/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Pokreni računsku sesiju.](../../../../../../translated_images/hr/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Odaberite **Validiraj i analiziraj unos** za obnovu parametara.
 
-    ![Validiraj unos.](../../../../../../translated_images/hr/09-02-validate-input.317c76ef766361e9.png)
+    ![Validiraj unos.](../../../../../../translated_images/hr/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Odaberite **Vrijednost** za **vezu** u prilagođenu vezu koju ste kreirali. Na primjer, *connection*.
 
-    ![Veza.](../../../../../../translated_images/hr/09-03-select-connection.99bdddb4b1844023.png)
+    ![Veza.](../../../../../../translated_images/hr/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Razgovarajte s vašim prilagođenim modelom
 
 1. Odaberite **Razgovor**.
 
-    ![Odaberite razgovor.](../../../../../../translated_images/hr/09-04-select-chat.61936dce6612a1e6.png)
+    ![Odaberite razgovor.](../../../../../../translated_images/hr/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Evo primjera rezultata: Sada možete razgovarati s vašim prilagođenim Phi-3 modelom. Preporučuje se postavljati pitanja temeljena na podacima korištenima za fino podešavanje.
 
-    ![Razgovor s prompt flow-om.](../../../../../../translated_images/hr/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Razgovor s prompt flow-om.](../../../../../../translated_images/hr/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

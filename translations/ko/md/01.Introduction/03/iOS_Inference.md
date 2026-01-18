@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ONNX Runtime C++ API를 사용하는 생성형 AI 개발에는 Objective-C가 더 호환성이 좋기 때문에 Objective-C를 선택했습니다. 물론 Swift 브리징을 통해 관련 호출을 완료할 수도 있습니다.
 
-![xcode](../../../../../translated_images/ko/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ko/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX 양자화 INT4 모델을 앱 프로젝트에 복사하기**
 
 ONNX 형식의 INT4 양자화 모델을 먼저 다운로드해야 합니다.
 
-![hf](../../../../../translated_images/ko/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ko/hf.6b8504fd88ee48dd.webp)
 
 다운로드 후 Xcode 프로젝트의 Resources 디렉터리에 추가하세요.
 
-![model](../../../../../translated_images/ko/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ko/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllers에 C++ API 추가하기**
 
@@ -121,11 +121,11 @@ ONNX 형식의 INT4 양자화 모델을 먼저 다운로드해야 합니다.
 
 - **a.** 해당 C++ 헤더 파일을 프로젝트에 추가하세요.
 
-  ![Header File](../../../../../translated_images/ko/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ko/head.64cad021ce70a333.webp)
 
 - **b.** Xcode에 `onnxruntime-genai` 동적 라이브러리를 포함시키세요.
 
-  ![Library](../../../../../translated_images/ko/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ko/lib.a4209b9f21ddf344.webp)
 
 - **c.** 테스트용으로 C 샘플 코드를 사용하세요. 추가 기능으로 ChatUI 같은 것도 넣을 수 있습니다.
 
@@ -162,7 +162,7 @@ ONNX 형식의 INT4 양자화 모델을 먼저 다운로드해야 합니다.
 
 설정이 완료되면 애플리케이션을 실행하여 Phi-3-mini 모델 추론 결과를 확인할 수 있습니다.
 
-![Running Result](../../../../../translated_images/ko/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ko/result.326a947a6a2b9c51.webp)
 
 더 많은 샘플 코드와 자세한 설명은 [Phi-3 Mini Samples 저장소](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)를 참고하세요.
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal ന് ശക്തമായ ചിത്രം വായിക്കാനുള്ള കഴിവുകൾ ഉണ്ട്. ചുവടെയുള്ള ഫംഗ്ഷനുകൾ Python ഉപയോഗിച്ച് നടപ്പാക്കാൻ നമുക്ക് ശ്രമിക്കാം. ചിത്രം ഒരു ChatGPT പേജാണ്. 
 
-![ഡെമോ](../../../../../../../translated_images/ml/demo.609a55a7a2b9ed27.png)
+![ഡെമോ](../../../../../../../translated_images/ml/demo.609a55a7a2b9ed27.webp)
 
 ### **സാമ്പിൾ കോഡ്**
 

@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundryn käyttäminen arviointiin**
 
-![aistudo](../../../../../translated_images/fi/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/fi/AIFoundry.9e0b513e999a1c5a.webp)
 
 Miten arvioida generatiivista AI-sovellustasi käyttäen [Azure AI Foundrya](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Olipa kyse yksittäisistä tai monivaiheisista keskusteluista, Azure AI Foundry tarjoaa työkaluja mallin suorituskyvyn ja turvallisuuden arviointiin.
 
-![aistudo](../../../../../translated_images/fi/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/fi/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Miten arvioida generatiivisia AI-sovelluksia Azure AI Foundrylla
 Lisätietoja löydät [Azure AI Foundryn dokumentaatiosta](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

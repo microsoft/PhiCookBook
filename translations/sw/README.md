@@ -34,7 +34,7 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
 2. **Nakili Hifadhi**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Jiunge na Jamii ya Microsoft AI Discord na kutengeneza marafiki na wataalamu wa maendeleo**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![jalada](../../translated_images/sw/cover.eb18d1b9605d754b.png)
+![jalada](../../translated_images/sw/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 Usaidizi wa Lugha Nyingi
 

@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ఈ E2E నమూనా అవలోకనం ఇక్కడ ఉంది.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/te/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/te/00-01-architecture.02fc569e266d468c.webp)
 
 ### విషయ సూచిక
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ అగ్రభాగంలో ఉన్న **search bar** లో *azure machine learning* టైప్ చేసి, కనిపించే ఎంపికల నుండి **Azure Machine Learning**ను ఎంచుకోండి.
 
-    ![Type azure machine learning](../../../../../../translated_images/te/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/te/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. నావిగేషన్ మెనూ నుండి **+ Create** ఎంచుకోండి.
 
 1. నావిగేషన్ మెనూ నుండి **New workspace** ఎంచుకోండి.
 
-    ![Select new workspace](../../../../../../translated_images/te/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/te/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. క్రింది పనులు చేయండి:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ఉపయోగించాల్సిన **Application insights** ఎంచుకోండి (తొడుగులకు కొత్తదాన్ని సృష్టించండి).
     - ఉపయోగించాల్సిన **Container registry** ఎంచుకోండి (తొడుగులకు కొత్తదాన్ని సృష్టించండి).
 
-    ![Fill AZML.](../../../../../../translated_images/te/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/te/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. **Review + Create** ఎంచుకోండి.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ఉపయోగించాల్సిన **Virtual machine family** ఎంచుకోండి. ఉదాహరణకు, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* ఎంచుకోండి, ఇది *Standard_NC24ads_A100_v4* GPUని కలిగి ఉంటుంది.
     - నావిగేషన్ మెనూ నుండి **Request quota** ఎంచుకోండి.
 
-        ![Request quota.](../../../../../../translated_images/te/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/te/01-04-request-quota.3d3670c3221ab834.webp)
 
     - Request quota పేజీ లో, మీరు ఉపయోగించాలనుకునే **New cores limit** నమోదు చేయండి. ఉదాహరణకు, 24.
     - Request quota పేజీలో, GPU కోటా అభ్యర్థించడానికి **Submit** ఎంచుకోండి.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ అగ్రభాగంలో **search bar** లో *managed identities* టైప్ చేసి, కనిపించే ఎంపికల నుండి **Managed Identities**ఎంచుకోండి.
 
-    ![Type managed identities.](../../../../../../translated_images/te/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/te/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. **+ Create** ఎంచుకోండి.
 
-    ![Select create.](../../../../../../translated_images/te/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/te/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. క్రింది పనులు చేయండి:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ఉపయోగించాల్సిన **Resource group** ఎంచుకోండి.
     - **Role** ను **Contributor** గా ఎంచుకోండి.
 
-    ![Fill contributor role.](../../../../../../translated_images/te/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/te/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. **Save** ఎంచుకోండి.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ అగ్రభాగంలో **search bar** లో *storage accounts* టైప్ చేసి, కనిపించే ఎంపికల నుండి **Storage accounts** ఎంచుకోండి.
 
-    ![Type storage accounts.](../../../../../../translated_images/te/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/te/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. మీరు సృష్టించిన Azure Machine Learning వర్క్‌స్పేస్ కు సంబంధించిన స్టోరేజ్ అకౌంట్ ఎంచుకోండి. ఉదాహరణకు, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - నావిగేషన్ మెనూ నుండి **+ Add** ఎంచుకోండి.
     - **Add role assignment** ఎంచుకోండి.
 
-    ![Add role.](../../../../../../translated_images/te/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/te/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. Add role assignment పేజీలో క్రింది పనులు చేయండి:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - మీరు సృష్టించిన Managed Identity ఎంచుకోండి. ఉదాహరణకు, *finetunephi-managedidentity*.
     - Select managed identities పేజీలో, **Select** ఎంచుకోండి.
 
-    ![Select managed identity.](../../../../../../translated_images/te/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/te/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. **Review + assign** ఎంచుకోండి.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. పోర్టల్ పేజీ అగ్రభాగంలో **search bar** లో *container registries* టైప్ చేసి, కనిపించే ఎంపికల నుండి **Container registries** ఎంచుకోండి.
 
-    ![Type container registries.](../../../../../../translated_images/te/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/te/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Azure Machine Learning వర్క్‌స్పేస్ కు సంబంధించిన కంటైనర్ రిజిస్ట్రీ ఎంచుకోండి. ఉదాహరణకు, *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. మీరు సృష్టించిన *finetune-phi* ఫోల్డర్‌ను ఎంపిక చేసుకోండి, ఇది *C:\Users\yourUserName\finetune-phi*లో ఉంటుంది.
 
-    ![ప్రాజెక్ట్ ఫోల్డర్ తెరవడం.](../../../../../../translated_images/te/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![ప్రాజెక్ట్ ఫోల్డర్ తెరవడం.](../../../../../../translated_images/te/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. Visual Studio Code ఎడమ ప్యాన్‌లో రైట్-క్లిక్ చేసి **New File** ఎంపిక చేసుకుని *download_dataset.py* అనే కొత్త ఫైల్ సృష్టించండి.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Visual Studio Code ఎడమ ప్యాన్‌లో రైట్-క్లిక్ చేసి **New File** ఎంపిక చేసుకుని *deploy_model.py* అనే కొత్త ఫైల్ సృష్టించండి.
 
-    ![కొత్త ఫైల్ సృష్టించడం.](../../../../../../translated_images/te/01-13-create-new-file.c17c150fff384a39.png)
+    ![కొత్త ఫైల్ సృష్టించడం.](../../../../../../translated_images/te/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. Visual Studio Code ఎడమ ప్యాన్‌లో రైట్-క్లిక్ చేసి **New Folder**ని ఎంపిక చేసుకుని *finetuning_dir* అనే కొత్త ఫోల్‌డర్ సృష్టించండి.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - మీరు ఉపయోగిస్తున్న Azure Subscriptionని సెలెక్ట్ చేయండి.
     - మీ Subscription IDని కాపీ చేసి *config.py* ఫైల్‌లో పేస్ట్ చేయండి.
 
-    ![Subscription ID కనుగొనండి.](../../../../../../translated_images/te/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Subscription ID కనుగొనండి.](../../../../../../translated_images/te/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Azure Workspace Name జోడించడానికి క్రింది కార్యాచరణలు చేయండి:
 
     - మీరు సృష్టించిన Azure Machine Learning రీసోర్స్‌కి వెళ్లండి.
     - మీ అకౌంట్ పేరును కాపీ చేసి *config.py* ఫైల్‌లో పేస్ట్ చేయండి.
 
-    ![Azure Machine Learning పేరు కనుగొనండి.](../../../../../../translated_images/te/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Azure Machine Learning పేరు కనుగొనండి.](../../../../../../translated_images/te/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Azure Resource Group Name జోడించడానికి క్రింది కార్యాచరణలు చేయండి:
 
     - మీరు సృష్టించిన Azure Machine Learning రీసోర్స్‌కి వెళ్లండి.
     - మీ Azure Resource Group Nameను కాపీ చేసి *config.py* ఫైల్‌లో పేస్ట్ చేయండి.
 
-    ![Resource Group పేరు కనుగొనండి.](../../../../../../translated_images/te/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Resource Group పేరు కనుగొనండి.](../../../../../../translated_images/te/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Azure Managed Identity పేరు జోడించడానికి క్రింది కార్యకలాపాలు చేయండి:
 
     - మీరు సృష్టించిన Managed Identities రీసోర్స్‌కి వెళ్లండి.
     - మీ Azure Managed Identity పేరు కాపీ చేసి *config.py* ఫైల్‌లో పేస్ట్ చేయండి.
 
-    ![UAI కనుగొనండి.](../../../../../../translated_images/te/01-17-find-uai.3529464f53499827.png)
+    ![UAI కనుగొనండి.](../../../../../../translated_images/te/01-17-find-uai.3529464f53499827.webp)
 
 ### ఫైన్-ట్యూనింగ్ కోసం dataset సిద్ధం చేయండి
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ఉపయోగించవలసిన Azure subscription ను ఎంపిక చేసుకోండి.
 
-    ![Resource group పేరు కనుగొనండి.](../../../../../../translated_images/te/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Resource group పేరు కనుగొనండి.](../../../../../../translated_images/te/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ఈ వ్యాయామంలో, మీరు Azure Machine Learning ఉపయోగించి విజయవంతంగా Phi-3 మోడల్‌ను ఫైన్-ట్యూన్ చేసారు. *setup_ml.py* ను రన్ చేయడం ద్వారా మీరు Azure Machine Learning పరిసరాన్ని ఏర్పాటు చేసి *fine_tune.py* లో నిర్వచించిన ఫైన్-ట్యూనింగ్ ప్రక్రియను ప్రారంభించారు. దయచేసి గమనించండి, ఫైన్-ట్యూనింగ్ ప్రక్రియ కొంత సమయం తీసుకోవచ్చు. `python setup_ml.py` కమాండును రన్ చేసిన తర్వాత, ప్రక్రియ ముగిసేవరకు వేచిచూడాలి. టెర్మినల్‌లో ఇచ్చిన Azure Machine Learning పోర్టల్ లింకు ద్వారా మీరు ఫైన్-ట్యూనింగ్ జాబ్ స్థితిని మానిటర్ చేయవచ్చు.
 
-    ![ఫైన్-ట్యూనింగ్ జాబ్ చూడండి.](../../../../../../translated_images/te/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![ఫైన్-ట్యూనింగ్ జాబ్ చూడండి.](../../../../../../translated_images/te/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### ఫైన్-ట్యూన్ చేసిన మోడల్‌ను డిప్లాయ్ చేయండి
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ఎడమ వైపు టాబ్ నుండి **Endpoints**ను ఎంచుకోండి.
 
-    ![Select endpoints.](../../../../../../translated_images/te/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/te/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. మీరు సృష్టించిన ఎండ్‌పాయింట్‌ను ఎంచుకోండి.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/te/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/te/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. ఈ పేజీలో మీరు డిప్లాయ్‌మెంట్ ప్రక్రియలో సృష్టించిన ఎండ్‌పాయింట్లను నిర్వహించవచ్చు.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. మీ **REST endpoint** ను కాపీ చేసి *config.py* ఫైల్‌లో `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ను మీ **REST endpoint** తో మార్చండి.
 1. మీ **Primary key** ను కాపీ చేసి *config.py* లో `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ను మీ **Primary key** తో మార్చండి.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/te/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/te/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### *flow.dag.yml* ఫైల్‌లో కోడ్ జోడించండి
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ఫలితాల ఉదాహరణ ఇక్కడ ఉంది: ఇప్పుడు మీరు మీ కస్టమ్ Phi-3 మోడల్‌తో చాట్ చేయవచ్చు. ఫైన్-ట్యూనింగ్ కోసం ఉపయోగించిన డేటా ఆధారంగా ప్రశ్నలు అడగడం సిఫార్సు చేయబడింది.
 
-    ![Prompt flow example.](../../../../../../translated_images/te/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/te/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

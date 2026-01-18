@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) は、機械学習のライフサイクル全体を管理するために設計されたオープンソースプラットフォームです。
 
-![MLFlow](../../../../../../translated_images/ja/MlFlowmlops.ed16f47809d74d9a.png)
+![MLFlow](../../../../../../translated_images/ja/MlFlowmlops.ed16f47809d74d9a.webp)
 
 MLFlowは、実験、再現性、デプロイメント、中央のモデルレジストリを含むMLライフサイクルの管理に使用されます。現在、MLflowは4つのコンポーネントを提供しています。
 
@@ -22,7 +22,7 @@ MLFlowは、実験、再現性、デプロイメント、中央のモデルレ�
 
 実験の追跡、コードの再現可能な実行へのパッケージ化、モデルの共有とデプロイの機能を備えています。MLFlowはDatabricksに統合されており、さまざまなMLライブラリをサポートしているため、ライブラリに依存しません。REST APIとCLIを提供しているため、任意の機械学習ライブラリやプログラミング言語で利用可能です。
 
-![MLFlow](../../../../../../translated_images/ja/MLflow2.5a22eb718f6311d1.png)
+![MLFlow](../../../../../../translated_images/ja/MLflow2.5a22eb718f6311d1.webp)
 
 MLFlowの主な特徴は以下の通りです：
 
@@ -37,7 +37,7 @@ MLFlowは、データ準備、モデルの登録と管理、実行用モデル�
 
 このE2Eサンプルでは、Phi-3小型言語モデル（SLM）をラップする2つの異なる方法を示し、その後ローカルまたはクラウド（例：Azure Machine Learningワークスペース）でMLFlowモデルとして実行する方法を紹介します。
 
-![MLFlow](../../../../../../translated_images/ja/MlFlow1.fd745e47dbd3fecf.png)
+![MLFlow](../../../../../../translated_images/ja/MlFlow1.fd745e47dbd3fecf.webp)
 
 | プロジェクト | 説明 | 場所 |
 | ------------ | ----------- | -------- |

@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Executar o seu código Android**
 
-![demo](../../../../../../translated_images/pt/demo.06d5a4246f057d1b.png)
+![demo](../../../../../../translated_images/pt/demo.06d5a4246f057d1b.webp)
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

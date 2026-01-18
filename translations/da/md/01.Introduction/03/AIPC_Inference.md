@@ -28,9 +28,9 @@ Sammenfattende er NPUs de matematiske eksperter, der giver AI-beregninger et boo
 
 Intel® NPU-enheden er en AI-inferensaccelerator integreret med Intel klient-CPU’er, startende fra Intel® Core™ Ultra generationen af CPU’er (tidligere kendt som Meteor Lake). Den muliggør energieffektiv udførelse af kunstige neurale netværksopgaver.
 
-![Latency](../../../../../translated_images/da/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/da/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/da/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/da/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Når koden kører, kan vi se NPU’ens status via Jobliste (Task Manager)
 
-![NPU](../../../../../translated_images/da/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/da/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Eksempler*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Dette er kørselsresultatet
 
-![DML](../../../../../translated_images/da/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/da/aipc_DML.52a44180393ab491.webp)
 
 ***Eksempler*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 det konverterede format, som dette
 
-![openvino_convert](../../../../../translated_images/da/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/da/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Indlæs modelstier (model_dir), relaterede konfigurationer (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) og hardwareaccelererede enheder (GPU.0) gennem OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Når koden kører, kan vi se GPU’ens status via Jobliste (Task Manager)
 
-![openvino_gpu](../../../../../translated_images/da/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/da/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Eksempler*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

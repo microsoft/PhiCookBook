@@ -40,7 +40,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ফলাফল (আমার পরিবেশ Apple M1 Max, 64GB) হলো
 
-![Terminal](../../../../../translated_images/bn/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/bn/01.5cf57df8f7407cf9.webp)
 
 ### **৩. টার্মিনালে MLX দিয়ে Phi-3-mini কোয়ান্টাইজ করা**
 
@@ -64,11 +64,11 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ফলাফল হলো
 
-![INT4](../../../../../translated_images/bn/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/bn/02.7b188681a8eadbc1.webp)
 
 ### **৪. Jupyter Notebook এ MLX দিয়ে Phi-3-mini চালানো**
 
-![Notebook](../../../../../translated_images/bn/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/bn/03.b9705a3a5aaa89f9.webp)
 
 ***Note:*** এই স্যাম্পলটি পড়ুন [এই লিঙ্কে ক্লিক করুন](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

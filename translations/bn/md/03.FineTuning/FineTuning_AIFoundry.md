@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **সুবিধা:** ফাইন-টিউনিং আসলে কীভাবে হয় – কি আমাকে নিজে কোড লিখতে হবে? নিজস্ব কম্পিউটিং আনতে হবে?
 - **নিরাপত্তা:** ফাইন-টিউন করা মডেলগুলোতে নিরাপত্তা ঝুঁকি থাকে – কি কোনো সুরক্ষা ব্যবস্থা আছে যাতে অনিচ্ছাকৃত ক্ষতি থেকে রক্ষা পাওয়া যায়?
 
-![AIFoundry Models](../../../../translated_images/bn/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/bn/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## ফাইন-টিউনিংয়ের প্রস্তুতি
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry আপনাকে বড় ভাষা মডেলগুলোকে আপনার নিজস্ব ডেটাসেট অনুযায়ী মানিয়ে নিতে দেয়, যাকে ফাইন-টিউনিং বলা হয়। ফাইন-টিউনিং বিশেষ কাজ এবং অ্যাপ্লিকেশনের জন্য কাস্টমাইজেশন ও অপ্টিমাইজেশন সম্ভব করে, যা উন্নত পারফরম্যান্স, খরচ সাশ্রয়, কম লেটেন্সি এবং ব্যক্তিগতকৃত আউটপুট নিশ্চিত করে।
 
-![Finetune AI Foundry](../../../../translated_images/bn/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/bn/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### নতুন প্রকল্প তৈরি করুন
 
@@ -79,14 +79,14 @@ Azure AI Foundry আপনাকে বড় ভাষা মডেলগুলো
 
 2. Azure AI Foundry-তে নতুন প্রকল্প তৈরি করতে **+New project** নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/bn/select-new-project.cd31c0404088d7a3.webp)
 
 3. নিম্নলিখিত কাজগুলো করুন:
 
     - প্রকল্পের **Hub name** দিন। এটি অবশ্যই ইউনিক হতে হবে।
     - ব্যবহার করার **Hub** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
 
-    ![FineTuneSelect](../../../../translated_images/bn/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/bn/create-project.ca3b71298b90e420.webp)
 
 4. নতুন হাব তৈরি করতে নিম্নলিখিত কাজগুলো করুন:
 
@@ -97,7 +97,7 @@ Azure AI Foundry আপনাকে বড় ভাষা মডেলগুলো
     - ব্যবহার করার **Connect Azure AI Services** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
     - **Connect Azure AI Search** এ **Skip connecting** নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/bn/create-hub.49e53d235e80779e.webp)
 
 5. **Next** নির্বাচন করুন।
 6. **Create a project** নির্বাচন করুন।
@@ -115,15 +115,15 @@ Azure AI Foundry আপনাকে বড় ভাষা মডেলগুলো
 
 2. **search bar**-এ *phi-3* টাইপ করুন এবং আপনি যে phi-3 মডেলটি ব্যবহার করতে চান তা নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/bn/select-model.60ef2d4a6a3cec57.webp)
 
 3. **Fine-tune** নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/bn/select-finetune.a976213b543dd9d8.webp)
 
 4. **Fine-tuned model name** লিখুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/bn/finetune1.c2b39463f0d34148.webp)
 
 5. **Next** নির্বাচন করুন।
 
@@ -132,13 +132,13 @@ Azure AI Foundry আপনাকে বড় ভাষা মডেলগুলো
     - **task type** হিসেবে **Chat completion** নির্বাচন করুন।
     - আপনি যে **Training data** ব্যবহার করতে চান তা নির্বাচন করুন। Azure AI Foundry এর ডেটা থেকে বা আপনার লোকাল পরিবেশ থেকে আপলোড করতে পারেন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/bn/finetune2.43cb099b1a94442d.webp)
 
 7. **Next** নির্বাচন করুন।
 
 8. আপনি যে **Validation data** ব্যবহার করতে চান তা আপলোড করুন, অথবা **Automatic split of training data** নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/bn/finetune3.fd96121b67dcdd92.webp)
 
 9. **Next** নির্বাচন করুন।
 
@@ -148,15 +148,15 @@ Azure AI Foundry আপনাকে বড় ভাষা মডেলগুলো
     - আপনি যে **Learning rate** ব্যবহার করতে চান তা নির্বাচন করুন।
     - আপনি যে **Epochs** ব্যবহার করতে চান তা নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/bn/finetune4.e18b80ffccb5834a.webp)
 
 11. ফাইন-টিউনিং প্রক্রিয়া শুরু করতে **Submit** নির্বাচন করুন।
 
-    ![FineTuneSelect](../../../../translated_images/bn/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/bn/select-submit.0a3802d581bac271.webp)
 
 12. আপনার মডেল ফাইন-টিউন হয়ে গেলে, স্ট্যাটাস **Completed** হিসেবে দেখাবে, নিচের ছবির মতো। এখন আপনি মডেলটি ডিপ্লয় করতে পারেন এবং আপনার নিজস্ব অ্যাপ্লিকেশন, প্লেগ্রাউন্ড, বা প্রম্পট ফ্লোতে ব্যবহার করতে পারেন। আরও তথ্যের জন্য দেখুন [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)।
 
-    ![FineTuneSelect](../../../../translated_images/bn/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/bn/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > Phi-3 ফাইন-টিউনিং সম্পর্কে বিস্তারিত জানতে, দেখুন [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)।

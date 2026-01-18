@@ -23,7 +23,7 @@ V tomto E2E příkladu se naučíte, jak doladit model Phi-3 a integrovat ho s P
 
 Zde je přehled tohoto E2E příkladu.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/cs/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/cs/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Obsah
 
@@ -48,13 +48,13 @@ Zde je přehled tohoto E2E příkladu.
 
 1. Napište do **vyhledávacího pole** v horní části portálu „azure machine learning“ a ze zobrazených možností vyberte **Azure Machine Learning**.
 
-    ![Napište azure machine learning.](../../../../../../translated_images/cs/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Napište azure machine learning.](../../../../../../translated_images/cs/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Ze navigačního menu vyberte **+ Create**.
 
 3. Ze navigačního menu vyberte **New workspace**.
 
-    ![Vyberte new workspace.](../../../../../../translated_images/cs/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Vyberte new workspace.](../../../../../../translated_images/cs/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Proveďte následující kroky:
 
@@ -67,7 +67,7 @@ Zde je přehled tohoto E2E příkladu.
     - Vyberte **Application insights** (pokud nemáte, vytvořte nový).
     - Vyberte **Container registry** (pokud nemáte, vytvořte nový).
 
-    ![Vyplňte azure machine learning.](../../../../../../translated_images/cs/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Vyplňte azure machine learning.](../../../../../../translated_images/cs/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Klikněte na **Review + Create**.
 
@@ -90,7 +90,7 @@ V tomto tutoriálu se naučíte, jak doladit a nasadit model Phi-3 za pomoci GPU
     - Vyberte **Virtual machine family**, např. **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, která zahrnuje GPU *Standard_NC24ads_A100_v4*.
     - Ze navigačního menu vyberte **Request quota**.
 
-        ![Žádost o kvótu.](../../../../../../translated_images/cs/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Žádost o kvótu.](../../../../../../translated_images/cs/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Na stránce Request quota zadejte požadovaný **New cores limit**, např. 24.
     - Klikněte na **Submit** pro odeslání žádosti o kvótu.
@@ -111,11 +111,11 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
 
 1. Napište do **vyhledávacího pole** „managed identities“ a ze zobrazených možností vyberte **Managed Identities**.
 
-    ![Napište managed identities.](../../../../../../translated_images/cs/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Napište managed identities.](../../../../../../translated_images/cs/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Klikněte na **+ Create**.
 
-    ![Klikněte na create.](../../../../../../translated_images/cs/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Klikněte na create.](../../../../../../translated_images/cs/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Proveďte následující kroky:
 
@@ -124,7 +124,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
     - Vyberte **Region**, který chcete použít.
     - Zadejte **Name**. Musí být jedinečný.
 
-    ![Vyberte create.](../../../../../../translated_images/cs/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Vyberte create.](../../../../../../translated_images/cs/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Klikněte na **Review + create**.
 
@@ -144,7 +144,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
     - Vyberte **Resource group**, kterou chcete použít.
     - Vyberte roli **Contributor**.
 
-    ![Vyplňte roli contributor.](../../../../../../translated_images/cs/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Vyplňte roli contributor.](../../../../../../translated_images/cs/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Klikněte na **Save**.
 
@@ -152,7 +152,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
 
 1. Napište do **vyhledávacího pole** „storage accounts“ a vyberte **Storage accounts**.
 
-    ![Napište storage accounts.](../../../../../../translated_images/cs/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Napište storage accounts.](../../../../../../translated_images/cs/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Vyberte storage account přidružený k Azure Machine Learning workspace, který jste vytvořili, např. *finetunephistorage*.
 
@@ -163,7 +163,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
     - Klikněte na **+ Add** v menu.
     - Klikněte na **Add role assignment**.
 
-    ![Přidání role.](../../../../../../translated_images/cs/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Přidání role.](../../../../../../translated_images/cs/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Na stránce Add role assignment proveďte:
 
@@ -176,7 +176,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
     - Vyberte spravovanou identitu, kterou jste vytvořili, např. *finetunephi-managedidentity*.
     - Klikněte na **Select**.
 
-    ![Vyberte spravovanou identitu.](../../../../../../translated_images/cs/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Vyberte spravovanou identitu.](../../../../../../translated_images/cs/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Klikněte na **Review + assign**.
 
@@ -184,7 +184,7 @@ Pro doladění a nasazení modelů musíte nejprve vytvořit Uživatelsky přiř
 
 1. Napište do **vyhledávacího pole** „container registries“ a vyberte **Container registries**.
 
-    ![Napište container registries.](../../../../../../translated_images/cs/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Napište container registries.](../../../../../../translated_images/cs/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Vyberte container registry přidružený k Azure Machine Learning workspace, např. *finetunephicontainerregistry*.
 
@@ -275,11 +275,11 @@ V tomto cvičení:
 
 1. Vyberte složku *finetune-phi*, kterou jste vytvořili, která se nachází na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Vyberte složku, kterou jste vytvořili.](../../../../../../translated_images/cs/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Vyberte složku, kterou jste vytvořili.](../../../../../../translated_images/cs/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. V levém panelu Visual Studio Code klikněte pravým tlačítkem a vyberte **New File** pro vytvoření nového souboru s názvem *download_dataset.py*.
 
-    ![Vytvořte nový soubor.](../../../../../../translated_images/cs/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Vytvořte nový soubor.](../../../../../../translated_images/cs/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Příprava datové sady pro doladění
 
@@ -391,7 +391,7 @@ V tomto cvičení provedete:
 
 1. Vyberte **+ New**.
 
-    ![Vyberte výpočetní prostředky.](../../../../../../translated_images/cs/06-01-select-compute.a29cff290b480252.png)
+    ![Vyberte výpočetní prostředky.](../../../../../../translated_images/cs/06-01-select-compute.a29cff290b480252.webp)
 
 1. Proveďte následující úkony:
 
@@ -401,7 +401,7 @@ V tomto cvičení provedete:
     - Filtr pro velikost virtuálního stroje nastavte na **Select from all options**.
     - Vyberte velikost virtuálního stroje **Standard_NC24ads_A100_v4**.
 
-    ![Vytvoření clusteru.](../../../../../../translated_images/cs/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Vytvoření clusteru.](../../../../../../translated_images/cs/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Klikněte na **Next**.
 
@@ -412,7 +412,7 @@ V tomto cvičení provedete:
     - Nastavte **Maximum number of nodes** na **1**.
     - Nastavte **Idle seconds before scale down** na **120**.
 
-    ![Vytvoření clusteru.](../../../../../../translated_images/cs/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Vytvoření clusteru.](../../../../../../translated_images/cs/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Vyberte **Create**.
 
@@ -422,18 +422,18 @@ V tomto cvičení provedete:
 
 1. Vyberte Azure Machine Learning workspace, které jste vytvořili.
 
-    ![Vyberte workspace, které jste vytvořili.](../../../../../../translated_images/cs/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Vyberte workspace, které jste vytvořili.](../../../../../../translated_images/cs/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Proveďte následující úkony:
 
     - Vyberte z levé záložky **Model catalog**.
     - Do **vyhledávacího pole** napište *phi-3-mini-4k* a z možností vyberte **Phi-3-mini-4k-instruct**.
 
-    ![Napište phi-3-mini-4k.](../../../../../../translated_images/cs/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Napište phi-3-mini-4k.](../../../../../../translated_images/cs/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Vyberte v navigačním menu **Fine-tune**.
 
-    ![Vyberte doladění.](../../../../../../translated_images/cs/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Vyberte doladění.](../../../../../../translated_images/cs/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Proveďte následující úkony:
 
@@ -442,7 +442,7 @@ V tomto cvičení provedete:
     - Typ nahrávání validačních dat nastavte na **Provide different validation data**.
     - Vyberte **+ Select data** pro nahrání **Validation data**.
 
-    ![Vyplňte stránku doladění.](../../../../../../translated_images/cs/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Vyplňte stránku doladění.](../../../../../../translated_images/cs/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -452,7 +452,7 @@ V tomto cvičení provedete:
 
 1. V tomto cvičení jste úspěšně doladili model Phi-3 pomocí Azure Machine Learning. Pamatujte, že proces doladění může trvat značnou dobu. Po spuštění jobu doladění je potřeba počkat na jeho dokončení. Stav doladění můžete sledovat na kartě Jobs v levém menu vašeho Azure Machine Learning Workspace. V dalším kroku nasadíte doladěný model a integrujete ho s Prompt flow.
 
-    ![Zobrazení doladění.](../../../../../../translated_images/cs/06-08-output.2bd32e59930672b1.png)
+    ![Zobrazení doladění.](../../../../../../translated_images/cs/06-08-output.2bd32e59930672b1.webp)
 
 ### Nasazení doladěného modelu Phi-3
 
@@ -470,17 +470,17 @@ V tomto cvičení provedete:
 
 1. Vyberte Azure Machine Learning workspace, které jste vytvořili.
 
-    ![Vyberte workspace, které jste vytvořili.](../../../../../../translated_images/cs/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Vyberte workspace, které jste vytvořili.](../../../../../../translated_images/cs/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Vyberte z levé záložky **Models**.
 1. Vyberte **+ Register**.
 1. Vyberte **From a job output**.
 
-    ![Registrace modelu.](../../../../../../translated_images/cs/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Registrace modelu.](../../../../../../translated_images/cs/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Vyberte job, který jste vytvořili.
 
-    ![Vyberte job.](../../../../../../translated_images/cs/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Vyberte job.](../../../../../../translated_images/cs/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Vyberte **Next**.
 
@@ -488,17 +488,17 @@ V tomto cvičení provedete:
 
 1. Ujistěte se, že je zaškrtnutá položka **Job output**, měla by být vybrána automaticky.
 
-    ![Vyberte výstup.](../../../../../../translated_images/cs/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Vyberte výstup.](../../../../../../translated_images/cs/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Vyberte **Next**.
 
 3. Vyberte **Register**.
 
-    ![Vyberte registraci.](../../../../../../translated_images/cs/07-04-register.fd82a3b293060bc7.png)
+    ![Vyberte registraci.](../../../../../../translated_images/cs/07-04-register.fd82a3b293060bc7.webp)
 
 4. Registrovaný model si můžete zobrazit v menu **Models** na levé straně.
 
-    ![Registrovaný model.](../../../../../../translated_images/cs/07-05-registered-model.7db9775f58dfd591.png)
+    ![Registrovaný model.](../../../../../../translated_images/cs/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Nasazení doladěného modelu
 
@@ -508,13 +508,13 @@ V tomto cvičení provedete:
 
 1. Vyberte z navigačního menu **Real-time endpoints**.
 
-    ![Vytvoření endpointu.](../../../../../../translated_images/cs/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Vytvoření endpointu.](../../../../../../translated_images/cs/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Vyberte **Create**.
 
 1. Vyberte registrovaný model, který jste vytvořili.
 
-    ![Vyberte registrovaný model.](../../../../../../translated_images/cs/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Vyberte registrovaný model.](../../../../../../translated_images/cs/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Vyberte **Select**.
 
@@ -526,7 +526,7 @@ V tomto cvičení provedete:
     - Zadejte **Endpoint name**. Musí být jedinečný.
     - Zadejte **Deployment name**. Musí být jedinečný.
 
-    ![Vyplňte nastavení nasazení.](../../../../../../translated_images/cs/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Vyplňte nastavení nasazení.](../../../../../../translated_images/cs/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Klikněte na **Deploy**.
 
@@ -542,14 +542,14 @@ V tomto cvičení provedete:
 
 1. Vyberte endpoint, který jste vytvořili.
 
-    ![Vyberte endpointy](../../../../../../translated_images/cs/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Vyberte endpointy](../../../../../../translated_images/cs/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. Na této stránce můžete spravovat endpointy během procesu nasazení.
 
 > [!NOTE]
 > Jakmile je nasazení dokončeno, ujistěte se, že **Live traffic** je nastaven na **100 %**. Pokud není, vyberte **Update traffic** pro úpravu nastavení provozu. Upozorňujeme, že model nelze testovat, pokud je provoz nastaven na 0 %.
 >
-> ![Nastavení provozu.](../../../../../../translated_images/cs/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Nastavení provozu.](../../../../../../translated_images/cs/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Scénář 3: Integrace s Prompt flow a chat s vlastním modelem v Azure AI Foundry
@@ -578,7 +578,7 @@ Nejprve musíte vytvořit Hub, než vytvoříte Projekt. Hub funguje jako Resour
 1. Vyberte z levé záložky **All hubs**.
 
 1. Vyberte z navigačního menu **+ New hub**.
-    ![Vytvořit hub.](../../../../../../translated_images/cs/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Vytvořit hub.](../../../../../../translated_images/cs/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Proveďte následující úkoly:
 
@@ -589,7 +589,7 @@ Nejprve musíte vytvořit Hub, než vytvoříte Projekt. Hub funguje jako Resour
     - Vyberte **Připojit Azure AI služby**, které chcete použít (v případě potřeby vytvořte nové).
     - Vyberte **Připojit Azure AI vyhledávání** a zvolte **Přeskočit připojení**.
 
-    ![Vyplnit hub.](../../../../../../translated_images/cs/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Vyplnit hub.](../../../../../../translated_images/cs/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Vyberte **Další**.
 
@@ -599,11 +599,11 @@ Nejprve musíte vytvořit Hub, než vytvoříte Projekt. Hub funguje jako Resour
 
 1. Vyberte **+ Nový projekt** v navigačním menu.
 
-    ![Vybrat nový projekt.](../../../../../../translated_images/cs/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Vybrat nový projekt.](../../../../../../translated_images/cs/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Zadejte **Název projektu**. Musí to být jedinečná hodnota.
 
-    ![Vytvořit projekt.](../../../../../../translated_images/cs/08-05-create-project.4d97f0372f03375a.png)
+    ![Vytvořit projekt.](../../../../../../translated_images/cs/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Vyberte **Vytvořit projekt**.
 
@@ -619,17 +619,17 @@ Pro integraci vašeho vlastní modelu Phi-3 s Prompt flow je potřeba uložit en
 
 1. Vyberte **Endpoints** na levém panelu.
 
-    ![Vybrat endpoints.](../../../../../../translated_images/cs/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Vybrat endpoints.](../../../../../../translated_images/cs/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Vyberte endpoint, který jste vytvořili.
 
-    ![Vybrat endpoint.](../../../../../../translated_images/cs/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Vybrat endpoint.](../../../../../../translated_images/cs/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Vyberte **Consume** v navigačním menu.
 
 1. Zkopírujte svůj **REST endpoint** a **Primární klíč**.
 
-    ![Zkopírovat api klíč a endpoint uri.](../../../../../../translated_images/cs/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Zkopírovat api klíč a endpoint uri.](../../../../../../translated_images/cs/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Přidejte vlastní připojení
 
@@ -641,11 +641,11 @@ Pro integraci vašeho vlastní modelu Phi-3 s Prompt flow je potřeba uložit en
 
 1. Vyberte **+ Nové připojení**.
 
-    ![Vybrat nové připojení.](../../../../../../translated_images/cs/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Vybrat nové připojení.](../../../../../../translated_images/cs/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Vyberte **Vlastní klíče** v navigačním menu.
 
-    ![Vybrat vlastní klíče.](../../../../../../translated_images/cs/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Vybrat vlastní klíče.](../../../../../../translated_images/cs/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Proveďte následující úkoly:
 
@@ -655,7 +655,7 @@ Pro integraci vašeho vlastní modelu Phi-3 s Prompt flow je potřeba uložit en
     - Pro název klíče zadejte **key** a vložte klíč, který jste zkopírovali z Azure ML Studia, do pole hodnoty.
     - Po přidání klíčů vyberte **je tajný** pro zabránění zveřejnění klíče.
 
-    ![Přidat připojení.](../../../../../../translated_images/cs/08-11-add-connection.785486badb4d2d26.png)
+    ![Přidat připojení.](../../../../../../translated_images/cs/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Vyberte **Přidat připojení**.
 
@@ -669,15 +669,15 @@ Přidali jste vlastní připojení v Azure AI Foundry. Nyní vytvoříme Prompt 
 
 1. Vyberte **+ Vytvořit** v navigačním menu.
 
-    ![Vybrat Promptflow.](../../../../../../translated_images/cs/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Vybrat Promptflow.](../../../../../../translated_images/cs/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Vyberte **Chat flow** v navigačním menu.
 
-    ![Vybrat chat flow.](../../../../../../translated_images/cs/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Vybrat chat flow.](../../../../../../translated_images/cs/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Zadejte **Název složky**, kterou chcete použít.
 
-    ![Zadat název.](../../../../../../translated_images/cs/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Zadat název.](../../../../../../translated_images/cs/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Vyberte **Vytvořit**.
 
@@ -714,7 +714,7 @@ Musíte integrovat doladěný model Phi-3 do Prompt flow. Nicméně existující
 
     - Vyberte **Uložit**.
 
-    ![Vybrat režim surového souboru.](../../../../../../translated_images/cs/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Vybrat režim surového souboru.](../../../../../../translated_images/cs/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Přidejte následující kód do souboru *integrate_with_promptflow.py* pro použití vlastního modelu Phi-3 v Prompt flow.
 
@@ -779,14 +779,14 @@ Musíte integrovat doladěný model Phi-3 do Prompt flow. Nicméně existující
 
     ```
 
-    ![Vložit kód Prompt flow.](../../../../../../translated_images/cs/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Vložit kód Prompt flow.](../../../../../../translated_images/cs/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Pro podrobnější informace o používání Prompt flow v Azure AI Foundry můžete nahlédnout do [Prompt flow v Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Vyberte **Chat vstup**, **Chat výstup** pro povolení chatu s vaším modelem.
 
-    ![Vstup Výstup.](../../../../../../translated_images/cs/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Vstup Výstup.](../../../../../../translated_images/cs/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Nyní jste připraveni chatovat se svým vlastním modelem Phi-3. V následujícím cvičení se naučíte, jak Prompt flow spustit a použít ho pro chat s vaším doladěným modelem Phi-3.
 
@@ -794,7 +794,7 @@ Musíte integrovat doladěný model Phi-3 do Prompt flow. Nicméně existující
 >
 > Přestavěný tok by měl vypadat takto:
 >
-> ![Příklad toku.](../../../../../../translated_images/cs/08-18-graph-example.d6457533952e690c.png)
+> ![Příklad toku.](../../../../../../translated_images/cs/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Chatování s vlastním modelem Phi-3
@@ -807,25 +807,25 @@ Nyní, když jste doladili a integrovali svůj vlastní model Phi-3 s Prompt flo
 
 1. Vyberte **Spustit výpočetní sezení** pro spuštění Prompt flow.
 
-    ![Spustit výpočetní sezení.](../../../../../../translated_images/cs/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Spustit výpočetní sezení.](../../../../../../translated_images/cs/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Vyberte **Ověřit a analyzovat vstup** pro obnovení parametrů.
 
-    ![Ověřit vstup.](../../../../../../translated_images/cs/09-02-validate-input.317c76ef766361e9.png)
+    ![Ověřit vstup.](../../../../../../translated_images/cs/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Vyberte **Hodnotu** u **připojení** k vlastnímu připojení, které jste vytvořili. Například *connection*.
 
-    ![Připojení.](../../../../../../translated_images/cs/09-03-select-connection.99bdddb4b1844023.png)
+    ![Připojení.](../../../../../../translated_images/cs/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Chatovat s vlastním modelem
 
 1. Vyberte **Chat**.
 
-    ![Vybrat chat.](../../../../../../translated_images/cs/09-04-select-chat.61936dce6612a1e6.png)
+    ![Vybrat chat.](../../../../../../translated_images/cs/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Zde je příklad výsledků: nyní můžete chatovat se svým vlastním modelem Phi-3. Doporučuje se klást otázky založené na datech použitých pro doladění.
 
-    ![Chat s prompt flow.](../../../../../../translated_images/cs/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat s prompt flow.](../../../../../../translated_images/cs/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

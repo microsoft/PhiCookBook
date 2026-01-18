@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG je kombinácia vyhľadávania dát a generovania textu. Štruktúrované aj neštruktúrované dáta v podniku sú uložené vo vektorovej databáze. Pri hľadaní relevantného obsahu sa nájde zodpovedajúce zhrnutie a obsah, ktoré tvoria kontext, a schopnosť dopĺňania textu modelom LLM/SLM sa využije na generovanie výsledného textu.
 
 ## Proces RAG
-![FinetuningvsRAG](../../../../translated_images/sk/rag.2014adc59e6f6007.png)
+![FinetuningvsRAG](../../../../translated_images/sk/rag.2014adc59e6f6007.webp)
 
 ## Doladenie
 Doladenie je založené na zlepšení konkrétneho modelu. Nie je potrebné začínať od algoritmu modelu, ale je potrebné neustále zhromažďovať dáta. Ak chcete presnejšiu terminológiu a jazykové vyjadrenie v priemyselných aplikáciách, doladenie je lepšia voľba. Ak sa však vaše dáta často menia, doladenie môže byť komplikované.

@@ -33,33 +33,33 @@ Windows GPU का लागि ONNX Runtime GenAI सेटअप गर्न 
 
 1. Prompt flow VS Code Extension इन्स्टल गर्नुहोस्
 
-![pfvscode](../../../../../../translated_images/ne/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/ne/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Prompt flow VS Code Extension इन्स्टल गरेपछि, एक्सटेन्सनमा क्लिक गरी **Installation dependencies** रोज्नुहोस् र यस मार्गनिर्देशन अनुसार आफ्नो वातावरणमा Prompt flow SDK इन्स्टल गर्नुहोस्
 
-![pfsetup](../../../../../../translated_images/ne/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/ne/pfsetup.b46e93096f5a254f.webp)
 
 3. [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) डाउनलोड गरी VS Code मा खोल्नुहोस्
 
-![pfsample](../../../../../../translated_images/ne/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/ne/pfsample.8d89e70584ffe7c4.webp)
 
 4. **flow.dag.yaml** खोल्नुहोस् र आफ्नो Python वातावरण चयन गर्नुहोस्
 
-![pfdag](../../../../../../translated_images/ne/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/ne/pfdag.264a77f7366458ff.webp)
 
    **chat_phi3_ort.py** खोल्नुहोस् र आफ्नो Phi-3.5-instruct ONNX मोडेलको स्थान परिवर्तन गर्नुहोस्
 
-![pfphi](../../../../../../translated_images/ne/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/ne/pfphi.72da81d74244b45f.webp)
 
 5. आफ्नो prompt flow परीक्षण गर्न चलाउनुहोस्
 
 **flow.dag.yaml** खोल्नुहोस् र visual editor मा क्लिक गर्नुहोस्
 
-![pfv](../../../../../../translated_images/ne/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/ne/pfv.ba8a81f34b20f603.webp)
 
 यसमा क्लिक गरेपछि, परीक्षण गर्न चलाउनुहोस्
 
-![pfflow](../../../../../../translated_images/ne/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/ne/pfflow.4e1135a089b1ce1b.webp)
 
 1. थप परिणामहरू जाँच्न टर्मिनलमा ब्याच चलाउन सक्नुहुन्छ
 
@@ -71,7 +71,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 तपाईं आफ्नो डिफल्ट ब्राउजरमा परिणामहरू हेर्न सक्नुहुन्छ
 
-![pfresult](../../../../../../translated_images/ne/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/ne/pfresult.c22c826f8062d7cb.webp)
 
 **अस्वीकरण**:  
 यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुनसक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

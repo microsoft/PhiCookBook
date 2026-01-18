@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 หลังจากที่ได้ฝึก adapters ในสภาพแวดล้อมระยะไกลแล้ว ให้ใช้แอป Gradio ง่ายๆ เพื่อโต้ตอบกับโมเดล
 
-![Fine-tune complete](../../../../../translated_images/th/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/th/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### การจัดเตรียม Azure Resources  
 คุณต้องตั้งค่า Azure Resources สำหรับการทำ remote inference โดยการรันคำสั่ง `AI Toolkit: Provision Azure Container Apps for inference` จาก command palette ในขั้นตอนนี้ คุณจะถูกขอให้เลือก Azure Subscription และ resource group ของคุณ  
-![Provision Inference Resource](../../../../../translated_images/th/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/th/command-provision-inference.467afc8d351642fc.webp)
 
 โดยค่าเริ่มต้น subscription และ resource group สำหรับ inference ควรตรงกับที่ใช้สำหรับการปรับแต่ง โมเดลจะใช้ Azure Container App Environment เดียวกันและเข้าถึงโมเดลและ adapter ที่เก็บไว้ใน Azure Files ซึ่งถูกสร้างขึ้นในขั้นตอนการปรับแต่ง
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### การ Deploy สำหรับ Inference  
 หากคุณต้องการแก้ไขโค้ด inference หรือต้องการโหลดโมเดล inference ใหม่ ให้รันคำสั่ง `AI Toolkit: Deploy for inference` คำสั่งนี้จะซิงโครไนซ์โค้ดล่าสุดของคุณกับ ACA และรีสตาร์ท replica
 
-![Deploy for inference](../../../../../translated_images/th/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/th/command-deploy.9adb4e310dd0b0ae.webp)
 
 หลังจากการ deploy สำเร็จ โมเดลก็พร้อมสำหรับการประเมินผลผ่าน endpoint นี้
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 คุณสามารถเข้าถึง inference API ได้โดยคลิกที่ปุ่ม "*Go to Inference Endpoint*" ที่แสดงใน notification ของ VSCode หรือจะดู endpoint ของเว็บ API ได้จาก `ACA_APP_ENDPOINT` ในไฟล์ `./infra/inference.config.json` และใน output panel
 
-![App Endpoint](../../../../../translated_images/th/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/th/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** อาจต้องใช้เวลาสักครู่ก่อนที่ inference endpoint จะพร้อมใช้งานเต็มที่
 

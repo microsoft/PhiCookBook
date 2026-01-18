@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 リモート環境でアダプターのトレーニングが完了したら、シンプルなGradioアプリケーションを使ってモデルと対話します。
 
-![Fine-tune complete](../../../../../translated_images/ja/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/ja/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Azureリソースのプロビジョニング
 リモート推論用にAzureリソースをセットアップするには、コマンドパレットから `AI Toolkit: Provision Azure Container Apps for inference` を実行してください。このセットアップ中に、Azureサブスクリプションとリソースグループの選択を求められます。  
-![Provision Inference Resource](../../../../../translated_images/ja/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/ja/command-provision-inference.467afc8d351642fc.webp)
    
 デフォルトでは、推論用のサブスクリプションとリソースグループはファインチューニングで使用したものと同じにする必要があります。推論は同じAzure Container App環境を使用し、ファインチューニング時に生成されたAzure Filesに保存されたモデルとモデルアダプターにアクセスします。
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### 推論用のデプロイ  
 推論コードを修正したり、推論モデルを再読み込みしたい場合は、`AI Toolkit: Deploy for inference` コマンドを実行してください。これにより最新のコードがACAと同期され、レプリカが再起動されます。
 
-![Deploy for inference](../../../../../translated_images/ja/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/ja/command-deploy.9adb4e310dd0b0ae.webp)
 
 デプロイが正常に完了すると、このエンドポイントを使ってモデルの評価が可能になります。
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 VSCodeの通知に表示される「*Go to Inference Endpoint*」ボタンをクリックすると推論APIにアクセスできます。あるいは、`./infra/inference.config.json` の `ACA_APP_ENDPOINT` や出力パネルからWeb APIのエンドポイントを確認できます。
 
-![App Endpoint](../../../../../translated_images/ja/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/ja/notification-deploy.446e480a44b1be58.webp)
 
 > **注意:** 推論エンドポイントが完全に稼働するまでに数分かかる場合があります。
 

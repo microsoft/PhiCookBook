@@ -43,7 +43,7 @@ Dokument sadrži upute o:
 
    ***Note*** Ako ne želite kompajlirati, ovaj korak možete preskočiti
 
-![CPP](../../../../../../translated_images/hr/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/hr/01.42f52a2b2aedff02.webp)
 
 ### **4. Instalirajte NVIDIA upravljački program**
 
@@ -83,7 +83,7 @@ Kopirajte NVIDIA CUDNN 9.4 lib, bin, include u NVIDIA CUDA 12.4 lib, bin, includ
 
    Otvorite [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) i izvršite ga
 
-![RESULT](../../../../../../translated_images/hr/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/hr/02.b9b06996cf7255d5.webp)
 
 ### **8. Kompajlirajte ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Kopirajte NVIDIA CUDNN 9.4 lib, bin, include u NVIDIA CUDA 12.4 lib, bin, includ
 
    - Koristeći Windows Terminal, otvorite Developer Command Prompt za VS 2022 i idite u onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/hr/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/hr/03.b83ce473d5ff9b9b.webp)
 
    - Kompajlirajte koristeći vaše Python okruženje
 

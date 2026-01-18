@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Jeg valgte Objective-C som udviklingsmetode til appen, fordi brug af Generative AI med ONNX Runtime C++ API fungerer bedre med Objective-C. Selvfølgelig kan du også gennemføre de relevante kald via Swift bridging.
 
-![xcode](../../../../../translated_images/da/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/da/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Kopiér den ONNX kvantiserede INT4-model til App-projektet**
 
 Vi skal importere INT4 kvantiseringsmodellen i ONNX-format, som først skal downloades.
 
-![hf](../../../../../translated_images/da/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/da/hf.6b8504fd88ee48dd.webp)
 
 Efter download skal den tilføjes til projektets Resources-mappe i Xcode.
 
-![model](../../../../../translated_images/da/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/da/model.3b879b14e0be877d.webp)
 
 ## **6. Tilføjelse af C++ API i ViewControllers**
 
@@ -121,11 +121,11 @@ Efter download skal den tilføjes til projektets Resources-mappe i Xcode.
 
 - **a.** Tilføj de relevante C++ header-filer til projektet.
 
-  ![Header File](../../../../../translated_images/da/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/da/head.64cad021ce70a333.webp)
 
 - **b.** Inkluder `onnxruntime-genai` dynamiske bibliotek i Xcode.
 
-  ![Library](../../../../../translated_images/da/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/da/lib.a4209b9f21ddf344.webp)
 
 - **c.** Brug C Samples-koden til test. Du kan også tilføje ekstra funktioner som ChatUI for mere funktionalitet.
 
@@ -162,7 +162,7 @@ Efter download skal den tilføjes til projektets Resources-mappe i Xcode.
 
 Når opsætningen er færdig, kan du køre applikationen for at se resultaterne af Phi-3-mini modelinference.
 
-![Running Result](../../../../../translated_images/da/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/da/result.326a947a6a2b9c51.webp)
 
 For flere eksempelkoder og detaljerede instruktioner, besøg [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

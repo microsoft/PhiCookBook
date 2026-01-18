@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Namestite AI Toolkit za VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/sl/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/sl/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** Enostavno zaganjanje Azure Container Apps za izvajanje prilagajanja modelov in sklepanje v oblaku.
 

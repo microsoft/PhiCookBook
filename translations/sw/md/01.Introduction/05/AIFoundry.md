@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Kutumia Azure AI Foundry kwa tathmini**
 
-![aistudo](../../../../../translated_images/sw/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/sw/AIFoundry.9e0b513e999a1c5a.webp)
 
 Jinsi ya kutathmini programu yako ya AI ya kizazi kwa kutumia [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Iwe unafanya tathmini ya mazungumzo ya mzunguko mmoja au mizunguko mingi, Azure AI Foundry inatoa zana za kutathmini utendaji na usalama wa modeli.
 
-![aistudo](../../../../../translated_images/sw/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/sw/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Jinsi ya kutathmini programu za AI za kizazi kwa Azure AI Foundry
 Kwa maelezo zaidi ya hatua kwa hatua, angalia [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

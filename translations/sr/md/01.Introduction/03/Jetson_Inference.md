@@ -36,7 +36,7 @@ d. Python 3.8+
 
 Ако желите да користите gguf и у облаку и на уређајима на ивици мреже истовремено, LlamaEdge се може схватити као WasmEdge (WasmEdge је лагано, високо перформантно и скалабилно WebAssembly окружење погодно за cloud native, edge и децентрализоване апликације. Подржава serverless апликације, уграђене функције, микросервисе, паметне уговоре и IoT уређаје). Можете деплојовати квантитативни модел gguf на уређаје на ивици и у облак преко LlamaEdge.
 
-![llamaedge](../../../../../translated_images/sr/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/sr/llamaedge.e9d6ff96dff11cf7.webp)
 
 Ево корака за коришћење
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Ово је резултат покретања
 
-![llamaedgerun](../../../../../translated_images/sr/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/sr/llamaedgerun.bed921516c9a821c.webp)
 
 ***Пример кода*** [Phi-3 mini WASM Notebook пример](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

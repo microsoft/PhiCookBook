@@ -41,7 +41,7 @@ Fine-tuning znamená doladění konkrétního modelu. Není potřeba začínat o
 
 ## **Jak používat RAG**
 
-![rag](../../../../translated_images/cs/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/cs/rag.2014adc59e6f6007.webp)
 
 Vektorová databáze je sbírka dat uložených v matematické podobě. Vektorové databáze usnadňují modelům strojového učení zapamatovat si předchozí vstupy, což umožňuje využití strojového učení pro případy jako vyhledávání, doporučení a generování textu. Data lze identifikovat na základě metrik podobnosti, nikoli přesných shod, což umožňuje modelům lépe chápat kontext dat.
 
@@ -57,7 +57,7 @@ Nejčastěji používané algoritmy ve Fine-tuningu jsou Lora a QLora. Jak vybra
 
 ### **Lora a QLora**
 
-![lora](../../../../translated_images/cs/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/cs/qlora.e6446c988ee04ca0.webp)
 
 LoRA (Low-Rank Adaptation) a QLoRA (Quantized Low-Rank Adaptation) jsou techniky používané k doladění velkých jazykových modelů (LLM) pomocí Parameter Efficient Fine Tuning (PEFT). PEFT techniky jsou navrženy tak, aby trénovaly modely efektivněji než tradiční metody.
 

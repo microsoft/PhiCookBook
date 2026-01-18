@@ -19,7 +19,7 @@ La oss utforske hvordan man finjusterer Microsofts Phi-3 Mini språkmodell ved h
 - **Brukervennlighet:** Hvordan foregår finjusteringen i praksis – må jeg skrive egen kode? Må jeg ha egen datakraft?
 - **Sikkerhet:** Finjusterte modeller kan ha sikkerhetsrisikoer – finnes det noen sikkerhetsmekanismer for å beskytte mot utilsiktet skade?
 
-![AIFoundry Models](../../../../translated_images/no/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/no/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## Forberedelser til finjustering
 
@@ -71,7 +71,7 @@ Støttet filtype er JSON Lines. Filene lastes opp til standard datalager og gjø
 
 Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ved hjelp av en prosess kalt finjustering. Finjustering gir stor verdi ved å muliggjøre tilpasning og optimalisering for spesifikke oppgaver og bruksområder. Det fører til bedre ytelse, kostnadseffektivitet, redusert ventetid og skreddersydde resultater.
 
-![Finetune AI Foundry](../../../../translated_images/no/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/no/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Opprett et nytt prosjekt
 
@@ -79,14 +79,14 @@ Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ve
 
 1. Velg **+New project** for å opprette et nytt prosjekt i Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/no/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/no/select-new-project.cd31c0404088d7a3.webp)
 
 1. Gjør følgende:
 
     - Prosjektets **Hub name**. Det må være en unik verdi.
     - Velg hvilken **Hub** som skal brukes (opprett en ny om nødvendig).
 
-    ![FineTuneSelect](../../../../translated_images/no/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/no/create-project.ca3b71298b90e420.webp)
 
 1. Gjør følgende for å opprette en ny hub:
 
@@ -97,7 +97,7 @@ Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ve
     - Velg **Connect Azure AI Services** som skal brukes (opprett en ny om nødvendig).
     - Velg **Connect Azure AI Search** og velg **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/no/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/no/create-hub.49e53d235e80779e.webp)
 
 1. Velg **Next**.
 1. Velg **Create a project**.
@@ -115,15 +115,15 @@ Før finjustering, samle eller lag et datasett som er relevant for oppgaven din,
 
 1. Skriv *phi-3* i **søkelinjen** og velg den phi-3 modellen du ønsker å bruke.
 
-    ![FineTuneSelect](../../../../translated_images/no/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/no/select-model.60ef2d4a6a3cec57.webp)
 
 1. Velg **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/no/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/no/select-finetune.a976213b543dd9d8.webp)
 
 1. Skriv inn navnet på den **finjusterte modellen**.
 
-    ![FineTuneSelect](../../../../translated_images/no/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/no/finetune1.c2b39463f0d34148.webp)
 
 1. Velg **Next**.
 
@@ -132,13 +132,13 @@ Før finjustering, samle eller lag et datasett som er relevant for oppgaven din,
     - Velg **task type** til **Chat completion**.
     - Velg **Training data** du ønsker å bruke. Du kan laste det opp via Azure AI Foundry eller fra ditt lokale miljø.
 
-    ![FineTuneSelect](../../../../translated_images/no/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/no/finetune2.43cb099b1a94442d.webp)
 
 1. Velg **Next**.
 
 1. Last opp **Validation data** du ønsker å bruke, eller velg **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/no/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/no/finetune3.fd96121b67dcdd92.webp)
 
 1. Velg **Next**.
 
@@ -148,15 +148,15 @@ Før finjustering, samle eller lag et datasett som er relevant for oppgaven din,
     - Velg ønsket **Learning rate**.
     - Velg ønsket antall **Epochs**.
 
-    ![FineTuneSelect](../../../../translated_images/no/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/no/finetune4.e18b80ffccb5834a.webp)
 
 1. Velg **Submit** for å starte finjusteringsprosessen.
 
-    ![FineTuneSelect](../../../../translated_images/no/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/no/select-submit.0a3802d581bac271.webp)
 
 1. Når modellen er finjustert, vil status vises som **Completed**, som vist i bildet under. Nå kan du distribuere modellen og bruke den i din egen applikasjon, i playground, eller i prompt flow. For mer informasjon, se [Hvordan distribuere Phi-3 familie av små språkmodeller med Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/no/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/no/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > For mer detaljert informasjon om finjustering av Phi-3, besøk [Finjuster Phi-3 modeller i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

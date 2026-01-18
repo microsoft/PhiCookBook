@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) je odprtokodna platforma, zasnovana za upravljanje celotnega življenjskega cikla strojnega učenja.
 
-![MLFlow](../../../../../../translated_images/sl/MlFlowmlops.ed16f47809d74d9a.png)
+![MLFlow](../../../../../../translated_images/sl/MlFlowmlops.ed16f47809d74d9a.webp)
 
 MLFlow se uporablja za upravljanje življenjskega cikla ML, vključno z eksperimentiranjem, ponovljivostjo, uvajanjem in centralnim registrom modelov. MLflow trenutno ponuja štiri komponente.
 
@@ -22,7 +22,7 @@ MLFlow se uporablja za upravljanje življenjskega cikla ML, vključno z eksperim
 
 Vključuje zmogljivosti za sledenje eksperimentom, pakiranje kode v ponovljive izvedbe ter deljenje in uvajanje modelov. MLFlow je integriran v Databricks in podpira različne knjižnice ML, zato je neodvisen od knjižnic. Uporablja se lahko z vsako knjižnico strojnega učenja in v kateremkoli programskem jeziku, saj nudi REST API in CLI za enostavnost uporabe.
 
-![MLFlow](../../../../../../translated_images/sl/MLflow2.5a22eb718f6311d1.png)
+![MLFlow](../../../../../../translated_images/sl/MLflow2.5a22eb718f6311d1.webp)
 
 Ključne značilnosti MLFlow vključujejo:
 
@@ -37,7 +37,7 @@ MLFlow podpira tudi MLOps zanko, ki vključuje pripravo podatkov, registracijo i
 
 V tem E2E primeru bomo prikazali dva različna pristopa za izdelavo ovojnice okoli majhnega jezikovnega modela Phi-3 (SLM) in njegovo zagon kot MLFlow model bodisi lokalno ali v oblaku, npr. v Azure Machine Learning delovnem prostoru.
 
-![MLFlow](../../../../../../translated_images/sl/MlFlow1.fd745e47dbd3fecf.png)
+![MLFlow](../../../../../../translated_images/sl/MlFlow1.fd745e47dbd3fecf.webp)
 
 | Projekt | Opis | Lokacija |
 | ------------ | ----------- | -------- |

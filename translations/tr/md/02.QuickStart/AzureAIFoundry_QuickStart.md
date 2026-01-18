@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Generative AI'nin gelişimiyle birlikte, farklı LLM ve SLM'leri, kurumsal veri entegrasyonunu, ince ayar/RAG işlemlerini ve LLM ile SLM entegre edildikten sonra farklı kurumsal işlerin değerlendirilmesini tek bir platformda yönetmeyi umuyoruz. Böylece generative AI, akıllı uygulamalarda daha iyi uygulanabilir. [Azure AI Foundry](https://ai.azure.com), kurumsal düzeyde bir generative AI uygulama platformudur.
 
-![aistudo](../../../../translated_images/tr/aifoundry_home.f28a8127c96c7d93.png)
+![aistudo](../../../../translated_images/tr/aifoundry_home.f28a8127c96c7d93.webp)
 
 Azure AI Foundry ile büyük dil modeli (LLM) yanıtlarını değerlendirebilir ve daha iyi performans için prompt flow ile prompt uygulama bileşenlerini düzenleyebilirsiniz. Platform, kavram kanıtlarını tam üretime dönüştürmede ölçeklenebilirlik sağlar. Sürekli izleme ve iyileştirme uzun vadeli başarıyı destekler.
 

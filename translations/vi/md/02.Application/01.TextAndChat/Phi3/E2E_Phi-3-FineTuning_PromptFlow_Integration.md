@@ -23,7 +23,7 @@ Trong mẫu E2E này, bạn sẽ học cách tinh chỉnh mô hình Phi-3 và t�
 
 Dưới đây là tổng quan về mẫu E2E này.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/vi/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/vi/00-01-architecture.02fc569e266d468c.webp)
 
 ### Mục lục
 
@@ -49,13 +49,13 @@ Dưới đây là tổng quan về mẫu E2E này.
 
 1. Nhập *azure machine learning* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Azure Machine Learning** trong các tùy chọn xuất hiện.
 
-    ![Type azure machine learning](../../../../../../translated_images/vi/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/vi/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. Chọn **+ Create** từ menu điều hướng.
 
 1. Chọn **New workspace** từ menu điều hướng.
 
-    ![Select new workspace](../../../../../../translated_images/vi/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/vi/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. Thực hiện các nhiệm vụ sau:
 
@@ -68,7 +68,7 @@ Dưới đây là tổng quan về mẫu E2E này.
     - Chọn **Application insights** để sử dụng (tạo mới nếu cần).
     - Chọn **Container registry** để sử dụng (tạo mới nếu cần).
 
-    ![Fill AZML.](../../../../../../translated_images/vi/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/vi/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. Chọn **Review + Create**.
 
@@ -92,7 +92,7 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
     - Chọn **Virtual machine family** để sử dụng. Ví dụ, chọn **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, bao gồm *Standard_NC24ads_A100_v4* GPU.
     - Chọn **Request quota** từ menu điều hướng.
 
-        ![Request quota.](../../../../../../translated_images/vi/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/vi/01-04-request-quota.3d3670c3221ab834.webp)
 
     - Trong trang Request quota, nhập **New cores limit** bạn muốn sử dụng. Ví dụ, 24.
     - Trong trang Request quota, chọn **Submit** để yêu cầu hạn ngạch GPU.
@@ -108,11 +108,11 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 1. Nhập *managed identities* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Managed Identities** trong các tùy chọn xuất hiện.
 
-    ![Type managed identities.](../../../../../../translated_images/vi/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/vi/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. Chọn **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/vi/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/vi/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. Thực hiện các nhiệm vụ sau:
 
@@ -139,7 +139,7 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
     - Chọn **Resource group** để sử dụng.
     - Chọn **Role** là **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/vi/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/vi/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. Chọn **Save**.
 
@@ -147,7 +147,7 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 1. Nhập *storage accounts* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Storage accounts** trong các tùy chọn xuất hiện.
 
-    ![Type storage accounts.](../../../../../../translated_images/vi/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/vi/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Chọn tài khoản lưu trữ liên kết với workspace Azure Machine Learning bạn đã tạo. Ví dụ, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
     - Chọn **+ Add** từ menu điều hướng.
     - Chọn **Add role assignment** từ menu điều hướng.
 
-    ![Add role.](../../../../../../translated_images/vi/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/vi/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. Trong trang Add role assignment, thực hiện các nhiệm vụ sau:
 
@@ -171,7 +171,7 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
     - Trong trang Select managed identities, chọn Managed Identity bạn đã tạo. Ví dụ, *finetunephi-managedidentity*.
     - Trong trang Select managed identities, chọn **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/vi/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/vi/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. Chọn **Review + assign**.
 
@@ -179,7 +179,7 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 1. Nhập *container registries* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Container registries** trong các tùy chọn xuất hiện.
 
-    ![Type container registries.](../../../../../../translated_images/vi/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/vi/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Chọn container registry liên kết với workspace Azure Machine Learning. Ví dụ, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn thư mục *finetune-phi* mà bạn đã tạo, nằm tại *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/vi/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Open project floder.](../../../../../../translated_images/vi/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. Trong ngăn bên trái của Visual Studio Code, bấm chuột phải và chọn **New File** để tạo một tệp mới có tên *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Trong bài tập này, bạn sẽ:
 
 1. Trong ngăn bên trái của Visual Studio Code, bấm chuột phải và chọn **New File** để tạo một tệp mới có tên *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/vi/01-13-create-new-file.c17c150fff384a39.png)
+    ![Create new file.](../../../../../../translated_images/vi/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. Trong ngăn bên trái của Visual Studio Code, bấm chuột phải và chọn **New Folder** để tạo một thư mục mới có tên *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Trong bài tập này, bạn sẽ:
     - Chọn Đăng ký Azure mà bạn đang sử dụng.
     - Sao chép và dán ID Đăng ký của bạn vào tệp *config.py*.
 
-    ![Find subscription id.](../../../../../../translated_images/vi/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Find subscription id.](../../../../../../translated_images/vi/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Thực hiện các bước sau để thêm Tên Workspace Azure:
 
     - Điều hướng đến tài nguyên Azure Machine Learning mà bạn đã tạo.
     - Sao chép và dán tên tài khoản của bạn vào tệp *config.py*.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/vi/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/vi/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Thực hiện các bước sau để thêm Tên Nhóm Tài nguyên Azure:
 
     - Điều hướng đến tài nguyên Azure Machine Learning mà bạn đã tạo.
     - Sao chép và dán Tên Nhóm Tài nguyên Azure của bạn vào tệp *config.py*.
 
-    ![Find resource group name.](../../../../../../translated_images/vi/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Find resource group name.](../../../../../../translated_images/vi/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Thực hiện các bước sau để thêm tên Định danh Quản lý Azure (Managed Identity)
 
     - Điều hướng đến tài nguyên Định danh Quản lý mà bạn đã tạo.
     - Sao chép và dán tên Định danh Quản lý Azure của bạn vào tệp *config.py*.
 
-    ![Find UAI.](../../../../../../translated_images/vi/01-17-find-uai.3529464f53499827.png)
+    ![Find UAI.](../../../../../../translated_images/vi/01-17-find-uai.3529464f53499827.webp)
 
 ### Chuẩn bị bộ dữ liệu cho việc tinh chỉnh
 
@@ -509,7 +509,7 @@ Bạn cần thiết lập Azure CLI để xác thực môi trường của bạn
 
 1. Chọn đăng ký Azure bạn muốn sử dụng.
 
-    ![Find resource group name.](../../../../../../translated_images/vi/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Find resource group name.](../../../../../../translated_images/vi/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Bằng cách chạy *setup_ml.py*, bạn sẽ chạy quá trình tinh chỉnh tr
 
 1. Trong bài tập này, bạn đã tinh chỉnh thành công mô hình Phi-3 sử dụng Azure Machine Learning. Bằng cách chạy tập lệnh *setup_ml.py*, bạn đã thiết lập môi trường Azure Machine Learning và khởi tạo quá trình tinh chỉnh được định nghĩa trong tệp *fine_tune.py*. Xin lưu ý quá trình tinh chỉnh có thể mất khá nhiều thời gian. Sau khi chạy lệnh `python setup_ml.py`, bạn cần đợi quá trình hoàn tất. Bạn có thể theo dõi trạng thái công việc tinh chỉnh bằng cách nhấp vào liên kết được cung cấp trong terminal để vào portal Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/vi/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![See finetuning job.](../../../../../../translated_images/vi/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### Triển khai mô hình đã được tinh chỉnh
 
@@ -1080,11 +1080,11 @@ Việc chạy tệp *deploy_model.py* sẽ tự động hóa toàn bộ quá tr�
 
 1. Chọn **Endpoints** từ tab bên trái.
 
-    ![Select endpoints.](../../../../../../translated_images/vi/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/vi/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. Chọn điểm cuối mà bạn đã tạo.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/vi/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/vi/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. Trên trang này, bạn có thể quản lý các điểm cuối được tạo trong quá trình triển khai.
 
@@ -1103,7 +1103,7 @@ Sau khi triển khai thành công mô hình được tinh chỉnh của bạn, b
 1. Sao chép và dán **REST endpoint** của bạn vào file *config.py*, thay thế `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` bằng **REST endpoint** của bạn.
 1. Sao chép và dán **Primary key** của bạn vào file *config.py*, thay thế `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` bằng **Primary key** của bạn.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/vi/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/vi/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### Thêm mã vào file *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Sau khi triển khai thành công mô hình được tinh chỉnh của bạn, b
 
 1. Đây là ví dụ về kết quả: Bây giờ bạn có thể trò chuyện với mô hình Phi-3 tùy chỉnh của bạn. Khuyến nghị nên đặt câu hỏi dựa trên dữ liệu được sử dụng để tinh chỉnh.
 
-    ![Prompt flow example.](../../../../../../translated_images/vi/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/vi/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

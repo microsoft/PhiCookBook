@@ -1,78 +1,78 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
-  "translation_date": "2025-10-11T12:07:11+00:00",
+  "original_hash": "7f72d7981ed3640865700f51ae407da4",
+  "translation_date": "2026-01-16T20:05:05+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "et"
 }
 -->
-# Interaktiivne Phi 3 Mini 4K Instruct Chatbot koos Whisperiga
+# Interaktiivne Phi 3 Mini 4K juhendav vestlusrobot Whisperiga
 
 ## Ülevaade
 
-Interaktiivne Phi 3 Mini 4K Instruct Chatbot on tööriist, mis võimaldab kasutajatel suhelda Microsoft Phi 3 Mini 4K instruct demo abil, kasutades teksti või heli sisendit. Chatboti saab kasutada mitmesugusteks ülesanneteks, nagu tõlkimine, ilmateate saamine ja üldise teabe kogumine.
+Interaktiivne Phi 3 Mini 4K juhendav vestlusrobot on tööriist, mis võimaldab kasutajatel suhelda Microsoft Phi 3 Mini 4K juhendatud demoga, kasutades tekstisisendit või helisisendit. Vestlusrobotit saab kasutada erinevate ülesannete jaoks, näiteks tõlkimiseks, ilmateate uuendusteks ja üldiseks teabe kogumiseks.
 
 ### Alustamine
 
-Chatboti kasutamiseks järgige neid juhiseid:
+Selle vestlusroboti kasutamiseks järgige lihtsalt järgmisi juhiseid:
 
 1. Avage uus [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
-2. Märkmiku põhivaates näete vestlusakent, kus on tekstisisendi kast ja nupp "Saada".
-3. Tekstipõhise chatboti kasutamiseks sisestage oma sõnum tekstikasti ja klõpsake nuppu "Saada". Chatbot vastab helifailiga, mida saab otse märkmikust esitada.
+2. Märkmiku põhivaates näete vestlusakna liidest, kus on tekstisisestuskast ja nupp „Saada“.
+3. Tekstipõhise vestlusroboti kasutamiseks tippige lihtsalt oma sõnum tekstisisestuskasti ja klõpsake nuppu „Saada“. Vestlusrobot vastab helifailiga, mida saab otse märkmikust esitada.
 
-**Märkus**: Selle tööriista kasutamiseks on vaja GPU-d ja juurdepääsu Microsoft Phi-3 ja OpenAI Whisper mudelitele, mida kasutatakse kõnetuvastuseks ja tõlkimiseks.
+**Märkus**: Selle tööriista kasutamine nõuab GPU-d ja juurdepääsu Microsoft Phi-3 ning OpenAI Whisper mudelitele, mida kasutatakse kõnetuvastuseks ja tõlkimiseks.
 
 ### GPU nõuded
 
-Selle demo käivitamiseks on vaja 12 GB GPU mälu.
+Selle demo jooksutamiseks on vaja 12 GB GPU mälu.
 
-**Microsoft-Phi-3-Mini-4K instruct** demo GPU-l käitamise mälunõuded sõltuvad mitmest tegurist, nagu sisendi suurus (heli või tekst), tõlkimiseks kasutatav keel, mudeli kiirus ja GPU saadaval olev mälu.
+Mälu nõuded **Microsoft-Phi-3-Mini-4K juhendatud** demod GPU-s jooksutamiseks sõltuvad mitmetest teguritest, nagu sisendi andmete (heli või teksti) suurus, tõlkel kasutatav keel, mudeli kiirus ja GPU-l saadaval olev mälu.
 
-Üldiselt on Whisper mudel loodud töötama GPU-del. Whisper mudeli käitamiseks soovitatav minimaalne GPU mälu on 8 GB, kuid vajadusel saab kasutada suuremat mälu.
+Üldiselt on Whisper mudel mõeldud tööle GPU-del. Soovitatav minimaalne GPU mälu maht Whisper mudeli jooksutamiseks on 8 GB, kuid see suudab vajadusel hallata ka suuremaid mälumahtusid.
 
-Oluline on märkida, et suure hulga andmete või suure mahuga päringute käitamine mudelil võib nõuda rohkem GPU mälu ja/või põhjustada jõudlusprobleeme. Soovitatav on testida oma kasutusjuhtumit erinevate konfiguratsioonidega ja jälgida mälukasutust, et määrata teie konkreetsete vajaduste jaoks optimaalsed seaded.
+Oluline on märkida, et suurte andmemahtude või paljude päringute töötlemine mudelil võib nõuda rohkem GPU mälu ja/või põhjustada jõudlusprobleeme. Soovitatav on testida oma kasutusjuhtumit erinevate konfiguratsioonidega ning jälgida mälu kasutust, et leida konkreetsetele vajadustele optimaalne seadistus.
 
-## E2E näidis Interaktiivse Phi 3 Mini 4K Instruct Chatbotiga koos Whisperiga
+## Interaktiivse Phi 3 Mini 4K juhendava vestlusroboti Whisperiga E2E näidis
 
-Jupyter märkmik pealkirjaga [Interaktiivne Phi 3 Mini 4K Instruct Chatbot koos Whisperiga](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) näitab, kuidas kasutada Microsoft Phi 3 Mini 4K instruct demo, et genereerida teksti heli või kirjutatud teksti sisendist. Märkmik määratleb mitmeid funktsioone:
+Jupyteri märkmik pealkirjaga [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) demonstreerib, kuidas kasutada Microsoft Phi 3 Mini 4K juhendatud demot heli- või tekstitulemuse loomiseks. Märkmik defineerib mitu funktsiooni:
 
-1. `tts_file_name(text)`: See funktsioon genereerib failinime sisendteksti põhjal, et salvestada loodud helifail.
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: See funktsioon kasutab Edge TTS API-d, et genereerida helifail sisendteksti tükkide loendist. Sisendparameetrid on tükkide loend, kõnekiirus, hääle nimi ja väljundtee loodud helifaili salvestamiseks.
-1. `talk(input_text)`: See funktsioon genereerib helifaili, kasutades Edge TTS API-d ja salvestades selle juhusliku failinimega kausta /content/audio. Sisendparameeter on sisendtekst, mida tuleb kõneks teisendada.
-1. `run_text_prompt(message, chat_history)`: See funktsioon kasutab Microsoft Phi 3 Mini 4K instruct demo, et genereerida helifail sõnumi sisendist ja lisab selle vestluse ajalukku.
-1. `run_audio_prompt(audio, chat_history)`: See funktsioon teisendab helifaili tekstiks, kasutades Whisper mudeli API-d, ja edastab selle funktsioonile `run_text_prompt()`.
-1. Kood käivitab Gradio rakenduse, mis võimaldab kasutajatel suhelda Phi 3 Mini 4K instruct demo abil, kas sisestades sõnumeid või üles laadides helifaile. Väljund kuvatakse rakenduses tekstisõnumina.
+1. `tts_file_name(text)`: See funktsioon genereerib sisendtekstist faili nime genereeritud helifaili salvestamiseks.
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: See funktsioon kasutab Edge TTS API-d helifaili loomiseks sisendi tekstitükkide loendist. Sisendparameetrid on tükkide loend, kõne kiirus, hääle nimi ja väljundi tee genereeritud helifaili salvestamiseks.
+1. `talk(input_text)`: See funktsioon genereerib helifaili, kasutades Edge TTS API-d ja salvestab selle juhuslikku faili nimega kausta /content/audio. Sisendiks on kõneks teisendatav tekst.
+1. `run_text_prompt(message, chat_history)`: See funktsioon kasutab Microsoft Phi 3 Mini 4K juhendatud demot helifaili genereerimiseks sõnumi sisendi põhjal ja lisab selle vestluse ajaloole.
+1. `run_audio_prompt(audio, chat_history)`: See funktsioon teisendab helifaili tekstiks Whisper mudeli API abil ja edastab selle funktsioonile `run_text_prompt()`.
+1. Kood käivitab Gradio rakenduse, mis võimaldab kasutajatel vestelda Phi 3 Mini 4K juhendatud demoga, kas sõnumeid tippides või helifaile üles laadides. Väljund kuvatakse rakenduses tekstisõnumina.
 
-## Tõrkeotsing
+## Võrguühendusprobleemide lahendamine
 
-Cuda GPU draiverite installimine
+Cuda GPU draiverite paigaldamine
 
-1. Veenduge, et teie Linuxi rakendused on ajakohased
+1. Veenduge, et teie Linuxi rakendused oleksid ajakohased
 
     ```bash
     sudo apt update
     ```
 
-1. Installige Cuda draiverid
+1. Paigaldage Cuda draiverid
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-1. Registreerige Cuda draiveri asukoht
+1. Registreerige cuda draiveri asukoht
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-1. Nvidia GPU mälu suuruse kontrollimine (vajalik 12 GB GPU mälu)
+1. Nvidia GPU mälu suuruse kontrollimine (nõutav 12GB GPU mälu)
 
     ```bash
     nvidia-smi
     ```
 
-1. Vahemälu tühjendamine: Kui kasutate PyTorchi, saate kutsuda torch.cuda.empty_cache(), et vabastada kõik kasutamata vahemälu mälu, et seda saaks kasutada teised GPU rakendused
+1. Vahemälu tühjendamine: Kui kasutate PyTorchi, võite kutsuda välja torch.cuda.empty_cache(), et vabastada kogu kasutamata vahemälu mälu selleks, et seda saaksid kasutada teised GPU rakendused
 
     ```python
     torch.cuda.empty_cache() 
@@ -86,12 +86,12 @@ Cuda GPU draiverite installimine
 
 1. Tehke järgmised toimingud, et luua Hugging Face token.
 
-    - Navigeerige [Hugging Face Token Settings lehele](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
+    - Minge aadressile [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
     - Valige **Uus token**.
     - Sisestage projekti **Nimi**, mida soovite kasutada.
     - Valige **Tüüp** väärtuseks **Kirjutamine**.
 
-> **Märkus**
+> [!NOTE]
 >
 > Kui ilmneb järgmine viga:
 >
@@ -99,7 +99,7 @@ Cuda GPU draiverite installimine
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Selle lahendamiseks sisestage oma terminali järgmine käsk.
+> Probleemi lahendamiseks tippige oma terminali järgmine käsk.
 >
 > ```bash
 > sudo ldconfig
@@ -107,5 +107,7 @@ Cuda GPU draiverite installimine
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest loobumine**:  
+See dokument on tõlgitud kasutades tehisintellekti tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüdleme täpsuse poole, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument oma emakeeles tuleks pidada usaldusväärseks allikaks. Olulise teabe puhul soovitatakse professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tekkivate arusaamatuste ega valesti mõistmiste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

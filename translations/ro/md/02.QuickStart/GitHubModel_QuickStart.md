@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bine ați venit la [GitHub Models](https://github.com/marketplace/models)! Totul este pregătit pentru ca tu să explorezi Modelele AI găzduite pe Azure AI.
 
-![GitHubModel](../../../../translated_images/ro/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/ro/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 Pentru mai multe informații despre modelele disponibile pe GitHub Models, consultă [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Există câteva exemple de bază gata de rulat. Le poți găsi în directorul sa
 
 Există și un mediu dedicat Codespaces pentru rularea exemplelor și modelelor.
 
-![Getting Started](../../../../translated_images/ro/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/ro/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Cod Exemplu
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Utilizare GRATUITĂ și limite de rată pentru GitHub Models
 
-![Model Catalog](../../../../translated_images/ro/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/ro/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [Limitele de rată pentru playground și utilizarea gratuită a API-ului](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sunt menite să te ajute să experimentezi cu modelele și să prototipezi aplicația ta AI. Pentru utilizare dincolo de aceste limite și pentru a-ți scala aplicația, trebuie să aloci resurse dintr-un cont Azure și să te autentifici de acolo, în loc să folosești token-ul personal GitHub. Nu trebuie să modifici nimic altceva în codul tău. Folosește acest link pentru a descoperi cum să depășești limitele gratuite în Azure AI.
 

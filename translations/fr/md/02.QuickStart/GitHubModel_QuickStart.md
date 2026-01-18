@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bienvenue sur [GitHub Models](https://github.com/marketplace/models) ! Tout est prêt pour que vous puissiez explorer les modèles d’IA hébergés sur Azure AI.
 
-![GitHubModel](../../../../translated_images/fr/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/fr/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 Pour plus d’informations sur les modèles disponibles sur GitHub Models, consultez le [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Quelques exemples simples sont prêts à être exécutés. Vous les trouverez da
 
 Un environnement Codespaces dédié est également disponible pour exécuter les exemples et les modèles.
 
-![Getting Started](../../../../translated_images/fr/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/fr/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Exemple de code
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Utilisation GRATUITE et limites de débit pour GitHub Models
 
-![Model Catalog](../../../../translated_images/fr/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/fr/GitHub_Model.ca6c125cb3117d0e.webp)
 
 Les [limites de débit pour le playground et l’utilisation gratuite de l’API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sont conçues pour vous permettre d’expérimenter avec les modèles et de prototyper votre application IA. Pour dépasser ces limites et faire évoluer votre application, vous devez provisionner des ressources depuis un compte Azure et vous authentifier via ce compte plutôt qu’avec votre jeton d’accès personnel GitHub. Vous n’avez rien d’autre à modifier dans votre code. Utilisez ce lien pour découvrir comment dépasser les limites du niveau gratuit dans Azure AI.
 

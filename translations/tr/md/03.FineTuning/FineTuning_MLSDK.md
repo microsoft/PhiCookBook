@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bu örnekte, ultrachat_200k veri setini kullanarak 2 kişi arasındaki bir sohbeti tamamlamak için Phi-3-mini-4k-instruct modelinin ince ayarını yapacağız.
 
-![MLFineTune](../../../../translated_images/tr/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/tr/MLFineTune.928d4c6b3767dd35.webp)
 
 Örnek, Azure ML SDK ve Python kullanarak ince ayar yapmayı ve ardından ince ayarlı modeli gerçek zamanlı çıkarım için çevrimiçi bir uç noktaya dağıtmayı gösterecek.
 

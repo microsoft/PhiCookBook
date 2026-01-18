@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Ich habe Objective-C als Entwicklungsweg für die App gewählt, da die Verwendung von Generative AI mit der ONNX Runtime C++ API in Objective-C besser kompatibel ist. Natürlich können Sie die entsprechenden Aufrufe auch über Swift-Bridging realisieren.
 
-![xcode](../../../../../translated_images/de/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/de/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Kopieren des ONNX quantisierten INT4 Modells in das App-Projekt**
 
 Wir müssen das INT4-Quantisierungsmodell im ONNX-Format importieren, das zuerst heruntergeladen werden muss.
 
-![hf](../../../../../translated_images/de/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/de/hf.6b8504fd88ee48dd.webp)
 
 Nach dem Herunterladen fügen Sie es dem Ressourcenverzeichnis des Projekts in Xcode hinzu.
 
-![model](../../../../../translated_images/de/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/de/model.3b879b14e0be877d.webp)
 
 ## **6. Hinzufügen der C++ API in ViewControllers**
 
@@ -121,11 +121,11 @@ Nach dem Herunterladen fügen Sie es dem Ressourcenverzeichnis des Projekts in X
 
 - **a.** Fügen Sie die entsprechenden C++ Header-Dateien zum Projekt hinzu.
 
-  ![Header File](../../../../../translated_images/de/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/de/head.64cad021ce70a333.webp)
 
 - **b.** Binden Sie die dynamische Bibliothek `onnxruntime-genai` in Xcode ein.
 
-  ![Library](../../../../../translated_images/de/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/de/lib.a4209b9f21ddf344.webp)
 
 - **c.** Verwenden Sie den C-Sample-Code zum Testen. Sie können auch zusätzliche Funktionen wie ChatUI hinzufügen, um den Funktionsumfang zu erweitern.
 
@@ -162,7 +162,7 @@ Nach dem Herunterladen fügen Sie es dem Ressourcenverzeichnis des Projekts in X
 
 Sobald die Einrichtung abgeschlossen ist, können Sie die Anwendung starten, um die Ergebnisse der Phi-3-mini Modellinferenz zu sehen.
 
-![Running Result](../../../../../translated_images/de/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/de/result.326a947a6a2b9c51.webp)
 
 Für weitere Beispielcodes und detaillierte Anleitungen besuchen Sie das [Phi-3 Mini Samples Repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

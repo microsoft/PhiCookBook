@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Microsoft Responsible AI এর ওভারভিউ
 
-![RAIPrinciples](../../../../../translated_images/bn/RAIPrinciples.bf9c9bc6ca160d33.png)
+![RAIPrinciples](../../../../../translated_images/bn/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **নৈতিক নীতিমালা**
 

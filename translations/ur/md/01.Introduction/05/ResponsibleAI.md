@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Microsoft Responsible AI کا جائزہ
 
-![RAIPrinciples](../../../../../translated_images/ur/RAIPrinciples.bf9c9bc6ca160d33.png)
+![RAIPrinciples](../../../../../translated_images/ur/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **اخلاقی اصول**
 

@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 결과 (내 환경은 Apple M1 Max, 64GB) 는 다음과 같습니다.
 
-![Terminal](../../../../../translated_images/ko/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/ko/01.5cf57df8f7407cf9.webp)
 
 ### **3. 터미널에서 MLX로 Phi-3-mini 양자화하기**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 결과는 다음과 같습니다.
 
-![INT4](../../../../../translated_images/ko/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/ko/02.7b188681a8eadbc1.webp)
 
 
 ### **4. Jupyter Notebook에서 MLX로 Phi-3-mini 실행하기**
 
 
-![Notebook](../../../../../translated_images/ko/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/ko/03.b9705a3a5aaa89f9.webp)
 
 ***Note:*** 이 샘플은 [여기 링크](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)를 참고하세요.
 

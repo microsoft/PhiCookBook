@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 我們知道 Phi-3/3.5-mini-instruct 屬於 Phi-3/3.5 家族，具備強大的程式碼理解與生成能力，且在某些方面優於 Gemma-2-9b 與 Mistral-Nemo-12B-instruct-2407。
 
-![codegen](../../../../../../translated_images/tw/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/tw/codegen.53be1150ee54d969.webp)
 
 最新的 GitHub Models 已經提供了 Phi-3.5-mini-instruct (128k) 與 Phi-3.5-vision-instruct (128k) 模型，開發者可以透過 OpenAI SDK、Azure AI Inference SDK 以及 REST API 來存取。
 
-![gh](../../../../../../translated_images/tw/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/tw/gh.459640c7ceba01d5.webp)
 
 ***Note: *** 建議這裡使用 Azure AI Inference SDK，因為在生產環境中能更順利切換 Azure Model Catalog。
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot Chat Agent 能根據程式碼在不同專案場景中完成各種任務。系統內建四個 Agent：workspace、github、terminal、vscode。
 
-![agent](../../../../../../translated_images/tw/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/tw/agent.3dbb06228f9a6189.webp)
 
 只要在 Agent 名稱前加上「@」，就能快速完成對應工作。對企業來說，若加入與自身業務相關的內容，如需求、程式碼、測試規範及發佈流程，就能打造出更強大的企業私有功能，基於 GitHub Copilot。
 
 Visual Studio Code Chat Agent 現已正式釋出 API，允許企業或企業開發者根據不同軟體業務生態系開發 Agent。基於 Visual Studio Code Extension 開發方式，你可以輕鬆存取 Visual Studio Code Chat Agent API 的介面。我們可以依此流程進行開發。
 
-![diagram](../../../../../../translated_images/tw/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/tw/diagram.ca70d2866762f115.webp)
 
 開發場景支援接入第三方模型 API（如 GitHub Models、Azure Model Catalog，以及基於開源模型自建的服務），也能使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 與 gpt-4o 模型。
 
@@ -54,7 +54,7 @@ Visual Studio Code Chat Agent 現已正式釋出 API，允許企業或企業開�
 
 3. 透過 **@phicoding /image** 指令，基於 **Phi-3.5-vision-instruct (128k)** 與圖片完成程式碼生成
 
-![arch](../../../../../../translated_images/tw/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/tw/arch.5a58a0adfa959a2d.webp)
 
 ## **相關步驟**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/tw/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/tw/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/tw/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/tw/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/tw/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/tw/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/tw/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/tw/agentimage.f5cb52b45ab7d0d1.webp)
 
 你可以下載範例程式碼：[點此](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

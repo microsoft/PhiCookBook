@@ -15,11 +15,11 @@ Koristite li Visual Studio Code Copilot? Posebno u Chatu, možete koristiti razl
 
 Znamo da Phi-3/3.5-mini-instruct iz Phi-3/3.5 obitelji ima snažne sposobnosti razumijevanja i generiranja koda, te prednosti u odnosu na Gemma-2-9b i Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/hr/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/hr/codegen.53be1150ee54d969.webp)
 
 Najnoviji GitHub Models već omogućuju pristup modelima Phi-3.5-mini-instruct (128k) i Phi-3.5-vision-instruct (128k). Programeri im mogu pristupiti putem OpenAI SDK-a, Azure AI Inference SDK-a i REST API-ja.
 
-![gh](../../../../../../translated_images/hr/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/hr/gh.459640c7ceba01d5.webp)
 
 ***Note: *** Preporučuje se korištenje Azure AI Inference SDK-a ovdje, jer se bolje integrira s Azure Model Catalogom u produkcijskom okruženju
 
@@ -34,13 +34,13 @@ Slijede rezultati **Phi-3.5-mini-instruct (128k)** i **Phi-3.5-vision-instruct (
 
 GitHub Copilot Chat Agent može obavljati različite zadatke u različitim projektnim scenarijima na temelju koda. Sustav ima četiri agenta: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/hr/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/hr/agent.3dbb06228f9a6189.webp)
 
 Dodavanjem imena agenta s ‘@’ možete brzo izvršiti odgovarajući zadatak. Za tvrtke, ako dodate vlastiti poslovno povezani sadržaj poput zahtjeva, kodiranja, testnih specifikacija i objava, možete imati snažnije privatne funkcije za poduzeća temeljene na GitHub Copilotu.
 
 Visual Studio Code Chat Agent sada je službeno objavio svoj API, što omogućuje tvrtkama ili razvojnim programerima u poduzećima da razvijaju agente temeljene na različitim softverskim poslovnim ekosustavima. Temeljem metode razvoja Visual Studio Code Extension Development, lako možete pristupiti sučelju Visual Studio Code Chat Agent API-ja. Možemo razvijati na temelju ovog procesa
 
-![diagram](../../../../../../translated_images/hr/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/hr/diagram.ca70d2866762f115.webp)
 
 Razvojni scenarij može podržavati pristup API-jima trećih strana (kao što su GitHub Models, Azure Model Catalog i samostalno izgrađene usluge temeljene na open source modelima) te može koristiti i modele gpt-35-turbo, gpt-4 i gpt-4o koje pruža GitHub Copilot.
 
@@ -54,7 +54,7 @@ Pokušavamo integrirati programerske sposobnosti Phi-3.5 za dovršavanje pisanja
 
 3. Generira kod na temelju **Phi-3.5-vision-instruct (128k)** i dovršava kod iz slike putem naredbe **@phicoding /image**
 
-![arch](../../../../../../translated_images/hr/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/hr/arch.5a58a0adfa959a2d.webp)
 
 ## **Povezani koraci**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/hr/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/hr/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/hr/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/hr/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/hr/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/hr/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/hr/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/hr/agentimage.f5cb52b45ab7d0d1.webp)
 
 Možete preuzeti primjerni kod: [kliknite](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

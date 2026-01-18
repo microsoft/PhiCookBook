@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 생성형 AI의 발전과 함께, 다양한 LLM과 SLM, 기업 데이터 통합, 파인튜닝/RAG 작업, 그리고 LLM과 SLM 통합 후 다양한 기업 비즈니스 평가를 하나의 통합 플랫폼에서 관리하여 생성형 AI 기반 스마트 애플리케이션을 더 잘 구현하고자 합니다. [Azure AI Foundry](https://ai.azure.com)는 기업용 생성형 AI 애플리케이션 플랫폼입니다.
 
-![aistudo](../../../../translated_images/ko/aifoundry_home.f28a8127c96c7d93.png)
+![aistudo](../../../../translated_images/ko/aifoundry_home.f28a8127c96c7d93.webp)
 
 Azure AI Foundry를 사용하면 대형 언어 모델(LLM) 응답을 평가하고, 프롬프트 플로우를 통해 프롬프트 애플리케이션 구성 요소를 조율하여 더 나은 성능을 낼 수 있습니다. 이 플랫폼은 개념 증명을 완전한 프로덕션으로 전환하는 데 필요한 확장성을 지원하며, 지속적인 모니터링과 개선을 통해 장기적인 성공을 돕습니다.
 

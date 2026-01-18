@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Selamat datang ke [GitHub Models](https://github.com/marketplace/models)! Kami telah menyediakan segala-galanya untuk anda meneroka Model AI yang dihoskan di Azure AI.
 
-![GitHubModel](../../../../translated_images/ms/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/ms/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 Untuk maklumat lanjut mengenai Model yang tersedia di GitHub Models, sila lawati [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Terdapat beberapa contoh asas yang sedia untuk anda jalankan. Anda boleh menemui
 
 Terdapat juga Persekitaran Codespaces khusus untuk menjalankan contoh dan model.
 
-![Getting Started](../../../../translated_images/ms/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/ms/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Contoh Kod
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Penggunaan PERCUMA dan Had Kadar untuk GitHub Models
 
-![Model Catalog](../../../../translated_images/ms/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/ms/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [Had kadar untuk playground dan penggunaan API percuma](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) bertujuan untuk membantu anda bereksperimen dengan model dan membuat prototaip aplikasi AI anda. Untuk penggunaan melebihi had tersebut, dan untuk mengembangkan aplikasi anda, anda mesti menyediakan sumber dari akaun Azure, dan mengesahkan dari situ dan bukannya menggunakan token akses peribadi GitHub anda. Anda tidak perlu mengubah apa-apa dalam kod anda. Gunakan pautan ini untuk mengetahui cara melebihi had tahap percuma dalam Azure AI.
 

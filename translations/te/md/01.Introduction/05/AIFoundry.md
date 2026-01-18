@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry ఉపయోగించి మూల్యాంకనం**
 
-![aistudo](../../../../../translated_images/te/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/te/AIFoundry.9e0b513e999a1c5a.webp)
 
 మీ జనరేటివ్ AI అప్లికేషన్‌ను [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ఉపయోగించి ఎలా మూల్యాంకనం చేయాలో తెలుసుకోండి. మీరు single-turn లేదా multi-turn సంభాషణలను అంచనా వేస్తున్నా, Azure AI Foundry మోడల్ పనితనం మరియు భద్రతను మూల్యాంకనం చేయడానికి టూల్స్ అందిస్తుంది. 
 
-![aistudo](../../../../../translated_images/te/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/te/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Azure AI Foundryతో జనరేటివ్ AI యాప్స్‌ను ఎలా మూల్యాంకించాలి
 మరింత వివరణాత్మక సూచనల కోసం [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) చూడండి

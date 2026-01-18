@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 في هذا المثال، سنقوم بضبط نموذج Phi-3-mini-4k-instruct لإكمال محادثة بين شخصين باستخدام مجموعة بيانات ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/ar/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/ar/MLFineTune.928d4c6b3767dd35.webp)
 
 سيُظهر المثال كيفية إجراء الضبط الدقيق باستخدام Azure ML SDK وPython ثم نشر النموذج المضبوط إلى نقطة نهاية عبر الإنترنت للاستدلال في الوقت الحقيقي.
 

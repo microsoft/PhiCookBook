@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Επέλεξα το Objective-C ως μέθοδο ανάπτυξης της εφαρμογής, επειδή η χρήση του Generative AI με το ONNX Runtime C++ API είναι πιο συμβατή με Objective-C. Φυσικά, μπορείτε επίσης να ολοκληρώσετε τις σχετικές κλήσεις μέσω Swift bridging.
 
-![xcode](../../../../../translated_images/el/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/el/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Αντιγραφή του ποσοτικοποιημένου μοντέλου ONNX INT4 στο project της εφαρμογής**
 
 Πρέπει να εισάγουμε το μοντέλο ποσοτικοποίησης INT4 σε μορφή ONNX, το οποίο πρέπει πρώτα να κατεβάσετε.
 
-![hf](../../../../../translated_images/el/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/el/hf.6b8504fd88ee48dd.webp)
 
 Μετά το κατέβασμα, πρέπει να το προσθέσετε στον φάκελο Resources του project στο Xcode.
 
-![model](../../../../../translated_images/el/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/el/model.3b879b14e0be877d.webp)
 
 ## **6. Προσθήκη του C++ API στα ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** Προσθέστε τα αντίστοιχα αρχεία κεφαλίδας C++ στο project.
 
-  ![Header File](../../../../../translated_images/el/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/el/head.64cad021ce70a333.webp)
 
 - **b.** Συμπεριλάβετε τη δυναμική βιβλιοθήκη `onnxruntime-genai` στο Xcode.
 
-  ![Library](../../../../../translated_images/el/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/el/lib.a4209b9f21ddf344.webp)
 
 - **c.** Χρησιμοποιήστε τον κώδικα δειγμάτων C για δοκιμές. Μπορείτε επίσης να προσθέσετε επιπλέον λειτουργίες όπως ChatUI για περισσότερη λειτουργικότητα.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Μόλις ολοκληρωθεί η ρύθμιση, μπορείτε να τρέξετε την εφαρμογή για να δείτε τα αποτελέσματα της εκτέλεσης του μοντέλου Phi-3-mini.
 
-![Running Result](../../../../../translated_images/el/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/el/result.326a947a6a2b9c51.webp)
 
 Για περισσότερα παραδείγματα κώδικα και λεπτομερείς οδηγίες, επισκεφθείτε το [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

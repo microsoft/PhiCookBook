@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Am ales Objective-C ca metodă de dezvoltare a aplicației, deoarece folosind Generative AI cu API-ul C++ ONNX Runtime, Objective-C oferă o compatibilitate mai bună. Desigur, poți realiza apelurile necesare și prin bridging cu Swift.
 
-![xcode](../../../../../translated_images/ro/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ro/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Copierea modelului ONNX cuantificat INT4 în proiectul aplicației**
 
 Trebuie să importăm modelul de cuantizare INT4 în format ONNX, care trebuie descărcat mai întâi.
 
-![hf](../../../../../translated_images/ro/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ro/hf.6b8504fd88ee48dd.webp)
 
 După descărcare, trebuie să-l adaugi în directorul Resources al proiectului în Xcode.
 
-![model](../../../../../translated_images/ro/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ro/model.3b879b14e0be877d.webp)
 
 ## **6. Adăugarea API-ului C++ în ViewControllers**
 
@@ -121,11 +121,11 @@ După descărcare, trebuie să-l adaugi în directorul Resources al proiectului 
 
 - **a.** Adaugă fișierele header C++ corespunzătoare în proiect.
 
-  ![Header File](../../../../../translated_images/ro/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ro/head.64cad021ce70a333.webp)
 
 - **b.** Include biblioteca dinamică `onnxruntime-genai` în Xcode.
 
-  ![Library](../../../../../translated_images/ro/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ro/lib.a4209b9f21ddf344.webp)
 
 - **c.** Folosește codul exemplu C pentru testare. Poți adăuga și funcționalități suplimentare, cum ar fi ChatUI, pentru mai multe opțiuni.
 
@@ -162,7 +162,7 @@ După descărcare, trebuie să-l adaugi în directorul Resources al proiectului 
 
 După ce ai terminat configurarea, poți rula aplicația pentru a vedea rezultatele inferenței modelului Phi-3-mini.
 
-![Running Result](../../../../../translated_images/ro/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ro/result.326a947a6a2b9c51.webp)
 
 Pentru mai mult cod exemplu și instrucțiuni detaliate, vizitează [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

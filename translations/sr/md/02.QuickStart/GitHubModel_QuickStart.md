@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Добродошли у [GitHub Models](https://github.com/marketplace/models)! Све је спремно за вас да истражите AI моделе који се налазе на Azure AI.
 
-![GitHubModel](../../../../translated_images/sr/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/sr/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 За више информација о моделима доступним на GitHub Models, погледајте [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Постоји и посебно Codespaces окружење за покретање примера и модела.
 
-![Getting Started](../../../../translated_images/sr/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/sr/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Примери кода
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Бесплатна употреба и ограничења за GitHub Models
 
-![Model Catalog](../../../../translated_images/sr/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/sr/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [Ограничења за playground и бесплатну API употребу](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) су намењена да вам помогну да експериментишете са моделима и направите прототип своје AI апликације. За коришћење изван тих ограничења, и за скалирање ваше апликације, морате обезбедити ресурсе преко Azure налога и аутентификовати се преко њега уместо преко вашег GitHub personal access token-а. Не морате мењати ништа друго у свом коду. Користите овај линк да сазнате како да пређете границе бесплатног нивоа у Azure AI.
 

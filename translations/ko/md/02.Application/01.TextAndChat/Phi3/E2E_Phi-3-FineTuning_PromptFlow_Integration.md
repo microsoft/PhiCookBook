@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 다음은 이 E2E 샘플의 개요입니다.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ko/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ko/00-01-architecture.02fc569e266d468c.webp)
 
 ### 목차
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *azure machine learning*을 입력하고 나타나는 옵션에서 **Azure Machine Learning**을 선택합니다.
 
-    ![Type azure machine learning](../../../../../../translated_images/ko/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/ko/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. 탐색 메뉴에서 **+ 만들기**을 선택합니다.
 
 1. 탐색 메뉴에서 **새 작업 영역**을 선택합니다.
 
-    ![Select new workspace](../../../../../../translated_images/ko/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/ko/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **애플리케이션 인사이트**를 선택합니다 (필요 시 새로 만듭니다).
     - 사용할 **컨테이너 레지스트리**를 선택합니다 (필요 시 새로 만듭니다).
 
-    ![Fill AZML.](../../../../../../translated_images/ko/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/ko/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. **검토 + 만들기**를 선택합니다.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들면, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs*로, *Standard_NC24ads_A100_v4* GPU를 포함합니다.
     - 탐색 메뉴에서 **할당량 요청**을 선택합니다.
 
-        ![Request quota.](../../../../../../translated_images/ko/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/ko/01-04-request-quota.3d3670c3221ab834.webp)
 
     - 할당량 요청 페이지에서 사용할 **새 코어 제한(New cores limit)** 값을 입력합니다. 예: 24
     - 할당량 요청 페이지에서 **제출**을 선택하여 GPU 할당량을 요청합니다.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *managed identities*를 입력하고 나타나는 옵션에서 **Managed Identities**를 선택합니다.
 
-    ![Type managed identities.](../../../../../../translated_images/ko/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/ko/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. **+ 만들기**를 선택합니다.
 
-    ![Select create.](../../../../../../translated_images/ko/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/ko/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **리소스 그룹**을 선택합니다.
     - 역할을 **기여자(Contributor)**로 설정합니다.
 
-    ![Fill contributor role.](../../../../../../translated_images/ko/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/ko/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. **저장**을 선택합니다.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *storage accounts*를 입력하고 나타나는 옵션에서 **Storage accounts**를 선택합니다.
 
-    ![Type storage accounts.](../../../../../../translated_images/ko/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/ko/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Azure Machine Learning 작업 영역에 연관된 저장소 계정을 선택합니다. 예: *finetunephistorage*
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 탐색 메뉴에서 **+ 추가**를 선택합니다.
     - **역할 할당 추가**를 선택합니다.
 
-    ![Add role.](../../../../../../translated_images/ko/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/ko/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. 역할 할당 추가 페이지에서 다음 작업을 수행합니다:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 관리 ID 선택 페이지에서 생성한 관리 ID를 선택합니다. 예: *finetunephi-managedidentity*
     - 관리 ID 선택 페이지에서 **선택**을 클릭합니다.
 
-    ![Select managed identity.](../../../../../../translated_images/ko/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/ko/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. **검토 + 할당**을 선택합니다.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *container registries*를 입력하고 나타나는 옵션에서 **Container registries**를 선택합니다.
 
-    ![Type container registries.](../../../../../../translated_images/ko/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/ko/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Azure Machine Learning 작업 영역과 연관된 컨테이너 레지스트리를 선택합니다. 예: *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. *finetune-phi* 폴더를 선택합니다. 이 폴더는 *C:\Users\yourUserName\finetune-phi* 경로에 있습니다.
 
-    ![프로젝트 폴더 열기](../../../../../../translated_images/ko/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![프로젝트 폴더 열기](../../../../../../translated_images/ko/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. Visual Studio Code의 왼쪽 창에서 우클릭 후 **새 파일(New File)**을 선택하여 *download_dataset.py* 파일을 생성합니다.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Visual Studio Code 왼쪽 창에서 우클릭 후 **새 파일(New File)**을 선택하여 *deploy_model.py* 파일을 생성합니다.
 
-    ![새 파일 생성](../../../../../../translated_images/ko/01-13-create-new-file.c17c150fff384a39.png)
+    ![새 파일 생성](../../../../../../translated_images/ko/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. Visual Studio Code 왼쪽 창에서 우클릭 후 **새 폴더(New Folder)**를 선택하여 *finetuning_dir* 폴더를 생성합니다.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - 현재 사용 중인 Azure 구독을 선택합니다.
     - 구독 ID를 복사하여 *config.py* 파일에 붙여넣기 합니다.
 
-    ![구독 ID 찾기](../../../../../../translated_images/ko/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![구독 ID 찾기](../../../../../../translated_images/ko/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Azure 작업 영역 이름을 추가하기 위한 작업:
 
     - 생성한 Azure Machine Learning 리소스로 이동합니다.
     - 계정 이름을 복사하여 *config.py* 파일에 붙여넣기 합니다.
 
-    ![Azure Machine Learning 이름 찾기](../../../../../../translated_images/ko/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Azure Machine Learning 이름 찾기](../../../../../../translated_images/ko/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Azure 리소스 그룹 이름을 추가하기 위한 작업:
 
     - 생성한 Azure Machine Learning 리소스로 이동합니다.
     - Azure 리소스 그룹 이름을 복사하여 *config.py* 파일에 붙여넣기 합니다.
 
-    ![리소스 그룹 이름 찾기](../../../../../../translated_images/ko/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![리소스 그룹 이름 찾기](../../../../../../translated_images/ko/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Azure 관리 ID 이름 추가하기:
 
     - 생성한 관리 ID(Managed Identities) 리소스로 이동합니다.
     - Azure 관리 ID 이름을 복사하여 *config.py* 파일에 붙여넣기 합니다.
 
-    ![UAI 찾기](../../../../../../translated_images/ko/01-17-find-uai.3529464f53499827.png)
+    ![UAI 찾기](../../../../../../translated_images/ko/01-17-find-uai.3529464f53499827.webp)
 
 ### 미세 조정을 위한 데이터 세트 준비
 
@@ -509,7 +509,7 @@ Azure 환경을 인증하려면 Azure CLI를 설정해야 합니다. Azure CLI�
 
 1. 사용할 Azure 구독을 선택합니다.
 
-    ![리소스 그룹 이름 확인](../../../../../../translated_images/ko/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![리소스 그룹 이름 확인](../../../../../../translated_images/ko/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Azure 환경을 인증하려면 Azure CLI를 설정해야 합니다. Azure CLI�
 
 1. 이번 연습에서 Azure Machine Learning을 사용해 Phi-3 모델을 성공적으로 미세 조정했습니다. *setup_ml.py*를 실행함으로써 Azure Machine Learning 환경이 설정되고 *fine_tune.py*에 정의된 미세 조정 과정이 시작됩니다. 미세 조정 작업은 상당한 시간이 걸릴 수 있으니, `python setup_ml.py` 명령어 실행 후 완료될 때까지 기다립니다. 터미널에 출력된 링크를 통해 Azure Machine Learning 포털에서 작업 상태를 실시간으로 확인할 수 있습니다.
 
-    ![미세 조정 작업 확인](../../../../../../translated_images/ko/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![미세 조정 작업 확인](../../../../../../translated_images/ko/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### 미세 조정된 모델 배포
 
@@ -1080,11 +1080,11 @@ Azure 환경을 인증하려면 Azure CLI를 설정해야 합니다. Azure CLI�
 
 1. 왼쪽 탭에서 **Endpoints**를 선택하세요.
 
-    ![Select endpoints.](../../../../../../translated_images/ko/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/ko/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. 생성한 엔드포인트를 선택하세요.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/ko/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/ko/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. 이 페이지에서 배포 과정 중 생성된 엔드포인트를 관리할 수 있습니다.
 
@@ -1103,7 +1103,7 @@ Azure 환경을 인증하려면 Azure CLI를 설정해야 합니다. Azure CLI�
 1. **REST endpoint**를 복사하여 *config.py* 파일의 `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` 부분에 붙여넣으세요.
 1. **Primary key**를 복사하여 *config.py* 파일의 `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` 부분에 붙여넣으세요.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/ko/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/ko/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### *flow.dag.yml* 파일에 코드 추가
 
@@ -1212,7 +1212,7 @@ Azure 환경을 인증하려면 Azure CLI를 설정해야 합니다. Azure CLI�
 
 1. 결과 예시는 다음과 같습니다: 이제 맞춤 Phi-3 모델과 채팅할 수 있습니다. 미세 조정에 사용된 데이터를 기반으로 질문하는 것이 권장됩니다.
 
-    ![Prompt flow example.](../../../../../../translated_images/ko/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/ko/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

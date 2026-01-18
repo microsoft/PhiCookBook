@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ನಾನು ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿಯ әдіಗಾಗಿಯೇ Objective-C ಅನ್ನು ಆಯ್ಕೆಮಾಡಿದೆ, ಏಕೆಂದರೆ ONNX Runtime C++ API ನೊಂದಿಗೆ ಜನರೆಟಿವ್ AI ಅನ್ನು ಬಳಸುವಾಗ Objective-C ಉತ್ತಮ ಹೊಂದಾಣಿಕೆಯನ್ನು ನೀಡುತ್ತದೆ. ಖಚಿತವಾಗಿ, ನೀವು Swift ಬ್ರಿಡ್ಜಿಂಗ್ ಮೂಲಕ ಸಂಬಂಧಿತ ಕರೆಗಳನ್ನು ಸಹ ಪೂರ್ಣಗೊಳಿಸಬಹುದು.
 
-![Xcode](../../../../../translated_images/kn/xcode.8147789e6c25e3e2.png)
+![Xcode](../../../../../translated_images/kn/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX ಕ್ವಾಂಟೈಜ್ಡ್ INT4 ಮಾದರಿಯನ್ನು App ಅಪ್ಲಿಕೇಶನ್ ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಕಾಪಿ ಮಾಡುವದು**
 
 ನಾವು ONNX ಫಾರ್ಮ್ಯಾಟ್‌ನ INT4 ಕ್ವಾಂಟೈಜೆಶನ್ ಮಾದರಿಯನ್ನು ಆಮದು ಮಾಡಬೇಕಾಗುತ್ತದೆ, ಅದನ್ನು ಮೊದಲು ಡೌನ್‌ಲೋಡ್ ಮಾಡಬೇಕು
 
-![HF](../../../../../translated_images/kn/hf.6b8504fd88ee48dd.png)
+![HF](../../../../../translated_images/kn/hf.6b8504fd88ee48dd.webp)
 
 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದ ನಂತರ, ಅದನ್ನು Xcode ಪ್ರಾಜೆಕ್ಟಿನ Resources ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಸೇರಿಸಬೇಕು.
 
-![ಮಾದರಿ](../../../../../translated_images/kn/model.3b879b14e0be877d.png)
+![ಮಾದರಿ](../../../../../translated_images/kn/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllers ನಲ್ಲಿ C++ API ಸೇರಿಸುವುದು**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** ಸಂಬಂಧಿತ C++ ಹೆಡರ್ ಫೈಲ್‌ಗಳನ್ನು ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಸೇರಿಸಿ.
 
-  ![ಹೆಡರ್ ಫೈಲ್](../../../../../translated_images/kn/head.64cad021ce70a333.png)
+  ![ಹೆಡರ್ ಫೈಲ್](../../../../../translated_images/kn/head.64cad021ce70a333.webp)
 
 - **b.** `onnxruntime-genai` ಡೈನಾಮಿಕ್ ಲೈಬ್ರೆರಿಯನ್ನು Xcode ನಲ್ಲಿ ಸೇರಿಸಿ.
 
-  ![ಲೈಬ್ರರಿ](../../../../../translated_images/kn/lib.a4209b9f21ddf344.png)
+  ![ಲೈಬ್ರರಿ](../../../../../translated_images/kn/lib.a4209b9f21ddf344.webp)
 
 - **c.** ಪರೀಕ್ಷೆಗಾಗಿ C Samples ಕೋಡ್ ಅನ್ನು ಬಳಸಿ. ಹೆಚ್ಚಿನ ಕಾರ್ಯಕ್ಷಮತೆಗಾಗಿ ChatUI ಮುಂತಾದ ಹೆಚ್ಚುವರಿ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಕೂಡ ಸೇರಿಸಬಹುದು.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ಸೆಟ್‌ಅಪ್ ಪೂರ್ಣವಾದ ನಂತರ, Phi-3-mini ಮಾದರಿ ಇನ್‌ಫೆರನ್ಸ್ ಫಲಿತಾಂಶಗಳನ್ನು ನೋಡಲು ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಚಾಲನೆ ಮಾಡಬಹುದು.
 
-![ಚಲಾಯಿಸಿದ ಫಲಿತಾಂಶ](../../../../../translated_images/kn/result.326a947a6a2b9c51.jpg)
+![ಚಲಾಯಿಸಿದ ಫಲಿತಾಂಶ](../../../../../translated_images/kn/result.326a947a6a2b9c51.webp)
 
 ಹೆಚ್ಚಿನ ಉದಾಹರಣಾ ಕೋಡ್ ಮತ್ತು ವಿವರವಾದ ಸೂಚನೆಗಳಿಗಾಗಿ, [Phi-3 Mini Samples ರೆಪೊಸಿಟರಿ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ಅನ್ನು ಭೇಟಿ ಮಾಡಿ.
 

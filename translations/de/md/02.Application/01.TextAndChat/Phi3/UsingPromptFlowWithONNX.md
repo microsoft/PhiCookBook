@@ -33,33 +33,33 @@ Lies diese Anleitung, um ONNX Runtime GenAI für Windows GPU einzurichten: [hier
 
 1. Installiere die PromptFlow VS Code Erweiterung
 
-![pfvscode](../../../../../../translated_images/de/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/de/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Nach der Installation der PromptFlow VS Code Erweiterung, klicke auf die Erweiterung und wähle **Installation dependencies**. Folge dieser Anleitung, um das PromptFlow SDK in deiner Umgebung zu installieren.
 
-![pfsetup](../../../../../../translated_images/de/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/de/pfsetup.b46e93096f5a254f.webp)
 
 3. Lade den [Beispielcode](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) herunter und öffne das Beispiel mit VS Code
 
-![pfsample](../../../../../../translated_images/de/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/de/pfsample.8d89e70584ffe7c4.webp)
 
 4. Öffne **flow.dag.yaml**, um deine Python-Umgebung auszuwählen
 
-![pfdag](../../../../../../translated_images/de/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/de/pfdag.264a77f7366458ff.webp)
 
    Öffne **chat_phi3_ort.py**, um den Speicherort deines Phi-3.5-instruct ONNX-Modells anzupassen
 
-![pfphi](../../../../../../translated_images/de/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/de/pfphi.72da81d74244b45f.webp)
 
 5. Starte deinen PromptFlow-Testlauf
 
 Öffne **flow.dag.yaml** und klicke auf den visuellen Editor
 
-![pfv](../../../../../../translated_images/de/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/de/pfv.ba8a81f34b20f603.webp)
 
 Klicke darauf und führe den Testlauf aus
 
-![pfflow](../../../../../../translated_images/de/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/de/pfflow.4e1135a089b1ce1b.webp)
 
 1. Du kannst auch im Terminal Batch-Läufe starten, um weitere Ergebnisse zu prüfen
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Die Ergebnisse kannst du in deinem Standardbrowser ansehen
 
 
-![pfresult](../../../../../../translated_images/de/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/de/pfresult.c22c826f8062d7cb.webp)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

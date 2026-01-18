@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 어댑터가 원격 환경에서 학습된 후, 간단한 Gradio 애플리케이션을 사용하여 모델과 상호작용할 수 있습니다.
 
-![Fine-tune complete](../../../../../translated_images/ko/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/ko/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Azure 리소스 프로비저닝  
 원격 추론을 위해 `AI Toolkit: Provision Azure Container Apps for inference` 명령어를 커맨드 팔레트에서 실행하여 Azure 리소스를 설정해야 합니다. 이 과정에서 Azure 구독과 리소스 그룹을 선택하라는 메시지가 표시됩니다.  
-![Provision Inference Resource](../../../../../translated_images/ko/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/ko/command-provision-inference.467afc8d351642fc.webp)
 
 기본적으로 추론에 사용할 구독과 리소스 그룹은 미세 조정에 사용한 것과 동일해야 합니다. 추론은 동일한 Azure Container App 환경을 사용하며, 미세 조정 단계에서 생성된 Azure Files에 저장된 모델과 모델 어댑터에 접근합니다.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### 추론 배포  
 추론 코드를 수정하거나 추론 모델을 다시 로드하려면 `AI Toolkit: Deploy for inference` 명령어를 실행하세요. 이 명령어는 최신 코드를 ACA와 동기화하고 복제본을 재시작합니다.
 
-![Deploy for inference](../../../../../translated_images/ko/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/ko/command-deploy.9adb4e310dd0b0ae.webp)
 
 배포가 성공적으로 완료되면, 이 엔드포인트를 통해 모델 평가가 가능합니다.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 VSCode 알림에 표시되는 "*Go to Inference Endpoint*" 버튼을 클릭하여 추론 API에 접근할 수 있습니다. 또는 웹 API 엔드포인트는 `./infra/inference.config.json` 파일 내 `ACA_APP_ENDPOINT` 항목과 출력 패널에서 확인할 수 있습니다.
 
-![App Endpoint](../../../../../translated_images/ko/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/ko/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** 추론 엔드포인트가 완전히 작동하기까지 몇 분 정도 소요될 수 있습니다.
 

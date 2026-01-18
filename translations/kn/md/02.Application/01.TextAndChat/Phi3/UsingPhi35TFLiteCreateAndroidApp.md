@@ -113,7 +113,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 ನಿಮ್ಮ Android ಕೋಡ್ ಅನ್ನು ಚಾಲನೆ ಮಾಡುವುದು**
 
-![ಡೆಮೋ](../../../../../../translated_images/kn/demo.06d5a4246f057d1b.png)
+![ಡೆಮೋ](../../../../../../translated_images/kn/demo.06d5a4246f057d1b.webp)
 
 ---
 

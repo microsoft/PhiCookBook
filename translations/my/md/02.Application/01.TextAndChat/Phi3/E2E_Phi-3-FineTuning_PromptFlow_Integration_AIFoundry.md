@@ -24,7 +24,7 @@ In this E2E sample, you will learn how to fine-tune the Phi-3 model and integrat
 
 Here is an overview of this E2E sample.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/my/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/my/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Table of Contents
 
@@ -49,13 +49,13 @@ Here is an overview of this E2E sample.
 
 1. Type *azure machine learning* in the **search bar** at the top of the portal page and select **Azure Machine Learning** from the options that appear.
 
-    ![Type azure machine learning.](../../../../../../translated_images/my/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/my/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Select **+ Create** from the navigation menu.
 
 3. Select **New workspace** from the navigation menu.
 
-    ![Select new workspace.](../../../../../../translated_images/my/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/my/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Perform the following tasks:
 
@@ -68,7 +68,7 @@ Here is an overview of this E2E sample.
     - Select the **Application insights** to use (create a new one if needed).
     - Select the **Container registry** to use (create a new one if needed).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/my/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/my/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Select **Review + Create**.
 
@@ -91,7 +91,7 @@ In this tutorial, you will learn how to fine-tune and deploy a Phi-3 model, usin
     - Select the **Virtual machine family** to use. For example, select **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, which includes the *Standard_NC24ads_A100_v4* GPU.
     - Select the **Request quota** from the navigation menu.
 
-        ![Request quota.](../../../../../../translated_images/my/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/my/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Inside the Request quota page, enter the **New cores limit** you'd like to use. For example, 24.
     - Inside the Request quota page, select **Submit** to request the GPU quota.
@@ -112,11 +112,11 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
 
 1. Type *managed identities* in the **search bar** at the top of the portal page and select **Managed Identities** from the options that appear.
 
-    ![Type managed identities.](../../../../../../translated_images/my/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/my/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Select **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/my/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/my/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Perform the following tasks:
 
@@ -125,7 +125,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Select the **Region** you'd like to use.
     - Enter the **Name**. It must be a unique value.
 
-    ![Select create.](../../../../../../translated_images/my/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/my/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Select **Review + create**.
 
@@ -145,7 +145,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Select the **Resource group** to use.
     - Select the **Role** to **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/my/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/my/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Select **Save**.
 
@@ -153,7 +153,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
 
 1. Type *storage accounts* in the **search bar** at the top of the portal page and select **Storage accounts** from the options that appear.
 
-    ![Type storage accounts.](../../../../../../translated_images/my/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/my/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Select the storage account that associated with the Azure Machine Learning workspace that you created. For example, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Select **+ Add** from the navigation menu.
     - Select **Add role assignment** from the navigation menu.
 
-    ![Add role.](../../../../../../translated_images/my/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/my/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Inside Add role assignment page, Perform the following tasks:
 
@@ -177,7 +177,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
     - Inside Select managed identities page, select the Manage Identity that you created. For example, *finetunephi-managedidentity*.
     - Inside Select managed identities page, select **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/my/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/my/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Select **Review + assign**.
 
@@ -185,7 +185,7 @@ To fine-tune and deploy your models, you must first create a User Assigned Manag
 
 1. Type *container registries* in the **search bar** at the top of the portal page and select **Container registries** from the options that appear.
 
-    ![Type container registries.](../../../../../../translated_images/my/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/my/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Select the container registry that associated with the Azure Machine Learning workspace. For example, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ In this exercise, you will
 
 1. သင်ဖန်တီးထားသော *finetune-phi* ဖိုလ်ဒါကို ရွေးချယ်ပါ၊ ထိုဖိုလ်ဒါသည် *C:\Users\yourUserName\finetune-phi* တွင်ရှိသည်။
 
-    ![သင်ဖန်တီးထားသော ဖိုလ်ဒါကို ရွေးချယ်ပါ။](../../../../../../translated_images/my/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![သင်ဖန်တီးထားသော ဖိုလ်ဒါကို ရွေးချယ်ပါ။](../../../../../../translated_images/my/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Visual Studio Code ၏ ဘယ်ဘက်နေရာတွင် right-click ပြုလုပ်ပြီး **New File** ကို ရွေး၍ *download_dataset.py* ဟု နာမည်ပေးသည့် ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-    ![ဖိုင်အသစ် ဖန်တီးပါ။](../../../../../../translated_images/my/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![ဖိုင်အသစ် ဖန်တီးပါ။](../../../../../../translated_images/my/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Fine-tuning အတွက် ဒေတာစုစည်းမှု ပြင်ဆင်ခြင်း
 
@@ -392,7 +392,7 @@ In this exercise, you will
 
 1. **+ New** ကို နှိပ်ပါ။
 
-    ![compute ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-01-select-compute.a29cff290b480252.png)
+    ![compute ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-01-select-compute.a29cff290b480252.webp)
 
 1. အောက်ပါ အချက်အလက်များကို ဖြည့်စွက်လုပ်ဆောင်ပါ-
 
@@ -402,7 +402,7 @@ In this exercise, you will
     - **Virtual machine size** ချိတ်ဆက်ကို **Select from all options** ဟု ပြောင်းပါ။
     - **Virtual machine size** တွင် **Standard_NC24ads_A100_v4** ကို ရွေးချယ်ပါ။
 
-    ![cluster ဖန်တီးမှု](../../../../../../translated_images/my/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![cluster ဖန်တီးမှု](../../../../../../translated_images/my/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. **Next** ကို နှိပ်ပါ။
 
@@ -413,7 +413,7 @@ In this exercise, you will
     - **Maximum number of nodes** ကို **1** ဟု ရွေးပါ။
     - **Idle seconds before scale down** ကို **120** ဟု ရွေးချယ်ပါ။
 
-    ![cluster ဖန်တီးမှု](../../../../../../translated_images/my/06-03-create-cluster.4a54ba20914f3662.png)
+    ![cluster ဖန်တီးမှု](../../../../../../translated_images/my/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. **Create** ကို နှိပ်ပါ။
 
@@ -423,18 +423,18 @@ In this exercise, you will
 
 1. သင်ဖန်တီးထားသော Azure Machine Learning workspace ကို ရွေးချယ်ပါ။
 
-    ![သင်ဖန်တီးထားသော workspace ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-04-select-workspace.a92934ac04f4f181.png)
+    ![သင်ဖန်တီးထားသော workspace ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. အောက်ပါ လုပ်ဆောင်ချက်များ ပြုလုပ်ပါ-
 
     - ဘယ်ဘက် tab မှ **Model catalog** ကို ရွေးပါ။
     - **search bar** တွင် *phi-3-mini-4k* ရိုက်ထည့်ပြီး လျာထားသော ရွေးချယ်စရာများထဲမှ **Phi-3-mini-4k-instruct** ကို ရွေးချယ်ပါ။
 
-    ![phi-3-mini-4k ရိုက်ပါ။](../../../../../../translated_images/my/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![phi-3-mini-4k ရိုက်ပါ။](../../../../../../translated_images/my/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. နေရာရွေး menu မှ **Fine-tune** ကို ရွေးချယ်ပါ။
 
-    ![fine tune ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![fine tune ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. အောက်ပါ အချက်အလက်များကို ဖြည့်ပါ-
 
@@ -443,7 +443,7 @@ In this exercise, you will
     - Validation data upload အမျိုးအစားအား **Provide different validation data** ထားပါ။
     - **+ Select data** ကို နှိပ်ပြီး **Validation data** ကို upload ပြုလုပ်ပါ။
 
-    ![fine-tuning စာမျက်နှာ ဖြည့်ပါ။](../../../../../../translated_images/my/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![fine-tuning စာမျက်နှာ ဖြည့်ပါ။](../../../../../../translated_images/my/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ In this exercise, you will
 
 1. ဤလေ့ကျင့်ခန်းတွင် သင်သည် Azure Machine Learning ကို အသုံးပြု၍ Phi-3 မော်ဒယ်ကို အောင်မြင်စွာ fine-tune ပြုလုပ်ခဲ့ပါသည်။ သတိပြုရန်က fine-tuning လုပ်ငန်းစဉ်သည် အချိန်အတော်ကြာနိုင်ပါသည်။ Fine-tuning လုပ်ငန်းစဉ်ကို စတင်ပြုလုပ်ပြီးနောက် ပြီးမြောက်မှုအတွက် စောင့်ဆိုင်းရပါမည်။ Azure Machine Learning Workspace ၏ ဘယ်ဘက် tab မှ Jobs tab သို့ သွားရောက်ကာ fine-tuning အလုပ်အမှုအခြေအနေကို စောင့်ကြည့်နိုင်ပါသည်။ နောက်ထပ် အစိတ်အပိုင်းတွင် fine-tune ပြုလုပ်ပြီး မော်ဒယ်ကို တင်ဆက်ခြင်းနှင့် Prompt flow နှင့် ပေါင်းစည်းခြင်းမပြုလုပ်မည်ဖြစ်သည်။
 
-    ![finetuning အလုပ် output ကြည့်ပါ။](../../../../../../translated_images/my/06-08-output.2bd32e59930672b1.png)
+    ![finetuning အလုပ် output ကြည့်ပါ။](../../../../../../translated_images/my/06-08-output.2bd32e59930672b1.webp)
 
 ### Fine-tune ခြင်းပြီးသား Phi-3 မော်ဒယ်ကို တင်ဆက်ခြင်း
 
@@ -471,7 +471,7 @@ Fine-tune ပြီး Phi-3 မော်ဒယ်အား Prompt flow နှ�
 
 1. သင်ဖန်တီးထားသော Azure Machine Learning workspace ကို ရွေးချယ်ပါ။
 
-    ![သင်ဖန်တီးထားသော workspace ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-04-select-workspace.a92934ac04f4f181.png)
+    ![သင်ဖန်တီးထားသော workspace ရွေးချယ်ပါ။](../../../../../../translated_images/my/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. ဘယ်ဘက် tab မှ **Models** ကို ရွေးပါ။
 
@@ -479,11 +479,11 @@ Fine-tune ပြီး Phi-3 မော်ဒယ်အား Prompt flow နှ�
 
 1. **From a job output** ကို ရွေးပါ။
 
-    ![မော်ဒယ်မှတ်ပုံတင်ခြင်း](../../../../../../translated_images/my/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![မော်ဒယ်မှတ်ပုံတင်ခြင်း](../../../../../../translated_images/my/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. သင်ဖန်တီးထားသော job ကို ရွေးချယ်ပါ။
 
-    ![job ကို ရွေးပါ။](../../../../../../translated_images/my/07-02-select-job.3e2e1144cd6cd093.png)
+    ![job ကို ရွေးပါ။](../../../../../../translated_images/my/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. **Next** ကို နှိပ်ပါ။
 
@@ -491,17 +491,17 @@ Fine-tune ပြီး Phi-3 မော်ဒယ်အား Prompt flow နှ�
 
 1. **Job output** သည် အလိုအလျောက် ရွေးချယ်ထားရှိရမည်။
 
-    ![output ကို ရွေးပါ။](../../../../../../translated_images/my/07-03-select-output.4cf1a0e645baea1f.png)
+    ![output ကို ရွေးပါ။](../../../../../../translated_images/my/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. **Next** ကိုနှိပ်ပါ။
 
 3. **Register** ကို နှိပ်ပါ။
 
-    ![register ကို နှိပ်ပါ။](../../../../../../translated_images/my/07-04-register.fd82a3b293060bc7.png)
+    ![register ကို နှိပ်ပါ။](../../../../../../translated_images/my/07-04-register.fd82a3b293060bc7.webp)
 
 4. ဘယ်ဘက် tab မှ **Models** ကို ဝင်ကြည့်၍ သင့်မှတ်ပုံတင်ထားသော မော်ဒယ်ကို ကြည့်ရှုနိုင်ပါသည်။
 
-    ![မှတ်ပုံတင်ထားသော မော်ဒယ်](../../../../../../translated_images/my/07-05-registered-model.7db9775f58dfd591.png)
+    ![မှတ်ပုံတင်ထားသော မော်ဒယ်](../../../../../../translated_images/my/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Fine-tuned မော်ဒယ်ကို တင်ဆက်ခြင်း
 
@@ -511,13 +511,13 @@ Fine-tune ပြီး Phi-3 မော်ဒယ်အား Prompt flow နှ�
 
 1. နေရာရွေး menu မှ **Real-time endpoints** ကို ရွေးပါ။
 
-    ![endpoint ဖန်တီးခြင်း](../../../../../../translated_images/my/07-06-create-endpoint.1ba865c606551f09.png)
+    ![endpoint ဖန်တီးခြင်း](../../../../../../translated_images/my/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. **Create** ကို နှိပ်ပါ။
 
 1. သင်မှတ်ပုံတင်ထားသော မော်ဒယ်ကို ရွေးချယ်ပါ။
 
-    ![မှတ်ပုံတင်ထားသော မော်ဒယ် ရွေးချယ်ပါ။](../../../../../../translated_images/my/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![မှတ်ပုံတင်ထားသော မော်ဒယ် ရွေးချယ်ပါ။](../../../../../../translated_images/my/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. **Select** ကို နှိပ်ပါ။
 
@@ -529,7 +529,7 @@ Fine-tune ပြီး Phi-3 မော်ဒယ်အား Prompt flow နှ�
     - **Endpoint name** ကို ထည့်ပါ။ တူညီမှုမရှိရပါ။
     - **Deployment name** ကို ထည့်ပါ။ တူညီမှုမရှိရပါ။
 
-    ![deployment ဆက်တင် ဖြည့်ပါ။](../../../../../../translated_images/my/07-08-deployment-setting.43ddc4209e673784.png)
+    ![deployment ဆက်တင် ဖြည့်ပါ။](../../../../../../translated_images/my/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. **Deploy** ကို နှိပ်ပါ။
 
@@ -545,14 +545,14 @@ Fine-tune ပြီး Phi-3 မော်ဒယ်အား Prompt flow နှ�
 
 1. သင့်ဖန်တီးထားသော endpoint ကို ရွေးချယ်ပါ။
 
-    ![endpoint များကို ရွေးချယ်ပါ](../../../../../../translated_images/my/07-09-check-deployment.325d18cae8475ef4.png)
+    ![endpoint များကို ရွေးချယ်ပါ](../../../../../../translated_images/my/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. ဤစာမျက်နှာတွင် တင်ဆက်မှု ပိုင်းဆိုင်ရာ endpoint များကို စီမံနိုင်ပါသည်။
 
 > [!NOTE]
 > တင်ဆက်မှု ပြီးဆုံးပါက **Live traffic** ကို **100%** သို့ သတ်မှတ်ထားကြောင်း အတည်ပြုပါ။ မဟုတ်ပါက **Update traffic** ကို နှိပ်ကာ traffic ဆက်တင်များ ပြင်ဆင်ပါ။ traffic ကို 0% သတ်မှတ်ထားလျှင် မော်ဒယ် စမ်းသပ်၍ မရပါ။
 >
-> ![traffic သတ်မှတ်ခြင်း](../../../../../../translated_images/my/07-10-set-traffic.085b847e5751ff3d.png)
+> ![traffic သတ်မှတ်ခြင်း](../../../../../../translated_images/my/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## ရှေ့ပြေး ၃: Prompt flow နှင့် ပေါင်းစည်းခြင်း သင့်စိတ်ကြိုက် မော်ဒယ်ဖြင့် ချတ်ပြောခြင်း (Azure AI Foundry တွင်)
@@ -581,7 +581,7 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 1. ဘယ်ဘက် tab မှ **All hubs** ကို ရွေးပါ။
 
 1. နေရာရွေး menu မှ **+ New hub** ကို ရွေးပါ။
-    ![Create hub.](../../../../../../translated_images/my/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Create hub.](../../../../../../translated_images/my/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. အောက်ပါအလုပ်များကို ပြုလုပ်ပါ-
 
@@ -592,7 +592,7 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
     - အသုံးပြုမည့် **Connect Azure AI Services** ကိုရွေးချယ်ပါ (လိုအပ်ပါလျှင် အသစ်တစ်ခု ဖန်တီးပါ)။
     - **Connect Azure AI Search** ကို **Skip connecting** အဖြစ်ရွေးချယ်ပါ။
 
-    ![Fill hub.](../../../../../../translated_images/my/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Fill hub.](../../../../../../translated_images/my/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. **Next** ကိုရွေးပါ။
 
@@ -602,11 +602,11 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
 1. နေရာပြောင်းခြင်းမီနူးမှ **+ New project** ကိုရွေးပါ။
 
-    ![Select new project.](../../../../../../translated_images/my/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Select new project.](../../../../../../translated_images/my/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. **Project name** ကိုထည့်ပါ။ အထူးပြုတန်ဖိုး ဖြစ်ရမည်။
 
-    ![Create project.](../../../../../../translated_images/my/08-05-create-project.4d97f0372f03375a.png)
+    ![Create project.](../../../../../../translated_images/my/08-05-create-project.4d97f0372f03375a.webp)
 
 1. **Create a project** ကိုရွေးချယ်ပါ။
 
@@ -622,17 +622,17 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
 1. ဘာသာစကားဘက်တစ်ဖက်မှ **Endpoints** ကိုရွေးချယ်ပါ။
 
-    ![Select endpoints.](../../../../../../translated_images/my/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Select endpoints.](../../../../../../translated_images/my/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. သင်ဖန်တီးထားသော endpoint ကိုရွေးချယ်ပါ။
 
-    ![Select endpoints.](../../../../../../translated_images/my/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Select endpoints.](../../../../../../translated_images/my/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. မီနူးမှ **Consume** ကိုရွေးချယ်ပါ။
 
 1. သင့် **REST endpoint** နှင့် **Primary key** ကို ကူးယူပါ။
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/my/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/my/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Custom Connection ထည့်သွင်းခြင်း
 
@@ -644,11 +644,11 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
 1. **+ New connection** ကိုရွေးပါ။
 
-    ![Select new connection.](../../../../../../translated_images/my/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Select new connection.](../../../../../../translated_images/my/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. မီနူးမှ **Custom keys** ကိုရွေးပါ။
 
-    ![Select custom keys.](../../../../../../translated_images/my/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Select custom keys.](../../../../../../translated_images/my/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
@@ -658,7 +658,7 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
     - key အမည်အတွက် **key** ဟုထည့်၍ Azure ML Studio မှ ကူးထားသော key ကို value နယ်ပယ်တွင် ပက်စ်ထည့်ပါ။
     - keys တွေ ထည့်ပြီးနောက် **is secret** ကို ရွေး၍ key မပြပေါ်ပါစေပါ။
 
-    ![Add connection.](../../../../../../translated_images/my/08-11-add-connection.785486badb4d2d26.png)
+    ![Add connection.](../../../../../../translated_images/my/08-11-add-connection.785486badb4d2d26.webp)
 
 1. **Add connection** ကိုရွေးပါ။
 
@@ -672,15 +672,15 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
 1. navigation မီနူးမှ **+ Create** ကိုရွေးပါ။
 
-    ![Select Promptflow.](../../../../../../translated_images/my/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Select Promptflow.](../../../../../../translated_images/my/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. မီနူးမှ **Chat flow** ကိုရွေးပါ။
 
-    ![Select chat flow.](../../../../../../translated_images/my/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Select chat flow.](../../../../../../translated_images/my/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. အသုံးပြုမည့် **Folder name** ကိုထည့်ပါ။
 
-    ![Enter name.](../../../../../../translated_images/my/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Enter name.](../../../../../../translated_images/my/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. **Create** ကိုရွေးချယ်ပါ။
 
@@ -717,7 +717,7 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
     - **Save** ကိုရွေးချယ်ပါ။
 
-    ![Select raw file mode.](../../../../../../translated_images/my/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Select raw file mode.](../../../../../../translated_images/my/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. *integrate_with_promptflow.py* ဖိုင်တွင် အောက်ပါကုဒ်များ ထည့်ပါ၊ ယင်းသည် Prompt flow တွင် custom Phi-3 ပုံစံကို အသုံးပြုရန်ဖြစ်သည်။
 
@@ -782,14 +782,14 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/my/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/my/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Azure AI Foundry တွင် Prompt flow ကို အသုံးပြုရာတွင် အသေးစိတ်သိရှိလိုပါက [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ကို ကြည့်ရှုနိုင်ပါသည်။
 
 1. **Chat input**, **Chat output** ကိုရွေး၍ သင့်ပုံစံနှင့် စကားပြောရန် ခွင့်ပြုပါ။
 
-    ![Input Output.](../../../../../../translated_images/my/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Input Output.](../../../../../../translated_images/my/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. ယခု သင့် custom Phi-3 မော်ဒယ်နှင့် စကားပြောရန် ပြင်ဆင်ပြီးဖြစ်ပါသည်။ နောက်တစ်ခေါက် လေ့ကျင့်မှုတွင် Prompt flow ကို စတင်ခြင်းနှင့် fine-tuned Phi-3 မော်ဒယ်ဖြင့် စကားပြောခြင်းနည်းကို သင်ယူပါမည်။
 
@@ -797,7 +797,7 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 >
 > ပြန်လည်တည်ဆောက်ထားသော flow မျာအောက်ပါပုံစံမျိုး ဖြစ်ရပါမည်-
 >
-> ![Flow example.](../../../../../../translated_images/my/08-18-graph-example.d6457533952e690c.png)
+> ![Flow example.](../../../../../../translated_images/my/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### သင့် custom Phi-3 မော်ဒယ်နှင့် စကားပြောခြင်း
@@ -810,25 +810,25 @@ Project ဖန်တီးရန်အတွက် Hub တစ်ခု ဖန်
 
 1. Prompt flow ကို စတင်ရန် **Start compute sessions** ကိုရွေးချယ်ပါ။
 
-    ![Start compute session.](../../../../../../translated_images/my/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Start compute session.](../../../../../../translated_images/my/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. ပရမီတာများကို ပြန်လည်အသစ်ထည့်ရန် **Validate and parse input** ကိုရွေးပါ။
 
-    ![Validate input.](../../../../../../translated_images/my/09-02-validate-input.317c76ef766361e9.png)
+    ![Validate input.](../../../../../../translated_images/my/09-02-validate-input.317c76ef766361e9.webp)
 
 1. သင် ဖန်တီးထားသော custom connection ၏ **connection** အချက်တန်ဖိုးကိုရွေးချယ်ပါ။ ဥပမာ *connection*။
 
-    ![Connection.](../../../../../../translated_images/my/09-03-select-connection.99bdddb4b1844023.png)
+    ![Connection.](../../../../../../translated_images/my/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### သင့် custom ပုံစံနှင့် စကားပြောခြင်း
 
 1. **Chat** ကိုရွေးပါ။
 
-    ![Select chat.](../../../../../../translated_images/my/09-04-select-chat.61936dce6612a1e6.png)
+    ![Select chat.](../../../../../../translated_images/my/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. ရလဒ်ဥပမာ - ယခု သင်သည် သင့် custom Phi-3 မော်ဒယ်နှင့် စကားပြောနိုင်ပါပြီ။ fine-tuning အတွက် အသုံးပြုထားသည့် ဒေတာအပေါ် မေးခွန်းများ မေးရန် အကြံပြုသည်။
 
-    ![Chat with prompt flow.](../../../../../../translated_images/my/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/my/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

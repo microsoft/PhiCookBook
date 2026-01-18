@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **ความสะดวก:** การปรับแต่งเกิดขึ้นอย่างไร ต้องเขียนโค้ดเองหรือไม่? ต้องเตรียมเครื่องคอมพิวเตอร์เองหรือเปล่า?
 - **ความปลอดภัย:** โมเดลที่ผ่านการปรับแต่งมีความเสี่ยงด้านความปลอดภัยหรือไม่ มีมาตรการป้องกันความเสียหายที่ไม่ตั้งใจหรือเปล่า?
 
-![AIFoundry Models](../../../../translated_images/th/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/th/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## การเตรียมตัวสำหรับการปรับแต่ง
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry ช่วยให้คุณปรับแต่งโมเดลภาษาขนาดใหญ่ให้เหมาะกับชุดข้อมูลของคุณเองผ่านกระบวนการที่เรียกว่าการปรับแต่ง (fine-tuning) การปรับแต่งนี้ช่วยเพิ่มมูลค่าอย่างมากโดยเปิดโอกาสให้ปรับแต่งและเพิ่มประสิทธิภาพสำหรับงานและแอปพลิเคชันเฉพาะทาง ส่งผลให้ประสิทธิภาพดีขึ้น ประหยัดค่าใช้จ่าย ลดความหน่วงเวลา และได้ผลลัพธ์ที่เหมาะสมกับความต้องการ
 
-![Finetune AI Foundry](../../../../translated_images/th/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/th/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### สร้างโปรเจกต์ใหม่
 
@@ -79,14 +79,14 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 
 2. เลือก **+New project** เพื่อสร้างโปรเจกต์ใหม่ใน Azure AI Foundry
 
-    ![FineTuneSelect](../../../../translated_images/th/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/th/select-new-project.cd31c0404088d7a3.webp)
 
 3. ดำเนินการดังนี้:
 
     - กำหนดชื่อ **Hub name** ซึ่งต้องไม่ซ้ำกับชื่ออื่น
     - เลือก **Hub** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
 
-    ![FineTuneSelect](../../../../translated_images/th/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/th/create-project.ca3b71298b90e420.webp)
 
 4. ดำเนินการดังนี้เพื่อสร้างฮับใหม่:
 
@@ -97,7 +97,7 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
     - เลือก **Connect Azure AI Services** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Connect Azure AI Search** เป็น **Skip connecting**
 
-    ![FineTuneSelect](../../../../translated_images/th/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/th/create-hub.49e53d235e80779e.webp)
 
 5. เลือก **Next**
 6. เลือก **Create a project**
@@ -115,15 +115,15 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 
 2. พิมพ์ *phi-3* ใน **แถบค้นหา** และเลือกโมเดล phi-3 ที่ต้องการใช้งาน
 
-    ![FineTuneSelect](../../../../translated_images/th/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/th/select-model.60ef2d4a6a3cec57.webp)
 
 3. เลือก **Fine-tune**
 
-    ![FineTuneSelect](../../../../translated_images/th/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/th/select-finetune.a976213b543dd9d8.webp)
 
 4. กรอกชื่อ **Fine-tuned model name**
 
-    ![FineTuneSelect](../../../../translated_images/th/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/th/finetune1.c2b39463f0d34148.webp)
 
 5. เลือก **Next**
 
@@ -132,13 +132,13 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
     - เลือก **task type** เป็น **Chat completion**
     - เลือก **Training data** ที่ต้องการใช้ สามารถอัปโหลดผ่าน Azure AI Foundry หรือจากเครื่องของคุณเอง
 
-    ![FineTuneSelect](../../../../translated_images/th/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/th/finetune2.43cb099b1a94442d.webp)
 
 7. เลือก **Next**
 
 8. อัปโหลด **Validation data** ที่ต้องการใช้ หรือเลือก **Automatic split of training data**
 
-    ![FineTuneSelect](../../../../translated_images/th/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/th/finetune3.fd96121b67dcdd92.webp)
 
 9. เลือก **Next**
 
@@ -148,15 +148,15 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
     - เลือก **Learning rate** ที่ต้องการใช้
     - เลือก **Epochs** ที่ต้องการใช้
 
-    ![FineTuneSelect](../../../../translated_images/th/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/th/finetune4.e18b80ffccb5834a.webp)
 
 11. เลือก **Submit** เพื่อเริ่มกระบวนการปรับแต่ง
 
-    ![FineTuneSelect](../../../../translated_images/th/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/th/select-submit.0a3802d581bac271.webp)
 
 12. เมื่อโมเดลของคุณผ่านการปรับแต่งแล้ว สถานะจะแสดงเป็น **Completed** ดังภาพด้านล่าง คุณสามารถนำโมเดลไปใช้งานในแอปพลิเคชันของคุณเอง ใน playground หรือใน prompt flow ได้ สำหรับข้อมูลเพิ่มเติม ดูที่ [วิธีการปรับใช้โมเดลภาษาเล็กในตระกูล Phi-3 ด้วย Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)
 
-    ![FineTuneSelect](../../../../translated_images/th/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/th/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > สำหรับข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับการปรับแต่ง Phi-3 โปรดเยี่ยมชม [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)

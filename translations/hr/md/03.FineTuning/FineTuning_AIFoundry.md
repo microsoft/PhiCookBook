@@ -19,7 +19,7 @@ Pogledajmo kako fino podesiti Microsoftov jezični model Phi-3 Mini koristeći A
 - **Praktičnost:** Kako se zapravo odvija fino podešavanje – trebam li pisati vlastiti kod? Trebam li vlastiti računalni kapacitet?
 - **Sigurnost:** Fino podešeni modeli poznati su po sigurnosnim rizicima – postoje li zaštitne mjere koje sprječavaju neželjenu štetu?
 
-![AIFoundry Models](../../../../translated_images/hr/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/hr/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## Priprema za fino podešavanje
 
@@ -71,7 +71,7 @@ Podržani tip datoteke je JSON Lines. Datoteke se učitavaju u zadani datastore 
 
 Azure AI Foundry omogućuje vam prilagodbu velikih jezičnih modela vašim osobnim skupovima podataka pomoću procesa poznatog kao fino podešavanje. Fino podešavanje donosi značajnu vrijednost omogućujući prilagodbu i optimizaciju za specifične zadatke i primjene. To rezultira poboljšanim performansama, učinkovitijim troškovima, smanjenjem latencije i prilagođenim rezultatima.
 
-![Finetune AI Foundry](../../../../translated_images/hr/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/hr/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Kreiranje novog projekta
 
@@ -79,14 +79,14 @@ Azure AI Foundry omogućuje vam prilagodbu velikih jezičnih modela vašim osobn
 
 1. Odaberite **+New project** za kreiranje novog projekta u Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/hr/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/hr/select-new-project.cd31c0404088d7a3.webp)
 
 1. Obavite sljedeće zadatke:
 
     - Naziv projekta **Hub name**. Mora biti jedinstvena vrijednost.
     - Odaberite **Hub** koji ćete koristiti (kreirajte novi ako je potrebno).
 
-    ![FineTuneSelect](../../../../translated_images/hr/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/hr/create-project.ca3b71298b90e420.webp)
 
 1. Obavite sljedeće zadatke za kreiranje novog huba:
 
@@ -97,7 +97,7 @@ Azure AI Foundry omogućuje vam prilagodbu velikih jezičnih modela vašim osobn
     - Odaberite **Connect Azure AI Services** koje ćete koristiti (kreirajte novo ako je potrebno).
     - Odaberite **Connect Azure AI Search** i zatim **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/hr/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/hr/create-hub.49e53d235e80779e.webp)
 
 1. Odaberite **Next**.
 1. Odaberite **Create a project**.
@@ -115,15 +115,15 @@ Prije fino podešavanja prikupite ili kreirajte skup podataka relevantan za vaš
 
 1. Upišite *phi-3* u **search bar** i odaberite phi-3 model koji želite koristiti.
 
-    ![FineTuneSelect](../../../../translated_images/hr/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/hr/select-model.60ef2d4a6a3cec57.webp)
 
 1. Odaberite **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/hr/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/hr/select-finetune.a976213b543dd9d8.webp)
 
 1. Unesite **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../translated_images/hr/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/hr/finetune1.c2b39463f0d34148.webp)
 
 1. Odaberite **Next**.
 
@@ -132,13 +132,13 @@ Prije fino podešavanja prikupite ili kreirajte skup podataka relevantan za vaš
     - Odaberite **task type** na **Chat completion**.
     - Odaberite **Training data** koji želite koristiti. Možete ga učitati putem Azure AI Foundry podataka ili iz lokalnog okruženja.
 
-    ![FineTuneSelect](../../../../translated_images/hr/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/hr/finetune2.43cb099b1a94442d.webp)
 
 1. Odaberite **Next**.
 
 1. Učitajte **Validation data** koji želite koristiti ili odaberite **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/hr/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/hr/finetune3.fd96121b67dcdd92.webp)
 
 1. Odaberite **Next**.
 
@@ -148,15 +148,15 @@ Prije fino podešavanja prikupite ili kreirajte skup podataka relevantan za vaš
     - Odaberite **Learning rate** koji želite koristiti.
     - Odaberite **Epochs** koje želite koristiti.
 
-    ![FineTuneSelect](../../../../translated_images/hr/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/hr/finetune4.e18b80ffccb5834a.webp)
 
 1. Odaberite **Submit** za početak procesa fino podešavanja.
 
-    ![FineTuneSelect](../../../../translated_images/hr/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/hr/select-submit.0a3802d581bac271.webp)
 
 1. Kada je vaš model fino podešen, status će biti prikazan kao **Completed**, kao što je prikazano na slici ispod. Sada možete implementirati model i koristiti ga u svojoj aplikaciji, u playgroundu ili u prompt flowu. Za više informacija pogledajte [Kako implementirati Phi-3 obitelj malih jezičnih modela s Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/hr/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/hr/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > Za detaljnije informacije o fino podešavanju Phi-3, posjetite [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

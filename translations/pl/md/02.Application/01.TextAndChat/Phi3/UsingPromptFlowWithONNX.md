@@ -33,33 +33,33 @@ Przeczytaj tę instrukcję, aby skonfigurować ONNX Runtime GenAI dla Windows GP
 
 1. Zainstaluj rozszerzenie Prompt flow do VS Code
 
-![pfvscode](../../../../../../translated_images/pl/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/pl/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Po zainstalowaniu rozszerzenia Prompt flow w VS Code, kliknij rozszerzenie i wybierz **Installation dependencies**, aby zgodnie z instrukcją zainstalować Prompt flow SDK w swoim środowisku
 
-![pfsetup](../../../../../../translated_images/pl/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/pl/pfsetup.b46e93096f5a254f.webp)
 
 3. Pobierz [Przykładowy kod](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) i otwórz go w VS Code
 
-![pfsample](../../../../../../translated_images/pl/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/pl/pfsample.8d89e70584ffe7c4.webp)
 
 4. Otwórz **flow.dag.yaml**, aby wybrać swoje środowisko Python
 
-![pfdag](../../../../../../translated_images/pl/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/pl/pfdag.264a77f7366458ff.webp)
 
    Otwórz **chat_phi3_ort.py**, aby zmienić lokalizację modelu Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/pl/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/pl/pfphi.72da81d74244b45f.webp)
 
 5. Uruchom swój prompt flow do testów
 
 Otwórz **flow.dag.yaml** i kliknij edytor wizualny
 
-![pfv](../../../../../../translated_images/pl/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/pl/pfv.ba8a81f34b20f603.webp)
 
 Po kliknięciu uruchom go, aby przetestować
 
-![pfflow](../../../../../../translated_images/pl/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/pl/pfflow.4e1135a089b1ce1b.webp)
 
 1. Możesz uruchomić batch w terminalu, aby zobaczyć więcej wyników
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Wyniki możesz sprawdzić w domyślnej przeglądarce
 
 
-![pfresult](../../../../../../translated_images/pl/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/pl/pfresult.c22c826f8062d7cb.webp)
 
 **Zastrzeżenie**:  
 Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Asenna AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/fi/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/fi/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** Yhden klikkauksen käyttöönotto Azure Container Appsille mallin hienosäädön ja päättelyn suorittamiseksi pilvessä.
 

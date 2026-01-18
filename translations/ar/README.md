@@ -34,7 +34,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. **انسخ المستودع**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**انضم إلى مجتمع Discord الخاص بذكاء مايكروسوفت الاصطناعي والتقِ بالخبراء والمطورين الآخرين**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/ar/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/ar/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 دعم اللغات المتعددة
 

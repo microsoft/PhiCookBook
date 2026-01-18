@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** 如果不打算自行編譯，可以跳過此步驟
 
-![CPP](../../../../../../translated_images/tw/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/tw/01.42f52a2b2aedff02.webp)
 
 ### **4. 安裝 NVIDIA 驅動程式**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    開啟 [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) 並執行
 
-![RESULT](../../../../../../translated_images/tw/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/tw/02.b9b06996cf7255d5.webp)
 
 ### **8. 編譯 ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - 使用 Windows Terminal，開啟 VS 2022 的 Developer Command Prompt，切換到 onnxruntime-genai 目錄
 
-![RESULT](../../../../../../translated_images/tw/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/tw/03.b83ce473d5ff9b9b.webp)
 
    - 使用您的 python 環境編譯
 

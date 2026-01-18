@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Použití Azure AI Foundry pro hodnocení**
 
-![aistudo](../../../../../translated_images/cs/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/cs/AIFoundry.9e0b513e999a1c5a.webp)
 
 Jak hodnotit vaši generativní AI aplikaci pomocí [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ať už posuzujete jednorázové nebo vícekrokové konverzace, Azure AI Foundry nabízí nástroje pro hodnocení výkonu a bezpečnosti modelu.
 
-![aistudo](../../../../../translated_images/cs/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/cs/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Jak hodnotit generativní AI aplikace s Azure AI Foundry
 Podrobné instrukce najdete v [dokumentaci Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

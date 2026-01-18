@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **सुविधा:** फाइन-ट्यूनिंग प्रत्यक्षात कशी होते – मला कस्टम कोड लिहावा लागतो का? माझे स्वतःचे कम्प्युटर आणावे लागते का?
 - **सुरक्षा:** फाइन-ट्यून केलेल्या मॉडेल्समध्ये सुरक्षा धोके असू शकतात – अनपेक्षित हानीपासून संरक्षणासाठी कोणतेही गार्डरेल्स आहेत का?
 
-![AIFoundry Models](../../../../translated_images/mr/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/mr/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## फाइन-ट्यूनिंगसाठी तयारी
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry तुम्हाला मोठ्या भाषा मॉडेल्सना तुमच्या वैयक्तिक डेटासेटनुसार सानुकूलित करण्याची परवानगी देते, ज्याला फाइन-ट्यूनिंग म्हणतात. फाइन-ट्यूनिंगमुळे विशिष्ट कामांसाठी आणि अनुप्रयोगांसाठी सानुकूलन आणि ऑप्टिमायझेशन शक्य होते. यामुळे कार्यक्षमता सुधारते, खर्च कमी होतो, विलंब कमी होतो आणि आउटपुट अधिक अनुरूप होतात.
 
-![Finetune AI Foundry](../../../../translated_images/mr/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/mr/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### नवीन प्रोजेक्ट तयार करा
 
@@ -79,14 +79,14 @@ Azure AI Foundry तुम्हाला मोठ्या भाषा मॉ
 
 2. Azure AI Foundry मध्ये नवीन प्रोजेक्ट तयार करण्यासाठी **+New project** निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/mr/select-new-project.cd31c0404088d7a3.webp)
 
 3. खालील कामे करा:
 
     - प्रोजेक्टचा **Hub name** द्या. तो अनन्य (unique) असावा.
     - वापरण्यासाठी **Hub** निवडा (गरज असल्यास नवीन तयार करा).
 
-    ![FineTuneSelect](../../../../translated_images/mr/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/mr/create-project.ca3b71298b90e420.webp)
 
 4. नवीन हब तयार करण्यासाठी खालील कामे करा:
 
@@ -97,7 +97,7 @@ Azure AI Foundry तुम्हाला मोठ्या भाषा मॉ
     - वापरण्यासाठी **Connect Azure AI Services** निवडा (गरज असल्यास नवीन तयार करा).
     - **Connect Azure AI Search** साठी **Skip connecting** निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/mr/create-hub.49e53d235e80779e.webp)
 
 5. **Next** निवडा.
 6. **Create a project** निवडा.
@@ -115,15 +115,15 @@ Azure AI Foundry तुम्हाला मोठ्या भाषा मॉ
 
 2. **search bar** मध्ये *phi-3* टाइप करा आणि वापरायचे phi-3 मॉडेल निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/mr/select-model.60ef2d4a6a3cec57.webp)
 
 3. **Fine-tune** निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/mr/select-finetune.a976213b543dd9d8.webp)
 
 4. **Fine-tuned model name** प्रविष्ट करा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/mr/finetune1.c2b39463f0d34148.webp)
 
 5. **Next** निवडा.
 
@@ -132,13 +132,13 @@ Azure AI Foundry तुम्हाला मोठ्या भाषा मॉ
     - **task type** म्हणून **Chat completion** निवडा.
     - वापरायचा **Training data** निवडा. तुम्ही Azure AI Foundry च्या डेटामधून किंवा तुमच्या स्थानिक वातावरणातून अपलोड करू शकता.
 
-    ![FineTuneSelect](../../../../translated_images/mr/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/mr/finetune2.43cb099b1a94442d.webp)
 
 7. **Next** निवडा.
 
 8. वापरायचा **Validation data** अपलोड करा किंवा **Automatic split of training data** निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/mr/finetune3.fd96121b67dcdd92.webp)
 
 9. **Next** निवडा.
 
@@ -148,15 +148,15 @@ Azure AI Foundry तुम्हाला मोठ्या भाषा मॉ
     - वापरायचा **Learning rate** निवडा.
     - वापरायचा **Epochs** निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/mr/finetune4.e18b80ffccb5834a.webp)
 
 11. फाइन-ट्यूनिंग प्रक्रिया सुरू करण्यासाठी **Submit** निवडा.
 
-    ![FineTuneSelect](../../../../translated_images/mr/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/mr/select-submit.0a3802d581bac271.webp)
 
 12. एकदा तुमचे मॉडेल फाइन-ट्यून झाले की, स्थिती **Completed** म्हणून दर्शविली जाईल, खालील चित्रात दाखवल्याप्रमाणे. आता तुम्ही मॉडेल डिप्लॉय करू शकता आणि ते तुमच्या स्वतःच्या अनुप्रयोगात, प्लेग्राउंडमध्ये किंवा प्रॉम्प्ट फ्लो मध्ये वापरू शकता. अधिक माहितीसाठी पाहा [Azure AI Foundry सह Phi-3 कुटुंबातील लहान भाषा मॉडेल्स कसे डिप्लॉय करायचे](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/mr/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/mr/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > Phi-3 चे फाइन-ट्यूनिंगबाबत अधिक सविस्तर माहितीकरिता कृपया भेट द्या [Azure AI Foundry मध्ये Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

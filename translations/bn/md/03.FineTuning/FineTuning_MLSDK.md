@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 এই উদাহরণে আমরা Phi-3-mini-4k-instruct মডেলটি ultrachat_200k ডেটাসেট ব্যবহার করে দুইজনের মধ্যে কথোপকথন সম্পন্ন করার জন্য ফাইন টিউন করব।
 
-![MLFineTune](../../../../translated_images/bn/MLFineTune.928d4c6b3767dd35.png)
+![MLFineTune](../../../../translated_images/bn/MLFineTune.928d4c6b3767dd35.webp)
 
 এই উদাহরণটি দেখাবে কিভাবে Azure ML SDK এবং Python ব্যবহার করে ফাইন টিউন করা যায় এবং তারপর ফাইন টিউন করা মডেলটি অনলাইন এন্ডপয়েন্টে ডিপ্লয় করে রিয়েল টাইম ইনফারেন্স করা যায়।
 

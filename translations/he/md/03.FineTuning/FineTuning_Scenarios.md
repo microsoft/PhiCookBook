@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## תרחישי כוונון עדין
 
-![FineTuning with MS Services](../../../../translated_images/he/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/he/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **פלטפורמה** כוללת טכנולוגיות שונות כמו Azure AI Foundry, Azure Machine Learning, כלי AI, Kaito ו-ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 כוונן את המודל באמצעות כוונון עדין מתארח, ללא צורך ביצירה וניהול של משאבי חישוב.
 
-![MaaS Fine Tuning](../../../../translated_images/he/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/he/MaaSfinetune.3eee4630607aff0d.webp)
 
 כוונון עדין ללא שרת זמין לדגמי Phi-3-mini ו-Phi-3-medium, ומאפשר למפתחים להתאים במהירות ובקלות את המודלים לתרחישי ענן וקצה ללא צורך בארגון משאבי חישוב. בנוסף, הכרזנו כי Phi-3-small זמין כעת דרך ההצעה שלנו Models-as-a-Service, כך שמפתחים יכולים להתחיל במהירות ובקלות בפיתוח AI ללא צורך בניהול התשתית התחתונה.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 המשתמשים מנהלים את משאבי החישוב שלהם כדי לכוונן את המודלים שלהם.
 
-![Maap Fine Tuning](../../../../translated_images/he/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/he/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [דוגמת כוונון עדין](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## דוגמאות לביצועי כוונון עדין
 
-![Finetuning Performance](../../../../translated_images/he/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/he/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

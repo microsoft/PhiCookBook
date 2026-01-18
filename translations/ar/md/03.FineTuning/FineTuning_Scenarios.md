@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## سيناريوهات الضبط الدقيق
 
-![FineTuning with MS Services](../../../../translated_images/ar/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/ar/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **المنصة** تشمل تقنيات متنوعة مثل Azure AI Foundry، Azure Machine Learning، أدوات الذكاء الاصطناعي، Kaito، و ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 اضبط النموذج باستخدام الضبط الدقيق المستضاف، دون الحاجة لإنشاء وإدارة موارد الحوسبة.
 
-![MaaS Fine Tuning](../../../../translated_images/ar/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/ar/MaaSfinetune.3eee4630607aff0d.webp)
 
 يتوفر الضبط الدقيق بدون خادم لنماذج Phi-3-mini و Phi-3-medium، مما يمكّن المطورين من تخصيص النماذج بسرعة وسهولة لسيناريوهات السحابة والحافة دون الحاجة لترتيب موارد الحوسبة. كما أعلنّا أن نموذج Phi-3-small متاح الآن من خلال عرض النماذج كخدمة، ليتمكن المطورون من البدء بسرعة وسهولة في تطوير الذكاء الاصطناعي دون الحاجة لإدارة البنية التحتية الأساسية.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يقوم المستخدمون بإدارة موارد الحوسبة الخاصة بهم من أجل ضبط نماذجهم بدقة.
 
-![Maap Fine Tuning](../../../../translated_images/ar/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/ar/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [عينة ضبط دقيق](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## أمثلة على أداء الضبط الدقيق
 
-![Finetuning Performance](../../../../translated_images/ar/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/ar/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **إخلاء مسؤولية**:  
 تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

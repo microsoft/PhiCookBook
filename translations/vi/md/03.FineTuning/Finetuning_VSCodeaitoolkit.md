@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Cài đặt AI Toolkit cho VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/vi/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/vi/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** Cung cấp một cú nhấp chuột cho Azure Container Apps để chạy tinh chỉnh mô hình và suy luận trên đám mây.
 

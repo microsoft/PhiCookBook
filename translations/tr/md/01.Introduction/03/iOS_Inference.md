@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Uygulama geliştirme yöntemi olarak Objective-C’yi seçtim, çünkü ONNX Runtime C++ API ile Üretken Yapay Zeka kullanırken Objective-C daha uyumludur. Tabii ki, ilgili çağrıları Swift köprüsü ile de tamamlayabilirsiniz.
 
-![xcode](../../../../../translated_images/tr/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/tr/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX Kuantize INT4 Modelini Uygulama Projesine Kopyalama**
 
 ONNX formatındaki INT4 kuantizasyon modelini içe aktarmamız gerekiyor, öncelikle indirmeniz gerekir.
 
-![hf](../../../../../translated_images/tr/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/tr/hf.6b8504fd88ee48dd.webp)
 
 İndirdikten sonra, Xcode’daki projenin Resources dizinine eklemeniz gerekiyor.
 
-![model](../../../../../translated_images/tr/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/tr/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllers İçinde C++ API Ekleme**
 
@@ -121,11 +121,11 @@ ONNX formatındaki INT4 kuantizasyon modelini içe aktarmamız gerekiyor, öncel
 
 - **a.** İlgili C++ başlık dosyalarını projeye ekleyin.
 
-  ![Header File](../../../../../translated_images/tr/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/tr/head.64cad021ce70a333.webp)
 
 - **b.** Xcode’da `onnxruntime-genai` dinamik kütüphanesini dahil edin.
 
-  ![Library](../../../../../translated_images/tr/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/tr/lib.a4209b9f21ddf344.webp)
 
 - **c.** Test için C Örnek kodlarını kullanabilirsiniz. Daha fazla işlevsellik için ChatUI gibi ek özellikler de ekleyebilirsiniz.
 
@@ -162,7 +162,7 @@ ONNX formatındaki INT4 kuantizasyon modelini içe aktarmamız gerekiyor, öncel
 
 Kurulum tamamlandıktan sonra, Phi-3-mini model çıkarım sonuçlarını görmek için uygulamayı çalıştırabilirsiniz.
 
-![Running Result](../../../../../translated_images/tr/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/tr/result.326a947a6a2b9c51.webp)
 
 Daha fazla örnek kod ve detaylı talimatlar için [Phi-3 Mini Samples deposunu](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ziyaret edin.
 

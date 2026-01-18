@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Tôi chọn Objective-C làm phương pháp phát triển App, vì khi sử dụng Generative AI với ONNX Runtime C++ API, Objective-C tương thích tốt hơn. Tất nhiên, bạn cũng có thể hoàn thành các gọi liên quan thông qua cầu nối Swift.
 
-![xcode](../../../../../translated_images/vi/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/vi/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Sao chép mô hình ONNX lượng tử hóa INT4 vào dự án ứng dụng App**
 
 Chúng ta cần nhập mô hình lượng tử hóa INT4 ở định dạng ONNX, bạn cần tải xuống trước.
 
-![hf](../../../../../translated_images/vi/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/vi/hf.6b8504fd88ee48dd.webp)
 
 Sau khi tải về, bạn cần thêm nó vào thư mục Resources của dự án trong Xcode.
 
-![model](../../../../../translated_images/vi/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/vi/model.3b879b14e0be877d.webp)
 
 ## **6. Thêm API C++ vào ViewControllers**
 
@@ -121,11 +121,11 @@ Sau khi tải về, bạn cần thêm nó vào thư mục Resources của dự �
 
 - **a.** Thêm các file header C++ tương ứng vào dự án.
 
-  ![Header File](../../../../../translated_images/vi/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/vi/head.64cad021ce70a333.webp)
 
 - **b.** Bao gồm thư viện động `onnxruntime-genai` trong Xcode.
 
-  ![Library](../../../../../translated_images/vi/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/vi/lib.a4209b9f21ddf344.webp)
 
 - **c.** Sử dụng mã mẫu C để thử nghiệm. Bạn cũng có thể thêm các tính năng bổ sung như ChatUI để tăng cường chức năng.
 
@@ -162,7 +162,7 @@ Sau khi tải về, bạn cần thêm nó vào thư mục Resources của dự �
 
 Khi đã hoàn tất thiết lập, bạn có thể chạy ứng dụng để xem kết quả suy luận của mô hình Phi-3-mini.
 
-![Running Result](../../../../../translated_images/vi/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/vi/result.326a947a6a2b9c51.webp)
 
 Để xem thêm mã mẫu và hướng dẫn chi tiết, hãy truy cập [kho mẫu Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

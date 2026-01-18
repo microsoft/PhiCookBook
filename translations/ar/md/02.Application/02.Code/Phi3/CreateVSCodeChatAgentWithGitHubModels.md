@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 نعلم أن Phi-3/3.5-mini-instruct في عائلة Phi-3/3.5 يمتلك قدرات قوية في فهم وتوليد الأكواد، وله مزايا مقارنة بـ Gemma-2-9b و Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/ar/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/ar/codegen.53be1150ee54d969.webp)
 
 توفر أحدث نماذج GitHub Models بالفعل إمكانية الوصول إلى نماذج Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k). يمكن للمطورين الوصول إليها من خلال OpenAI SDK، و Azure AI Inference SDK، و REST API.
 
-![gh](../../../../../../translated_images/ar/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/ar/gh.459640c7ceba01d5.webp)
 
 ***ملاحظة:*** يُنصح باستخدام Azure AI Inference SDK هنا، لأنه يمكنه التبديل بشكل أفضل مع Azure Model Catalog في بيئة الإنتاج.
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 يمكن لوكيل دردشة GitHub Copilot إتمام مهام مختلفة في سيناريوهات مشاريع متنوعة بناءً على الكود. يحتوي النظام على أربعة وكلاء: workspace، github، terminal، vscode
 
-![agent](../../../../../../translated_images/ar/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/ar/agent.3dbb06228f9a6189.webp)
 
 بإضافة اسم الوكيل مع ‘@’، يمكنك إتمام العمل المقابل بسرعة. بالنسبة للمؤسسات، إذا أضفت محتوى متعلقًا بأعمالك مثل المتطلبات، الترميز، مواصفات الاختبار، والإصدار، يمكنك الحصول على وظائف خاصة أكثر قوة للمؤسسات بناءً على GitHub Copilot.
 
 تم الآن إصدار واجهة برمجة التطبيقات (API) لوكيل دردشة Visual Studio Code رسميًا، مما يسمح للمؤسسات أو مطوري المؤسسات بتطوير وكلاء بناءً على أنظمة بيئية مختلفة لأعمال البرمجيات. بناءً على طريقة تطوير امتدادات Visual Studio Code، يمكنك بسهولة الوصول إلى واجهة API لوكيل دردشة Visual Studio Code. يمكننا التطوير بناءً على هذه العملية.
 
-![diagram](../../../../../../translated_images/ar/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/ar/diagram.ca70d2866762f115.webp)
 
 يمكن لسيناريو التطوير دعم الوصول إلى واجهات برمجة تطبيقات نماذج الطرف الثالث (مثل GitHub Models، Azure Model Catalog، والخدمات المبنية ذاتيًا على نماذج مفتوحة المصدر) ويمكن أيضًا استخدام نماذج gpt-35-turbo، gpt-4، و gpt-4o المقدمة من GitHub Copilot.
 
@@ -54,7 +54,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. توليد كود بناءً على **Phi-3.5-vision-instruct (128k)** وإكمال الصور عبر الأمر **@phicoding /image**
 
-![arch](../../../../../../translated_images/ar/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/ar/arch.5a58a0adfa959a2d.webp)
 
 ## **الخطوات المتعلقة**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/ar/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/ar/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/ar/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/ar/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/ar/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/ar/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/ar/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/ar/agentimage.f5cb52b45ab7d0d1.webp)
 
 يمكنك تحميل كود العينة: [اضغط هنا](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

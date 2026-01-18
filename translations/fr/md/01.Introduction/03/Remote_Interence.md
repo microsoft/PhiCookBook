@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Après que les adaptateurs ont été entraînés dans l’environnement distant, utilisez une simple application Gradio pour interagir avec le modèle.
 
-![Fine-tune complete](../../../../../translated_images/fr/log-finetuning-res.7b92254e7e822c7f.png)
+![Fine-tune complete](../../../../../translated_images/fr/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### Provisionner les ressources Azure  
 Vous devez configurer les ressources Azure pour l’inférence à distance en exécutant la commande `AI Toolkit: Provision Azure Container Apps for inference` depuis la palette de commandes. Lors de cette configuration, il vous sera demandé de sélectionner votre abonnement Azure et votre groupe de ressources.  
-![Provision Inference Resource](../../../../../translated_images/fr/command-provision-inference.467afc8d351642fc.png)
+![Provision Inference Resource](../../../../../translated_images/fr/command-provision-inference.467afc8d351642fc.webp)
    
 Par défaut, l’abonnement et le groupe de ressources pour l’inférence doivent correspondre à ceux utilisés pour l’affinage. L’inférence utilisera le même environnement Azure Container App et accédera au modèle ainsi qu’à l’adaptateur de modèle stockés dans Azure Files, qui ont été générés lors de l’étape d’affinage.
 
@@ -24,7 +24,7 @@ Par défaut, l’abonnement et le groupe de ressources pour l’inférence doive
 ### Déploiement pour l’inférence  
 Si vous souhaitez modifier le code d’inférence ou recharger le modèle d’inférence, exécutez la commande `AI Toolkit: Deploy for inference`. Cela synchronisera votre code le plus récent avec ACA et redémarrera la réplique.
 
-![Deploy for inference](../../../../../translated_images/fr/command-deploy.9adb4e310dd0b0ae.png)
+![Deploy for inference](../../../../../translated_images/fr/command-deploy.9adb4e310dd0b0ae.webp)
 
 Une fois le déploiement terminé avec succès, le modèle est prêt à être évalué via ce point de terminaison.
 
@@ -32,7 +32,7 @@ Une fois le déploiement terminé avec succès, le modèle est prêt à être é
 
 Vous pouvez accéder à l’API d’inférence en cliquant sur le bouton "*Go to Inference Endpoint*" affiché dans la notification VSCode. Sinon, le point de terminaison de l’API web se trouve sous `ACA_APP_ENDPOINT` dans `./infra/inference.config.json` ainsi que dans le panneau de sortie.
 
-![App Endpoint](../../../../../translated_images/fr/notification-deploy.446e480a44b1be58.png)
+![App Endpoint](../../../../../translated_images/fr/notification-deploy.446e480a44b1be58.webp)
 
 > **Note :** Le point de terminaison d’inférence peut nécessiter quelques minutes avant d’être pleinement opérationnel.
 

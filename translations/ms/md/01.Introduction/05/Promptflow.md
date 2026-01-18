@@ -41,7 +41,7 @@ Kekalkan kawalan versi dan kongsi pengetahuan dengan berkesan. Permudahkan kesel
 
 Dalam Microsoft Prompt Flow, penilaian memainkan peranan penting dalam menilai sejauh mana prestasi model AI anda. Mari kita terokai bagaimana anda boleh menyesuaikan aliran dan metrik penilaian dalam Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/ms/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/ms/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Memahami Penilaian dalam Prompt Flow**
 

@@ -75,7 +75,7 @@ GitHub Copilot telah banyak meningkatkan kecekapan pengaturcaraan perusahaan, da
 
 Makmal ini terutamanya menggunakan model Phi-3 digabungkan dengan NPU tempatan dan Azure hibrid untuk membina Agen tersuai dalam GitHub Copilot Chat ***@PHI3*** untuk membantu pembangun perusahaan menyelesaikan penjanaan kod***(@PHI3 /gen)*** dan menjana kod berdasarkan imej ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/ms/cover.1017ebc9a7c46d09.png)
+![PHI3](../../../../../../../translated_images/ms/cover.1017ebc9a7c46d09.webp)
 
 ### ***Nota:*** 
 

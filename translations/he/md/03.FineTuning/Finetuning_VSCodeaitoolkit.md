@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [התקן את AI Toolkit עבור VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/he/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/he/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** פרוביזיה בלחיצה אחת עבור Azure Container Apps להרצת כוונון מודל והסקת מסקנות בענן.
 

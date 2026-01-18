@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal mempunyai keupayaan membaca imej yang kuat. Mari cuba gunakan Python untuk melaksanakan fungsi berikut. Imej tersebut adalah halaman ChatGPT.
 
-![demo](../../../../../../../translated_images/ms/demo.609a55a7a2b9ed27.png)
+![demo](../../../../../../../translated_images/ms/demo.609a55a7a2b9ed27.webp)
 
 ### **Contoh Kod**
 

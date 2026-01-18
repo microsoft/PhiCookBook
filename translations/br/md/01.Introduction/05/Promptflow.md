@@ -41,7 +41,7 @@ Mantenha o controle de versões e compartilhe conhecimento de forma eficaz. Simp
 
 No Microsoft Prompt Flow, a avaliação desempenha um papel crucial para medir o desempenho dos seus modelos de IA. Vamos explorar como personalizar fluxos e métricas de avaliação dentro do Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/br/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/br/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Entendendo a Avaliação no Prompt Flow**
 

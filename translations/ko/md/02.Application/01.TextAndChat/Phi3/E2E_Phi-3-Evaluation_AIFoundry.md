@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 다음은 Azure AI Foundry의 평가 프로세스입니다.
 
-![튜토리얼 아키텍처.](../../../../../../translated_images/ko/architecture.10bec55250f5d6a4.png)
+![튜토리얼 아키텍처.](../../../../../../translated_images/ko/architecture.10bec55250f5d6a4.webp)
 
 *이미지 출처: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 AI 모델이 윤리적이고 안전한지 확인하려면 Microsoft의 책임 있는 AI 원칙에 따라 평가하는 것이 중요합니다. Azure AI Foundry에서는 안전성 평가를 통해 모델이 탈옥 공격에 얼마나 취약한지, 유해한 콘텐츠를 생성할 가능성이 있는지를 평가할 수 있으며, 이는 이러한 원칙과 직접적으로 연관되어 있습니다.
 
-![안전성 평가.](../../../../../../translated_images/ko/safety-evaluation.083586ec88dfa950.png)
+![안전성 평가.](../../../../../../translated_images/ko/safety-evaluation.083586ec88dfa950.webp)
 
 *이미지 출처: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft의 책임 있는 AI 원칙은 다음과 같습니다:
 
 - **책임성**: AI 시스템을 설계하고 배포하는 사람들은 시스템의 작동 방식에 대해 책임을 져야 합니다. 조직은 업계 표준을 참고하여 책임성 규범을 개발해야 합니다. 이러한 규범은 AI 시스템이 사람들의 삶에 영향을 미치는 결정에 대해 최종 권한이 되지 않도록 보장하며, 인간이 고도로 자율적인 AI 시스템을 의미 있게 통제할 수 있도록 합니다.
 
-![책임 있는 AI 허브.](../../../../../../translated_images/ko/responsibleai2.c07ef430113fad8c.png)
+![책임 있는 AI 허브.](../../../../../../translated_images/ko/responsibleai2.c07ef430113fad8c.webp)
 
 *이미지 출처: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Microsoft의 책임 있는 AI 원칙은 다음과 같습니다:
 
 이러한 측면을 평가함으로써 AI 모델이 유해하거나 불쾌한 콘텐츠를 생성하지 않도록 하여 사회적 가치와 규제 기준에 부합하도록 합니다.
 
-![안전성 기반 평가.](../../../../../../translated_images/ko/evaluate-based-on-safety.c5df819f5b0bfc07.png)
+![안전성 기반 평가.](../../../../../../translated_images/ko/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
 ### 성능 평가 소개
 
 AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 따라 평가하는 것이 중요합니다. Azure AI Foundry에서는 성능 평가를 통해 모델이 정확하고 관련성 있으며 일관된 응답을 생성하는 효과를 평가할 수 있습니다.
 
-![성능 평가.](../../../../../../translated_images/ko/performance-evaluation.48b3e7e01a098740.png)
+![성능 평가.](../../../../../../translated_images/ko/performance-evaluation.48b3e7e01a098740.webp)
 
 *이미지 출처: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
 
 이 지표들은 모델이 정확하고 관련성 있으며 일관된 응답을 생성하는 효과를 평가하는 데 도움을 줍니다.
 
-![성능 기반 평가.](../../../../../../translated_images/ko/evaluate-based-on-performance.3e801c647c7554e8.png)
+![성능 기반 평가.](../../../../../../translated_images/ko/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
 ## **시나리오 2: Azure AI Foundry에서 Phi-3 / Phi-3.5 모델 평가**
 
@@ -151,7 +151,7 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
 
 1. 탐색 메뉴에서 **+ New hub**를 선택합니다.
 
-    ![Create hub.](../../../../../../translated_images/ko/create-hub.5be78fb1e21ffbf1.png)
+    ![Create hub.](../../../../../../translated_images/ko/create-hub.5be78fb1e21ffbf1.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -162,7 +162,7 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
     - 사용할 **Connect Azure AI Services**를 선택합니다 (필요 시 새로 만듭니다).
     - **Connect Azure AI Search**는 **Skip connecting**을 선택합니다.
 
-    ![Fill hub.](../../../../../../translated_images/ko/fill-hub.baaa108495c71e34.png)
+    ![Fill hub.](../../../../../../translated_images/ko/fill-hub.baaa108495c71e34.webp)
 
 1. **Next**를 선택합니다.
 
@@ -172,11 +172,11 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
 
 1. 탐색 메뉴에서 **+ New project**를 선택합니다.
 
-    ![Select new project.](../../../../../../translated_images/ko/select-new-project.cd31c0404088d7a3.png)
+    ![Select new project.](../../../../../../translated_images/ko/select-new-project.cd31c0404088d7a3.webp)
 
 1. **Project name**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![Create project.](../../../../../../translated_images/ko/create-project.ca3b71298b90e420.png)
+    ![Create project.](../../../../../../translated_images/ko/create-project.ca3b71298b90e420.webp)
 
 1. **Create a project**를 선택합니다.
 
@@ -192,17 +192,17 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
 
 1. 왼쪽 탭에서 **Endpoints**를 선택합니다.
 
-    ![Select endpoints.](../../../../../../translated_images/ko/select-endpoints.ee7387ecd68bd18d.png)
+    ![Select endpoints.](../../../../../../translated_images/ko/select-endpoints.ee7387ecd68bd18d.webp)
 
 1. 생성한 엔드포인트를 선택합니다.
 
-    ![Select endpoints.](../../../../../../translated_images/ko/select-endpoint-created.9f63af5e4cf98b2e.png)
+    ![Select endpoints.](../../../../../../translated_images/ko/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
 1. 탐색 메뉴에서 **Consume**을 선택합니다.
 
 1. **REST endpoint**와 **Primary key**를 복사합니다.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/ko/copy-endpoint-key.0650c3786bd646ab.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/ko/copy-endpoint-key.0650c3786bd646ab.webp)
 
 #### 사용자 지정 연결 추가
 
@@ -214,11 +214,11 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
 
 1. **+ New connection**을 선택합니다.
 
-    ![Select new connection.](../../../../../../translated_images/ko/select-new-connection.fa0f35743758a74b.png)
+    ![Select new connection.](../../../../../../translated_images/ko/select-new-connection.fa0f35743758a74b.webp)
 
 1. 탐색 메뉴에서 **Custom keys**를 선택합니다.
 
-    ![Select custom keys.](../../../../../../translated_images/ko/select-custom-keys.5a3c6b25580a9b67.png)
+    ![Select custom keys.](../../../../../../translated_images/ko/select-custom-keys.5a3c6b25580a9b67.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -228,7 +228,7 @@ AI 모델이 기대한 대로 작동하는지 확인하려면 성능 지표에 �
     - 키 이름에 **key**를 입력하고, Azure ML Studio에서 복사한 키를 값 필드에 붙여넣습니다.
     - 키를 추가한 후, 키가 노출되지 않도록 **is secret**을 선택합니다.
 
-    ![Add connection.](../../../../../../translated_images/ko/add-connection.ac7f5faf8b10b0df.png)
+    ![Add connection.](../../../../../../translated_images/ko/add-connection.ac7f5faf8b10b0df.webp)
 
 1. **Add connection**을 선택합니다.
 
@@ -242,15 +242,15 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
 1. 탐색 메뉴에서 **+ Create**를 선택합니다.
 
-    ![Select Promptflow.](../../../../../../translated_images/ko/select-promptflow.18ff2e61ab9173eb.png)
+    ![Select Promptflow.](../../../../../../translated_images/ko/select-promptflow.18ff2e61ab9173eb.webp)
 
 1. 탐색 메뉴에서 **Chat flow**를 선택합니다.
 
-    ![Select chat flow.](../../../../../../translated_images/ko/select-flow-type.28375125ec9996d3.png)
+    ![Select chat flow.](../../../../../../translated_images/ko/select-flow-type.28375125ec9996d3.webp)
 
 1. 사용할 **Folder name**을 입력합니다.
 
-    ![Select chat flow.](../../../../../../translated_images/ko/enter-name.02ddf8fb840ad430.png)
+    ![Select chat flow.](../../../../../../translated_images/ko/enter-name.02ddf8fb840ad430.webp)
 
 1. **Create**를 선택합니다.
 
@@ -287,7 +287,7 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
     - **Save**를 선택합니다.
 
-    ![Select raw file mode.](../../../../../../translated_images/ko/select-raw-file-mode.06c1eca581ce4f53.png)
+    ![Select raw file mode.](../../../../../../translated_images/ko/select-raw-file-mode.06c1eca581ce4f53.webp)
 
 1. Prompt flow에서 사용자 지정 Phi-3 / Phi-3.5 모델을 사용하기 위해 *integrate_with_promptflow.py*에 다음 코드를 추가합니다.
 
@@ -350,14 +350,14 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/ko/paste-promptflow-code.cd6d95b101c0ec28.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/ko/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
 > Azure AI Foundry에서 Prompt flow 사용에 대한 자세한 내용은 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)를 참고하세요.
 
 1. **Chat input**, **Chat output**을 선택하여 모델과의 대화를 활성화합니다.
 
-    ![Select Input Output.](../../../../../../translated_images/ko/select-input-output.c187fc58f25fbfc3.png)
+    ![Select Input Output.](../../../../../../translated_images/ko/select-input-output.c187fc58f25fbfc3.webp)
 
 1. 이제 미세 조정된 Phi-3 / Phi-3.5 모델과 대화할 준비가 되었습니다. 다음 실습에서는 Prompt flow를 시작하고 미세 조정된 모델과 대화하는 방법을 배웁니다.
 
@@ -365,32 +365,32 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 >
 > 재구성된 흐름은 아래 이미지와 같아야 합니다:
 >
-> ![Flow example](../../../../../../translated_images/ko/graph-example.82fd1bcdd3fc545b.png)
+> ![Flow example](../../../../../../translated_images/ko/graph-example.82fd1bcdd3fc545b.webp)
 >
 
 #### Prompt flow 시작
 
 1. **Start compute sessions**를 선택하여 Prompt flow를 시작합니다.
 
-    ![Start compute session.](../../../../../../translated_images/ko/start-compute-session.9acd8cbbd2c43df1.png)
+    ![Start compute session.](../../../../../../translated_images/ko/start-compute-session.9acd8cbbd2c43df1.webp)
 
 1. **Validate and parse input**을 선택하여 매개변수를 갱신합니다.
 
-    ![Validate input.](../../../../../../translated_images/ko/validate-input.c1adb9543c6495be.png)
+    ![Validate input.](../../../../../../translated_images/ko/validate-input.c1adb9543c6495be.webp)
 
 1. 생성한 사용자 지정 연결의 **connection** 값을 선택합니다. 예: *connection*.
 
-    ![Connection.](../../../../../../translated_images/ko/select-connection.1f2b59222bcaafef.png)
+    ![Connection.](../../../../../../translated_images/ko/select-connection.1f2b59222bcaafef.webp)
 
 #### 미세 조정된 Phi-3 / Phi-3.5 모델과 대화하기
 
 1. **Chat**을 선택합니다.
 
-    ![Select chat.](../../../../../../translated_images/ko/select-chat.0406bd9687d0c49d.png)
+    ![Select chat.](../../../../../../translated_images/ko/select-chat.0406bd9687d0c49d.webp)
 
 1. 결과 예시는 다음과 같습니다: 이제 미세 조정된 Phi-3 / Phi-3.5 모델과 대화할 수 있습니다. 미세 조정에 사용된 데이터를 기반으로 질문하는 것이 좋습니다.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/ko/chat-with-promptflow.1cf8cea112359ada.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/ko/chat-with-promptflow.1cf8cea112359ada.webp)
 
 ### Phi-3 / Phi-3.5 모델 평가를 위한 Azure OpenAI 배포
 
@@ -402,7 +402,7 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
 
 1. 생성한 Azure AI Foundry 프로젝트로 이동합니다.
 
-    ![Select Project.](../../../../../../translated_images/ko/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/ko/select-project-created.5221e0e403e2c9d6.webp)
 
 1. 생성한 프로젝트에서 왼쪽 탭의 **Deployments**를 선택합니다.
 
@@ -410,11 +410,11 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
 
 1. **Deploy base model**을 선택합니다.
 
-    ![Select Deployments.](../../../../../../translated_images/ko/deploy-openai-model.95d812346b25834b.png)
+    ![Select Deployments.](../../../../../../translated_images/ko/deploy-openai-model.95d812346b25834b.webp)
 
 1. 사용할 Azure OpenAI 모델을 선택합니다. 예: **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/ko/select-openai-model.959496d7e311546d.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/ko/select-openai-model.959496d7e311546d.webp)
 
 1. **Confirm**을 선택합니다.
 
@@ -426,17 +426,17 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
 
 1. 생성한 Azure AI Foundry 프로젝트로 이동합니다.
 
-    ![Select Project.](../../../../../../translated_images/ko/select-project-created.5221e0e403e2c9d6.png)
+    ![Select Project.](../../../../../../translated_images/ko/select-project-created.5221e0e403e2c9d6.webp)
 
 1. 생성한 프로젝트에서 왼쪽 탭의 **Evaluation**을 선택합니다.
 
 1. 탐색 메뉴에서 **+ New evaluation**을 선택합니다.
 
-    ![Select evaluation.](../../../../../../translated_images/ko/select-evaluation.2846ad7aaaca7f4f.png)
+    ![Select evaluation.](../../../../../../translated_images/ko/select-evaluation.2846ad7aaaca7f4f.webp)
 
 1. **Prompt flow** 평가를 선택합니다.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/ko/promptflow-evaluation.cb9758cc19b4760f.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/ko/promptflow-evaluation.cb9758cc19b4760f.webp)
 
 1. 다음 작업을 수행합니다:
 
@@ -444,7 +444,7 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
     - 작업 유형으로 **Question and answer without context**를 선택합니다. 이 튜토리얼에서 사용된 **ULTRACHAT_200k** 데이터셋에는 컨텍스트가 포함되어 있지 않기 때문입니다.
     - 평가할 Prompt flow를 선택합니다.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting1.4aa08259ff7a536e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting1.4aa08259ff7a536e.webp)
 
 1. **Next**를 선택합니다.
 
@@ -453,7 +453,7 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
     - **Add your dataset**를 선택하여 데이터셋을 업로드합니다. 예를 들어, **ULTRACHAT_200k** 데이터셋을 다운로드할 때 포함된 테스트 데이터셋 파일 *test_data.json1*을 업로드할 수 있습니다.
     - 데이터셋에 맞는 **Dataset column**을 선택합니다. 예를 들어, **ULTRACHAT_200k** 데이터셋을 사용하는 경우 **${data.prompt}**를 선택합니다.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting2.07036831ba58d64e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting2.07036831ba58d64e.webp)
 
 1. **Next**를 선택합니다.
 
@@ -462,7 +462,7 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
     - 사용할 성능 및 품질 지표를 선택합니다.
     - 평가를 위해 생성한 Azure OpenAI 모델을 선택합니다. 예: **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting3-1.d1ae69e3bf80914e.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
 1. 위험 및 안전 지표를 구성하기 위해 다음 작업을 수행합니다:
 
@@ -472,7 +472,7 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
     - **answer**에 대해 **Data source**를 **{$run.outputs.answer}**로 선택합니다.
     - **ground_truth**에 대해 **Data source**를 **{$data.message}**로 선택합니다.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting3-2.d53bd075c60a45a2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/ko/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
 1. **Next**를 선택합니다.
 
@@ -489,17 +489,17 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
 
     - 모델이 일관성 있고 유창하며 관련성 높은 응답을 생성하는 효과를 평가합니다.
 
-    ![Evaluation result.](../../../../../../translated_images/ko/evaluation-result-gpu.85f48b42dfb74254.png)
+    ![Evaluation result.](../../../../../../translated_images/ko/evaluation-result-gpu.85f48b42dfb74254.webp)
 
 1. 위험 및 안전성 지표:
 
     - 모델의 출력이 안전하며 책임 있는 AI 원칙에 부합하는지 확인하여 해롭거나 불쾌감을 주는 내용을 피합니다.
 
-    ![Evaluation result.](../../../../../../translated_images/ko/evaluation-result-gpu-2.1b74e336118f4fd0.png)
+    ![Evaluation result.](../../../../../../translated_images/ko/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
 1. 아래로 스크롤하여 **상세 지표 결과**를 확인할 수 있습니다.
 
-    ![Evaluation result.](../../../../../../translated_images/ko/detailed-metrics-result.afa2f5c39a4f5f17.png)
+    ![Evaluation result.](../../../../../../translated_images/ko/detailed-metrics-result.afa2f5c39a4f5f17.webp)
 
 1. 성능과 안전성 지표 모두에 대해 맞춤형 Phi-3 / Phi-3.5 모델을 평가함으로써, 모델이 효과적일 뿐만 아니라 책임 있는 AI 관행을 준수하여 실제 환경에 배포할 준비가 되었음을 확인할 수 있습니다.
 
@@ -509,7 +509,7 @@ Azure AI Foundry에서 Phi-3 / Phi-3.5 모델을 평가하려면 Azure OpenAI �
 
 Azure AI Foundry에서 Prompt flow와 통합된 미세 조정된 Phi-3 모델을 성공적으로 평가하셨습니다. 이는 AI 모델이 우수한 성능을 발휘할 뿐만 아니라 Microsoft의 책임 있는 AI 원칙을 준수하여 신뢰할 수 있고 안정적인 AI 애플리케이션을 구축하는 데 중요한 단계입니다.
 
-![Architecture.](../../../../../../translated_images/ko/architecture.10bec55250f5d6a4.png)
+![Architecture.](../../../../../../translated_images/ko/architecture.10bec55250f5d6a4.webp)
 
 ## Azure 리소스 정리
 

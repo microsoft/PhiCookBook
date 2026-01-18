@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 إليك نظرة عامة على هذا المثال الشامل.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ar/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ar/00-01-architecture.02fc569e266d468c.webp)
 
 ### جدول المحتويات
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *azure machine learning* في **شريط البحث** في أعلى صفحة البوابة واختر **Azure Machine Learning** من الخيارات التي تظهر.
 
-    ![Type azure machine learning](../../../../../../translated_images/ar/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/ar/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. اختر **+ إنشاء** من قائمة التنقل.
 
 1. اختر **مساحة عمل جديدة** من قائمة التنقل.
 
-    ![Select new workspace](../../../../../../translated_images/ar/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/ar/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. قم بالمهام التالية:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **Application insights** التي ستستخدمها (أنشئ واحدة جديدة إذا لزم الأمر).
     - اختر **سجل الحاويات (Container registry)** الذي ستستخدمه (أنشئ واحدًا جديدًا إذا لزم الأمر).
 
-    ![Fill AZML.](../../../../../../translated_images/ar/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/ar/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. اختر **مراجعة + إنشاء**.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **عائلة الآلة الافتراضية** التي تريد استخدامها. مثال، اختر **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** والتي تشمل *Standard_NC24ads_A100_v4* GPU.
     - اختر **طلب الحصة** من قائمة التنقل.
 
-        ![Request quota.](../../../../../../translated_images/ar/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/ar/01-04-request-quota.3d3670c3221ab834.webp)
 
     - في صفحة طلب الحصة، أدخل **الحد الأقصى للأنوية الجديدة** التي تريد استخدامها. مثلًا، 24.
     - في صفحة طلب الحصة، اختر **إرسال** لطلب حصة GPU.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *managed identities* في **شريط البحث** في أعلى صفحة البوابة واختر **Managed Identities** من الخيارات التي تظهر.
 
-    ![Type managed identities.](../../../../../../translated_images/ar/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/ar/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. اختر **+ إنشاء**.
 
-    ![Select create.](../../../../../../translated_images/ar/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/ar/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. قم بالمهام التالية:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر مجموعة الموارد التي ستستخدمها.
     - اختر الدور **مساهم (Contributor)**.
 
-    ![Fill contributor role.](../../../../../../translated_images/ar/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/ar/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. اختر **حفظ**.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *storage accounts* في **شريط البحث** في أعلى صفحة البوابة واختر **Storage accounts** من الخيارات التي تظهر.
 
-    ![Type storage accounts.](../../../../../../translated_images/ar/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/ar/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. اختر حساب التخزين المرتبط بمساحة عمل Azure Machine Learning التي أنشأتها. مثال، *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر **+ إضافة** من قائمة التنقل.
     - اختر **إضافة تعيين دور** من قائمة التنقل.
 
-    ![Add role.](../../../../../../translated_images/ar/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/ar/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. في صفحة إضافة تعيين دور، قم بالمهام التالية:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - في صفحة اختيار الهويات المُدارة، اختر الهوية المُدارة التي أنشأتها. مثال، *finetunephi-managedidentity*.
     - في صفحة اختيار الهويات المُدارة، اختر **تحديد**.
 
-    ![Select managed identity.](../../../../../../translated_images/ar/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/ar/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. اختر **مراجعة + تعيين**.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اكتب *container registries* في **شريط البحث** في أعلى صفحة البوابة واختر **Container registries** من الخيارات التي تظهر.
 
-    ![Type container registries.](../../../../../../translated_images/ar/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/ar/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. اختر سجل الحاويات المرتبط بمساحة عمل Azure Machine Learning. مثال، *finetunephicontainerregistries*.
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر مجلد *finetune-phi* الذي قمت بإنشائه، والذي يقع في *C:\Users\yourUserName\finetune-phi*.
 
-    ![فتح مجلد المشروع.](../../../../../../translated_images/ar/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![فتح مجلد المشروع.](../../../../../../translated_images/ar/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. في الجزء الأيسر من Visual Studio Code، انقر بزر الماوس الأيمن واختر **New File** لإنشاء ملف جديد باسم *download_dataset.py*.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. في الجزء الأيسر من Visual Studio Code، انقر بزر الماوس الأيمن واختر **New File** لإنشاء ملف جديد باسم *deploy_model.py*.
 
-    ![إنشاء ملف جديد.](../../../../../../translated_images/ar/01-13-create-new-file.c17c150fff384a39.png)
+    ![إنشاء ملف جديد.](../../../../../../translated_images/ar/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. في الجزء الأيسر من Visual Studio Code، انقر بزر الماوس الأيمن واختر **New Folder** لإنشاء مجلد جديد باسم *finetuning_dir*.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - اختر الاشتراك في Azure الذي تستخدمه حاليًا.
     - انسخ والصق معرف الاشتراك في ملف *config.py*.
 
-    ![العثور على معرف الاشتراك.](../../../../../../translated_images/ar/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![العثور على معرف الاشتراك.](../../../../../../translated_images/ar/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. قم بتنفيذ المهام التالية لإضافة اسم مساحة العمل في Azure:
 
     - انتقل إلى مورد Azure Machine Learning الذي أنشأته.
     - انسخ والصق اسم الحساب الخاص بك في ملف *config.py*.
 
-    ![العثور على اسم Azure Machine Learning.](../../../../../../translated_images/ar/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![العثور على اسم Azure Machine Learning.](../../../../../../translated_images/ar/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. قم بتنفيذ المهام التالية لإضافة اسم مجموعة الموارد في Azure:
 
     - انتقل إلى مورد Azure Machine Learning الذي أنشأته.
     - انسخ والصق اسم مجموعة الموارد الخاص بك في ملف *config.py*.
 
-    ![العثور على اسم مجموعة الموارد.](../../../../../../translated_images/ar/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![العثور على اسم مجموعة الموارد.](../../../../../../translated_images/ar/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. قم بتنفيذ المهام التالية لإضافة اسم الهوية المُدارة في Azure
 
     - انتقل إلى مورد Managed Identities الذي أنشأته.
     - انسخ والصق اسم الهوية المُدارة في Azure في ملف *config.py*.
 
-    ![العثور على UAI.](../../../../../../translated_images/ar/01-17-find-uai.3529464f53499827.png)
+    ![العثور على UAI.](../../../../../../translated_images/ar/01-17-find-uai.3529464f53499827.webp)
 
 ### إعداد مجموعة البيانات للتحسين
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر الاشتراك في Azure للاستخدام.
 
-    ![العثور على اسم مجموعة الموارد.](../../../../../../translated_images/ar/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![العثور على اسم مجموعة الموارد.](../../../../../../translated_images/ar/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. في هذا التمرين، قمت بنجاح بتحسين نموذج Phi-3 باستخدام Azure Machine Learning. عبر تشغيل سكريبت *setup_ml.py*، قمت بإعداد بيئة Azure Machine Learning وبدأت عملية التحسين المعرفة في ملف *fine_tune.py*. يرجى ملاحظة أن عملية التحسين قد تستغرق وقتًا طويلاً. بعد تشغيل الأمر `python setup_ml.py`، تحتاج إلى الانتظار حتى تكتمل العملية. يمكنك مراقبة حالة مهمة التحسين بمتابعة الرابط المقدم في الطرفية إلى بوابة Azure Machine Learning.
 
-    ![مشاهدة مهمة التحسين.](../../../../../../translated_images/ar/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![مشاهدة مهمة التحسين.](../../../../../../translated_images/ar/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### نشر النموذج المحسن
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. اختر **Endpoints** من تبويب الجانب الأيسر.
 
-    ![اختر نقاط النهاية.](../../../../../../translated_images/ar/02-03-select-endpoints.c3136326510baff1.png)
+    ![اختر نقاط النهاية.](../../../../../../translated_images/ar/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. اختر نقطة النهاية التي أنشأتها.
 
-    ![اختر نقاط النهاية التي أنشأتها.](../../../../../../translated_images/ar/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![اختر نقاط النهاية التي أنشأتها.](../../../../../../translated_images/ar/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. في هذه الصفحة، يمكنك إدارة نقاط النهاية التي تم إنشاؤها أثناء عملية النشر.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. انسخ والصق **REST endpoint** في ملف *config.py*، مع استبدال `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` بـ **REST endpoint** الخاص بك.
 1. انسخ والصق **المفتاح الأساسي** في ملف *config.py*، مع استبدال `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` بـ **المفتاح الأساسي** الخاص بك.
 
-    ![انسخ مفتاح api وعنوان نقطة النهاية.](../../../../../../translated_images/ar/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![انسخ مفتاح api وعنوان نقطة النهاية.](../../../../../../translated_images/ar/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### أضف الكود إلى ملف *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. إليك مثال على النتائج: يمكنك الآن الدردشة مع نموذج Phi-3 المخصص الخاص بك. يُنصح بطرح الأسئلة بناءً على البيانات المستخدمة في التهيئة الدقيقة.
 
-    ![مثال على تدفق المطالبات.](../../../../../../translated_images/ar/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![مثال على تدفق المطالبات.](../../../../../../translated_images/ar/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

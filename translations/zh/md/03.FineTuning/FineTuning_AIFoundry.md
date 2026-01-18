@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **便利性：** 微调的实际流程是怎样的？需要编写自定义代码吗？需要自备计算资源吗？
 - **安全性：** 微调后的模型存在安全风险吗？是否有防护措施防止意外伤害？
 
-![AIFoundry Models](../../../../translated_images/zh/AIFoundryModels.0e1b16f7d0b09b73.png)
+![AIFoundry Models](../../../../translated_images/zh/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## 微调准备
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry 允许你通过微调过程，将大型语言模型定制到你的个人数据集。微调带来显著价值，使模型针对特定任务和应用进行定制和优化，从而提升性能、降低成本、减少延迟，并生成更符合需求的输出。
 
-![Finetune AI Foundry](../../../../translated_images/zh/AIFoundryfinetune.193aaddce48d553c.png)
+![Finetune AI Foundry](../../../../translated_images/zh/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### 创建新项目
 
@@ -79,14 +79,14 @@ Azure AI Foundry 允许你通过微调过程，将大型语言模型定制到你
 
 1. 选择 **+New project** 在 Azure AI Foundry 中创建新项目。
 
-    ![FineTuneSelect](../../../../translated_images/zh/select-new-project.cd31c0404088d7a3.png)
+    ![FineTuneSelect](../../../../translated_images/zh/select-new-project.cd31c0404088d7a3.webp)
 
 1. 执行以下操作：
 
     - 项目 **Hub 名称**，必须唯一。
     - 选择要使用的 **Hub**（如有需要可新建）。
 
-    ![FineTuneSelect](../../../../translated_images/zh/create-project.ca3b71298b90e420.png)
+    ![FineTuneSelect](../../../../translated_images/zh/create-project.ca3b71298b90e420.webp)
 
 1. 执行以下操作以创建新 hub：
 
@@ -97,7 +97,7 @@ Azure AI Foundry 允许你通过微调过程，将大型语言模型定制到你
     - 选择要连接的 **Azure AI 服务**（如有需要可新建）。
     - 选择 **连接 Azure AI 搜索** 时选择 **跳过连接**。
 
-    ![FineTuneSelect](../../../../translated_images/zh/create-hub.49e53d235e80779e.png)
+    ![FineTuneSelect](../../../../translated_images/zh/create-hub.49e53d235e80779e.webp)
 
 1. 选择 **下一步**。
 1. 选择 **创建项目**。
@@ -115,15 +115,15 @@ Azure AI Foundry 允许你通过微调过程，将大型语言模型定制到你
 
 1. 在 **搜索栏** 输入 *phi-3*，选择你想使用的 phi-3 模型。
 
-    ![FineTuneSelect](../../../../translated_images/zh/select-model.60ef2d4a6a3cec57.png)
+    ![FineTuneSelect](../../../../translated_images/zh/select-model.60ef2d4a6a3cec57.webp)
 
 1. 选择 **微调**。
 
-    ![FineTuneSelect](../../../../translated_images/zh/select-finetune.a976213b543dd9d8.png)
+    ![FineTuneSelect](../../../../translated_images/zh/select-finetune.a976213b543dd9d8.webp)
 
 1. 输入 **微调模型名称**。
 
-    ![FineTuneSelect](../../../../translated_images/zh/finetune1.c2b39463f0d34148.png)
+    ![FineTuneSelect](../../../../translated_images/zh/finetune1.c2b39463f0d34148.webp)
 
 1. 选择 **下一步**。
 
@@ -132,13 +132,13 @@ Azure AI Foundry 允许你通过微调过程，将大型语言模型定制到你
     - 选择 **任务类型** 为 **聊天补全**。
     - 选择你想使用的 **训练数据**。你可以通过 Azure AI Foundry 上传数据，或从本地环境上传。
 
-    ![FineTuneSelect](../../../../translated_images/zh/finetune2.43cb099b1a94442d.png)
+    ![FineTuneSelect](../../../../translated_images/zh/finetune2.43cb099b1a94442d.webp)
 
 1. 选择 **下一步**。
 
 1. 上传你想使用的 **验证数据**，或者选择 **自动拆分训练数据**。
 
-    ![FineTuneSelect](../../../../translated_images/zh/finetune3.fd96121b67dcdd92.png)
+    ![FineTuneSelect](../../../../translated_images/zh/finetune3.fd96121b67dcdd92.webp)
 
 1. 选择 **下一步**。
 
@@ -148,15 +148,15 @@ Azure AI Foundry 允许你通过微调过程，将大型语言模型定制到你
     - 选择你想使用的 **学习率**。
     - 选择你想使用的 **训练轮数**。
 
-    ![FineTuneSelect](../../../../translated_images/zh/finetune4.e18b80ffccb5834a.png)
+    ![FineTuneSelect](../../../../translated_images/zh/finetune4.e18b80ffccb5834a.webp)
 
 1. 选择 **提交** 开始微调过程。
 
-    ![FineTuneSelect](../../../../translated_images/zh/select-submit.0a3802d581bac271.png)
+    ![FineTuneSelect](../../../../translated_images/zh/select-submit.0a3802d581bac271.webp)
 
 1. 微调完成后，状态会显示为 **已完成**，如下图所示。此时你可以部署模型，并在自己的应用、演示区或提示流中使用。更多信息请参见[如何使用 Azure AI Foundry 部署 Phi-3 系列小型语言模型](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)。
 
-    ![FineTuneSelect](../../../../translated_images/zh/completed.4dc8d2357144cdef.png)
+    ![FineTuneSelect](../../../../translated_images/zh/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
 > 有关微调 Phi-3 的详细信息，请访问[在 Azure AI Foundry 中微调 Phi-3 模型](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)。

@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Εδώ είναι μια επισκόπηση αυτού του δείγματος E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/el/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/el/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Πίνακας περιεχομένων
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *azure machine learning* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Azure Machine Learning** από τις διαθέσιμες επιλογές.
 
-    ![Type azure machine learning.](../../../../../../translated_images/el/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/el/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Επιλέξτε **+ Δημιουργία** από το μενού πλοήγησης.
 
 3. Επιλέξτε **Νέος χώρος εργασίας** από το μενού πλοήγησης.
 
-    ![Select new workspace.](../../../../../../translated_images/el/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/el/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Εκτελέστε τις ακόλουθες ενέργειες:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε τα **Application insights** που θα χρησιμοποιήσετε (δημιουργήστε νέα αν χρειάζεται).
     - Επιλέξτε το **Container registry** που θα χρησιμοποιήσετε (δημιουργήστε νέο αν χρειάζεται).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/el/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/el/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Επιλέξτε **Ανασκόπηση + Δημιουργία**.
 
@@ -91,7 +91,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε την **οικογένεια εικονικών μηχανών** που θα χρησιμοποιήσετε. Για παράδειγμα, επιλέξτε **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, που περιλαμβάνει την GPU *Standard_NC24ads_A100_v4*.
     - Επιλέξτε **Request quota** από το μενού πλοήγησης.
 
-        ![Request quota.](../../../../../../translated_images/el/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/el/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - Στη σελίδα Αίτησης ορίου, εισάγετε το **Νέο όριο πυρήνων** που επιθυμείτε. Για παράδειγμα, 24.
     - Στη σελίδα Αίτησης ορίου, επιλέξτε **Υποβολή** για να αιτηθείτε το όριο GPU.
@@ -112,11 +112,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *managed identities* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Managed Identities** από τις διαθέσιμες επιλογές.
 
-    ![Type managed identities.](../../../../../../translated_images/el/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/el/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Επιλέξτε **+ Δημιουργία**.
 
-    ![Select create.](../../../../../../translated_images/el/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/el/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Εκτελέστε τις ακόλουθες ενέργειες:
 
@@ -125,7 +125,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε την **Περιοχή** που προτιμάτε.
     - Εισάγετε το **Όνομα**. Πρέπει να είναι μοναδικό.
 
-    ![Select create.](../../../../../../translated_images/el/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/el/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Επιλέξτε **Ανασκόπηση + δημιουργία**.
 
@@ -145,7 +145,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε την **Ομάδα πόρων** που θα χρησιμοποιήσετε.
     - Επιλέξτε τον **Ρόλο** ως **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/el/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/el/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Επιλέξτε **Αποθήκευση**.
 
@@ -153,7 +153,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *storage accounts* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Storage accounts** από τις διαθέσιμες επιλογές.
 
-    ![Type storage accounts.](../../../../../../translated_images/el/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/el/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Επιλέξτε τον λογαριασμό αποθήκευσης που σχετίζεται με τον χώρο εργασίας Azure Machine Learning που δημιουργήσατε. Για παράδειγμα, *finetunephistorage*.
 
@@ -164,7 +164,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε **+ Προσθήκη** από το μενού πλοήγησης.
     - Επιλέξτε **Προσθήκη ανάθεσης ρόλου** από το μενού πλοήγησης.
 
-    ![Add role.](../../../../../../translated_images/el/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/el/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. Στη σελίδα Προσθήκης ανάθεσης ρόλου, εκτελέστε τις ακόλουθες ενέργειες:
 
@@ -177,7 +177,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Στη σελίδα Επιλογής διαχειριζόμενων ταυτοτήτων, επιλέξτε τη Διαχειριζόμενη ταυτότητα που δημιουργήσατε. Για παράδειγμα, *finetunephi-managedidentity*.
     - Στη σελίδα Επιλογής διαχειριζόμενων ταυτοτήτων, επιλέξτε **Επιλογή**.
 
-    ![Select managed identity.](../../../../../../translated_images/el/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/el/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Επιλέξτε **Ανασκόπηση + ανάθεση**.
 
@@ -185,7 +185,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Πληκτρολογήστε *container registries* στη **γραμμή αναζήτησης** στην κορυφή της σελίδας του portal και επιλέξτε **Container registries** από τις διαθέσιμες επιλογές.
 
-    ![Type container registries.](../../../../../../translated_images/el/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/el/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Επιλέξτε το container registry που σχετίζεται με τον χώρο εργασίας Azure Machine Learning. Για παράδειγμα, *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε τον φάκελο *finetune-phi* που δημιουργήσατε, ο οποίος βρίσκεται στη διαδρομή *C:\Users\yourUserName\finetune-phi*.
 
-    ![Επιλέξτε τον φάκελο που δημιουργήσατε.](../../../../../../translated_images/el/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Επιλέξτε τον φάκελο που δημιουργήσατε.](../../../../../../translated_images/el/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. Στο αριστερό πάνελ του Visual Studio Code, κάντε δεξί κλικ και επιλέξτε **New File** για να δημιουργήσετε ένα νέο αρχείο με το όνομα *download_dataset.py*.
 
-    ![Δημιουργήστε ένα νέο αρχείο.](../../../../../../translated_images/el/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Δημιουργήστε ένα νέο αρχείο.](../../../../../../translated_images/el/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Προετοιμάστε το σύνολο δεδομένων για fine-tuning
 
@@ -392,7 +392,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ New**.
 
-    ![Επιλέξτε compute.](../../../../../../translated_images/el/06-01-select-compute.a29cff290b480252.png)
+    ![Επιλέξτε compute.](../../../../../../translated_images/el/06-01-select-compute.a29cff290b480252.webp)
 
 1. Εκτελέστε τις παρακάτω εργασίες:
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Φιλτράρετε το μέγεθος εικονικής μηχανής σε **Select from all options**.
     - Επιλέξτε το μέγεθος εικονικής μηχανής σε **Standard_NC24ads_A100_v4**.
 
-    ![Δημιουργία cluster.](../../../../../../translated_images/el/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Δημιουργία cluster.](../../../../../../translated_images/el/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Επιλέξτε **Next**.
 
@@ -413,7 +413,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε **Μέγιστος αριθμός κόμβων** σε **1**.
     - Ορίστε **Χρόνο αδράνειας πριν από την κλιμάκωση προς τα κάτω** σε **120**.
 
-    ![Δημιουργία cluster.](../../../../../../translated_images/el/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Δημιουργία cluster.](../../../../../../translated_images/el/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Επιλέξτε **Create**.
 
@@ -423,18 +423,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε το Azure Machine Learning workspace που δημιουργήσατε.
 
-    ![Επιλέξτε το workspace που δημιουργήσατε.](../../../../../../translated_images/el/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Επιλέξτε το workspace που δημιουργήσατε.](../../../../../../translated_images/el/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Εκτελέστε τις παρακάτω εργασίες:
 
     - Επιλέξτε **Model catalog** από την αριστερή καρτέλα.
     - Πληκτρολογήστε *phi-3-mini-4k* στη **γραμμή αναζήτησης** και επιλέξτε **Phi-3-mini-4k-instruct** από τις εμφανιζόμενες επιλογές.
 
-    ![Πληκτρολογήστε phi-3-mini-4k.](../../../../../../translated_images/el/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Πληκτρολογήστε phi-3-mini-4k.](../../../../../../translated_images/el/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Επιλέξτε **Fine-tune** από το μενού πλοήγησης.
 
-    ![Επιλέξτε fine tune.](../../../../../../translated_images/el/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Επιλέξτε fine tune.](../../../../../../translated_images/el/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Εκτελέστε τις παρακάτω εργασίες:
 
@@ -443,7 +443,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε τον τύπο ανεβάσματος των Validation data σε **Provide different validation data**.
     - Επιλέξτε **+ Select data** για να ανεβάσετε τα **Validation data**.
 
-    ![Συμπληρώστε τη σελίδα fine-tuning.](../../../../../../translated_images/el/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Συμπληρώστε τη σελίδα fine-tuning.](../../../../../../translated_images/el/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Σε αυτή την άσκηση, πετύχατε το fine-tuning του μοντέλου Phi-3 χρησιμοποιώντας το Azure Machine Learning. Παρακαλώ σημειώστε ότι η διαδικασία fine-tuning μπορεί να διαρκέσει αρκετό χρόνο. Μετά την εκτέλεση της εργασίας fine-tuning, πρέπει να περιμένετε να ολοκληρωθεί. Μπορείτε να παρακολουθείτε την κατάσταση της εργασίας fine-tuning μεταβαίνοντας στην καρτέλα Jobs στην αριστερή πλευρά του Azure Machine Learning Workspace σας. Στη συνέχεια, θα αναπτυχθεί το fine-tuned μοντέλο και θα ενσωματωθεί με το Prompt flow.
 
-    ![Δείτε την εργασία fine-tuning.](../../../../../../translated_images/el/06-08-output.2bd32e59930672b1.png)
+    ![Δείτε την εργασία fine-tuning.](../../../../../../translated_images/el/06-08-output.2bd32e59930672b1.webp)
 
 ### Ανάπτυξη του fine-tuned μοντέλου Phi-3
 
@@ -471,17 +471,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε το Azure Machine Learning workspace που δημιουργήσατε.
 
-    ![Επιλέξτε το workspace που δημιουργήσατε.](../../../../../../translated_images/el/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Επιλέξτε το workspace που δημιουργήσατε.](../../../../../../translated_images/el/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Επιλέξτε **Models** από την αριστερή καρτέλα.
 1. Επιλέξτε **+ Register**.
 1. Επιλέξτε **From a job output**.
 
-    ![Καταχώρηση μοντέλου.](../../../../../../translated_images/el/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Καταχώρηση μοντέλου.](../../../../../../translated_images/el/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Επιλέξτε την εργασία που δημιουργήσατε.
 
-    ![Επιλέξτε δουλειά.](../../../../../../translated_images/el/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Επιλέξτε δουλειά.](../../../../../../translated_images/el/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Επιλέξτε **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Βεβαιωθείτε ότι έχει επιλεγεί το **Job output**· θα πρέπει να επιλέγεται αυτόματα.
 
-    ![Επιλέξτε output.](../../../../../../translated_images/el/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Επιλέξτε output.](../../../../../../translated_images/el/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Επιλέξτε **Next**.
 
 3. Επιλέξτε **Register**.
 
-    ![Επιλέξτε register.](../../../../../../translated_images/el/07-04-register.fd82a3b293060bc7.png)
+    ![Επιλέξτε register.](../../../../../../translated_images/el/07-04-register.fd82a3b293060bc7.webp)
 
 4. Μπορείτε να δείτε το καταχωρημένο μοντέλο σας μεταβαίνοντας στο μενού **Models** από την αριστερή καρτέλα.
 
-    ![Καταχωρημένο μοντέλο.](../../../../../../translated_images/el/07-05-registered-model.7db9775f58dfd591.png)
+    ![Καταχωρημένο μοντέλο.](../../../../../../translated_images/el/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Ανάπτυξη του fine-tuned μοντέλου
 
@@ -509,13 +509,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **Real-time endpoints** από το μενού πλοήγησης.
 
-    ![Δημιουργία endpoint.](../../../../../../translated_images/el/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Δημιουργία endpoint.](../../../../../../translated_images/el/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Επιλέξτε **Create**.
 
 1. Επιλέξτε το καταχωρημένο μοντέλο που δημιουργήσατε.
 
-    ![Επιλέξτε καταχωρημένο μοντέλο.](../../../../../../translated_images/el/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Επιλέξτε καταχωρημένο μοντέλο.](../../../../../../translated_images/el/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Επιλέξτε **Select**.
 
@@ -527,7 +527,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Εισάγετε **Όνομα Endpoint**. Πρέπει να είναι μοναδική τιμή.
     - Εισάγετε **Όνομα Ανάπτυξης** (Deployment name). Πρέπει να είναι μοναδική τιμή.
 
-    ![Συμπληρώστε τις ρυθμίσεις ανάπτυξης.](../../../../../../translated_images/el/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Συμπληρώστε τις ρυθμίσεις ανάπτυξης.](../../../../../../translated_images/el/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Επιλέξτε **Deploy**.
 
@@ -543,14 +543,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε το endpoint που δημιουργήσατε.
 
-    ![Επιλέξτε endpoints](../../../../../../translated_images/el/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Επιλέξτε endpoints](../../../../../../translated_images/el/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. Σε αυτή τη σελίδα, μπορείτε να διαχειριστείτε τα endpoints κατά τη διάρκεια της διαδικασίας ανάπτυξης.
 
 > [!NOTE]
 > Όταν ολοκληρωθεί η ανάπτυξη, βεβαιωθείτε ότι το **Live traffic** έχει οριστεί στο **100%**. Εάν όχι, επιλέξτε **Update traffic** για να ρυθμίσετε την κυκλοφορία. Σημειώστε ότι δεν μπορείτε να δοκιμάσετε το μοντέλο αν η κυκλοφορία έχει οριστεί στο 0%.
 >
-> ![Ορίστε την κυκλοφορία.](../../../../../../translated_images/el/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Ορίστε την κυκλοφορία.](../../../../../../translated_images/el/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Σενάριο 3: Ενσωμάτωση με Prompt flow και συνομιλία με το προσαρμοσμένο σας μοντέλο στο Azure AI Foundry
@@ -579,7 +579,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Επιλέξτε **All hubs** από την αριστερή καρτέλα.
 
 1. Επιλέξτε **+ New hub** από το μενού πλοήγησης.
-    ![Δημιουργία hub.](../../../../../../translated_images/el/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Δημιουργία hub.](../../../../../../translated_images/el/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Εκτελέστε τις ακόλουθες εργασίες:
 
@@ -590,7 +590,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε το **Connect Azure AI Services** για χρήση (δημιουργήστε νέο αν χρειάζεται).
     - Επιλέξτε **Connect Azure AI Search** να **Παραλείψετε τη σύνδεση**.
 
-    ![Συμπλήρωση hub.](../../../../../../translated_images/el/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Συμπλήρωση hub.](../../../../../../translated_images/el/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Επιλέξτε **Επόμενο**.
 
@@ -600,11 +600,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ Νέο έργο** από το μενού πλοήγησης.
 
-    ![Επιλογή νέου έργου.](../../../../../../translated_images/el/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Επιλογή νέου έργου.](../../../../../../translated_images/el/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Εισαγάγετε **Όνομα έργου**. Πρέπει να είναι μια μοναδική τιμή.
 
-    ![Δημιουργία έργου.](../../../../../../translated_images/el/08-05-create-project.4d97f0372f03375a.png)
+    ![Δημιουργία έργου.](../../../../../../translated_images/el/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Επιλέξτε **Δημιουργία έργου**.
 
@@ -620,17 +620,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **Endpoints** από την καρτέλα αριστερά.
 
-    ![Επιλογή endpoints.](../../../../../../translated_images/el/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Επιλογή endpoints.](../../../../../../translated_images/el/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Επιλέξτε το endpoint που δημιουργήσατε.
 
-    ![Επιλογή endpoint που δημιουργήθηκε.](../../../../../../translated_images/el/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Επιλογή endpoint που δημιουργήθηκε.](../../../../../../translated_images/el/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Επιλέξτε **Consume** από το μενού πλοήγησης.
 
 1. Αντιγράψτε το **REST endpoint** και το **Πρωτεύον κλειδί**.
 
-    ![Αντιγραφή api key και endpoint uri.](../../../../../../translated_images/el/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Αντιγραφή api key και endpoint uri.](../../../../../../translated_images/el/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Προσθήκη της Προσαρμοσμένης Σύνδεσης
 
@@ -642,11 +642,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ Νέα σύνδεση**.
 
-    ![Επιλογή νέας σύνδεσης.](../../../../../../translated_images/el/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Επιλογή νέας σύνδεσης.](../../../../../../translated_images/el/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Επιλέξτε **Προσαρμοσμένα κλειδιά** από το μενού πλοήγησης.
 
-    ![Επιλογή προσαρμοσμένων κλειδιών.](../../../../../../translated_images/el/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Επιλογή προσαρμοσμένων κλειδιών.](../../../../../../translated_images/el/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Εκτελέστε τις ακόλουθες εργασίες:
 
@@ -656,7 +656,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Για το όνομα κλειδιού, εισάγετε **key** και επικολλήστε το κλειδί που αντιγράψατε από το Azure ML Studio στο πεδίο τιμής.
     - Μετά την προσθήκη των κλειδιών, επιλέξτε **είναι μυστικό** για να αποτρέψετε την έκθεση του κλειδιού.
 
-    ![Προσθήκη σύνδεσης.](../../../../../../translated_images/el/08-11-add-connection.785486badb4d2d26.png)
+    ![Προσθήκη σύνδεσης.](../../../../../../translated_images/el/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Επιλέξτε **Προσθήκη σύνδεσης**.
 
@@ -670,15 +670,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ Δημιουργία** από το μενού πλοήγησης.
 
-    ![Επιλογή Promptflow.](../../../../../../translated_images/el/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Επιλογή Promptflow.](../../../../../../translated_images/el/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Επιλέξτε **Chat flow** από το μενού πλοήγησης.
 
-    ![Επιλογή τύπου ροής συνομιλίας.](../../../../../../translated_images/el/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Επιλογή τύπου ροής συνομιλίας.](../../../../../../translated_images/el/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Εισάγετε **Όνομα φακέλου** για χρήση.
 
-    ![Εισαγωγή ονόματος.](../../../../../../translated_images/el/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Εισαγωγή ονόματος.](../../../../../../translated_images/el/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Επιλέξτε **Δημιουργία**.
 
@@ -715,7 +715,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Επιλέξτε **Αποθήκευση**.
 
-    ![Επιλογή λειτουργίας ακατέργαστου αρχείου.](../../../../../../translated_images/el/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Επιλογή λειτουργίας ακατέργαστου αρχείου.](../../../../../../translated_images/el/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Προσθέστε τον ακόλουθο κώδικα στο αρχείο *integrate_with_promptflow.py* για να χρησιμοποιήσετε το προσαρμοσμένο μοντέλο Phi-3 στο Prompt flow.
 
@@ -780,14 +780,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Επικόλληση κώδικα prompt flow.](../../../../../../translated_images/el/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Επικόλληση κώδικα prompt flow.](../../../../../../translated_images/el/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > Για περισσότερες λεπτομέρειες σχετικά με τη χρήση του Prompt flow στο Azure AI Foundry, μπορείτε να ανατρέξετε στο [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Επιλέξτε **Είσοδο συνομιλίας**, **Έξοδο συνομιλίας** για να ενεργοποιήσετε τη συνομιλία με το μοντέλο σας.
 
-    ![Είσοδος και έξοδος.](../../../../../../translated_images/el/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Είσοδος και έξοδος.](../../../../../../translated_images/el/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Τώρα είστε έτοιμοι να συνομιλήσετε με το προσαρμοσμένο μοντέλο Phi-3. Στην επόμενη άσκηση, θα μάθετε πώς να ξεκινήσετε το Prompt flow και να το χρησιμοποιήσετε για να συνομιλήσετε με το προσαρμοσμένο μοντέλο Phi-3.
 
@@ -795,7 +795,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Η επαναδημιουργημένη ροή θα πρέπει να μοιάζει με την εικόνα παρακάτω:
 >
-> ![Παράδειγμα ροής.](../../../../../../translated_images/el/08-18-graph-example.d6457533952e690c.png)
+> ![Παράδειγμα ροής.](../../../../../../translated_images/el/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Συνομιλία με το προσαρμοσμένο μοντέλο Phi-3
@@ -808,25 +808,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **Έναρξη συνεδριών υπολογισμού** για να ξεκινήσετε το Prompt flow.
 
-    ![Έναρξη συνεδρίας υπολογισμού.](../../../../../../translated_images/el/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Έναρξη συνεδρίας υπολογισμού.](../../../../../../translated_images/el/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Επιλέξτε **Επικύρωση και ανάλυση εισόδου** για ανανέωση παραμέτρων.
 
-    ![Επικύρωση εισόδου.](../../../../../../translated_images/el/09-02-validate-input.317c76ef766361e9.png)
+    ![Επικύρωση εισόδου.](../../../../../../translated_images/el/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Επιλέξτε την **Τιμή** της **σύνδεσης** στην προσαρμοσμένη σύνδεση που δημιουργήσατε. Για παράδειγμα, *connection*.
 
-    ![Σύνδεση.](../../../../../../translated_images/el/09-03-select-connection.99bdddb4b1844023.png)
+    ![Σύνδεση.](../../../../../../translated_images/el/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Συνομιλία με το προσαρμοσμένο μοντέλο
 
 1. Επιλέξτε **Συνομιλία**.
 
-    ![Επιλογή συνομιλίας.](../../../../../../translated_images/el/09-04-select-chat.61936dce6612a1e6.png)
+    ![Επιλογή συνομιλίας.](../../../../../../translated_images/el/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Ακολουθεί ένα παράδειγμα αποτελεσμάτων: Τώρα μπορείτε να συνομιλήσετε με το προσαρμοσμένο μοντέλο Phi-3. Συνιστάται να κάνετε ερωτήσεις βασισμένες στα δεδομένα που χρησιμοποιήθηκαν για τη λεπτομερή ρύθμιση.
 
-    ![Συνομιλία με prompt flow.](../../../../../../translated_images/el/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Συνομιλία με prompt flow.](../../../../../../translated_images/el/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

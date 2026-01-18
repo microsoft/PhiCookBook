@@ -27,9 +27,9 @@ Sa madaling salita, ang mga NPU ang mga math whizzes na nagpapabilis ng AI compu
 
 Ang Intel® NPU device ay isang AI inference accelerator na naka-integrate sa Intel client CPUs, simula sa Intel® Core™ Ultra generation ng CPUs (na dating kilala bilang Meteor Lake). Pinapahintulutan nito ang energy-efficient na pagpapatakbo ng mga artificial neural network tasks.
 
-![Latency](../../../../../translated_images/tl/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/tl/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/tl/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/tl/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -97,7 +97,7 @@ with warnings.catch_warnings():
 
 Kapag nagpapatakbo ng code, maaari nating makita ang status ng NPU sa pamamagitan ng Task Manager
 
-![NPU](../../../../../translated_images/tl/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/tl/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Mga Halimbawa*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -187,7 +187,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ito ang resulta ng pagpapatakbo
 
-![DML](../../../../../translated_images/tl/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/tl/aipc_DML.52a44180393ab491.webp)
 
 ***Mga Halimbawa*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -233,7 +233,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ang na-convert na format, ganito
 
-![openvino_convert](../../../../../translated_images/tl/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/tl/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 I-load ang mga model paths (model_dir), mga kaugnay na configuration (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), at hardware-accelerated devices (GPU.0) gamit ang OVModelForCausalLM
 
@@ -251,7 +251,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Kapag nagpapatakbo ng code, maaari nating makita ang status ng GPU sa pamamagitan ng Task Manager
 
-![openvino_gpu](../../../../../translated_images/tl/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/tl/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Mga Halimbawa*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

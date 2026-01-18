@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Sonuç (benim ortamım Apple M1 Max, 64GB) şu şekildedir:
 
-![Terminal](../../../../../translated_images/tr/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/tr/01.5cf57df8f7407cf9.webp)
 
 ### **3. Terminalde MLX ile Phi-3-mini’yi Kuantize Etme**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Sonuç şu şekildedir:
 
-![INT4](../../../../../translated_images/tr/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/tr/02.7b188681a8eadbc1.webp)
 
 
 ### **4. Jupyter Notebook’ta MLX ile Phi-3-mini çalıştırma**
 
 
-![Notebook](../../../../../translated_images/tr/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/tr/03.b9705a3a5aaa89f9.webp)
 
 ***Not:*** Lütfen bu örneği okuyun [bu bağlantıya tıklayın](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

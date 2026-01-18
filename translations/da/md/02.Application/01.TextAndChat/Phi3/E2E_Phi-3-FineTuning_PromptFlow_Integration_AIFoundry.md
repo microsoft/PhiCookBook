@@ -24,7 +24,7 @@ I dette E2E-eksempel vil du lære, hvordan du finjusterer Phi-3-modellen og inte
 
 Her er en oversigt over dette E2E-eksempel.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/da/00-01-architecture.198ba0f1ae6d841a.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/da/00-01-architecture.198ba0f1ae6d841a.webp)
 
 ### Indholdsfortegnelse
 
@@ -49,13 +49,13 @@ Her er en oversigt over dette E2E-eksempel.
 
 1. Skriv *azure machine learning* i **søgefeltet** øverst på portalsiden, og vælg **Azure Machine Learning** fra de muligheder, der vises.
 
-    ![Type azure machine learning.](../../../../../../translated_images/da/01-01-type-azml.acae6c5455e67b4b.png)
+    ![Type azure machine learning.](../../../../../../translated_images/da/01-01-type-azml.acae6c5455e67b4b.webp)
 
 2. Vælg **+ Opret** i navigationsmenuen.
 
 3. Vælg **Nyt workspace** i navigationsmenuen.
 
-    ![Select new workspace.](../../../../../../translated_images/da/01-02-select-new-workspace.cd09cd0ec4a60ef2.png)
+    ![Select new workspace.](../../../../../../translated_images/da/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Udfør følgende opgaver:
 
@@ -68,7 +68,7 @@ Her er en oversigt over dette E2E-eksempel.
     - Vælg den **Application insights**, der skal bruges (opret en ny om nødvendigt).
     - Vælg den **Container registry**, der skal bruges (opret en ny om nødvendigt).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/da/01-03-fill-AZML.a1b6fd944be0090f.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/da/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
 5. Vælg **Gennemse + opret**.
 
@@ -91,7 +91,7 @@ I denne vejledning vil du lære, hvordan du finjusterer og implementerer en Phi-
     - Vælg den **Virtual machine family**, der skal bruges. For eksempel, vælg **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC24ads_A100_v4* GPU.
     - Vælg **Request quota** i navigationsmenuen.
 
-        ![Request quota.](../../../../../../translated_images/da/02-02-request-quota.c0428239a63ffdd5.png)
+        ![Request quota.](../../../../../../translated_images/da/02-02-request-quota.c0428239a63ffdd5.webp)
 
     - På Request quota-siden, indtast den **New cores limit**, du ønsker at bruge. For eksempel 24.
     - På Request quota-siden, vælg **Submit** for at anmode om GPU-kvoten.
@@ -112,11 +112,11 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
 
 1. Skriv *managed identities* i **søgefeltet** øverst på portalsiden, og vælg **Managed Identities** fra de muligheder, der vises.
 
-    ![Type managed identities.](../../../../../../translated_images/da/03-01-type-managed-identities.24de763e0f1f37e5.png)
+    ![Type managed identities.](../../../../../../translated_images/da/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
 1. Vælg **+ Opret**.
 
-    ![Select create.](../../../../../../translated_images/da/03-02-select-create.92bf8989a5cd98f2.png)
+    ![Select create.](../../../../../../translated_images/da/03-02-select-create.92bf8989a5cd98f2.webp)
 
 1. Udfør følgende opgaver:
 
@@ -125,7 +125,7 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
     - Vælg den **Region**, du ønsker at bruge.
     - Indtast **Navn**. Det skal være en unik værdi.
 
-    ![Select create.](../../../../../../translated_images/da/03-03-fill-managed-identities-1.ef1d6a2261b449e0.png)
+    ![Select create.](../../../../../../translated_images/da/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
 1. Vælg **Gennemse + opret**.
 
@@ -145,7 +145,7 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
     - Vælg den **Resource group**, der skal bruges.
     - Vælg **Role** til **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/da/03-04-fill-contributor-role.73990bc6a32e140d.png)
+    ![Fill contributor role.](../../../../../../translated_images/da/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Vælg **Gem**.
 
@@ -153,7 +153,7 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
 
 1. Skriv *storage accounts* i **søgefeltet** øverst på portalsiden, og vælg **Storage accounts** fra de muligheder, der vises.
 
-    ![Type storage accounts.](../../../../../../translated_images/da/03-05-type-storage-accounts.9303de485e65e1e5.png)
+    ![Type storage accounts.](../../../../../../translated_images/da/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
 1. Vælg den storagekonto, der er tilknyttet Azure Machine Learning-workspacet, som du oprettede. For eksempel *finetunephistorage*.
 
@@ -164,7 +164,7 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
     - Vælg **+ Tilføj** i navigationsmenuen.
     - Vælg **Tilføj rolleopgave** i navigationsmenuen.
 
-    ![Add role.](../../../../../../translated_images/da/03-06-add-role.353ccbfdcf0789c2.png)
+    ![Add role.](../../../../../../translated_images/da/03-06-add-role.353ccbfdcf0789c2.webp)
 
 1. På siden Tilføj rolleopgave, udfør følgende opgaver:
 
@@ -177,7 +177,7 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
     - På siden Vælg managed identities, vælg den Manage Identity, du oprettede. For eksempel *finetunephi-managedidentity*.
     - På siden Vælg managed identities, vælg **Vælg**.
 
-    ![Select managed identity.](../../../../../../translated_images/da/03-08-select-managed-identity.e80a2aad5247eb25.png)
+    ![Select managed identity.](../../../../../../translated_images/da/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Vælg **Gennemse + tildel**.
 
@@ -185,7 +185,7 @@ For at finjustere og implementere dine modeller, skal du først oprette en User 
 
 1. Skriv *container registries* i **søgefeltet** øverst på portalsiden, og vælg **Container registries** fra de muligheder, der vises.
 
-    ![Type container registries.](../../../../../../translated_images/da/03-09-type-container-registries.7a4180eb2110e5a6.png)
+    ![Type container registries.](../../../../../../translated_images/da/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
 1. Vælg containerregistry'et, der er tilknyttet Azure Machine Learning-workspacet. For eksempel *finetunephicontainerregistry*
 
@@ -276,11 +276,11 @@ I denne øvelse vil du
 
 1. Vælg mappen *finetune-phi*, som du har oprettet, og som ligger i *C:\Users\yourUserName\finetune-phi*.
 
-    ![Vælg den mappe, som du oprettede.](../../../../../../translated_images/da/04-01-open-project-folder.f734374bcfd5f9e6.png)
+    ![Vælg den mappe, som du oprettede.](../../../../../../translated_images/da/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
 1. I venstre rude i Visual Studio Code, højreklik og vælg **New File** for at oprette en ny fil med navnet *download_dataset.py*.
 
-    ![Opret en ny fil.](../../../../../../translated_images/da/04-02-create-new-file.cf9a330a3a9cff92.png)
+    ![Opret en ny fil.](../../../../../../translated_images/da/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
 ### Forbered datasæt til finjustering
 
@@ -392,7 +392,7 @@ I denne øvelse vil du:
 
 1. Vælg **+ New**.
 
-    ![Vælg compute.](../../../../../../translated_images/da/06-01-select-compute.a29cff290b480252.png)
+    ![Vælg compute.](../../../../../../translated_images/da/06-01-select-compute.a29cff290b480252.webp)
 
 1. Udfør følgende opgaver:
 
@@ -402,7 +402,7 @@ I denne øvelse vil du:
     - Vælg filteret **Virtual machine size** til **Select from all options**.
     - Vælg **Virtual machine size** til **Standard_NC24ads_A100_v4**.
 
-    ![Opret cluster.](../../../../../../translated_images/da/06-02-create-cluster.f221b65ae1221d4e.png)
+    ![Opret cluster.](../../../../../../translated_images/da/06-02-create-cluster.f221b65ae1221d4e.webp)
 
 1. Vælg **Next**.
 
@@ -413,7 +413,7 @@ I denne øvelse vil du:
     - Vælg **Maximum number of nodes** til **1**.
     - Vælg **Idle seconds before scale down** til **120**.
 
-    ![Opret cluster.](../../../../../../translated_images/da/06-03-create-cluster.4a54ba20914f3662.png)
+    ![Opret cluster.](../../../../../../translated_images/da/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Vælg **Create**.
 
@@ -423,18 +423,18 @@ I denne øvelse vil du:
 
 1. Vælg det Azure Machine Learning workspace, som du har oprettet.
 
-    ![Vælg workspace, som du har oprettet.](../../../../../../translated_images/da/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Vælg workspace, som du har oprettet.](../../../../../../translated_images/da/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Udfør følgende opgaver:
 
     - Vælg **Model catalog** i venstre faneblad.
     - Skriv *phi-3-mini-4k* i **søgefeltet** og vælg **Phi-3-mini-4k-instruct** i de viste muligheder.
 
-    ![Skriv phi-3-mini-4k.](../../../../../../translated_images/da/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.png)
+    ![Skriv phi-3-mini-4k.](../../../../../../translated_images/da/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
 1. Vælg **Fine-tune** i navigationsmenuen.
 
-    ![Vælg finjuster.](../../../../../../translated_images/da/06-06-select-fine-tune.2918a59be55dfeec.png)
+    ![Vælg finjuster.](../../../../../../translated_images/da/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Udfør følgende opgaver:
 
@@ -443,7 +443,7 @@ I denne øvelse vil du:
     - Vælg typen til upload af valideringsdata til **Provide different validation data**.
     - Vælg **+ Select data** for at uploade **Valideringsdata**.
 
-    ![Udfyld finjusteringens side.](../../../../../../translated_images/da/06-07-fill-finetuning.b6d14c89e7c27d0b.png)
+    ![Udfyld finjusteringens side.](../../../../../../translated_images/da/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
@@ -453,7 +453,7 @@ I denne øvelse vil du:
 
 1. I denne øvelse har du med succes finjusteret Phi-3 modellen ved at bruge Azure Machine Learning. Bemærk, at finjusteringsprocessen kan tage en væsentlig tid. Efter at have startet finjusteringsjobbet, skal du vente på, at det fuldføres. Du kan overvåge status for finjusteringsjobbet ved at åbne fanen Jobs til venstre i dit Azure Machine Learning Workspace. I den næste serie vil du deployere den finjusterede model og integrere den med Prompt flow.
 
-    ![Se finjusteringsjobbet.](../../../../../../translated_images/da/06-08-output.2bd32e59930672b1.png)
+    ![Se finjusteringsjobbet.](../../../../../../translated_images/da/06-08-output.2bd32e59930672b1.webp)
 
 ### Deploy den finjusterede Phi-3 model
 
@@ -471,17 +471,17 @@ I denne øvelse vil du:
 
 1. Vælg det Azure Machine Learning workspace, som du har oprettet.
 
-    ![Vælg workspace, som du har oprettet.](../../../../../../translated_images/da/06-04-select-workspace.a92934ac04f4f181.png)
+    ![Vælg workspace, som du har oprettet.](../../../../../../translated_images/da/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Vælg **Models** i venstre faneblad.
 1. Vælg **+ Register**.
 1. Vælg **From a job output**.
 
-    ![Registrer model.](../../../../../../translated_images/da/07-01-register-model.ad1e7cc05e4b2777.png)
+    ![Registrer model.](../../../../../../translated_images/da/07-01-register-model.ad1e7cc05e4b2777.webp)
 
 1. Vælg jobbet, som du har oprettet.
 
-    ![Vælg job.](../../../../../../translated_images/da/07-02-select-job.3e2e1144cd6cd093.png)
+    ![Vælg job.](../../../../../../translated_images/da/07-02-select-job.3e2e1144cd6cd093.webp)
 
 1. Vælg **Next**.
 
@@ -489,17 +489,17 @@ I denne øvelse vil du:
 
 1. Sørg for, at **Job output** er valgt; det skulle vælges automatisk.
 
-    ![Vælg output.](../../../../../../translated_images/da/07-03-select-output.4cf1a0e645baea1f.png)
+    ![Vælg output.](../../../../../../translated_images/da/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Vælg **Next**.
 
 3. Vælg **Register**.
 
-    ![Vælg registrer.](../../../../../../translated_images/da/07-04-register.fd82a3b293060bc7.png)
+    ![Vælg registrer.](../../../../../../translated_images/da/07-04-register.fd82a3b293060bc7.webp)
 
 4. Du kan se din registrerede model ved at navigere til menuen **Models** i venstre faneblad.
 
-    ![Registreret model.](../../../../../../translated_images/da/07-05-registered-model.7db9775f58dfd591.png)
+    ![Registreret model.](../../../../../../translated_images/da/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Deploy den finjusterede model
 
@@ -509,13 +509,13 @@ I denne øvelse vil du:
 
 1. Vælg **Real-time endpoints** i navigationsmenuen.
 
-    ![Opret endpoint.](../../../../../../translated_images/da/07-06-create-endpoint.1ba865c606551f09.png)
+    ![Opret endpoint.](../../../../../../translated_images/da/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Vælg **Create**.
 
 1. Vælg den registrerede model, som du har oprettet.
 
-    ![Vælg registreret model.](../../../../../../translated_images/da/07-07-select-registered-model.29c947c37fa30cb4.png)
+    ![Vælg registreret model.](../../../../../../translated_images/da/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
 1. Vælg **Select**.
 
@@ -527,7 +527,7 @@ I denne øvelse vil du:
     - Indtast **Endpoint name**. Det skal være unikt.
     - Indtast **Deployment name**. Det skal være unikt.
 
-    ![Udfyld deploymentsindstillinger.](../../../../../../translated_images/da/07-08-deployment-setting.43ddc4209e673784.png)
+    ![Udfyld deploymentsindstillinger.](../../../../../../translated_images/da/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Vælg **Deploy**.
 
@@ -543,14 +543,14 @@ I denne øvelse vil du:
 
 1. Vælg den endpoint, som du har oprettet.
 
-    ![Vælg endpoints](../../../../../../translated_images/da/07-09-check-deployment.325d18cae8475ef4.png)
+    ![Vælg endpoints](../../../../../../translated_images/da/07-09-check-deployment.325d18cae8475ef4.webp)
 
 1. På denne side kan du administrere endpoints under deploymentsprocessen.
 
 > [!NOTE]
 > Når deployment er fuldført, skal du sikre, at **Live traffic** er sat til **100%**. Hvis ikke, vælg **Update traffic** for at justere trafikindstillingerne. Du kan ikke teste modellen, hvis trafikken er sat til 0%.
 >
-> ![Sæt trafik.](../../../../../../translated_images/da/07-10-set-traffic.085b847e5751ff3d.png)
+> ![Sæt trafik.](../../../../../../translated_images/da/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
 ## Scenario 3: Integrer med Prompt flow og chat med din custom model i Azure AI Foundry
@@ -579,7 +579,7 @@ Du skal oprette en Hub, før du opretter Projektet. En Hub fungerer som en Resso
 1. Vælg **All hubs** i venstre faneblad.
 
 1. Vælg **+ New hub** i navigationsmenuen.
-    ![Create hub.](../../../../../../translated_images/da/08-01-create-hub.8f7dd615bb8d9834.png)
+    ![Create hub.](../../../../../../translated_images/da/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Udfør følgende opgaver:
 
@@ -590,7 +590,7 @@ Du skal oprette en Hub, før du opretter Projektet. En Hub fungerer som en Resso
     - Vælg **Connect Azure AI Services**, der skal bruges (opret en ny om nødvendigt).
     - Vælg **Connect Azure AI Search** til **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/da/08-02-fill-hub.c2d3b505bbbdba7c.png)
+    ![Fill hub.](../../../../../../translated_images/da/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Vælg **Next**.
 
@@ -600,11 +600,11 @@ Du skal oprette en Hub, før du opretter Projektet. En Hub fungerer som en Resso
 
 1. Vælg **+ New project** fra navigationsmenuen.
 
-    ![Select new project.](../../../../../../translated_images/da/08-04-select-new-project.390fadfc9c8f8f12.png)
+    ![Select new project.](../../../../../../translated_images/da/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
 1. Indtast **Project name**. Det skal være en unik værdi.
 
-    ![Create project.](../../../../../../translated_images/da/08-05-create-project.4d97f0372f03375a.png)
+    ![Create project.](../../../../../../translated_images/da/08-05-create-project.4d97f0372f03375a.webp)
 
 1. Vælg **Create a project**.
 
@@ -620,17 +620,17 @@ For at integrere din brugerdefinerede Phi-3-model med Prompt flow skal du gemme 
 
 1. Vælg **Endpoints** fra venstre faneblad.
 
-    ![Select endpoints.](../../../../../../translated_images/da/08-06-select-endpoints.aff38d453bcf9605.png)
+    ![Select endpoints.](../../../../../../translated_images/da/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Vælg det endpoint, som du oprettede.
 
-    ![Select endpoints.](../../../../../../translated_images/da/08-07-select-endpoint-created.47f0dc09df2e275e.png)
+    ![Select endpoints.](../../../../../../translated_images/da/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
 1. Vælg **Consume** fra navigationsmenuen.
 
 1. Kopier din **REST endpoint** og **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/da/08-08-copy-endpoint-key.18f934b5953ae8cb.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/da/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Tilføj den brugerdefinerede forbindelse
 
@@ -642,11 +642,11 @@ For at integrere din brugerdefinerede Phi-3-model med Prompt flow skal du gemme 
 
 1. Vælg **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/da/08-09-select-new-connection.02eb45deadc401fc.png)
+    ![Select new connection.](../../../../../../translated_images/da/08-09-select-new-connection.02eb45deadc401fc.webp)
 
 1. Vælg **Custom keys** fra navigationsmenuen.
 
-    ![Select custom keys.](../../../../../../translated_images/da/08-10-select-custom-keys.856f6b2966460551.png)
+    ![Select custom keys.](../../../../../../translated_images/da/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Udfør følgende opgaver:
 
@@ -656,7 +656,7 @@ For at integrere din brugerdefinerede Phi-3-model med Prompt flow skal du gemme 
     - For nøglens navn skal du indtaste **key** og indsætte den nøgle, du kopierede fra Azure ML Studio, i værdifeltet.
     - Efter tilføjelse af nøglerne skal du vælge **is secret** for at forhindre, at nøglen bliver eksponeret.
 
-    ![Add connection.](../../../../../../translated_images/da/08-11-add-connection.785486badb4d2d26.png)
+    ![Add connection.](../../../../../../translated_images/da/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Vælg **Add connection**.
 
@@ -670,15 +670,15 @@ Du har tilføjet en brugerdefineret forbindelse i Azure AI Foundry. Lad os nu op
 
 1. Vælg **+ Create** fra navigationsmenuen.
 
-    ![Select Promptflow.](../../../../../../translated_images/da/08-12-select-promptflow.6f4b451cb9821e5b.png)
+    ![Select Promptflow.](../../../../../../translated_images/da/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
 1. Vælg **Chat flow** fra navigationsmenuen.
 
-    ![Select chat flow.](../../../../../../translated_images/da/08-13-select-flow-type.2ec689b22da32591.png)
+    ![Select chat flow.](../../../../../../translated_images/da/08-13-select-flow-type.2ec689b22da32591.webp)
 
 1. Indtast **Folder name**, der skal bruges.
 
-    ![Enter name.](../../../../../../translated_images/da/08-14-enter-name.ff9520fefd89f40d.png)
+    ![Enter name.](../../../../../../translated_images/da/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Vælg **Create**.
 
@@ -715,7 +715,7 @@ Du skal integrere den finjusterede Phi-3-model i en Prompt flow. Den eksisterend
 
     - Vælg **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/da/08-15-select-raw-file-mode.61d988b41df28985.png)
+    ![Select raw file mode.](../../../../../../translated_images/da/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
 1. Tilføj følgende kode til *integrate_with_promptflow.py*-filen for at bruge den brugerdefinerede Phi-3-model i Prompt flow.
 
@@ -780,14 +780,14 @@ Du skal integrere den finjusterede Phi-3-model i en Prompt flow. Den eksisterend
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/da/08-16-paste-promptflow-code.a6041b74a7d09777.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/da/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
 > For mere detaljeret information om brug af Prompt flow i Azure AI Foundry kan du se [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Vælg **Chat input**, **Chat output** for at aktivere chat med din model.
 
-    ![Input Output.](../../../../../../translated_images/da/08-17-select-input-output.64dbb39bbe59d03b.png)
+    ![Input Output.](../../../../../../translated_images/da/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
 1. Nu er du klar til at chatte med din brugerdefinerede Phi-3-model. I den næste øvelse vil du lære, hvordan du starter Prompt flow og bruger det til at chatte med din finjusterede Phi-3-model.
 
@@ -795,7 +795,7 @@ Du skal integrere den finjusterede Phi-3-model i en Prompt flow. Den eksisterend
 >
 > Den genskabte flow skal se ud som billedet nedenfor:
 >
-> ![Flow example.](../../../../../../translated_images/da/08-18-graph-example.d6457533952e690c.png)
+> ![Flow example.](../../../../../../translated_images/da/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Chat med din brugerdefinerede Phi-3-model
@@ -808,25 +808,25 @@ Nu hvor du har finjusteret og integreret din brugerdefinerede Phi-3-model med Pr
 
 1. Vælg **Start compute sessions** for at starte Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/da/09-01-start-compute-session.a86fcf5be68e386b.png)
+    ![Start compute session.](../../../../../../translated_images/da/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
 1. Vælg **Validate and parse input** for at forny parametrene.
 
-    ![Validate input.](../../../../../../translated_images/da/09-02-validate-input.317c76ef766361e9.png)
+    ![Validate input.](../../../../../../translated_images/da/09-02-validate-input.317c76ef766361e9.webp)
 
 1. Vælg **Value** af **connection** til den brugerdefinerede forbindelse, du oprettede. For eksempel *connection*.
 
-    ![Connection.](../../../../../../translated_images/da/09-03-select-connection.99bdddb4b1844023.png)
+    ![Connection.](../../../../../../translated_images/da/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Chat med din brugerdefinerede model
 
 1. Vælg **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/da/09-04-select-chat.61936dce6612a1e6.png)
+    ![Select chat.](../../../../../../translated_images/da/09-04-select-chat.61936dce6612a1e6.webp)
 
 1. Her er et eksempel på resultaterne: Nu kan du chatte med din brugerdefinerede Phi-3-model. Det anbefales at stille spørgsmål baseret på dataene, der blev brugt til finjusteringen.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/da/09-05-chat-with-promptflow.c8ca404c07ab126f.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/da/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 

@@ -15,11 +15,11 @@ Visual Studio Code Copilot을 사용하고 계신가요? 특히 Chat에서는 �
 
 Phi-3/3.5 Family의 Phi-3/3.5-mini-instruct는 강력한 코드 이해 및 생성 능력을 갖추고 있으며, Gemma-2-9b와 Mistral-Nemo-12B-instruct-2407보다 우위에 있습니다.
 
-![codegen](../../../../../../translated_images/ko/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/ko/codegen.53be1150ee54d969.webp)
 
 최신 GitHub Models는 이미 Phi-3.5-mini-instruct (128k)와 Phi-3.5-vision-instruct (128k) 모델에 접근할 수 있도록 지원합니다. 개발자는 OpenAI SDK, Azure AI Inference SDK, REST API를 통해 이 모델들을 사용할 수 있습니다.
 
-![gh](../../../../../../translated_images/ko/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/ko/gh.459640c7ceba01d5.webp)
 
 ***Note: *** 운영 환경에서 Azure Model Catalog와 원활하게 전환할 수 있기 때문에 Azure AI Inference SDK 사용을 권장합니다.
 
@@ -34,13 +34,13 @@ Phi-3/3.5 Family의 Phi-3/3.5-mini-instruct는 강력한 코드 이해 및 생�
 
 GitHub Copilot Chat 에이전트는 코드 기반으로 다양한 프로젝트 시나리오에서 여러 작업을 수행할 수 있습니다. 시스템에는 workspace, github, terminal, vscode 총 네 가지 에이전트가 있습니다.
 
-![agent](../../../../../../translated_images/ko/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/ko/agent.3dbb06228f9a6189.webp)
 
 에이전트 이름 앞에 ‘@’를 붙여 호출하면 해당 작업을 빠르게 수행할 수 있습니다. 기업의 경우 요구사항, 코딩, 테스트 명세, 릴리스 등 비즈니스 관련 내용을 추가하면 GitHub Copilot 기반의 더욱 강력한 기업 전용 기능을 활용할 수 있습니다.
 
 Visual Studio Code Chat 에이전트는 이제 공식 API를 공개하여, 기업이나 기업 개발자가 다양한 소프트웨어 비즈니스 생태계에 맞춰 에이전트를 개발할 수 있게 되었습니다. Visual Studio Code Extension 개발 방식을 기반으로 Visual Studio Code Chat 에이전트 API 인터페이스에 쉽게 접근할 수 있습니다. 이 과정을 통해 개발할 수 있습니다.
 
-![diagram](../../../../../../translated_images/ko/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/ko/diagram.ca70d2866762f115.webp)
 
 개발 시나리오는 GitHub Models, Azure Model Catalog, 오픈소스 모델 기반 자체 구축 서비스 등 서드파티 모델 API 접근을 지원하며, GitHub Copilot이 제공하는 gpt-35-turbo, gpt-4, gpt-4o 모델도 사용할 수 있습니다.
 
@@ -54,7 +54,7 @@ Phi-3.5의 프로그래밍 능력을 통합해 코드 작성, 이미지 생성 �
 
 3. **@phicoding /image** 명령어로 **Phi-3.5-vision-instruct (128k)** 기반 이미지 분석 및 코드 생성
 
-![arch](../../../../../../translated_images/ko/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/ko/arch.5a58a0adfa959a2d.webp)
 
 ## **관련 단계**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/ko/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/ko/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/ko/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/ko/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/ko/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/ko/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/ko/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/ko/agentimage.f5cb52b45ab7d0d1.webp)
 
 샘플 코드는 여기서 다운로드할 수 있습니다 :[클릭](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

@@ -34,7 +34,7 @@ Phi는 클라우드 또는 엣지 디바이스에 배포할 수 있으며, 제�
 2. **저장소 클론하기**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Microsoft AI Discord 커뮤니티에 참여하여 전문가 및 동료 개발자 만나기**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/ko/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/ko/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 다국어 지원
 

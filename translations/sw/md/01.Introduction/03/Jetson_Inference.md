@@ -36,7 +36,7 @@ Tunaweza kuchagua [Ollama](https://ollama.com) au [LlamaEdge](https://llamaedge.
 
 Ikiwa unataka kutumia gguf katika wingu na vifaa vya edge kwa wakati mmoja, LlamaEdge inaweza kueleweka kama WasmEdge (WasmEdge ni runtime nyepesi, yenye utendaji wa juu, inayoweza kupanuka ya WebAssembly inayofaa kwa programu za asili za wingu, edge na zisizo na mwelekeo wa kati. Inasaidia programu zisizo na seva, kazi zilizoingizwa, huduma ndogo, mikataba smart na vifaa vya IoT. Unaweza kupeleka modeli ya kiasi ya gguf kwa vifaa vya edge na wingu kupitia LlamaEdge.
 
-![llamaedge](../../../../../translated_images/sw/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/sw/llamaedge.e9d6ff96dff11cf7.webp)
 
 Hapa kuna hatua za kutumia
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Hapa ni matokeo ya kuendesha
 
-![llamaedgerun](../../../../../translated_images/sw/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/sw/llamaedgerun.bed921516c9a821c.webp)
 
 ***Mfano wa msimbo*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

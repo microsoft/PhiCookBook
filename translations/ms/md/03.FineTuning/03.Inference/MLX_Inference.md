@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Keputusannya (persekitaran saya adalah Apple M1 Max, 64GB) adalah
 
-![Terminal](../../../../../translated_images/ms/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/ms/01.5cf57df8f7407cf9.webp)
 
 ### **3. Kuantisasi Phi-3-mini dengan MLX di Terminal**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Keputusannya adalah
 
-![INT4](../../../../../translated_images/ms/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/ms/02.7b188681a8eadbc1.webp)
 
 
 ### **4. Menjalankan Phi-3-mini dengan MLX dalam Jupyter Notebook**
 
 
-![Notebook](../../../../../translated_images/ms/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/ms/03.b9705a3a5aaa89f9.webp)
 
 ***Nota:*** Sila baca contoh ini [klik pautan ini](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

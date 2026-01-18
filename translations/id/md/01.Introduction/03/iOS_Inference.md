@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Saya memilih Objective-C sebagai metode pengembangan App, karena menggunakan Generative AI dengan ONNX Runtime C++ API, Objective-C lebih kompatibel. Tentu saja, Anda juga bisa menyelesaikan panggilan terkait melalui bridging Swift.
 
-![xcode](../../../../../translated_images/id/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/id/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Menyalin model ONNX kuantisasi INT4 ke proyek aplikasi App**
 
 Kita perlu mengimpor model kuantisasi INT4 dalam format ONNX, yang harus diunduh terlebih dahulu
 
-![hf](../../../../../translated_images/id/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/id/hf.6b8504fd88ee48dd.webp)
 
 Setelah diunduh, tambahkan ke direktori Resources proyek di Xcode.
 
-![model](../../../../../translated_images/id/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/id/model.3b879b14e0be877d.webp)
 
 ## **6. Menambahkan API C++ di ViewControllers**
 
@@ -121,11 +121,11 @@ Setelah diunduh, tambahkan ke direktori Resources proyek di Xcode.
 
 - **a.** Tambahkan file header C++ yang sesuai ke proyek.
 
-  ![Header File](../../../../../translated_images/id/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/id/head.64cad021ce70a333.webp)
 
 - **b.** Sertakan library dinamis `onnxruntime-genai` di Xcode.
 
-  ![Library](../../../../../translated_images/id/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/id/lib.a4209b9f21ddf344.webp)
 
 - **c.** Gunakan kode contoh C Samples untuk pengujian. Anda juga bisa menambahkan fitur tambahan seperti ChatUI untuk fungsi lebih lengkap.
 
@@ -162,7 +162,7 @@ Setelah diunduh, tambahkan ke direktori Resources proyek di Xcode.
 
 Setelah pengaturan selesai, Anda bisa menjalankan aplikasi untuk melihat hasil inferensi model Phi-3-mini.
 
-![Running Result](../../../../../translated_images/id/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/id/result.326a947a6a2b9c51.webp)
 
 Untuk kode contoh lebih lengkap dan petunjuk detail, kunjungi [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

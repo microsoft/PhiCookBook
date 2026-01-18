@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Üdvözlünk a [GitHub Modellek](https://github.com/marketplace/models) oldalán! Minden készen áll, hogy felfedezd az Azure AI-n futó AI modelleket.
 
-![GitHubModel](../../../../translated_images/hu/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/hu/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 További információkért a GitHub Modelleken elérhető modellekről, nézd meg a [GitHub Model Marketplace](https://github.com/marketplace/models) oldalt.
 
@@ -45,7 +45,7 @@ Néhány alap példa már készen áll a futtatásra. Ezeket a samples könyvtá
 
 Van egy dedikált Codespaces környezet is a példák és modellek futtatásához.
 
-![Első lépések](../../../../translated_images/hu/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Első lépések](../../../../translated_images/hu/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## Példa kód
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## INGYENES használat és korlátok a GitHub Modellekhez
 
-![Model Katalógus](../../../../translated_images/hu/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Katalógus](../../../../translated_images/hu/GitHub_Model.ca6c125cb3117d0e.webp)
 
 A [játszótér és az ingyenes API használat](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) korlátai arra szolgálnak, hogy kísérletezhess a modellekkel és prototípust készíthess az AI alkalmazásodhoz. Ezeken a korlátokon túl, és ha skálázni szeretnéd az alkalmazásodat, Azure fiókból kell erőforrásokat biztosítanod, és onnan hitelesítened a GitHub személyes hozzáférési token helyett. A kódodban egyéb változtatásra nincs szükség. Használd ezt a linket, hogy megtudd, hogyan léphetsz túl az ingyenes szint korlátain az Azure AI-ban.
 

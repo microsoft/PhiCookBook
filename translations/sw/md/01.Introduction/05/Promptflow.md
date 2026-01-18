@@ -42,7 +42,7 @@ Dumisha udhibiti wa matoleo na shiriki maarifa kwa ufanisi. Rahisisha mchakato m
 
 Katika Microsoft Prompt Flow, tathmini ina jukumu muhimu katika kutathmini jinsi modeli zako za AI zinavyofanya kazi. Hebu tuchunguze jinsi unavyoweza kubinafsisha michakato na vipimo vya tathmini ndani ya Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/sw/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/sw/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Kuelewa Tathmini katika Prompt Flow**
 

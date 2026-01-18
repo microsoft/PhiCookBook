@@ -15,11 +15,11 @@ Visual Studio Code Copilotを使っていますか？特にChatでは、さま�
 
 Phi-3/3.5ファミリーのPhi-3/3.5-mini-instructは、強力なコード理解と生成能力を持ち、Gemma-2-9bやMistral-Nemo-12B-instruct-2407よりも優れた点があります。
 
-![codegen](../../../../../../translated_images/ja/codegen.53be1150ee54d969.png)
+![codegen](../../../../../../translated_images/ja/codegen.53be1150ee54d969.webp)
 
 最新のGitHub Modelsでは、すでにPhi-3.5-mini-instruct (128k)とPhi-3.5-vision-instruct (128k)モデルへのアクセスが可能です。開発者はOpenAI SDK、Azure AI Inference SDK、REST APIを通じてこれらにアクセスできます。
 
-![gh](../../../../../../translated_images/ja/gh.459640c7ceba01d5.png)
+![gh](../../../../../../translated_images/ja/gh.459640c7ceba01d5.webp)
 
 ***注記:*** ここではAzure AI Inference SDKの使用を推奨します。なぜなら、本番環境でAzure Model Catalogとの切り替えがよりスムーズに行えるためです。
 
@@ -33,13 +33,13 @@ Phi-3/3.5ファミリーのPhi-3/3.5-mini-instructは、強力なコード理解
 
 GitHub Copilot Chat Agentは、コードに基づいてさまざまなプロジェクトシナリオで異なるタスクを完了できます。システムにはworkspace、github、terminal、vscodeの4つのエージェントがあります。
 
-![agent](../../../../../../translated_images/ja/agent.3dbb06228f9a6189.png)
+![agent](../../../../../../translated_images/ja/agent.3dbb06228f9a6189.webp)
 
 エージェント名の前に「@」を付けることで、対応する作業を素早く完了できます。企業向けには、要件、コーディング、テスト仕様、リリースなどの自社ビジネス関連の内容を追加することで、GitHub Copilotをベースにしたより強力な企業向けプライベート機能を持つことが可能です。
 
 Visual Studio Code Chat Agentは現在、公式にAPIを公開しており、企業や企業の開発者が異なるソフトウェアビジネスエコシステムに基づいてエージェントを開発できます。Visual Studio Code Extension開発の手法に基づき、Visual Studio Code Chat Agent APIのインターフェースに簡単にアクセス可能です。このプロセスに基づいて開発が行えます。
 
-![diagram](../../../../../../translated_images/ja/diagram.ca70d2866762f115.png)
+![diagram](../../../../../../translated_images/ja/diagram.ca70d2866762f115.webp)
 
 開発シナリオは、GitHub Models、Azure Model Catalog、オープンソースモデルをベースにした自社構築サービスなどのサードパーティモデルAPIへのアクセスをサポートし、GitHub Copilotが提供するgpt-35-turbo、gpt-4、gpt-4oモデルも利用可能です。
 
@@ -53,7 +53,7 @@ Phi-3.5のプログラミング能力を統合し、コード作成や画像生�
 
 3. **Phi-3.5-vision-instruct (128k)**を使い、**@phicoding /image**コマンドで画像に基づくコード生成と補完を実行
 
-![arch](../../../../../../translated_images/ja/arch.5a58a0adfa959a2d.png)
+![arch](../../../../../../translated_images/ja/arch.5a58a0adfa959a2d.webp)
 
 ## **関連手順**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/ja/help.04c134d2bf9a9541.png)
+![help](../../../../../../translated_images/ja/help.04c134d2bf9a9541.webp)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/ja/agenthelp.60c68767c941a3fe.png)
+![agenthelp](../../../../../../translated_images/ja/agenthelp.60c68767c941a3fe.webp)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/ja/agentgen.a16e7735790f764b.png)
+![agentgen](../../../../../../translated_images/ja/agentgen.a16e7735790f764b.webp)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/ja/agentimage.f5cb52b45ab7d0d1.png)
+![agentimage](../../../../../../translated_images/ja/agentimage.f5cb52b45ab7d0d1.webp)
 
 サンプルコードのダウンロードはこちら：[click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

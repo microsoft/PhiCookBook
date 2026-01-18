@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Hienosäätötilanteet
 
-![FineTuning with MS Services](../../../../translated_images/fi/FinetuningwithMS.3d0cec8ae693e094.png)
+![FineTuning with MS Services](../../../../translated_images/fi/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Alusta** Tämä kattaa erilaisia teknologioita, kuten Azure AI Foundryn, Azure Machine Learningin, AI-työkalut, Kaiton ja ONNX Runtime -ympäristön.
 
@@ -24,7 +24,7 @@ Microsoftin teknologioilla toteutettava hienosäätöprosessi koostuu useista ko
 
 Hienosäädä malli isännöidyn hienosäädön avulla ilman, että sinun tarvitsee luoda tai hallita laskentatehoa.
 
-![MaaS Fine Tuning](../../../../translated_images/fi/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Fine Tuning](../../../../translated_images/fi/MaaSfinetune.3eee4630607aff0d.webp)
 
 Serverittömästi toimiva hienosäätö on saatavilla Phi-3-mini- ja Phi-3-medium-malleille, mikä mahdollistaa kehittäjien nopean ja vaivattoman mallien räätälöinnin pilvi- ja reunaskenaarioihin ilman, että heidän tarvitsee järjestää laskentatehoa. Olemme myös ilmoittaneet, että Phi-3-small on nyt saatavilla Models-as-a-Service -tarjonnan kautta, joten kehittäjät voivat nopeasti ja helposti aloittaa tekoälyn kehittämisen ilman, että heidän tarvitsee hallita taustalla olevaa infrastruktuuria.
 
@@ -32,7 +32,7 @@ Serverittömästi toimiva hienosäätö on saatavilla Phi-3-mini- ja Phi-3-mediu
 
 Käyttäjät hallinnoivat omaa laskentatehoaan hienosäätääkseen mallejaan.
 
-![Maap Fine Tuning](../../../../translated_images/fi/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Fine Tuning](../../../../translated_images/fi/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Käyttäjät hallinnoivat omaa laskentatehoaan hienosäätääkseen mallejaan.
 
 ## Hienosäädön suorituskykyesimerkkejä
 
-![Finetuning Performance](../../../../translated_images/fi/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finetuning Performance](../../../../translated_images/fi/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

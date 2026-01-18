@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Använda Azure AI Foundry för utvärdering**
 
-![aistudo](../../../../../translated_images/sv/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/sv/AIFoundry.9e0b513e999a1c5a.webp)
 
 Hur du utvärderar din generativa AI-applikation med [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Oavsett om du bedömer enkla eller flerstegs-konversationer, erbjuder Azure AI Foundry verktyg för att utvärdera modellens prestanda och säkerhet.
 
-![aistudo](../../../../../translated_images/sv/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/sv/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Hur man utvärderar generativa AI-appar med Azure AI Foundry
 För mer detaljerade instruktioner, se [Azure AI Foundry-dokumentationen](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

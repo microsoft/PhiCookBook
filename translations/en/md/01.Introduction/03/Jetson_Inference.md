@@ -36,7 +36,7 @@ You can choose between [Ollama](https://ollama.com) or [LlamaEdge](https://llama
 
 If you want to use gguf on both cloud and edge devices simultaneously, LlamaEdge can be understood as WasmEdge (WasmEdge is a lightweight, high-performance, scalable WebAssembly runtime suitable for cloud-native, edge, and decentralized applications. It supports serverless applications, embedded functions, microservices, smart contracts, and IoT devices). You can deploy gguf's quantized model to edge devices and the cloud through LlamaEdge.
 
-![llamaedge](../../../../../translated_images/en/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/en/llamaedge.e9d6ff96dff11cf7.webp)
 
 Here are the steps to use it:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Here is the running result
 
-![llamaedgerun](../../../../../translated_images/en/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/en/llamaedgerun.bed921516c9a821c.webp)
 
 ***Sample code*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

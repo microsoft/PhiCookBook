@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Saya memilih Objective-C sebagai kaedah pembangunan App, kerana menggunakan Generative AI dengan ONNX Runtime C++ API, Objective-C lebih serasi. Sudah tentu, anda juga boleh melengkapkan panggilan berkaitan melalui penghubung Swift.
 
-![xcode](../../../../../translated_images/ms/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/ms/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Salin model ONNX quantized INT4 ke projek aplikasi App**
 
 Kita perlu mengimport model quantization INT4 dalam format ONNX, yang perlu dimuat turun terlebih dahulu
 
-![hf](../../../../../translated_images/ms/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/ms/hf.6b8504fd88ee48dd.webp)
 
 Selepas memuat turun, anda perlu menambahkannya ke direktori Resources projek dalam Xcode.
 
-![model](../../../../../translated_images/ms/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/ms/model.3b879b14e0be877d.webp)
 
 ## **6. Menambah API C++ dalam ViewControllers**
 
@@ -121,11 +121,11 @@ Selepas memuat turun, anda perlu menambahkannya ke direktori Resources projek da
 
 - **a.** Tambah fail header C++ yang berkaitan ke dalam projek.
 
-  ![Header File](../../../../../translated_images/ms/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/ms/head.64cad021ce70a333.webp)
 
 - **b.** Sertakan perpustakaan dinamik `onnxruntime-genai` dalam Xcode.
 
-  ![Library](../../../../../translated_images/ms/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/ms/lib.a4209b9f21ddf344.webp)
 
 - **c.** Gunakan kod sampel C untuk ujian. Anda juga boleh menambah ciri tambahan seperti ChatUI untuk fungsi lebih lanjut.
 
@@ -162,7 +162,7 @@ Selepas memuat turun, anda perlu menambahkannya ke direktori Resources projek da
 
 Setelah persediaan selesai, anda boleh menjalankan aplikasi untuk melihat hasil inferens model Phi-3-mini.
 
-![Running Result](../../../../../translated_images/ms/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/ms/result.326a947a6a2b9c51.webp)
 
 Untuk lebih banyak kod sampel dan arahan terperinci, lawati [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

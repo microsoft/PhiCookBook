@@ -41,7 +41,7 @@ RAG 是数据检索 + 文本生成。企业的结构化数据和非结构化数�
 
 ## **如何使用 RAG**
 
-![rag](../../../../translated_images/zh/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/zh/rag.2014adc59e6f6007.webp)
 
 向量数据库是以数学形式存储数据的集合。向量数据库使机器学习模型更容易记住之前的输入，支持搜索、推荐和文本生成等应用场景。数据可以基于相似度指标而非精确匹配进行识别，使计算机模型能够理解数据的上下文。
 
@@ -57,7 +57,7 @@ RAG 是数据检索 + 文本生成。企业的结构化数据和非结构化数�
 
 ### **Lora 和 QLora**
 
-![lora](../../../../translated_images/zh/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/zh/qlora.e6446c988ee04ca0.webp)
 
 LoRA（低秩适配）和 QLoRA（量化低秩适配）都是使用参数高效微调（PEFT）技术对大型语言模型（LLM）进行微调的方法。PEFT 技术旨在比传统方法更高效地训练模型。
 

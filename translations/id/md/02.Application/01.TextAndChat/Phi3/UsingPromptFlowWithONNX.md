@@ -33,33 +33,33 @@ Baca panduan ini untuk mengatur ONNX Runtime GenAI untuk Windows GPU [klik di si
 
 1. Instal ekstensi Prompt flow di VS Code
 
-![pfvscode](../../../../../../translated_images/id/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/id/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Setelah menginstal ekstensi Prompt flow di VS Code, klik ekstensi tersebut, dan pilih **Installation dependencies** ikuti panduan ini untuk menginstal Prompt flow SDK di lingkungan Anda
 
-![pfsetup](../../../../../../translated_images/id/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/id/pfsetup.b46e93096f5a254f.webp)
 
 3. Unduh [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) dan buka contoh ini menggunakan VS Code
 
-![pfsample](../../../../../../translated_images/id/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/id/pfsample.8d89e70584ffe7c4.webp)
 
 4. Buka **flow.dag.yaml** untuk memilih lingkungan Python Anda
 
-![pfdag](../../../../../../translated_images/id/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/id/pfdag.264a77f7366458ff.webp)
 
    Buka **chat_phi3_ort.py** untuk mengubah lokasi Model Phi-3.5-instruct ONNX Anda
 
-![pfphi](../../../../../../translated_images/id/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/id/pfphi.72da81d74244b45f.webp)
 
 5. Jalankan prompt flow Anda untuk pengujian
 
 Buka **flow.dag.yaml** klik visual editor
 
-![pfv](../../../../../../translated_images/id/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/id/pfv.ba8a81f34b20f603.webp)
 
 setelah klik ini, jalankan untuk menguji
 
-![pfflow](../../../../../../translated_images/id/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/id/pfflow.4e1135a089b1ce1b.webp)
 
 1. Anda dapat menjalankan batch di terminal untuk memeriksa hasil lebih banyak
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Anda dapat memeriksa hasil di browser default Anda
 
 
-![pfresult](../../../../../../translated_images/id/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/id/pfresult.c22c826f8062d7cb.webp)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

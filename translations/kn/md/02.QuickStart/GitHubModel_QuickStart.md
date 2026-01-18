@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Welcome to [GitHub Models](https://github.com/marketplace/models)! ನಾವು ಎಲ್ಲವೂ ಸಿದ್ಧಪಡಿಸಿದ್ದೇವೆ ಮತ್ತು ನೀವು Azure AI ನಲ್ಲಿ ಹೋಸ್ಟ್ ಮಾಡಲಾಗಿರುವ AI ಮಾದರಿಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಸಿದ್ದರಾಗಿದ್ದೇವೆ.
 
-![GitHubಮಾದರಿ](../../../../translated_images/kn/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubಮಾದರಿ](../../../../translated_images/kn/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 GitHub Models ನಲ್ಲಿ ಲಭ್ಯವಿರುವ ಮಾದರಿಗಳ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ, [GitHub Model Marketplace](https://github.com/marketplace/models) ಅನ್ನು ಪರಿಶೀಲಿಸಿ
 
@@ -45,7 +45,7 @@ GitHub Models ನಲ್ಲಿ ಲಭ್ಯವಿರುವ ಮಾದರಿಗಳ 
 
 ಉದಾಹರಣೆಗಳು ಮತ್ತು ಮಾದರಿಗಳನ್ನು ನಿರ್ವಹಿಸಲು ಒಂದು ಸಮರ್ಪಿತ Codespaces ಪರಿಸರವೂ ಇದೆ. 
 
-![ಪ್ರಾರಂಭಿಸಿ](../../../../translated_images/kn/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![ಪ್ರಾರಂಭಿಸಿ](../../../../translated_images/kn/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 
 ## ಉದಾಹರಣಾ ಕೋಡ್ 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Models ಗಾಗಿ ಉಚಿತ ಬಳಕೆ ಮತ್ತು ರೇಟ್ ಮಿತಿಗಳು
 
-![ಮಾದರಿ ಕ್ಯಾಟಲಾಗ್](../../../../translated_images/kn/GitHub_Model.ca6c125cb3117d0e.png)
+![ಮಾದರಿ ಕ್ಯಾಟಲಾಗ್](../../../../translated_images/kn/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [playground ಮತ್ತು ಉಚಿತ API ಬಳಕೆಯ ರೇಟ್ ಮಿತಿಗಳು](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) ನಿಮಗೆ ಮಾದರಿಗಳೊಂದಿಗೆ ಪ್ರಯೋಗ ಮಾಡಲು ಮತ್ತು ನಿಮ್ಮ AI ಅಪ್ಲಿಕೇಶನ್‌ನ ಪ್ರೋಟೋಟೈಪ್ ರಚಿಸಲು ಸಹಾಯ ಮಾಡುವ ಉದ್ದೇಶಕ್ಕಾಗಿ ಇರುವುವು. ಆ ಮಿತಿಗಳನ್ನು ಮೀರಿ ಬಳಕೆ ಮಾಡಲು ಮತ್ತು ನಿಮ್ಮ ಅಪ್ಲಿಕೇಶನನ್ನು ಅಳೆತಿಟ್ಟು ದೊಡ್ಡ ಮಟ್ಟಕ್ಕೆ ತರುವುದಕ್ಕಾಗಿ, ನೀವು Azure ಖಾತೆಯಿಂದ ಸಂಪನ್ಮೂಲಗಳನ್ನು ಒದಗಿಸಬೇಕು ಮತ್ತು ಅಲ್ಲಿ GitHub ವೈಯಕ್ತಿಕ ಪ್ರವೇಶ ಟೋಕನ್ ಬದಲಾಗಿಸಿ ಅಲ್ಲಿ ಪ್ರಾಮಾಣೀಕರಣ ಮಾಡಬೇಕು. ನಿಮ್ಮ ಕೋಡ್‌ನಲ್ಲಿ ಬೇರೆ ಯಾವುದನ್ನು ಬದಲಾಯಿಸುವ ಅಗತ್ಯವಿಲ್ಲ. Azure AIನಲ್ಲಿ ಉಚಿತ ಶ್ರೇಣಿ ಮಿತಿಗಳನ್ನು ಮೀರೆದು ಹೇಗೆ ಮುಂದುವರಿಯುವುದನ್ನು ಕಂಡುಹಿಡಿಯಲು ಈ ಲಿಂಕ್ ಅನ್ನು ಬಳಸಿರಿ.
 

@@ -41,7 +41,7 @@ Fine-tuning inategemea kuboresha mfano fulani. Hainahitaji kuanza na algorithm y
 
 ## **Jinsi ya kutumia RAG**
 
-![rag](../../../../translated_images/sw/rag.2014adc59e6f6007.png)
+![rag](../../../../translated_images/sw/rag.2014adc59e6f6007.webp)
 
 Hifadhidata ya vector ni mkusanyiko wa data iliyohifadhiwa kwa njia ya kihisabati. Hifadhidata za vector hurahisisha mifano ya kujifunza mashine kukumbuka maingizo ya awali, na hivyo kuwezesha matumizi ya kujifunza mashine kusaidia matumizi kama utafutaji, mapendekezo, na uzalishaji wa maandishi. Data inaweza kutambuliwa kwa msingi wa vipimo vya ufananishi badala ya mechi kamili, kuruhusu mifano ya kompyuta kuelewa muktadha wa data.
 
@@ -57,7 +57,7 @@ Algorithmi zinazotumika mara kwa mara katika Fine-tuning ni Lora na QLora. Jinsi
 
 ### **Lora na QLora**
 
-![lora](../../../../translated_images/sw/qlora.e6446c988ee04ca0.png)
+![lora](../../../../translated_images/sw/qlora.e6446c988ee04ca0.webp)
 
 LoRA (Low-Rank Adaptation) na QLoRA (Quantized Low-Rank Adaptation) ni mbinu zinazotumika kurekebisha mifano mikubwa ya lugha (LLMs) kwa kutumia Parameter Efficient Fine Tuning (PEFT). Mbinu za PEFT zimetengenezwa kufundisha mifano kwa ufanisi zaidi kuliko njia za kawaida.  
 LoRA ni mbinu ya kujitegemea ya fine-tuning inayopunguza matumizi ya kumbukumbu kwa kutumia takriban ya kiwango cha chini kwenye matrix ya masasisho ya uzito. Inatoa muda mfupi wa mafunzo na hifadhi utendaji karibu na mbinu za kawaida za fine-tuning.

@@ -43,7 +43,7 @@ Ang dokumentong ito ay nagbibigay ng gabay sa:
 
    ***Note*** Kung ayaw mong mag-compile, maaari mong laktawan ang hakbang na ito
 
-![CPP](../../../../../../translated_images/tl/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/tl/01.42f52a2b2aedff02.webp)
 
 ### **4. I-install ang NVIDIA Driver**
 
@@ -83,7 +83,7 @@ Kopyahin ang NVIDIA CUDNN 9.4 lib, bin, include papunta sa NVIDIA CUDA 12.4 lib,
 
    Buksan ang [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) at i-execute
 
-![RESULT](../../../../../../translated_images/tl/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/tl/02.b9b06996cf7255d5.webp)
 
 ### **8. I-compile ang ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Kopyahin ang NVIDIA CUDNN 9.4 lib, bin, include papunta sa NVIDIA CUDA 12.4 lib,
 
    - Gamit ang Windows Terminal, pumunta sa Developer Command Prompt para sa VS 2022 at pumunta sa onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/tl/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/tl/03.b83ce473d5ff9b9b.webp)
 
    - I-compile ito gamit ang iyong python environment
 

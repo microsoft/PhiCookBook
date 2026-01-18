@@ -34,7 +34,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. **ಅಂಕಣವನ್ನು ಕ್ಲೋನ್ ಮಾಡಿ**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Microsoft AI ಡಿಸ್ಕೋರ್ಡ್ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ, ತಜ್ಞರು ಮತ್ತು ಸಹ-ವಿಕಾಸಕರನ್ನು ಭೇಟಿಮಾಡಿ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/kn/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/kn/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 ಬಹುಭಾಷಾ ಬೆಂಬಲ
 

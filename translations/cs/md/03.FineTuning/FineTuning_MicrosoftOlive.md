@@ -32,11 +32,11 @@ Při optimalizaci modelů bere v úvahu omezení jako přesnost a latenci.
 
 Microsoft Olive je velmi snadno použitelný open source nástroj pro optimalizaci modelů, který pokrývá jak doladění, tak referenční použití v oblasti generativní umělé inteligence. Vyžaduje pouze jednoduchou konfiguraci, v kombinaci s použitím open source malých jazykových modelů a souvisejících runtime prostředí (AzureML / lokální GPU, CPU, DirectML) můžete dokončit doladění nebo referenci modelu pomocí automatické optimalizace a najít nejlepší model pro nasazení do cloudu nebo na edge zařízení. Umožňuje firmám vytvářet vlastní vertikální modely pro průmyslová odvětví jak lokálně, tak v cloudu.
 
-![intro](../../../../translated_images/cs/intro.46086a3f16ec48e2.png)
+![intro](../../../../translated_images/cs/intro.46086a3f16ec48e2.webp)
 
 ## Doladění Phi-3 pomocí Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/cs/olivefinetune.76d09e9b68253681.png)
+![FinetuningwithOlive](../../../../translated_images/cs/olivefinetune.76d09e9b68253681.webp)
 
 ## Ukázkový kód a příklad Phi-3 Olive
 V tomto příkladu použijete Olive k:

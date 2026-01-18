@@ -23,7 +23,7 @@ Sa E2E na halimbawang ito, matututuhan mo kung paano i-fine-tune ang Phi-3 model
 
 Narito ang pangkalahatang-ideya ng E2E na halimbawang ito.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/tl/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/tl/00-01-architecture.02fc569e266d468c.webp)
 
 ### Talaan ng Nilalaman
 
@@ -49,13 +49,13 @@ Narito ang pangkalahatang-ideya ng E2E na halimbawang ito.
 
 1. I-type ang *azure machine learning* sa **search bar** sa itaas ng portal page at piliin ang **Azure Machine Learning** mula sa mga lumabas na opsyon.
 
-    ![Type azure machine learning](../../../../../../translated_images/tl/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/tl/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. Piliin ang **+ Create** mula sa navigation menu.
 
 1. Piliin ang **New workspace** mula sa navigation menu.
 
-    ![Select new workspace](../../../../../../translated_images/tl/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/tl/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. Gawin ang mga sumusunod na gawain:
 
@@ -68,7 +68,7 @@ Narito ang pangkalahatang-ideya ng E2E na halimbawang ito.
     - Piliin ang **Application insights** na gagamitin (gumawa ng bago kung kinakailangan).
     - Piliin ang **Container registry** na gagamitin (gumawa ng bago kung kinakailangan).
 
-    ![Fill AZML.](../../../../../../translated_images/tl/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/tl/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. Piliin ang **Review + Create**.
 
@@ -92,7 +92,7 @@ Sa E2E na halimbawang ito, gagamitin mo ang *Standard_NC24ads_A100_v4 GPU* para 
     - Piliin ang **Virtual machine family** na gagamitin. Halimbawa, piliin ang **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, na kinabibilangan ng *Standard_NC24ads_A100_v4* GPU.
     - Piliin ang **Request quota** mula sa navigation menu.
 
-        ![Request quota.](../../../../../../translated_images/tl/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/tl/01-04-request-quota.3d3670c3221ab834.webp)
 
     - Sa loob ng Request quota page, ilagay ang **New cores limit** na nais mong gamitin. Halimbawa, 24.
     - Sa loob ng Request quota page, piliin ang **Submit** upang humiling ng GPU quota.
@@ -108,11 +108,11 @@ Upang mag-fine-tune at mag-deploy ng iyong mga modelo, kailangan mo munang lumik
 
 1. I-type ang *managed identities* sa **search bar** sa itaas ng portal page at piliin ang **Managed Identities** mula sa mga lumabas na opsyon.
 
-    ![Type managed identities.](../../../../../../translated_images/tl/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/tl/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. Piliin ang **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/tl/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/tl/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. Gawin ang mga sumusunod:
 
@@ -139,7 +139,7 @@ Upang mag-fine-tune at mag-deploy ng iyong mga modelo, kailangan mo munang lumik
     - Piliin ang **Resource group** na gagamitin.
     - Piliin ang **Role** na **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/tl/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/tl/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. Piliin ang **Save**.
 
@@ -147,7 +147,7 @@ Upang mag-fine-tune at mag-deploy ng iyong mga modelo, kailangan mo munang lumik
 
 1. I-type ang *storage accounts* sa **search bar** sa itaas ng portal page at piliin ang **Storage accounts** mula sa mga lumabas na opsyon.
 
-    ![Type storage accounts.](../../../../../../translated_images/tl/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/tl/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Piliin ang storage account na konektado sa Azure Machine Learning workspace na nilikha mo. Halimbawa, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Upang mag-fine-tune at mag-deploy ng iyong mga modelo, kailangan mo munang lumik
     - Piliin ang **+ Add** mula sa navigation menu.
     - Piliin ang **Add role assignment** mula sa navigation menu.
 
-    ![Add role.](../../../../../../translated_images/tl/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/tl/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. Sa loob ng Add role assignment page, gawin ang mga sumusunod:
 
@@ -171,7 +171,7 @@ Upang mag-fine-tune at mag-deploy ng iyong mga modelo, kailangan mo munang lumik
     - Sa loob ng Select managed identities page, piliin ang Manage Identity na nilikha mo. Halimbawa, *finetunephi-managedidentity*.
     - Sa loob ng Select managed identities page, piliin ang **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/tl/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/tl/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. Piliin ang **Review + assign**.
 
@@ -179,7 +179,7 @@ Upang mag-fine-tune at mag-deploy ng iyong mga modelo, kailangan mo munang lumik
 
 1. I-type ang *container registries* sa **search bar** sa itaas ng portal page at piliin ang **Container registries** mula sa mga lumabas na opsyon.
 
-    ![Type container registries.](../../../../../../translated_images/tl/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/tl/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Piliin ang container registry na konektado sa Azure Machine Learning workspace. Halimbawa, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang *finetune-phi* folder na ginawa mo, na matatagpuan sa *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/tl/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Open project floder.](../../../../../../translated_images/tl/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. Sa kaliwang pane ng Visual Studio Code, i-right click at piliin ang **New File** para gumawa ng bagong file na pinangalanang *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
 1. Sa kaliwang pane ng Visual Studio Code, i-right click at piliin ang **New File** para gumawa ng bagong file na pinangalanang *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/tl/01-13-create-new-file.c17c150fff384a39.png)
+    ![Create new file.](../../../../../../translated_images/tl/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. Sa kaliwang pane ng Visual Studio Code, i-right click at piliin ang **New Folder** para gumawa ng bagong folder na pinangalanang *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
     - Piliin ang Azure Subscription na kasalukuyan mong ginagamit.
     - Kopyahin at i-paste ang iyong Subscription ID sa *config.py* file.
 
-    ![Find subscription id.](../../../../../../translated_images/tl/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Find subscription id.](../../../../../../translated_images/tl/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Gawin ang mga sumusunod na hakbang para idagdag ang Azure Workspace Name:
 
     - Pumunta sa Azure Machine Learning resource na ginawa mo.
     - Kopyahin at i-paste ang pangalan ng iyong account sa *config.py* file.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/tl/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/tl/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Gawin ang mga sumusunod na hakbang para idagdag ang Azure Resource Group Name:
 
     - Pumunta sa Azure Machine Learning resource na ginawa mo.
     - Kopyahin at i-paste ang pangalan ng iyong Azure Resource Group sa *config.py* file.
 
-    ![Find resource group name.](../../../../../../translated_images/tl/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Find resource group name.](../../../../../../translated_images/tl/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Gawin ang mga sumusunod na hakbang para idagdag ang Azure Managed Identity name
 
     - Pumunta sa Managed Identities resource na ginawa mo.
     - Kopyahin at i-paste ang pangalan ng iyong Azure Managed Identity sa *config.py* file.
 
-    ![Find UAI.](../../../../../../translated_images/tl/01-17-find-uai.3529464f53499827.png)
+    ![Find UAI.](../../../../../../translated_images/tl/01-17-find-uai.3529464f53499827.webp)
 
 ### Ihanda ang dataset para sa fine-tuning
 
@@ -509,7 +509,7 @@ Kailangan mong i-setup ang Azure CLI para ma-authenticate ang iyong environment.
 
 1. Piliin ang iyong Azure subscription na gagamitin.
 
-    ![Find resource group name.](../../../../../../translated_images/tl/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Find resource group name.](../../../../../../translated_images/tl/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Sa pagpapatakbo ng *setup_ml.py*, patatakbuhin mo ang fine-tuning process sa Azu
 
 1. Sa pagsasanay na ito, matagumpay mong na-fine-tune ang Phi-3 model gamit ang Azure Machine Learning. Sa pagpapatakbo ng *setup_ml.py* script, na-setup mo ang Azure Machine Learning environment at sinimulan ang fine-tuning process na nadefine sa *fine_tune.py* file. Tandaan na ang fine-tuning process ay maaaring magtagal ng oras. Pagkatapos mong patakbuhin ang `python setup_ml.py` na utos, kailangan mong maghintay hanggang matapos ang proseso. Maaari mong i-monitor ang status ng fine-tuning job sa pamamagitan ng pagsunod sa link na ibinigay sa terminal papunta sa Azure Machine Learning portal.
 
-    ![See finetuning job.](../../../../../../translated_images/tl/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![See finetuning job.](../../../../../../translated_images/tl/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### I-deploy ang fine-tuned na modelo
 
@@ -1080,11 +1080,11 @@ Ang pagpapatakbo ng *deploy_model.py* file ay ina-automate ang buong proseso ng 
 
 1. Piliin ang **Endpoints** mula sa tab sa kaliwang bahagi.
 
-    ![Select endpoints.](../../../../../../translated_images/tl/02-03-select-endpoints.c3136326510baff1.png)
+    ![Select endpoints.](../../../../../../translated_images/tl/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. Piliin ang endpoint na iyong nilikha.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/tl/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/tl/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. Sa pahinang ito, maaari mong pamahalaan ang mga endpoint na nilikha sa proseso ng deployment.
 
@@ -1103,7 +1103,7 @@ Matapos matagumpay na ma-deploy ang iyong fine-tuned na modelo, maaari mo na ito
 1. Kopyahin at i-paste ang iyong **REST endpoint** sa *config.py* file, palitan ang `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ng iyong **REST endpoint**.
 1. Kopyahin at i-paste ang iyong **Primary key** sa *config.py* file, palitan ang `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ng iyong **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/tl/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/tl/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### Idagdag ang code sa *flow.dag.yml* file
 
@@ -1212,7 +1212,7 @@ Matapos matagumpay na ma-deploy ang iyong fine-tuned na modelo, maaari mo na ito
 
 1. Narito ang isang halimbawa ng mga resulta: Ngayon, maaari ka nang makipag-chat gamit ang iyong custom na Phi-3 model. Inirerekomenda na magtanong ng mga katanungan batay sa data na ginamit para sa fine-tuning.
 
-    ![Prompt flow example.](../../../../../../translated_images/tl/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Prompt flow example.](../../../../../../translated_images/tl/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

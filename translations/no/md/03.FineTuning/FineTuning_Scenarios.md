@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Finjusteringsscenarier
 
-![Finjustering med MS-tjenester](../../../../translated_images/no/FinetuningwithMS.3d0cec8ae693e094.png)
+![Finjustering med MS-tjenester](../../../../translated_images/no/FinetuningwithMS.3d0cec8ae693e094.webp)
 
 **Plattform** Dette inkluderer ulike teknologier som Azure AI Foundry, Azure Machine Learning, AI-verktøy, Kaito og ONNX Runtime.
 
@@ -24,7 +24,7 @@ Finjusteringsprosessen med Microsoft-teknologier involverer ulike komponenter og
 
 Finjuster modellen ved hjelp av hostet finjustering, uten behov for å opprette og administrere beregningsressurser.
 
-![MaaS Finjustering](../../../../translated_images/no/MaaSfinetune.3eee4630607aff0d.png)
+![MaaS Finjustering](../../../../translated_images/no/MaaSfinetune.3eee4630607aff0d.webp)
 
 Serverløs finjustering er tilgjengelig for Phi-3-mini og Phi-3-medium modeller, noe som gjør det mulig for utviklere å raskt og enkelt tilpasse modellene for sky- og edge-scenarier uten å måtte ordne med beregningsressurser. Vi har også kunngjort at Phi-3-small nå er tilgjengelig gjennom vårt Models-as-a-Service-tilbud, slik at utviklere raskt og enkelt kan komme i gang med AI-utvikling uten å måtte administrere underliggende infrastruktur.
 
@@ -32,7 +32,7 @@ Serverløs finjustering er tilgjengelig for Phi-3-mini og Phi-3-medium modeller,
 
 Brukere administrerer egne beregningsressurser for å finjustere modellene sine.
 
-![Maap Finjustering](../../../../translated_images/no/MaaPFinetune.fd3829c1122f5d1c.png)
+![Maap Finjustering](../../../../translated_images/no/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Finjusteringseksempel](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Brukere administrerer egne beregningsressurser for å finjustere modellene sine.
 
 ## Eksempler på finjusteringsytelse
 
-![Finjusteringsytelse](../../../../translated_images/no/Finetuningexamples.a9a41214f8f5afc1.png)
+![Finjusteringsytelse](../../../../translated_images/no/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

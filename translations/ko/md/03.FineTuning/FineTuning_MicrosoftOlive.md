@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft Olive는 생성형 인공지능 분야에서 미세 조정과 참조 모두를 지원하는 매우 사용하기 쉬운 오픈 소스 모델 최적화 도구입니다. 간단한 설정만으로, 오픈 소스 소형 언어 모델과 관련 런타임 환경(AzureML / 로컬 GPU, CPU, DirectML)을 결합해 자동 최적화를 통해 모델의 미세 조정 또는 참조를 완료할 수 있으며, 클라우드 또는 엣지 디바이스에 배포할 최적의 모델을 찾을 수 있습니다. 이를 통해 기업은 온프레미스와 클라우드에서 자체 산업별 모델을 구축할 수 있습니다.
 
-![intro](../../../../translated_images/ko/intro.46086a3f16ec48e2.png)
+![intro](../../../../translated_images/ko/intro.46086a3f16ec48e2.webp)
 
 ## Microsoft Olive로 Phi-3 미세 조정하기
 
-![FinetuningwithOlive](../../../../translated_images/ko/olivefinetune.76d09e9b68253681.png)
+![FinetuningwithOlive](../../../../translated_images/ko/olivefinetune.76d09e9b68253681.webp)
 
 ## Phi-3 Olive 샘플 코드 및 예제
 이 예제에서는 Olive를 사용하여:

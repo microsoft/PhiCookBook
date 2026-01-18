@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Welcome to [GitHub Models](https://github.com/marketplace/models)! We've got everything fired up and ready for you to explore AI Models hosted on Azure AI.
 
-![GitHubModel](../../../../translated_images/ml/GitHub_ModelCatalog.aa43c51c36454747.png)
+![GitHubModel](../../../../translated_images/ml/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 For more information about the Models available on GitHub Models, check out the [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ There are a few basic examples that are ready for you to run. You can find them 
 
 There is also a dedicated Codespaces Environment for running the samples and models. 
 
-![Getting Started](../../../../translated_images/ml/GitHub_ModelGetStarted.150220a802da6fb6.png)
+![Getting Started](../../../../translated_images/ml/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 
 ## Sample Code 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## FREE Usage and Rate limits for GitHub Models
 
-![Model Catalog](../../../../translated_images/ml/GitHub_Model.ca6c125cb3117d0e.png)
+![Model Catalog](../../../../translated_images/ml/GitHub_Model.ca6c125cb3117d0e.webp)
 
 The [playground നും സൗജന്യ API ഉപയോഗത്തിനുമായുള്ള റേറ്റ് പരിധികൾ](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) are intended to help you experiment with models and prototype your AI application. For use beyond those limits, and to bring your application to scale, you must provision resources from an Azure account, and authenticate from there instead of your GitHub personal access token. You don't need to change anything else in your code. Use this link to discover how to go beyond the free tier limits in Azure AI.
 

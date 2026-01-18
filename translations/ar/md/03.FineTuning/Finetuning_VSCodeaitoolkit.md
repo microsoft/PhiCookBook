@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [تثبيت AI Toolkit لـ VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/ar/Aitoolkit.7157953df04812dc.png)
+![AIToolkit FineTuning](../../../../translated_images/ar/Aitoolkit.7157953df04812dc.webp)
 
 **[Private Preview]** توفير بنقرة واحدة لتطبيقات Azure Container Apps لتشغيل ضبط النماذج واستنتاجها في السحابة.
 

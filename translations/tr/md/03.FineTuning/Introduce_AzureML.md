@@ -67,7 +67,7 @@ Azure ML, LLMOps ve SLMOps’u birleştirerek kurumsal çapta üretken yapay zek
 
 Kurumsal kullanıcılar, Model Kataloğu aracılığıyla farklı iş senaryolarına göre çeşitli modeller dağıtabilir ve Model as Service olarak kurumsal geliştiriciler veya kullanıcıların erişimine sunabilir.
 
-![models](../../../../translated_images/tr/models.e6c7ff50a51806fd.png)
+![models](../../../../translated_images/tr/models.e6c7ff50a51806fd.webp)
 
 Azure Machine Learning studio’daki Model Kataloğu, üretken yapay zeka uygulamaları oluşturmanızı sağlayan geniş bir model yelpazesini keşfetmek ve kullanmak için merkezdir. Model kataloğu, Azure OpenAI servisi, Mistral, Meta, Cohere, Nvidia, Hugging Face gibi model sağlayıcılarının yanı sıra Microsoft tarafından eğitilmiş modeller dahil yüzlerce modeli içerir. Microsoft dışındaki sağlayıcılardan gelen modeller, Microsoft’un Ürün Şartları’nda tanımlandığı üzere Microsoft Dışı Ürünlerdir ve modelle birlikte sağlanan şartlara tabidir.
 
@@ -77,7 +77,7 @@ Bir makine öğrenimi boru hattının temel amacı, tam bir makine öğrenimi g�
 
 SLM / LLM ince ayarında, verilerimizi, eğitimi ve üretim süreçlerini Pipeline aracılığıyla yönetebiliriz.
 
-![finetuning](../../../../translated_images/tr/finetuning.6559da198851fa52.png)
+![finetuning](../../../../translated_images/tr/finetuning.6559da198851fa52.webp)
 
 ### **Prompt flow**
 

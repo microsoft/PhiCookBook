@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) היא פלטפורמה בקוד פתוח שנועדה לנהל את מחזור החיים המלא של למידת מכונה.
 
-![MLFlow](../../../../../../translated_images/he/MlFlowmlops.ed16f47809d74d9a.png)
+![MLFlow](../../../../../../translated_images/he/MlFlowmlops.ed16f47809d74d9a.webp)
 
 MLFlow משמשת לניהול מחזור החיים של למידת מכונה, כולל ניסויים, שחזור, פריסה ורישום מרכזי של מודלים. כיום MLflow מציעה ארבעה רכיבים.
 
@@ -22,7 +22,7 @@ MLFlow משמשת לניהול מחזור החיים של למידת מכונה,
 
 הפלטפורמה כוללת יכולות למעקב אחרי ניסויים, אריזת קוד להרצות שחזוריות, ושיתוף ופריסת מודלים. MLFlow משולבת ב-Databricks ותומכת במגוון ספריות למידת מכונה, מה שהופך אותה לנייטרלית לספריות. ניתן להשתמש בה עם כל ספריית למידת מכונה ובכל שפת תכנות, שכן היא מספקת REST API ו-CLI לנוחות.
 
-![MLFlow](../../../../../../translated_images/he/MLflow2.5a22eb718f6311d1.png)
+![MLFlow](../../../../../../translated_images/he/MLflow2.5a22eb718f6311d1.webp)
 
 תכונות מרכזיות של MLFlow כוללות:
 
@@ -37,7 +37,7 @@ MLFlow גם תומכת בלולאת MLOps, הכוללת הכנת נתונים, �
 
 בדוגמת E2E זו נציג שתי גישות שונות לבניית עטיפה סביב מודל השפה הקטן Phi-3 (SLM) ולאחר מכן הרצתו כמודל MLFlow, בין אם מקומית או בענן, לדוגמה ב-Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/he/MlFlow1.fd745e47dbd3fecf.png)
+![MLFlow](../../../../../../translated_images/he/MlFlow1.fd745e47dbd3fecf.webp)
 
 | פרויקט | תיאור | מיקום |
 | ------------ | ----------- | -------- |

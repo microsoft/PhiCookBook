@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **การใช้ Azure AI Foundry ในการประเมินผล**
 
-![aistudo](../../../../../translated_images/th/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/th/AIFoundry.9e0b513e999a1c5a.webp)
 
 วิธีการประเมินแอปพลิเคชัน AI สร้างสรรค์ของคุณโดยใช้ [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ไม่ว่าคุณจะประเมินการสนทนาแบบรอบเดียวหรือหลายรอบ Azure AI Foundry มีเครื่องมือสำหรับประเมินประสิทธิภาพและความปลอดภัยของโมเดล
 
-![aistudo](../../../../../translated_images/th/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/th/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## วิธีการประเมินแอป AI สร้างสรรค์ด้วย Azure AI Foundry
 สำหรับคำแนะนำเพิ่มเติม ดูที่ [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

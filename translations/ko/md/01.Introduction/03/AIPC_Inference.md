@@ -28,9 +28,9 @@ GPU는 병렬 컴퓨팅 능력으로 잘 알려져 있지만, 모든 GPU가 그�
 
 Intel® NPU 디바이스는 Intel® Core™ Ultra 세대 CPU(이전 명칭 Meteor Lake)부터 통합된 AI 추론 가속기입니다. 인공 신경망 작업을 에너지 효율적으로 실행할 수 있게 해줍니다.
 
-![Latency](../../../../../translated_images/ko/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/ko/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/ko/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/ko/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU 가속 라이브러리**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 코드 실행 시 작업 관리자에서 NPU의 동작 상태를 확인할 수 있습니다.
 
-![NPU](../../../../../translated_images/ko/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/ko/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***샘플*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 실행 결과는 다음과 같습니다.
 
-![DML](../../../../../translated_images/ko/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/ko/aipc_DML.52a44180393ab491.webp)
 
 ***샘플*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 변환된 형식은 다음과 같습니다.
 
-![openvino_convert](../../../../../translated_images/ko/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/ko/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 모델 경로(model_dir), 관련 설정(ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), 하드웨어 가속 장치(GPU.0)를 OVModelForCausalLM을 통해 불러옵니다.
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 코드 실행 시 작업 관리자에서 GPU 동작 상태를 확인할 수 있습니다.
 
-![openvino_gpu](../../../../../translated_images/ko/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/ko/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***샘플*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

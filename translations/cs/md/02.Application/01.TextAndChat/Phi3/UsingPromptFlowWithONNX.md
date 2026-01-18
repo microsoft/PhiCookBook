@@ -33,33 +33,33 @@ Přečtěte si tento návod pro nastavení ONNX Runtime GenAI pro Windows GPU [k
 
 1. Nainstalujte rozšíření Prompt flow pro VS Code
 
-![pfvscode](../../../../../../translated_images/cs/pfvscode.eff93dfc66a42cbe.png)
+![pfvscode](../../../../../../translated_images/cs/pfvscode.eff93dfc66a42cbe.webp)
 
 2. Po instalaci rozšíření Prompt flow ve VS Code klikněte na rozšíření a vyberte **Installation dependencies**, podle tohoto návodu nainstalujte Prompt flow SDK do svého prostředí
 
-![pfsetup](../../../../../../translated_images/cs/pfsetup.b46e93096f5a254f.png)
+![pfsetup](../../../../../../translated_images/cs/pfsetup.b46e93096f5a254f.webp)
 
 3. Stáhněte si [ukázkový kód](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) a otevřete ho ve VS Code
 
-![pfsample](../../../../../../translated_images/cs/pfsample.8d89e70584ffe7c4.png)
+![pfsample](../../../../../../translated_images/cs/pfsample.8d89e70584ffe7c4.webp)
 
 4. Otevřete **flow.dag.yaml** a vyberte své Python prostředí
 
-![pfdag](../../../../../../translated_images/cs/pfdag.264a77f7366458ff.png)
+![pfdag](../../../../../../translated_images/cs/pfdag.264a77f7366458ff.webp)
 
    Otevřete **chat_phi3_ort.py** a změňte umístění vašeho Phi-3.5-instruct ONNX modelu
 
-![pfphi](../../../../../../translated_images/cs/pfphi.72da81d74244b45f.png)
+![pfphi](../../../../../../translated_images/cs/pfphi.72da81d74244b45f.webp)
 
 5. Spusťte svůj prompt flow k otestování
 
 Otevřete **flow.dag.yaml** a klikněte na vizuální editor
 
-![pfv](../../../../../../translated_images/cs/pfv.ba8a81f34b20f603.png)
+![pfv](../../../../../../translated_images/cs/pfv.ba8a81f34b20f603.webp)
 
 Po kliknutí spusťte test
 
-![pfflow](../../../../../../translated_images/cs/pfflow.4e1135a089b1ce1b.png)
+![pfflow](../../../../../../translated_images/cs/pfflow.4e1135a089b1ce1b.webp)
 
 1. Můžete spustit batch v terminálu pro zobrazení dalších výsledků
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Výsledky si můžete prohlédnout ve svém výchozím prohlížeči
 
 
-![pfresult](../../../../../../translated_images/cs/pfresult.c22c826f8062d7cb.png)
+![pfresult](../../../../../../translated_images/cs/pfresult.c22c826f8062d7cb.webp)
 
 **Prohlášení o vyloučení odpovědnosti**:  
 Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

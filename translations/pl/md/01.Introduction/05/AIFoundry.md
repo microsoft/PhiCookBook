@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Korzystanie z Azure AI Foundry do oceny**
 
-![aistudo](../../../../../translated_images/pl/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/pl/AIFoundry.9e0b513e999a1c5a.webp)
 
 Jak ocenić swoją aplikację generatywnej AI za pomocą [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Niezależnie od tego, czy analizujesz rozmowy jednokrotne, czy wielokrotne, Azure AI Foundry oferuje narzędzia do oceny wydajności i bezpieczeństwa modeli.
 
-![aistudo](../../../../../translated_images/pl/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/pl/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Jak ocenić aplikacje generatywnej AI za pomocą Azure AI Foundry
 Szczegółowe instrukcje znajdziesz w [dokumentacji Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

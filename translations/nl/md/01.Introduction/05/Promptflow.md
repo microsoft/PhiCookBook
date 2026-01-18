@@ -41,7 +41,7 @@ Beheer versiecontrole en deel kennis effectief. Stroomlijn het hele prompt engin
 
 In Microsoft Prompt Flow speelt evaluatie een cruciale rol bij het beoordelen van de prestaties van je AI-modellen. Laten we bekijken hoe je evaluatieflows en -metriek binnen Prompt Flow kunt aanpassen:
 
-![PFVizualise](../../../../../translated_images/nl/pfvisualize.c1d9ca75baa2a222.png)
+![PFVizualise](../../../../../translated_images/nl/pfvisualize.c1d9ca75baa2a222.webp)
 
 **Begrijpen van Evaluatie in Prompt Flow**
 

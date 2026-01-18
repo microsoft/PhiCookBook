@@ -66,7 +66,7 @@ Azure ML on lisännyt monia LLM/SLM-toimintoja, yhdistäen LLMOpsin ja SLMOpsin 
 
 Yrityskäyttäjät voivat ottaa käyttöön erilaisia malleja eri liiketoimintatilanteiden mukaan Malliluettelon kautta, ja tarjota palveluita Model as Service -periaatteella yrityskehittäjille tai käyttäjille.
 
-![models](../../../../translated_images/fi/models.e6c7ff50a51806fd.png)
+![models](../../../../translated_images/fi/models.e6c7ff50a51806fd.webp)
 
 Azure Machine Learning studion Malliluettelo on keskus, josta löydät ja käytät laajaa valikoimaa malleja, jotka mahdollistavat generatiivisten tekoälysovellusten rakentamisen. Malliluettelossa on satoja malleja eri mallitoimittajilta, kuten Azure OpenAI -palvelu, Mistral, Meta, Cohere, Nvidia, Hugging Face, mukaan lukien Microsoftin kouluttamat mallit. Microsoftin ulkopuoliset toimittajat ovat Microsoftin Tuoteehtojen mukaisesti määriteltyjä ei-Microsoftin tuotteita, ja ne ovat mallin mukana toimitettujen ehtojen alaisia.
 
@@ -76,7 +76,7 @@ Koneoppimisen putken ydin on jakaa kokonainen koneoppimistehtävä monivaiheisek
 
 SLM/LLM hienosäädössä voimme hallita dataa, koulutusta ja generointiprosesseja putken avulla.
 
-![finetuning](../../../../translated_images/fi/finetuning.6559da198851fa52.png)
+![finetuning](../../../../translated_images/fi/finetuning.6559da198851fa52.webp)
 
 ### **Prompt flow**
 

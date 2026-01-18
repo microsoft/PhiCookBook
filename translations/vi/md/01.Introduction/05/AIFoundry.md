@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Sử dụng Azure AI Foundry để đánh giá**
 
-![aistudo](../../../../../translated_images/vi/AIFoundry.9e0b513e999a1c5a.png)
+![aistudo](../../../../../translated_images/vi/AIFoundry.9e0b513e999a1c5a.webp)
 
 Cách đánh giá ứng dụng AI tạo sinh của bạn bằng [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Dù bạn đang đánh giá các cuộc hội thoại một lượt hay nhiều lượt, Azure AI Foundry cung cấp các công cụ để đánh giá hiệu suất và độ an toàn của mô hình.
 
-![aistudo](../../../../../translated_images/vi/AIPortfolio.69da59a8e1eaa70f.png)
+![aistudo](../../../../../translated_images/vi/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## Cách đánh giá ứng dụng AI tạo sinh với Azure AI Foundry
 Để biết hướng dẫn chi tiết, xem [Tài liệu Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

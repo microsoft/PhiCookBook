@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** 컴파일하지 않을 경우 이 단계는 건너뛰어도 됩니다.
 
-![CPP](../../../../../../translated_images/ko/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/ko/01.42f52a2b2aedff02.webp)
 
 ### **4. NVIDIA 드라이버 설치**
 
@@ -83,7 +83,7 @@ NVIDIA CUDNN 9.4의 lib, bin, include 폴더를 NVIDIA CUDA 12.4의 lib, bin, in
 
    [노트북](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb)을 열고 실행하세요.
 
-![RESULT](../../../../../../translated_images/ko/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/ko/02.b9b06996cf7255d5.webp)
 
 ### **8. ORT GenAI GPU 컴파일**
 
@@ -130,7 +130,7 @@ NVIDIA CUDNN 9.4의 lib, bin, include 폴더를 NVIDIA CUDA 12.4의 lib, bin, in
 
    - Windows Terminal에서 VS 2022용 Developer Command Prompt를 열고 onnxruntime-genai 폴더로 이동
 
-![RESULT](../../../../../../translated_images/ko/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/ko/03.b83ce473d5ff9b9b.webp)
 
    - Python 환경에서 컴파일 실행
 

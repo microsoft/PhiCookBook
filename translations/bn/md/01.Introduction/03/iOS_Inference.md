@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 আমি App ডেভেলপমেন্টের জন্য Objective-C বেছে নিয়েছি, কারণ ONNX Runtime C++ API দিয়ে Generative AI ব্যবহার করার ক্ষেত্রে Objective-C বেশি সামঞ্জস্যপূর্ণ। অবশ্যই, Swift ব্রিজিংয়ের মাধ্যমে সম্পর্কিত কলগুলোও সম্পন্ন করা যেতে পারে।
 
-![xcode](../../../../../translated_images/bn/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/bn/xcode.8147789e6c25e3e2.webp)
 
 ## **5. ONNX quantized INT4 মডেল App অ্যাপ্লিকেশন প্রজেক্টে কপি করা**
 
 আমাদের ONNX ফরম্যাটের INT4 quantization মডেল ইমপোর্ট করতে হবে, যা প্রথমে ডাউনলোড করতে হবে।
 
-![hf](../../../../../translated_images/bn/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/bn/hf.6b8504fd88ee48dd.webp)
 
 ডাউনলোড করার পর, এটি Xcode প্রজেক্টের Resources ডিরেক্টরিতে যোগ করতে হবে।
 
-![model](../../../../../translated_images/bn/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/bn/model.3b879b14e0be877d.webp)
 
 ## **6. ViewControllers-এ C++ API যোগ করা**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** প্রজেক্টে সংশ্লিষ্ট C++ হেডার ফাইলগুলো যোগ করুন।
 
-  ![Header File](../../../../../translated_images/bn/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/bn/head.64cad021ce70a333.webp)
 
 - **b.** Xcode-এ `onnxruntime-genai` ডায়নামিক লাইব্রেরি অন্তর্ভুক্ত করুন।
 
-  ![Library](../../../../../translated_images/bn/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/bn/lib.a4209b9f21ddf344.webp)
 
 - **c.** টেস্ট করার জন্য C Samples কোড ব্যবহার করুন। আরও ফিচার যোগ করার জন্য ChatUI-এর মতো অতিরিক্ত ফিচারও যোগ করতে পারেন।
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 সেটআপ সম্পন্ন হলে, Phi-3-mini মডেল ইনফারেন্সের ফলাফল দেখতে অ্যাপ্লিকেশন চালাতে পারেন।
 
-![Running Result](../../../../../translated_images/bn/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/bn/result.326a947a6a2b9c51.webp)
 
 আরও নমুনা কোড এবং বিস্তারিত নির্দেশনার জন্য, [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) দেখুন।
 

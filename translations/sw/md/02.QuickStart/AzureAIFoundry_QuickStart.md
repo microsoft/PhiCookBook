@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Kwa maendeleo ya AI ya Kizazi, tunatarajia kutumia jukwaa moja la kuendesha mifano tofauti ya LLM na SLM, ushirikiano wa data za biashara, urekebishaji/mchakato wa RAG, na tathmini ya biashara mbalimbali baada ya kuunganisha LLM na SLM, n.k., ili AI ya kizazi iweze kutekelezwa vyema katika programu za Smart. [Azure AI Foundry](https://ai.azure.com) ni jukwaa la programu za AI za kizazi kwa kiwango cha biashara.
 
-![aistudo](../../../../translated_images/sw/aifoundry_home.f28a8127c96c7d93.png)
+![aistudo](../../../../translated_images/sw/aifoundry_home.f28a8127c96c7d93.webp)
 
 Kwa Azure AI Foundry, unaweza kutathmini majibu ya mifano mikubwa ya lugha (LLM) na kupanga vipengele vya programu za prompt kwa kutumia prompt flow kwa utendaji bora. Jukwaa hili linawezesha upanuzi kwa kubadilisha majaribio kuwa uzalishaji kamili kwa urahisi. Ufuatiliaji endelevu na maboresho husaidia mafanikio ya muda mrefu.
 

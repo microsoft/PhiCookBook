@@ -34,7 +34,7 @@ Phi е серия от отворени AI модели, разработени 
 2. **Клонирайте хранилището**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Присъединете се към Microsoft AI Discord общността и се срещнете с експерти и други разработчици**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/bg/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/bg/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 Многоезична поддръжка
 

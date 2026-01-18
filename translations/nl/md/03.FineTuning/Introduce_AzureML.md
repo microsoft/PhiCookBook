@@ -67,7 +67,7 @@ Azure ML heeft veel functies toegevoegd die te maken hebben met LLM/SLM, waarbij
 
 Enterprise-gebruikers kunnen via de Modelcatalogus verschillende modellen inzetten voor uiteenlopende zakelijke scenario’s, en bieden Model as a Service aan voor enterprise-ontwikkelaars of gebruikers om toegang te krijgen.
 
-![models](../../../../translated_images/nl/models.e6c7ff50a51806fd.png)
+![models](../../../../translated_images/nl/models.e6c7ff50a51806fd.webp)
 
 De Modelcatalogus in Azure Machine Learning studio is het centrum om een breed scala aan modellen te ontdekken en te gebruiken waarmee je Generatieve AI-toepassingen kunt bouwen. De modelcatalogus bevat honderden modellen van modelproviders zoals Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, inclusief modellen die door Microsoft zijn getraind. Modellen van andere aanbieders dan Microsoft zijn Non-Microsoft Products, zoals gedefinieerd in de Productvoorwaarden van Microsoft, en vallen onder de voorwaarden die bij het model horen.
 
@@ -77,7 +77,7 @@ De kern van een machine learning pijplijn is het opdelen van een complete machin
 
 Bij het fijn afstemmen van SLM / LLM kunnen we onze data, training en generatieprocessen beheren via Pipeline.
 
-![finetuning](../../../../translated_images/nl/finetuning.6559da198851fa52.png)
+![finetuning](../../../../translated_images/nl/finetuning.6559da198851fa52.webp)
 
 ### **Prompt flow**
 

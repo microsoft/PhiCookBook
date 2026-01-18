@@ -23,7 +23,7 @@ Dalam contoh E2E ini, anda akan belajar cara untuk melaraskan halus model Phi-3 
 
 Berikut adalah gambaran keseluruhan contoh E2E ini.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ms/00-01-architecture.02fc569e266d468c.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/ms/00-01-architecture.02fc569e266d468c.webp)
 
 ### Jadual Kandungan
 
@@ -49,13 +49,13 @@ Berikut adalah gambaran keseluruhan contoh E2E ini.
 
 1. Taip *azure machine learning* dalam **bar carian** di bahagian atas halaman portal dan pilih **Azure Machine Learning** dari pilihan yang muncul.
 
-    ![Type azure machine learning](../../../../../../translated_images/ms/01-01-type-azml.a5116f8454d98c60.png)
+    ![Type azure machine learning](../../../../../../translated_images/ms/01-01-type-azml.a5116f8454d98c60.webp)
 
 1. Pilih **+ Create** dari menu navigasi.
 
 1. Pilih **New workspace** dari menu navigasi.
 
-    ![Select new workspace](../../../../../../translated_images/ms/01-02-select-new-workspace.83e17436f8898dc4.png)
+    ![Select new workspace](../../../../../../translated_images/ms/01-02-select-new-workspace.83e17436f8898dc4.webp)
 
 1. Lakukan tugasan berikut:
 
@@ -68,7 +68,7 @@ Berikut adalah gambaran keseluruhan contoh E2E ini.
     - Pilih **Application insights** untuk digunakan (cipta baru jika perlu).
     - Pilih **Container registry** untuk digunakan (cipta baru jika perlu).
 
-    ![Fill AZML.](../../../../../../translated_images/ms/01-03-fill-AZML.730a5177757bbebb.png)
+    ![Fill AZML.](../../../../../../translated_images/ms/01-03-fill-AZML.730a5177757bbebb.webp)
 
 1. Pilih **Review + Create**.
 
@@ -92,7 +92,7 @@ Dalam contoh E2E ini, anda akan menggunakan *Standard_NC24ads_A100_v4 GPU* untuk
     - Pilih **Virtual machine family** yang hendak digunakan. Contohnya, pilih **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, yang termasuk *Standard_NC24ads_A100_v4* GPU.
     - Pilih **Request quota** dari menu navigasi.
 
-        ![Request quota.](../../../../../../translated_images/ms/01-04-request-quota.3d3670c3221ab834.png)
+        ![Request quota.](../../../../../../translated_images/ms/01-04-request-quota.3d3670c3221ab834.webp)
 
     - Di halaman Request quota, masukkan **New cores limit** yang ingin digunakan. Contohnya, 24.
     - Di halaman Request quota, pilih **Submit** untuk memohon kuota GPU.
@@ -108,11 +108,11 @@ Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu men
 
 1. Taip *managed identities* dalam **bar carian** di bahagian atas halaman portal dan pilih **Managed Identities** dari pilihan yang muncul.
 
-    ![Type managed identities.](../../../../../../translated_images/ms/01-05-type-managed-identities.9297b6039874eff8.png)
+    ![Type managed identities.](../../../../../../translated_images/ms/01-05-type-managed-identities.9297b6039874eff8.webp)
 
 1. Pilih **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/ms/01-06-select-create.936d8d66d7144f9a.png)
+    ![Select create.](../../../../../../translated_images/ms/01-06-select-create.936d8d66d7144f9a.webp)
 
 1. Lakukan tugasan berikut:
 
@@ -139,7 +139,7 @@ Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu men
     - Pilih **Resource group** yang hendak digunakan.
     - Pilih **Role** kepada **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/ms/01-07-fill-contributor-role.29ca99b7c9f687e0.png)
+    ![Fill contributor role.](../../../../../../translated_images/ms/01-07-fill-contributor-role.29ca99b7c9f687e0.webp)
 
 1. Pilih **Save**.
 
@@ -147,7 +147,7 @@ Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu men
 
 1. Taip *storage accounts* dalam **bar carian** di bahagian atas halaman portal dan pilih **Storage accounts** dari pilihan yang muncul.
 
-    ![Type storage accounts.](../../../../../../translated_images/ms/01-08-type-storage-accounts.1186c8e42933e49b.png)
+    ![Type storage accounts.](../../../../../../translated_images/ms/01-08-type-storage-accounts.1186c8e42933e49b.webp)
 
 1. Pilih akaun storan yang berkait dengan workspace Azure Machine Learning yang anda cipta. Contohnya, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu men
     - Pilih **+ Add** dari menu navigasi.
     - Pilih **Add role assignment** dari menu navigasi.
 
-    ![Add role.](../../../../../../translated_images/ms/01-09-add-role.d2db22fec1b187f0.png)
+    ![Add role.](../../../../../../translated_images/ms/01-09-add-role.d2db22fec1b187f0.webp)
 
 1. Dalam halaman Add role assignment, lakukan tugasan berikut:
 
@@ -171,7 +171,7 @@ Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu men
     - Dalam halaman Select managed identities, pilih Manage Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
     - Dalam halaman Select managed identities, pilih **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/ms/01-10-select-managed-identity.5ce5ba181f72a4df.png)
+    ![Select managed identity.](../../../../../../translated_images/ms/01-10-select-managed-identity.5ce5ba181f72a4df.webp)
 
 1. Pilih **Review + assign**.
 
@@ -179,7 +179,7 @@ Untuk melaraskan halus dan menerapkan model anda, anda mesti terlebih dahulu men
 
 1. Taip *container registries* dalam **bar carian** di bahagian atas halaman portal dan pilih **Container registries** dari pilihan yang muncul.
 
-    ![Type container registries.](../../../../../../translated_images/ms/01-11-type-container-registries.ff3b8bdc49dc596c.png)
+    ![Type container registries.](../../../../../../translated_images/ms/01-11-type-container-registries.ff3b8bdc49dc596c.webp)
 
 1. Pilih registry kontena yang berkait dengan workspace Azure Machine Learning. Contohnya, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ Dalam latihan ini, anda akan:
 
 1. Pilih folder *finetune-phi* yang anda cipta, yang terletak di *C:\Users\yourUserName\finetune-phi*.
 
-    ![Buka folder projek.](../../../../../../translated_images/ms/01-12-open-project-folder.1fff9c7f41dd1639.png)
+    ![Buka folder projek.](../../../../../../translated_images/ms/01-12-open-project-folder.1fff9c7f41dd1639.webp)
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *download_dataset.py*.
 
@@ -298,7 +298,7 @@ Dalam latihan ini, anda akan:
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *deploy_model.py*.
 
-    ![Cipta fail baru.](../../../../../../translated_images/ms/01-13-create-new-file.c17c150fff384a39.png)
+    ![Cipta fail baru.](../../../../../../translated_images/ms/01-13-create-new-file.c17c150fff384a39.webp)
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New Folder** untuk mencipta folder baru bernama *finetuning_dir*.
 
@@ -374,28 +374,28 @@ Dalam latihan ini, anda akan:
     - Pilih Langganan Azure yang anda gunakan sekarang.
     - Salin dan tampal ID Langganan anda ke dalam fail *config.py*.
 
-    ![Cari ID langganan.](../../../../../../translated_images/ms/01-14-find-subscriptionid.4f4ca33555f1e637.png)
+    ![Cari ID langganan.](../../../../../../translated_images/ms/01-14-find-subscriptionid.4f4ca33555f1e637.webp)
 
 1. Laksanakan tugas berikut untuk menambah Nama Workspace Azure:
 
     - Navigasi ke sumber Azure Machine Learning yang anda cipta.
     - Salin dan tampal nama akaun anda ke dalam fail *config.py*.
 
-    ![Cari nama Azure Machine Learning.](../../../../../../translated_images/ms/01-15-find-AZML-name.1975f0422bca19a7.png)
+    ![Cari nama Azure Machine Learning.](../../../../../../translated_images/ms/01-15-find-AZML-name.1975f0422bca19a7.webp)
 
 1. Laksanakan tugas berikut untuk menambah Nama Kumpulan Sumber Azure:
 
     - Navigasi ke sumber Azure Machine Learning yang anda cipta.
     - Salin dan tampal Nama Kumpulan Sumber Azure anda ke dalam fail *config.py*.
 
-    ![Cari nama kumpulan sumber.](../../../../../../translated_images/ms/01-16-find-AZML-resourcegroup.855a349d0af134a3.png)
+    ![Cari nama kumpulan sumber.](../../../../../../translated_images/ms/01-16-find-AZML-resourcegroup.855a349d0af134a3.webp)
 
 2. Laksanakan tugas berikut untuk menambah nama Identiti Terurus Azure
 
     - Navigasi ke sumber Identiti Terurus yang anda cipta.
     - Salin dan tampal nama Identiti Terurus Azure anda ke dalam fail *config.py*.
 
-    ![Cari UAI.](../../../../../../translated_images/ms/01-17-find-uai.3529464f53499827.png)
+    ![Cari UAI.](../../../../../../translated_images/ms/01-17-find-uai.3529464f53499827.webp)
 
 ### Sediakan set data untuk tala halus
 
@@ -509,7 +509,7 @@ Anda perlu menyediakan Azure CLI untuk mengesahkan persekitaran anda. Azure CLI 
 
 1. Pilih langganan Azure yang anda ingin gunakan.
 
-    ![Cari nama kumpulan sumber.](../../../../../../translated_images/ms/02-01-login-using-azure-cli.dfde31cb75e58a87.png)
+    ![Cari nama kumpulan sumber.](../../../../../../translated_images/ms/02-01-login-using-azure-cli.dfde31cb75e58a87.webp)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses tala halus dalam 
 
 1. Dalam latihan ini, anda berjaya menala halus model Phi-3 menggunakan Azure Machine Learning. Dengan menjalankan skrip *setup_ml.py*, anda telah menyediakan persekitaran Azure Machine Learning dan memulakan proses tala halus yang ditakrifkan dalam fail *fine_tune.py*. Sila ambil perhatian bahawa proses tala halus boleh mengambil masa yang cukup lama. Selepas menjalankan arahan `python setup_ml.py`, anda perlu menunggu proses selesai. Anda boleh memantau status kerja tala halus dengan mengikuti pautan yang disediakan dalam terminal ke portal Azure Machine Learning.
 
-    ![Lihat kerja tala halus.](../../../../../../translated_images/ms/02-02-see-finetuning-job.59393bc3b143871e.png)
+    ![Lihat kerja tala halus.](../../../../../../translated_images/ms/02-02-see-finetuning-job.59393bc3b143871e.webp)
 
 ### Terapkan model yang telah ditala halus
 
@@ -1080,11 +1080,11 @@ Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penerapan.
 
 1. Pilih **Endpoints** daripada tab sebelah kiri.
 
-    ![Pilih endpoints.](../../../../../../translated_images/ms/02-03-select-endpoints.c3136326510baff1.png)
+    ![Pilih endpoints.](../../../../../../translated_images/ms/02-03-select-endpoints.c3136326510baff1.webp)
 
 2. Pilih titik hujung yang anda buat.
 
-    ![Pilih endpoints yang anda buat.](../../../../../../translated_images/ms/02-04-select-endpoint-created.0363e7dca51dabb4.png)
+    ![Pilih endpoints yang anda buat.](../../../../../../translated_images/ms/02-04-select-endpoint-created.0363e7dca51dabb4.webp)
 
 3. Pada halaman ini, anda boleh menguruskan titik hujung yang dibuat semasa proses penghasilan.
 
@@ -1103,7 +1103,7 @@ Setelah berjaya menghasil model yang telah disesuaikan, anda kini boleh menginte
 1. Salin dan tampal **REST endpoint** anda ke dalam fail *config.py*, gantikan `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` dengan **REST endpoint** anda.
 1. Salin dan tampal **Primary key** anda ke dalam fail *config.py*, gantikan `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` dengan **Primary key** anda.
 
-    ![Salin kunci api dan uri titik hujung.](../../../../../../translated_images/ms/02-05-copy-apikey-endpoint.88b5a92e6462c53b.png)
+    ![Salin kunci api dan uri titik hujung.](../../../../../../translated_images/ms/02-05-copy-apikey-endpoint.88b5a92e6462c53b.webp)
 
 #### Tambah kod ke fail *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Setelah berjaya menghasil model yang telah disesuaikan, anda kini boleh menginte
 
 1. Berikut adalah contoh hasil: Kini anda boleh bersembang dengan model Phi-3 khusus anda. Disarankan untuk bertanya soalan berdasarkan data yang digunakan untuk penalaan halus.
 
-    ![Contoh prompt flow.](../../../../../../translated_images/ms/02-06-promptflow-example.89384abaf3ad71f6.png)
+    ![Contoh prompt flow.](../../../../../../translated_images/ms/02-06-promptflow-example.89384abaf3ad71f6.webp)
 
 ---
 

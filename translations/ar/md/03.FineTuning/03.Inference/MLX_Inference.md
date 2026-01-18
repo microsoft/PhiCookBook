@@ -40,7 +40,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 النتيجة (بيئتي هي Apple M1 Max، 64GB) هي
 
-![Terminal](../../../../../translated_images/ar/01.5cf57df8f7407cf9.png)
+![Terminal](../../../../../translated_images/ar/01.5cf57df8f7407cf9.webp)
 
 ### **3. تحويل Phi-3-mini إلى كميات باستخدام MLX في الطرفية**
 
@@ -64,11 +64,11 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 النتيجة هي
 
-![INT4](../../../../../translated_images/ar/02.7b188681a8eadbc1.png)
+![INT4](../../../../../translated_images/ar/02.7b188681a8eadbc1.webp)
 
 ### **4. تشغيل Phi-3-mini باستخدام MLX في Jupyter Notebook**
 
-![Notebook](../../../../../translated_images/ar/03.b9705a3a5aaa89f9.png)
+![Notebook](../../../../../translated_images/ar/03.b9705a3a5aaa89f9.webp)
 
 ***ملاحظة:*** يرجى قراءة هذا المثال [اضغط على هذا الرابط](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

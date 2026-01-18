@@ -34,7 +34,7 @@ Phi مائیکروسافٹ کی طرف سے تیار کردہ ایک سلسلہ 
 2. **ریپوزیٹری کو کلون کریں**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Microsoft AI Discord کمیونٹی میں شامل ہوں اور ماہرین و دیگر ڈویلپرز سے ملیں**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/ur/cover.eb18d1b9605d754b.png)
+![cover](../../translated_images/ur/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 کثیر اللسانی حمایت
 

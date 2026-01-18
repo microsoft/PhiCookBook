@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** اگر نمی‌خواهید کامپایل کنید، می‌توانید این مرحله را رد کنید
 
-![CPP](../../../../../../translated_images/fa/01.42f52a2b2aedff02.png)
+![CPP](../../../../../../translated_images/fa/01.42f52a2b2aedff02.webp)
 
 ### **4. نصب درایور NVIDIA**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    فایل [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) را باز کرده و اجرا کنید
 
-![RESULT](../../../../../../translated_images/fa/02.b9b06996cf7255d5.png)
+![RESULT](../../../../../../translated_images/fa/02.b9b06996cf7255d5.webp)
 
 ### **8. کامپایل ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - با استفاده از Windows Terminal به Developer Command Prompt برای VS 2022 بروید و به پوشه onnxruntime-genai بروید
 
-![RESULT](../../../../../../translated_images/fa/03.b83ce473d5ff9b9b.png)
+![RESULT](../../../../../../translated_images/fa/03.b83ce473d5ff9b9b.webp)
 
    - آن را با محیط پایتون خود کامپایل کنید
 

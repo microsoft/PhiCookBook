@@ -36,7 +36,7 @@ d. Python 3.8+
 
 클라우드와 엣지 디바이스에서 동시에 gguf를 사용하고 싶다면, LlamaEdge는 WasmEdge로 이해할 수 있습니다. (WasmEdge는 클라우드 네이티브, 엣지, 분산 애플리케이션에 적합한 경량 고성능 확장 가능한 WebAssembly 런타임입니다. 서버리스 애플리케이션, 임베디드 함수, 마이크로서비스, 스마트 계약, IoT 디바이스를 지원합니다.) LlamaEdge를 통해 gguf의 양자화 모델을 엣지 디바이스와 클라우드에 배포할 수 있습니다.
 
-![llamaedge](../../../../../translated_images/ko/llamaedge.e9d6ff96dff11cf7.jpg)
+![llamaedge](../../../../../translated_images/ko/llamaedge.e9d6ff96dff11cf7.webp)
 
 사용 방법은 다음과 같습니다.
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 실행 결과는 다음과 같습니다.
 
-![llamaedgerun](../../../../../translated_images/ko/llamaedgerun.bed921516c9a821c.png)
+![llamaedgerun](../../../../../translated_images/ko/llamaedgerun.bed921516c9a821c.webp)
 
 ***샘플 코드*** [Phi-3 mini WASM 노트북 샘플](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

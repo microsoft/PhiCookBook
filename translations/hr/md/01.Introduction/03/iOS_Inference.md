@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Odabrao sam Objective-C kao metodu razvoja aplikacije jer je korištenje Generative AI s ONNX Runtime C++ API-jem bolje kompatibilno s Objective-C-jem. Naravno, povezivanje s pozivima možete napraviti i preko Swift bridginga.
 
-![xcode](../../../../../translated_images/hr/xcode.8147789e6c25e3e2.png)
+![xcode](../../../../../translated_images/hr/xcode.8147789e6c25e3e2.webp)
 
 ## **5. Kopiranje ONNX kvantiziranog INT4 modela u projekt App aplikacije**
 
 Potrebno je uvesti INT4 kvantizirani model u ONNX formatu, koji je potrebno prvo preuzeti.
 
-![hf](../../../../../translated_images/hr/hf.6b8504fd88ee48dd.png)
+![hf](../../../../../translated_images/hr/hf.6b8504fd88ee48dd.webp)
 
 Nakon preuzimanja, potrebno ga je dodati u direktorij Resources unutar projekta u Xcode-u.
 
-![model](../../../../../translated_images/hr/model.3b879b14e0be877d.png)
+![model](../../../../../translated_images/hr/model.3b879b14e0be877d.webp)
 
 ## **6. Dodavanje C++ API-ja u ViewControllers**
 
@@ -121,11 +121,11 @@ Nakon preuzimanja, potrebno ga je dodati u direktorij Resources unutar projekta 
 
 - **a.** Dodajte odgovarajuće C++ zaglavne datoteke u projekt.
 
-  ![Header File](../../../../../translated_images/hr/head.64cad021ce70a333.png)
+  ![Header File](../../../../../translated_images/hr/head.64cad021ce70a333.webp)
 
 - **b.** Uključite `onnxruntime-genai` dinamičku biblioteku u Xcode.
 
-  ![Library](../../../../../translated_images/hr/lib.a4209b9f21ddf344.png)
+  ![Library](../../../../../translated_images/hr/lib.a4209b9f21ddf344.webp)
 
 - **c.** Koristite C primjere koda za testiranje. Također možete dodati dodatne funkcionalnosti poput ChatUI za bogatije mogućnosti.
 
@@ -162,7 +162,7 @@ Nakon preuzimanja, potrebno ga je dodati u direktorij Resources unutar projekta 
 
 Nakon što je sve postavljeno, možete pokrenuti aplikaciju i vidjeti rezultate izvođenja Phi-3-mini modela.
 
-![Running Result](../../../../../translated_images/hr/result.326a947a6a2b9c51.jpg)
+![Running Result](../../../../../translated_images/hr/result.326a947a6a2b9c51.webp)
 
 Za više primjera koda i detaljne upute, posjetite [Phi-3 Mini Samples repozitorij](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

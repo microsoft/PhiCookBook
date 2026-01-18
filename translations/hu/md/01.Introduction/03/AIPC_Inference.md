@@ -28,9 +28,9 @@ A GPU-k párhuzamos számítási képességeikről ismertek, de nem minden GPU e
 
 Az Intel® NPU eszköz egy MI inferencia gyorsító, amely az Intel kliens CPU-kkal integrált, kezdve az Intel® Core™ Ultra generációs CPU-kkal (korábban Meteor Lake néven ismert). Lehetővé teszi az energiatakarékos mesterséges neurális hálózati feladatok végrehajtását.
 
-![Latency](../../../../../translated_images/hu/aipcphitokenlatency.2be14f04f30a3bf7.png)
+![Latency](../../../../../translated_images/hu/aipcphitokenlatency.2be14f04f30a3bf7.webp)
 
-![Latency770](../../../../../translated_images/hu/aipcphitokenlatency770.e923609a57c5d394.png)
+![Latency770](../../../../../translated_images/hu/aipcphitokenlatency770.e923609a57c5d394.webp)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 A kód futtatásakor az NPU futási állapotát a Feladatkezelőben is megtekinthetjük.
 
-![NPU](../../../../../translated_images/hu/aipc_NPU.7a3cb6db47b377e1.png)
+![NPU](../../../../../translated_images/hu/aipc_NPU.7a3cb6db47b377e1.webp)
 
 ***Minták*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ez a futtatási eredmény
 
-![DML](../../../../../translated_images/hu/aipc_DML.52a44180393ab491.png)
+![DML](../../../../../translated_images/hu/aipc_DML.52a44180393ab491.webp)
 
 ***Minták*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 Az átalakított formátum így néz ki
 
-![openvino_convert](../../../../../translated_images/hu/aipc_OpenVINO_convert.9e6360b65331ffca.png)
+![openvino_convert](../../../../../translated_images/hu/aipc_OpenVINO_convert.9e6360b65331ffca.webp)
 
 Töltsd be a modell elérési útvonalait (model_dir), a kapcsolódó konfigurációkat (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), és a hardveresen gyorsított eszközöket (GPU.0) az OVModelForCausalLM segítségével
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 A kód futtatásakor a GPU futási állapotát a Feladatkezelőben is megtekinthetjük
 
-![openvino_gpu](../../../../../translated_images/hu/aipc_OpenVINO_GPU.20180edfffd91e55.png)
+![openvino_gpu](../../../../../translated_images/hu/aipc_OpenVINO_GPU.20180edfffd91e55.webp)
 
 ***Minták*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
