@@ -107,8 +107,8 @@ pip install azureml-mlflow
 
 1. Phi-3-mini-4k-instruct is a 3.8B parameters, lightweight, state-of-the-art open model built upon datasets used for Phi-2. The model belongs to the Phi-3 model family, and the Mini version comes in two variants 4K and 128K which is the context length (in tokens) it can support, we need to finetune the model for our specific purpose in order to use it. You can browse these models in the Model Catalog in the AzureML Studio, filtering by the chat-completion task. In this example, we use the Phi-3-mini-4k-instruct model. If you have opened this notebook for a different model, replace the model name and version accordingly.
 
-    > [!NOTE]
-    > the model id property of the model. This will be passed as input to the fine tuning job. This is also available as the Asset ID field in model details page in AzureML Studio Model Catalog.
+> [!NOTE]
+> the model id property of the model. This will be passed as input to the fine tuning job. This is also available as the Asset ID field in model details page in AzureML Studio Model Catalog.
 
 2. This Python script is interacting with Azure Machine Learning (Azure ML) service. Here's a breakdown of what it does:
 
@@ -279,8 +279,8 @@ The download-dataset.py is used to download the ultrachat_200k dataset and trans
 
 1. Running the below script only downloads 5% of the data. This can be increased by changing dataset_split_pc parameter to desired percenetage.
 
-    > [!NOTE]
-    > Some language models have different language codes and hence the column names in the dataset should reflect the same.
+> [!NOTE]
+> Some language models have different language codes and hence the column names in the dataset should reflect the same.
 
 1. Here is an example of how the data should look like
 The chat-completion dataset is stored in parquet format with each entry using the following schema:
