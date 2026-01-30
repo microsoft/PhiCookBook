@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T06:05:57+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "th"
-}
--->
 # การปรับแต่ง Phi-3 ด้วย Azure AI Foundry
 
 มาทำความรู้จักกับการปรับแต่งโมเดลภาษา Phi-3 Mini ของ Microsoft โดยใช้ Azure AI Foundry กัน การปรับแต่งนี้ช่วยให้คุณสามารถปรับโมเดล Phi-3 Mini ให้เหมาะกับงานเฉพาะทาง ทำให้โมเดลมีความแม่นยำและเข้าใจบริบทได้ดียิ่งขึ้น

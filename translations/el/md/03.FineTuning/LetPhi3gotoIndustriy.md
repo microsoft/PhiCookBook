@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:56:50+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "el"
-}
--->
 # **Ας γίνει το Phi-3 ειδικός στον κλάδο**
 
 Για να ενσωματώσετε το μοντέλο Phi-3 σε έναν κλάδο, πρέπει να προσθέσετε επιχειρηματικά δεδομένα του κλάδου στο μοντέλο Phi-3. Έχουμε δύο διαφορετικές επιλογές, η πρώτη είναι το RAG (Retrieval Augmented Generation) και η δεύτερη είναι το Fine Tuning.

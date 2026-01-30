@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:00:11+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "el"
-}
--->
 # **Fine-tuning του Phi-3 με το Apple MLX Framework**
 
 Μπορούμε να ολοκληρώσουμε το Fine-tuning σε συνδυασμό με το Lora μέσω της γραμμής εντολών του Apple MLX framework. (Αν θέλετε να μάθετε περισσότερα για τη λειτουργία του MLX Framework, παρακαλώ διαβάστε το [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

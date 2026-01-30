@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:55:07+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "el"
-}
--->
 # **Ποσοτικοποίηση του Phi-3.5 με το Apple MLX Framework**
 
 Το MLX είναι ένα πλαίσιο για μηχανική μάθηση σε Apple silicon, που δημιουργήθηκε από την ομάδα έρευνας μηχανικής μάθησης της Apple.

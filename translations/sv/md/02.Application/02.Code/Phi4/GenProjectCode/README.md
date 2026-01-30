@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:45:43+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "sv"
-}
--->
 ## **Använda Phi-4-mini-mm för att generera kod**
 
 Phi-4-mini fortsätter den starka kodningsförmågan hos Phi Family. Du kan använda Prompt för att ställa frågor relaterade till kodning. Självklart, efter att ha lagt till stark resonemangsförmåga, har den ännu bättre kodningskapacitet, som att generera projekt enligt krav. Till exempel, generera projekt enligt krav, såsom:

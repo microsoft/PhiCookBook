@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:32:30+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "th"
-}
--->
 # **การปรับแต่ง Phi-3 ด้วย Lora**
 
 การปรับแต่งโมเดลภาษา Phi-3 Mini ของ Microsoft โดยใช้ [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) บนชุดข้อมูลคำสั่งแชทที่กำหนดเอง
