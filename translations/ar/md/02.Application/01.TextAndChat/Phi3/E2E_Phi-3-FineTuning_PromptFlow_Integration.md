@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T08:31:04+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "ar"
-}
--->
 # تعديل وتكامل نماذج Phi-3 المخصصة مع Prompt flow
 
 يعتمد هذا المثال الشامل (E2E) على الدليل "[تعديل وتكامل نماذج Phi-3 المخصصة مع Prompt Flow: دليل خطوة بخطوة](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft Tech. يقدم العمليات الخاصة بتعديل النماذج بنعومة، نشرها، وتكامل نماذج Phi-3 المخصصة مع Prompt flow.

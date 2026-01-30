@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:10:48+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "ru"
-}
--->
 # **Инференс Phi-3 на Android**
 
 Давайте рассмотрим, как можно выполнять инференс с Phi-3-mini на устройствах Android. Phi-3-mini — это новая серия моделей от Microsoft, которая позволяет запускать большие языковые модели (LLM) на периферийных устройствах и в IoT.

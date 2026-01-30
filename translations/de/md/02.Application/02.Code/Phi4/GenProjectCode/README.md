@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:43:04+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "de"
-}
--->
 ## **Verwendung von Phi-4-mini-mm zur Codegenerierung**
 
 Phi-4-mini setzt die starken Programmierfähigkeiten der Phi-Familie fort. Du kannst Prompt verwenden, um Fragen rund ums Programmieren zu stellen. Natürlich verfügt es nach der Integration der starken logischen Fähigkeiten über noch bessere Programmierfähigkeiten, wie zum Beispiel das Erstellen von Projekten nach Anforderungen. Zum Beispiel Projekte nach Vorgaben generieren, wie:

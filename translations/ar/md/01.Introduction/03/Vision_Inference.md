@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:36:02+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "ar"
-}
--->
 # **الاستدلال باستخدام Phi-3-Vision محليًا**
 
 يتيح Phi-3-vision-128k-instruct لـ Phi-3 ليس فقط فهم اللغة، بل أيضًا رؤية العالم بصريًا. من خلال Phi-3-vision-128k-instruct، يمكننا حل مشكلات بصرية مختلفة، مثل التعرف الضوئي على الحروف (OCR)، تحليل الجداول، التعرف على الأشياء، وصف الصورة، وغيرها. يمكننا بسهولة إتمام مهام كانت تتطلب سابقًا تدريبًا مكثفًا على البيانات. فيما يلي التقنيات ذات الصلة وسيناريوهات التطبيق التي يستشهد بها Phi-3-vision-128k-instruct.

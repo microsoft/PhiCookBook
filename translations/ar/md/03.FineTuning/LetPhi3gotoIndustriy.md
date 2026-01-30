@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:51:46+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "ar"
-}
--->
 # **دع Phi-3 يصبح خبيرًا في الصناعة**
 
 لوضع نموذج Phi-3 في صناعة معينة، تحتاج إلى إضافة بيانات أعمال الصناعة إلى نموذج Phi-3. لدينا خياران مختلفان، الأول هو RAG (التوليد المعزز بالاسترجاع) والثاني هو الضبط الدقيق.

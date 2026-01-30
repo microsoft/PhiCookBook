@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:10:56+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "ar"
-}
--->
 # **الاستدلال باستخدام Phi-3 على أندرويد**
 
 دعونا نستعرض كيف يمكنك إجراء الاستدلال باستخدام Phi-3-mini على أجهزة أندرويد. Phi-3-mini هي سلسلة جديدة من النماذج من مايكروسوفت تتيح نشر نماذج اللغة الكبيرة (LLMs) على أجهزة الحافة وأجهزة إنترنت الأشياء.

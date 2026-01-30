@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:31:22+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ar"
-}
--->
 ﻿## مرحبًا بكم في مختبرات Phi باستخدام C#
 
 هناك مجموعة من المختبرات التي تعرض كيفية دمج الإصدارات المختلفة والقوية من نماذج Phi في بيئة .NET.
