@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-07-17T05:53:08+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "my"
-}
--->
 # Hugging Face မှ DataSet နှင့် ပတ်သက်သော ပုံများကို ဒေါင်းလုပ်လုပ်၍ ပုံဒေတာ စုစည်းမှု ဖန်တီးခြင်း
 
 ### အနှစ်ချုပ်

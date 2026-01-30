@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-09-12T14:50:10+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "lt"
-}
--->
 # **Pristatome Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) yra vizualinis darbo eigų automatizavimo įrankis, leidžiantis vartotojams kurti automatizuotas darbo eigas naudojant iš anksto paruoštus šablonus ir pasirinktinius jungiklius. Jis sukurtas tam, kad kūrėjai ir verslo analitikai galėtų greitai kurti automatizuotus procesus, skirtus tokioms užduotims kaip duomenų valdymas, bendradarbiavimas ir procesų optimizavimas. Naudodami Prompt Flow, vartotojai gali lengvai sujungti skirtingas paslaugas, programas ir sistemas bei automatizuoti sudėtingus verslo procesus.

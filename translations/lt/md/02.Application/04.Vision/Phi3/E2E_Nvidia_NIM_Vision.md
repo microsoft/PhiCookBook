@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-09-12T14:37:44+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "lt"
-}
--->
 ### Pavyzdinė situacija
 
 Įsivaizduokite, kad turite paveikslėlį (`demo.png`) ir norite sugeneruoti Python kodą, kuris apdoroja šį paveikslėlį ir išsaugo naują jo versiją (`phi-3-vision.jpg`). 

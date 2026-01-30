@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-07-16T16:28:59+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "my"
-}
--->
 # Olive ကို အသုံးပြုပြီး Phi3 ကို Fine-tune လုပ်ခြင်း
 
 ဤဥပမာတွင် Olive ကို အသုံးပြု၍ -

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:38:13+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "uk"
-}
--->
 # Запуск Phi-3 та Phi-4 на iOS з використанням Apple MLX Framework
 
 Цей посібник показує, як створити iOS-додаток, який запускає модель Phi-3 або Phi-4 безпосередньо на пристрої, використовуючи фреймворк Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) — це машинне навчання від Apple, оптимізоване для чипів Apple Silicon.

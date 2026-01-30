@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T16:10:13+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "lt"
-}
--->
 # **Phi šeimos kiekinimas**
 
 Modelio kiekinimas reiškia procesą, kai neuroninio tinklo modelio parametrai (pvz., svoriai ir aktyvacijos reikšmės) perskaičiuojami iš didelės reikšmių srities (dažniausiai tęstinės reikšmių srities) į mažesnę galutinę reikšmių sritį. Ši technologija gali sumažinti modelio dydį ir skaičiavimo sudėtingumą bei pagerinti modelio veikimo efektyvumą išteklių ribotose aplinkose, tokiose kaip mobilieji įrenginiai arba įterptinės sistemos. Modelio kiekinimas pasiekia suspaudimą sumažindamas parametrų tikslumą, tačiau taip pat įveda tam tikrą tikslumo nuostolį. Todėl kiekinimo procese būtina subalansuoti modelio dydį, skaičiavimo sudėtingumą ir tikslumą. Įprasti kiekinimo metodai apima fiksuoto kablelio kiekinimą, plaukiojančio kablelio kiekinimą ir kt. Galite pasirinkti tinkamą kiekinimo strategiją pagal konkretų scenarijų ir poreikius.

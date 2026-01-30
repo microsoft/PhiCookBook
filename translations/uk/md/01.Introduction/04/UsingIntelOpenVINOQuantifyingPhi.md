@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:05:06+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "uk"
-}
--->
 # **Квантизація Phi-3.5 за допомогою Intel OpenVINO**
 
 Intel — це найтрадиційніший виробник процесорів з великою кількістю користувачів. З розвитком машинного навчання та глибинного навчання Intel також приєдналася до змагання за прискорення ШІ. Для інференсу моделей Intel використовує не лише GPU та CPU, а й NPU.

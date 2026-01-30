@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-09-12T14:50:56+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "lt"
-}
--->
 # **Pristatykite atsakingą dirbtinį intelektą**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) yra iniciatyva, skirta padėti kūrėjams ir organizacijoms kurti dirbtinio intelekto sistemas, kurios būtų skaidrios, patikimos ir atsakingos. Ši iniciatyva teikia rekomendacijas ir išteklius, padedančius kurti atsakingus dirbtinio intelekto sprendimus, atitinkančius etikos principus, tokius kaip privatumas, sąžiningumas ir skaidrumas. Taip pat aptarsime kai kuriuos iššūkius ir geriausią praktiką, susijusią su atsakingo dirbtinio intelekto sistemų kūrimu.

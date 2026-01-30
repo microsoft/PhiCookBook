@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:49:37+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "my"
-}
--->
 # **Azure Machine Learning Service ကို မိတ်ဆက်ခြင်း**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) သည် machine learning (ML) ပရောဂျက်၏ ဘဝစက်ဝန်းကို မြန်ဆန်စွာ စီမံခန့်ခွဲရန်နှင့် အရှိန်မြှင့်ရန် အသုံးပြုနိုင်သော cloud ဝန်ဆောင်မှုတစ်ခုဖြစ်သည်။

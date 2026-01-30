@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:29:11+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "my"
-}
--->
 # **Azure AI Foundry တွင် Phi-3 ကို အသုံးပြုခြင်း**
 
 Generative AI တိုးတက်လာခြင်းနှင့်အတူ၊ LLM နှင့် SLM များ၊ စီးပွားရေးဒေတာပေါင်းစည်းခြင်း၊ fine-tuning/RAG လုပ်ငန်းစဉ်များ၊ LLM နှင့် SLM ပေါင်းစည်းပြီးနောက် စီးပွားရေးလုပ်ငန်းအမျိုးမျိုးကို အကဲဖြတ်ခြင်းတို့ကို တစ်ခုတည်းသော ပလက်ဖောင်းဖြင့် စီမံခန့်ခွဲနိုင်ရန် မျှော်လင့်ထားပါသည်။ ထို့ကြောင့် generative AI ကို Smart application များအဖြစ် ပိုမိုကောင်းမွန်စွာ အကောင်အထည်ဖော်နိုင်ပါသည်။ [Azure AI Foundry](https://ai.azure.com) သည် စီးပွားရေးအဆင့် generative AI application ပလက်ဖောင်းတစ်ခုဖြစ်သည်။

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:26:43+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "lt"
-}
--->
 # Koreguokite ir integruokite pritaikytus Phi-3 modelius su Prompt flow Azure AI Foundry
 
 Šis pavyzdys nuo pradžios iki pabaigos (E2E) paremtas „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)“ vadovu iš Microsoft Tech Community. Jis supažindina su koregavimo, diegimo ir pritaikytų Phi-3 modelių integravimo su Prompt flow Azure AI Foundry procesais. Skirtingai nuo E2E pavyzdžio „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)“, kuriame kodas vykdytas vietoje, ši pamoka visiškai skirta modelio koregavimui ir integravimui Azure AI / ML Studio aplinkoje.

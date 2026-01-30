@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-09-12T14:29:52+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
-  "language_code": "lt"
-}
--->
 # Įvertinkite pritaikytą Phi-3 / Phi-3.5 modelį Azure AI Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų
 
 Šis nuo pradžios iki pabaigos (E2E) pavyzdys yra pagrįstas vadovu "[Įvertinkite pritaikytus Phi-3 / 3.5 modelius Azure AI Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" iš Microsoft Tech Community.

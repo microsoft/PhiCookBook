@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:47:31+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "uk"
-}
--->
 # Внесок у проект
 
 Цей проєкт вітає внески та пропозиції. Більшість внесків вимагають вашої згоди з Угодою про ліцензію для контрибуторів (CLA), яка підтверджує, що ви маєте право і фактично надаєте нам права на використання вашого внеску. Деталі можна знайти на [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)

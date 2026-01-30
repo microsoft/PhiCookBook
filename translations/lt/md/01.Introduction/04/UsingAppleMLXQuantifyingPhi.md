@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-09-12T14:52:18+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "lt"
-}
--->
 # **Phi-3.5 kvantavimas naudojant Apple MLX Framework**
 
 MLX yra masyvo pagrindu sukurtas sisteminis įrankis mašininio mokymosi tyrimams su Apple silicio lustais, sukurtas Apple mašininio mokymosi tyrimų komandos.

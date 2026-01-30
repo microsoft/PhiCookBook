@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-09-12T14:53:39+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "lt"
-}
--->
 # **Inference Phi-3 iOS sistemoje**
 
 Phi-3-mini yra nauja Microsoft modelių serija, leidžianti diegti didelius kalbos modelius (LLMs) kraštiniuose įrenginiuose ir IoT įrenginiuose. Phi-3-mini yra prieinamas iOS, Android ir kraštinių įrenginių diegimui, suteikiant galimybę generatyvųjį AI naudoti BYOD aplinkose. Toliau pateiktas pavyzdys parodo, kaip diegti Phi-3-mini iOS sistemoje.
