@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:39:07+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "tr"
-}
--->
 # **Microsoft Phi-3 Ailesi ile Kendi Visual Studio Code GitHub Copilot Chat'inizi Oluşturun**
 
 GitHub Copilot Chat'teki workspace agent'ı kullandınız mı? Kendi ekibinizin kod ajanını oluşturmak ister misiniz? Bu uygulamalı laboratuvar, açık kaynak modeli birleştirerek kurumsal düzeyde bir kod iş ajanı oluşturmayı hedefliyor.

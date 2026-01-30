@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:36:21+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "pl"
-}
--->
 ## Witamy w laboratoriach Phi z użyciem C#
 
 Dostępny jest zestaw laboratoriów, które pokazują, jak zintegrować różne wersje potężnych modeli Phi w środowisku .NET.

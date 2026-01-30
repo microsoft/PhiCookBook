@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-07-17T09:11:33+00:00",
-  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
-  "language_code": "tr"
-}
--->
 ## VS Code için AI Araç Setine Hoş Geldiniz
 
 [AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main), Azure AI Studio Kataloğu ve Hugging Face gibi diğer kataloglardan çeşitli modelleri bir araya getirir. Araç seti, üretken AI araçları ve modelleriyle AI uygulamaları geliştirmek için yaygın geliştirme görevlerini şu şekilde kolaylaştırır:

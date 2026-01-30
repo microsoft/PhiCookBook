@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:17:23+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "tr"
-}
--->
 # **Phi-4-mini ONNX ile Sohbet**
 
 ***ONNX***, makine öğrenimi modellerini temsil etmek için oluşturulmuş açık bir formattır. ONNX, makine öğrenimi ve derin öğrenme modellerinin yapı taşları olan ortak bir operatör seti ve AI geliştiricilerinin modelleri çeşitli frameworkler, araçlar, çalışma zamanları ve derleyicilerle kullanabilmesini sağlayan ortak bir dosya formatı tanımlar.

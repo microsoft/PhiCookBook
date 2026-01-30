@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:55:49+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "tr"
-}
--->
 ### Örnek Senaryo
 
 Elinizde bir resim (`demo.png`) olduğunu ve bu resmi işleyip yeni bir versiyonunu (`phi-3-vision.jpg`) kaydeden Python kodu oluşturmak istediğinizi hayal edin.

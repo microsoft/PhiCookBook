@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:43:14+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "tr"
-}
--->
 # **OnnxRuntime GenAI Windows GPU için Kılavuz**
 
 Bu kılavuz, Windows üzerinde GPU ile ONNX Runtime (ORT) kurulum ve kullanım adımlarını sağlar. Modelleriniz için GPU hızlandırmasını kullanarak performans ve verimliliği artırmanıza yardımcı olmak için tasarlanmıştır.

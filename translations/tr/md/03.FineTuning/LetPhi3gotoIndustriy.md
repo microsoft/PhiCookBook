@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:56:35+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "tr"
-}
--->
 # **Phi-3'ü bir sektör uzmanı haline getirin**
 
 Phi-3 modelini bir sektöre entegre etmek için, sektöre ait iş verilerini Phi-3 modeline eklemeniz gerekir. İki farklı seçeneğimiz var: ilki RAG (Retrieval Augmented Generation), ikincisi ise Fine Tuning (İnce Ayar).
