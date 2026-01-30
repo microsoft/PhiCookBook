@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-10-11T12:05:53+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "et"
-}
--->
 # **Juhend OnnxRuntime GenAI Windows GPU jaoks**
 
 See juhend sisaldab samme ONNX Runtime (ORT) seadistamiseks ja kasutamiseks GPU-dega Windowsis. Selle eesmärk on aidata teil kasutada GPU kiirendust oma mudelite jaoks, parandades jõudlust ja efektiivsust.

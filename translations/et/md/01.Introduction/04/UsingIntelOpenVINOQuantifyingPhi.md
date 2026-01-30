@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-10-11T12:27:41+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "et"
-}
--->
 # **Phi-3.5 kvantiseerimine Intel OpenVINO abil**
 
 Intel on traditsiooniline CPU tootja, millel on palju kasutajaid. Masinõppe ja süvaõppe populaarsuse kasvuga on Intel samuti liitunud AI kiirenduse võistlusega. Mudelite järelduste tegemiseks kasutab Intel mitte ainult GPU-sid ja CPU-sid, vaid ka NPU-sid.

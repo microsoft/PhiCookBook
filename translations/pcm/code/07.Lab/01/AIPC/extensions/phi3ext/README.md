@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-12-21T15:53:11+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "pcm"
-}
--->
 # phi3ext README
 
 Dis na your extension "phi3ext" README. After you don write small description, we recommend say you include di following sections.

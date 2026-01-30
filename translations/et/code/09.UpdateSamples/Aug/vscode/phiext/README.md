@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-10-11T11:37:52+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "et"
-}
--->
 # phiext README
 
 See on teie laienduse "phiext" README. Pärast lühikese kirjelduse kirjutamist soovitame lisada järgmised jaotised.

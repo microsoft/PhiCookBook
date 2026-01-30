@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-10-11T12:12:00+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "et"
-}
--->
 # **Phi-3 kasutamine Azure AI Foundry platvormil**
 
 Generatiivse tehisintellekti arendamisega loodame kasutada ühtset platvormi, et hallata erinevaid LLM- ja SLM-mudeleid, integreerida ettevõtte andmeid, teostada peenhäälestamist/RAG-operatsioone ning hinnata erinevate ettevõtete tegevusi pärast LLM- ja SLM-mudelite integreerimist. See võimaldab generatiivsel tehisintellektil paremini rakenduda nutikates lahendustes. [Azure AI Foundry](https://ai.azure.com) on ettevõtte tasemel generatiivse tehisintellekti rakendusplatvorm.

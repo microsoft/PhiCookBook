@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-10-11T12:05:17+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "ta"
-}
--->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 இந்த குறியீடு ஒரு மாதிரியை OpenVINO வடிவத்திற்கு ஏற்றுமதி செய்து, அதை ஏற்றுமதி செய்து, கொடுக்கப்பட்ட உந்துதலுக்கு பதிலளிக்க பயன்படுத்துகிறது.

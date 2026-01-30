@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-12-21T19:09:38+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "pcm"
-}
--->
 # **How to take use Phi-3 inside Azure AI Foundry**
 
 As Generative AI dey develop, we wan use one platform wey go manage different LLM and SLM, enterprise data integration, fine-tuning/RAG operations, and to evaluate different enterprise business dem after we don join LLM and SLM, make generative AI fit enter Smart applications better. [Azure AI Foundry](https://ai.azure.com) na enterprise-level generative AI application platform.

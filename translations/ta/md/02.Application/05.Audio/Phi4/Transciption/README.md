@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-10-11T12:11:21+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ta"
-}
--->
 ## **Phi-4-multimodal பயன்படுத்தி ஆடியோ உரைகளை எடுக்குதல்**
 
 Phi-4-multimodal என்பது முழுமையான முறைமையான மாதிரியாகும், இது உரை மற்றும் படங்களுடன் ஆடியோவையும் பயன்படுத்த முடியும். அதை எப்படி பயன்படுத்துவது என்பதை பார்ப்போம்.

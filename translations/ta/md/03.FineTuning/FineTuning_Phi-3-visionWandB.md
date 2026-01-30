@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
-  "translation_date": "2025-10-11T11:45:51+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
-  "language_code": "ta"
-}
--->
 # Phi-3-Vision-128K-Instruct திட்டத்தின் மேலோட்டம்
 
 ## மாடல்

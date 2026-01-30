@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-10-11T11:42:10+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
-  "language_code": "et"
-}
--->
 ## Peenhäälestamise stsenaariumid
 
 ![Peenhäälestamine Microsofti teenustega](../../../../imgs/03/intro/FinetuningwithMS.png)

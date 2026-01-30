@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-10-11T11:43:42+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "ta"
-}
--->
 **Phi-3 மாடலை QLoRA மூலம் நன்றாக அமைத்தல்**
 
 Microsoft இன் Phi-3 Mini மொழி மாடலை [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) பயன்படுத்தி நன்றாக அமைத்தல்.

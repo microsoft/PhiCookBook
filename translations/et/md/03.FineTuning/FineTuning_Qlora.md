@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-10-11T11:43:49+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "et"
-}
--->
 **Phi-3 peenhäälestamine QLoRA-ga**
 
 Microsofti keelemudeli Phi-3 Mini peenhäälestamine, kasutades [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).

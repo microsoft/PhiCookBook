@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T14:41:44+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "ta"
-}
--->
 ## Kaito உடன் முடிவெடுப்பு
 
 [Kaito](https://github.com/Azure/kaito) என்பது Kubernetes குழாயில் AI/ML முடிவெடுப்பு மொற்சியை இயக்குவதை தானாகச் செய்யும் ஓர் آپரேட்டர் ஆகும்.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-10-11T11:45:19+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "ta"
-}
--->
 # **Phi-3 மாடலை தொழில்துறை நிபுணராக மாற்றுங்கள்**
 
 Phi-3 மாடலை ஒரு தொழில்துறையில் கொண்டு வர, தொழில்துறை வணிக தரவுகளை Phi-3 மாடலுடன் சேர்க்க வேண்டும். இதற்கு இரண்டு விதமான விருப்பங்கள் உள்ளன: முதலில் RAG (Retrieval Augmented Generation) மற்றும் இரண்டாவது Fine Tuning.

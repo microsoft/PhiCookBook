@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-12-22T02:01:48+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "pcm"
-}
--->
 # **Quantizing Phi-3.5 wit Intel OpenVINO**
 
 Intel na di most traditional CPU manufacturer wey get plenty users. As machine learning and deep learning don dey rise, Intel don join di competition for AI acceleration. For model inference, Intel no dey use only GPUs and CPUs, e still dey use NPUs.

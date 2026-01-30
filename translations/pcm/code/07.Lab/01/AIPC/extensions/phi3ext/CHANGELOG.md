@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-12-21T15:48:52+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
-  "language_code": "pcm"
-}
--->
 # Change log
 
 All the important changes wey happen for the "phi3ext" extension dem go dey record for this file.

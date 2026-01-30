@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-10-11T12:17:59+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "ta"
-}
--->
 # **Azure AI Foundry பயன்படுத்தி மதிப்பீடு செய்யுதல்**
 
 ![aistudo](../../../../../imgs/01/05/AIFoundry/AIFoundry.png)

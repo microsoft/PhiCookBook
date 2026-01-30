@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-10-11T11:53:44+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "ta"
-}
--->
 ### உதாரண சூழல்
 
 உங்களிடம் ஒரு படம் (`demo.png`) உள்ளது என்று கற்பனை செய்யுங்கள், அதை செயலாக்கி புதிய பதிப்பாக (`phi-3-vision.jpg`) சேமிக்க Python குறியீட்டை உருவாக்க விரும்புகிறீர்கள்.

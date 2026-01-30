@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-10-11T11:44:15+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "et"
-}
--->
 # **Phi-3 peenhäälestamine Microsoft Olive'iga**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) on lihtsasti kasutatav riistvarateadlik mudeli optimeerimise tööriist, mis koondab tööstuse juhtivad tehnikad mudeli tihendamise, optimeerimise ja kompileerimise valdkonnas.
