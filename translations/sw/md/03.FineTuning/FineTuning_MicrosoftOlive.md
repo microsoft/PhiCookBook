@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:49:30+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "sw"
-}
--->
 # **Kurekebisha Phi-3 kwa Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ni chombo rahisi cha kuboresha modeli kinachojali vifaa ambacho huunganisha mbinu bora za sekta katika usimbuaji, uboreshaji, na mkusanyiko wa modeli.
