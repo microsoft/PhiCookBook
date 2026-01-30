@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:45:16+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "vi"
-}
--->
 # **Hướng dẫn sử dụng OnnxRuntime GenAI trên Windows GPU**
 
 Hướng dẫn này cung cấp các bước để thiết lập và sử dụng ONNX Runtime (ORT) với GPU trên Windows. Mục đích là giúp bạn tận dụng khả năng tăng tốc GPU cho các mô hình của mình, cải thiện hiệu suất và hiệu quả.

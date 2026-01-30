@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-07-17T03:27:50+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
-  "language_code": "he"
-}
--->
 # **צור סוכן Visual Studio Code Chat Copilot משלך עם Phi-3.5 של GitHub Models**
 
 האם אתה משתמש ב-Visual Studio Code Copilot? במיוחד בצ'אט, ניתן להשתמש בסוכנים שונים כדי לשפר את היכולת ליצור, לכתוב ולתחזק פרויקטים ב-Visual Studio Code. Visual Studio Code מספק API שמאפשר לחברות ויחידים ליצור סוכנים שונים בהתבסס על העסק שלהם כדי להרחיב את היכולות בתחומים קנייניים שונים. במאמר זה נתמקד ב-**Phi-3.5-mini-instruct (128k)** ו-**Phi-3.5-vision-instruct (128k)** של GitHub Models כדי ליצור את סוכן Visual Studio Code משלך.

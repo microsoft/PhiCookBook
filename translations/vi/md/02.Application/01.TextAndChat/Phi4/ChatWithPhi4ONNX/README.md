@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:18:23+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "vi"
-}
--->
 # **Trò chuyện với Phi-4-mini ONNX**
 
 ***ONNX*** là một định dạng mở được xây dựng để biểu diễn các mô hình học máy. ONNX định nghĩa một tập hợp các toán tử chung - những thành phần cơ bản của các mô hình học máy và học sâu - cùng với một định dạng tệp chung giúp các nhà phát triển AI có thể sử dụng mô hình với nhiều framework, công cụ, runtime và trình biên dịch khác nhau.

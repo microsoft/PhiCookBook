@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:01:39+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "vi"
-}
--->
 # **Tinh chỉnh Phi-3 với Apple MLX Framework**
 
 Chúng ta có thể hoàn thành việc tinh chỉnh kết hợp với Lora thông qua dòng lệnh của Apple MLX framework. (Nếu bạn muốn tìm hiểu thêm về cách hoạt động của MLX Framework, vui lòng đọc [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))

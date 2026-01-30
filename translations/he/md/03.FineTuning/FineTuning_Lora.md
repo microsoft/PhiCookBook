@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:33:49+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "he"
-}
--->
 # **כיוונון עדין של Phi-3 עם Lora**
 
 כיוונון עדין של מודל השפה Phi-3 Mini של מיקרוסופט באמצעות [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) על מערך נתונים מותאם להוראות שיחה.

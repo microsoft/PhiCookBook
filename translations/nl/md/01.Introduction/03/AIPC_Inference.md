@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:03:47+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "nl"
-}
--->
 # **Inference Phi-3 in AI PC**
 
 Met de vooruitgang van generatieve AI en de verbetering van de hardwaremogelijkheden van edge-apparaten, kunnen steeds meer generatieve AI-modellen nu worden geïntegreerd in de Bring Your Own Device (BYOD)-apparaten van gebruikers. AI PC's behoren tot deze modellen. Vanaf 2024 werken Intel, AMD en Qualcomm samen met pc-fabrikanten om AI PC's te introduceren die de implementatie van gelokaliseerde generatieve AI-modellen via hardware-aanpassingen mogelijk maken. In deze bespreking richten we ons op Intel AI PC's en onderzoeken we hoe Phi-3 op een Intel AI PC kan worden ingezet.

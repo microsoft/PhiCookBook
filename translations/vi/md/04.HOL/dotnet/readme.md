@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:39:15+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "vi"
-}
--->
 ﻿## Chào mừng đến với các phòng thí nghiệm Phi sử dụng C#
 
 Có một loạt các phòng thí nghiệm trình bày cách tích hợp các phiên bản mạnh mẽ khác nhau của các mô hình Phi trong môi trường .NET.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:02:55+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "vi"
-}
--->
 # **Lượng tử hóa Phi-3.5 sử dụng Intel OpenVINO**
 
 Intel là nhà sản xuất CPU truyền thống với nhiều người dùng. Với sự phát triển của học máy và học sâu, Intel cũng đã tham gia vào cuộc đua tăng tốc AI. Đối với suy luận mô hình, Intel không chỉ sử dụng GPU và CPU mà còn sử dụng NPU.

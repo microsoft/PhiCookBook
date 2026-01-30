@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T06:08:21+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "nl"
-}
--->
 # Fine-tunen van Phi-3 met Azure AI Foundry
 
 Laten we ontdekken hoe je het taalmodel Phi-3 Mini van Microsoft kunt fine-tunen met Azure AI Foundry. Fine-tunen stelt je in staat om Phi-3 Mini aan te passen aan specifieke taken, waardoor het model krachtiger en beter afgestemd op de context wordt.
