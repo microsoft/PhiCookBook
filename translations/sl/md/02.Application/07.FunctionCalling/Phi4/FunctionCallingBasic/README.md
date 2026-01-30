@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:17:19+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "sl"
-}
--->
 ## **Klic funkcij v Phi-4-mini**
 
 Klic funkcij se je prvič pojavil v družini Phi Family, zdaj pa ga lahko uporabljate tudi v Phi-4-mini.

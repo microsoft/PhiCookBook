@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:21:10+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "hr"
-}
--->
 **Fino podešavanje Phi-3 s QLoRA**
 
 Fino podešavanje Microsoftovog jezičnog modela Phi-3 Mini koristeći [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).

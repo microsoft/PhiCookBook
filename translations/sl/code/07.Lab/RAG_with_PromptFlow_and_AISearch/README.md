@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-16T17:11:13+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "sl"
-}
--->
 ## RAG z PromptFlow in AISearch
 
 V tem primeru bomo implementirali aplikacijo Retrieval Augmented Generation (RAG), ki uporablja Phi3 kot SLM, AI Search kot vectorDB in Prompt Flow kot orodje za nizko-kodno orkestracijo.

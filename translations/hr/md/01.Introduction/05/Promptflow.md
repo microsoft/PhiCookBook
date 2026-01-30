@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:45:19+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "hr"
-}
--->
 # **Uvod u Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) je vizualni alat za automatizaciju tijeka rada koji korisnicima omogućuje kreiranje automatiziranih tijekova rada koristeći unaprijed izrađene predloške i prilagođene konektore. Dizajniran je kako bi programerima i poslovnim analitičarima omogućio brzo izgradnju automatiziranih procesa za zadatke poput upravljanja podacima, suradnje i optimizacije procesa. Uz Prompt Flow, korisnici mogu jednostavno povezivati različite usluge, aplikacije i sustave te automatizirati složene poslovne procese.
