@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e4e010400c2918557b36bb932a14004c",
-  "translation_date": "2025-07-17T09:27:35+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
-  "language_code": "ja"
-}
--->
 ## ファインチューニングとRAGの違い
 
 ## Retrieval Augmented Generation

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:40:25+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "ja"
-}
--->
 # **Nvidia JetsonでのPhi-3推論**
 
 Nvidia JetsonはNvidiaが提供する組み込みコンピューティングボードのシリーズです。Jetson TK1、TX1、TX2の各モデルには、ARMアーキテクチャのCPUを統合したNvidia製のTegraプロセッサ（またはSoC）が搭載されています。Jetsonは低消費電力システムであり、機械学習アプリケーションの高速化を目的としています。Nvidia Jetsonは、あらゆる業界で画期的なAI製品を開発するプロの開発者や、実践的なAI学習や素晴らしいプロジェクト作成を行う学生や愛好家に利用されています。SLMはJetsonのようなエッジデバイスに展開され、産業向けの生成AIアプリケーションシナリオのより良い実装を可能にします。

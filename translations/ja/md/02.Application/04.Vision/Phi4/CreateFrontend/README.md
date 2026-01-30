@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:32+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "ja"
-}
--->
 ## **Phi-4-multimodalを使って画像を読み取りコードを生成する**
 
 Phi-4-multimodalは強力な画像認識機能を持っています。Pythonを使って以下の機能を実装してみましょう。画像はChatGPTのページです。

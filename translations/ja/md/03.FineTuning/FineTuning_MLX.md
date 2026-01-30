@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T07:58:01+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ja"
-}
--->
 # **Apple MLXフレームワークを使ったPhi-3のファインチューニング**
 
 Apple MLXフレームワークのコマンドラインを通じて、Loraと組み合わせたファインチューニングを完了できます。（MLXフレームワークの操作について詳しく知りたい場合は、[Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)を参照してください）

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:28:53+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "ja"
-}
--->
 # iOSでApple MLXフレームワークを使ってPhi-3およびPhi-4を実行する
 
 このチュートリアルでは、AppleのMLXフレームワークを使って、Phi-3またはPhi-4モデルをiOSデバイス上で動作させるアプリケーションの作成方法を説明します。[MLX](https://opensource.apple.com/projects/mlx/)はApple Siliconチップに最適化されたAppleの機械学習フレームワークです。

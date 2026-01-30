@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:08:03+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "ja"
-}
--->
 Phi-3-miniの文脈では、推論とはモデルを使って入力データに基づき予測や出力を生成するプロセスを指します。ここではPhi-3-miniとその推論機能について詳しく説明します。
 
 Phi-3-miniはMicrosoftがリリースしたPhi-3シリーズの一部です。これらのモデルは、小型言語モデル（SLM）の可能性を再定義することを目的としています。

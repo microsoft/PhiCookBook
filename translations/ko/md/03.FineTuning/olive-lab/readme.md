@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-07-17T10:15:18+00:00",
-  "source_file": "md/03.FineTuning/olive-lab/readme.md",
-  "language_code": "ko"
-}
--->
 # Lab. 온디바이스 추론을 위한 AI 모델 최적화
 
 ## 소개

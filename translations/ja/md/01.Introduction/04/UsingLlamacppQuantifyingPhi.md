@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-07-16T22:07:10+00:00",
-  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
-  "language_code": "ja"
-}
--->
 # **llama.cppを使ったPhiファミリーの量子化**
 
 ## **llama.cppとは**

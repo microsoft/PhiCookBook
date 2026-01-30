@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:08:18+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "ko"
-}
--->
 ## Azure ML 시스템 레지스트리의 chat-completion 컴포넌트를 사용해 모델 미세 조정하기
 
 이 예제에서는 ultrachat_200k 데이터셋을 사용해 Phi-3-mini-4k-instruct 모델을 두 사람 간의 대화를 완성하는 작업에 맞게 미세 조정하는 과정을 다룹니다.

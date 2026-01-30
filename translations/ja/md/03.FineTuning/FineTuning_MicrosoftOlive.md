@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:40:53+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "ja"
-}
--->
 # **Microsoft OliveによるPhi-3のファインチューニング**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo)は、モデル圧縮、最適化、コンパイルにおける業界最先端の技術を統合した、使いやすいハードウェア対応のモデル最適化ツールです。

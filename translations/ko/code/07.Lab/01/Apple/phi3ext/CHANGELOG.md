@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-16T16:48:16+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
-  "language_code": "ko"
-}
--->
 # 변경 로그
 
 모든 "phi3ext" 확장의 주요 변경 사항은 이 파일에 기록됩니다.

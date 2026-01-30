@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:20:43+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "ja"
-}
--->
 # **Azure AI FoundryでのPhi-3の利用**
 
 生成AIの発展に伴い、異なるLLMやSLMの管理、企業データ統合、ファインチューニングやRAG操作、LLMとSLMを統合した後の企業ビジネスの評価などを一元的に行えるプラットフォームを目指しています。これにより、生成AIを活用したスマートなアプリケーションの実現がより容易になります。[Azure AI Foundry](https://ai.azure.com)は、企業向けの生成AIアプリケーションプラットフォームです。

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:12+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ko"
-}
--->
 ## **Phi-4-multimodal을 사용한 오디오 전사 추출**
 
 Phi-4-multimodal은 텍스트와 이미지뿐만 아니라 오디오도 활용할 수 있는 풀모달 모델입니다. 어떻게 사용하는지 살펴보겠습니다.

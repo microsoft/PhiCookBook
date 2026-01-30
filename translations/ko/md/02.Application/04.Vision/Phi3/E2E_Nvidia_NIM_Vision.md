@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:53:52+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "ko"
-}
--->
 ### 예제 시나리오
 
 `demo.png`라는 이미지가 있고, 이 이미지를 처리한 후 새로운 버전(`phi-3-vision.jpg`)으로 저장하는 Python 코드를 생성하고 싶다고 가정해봅시다.

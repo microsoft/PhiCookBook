@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-07-17T02:50:57+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
-  "language_code": "ko"
-}
--->
 # **Microsoft Phi-3.5 tflite를 사용해 Android 앱 만들기**
 
 이 샘플은 Microsoft Phi-3.5 tflite 모델을 사용하는 Android 예제입니다.

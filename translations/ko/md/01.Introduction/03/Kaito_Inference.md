@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T16:27:29+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "ko"
-}
--->
 ## Kaito를 이용한 추론
 
 [Kaito](https://github.com/Azure/kaito)는 Kubernetes 클러스터에서 AI/ML 추론 모델 배포를 자동화하는 오퍼레이터입니다.

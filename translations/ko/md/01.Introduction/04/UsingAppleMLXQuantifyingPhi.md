@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:53:39+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ko"
-}
--->
 # **Apple MLX 프레임워크를 이용한 Phi-3.5 양자화**
 
 MLX는 Apple 실리콘에서 머신러닝 연구를 위해 Apple 머신러닝 연구팀이 만든 배열 프레임워크입니다.
