@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-12-22T02:08:29+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "te"
-}
--->
 # **Generative AI extensions for onnxruntime ఉపయోగించి Phi కుటుంబాన్ని క్వాంటైజ్ చేయడం**
 
 ## **Generative AI extensions for onnxruntime అంటే ఏమిటి**

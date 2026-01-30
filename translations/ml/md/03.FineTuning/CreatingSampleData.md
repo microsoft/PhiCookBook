@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-12-21T17:59:21+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "ml"
-}
--->
 # Hugging Face-ൽ നിന്നുള്ള ഡാറ്റാസെറ്റ് ഒപ്പം ബന്ധപ്പെട്ട ചിത്രങ്ങൾ ഡൗൺലോഡ് ചെയ്ത് ഇമേജ് ഡാറ്റാസെറ്റ് സൃഷ്ടിക്കുക
 
 

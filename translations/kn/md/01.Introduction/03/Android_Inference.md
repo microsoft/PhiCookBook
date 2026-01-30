@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-12-22T01:23:52+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "kn"
-}
--->
 # **Android ನಲ್ಲಿ Phi-3 ಇನ್ಫರೆನ್ಸ್**
 
 ನಾವು Android ಸಾಧನಗಳಲ್ಲಿ Phi-3-mini ಬಳಸಿ ನೀವು ಹೇಗೆ ಇನ್ಫರೆನ್ಸ್ ನಡೆಸಬಹುದು ಎಂದು ನೋಡೋಣ. Phi-3-mini Microsoft ನಿಂದ ಹೊಸ ಮಾದರಿಗಳ ಸರಣಿಯಾಗಿದೆ, ಇದು ಎಡ್ಜ್ ಮತ್ತು IoT ಸಾಧನಗಳಲ್ಲಿ ದೊಡ್ಡ ಭಾಷಾ ಮಾದರಿಗಳು (LLMs) ಅನ್ನು ನಿಯೋಜಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.

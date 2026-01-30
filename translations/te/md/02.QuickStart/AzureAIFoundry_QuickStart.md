@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-12-21T19:11:30+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "te"
-}
--->
 # **Azure AI Foundryలో Phi-3 ను ఉపయోగించడం**
 
 Generative AI అభివృద్ధితో, మేము వివిధ LLM మరియు SLM, సంస్థా డేటా ఇంటిగ్రేషన్, ఫైన్‑ట్యూనింగ్/RAG ఆపరేషన్లు మరియు LLM మరియు SLM సమీకరణ తరువాత వివిధ సంస్థల వ్యాపారాల మూల్యాంకనాన్ని నిర్వహించడానికి ఒక ఐక్య వేదికను ఉపయోగించాలని ఆశిస్తున్నాం, తద్వారా జనరేటివ్ AI ద్వారా స్మార్ట్ అప్లికేషన్లు మెరుగ్గా అమలు చేయబడగలవు. [Azure AI Foundry](https://ai.azure.com) ఒక సంస్థాత్మక స్థాయి జనరేటివ్ AI అప్లికేషన్ వేదిక.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-12-21T17:18:19+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "te"
-}
--->
 **Phi-3 ను QLoRA తో ఫైన్-ట్యూనింగ్**
 
 Microsoft యొక్క Phi-3 Mini భాషా మోడల్‌ను [QLoRA (క్వాంటం లో-ర్యాంక్ అనుకరణ)](https://github.com/artidoro/qlora) ఉపయోగించి ఫైన్-ట్యూన్ చేయడం.

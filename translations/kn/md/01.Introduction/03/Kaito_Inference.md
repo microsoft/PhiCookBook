@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T15:15:01+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "kn"
-}
--->
 ## ರೈತೊ ಸಹಿತ ನಿರ್ಣಯ 
 
 [ಕೈತೊ](https://github.com/Azure/kaito) ಎಂಬುದು ಕುಬರ್‌ನೆಟೀಸ್ ಕ್ಲಸ್ಟರ್‌ನಲ್ಲಿ AI/ML ನಿರ್ಣಯ ಮಾದರಿ ನಿಯೋಜನೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತಗೊಳಿಸುವ ಕಾರ್ಯಾಚರಣೆಗಾರನು.

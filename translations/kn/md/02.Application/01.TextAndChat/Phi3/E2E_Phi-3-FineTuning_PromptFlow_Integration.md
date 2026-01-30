@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T15:11:15+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "kn"
-}
--->
 # ಕಸ್ಟಮ್ ಫೈ-3 ಮಾದರಿಗಳನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿ ಪ್ರಾಂಪ್ಟ್ ಫ್ಲೋೊಂದಿಗೆ ಇंटीಗ್ರೆಟ್ ಮಾಡುವುದು
 
 ಈ ಎಂಡ್-ಟು-ಎಂಡ್ (E2E) ಮಾದರಿಯು ಮೈಕ್ರೋಸಾಫ್ಟ್ ಟೆಕ್ ಸಮುದಾಯದಿಂದ "[ಫೈನ್-ಟ್ಯೂನ್ ಮತ್ತು ಕಸ್ಟಮ್ ಫೈ-3 ಮಾದರಿಗಳನ್ನು ಪ್ರಾಂಪ್ಟ್ ಫ್ಲೋೊಂದಿಗೆ ಸಂಯೋಜಿಸುವುದು: ಹಂತ ಬದುಕು](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" ಎಂಬ ಮಾರ್ಗಸೂಚಿಯ ಆಧಾರದಲ್ಲಿದೆ. ಇದು ಫೈನ್-ಟ್ಯೂನಿಂಗ್, ನಿಯೋಜನೆ ಮತ್ತು ಪ್ರಾಂಪ್ಟ್ ಫ್ಲೋ ಜೊತೆಗೆ ಕಸ್ಟಮ್ ಫೈ-3 ಮಾದರಿಗಳನ್ನು ಸಂಯೋಜಿಸುವ ಪ್ರಕ್ರಿಯೆಗಳನ್ನು ಪರಿಚಯಿಸುತ್ತದೆ.

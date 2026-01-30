@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-12-21T22:28:30+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "te"
-}
--->
 ## C# ఉపయోగించి Phi ల్యాబ్స్‌కు స్వాగతం
 
 .NET పరిసరాలలో వివిధ శక్తివంతమైన Phi మోడళ్లను ఏలా సమీకరించాలో చూపిస్తూ ల్యాబ్స్‌ యొక్క ఒక ఎంపిక అందుబాటులో ఉంది.

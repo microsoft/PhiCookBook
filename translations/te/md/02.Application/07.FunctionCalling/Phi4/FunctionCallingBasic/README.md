@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-12-21T21:52:24+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "te"
-}
--->
 ## **Phi-4-miniలో ఫంక్షన్ కాలింగ్**
 
 ఫంక్షన్ కాలింగ్ మొదటగా Phi Family కుటుంబంలో కనిపించింది, మరియు ఇప్పుడు మీరు దాన్ని Phi-4-mini ద్వారా ఉపయోగించుకోవచ్చు.

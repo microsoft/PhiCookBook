@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-12-21T19:05:54+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "ml"
-}
--->
 ## GitHub Models - പരിമിത പൊതു ബീറ്റ
 
 Welcome to [GitHub Models](https://github.com/marketplace/models)! We've got everything fired up and ready for you to explore AI Models hosted on Azure AI.

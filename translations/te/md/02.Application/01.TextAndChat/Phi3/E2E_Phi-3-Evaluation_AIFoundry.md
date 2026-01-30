@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-12-21T21:20:51+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
-  "language_code": "te"
-}
--->
 # Azure AI Foundryలో Microsoft యొక్క Responsible AI సూత్రాలపైన దృష్టి సారించి ఫైన్-ట్యూన్ చేసిన Phi-3 / Phi-3.5 మోడల్‌ను మదింపుచెయ్యండి
 
 ఈ end-to-end (E2E) సాంపిల్ Microsoft Tech Communityలోని "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" గైడ్ ఆధారంగా రూపొందించబడింది.

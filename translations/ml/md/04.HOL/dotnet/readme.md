@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-12-21T22:30:25+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ml"
-}
--->
 ﻿## C# ഉപയോഗിച്ച് Phi ലാബുകളിലേക്ക് സ്വാഗതം
 
 ഇവിടെയുള്ള ലാബുകൾ .NET പരിസ്ഥിതിയിൽ Phi മോഡലുകളുടെ വിവിധ ശക്തമായ പതിപ്പുകൾ എങ്ങനെ സംയോജിപ്പിക്കാമെന്നത് പ്രദർശിപ്പിക്കുന്നു.

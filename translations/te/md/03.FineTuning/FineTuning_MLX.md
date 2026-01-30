@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-12-21T18:51:34+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "te"
-}
--->
 # **Apple MLX ఫ్రేమ్‌వర్క్‌తో Phi-3 ఫైన్-ట్యూనింగ్**
 
 మేము Apple MLX ఫ్రేమ్‌వర్క్ కమాండ్ లైన్ ద్వారా Lora తో కలిపిన ఫైన్-ట్యూనింగ్‌ను పూర్తి చేయవచ్చు. (MLX ఫ్రేమ్‌వర్క్ యొక్క ఆపరేషన్ గురించి మరింత తెలుసుకోవాలంటే, దయచేసి [Apple MLX ఫ్రేమ్‌వర్క్‌తో Phi-3 ఇన్ఫరన్స్](../03.FineTuning/03.Inference/MLX_Inference.md) చదవండి)

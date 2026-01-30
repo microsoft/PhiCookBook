@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-12-21T18:29:21+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "kn"
-}
--->
 # **Microsoft Olive ನೊಂದಿಗೆ Phi-3 ಫೈನ್-ಟ್ಯೂನಿಂಗ್**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ಒಂದು ಬಳಸಲು ಸುಲಭವಾದ ಹಾರ್ಡ್‌ವೇರ್-ಅ웨어 ಮಾದರಿ ಆಪ್ಟಿಮೈಜೆಶನ್ ಉಪಕರಣ, ಇದು ಮಾದರಿ ಸಂಕುಚಿತಕರಣ, ಆಪ್ಟಿಮೈಸೇಶನ್ ಮತ್ತು ಕಂಪೈಲೇಶನ್ ಸೇರಿದಂತೆ ಕೈಗಾರಿಕಾ-ಮುಖ್ಯ ತಂತ್ರಗಳನ್ನು ಒಟ್ಟುಗೂಡಿಸುತ್ತದೆ.
