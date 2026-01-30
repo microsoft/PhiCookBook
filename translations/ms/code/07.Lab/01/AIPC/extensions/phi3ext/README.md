@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:37:24+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "ms"
-}
--->
 # phi3ext README
 
 Ini adalah README untuk sambungan anda "phi3ext". Selepas menulis penerangan ringkas, kami mengesyorkan untuk memasukkan bab-bab berikut.

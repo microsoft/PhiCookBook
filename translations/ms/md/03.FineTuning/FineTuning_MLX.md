@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:01:58+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ms"
-}
--->
 # **Penalaan Halus Phi-3 dengan Rangka Kerja Apple MLX**
 
 Kita boleh menyelesaikan Penalaan Halus yang digabungkan dengan Lora melalui baris arahan rangka kerja Apple MLX. (Jika anda ingin mengetahui lebih lanjut tentang operasi Rangka Kerja MLX, sila baca [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

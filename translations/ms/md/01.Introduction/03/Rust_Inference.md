@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:32:03+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "ms"
-}
--->
 # Inferens rentas platform dengan Rust
 
 Tutorial ini akan membimbing kita melalui proses melakukan inferens menggunakan Rust dan [rangka kerja ML Candle](https://github.com/huggingface/candle) dari HuggingFace. Menggunakan Rust untuk inferens menawarkan beberapa kelebihan, terutamanya jika dibandingkan dengan bahasa pengaturcaraan lain. Rust terkenal dengan prestasinya yang tinggi, setanding dengan C dan C++. Ini menjadikannya pilihan yang sangat baik untuk tugasan inferens yang boleh menjadi intensif dari segi pengiraan. Terutamanya, ini didorong oleh abstraksi tanpa kos dan pengurusan memori yang cekap, tanpa beban pengumpulan sampah. Keupayaan rentas platform Rust membolehkan pembangunan kod yang boleh dijalankan pada pelbagai sistem operasi, termasuk Windows, macOS, dan Linux, serta sistem operasi mudah alih, tanpa perubahan besar pada kod asas.
