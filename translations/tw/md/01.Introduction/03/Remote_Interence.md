@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 在遠端環境完成 adapters 訓練後，可以使用簡單的 Gradio 應用程式與模型互動。
 
-![Fine-tune complete](../../../../../translated_images/tw/log-finetuning-res.7b92254e7e822c7f.webp)
+![Fine-tune complete](../../../../../translated_images/zh-TW/log-finetuning-res.7b92254e7e822c7f.webp)
 
 ### 配置 Azure 資源
 您需要透過命令面板執行 `AI Toolkit: Provision Azure Container Apps for inference` 來設定遠端推論的 Azure 資源。設定過程中，系統會要求您選擇 Azure 訂閱和資源群組。  
-![Provision Inference Resource](../../../../../translated_images/tw/command-provision-inference.467afc8d351642fc.webp)
+![Provision Inference Resource](../../../../../translated_images/zh-TW/command-provision-inference.467afc8d351642fc.webp)
    
 預設情況下，推論所使用的訂閱和資源群組應與微調時相同。推論將使用相同的 Azure Container App 環境，並存取在微調階段產生並儲存在 Azure Files 的模型及模型 adapter。
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### 部署推論  
 如果您想修改推論程式碼或重新載入推論模型，請執行 `AI Toolkit: Deploy for inference` 指令。此操作會將您最新的程式碼同步至 ACA 並重新啟動副本。  
 
-![Deploy for inference](../../../../../translated_images/tw/command-deploy.9adb4e310dd0b0ae.webp)
+![Deploy for inference](../../../../../translated_images/zh-TW/command-deploy.9adb4e310dd0b0ae.webp)
 
 部署成功後，模型即可透過此端點進行評估。
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 您可以點擊 VSCode 通知中顯示的「*Go to Inference Endpoint*」按鈕來存取推論 API。或者，您也可以在 `./infra/inference.config.json` 的 `ACA_APP_ENDPOINT` 欄位以及輸出面板中找到 Web API 端點。
 
-![App Endpoint](../../../../../translated_images/tw/notification-deploy.446e480a44b1be58.webp)
+![App Endpoint](../../../../../translated_images/zh-TW/notification-deploy.446e480a44b1be58.webp)
 
 > **Note:** 推論端點可能需要幾分鐘時間才能完全啟用。
 

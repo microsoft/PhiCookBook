@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 欢迎使用 [GitHub Models](https://github.com/marketplace/models)！我们已经准备好让你探索托管在 Azure AI 上的 AI 模型。
 
-![GitHubModel](../../../../translated_images/zh/GitHub_ModelCatalog.aa43c51c36454747.webp)
+![GitHubModel](../../../../translated_images/zh-CN/GitHub_ModelCatalog.aa43c51c36454747.webp)
 
 想了解更多关于 GitHub Models 上可用模型的信息，请访问 [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 此外，还有专门的 Codespaces 环境用于运行示例和模型。
 
-![Getting Started](../../../../translated_images/zh/GitHub_ModelGetStarted.150220a802da6fb6.webp)
+![Getting Started](../../../../translated_images/zh-CN/GitHub_ModelGetStarted.150220a802da6fb6.webp)
 
 ## 示例代码
 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Models 的免费使用和速率限制
 
-![Model Catalog](../../../../translated_images/zh/GitHub_Model.ca6c125cb3117d0e.webp)
+![Model Catalog](../../../../translated_images/zh-CN/GitHub_Model.ca6c125cb3117d0e.webp)
 
 [游乐场和免费 API 使用的速率限制](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)旨在帮助你试验模型和快速原型你的 AI 应用。超出这些限制后，若要将应用扩展到生产规模，必须从 Azure 账户配置资源，并从那里进行身份验证，而不是使用你的 GitHub 个人访问令牌。你无需更改代码中的其他内容。请使用此链接了解如何突破 Azure AI 免费层限制。
 

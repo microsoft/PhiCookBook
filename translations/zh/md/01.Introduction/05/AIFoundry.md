@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **使用 Azure AI Foundry 进行评估**
 
-![aistudo](../../../../../translated_images/zh/AIFoundry.9e0b513e999a1c5a.webp)
+![aistudo](../../../../../translated_images/zh-CN/AIFoundry.9e0b513e999a1c5a.webp)
 
 如何使用 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) 评估你的生成式 AI 应用。无论是评估单轮对话还是多轮对话，Azure AI Foundry 都提供了评估模型性能和安全性的工具。
 
-![aistudo](../../../../../translated_images/zh/AIPortfolio.69da59a8e1eaa70f.webp)
+![aistudo](../../../../../translated_images/zh-CN/AIPortfolio.69da59a8e1eaa70f.webp)
 
 ## 如何使用 Azure AI Foundry 评估生成式 AI 应用
 更多详细说明请参见 [Azure AI Foundry 文档](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

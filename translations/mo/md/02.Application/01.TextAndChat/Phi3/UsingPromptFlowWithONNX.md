@@ -33,33 +33,33 @@ Prompt flow 可連接 OpenAI、Azure OpenAI Service 以及可自訂的模型（H
 
 1. 安裝 Prompt flow VS Code 擴充功能
 
-![pfvscode](../../../../../../translated_images/mo/pfvscode.eff93dfc66a42cbe.webp)
+![pfvscode](../../../../../../translated_images/zh-MO/pfvscode.eff93dfc66a42cbe.webp)
 
 2. 安裝完 Prompt flow VS Code 擴充功能後，點選該擴充功能，選擇 **Installation dependencies**，依照指引在你的環境中安裝 Prompt flow SDK
 
-![pfsetup](../../../../../../translated_images/mo/pfsetup.b46e93096f5a254f.webp)
+![pfsetup](../../../../../../translated_images/zh-MO/pfsetup.b46e93096f5a254f.webp)
 
 3. 下載 [範例程式碼](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf)，並使用 VS Code 開啟此範例
 
-![pfsample](../../../../../../translated_images/mo/pfsample.8d89e70584ffe7c4.webp)
+![pfsample](../../../../../../translated_images/zh-MO/pfsample.8d89e70584ffe7c4.webp)
 
 4. 開啟 **flow.dag.yaml** 選擇你的 Python 環境
 
-![pfdag](../../../../../../translated_images/mo/pfdag.264a77f7366458ff.webp)
+![pfdag](../../../../../../translated_images/zh-MO/pfdag.264a77f7366458ff.webp)
 
    開啟 **chat_phi3_ort.py** 修改你的 Phi-3.5-instruct ONNX 模型路徑
 
-![pfphi](../../../../../../translated_images/mo/pfphi.72da81d74244b45f.webp)
+![pfphi](../../../../../../translated_images/zh-MO/pfphi.72da81d74244b45f.webp)
 
 5. 執行你的 prompt flow 進行測試
 
 開啟 **flow.dag.yaml**，點選視覺化編輯器
 
-![pfv](../../../../../../translated_images/mo/pfv.ba8a81f34b20f603.webp)
+![pfv](../../../../../../translated_images/zh-MO/pfv.ba8a81f34b20f603.webp)
 
 點擊後執行測試
 
-![pfflow](../../../../../../translated_images/mo/pfflow.4e1135a089b1ce1b.webp)
+![pfflow](../../../../../../translated_images/zh-MO/pfflow.4e1135a089b1ce1b.webp)
 
 1. 你也可以在終端機批次執行以查看更多結果
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 你可以在預設瀏覽器中查看結果
 
 
-![pfresult](../../../../../../translated_images/mo/pfresult.c22c826f8062d7cb.webp)
+![pfresult](../../../../../../translated_images/zh-MO/pfresult.c22c826f8062d7cb.webp)
 
 **免責聲明**：  
 本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

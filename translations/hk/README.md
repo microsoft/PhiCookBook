@@ -34,7 +34,7 @@ Phi 目前是最強大且具成本效益的小型語言模型（SLM），在多�
 2. **Clone 該資源庫**： `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**加入 Microsoft AI Discord 社群並認識專家和其他開發者**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/hk/cover.eb18d1b9605d754b.webp)
+![cover](../../translated_images/zh-HK/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 多語言支援
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-07-16T23:00:40+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "en"
-}
--->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 This code exports a model to the OpenVINO format, loads it, and uses it to generate a response to a given prompt.

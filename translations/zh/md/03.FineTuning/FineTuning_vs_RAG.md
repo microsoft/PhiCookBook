@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG是数据检索与文本生成的结合。企业的结构化数据和非结构化数据存储在向量数据库中。在搜索相关内容时，会找到相关的摘要和内容组成上下文，并结合LLM/SLM的文本补全能力生成内容。
 
 ## RAG流程
-![FinetuningvsRAG](../../../../translated_images/zh/rag.2014adc59e6f6007.webp)
+![FinetuningvsRAG](../../../../translated_images/zh-CN/rag.2014adc59e6f6007.webp)
 
 ## 微调
 微调是在已有模型基础上的改进，不需要从模型算法开始，但需要不断积累数据。如果你希望在行业应用中获得更精准的术语和语言表达，微调是更好的选择。但如果数据频繁变化，微调会变得复杂。

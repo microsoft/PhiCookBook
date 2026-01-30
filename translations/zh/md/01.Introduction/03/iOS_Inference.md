@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 我选择了 Objective-C 作为 App 开发语言，因为使用 ONNX Runtime 的生成式 AI C++ API 时，Objective-C 兼容性更好。当然，你也可以通过 Swift 桥接完成相关调用。
 
-![xcode](../../../../../translated_images/zh/xcode.8147789e6c25e3e2.webp)
+![xcode](../../../../../translated_images/zh-CN/xcode.8147789e6c25e3e2.webp)
 
 ## **5. 将 ONNX 量化 INT4 模型复制到 App 项目中**
 
 我们需要导入 ONNX 格式的 INT4 量化模型，需先下载该模型。
 
-![hf](../../../../../translated_images/zh/hf.6b8504fd88ee48dd.webp)
+![hf](../../../../../translated_images/zh-CN/hf.6b8504fd88ee48dd.webp)
 
 下载后，需要将其添加到 Xcode 项目的 Resources 目录中。
 
-![model](../../../../../translated_images/zh/model.3b879b14e0be877d.webp)
+![model](../../../../../translated_images/zh-CN/model.3b879b14e0be877d.webp)
 
 ## **6. 在 ViewControllers 中添加 C++ API**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** 将对应的 C++ 头文件添加到项目中。
 
-  ![Header File](../../../../../translated_images/zh/head.64cad021ce70a333.webp)
+  ![Header File](../../../../../translated_images/zh-CN/head.64cad021ce70a333.webp)
 
 - **b.** 在 Xcode 中引入 `onnxruntime-genai` 动态库。
 
-  ![Library](../../../../../translated_images/zh/lib.a4209b9f21ddf344.webp)
+  ![Library](../../../../../translated_images/zh-CN/lib.a4209b9f21ddf344.webp)
 
 - **c.** 使用 C 语言示例代码进行测试。你也可以添加如 ChatUI 等额外功能。
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 完成以上设置后，即可运行应用，查看 Phi-3-mini 模型推理的效果。
 
-![Running Result](../../../../../translated_images/zh/result.326a947a6a2b9c51.webp)
+![Running Result](../../../../../translated_images/zh-CN/result.326a947a6a2b9c51.webp)
 
 更多示例代码和详细说明，请访问 [Phi-3 Mini Samples 仓库](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)。
 
