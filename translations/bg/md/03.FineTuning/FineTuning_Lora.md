@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:36:01+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "bg"
-}
--->
 # **Фина настройка на Phi-3 с Lora**
 
 Фина настройка на езиковия модел Phi-3 Mini на Microsoft с помощта на [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) върху персонализиран набор от инструкции за чат.

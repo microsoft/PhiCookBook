@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:19:21+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "ro"
-}
--->
 # **Conversație cu Phi-4-mini ONNX**
 
 ***ONNX*** este un format deschis creat pentru a reprezenta modelele de învățare automată. ONNX definește un set comun de operatori - elementele de bază ale modelelor de învățare automată și învățare profundă - și un format comun de fișier pentru a permite dezvoltatorilor AI să folosească modelele cu o varietate de framework-uri, unelte, runtime-uri și compilatoare.

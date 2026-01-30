@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:57:22+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "bg"
-}
--->
 # **Квантизиране на Phi-3.5 с помощта на Apple MLX Framework**
 
 MLX е рамка за масиви, предназначена за изследвания в областта на машинното обучение на Apple silicon, разработена от екипа за машинно обучение на Apple.

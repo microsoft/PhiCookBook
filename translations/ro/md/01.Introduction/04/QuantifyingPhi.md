@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:55:57+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "ro"
-}
--->
 # **Cuantificarea Familiei Phi**
 
 Cuantificarea modelului se referă la procesul de mapare a parametrilor (cum ar fi greutățile și valorile de activare) dintr-un model de rețea neurală dintr-un interval mare de valori (de obicei un interval continuu de valori) într-un interval finit mai mic de valori. Această tehnologie poate reduce dimensiunea și complexitatea computațională a modelului și poate îmbunătăți eficiența de operare a modelului în medii cu resurse limitate, cum ar fi dispozitivele mobile sau sistemele încorporate. Cuantificarea modelului realizează compresia prin reducerea preciziei parametrilor, dar introduce și o anumită pierdere de precizie. Prin urmare, în procesul de cuantificare este necesar să se echilibreze dimensiunea modelului, complexitatea computațională și precizia. Metodele uzuale de cuantificare includ cuantificarea în punct fix, cuantificarea în virgulă flotantă etc. Puteți alege strategia de cuantificare potrivită în funcție de scenariul specific și de nevoi.

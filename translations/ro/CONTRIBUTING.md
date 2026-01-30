@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:45:47+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "ro"
-}
--->
 # Contribuții
 
 Acest proiect primește cu plăcere contribuții și sugestii. Majoritatea contribuțiilor necesită să fii de acord cu un Acord de Licență pentru Contribuitori (CLA) prin care declari că ai dreptul și efectiv ne acorzi drepturile de a folosi contribuția ta. Pentru detalii, vizitează [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)

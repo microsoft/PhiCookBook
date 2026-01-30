@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:43:08+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "sk"
-}
--->
 ## Ako používať komponenty chat-completion zo systémového registra Azure ML na doladenie modelu
 
 V tomto príklade vykonáme doladenie modelu Phi-3-mini-4k-instruct na dokončenie konverzácie medzi dvoma ľuďmi pomocou datasetu ultrachat_200k.
