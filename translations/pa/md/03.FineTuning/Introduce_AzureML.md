@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:39:33+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "pa"
-}
--->
 # **ਅਜ਼ੂਰ ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਸਰਵਿਸ ਦਾ ਪਰਿਚਯ**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ਇੱਕ ਕਲਾਉਡ ਸਰਵਿਸ ਹੈ ਜੋ ਮਸ਼ੀਨ ਲਰਨਿੰਗ (ML) ਪ੍ਰੋਜੈਕਟ ਦੇ ਜੀਵਨ ਚੱਕਰ ਨੂੰ ਤੇਜ਼ ਅਤੇ ਪ੍ਰਬੰਧਿਤ ਕਰਨ ਲਈ ਬਣਾਈ ਗਈ ਹੈ।

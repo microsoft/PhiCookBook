@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:35+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "pa"
-}
--->
 ## **Phi-4-multimodal ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਡੀਓ ਟ੍ਰਾਂਸਕ੍ਰਿਪਟ ਕੱਢਣਾ**
 
 Phi-4-multimodal ਇੱਕ ਪੂਰਾ ਮੋਡਲ ਹੈ ਜੋ ਟੈਕਸਟ ਅਤੇ ਚਿੱਤਰਾਂ ਦੇ ਨਾਲ-ਨਾਲ ਆਡੀਓ ਵੀ ਵਰਤ ਸਕਦਾ ਹੈ। ਆਓ ਵੇਖੀਏ ਕਿ ਇਸਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਹੈ।  

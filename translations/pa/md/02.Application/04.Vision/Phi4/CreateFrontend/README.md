@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:59+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "pa"
-}
--->
 ## **ਚਿੱਤਰਾਂ ਨੂੰ ਪੜ੍ਹਨ ਅਤੇ ਕੋਡ ਬਣਾਉਣ ਲਈ Phi-4-multimodal ਦੀ ਵਰਤੋਂ ਕਰੋ**
 
 Phi-4-multimodal ਵਿੱਚ ਤਸਵੀਰਾਂ ਪੜ੍ਹਨ ਦੀ ਬਹੁਤ ਵਧੀਆ ਸਮਰੱਥਾ ਹੈ। ਆਓ Python ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਹੇਠਾਂ ਦਿੱਤੀਆਂ ਫੰਕਸ਼ਨਾਂ ਨੂੰ ਲਾਗੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੀਏ। ਤਸਵੀਰ ਇੱਕ ChatGPT ਪੰਨਾ ਹੈ।

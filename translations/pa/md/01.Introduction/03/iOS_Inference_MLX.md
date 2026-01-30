@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:30:30+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "pa"
-}
--->
 # iOS 'ਤੇ Apple MLX ਫਰੇਮਵਰਕ ਨਾਲ Phi-3 ਅਤੇ Phi-4 ਚਲਾਉਣਾ
 
 ਇਹ ਟਿਊਟੋਰਿਯਲ ਦਿਖਾਉਂਦਾ ਹੈ ਕਿ ਕਿਵੇਂ ਇੱਕ iOS ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਈ ਜਾਵੇ ਜੋ Apple MLX ਫਰੇਮਵਰਕ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Phi-3 ਜਾਂ Phi-4 ਮਾਡਲ ਨੂੰ ਡਿਵਾਈਸ 'ਤੇ ਚਲਾਉਂਦਾ ਹੈ। [MLX](https://opensource.apple.com/projects/mlx/) Apple ਦਾ ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਫਰੇਮਵਰਕ ਹੈ ਜੋ Apple Silicon ਚਿਪਸ ਲਈ ਅਨੁਕੂਲਿਤ ਹੈ।
