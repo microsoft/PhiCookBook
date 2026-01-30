@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T10:00:23+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "cs"
-}
--->
 # **Nechte Phi-3 stát se odborníkem v oboru**
 
 Chcete-li model Phi-3 nasadit v konkrétním odvětví, je potřeba do modelu Phi-3 přidat data z daného oboru. Máme dvě možnosti: první je RAG (Retrieval Augmented Generation) a druhá je Fine Tuning.

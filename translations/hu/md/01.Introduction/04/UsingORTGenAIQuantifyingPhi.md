@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:24:58+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "hu"
-}
--->
 ## **Hogyan használjuk a Model Builder-t a Phi-3.5 kvantálásához**
 
 A Model Builder most támogatja az ONNX modell kvantálását a Phi-3.5 Instruct és Phi-3.5-Vision modellekhez.

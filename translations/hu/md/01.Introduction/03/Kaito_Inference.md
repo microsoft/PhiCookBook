@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T09:29:05+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "hu"
-}
--->
 ## Inference a Kaitóval
 
 A [Kaito](https://github.com/Azure/kaito) egy olyan operátor, amely automatizálja az AI/ML inferencia modellek telepítését egy Kubernetes klaszterben.

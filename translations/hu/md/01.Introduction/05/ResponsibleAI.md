@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:57:06+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "hu"
-}
--->
 # **Ismertetés a felelős mesterséges intelligenciáról**
 
 A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) egy kezdeményezés, amely segíti a fejlesztőket és szervezeteket abban, hogy átlátható, megbízható és elszámoltatható MI-rendszereket építsenek. A kezdeményezés útmutatást és erőforrásokat nyújt felelős MI-megoldások fejlesztéséhez, amelyek összhangban állnak etikai elvekkel, mint például az adatvédelem, méltányosság és átláthatóság. Emellett megvizsgáljuk a felelős MI-rendszerek építésével járó kihívásokat és bevált gyakorlatokat is.

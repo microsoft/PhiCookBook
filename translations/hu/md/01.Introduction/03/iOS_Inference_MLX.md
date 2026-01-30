@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:35:36+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "hu"
-}
--->
 # Phi-3 és Phi-4 futtatása iOS-en az Apple MLX keretrendszerrel
 
 Ez a bemutató megmutatja, hogyan készíthetünk iOS alkalmazást, amely a Phi-3 vagy Phi-4 modellt helyben futtatja az Apple MLX keretrendszer segítségével. Az [MLX](https://opensource.apple.com/projects/mlx/) az Apple gépi tanulási keretrendszere, amely az Apple Silicon chipekre van optimalizálva.

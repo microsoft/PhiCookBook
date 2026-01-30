@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-07-16T16:27:58+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "hu"
-}
--->
 # Phi3 finomhangolása Olive segítségével
 
 Ebben a példában az Olive-t fogod használni, hogy:

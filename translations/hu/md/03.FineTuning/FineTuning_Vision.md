@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:52:53+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "hu"
-}
--->
 # Phi-3.5-vision finomhangolási recept
 
 Ez a hivatalos támogatás a Phi-3.5-vision finomhangolásához a huggingface könyvtárak használatával.  
