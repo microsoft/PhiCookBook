@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:34:31+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "ne"
-}
--->
 ## GitHub मोडेलहरू - सीमित सार्वजनिक बीटा
 
 [GitHub Models](https://github.com/marketplace/models) मा स्वागत छ! हामीले Azure AI मा होस्ट गरिएका AI मोडेलहरू अन्वेषण गर्न तपाईंका लागि सबै तयारी गरिसकेका छौं।

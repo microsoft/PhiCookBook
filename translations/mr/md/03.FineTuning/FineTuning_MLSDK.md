@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:12:20+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "mr"
-}
--->
 ## Azure ML सिस्टम रजिस्ट्रीमधील chat-completion घटकांचा वापर करून मॉडेल फाइन ट्यून कसे करावे
 
 या उदाहरणात आपण ultrachat_200k डेटासेट वापरून Phi-3-mini-4k-instruct मॉडेलचे दोन लोकांमधील संभाषण पूर्ण करण्यासाठी फाइन ट्यूनिंग करू.

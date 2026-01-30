@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:54:11+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "bn"
-}
--->
 # **Phi-3 কে একটি শিল্প বিশেষজ্ঞ বানান**
 
 Phi-3 মডেলকে একটি শিল্পে প্রয়োগ করতে হলে, আপনাকে শিল্পের ব্যবসায়িক ডেটা Phi-3 মডেলে যোগ করতে হবে। আমাদের দুটি ভিন্ন অপশন আছে, প্রথমটি হলো RAG (Retrieval Augmented Generation) এবং দ্বিতীয়টি হলো Fine Tuning।

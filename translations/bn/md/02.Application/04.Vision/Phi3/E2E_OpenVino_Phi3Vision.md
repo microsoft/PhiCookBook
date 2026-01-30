@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:02:11+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "bn"
-}
--->
 এই ডেমোটি দেখায় কিভাবে একটি pretrained মডেল ব্যবহার করে একটি ছবি এবং টেক্সট প্রম্পটের ভিত্তিতে Python কোড তৈরি করা যায়।
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

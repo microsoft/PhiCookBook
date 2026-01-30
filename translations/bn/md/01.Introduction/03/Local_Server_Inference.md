@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:56:18+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "bn"
-}
--->
 # **লোকাল সার্ভারে Inference Phi-3**
 
 আমরা Phi-3 লোকাল সার্ভারে ডিপ্লয় করতে পারি। ব্যবহারকারীরা [Ollama](https://ollama.com) বা [LM Studio](https://llamaedge.com) সলিউশন বেছে নিতে পারেন, অথবা তারা নিজেই কোড লিখতে পারেন। Phi-3 এর লোকাল সার্ভিসগুলোকে [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) বা [Langchain](https://www.langchain.com/) এর মাধ্যমে সংযুক্ত করে Copilot অ্যাপ্লিকেশন তৈরি করা যায়।

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:00:21+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "bn"
-}
--->
 # **Intel OpenVINO ব্যবহার করে Phi-3.5 কোয়ান্টাইজেশন**
 
 Intel হল সবচেয়ে প্রচলিত CPU নির্মাতা যার অনেক ব্যবহারকারী রয়েছে। মেশিন লার্নিং এবং ডিপ লার্নিংয়ের উত্থানের সাথে, Intel AI ত্বরান্বিত করার প্রতিযোগিতায় যোগ দিয়েছে। মডেল ইনফারেন্সের জন্য, Intel শুধুমাত্র GPU এবং CPU ব্যবহার করে না, বরং NPU ও ব্যবহার করে।

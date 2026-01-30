@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:41:56+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "bn"
-}
--->
 # **Microsoft Olive দিয়ে Phi-3 ফাইন-টিউনিং**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) একটি সহজে ব্যবহারযোগ্য হার্ডওয়্যার-সচেতন মডেল অপ্টিমাইজেশন টুল, যা মডেল কম্প্রেশন, অপ্টিমাইজেশন এবং কম্পাইলেশনের ক্ষেত্রে শিল্প-নেতৃত্বাধীন প্রযুক্তিগুলো একত্রিত করে।

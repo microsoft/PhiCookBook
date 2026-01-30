@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:20+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "bn"
-}
--->
 ## **Phi-4-multimodal ব্যবহার করে অডিও ট্রান্সক্রিপ্ট বের করা**
 
 Phi-4-multimodal একটি ফুল-মোডাল মডেল যা টেক্সট এবং ইমেজের পাশাপাশি অডিওও ব্যবহার করতে পারে। চলুন দেখি এটি কীভাবে ব্যবহার করতে হয়। 

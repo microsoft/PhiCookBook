@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:28:48+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "bn"
-}
--->
 # phiext README
 
 এটি আপনার এক্সটেনশন "phiext" এর README। সংক্ষিপ্ত বিবরণ লেখার পর, আমরা নিম্নলিখিত বিভাগগুলি অন্তর্ভুক্ত করার পরামর্শ দিই।

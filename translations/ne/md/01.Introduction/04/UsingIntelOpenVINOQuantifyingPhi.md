@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:00:40+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ne"
-}
--->
 # **Intel OpenVINO प्रयोग गरी Phi-3.5 को क्वान्टाइजेशन**
 
 Intel सबैभन्दा परम्परागत CPU निर्माता हो जसका धेरै प्रयोगकर्ता छन्। मेसिन लर्निङ र डीप लर्निङको उदयसँगै, Intel ले पनि AI एक्सेलेरेशनको प्रतिस्पर्धामा भाग लिएको छ। मोडेल इन्फरेन्सका लागि Intel ले GPU र CPU मात्र होइन, NPU पनि प्रयोग गर्छ।

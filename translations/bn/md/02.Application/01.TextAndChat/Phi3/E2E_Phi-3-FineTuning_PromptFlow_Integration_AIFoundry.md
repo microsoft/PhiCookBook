@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:25:34+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "bn"
-}
--->
 # Fine-tune এবং কাস্টম Phi-3 মডেলগুলোকে Azure AI Foundry তে Prompt flow এর সাথে ইন্টিগ্রেট করুন
 
 Microsoft Tech Community থেকে "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" গাইড ভিত্তিক এই end-to-end (E2E) স্যাম্পলটি কাস্টম Phi-3 মডেল ফাইন-টিউনিং, ডিপ্লয়মেন্ট, এবং Azure AI Foundry তে Prompt flow এর সাথে ইন্টিগ্রেশনের প্রসেসসমূহ উপস্থাপন করে।

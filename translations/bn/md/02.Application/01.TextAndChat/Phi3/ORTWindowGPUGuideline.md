@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:41:20+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "bn"
-}
--->
 # **OnnxRuntime GenAI Windows GPU এর জন্য নির্দেশিকা**
 
 এই নির্দেশিকাটি Windows-এ GPU সহ ONNX Runtime (ORT) সেটআপ এবং ব্যবহারের ধাপগুলো প্রদান করে। এটি আপনার মডেলগুলোর জন্য GPU ত্বরান্বিতকরণ ব্যবহার করে পারফরম্যান্স এবং দক্ষতা উন্নত করতে সাহায্য করবে।

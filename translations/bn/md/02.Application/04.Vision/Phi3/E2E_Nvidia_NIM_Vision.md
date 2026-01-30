@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:54:12+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "bn"
-}
--->
 ### উদাহরণ পরিস্থিতি
 
 ধরা যাক আপনার কাছে একটি ছবি (`demo.png`) আছে এবং আপনি এমন একটি Python কোড তৈরি করতে চান যা এই ছবিটি প্রক্রিয়াজাত করে এবং একটি নতুন সংস্করণ সংরক্ষণ করে (`phi-3-vision.jpg`)।
