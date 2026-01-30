@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:10:46+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ur"
-}
--->
 ## **Phi-4-multimodal کے ذریعے آڈیو ٹرانسکرپٹس نکالنا**
 
 Phi-4-multimodal ایک مکمل موڈل ہے جو متن اور تصاویر کے علاوہ آڈیو بھی استعمال کر سکتا ہے۔ آئیے دیکھتے ہیں کہ اسے کیسے استعمال کیا جائے۔  

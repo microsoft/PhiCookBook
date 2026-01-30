@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:34:33+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "fa"
-}
--->
 # **معرفی سرویس Azure Machine Learning**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) یک سرویس ابری برای تسریع و مدیریت چرخه عمر پروژه‌های یادگیری ماشین (ML) است.

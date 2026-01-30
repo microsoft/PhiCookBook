@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:28:04+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "ur"
-}
--->
 # **Lora کے ساتھ Phi-3 کی فائن ٹیوننگ**
 
 Microsoft کے Phi-3 Mini زبان کے ماڈل کو [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) کے ذریعے ایک کسٹم چیٹ انسٹرکشن ڈیٹاسیٹ پر فائن ٹیون کرنا۔

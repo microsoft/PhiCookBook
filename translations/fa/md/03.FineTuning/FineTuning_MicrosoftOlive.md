@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:38:59+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "fa"
-}
--->
 # **تنظیم دقیق Phi-3 با Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ابزاری ساده و آگاه به سخت‌افزار برای بهینه‌سازی مدل است که تکنیک‌های پیشرو در صنعت را در زمینه فشرده‌سازی، بهینه‌سازی و کامپایل مدل‌ها گرد هم آورده است.
