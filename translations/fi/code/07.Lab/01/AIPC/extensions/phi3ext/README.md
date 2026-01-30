@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:36:42+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "fi"
-}
--->
 # phi3ext README
 
 Tämä on laajennuksesi "phi3ext" README-tiedosto. Lyhyen kuvauksen jälkeen suosittelemme sisällyttämään seuraavat osiot.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:15:57+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "da"
-}
--->
 ## **Funktionskald i Phi-4-mini**
 
 Funktionskald dukkede først op i Phi Family-familien, og nu kan du bruge det gennem Phi-4-mini.

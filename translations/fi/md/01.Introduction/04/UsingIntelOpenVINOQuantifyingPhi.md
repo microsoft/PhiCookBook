@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:02:28+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "fi"
-}
--->
 # **Phi-3.5:n kvantisointi Intel OpenVINO:lla**
 
 Intel on perinteisin suorittimien valmistaja, jolla on paljon käyttäjiä. Koneoppimisen ja syväoppimisen nousun myötä Intel on myös liittynyt tekoälyn kiihdytyskilpailuun. Mallin päättelyssä Intel käyttää paitsi GPU:ita ja CPU:ita, myös NPU:ita.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:24:50+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "no"
-}
--->
 # **Bruke Phi-3 i Azure AI Foundry**
 
 Med utviklingen av Generativ AI håper vi å bruke en samlet plattform for å administrere ulike LLM og SLM, integrering av bedriftsdata, finjustering/RAG-operasjoner, og evaluering av forskjellige bedriftsvirksomheter etter integrering av LLM og SLM, slik at generativ AI kan implementeres bedre i smarte applikasjoner. [Azure AI Foundry](https://ai.azure.com) er en generativ AI-applikasjonsplattform på bedriftsnivå.

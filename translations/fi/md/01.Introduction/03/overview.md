@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:11:08+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "fi"
-}
--->
 Phi-3-mini -kontekstissa inferenssi tarkoittaa prosessia, jossa mallia käytetään tekemään ennusteita tai tuottamaan tuloksia syötteen perusteella. Kerron sinulle lisää Phi-3-ministä ja sen inferenssikyvyistä.
 
 Phi-3-mini kuuluu Microsoftin julkaisemaan Phi-3-mallisarjaan. Nämä mallit on suunniteltu uudelleenmäärittelemään, mitä pienillä kielimalleilla (SLM) on mahdollista saavuttaa.

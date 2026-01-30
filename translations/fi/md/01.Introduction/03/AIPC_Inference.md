@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:03:26+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "fi"
-}
--->
 # **Phi-3-päätelmä AI-PC:ssä**
 
 Generatiivisen tekoälyn kehittymisen ja reunalaitteiden laitteistokapasiteetin parantumisen myötä yhä useammat generatiiviset tekoälymallit voidaan nyt integroida käyttäjien omiin BYOD-laitteisiin. AI-PC:t ovat näiden mallien joukossa. Vuodesta 2024 alkaen Intel, AMD ja Qualcomm ovat tehneet yhteistyötä PC-valmistajien kanssa tuodakseen markkinoille AI-PC:t, jotka mahdollistavat paikallisten generatiivisten tekoälymallien käyttöönoton laitteistomuutosten avulla. Tässä keskustelussa keskitymme Intelin AI-PC:ihin ja tarkastelemme, miten Phi-3 otetaan käyttöön Intel AI-PC:ssä.

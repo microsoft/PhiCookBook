@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:18:03+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "fi"
-}
--->
 # **Keskustele Phi-4-mini ONNX:n kanssa**
 
 ***ONNX*** on avoin formaatti, joka on suunniteltu koneoppimismallien esittämiseen. ONNX määrittelee yhteisen joukon operaattoreita – koneoppimisen ja syväoppimisen mallien rakennuspalikoita – sekä yhteisen tiedostomuodon, jonka avulla tekoälykehittäjät voivat käyttää malleja eri kehysten, työkalujen, ajonaikojen ja kääntäjien kanssa.

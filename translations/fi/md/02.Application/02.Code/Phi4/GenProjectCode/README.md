@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:00+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "fi"
-}
--->
 ## **Phi-4-mini-mm:n käyttäminen koodin luomiseen**
 
 Phi-4-mini jatkaa Phi-perheen vahvoja koodausominaisuuksia. Voit käyttää Promptia kysymysten esittämiseen koodaukseen liittyen. Tietysti, vahvan päättelykyvyn lisäämisen jälkeen sillä on entistä paremmat koodausominaisuudet, kuten projektien luominen vaatimusten mukaan. Esimerkiksi projektien luominen vaatimusten perusteella, kuten:
