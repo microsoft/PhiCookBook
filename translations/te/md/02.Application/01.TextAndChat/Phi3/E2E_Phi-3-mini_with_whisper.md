@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f72d7981ed3640865700f51ae407da4",
-  "translation_date": "2026-01-17T19:46:07+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
-  "language_code": "te"
-}
--->
 # ఇంటరాక్టివ్ ఫై 3 మినీ 4K ఇన్‌స్ట్రక్ట్ చాట్‌బాట్ విత్ విస్పర్
 
 ## అవలోకనం

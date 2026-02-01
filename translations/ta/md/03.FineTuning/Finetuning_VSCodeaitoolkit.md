@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-10-11T11:40:51+00:00",
-  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
-  "language_code": "ta"
-}
--->
 ## VS Code-க்கு AI டூல்கிட் வரவேற்கிறோம்
 
 [VS Code-க்கு AI டூல்கிட்](https://github.com/microsoft/vscode-ai-toolkit/tree/main) Azure AI Studio Catalog மற்றும் Hugging Face போன்ற பிற காடலோக்களில் உள்ள பல்வேறு மாடல்களை ஒருங்கிணைக்கிறது. இந்த டூல்கிட் ஜெனரேட்டிவ் AI கருவிகள் மற்றும் மாடல்களுடன் AI பயன்பாடுகளை உருவாக்குவதற்கான பொதுவான மேம்பாட்டு பணிகளை எளிமையாக்குகிறது:

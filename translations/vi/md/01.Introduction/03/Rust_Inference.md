@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:31:38+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "vi"
-}
--->
 # Inference đa nền tảng với Rust
 
 Hướng dẫn này sẽ giúp chúng ta thực hiện inference sử dụng Rust và [Candle ML framework](https://github.com/huggingface/candle) từ HuggingFace. Việc dùng Rust cho inference mang lại nhiều lợi thế, đặc biệt khi so sánh với các ngôn ngữ lập trình khác. Rust nổi tiếng với hiệu năng cao, tương đương với C và C++. Điều này làm cho Rust trở thành lựa chọn tuyệt vời cho các tác vụ inference, vốn có thể đòi hỏi tính toán nặng. Đặc biệt, điều này nhờ vào các trừu tượng không tốn chi phí và quản lý bộ nhớ hiệu quả, không có chi phí thu gom rác. Khả năng đa nền tảng của Rust cho phép phát triển mã chạy trên nhiều hệ điều hành khác nhau, bao gồm Windows, macOS và Linux, cũng như các hệ điều hành di động, mà không cần thay đổi nhiều trong mã nguồn.

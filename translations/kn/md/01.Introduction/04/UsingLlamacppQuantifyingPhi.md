@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-12-22T02:01:03+00:00",
-  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
-  "language_code": "kn"
-}
--->
 # **llama.cpp ಬಳಸಿ Phi ಕುಟುಂಬವನ್ನು ಕ್ವಾಂಟೈಸ್ ಮಾಡುವುದು**
 
 ## **llama.cpp ಎಂದರೆ ಏನು**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T21:59:02+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "fa"
-}
--->
 # **کوانتایز کردن Phi-3.5 با استفاده از Intel OpenVINO**
 
 اینتل یکی از قدیمی‌ترین تولیدکنندگان CPU با تعداد زیادی کاربر است. با رشد یادگیری ماشین و یادگیری عمیق، اینتل نیز وارد رقابت برای تسریع هوش مصنوعی شده است. برای استنتاج مدل، اینتل نه تنها از GPU و CPU استفاده می‌کند، بلکه از NPUها نیز بهره می‌برد.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-09-12T14:51:30+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "lt"
-}
--->
 # **Kvantuojant Phi šeimą naudojant Generatyvios AI plėtinius onnxruntime**
 
 ## **Kas yra Generatyvios AI plėtiniai onnxruntime?**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-10-11T12:23:06+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "ta"
-}
--->
 # **iOS-ல் Phi-3 inference**
 
 Phi-3-mini என்பது Microsoft நிறுவனத்தின் புதிய மாடல்களின் தொடர் ஆகும், இது edge சாதனங்கள் மற்றும் IoT சாதனங்களில் பெரிய மொழி மாடல்களை (LLMs) செயல்படுத்த அனுமதிக்கிறது. Phi-3-mini iOS, Android மற்றும் Edge Device செயல்பாடுகளுக்கு கிடைக்கிறது, இது BYOD சூழல்களில் Generative AI-ஐ செயல்படுத்த அனுமதிக்கிறது. கீழே உள்ள உதாரணம் iOS-ல் Phi-3-mini-ஐ எப்படி செயல்படுத்துவது என்பதை விளக்குகிறது.

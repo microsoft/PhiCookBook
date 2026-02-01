@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:56:37+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
-  "language_code": "bg"
-}
--->
 # phi3ext README
 
 Това е README файлът на твоето разширение "phi3ext". След краткото описание препоръчваме да включиш следните раздели.

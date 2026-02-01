@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:33:14+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "ko"
-}
--->
 ## GitHub Models - 제한된 공개 베타
 
 [GitHub Models](https://github.com/marketplace/models)에 오신 것을 환영합니다! Azure AI에서 호스팅되는 AI 모델을 탐색할 준비가 모두 완료되었습니다.

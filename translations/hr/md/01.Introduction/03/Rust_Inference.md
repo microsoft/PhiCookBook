@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:34:22+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "hr"
-}
--->
 # Inference na više platformi s Rustom
 
 Ovaj vodič će nas provesti kroz proces izvođenja inference koristeći Rust i [Candle ML framework](https://github.com/huggingface/candle) iz HuggingFacea. Korištenje Rusta za inference donosi nekoliko prednosti, osobito u usporedbi s drugim programskim jezicima. Rust je poznat po visokoj izvedbi, usporedivoj s C i C++. To ga čini izvrsnim izborom za zadatke inference, koji mogu biti računalno zahtjevni. Posebno je to omogućeno nultim troškovima apstrakcija i učinkovitim upravljanjem memorijom, bez opterećenja prikupljanjem smeća. Rustove mogućnosti rada na više platformi omogućuju razvoj koda koji radi na različitim operativnim sustavima, uključujući Windows, macOS i Linux, kao i mobilne operativne sustave, bez značajnih promjena u kodnoj bazi.

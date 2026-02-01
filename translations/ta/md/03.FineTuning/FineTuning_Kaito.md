@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-10-11T11:39:43+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "ta"
-}
--->
 ## Kaito மூலம் Fine-Tuning 
 
 [Kaito](https://github.com/Azure/kaito) என்பது Kubernetes களத்தில் AI/ML inference மாடல் deployment ஐ தானியங்கி செய்யும் ஒரு operator ஆகும்.

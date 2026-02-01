@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-10-11T12:23:47+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "et"
-}
--->
 # Kaugjäreldamine peenhäälestatud mudeliga
 
 Pärast seda, kui adapterid on kaugkeskkonnas treenitud, saate mudeliga suhelda lihtsa Gradio rakenduse abil.

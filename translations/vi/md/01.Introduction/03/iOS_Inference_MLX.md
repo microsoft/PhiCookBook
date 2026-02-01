@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:34:17+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "vi"
-}
--->
 # Chạy Phi-3 và Phi-4 trên iOS với Apple MLX Framework
 
 Hướng dẫn này trình bày cách tạo một ứng dụng iOS chạy mô hình Phi-3 hoặc Phi-4 trực tiếp trên thiết bị, sử dụng framework Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) là framework máy học của Apple được tối ưu cho chip Apple Silicon.

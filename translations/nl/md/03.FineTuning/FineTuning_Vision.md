@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:48:51+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "nl"
-}
--->
 # Phi-3.5-vision finetuning recept
 
 Dit is de officiële ondersteuning voor Phi-3.5-vision finetuning met behulp van huggingface libraries.  

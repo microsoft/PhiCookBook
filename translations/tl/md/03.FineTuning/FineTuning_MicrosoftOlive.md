@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:49:11+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "tl"
-}
--->
 # **Fine-tuning ng Phi-3 gamit ang Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ay isang madaling gamitin na hardware-aware na tool para sa pag-optimize ng modelo na pinagsasama ang mga nangungunang teknik sa industriya para sa model compression, optimization, at compilation.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-12-21T18:11:03+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "kn"
-}
--->
 # **Azure Machine Learning 서비스를 ಪರಿಚಯಿಸಿ**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ಯಂತ್ರ ಕಲಿಕೆಯ (ML) ಪ್ರಾಜೆಕ್ಟ್ ಜೀವನಚಕ್ರವನ್ನು ವೇಗಗೊಳಿಸಲು ಮತ್ತು ನಿರ್ವಹಿಸಲು ಉಪಯುಕ್ತವಾದ ಕ್ಲೌಡ್ ಸೇವೆಯಾಗಿದೆ.

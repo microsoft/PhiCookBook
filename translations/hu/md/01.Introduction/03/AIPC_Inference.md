@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:06:19+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "hu"
-}
--->
 # **Phi-3 inferálása AI PC-n**
 
 A generatív MI fejlődésével és az élő eszközök hardveres képességeinek javulásával egyre több generatív MI modell integrálható a felhasználók saját eszközeibe (BYOD). Az AI PC-k ezek közé a modellek közé tartoznak. 2024-től az Intel, az AMD és a Qualcomm együttműködtek a PC-gyártókkal, hogy AI PC-ket vezessenek be, amelyek hardveres módosítások révén lehetővé teszik a helyi generatív MI modellek telepítését. Ebben a témában az Intel AI PC-kre fókuszálunk, és megvizsgáljuk, hogyan lehet a Phi-3 modellt telepíteni egy Intel AI PC-n.

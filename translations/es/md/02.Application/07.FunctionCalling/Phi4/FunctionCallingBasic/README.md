@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:13:57+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "es"
-}
--->
 ## **Llamadas a funciones en Phi-4-mini**
 
 Las llamadas a funciones aparecieron por primera vez en la familia Phi Family, y ahora puedes usarlas a través de Phi-4-mini.

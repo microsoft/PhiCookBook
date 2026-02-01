@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:45:59+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "bg"
-}
--->
 ## Как да използваме компоненти за чат-завършване от системния регистър на Azure ML за фино настройване на модел
 
 В този пример ще извършим фино настройване на модела Phi-3-mini-4k-instruct, за да завърши разговор между двама души, използвайки набора от данни ultrachat_200k.

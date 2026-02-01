@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:57:46+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "sl"
-}
--->
 # **Kvantilizacija Phi-3.5 z uporabo Apple MLX Frameworka**
 
 MLX je ogrodje za strojno učenje na Apple silikonskih napravah, ki ga je razvila Apple raziskovalna skupina za strojno učenje.

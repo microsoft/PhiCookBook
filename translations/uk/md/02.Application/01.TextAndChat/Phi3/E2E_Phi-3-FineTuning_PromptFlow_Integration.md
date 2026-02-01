@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T15:59:02+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "uk"
-}
--->
 # Додаткова настройка та інтеграція користувацьких моделей Phi-3 з Prompt flow
 
 Цей кінцевий (E2E) приклад базується на керівництві "[Додаткова настройка та інтеграція користувацьких моделей Phi-3 з Prompt Flow: покроковий посібник](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" з Microsoft Tech Community. Він знайомить з процесами додаткової настройки, розгортання та інтеграції користувацьких моделей Phi-3 з Prompt flow.

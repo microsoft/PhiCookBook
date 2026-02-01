@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-12-22T01:03:11+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "ml"
-}
--->
 # **ലോകൽ സെർവറിൽ Phi-3 ഇൻഫറൻസ്**
 
 Phi-3 നാം ഒരു ലോക്കൽ സർവറിൽ ഡിപ്ലോയുചെയ്യാൻ കഴിയും. ഉപയോക്താക്കൾ [Ollama](https://ollama.com) അല്ലെങ്കിൽ [LM Studio](https://llamaedge.com) സൊല്യൂഷനുകൾ തിരഞ്ഞെടുക്കാം, അല്ലെങ്കിൽ അവർ തങ്ങളുടെ സ്വന്തം കോഡ് എഴുതാം. Copilot അപ്ലിക്കേഷനുകൾ നിർമ്മിക്കാൻ Phi-3 ന്റെ ലോക്കൽ സർവീസുകൾ [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) അല്ലെങ്കിൽ [Langchain](https://www.langchain.com/) മുഖേന കണക്‌ട് ചെയ്യാൻ കഴിയും

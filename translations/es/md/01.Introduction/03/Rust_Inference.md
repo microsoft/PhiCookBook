@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:24:09+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "es"
-}
--->
 # Inferencia multiplataforma con Rust
 
 Este tutorial nos guiará a través del proceso de realizar inferencia usando Rust y el [framework Candle ML](https://github.com/huggingface/candle) de HuggingFace. Usar Rust para inferencia ofrece varias ventajas, especialmente en comparación con otros lenguajes de programación. Rust es conocido por su alto rendimiento, comparable al de C y C++. Esto lo convierte en una excelente opción para tareas de inferencia, que pueden ser computacionalmente intensivas. En particular, esto se debe a las abstracciones sin costo y a la gestión eficiente de memoria, que no tiene sobrecarga de recolección de basura. Las capacidades multiplataforma de Rust permiten desarrollar código que se ejecuta en varios sistemas operativos, incluyendo Windows, macOS y Linux, así como en sistemas operativos móviles, sin cambios significativos en la base de código.

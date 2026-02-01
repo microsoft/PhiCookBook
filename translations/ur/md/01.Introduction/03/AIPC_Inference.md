@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:55:04+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "ur"
-}
--->
 # **AI PC میں Inference Phi-3**
 
 جنریٹو AI کی ترقی اور ایج ڈیوائسز کی ہارڈویئر صلاحیتوں میں بہتری کے ساتھ، اب زیادہ سے زیادہ جنریٹو AI ماڈلز صارفین کے Bring Your Own Device (BYOD) ڈیوائسز میں شامل کیے جا سکتے ہیں۔ AI PCs ان ماڈلز میں شامل ہیں۔ 2024 سے، Intel، AMD، اور Qualcomm نے PC بنانے والوں کے ساتھ مل کر AI PCs متعارف کروائے ہیں جو ہارڈویئر میں تبدیلیوں کے ذریعے مقامی جنریٹو AI ماڈلز کی تعیناتی کو آسان بناتے ہیں۔ اس گفتگو میں، ہم Intel AI PCs پر توجہ مرکوز کریں گے اور دیکھیں گے کہ Intel AI PC پر Phi-3 کو کیسے تعینات کیا جائے۔

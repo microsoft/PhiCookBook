@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-12-22T02:09:28+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "ml"
-}
--->
 # **Phi കുടുംബത്തെ Generative AI extensions for onnxruntime ഉപയോഗിച്ച് Quantizing ചെയ്യൽ**
 
 ## **Generative AI extensions for onnxruntime എന്താണെന്ന്**

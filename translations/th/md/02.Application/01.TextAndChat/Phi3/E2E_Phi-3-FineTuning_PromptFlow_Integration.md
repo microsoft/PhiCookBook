@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T12:15:44+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "th"
-}
--->
 # ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow
 
 ตัวอย่างแบบครบวงจร (E2E) นี้อิงตามคำแนะนำ "[ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt Flow: คู่มือทีละขั้นตอน](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" จาก Microsoft Tech Community ซึ่งแนะนำกระบวนการปรับแต่งให้เหมาะสม การปรับใช้งาน และการรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow

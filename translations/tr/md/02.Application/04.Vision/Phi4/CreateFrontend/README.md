@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:08:22+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "tr"
-}
--->
 ## **Phi-4-multimodal ile Görüntüleri Okuyup Kod Üretme**
 
 Phi-4-multimodal, güçlü görüntü okuma yeteneklerine sahiptir. Aşağıdaki fonksiyonları Python ile gerçekleştirmeyi deneyelim. Görüntü, bir ChatGPT sayfasıdır.

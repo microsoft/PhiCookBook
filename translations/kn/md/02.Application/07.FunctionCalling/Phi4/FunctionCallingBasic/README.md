@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-12-21T21:54:14+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "kn"
-}
--->
 ## **Phi-4-mini ನಲ್ಲಿ ಫಂಕ್ಷನ್ ಕರೆ**
 
 ಫಂಕ್ಷನ್ ಕರೆ ಮೊದಲು Phi Family family ನಲ್ಲಿ ಕಾಣಿಸಿಕೊಂಡಿತು, ಮತ್ತು ಈಗ ನೀವು ಅದನ್ನನ್ನು Phi-4-mini ಮೂಲಕ ಬಳಸಬಹುದು.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:23:38+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "tr"
-}
--->
 # **Azure AI Foundry'de Phi-3 Kullanımı**
 
 Generative AI'nin gelişimiyle birlikte, farklı LLM ve SLM'leri, kurumsal veri entegrasyonunu, ince ayar/RAG işlemlerini ve LLM ile SLM entegre edildikten sonra farklı kurumsal işlerin değerlendirilmesini tek bir platformda yönetmeyi umuyoruz. Böylece generative AI, akıllı uygulamalarda daha iyi uygulanabilir. [Azure AI Foundry](https://ai.azure.com), kurumsal düzeyde bir generative AI uygulama platformudur.

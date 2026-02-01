@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-07-16T23:46:37+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
-  "language_code": "vi"
-}
--->
 # Đánh giá Mô hình Phi-3 / Phi-3.5 được Tinh chỉnh trong Azure AI Foundry Tập trung vào Nguyên tắc AI Có Trách nhiệm của Microsoft
 
 Mẫu đầu cuối (E2E) này dựa trên hướng dẫn "[Đánh giá Mô hình Phi-3 / 3.5 được Tinh chỉnh trong Azure AI Foundry Tập trung vào AI Có Trách nhiệm của Microsoft](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" từ Cộng đồng Kỹ thuật Microsoft.

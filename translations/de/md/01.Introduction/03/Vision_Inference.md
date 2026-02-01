@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:35:50+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "de"
-}
--->
 # **Inference Phi-3-Vision lokal**
 
 Phi-3-vision-128k-instruct ermöglicht es Phi-3, nicht nur Sprache zu verstehen, sondern die Welt auch visuell wahrzunehmen. Mit Phi-3-vision-128k-instruct können wir verschiedene visuelle Aufgaben lösen, wie z. B. OCR, Tabellenanalyse, Objekterkennung, Bildbeschreibung usw. Aufgaben, die früher viel Daten-Training erforderten, lassen sich nun einfach erledigen. Im Folgenden sind die zugehörigen Techniken und Anwendungsszenarien aufgeführt, die von Phi-3-vision-128k-instruct genutzt werden.

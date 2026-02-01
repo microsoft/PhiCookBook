@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:50:29+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "id"
-}
--->
 # Resep finetuning Phi-3.5-vision
 
 Ini adalah dukungan resmi untuk finetuning Phi-3.5-vision menggunakan library huggingface.  

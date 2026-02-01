@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:53:25+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "ja"
-}
--->
 # **Phi-3を業界の専門家に育てる**
 
 Phi-3モデルを業界に適用するには、業界のビジネスデータをPhi-3モデルに追加する必要があります。方法は2つあり、1つはRAG（Retrieval Augmented Generation）、もう1つはファインチューニングです。

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:17:46+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "ru"
-}
--->
 # **Инференс Phi-3 на iOS**
 
 Phi-3-mini — это новая серия моделей от Microsoft, которая позволяет запускать большие языковые модели (LLM) на устройствах на периферии и в IoT. Phi-3-mini доступна для iOS, Android и Edge Device, что даёт возможность развёртывать генеративный ИИ в средах BYOD. В этом примере показано, как развернуть Phi-3-mini на iOS.

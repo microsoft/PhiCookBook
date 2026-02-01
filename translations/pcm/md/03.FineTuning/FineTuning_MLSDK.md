@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-12-21T17:28:17+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "pcm"
-}
--->
 ## How to use chat-completion components wey dey for the Azure ML system registry to fine tune a model
 
 For this example, we go do fine tuning of the Phi-3-mini-4k-instruct model make e fit complete conversation between 2 people using the ultrachat_200k dataset.

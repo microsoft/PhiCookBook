@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:41:43+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "el"
-}
--->
 # **Εισαγωγή στην Υπηρεσία Azure Machine Learning**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) είναι μια υπηρεσία στο cloud που επιταχύνει και διαχειρίζεται τον κύκλο ζωής των έργων μηχανικής μάθησης (ML).

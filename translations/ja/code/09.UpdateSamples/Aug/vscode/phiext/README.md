@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:28:24+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "ja"
-}
--->
 # phiext README
 
 これは拡張機能「phiext」のREADMEです。簡単な説明を書いた後、以下のセクションを含めることをおすすめします。

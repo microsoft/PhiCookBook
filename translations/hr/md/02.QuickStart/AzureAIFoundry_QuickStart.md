@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:28:43+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "hr"
-}
--->
 # **Korištenje Phi-3 u Azure AI Foundry**
 
 S razvojem Generativne AI, želimo koristiti jedinstvenu platformu za upravljanje različitim LLM i SLM modelima, integraciju podataka poduzeća, fine-tuning/RAG operacije te evaluaciju različitih poslovnih procesa nakon integracije LLM i SLM, kako bi se generativna AI bolje implementirala u pametne aplikacije. [Azure AI Foundry](https://ai.azure.com) je platforma za generativnu AI na razini poduzeća.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T10:00:03+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "hu"
-}
--->
 # **Engedd, hogy a Phi-3 iparági szakértővé váljon**
 
 Ahhoz, hogy a Phi-3 modellt egy iparágban alkalmazzuk, iparági üzleti adatokat kell hozzáadni a Phi-3 modellhez. Két különböző lehetőségünk van: az első a RAG (Retrieval Augmented Generation), a második pedig a Fine Tuning.

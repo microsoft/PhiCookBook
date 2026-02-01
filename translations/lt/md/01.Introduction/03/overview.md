@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-09-12T14:54:36+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "lt"
-}
--->
 Phi-3-mini kontekste, išvedimas reiškia procesą, kai modelis naudojamas prognozėms ar rezultatams generuoti remiantis įvesties duomenimis. Pateiksiu daugiau informacijos apie Phi-3-mini ir jo išvedimo galimybes.
 
 Phi-3-mini yra dalis Phi-3 modelių serijos, kurią išleido Microsoft. Šie modeliai sukurti tam, kad iš naujo apibrėžtų, ką galima pasiekti naudojant mažus kalbos modelius (SLM).

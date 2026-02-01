@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:29:18+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "ko"
-}
--->
 # **LoRA를 이용한 Phi-3 미니 파인튜닝**
 
 Microsoft의 Phi-3 Mini 언어 모델을 [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo)를 사용해 맞춤형 채팅 지침 데이터셋으로 파인튜닝하는 방법입니다.

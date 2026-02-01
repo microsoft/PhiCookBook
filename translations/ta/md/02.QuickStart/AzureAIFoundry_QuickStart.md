@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-10-11T12:11:40+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "ta"
-}
--->
 # **Azure AI Foundry-ல் Phi-3 பயன்படுத்துவது**
 
 ஜெனரேட்டிவ் AI வளர்ச்சியுடன், LLM மற்றும் SLM, நிறுவன தரவுகள் ஒருங்கிணைப்பு, Fine-tuning/RAG செயல்பாடுகள் மற்றும் LLM மற்றும் SLM ஒருங்கிணைந்த பிறகு நிறுவன வணிகங்களை மதிப்பீடு செய்வது போன்றவற்றை நிர்வகிக்க ஒரே தளத்தை பயன்படுத்த விரும்புகிறோம். இதனால் ஜெனரேட்டிவ் AI சிக்கலான பயன்பாடுகள் சிறப்பாக செயல்படுத்தப்படலாம். [Azure AI Foundry](https://ai.azure.com) என்பது நிறுவன அளவிலான ஜெனரேட்டிவ் AI பயன்பாட்டு தளம்.

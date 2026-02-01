@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-07-17T03:28:41+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
-  "language_code": "ms"
-}
--->
 # **Cipta Ejen Visual Studio Code Chat Copilot Anda Sendiri dengan Phi-3.5 oleh GitHub Models**
 
 Adakah anda menggunakan Visual Studio Code Copilot? Terutamanya dalam Chat, anda boleh menggunakan ejen yang berbeza untuk meningkatkan keupayaan mencipta, menulis, dan menyelenggara projek dalam Visual Studio Code. Visual Studio Code menyediakan API yang membolehkan syarikat dan individu mencipta ejen yang berbeza berdasarkan perniagaan mereka untuk mengembangkan keupayaan dalam pelbagai bidang proprietari. Dalam artikel ini, kita akan fokus pada **Phi-3.5-mini-instruct (128k)** dan **Phi-3.5-vision-instruct (128k)** daripada GitHub Models untuk mencipta Ejen Visual Studio Code anda sendiri.

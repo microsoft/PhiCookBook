@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T14:48:34+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "et"
-}
--->
 # **Phi perekonna kvantimine**
 
 Mudeli kvantimine viitab protsessile, kus närvivõrgu mudeli parameetrid (näiteks kaalud ja aktivatsiooniväärtused) kaardistatakse suurest väärtuse vahemikust (tavaliselt pidevast väärtuse vahemikust) väiksemasse lõplikku väärtuse vahemikku. See tehnoloogia võimaldab mudeli suurust ja arvutuslikku keerukust vähendada ning parandada mudeli töö efektiivsust ressursinappuses keskkondades nagu mobiilseadmed või manussüsteemid. Mudeli kvantimine saavutab tihendamise, vähendades parameetrite täpsust, kuid toob kaasa ka teatud täpsuskadude. Seetõttu tuleb kvantimisprotsessis tasakaalustada mudeli suurus, arvutuslik keerukus ja täpsus. Levinumad kvantimismeetodid hõlmavad fikseeritud koma kvantimist, ujuvkomaga kvantimist jms. Konkreetse stsenaariumi ja vajaduste järgi saab valida sobiva kvantimisstrateegia.

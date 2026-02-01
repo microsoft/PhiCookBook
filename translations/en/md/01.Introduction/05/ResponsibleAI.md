@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:46:18+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "en"
-}
--->
 # **Introduce Responsible AI**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) is an initiative designed to help developers and organizations create AI systems that are transparent, trustworthy, and accountable. It offers guidance and resources for building responsible AI solutions aligned with ethical principles like privacy, fairness, and transparency. We will also look at some challenges and best practices involved in developing responsible AI systems.

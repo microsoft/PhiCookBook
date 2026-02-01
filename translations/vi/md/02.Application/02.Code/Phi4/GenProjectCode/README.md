@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:21+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "vi"
-}
--->
 ## **Sử dụng Phi-4-mini-mm để tạo mã**
 
 Phi-4-mini tiếp tục phát huy khả năng lập trình mạnh mẽ của Phi Family. Bạn có thể sử dụng Prompt để đặt câu hỏi liên quan đến lập trình. Tất nhiên, sau khi được bổ sung khả năng suy luận mạnh mẽ, nó có khả năng lập trình tốt hơn, chẳng hạn như tạo dự án theo yêu cầu. Ví dụ, tạo dự án theo yêu cầu như sau:

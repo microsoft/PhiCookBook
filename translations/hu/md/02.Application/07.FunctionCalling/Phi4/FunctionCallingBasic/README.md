@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:16:44+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "hu"
-}
--->
 ## **Függvényhívás a Phi-4-mini-ben**
 
 A függvényhívás először a Phi Family családban jelent meg, és most már a Phi-4-mini segítségével is használható.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:06:57+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "ja"
-}
--->
 ## Azure ML システムレジストリの chat-completion コンポーネントを使ってモデルをファインチューニングする方法
 
 この例では、Phi-3-mini-4k-instruct モデルを ultrachat_200k データセットを使って2人の会話を完結させるタスクでファインチューニングします。

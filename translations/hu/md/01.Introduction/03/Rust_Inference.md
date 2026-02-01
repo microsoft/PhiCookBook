@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:32:46+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "hu"
-}
--->
 # Többplatformos inferencia Rusttal
 
 Ez a bemutató végigvezet minket az inferencia folyamatán Rust és a HuggingFace [Candle ML keretrendszer](https://github.com/huggingface/candle) használatával. A Rust használata az inferenciához több előnnyel jár, különösen más programozási nyelvekhez képest. A Rust híres a magas teljesítményéről, amely összehasonlítható a C és C++ nyelvekével. Ez kiváló választássá teszi az inferencia feladatokhoz, amelyek számításigényesek lehetnek. Különösen ennek alapja a nulla költségű absztrakciók és a hatékony memória-kezelés, amely nem igényel szemétgyűjtést. A Rust többplatformos képességei lehetővé teszik olyan kód fejlesztését, amely különböző operációs rendszereken fut, beleértve a Windowst, macOS-t és Linuxot, valamint mobil operációs rendszereket is, anélkül, hogy jelentős változtatásokat kellene végezni a kódbázison.

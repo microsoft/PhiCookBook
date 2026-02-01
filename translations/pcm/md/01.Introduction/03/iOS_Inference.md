@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-12-22T00:31:31+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "pcm"
-}
--->
 # **How to run Phi-3 for iOS**
 
 Phi-3-mini na new model series from Microsoft wey make you fit deploy Large Language Models (LLMs) for edge devices and IoT devices. Phi-3-mini dey available for iOS, Android, and Edge Device deployments, so e fit allow generative AI make e run for BYOD environments. Dis example show how to deploy Phi-3-mini for iOS.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-12-21T15:42:03+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "kn"
-}
--->
 # Phi3 ಅನ್ನು Olive ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿ
 
 ಈ ಉದಾಹರಣೆಯಲ್ಲಿ ನೀವು Olive ಅನ್ನು ಬಳಸುತ್ತೀರಿ:

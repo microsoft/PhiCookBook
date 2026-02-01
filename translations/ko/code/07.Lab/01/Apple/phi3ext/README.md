@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:52:31+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
-  "language_code": "ko"
-}
--->
 # phi3ext README
 
 이것은 당신의 확장 "phi3ext"의 README입니다. 간단한 설명을 작성한 후, 다음 섹션들을 포함하는 것을 권장합니다.

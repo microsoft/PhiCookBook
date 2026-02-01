@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:56:35+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "tl"
-}
--->
 # **Pag-quantize ng Phi-3.5 gamit ang Apple MLX Framework**
 
 Ang MLX ay isang array framework para sa pananaliksik sa machine learning sa Apple silicon, na dala sa iyo ng Apple machine learning research.

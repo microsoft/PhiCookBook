@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-12-21T16:42:21+00:00",
-  "source_file": "code/03.Finetuning/olive-lab/readme.md",
-  "language_code": "te"
-}
--->
 # ల్యాబ్. డివైస్‌పై ఇన్ఫరెన్స్ కోసం AI మోడల్స్‌ను ఆప్టిమైజ్ చేయండి
 
 ## పరిచయం 

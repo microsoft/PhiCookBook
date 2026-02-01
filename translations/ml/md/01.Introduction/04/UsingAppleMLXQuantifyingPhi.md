@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-12-22T01:45:26+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ml"
-}
--->
 # **Apple MLX ഫ്രെയിംവർക്ക് ഉപയോഗിച്ച് Phi-3.5 ക്വാണ്ടൈസിംഗ്**
 
 

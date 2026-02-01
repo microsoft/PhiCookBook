@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:00:45+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "da"
-}
--->
 # **Finjustering af Phi-3 med Apple MLX Framework**
 
 Vi kan udføre finjustering kombineret med Lora via Apple MLX frameworkets kommandolinje. (Hvis du vil vide mere om, hvordan MLX Framework fungerer, kan du læse [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

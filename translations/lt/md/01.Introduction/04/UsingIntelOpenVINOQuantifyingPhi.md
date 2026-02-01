@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-09-12T14:51:51+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "lt"
-}
--->
 # **Phi-3.5 kvantavimas naudojant Intel OpenVINO**
 
 Intel yra vienas tradiciškiausių procesorių gamintojų, turintis daugybę vartotojų. Su mašininio mokymosi ir giluminio mokymosi augimu, Intel taip pat prisijungė prie AI spartinimo konkurencijos. Modelių įžvalgoms Intel naudoja ne tik GPU ir CPU, bet ir NPU.

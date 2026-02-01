@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-09-12T14:31:50+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
-  "language_code": "lt"
-}
--->
 # **Naudojant Microsoft Phi-3.5 tflite Android programėlei kurti**
 
 Tai yra Android pavyzdys, naudojantis Microsoft Phi-3.5 tflite modelius.

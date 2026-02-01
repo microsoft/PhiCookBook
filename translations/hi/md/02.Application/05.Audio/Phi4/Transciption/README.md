@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:16+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "hi"
-}
--->
 ## **Phi-4-multimodal का उपयोग करके ऑडियो ट्रांसक्रिप्ट निकालना**
 
 Phi-4-multimodal एक पूर्ण-मोडल मॉडल है जो टेक्स्ट और इमेज के अलावा ऑडियो का भी उपयोग कर सकता है। आइए देखें कि इसे कैसे इस्तेमाल किया जाए।  

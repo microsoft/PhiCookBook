@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:56:49+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "ja"
-}
--->
 # **AI PCでのPhi-3推論**
 
 生成AIの進化とエッジデバイスのハードウェア性能向上により、ユーザーのBYOD（Bring Your Own Device）デバイスに多くの生成AIモデルが組み込まれるようになってきました。AI PCもその一例です。2024年から、Intel、AMD、QualcommはPCメーカーと協力し、ハードウェアの改良を通じてローカルで生成AIモデルを展開できるAI PCを導入しています。本稿ではIntelのAI PCに焦点を当て、Intel AI PC上でのPhi-3の展開方法を解説します。

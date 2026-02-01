@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-12-21T22:02:44+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "kn"
-}
--->
 ### ಉದಾಹರಣಾ ದೃಶ್ಯ
 
 ನೀವು ಒಂದು ಚಿತ್ರ (`demo.png`) ಹೊಂದಿದ್ದೀರಿ ಎಂದು ಭಾವಿಸಿ ಮತ್ತು ಆ ಚಿತ್ರವನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಿ ಅದರ ಹೊಸ ಪ್ರತಿಯನ್ನು (`phi-3-vision.jpg`) ಉಳಿಸುವ Python ಕೋಡ್ ಅನ್ನು ರಚಿಸಲು ನೀವು ಬಯಸುತ್ತೀರಿ. 

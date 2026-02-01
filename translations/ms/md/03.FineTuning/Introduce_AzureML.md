@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:45:46+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "ms"
-}
--->
 # **Memperkenalkan Perkhidmatan Pembelajaran Mesin Azure**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) adalah perkhidmatan awan untuk mempercepat dan mengurus kitar hayat projek pembelajaran mesin (ML).

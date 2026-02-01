@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-12-21T17:34:39+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "te"
-}
--->
 ## Azure ML సిస్టమ్ రిజిస్ట్రీ నుండి చాట్-కంప్లీషన్ కంపోనెంట్లను ఉపయోగించి మోడల్‌ను ఫైన్-ట్యూన్ చేయడం ఎలా
 
 In this example we will undertake fine tuning of the Phi-3-mini-4k-instruct model to complete a conversation between 2 people using ultrachat_200k dataset.

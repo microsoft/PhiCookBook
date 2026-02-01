@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:32:25+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "nl"
-}
--->
 ## Hoe chat-completion componenten uit de Azure ML system registry te gebruiken om een model fijn af te stemmen
 
 In dit voorbeeld voeren we een fine tuning uit van het Phi-3-mini-4k-instruct model om een gesprek tussen 2 personen te voltooien met behulp van de ultrachat_200k dataset.

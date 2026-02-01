@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:20:47+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "el"
-}
--->
 ## **Πώς να χρησιμοποιήσετε το Model Builder για την ποσοτικοποίηση του Phi-3.5**
 
 Το Model Builder υποστηρίζει πλέον την ποσοτικοποίηση μοντέλων ONNX για τα Phi-3.5 Instruct και Phi-3.5-Vision.

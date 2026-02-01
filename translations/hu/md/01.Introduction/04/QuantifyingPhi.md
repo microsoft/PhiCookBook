@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:29:52+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "hu"
-}
--->
 # **Phi család kvantálása**
 
 A modell kvantálása azt a folyamatot jelenti, amikor egy neurális hálózati modellben található paramétereket (például súlyokat és aktivációs értékeket) egy nagy értéktartományból (általában folytonos értéktartományból) egy kisebb véges értéktartományba térképezünk át. Ez a technológia csökkentheti a modell méretét és számítási összetettségét, valamint javíthatja a modell működési hatékonyságát erőforrás-korlátozott környezetekben, mint például mobil eszközökön vagy beágyazott rendszerekben. A modell kvantálás a paraméterek pontosságának csökkentésével éri el a tömörítést, de ez pontosságvesztéssel is jár. Ezért a kvantálási folyamat során egyensúlyt kell találni a modell mérete, számítási komplexitása és pontossága között. A gyakori kvantálási módszerek közé tartozik a fixpontos kvantálás, lebegőpontos kvantálás stb. A konkrét helyzet és igények szerint lehet kiválasztani a megfelelő kvantálási stratégiát.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:02:28+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "ne"
-}
--->
 यो डेमोले pretrained मोडेललाई कसरी प्रयोग गरेर एउटा तस्बिर र टेक्स्ट प्रॉम्प्टको आधारमा Python कोड उत्पन्न गर्ने देखाउँछ।
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

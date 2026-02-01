@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T06:06:29+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "sv"
-}
--->
 # Finjustering av Phi-3 med Azure AI Foundry
 
 Låt oss utforska hur man finjusterar Microsofts språkmodell Phi-3 Mini med hjälp av Azure AI Foundry. Finjustering gör det möjligt att anpassa Phi-3 Mini för specifika uppgifter, vilket gör modellen ännu kraftfullare och mer kontextmedveten.

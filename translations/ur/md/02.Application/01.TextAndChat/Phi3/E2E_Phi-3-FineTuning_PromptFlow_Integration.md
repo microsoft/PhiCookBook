@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T17:08:02+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "ur"
-}
--->
 # کسٹم Phi-3 ماڈلز کو Fine-tune اور Prompt flow کے ساتھ انٹیگریٹ کریں
 
 یہ اختتام سے اختتام (E2E) نمونہ مائیکروسافٹ ٹیک کمیونٹی کے رہنما "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" پر مبنی ہے۔ یہ کسٹم Phi-3 ماڈلز کو Fine-tune، تعینات کرنے، اور Prompt flow کے ساتھ انٹیگریٹ کرنے کے عمل کو متعارف کراتا ہے۔

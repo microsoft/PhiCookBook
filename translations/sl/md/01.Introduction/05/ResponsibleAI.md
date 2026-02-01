@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:59:24+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "sl"
-}
--->
 # **Predstavitev Responsible AI**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) je pobuda, ki razvijalcem in organizacijam pomaga graditi AI sisteme, ki so pregledni, zaupanja vredni in odgovorni. Pobuda ponuja smernice in vire za razvoj odgovornih AI rešitev, ki so usklajene z etičnimi načeli, kot so zasebnost, pravičnost in preglednost. Prav tako bomo raziskali nekatere izzive in dobre prakse, povezane z gradnjo odgovornih AI sistemov.

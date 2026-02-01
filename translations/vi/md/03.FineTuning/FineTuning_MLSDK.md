@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:34:52+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "vi"
-}
--->
 ## Cách sử dụng các thành phần chat-completion từ Azure ML system registry để tinh chỉnh mô hình
 
 Trong ví dụ này, chúng ta sẽ thực hiện tinh chỉnh mô hình Phi-3-mini-4k-instruct để hoàn thành cuộc hội thoại giữa 2 người sử dụng bộ dữ liệu ultrachat_200k.

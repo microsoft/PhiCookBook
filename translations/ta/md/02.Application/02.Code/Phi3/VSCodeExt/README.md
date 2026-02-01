@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-10-11T11:54:50+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ta"
-}
--->
 # **Visual Studio Code GitHub Copilot Chat-ஐ Microsoft Phi-3 குடும்பத்துடன் உருவாக்குங்கள்**
 
 GitHub Copilot Chat-இல் workspace agent-ஐ பயன்படுத்தியுள்ளீர்களா? உங்கள் குழுவின் code agent-ஐ உருவாக்க விரும்புகிறீர்களா? இந்த கையேடு திறந்த மூல மாடலை இணைத்து ஒரு நிறுவன மட்ட code business agent-ஐ உருவாக்க உதவுகிறது.

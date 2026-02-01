@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:59:31+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "hr"
-}
--->
 # **Izvođenje Phi-3 na lokalnom poslužitelju**
 
 Phi-3 možemo postaviti na lokalni poslužitelj. Korisnici mogu odabrati rješenja poput [Ollama](https://ollama.com) ili [LM Studio](https://llamaedge.com), ili mogu napisati vlastiti kod. Phi-3 lokalne usluge možete povezati putem [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) ili [Langchain](https://www.langchain.com/) za izgradnju Copilot aplikacija.

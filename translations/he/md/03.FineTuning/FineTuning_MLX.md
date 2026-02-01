@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:01:24+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "he"
-}
--->
 # **כיוונון עדין של Phi-3 עם מסגרת Apple MLX**
 
 ניתן לבצע כיוונון עדין בשילוב עם Lora דרך שורת הפקודה של מסגרת Apple MLX. (אם ברצונכם לדעת יותר על אופן הפעולה של מסגרת MLX, אנא קראו את [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

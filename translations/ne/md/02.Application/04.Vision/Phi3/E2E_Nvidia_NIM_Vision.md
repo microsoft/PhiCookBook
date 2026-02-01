@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:54:40+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "ne"
-}
--->
 ### उदाहरण परिदृश्य
 
 कल्पना गर्नुहोस् तपाईंसँग एउटा तस्बिर (`demo.png`) छ र तपाईँले यस्तो Python कोड बनाउन चाहनुहुन्छ जसले यो तस्बिरलाई प्रक्रिया गरी नयाँ संस्करण (`phi-3-vision.jpg`) सुरक्षित गर्छ।

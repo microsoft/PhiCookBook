@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:33:16+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "fi"
-}
--->
 # **Phi-3:n hienosäätö Loran avulla**
 
 Microsoftin Phi-3 Mini -kielimallin hienosäätö käyttäen [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) -menetelmää räätälöidyllä chat-ohjeistusaineistolla.

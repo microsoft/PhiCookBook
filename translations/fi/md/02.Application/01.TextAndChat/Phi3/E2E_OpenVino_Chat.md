@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-07-16T23:05:25+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "fi"
-}
--->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 Tämä koodi vie mallin OpenVINO-muotoon, lataa sen ja käyttää sitä vastauksen luomiseen annettuun kehotteeseen.

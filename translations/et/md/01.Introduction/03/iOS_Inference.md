@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-10-11T12:23:18+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "et"
-}
--->
 # **Inference Phi-3 iOS-is**
 
 Phi-3-mini on Microsofti uus mudeliseeria, mis võimaldab suurte keelemudelite (LLM) kasutamist servaseadmetes ja IoT-seadmetes. Phi-3-mini on saadaval iOS-i, Androidi ja servaseadmete jaoks, võimaldades generatiivset tehisintellekti kasutada BYOD-keskkondades. Järgnevas näites näidatakse, kuidas Phi-3-mini iOS-is rakendada.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:17:06+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "ja"
-}
--->
 ## **Model Builderを使ったPhi-3.5の量子化方法**
 
 Model Builderは現在、Phi-3.5 InstructおよびPhi-3.5-VisionのONNXモデル量子化をサポートしています。

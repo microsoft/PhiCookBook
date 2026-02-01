@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:20:41+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "sw"
-}
--->
 # **Kupima Familia ya Phi**
 
 Kupima mfano kunahusu mchakato wa kupanga vigezo (kama uzito na thamani za uanzishaji) katika mfano wa mtandao wa neva kutoka kwa kiwango kikubwa cha thamani (kwa kawaida kiwango cha thamani kinachoendelea) hadi kiwango kidogo cha thamani kilicho na kikomo. Teknolojia hii inaweza kupunguza ukubwa na ugumu wa kihesabu wa mfano na kuboresha ufanisi wa uendeshaji wa mfano katika mazingira yenye rasilimali chache kama vile vifaa vya mkononi au mifumo iliyojengwa ndani. Kupima mfano hufanikisha ukandishaji kwa kupunguza usahihi wa vigezo, lakini pia huleta upotevu fulani wa usahihi. Kwa hiyo, katika mchakato wa kupima, ni muhimu kusawazisha ukubwa wa mfano, ugumu wa kihesabu, na usahihi. Mbinu za kawaida za kupima ni pamoja na kupima kwa nukta imara, kupima kwa nukta inayoelea, n.k. Unaweza kuchagua mkakati unaofaa wa kupima kulingana na hali na mahitaji maalum.

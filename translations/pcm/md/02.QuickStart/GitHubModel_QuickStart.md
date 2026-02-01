@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-12-21T19:02:24+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "pcm"
-}
--->
 ## GitHub Models - Limited Public Beta
 
 Welcome to [GitHub Models]! We don set everytin make e ready so you fit explore AI Models wey dey hosted on Azure AI.

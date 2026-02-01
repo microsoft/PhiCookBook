@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:17:04+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "bg"
-}
--->
 ## **Извикване на функции в Phi-4-mini**
 
 Извикването на функции се появи за първи път във фамилията Phi Family, а сега можете да го използвате и в Phi-4-mini.

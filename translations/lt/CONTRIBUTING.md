@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-09-12T14:25:17+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "lt"
-}
--->
 # Prisidėjimas
 
 Šis projektas laukia jūsų indėlio ir pasiūlymų. Dauguma indėlių reikalauja, kad sutiktumėte su Contributor License Agreement (CLA), kuriame deklaruojate, jog turite teisę suteikti mums teises naudoti jūsų indėlį. Daugiau informacijos rasite [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com).

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T15:42:19+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "sl"
-}
--->
 # **Kvantifikacija družine Phi**
 
 Kvantizacija modela se nanaša na postopek preslikave parametrov (kot so uteži in vrednosti aktivacije) v nevronskem omrežju iz velikega razpona vrednosti (običajno zveznega vrednostnega razpona) v manjši končni razpon vrednosti. Ta tehnologija lahko zmanjša velikost in računsko zahtevnost modela ter izboljša učinkovitost delovanja modela v okoljih z omejenimi viri, kot so mobilne naprave ali vgrajeni sistemi. Kvantizacija modela doseže kompresijo z zmanjšanjem natančnosti parametrov, vendar pri tem pride tudi do določenih izgub natančnosti. Zato je pri procesu kvantizacije potrebno uravnotežiti velikost modela, računsko zahtevnost in natančnost. Pogoste metode kvantizacije vključujejo kvantizacijo s fiksno decimalno vejico, kvantizacijo s plavajočo vejico itd. Izbrati je mogoče ustrezno strategijo kvantizacije glede na specifičen scenarij in potrebe.

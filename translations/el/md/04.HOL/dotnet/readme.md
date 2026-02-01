@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:36:54+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "el"
-}
--->
 ﻿## Καλώς ήρθατε στα εργαστήρια Phi με χρήση C#
 
 Υπάρχει μια συλλογή εργαστηρίων που παρουσιάζει πώς να ενσωματώσετε τις ισχυρές διαφορετικές εκδόσεις των μοντέλων Phi σε περιβάλλον .NET.

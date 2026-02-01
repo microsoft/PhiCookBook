@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-07-17T08:27:36+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
-  "language_code": "da"
-}
--->
 ## Finjusteringsscenarier
 
 ![Finjustering med MS Services](../../../../translated_images/da/FinetuningwithMS.3d0cec8ae693e094.webp)

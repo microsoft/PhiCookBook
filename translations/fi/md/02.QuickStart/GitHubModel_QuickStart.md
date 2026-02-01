@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:38:27+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "fi"
-}
--->
 ## GitHub Models - Rajoitettu julkinen beta
 
 Tervetuloa [GitHub Models](https://github.com/marketplace/models) -palveluun! Olemme valmiina, jotta voit tutustua Azure AI:lla isännöityihin tekoälymalleihin.

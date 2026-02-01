@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-07-17T03:07:37+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
-  "language_code": "ko"
-}
--->
 # Phi-3.5-Instruct WebGPU RAG 챗봇
 
 ## WebGPU와 RAG 패턴 시연 데모

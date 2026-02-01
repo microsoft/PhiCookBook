@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T14:38:34+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "ta"
-}
--->
 # Fine-tune மற்றும் Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரிகளை ஒருங்கிணைக்கவும்
 
 இந்த End-to-end (E2E) மாதிரி Microsoft Tech Community இன் "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" என்ற வழிகாட்டி அடிப்படையில் உருவாக்கப்பட்டுள்ளது. இது fine-tuning, despleyment மற்றும் Prompt flow உடன் தனிப்பயன் Phi-3 மாதிரிகளை ஒருங்கிணைக்கும் செயல்முறைகளை அறிமுகப்படுத்துகிறது.

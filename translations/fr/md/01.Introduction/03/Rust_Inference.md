@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:23:55+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "fr"
-}
--->
 # Inférence multiplateforme avec Rust
 
 Ce tutoriel nous guidera à travers le processus d’inférence en utilisant Rust et le [framework Candle ML](https://github.com/huggingface/candle) de HuggingFace. Utiliser Rust pour l’inférence présente plusieurs avantages, notamment par rapport à d’autres langages de programmation. Rust est reconnu pour ses performances élevées, comparables à celles de C et C++. Cela en fait un excellent choix pour les tâches d’inférence, souvent gourmandes en calcul. Cela s’explique notamment par ses abstractions sans coût supplémentaire et sa gestion efficace de la mémoire, sans surcharge liée au ramasse-miettes. Les capacités multiplateformes de Rust permettent de développer du code fonctionnant sur divers systèmes d’exploitation, y compris Windows, macOS et Linux, ainsi que sur des systèmes mobiles, sans modifications majeures du code.

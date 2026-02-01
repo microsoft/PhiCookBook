@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-12-21T15:39:17+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "te"
-}
--->
 # Phi3 ని Olive తో ఫైన్-ట్యూన్ చేయండి
 
 ఈ ఉదాహరణలో మీరు Olive ను ఉపయోగించి చేయబోయేది:

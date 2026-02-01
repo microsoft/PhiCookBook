@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:17:33+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "ne"
-}
--->
 # फाइन-ट्यून गरिएको मोडेलसँग रिमोट इन्फरेन्सिङ
 
 एडाप्टरहरू रिमोट वातावरणमा तालिम दिइसकेपछि, मोडेलसँग अन्तरक्रिया गर्न एक सरल Gradio एप्लिकेशन प्रयोग गर्नुहोस्।

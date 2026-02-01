@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-16T16:50:01+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
-  "language_code": "hu"
-}
--->
 # Változásnapló
 
 Minden jelentős változás a "phi3ext" kiterjesztésekben ebben a fájlban lesz dokumentálva.

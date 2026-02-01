@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:42:50+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "fi"
-}
--->
 # Osallistuminen
 
 Tämä projekti toivottaa tervetulleiksi panokset ja ehdotukset. Useimmat panokset edellyttävät, että hyväksyt Contributor License Agreementin (CLA), jossa vahvistat, että sinulla on oikeus ja että myönnät meille oikeudet käyttää panostasi. Lisätietoja löytyy osoitteesta [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)

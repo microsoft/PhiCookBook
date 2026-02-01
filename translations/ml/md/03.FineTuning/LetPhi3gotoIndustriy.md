@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-12-21T17:25:06+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "ml"
-}
--->
 # **Phi-3-നെ ഒരു വ്യവസായ വിദഗ്ധനാക്കി മാറ്റുക**
 
 Phi-3 മോഡൽ ഒരു വ്യവസായത്തിൽ ഉപയോഗത്തിൽ കൊണ്ടുവരുന്നതിനായി, വ്യവസായ ബിസിനസ് ഡാറ്റ Phi-3 മോഡലിൽ ചേർക്കേണ്ടതാണ്. ഞങ്ങൾക്ക് രണ്ട് വ്യത്യസ്ത ഓപ്ഷനുകൾ ഉണ്ട് — ആദ്യത്തേത് RAG (Retrieval Augmented Generation) ആണ്, രണ്ടാംത് ഫൈൻ-ട്യൂണിംഗ് ആണ്.

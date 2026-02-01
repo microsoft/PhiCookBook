@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:52:48+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
-  "language_code": "bn"
-}
--->
 # phi3ext README
 
 এটি আপনার এক্সটেনশন "phi3ext" এর README। সংক্ষিপ্ত বর্ণনা লেখার পর, আমরা নিম্নলিখিত অধ্যায়গুলি অন্তর্ভুক্ত করার পরামর্শ দিই।

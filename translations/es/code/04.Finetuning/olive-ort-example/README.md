@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-07-16T16:23:36+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "es"
-}
--->
 # Ajustar finamente Phi3 usando Olive
 
 En este ejemplo usarás Olive para:

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-10-11T11:34:00+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "ta"
-}
--->
 # phi3ext README
 
 இது உங்கள் "phi3ext" விரிவாக்கத்தின் README ஆகும். சுருக்கமான விளக்கத்தை எழுதிய பிறகு, கீழே உள்ள பகுதிகளை சேர்ப்பதை பரிந்துரைக்கிறோம்.

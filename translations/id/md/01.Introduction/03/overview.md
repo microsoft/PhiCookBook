@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:11:47+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "id"
-}
--->
 Dalam konteks Phi-3-mini, inference mengacu pada proses menggunakan model untuk membuat prediksi atau menghasilkan output berdasarkan data input. Izinkan saya memberikan lebih banyak detail tentang Phi-3-mini dan kemampuan inferensinya.
 
 Phi-3-mini adalah bagian dari seri model Phi-3 yang dirilis oleh Microsoft. Model-model ini dirancang untuk mendefinisikan ulang apa yang mungkin dilakukan dengan Small Language Models (SLM).

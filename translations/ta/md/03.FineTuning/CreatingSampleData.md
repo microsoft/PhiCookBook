@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-10-11T11:44:54+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "ta"
-}
--->
 # Hugging Face-இல் இருந்து தரவுத்தொகுப்பை பதிவிறக்கம் செய்து, தொடர்புடைய படங்களைப் பயன்படுத்தி படத் தரவுத்தொகுப்பை உருவாக்குதல்
 
 ### கண்ணோட்டம்

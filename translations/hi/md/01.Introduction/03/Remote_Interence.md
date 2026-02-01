@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:16:50+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "hi"
-}
--->
 # फाइन-ट्यून किए गए मॉडल के साथ रिमोट इन्फरेंसिंग
 
 जब एडाप्टर्स को रिमोट वातावरण में प्रशिक्षित कर लिया जाता है, तो मॉडल के साथ इंटरैक्ट करने के लिए एक सरल Gradio एप्लिकेशन का उपयोग करें।

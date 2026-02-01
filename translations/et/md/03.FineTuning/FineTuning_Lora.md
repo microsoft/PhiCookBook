@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-10-11T11:42:37+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "et"
-}
--->
 # **Phi-3 peenhäälestamine Lora abil**
 
 Microsofti keelemudeli Phi-3 Mini peenhäälestamine [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) abil, kasutades kohandatud vestlusjuhiste andmekogumit.

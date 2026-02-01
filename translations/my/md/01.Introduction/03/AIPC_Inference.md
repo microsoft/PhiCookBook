@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:09:23+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "my"
-}
--->
 # **AI PC တွင် Phi-3 ကို အနုညာတစွာ အသုံးပြုခြင်း**
 
 Generative AI နည်းပညာတိုးတက်လာခြင်းနှင့် edge device များ၏ hardware စွမ်းဆောင်ရည်တိုးတက်လာခြင်းကြောင့်၊ အသုံးပြုသူများ၏ Bring Your Own Device (BYOD) စက်များတွင် generative AI မော်ဒယ်များ ပိုမိုများပြားစွာ ထည့်သွင်းအသုံးပြုနိုင်လာသည်။ AI PC များသည် ထိုမော်ဒယ်များအနက် တစ်ခုဖြစ်သည်။ ၂၀၂၄ ခုနှစ်မှစ၍ Intel, AMD နှင့် Qualcomm တို့သည် PC ထုတ်လုပ်သူများနှင့် ပူးပေါင်း၍ hardware ပြင်ဆင်မှုများဖြင့် ဒေသတွင်း generative AI မော်ဒယ်များကို တပ်ဆင်အသုံးပြုနိုင်သော AI PC များကို မိတ်ဆက်ခဲ့သည်။ ဤဆွေးနွေးပွဲတွင် Intel AI PC များအပေါ် အာရုံစိုက်ကာ Intel AI PC တစ်လုံးတွင် Phi-3 ကို မည်သို့ တပ်ဆင်အသုံးပြုရမည်ကို ရှင်းလင်းပြသမည်ဖြစ်သည်။

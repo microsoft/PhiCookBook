@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:59:11+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "ro"
-}
--->
 # **Inferență Phi-3 pe Server Local**
 
 Putem implementa Phi-3 pe un server local. Utilizatorii pot alege soluțiile [Ollama](https://ollama.com) sau [LM Studio](https://llamaedge.com), sau pot scrie propriul cod. Poți conecta serviciile locale Phi-3 prin [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) sau [Langchain](https://www.langchain.com/) pentru a construi aplicații Copilot.

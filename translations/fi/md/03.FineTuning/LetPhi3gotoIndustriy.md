@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:58:07+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "fi"
-}
--->
 # **Anna Phi-3:n tulla alan asiantuntijaksi**
 
 Jotta Phi-3-mallia voidaan käyttää tietyllä alalla, siihen täytyy lisätä alan liiketoimintadataa. Meillä on kaksi eri vaihtoehtoa: ensimmäinen on RAG (Retrieval Augmented Generation) ja toinen Fine Tuning.

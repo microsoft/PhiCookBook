@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T14:56:27+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "te"
-}
--->
 # Fine-tune మరియు Prompt flow తో కస్టమ్ Phi-3 మోడళ్లను ఇంటిగ్రేట్ చేయడం
 
 ఈ ఎండ్-టు-ఎండ్ (E2E) నమూనా Microsoft Tech Community నుండి "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" గైడ్ ఆధారంగా ఉంది. ఇది Phi-3 కస్టమ్ మోడళ్లను ఫైన్-ట్యూనింగ్, డిప్లాయ్ చేసుకోవడం మరియు Prompt flow తో ఇంటిగ్రేట్ చేసే ప్రక్రియలను పరిచయం చేస్తుంది.

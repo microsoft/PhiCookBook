@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:34:05+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "bn"
-}
--->
 ﻿## C# ব্যবহার করে Phi ল্যাবসমূহে স্বাগতম
 
 কিছু ল্যাব রয়েছে যা দেখায় কিভাবে শক্তিশালী Phi মডেলের বিভিন্ন সংস্করণ .NET পরিবেশে একত্রিত করা যায়।

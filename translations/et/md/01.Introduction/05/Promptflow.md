@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-10-11T12:17:33+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "et"
-}
--->
 # **Tutvustus: Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) on visuaalne töövoo automatiseerimise tööriist, mis võimaldab kasutajatel luua automatiseeritud töövooge, kasutades eelnevalt loodud malle ja kohandatud ühendusi. See on loodud selleks, et arendajad ja ärianalüütikud saaksid kiiresti luua automatiseeritud protsesse, mis hõlmavad näiteks andmehaldust, koostööd ja protsesside optimeerimist. Prompt Flow abil saavad kasutajad hõlpsasti ühendada erinevaid teenuseid, rakendusi ja süsteeme ning automatiseerida keerukaid äriprotsesse.

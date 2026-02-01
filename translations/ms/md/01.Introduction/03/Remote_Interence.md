@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:21:01+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "ms"
-}
--->
 # Inferens Jauh dengan model yang telah disesuaikan
 
 Selepas penyesuaian adapter dilakukan dalam persekitaran jauh, gunakan aplikasi Gradio yang ringkas untuk berinteraksi dengan model.

@@ -1,13 +1,4 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c2e4b490f4bd424b095f21e38c6af33b",
-  "translation_date": "2026-01-05T14:48:54+00:00",
-  "source_file": "README.md",
-  "language_code": "pcm"
-}
--->
-# Phi Cookbook: Hands-On Examples wit Microsoft's Phi Models
+# Phi Cookbook: Hands-On Examples with Microsoft's Phi Models
 
 [![Open and use the samples in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
@@ -25,45 +16,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi na series of open source AI models wey Microsoft develop.
 
-Phi na di most powerful and cost-effective small language model (SLM) wey dey now, with beta benchmarks for multi-language, reasoning, text/chat generation, coding, images, audio and other scenarios.
+Phi na di most powerful and cost-effective small language model (SLM) wey dey now, with very good benchmarks for multi-language, reasoning, text/chat generation, coding, images, audio and other cases.
 
-You fit deploy Phi for cloud or for edge devices, and you fit easily build generative AI applications with small computing power.
+You fit deploy Phi for cloud or for edge devices, and you fit easy build generative AI applications wit limited computing power.
 
-Follow dis steps make you fit start to use dis resource:
+Follow dis steps to start to use dis resource:
 1. **Fork di Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **Clone di Repository**:   `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Join The Microsoft AI Discord Community and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+2. **Clone di Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**Join Di Microsoft AI Discord Community and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b.pcm.png)
+![cover](../../translated_images/pcm/cover.eb18d1b9605d754b.webp)
 
 ### 🌐 Multi-Language Support
 
 #### Supported via GitHub Action (Automated & Always Up-to-Date)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](./README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](./README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **You go like Clone am for your Computer?**
+> **You prefer make you Clone for your machine?**
 
-> Dis repository get 50+ language translations wey de increase di download size well. To clone without di translations, use sparse checkout:
+> Dis repository get 50+ language translations wey make di download size big. To clone without translations, use sparse checkout:
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/PhiCookBook.git
 > cd PhiCookBook
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
-> Dis one go give you wetin you need to complete di course with faster download.
+> Dis go give you everything wey you need to finish di course fast wella.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 ## Table of Contents
 
 - Introduction
   - [Welcome to the Phi Family](./md/01.Introduction/01/01.PhiFamily.md)
-  - [Setting up your environment](./md/01.Introduction/01/01.EnvironmentSetup.md)
+  - [How to set up your environment](./md/01.Introduction/01/01.EnvironmentSetup.md)
   - [Understanding Key Technologies](./md/01.Introduction/01/01.Understandingtech.md)
   - [AI Safety for Phi Models](./md/01.Introduction/01/01.AISafety.md)
   - [Phi Hardware Support](./md/01.Introduction/01/01.Hardwaresupport.md)
   - [Phi Models & Availability across platforms](./md/01.Introduction/01/01.Edgeandcloud.md)
-  - [Using Guidance-ai and Phi](./md/01.Introduction/01/01.Guidance.md)
+  - [How to Use Guidance-ai and Phi](./md/01.Introduction/01/01.Guidance.md)
   - [GitHub Marketplace Models](https://github.com/marketplace/models)
   - [Azure AI Model Catalog](https://ai.azure.com)
 
@@ -81,12 +72,12 @@ Follow dis steps make you fit start to use dis resource:
     - [Inference Phi for Android](./md/01.Introduction/03/Android_Inference.md)
     - [Inference Phi for Jetson](./md/01.Introduction/03/Jetson_Inference.md)
     - [Inference Phi for AI PC](./md/01.Introduction/03/AIPC_Inference.md)
-    - [Inference Phi wit Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
+    - [Inference Phi with Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
     - [Inference Phi for Local Server](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [Inference Phi for Remote Server wit AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
-    - [Inference Phi wit Rust](./md/01.Introduction/03/Rust_Inference.md)
+    - [Inference Phi for Remote Server using AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
+    - [Inference Phi with Rust](./md/01.Introduction/03/Rust_Inference.md)
     - [Inference Phi--Vision for Local](./md/01.Introduction/03/Vision_Inference.md)
-    - [Inference Phi wit Kaito AKS, Azure Containers(official support)](./md/01.Introduction/03/Kaito_Inference.md)
+    - [Inference Phi with Kaito AKS, Azure Containers (official support)](./md/01.Introduction/03/Kaito_Inference.md)
 -  [Quantifying Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)
     - [Quantizing Phi-3.5 / 4 using llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
     - [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
@@ -98,15 +89,15 @@ Follow dis steps make you fit start to use dis resource:
     - [Azure AI Foundry for Evaluation](./md/01.Introduction/05/AIFoundry.md)
     - [Using Promptflow for Evaluation](./md/01.Introduction/05/Promptflow.md)
  
-- RAG wit Azure AI Search
-    - [How to use Phi-4-mini and Phi-4-multimodal(RAG) wit Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+- RAG with Azure AI Search
+    - [How to use Phi-4-mini and Phi-4-multimodal(RAG) with Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
 - Phi application development samples
   - Text & Chat Applications
     - Phi-4 Samples 🆕
-      - [📓] [Chat Wit Phi-4-mini ONNX Model](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [Chat wit Phi-4 local ONNX Model .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [Chat .NET Console App wit Phi-4 ONNX using Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
+      - [📓] [Chat With Phi-4-mini ONNX Model](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
+      - [Chat with Phi-4 local ONNX Model .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
+      - [Chat .NET Console App with Phi-4 ONNX using Sementic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
     - Phi-3 / 3.5 Samples
       - [Local Chatbot for browser using Phi3, ONNX Runtime Web and WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
@@ -186,7 +177,7 @@ Follow dis steps make you fit start to use dis resource:
 - Fine-tuning Phi Samples
   - [Fine-tuning Scenarios](./md/03.FineTuning/FineTuning_Scenarios.md)
   - [Fine-tuning vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [Fine-tuning Make Phi-3 be industry expert](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
+  - [Fine-tuning Make Phi-3 become industry expert](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
   - [Fine-tuning Phi-3 with AI Toolkit for VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
   - [Fine-tuning Phi-3 with Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Fine-tuning Phi-3 with Lora](./md/03.FineTuning/FineTuning_Lora.md)
@@ -206,12 +197,12 @@ Follow dis steps make you fit start to use dis resource:
   - [Unlocking NLP Potential: Fine-Tuning with Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
 
 - Academic Research Papers and Publications
-  - [Textbooks Na All You Need II: phi-1.5 technical report](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 Technical Report: One Strong Language Model Wey Deyan Locally for Your Phone](https://arxiv.org/abs/2404.14219)
+  - [Textbooks Na Wetin You Need II: phi-1.5 technical report](https://arxiv.org/abs/2309.05463)
+  - [Phi-3 Technical Report: Beta Tori Language Model Wey Dey Your Phone](https://arxiv.org/abs/2404.14219)
   - [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini Technical Report: Compact but Strong Multimodal Language Models via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
-  - [Optimizing Small Language Models for In-Vehicle Function-Calling](https://arxiv.org/abs/2501.02342)
-  - [(WhyPHI) Fine-Tuning PHI-3 for Multiple-Choice Question Answering: Methodology, Results, and Challenges](https://arxiv.org/abs/2501.01588)
+  - [Phi-4-Mini Technical Report: Small But Strong Multimodal Language Models via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
+  - [Optimize Small Language Models for In-Vehicle Function-Calling](https://arxiv.org/abs/2501.02342)
+  - [(WhyPHI) Fine-Tuning PHI-3 for Multiple-Choice Question Answering: Method, Results, and Wahala](https://arxiv.org/abs/2501.01588)
   - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
   - [Phi-4-mini-reasoning Technical Report](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
 
@@ -219,93 +210,93 @@ Follow dis steps make you fit start to use dis resource:
 
 ### Phi for Azure AI Foundry
 
-You fit learn how to use Microsoft Phi and how to build end-to-end solutions for your different hardware devices. If you want to try Phi by yourself, start to play with the models and customize Phi for your own situation using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) you fit also learn more at Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+You fit learn how to use Microsoft Phi and how you go build full solution for your different hardware. To try Phi yourself, start to play with models and customize Phi for your own cases with [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) you fit learn more from Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
-**Playground**
-Every model get dedicated playground to test the model [Azure AI Playground](https://aka.ms/try-phi3).
+**Playground**  
+Every model get im own playground wey you fit use to test am [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi for GitHub Models
 
-You fit learn how to use Microsoft Phi and how to build end-to-end solutions for your different hardware devices. If you want to try Phi by yourself, start to play with the model and customize Phi for your own case using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) you fit learn more at Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
+You fit learn how to use Microsoft Phi and how to build full solution for your different hardware. To try Phi yourself, start to play with the model and customize am for your own cases with [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) you fit learn more from Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
-**Playground**
-Every model get dedicated [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
+**Playground**  
+Every model get im own [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi for Hugging Face
 
-You fit also find the model for the [Hugging Face](https://huggingface.co/microsoft)
+You fit still find the model for [Hugging Face](https://huggingface.co/microsoft)
 
-**Playground**
- [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
+**Playground**  
+[Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
  ## 🎒 Other Courses
 
-Our team dey produce other courses! Check am out:
+Our team dey make other courses too! Check am:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
-### LangChain
-[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)
+### LangChain  
+[![LangChain4j for Beginners](https://img.shields.io/badge/LangChain4j%20for%20Beginners-22C55E?style=for-the-badge&&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchain4j-for-beginners)  
 [![LangChain.js for Beginners](https://img.shields.io/badge/LangChain.js%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://aka.ms/langchainjs-for-beginners?WT.mc_id=m365-94501-dwahlin)
 
 ---
 
-### Azure / Edge / MCP / Agents
-[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+### Azure / Edge / MCP / Agents  
+[![AZD for Beginners](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Edge AI for Beginners](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![MCP for Beginners](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)  
 [![AI Agents for Beginners](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Generative AI Series
-[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+
+### Generative AI Series  
+[![Generative AI for Beginners](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+[![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Core Learning
-[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+
+### Core Learning  
+[![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+[![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+[![Cybersecurity for Beginners](https://img.shields.io/badge/Cybersecurity%20for%20Beginners-F97316?style=for-the-badge&labelColor=E5E7EB&color=F97316)](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+[![Web Dev for Beginners](https://img.shields.io/badge/Web%20Dev%20for%20Beginners-EC4899?style=for-the-badge&labelColor=E5E7EB&color=EC4899)](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+[![IoT for Beginners](https://img.shields.io/badge/IoT%20for%20Beginners-14B8A6?style=for-the-badge&labelColor=E5E7EB&color=14B8A6)](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
 [![XR Development for Beginners](https://img.shields.io/badge/XR%20Development%20for%20Beginners-38BDF8?style=for-the-badge&labelColor=E5E7EB&color=38BDF8)](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
- 
-### Copilot Series
-[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+
+### Copilot Series  
+[![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+[![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+[![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
 ## Responsible AI 
 
-Microsoft don commit to help customers make sure sey dem dey use our AI products responsibly, dem dey share wetin dem don learn, and to build trust-based partnerships through tools like Transparency Notes and Impact Assessments. You fit find plenty of these resources for [https://aka.ms/RAI](https://aka.ms/RAI).
-Microsoft approach to responsible AI base for our AI principles like fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.
+Microsoft dey committed to help our customers use our AI products responsibly, share our learnings, and build trust-based partnerships with tools like Transparency Notes and Impact Assessments. Plenty of these resources dem dey [https://aka.ms/RAI](https://aka.ms/RAI).  
+Microsoft way to do responsible AI dey based on our AI principles wen be fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.
 
-Big natural language, image, and speech models - like the one wey dem use for this sample - fit sometimes behave in ways wey no fair, no reliable, or e fit offend people, and that one fit cause wahala. Abeg look the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) so you go sabi risk and limits.
+Big-big natural language, image, and speech models - like di ones wey dem take use for dis sample - fit sometimes behave in ways wey no fair, no reliable, or fit offend people, wey fit cause wahala. Abeg check [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to sabi about risks and limits.
 
-The way wey dem recommend to reduce these risks na to put safety system for your architecture wey fit detect and stop harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) dey provide independent protection layer, wey fit detect harmful content wey user or AI produce inside your apps and services. For Azure AI Foundry, Content Safety service dey make you fit see, explore and try sample code to detect harmful content for different modalities. This [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) go guide you how to make request to the service.
+The correct way to reduce these risks na to put safety system for your architecture wey fit detect and stop bad behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) dey provide independent protection wey fit detect bad user-made and AI-made content for apps and services. Azure AI Content Safety get text and image APIs wey allow you detect material wey fit cause harm. Inside Azure AI Foundry, Content Safety service fit allow you view, check and try sample code for detecting bad content for different modalities. The next [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) go guide you on how to make requests to the service.
 
-Another thing to consider na the overall performance of your application. For multi-modal and multi-model applications, we mean sey the system make performance as you and your users expect, including no dey produce harmful output. E good to check the performance of your whole application using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You also get chance to create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
-You fit evaluate your AI application for your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). If na test dataset or target you get, your generative AI application generations go dey quantitatively measured with built-in evaluators or custom evaluators wey you pick. To start to use the azure ai evaluation sdk to evaluate your system, you fit follow the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Once you run evaluation, you fit [visualize the results in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+Another thing to consider na the overall app performance. With multi-modal and multi-models apps, we dey consider performance to mean say the system go perform as you and your users expect, including no to create bad outputs. E important to check the performance for your full app with [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You still fit create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+You fit evaluate your AI application for your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Whether na test dataset or target, your generative AI application generations go dey measured quantitatively with built-in evaluators or custom evaluators wey you choose. To start to use the azure ai evaluation sdk to evaluate your system, you fit follow the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). As you run evaluation, you fit [visualize the results for Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Trademarks
 
-This project fit get trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos na subject to and e suppose follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos for modified versions of this project no suppose cause confusion or make people think say Microsoft sponsor am. Any use of third-party trademarks or logos dey subject to those third-party policies.
+This project fit get trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos dey under and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos for modified versions of this project no suppose cause confusion or make people think say Microsoft dey sponsor am. Any use of third-party trademarks or logos go follow those third-party policies.
 
 ## Getting Help
 
-If you jam problem or get any question about building AI apps, join:
+If you jam wahala or get any question about how to build AI apps, join:
 
 [![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-If you get product feedback or errors while you dey build, visit:
+If you get product feedback or errors as you dey build, visit:
 
 [![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
@@ -313,5 +304,5 @@ If you get product feedback or errors while you dey build, visit:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-Dis document dem translate am wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even tho we try make e correct, abeg make you sabi say automated translation fit get some mistake or wrong part. Di original document for im own language na di correct one wey suppose be di main source. If na serious tori, e better make human translator wey sabi di work do am. We no go take responsibility if dem no understand or dem interpret am wrong because of dis translation.
+Dis document na so AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) translate am. Even though we try make e correct, abeg make you sabi say automated translation fit get mistake or no too clear well. The original document wey dey im own language na the correct one wey you suppose believe. If na serious matter, e better make human professional translate am. We no go responsible for any confusion or wrong understanding wey fit come from dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

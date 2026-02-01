@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-10-11T12:11:14+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "et"
-}
--->
 # **Vestlus Phi-4-mini ONNX-iga**
 
 ***ONNX*** on avatud formaat, mis on loodud masinõppe mudelite esitamiseks. ONNX määratleb ühise komplekti operaatoreid - masinõppe ja süvaõppe mudelite ehituskive - ning ühise failivormingu, et võimaldada AI arendajatel kasutada mudeleid erinevate raamistikude, tööriistade, käituskeskkondade ja kompilaatoritega.

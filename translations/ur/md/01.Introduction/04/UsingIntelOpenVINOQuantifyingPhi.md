@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T21:59:12+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ur"
-}
--->
 # **Intel OpenVINO کے ذریعے Phi-3.5 کی مقداری تبدیلی**
 
 Intel سب سے روایتی CPU بنانے والا ہے جس کے بہت سے صارفین ہیں۔ مشین لرننگ اور ڈیپ لرننگ کے عروج کے ساتھ، Intel نے بھی AI کی تیز رفتاری کے مقابلے میں حصہ لیا ہے۔ ماڈل کی انفرنس کے لیے، Intel نہ صرف GPUs اور CPUs استعمال کرتا ہے بلکہ NPUs کا بھی استعمال کرتا ہے۔

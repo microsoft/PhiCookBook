@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:22:49+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "ko"
-}
--->
 # Azure AI Foundry의 Prompt flow와 함께 맞춤형 Phi-3 모델 미세 조정 및 통합
 
 이 종단 간(E2E) 샘플은 Microsoft Tech Community의 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" 가이드를 기반으로 합니다. 여기서는 Azure AI Foundry에서 Prompt flow와 함께 맞춤형 Phi-3 모델을 미세 조정, 배포 및 통합하는 프로세스를 소개합니다.

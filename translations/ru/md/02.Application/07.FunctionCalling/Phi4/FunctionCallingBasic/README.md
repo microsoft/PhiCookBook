@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:14:05+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "ru"
-}
--->
 ## **Вызов функций в Phi-4-mini**
 
 Вызов функций впервые появился в семействе Phi Family, и теперь вы можете использовать его в Phi-4-mini.

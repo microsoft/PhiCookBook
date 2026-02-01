@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:12:03+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "ko"
-}
--->
 # **Android에서 Phi-3 추론하기**
 
 Android 기기에서 Phi-3-mini로 추론을 수행하는 방법을 살펴보겠습니다. Phi-3-mini는 Microsoft에서 새롭게 선보인 모델 시리즈로, 엣지 디바이스와 IoT 기기에서 대형 언어 모델(LLM)을 배포할 수 있게 해줍니다.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-10-11T11:53:16+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "ta"
-}
--->
 ## **Phi-4-mini இல் செயல்பாட்டை அழைப்பது**
 
 செயல்பாட்டை அழைப்பது முதலில் Phi குடும்பத்தில் தோன்றியது, இப்போது நீங்கள் அதை Phi-4-mini மூலம் பயன்படுத்தலாம்.

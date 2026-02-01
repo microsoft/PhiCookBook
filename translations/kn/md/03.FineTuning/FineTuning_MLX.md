@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-12-21T18:54:06+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "kn"
-}
--->
 # **Apple MLX ಫ್ರೇಮ್ವರ್ಕ್ ಬಳಸಿ Phi-3 ಫೈನ್‑ಟ್ಯೂನಿಂಗ್**
 
 ನಾವು Apple MLX ಫ್ರೇಮ್ವರ್ಕ್ ಕಮಾಂಡ್ ಲೈನ್ ಮೂಲಕ Lora ಜೊತೆಗೆ ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಬಹುದು. (MLX ಫ್ರೇಮ್ವರ್ಕ್‌ನ ಕಾರ್ಯವೈಖರಿ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಬೇಕಿದ್ದರೆ, ದಯವಿಟ್ಟು [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) ಓದಿರಿ)

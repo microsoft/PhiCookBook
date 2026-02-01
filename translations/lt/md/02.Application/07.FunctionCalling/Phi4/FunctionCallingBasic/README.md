@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-09-12T14:28:47+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "lt"
-}
--->
 ## **Funkcijų iškvietimas Phi-4-mini**
 
 Funkcijų iškvietimas pirmą kartą pasirodė Phi Family šeimoje, o dabar jį galite naudoti per Phi-4-mini.

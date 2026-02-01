@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-10-11T12:23:32+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "ta"
-}
--->
 # தொலைதூர முடிவுகளை fine-tuned மாடலுடன் மேற்கொள்வது
 
 Adapterகள் தொலைதூர சூழலில் பயிற்சி செய்யப்பட்ட பிறகு, Gradio பயன்பாட்டை பயன்படுத்தி மாடலுடன் தொடர்பு கொள்ளலாம்.

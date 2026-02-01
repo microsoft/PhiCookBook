@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-12-21T19:16:09+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "kn"
-}
--->
 ## **Phi-4-multimodal ಬಳಸಿ ಆಡಿಯೋ ಪ್ರತಿಲಿಪಿಗಳನ್ನು ಹೊರತೆಗೆಯುವುದು**
 
 Phi-4-multimodal ಪಠ್ಯ ಮತ್ತು ಚಿತ್ರಗಳ ಜೊತೆಗೆ ಆಡಿಯೋವನ್ನು ಕೂಡ ಬಳಸಲು ಸಾಧ್ಯವಾಗುವ ಸಂಪೂರ್ಣ-ಮೊಡಲ್ ಮಾದರಿಯಾಗಿದೆ. ಇದನ್ನು ಹೇಗೆ ಬಳಸುವುದು ನೋಡೋಣ.

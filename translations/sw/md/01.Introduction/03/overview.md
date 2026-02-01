@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:12:15+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "sw"
-}
--->
 Katika muktadha wa Phi-3-mini, inference inahusu mchakato wa kutumia modeli kutabiri au kuzalisha matokeo kulingana na data ya ingizo. Niruhusu nikupatie maelezo zaidi kuhusu Phi-3-mini na uwezo wake wa inference.
 
 Phi-3-mini ni sehemu ya mfululizo wa modeli za Phi-3 zilizotolewa na Microsoft. Modeli hizi zimeundwa ili kubadilisha kile kinachowezekana kwa Small Language Models (SLMs).

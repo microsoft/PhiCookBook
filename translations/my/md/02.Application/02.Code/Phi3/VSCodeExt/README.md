@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:46:33+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "my"
-}
--->
 # **Microsoft Phi-3 မိသားစုဖြင့် သင့်ကိုယ်ပိုင် Visual Studio Code GitHub Copilot Chat တည်ဆောက်ခြင်း**
 
 GitHub Copilot Chat မှာ workspace agent ကို အသုံးပြုဖူးပါသလား? သင့်အဖွဲ့ရဲ့ ကိုဒ်အေးဂျင့်ကို ကိုယ်တိုင် တည်ဆောက်ချင်ပါသလား? ဒီလက်တွေ့လေ့ကျင့်ခန်းက open source မော်ဒယ်ကို ပေါင်းစပ်ပြီး စီးပွားရေးအဆင့်ရှိတဲ့ ကိုဒ်လုပ်ငန်းအေးဂျင့်တစ်ခု တည်ဆောက်ဖို့ ရည်ရွယ်ထားပါတယ်။

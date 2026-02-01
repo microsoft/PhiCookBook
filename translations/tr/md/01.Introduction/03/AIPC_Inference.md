@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:01:05+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "tr"
-}
--->
 # **AI PC'de Phi-3 Çıkarımı**
 
 Üretken yapay zekâdaki gelişmeler ve uç cihaz donanım yeteneklerindeki iyileşmelerle birlikte, giderek daha fazla üretken yapay zekâ modeli kullanıcıların Kendi Cihazını Getir (BYOD) cihazlarına entegre edilebiliyor. AI PC'ler de bu modeller arasında yer alıyor. 2024 itibarıyla Intel, AMD ve Qualcomm, PC üreticileriyle iş birliği yaparak donanım değişiklikleriyle yerel üretken yapay zekâ modellerinin dağıtımını kolaylaştıran AI PC'leri tanıttı. Bu yazıda, Intel AI PC'lere odaklanacak ve Phi-3 modelinin Intel AI PC üzerinde nasıl dağıtılacağını inceleyeceğiz.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:44:14+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "ko"
-}
--->
 ## **Phi-4-mini-mm을 사용하여 코드 생성하기**
 
 Phi-4-mini는 Phi Family의 강력한 코딩 능력을 이어갑니다. 코딩과 관련된 질문을 Prompt를 통해 할 수 있습니다. 물론, 강력한 추론 능력이 더해져 요구사항에 맞는 프로젝트 생성 등 더욱 뛰어난 코딩 능력을 갖추고 있습니다. 예를 들어, 다음과 같은 요구사항에 따라 프로젝트를 생성할 수 있습니다:

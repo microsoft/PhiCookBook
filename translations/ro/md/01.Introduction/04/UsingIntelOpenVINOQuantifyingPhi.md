@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:04:09+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ro"
-}
--->
 # **Cuantificarea Phi-3.5 folosind Intel OpenVINO**
 
 Intel este cel mai tradițional producător de procesoare CPU, cu mulți utilizatori. Odată cu creșterea învățării automate și a învățării profunde, Intel a intrat și el în competiția pentru accelerarea AI. Pentru inferența modelelor, Intel folosește nu doar GPU-uri și CPU-uri, ci și NPU-uri.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:30:10+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "fr"
-}
--->
 ## Bienvenue dans les labs Phi utilisant C#
 
 Une sélection de labs montre comment intégrer les différentes versions puissantes des modèles Phi dans un environnement .NET.

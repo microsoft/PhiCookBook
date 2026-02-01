@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:57:53+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "my"
-}
--->
 # **Apple MLX Framework ဖြင့် Phi-3.5 ကို Quantize လုပ်ခြင်း**
 
 MLX သည် Apple silicon ပေါ်တွင် စက်သင်ယူမှု သုတေသနအတွက် Apple machine learning သုတေသနမှ တီထွင်ထားသော array framework ဖြစ်သည်။

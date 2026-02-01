@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T16:24:14+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "ko"
-}
--->
 # Prompt flow로 맞춤형 Phi-3 모델 미세 조정 및 통합하기
 
 이 종단 간(E2E) 샘플은 Microsoft Tech Community의 "[Prompt flow로 맞춤형 Phi-3 모델 미세 조정 및 통합하기: 단계별 가이드](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" 가이드를 기반으로 합니다. 맞춤형 Phi-3 모델을 미세 조정하고 배포하며 Prompt flow와 통합하는 과정을 소개합니다.

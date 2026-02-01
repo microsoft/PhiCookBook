@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:37:50+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "my"
-}
--->
 # iOS ပေါ်တွင် Apple MLX Framework ဖြင့် Phi-3 နှင့် Phi-4 ကို ပြေးဆွဲခြင်း
 
 ဤသင်ခန်းစာတွင် Apple MLX framework ကို အသုံးပြု၍ Phi-3 သို့မဟုတ် Phi-4 မော်ဒယ်ကို iOS စက်ပေါ်တွင် တိုက်ရိုက် ပြေးဆွဲနိုင်သော iOS အက်ပလီကေးရှင်းတစ်ခု ဖန်တီးနည်းကို ပြသထားသည်။ [MLX](https://opensource.apple.com/projects/mlx/) သည် Apple Silicon chip များအတွက် အထူးပြုထားသော Apple ၏ machine learning framework ဖြစ်သည်။

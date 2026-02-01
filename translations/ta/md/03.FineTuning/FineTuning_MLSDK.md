@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-10-11T11:47:42+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "ta"
-}
--->
 ## Azure ML சிஸ்டம் பதிவேட்டிலிருந்து chat-completion கூறுகளை பயன்படுத்தி ஒரு மாதிரியை நயம்கொண்டு பயன்படுத்துவது எப்படி
 
 இந்த எடுத்துக்காட்டில், இரண்டு நபர்களுக்கிடையிலான உரையாடலை முடிக்க Phi-3-mini-4k-instruct மாதிரியை ultrachat_200k தரவுத்தொகுப்பைப் பயன்படுத்தி நயம்கொண்டு பயன்படுத்துவோம்.

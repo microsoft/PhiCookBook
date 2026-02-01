@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:42:53+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "fr"
-}
--->
 ## **Utiliser Phi-4-mini-mm pour générer du code**
 
 Phi-4-mini poursuit les solides capacités de codage de la famille Phi. Vous pouvez utiliser Prompt pour poser des questions liées au codage. Bien sûr, après avoir ajouté une forte capacité de raisonnement, il dispose de capacités de codage encore plus avancées, comme générer des projets selon les besoins. Par exemple, générer des projets selon les exigences, tels que :

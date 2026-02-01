@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T14:53:50+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "pcm"
-}
--->
 # **Quantifying Phi Family**
 
 Model quantization na di process wey dem dey use take map di parameters (like weights and activation values) for neural network model from big value range (wey dey continuous normally) go small finite value range. Dis technology fit reduce di size and computational complexity of di model and make di model work better for resource-constrained environments like mobile devices or embedded systems. Model quantization dey compress by reducing di precision of parameters, but e go still carry some precision loss. So for di quantization process, you gas balance di model size, computational complexity, and precision. Common quantization methods include fixed-point quantization, floating-point quantization, etc. You fit select di correct quantization strategy based on di scenario and wetin you need.

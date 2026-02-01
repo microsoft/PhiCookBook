@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:12:25+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "hu"
-}
--->
 A Phi-3-mini esetében az inferencia azt a folyamatot jelenti, amikor a modellt használjuk előrejelzések készítésére vagy kimenetek generálására a bemeneti adatok alapján. Hadd adjak részletesebb tájékoztatást a Phi-3-mini-ről és az inferencia képességeiről.
 
 A Phi-3-mini a Microsoft által kiadott Phi-3 modellek sorozatának része. Ezek a modellek arra lettek tervezve, hogy újradefiniálják, mit lehet elérni a Kis Nyelvi Modellekkel (SLM-ek).

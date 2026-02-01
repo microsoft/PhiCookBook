@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:11:01+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "ar"
-}
--->
 # ضبط النماذج المخصصة Phi-3 ودمجها مع تدفق المطالبات في Azure AI Foundry
 
 يعتمد هذا المثال الشامل (E2E) على الدليل "[ضبط ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات في Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft التقني. يقدم العمليات الخاصة بضبط النماذج، ونشرها، ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات في Azure AI Foundry.

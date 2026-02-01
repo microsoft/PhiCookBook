@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-12-21T20:55:32+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "te"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) అనేది end-to-end మెషిన్ లెర్నింగ్ లైఫ్‌సైకిల్‌ను నిర్వహించడానికి రూపొందించిన ఓపెన్-సోర్స్ ప్లాట్‌ఫారం.

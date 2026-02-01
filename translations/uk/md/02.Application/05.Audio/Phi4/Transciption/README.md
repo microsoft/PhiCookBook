@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:13:44+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "uk"
-}
--->
 ## **Витяг аудіотранскриптів за допомогою Phi-4-multimodal**
 
 Phi-4-multimodal — це модель з повною підтримкою різних модальностей, яка може працювати з аудіо, текстом та зображеннями. Давайте подивимось, як її використовувати.

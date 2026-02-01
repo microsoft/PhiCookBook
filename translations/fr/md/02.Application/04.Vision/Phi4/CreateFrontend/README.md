@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:06:44+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "fr"
-}
--->
 ## **Utiliser Phi-4-multimodal pour lire des images et générer du code**
 
 Phi-4-multimodal possède de solides capacités de lecture d’images. Essayons d’utiliser Python pour implémenter les fonctions suivantes. L’image est une page ChatGPT.

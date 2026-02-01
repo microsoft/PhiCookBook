@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:14:23+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "fr"
-}
--->
 # Inférence à distance avec le modèle affiné
 
 Après que les adaptateurs ont été entraînés dans l’environnement distant, utilisez une simple application Gradio pour interagir avec le modèle.

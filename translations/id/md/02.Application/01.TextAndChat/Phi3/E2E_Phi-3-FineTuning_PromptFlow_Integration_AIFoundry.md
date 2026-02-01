@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:54:32+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "id"
-}
--->
 # Menyesuaikan dan Mengintegrasikan model Phi-3 khusus dengan Prompt flow di Azure AI Foundry
 
 Contoh ujung-ke-ujung (E2E) ini didasarkan pada panduan "[Menyesuaikan dan Mengintegrasikan Model Phi-3 Khusus dengan Prompt Flow di Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" dari Microsoft Tech Community. Ini memperkenalkan proses penyesuaian, penyebaran, dan integrasi model Phi-3 khusus dengan Prompt flow di Azure AI Foundry. Berbeda dengan contoh E2E, "[Menyesuaikan dan Mengintegrasikan Model Phi-3 Khusus dengan Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", yang melibatkan menjalankan kode secara lokal, tutorial ini sepenuhnya fokus pada penyesuaian dan integrasi model Anda di dalam Azure AI / ML Studio.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:39:13+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "ne"
-}
--->
 # **Azure Machine Learning सेवा परिचय**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) एक क्लाउड सेवा हो जसले मेशिन लर्निङ (ML) परियोजना जीवनचक्रलाई छिटो र प्रभावकारी रूपमा व्यवस्थापन गर्न मद्दत गर्छ।

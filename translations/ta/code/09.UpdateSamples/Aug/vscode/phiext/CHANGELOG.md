@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-10-11T11:37:08+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "ta"
-}
--->
 # மாற்றங்களின் பதிவு
 
 "phiext" நீட்டிப்பில் உள்ள முக்கியமான மாற்றங்கள் இந்த கோப்பில் பதிவு செய்யப்படும்.

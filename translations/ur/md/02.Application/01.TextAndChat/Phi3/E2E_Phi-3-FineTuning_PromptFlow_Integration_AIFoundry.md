@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:13:44+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "ur"
-}
--->
 # Azure AI Foundry میں Prompt flow کے ساتھ کسٹم Phi-3 ماڈلز کو Fine-tune اور انضمام کریں
 
 یہ اختتام سے اختتام (E2E) نمونہ مائیکروسافٹ ٹیک کمیونٹی کے گائیڈ "[Azure AI Foundry میں Prompt flow کے ساتھ کسٹم Phi-3 ماڈلز کو Fine-tune اور انضمام کریں](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" پر مبنی ہے۔ یہ Azure AI Foundry میں کسٹم Phi-3 ماڈلز کو fine-tune کرنے، تعینات کرنے، اور Prompt flow کے ساتھ منسلک کرنے کے عمل کا تعارف کراتا ہے۔

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:29:39+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "bn"
-}
--->
 # iOS-এ Apple MLX ফ্রেমওয়ার্ক দিয়ে Phi-3 এবং Phi-4 চালানো
 
 এই টিউটোরিয়ালে দেখানো হয়েছে কিভাবে Apple MLX ফ্রেমওয়ার্ক ব্যবহার করে একটি iOS অ্যাপ্লিকেশন তৈরি করা যায় যা Phi-3 বা Phi-4 মডেল ডিভাইসে চালাতে পারে। [MLX](https://opensource.apple.com/projects/mlx/) হলো Apple-এর মেশিন লার্নিং ফ্রেমওয়ার্ক যা Apple Silicon চিপের জন্য অপ্টিমাইজ করা হয়েছে।

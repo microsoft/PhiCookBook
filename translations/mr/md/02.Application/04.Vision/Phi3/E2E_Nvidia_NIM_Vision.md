@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:54:25+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "mr"
-}
--->
 ### उदाहरण परिस्थिती
 
 कल्पना करा की तुमच्याकडे एक प्रतिमा (`demo.png`) आहे आणि तुम्हाला अशी Python कोड तयार करायची आहे जी ही प्रतिमा प्रक्रिया करेल आणि त्याचा एक नवीन आवृत्ती (`phi-3-vision.jpg`) जतन करेल.

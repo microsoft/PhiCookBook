@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-12-21T18:27:19+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "ml"
-}
--->
 # **Microsoft Olive ഉപയോഗിച്ച് Phi-3 ഫൈൻട്യൂണിംഗ്**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ഒരു ഉപയോഗിക്കാൻ എളുപ്പമുള്ള hardware-aware മോഡൽ ഒപ്റ്റിമൈസേഷൻ ടൂൾ ആണ്, മോഡൽ കമ്പ്രഷൻ, ഒപ്റ്റിമൈസേഷൻ, കോംപൈലേഷൻ എന്നിവയിൽ വ്യവസായനേതൃത്വമുള്ള സാങ്കേതിക വിദ്യകൾ കൂട്ടിച്ചേർക്കുന്നു.

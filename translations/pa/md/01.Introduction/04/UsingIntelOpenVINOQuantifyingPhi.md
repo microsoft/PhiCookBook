@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:00:50+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "pa"
-}
--->
 # **Intel OpenVINO ਨਾਲ Phi-3.5 ਦੀ Quantizing**
 
 Intel ਸਭ ਤੋਂ ਪਰੰਪਰਾਗਤ CPU ਨਿਰਮਾਤਾ ਹੈ ਜਿਸਦੇ ਬਹੁਤ ਸਾਰੇ ਉਪਭੋਗਤਾ ਹਨ। ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਅਤੇ ਡੀਪ ਲਰਨਿੰਗ ਦੇ ਉਭਾਰ ਨਾਲ, Intel ਵੀ AI ਤੇਜ਼ੀ ਲਈ ਮੁਕਾਬਲੇ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋ ਗਿਆ ਹੈ। ਮਾਡਲ ਇੰਫਰੈਂਸ ਲਈ, Intel ਸਿਰਫ GPUs ਅਤੇ CPUs ਹੀ ਨਹੀਂ, ਬਲਕਿ NPUs ਵੀ ਵਰਤਦਾ ਹੈ।

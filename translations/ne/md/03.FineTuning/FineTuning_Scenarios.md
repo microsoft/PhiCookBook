@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-07-17T08:25:23+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
-  "language_code": "ne"
-}
--->
 ## फाइन ट्यूनिङ परिदृश्यहरू
 
 ![FineTuning with MS Services](../../../../translated_images/ne/FinetuningwithMS.3d0cec8ae693e094.webp)

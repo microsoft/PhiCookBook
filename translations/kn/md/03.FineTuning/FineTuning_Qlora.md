@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-12-21T17:20:32+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "kn"
-}
--->
 **Phi-3 ಅನ್ನು QLoRA ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್**
 
 Microsoft ನ Phi-3 Mini ಭಾಷಾ ಮಾದರಿಯನ್ನು [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಮಾಡುವುದು. 

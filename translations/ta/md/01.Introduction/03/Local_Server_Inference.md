@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-10-11T12:24:48+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "ta"
-}
--->
 # **லோக்கல் சர்வரில் Phi-3 ஐ பயன்படுத்துதல்**
 
 நாம் Phi-3 ஐ ஒரு லோக்கல் சர்வரில் நிறுவலாம். பயனர்கள் [Ollama](https://ollama.com) அல்லது [LM Studio](https://llamaedge.com) தீர்வுகளைத் தேர்ந்தெடுக்கலாம், அல்லது தாங்களே தங்கள் கோடுகளை எழுதலாம். [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) அல்லது [Langchain](https://www.langchain.com/) மூலம் Phi-3 இன் லோக்கல் சேவைகளை இணைத்து Copilot பயன்பாடுகளை உருவாக்கலாம்.

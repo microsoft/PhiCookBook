@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:29:23+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "tr"
-}
--->
 # Rust ile Çok Platformlu Çıkarım
 
 Bu eğitimde, Rust ve HuggingFace’in [Candle ML framework](https://github.com/huggingface/candle) kullanarak çıkarım yapma sürecini öğreneceğiz. Rust ile çıkarım yapmak, özellikle diğer programlama dilleriyle karşılaştırıldığında birçok avantaj sunar. Rust, C ve C++ ile karşılaştırılabilir yüksek performansıyla bilinir. Bu da hesaplama açısından yoğun olan çıkarım görevleri için mükemmel bir seçim olmasını sağlar. Özellikle sıfır maliyetli soyutlamalar ve çöp toplayıcı yükü olmayan verimli bellek yönetimi bunu mümkün kılar. Rust’ın çok platformlu yetenekleri, Windows, macOS ve Linux gibi çeşitli işletim sistemlerinde ve mobil işletim sistemlerinde kod tabanında büyük değişiklik yapmadan çalışabilen kod geliştirmeyi sağlar.

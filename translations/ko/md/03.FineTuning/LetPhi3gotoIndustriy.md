@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:53:39+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "ko"
-}
--->
 # **Phi-3를 산업 전문가로 만들기**
 
 Phi-3 모델을 산업에 적용하려면 산업 비즈니스 데이터를 Phi-3 모델에 추가해야 합니다. 두 가지 옵션이 있는데, 첫 번째는 RAG(Retrieval Augmented Generation)이고 두 번째는 Fine Tuning입니다.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:08+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ja"
-}
--->
 ## **Phi-4-multimodalを使った音声文字起こし**
 
 Phi-4-multimodalは、テキストや画像に加えて音声も扱えるフルモーダルモデルです。使い方を見てみましょう。

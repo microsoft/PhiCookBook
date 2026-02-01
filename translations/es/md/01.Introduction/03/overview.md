@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:06:30+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "es"
-}
--->
 En el contexto de Phi-3-mini, la inferencia se refiere al proceso de usar el modelo para hacer predicciones o generar resultados basados en datos de entrada. Permíteme darte más detalles sobre Phi-3-mini y sus capacidades de inferencia.
 
 Phi-3-mini forma parte de la serie Phi-3 de modelos lanzados por Microsoft. Estos modelos están diseñados para redefinir lo que es posible con los Modelos de Lenguaje Pequeños (SLMs).

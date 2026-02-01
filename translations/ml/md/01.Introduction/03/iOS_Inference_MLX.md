@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-12-22T00:56:41+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "ml"
-}
--->
 # iOS ൽ Apple MLX ഫ്രെയിംവർക്കുമായി Phi-3 மற்றும் Phi-4 പ്രവർത്തിപ്പിക്കൽ
 
 ഈ ട്യൂട്ടോറിയൽ Apple MLX ഫ്രെയിംവർക്കാണ് ഉപയോഗിച്ച് Phi-3 അല്ലെങ്കിൽ Phi-4 മോഡൽ സജ്ജീകരണത്തിലല്ലാതെ (on-device) ഓടിക്കുന്ന iOS ആപ് എങ്ങനെ സൃഷ്ടിക്കാമെന്നത് കാണിക്കുന്നു. [MLX](https://opensource.apple.com/projects/mlx/) ആണ് Apple Silicon ചിപ്പുകൾക്ക് ഒപ്റ്റിമൈസ്ഡ് ചെയ്ത Apple-യുടെ മെഷീൻ ലേണിംഗ് ഫ്രെയിംവർക്ക്.

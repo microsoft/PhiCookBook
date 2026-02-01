@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-12-21T22:04:48+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "te"
-}
--->
 ## **Phi-4-multimodal ఉపయోగించి చిత్రాలను చదివి కోడ్ ఉత్పత్తి చేయండి**
 
 Phi-4-multimodalకి బలమైన చిత్రం పఠన సామర్థ్యం ఉంది. క్రింది ఫంక్షన్లను అమలు చేయడానికి Python ఉపయోగించుకుందాం. చిత్రం ఒక ChatGPT పేజీ.

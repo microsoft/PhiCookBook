@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-07-16T17:24:29+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "hi"
-}
--->
 # परिवर्तन लॉग
 
 "phiext" एक्सटेंशन में सभी महत्वपूर्ण बदलाव इस फ़ाइल में दर्ज किए जाएंगे।

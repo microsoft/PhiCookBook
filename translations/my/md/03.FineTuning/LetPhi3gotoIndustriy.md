@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T10:02:14+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "my"
-}
--->
 # **Phi-3 ကို စက်မှုလုပ်ငန်းကျွမ်းကျင်သူအဖြစ် ဖွံ့ဖြိုးစေခြင်း**
 
 Phi-3 မော်ဒယ်ကို စက်မှုလုပ်ငန်းထဲသို့ ထည့်သွင်းအသုံးပြုရန်အတွက် စက်မှုလုပ်ငန်းဆိုင်ရာ စီးပွားရေးဒေတာများကို Phi-3 မော်ဒယ်ထဲ ထည့်သွင်းရပါမည်။ ကျွန်ုပ်တို့တွင် ရွေးချယ်စရာ နှစ်မျိုးရှိပြီး ပထမတစ်ခုမှာ RAG (Retrieval Augmented Generation) ဖြစ်ပြီး ဒုတိယမှာ Fine Tuning ဖြစ်သည်။

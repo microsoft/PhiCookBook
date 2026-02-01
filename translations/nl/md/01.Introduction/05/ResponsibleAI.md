@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:54:59+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "nl"
-}
--->
 # **Introductie van Responsible AI**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) is een initiatief dat ontwikkelaars en organisaties helpt bij het bouwen van AI-systemen die transparant, betrouwbaar en verantwoordelijk zijn. Het initiatief biedt richtlijnen en hulpmiddelen voor het ontwikkelen van verantwoorde AI-oplossingen die aansluiten bij ethische principes, zoals privacy, eerlijkheid en transparantie. We zullen ook enkele uitdagingen en best practices bespreken die horen bij het bouwen van verantwoorde AI-systemen.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:04:32+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "vi"
-}
--->
 # **Inference Phi-3 trên AI PC**
 
 Với sự phát triển của AI tạo sinh và cải tiến về khả năng phần cứng của các thiết bị biên, ngày càng nhiều mô hình AI tạo sinh có thể được tích hợp vào các thiết bị Bring Your Own Device (BYOD) của người dùng. AI PC là một trong những mô hình đó. Bắt đầu từ năm 2024, Intel, AMD và Qualcomm đã hợp tác với các nhà sản xuất PC để giới thiệu AI PC, giúp triển khai các mô hình AI tạo sinh cục bộ thông qua các thay đổi phần cứng. Trong bài viết này, chúng ta sẽ tập trung vào AI PC của Intel và khám phá cách triển khai Phi-3 trên AI PC Intel.

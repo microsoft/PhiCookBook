@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-12-21T18:10:09+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "ml"
-}
--->
 # **ആസ്യൂർ മെഷീൻ ലേണിംഗ് സർവീസിനെ പരിചയപ്പെടുത്തൽ**
 
 [ആസ്യൂർ മെഷീൻ ലേണിംഗ്](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) എന്നത് മെഷീൻ ലേണിംഗ് (ML) പ്രോജക്റ്റ് ലൈഫ്സൈകിളിനെ വേഗത്തിൽ മുന്നേറാനും മാനേജ് ചെയ്യാനും സഹായിക്കുന്ന ഒരു ക്ലൗഡ് സർവീസ് ആണ്.

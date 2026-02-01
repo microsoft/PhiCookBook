@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:11:02+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "fr"
-}
--->
 # **Quantification de la famille Phi**
 
 La quantification de modèle désigne le processus de cartographie des paramètres (tels que les poids et les valeurs d'activation) dans un modèle de réseau neuronal d'une grande plage de valeurs (généralement une plage continue) vers une plage de valeurs finie plus petite. Cette technologie peut réduire la taille et la complexité computationnelle du modèle et améliorer l'efficacité opérationnelle du modèle dans des environnements à ressources limitées tels que les appareils mobiles ou les systèmes embarqués. La quantification du modèle réalise une compression en réduisant la précision des paramètres, mais elle introduit également une certaine perte de précision. Par conséquent, lors du processus de quantification, il est nécessaire de trouver un équilibre entre la taille du modèle, la complexité computationnelle et la précision. Les méthodes de quantification courantes comprennent la quantification en virgule fixe, la quantification en virgule flottante, etc. Vous pouvez choisir la stratégie de quantification appropriée selon le scénario spécifique et les besoins.

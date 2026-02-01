@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T07:58:11+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ko"
-}
--->
 # **Apple MLX 프레임워크로 Phi-3 미세 조정하기**
 
 Apple MLX 프레임워크 명령어를 통해 Lora와 결합된 미세 조정을 완료할 수 있습니다. (MLX 프레임워크의 작동 방식에 대해 더 알고 싶다면 [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)를 참고하세요)

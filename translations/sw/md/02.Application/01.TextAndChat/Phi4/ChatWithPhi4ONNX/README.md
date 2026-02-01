@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:18:50+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "sw"
-}
--->
 # **Zungumza na Phi-4-mini ONNX**
 
 ***ONNX*** ni muundo wazi uliotengenezwa kuwakilisha mifano ya kujifunza mashine. ONNX inaelezea seti ya kawaida ya waendeshaji - vipengele vya msingi vya mifano ya kujifunza mashine na kujifunza kwa kina - pamoja na muundo wa faili wa kawaida unaowawezesha watengenezaji wa AI kutumia mifano hiyo kwa mifumo mbalimbali, zana, mazingira ya utekelezaji, na wakusanyaji.

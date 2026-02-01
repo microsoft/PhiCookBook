@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-10-11T12:12:16+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "ta"
-}
--->
 ## GitHub Models - வரையறுக்கப்பட்ட பொது பீட்டா
 
 [GitHub Models](https://github.com/marketplace/models) வரவேற்கிறோம்! Azure AI-ல் ஹோஸ்ட் செய்யப்பட்ட AI மாடல்களை ஆராய்வதற்கு அனைத்தும் தயாராக உள்ளது.

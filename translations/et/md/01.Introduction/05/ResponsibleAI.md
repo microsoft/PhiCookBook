@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-10-11T12:18:46+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "et"
-}
--->
 # **Tutvustus: Vastutustundlik tehisintellekt**
 
 [Microsofti vastutustundlik tehisintellekt](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) on algatus, mille eesmärk on aidata arendajatel ja organisatsioonidel luua tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Algatus pakub juhiseid ja ressursse vastutustundlike tehisintellekti lahenduste arendamiseks, mis järgivad eetilisi põhimõtteid, nagu privaatsus, õiglus ja läbipaistvus. Samuti uurime mõningaid väljakutseid ja parimaid praktikaid, mis on seotud vastutustundlike tehisintellekti süsteemide loomisega.

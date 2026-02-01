@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:59:14+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "id"
-}
--->
 # **Mengkuantifikasi Keluarga Phi**
 
 Kuantisasi model merujuk pada proses pemetaan parameter (seperti bobot dan nilai aktivasi) dalam model jaringan saraf dari rentang nilai besar (biasanya rentang nilai kontinu) ke rentang nilai terbatas yang lebih kecil. Teknologi ini dapat mengurangi ukuran dan kompleksitas komputasi model serta meningkatkan efisiensi operasional model di lingkungan dengan sumber daya terbatas seperti perangkat seluler atau sistem tertanam. Kuantisasi model mencapai kompresi dengan mengurangi presisi parameter, tetapi juga menghadirkan kehilangan presisi tertentu. Oleh karena itu, dalam proses kuantisasi, perlu menyeimbangkan ukuran model, kompleksitas komputasi, dan presisi. Metode kuantisasi umum meliputi kuantisasi titik tetap, kuantisasi titik mengambang, dan lain-lain. Anda dapat memilih strategi kuantisasi yang sesuai berdasarkan skenario dan kebutuhan spesifik.

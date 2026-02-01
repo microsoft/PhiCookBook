@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-07-17T06:20:53+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "ne"
-}
--->
 ## Kaito सँग फाइन-ट्यूनिङ
 
 [Kaito](https://github.com/Azure/kaito) एक अपरेटर हो जसले Kubernetes क्लस्टरमा AI/ML इन्फरेन्स मोडेल डिप्लोयमेन्टलाई स्वचालित बनाउँछ।

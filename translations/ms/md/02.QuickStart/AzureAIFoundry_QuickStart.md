@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:26:21+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "ms"
-}
--->
 # **Menggunakan Phi-3 dalam Azure AI Foundry**
 
 Dengan perkembangan Generative AI, kami berharap dapat menggunakan platform sehenti untuk menguruskan pelbagai LLM dan SLM, integrasi data perusahaan, operasi fine-tuning/RAG, serta penilaian pelbagai perniagaan perusahaan selepas menggabungkan LLM dan SLM, dan sebagainya, supaya aplikasi generatif AI dapat dilaksanakan dengan lebih bijak. [Azure AI Foundry](https://ai.azure.com) adalah platform aplikasi generatif AI peringkat perusahaan.

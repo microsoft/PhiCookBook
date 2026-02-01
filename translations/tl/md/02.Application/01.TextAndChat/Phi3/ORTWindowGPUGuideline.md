@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:45:56+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "tl"
-}
--->
 # **Patnubay para sa OnnxRuntime GenAI Windows GPU**
 
 Ang patnubay na ito ay naglalaman ng mga hakbang para sa pag-setup at paggamit ng ONNX Runtime (ORT) gamit ang mga GPU sa Windows. Layunin nitong tulungan kang magamit ang GPU acceleration para sa iyong mga modelo, upang mapabuti ang performance at kahusayan.

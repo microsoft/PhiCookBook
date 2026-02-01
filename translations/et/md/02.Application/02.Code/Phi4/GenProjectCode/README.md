@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-10-11T11:58:13+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "et"
-}
--->
 ## **Phi-4-mini-mm-i kasutamine koodi genereerimiseks**
 
 Phi-4-mini jätkab Phi perekonna tugevaid kodeerimisvõimeid. Saate kasutada Prompti, et esitada kodeerimisega seotud küsimusi. Loomulikult, tänu tugevale põhjendusvõimele, on sellel veelgi paremad kodeerimisvõimed, näiteks projektide loomine vastavalt nõuetele. Näiteks projektide loomine vastavalt nõuetele, nagu:

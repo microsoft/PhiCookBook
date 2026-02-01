@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:46:26+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "hu"
-}
--->
 # **Útmutató az OnnxRuntime GenAI Windows GPU használatához**
 
 Ez az útmutató lépéseket tartalmaz az ONNX Runtime (ORT) GPU-val történő használatának beállításához Windows rendszeren. Célja, hogy segítsen kihasználni a GPU gyorsítását a modellekhez, javítva a teljesítményt és a hatékonyságot.

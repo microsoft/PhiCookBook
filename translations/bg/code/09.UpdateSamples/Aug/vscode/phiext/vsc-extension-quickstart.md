@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-07-16T17:39:53+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
-  "language_code": "bg"
-}
--->
 # Добре дошли във вашето разширение за VS Code
 
 ## Какво има в папката

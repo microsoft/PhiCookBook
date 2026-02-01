@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:17:30+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "my"
-}
--->
 ## **Phi-4-mini တွင် Function ခေါ်ယူခြင်း**
 
 Function ခေါ်ယူခြင်းကို ပထမဆုံး Phi Family တွင် တွေ့ရှိခဲ့ပြီး၊ ယခု Phi-4-mini မှတဆင့် အသုံးပြုနိုင်ပါပြီ။

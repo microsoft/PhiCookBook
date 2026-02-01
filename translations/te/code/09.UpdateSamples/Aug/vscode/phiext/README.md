@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-12-21T16:26:56+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "te"
-}
--->
 # phiext README
 
 ఇది మీ ఎక్స్‌టెన్షన్ "phiext" కోసం README ఫైల్. ఒక సంక్షిప్త వివరణను రాయడంతో పాటు, మేము క్రింది విభాగాలను చేర్చాలని సిఫార్సు చేస్తాము.

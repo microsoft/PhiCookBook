@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-12-21T18:04:32+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "te"
-}
--->
 # **Phi-3 ను Lora తో ఫైన్-ట్యూనింగ్**
 
 Microsoft యొక్క Phi-3 Mini భాషా మోడల్‌ను కస్టమ్ చాట్ సూచన డేటాసెట్‌పై [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) ఉపయోగించి ఫైన్-ట్యూన్ చేయడం.

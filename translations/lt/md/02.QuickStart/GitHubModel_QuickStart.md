@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-09-12T14:58:28+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "lt"
-}
--->
 ## GitHub modeliai - Ribotas viešas beta testavimas
 
 Sveiki atvykę į [GitHub modelius](https://github.com/marketplace/models)! Viskas paruošta, kad galėtumėte tyrinėti AI modelius, talpinamus Azure AI platformoje.
