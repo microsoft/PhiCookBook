@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:38:13+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "bn"
-}
--->
 # **Azure Machine Learning সার্ভিস পরিচিতি**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) হলো একটি ক্লাউড সার্ভিস যা মেশিন লার্নিং (ML) প্রকল্পের জীবনচক্র দ্রুততর এবং পরিচালনা করার জন্য ব্যবহৃত হয়।

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:41:13+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "ko"
-}
--->
 # **Microsoft Olive로 Phi-3 미세 조정하기**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo)는 모델 압축, 최적화, 컴파일 분야의 업계 선도 기술을 한데 모은 사용하기 쉬운 하드웨어 인식 모델 최적화 도구입니다.

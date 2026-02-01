@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:02:17+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "sw"
-}
--->
 # **Kufinywa kwa Phi-3 kwa kutumia Apple MLX Framework**
 
 Tunaweza kumaliza kufinywa kwa pamoja na Lora kupitia mstari wa amri wa Apple MLX framework. (Kama unataka kujifunza zaidi kuhusu jinsi MLX Framework inavyofanya kazi, tafadhali soma [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:50:39+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "en"
-}
--->
 # **Let Phi-3 become an industry expert**
 
 To apply the Phi-3 model in an industry, you need to incorporate industry-specific business data into the Phi-3 model. There are two main approaches: the first is RAG (Retrieval Augmented Generation) and the second is Fine-Tuning.

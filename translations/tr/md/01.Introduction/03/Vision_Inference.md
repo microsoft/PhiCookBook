@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:38:03+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "tr"
-}
--->
 # **Yerel Ortamda Phi-3-Vision ile Çıkarım**
 
 Phi-3-vision-128k-instruct, Phi-3'ün sadece dili anlamasını değil, aynı zamanda dünyayı görsel olarak da algılamasını sağlar. Phi-3-vision-128k-instruct sayesinde OCR, tablo analizi, nesne tanıma, resim betimleme gibi farklı görsel problemleri çözebiliriz. Önceden çok fazla veri eğitimi gerektiren görevleri kolayca tamamlayabiliriz. Aşağıda Phi-3-vision-128k-instruct tarafından kullanılan ilgili teknikler ve uygulama senaryoları yer almaktadır.

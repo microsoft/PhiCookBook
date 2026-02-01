@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-12-21T22:13:31+00:00",
-  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
-  "language_code": "ml"
-}
--->
 # **Apple MLX ഫ്രെയിംവർക്കുമായി Phi-3 ഇൻഫറൻസ്**
 
 ## **MLX ഫ്രെയിംവർക് എന്താണ്**

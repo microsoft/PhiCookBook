@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:41:39+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "he"
-}
--->
 # **בנה את Visual Studio Code GitHub Copilot Chat שלך עם משפחת Microsoft Phi-3**
 
 האם השתמשת בסוכן סביבת העבודה ב-GitHub Copilot Chat? רוצה לבנות סוכן קוד משלך לצוות שלך? המעבדה המעשית הזו שואפת לשלב את המודל בקוד פתוח כדי לבנות סוכן קוד עסקי ברמת ארגון.

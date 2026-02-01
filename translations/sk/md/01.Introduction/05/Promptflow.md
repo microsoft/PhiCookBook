@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:44:21+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "sk"
-}
--->
 # **Predstavenie Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) je vizuálny nástroj na automatizáciu pracovných tokov, ktorý umožňuje používateľom vytvárať automatizované procesy pomocou predpripravených šablón a vlastných konektorov. Je navrhnutý tak, aby vývojárom a obchodným analytikom umožnil rýchlo vytvárať automatizované procesy pre úlohy ako správa dát, spolupráca a optimalizácia procesov. S Prompt Flow môžu používatelia jednoducho prepojiť rôzne služby, aplikácie a systémy a automatizovať zložité obchodné procesy.

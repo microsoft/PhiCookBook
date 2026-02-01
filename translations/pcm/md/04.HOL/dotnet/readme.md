@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-12-21T22:26:44+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "pcm"
-}
--->
 ﻿## Welcome to the Phi labs wey dey use C#
 
 There is a selection of labs wey dey show how to integrate the powerful different versions of Phi models in a .NET environment.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:53:27+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "vi"
-}
--->
 # **Định Lượng Họ Phi**
 
 Định lượng mô hình là quá trình ánh xạ các tham số (như trọng số và giá trị kích hoạt) trong mô hình mạng nơ-ron từ phạm vi giá trị lớn (thường là phạm vi giá trị liên tục) sang phạm vi giá trị hữu hạn nhỏ hơn. Công nghệ này có thể giảm kích thước và độ phức tạp tính toán của mô hình, đồng thời cải thiện hiệu quả hoạt động của mô hình trong các môi trường hạn chế tài nguyên như thiết bị di động hoặc hệ thống nhúng. Định lượng mô hình đạt được sự nén bằng cách giảm độ chính xác của các tham số, nhưng cũng đồng thời làm mất đi một mức độ chính xác nhất định. Do đó, trong quá trình định lượng cần cân bằng giữa kích thước mô hình, độ phức tạp tính toán và độ chính xác. Các phương pháp định lượng phổ biến bao gồm định lượng số cố định, định lượng số dấu động, v.v. Bạn có thể chọn chiến lược định lượng phù hợp theo từng kịch bản và nhu cầu cụ thể.

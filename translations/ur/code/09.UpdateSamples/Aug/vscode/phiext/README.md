@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:27:44+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "ur"
-}
--->
 # phiext README
 
 یہ آپ کے ایکسٹینشن "phiext" کے لیے README ہے۔ مختصر تعارف لکھنے کے بعد، ہم تجویز کرتے ہیں کہ درج ذیل سیکشنز شامل کریں۔

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:54:33+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "mr"
-}
--->
 # **Phi-3 ला उद्योग तज्ञ बनवा**
 
 Phi-3 मॉडेलला उद्योगात वापरण्यासाठी, तुम्हाला उद्योगाच्या व्यवसाय डेटा Phi-3 मॉडेलमध्ये जोडावा लागेल. यासाठी आपल्याकडे दोन पर्याय आहेत, पहिले म्हणजे RAG (Retrieval Augmented Generation) आणि दुसरे म्हणजे Fine Tuning.

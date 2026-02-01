@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:26:51+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "sw"
-}
--->
 # **Kutumia Phi-3 katika Azure AI Foundry**
 
 Kwa maendeleo ya AI ya Kizazi, tunatarajia kutumia jukwaa moja la kuendesha mifano tofauti ya LLM na SLM, ushirikiano wa data za biashara, urekebishaji/mchakato wa RAG, na tathmini ya biashara mbalimbali baada ya kuunganisha LLM na SLM, n.k., ili AI ya kizazi iweze kutekelezwa vyema katika programu za Smart. [Azure AI Foundry](https://ai.azure.com) ni jukwaa la programu za AI za kizazi kwa kiwango cha biashara.

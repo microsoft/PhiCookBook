@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:17:41+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "en"
-}
--->
 # **Using Phi-3 in Azure AI Foundry**
 
 With the rise of Generative AI, we aim to use a unified platform to manage different LLMs and SLMs, integrate enterprise data, handle fine-tuning/RAG operations, and evaluate various enterprise applications after integrating LLMs and SLMs, enabling smarter generative AI applications. [Azure AI Foundry](https://ai.azure.com) is an enterprise-grade generative AI application platform.

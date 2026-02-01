@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-10-11T11:51:58+00:00",
-  "source_file": "md/03.FineTuning/olive-lab/readme.md",
-  "language_code": "ta"
-}
--->
 # ஆய்வகம். சாதனத்தில் உள்ளே முடிவெடுப்பதற்கான AI மாதிரிகளை மேம்படுத்தவும்
 
 ## அறிமுகம் 

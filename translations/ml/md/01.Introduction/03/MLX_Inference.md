@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-12-22T01:28:20+00:00",
-  "source_file": "md/01.Introduction/03/MLX_Inference.md",
-  "language_code": "ml"
-}
--->
 # **Apple MLX ഫ്രെയിംവർക്കിൽ Phi-3 ഉപയോഗിച്ച് ഇന്‍ഫെറൻസ്**
 
 ## **MLX ഫ്രെയിംവർക്കാണ് എന്ത്**

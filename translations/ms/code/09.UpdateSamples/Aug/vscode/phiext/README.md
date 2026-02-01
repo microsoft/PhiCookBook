@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:31:33+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "ms"
-}
--->
 # phiext README
 
 Ini adalah README untuk sambungan anda "phiext". Selepas menulis penerangan ringkas, kami mengesyorkan untuk memasukkan bahagian-bahagian berikut.

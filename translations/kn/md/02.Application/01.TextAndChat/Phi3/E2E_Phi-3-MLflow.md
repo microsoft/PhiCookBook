@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-12-21T20:58:59+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "kn"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) ಒಂದು ಓಪನ್-ಸೋರ್ಸ್ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್ ಆಗಿದ್ದು ಎಂಡ್-ಟು-ಎಂಡ್ ಮೆಷಿನ್ ಲರ್ನಿಂಗ್ ಜೀವನಚಕ್ರವನ್ನು ನಿರ್ವಹಿಸಲು ವಿನ್ಯಾಸಗೊಳಿಸಲಾಗಿದೆ.

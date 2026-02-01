@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:02:19+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "mr"
-}
--->
 हा डेमो प्रीट्रेंड मॉडेल वापरून प्रतिमा आणि टेक्स्ट प्रॉम्प्टवर आधारित Python कोड कसा तयार करायचा हे दाखवतो.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

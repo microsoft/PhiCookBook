@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-12-22T02:11:22+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "kn"
-}
--->
 # **onnxruntime‌ಗಳಿಗಾಗಿ Generative AI ವಿಸ್ತರಣೆಗಳನ್ನು ಬಳಸಿಕೊಂಡು Phi ಕುಟುಂಬವನ್ನು ಕ್ವಾಂಟೈಸ್ ಮಾಡುವುದು**
 
 ## **onnxruntime‌ಗಾಗಿ Generative AI ವಿಸ್ತರಣೆಗಳು ಎಂದರೇನು**

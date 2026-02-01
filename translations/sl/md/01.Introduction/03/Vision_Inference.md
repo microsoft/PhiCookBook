@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:40:36+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "sl"
-}
--->
 # **Inferenca Phi-3-Vision lokalno**
 
 Phi-3-vision-128k-instruct omogoča Phi-3, da ne razume le jezika, ampak tudi vidi svet vizualno. S pomočjo Phi-3-vision-128k-instruct lahko rešujemo različne vizualne probleme, kot so OCR, analiza tabel, prepoznavanje predmetov, opis slike itd. Enostavno lahko opravimo naloge, ki so prej zahtevale veliko podatkov za učenje. Spodaj so navedene povezane tehnike in scenariji uporabe, ki jih navaja Phi-3-vision-128k-instruct.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:14:24+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "fi"
-}
--->
 # **Phi-3-päätelmien teko Androidilla**
 
 Tutustutaan, miten voit suorittaa päätelmiä Phi-3-minillä Android-laitteilla. Phi-3-mini on Microsoftin uusi mallisarja, joka mahdollistaa suurten kielimallien (LLM) käyttöönoton reunalaitteissa ja IoT-laitteissa.

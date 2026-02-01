@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-12-21T19:14:29+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "pcm"
-}
--->
 ## **Comot audio transcript dem wit Phi-4-multimodal**
 
 Phi-4-multimodal na full-modal model wey fit use audio as well as text and images. Make we see how to use am.

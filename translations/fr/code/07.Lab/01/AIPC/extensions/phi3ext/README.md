@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:32:44+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "fr"
-}
--->
 # phi3ext README
 
 Ceci est le README de votre extension "phi3ext". Après une brève description, nous vous recommandons d’inclure les sections suivantes.

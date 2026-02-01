@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-07-17T10:16:05+00:00",
-  "source_file": "md/03.FineTuning/olive-lab/readme.md",
-  "language_code": "bn"
-}
--->
 # ল্যাব। ডিভাইস-ভিত্তিক ইনফারেন্সের জন্য AI মডেল অপ্টিমাইজ করুন
 
 ## পরিচিতি

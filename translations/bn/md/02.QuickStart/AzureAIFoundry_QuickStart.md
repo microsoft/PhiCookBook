@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:21:30+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "bn"
-}
--->
 # **Azure AI Foundry-তে Phi-3 ব্যবহার**
 
 Generative AI-এর উন্নতির সঙ্গে, আমরা আশা করি একটি একক প্ল্যাটফর্ম ব্যবহার করে বিভিন্ন LLM এবং SLM, এন্টারপ্রাইজ ডেটা ইন্টিগ্রেশন, ফাইন-টিউনিং/ RAG অপারেশন এবং LLM ও SLM একত্রিত করার পর বিভিন্ন এন্টারপ্রাইজ ব্যবসার মূল্যায়ন ইত্যাদি পরিচালনা করতে পারব, যাতে জেনারেটিভ AI স্মার্ট অ্যাপ্লিকেশনগুলো আরও ভালোভাবে বাস্তবায়িত হয়। [Azure AI Foundry](https://ai.azure.com) একটি এন্টারপ্রাইজ-স্তরের জেনারেটিভ AI অ্যাপ্লিকেশন প্ল্যাটফর্ম।

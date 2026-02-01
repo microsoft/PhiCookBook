@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-07-16T22:29:58+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "bn"
-}
--->
 # **Azure AI Foundry ব্যবহার করে মূল্যায়ন**
 
 ![aistudo](../../../../../translated_images/bn/AIFoundry.9e0b513e999a1c5a.webp)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:35:58+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "ml"
-}
--->
 # Azure AI Foundry-ൽ Prompt flow ഉപയോഗിച്ച് കസ്റ്റം Phi-3 മോഡലുകൾ ഫൈൻ-ട്യൂൺ ചെയ്യാനും സംയോജിപ്പിക്കാനും
 
 Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" എന്ന ഗൈഡിന്റെ അടിസ്ഥാനത്തിലാണ് ഈ End-to-End (E2E) സാമ്പിൾ. ഇത് Azure AI Foundry-യിൽ Prompt flow ഉപയോഗിച്ച് കസ്റ്റം Phi-3 മോഡലുകളുടെ ഫൈൻ-ട്യൂൺ, ഡിപ്ലോയ്മെന്റ്, സംയോജനം എന്നിവയുടെ പ്രക്രിയകൾ പരിചയപ്പെടുത്തുന്നു. "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" എന്ന E2E സാമ്പിളിനൊപ്പം കോഡ് ലോക്കലായി റൺ ചെയ്യുന്നതിൽ നിന്നും വ്യത്യസ്തമായി, ഈ ട്യൂട്ടോറിയൽ Azure AI / ML സ്റ്റുഡിയോളം നിങ്ങളുടെ മോഡലിന്റെ ഫൈൻ-ട്യൂണിംഗിലും സംയോജനത്തിലും മാത്രം കേന്ദ്രീകരിക്കുന്നു.

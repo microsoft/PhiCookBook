@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T08:03:21+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "en"
-}
--->
 ## Inference with Kaito 
 
 [Kaito](https://github.com/Azure/kaito) is an operator that automates the AI/ML inference model deployment in a Kubernetes cluster.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-07-17T02:53:34+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
-  "language_code": "nl"
-}
--->
 # **Microsoft Phi-3.5 tflite gebruiken om een Android-app te maken**
 
 Dit is een Androidvoorbeeld dat gebruikmaakt van Microsoft Phi-3.5 tflite-modellen.

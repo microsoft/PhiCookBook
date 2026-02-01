@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-10-11T12:24:03+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "ta"
-}
--->
 # iOS-ல் Apple MLX Framework-ஐ பயன்படுத்தி Phi-3 மற்றும் Phi-4 இயக்குதல்
 
 இந்த வழிகாட்டி, Apple MLX framework-ஐ பயன்படுத்தி, Phi-3 அல்லது Phi-4 மாதிரியை iOS சாதனத்தில் இயக்கும் ஒரு பயன்பாட்டை உருவாக்குவது எப்படி என்பதை விளக்குகிறது. [MLX](https://opensource.apple.com/projects/mlx/) என்பது Apple Silicon சிப்களுக்காக மேம்படுத்தப்பட்ட Apple-இன் இயந்திர கற்றல் framework ஆகும்.

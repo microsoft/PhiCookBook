@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:41:57+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "vi"
-}
--->
 # **Xây dựng Visual Studio Code GitHub Copilot Chat của riêng bạn với Microsoft Phi-3 Family**
 
 Bạn đã từng sử dụng workspace agent trong GitHub Copilot Chat chưa? Bạn có muốn tạo một agent mã nguồn cho nhóm của mình? Lab thực hành này hy vọng kết hợp mô hình mã nguồn mở để xây dựng một agent kinh doanh mã nguồn cấp doanh nghiệp.

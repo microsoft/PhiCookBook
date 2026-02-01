@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-12-21T15:56:21+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "ml"
-}
--->
 # phi3ext README
 
 ഇത് നിങ്ങളുടെ എക്സ്റ്റൻഷന്‍ "phi3ext" ന്റെ README ആണ്. ഒരു ചുരുങ്ങിയ വിവരണം എഴുതിയതിന് ശേഷം, ഞങ്ങൾ താഴെ പറയുന്ന വിഭാഗങ്ങൾ ഉൾപ്പെടുത്താൻ ശുപാർശ ചെയ്യുന്നു。

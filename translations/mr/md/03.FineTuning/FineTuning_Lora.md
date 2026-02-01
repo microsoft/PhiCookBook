@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:30:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "mr"
-}
--->
 # **Lora सह Phi-3 चे फाइन-ट्यूनिंग**
 
 Microsoft च्या Phi-3 Mini भाषा मॉडेलचे [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) वापरून कस्टम चॅट इन्स्ट्रक्शन डेटासेटवर फाइन-ट्यूनिंग करणे.

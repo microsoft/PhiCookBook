@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:16:13+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "sr"
-}
--->
 # **Инференција Phi-3 на Андроиду**
 
 Хајде да истражимо како можете извршити инференцију са Phi-3-mini на Андроид уређајима. Phi-3-mini је нова серија модела из Microsoft-а која омогућава покретање великих језичких модела (LLM) на уређајима на ивици мреже и IoT уређајима.

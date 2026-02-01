@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:01:53+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "th"
-}
--->
 # **การทำ Inference Phi-3 บน AI PC**
 
 ด้วยความก้าวหน้าของปัญญาประดิษฐ์เชิงสร้างสรรค์ (generative AI) และการพัฒนาความสามารถของฮาร์ดแวร์อุปกรณ์ขอบเครือข่าย (edge device) ทำให้มีโมเดล generative AI จำนวนมากขึ้นที่สามารถนำไปใช้งานบนอุปกรณ์ Bring Your Own Device (BYOD) ของผู้ใช้ได้ AI PC ก็เป็นหนึ่งในโมเดลเหล่านี้ เริ่มตั้งแต่ปี 2024 Intel, AMD และ Qualcomm ได้ร่วมมือกับผู้ผลิต PC เพื่อนำเสนอ AI PC ที่ช่วยให้การใช้งานโมเดล generative AI แบบท้องถิ่นเป็นไปได้ผ่านการปรับแต่งฮาร์ดแวร์ ในบทความนี้เราจะเน้นที่ Intel AI PC และสำรวจวิธีการใช้งาน Phi-3 บน Intel AI PC

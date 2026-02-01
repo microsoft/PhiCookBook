@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
-  "translation_date": "2025-10-11T11:32:49+00:00",
-  "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
-  "language_code": "ta"
-}
--->
 Phi-3-mini WebGPU RAG Chatbot
 
 ## WebGPU மற்றும் RAG முறைமையை அறிமுகப்படுத்தும் டெமோ

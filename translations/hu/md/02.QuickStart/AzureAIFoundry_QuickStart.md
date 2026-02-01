@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:27:02+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "hu"
-}
--->
 # **Phi-3 használata az Azure AI Foundry-ban**
 
 A generatív MI fejlődésével arra törekszünk, hogy egy egységes platformon kezeljük a különböző LLM és SLM modelleket, vállalati adatintegrációt, finomhangolást/RAG műveleteket, valamint az LLM és SLM integrálása utáni különböző vállalati üzletek értékelését, hogy a generatív MI okos alkalmazásai hatékonyabban valósulhassanak meg. Az [Azure AI Foundry](https://ai.azure.com) egy vállalati szintű generatív MI alkalmazásplatform.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T14:33:13+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "tr"
-}
--->
 # **Phi Ailesini Nicelleştirme**
 
 Model nicelleştirme, bir sinir ağı modelindeki parametrelerin (ağırlıklar ve aktivasyon değerleri gibi) genellikle sürekli bir değer aralığından daha küçük ve sonlu bir değer aralığına eşlenmesi işlemine denir. Bu teknoloji, modelin boyutunu ve hesaplama karmaşıklığını azaltabilir ve mobil cihazlar veya gömülü sistemler gibi kaynak kısıtlı ortamlarda modelin işletim verimliliğini artırabilir. Model nicelleştirme, parametrelerin hassasiyetini düşürerek sıkıştırma sağlar, ancak belli bir doğruluk kaybı da getirir. Bu nedenle, nicelleştirme sürecinde model boyutu, hesaplama karmaşıklığı ve doğruluk arasında denge kurulması gerekir. Yaygın nicelleştirme yöntemleri arasında sabit nokta nicelleştirme, kayan nokta nicelleştirme vb. bulunur. Spesifik senaryo ve ihtiyaçlara göre uygun nicelleştirme stratejisi seçebilirsiniz.

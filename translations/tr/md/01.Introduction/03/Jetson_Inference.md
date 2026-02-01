@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:42:20+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "tr"
-}
--->
 # **Nvidia Jetson'da Phi-3 Çıkarımı**
 
 Nvidia Jetson, Nvidia tarafından geliştirilen gömülü bilgisayar kartları serisidir. Jetson TK1, TX1 ve TX2 modelleri, ARM mimarisine sahip bir merkezi işlem birimini (CPU) entegre eden Nvidia Tegra işlemcisi (veya SoC) taşır. Jetson, düşük güç tüketimli bir sistemdir ve makine öğrenimi uygulamalarını hızlandırmak için tasarlanmıştır. Nvidia Jetson, profesyonel geliştiriciler tarafından tüm sektörlerde çığır açan yapay zeka ürünleri oluşturmak için, öğrenciler ve meraklılar tarafından ise uygulamalı yapay zeka öğrenimi ve harika projeler yapmak için kullanılır. SLM, Jetson gibi uç cihazlarda konuşlandırılır ve endüstriyel üretken yapay zeka uygulama senaryolarının daha iyi uygulanmasını sağlar.

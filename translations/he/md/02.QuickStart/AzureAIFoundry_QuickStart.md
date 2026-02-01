@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:25:38+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "he"
-}
--->
 # **שימוש ב-Phi-3 ב-Azure AI Foundry**
 
 עם התפתחות ה-AI הגנרטיבי, אנו מקווים להשתמש בפלטפורמה מאוחדת לניהול מודלים גדולים של שפה (LLM) ומודלים קטנים של שפה (SLM), אינטגרציה של נתוני ארגון, פעולות כיוונון עדין/RAG, והערכת עסקים שונים בארגון לאחר שילוב LLM ו-SLM, וכדומה, כדי לאפשר יישום חכם יותר של אפליקציות גנרטיביות. [Azure AI Foundry](https://ai.azure.com) היא פלטפורמת יישומים גנרטיביים ברמת ארגון.

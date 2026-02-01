@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:16:21+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "vi"
-}
--->
 ## **Gọi hàm trong Phi-4-mini**
 
 Gọi hàm lần đầu xuất hiện trong họ Phi Family, và bây giờ bạn có thể sử dụng nó qua Phi-4-mini.

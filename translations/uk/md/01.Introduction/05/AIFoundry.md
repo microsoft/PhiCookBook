@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-07-16T22:34:42+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "uk"
-}
--->
 # **Використання Azure AI Foundry для оцінювання**
 
 ![aistudo](../../../../../translated_images/uk/AIFoundry.9e0b513e999a1c5a.webp)

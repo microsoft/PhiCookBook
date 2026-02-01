@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:10:29+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "de"
-}
--->
 ## **Extrahieren von Audio-Transkripten mit Phi-4-multimodal**
 
 Phi-4-multimodal ist ein vollmodales Modell, das neben Text und Bildern auch Audio verwenden kann. Schauen wir uns an, wie man es nutzt.

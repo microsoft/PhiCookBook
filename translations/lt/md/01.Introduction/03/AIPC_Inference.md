@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-09-12T14:53:01+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "lt"
-}
--->
 # **Inference Phi-3 AI PC**
 
 Su generatyviosios AI pažanga ir kraštinių įrenginių techninės įrangos galimybių gerėjimu, vis daugiau generatyviosios AI modelių gali būti integruojami į vartotojų „Bring Your Own Device“ (BYOD) įrenginius. AI kompiuteriai yra vieni iš šių modelių. Nuo 2024 metų Intel, AMD ir Qualcomm bendradarbiauja su kompiuterių gamintojais, kad pristatytų AI kompiuterius, kurie palengvina lokalizuotų generatyviosios AI modelių diegimą per techninės įrangos modifikacijas. Šiame aptarime mes sutelksime dėmesį į Intel AI kompiuterius ir nagrinėsime, kaip diegti Phi-3 Intel AI kompiuteryje.

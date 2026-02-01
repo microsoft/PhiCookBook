@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-09-12T14:59:14+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "lt"
-}
--->
 # phiext README
 
 Tai yra jūsų plėtinio „phiext“ README failas. Parašę trumpą aprašymą, rekomenduojame įtraukti šiuos skyrius.

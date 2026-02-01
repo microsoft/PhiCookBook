@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:26:30+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "sr"
-}
--->
 ## **Како користити Model Builder за квантовање Phi-3.5**
 
 Model Builder сада подржава квантовање ONNX модела за Phi-3.5 Instruct и Phi-3.5-Vision

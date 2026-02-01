@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:34:55+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "sw"
-}
--->
 # **Kurekebisha Phi-3 kwa Lora**
 
 Kurekebisha mfano wa lugha wa Phi-3 Mini wa Microsoft kwa kutumia [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) kwenye seti ya maelekezo ya mazungumzo iliyobinafsishwa.

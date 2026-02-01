@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:42:14+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "id"
-}
--->
 # **Bangun Visual Studio Code GitHub Copilot Chat Anda Sendiri dengan Microsoft Phi-3 Family**
 
 Apakah Anda pernah menggunakan workspace agent di GitHub Copilot Chat? Apakah Anda ingin membangun agen kode untuk tim Anda sendiri? Lab praktis ini bertujuan menggabungkan model open source untuk membangun agen bisnis kode tingkat perusahaan.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:07:17+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "ur"
-}
--->
 Phi-3-mini کے سیاق و سباق میں، inference سے مراد ماڈل کو استعمال کرتے ہوئے ان پٹ ڈیٹا کی بنیاد پر پیش گوئیاں کرنا یا آؤٹ پٹ تیار کرنا ہے۔ آئیے میں آپ کو Phi-3-mini اور اس کی inference صلاحیتوں کے بارے میں مزید تفصیلات فراہم کرتا ہوں۔
 
 Phi-3-mini، Microsoft کی جانب سے جاری کردہ Phi-3 سیریز کے ماڈلز کا حصہ ہے۔ یہ ماڈلز Small Language Models (SLMs) کے امکانات کو نئے سرے سے متعین کرنے کے لیے ڈیزائن کیے گئے ہیں۔

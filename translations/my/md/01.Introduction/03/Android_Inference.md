@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:16:38+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "my"
-}
--->
 # **Android တွင် Phi-3 ဖြင့် အနုတ်ယူခြင်း**
 
 Android စက်များပေါ်တွင် Phi-3-mini ဖြင့် အနုတ်ယူခြင်းကို မည်သို့ပြုလုပ်နိုင်သည်ကို လေ့လာကြမယ်။ Phi-3-mini သည် Microsoft မှ ထုတ်လုပ်သော မော်ဒယ်အသစ်တစ်ခုဖြစ်ပြီး Edge စက်များနှင့် IoT စက်များပေါ်တွင် Large Language Models (LLMs) ကို တပ်ဆင်အသုံးပြုနိုင်စေသည်။

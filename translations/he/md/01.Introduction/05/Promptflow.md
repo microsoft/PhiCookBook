@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:42:34+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "he"
-}
--->
 # **הקדמה ל-Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) הוא כלי אוטומציה ויזואלי ליצירת תהליכי עבודה אוטומטיים באמצעות תבניות מוכנות ומחברים מותאמים אישית. הכלי מיועד לאפשר למפתחים ואנליסטים עסקיים לבנות במהירות תהליכים אוטומטיים למשימות כמו ניהול נתונים, שיתוף פעולה ואופטימיזציה של תהליכים. עם Prompt Flow, משתמשים יכולים לחבר בקלות שירותים, אפליקציות ומערכות שונות, ולבצע אוטומציה של תהליכים עסקיים מורכבים.

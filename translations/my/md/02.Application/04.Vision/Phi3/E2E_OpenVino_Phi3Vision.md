@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:06:20+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "my"
-}
--->
 ဒီဒေမိုမှာတော့ ပုံတစ်ပုံနဲ့ စာသားတစ်ခုအပေါ် အခြေခံပြီး Python ကုဒ်ကို pretrained model တစ်ခု အသုံးပြုပြီး ဘယ်လိုထုတ်လုပ်မလဲ ဆိုတာကို ပြသထားပါတယ်။
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

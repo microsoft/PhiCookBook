@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:32:08+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "el"
-}
--->
 # Εκτέλεση των Phi-3 και Phi-4 σε iOS με το Apple MLX Framework
 
 Αυτό το σεμινάριο δείχνει πώς να δημιουργήσετε μια εφαρμογή iOS που τρέχει το μοντέλο Phi-3 ή Phi-4 τοπικά στη συσκευή, χρησιμοποιώντας το Apple MLX framework. Το [MLX](https://opensource.apple.com/projects/mlx/) είναι το πλαίσιο μηχανικής μάθησης της Apple, βελτιστοποιημένο για τα τσιπ Apple Silicon.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:01:33+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "tr"
-}
--->
 # **Intel OpenVINO kullanarak Phi-3.5’in Kuantizasyonu**
 
 Intel, çok sayıda kullanıcısı olan en köklü CPU üreticisidir. Makine öğrenimi ve derin öğrenmenin yükselişiyle birlikte, Intel yapay zeka hızlandırma yarışına da katılmıştır. Model çıkarımı için Intel sadece GPU ve CPU’ları değil, aynı zamanda NPU’ları da kullanmaktadır.

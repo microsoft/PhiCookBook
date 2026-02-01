@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:34:01+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "te"
-}
--->
 # Azure AI ఫౌండ్రీలో Prompt flowతో కస్టమ్ Phi-3 నమూనాలను Fine-tune చేసి ఇంటిగ్రేట్ చేయడం
 
 ఈ End-to-End (E2E) సాంపిల్ Microsoft Tech Community నుండి "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" గైడ్ ఆధారంగా రూపొందించబడింది. ఇది Azure AI ఫౌండ్రీలో Prompt flowతో కస్టమ్ Phi-3 నమూనాలను fine-tuning, డిప్లాయ్ మరియు ఇంటిగ్రేట్ చేసే ప్రక్రియలను పరిచయం చేస్తుంది. E2E సాంపిల్ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" లాంటి లోకల్ కోడ్ రన్ చేయడం కాకుండా, ఈ పాఠంలో మీరు Azure AI / ML స్టూడియోలో మీ నమూనాను fine-tune చేసి ఇంటిగ్రేట్ చేయడంపై పూర్తి దృష్టి సారిస్తారు.

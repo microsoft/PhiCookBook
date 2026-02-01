@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:01:14+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "ur"
-}
--->
 ## Azure ML سسٹم رجسٹری سے chat-completion کمپونینٹس استعمال کر کے ماڈل کو fine tune کرنے کا طریقہ
 
 اس مثال میں ہم Phi-3-mini-4k-instruct ماڈل کی fine tuning کریں گے تاکہ ultrachat_200k ڈیٹاسیٹ استعمال کرتے ہوئے دو افراد کے درمیان گفتگو مکمل کی جا سکے۔

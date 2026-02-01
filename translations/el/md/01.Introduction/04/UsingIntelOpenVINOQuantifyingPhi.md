@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:01:42+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "el"
-}
--->
 # **Ποσοτικοποίηση Phi-3.5 με χρήση Intel OpenVINO**
 
 Η Intel είναι ο πιο παραδοσιακός κατασκευαστής CPU με πολλούς χρήστες. Με την άνοδο της μηχανικής μάθησης και της βαθιάς μάθησης, η Intel έχει επίσης μπει στον ανταγωνισμό για επιτάχυνση AI. Για την εκτέλεση μοντέλων, η Intel δεν χρησιμοποιεί μόνο GPUs και CPUs, αλλά και NPUs.

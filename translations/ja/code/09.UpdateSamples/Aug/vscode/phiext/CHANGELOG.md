@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-07-16T17:24:20+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "ja"
-}
--->
 # 変更履歴
 
 "phiext" 拡張機能のすべての重要な変更はこのファイルに記録されます。

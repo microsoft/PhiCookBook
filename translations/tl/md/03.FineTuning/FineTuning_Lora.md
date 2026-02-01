@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:34:43+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "tl"
-}
--->
 # **Fine-tuning ng Phi-3 gamit ang Lora**
 
 Fine-tuning ng Phi-3 Mini language model ng Microsoft gamit ang [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) sa isang custom na chat instruction dataset.

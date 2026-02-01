@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:13:15+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ro"
-}
--->
 ## **Extrage transcrieri audio folosind Phi-4-multimodal**
 
 Phi-4-multimodal este un model full-modal care poate folosi audio pe lângă text și imagini. Hai să vedem cum să-l folosim.

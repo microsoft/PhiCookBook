@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-10-11T11:48:56+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "et"
-}
--->
 ## Kuidas kasutada Azure ML süsteemiregistri vestluse lõpetamise komponente mudeli peenhäälestamiseks
 
 Selles näites teeme Phi-3-mini-4k-instruct mudeli peenhäälestuse, et lõpetada vestlus kahe inimese vahel, kasutades ultrachat_200k andmestikku.

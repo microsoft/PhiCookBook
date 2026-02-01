@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
-  "translation_date": "2025-12-21T16:56:35+00:00",
-  "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
-  "language_code": "ml"
-}
--->
 Phi-3-mini WebGPU RAG ചാറ്റ്ബോട്ട്
 
 ## WebGPU ആയും RAG മാതൃകയും പ്രദർശിപ്പിക്കാൻ ഉള്ള ഡെമോ

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-12-22T00:38:35+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "pcm"
-}
--->
 For di konteks of Phi-3-mini, inference na di process wey dey use di model to make predictions or generate outputs based on input data. Make I give you more details about Phi-3-mini and im inference capabilities.
 
 Phi-3-mini na part of di Phi-3 series of models wey Microsoft release. Dem models design to redefine wetin possible with Small Language Models (SLMs). 

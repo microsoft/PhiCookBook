@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-12-21T16:01:31+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
-  "language_code": "te"
-}
--->
 # మీ VS Code ఎక్స్‌టెన్షన్‌కు స్వాగతం
 
 ## ఫోల్డర్‌లో ఏముంది

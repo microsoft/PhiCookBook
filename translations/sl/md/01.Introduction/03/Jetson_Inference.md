@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:46:02+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "sl"
-}
--->
 # **Inferenca Phi-3 na Nvidia Jetson**
 
 Nvidia Jetson je serija vgrajenih računalniških plošč iz podjetja Nvidia. Modeli Jetson TK1, TX1 in TX2 imajo vsi Tegra procesor (ali SoC) iz Nvidie, ki združuje centralno procesno enoto (CPU) z arhitekturo ARM. Jetson je nizkoenergijski sistem, zasnovan za pospeševanje aplikacij strojnega učenja. Nvidia Jetson uporabljajo profesionalni razvijalci za ustvarjanje prelomnih AI izdelkov v različnih panogah, študentje in navdušenci pa za praktično učenje AI in izdelavo izjemnih projektov. SLM je nameščen na robnih napravah, kot je Jetson, kar omogoča boljšo implementacijo industrijskih scenarijev generativne AI.

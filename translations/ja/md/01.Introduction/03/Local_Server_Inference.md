@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:55:55+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "ja"
-}
--->
 # **ローカルサーバーでの Phi-3 推論**
 
 Phi-3 をローカルサーバーに展開することができます。ユーザーは [Ollama](https://ollama.com) や [LM Studio](https://llamaedge.com) のソリューションを選ぶか、自分でコードを書くことも可能です。Phi-3 のローカルサービスには [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) や [Langchain](https://www.langchain.com/) を通じて接続し、Copilot アプリケーションを構築できます。

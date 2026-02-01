@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f72d7981ed3640865700f51ae407da4",
-  "translation_date": "2026-01-17T19:47:30+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
-  "language_code": "kn"
-}
--->
 # ಇಂಟರೆಕ್ಟಿವ್ ಫೈ 3 ಮಿನಿ 4ಕೆ ಇನ್ಸ್ಟ್ರಕ್ಟ್ ಚಾಟ್‌ಬಾಟ್ ವಿದ್ ವಿಸ್ಪರ್
 
 ## ಅವಲೋಕನ

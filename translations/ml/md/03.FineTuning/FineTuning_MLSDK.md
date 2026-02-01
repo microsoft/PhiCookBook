@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-12-21T17:41:42+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "ml"
-}
--->
 ## Azure ML സിസ്റ്റം രജിസ്ട്രിയിൽ നിന്ന് ചാറ്റ്-കമ്പ്ലീഷൻ ഘടകങ്ങൾ ഉപയോഗിച്ച് മോഡൽ ഫൈൻട്യൂൺ ചെയ്യുന്നത് എങ്ങനെ
 
 ഈ ഉദാഹരണത്തിൽ നാം Phi-3-mini-4k-instruct മോഡലിന്റെ ഫൈൻട്യൂൺ നടത്തിപ്പിലൂടെ ultrachat_200k ഡാറ്റാസെറ്റ് ഉപയോഗിച്ച് രണ്ട് ആളുകളിലുള്ള സംവാദം പൂർത്തിയാക്കുന്നതാണ്.

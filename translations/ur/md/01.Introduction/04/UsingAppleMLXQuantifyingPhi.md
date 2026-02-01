@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:52:51+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ur"
-}
--->
 # **Apple MLX Framework کے ذریعے Phi-3.5 کی Quantizing**
 
 MLX ایک array فریم ورک ہے جو Apple silicon پر مشین لرننگ ریسرچ کے لیے بنایا گیا ہے، اور یہ Apple مشین لرننگ ریسرچ کی جانب سے پیش کیا گیا ہے۔

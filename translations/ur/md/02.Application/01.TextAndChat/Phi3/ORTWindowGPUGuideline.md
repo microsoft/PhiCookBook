@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:39:27+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "ur"
-}
--->
 # **OnnxRuntime GenAI Windows GPU کے لیے رہنما اصول**
 
 یہ رہنما اصول ونڈوز پر GPUs کے ساتھ ONNX Runtime (ORT) کو سیٹ اپ اور استعمال کرنے کے اقدامات فراہم کرتا ہے۔ یہ آپ کے ماڈلز کے لیے GPU کی تیز رفتاری کو استعمال کرنے میں مدد دینے کے لیے ڈیزائن کیا گیا ہے، جس سے کارکردگی اور مؤثریت بہتر ہوتی ہے۔

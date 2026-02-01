@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:13:29+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "hr"
-}
--->
 U kontekstu Phi-3-mini, inferencija se odnosi na proces korištenja modela za donošenje predviđanja ili generiranje izlaza na temelju ulaznih podataka. Dopustite mi da vam pružim više detalja o Phi-3-mini i njegovim mogućnostima inferencije.
 
 Phi-3-mini je dio Phi-3 serije modela koje je izdala Microsoft. Ovi modeli su dizajnirani da redefiniraju što je moguće s malim jezičnim modelima (SLM).

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:56:33+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "da"
-}
--->
 ### Eksempelscenario
 
 Forestil dig, at du har et billede (`demo.png`), og du vil generere Python-kode, der behandler dette billede og gemmer en ny version af det (`phi-3-vision.jpg`).

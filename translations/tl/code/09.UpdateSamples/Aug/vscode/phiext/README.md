@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:31:41+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "tl"
-}
--->
 # phiext README
 
 Ito ang README para sa iyong extension na "phiext". Pagkatapos magsulat ng maikling paglalarawan, inirerekomenda naming isama ang mga sumusunod na seksyon.

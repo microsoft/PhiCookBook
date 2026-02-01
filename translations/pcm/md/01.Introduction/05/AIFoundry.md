@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-12-21T22:43:51+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "pcm"
-}
--->
 # **How to test your generative AI app wit Azure AI Foundry**
 
 ![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.pcm.png)

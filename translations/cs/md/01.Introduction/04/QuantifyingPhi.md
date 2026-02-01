@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:36:15+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "cs"
-}
--->
 # **Kvantisace rodiny Phi**
 
 Kvantisace modelu označuje proces mapování parametrů (jako jsou váhy a hodnoty aktivace) v modelu neuronové sítě z velkého rozsahu hodnot (obvykle spojitého rozsahu hodnot) na menší konečný rozsah hodnot. Tato technologie může zmenšit velikost a výpočetně složitost modelu a zlepšit provozní efektivitu modelu v prostředích s omezenými zdroji, jako jsou mobilní zařízení nebo zabudované systémy. Kvantisace modelu dosahuje komprese snížením přesnosti parametrů, ale zároveň zavádí určitou ztrátu přesnosti. Proto je při procesu kvantisace nutné vyvážit velikost modelu, výpočetní složitost a přesnost. Běžné metody kvantisace zahrnují kvantisaci s pevnou čárkou, kvantisaci s pohyblivou desetinnou čárkou atd. Můžete si vybrat vhodnou kvantisovací strategii podle konkrétní situace a potřeb.

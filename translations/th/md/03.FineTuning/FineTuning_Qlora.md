@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:19:02+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "th"
-}
--->
 **การปรับแต่ง Phi-3 ด้วย QLoRA**
 
 การปรับแต่งโมเดลภาษา Phi-3 Mini ของ Microsoft โดยใช้ [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:37:17+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "th"
-}
--->
 ## ยินดีต้อนรับสู่ Phi labs ที่ใช้ C#
 
 มีชุดแลปที่แสดงวิธีการผสานรวม Phi models เวอร์ชันต่างๆ ที่ทรงพลังในสภาพแวดล้อม .NET

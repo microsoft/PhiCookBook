@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:45:27+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "th"
-}
--->
 # **การปรับแต่ง Phi-3 ด้วย Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) เป็นเครื่องมือปรับแต่งโมเดลที่คำนึงถึงฮาร์ดแวร์ ใช้งานง่าย ซึ่งรวบรวมเทคนิคชั้นนำในอุตสาหกรรมทั้งด้านการบีบอัดโมเดล การปรับแต่ง และการคอมไพล์เข้าด้วยกัน

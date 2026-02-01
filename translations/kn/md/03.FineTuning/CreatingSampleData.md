@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-12-21T18:01:15+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "kn"
-}
--->
 # Hugging Face ನಿಂದ ಡೇಟಾಸೆಟ್ ಮತ್ತು ಸಂಬಂಧಿತ ಚಿತ್ರಗಳನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ ಚಿತ್ರ ಡೇಟಾ ಸೆಟ್ ರಚನೆ
 
 

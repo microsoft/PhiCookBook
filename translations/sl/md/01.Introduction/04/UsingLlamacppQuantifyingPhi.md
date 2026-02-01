@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-07-16T22:12:50+00:00",
-  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
-  "language_code": "sl"
-}
--->
 # **Kvantizacija družine Phi z uporabo llama.cpp**
 
 ## **Kaj je llama.cpp**

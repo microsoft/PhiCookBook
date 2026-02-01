@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-07-17T06:25:25+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "bg"
-}
--->
 ## Финна настройка с Kaito
 
 [Kaito](https://github.com/Azure/kaito) е оператор, който автоматизира разгръщането на AI/ML модели за инференция в Kubernetes клъстер.

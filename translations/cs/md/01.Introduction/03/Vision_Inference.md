@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:39:53+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "cs"
-}
--->
 # **Inference Phi-3-Vision lokálně**
 
 Phi-3-vision-128k-instruct umožňuje Phi-3 nejen rozumět jazyku, ale také vidět svět vizuálně. Díky Phi-3-vision-128k-instruct můžeme řešit různé vizuální úkoly, jako je OCR, analýza tabulek, rozpoznávání objektů, popis obrázků a podobně. Snadno tak zvládneme úkoly, které dříve vyžadovaly rozsáhlé trénování na datech. Níže jsou uvedeny související techniky a aplikační scénáře, které Phi-3-vision-128k-instruct využívá.

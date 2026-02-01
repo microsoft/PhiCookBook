@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:15:06+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "de"
-}
--->
 # **Chat mit Phi-4-mini ONNX**
 
 ***ONNX*** ist ein offenes Format zur Darstellung von Machine-Learning-Modellen. ONNX definiert eine gemeinsame Menge von Operatoren – die Bausteine von Machine-Learning- und Deep-Learning-Modellen – sowie ein einheitliches Dateiformat, das es KI-Entwicklern ermöglicht, Modelle mit verschiedenen Frameworks, Tools, Laufzeitumgebungen und Compilern zu verwenden.

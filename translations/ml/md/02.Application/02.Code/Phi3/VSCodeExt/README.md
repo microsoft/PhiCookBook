@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-12-21T19:34:51+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ml"
-}
--->
 # **നിങ്ങളുടെ സ്വന്തം Visual Studio Code GitHub Copilot Chat Microsoft Phi-3 Family ഉപയോഗിച്ച് നിർമ്മിക്കുക**
 
 GitHub Copilot Chat ൽ workflow agent നിങ്ങൾ ഉപയോഗിച്ചിട്ടുണ്ടോ? നിങ്ങളുടെ ടീമിന്റെ സ്വന്തം കോഡ് ഏജന്റ് നിങ്ങൾ നിർമ്മിക്കാനാഗ്രഹിക്കുന്നുവോ? ഈ പ്രായോഗിക ലാബ് ഓപ്പൺ സോഴ്‌സ് മോഡൽ ഉപയോഗിച്ച് എന്റർപ്രൈസ്-തലത്തിലുള്ള കോഡ് ബിസിനസ് ഏജന്റ് നിർമ്മിക്കാനുള്ള ശ്രമമാണ്.

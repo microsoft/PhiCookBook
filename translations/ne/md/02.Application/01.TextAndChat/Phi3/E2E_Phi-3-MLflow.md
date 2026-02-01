@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-07-17T02:29:29+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "ne"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) एक खुला स्रोत प्लेटफर्म हो जुन मेसिन लर्निङको सम्पूर्ण जीवनचक्र व्यवस्थापन गर्न डिजाइन गरिएको हो।

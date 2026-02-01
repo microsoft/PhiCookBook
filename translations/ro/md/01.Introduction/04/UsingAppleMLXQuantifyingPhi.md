@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:57:14+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ro"
-}
--->
 # **Cuantificarea Phi-3.5 folosind Apple MLX Framework**
 
 MLX este un framework pentru array-uri destinat cercetării în învățarea automată pe siliciu Apple, dezvoltat de echipa de cercetare Apple în domeniul învățării automate.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:36:12+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "sr"
-}
--->
 # **Фајн-тјунинг Phi-3 помоћу Lora**
 
 Фајн-тјунинг Microsoft-овог Phi-3 Mini језичког модела користећи [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) на прилагођеном скупу упутстава за ћаскање.

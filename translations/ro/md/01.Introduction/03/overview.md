@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:12:57+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "ro"
-}
--->
 În contextul Phi-3-mini, inferența se referă la procesul de utilizare a modelului pentru a face predicții sau a genera rezultate pe baza datelor de intrare. Permiteți-mi să vă ofer mai multe detalii despre Phi-3-mini și capacitățile sale de inferență.
 
 Phi-3-mini face parte din seria de modele Phi-3 lansate de Microsoft. Aceste modele sunt concepute pentru a redefini ceea ce este posibil cu Modelele de Limbaj Mici (SLM).

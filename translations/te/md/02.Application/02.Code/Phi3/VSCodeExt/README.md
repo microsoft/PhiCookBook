@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-12-21T19:32:46+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "te"
-}
--->
 # **మీ స్వంత Visual Studio Code GitHub Copilot Chatని Microsoft Phi-3 ఫ్యామిలీతో నిర్మించండి**
 
 మీరు GitHub Copilot Chat‌లోని workspace agent ను ఉపయోగించారా? మీ టీమ్ యొక్క కోడ్ ఏజంట్ ను నిర్మించాలనుకుంటున్నారా? ఈ హ్యాండ్స్-ఆన్ ల్యాబ్ ఓపెన్ సోర్స్ మోడల్ ను కలిపి ఎంటర్‌ప్రైజ్-స్థాయి కోడ్ బిజినెస్ ఏజంట్ ను నిర్మిస్తుందని ఆశిస్తుంది.

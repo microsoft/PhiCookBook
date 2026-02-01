@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:29:53+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "th"
-}
--->
 # การทำ inference ข้ามแพลตฟอร์มด้วย Rust
 
 บทเรียนนี้จะแนะนำขั้นตอนการทำ inference โดยใช้ Rust และ [Candle ML framework](https://github.com/huggingface/candle) จาก HuggingFace การใช้ Rust สำหรับการทำ inference มีข้อดีหลายประการ โดยเฉพาะเมื่อเทียบกับภาษาโปรแกรมอื่นๆ Rust มีชื่อเสียงในเรื่องประสิทธิภาพสูงที่เทียบเท่ากับ C และ C++ ซึ่งทำให้เหมาะอย่างยิ่งสำหรับงาน inference ที่ต้องใช้การคำนวณหนัก โดยเฉพาะอย่างยิ่งเนื่องจากมี zero-cost abstractions และการจัดการหน่วยความจำที่มีประสิทธิภาพโดยไม่มี overhead จาก garbage collection ความสามารถข้ามแพลตฟอร์มของ Rust ช่วยให้พัฒนาโค้ดที่รันได้บนระบบปฏิบัติการต่างๆ เช่น Windows, macOS และ Linux รวมถึงระบบปฏิบัติการบนมือถือ โดยไม่ต้องแก้ไขโค้ดมากนัก

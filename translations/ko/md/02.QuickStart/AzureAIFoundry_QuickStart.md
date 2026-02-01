@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:20:59+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "ko"
-}
--->
 # **Azure AI Foundry에서 Phi-3 사용하기**
 
 생성형 AI의 발전과 함께, 다양한 LLM과 SLM, 기업 데이터 통합, 파인튜닝/RAG 작업, 그리고 LLM과 SLM 통합 후 다양한 기업 비즈니스 평가를 하나의 통합 플랫폼에서 관리하여 생성형 AI 기반 스마트 애플리케이션을 더 잘 구현하고자 합니다. [Azure AI Foundry](https://ai.azure.com)는 기업용 생성형 AI 애플리케이션 플랫폼입니다.

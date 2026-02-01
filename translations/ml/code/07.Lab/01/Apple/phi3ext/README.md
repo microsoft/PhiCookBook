@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-12-21T16:12:45+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
-  "language_code": "ml"
-}
--->
 # phi3ext README
 
 ഇത് നിങ്ങളുടെ എക്സ്റ്റൻഷൻ "phi3ext" ന്റെ README ആണ്. ഒരു ചുരുങ്ങിയ വിവരണം എഴുതിയ ശേഷം, ഞങ്ങൾ താഴെ കാണിച്ചിരിക്കുന്ന വിഭാഗങ്ങൾ ഉൾപ്പെടുത്താൻ ശുപാർശ ചെയ്യുന്നു。

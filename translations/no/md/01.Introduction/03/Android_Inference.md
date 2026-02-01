@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:14:16+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "no"
-}
--->
 # **Inference Phi-3 på Android**
 
 La oss utforske hvordan du kan utføre inferens med Phi-3-mini på Android-enheter. Phi-3-mini er en ny modellserie fra Microsoft som muliggjør distribusjon av store språkmodeller (LLMs) på edge-enheter og IoT-enheter.

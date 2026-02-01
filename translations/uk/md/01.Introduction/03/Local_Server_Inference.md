@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:59:53+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "uk"
-}
--->
 # **Інференс Phi-3 на локальному сервері**
 
 Ми можемо розгорнути Phi-3 на локальному сервері. Користувачі можуть обрати рішення [Ollama](https://ollama.com) або [LM Studio](https://llamaedge.com), або написати власний код. Ви можете підключити локальні сервіси Phi-3 через [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) або [Langchain](https://www.langchain.com/) для створення додатків Copilot.

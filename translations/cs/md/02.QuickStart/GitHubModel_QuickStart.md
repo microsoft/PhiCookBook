@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:41:01+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "cs"
-}
--->
 ## GitHub Models - Omezená veřejná beta
 
 Vítejte na [GitHub Models](https://github.com/marketplace/models)! Vše je připraveno a můžete začít objevovat AI modely hostované na Azure AI.

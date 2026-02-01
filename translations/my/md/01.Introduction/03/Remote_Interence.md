@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:23:13+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "my"
-}
--->
 # Remote Inferencing with the fine-tuned model
 
 အဒပ်တာတွေကို remote ပတ်ဝန်းကျင်မှာ သင်ကြားပြီးနောက်၊ မော်ဒယ်နဲ့ အပြန်အလှန် ဆက်သွယ်ဖို့ ရိုးရှင်းတဲ့ Gradio အက်ပ်လီကေးရှင်းကို အသုံးပြုပါ။

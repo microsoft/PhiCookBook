@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:58:18+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "mr"
-}
--->
 # **AI PC मध्ये Inference Phi-3**
 
 जनरेटिव्ह AI च्या प्रगतीमुळे आणि एज डिव्हाइस हार्डवेअर क्षमतांच्या सुधारण्यामुळे, अधिकाधिक जनरेटिव्ह AI मॉडेल्स वापरकर्त्यांच्या Bring Your Own Device (BYOD) डिव्हाइसेसवर समाकलित करता येऊ शकतात. AI PC हे अशाच मॉडेल्सपैकी एक आहे. 2024 पासून, Intel, AMD, आणि Qualcomm यांनी PC उत्पादकांसोबत सहकार्य करून AI PC सादर केले आहेत जे हार्डवेअर सुधारणा करून स्थानिक जनरेटिव्ह AI मॉडेल्सची तैनाती सुलभ करतात. या चर्चेत, आपण Intel AI PC वर Phi-3 कसे तैनात करायचे यावर लक्ष केंद्रित करू.

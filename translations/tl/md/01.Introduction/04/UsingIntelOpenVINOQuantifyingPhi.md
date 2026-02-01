@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:03:22+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "tl"
-}
--->
 # **Pag-quantize ng Phi-3.5 gamit ang Intel OpenVINO**
 
 Ang Intel ang pinakamatagal nang tagagawa ng CPU na may maraming gumagamit. Sa pag-usbong ng machine learning at deep learning, sumali rin ang Intel sa kompetisyon para sa AI acceleration. Para sa model inference, hindi lang gumagamit ang Intel ng GPUs at CPUs, kundi pati na rin ng NPUs.

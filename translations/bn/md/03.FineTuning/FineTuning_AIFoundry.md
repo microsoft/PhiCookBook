@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T05:59:59+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "bn"
-}
--->
 # Azure AI Foundry দিয়ে Phi-3 ফাইন-টিউনিং
 
 চলুন দেখি কিভাবে Microsoft-এর Phi-3 Mini ভাষা মডেলকে Azure AI Foundry ব্যবহার করে ফাইন-টিউন করা যায়। ফাইন-টিউনিংয়ের মাধ্যমে আপনি Phi-3 Mini কে নির্দিষ্ট কাজের জন্য মানিয়ে নিতে পারেন, যা এটিকে আরও শক্তিশালী এবং প্রসঙ্গ-সচেতন করে তোলে।

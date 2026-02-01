@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f72d7981ed3640865700f51ae407da4",
-  "translation_date": "2026-01-17T19:46:50+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
-  "language_code": "ml"
-}
--->
 # ഇൻററാക്ടീവ് ഫി 3 മിനി 4K ഇൻസ്ട്രക്റ്റ് ചാറ്റ്ബോട്ട് വിത്ത് വിസ്പർ
 
 ## അവലോകനം

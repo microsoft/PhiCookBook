@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T21:59:54+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ja"
-}
--->
 # **Intel OpenVINOを使ったPhi-3.5の量子化**
 
 Intelは最も伝統的なCPUメーカーで、多くのユーザーを持っています。機械学習や深層学習の台頭に伴い、IntelもAIアクセラレーションの競争に参入しました。モデル推論において、IntelはGPUやCPUだけでなく、NPUも活用しています。

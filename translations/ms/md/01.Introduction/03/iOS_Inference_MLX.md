@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:34:47+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "ms"
-}
--->
 # Menjalankan Phi-3 dan Phi-4 pada iOS dengan Rangka Kerja Apple MLX
 
 Tutorial ini menunjukkan cara untuk mencipta aplikasi iOS yang menjalankan model Phi-3 atau Phi-4 secara terus pada peranti, menggunakan rangka kerja Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) adalah rangka kerja pembelajaran mesin Apple yang dioptimumkan untuk cip Apple Silicon.

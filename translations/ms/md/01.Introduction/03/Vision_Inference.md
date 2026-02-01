@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:39:24+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "ms"
-}
--->
 # **Inferens Phi-3-Vision Secara Tempatan**
 
 Phi-3-vision-128k-instruct membolehkan Phi-3 bukan sahaja memahami bahasa, tetapi juga melihat dunia secara visual. Melalui Phi-3-vision-128k-instruct, kita boleh menyelesaikan pelbagai masalah visual, seperti OCR, analisis jadual, pengecaman objek, menerangkan gambar dan sebagainya. Kita boleh dengan mudah menyiapkan tugasan yang sebelum ini memerlukan latihan data yang banyak. Berikut adalah teknik dan senario aplikasi yang berkaitan yang dirujuk oleh Phi-3-vision-128k-instruct

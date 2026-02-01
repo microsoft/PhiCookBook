@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-10-11T11:53:27+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "ta"
-}
--->
 இந்த டெமோ ஒரு முன்பதிவுசெய்யப்பட்ட மாடலை பயன்படுத்தி, ஒரு படம் மற்றும் ஒரு உரை உந்துதலின் அடிப்படையில் Python குறியீட்டை உருவாக்குவது எப்படி என்பதை காட்டுகிறது.
 
 [மாதிரி குறியீடு](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

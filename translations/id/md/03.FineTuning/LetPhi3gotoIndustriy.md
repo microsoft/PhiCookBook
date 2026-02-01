@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:59:05+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "id"
-}
--->
 # **Biarkan Phi-3 menjadi ahli industri**
 
 Untuk menerapkan model Phi-3 ke dalam sebuah industri, Anda perlu menambahkan data bisnis industri ke model Phi-3. Kami memiliki dua opsi berbeda, yang pertama adalah RAG (Retrieval Augmented Generation) dan yang kedua adalah Fine Tuning.

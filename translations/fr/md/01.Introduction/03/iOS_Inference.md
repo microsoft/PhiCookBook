@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:17:14+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "fr"
-}
--->
 # **Inférence Phi-3 sur iOS**
 
 Phi-3-mini est une nouvelle série de modèles de Microsoft qui permet le déploiement de grands modèles de langage (LLMs) sur des appareils edge et des objets connectés (IoT). Phi-3-mini est disponible pour iOS, Android et les déploiements sur appareils edge, permettant ainsi de déployer de l’IA générative dans des environnements BYOD. L’exemple suivant montre comment déployer Phi-3-mini sur iOS.

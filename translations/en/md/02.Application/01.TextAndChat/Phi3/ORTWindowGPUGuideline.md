@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:38:02+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "en"
-}
--->
 # **Guideline for OnnxRuntime GenAI Windows GPU**
 
 This guideline provides steps for setting up and using ONNX Runtime (ORT) with GPUs on Windows. It’s designed to help you take advantage of GPU acceleration for your models, enhancing performance and efficiency.

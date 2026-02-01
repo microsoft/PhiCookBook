@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:43:37+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "sw"
-}
--->
 # **Tambulisha Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) ni chombo cha kuona na kuendesha mchakato wa kazi kiotomatiki kinachowezesha watumiaji kuunda michakato ya kazi kiotomatiki kwa kutumia templeti zilizotengenezwa awali na viunganishi maalum. Imeundwa kusaidia watengenezaji na wachambuzi wa biashara kujenga kwa haraka michakato ya kiotomatiki kwa kazi kama usimamizi wa data, ushirikiano, na uboreshaji wa michakato. Kwa Prompt Flow, watumiaji wanaweza kuunganisha kwa urahisi huduma, programu, na mifumo tofauti, na kuendesha kiotomatiki michakato tata ya biashara.

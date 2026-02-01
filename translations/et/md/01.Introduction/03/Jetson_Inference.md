@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-10-11T12:20:58+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "et"
-}
--->
 # **Inference Phi-3 Nvidia Jetsonil**
 
 Nvidia Jetson on Nvidia loodud manussüsteemide arvutiplatvormide seeria. Jetson TK1, TX1 ja TX2 mudelid sisaldavad Nvidia Tegra protsessorit (või SoC), mis integreerib ARM-arhitektuuriga keskprotsessori (CPU). Jetson on madala energiatarbega süsteem, mis on loodud masinõppe rakenduste kiirendamiseks. Nvidia Jetsonit kasutavad professionaalsed arendajad, et luua murrangulisi tehisintellekti tooteid kõikides tööstusharudes, samuti õpilased ja entusiastid praktiliseks tehisintellekti õppimiseks ja hämmastavate projektide loomiseks. SLM-i kasutatakse servaseadmetes, nagu Jetson, mis võimaldab tööstuslike generatiivse tehisintellekti rakenduste paremat teostamist.

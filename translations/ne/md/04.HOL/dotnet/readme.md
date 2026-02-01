@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:34:47+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ne"
-}
--->
 ## C# प्रयोग गरेर Phi ल्याबहरूमा स्वागत छ
 
 यहाँ विभिन्न Phi मोडेलहरूको शक्तिशाली संस्करणहरूलाई .NET वातावरणमा कसरी एकीकृत गर्ने देखाउने केही ल्याबहरू छन्।

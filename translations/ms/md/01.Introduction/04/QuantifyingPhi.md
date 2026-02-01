@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:05:10+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "ms"
-}
--->
 # **Mengkuantifikasi Keluarga Phi**
 
 Kuantisasi model merujuk kepada proses memetakan parameter (seperti berat dan nilai pengaktifan) dalam model rangkaian neural dari julat nilai besar (biasanya julat nilai berterusan) kepada julat nilai terhingga yang lebih kecil. Teknologi ini dapat mengurangkan saiz dan kerumitan pengiraan model serta meningkatkan kecekapan operasi model dalam persekitaran yang mempunyai sumber terhad seperti peranti mudah alih atau sistem tersemat. Kuantisasi model mencapai pemampatan dengan mengurangkan ketepatan parameter, tetapi ia juga menyebabkan kehilangan ketepatan tertentu. Oleh itu, dalam proses kuantisasi, perlu untuk mengimbangi saiz model, kerumitan pengiraan, dan ketepatan. Kaedah kuantisasi biasa termasuk kuantisasi titik tetap, kuantisasi nombor titik terapung, dan lain-lain. Anda boleh memilih strategi kuantisasi yang sesuai mengikut senario dan keperluan spesifik.

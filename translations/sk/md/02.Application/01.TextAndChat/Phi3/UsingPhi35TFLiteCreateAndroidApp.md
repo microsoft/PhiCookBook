@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-07-17T02:54:58+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
-  "language_code": "sk"
-}
--->
 # **Použitie Microsoft Phi-3.5 tflite na vytvorenie Android aplikácie**
 
 Toto je ukážka pre Android využívajúca modely Microsoft Phi-3.5 tflite.

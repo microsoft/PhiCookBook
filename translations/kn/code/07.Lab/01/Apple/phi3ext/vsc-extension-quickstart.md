@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-12-21T16:19:39+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
-  "language_code": "kn"
-}
--->
 # ನಿಮ್ಮ VS Code ವಿಸ್ತರಣೆಗೆ ಸ್ವಾಗತ
 
 ## ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಏನು ಇದೆ

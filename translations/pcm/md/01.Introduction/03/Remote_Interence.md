@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-12-22T00:15:47+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "pcm"
-}
--->
 # Remote Inferencing wit di fine-tuned model
 
 After dem don train di adapters for di remote environment, use one simple Gradio application to interact wit di model.

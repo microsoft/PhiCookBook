@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:30:33+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "ne"
-}
--->
 # **Lora सँग Phi-3 लाई फाइन-ट्यून गर्ने तरिका**
 
 Microsoft को Phi-3 Mini भाषा मोडेललाई [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) प्रयोग गरेर कस्टम च्याट निर्देशन डेटासेटमा फाइन-ट्यून गर्दै।

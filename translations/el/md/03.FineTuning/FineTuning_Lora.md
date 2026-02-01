@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:32:03+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "el"
-}
--->
 # **Fine-tuning του Phi-3 με Lora**
 
 Fine-tuning του γλωσσικού μοντέλου Phi-3 Mini της Microsoft χρησιμοποιώντας [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) σε ένα προσαρμοσμένο σύνολο δεδομένων με οδηγίες συνομιλίας.

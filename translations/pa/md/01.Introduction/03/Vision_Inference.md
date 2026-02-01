@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:37:29+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "pa"
-}
--->
 # **ਲੋਕਲ ਵਿੱਚ Inference Phi-3-Vision**
 
 Phi-3-vision-128k-instruct Phi-3 ਨੂੰ ਸਿਰਫ਼ ਭਾਸ਼ਾ ਸਮਝਣ ਹੀ ਨਹੀਂ ਦਿੰਦਾ, ਸਗੋਂ ਦੁਨੀਆ ਨੂੰ ਵਿਜ਼ੂਅਲ ਤੌਰ 'ਤੇ ਵੇਖਣ ਦੀ ਸਮਰੱਥਾ ਵੀ ਦਿੰਦਾ ਹੈ। Phi-3-vision-128k-instruct ਰਾਹੀਂ ਅਸੀਂ ਵੱਖ-ਵੱਖ ਵਿਜ਼ੂਅਲ ਸਮੱਸਿਆਵਾਂ ਨੂੰ ਹੱਲ ਕਰ ਸਕਦੇ ਹਾਂ, ਜਿਵੇਂ ਕਿ OCR, ਟੇਬਲ ਵਿਸ਼ਲੇਸ਼ਣ, ਵਸਤੂ ਪਛਾਣ, ਤਸਵੀਰ ਦਾ ਵਰਣਨ ਆਦਿ। ਅਸੀਂ ਆਸਾਨੀ ਨਾਲ ਉਹ ਕੰਮ ਕਰ ਸਕਦੇ ਹਾਂ ਜਿਨ੍ਹਾਂ ਲਈ ਪਹਿਲਾਂ ਬਹੁਤ ਸਾਰੇ ਡਾਟਾ ਟ੍ਰੇਨਿੰਗ ਦੀ ਲੋੜ ਹੁੰਦੀ ਸੀ। ਹੇਠਾਂ Phi-3-vision-128k-instruct ਵੱਲੋਂ ਦਿੱਤੀਆਂ ਗਈਆਂ ਸੰਬੰਧਿਤ ਤਕਨੀਕਾਂ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਸਥਿਤੀਆਂ ਹਨ।

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-12-21T16:59:48+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "pcm"
-}
--->
 # Fine-tuning Phi-3 wit Azure AI Foundry
 
  Make we explore how to fine-tune Microsoft’s Phi-3 Mini language model using Azure AI Foundry. Fine-tuning dey allow you adapt Phi-3 Mini to specific tasks, make am more powerful and sabi di context.

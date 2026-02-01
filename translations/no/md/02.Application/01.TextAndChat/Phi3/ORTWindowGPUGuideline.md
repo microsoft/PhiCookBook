@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:44:28+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "no"
-}
--->
 # **Retningslinjer for OnnxRuntime GenAI Windows GPU**
 
 Denne retningslinjen gir trinn for å sette opp og bruke ONNX Runtime (ORT) med GPUer på Windows. Den er laget for å hjelpe deg med å utnytte GPU-akselerasjon for modellene dine, og dermed forbedre ytelse og effektivitet.

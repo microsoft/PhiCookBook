@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:27:24+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "fa"
-}
--->
 # اجرای Phi-3 و Phi-4 روی iOS با فریم‌ورک Apple MLX
 
 این آموزش نشان می‌دهد چگونه یک اپلیکیشن iOS بسازید که مدل Phi-3 یا Phi-4 را به‌صورت محلی روی دستگاه اجرا کند، با استفاده از فریم‌ورک Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) فریم‌ورک یادگیری ماشین اپل است که برای چیپ‌های Apple Silicon بهینه شده است.

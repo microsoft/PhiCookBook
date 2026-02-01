@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:17:50+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "bn"
-}
--->
 **Fine-tuning Phi-3 with QLoRA**
 
 Microsoft-এর Phi-3 Mini ভাষা মডেলটি [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) ব্যবহার করে ফাইন-টিউন করা হচ্ছে।

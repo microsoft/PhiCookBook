@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-10-11T11:51:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "et"
-}
--->
 # Phi-3 Mini mudeli peenhäälestamine Azure AI Foundry abil
 
 Uurime, kuidas peenhäälestada Microsofti Phi-3 Mini keelemudelit Azure AI Foundry abil. Peenhäälestamine võimaldab kohandada Phi-3 Mini konkreetsete ülesannete jaoks, muutes selle veelgi võimsamaks ja kontekstitundlikumaks.

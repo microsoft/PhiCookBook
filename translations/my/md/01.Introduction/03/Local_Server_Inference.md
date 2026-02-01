@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:59:45+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "my"
-}
--->
 # **Local Server တွင် Phi-3 ဖြင့် အနုတ်ယူခြင်း**
 
 Phi-3 ကို local server ပေါ်တွင် တပ်ဆင်အသုံးပြုနိုင်သည်။ အသုံးပြုသူများသည် [Ollama](https://ollama.com) သို့မဟုတ် [LM Studio](https://llamaedge.com) ဖြေရှင်းချက်များကို ရွေးချယ်နိုင်ပြီး၊ မိမိတို့ကိုယ်ပိုင် ကုဒ်ရေးသားနိုင်ပါသည်။ Phi-3 ၏ local ဝန်ဆောင်မှုများကို [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) သို့မဟုတ် [Langchain](https://www.langchain.com/) မှတဆင့် ချိတ်ဆက်၍ Copilot အက်ပလီကေးရှင်းများ ဖန်တီးနိုင်ပါသည်။

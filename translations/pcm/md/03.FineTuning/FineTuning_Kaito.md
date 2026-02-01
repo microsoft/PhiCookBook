@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-12-21T18:38:11+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "pcm"
-}
--->
 ## Fine-Tuning wit Kaito 
 
 [Kaito](https://github.com/Azure/kaito) na operator wey dey automate di AI/ML inference model deployment for Kubernetes cluster.

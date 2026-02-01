@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-07-17T04:50:36+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "vi"
-}
--->
 ## **Sử dụng Phi-4-mini-reasoning(3.8b) hoặc Phi-4-reasoning(14b) làm Chuyên gia Lý luận**
 
 Hãy cùng xem khả năng lý luận mạnh mẽ của nó thông qua Phi-4-mini-reasoning hoặc Phi-4-mini-reasoning.

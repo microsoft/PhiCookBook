@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-07-16T16:15:53+00:00",
-  "source_file": "code/04.Finetuning/olive-lab/readme.md",
-  "language_code": "sv"
-}
--->
 # Lab. Optimera AI-modeller för inferens på enheten
 
 ## Introduktion

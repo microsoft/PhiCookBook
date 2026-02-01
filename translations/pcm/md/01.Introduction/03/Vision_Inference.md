@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-12-22T00:44:36+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "pcm"
-}
--->
 # **Inferens Phi-3-Vision for Local**
 
 Phi-3-vision-128k-instruct make Phi-3 no just sabi language, e fit also see di world visually. Through Phi-3-vision-128k-instruct, we fit solve different visual wahala, like OCR, table analysis, object recognition, describe picture etc. We fit easily finish tasks wey before dey require plenty data training. Below na related techniques and application scenarios wey Phi-3-vision-128k-instruct mention

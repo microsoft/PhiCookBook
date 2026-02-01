@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-12-21T19:07:39+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "kn"
-}
--->
 ## GitHub Models - ಸೀಮಿತ ಸಾರ್ವಜನಿಕ ಬೇಟಾ
 
 Welcome to [GitHub Models](https://github.com/marketplace/models)! ನಾವು ಎಲ್ಲವೂ ಸಿದ್ಧಪಡಿಸಿದ್ದೇವೆ ಮತ್ತು ನೀವು Azure AI ನಲ್ಲಿ ಹೋಸ್ಟ್ ಮಾಡಲಾಗಿರುವ AI ಮಾದರಿಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಸಿದ್ದರಾಗಿದ್ದೇವೆ.

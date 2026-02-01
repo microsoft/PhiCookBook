@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:34:36+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "sl"
-}
--->
 # Večplatformno sklepanje z Rustom
 
 Ta vodič nas bo popeljal skozi postopek izvajanja sklepanja z uporabo Rust in [Candle ML framework](https://github.com/huggingface/candle) iz HuggingFace. Uporaba Rust za sklepanje prinaša več prednosti, še posebej v primerjavi z drugimi programskimi jeziki. Rust je znan po visoki zmogljivosti, primerljivi s C in C++. To ga naredi odlično izbiro za naloge sklepanja, ki so lahko računsko zahtevne. Posebej to omogočajo abstrakcije brez stroškov in učinkovito upravljanje z pomnilnikom, ki ne vključuje odpadkovne zbirke. Rustove večplatformne zmogljivosti omogočajo razvoj kode, ki teče na različnih operacijskih sistemih, vključno z Windows, macOS in Linux, pa tudi na mobilnih operacijskih sistemih, brez večjih sprememb v kodi.

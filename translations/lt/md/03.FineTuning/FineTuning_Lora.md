@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-09-12T14:43:06+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "lt"
-}
--->
 # **Phi-3 modelio pritaikymas naudojant Lora**
 
 Microsoft Phi-3 Mini kalbos modelio pritaikymas naudojant [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) pagal individualų pokalbių instrukcijų duomenų rinkinį.

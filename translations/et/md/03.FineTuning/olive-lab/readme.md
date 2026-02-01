@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-10-11T11:52:53+00:00",
-  "source_file": "md/03.FineTuning/olive-lab/readme.md",
-  "language_code": "et"
-}
--->
 # Lab. Optimeeri AI-mudeleid seadmesisese järeldamise jaoks
 
 ## Sissejuhatus

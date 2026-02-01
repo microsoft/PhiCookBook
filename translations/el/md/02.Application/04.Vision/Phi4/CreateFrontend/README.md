@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:08:27+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "el"
-}
--->
 ## **Χρησιμοποιήστε το Phi-4-multimodal για ανάγνωση εικόνων και δημιουργία κώδικα**
 
 Το Phi-4-multimodal έχει ισχυρές δυνατότητες ανάγνωσης εικόνων. Ας δοκιμάσουμε να χρησιμοποιήσουμε την Python για να υλοποιήσουμε τις παρακάτω λειτουργίες. Η εικόνα είναι μια σελίδα του ChatGPT.

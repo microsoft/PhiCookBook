@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-07-17T04:50:22+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "fi"
-}
--->
 ## **Phi-4-mini-reasoning(3.8b) tai Phi-4-reasoning(14b) käytön hyödyntäminen päättelyasiantuntijana**
 
 Katsotaanpa sen vahvaa päättelykykyä Phi-4-mini-reasoningin tai Phi-4-reasoningin avulla.

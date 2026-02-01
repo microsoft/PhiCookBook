@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-12-21T18:07:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "kn"
-}
--->
 # **Phi-3 ಅನ್ನು Lora ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಮಾಡುವುದು**
 
 Microsoft-ನ Phi-3 Mini ಭಾಷಾ ಮಾದರಿಯನ್ನು ಕಸ್ಟಮ್ ಚಾಟ್ ಸೂಚನೆ ಡೇಟಾಸೆಟ್‌ನಲ್ಲಿ [LoRA (ಕೀಳ್ವರ್ಗ ಹೊಂದಿಕರಣೆ)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಮಾಡುವುದು.

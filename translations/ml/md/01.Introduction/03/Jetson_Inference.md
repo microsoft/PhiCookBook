@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-12-22T01:07:33+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "ml"
-}
--->
 # **Nvidia Jetson-ൽ Phi-3 ഇൻഫറൻസ്**
 
 Nvidia Jetson Nvidia യുടെ എംബെഡഡ് കംപ്യൂട്ടിംഗ് ബോർഡുകളുടെ ഒരു പരമ്പരയാണ്. The Jetson TK1, TX1 and TX2 models all carry a Tegra processor (or SoC) from Nvidia that integrates an ARM architecture central processing unit (CPU). Jetson是一個低功耗系統，旨在加速機器學習應用。（保持原文中的專有名詞） Jetson ഒരു ലോ-പവർ സിസ്റ്റമാണ് மற்றும் മെഷീൻ ലേണിങ് അപ്ലിക്കേഷനുകൾ എക്സലറേറ്റ് ചെയ്യുന്നതിനായി രൂപകൽപ്പന ചെയ്തതാണ്. Nvidia Jetson പ്രൊഫഷണൽ ഡെവലപ്പർമാർ വ്യവസായങ്ങളിലുടനീളം അതിമികവുറ്റ AI ഉൽപ്പന്നങ്ങൾ സൃഷ്ടിക്കാൻ ഉപയോഗിക്കുന്നു, കൂടാതെ വിദ്യാർത്ഥികളും ആസ്വാദകരും ഹാൻഡ്സ്-ഓൺ AI പഠനത്തിനും അത്ഭുതമായ പ്രൊജക്റ്റുകൾ നിർമ്മിക്കാനുമാണ് ഇത് ഉപയോഗിക്കുന്നത്. SLM Jetson പോലുള്ള എജ്ജ് സാദ്ധ്യങ്ങളിലുള്ള ഉപകരണങ്ങളിൽ വിന്യസിച്ചിരിക്കുന്നു, ഇത് വ്യവസായ ഡിജിറ്റൽ സൃഷ്ടിപരമായ AI അപ്ലിക്കേഷൻ سینാരിയോകൾക്ക് മെച്ചപ്പെട്ട നടപ്പാക്കൽ സാധ്യമാക്കും.
