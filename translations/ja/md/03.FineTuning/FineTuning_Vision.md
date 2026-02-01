@@ -228,7 +228,7 @@ torchrun --nproc_per_node=4 \
 | full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 | LoRA 結果は近日公開予定 |  |  |  |  |  |  |  |  |
 
-### NOTE  
+### 注記  
 以下の DocVQA と Hateful memes の結果は前バージョン（Phi-3-vision）に基づいています。  
 Phi-3.5-vision の新しい結果は近日更新予定です。
 
