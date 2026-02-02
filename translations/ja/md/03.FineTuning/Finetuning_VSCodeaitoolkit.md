@@ -119,7 +119,7 @@ Phi3-mini (int4)モデルは約2GB〜3GBのサイズです。ネットワーク�
 3. AI Toolkit for VS Codeでリモートファインチューニングと推論の機能フラグを有効にします。  
    1. VS Codeの設定を開く（*ファイル -> 設定 -> 設定*）。  
    2. *拡張機能*から*AI Toolkit*を選択。  
-   3. *"Enable Remote Fine-tuning And Inference"*オプションを選択。  
+   3. *"Enable Remote Fine-tuning And Inference"* オプションを選択。  
    4. VS Codeを再起動して反映させる。
 
 - [リモートファインチューニング](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
@@ -128,12 +128,12 @@ Phi3-mini (int4)モデルは約2GB〜3GBのサイズです。ネットワーク�
 1. コマンドパレットで`AI Toolkit: Focus on Resource View`を実行。  
 2. *Model Fine-tuning*に移動し、モデルカタログにアクセス。プロジェクト名と保存場所を指定し、*Configure Project*ボタンを押す。  
 3. プロジェクト設定  
-    1. *"Fine-tune locally"*オプションは有効にしないでください。  
+    1. *"Fine-tune locally"* オプションは有効にしないでください。  
     2. Oliveの設定画面が表示され、デフォルト値がプリセットされています。必要に応じて設定を調整してください。  
     3. *Generate Project*に進みます。ここではWSLを利用し、新しいConda環境をセットアップします。将来的にはDev Containersもサポート予定です。  
-4. *"Relaunch Window In Workspace"*をクリックしてリモート開発プロジェクトを開きます。
+4. *"Relaunch Window In Workspace"* をクリックしてリモート開発プロジェクトを開きます。
 
-> **注意:** このプロジェクトはAI Toolkit for VS Code内でローカルまたはリモートのいずれかで動作します。プロジェクト作成時に*"Fine-tune locally"*を選択するとWSL内のみで動作し、リモート開発はできません。一方、*"Fine-tune locally"*を有効にしなければ、リモートのAzure Container App環境でのみ動作します。
+> **注意:** このプロジェクトはAI Toolkit for VS Code内でローカルまたはリモートのいずれかで動作します。プロジェクト作成時に *"Fine-tune locally"* を選択するとWSL内のみで動作し、リモート開発はできません。一方、*"Fine-tune locally"* を有効にしなければ、リモートのAzure Container App環境でのみ動作します。
 
 ### Azureリソースのプロビジョニング
 リモートファインチューニングを始めるには、コマンドパレットから`AI Toolkit: Provision Azure Container Apps job for fine-tuning`を実行してAzureリソースをプロビジョニングしてください。
