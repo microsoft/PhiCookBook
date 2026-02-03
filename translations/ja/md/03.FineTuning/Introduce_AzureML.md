@@ -75,7 +75,7 @@ SLM / LLMのファインチューニングでは、パイプラインを通じ�
 
 ![finetuning](../../../../translated_images/ja/finetuning.6559da198851fa52.webp)
 
-### **Prompt flow**
+### **プロンプトフロー**
 
 Azure Machine Learning プロンプトフローを使うメリット  
 Azure Machine Learning プロンプトフローは、アイデアの発想から実験、最終的には本番対応のLLMベースアプリケーションまでの移行を支援する多くの利点を提供します。
