@@ -18,7 +18,7 @@ Phi はマイクロソフトによって開発されたオープンソースの 
 
 Phi は現在、最も強力でコスト効率に優れた小規模言語モデル（SLM）であり、多言語、推論、テキスト／チャット生成、コーディング、画像、音声、その他のシナリオで非常に良好なベンチマークを誇ります。
 
-Phi はクラウドやエッジデバイスに展開可能で、限られた計算能力でもジェネレーティブ AI アプリケーションを簡単に構築できます。
+Phi はクラウドやエッジデバイスに展開可能で、限られた計算能力でも生成AIアプリケーションを簡単に構築できます。
 
 これらのリソースを使い始めるには、次の手順に従ってください：
 1. **リポジトリをフォークする**: クリック [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
