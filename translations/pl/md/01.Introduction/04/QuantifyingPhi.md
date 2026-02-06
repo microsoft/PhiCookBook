@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T14:26:57+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "pl"
-}
--->
 # **Kwotowanie rodziny Phi**
 
 Kwotowanie modelu odnosi się do procesu mapowania parametrów (takich jak wagi i wartości aktywacji) w modelu sieci neuronowej z dużego zakresu wartości (zazwyczaj zakresu ciągłego) na mniejszy skończony zakres wartości. Technologia ta może zmniejszyć rozmiar i złożoność obliczeniową modelu oraz poprawić efektywność działania modelu w środowiskach o ograniczonych zasobach, takich jak urządzenia mobilne czy systemy wbudowane. Kwotowanie modelu osiąga kompresję poprzez redukcję precyzji parametrów, ale jednocześnie wprowadza pewną utratę dokładności. W związku z tym w procesie kwotowania konieczne jest wyważenie rozmiaru modelu, złożoności obliczeniowej oraz precyzji. Do popularnych metod kwotowania należą kwotowanie stałopunktowe, kwotowanie zmiennoprzecinkowe itp. Możesz wybrać odpowiednią strategię kwotowania zgodnie z konkretnym scenariuszem i potrzebami.

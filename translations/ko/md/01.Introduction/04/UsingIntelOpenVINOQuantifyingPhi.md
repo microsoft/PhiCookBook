@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:00:03+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ko"
-}
--->
 # **Intel OpenVINO를 이용한 Phi-3.5 양자화**
 
 Intel은 가장 전통적인 CPU 제조사로 많은 사용자를 보유하고 있습니다. 머신러닝과 딥러닝의 부상과 함께 Intel도 AI 가속 경쟁에 뛰어들었습니다. 모델 추론을 위해 Intel은 GPU와 CPU뿐만 아니라 NPU도 활용합니다.

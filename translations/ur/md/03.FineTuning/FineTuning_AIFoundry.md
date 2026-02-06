@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T05:56:29+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "ur"
-}
--->
 # Azure AI Foundry کے ساتھ Phi-3 کی فائن ٹیوننگ
 
 آئیے دیکھتے ہیں کہ Microsoft کے Phi-3 Mini زبان کے ماڈل کو Azure AI Foundry کے ذریعے کیسے فائن ٹیون کیا جا سکتا ہے۔ فائن ٹیوننگ آپ کو Phi-3 Mini کو مخصوص کاموں کے لیے ڈھالنے کی اجازت دیتی ہے، جس سے یہ مزید طاقتور اور سیاق و سباق کے مطابق ہو جاتا ہے۔

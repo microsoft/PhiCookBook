@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-07-16T17:36:02+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
-  "language_code": "ne"
-}
--->
 # तपाईंको VS Code एक्सटेन्सनमा स्वागत छ
 
 ## फोल्डरमा के छ

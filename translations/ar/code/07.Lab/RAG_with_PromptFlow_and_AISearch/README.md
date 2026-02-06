@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-16T17:05:54+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "ar"
-}
--->
 ## RAG مع PromptFlow و AISearch
 
 في هذا المثال، سنقوم بتنفيذ تطبيق استرجاع معزز بالتوليد (RAG) باستخدام Phi3 كنموذج لغة صغيرة (SLM)، و AI Search كقاعدة بيانات متجهات، و Prompt Flow كمنسق منخفض الكود.

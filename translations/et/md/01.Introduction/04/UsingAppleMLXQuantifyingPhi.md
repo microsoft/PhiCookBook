@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-10-11T12:26:08+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "et"
-}
--->
 # **Phi-3.5 kvantiseerimine Apple MLX raamistikuga**
 
 MLX on masinõppe uurimiseks mõeldud massiivraamistik Apple'i silikoonil, mille on loonud Apple'i masinõppe uurimisrühm.

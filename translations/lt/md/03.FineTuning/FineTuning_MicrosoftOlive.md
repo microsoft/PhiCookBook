@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-09-12T14:45:49+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "lt"
-}
--->
 # **Phi-3 derinimas su Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) yra paprastas naudoti, techninei įrangai pritaikytas modelių optimizavimo įrankis, kuris sujungia pramonės lyderiaujančias technikas modelių suspaudimo, optimizavimo ir kompiliavimo srityse.

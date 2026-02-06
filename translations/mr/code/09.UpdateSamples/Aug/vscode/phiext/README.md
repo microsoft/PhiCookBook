@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:28:58+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "mr"
-}
--->
 # phiext README
 
 हे तुमच्या विस्तारासाठी "phiext" चे README आहे. थोडक्यात वर्णन लिहिल्यानंतर, खालील विभाग समाविष्ट करण्याची आम्ही शिफारस करतो.

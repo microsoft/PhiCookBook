@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:31:35+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "fa"
-}
--->
 ﻿## خوش آمدید به آزمایشگاه‌های Phi با استفاده از C#
 
 مجموعه‌ای از آزمایشگاه‌ها وجود دارد که نشان می‌دهد چگونه می‌توان نسخه‌های مختلف قدرتمند مدل‌های Phi را در محیط .NET ادغام کرد.

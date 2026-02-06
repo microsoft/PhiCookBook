@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:52:41+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "fa"
-}
--->
 # **کوانتایز کردن Phi-3.5 با استفاده از چارچوب Apple MLX**
 
 MLX یک چارچوب آرایه‌ای برای پژوهش‌های یادگیری ماشین روی سیلیکون اپل است که توسط تیم پژوهش یادگیری ماشین اپل ارائه شده است.

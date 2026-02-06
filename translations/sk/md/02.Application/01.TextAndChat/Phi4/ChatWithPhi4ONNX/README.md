@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:19:12+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "sk"
-}
--->
 # **Chat s Phi-4-mini ONNX**
 
 ***ONNX*** je otvorený formát určený na reprezentáciu modelov strojového učenia. ONNX definuje spoločnú sadu operátorov – základných stavebných prvkov modelov strojového a hlbokého učenia – a spoločný formát súborov, ktorý umožňuje vývojárom AI používať modely v rôznych frameworkoch, nástrojoch, runtime prostrediach a kompilátoroch.

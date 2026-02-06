@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:21:04+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "ja"
-}
--->
 # Azure AI Foundry での Prompt flow を使用したカスタム Phi-3 モデルのファインチューニングと統合
 
 このエンドツーエンド（E2E）サンプルは、Microsoft Tech Community のガイド「[Azure AI Foundry での Prompt flow を使用したカスタム Phi-3 モデルのファインチューニングと統合](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)」に基づいています。本ガイドでは、Azure AI Foundry においてカスタム Phi-3 モデルをファインチューニング、デプロイ、および Prompt flow との統合を行うプロセスを紹介します。

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:27:09+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "ar"
-}
--->
 # تشغيل Phi-3 و Phi-4 على iOS باستخدام إطار عمل Apple MLX
 
 يوضح هذا الدليل كيفية إنشاء تطبيق iOS يقوم بتشغيل نموذج Phi-3 أو Phi-4 على الجهاز، باستخدام إطار عمل Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) هو إطار عمل تعلم آلي من Apple مُحسّن لمعالجات Apple Silicon.

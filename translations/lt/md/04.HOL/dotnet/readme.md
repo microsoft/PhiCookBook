@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-09-12T14:47:35+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "lt"
-}
--->
 ## Sveiki atvykę į Phi laboratorijas naudojant C#
 
 Čia rasite laboratorijų rinkinį, kuris parodo, kaip integruoti skirtingas galingas Phi modelių versijas .NET aplinkoje.

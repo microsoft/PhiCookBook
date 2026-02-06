@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-10-11T11:50:14+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ta"
-}
--->
 # **Phi-3 ஐ Apple MLX Framework மூலம் Fine-tuning செய்வது**
 
 Apple MLX Framework கட்டளைக் கோவை மூலம் Lora உடன் Fine-tuning ஐ முடிக்கலாம். (MLX Framework இன் செயல்பாடுகளைப் பற்றி மேலும் அறிய விரும்பினால், [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) ஐப் படிக்கவும்)

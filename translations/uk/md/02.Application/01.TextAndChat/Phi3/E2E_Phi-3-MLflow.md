@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-07-17T02:37:45+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "uk"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) — це платформа з відкритим кодом, створена для управління повним життєвим циклом машинного навчання.

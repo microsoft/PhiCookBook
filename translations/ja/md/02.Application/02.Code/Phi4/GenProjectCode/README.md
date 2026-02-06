@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:44:03+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "ja"
-}
--->
 ## **Phi-4-mini-mmを使ったコード生成**
 
 Phi-4-miniはPhiファミリーの強力なコーディング能力を引き継いでいます。Promptを使ってコーディングに関する質問ができます。もちろん、強力な推論能力が加わったことで、要件に応じたプロジェクトの生成など、より高度なコーディング能力を持っています。例えば、以下のように要件に基づいてプロジェクトを生成できます。

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:35:33+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ja"
-}
--->
 # **Microsoft Phi-3ファミリーで自分だけのVisual Studio Code GitHub Copilot Chatを構築しよう**
 
 GitHub Copilot Chatのworkspace agentを使ったことはありますか？自分のチーム専用のコードエージェントを作りたいと思いませんか？このハンズオンラボでは、オープンソースモデルを組み合わせて、企業向けのコードビジネスエージェントを構築することを目指しています。

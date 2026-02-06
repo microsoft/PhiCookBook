@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:38:24+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "fi"
-}
--->
 ﻿## Tervetuloa Phi-laboratorioihin C#:lla
 
 Tarjolla on valikoima laboratorioita, jotka esittelevät, miten eri versioita Phi-malleista voidaan integroida tehokkaasti .NET-ympäristöön.

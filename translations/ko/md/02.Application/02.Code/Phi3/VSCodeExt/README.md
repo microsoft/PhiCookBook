@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:35:50+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ko"
-}
--->
 # **Microsoft Phi-3 패밀리로 나만의 Visual Studio Code GitHub Copilot Chat 만들기**
 
 GitHub Copilot Chat에서 workspace agent를 사용해 보셨나요? 팀 전용 코드 에이전트를 직접 만들어 보고 싶으신가요? 이 실습 랩은 오픈 소스 모델을 결합해 기업 수준의 코드 비즈니스 에이전트를 구축하는 것을 목표로 합니다.

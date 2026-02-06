@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-12-21T21:57:39+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "ml"
-}
--->
 ഈ ഡെമോ ഒരു pretrained മോഡൽ ഉപയോഗിച്ച് ഒരു ചിത്രം և ഒരു ടെക്സ്റ്റ് പ്രോംപ്റ്റിന്റെ അടിസ്ഥാനത്തിൽ Python കോഡ് സൃഷ്ടിക്കാൻ എങ്ങനെ ഉപയോഗിക്കാമെന്ന് കാണിക്കുന്നു. 
 
 [ഉദാഹരണ കോഡ്](../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

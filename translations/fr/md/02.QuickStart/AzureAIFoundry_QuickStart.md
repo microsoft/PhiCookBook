@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:17:55+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "fr"
-}
--->
 # **Utilisation de Phi-3 dans Azure AI Foundry**
 
 Avec le développement de l’IA générative, nous souhaitons utiliser une plateforme unifiée pour gérer différents LLM et SLM, l’intégration des données d’entreprise, les opérations de fine-tuning/RAG, ainsi que l’évaluation des différents métiers après intégration des LLM et SLM, etc., afin de mieux implémenter des applications intelligentes basées sur l’IA générative. [Azure AI Foundry](https://ai.azure.com) est une plateforme d’application d’IA générative de niveau entreprise.

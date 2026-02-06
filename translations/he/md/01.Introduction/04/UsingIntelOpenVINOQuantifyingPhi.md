@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:02:46+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "he"
-}
--->
 # **כימות Phi-3.5 באמצעות Intel OpenVINO**
 
 Intel היא יצרנית המעבדים המסורתית ביותר עם משתמשים רבים. עם עליית הלמידה המכונה והלמידה העמוקה, Intel הצטרפה גם היא לתחרות להאצת AI. עבור אינפרנס של מודלים, Intel לא משתמשת רק ב-GPUs ו-CPUs, אלא גם ב-NPUs.

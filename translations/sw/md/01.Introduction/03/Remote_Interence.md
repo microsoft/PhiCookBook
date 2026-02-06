@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:21:24+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "sw"
-}
--->
 # Utabiri wa Mbali kwa kutumia modeli iliyoboreshwa
 
 Baada ya adapters kufunzwa katika mazingira ya mbali, tumia programu rahisi ya Gradio kuwasiliana na modeli.

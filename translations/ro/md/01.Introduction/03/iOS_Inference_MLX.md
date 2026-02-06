@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:36:25+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "ro"
-}
--->
 # Rularea Phi-3 și Phi-4 pe iOS cu Apple MLX Framework
 
 Acest tutorial arată cum să creezi o aplicație iOS care rulează modelul Phi-3 sau Phi-4 direct pe dispozitiv, folosind framework-ul Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) este framework-ul Apple pentru învățare automată, optimizat pentru cipurile Apple Silicon.

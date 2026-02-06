@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-12-21T19:03:55+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "te"
-}
--->
 ## GitHub మోడల్స్ - పరిమితం చేయబడిన పబ్లిక్ బీటా
 
 మీరు [GitHub మోడల్స్](https://github.com/marketplace/models)లోకి స్వాగతం! మా వద్ద Azure AI లో హోస్ట్ చేయబడిన AI మోడల్స్‌ను మీరు అన్వేషించడానికి అన్నీ సిద్ధంగా ఉన్నాయి.

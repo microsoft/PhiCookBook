@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-12-21T18:07:45+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "pcm"
-}
--->
 # **Make una sabi Azure Machine Learning Service**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) na cloud service wey dey make machine learning (ML) project lifecycle faster and easier to manage.

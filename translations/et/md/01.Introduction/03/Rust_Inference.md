@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-10-11T12:19:51+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "et"
-}
--->
 # Platvormidevaheline järeldamine Rustiga
 
 See juhend aitab meil läbi viia järeldamist, kasutades Rusti ja [Candle ML raamistikku](https://github.com/huggingface/candle) HuggingFace'ist. Rusti kasutamine järeldamiseks pakub mitmeid eeliseid, eriti võrreldes teiste programmeerimiskeeltega. Rust on tuntud oma kõrge jõudluse poolest, mis on võrreldav C ja C++-ga. See teeb sellest suurepärase valiku järeldamistöödeks, mis võivad olla arvutuslikult intensiivsed. Eelkõige on see tingitud nullkulu abstraktsioonidest ja tõhusast mäluhaldusest, millel puudub prügikogumise koormus. Rusti platvormidevahelised võimalused võimaldavad arendada koodi, mis töötab erinevatel operatsioonisüsteemidel, sealhulgas Windowsil, macOS-il ja Linuxil, samuti mobiilsetel operatsioonisüsteemidel, ilma et oleks vaja koodibaasi oluliselt muuta.

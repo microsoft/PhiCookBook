@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:35:06+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "pa"
-}
--->
 ﻿## C# ਦੀ ਵਰਤੋਂ ਕਰਕੇ Phi ਲੈਬਜ਼ ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ
 
 ਇੱਥੇ ਕੁਝ ਲੈਬਜ਼ ਹਨ ਜੋ ਦਿਖਾਉਂਦੇ ਹਨ ਕਿ ਕਿਵੇਂ ਵੱਖ-ਵੱਖ Phi ਮਾਡਲਾਂ ਦੇ ਤਾਕਤਵਰ ਵਰਜਨਾਂ ਨੂੰ .NET ਮਾਹੌਲ ਵਿੱਚ ਇੰਟੀਗ੍ਰੇਟ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।

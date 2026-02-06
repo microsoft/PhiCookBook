@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:41:55+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "sv"
-}
--->
 # Bidra
 
 Det här projektet välkomnar bidrag och förslag. De flesta bidrag kräver att du godkänner ett Contributor License Agreement (CLA) som intygar att du har rätt att, och faktiskt gör det, ge oss rättigheterna att använda ditt bidrag. För mer information, besök [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:34:50+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "my"
-}
--->
 # Rust ဖြင့် Cross-platform Inference
 
 ဒီသင်ခန်းစာမှာတော့ Rust နဲ့ HuggingFace ရဲ့ [Candle ML framework](https://github.com/huggingface/candle) ကို အသုံးပြုပြီး inference လုပ်နည်းကို လမ်းညွှန်ပေးမှာ ဖြစ်ပါတယ်။ Rust ကို inference အတွက် အသုံးပြုခြင်းမှာ အခြား programming language တွေနဲ့ နှိုင်းယှဉ်လျှင် အကျိုးကျေးဇူးများစွာ ရှိပါတယ်။ Rust ကို C နဲ့ C++ တို့လို မြန်နှုန်းမြင့်တဲ့ ဘာသာစကားတွေနဲ့ ဆင်တူမြန်ဆန်မှုရှိတာကြောင့် computationally ပြင်းထန်တဲ့ inference လုပ်ငန်းများအတွက် အထူးသင့်တော်ပါတယ်။ အထူးသဖြင့် zero-cost abstraction များနဲ့ memory ကို ထိရောက်စွာ စီမံခန့်ခွဲပေးတာကြောင့် garbage collection overhead မရှိတာက အရေးကြီးပါတယ်။ Rust ရဲ့ cross-platform လုပ်ဆောင်နိုင်မှုကြောင့် Windows, macOS, Linux နဲ့ မိုဘိုင်း operating system များမှာလည်း အဓိက codebase ကို မပြောင်းလဲဘဲ အလွယ်တကူ အသုံးပြုနိုင်ပါတယ်။

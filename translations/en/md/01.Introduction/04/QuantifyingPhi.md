@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:03:56+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "en"
-}
--->
 # **Quantifying Phi Family**
 
 Model quantization refers to the process of mapping the parameters (such as weights and activation values) in a neural network model from a large value range (usually a continuous value range) to a smaller finite value range. This technology can reduce the size and computational complexity of the model and improve the operational efficiency of the model in resource-constrained environments such as mobile devices or embedded systems. Model quantization achieves compression by reducing the precision of parameters, but it also introduces a certain loss of precision. Therefore, in the quantization process, it is necessary to balance the model size, computational complexity, and precision. Common quantization methods include fixed-point quantization, floating-point quantization, etc. You can choose the appropriate quantization strategy according to the specific scenario and needs.

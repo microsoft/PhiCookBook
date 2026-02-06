@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:34:35+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "ar"
-}
--->
 # وصفة ضبط Phi-3.5-vision الدقيقة
 
 هذا هو الدعم الرسمي لضبط Phi-3.5-vision الدقيق باستخدام مكتبات huggingface.  

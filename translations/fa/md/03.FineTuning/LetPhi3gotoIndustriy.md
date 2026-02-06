@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:51:58+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "fa"
-}
--->
 # **اجازه دهید Phi-3 به یک متخصص صنعت تبدیل شود**
 
 برای وارد کردن مدل Phi-3 به یک صنعت، باید داده‌های کسب‌وکار صنعتی را به مدل Phi-3 اضافه کنید. ما دو گزینه مختلف داریم، اولی RAG (تولید تقویت‌شده با بازیابی) و دومی Fine Tuning (تنظیم دقیق).

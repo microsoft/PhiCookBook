@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:02:39+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "cs"
-}
--->
 # **Doladění Phi-3 pomocí Apple MLX Frameworku**
 
 Doladění v kombinaci s Lora můžeme provést přes příkazový řádek Apple MLX frameworku. (Pokud chcete vědět více o fungování MLX Frameworku, přečtěte si prosím [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))

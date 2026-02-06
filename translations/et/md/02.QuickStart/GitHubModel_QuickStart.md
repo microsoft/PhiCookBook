@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-10-11T12:12:36+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "et"
-}
--->
 ## GitHubi mudelid - piiratud avalik beetaversioon
 
 Tere tulemast [GitHubi mudelitesse](https://github.com/marketplace/models)! Oleme kõik valmis seadistanud, et saaksite uurida Azure AI-s hostitud AI-mudeleid.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:37:35+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "fr"
-}
--->
 # **Affinage de Phi-3 avec Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) est un outil d’optimisation de modèles conscient du matériel, facile à utiliser, qui regroupe des techniques de pointe dans les domaines de la compression, de l’optimisation et de la compilation des modèles.

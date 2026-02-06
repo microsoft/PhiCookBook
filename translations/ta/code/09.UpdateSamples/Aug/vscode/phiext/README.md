@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-10-11T11:37:41+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "ta"
-}
--->
 # phiext README
 
 உங்கள் "phiext" நீட்டிப்புக்கான README இது. ஒரு சுருக்கமான விளக்கத்தை எழுதிய பிறகு, கீழே உள்ள பிரிவுகளை சேர்ப்பதை பரிந்துரைக்கிறோம்.

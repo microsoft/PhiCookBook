@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-07-17T03:21:36+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
-  "language_code": "fa"
-}
--->
 # **ایجاد عامل چت Visual Studio Code خودتان با Phi-3.5 توسط GitHub Models**
 
 آیا از Visual Studio Code Copilot استفاده می‌کنید؟ به‌ویژه در بخش چت، می‌توانید از عوامل مختلفی برای بهبود توانایی ایجاد، نوشتن و نگهداری پروژه‌ها در Visual Studio Code بهره ببرید. Visual Studio Code یک API ارائه می‌دهد که به شرکت‌ها و افراد اجازه می‌دهد عوامل مختلفی بر اساس کسب‌وکار خود بسازند تا قابلیت‌هایشان را در حوزه‌های اختصاصی مختلف گسترش دهند. در این مقاله، تمرکز ما بر روی **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** از GitHub Models برای ساخت عامل Visual Studio Code خودتان خواهد بود.

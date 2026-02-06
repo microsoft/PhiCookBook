@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:38:40+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "ko"
-}
--->
 # Phi-3.5-vision 파인튜닝 레시피
 
 이 문서는 huggingface 라이브러리를 사용한 Phi-3.5-vision 파인튜닝 공식 지원 가이드입니다.  

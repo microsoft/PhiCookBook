@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-12-22T00:19:23+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "ml"
-}
--->
 # ഫൈൻ-ട്യൂൺ ചെയ്ത മോഡലുമായി റിമോട്ട് ഇൻഫറൻസ്
 
 റിമോട്ട് പരിസരത്തിൽ അഡാപ്റ്ററുകൾ ട്രെയിൻ ചെയ്‌തശേഷം, മോഡലുമായി ഇടപെടാൻ ഒരു ലളിതമായ Gradio അപ്ലിക്കേഷൻ ഉപയോഗിക്കുക.

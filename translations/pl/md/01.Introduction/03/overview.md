@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:09:47+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "pl"
-}
--->
 W kontekście Phi-3-mini, inferencja odnosi się do procesu wykorzystania modelu do dokonywania predykcji lub generowania wyników na podstawie danych wejściowych. Pozwól, że przedstawię więcej szczegółów na temat Phi-3-mini i jego możliwości inferencyjnych.
 
 Phi-3-mini jest częścią serii modeli Phi-3 wydanych przez Microsoft. Modele te zostały zaprojektowane, aby na nowo zdefiniować możliwości Małych Modeli Językowych (SLM).

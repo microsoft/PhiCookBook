@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:06:57+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "ja"
-}
--->
 ## Azure ML システムレジストリの chat-completion コンポーネントを使ってモデルをファインチューニングする方法
 
 この例では、Phi-3-mini-4k-instruct モデルを ultrachat_200k データセットを使って2人の会話を完結させるタスクでファインチューニングします。
@@ -116,8 +107,8 @@ pip install azureml-mlflow
 
 1. Phi-3-mini-4k-instruct は38億パラメータの軽量で最先端のオープンモデルで、Phi-2 のデータセットを基に構築されています。このモデルは Phi-3 ファミリーに属し、Mini バージョンはコンテキスト長（トークン数）4K と 128K の2種類があります。特定の用途に使うためにはファインチューニングが必要です。AzureML Studio のモデルカタログでチャット完了タスクでフィルタリングしてこれらのモデルを閲覧できます。この例では Phi-3-mini-4k-instruct モデルを使用します。別のモデル用にこのノートブックを開いた場合は、モデル名とバージョンを適宜置き換えてください。
 
-    > [!NOTE]
-    > モデルの id プロパティはファインチューニングジョブの入力として渡されます。これは AzureML Studio のモデルカタログのモデル詳細ページの Asset ID フィールドでも確認できます。
+> [!NOTE]
+> モデルの id プロパティはファインチューニングジョブの入力として渡されます。これは AzureML Studio のモデルカタログのモデル詳細ページの Asset ID フィールドでも確認できます。
 
 2. この Python スクリプトは Azure Machine Learning (Azure ML) サービスとやり取りしています。内容を簡単に説明します：
 
@@ -286,8 +277,8 @@ pip install azureml-mlflow
 
 1. 以下のスクリプトはデータの5%のみをダウンロードします。dataset_split_pc パラメータを変更することで割合を増やせます。
 
-    > [!NOTE]
-    > 一部の言語モデルは異なる言語コードを持つため、データセットのカラム名もそれに合わせる必要があります。
+> [!NOTE]
+> 一部の言語モデルは異なる言語コードを持つため、データセットのカラム名もそれに合わせる必要があります。
 
 1. データの例は以下のようになります。チャット完了データセットは parquet 形式で保存され、各エントリは以下のスキーマを持ちます：
 
@@ -384,7 +375,7 @@ pip install azureml-mlflow
 
 - 要約すると、このスクリプトはJSON LinesファイルをDataFrameに読み込み、最初の5行を全カラムのテキストとともに表示しています。
 
-```python
+    ```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -442,7 +433,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
     - 要約すると、このスクリプトは機械学習モデルのファインチューニング用パラメーターを設定し、モデル固有のパラメーターで上書き可能にして表示しています。
 
-```python
+    ```python
     # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
     training_parameters = dict(
         num_train_epochs=3,
@@ -497,7 +488,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. 要約すると、このスクリプトは様々なパラメーターに基づいて機械学習トレーニングパイプラインの表示名を生成し、それを表示しています。
 
-```python
+    ```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -574,7 +565,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. 要約すると、このスクリプトはAzure Machine Learning SDKを使ってチャット完了タスク用の機械学習パイプラインを定義・設定しています。
 
-```python
+    ```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
@@ -635,7 +626,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
     - 要約すると、このスクリプトはAzure Machine Learningワークスペースに機械学習パイプラインジョブを送信し、ジョブの完了を待機しています。
 
-```python
+    ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
     # The pipeline to be run is specified by pipeline_object
     # The experiment under which the job is run is specified by experiment_name
@@ -672,7 +663,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. 要約すると、このスクリプトはAzure Machine Learningパイプラインでトレーニングされた機械学習モデルを登録しています。
 
-```python
+    ```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
@@ -730,7 +721,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. 要約すると、このスクリプトはAzure Machine Learningで登録済みモデル用のマネージドオンラインエンドポイントを作成しています。
 
-```python
+    ```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
@@ -782,7 +773,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. 要約すると、このスクリプトはAzure Machine Learningのマネージドオンラインエンドポイントに登録済み機械学習モデルをデプロイしています。
 
-```python
+    ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
     import ast
     
@@ -851,7 +842,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. 要約すると、このスクリプトはJSON LinesファイルをpandasのDataFrameに読み込み、1行のランダムサンプルを取得してインデックスをリセットし、最初の行を表示しています。
 
-```python
+    ```python
     # Import pandas library
     import pandas as pd
     
@@ -884,7 +875,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
     - もう1つの辞書test_jsonを作成し、"input_data"と"params"の2つのキーを持ちます。"input_data"の値はさらに辞書で、"input_string"と"parameters"をキーに持ちます。"input_string"の値はtest_df DataFrameの最初のメッセージをリストにしたもの、"parameters"の値は先に作成したparameters辞書です。"params"の値は空の辞書です。
 - sample_score.jsonという名前のファイルを開きます
 
-```python
+    ```python
     # Import the json module, which provides functions to work with JSON data
     import json
     
@@ -932,7 +923,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
 1. まとめると、このスクリプトはAzure Machine Learningのオンラインエンドポイントを呼び出してJSONファイルをスコアリングし、そのレスポンスを表示しています。
 
-```python
+    ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
     # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
     # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
@@ -960,7 +951,7 @@ chat-completionパイプラインコンポーネントを使用するジョブ�
 
     - まとめると、このコードはAzure Machine Learningのオンラインエンドポイントの削除を開始し、その処理が完了するまで待機しています。
 
-```python
+    ```python
     # Delete the online endpoint in Azure Machine Learning
     # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
     # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable

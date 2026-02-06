@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-10-11T11:40:08+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "ta"
-}
--->
 # **Azure Machine Learning சேவையை அறிமுகப்படுத்துதல்**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) என்பது இயந்திரக் கற்றல் (ML) திட்ட வாழ்க்கைச் சுழற்சியை வேகமாகச் செய்யவும், நிர்வகிக்கவும் உதவும் ஒரு மேக சேவையாகும்.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-07-17T02:32:54+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "fi"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) on avoimen lähdekoodin alusta, joka on suunniteltu hallitsemaan koneoppimisen koko elinkaarta.

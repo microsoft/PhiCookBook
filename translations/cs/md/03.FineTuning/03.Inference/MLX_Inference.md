@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-07-17T10:08:58+00:00",
-  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
-  "language_code": "cs"
-}
--->
 # **Inference Phi-3 s Apple MLX Framework**
 
 ## **Co je MLX Framework**

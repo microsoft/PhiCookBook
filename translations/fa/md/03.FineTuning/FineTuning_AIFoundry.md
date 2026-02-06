@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T05:56:03+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "fa"
-}
--->
 # آموزش دقیق Phi-3 با Azure AI Foundry
 
 بیایید ببینیم چگونه می‌توان مدل زبان Phi-3 Mini مایکروسافت را با استفاده از Azure AI Foundry به‌صورت دقیق آموزش داد. آموزش دقیق به شما امکان می‌دهد Phi-3 Mini را برای وظایف خاصی تطبیق دهید و آن را قدرتمندتر و آگاه‌تر به زمینه کنید.

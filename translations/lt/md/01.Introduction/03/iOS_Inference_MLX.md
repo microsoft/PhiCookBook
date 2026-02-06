@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-09-12T14:54:51+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "lt"
-}
--->
 # Phi-3 ir Phi-4 paleidimas iOS su Apple MLX sistema
 
 Šiame vadove parodoma, kaip sukurti iOS programą, kuri vykdo Phi-3 arba Phi-4 modelį tiesiogiai įrenginyje, naudojant Apple MLX sistemą. [MLX](https://opensource.apple.com/projects/mlx/) yra Apple mašininio mokymosi sistema, optimizuota Apple Silicon lustams.

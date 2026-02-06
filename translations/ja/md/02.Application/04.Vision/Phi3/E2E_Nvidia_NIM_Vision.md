@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:53:42+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "ja"
-}
--->
 ### 例のシナリオ
 
 画像（`demo.png`）があり、この画像を処理して新しいバージョン（`phi-3-vision.jpg`）を保存するPythonコードを生成したいとします。

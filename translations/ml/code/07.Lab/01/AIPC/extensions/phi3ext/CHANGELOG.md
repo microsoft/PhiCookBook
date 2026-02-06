@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-12-21T15:51:00+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
-  "language_code": "ml"
-}
--->
 # മാറ്റങ്ങൾക്കുറിപ്പ്
 
 എല്ലാ "phi3ext" വിപുലീകരണങ്ങളുടേയും ശ്രദ്ധേയമായ മാറ്റങ്ങൾ ഈ ഫയലിൽ രേഖപ്പെടുത്തിയിരിക്കും。

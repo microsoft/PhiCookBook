@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:12:38+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "vi"
-}
--->
 ## **Trích xuất bản ghi âm thanh bằng Phi-4-multimodal**
 
 Phi-4-multimodal là một mô hình đa phương thức hoàn chỉnh có thể sử dụng âm thanh bên cạnh văn bản và hình ảnh. Hãy cùng xem cách sử dụng nó.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f72d7981ed3640865700f51ae407da4",
-  "translation_date": "2026-01-14T15:21:13+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
-  "language_code": "hi"
-}
--->
 # इंटरैक्टिव फि 3 मिनी 4K इंस्ट्रक्ट चैटबोट विथ व्हिस्पर
 
 ## अवलोकन

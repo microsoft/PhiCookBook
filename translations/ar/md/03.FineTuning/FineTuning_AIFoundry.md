@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T05:55:39+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "ar"
-}
--->
 # ضبط نموذج Phi-3 بدقة باستخدام Azure AI Foundry
 
 دعونا نستعرض كيفية ضبط نموذج اللغة Phi-3 Mini من مايكروسوفت باستخدام Azure AI Foundry. يتيح الضبط الدقيق تكييف Phi-3 Mini لمهام محددة، مما يجعله أكثر قوة وفهمًا للسياق.

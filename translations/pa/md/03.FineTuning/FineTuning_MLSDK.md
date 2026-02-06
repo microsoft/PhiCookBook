@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:16:40+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "pa"
-}
--->
 ## Azure ML ਸਿਸਟਮ ਰਜਿਸਟਰੀ ਤੋਂ chat-completion ਕੰਪੋਨੈਂਟਸ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮਾਡਲ ਨੂੰ ਫਾਈਨ ਟਿਊਨ ਕਰਨ ਦਾ ਤਰੀਕਾ
 
 ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ ਅਸੀਂ Phi-3-mini-4k-instruct ਮਾਡਲ ਦੀ ਫਾਈਨ ਟਿਊਨਿੰਗ ਕਰਾਂਗੇ ਤਾਂ ਜੋ ultrachat_200k ਡੇਟਾਸੈੱਟ ਦੀ ਵਰਤੋਂ ਕਰਕੇ 2 ਲੋਕਾਂ ਵਿਚਕਾਰ ਗੱਲਬਾਤ ਪੂਰੀ ਕੀਤੀ ਜਾ ਸਕੇ।

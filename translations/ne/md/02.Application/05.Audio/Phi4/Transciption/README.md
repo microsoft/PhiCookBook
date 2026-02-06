@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:30+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ne"
-}
--->
 ## **Phi-4-multimodal प्रयोग गरेर अडियो ट्रान्सक्रिप्ट निकाल्ने**
 
 Phi-4-multimodal एउटा पूर्ण-मोडल मोडेल हो जसले पाठ र तस्बिरसँगै अडियो पनि प्रयोग गर्न सक्छ। यसलाई कसरी प्रयोग गर्ने हेरौं।  

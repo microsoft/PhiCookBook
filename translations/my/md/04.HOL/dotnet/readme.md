@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:43:20+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "my"
-}
--->
 ﻿## C# ဖြင့် Phi labs သို့ ကြိုဆိုပါသည်
 
 .NET ပတ်ဝန်းကျင်တွင် Phi မော်ဒယ်များ၏ အမျိုးမျိုးသောဗားရှင်းများကို ထိရောက်စွာ ပေါင်းစပ်အသုံးပြုနည်းကို ပြသသည့် လက်တွေ့လုပ်ငန်းခွင်များ ရွေးချယ်ထားပါသည်။

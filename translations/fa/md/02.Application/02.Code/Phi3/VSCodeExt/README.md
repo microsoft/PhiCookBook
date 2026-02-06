@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:33:46+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "fa"
-}
--->
 # **ساخت GitHub Copilot Chat مخصوص خودتان در Visual Studio Code با خانواده Microsoft Phi-3**
 
 آیا تا به حال از workspace agent در GitHub Copilot Chat استفاده کرده‌اید؟ آیا می‌خواهید عامل کد مخصوص تیم خودتان را بسازید؟ این آزمایشگاه عملی قصد دارد مدل متن‌باز را ترکیب کند تا یک عامل کد تجاری در سطح سازمانی بسازد.

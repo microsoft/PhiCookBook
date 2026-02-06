@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-12-21T21:51:13+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "pcm"
-}
--->
 ## **Function calling for Phi-4-mini**
 
 Function calling first show for the Phi Family family, and now you fit use am through Phi-4-mini.

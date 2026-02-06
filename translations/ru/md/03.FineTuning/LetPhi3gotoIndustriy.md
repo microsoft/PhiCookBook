@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:51:31+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "ru"
-}
--->
 # **Пусть Phi-3 станет экспертом в отрасли**
 
 Чтобы внедрить модель Phi-3 в конкретную отрасль, необходимо добавить в неё бизнес-данные этой отрасли. У нас есть два варианта: первый — RAG (Retrieval Augmented Generation), второй — Fine Tuning (тонкая настройка).

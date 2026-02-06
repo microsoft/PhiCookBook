@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-12-22T00:50:52+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "pcm"
-}
--->
 # How to run Phi-3 and Phi-4 for iOS wit Apple MLX Framework
 
 Dis tutorial dey show how to create an iOS application wey go run the Phi-3 or Phi-4 model on-device, using the Apple MLX framework. [MLX](https://opensource.apple.com/projects/mlx/) na Apple's machine learning framework wey dem optimize for Apple Silicon chips.

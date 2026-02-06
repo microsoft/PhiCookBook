@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:01:53+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "ko"
-}
--->
 이 데모는 사전 학습된 모델을 사용하여 이미지와 텍스트 프롬프트를 기반으로 Python 코드를 생성하는 방법을 보여줍니다.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

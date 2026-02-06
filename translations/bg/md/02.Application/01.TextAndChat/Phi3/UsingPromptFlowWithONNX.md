@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-07-17T03:03:48+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
-  "language_code": "bg"
-}
--->
 # Използване на Windows GPU за създаване на Prompt flow решение с Phi-3.5-Instruct ONNX
 
 Следният документ е пример за това как да използвате PromptFlow с ONNX (Open Neural Network Exchange) за разработка на AI приложения, базирани на Phi-3 модели.

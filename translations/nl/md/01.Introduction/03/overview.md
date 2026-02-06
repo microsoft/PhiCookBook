@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:11:18+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "nl"
-}
--->
 In de context van Phi-3-mini verwijst inferentie naar het proces waarbij het model wordt gebruikt om voorspellingen te doen of output te genereren op basis van invoergegevens. Ik geef je graag meer details over Phi-3-mini en de inferentiemogelijkheden ervan.
 
 Phi-3-mini maakt deel uit van de Phi-3-serie modellen die door Microsoft zijn uitgebracht. Deze modellen zijn ontworpen om de mogelijkheden van Small Language Models (SLM's) opnieuw te definiëren.

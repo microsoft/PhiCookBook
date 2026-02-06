@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-10-11T11:33:49+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
-  "language_code": "et"
-}
--->
 # Tere tulemast oma VS Code laiendusse
 
 ## Mis on kaustas

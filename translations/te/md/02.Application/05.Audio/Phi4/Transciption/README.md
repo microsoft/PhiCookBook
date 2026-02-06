@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-12-21T19:14:47+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "te"
-}
--->
 ## **Phi-4-multimodal ఉపయోగించి ఆడియో ట్రాన్స్‌క్రిప్ట్‌లను పొందడం**
 
 Phi-4-multimodal అనేది టెక్స్ట్ మరియు చిత్రాలతో పాటు ఆడియోను కూడా ఉపయోగించగల ఒక పూర్తి మోడల్. దీన్ని ఎలా ఉపయోగించాలో చూద్దాం.

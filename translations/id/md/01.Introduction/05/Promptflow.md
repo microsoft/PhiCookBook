@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:43:01+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "id"
-}
--->
 # **Memperkenalkan Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) adalah alat otomatisasi alur kerja visual yang memungkinkan pengguna membuat alur kerja otomatis menggunakan template yang sudah dibuat dan konektor kustom. Alat ini dirancang untuk memudahkan pengembang dan analis bisnis dalam membangun proses otomatis dengan cepat untuk tugas seperti manajemen data, kolaborasi, dan optimasi proses. Dengan Prompt Flow, pengguna dapat dengan mudah menghubungkan berbagai layanan, aplikasi, dan sistem, serta mengotomatisasi proses bisnis yang kompleks.

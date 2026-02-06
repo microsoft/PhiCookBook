@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:42:47+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "vi"
-}
--->
 # **Giới thiệu Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) là một công cụ tự động hóa quy trình làm việc trực quan, cho phép người dùng tạo các quy trình tự động bằng cách sử dụng các mẫu có sẵn và các kết nối tùy chỉnh. Công cụ này được thiết kế để giúp các nhà phát triển và nhà phân tích kinh doanh nhanh chóng xây dựng các quy trình tự động cho các nhiệm vụ như quản lý dữ liệu, hợp tác và tối ưu hóa quy trình. Với Prompt Flow, người dùng có thể dễ dàng kết nối các dịch vụ, ứng dụng và hệ thống khác nhau, đồng thời tự động hóa các quy trình kinh doanh phức tạp.

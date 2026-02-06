@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:52:38+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "my"
-}
--->
 # **Microsoft Olive ဖြင့် Phi-3 ကို Fine-tuning ပြုလုပ်ခြင်း**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) သည် မော်ဒယ်ဖိအားချုပ်ခြင်း၊ အဆင့်မြှင့်တင်ခြင်းနှင့် ကွန်ပိုင်လေးရှင်းဆိုင်ရာ နည်းပညာများကို စုပေါင်းထားသည့် လွယ်ကူစွာ အသုံးပြုနိုင်သော hardware-aware မော်ဒယ်အဆင့်မြှင့်တင်ရေးကိရိယာတစ်ခုဖြစ်သည်။

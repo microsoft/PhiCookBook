@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:40:05+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "tl"
-}
--->
 ## Maligayang Pagdating sa Phi labs gamit ang C#
 
 Mayroong iba't ibang labs na nagpapakita kung paano isama ang makapangyarihang iba't ibang bersyon ng Phi models sa isang .NET na kapaligiran.

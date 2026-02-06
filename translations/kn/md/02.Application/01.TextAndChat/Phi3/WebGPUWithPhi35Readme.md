@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-12-21T21:04:21+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
-  "language_code": "kn"
-}
--->
 # Phi-3.5-Instruct WebGPU RAG ಚಾಟ್‌ಬಾಟ್
 
 ## WebGPU ಮತ್ತು RAG ಪ್ಯಾಟರ್ನ್ ಪ್ರದರ್ಶನದ ಡೆಮೋ

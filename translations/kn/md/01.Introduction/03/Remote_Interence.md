@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-12-22T00:21:55+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "kn"
-}
--->
 # ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಲಾದ ಮಾದರಿಯೊಂದಿಗೆ ರಿಮೋಟ್ ಇನ್ಫರೆನ್ಸಿಂಗ್
 
 ರಿಮೋಟ್ ಪರಿಸರದಲ್ಲಿ ಅಡಾಪ್ಟರ್‌ಗಳು ಶಿಕ್ಷಿತರಾದ ನಂತರ, ಮಾದರಿಯೊಂದಿಗೆ ಸಂವಹನ ಮಾಡಲು ಒಂದು ಸರಳ Gradio ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಬಳಸಿ.

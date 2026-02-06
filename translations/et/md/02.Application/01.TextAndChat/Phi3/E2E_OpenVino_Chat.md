@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-10-11T12:05:29+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "et"
-}
--->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 See kood ekspordib mudeli OpenVINO formaati, laadib selle ja kasutab seda vastuse genereerimiseks antud sisendile.

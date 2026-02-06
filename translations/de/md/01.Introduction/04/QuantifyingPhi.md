@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:23:19+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "de"
-}
--->
 # **Quantifizierung der Phi-Familie**
 
 Modellquantisierung bezieht sich auf den Prozess, die Parameter (wie Gewichte und Aktivierungswerte) in einem neuronalen Netzmodell von einem großen Wertebereich (in der Regel ein kontinuierlicher Wertebereich) auf einen kleineren endlichen Wertebereich abzubilden. Diese Technologie kann die Größe und die Rechenkomplexität des Modells reduzieren und die Betriebseffizienz des Modells in ressourcenbeschränkten Umgebungen wie Mobilgeräten oder eingebetteten Systemen verbessern. Die Modellquantisierung erreicht Kompression, indem die Präzision der Parameter verringert wird, führt aber auch zu einem gewissen Genauigkeitsverlust. Daher ist es im Quantisierungsprozess notwendig, Größe, Rechenkomplexität und Präzision des Modells auszubalancieren. Übliche Quantisierungsmethoden sind Festkommquantisierung, Fließkommquantisierung usw. Je nach Szenario und Bedarf kann die passende Quantisierungsstrategie ausgewählt werden.

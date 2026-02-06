@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T14:20:50+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "it"
-}
--->
 # **Quantificazione della Famiglia Phi**
 
 La quantificazione del modello si riferisce al processo di mappatura dei parametri (come pesi e valori di attivazione) in un modello di rete neurale da un ampio intervallo di valori (di solito un intervallo di valori continui) a un intervallo di valori finito più piccolo. Questa tecnologia può ridurre la dimensione e la complessità computazionale del modello e migliorare l'efficienza operativa del modello in ambienti con risorse limitate come dispositivi mobili o sistemi embedded. La quantificazione del modello ottiene la compressione riducendo la precisione dei parametri, ma introduce anche una certa perdita di precisione. Pertanto, nel processo di quantificazione è necessario bilanciare la dimensione del modello, la complessità computazionale e la precisione. I metodi di quantificazione comuni includono la quantificazione a punto fisso, la quantificazione a virgola mobile, ecc. È possibile scegliere la strategia di quantificazione appropriata in base allo scenario specifico e alle esigenze.

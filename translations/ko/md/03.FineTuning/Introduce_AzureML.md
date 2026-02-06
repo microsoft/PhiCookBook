@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:37:18+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "ko"
-}
--->
 # **Azure Machine Learning 서비스 소개**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo)은 머신러닝(ML) 프로젝트 수명 주기를 가속화하고 관리할 수 있는 클라우드 서비스입니다.

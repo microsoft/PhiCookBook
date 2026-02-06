@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:59:59+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "uk"
-}
--->
 ### Приклад сценарію
 
 Уявіть, що у вас є зображення (`demo.png`), і ви хочете згенерувати Python-код, який обробляє це зображення та зберігає нову версію (`phi-3-vision.jpg`).

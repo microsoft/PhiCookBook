@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:39:16+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "sw"
-}
--->
 ## Jinsi ya kutumia vipengele vya chat-completion kutoka kwenye rejista ya mfumo wa Azure ML kufanyia modeli marekebisho
 
 Katika mfano huu tutafanya marekebisho ya modeli ya Phi-3-mini-4k-instruct ili kumalizia mazungumzo kati ya watu 2 tukitumia dataset ya ultrachat_200k.

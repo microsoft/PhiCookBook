@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-12-21T16:23:22+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "ml"
-}
--->
 # മാറ്റങ്ങളുടെ രേഖ
 
 ഈ ഫയലിൽ "phiext" വിപുലീകരണത്തിലെ എല്ലാ ശ്രദ്ധേയമായ മാറ്റങ്ങളും രേഖപ്പെടുത്തും.

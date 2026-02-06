@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-12-21T16:47:27+00:00",
-  "source_file": "code/03.Finetuning/olive-lab/readme.md",
-  "language_code": "kn"
-}
--->
 # ಲ್ಯಾಬ್. ಡಿವೈಸ್ನಲ್ಲಿ ಇನ್ಫರೆನ್ಸ್‌ಗಾಗಿ AI ಮಾದರಿಗಳನ್ನು ಅನುಕೂಲಗೊಳಿಸಿ
 
 ## ಪರಿಚಯ 

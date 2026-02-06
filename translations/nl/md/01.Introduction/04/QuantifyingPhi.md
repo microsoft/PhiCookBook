@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:41:57+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "nl"
-}
--->
 # **Quantificeren van de Phi-familie**
 
 Modelquantificatie verwijst naar het proces waarbij de parameters (zoals gewichten en activatiewaarden) in een neuraal netwerkmodel worden omgezet van een groot waardebereik (meestal een continu waardebereik) naar een kleiner, eindig waardebereik. Deze technologie kan de grootte en rekencomplexiteit van het model verminderen en de operationele efficiëntie van het model verbeteren in omgevingen met beperkte middelen, zoals mobiele apparaten of ingebedde systemen. Modelquantificatie bereikt compressie door de precisie van parameters te verlagen, maar brengt ook een bepaald precisieverlies met zich mee. Daarom is het in het kwantisatieproces noodzakelijk om een balans te vinden tussen modelgrootte, rekencomplexiteit en precisie. Veelgebruikte kwantisatiemethoden zijn onder andere fixed-point kwantisatie, floating-point kwantisatie, enzovoort. Je kunt de geschikte kwantisatiestrategie kiezen op basis van de specifieke situatie en behoeften.

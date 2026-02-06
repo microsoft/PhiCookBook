@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:49+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "mr"
-}
--->
 ## **प्रतिमा वाचण्यासाठी आणि कोड तयार करण्यासाठी Phi-4-multimodal वापरा**
 
 Phi-4-multimodal मध्ये प्रतिमा वाचण्याची जबरदस्त क्षमता आहे. चला Python वापरून खालील फंक्शन्स अंमलात आणण्याचा प्रयत्न करूया. ही प्रतिमा ChatGPT पृष्ठाची आहे.

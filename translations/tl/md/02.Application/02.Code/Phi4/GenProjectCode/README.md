@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:43+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "tl"
-}
--->
 ## **Paggamit ng Phi-4-mini-mm para gumawa ng code**
 
 Pinapalawig ng Phi-4-mini ang malakas na kakayahan sa pag-coding ng Phi Family. Maaari mong gamitin ang Prompt para magtanong tungkol sa coding. Siyempre, dahil nadagdagan ito ng matibay na kakayahan sa pangangatwiran, mas malakas ang kakayahan nitong gumawa ng code, tulad ng pagbuo ng mga proyekto ayon sa mga pangangailangan. Halimbawa, gumawa ng mga proyekto ayon sa mga pangangailangan, tulad ng:

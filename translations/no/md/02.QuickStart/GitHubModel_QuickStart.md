@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:38:08+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "no"
-}
--->
 ## GitHub Models - Begrenset offentlig beta
 
 Velkommen til [GitHub Models](https://github.com/marketplace/models)! Vi har alt klart for at du skal utforske AI-modeller som hostes på Azure AI.

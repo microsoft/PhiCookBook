@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:28:32+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "ko"
-}
--->
 # phiext README
 
 이 문서는 확장 프로그램 "phiext"의 README입니다. 간단한 설명을 작성한 후, 다음 섹션들을 포함하는 것을 권장합니다.

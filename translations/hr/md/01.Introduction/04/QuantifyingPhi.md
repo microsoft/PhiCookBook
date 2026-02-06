@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T15:35:43+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "hr"
-}
--->
 # **Kvantificiranje obitelji Phi**
 
 Kvantizacija modela odnosi se na proces mapiranja parametara (kao što su težine i aktivacijske vrijednosti) u modelu neuronske mreže s velikog raspona vrijednosti (obično kontinuirani raspon vrijednosti) na manji konačni raspon vrijednosti. Ova tehnologija može smanjiti veličinu i računalnu složenost modela te poboljšati operativnu učinkovitost modela u okruženjima s ograničenim resursima kao što su mobilni uređaji ili ugrađeni sustavi. Kvantizacija modela postiže kompresiju smanjenjem preciznosti parametara, ali također uvodi određeni gubitak preciznosti. Stoga je u procesu kvantizacije potrebno uravnotežiti veličinu modela, računalnu složenost i preciznost. Uobičajene metode kvantizacije uključuju kvantizaciju fiksne točke, kvantizaciju s pomičnim zarezom itd. Možete odabrati odgovarajuću strategiju kvantizacije prema specifičnom scenariju i potrebama.

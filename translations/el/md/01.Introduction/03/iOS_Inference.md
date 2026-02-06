@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:21:33+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "el"
-}
--->
 # **Inference Phi-3 σε iOS**
 
 Το Phi-3-mini είναι μια νέα σειρά μοντέλων από τη Microsoft που επιτρέπει την ανάπτυξη Μεγάλων Γλωσσικών Μοντέλων (LLMs) σε edge συσκευές και συσκευές IoT. Το Phi-3-mini είναι διαθέσιμο για iOS, Android και Edge Device deployments, επιτρέποντας την ανάπτυξη γεννητικής τεχνητής νοημοσύνης σε περιβάλλοντα BYOD. Το παρακάτω παράδειγμα δείχνει πώς να αναπτύξετε το Phi-3-mini σε iOS.

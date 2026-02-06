@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:39:11+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "vi"
-}
--->
 # **Suy luận Phi-3-Vision trên máy cục bộ**
 
 Phi-3-vision-128k-instruct cho phép Phi-3 không chỉ hiểu ngôn ngữ mà còn có thể nhìn thấy thế giới một cách trực quan. Thông qua Phi-3-vision-128k-instruct, chúng ta có thể giải quyết các vấn đề hình ảnh khác nhau, như OCR, phân tích bảng, nhận diện đối tượng, mô tả hình ảnh, v.v. Chúng ta có thể dễ dàng hoàn thành các nhiệm vụ trước đây đòi hỏi nhiều dữ liệu huấn luyện. Dưới đây là các kỹ thuật và kịch bản ứng dụng liên quan được trích dẫn bởi Phi-3-vision-128k-instruct

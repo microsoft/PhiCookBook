@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e4e010400c2918557b36bb932a14004c",
-  "translation_date": "2025-09-12T14:38:57+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
-  "language_code": "lt"
-}
--->
 ## Derinimas vs RAG
 
 ## Duomenų paieška ir generavimas

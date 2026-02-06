@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:56:20+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
-  "language_code": "sk"
-}
--->
 # phi3ext README
 
 Toto je README pre tvoje rozšírenie "phi3ext". Po stručnom popise odporúčame zahrnúť nasledujúce sekcie.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:57:54+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "no"
-}
--->
 # **La Phi-3 bli en bransjeekspert**
 
 For å integrere Phi-3-modellen i en bransje, må du legge til bransjespesifikke forretningsdata i Phi-3-modellen. Vi har to forskjellige alternativer, det første er RAG (Retrieval Augmented Generation) og det andre er Fine Tuning.

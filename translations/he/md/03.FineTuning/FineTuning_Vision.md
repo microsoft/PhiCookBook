@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:49:22+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "he"
-}
--->
 # מתכון לכיוונון עדין של Phi-3.5-vision
 
 זו התמיכה הרשמית בכיוונון עדין של Phi-3.5-vision באמצעות ספריות huggingface.  

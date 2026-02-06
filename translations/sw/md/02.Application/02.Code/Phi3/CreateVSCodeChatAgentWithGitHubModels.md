@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-07-17T03:29:13+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
-  "language_code": "sw"
-}
--->
 # **Tengeneza Wakala wako wa Visual Studio Code Chat Copilot kwa Phi-3.5 kupitia GitHub Models**
 
 Je, unatumia Visual Studio Code Copilot? Hasa katika Chat, unaweza kutumia mawakala tofauti kuboresha uwezo wa kuunda, kuandika, na kudumisha miradi ndani ya Visual Studio Code. Visual Studio Code hutoa API inayowezesha makampuni na watu binafsi kuunda mawakala tofauti kulingana na biashara yao ili kupanua uwezo wao katika nyanja mbalimbali za kipekee. Katika makala hii, tutazingatia **Phi-3.5-mini-instruct (128k)** na **Phi-3.5-vision-instruct (128k)** za GitHub Models kuunda Wakala wako wa Visual Studio Code.

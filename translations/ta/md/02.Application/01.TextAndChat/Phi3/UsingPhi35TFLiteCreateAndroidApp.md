@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-10-11T12:06:07+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
-  "language_code": "ta"
-}
--->
 # **Microsoft Phi-3.5 tflite பயன்படுத்தி Android பயன்பாட்டை உருவாக்குதல்**
 
 இது Microsoft Phi-3.5 tflite மாதிரிகளைப் பயன்படுத்தும் Android மாதிரி.

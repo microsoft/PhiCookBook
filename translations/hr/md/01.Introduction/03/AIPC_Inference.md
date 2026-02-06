@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:08:38+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "hr"
-}
--->
 # **Inferencija Phi-3 na AI PC-u**
 
 S razvojem generativne umjetne inteligencije i poboljšanjem hardverskih mogućnosti uređaja na rubu mreže, sve veći broj generativnih AI modela može se integrirati u korisničke uređaje Bring Your Own Device (BYOD). AI PC računala su među tim modelima. Počevši od 2024., Intel, AMD i Qualcomm surađuju s proizvođačima računala kako bi predstavili AI PC-e koji omogućuju implementaciju lokaliziranih generativnih AI modela kroz hardverske prilagodbe. U ovom ćemo tekstu fokus staviti na Intel AI PC-e i istražiti kako implementirati Phi-3 na Intel AI PC-u.

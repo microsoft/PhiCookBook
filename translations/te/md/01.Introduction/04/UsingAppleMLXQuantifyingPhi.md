@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-12-22T01:43:24+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "te"
-}
--->
 # **Apple MLX ఫ్రేమ్‌వర్క్ ఉపయోగించి Phi-3.5 ని క్వాంటైజింగ్ చేయడం**
 
 

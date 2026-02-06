@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:08:50+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "fi"
-}
--->
 ## **Käytä Phi-4-multimodalia kuvien lukemiseen ja koodin generointiin**
 
 Phi-4-multimodalilla on vahvat kyvyt kuvien lukemiseen. Kokeillaan Pythonilla toteuttaa seuraavat toiminnot. Kuvana on ChatGPT-sivu.

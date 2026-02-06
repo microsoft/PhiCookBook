@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-12-22T00:59:36+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "kn"
-}
--->
 # iOS ನಲ್ಲಿ Apple MLX ಫ್ರೇಮ್ವರ್ಕ್ ಬಳಸಿಕೊಂಡು Phi-3 ಮತ್ತು Phi-4 ನಡೆಸುವುದು
 
 ಈ ಟ್ಯುಟೋರಿಯಲ್ Apple MLX ಫ್ರೇಮ್ವರ್ಕ್ ಬಳಸಿ Phi-3 ಅಥವಾ Phi-4 ಮಾದರಿಯನ್ನು ಡಿವೈಸ್‌ನಲ್ಲಿ ಕಾರ್ಯಗತಗೊಳಿಸುವ ಅನುಭವವನ್ನು ತೋರಿಸುತ್ತದೆ. [MLX](https://opensource.apple.com/projects/mlx/) ಎಂಬುದು Apple Silicon ಚಿಪ್‌ಗಳಿಗೆ ಆప్టಿಮೈಝ್ ಮಾಡಲಾದ Apple's ಮೆಷಿನ್ ಲರ್ನಿಂಗ್ ಫ್ರೇಮ್ವರ್ಕ್.

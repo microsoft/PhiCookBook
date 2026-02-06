@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:14:41+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "he"
-}
--->
 # **הסקת מסקנות Phi-3 באנדרואיד**
 
 בואו נבדוק כיצד ניתן לבצע הסקת מסקנות עם Phi-3-mini במכשירי אנדרואיד. Phi-3-mini היא סדרת דגמים חדשה של מיקרוסופט שמאפשרת פריסה של מודלים גדולים של שפה (LLMs) במכשירי קצה ומכשירי IoT.

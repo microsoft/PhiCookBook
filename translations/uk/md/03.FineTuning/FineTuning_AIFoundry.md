@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T06:17:09+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "uk"
-}
--->
 # Тонке налаштування Phi-3 за допомогою Azure AI Foundry
 
 Давайте розглянемо, як тонко налаштувати мовну модель Microsoft Phi-3 Mini за допомогою Azure AI Foundry. Тонке налаштування дозволяє адаптувати Phi-3 Mini до конкретних завдань, роблячи її ще потужнішою та більш контекстно орієнтованою.

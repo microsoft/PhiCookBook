@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:08:44+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "mr"
-}
--->
 Phi-3-mini च्या संदर्भात, inference म्हणजे इनपुट डेटावर आधारित अंदाज लावणे किंवा आउटपुट तयार करण्यासाठी मॉडेलचा वापर करण्याची प्रक्रिया. Phi-3-mini आणि त्याच्या inference क्षमतांविषयी अधिक माहिती देतो.
 
 Phi-3-mini हा Microsoft कडून रिलीज झालेल्या Phi-3 मालिकेतील एक मॉडेल आहे. हे मॉडेल Small Language Models (SLMs) च्या शक्यतांना नव्याने परिभाषित करण्यासाठी तयार केले गेले आहे.

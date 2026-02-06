@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-10-11T11:43:55+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "ta"
-}
--->
 # **Phi-3 ஐ Microsoft Olive மூலம் Fine-tuning செய்யுதல்**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) என்பது hardware-aware மாடல் மேம்பாட்டு கருவியாகும், இது மாடல் சுருக்கம், மேம்பாடு மற்றும் தொகுப்பு ஆகியவற்றில் முன்னணி தொழில்நுட்பங்களை ஒருங்கிணைத்து வழங்குகிறது.

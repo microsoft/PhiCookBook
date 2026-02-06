@@ -1,0 +1,608 @@
+{
+  "AGENTS.md": {
+    "original_hash": "72e00a4ddbe9d6c25907d1eb19d041b8",
+    "translation_date": "2025-10-17T10:49:46+00:00",
+    "source_file": "AGENTS.md",
+    "language_code": "zh-TW"
+  },
+  "CONTRIBUTING.md": {
+    "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+    "translation_date": "2025-07-16T14:37:35+00:00",
+    "source_file": "CONTRIBUTING.md",
+    "language_code": "zh-TW"
+  },
+  "README.md": {
+    "original_hash": "99df4a1312c9e52418d81c3501f630d6",
+    "translation_date": "2026-01-30T01:27:44+00:00",
+    "source_file": "README.md",
+    "language_code": "zh-TW"
+  },
+  "SECURITY.md": {
+    "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
+    "translation_date": "2025-07-16T15:39:11+00:00",
+    "source_file": "SECURITY.md",
+    "language_code": "zh-TW"
+  },
+  "code/03.Finetuning/olive-lab/readme.md": {
+    "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+    "translation_date": "2025-07-16T15:48:37+00:00",
+    "source_file": "code/03.Finetuning/olive-lab/readme.md",
+    "language_code": "zh-TW"
+  },
+  "code/03.Finetuning/olive-ort-example/README.md": {
+    "original_hash": "4164123a700fecd535d850f09506d72a",
+    "translation_date": "2025-07-16T16:01:57+00:00",
+    "source_file": "code/03.Finetuning/olive-ort-example/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/04.Finetuning/olive-lab/readme.md": {
+    "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+    "translation_date": "2025-07-16T16:10:47+00:00",
+    "source_file": "code/04.Finetuning/olive-lab/readme.md",
+    "language_code": "zh-TW"
+  },
+  "code/04.Finetuning/olive-ort-example/README.md": {
+    "original_hash": "4164123a700fecd535d850f09506d72a",
+    "translation_date": "2025-07-16T16:24:41+00:00",
+    "source_file": "code/04.Finetuning/olive-ort-example/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md": {
+    "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
+    "translation_date": "2025-07-16T16:30:00+00:00",
+    "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/01/AIPC/extensions/phi3ext/README.md": {
+    "original_hash": "be0b2937160c486180ded27e4f14adeb",
+    "translation_date": "2025-07-16T16:34:07+00:00",
+    "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md": {
+    "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
+    "translation_date": "2025-07-16T16:41:10+00:00",
+    "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md": {
+    "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
+    "translation_date": "2025-07-16T16:48:08+00:00",
+    "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/01/Apple/phi3ext/README.md": {
+    "original_hash": "be0b2937160c486180ded27e4f14adeb",
+    "translation_date": "2025-07-16T16:52:12+00:00",
+    "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md": {
+    "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
+    "translation_date": "2025-07-16T16:59:17+00:00",
+    "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
+    "language_code": "zh-TW"
+  },
+  "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md": {
+    "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
+    "translation_date": "2025-07-16T17:06:41+00:00",
+    "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/08.RAG/rag_webgpu_chat/README.md": {
+    "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
+    "translation_date": "2025-07-16T17:14:14+00:00",
+    "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md": {
+    "original_hash": "bd0afcb627d5754038537758315cbad7",
+    "translation_date": "2025-07-16T17:24:16+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
+    "language_code": "zh-TW"
+  },
+  "code/09.UpdateSamples/Aug/vscode/phiext/README.md": {
+    "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+    "translation_date": "2025-07-16T17:28:15+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
+    "language_code": "zh-TW"
+  },
+  "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md": {
+    "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
+    "translation_date": "2025-07-16T17:35:01+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.AISafety.md": {
+    "original_hash": "839ccc4b3886ef10cfd4e64977f5792d",
+    "translation_date": "2026-01-05T17:32:57+00:00",
+    "source_file": "md/01.Introduction/01/01.AISafety.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.Edgeandcloud.md": {
+    "original_hash": "777aa0ff38fceecc29a00834f2f7a2f0",
+    "translation_date": "2025-07-16T17:57:57+00:00",
+    "source_file": "md/01.Introduction/01/01.Edgeandcloud.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.EnvironmentSetup.md": {
+    "original_hash": "3edae6aebc3d0143037109e8af58f1ac",
+    "translation_date": "2025-07-16T18:07:45+00:00",
+    "source_file": "md/01.Introduction/01/01.EnvironmentSetup.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.Guidance.md": {
+    "original_hash": "bd049872f37c3079c87d4fe17109cea0",
+    "translation_date": "2025-07-16T18:15:23+00:00",
+    "source_file": "md/01.Introduction/01/01.Guidance.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.Hardwaresupport.md": {
+    "original_hash": "8cdc17ce0f10535da30b53d23fe1a795",
+    "translation_date": "2025-07-16T18:23:44+00:00",
+    "source_file": "md/01.Introduction/01/01.Hardwaresupport.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.PhiFamily.md": {
+    "original_hash": "8ef41b679d85adc42be3e0cbee97f7f1",
+    "translation_date": "2025-07-18T21:23:35+00:00",
+    "source_file": "md/01.Introduction/01/01.PhiFamily.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/01/01.Understandingtech.md": {
+    "original_hash": "9841486ba4cf2590fabe609b925b00eb",
+    "translation_date": "2025-07-16T18:41:51+00:00",
+    "source_file": "md/01.Introduction/01/01.Understandingtech.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/01.HF.md": {
+    "original_hash": "624fe133fba62773979d45f54519f7bb",
+    "translation_date": "2025-07-16T18:50:53+00:00",
+    "source_file": "md/01.Introduction/02/01.HF.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/02.GitHubModel.md": {
+    "original_hash": "fb67a08b9fc911a10ed58081fadef416",
+    "translation_date": "2025-07-16T18:58:21+00:00",
+    "source_file": "md/01.Introduction/02/02.GitHubModel.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/03.AzureAIFoundry.md": {
+    "original_hash": "3ae21dc5554e888defbe57946ee995ee",
+    "translation_date": "2025-07-16T19:07:41+00:00",
+    "source_file": "md/01.Introduction/02/03.AzureAIFoundry.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/04.Ollama.md": {
+    "original_hash": "2aa35f3c8b437fd5dc9995d53909d495",
+    "translation_date": "2025-12-21T10:35:07+00:00",
+    "source_file": "md/01.Introduction/02/04.Ollama.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/05.AITK.md": {
+    "original_hash": "4951d458c0b60c02cd1e751b40903877",
+    "translation_date": "2025-07-16T19:22:47+00:00",
+    "source_file": "md/01.Introduction/02/05.AITK.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/06.NVIDIA.md": {
+    "original_hash": "7b08e277df2a9307f861ae54bc30c772",
+    "translation_date": "2025-07-16T19:34:17+00:00",
+    "source_file": "md/01.Introduction/02/06.NVIDIA.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/02/07.FoundryLocal.md": {
+    "original_hash": "52973a5680a65a810aa80b7036afd31f",
+    "translation_date": "2025-07-16T19:43:40+00:00",
+    "source_file": "md/01.Introduction/02/07.FoundryLocal.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/AIPC_Inference.md": {
+    "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
+    "translation_date": "2025-07-16T19:56:28+00:00",
+    "source_file": "md/01.Introduction/03/AIPC_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Android_Inference.md": {
+    "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
+    "translation_date": "2025-07-16T20:11:46+00:00",
+    "source_file": "md/01.Introduction/03/Android_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Jetson_Inference.md": {
+    "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
+    "translation_date": "2025-07-16T20:40:16+00:00",
+    "source_file": "md/01.Introduction/03/Jetson_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Kaito_Inference.md": {
+    "original_hash": "aca91084bc440431571e00bf30d96ab8",
+    "translation_date": "2026-01-05T17:33:21+00:00",
+    "source_file": "md/01.Introduction/03/Kaito_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Local_Server_Inference.md": {
+    "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
+    "translation_date": "2025-07-16T20:55:49+00:00",
+    "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/MLX_Inference.md": {
+    "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+    "translation_date": "2025-07-16T21:01:25+00:00",
+    "source_file": "md/01.Introduction/03/MLX_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Remote_Interence.md": {
+    "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
+    "translation_date": "2025-07-16T21:16:14+00:00",
+    "source_file": "md/01.Introduction/03/Remote_Interence.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Rust_Inference.md": {
+    "original_hash": "8a7ad026d880c666db9739a17a2eb400",
+    "translation_date": "2025-07-16T21:26:15+00:00",
+    "source_file": "md/01.Introduction/03/Rust_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/Vision_Inference.md": {
+    "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+    "translation_date": "2025-07-16T21:36:42+00:00",
+    "source_file": "md/01.Introduction/03/Vision_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/iOS_Inference.md": {
+    "original_hash": "82af197df38d25346a98f1f0e84d1698",
+    "translation_date": "2025-07-16T20:19:04+00:00",
+    "source_file": "md/01.Introduction/03/iOS_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/iOS_Inference_MLX.md": {
+    "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
+    "translation_date": "2025-07-16T20:28:39+00:00",
+    "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/03/overview.md": {
+    "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
+    "translation_date": "2025-07-16T21:07:54+00:00",
+    "source_file": "md/01.Introduction/03/overview.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/04/QuantifyingPhi.md": {
+    "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+    "translation_date": "2026-01-05T17:33:56+00:00",
+    "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md": {
+    "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
+    "translation_date": "2025-07-16T21:53:24+00:00",
+    "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md": {
+    "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
+    "translation_date": "2025-07-16T21:59:45+00:00",
+    "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md": {
+    "original_hash": "462bddc47427d8785f3c9fd817b346fe",
+    "translation_date": "2025-07-16T22:07:01+00:00",
+    "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md": {
+    "original_hash": "3bb9f5c926673593287eddc3741226cb",
+    "translation_date": "2025-07-16T22:16:47+00:00",
+    "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/05/AIFoundry.md": {
+    "original_hash": "7b4235159486df4000e16b7b46ddfec3",
+    "translation_date": "2025-07-16T22:29:26+00:00",
+    "source_file": "md/01.Introduction/05/AIFoundry.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/05/Promptflow.md": {
+    "original_hash": "3cbe7629d254f1043193b7fe22524d55",
+    "translation_date": "2025-07-16T22:36:59+00:00",
+    "source_file": "md/01.Introduction/05/Promptflow.md",
+    "language_code": "zh-TW"
+  },
+  "md/01.Introduction/05/ResponsibleAI.md": {
+    "original_hash": "805b96b20152936d8f4c587d90d6e06e",
+    "translation_date": "2025-07-16T22:49:10+00:00",
+    "source_file": "md/01.Introduction/05/ResponsibleAI.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md": {
+    "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
+    "translation_date": "2025-07-16T23:02:25+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md": {
+    "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
+    "translation_date": "2025-07-16T23:23:18+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md": {
+    "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+    "translation_date": "2026-01-05T17:30:32+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md": {
+    "original_hash": "0df910a227098303cc392b6ad204c271",
+    "translation_date": "2026-01-06T04:19:29+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md": {
+    "original_hash": "f61c383bbf0c3dac97e43f833c258731",
+    "translation_date": "2025-07-17T02:27:43+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md": {
+    "original_hash": "7f72d7981ed3640865700f51ae407da4",
+    "translation_date": "2026-01-14T15:13:36+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
+    "original_hash": "b066fc29c1b2129df84e027cb75119ce",
+    "translation_date": "2025-07-17T02:40:24+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md": {
+    "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
+    "translation_date": "2025-07-17T02:50:38+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
+    "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
+    "translation_date": "2025-07-17T02:58:08+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md": {
+    "original_hash": "b62864faf628eb07f5231d4885555198",
+    "translation_date": "2025-07-17T03:07:12+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md": {
+    "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+    "translation_date": "2025-07-17T03:15:59+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md": {
+    "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
+    "translation_date": "2025-07-17T03:22:51+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/01.Installations.md": {
+    "original_hash": "a4ef39027902e82f2c33d568d2a2259a",
+    "translation_date": "2025-07-17T03:48:42+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/01.Installations.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/02.PromptflowWithNPU.md": {
+    "original_hash": "bc29f7fe7fc16bed6932733eac8c81b8",
+    "translation_date": "2025-07-17T03:55:36+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/02.PromptflowWithNPU.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/03.DeployPhi3VisionOnAzure.md": {
+    "original_hash": "20cb4e6ac1686248e8be913ccf6c2bc2",
+    "translation_date": "2025-07-17T04:04:48+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/03.DeployPhi3VisionOnAzure.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/04.CreatePhi3AgentInVSCode.md": {
+    "original_hash": "b267038b665ba40cfaac6c6d975ccc40",
+    "translation_date": "2025-07-17T04:10:51+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/04.CreatePhi3AgentInVSCode.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/01.Installations.md": {
+    "original_hash": "4b16264917d9b93169745d92b8ce8c65",
+    "translation_date": "2025-07-17T04:17:14+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/01.Installations.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/02.PromptflowWithMLX.md": {
+    "original_hash": "3dbbf568625b1ee04b354c2dc81d3248",
+    "translation_date": "2025-07-17T04:23:51+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/02.PromptflowWithMLX.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/03.DeployPhi3VisionOnAzure.md": {
+    "original_hash": "20cb4e6ac1686248e8be913ccf6c2bc2",
+    "translation_date": "2025-07-17T04:31:38+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/03.DeployPhi3VisionOnAzure.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/04.CreatePhi3AgentInVSCode.md": {
+    "original_hash": "df19a4d9fe96fe7335665bede9298a62",
+    "translation_date": "2025-07-17T04:38:04+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/04.CreatePhi3AgentInVSCode.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/README.md": {
+    "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
+    "translation_date": "2025-07-17T03:35:15+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/02.Code/Phi4/GenProjectCode/README.md": {
+    "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
+    "translation_date": "2025-07-17T04:43:57+00:00",
+    "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md": {
+    "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
+    "translation_date": "2025-07-17T04:48:59+00:00",
+    "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md": {
+    "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
+    "translation_date": "2025-07-17T04:53:33+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md": {
+    "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
+    "translation_date": "2025-07-17T05:01:38+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md": {
+    "original_hash": "83b94a515637dffaea3bae99278561a6",
+    "translation_date": "2025-07-17T05:07:27+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/05.Audio/Phi4/Transciption/README.md": {
+    "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
+    "translation_date": "2025-07-17T05:11:04+00:00",
+    "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md": {
+    "original_hash": "b7078bd9f16589c50139fbba8674de82",
+    "translation_date": "2025-07-17T05:14:37+00:00",
+    "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.QuickStart/AzureAIFoundry_QuickStart.md": {
+    "original_hash": "3a1e48b628022485aac989c9f733e792",
+    "translation_date": "2025-07-17T05:20:30+00:00",
+    "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
+    "language_code": "zh-TW"
+  },
+  "md/02.QuickStart/GitHubModel_QuickStart.md": {
+    "original_hash": "5113634b77370af6790f9697d5d7de90",
+    "translation_date": "2025-07-17T05:32:42+00:00",
+    "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/03.Inference/MLX_Inference.md": {
+    "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+    "translation_date": "2025-07-17T10:04:35+00:00",
+    "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/CreatingSampleData.md": {
+    "original_hash": "3cd0b727945d57998f1096763df56a84",
+    "translation_date": "2025-07-17T05:45:56+00:00",
+    "source_file": "md/03.FineTuning/CreatingSampleData.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_AIFoundry.md": {
+    "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
+    "translation_date": "2025-07-17T05:58:07+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_Kaito.md": {
+    "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+    "translation_date": "2025-07-17T06:19:43+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_Lora.md": {
+    "original_hash": "50b6a55a0831b417835087d8b57759fe",
+    "translation_date": "2025-07-17T06:28:43+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Lora.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_MLSDK.md": {
+    "original_hash": "944949f040e61b2ea25b3460f7394fd4",
+    "translation_date": "2025-07-17T07:05:52+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_MLX.md": {
+    "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
+    "translation_date": "2025-07-17T07:57:52+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_MLX.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_MicrosoftOlive.md": {
+    "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
+    "translation_date": "2025-07-17T06:40:33+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md": {
+    "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
+    "translation_date": "2025-07-17T08:06:55+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_Qlora.md": {
+    "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
+    "translation_date": "2025-07-17T08:17:24+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_Scenarios.md": {
+    "original_hash": "cb5648935f63edc17e95ce38f23adc32",
+    "translation_date": "2025-07-17T08:23:57+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_Vision.md": {
+    "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
+    "translation_date": "2025-07-17T08:37:49+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Vision.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/FineTuning_vs_RAG.md": {
+    "original_hash": "e4e010400c2918557b36bb932a14004c",
+    "translation_date": "2025-07-17T09:27:28+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md": {
+    "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+    "translation_date": "2025-07-17T09:04:26+00:00",
+    "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/Introduce_AzureML.md": {
+    "original_hash": "7fe541373802e33568e94e13226d463c",
+    "translation_date": "2025-07-17T09:36:35+00:00",
+    "source_file": "md/03.FineTuning/Introduce_AzureML.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/LetPhi3gotoIndustriy.md": {
+    "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
+    "translation_date": "2025-07-17T09:53:14+00:00",
+    "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
+    "language_code": "zh-TW"
+  },
+  "md/03.FineTuning/olive-lab/readme.md": {
+    "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+    "translation_date": "2025-07-17T10:14:36+00:00",
+    "source_file": "md/03.FineTuning/olive-lab/readme.md",
+    "language_code": "zh-TW"
+  },
+  "md/04.HOL/dotnet/readme.md": {
+    "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
+    "translation_date": "2025-07-17T10:32:54+00:00",
+    "source_file": "md/04.HOL/dotnet/readme.md",
+    "language_code": "zh-TW"
+  }
+}

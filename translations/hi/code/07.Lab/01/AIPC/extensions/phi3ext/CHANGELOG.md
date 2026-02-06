@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-16T16:30:13+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
-  "language_code": "hi"
-}
--->
 # परिवर्तन लॉग
 
 सभी "phi3ext" एक्सटेंशनों में महत्वपूर्ण बदलाव इस फ़ाइल में दर्ज किए जाएंगे।

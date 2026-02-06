@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-12-21T17:08:11+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "te"
-}
--->
 # Phi-3.5-vision ఫైన్‌ట్యూనింగ్ మార్గదర్శకము
 
 ఇది huggingface లైబ్రరీలను ఉపయోగించి Phi-3.5-vision ఫైన్‌ట్యూనింగ్‌కు అధికారిక మద్దతు. క్రింది కమాండ్లను అమలు చేయటానికి ముందు దయచేసి కోడ్ డైరెక్టరీ [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning)కి `cd` చేయండి.

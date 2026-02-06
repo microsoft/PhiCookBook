@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:33:33+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "he"
-}
--->
 ## כיצד להשתמש ברכיבי chat-completion מרישום המערכת של Azure ML לכוונון מדויק של מודל
 
 בדוגמה זו נבצע כוונון מדויק למודל Phi-3-mini-4k-instruct להשלמת שיחה בין שני אנשים באמצעות מערך הנתונים ultrachat_200k.

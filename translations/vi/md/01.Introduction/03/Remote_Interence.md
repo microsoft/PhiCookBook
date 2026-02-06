@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:20:39+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "vi"
-}
--->
 # Suy luận từ xa với mô hình đã tinh chỉnh
 
 Sau khi các adapter được huấn luyện trong môi trường từ xa, hãy sử dụng một ứng dụng Gradio đơn giản để tương tác với mô hình.

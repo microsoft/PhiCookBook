@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:56:17+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "ms"
-}
--->
 # **Memperkenalkan AI Bertanggungjawab**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) adalah inisiatif yang bertujuan membantu pembangun dan organisasi membina sistem AI yang telus, boleh dipercayai, dan bertanggungjawab. Inisiatif ini menyediakan panduan dan sumber untuk membangunkan penyelesaian AI bertanggungjawab yang selaras dengan prinsip etika, seperti privasi, keadilan, dan ketelusan. Kami juga akan meneroka beberapa cabaran dan amalan terbaik yang berkaitan dengan pembinaan sistem AI bertanggungjawab.

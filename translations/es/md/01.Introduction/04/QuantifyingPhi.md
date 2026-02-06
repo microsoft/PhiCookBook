@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T08:17:03+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "es"
-}
--->
 # **Cuantificación de la Familia Phi**
 
 La cuantificación de modelos se refiere al proceso de mapear los parámetros (como pesos y valores de activación) en un modelo de red neuronal desde un rango de valores grande (generalmente un rango continuo) a un rango finito más pequeño. Esta tecnología puede reducir el tamaño y la complejidad computacional del modelo y mejorar la eficiencia operativa del modelo en entornos con recursos limitados como dispositivos móviles o sistemas embebidos. La cuantificación de modelos logra compresión al reducir la precisión de los parámetros, pero también introduce una cierta pérdida de precisión. Por lo tanto, en el proceso de cuantificación es necesario equilibrar el tamaño del modelo, la complejidad computacional y la precisión. Los métodos comunes de cuantificación incluyen cuantificación de punto fijo, cuantificación de punto flotante, etc. Puedes elegir la estrategia de cuantificación adecuada según el escenario específico y las necesidades.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-10-11T11:39:09+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ta"
-}
--->
 ## Phi லேப்களுக்கு C# பயன்படுத்தி வரவேற்கிறோம்
 
 .NET சூழலில் பல்வேறு Phi மாடல்களின் சக்திவாய்ந்த பதிப்புகளை ஒருங்கிணைப்பது எப்படி என்பதை காட்டும் சில லேப்கள் உள்ளன.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:01:03+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "fi"
-}
--->
 # **Phi-3:n hienosäätö Apple MLX Frameworkilla**
 
 Voimme suorittaa hienosäädön yhdessä Loran kanssa Apple MLX Frameworkin komentoriviltä. (Jos haluat tietää lisää MLX Frameworkin toiminnasta, lue [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))

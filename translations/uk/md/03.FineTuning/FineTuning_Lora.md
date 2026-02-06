@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:37:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "uk"
-}
--->
 # **Тонке налаштування Phi-3 з Lora**
 
 Тонке налаштування мовної моделі Phi-3 Mini від Microsoft за допомогою [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) на кастомному наборі інструкцій для чатів.

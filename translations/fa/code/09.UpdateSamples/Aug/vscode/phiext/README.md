@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:27:36+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "fa"
-}
--->
 # phiext README
 
 این فایل README برای افزونه شما با نام "phiext" است. پس از نوشتن یک توضیح کوتاه، توصیه می‌کنیم بخش‌های زیر را نیز اضافه کنید.

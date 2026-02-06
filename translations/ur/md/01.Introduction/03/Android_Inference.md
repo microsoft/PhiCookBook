@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:11:13+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "ur"
-}
--->
 # **اینڈرائیڈ میں Inference Phi-3**
 
 آئیے دیکھتے ہیں کہ آپ اینڈرائیڈ ڈیوائسز پر Phi-3-mini کے ساتھ inference کیسے کر سکتے ہیں۔ Phi-3-mini مائیکروسافٹ کی نئی ماڈلز کی سیریز ہے جو ایج ڈیوائسز اور IoT ڈیوائسز پر Large Language Models (LLMs) کی تعیناتی کو ممکن بناتی ہے۔

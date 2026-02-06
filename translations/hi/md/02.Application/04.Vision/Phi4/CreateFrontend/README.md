@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:40+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "hi"
-}
--->
 ## **Phi-4-multimodal का उपयोग करके छवियाँ पढ़ें और कोड जनरेट करें**
 
 Phi-4-multimodal में छवियाँ पढ़ने की मजबूत क्षमता है। आइए Python का उपयोग करके निम्नलिखित कार्यों को लागू करने की कोशिश करें। यह छवि एक ChatGPT पृष्ठ की है।

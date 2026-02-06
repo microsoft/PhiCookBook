@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-12-21T18:58:26+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
-  "language_code": "ml"
-}
--->
 ## ഫൈൻ-ട്യൂണിംഗ് സാഹചര്യമാർ
 
 ![MS സർവീസുകളുമായി ഫൈൻ-ട്യൂണിംഗ്](../../../../translated_images/ml/FinetuningwithMS.3d0cec8ae693e094.webp)

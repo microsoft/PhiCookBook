@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-10-11T11:54:07+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "ta"
-}
--->
 ## **Phi-4-multimodal ஐ பயன்படுத்தி படங்களை வாசித்து குறியீடு உருவாக்கவும்**
 
 Phi-4-multimodal வலுவான பட வாசிப்பு திறன்களை கொண்டுள்ளது. Python-ஐ பயன்படுத்தி கீழே உள்ள செயல்பாடுகளை செயல்படுத்த முயலலாம். படம் ChatGPT பக்கம் ஆகும்.

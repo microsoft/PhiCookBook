@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:19:26+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "sv"
-}
--->
 # Fjärrinferens med den finjusterade modellen
 
 Efter att adaptrarna har tränats i den fjärranslutna miljön, använd en enkel Gradio-applikation för att interagera med modellen.

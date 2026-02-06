@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:35:18+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "sw"
-}
--->
 # Kuendesha Phi-3 na Phi-4 kwenye iOS kwa kutumia Apple MLX Framework
 
 Mafunzo haya yanaonyesha jinsi ya kuunda programu ya iOS inayoweza kuendesha modeli ya Phi-3 au Phi-4 moja kwa moja kwenye kifaa, kwa kutumia mfumo wa Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) ni mfumo wa kujifunza mashine wa Apple ulioboreshwa kwa ajili ya chips za Apple Silicon.

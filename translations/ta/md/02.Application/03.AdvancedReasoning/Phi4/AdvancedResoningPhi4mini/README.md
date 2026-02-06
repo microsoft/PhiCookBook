@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-10-11T12:11:31+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "ta"
-}
--->
 ## **Phi-4-mini-reasoning(3.8b) அல்லது Phi-4-reasoning(14b) ஐ காரணம் கூறும் நிபுணராக பயன்படுத்துதல்**
 
 Phi-4-mini-reasoning அல்லது Phi-4-mini-reasoning மூலம் அதன் வலுவான காரணம் கூறும் திறனைப் பார்ப்போம்.

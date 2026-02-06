@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-10-11T11:42:48+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "ta"
-}
--->
 # Phi-3.5-vision நுண்ணிய அமைப்புக்கான வழிகாட்டி
 
 இது huggingface நூலகங்களைப் பயன்படுத்தி Phi-3.5-vision நுண்ணிய அமைப்புக்கான அதிகாரப்பூர்வ ஆதரவு ஆகும். கீழே உள்ள கட்டளைகளை இயக்குவதற்கு முன் [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) என்ற கோப்பு அடைவிற்கு `cd` செய்யவும்.

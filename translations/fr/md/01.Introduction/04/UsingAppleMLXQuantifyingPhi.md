@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:52:05+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "fr"
-}
--->
 # **Quantification de Phi-3.5 avec le framework Apple MLX**
 
 MLX est un framework pour la recherche en apprentissage automatique sur les puces Apple Silicon, développé par l’équipe de recherche en machine learning d’Apple.

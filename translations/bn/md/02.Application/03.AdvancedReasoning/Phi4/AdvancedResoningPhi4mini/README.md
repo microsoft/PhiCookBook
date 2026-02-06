@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-07-17T04:49:16+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "bn"
-}
--->
 ## **Phi-4-mini-reasoning(3.8b) বা Phi-4-reasoning(14b) কে Reasoning Expert হিসেবে ব্যবহার করা**
 
 চলুন Phi-4-mini-reasoning বা Phi-4-reasoning এর মাধ্যমে এর শক্তিশালী যুক্তি দক্ষতা দেখি।

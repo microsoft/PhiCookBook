@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:39:50+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ms"
-}
--->
 ﻿## Selamat datang ke makmal Phi menggunakan C#
 
 Terdapat beberapa makmal yang mempamerkan cara mengintegrasikan pelbagai versi model Phi yang berkuasa dalam persekitaran .NET.

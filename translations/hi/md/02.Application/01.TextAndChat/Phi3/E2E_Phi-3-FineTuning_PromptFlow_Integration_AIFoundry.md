@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T04:24:04+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "hi"
-}
--->
 # Azure AI Foundry में Prompt flow के साथ कस्टम Phi-3 मॉडल को फाइन-ट्यून और इंटीग्रेट करें
 
 यह एंड-टू-एंड (E2E) सैंपल Microsoft Tech Community के "[Azure AI Foundry में Prompt Flow के साथ कस्टम Phi-3 मॉडल को फाइन-ट्यून और इंटीग्रेट करें](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" गाइड पर आधारित है। यह कस्टम Phi-3 मॉडलों को फाइन-ट्यूनिंग, तैनाती, और Azure AI Foundry में Prompt flow के साथ एकीकृत करने की प्रक्रियाओं का परिचय देता है। E2E सैंपल "[Prompt Flow के साथ कस्टम Phi-3 मॉडल को फाइन-ट्यून और इंटीग्रेट करें](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" से अलग, जिसमें स्थानीय रूप से कोड चलाना शामिल था, यह ट्यूटोरियल पूरी तरह से Azure AI / ML Studio के भीतर आपके मॉडल को फाइन-ट्यून और इंटीग्रेट करने पर केंद्रित है।

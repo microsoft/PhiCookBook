@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-12-21T18:06:13+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "ml"
-}
--->
 # **Phi-3 Lora ഉപയോഗിച്ച് ഫൈൻ-ട്യൂണിംഗ്**
 
 Microsoft-ന്റെ Phi-3 Mini ഭാഷാ മോഡൽ ഒരു കസ്റ്റം ചാറ്റ് നിർദ്ദേശ ഡാറ്റാസെറ്റിൽ [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) ഉപയോഗിച്ച് ഫൈൻ-ട്യൂൺ ചെയ്യുന്നത്.

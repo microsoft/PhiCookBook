@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:58:58+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "cs"
-}
--->
 # **Inference Phi-3 na lokálním serveru**
 
 Phi-3 můžeme nasadit na lokální server. Uživatelé si mohou vybrat řešení [Ollama](https://ollama.com) nebo [LM Studio](https://llamaedge.com), případně si napsat vlastní kód. Lokální služby Phi-3 lze propojit přes [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) nebo [Langchain](https://www.langchain.com/) pro tvorbu aplikací Copilot.

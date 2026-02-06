@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-07-17T06:23:45+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "vi"
-}
--->
 ## Tinh chỉnh với Kaito
 
 [Kaito](https://github.com/Azure/kaito) là một operator tự động hóa việc triển khai mô hình suy luận AI/ML trong cụm Kubernetes.

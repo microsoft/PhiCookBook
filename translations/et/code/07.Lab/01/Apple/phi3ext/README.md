@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-10-11T11:35:02+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
-  "language_code": "et"
-}
--->
 # phi3ext README
 
 See on sinu laienduse "phi3ext" README. Pärast lühikirjelduse kirjutamist soovitame lisada järgmised jaotised.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T06:56:29+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "de"
-}
--->
 ## Wie man Chat-Completion-Komponenten aus dem Azure ML System-Registry verwendet, um ein Modell feinzujustieren
 
 In diesem Beispiel werden wir das Phi-3-mini-4k-instruct Modell feinjustieren, um ein Gespräch zwischen zwei Personen mit dem ultrachat_200k Datensatz zu vervollständigen.

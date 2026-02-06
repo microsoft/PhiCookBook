@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-10-11T12:20:08+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "ta"
-}
--->
 # **Android-ல் Phi-3 inference**
 
 Android சாதனங்களில் Phi-3-mini-யுடன் inference செய்ய எப்படி செயல்படுவது என்பதை பார்ப்போம். Phi-3-mini என்பது Microsoft-இன் புதிய மாடல் தொடர், இது பெரிய மொழி மாடல்களை (LLMs) edge சாதனங்கள் மற்றும் IoT சாதனங்களில் பயன்படுத்த அனுமதிக்கிறது.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:11:56+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "ms"
-}
--->
 Dalam konteks Phi-3-mini, inferens merujuk kepada proses menggunakan model untuk membuat ramalan atau menghasilkan output berdasarkan data input. Izinkan saya memberikan lebih banyak maklumat tentang Phi-3-mini dan keupayaan inferensnya.
 
 Phi-3-mini adalah sebahagian daripada siri model Phi-3 yang dikeluarkan oleh Microsoft. Model-model ini direka untuk mentakrif semula apa yang mungkin dengan Model Bahasa Kecil (SLM).

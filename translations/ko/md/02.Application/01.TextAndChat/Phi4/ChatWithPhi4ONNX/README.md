@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:16:13+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "ko"
-}
--->
 # **Phi-4-mini ONNX와 대화하기**
 
 ***ONNX***는 머신러닝 모델을 표현하기 위해 만들어진 오픈 포맷입니다. ONNX는 머신러닝과 딥러닝 모델의 기본 구성 요소인 공통 연산자 집합과, 다양한 프레임워크, 도구, 런타임, 컴파일러에서 모델을 사용할 수 있도록 하는 공통 파일 포맷을 정의합니다.

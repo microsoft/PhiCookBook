@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:03:40+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "hu"
-}
--->
 # **Phi-3.5 kvantálása Intel OpenVINO segítségével**
 
 Az Intel a legtradicionálisabb CPU gyártó, sok felhasználóval. A gépi tanulás és mélytanulás térnyerésével az Intel is beszállt az AI gyorsítás versenyébe. A modell inferenciához az Intel nemcsak GPU-kat és CPU-kat használ, hanem NPU-kat is.

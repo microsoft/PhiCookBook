@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:23:30+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "uk"
-}
--->
 # Віддалене інференсування з донавченою моделлю
 
 Після навчання адаптерів у віддаленому середовищі, використовуйте простий додаток Gradio для взаємодії з моделлю.

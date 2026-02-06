@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-09-12T14:28:52+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "lt"
-}
--->
 # **Pokalbis su Phi-4-mini ONNX**
 
 ***ONNX*** yra atviras formatas, sukurtas mašininio mokymosi modeliams atvaizduoti. ONNX apibrėžia bendrą operatorių rinkinį – mašininio mokymosi ir giluminio mokymosi modelių pagrindinius elementus – ir bendrą failo formatą, leidžiantį AI kūrėjams naudoti modelius su įvairiomis sistemomis, įrankiais, vykdymo aplinkomis ir kompiliatoriais.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:29:24+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "hi"
-}
--->
 # iOS पर Apple MLX Framework के साथ Phi-3 और Phi-4 चलाना
 
 यह ट्यूटोरियल दिखाता है कि कैसे Apple MLX फ्रेमवर्क का उपयोग करके iOS एप्लिकेशन बनाया जाए जो Phi-3 या Phi-4 मॉडल को डिवाइस पर ही चलाए। [MLX](https://opensource.apple.com/projects/mlx/) Apple का मशीन लर्निंग फ्रेमवर्क है जो Apple Silicon चिप्स के लिए अनुकूलित है।

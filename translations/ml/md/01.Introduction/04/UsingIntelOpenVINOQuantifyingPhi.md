@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-12-22T02:05:05+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ml"
-}
--->
 # **Intel OpenVINO ഉപയോഗിച്ച് Phi-3.5 ക്വാണ്ടൈസിംഗ്**
 
 Intel ഏറെ പരമ്പരാഗതമായ CPU നിർമ്മാതാക്കളിൽ ഒന്നാണ്, നിരവധി ഉപയോക്താക്കളുള്ളത്. മെഷീൻ ലേണിങിന്റെയും ഡീപ് ലേണിങിന്റെയും ഉയർച്ചയോടൊപ്പം, AI ആക്‌സിലറേഷനിൽ Intelയും മത്സരത്തിലേക്ക് ചേരുന്നു. മോഡൽ ഇൻഫറൻസിനായി Intel GPUs-ഉം CPUs-ഉം മാത്രമല്ല, NPUs-ഉം ഉപയോഗിക്കുന്നു.

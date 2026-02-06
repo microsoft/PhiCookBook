@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-12-21T20:54:11+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "pcm"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) na open-source platform wey dem design to manage the end-to-end machine learning lifecycle.

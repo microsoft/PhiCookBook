@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:34:26+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "mr"
-}
--->
 ﻿## C# वापरून Phi लॅब्समध्ये आपले स्वागत आहे
 
 .NET वातावरणात Phi मॉडेल्सच्या विविध शक्तिशाली आवृत्त्यांना कसे एकत्रित करायचे हे दाखवणाऱ्या लॅब्सची निवड येथे आहे.

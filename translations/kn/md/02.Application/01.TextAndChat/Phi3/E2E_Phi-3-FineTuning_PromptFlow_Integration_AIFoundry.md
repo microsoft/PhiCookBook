@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:39:57+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "kn"
-}
--->
 # Azure AI Foundry ನಲ್ಲಿನ Prompt flow ಜೊತೆ ಕಸ್ಟಮ್ Phi-3 ಮಾದರಿಗಳನ್ನು ಸೂಕ್ಷ್ಮವಾಗಿ ಹೊಂದಿಸಿ ಮತ್ತು ಏಕೀಕೃತಗೊಳಿಸಿ
 
 ಈ ಮುಗಿಸಲು ಮುಗಿಸುವ (E2E) ಉದಾಹರಣೆ Microsoft Tech Community ನಿಂದ "[Azure AI Foundry ನಲ್ಲಿ Prompt Flow ಜೊತೆ ಕಸ್ಟಮ್ Phi-3 ಮಾದರಿಗಳನ್ನು ಸೂಕ್ಷ್ಮವಾಗಿ ಹೊಂದಿಸಿ ಮತ್ತು ಏಕೀಕೃತಗೊಳಿಸಿ](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" ಎಂಬ ಮಾರ್ಗದರ್ಶನ ಆಧಾರಿತವಾಗಿದೆ. ಇದು Azure AI Foundry ನಲ್ಲಿನ Prompt flow ಜೊತೆಗೆ ಕಸ್ಟಮ್ Phi-3 ಮಾದರಿಗಳ ಸೂಕ್ಷ್ಮ ಹೊಂದಿಕೆ, ನಿಯೋಜನೆ ಮತ್ತು ಏಕೀಕರಣ ಪ್ರಕ್ರಿಯೆಗಳನ್ನು ಪರಿಚಯಿಸುತ್ತದೆ. E2E ಉದಾಹರಣೆಯಾಗಿ, "[Prompt Flow ಜೊತೆ ಕಸ್ಟಮ್ Phi-3 ಮಾದರಿಗಳನ್ನು ಸೂಕ್ಷ್ಮವಾಗಿ ಹೊಂದಿಸಿ ಮತ್ತು ಏಕೀಕರಿಸಿ](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" ಎಂಬುದು ಲೋಕರಿತವಾಗಿ ಕೋಡ್ ಚಾಲನೆಯಲ್ಲಿತ್ತು, ಆದರೆ ಈ ಪಾಠಪುಸ್ತಕವು ಸಂಪೂರ್ಣವಾಗಿ Azure AI / ML ಸ್ಟುಡಿಯೋಯಲ್ಲಿ ನಿಮ್ಮ ಮಾದರಿಯನ್ನು ಸೂಕ್ಷ್ಮವಾಗಿ ಹೊಂದಿಸುವುದು ಮತ್ತು ಏಕೀಕರಿಸುವುದರ ಮೇಲೆ ಕೇಂದ್ರೀಕರಿಸಿದೆ.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:46:52+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "hu"
-}
--->
 # **Ismerkedés az Azure Machine Learning szolgáltatással**
 
 Az [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) egy felhőalapú szolgáltatás, amely felgyorsítja és kezeli a gépi tanulási (ML) projektek teljes életciklusát.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-10-11T11:54:12+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "et"
-}
--->
 ## **Kasuta Phi-4-multimodal pilte lugemiseks ja koodi genereerimiseks**
 
 Phi-4-multimodalil on tugevad piltide lugemise võimed. Proovime kasutada Pythonit järgmiste funktsioonide rakendamiseks. Pilt kujutab ChatGPT lehte.

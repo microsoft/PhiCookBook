@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:16:57+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "ur"
-}
--->
 **Phi-3 کو QLoRA کے ساتھ فائن ٹیون کرنا**
 
 Microsoft کے Phi-3 Mini زبان کے ماڈل کو [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) کے ذریعے فائن ٹیون کرنا۔

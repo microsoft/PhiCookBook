@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-10-11T12:27:11+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "et"
-}
--->
 # **Phi perekonna kvantiseerimine Generative AI laienduste abil onnxruntime jaoks**
 
 ## **Mis on Generative AI laiendused onnxruntime jaoks**

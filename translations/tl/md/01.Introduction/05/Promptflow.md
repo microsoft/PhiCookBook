@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:43:23+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "tl"
-}
--->
 # **Ipakilala ang Promptflow**
 
 Ang [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) ay isang visual workflow automation tool na nagpapahintulot sa mga gumagamit na gumawa ng automated workflows gamit ang mga pre-built na template at custom connectors. Dinisenyo ito upang tulungan ang mga developer at business analyst na mabilis na makabuo ng mga automated na proseso para sa mga gawain tulad ng pamamahala ng data, kolaborasyon, at pag-optimize ng proseso. Sa Prompt Flow, madali mong mapag-uugnay ang iba't ibang serbisyo, aplikasyon, at sistema, at ma-automate ang mga kumplikadong proseso ng negosyo.

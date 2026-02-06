@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:25:26+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "nl"
-}
--->
 # **Phi-3 gebruiken in Azure AI Foundry**
 
 Met de ontwikkeling van Generative AI hopen we een uniform platform te gebruiken om verschillende LLM- en SLM-modellen, integratie van bedrijfsdata, fine-tuning/RAG-operaties en de evaluatie van verschillende bedrijfsprocessen na integratie van LLM en SLM te beheren, zodat generatieve AI beter kan worden toegepast in slimme applicaties. [Azure AI Foundry](https://ai.azure.com) is een generatief AI-toepassingsplatform op ondernemingsniveau.

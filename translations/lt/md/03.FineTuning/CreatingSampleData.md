@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-09-12T14:39:24+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "lt"
-}
--->
 # Sukurkite vaizdų duomenų rinkinį atsisiųsdami duomenų rinkinį iš Hugging Face ir susijusius vaizdus
 
 ### Apžvalga

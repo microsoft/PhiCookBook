@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:10:18+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "en"
-}
--->
 # **Inference Phi-3 on Android**
 
 Let's explore how you can perform inference with Phi-3-mini on Android devices. Phi-3-mini is a new series of models from Microsoft that enables deployment of Large Language Models (LLMs) on edge devices and IoT devices.

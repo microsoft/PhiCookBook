@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-12-22T02:06:39+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "kn"
-}
--->
 # **Intel OpenVINO ಬಳಸಿ Phi-3.5 ಅನ್ನು ಪ್ರಮಾಣೀಕರಣ ಮಾಡುವುದು**
 
 Intel ಅತ್ಯಂತ ಪರಂಪರಾಧಿಕ CPU ತಯಾರಕರು ಆಗಿದ್ದು ಅನೇಕ ಬಳಕೆದಾರರನ್ನು ಹೊಂದಿದೆ. ಯಂತ್ರಶಿಕ್ಷಣ ಮತ್ತು ಡೀಪ್ ಲರ್ನಿಂಗ್ ಬಿಕ್ಕು ಬೆಳೆಯುವುದರಿಂದ, Intel ಕೂಡ AI ವೇಗೀಕರಣದ ಸ್ಪರ್ಧೆಯಲ್ಲಿ ಸೇರಿಕೊಂಡಿದೆ. ಮಾದರಿ ಇನ್ಫರೆನ್ಸ್‌ಗೆ Intel ಕೇವಲ GPU ಮತ್ತು CPU ಗಳನ್ನೇ ಬಳಸದಿದ್ದು, NPU ಗಳನ್ನು ಸಹ ಬಳಸುತ್ತದೆ.

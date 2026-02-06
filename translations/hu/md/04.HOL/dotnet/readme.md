@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:40:44+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "hu"
-}
--->
 ﻿## Üdvözlünk a Phi laborokban C# használatával
 
 Különböző laborok állnak rendelkezésre, amelyek bemutatják, hogyan lehet integrálni a Phi modellek különböző verzióit egy .NET környezetben.

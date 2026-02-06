@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:34:07+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ur"
-}
--->
 # **اپنا Visual Studio Code GitHub Copilot Chat Microsoft Phi-3 فیملی کے ساتھ بنائیں**
 
 کیا آپ نے GitHub Copilot Chat میں workspace agent استعمال کیا ہے؟ کیا آپ اپنی ٹیم کا اپنا کوڈ ایجنٹ بنانا چاہتے ہیں؟ یہ عملی لیب اوپن سورس ماڈل کو ملا کر ایک انٹرپرائز سطح کے کوڈ بزنس ایجنٹ بنانے کی کوشش کرتی ہے۔

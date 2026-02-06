@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:27:08+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "sl"
-}
--->
 ## **Kako uporabiti Model Builder za kvantizacijo Phi-3.5**
 
 Model Builder zdaj podpira kvantizacijo ONNX modelov za Phi-3.5 Instruct in Phi-3.5-Vision

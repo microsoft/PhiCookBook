@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:46:11+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "sw"
-}
--->
 # **Mwongozo wa OnnxRuntime GenAI Windows GPU**
 
 Mwongozo huu unatoa hatua za kusanidi na kutumia ONNX Runtime (ORT) kwa GPUs kwenye Windows. Umebuniwa kukusaidia kutumia kasi ya GPU kwa mifano yako, kuboresha utendaji na ufanisi.

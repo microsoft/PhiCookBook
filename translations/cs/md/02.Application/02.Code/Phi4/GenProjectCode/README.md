@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:47:03+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "cs"
-}
--->
 ## **Použití Phi-4-mini-mm pro generování kódu**
 
 Phi-4-mini navazuje na silné programovací schopnosti rodiny Phi. Můžete použít Prompt k pokládání otázek týkajících se programování. Samozřejmě, díky přidané silné schopnosti uvažování má ještě lepší programovací dovednosti, například generování projektů podle požadavků. Například generování projektů podle požadavků, jako jsou:

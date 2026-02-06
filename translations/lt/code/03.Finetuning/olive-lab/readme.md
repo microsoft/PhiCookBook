@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-09-12T14:59:43+00:00",
-  "source_file": "code/03.Finetuning/olive-lab/readme.md",
-  "language_code": "lt"
-}
--->
 # Laboratorija. Optimizuokite AI modelius įrenginio inferencijai
 
 ## Įvadas

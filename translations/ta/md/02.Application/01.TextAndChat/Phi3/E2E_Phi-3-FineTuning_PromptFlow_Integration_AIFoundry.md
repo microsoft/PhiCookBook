@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:28:41+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "ta"
-}
--->
 # அசுரு ஏஐ ஃபவுண்ட்ரி-யில் ப்ராம்ட் ஃப்ளோவுடன் தனிப்பயனாக்கப்பட்ட Phi-3 மாதிரிகளை சிறப்பாகத் திருத்தி ஒருங்கிணைப்பு செய்வது
 
 இந்த முழுமையான (E2E) மாதிரி Microsoft Tech Community இலிருந்து "[Azure AI Foundry-இல் Prompt Flow உடன் தனிப்பயனாக்கப்பட்ட Phi-3 மாதிரிகளை நயமாகத் திருத்தி ஒருங்கிணைப்பு செய்வது](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" என்ற வழிகாட்டலை அடிப்படையாகக் கொண்டது. இது Azure AI Foundry-இல் Prompt flow உடன் தனிப்பயனாக்கப்பட்ட Phi-3 மாதிரிகளை நயமாகத் திருத்துதல், பரவல் மற்றும் ஒருங்கிணைக்கும் செயல்முறைகளை அறிமுகப்படுத்துகிறது. உள்ளூர் இயங்கும் குறியீட்டை இயக்குவதற்கு ஈடுபட்ட "[கடைசி வரை E2E மாதிரி, 'Prompt Flow உடன் தனிப்பயனாக்கப்பட்ட Phi-3 மாதிரிகளை நயமாகத் திருத்தி ஒருங்கிணைத்தல்'](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" நுட்பபூர்வமானது, இதன் மாறாக இந்த கையேடு முழுமையாக Azure AI / ML ஸ்டுடியோவில் உங்கள் மாதிரியை நயமாகத் திருத்தி ஒருங்கிணைப்பதுக்கு திருப்பமாக உள்ளது.

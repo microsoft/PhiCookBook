@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:39:12+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "hi"
-}
--->
 # Phi-3.5-vision finetuning रेसिपी
 
 यह huggingface लाइब्रेरीज़ का उपयोग करके Phi-3.5-vision finetuning का आधिकारिक समर्थन है।  

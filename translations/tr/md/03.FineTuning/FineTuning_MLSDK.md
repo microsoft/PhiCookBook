@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:23:07+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "tr"
-}
--->
 ## Azure ML sistem kayıt defterinden chat-completion bileşenlerini kullanarak bir modeli ince ayar yapmak
 
 Bu örnekte, ultrachat_200k veri setini kullanarak 2 kişi arasındaki bir sohbeti tamamlamak için Phi-3-mini-4k-instruct modelinin ince ayarını yapacağız.
