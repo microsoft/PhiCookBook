@@ -8,7 +8,7 @@ Apple MLXフレームワークのコマンドラインを通じて、Loraと組�
 デフォルトでは、MLXフレームワークはtrain、test、evalのjsonl形式を要求し、Loraと組み合わせてファインチューニング作業を完了します。
 
 
-### ***Note:***
+### ***注記:***
 
 1. jsonlデータ形式：
 
@@ -41,7 +41,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Note:***
+## ***注記:***
 
 1. これはLoRAファインチューニングであり、MLXフレームワークはQLoRAを公開していません
 
@@ -175,7 +175,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:*** 
+***注記:*** 
 
 1. 現在、fp32、fp16、INT8の量子化変換をサポートしています
 
