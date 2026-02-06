@@ -12,8 +12,8 @@
     "language_code": "ur"
   },
   "README.md": {
-    "original_hash": "99df4a1312c9e52418d81c3501f630d6",
-    "translation_date": "2026-01-30T01:18:08+00:00",
+    "original_hash": "a83e5e633ef09be03b5610ec97704296",
+    "translation_date": "2026-02-06T08:15:30+00:00",
     "source_file": "README.md",
     "language_code": "ur"
   },
@@ -449,6 +449,12 @@
     "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
     "language_code": "ur"
   },
+  "md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb": {
+    "original_hash": "fcce7b98f4caae511b99cdf0b7ce20a9",
+    "translation_date": "2026-02-06T08:07:05+00:00",
+    "source_file": "md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb",
+    "language_code": "ur"
+  },
   "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md": {
     "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
     "translation_date": "2025-07-17T04:48:40+00:00",
@@ -528,8 +534,8 @@
     "language_code": "ur"
   },
   "md/03.FineTuning/FineTuning_MLSDK.md": {
-    "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-    "translation_date": "2025-07-17T07:01:14+00:00",
+    "original_hash": "aedcf3e4d5245101b2b8d35de4bddf97",
+    "translation_date": "2026-02-06T08:18:57+00:00",
     "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
     "language_code": "ur"
   },
