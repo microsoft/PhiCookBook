@@ -1,44 +1,44 @@
-## Comment utiliser les composants de chat-completion du registre système Azure ML pour affiner un modèle
+## Comment utiliser les composants de chat-completion depuis le registre système Azure ML pour affiner un modèle
 
-Dans cet exemple, nous allons effectuer un fine tuning du modèle Phi-3-mini-4k-instruct pour compléter une conversation entre 2 personnes en utilisant le jeu de données ultrachat_200k.
+Dans cet exemple, nous allons procéder à l'affinement du modèle Phi-3-mini-4k-instruct pour compléter une conversation entre 2 personnes en utilisant le jeu de données ultrachat_200k.
 
 ![MLFineTune](../../../../translated_images/fr/MLFineTune.928d4c6b3767dd35.webp)
 
-Cet exemple vous montrera comment réaliser un fine tuning avec le SDK Azure ML et Python, puis déployer le modèle affiné sur un endpoint en ligne pour des inférences en temps réel.
+L'exemple vous montrera comment effectuer un affinage en utilisant le SDK Azure ML et Python, puis déployer le modèle affiné sur un point de terminaison en ligne pour une inférence en temps réel.
 
 ### Données d'entraînement
 
-Nous utiliserons le jeu de données ultrachat_200k. Il s'agit d'une version fortement filtrée du jeu UltraChat, utilisé pour entraîner Zephyr-7B-β, un modèle de chat 7b à la pointe de la technologie.
+Nous utiliserons le jeu de données ultrachat_200k. Il s'agit d'une version fortement filtrée du jeu de données UltraChat et il a été utilisé pour entraîner Zephyr-7B-β, un modèle de chat 7b à la pointe de la technologie.
 
 ### Modèle
 
-Nous utiliserons le modèle Phi-3-mini-4k-instruct pour montrer comment un utilisateur peut affiner un modèle pour une tâche de chat-completion. Si vous avez ouvert ce notebook depuis une fiche modèle spécifique, pensez à remplacer le nom du modèle.
+Nous utiliserons le modèle Phi-3-mini-4k-instruct pour montrer comment l'utilisateur peut affiner un modèle pour une tâche de chat-completion. Si vous avez ouvert ce notebook depuis une fiche spécifique d'un modèle, n'oubliez pas de remplacer le nom spécifique du modèle.
 
 ### Tâches
 
 - Choisir un modèle à affiner.
-- Sélectionner et explorer les données d'entraînement.
-- Configurer le job de fine tuning.
-- Lancer le job de fine tuning.
+- Choisir et explorer les données d'entraînement.
+- Configurer le job d'affinement.
+- Lancer le job d'affinement.
 - Examiner les métriques d'entraînement et d'évaluation.
 - Enregistrer le modèle affiné.
-- Déployer le modèle affiné pour des inférences en temps réel.
+- Déployer le modèle affiné pour l'inférence en temps réel.
 - Nettoyer les ressources.
 
 ## 1. Configuration des prérequis
 
 - Installer les dépendances
-- Se connecter à l’espace de travail AzureML. Pour en savoir plus, consultez la configuration de l’authentification SDK. Remplacez <WORKSPACE_NAME>, <RESOURCE_GROUP> et <SUBSCRIPTION_ID> ci-dessous.
+- Se connecter à l'espace de travail AzureML. En savoir plus sur la configuration de l'authentification SDK. Remplacez <WORKSPACE_NAME>, <RESOURCE_GROUP> et <SUBSCRIPTION_ID> ci-dessous.
 - Se connecter au registre système azureml
-- Définir un nom d’expérience optionnel
-- Vérifier ou créer un compute.
+- Définir un nom d'expérience optionnel
+- Vérifier ou créer le compute.
 
 > [!NOTE]
-> Les exigences : un nœud GPU unique peut contenir plusieurs cartes GPU. Par exemple, un nœud Standard_NC24rs_v3 possède 4 GPU NVIDIA V100 tandis qu’un Standard_NC12s_v3 en possède 2. Consultez la documentation pour plus d’informations. Le nombre de cartes GPU par nœud est défini dans le paramètre gpus_per_node ci-dessous. Bien configurer cette valeur garantit l’utilisation de tous les GPU du nœud. Les SKU de compute GPU recommandés sont disponibles ici et ici.
+> Les exigences : un seul nœud GPU peut avoir plusieurs cartes GPU. Par exemple, dans un nœud Standard_NC24rs_v3 il y a 4 GPU NVIDIA V100 tandis que dans Standard_NC12s_v3, il y a 2 GPU NVIDIA V100. Référez-vous à la documentation pour cette information. Le nombre de cartes GPU par nœud est défini dans le paramètre gpus_per_node ci-dessous. Renseigner correctement cette valeur garantira l'utilisation de tous les GPU du nœud. Les SKU de compute GPU recommandés se trouvent ici et ici.
 
 ### Bibliothèques Python
 
-Installez les dépendances en exécutant la cellule ci-dessous. Cette étape n’est pas optionnelle si vous travaillez dans un nouvel environnement.
+Installez les dépendances en exécutant la cellule ci-dessous. Ce n'est pas une étape optionnelle si vous exécutez dans un nouvel environnement.
 
 ```bash
 pip install azure-ai-ml
@@ -50,41 +50,41 @@ pip install azureml-mlflow
 
 ### Interaction avec Azure ML
 
-1. Ce script Python sert à interagir avec le service Azure Machine Learning (Azure ML). Voici ce qu’il fait :
+1. Ce script Python est utilisé pour interagir avec le service Azure Machine Learning (Azure ML). Voici ce qu'il fait :
 
-    - Il importe les modules nécessaires des packages azure.ai.ml, azure.identity et azure.ai.ml.entities. Il importe aussi le module time.
+    - Il importe les modules nécessaires depuis azure.ai.ml, azure.identity et azure.ai.ml.entities. Il importe également le module time.
 
-    - Il tente de s’authentifier avec DefaultAzureCredential(), qui simplifie l’authentification pour démarrer rapidement le développement d’applications dans le cloud Azure. En cas d’échec, il utilise InteractiveBrowserCredential(), qui propose une connexion interactive via navigateur.
+    - Il essaie de s'authentifier en utilisant DefaultAzureCredential(), qui offre une expérience d'authentification simplifiée pour démarrer rapidement le développement d'applications dans le cloud Azure. Si cela échoue, il revient à InteractiveBrowserCredential(), qui propose une invite de connexion interactive.
 
-    - Il essaie ensuite de créer une instance MLClient via la méthode from_config, qui lit la configuration dans le fichier config.json par défaut. En cas d’échec, il crée manuellement une instance MLClient en fournissant subscription_id, resource_group_name et workspace_name.
+    - Il essaie ensuite de créer une instance MLClient en utilisant la méthode from_config, qui lit la configuration depuis le fichier par défaut (config.json). Si cela échoue, il crée manuellement une instance MLClient en fournissant subscription_id, resource_group_name et workspace_name.
 
-    - Il crée une autre instance MLClient, cette fois pour le registre Azure ML nommé "azureml". Ce registre stocke les modèles, pipelines de fine tuning et environnements.
+    - Il crée une autre instance MLClient, cette fois pour le registre Azure ML nommé "azureml". Ce registre est l'endroit où sont stockés les modèles, les pipelines d'affinement et les environnements.
 
     - Il définit experiment_name à "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Il génère un timestamp unique en convertissant le temps actuel (en secondes depuis l’époque, en float) en entier puis en chaîne. Ce timestamp peut servir à créer des noms et versions uniques.
+    - Il génère un horodatage unique en convertissant le temps actuel (en secondes depuis l'époque, en nombre flottant) en entier puis en chaîne. Cet horodatage peut être utilisé pour créer des noms et versions uniques.
 
     ```python
-    # Import necessary modules from Azure ML and Azure Identity
+    # Importer les modules nécessaires de Azure ML et Azure Identity
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # Import time module
+    import time  # Importer le module time
     
-    # Try to authenticate using DefaultAzureCredential
+    # Essayer de s'authentifier en utilisant DefaultAzureCredential
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # If DefaultAzureCredential fails, use InteractiveBrowserCredential
+    except Exception as ex:  # Si DefaultAzureCredential échoue, utiliser InteractiveBrowserCredential
         credential = InteractiveBrowserCredential()
     
-    # Try to create an MLClient instance using the default config file
+    # Essayer de créer une instance MLClient en utilisant le fichier de configuration par défaut
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # If that fails, create an MLClient instance by manually providing the details
+    except:  # Si cela échoue, créer une instance MLClient en fournissant manuellement les détails
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,41 +92,41 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # Create another MLClient instance for the Azure ML registry named "azureml"
-    # This registry is where models, fine-tuning pipelines, and environments are stored
+    # Créer une autre instance MLClient pour le registre Azure ML nommé "azureml"
+    # Ce registre est l'endroit où les modèles, les pipelines de fine-tuning et les environnements sont stockés
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # Set the experiment name
+    # Définir le nom de l'expérience
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Generate a unique timestamp that can be used for names and versions that need to be unique
+    # Générer un horodatage unique qui peut être utilisé pour des noms et des versions nécessitant d'être uniques
     timestamp = str(int(time.time()))
     ```
 
 ## 2. Choisir un modèle de base à affiner
 
-1. Phi-3-mini-4k-instruct est un modèle léger de 3,8 milliards de paramètres, à la pointe, construit à partir des jeux de données utilisés pour Phi-2. Ce modèle appartient à la famille Phi-3, et la version Mini existe en deux variantes 4K et 128K, correspondant à la longueur de contexte (en tokens) qu’il peut gérer. Il faut affiner le modèle pour notre usage spécifique. Vous pouvez parcourir ces modèles dans le catalogue de modèles d’AzureML Studio, en filtrant par tâche de chat-completion. Dans cet exemple, nous utilisons Phi-3-mini-4k-instruct. Si vous avez ouvert ce notebook pour un autre modèle, remplacez le nom et la version du modèle en conséquence.
+1. Phi-3-mini-4k-instruct est un modèle léger de 3,8 milliards de paramètres, à la pointe, construit à partir des jeux de données utilisés pour Phi-2. Le modèle appartient à la famille Phi-3, et la version Mini existe en deux variantes, 4K et 128K, qui correspondent à la longueur du contexte (en tokens) qu'il peut supporter. Nous devons affiner le modèle pour notre usage spécifique. Vous pouvez parcourir ces modèles dans le Catalogue de modèles dans AzureML Studio, en filtrant par la tâche chat-completion. Dans cet exemple, nous utilisons le modèle Phi-3-mini-4k-instruct. Si vous avez ouvert ce notebook pour un modèle différent, remplacez le nom du modèle et la version en conséquence.
 
-    > [!NOTE]
-    > la propriété model id du modèle. Elle sera passée en entrée au job de fine tuning. Elle est aussi disponible dans le champ Asset ID de la page de détails du modèle dans le catalogue AzureML Studio.
+> [!NOTE]
+> la propriété id du modèle. Elle sera passée comme entrée au job d'affinement. Elle est également disponible sous le champ Asset ID dans la page de détails du modèle dans le Catalogue de modèles AzureML Studio.
 
-2. Ce script Python interagit avec le service Azure Machine Learning (Azure ML). Voici ce qu’il fait :
+2. Ce script Python interagit avec le service Azure Machine Learning (Azure ML). Voici ce qu'il fait :
 
     - Il définit model_name à "Phi-3-mini-4k-instruct".
 
-    - Il utilise la méthode get de la propriété models de l’objet registry_ml_client pour récupérer la dernière version du modèle avec ce nom dans le registre Azure ML. La méthode get est appelée avec deux arguments : le nom du modèle et un label indiquant de récupérer la dernière version.
+    - Il utilise la méthode get de la propriété models de l'objet registry_ml_client pour récupérer la dernière version du modèle avec ce nom spécifié depuis le registre Azure ML. La méthode get est appelée avec deux arguments : le nom du modèle et un label spécifiant que la dernière version doit être récupérée.
 
-    - Il affiche un message dans la console indiquant le nom, la version et l’id du modèle utilisé pour le fine tuning. La méthode format de la chaîne insère ces valeurs. Le nom, la version et l’id sont accessibles via les propriétés de foundation_model.
+    - Il affiche un message dans la console indiquant le nom, la version et l'id du modèle qui sera utilisé pour l'affinage. La méthode format de la chaîne est utilisée pour insérer ces valeurs dans le message. Le nom, la version et l'id sont les propriétés de l'objet foundation_model.
 
     ```python
-    # Set the model name
+    # Définir le nom du modèle
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Get the latest version of the model from the Azure ML registry
+    # Obtenir la dernière version du modèle depuis le registre Azure ML
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Print the model name, version, and id
-    # This information is useful for tracking and debugging
+    # Imprimer le nom du modèle, la version et l'identifiant
+    # Ces informations sont utiles pour le suivi et le débogage
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
@@ -134,168 +134,167 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Créer un compute à utiliser pour le job
+## 3. Créer un compute à utiliser avec le job
 
-Le job de fine tuning fonctionne UNIQUEMENT avec un compute GPU. La taille du compute dépend de la taille du modèle et il est souvent difficile de choisir le compute adapté. Dans cette cellule, nous guidons l’utilisateur pour sélectionner le compute adéquat.
-
-> [!NOTE]
-> Les computes listés ci-dessous fonctionnent avec la configuration la plus optimisée. Toute modification peut entraîner une erreur Cuda Out Of Memory. Dans ce cas, essayez de passer à un compute plus puissant.
+Le job d'affinage fonctionne UNIQUEMENT avec un compute GPU. La taille du compute dépend de la taille du modèle et, dans la plupart des cas, il devient difficile d'identifier le compute adapté au job. Dans cette cellule, nous guidons l'utilisateur pour choisir le compute approprié.
 
 > [!NOTE]
-> Lors du choix de compute_cluster_size ci-dessous, assurez-vous que le compute est disponible dans votre groupe de ressources. Si un compute n’est pas disponible, vous pouvez faire une demande d’accès aux ressources compute.
+> Les computes listés ci-dessous fonctionnent avec la configuration la plus optimisée. Toute modification de la configuration pourrait entraîner une erreur Cuda Out Of Memory. Dans ce cas, essayez de passer à un compute de taille supérieure.
 
-### Vérification du support du modèle pour le fine tuning
+> [!NOTE]
+> Lors de la sélection de compute_cluster_size ci-dessous, assurez-vous que le compute est disponible dans votre groupe de ressources. Si un compute spécifique n'est pas disponible, vous pouvez faire une demande d'accès aux ressources de compute.
 
-1. Ce script Python interagit avec un modèle Azure Machine Learning (Azure ML). Voici ce qu’il fait :
+### Vérification du modèle pour le support de l'affinage
 
-    - Il importe le module ast, qui fournit des fonctions pour traiter les arbres de la grammaire abstraite Python.
+1. Ce script Python interagit avec un modèle Azure Machine Learning (Azure ML). Voici ce qu'il fait :
 
-    - Il vérifie si l’objet foundation_model (qui représente un modèle dans Azure ML) possède un tag nommé finetune_compute_allow_list. Les tags dans Azure ML sont des paires clé-valeur que vous pouvez créer et utiliser pour filtrer et trier les modèles.
+    - Il importe le module ast, qui fournit des fonctions pour traiter les arbres de syntaxe abstraite de Python.
 
-    - Si le tag finetune_compute_allow_list est présent, il utilise ast.literal_eval pour analyser en toute sécurité la valeur du tag (une chaîne) en une liste Python. Cette liste est assignée à computes_allow_list. Il affiche ensuite un message indiquant qu’un compute doit être créé à partir de cette liste.
+    - Il vérifie si l'objet foundation_model (qui représente un modèle Azure ML) possède un tag nommé finetune_compute_allow_list. Les tags dans Azure ML sont des paires clé-valeur que vous pouvez créer pour filtrer et trier les modèles.
 
-    - Si le tag n’est pas présent, il définit computes_allow_list à None et affiche un message indiquant que le tag finetune_compute_allow_list ne fait pas partie des tags du modèle.
+    - Si le tag finetune_compute_allow_list est présent, il utilise ast.literal_eval pour analyser en sécurité la valeur du tag (une chaîne) en une liste Python. Cette liste est alors assignée à computes_allow_list. Il affiche ensuite un message indiquant qu'un compute doit être créé à partir de cette liste.
 
-    - En résumé, ce script vérifie la présence d’un tag spécifique dans les métadonnées du modèle, convertit sa valeur en liste si elle existe, et informe l’utilisateur.
+    - Si le tag n'est pas présent, il définit computes_allow_list à None et affiche un message indiquant que ce tag ne fait pas partie des tags du modèle.
+
+    - En résumé, ce script vérifie un tag spécifique dans les métadonnées du modèle, convertit la valeur en liste si elle existe et informe l'utilisateur.
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # Importer le module ast, qui fournit des fonctions pour traiter les arbres de la grammaire abstraite de syntaxe Python
     import ast
     
-    # Check if the 'finetune_compute_allow_list' tag is present in the model's tags
+    # Vérifier si le tag 'finetune_compute_allow_list' est présent dans les tags du modèle
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # If the tag is present, use ast.literal_eval to safely parse the tag's value (a string) into a Python list
+        # Si le tag est présent, utiliser ast.literal_eval pour analyser en toute sécurité la valeur du tag (une chaîne) en une liste Python
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # convert string to python list
-        # Print a message indicating that a compute should be created from the list
+        )  # convertir une chaîne en liste Python
+        # Afficher un message indiquant qu'un calcul doit être créé à partir de la liste
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If the tag is not present, set computes_allow_list to None
+        # Si le tag n'est pas présent, définir computes_allow_list sur None
         computes_allow_list = None
-        # Print a message indicating that the 'finetune_compute_allow_list' tag is not part of the model's tags
+        # Afficher un message indiquant que le tag 'finetune_compute_allow_list' ne fait pas partie des tags du modèle
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Vérification de l’instance de compute
+### Vérification de l'instance de compute
 
-1. Ce script Python interagit avec Azure Machine Learning (Azure ML) et effectue plusieurs vérifications sur une instance de compute. Voici ce qu’il fait :
+1. Ce script Python interagit avec le service Azure Machine Learning (Azure ML) et effectue plusieurs vérifications sur une instance de compute. Voici ce qu'il fait :
 
-    - Il tente de récupérer l’instance de compute nommée compute_cluster depuis l’espace de travail Azure ML. Si l’état de provisioning est "failed", il lève une ValueError.
+    - Il essaie de récupérer l'instance de compute nommée dans compute_cluster depuis l'espace de travail Azure ML. Si l'état de provisioning est "failed", il lève une ValueError.
 
-    - Il vérifie si computes_allow_list n’est pas None. Si c’est le cas, il convertit toutes les tailles de compute de la liste en minuscules et vérifie si la taille de l’instance actuelle est dans cette liste. Sinon, il lève une ValueError.
+    - Il vérifie si computes_allow_list n'est pas None. Si ce n’est pas le cas, il convertit tous les tailles de compute de la liste en minuscules et vérifie si la taille de l'instance est dans la liste. Sinon, il lève une ValueError.
 
-    - Si computes_allow_list est None, il vérifie si la taille de l’instance est dans une liste de tailles de VM GPU non supportées. Si oui, il lève une ValueError.
+    - Si computes_allow_list est None, il vérifie si la taille de l'instance est dans une liste de tailles GPU VM non supportées. Si oui, il lève une ValueError.
 
-    - Il récupère la liste de toutes les tailles de compute disponibles dans l’espace de travail. Pour chaque taille, il vérifie si son nom correspond à la taille de l’instance actuelle. Si oui, il récupère le nombre de GPU pour cette taille et définit gpu_count_found à True.
+    - Il récupère la liste de toutes les tailles de compute disponibles dans l'espace de travail. Il parcourt cette liste et pour chaque taille, s'il correspond à la taille de l'instance en cours, il récupère le nombre de GPUs et définit gpu_count_found à True.
 
-    - Si gpu_count_found est True, il affiche le nombre de GPU de l’instance. Sinon, il lève une ValueError.
+    - Si gpu_count_found est True, il affiche le nombre de GPUs dans l'instance. Sinon, il lève une ValueError.
 
-    - En résumé, ce script effectue plusieurs vérifications sur une instance de compute dans Azure ML, notamment son état, sa taille par rapport à une liste autorisée ou interdite, et le nombre de GPU.
+    - En résumé, ce script effectue plusieurs vérifications sur une instance de compute dans un espace de travail Azure ML, incluant l'état de provisioning, la taille, et le nombre de GPUs.
 
     ```python
-    # Print the exception message
+    # Afficher le message d'exception
     print(e)
-    # Raise a ValueError if the compute size is not available in the workspace
+    # Lever une ValueError si la taille de calcul n'est pas disponible dans l'espace de travail
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Retrieve the compute instance from the Azure ML workspace
+    # Récupérer l'instance de calcul depuis l'espace de travail Azure ML
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Check if the provisioning state of the compute instance is "failed"
+    # Vérifier si l'état de provisionnement de l'instance de calcul est "failed"
     if compute.provisioning_state.lower() == "failed":
-        # Raise a ValueError if the provisioning state is "failed"
+        # Lever une ValueError si l'état de provisionnement est "failed"
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
         )
     
-    # Check if computes_allow_list is not None
+    # Vérifier si computes_allow_list n'est pas None
     if computes_allow_list is not None:
-        # Convert all compute sizes in computes_allow_list to lowercase
+        # Convertir toutes les tailles de calcul dans computes_allow_list en minuscules
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # Check if the size of the compute instance is in computes_allow_list_lower_case
+        # Vérifier si la taille de l'instance de calcul est dans computes_allow_list_lower_case
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Raise a ValueError if the size of the compute instance is not in computes_allow_list_lower_case
+            # Lever une ValueError si la taille de l'instance de calcul n'est pas dans computes_allow_list_lower_case
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
     else:
-        # Define a list of unsupported GPU VM sizes
+        # Définir une liste des tailles de VM GPU non supportées
         unsupported_gpu_vm_list = [
             "standard_nc6",
             "standard_nc12",
             "standard_nc24",
             "standard_nc24r",
         ]
-        # Check if the size of the compute instance is in unsupported_gpu_vm_list
+        # Vérifier si la taille de l'instance de calcul est dans unsupported_gpu_vm_list
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Raise a ValueError if the size of the compute instance is in unsupported_gpu_vm_list
+            # Lever une ValueError si la taille de l'instance de calcul est dans unsupported_gpu_vm_list
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # Initialize a flag to check if the number of GPUs in the compute instance has been found
+    # Initialiser un indicateur pour vérifier si le nombre de GPU dans l'instance de calcul a été trouvé
     gpu_count_found = False
-    # Retrieve a list of all available compute sizes in the workspace
+    # Récupérer une liste de toutes les tailles de calcul disponibles dans l'espace de travail
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iterate over the list of available compute sizes
+    # Itérer sur la liste des tailles de calcul disponibles
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Check if the name of the compute size matches the size of the compute instance
+        # Vérifier si le nom de la taille de calcul correspond à la taille de l'instance de calcul
         if compute_sku.name.lower() == compute.size.lower():
-            # If it does, retrieve the number of GPUs for that compute size and set gpu_count_found to True
+            # Si c'est le cas, récupérer le nombre de GPU pour cette taille de calcul et définir gpu_count_found à True
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # If gpu_count_found is True, print the number of GPUs in the compute instance
+    # Si gpu_count_found est True, afficher le nombre de GPU dans l'instance de calcul
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # If gpu_count_found is False, raise a ValueError
+        # Si gpu_count_found est False, lever une ValueError
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
 
-## 4. Choisir le jeu de données pour le fine tuning du modèle
+## 4. Choisir le jeu de données pour affiner le modèle
 
-1. Nous utilisons le jeu de données ultrachat_200k. Ce jeu est divisé en quatre parties, adaptées au fine tuning supervisé (sft).
-Classement de génération (gen). Le nombre d’exemples par partie est indiqué ci-dessous :
+1. Nous utilisons le jeu de données ultrachat_200k. Le jeu de données a quatre fractions, adaptées pour l'affinage supervisé (sft). Classement par génération (gen). Le nombre d'exemples par fraction est indiqué ci-dessous :
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Les cellules suivantes montrent la préparation basique des données pour le fine tuning :
+1. Les prochaines cellules montrent une préparation de données de base pour l'affinage :
 
 ### Visualiser quelques lignes de données
 
-Nous voulons que cet exemple s’exécute rapidement, donc nous sauvegardons les fichiers train_sft et test_sft contenant 5 % des lignes déjà filtrées. Cela signifie que le modèle affiné aura une précision moindre, il ne doit donc pas être utilisé en production.
-Le script download-dataset.py sert à télécharger le jeu ultrachat_200k et à le transformer dans un format consommable par le pipeline de fine tuning. Comme le jeu est volumineux, nous n’en avons ici qu’une partie.
+Nous voulons que cet exemple s'exécute rapidement, donc nous sauvegardons les fichiers train_sft, test_sft contenant 5% des lignes déjà réduites. Cela signifie que le modèle affiné aura une précision plus faible, donc il ne devrait pas être utilisé en production.
+Le script download-dataset.py est utilisé pour télécharger le jeu de données ultrachat_200k et le transformer en un format consommable par le pipeline d'affinage. Comme le jeu de données est volumineux, ici nous n'avons qu'une partie du jeu complet.
 
-1. Le script ci-dessous télécharge seulement 5 % des données. Ce pourcentage peut être augmenté en modifiant le paramètre dataset_split_pc.
+1. Exécuter le script ci-dessous télécharge seulement 5% des données. Ce pourcentage peut être augmenté en modifiant le paramètre dataset_split_pc au pourcentage désiré.
 
-    > [!NOTE]
-    > Certains modèles de langue ont des codes linguistiques différents, donc les noms de colonnes dans le jeu de données doivent refléter cela.
+> [!NOTE]
+> Certains modèles de langue ont des codes de langue différents et donc les noms des colonnes dans le jeu de données doivent refléter cela.
 
 1. Voici un exemple de ce à quoi les données doivent ressembler
-Le jeu de données chat-completion est stocké au format parquet, chaque entrée suivant le schéma suivant :
+Le jeu de données chat-completion est stocké au format parquet avec chaque entrée suivant le schéma suivant :
 
-    - Il s’agit d’un document JSON (JavaScript Object Notation), un format d’échange de données populaire. Ce n’est pas du code exécutable, mais un moyen de stocker et transporter des données. Voici sa structure :
+    - Il s'agit d'un document JSON (JavaScript Object Notation), un format populaire d'échange de données. Ce n'est pas un code exécutable, mais un format pour stocker et transporter des données. Voici sa structure :
 
-    - "prompt" : cette clé contient une chaîne représentant une tâche ou une question posée à un assistant IA.
+    - "prompt" : Cette clé contient une chaîne représentant une tâche ou une question posée à un assistant IA.
 
-    - "messages" : cette clé contient un tableau d’objets. Chaque objet représente un message dans une conversation entre un utilisateur et un assistant IA. Chaque message a deux clés :
+    - "messages" : Cette clé contient un tableau d'objets. Chaque objet représente un message dans une conversation entre un utilisateur et un assistant IA. Chaque objet message a deux clés :
 
-    - "content" : chaîne représentant le contenu du message.
-    - "role" : chaîne indiquant le rôle de l’entité ayant envoyé le message, soit "user" ou "assistant".
-    - "prompt_id" : chaîne représentant un identifiant unique pour le prompt.
+    - "content" : Cette clé contient une chaîne représentant le contenu du message.
+    - "role" : Cette clé contient une chaîne représentant le rôle de l'entité ayant envoyé le message. Cela peut être "user" ou "assistant".
+    - "prompt_id" : Cette clé contient une chaîne représentant un identifiant unique du prompt.
 
-1. Dans ce document JSON spécifique, une conversation est représentée où un utilisateur demande à un assistant IA de créer un protagoniste pour une histoire dystopique. L’assistant répond, puis l’utilisateur demande plus de détails. L’assistant accepte de fournir plus d’informations. Toute la conversation est associée à un identifiant de prompt spécifique.
+1. Dans ce document JSON spécifique, une conversation est présentée où un utilisateur demande à un assistant IA de créer un protagoniste pour une histoire dystopique. L'assistant répond, puis l'utilisateur demande plus de détails. L'assistant accepte de fournir plus de détails. Toute la conversation est associée à un prompt id spécifique.
 
     ```python
     {
@@ -337,107 +336,106 @@ Le jeu de données chat-completion est stocké au format parquet, chaque entrée
 
 ### Télécharger les données
 
-1. Ce script Python sert à télécharger un jeu de données via un script auxiliaire nommé download-dataset.py. Voici ce qu’il fait :
+1. Ce script Python est utilisé pour télécharger un jeu de données en utilisant un script auxiliaire nommé download-dataset.py. Voici ce qu'il fait :
 
-    - Il importe le module os, qui fournit des fonctions pour interagir avec le système d’exploitation.
+    - Il importe le module os, qui fournit un moyen portable d'utiliser des fonctionnalités dépendantes du système d'exploitation.
 
-    - Il utilise os.system pour exécuter le script download-dataset.py dans le shell avec des arguments spécifiques. Ces arguments précisent le jeu à télécharger (HuggingFaceH4/ultrachat_200k), le répertoire de destination (ultrachat_200k_dataset) et le pourcentage de données à récupérer (5). La fonction os.system retourne le code de sortie de la commande, stocké dans exit_status.
+    - Il utilise la fonction os.system pour exécuter le script download-dataset.py dans le shell avec des arguments spécifiques. Les arguments précisent le dataset à télécharger (HuggingFaceH4/ultrachat_200k), le dossier de destination (ultrachat_200k_dataset), et le pourcentage de séparation du jeu de données (5). La fonction os.system retourne le code de sortie de la commande ; ce code est stocké dans exit_status.
 
-    - Il vérifie si exit_status n’est pas 0. Sur les systèmes Unix, un code 0 signifie succès, tout autre code indique une erreur. En cas d’erreur, il lève une Exception avec un message indiquant un problème lors du téléchargement.
+    - Il vérifie si exit_status n'est pas 0. Sous Unix, un code de sortie 0 indique habituellement une exécution réussie, toute autre valeur signale une erreur. Si exit_status n'est pas 0, il lève une Exception avec un message indiquant une erreur lors du téléchargement du dataset.
 
-    - En résumé, ce script lance une commande pour télécharger un jeu de données via un script auxiliaire et lève une exception si la commande échoue.
+    - En résumé, ce script exécute une commande pour télécharger un jeu de données via un script auxiliaire, et lève une exception si la commande échoue.
 
     ```python
-    # Import the os module, which provides a way of using operating system dependent functionality
+    # Importer le module os, qui fournit un moyen d'utiliser des fonctionnalités dépendant du système d'exploitation
     import os
     
-    # Use the os.system function to run the download-dataset.py script in the shell with specific command-line arguments
-    # The arguments specify the dataset to download (HuggingFaceH4/ultrachat_200k), the directory to download it to (ultrachat_200k_dataset), and the percentage of the dataset to split (5)
-    # The os.system function returns the exit status of the command it executed; this status is stored in the exit_status variable
+    # Utiliser la fonction os.system pour exécuter le script download-dataset.py dans le shell avec des arguments spécifiques en ligne de commande
+    # Les arguments spécifient le jeu de données à télécharger (HuggingFaceH4/ultrachat_200k), le répertoire dans lequel le télécharger (ultrachat_200k_dataset), et le pourcentage de fractionnement du jeu de données (5)
+    # La fonction os.system retourne le statut de sortie de la commande qu'elle a exécutée ; ce statut est stocké dans la variable exit_status
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
-    # Check if exit_status is not 0
-    # In Unix-like operating systems, an exit status of 0 usually indicates that a command has succeeded, while any other number indicates an error
-    # If exit_status is not 0, raise an Exception with a message indicating that there was an error downloading the dataset
+    # Vérifier si exit_status n'est pas 0
+    # Dans les systèmes d'exploitation de type Unix, un statut de sortie de 0 indique généralement qu'une commande a réussi, tandis que tout autre numéro indique une erreur
+    # Si exit_status n'est pas 0, lever une Exception avec un message indiquant qu'il y a eu une erreur lors du téléchargement du jeu de données
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
 
-### Charger les données dans un DataFrame
+### Chargement des données dans un DataFrame
 
-1. Ce script Python charge un fichier JSON Lines dans un DataFrame pandas et affiche les 5 premières lignes. Voici ce qu’il fait :
+1. Ce script Python charge un fichier JSON Lines dans un DataFrame pandas et affiche les 5 premières lignes. Voici ce qu'il fait :
 
-    - Il importe la bibliothèque pandas, puissante pour la manipulation et l’analyse de données.
+    - Il importe la bibliothèque pandas, une puissante librairie pour la manipulation et l'analyse de données.
 
-    - Il définit la largeur maximale des colonnes dans l’affichage pandas à 0, ce qui signifie que le texte complet de chaque colonne sera affiché sans troncature.
+    - Il fixe la largeur maximale des colonnes pour l'affichage pandas à 0. Cela signifie que le texte complet de chaque colonne sera affiché sans troncature lors de l'impression du DataFrame.
+    - Il utilise la fonction pd.read_json pour charger le fichier train_sft.jsonl depuis le répertoire ultrachat_200k_dataset dans un DataFrame. L'argument lines=True indique que le fichier est au format JSON Lines, où chaque ligne est un objet JSON distinct.
 
-    - Il utilise pd.read_json pour charger le fichier train_sft.jsonl du répertoire ultrachat_200k_dataset dans un DataFrame. L’argument lines=True indique que le fichier est au format JSON Lines, où chaque ligne est un objet JSON séparé.
-- Il utilise la méthode head pour afficher les 5 premières lignes du DataFrame. Si le DataFrame contient moins de 5 lignes, il affichera toutes les lignes.
+    - Il utilise la méthode head pour afficher les 5 premières lignes du DataFrame. Si le DataFrame contient moins de 5 lignes, il affichera toutes.
 
-- En résumé, ce script charge un fichier JSON Lines dans un DataFrame et affiche les 5 premières lignes avec le texte complet des colonnes.
-
-```python
-    # Import the pandas library, which is a powerful data manipulation and analysis library
+    - En résumé, ce script charge un fichier JSON Lines dans un DataFrame et affiche les 5 premières lignes avec le texte complet des colonnes.
+    
+    ```python
+    # Importez la bibliothèque pandas, qui est une bibliothèque puissante pour la manipulation et l'analyse des données
     import pandas as pd
     
-    # Set the maximum column width for pandas' display options to 0
-    # This means that the full text of each column will be displayed without truncation when the DataFrame is printed
+    # Définissez la largeur maximale des colonnes pour les options d'affichage de pandas à 0
+    # Cela signifie que le texte complet de chaque colonne sera affiché sans troncature lorsque le DataFrame est imprimé
     pd.set_option("display.max_colwidth", 0)
     
-    # Use the pd.read_json function to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame
-    # The lines=True argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # Utilisez la fonction pd.read_json pour charger le fichier train_sft.jsonl depuis le répertoire ultrachat_200k_dataset dans un DataFrame
+    # L'argument lines=True indique que le fichier est au format JSON Lines, où chaque ligne est un objet JSON séparé
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Use the head method to display the first 5 rows of the DataFrame
-    # If the DataFrame has less than 5 rows, it will display all of them
+    # Utilisez la méthode head pour afficher les 5 premières lignes du DataFrame
+    # Si le DataFrame contient moins de 5 lignes, il affichera toutes les lignes
     df.head()
     ```
 
 ## 5. Soumettre le travail de fine tuning en utilisant le modèle et les données comme entrées
 
-Créez le travail qui utilise le composant pipeline de chat-completion. Découvrez tous les paramètres pris en charge pour le fine tuning.
+Créer le travail qui utilise le composant pipeline chat-completion. En savoir plus sur tous les paramètres pris en charge pour le fine tuning.
 
 ### Définir les paramètres de fine tuning
 
-1. Les paramètres de fine tuning peuvent être regroupés en 2 catégories : paramètres d'entraînement, paramètres d'optimisation.
+1. Les paramètres de fine tuning peuvent être regroupés en 2 catégories - paramètres d'entraînement, paramètres d'optimisation
 
-1. Les paramètres d'entraînement définissent les aspects liés à l'entraînement tels que :
+1. Les paramètres d'entraînement définissent les aspects d'entraînement tels que -
 
     - L'optimiseur, le scheduler à utiliser
     - La métrique à optimiser pour le fine tuning
-    - Le nombre d'étapes d'entraînement, la taille des lots, etc.
+    - Le nombre de pas d'entraînement et la taille du batch, etc.
     - Les paramètres d'optimisation aident à optimiser la mémoire GPU et à utiliser efficacement les ressources de calcul.
 
-1. Voici quelques-uns des paramètres appartenant à cette catégorie. Les paramètres d'optimisation varient selon le modèle et sont intégrés avec le modèle pour gérer ces différences.
+1. Voici quelques paramètres qui appartiennent à cette catégorie. Les paramètres d'optimisation diffèrent selon le modèle et sont emballés avec le modèle pour gérer ces variations.
 
     - Activer deepspeed et LoRA
     - Activer l'entraînement en précision mixte
     - Activer l'entraînement multi-nœuds
-
 
 > [!NOTE]
 > Le fine tuning supervisé peut entraîner une perte d'alignement ou un oubli catastrophique. Nous recommandons de vérifier ce problème et d'exécuter une étape d'alignement après le fine tuning.
 
 ### Paramètres de Fine Tuning
 
-1. Ce script Python configure les paramètres pour le fine tuning d'un modèle d'apprentissage automatique. Voici ce qu'il fait en détail :
+1. Ce script Python configure les paramètres pour le fine tuning d'un modèle d'apprentissage automatique. Voici un résumé de ce qu'il fait :
 
-    - Il définit les paramètres d'entraînement par défaut tels que le nombre d'époques, les tailles de lots pour l'entraînement et l'évaluation, le taux d'apprentissage, et le type de scheduler du taux d'apprentissage.
+    - Il configure les paramètres d'entraînement par défaut tels que le nombre d'époques d'entraînement, les tailles des lots pour entraînement et évaluation, le taux d'apprentissage, et le type de scheduler du taux d'apprentissage.
 
-    - Il définit les paramètres d'optimisation par défaut, comme l'application de Layer-wise Relevance Propagation (LoRa) et DeepSpeed, ainsi que le stade DeepSpeed.
+    - Il configure les paramètres d'optimisation par défaut tels que l'application ou non de Layer-wise Relevance Propagation (LoRa) et DeepSpeed, ainsi que le stade DeepSpeed.
 
-    - Il combine les paramètres d'entraînement et d'optimisation dans un dictionnaire unique appelé finetune_parameters.
+    - Il combine les paramètres d'entraînement et d'optimisation en un seul dictionnaire appelé finetune_parameters.
 
-    - Il vérifie si foundation_model possède des paramètres par défaut spécifiques au modèle. Si c'est le cas, il affiche un message d'avertissement et met à jour le dictionnaire finetune_parameters avec ces paramètres spécifiques. La fonction ast.literal_eval est utilisée pour convertir ces paramètres spécifiques du format chaîne en dictionnaire Python.
+    - Il vérifie si le foundation_model a des paramètres par défaut spécifiques au modèle. Si c'est le cas, il affiche un message d'avertissement et met à jour le dictionnaire finetune_parameters avec ces paramètres spécifiques au modèle. La fonction ast.literal_eval est utilisée pour convertir ces paramètres spécifiques du format chaîne en dictionnaire Python.
 
     - Il affiche l'ensemble final des paramètres de fine tuning qui seront utilisés pour l'exécution.
 
     - En résumé, ce script configure et affiche les paramètres pour le fine tuning d'un modèle d'apprentissage automatique, avec la possibilité de remplacer les paramètres par défaut par ceux spécifiques au modèle.
 
     ```python
-    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    # Configurer les paramètres d'entraînement par défaut tels que le nombre d'époques d'entraînement, la taille des lots pour l'entraînement et l'évaluation, le taux d'apprentissage et le type de planificateur de taux d'apprentissage
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -446,28 +444,28 @@ Créez le travail qui utilise le composant pipeline de chat-completion. Découvr
         lr_scheduler_type="cosine",
     )
     
-    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    # Configurer les paramètres d'optimisation par défaut tels que l'application de Layer-wise Relevance Propagation (LoRa) et DeepSpeed, ainsi que le stage de DeepSpeed
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    # Combiner les paramètres d'entraînement et d'optimisation dans un dictionnaire unique appelé finetune_parameters
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Check if the foundation_model has any model-specific default parameters
-    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
-    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    # Vérifier si le foundation_model possède des paramètres par défaut spécifiques au modèle
+    # S'il en a, afficher un message d'avertissement et mettre à jour le dictionnaire finetune_parameters avec ces valeurs par défaut spécifiques au modèle
+    # La fonction ast.literal_eval est utilisée pour convertir les valeurs par défaut spécifiques au modèle d'une chaîne de caractères en dictionnaire Python
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # convert string to python dict
+            ast.literal_eval(  # convertir une chaîne en dictionnaire Python
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # Print the final set of fine-tuning parameters that will be used for the run
+    # Afficher l'ensemble final des paramètres de fine-tuning qui seront utilisés pour l'exécution
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
@@ -475,55 +473,55 @@ Créez le travail qui utilise le composant pipeline de chat-completion. Découvr
 
 ### Pipeline d'entraînement
 
-1. Ce script Python définit une fonction pour générer un nom d'affichage pour un pipeline d'entraînement en apprentissage automatique, puis appelle cette fonction pour générer et afficher ce nom. Voici ce qu'il fait en détail :
+1. Ce script Python définit une fonction pour générer un nom d'affichage pour un pipeline d'entraînement en apprentissage automatique, puis appelle cette fonction pour générer et afficher ce nom. Voici un résumé de ce qu'il fait :
 
-1. La fonction get_pipeline_display_name est définie. Cette fonction génère un nom d'affichage basé sur divers paramètres liés au pipeline d'entraînement.
+1. La fonction get_pipeline_display_name est définie. Cette fonction génère un nom d'affichage basé sur plusieurs paramètres liés au pipeline d'entraînement.
 
-1. À l'intérieur de la fonction, elle calcule la taille totale du lot en multipliant la taille du lot par appareil, le nombre d'étapes d'accumulation de gradients, le nombre de GPU par nœud, et le nombre de nœuds utilisés pour le fine tuning.
+1. À l'intérieur de la fonction, elle calcule la taille totale du batch en multipliant la taille du batch par périphérique, le nombre d'étapes d'accumulation de gradient, le nombre de GPU par nœud, et le nombre de nœuds utilisés pour le fine tuning.
 
-1. Elle récupère plusieurs autres paramètres tels que le type de scheduler du taux d'apprentissage, si DeepSpeed est appliqué, le stade DeepSpeed, si Layer-wise Relevance Propagation (LoRa) est appliqué, la limite du nombre de checkpoints du modèle à conserver, et la longueur maximale de la séquence.
+1. Elle récupère plusieurs autres paramètres comme le type de scheduler de taux d'apprentissage, si DeepSpeed est appliqué, le stade DeepSpeed, si Layer-wise Relevance Propagation (LoRa) est appliqué, la limite du nombre de checkpoints à conserver et la longueur maximale de séquence.
 
-1. Elle construit une chaîne de caractères incluant tous ces paramètres, séparés par des tirets. Si DeepSpeed ou LoRa est appliqué, la chaîne inclut "ds" suivi du stade DeepSpeed, ou "lora", respectivement. Sinon, elle inclut "nods" ou "nolora", respectivement.
+1. Elle construit une chaîne qui inclut tous ces paramètres, séparés par des traits d'union. Si DeepSpeed ou LoRa est appliqué, la chaîne inclut "ds" suivi du stade DeepSpeed, ou "lora" respectivement. Sinon, elle inclut "nods" ou "nolora" respectivement.
 
 1. La fonction retourne cette chaîne, qui sert de nom d'affichage pour le pipeline d'entraînement.
 
-1. Après la définition de la fonction, elle est appelée pour générer le nom d'affichage, qui est ensuite affiché.
+1. Après la définition de la fonction, celle-ci est appelée pour générer le nom d'affichage, qui est ensuite affiché.
 
-1. En résumé, ce script génère un nom d'affichage pour un pipeline d'entraînement en apprentissage automatique basé sur divers paramètres, puis affiche ce nom.
+1. En résumé, ce script génère un nom d'affichage pour un pipeline d'entraînement en apprentissage automatique basé sur plusieurs paramètres, puis affiche ce nom.
 
     ```python
-    # Define a function to generate a display name for the training pipeline
+    # Définir une fonction pour générer un nom d'affichage pour le pipeline d'entraînement
     def get_pipeline_display_name():
-        # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
+        # Calculer la taille totale du lot en multipliant la taille du lot par appareil, le nombre d'étapes d'accumulation de gradient, le nombre de GPU par nœud et le nombre de nœuds utilisés pour l'affinage
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Retrieve the learning rate scheduler type
+        # Récupérer le type de planificateur de taux d'apprentissage
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Retrieve whether DeepSpeed is applied
+        # Récupérer si DeepSpeed est appliqué
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Retrieve the DeepSpeed stage
+        # Récupérer le stade de DeepSpeed
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # If DeepSpeed is applied, include "ds" followed by the DeepSpeed stage in the display name; if not, include "nods"
+        # Si DeepSpeed est appliqué, inclure "ds" suivi du stade DeepSpeed dans le nom d'affichage ; sinon, inclure "nods"
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Retrieve whether Layer-wise Relevance Propagation (LoRa) is applied
+        # Récupérer si la propagation de pertinence par couche (LoRa) est appliquée
         lora = finetune_parameters.get("apply_lora", "false")
-        # If LoRa is applied, include "lora" in the display name; if not, include "nolora"
+        # Si LoRa est appliqué, inclure "lora" dans le nom d'affichage ; sinon, inclure "nolora"
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Retrieve the limit on the number of model checkpoints to keep
+        # Récupérer la limite du nombre de points de contrôle du modèle à conserver
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # Retrieve the maximum sequence length
+        # Récupérer la longueur maximale de la séquence
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Construct the display name by concatenating all these parameters, separated by hyphens
+        # Construire le nom d'affichage en concaténant tous ces paramètres, séparés par des traits d'union
         return (
             model_name
             + "-"
@@ -540,192 +538,192 @@ Créez le travail qui utilise le composant pipeline de chat-completion. Découvr
             + f"-seqlen{seq_len}"
         )
     
-    # Call the function to generate the display name
+    # Appeler la fonction pour générer le nom d'affichage
     pipeline_display_name = get_pipeline_display_name()
-    # Print the display name
+    # Imprimer le nom d'affichage
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
 ### Configuration du Pipeline
 
-Ce script Python définit et configure un pipeline d'apprentissage automatique en utilisant le SDK Azure Machine Learning. Voici ce qu'il fait en détail :
+Ce script Python définit et configure un pipeline d'apprentissage automatique en utilisant le SDK Azure Machine Learning. Voici un résumé de ce qu'il fait :
 
 1. Il importe les modules nécessaires du SDK Azure AI ML.
 
 1. Il récupère un composant pipeline nommé "chat_completion_pipeline" depuis le registre.
 
-1. Il définit un travail pipeline en utilisant le décorateur `@pipeline` et la fonction `create_pipeline`. Le nom du pipeline est défini par `pipeline_display_name`.
+1. Il définit un job pipeline avec le décorateur `@pipeline` et la fonction `create_pipeline`. Le nom du pipeline est défini comme `pipeline_display_name`.
 
-1. À l'intérieur de la fonction `create_pipeline`, il initialise le composant pipeline récupéré avec divers paramètres, incluant le chemin du modèle, les clusters de calcul pour différentes étapes, les partitions de jeu de données pour l'entraînement et le test, le nombre de GPU à utiliser pour le fine tuning, et d'autres paramètres de fine tuning.
+1. À l'intérieur de la fonction `create_pipeline`, il initialise le composant pipeline récupéré avec divers paramètres, y compris le chemin du modèle, les clusters de calcul pour différentes étapes, les fractions de dataset pour entraînement et test, le nombre de GPU à utiliser pour le fine tuning, et d'autres paramètres de fine tuning.
 
-1. Il mappe la sortie du travail de fine tuning à la sortie du travail pipeline. Cela permet d'enregistrer facilement le modèle fine tuné, ce qui est nécessaire pour déployer le modèle sur un endpoint en ligne ou batch.
+1. Il mappe la sortie du travail de fine tuning à la sortie du job du pipeline. Cela permet de facilement enregistrer le modèle affiné, ce qui est nécessaire pour déployer le modèle sur un endpoint en ligne ou batch.
 
 1. Il crée une instance du pipeline en appelant la fonction `create_pipeline`.
 
-1. Il définit le paramètre `force_rerun` du pipeline à `True`, ce qui signifie que les résultats mis en cache des travaux précédents ne seront pas utilisés.
+1. Il règle l'option `force_rerun` du pipeline sur `True`, ce qui signifie que les résultats mis en cache des précédents travaux ne seront pas utilisés.
 
-1. Il définit le paramètre `continue_on_step_failure` du pipeline à `False`, ce qui signifie que le pipeline s'arrêtera si une étape échoue.
+1. Il règle l'option `continue_on_step_failure` du pipeline sur `False`, ce qui signifie que le pipeline s'arrêtera si une étape échoue.
 
-1. En résumé, ce script définit et configure un pipeline d'apprentissage automatique pour une tâche de chat completion en utilisant le SDK Azure Machine Learning.
+1. En résumé, ce script définit et configure un pipeline d'apprentissage automatique pour une tâche de complétion de chat en utilisant le SDK Azure Machine Learning.
 
     ```python
-    # Import necessary modules from the Azure AI ML SDK
+    # Importer les modules nécessaires depuis le SDK Azure AI ML
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Fetch the pipeline component named "chat_completion_pipeline" from the registry
+    # Récupérer le composant de pipeline nommé "chat_completion_pipeline" depuis le registre
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Define the pipeline job using the @pipeline decorator and the function create_pipeline
-    # The name of the pipeline is set to pipeline_display_name
+    # Définir le job pipeline en utilisant le décorateur @pipeline et la fonction create_pipeline
+    # Le nom du pipeline est défini à pipeline_display_name
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Initialize the fetched pipeline component with various parameters
-        # These include the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters
+        # Initialiser le composant de pipeline récupéré avec différents paramètres
+        # Ceux-ci incluent le chemin du modèle, les clusters de calcul pour différentes étapes, les fractions de jeu de données pour l'entraînement et le test, le nombre de GPU à utiliser pour l'affinage, et d'autres paramètres d'affinage
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Map the dataset splits to parameters
+            # Mapper les fractions de jeu de données aux paramètres
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # Training settings
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Set to the number of GPUs available in the compute
+            # Paramètres d'entraînement
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # Défini sur le nombre de GPU disponibles dans le calcul
             **finetune_parameters
         )
         return {
-            # Map the output of the fine tuning job to the output of pipeline job
-            # This is done so that we can easily register the fine tuned model
-            # Registering the model is required to deploy the model to an online or batch endpoint
+            # Mapper la sortie du job d'affinage à la sortie du job pipeline
+            # Ceci est fait afin que nous puissions enregistrer facilement le modèle affiné
+            # L'enregistrement du modèle est nécessaire pour déployer le modèle vers un endpoint en ligne ou en batch
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Create an instance of the pipeline by calling the create_pipeline function
+    # Créer une instance du pipeline en appelant la fonction create_pipeline
     pipeline_object = create_pipeline()
     
-    # Don't use cached results from previous jobs
+    # Ne pas utiliser les résultats mis en cache des jobs précédents
     pipeline_object.settings.force_rerun = True
     
-    # Set continue on step failure to False
-    # This means that the pipeline will stop if any step fails
+    # Définir la poursuite en cas d'échec d'étape sur False
+    # Cela signifie que le pipeline s'arrêtera si une étape échoue
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Soumettre le travail
+### Soumettre le Job
 
-1. Ce script Python soumet un travail pipeline d'apprentissage automatique à un workspace Azure Machine Learning, puis attend la fin du travail. Voici ce qu'il fait en détail :
+1. Ce script Python soumet un job pipeline d'apprentissage automatique à un workspace Azure Machine Learning puis attend que le job soit terminé. Voici un résumé de ce qu'il fait :
 
-    - Il appelle la méthode create_or_update de l'objet jobs dans workspace_ml_client pour soumettre le travail pipeline. Le pipeline à exécuter est spécifié par pipeline_object, et l'expérience sous laquelle le travail est lancé est spécifiée par experiment_name.
+    - Il appelle la méthode create_or_update de l'objet jobs dans workspace_ml_client pour soumettre le job pipeline. Le pipeline à exécuter est spécifié par pipeline_object, et l'expérience sous laquelle le job est exécuté est spécifiée par experiment_name.
 
-    - Il appelle ensuite la méthode stream de l'objet jobs dans workspace_ml_client pour attendre la fin du travail pipeline. Le travail à attendre est spécifié par l'attribut name de l'objet pipeline_job.
+    - Il appelle ensuite la méthode stream de l'objet jobs dans workspace_ml_client pour attendre que le job pipeline soit terminé. Le job à attendre est spécifié par l'attribut name de pipeline_job.
 
-    - En résumé, ce script soumet un travail pipeline d'apprentissage automatique à un workspace Azure Machine Learning, puis attend la fin du travail.
+    - En résumé, ce script soumet un job pipeline d'apprentissage automatique à un workspace Azure Machine Learning puis attend que le job soit terminé.
 
     ```python
-    # Submit the pipeline job to the Azure Machine Learning workspace
-    # The pipeline to be run is specified by pipeline_object
-    # The experiment under which the job is run is specified by experiment_name
+    # Soumettre le job pipeline à l'espace de travail Azure Machine Learning
+    # Le pipeline à exécuter est spécifié par pipeline_object
+    # L'expérience sous laquelle le job est exécuté est spécifiée par experiment_name
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Wait for the pipeline job to complete
-    # The job to wait for is specified by the name attribute of the pipeline_job object
+    # Attendre que le job pipeline soit terminé
+    # Le job à attendre est spécifié par l'attribut name de l'objet pipeline_job
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. Enregistrer le modèle fine tuné dans le workspace
+## 6. Enregistrer le modèle affiné dans le workspace
 
-Nous allons enregistrer le modèle issu de la sortie du travail de fine tuning. Cela permettra de suivre la filiation entre le modèle fine tuné et le travail de fine tuning. Ce dernier suit également la filiation avec le modèle de base, les données et le code d'entraînement.
+Nous allons enregistrer le modèle issu du travail de fine tuning. Cela permettra de tracer la lignée entre le modèle affiné et le travail de fine tuning. Le travail de fine tuning, de plus, trace la lignée vers le modèle de base (foundation model), les données et le code d'entraînement.
 
 ### Enregistrement du modèle ML
 
-1. Ce script Python enregistre un modèle d'apprentissage automatique entraîné dans un pipeline Azure Machine Learning. Voici ce qu'il fait en détail :
+1. Ce script Python enregistre un modèle d'apprentissage automatique qui a été entraîné dans un pipeline Azure Machine Learning. Voici un résumé de ce qu'il fait :
 
     - Il importe les modules nécessaires du SDK Azure AI ML.
 
-    - Il vérifie si la sortie trained_model est disponible depuis le travail pipeline en appelant la méthode get de l'objet jobs dans workspace_ml_client et en accédant à son attribut outputs.
+    - Il vérifie si la sortie trained_model est disponible depuis le job pipeline en appelant la méthode get de l'objet jobs dans workspace_ml_client et en accédant à son attribut outputs.
 
-    - Il construit un chemin vers le modèle entraîné en formatant une chaîne avec le nom du travail pipeline et le nom de la sortie ("trained_model").
+    - Il construit un chemin vers le modèle entraîné en formatant une chaîne avec le nom du job pipeline et le nom de la sortie ("trained_model").
 
-    - Il définit un nom pour le modèle fine tuné en ajoutant "-ultrachat-200k" au nom original du modèle et en remplaçant les slashs par des tirets.
+    - Il définit un nom pour le modèle affiné en ajoutant "-ultrachat-200k" au nom original du modèle et en remplaçant les slash par des traits d'union.
 
-    - Il prépare l'enregistrement du modèle en créant un objet Model avec divers paramètres, incluant le chemin vers le modèle, le type de modèle (modèle MLflow), le nom et la version du modèle, ainsi qu'une description.
+    - Il prépare l'enregistrement du modèle en créant un objet Model avec divers paramètres, dont le chemin vers le modèle, le type de modèle (modèle MLflow), le nom et la version du modèle, ainsi qu'une description du modèle.
 
     - Il enregistre le modèle en appelant la méthode create_or_update de l'objet models dans workspace_ml_client avec l'objet Model en argument.
 
     - Il affiche le modèle enregistré.
 
-1. En résumé, ce script enregistre un modèle d'apprentissage automatique entraîné dans un pipeline Azure Machine Learning.
-
+1. En résumé, ce script enregistre un modèle d'apprentissage automatique qui a été entraîné dans un pipeline Azure Machine Learning.
+    
     ```python
-    # Import necessary modules from the Azure AI ML SDK
+    # Importer les modules nécessaires depuis le SDK Azure AI ML
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Check if the `trained_model` output is available from the pipeline job
+    # Vérifier si la sortie `trained_model` est disponible à partir du pipeline job
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Construct a path to the trained model by formatting a string with the name of the pipeline job and the name of the output ("trained_model")
+    # Construire un chemin vers le modèle entraîné en formatant une chaîne avec le nom du pipeline job et le nom de la sortie ("trained_model")
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Define a name for the fine-tuned model by appending "-ultrachat-200k" to the original model name and replacing any slashes with hyphens
+    # Définir un nom pour le modèle affiné en ajoutant "-ultrachat-200k" au nom du modèle original et en remplaçant les barres obliques par des tirets
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Prepare to register the model by creating a Model object with various parameters
-    # These include the path to the model, the type of the model (MLflow model), the name and version of the model, and a description of the model
+    # Préparer l'enregistrement du modèle en créant un objet Model avec divers paramètres
+    # Ceux-ci incluent le chemin vers le modèle, le type du modèle (modèle MLflow), le nom et la version du modèle, ainsi qu'une description du modèle
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Use timestamp as version to avoid version conflict
+        version=timestamp,  # Utiliser un horodatage comme version pour éviter les conflits de version
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Register the model by calling the create_or_update method of the models object in the workspace_ml_client with the Model object as the argument
+    # Enregistrer le modèle en appelant la méthode create_or_update de l'objet models dans workspace_ml_client avec l'objet Model comme argument
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
     
-    # Print the registered model
+    # Afficher le modèle enregistré
     print("registered model: \n", registered_model)
     ```
 
-## 7. Déployer le modèle fine tuné sur un endpoint en ligne
+## 7. Déployer le modèle affiné sur un endpoint en ligne
 
-Les endpoints en ligne fournissent une API REST durable qui peut être utilisée pour intégrer des applications nécessitant d'utiliser le modèle.
+Les endpoints en ligne offrent une API REST durable pouvant être utilisée pour intégrer des applications qui doivent utiliser le modèle.
 
 ### Gérer l'Endpoint
 
-1. Ce script Python crée un endpoint en ligne géré dans Azure Machine Learning pour un modèle enregistré. Voici ce qu'il fait en détail :
+1. Ce script Python crée un endpoint en ligne managé dans Azure Machine Learning pour un modèle enregistré. Voici un résumé de ce qu'il fait :
 
     - Il importe les modules nécessaires du SDK Azure AI ML.
 
     - Il définit un nom unique pour l'endpoint en ligne en ajoutant un horodatage à la chaîne "ultrachat-completion-".
 
-    - Il prépare la création de l'endpoint en ligne en créant un objet ManagedOnlineEndpoint avec divers paramètres, incluant le nom de l'endpoint, une description, et le mode d'authentification ("key").
+    - Il prépare la création de l'endpoint en ligne en créant un objet ManagedOnlineEndpoint avec divers paramètres, y compris le nom de l'endpoint, une description de l'endpoint, et le mode d'authentification ("key").
 
-    - Il crée l'endpoint en ligne en appelant la méthode begin_create_or_update de workspace_ml_client avec l'objet ManagedOnlineEndpoint en argument. Il attend ensuite la fin de l'opération en appelant la méthode wait.
+    - Il crée l'endpoint en ligne en appelant la méthode begin_create_or_update de workspace_ml_client avec l'objet ManagedOnlineEndpoint en argument, puis attend que l'opération de création soit terminée en appelant wait.
 
-1. En résumé, ce script crée un endpoint en ligne géré dans Azure Machine Learning pour un modèle enregistré.
+1. En résumé, ce script crée un endpoint en ligne managé dans Azure Machine Learning pour un modèle enregistré.
 
     ```python
-    # Import necessary modules from the Azure AI ML SDK
+    # Importer les modules nécessaires du SDK Azure AI ML
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
         ManagedOnlineDeployment,
@@ -733,11 +731,11 @@ Les endpoints en ligne fournissent une API REST durable qui peut être utilisée
         OnlineRequestSettings,
     )
     
-    # Define a unique name for the online endpoint by appending a timestamp to the string "ultrachat-completion-"
+    # Définir un nom unique pour le point de terminaison en ligne en ajoutant un horodatage à la chaîne "ultrachat-completion-"
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Prepare to create the online endpoint by creating a ManagedOnlineEndpoint object with various parameters
-    # These include the name of the endpoint, a description of the endpoint, and the authentication mode ("key")
+    # Préparer la création du point de terminaison en ligne en créant un objet ManagedOnlineEndpoint avec divers paramètres
+    # Ceux-ci incluent le nom du point de terminaison, une description du point de terminaison, et le mode d'authentification ("key")
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -746,56 +744,56 @@ Les endpoints en ligne fournissent une API REST durable qui peut être utilisée
         auth_mode="key",
     )
     
-    # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
-    # Then wait for the creation operation to complete by calling the wait method
+    # Créer le point de terminaison en ligne en appelant la méthode begin_create_or_update du workspace_ml_client avec l'objet ManagedOnlineEndpoint comme argument
+    # Puis attendre la fin de l'opération de création en appelant la méthode wait
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> Vous pouvez trouver ici la liste des SKU supportés pour le déploiement - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Vous pouvez trouver ici la liste des SKU prises en charge pour le déploiement - [Liste des SKU pour endpoints en ligne managés](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### Déployer le modèle ML
+### Déploiement du modèle ML
 
-1. Ce script Python déploie un modèle d'apprentissage automatique enregistré sur un endpoint en ligne géré dans Azure Machine Learning. Voici ce qu'il fait en détail :
+1. Ce script Python déploie un modèle d'apprentissage automatique enregistré sur un endpoint en ligne managé dans Azure Machine Learning. Voici un résumé de ce qu'il fait :
 
-    - Il importe le module ast, qui fournit des fonctions pour traiter les arbres de la grammaire abstraite Python.
+    - Il importe le module ast, qui fournit des fonctions pour traiter les arbres de la syntaxe abstraite Python.
 
     - Il définit le type d'instance pour le déploiement à "Standard_NC6s_v3".
 
-    - Il vérifie si le tag inference_compute_allow_list est présent dans foundation_model. S'il l'est, il convertit la valeur du tag de chaîne en liste Python et l'assigne à inference_computes_allow_list. Sinon, il définit inference_computes_allow_list à None.
+    - Il vérifie si la balise inference_compute_allow_list est présente dans le foundation model. Si oui, il convertit la valeur de la balise de chaîne en liste Python et l'affecte à inference_computes_allow_list. Sinon, il définit inference_computes_allow_list à None.
 
-    - Il vérifie si le type d'instance spécifié est dans la liste autorisée. Sinon, il affiche un message demandant à l'utilisateur de choisir un type d'instance dans la liste autorisée.
+    - Il vérifie si le type d'instance spécifié fait partie de la liste autorisée. Si ce n'est pas le cas, il affiche un message demandant à l'utilisateur de sélectionner un type d'instance dans la liste autorisée.
 
-    - Il prépare la création du déploiement en créant un objet ManagedOnlineDeployment avec divers paramètres, incluant le nom du déploiement, le nom de l'endpoint, l'ID du modèle, le type et le nombre d'instances, les paramètres du probe de vivacité, et les paramètres de requête.
+    - Il prépare la création du déploiement en créant un objet ManagedOnlineDeployment avec divers paramètres, incluant le nom du déploiement, le nom de l'endpoint, l'ID du modèle, le type et nombre d'instance, les paramètres du probe de vivacité, et les paramètres de requête.
 
-    - Il crée le déploiement en appelant la méthode begin_create_or_update de workspace_ml_client avec l'objet ManagedOnlineDeployment en argument. Il attend ensuite la fin de l'opération en appelant la méthode wait.
+    - Il crée le déploiement en appelant la méthode begin_create_or_update de workspace_ml_client avec l'objet ManagedOnlineDeployment en argument, puis attend que l'opération de création soit terminée en appelant wait.
 
-    - Il configure le trafic de l'endpoint pour diriger 100 % du trafic vers le déploiement "demo".
+    - Il règle le trafic de l'endpoint pour diriger 100% du trafic vers le déploiement "demo".
 
-    - Il met à jour l'endpoint en appelant la méthode begin_create_or_update de workspace_ml_client avec l'objet endpoint en argument. Il attend ensuite la fin de la mise à jour en appelant la méthode result.
+    - Il met à jour l'endpoint en appelant la méthode begin_create_or_update de workspace_ml_client avec l'objet endpoint en argument, puis attend que la mise à jour soit terminée en appelant result.
 
-1. En résumé, ce script déploie un modèle d'apprentissage automatique enregistré sur un endpoint en ligne géré dans Azure Machine Learning.
+1. En résumé, ce script déploie un modèle d'apprentissage automatique enregistré sur un endpoint en ligne managé dans Azure Machine Learning.
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # Importez le module ast, qui fournit des fonctions pour traiter les arbres de la grammaire syntaxique abstraite Python
     import ast
     
-    # Set the instance type for the deployment
+    # Définir le type d'instance pour le déploiement
     instance_type = "Standard_NC6s_v3"
     
-    # Check if the `inference_compute_allow_list` tag is present in the foundation model
+    # Vérifiez si la balise `inference_compute_allow_list` est présente dans le modèle fondation
     if "inference_compute_allow_list" in foundation_model.tags:
-        # If it is, convert the tag value from a string to a Python list and assign it to `inference_computes_allow_list`
+        # Si c'est le cas, convertissez la valeur de la balise d'une chaîne en une liste Python et assignez-la à `inference_computes_allow_list`
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If it's not, set `inference_computes_allow_list` to `None`
+        # Sinon, définissez `inference_computes_allow_list` sur `None`
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Check if the specified instance type is in the allow list
+    # Vérifiez si le type d'instance spécifié est dans la liste autorisée
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -804,7 +802,7 @@ Les endpoints en ligne fournissent une API REST durable qui peut être utilisée
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # Prepare to create the deployment by creating a `ManagedOnlineDeployment` object with various parameters
+    # Préparez-vous à créer le déploiement en créant un objet `ManagedOnlineDeployment` avec divers paramètres
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -815,25 +813,25 @@ Les endpoints en ligne fournissent une API REST durable qui peut être utilisée
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Create the deployment by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `ManagedOnlineDeployment` object as the argument
-    # Then wait for the creation operation to complete by calling the `wait` method
+    # Créez le déploiement en appelant la méthode `begin_create_or_update` du `workspace_ml_client` avec l'objet `ManagedOnlineDeployment` comme argument
+    # Ensuite, attendez que l'opération de création soit terminée en appelant la méthode `wait`
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Set the traffic of the endpoint to direct 100% of the traffic to the "demo" deployment
+    # Configurez le trafic de l'endpoint pour diriger 100 % du trafic vers le déploiement "demo"
     endpoint.traffic = {"demo": 100}
     
-    # Update the endpoint by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `endpoint` object as the argument
-    # Then wait for the update operation to complete by calling the `result` method
+    # Mettez à jour l'endpoint en appelant la méthode `begin_create_or_update` du `workspace_ml_client` avec l'objet `endpoint` comme argument
+    # Ensuite, attendez que l'opération de mise à jour soit terminée en appelant la méthode `result`
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
 ## 8. Tester l'endpoint avec des données d'exemple
 
-Nous allons récupérer des données d'exemple depuis le jeu de test et les soumettre à l'endpoint en ligne pour inférence. Nous afficherons ensuite les labels prédits aux côtés des labels réels.
+Nous allons récupérer des données d'exemple depuis le jeu de test et les soumettre à l'endpoint en ligne pour inférence. Nous afficherons ensuite les labels prédits aux côtés des labels de référence.
 
 ### Lecture des résultats
 
-1. Ce script Python lit un fichier JSON Lines dans un DataFrame pandas, prend un échantillon aléatoire, et réinitialise l'index. Voici ce qu'il fait en détail :
+1. Ce script Python lit un fichier JSON Lines dans un DataFrame pandas, prend un échantillon aléatoire, et réinitialise l'index. Voici un résumé de ce qu'il fait :
 
     - Il lit le fichier ./ultrachat_200k_dataset/test_gen.jsonl dans un DataFrame pandas. La fonction read_json est utilisée avec l'argument lines=True car le fichier est au format JSON Lines, où chaque ligne est un objet JSON distinct.
 
@@ -841,49 +839,49 @@ Nous allons récupérer des données d'exemple depuis le jeu de test et les soum
 
     - Il réinitialise l'index du DataFrame. La fonction reset_index est utilisée avec l'argument drop=True pour supprimer l'index original et le remplacer par un nouvel index d'entiers par défaut.
 
-    - Il affiche les 2 premières lignes du DataFrame avec la fonction head(2). Cependant, comme le DataFrame ne contient qu'une seule ligne après l'échantillonnage, seule cette ligne sera affichée.
+    - Il affiche les 2 premières lignes du DataFrame en utilisant la fonction head avec l'argument 2. Cependant, puisque le DataFrame ne contient qu'une seule ligne après l'échantillonnage, cela affichera uniquement cette ligne.
 
-1. En résumé, ce script lit un fichier JSON Lines dans un DataFrame pandas, prend un échantillon aléatoire d'une ligne, réinitialise l'index, et affiche la première ligne.
-
+1. En résumé, ce script lit un fichier JSON Lines dans un DataFrame pandas, prend un échantillon aléatoire d'une ligne, réinitialise l'index et affiche la première ligne.
+    
     ```python
-    # Import pandas library
+    # Importer la bibliothèque pandas
     import pandas as pd
     
-    # Read the JSON Lines file './ultrachat_200k_dataset/test_gen.jsonl' into a pandas DataFrame
-    # The 'lines=True' argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # Lire le fichier JSON Lines './ultrachat_200k_dataset/test_gen.jsonl' dans un DataFrame pandas
+    # L'argument 'lines=True' indique que le fichier est au format JSON Lines, où chaque ligne est un objet JSON séparé
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Take a random sample of 1 row from the DataFrame
-    # The 'n=1' argument specifies the number of random rows to select
+    # Prendre un échantillon aléatoire d'une ligne du DataFrame
+    # L'argument 'n=1' spécifie le nombre de lignes aléatoires à sélectionner
     test_df = test_df.sample(n=1)
     
-    # Reset the index of the DataFrame
-    # The 'drop=True' argument indicates that the original index should be dropped and replaced with a new index of default integer values
-    # The 'inplace=True' argument indicates that the DataFrame should be modified in place (without creating a new object)
+    # Réinitialiser l'index du DataFrame
+    # L'argument 'drop=True' indique que l'index d'origine doit être supprimé et remplacé par un nouvel index de valeurs entières par défaut
+    # L'argument 'inplace=True' indique que le DataFrame doit être modifié sur place (sans créer un nouvel objet)
     test_df.reset_index(drop=True, inplace=True)
     
-    # Display the first 2 rows of the DataFrame
-    # However, since the DataFrame only contains one row after the sampling, this will only display that one row
+    # Afficher les 2 premières lignes du DataFrame
+    # Cependant, puisque le DataFrame ne contient qu'une seule ligne après l'échantillonnage, cela n'affichera que cette ligne
     test_df.head(2)
     ```
 
-### Créer un objet JSON
+### Création d'objet JSON
 
-1. Ce script Python crée un objet JSON avec des paramètres spécifiques et l'enregistre dans un fichier. Voici ce qu'il fait en détail :
+1. Ce script Python crée un objet JSON avec des paramètres spécifiques et le sauvegarde dans un fichier. Voici un résumé de ce qu'il fait :
 
     - Il importe le module json, qui fournit des fonctions pour travailler avec des données JSON.
-
-    - Il crée un dictionnaire parameters avec des clés et valeurs représentant des paramètres pour un modèle d'apprentissage automatique. Les clés sont "temperature", "top_p", "do_sample" et "max_new_tokens", avec pour valeurs respectives 0.6, 0.9, True, et 200.
+    - Il crée un dictionnaire parameters avec des clés et des valeurs qui représentent les paramètres pour un modèle d'apprentissage automatique. Les clés sont "temperature", "top_p", "do_sample" et "max_new_tokens", et leurs valeurs correspondantes sont respectivement 0.6, 0.9, True et 200.
 
     - Il crée un autre dictionnaire test_json avec deux clés : "input_data" et "params". La valeur de "input_data" est un autre dictionnaire avec les clés "input_string" et "parameters". La valeur de "input_string" est une liste contenant le premier message du DataFrame test_df. La valeur de "parameters" est le dictionnaire parameters créé précédemment. La valeur de "params" est un dictionnaire vide.
-- Il ouvre un fichier nommé sample_score.json
 
-```python
-    # Import the json module, which provides functions to work with JSON data
+    - Il ouvre un fichier nommé sample_score.json
+    
+    ```python
+    # Importer le module json, qui fournit des fonctions pour travailler avec des données JSON
     import json
     
-    # Create a dictionary `parameters` with keys and values that represent parameters for a machine learning model
-    # The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", and their corresponding values are 0.6, 0.9, True, and 200 respectively
+    # Créer un dictionnaire `parameters` avec des clés et des valeurs représentant des paramètres pour un modèle d'apprentissage automatique
+    # Les clés sont "temperature", "top_p", "do_sample" et "max_new_tokens", et leurs valeurs correspondantes sont respectivement 0.6, 0.9, True, et 200
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -891,11 +889,11 @@ Nous allons récupérer des données d'exemple depuis le jeu de test et les soum
         "max_new_tokens": 200,
     }
     
-    # Create another dictionary `test_json` with two keys: "input_data" and "params"
-    # The value of "input_data" is another dictionary with keys "input_string" and "parameters"
-    # The value of "input_string" is a list containing the first message from the `test_df` DataFrame
-    # The value of "parameters" is the `parameters` dictionary created earlier
-    # The value of "params" is an empty dictionary
+    # Créer un autre dictionnaire `test_json` avec deux clés : "input_data" et "params"
+    # La valeur de "input_data" est un autre dictionnaire avec les clés "input_string" et "parameters"
+    # La valeur de "input_string" est une liste contenant le premier message du DataFrame `test_df`
+    # La valeur de "parameters" est le dictionnaire `parameters` créé précédemment
+    # La valeur de "params" est un dictionnaire vide
     test_json = {
         "input_data": {
             "input_string": [test_df["messages"][0]],
@@ -904,63 +902,67 @@ Nous allons récupérer des données d'exemple depuis le jeu de test et les soum
         "params": {},
     }
     
-    # Open a file named `sample_score.json` in the `./ultrachat_200k_dataset` directory in write mode
+    # Ouvrir un fichier nommé `sample_score.json` dans le répertoire `./ultrachat_200k_dataset` en mode écriture
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # Write the `test_json` dictionary to the file in JSON format using the `json.dump` function
+        # Écrire le dictionnaire `test_json` dans le fichier au format JSON en utilisant la fonction `json.dump`
         json.dump(test_json, f)
     ```
 
-### Appel de l'endpoint
+### Invocation du point de terminaison
 
-1. Ce script Python appelle un endpoint en ligne dans Azure Machine Learning pour évaluer un fichier JSON. Voici ce qu'il fait en détail :
+1. Ce script Python invoque un point de terminaison en ligne dans Azure Machine Learning pour scorer un fichier JSON. Voici une explication de ce qu'il fait :
 
-    - Il utilise la méthode invoke de la propriété online_endpoints de l'objet workspace_ml_client. Cette méthode sert à envoyer une requête à un endpoint en ligne et à obtenir une réponse.
+    - Il appelle la méthode invoke de la propriété online_endpoints de l'objet workspace_ml_client. Cette méthode est utilisée pour envoyer une requête à un point de terminaison en ligne et obtenir une réponse.
 
-    - Il précise le nom de l'endpoint et du déploiement avec les arguments endpoint_name et deployment_name. Dans ce cas, le nom de l'endpoint est stocké dans la variable online_endpoint_name et le nom du déploiement est "demo".
+    - Il spécifie le nom du point de terminaison et du déploiement avec les arguments endpoint_name et deployment_name. Dans ce cas, le nom du point de terminaison est stocké dans la variable online_endpoint_name et le nom du déploiement est "demo".
 
-    - Il indique le chemin vers le fichier JSON à évaluer avec l'argument request_file. Ici, le fichier est ./ultrachat_200k_dataset/sample_score.json.
+    - Il spécifie le chemin vers le fichier JSON à scorer avec l'argument request_file. Dans ce cas, le fichier est ./ultrachat_200k_dataset/sample_score.json.
 
-    - Il stocke la réponse de l'endpoint dans la variable response.
+    - Il stocke la réponse du point de terminaison dans la variable response.
 
     - Il affiche la réponse brute.
 
-1. En résumé, ce script appelle un endpoint en ligne dans Azure Machine Learning pour évaluer un fichier JSON et affiche la réponse.
+1. En résumé, ce script invoque un point de terminaison en ligne dans Azure Machine Learning pour scorer un fichier JSON et affiche la réponse.
 
-```python
-    # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
-    # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
-    # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
-    # The `deployment_name` argument specifies the name of the deployment, which is "demo"
-    # The `request_file` argument specifies the path to the JSON file to be scored, which is `./ultrachat_200k_dataset/sample_score.json`
+    ```python
+    # Invokez le point de terminaison en ligne dans Azure Machine Learning pour scorer le fichier `sample_score.json`
+    # La méthode `invoke` de la propriété `online_endpoints` de l'objet `workspace_ml_client` est utilisée pour envoyer une requête à un point de terminaison en ligne et obtenir une réponse
+    # L'argument `endpoint_name` spécifie le nom du point de terminaison, qui est stocké dans la variable `online_endpoint_name`
+    # L'argument `deployment_name` spécifie le nom du déploiement, qui est "demo"
+    # L'argument `request_file` spécifie le chemin vers le fichier JSON à scorer, qui est `./ultrachat_200k_dataset/sample_score.json`
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
         request_file="./ultrachat_200k_dataset/sample_score.json",
     )
     
-    # Print the raw response from the endpoint
+    # Affichez la réponse brute du point de terminaison
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Supprimer l'endpoint en ligne
+## 9. Supprimer le point de terminaison en ligne
 
-1. N'oubliez pas de supprimer l'endpoint en ligne, sinon vous continuerez à être facturé pour les ressources de calcul utilisées par l'endpoint. Cette ligne de code Python supprime un endpoint en ligne dans Azure Machine Learning. Voici ce qu'elle fait en détail :
+1. N'oubliez pas de supprimer le point de terminaison en ligne, sinon vous laisserez tourner le compteur de facturation pour les ressources de calcul utilisées par le point de terminaison. Cette ligne de code Python supprime un point de terminaison en ligne dans Azure Machine Learning. Voici une explication de ce qu'elle fait :
 
-    - Elle utilise la méthode begin_delete de la propriété online_endpoints de l'objet workspace_ml_client. Cette méthode sert à lancer la suppression d'un endpoint en ligne.
+    - Elle appelle la méthode begin_delete de la propriété online_endpoints de l'objet workspace_ml_client. Cette méthode est utilisée pour démarrer la suppression d'un point de terminaison en ligne.
 
-    - Elle précise le nom de l'endpoint à supprimer avec l'argument name. Dans ce cas, le nom de l'endpoint est stocké dans la variable online_endpoint_name.
+    - Elle spécifie le nom du point de terminaison à supprimer avec l'argument name. Dans ce cas, le nom du point de terminaison est stocké dans la variable online_endpoint_name.
 
-    - Elle appelle la méthode wait pour attendre la fin de l'opération de suppression. C'est une opération bloquante, ce qui signifie que le script ne continuera pas tant que la suppression n'est pas terminée.
+    - Elle appelle la méthode wait pour attendre que l'opération de suppression soit terminée. C'est une opération bloquante, ce qui signifie qu'elle empêchera le script de continuer tant que la suppression ne sera pas terminée.
 
-    - En résumé, cette ligne de code lance la suppression d'un endpoint en ligne dans Azure Machine Learning et attend la fin de l'opération.
+    - En résumé, cette ligne de code démarre la suppression d'un point de terminaison en ligne dans Azure Machine Learning et attend la fin de l'opération.
 
-```python
-    # Delete the online endpoint in Azure Machine Learning
-    # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
-    # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
-    # The `wait` method is called to wait for the deletion operation to complete. This is a blocking operation, meaning that it will prevent the script from continuing until the deletion is finished
+    ```python
+    # Supprimer le point de terminaison en ligne dans Azure Machine Learning
+    # La méthode `begin_delete` de la propriété `online_endpoints` de l'objet `workspace_ml_client` est utilisée pour démarrer la suppression d'un point de terminaison en ligne
+    # L'argument `name` spécifie le nom du point de terminaison à supprimer, qui est stocké dans la variable `online_endpoint_name`
+    # La méthode `wait` est appelée pour attendre la fin de l'opération de suppression. C'est une opération bloquante, ce qui signifie qu'elle empêchera le script de continuer tant que la suppression n'est pas terminée
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatisée [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’en garantir l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d’interprétations erronées résultant de l’utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
