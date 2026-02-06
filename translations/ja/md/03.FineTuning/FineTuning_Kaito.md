@@ -22,7 +22,7 @@ Kaitoは、従来のKubernetes Custom Resource Definition（CRD）/コントロ�
 
 - **Workspace controller**：`workspace`カスタムリソースを調整し、ノードの自動プロビジョニングをトリガーする`machine`（後述）カスタムリソースを作成し、モデルのプリセット構成に基づいて推論ワークロード（`deployment`または`statefulset`）を作成します。
 - **Node provisioner controller**：このコントローラは[gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)内で*gpu-provisioner*と呼ばれています。`machine` CRDは[Karpenter](https://sigs.k8s.io/karpenter)由来で、workspace controllerと連携します。Azure Kubernetes Service（AKS）APIと統合し、AKSクラスターに新しいGPUノードを追加します。  
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner)はオープンソースのコンポーネントです。Karpenter-core APIをサポートする他のコントローラに置き換えることも可能です。
+> 注記: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner)はオープンソースのコンポーネントです。Karpenter-core APIをサポートする他のコントローラに置き換えることも可能です。
 
 ## 概要動画  
 [Kaitoデモを見る](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
