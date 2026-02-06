@@ -1,44 +1,44 @@
-## Azure ML सिस्टम रजिस्ट्रीमधील chat-completion घटकांचा वापर करून मॉडेल फाइन ट्यून कसे करावे
+## Azure ML सिस्टम रजिस्ट्रीमधील chat-completion कॉम्पोनंट्स वापरून मॉडेलचे फाइन ट्यूनिंग कसे करायचे
 
-या उदाहरणात आपण ultrachat_200k डेटासेट वापरून Phi-3-mini-4k-instruct मॉडेलचे दोन लोकांमधील संभाषण पूर्ण करण्यासाठी फाइन ट्यूनिंग करू.
+या उदाहरणात आपण ultrachat_200k डेटासेट वापरून Phi-3-mini-4k-instruct मॉडेलचे 2 लोकांदरम्यान संभाषण पूर्ण करण्यासाठी फाइन ट्यूनिंग करू.
 
 ![MLFineTune](../../../../translated_images/mr/MLFineTune.928d4c6b3767dd35.webp)
 
-हे उदाहरण तुम्हाला Azure ML SDK आणि Python वापरून फाइन ट्यूनिंग कसे करायचे आणि नंतर फाइन ट्यून केलेले मॉडेल रिअल टाइम इन्फरन्ससाठी ऑनलाइन एंडपॉइंटवर कसे डिप्लॉय करायचे हे दाखवेल.
+हे उदाहरण तुम्हाला Azure ML SDK आणि Python वापरून फाइन ट्यूनिंग कसे करायचे तसेच नंतर फाइन ट्यून केलेले मॉडेल रिअल टाइम इन्फरन्ससाठी ऑनलाइन endpoint वर कसे डिप्लॉय करायचे ते दाखवेल.
 
 ### प्रशिक्षण डेटा
 
-आपण ultrachat_200k डेटासेट वापरणार आहोत. हा UltraChat डेटासेटचा खूपच फिल्टर केलेला आवृत्ती आहे आणि Zephyr-7B-β, एक अत्याधुनिक 7b चॅट मॉडेल, प्रशिक्षणासाठी वापरला गेला होता.
+आपण ultrachat_200k डेटासेट वापरणार आहोत. हे UltraChat डेटासेटचा खूप फिल्टर केलेला आवृत्ती आहे आणि Zephyr-7B-β, एक अत्याधुनिक 7b चॅट मॉडेल प्रशिक्षित करण्यासाठी वापरले गेले.
 
 ### मॉडेल
 
-आपण Phi-3-mini-4k-instruct मॉडेल वापरून दाखवणार आहोत की वापरकर्ता कसा chat-completion टास्कसाठी मॉडेल फाइन ट्यून करू शकतो. जर तुम्ही हा नोटबुक एखाद्या विशिष्ट मॉडेल कार्डमधून उघडला असेल, तर त्या विशिष्ट मॉडेलचे नाव बदला.
+आपण Phi-3-mini-4k-instruct मॉडेल वापरणार आहोत, जे दाखवेल की वापरकर्ता chat-completion कार्यासाठी मॉडेल कसे फाइनट्यून करू शकतो. जर आपण हे नोटबुक एखाद्या विशिष्ट मॉडेल कार्डमधून उघडले असेल, तर त्या विशिष्ट मॉडेलचे नाव जरूर बदला.
 
-### टास्क
+### कार्ये
 
-- फाइन ट्यून करण्यासाठी मॉडेल निवडा.
-- प्रशिक्षण डेटा निवडा आणि तपासा.
-- फाइन ट्यूनिंग जॉब कॉन्फिगर करा.
-- फाइन ट्यूनिंग जॉब चालवा.
-- प्रशिक्षण आणि मूल्यांकन मेट्रिक्स पुनरावलोकन करा.
-- फाइन ट्यून केलेले मॉडेल नोंदणी करा.
-- रिअल टाइम इन्फरन्ससाठी फाइन ट्यून केलेले मॉडेल डिप्लॉय करा.
-- संसाधने साफ करा.
+- फाइन ट्यून करण्यासाठी एक मॉडेल निवडा.  
+- प्रशिक्षण डेटा निवडा आणि पाहा.  
+- फाइन ट्यूनिंग जॉब कॉन्फिगर करा.  
+- फाइन ट्यूनिंग जॉब रन करा.  
+- प्रशिक्षण आणि मूल्यांकन मेट्रिक्स पुनरावलोकन करा.  
+- फाइन ट्यून केलेले मॉडेल नोंदणी करा.  
+- रिअल टाइम इन्फरन्ससाठी फाइन ट्यून मॉडेल डिप्लॉय करा.  
+- संसाधने साफ करा.  
 
-## 1. पूर्वतयारी करा
+## 1. पूर्वअटी सेट करा
 
-- आवश्यक अवलंबित्वे इन्स्टॉल करा
-- AzureML Workspace शी कनेक्ट व्हा. अधिक माहितीसाठी set up SDK authentication पहा. खाली <WORKSPACE_NAME>, <RESOURCE_GROUP> आणि <SUBSCRIPTION_ID> बदला.
-- azureml system registry शी कनेक्ट व्हा
-- ऐच्छिक experiment नाव सेट करा
-- compute तपासा किंवा तयार करा.
+- आवश्यक असलेली डिपेंडेंसी इंस्टॉल करा  
+- AzureML वर्कस्पेसशी कनेक्ट करा. अधिक जाणून घेण्यासाठी set up SDK authentication पाहा. खाली <WORKSPACE_NAME>, <RESOURCE_GROUP> आणि <SUBSCRIPTION_ID> बदला.  
+- azureml सिस्टम रजिस्ट्रीशी कनेक्ट करा  
+- स्वैच्छिक प्रयोग नाव सेट करा  
+- कंप्युट तपासा किंवा तयार करा.
 
-> [!NOTE]
-> आवश्यक आहे की एक GPU नोडमध्ये अनेक GPU कार्ड्स असू शकतात. उदाहरणार्थ, Standard_NC24rs_v3 च्या एका नोडमध्ये 4 NVIDIA V100 GPUs असतात तर Standard_NC12s_v3 मध्ये 2 NVIDIA V100 GPUs असतात. याबाबत अधिक माहितीसाठी docs पहा. प्रत्येक नोडसाठी GPU कार्ड्सची संख्या param gpus_per_node मध्ये सेट केली जाते. योग्यरित्या सेट केल्यास नोडमधील सर्व GPUs चा वापर होईल. शिफारस केलेले GPU compute SKUs येथे आणि येथे पाहू शकता.
+> [!NOTE]  
+> गरजेनुसार एक GPU नोडमध्ये अनेक GPU कार्ड्स असू शकतात. उदाहरणार्थ, Standard_NC24rs_v3 च्या एका नोडमध्ये 4 NVIDIA V100 GPUs असतात तर Standard_NC12s_v3 मध्ये 2 NVIDIA V100 GPUs असतात. यासाठी आवश्यक माहिती docs मध्ये पहा. gpus_per_node या पॅरामीटरमध्ये GPU कार्ड्सची संख्या सेट केली जाते. योग्य प्रमाणात सेट केल्यास नोडमधील सर्व GPUs उपयुक्त होतील. शिफारस केलेले GPU compute SKUs येथे आणि येथे पाहा.
 
-### Python लायब्ररी
+### Python लायब्रऱ्या
 
-खालील सेल चालवून अवलंबित्वे इन्स्टॉल करा. नवीन वातावरणात चालवताना हा पर्यायी टप्पा नाही.
+खालील सेल चालवून डिपेंडेंसी इंस्टॉल करा. नवीन एन्व्हायर्नमेंटमध्ये चालवत असल्यास हा पर्यायी नाही.
 
 ```bash
 pip install azure-ai-ml
@@ -47,44 +47,44 @@ pip install datasets==2.9.0
 pip install mlflow
 pip install azureml-mlflow
 ```
-
+  
 ### Azure ML शी संवाद साधणे
 
-1. हा Python स्क्रिप्ट Azure Machine Learning (Azure ML) सेवा सोबत संवाद साधण्यासाठी वापरला जातो. त्याचे काय कार्य आहे ते खालीलप्रमाणे:
+1. हा Python स्क्रिप्ट Azure Machine Learning (Azure ML) सेवा सह संवाद साधण्यासाठी वापरला जातो. याचे वर्णन:
 
-    - azure.ai.ml, azure.identity, आणि azure.ai.ml.entities पॅकेजमधील आवश्यक मॉड्यूल्स इम्पोर्ट करतो. तसेच time मॉड्यूल इम्पोर्ट करतो.
+    - azure.ai.ml, azure.identity, आणि azure.ai.ml.entities या पॅकेजमधील आवश्यक मॉड्युल्स आयात करतो. तसेच time मॉड्युल आयात करतो.
 
-    - DefaultAzureCredential() वापरून प्रमाणीकरण करण्याचा प्रयत्न करतो, जे Azure क्लाउडमध्ये जलद अॅप्लिकेशन्स विकसित करण्यासाठी सुलभ प्रमाणीकरण अनुभव देते. जर हे अयशस्वी झाले तर InteractiveBrowserCredential() वापरतो, जे इंटरॅक्टिव लॉगिन प्रॉम्प्ट देते.
+    - DefaultAzureCredential() वापरून प्रमाणीकरण करण्याचा प्रयत्न करतो, ज्यामुळे Azure क्लाउडमध्ये अ‍ॅप्लिकेशन्स त्वरीत विकसित करता येतात. अयशस्वी झाल्यास InteractiveBrowserCredential() वापरून इंटरऍक्टिव लॉगिन पुकार येतो.
 
-    - नंतर from_config पद्धत वापरून MLClient चे उदाहरण तयार करण्याचा प्रयत्न करतो, जे डिफॉल्ट config फाइल (config.json) मधून कॉन्फिगरेशन वाचते. जर हे अयशस्वी झाले तर subscription_id, resource_group_name, आणि workspace_name मॅन्युअली देऊन MLClient चे उदाहरण तयार करतो.
+    - नंतर from_config पद्धत वापरून MLClient चे उदाहरण बनवण्याचा प्रयत्न होतो, जी config.json वर आधारित कॉन्फिगरेशन वाचते. अयशस्वी झाल्यास subscription_id, resource_group_name, workspace_name देऊन MLClient तयार करते.
 
-    - दुसरे MLClient चे उदाहरण तयार करतो, जे Azure ML रजिस्ट्रीसाठी आहे ज्याचे नाव "azureml" आहे. या रजिस्ट्रीमध्ये मॉडेल्स, फाइन-ट्यूनिंग पाइपलाइन्स, आणि एन्व्हायर्नमेंट्स संग्रहित केले जातात.
+    - दुसरे MLClient उदाहरण "azureml" नावाच्या Azure ML रजिस्ट्रीसाठी तयार करते. ही रजिस्ट्री जिथे मॉडेल्स, फाइन-ट्यूनिंग पाइपलाइन्स, आणि एन्व्हायर्नमेंट्स साठवले जातात.
 
-    - experiment_name "chat_completion_Phi-3-mini-4k-instruct" सेट करतो.
+    - experiment_name हा "chat_completion_Phi-3-mini-4k-instruct" असतो.
 
-    - सध्याचा वेळ (सेकंदांमध्ये, फ्लोटिंग पॉइंट नंबर म्हणून) पूर्णांकात आणि नंतर स्ट्रिंगमध्ये रूपांतरित करून एक अद्वितीय timestamp तयार करतो. हा timestamp युनिक नावे आणि आवृत्त्या तयार करण्यासाठी वापरला जाऊ शकतो.
+    - सद्य वेळेचा (epoch पासून सेकंदात, फ्लोटिंग पॉईंट नंबर म्हणून) पूर्णांकात रूपांतर करून एक अद्वितीय टाईमस्टॅम्प तयार करतो ज्याचा वापर नाव आणि व्हर्जन तयार करताना केला जाऊ शकतो.
 
     ```python
-    # Import necessary modules from Azure ML and Azure Identity
+    # Azure ML आणि Azure Identity कडून आवश्यक मॉड्यूल आयात करा
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # Import time module
+    import time  # time मॉड्यूल आयात करा
     
-    # Try to authenticate using DefaultAzureCredential
+    # DefaultAzureCredential वापरून प्रमाणीकरण करण्याचा प्रयत्न करा
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # If DefaultAzureCredential fails, use InteractiveBrowserCredential
+    except Exception as ex:  # DefaultAzureCredential अयशस्वी झाल्यास, InteractiveBrowserCredential वापरा
         credential = InteractiveBrowserCredential()
     
-    # Try to create an MLClient instance using the default config file
+    # डीफॉल्ट कॉन्फिग फाइल वापरून MLClient चा एक उदाहरण तयार करण्याचा प्रयत्न करा
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # If that fails, create an MLClient instance by manually providing the details
+    except:  # जर ते अपयशी ठरले, तर तपशील हाताने देऊन MLClient चे उदाहरण तयार करा
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,209 +92,210 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # Create another MLClient instance for the Azure ML registry named "azureml"
-    # This registry is where models, fine-tuning pipelines, and environments are stored
+    # "azureml" नावाच्या Azure ML रेजिस्ट्रीसाठी दुसरे MLClient चे उदाहरण तयार करा
+    # या रेजिस्ट्रीमध्ये मॉडेल्स, फाईन-ट्यूनिंग पाइपलाइन्स आणि वातावरणे संग्रहित केली जातात
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # Set the experiment name
+    # प्रयोगाचे नाव सेट करा
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Generate a unique timestamp that can be used for names and versions that need to be unique
+    # एक अद्वितीय टाईमस्टँप तयार करा जो नावांसाठी आणि आवृत्त्यांसाठी वापरला जाऊ शकतो ज्यांना अद्वितीय असणे आवश्यक आहे
     timestamp = str(int(time.time()))
     ```
+  
+## 2. फाइन ट्यूनिंगसाठी फाउंडेशन मॉडेल निवडा
 
-## 2. फाइन ट्यूनसाठी फाउंडेशन मॉडेल निवडा
+1. Phi-3-mini-4k-instruct हा 3.8B पॅरामीटर्सचा हलका, अत्याधुनिक खुला मॉडेल आहे जो Phi-2 साठी वापरलेल्या डेटासेट्सवर आधारित आहे. हा Phi-3 मॉडेल कुटुंबातील आहे, आणि Mini आवृत्तीमध्ये 4K आणि 128K दोन व्हेरिअंट्स आहेत ज्यांचा संदर्भ लांब दृष्टीक्षेप (tokens) यावर आहे. आपल्याला याला फाइनट्यून करावे लागेल जेणेकरून तो आपल्या कार्यासाठी उपयुक्त होईल. AzureML Studio मधील Model Catalog मध्ये ह्या मॉडेल्सना "chat-completion" कार्यानुसार फिल्टर करून शोधू शकता. या उदाहरणात Phi-3-mini-4k-instruct मॉडेल वापरले आहे. जर आपण हा नोटबुक वेगळ्या मॉडेलनुसार सुरू केला असेल, तर मॉडेलचे नाव आणि व्हर्जन तदनुसार बदला.
 
-1. Phi-3-mini-4k-instruct हा 3.8B पॅरामीटर्सचा, हलका, अत्याधुनिक ओपन मॉडेल आहे जो Phi-2 साठी वापरल्या गेलेल्या डेटासेटवर आधारित आहे. हा मॉडेल Phi-3 मॉडेल कुटुंबाचा भाग आहे, आणि Mini आवृत्ती दोन प्रकारांमध्ये येते: 4K आणि 128K, जे संदर्भ लांबी (टोकन्समध्ये) दर्शवते. आपल्याला हा मॉडेल आपल्या विशिष्ट उद्देशासाठी फाइन ट्यून करावा लागेल. तुम्ही AzureML Studio मधील Model Catalog मध्ये chat-completion टास्कनुसार हे मॉडेल्स ब्राउझ करू शकता. या उदाहरणात आपण Phi-3-mini-4k-instruct मॉडेल वापरत आहोत. जर तुम्ही हा नोटबुक वेगळ्या मॉडेलसाठी उघडला असेल, तर मॉडेलचे नाव आणि आवृत्ती तदनुसार बदला.
+> [!NOTE]  
+> मॉडेलचा id ही एक मालमत्ता आहे जी फाइन ट्यूनिंग जॉबमध्ये इनपुट म्हणून दिली जाते. हा id AzureML Studio Model Catalog मधील मॉडेल तपशील पृष्ठावरील Asset ID फील्डमध्ये देखील सापडतो.
 
-    > [!NOTE]
-    > मॉडेल आयडी ही मॉडेलची एक मालमत्ता आहे. ही फाइन ट्यूनिंग जॉबसाठी इनपुट म्हणून दिली जाते. AzureML Studio Model Catalog मधील मॉडेल तपशील पृष्ठावर Asset ID फील्डमध्ये देखील उपलब्ध आहे.
+2. हा Python स्क्रिप्ट Azure Machine Learning (Azure ML) सेवा शी संवाद साधतो. याची तपशिलवार रूपरेषा:
 
-2. हा Python स्क्रिप्ट Azure Machine Learning (Azure ML) सेवा सोबत संवाद साधतो. त्याचे काय कार्य आहे ते खालीलप्रमाणे:
+    - model_name ला "Phi-3-mini-4k-instruct" असा सेट करतो.
 
-    - model_name "Phi-3-mini-4k-instruct" असे सेट करतो.
+    - registry_ml_client च्या models प्रॉपर्टीच्या get मेथडद्वारे Azure ML रजिस्ट्रीमधून दिलेल्या नावाचा सर्वात नवीन व्हर्जन प्राप्त करतो. get मेथडला दोन आर्ग्युमेंट्स दिले जातात: मॉडेलचे नाव आणि लेबल ज्याद्वारे नवीनतम व्हर्जन आणायचे आहे हे सांगितले जाते.
 
-    - registry_ml_client ऑब्जेक्टच्या models प्रॉपर्टीचा get मेथड वापरून Azure ML रजिस्ट्रीमधून दिलेल्या नावाचा मॉडेलचा नवीनतम आवृत्ती मिळवतो. get मेथडला दोन आर्ग्युमेंट्स दिले जातात: मॉडेलचे नाव आणि लेबल ज्याद्वारे नवीनतम आवृत्ती मिळवायची आहे.
-
-    - कन्सोलवर एक संदेश प्रिंट करतो ज्यात फाइन ट्यूनिंगसाठी वापरल्या जाणाऱ्या मॉडेलचे नाव, आवृत्ती, आणि आयडी दाखवलेले असते. स्ट्रिंगच्या format मेथडचा वापर करून हे मूल्ये संदेशात टाकले जातात. मॉडेलचे नाव, आवृत्ती, आणि आयडी foundation_model ऑब्जेक्टच्या प्रॉपर्टीज म्हणून मिळतात.
+    - कन्सोलमध्ये एक संदेश छापतो ज्यामध्ये फाइन-ट्यूनिंगसाठी वापरणार्‍या मॉडेलचे नाव, व्हर्जन व id दाखवले जाते. format मेथड वापरून हे मूल्ये साझा केली जातात. हे मूल्ये foundation_model ऑब्जेक्टच्याप्रॉपर्टीज म्हणून उपलब्ध आहेत.
 
     ```python
-    # Set the model name
+    # मॉडेल नाव सेट करा
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Get the latest version of the model from the Azure ML registry
+    # Azure ML रजिस्ट्रीमधून मॉडेलचा नवीनतम आवृत्ती मिळवा
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Print the model name, version, and id
-    # This information is useful for tracking and debugging
+    # मॉडेल नाव, आवृत्ती आणि आयडी मुद्रित करा
+    # ही माहिती ट्रॅकिंग आणि डिबगिंगसाठी उपयुक्त आहे
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
         )
     )
     ```
+  
+## 3. जॉबसाठी वापरायचा कंप्युट तयार करा
 
-## 3. जॉबसाठी वापरण्यासाठी compute तयार करा
+फाइनट्यून जॉब फक्त GPU कंप्युटसह चालतो. कंप्युटचे आकार मॉडेलच्या आकारावर अवलंबून असतात आणि योग्य कंप्युट निवडणे अनेक वेळा कठीण ठरते. या सेलमध्ये योग्य कंप्युट निवडण्यासाठी मार्गदर्शन आहे.
 
-फाइनट्यून जॉब फक्त GPU compute सोबतच चालतो. compute ची आकार मॉडेलच्या आकारावर अवलंबून असते आणि बहुतेक वेळा योग्य compute निवडणे कठीण होते. या सेलमध्ये वापरकर्त्याला योग्य compute निवडण्याचे मार्गदर्शन केले आहे.
+> [!NOTE]  
+> खाली सांगितलेले कंप्युट्स अत्यंत ऑप्टिमाइझ केलेल्या सेटिंगसह कार्य करतात. कॉन्फिगरेशनमध्ये कोणतीही बदल Cuda Out Of Memory एरर होण्यास कारणीभूत ठरू शकतात. अशा परिस्थितीत कंप्युटचे आकार अधिक मोठे करण्याचा प्रयत्न करा.
 
-> [!NOTE]
-> खालील compute सर्वात ऑप्टिमाइझ्ड कॉन्फिगरेशनसह काम करतात. कॉन्फिगरेशनमध्ये कोणतीही बदल Cuda Out Of Memory त्रुटी निर्माण करू शकतात. अशा परिस्थितीत compute मोठ्या आकारात अपग्रेड करण्याचा प्रयत्न करा.
+> [!NOTE]  
+> compute_cluster_size निवडताना खात्री करा कि कंप्युट तुमच्या रिसोर्स ग्रुपमध्ये उपलब्ध आहे. जो कंप्युट उपलब्ध नसेल त्यासाठी प्रवेशासाठी विनंती करू शकता.
 
-> [!NOTE]
-> compute_cluster_size निवडताना खात्री करा की compute तुमच्या resource group मध्ये उपलब्ध आहे. जर एखादा compute उपलब्ध नसेल तर compute संसाधनांसाठी प्रवेश मागणी करू शकता.
+### फाइन ट्यूनिंग सपोर्टसाठी मॉडेल तपासणे
 
-### फाइन ट्यूनिंगसाठी मॉडेलची सपोर्ट तपासणी
+1. Python स्क्रिप्ट Azure ML मॉडेलशी संवाद साधत आहे. त्याची रूपरेषा:
 
-1. हा Python स्क्रिप्ट Azure Machine Learning (Azure ML) मॉडेलशी संवाद साधतो. त्याचे काय कार्य आहे ते खालीलप्रमाणे:
+    - ast मॉड्युल आयात करतो, जो Python ची ऍब्स्ट्रॅक्ट सिन्टॅक्स ट्री प्रक्रिया करण्यासाठी वापरला जातो.
 
-    - ast मॉड्यूल इम्पोर्ट करतो, जे Python च्या abstract syntax grammar चे ट्री प्रोसेस करण्यासाठी फंक्शन्स देते.
+    - foundation_model ऑब्जेक्टमध्ये finetune_compute_allow_list नावाचा टॅग आहे का ते तपासतो. Azure ML मधील टॅग्स हे की-वॅल्यु युग्म असतात जे मॉडेल्स फिल्टर व सॉर्ट करण्यासाठी वापरले जातात.
 
-    - foundation_model ऑब्जेक्टमध्ये finetune_compute_allow_list नावाचा टॅग आहे का ते तपासतो. Azure ML मध्ये टॅग्स म्हणजे key-value जोड्या असतात ज्या मॉडेल्स फिल्टर आणि सॉर्ट करण्यासाठी वापरल्या जातात.
+    - जर finetune_compute_allow_list टॅग अस्तित्वात असेल, तर त्याचा स्ट्रिंग व्हॅल्यु सुरक्षितपणे Python लिस्टमध्ये रूपांतरित करतो (ast.literal_eval वापरून) आणि त्या लिस्टला computes_allow_list ला सेट करतो. त्यानंतर संदेश छापतो की कंप्युट त्या लिस्टमधून तयार करावा.
 
-    - जर finetune_compute_allow_list टॅग असेल, तर ast.literal_eval फंक्शन वापरून त्या टॅगच्या मूल्याला (जो स्ट्रिंग आहे) सुरक्षितपणे Python लिस्टमध्ये रूपांतरित करतो. ही लिस्ट computes_allow_list व्हेरिएबलला दिली जाते. नंतर एक संदेश प्रिंट करतो की या लिस्टमधून compute तयार करावा.
+    - जर टॅग नसेल, तर computes_allow_list ला None सेट करतो आणि टॅग मॉडेलमध्ये नसल्याचे संदेश कंसोलवर छापतो.
 
-    - जर finetune_compute_allow_list टॅग नसेल, तर computes_allow_list None सेट करतो आणि एक संदेश प्रिंट करतो की finetune_compute_allow_list टॅग मॉडेलच्या टॅग्समध्ये नाही.
-
-    - सारांश, हा स्क्रिप्ट मॉडेलच्या मेटाडेटामध्ये विशिष्ट टॅग तपासतो, त्याचा मूल्य लिस्टमध्ये रूपांतरित करतो (जर असेल तर), आणि वापरकर्त्याला त्यानुसार माहिती देतो.
+    - सारांश म्हणजे, हा स्क्रिप्ट मॉडेलच्या मेटाडेटामध्ये विशिष्ट टॅग शोधतो, त्याच्या व्हॅल्युलाई लिस्टमध्ये रूपांतरित करतो आणि वापरकर्त्याला फीडबॅक देतो.
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # Python abstract syntax grammar च्या झाडांचे प्रक्रिया करण्यासाठी फंक्शन्स पुरवणारे ast मॉड्यूल इम्पोर्ट करा
     import ast
     
-    # Check if the 'finetune_compute_allow_list' tag is present in the model's tags
+    # मॉडेलच्या टॅग्समध्ये 'finetune_compute_allow_list' टॅग आहे का ते तपासा
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # If the tag is present, use ast.literal_eval to safely parse the tag's value (a string) into a Python list
+        # जर टॅग असेल, तर ast.literal_eval वापरून टॅगचे मूल्य (string) सुरक्षितपणे Python यादीमध्ये पार्स करा
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # convert string to python list
-        # Print a message indicating that a compute should be created from the list
+        )  # string ला python यादीमध्ये रूपांतरित करा
+        # यादीतून एक compute तयार करावे याचा संदेश प्रिंट करा
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If the tag is not present, set computes_allow_list to None
+        # जर टॅग नसेल, तर computes_allow_list ला None सेट करा
         computes_allow_list = None
-        # Print a message indicating that the 'finetune_compute_allow_list' tag is not part of the model's tags
+        # 'finetune_compute_allow_list' टॅग मॉडेलच्या टॅग्सचा भाग नाही याचा संदेश प्रिंट करा
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
+  
+### कंप्युट इन्स्टन्स तपासणी
 
-### Compute Instance तपासणी
+1. हा Python स्क्रिप्ट Azure ML सेवेतील कंप्युट इन्स्टन्सवर अनेक तपासण्या करतो. याचे वर्णन:
 
-1. हा Python स्क्रिप्ट Azure Machine Learning (Azure ML) सेवा सोबत संवाद साधतो आणि compute instance वर अनेक तपासण्या करतो. त्याचे काय कार्य आहे ते खालीलप्रमाणे:
+    - compute_cluster नावाच्या कंप्युट इन्स्टन्सला वर्कस्पेस मधून प्राप्त करण्याचा प्रयत्न करतो. provisioning_state "failed" असेल तर ValueError उडवतो.
 
-    - compute_cluster नावाने Azure ML workspace मधून compute instance मिळवण्याचा प्रयत्न करतो. जर compute instance ची provisioning state "failed" असेल तर ValueError उचलतो.
+    - computes_allow_list None नसल्यास, सर्व लिस्टमधील कंप्युट आकार लोअरकेस करतो आणि सध्याच्या कंप्युट इन्स्टन्सच्या आकाराची तुलना लिस्टमधील आकारांशी करतो. नसल्यास ValueError देते.
 
-    - computes_allow_list None नसल्यास, लिस्टमधील सर्व compute आकार lowercase मध्ये रूपांतरित करतो आणि सध्याच्या compute instance चा आकार त्या लिस्टमध्ये आहे का ते तपासतो. नसल्यास ValueError उचलतो.
+    - computes_allow_list None असल्यास, कंप्युट आकार काही अनुपयोगी GPU VM आकारांच्या यादीत आहे का तपासतो. असल्यास ValueError देतो.
 
-    - जर computes_allow_list None असेल, तर compute instance चा आकार unsupported GPU VM sizes च्या यादीत आहे का ते तपासतो. असल्यास ValueError उचलतो.
+    - वर्कस्पेसमधील उपलब्ध सर्व कंप्युट साईजेसची यादी मिळवतो आणि प्रत्येकावरून पुढे जातो. सध्याच्या कंप्युट आकाराशी जुळणारा आकार सापडल्यास त्या कंप्युटसाठी GPU संख्या मिळवून gpu_count_found ला True करतो.
 
-    - workspace मधील सर्व उपलब्ध compute आकारांची यादी मिळवतो. त्यानंतर प्रत्येक compute आकारासाठी तपासतो की त्याचे नाव सध्याच्या compute instance च्या आकाराशी जुळते का. जर जुळले तर त्या compute आकारासाठी GPU ची संख्या मिळवतो आणि gpu_count_found True सेट करतो.
+    - gpu_count_found True असल्यास ते GPU संख्या छापतो. False असल्यास ValueError उडवतो.
 
-    - gpu_count_found True असल्यास compute instance मधील GPU ची संख्या प्रिंट करतो. नसल्यास ValueError उचलतो.
-
-    - सारांश, हा स्क्रिप्ट Azure ML workspace मधील compute instance ची provisioning state, आकार, आणि GPU संख्या तपासतो आणि आवश्यक असल्यास त्रुटी दाखवतो.
+    - सारांश: हा स्क्रिप्ट Azure ML वर्कस्पेसमधील कंप्युटचे provisioning स्थिती, आकार आणि GPU संख्या यांची तपासणी करतो.
 
     ```python
-    # Print the exception message
+    # अपवाद संदेश मुद्रित करा
     print(e)
-    # Raise a ValueError if the compute size is not available in the workspace
+    # कार्यक्षेत्रात संगणकीय आकार उपलब्ध नसेल तर ValueError उचला
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Retrieve the compute instance from the Azure ML workspace
+    # Azure ML कार्यक्षेत्रातून संगणकीय उदाहरण प्राप्त करा
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Check if the provisioning state of the compute instance is "failed"
+    # संगणकीय उदाहरणाची provisioning स्थिती "अपयशी" आहे का ते तपासा
     if compute.provisioning_state.lower() == "failed":
-        # Raise a ValueError if the provisioning state is "failed"
+        # provisioning स्थिती "अपयशी" असल्यास ValueError उचला
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
         )
     
-    # Check if computes_allow_list is not None
+    # computes_allow_list None नाही याची तपासणी करा
     if computes_allow_list is not None:
-        # Convert all compute sizes in computes_allow_list to lowercase
+        # computes_allow_list मधील सर्व संगणकीय आकार लहान अक्षरात रूपांतरित करा
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # Check if the size of the compute instance is in computes_allow_list_lower_case
+        # संगणकीय उदाहरणाचा आकार computes_allow_list_lower_case मध्ये आहे का ते तपासा
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Raise a ValueError if the size of the compute instance is not in computes_allow_list_lower_case
+            # संगणकीय उदाहरणाचा आकार computes_allow_list_lower_case मध्ये नसेल तर ValueError उचला
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
     else:
-        # Define a list of unsupported GPU VM sizes
+        # असमर्थित GPU VM आकारांची यादी व्याख्यित करा
         unsupported_gpu_vm_list = [
             "standard_nc6",
             "standard_nc12",
             "standard_nc24",
             "standard_nc24r",
         ]
-        # Check if the size of the compute instance is in unsupported_gpu_vm_list
+        # संगणकीय उदाहरणाचा आकार unsupported_gpu_vm_list मध्ये आहे का ते तपासा
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Raise a ValueError if the size of the compute instance is in unsupported_gpu_vm_list
+            # संगणकीय उदाहरणाचा आकार unsupported_gpu_vm_list मध्ये असल्यास ValueError उचला
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # Initialize a flag to check if the number of GPUs in the compute instance has been found
+    # संगणकीय उदाहरणातील GPU ची संख्या आढळली आहे का हे तपासण्यासाठी एक झंडा सुरु करा
     gpu_count_found = False
-    # Retrieve a list of all available compute sizes in the workspace
+    # कार्यक्षेत्रातील सर्व उपलब्ध संगणकीय आकारांची यादी प्राप्त करा
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iterate over the list of available compute sizes
+    # उपलब्ध संगणकीय आकारांच्या यादीवर पुनरावृत्ती करा
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Check if the name of the compute size matches the size of the compute instance
+        # संगणकीय आकाराचे नाव संगणकीय उदाहरणाच्या आकाराशी जुळते का ते तपासा
         if compute_sku.name.lower() == compute.size.lower():
-            # If it does, retrieve the number of GPUs for that compute size and set gpu_count_found to True
+            # जर तसे असेल तर त्या संगणकीय आकारासाठी GPU ची संख्या प्राप्त करा आणि gpu_count_found True करा
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # If gpu_count_found is True, print the number of GPUs in the compute instance
+    # जर gpu_count_found True असेल तर संगणकीय उदाहरणातील GPU ची संख्या मुद्रित करा
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # If gpu_count_found is False, raise a ValueError
+        # जर gpu_count_found False असेल तर ValueError उचला
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
+  
+## 4. मॉडेल फाइन-ट्यून करण्यासाठी डेटासेट निवडा
 
-## 4. मॉडेल फाइन ट्यूनिंगसाठी डेटासेट निवडा
-
-1. आपण ultrachat_200k डेटासेट वापरतो. या डेटासेटमध्ये चार स्प्लिट्स आहेत, जे Supervised fine-tuning (sft) साठी योग्य आहेत. Generation ranking (gen). प्रत्येक स्प्लिटमधील उदाहरणांची संख्या खालीलप्रमाणे आहे:
+1. आपण ultrachat_200k डेटासेट वापरणार आहोत. या डेटासेटमध्ये चार भाग आहेत, जे Supervised fine-tuning (sft) साठी योग्य आहेत. Generation ranking (gen). प्रत्येक भागातील उदाहरणांची संख्या खालीलप्रमाणे आहे:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
+  
+1. पुढील काही सेल बेसिक डेटा तयारीसाठी आहेत:
 
-1. पुढील काही सेल्समध्ये फाइन ट्यूनिंगसाठी मूलभूत डेटा तयारी दाखवली आहे:
+### काही डेटा रकाने पहा
 
-### काही डेटा रांगा पाहा
+आपल्याला हा नमुना वेगाने चालवायचा आहे, म्हणून train_sft, test_sft फाइल्स ज्या आधीच फिल्टर केलेल्या ओळींपैकी 5% डेटा ठेवीत आहेत त्यांना सेव्ह करा. यामुळे फाइन ट्यून केलेल्या मॉडेलची अचूकता कमी असेल, त्यामुळे त्याचा रिअल वर्ल्ड वापर टाळावा.
+download-dataset.py स्क्रिप्ट ultrachat_200k डेटासेट डाउनलोड करण्यासाठी व डेटासेट फाइनट्यून पाइपलाइन कॉम्पोनंट फॉरमॅटमध्ये रूपांतर करण्यासाठी वापरली जाते. तसेच, डेटासेट मोठा असल्याने येथे केवळ भाग उपलब्ध आहे.
 
-आपण हा नमुना लवकर चालवू इच्छितो, म्हणून train_sft, test_sft फाइल्स ज्या आधीच ट्रिम केलेल्या रांगा पैकी 5% समाविष्ट करतात, त्या सेव्ह करा. याचा अर्थ फाइन ट्यून केलेल्या मॉडेलची अचूकता कमी असेल, त्यामुळे ते प्रत्यक्ष वापरासाठी योग्य नाही.
-download-dataset.py स्क्रिप्ट ultrachat_200k डेटासेट डाउनलोड करण्यासाठी आणि डेटासेटला फाइनट्यून पाइपलाइन घटकासाठी योग्य स्वरूपात रूपांतरित करण्यासाठी वापरली जाते. तसेच डेटासेट मोठा असल्यामुळे येथे फक्त त्याचा एक भाग आहे.
+1. खालील स्क्रिप्ट केवळ डेटाचा 5% डाउनलोड करते. हा टक्केवारी dataset_split_pc पॅरामीटर बदलून वाढवू शकता.
 
-1. खालील स्क्रिप्ट फक्त 5% डेटा डाउनलोड करते. dataset_split_pc पॅरामीटर बदलून हा टक्का वाढवता येतो.
+> [!NOTE]  
+> काही भाषा मॉडेल्सचे वेगवेगळे भाषा कोड्स असतात आणि त्यामुळे डेटासेटमधील कॉलम नावे ते प्रतिबिंबित करणे आवश्यक आहे.
 
-    > [!NOTE]
-    > काही भाषा मॉडेल्समध्ये वेगवेगळे भाषा कोड असतात, त्यामुळे डेटासेटमधील कॉलम नावे त्यानुसार असावीत.
+1. डेटा कसा दिसावा याचा उदाहरण:
 
-1. डेटा कसा दिसायला हवा याचे उदाहरण खालीलप्रमाणे आहे
-chat-completion डेटासेट parquet फॉरमॅटमध्ये संग्रहित आहे, ज्यामध्ये प्रत्येक नोंद खालील स्कीमाचा वापर करते:
+चॅट-कम्प्लिशन डेटासेट parquet फॉरमॅटमध्ये संग्रहित आहे ज्यामध्ये प्रत्येक नोंदीचा स्कीमा पुढीलप्रमाणे आहे:
 
-    - हा JSON (JavaScript Object Notation) दस्तऐवज आहे, जो लोकप्रिय डेटा विनिमय फॉरमॅट आहे. हा executable कोड नाही, तर डेटा संग्रहित आणि ट्रान्सपोर्ट करण्याचा मार्ग आहे. त्याची रचना खालीलप्रमाणे आहे:
+    - हा JSON (JavaScript Object Notation) दस्तऐवज आहे जो लोकप्रिय डेटा एक्सचेंज स्वरूप आहे. हे executable कोड नाही, परंतु डेटा साठवण्याचा आणि घेऊन जाण्याचा मार्ग आहे. त्याची रचना:
 
-    - "prompt": हा की एक स्ट्रिंग मूल्य धारण करतो, जो AI सहाय्यकाला दिलेला टास्क किंवा प्रश्न दर्शवतो.
+    - "prompt": हा की एक स्ट्रिंग आहे ज्यामध्ये AI सहाय्यकाला दिलेला प्रश्न किंवा कार्य असते.
 
-    - "messages": हा की ऑब्जेक्ट्सची एक अ‍ॅरे धारण करतो. प्रत्येक ऑब्जेक्ट वापरकर्ता आणि AI सहाय्यक यांच्यातील संभाषणातील एक संदेश दर्शवतो. प्रत्येक संदेश ऑब्जेक्टमध्ये दोन कीज असतात:
+    - "messages": हा की ऑब्जेक्ट्सची यादी धरतो. प्रत्येक ऑब्जेक्ट वापरकर्ता आणि AI सहाय्यक यांच्यातील संवादातील एक संदेश दर्शवितो. प्रत्येक संदेश ऑब्जेक्टमध्ये दोन कीज आहेत:
 
-    - "content": हा की संदेशाचा मजकूर असलेला स्ट्रिंग मूल्य धारण करतो.
-    - "role": हा की संदेश पाठवणाऱ्या घटकाची भूमिका दर्शवणारा स्ट्रिंग मूल्य धारण करतो. तो "user" किंवा "assistant" असू शकतो.
-    - "prompt_id": हा की प्रॉम्प्टसाठी एक अद्वितीय ओळख दर्शवणारा स्ट्रिंग मूल्य धारण करतो.
+    - "content": हा की संदेशाचा मजकूर असतो.  
+    - "role": हा की संदेश पाठवणाऱ्या व्यक्तीची भूमिका दर्शवतो, "user" किंवा "assistant".  
+    - "prompt_id": हा की प्रॉम्प्टची अनन्य ओळख दाखवतो.
 
-1. या विशिष्ट JSON दस्तऐवजात, एक संभाषण दाखवले आहे जिथे वापरकर्ता AI सहाय्यकाला dystopian कथा साठी नायक तयार करण्यास सांगतो. सहाय्यक प्रतिसाद देतो, आणि नंतर वापरकर्ता अधिक तपशील मागतो. सहाय्यक अधिक तपशील देण्यास सहमत होतो. संपूर्ण संभाषण विशिष्ट prompt_id शी संबंधित आहे.
+1. या विशिष्ट JSON दस्तऐवजात, एक संभाषण दर्शवले आहे जिथे वापरकर्ता AI सहाय्यकाला dystopian कथा साठी नायक निर्माण करण्यास सांगतो. सहाय्यक प्रतिसाद देतो, नंतर वापरकर्ता अधिक तपशील विचारतो. सहाय्यक अधिक तपशील देण्यास सहमत होतो. हे संपूर्ण संभाषण विशिष्ट प्रॉम्प्ट id शी संबंधित आहे.
 
     ```python
     {
@@ -333,110 +334,109 @@ chat-completion डेटासेट parquet फॉरमॅटमध्ये 
         "prompt_id": "d938b65dfe31f05f80eb8572964c6673eddbd68eff3db6bd234d7f1e3b86c2af"
     }
     ```
-
+  
 ### डेटा डाउनलोड करा
 
-1. हा Python स्क्रिप्ट download-dataset.py नावाच्या सहाय्यक स्क्रिप्टचा वापर करून डेटासेट डाउनलोड करण्यासाठी वापरला जातो. त्याचे काय कार्य आहे ते खालीलप्रमाणे:
+1. हा Python स्क्रिप्ट download-dataset.py नावाच्या हेल्पर स्क्रिप्टचा वापर करून डेटासेट डाउनलोड करण्यासाठी आहे. याचे वर्णन:
 
-    - os मॉड्यूल इम्पोर्ट करतो, जे ऑपरेटिंग सिस्टमवर अवलंबून कार्य करण्याचा पोर्टेबल मार्ग देते.
+    - os मॉड्युल आयात करतो, जे ऑपरेटिंग सिस्टमवर आधारित कार्ये करण्यासाठी पोर्टेबल सुविधा देतो.
 
-    - os.system फंक्शन वापरून download-dataset.py स्क्रिप्ट शेलमध्ये विशिष्ट कमांड-लाइन आर्ग्युमेंट्ससह चालवतो. आर्ग्युमेंट्समध्ये डाउनलोड करायचा डेटासेट (HuggingFaceH4/ultrachat_200k), डाउनलोड करण्यासाठी डायरेक्टरी (ultrachat_200k_dataset), आणि डेटासेटचा किती टक्का स्प्लिट करायचा (5) यांचा समावेश आहे. os.system फंक्शनने चालवलेल्या कमांडचा exit status परत करतो; हा exit_status व्हेरिएबलमध्ये साठवला जातो.
+    - os.system फंक्शन वापरून download-dataset.py स्क्रिप्ट खालील कमांड लाइन आर्ग्युमेंटसह चालवतो: डाउनलोडसाठी डेटासेट HuggingFaceH4/ultrachat_200k, डाउनलोड डायरेक्टरी ultrachat_200k_dataset, आणि डेटासेटचा 5% हिस्सा वापरावा अशी सूचना. os.system कमांडचे परतावा exit_status मध्ये साठवतो.
 
-    - exit_status 0 नसल्यास, म्हणजे कमांड अयशस्वी झाल्यास, Exception उचलतो ज्यात डेटासेट डाउनलोड करताना त्रुटी असल्याचा संदेश असतो.
+    - exit_status 0 नसल्यास (यूनिक्स प्रमाणे 0 यश दर्शवते) Exception उडवतो ज्यामध्ये डेटासेट डाउनलोड करताना त्रुटी असल्याचे संदेश आहे.
 
-    - सारांश, हा स्क्रिप्ट सहाय्यक स्क्रिप्ट वापरून डेटासेट डाउनलोड करण्याचा आदेश देतो आणि कमांड अयशस्वी झाल्यास त्रुटी दाखवतो.
+    - सारांश: ही स्क्रिप्ट हेल्पर स्क्रिप्ट वापरून डेटासेट डाउनलोड करते आणि त्रुटी असल्यास अपवाद उडवते.
 
     ```python
-    # Import the os module, which provides a way of using operating system dependent functionality
+    # os मॉड्यूल आयात करा, जे ऑपरेटिंग सिस्टमवर अवलंबून कार्यक्षमता वापरण्याचा मार्ग प्रदान करते
     import os
     
-    # Use the os.system function to run the download-dataset.py script in the shell with specific command-line arguments
-    # The arguments specify the dataset to download (HuggingFaceH4/ultrachat_200k), the directory to download it to (ultrachat_200k_dataset), and the percentage of the dataset to split (5)
-    # The os.system function returns the exit status of the command it executed; this status is stored in the exit_status variable
+    # os.system फंक्शन वापरा जेणेकरून download-dataset.py स्क्रिप्ट विशिष्ट कमांड-लाइन आर्ग्युमेंटसह शेलमध्ये चालवता येईल
+    # आर्ग्युमेंट्समध्ये डाउनलोड करायचा डेटासेट (HuggingFaceH4/ultrachat_200k), ते डाउनलोड करण्यासाठी डायरेक्टरी (ultrachat_200k_dataset), आणि डेटासेटचा विभागणी टक्केवारी (5) निर्दिष्ट केली आहे
+    # os.system फंक्शन त्याने चालवलेल्या कमांडचा exit status परत देते; हा status exit_status व्हेरिएबलमध्ये संग्रहित केला जातो
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
-    # Check if exit_status is not 0
-    # In Unix-like operating systems, an exit status of 0 usually indicates that a command has succeeded, while any other number indicates an error
-    # If exit_status is not 0, raise an Exception with a message indicating that there was an error downloading the dataset
+    # तपासा की exit_status 0 नाही
+    # Unix-प्रकारच्या ऑपरेटिंग सिस्टममध्ये, exit status 0 सहसा कमांड यशस्वी झाल्याचे सूचित करते, तर इतर कोणताही नंबर त्रुटी दर्शवतो
+    # जर exit_status 0 नसेल, तर डेटासेट डाउनलोड करताना त्रुटी असल्याचे संदेशासह Exception उभा करा
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
+  
+### DataFrame मध्ये डेटा लोड करणे
 
-### डेटा DataFrame मध्ये लोड करणे
+1. हा Python स्क्रिप्ट JSON Lines फाइल pandas DataFrame मध्ये लोड करतो आणि पहिल्या 5 रकाने दाखवतो. याचे वर्णन:
 
-1. हा Python स्क्रिप्ट JSON Lines फाइल pandas DataFrame मध्ये लोड करतो आणि पहिल्या 5 रांगा दाखवतो. त्याचे काय कार्य आहे ते खालीलप्रमाणे:
+    - pandas लायब्ररी आयात करतो, जी डेटा मॅनिप्युलेशन व विश्लेषणासाठी शक्तिशाली आहे.
 
-    - pandas लायब्ररी इम्पोर्ट करतो, जी डेटा मॅनिप्युलेशन आणि विश्लेषणासाठी शक्तिशाली लायब्ररी आहे.
+    - pandas च्या डिस्प्ले ऑप्शन्ससाठी जास्तीत जास्त कॉलम रुंदी 0 सेट करतो, ज्यामुळे पूर्ण टेक्स्ट दाखवला जातो, टंकन होणार नाही जेव्हा DataFrame कन्सोलवर मुद्रित होईल.
+    - हे pd.read_json फंक्शन वापरून ultrachat_200k_dataset निर्देशिकेमधील train_sft.jsonl फाइल DataFrame मध्ये लोड करते. lines=True हा आर्ग्युमेंट सूचित करतो की फाइल JSON Lines फॉरमॅटमध्ये आहे, जिथे प्रत्येक ओळ एक स्वतंत्र JSON ऑब्जेक्ट असते.
 
-    - pandas च्या display पर्यायांमध्ये कमाल कॉलम रुंदी 0 सेट करतो. याचा अर्थ DataFrame प्रिंट करताना प्रत्येक कॉलमचा पूर्ण मजकूर कट न होता दाखवला जाईल.
+    - हे head मेथड वापरून DataFrame च्या पहिल्या 5 रांग दाखवते. जर DataFrame मध्ये 5 पेक्षा कमी रांगा असतील, तर ते सर्व रांगा दाखवेल.
 
-    - pd.read_json फंक्शन वापरून ultrachat_200k_dataset डायरेक्टरीमधील train_sft.jsonl फाइल DataFrame मध्ये लोड करतो. lines=True हे दर्शवते की फाइल JSON Lines फॉरमॅटमध्ये आहे, जिथे प्रत्येक ओळ स्वतंत्र JSON ऑब्जेक्ट आहे.
-- हे DataFrame च्या पहिल्या 5 रकान्या दाखवण्यासाठी head मेथड वापरते. जर DataFrame मध्ये 5 पेक्षा कमी रकाने असतील, तर ते सर्व दाखवेल.
-
-- सारांश म्हणून, हा स्क्रिप्ट JSON Lines फाइल DataFrame मध्ये लोड करत आहे आणि पहिल्या 5 रकान्यांसह पूर्ण कॉलम मजकूर दाखवत आहे.
-
-```python
-    # Import the pandas library, which is a powerful data manipulation and analysis library
+    - सारांशात, हा स्क्रिप्ट JSON Lines फाइल DataFrame मध्ये लोड करीत आहे आणि संपूर्ण कॉलम मजकूरासह पहिल्या 5 रांगा दाखवत आहे.
+    
+    ```python
+    # पॅंडस लायब्ररी आयात करा, जी एक शक्तिशाली डेटा मॅनिप्युलेशन आणि विश्लेषण लायब्ररी आहे
     import pandas as pd
     
-    # Set the maximum column width for pandas' display options to 0
-    # This means that the full text of each column will be displayed without truncation when the DataFrame is printed
+    # पॅंडसच्या डिस्प्ले पर्यायांसाठी कमाल स्तंभ रुंदी 0 सेट करा
+    # याचा अर्थ असा की DataFrame छापल्यावर प्रत्येक स्तंभाचा पूर्ण मजकूर त्रुटीशिवाय दर्शविला जाईल
     pd.set_option("display.max_colwidth", 0)
     
-    # Use the pd.read_json function to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame
-    # The lines=True argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # pd.read_json फंक्शन वापरून ultrachat_200k_dataset निर्देशिकेतील train_sft.jsonl फाइल DataFrame मध्ये लोड करा
+    # lines=True या आर्ग्युमेंटचा अर्थ फाइल JSON Lines फॉरमॅटमध्ये आहे, जिथे प्रत्येक ओळ स्वतंत्र JSON ऑब्जेक्ट असते
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Use the head method to display the first 5 rows of the DataFrame
-    # If the DataFrame has less than 5 rows, it will display all of them
+    # head मेथड वापरून DataFrame चे पहिले 5 रेकॉर्ड दाखवा
+    # जर DataFrame मध्ये 5 पेक्षा कमी रेकॉर्ड असतील, तर ते सर्व दाखवले जातील
     df.head()
     ```
 
-## 5. मॉडेल आणि डेटा इनपुट म्हणून वापरून फाइन ट्यूनिंग जॉब सबमिट करा
+## 5. मॉडेल आणि डेटा इनपुट म्हणून वापरून फाइन ट्युनिंग जॉब सबमिट करा
 
-chat-completion पाइपलाइन कॉम्पोनंट वापरणारा जॉब तयार करा. फाइन ट्यूनिंगसाठी समर्थित सर्व पॅरामीटर्सबद्दल अधिक जाणून घ्या.
+चॅट-कंप्लीशन पाईपलाईन घटक वापरणारा जॉब तयार करा. फाइन ट्युनिंगसाठी समर्थित सर्व पॅरामीटर्सबद्दल अधिक जाणून घ्या.
 
-### फाइनट्यून पॅरामीटर्स परिभाषित करा
+### फाइनट्युन पॅरामीटर्स परिभाषित करा
 
-1. फाइनट्यून पॅरामीटर्स दोन वर्गांमध्ये विभागले जाऊ शकतात - प्रशिक्षण पॅरामीटर्स, ऑप्टिमायझेशन पॅरामीटर्स
+1. फाइनट्युन पॅरामीटर्स दोन वर्गांमध्ये विभागले जाऊ शकतात - प्रशिक्षण पॅरामीटर्स, ऑप्टिमायझेशन पॅरामीटर्स
 
-1. प्रशिक्षण पॅरामीटर्स प्रशिक्षणाच्या बाबी परिभाषित करतात जसे की -
+1. प्रशिक्षण पॅरामीटर्स प्रशिक्षणाच्या पैलूंना परिभाषित करतात जसे की -
 
     - वापरायचा ऑप्टिमायझर, शेड्युलर
-    - फाइनट्यूनसाठी ऑप्टिमायझेशनसाठी मेट्रिक
-    - प्रशिक्षण स्टेप्सची संख्या, बॅच साईज इत्यादी
-    - ऑप्टिमायझेशन पॅरामीटर्स GPU मेमरी ऑप्टिमायझेशन आणि संगणकीय संसाधनांचा प्रभावी वापर करण्यास मदत करतात.
+    - फाइनट्युन ऑप्टिमायझेसाठी मेट्रिक
+    - प्रशिक्षण स्टेप्सची संख्या, बॅच साईज वगैरे
+    - ऑप्टिमायझेशन पॅरामीटर्स GPU मेमरी ऑप्टिमायझ करण्यास आणि संगणकीय संसाधने प्रभावीपणे वापरण्यात मदत करतात.
 
-1. खाली काही पॅरामीटर्स आहेत जे या वर्गात येतात. ऑप्टिमायझेशन पॅरामीटर्स प्रत्येक मॉडेलसाठी वेगळे असतात आणि मॉडेलसह पॅकेज केलेले असतात जेणेकरून या फरकांना हाताळता येईल.
+1. खाली काही पॅरामीटर्स दिले आहेत जे या वर्गात मोडतात. ऑप्टिमायझेशन पॅरामीटर्स प्रत्येक मॉडेलसाठी भिन्न असतात आणि मॉडेलसह पॅकेज्ड असतात जेणेकरून या फरकांना हाताळता येईल.
 
-    - deepspeed आणि LoRA सक्षम करा
-    - मिक्स्ड प्रिसिजन प्रशिक्षण सक्षम करा
-    - मल्टी-नोड प्रशिक्षण सक्षम करा
-
+    - डीपस्पीड आणि LoRA सक्षम करा
+    - मिश्रित प्रिसिजन प्रशिक्षण सक्षम करा
+    - मल्टीनोड प्रशिक्षण सक्षम करा
 
 > [!NOTE]
-> सुपरवाइज्ड फाइनट्यूनिंगमुळे संरेखन गमावले जाऊ शकते किंवा गंभीर विसर पडू शकतो. आम्ही या समस्येची तपासणी करण्याची आणि फाइनट्यूनिंगनंतर संरेखन टप्पा चालवण्याची शिफारस करतो.
+> पर्यवेक्षित फाइनट्युनिंगमुळे संरेखण गमावणे किंवा भयानक विसरणे उद्भवू शकते. आम्ही शिफारस करतो की आपण या समस्येची तपासणी करा आणि फाइनट्युनिंगनंतर संरेखण पायरी चालवा.
 
-### फाइन ट्यूनिंग पॅरामीटर्स
+### फाइन ट्युनिंग पॅरामीटर्स
 
-1. हा Python स्क्रिप्ट मशीन लर्निंग मॉडेलसाठी फाइन-ट्यूनिंग पॅरामीटर्स सेट करत आहे. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट मशीन लर्निंग मॉडेलचे फाइन-ट्युनिंगसाठी पॅरामीटर्स सेट करत आहे. खाली याचे तपशील दिलेले आहेत:
 
-    - तो डिफॉल्ट प्रशिक्षण पॅरामीटर्स सेट करतो जसे की प्रशिक्षण एपॉक्सची संख्या, प्रशिक्षण आणि मूल्यांकनासाठी बॅच साईज, लर्निंग रेट, आणि लर्निंग रेट शेड्युलर प्रकार.
+    - तो प्रशिक्षणाच्या डीफॉल्ट पॅरामीटर्स सेट करतो जसे की प्रशिक्षण इपॉक्सची संख्या, प्रशिक्षण व मूल्यांकनासाठी बॅच साईज, लर्निंग रेट, आणि लर्निंग रेट शेड्युलर प्रकार.
 
-    - तो डिफॉल्ट ऑप्टिमायझेशन पॅरामीटर्स सेट करतो जसे की Layer-wise Relevance Propagation (LoRa) आणि DeepSpeed लागू करायचे की नाही, आणि DeepSpeed स्टेज.
+    - तो डीफॉल्ट ऑप्टिमायझेशन पॅरामीटर्स सेट करतो जसे की Layer-wise Relevance Propagation (LoRa) आणि DeepSpeed लागू करायचे की नाही, आणि DeepSpeed टप्पा.
 
-    - तो प्रशिक्षण आणि ऑप्टिमायझेशन पॅरामीटर्स एकत्र करून finetune_parameters नावाचा एक डिक्शनरी तयार करतो.
+    - तो प्रशिक्षण आणि ऑप्टिमायझेशन पॅरामीटर्स एकत्र करून finetune_parameters नावाच्या एकच डिक्शनरी बनवतो.
 
-    - तो तपासतो की foundation_model कडे कोणतेही मॉडेल-विशिष्ट डिफॉल्ट पॅरामीटर्स आहेत का. असल्यास, तो एक चेतावणी संदेश छापतो आणि finetune_parameters डिक्शनरीमध्ये हे मॉडेल-विशिष्ट डिफॉल्ट्स अपडेट करतो. ast.literal_eval फंक्शन वापरून मॉडेल-विशिष्ट डिफॉल्ट्स स्ट्रिंगमधून Python डिक्शनरीमध्ये रूपांतरित केले जातात.
+    - तो तपासतो की foundation_model कडे काही मॉडेल-विशिष्ट डीफॉल्ट पॅरामीटर्स आहेत का. असल्यास, तो एक चेतावणी मेसेज प्रिंट करतो आणि finetune_parameters डिक्शनरी मध्ये ते मॉडेल-विशिष्ट डीफॉल्ट्स अपडेट करतो. ast.literal_eval फंक्शन वापरून मॉडेल-विशिष्ट डीफॉल्ट्स स्ट्रिंगपासून Python डिक्शनरीमध्ये रूपांतर केले जातात.
 
-    - तो फाइन-ट्यूनिंगसाठी वापरल्या जाणाऱ्या अंतिम पॅरामीटर्स छापतो.
+    - तो अंतिम फाइन-ट्युनिंग पॅरामीटर्स प्रिंट करतो जे रनसाठी वापरले जातील.
 
-    - सारांश म्हणून, हा स्क्रिप्ट मशीन लर्निंग मॉडेलसाठी फाइन-ट्यूनिंग पॅरामीटर्स सेट करतो आणि दर्शवतो, ज्यात डिफॉल्ट पॅरामीटर्स मॉडेल-विशिष्ट पॅरामीटर्सने ओव्हरराईड करता येतात.
+    - सारांशात, हे स्क्रिप्ट मशीन लर्निंग मॉडेलच्या फाइन-ट्युनिंगसाठी पॅरामीटर्स सेट करीत आहे आणि त्या पॅरामीटर्स प्रदर्शित करत आहे, ज्यामध्ये डीफॉल्ट पॅरामीटर्सवर मॉडेल-विशिष्ट पॅरामीटर्स ओव्हरराईड करता येतात.
 
-```python
-    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    ```python
+    # प्रशिक्षणाचे डीफॉल्ट पॅरामीटर्स सेट करा जसे की प्रशिक्षणाच्या युगांची संख्या, प्रशिक्षण आणि मूल्यमापनासाठी बॅच आकार, शिक्षण दर, आणि शिक्षण दरांचे नियोजन करणारा प्रकार
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -445,84 +445,84 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
         lr_scheduler_type="cosine",
     )
     
-    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    # डीफॉल्ट ऑप्टिमायझेशन पॅरामीटर्स सेट करा जसे की Layer-wise Relevance Propagation (LoRa) आणि DeepSpeed लागू करायचे आहे का आणि DeepSpeed चे टप्पा
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    # प्रशिक्षण आणि ऑप्टिमायझेशन पॅरामीटर्स एकत्र करून finetune_parameters नावाच्या एकाच डिक्शनरीमध्ये सेट करा
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Check if the foundation_model has any model-specific default parameters
-    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
-    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    # तपासा की foundation_model मध्ये कोणतेही मॉडेल-विशिष्ट डीफॉल्ट पॅरामीटर्स आहेत का
+    # असल्यास, चेतावणी संदेश छापा आणि finetune_parameters डिक्शनरीमध्ये हे मॉडेल-विशिष्ट डीफॉल्ट अपडेट करा
+    # ast.literal_eval फंक्शनचा वापर मॉडेल-विशिष्ट डीफॉल्ट्स स्ट्रिंगमधून पायथन डिक्शनरीमध्ये रूपांतर करण्यासाठी केला जातो
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # convert string to python dict
+            ast.literal_eval(  # स्ट्रिंगला पायथन डिक्शनरीमध्ये रूपांतर करा
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # Print the final set of fine-tuning parameters that will be used for the run
+    # रनसाठी वापरल्या जाणाऱ्या अंतिम फाइन-ट्यूनिंग पॅरामीटर्स सेट छापा
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
     ```
 
-### प्रशिक्षण पाइपलाइन
+### प्रशिक्षण पाईपलाईन
 
-1. हा Python स्क्रिप्ट मशीन लर्निंग प्रशिक्षण पाइपलाइनसाठी डिस्प्ले नाव तयार करण्यासाठी फंक्शन परिभाषित करतो आणि नंतर ते कॉल करून डिस्प्ले नाव तयार करतो आणि छापतो. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट मशीन लर्निंग प्रशिक्षण पाईपलाईनसाठी डिस्प्ले नाव तयार करण्यासाठी एक फंक्शन परिभाषित करतो, आणि नंतर त्या फंक्शनला कॉल करून डिस्प्ले नाव जनरेट करून प्रिंट करतो. खाली त्याचा तपशील आहे:
 
-1. get_pipeline_display_name फंक्शन परिभाषित केले आहे. हे फंक्शन प्रशिक्षण पाइपलाइनशी संबंधित विविध पॅरामीटर्सवर आधारित डिस्प्ले नाव तयार करते.
+1. get_pipeline_display_name फंक्शन परिभाषित केले आहे. हे फंक्शन प्रशिक्षण पाईपलाईनशी संबंधित विविध पॅरामीटर्सवर आधारित डिस्प्ले नाव तयार करते.
 
-1. फंक्शनमध्ये, तो एकूण बॅच साईज कॅल्क्युलेट करतो ज्यासाठी प्रति-डिव्हाइस बॅच साईज, ग्रेडियंट अ‍ॅक्युम्युलेशन स्टेप्सची संख्या, प्रति नोड GPU ची संख्या, आणि फाइन-ट्यूनिंगसाठी वापरल्या जाणाऱ्या नोड्सची संख्या यांचा गुणाकार करतो.
+1. फंक्शनमध्ये, एकूण बॅच साईजची गणना केली जाते जे प्रति-डिव्हाइस बॅच साईज, ग्रेडियंट अक्युम्युलेशन स्टेप्स, प्रति नोड GPU संख्या, आणि फाइन-ट्युनिंगसाठी वापरल्या जाणार्‍या नोड्सच्या संख्येची गुणाकार करून मिळते.
 
-1. तो इतर पॅरामीटर्स मिळवतो जसे की लर्निंग रेट शेड्युलर प्रकार, DeepSpeed लागू आहे का, DeepSpeed स्टेज, Layer-wise Relevance Propagation (LoRa) लागू आहे का, मॉडेल चेकपॉइंट्सची मर्यादा, आणि कमाल सिक्वेन्स लांबी.
+1. इतर पॅरामीटर्स जसे की लर्निंग रेट शेड्युलर प्रकार, DeepSpeed लागू आहे का, DeepSpeed टप्पा, Layer-wise Relevance Propagation (LoRa) लागू आहे का, ठेवायच्या मॉडेल चेकपॉइंट्सची मर्यादा, आणि कमाल सिक्वेंस लांबी मिळवली जाते.
 
-1. तो एक स्ट्रिंग तयार करतो ज्यात हे सर्व पॅरामीटर्स हायफनने वेगळे केलेले असतात. जर DeepSpeed किंवा LoRa लागू असेल, तर स्ट्रिंगमध्ये "ds" आणि DeepSpeed स्टेज किंवा "lora" समाविष्ट असते. नसल्यास "nods" किंवा "nolora" समाविष्ट असते.
+1. तो एक स्ट्रिंग तयार करतो ज्यात हे सर्व पॅरामीटर्स हायफनने विभाजित केलेले असतात. जर DeepSpeed किंवा LoRa लागू असेल, तर स्ट्रिंगमध्ये "ds" आणि DeepSpeed टप्पा किंवा "lora" समाविष्ट केले जाते. नसेल तर "nods" किंवा "nolora" समाविष्ट केले जाते.
 
-1. फंक्शन हा स्ट्रिंग परत करतो, जो प्रशिक्षण पाइपलाइनसाठी डिस्प्ले नाव म्हणून वापरला जातो.
+1. फंक्शन हा स्ट्रिंग परत करते, जी प्रशिक्षण पाईपलाईनसाठी डिस्प्ले नाव म्हणून काम करते.
 
-1. फंक्शन परिभाषित केल्यानंतर, ते कॉल करून डिस्प्ले नाव तयार केले जाते आणि ते छापले जाते.
+1. फंक्शन परिभाषित केल्यानंतर ते कॉल करून डिस्प्ले नाव जनरेट केले जाते आणि नंतर ते प्रिंट केले जाते.
 
-1. सारांश म्हणून, हा स्क्रिप्ट विविध पॅरामीटर्सवर आधारित मशीन लर्निंग प्रशिक्षण पाइपलाइनसाठी डिस्प्ले नाव तयार करतो आणि ते छापतो.
+1. सारांशात, हा स्क्रिप्ट विविध पॅरामीटर्सवर आधारित मशीन लर्निंग प्रशिक्षण पाईपलाईनसाठी डिस्प्ले नाव तयार करीत आहे आणि ते प्रिंट करत आहे.
 
-```python
-    # Define a function to generate a display name for the training pipeline
+    ```python
+    # प्रशिक्षण पाइपलाइनसाठी डिस्प्ले नाव निर्माण करण्यासाठी फंक्शन परिभाषित करा
     def get_pipeline_display_name():
-        # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
+        # प्रति-डिव्हाइस बॅच आकार, ग्रेडियंट संचयन टप्प्यांची संख्या, प्रति नोड GPU ची संख्या आणि फाइन-ट्यूनिंगसाठी वापरलेल्या नोडांची संख्या यांचा गुणाकार करून एकूण बॅच आकार मोजा
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Retrieve the learning rate scheduler type
+        # शिक्षण दर शेड्युलरचा प्रकार मिळवा
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Retrieve whether DeepSpeed is applied
+        # डीपस्पीड लागू केला आहे का ते मिळवा
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Retrieve the DeepSpeed stage
+        # डीपस्पीड टप्पा मिळवा
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # If DeepSpeed is applied, include "ds" followed by the DeepSpeed stage in the display name; if not, include "nods"
+        # डीपस्पीड लागू असल्यास, डिस्प्ले नावात डीपस्पीड टप्पा पुढे ठेवून "ds" समाविष्ट करा; नसेल तर "nods" समाविष्ट करा
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Retrieve whether Layer-wise Relevance Propagation (LoRa) is applied
+        # लेयर-वाइज रिलिव्हन्स प्रोपेगेशन (LoRa) लागू आहे का ते मिळवा
         lora = finetune_parameters.get("apply_lora", "false")
-        # If LoRa is applied, include "lora" in the display name; if not, include "nolora"
+        # LoRa लागू असल्यास, डिस्प्ले नावात "lora" समाविष्ट करा; नसेल तर "nolora" समाविष्ट करा
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Retrieve the limit on the number of model checkpoints to keep
+        # ठेवण्यासाठी मॉडेल चेकपॉइंटची मर्यादा मिळवा
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # Retrieve the maximum sequence length
+        # कमाल सिक्वेन्स लांबी मिळवा
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Construct the display name by concatenating all these parameters, separated by hyphens
+        # सर्व या परिमाणांना हायफनने वेगळे करून डिस्प्ले नाव तयार करा
         return (
             model_name
             + "-"
@@ -539,192 +539,192 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
             + f"-seqlen{seq_len}"
         )
     
-    # Call the function to generate the display name
+    # डिस्प्ले नाव तयार करण्यासाठी फंक्शन कॉल करा
     pipeline_display_name = get_pipeline_display_name()
-    # Print the display name
+    # डिस्प्ले नाव छापा
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### पाइपलाइन कॉन्फिगर करणे
+### पाईपलाईन सेटिंग्ज
 
-हा Python स्क्रिप्ट Azure Machine Learning SDK वापरून मशीन लर्निंग पाइपलाइन परिभाषित आणि कॉन्फिगर करतो. त्याचे तपशील पुढीलप्रमाणे:
+हा Python स्क्रिप्ट Azure Machine Learning SDK वापरून मशीन लर्निंग पाईपलाईन परिभाषित आणि कॉन्फिगर करत आहे. खाली त्याचा तपशील आहे:
 
-1. तो Azure AI ML SDK मधील आवश्यक मॉड्यूल्स इम्पोर्ट करतो.
+1. Azure AI ML SDK मधील आवश्यक मोड्यूल्स इम्पोर्ट केले जातात.
 
-1. तो रजिस्ट्रीमधून "chat_completion_pipeline" नावाचा पाइपलाइन कॉम्पोनंट प्राप्त करतो.
+1. रजिस्ट्रीमधून "chat_completion_pipeline" नावाचा पाईपलाईन घटक प्राप्त केला जातो.
 
-1. `@pipeline` डेकोरेटर आणि `create_pipeline` फंक्शन वापरून पाइपलाइन जॉब परिभाषित करतो. पाइपलाइनचे नाव `pipeline_display_name` असे सेट केले आहे.
+1. `@pipeline` डेकोरेटर वापरून आणि `create_pipeline` फंक्शनने पाईपलाईन जॉब परिभाषित केला जातो. पाईपलाईनचे नाव `pipeline_display_name` असे सेट केलेले आहे.
 
-1. `create_pipeline` फंक्शनमध्ये, तो प्राप्त केलेल्या पाइपलाइन कॉम्पोनंटला विविध पॅरामीटर्ससह इनिशियलाइझ करतो, ज्यात मॉडेल पथ, विविध टप्प्यांसाठी कम्प्युट क्लस्टर्स, प्रशिक्षण आणि चाचणीसाठी डेटासेट स्प्लिट्स, फाइन-ट्यूनिंगसाठी GPU ची संख्या, आणि इतर फाइन-ट्यूनिंग पॅरामीटर्स यांचा समावेश आहे.
+1. `create_pipeline` फंक्शनमध्ये, मिळवलेल्या पाईपलाईन घटकास बरेच पॅरामीटर्ससह इनिशियलाइझ केले जाते, ज्यात मॉडेल पाथ, विविध टप्प्यांसाठी कम्प्युट क्लस्टर्स, प्रशिक्षण आणि चाचणीसाठी डेटासेट विभाजन, फाइन-ट्युनिंगसाठी GPU ची संख्या, आणि इतर फाइन-ट्युनिंग पॅरामीटर्स समाविष्ट आहेत.
 
-1. तो फाइन-ट्यूनिंग जॉबचा आउटपुट पाइपलाइन जॉबच्या आउटपुटशी मॅप करतो. यामुळे फाइन-ट्यून केलेले मॉडेल सहज नोंदणी करता येते, जे ऑनलाइन किंवा बॅच एंडपॉइंटवर मॉडेल डिप्लॉय करण्यासाठी आवश्यक आहे.
+1. फाइन-ट्युनिंग जॉबचे आउटपुट पाईपलाईन जॉबच्या आउटपुटशी मॅप केले जाते. हे फाइन-ट्युन केलेला मॉडेल सहज नोंदणीसाठी केले जाते, जे मॉडेल ऑनलाइन किंवा बॅच एंडपॉईंटवर डेप्लॉय करण्यासाठी आवश्यक आहे.
 
-1. तो `create_pipeline` फंक्शन कॉल करून पाइपलाइनची एक उदाहरण तयार करतो.
+1. `create_pipeline` फंक्शन कॉल करून पाईपलाईनची एक उदाहरण तयार केली जाते.
 
-1. तो पाइपलाइनचा `force_rerun` सेटिंग `True` करतो, म्हणजे मागील जॉब्सचे कॅश केलेले निकाल वापरले जाणार नाहीत.
+1. पाईपलाईनचे `force_rerun` सेटिंग `True` केली जाते, म्हणजे मागील जॉबमधील कॅश केलेले परिणाम वापरले जाणार नाहीत.
 
-1. तो पाइपलाइनचा `continue_on_step_failure` सेटिंग `False` करतो, म्हणजे कोणताही टप्पा अयशस्वी झाल्यास पाइपलाइन थांबेल.
+1. पाईपलाईनचे `continue_on_step_failure` सेटिंग `False` केली जाते, म्हणजे कोणताही टप्पा अयशस्वी झाल्यास पाईपलाईन थांबेल.
 
-1. सारांश म्हणून, हा स्क्रिप्ट Azure Machine Learning SDK वापरून चॅट कंप्लीशन टास्कसाठी मशीन लर्निंग पाइपलाइन परिभाषित आणि कॉन्फिगर करतो.
+1. सारांशात, हा स्क्रिप्ट Azure Machine Learning SDK वापरून चॅट कंप्लीशन टास्कसाठी मशीन लर्निंग पाईपलाईन परिभाषित आणि कॉन्फिगर करीत आहे.
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # Azure AI ML SDK मधून आवश्यक मॉड्युल्स इम्पोर्ट करा
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Fetch the pipeline component named "chat_completion_pipeline" from the registry
+    # रजिस्ट्रीमधून "chat_completion_pipeline" नावाचा पाइपलाइन घटक आणा
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Define the pipeline job using the @pipeline decorator and the function create_pipeline
-    # The name of the pipeline is set to pipeline_display_name
+    # @pipeline डेकोरेटर आणि create_pipeline फंक्शन वापरून पाइपलाइन जॉब परिभाषित करा
+    # पाइपलाइनचे नाव pipeline_display_name असे सेट केले आहे
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Initialize the fetched pipeline component with various parameters
-        # These include the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters
+        # आणलेल्या पाइपलाइन घटकाची विविध पॅरामीटर्ससह सुरुवात करा
+        # यात मॉडेलचा मार्ग, वेगवेगळ्या स्टेजसाठी compute क्लस्टर्स, प्रशिक्षण आणि चाचणीसाठी dataset splits, fine-tuning साठी GPU ची संख्या आणि इतर fine-tuning पॅरामीटर्स समाविष्ट आहेत
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Map the dataset splits to parameters
+            # dataset splits पॅरामीटर्सशी मॅप करा
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # Training settings
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Set to the number of GPUs available in the compute
+            # प्रशिक्षण सेटिंग्ज
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # compute मध्ये उपलब्ध GPU च्या संख्येनुसार सेट करा
             **finetune_parameters
         )
         return {
-            # Map the output of the fine tuning job to the output of pipeline job
-            # This is done so that we can easily register the fine tuned model
-            # Registering the model is required to deploy the model to an online or batch endpoint
+            # fine tuning जॉबचे आउटपुट पाइपलाइन जॉबच्या आउटपुटशी मॅप करा
+            # हे असे करण्यासाठी आहे जेणेकरून आपण सहजपणे fine tuned मॉडेल नोंदणी करू शकू
+            # मॉडेल नोंदणी ऑनलाइन किंवा बॅच endpoint वर मॉडेल तैनात करण्यासाठी आवश्यक आहे
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Create an instance of the pipeline by calling the create_pipeline function
+    # create_pipeline फंक्शन कॉल करून पाइपलाइनची एखादी उदाहरण तयार करा
     pipeline_object = create_pipeline()
     
-    # Don't use cached results from previous jobs
+    # मागील जॉबमधील केशेड परिणामांचा वापर करू नका
     pipeline_object.settings.force_rerun = True
     
-    # Set continue on step failure to False
-    # This means that the pipeline will stop if any step fails
+    # step failure वर continue सेटिंग False करा
+    # याचा अर्थ जर कोणताही स्टेप अयशस्वी झाला तर पाइपलाइन थांबेल
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
 ### जॉब सबमिट करा
 
-1. हा Python स्क्रिप्ट Azure Machine Learning वर्कस्पेसमध्ये मशीन लर्निंग पाइपलाइन जॉब सबमिट करतो आणि नंतर जॉब पूर्ण होईपर्यंत थांबतो. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट एक मशीन लर्निंग पाईपलाईन जॉब Azure Machine Learning वर्कस्पेसमध्ये सबमिट करीत आहे आणि नंतर जॉब पूर्ण होईपर्यंत थांबतो. खाली तपशील आहे:
 
-    - तो workspace_ml_client मधील jobs ऑब्जेक्टचा create_or_update मेथड कॉल करून पाइपलाइन जॉब सबमिट करतो. चालवायची पाइपलाइन pipeline_object ने निर्दिष्ट केली आहे, आणि जॉब चालवण्याचा प्रयोग experiment_name ने निर्दिष्ट केला आहे.
+    - तो workspace_ml_client मधील jobs ऑब्जेक्टचा create_or_update मेथड कॉल करून पाईपलाईन जॉब सबमिट करतो. चालवायची पाईपलाईन pipeline_object ने निर्दिष्ट केली आहे, आणि जॉब चालणारा experiment experiment_name ने निर्दिष्ट केलेले आहे.
 
-    - नंतर तो workspace_ml_client मधील jobs ऑब्जेक्टचा stream मेथड कॉल करून पाइपलाइन जॉब पूर्ण होईपर्यंत थांबतो. थांबायचा जॉब pipeline_job ऑब्जेक्टच्या name अ‍ॅट्रिब्यूटने निर्दिष्ट केला आहे.
+    - नंतर तो workspace_ml_client मधील jobs ऑब्जेक्टचा stream मेथड कॉल करून पाईपलाईन जॉब पूर्ण होईपर्यंत थांबतो. थांबायचा जॉब pipeline_job ऑब्जेक्टच्या name अॅट्रिब्यूटद्वारे निर्दिष्ट केलेला आहे.
 
-    - सारांश म्हणून, हा स्क्रिप्ट Azure Machine Learning वर्कस्पेसमध्ये मशीन लर्निंग पाइपलाइन जॉब सबमिट करतो आणि नंतर जॉब पूर्ण होईपर्यंत थांबतो.
+    - सारांशात, हा स्क्रिप्ट Azure Machine Learning वर्कस्पेसमध्ये मशीन लर्निंग पाईपलाईन जॉब सबमिट करीत आहे आणि नंतर जॉब पूर्ण होईपर्यंत थांबतो.
 
-```python
-    # Submit the pipeline job to the Azure Machine Learning workspace
-    # The pipeline to be run is specified by pipeline_object
-    # The experiment under which the job is run is specified by experiment_name
+    ```python
+    # Azure मशीन लर्निंग वर्कस्पेसवर पाइपलाइन जॉब सबमिट करा
+    # चालवायची पाइपलाइन pipeline_object द्वारा निर्दिष्ट केली आहे
+    # ज्या प्रयोगाखाली जॉब चालतो तो experiment_name द्वारा निर्दिष्ट आहे
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Wait for the pipeline job to complete
-    # The job to wait for is specified by the name attribute of the pipeline_job object
+    # पाइपलाइन जॉब पूर्ण होईपर्यंत थांबा
+    # थांबण्याचा जॉब pipeline_job ऑब्जेक्टच्या नाव गुणधर्माद्वारे निर्दिष्ट केला आहे
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. फाइन ट्यून केलेले मॉडेल वर्कस्पेसमध्ये नोंदणी करा
+## 6. फाइन ट्युन केलेले मॉडेल वर्कस्पेसशी नोंदणी करा
 
-फाइन ट्यूनिंग जॉबच्या आउटपुटमधून मॉडेल नोंदणी करू. यामुळे फाइन ट्यून केलेल्या मॉडेल आणि फाइन ट्यूनिंग जॉब यांच्यातील संबंध ट्रॅक होईल. फाइन ट्यूनिंग जॉब पुढे फाउंडेशन मॉडेल, डेटा आणि प्रशिक्षण कोडशी संबंध ट्रॅक करतो.
+आपण फाइन ट्युनिंग जॉबच्या आउटपुटमधून मॉडेल नोंदणी करू. हे फाइन ट्युन केलेल्या मॉडेल आणि फाइन ट्युनिंग जॉब यामध्ये लाइनिज ट्रॅक करेल. फाइन ट्युनिंग जॉब आधिक, फाउंडेशन मॉडेल, डेटा आणि प्रशिक्षण कोडशी लाइनिज ट्रॅक करतो.
 
 ### ML मॉडेल नोंदणी
 
-1. हा Python स्क्रिप्ट Azure Machine Learning पाइपलाइनमध्ये प्रशिक्षित केलेले मशीन लर्निंग मॉडेल नोंदणी करतो. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट Azure Machine Learning पाईपलाईनमध्ये प्रशिक्षित केलेला मशीन लर्निंग मॉडेल नोंदणी करत आहे. खाली त्याचा तपशील:
 
-    - तो Azure AI ML SDK मधील आवश्यक मॉड्यूल्स इम्पोर्ट करतो.
+    - Azure AI ML SDK मधील आवश्यक मोड्यूल्स इम्पोर्ट करतात.
 
-    - तो तपासतो की pipeline जॉबमधून trained_model आउटपुट उपलब्ध आहे का, workspace_ml_client मधील jobs ऑब्जेक्टचा get मेथड कॉल करून आणि त्याच्या outputs अ‍ॅट्रिब्यूटमध्ये प्रवेश करून.
+    - pipeline जॉबमधून प्रशिक्षित_model आउटपुट उपलब्ध आहे का ते तपासण्यासाठी workspace_ml_client मधील jobs ऑब्जेक्टचा get मेथड कॉल करतो आणि त्याचा outputs अॅट्रिब्यूट ऍक्सेस करतो.
 
-    - तो pipeline जॉबचे नाव आणि आउटपुटचे नाव ("trained_model") वापरून प्रशिक्षित मॉडेलचा पथ तयार करतो.
+    - pipeline जॉबचे नाव आणि आउटपुटचे नाव ("trained_model") वापरून प्रशिक्षित मॉडेलचा पाथ तयार करतो.
 
-    - तो फाइन-ट्यून केलेल्या मॉडेलसाठी नाव परिभाषित करतो, मूळ मॉडेल नावाच्या शेवटी "-ultrachat-200k" जोडून आणि कोणतेही स्लॅशेस हायफन्सने बदलून.
+    - मॉडेलचे नाव मूळ नावात "-ultrachat-200k" जोडून आणि कोणतेही स्लॅश हायफन्समध्ये बदलून फाइन-ट्युन केलेल्या मॉडेलचे नाव परिभाषित करतो.
 
-    - तो Model ऑब्जेक्ट तयार करून मॉडेल नोंदणीसाठी तयार होतो, ज्यात मॉडेलचा पथ, मॉडेलचा प्रकार (MLflow मॉडेल), मॉडेलचे नाव आणि आवृत्ती, आणि मॉडेलचे वर्णन यांचा समावेश आहे.
+    - Model ऑब्जेक्ट तयार करून नोंदणीसाठी तयार होतो, ज्यात मॉडेलचा पाथ, मॉडेलचा प्रकार (MLflow मॉडेल), मॉडेलचे नाव व आवृत्ती, आणि मॉडेलचे वर्णन समाविष्ट आहे.
 
-    - तो workspace_ml_client मधील models ऑब्जेक्टचा create_or_update मेथड कॉल करून मॉडेल नोंदणी करतो.
+    - workspace_ml_client मधील models ऑब्जेक्टचा create_or_update मेथड कॉल करून Model ऑब्जेक्टसह मॉडेल नोंदणी करतो.
 
-    - तो नोंदणीकृत मॉडेल छापतो.
+    - नोंदणी केलेला मॉडेल प्रिंट करतो.
 
-1. सारांश म्हणून, हा स्क्रिप्ट Azure Machine Learning पाइपलाइनमध्ये प्रशिक्षित केलेले मशीन लर्निंग मॉडेल नोंदणी करतो.
-
-```python
-    # Import necessary modules from the Azure AI ML SDK
+1. सारांशात, हा स्क्रिप्ट Azure Machine Learning पाईपलाईनमध्ये प्रशिक्षित मशीन लर्निंग मॉडेल नोंदणी करीत आहे.
+    
+    ```python
+    # Azure AI ML SDK मधून आवश्यक मॉड्यूल्स आयात करा
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Check if the `trained_model` output is available from the pipeline job
+    # `trained_model` आउटपुट पाइपलाइन नोकरीतून उपलब्ध आहे का ते तपासा
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Construct a path to the trained model by formatting a string with the name of the pipeline job and the name of the output ("trained_model")
+    # पाइपलाइन नोकरीच्या नावाने आणि आउटपुटच्या नावाने ("trained_model") स्ट्रिंग फॉरमॅट करून प्रशिक्षित मॉडेलचा मार्ग तयार करा
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Define a name for the fine-tuned model by appending "-ultrachat-200k" to the original model name and replacing any slashes with hyphens
+    # मूळ मॉडेल नावावर "-ultrachat-200k" जोडून आणि कोणतेही स्लॅश हायफनमध्ये बदलून फाइन-ट्यून केलेल्या मॉडेलचे नाव परिभाषित करा
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Prepare to register the model by creating a Model object with various parameters
-    # These include the path to the model, the type of the model (MLflow model), the name and version of the model, and a description of the model
+    # विविध पॅरामीटरांसह Model ऑब्जेक्ट तयार करून मॉडेल नोंदणीसाठी तयार व्हा
+    # यामध्ये मॉडेलचा मार्ग, मॉडेलचा प्रकार (MLflow मॉडेल), मॉडेलचे नाव आणि आवृत्ती, तसेच मॉडेलचे वर्णन यांचा समावेश आहे
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Use timestamp as version to avoid version conflict
+        version=timestamp,  # आवृत्ती संघर्ष टाळण्यासाठी टाइमस्टॅम्प आवृत्ती म्हणून वापरा
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Register the model by calling the create_or_update method of the models object in the workspace_ml_client with the Model object as the argument
+    # Model ऑब्जेक्टला आर्ग्युमेंट म्हणून देऊन workspace_ml_client च्या models ऑब्जेक्टच्या create_or_update मेथडद्वारे मॉडेल नोंदवा
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
     
-    # Print the registered model
+    # नोंदणी केलेले मॉडेल प्रिंट करा
     print("registered model: \n", registered_model)
     ```
 
-## 7. फाइन ट्यून केलेले मॉडेल ऑनलाइन एंडपॉइंटवर डिप्लॉय करा
+## 7. फाइन ट्युन केलेले मॉडेल ऑनलाइन एंडपॉईंटवर तैनात करा
 
-ऑनलाइन एंडपॉइंट्स एक टिकाऊ REST API देतात जे अशा अ‍ॅप्लिकेशन्ससह एकत्रित करता येते ज्यांना मॉडेल वापरायचे असते.
+ऑनलाइन एंडपॉईंट्स टिकाऊ REST API देतात जे मॉडेल वापरणाऱ्या अॅप्लिकेशन्ससह एकत्रित करता येते.
 
-### एंडपॉइंट व्यवस्थापन
+### एंडपॉईंट व्यवस्थापन
 
-1. हा Python स्क्रिप्ट Azure Machine Learning मध्ये नोंदणीकृत मॉडेलसाठी मॅनेज्ड ऑनलाइन एंडपॉइंट तयार करतो. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट Azure Machine Learning मध्ये नोंदणीकृत मॉडेलसाठी मॅनेज केलेला ऑनलाइन एंडपॉईंट तयार करत आहे. खाली तपशील:
 
-    - तो Azure AI ML SDK मधील आवश्यक मॉड्यूल्स इम्पोर्ट करतो.
+    - Azure AI ML SDK मधील आवश्यक मोड्यूल्स इम्पोर्ट करतो.
 
-    - तो ऑनलाइन एंडपॉइंटसाठी एक अद्वितीय नाव परिभाषित करतो, ज्यात "ultrachat-completion-" या स्ट्रिंगनंतर टाइमस्टॅम्प जोडलेला असतो.
+    - "ultrachat-completion-" या स्ट्रिंगनंतर एक टाइमस्टॅम्प जोडून ऑनलाइन एंडपॉईंटसाठी एक अद्वितीय नाव परिभाषित करतो.
 
-    - तो ManagedOnlineEndpoint ऑब्जेक्ट तयार करून ऑनलाइन एंडपॉइंट तयार करण्यासाठी तयार होतो, ज्यात एंडपॉइंटचे नाव, वर्णन, आणि ऑथेंटिकेशन मोड ("key") यांचा समावेश आहे.
+    - ManagedOnlineEndpoint ऑब्जेक्ट तयार करून ऑनलाइन एंडपॉईंट तयार करण्यासाठी तयार होतो, ज्यामध्ये एंडपॉईंटचे नाव, वर्णन, आणि ऑथेंटिकेशन मोड ("key") समाविष्ट आहेत.
 
-    - तो workspace_ml_client मधील begin_create_or_update मेथड कॉल करून ऑनलाइन एंडपॉइंट तयार करतो आणि नंतर wait मेथड कॉल करून तयार होईपर्यंत थांबतो.
+    - workspace_ml_client मधील begin_create_or_update मेथड कॉल करून ManagedOnlineEndpoint ऑब्जेक्टसह ऑनलाइन एंडपॉईंट तयार करतो आणि wait मेथडने तयार होण्याची प्रक्रिया पूर्ण होईपर्यंत थांबतो.
 
-1. सारांश म्हणून, हा स्क्रिप्ट Azure Machine Learning मध्ये नोंदणीकृत मॉडेलसाठी मॅनेज्ड ऑनलाइन एंडपॉइंट तयार करतो.
+1. सारांशात, हा स्क्रिप्ट Azure Machine Learning मध्ये नोंदणीकृत मॉडेलसाठी मॅनेज केलेला ऑनलाइन एंडपॉईंट तयार करत आहे.
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # Azure AI ML SDK मधून आवश्यक मॉड्यूल्स आयात करा
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
         ManagedOnlineDeployment,
@@ -732,11 +732,11 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
         OnlineRequestSettings,
     )
     
-    # Define a unique name for the online endpoint by appending a timestamp to the string "ultrachat-completion-"
+    # "ultrachat-completion-" या स्ट्रिंगमध्ये टाइमस्टॅम्प जोडून ऑनलाइन एंडपॉइंटसाठी अद्वितीय नाव ठरवा
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Prepare to create the online endpoint by creating a ManagedOnlineEndpoint object with various parameters
-    # These include the name of the endpoint, a description of the endpoint, and the authentication mode ("key")
+    # विविध पॅरामीटर्ससह ManagedOnlineEndpoint ऑब्जेक्ट तयार करून ऑनलाइन एंडपॉइंट तयार करण्यासाठी तयारी करा
+    # यात एंडपॉइंटचे नाव, एंडपॉइंटचे वर्णन आणि प्रमाणीकरण मोड ("key") यांचा समावेश आहे
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -745,56 +745,56 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
         auth_mode="key",
     )
     
-    # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
-    # Then wait for the creation operation to complete by calling the wait method
+    # ManagedOnlineEndpoint ऑब्जेक्टच्या आर्ग्युमेंटसह workspace_ml_client च्या begin_create_or_update मेथडला कॉल करून ऑनलाइन एंडपॉइंट तयार करा
+    # नंतर wait मेथड कॉल करून तयार होण्याच्या प्रक्रियेची प्रतीक्षा करा
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> येथे तुम्हाला डिप्लॉयमेंटसाठी समर्थित SKU ची यादी मिळेल - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> येथे तुम्हाला तैनातीसाठी समर्थित SKU यादी मिळू शकते - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### ML मॉडेल डिप्लॉय करणे
+### ML मॉडेल तैनात करणे
 
-1. हा Python स्क्रिप्ट Azure Machine Learning मध्ये नोंदणीकृत मशीन लर्निंग मॉडेल मॅनेज्ड ऑनलाइन एंडपॉइंटवर डिप्लॉय करतो. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट Azure Machine Learning मधील मॅनेज केलेल्या ऑनलाइन एंडपॉईंटवर नोंदणीकृत मशीन लर्निंग मॉडेल तैनात करत आहे. खाली तपशील:
 
-    - तो ast मॉड्यूल इम्पोर्ट करतो, जे Python च्या अमूर्त व्याकरणाच्या झाडांवर प्रक्रिया करण्यासाठी फंक्शन्स पुरवतो.
+    - तो ast मॉड्यूल आयात करतो, जे Python च्या सारांश वाक्यरचनांच्या झाडांवर प्रक्रिया करण्यासाठी फंक्शन्स देते.
 
-    - तो डिप्लॉयमेंटसाठी instance type "Standard_NC6s_v3" सेट करतो.
+    - तैनातीसाठी इनस्टन्स प्रकार "Standard_NC6s_v3" सेट करतो.
 
-    - तो तपासतो की foundation_model मध्ये inference_compute_allow_list टॅग आहे का. असल्यास, तो टॅगचे मूल्य स्ट्रिंगमधून Python लिस्टमध्ये रूपांतरित करतो आणि inference_computes_allow_list मध्ये ठेवतो. नसल्यास, inference_computes_allow_list None सेट करतो.
+    - foundation_model मध्ये inference_compute_allow_list टॅग आहे का ते तपासतो. असल्यास, त्याचा स्ट्रिंगमधून पायथन यादीत रूपांतर करतो आणि inference_computes_allow_list ला असाइन करतो. नसेल तर inference_computes_allow_list None सेट करतो.
 
-    - तो तपासतो की दिलेला instance type allow list मध्ये आहे का. नसल्यास, वापरकर्त्याला allow list मधील instance type निवडण्याचा संदेश छापतो.
+    - तो तपासतो की दिलेला इनस्टन्स प्रकार allow list मध्ये आहे का. नसेल तर वापरकर्त्याला allow list मधील कोणताही इनस्टन्स प्रकार निवडण्याचा संदेश प्रिंट करतो.
 
-    - तो ManagedOnlineDeployment ऑब्जेक्ट तयार करून डिप्लॉयमेंट तयार करण्यासाठी तयार होतो, ज्यात डिप्लॉयमेंटचे नाव, एंडपॉइंटचे नाव, मॉडेल आयडी, instance type आणि count, लिव्हनेस प्रॉब सेटिंग्ज, आणि रिक्वेस्ट सेटिंग्ज यांचा समावेश आहे.
+    - ManagedOnlineDeployment ऑब्जेक्ट तयार करून तैनातीसाठी तयार होतो, ज्यात तैनातिंगचे नाव, एंडपॉईंटचे नाव, मॉडेलचा आयडी, इनस्टन्स प्रकार व संख्या, liveness probe सेटिंग्ज, आणि विनंती सेटिंग्ज समाविष्ट आहेत.
 
-    - तो workspace_ml_client मधील begin_create_or_update मेथड कॉल करून डिप्लॉयमेंट तयार करतो आणि नंतर wait मेथड कॉल करून तयार होईपर्यंत थांबतो.
+    - workspace_ml_client मधील begin_create_or_update मेथड कॉल करून ManagedOnlineDeployment ऑब्जेक्टसह तैनाती तयार करतो आणि wait मेथडने तयार होण्याची प्रक्रिया पूर्ण होईपर्यंत थांबतो.
 
-    - तो एंडपॉइंटचा ट्रॅफिक 100% "demo" डिप्लॉयमेंटकडे निर्देशित करतो.
+    - एंडपॉईंटचा ट्राफिक "demo" तैनातीकडे 100% निर्देशित करतो.
 
-    - तो workspace_ml_client मधील begin_create_or_update मेथड कॉल करून एंडपॉइंट अपडेट करतो आणि नंतर result मेथड कॉल करून अपडेट पूर्ण होईपर्यंत थांबतो.
+    - workspace_ml_client मधील begin_create_or_update मेथड कॉल करून एंडपॉईंट अपडेट करतो आणि result मेथड कॉल करून अपडेट प्रक्रिया पूर्ण होईपर्यंत थांबतो.
 
-1. सारांश म्हणून, हा स्क्रिप्ट Azure Machine Learning मध्ये नोंदणीकृत मशीन लर्निंग मॉडेल मॅनेज्ड ऑनलाइन एंडपॉइंटवर डिप्लॉय करतो.
+1. सारांशात, हा स्क्रिप्ट Azure Machine Learning मधील नोंदणीकृत मशीन लर्निंग मॉडेल मॅनेज केलेल्या ऑनलाइन एंडपॉईंटवर तैनात करत आहे.
 
-```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    ```python
+    # ast मॉड्यूल आयात करा, जे Python सारांश व्याकरणाच्या वृक्षांची प्रक्रिया करण्यासाठी कार्ये प्रदान करते
     import ast
     
-    # Set the instance type for the deployment
+    # डिप्लॉयमेंटसाठी उदाहरण प्रकार सेट करा
     instance_type = "Standard_NC6s_v3"
     
-    # Check if the `inference_compute_allow_list` tag is present in the foundation model
+    # तपासा की `inference_compute_allow_list` टॅग फाउंडेशन मॉडेलमध्ये आहे का
     if "inference_compute_allow_list" in foundation_model.tags:
-        # If it is, convert the tag value from a string to a Python list and assign it to `inference_computes_allow_list`
+        # जर असेल, तर टॅग मूल्य स्ट्रिंगमधून Python यादीमध्ये रूपांतरित करा आणि त्याला `inference_computes_allow_list` म्हणून नियुक्त करा
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If it's not, set `inference_computes_allow_list` to `None`
+        # जर नसेल, तर `inference_computes_allow_list` ला `None` सेट करा
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Check if the specified instance type is in the allow list
+    # तपासा की निर्दिष्ट केलेला उदाहरण प्रकार अनुमत यादीमध्ये आहे का
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -803,7 +803,7 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # Prepare to create the deployment by creating a `ManagedOnlineDeployment` object with various parameters
+    # विविध पॅरामीटर्ससह `ManagedOnlineDeployment` ऑब्जेक्ट तयार करून डिप्लॉयमेंट तयार करण्याची तयारी करा
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -814,69 +814,75 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Create the deployment by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `ManagedOnlineDeployment` object as the argument
-    # Then wait for the creation operation to complete by calling the `wait` method
+    # `workspace_ml_client` च्या `begin_create_or_update` पद्धतीला `ManagedOnlineDeployment` ऑब्जेक्टसह कॉल करून डिप्लॉयमेंट तयार करा
+    # नंतर `wait` पद्धत कॉल करून तयार होण्याची प्रक्रिया पूर्ण होईपर्यंत प्रतीक्षा करा
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Set the traffic of the endpoint to direct 100% of the traffic to the "demo" deployment
+    # एंडपॉइंटचा ट्रॅफिक 100% ट्रॅफिक "demo" डिप्लॉयमेंटकडे निर्देशित करण्यासाठी सेट करा
     endpoint.traffic = {"demo": 100}
     
-    # Update the endpoint by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `endpoint` object as the argument
-    # Then wait for the update operation to complete by calling the `result` method
+    # `workspace_ml_client` च्या `begin_create_or_update` पद्धतीला `endpoint` ऑब्जेक्टसह कॉल करून एंडपॉइंट अपडेट करा
+    # नंतर `result` पद्धत कॉल करून अपडेट ऑपरेशन पूर्ण होईपर्यंत प्रतीक्षा करा
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. नमुना डेटासह एंडपॉइंटची चाचणी करा
+## 8. नमुना डेटासह एंडपॉईंटची चाचणी करा
 
-आम्ही चाचणी डेटासेटमधून काही नमुना डेटा घेऊन ऑनलाइन एंडपॉइंटवर इन्फरन्ससाठी सबमिट करू. नंतर आम्ही स्कोअर केलेले लेबल्स आणि ग्राउंड ट्रूथ लेबल्स एकत्र दाखवू.
+आपण चाचणी डेटासेटमधून काही नमुना डेटा घेऊन ऑनलाइन एंडपॉईंटवर इनफरन्ससाठी सबमिट करू. नंतर स्कोअर केलेले लेबल आणि ग्राउंड ट्रूथ लेबल एकत्र दाखवू.
 
 ### निकाल वाचणे
 
-1. हा Python स्क्रिप्ट JSON Lines फाइल pandas DataFrame मध्ये वाचतो, यादृच्छिक नमुना घेतो, आणि इंडेक्स रीसेट करतो. त्याचे तपशील पुढीलप्रमाणे:
+1. हा Python स्क्रिप्ट JSON Lines फाइल pandas DataFrame मध्ये वाचतो, एक यादृच्छिक नमुना घेतो, आणि इंडेक्स रीसेट करतो. खाली तपशील:
 
-    - तो ./ultrachat_200k_dataset/test_gen.jsonl फाइल pandas DataFrame मध्ये वाचतो. read_json फंक्शन lines=True आर्ग्युमेंटसह वापरले आहे कारण फाइल JSON Lines फॉरमॅटमध्ये आहे, जिथे प्रत्येक ओळ स्वतंत्र JSON ऑब्जेक्ट आहे.
+    - ./ultrachat_200k_dataset/test_gen.jsonl फाइल pandas DataFrame मध्ये वाचली जाते. read_json फंक्शन lines=True आर्ग्युमेंटसह वापरले जाते कारण फाइल JSON Lines फॉरमॅटमध्ये आहे जिथे प्रत्येक ओळ स्वतंत्र JSON ऑब्जेक्ट असते.
 
-    - तो DataFrame मधून 1 यादृच्छिक रकाना निवडतो. sample फंक्शन n=1 आर्ग्युमेंटसह वापरले आहे.
+    - DataFrame मधून 1 यादृच्छिक ओळ निवडली जाते. sample फंक्शन n=1 आर्ग्युमेंटसह वापरले जाते.
 
-    - तो DataFrame चा इंडेक्स रीसेट करतो. reset_index फंक्शन drop=True आर्ग्युमेंटसह वापरले आहे ज्यामुळे मूळ इंडेक्स हटवून नवीन डिफॉल्ट पूर्णांक इंडेक्स तयार होतो.
+    - DataFrameचा इंडेक्स reset_index फंक्शनसह drop=True आर्ग्युमेंट देऊन रीसेट केला जातो, ज्यामुळे मूळ इंडेक्स गळून टाकला जातो आणि नवीन पूर्णांक इंडेक्स येतो.
 
-    - तो head फंक्शन 2 आर्ग्युमेंटसह वापरून DataFrame च्या पहिल्या 2 रकान्या दाखवतो. मात्र, नमुना घेतल्यानंतर DataFrame मध्ये फक्त 1 रकाना असल्यामुळे फक्त तोच रकाना दाखवला जाईल.
+    - head फंक्शनला आर्ग्युमेंट 2 देऊन DataFrame च्या पहिल्या 2 रांगा दाखवल्या जातात. पण नमुना नंतर DataFrame मध्ये फक्त एकच रांग असल्याने फक्त तो एक रांग दाखवेल.
 
-1. सारांश म्हणून, हा स्क्रिप्ट JSON Lines फाइल pandas DataFrame मध्ये वाचतो, 1 यादृच्छिक रकाना घेतो, इंडेक्स रीसेट करतो, आणि पहिला रकाना दाखवतो.
-
-```python
-    # Import pandas library
+1. सारांशात, हा स्क्रिप्ट JSON Lines फाइल pandas DataFrame मध्ये वाचतो, 1 यादृच्छिक रांग घेतो, इंडेक्स रीसेट करतो, आणि पहिली रांग दाखवतो.
+    
+    ```python
+    # pandas लायब्ररी आयात करा
     import pandas as pd
     
-    # Read the JSON Lines file './ultrachat_200k_dataset/test_gen.jsonl' into a pandas DataFrame
-    # The 'lines=True' argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # './ultrachat_200k_dataset/test_gen.jsonl' JSON Lines फाइल pandas DataFrame मध्ये वाचा
+    # 'lines=True' आर्ग्युमेंट सूचित करतो की फाइल JSON Lines स्वरूपात आहे, जिथे प्रत्येक ओळ स्वतंत्र JSON ऑब्जेक्ट आहे
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Take a random sample of 1 row from the DataFrame
-    # The 'n=1' argument specifies the number of random rows to select
+    # DataFrame मधून 1 रँडम नमुना घ्या
+    # 'n=1' आर्ग्युमेंट निवडण्यासाठी रँडम ओळींची संख्या निर्दिष्ट करतो
     test_df = test_df.sample(n=1)
     
-    # Reset the index of the DataFrame
-    # The 'drop=True' argument indicates that the original index should be dropped and replaced with a new index of default integer values
-    # The 'inplace=True' argument indicates that the DataFrame should be modified in place (without creating a new object)
+    # DataFrame ची अनुक्रमणिका रीसेट करा
+    # 'drop=True' आर्ग्युमेंट सूचित करतो की मूळ अनुक्रमणिका नष्ट करावी आणि डिफॉल्ट पूर्णांक मूल्यांची नवीन अनुक्रमणिका घालावी
+    # 'inplace=True' आर्ग्युमेंट सूचित करतो की DataFrame थेट सुधारित केली जावी (नवीन ऑब्जेक्ट न तयार करता)
     test_df.reset_index(drop=True, inplace=True)
     
-    # Display the first 2 rows of the DataFrame
-    # However, since the DataFrame only contains one row after the sampling, this will only display that one row
+    # DataFrame च्या पहिल्या 2 ओळी दाखवा
+    # तथापि, नमुना घेण्याच्या नंतर DataFrame मध्ये फक्त एकच ओळ असल्यामुळे, हे केवळ ती एकच ओळ दाखवेल
     test_df.head(2)
     ```
 
 ### JSON ऑब्जेक्ट तयार करा
 
-1. हा Python स्क्रिप्ट विशिष्ट पॅरामीटर्ससह JSON ऑब्जेक्ट तयार करतो आणि तो फाइल
-- हे sample_score.json नावाचे फाइल उघडते
+1. हा Python स्क्रिप्ट विशिष्ट पॅरामीटर्ससह JSON ऑब्जेक्ट तयार करीत आहे आणि तो फाइलमध्ये जतन करीत आहे. खाली तपशील: 
 
-```python
-    # Import the json module, which provides functions to work with JSON data
+    - json मॉड्यूल इम्पोर्ट करतो, जे JSON डेटासोबत काम करण्यासाठी फंक्शन्स पुरवते.
+- मशीन लर्निंग मॉडेलसाठी पॅरामीटर्स दर्शविणाऱ्या कळा आणि मूल्यांसह parameters नावाने एक शब्दकोश तयार करतो. या कळा "temperature", "top_p", "do_sample", आणि "max_new_tokens" आहेत, आणि त्यांच्या अनुक्रमे मूल्ये 0.6, 0.9, True, आणि 200 आहेत.
+
+- input_data आणि params या दोन कळांसह दुसरा test_json नावाचा शब्दकोश तयार करतो. "input_data" चे मूल्य एक दुसरा शब्दकोश आहे ज्यात "input_string" आणि "parameters" या कळा आहेत. "input_string" चे मूल्य test_df DataFrame मधील पहिला संदेश असलेल्या यादीनंतर आहे. "parameters" चे मूल्य आधी तयार केलेल्या parameters शब्दकोशासारखे आहे. "params" चे मूल्य रिक्त शब्दकोश आहे.
+
+- sample_score.json नावाचा एक फाईल उघडतो
+
+    ```python
+    # JSON डेटा सोबत कार्य करण्यासाठी फंक्शन्स पुरविणारा json मॉड्यूल आयात करा
     import json
     
-    # Create a dictionary `parameters` with keys and values that represent parameters for a machine learning model
-    # The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", and their corresponding values are 0.6, 0.9, True, and 200 respectively
+    # मशीन लर्निंग मॉडेलसाठी पॅरामीटर्स दर्शविणाऱ्या की आणि व्हॅल्यूजसह `parameters` नावाचा डिक्शनरी तयार करा
+    # कीज "temperature", "top_p", "do_sample" आणि "max_new_tokens" आहेत, आणि त्यांच्या अनुक्रमे व्हॅल्यूस 0.6, 0.9, True, आणि 200 आहेत
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -884,11 +890,11 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
         "max_new_tokens": 200,
     }
     
-    # Create another dictionary `test_json` with two keys: "input_data" and "params"
-    # The value of "input_data" is another dictionary with keys "input_string" and "parameters"
-    # The value of "input_string" is a list containing the first message from the `test_df` DataFrame
-    # The value of "parameters" is the `parameters` dictionary created earlier
-    # The value of "params" is an empty dictionary
+    # दोन कींसह `test_json` नावाचा आणखी एक डिक्शनरी तयार करा: "input_data" आणि "params"
+    # "input_data" ची व्हॅल्यू म्हणजे आणखी एक डिक्शनरी ज्यात की आहेत "input_string" आणि "parameters"
+    # "input_string" ची व्हॅल्यू म्हणजे `test_df` DataFrame मधील पहिला मेसेज असणारी लिस्ट
+    # "parameters" ची व्हॅल्यू म्हणजे पूर्वी तयार केलेला `parameters` डिक्शनरी
+    # "params" ची व्हॅल्यू रिकामी डिक्शनरी आहे
     test_json = {
         "input_data": {
             "input_string": [test_df["messages"][0]],
@@ -897,63 +903,67 @@ chat-completion पाइपलाइन कॉम्पोनंट वाप�
         "params": {},
     }
     
-    # Open a file named `sample_score.json` in the `./ultrachat_200k_dataset` directory in write mode
+    # `./ultrachat_200k_dataset` निर्देशिकेत `sample_score.json` नावाचा फाइल लिखाणासाठी उघडा
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # Write the `test_json` dictionary to the file in JSON format using the `json.dump` function
+        # `json.dump` फंक्शन वापरून `test_json` डिक्शनरी JSON स्वरूपात फाईलवर लिहा
         json.dump(test_json, f)
     ```
 
-### एंडपॉइंट कॉल करणे
+### एनपॉइंट कॉल करणे
 
-1. हा Python स्क्रिप्ट Azure Machine Learning मधील ऑनलाइन एंडपॉइंट कॉल करून JSON फाइलचे स्कोअरिंग करतो. त्याचे तपशील पुढीलप्रमाणे आहेत:
+1. हा Python स्क्रिप्ट Azure मशीन लर्निंगमधील ऑनलाइन एनपॉइंट कॉल करून JSON फाईल स्कोअर करत आहे. हे काय करते याचे विहंगावलोकन:
 
-    - workspace_ml_client ऑब्जेक्टच्या online_endpoints प्रॉपर्टीचा invoke मेथड कॉल करतो. हा मेथड ऑनलाइन एंडपॉइंटला विनंती पाठवण्यासाठी आणि प्रतिसाद मिळवण्यासाठी वापरला जातो.
+    - workspace_ml_client ऑब्जेक्टच्या online_endpoints प्रॉपर्टीचा invoke मेथड कॉल करतो. हा मेथड ऑनलाइन एनपॉइंटवर विनंती पाठवून उत्तर मिळविण्यासाठी वापरला जातो.
 
-    - endpoint_name आणि deployment_name आर्ग्युमेंट्सद्वारे एंडपॉइंटचे नाव आणि डिप्लॉयमेंट निर्दिष्ट करतो. या प्रकरणात, एंडपॉइंटचे नाव online_endpoint_name व्हेरिएबलमध्ये आहे आणि डिप्लॉयमेंटचे नाव "demo" आहे.
+    - endpoint_name आणि deployment_name हे आर्ग्युमेंट्स वापरून एनपॉइंटचे नाव आणि डिप्लॉयमेंट निर्दिष्ट करतो. या प्रकरणात, एनपॉइंट नाव online_endpoint_name व्हेरिएबलमध्ये संग्रहित आहे आणि डिप्लॉयमेंट नाव "demo" आहे.
 
-    - request_file आर्ग्युमेंटद्वारे स्कोअर करायच्या JSON फाइलचा पथ निर्दिष्ट करतो. या प्रकरणात, फाइलचा पथ ./ultrachat_200k_dataset/sample_score.json आहे.
+    - request_file आर्ग्युमेंट वापरून स्कोअर करायच्या JSON फाईलचा मार्ग निर्दिष्ट करतो. या प्रकरणात, फाईलचे नाव ./ultrachat_200k_dataset/sample_score.json आहे.
 
-    - एंडपॉइंटकडून मिळालेला प्रतिसाद response व्हेरिएबलमध्ये साठवतो.
+    - एनपॉइंटकडून उत्तर response व्हेरिएबलमध्ये संग्रहित करतो.
 
-    - कच्चा प्रतिसाद प्रिंट करतो.
+    - कच्चे उत्तर प्रिंट करतो.
 
-1. सारांश म्हणून, हा स्क्रिप्ट Azure Machine Learning मधील ऑनलाइन एंडपॉइंट कॉल करून JSON फाइलचे स्कोअरिंग करतो आणि प्रतिसाद प्रिंट करतो.
+1. सारांश, हा स्क्रिप्ट Azure मशीन लर्निंगमधील ऑनलाइन एनपॉइंट कॉल करून JSON फाईल स्कोअर करतो आणि उत्तर प्रिंट करतो.
 
-```python
-    # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
-    # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
-    # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
-    # The `deployment_name` argument specifies the name of the deployment, which is "demo"
-    # The `request_file` argument specifies the path to the JSON file to be scored, which is `./ultrachat_200k_dataset/sample_score.json`
+    ```python
+    # Azure Machine Learning मधील ऑनलाइन एंडपॉइंटला `sample_score.json` फाईल स्कोअर करण्यासाठी कॉल करा
+    # `workspace_ml_client` ऑब्जेक्टच्या `online_endpoints` प्रॉपर्टीचा `invoke` पद्धत वापरून ऑनलाइन एंडपॉइंटला विनंती पाठवली जाते आणि प्रतिसाद मिळविला जातो
+    # `endpoint_name` आर्ग्युमेंट एंडपॉइंटचे नाव निर्दिष्ट करते, जे `online_endpoint_name` व्हेरिएबलमध्ये संग्रहित आहे
+    # `deployment_name` आर्ग्युमेंट डिप्लॉयमेंटचे नाव निर्दिष्ट करते, जे "demo" आहे
+    # `request_file` आर्ग्युमेंट स्कोअर करण्यासाठी JSON फाईलचा मार्ग निर्दिष्ट करतो, जो `./ultrachat_200k_dataset/sample_score.json` आहे
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
         request_file="./ultrachat_200k_dataset/sample_score.json",
     )
     
-    # Print the raw response from the endpoint
+    # एंडपॉइंटकडून मिळालेला कच्चा प्रतिसाद प्रिंट करा
     print("raw response: \n", response, "\n")
     ```
 
-## 9. ऑनलाइन एंडपॉइंट हटवा
+## 9. ऑनलाइन एनपॉइंट हटवा
 
-1. ऑनलाइन एंडपॉइंट हटवायला विसरू नका, अन्यथा एंडपॉइंटद्वारे वापरल्या गेलेल्या कम्प्युटसाठी बिलिंग चालू राहील. हा Python कोड Azure Machine Learning मधील ऑनलाइन एंडपॉइंट हटवतो. त्याचे तपशील पुढीलप्रमाणे आहेत:
+1. ऑनलाइन एनपॉइंट हटवण्यास विसरू नका, नाहीतर एनपॉइंट वापरलेल्या कॉम्प्युटसाठी बिलिंग मीटर चालू राहील. हा Python कोड Azure मशीन लर्निंगमधील ऑनलाइन एनपॉइंट हटवत आहे. याचे विहंगावलोकन:
 
-    - workspace_ml_client ऑब्जेक्टच्या online_endpoints प्रॉपर्टीचा begin_delete मेथड कॉल करतो. हा मेथड ऑनलाइन एंडपॉइंट हटवण्याची प्रक्रिया सुरू करण्यासाठी वापरला जातो.
+    - workspace_ml_client ऑब्जेक्टच्या online_endpoints प्रॉपर्टीचा begin_delete मेथड कॉल करतो. हा मेथड ऑनलाइन एनपॉइंट हटवण्यास सुरुवात करतो.
 
-    - name आर्ग्युमेंटद्वारे हटवायच्या एंडपॉइंटचे नाव निर्दिष्ट करतो. या प्रकरणात, एंडपॉइंटचे नाव online_endpoint_name व्हेरिएबलमध्ये आहे.
+    - हटवायच्या एनपॉइंटचे नाव name आर्ग्युमेंटने निर्दिष्ट करतो. या प्रकरणात, एनपॉइंट नाव online_endpoint_name व्हेरिएबलमध्ये आहे.
 
-    - wait मेथड कॉल करून हटवण्याची प्रक्रिया पूर्ण होईपर्यंत थांबतो. ही एक ब्लॉकिंग ऑपरेशन आहे, म्हणजे हटवण्याची प्रक्रिया पूर्ण होईपर्यंत स्क्रिप्ट पुढे चालणार नाही.
+    - wait मेथड कॉल करून हटवण्याची प्रक्रिया पूर्ण होईपर्यंत थांबतो. ही ब्लॉकिंग ऑपरेशन आहे, म्हणजे हटवण्याची प्रक्रिया पूर्ण होईपर्यंत स्क्रिप्ट पुढे जात नाही.
 
-    - सारांश म्हणून, हा कोड Azure Machine Learning मधील ऑनलाइन एंडपॉइंट हटवण्याची प्रक्रिया सुरू करतो आणि ती पूर्ण होईपर्यंत थांबतो.
+    - सारांश, हा कोड लाइन Azure मशीन लर्निंगमधील ऑनलाइन एनपॉइंट हटवण्यास सुरुवात करतो आणि ऑपरेशन पूर्ण होईपर्यंत थांबतो.
 
-```python
-    # Delete the online endpoint in Azure Machine Learning
-    # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
-    # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
-    # The `wait` method is called to wait for the deletion operation to complete. This is a blocking operation, meaning that it will prevent the script from continuing until the deletion is finished
+    ```python
+    # Azure मशीन लर्निंगमधून ऑनलाइन एंडपॉइंट हटवा
+    # `workspace_ml_client` ऑब्जेक्टच्या `online_endpoints` प्रॉपर्टीचा `begin_delete` मेथड वापरून ऑनलाइन एंडपॉइंट हटवण्याची प्रक्रिया सुरू केली जाते
+    # `name` आर्ग्युमेंटमध्ये हटवायच्या एंडपॉइंटचे नाव दिले आहे, जे `online_endpoint_name` व्हेरिएबलमध्ये साठवलेले आहे
+    # हटवण्याची प्रक्रिया पूर्ण होईपर्यंत थांबण्यासाठी `wait` मेथड कॉल केली जाते. ही एक ब्लॉकिंग ऑपरेशन आहे, म्हणजे हटवणं पूर्ण होईपर्यंत स्क्रिप्ट पुढे जाणार नाही
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**अस्वीकरण**:
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला पाहिजे. अत्यंत महत्त्वाच्या माहितीकरिता व्यावसायिक मानवी अनुवादाची शिफारस केली जाते. या अनुवादाचा वापर केल्यामुळे झालेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही आहोत.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

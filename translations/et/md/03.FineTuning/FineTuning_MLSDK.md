@@ -1,44 +1,44 @@
-## Kuidas kasutada Azure ML süsteemiregistri vestluse lõpetamise komponente mudeli peenhäälestamiseks
+## Kuidas kasutada vestluse lõpuleviimise komponente Azure ML süsteemiregistrist mudeli täiendamiseks
 
-Selles näites teeme Phi-3-mini-4k-instruct mudeli peenhäälestuse, et lõpetada vestlus kahe inimese vahel, kasutades ultrachat_200k andmestikku.
+Selles näites viime läbi Phi-3-mini-4k-instruct mudeli täiendamist, et lõpetada vestlus kahe inimese vahel, kasutades ultrachat_200k andmestikku.
 
-![MLFineTune](../../../../imgs/03/ft/MLFineTune.png)
+![MLFineTune](../../../../translated_images/et/MLFineTune.928d4c6b3767dd35.webp)
 
-Näide näitab, kuidas teha peenhäälestust Azure ML SDK ja Pythoniga ning seejärel juurutada peenhäälestatud mudel reaalajas järelduste tegemiseks veebipõhises lõpp-punktis.
+Näide näitab, kuidas teha täiendust Azure ML SDK ja Pythoniga ning seejärel juurutada täiendatud mudel reaalajas teostamiseks veebipõhises otsapunktis.
 
 ### Treeningandmed
 
-Kasutame ultrachat_200k andmestikku. See on tugevalt filtreeritud versioon UltraChat andmestikust, mida kasutati Zephyr-7B-β, tipptasemel 7B vestlusmudeli, treenimiseks.
+Kasutame ultrachat_200k andmestikku. See on UltraChat andmestiku tugevalt filtreeritud versioon ja seda kasutati Zephyr-7B-β treenimiseks, mis on tipptasemel 7b vestlusmudel.
 
 ### Mudel
 
-Kasutame Phi-3-mini-4k-instruct mudelit, et näidata, kuidas kasutaja saab mudelit peenhäälestada vestluse lõpetamise ülesande jaoks. Kui avasite selle märkmiku konkreetse mudeli kaardilt, asendage konkreetse mudeli nimi.
+Kasutame Phi-3-mini-4k-instruct mudelit, et näidata, kuidas saab kasutaja mudelit täpsustada vestluse lõpetamise ülesande jaoks. Kui avasite selle märkmiku konkreetse mudelikaardiga, ärge unustage konkreetset mudeli nime asendada.
 
 ### Ülesanded
 
-- Valige mudel peenhäälestamiseks.
-- Valige ja uurige treeningandmeid.
-- Konfigureerige peenhäälestuse töö.
-- Käivitage peenhäälestuse töö.
-- Vaadake üle treeningu ja hindamise mõõdikud.
-- Registreerige peenhäälestatud mudel.
-- Juurutage peenhäälestatud mudel reaalajas järelduste tegemiseks.
-- Puhastage ressursid.
+- Valida mudel täiendamiseks.
+- Valida ja uurida treeningandmeid.
+- Konfigureerida täiendamise töö.
+- Käivitada täiendamise töö.
+- Läbivaatada treeningu ja hindamise mõõdikud.
+- Registreerida täiendatud mudel.
+- Juurutada täiendatud mudel reaalajas teostamiseks.
+- Puhastada ressursid.
 
 ## 1. Eeltingimuste seadistamine
 
-- Installige sõltuvused
-- Ühendage AzureML tööruumiga. Lisateavet leiate SDK autentimise seadistamise juhendist. Asendage <WORKSPACE_NAME>, <RESOURCE_GROUP> ja <SUBSCRIPTION_ID> allpool.
-- Ühendage AzureML süsteemiregistriga
-- Määrake valikuline eksperimendi nimi
-- Kontrollige või looge arvutusressurss.
+- Paigaldada sõltuvused
+- Ühenduda AzureML tööruumiga. Lisateavet leiate autentimise seadistamisest SDK-s. Asendage allpool <WORKSPACE_NAME>, <RESOURCE_GROUP> ja <SUBSCRIPTION_ID>.
+- Ühenduda azureml süsteemiregistriga
+- Määrata valikuline eksperimendi nimi
+- Kontrollida või luua arvutusvõimsust.
 
 > [!NOTE]
-> Nõuded: üks GPU sõlm võib sisaldada mitut GPU kaarti. Näiteks Standard_NC24rs_v3 sõlmes on 4 NVIDIA V100 GPU-d, samas kui Standard_NC12s_v3 sõlmes on 2 NVIDIA V100 GPU-d. Vaadake dokumentatsiooni selle teabe kohta. GPU kaartide arv sõlme kohta määratakse allpool parameetriga gpus_per_node. Selle väärtuse korrektne seadistamine tagab kõigi sõlme GPU-de kasutamise. Soovitatavad GPU arvutusressursid leiate siit ja siit.
+> Nõuded: üks GPU sõlm võib sisaldada mitut GPU kaarti. Näiteks ühes Standard_NC24rs_v3 sõlmes on 4 NVIDIA V100 GPU-d, samas kui Standard_NC12s_v3-s on 2 NVIDIA V100 GPU-d. Täpsema info leiate dokumentatsioonist. Ühe sõlme GPU kaartide arv on määratud parameetris gpus_per_node allpool. Õige väärtuse seadmine tagab kõigi sõlme GPU-de kasutamise. Soovitatud GPU arvutusvõimsuse SKU-d leiate siit ja siit.
 
-### Python'i teegid
+### Pythoni raamatukogud
 
-Installige sõltuvused, käivitades alloleva lahtri. See ei ole valikuline samm, kui töötate uues keskkonnas.
+Paigaldage sõltuvused, käivitades alljärgneva lahtri. See ei ole valikuline samm uues keskkonnas.
 
 ```bash
 pip install azure-ai-ml
@@ -48,43 +48,43 @@ pip install mlflow
 pip install azureml-mlflow
 ```
 
-### Azure ML-iga suhtlemine
+### Suhtlus Azure ML-iga
 
-1. See Python'i skript on mõeldud suhtlemiseks Azure Machine Learning (Azure ML) teenusega. Siin on ülevaade, mida see teeb:
+1. See Python skript suhtleb Azure Machine Learning (Azure ML) teenusega. Siin on ülevaade, mida see teeb:
 
-    - Impordib vajalikud moodulid paketist azure.ai.ml, azure.identity ja azure.ai.ml.entities. Samuti impordib mooduli time.
+    - Impordib vajalikke mooduleid azure.ai.ml, azure.identity ja azure.ai.ml.entities pakettidest. Impordib ka time mooduli.
 
-    - Püüab autentida, kasutades DefaultAzureCredential(), mis pakub lihtsustatud autentimiskogemust, et kiiresti alustada rakenduste arendamist Azure'i pilves. Kui see ebaõnnestub, langeb tagasi InteractiveBrowserCredential() meetodile, mis pakub interaktiivset sisselogimise akent.
+    - Proovib autentida DefaultAzureCredential() abil, mis pakub lihtsustatud autentimise kogemust Azure pilves rakenduste arendamiseks. Kui see ebaõnnestub, kasutatakse varuks InteractiveBrowserCredential(), mis pakub interaktiivset sisselogimisviipa.
 
-    - Püüab luua MLClient eksemplari, kasutades meetodit from_config, mis loeb konfiguratsiooni vaikimisi konfiguratsioonifailist (config.json). Kui see ebaõnnestub, loob MLClient eksemplari, pakkudes käsitsi subscription_id, resource_group_name ja workspace_name.
+    - Seejärel proovib luua MLClienti eksemplari kasutades from_config meetodit, mis loeb konfiguratsiooni vaikimisi konfiguratsioonifailist (config.json). Kui see ebaõnnestub, luuakse MLClient käsitsi, edastades subscription_id, resource_group_name ja workspace_name.
 
-    - Loob teise MLClient eksemplari, seekord Azure ML registri jaoks nimega "azureml". See register on koht, kus hoitakse mudeleid, peenhäälestuse torujuhtmeid ja keskkondi.
+    - Loob teise MLClienti eksemplari, seekord Azure ML registri jaoks nimega "azureml". See register hoiab mudeleid, täiendamise torujuhtmeid ja keskkondi.
 
     - Määrab eksperimendi nimeks "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Genereerib unikaalse ajatempli, teisendades praeguse aja (sekundites alates epohhist, ujukomaarvuna) täisarvuks ja seejärel stringiks. Seda ajatemplit saab kasutada unikaalsete nimede ja versioonide loomiseks.
+    - Genereerib unikaalse ajatempli, muutes praeguse aja (sekundites alates epohhist, ujukomaarvuna) täisarvuks ja seejärel stringiks. Seda ajatemplit saab kasutada unikaalsete nimede ja versioonide loomiseks.
 
     ```python
-    # Import necessary modules from Azure ML and Azure Identity
+    # Impordi vajalikud moodulid Azure ML-ist ja Azure Identity-st
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # Import time module
+    import time  # Impordi aegade moodul
     
-    # Try to authenticate using DefaultAzureCredential
+    # Proovi autentida kasutades DefaultAzureCredential'i
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # If DefaultAzureCredential fails, use InteractiveBrowserCredential
+    except Exception as ex:  # Kui DefaultAzureCredential ebaõnnestub, kasuta InteractiveBrowserCredential'i
         credential = InteractiveBrowserCredential()
     
-    # Try to create an MLClient instance using the default config file
+    # Proovi luua MLClient instants vaikimisi konfiguratsioonifaili abil
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # If that fails, create an MLClient instance by manually providing the details
+    except:  # Kui see ebaõnnestub, loo MLClient instants, esitades andmed käsitsi
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,41 +92,41 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # Create another MLClient instance for the Azure ML registry named "azureml"
-    # This registry is where models, fine-tuning pipelines, and environments are stored
+    # Loo teine MLClienti instants Azure ML registri jaoks nimega "azureml"
+    # Selles registris hoitakse mudeleid, täpsustustöötluse torujuhtmeid ja keskkondi
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # Set the experiment name
+    # Sea katse nimi
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Generate a unique timestamp that can be used for names and versions that need to be unique
+    # Genereeri ainulaadne ajatempli, mida saab kasutada nimede ja versioonide jaoks, mis peavad olema unikaalsed
     timestamp = str(int(time.time()))
     ```
 
-## 2. Valige peenhäälestamiseks alusmudel
+## 2. Valige täiendatav põhialane mudel
 
-1. Phi-3-mini-4k-instruct on 3.8B parameetritega, kergekaaluline, tipptasemel avatud mudel, mis põhineb Phi-2 jaoks kasutatud andmestikel. Mudel kuulub Phi-3 mudeliperekonda ning Mini versioonil on kaks varianti: 4K ja 128K, mis tähistavad konteksti pikkust (tokenites), mida see toetab. Me peame mudeli peenhäälestama meie konkreetse eesmärgi jaoks, et seda kasutada. Saate neid mudeleid sirvida AzureML Studio mudelikataloogis, filtreerides vestluse lõpetamise ülesande järgi. Selles näites kasutame Phi-3-mini-4k-instruct mudelit. Kui olete avanud selle märkmiku teise mudeli jaoks, asendage mudeli nimi ja versioon vastavalt.
+1. Phi-3-mini-4k-instruct on 3,8 miljardi parameetriga kerge kaaluga tipptasemel avatud mudel, mis on ehitatud Phi-2 jaoks kasutatud andmestike põhjal. Mudel kuulub Phi-3 mudelite perekonda ja Mini versioonil on kaks varianti: 4K ja 128K, mis näitavad toetatava konteksti pikkust (tokenites). Me peame mudelit oma spetsiifiliseks otstarbeks täiendama. Saate neid mudeleid sirvida AzureML Studio Mudelite kataloogis, filtreerides vestluse lõpuleviimise ülesande järgi. Selles näites kasutame Phi-3-mini-4k-instruct mudelit. Kui avasite selle märkmiku mõne muu mudeli jaoks, asendage mudeli nimi ja versioon vastavalt.
 
-    > [!NOTE]
-    > Mudeli id omadus. See edastatakse peenhäälestuse töö sisendina. See on saadaval ka Asset ID väljana mudeli detailide lehel AzureML Studio mudelikataloogis.
+> [!NOTE]
+> mudeli id omadus. Seda antakse täiendamise töö sisendina. See on saadaval ka mudeli detailide lehel AzureML Studio Mudelite kataloogis Asset ID väljal.
 
-2. See Python'i skript suhtleb Azure Machine Learning (Azure ML) teenusega. Siin on ülevaade, mida see teeb:
+2. See Python skript suhtleb Azure Machine Learning (Azure ML) teenusega. Siin on ülevaade, mida see teeb:
 
-    - Määrab mudeli nimeks "Phi-3-mini-4k-instruct".
+    - Määrab model_name väärtuseks "Phi-3-mini-4k-instruct".
 
-    - Kasutab registry_ml_client objekti models omaduse meetodit get, et hankida Azure ML registrist määratud nimega mudeli uusim versioon. Meetod get kutsutakse kahe argumendiga: mudeli nimi ja silt, mis määrab, et tuleb hankida mudeli uusim versioon.
+    - Kasutab registry_ml_client objekti models atribuudi get meetodit, et saada Azure ML registrist mudeli uusim versioon nimetatud nimega. Get meetodile antakse kaks argumenti: mudeli nimi ja silt, mis näitab, et tõmmata tuleks mudeli viimane versioon.
 
-    - Prindib konsoolile sõnumi, mis näitab peenhäälestamiseks kasutatava mudeli nime, versiooni ja id-d. Stringi meetod format kasutatakse mudeli nime, versiooni ja id sisestamiseks sõnumisse. Mudeli nimi, versioon ja id on juurdepääsetavad foundation_model objekti omadustena.
+    - Trükib konsooli sõnumi, mis näitab, millist mudelit (nimi, versioon, id) kasutatakse täiendamiseks. Stringi format meetodit kasutatakse mudeli omaduste (nimi, versioon, id) sisestamiseks sõnumisse. Omadused pärinevad foundation_model objektist.
 
     ```python
-    # Set the model name
+    # Määra mudeli nimi
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Get the latest version of the model from the Azure ML registry
+    # Hangi mudeli uuem versioon Azure ML registrist
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Print the model name, version, and id
-    # This information is useful for tracking and debugging
+    # Trüki mudeli nimi, versioon ja ID
+    # See teave on kasulik jälgimiseks ja silumiseks
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
@@ -136,166 +136,166 @@ pip install azureml-mlflow
 
 ## 3. Looge arvutusressurss töö jaoks
 
-Peenhäälestuse töö töötab AINULT GPU arvutusressursiga. Arvutusressursi suurus sõltub mudeli suurusest ja enamikul juhtudel on õige ressursi tuvastamine keeruline. Selles lahtris juhendame kasutajat õige ressursi valimisel.
+Täiendamise töö töötab AINULT GPU arvutusressursiga. Arvutusressursi maht sõltub mudeli suurusest ja enamasti on keeruline õige töö jaoks arvutus valida. Selles lahtris juhendame kasutajat valima sobiva arvutusressursi.
 
 > [!NOTE]
-> Allpool loetletud arvutusressursid töötavad kõige optimeerituma konfiguratsiooniga. Konfiguratsiooni muutmine võib põhjustada Cuda Out Of Memory vea. Sellisel juhul proovige uuendada arvutusressurssi suuremaks.
+> Alljärgnevad arvutusressursid töötavad kõige optimeerituma konfiguratsiooniga. Ükskõik millised konfiguratsiooni muudatused võivad põhjustada Cuda Out Of Memory veateate. Sellisel puhul proovige arvutusressurssi suurema mahuga uuendada.
 
 > [!NOTE]
-> Valides allpool compute_cluster_size, veenduge, et arvutusressurss on teie ressursigrupis saadaval. Kui konkreetne arvutusressurss pole saadaval, saate esitada taotluse ressursi saamiseks.
+> Arvutusressursi "compute_cluster_size" valimisel veenduge, et see oleks teie ressursside grupis saadaval. Kui see ei ole, saate taotleda juurdepääsu arvutusressurssidele.
 
-### Mudeli peenhäälestuse toe kontrollimine
+### Mudeli kontroll täiendamise toe osas
 
-1. See Python'i skript suhtleb Azure Machine Learning (Azure ML) mudeliga. Siin on ülevaade, mida see teeb:
+1. See Python skript suhtleb Azure Machine Learning (Azure ML) mudeliga. Siin on ülevaade toimuvast:
 
-    - Impordib ast mooduli, mis pakub funktsioone Python'i abstraktse süntaksipuu töötlemiseks.
+    - Impordib ast mooduli, mis võimaldab töödelda Python'i süntaksipuu.
 
-    - Kontrollib, kas foundation_model objektil (mis esindab Azure ML mudelit) on silt nimega finetune_compute_allow_list. Azure ML sildid on võtme-väärtuse paarid, mida saate luua ja kasutada mudelite filtreerimiseks ja sortimiseks.
+    - Kontrollib, kas foundation_model objektil (mudel Azure ML-s) on silt nimega finetune_compute_allow_list. Azure ML märgendid on võtme-väärtuse paarid, mida saab kasutada mudelite filtreerimiseks ja sorteerimiseks.
 
-    - Kui finetune_compute_allow_list silt on olemas, kasutab ast.literal_eval funktsiooni, et ohutult teisendada sildi väärtus (string) Python'i loendiks. See loend määratakse muutujale computes_allow_list. Seejärel prindib sõnumi, mis näitab, et arvutusressurss tuleks luua loendist.
+    - Kui see silt on olemas, kasutab ast.literal_eval funktsiooni sildi väärtuse turvaliseks teisendamiseks Python'i listiks. See list määratakse muutujale computes_allow_list. Seejärel prinditakse sõnum, mis juhendab arvutusressurssi looma selle nimekirja alusel.
 
-    - Kui finetune_compute_allow_list silt pole olemas, määrab computes_allow_list väärtuseks None ja prindib sõnumi, mis näitab, et finetune_compute_allow_list silt ei kuulu mudeli siltide hulka.
+    - Kui seda silti ei ole, määrab computes_allow_list väärtuseks None ja prindib sõnumi, et finetune_compute_allow_list ei kuulu mudeli siltide hulka.
 
-    - Kokkuvõttes kontrollib see skript mudeli metaandmetes konkreetset silti, teisendab sildi väärtuse loendiks, kui see eksisteerib, ja annab kasutajale vastavalt tagasisidet.
+    - Kokkuvõttes kontrollitakse seda konkreetset silti mudeli metaandmetes, konverteeritakse selle väärtus listiks, kui see on olemas, ja antakse tagasisidet kasutajale.
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # Impordi ast moodul, mis pakub funktsioone Python'i abstraktse süntaksi puude töötlemiseks
     import ast
     
-    # Check if the 'finetune_compute_allow_list' tag is present in the model's tags
+    # Kontrolli, kas mudeli siltide seas on olemas 'finetune_compute_allow_list' silt
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # If the tag is present, use ast.literal_eval to safely parse the tag's value (a string) into a Python list
+        # Kui silt on olemas, kasuta ast.literal_eval funktsiooni, et turvaliselt tõlgendada sildi väärtus (string) Python'i nimekirjaks
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # convert string to python list
-        # Print a message indicating that a compute should be created from the list
+        )  # teisenda string Python'i nimekirjaks
+        # Prindi sõnum, mis näitab, et arvutus tuleks nimekirjast luua
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If the tag is not present, set computes_allow_list to None
+        # Kui silt puudub, määra computes_allow_list väärtuseks None
         computes_allow_list = None
-        # Print a message indicating that the 'finetune_compute_allow_list' tag is not part of the model's tags
+        # Prindi sõnum, mis näitab, et 'finetune_compute_allow_list' silt ei ole mudeli siltide hulgas
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Arvutusressursi kontrollimine
+### Arvutusinstantsi kontrollimine
 
-1. See Python'i skript suhtleb Azure Machine Learning (Azure ML) teenusega ja teeb mitmeid kontrolle arvutusressursi kohta. Siin on ülevaade, mida see teeb:
+1. See Python skript suhtleb Azure Machine Learning (Azure ML) teenusega ja teeb mitmeid kontrollimisi arvutusinstantsi kohta. Siin on ülevaade tehtust:
 
-    - Püüab hankida arvutusressurssi nimega compute_cluster Azure ML tööruumist. Kui arvutusressursi ettevalmistamise olek on "failed", viskab ValueError'i.
+    - Püüab Azure ML tööruumist üles leida arvutusinstantsi nimega compute_cluster. Kui selle loomise olek on "failed", viskab vea.
 
-    - Kontrollib, kas computes_allow_list pole None. Kui ei ole, teisendab kõik loendis olevad arvutusressursi suurused väikesteks tähtedeks ja kontrollib, kas praeguse arvutusressursi suurus on loendis. Kui ei ole, viskab ValueError'i.
+    - Kontrollib, kas computes_allow_list ei ole None. Kui see nii on, teisendab selle listi kõik arvutusmõõdud väikesteks tähtedeks ning kontrollib, kas praeguse instantsi suurus on lubatud nimekirjas. Kui ei ole, viskab vea.
 
-    - Kui computes_allow_list on None, kontrollib, kas arvutusressursi suurus on loendis unsupported GPU VM sizes. Kui on, viskab ValueError'i.
+    - Kui computes_allow_list on None, kontrollib, kas instantsi suurus on ebasobivate GPU VM suuruste nimekirjas. Kui on, viskab vea.
 
-    - Hangib loendi kõigist tööruumis saadaval olevatest arvutusressursside suurustest. Seejärel iteratsioonib selle loendi üle ja iga arvutusressursi suuruse puhul kontrollib, kas selle nimi vastab praeguse arvutusressursi suurusele. Kui vastab, hangib GPU-de arvu selle arvutusressursi suuruse jaoks ja määrab gpu_count_found väärtuseks True.
+    - Hangib kõigi tööruumi saadaolevate arvutusmõõtude nimekirja. Läbib selle listi ja kui mõne nimi vastab praeguse instantsi suurusele, hangib selle mõõduga seotud GPUde arvu ning märgib gpu_count_found lipu True-ks.
 
-    - Kui gpu_count_found on True, prindib arvutusressursi GPU-de arvu. Kui gpu_count_found on False, viskab ValueError'i.
+    - Kui gpu_count_found on True, trükib GPU-de arvu. Kui False, viskab vea.
 
-    - Kokkuvõttes teeb see skript mitmeid kontrolle Azure ML tööruumi arvutusressursi kohta, sealhulgas kontrollib selle ettevalmistamise olekut, suurust lubatud või keelatud loendi vastu ja GPU-de arvu.
+    - Kokkuvõttes teeb skript mitmeid kontrollimisi Azure ML tööruumi arvutusinstantsi kohta, sh loomise oleku, suuruse vastavuse lubatud või keelatud nimekirjale ja GPUde arvu olemasolu.
 
     ```python
-    # Print the exception message
+    # Prindi erandi sõnum
     print(e)
-    # Raise a ValueError if the compute size is not available in the workspace
+    # Tõsta ValueError, kui töövahemikus pole arvutamise suurus saadaval
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Retrieve the compute instance from the Azure ML workspace
+    # Hangi arvutamise näidis Azure ML töövahemikust
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Check if the provisioning state of the compute instance is "failed"
+    # Kontrolli, kas arvutamise näidise proviisorimise olek on "ebaõnnestunud"
     if compute.provisioning_state.lower() == "failed":
-        # Raise a ValueError if the provisioning state is "failed"
+        # Tõsta ValueError, kui proviisorimise olek on "ebaõnnestunud"
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
         )
     
-    # Check if computes_allow_list is not None
+    # Kontrolli, kas computes_allow_list ei ole None
     if computes_allow_list is not None:
-        # Convert all compute sizes in computes_allow_list to lowercase
+        # Muuda kõik computes_allow_list arvutamise suurused väikesteks tähtedeks
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # Check if the size of the compute instance is in computes_allow_list_lower_case
+        # Kontrolli, kas arvutamise näidise suurus on computes_allow_list_lower_case sees
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Raise a ValueError if the size of the compute instance is not in computes_allow_list_lower_case
+            # Tõsta ValueError, kui arvutamise näidise suurus ei ole computes_allow_list_lower_case sees
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
     else:
-        # Define a list of unsupported GPU VM sizes
+        # Määra mittetoetatavate GPU VM suuruste nimekiri
         unsupported_gpu_vm_list = [
             "standard_nc6",
             "standard_nc12",
             "standard_nc24",
             "standard_nc24r",
         ]
-        # Check if the size of the compute instance is in unsupported_gpu_vm_list
+        # Kontrolli, kas arvutamise näidise suurus on mittetoetatavate_gpu_vm_nimekirjas
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Raise a ValueError if the size of the compute instance is in unsupported_gpu_vm_list
+            # Tõsta ValueError, kui arvutamise näidise suurus on mittetoetatavate_gpu_vm_nimekirjas
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # Initialize a flag to check if the number of GPUs in the compute instance has been found
+    # Algata lipp, et kontrollida, kas GPUde arv arvutamise näidises on leitud
     gpu_count_found = False
-    # Retrieve a list of all available compute sizes in the workspace
+    # Hangi loend kõigist töövahemikus saadaval olevatest arvutamise suurustest
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iterate over the list of available compute sizes
+    # Tsükli läbi saadaval olevate arvutamise suuruste loendi
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Check if the name of the compute size matches the size of the compute instance
+        # Kontrolli, kas arvutamise suuruse nimi vastab arvutamise näidise suurusele
         if compute_sku.name.lower() == compute.size.lower():
-            # If it does, retrieve the number of GPUs for that compute size and set gpu_count_found to True
+            # Kui sobib, saada selle arvutamise suuruse GPUde arv ja sea gpu_count_found väärtuseks True
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # If gpu_count_found is True, print the number of GPUs in the compute instance
+    # Kui gpu_count_found on True, prindi arvutamise näidise GPUde arv
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # If gpu_count_found is False, raise a ValueError
+        # Kui gpu_count_found on False, tõsta ValueError
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
 
-## 4. Valige mudeli peenhäälestamiseks andmestik
+## 4. Valige täpsustamiseks andmestik
 
-1. Kasutame ultrachat_200k andmestikku. Andmestikul on neli jaotust, mis sobivad juhendatud peenhäälestamiseks (sft).
-Generatsiooni järjestamine (gen). Näidete arv jaotuse kohta on näidatud järgmiselt:
+1. Kasutame ultrachat_200k andmestikku. Andmestikul on neli jaotust, mis sobivad juhendatud täiendamiseks (Supervised fine-tuning, sft).
+Generatsiooni järjestamine (gen). Näidete arv iga jaotuse kohta on järgmine:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Järgnevad lahtrid näitavad peenhäälestuseks põhilist andmete ettevalmistamist:
+1. Järgmised lahtrid näitavad andmete põhilist ettevalmistust täiendamiseks:
 
-### Visualiseerige mõned andmeread
+### Andmerea visualiseerimine
 
-Soovime, et see näidis töötaks kiiresti, seega salvestage train_sft, test_sft failid, mis sisaldavad 5% juba kärbitud ridadest. See tähendab, et peenhäälestatud mudelil on madalam täpsus, mistõttu ei tohiks seda kasutada reaalses maailmas.
-Skript download-dataset.py kasutatakse ultrachat_200k andmestiku allalaadimiseks ja andmestiku teisendamiseks peenhäälestuse torujuhtme komponendi tarbitavasse vormingusse. Kuna andmestik on suur, siis siin on ainult osa andmestikust.
+Soovime, et see näidis käivituks kiiresti, seega salvestame train_sft ja test_sft failid, mis sisaldavad 5% juba filtreeritud ridadest. See tähendab, et täiendatud mudelil on madalam täpsus ning seega ei sobi see tootmiskeskkonda.
+download-dataset.py kasutatakse ultrachat_200k andmestiku allalaadimiseks ja andmestiku teisendamiseks täiendamise torujuhtme komponendi tarbitavasse formaati. Kuna andmestik on suur, on siin esitatud ainult osa andmestikust.
 
-1. Alloleva skripti käivitamine laadib alla ainult 5% andmetest. Seda saab suurendada, muutes dataset_split_pc parameetri soovitud protsendiks.
+1. Alljärgneva skripti käivitamine laadib alla ainult 5% andmetest. Seda protsenti saab suurendada muutmaks dataset_split_pc parameetrit soovitud väärtuseks.
 
-    > [!NOTE]
-    > Mõnel keelemudelil on erinevad keelekoodid ja seetõttu peaksid andmestiku veerunimed kajastama sama.
+> [!NOTE]
+> Mõne keelemudeli keelekoodid erinevad, seega peavad andmestiku veerunimed vastama sellele.
 
-1. Siin on näide, kuidas andmed peaksid välja nägema:
-Vestluse lõpetamise andmestik salvestatakse parquet-vormingus, kus iga kirje kasutab järgmist skeemi:
+1. Siin on näide, kuidas andmed peaksid välja nägema.
+Vestluse lõpuleviimise andmestik on salvestatud parquet formaadis, kus iga kirje kasutab järgmist skeemi:
 
-    - See on JSON (JavaScript Object Notation) dokument, mis on populaarne andmevahetusvorming. See ei ole täidetav kood, vaid viis andmete salvestamiseks ja edastamiseks. Siin on selle struktuuri ülevaade:
+    - See on JSON dokument (JavaScript Object Notation), mis on populaarne andmevahetuse formaat. See ei ole täidetav kood, vaid viis andmete salvestamiseks ja transportimiseks. Siin on selle struktuuri ülevaade:
 
-    - "prompt": See võti sisaldab stringi väärtust, mis esindab ülesannet või küsimust, mis esitatakse AI assistendile.
+    - "prompt": Võti, mis hoiab stringi väärtust, mis esindab ülesannet või küsimust AI assistendile.
 
-    - "messages": See võti sisaldab objektide massiivi. Iga objekt esindab sõnumit vestluses kasutaja ja AI assistendi vahel. Igal sõnumi objektil on kaks võtit:
+    - "messages": Võti, mis hoiab objektilisti. Iga objekt kujutab vestlust kasutaja ja AI assistendi vahel. Igal sõnumi objkektil on kaks võtit:
 
-    - "content": See võti sisaldab stringi väärtust, mis esindab sõnumi sisu.
-    - "role": See võti sisaldab stringi väärtust, mis esindab sõnumi saatja rolli. See võib olla kas "user" või "assistant".
-    - "prompt_id": See võti sisaldab stringi väärtust, mis esindab unikaalset identifikaatorit ülesande jaoks.
+    - "content": String, mis on sõnumi sisu.
+    - "role": String, mis näitab, kas sõnumi saataja roll on "user" või "assistant".
+    - "prompt_id": String, mis tähistab unikaalset id-d selle sisendi jaoks.
 
-1. Selles konkreetses JSON dokumendis on esindatud vestlus, kus kasutaja palub AI assistendil luua peategelase düstoopilisele loole. Assistend vastab ja kasutaja palub rohkem detaile. Assistent nõustub detaile pakkuma. Kogu vestlus on seotud konkreetse prompt_id-ga.
+1. Selles konkreetse JSON dokumendis on esitatud vestlus, kus kasutaja palub AI assistendil luua peategelane düstoopilises loos. Assistent vastab ning kasutaja palub lisateavet. Assistent nõustub lisateavet pakkuma. Kogu vestlus on seotud konkreetse prompt id-ga.
 
     ```python
     {
@@ -337,106 +337,106 @@ Vestluse lõpetamise andmestik salvestatakse parquet-vormingus, kus iga kirje ka
 
 ### Andmete allalaadimine
 
-1. See Python'i skript on mõeldud andmestiku allalaadimiseks, kasutades abiskripti nimega download-dataset.py. Siin on ülevaade, mida see teeb:
+1. See Python skript kasutab download-dataset.py abiskripti andmestiku allalaadimiseks. Siin on ülevaade tehtust:
 
-    - Impordib os mooduli, mis pakub operatsioonisüsteemiga seotud funktsionaalsust.
+    - Impordib os mooduli, mis pakub platvormideülest võimalust operatsioonisüsteemiga suhelda.
 
-    - Kasutab os.system funktsiooni, et käivitada download-dataset.py skript shellis konkreetsete käsurea argumentidega. Argumendid määravad allalaaditava andmestiku (HuggingFaceH4/ultrachat_200k), kataloogi, kuhu see alla laaditakse (ultrachat_200k_dataset), ja protsendi andmestiku jaotamiseks (5). Funktsioon os.system tagastab käivitatud käsu väljumisoleku; see olek salvestatakse muutujasse exit_status.
+    - Käivitab os.system funktsiooni abil shellis download-dataset.py skripti koos konkreetsete käsurea argumentidega. Argumentides on määratud, millist andmestikku laadida (HuggingFaceH4/ultrachat_200k), kuhu (ultrachat_200k_dataset), ja kui suur osa jagada (5%). Os.system tagastab käsu väljumise staatuse, mis salvestatakse exit_status muutujasse.
 
-    - Kontrollib, kas exit_status ei ole 0. Unix-laadsetes operatsioonisüsteemides näitab väljumisolek 0 tavaliselt, et käsk õnnestus, samas kui mis tahes muu number näitab viga. Kui exit_status ei ole 0, viskab Exception'i koos sõnumiga, mis näitab, et andmestiku allalaadimisel tekkis viga.
+    - Kontrollib, kas exit_status ei võrdu 0-ga. Unixilaadsetes opsüsteemides tähendab 0 tavaliselt edukat täitmist, mis tahes muu number viga. Kui exit_status ei ole 0, viskab vea sõnumiga, mis teatab allalaadimisveast.
 
-    - Kokkuvõttes käivitab see skript käsu, et laadida andmestik abiskripti abil, ja viskab erandi, kui käsk ebaõnnestub.
+    - Kokkuvõttes käivitab see skript käsu andmestiku allalaadimiseks ja viskab veateate, kui see ebaõnnestub.
 
     ```python
-    # Import the os module, which provides a way of using operating system dependent functionality
+    # Impordi os moodul, mis pakub võimalust kasutada operatsioonisüsteemist sõltuvat funktsionaalsust
     import os
     
-    # Use the os.system function to run the download-dataset.py script in the shell with specific command-line arguments
-    # The arguments specify the dataset to download (HuggingFaceH4/ultrachat_200k), the directory to download it to (ultrachat_200k_dataset), and the percentage of the dataset to split (5)
-    # The os.system function returns the exit status of the command it executed; this status is stored in the exit_status variable
+    # Kasuta os.system funktsiooni, et käivitada download-dataset.py skript shellis konkreetsete käsurea argumentidega
+    # Argumendid täpsustavad allalaaditavat andmekogu (HuggingFaceH4/ultrachat_200k), kausta, kuhu see alla laaditakse (ultrachat_200k_dataset), ja andmekogu jagamise protsenti (5)
+    # os.system funktsioon tagastab käsu täitmise väljundoleku; see olek salvestatakse muutujasse exit_status
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
-    # Check if exit_status is not 0
-    # In Unix-like operating systems, an exit status of 0 usually indicates that a command has succeeded, while any other number indicates an error
-    # If exit_status is not 0, raise an Exception with a message indicating that there was an error downloading the dataset
+    # Kontrolli, kas exit_status ei ole 0
+    # Unixilaadsetes operatsioonisüsteemides tähistab väljundolek 0 tavaliselt käsu õnnestumist, samas kui iga muu number näitab viga
+    # Kui exit_status ei ole 0, viska Exception teatega, mis näitab, et andmekogu allalaadimisel tekkis viga
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
 
 ### Andmete laadimine DataFrame'i
 
-1. See Python'i skript laadib JSON Lines faili pandas DataFrame'i ja kuvab esimesed 5 rida. Siin on ülevaade, mida see teeb:
+1. See Python skript laadib JSON Lines faili pandas DataFrame'i ja kuvab esimesed 5 rida. Siin on ülevaade toimuvast:
 
-    - Impordib pandas teegi, mis on võimas andmete manipuleerimise ja analüüsi teek.
+    - Impordib pandas raamatukogu, mis on võimas andmetöötluse ja analüüsi tööriist.
 
-    - Seadistab pandas'i kuvamisvalikute maksimaalse veeru laiuse väärtuseks 0. See tähendab, et iga veeru täielik tekst kuvatakse ilma kärpimiseta, kui DataFrame prinditakse.
-- See kasutab funktsiooni pd.read_json, et laadida fail train_sft.jsonl kataloogist ultrachat_200k_dataset DataFrame'i. Argument lines=True näitab, et fail on JSON Lines formaadis, kus iga rida on eraldi JSON-objekt.
+    - Määrab pandas kuvamisvalikutes maksimaalse veeru laiuseks 0, mis tähendab, et veeru kogu tekst kuvatakse ilma kärpimiseta, kui DataFrame välja trükitakse.
+    - See kasutab pd.read_json funktsiooni, et laadida ultrachat_200k_dataset kataloogist fail train_sft.jsonl DataFrame’i. Argument lines=True näitab, et fail on JSON Lines formaadis, kus iga rida on eraldi JSON objekt.
 
-- See kasutab meetodit head, et kuvada DataFrame'i esimesed 5 rida. Kui DataFrame'is on vähem kui 5 rida, kuvatakse kõik read.
+    - See kasutab meetodit head, et kuvada DataFrame’i esimesed 5 rida. Kui DataFrame’is on vähem kui 5 rida, kuvatakse kõik read.
 
-- Kokkuvõttes laadib see skript JSON Lines faili DataFrame'i ja kuvab esimesed 5 rida koos täisteksti veergudega.
-
+    - Kokkuvõttes laadib see skript JSON Lines faili DataFrame’i ja kuvab esimesed 5 rida koos täieliku veergude tekstiga.
+    
     ```python
-    # Import the pandas library, which is a powerful data manipulation and analysis library
+    # Impordi pandas'i raamatukogu, mis on võimas andmete töötlemise ja analüüsi raamatukogu
     import pandas as pd
     
-    # Set the maximum column width for pandas' display options to 0
-    # This means that the full text of each column will be displayed without truncation when the DataFrame is printed
+    # Sea pandas'i kuvamisvalikutes veeru maksimaalne laius 0-ks
+    # See tähendab, et iga veeru täistekst kuvatakse ilma lühendamiseta, kui DataFrame välja prinditakse
     pd.set_option("display.max_colwidth", 0)
     
-    # Use the pd.read_json function to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame
-    # The lines=True argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # Kasuta pd.read_json funktsiooni, et laadida train_sft.jsonl fail ultrachat_200k_dataset kataloogist DataFrame'i
+    # Argumendi lines=True kasutamine näitab, et fail on JSON Lines formaadis, kus iga rida on eraldi JSON objekt
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Use the head method to display the first 5 rows of the DataFrame
-    # If the DataFrame has less than 5 rows, it will display all of them
+    # Kasuta head meetodit, et kuvada DataFrame'i esimesed 5 rida
+    # Kui DataFrame'il on vähem kui 5 rida, kuvatakse need kõik
     df.head()
     ```
 
-## 5. Esita peenhäälestuse töö, kasutades mudelit ja andmeid sisenditena
+## 5. Esita peenhäälestamise töö, kasutades mudelit ja andmeid sisendina
 
-Loo töö, mis kasutab chat-completion torujuhtme komponenti. Lisateavet kõigi peenhäälestuse jaoks toetatud parameetrite kohta leiate siit.
+Loo töö, mis kasutab chat-completion pipeline komponenti. Õpi rohkem kõigi peenhäälestamiseks toetatud parameetrite kohta.
 
 ### Peenhäälestuse parameetrite määratlemine
 
-1. Peenhäälestuse parameetrid saab jagada kahte kategooriasse - treeningparameetrid ja optimeerimisparameetrid.
+1. Peenhäälestuse parameetrid saab jagada 2 kategooriasse – treeningparameetrid ja optimeerimisparameetrid
 
-1. Treeningparameetrid määravad treeningu aspektid, näiteks:
+1. Treeningparameetrid määravad treeningu aspektid, nagu -
 
-    - Millist optimeerijat ja ajastajat kasutada
-    - Millist mõõdikut peenhäälestuse optimeerimiseks kasutada
-    - Treeningusammude arv, partii suurus jne
+    - Kasutatav optimeerija, ajastaja
+    - Parameeter, mida peenhäälestamisel optimeerida
+    - Treeningusammude arv ja partii suurus jne
     - Optimeerimisparameetrid aitavad GPU mälu optimeerida ja arvutusressursse tõhusalt kasutada.
 
-1. Allpool on mõned selle kategooria parameetrid. Optimeerimisparameetrid erinevad iga mudeli puhul ja need on mudeliga pakendatud, et neid erinevusi hallata.
+1. Allpool on mõned parameetrid, mis kuuluvad sellesse kategooriasse. Optimeerimisparameetrid erinevad mudelite lõikes ning need on pakitud mudelisse nende erinevuste haldamiseks.
 
-    - Luba deepspeed ja LoRA
-    - Luba segatäpsusega treening
-    - Luba mitme sõlmega treening
+    - Aktiveeri deepspeed ja LoRA
+    - Aktiveeri segatud täpsusega treening
+    - Aktiveeri mitme sõlmega treening
 
 > [!NOTE]
-> Juhendatud peenhäälestus võib põhjustada joondamise kaotust või katastroofilist unustamist. Soovitame seda probleemi kontrollida ja pärast peenhäälestust joondamise etappi läbi viia.
+> Juhendatud peenhäälestamine võib põhjustada joondamise kaotust või katastroofilist unustamist. Soovitame seda probleemi kontrollida ja käivitada joondamisetapi peale peenhäälestust.
 
 ### Peenhäälestuse parameetrid
 
-1. See Python-skript seab üles parameetrid masinõppemudeli peenhäälestamiseks. Siin on ülevaade, mida see teeb:
+1. See Python skript seadistab parameetreid masinaõppemudeli peenhäälestamiseks. Siin on kokkuvõte, mida ta teeb:
 
-    - Seab vaikimisi treeningparameetrid, nagu treeningepohhide arv, treeningu ja hindamise partii suurused, õppemäär ja õppemäära ajastaja tüüp.
+    - See määrab vaikimisi treeningparameetrid, nagu treeninguperioodide arv, treening- ja valideerimispartiide suurused, õppemäär ja õppemäära ajastaja tüüp.
 
-    - Seab vaikimisi optimeerimisparameetrid, näiteks kas rakendada Layer-wise Relevance Propagation (LoRa) ja DeepSpeed ning DeepSpeed'i etapp.
+    - See määrab vaikimisi optimeerimisparameetrid, nagu kas rakendada Layer-wise Relevance Propagation (LoRa) ja DeepSpeed, ning DeepSpeed tase.
 
-    - Kombineerib treening- ja optimeerimisparameetrid ühte sõnastikku nimega finetune_parameters.
+    - See kombineerib treening- ja optimeerimisparameetrid üheks sõnastikuks finetune_parameters.
 
-    - Kontrollib, kas foundation_model sisaldab mudelispetsiifilisi vaikimisi. Kui see nii on, prindib hoiatussõnumi ja uuendab finetune_parameters sõnastikku nende mudelispetsiifiliste vaikimistega. Funktsiooni ast.literal_eval kasutatakse mudelispetsiifiliste vaikimiste teisendamiseks stringist Python-sõnastikuks.
+    - See kontrollib, kas foundation_model’il on mudelipõhiseid vaikimisi parameetreid. Kui on, prinditakse hoiatussõnum ja finetune_parameters uuendatakse nende mudelipõhiste vaikimistega. ast.literal_eval funktsiooni kasutatakse mudelipõhiste vaikimiste teisendamiseks stringist Python sõnastikuks.
 
-    - Prindib lõpliku peenhäälestuse parameetrite komplekti, mida jooksutamiseks kasutatakse.
+    - See prindib peenhäälestuse lõpliku parameetrite komplekti, mida jooksu jaoks kasutatakse.
 
-    - Kokkuvõttes seab see skript üles ja kuvab masinõppemudeli peenhäälestuse parameetrid, võimaldades vaikimisi parameetreid mudelispetsiifilistega üle kirjutada.
+    - Kokkuvõttes seadistab ja kuvab see skript masinaõppemudeli peenhäälestuse parameetreid, võimaldades vaikimisi parameetreid ülekirjutada mudelipõhistega.
 
     ```python
-    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    # Määrake vaikimisi treeningparameetrid, nagu treeningepohhide arv, treeningu ja hindamise partiide suurused, õppemäär ja õppemäära ajastaja tüüp
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -445,84 +445,84 @@ Loo töö, mis kasutab chat-completion torujuhtme komponenti. Lisateavet kõigi 
         lr_scheduler_type="cosine",
     )
     
-    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    # Määrake vaikimisi optimeerimisparameetrid, nagu kas rakendada kihipõhist asjakohasuslevi (LoRa) ja DeepSpeed ning DeepSpeed etapp
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    # Ühendage treeningu ja optimeerimise parameetrid üheks sõnastikuks nimega finetune_parameters
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Check if the foundation_model has any model-specific default parameters
-    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
-    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    # Kontrollige, kas foundation_modelil on mõningaid mudelipõhiseid vaikimisi parameetreid
+    # Kui on, printige hoiatussõnum ja uuendage finetune_parameters sõnastikku nende mudelipõhiste vaikeseadistustega
+    # ast.literal_eval funktsiooni kasutatakse mudelipõhiste vaikeseadistuste teisendamiseks sõstringist Python'i sõnastikuks
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # convert string to python dict
+            ast.literal_eval(  # teisendage string Python sõnastikuks
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # Print the final set of fine-tuning parameters that will be used for the run
+    # Printige lõplik karastamisparameetrite komplekt, mida jooksu käigus kasutatakse
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
     ```
 
-### Treeningtorujuhe
+### Treeningpõhi
 
-1. See Python-skript määratleb funktsiooni masinõppe treeningtorujuhtme kuvamise nime genereerimiseks ja kutsub seejärel selle funktsiooni välja, et genereerida ja printida kuvamise nimi. Siin on ülevaade, mida see teeb:
+1. See Python skript defineerib funktsiooni, mis genereerib masinaõppetreeningu poole torujuhtme kuvamisnime, ja seejärel kutsub seda funktsiooni nime genereerimiseks ja väljatrükiks. Siin on kokkuvõte, mida ta teeb:
 
-1. Funktsioon get_pipeline_display_name on määratletud. See funktsioon genereerib kuvamise nime, mis põhineb erinevatel treeningtorujuhtmega seotud parameetritel.
+1. Defineeritakse funktsioon get_pipeline_display_name. See funktsioon genereerib kuvamisnime erinevate treeningpõhise parameetrite põhjal.
 
-1. Funktsiooni sees arvutatakse kogu partii suurus, korrutades seadme kohta oleva partii suuruse, gradientide akumuleerimise sammude arvu, GPU-de arvu sõlme kohta ja sõlmede arvu, mida peenhäälestamiseks kasutatakse.
+1. Funktsiooni sees arvutatakse kogupartii suurus, korrutades üksiku seadme partiisuuruse, gradientide akumuleerimistõmmete arvu, GPU-de arvu ühe sõlme kohta ja peenhäälestuseks kasutatavate sõlmede arvu.
 
-1. See hangib erinevaid muid parameetreid, nagu õppemäära ajastaja tüüp, kas DeepSpeed on rakendatud, DeepSpeed'i etapp, kas Layer-wise Relevance Propagation (LoRa) on rakendatud, mudeli kontrollpunktide arvu piirang ja maksimaalne järjestuse pikkus.
+1. Võetakse erinevad muud parameetrid nagu õppemäära ajastaja tüüp, kas kasutusel on DeepSpeed, DeepSpeed tase, kas kasutatakse LoRa’d, modelle hoidvate kontrollpunktide arvu piirang ja maksimaalne järjestuse pikkus.
 
-1. See koostab stringi, mis sisaldab kõiki neid parameetreid, eraldatuna sidekriipsudega. Kui DeepSpeed või LoRa on rakendatud, sisaldab string "ds", millele järgneb DeepSpeed'i etapp, või "lora". Kui mitte, sisaldab see "nods" või "nolora".
+1. Koostatakse string, mis sisaldab kõiki neid parameetreid sidekriipsudega eraldatult. Kui DeepSpeed või LoRa on aktiveeritud, sisaldab stringi kas "ds" koos DeepSpeed tasemega või "lora". Kui mitte, siis vastavalt "nods" või "nolora".
 
-1. Funktsioon tagastab selle stringi, mis toimib treeningtorujuhtme kuvamise nimena.
+1. Funktsioon tagastab selle stringi, mis on treeningpõhise kuvamisnimi.
 
-1. Pärast funktsiooni määratlemist kutsutakse see välja, et genereerida kuvamise nimi, mis seejärel prinditakse.
+1. Pärast funktsiooni defineerimist kutsutakse see kuvamisnime genereerimiseks ja see prinditakse välja.
 
-1. Kokkuvõttes genereerib see skript masinõppe treeningtorujuhtme kuvamise nime, mis põhineb erinevatel parameetritel, ja prindib selle kuvamise nime.
+1. Kokkuvõttes genereerib see skript masinaõppetreeningu poole torujuhtme kuvamisnime erinevate parameetrite põhjal ning trükib selle välja.
 
     ```python
-    # Define a function to generate a display name for the training pipeline
+    # Määra funktsioon koolituskanali kuvamisnime loomiseks
     def get_pipeline_display_name():
-        # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
+        # Arvuta kogu partiisuurus, korrutades seadme kohta partiisuuruse, gradientide akumulatsiooni sammude arvu, GPU-de arvu sõlmes ja peenhäälestuseks kasutatavate sõlmede arvu
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Retrieve the learning rate scheduler type
+        # Hangi õppimise kiiruse ajastaja tüüp
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Retrieve whether DeepSpeed is applied
+        # Hangi, kas DeepSpeed on rakendatud
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Retrieve the DeepSpeed stage
+        # Hangi DeepSpeed etapp
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # If DeepSpeed is applied, include "ds" followed by the DeepSpeed stage in the display name; if not, include "nods"
+        # Kui DeepSpeed on rakendatud, lisa kuvamisnimele "ds" ja seejärel DeepSpeed etapp; kui mitte, lisa "nods"
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Retrieve whether Layer-wise Relevance Propagation (LoRa) is applied
+        # Hangi, kas on rakendatud kihti-põhist asjakohasuse levitamist (LoRa)
         lora = finetune_parameters.get("apply_lora", "false")
-        # If LoRa is applied, include "lora" in the display name; if not, include "nolora"
+        # Kui LoRa on rakendatud, lisa kuvamisnimele "lora"; kui mitte, lisa "nolora"
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Retrieve the limit on the number of model checkpoints to keep
+        # Hangi mudeli kontrollpunktide arvu piirang
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # Retrieve the maximum sequence length
+        # Hangi maksimaalne järjestuse pikkus
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Construct the display name by concatenating all these parameters, separated by hyphens
+        # Koosta kuvamisnimi, ühendades kõik need parameetrid kriipsudega eraldatult
         return (
             model_name
             + "-"
@@ -539,192 +539,192 @@ Loo töö, mis kasutab chat-completion torujuhtme komponenti. Lisateavet kõigi 
             + f"-seqlen{seq_len}"
         )
     
-    # Call the function to generate the display name
+    # Kutsu funktsioon kuvamisnime loomiseks
     pipeline_display_name = get_pipeline_display_name()
-    # Print the display name
+    # Prindi kuvamisnimi
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### Torujuhtme konfigureerimine
+### Pooli seadistamine
 
-See Python-skript määratleb ja konfigureerib masinõppe torujuhtme, kasutades Azure Machine Learning SDK-d. Siin on ülevaade, mida see teeb:
+See Python skript määratleb ja seadistab masinõppe poole torujuhtme Azure Machine Learning SDK abil. Siin on kokkuvõte, mida ta teeb:
 
-1. See impordib vajalikud moodulid Azure AI ML SDK-st.
+1. Impordib vajalikud moodulid Azure AI ML SDK-st.
 
-1. See hangib torujuhtme komponendi nimega "chat_completion_pipeline" registrist.
+1. Võtab registrist komponendi nimega "chat_completion_pipeline".
 
-1. See määratleb torujuhtme töö, kasutades `@pipeline` dekoraatorit ja funktsiooni `create_pipeline`. Torujuhtme nimi on seatud väärtusele `pipeline_display_name`.
+1. Defineerib torujuhtme töö `@pipeline` dekoraatori ja `create_pipeline` funktsiooni abil. Pooli nimeks määratakse `pipeline_display_name`.
 
-1. Funktsiooni `create_pipeline` sees algatab see hangitud torujuhtme komponendi erinevate parameetritega, sealhulgas mudeli tee, arvutusklastrid erinevate etappide jaoks, andmekogumi jaotused treeninguks ja testimiseks, GPU-de arvu, mida peenhäälestamiseks kasutada, ja muud peenhäälestuse parameetrid.
+1. `create_pipeline` funktsiooni sees initsialiseeritakse võetud pooli komponent erinevate parameetritega, sealhulgas mudeli tee, arvutusklastrid erinevates etappides, treeningu- ja testandmete jagunemised, peenhäälestuseks kasutatavate GPU-de arv ja teised peenhäälestuse parameetrid.
 
-1. See kaardistab peenhäälestuse töö väljundi torujuhtme töö väljundiga. See tehakse nii, et peenhäälestatud mudel saaks hõlpsasti registreeritud, mis on vajalik mudeli juurutamiseks veebis või partii lõpp-punktis.
+1. Seob peenhäälestustöö väljundi pooli töö väljundiga. See tehakse selleks, et peenhäälestatud mudelit saaks lihtsalt registreerida, mis on vajalik mudeli juurutamiseks veebipõhises või partiilõpp-punktis.
 
-1. See loob torujuhtme eksemplari, kutsudes välja funktsiooni `create_pipeline`.
+1. Loob pooli eksemplari, kutsudes `create_pipeline` funktsiooni.
 
-1. See seab torujuhtme `force_rerun` seade väärtusele `True`, mis tähendab, et eelmiste tööde vahemällu salvestatud tulemusi ei kasutata.
+1. Määrab torujuhtme `force_rerun` sätte väärtuseks `True`, mis tähendab, et eelnevate tööde vahemällu salvestatud tulemusi ei kasutata.
 
-1. See seab torujuhtme `continue_on_step_failure` seade väärtusele `False`, mis tähendab, et torujuhe peatub, kui mõni samm ebaõnnestub.
+1. Määrab torujuhtme `continue_on_step_failure` sätte väärtuseks `False`, mis tähendab, et torujuhtme täitmine peatub, kui mõni etapp ei õnnestu.
 
-1. Kokkuvõttes määratleb ja konfigureerib see skript masinõppe torujuhtme vestluse lõpetamise ülesande jaoks, kasutades Azure Machine Learning SDK-d.
+1. Kokkuvõttes defineerib ja seadistab see skript masinõppe poole torujuhtme vestluste täitmise ülesandeks Azure Machine Learning SDK abil.
 
     ```python
-    # Import necessary modules from the Azure AI ML SDK
+    # Impordi vajalikud moodulid Azure AI ML SDK-st
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Fetch the pipeline component named "chat_completion_pipeline" from the registry
+    # Hangi registrist pipeline komponent nimega "chat_completion_pipeline"
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Define the pipeline job using the @pipeline decorator and the function create_pipeline
-    # The name of the pipeline is set to pipeline_display_name
+    # Määra pipeline töö @pipeline dekoratsiooni ja funktsiooni create_pipeline abil
+    # Pipeline nimi seatakse muutujale pipeline_display_name
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Initialize the fetched pipeline component with various parameters
-        # These include the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters
+        # Algata hangitud pipeline komponent erinevate parameetritega
+        # Nende hulka kuuluvad mudeli tee, arvutusklastrid erinevate etappide jaoks, andmestiku jagamised treeninguks ja testimiseks, täpsustamise jaoks kasutatavate GPUde arv ning muud täpsustamise parameetrid
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Map the dataset splits to parameters
+            # Kaardista andmestiku jagamised parameetritele
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # Training settings
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Set to the number of GPUs available in the compute
+            # Treeningu seaded
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # Sea väärtus arvutusklastris saadaolevate GPUde arvuks
             **finetune_parameters
         )
         return {
-            # Map the output of the fine tuning job to the output of pipeline job
-            # This is done so that we can easily register the fine tuned model
-            # Registering the model is required to deploy the model to an online or batch endpoint
+            # Kaardista täpsustamise töö väljund pipeline töö väljundile
+            # Seda tehakse selleks, et saaksime hõlpsasti registreerida täpsustatud mudeli
+            # Mudeli registreerimine on vajalik mudeli juurutamiseks võrgus oleva või partiipunkti kaudu
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Create an instance of the pipeline by calling the create_pipeline function
+    # Loo pipeline eksemplar, kutsudes funktsiooni create_pipeline
     pipeline_object = create_pipeline()
     
-    # Don't use cached results from previous jobs
+    # Ära kasuta vahemälus olevaid tulemusi varasemast tööst
     pipeline_object.settings.force_rerun = True
     
-    # Set continue on step failure to False
-    # This means that the pipeline will stop if any step fails
+    # Sea jätkamise valik sammude ebaõnnestumisel väärtuseks False
+    # See tähendab, et pipeline peatub, kui mõni samm ebaõnnestub
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Töö esitamine
+### Esita töö
 
-1. See Python-skript esitab masinõppe torujuhtme töö Azure Machine Learning tööruumi ja ootab seejärel töö valmimist. Siin on ülevaade, mida see teeb:
+1. See Python skript esitab masinõppe poole torujuhtme töö Azure Machine Learning tööruumi ja ootab siis töö lõpetamist. Siin on kokkuvõte, mida ta teeb:
 
-    - See kutsub välja meetodi create_or_update objektis jobs tööruumi_ml_client'is, et esitada torujuhtme töö. Torujuhe, mida käitada, on määratud pipeline_object'iga ja eksperiment, mille all töö käivitatakse, on määratud experiment_name'iga.
+    - Kutsutakse workspace_ml_client jobs objekti create_or_update meetodit poole töö esitamiseks. Käivitatav pool on määratud pipeline_object muutujaga ning töö eksperimendi nimi on määratud experiment_name muutujaga.
 
-    - Seejärel kutsub see välja meetodi stream objektis jobs tööruumi_ml_client'is, et oodata torujuhtme töö valmimist. Töö, mida oodata, on määratud pipeline_job objekti name atribuudiga.
+    - Seejärel kutsutakse workspace_ml_client jobs objekti stream meetodit, et oodata poole töö lõppu. Oodatav töö on määratud pipeline_job objekti name atribuudiga.
 
-    - Kokkuvõttes esitab see skript masinõppe torujuhtme töö Azure Machine Learning tööruumi ja ootab seejärel töö valmimist.
+    - Kokkuvõttes esitab see skript masinõppe poole torujuhtme töö Azure Machine Learning tööruumi ja ootab selle lõppu.
 
     ```python
-    # Submit the pipeline job to the Azure Machine Learning workspace
-    # The pipeline to be run is specified by pipeline_object
-    # The experiment under which the job is run is specified by experiment_name
+    # Esita torujuhtme töö Azure Machine Learning tööruumi
+    # Käivitatav torujuhtme on määratud pipeline_object abil
+    # Katse, mille raames töö käivitatakse, on määratud experiment_name abil
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Wait for the pipeline job to complete
-    # The job to wait for is specified by the name attribute of the pipeline_job object
+    # Oota, kuni torujuhtme töö lõpeb
+    # Oodatav töö on määratud pipeline_job objekti name atribuudi abil
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
 ## 6. Registreeri peenhäälestatud mudel tööruumis
 
-Registreerime mudeli peenhäälestuse töö väljundist. See jälgib seost peenhäälestatud mudeli ja peenhäälestuse töö vahel. Peenhäälestuse töö jälgib omakorda seost algmudeli, andmete ja treeningkoodiga.
+Registreerime mudeli, mis on saadud peenhäälestustöö väljundist. See jälgib seotust peenhäälestatud mudeli ja peenhäälestustöö vahel. Peenhäälestustöö omakorda jälgib seotust alusmudeli, andmete ja treeningkoodiga.
 
-### ML-mudeli registreerimine
+### ML mudeli registreerimine
 
-1. See Python-skript registreerib masinõppemudeli, mis treeniti Azure Machine Learning torujuhtmes. Siin on ülevaade, mida see teeb:
+1. See Python skript registreerib Azure Machine Learning poole torujuhtmes treenitud masinõppemudeli. Siin on kokkuvõte, mida ta teeb:
 
-    - See impordib vajalikud moodulid Azure AI ML SDK-st.
+    - Impordib vajalikud moodulid Azure AI ML SDK-st.
 
-    - See kontrollib, kas treenitud_mudel väljund on saadaval torujuhtme tööst, kutsudes välja meetodi get objektis jobs tööruumi_ml_client'is ja pääsedes ligi selle outputs atribuudile.
+    - Kontrollib, kas treenitud mudeli väljund on poole tööst saadaval, kutsudes workspace_ml_client jobs objekti get meetodit ja pääsedes selle outputs atribuudi kaudu väljundile ligi.
 
-    - See koostab tee treenitud mudelile, vormindades stringi torujuhtme töö nime ja väljundi nimega ("trained_model").
+    - Moodustab teekonna treenitud mudelile, kasutades stringi vormindamist poletöö nime ja väljundi ("trained_model") nime põhjal.
 
-    - See määratleb peenhäälestatud mudeli nime, lisades algsele mudeli nimele "-ultrachat-200k" ja asendades kõik kaldkriipsud sidekriipsudega.
+    - Määrab peenhäälestatud mudelile nime, lisades algsele mudelinimele "-ultrachat-200k" ja asendades kaldkriipsud sidekriipsudega.
 
-    - See valmistub mudeli registreerimiseks, luues Model objekti erinevate parameetritega, sealhulgas mudeli tee, mudeli tüübi (MLflow mudel), mudeli nime ja versiooni ning mudeli kirjeldusega.
+    - Valmistub mudeli registreerimiseks, luues Model objekti erinevate parameetritega, sealhulgas mudeli tee, mudeli tüüp (MLflow mudel), mudeli nimi ja versioon ning mudeli kirjeldus.
 
-    - See registreerib mudeli, kutsudes välja meetodi create_or_update objektis models tööruumi_ml_client'is, kasutades Model objekti argumendina.
+    - Registreerib mudeli, kutsudes workspace_ml_client models objekti create_or_update meetodit koos Model objektiga argumendina.
 
-    - See prindib registreeritud mudeli.
+    - Prindib registreeritud mudeli välja.
 
-1. Kokkuvõttes registreerib see skript masinõppemudeli, mis treeniti Azure Machine Learning torujuhtmes.
-
+1. Kokkuvõttes registreerib see skript masinõppemudeli, mis treeniti Azure Machine Learning poole torujuhtmes.
+    
     ```python
-    # Import necessary modules from the Azure AI ML SDK
+    # Impordi vajalikud moodulid Azure AI ML SDK-st
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Check if the `trained_model` output is available from the pipeline job
+    # Kontrolli, kas torujuhtme tööst on saadaval väljund `trained_model`
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Construct a path to the trained model by formatting a string with the name of the pipeline job and the name of the output ("trained_model")
+    # Koosta tee treenitud mudelile, vormindades stringi torujuhtme töö nime ja väljundi ("trained_model") nimega
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Define a name for the fine-tuned model by appending "-ultrachat-200k" to the original model name and replacing any slashes with hyphens
+    # Määratle peenhäälestatud mudeli nimi, lisades originaalmudeli nimele "-ultrachat-200k" ja asendades kaldkriipsud sidekriipsudega
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Prepare to register the model by creating a Model object with various parameters
-    # These include the path to the model, the type of the model (MLflow model), the name and version of the model, and a description of the model
+    # Valmista mudeli registreerimiseks ette, luues Model objekti mitme parameetriga
+    # Nende hulka kuuluvad tee mudelini, mudeli tüüp (MLflow mudel), mudeli nimi ja versioon ning mudeli kirjeldus
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Use timestamp as version to avoid version conflict
+        version=timestamp,  # Kasuta versioonina ajatemplit, et vältida versioonikonflikte
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Register the model by calling the create_or_update method of the models object in the workspace_ml_client with the Model object as the argument
+    # Registreeri mudel, kutsudes tööruumi workspace_ml_client models objektil create_or_update meetodit Model objektiga argumendina
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
     
-    # Print the registered model
+    # Prindi registreeritud mudel
     print("registered model: \n", registered_model)
     ```
 
 ## 7. Juuruta peenhäälestatud mudel veebipõhisesse lõpp-punkti
 
-Veebipõhised lõpp-punktid pakuvad püsivat REST API-d, mida saab kasutada rakendustega integreerimiseks, mis vajavad mudeli kasutamist.
+Veebipõhised lõpp-punktid pakuvad püsivat REST API-d, mida saab kasutada rakendustega integratsiooniks, mis peavad mudelit kasutama.
 
 ### Lõpp-punkti haldamine
 
-1. See Python-skript loob hallatava veebipõhise lõpp-punkti Azure Machine Learning'is registreeritud mudeli jaoks. Siin on ülevaade, mida see teeb:
+1. See Python skript loob Azure Machine Learning’is hallatava veebipõhise lõpp-punkti registreeritud mudelile. Siin on kokkuvõte, mida ta teeb:
 
-    - See impordib vajalikud moodulid Azure AI ML SDK-st.
+    - Impordib vajalikud moodulid Azure AI ML SDK-st.
 
-    - See määratleb veebipõhise lõpp-punkti jaoks unikaalse nime, lisades stringile "ultrachat-completion-" ajatempli.
+    - Määrab veebipõhisele lõpp-punktile unikaalse nime, lisades täheahelale "ultrachat-completion-" ajatempli.
 
-    - See valmistub veebipõhise lõpp-punkti loomiseks, luues ManagedOnlineEndpoint objekti erinevate parameetritega, sealhulgas lõpp-punkti nimi, lõpp-punkti kirjeldus ja autentimisrežiim ("key").
+    - Valmistub lõpp-punkti loomiseks, luues ManagedOnlineEndpoint objekti erinevate parameetritega, sealhulgas lõpp-punkti nimi, kirjeldus ja autentimismeetod ("key").
 
-    - See loob veebipõhise lõpp-punkti, kutsudes välja meetodi begin_create_or_update objektis workspace_ml_client, kasutades ManagedOnlineEndpoint objekti argumendina. Seejärel ootab see loomistoimingu lõpuleviimist, kutsudes välja meetodi wait.
+    - Loob veebipõhise lõpp-punkti, kutsudes workspace_ml_client begin_create_or_update meetodit koos ManagedOnlineEndpoint objektiga ning ootab loomisoperatsiooni lõppu, kutsudes wait meetodit.
 
-1. Kokkuvõttes loob see skript hallatava veebipõhise lõpp-punkti Azure Machine Learning'is registreeritud mudeli jaoks.
+1. Kokkuvõttes loob see skript hallatava veebipõhise lõpp-punkti Azure Machine Learning’is registreeritud mudelile.
 
     ```python
-    # Import necessary modules from the Azure AI ML SDK
+    # Impordi vajalikud moodulid Azure AI ML SDK-st
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
         ManagedOnlineDeployment,
@@ -732,11 +732,11 @@ Veebipõhised lõpp-punktid pakuvad püsivat REST API-d, mida saab kasutada rake
         OnlineRequestSettings,
     )
     
-    # Define a unique name for the online endpoint by appending a timestamp to the string "ultrachat-completion-"
+    # Määra veebipunktile unikaalne nimi, lisades ajatempli sõnale "ultrachat-completion-"
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Prepare to create the online endpoint by creating a ManagedOnlineEndpoint object with various parameters
-    # These include the name of the endpoint, a description of the endpoint, and the authentication mode ("key")
+    # Valmista ette veebipunkti loomine, luues ManagedOnlineEndpoint objekti mitme parameetriga
+    # Nende hulka kuuluvad punkti nimi, punkti kirjeldus ja autentimismeetod ("key")
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -745,56 +745,56 @@ Veebipõhised lõpp-punktid pakuvad püsivat REST API-d, mida saab kasutada rake
         auth_mode="key",
     )
     
-    # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
-    # Then wait for the creation operation to complete by calling the wait method
+    # Loo veebipunkt, kutsudes työruumi workspace_ml_client meetodit begin_create_or_update ManagedOnlineEndpoint objektiga argumendina
+    # Seejärel oota loomisoperatsiooni lõpetamist, kutsudes wait meetodit
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> Siit leiate juurutamiseks toetatud SKU-de loendi - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Siit leiate loetelu juurutamiseks toetatud SKU-dest - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### ML-mudeli juurutamine
+### ML mudeli juurutamine
 
-1. See Python-skript juurutab registreeritud masinõppemudeli hallatavasse veebipõhisesse lõpp-punkti Azure Machine Learning'is. Siin on ülevaade, mida see teeb:
+1. See Python skript juurutab registreeritud masinõppemudeli hallatavale veebipõhisele lõpp-punktile Azure Machine Learning’is. Siin on kokkuvõte, mida ta teeb:
 
-    - See impordib ast mooduli, mis pakub funktsioone Python'i abstraktse süntaksi grammatika puude töötlemiseks.
+    - Impordib ast mooduli, mis pakub funktsioone Python abstraktse süntaksi puude töötlemiseks.
 
-    - See määrab juurutamise jaoks eksemplari tüübiks "Standard_NC6s_v3".
+    - Määrab juurutamise eksemplari tüübiks "Standard_NC6s_v3".
 
-    - See kontrollib, kas inference_compute_allow_list silt on algmudelis olemas. Kui see on olemas, teisendab see sildi väärtuse stringist Python'i loendiks ja määrab selle väärtuseks inference_computes_allow_list. Kui see pole olemas, määrab selle väärtuseks None.
+    - Kontrollib, kas foundation_model sisaldab silti inference_compute_allow_list. Kui sisaldab, teisendab sildi väärtuse stringist Python listiks ja määrab selle inference_computes_allow_list muutujale. Kui mitte, määrab selle väärtuseks None.
 
-    - See kontrollib, kas määratud eksemplari tüüp on lubatud loendis. Kui see pole, prindib sõnumi, paludes kasutajal valida eksemplari tüüp lubatud loendist.
+    - Kontrollib, kas määratud eksemplari tüüp on lubatud nimekirjas. Kui ei ole, prindib kasutajale sõnumi, paludes valida lubatud eksemplari tüübi hulgast.
 
-    - See valmistub juurutamise loomiseks, luues ManagedOnlineDeployment objekti erinevate parameetritega, sealhulgas juurutamise nimi, lõpp-punkti nimi, mudeli ID, eksemplari tüüp ja arv, elususe kontrolli seaded ja päringu seaded.
+    - Valmistub juurutamiseks, luues ManagedOnlineDeployment objekti erinevate parameetritega, sealhulgas juurutuse nimi, lõpp-punkti nimi, mudeli ID, eksemplari tüüp ja arv, elavuse kontrolli seaded ja päringute seaded.
 
-    - See loob juurutamise, kutsudes välja meetodi begin_create_or_update objektis workspace_ml_client, kasutades ManagedOnlineDeployment objekti argumendina. Seejärel ootab see loomistoimingu lõpuleviimist, kutsudes välja meetodi wait.
+    - Loob juurutuse, kutsudes workspace_ml_client begin_create_or_update meetodit koos ManagedOnlineDeployment objektiga ning ootab loomisoperatsiooni lõppu wait meetodiga.
 
-    - See määrab lõpp-punkti liikluse suunama 100% liiklusest "demo" juurutamisele.
+    - Määrab lõpp-punkti liikluseks 100% liiklus "demo" juurutusele.
 
-    - See uuendab lõpp-punkti, kutsudes välja meetodi begin_create_or_update objektis workspace_ml_client, kasutades lõpp-punkti objekti argumendina. Seejärel ootab see uuendustoimingu lõpuleviimist, kutsudes välja meetodi result.
+    - Uuendab lõpp-punkti, kutsudes workspace_ml_client begin_create_or_update meetodit endpoint objektiga ning ootab uuendusoperatsiooni lõppu result meetodiga.
 
-1. Kokkuvõttes juurutab see skript registreeritud masinõppemudeli hallatavasse veebipõhisesse lõpp-punkti Azure Machine Learning'is.
+1. Kokkuvõttes juurutab see skript registreeritud masinõppemudeli hallatud veebipõhisele lõpp-punktile Azure Machine Learning’is.
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # Impordi ast moodul, mis pakub funktsioone Python'i abstraktse süntaksipuu töötlemiseks
     import ast
     
-    # Set the instance type for the deployment
+    # Sea juurutuse jaoks instantsi tüüp
     instance_type = "Standard_NC6s_v3"
     
-    # Check if the `inference_compute_allow_list` tag is present in the foundation model
+    # Kontrolli, kas vundamendimudelis on olemas silt `inference_compute_allow_list`
     if "inference_compute_allow_list" in foundation_model.tags:
-        # If it is, convert the tag value from a string to a Python list and assign it to `inference_computes_allow_list`
+        # Kui see on olemas, teisenda sildi väärtus stringist Python'i listiks ja määra see `inference_computes_allow_list`-ile
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If it's not, set `inference_computes_allow_list` to `None`
+        # Kui seda pole, sea `inference_computes_allow_list` väärtuseks `None`
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Check if the specified instance type is in the allow list
+    # Kontrolli, kas määratud instantsi tüüp on lubatud nimekirjas
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -803,7 +803,7 @@ Veebipõhised lõpp-punktid pakuvad püsivat REST API-d, mida saab kasutada rake
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # Prepare to create the deployment by creating a `ManagedOnlineDeployment` object with various parameters
+    # Valmista ette juurutuse loomine, luues `ManagedOnlineDeployment` objekti mitmete parameetritega
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -814,75 +814,75 @@ Veebipõhised lõpp-punktid pakuvad püsivat REST API-d, mida saab kasutada rake
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Create the deployment by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `ManagedOnlineDeployment` object as the argument
-    # Then wait for the creation operation to complete by calling the `wait` method
+    # Loo juurutus, kutsudes `workspace_ml_client`-i `begin_create_or_update` meetodit koos `ManagedOnlineDeployment` objektiga argumendina
+    # Seejärel oota, kuni loomise toiming lõpeb, kutsudes `wait` meetodit
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Set the traffic of the endpoint to direct 100% of the traffic to the "demo" deployment
+    # Sea sõlme liiklus nii, et 100% liiklusest suunatakse "demo" juurutusele
     endpoint.traffic = {"demo": 100}
     
-    # Update the endpoint by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `endpoint` object as the argument
-    # Then wait for the update operation to complete by calling the `result` method
+    # Uuenda sõlme, kutsudes `workspace_ml_client`-i `begin_create_or_update` meetodit koos `endpoint` objektiga argumendina
+    # Seejärel oota, kuni uuendamise toiming lõpeb, kutsudes `result` meetodit
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. Testi lõpp-punkti näidisandmetega
+## 8. Testi lõpp-punkti näidandmetega
 
-Toome testandmekogumist mõned näidisandmed ja esitame need veebipõhisele lõpp-punktile järelduste tegemiseks. Seejärel kuvame hinnatud sildid koos tegelike siltidega.
+Toome testandmestikust mõned näidandmed ja esitame need veebipõhisele lõpp-punktile hinnanguks. Seejärel kuvame hinde sildid koos tegelike siltidega.
 
 ### Tulemuste lugemine
 
-1. See Python-skript loeb JSON Lines faili pandas DataFrame'i, valib juhusliku näidise ja lähtestab indeksi. Siin on ülevaade, mida see teeb:
+1. See Python skript loeb JSON Lines faili pandas DataFrame’i, võtab juhusliku valimi ja lähtestab indeksi. Siin on kokkuvõte, mida ta teeb:
 
-    - See loeb faili ./ultrachat_200k_dataset/test_gen.jsonl pandas DataFrame'i. Funktsiooni read_json kasutatakse koos argumendiga lines=True, kuna fail on JSON Lines formaadis, kus iga rida on eraldi JSON-objekt.
+    - Loeb faili ./ultrachat_200k_dataset/test_gen.jsonl pandas DataFrame’i. Kasutatakse read_json funktsiooni koos argumendiga lines=True, kuna fail on JSON Lines formaadis, kus iga rida on eraldi JSON objekt.
 
-    - See valib juhusliku näidise 1 reast DataFrame'is. Funktsiooni sample kasutatakse koos argumendiga n=1, et määrata juhuslikult valitavate ridade arv.
+    - Võtab DataFrame’ist juhusliku 1 rea valimi. Kasutatakse sample funktsiooni koos argumendiga n=1, et määrata juhuslikult valitud ridade arv.
 
-    - See lähtestab DataFrame'i indeksi. Funktsiooni reset_index kasutatakse koos argumendiga drop=True, et eemaldada algne indeks ja asendada see uue vaikimisi täisarvulise indeksiga.
+    - Lähtestab DataFrame’i indeksi. Kasutatakse reset_index funktsiooni koos argumendiga drop=True, et eemaldada originaalindeks ja asendada see vaikimisi täisarvulise indeksiga.
 
-    - See kuvab DataFrame'i esimesed 2 rida, kasutades funktsiooni head koos argumendiga 2. Kuid kuna pärast valimist sisaldab DataFrame ainult ühte rida, kuvatakse ainult see üks rida.
+    - Kuvab DataFrame’i esimesed 2 rida, kasutades head funktsiooni argumendiga 2. Kuid kuna DataFrame'is on pärast valimist üks rida, kuvatakse ainult see üks rida.
 
-1. Kokkuvõttes loeb see skript JSON Lines faili pandas DataFrame'i, valib juhusliku näidise 1 reast, lähtestab indeksi ja kuvab esimese rea.
-
+1. Kokkuvõttes loeb see skript JSON Lines faili pandas DataFrame’i, võtab juhusliku 1 rea valimi, lähtestab indeksi ja kuvab esimese rea.
+    
     ```python
-    # Import pandas library
+    # Impordi pandas teek
     import pandas as pd
     
-    # Read the JSON Lines file './ultrachat_200k_dataset/test_gen.jsonl' into a pandas DataFrame
-    # The 'lines=True' argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # Loe JSON Lines fail './ultrachat_200k_dataset/test_gen.jsonl' pandas DataFrame'iks
+    # Argument 'lines=True' näitab, et fail on JSON Lines formaadis, kus iga rida on eraldi JSON objekt
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Take a random sample of 1 row from the DataFrame
-    # The 'n=1' argument specifies the number of random rows to select
+    # Võta DataFrame'ist juhuslikult 1 rida
+    # Argument 'n=1' määrab valitavate juhuslike ridade arvu
     test_df = test_df.sample(n=1)
     
-    # Reset the index of the DataFrame
-    # The 'drop=True' argument indicates that the original index should be dropped and replaced with a new index of default integer values
-    # The 'inplace=True' argument indicates that the DataFrame should be modified in place (without creating a new object)
+    # Lähtesta DataFrame'i indeks
+    # Argument 'drop=True' näitab, et algne indeks tuleks eemaldada ja asendada uue vaikimisi täisarvulise indeksiga
+    # Argument 'inplace=True' tähendab, et DataFrame muudetakse kohapeal (ilma uue objekti loomata)
     test_df.reset_index(drop=True, inplace=True)
     
-    # Display the first 2 rows of the DataFrame
-    # However, since the DataFrame only contains one row after the sampling, this will only display that one row
+    # Kuvada DataFrame'i esimesed 2 rida
+    # Kuid kuna DataFrame'is on pärast valikut ainult üks rida, kuvab see ainult selle ühe rea
     test_df.head(2)
     ```
 
-### JSON-objekti loomine
+### JSON objekti loomine
 
-1. See Python-skript loob JSON-objekti kindlate parameetritega ja salvestab selle faili. Siin on ülevaade, mida see teeb:
+1. See Python skript loob JSON objekti konkreetsete parameetritega ja salvestab selle faili. Siin on kokkuvõte, mida ta teeb:
 
-    - See impordib json mooduli, mis pakub funktsioone JSON-andmetega töötamiseks.
-- See loob sõnastiku nimega parameters, mille võtmed ja väärtused esindavad masinõppe mudeli parameetreid. Võtmed on "temperature", "top_p", "do_sample" ja "max_new_tokens", ning nende vastavad väärtused on 0.6, 0.9, True ja 200.
+    - Impordib json mooduli, mis pakub funktsioone JSON andmetega töötamiseks.
+    - See loob sõnastiku parameters, mille võtmed ja väärtused esindavad masinaõppemudeli parameetreid. Võtmed on "temperature", "top_p", "do_sample" ja "max_new_tokens" ning vastavad väärtused on vastavalt 0.6, 0.9, True ja 200.
 
-- See loob teise sõnastiku nimega test_json, millel on kaks võtit: "input_data" ja "params". "input_data" väärtuseks on teine sõnastik, mille võtmed on "input_string" ja "parameters". "input_string" väärtuseks on loend, mis sisaldab test_df DataFrame'i esimest sõnumit. "parameters" väärtuseks on varem loodud parameters sõnastik. "params" väärtuseks on tühi sõnastik.
+    - See loob teise sõnastiku test_json kahe võtmega: "input_data" ja "params". "input_data" väärtuseks on teine sõnastik võtmetega "input_string" ja "parameters". "input_string" väärtuseks on nimekiri, mis sisaldab test_df DataFrame'i esimest sõnumit. "parameters" väärtuseks on varem loodud parameters sõnastik. "params" väärtuseks on tühi sõnastik.
 
-- See avab faili nimega sample_score.json.
-
+    - See avab faili nimega sample_score.json
+    
     ```python
-    # Import the json module, which provides functions to work with JSON data
+    # Impordi json moodul, mis pakub funktsioone JSON andmetega töötamiseks
     import json
     
-    # Create a dictionary `parameters` with keys and values that represent parameters for a machine learning model
-    # The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", and their corresponding values are 0.6, 0.9, True, and 200 respectively
+    # Loo sõnastik `parameters`, mille võtmed ja väärtused esindavad masinõppemudeli parameetreid
+    # Võtmed on "temperature", "top_p", "do_sample" ja "max_new_tokens" ning nende vastavad väärtused on 0.6, 0.9, True ja 200
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -890,11 +890,11 @@ Toome testandmekogumist mõned näidisandmed ja esitame need veebipõhisele lõp
         "max_new_tokens": 200,
     }
     
-    # Create another dictionary `test_json` with two keys: "input_data" and "params"
-    # The value of "input_data" is another dictionary with keys "input_string" and "parameters"
-    # The value of "input_string" is a list containing the first message from the `test_df` DataFrame
-    # The value of "parameters" is the `parameters` dictionary created earlier
-    # The value of "params" is an empty dictionary
+    # Loo teine sõnastik `test_json` kahe võtmega: "input_data" ja "params"
+    # Võti "input_data" väärtus on teine sõnastik võtmetega "input_string" ja "parameters"
+    # Võti "input_string" väärtus on nimekirja, mis sisaldab `test_df` andmeraami esimese sõnumi
+    # Võti "parameters" väärtus on varem loodud `parameters` sõnastik
+    # Võti "params" väärtus on tühi sõnastik
     test_json = {
         "input_data": {
             "input_string": [test_df["messages"][0]],
@@ -903,65 +903,67 @@ Toome testandmekogumist mõned näidisandmed ja esitame need veebipõhisele lõp
         "params": {},
     }
     
-    # Open a file named `sample_score.json` in the `./ultrachat_200k_dataset` directory in write mode
+    # Ava fail nimega `sample_score.json` kaustas `./ultrachat_200k_dataset` kirjutamisrežiimis
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # Write the `test_json` dictionary to the file in JSON format using the `json.dump` function
+        # Kirjuta sõnastik `test_json` faili JSON formaadis, kasutades funktsiooni `json.dump`
         json.dump(test_json, f)
     ```
 
-### Endpointi kasutamine
+### Lõpp-punkti kutsumine
 
-1. See Python skript kasutab Azure Machine Learningi veebipõhist endpointi, et skoorida JSON-faili. Siin on ülevaade, mida see teeb:
+1. See Python skript kutsub Azure Machine Learningi online-lõpp-punkti, et hinnata JSON-faili. Siin on, mida see teeb:
 
-   - See kutsub workspace_ml_client objekti online_endpoints omaduse invoke meetodit. Seda meetodit kasutatakse veebipõhisele endpointile päringu saatmiseks ja vastuse saamiseks.
+    - See kutsub workspace_ml_client objekti online_endpoints atribuudi invoke meetodit. Seda meetodit kasutatakse, et saata päring online-lõpp-punkti ja saada vastus.
 
-   - See määrab endpointi ja deploymendi nime argumentidega endpoint_name ja deployment_name. Antud juhul endpointi nimi on salvestatud muutujasse online_endpoint_name ja deploymendi nimi on "demo".
+    - See määrab lõpp-punkti ja juurutuse nime argumentidega endpoint_name ja deployment_name. Antud juhul on lõpp-punkti nimi muutuja online_endpoint_name ja juurutuse nimi on "demo".
 
-   - See määrab skooritava JSON-faili tee argumendiga request_file. Antud juhul failiks on ./ultrachat_200k_dataset/sample_score.json.
+    - See määrab skooritava JSON-faili tee argumentidega request_file. Antud juhul fail on ./ultrachat_200k_dataset/sample_score.json.
 
-   - See salvestab endpointilt saadud vastuse muutujasse response.
+    - See salvestab lõpp-punkti vastuse muutujasse response.
 
-   - See prindib toorvastuse.
+    - See prindib algse vastuse.
 
-1. Kokkuvõttes kutsub see skript Azure Machine Learningi veebipõhist endpointi, et skoorida JSON-faili, ja prindib vastuse.
+1. Kokkuvõttes kutsub see skript Azure Machine Learningi online-lõpp-punkti, et hinnata JSON-faili ja prindib vastuse.
 
     ```python
-    # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
-    # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
-    # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
-    # The `deployment_name` argument specifies the name of the deployment, which is "demo"
-    # The `request_file` argument specifies the path to the JSON file to be scored, which is `./ultrachat_200k_dataset/sample_score.json`
+    # Kutsu Azure Machine Learningis veebipõhist lõpp-punkti, et hinnata faili `sample_score.json`
+    # Objekti `workspace_ml_client` omaduse `online_endpoints` meetodit `invoke` kasutatakse veebipõhisele lõpp-punktile päringu saatmiseks ja vastuse saamiseks
+    # Argumendi `endpoint_name` väärtuseks on määratud lõpp-punkti nimi, mis on salvestatud muutujasse `online_endpoint_name`
+    # Argumendi `deployment_name` väärtuseks on määratud juurutuse nimi, mis on "demo"
+    # Argumendi `request_file` väärtuseks on määratud teekond hinnatava JSON-failini, mis on `./ultrachat_200k_dataset/sample_score.json`
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
         request_file="./ultrachat_200k_dataset/sample_score.json",
     )
     
-    # Print the raw response from the endpoint
+    # Prindi lõpp-punktist saadud töötlemata vastus
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Veebipõhise endpointi kustutamine
+## 9. Kustuta online-lõpp-punkt
 
-1. Ära unusta veebipõhist endpointi kustutada, muidu jääb arvutusressursside arvestus aktiivseks ja sellega kaasnevad kulud. See Python koodirida kustutab Azure Machine Learningi veebipõhise endpointi. Siin on ülevaade, mida see teeb:
+1. Ära unusta kustutada online-lõpp-punkti, vastasel juhul jätkad arvestuse mõõturi tööd lõpp-punkti kasutatud arvutusvõimsuse eest. See Python-koodirida kustutab Azure Machine Learningis online-lõpp-punkti. Siin on, mida see teeb:
 
-   - See kutsub workspace_ml_client objekti online_endpoints omaduse begin_delete meetodit. Seda meetodit kasutatakse veebipõhise endpointi kustutamise alustamiseks.
+    - See kutsub workspace_ml_client objekti online_endpoints atribuudi begin_delete meetodit. Seda meetodit kasutatakse online-lõpp-punkti kustutamise alustamiseks.
 
-   - See määrab kustutatava endpointi nime argumendiga name. Antud juhul endpointi nimi on salvestatud muutujasse online_endpoint_name.
+    - See määrab kustutatava lõpp-punkti nime argumendiga name. Antud juhul on lõpp-punkti nimi muutuja online_endpoint_name.
 
-   - See kutsub wait meetodit, et oodata kustutamise operatsiooni lõppu. See on blokeeriv operatsioon, mis tähendab, et skript ei jätka enne, kui kustutamine on lõpetatud.
+    - See kutsub wait meetodi, et oodata kustutamisoperatsiooni lõpetamist. See on blokeeriv operatsioon, mis tähendab, et see takistab skripti jätkamist kuni kustutamine on lõpule viidud.
 
-   - Kokkuvõttes alustab see koodirida Azure Machine Learningi veebipõhise endpointi kustutamist ja ootab operatsiooni lõppu.
+    - Kokkuvõttes alustab see koodirida Azure Machine Learningis online-lõpp-punkti kustutamist ja ootab operatsiooni lõpetamist.
 
     ```python
-    # Delete the online endpoint in Azure Machine Learning
-    # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
-    # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
-    # The `wait` method is called to wait for the deletion operation to complete. This is a blocking operation, meaning that it will prevent the script from continuing until the deletion is finished
+    # Kustutage Azure Machine Learningi võrgupõhine lõpp-punkt
+    # `workspace_ml_client` objekti `online_endpoints` omaduse `begin_delete` meetod käivitatakse võrgupõhise lõpp-punkti kustutamise alustamiseks
+    # Argument `name` määrab kustutatava lõpp-punkti nime, mis on salvestatud muutujas `online_endpoint_name`
+    # Kutsutakse meetodit `wait`, et oodata kustutamisoperatsiooni lõpetamist. See on blokeeriv operatsioon, mis tähendab, et see takistab skripti jätkamist, kuni kustutamine on lõpetatud
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest vabastamine**:
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi me püüame täpsust, palun arvestage, et automatiseeritud tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleb pidada autoriteetseks allikaks. Olulise informatsiooni puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või väärinterpreteerimiste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

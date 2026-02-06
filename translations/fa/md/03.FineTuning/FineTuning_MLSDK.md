@@ -1,44 +1,44 @@
-## نحوه استفاده از کامپوننت‌های chat-completion از رجیستری سیستم Azure ML برای فاین‌تیون مدل
+## نحوه استفاده از مؤلفه‌های chat-completion از رجیستری سیستم Azure ML برای آموزش دقیق مدل
 
-در این مثال، فاین‌تیون مدل Phi-3-mini-4k-instruct برای تکمیل مکالمه بین دو نفر با استفاده از دیتاست ultrachat_200k انجام می‌شود.
+در این مثال، ما آموزش دقیق مدل Phi-3-mini-4k-instruct را برای تکمیل یک مکالمه بین دو نفر با استفاده از دیتاست ultrachat_200k انجام خواهیم داد.
 
 ![MLFineTune](../../../../translated_images/fa/MLFineTune.928d4c6b3767dd35.webp)
 
-این مثال نشان می‌دهد چگونه می‌توان با استفاده از Azure ML SDK و پایتون فاین‌تیون را انجام داد و سپس مدل فاین‌تیون شده را برای استنتاج در زمان واقعی روی یک endpoint آنلاین مستقر کرد.
+این مثال به شما نشان می‌دهد چگونه می‌توانید با استفاده از Azure ML SDK و پایتون آموزش دقیق را انجام داده و سپس مدل آموزش‌دیده را برای استنباط بلادرنگ به یک نقطه انتهایی آنلاین مستقر کنید.
 
-### داده‌های آموزشی
+### داده‌های آموزش
 
-ما از دیتاست ultrachat_200k استفاده خواهیم کرد. این نسخه‌ای بسیار پالایش شده از دیتاست UltraChat است که برای آموزش Zephyr-7B-β، یک مدل چت پیشرفته 7 میلیارد پارامتری، به کار رفته است.
+ما از دیتاست ultrachat_200k استفاده خواهیم کرد. این نسخه‌ای بسیار فیلتر شده از دیتاست UltraChat است که برای آموزش Zephyr-7B-β، یک مدل چت پیشرفته 7 میلیارد پارامتری، استفاده شده است.
 
 ### مدل
 
-ما از مدل Phi-3-mini-4k-instruct استفاده می‌کنیم تا نشان دهیم چگونه کاربر می‌تواند مدل را برای وظیفه chat-completion فاین‌تیون کند. اگر این نوت‌بوک را از کارت مدل خاصی باز کرده‌اید، به یاد داشته باشید نام مدل را جایگزین کنید.
+ما از مدل Phi-3-mini-4k-instruct برای نشان دادن نحوه انجام آموزش دقیق مدل برای کار چت‌-کامپلیشن استفاده خواهیم کرد. اگر این نوت‌بوک را از یک کارت مدل خاص باز کرده‌اید، به یاد داشته باشید نام مدل خاص را جایگزین کنید.
 
 ### وظایف
 
-- انتخاب مدلی برای فاین‌تیون
-- انتخاب و بررسی داده‌های آموزشی
-- پیکربندی کار فاین‌تیون
-- اجرای کار فاین‌تیون
-- بررسی معیارهای آموزش و ارزیابی
-- ثبت مدل فاین‌تیون شده
-- استقرار مدل فاین‌تیون شده برای استنتاج در زمان واقعی
-- پاک‌سازی منابع
+- انتخاب مدلی برای آموزش دقیق.
+- انتخاب و بررسی داده‌های آموزش.
+- پیکربندی کار آموزش دقیق.
+- اجرای کار آموزش دقیق.
+- بررسی متریک‌های آموزش و ارزیابی.
+- ثبت مدل آموزش‌دیده.
+- استقرار مدل آموزش‌دیده برای استنباط بلادرنگ.
+- پاکسازی منابع.
 
-## ۱. راه‌اندازی پیش‌نیازها
+## 1. تنظیم پیش‌نیازها
 
 - نصب وابستگی‌ها
-- اتصال به AzureML Workspace. برای اطلاعات بیشتر به راه‌اندازی احراز هویت SDK مراجعه کنید. مقادیر <WORKSPACE_NAME>، <RESOURCE_GROUP> و <SUBSCRIPTION_ID> را جایگزین کنید.
+- اتصال به AzureML Workspace. اطلاعات بیشتر در راه‌اندازی احراز هویت SDK. مقادیر <WORKSPACE_NAME>، <RESOURCE_GROUP> و <SUBSCRIPTION_ID> را در ادامه جایگزین کنید.
 - اتصال به رجیستری سیستم azureml
-- تعیین نام آزمایش اختیاری
-- بررسی یا ایجاد compute
+- تعیین نام اختیاری آزمایش
+- بررسی یا ایجاد محاسبات.
 
 > [!NOTE]
-> نیازمندی‌ها: یک نود GPU می‌تواند چند کارت GPU داشته باشد. برای مثال، در یک نود Standard_NC24rs_v3 چهار کارت NVIDIA V100 وجود دارد، در حالی که در Standard_NC12s_v3 دو کارت NVIDIA V100 است. برای اطلاعات بیشتر به مستندات مراجعه کنید. تعداد کارت‌های GPU در هر نود در پارامتر gpus_per_node تنظیم می‌شود. تنظیم صحیح این مقدار باعث استفاده بهینه از تمام GPUهای نود می‌شود. SKUهای پیشنهادی GPU compute را می‌توانید اینجا و اینجا بیابید.
+> نیازمندی‌ها: یک نود GPU می‌تواند چند کارت GPU داشته باشد. برای مثال، در یک نود Standard_NC24rs_v3 چهار کارت NVIDIA V100 GPU وجود دارد، و در Standard_NC12s_v3 دو کارت NVIDIA V100 GPU موجود است. برای این اطلاعات به مستندات مراجعه کنید. تعداد کارت‌های GPU در هر نود در پارامتر gpus_per_node زیر تنظیم شده است. تنظیم صحیح این مقدار استفاده کامل از تمام GPUهای نود را تضمین می‌کند. SKUهای پیشنهادی GPU compute را می‌توانید اینجا و اینجا پیدا کنید.
 
 ### کتابخانه‌های پایتون
 
-وابستگی‌ها را با اجرای سلول زیر نصب کنید. این مرحله در محیط جدید اختیاری نیست.
+وابستگی‌ها را با اجرای سلول زیر نصب کنید. این مرحله در صورت اجرای در محیط جدید غیرقابل حذف است.
 
 ```bash
 pip install azure-ai-ml
@@ -50,41 +50,41 @@ pip install azureml-mlflow
 
 ### تعامل با Azure ML
 
-1. این اسکریپت پایتون برای تعامل با سرویس Azure Machine Learning (Azure ML) استفاده می‌شود. شرح عملکرد آن:
+1. این اسکریپت پایتون برای تعامل با سرویس Azure Machine Learning (Azure ML) استفاده می‌شود. بررسی عملکرد آن به شرح زیر است:
 
-    - ماژول‌های لازم از بسته‌های azure.ai.ml، azure.identity و azure.ai.ml.entities را وارد می‌کند. همچنین ماژول time را وارد می‌کند.
+    - ماژول‌های لازم از پکیج‌های azure.ai.ml، azure.identity و azure.ai.ml.entities را وارد می‌کند. همچنین ماژول time را وارد می‌کند.
 
-    - تلاش می‌کند با استفاده از DefaultAzureCredential() احراز هویت کند که تجربه ساده‌شده‌ای برای شروع سریع توسعه برنامه‌ها در فضای ابری Azure فراهم می‌کند. در صورت شکست، به InteractiveBrowserCredential() که ورود تعاملی را فراهم می‌کند، برمی‌گردد.
+    - تلاش می‌کند با استفاده از DefaultAzureCredential() احراز هویت انجام دهد که تجربه احراز هویت ساده‌شده برای شروع سریع توسعه برنامه‌هایی است که در فضای ابری Azure اجرا می‌شوند. اگر ناموفق باشد، از InteractiveBrowserCredential() یعنی ورود تعاملی مرورگر استفاده می‌کند.
 
-    - سپس سعی می‌کند یک نمونه MLClient با استفاده از متد from_config بسازد که تنظیمات را از فایل پیکربندی پیش‌فرض (config.json) می‌خواند. در صورت شکست، MLClient را با ارائه دستی subscription_id، resource_group_name و workspace_name ایجاد می‌کند.
+    - سپس سعی می‌کند با استفاده از متد from_config، یک نمونه MLClient بسازد که تنظیمات را از فایل پیکربندی پیش‌فرض (config.json) می‌خواند. اگر این ناموفق باشد، به صورت دستی نمونه MLClient را با ارائه subscription_id، resource_group_name و workspace_name می‌سازد.
 
-    - یک نمونه MLClient دیگر برای رجیستری Azure ML به نام "azureml" ایجاد می‌کند. این رجیستری محل ذخیره مدل‌ها، خطوط لوله فاین‌تیون و محیط‌ها است.
+    - یک نمونه دیگر از MLClient می‌سازد، این بار برای رجیستری Azure ML به نام "azureml". این رجیستری جایی است که مدل‌ها، خطوط لوله آموزش دقیق و محیط‌ها ذخیره شده‌اند.
 
-    - نام آزمایش را به "chat_completion_Phi-3-mini-4k-instruct" تنظیم می‌کند.
+    - نام آزمایش را "chat_completion_Phi-3-mini-4k-instruct" تنظیم می‌کند.
 
-    - یک timestamp یکتا با تبدیل زمان فعلی (بر حسب ثانیه از ابتدای epoch به صورت عدد اعشاری) به عدد صحیح و سپس رشته تولید می‌کند. این timestamp برای ایجاد نام‌ها و نسخه‌های یکتا استفاده می‌شود.
+    - یک زمان‌بندی یکتا (timestamp) ایجاد می‌کند که با تبدیل زمان فعلی (ثانیه‌های گذشته از epoch به صورت عدد اعشاری) به عدد صحیح و سپس به رشته ایجاد می‌شود. این timestamp می‌تواند برای ایجاد نام‌ها و نسخه‌های یکتا استفاده شود.
 
     ```python
-    # Import necessary modules from Azure ML and Azure Identity
+    # وارد کردن ماژول‌های لازم از Azure ML و Azure Identity
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # Import time module
+    import time  # وارد کردن ماژول time
     
-    # Try to authenticate using DefaultAzureCredential
+    # تلاش برای احراز هویت با استفاده از DefaultAzureCredential
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # If DefaultAzureCredential fails, use InteractiveBrowserCredential
+    except Exception as ex:  # اگر DefaultAzureCredential ناموفق بود، استفاده از InteractiveBrowserCredential
         credential = InteractiveBrowserCredential()
     
-    # Try to create an MLClient instance using the default config file
+    # تلاش برای ایجاد نمونه‌ای از MLClient با استفاده از فایل پیکربندی پیش‌فرض
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # If that fails, create an MLClient instance by manually providing the details
+    except:  # اگر این روش موفق نبود، ایجاد نمونه‌ای از MLClient با وارد کردن دستی جزئیات
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,41 +92,41 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # Create another MLClient instance for the Azure ML registry named "azureml"
-    # This registry is where models, fine-tuning pipelines, and environments are stored
+    # ایجاد نمونه دیگری از MLClient برای رجیستری Azure ML با نام "azureml"
+    # این رجیستری جایی است که مدل‌ها، خطوط لوله تنظیم دقیق و محیط‌ها ذخیره می‌شوند
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # Set the experiment name
+    # تنظیم نام آزمایش
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Generate a unique timestamp that can be used for names and versions that need to be unique
+    # تولید یک نشان‌گر زمانی یکتا که می‌تواند برای نام‌ها و نسخه‌های نیازمند یکتایی استفاده شود
     timestamp = str(int(time.time()))
     ```
 
-## ۲. انتخاب مدل پایه برای فاین‌تیون
+## 2. انتخاب یک مدل پایه برای آموزش دقیق
 
-1. مدل Phi-3-mini-4k-instruct دارای ۳.۸ میلیارد پارامتر است، سبک و پیشرفته، ساخته شده بر اساس دیتاست‌های استفاده شده برای Phi-2. این مدل از خانواده Phi-3 است و نسخه Mini آن در دو نوع ۴K و ۱۲۸K عرضه می‌شود که طول کانتکست (تعداد توکن‌ها) قابل پشتیبانی را نشان می‌دهد. برای استفاده باید مدل را برای هدف خاص خود فاین‌تیون کنیم. می‌توانید این مدل‌ها را در کاتالوگ مدل AzureML Studio با فیلتر وظیفه chat-completion مشاهده کنید. در این مثال، از مدل Phi-3-mini-4k-instruct استفاده می‌کنیم. اگر این نوت‌بوک را برای مدل دیگری باز کرده‌اید، نام و نسخه مدل را متناسب با آن تغییر دهید.
+1. Phi-3-mini-4k-instruct یک مدل سبک با 3.8 میلیارد پارامتر، پیشرفته و متن باز است که بر پایه دیتاست‌های مدل Phi-2 ساخته شده است. این مدل متعلق به خانواده مدل‌های Phi-3 است و نسخه Mini آن در دو واریانت 4K و 128K ارائه می‌شود که طول زمینه (تعداد توکن‌ها) پشتیبانی شده را نشان می‌دهد. برای استفاده از آن، باید مدل را برای هدف خاص خود آموزش دقیق دهیم. می‌توانید این مدل‌ها را در کاتالوگ مدل‌ها در AzureML Studio مشاهده کنید و بر اساس کار چت-کامپلیشن فیلتر کنید. در این مثال، از مدل Phi-3-mini-4k-instruct استفاده شده است. اگر این نوت‌بوک را برای مدل متفاوتی باز کرده‌اید، نام و نسخه مدل را متناسباً جایگزین کنید.
 
-    > [!NOTE]
-    > شناسه مدل (model id) که به عنوان ورودی به کار فاین‌تیون داده می‌شود. این شناسه همچنین در صفحه جزئیات مدل در کاتالوگ مدل AzureML Studio به عنوان Asset ID موجود است.
+> [!NOTE]
+> شناسه مدل (model id) ویژگی مهم آن است. این شناسه به عنوان ورودی به کار آموزش دقیق داده می‌شود. همچنین این شناسه در صفحه جزئیات مدل در کاتالوگ مدل AzureML Studio در بخش Asset ID موجود است.
 
-2. این اسکریپت پایتون با سرویس Azure Machine Learning تعامل دارد. شرح عملکرد:
+2. این اسکریپت پایتون با سرویس Azure Machine Learning (Azure ML) تعامل دارد. شرح عملکرد:
 
-    - نام مدل را به "Phi-3-mini-4k-instruct" تنظیم می‌کند.
+    - مقدار متغیر model_name را "Phi-3-mini-4k-instruct" قرار می‌دهد.
 
-    - با استفاده از متد get از ویژگی models شی registry_ml_client، آخرین نسخه مدل با نام مشخص شده را از رجیستری Azure ML دریافت می‌کند. متد get با دو آرگومان فراخوانی می‌شود: نام مدل و برچسبی که مشخص می‌کند آخرین نسخه مدل باید دریافت شود.
+    - از متد get متعلق به ویژگی models شی registry_ml_client استفاده می‌کند تا آخرین نسخه مدل با نام مشخص شده را از رجیستری Azure ML دریافت کند. متد get با دو آرگومان فراخوانی می‌شود: نام مدل و لیبلی که می‌گوید آخرین نسخه مدل باید گرفته شود.
 
-    - پیامی در کنسول چاپ می‌کند که نام، نسخه و شناسه مدلی که برای فاین‌تیون استفاده خواهد شد را نشان می‌دهد. متد format رشته برای وارد کردن این مقادیر در پیام استفاده می‌شود. نام، نسخه و شناسه مدل به عنوان ویژگی‌های شی foundation_model خوانده می‌شوند.
+    - یک پیام در کنسول چاپ می‌کند که نام، نسخه و شناسه مدلی که برای آموزش دقیق استفاده خواهد شد را نشان می‌دهد. متد format روی رشته برای درج نام، نسخه و شناسه مدل به کار می‌رود. خصوصیات نام، نسخه و شناسه مدل از شی foundation_model خوانده می‌شوند.
 
     ```python
-    # Set the model name
+    # نام مدل را تنظیم کنید
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Get the latest version of the model from the Azure ML registry
+    # آخرین نسخه مدل را از رجیستری Azure ML دریافت کنید
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Print the model name, version, and id
-    # This information is useful for tracking and debugging
+    # نام مدل، نسخه و شناسه را چاپ کنید
+    # این اطلاعات برای پیگیری و اشکال‌زدایی مفید است
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
@@ -134,166 +134,169 @@ pip install azureml-mlflow
     )
     ```
 
-## ۳. ایجاد compute برای استفاده در کار
+## 3. ایجاد یک Compute برای استفاده در کار
 
-کار فاین‌تیون فقط با computeهای GPU انجام می‌شود. اندازه compute بستگی به بزرگی مدل دارد و در اغلب موارد انتخاب compute مناسب دشوار است. در این سلول، کاربر را برای انتخاب compute مناسب راهنمایی می‌کنیم.
-
-> [!NOTE]
-> computeهای زیر با بهینه‌ترین پیکربندی کار می‌کنند. هر تغییر در پیکربندی ممکن است منجر به خطای Cuda Out Of Memory شود. در چنین مواردی، سعی کنید compute را به اندازه بزرگ‌تر ارتقا دهید.
+کار آموزش دقیق فقط با GPU compute کار می‌کند. اندازه compute بستگی به بزرگی مدل دارد و معمولا انتخاب compute مناسب مشکل است. در این سلول، کاربر راهنمایی می‌شود تا compute مناسب را انتخاب کند.
 
 > [!NOTE]
-> هنگام انتخاب compute_cluster_size مطمئن شوید compute در resource group شما موجود است. اگر compute خاصی موجود نیست، می‌توانید درخواست دسترسی به منابع compute را بدهید.
+> محاسبات فهرست شده در زیر با پیکربندی بهینه‌شده کار می‌کنند. هر تغییر در پیکربندی ممکن است منجر به خطای کمبود حافظه CUDA شود. در چنین مواردی، سعی کنید compute را به اندازه بزرگتر ارتقا دهید.
 
-### بررسی پشتیبانی مدل برای فاین‌تیون
+> [!NOTE]
+> هنگام انتخاب compute_cluster_size در زیر، مطمئن شوید که compute در گروه منبع شما در دسترس است. اگر یک compute خاص در دسترس نیست، می‌توانید درخواست دسترسی به منابع compute را بدهید.
 
-1. این اسکریپت پایتون با مدل Azure Machine Learning تعامل دارد. شرح عملکرد:
+### بررسی پشتیبانی مدل برای آموزش دقیق
 
-    - ماژول ast را وارد می‌کند که توابعی برای پردازش درخت‌های گرامر انتزاعی پایتون فراهم می‌کند.
+1. این اسکریپت پایتون با یک مدل Azure Machine Learning (Azure ML) تعامل دارد. شرح کارکرد:
 
-    - بررسی می‌کند که آیا شی foundation_model (نماینده یک مدل در Azure ML) برچسبی به نام finetune_compute_allow_list دارد یا خیر. برچسب‌ها در Azure ML جفت‌های کلید-مقدار هستند که برای فیلتر و مرتب‌سازی مدل‌ها استفاده می‌شوند.
+    - ماژول ast را وارد می‌کند که برای پردازش درخت‌های گرامر انتزاعی پایتون کاربرد دارد.
 
-    - اگر برچسب finetune_compute_allow_list وجود داشته باشد، با استفاده از ast.literal_eval مقدار رشته‌ای آن را به لیست پایتون تبدیل می‌کند و به متغیر computes_allow_list اختصاص می‌دهد. سپس پیامی چاپ می‌کند که باید compute از این لیست ساخته شود.
+    - بررسی می‌کند آیا شی foundation_model (که نمایانگر مدل در Azure ML است) برچسب (tag) با نام finetune_compute_allow_list دارد یا خیر. برچسب‌ها در Azure ML جفت‌های کلید-مقدار هستند که برای فیلتر و مرتب‌سازی مدل‌ها استفاده می‌شوند.
 
-    - اگر برچسب وجود نداشته باشد، computes_allow_list را None قرار می‌دهد و پیامی چاپ می‌کند که برچسب finetune_compute_allow_list جزو برچسب‌های مدل نیست.
+    - اگر برچسب finetune_compute_allow_list موجود باشد، مقدار رشته‌ای آن را با ast.literal_eval به صورت امن به یک لیست پایتون تبدیل می‌کند و این لیست را به متغیر computes_allow_list اختصاص می‌دهد. سپس پیامی چاپ می‌کند که یک compute باید از این لیست ایجاد شود.
 
-    - خلاصه اینکه این اسکریپت به دنبال برچسب خاصی در متادیتای مدل می‌گردد، در صورت وجود مقدار آن را به لیست تبدیل می‌کند و به کاربر اطلاع می‌دهد.
+    - اگر برچسب finetune_compute_allow_list موجود نباشد، متغیر computes_allow_list را None قرار می‌دهد و پیامی مبنی بر اینکه این برچسب در برچسب‌های مدل وجود ندارد چاپ می‌کند.
+
+    - خلاصه اینکه، این اسکریپت به دنبال برچسب مشخصی در متادیتای مدل می‌گردد، در صورت وجود مقدار آن را به لیست تبدیل کرده و بازخورد مناسب به کاربر می‌دهد.
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # وارد کردن ماژول ast، که توابعی برای پردازش درخت‌های دستور زبان انتزاعی پایتون فراهم می‌کند
     import ast
     
-    # Check if the 'finetune_compute_allow_list' tag is present in the model's tags
+    # بررسی اینکه آیا برچسب 'finetune_compute_allow_list' در برچسب‌های مدل وجود دارد
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # If the tag is present, use ast.literal_eval to safely parse the tag's value (a string) into a Python list
+        # اگر برچسب وجود داشت، از ast.literal_eval برای تجزیه مطمئن مقدار برچسب (یک رشته) به یک لیست پایتون استفاده کنید
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # convert string to python list
-        # Print a message indicating that a compute should be created from the list
+        )  # تبدیل رشته به لیست پایتون
+        # چاپ پیغامی که نشان می‌دهد باید یک محاسبه از لیست ایجاد شود
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If the tag is not present, set computes_allow_list to None
+        # اگر برچسب وجود نداشت، متغیر computes_allow_list را برابر None قرار دهید
         computes_allow_list = None
-        # Print a message indicating that the 'finetune_compute_allow_list' tag is not part of the model's tags
+        # چاپ پیغامی که نشان می‌دهد برچسب 'finetune_compute_allow_list' بخشی از برچسب‌های مدل نیست
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
 ### بررسی Compute Instance
 
-1. این اسکریپت پایتون با سرویس Azure Machine Learning تعامل دارد و چندین بررسی روی یک compute instance انجام می‌دهد. شرح عملکرد:
+1. این اسکریپت پایتون با سرویس Azure Machine Learning (Azure ML) تعامل دارد و چندین بررسی روی یک نمونه compute انجام می‌دهد. شرح عملکرد:
 
-    - تلاش می‌کند compute instance با نام ذخیره شده در compute_cluster را از workspace Azure ML بازیابی کند. اگر وضعیت provisioning آن "failed" باشد، خطای ValueError ایجاد می‌کند.
+    - سعی می‌کند نمونه compute با نام ذخیره شده در compute_cluster را از فضای کاری Azure ML بازیابی کند. اگر وضعیت provisioning نمونه "failed" باشد، خطای ValueError ایجاد می‌کند.
 
-    - بررسی می‌کند اگر computes_allow_list مقدار None نداشته باشد، همه اندازه‌های compute در لیست را به حروف کوچک تبدیل کرده و بررسی می‌کند آیا اندازه compute فعلی در این لیست هست یا خیر. اگر نباشد، خطای ValueError ایجاد می‌کند.
+    - بررسی می‌کند اگر computes_allow_list مقدار None نیست. اگر نیست، تمام اندازه‌های compute در لیست را به حروف کوچک تبدیل می‌کند و می‌بیند آیا اندازه نمونه compute فعلی در این لیست هست یا خیر. در غیر این صورت خطای ValueError ایجاد می‌کند.
 
-    - اگر computes_allow_list برابر None باشد، بررسی می‌کند آیا اندازه compute در لیست اندازه‌های GPU VM پشتیبانی نشده است یا خیر. اگر باشد، خطای ValueError ایجاد می‌کند.
+    - اگر computes_allow_list مقدار None باشد، بررسی می‌کند آیا اندازه نمونه compute در لیستی از اندازه‌های VM GPU پشتیبانی نشده است یا خیر. اگر باشد، خطای ValueError ایجاد می‌کند.
 
-    - لیست تمام اندازه‌های compute موجود در workspace را دریافت می‌کند. سپس روی این لیست پیمایش می‌کند و برای هر اندازه، بررسی می‌کند آیا نام آن با اندازه compute فعلی مطابقت دارد یا خیر. اگر بله، تعداد GPUهای آن اندازه را دریافت کرده و gpu_count_found را True می‌کند.
+    - لیستی از همه اندازه‌های compute موجود در فضای کاری بازیابی می‌کند. سپس روی این لیست تکرار می‌کند و برای هر اندازه compute چک می‌کند آیا نام آن با اندازه نمونه compute فعلی مطابقت دارد یا نه. اگر بله، تعداد کارت‌های GPU آن اندازه را بازیابی کرده و متغیر gpu_count_found را True قرار می‌دهد.
 
-    - اگر gpu_count_found برابر True باشد، تعداد GPUهای compute instance را چاپ می‌کند. در غیر این صورت، خطای ValueError ایجاد می‌کند.
+    - اگر gpu_count_found برابر True باشد، تعداد کارت‌های GPU در نمونه compute را چاپ می‌کند. اگر False باشد، خطای ValueError ایجاد می‌شود.
 
-    - خلاصه اینکه این اسکریپت چندین بررسی روی یک compute instance در workspace Azure ML انجام می‌دهد، از جمله بررسی وضعیت provisioning، اندازه آن نسبت به لیست مجاز یا غیرمجاز و تعداد GPUهای آن.
+    - به طور خلاصه، این اسکریپت چندین بررسی روی نمونه compute در فضای کاری Azure ML انجام می‌دهد، از جمله بررسی وضعیت provisioning، تطبیق اندازه نمونه با لیست مجاز یا ممنوع، و تعداد کارت‌های GPU.
 
+    
     ```python
-    # Print the exception message
+    # پیام استثناء را چاپ کن
     print(e)
-    # Raise a ValueError if the compute size is not available in the workspace
+    # اگر اندازه محاسبه در فضای کاری موجود نبود، یک ValueError ایجاد کن
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Retrieve the compute instance from the Azure ML workspace
+    # نمونه محاسبه را از فضای کاری Azure ML بازیابی کن
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Check if the provisioning state of the compute instance is "failed"
+    # بررسی کن که وضعیت تامین نمونه محاسبه "failed" است یا نه
     if compute.provisioning_state.lower() == "failed":
-        # Raise a ValueError if the provisioning state is "failed"
+        # اگر وضعیت تامین "failed" بود، یک ValueError ایجاد کن
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
         )
     
-    # Check if computes_allow_list is not None
+    # بررسی کن که computes_allow_list برابر با None نباشد
     if computes_allow_list is not None:
-        # Convert all compute sizes in computes_allow_list to lowercase
+        # تمام اندازه‌های محاسبه در computes_allow_list را به حروف کوچک تبدیل کن
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # Check if the size of the compute instance is in computes_allow_list_lower_case
+        # بررسی کن که اندازه نمونه محاسبه در computes_allow_list_lower_case باشد
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Raise a ValueError if the size of the compute instance is not in computes_allow_list_lower_case
+            # اگر اندازه نمونه محاسبه در computes_allow_list_lower_case نبود، یک ValueError ایجاد کن
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
     else:
-        # Define a list of unsupported GPU VM sizes
+        # یک لیست از اندازه‌های VM GPU پشتیبانی نشده تعریف کن
         unsupported_gpu_vm_list = [
             "standard_nc6",
             "standard_nc12",
             "standard_nc24",
             "standard_nc24r",
         ]
-        # Check if the size of the compute instance is in unsupported_gpu_vm_list
+        # بررسی کن که اندازه نمونه محاسبه در unsupported_gpu_vm_list باشد
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Raise a ValueError if the size of the compute instance is in unsupported_gpu_vm_list
+            # اگر اندازه نمونه محاسبه در unsupported_gpu_vm_list بود، یک ValueError ایجاد کن
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # Initialize a flag to check if the number of GPUs in the compute instance has been found
+    # یک علامت برای بررسی اینکه تعداد GPUهای نمونه محاسبه پیدا شده است را مقداردهی اولیه کن
     gpu_count_found = False
-    # Retrieve a list of all available compute sizes in the workspace
+    # یک لیست از تمام اندازه‌های محاسبه موجود در فضای کاری دریافت کن
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iterate over the list of available compute sizes
+    # روی لیست اندازه‌های محاسبه موجود تکرار کن
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Check if the name of the compute size matches the size of the compute instance
+        # بررسی کن که نام اندازه محاسبه با اندازه نمونه محاسبه مطابقت دارد یا نه
         if compute_sku.name.lower() == compute.size.lower():
-            # If it does, retrieve the number of GPUs for that compute size and set gpu_count_found to True
+            # اگر مطابقت داشت، تعداد GPUها برای آن اندازه محاسبه را بازیابی کن و gpu_count_found را True کن
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # If gpu_count_found is True, print the number of GPUs in the compute instance
+    # اگر gpu_count_found برابر با True بود، تعداد GPUهای نمونه محاسبه را چاپ کن
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # If gpu_count_found is False, raise a ValueError
+        # اگر gpu_count_found برابر با False بود، یک ValueError ایجاد کن
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
 
-## ۴. انتخاب دیتاست برای فاین‌تیون مدل
+## 4. انتخاب دیتاست برای آموزش دقیق مدل
 
-1. ما از دیتاست ultrachat_200k استفاده می‌کنیم. این دیتاست چهار بخش دارد که برای فاین‌تیون نظارت شده (sft) مناسب است. رتبه‌بندی تولید (gen). تعداد نمونه‌ها در هر بخش به شرح زیر است:
+1. ما از دیتاست ultrachat_200k استفاده می‌کنیم. دیتاست شامل چهار بخش است، مناسب برای آموزش دقیق نظارت‌شده (Supervised fine-tuning یا sft) و رتبه‌بندی تولید (generation ranking یا gen). تعداد نمونه‌ها در هر بخش به شرح زیر است:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. چند سلول بعدی آماده‌سازی پایه داده‌ها برای فاین‌تیون را نشان می‌دهند:
+1. سلول‌های بعدی آماده‌سازی پایه داده برای آموزش دقیق را نشان می‌دهند:
 
-### نمایش برخی ردیف‌های داده
+### مشاهده چند سطر داده
 
-می‌خواهیم این نمونه سریع اجرا شود، بنابراین فایل‌های train_sft و test_sft را ذخیره می‌کنیم که شامل ۵٪ از ردیف‌های پالایش شده هستند. این یعنی مدل فاین‌تیون شده دقت کمتری خواهد داشت و نباید در دنیای واقعی استفاده شود. اسکریپت download-dataset.py برای دانلود دیتاست ultrachat_200k و تبدیل آن به فرمت قابل استفاده در کامپوننت فاین‌تیون استفاده می‌شود. همچنین چون دیتاست بزرگ است، ما فقط بخشی از آن را داریم.
+برای اینکه نمونه به سرعت اجرا شود، فایل‌های train_sft و test_sft را با ۵٪ از سطرهای از پیش کاهش یافته ذخیره می‌کنیم. این به معنای دقت کمتر مدل آموزش‌دیده است، بنابراین نباید برای استفاده واقعی گذاشته شود.
+اسکریپت download-dataset.py برای دانلود دیتاست ultrachat_200k و تبدیل آن به فرمتی قابل مصرف توسط مؤلفه آموزش دقیق استفاده می‌شود. همچنین چون دیتاست بزرگ است، ما فقط بخشی از آن را در اینجا داریم.
 
-1. اجرای اسکریپت زیر فقط ۵٪ از داده‌ها را دانلود می‌کند. این مقدار را می‌توان با تغییر پارامتر dataset_split_pc به درصد دلخواه افزایش داد.
+1. اجرای اسکریپت زیر فقط ۵٪ از داده‌ها را دانلود می‌کند. این درصد می‌تواند با تغییر پارامتر dataset_split_pc به مقدار دلخواه افزایش یابد.
 
-    > [!NOTE]
-    > برخی مدل‌های زبانی کدهای زبانی متفاوتی دارند و بنابراین نام ستون‌ها در دیتاست باید منعکس‌کننده همین موضوع باشد.
+> [!NOTE]
+> برخی مدل‌های زبان کدهای زبانی متفاوتی دارند و بنابراین نام ستون‌های دیتاست باید این تفاوت را بازتاب دهد.
 
-1. نمونه‌ای از شکل داده‌ها به این صورت است:
-دیتاست chat-completion در فرمت parquet ذخیره شده است که هر ورودی از ساختار زیر پیروی می‌کند:
+1. مثالی از شکل داده‌ها:
 
-    - این یک سند JSON (JavaScript Object Notation) است که فرمت محبوب تبادل داده است. این کد اجرایی نیست بلکه روشی برای ذخیره و انتقال داده است. ساختار آن به شرح زیر است:
+دیتاست چت-کامپلیشن به صورت فرمت parquet ذخیره شده و هر ورودی از اسکیمای زیر پیروی می‌کند:
 
-    - "prompt": این کلید یک رشته دارد که نمایانگر یک وظیفه یا سوال مطرح شده به دستیار هوش مصنوعی است.
+    - این یک سند JSON (JavaScript Object Notation) است که یک فرمت متداول تبادل داده‌هاست. کد اجرایی نیست، بلکه روشی برای ذخیره و انتقال داده است. شرح ساختار:
 
-    - "messages": این کلید آرایه‌ای از اشیاء است. هر شی نمایانگر یک پیام در مکالمه بین کاربر و دستیار هوش مصنوعی است. هر پیام دو کلید دارد:
+    - "prompt": این کلید مقداری رشته‌ای دارد که نشان‌دهنده یک وظیفه یا سوال مطرح شده به دستیار هوش مصنوعی است.
 
-    - "content": این کلید رشته‌ای است که محتوای پیام را نشان می‌دهد.
-    - "role": این کلید رشته‌ای است که نقش فرستنده پیام را مشخص می‌کند. می‌تواند "user" یا "assistant" باشد.
-    - "prompt_id": این کلید رشته‌ای است که شناسه یکتای prompt را نشان می‌دهد.
+    - "messages": این کلید آرایه‌ای از اشیاء است. هر شئ نشان‌دهنده پیامی در مکالمه بین کاربر و دستیار هوش مصنوعی است. هر پیام دارای دو کلید است:
 
-1. در این سند JSON خاص، مکالمه‌ای نمایش داده شده که کاربر از دستیار هوش مصنوعی می‌خواهد شخصیت اصلی یک داستان دیستوپیایی را بسازد. دستیار پاسخ می‌دهد و سپس کاربر درخواست جزئیات بیشتر می‌کند. دستیار موافقت می‌کند جزئیات بیشتری ارائه دهد. کل مکالمه به شناسه prompt خاصی مرتبط است.
+    - "content": این کلید محتوای پیام را به صورت رشته نگه می‌دارد.
+    - "role": این کلید نقش موجودیت فرستنده پیام را مشخص می‌کند، مانند "user" یا "assistant".
+    - "prompt_id": این کلید شناسه منحصر به فردی برای prompt دارد.
+
+1. در این سند JSON خاص، مکالمه‌ای نمایش داده شده که در آن کاربر از دستیار هوش مصنوعی می‌خواهد یک قهرمان داستان دیستوپیایی بسازد. دستیار پاسخ می‌دهد و سپس کاربر درخواست جزئیات بیشتری می‌کند. دستیار موافقت می‌کند جزئیات بیشتری بدهد. کل مکالمه به یک شناسه prompt خاص مرتبط است.
 
     ```python
     {
@@ -335,106 +338,106 @@ pip install azureml-mlflow
 
 ### دانلود داده‌ها
 
-1. این اسکریپت پایتون برای دانلود دیتاست با استفاده از اسکریپت کمکی download-dataset.py استفاده می‌شود. شرح عملکرد:
+1. این اسکریپت پایتون برای دانلود یک دیتاست با استفاده از اسکریپت کمکی download-dataset.py استفاده می‌شود. شرح عملکرد:
 
-    - ماژول os را وارد می‌کند که راهی قابل حمل برای استفاده از قابلیت‌های وابسته به سیستم عامل فراهم می‌کند.
+    - ماژول os را وارد می‌کند، که روش‌های قابل حملی برای استفاده از امکانات سیستم‌عامل فراهم می‌کند.
 
-    - با استفاده از تابع os.system اسکریپت download-dataset.py را با آرگومان‌های خط فرمان مشخص اجرا می‌کند. آرگومان‌ها دیتاست مورد نظر (HuggingFaceH4/ultrachat_200k)، دایرکتوری دانلود (ultrachat_200k_dataset) و درصد تقسیم دیتاست (۵) را مشخص می‌کنند. مقدار بازگشتی os.system در متغیر exit_status ذخیره می‌شود.
+    - از تابع os.system برای اجرای اسکریپت download-dataset.py در شل با آرگومان‌های خط فرمان مشخص استفاده می‌کند. آرگومان‌ها دیتاست مورد نظر (HuggingFaceH4/ultrachat_200k)، دایرکتوری دانلود (ultrachat_200k_dataset) و درصد تقسیم دیتاست (5) را مشخص می‌کنند. تابع os.system وضعیت خروجی دستور اجرا شده را برمی‌گرداند و در متغیر exit_status ذخیره می‌شود.
 
-    - بررسی می‌کند اگر exit_status برابر ۰ نباشد (که معمولاً نشان‌دهنده خطا است)، استثنایی با پیامی مبنی بر خطا در دانلود دیتاست ایجاد می‌کند.
+    - بررسی می‌کند اگر exit_status صفر نباشد. در سیستم‌های یونیکس، صفر معمولا یعنی دستور موفق بوده و هر مقدار دیگر خطاست. اگر exit_status صفر نباشد، Exception با پیامی درباره خطا در دانلود دیتاست ایجاد می‌کند.
 
-    - خلاصه اینکه این اسکریپت فرمانی برای دانلود دیتاست اجرا می‌کند و در صورت شکست، استثنا پرتاب می‌کند.
-
+    - خلاصه اینکه این اسکریپت دستوری برای دانلود دیتاست با اسکریپت کمکی اجرا می‌کند و در صورت شکست خطا ایجاد می‌کند.
+    
     ```python
-    # Import the os module, which provides a way of using operating system dependent functionality
+    # ماژول os را وارد کنید، که روشی برای استفاده از قابلیت‌های وابسته به سیستم‌عامل فراهم می‌کند
     import os
     
-    # Use the os.system function to run the download-dataset.py script in the shell with specific command-line arguments
-    # The arguments specify the dataset to download (HuggingFaceH4/ultrachat_200k), the directory to download it to (ultrachat_200k_dataset), and the percentage of the dataset to split (5)
-    # The os.system function returns the exit status of the command it executed; this status is stored in the exit_status variable
+    # از تابع os.system استفاده کنید تا اسکریپت download-dataset.py را در پوسته با آرگومان‌های خط فرمان خاص اجرا کنید
+    # آرگومان‌ها مجموعه داده‌ای که باید دانلود شود (HuggingFaceH4/ultrachat_200k)، دایرکتوری مقصد دانلود (ultrachat_200k_dataset) و درصدی از مجموعه داده که باید تقسیم شود (5) را مشخص می‌کنند
+    # تابع os.system وضعیت خروجی فرمان اجرا شده را برمی‌گرداند؛ این وضعیت در متغیر exit_status ذخیره می‌شود
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
-    # Check if exit_status is not 0
-    # In Unix-like operating systems, an exit status of 0 usually indicates that a command has succeeded, while any other number indicates an error
-    # If exit_status is not 0, raise an Exception with a message indicating that there was an error downloading the dataset
+    # بررسی کنید که آیا exit_status برابر با 0 نیست
+    # در سیستم‌عامل‌های شبیه یونیکس، وضعیت خروجی 0 معمولاً نشان‌دهنده موفقیت فرمان است، در حالی که هر عدد دیگری نشان‌دهنده خطا است
+    # اگر exit_status برابر با 0 نبود، یک Exception با پیامی که نشان‌دهنده خطا در دانلود مجموعه داده است پرتاب کنید
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
 
 ### بارگذاری داده‌ها در DataFrame
 
-1. این اسکریپت پایتون یک فایل JSON Lines را در یک pandas DataFrame بارگذاری کرده و ۵ ردیف اول را نمایش می‌دهد. شرح عملکرد:
+1. این اسکریپت پایتون یک فایل JSON Lines را در یک pandas DataFrame بارگذاری کرده و ۵ ردیف اول را نمایش می‌دهد. شرح کار:
 
-    - کتابخانه pandas را وارد می‌کند که کتابخانه قدرتمندی برای دستکاری و تحلیل داده‌ها است.
+    - کتابخانه pandas را وارد می‌کند که کتابخانه قدرتمند برای دستکاری و تحلیل داده‌ها است.
 
-    - حداکثر عرض ستون‌ها را در تنظیمات نمایش pandas روی ۰ قرار می‌دهد. این یعنی متن کامل هر ستون بدون کوتاه شدن نمایش داده می‌شود.
+    - حداکثر عرض ستون برای نمایش pandas را به 0 تنظیم می‌کند. این یعنی متن کامل هر ستون در زمان چاپ DataFrame بدون کوتاه شدن نمایش داده می‌شود.
+- این کد از تابع pd.read_json برای بارگذاری فایل train_sft.jsonl از پوشه ultrachat_200k_dataset به یک DataFrame استفاده می‌کند. آرگومان lines=True نشان می‌دهد که فایل در فرمت JSON Lines است، جایی که هر خط یک شیء JSON جداگانه است.
 
-    - با استفاده از تابع pd.read_json فایل train_sft.jsonl را از دایرکتوری ultrachat_200k_dataset به DataFrame بارگذاری می‌کند. آرگومان lines=True نشان می‌دهد فایل در فرمت JSON Lines است که هر خط یک شی JSON جداگانه است.
-- این کد از متد head برای نمایش ۵ ردیف اول DataFrame استفاده می‌کند. اگر DataFrame کمتر از ۵ ردیف داشته باشد، همه آن‌ها را نمایش می‌دهد.
+- از متد head برای نمایش ۵ ردیف اول DataFrame استفاده می‌کند. اگر تعداد ردیف‌های DataFrame کمتر از ۵ باشد، همه آنها نمایش داده می‌شوند.
 
-- به طور خلاصه، این اسکریپت یک فایل JSON Lines را درون یک DataFrame بارگذاری کرده و ۵ ردیف اول را با متن کامل ستون‌ها نمایش می‌دهد.
+- به طور خلاصه، این اسکریپت در حال بارگذاری یک فایل JSON Lines به یک DataFrame و نمایش ۵ ردیف اول با متن کامل ستون‌ها است.
 
-```python
-    # Import the pandas library, which is a powerful data manipulation and analysis library
+    ```python
+    # کتابخانه pandas را وارد کنید که یک کتابخانه قدرتمند برای دستکاری و تحلیل داده‌ها است
     import pandas as pd
     
-    # Set the maximum column width for pandas' display options to 0
-    # This means that the full text of each column will be displayed without truncation when the DataFrame is printed
+    # حداکثر عرض ستون‌ها را برای گزینه‌های نمایش pandas روی ۰ تنظیم کنید
+    # این به این معنی است که متن کامل هر ستون بدون کوتاه‌سازی هنگام چاپ DataFrame نمایش داده می‌شود
     pd.set_option("display.max_colwidth", 0)
     
-    # Use the pd.read_json function to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame
-    # The lines=True argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # از تابع pd.read_json برای بارگذاری فایل train_sft.jsonl از پوشه ultrachat_200k_dataset به یک DataFrame استفاده کنید
+    # آرگومان lines=True نشان می‌دهد که فایل در فرمت JSON Lines است، که هر خط یک شیء JSON جداگانه است
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Use the head method to display the first 5 rows of the DataFrame
-    # If the DataFrame has less than 5 rows, it will display all of them
+    # از متد head برای نمایش ۵ ردیف اول DataFrame استفاده کنید
+    # اگر DataFrame کمتر از ۵ ردیف داشته باشد، همه آن‌ها را نمایش می‌دهد
     df.head()
     ```
 
-## ۵. ارسال کار تنظیم دقیق با استفاده از مدل و داده‌ها به عنوان ورودی
+## ۵. ارسال کار آموزش دقیق با استفاده از مدل و داده‌ها به عنوان ورودی
 
-کاری ایجاد کنید که از کامپوننت pipeline چت-تکمیل استفاده کند. برای آشنایی بیشتر با تمام پارامترهای پشتیبانی شده برای تنظیم دقیق، مطالعه کنید.
+ساختن کاری که از مؤلفه خط‌لوله چک‌کامپلشن استفاده می‌کند. درباره تمامی پارامترهای پشتیبانی شده برای آموزش دقیق بیشتر بدانید.
 
-### تعریف پارامترهای تنظیم دقیق
+### تعریف پارامترهای آموزش دقیق
 
-1. پارامترهای تنظیم دقیق را می‌توان به دو دسته تقسیم کرد - پارامترهای آموزش و پارامترهای بهینه‌سازی
+۱. پارامترهای آموزش دقیق می‌توانند به ۲ دسته تقسیم شوند - پارامترهای آموزش، پارامترهای بهینه‌سازی
 
-1. پارامترهای آموزش جنبه‌های آموزش را تعریف می‌کنند مانند -
+۱. پارامترهای آموزش جنبه‌های آموزش را تعریف می‌کنند مانند -
 
-    - بهینه‌ساز و زمان‌بندی که باید استفاده شود
-    - معیار بهینه‌سازی تنظیم دقیق
-    - تعداد گام‌های آموزش، اندازه بچ و غیره
-    - پارامترهای بهینه‌سازی به بهینه‌سازی حافظه GPU و استفاده مؤثر از منابع محاسباتی کمک می‌کنند.
+- بهینه‌ساز و زمان‌بندی که باید استفاده شود
+- متریک بهینه‌سازی آموزش دقیق
+- تعداد گام‌های آموزش و اندازه دسته، و غیره
+- پارامترهای بهینه‌سازی به بهینه‌سازی حافظه GPU و استفاده مؤثر از منابع محاسباتی کمک می‌کنند.
 
-1. در ادامه چند نمونه از پارامترهای این دسته آمده است. پارامترهای بهینه‌سازی برای هر مدل متفاوت است و همراه مدل بسته‌بندی شده‌اند تا این تفاوت‌ها را مدیریت کنند.
+۱. در زیر چند مورد از پارامترهایی که به این دسته تعلق دارند آمده است. پارامترهای بهینه‌سازی برای هر مدل متفاوتند و همراه مدل بسته‌بندی شده‌اند تا این تفاوت‌ها را مدیریت کنند.
 
-    - فعال‌سازی deepspeed و LoRA
-    - فعال‌سازی آموزش با دقت ترکیبی
-    - فعال‌سازی آموزش چند گره‌ای
+- فعال کردن deepspeed و LoRA
+- فعال کردن آموزش با دقت مخلوط
+- فعال کردن آموزش چند گره‌ای
 
 > [!NOTE]
-> تنظیم دقیق نظارت‌شده ممکن است باعث از دست رفتن هم‌راستایی یا فراموشی فاجعه‌بار شود. توصیه می‌کنیم این موضوع را بررسی کرده و پس از تنظیم دقیق، مرحله هم‌راستایی را اجرا کنید.
+> آموزش دقیق نظارت شده ممکن است منجر به از دست دادن تطابق یا فراموشی فاجعه‌بار شود. پیشنهاد می‌کنیم این مشکل را بررسی کنید و بعد از آموزش دقیق یک مرحله تطابق اجرا کنید.
 
-### پارامترهای تنظیم دقیق
+### پارامترهای آموزش دقیق
 
-1. این اسکریپت پایتون پارامترهایی برای تنظیم دقیق یک مدل یادگیری ماشین تنظیم می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون پارامترهایی برای آموزش دقیق یک مدل یادگیری ماشین تعیین می‌کند. در اینجا شرح آن آمده است:
 
-    - پارامترهای پیش‌فرض آموزش مانند تعداد دوره‌های آموزش، اندازه بچ برای آموزش و ارزیابی، نرخ یادگیری و نوع زمان‌بندی نرخ یادگیری را تنظیم می‌کند.
+- پارامترهای پیش‌فرض آموزش مانند تعداد دوره‌های آموزشی، اندازه دسته برای آموزش و ارزیابی، نرخ یادگیری و نوع زمان‌بند نرخ یادگیری را تنظیم می‌کند.
 
-    - پارامترهای پیش‌فرض بهینه‌سازی مانند اینکه آیا Layer-wise Relevance Propagation (LoRa) و DeepSpeed اعمال شود و مرحله DeepSpeed را تنظیم می‌کند.
+- پارامترهای پیش‌فرض بهینه‌سازی مانند اینکه آیا از Layer-wise Relevance Propagation (LoRa) و DeepSpeed استفاده شود و مرحله DeepSpeed را تنظیم می‌کند.
 
-    - پارامترهای آموزش و بهینه‌سازی را در یک دیکشنری به نام finetune_parameters ترکیب می‌کند.
+- پارامترهای آموزش و بهینه‌سازی را در یک دیکشنری به نام finetune_parameters ترکیب می‌کند.
 
-    - بررسی می‌کند که آیا foundation_model پارامترهای پیش‌فرض خاص مدل دارد یا خیر. اگر دارد، پیام هشداری چاپ کرده و دیکشنری finetune_parameters را با این پارامترهای خاص مدل به‌روزرسانی می‌کند. تابع ast.literal_eval برای تبدیل پارامترهای خاص مدل از رشته به دیکشنری پایتون استفاده می‌شود.
+- بررسی می‌کند که آیا foundation_model پارامترهای پیش‌فرض خاص مدلی دارد یا خیر. اگر دارد، پیام هشداری چاپ می‌کند و دیکشنری finetune_parameters را با مقادیر پیش‌فرض مدل به‌روزرسانی می‌کند. از تابع ast.literal_eval برای تبدیل این مقادیر از رشته به دیکشنری پایتون استفاده می‌شود.
 
-    - مجموعه نهایی پارامترهای تنظیم دقیق که برای اجرا استفاده خواهد شد را چاپ می‌کند.
+- مجموعه نهایی پارامترهای آموزش دقیق که برای اجرا استفاده خواهند شد را چاپ می‌کند.
 
-    - به طور خلاصه، این اسکریپت پارامترهای تنظیم دقیق یک مدل یادگیری ماشین را تنظیم و نمایش می‌دهد، با امکان جایگزینی پارامترهای پیش‌فرض با پارامترهای خاص مدل.
+- به طور خلاصه، این اسکریپت پارامترهای آموزش دقیق یک مدل یادگیری ماشین را تنظیم و نمایش می‌دهد و امکان جایگزینی پارامترهای پیش‌فرض با پارامترهای خاص مدل را فراهم می‌کند.
 
-```python
-    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    ```python
+    # تنظیم پارامترهای پیش‌فرض آموزش مانند تعداد اپوک‌های آموزش، اندازه دسته‌ها برای آموزش و ارزیابی، نرخ یادگیری، و نوع زمان‌بندی نرخ یادگیری
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -443,84 +446,84 @@ pip install azureml-mlflow
         lr_scheduler_type="cosine",
     )
     
-    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    # تنظیم پارامترهای پیش‌فرض بهینه‌سازی مانند اینکه آیا Layer-wise Relevance Propagation (LoRa) و DeepSpeed اعمال شود و مرحله DeepSpeed
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    # ترکیب پارامترهای آموزش و بهینه‌سازی در یک دیکشنری واحد به نام finetune_parameters
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Check if the foundation_model has any model-specific default parameters
-    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
-    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    # بررسی اینکه آیا مدل پایه (foundation_model) پارامترهای پیش‌فرض خاص مدل دارد
+    # در صورت وجود، چاپ پیام هشدار و به‌روزرسانی دیکشنری finetune_parameters با این پارامترهای پیش‌فرض خاص مدل
+    # تابع ast.literal_eval برای تبدیل پارامترهای پیش‌فرض خاص مدل از رشته به دیکشنری پایتون استفاده می‌شود
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # convert string to python dict
+            ast.literal_eval(  # تبدیل رشته به دیکشنری پایتون
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # Print the final set of fine-tuning parameters that will be used for the run
+    # چاپ مجموعه نهایی پارامترهای فاین‌تیونینگ که برای اجرا استفاده خواهند شد
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
     ```
 
-### خط لوله آموزش
+### خط‌لوله آموزش
 
-1. این اسکریپت پایتون تابعی را تعریف می‌کند که نام نمایشی برای خط لوله آموزش یادگیری ماشین تولید می‌کند و سپس این تابع را برای تولید و چاپ نام نمایشی فراخوانی می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون تابعی را برای تولید نام نمایشی خط‌لوله آموزش یادگیری ماشین تعریف کرده و سپس این تابع را برای ایجاد و چاپ نام نمایشی فراخوانی می‌کند. شرح عملکرد آن:
 
-1. تابع get_pipeline_display_name تعریف شده است. این تابع نام نمایشی را بر اساس پارامترهای مختلف مرتبط با خط لوله آموزش تولید می‌کند.
+۱. تابع get_pipeline_display_name تعریف شده است. این تابع یک نام نمایشی بر اساس پارامترهای مختلف مربوط به خط‌لوله آموزش تولید می‌کند.
 
-1. درون تابع، اندازه کل بچ را با ضرب اندازه بچ هر دستگاه، تعداد گام‌های تجمع گرادیان، تعداد GPUها در هر گره و تعداد گره‌های استفاده شده برای تنظیم دقیق محاسبه می‌کند.
+۱. درون تابع، اندازه کل دسته با ضرب اندازه دسته هر دستگاه، تعداد گام‌های انباشت گرادیان، تعداد GPU در هر گره و تعداد گره‌هایی که برای آموزش دقیق استفاده می‌شوند محاسبه می‌شود.
 
-1. پارامترهای دیگری مانند نوع زمان‌بندی نرخ یادگیری، اینکه آیا DeepSpeed اعمال شده است، مرحله DeepSpeed، اینکه آیا Layer-wise Relevance Propagation (LoRa) اعمال شده است، محدودیت تعداد چک‌پوینت‌های مدل برای نگهداری و حداکثر طول دنباله را بازیابی می‌کند.
+۱. سایر پارامترها مانند نوع زمان‌بند نرخ یادگیری، اینکه آیا DeepSpeed اعمال شده، مرحله DeepSpeed، اینکه Layer-wise Relevance Propagation (LoRa) اعمال شده، محدودیت تعداد نقاط چک مدل برای نگهداری و طول دنباله حداکثر بازیابی می‌شود.
 
-1. رشته‌ای می‌سازد که شامل همه این پارامترها است و با خط تیره از هم جدا شده‌اند. اگر DeepSpeed یا LoRa اعمال شده باشد، رشته شامل "ds" به همراه مرحله DeepSpeed یا "lora" خواهد بود. در غیر این صورت، شامل "nods" یا "nolora" است.
+۱. رشته‌ای ساخته می‌شود که شامل همه این پارامترهاست که با خط فاصله جدا شده‌اند. اگر DeepSpeed یا LoRa اعمال شده باشند، رشته شامل "ds" به دنبال آن مرحله DeepSpeed یا "lora" خواهد بود. در غیر این صورت "nods" یا "nolora" خواهد بود.
 
-1. تابع این رشته را برمی‌گرداند که به عنوان نام نمایشی خط لوله آموزش استفاده می‌شود.
+۱. تابع این رشته را برمی‌گرداند که به عنوان نام نمایشی خط‌لوله آموزش خدمت می‌کند.
 
-1. پس از تعریف تابع، آن را فراخوانی کرده و نام نمایشی تولید شده را چاپ می‌کند.
+۱. بعد از تعریف تابع، آن را فراخوانی می‌کند تا نام نمایشی ایجاد شود و سپس آن را چاپ می‌کند.
 
-1. به طور خلاصه، این اسکریپت نام نمایشی برای خط لوله آموزش یادگیری ماشین بر اساس پارامترهای مختلف تولید کرده و سپس آن را چاپ می‌کند.
+۱. به طور خلاصه، این اسکریپت نام نمایشی برای خط‌لوله آموزش یادگیری ماشین بر اساس پارامترهای مختلف ایجاد می‌کند و آن نام را چاپ می‌کند.
 
-```python
-    # Define a function to generate a display name for the training pipeline
+    ```python
+    # تعریف یک تابع برای تولید یک نام نمایشی برای خط لوله آموزش
     def get_pipeline_display_name():
-        # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
+        # محاسبه اندازه کل بچ با ضرب اندازه بچ به ازای هر دستگاه، تعداد مراحل انباشت گرادیان، تعداد GPU ها به ازای هر نود و تعداد نودهای استفاده شده برای تنظیم دقیق
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Retrieve the learning rate scheduler type
+        # بازیابی نوع زمان‌بندی یادگیری
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Retrieve whether DeepSpeed is applied
+        # بازیابی اینکه آیا DeepSpeed اعمال شده است
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Retrieve the DeepSpeed stage
+        # بازیابی مرحله DeepSpeed
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # If DeepSpeed is applied, include "ds" followed by the DeepSpeed stage in the display name; if not, include "nods"
+        # اگر DeepSpeed اعمال شده باشد، در نام نمایشی "ds" به همراه مرحله DeepSpeed را درج کنید؛ در غیر این صورت، "nods" را درج کنید
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Retrieve whether Layer-wise Relevance Propagation (LoRa) is applied
+        # بازیابی اینکه آیا لایه‌ای مربوط به پراکندگی ارتباط (LoRa) اعمال شده است
         lora = finetune_parameters.get("apply_lora", "false")
-        # If LoRa is applied, include "lora" in the display name; if not, include "nolora"
+        # اگر LoRa اعمال شده باشد، "lora" را در نام نمایشی درج کنید؛ در غیر این صورت، "nolora" را درج کنید
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Retrieve the limit on the number of model checkpoints to keep
+        # بازیابی محدودیت تعداد چک‌پوینت‌های مدل برای نگهداری
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # Retrieve the maximum sequence length
+        # بازیابی حداکثر طول دنباله
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Construct the display name by concatenating all these parameters, separated by hyphens
+        # ساخت نام نمایشی با اتصال تمام این پارامترها با جداکننده خط تیره
         return (
             model_name
             + "-"
@@ -537,192 +540,192 @@ pip install azureml-mlflow
             + f"-seqlen{seq_len}"
         )
     
-    # Call the function to generate the display name
+    # فراخوانی تابع برای تولید نام نمایشی
     pipeline_display_name = get_pipeline_display_name()
-    # Print the display name
+    # چاپ نام نمایشی
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### پیکربندی خط لوله
+### پیکربندی خط‌لوله
 
-این اسکریپت پایتون خط لوله یادگیری ماشین را با استفاده از Azure Machine Learning SDK تعریف و پیکربندی می‌کند. شرح عملکرد آن به شرح زیر است:
+این اسکریپت پایتون یک خط‌لوله یادگیری ماشین را با استفاده از Azure Machine Learning SDK تعریف و پیکربندی می‌کند. شرح آن به شرح زیر است:
 
-1. ماژول‌های لازم از Azure AI ML SDK را وارد می‌کند.
+۱. ماژول‌های لازم از Azure AI ML SDK وارد می‌شوند.
 
-1. یک کامپوننت خط لوله به نام "chat_completion_pipeline" را از رجیستری دریافت می‌کند.
+۱. یک مؤلفه خط‌لوله به نام "chat_completion_pipeline" از رجیستری فراخوانی می‌شود.
 
-1. یک کار خط لوله با استفاده از دکوراتور `@pipeline` و تابع `create_pipeline` تعریف می‌کند. نام خط لوله به `pipeline_display_name` تنظیم شده است.
+۱. با استفاده از دکوراتور `@pipeline` و تابع `create_pipeline`، یک شغل خط‌لوله تعریف می‌شود. نام خط‌لوله به `pipeline_display_name` تنظیم می‌شود.
 
-1. درون تابع `create_pipeline`، کامپوننت خط لوله دریافت شده را با پارامترهای مختلفی مانند مسیر مدل، خوشه‌های محاسباتی برای مراحل مختلف، تقسیم‌بندی داده‌ها برای آموزش و تست، تعداد GPUهای مورد استفاده برای تنظیم دقیق و سایر پارامترهای تنظیم دقیق مقداردهی اولیه می‌کند.
+۱. درون تابع `create_pipeline`، مؤلفه خط‌لوله فراخوانی شده با پارامترهای مختلفی مانند مسیر مدل، خوشه‌های محاسباتی برای مراحل مختلف، تقسیم‌بندی داده‌ها برای آموزش و آزمون، تعداد GPUهای استفاده شده برای آموزش دقیق و سایر پارامترهای آموزش دقیق مقداردهی می‌شود.
 
-1. خروجی کار تنظیم دقیق را به خروجی کار خط لوله نگاشت می‌کند. این کار به منظور ثبت آسان مدل تنظیم دقیق شده انجام می‌شود که برای استقرار مدل در نقطه انتهایی آنلاین یا دسته‌ای لازم است.
+۱. خروجی شغل آموزش دقیق به خروجی شغل خط‌لوله نگاشت می‌شود، تا مدل آموزش‌دیده به راحتی ثبت شود که برای استقرار مدل به یک نقطه انتهایی آنلاین یا دسته‌ای لازم است.
 
-1. با فراخوانی تابع `create_pipeline` یک نمونه از خط لوله ایجاد می‌کند.
+۱. نمونه‌ای از خط‌لوله با فراخوانی تابع `create_pipeline` ساخته می‌شود.
 
-1. تنظیم `force_rerun` خط لوله را روی `True` قرار می‌دهد، به این معنی که نتایج کش شده از کارهای قبلی استفاده نخواهد شد.
+۱. تنظیم `force_rerun` خط‌لوله به `True` تنظیم می‌شود، به این معنی که نتایج کش شده از شغل‌های قبلی استفاده نخواهد شد.
 
-1. تنظیم `continue_on_step_failure` خط لوله را روی `False` قرار می‌دهد، به این معنی که اگر هر مرحله‌ای شکست بخورد، خط لوله متوقف می‌شود.
+۱. تنظیم `continue_on_step_failure` خط‌لوله به `False` تنظیم می‌شود، به این معنی که خط‌لوله در صورت شکست هر مرحله متوقف خواهد شد.
 
-1. به طور خلاصه، این اسکریپت خط لوله یادگیری ماشین برای وظیفه تکمیل چت را با استفاده از Azure Machine Learning SDK تعریف و پیکربندی می‌کند.
+۱. خلاصه اینکه این اسکریپت خط‌لوله یادگیری ماشین برای وظیفه چت تکمیل را با استفاده از Azure Machine Learning SDK تعریف و پیکربندی می‌کند.
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # وارد کردن ماژول‌های لازم از Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Fetch the pipeline component named "chat_completion_pipeline" from the registry
+    # گرفتن مؤلفه خط لوله با نام "chat_completion_pipeline" از رجیستری
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Define the pipeline job using the @pipeline decorator and the function create_pipeline
-    # The name of the pipeline is set to pipeline_display_name
+    # تعریف کار خط لوله با استفاده از دکوراتور @pipeline و تابع create_pipeline
+    # نام خط لوله به pipeline_display_name تنظیم شده است
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Initialize the fetched pipeline component with various parameters
-        # These include the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters
+        # مقداردهی اولیه مؤلفه خط لوله گرفته شده با پارامترهای مختلف
+        # این شامل مسیر مدل، خوشه‌های محاسباتی برای مراحل مختلف، تقسیم‌بندی‌های مجموعه داده برای آموزش و تست، تعداد GPUهای مورد استفاده برای تنظیم دقیق و سایر پارامترهای تنظیم دقیق است
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Map the dataset splits to parameters
+            # نگاشت تقسیم‌بندی‌های مجموعه داده به پارامترها
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # Training settings
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Set to the number of GPUs available in the compute
+            # تنظیمات آموزش
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # تنظیم شده به تعداد GPUهای موجود در محاسبات
             **finetune_parameters
         )
         return {
-            # Map the output of the fine tuning job to the output of pipeline job
-            # This is done so that we can easily register the fine tuned model
-            # Registering the model is required to deploy the model to an online or batch endpoint
+            # نگاشت خروجی کار تنظیم دقیق به خروجی کار خط لوله
+            # این کار انجام شده تا بتوانیم مدل تنظیم شده دقیق را به‌راحتی ثبت کنیم
+            # ثبت مدل برای استقرار مدل در نقطه انتهایی آنلاین یا دسته‌ای لازم است
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Create an instance of the pipeline by calling the create_pipeline function
+    # ایجاد یک نمونه از خط لوله با فراخوانی تابع create_pipeline
     pipeline_object = create_pipeline()
     
-    # Don't use cached results from previous jobs
+    # از نتایج کش شده از کارهای قبلی استفاده نکنید
     pipeline_object.settings.force_rerun = True
     
-    # Set continue on step failure to False
-    # This means that the pipeline will stop if any step fails
+    # مقدار continue on step failure را به False تنظیم کنید
+    # این بدان معناست که خط لوله در صورت شکست هر مرحله متوقف خواهد شد
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### ارسال کار
+### ارسال شغل
 
-1. این اسکریپت پایتون یک کار خط لوله یادگیری ماشین را به فضای کاری Azure Machine Learning ارسال کرده و سپس منتظر اتمام کار می‌ماند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون یک شغل خط‌لوله یادگیری ماشین را به یک فضای کاری Azure Machine Learning ارسال می‌کند و سپس منتظر اتمام شغل می‌ماند. شرح عملکرد آن:
 
-    - متد create_or_update شی jobs در workspace_ml_client را فراخوانی می‌کند تا کار خط لوله را ارسال کند. خط لوله‌ای که باید اجرا شود توسط pipeline_object مشخص شده و آزمایشی که کار تحت آن اجرا می‌شود توسط experiment_name تعیین شده است.
+- متد create_or_update از شی jobs در workspace_ml_client برای ارسال شغل خط‌لوله فراخوانی می‌شود. خط‌لوله‌ای که باید اجرا شود توسط pipeline_object مشخص شده است، و آزمایشی که زیر آن شغل اجرا می‌شود با experiment_name مشخص شده است.
 
-    - سپس متد stream شی jobs در workspace_ml_client را فراخوانی می‌کند تا منتظر اتمام کار خط لوله بماند. کاری که باید منتظر آن بود توسط ویژگی name شی pipeline_job مشخص شده است.
+- سپس متد stream از شی jobs در workspace_ml_client برای انتظار اتمام شغل خط‌لوله فراخوانی می‌شود. شغلی که باید انتظار کشیده شود توسط ویژگی name از pipeline_job مشخص شده است.
 
-    - به طور خلاصه، این اسکریپت یک کار خط لوله یادگیری ماشین را به فضای کاری Azure Machine Learning ارسال کرده و سپس منتظر اتمام آن می‌ماند.
+- خلاصه اینکه این اسکریپت یک شغل خط‌لوله یادگیری ماشین را به Azure Machine Learning workspace ارسال کرده و سپس منتظر اتمام آن می‌ماند.
 
-```python
-    # Submit the pipeline job to the Azure Machine Learning workspace
-    # The pipeline to be run is specified by pipeline_object
-    # The experiment under which the job is run is specified by experiment_name
+    ```python
+    # ارسال کار پایپلاین به فضای کاری Azure Machine Learning
+    # پایپلاینی که باید اجرا شود توسط pipeline_object مشخص شده است
+    # آزمایشی که کار تحت آن اجرا می‌شود توسط experiment_name مشخص شده است
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Wait for the pipeline job to complete
-    # The job to wait for is specified by the name attribute of the pipeline_job object
+    # منتظر بمانید تا کار پایپلاین تکمیل شود
+    # کاری که باید منتظر آن بمانید توسط ویژگی name شیء pipeline_job مشخص شده است
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## ۶. ثبت مدل تنظیم دقیق شده در فضای کاری
+## ۶. ثبت مدل آموزش‌دیده دقیق در workspace
 
-مدل را از خروجی کار تنظیم دقیق ثبت خواهیم کرد. این کار ردیابی وابستگی بین مدل تنظیم دقیق شده و کار تنظیم دقیق را فراهم می‌کند. کار تنظیم دقیق نیز وابستگی به مدل پایه، داده‌ها و کد آموزش را ردیابی می‌کند.
+مدل را از خروجی شغل آموزش دقیق ثبت خواهیم کرد. این کار ردپای رابطه بین مدل آموزش‌دیده دقیق و شغل آموزش دقیق را پیگیری می‌کند. شغل آموزش دقیق، به نوبه خود، ردپای رابطه به مدل بنیاد، داده و کد آموزش را ثبت می‌کند.
 
 ### ثبت مدل یادگیری ماشین
 
-1. این اسکریپت پایتون مدلی را که در یک خط لوله Azure Machine Learning آموزش دیده است، ثبت می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون مدلی را که در خط‌لوله یادگیری ماشین Azure آموزش دیده ثبت می‌کند. شرح آن:
 
-    - ماژول‌های لازم از Azure AI ML SDK را وارد می‌کند.
+- ماژول‌های لازم از Azure AI ML SDK وارد می‌شوند.
 
-    - بررسی می‌کند که آیا خروجی trained_model از کار خط لوله در دسترس است یا خیر، با فراخوانی متد get شی jobs در workspace_ml_client و دسترسی به ویژگی outputs آن.
+- چک می‌کند که آیا خروجی trained_model از شغل خط‌لوله در دسترس است با استفاده از متد get از شی jobs در workspace_ml_client و دسترسی به ویژگی outputs آن.
 
-    - مسیری به مدل آموزش دیده ساخته می‌شود با قالب‌بندی رشته‌ای که نام کار خط لوله و نام خروجی ("trained_model") را شامل می‌شود.
+- مسیر به مدل آموزش‌دیده را با قالب‌بندی رشته‌ای با نام شغل خط‌لوله و نام خروجی ("trained_model") می‌سازد.
 
-    - نامی برای مدل تنظیم دقیق شده تعریف می‌کند که با افزودن "-ultrachat-200k" به نام مدل اصلی و جایگزینی هر اسلش با خط تیره ساخته می‌شود.
+- نامی برای مدل آموزش‌دیده دقیق تعریف می‌کند که با اضافه کردن "-ultrachat-200k" به نام مدل اصلی و جایگزین کردن هر اسلش با خط تیره ساخته شده است.
 
-    - برای ثبت مدل آماده می‌شود با ایجاد یک شی Model با پارامترهای مختلف، از جمله مسیر مدل، نوع مدل (مدل MLflow)، نام و نسخه مدل و توضیحی درباره مدل.
+- با ایجاد یک شی Model با پارامترهای گوناگون، مانند مسیر مدل، نوع مدل (مدل MLflow)، نام و نسخه مدل، و توضیح مدل برای ثبت آماده می‌شود.
 
-    - مدل را با فراخوانی متد create_or_update شی models در workspace_ml_client با شی Model به عنوان آرگومان ثبت می‌کند.
+- با فراخوانی متد create_or_update از شی models در workspace_ml_client با شی Model به عنوان آرگومان، مدل را ثبت می‌کند.
 
-    - مدل ثبت شده را چاپ می‌کند.
+- مدل ثبت شده را چاپ می‌کند.
 
-1. به طور خلاصه، این اسکریپت مدلی را که در یک خط لوله Azure Machine Learning آموزش دیده است، ثبت می‌کند.
+۱. به طور خلاصه، این اسکریپت مدلی را که در یک خط‌لوله یادگیری ماشین Azure آموزش دیده ثبت می‌کند.
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # وارد کردن ماژول‌های لازم از Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Check if the `trained_model` output is available from the pipeline job
+    # بررسی اینکه آیا خروجی `trained_model` از کار خط لوله در دسترس است
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Construct a path to the trained model by formatting a string with the name of the pipeline job and the name of the output ("trained_model")
+    # ساخت مسیر به مدل آموزش‌دیده شده با قالب‌بندی یک رشته شامل نام کار خط لوله و نام خروجی ("trained_model")
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Define a name for the fine-tuned model by appending "-ultrachat-200k" to the original model name and replacing any slashes with hyphens
+    # تعریف نامی برای مدل تنظیم‌شده با اضافه کردن "-ultrachat-200k" به نام مدل اصلی و جایگزینی هر اسلش با خط تیره
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Prepare to register the model by creating a Model object with various parameters
-    # These include the path to the model, the type of the model (MLflow model), the name and version of the model, and a description of the model
+    # آماده‌سازی برای ثبت مدل با ایجاد یک شی Model با پارامترهای مختلف
+    # این‌ها شامل مسیر مدل، نوع مدل (مدل MLflow)، نام و نسخه مدل، و توضیحی درباره مدل هستند
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Use timestamp as version to avoid version conflict
+        version=timestamp,  # استفاده از timestamp به عنوان نسخه برای جلوگیری از تضاد نسخه
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Register the model by calling the create_or_update method of the models object in the workspace_ml_client with the Model object as the argument
+    # ثبت مدل با فراخوانی متد create_or_update از شی models در workspace_ml_client با شی Model به عنوان آرگومان
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
     
-    # Print the registered model
+    # چاپ مدل ثبت‌شده
     print("registered model: \n", registered_model)
     ```
 
-## ۷. استقرار مدل تنظیم دقیق شده در یک نقطه انتهایی آنلاین
+## ۷. استقرار مدل آموزش‌دیده دقیق در نقطه انتهایی آنلاین
 
-نقاط انتهایی آنلاین یک API REST پایدار فراهم می‌کنند که می‌توان از آن برای ادغام با برنامه‌هایی که نیاز به استفاده از مدل دارند، استفاده کرد.
+نقاط انتهایی آنلاین یک API REST دائمی ارائه می‌دهند که می‌توان برای ادغام با برنامه‌هایی که نیاز به استفاده از مدل دارند استفاده کرد.
 
 ### مدیریت نقطه انتهایی
 
-1. این اسکریپت پایتون یک نقطه انتهایی آنلاین مدیریت شده در Azure Machine Learning برای یک مدل ثبت شده ایجاد می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون نقطه انتهایی آنلاین مدیریت شده‌ای در Azure Machine Learning برای یک مدل ثبت شده ایجاد می‌کند. شرح آن:
 
-    - ماژول‌های لازم از Azure AI ML SDK را وارد می‌کند.
+- ماژول‌های لازم از Azure AI ML SDK وارد می‌شوند.
 
-    - نام یکتایی برای نقطه انتهایی آنلاین با افزودن یک زمان‌سنج به رشته "ultrachat-completion-" تعریف می‌کند.
+- نام منحصربه‌فردی برای نقطه انتهایی آنلاین با اضافه کردن یک timestamp به رشته "ultrachat-completion-" تعریف می‌کند.
 
-    - برای ایجاد نقطه انتهایی آنلاین آماده می‌شود با ایجاد یک شی ManagedOnlineEndpoint با پارامترهای مختلف، از جمله نام نقطه انتهایی، توضیح نقطه انتهایی و حالت احراز هویت ("key").
+- برای ایجاد نقطه انتهایی آنلاین، یک شی ManagedOnlineEndpoint با پارامترهای مختلف از جمله نام نقطه انتهایی، توضیح نقطه انتهایی و حالت احراز هویت ("key") می‌سازد.
 
-    - نقطه انتهایی آنلاین را با فراخوانی متد begin_create_or_update شی workspace_ml_client با شی ManagedOnlineEndpoint به عنوان آرگومان ایجاد می‌کند و سپس با فراخوانی متد wait منتظر اتمام عملیات ایجاد می‌ماند.
+- نقطه انتهایی آنلاین را با فراخوانی متد begin_create_or_update از workspace_ml_client با شی ManagedOnlineEndpoint ایجاد می‌کند و سپس با فراخوانی متد wait منتظر اتمام عملیات می‌ماند.
 
-1. به طور خلاصه، این اسکریپت یک نقطه انتهایی آنلاین مدیریت شده در Azure Machine Learning برای یک مدل ثبت شده ایجاد می‌کند.
+۱. خلاصه اینکه این اسکریپت یک نقطه انتهایی آنلاین مدیریت شده را در Azure Machine Learning برای یک مدل ثبت شده ایجاد می‌کند.
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # وارد کردن ماژول‌های لازم از SDK هوش مصنوعی Azure AI ML
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
         ManagedOnlineDeployment,
@@ -730,11 +733,11 @@ pip install azureml-mlflow
         OnlineRequestSettings,
     )
     
-    # Define a unique name for the online endpoint by appending a timestamp to the string "ultrachat-completion-"
+    # تعریف یک نام منحصر به فرد برای نقطه پایانی آنلاین با افزودن یک زمان‌بندی به رشته "ultrachat-completion-"
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Prepare to create the online endpoint by creating a ManagedOnlineEndpoint object with various parameters
-    # These include the name of the endpoint, a description of the endpoint, and the authentication mode ("key")
+    # آماده‌سازی برای ایجاد نقطه پایانی آنلاین با ایجاد یک شی ManagedOnlineEndpoint با پارامترهای مختلف
+    # این موارد شامل نام نقطه پایانی، توضیحی در مورد نقطه پایانی، و حالت احراز هویت ("key") می‌شود
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -743,56 +746,56 @@ pip install azureml-mlflow
         auth_mode="key",
     )
     
-    # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
-    # Then wait for the creation operation to complete by calling the wait method
+    # ایجاد نقطه پایانی آنلاین با فراخوانی متد begin_create_or_update از workspace_ml_client با شی ManagedOnlineEndpoint به عنوان آرگومان
+    # سپس صبر کنید تا عملیات ایجاد کامل شود با فراخوانی متد wait
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> می‌توانید فهرست SKUهای پشتیبانی شده برای استقرار را در اینجا بیابید - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> در اینجا می‌توانید فهرست SKUهای پشتیبانی شده برای استقرار را مشاهده کنید - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### استقرار مدل یادگیری ماشین
 
-1. این اسکریپت پایتون یک مدل یادگیری ماشین ثبت شده را در یک نقطه انتهایی آنلاین مدیریت شده در Azure Machine Learning مستقر می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون مدلی ثبت شده را در یک نقطه انتهایی آنلاین مدیریت شده در Azure Machine Learning مستقر می‌کند. شرح آن:
 
-    - ماژول ast را وارد می‌کند که توابعی برای پردازش درخت‌های گرامر انتزاعی پایتون فراهم می‌کند.
+- ماژول ast را وارد می‌کند، که توابعی برای پردازش درخت‌های گرامر انتزاعی پایتون فراهم می‌کند.
 
-    - نوع نمونه برای استقرار را به "Standard_NC6s_v3" تنظیم می‌کند.
+- نوع نمونه برای استقرار را به "Standard_NC6s_v3" تنظیم می‌کند.
 
-    - بررسی می‌کند که آیا برچسب inference_compute_allow_list در foundation model وجود دارد یا خیر. اگر وجود داشته باشد، مقدار برچسب را از رشته به لیست پایتون تبدیل کرده و به inference_computes_allow_list اختصاص می‌دهد. در غیر این صورت، مقدار آن را None قرار می‌دهد.
+- چک می‌کند که آیا برچسب inference_compute_allow_list در مدل بنیاد وجود دارد یا خیر. اگر وجود داشته باشد، مقدار برچسب را از رشته به لیست پایتون تبدیل کرده و به inference_computes_allow_list اختصاص می‌دهد. در غیر این صورت، مقدار آن را None تنظیم می‌کند.
 
-    - بررسی می‌کند که آیا نوع نمونه مشخص شده در لیست مجاز است یا خیر. اگر نیست، پیامی چاپ می‌کند که از کاربر می‌خواهد نوع نمونه‌ای از لیست مجاز انتخاب کند.
+- بررسی می‌کند که آیا نوع نمونه مشخص شده در لیست مجاز است یا خیر. اگر نباشد، پیامی چاپ می‌کند که از کاربر می‌خواهد نوع نمونه را از لیست مجاز انتخاب کند.
 
-    - برای ایجاد استقرار آماده می‌شود با ایجاد یک شی ManagedOnlineDeployment با پارامترهای مختلف، از جمله نام استقرار، نام نقطه انتهایی، شناسه مدل، نوع و تعداد نمونه‌ها، تنظیمات بررسی زنده بودن و تنظیمات درخواست.
+- برای ایجاد استقرار آماده می‌شود به وسیله ایجاد شی ManagedOnlineDeployment با پارامترهای مختلف شامل نام استقرار، نام نقطه انتهایی، شناسه مدل، نوع و تعداد نمونه، تنظیمات پروب زنده بودن (liveness probe) و تنظیمات درخواست.
 
-    - استقرار را با فراخوانی متد begin_create_or_update شی workspace_ml_client با شی ManagedOnlineDeployment به عنوان آرگومان ایجاد می‌کند و سپس با فراخوانی متد wait منتظر اتمام عملیات ایجاد می‌ماند.
+- استقرار را با فراخوانی متد begin_create_or_update از workspace_ml_client با شی ManagedOnlineDeployment ایجاد می‌کند و سپس با فراخوانی متد wait منتظر اتمام عملیات می‌ماند.
 
-    - ترافیک نقطه انتهایی را به گونه‌ای تنظیم می‌کند که ۱۰۰٪ ترافیک به استقرار "demo" هدایت شود.
+- ترافیک نقطه انتهایی را طوری تنظیم می‌کند که ۱۰۰٪ ترافیک به استقرار "demo" هدایت شود.
 
-    - نقطه انتهایی را با فراخوانی متد begin_create_or_update شی workspace_ml_client با شی endpoint به عنوان آرگومان به‌روزرسانی می‌کند و سپس با فراخوانی متد result منتظر اتمام عملیات به‌روزرسانی می‌ماند.
+- نقطه انتهایی را با فراخوانی متد begin_create_or_update با شیء نقطه انتهایی در workspace_ml_client به‌روزرسانی می‌کند و سپس با فراخوانی متد result منتظر اتمام عملیات به‌روزرسانی می‌ماند.
 
-1. به طور خلاصه، این اسکریپت یک مدل یادگیری ماشین ثبت شده را در یک نقطه انتهایی آنلاین مدیریت شده در Azure Machine Learning مستقر می‌کند.
+۱. خلاصه اینکه این اسکریپت مدلی ثبت شده را در یک نقطه انتهایی آنلاین مدیریت شده در Azure Machine Learning مستقر می‌کند.
 
-```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    ```python
+    # ماژول ast را وارد کنید که توابعی برای پردازش درخت‌های گرامر نحو انتزاعی پایتون فراهم می‌کند
     import ast
     
-    # Set the instance type for the deployment
+    # نوع نمونه را برای استقرار تنظیم کنید
     instance_type = "Standard_NC6s_v3"
     
-    # Check if the `inference_compute_allow_list` tag is present in the foundation model
+    # بررسی کنید که برچسب `inference_compute_allow_list` در مدل بنیاد وجود دارد یا نه
     if "inference_compute_allow_list" in foundation_model.tags:
-        # If it is, convert the tag value from a string to a Python list and assign it to `inference_computes_allow_list`
+        # اگر وجود داشت، مقدار برچسب را از رشته به لیست پایتون تبدیل کرده و به `inference_computes_allow_list` اختصاص دهید
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If it's not, set `inference_computes_allow_list` to `None`
+        # اگر نبود، `inference_computes_allow_list` را روی `None` تنظیم کنید
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Check if the specified instance type is in the allow list
+    # بررسی کنید که نوع نمونه مشخص شده در لیست مجاز وجود دارد یا خیر
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -801,7 +804,7 @@ pip install azureml-mlflow
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # Prepare to create the deployment by creating a `ManagedOnlineDeployment` object with various parameters
+    # برای ایجاد استقرار آماده شوید با ایجاد یک شیء `ManagedOnlineDeployment` با پارامترهای مختلف
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -812,75 +815,75 @@ pip install azureml-mlflow
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Create the deployment by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `ManagedOnlineDeployment` object as the argument
-    # Then wait for the creation operation to complete by calling the `wait` method
+    # استقرار را با فراخوانی متد `begin_create_or_update` در `workspace_ml_client` با شیء `ManagedOnlineDeployment` به عنوان آرگومان ایجاد کنید
+    # سپس برای کامل شدن عملیات ایجاد با فراخوانی متد `wait` صبر کنید
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Set the traffic of the endpoint to direct 100% of the traffic to the "demo" deployment
+    # ترافیک نقطه انتهایی را تنظیم کنید تا ۱۰۰٪ ترافیک را به استقرار "demo" هدایت کند
     endpoint.traffic = {"demo": 100}
     
-    # Update the endpoint by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `endpoint` object as the argument
-    # Then wait for the update operation to complete by calling the `result` method
+    # نقطه انتهایی را با فراخوانی متد `begin_create_or_update` در `workspace_ml_client` با شیء `endpoint` به عنوان آرگومان به‌روزرسانی کنید
+    # سپس برای تمام شدن عملیات به‌روزرسانی با فراخوانی متد `result` صبر کنید
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
 ## ۸. آزمایش نقطه انتهایی با داده نمونه
 
-ما مقداری داده نمونه از مجموعه داده تست دریافت کرده و برای استنتاج به نقطه انتهایی آنلاین ارسال می‌کنیم. سپس برچسب‌های پیش‌بینی شده را در کنار برچسب‌های واقعی نمایش می‌دهیم.
+داده نمونه‌ای از مجموعه داده تست استخراج کرده و برای استنتاج به نقطه انتهایی آنلاین ارسال می‌کنیم. سپس برچسب‌های امتیازدهی شده را در کنار برچسب‌های حقیقت زمینه‌ای نمایش خواهیم داد.
 
 ### خواندن نتایج
 
-1. این اسکریپت پایتون یک فایل JSON Lines را به یک DataFrame پانداس می‌خواند، نمونه‌ای تصادفی می‌گیرد و ایندکس را بازنشانی می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون یک فایل JSON Lines را به DataFrame پاندا خوانده، نمونه‌ای تصادفی می‌گیرد و اندیس‌ها را بازنشانی می‌کند. شرح آن:
 
-    - فایل ./ultrachat_200k_dataset/test_gen.jsonl را به یک DataFrame پانداس می‌خواند. تابع read_json با آرگومان lines=True استفاده می‌شود چون فایل در فرمت JSON Lines است که هر خط یک شیء JSON جداگانه است.
+- فایل ./ultrachat_200k_dataset/test_gen.jsonl را به DataFrame پاندا می‌خواند. تابع read_json با آرگومان lines=True استفاده می‌شود چون فایل در فرمت JSON Lines است، جایی که هر خط یک شیء JSON جداگانه است.
 
-    - نمونه‌ای تصادفی از ۱ ردیف از DataFrame می‌گیرد. تابع sample با آرگومان n=1 برای مشخص کردن تعداد ردیف‌های تصادفی انتخاب شده استفاده می‌شود.
+- نمونه‌ای تصادفی به اندازه ۱ ردیف از DataFrame می‌گیرد. تابع sample با آرگومان n=1 برای تعیین تعداد ردیف‌های تصادفی استفاده می‌شود.
 
-    - ایندکس DataFrame را بازنشانی می‌کند. تابع reset_index با آرگومان drop=True استفاده می‌شود تا ایندکس اصلی حذف شده و با ایندکس جدیدی از اعداد صحیح جایگزین شود.
+- اندیس DataFrame را با تابع reset_index با آرگومان drop=True بازنشانی می‌کند تا اندیس اصلی حذف و با اندیس‌های عدد صحیح پیش‌فرض جایگزین شود.
 
-    - ۲ ردیف اول DataFrame را با استفاده از تابع head با آرگومان ۲ نمایش می‌دهد. با این حال، چون پس از نمونه‌گیری فقط یک ردیف وجود دارد، فقط همان یک ردیف نمایش داده می‌شود.
+- با استفاده از تابع head و آرگومان ۲، دو ردیف اول DataFrame را نمایش می‌دهد. اما چون نمونه فقط یک ردیف است، تنها همان یک ردیف نمایش داده می‌شود.
 
-1. به طور خلاصه، این اسکریپت یک فایل JSON Lines را به یک DataFrame پانداس می‌خواند، نمونه‌ای تصادفی از ۱ ردیف می‌گیرد، ایندکس را بازنشانی کرده و اولین ردیف را نمایش می‌دهد.
+۱. خلاصه اینکه این اسکریپت یک فایل JSON Lines را به DataFrame پاندا می‌خواند، نمونه‌ای تصادفی یک ردیف گرفته، اندیس را بازنشانی می‌کند و ردیف اول را نمایش می‌دهد.
 
-```python
-    # Import pandas library
+    ```python
+    # وارد کردن کتابخانه pandas
     import pandas as pd
     
-    # Read the JSON Lines file './ultrachat_200k_dataset/test_gen.jsonl' into a pandas DataFrame
-    # The 'lines=True' argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # خواندن فایل JSON Lines به نام './ultrachat_200k_dataset/test_gen.jsonl' به یک DataFrame از pandas
+    # آرگومان 'lines=True' نشان می‌دهد که فایل در فرمت JSON Lines است، جایی که هر خط یک شیء JSON جداگانه است
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Take a random sample of 1 row from the DataFrame
-    # The 'n=1' argument specifies the number of random rows to select
+    # گرفتن نمونه تصادفی ۱ سطر از DataFrame
+    # آرگومان 'n=1' تعداد سطرهای تصادفی انتخاب شده را مشخص می‌کند
     test_df = test_df.sample(n=1)
     
-    # Reset the index of the DataFrame
-    # The 'drop=True' argument indicates that the original index should be dropped and replaced with a new index of default integer values
-    # The 'inplace=True' argument indicates that the DataFrame should be modified in place (without creating a new object)
+    # بازنشانی شاخص DataFrame
+    # آرگومان 'drop=True' نشان می‌دهد که شاخص اصلی حذف شده و با یک شاخص جدید با مقادیر عدد صحیح پیش‌فرض جایگزین شود
+    # آرگومان 'inplace=True' نشان می‌دهد که DataFrame باید به صورت درجا (بدون ایجاد یک شیء جدید) تغییر یابد
     test_df.reset_index(drop=True, inplace=True)
     
-    # Display the first 2 rows of the DataFrame
-    # However, since the DataFrame only contains one row after the sampling, this will only display that one row
+    # نمایش دو سطر اول DataFrame
+    # با این حال، چون DataFrame بعد از نمونه‌برداری فقط یک سطر دارد، این فقط آن یک سطر را نمایش می‌دهد
     test_df.head(2)
     ```
 
 ### ایجاد شیء JSON
 
-1. این اسکریپت پایتون یک شیء JSON با پارامترهای مشخص ایجاد کرده و آن را در یک فایل ذخیره می‌کند. شرح عملکرد آن به شرح زیر است:
+۱. این اسکریپت پایتون شیء JSON با پارامترهای مشخصی ایجاد کرده و آن را در فایلی ذخیره می‌کند. شرح آن:
 
-    - ماژول json را وارد می‌کند که توابعی برای کار با داده‌های JSON فراهم می‌کند.
+- ماژول json را وارد می‌کند که توابعی برای کار با داده‌های JSON فراهم می‌کند.
+- این یک دیکشنری به نام parameters ایجاد می‌کند که کلیدها و مقادیری را نشان می‌دهد که پارامترهایی برای یک مدل یادگیری ماشین هستند. کلیدها "temperature"، "top_p"، "do_sample" و "max_new_tokens" هستند و مقادیر متناظر آن‌ها به ترتیب 0.6، 0.9، True و 200 است.
 
-    - یک دیکشنری به نام parameters ایجاد می‌کند که کلیدها و مقادیری را نشان می‌دهد که پارامترهای یک مدل یادگیری ماشین هستند. کلیدها "temperature"، "top_p"، "do_sample" و "max_new_tokens" هستند و مقادیر متناظر آن‌ها به ترتیب ۰.۶، ۰.۹، True و ۲۰۰ است.
+- یک دیکشنری دیگر به نام test_json ایجاد می‌کند که دو کلید دارد: "input_data" و "params". مقدار "input_data" یک دیکشنری دیگر است با کلیدهای "input_string" و "parameters". مقدار "input_string" یک لیست است که شامل اولین پیام از دیتافریم test_df می‌باشد. مقدار "parameters" همان دیکشنری parameters است که قبلاً ایجاد شده بود. مقدار "params" یک دیکشنری خالی است.
 
-    - یک دیکشنری دیگر به نام test_json با دو کلید "input_data" و "params" ایجاد می‌کند. مقدار "input_data" یک دیکشنری دیگر با کلیدهای "input_string" و "parameters" است. مقدار "input_string" یک لیست است که شامل اولین پیام از DataFrame به نام test_df است. مقدار "parameters" همان دیکشنری parameters است که قبلاً ایجاد شده. مقدار "params" یک دیکشنری خالی است.
 - یک فایل به نام sample_score.json را باز می‌کند
 
-```python
-    # Import the json module, which provides functions to work with JSON data
+    ```python
+    # وارد کردن ماژول json که توابعی برای کار با داده‌های JSON فراهم می‌کند
     import json
     
-    # Create a dictionary `parameters` with keys and values that represent parameters for a machine learning model
-    # The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", and their corresponding values are 0.6, 0.9, True, and 200 respectively
+    # ایجاد یک دیکشنری `parameters` با کلیدها و مقادیری که پارامترهای مدل یادگیری ماشین را نشان می‌دهند
+    # کلیدها "temperature"، "top_p"، "do_sample" و "max_new_tokens" هستند و مقادیر متناظر آن‌ها به ترتیب ۰.۶، ۰.۹، درست (True) و ۲۰۰ هستند
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -888,11 +891,11 @@ pip install azureml-mlflow
         "max_new_tokens": 200,
     }
     
-    # Create another dictionary `test_json` with two keys: "input_data" and "params"
-    # The value of "input_data" is another dictionary with keys "input_string" and "parameters"
-    # The value of "input_string" is a list containing the first message from the `test_df` DataFrame
-    # The value of "parameters" is the `parameters` dictionary created earlier
-    # The value of "params" is an empty dictionary
+    # ایجاد دیکشنری دیگری به نام `test_json` با دو کلید: "input_data" و "params"
+    # مقدار "input_data" یک دیکشنری دیگر با کلیدهای "input_string" و "parameters" است
+    # مقدار "input_string" یک لیست حاوی اولین پیام از DataFrame به نام `test_df` است
+    # مقدار "parameters" دیکشنری `parameters` است که قبلاً ایجاد شده بود
+    # مقدار "params" یک دیکشنری خالی است
     test_json = {
         "input_data": {
             "input_string": [test_df["messages"][0]],
@@ -901,63 +904,67 @@ pip install azureml-mlflow
         "params": {},
     }
     
-    # Open a file named `sample_score.json` in the `./ultrachat_200k_dataset` directory in write mode
+    # باز کردن فایلی به نام `sample_score.json` در مسیر `./ultrachat_200k_dataset` در حالت نوشتن
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # Write the `test_json` dictionary to the file in JSON format using the `json.dump` function
+        # نوشتن دیکشنری `test_json` به فایل به فرمت JSON با استفاده از تابع `json.dump`
         json.dump(test_json, f)
     ```
 
 ### فراخوانی Endpoint
 
-1. این اسکریپت پایتون یک endpoint آنلاین در Azure Machine Learning را برای امتیازدهی به یک فایل JSON فراخوانی می‌کند. در ادامه توضیح می‌دهیم که چه کاری انجام می‌دهد:
+1. این اسکریپت پایتون، یک endpoint آنلاین در Azure Machine Learning را برای امتیازدهی به یک فایل JSON فراخوانی می‌کند. در اینجا شرح عملکرد آن آمده است:
 
-    - متد invoke از ویژگی online_endpoints شی workspace_ml_client را فراخوانی می‌کند. این متد برای ارسال درخواست به یک endpoint آنلاین و دریافت پاسخ استفاده می‌شود.
+   - متد invoke را از ویژگی online_endpoints شی workspace_ml_client فراخوانی می‌کند. این متد برای ارسال یک درخواست به یک endpoint آنلاین و دریافت پاسخ استفاده می‌شود.
 
-    - نام endpoint و استقرار آن را با آرگومان‌های endpoint_name و deployment_name مشخص می‌کند. در اینجا، نام endpoint در متغیر online_endpoint_name ذخیره شده و نام استقرار "demo" است.
+   - نام endpoint و استقرار (deployment) را با آرگومان‌های endpoint_name و deployment_name مشخص می‌کند. در این مورد، نام endpoint در متغیر online_endpoint_name ذخیره شده است و نام استقرار "demo" است.
 
-    - مسیر فایل JSON که باید امتیازدهی شود را با آرگومان request_file مشخص می‌کند. در این مورد، فایل ./ultrachat_200k_dataset/sample_score.json است.
+   - مسیر فایل JSON برای امتیازدهی را با آرگومان request_file مشخص می‌کند. در این مورد، فایل مسیر ./ultrachat_200k_dataset/sample_score.json است.
 
-    - پاسخ دریافتی از endpoint را در متغیر response ذخیره می‌کند.
+   - پاسخ دریافتی از endpoint را در متغیر response ذخیره می‌کند.
 
-    - پاسخ خام را چاپ می‌کند.
+   - پاسخ خام را چاپ می‌کند.
 
-1. به طور خلاصه، این اسکریپت یک endpoint آنلاین در Azure Machine Learning را برای امتیازدهی به یک فایل JSON فراخوانی کرده و پاسخ را چاپ می‌کند.
+1. در خلاصه، این اسکریپت یک endpoint آنلاین در Azure Machine Learning را برای امتیازدهی یک فایل JSON فراخوانی کرده و پاسخ را چاپ می‌کند.
 
-```python
-    # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
-    # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
-    # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
-    # The `deployment_name` argument specifies the name of the deployment, which is "demo"
-    # The `request_file` argument specifies the path to the JSON file to be scored, which is `./ultrachat_200k_dataset/sample_score.json`
+    ```python
+    # فراخوانی نقطه پایانی آنلاین در Azure Machine Learning برای ارزیابی فایل `sample_score.json`
+    # روش `invoke` از ویژگی `online_endpoints` شیء `workspace_ml_client` برای ارسال درخواست به یک نقطه پایانی آنلاین و دریافت پاسخ استفاده می‌شود
+    # آرگومان `endpoint_name` نام نقطه پایانی را مشخص می‌کند که در متغیر `online_endpoint_name` ذخیره شده است
+    # آرگومان `deployment_name` نام استقرار را مشخص می‌کند، که "demo" است
+    # آرگومان `request_file` مسیر فایل JSON برای ارزیابی را مشخص می‌کند، که `./ultrachat_200k_dataset/sample_score.json` است
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
         request_file="./ultrachat_200k_dataset/sample_score.json",
     )
     
-    # Print the raw response from the endpoint
+    # چاپ پاسخ خام از نقطه پایانی
     print("raw response: \n", response, "\n")
     ```
 
 ## 9. حذف endpoint آنلاین
 
-1. فراموش نکنید که endpoint آنلاین را حذف کنید، در غیر این صورت هزینه محاسبات مصرف شده توسط endpoint همچنان محاسبه خواهد شد. این خط کد پایتون یک endpoint آنلاین در Azure Machine Learning را حذف می‌کند. در ادامه توضیح می‌دهیم که چه کاری انجام می‌دهد:
+1. فراموش نکنید که endpoint آنلاین را حذف کنید، در غیر این صورت متر هزینه برای محاسبات استفاده شده توسط endpoint ادامه خواهد داشت. این خط کد پایتون در حال حذف یک endpoint آنلاین در Azure Machine Learning است. شرح عملکرد آن چنین است:
 
-    - متد begin_delete از ویژگی online_endpoints شی workspace_ml_client را فراخوانی می‌کند. این متد برای شروع حذف یک endpoint آنلاین استفاده می‌شود.
+   - متد begin_delete را از ویژگی online_endpoints شی workspace_ml_client فراخوانی می‌کند. این متد برای شروع حذف یک endpoint آنلاین استفاده می‌شود.
 
-    - نام endpoint که باید حذف شود را با آرگومان name مشخص می‌کند. در اینجا، نام endpoint در متغیر online_endpoint_name ذخیره شده است.
+   - نام endpoint که باید حذف شود را با آرگومان name مشخص می‌کند. در این مورد، نام endpoint در متغیر online_endpoint_name ذخیره شده است.
 
-    - متد wait را فراخوانی می‌کند تا منتظر بماند عملیات حذف کامل شود. این یک عملیات مسدودکننده است، به این معنی که اسکریپت تا پایان حذف متوقف می‌شود.
+   - متد wait را فراخوانی می‌کند تا منتظر بماند عملیات حذف کامل شود. این یک عملیات مسدودکننده است، به این معنی که مانع ادامه اجرای اسکریپت تا پایان حذف می‌شود.
 
-    - به طور خلاصه، این خط کد شروع حذف یک endpoint آنلاین در Azure Machine Learning را انجام داده و منتظر اتمام عملیات می‌ماند.
+   - در خلاصه، این خط کد شروع حذف یک endpoint آنلاین در Azure Machine Learning را انجام داده و منتظر می‌ماند عملیات کامل شود.
 
-```python
-    # Delete the online endpoint in Azure Machine Learning
-    # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
-    # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
-    # The `wait` method is called to wait for the deletion operation to complete. This is a blocking operation, meaning that it will prevent the script from continuing until the deletion is finished
+    ```python
+    # حذف نقطه پایانی آنلاین در Azure Machine Learning
+    # متد `begin_delete` از خاصیت `online_endpoints` در شیء `workspace_ml_client` برای شروع حذف یک نقطه پایانی آنلاین استفاده می‌شود
+    # آرگومان `name` نام نقطه پایانی که باید حذف شود را مشخص می‌کند که در متغیر `online_endpoint_name` ذخیره شده است
+    # متد `wait` برای انتظار تا اتمام عملیات حذف فراخوانی می‌شود. این عملیات مسدودکننده است، به این معنی که مانع ادامه اجرای اسکریپت تا پایان حذف خواهد شد
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه ماشینی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان مادری خود منبع معتبر محسوب می‌شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده شود. ما مسئولیتی در قبال هرگونه سوءتفاهم یا تفسیر نادرست ناشی از استفاده از این ترجمه نداریم.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

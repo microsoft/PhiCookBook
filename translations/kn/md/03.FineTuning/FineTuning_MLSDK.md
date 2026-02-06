@@ -1,44 +1,44 @@
-## How use chat-completion components from the Azure ML system registry to fine tune a model
+## Azure ML ಸಿಸ್ಟಂ ರಜಿಸ್ಟ್ರಿಯಿಂದ ಚಾಟ್-ಪೂರ್ಣತೆ ಘಟಕಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಮಾದರಿಯನ್ನು ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಮಾಡಲು ಹೇಗೆ
 
-In this example we will undertake fine tuning of the Phi-3-mini-4k-instruct model to complete a conversation between 2 people using ultrachat_200k dataset.
+ಈ ಉದಾಹರಣೆಯಲ್ಲಿ ನಾವು Phi-3-mini-4k-instruct ಮಾದರಿಯನ್ನು ultrachat_200k ಡೇಟಾಸೆಟ್ ಬಳಸಿ 2 ಜನರ ನಡುವೆ ಸಂವಾದವನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಮಾಡುತ್ತೇವೆ.
 
 ![MLFineTune](../../../../translated_images/kn/MLFineTune.928d4c6b3767dd35.webp)
 
-The example will show you how to undertake fine tuning using the Azure ML SDK and Python and then deploy the fine tuned model to an online endpoint for real time inference.
+ಈ ಉದಾಹರಣೆ ನಿಮಗೆ ಹೇಗೆ Azure ML SDK ಮತ್ತು Python ಬಳಸಿ ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಯನ್ನು ನಡೆಸುವುದು ಮತ್ತು ನಂತರ ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸಿದ ಮಾದರಿಯನ್ನು ಆನ್‌ಲೈನ್ ಎಂಡಿಪಾಯಿಂಟ್‌ಗೆ ರಿಯಲ್ ಟೈಂ ನಿರೂಪಣೆಗೆ ನಿಯೋಜಿಸುವುದು ತೋರಿಸುತ್ತದೆ.
 
-### Training data
+### ತರಬೇತಿ ಡೇಟಾ
 
-We will use the ultrachat_200k dataset. This is a heavily filtered version of the UltraChat dataset and was used to train Zephyr-7B-β, a state of the art 7b chat model.
+ನಾವು ultrachat_200k ಡೇಟಾಸೆಟ್ ಅನ್ನು ಬಳಸುವುದು. ಇದು UltraChat ಡೇಟಾಸೆಟ್‌ನ ಬಹಳ ಫಿಲ್ಟರ್ ಮಾಡಲಾದ ಆವೃತ್ತಿ ಮತ್ತು Zephyr-7B-β ಗೆ ತರಬೇತಿಗೊಳಿಸಲು ಬಳಸಲ್ಪಟ್ಟ ಒಂದು ಅತ್ಯಾಧುನಿಕ 7b ಚಾಟ್ ಮಾದರಿ.
 
-### Model
+### ಮಾದರಿ
 
-We will use the Phi-3-mini-4k-instruct model to show how user can finetune a model for chat-completion task. If you opened this notebook from a specific model card, remember to replace the specific model name.
+ನಾವು Phi-3-mini-4k-instruct ಮಾದರಿಯನ್ನು ಬಳಸಿ ಬಳಕೆದಾರನು ಚಾಟ್-ಪೂರ್ಣತೆ ಕೆಲಸಕ್ಕೆ ಮಾದರಿಯನ್ನು ಹೇಗೆ ಸೂಕ್ಷ್ಮವಾಗಿ ಮರುಚಲಿಸುವುದನ್ನು ತೋರಿಸುತ್ತೇವೆ. ನೀವು ಈ ನೋಟ್‌ಬುಕ್ ಅನ್ನು ನಿರ್ದಿಷ್ಟ ಮಾದರಿ ಕಾರ್ಡಿನಿಂದ ತೆರೆಯಿದರೆ, ನಿಮ್ಮ ಮಾದರಿ ಹೆಸರನ್ನು ಬದಲಿಸಿ.
 
-### Tasks
+### ಕಾರ್ಯಗಳು
 
-- Pick a model to fine tune.
-- Pick and explore training data.
-- Configure the fine tuning job.
-- Run the fine tuning job.
-- Review training and evaluation metrics.
-- Register the fine tuned model.
-- Deploy the fine tuned model for real time inference.
-- Clean up resources.
+- ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸಲು ಮಾದರಿಯನ್ನು ಆರಿಸಿ.
+- ತರಬೇತಿ ಡೇಟಾವನ್ನು ಆರಿಸಿ ಮತ್ತು ಪರಿಶೀಲಿಸಿ.
+- ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಕೆಲಸವನ್ನು ಸಂರಚಿಸಿ.
+- ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಕೆಲಸವನ್ನು ಚಾಲನೆಯಲ್ಲಿಡಿ.
+- ತರಬೇತಿ ಮತ್ತು ಮೌಲ್ಯಮಾಪನ ಮಿತಿಗಳನ್ನು ವಿಮರ್ಶಿಸಿ.
+- ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸಿದ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಿ.
+- ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸಿದ ಮಾದರಿಯನ್ನು ರಿಯಲ್ ಟೈಂ ನಿರೂಪಣೆಗೆ ನಿಯೋಜಿಸಿ.
+- ಸಂಪನ್ಮೂಲಗಳನ್ನು ಶುದ್ಧಗೊಳಿಸಿ.
 
-## 1. Setup pre-requisites
+## 1. ಅಗತ್ಯಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ
 
-- Install dependencies
-- Connect to AzureML Workspace. Learn more at set up SDK authentication. Replace <WORKSPACE_NAME>, <RESOURCE_GROUP> and <SUBSCRIPTION_ID> below.
-- Connect to azureml system registry
-- Set an optional experiment name
-- Check or create compute.
+- ಅವಶ್ಯಕತೆಯನ್ನು ಸ್ಥಾಪಿಸಿ
+- AzureML ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಂಪರ್ಕಿಸಿ. SDK ದೃಢೀಕರಣವನ್ನು ಸೆಟ್ ಅಪ್ ಮಾಡಲು ಇನ್ನಷ್ಟು ತಿಳಿದುಕೊಳ್ಳಿ. ಕೆಳಗಿನ <WORKSPACE_NAME>, <RESOURCE_GROUP>, ಮತ್ತು <SUBSCRIPTION_ID> ನ್ನು ಬದಲಿಸಿ.
+- azureml ಸಿಸ್ಟಂ ರಜಿಸ್ಟ್ರಿಗೆ ಸಂಪರ್ಕಿಸಿ
+- ಐಚ್ಛಿಕ ಪ್ರಯೋಗದ ಹೆಸರನ್ನು ನಿಗದಿಪಡಿ
+- ಕಂಪ್ಯೂಟನ್ನು ಪರಿಶೀಲಿಸಿ ಅಥವಾ ರಚಿಸಿ.
 
 > [!NOTE]
-> Requirements a single GPU node can have multiple GPU cards. For example, in one node of Standard_NC24rs_v3 there are 4 NVIDIA V100 GPUs while in Standard_NC12s_v3, there are 2 NVIDIA V100 GPUs. Refer to the docs for this information. The number of GPU cards per node is set in the param gpus_per_node below. Setting this value correctly will ensure utilization of all GPUs in the node. The recommended GPU compute SKUs can be found here and here.
+> ಅಗತ್ಯವಿದ್ದರೆ ಒಂದು GPU ನೋಡ್‌ನಲ್ಲಿ ಹಲವಾರು GPU ಕಾರ್ಡುಗಳು ಇರಬಹುದು. ಉದಾಹರಣೆಗೆ, Standard_NC24rs_v3 ಒಂದು ನೋಡ್‌ನಲ್ಲಿ 4 NVIDIA V100 GPUಗಳು ಇವೆ ಹಾಗೂ Standard_NC12s_v3ನಲ್ಲಿ 2 NVIDIA V100 GPUಗಳು ಇವೆ. ಈ ಮಾಹಿತಿಗಾಗಿ ಡಾಕ್ಯುಮೆಂಟ್ ನೋಡಿ. ಪ್ರತಿಯೊಬ್ಬ ನೋಡ್‌ಗೆ ಗಳು ಇರುವ GPU ಕಾರ್ಡ್‌ಗಳ ಸಂಖ್ಯೆ param gpus_per_node ನ್ನಲ್ಲಿ ಹೊಂದಿಸಲಾಗುತ್ತದೆ. ಈ ಮೌಲ್ಯವನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿಸುವುದರಿಂದ ನೋಡ್‌ನ ಎಲ್ಲಾ GPUಗಳನ್ನು ಬಳಸಿ ಪಡೆಯಲಾಗುತ್ತದೆ. ಶಿಫಾರಸು ಮಾಡಿದ GPU ಕಂಪ್ಯೂಟ್ SKUಗಳನ್ನು ಇಲ್ಲಿ ಮತ್ತು ಇಲ್ಲಿ ಕಾಣಬಹುದು.
 
-### Python Libraries
+### Python ಗ್ರಂಥಾಲಯಗಳು
 
-Install dependencies by running below cell. This is not an optional step if running in a new environment.
+ಕೆಳಗಿನ ಸೆಲ್ ಅನ್ನು ಜಾರಿಗೊಳಿಸುವ ಮೂಲಕ ಅವಶ್ಯಕತೆಗಳನ್ನು ಸ್ಥಾಪಿಸಿ. ಇದು ಹೊಸ ಪರಿಸರದಲ್ಲಿ ಚಾಲನೆ ಮಾಡಿದಾಗ ಐಚ್ಛಿಕ ಹಂತವಲ್ಲ.
 
 ```bash
 pip install azure-ai-ml
@@ -48,43 +48,43 @@ pip install mlflow
 pip install azureml-mlflow
 ```
 
-### Interacting with Azure ML
+### Azure ML ಜೊತೆಗೆ ಸಂವಹನ
 
-1. This Python script is used to interact with Azure Machine Learning (Azure ML) service. Here's a breakdown of what it does:
+1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning (Azure ML) ಸೇವೆಯೊಂದಿಗೆ ಸಂವಹನ ಮಾಡಲು ಬಳಸಲಾಗುತ್ತದೆ. ಇದರ ಕಾರ್ಯವಿವರಣೆ:
 
-    - It imports necessary modules from the azure.ai.ml, azure.identity, and azure.ai.ml.entities packages. It also imports the time module.
+    - ಇದು azure.ai.ml, azure.identity ಮತ್ತು azure.ai.ml.entities ಪ್ಯಾಕೇಜ್‌ಗಳಿಂದ ಅಗತ್ಯ ಮಡ್ಯೂಲ್‌ಗಳನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ. ಸಹಿತವಾಗಿ time ಮಡ್ಯೂಲ್ ಮಾಡಲಾಗಿದೆ.
 
-    - It tries to authenticate using DefaultAzureCredential(), which provides a simplified authentication experience to quickly start developing applications run in the Azure cloud. If this fails, it falls back to InteractiveBrowserCredential(), which provides an interactive login prompt.
+    - DefaultAzureCredential() ಬಳಸಿ ಪ್ರಾಮಾಣೀಕರಣ ಮಾಡಲು ಪ್ರಯತ್ನಿಸುತ್ತದೆ, ಇದು ಸರಳೀಕೃತ ಲಾಗಿನ್ ಅನುಭವ ನೀಡುತ್ತದೆ ಮತ್ತು Azure ಕ್ಲೌಡ್‌ನಲ್ಲಿ ಅನ್ವಯಿಕೆಗಳನ್ನು ವೇಗವಾಗಿ ಅಭಿವೃದ್ಧಿಪಡಿಸಲು ಸಹಾಯಕ. ವಿಫಲವಾದರೆ, InteractiveBrowserCredential() ಮೂಲಕ ಇಂಟರಾಕ್ಟಿವ್ ಲಾಗಿನ್ ಪ್ರಾಂಪ್ಟ್ ನೀಡುತ್ತದೆ.
 
-    - It then tries to create an MLClient instance using the from_config method, which reads the configuration from the default config file (config.json). If this fails, it creates an MLClient instance by manually providing the subscription_id, resource_group_name, and workspace_name.
+    - ನಂತರ from_config ವಿಧಾನದಿಂದ MLClient ಇನ್ಸ್ಟೆನ್ಸ್ ರಚಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತದೆ, ಇದು ಡೀಫಾಲ್ಟ್ ಸಂರಚನಾ ಫೈಲ್(config.json)ನಿಂದ ಕಾನ್ಫಿಗರೇಶನ್ ಓದುತ್ತದೆ. ವಿಫಲವಾದರೆ, subscription_id, resource_group_name, ಮತ್ತು workspace_name ನ್ನು ಕೈಮುಗಿದಂತೆ ನೀಡುತ್ತಾ MLClient ರಚಿಸುತ್ತದೆ.
 
-    - It creates another MLClient instance, this time for the Azure ML registry named "azureml". This registry is where models, fine-tuning pipelines, and environments are stored.
+    - "azureml" ಎಂಬ Azure ML ರಜಿಸ್ಟ್ರಿಗಾಗಿ ಇನ್ನೊ MLClient ಇನ್ಸ್ಟೆನ್ಸ್ ಸೃಷ್ಟಿಸುತ್ತದೆ. ಇದರಲ್ಲಿ ಮಾದರಿಗಳು, ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಪೈಪ್ಲೈನ್ಗಳು ಮತ್ತು ಪರಿಸರಗಳು ಸಂಗ್ರಹಿತವಾಗಿವೆ.
 
-    - It sets the experiment_name to "chat_completion_Phi-3-mini-4k-instruct".
+    - ಪ್ರಯೋಗದ ಹೆಸರನ್ನು "chat_completion_Phi-3-mini-4k-instruct" ಎಂದು ನಿಗದಿಪಡಿಸುತ್ತದೆ.
 
-    - It generates a unique timestamp by converting the current time (in seconds since the epoch, as a floating point number) to an integer and then to a string. This timestamp can be used for creating unique names and versions.
+    - ಪ್ರಸ್ತುತ ಕಾಲವನ್ನು (ಎಪಾಕ್‌ನಿಂದ ಸೆಕೆಂಡುಗಳಲ್ಲಿ, ದಶಮಾಂಶ ಸಹಿತ) ಪೂರ್ಣಾಂಕವಾಗಿ ಪರಿವರ್ತಿಸಿ ಮತ್ತು ನಂತರ ಸ್ಟ್ರಿಂಗ್ ಆಗಿ ಪರಿವರ್ತಿಸಿ ವಿಶಿಷ್ಟ ಟೈಮ್ಸ್ಟಾಂಪ್ ತಯಾರಿಸುತ್ತದೆ. ಇದನ್ನು ವಿಭಿನ್ನ ಹೆಸರು ಮತ್ತು ಆವೃತ್ತಿಗಳನ್ನು ರಚಿಸಲು ಬಳಸಬಹುದು.
 
     ```python
-    # Azure ML ಮತ್ತು Azure Identity ನಿಂದ ಅಗತ್ಯವಿರುವ ಮೋಡ್ಯೂಲ್‌ಗಳನ್ನು ಆಮದುಮಾಡಿ
+    # Azure ML ಮತ್ತು Azure Identity ನಿಂದ ಅಗತ್ಯವಾದ ಮಾಯ್ದೊಳುಗಳನ್ನು ಆಮದುಮಾಡಿ
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # time ಮೋಡ್ಯೂಲ್ ಅನ್ನು ಆಮದುಮಾಡಿ
+    import time  # ಸಮಯ ಮಾಯ್ದೊಳು ಆಮದುಮಾಡಿ
     
-    # DefaultAzureCredential ಅನ್ನು ಬಳಸಿ ಪ್ರಾಮಾಣೀಕರಿಸಲು ಪ್ರಯತ್ನಿಸಿ
+    # DefaultAzureCredential ಬಳಸಿ ಪ್ರಮಾಣೀಕೃತಿಯನ್ನು ಪ್ರಯತ್ನಿಸಿ
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # DefaultAzureCredential ವಿಫಲವಾದರೆ InteractiveBrowserCredential ಅನ್ನು ಬಳಸಿ
+    except Exception as ex:  # DefaultAzureCredential ವಿಫಲವಾದರೆ, InteractiveBrowserCredential ಬಳಸಿ
         credential = InteractiveBrowserCredential()
     
-    # ಡೀಫಾಲ್ಟ್ ಕಾನ್ಫಿಗ್ ಫೈಲ್ ಬಳಸಿ MLClient ಇನ್ಸ್ಟನ್ಸ್ ರಚಿಸಲು ಪ್ರಯತ್ನಿಸಿ
+    # ಡೀಫಾಲ್ಟ್ ಕಾಂಫಿಗ್ ಫೈಲ್ ಬಳಸಿ MLClient ಉದಾಹರಣೆ ನಿರ್ಮಿಸಲು ಪ್ರಯತ್ನಿಸಿ
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # ಅದು ವಿಫಲನಾದರೆ, ವಿವರಗಳನ್ನು ಕೈಯಿಂದ ಒದಗಿಸಿ MLClient ಇನ್ಸ್ಟನ್ಸ್ ರಚಿಸಿ
+    except:  # ಅದು ವಿಫಲವಾದರೆ, ವಿವರಗಳನ್ನು ಕೈಯಿಂದ ನೀಡುವ ಮೂಲಕ MLClient ಉದಾಹರಣೆ ನಿರ್ಮಿಸಿ
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,41 +92,41 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # azureml ಎಂದು ಹೆಸರಿಸಲಾದ Azure ML ರೆಜಿಸ್ಟ್ರಿಗಾಗಿ ಮತ್ತೊಂದು MLClient ಇನ್ಸ್ಟನ್ಸ್ ರಚಿಸಿ
-    # ಈ ರೆಜಿಸ್ಟ್ರಿಯಲ್ಲಿ ಮಾದರಿಗಳು, ಫೈನ್-ಟ್ಯುನಿಂಗ್ ಪೈಪ್‌ಲೈನ್ಗಳು ಮತ್ತು ಪರಿಸರಗಳು ಸಂಗ್ರಹಿಸಲಾಗುತ್ತವೆ
+    # "azureml" ಎಂಬ Azure ML ನೋಂದಣಿ (registry)ಗಾಗಿ ಮತ್ತೊಂದು MLClient ಉದಾಹರಣೆ ರಚಿಸಿ
+    # ಈ ನೋಂದಣಿಯಲ್ಲಿ ಮಾದರಿಗಳು, ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಪೈಪ್ಲೈನ್ಗಳು ಮತ್ತು ವಾತಾವರಣಗಳು (environments) ಸಂಗ್ರಹವಾಗಿವೆ
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # ಪ್ರಯೋಗದ ಹೆಸರು ನಿಗದಿಪಡಿಸಿ
+    # ಪ್ರಯೋಗ (experiment) ಹೆಸರನ್ನು ನಿಗದಿ ಮಾಡಿ
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # ವಿಶೇಷವಾಗಿ ಅನನ್ಯವಾಗಿರಬೇಕಾದ ಹೆಸರುಗಳು ಮತ್ತು ಆವೃತ್ತಿಗಳಿಗೆ ಬಳಸಬಹುದಾದ ಅನನ್ಯ ಟೈಂಸ್ಟ್ಯಾಂಪ್ ರಚಿಸಿ
+    # ವಿಶಿಷ್ಟವಾದ ಸಮಯಸ್ಟ್ಯಾಂಪ್ ಅನ್ನು ರಚಿಸಿ, ಇದು ಅನನ್ಯ ಹೆಸರುಗಳು ಮತ್ತು ಆವೃತ್ತಿಗಳಿಗಾಗಿ ಬಳಸಬಹುದು
     timestamp = str(int(time.time()))
     ```
 
-## 2. Pick a foundation model to fine tune
+## 2. ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಗಾಗಿ ಮೂಲ ಮಾದರಿಯನ್ನು ಆರಿಸಿ
 
-1. Phi-3-mini-4k-instruct is a 3.8B parameters, lightweight, state-of-the-art open model built upon datasets used for Phi-2. The model belongs to the Phi-3 model family, and the Mini version comes in two variants 4K and 128K which is the context length (in tokens) it can support, we need to finetune the model for our specific purpose in order to use it. You can browse these models in the Model Catalog in the AzureML Studio, filtering by the chat-completion task. In this example, we use the Phi-3-mini-4k-instruct model. If you have opened this notebook for a different model, replace the model name and version accordingly.
+1. Phi-3-mini-4k-instruct 3.8B ಪ್ಯಾರಾಮೀಟರ್‌ಗಳಿರುವ, ತೂಕದಲ್ಲಿ ಸೂಕ್ಷ್ಮ, ಅತ್ಯಾಧುನಿಕ open ಮಾದರಿ ಆಗಿದ್ದು Phi-2 ಗೆ ಬಳಸಲಾದ ಡೇಟಾಸೆಟ್ ಮೇಲೆ ನಿರ್ಮಿತವಾಗಿದೆ. ಈ ಮಾದರಿ Phi-3 ಮಾದರಿ ಕುಟುಂಬಕ್ಕೆ ಸೇರಿದೆ, ಮತ್ತು ಮಿನಿ ಆವೃತ್ತಿಯು ಎರಡು ಬಗೆಯ 4K ಮತ್ತು 128K (ಮೊತ್ತುಗಳು) ಪರಿಧಿಯನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ. ನಿಖರ ಉದ್ದೇಶಕ್ಕಾಗಿ ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸಲು ಈ ಮಾದರಿಯನ್ನು ಬಳಸಬೇಕು. ನೀವು ಈ ನೋಟ್‌ಬುಕ್ ಅನ್ನು ಬೇರೆ ಮಾದರಿ ಕಾರ್ಡ್‌ನಿಂದ ತೆರೆಯಿದ್ರೆ, ಮಾದರಿ ಹೆಸರು ಮತ್ತು ಆವೃತ್ತಿಯನ್ನು ಅನುಗುಣವಾಗಿ ಬದಲಿಸಿ.
 
-    > [!NOTE]
-    > the model id property of the model. This will be passed as input to the fine tuning job. This is also available as the Asset ID field in model details page in AzureML Studio Model Catalog.
+> [!NOTE]
+> ಮಾದರಿಯ id ಗುಣವನ್ನು ಗಮನಿಸಿ. ಇದು ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಕೆಲಸಕ್ಕೆ ಇನ್‌ಪುಟ್ ಆಗಿ ಬಳಸಲಾಗುವುದು. AzureML ಸ್ಟುಡಿಯೋ Model Catalog ಮಾದರಿ ವಿವರಗಳ ಪುಟದಲ್ಲಿಯೂ Asset ID ಫೀಲ್ಡ್ ಆಗಿ ಲಭ್ಯವಿದೆ.
 
-2. This Python script is interacting with Azure Machine Learning (Azure ML) service. Here's a breakdown of what it does:
+2. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning (Azure ML) ಸೇವೆಯೊಂದಿಗೆ ಸಂವಹನ ಮಾಡುತ್ತಿದೆ. ಇದರ ವಿವರಣೆ:
 
-    - It sets the model_name to "Phi-3-mini-4k-instruct".
+    - model_name = "Phi-3-mini-4k-instruct" ಎಂದು ನಿಗದಿಪಡಿಸುತ್ತದೆ.
 
-    - It uses the get method of the models property of the registry_ml_client object to retrieve the latest version of the model with the specified name from the Azure ML registry. The get method is called with two arguments: the name of the model and a label specifying that the latest version of the model should be retrieved.
+    - registry_ml_client ನ models ಗುಣದ get ವಿಧಾನ ಬಳಸಿ ನಿರ್ದಿಷ್ಟ ಹೆಸರಿನ ಮಾದರಿಯ ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು Azure ML ರಜಿಸ್ಟ್ರಿಯಿಂದ ಪಡೆಯುತ್ತದೆ. get ವಿಧಾನಕ್ಕೆ ಎರಡು ಅರ್ಗ್ಯೂಮೆಂಟ್‌ಗಳು ಕೊಡುವದು: ಮಾದರಿ ಹೆಸರು ಮತ್ತು 최신 ಆವೃತ್ತಿ ತೆಗೆದುಕೊಳ್ಳುವ ಲೇಬಲ್.
 
-    - It prints a message to the console indicating the name, version, and id of the model that will be used for fine-tuning. The format method of the string is used to insert the name, version, and id of the model into the message. The name, version, and id of the model are accessed as properties of the foundation_model object.
+    - ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಗಾಗಿ ಬಳಸದ ಮಾದರಿಯ ಹೆಸರು, ಆವೃತ್ತಿ ಮತ್ತು id ಕಾನ್ಸೋಲ್‌ಗೆ ಮುದ್ರಣ ಮಾಡುತ್ತದೆ. ಸ್ಟ್ರಿಂಗ್‌ನ format ವಿಧಾನದಿಂದ ಈ ಡೇಟಾ ಸಂದೇಶಕ್ಕೆ ಸೇರಿಸಲಾಗುತ್ತದೆ. 
 
     ```python
     # ಮಾದರಿ ಹೆಸರನ್ನು ಸೆಟ್ ಮಾಡಿ
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Azure ML ರಿಜಿಸ್ಟ್ರಿಯಿಂದ ಮಾದರಿಯ ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು ಪಡೆಯಿರಿ
+    # ಅಜೂರ್ ಎಂಎಲ್ ರೆಜಿಸ್ಟ್ರೀನಿಂದ ಮಾದರಿಯ ಇತ್ತೀಚಿನ ಸಂಸ್ಕರಣೆಯನ್ನು ಪಡೆಯಿರಿ
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # ಮಾದರಿ ಹೆಸರು, ಆವೃತ್ತಿ ಮತ್ತು ಐಡಿ ಅನ್ನು ಮುದ್ರಿಸಿ
-    # ಈ ಮಾಹಿತಿ ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಡಿಬಗಿಂಗ್‌ಗಾಗಿ ಉಪಯುಕ್ತವಾಗಿದೆ
+    # ಮಾದರಿ ಹೆಸರು, ಆವೃತ್ತಿ ಮತ್ತು ಐಡಿಯನ್ನು ಮುದ್ರಿಸಿ
+    # ಈ ಮಾಹಿತಿಯು ಟ್ರ್ಯಾಕಿಂಗ್ ಮತ್ತು ಡಿಬಗ್ ಮಾಡಲು ಉಪಯುಕ್ತವಾಗಿದೆ
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
@@ -134,168 +134,168 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Create a compute to be used with the job
+## 3. ಕೆಲಸಕ್ಕೆ ಬಳಸಲು compute ರಚಿಸಿ
 
-The finetune job works ONLY with GPU compute. The size of the compute depends on how big the model is and in most cases it becomes tricky to identify the right compute for the job. In this cell, we guide the user to select the right compute for the job.
-
-> [!NOTE]
-> The computes listed below work with the most optimized configuration. Any changes to the configuration might lead to Cuda Out Of Memory error. In such cases, try to upgrade the compute to a bigger compute size.
+ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಕೆಲಸ GPU ಕಂಪ್ಯೂಟ್‌ನೊಂದಿಗೆ ಮಾತ್ರ ಕೆಲಸ ಮಾಡುತ್ತದೆ. compute ಗಾತ್ರವು ಮಾದರಿಯ ವ್ಯ modalityಗದಿಂದ ಕಾರ್ಯಾಗತ. ಈ ಸೆಲ್ ಬಳಕೆದಾರರನ್ನು ಸರಿಯಾದ compute ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳಲು ಮಾರ್ಗದರ್ಶನ ಮಾಡುತ್ತದೆ.
 
 > [!NOTE]
-> While selecting the compute_cluster_size below, make sure the compute is available in your resource group. If a particular compute is not available you can make a request to get access to the compute resources.
+> ಕೆಳಗಿನ computeಗಳು ಅತ್ಯಂತ ಸುಧಾರಿತ ಸಂರಚನೆಯೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತವೆ. ಸಂರಚನೆಯಲ್ಲಿ ಯಾವಶೇಖಾಗಲಿ ಬದಲಾವಣೆಯಾದರೆ Cuda Out Of Memory ದೋಷ ಬರುವ ಸಾಧ್ಯತೆ ಇದೆ. ಇಂತಹ ಸಂದರ್ಭದಲ್ಲಿ compute ಗಾತ್ರವನ್ನು ದೊಡ್ಡದಾಗಿ ಮೇಲುಗೈ ಮಾಡಿ.
 
-### Checking Model for Fine Tuning Support
+> [!NOTE]
+> compute_cluster_size ಆಯ್ಕೆಮಾಡುವಾಗ compute ನಿಮ್ಮ resource group ನಲ್ಲಿ ಲಭ್ಯವಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿ. ಲಭ್ಯವಿಲ್ಲದ compute ಮೇಲೆ ನೀವು compute ಸಂಪನ್ಮೂಲಗಳಿಗೆ ಪ್ರವೇಶ ಕೇಳಬಹುದು.
 
-1. This Python script is interacting with an Azure Machine Learning (Azure ML) model. Here's a breakdown of what it does:
+### ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಗೆ ಮಾದರಿ ಬೆಂಬಲ ಪರಿಶೀಲನೆ
 
-    - It imports the ast module, which provides functions to process trees of the Python abstract syntax grammar.
+1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ Azure ML ಮಾದರಿಯೊಂದಿಗೆ ಸಂವಹನ ಮಾಡುತ್ತಿದೆ. ಇದರ ಕಾರ್ಯಪಟುತೆ:
 
-    - It checks if the foundation_model object (which represents a model in Azure ML) has a tag named finetune_compute_allow_list. Tags in Azure ML are key-value pairs that you can create and use to filter and sort models.
+    - ast ಮಡ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ, ಇದು Python ಅನುಸ್ಕೃತ ನಿರ್ರೂಪಣೆಯ ಮರಗಳನ್ನು ಪ್ರಕ್ರಿಯೆ ಮಾಡಲು ಬಳಕೆಮಾಡಲಾಗುತ್ತದೆ.
 
-    - If the finetune_compute_allow_list tag is present, it uses the ast.literal_eval function to safely parse the tag's value (a string) into a Python list. This list is then assigned to the computes_allow_list variable. It then prints a message indicating that a compute should be created from the list.
+    - foundation_model ವಸ್ತುವಿನಲ್ಲಿ finetune_compute_allow_list ಎಂಬ ಟ್ಯಾಗ್ ಇರುವುದನ್ನ ಪರಿಶೀಲಿಸುತ್ತದೆ. Azure ML ಟ್ಯಾಗ್‌ಗಳು ಕೀ-ಮೌಲ್ಯ ಜೋಡಿಗಳು ಆಗಿದ್ದು, ನಿಮ್ಮ ಮಾದರಿಗಳನ್ನು ಫಿಲ್ಟರ್ ಮತ್ತು ವಿಂಗಡಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.
 
-    - If the finetune_compute_allow_list tag is not present, it sets computes_allow_list to None and prints a message indicating that the finetune_compute_allow_list tag is not part of the model's tags.
+    - finetune_compute_allow_list ಇದ್ದರೆ ast.literal_eval ಮೂಲಕ ಆ ಸ್ಟ್ರಿಂಗ್ ಮೌಲ್ಯವನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಪೈಥನ್ ಪಟ್ಟಿಗೆ ಪರಿವರ್ತಿಸುತ್ತದೆ ಮತ್ತು computes_allow_list ಗೆ ನಿಯೋಜಿಸುತ್ತದೆ. ನಂತರ compute ಪಟ್ಟಿ ಇಂದ compute ರಚಿಸುವುದಾಗಿ ಸಂದೇಶ ಮುದ್ರಣ ಮಾಡುತ್ತದೆ.
 
-    - In summary, this script is checking for a specific tag in the model's metadata, converting the tag's value to a list if it exists, and providing feedback to the user accordingly.
+    - finetune_compute_allow_list ಇಲ್ಲದಿದ್ದರೆ computes_allow_list ನುಲ್ ಆಗಿ ನಿಗದಿಪಡಿಸಿ, ಮಾದರಿಯ ಟ್ಯಾಗ್‌ಗಳಲ್ಲಿ finetune_compute_allow_list ಇಲ್ಲದಿರುವುದಾಗಿ ತಿಳಿಸಿದ್ದಾರೆ.
+
+    - ಸಾರಾಂಶವಾಗಿ, ಮಾದರಿಯ ಮೆಟಾಡೇಟಾದಲ್ಲಿ ನಿರ್ದಿಷ್ಟ ಟ್ಯಾಗ್‌ ಪರೀಕ್ಷಿಸಿ, ಟ್ಯಾಗ್ ಮೌಲ್ಯವನ್ನು ಪಟ್ಟಿಗೆ ಪರಿವರ್ತಿಸಿ, ಬಳಕೆದಾರರಿಗೆ ನಿರ್ದಿಷ್ಟ ಮಾಹಿತಿ ನೀಡುತ್ತದೆ.
 
     ```python
-    # ast ಮಾದ್ಯೂಲ್ ಅನ್ನು ಆಮದುಮಾಡಿ, ಇದು Python ನ ಅಬ್ಸ್ಟ್ರಾಕ್ಟ್ ಸಿಂಟ್ಯಾಕ್ಸ್ ಗ್ರ್ಯಾಮರ್‌ನ ಮರಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಕಾರ್ಯಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ
+    # ಪೈಥಾನ್ ಅನಾವರಣ ಸಿಂಟ್ಯಾಕ್ಸ್ ವ್ಯಾಕರಣದ ಮರಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಕಾರ್ಯಗಳನ್ನು ಒದಗಿಸುವ ast ಮড್ಯೂಲ್ ಅನ್ನು ಆಮದುಮಾಡಿ
     import ast
     
-    # ಮಾದರಿಯ ಟ್ಯಾಗ್‌ಗಳಲ್ಲಿ 'finetune_compute_allow_list' ಟ್ಯಾಗ್ ಇದೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ
+    # ಮಾದರಿಯ ಟ್ಯಾಗ್‌ಗಳಲ್ಲಿ 'finetune_compute_allow_list' ಟ್ಯಾಗ್ ಇದ್ದೇ ಅಂದುಕೊಳ್ಳಿ
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # ಟ್ಯಾಗ್ ಇದ್ದರೆ, ast.literal_eval ಅನ್ನು ಉಪಯೋಗಿಸಿ ಟ್ಯಾಗ್‌ನ ಮೌಲ್ಯವನ್ನು (ಸ್ಟ್ರಿಂಗ್) ಸುರಕ್ಷಿತವಾಗಿ Python ಪಟ್ಟಿಯಾಗಿ ಪಾರ್ಸ್ ಮಾಡಿ
+        # ಟ್ಯಾಗ್ ಇದ್ದರೆ, ast.literal_eval ಅನ್ನು ಬಳಸಿಕೊಂಡು ಟ್ಯಾಗ್‌ನ ಮೌಲ್ಯವನ್ನು (ಒಂದು ಸ್ಟ್ರಿಂಗ್) ಸುರಕ್ಷಿತ ರೀತಿಯಲ್ಲಿ ಪೈಥಾನ್ ಪಟ್ಟಿ ಆಗಿ ಪಾರ್ಸ್ ಮಾಡಿ
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು Python ಪಟ್ಟಿಯಾಗಿ ಪರಿವರ್ತಿಸಿ
-        # ಆ ಪಟ್ಟಿಯಿಂದ compute ಅನ್ನು ರಚಿಸುವ ಅಗತ್ಯವಿದೆ ಎಂದು ಸೂಚಿಸುವ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ
+        )  # ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ಪೈಥಾನ್ ಪಟ್ಟಿ ಆಗಿ ಪರಿವರ್ತಿಸಿ
+        # ಪಟ್ಟಿಯಿಂದ ಒಂದು ಕಂಪ್ಯೂಟ್ ಅನ್ನು ರಚಿಸಬೇಕೆಂದು ಸೂಚಿಸುವ ಸಂದೇಶ ಮುದ್ರಿಸಿ
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # ಟ್ಯಾಗ್ ಇದ್ದಿಲ್ಲದಿದ್ದರೆ, computes_allow_list ಅನ್ನು None ಗೆ ಹೊಂದಿಸಿ
+        # ಟ್ಯಾಗ್ ಇಲ್ಲದಿದ್ದರೆ, computes_allow_list ಅನ್ನು None ಗೆ ಸೆಟ್ ಮಾಡಿ
         computes_allow_list = None
-        # ಮಾದರಿಯ ಟ್ಯಾಗ್‌ಗಳಲ್ಲಿ 'finetune_compute_allow_list' ಟ್ಯಾಗ್ ಭಾಗವಲ್ಲ ಎಂದು ಸೂಚಿಸುವ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ
+        # 'finetune_compute_allow_list' ಟ್ಯಾಗ್ ಮಾದರಿಯ ಟ್ಯಾಗ್‌ಗಳ ಭಾಗವಲ್ಲ ಎಂದು ಸೂಚಿಸುವ ಸಂದೇಶ ಮುದ್ರಿಸಿ
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Checking Compute Instance
+### Compute Instance ಪರಿಶೀಲನೆ
 
-1. This Python script is interacting with Azure Machine Learning (Azure ML) service and performing several checks on a compute instance. Here's a breakdown of what it does:
+1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ Azure ML ಸೇವೆಯೊಂದಿಗೆ ಸಂವಹನ ಮಾಡುತ್ತಿದ್ದು, compute instance ಮೇಲೆ ವಿವಿಧ ಪರಿಶೀಲನೆಗಳನ್ನು ಮಾಡುತ್ತದೆ. ವಿವರ:
 
-    - It tries to retrieve the compute instance with the name stored in compute_cluster from the Azure ML workspace. If the compute instance's provisioning state is "failed", it raises a ValueError.
+    - compute_cluster ನಲ್ಲಿ ಉಳಿಸಿರುವ compute name ಉಪಯೋಗಿಸಿ compute instance ಪಡೆಯಲು ಪ್ರಯತ್ನಿಸುತ್ತದೆ. provisioning state "failed" ಇದ್ದರೆ, ValueError ಉದ್ಧರಿಸುತ್ತದೆ.
 
-    - It checks if computes_allow_list is not None. If it's not, it converts all the compute sizes in the list to lowercase and checks if the size of the current compute instance is in the list. If it's not, it raises a ValueError.
+    - computes_allow_list None ಅಲ್ಲದಿದ್ದರೆ, ಪಟ್ಟಿಯ ಎಲ್ಲಾ compute ಗಾತ್ರಗಳನ್ನು lowercase ಗೆ ಬದಲಿಸಿ, ಪ್ರಸ್ತುತ compute ಗಾತ್ರ ಆ ಪಟ್ಟಿಯಲ್ಲಿ ಇದೆಯೇ ಎಂದು ಪರೀಕ್ಷಿಸಿ. ಇಲ್ಲದಿದ್ದರೆ ValueError ನೀಡುತ್ತದೆ.
 
-    - If computes_allow_list is None, it checks if the size of the compute instance is in a list of unsupported GPU VM sizes. If it is, it raises a ValueError.
+    - computes_allow_list None ಆಗಿದ್ದರೆ, compute ಗಾತ್ರವು ತಿರಸ್ಕೃತ GPU VM ಗಾತ್ರ ಪಟ್ಟಿಯಲ್ಲಿ ಇದ್ದರೆ ValueError ನೀಡುತ್ತದೆ.
 
-    - It retrieves a list of all available compute sizes in the workspace. It then iterates over this list, and for each compute size, it checks if its name matches the size of the current compute instance. If it does, it retrieves the number of GPUs for that compute size and sets gpu_count_found to True.
+    - ವರ್ಕ್‌ಸ್ಪೇಸ್‌ನಲ್ಲಿ ಲಭ್ಯವಿರುವ ಎಲ್ಲಾ compute ಗಾತ್ರಗಳ ಪಟ್ಟಿಯನ್ನು ಪಡೆಯುತ್ತದೆ. ಮೇಲೆ ಕೊಟ್ಟ ಪಟ್ಟಿಗೆ ತಕ್ಕ compute ಗಾತ್ರ ಸಿಕ್ಕಿದ್ದರೆ, ಆ compute ಗಾತ್ರದ GPUಗಳ ಸಂಖ್ಯೆಯನ್ನು ಪಡೆಯುತ್ತದೆ ಮತ್ತು gpu_count_found ನ್ನು ಸತ್ಯವಾಗಿ ನಿಗದಿಪಡಿಸುತ್ತದೆ.
 
-    - If gpu_count_found is True, it prints the number of GPUs in the compute instance. If gpu_count_found is False, it raises a ValueError.
+    - gpu_count_found ಸತ್ಯವಾದರೆ, compute instance ನಲ್ಲಿ ಎಷ್ಟು GPU ಇದ್ದ ವಿವರಣೆ ನೀಡುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ ValueErrorನು ನೀಡುತ್ತದೆ.
 
-    - In summary, this script is performing several checks on a compute instance in an Azure ML workspace, including checking its provisioning state, its size against an allow list or a deny list, and the number of GPUs it has.
-    
+    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ compute instance provisioning ಸ್ಥಿತಿ, compute ಗಾತ್ರ ಅನುಮೋದಿತ ಪಟ್ಟಿಯಲ್ಲಿ ಇದೆಯೇ ಪೋಳಿಗೊಂಡ್ಲೇ ಎಂಬುದನ್ನು, ಮತ್ತು compute ನಲ್ಲಿ ಎಷ್ಟು GPU ಇದ್ದಯೋ ಪರಿಶೀಲನೆ ಮಾಡುತ್ತದೆ.
+
     ```python
-    # ಎಕ್ಸೆಪ್ಶನ್ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ
+    # ವಿಸರ್ಜನೆಯ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ
     print(e)
-    # ಕಂಪ್ಯೂಟ್ ಗಾತ್ರ ವರ್ಕ್‌ಸ್ಪೇಸ್ನಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲದಿದ್ದರೆ ValueError ಎತ್ತಿ
+    # ವರ್ಕ್‌ಸ್ಪೇಸ್‌ನಲ್ಲಿ ಗಣನೆ ಗಾತ್ರ ಲಭ್ಯವಿಲ್ಲದಿದ್ದರೆ ValueError ಅನ್ನು ಎತ್ತಿ
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Azure ML ವರ್ಕ್‌ಸ್ಪೇಸ್ನಿಂದ ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್ ಅನ್ನು ಪಡೆದುಕೊಳ್ಳಿ
+    # Azure ML ವರ್ಕ್‌ಸ್ಪೇಸ್‌ನಿಂದ ಗಣನೆ ಘಟಕವನ್ನು ಪಡೆಯಿರಿ
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ ಪ್ರೊವಿಜನಿಂಗ್ ಸ್ಥಿತಿ "failed" ಆಗಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+    # ಗಣನೆ ಘಟಕದ ಪ್ರೊವೀಶನಿಂಗ್ ಸ್ಥಿತಿ "ವಿಫಲ" ಆಗಿದೆಯೇ ಎಂದಾದರೆ ಪರಿಶೀಲಿಸಿ
     if compute.provisioning_state.lower() == "failed":
-        # ಪ್ರೊವಿಜನಿಂಗ್ ಸ್ಥಿತಿ "failed" ಆಗಿದ್ದರೆ ValueError ಎತ್ತಿ
+        # ಪ್ರೊವೀಶನಿಂಗ್ ಸ್ಥಿತಿ "ವಿಫಲ" ಆಗಿದ್ದರೆ ValueError ಅನ್ನು ಎತ್ತಿ
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
         )
     
-    # computes_allow_list Noneಲ್ಲದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+    # computes_allow_list None ಅಲ್ಲದಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
     if computes_allow_list is not None:
-        # computes_allow_list ನಲ್ಲಿ ಇರುವ ಎಲ್ಲಾ ಕಂಪ್ಯೂಟ್ ಗಾತ್ರಗಳನ್ನು lowercase ಗೆ ಪರಿವರ್ತಿಸಿ
+        # computes_allow_list中的ಎಲ್ಲಾ ಗಣನೆ ಗಾತ್ರಗಳನ್ನು ಚಿಕ್ಕಾಕ್ಷರಗಳಿಗೆ ಪರಿವರ್ತಿಸಿ
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ ಗಾತ್ರ computes_allow_list_lower_case ನಲ್ಲಿ ಇದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ
+        # ಗಣನೆ ಘಟಕದ ಗಾತ್ರ computes_allow_list_lower_case ನಲ್ಲಿ ఉందೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ ಗಾತ್ರ computes_allow_list_lower_case ನಲ್ಲಿ ಇಲ್ಲದಿದ್ದರೆ ValueError ಎತ್ತಿ
+            # ಗಣನೆ ಘಟಕದ ಗಾತ್ರ computes_allow_list_lower_case ನಲ್ಲಿ ಇಲ್ಲದಿದ್ದರೆ ValueError ಅನ್ನು ಎತ್ತಿ
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
     else:
-        # ಬೆಂಬಲಿಸಲಾಗದ GPU VM ಗಾತ್ರಗಳ ಪಟ್ಟಿಯನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ
+        # ಬೆಂಬಲಿಸದ GPU VM ಗಾತ್ರಗಳ ಪಟ್ಟಿ ಅನ್ನು ನಿರ್ದಿಷ್ಟ ಗೊಳಿಸಿ
         unsupported_gpu_vm_list = [
             "standard_nc6",
             "standard_nc12",
             "standard_nc24",
             "standard_nc24r",
         ]
-        # ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ ಗಾತ್ರ unsupported_gpu_vm_list ನಲ್ಲಿ ಇದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ
+        # ಗಣನೆ ಘಟಕದ ಗಾತ್ರ unsupported_gpu_vm_list ನಲ್ಲಿ ಇದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ ಗಾತ್ರ unsupported_gpu_vm_list ನಲ್ಲಿ ಇದ್ದರೆ ValueError ಎತ್ತಿ
+            # ಗಣನೆ ಘಟಕದ ಗಾತ್ರ unsupported_gpu_vm_list ನಲ್ಲಿ ಇದ್ದರೆ ValueError ಅನ್ನು ಎತ್ತಿ
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನಲ್ಲಿ GPUಗಳ ಸಂಖ್ಯೆ ಕಂಡುಬಂದಿದೆಯೇ ಎಂದು ಪರೀಕ್ಷಿಸಲು ಒಂದು ಫ್ಲಾಗ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಿ
+    # ಗಣನೆ ಘಟಕದಲ್ಲಿ GPUಗಳ ಸಂಖ್ಯೆ ಕಂಡುಹಿಡಿದಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸುವ ಡೊಂಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ
     gpu_count_found = False
-    # ವರ್ಕ್‌ಸ್ಪೇಸ್ನಲ್ಲಿರುವ ಎಲ್ಲಾ ಲಭ್ಯವಿರುವ ಕಂಪ್ಯೂಟ್ ಗಾತ್ರಗಳ ಪಟ್ಟಿಯನ್ನು ಪಡೆದುಕೊಳ್ಳಿ
+    # ವರ್ಕ್‌ಸ್ಪೇಸ್‌ನಲ್ಲಿರುವ ಎಲ್ಲ ಲಭ್ಯವಿರುವ ಗಣನೆ ಗಾತ್ರಗಳ ಪಟ್ಟಿಯನ್ನು ಪಡೆಯಿರಿ
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # ಲಭ್ಯವಿರುವ ಕಂಪ್ಯೂಟ್ ಗಾತ್ರಗಳ ಪಟ್ಟಿಯಲ್ಲಿ ಪುನರಾವರ್ತಿಸಿ
+    # ಲಭ್ಯವಿರುವ ಗಣನೆ ಗಾತ್ರಗಳ ಪಟ್ಟಿಯನ್ನು ಓಲುವುದು
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # ಕಂಪ್ಯೂಟ್ ಗಾತ್ರದ ಹೆಸರು ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ ಗಾತ್ರಕ್ಕೆ ಹೊಂದಿಕೆಯಾಗುತ್ತದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+        # ಗಣನೆ ಗಾತ್ರದ ಹೆಸರು ಗಣನೆ ಘಟಕದ ಗಾತ್ರಕ್ಕೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
         if compute_sku.name.lower() == compute.size.lower():
-            # ಇದು ಹೊಂದಿಕೆಯಾಗಿದ್ದರೆ, ಆ ಕಂಪ್ಯೂಟ್ ಗಾತ್ರದ GPU ಸಂಖ್ಯೆಯನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು gpu_count_found ಅನ್ನು True ಗೆ ಸೆಟ್ ಮಾಡಿ
+            # ಹೊಂದಿದ್ದರೆ ಆ ಗಣನೆ ಗಾತ್ರದ GPUಗಳ ಸಂಖ್ಯೆಯನ್ನು ಪಡೆಯಿರಿ ಮತ್ತು gpu_count_found ಅನ್ನು True ಗಾಗಿ ಸೆಟ್ ಮಾಡಿ
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # gpu_count_found True ಆಗಿದ್ದರೆ, ಕಂಪ್ಯೂಟ್ ಇನ್ಸ್ಟೆನ್ಸ್‌ನ GPU ಸಂಖ್ಯೆಯನ್ನು ಮುದ್ರಿಸಿ
+    # gpu_count_found True ಆಗಿದ್ದರೆ ಗಣನೆ ಘಟಕದ GPUಗಳ ಸಂಖ್ಯೆಯನ್ನು ಮುದ್ರಿಸಿ
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # gpu_count_found False ಆಗಿದ್ದರೆ, ValueError ಎತ್ತಿ
+        # gpu_count_found False ಇದ್ದರೆ ValueError ಅನ್ನು ಎತ್ತಿ
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
 
-## 4. Pick the dataset for fine-tuning the model
+## 4. ಮಾದರಿಗೆ ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಗೆ ಡೇಟಾಸೆಟ್ ಆರಿಸಿ
 
-1. We use the ultrachat_200k dataset. The dataset has four splits, suitable for Supervised fine-tuning (sft).
-Generation ranking (gen). The number of examples per split is shown as follows:
+1. ನಾವು ultrachat_200k ಡೇಟಾಸೆಟ್ ಬಳಸುತ್ತೇವೆ. ಡೇಟಾಸೆಟ್ನು ನಾಲ್ಕು ಹಂಚಿಕೆಗಳನ್ನು ಒಳಗೊಂಡಿದೆ, ಸಹಾಯಿತ ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಗಾಗಿ (Supervised fine-tuning - sft) ಯೋಗ್ಯವಾಗಿವೆ.
+ಉತ್ಪಾದನಾ ಮೌಲ್ಯಮಾನ (generation ranking - gen). ಪ್ರತಿ ಹಂಚಿಕೆಗೆ ಉದಾಹರಣೆಗಳ ಸಂಖ್ಯೆ ಕೆಳಗಿನಂತಿದೆ:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. The next few cells show basic data preparation for fine tuning:
+1. ಮುಂದಿನ ಕೆಲವು ಸೆಲ್‌ಗಳು ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆಗಾಗಿ ಮೂಲಭೂತ ಡೇಟಾ ತಯಾರಿಕೆಯನ್ನು ತೋರಿಸುತ್ತವೆ:
 
-### Visualize some data rows
+### ಕೆಲವು ಡೇಟಾ ಸಾಲುಗಳನ್ನು ದೃಶ್ಯೀಕರಿಸಿ
 
-We want this sample to run quickly, so save train_sft, test_sft files containing 5% of the already trimmed rows. This means the fine tuned model will have lower accuracy, hence it should not be put to real-world use.
-The download-dataset.py is used to download the ultrachat_200k dataset and transform the dataset into finetune pipeline component consumable format. Also as the dataset is large, hence we here have only part of the dataset.
+ನಾವು ಈ ಮಾದರಿಯನ್ನು ಬೇಗನೆ ನಿರ್ವಹಿಸಲು ಆಶಿಸುತ್ತಿದ್ದೇವೆ, ಆದ್ದರಿಂದ train_sft, test_sft ಫೈಲ್‌ಗಳಲ್ಲಿ ಪೂರ್ವತಿದ್ದುಗೊಳಿಸಿದ ಸಾಲುಗಳ 5% ಉಳಿಸಿಕೊಂಡಿದ್ದೇವೆ. ಇದರಿಂದ ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸಿದ ಮಾದರಿ ಕಡಿಮೆ ನಿಖರತೆ ಹೊಂದಿದ್ದು, ಅದನ್ನು ಗಣನೀಯ ಸಮಯದಲ್ಲಿ ಬಳಸಬಾರದು.
+download-dataset.py ಸ್ಕ್ರಿಪ್ಟ್ ultrachat_200k ಡೇಟಾಸೆಟ್ ಅನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಿ ಅದನ್ನು ಸೂಕ್ಷ್ಮ ಮರುಚಲಿಸುವಿಕೆ ಪೈಪ್ಲೈನ್ ಘಟಕ ಬಳಕೆಗೂ ಸೂಕ್ತ ರೀತಿಯಲ್ಲಿ ಪರಿವರ್ತಿಸುತ್ತದೆ. ಡೇಟಾಸೆಟ್ನು ದೊಡ್ಡದಾಗಿ ಇದೆ ಆದ್ದರಿಂದ ಇಲ್ಲಿ ಅದರ ಒಂದು ಭಾಗ ಮಾತ್ರ ಹೊಂದಿಸಲಾಗಿದೆ.
 
-1. Running the below script only downloads 5% of the data. This can be increased by changing dataset_split_pc parameter to desired percenetage.
+1. ಕೆಳಗಿನ ಸ್ಕ್ರಿಪ್ಟ್ 5% ಡೇಟಾ ಡೌನ್ಲೋಡ್ ಮಾತ್ರ ಮಾಡಲು ಬಳಸಲಾಗುತ್ತದೆ. dataset_split_pc ಪರಾಮೀಟರ್ ಬದಲಿಸಿ ಈ ಪ್ರಮಾಣವನ್ನು ಹೆಚ್ಚಿಸಬಹುದು.
 
-    > [!NOTE]
-    > Some language models have different language codes and hence the column names in the dataset should reflect the same.
+> [!NOTE]
+> ಕೆಲವು ಭಾಷಾ ಮಾದರಿಗಳಿಗೆ ವಿಭಿನ್ನ ಭಾಷಾ ಕೋಡ್‌ಗಳಿವೆ ಆದ್ದರಿಂದ ಡೇಟಾಸೆಟ್‌ನ ಕಾಲಮ್ ಹೆಸರಿಗಳು ಅದಕ್ಕನುಗುಣವಾಗಿ ಇರುವುದಕ್ಕೆ ನೋಡಿಕೊಳ್ಳಿ.
 
-1. Here is an example of how the data should look like
-The chat-completion dataset is stored in parquet format with each entry using the following schema:
+1. ಡೇಟಾ ಹೀಗೆ ಕಾಣಬೇಕು ಎಂಬ ಉದಾಹರಣೆ ಇಲ್ಲಿದೆ
+ಚಾಟ್-ಪೂರ್ಣತೆ ಡೇಟಾಸೆಟ್ parquet ಸ್ವರೂಪದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ ಮತ್ತು ಪ್ರತಿಯೊಂದು ದಾಖಲೆಯು ಕೆಳಗಿನ ವಿನ್ಯಾಸವನ್ನು ಹೊಂದಿದೆ:
 
-    - This is a JSON (JavaScript Object Notation) document, which is a popular data interchange format. It's not executable code, but a way to store and transport data. Here's a breakdown of its structure:
+    - ಇದು JSON (JavaScript Object Notation) ಡಾಕ್ಯುಮೆಂಟ್, ಇದು ಜನಪ್ರಿಯ ಡೇಟಾ ವಿನಿಮಯ ಸ್ವರೂಪವಾಗಿದೆ. ಇದು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಕೋಡ್ ಅಲ್ಲ, ಆದರೆ ಡೇಟಾ ಸಂಗ್ರಹ ಮತ್ತು ಸಾಗಿಸಲು ವಿಧಾನ.
 
-    - "prompt": This key holds a string value that represents a task or question posed to an AI assistant.
+    - "prompt": ಈ ಕುಂಜಿಯು AI ಸಹಾಯಕರಿಗೆ ನೀಡಿರುವ ಕಾರ್ಯ ಅಥವಾ ಪ್ರಶ್ನೆಯ ಸರಣಿಯನ್ನು ಹೊಂದಿದೆ.
 
-    - "messages": This key holds an array of objects. Each object represents a message in a conversation between a user and an AI assistant. Each message object has two keys:
+    - "messages": ಈ ಕುಂಜಿಯು ವಸ್ತುಗಳ ಸರಣಿಯನ್ನು ಹೊಂದಿದ್ದು, ಪ್ರತಿ ವಸ್ತು ಬಳಕೆದಾರನ ಮತ್ತು AI ಸಹಾಯಕರ ನಡುವಿನ ಸಂವಾದದ ಸಂದೇಶವಾಗಿದೆ. ಪ್ರತಿ ಸಂದೇಶ ವಸ್ತು ಎರಡು ಕೀಲಿಗಳನ್ನು ಹೊಂದಿದೆ:
 
-    - "content": This key holds a string value that represents the content of the message.
-    - "role": This key holds a string value that represents the role of the entity that sent the message. It can be either "user" or "assistant".
-    - "prompt_id": This key holds a string value that represents a unique identifier for the prompt.
+    - "content": ಈ ಕೀಲ್ ಸಂದೇಶದ ವಿಷಯವನ್ನು ಹೊಂದಿದೆ.
+    - "role": ಈ ಕೀಲ್ ಸಂದೇಶವನ್ನು ರವಾನಿಸಿದ ಘಟಕದ ಪಾತ್ರವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಇದು "user" ಅಥವಾ "assistant" ಆಗಿರಬಹುದು.
+    - "prompt_id": ಈ ಕೀಲ್ ಪ್ರಾಂಪ್ಟ್ ಗೆ ವಿಶಿಷ್ಟ ಗುರುತಿನ ಸಂಖ್ಯೆಯನ್ನು ಹೊಂದಿದೆ.
 
-1. In this specific JSON document, a conversation is represented where a user asks an AI assistant to create a protagonist for a dystopian story. The assistant responds, and the user then asks for more details. The assistant agrees to provide more details. The entire conversation is associated with a specific prompt id.
+1. ಈ ವಿಶೇಷ JSON ಡಾಕ್ಯುಮೆಂಟ್‌ನಲ್ಲಿ, ಬಳಕೆದಾರನು dystopian ಕಥೆಯ ನಾಯಕ ಚಲನಚಿತ್ರ ನಿರ್ಮಿಸಲು AI ಸಹಾಯಕನನ್ನು ಕೇಳುತ್ತಾನೆ. ಸಹಾಯಕನು ಪ್ರತಿಕ್ರಿಯೆ ನೀಡುತ್ತಾನೆ, ನಂತರ ಬಳಕೆದಾರ ಹೆಚ್ಚಿನ ವಿವರಗಳನ್ನು ಕೇಳುತ್ತಾನೆ. ಸಹಾಯಕನು ಅವುಗಳನ್ನು ನೀಡಲು ಒಪ್ಪಿಕೊಳ್ಳುತ್ತಾನೆ. ಸಂಪೂರ್ಣ ಸಂವಾದವು ನಿರ್ದಿಷ್ಟ ಪ್ರಾಂಪ್ಟ್ ಐಡಿ ಗೆ ಸಂಬಂಧಿಸಿದೆ.
 
     ```python
     {
@@ -335,104 +335,108 @@ The chat-completion dataset is stored in parquet format with each entry using th
     }
     ```
 
-### Download Data
+### ಡೇಟಾ ಡೌನ್ಲೋಡ್ ಮಾಡಿ
 
-1. This Python script is used to download a dataset using a helper script named download-dataset.py. Here's a breakdown of what it does:
+1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ download-dataset.py ಎಂಬ ಸಹಾಯ ಕೋಡ್ ಮೂಲಕ ಡೇಟಾಸೆಟ್ ಡೌನ್ಲೋಡ್ ಮಾಡಲು ಬಳಸಲಾಗುತ್ತಿದೆ. ಇದರ ವಿವರಣೆ:
 
-    - It imports the os module, which provides a portable way of using operating system dependent functionality.
+    - ಇದು os ಮಡ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ, ಇದು ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್ ಅವಲಂಬಿತ ಕಾರ್ಯಗಳನ್ನು ಉಪಯೋಗಿಸಲು.
 
-    - It uses the os.system function to run the download-dataset.py script in the shell with specific command-line arguments. The arguments specify the dataset to download (HuggingFaceH4/ultrachat_200k), the directory to download it to (ultrachat_200k_dataset), and the percentage of the dataset to split (5). The os.system function returns the exit status of the command it executed; this status is stored in the exit_status variable.
+    - os.system() ಮೂಲಕ download-dataset.py ಕಮಾಂಡ್ ಡೌನ್ಲೋಡ್ ಮಾಡಲು, ಸೂಚಿಸಿರುವ dataset HuggingFaceH4/ultrachat_200k, ಡೌನ್ಲೋಡ್ ಡೈರೆಕ್ಟರಿ ultrachat_200k_dataset ಮತ್ತು ವಿಭಾಗದ ಪ್ರಮಾಣ 5% ಒದಗಿಸುತ್ತದೆ. exit_status ತಿರುಗಿಸಿ, ಇದು ಕಮಾಂಡ್ ಮೂಲಕ ಪೂರ್ಣಗೊಂಡ ಸ್ಥಿತಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ.
 
-    - It checks if exit_status is not 0. In Unix-like operating systems, an exit status of 0 usually indicates that a command has succeeded, while any other number indicates an error. If exit_status is not 0, it raises an Exception with a message indicating that there was an error downloading the dataset.
+    - exit_status 0 ಅಲ್ಲದಿದ್ದರೆ, ಅರ್ಥಾತ್ ಕಮಾಂಡ್ ವಿಫಲವಾದರೆ, Exception ಎಬ್ಬಿಸುತ್ತದೆ "ಡೇಟಾಸೆಟ್ ಡೌನ್ಲೋಡ್‌ನಲ್ಲಿ ದೋಷ ನಡೆದಿದೆ" ಎಂದಾಗ.
 
-    - In summary, this script is running a command to download a dataset using a helper script, and it raises an exception if the command fails.
-    
+    - ಸಾರಾಂಶ: ಸಹಾಯ ಕೋಡ್ ಮೂಲಕ ಡೇಟಾಸೆಟ್ ಡೌನ್ಲೋಡ್ ಮಾಡುವ ಕಮಾಂಡ್ ಅನ್ನು ನಡೆಸಿ, ವಿಫಲವಾದರೆ ಅಪವಾದ ಎತ್ತುತ್ತದೆ.
+
     ```python
-    # ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್ ಅವಲಂಬಿತ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಬಳಸಲು ಮಾರ್ಗವನ್ನು ಒದಗಿಸುವ os ಮಾಡ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡಿ
+    # ಕಾರ್ಯಾಚರಣಾ ವ್ಯವಸ್ಥೆಯ ಅವಲಂಬಿತ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಬಳಸುವ ವಿಧಾನವನ್ನು ಒದಗಿಸುವ os ಮೋಡ್ಯೂಲ್ ಅನ್ನು ಆಮದುಮಾಡಿ
     import os
     
-    # ವಿಶೇಷ ಕಮಾಂಡ್‌-ಲೈನ್ ಆರ್ಗ್ಯುಮೆಂಟ್‌ಗಳೊಂದಿಗೆ ಶೆಲ್‌ನಲ್ಲಿ download-dataset.py ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ಚಲಿಸಲು os.system ಫಂಕ್ಷನ್ ಅನ್ನು ಬಳಸಿ
-    # ಆರ್ಗ್ಯುಮೆಂಟ್‌ಗಳು ಡೌನ್‌ಲೋಡ್ ಪಡೆಯಬೇಕಾದ ಡೇಟಾಸೆಟ್ ಅನ್ನು ಸೂಚಿಸುತ್ತವೆ (HuggingFaceH4/ultrachat_200k), ಅದನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಬೇಕಾದ ಡೈರೆಕ್ಟರಿ (ultrachat_200k_dataset), ಮತ್ತು ಡೇಟಾಸೆಟ್ ಅನ್ನು ವಿಭಜಿಸುವ ಶೇಕಡಾವಾರು (5)
-    # os.system ಫಂಕ್ಷನ್ ಅದು ನಿರ್ವಹಿಸಿದ ಕಮಾಂಡ್‌ನ ನಿರ್ಗಮನ ಸ್ಥಿತಿಯನ್ನು ಹಿಂತಿರುಗಿಸುತ್ತದೆ; ಈ ಸ್ಥಿತಿ exit_status ಚರದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ
+    # ನಿರ್ದಿಷ್ಟ ಕಮಾಂಡ್-ಲೈನ್_ARGUMENTS_ಗಳೊಂದಿಗೆ ಶೆಲ್‌ನಲ್ಲಿ download-dataset.py ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ಓಡಿಸಲು os.system ಫಂಕ್ಷನ್ ಅನ್ನು ಬಳಸಿ
+    # ಆರ್ಗ್ಯುಮೆಂಟ್‌ಗಳು ಡೌನ್‌ಲೋಡ್ ಮಾಡಬೇಕಾದ ಡೇಟಾಸೆಟ್ (HuggingFaceH4/ultrachat_200k), ಅದನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡುವ ಡೈರೆಕ್ಟರಿ (ultrachat_200k_dataset), ಮತ್ತು ಡೇಟಾಸೆಟ್‌ನ ಶೇಕಡಾವಾರು ವಿಭಜನೆ (5) ಅನ್ನು ಸೂಚಿಸುತ್ತವೆ
+    # os.system ಫಂಕ್ಷನ್ ಆದೇಶವನ್ನು ನಿರ್ವಹಿಸಿದ ನಂತರ ಆದಿಷ್ಟ ಸ್ಥಿತಿಯನ್ನು ಹಿಂತಿರುಗಿಸುತ್ತದೆ; ಈ ಸ್ಥಿತಿಯನ್ನು exit_status ಸ್ಥಿರಾಂಕದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
-    # exit_status 0 ಅಲ್ಲವೆಂದು ಪರಿಶೀಲಿಸಿ
-    # Unix-ಸಮಾನ ಆಪರೇಟಿಂಗ್ ಸಿಸ್ಟಮ್‌ಗಳಲ್ಲಿ, ನಿರ್ಗಮನ ಸ್ಥಿತಿ 0 ಸಾಮಾನ್ಯವಾಗಿ ಆ ಕಮಾಂಡ್ ಯಶಸ್ವಿಯಾಗಿದೆ ಎಂಬುದನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಯಾವುದೇ ಬೇರೆ ಸಂಖ್ಯೆ ದೋಷವನ್ನು ಸೂಚಿಸುತ್ತದೆ
-    # exit_status 0 ಆಗಿಲ್ಲದಿದ್ದರೆ, ಡೇಟಾಸೆಟ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡುವಾಗ ದೋಷವ suspensión ಎಂಬ ಸಂದೇಶದೊಂದಿಗೆ Exception ಅನ್ನು ಎಸೆಯಿರಿ
+    # exit_status 0 ಅಲ್ಲದೆ ಇರುವುದನ್ನು ಪರಿಶೀಲಿಸಿ
+    # Unix ರೀತಿ ಕಾರ್ಯಾಚರಣಾ ವ್ಯವಸ್ಥೆಗಳಲ್ಲಿ, 0 ಮೌಲ್ಯವು ಒಂದು ಆದೇಶ ಯಶಸ್ವಿಯಾಗಿದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ, ಮತ್ತು ಯಾವುದಾದರೂ ಇತರ ಸಂಖ್ಯೆ ದೋಷವೊಂದು ಕಂಡುಬಂದಿದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ
+    # exit_status 0 ಅಲ್ಲದಿದ್ದರೆ, ಡೇಟಾಸೆಟ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡುವಾಗ ದೋಷವಿದೆ ಎಂದು ಸೂಚಿಸುವ ಸಂದೇಶದೊಂದಿಗೆ Exception ಅನ್ನು ಎತ್ತಿ
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
 
-### Loading Data into a DataFrame
+### ಡೇಟಾ ಅನ್ನು DataFrame ಗೆ ಲೋಡ್ ಮಾಡುವುದು
 
-1. This Python script is loading a JSON Lines file into a pandas DataFrame and displaying the first 5 rows. Here's a breakdown of what it does:
+1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ JSON Lines ಫೈಲ್ ಅನ್ನು pandas DataFrame ಗೆ ಲೋಡ್ ಮಾಡುತ್ತಿದೆ ಮತ್ತು ಮೊದಲ 5 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ. ವಿವರಣೆ:
 
-    - It imports the pandas library, which is a powerful data manipulation and analysis library.
+    - pandas ಗ್ರಂಥಾಲಯವನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ, ಇದು ಶಕ್ತಿಶಾಲಿ ಡೇಟಾ ಮಾನಿಪ್ಯುಲೇಶನ್ ಮತ್ತು ವಿಶ್ಲೇಷಣೆ ಗ್ರಂಥಾಲಯ.
 
-    - It sets the maximum column width for pandas' display options to 0. This means that the full text of each column will be displayed without truncation when the DataFrame is printed.
-    - ಇದು pd.read_json ಫಂಕ್ಷನ್ ಅನ್ನು ಬಳಸಿಕೊಂಡು ultrachat_200k_dataset ಡೈರೆಕ್ಟರಿಯಲ್ಲಿರುವ train_sft.jsonl ಫೈಲ್ ಅನ್ನು DataFrame ಗೆ ಲೋಡ್ ಮಾಡುತ್ತದೆ. lines=True ಆರ್ಥುಗುಮೆಂಟ್ ಫೈಲ್ JSON Lines ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ ಇದೆ ಎಂಬುದನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅಂದರೆ ಪ್ರತಿ ಸಾಲು ಪ್ರತ್ಯೇಕ JSON ಆಬ್ಜೆಕ್ಟ್ ಆಗಿದೆ.
+    - pandas ಪ್ರದರ್ಶನ ಆಯ್ಕೆಯಲ್ಲಿ ಗರಿಷ್ಠ ಕಾಲಮ್ ಅಗಲವನ್ನು 0ಕ್ಕೆ ಸಿದ್ಧಪಡಿಸುತ್ತದೆ. ಅಂದರೆ DataFrame ಮುದ್ರಿಸುವಾಗ ಪ್ರತಿಯೊಂದು ಕಾಲಮ್‌ನ ಸಂಪೂರ್ಣ ಪಠ್ಯವನ್ನು ಕಡಿತಗೊಳಿಸದೆ ತೋರಿಸುತ್ತದೆ.
+    - ಇದು pd.read_json ಫಂಕ್ಷನ್ ಬಳಸಿಕೊಂಡು ultrachat_200k_dataset ಡೈರೆಕ್ಟರಿಯ train_sft.jsonl ಫೈಲ್ ಅನ್ನು DataFrame ಆಗಿ ಲೋಡ್ ಮಾಡುತ್ತದೆ. lines=True ಆರ್ಗುಮೆಂಟ್ ಫೈಲ್ JSON Lines ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ ಇದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ, ಅಲ್ಲಿ ಪ್ರತಿಯೊಂದು ಸಾಲು ಪ್ರತ್ಯೇಕ JSON ಆಬ್ಜೆಕ್ಟ್ ಆಗಿದೆ.
 
-    - ಇದು head ಮೆಥಡ್ ಅನ್ನು ಬಳಸಿಕೊಂಡು DataFrame ನ ಮೊದಲ 5 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ. DataFrame ನಲ್ಲಿ 5 ಕಿಂತ ಕಡಿಮೆ ಸಾಲುಗಳಿದ್ದರೆ, ಇದು ಎಲ್ಲಾ ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ.
+    - ಇದು head ಮೆತ್ತೋಡ್ ಬಳಸಿಕೊಂಡು DataFrame ನ ಮೊದಲ 5 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ. DataFrame ನಲ್ಲಿ 5 ಕ್ಕಿಂತ ಕಡಿಮೆ ಸಾಲುಗಳಿದ್ದರೆ, ಎಲ್ಲವನ್ನೂ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ.
 
-    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ಒಂದು JSON Lines ಫೈಲ್ ಅನ್ನು DataFrame ಗೆ ಲೋಡ್ ಮಾಡಿ ಸಂಪೂರ್ಣ ಕಾಲಮ್ ಪಠ್ಯದೊಂದಿಗೆ ಮೊದಲ 5 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತಿದೆ.
+    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ JSON Lines ಫೈಲ್ ಅನ್ನು DataFrame ಆಗಿ ಲೋಡ್ ಮಾಡಿ ಮುಂಚಿನ 5 ಸಾಲುಗಳನ್ನು ಸಂಪೂರ್ಣ ಕಾಲಮ್ ಪಠ್ಯದೊಂದಿಗೆ ಪ್ರದರ್ಶಿಸುತ್ತದೆ.
     
     ```python
-    # pandas ಗ್ರಂಥಾಲಯವನ್ನು ಆಮದು ಮಾಡಿ, ಇದು ಡೇಟಾದ ತಿದ್ದುಪಡಿ ಮತ್ತು ವಿಶ್ಲೇಷಣೆಗೆ ಶಕ್ತಿಶಾಲಿ ಗ್ರಂಥಾಲಯ.
+    # ಪಾಂಡಾಸ್ ಲೈബ്രರಿಯನ್ನು ಆಮದುಮಾಡಿ, ಇದು ಶಕ್ತಿಯಾದ ದತ್ತಾಂಶ ಕ್ರಮಗತ ಮಾಡು ಮತ್ತು ವಿಶ್ಲೇಷಣೆ ಲೈಬ್ರರಿ
     import pandas as pd
     
-    # pandas ನ ಪ್ರದರ್ಶನ ಆಯ್ಕೆಗಳಲ್ಲಿ ಕಾಲಮ್ ಗರಿಷ್ಠ ಅಗಲವನ್ನು 0 ಗೆ ಹೊಂದಿಸಿ
-    # DataFrame ಅನ್ನು ಮುದ್ರಿಸುವಾಗ ಪ್ರತಿ ಕಾಲಮ್‌ನ ಪೂರ್ಣ ಪಠ್ಯವು ಕತ್ತರಿಸದೆ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ
+    # pandas ಪ್ರದರ್ಶನ ಆಯ್ಕೆಗಳಿಗಾಗಿ ಗರಿಷ್ಟ ಕಾಲಮ್ ಅಗಲವನ್ನು 0 గా ಸೆಟ್ ಮಾಡಿ
+    # ಇದರ ಅರ್ಥ, DataFrame ಮುದ್ರಣವಾದಾಗ ಪ್ರತಿಯೊಂದು ಕಾಲಮ್ ಸಂಪೂರ್ಣ ಪಠ್ಯವನ್ನು ಕಡಿತವಿಲ್ಲದೆ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ
     pd.set_option("display.max_colwidth", 0)
     
-    # pd.read_json ಕಾರ್ಯವನ್ನು ಬಳಸಿ ultrachat_200k_dataset ಡೈರೆಕ್ಟರಿಯಲ್ಲಿರುವ train_sft.jsonl ಫೈಲೆಯನ್ನು DataFrame ಗೆ ಲೋಡ್ ಮಾಡಿ
-    # lines=True ಆರ್ಗ್ಯುಮೆಂಟ್ ಫೈಲ್ JSON Lines ಸ್ವರೂಪದಲ್ಲಿದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ, ಅಲ್ಲಿ ಪ್ರತಿ ಸಾಲು ಪ್ರತ್ಯೇಕ JSON ವಸ್ತು ಆಗಿದೆ
+    # ultrachat_200k_dataset ಡೈರೆಕ್ಟರಿಯಲ್ಲಿರುವ train_sft.jsonl ಫೈಲನ್ನು DataFrame ಗೆ ಲೋಡ್ ಮಾಡಲು pd.read_json ಫಂಕ್ಷನ್ ಅನ್ನು ಬಳಸಿ
+    # lines=True ಆರ್ಗ್ಯೂಮೆಂಟ್ ಫೈಲ್ JSON Lines ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ ಇದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ, ಅಲ್ಲಿ ಪ್ರತಿಯೊಂದು ಸಾಲು ಬೇರೆ JSON ವಸ್ತುವಾಗಿರುತ್ತದೆ
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # DataFrame ನ ಮೊದಲ 5 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸಲು head ವಿಧಾನವನ್ನು ಬಳಸಿ
-    # DataFrame ಗೆ 5 ಕ್ಕಿಂತ ಕಡಿಮೆ ಸಾಲುಗಳು ಇದ್ದರೆ, ಅವೆಲ್ಲವನ್ನೂ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ
+    # DataFrame ಮೊದಲ 5 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸಲು head ಮೆಥಡ್ ಅನ್ನು ಬಳಸಿ
+    # DataFrame ನಲ್ಲಿ 5 ಕ್ಕಿಂತ ಕಡಿಮೆ ಸಾಲುಗಳಿದ್ದರೆ, ಎಲ್ಲಾ ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ
     df.head()
     ```
 
-## 5. ಮಾದರಿ ಮತ್ತು ಡೇಟಾಗಳನ್ನು ಇನ್‌ಪುಟ್‌ಗಳಾಗಿ ಬಳಸಿಕೊಂಡು ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಕೆಲಸವನ್ನು ಸಲ್ಲಿಸಿ
+## 5. ಮಾದರಿ ಮತ್ತು ಡೇಟಾವನ್ನು ಇನ್‌ಪುಟ್ ಆಗಿ ಬಳಸಿಕೊಂಡು ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕೆಲಸವನ್ನು ಸಲ್ಲಿಸಿ
 
-Create the job that uses the chat-completion pipeline component. Learn more about all the parameters supported for fine tuning.
+ಚಾಟ್-ಡಿಪ್ಲೀಷನ್ ಪೈಪ್ಲೈನ್ ಕಂಪೋನೆಂಟ್ ಬಳಸುವ ಕೆಲಸವನ್ನು ರಚಿಸಿ. ಫೈನ್ ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬೆಂಬಲಿತ ಎಲ್ಲಾ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಬಗ್ಗೆ ತಿಳಿದುಕೊಳ್ಳಿ.
 
-### Define finetune parameters
+### ಫೈನ್ ಟ್ಯೂನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ
 
-1. Finetune parameters can be grouped into 2 categories - training parameters, optimization parameters
+1. ಫೈನ್ ಟ್ಯೂನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು 2 ವರ್ಗಗಳಲ್ಲಿ ಗುಂಪು ಮಾಡಬಹುದು - ತರಬೇತಿ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು, ಆಪ್ಟಿಮೈಜೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು
 
-1. Training parameters define the training aspects such as -
+1. ತರಬೇತಿ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ತರಬೇತಿ ಅಂಶಗಳನ್ನು ವಿವರಿಸುತ್ತವೆ, ಉದಾ:
 
-    - ಬಳಸುವ ಆಪ್ಟಿಮೈಸರ್ ಮತ್ತು ಶೆಡ್ಯೂಲರ್
-    - ಫೈನ್‌ಟ್ಯೂನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ಬಳಸುವ ಮೆಟ್ರಿಕ್
-    - ತರಬೇತಿ ಸ್ಟೆಪ್‌ಗಳ ಸಂಖ್ಯೆ, ಬ್ಯಾಚ್ ಗಾತ್ರ ಇತ್ಯಾದಿ
-    - ಆಪ್ಟಿಮೈಜೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು GPU ಮೆಮೊರಿಯನ್ನು ಉಚಿತಗೊಳಿಸಲು ಮತ್ತು ಗಣನ ಸಂಪನ್ಮೂಲಗಳನ್ನು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ಬಳಸಲು ಸಹಾಯ ಮಾಡುತ್ತವು. 
+    - ಆಪ್ಟಿಮೈಜರ್, ಶೆಡ್ಯೂಲರ್ ಬಳಸುವುದು
+    - ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಪರಿಮಾಣವನ್ನು ಆಪ್ಟಿಮೈಜ್ ಮಾಡಲು ಮೆಟ್ರಿಕ್
+    - ತರಬೇತಿ ಹೆಜ್ಜೆಗಳ ಸಂಖ್ಯೆ, ಬ್ಯಾಚ್ ಗಾತ್ರ ಮತ್ತು ಇತರೆ
+    - ಆಪ್ಟಿಮೈಸೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು GPU ಮೆಮೊರಿಗೆ ಆಪ್ಟಿಮೈಸ್ ಮಾಡಲು ಮತ್ತು ಕಂಪ್ಯೂಟ್ ಸಂಪನ್ಮೂಲಗಳನ್ನು ಪರಿಣಾಮವಾಗಿ ಬಳಸಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.
 
-1. ಕೆಳಗಿರುವ ಕೆಲವು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಈ ವರ್ಗಕ್ಕೆ ಸೇರಿವೆ. ಆಪ್ಟಿಮೈಜೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಪ್ರತಿಯೊಂದು ಮಾದರಿಗಾಗಿ ಬೇರೆ ಬೇರೆ ಆಗಿದ್ದು, ಈ ವ್ಯತ್ಯಾಸಗಳನ್ನು ನಿರ್ವಹಿಸಲು ಮಾದರಿಯೊಂದಿಗೆ ಪ್ಯಾಕೇಜ್ ಆಗಿರುತ್ತವೆ.
+1. ಕೆಳಗಿನವು ಈ ವರ್ಗಕ್ಕೆ ಸೇರಿದ ಕೆಲವು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು. ಆಪ್ಟಿಮೈಸೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಪ್ರತಿ ಮಾದರಿಗೆ ವಿಭಿನ್ನವಾಗಿದ್ದು, ಆ ವಿಭೇದಗಳನ್ನು ನಿರ್ವಹಿಸಲು ಮಾದರಿ ಜೊತೆಗೆ ಪ್ಯಾಕೇಜ್ ಆಗಿರುತ್ತವೆ.
 
-    - deepspeed ಮತ್ತು LoRA ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ
-    - ಮಿಕ್ಸ್ಡ್ ಪ್ರೆಸಿಷನ್ ತರಬೇತಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ
-    - ಮಲ್ಟಿ-ನೋಡ್ ತರಬೇತಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ
+    - ಡೀಪ್ಸ್ಪೀಡ್ ಮತ್ತು ಲೋರಾ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು
+    - ಮಿಶ್ರ ಪ್ರಮಾಣಿತ ತರಬೇತಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು
+    - ಬಹುನೋಡ್ ತರಬೇತಿಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು
 
 > [!NOTE]
-> ನಿರೀಕ್ಷಿತ ಫೈನ್‌ಟ್ಯೂನಿಂಗ್ ಅಲೈನ್‌ಮೆಂಟ್ ನಷ್ಟವನ್ನೋ ಅಥವಾ ಭೀಕರ ಮರೆತದುಕೊಳ್ಳುವಿಕೆಯನ್ನು (catastrophic forgetting) ಉಂಟುಮಾಡಬಹುದು. ಈ ಸಮಸ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸುವುದು ಮತ್ತು ಫೈನ್‌ಟ್ಯೂನ್ ಮಾಡಿದ ನಂತರ ಒಂದು ಅಲೈನ್‌ಮೆಂಟ್ ಹಂತವನ್ನು ನಡೆಸುವದು ನಾವು ಶಿಫಾರಸು ಮಾಡುತ್ತಿರುವುದು.
+> ಸುಪರ್ವೈಸ್ಡ್ ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಆಲೈನ್‌ಮೆಂಟ್ ಕೆಡವಬಹುದು ಅಥವಾ ಭೀಕರ ಮರೆತಿಹೋಗುವಿಕೆ ಆಗಬಹುದು. ಈ ಸಮಸ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ನಂತರ ಅಲೈನ್ಮೆಂಟ್ ಹಂತವನ್ನು ನಿರ್ವಹಿಸಲು ನಾವು ಶಿಫಾರಸು ಮಾಡುತ್ತೇವೆ.
 
-### Fine Tuning Parameters
+### ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಮಾದರಿಯನ್ನು ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಲು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸೆಟ್ ಮಾಡುತ್ತಿದೆ. ಇದರ ಕಾರ್ಯಗಳ ವಿವರಣೆ ಕೆಳಗಿದೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಯಂತ್ರ ಅಧ್ಯಯನ ಮಾದರಿಯನ್ನು ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಮಾಡುವುದಕ್ಕೆ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸುತ್ತಿದೆ. ಇದು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬ ವ್ಯಾಖ್ಯಾನ ಇಲ್ಲಿದೆ:
 
-    - ಇದು ಡಿಫಾಲ್ಟ್ ಟ್ರೈನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸೆಟ್ ಮಾಡುತ್ತದೆ, ಉದಾಹರಣೆಗೆ ತರಬೇತಿ ಎಪೋಕ್‌ಗಳ ಸಂಖ್ಯೆ, ತರಬೇತಿ ಮತ್ತು ಮೌಲ್ಯಮಾಪನಕ್ಕಾಗಿ ಬ್ಯಾಚ್ ಗಾತ್ರಗಳು, learning rate, ಮತ್ತು learning rate scheduler ಪ್ರಕಾರ.
-    - ಇದು ಡಿಫಾಲ್ಟ್ ಆಪ್ಟಿಮೈಸೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸೆಟ್ ಮಾಡುತ್ತದೆ, ಉದಾಹರಣೆಗೆ Layer-wise Relevance Propagation (LoRa) ಮತ್ತು DeepSpeed ಅನುಪ್ರಯೋಗದ ವಿವರಗಳು, ಹಾಗೂ DeepSpeed ಹಂತ.
-    - ಇದು training ಮತ್ತು optimization ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು finetune_parameters ಎಂಬ ಒಂದೇ ಡಿಕ್ಷನರಿಯಲ್ಲಿ ಸಂಯೋಜಿಸುತ್ತದೆ.
-    - ಇದು foundation_model に модел್-ವಿಶೇಷ ಡಿಫಾಲ್ಟ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳಿದ್ದರೆ ಅವುಗಳನ್ನು ಪರಿಶೀಲಿಸುತ್ತದೆ. ಇದ್ದರೆ, ಅದು ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ ಈ ಮಾದರಿ‑ವಿಶೇಷ ಡಿಫಾಲ್ಟ್‌ಗಳೊಂದಿಗೆ finetune_parameters ಡಿಕ್ಷನರಿಯನ್ನು ಅಪ್ಡೇಟ್ ಮಾಡುತ್ತದೆ. ast.literal_eval ಫಂಕ್ಷನ್ ಅನ್ನು ಮಾದರಿ-ವಿಶೇಷ ಡಿಫಾಲ್ಟ್‌ಗಳನ್ನು ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ Python ಡಿಕ್ಷನರಿಗೆ ಪರಿವರ್ತಿಸಲು ಬಳಸಲಾಗುತ್ತದೆ.
-    - ಇದು ರನ್‌ಗೆ ಬಳಸಲಾಗಲಿರುವ ಅಂತಿಮ ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಸೆಟ್ ಅನ್ನು ಪ್ರಿಂಟ್ ಮಾಡುತ್ತದೆ.
+    - ಇದು ತರಬೇತಿ ಎಪೋಕ್‌ಗಳ ಸಂಖ್ಯೆ, ತರಬೇತಿ ಮತ್ತು ಮೌಲ್ಯಮಾಪನ ಬ್ಯಾಚ್ ಗಾತ್ರಗಳು, ಕಲಿಕೆಯ ದರ ಮತ್ತು ಕಲಿಕೆ ದರ ಶೆಡ್ಯೂಲರ್ ಪ್ರಕಾರದಂತೆ ಡೀಫಾಲ್ಟ್ ತರಬೇತಿ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸೆಟ್ ಮಾಡುತ್ತದೆ.
 
-    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ಫೈನ್‑ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬೇಕಾದ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸೆಟ್ ಮಾಡಿ ಅವುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತಿದೆ ಮತ್ತು ಮಾದರಿ‑ವಿಶೇಷ ಡಿಫಾಲ್ಟ್‌ಗಳ ಮೂಲಕ ಡಿಫಾಲ್ಟ್‌ಗಳನ್ನು ಓವರ್‌ರೈಡ್ ಮಾಡುವ ಸಾಮರ್ಥ್ಯವಿದೆ.
+    - ಲೋರಾ ಮತ್ತು ಡೀಪ್‌ಸ್ಪೀಡ್ ಅನ್ವಯಿಸುವುದು ಮತ್ತು ಡೀಪ್‌ಸ್ಪೀಡ್ ಹಂತ ಇತ್ಯಾದಿಗಳನ್ನು ಒಳಗೊಂಡ ಡೀಫಾಲ್ಟ್ ಆಪ್ಟಿಮೈಸೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸೆಟ್ ಮಾಡುತ್ತದೆ.
+
+    - ತರಬೇತಿ ಮತ್ತು ಆಪ್ಟಿಮೈಸೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು finetune_parameters ಎಂಬ ಒಟ್ಟಾರೆ ಡಿಕ್ಷನರಿಗೆ ಸೇರಿಸುತ್ತದೆ.
+
+    - foundation_modelಗೆ ಯಾವುದೇ ಮಾದರಿ-ವಿಶಿಷ್ಟ ಡೀಫಾಲ್ಟ್ ಪರಿಸರಗಳು ಇದ್ದರೆ, ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ ಮತ್ತು finetune_parameters ಡಿಕ್ಷನರಿಯನ್ನು ಅವುಗಳಿಂದ ಅಪ್ಡೇಟ್ ಮಾಡುತ್ತದೆ. ast.literal_eval ಫಂಕ್ಷನ್ ಆ ಮಾದರಿ-ವಿಶಿಷ್ಟ ನೀವುಗಳನ್ನು ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ ಪೈಥಾನ್ ಡಿಕ್ಷನರಿಗೆ ಮಾರ್ಪಡಿಸಲು ಬಳಸಲಾಗುತ್ತದೆ.
+
+    - ಚಾಲನೆಗೆ ಬಳಸುವ ಅಂತಿಮ ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಮುದ್ರಿಸುತ್ತದೆ.
+
+    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ಯಂತ್ರ ಅಧ್ಯಯನ ಮಾದರಿಯನ್ನು ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಮಾಡಲು ಅಗತ್ಯವಾದ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸಿ ಪ್ರದರ್ಶಿಸುತ್ತದೆ, ಮತ್ತು ಡೀಫಾಲ್ಟ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಮಾದರಿ-ವಿಶಿಷ್ಟಗಳೊಂದಿಗೆ ಪರಿವರ್ತಿಸಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ.
 
     ```python
-    # ತರಬೇತಿ ಎಪೋಕ್‌ಗಳ ಸಂಖ್ಯೆ, ತರಬೇತಿ ಮತ್ತು ಮೌಲ್ಯಮಾಪನೆಗಾಗಿ ಬ್ಯಾಚ್ ಗಾತ್ರಗಳು, ಲರ್ನಿಂಗ್ ರೇಟ್ ಮತ್ತು ಲರ್ನಿಂಗ್ ರೇಟ್ ಶೆಡ್ಯೂಲರ್ ಪ್ರಕಾರವನ್ನು ಸೇರಿಸಿ ಡೀಫಾಲ್ಟ್ ತರಬೇತಿ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಹೊಂದಿಸಿ
+    # ತರಬೇತಿ ಯುಗಗಳು, ತರಬೇತಿ ಮತ್ತು ಮೌಲ್ಯಮಾಪನಕ್ಕಾಗಿ ಬ್ಯಾಚ್ ಗಾತ್ರಗಳು, ಕಲಿಕಾದರ, ಮತ್ತು ಕಲಿಕಾದರ ವೇಳಾಪಟ್ಟಿ ಪ್ರಕಾರದಂತಹ ಡಿಫಾಲ್ಟ್ ತರಬೇತಿ ಪ್ಯಾರಾಮೀಟರ್ ಗಳನ್ನು ಹೊಂದಿಸಿ
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -441,84 +445,84 @@ Create the job that uses the chat-completion pipeline component. Learn more abou
         lr_scheduler_type="cosine",
     )
     
-    # Layer-wise Relevance Propagation (LoRa) ಮತ್ತು DeepSpeed ಅನ್ನು ಅನ್ವಯಿಸಬೇಕೇ ಮತ್ತು DeepSpeed ಹಂತ ಏನು ಎಂಬುದನ್ನು ಸೇರಿದಂತೆ ಡೀಫಾಲ್ಟ್ ಆಪ್ಟಿಮೈಸೇಶನ್ پ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಹೊಂದಿಸಿ
+    # ಲೇಯರ್-ವೈಸ್ ರಿಲಿವೆನ್ಸ್ ಪ್ರಪಗೇಶನ್ (LoRa) ಮತ್ತು ಡೀಪ್ ಸ್ಪೀಡ್ ಅನ್ವಯಿಸಲು ಅಥವಾ ಬಳಸದಿರುವುದನ್ನು ಹಾಗೂ ಡೀಪ್ ಸ್ಪೀಡ್ ಹಂತವನ್ನು ಹೊಂದಿಸುವಂತಹ ಡಿಫಾಲ್ಟ್ ಆಪ್ಟಿಮೈಜೆಶನ್ ಪ್ಯಾರಾಮೀಟರ್ ಗಳನ್ನು ಹೊಂದಿಸಿ
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # ತರಬೇತಿ ಮತ್ತು ಆಪ್ಟಿಮೈಸೇಶನ್ ಪ್ಯಾರಾಮೀಟರ್ಗಳನ್ನು finetune_parameters ಎಂಬ ಒಂದು ಡಿಕ್ಷನರಿಯಲ್ಲಿ ಏಕೀಕರಿಸಿ
+    # ತರಬೇತಿ ಮತ್ತು ಆಪ್ಟಿಮೈಜೆಶನ್ ಪ್ಯಾರಾಮೀಟರ್ ಗಳನ್ನು finetune_parameters ಎಂಬ ಒಂದೇ ಡಿಕ್ಷನರಿಯಲ್ಲಿ ಸಂಯೋಜಿಸಿ
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # foundation_modelಗೆ ಯಾವುದೇ ಮಾದರಿ-ನಿರ್ದಿಷ್ಟ ಡೀಫಾಲ್ಟ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳಿವೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
-    # ಇದೆಯಾದರೆ, ಎಚ್ಚರಿಕೆಯ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ ಮತ್ತು ಆ ಮಾದರಿ-ನಿರ್ದಿಷ್ಟ ಡೀಫಾಲ್ಟ್‌ಗಳೊಂದಿಗೆ finetune_parameters ಡಿಕ್ಷನರಿಯನ್ನು ನವೀಕರಿಸಿ
-    # ಮಾದರಿ-ನಿರ್ದಿಷ್ಟ ಡೀಫಾಲ್ಟ್ಗಳನ್ನು ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ ಪೈಥಾನ್ ಡಿಕ್ಷನರಿಯಾಗಿಸಲು ast.literal_eval ಫಂಕ್ಷನ್ ಬಳಸಲಾಗುತ್ತದೆ
+    # ಫೌಂಡೇಷನ್ಮೋಡೆಲ್ ಗೆ ಯಾವುದೇ ಮಾದರಿ-ನಿರ್ದಿಷ್ಟ ಡಿಫಾಲ್ಟ್ ಪ್ಯಾರಾಮೀಟರ್ ಗಳಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+    # ಇದ್ದರೆ, ಎಚ್ಚರಿಕೆ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಿ ಮತ್ತು finetune_parameters ಡಿಕ್ಷನರಿಯನ್ನು ಈ ಮಾದರಿ-ನಿರ್ದಿಷ್ಟ ಡಿಫಾಲ್ಟ್ ಗಳಿಂದ ನವೀಕರಿಸಿ
+    # ast.literal_eval ಕಾರ್ಯವನ್ನು ಮಾದರಿ-ನಿರ್ದಿಷ್ಟ ಡಿಫಾಲ್ಟ್ ಗಳನ್ನು ಸ್ಟ್ರಿಂಗ್‍ನಿಂದ ಪೈಥಾನ್ ಡಿಕ್ಷನರಿಗೆ ಪರಿವರ್ತಿಸಲು ಬಳಸಲಾಗುತ್ತದೆ
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ಪೈಥಾನ್ ಡಿಕ್ಷನರಿಯಾಗೆ ಪರಿವರ್ತಿಸಿ
+            ast.literal_eval(  # ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ಪೈಥಾನ್ ಡಿಗ್ಗಿಸಿಕೊಂಡಿಕೆಗೆ ಪರಿವರ್ತಿಸಿ
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # ರನ್‌ಗೆ ಬಳಸಲಾಗುವ ಅಂತಿಮ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಸಂಪುಟವನ್ನು ಮುದ್ರಿಸಿ
+    # ರನ್ ಗೆ ಬಳಸಲಾಗುವ ಅಂತಿಮ ಫೈನ್ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್ ಗಳ ಉ ಸೇರಿಸಿ
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
     ```
 
-### Training Pipeline
+### ತರಬೇತಿ ಪೈಪ್ಲೈನ್
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ ಒಂದು ಮಷಿನ್ ಲರ್ನಿಂಗ್ ತರಬೇತಿ ಪೈಪ್‌ಲೈನ್‌ಗೆ ಪ್ರದರ್ಶನ ಹೆಸರು (display name) ರಚಿಸುವ ಫಂಕ್ಷನ್ ಅನ್ನು ಪರಿಭಾಷಿಸಿ, ನಂತರ ಆ ಫಂಕ್ಷನ್ ಅನ್ನು ಕರೆದು ಆ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ಮುದ್ರಿಸುತ್ತದೆ. ಇದರ ಕಾರ್ಯಗಳ ವಿವರಣೆ ಕೆಳಗಿದೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಯಂತ್ರ ಅಧ್ಯಯನ ತರಬೇತಿ ಪೈಪ್ಲೈನ್ಗಾಗಿ ಪ್ರದರ್ಶನಾ ಹೆಸರನ್ನು ರಚಿಸುವ ಫಂಕ್ಷನ್ ಅನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ, ನಂತರ ಆ ಫಂಕ್ಷನ್ ಅನ್ನು ಕರೆ ಮಾಡಿ ಮತ್ತು ಹೆಸರನ್ನು ಮುದ್ರಿಸುತ್ತದೆ. ಇದು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬ ವ್ಯಾಖ್ಯಾನ ಇಲ್ಲಿದೆ:
 
-1. get_pipeline_display_name ಫಂಕ್ಷನ್ ಅನ್ನು ನಿರ್ವಾಹಿಸಲಾಗಿದೆ. ಈ ಫಂಕ್ಷನ್ ತರಬೇತಿ ಪೈಪ್‌ಲೈನ್ ಸಂಬಂಧಿತ ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಆಧಾರದ ಮೇಲೆ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸುತ್ತದೆ.
+1. get_pipeline_display_name ಫಂಕ್ಷನ್ ನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಲಾಗಿದೆ. ಈ ಫಂಕ್ಷನ್ ತರಬೇತಿ ಪೈಪ್ಲೈನ್ ಸಂಬಂಧಿಸಿದ ಹಲವಾರು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಆಧಾರದ ಮೇಲೆ ಪ್ರದರ್ಶನಾ ಹೆಸರನ್ನು ಉತ್ಪಾದಿಸುತ್ತದೆ.
 
-1. ಫಂಕ್ಷನ್ ಒಳಗೆ, ಪ್ರತಿ-ಡಿವೈಸ್ ಬ್ಯಾಚ್ ಗಾತ್ರ, ಗ್ರೇಡಿಯಂಟ್ ಅಕ್ಮ್ಯುಲೇಶನ್ ಸ್ಟೆಪ್‌ಗಳ ಸಂಖ್ಯೆ, ಪ್ರತಿ ನೋಡ್ ಗೆ GPUಗಳ ಸಂಖ್ಯೆ ಮತ್ತು ಫೈನ್‑ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬಳಸಲಾದ ನೋಡ್‌ಗಳ ಸಂಖ್ಯೆಯನ್ನು ಗುಣಿಸಿ ಒಟ್ಟು ಬ್ಯಾಚ್ ಗಾತ್ರವನ್ನು ಲೆಕ್ಕಿಸುತ್ತದೆ.
+1. ಫಂಕ್ಷನ್ ಒಳಗೆ, ಪ್ರತಿ-ಡಿವೈಸ್ ಬ್ಯಾಚ್ ಗಾತ್ರ, ಗ್ರ್ಯಾಜುಯಂಟ್ ಅಕ್ಕ್ಯುಮ್ಯುಲೇಶನ್ ಸ್ಟೆಪ್ಸ್ ಸಂಖ್ಯೆ, ಪ್ರತಿ ನೋಡ್ GPUಗಳ ಸಂಖ್ಯೆ, ಫೈನ್ ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬಳಸಿದ ನೋಡ್‌ಗಳ ಸಂಖ್ಯೆ ಗುಣಿಸಲ್ಪಟ್ಟಿದ್ದು ಒಟ್ಟು ಬ್ಯಾಚ್ ಗಾತ್ರವನ್ನು ಲೆಕ್ಕಹಾಕುತ್ತದೆ.
 
-1. ಇದು learning rate scheduler ಪ್ರಕಾರ, DeepSpeed ಅನ್ವಯಿಸಲಾಯಿತೇ ಎಂಬುದು, DeepSpeed ಹಂತ, Layer-wise Relevance Propagation (LoRa) ಅನ್ವಯಿಸಲಾಯಿತೇ ಎಂಬುದು, ಉಳಿಸಬೇಕಾದ ಮಾದರಿ ಚೆಕ್‌ಪಾಯಿಂಟ್‌ಗಳ ಮಿತಿ, ಮತ್ತು ಗರಿಷ್ಠ ಕ್ರಮದ ಉದ್ದ (maximum sequence length) ಮುಂತಾದ ಇತರ ಬಾಹ್ಯ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಪಡೆದುತ್ತದೆ.
+1. ಕಲಿಕೆಯ ದರ ಶೆಡ್ಯೂಲರ್ ಪ್ರಕಾರ, ಡೀಪ್‌ಸ್ಪೀಡ್ ಅನ್ವಯಿತ 여부, ಡೀಪ್‌ಸ್ಪೀಡ್ ಹಂತ, ಲೋರಾ ಅನ್ವಯಿತ 여부, ಸಂಗ್ರಹಿಸಲು ಮಾದರಿ ಚೆಕ್‌ಪಾಯಿಂಟ್‌ಗಳ ಸಂಖ್ಯೆ ಮಿತಿಯು, ಮತ್ತು ಗರಿಷ್ಠ ಕ್ರಮದ ಉದ್ದವನ್ನು ಪಡೆದುಕೊಳ್ಳುತ್ತದೆ.
 
-1. ಇದು ಎಲ್ಲ ಈ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಹೈಫನ್‌ಗಳಿಂದ ವಿಭಜಿಸುವಂತೆ ಒಳಗೊಂಡಿರುವ ಒಂದು ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ನಿರ್ಮಿಸುತ್ತದೆ. DeepSpeed ಅಥವಾ LoRa ಅನ್ವಯಿಸಿದರೆ, ಸ್ಟ್ರಿಂಗ್‌ನಲ್ಲಿ "ds" ನಂತರ DeepSpeed ಹಂತವನ್ನು ಸೇರಿಸುವುದು ಅಥವಾ ಕ್ರಮವಾಗಿ "lora" ಅನ್ನು ಸೇರಿಸುವುದು ಕಂಡುಬರುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ ಕ್ರಮವಾಗಿ "nods" ಅಥವಾ "nolora" ಅನ್ನು ಸೇರಿಸಲಾಗುತ್ತದೆ.
+1. ಈ ಎಲ್ಲಾ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಹೈಫನ್‌ನಿಂದ ವಿಂಗಡಿಸಿದ ಸತ್ರINGSಾಗಿ ರಚಿಸುತ್ತದೆ. ಡೀಪ್‌ಸ್ಪೀಡ್ ಅಥವಾ ಲೋರಾ ಅನ್ವಯಿಸಿದರೆ, ಸ್ಟ್ರಿಂಗ್ ಟೈಪ್ "ds" ಜೊತೆಗೆ ಡೀಪ್‌ಸ್ಪೀಡ್ ಹಂತ ಅಥವಾ "lora" ಅನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ "nods" ಅಥವಾ "nolora" ಸೇರಿಸಲಾಗುತ್ತದೆ.
 
-1. ಫಂಕ್ಷನ್ ಈ ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ರಿಟರ್ನ್ ಮಾಡುತ್ತದೆ, ಇದು ತರಬೇತಿ ಪೈಪ್‌ಲೈನ್‌ಗೆ ಪ್ರದರ್ಶನ ಹೆಸರಿನಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.
+1. ಫಂಕ್ಷನ್ ಈ ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ಪರದಾನ ಮಾಡುತ್ತದೆ, ಇದು ತರಬೇತಿ ಪೈಪ್ಲೈನ್ಗೆ ಪ್ರದರ್ಶನಾ ಹೆಸರಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ.
 
-1. ಫಂಕ್ಷನ್ ನಿರ್ವಾಹನೆಯಾದ ನಂತರ, ಅದನ್ನು ಕರೆದು ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ನಂತರ ಮುದ್ರಿಸಲಾಗುತ್ತದೆ.
+1. ಫಂಕ್ಷನ್ ವ್ಯಾಖ್ಯಾನಾದ ನಂತರ, ಅದನ್ನು ಕರೆ ಮಾಡಿ ಪ್ರದರ್ಶನಾ ಹೆಸರನ್ನು ರಚಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಮುದ್ರಿಸಲಾಗುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ವಿವಿಧ ಪರಿಮಾಣಗಳ ಆಧಾರದ ಮೇಲೆ ಒಂದು ಮಷಿನ್ ಲರ್ನಿಂಗ್ ತರಬೇತಿ ಪೈಪ್‌ಲೈನ್‌ಗೆ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸಿ ಆ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ಮುದ್ರಿಸುತ್ತಿದೆ.
+1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಆಧಾರದ ಮೇಲೆ ಯಂತ್ರ ಅಧ್ಯಯನ ತರಬೇತಿ ಪೈಪ್ಲೈನ್‌ಗೆ ಪ್ರದರ್ಶನಾ ಹೆಸರನ್ನು ರಚಿಸಿ ಅದನ್ನು ಮುದ್ರಿಸುತ್ತದೆ.
 
     ```python
-    # ಪ್ರಶಿಕ್ಷಣ ಪೈಪ್‌ಲೈನ್‌ನ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸುವ ಫಂಕ್ಶನ್ ಅನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ
+    # ತರಬೇತಿ ಪೈಪ್‌ಲೈನ್‌ನ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ಸೃಷ್ಟಿಸಲು ಫಂಕ್ಷನ್ ಅನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ
     def get_pipeline_display_name():
-        # ಪ್ರತಿ ಡಿವೈಸ್‌ನ ಬ್ಯಾಚ್ ಗಾತ್ರವನ್ನು, ಗ್ರೇಡಿಯಂಟ್ ಅಕ್ಯುಮುಲೇಷನ್ ಹೆಜ್ಜೆಗಳ ಸಂಖ್ಯೆಯನ್ನು, ಪ್ರತಿ ನೋಡ್‌ನ GPUಗಳ ಸಂಖ್ಯೆಯನ್ನು ಮತ್ತು ಫೈನ್‑ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬಳಸುವ ನೋಡ್‌ಗಳ ಸಂಖ್ಯೆಯನ್ನು ಗುಣಿಸಿ ಒಟ್ಟು ಬ್ಯಾಚ್ ಗಾತ್ರವನ್ನು ಲೆಕ್ಕಿಸಿ
+        # ಪ್ರತಿ ಉಪಕರಣದ ಬ್ಯಾಚ್ ಗಾತ್ರ, ಗ್ರೇಡಿಯಂಟ್ ಸಂಗ್ರಹಣಾ ಹಂತಗಳ ಸಂಖ್ಯೆ, ಪ್ರತಿ ನೋಡ್‌ನ GPU ಗಳು ಮತ್ತು ಫೈನ್-ಟ್ಯೂನಿಂಗ್‌ಗಾಗಿ ಬಳಸಿ ನೋಡ್‌ಗಳ ಸಂಖ್ಯೆಯನ್ನು ಗುಣಿಸಲಾಗುವುದರಿಂದ ಒಟ್ಟಾರೆ ಬ್ಯಾಚ್ ಗಾತ್ರವನ್ನು ಲೆಕ್ಕಿಸಿ
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # ಲರ್ನಿಂಗ್‑ರೇಟ್ ಶೆಡ್ಯೂಲರ್ ಪ್ರಕಾರವನ್ನು ಪಡೆಯಿರಿ
+        # ಕಲಿಕೆಯ ದರ ಶೆಡ್ಯೂಲರ್ ಪ್ರಕಾರವನ್ನು ಪಡೆಯಿರಿ
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # DeepSpeed ಅನ್ವಯಿಸಲ್ಪಡುತ್ತದೆಯೇ ಎಂದು ಪಡೆಯಿರಿ
+        # ಡೀಪ್‌ಸ್ಪೀಡ್ ಅನ್ವಯಿತವಾಗಿದೆಯೇ ಎಂದು ಪಡೆಯಿರಿ
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # DeepSpeed ಹಂತವನ್ನು ಪಡೆಯಿರಿ
+        # ಡೀಪ್‌ಸ್ಪೀಡ್ ಹಂತವನ್ನು ಪಡೆಯಿರಿ
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # DeepSpeed ಅನ್ವಯಿಸಲ್ಪಟ್ಟರೆ, ಪ್ರದರ್ಶನ ಹೆಸರಿನಲ್ಲಿ "ds" ಅನ್ನು ಮತ್ತು ನಂತರ DeepSpeed ಹಂತವನ್ನು ಸೇರಿಸಿ; ಇಲ್ಲದಿದ್ದರೆ "nods" ಅನ್ನು ಸೇರಿಸಿ
+        # ಡೀಪ್‌ಸ್ಪೀಡ್ ಅನ್ವಯಿತವಾದರೆ, ಪ್ರದರ್ಶನ ಹೆಸರಿನಲ್ಲಿ ಡೀಪ್‌ಸ್ಪೀಡ್ ಹಂತವನ್ನು ಹಿಂಬಾಲಿಸಿ "ds" ಅನ್ನು ಸೇರಿಸಿ; ಇಲ್ಲದಿದ್ದರೆ, "nods" ಅನ್ನು ಸೇರಿಸಿ
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Layer-wise Relevance Propagation (LoRa) ಅನ್ವಯಿಸಲ್ಪಡುತ್ತದೆಯೇ ಎಂಬುದನ್ನು ಪಡೆಯಿರಿ
+        # ಲೇಯರ್ ವೈಸ್ ರೆಲೆವೆನ್ಸ್ ಪ್ರಪಾಗೇಶನ್ (ಲೋರಾ) ಅನ್ವಯಿತವಾಗಿದೆಯೇ ಎಂದು ಪಡೆಯಿರಿ
         lora = finetune_parameters.get("apply_lora", "false")
-        # LoRa ಅನ್ವಯಿಸಲ್ಪಟ್ಟರೆ, ಪ್ರದರ್ಶನ ಹೆಸರಿನಲ್ಲಿ "lora" ಅನ್ನು ಸೇರಿಸಿ; ಇಲ್ಲದಿದ್ದರೆ "nolora" ಅನ್ನು ಸೇರಿಸಿ
+        # ಲೋರಾ ಅನ್ವಯಿತವಾದರೆ, ಪ್ರದರ್ಶನ ಹೆಸರಿನಲ್ಲಿ "lora" ಅನ್ನು ಸೇರಿಸಿ; ಇಲ್ಲದಿದ್ದರೆ, "nolora" ಅನ್ನು ಸೇರಿಸಿ
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # ಉಳಿಸಬೇಕಾದ ಮಾದರಿ ಚೆಕ್ಪಾಯಿಂಟ್‌ಗಳ ಸಂಖ್ಯೆಯ ಮಿತಿಯನ್ನು ಪಡೆಯಿರಿ
+        # ಉಳಿಸಿಕೊಳ್ಳಬೇಕಾದ ಮಾದರಿ ಚೆಕ್‌ಪಾಯಿಂಟ್‌ಗಳ ಸಂಖ್ಯೆಯ ಮೀರವುದನ್ನು ಪಡೆಯಿರಿ
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # ಗರಿಷ್ಠ ಸೀಕ್ವೆನ್ಸ್ ಉದ್ದವನ್ನು ಪಡೆಯಿರಿ
+        # ಗರಿಷ್ಠ ಅನುಕ್ರಮಣಲಂಬವನ್ನು ಪಡೆಯಿರಿ
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # ಈ ಎಲ್ಲಾ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳನ್ನು ಹೈಫನ್‌ಗಳಿಂದ ವಿಭಜಿಸಿ ಸೇರಿಸಿ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸಿ
+        # ಎಲ್ಲ ಈ ನಿಯಮಗಳನ್ನು ಹೈಫನ್‌ಗಳಿಂದ ವಿಭಜಿಸಿ ಸಂಯೋಜಿಸಿ ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸಿ
         return (
             model_name
             + "-"
@@ -535,164 +539,164 @@ Create the job that uses the chat-completion pipeline component. Learn more abou
             + f"-seqlen{seq_len}"
         )
     
-    # ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ರಚಿಸಲು ಫಂಕ್ಶನ್ ಅನ್ನು ಕರೆ ಮಾಡಿ
+    # ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ಸೃಷ್ಟಿಸಲು ಫಂಕ್ಷನ್ ಅನ್ನು ಕರೆ ಮಾಡಿ
     pipeline_display_name = get_pipeline_display_name()
     # ಪ್ರದರ್ಶನ ಹೆಸರನ್ನು ಮುದ್ರಿಸಿ
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### Configuring Pipeline
+### ಪೈಪ್ಲೈನ್ ಕಾನ್ಫಿಗರ್ ಮಾಡುತ್ತಿರುವುದು
 
-This Python script is defining and configuring a machine learning pipeline using the Azure Machine Learning SDK. Here's a breakdown of what it does:
+ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಆಟ್ಲೋನ್ ಯಂತ್ರ ಅಧ್ಯಯನ SDK ಬಳಸಿ ಯಂತ್ರ ಅಧ್ಯಯನ ಪೈಪ್ಲೈನ್ ಅನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ ಮತ್ತು ಕಾನ್ಫಿಗರ್ ಮಾಡುತ್ತದೆ. ಇದು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬ ವಿಸ್ತಾರ ಇಲ್ಲಿದೆ:
 
-1. ಇದು Azure AI ML SDK ನಿಂದ ಅಗತ್ಯವಾದ ಮೋಡ್ಯೂಲ್‌ಗಳನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡುತ್ತದೆ.
+1. ಇದು ಅವಶ್ಯಕ ಮ್ಯಾಡ್ಯೂಲ್‌ಗಳನ್ನು Azure AI ML SDK ನಿಂದ ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ.
 
-1. ಇದು ರೆಜಿಸ್ಟ್ರಿಯಿಂದ "chat_completion_pipeline" ಎಂಬ ಹೆಸರಿನ ಪೈಪ್‌ಲೈನ್ ಕಾಂಪೊನೆಂಟ್ ಅನ್ನು ಪಡೆದುಕೊಳ್ಳುತ್ತದೆ.
+1. ರೆಜಿಸ್ಟ್ರಿಯಿಂದ "chat_completion_pipeline" ಎಂಬ ಪೈಪ್ಲೈನ್ ಕಂಪೋನೆಂಟ್ ಅನ್ನು ಪಡೆದಿದೆ.
 
-1. ಇದು `@pipeline` ಡೆಕೊರೇಟರ್ ಮತ್ತು `create_pipeline` ಫಂಕ್ಷನ್ ಬಳಸಿಕೊಂಡು ಒಂದು ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಅನ್ನು ನಿರ್ವಹಿಸುತ್ತದೆ. ಪೈಪ್‌ಲೈನ್‌ನ ಹೆಸರು `pipeline_display_name` ಗೆ ಸೆಟ್ ಮಾಡಲಾಗಿದೆ.
+1. `@pipeline` ಡೆಕಾರೇಟರ್ ಮತ್ತು `create_pipeline` ಫಂಕ್ಷನ್ ಬಳಸಿ ಪೈಪ್ಲೈನ್ ಕೆಲಸವನ್ನು ವ್ಯಾಖ್ಯಾನಿಸುತ್ತದೆ. ಪೈಪ್ಲೈನಿನ ಹೆಸರು `pipeline_display_name` ಎಂದು ನಿಗದಿ ಮಾಡಲಾಗಿದೆ.
 
-1. `create_pipeline` ಫಂಕ್ಷನ್ ಒಳಗೆ, ಇದು ಹಿಂತಿರುಗಿಸಿಕೊಂಡ ಪೈಪ್‌ಲೈನ್ ಕಾಂಪೊನೆಂಟ್ ಅನ್ನು ಮಾದರಿ ಪಾತ್, ವಿಭಿನ್ನ ಹಂತಗಳಿಗಾಗಿ compute ಕ್ಲಸ್ಟರ್‌ಗಳು, ತರಬೇತಿ ಮತ್ತು ಪರೀಕ್ಷೆಗಳಿಗಾಗಿ dataset ಸ್ಪ್ಲಿಟ್‌ಗಳು, ಫೈನ್‑ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬಳಸಬೇಕಾದ GPUಗಳ ಸಂಖ್ಯೆ ಮತ್ತು ಇತರ ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ಪ್ರಾರಂಭಗೊಳಿಸುತ್ತದೆ.
+1. `create_pipeline` ಫಂಕ್ಷನ್ ಒಳಗೆ, ಪಡೆದ ಪೈಪ್ಲೈನ್ ಕಂಪೋನೆಂಟ್ ಅನ್ನು ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳ ಜೊತೆಗೆ ಶುರುಮಾಡಲಾಗಿದೆ, ಉದಾ: ಮಾದರಿ ಪಥ, ಬಿನ್ನಹ ಹಂತಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟ್ ಕ್ಲಸ್ಟರ್‌ಗಳು, ತರಬೇತಿ ಮತ್ತು ಪರೀಕ್ಷೆಗಾಗಿ ಡೇಟಾಸೆಟ್ ವಿಭಾಜನೆಗಳು, ಫೈನ್ ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬೇಕಾದ GPUಗಳ ಸಂಖ್ಯೆ, ಮತ್ತು ಇತರೆ ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು.
 
-1. ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಜಾಬ್‌ನ ಔಟ್‌ಪುಟ್ ಅನ್ನು ಪೈಪ್‌ಲೈನ್ ಜಾಬ್‌ನ ಔಟ್‌ಪುಟ್‌ಗೆ మ్యಾಪ್ ಮಾಡುತ್ತದೆ. ಇದರಿಂದ ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು ಸುಲಭವಾಗಿ ರಿಜಿಸ್ಟರ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ, ಮತ್ತು ಇದು ಮಾದರಿಯನ್ನು ಆನ್‌ಲೈನ್ ಅಥವಾ ಬ್ಯಾಚ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗೆ ಡಿಪ್ಲಾಯ್ ಮಾಡಲು ಅಗತ್ಯವಾಗಿರುತ್ತದೆ.
+1. ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕೆಲಸದOUTPUT ಅನ್ನು ಪೈಪ್ಲೈನ್ ಕೆಲಸದ OUTPUT ಗೆ ನಕ್ಷೆಗೊಳಿಸಲಾಗಿದೆ. ಇದರಿಂದ ಫೈನ್ ಟ್ಯೂನ್ಡ್ ಮಾದರಿಯನ್ನು ಸುಲಭವಾಗಿ ನೊಂದಾಯಿಸಬಹುದು, ಇದು ಆನ್‌ಲೈನ್ ಅಥವಾ ಬ್ಯಾಚ್ ಎಂತರಿಗೆ ನಿಯೋಜಿಸಲು ಅಗತ್ಯ.
 
-1. `create_pipeline` ಫಂಕ್ಷನ್ ಅನ್ನು ಕರೆದು ಪೈಪ್‌ಲೈನ್‌ನ ಒಂದು ಉದಾಹರಣೆಯನ್ನು ರಚಿಸುತ್ತದೆ.
+1. `create_pipeline` ಫಂಕ್ಷನ್ ಅನ್ನು ಕರೆ ಮಾಡಿ ಪೈಪ್ಲೈನ್ ನಮೂನೆಯನ್ನು ರಚಿಸಲಾಗಿದೆ.
 
-1. ಪೈಪ್‌ಲೈನ್‌ನ `force_rerun` ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು `True` గా ಸೆಟ್ ಮಾಡುತ್ತದೆ, ಅಂದರೆ ಹಿಂದಿನ ಜಾಬ್‌ಗಳಿಂದಿರುವ ಕ್ಯಾಷ್ಡ್ ಫಲಿತಾಂಶಗಳನ್ನು ಬಳಸದಂತೆ ಮಾಡುತ್ತದೆ.
+1. ಪೈಪ್ಲೈನಿನ `force_rerun` ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು `True` ಮಾಡಲಾಗಿದೆ, ಅಂದರೆ ಹಳೆಯ ಕೆಲಸಗಳಿಂದ ಕ್ಯಾಸೆಡ್ ಫಲಿತಾಂಶಗಳನ್ನು ಬಳಸುವುದಿಲ್ಲ.
 
-1. ಪೈಪ್‌ಲೈನ್‌ನ `continue_on_step_failure` ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು `False` ಆಗಿ ಸೆಟ್ ಮಾಡುತ್ತದೆ, ಅಂದರೆ ಯಾವುದೇ ಸ್ಟೆಪ್ ವಿಫಲವಾದರೆ ಪೈಪ್‌ಲೈನ್ ನಿಲ್ಲಿಸುತ್ತದೆ.
+1. ಪೈಪ್ಲೈನಿನ `continue_on_step_failure` ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು `False` ಮಾಡಲಾಗಿದೆ, ಅಂದರೆ ಯಾವುದೇ ಹಂತದಲ್ಲಿ ವೈಫಲ್ಯ ಸಂಭವಿಸಿದರೆ ಪೈಪ್ಲೈನ್ ನಿಲ್ಲಿಸುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning SDK ಬಳಸಿ ಚಾಟ್ ಕಂಪ್ಲೀಶನ್ ಕಾರ್ಯಕ್ಕಾಗಿ ಒಂದು ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಪೈಪ್‌ಲೈನ್ ಅನ್ನು ನಿರ್ವಹಿಸಿ ಸಂರಚಿಸುತ್ತಿದೆ.
+1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ Azure ಯಂತ್ರ ಅಧ್ಯಯನ SDK ಬಳಸಿ ಚಾಟ್ ಡಿಪ್ಲೀಷನ್ ಕಾರ್ಯಕ್ಕಾಗಿ ಯಂತ್ರ ಅಧ್ಯಯನ ಪೈಪ್ಲೈನ್ ಅನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ ಮತ್ತು ಕಾನ್ಫಿಗರ್ ಮಾಡುತ್ತಿದೆ.
 
     ```python
-    # Azure AI ML SDK‌ನಿಂದ ಅಗತ್ಯವಾದ ಮಾಡ್ಯೂಲ್‌ಗಳನ್ನು ಆಮದು ಮಾಡಿ
+    # ಅಜೂರ್ ಎಐ ಎಮ್‌ಎಲ್ ಎಸ್‌ಡಿಕೆನಿಂದ ಅಗತ್ಯ ಮಾಯಾಜಾಲಗಳನ್ನು ಆಮದುಮಾಡಿ
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # ರೆಜಿಸ್ಟ್ರಿಯಿಂದ "chat_completion_pipeline" ಎಂಬ ಪೈಪ್‌ಲೈನ್ ಘಟಕವನ್ನು ಪಡೆಯಿರಿ
+    # ರೆಜಿಸ್ಟ್ರಿಯಿಂದ "chat_completion_pipeline" ಹೆಸರಿನ ಪೈಪ್ಲೈನ್ ಘಟಕವನ್ನು ಪಡೆದುಕೊಳ್ಳಿ
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # @pipeline ಡೆಕೊರೆಟರ್ ಮತ್ತು create_pipeline ಫಂಕ್ಷನ್ ಅನ್ನು ಬಳಸಿ ಪೈಪ್‌ಲೈನ್ ಕೆಲಸವನ್ನು ವ್ಯಾಖ್ಯಾನಿಸಿ
-    # ಪೈಪ್‌ಲೈನ್‌ ಹೆಸರನ್ನು pipeline_display_name ಎಂದು ಹೊಂದಿಸಲಾಗಿದೆ
+    # @pipeline ಅಲಂಕಾರಕ ಮತ್ತು create_pipeline ಕಾರ್ಯವನ್ನು ಉಪಯೋಗಿಸಿ ಪೈಪ್ಲೈನ್ ಕೆಲಸವನ್ನು ನಿರ್ಧರಿಸಿ
+    # ಪೈಪ್ಲೈನಿನ ಹೆಸರು pipeline_display_nameಗೆ ಸೆಟ್ ಮಾಡಲಾಗಿದೆ
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # ಪಡೆದ ಪೈಪ್‌ಲೈನ್ ಘಟಕವನ್ನು ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ಆರಂಭಿಸಿ
-        # ಇದರಲ್ಲಿ model path, ವಿವಿಧ ಹಂತಗಳಿಗಾಗಿ ಕಂಪ್ಯೂಟ್ ಕ್ಲಸ್ಟರ್‌ಗಳು, ತರಬೇತಿ ಮತ್ತು ಪರೀಕ್ಷೆಗಾಗಿ ಡೇಟಾಸೆಟ್ ವಿಭಜನೆಗಳು, ಫೈನ್‑ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬಳಸಲಾದ GPUಗಳ ಸಂಖ್ಯೆ ಮತ್ತು ಇತರ ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಸೇರಿವೆ
+        # ಬೇರೆ ಬೇರೆ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ಪಡೆದುಕೊಳ್ಳಲಾದ ಪೈಪ್ಲೈನ್ ಘಟಕವನ್ನು ಪ್ರಾರಂಭಿಸಿ
+        # ಇದರಲ್ಲಿ ಮಾದರಿ ಪಥ, ವಿಭಿನ್ನ ಹಂತಗಳಿಗಾಗಿ ಗಣನೆ ಗುಚ್ಛಗಳು, ತರಬೇತಿ ಮತ್ತು ಪರೀಕ್ಷೆಯ ಡೇಟಾಸೆಟ್ বিভಜನೆಗಳು, ಸೂಕ್ಷ್ಮೀಕರಣಕ್ಕಾಗಿ ಬಳಸುವ GPUಗಳ ಸಂಖ್ಯೆ, ಮತ್ತು ಇತರ ಸೂಕ್ಷ್ಮೀಕರಣ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳು ಸೇರಿವೆ
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # ಡೇಟಾಸೆಟ್ ವಿಭಜನೆಗಳನ್ನು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳಿಗೆ ನಕ್ಷೆ ಮಾಡಿ
+            # ಡೇಟಾಸೆಟ್ ವಿಭಾಗಗಳನ್ನು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳಿಗೆ ನಕ್ಷೆ ಮಾಡಿ
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # ತರಬೇತಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # ಕಂಪ್ಯೂಟ್‌ನಲ್ಲಿ ಲಭ್ಯವಿರುವ GPUಗಳ ಸಂಖ್ಯೆಗೆ ಹೊಂದಿಸಿ
+            # ತರಬೇತಿ ಸಂಯೋಜನೆಗಳು
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # ಲಭ್ಯವಿರುವ ಗಣನೆಯಲ್ಲಿ GPUಗಳ ಸಂಖ್ಯೆಗೆ ಅನುಗುಣವಾಗಿ ಸೆಟ್ ಮಾಡಿ
             **finetune_parameters
         )
         return {
-            # ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಕೆಲಸದ ಔಟ್‌ಪುಟ್ ಅನ್ನು ಪೈಪ್‌ಲೈನ್ ಕೆಲಸದ ಔಟ್‌ಪುಟ್‌ಗೆ ನಕ್ಷೆ ಮಾಡಿ
-            # ಇದರಿಂದ ನಾವು ಫೈನ್‑ಟ್ಯೂನ್ಡ್ ಮಾದರಿಯನ್ನು ಸುಲಭವಾಗಿ ನೋಂದಾಯಿಸಿಕೊಳ್ಳಬಹುದು
-            # ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸುವುದು ಆನ್‌ಲೈನ್ ಅಥವಾ ಬ್ಯಾಚ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗೆ ನಿಯೋಜಿಸಲು ಅಗತ್ಯ
+            # ಸೂಕ್ಷ್ಮೀಕರಣ ಕೆಲಸದ output ಅನ್ನು ಪೈಪ್ಲೈನ್ ಕೆಲಸದ output ಗೆ ನಕ್ಷೆ ಮಾಡಿ
+            # ಇದರಿಂದ ನಾವು ಸುಲಭವಾಗಿ ಸೂಕ್ಷ್ಮೀಕೃತ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಬಹುದು
+            # ಮಾದರಿಯನ್ನು ಆನ್‌ಲೈನ್ ಅಥವಾ ಬ್ಯಾಚ್ ಅಂತಿಮ ಬಿಂದುಗಳಿಗೆ ನಿಯೋಜಿಸಲು ನೋಂದಾಯಿಸುವುದು ಅಗತ್ಯ
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # create_pipeline ಫಂಕ್ಷನ್ ಅನ್ನು ಕರೆದೊಯ್ದು ಪೈಪ್‌ಲೈನಿನ ಒಂದು ಉದಾಹರಣೆಯನ್ನು ರಚಿಸಿ
+    # create_pipeline ಕ್ರಿಯೆಯನ್ನು ಕರೆಮಾಡಿ ಪೈಪ್ಲೈನ್ ಉದಾಹರಣೆಯನ್ನು ರಚಿಸಿ
     pipeline_object = create_pipeline()
     
-    # ಹಿಂದಿನ ಜಾಬ್‌ಗಳಲ್ಲಿನ ಕ್ಯಾಶೆಡ್ ಫಲಿತಾಂಶಗಳನ್ನು ಬಳಸಬೇಡಿ
+    # ಹಿಂದಿನ ಕೆಲಸಗಳಿಂದ ಸಂಗ್ರಹಿಸಲಾದ ಫಲಿತಾಂಶಗಳನ್ನು ಉಪಯೋಗಿಸಬೇಡಿ
     pipeline_object.settings.force_rerun = True
     
-    # ಸ್ಟೆಪ್ ವೈಫಲ್ಯವಾದಾಗ ಮುಂದುವರಿಯುವಿಕೆಯನ್ನು Falseಗೆ ಹೊಂದಿಸಿ
-    # ಇದರಿಂದ ಯಾವುದೇ ಸ್ಟೆಪ್ ವಿಫಲವಾದರೆ ಪೈಪ್‌ಲೈನ್ ನಿಂತುಹೋಗುತ್ತದೆ
+    # ಹಂತ ವೈಫಲ್ಯವಾಗಾಗ ಮುಂದುವರಿಯುವಿಕೆಯನ್ನ Falseಗೆ ಸೆಟ್ ಮಾಡಿ
+    # ಇದರ ಅರ್ಥ, ಯಾವುದೇ ಹಂತ ವಿಫಲವಾದರೆ ಪೈಪ್ಲೈನ್ ನಿಲ್ಲುತ್ತದೆ ಎಂದಾಗುತ್ತದೆ
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Submit the Job
+### ಕೆಲಸವನ್ನು ಸಲ್ಲಿಸಿ
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ ಒಂದು ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಅನ್ನು Azure Machine Learning ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಲ್ಲಿಸಿ ನಂತರ ಜಾಬ್ ಪೂರ್ಣವಾಗುವವರೆಗೆ ಕಾಯುತ್ತದೆ. ಇದರ ಕಾರ್ಯಗಳ ವಿವರಣೆ ಕೆಳಗಿದೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಯಂತ್ರ ಅಧ್ಯಯನ ಪೈಪ್ಲೈನ್ ಕೆಲಸವನ್ನು ಅದೃಷ್ಟ ಯಂತ್ರ ಅಧ್ಯಯನ ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಲ್ಲಿಸಿ ನಂತರ ಕೆಲಸ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯುತ್ತದೆ. ಇದು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬ ವಿಸ್ತಾರ ಇಲ್ಲಿದೆ:
 
-    - ಇದು workspace_ml_client ನಲ್ಲಿ jobs ಶ್ರೇಣಿಯ create_or_update 메ಥಡ್ ಅನ್ನು ಕರೆದು ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಅನ್ನು ಸಲ್ಲಿಸುತ್ತದೆ. ಚಲಾಯಿಸಬೇಕಾದ ಪೈಪ್‌ಲೈನ್ ಅನ್ನು pipeline_object ಮೂಲಕ ಸೂಚಿಸಲಾಗಿದೆ, ಮತ್ತು ಜಾಬ್ ಚಲಾಯಿಸಲ್ಪಡುವ ಪ್ರಯೋಗವನ್ನು experiment_name ಮೂಲಕ ಸೂಚಿಸಲಾಗಿದೆ.
+    - workflows_ml_client ನಲ್ಲಿ jobs ಆಬ್‌ಜೆಕ್ಟಿನ create_or_update ಮೆತ್ತೋಡ್ ಅನ್ನು ಕರೆ ಮಾಡಿ ಪೈಪ್ಲೈನ್ ಕೆಲಸವನ್ನು ಸಲ್ಲಿಸುತ್ತದೆ. ಚಾಲನೆಯಲ್ಲಿ pipeline_object ಮೂಲಕ ಸೂಚಿಸಲಾಗಿದೆ, ಮತ್ತು experiment_name ಮೂಲಕ ಕಂಪ್‌ರೆದ ಅಧೀನ ಕಾರ್ಯ ನಿಗದಿತವಾಗಿದೆ.
 
-    - ನಂತರ ಇದು workspace_ml_client ನಲ್ಲಿ jobs ಶ್ರೇಣಿಯ stream 메ಥಡ್ ಅನ್ನು ಕರೆದು ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಪೂರ್ಣವಾಗುವವರೆಗೆ ಕಾಯುತ್ತದೆ. ಕಾಯಬೇಕಾದ ಜಾಬ್ ಅನ್ನು pipeline_job ವಸ್ತುವಿನ name ಆ್ಯಟ್ರಿಬ್ಯೂಟ್ ಮೂಲಕ ಸೂಚಿಸಲಾಗುತ್ತದೆ.
+    - ನಂತರ workflows_ml_client jobs ಆಬ್‌ಜೆಕ್ಟಿನ stream ಮೆತ್ತೋಡ್ ಮೂಲಕ ಪೈಪ್ಲೈನ್ ಕೆಲಸ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯುತ್ತದೆ. ಕಾಯಬೇಕಾದ ಕೆಲಸ pipeline_job ಆಬ್‌ಜೆಕ್ಟಿನ name ಅಟ್ರಿಬ್ಯೂಟ್ ಮೂಲಕ ಸೂಚಿಸಲಾಗಿದೆ.
 
-    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ಒಂದು ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಅನ್ನು Azure Machine Learning ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಲ್ಲಿಸಿ ನಂತರ ಜಾಬ್ ಪೂರ್ಣವಾಗುವವರೆಗೆ ಕಾಯುತ್ತದೆ.
+    - ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ಯಂತ್ರ ಅಧ್ಯಯನ ಪೈಪ್ಲೈನ್ ಕೆಲಸವನ್ನು ಯಂತ್ರ ಅಧ್ಯಯನ ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಲ್ಲಿಸಿ ನಂತರ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯುತ್ತದೆ.
 
     ```python
-    # ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಅನ್ನು Azure Machine Learning ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಲ್ಲಿಸಿ
-    # ಚಾಲಿಸಲಾಗುವ ಪೈಪ್‌ಲೈನ್ ಅನ್ನು pipeline_object ಮೂಲಕ ನಿರ್ದಿಷ್ಟಪಡಿಸಲಾಗಿದೆ
-    # ಜಾಬ್ ಯಾವ ಪ್ರಯೋಗದ ಅಡಿಯಲ್ಲಿ ಚಲಿಸುವುದು ಎಂಬುದನ್ನು experiment_name ಮೂಲಕ ನಿರ್ದಿಷ್ಟಪಡಿಸಲಾಗಿದೆ
+    # Azure ಮಷಿನ್ ಲರ್ನಿಂಗ್ ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಪೈಪ್ಲೈನ್ ಕೆಲಸವನ್ನು ಸಲ್ಲಿಸಿ
+    # ನಿರ್ವಹಿಸುವ ಪೈಪ್ಲೈನ್ pipeline_object দ্বারা ಸೂಚಿಸಲಾಗಿದೆ
+    # ಕೆಲಸ ನಡೆಸಲಾದ ಪ್ರಯೋಗವನ್ನು experiment_name ಸೂಚಿಸುತ್ತದೆ
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # ಪೈಪ್‌ಲೈನ್ ಜಾಬ್ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಿರಿ
-    # ಕಾಯಬೇಕಾದ ಜಾಬ್ ಅನ್ನು pipeline_job ವಸ್ತುವಿನ name ಗುಣಧರ್ಮದಿಂದ ನಿರ್ದಿಷ್ಟಪಡಿಸಲಾಗಿದೆ
+    # ಪೈಪ್ಲೈನ್ ಕೆಲಸ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಿರಿ
+    # ಕಾಯಬೇಕಾಗಿರುವ ಕೆಲಸ pipeline_job ವಸ್ತುವಿನ name ಗುಣಲಕ್ಷಣದಿಂದ ಸೂಚಿಸಲಾಗಿದೆ
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. ವರ್ಕ್‌ಸ್ಪೇಸ್‌ನಲ್ಲಿ ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು ರಿಜಿಸ್ಟರ್ ಮಾಡಿ
+## 6. ಫೈನ್ ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು ವರ್ಕ್‌ಸ್ಪೇಸ್‌ನಲ್ಲಿ ನೋಂದಾಯಿಸಿ
 
-ನಾವು ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಜಾಬ್‌ನ ಔಟ್‌ಪುಟ್‌ನಿಂದ ಮಾದರಿಯನ್ನು ರಿಜಿಸ್ಟರ್ ಮಾಡೋಣ. ಇದರಿಂದ ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿ ಮತ್ತು ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಜಾಬ್ ನಡುವೆ ಲೈನೇಜ್ ಟ್ರಾಕ್ ಆಗುತ್ತದೆ. ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಜಾಬ್ ಮುಂದುವರಿದಂತೆ ಫೌಂಡೇಶನ್ ಮಾದರಿ, ಡೇಟಾ ಮತ್ತು ತರಬೇತಿ ಕೋಡ್‌ಗೆ ಲೈನೇಜ್ ಅನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡುತ್ತದೆ.
+ನಾವು ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕೆಲಸದ OUTPUT ಯಿಂದ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸುವೆವು. ಇದರಿಂದ ಫೈನ್ ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿ ಮತ್ತು ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕೆಲಸದ ನಡುವೆ ಲಿನಿಯೇಜ್ ಟ್ರ್ಯಾಕ್ ಮಾಡಬಹುದು. ಫೈನ್ ಟ್ಯೂನಿಂಗ್ ಕೆಲಸ ಪೈಕಿ ಫೌಂಡೇಶನ್ ಮಾದರಿ, ಡೇಟಾ ಮತ್ತು ತರಬೇತಿ ಕೋಡಿಗೆ ಲಿನಿಯೇಜ್ ಟ್ರ್ಯಾಕ್ ಮಾಡುತ್ತದೆ.
 
-### Registering the ML Model
+### ML ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಲಾಗುತ್ತದೆ
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning ಪೈಪ್‌ಲೈನ್‌ನಲ್ಲಿ ತರಬೇತಿಗೊಂಡಿರುವ ಒಂದೇ ಒಂದು ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಮಾದರಿಯನ್ನು ರಿಜಿಸ್ಟರ್ ಮಾಡುತ್ತಿದೆ. ಇದರ ಕೆಲಸಗಳ ವಿವರ ಕೆಳಗಿವೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಅಜೂರ್ ಯಂತ್ರ ಅಧ್ಯಯನ ಪೈಪ್ಲೈನ್‌ನಲ್ಲಿ ತರಬೇತಿಗೊಂಡ ಯಂತ್ರ ಅಧ್ಯಯನ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸುತ್ತದೆ. ಇದು ಏನು ಮಾಡುತ್ತಿದೆ ಎಂಬ ವ್ಯಾಖ್ಯಾನ ಇಲ್ಲಿದೆ:
 
-    - ಇದು Azure AI ML SDK ನಿಂದ ಅಗತ್ಯವಾದ ಮೋಡ್ಯೂಲ್‌ಗಳನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡುತ್ತದೆ.
+    - ಅನುಕೂಲಕರ ಮಾದ್ಯೂಲ್‌ಗಳನ್ನು Azure AI ML SDK ನಿಂದ ಆಮದು ಮಾಡಿಕೊಳ್ಳುತ್ತದೆ.
 
-    - ಇದು pipeline_job ನ outputs ಆ್ಯಟ್ರಿಬ್ಯೂಟ್‌ಗೆ ಪ್ರಾಪ್ತಿಯಾಗುವ ಮೂಲಕ trained_model ಔಟ್‌ಪುಟ್ ಲಭ್ಯವಿದೆಯೇ ಎಂದು workspace_ml_client ನಲ್ಲಿ jobs ವಸ್ತುವಿನ get 메ಥಡ್ ಅನ್ನು ಕರೆದು ಪರಿಶೀಲಿಸುತ್ತದೆ.
+    - ವರ್ಕ್‌ಸ್ಪೇಸ್_ml_client jobs ಆಬ್‌ಜೆಕ್ಟಿನ get ಮೆತ್ತೋಡ್ ಬಳಸಿ pipeline ಕೆಲಸದಿಂದ trained_model OUTPUT ದೊರೆತಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸುತ್ತದೆ.
 
-    - ಇದು pipeline_job ನ ಹೆಸರು ಮತ್ತು ಔಟ್‌ಪುಟಿನ ("trained_model") ಹೆಸರನ್ನು ಫಾರ್ಮ್ಯಾಟ್ ಮಾಡಿ ತರಬೇತಿಗೊಂಡ ಮಾದರಿಗೆ ಪಾತ್ ರಚಿಸುತ್ತದೆ.
+    - pipeline ಕೆಲಸದ ಹೆಸರು ಮತ್ತು OUTPUT("trained_model") ಹೆಸರನ್ನು ಉಪಯೋಗಿಸಿ ತರಬೇತಿಗೊಂಡ ಮಾದರಿಯ ಪಥವನ್ನು ರಚಿಸುತ್ತದೆ.
 
-    - ಇದು ಮೂಲ ಮಾದರಿ ಹೆಸರಿಗೆ "-ultrachat-200k" ಅನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಯಾವುದೇ ಸ್ನಾಯುಚಿಹ್ನೆಗಳನ್ನು (slashes) ಹೈಫನ್‌ಗಳಾಗಿ ಬದಲಾಯಿಸಿ ಫೈನ್‑ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಗಾಗಿ.NAME ಅನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ.
+    - ಮೂಲ ಮಾದರಿಯ ಹೆಸರಿಯ ನಂತರ "-ultrachat-200k" ಅನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಯಾವುದೇ ಸ್ಲ್ಯಾಶ್‌ಗಳನ್ನು ಹೈಫನ್‌ಗಳಿಂದ ಬದಲಿಸಿ ಫೈನ್ ಟ್ಯೂನ್ಡ್ ಮಾದರಿಯ ಹೆಸರನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ.
 
-    - ಇದು ಮಾದರಿಯನ್ನು ರಿಜಿಸ್ಟರ್ ಮಾಡಲು Model ವಸ್ತುವನ್ನು ವಿಭಿನ್ನ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ರಚಿಸಿ, ಉದಾಹರಣೆಗೆ ಮಾದರಿಯ ಪಾತ್, ಮಾದರಿಯ ಪ್ರಕಾರ (MLflow model), ಮಾದರಿಯ ಹೆಸರು ಮತ್ತು ಆವೃತ್ತಿ, ಮತ್ತು ಮಾದರಿಯ ವಿವರಣೆ.
+    - Model ಆಬ್‌ಜೆಕ್ಟ್ ರಚಿಸಿ, ಇದರಲ್ಲಿ ಮಾದರಿಯ ಪಥ, ಮಾದರಿ ಪ್ರಕಾರ (MLflow ಮಾದರಿ), ಹೆಸರು ಮತ್ತು ಆವೃತ್ತಿ, ಮತ್ತು ವಿವರಣೆ ಸೇರಿಸಲಾಗಿದೆ. ಇದರಿಂದ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಲು ಸಿದ್ಧವಾಗುತ್ತದೆ.
 
-    - ಇದು Model ವಸ್ತುವನ್ನು ಆರ್ಗ್ಯೂಮೆಂಟಿನಿಂದ workspace_ml_client ನಲ್ಲಿ models ಶ್ರೇಣಿಯ create_or_update 메ಥಡ್ ಅನ್ನು ಕರೆದು ಮಾದರಿಯನ್ನು ರಿಜಿಸ್ಟರ್ ಮಾಡುತ್ತದೆ.
+    - models ಆಬ್‌ಜೆಕ್ಟಿನ create_or_update ಮೆತ್ತೋಡ್ ಅನ್ನು ಕರೆ ಮಾಡಿ Model ಆಬ್‌ಜೆಕ್ಟ್ ನೊಂದಿಗೆ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸುತ್ತದೆ.
 
-    - ಅದು ರಿಜೆಸ್ಟರ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು ಪ್ರಿಂಟ್ ಮಾಡುತ್ತದೆ.
+    - ನೋಂದಾಯಿಸಲಾದ ಮಾದರಿಯನ್ನು ಮುದ್ರಿಸುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning ಪೈಪ್‌ಲೈನ್‌ನಲ್ಲಿ ತರಬೇತಿಗೊಂಡಿರುವ ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಮಾದರಿಯನ್ನು ರಿಜಿಸ್ಟರ್ ಮಾಡುತ್ತಿದೆ.
+1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ಅಜೂರ್ ಯಂತ್ರ ಅಧ್ಯಯನ ಪೈಪ್ಲೈನ್‌ನಲ್ಲಿ ತರಬೇತಿಗೊಂಡ ಯಂತ್ರ ಅಧ್ಯಯನ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸುತ್ತಿದೆ.
     
     ```python
-    # Azure AI ML SDK ನಿಂದ ಅಗತ್ಯ ಮಾಡ್ಯೂಲ್ಗಳನ್ನು ಆಮದು ಮಾಡಿ
+    # ಅಗತ್ಯ ಮ್ಯೂಡ್ಯೂಲ್ಗಳನ್ನು Azure AI ML SDKನಿಂದ ಆಮದುಮಾಡಿ
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # ಪೈಪ್‌ಲೈನ್ ಕೆಲಸದಿಂದ `trained_model` ಔಟ್ಪುಟ್ ಲಭ್ಯವಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+    # ಪೈಪ್‌ಲೈನ್ ಕೆಲಸದಿಂದ `trained_model` ಔಟ್‌ಪುಟ್ ಲಭ್ಯವಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # ಪೈಪ್‌ಲೈನ್ ಕೆಲಸದ ಹೆಸರು ಮತ್ತು ಔಟ್ಪುಟ್ ಹೆಸರು ("trained_model") ಬಳಸಿ ಸ್ಟ್ರಿಂಗ್ ಅನ್ನು ಫಾರ್ಮ್ಯಾಟ್ ಮಾಡಿ ತರಬೇತಿಗೊಂಡ ಮಾದರಿಗಾಗಿ ಮಾರ್ಗವನ್ನು ರಚಿಸಿ
+    # ಪೈಪ್‌ಲೈನ್ ಕೆಲಸದ ಹೆಸರು ಮತ್ತು ಔಟ್‌ಪುಟ್("trained_model") ಹೆಸರನ್ನು ಫಾರ್ಮ್ಯಾಟ್ ಮಾಡಿ ತರಬೇತುಗೊಂಡ ಮಾದರಿಗೂ ಮಾರ್ಗವನ್ನು ರಚಿಸಿ
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # ಮೂಲ ಮಾದರಿಯ ಹೆಸರಿಗೆ "-ultrachat-200k" ಅನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಯಾವುದೇ ಸ್ಲ್ಯಾಶ್‌ಗಳನ್ನು ಹೈಫನ್‌ಗಳಾಗಿ ಬದಲಾಯಿಸಿ ತಕ್ಕಂತೆ ಫೈನ್-ಟ್ಯೂನ್ಡ್ ಮಾದರಿಗೆ ಹೆಸರು ನಿರ್ಧರಿಸಿ
+    # ಮೂಲ ಮಾದರಿಯ ಹೆಸರಿಗೆ "-ultrachat-200k" ಅನ್ನು ಸೇರಿಸಿ ಮತ್ತು ಯಾವುದೇ ಸ್ಲ್ಯಾಶ್‌ಗಳನ್ನು ಹೈಫನ್‌ಗಳೊಂದಿಗೆ ಬದಲಾಯಿಸಿ, ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಲಾದ ಮಾದರಿಗಾಗಿ ಹೆಸರು ನಿರ್ಧರಿಸಿ
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ Model ವಸ್ತುವನ್ನು ಸೃಷ್ಟಿಸುವ ಮೂಲಕ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಲು ಸಿದ್ಧತೆ ಮಾಡಿ
-    # ಇದರಲ್ಲಿ ಮಾದರಿಯ ಮಾರ್ಗ, ಮಾದರಿಯ ಪ್ರಕಾರ (MLflow model), ಮಾದರಿಯ ಹೆಸರು ಮತ್ತು ಆವೃತ್ತಿ ಮತ್ತು ಮಾದರಿಯ ವಿವರಣೆ ಸೇರಿವೆ
+    # ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ Model ಆಬ್ಜೆಕ್ಟ್ ಸೃಷ್ಟಿಸುವ ಮೂಲಕ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಲು ತಯಾರಾಗಿರಿ
+    # ಇದರಲ್ಲಿ ಮಾದರಿಯ ಮಾರ್ಗ, ಮಾದರಿಯ ಪ್ರಕಾರ (MLflow ಮಾದರಿ), ಮಾದರಿಯ ಹೆಸರು ಮತ್ತು ಆವೃತ್ತಿ, ಮತ್ತು ಮಾದರಿಯ ವಿವರಣೆ ಒಳಗೊಂಡಿವೆ
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # ಆವೃತ್ತಿ ಗೊಂದಲ ತಪ್ಪಿಸಲು ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ ಅನ್ನು ಆವೃತ್ತಿಯಾಗಿ ಬಳಸಿ
+        version=timestamp,  # ಆವೃತ್ತಿ ಸಂಘರ್ಷ ತಪ್ಪಿಸಿಕೊಳ್ಳಲು ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ ಅನ್ನು ಆವೃತ್ತಿಯಾಗಿ ಬಳಸಿ
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Model ವಸ್ತುವನ್ನು ಆರ್ಗ್ಯುಮೆಂಟ್ ಆಗಿ ನೀಡಿ workspace_ml_client ನಲ್ಲಿ ಇರುವ models ಆಬ್ಜೆಕ್ಟ್‌ನ create_or_update ಮೆಥಡ್ ಅನ್ನು ಕರೆ ಮಾಡಿ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಿ
+    # workspace_ml_client ನಲ್ಲಿ models ಆಬ್ಜೆಕ್ಟಿನ create_or_update ವಿಧಾನವನ್ನು ಕರೆಸುವ ಮೂಲಕ Model ಆಬ್ಜೆಕ್ಟ್ ಅನ್ನು_ARGUMENT_ ಆಗಿ ನೀಡುತ್ತಾ ಮಾದರಿಯನ್ನು ನೋಂದಾಯಿಸಿ
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
@@ -701,26 +705,26 @@ This Python script is defining and configuring a machine learning pipeline using
     print("registered model: \n", registered_model)
     ```
 
-## 7. ಫೈನ್‑ಟ್ಯೂನ್ಡ್ ಮಾದರಿಯನ್ನು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗೆ ಡಿಪ್ಲಾಯ್ ಮಾಡಿ
+## 7. ಫೈನ್ ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್‌ಗೆ ನಿಯೋಜಿಸಿ
 
-ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗಳು ಮಾದರಿಯನ್ನು ಬಳಸಬೇಕಾದ ಅಪ್ಲಿಕೇಶನ್‌ಗಳೊಂದಿಗೆ ಇಂಟಿಗ್ರೇಟ್ ಮಾಡಲು ಬಳಸಬಹುದಾದ ಸ್ಥಿರ REST API ಒದಗಿಸುತ್ತವೆ.
+ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್‌ಗಳು ಯುಗಪೂರಿತ REST APIಗಳನ್ನು ಒದಗಿಸುತ್ತವೆ, ಇದು ಆಪ್ಲಿಕೇಶನ್‌ಗಳು ಮಾದರಿಯನ್ನು ಬಳಸಲು ಏಕೀಕೃತಗೊಳಿಸುವುದಕ್ಕೆ ಸಾಧ್ಯ ಮಾಡುತ್ತದೆ.
 
-### Manage Endpoint
+### ಎಂತ್‌ಪಾಯಿಂಟ್ ನಿರ್ವಹಣೆ
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ ರಿಜಿಸ್ಟರ್ ಮಾಡಿದ ಮಾದರಿಗಾಗಿ Azure Machine Learning ನಲ್ಲಿ ಒಂದು managed online endpoint ಅನ್ನು ರಚಿಸುತ್ತಿದೆ. ಇದರ ಕಾರ್ಯಗಳ ವಿವರಣೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಅಜೂರ್ ಯಂತ್ರ ಅಧ್ಯಯನದಲ್ಲಿ ನೋಂದಾಯಿಸಿದ ಮಾದರಿಗಾಗಿ ನಿರ್ವಹಿತ ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ರಚಿಸುತ್ತಿದೆ. ಇದರ ವಿವರ ಇಲ್ಲಿದೆ:
 
-    - ಇದು Azure AI ML SDK ನಿಂದ ಅಗತ್ಯವಾದ ಮೋಡ್ಯೂಲ್‌ಗಳನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡುತ್ತದೆ.
+    - ಅಗತ್ಯ ಮಾದ್ಯೂಲ್‌ಗಳನ್ನು Azure AI ML SDK ನಿಂದ ಆಮದು ಮಾಡುತ್ತದೆ.
 
-    - ಇದು "ultrachat-completion-" סטרಿಂಗ್‌ಗೆ ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ ಅನ್ನು ಜೋಡಿಸಿ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗಾಗಿ ವಿಶಿಷ್ಟ ಹೆಸರು ನಿರ್ಧರಿಸುತ್ತದೆ.
+    - "ultrachat-completion-" ಸ್ಟ್ರಿಂಗ್‌ಗೆ ಟೈಮ್ಸ್ಟ್ಯಾಂಪ್ ಸೇರಿಸಿ ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್‌ಗೆ ವಿಶಿಷ್ಟ ಹೆಸರು ನೀಡುತ್ತದೆ.
 
-    - ಇದು ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ರಚಿಸಲು ManagedOnlineEndpoint ವಸ್ತುವನ್ನು ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ರಚಿಸಲು ತಯಾರಾಗುತ್ತದೆ, ಅಲ್ಲಿ ಎಂಡ್ಪಾಯಿಂಟ್‌ನ ಹೆಸರು, ವಿವರಣೆ ಮತ್ತು authentication mode ("key") ಸೇರಿವೆ.
+    - ManagedOnlineEndpoint ಆಬ್‌ಜೆಕ್ಟ್ ಅನ್ನು ಹೆಸರಿನ, ವಿವರಣೆಯ, ಇಲ್ಲಿನ ಚಾವಣಿ ಮೋಡ್ ("key") ಸೇರಿದಂತೆ ಹಲವಾರು ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ರಚಿಸಲು ಸಿದ್ಧತೆ ಮಾಡುತ್ತದೆ.
 
-    - ಇದು workspace_ml_client ನಲ್ಲಿ begin_create_or_update 메ಥಡ್ ಅನ್ನು ಕರೆದು online endpoint ಅನ್ನು ರಚಿಸುತ್ತದೆ, ನಂತರ creation ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ wait 메ಥಡ್ ಅನ್ನು ಕರೆದು ಕಾಯುತ್ತದೆ.
+    - workflow_ml_client ನಲ್ಲಿ begin_create_or_update ಮೆತ್ತೋಡ್ ಮೂಲಕ ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ರಚಿಸುತ್ತಿದೆ. ನಂತರ ಕಾರ್ಯ ಮುಗಿಯುವವರೆಗೆ wait ಮೆತ್ತೋಡ್ ಮೂಲಕ ಕಾಯುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ರಿಜಿಸ್ಟರ್ ಮಾಡಿದ ಮಾದರಿಗಾಗಿ Azure Machine Learning ನಲ್ಲಿ ಒಂದು managed online endpoint ಅನ್ನು ರಚಿಸುತ್ತಿದೆ.
+1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ನೊಂದಾಯಿಸಿದ ಮಾದರಿಗಾಗಿ ಅಜೂರ್ ಯಂತ್ರ ಅಧ್ಯಯನದಲ್ಲಿ ನಿರ್ವಹಿತ ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ರಚಿಸುತ್ತಿದೆ.
 
     ```python
-    # Azure AI ML SDK‌ನಿಂದ ಅಗತ್ಯವಾದ ಮಾಡ್ಯೂಲ್‌ಗಳನ್ನು ಆಮದು ಮಾಡಿ
+    # Azure AI ML SDK ನಿಂದ ಅಗತ್ಯಮód್ಯೂಲ್‌ಗಳನ್ನು ಆಮದುಮಾಡಿ
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
         ManagedOnlineDeployment,
@@ -728,11 +732,11 @@ This Python script is defining and configuring a machine learning pipeline using
         OnlineRequestSettings,
     )
     
-    # ಟೈಮ್‌ಸ್ಟ್ಯಾಂಪ್ ಅನ್ನು "ultrachat-completion-" ಸ್ಟ್ರಿಂಗ್‌ಗೆ ಸೇರಿಸುವ ಮೂಲಕ ಆನ್‌ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗಾಗಿ ವಿಶಿಷ್ಟ ಹೆಸರು ನಿರ್ಧರಿಸಿ
+    # "ultrachat-completion-" ಸ್ಟ್ರಿಂಗ್‌ಗೆ ಟೈಂಸ್ಟಾಂಪ್ ಚೇರಿಸಿ ಆನ್‌ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗೆ ವಿಶಿಷ್ಟ ಹೆಸರು ನಿರ್ಧರಿಸಿ
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # ವಿವಿಧ ಪರಾಮೆಟರ್‌ಗಳೊಂದಿಗೆ ManagedOnlineEndpoint ಆಬ್ಜೆಕ್ಟ್ ಅನ್ನು ರಚಿಸುವ ಮೂಲಕ ಆನ್‌ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್ ರಚಿಸಲು ತಯಾರಿ ಮಾಡಿ
-    # ಇವುಗಳಲ್ಲಿ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ಹೆಸರು, ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ವಿವರಣೆ ಮತ್ತು ಪ್ರಾಮಾಣೀಕರಣ ಮೋಡ್ ("key") ಸೇರಿವೆ
+    # ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ManagedOnlineEndpoint ವಸ್ತುವನ್ನು ರಚಿಸಿ ಆನ್‌ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಸಿದ್ಧಪಡಿಸಿ
+    # ಇದರಲ್ಲಿ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ಹೆಸರು, ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ವಿವರಣೆ, ಮತ್ತು ಪ್ರಾಮಾಣೀಕರಣ ವಿಧಾನ ("key") ಸೇರಿರುತ್ತವೆ
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -741,56 +745,56 @@ This Python script is defining and configuring a machine learning pipeline using
         auth_mode="key",
     )
     
-    # ManagedOnlineEndpoint ಆಬ್ಜೆಕ್ಟ್ ಅನ್ನು ಆರ್ಗ್ಯುಮೆಂಟ್ ಆಗಿ ನೀಡಿ workspace_ml_client‌ನ begin_create_or_update ಮೆಥಡ್ ಅನ್ನು ಕರೆಸಿ ಆನ್‌ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್ ರಚಿಸಿ
-    # ನಂತರ wait ಮೆಥಡ್ ಅನ್ನು ಕರೆಸಿ ರಚನಾ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾದಿರಿ
+    # ManagedOnlineEndpoint ವಸ್ತುವನ್ನು ಆರ್ಗ್ಯುಮೆಂಟ್ ಆಗಿ workspace_ml_client ನ begin_create_or_update ವಿಧಾನವನ್ನು ಕರೆ ಮಾಡಿ ಆನ್‌ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್ ರಚಿಸಿ
+    # ನಂತರ wait ವಿಧಾನವನ್ನು ಕರೆ ಮಾಡಿ ರಚನಾ ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣಗೊಳ್ಳುವುದಕ್ಕೆ ಕಾಯಿರಿ
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> ನೀವು ಇಲ್ಲಿ ನಿಯೋಜನೆಗೆ ಬೆಂಬಲವಾಗುವ SKU ಗಳ ಪಟ್ಟಿ ಕಂಡುಹಿಡಿಯಬಹುದು - [ವ್ಯವಸ್ಥಿತ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗಳ SKU ಪಟ್ಟಿ](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> ನೀವು ಇಲ್ಲಿ ನಿಯೋಜನೆಗಾಗಿ ಬೆಂಬಲಿತ SKU ಗಳ ಪಟ್ಟಿ ಕಾಣಬಹುದು - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### Deploying ML Model
+### ML ಮಾದರಿಯನ್ನು ನಿಯೋಜಿಸುವುದು
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ ರಿಜಿಸ್ಟರ್ ಮಾಡಲಾದ ಮಷಿನ್ ಲರ್ನಿಂಗ್ ಮಾದರಿಯನ್ನು Azure Machine Learning ನಲ್ಲಿ ಒಂದು managed online endpoint ಗೆ ಡಿಪ್ಲಾಯ್ ಮಾಡುತ್ತಿದೆ. ಇದರ ಕಾರ್ಯಗಳ ವಿವರಣೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ನೋಂದಾಯಿಸಿರುವ ಯಂತ್ರ ಅಧ್ಯಯನ ಮಾದರಿಯನ್ನು ಅಜೂರ್ ಯಂತ್ರ ಅಧ್ಯಯನದಲ್ಲಿ ನಿರ್ವಹಿತ ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್‌ಗೆ ನಿಯೋಜಿಸುತ್ತಿದೆ. ಇದರ ವಿವರ ಇಲ್ಲಿದೆ:
 
-    - ಇದು Python abstract syntax grammar ನ ಟ್ರೀಗಳನ್ನು ಪ್ರೊಸೆಸ್ ಮಾಡಲು ಬಳಕೆಯಾಗುವ ಫಂಕ್ಷನ್ಗಳನ್ನು ಒದಗಿಸುವ ast ಮೊಡ್ಯೂಲ್ ಅನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡುತ್ತದೆ.
+    - ast ಮ್ಯಾಡ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡುತ್ತದೆ, ಇದು ಪೈಥಾನ್ ಸಿಂಟ್ಯಾಕ್ಸ್ ಗ್ರ್ಯಾಂಮರ್ ಮರಿಗಳನ್ನು ಪ್ರಕ್ರಿಯೆ ಮಾಡಲು ಫಂಕ್ಷನ್‌ಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ.
 
-    - ಇದು ನಿಯೋಜನೆಗಾಗಿ instance type ಅನ್ನು "Standard_NC6s_v3" ಗೆ ಸೆಟ್ ಮಾಡುತ್ತದೆ.
+    - ನಿಯೋಜನೆಗಾಗಿ ಇನ್‌ಸ್ಟನ್ಸ್ ಟೈಪ್ ಅನ್ನು "Standard_NC6s_v3" ಎಂದು ನಿಗದಿಗೊಳಿಸುತ್ತದೆ.
 
-    - ಇದು foundation model ನಲ್ಲಿ inference_compute_allow_list ಟ್ಯಾಗ್ ಇದೆ ಎಂದು ಪರಿಶೀಲಿಸುತ್ತದೆ. ಇದ್ದಲ್ಲಿ, ಟ್ಯಾಗ್ ಮೌಲ್ಯವನ್ನು ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ Python ಪಟ್ಟಿಗೆ ಪರಿವರ್ತಿಸಿ inference_computes_allow_list ಗೆ ಹಂಚಿ. ಇಲ್ಲದಿದ್ದರೆ, inference_computes_allow_list ಅನ್ನು None ಗೆ ಸೆಟ್ ಮಾಡಲಾಗುತ್ತದೆ.
+    - foundation model ನಲ್ಲಿ inference_compute_allow_list ಟ್ಯಾಗ್ ಇದ್ದರೆ, ಅದರ ಮೌಲ್ಯವನ್ನು ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ ಪೈಥಾನ್ ಪಟ್ಟಿಗೆ ಪರಿವರ್ತಿಸಿ inference_computes_allow_list ಗೆ ನೀಡುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ None ನಿಗದಿ ಮಾಡುತ್ತದೆ.
 
-    - ನಮೂದಿಸಿದ instance type ಅನ್ನು allow list ನಲ್ಲಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ. ಇದು ಇಲ್ಲದಿದ್ದರೆ, ಬಳಕೆದಾರರನ್ನು allow list ನಿಂದ ಒಂದೊಂದು instance type ಆಯ್ಕೆಮಾಡುವಂತೆ ಮನವಿ ಮಾಡುವ ಸಂದೇಶವನ್ನು ಮುದ್ರಿಸಲಾಗುತ್ತದೆ.
+    - ನಿರ್ದಿಷ್ಟ ಇನ್‌ಸ್ಟನ್ಸ್ ಟೈಪ್ ಆ ಅನ್ವಯ ಪಟ್ಟಿಯಲ್ಲಿ ಇದೆಯೆಂದು ಪರಿಶೀಲಿಸುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ ಬಳಕೆದಾರರನ್ನು ಅನುಮೋದಿತ ಪಟ್ಟಿಯಿಂದ ಇನ್‌ಸ್ಟನ್ಸ್ ಟೈಪ್ ಆಯ್ಕೆ ಮಾಡಲು ಸೂಚಿಸುತ್ತದೆ.
 
-    - ಇದು ManagedOnlineDeployment ವಸ್ತುವನ್ನು ನಿಯೋಜನೆ ಹೆಸರು, ಎಂಡ್ಪಾಯಿಂಟ್ ಹೆಸರು, ಮಾದರಿ ID, instance type ಮತ್ತು ಎಣಿಕೆ, liveness probe ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಮತ್ತು request ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಸೇರಿದಂತೆ ವಿವಿಧ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ರಚಿಸಿ ನಿಯೋಜನೆ ಸಿದ್ದಪಡಿಸುತ್ತದೆ.
+    - ManagedOnlineDeployment ಆಬ್‌ಜೆಕ್ಟ್ ಅನ್ನು ನಿಯೋಜನೆಗೆ ಸಿದ್ಧಪಡಿಸುತ್ತದೆ. ಇದರಲ್ಲಿ ನಿಯೋಜನೆ ಹೆಸರು, ಎಂತ್‌ಪಾಯಿಂಟ್ ಹೆಸರು, ಮಾದರಿ ಐಡಿ, ಇನ್‌ಸ್ಟನ್ಸ್ ಮಾದರಿ ಮತ್ತು ಗಣಿ, ಲೈವ್‌ನೆಸ್ ಪ್ರೋಬ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ವಿನಂತಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಸೇರಿವೆ.
 
-    - ಇದು workspace_ml_client ನಲ್ಲಿ begin_create_or_update 메ಥಡ್ ಅನ್ನು ಕರೆದು ManagedOnlineDeployment ವಸ್ತುವಿನೊಂದಿಗೆ ನಿಯೋಜನೆಯನ್ನು ರಚಿಸುತ್ತದೆ ಮತ್ತು creation ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ wait 메ಥಡ್ ಅನ್ನು ಕರೆದು ಕಾಯುತ್ತದೆ.
+    - workflow_ml_client ನಲ್ಲಿ begin_create_or_update ಮೂಲಕ ನಿಯೋಜನೆಯನ್ನು ರಚಿಸಿ wait ಮೂಲಕ ಕಾರ್ಯ ಮುಗಿಯುವವರೆಗೆ ಕಾಯುತ್ತದೆ.
 
-    - ಇದು ಎಂಡ್ಪಾಯಿಂಟ್‌ನ ಟ್ರಾಫಿಕ್ ಅನ್ನು 100% "demo" ನಿಯೋಜನಕ್ಕೆ ನೇರಗೊಳಿಸಲು ಸೆಟ್ ಮಾಡುತ್ತದೆ.
+    - ಎಂತ್‌ಪಾಯಿಂಟ್ ಗೆ ಟ್ರಾಫಿಕ್ ಅನ್ನು 100% "demo" ನಿಯೋಜನೆಗೆ ನೇರವಾಗಿ ನೀಡುತ್ತದೆ.
 
-    - ಇದು endpoint ವಸ್ತುವನ್ನು ಆರ್ಗ್ಯೂಮೆಂಟಿಯಾಗಿ workspace_ml_client ನಲ್ಲಿ begin_create_or_update 메ಥಡ್ ಕರೆದು ಅಪ್ಡೇಟ್ ಮಾಡುತ್ತದೆ ಮತ್ತು ಅಪ್ಡೇಟ್ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ result 메ಥಡ್ ಅನ್ನು ಕರೆದು ಕಾಯುತ್ತದೆ.
+    - begin_create_or_update ಮೂಲಕ ಎಂತ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ನವೀಕರಿಸಿ result ಮೂಲಕ ನವೀಕರಣ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ರಿಜಿಸ್ಟರ್ ಮಾಡಲಾದ ಮಾದರಿಯನ್ನು managed online endpoint ಗೆ ಡಿಪ್ಲಾಯ್ ಮಾಡುತ್ತದೆ.
+1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ ನೊಂದಾಯಿಸಿದ ಯಂತ್ರ ಅಧ್ಯಯನ ಮಾದರಿಯನ್ನು ಅಜೂರ್ ಯಂತ್ರ ಅಧ್ಯಯನದಲ್ಲಿ ನಿರ್ವಹಿತ ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್‌ಗೆ ನಿಯೋಜಿಸುತ್ತಿದೆ.
 
     ```python
-    # Python ಅಬ್ಸ್ಟ್ರಾಕ್ಟ್ ಸಿಂಟ್ಯಾಕ್ಸ್ ವ್ಯಾಕರಣದ ಮರಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ಕಾರ್ಯಗಳನ್ನು ಒದಗಿಸುವ ast ಮಾದ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡಿ
+    # ಪೈಥಾನ್ ಅವ್ಯಕ್ತ ವ್ಯವಸ್ಥಿತ ವ್ಯಾಕರಣದ ಮರಗಳನ್ನು ಪ್ರಕ್ರಿಯೆಮಾಡಲು ಕಾರ್ಯಗಳನ್ನು ಒದಗಿಸುವ ast ಮಾಯಾಜಾಲವನ್ನು ಆಮದುಮಾಡಿ
     import ast
     
-    # ಡಿಪ್ಲಾಯ್‌ಮೆಂಟ್‌ಗಾಗಿ ಇನ್ಸ್ಟನ್ಸ್ ಪ್ರಕಾರವನ್ನು ನಿಗದಿ ಮಾಡಿ
+    # ನಿಯೋಜನೆಗಾಗಿ ಉದಾಹರಣೆ ಪ್ರಕಾರವನ್ನು ಹೊಂದಿಸಿ
     instance_type = "Standard_NC6s_v3"
     
-    # ಮೂಲ ಮಾದರಿಯಲ್ಲಿ `inference_compute_allow_list` ಟ್ಯಾಗ್ ಇದ್ದೇ ಇದೆಯೋ ಎಂದು ಪರಿಶೀಲಿಸಿ
+    # ಅಸ್ತಿತ್ವದಲ್ಲಿದೆಯೇ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ `inference_compute_allow_list` ಟ್ಯಾಗ್ ನ ಅಸ್ತಿತ್ವವನ್ನು ಸ್ಥಾಪನಾ ಮಾದರಿಯಲ್ಲಿ
     if "inference_compute_allow_list" in foundation_model.tags:
-        # ಇದ್ದರೆ, ಟ್ಯಾಗ್ ಮೌಲ್ಯವನ್ನು ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ Python ಪಟ್ಟಿಗೆ ಪರಿವರ್ತಿಸಿ ಮತ್ತು ಅದನ್ನು `inference_computes_allow_list`ಗೆ ನಿಯೋಜಿಸಿ
+        # ಅದೆ ಇದ್ದರೆ, ಟ್ಯಾಗ್ ಮೌಲ್ಯವನ್ನು ಪಠ್ಯದಿಂದ ಪೈಥಾನ್ ಪಟ್ಟಿಗೆ ಬದಲಾಯಿಸಿ ಮತ್ತು `inference_computes_allow_list` ಗೆ ಹಂಚಿ
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # ಇಲ್ಲದಿದ್ದರೆ, `inference_computes_allow_list` ಅನ್ನು `None`ಗೆ ಸೆಟ್ ಮಾಡಿ
+        # ಇಲ್ಲದಿದ್ದರೆ, `inference_computes_allow_list` ಅನ್ನು `None` ಗೆ ಹೊಂದಿಸಿ
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # ನಿರ್ದಿಷ್ಟ ಮಾಡಿದ ಇನ್ಸ್ಟನ್ಸ್ ಪ್ರಕಾರವು ಅನುಮತಿ ಪಟ್ಟಿಯಲ್ಲಿ (allow list) ಇದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ
+    # ಸೂಚಿಸಿದ ಉದಾಹರಣೆ ಪ್ರಕಾರವು ಅನುಮತಿಸಲಾದ ಪಟ್ಟಿಯಲ್ಲಿ ಇದ್ದರೆ ಪರಿಶೀಲಿಸಿ
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -799,7 +803,7 @@ This Python script is defining and configuring a machine learning pipeline using
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # ವಿವಿಧ ಪಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ `ManagedOnlineDeployment` ವಸ್ತುವನ್ನು ಸೃಷ್ಟಿಸುವ ಮೂಲಕ ಡಿಪ್ಲಾಯ್‌ಮೆಂಟ್ ಸೃಷ್ಟಿಸಲು ಸಿದ್ಧತೆ ಮಾಡಿ
+    # ವಿವಿಧ ಪರಿಮಾಣಗಳನ್ನು ಹೊಂದಿರುವ `ManagedOnlineDeployment` ವಸ್ತುವನ್ನು ಸೃಷ್ಟಿಸುವ ಮೂಲಕ ನಿಯೋಜನೆಯನ್ನು ಸಿದ್ಧಪಡಿಸಿ
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -810,75 +814,75 @@ This Python script is defining and configuring a machine learning pipeline using
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # `ManagedOnlineDeployment` ವಸ್ತುವನ್ನು ಆರ್ಗ್ಯುಮೆಂಟ್ ಆಗಿ ನೀಡಿ `workspace_ml_client` ನ `begin_create_or_update` ವಿಧಾನವನ್ನು ಕರೆಸಿ ಡಿಪ್ಲಾಯ್‌ಮೆಂಟ್ ಅನ್ನು ರಚಿಸಿ
-    # ನಂತರ, `wait` ವಿಧಾನವನ್ನು ಕರೆಸಿ ರಚನಾ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುತ್ತದೆವರೆಗೆ ಕಾಯಿರಿ
+    # `workspace_ml_client` ನ `begin_create_or_update` ವಿಧಾನವನ್ನು ಕರೆ ಮಾಡಿ `ManagedOnlineDeployment` ವಸ್ತುವನ್ನು ಆರ್ಗುಮೆಂಟ್ ಆಗಿ ನೀಡಿ ನಿಯೋಜನೆ ಸೃಷ್ಟಿಸಿ
+    # ನಂತರ ಸೃಷ್ಟಿ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳಲು `wait` ವಿಧಾನವನ್ನು ಕರೆ ಮಾಡಿ ಕಾಯಿರಿ
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ಟ್ರಾಫಿಕ್ ಅನ್ನು "demo" ಡಿಪ್ಲಾಯ್‌ಮೆಂಟ್‌ಗೆ 100% ಕಳುಹಿಸುವಂತೆ ಸೆಟ್ ಮಾಡಿ
+    # ಅಂತಿಮ ಬಿಂದುವಿನ ಸಂಚಾರವನ್ನು "ಡೆಮೊ" ನಿಯೋಜನೆಗೆ 100% ಸಂಚಾರವನ್ನು ನೇರಿಸಲು ಹೊಂದಿಸಿ
     endpoint.traffic = {"demo": 100}
     
-    # `endpoint` ವಸ್ತುವನ್ನು ಆರ್ಗ್ಯುಮೆಂಟ್ ಆಗಿ ನೀಡಿ `workspace_ml_client` ನ `begin_create_or_update` ವಿಧಾನವನ್ನು ಕರೆಸಿ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ಅಪ್ಡೇಟ್ ಮಾಡಿ
-    # ನಂತರ, `result` ವಿಧಾನವನ್ನು ಕರೆಸಿ ಅಪ್ಡೇಟ್ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವುದನ್ನು ಕಾಯಿರಿ
+    # `workspace_ml_client` ನ `begin_create_or_update` ವಿಧಾನವನ್ನು ಕರೆ ಮಾಡಿ `endpoint` ವಸ್ತುವನ್ನು ಆರ್ಗುಮೆಂಟ್ ಆಗಿ ನೀಡಿ ಅಂತಿಮ ಬಿಂದುವನ್ನು ನವೀಕರಿಸಿ
+    # ನಂತರ ನವೀಕರಣ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳಲು `result` ವಿಧಾನವನ್ನು ಕರೆ ಮಾಡಿ ಕಾಯಿರಿ
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. ಸ್ಯಾಂಪಲ್ ಡೇಟával ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಪರೀಕ್ಷಿಸಿ
+## 8. ಉದಾಹರಣಾ ಡೇಟಾವಿಂದ ಎಂತ್‌ಪಾಯಿಂಟ್ ಪರೀಕ್ಷೆ ಮಾಡಿ
 
-ನಾವು ಪರೀಕ್ಷಾ ಡೇಟಾಸೆಟ್‌ನಿಂದ ಕೆಲವು ಸ್ಯಾಂಪಲ್ ಡೇಟಾವನ್ನು ತೆಗೆದುಕೊಂಡು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗೆ ಇನ್ಫರೆನ್ಸ್‌ಗಾಗಿ ಸಲ್ಲಿಸೋಣ. ನಂತರ ಸ್ಕೋರ್ ಮಾಡಲಾದ ಲೇಬಲ್‌ಗಳನ್ನು ನೈರ್ಮಲ್ಯ ಲೇಬಲ್‌ಗಳ ಜೊತೆಗೆ ಪ್ರದರ್ಶಿಸುತ್ತೇವೆ.
+ನಾವು ಪರೀಕ್ಷೆ ಡೇಟಾಸೆಟ್‌ನಿಂದ ಕೆಲವು ಸಂಕಲ್ಪ ಡೇಟಾವನ್ನು ಪಡೆದು ಆನ್‌ಲೈನ್ ಎಂತ್‌ಪಾಯಿಂಟ್‌ಗೆ ಇನ್‌ಫರೆನ್ಸ್‌ಗೆ ಸಲ್ಲಿಸಲಿದ್ದೇವೆ. ನಂತರ ಅಂಕೆಗಳು ಮತ್ತು ನಿಜವಾದ ಲೇಬಲ್‌ಗಳನ್ನು ಪಕ್ಕದವಾಗಿ ತೋರಿಸುವೆವು.
 
-### Reading the results
+### ಫಲಿತಾಂಶಗಳನ್ನು ಓದುವುದು
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ pandas DataFrame ಗೆ JSON Lines ಫೈಲ್ ಅನ್ನು ಓದಿಕೊಂಡು, ಒಂದು ರ್ಯಾಂಡಮ್ ನೂತನ ಪ್ರಧಾನಿ ಆಯ್ಕೆ ಮಾಡಿ ಮತ್ತು ಸೂಚ್ಯಂಕವನ್ನು ರಿಸೆಟ್ ಮಾಡುತ್ತದೆ. ಅದರಲ್ಲಿನ ಕಾರ್ಯಗಳು:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ JSON Lines ಫೈಲ್ ಅನ್ನು pandas DataFrame ಆಗಿ ಓದಿ, ರ್ಯಾಂಡಂ ಮಾದರಿಯನ್ನು ತೆಗೆದು, ಸೂಚ್ಯಂಕವನ್ನು ಮರುಹೊಂದಿಸುತ್ತದೆ. ವಿವರ ಇಲ್ಲಿದೆ:
 
-    - ಇದು ./ultrachat_200k_dataset/test_gen.jsonl ಫೈಲ್ ಅನ್ನು pandas DataFrame ಗೆ ಓದುತ್ತದೆ. ಫೈಲ್ JSON Lines ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ olduğu ಕಾರಣ read_json ಫಂಕ್ಷನ್ lines=True ಆರ್ಗ್ಯೂಮೆಂಟ್ ಜೊತೆ ಬಳಸಲಾಗುತ್ತದೆ.
+    - ./ultrachat_200k_dataset/test_gen.jsonl ಫೈಲ್ ಅನ್ನು pandas DataFrame ಆಗಿ ಓದುಕೊಳ್ಳುತ್ತದೆ. read_json ಫಂಕ್ಷನ್ ಅನ್ನು lines=True ಆರ್ಗುಮೆಂಟ್ ಬಳಸಿ ಉಪಯೋಗಿಸಲಾಗುತ್ತದೆ ಏಕೆಂದರೆ ಫೈಲ್ JSON Lines ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿದೆ, ಅಲ್ಲಿ ಪ್ರತಿ ಸಾಲು ಪ್ರತ್ಯೇಕ JSON ಆಬ್ಜೆಕ್ಟ್ ಆಗಿದೆ.
 
-    - ಇದು DataFrame ನಿಂದ 1 ಸಾಲಿನ ಯಾದೃಚ್ಛಿಕ ನიმೂನೆಯನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ. sample ಫಂಕ್ಷನ್ n=1 ಆರ್ಗ್ಯೂಮೆಂಟ್ ಅನ್ನು ಬಳಸುತ್ತದೆ რათა random ಸಾಲುಗಳ ಸಂಖ್ಯೆಯನ್ನು ಸೂಚಿಸಲು.
+    - DataFrame ನಿಂದ 1 ರ್ಯಾಂಡಂ ಸಾಲನ್ನು ಆಯ್ಕೆಮಾಡುತ್ತದೆ. sample ಫಂಕ್ಷನ್ n=1 ಆರ್ಗುಮೆಂಟ್ ಬಳಸಿ ಇದನ್ನು ನಿಗದಿಗೊಳಿಸಿದೆ.
 
-    - ಇದು DataFrame ನ ಸೂಚ್ಯಂಕವನ್ನು reset ಮಾಡುತ್ತದೆ. reset_index ಫಂಕ್ಷನ್ drop=True ಆರ್ಗ್ಯೂಮೆಂಟ್ ಜೊತೆ ಬಳಸಿ ಮೂಲ ಸೂಚ್ಯಂಕವನ್ನು ಹೊರىتى, ಹೊಸ ಪೂರ್ಣಾಂಕ ಸೂಚ್ಯಂಕವನ್ನು ಬದಲಿ ಮಾಡುತ್ತದೆ.
+    - DataFrame ನ ಸೂಚ್ಯಂಕವನ್ನು ಮರುಹೊಂದಿಸುತ್ತದೆ. reset_index ಡ್ರಾಪ್=True ಎಂದು ಮೂಲ ಸೂಚ್ಯಂಕವನ್ನು ಡ್ರಾಪ್ ಮಾಡಿ ಹೊಸ ಸಂಖ್ಯಾತ್ಮಕ ಸೂಚ್ಯಂಕವನ್ನು ಕಲ್ಪಿಸುತ್ತದೆ.
 
-    - ಇದು head(2) ಫಂಕ್ಷನ್ ಅನ್ನು ಬಳಸಿ DataFrame ನ ಮೊದಲ 2 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ. ಆದಾಗ್ಯೂ, ಸ್ಯಾಂಪ್ಲಿಂಗ್ ನಂತರ DataFrame ನಲ್ಲಿ ಕೇವಲ ಒಂದು ಸಾಲು ಮಾತ್ರ ಇರುವ ಕಾರಣ ಇದು ಆ ಒಂದು ಸಾಲನ್ನು ಮಾತ್ರ ಪ್ರದರ್ಶಿಸುತ್ತದೆ.
+    - head ಫಂಕ್ಷನ್ 2 ಆರ್ಗುಮೆಂಟ್ ಜೊತೆ DataFrame ನ ಮೊದಲ 2 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ. ಆದರೆ ರ್ಯಾಂಡಂ ಮಾದರಿಯ ನಂತರ DataFrame ನಲ್ಲಿ ಕೇವಲ ಒಂದು ಸಾಲು ಇರುವುದರಿಂದ, ಅದಷ್ಟೇ ಸಾಲನ್ನು ಮಾತ್ರ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ JSON Lines ಫೈಲ್ ಅನ್ನು pandas DataFrame ಗೆ ಓದಿ, 1 ರ್ಯಾಂಡಮ್ ನიმುನೆಯನ್ನು ತೆಗೆದು ಸೂಚ್ಯಂಕವನ್ನು ರಿಸೆಟ್ ಮಾಡಿ ಮೊದಲ ಸಾಲನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ.
+1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ JSON Lines ಫೈಲ್ ಅನ್ನು pandas DataFrame ಆಗಿ ಓದಿ, 1 ರ್ಯಾಂಡಂ ಸಾಲನ್ನು ಆಯ್ದು, ಸೂಚ್ಯಂಕವನ್ನು ಮರುಹೊಂದಿಸಿ ಮೊದಲ ಸಾಲನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ.
     
     ```python
-    # pandas ಗ್ರಂಥಾಲಯವನ್ನು ಆಮದು ಮಾಡಿ
+    # pandas ಗ್ರಂಥಾಲಯವನ್ನು ಆಮದುಮಾಡಿ
     import pandas as pd
     
-    # JSON Lines ಫೈಲ್ './ultrachat_200k_dataset/test_gen.jsonl' ಅನ್ನು pandas DataFrame ಆಗಿ ಓದಿ
-    # 'lines=True' ಆರ್ಗ್ಯುಮೆಂಟ್ ಫೈಲ್ JSON Lines ಸ್ವರೂಪದಲ್ಲಿದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ, ಪ್ರತಿಯೊಂದು ಸಾಲು ಪ್ರತ್ಯೇಕ JSON ವಸ್ತುವಾಗಿರುತ್ತದೆ
+    # JSON Lines ಫೈಲ್ './ultrachat_200k_dataset/test_gen.jsonl' ಅನ್ನು pandas DataFrame‌ಗೆ ಓದಿ
+    # 'lines=True' ನಿಯಾಮಕವು ಫೈಲ್ JSON Lines ಸ್ವರೂಪದಲ್ಲಿದೆ ಎಂದು ಸೂಚಿಸುತ್ತದೆ, ಇಲ್ಲಿ ಪ್ರತಿಯೊಂದು ಸಾಲೂ ವಿಭಿನ್ನ JSON ಆಬ್ಜೆಕ್ಟ್ ಆಗಿದೆ
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
     # DataFrame ನಿಂದ 1 ಸಾಲಿನ ಯಾದೃಚ್ಛಿಕ ಮಾದರಿಯನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ
-    # 'n=1' ಆರ್ಗ್ಯುಮೆಂಟ್ ಆಯ್ಕೆಮಾಡಬೇಕಾದ ಯಾದೃಚ್ಛಿಕ ಸಾಲುಗಳ ಸಂಖ್ಯೆಯನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸುತ್ತದೆ
+    # 'n=1' ನಿಯಾಮಕವು ಆಯ್ಕೆಮಾಡಲಾದ ಯಾದೃಚ್ಛಿಕ ಸಾಲುಗಳ ಸಂಖ್ಯೆಯನ್ನು ನಿರ್ಧರಿಸುತ್ತದೆ
     test_df = test_df.sample(n=1)
     
-    # DataFrame の ಸೂಚ್ಯಂಕವನ್ನು ರೀಸೆಟ್ ಮಾಡಿ
-    # 'drop=True' ಆರ್ಗ್ಯುಮೆಂಟ್ ಮೂಲ ಸೂಚ್ಯಂಕವನ್ನು ತೆಗೆದುಹಾಕಿ ಡೀಫಾಲ್ಟ್ ಪೂರ್ಣಾಂಕ ಮೌಲ್ಯಗಳ ಹೊಸ ಸೂಚ್ಯಂಕದಿಂದ ಬದಲಾಯಿಸುವುದಾಗಿ ಸೂಚಿಸುತ್ತದೆ
-    # 'inplace=True' ಆರ್ಗ್ಯುಮೆಂಟ್ DataFrame ಅನ್ನು ಸ್ಥಳದಲ್ಲೇ (ಹೊಸ ವಸ್ತುವನ್ನು ಸೃಷ್ಟಿಸದೆ) ಪರಿಷ್ಕರಿಸಲು ಸೂಚಿಸುತ್ತದೆ
+    # DataFrame ನ ಸೂಚ್ಯಂಕವನ್ನು ಮರುನಿಗದಿಪಡಿಸಿ
+    # 'drop=True' ನಿಯಾಮಕವು ಮೂಲ ಸೂಚ್ಯಂಕವನ್ನು ತೊಡೆದು ಹಾಕಿ ಹೊಸ ಡೀಫಾಲ್ಟ್ ಪೂರ್ಣಾಂಕಗಳ ಸೂಚ್ಯಂಕವನ್ನು ಬದಲಾಯಿಸಬೇಕೆಂದು ಸೂಚಿಸುತ್ತದೆ
+    # 'inplace=True' ನಿಯಾಮಕವು DataFrame ಅನ್ನು ಸ್ಥಳದಲ್ಲಿಯೇ ಪರಿವರ್ತಿಸಲು (ಹೊಸ ವಸ್ತುವಿಲ್ಲದೆ) ಸೂಚಿಸುತ್ತದೆ
     test_df.reset_index(drop=True, inplace=True)
     
-    # DataFrame ನ ಮೊದಲ 2 ಸಾಲುಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ
-    # ಆದರೆ, ಸ್ಯಾಂಪ್ಲಿಂಗ್ ನಂತರ DataFrame ನಲ್ಲಿ ಕೇವಲ ಒಂದು ಸಾಲು ಮಾತ್ರ ಇರುವುದರಿಂದ ಇದು ಆ ಒಂದೇ ಸಾಲನ್ನು ಮಾತ್ರ ಪ್ರದರ್ಶಿಸುತ್ತದೆ
+    # DataFrame ನ ಮೊದಲ 2 ಸಾಲುಗಳನ್ನು ತೋರಿಸಿ
+    # ಆದಾಗ್ಯೂ, ಮಾದರಿಮಾಡಿದ ನಂತರ DataFrame ನಲ್ಲಿ ಒಂದೇ ಸಾಲು ಇದರಿಂದ ಇದರಿಂದ ಕೇವಲ ಆ ಒಂದು ಸಾಲು ಪ್ರದರ್ಶಿಸಲಾಗುವುದು
     test_df.head(2)
     ```
 
-### Create JSON Object
+### JSON ಆಬ್ಜೆಕ್ಟ್ ರಚನೆ
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ ನಿರ್ದಿಷ್ಟ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ಒಂದು JSON ಆಬ್ಜೆಕ್ಟ್ ಅನ್ನು ರಚಿಸಿ ಅದನ್ನು ಫೈಲ್‌ಗೆ ಸೇಫ್ ಮಾಡುತ್ತಿದೆ. ಇದರ ಕಾರ್ಯವೆಂದರೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ನಿಗದಿತ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ JSON ಆಬ್ಜೆಕ್ಟ್ ರಚಿಸಿ ಅದನ್ನು ಫೈಲ್‌ಗೆ ಉಳಿಸುತ್ತದೆ. ಇದು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬ ವಿವರ ಇಲ್ಲಿದೆ:
 
-    - ಇದು JSON ಡೇಟಾ ಕೆಲಸ ಮಾಡಲು ಫಂಕ್ಷನ್‌ಗಳನ್ನು ಒದಗಿಸುವ json ಮೊಡ್ಯೂಲ್ ಅನ್ನು ಇಂಪೋರ್ಟ್ ಮಾಡುತ್ತದೆ.
-    - ಇದು parameters ಎಂಬ ಡಿಕ್ಷನರಿ ಅನ್ನು ರಚಿಸುತ್ತದೆ, ಇದರ ಕೀಗಳು ಮತ್ತು ಮೌಲ್ಯಗಳು ಯಂತ್ರ ಕಲಿಕೆಯ ಮಾದರಿಗಾಗಿ ಪರಿಮೆಟರ್ಗಳನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತವೆ. ಕೀಗಳು "temperature", "top_p", "do_sample", ಮತ್ತು "max_new_tokens" ಮತ್ತು ಅವುಗಳಿಗೆ ಹೊಂದಿಕೊಂಡಿರುವ ಮೌಲ್ಯಗಳು ಕ್ರಮವಾಗಿ 0.6, 0.9, True, ಮತ್ತು 200 ಆಗಿವೆ.
+    - json ಮೋಡ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡುತ್ತದೆ, ಇದು JSON ಡೇಟಾ ಕಾರ್ಯಾಚರಣೆಗೆ ಫಂಕ್ಷನ್‌ಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ.
+    - ಇದು ಮೆಷಿನ್ ಲರ್ನಿಂಗ್ ಮಾದರಿಗಾಗಿ ಮಾನದಂಡಗಳನ್ನು ಪ್ರತಿನಿಧಿಸುವ ಕೀಲಿಗಳು ಮತ್ತು ಮೌಲ್ಯಗಳೊಂದಿಗೆ parameters ಎಂಬ ಡಿಕ್ಷನರಿಯನ್ನು ರಚಿಸುತ್ತದೆ. ಕೀಲಿಗಳು "temperature", "top_p", "do_sample", ಮತ್ತು "max_new_tokens" ಆಗಿದ್ದು, ಅದರ ಸಮಾನ ಮೌಲ್ಯಗಳು ಕ್ರಮವಾಗಿ 0.6, 0.9, True, ಮತ್ತು 200 ಆಗಿವೆ.
 
-    - ಇದು ಇನ್ನೊಂದು ಡಿಕ್ಷನರಿ test_json ಅನ್ನು ರಚಿಸುತ್ತದೆ, ಇದಕ್ಕೆ "input_data" ಮತ್ತು "params" ಎಂಬ ಎರಡು ಕೀಗಳಿವೆ. "input_data" ಯ ಮೌಲ್ಯವು ಇನ್ನೊಂದು ಡಿಕ್ಷನರಿಯನ್ನು ಹೊಂದಿದೆ, ಅದರ ಕೀಗಳು "input_string" ಮತ್ತು "parameters". "input_string" ಯ ಮೌಲ್ಯವು test_df DataFrame ನ ಮೊದಲ ಸಂದೇಶ-containing ಪಟ್ಟಿಯಾಗಿದೆ. "parameters" ಯ ಮೌಲ್ಯವು ಮೊದಲಿಗೆ ರಚಿಸಿದ parameters ಡಿಕ್ಷನರಿಯೇ. "params" ಯ ಮೌಲ್ಯವು ಖಾಲಿ ಡಿಕ್ಷನರಿ.
+    - ಇದು ಇನ್ನೊಂದು ಡಿಕ್ಷನರಿ test_json ಅನ್ನು ರಚಿಸುತ್ತದೆ, ಅದು "input_data" ಮತ್ತು "params" ಎಂಬ ಎರಡು ಕೀಲಿಗಳನ್ನು ಹೊಂದಿದೆ. "input_data" ಮೌಲ್ಯವು ಇನ್ನೊಂದು ಡಿಕ್ಷನರಿಯಾಗಿದೆ, ಅದು "input_string" ಮತ್ತು "parameters" ಎಂಬ ಕೀಲಿಗಳನ್ನು ಹೊಂದಿದೆ. "input_string" ಮೌಲ್ಯವು test_df ಡೇಟಾಫ್ರೇಮ್‌ನ ಮೊದಲ ಸಂದೇಶವನ್ನು ಒಳಗೊಂಡಿರುವ ಪಟ್ಟಿಯಾಗಿದೆ. "parameters" ಮೌಲ್ಯವು ಹಿಂದಿನಿಂದ ರಚಿಸಿದ parameters ಡಿಕ್ಷನರಿಯಾಗಿದೆ. "params" ಮೌಲ್ಯವು ಖಾಲಿ ಡಿಕ್ಷನರಿಯಾಗಿದೆ.
 
-    - ಇದು sample_score.json ಎಂಬ ಫೈಲ್ ಅನ್ನು ತೆರೆಯುತ್ತದೆ
+    - ಇದು sample_score.json ಎಂಬ ಫೈಲನ್ನು ತೆರೆಯುತ್ತದೆ.
     
     ```python
-    # json ಮೋಡ್ಯೂಲ್ ಅನ್ನು ಆಮದು ಮಾಡಿ, ಇದು JSON ಡೇಟಾ ಜೊತೆ ಕೆಲಸ ಮಾಡುವ ಫಂಕ್ಷನ್‌ಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ
+    # JSON ಡೇಟಾ ಜೊತೆ ಕೆಲಸ ಮಾಡಲು ಫಂಕ್ಷನ್‌ಗಳನ್ನು ಒದಗಿಸುವ json ಮಡ್ಯುಲ್ ಅನ್ನು ಆಮದುಮಾಡಿ
     import json
     
-    # ಯಂತ್ರ ಕಲಿಕೆ ಮಾದರಿಗಾಗಿ ಪರಿಮಾಣಗಳನ್ನು ಪ್ರತಿನಿಧಿಸುವ ಕೀಗಳು ಮತ್ತು ಮೌಲ್ಯಗಳೊಂದಿಗೆ `parameters` ಎಂಬ ಡಿಕ್ಷನರಿ ರಚಿಸಿ
-    # ಕೀಗಳು "temperature", "top_p", "do_sample", ಮತ್ತು "max_new_tokens" ಆಗಿದ್ದು, ಅವುಗಳಿಗೆ ಹೊಂದುವ ಮೌಲ್ಯಗಳು ಕ್ರಮವಾಗಿ 0.6, 0.9, True, ಮತ್ತು 200 ಆಗಿವೆ
+    # ಯಂತ್ರಾಭ್ಯಾಸ ಮಾದರಿಗಾಗಿ ಪರಿಮಾಣಗಳನ್ನು ಪ್ರತಿನಿಧಿಸುವ ಕೀಲಿಗಳು ಮತ್ತು ಮೌಲ್ಯಗಳನ್ನು ಹೊಂದಿರುವ `parameters` ಎಂಬ ಡಿಕ್ಷನರಿ ರಚಿಸಿ
+    # ಕೀಲಿಗಳು "temperature", "top_p", "do_sample", ಮತ್ತು "max_new_tokens" ಆಗಿದ್ದು, ಅವುಗಳ ಅನುಗುಣ ಬುದ್ಧಿಮತ್ತೆಗಳು ಕ್ರಮವಾಗಿ 0.6, 0.9, ಸತ್ಯ(True), ಮತ್ತು 200 ಆಗಿವೆ
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -886,11 +890,11 @@ This Python script is defining and configuring a machine learning pipeline using
         "max_new_tokens": 200,
     }
     
-    # `test_json` ಎಂಬ ಇನ್ನೊಂದು ಡಿಕ್ಷನರಿ ರಚಿಸಿ, ಅದರ ಎರಡು ಕೀಗಳು: "input_data" ಮತ್ತು "params"
-    # "input_data" ರ ಮೌಲ್ಯವು ಮತ್ತೊಂದು ಡಿಕ್ಷನರಿ ಆಗಿದ್ದು, ಅದರಲ್ಲಿ "input_string" ಮತ್ತು "parameters" ಎಂಬ ಕೀಗಳಿವೆ
-    # "input_string" ರ ಮೌಲ್ಯವು `test_df` DataFrame ನ ಮೊದಲ ಸಂದೇಶವನ್ನು ಒಳಗೊಂಡಿರುವ ಒಂದು ಪಟ್ಟಿಯಾಗಿದೆ
-    # "parameters" ರ ಮೌಲ್ಯವು ಮೊದಲೇ ರಚಿಸಿದ `parameters` ಡಿಕ್ಷನರಿ ಆಗಿದೆ
-    # "params" ರ ಮೌಲ್ಯವು ಖಾಲಿ ಡಿಕ್ಷನರಿ ಆಗಿದೆ
+    # "input_data" ಮತ್ತು "params" ಎಂಬ ಎರಡು ಕೀಲಿಗಳನ್ನು ಹೊಂದಿರುವ ಇನ್ನೊಂದು ಡಿಕ್ಷನರಿ `test_json` ರಚಿಸಿ
+    # "input_data" ಮೌಲ್ಯವು "input_string" ಮತ್ತು "parameters" ಎಂಬ ಕೀಲಿಗಳನ್ನು ಹೊಂದಿರುವ ಮತ್ತೊಂದು ಡಿಕ್ಷನರಿ
+    # "input_string" ಮೌಲ್ಯವು `test_df` ಡೇಟಾ‌ಫ್ರೇಮ್‌ನ ಮೊದಲ ಸಂದೇಶವನ್ನು ಒಳಗೊಂಡಿರುವ ಪಟ್ಟಿ
+    # "parameters" ಮೌಲ್ಯವು ಮಿಕ್ಕಿ ರಚಿಸಿರುವ `parameters` ಡಿಕ್ಷನರಿ
+    # "params" ಮೌಲ್ಯವು ಖಾಲಿ ಡಿಕ್ಷನರಿ
     test_json = {
         "input_data": {
             "input_string": [test_df["messages"][0]],
@@ -899,34 +903,34 @@ This Python script is defining and configuring a machine learning pipeline using
         "params": {},
     }
     
-    # `./ultrachat_200k_dataset` ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ `sample_score.json` ಎಂಬ ಫೈಲ್ ಅನ್ನು ಬರೆಯುವ ಮೋಡ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ
+    # `./ultrachat_200k_dataset` ಡೈರೆಕ್ಟರಿಯಲ್ಲಿನ `sample_score.json` ಎಂಬ ಫೈಲ್ ಅನ್ನು ಬರೆಯುವ ಸ್ಥಿತಿಯಲ್ಲಿ ತೆರೆಯಿರಿ
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # `json.dump` ಫಂಕ್ಷನ್ ಬಳಸಿಕೊಂಡು `test_json` ಡಿಕ್ಷನರಿಯನ್ನು JSON ಫಾರ್ಮ್ಯಾಟ್‌ನಲ್ಲಿ ಫೈಲ್‌ಗೆ ಬರೆಯಿರಿ
+        # `json.dump` ಫಂಕ್ಷನ್ ಬಳಸಿ `test_json` ಡಿಕ್ಷನರಿಯನ್ನು JSON ಸ್ವರೂಪದಲ್ಲಿ ಫೈಲ್‌ಗೆ ಬರೆಸಿ
         json.dump(test_json, f)
     ```
 
-### ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಕರೆಸುವುದು
+### ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಆಮಂತ್ರಿಸುವುದು
 
-1. ಈ Python ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಕರೆಸುತ್ತಿದ್ದು ಒಂದು JSON ಫೈಲ್ ಅನ್ನು ಅಂಕಮಟ್ಟಿಸಲು (score) ಬಳಸುತ್ತದೆ. ಇದರ ಕಾರ್ಯಗಳ ವಿಶ್ಲೇಷಣೆ ಹೀಗಿದೆ:
+1. ಈ ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ Azure ಮೆಷಿನ್ ಲರ್ನಿಂಗ್‌ನ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಸಕೋರಿಂಗ್ ಮಾಡಲಾಗುವ JSON ಫೈಲ್ ಅನ್ನು ಆಮಂತ್ರಿಸುತ್ತದೆ. ಇದರ ಕೆಲಸದ ವಿವರಣೆ ಹೀಗಿದೆ:
 
-    - ಇದು workspace_ml_client ಆಬ್ಜೆಕ್ಟ್‌ನ online_endpoints ಗುಣದ invoke ವಿಧಾನವನ್ನು ಕರೆಸುತ್ತದೆ. ಈ ವಿಧಾನವನ್ನು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗೆ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಿ ಪ್ರತಿಕ್ರಿಯೆ ಪಡೆಯಲು ಬಳಸಲಾಗುತ್ತದೆ.
+    - ಇದು workspace_ml_client ವಸ್ತುವಿನ online_endpoints ಪ್ರಾಪರ್ಟಿಯ invoke ವಿಧಾನವನ್ನು ಕರೆಸುತ್ತದೆ. ಈ ವಿಧಾನವು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್‌ಗೆ ವಿನಂತಿ ಕಳುಹಿಸಲು ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಪಡೆಯಲು ಬಳಸಲ್ಪಡುತ್ತದೆ.
 
-    - ಇದು endpoint_name ಮತ್ತು deployment_name ಆರ್ಗ್ಯುಮೆಂಟ್‌ಗಳ ಮೂಲಕ ಎಂಡ್ಪಾಯಿಂಟ್ ಮತ್ತು ಡಿಪ್ಲಾಯ್ಮೆಂಟ್ ಹೆಸರುಗಳನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸುತ್ತದೆ. ಈ ಸಂದರ್ಭದಲ್ಲಿ, ಎಂಡ್ಪಾಯಿಂಟ್ ಹೆಸರು online_endpoint_name ವ್ಯಾರಿಯಬಲ್‌ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ ಮತ್ತು ಡಿಪ್ಲಾಯ್ಮೆಂಟ್ ಹೆಸರು "demo".
+    - ಇಲ್ಲಿ ಕೊಟ್ಟಿರುವವರು ಎಂಡ್ಪಾಯಿಂಟ್‌ನ ಹೆಸರು ಮತ್ತು ಸ್ಥಾಪನೆಯನ್ನು endpoint_name ಮತ್ತು deployment_name ವಾದಗಳ ಮೂಲಕ ಸೂಚಿಸುತ್ತಾರೆ. ಈ ಸಂದರ್ಭದಲ್ಲಿ, ಎಂಡ್ಪಾಯಿಂಟ್ ಹೆಸರನ್ನು online_endpoint_name ಚರದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ ಮತ್ತು ಸ್ಥಾಪನೆಯ ಹೆಸರು "demo".
 
-    - ಇದು request_file ಆರ್ಗ್ಯುಮೆಂಟ್‌ನೊಂದಿಗೆ ಅಂಕಮಟ್ಟಿಸಲಿರುವ JSON ಫೈಲ್‌ನ ಪಥವನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸುತ್ತದೆ. ಈ ಸಂದರ್ಭದಲ್ಲಿ, ಫೈಲ್ ಪಥವು ./ultrachat_200k_dataset/sample_score.json.
+    - JSON ಫೈಲ್ ಅನ್ನು ಸ್ಕೋರ್ ಮಾಡಲು request_file ವಾದ ಬಳಕೆ ಮಾಡಲಾಗಿದೆ. ಇಲ್ಲಿ ಫೈಲ್ ಸ್ಥಳ ./ultrachat_200k_dataset/sample_score.json.
 
-    - ಇದು ಎಂಡ್ಪಾಯಿಂಟ್‌ನಿಂದ ಬಂದ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು response ವ್ಯಾರಿಯಬಲ್‌ನಲ್ಲಿ ಸಂಗ್ರಹಿಸುತ್ತದೆ.
+    - ಎಂಡ್ಪಾಯಿಂಟ್‌ನಿಂದ ಲಭಿಸುವ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು response ಪರಿವರ್ತಕದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ.
 
-    - ಇದು ಕಚ್ಚಾ (raw) ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಮುದ್ರಣಿಸುತ್ತದೆ.
+    - ಕಚ್ಚಾ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಮುದ್ರಿಸುತ್ತದೆ.
 
-1. ಸಾರಾಂಶವಾಗಿ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ Azure Machine Learning ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಕರೆಸಿಕೊಂಡು ಒಂದು JSON ಫೈಲ್ ಅನ್ನು ಅಂಕಮಟ್ಟಿಸಿ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಮುದ್ರಣಿಸುತ್ತದೆ.
+1. ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಹೇಳಬಹುದಾದರೆ, ಈ ಸ್ಕ್ರಿಪ್ಟ್ Azure ಮೆಷಿನ್ ಲರ್ನಿಂಗ್‌ನ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಸಾಹಿತ್ಯ ಸ್ಕೋರ್ ಮಾಡಲು ಆಮಂತ್ರಿಸುತ್ತದೆ ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಮುದ್ರಿಸುತ್ತದೆ.
 
     ```python
-    # Azure Machine Learning ನಲ್ಲಿ ಆನ್ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ಕರೆಯಿಸಿ `sample_score.json` ಫೈಲ್ ಅನ್ನು ಸ್ಕೋರ್ ಮಾಡಲು
-    # `workspace_ml_client` ವಸ್ತುವಿನ `online_endpoints` ಗುಣಲಕ್ಷಣದ `invoke` ವಿಧಾನವನ್ನು ಆನ್ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗೆ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಲು ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆ ಪಡೆಯಲು ಬಳಸಲಾಗುತ್ತದೆ
-    # `endpoint_name` ಆರ್ಗ್ಯುಮೆಂಟ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು `online_endpoint_name` ಚರದಲ್ಲಿ ಸಂಗ್ರಹಿತವಾಗಿದೆ
-    # `deployment_name` ಆರ್ಗ್ಯುಮೆಂಟ್ ಡಿಪ್ಲಾಯ್ಮೆಂಟ್‌ನ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು "demo"
-    # `request_file` ಆರ್ಗ್ಯುಮೆಂಟ್ ಸ್ಕೋರ್ ಮಾಡಲು ಇರುವ JSON ಫೈಲಿನ ಪಥವನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು `./ultrachat_200k_dataset/sample_score.json`
+    # `sample_score.json` ಫೈಲ್ ಅನ್ನು ಅಂಕ ಗಣನೆ ಮಾಡಲು Azure ಮೆಷೀನ್ ಲರ್ನಿಂಗ್‌ನ ಆನ್ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ಕರೆಮಾಡಿ
+    # `workspace_ml_client` ವಸ್ತುವಿನ `online_endpoints` ಗುಣಲಕ್ಷಣದ `invoke` ವಿಧಾನವನ್ನು ಆನ್ಲೈನ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗೆ ವಿನಂತಿಯನ್ನು ಕಳುಹಿಸಲು ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಪಡೆಯಲು ಉಪಯೋಗಿಸಲಾಗುತ್ತದೆ
+    # `endpoint_name` ಆರ್ಗ್ಯುಮೆಂಟ್ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ನ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು `online_endpoint_name` ಚರದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲ್ಪಟ್ಟಿದೆ
+    # `deployment_name` ಆರ್ಗ್ಯುಮೆಂಟ್ ನಿಯೋಜನೆಯ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು "demo" ಆಗಿದೆ
+    # `request_file` ಆರ್ಗ್ಯುಮೆಂಟ್ ಅಂಕ ಸಂಕಲನಕ್ಕಾಗಿ ಬಳಸಬೇಕಾದ JSON ಫೈಲ್ ಮಾರ್ಗವನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು `./ultrachat_200k_dataset/sample_score.json` ಆಗಿದ್ದು
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
@@ -937,29 +941,29 @@ This Python script is defining and configuring a machine learning pipeline using
     print("raw response: \n", response, "\n")
     ```
 
-## 9. ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸಲು
+## 9. ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸಿ
 
-1. ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸುವುದನ್ನು ಮರೆಯಬೇಡಿ — ಇಲ್ಲದಿದ್ದರೆ ಎಂಡ್ಪಾಯಿಂಟ್ ಬಳಸಿದ compute ಗಾಗಿ ಬಿಲ್ಲಿಂಗ್ ಕ್ರಮ ಚಾಲಿತವಾಗಿರುವಂತೆ ಉಳಿಯುತ್ತದೆ. ಈ Python ಕೋಡ್ ಸಾಲು Azure Machine Learning ನಲ್ಲಿ ಒಂದು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸುತ್ತಿದೆ. ಇದರ ಕಾರ್ಯದ ವಿವರ ಕೆಳಗಿನಂತಿದೆ:
+1. ಎಂಡ್ಪಾಯಿಂಟ್‌ನ ಬಳಕೆಯ ಹಿಸಾಬಿಗಾಗಿ ಬಿಲ್ಲಿಂಗ್ ಮೀಟರ್ ಕಾರ್ಯನಿರ್ವಹಣೆಯಲ್ಲಿರಬಾರದು ಎಂದು ಮರೆಯಬೇಡಿ. ಈ ಪೈಥಾನ್ ಸಾಲು Azure ಮೆಷಿನ್ ಲರ್ನಿಂಗ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸುತ್ತಿದೆ. ವಿವರಣೆ ಹೀಗಿದೆ:
 
-    - ಇದು workspace_ml_client ಆಬ್ಜೆಕ್ಟ್‌ನ online_endpoints ಗುಣದ begin_delete ವಿಧಾನವನ್ನು ಕರೆಸುತ್ತದೆ. ಈ ವಿಧಾನವನ್ನು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅಳಿಸುವ ಕಾರ್ಯವನ್ನು ಪ್ರಾರಂಭಿಸಲು ಬಳಸಲಾಗುತ್ತದೆ.
+    - ಇದು workspace_ml_client ವಸ್ತುವಿನ online_endpoints ಪ್ರಾಪರ್ಟಿಯ begin_delete ವಿಧಾನವನ್ನು ಕರೆಸುತ್ತದೆ. ಈ ವಿಧಾನ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅಳಿಸುವಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಬಳಸಲಾಗುತ್ತದೆ.
 
-    - ಇದು name ಆರ್ಗ್ಯುಮೆಂಟ್ ಮೂಲಕ ಅಳಿಸಬೇಕಾದ ಎಂಡ್ಪಾಯಿಂಟ್ ಹೆಸರನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸುತ್ತದೆ. ಈ ಸಂದರ್ಭದಲ್ಲಿ, ಎಂಡ್ಪಾಯಿಂಟ್ ಹೆಸರು online_endpoint_name ವ್ಯಾರಿಯಬಲ್‌ನಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ.
+    - ಅಳಿಸಲು ಯೋಚಿಸಿದ ಎಂಡ್ಪಾಯಿಂಟ್ ನಾಮವನ್ನು name ವಾದದ ಮೂಲಕ ಸೂಚಿಸಲಾಗುತ್ತದೆ. ಇಲ್ಲಿ ಎಂಡ್ಪಾಯಿಂಟ್ ಹೆಸರು online_endpoint_name ಚರದಲ್ಲಿ ಇದೆ.
 
-    - ಇದು wait ವಿಧಾನವನ್ನು ಕರೆಸುತ್ತದೆ, ಅಳಿಸುವ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲು. ಇದು ಒಂದು ಬ್ಲಾಕಿಂಗ್ ಕಾರ್ಯವಾಗಿದ್ದು, ಅಳಿಸುವಿಕೆ ಮುಗಿಯುವವರೆಗೆ ಸ್ಕ್ರಿಪ್ಟ್ ಮುಂದುವರೆಯುವುದನ್ನು ತಡೆಯುತ್ತದೆ.
+    - ಅಳಿಸುವಿಕೆಯ ಕಾರ್ಯನಿರ್ವಹಣೆಯ ಪೂರ್ಣತೆಗಾಗಿ ಕಾತರವಾಗಿ wait ವಿಧಾನವನ್ನು ಕರೆಸುತ್ತದೆ. ಇದು ಪೈಥಾನ್ ಸ್ಕ್ರಿಪ್ಟ್ ಮುಂದುವರಿಯುವ ಮೊದಲು ಮುಕ್ತಾಯದವರೆಗೆ ಕಾಯುವ ತಡೆಹಿಡಿಯುವ ಕಾರ್ಯ.
 
-    - ಸಾರಾಂಶವಾಗಿ, ಈ ಕೋಡ್ ಸಾಲು Azure Machine Learning ನಲ್ಲಿ ಒಂದು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅಳಿಸುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿ ಆ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯುತ್ತದೆ.
+    - ಸಂಕ್ಷಿಪ್ತವಾಗಿ, ಈ ಕೋಡ್ ಸಾಲು Azure ಮೆಷಿನ್ ಲರ್ನಿಂಗ್‌ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅಳಿಸುವಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸುತ್ತದೆ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಹಣೆಯ ಮುಗಿಯುವ ತನಕ ಕಾಯುತ್ತದೆ.
 
     ```python
-    # Azure Machine Learning ನಲ್ಲಿ ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸಿ
-    # `workspace_ml_client` ಆಬ್ಜೆಕ್ಟ್‌ನ `online_endpoints` ಗುಣಧರ್ಮದ `begin_delete` ಮೆಥಡ್ ಅನ್ನು ಆನ್‌ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅಳಿಸುವುದನ್ನು ಪ್ರಾರಂಭಿಸಲು ಬಳಸಲಾಗುತ್ತದೆ
-    # `name` ಆರ್ಗ್ಯುಮೆಂಟ್ ಅಳಿಸಲು ಇರುವ ಎಂಡ್ಪಾಯಿಂಟ್‌ನ ಹೆಸರನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಅದು `online_endpoint_name` ಚರದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ
-    # ಅಳಿಸುವ ಉದ್ಧೇಶದ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ನಿರೀಕ್ಷಿಸಲು `wait` ಮೆಥಡ್ ಅನ್ನು ಕರೆಮಾಡಲಾಗುತ್ತದೆ. ಇದು ತಡೆಹಿಡಿಯುವ ಕಾರ್ಯವಾಗಿದೆ, ಅಂದರೆ ಅಳಿಸುವಿಕೆ ಮುಗಿಯುವವರೆಗೂ ಸ್ಕ್ರಿಪ್ಟ್ ಮುಂದುವರಿಯುವುದನ್ನು ನಿಲ್ಲಿಸುತ್ತದೆ
+    # ಅಜೂರ್ ಮೆಶಿನ್ ಲರ್ನಿಂಗ್‌ನಲ್ಲಿನ ಆನ್ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅನ್ನು ಅಳಿಸಿ
+    # ಆನ್ಲೈನ್ ಎಂಡ್ಪಾಯಿಂಟ್ ಅಳಿಸುವಂತೆ ಪ್ರಾರಂಭಿಸಲು `workspace_ml_client` ವಸ್ತುವಿನ `online_endpoints` ಗುಣಲಕ್ಷಣದ `begin_delete` ವಿಧಾನವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ
+    # ಅಳಿಸಲು ಎಂಡ್ಪಾಯಿಂಟ್‌ನ ಹೆಸರನ್ನು ಸೂಚಿಸುವ `name` ದಾರ್ವಿಕವು `online_endpoint_name` ಚರದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ
+    # ಅಳಿಸುವ ಕಾರ್ಯ ಪೂರ್ಣಗೊಳ್ಳುವವರೆಗೆ ಕಾಯಲು `wait` ವಿಧಾನವನ್ನು ಕರೆಸಲಾಗುತ್ತದೆ. ಇದು ತಡೆಯುವ ಕಾರ್ಯವಾಗಿದ್ದು, ಅಳಿಸುವಿಕೆ ಮುಗಿಯುವವರೆಗೆ ಸ್ಕ್ರಿಪ್ಟ್ ಮುಂದುವರಿಯುವುದನ್ನು ತಡೆಹಿಡಿಯುತ್ತದೆ
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-ನಿರಾಕರಣೆ:
-ಈ ದಸ್ತಾವೇಜನ್ನು AI ಅನುವಾದ ಸೇವೆ [Co-op Translator](https://github.com/Azure/co-op-translator) ಬಳಸಿ ಅನುವಾದಿಸಲಾಗಿದೆ. ನಾವು ಸಮರ್ಪಕತೆಗೆ ಪ್ರಯತ್ನಿಸಟ್ಟಿದ್ದರೂ, ದಯವಿಟ್ಟು ಗಮನಿಸಿ ಸ್ವಯಂಕ್ರಿಯ ಅನುವಾದಗಳಲ್ಲಿ ದೋಷಗಳು ಅಥವಾ ತಪ್ಪುಗಳಿರಬಹುದೆಂದು. ಮೂಲ ದಸ್ತಾವೇಜನ್ನು ಅದರ ಮೂಲಭಾಷೆಯಲ್ಲಿ ಅಧಿಕೃತ ಮೂಲವೆಂದು ಪರಿಗಣಿಸಬೇಕು. ಪ್ರಮುಖ ಮಾಹಿತಿಗಾಗಿ ವೃತ್ತಿಪರ ಮಾನವ ಅನುವಾದವನ್ನು ಸಲಹೆ ಮಾಡಲಾಗುತ್ತದೆ. ಈ ಅನುವಾದದ ಬಳಕೆಯಿಂದ ಉಂಟಾಗುವ ಯಾವುದೇ ತಪ್ಪು ಅರ್ಥಗ್ರಹಣೆಗಳು ಅಥವಾ ತಪ್ಪಾದ ವ್ಯಾಖ್ಯಾನಗಳಿಗೆ ನಾವು ಹೊಣೆಗಾರರಲ್ಲ.
+**ತ್ಯಾಗಪತ್ರ**:  
+ಈ ದಸ್ತಾವೇಜು AI ಅನುವಾದ ಸೇವೆ [Co-op Translator](https://github.com/Azure/co-op-translator) ಬಳಸಿ ಅನುವಾದಿಸಲಾಗಿದೆ. ನಾವು ಸತ್ಯಸಂಧತೆಗೆ ಪ್ರಯತ್ನಿಸಿದರೂ, ಸ್ವಯಂಚಾಲಿತ ಅನುವಾದಗಳಲ್ಲಿ ತಪ್ಪುಗಳು ಅಥವಾ ಅಸತ್ಯತೆಗಳು ಇರಬಹುದೆಂದು ದಯವಿಟ್ಟು ಗಮನಿಸಿ. ಮೂಲ ದಸ್ತಾವೇಜಿನ ಸ್ವದೇಶಿ ಭಾಷೆಯೇ ನಿಖರಮಟ್ಟದ ಪ್ರಾಮಾಣಿಕ ಸಂಪನ್ಮೂಲ ಎಂದು ಪರಿಗಣಿಸಬೇಕು. ಮಹತ್ವಪೂರ್ಣ ಮಾಹಿತಿಗಾಗಿ, ವೃತ್ತಿಪರ ಮಾನವ ಅನುವಾದವನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ. ಈ ಅನುವಾದ ಬಳಕೆದಿಂದ ಉಂಟಾಗುವ ಯಾವುದೇ ತಪ್ಪುಗಳಿ ಅಥವಾ ತಪ್ಪುಮತಗಳಿಗಾಗಿ ನಾವು ಜವಾಬ್ದಾರರಾಗಿರುವುದಿಲ್ಲ.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

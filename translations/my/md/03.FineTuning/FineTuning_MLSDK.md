@@ -1,44 +1,44 @@
-## Azure ML စနစ်မှ chat-completion ကွန်ပိုနင့်များကို အသုံးပြုပြီး မော်ဒယ်ကို အတိအကျ ပြင်ဆင်နည်း
+## Azure ML စနစ်မှ စနစ်မှတ်ပုံတင်ထားသော chat-completion အစိတ်အပိုင်းများကို အသုံးပြုပြီး မော်ဒယ်တစ်ခုကို fine tune ပြုလုပ်နည်း
 
-ဤဥပမာတွင် ultrachat_200k ဒေတာစုံစုကို အသုံးပြု၍ လူနှစ်ဦးအကြား စကားပြောပြီးဆုံးရန် Phi-3-mini-4k-instruct မော်ဒယ်ကို အတိအကျ ပြင်ဆင်မည်ဖြစ်သည်။
+ဥပမာ၌ Phi-3-mini-4k-instruct မော်ဒယ်ကို ultrachat_200k ဒေတာစုစည်းမှုကို အသုံးပြု၍ လူနှစ်ဦးအကြား စကားစမြည် ပြီးစီးအောင် fine tuning ပြုလုပ်မည်ဖြစ်သည်။
 
 ![MLFineTune](../../../../translated_images/my/MLFineTune.928d4c6b3767dd35.webp)
 
-ဥပမာတွင် Azure ML SDK နှင့် Python ကို အသုံးပြုပြီး အတိအကျ ပြင်ဆင်ခြင်းကို ပြသပြီး ပြင်ဆင်ပြီးသော မော်ဒယ်ကို အွန်လိုင်း endpoint တွင် တိုက်ရိုက်ခန့်မှန်းမှုအတွက် တပ်ဆင်ပေးမည်ဖြစ်သည်။
+ဤဥပမာတွင် Azure ML SDK နှင့် Python ကို အသုံးပြု၍ fine tuning ပြုလုပ်သည့်နည်းလမ်းကို ပြသပေးမည်ဖြစ်ပြီး၊ fine tuned မော်ဒယ်ကို အချိန်နောက်ခံမှတ်တမ်းဆိုင်ရာ inference အတွက် အွန်လိုင်း endpoint တစ်ခုသို့ ဖြန့်ချိခြင်းလည်း ပြသမည်။
 
-### လေ့ကျင့်ရေးဒေတာ
+### လေ့ကျင့်သည့် ဒေတာ
 
-ultrachat_200k ဒေတာစုံစုကို အသုံးပြုမည်ဖြစ်သည်။ ၎င်းသည် UltraChat ဒေတာစုံစု၏ အလွန်စစ်ထုတ်ထားသော ဗားရှင်းဖြစ်ပြီး Zephyr-7B-β (နောက်ဆုံးပေါ် 7b စကားပြောမော်ဒယ်) ကို လေ့ကျင့်ရန် အသုံးပြုခဲ့သည်။
+ultrachat_200k ဒေတာစုစည်းမှုကို အသုံးပြုမည်ဖြစ်သည်။ ၎င်းသည် UltraChat ဒေတာစုစည်းမှု၏ စစ်ထုတ်ထားသော ဗားရှင်းဖြစ်ပြီး Zephyr-7B-β အတွက် လေ့ကျင့်မှုတွင် အသုံးပြုခဲ့သော 7b ဖော်မြူလာ၏လက်ရှိ နိဒါန်းဖြစ်သည်။
 
 ### မော်ဒယ်
 
-chat-completion လုပ်ငန်းအတွက် မော်ဒယ်ကို အတိအကျ ပြင်ဆင်နည်းကို ပြသရန် Phi-3-mini-4k-instruct မော်ဒယ်ကို အသုံးပြုမည်ဖြစ်သည်။ သင်သည် အထူးသတ်မှတ်ထားသော မော်ဒယ်ကတ်မှ ဒီ notebook ကို ဖွင့်ထားပါက မော်ဒယ်အမည်ကို အစားထိုးရန် မမေ့ပါနှင့်။
+chat-completion လုပ်ငန်းအတွက် ဖင်တည်းဖြစ်အောင် Phi-3-mini-4k-instruct မော်ဒယ်ကို အသုံးပြုမည်။ သင်ဤ notebook ကို ထူးခြားသော မော်ဒယ်ကဒ်မှဖွင့်လှစ်ကာ သုံးနေပါက မော်ဒယ်နာမည်ကို သင့်တော်စွာ ပြောင်းလဲပါ။
 
-### လုပ်ငန်းများ
+### အလုပ်များ
 
-- အတိအကျ ပြင်ဆင်ရန် မော်ဒယ်ရွေးချယ်ပါ။
-- လေ့ကျင့်ရေးဒေတာကို ရွေးချယ်ပြီး စူးစမ်းပါ။
-- အတိအကျ ပြင်ဆင်ရေး အလုပ်ကို စီမံခန့်ခွဲပါ။
-- အတိအကျ ပြင်ဆင်ရေး အလုပ်ကို လည်ပတ်ပါ။
-- လေ့ကျင့်မှုနှင့် သုံးသပ်မှု မီထရစ်များကို ပြန်လည်သုံးသပ်ပါ။
-- အတိအကျ ပြင်ဆင်ပြီး မော်ဒယ်ကို မှတ်ပုံတင်ပါ။
-- အတိအကျ ပြင်ဆင်ပြီး မော်ဒယ်ကို တိုက်ရိုက်ခန့်မှန်းမှုအတွက် တပ်ဆင်ပါ။
+- fine tune ပြုလုပ်မည့် မော်ဒယ်ကို ရွေးချယ်ပါ။
+- လေ့ကျင့်ဒေတာကို ရွေးချယ်၍ လေ့လာပါ။
+- fine tuning အလုပ်ကို ဖွဲ့စည်းပါ။
+- fine tuning အလုပ်ကို တက်လုပ်ပါ။
+- လေ့ကျင့်မှုနှင့် အကဲဖြတ်မှု စံနှုန်းများကို ပြန်လည်သုံးသပ်ပါ။
+- fine tuned မော်ဒယ်ကို စနစ် မှတ်တမ်းတင်ပါ။
+- fine tuned မော်ဒယ်ကို အချိန်နောက်ခံမှတ်တမ်းဆိုင်ရာ inference အတွက် ဖြန့်ချိပါ။
 - အရင်းအမြစ်များကို သန့်ရှင်းပါ။
 
-## ၁။ မလိုအပ်မီ အဆင်သင့်ပြင်ဆင်ခြင်း
+## ၁။ မလိုအပ်သည်များကို ပြင်ဆင်ခြင်း
 
-- လိုအပ်သော dependency များကို ထည့်သွင်းပါ။
-- AzureML Workspace နှင့် ချိတ်ဆက်ပါ။ SDK authentication ကို စတင်ရန် set up SDK authentication ကို လေ့လာပါ။ အောက်ပါ <WORKSPACE_NAME>, <RESOURCE_GROUP> နှင့် <SUBSCRIPTION_ID> ကို အစားထိုးပါ။
+- အချည်းနှီးပစ္စည်းများ 설치 설치
+- AzureML Workspace နှင့် ချိတ်ဆက်ပါ။ SDK authentication ချိန်ညှိခြင်းကို လေ့လာပါ။ <WORKSPACE_NAME>, <RESOURCE_GROUP>, <SUBSCRIPTION_ID> ကို အောက်တွင် ပြောင်းပေးပါ။
 - azureml system registry နှင့် ချိတ်ဆက်ပါ။
-- ရွေးချယ်နိုင်သော experiment name တစ်ခု သတ်မှတ်ပါ။
-- Compute ကို စစ်ဆေး သို့မဟုတ် ဖန်တီးပါ။
+- ရွေးချယ်စရာ experiment နာမည်တစ်ခု သတ်မှတ်ပါ။
+- စစ်ဆေးရန် သို့မဟုတ် create compute.
 
 > [!NOTE]
-> တစ်ခုတည်းသော GPU node တစ်ခုတွင် GPU ကတ်များစွာ ပါနိုင်သည်။ ဥပမာ၊ Standard_NC24rs_v3 node တစ်ခုတွင် NVIDIA V100 GPU ၄ လုံးရှိပြီး Standard_NC12s_v3 တွင် NVIDIA V100 GPU ၂ လုံးရှိသည်။ ဤအချက်အလက်များအတွက် စာရွက်စာတမ်းများကို ရည်ညွှန်းပါ။ တစ် node လျှင် GPU ကတ်အရေအတွက်ကို အောက်ပါ param gpus_per_node တွင် သတ်မှတ်ထားသည်။ ဤတန်ဖိုးကို မှန်ကန်စွာ သတ်မှတ်ခြင်းဖြင့် node အတွင်းရှိ GPU များအားလုံးကို အသုံးပြုနိုင်မည်ဖြစ်သည်။ အကြံပြုထားသော GPU compute SKU များကို ဒီနေရာနှင့် ဒီနေရာတွင် တွေ့နိုင်ပါသည်။
+> တစ်ခုတည်းသော GPU node သည် များစွာသော GPU ကဒ်များရှိနိုင်သည်။ ဥပမာ- Standard_NC24rs_v3 တစ်ခုတွင် NVIDIA V100 GPUs ၄ လုံးရှိပြီး Standard_NC12s_v3 တစ်ခုတွင် NVIDIA V100 GPUs ၂ လုံးရှိသည်။ ယင်းအချက်အလက်များကို docs တွင်ကြည့်ပါ။ GPU ကဒ် အရေအတွက်ကို param gpus_per_node တွင် သတ်မှတ်သည်။ တိကျစွာ သတ်မှတ်ခြင်းဖြင့် node တွင်ရှိသော GPU များအားလုံးကို အသုံးပြုနိုင်မည်ဖြစ်သည်။ အကြံပြု GPU compute SKU များကို ဒီနေရာနှင့် ဒီနေရာတွင် ရှာဖွေကြည့်နိုင်သည်။
 
-### Python စာကြည့်တိုက်များ
+### Python လိုင်ဘရေးရီများ
 
-အောက်ပါ cell ကို လည်ပတ်ခြင်းဖြင့် dependency များ ထည့်သွင်းပါ။ ၎င်းသည် အသစ်သော ပတ်ဝန်းကျင်တွင် လည်ပတ်ပါက ရွေးချယ်စရာ မဟုတ်ပါ။
+အောက်ပါ cell ကို run ခြင်းဖြင့် လိုအပ်သော အကြံပြုချက်များကို install လုပ်ပါ။ အသစ်သော environment တွင် အဆိုပါ လုပ်ဆောင်မှုသည် မစွန့်လွှတ်သင့်ပါ။
 
 ```bash
 pip install azure-ai-ml
@@ -50,41 +50,41 @@ pip install azureml-mlflow
 
 ### Azure ML နှင့် ဆက်သွယ်ခြင်း
 
-1. ဤ Python script သည် Azure Machine Learning (Azure ML) ဝန်ဆောင်မှုနှင့် ဆက်သွယ်ရန် အသုံးပြုသည်။ ၎င်း၏ လုပ်ဆောင်ချက်များကို အောက်ပါအတိုင်း ဖော်ပြထားသည်-
+၁။ ဤ Python script ကို Azure Machine Learning (Azure ML) ဝန်ဆောင်မှုနှင့် ဆက်သွယ်ရန် အသုံးပြုသည်။ လုပ်ဆောင်ချက်များမှာ -
 
-    - azure.ai.ml, azure.identity, နှင့် azure.ai.ml.entities package များမှ လိုအပ်သော module များကို import လုပ်သည်။ time module ကိုလည်း import လုပ်သည်။
+- azure.ai.ml, azure.identity, နှင့် azure.ai.ml.entities package များမှ လိုအပ်သော module များကို import ပြုလုပ်သည်။ အပြင် time module ကိုလည်း import လုပ်သည်။
 
-    - DefaultAzureCredential() ဖြင့် အတည်ပြုမှုကို ကြိုးစားသည်။ ၎င်းသည် Azure cloud တွင် လျင်မြန်စွာ application များ ဖန်တီးရန် အလွယ်တကူ အတည်ပြုမှု အတွေ့အကြုံကို ပေးသည်။ မအောင်မြင်ပါက InteractiveBrowserCredential() သို့ ပြန်လည်သုံးသည်၊ ၎င်းသည် အပြန်အလှန် login prompt ကို ပေးသည်။
+- DefaultAzureCredential() ဖြင့် authentication ပြုလုပ်ရန် ကြိုးစားသည်။ မအောင်မြင်ပါက၊ InteractiveBrowserCredential() ဖြင့် အပြန်အလှန် login များကို ဖော်ပြသည်။
 
-    - from_config method ဖြင့် MLClient instance တစ်ခု ဖန်တီးရန် ကြိုးစားသည်။ ၎င်းသည် default config ဖိုင် (config.json) မှ configuration ကို ဖတ်သည်။ မအောင်မြင်ပါက subscription_id, resource_group_name, workspace_name ကို လက်ဖြင့် ပေးသည့် MLClient instance တစ်ခု ဖန်တီးသည်။
+- from_config method ကို အသုံးပြု၍ default config ဖိုင် (config.json) မှ configuration ကို ဖတ်၍ MLClient instance တစ်ခု ဖန်တီးရန် ကြိုးစားသည်။ မအောင်မြင်ပါက subscription_id, resource_group_name, workspace_name ကို manually ထည့်သွင်း၍ MLClient instance တစ်ခု ဖန်တီးသည်။
 
-    - Azure ML registry အတွက် "azureml" ဟု အမည်ပေးထားသော MLClient instance တစ်ခု ဖန်တီးသည်။ ၎င်း registry တွင် မော်ဒယ်များ၊ အတိအကျ ပြင်ဆင်ရေး pipeline များနှင့် ပတ်ဝန်းကျင်များ သိမ်းဆည်းထားသည်။
+- "azureml" ဟု အမည်ပေးထားသော Azure ML registry အတွက် MLClient instance ကို တစ်ခု ဖန်တီးသည်။ ၎င်းမှာ မော်ဒယ်များ၊ fine-tuning pipelines နှင့် environments များကို သိမ်းဆည်းရာဖြစ်သည်။
 
-    - experiment_name ကို "chat_completion_Phi-3-mini-4k-instruct" ဟု သတ်မှတ်သည်။
+- experiment_name ကို "chat_completion_Phi-3-mini-4k-instruct" ဟု သတ်မှတ်သည်။
 
-    - ယခုအချိန် (epoch မှ စတင်၍ စက္ကန့်အဖြစ်) ကို integer သို့ ပြောင်းပြီး string အဖြစ် ပြောင်း၍ ထူးခြားသော timestamp တစ်ခု ဖန်တီးသည်။ ၎င်း timestamp ကို ထူးခြားသော အမည်များနှင့် ဗားရှင်းများ ဖန်တီးရာတွင် အသုံးပြုနိုင်သည်။
+- ယခုအချိန် (epoch များအရ စက္ကန့်အဖြစ် float ရှိ) ကို integer သို့ ပြောင်း၍ string အဖြစ် ပြောင်းထုတ်ကာ ယင်းကို သက်ဆိုင်ရာ နာမည်များ၊ ဗားရှင်းများ ဖန်တီးရာတွင် အသုံးပြုသည်။
 
     ```python
-    # Import necessary modules from Azure ML and Azure Identity
+    # Azure ML နှင့် Azure Identity မှ လိုအပ်သော module များ import ပြုလုပ်ခြင်း
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # Import time module
+    import time  # time module ကို import ပြုလုပ်ခြင်း
     
-    # Try to authenticate using DefaultAzureCredential
+    # DefaultAzureCredential ကို အသုံးပြု၍ authentication လုပ်ရန် ကြိုးစားခြင်း
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # If DefaultAzureCredential fails, use InteractiveBrowserCredential
+    except Exception as ex:  # DefaultAzureCredential မအောင်မြင်ပါက InteractiveBrowserCredential ကို အသုံးပြုရန်
         credential = InteractiveBrowserCredential()
     
-    # Try to create an MLClient instance using the default config file
+    # ပုံမှန် config ဖိုင်ကို အသုံးပြု၍ MLClient instance တစ်ခု ဖန်တီးရန် ကြိုးစားခြင်း
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # If that fails, create an MLClient instance by manually providing the details
+    except:  # အဲဒါ မအောင်မြင်ပါက အသေးစိတ်ချက်များကို manually ဖြည့်သွင်း၍ MLClient instance တစ်ခု ဖန်တီးခြင်း
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,41 +92,41 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # Create another MLClient instance for the Azure ML registry named "azureml"
-    # This registry is where models, fine-tuning pipelines, and environments are stored
+    # "azureml" ဟု အမည်ပေးထားသော Azure ML registry အတွက် MLClient instance များ တစ်ခု ထပ်မံဖန်တီးခြင်း
+    # ဤ registry တွင် မော်ဒယ်များ၊ fine-tuning pipeline များနှင့် ပတ်ဝန်းကျင်များကို သိမ်းဆည်းထားသည်
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # Set the experiment name
+    # စမ်းသပ်မှုအမည် သတ်မှတ်ခြင်း
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Generate a unique timestamp that can be used for names and versions that need to be unique
+    # အမည်နှင့် ဗားရှင်းတို့အတွက် ထူးခြားသော timestamp တွက်ရန် ဖန်တီးခြင်း
     timestamp = str(int(time.time()))
     ```
 
-## ၂။ အတိအကျ ပြင်ဆင်ရန် မူလမော်ဒယ် ရွေးချယ်ခြင်း
+## ၂။ fine tune ပြုလုပ်ရန် အခြေခံမော်ဒယ် ရွေးချယ်ခြင်း
 
-1. Phi-3-mini-4k-instruct သည် 3.8B parameters ပါရှိသော အလေးချိန်နည်းပြီး နောက်ဆုံးပေါ် ဖွင့်လှစ်မော်ဒယ်တစ်ခုဖြစ်သည်။ Phi-2 အတွက် အသုံးပြုသော ဒေတာစုံစုများအပေါ် တည်ဆောက်ထားသည်။ မော်ဒယ်သည် Phi-3 မော်ဒယ် မိသားစုတွင် ပါဝင်ပြီး Mini ဗားရှင်းတွင် 4K နှင့် 128K (token အရေအတွက်) ဆိုသည့် နှစ်မျိုးရှိသည်။ သင့်ရည်ရွယ်ချက်အတွက် မော်ဒယ်ကို အတိအကျ ပြင်ဆင်ရန် လိုအပ်သည်။ AzureML Studio ၏ Model Catalog တွင် chat-completion လုပ်ငန်းအတွက် စစ်ထုတ်၍ မော်ဒယ်များကို ကြည့်ရှုနိုင်သည်။ ဤဥပမာတွင် Phi-3-mini-4k-instruct မော်ဒယ်ကို အသုံးပြုသည်။ သင်သည် အခြားမော်ဒယ်အတွက် notebook ကို ဖွင့်ထားပါက မော်ဒယ်အမည်နှင့် ဗားရှင်းကို သင့်တော်စွာ အစားထိုးပါ။
+၁။ Phi-3-mini-4k-instruct သည် 3.8B parameters, အလွယ်တကူ ရွှေ့ပြောင်းနိုင်သော၊ Phi-2 အတွက် သုံးခဲ့သော ဒေတာများအပေါ် အခြေခံထားသော ဖွံ့ဖြိုးတိုးတက်သော open မော်ဒယ်ဖြစ်သည်။ မော်ဒယ်သည် Phi-3 မော်ဒယ် မျိုးဆက်တွင်ပါဝင်ပြီး Mini ဗားရှင်းတွင် 4K နှင့် 128K context length (tokens အရေအတွက်) ရှိသည်။ သဘော: မော်ဒယ်ကို အသုံးပြုရန် သင့်ရည်ရွယ်ချက်အတွက် fine tune လုပ်ရန် လိုအပ်သည်။ သင်သည် AzureML Studio တွင် Model Catalog ဖြင့် chat-completion task အတွက် မော်ဒယ်များကို ရွေးချယ်နိုင်သည်။ ဤအချက် အစုတွင် Phi-3-mini-4k-instruct မော်ဒယ်ကို သုံးမည်။ မသင့်တော်သည့် မော်ဒယ်အတွက် notebook ဖွင့်ထားသူများသည် မော်ဒယ်နာမည်နှင့် ဗားရှင်းကို သင့်တော်စွာ ပြောင်းလဲပါ။
 
-    > [!NOTE]
-    > မော်ဒယ်၏ id property ဖြစ်သည်။ ၎င်းကို အတိအကျ ပြင်ဆင်ရေး အလုပ်တွင် input အဖြစ် ပေးပို့မည်ဖြစ်သည်။ AzureML Studio Model Catalog ၏ မော်ဒယ်အသေးစိတ် စာမျက်နှာတွင် Asset ID အဖြစ်လည်း ရနိုင်သည်။
+> [!NOTE]
+> မော်ဒယ်၏ id property ဖြစ်သော asset id ကို fine tuning job တွင် input အဖြစ် ပေးပို်မည်။ AzureML Studio Model Catalog ၏ မော်ဒယ်အသေးစိတ် စာမျက်နှာတွင် Asset ID အဖြစ်ပါဝင်သည်။
 
-2. ဤ Python script သည် Azure Machine Learning (Azure ML) ဝန်ဆောင်မှုနှင့် ဆက်သွယ်နေသည်။ လုပ်ဆောင်ချက်များကို အောက်ပါအတိုင်း ဖော်ပြထားသည်-
+၂။ ဤ Python script သည် Azure Machine Learning (Azure ML) ဝန်ဆောင်မှုနှင့် ဆက်သွယ်ရာတွင် အသုံးပြုသည်။ လုပ်ဆောင်ချက်များမှာ -
 
-    - model_name ကို "Phi-3-mini-4k-instruct" ဟု သတ်မှတ်သည်။
+- model_name ကို "Phi-3-mini-4k-instruct" ဟု သတ်မှတ်သည်။
 
-    - registry_ml_client object ၏ models property ၏ get method ကို အသုံးပြု၍ Azure ML registry မှ မော်ဒယ်အမည်နှင့် label "latest" ဖြင့် မော်ဒယ်၏ နောက်ဆုံးဗားရှင်းကို ရယူသည်။
+- registry_ml_client ၏ models property ၏ get method ကို အသုံးပြုပြီး Azure ML registry မှ မော်ဒယ်နာမည်နှင့် label သတ်မှတ်ခြင်းဖြင့် မော်ဒယ်၏ နောက်ဆုံးဗားရှင်းကို ရယူသည်။
 
-    - အတိအကျ ပြင်ဆင်ရန် အသုံးပြုမည့် မော်ဒယ်၏ အမည်၊ ဗားရှင်းနှင့် id ကို console တွင် ပုံနှိပ်ပြသသည်။ string ၏ format method ဖြင့် မော်ဒယ်၏ အမည်၊ ဗားရှင်းနှင့် id ကို စာသားထဲသို့ ထည့်သွင်းသည်။ မော်ဒယ်၏ အမည်၊ ဗားရှင်းနှင့် id ကို foundation_model object ၏ property များအဖြစ် ရယူသည်။
+- consoleတွင် fine-tuning အတွက် အသုံးပြုမည့် မော်ဒယ်၏ name, version, id ကို စာသား မက်ဆေ့ခ်ျပုံစံဖြင့် print ပြုလုပ်သည်။ foundation_model ၏ properties များအား အသုံးပြု၍ ဖော်ပြသည်။
 
     ```python
-    # Set the model name
+    # မော်ဒယ်နာမည်သတ်မှတ်ပါ
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Get the latest version of the model from the Azure ML registry
+    # Azure ML မှာရှိတဲ့ မော်ဒယ်နောက်ဆုံးဗားရှင်းကိုရယူပါ
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Print the model name, version, and id
-    # This information is useful for tracking and debugging
+    # မော်ဒယ်နာမည်၊ ဗားရှင်းနဲ့ id ကိုပရင့်ထုတ်ပါ
+    # ဒီသတင်းအချက်အလက်တွေက တိုက်ရိုက်စောင့်ကြည့်ခြင်းနဲ့ အမှားရှာဖွေနိုင်ဖို့ အသုံးဝင်ပါတယ်
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
@@ -134,220 +134,312 @@ pip install azureml-mlflow
     )
     ```
 
-## ၃။ အလုပ်အတွက် အသုံးပြုမည့် compute ဖန်တီးခြင်း
+## ၃။ အလုပ်အတွက် compute တစ်ခုဖန်တီးခြင်း
 
-finetune အလုပ်သည် GPU compute ဖြင့်သာ လည်ပတ်သည်။ compute ၏ အရွယ်အစားသည် မော်ဒယ်၏ အရွယ်အစားပေါ် မူတည်ပြီး အများအားဖြင့် အလုပ်အတွက် သင့်တော်သော compute ကို ရွေးချယ်ရခက်ခဲသည်။ ဤ cell တွင် အသုံးပြုသူအား အလုပ်အတွက် သင့်တော်သော compute ကို ရွေးချယ်ရန် လမ်းညွှန်ပေးသည်။
-
-> [!NOTE]
-> အောက်ပါ compute များသည် အကောင်းဆုံး စနစ်တကျ ဖွဲ့စည်းထားသော configuration ဖြင့် လည်ပတ်သည်။ configuration တွင် ပြောင်းလဲမှုများ ပြုလုပ်ပါက Cuda Out Of Memory error ဖြစ်နိုင်သည်။ ၎င်းအခြေအနေများတွင် compute ကို ပိုကြီးသော အရွယ်အစားသို့ မြှင့်တင်ရန် ကြိုးစားပါ။
+finetune အလုပ်သည် GPU compute ဖြင့်သာ လည်ပတ်သည်။ compute ၏ အရွယ်အစားမှာ မော်ဒယ်၏ အရွယ်မူအပေါ်မူတည်ပြီး မတူညီနိုင်သည်။ ဒီ cell တွင် အသုံးပြုသူအား အလုပ်အတွက် သင့်တော်သော compute ကို ရွေးချယ်ရန် လမ်းညွှန်ပေးသည်။
 
 > [!NOTE]
-> အောက်ပါ compute_cluster_size ကို ရွေးချယ်စဉ်တွင် သင့် resource group တွင် compute ရရှိနိုင်မှုကို သေချာစစ်ဆေးပါ။ သတ်မှတ်ထားသော compute မရရှိပါက compute resource များသို့ ဝင်ရောက်ခွင့် ရယူရန် တောင်းဆိုနိုင်သည်။
+> အောက်ပါ compute များသည် အပေါင်းအဖေါ် ကောင်းမွန်စွာ ပြင်ဆင်ထားသည်။ ပြင်ဆင်ချက်များ ပြောင်းလဲပါက Cuda Out Of Memory မှားယွင်းမှု ဖြစ်နိုင်သည်။ ယင်းဖြစ်ပါက compute အရွယ်အစား ကြီးမားစေပါ။
 
-### အတိအကျ ပြင်ဆင်မှုကို ထောက်ပံ့နိုင်မှုအတွက် မော်ဒယ် စစ်ဆေးခြင်း
+> [!NOTE]
+> compute_cluster_size ကို ရွေးသောအခါ သင်၏ resource group တွင် compute ရှိ/မရှိ စစ်ဆေးပါ။ အကယ်၍ ရှိမပါက compute resources အသုံးပြုခွင့် လျှောက်ထားနိုင်သည်။
 
-1. ဤ Python script သည် Azure Machine Learning (Azure ML) မော်ဒယ်နှင့် ဆက်သွယ်နေသည်။ လုပ်ဆောင်ချက်များကို အောက်ပါအတိုင်း ဖော်ပြထားသည်-
+### Fine Tuning ကို ထောက်ပံ့မှုရှိ/မရှိ စစ်ဆေးခြင်း
 
-    - Python abstract syntax grammar tree များကို ပြုလုပ်ရန် ast module ကို import လုပ်သည်။
+၁။ ဤ Python script သည် Azure Machine Learning (Azure ML) မော်ဒယ်နှင့် ဆက်သွယ်သည်။ လုပ်ဆောင်ချက်များမှာ -
 
-    - foundation_model object တွင် finetune_compute_allow_list ဟု အမည်ရသော tag ရှိမရှိ စစ်ဆေးသည်။ Azure ML တွင် tag များသည် key-value စနစ်ဖြင့် မော်ဒယ်များကို စစ်ထုတ်ခြင်းနှင့် စီမံခန့်ခွဲရန် အသုံးပြုသည်။
+- ast module ကို import ပြုလုပ်သည်။ ၎င်းသည် Python syntax tree များကို အလားတူ=သွားစစ်ဆေးနိုင်သည်။
 
-    - finetune_compute_allow_list tag ရှိပါက ast.literal_eval function ဖြင့် tag ၏ string တန်ဖိုးကို Python list အဖြစ် လုံခြုံစွာ ပြောင်းလဲပြီး computes_allow_list သို့ သတ်မှတ်သည်။ ထို့နောက် list မှ compute များကို ဖန်တီးရန် သတင်းပို့သည်။
+- foundation_model object (Azure ML မော်ဒယ်ကို ကိုယ်စားပြုသည်) တွင် finetune_compute_allow_list ဟူသော tag ရှိ/မရှိစစ်ဆေးသည်။ Azure ML တွင် tag သည် key-value pairများဖြစ်ပြီး မော်ဒယ်များကို စစ်ထုတ်၊ စီတန်းရန် အသုံးပြုသည်။
 
-    - finetune_compute_allow_list tag မရှိပါက computes_allow_list ကို None သတ်မှတ်ပြီး မော်ဒယ် tag များတွင် finetune_compute_allow_list မပါဝင်ကြောင်း သတင်းပို့သည်။
+- finetune_compute_allow_list tag ရှိပါက ast.literal_eval ဖြင့် သာမာန် string ကို Python list တခုအဖြစ် ပြောင်းသည်။ ၎င်းကို computes_allow_list အဖြစ်သတ်မှတ်သည်။ ပြီးသည့်နောက် စာသားကို print ပြသည်။
 
-    - အကျဉ်းချုပ်အားဖြင့် မော်ဒယ် metadata တွင် tag တစ်ခု ရှိမရှိ စစ်ဆေးခြင်း၊ ရှိပါက tag ၏ တန်ဖိုးကို list အဖြစ် ပြောင်းလဲခြင်းနှင့် အသုံးပြုသူအား တုံ့ပြန်ချက် ပေးခြင်း ဖြစ်သည်။
+- finetune_compute_allow_list tag မရှိပါက computes_allow_list = None အဖြစ် သတ်မှတ်ပြီး ဆက်သွယ်မေးမြန်းချက်ကို print ပြသည်။
+
+- နိဂုံးချုပ်အားဖြင့် မော်ဒယ် metadata တွင် သတ်မှတ်ထားသော tag များ ထဲမှ သက်ဆိုင်ရာ one ဖြစ်/မဟုတ်၊ ရှိလား မရှိလား စစ်ဆေးပြီး အသုံးပြုသူအား အသိပေးခြင်း ဖြစ်သည်။
 
     ```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    # Python အကျဉ်းချုပ်သုံးသပ်语法သီးသန့်အပြန်အလှန်ဂျပ်များကို ပြုလုပ်ပါသော ast မော်ဂျူးကို ထည့်သွင်းပါ
     import ast
     
-    # Check if the 'finetune_compute_allow_list' tag is present in the model's tags
+    # model ၏ tag များတွင် 'finetune_compute_allow_list' tag ပါရှိမရှိ စစ်ဆေးပါ
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # If the tag is present, use ast.literal_eval to safely parse the tag's value (a string) into a Python list
+        # tag အနေနှင့် ပါရှိလျှင် ast.literal_eval ကိုအသုံးပြု၍ tag ၏တန်ဖိုး (string) ကို Python စာရင်းအဖြစ် ရေတွက်ပါ
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # convert string to python list
-        # Print a message indicating that a compute should be created from the list
+        )  # string ကို python စာရင်းသို့ပြောင်းပါ
+        # စာရင်းမှ compute တစ်ခုကို ဖန်တီးသင့်ကြောင်း စာမျက်နှာတွင် ဖော်ပြပါ
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If the tag is not present, set computes_allow_list to None
+        # tag မပါရှိပါက computes_allow_list ကို None သတ်မှတ်ပါ
         computes_allow_list = None
-        # Print a message indicating that the 'finetune_compute_allow_list' tag is not part of the model's tags
+        # 'finetune_compute_allow_list' tag သည် model ၏ tag အစိတ်အပိုင်းမဟုတ်ကြောင်း စာမျက်နှာတွင် ဖော်ပြပါ
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Compute Instance စစ်ဆေးခြင်း
+### Compute Instance ကို စစ်ဆေးခြင်း
 
-1. ဤ Python script သည် Azure Machine Learning (Azure ML) ဝန်ဆောင်မှုနှင့် ဆက်သွယ်ပြီး compute instance တစ်ခုအား စစ်ဆေးမှုများ ပြုလုပ်သည်။ လုပ်ဆောင်ချက်များကို အောက်ပါအတိုင်း ဖော်ပြထားသည်-
+၁။ ဤ Python script သည် Azure Machine Learning (Azure ML) ဝန်ဆောင်မှုနှင့် ဆက်သွယ်ပြီး compute instance တစ်ခုအား စစ်ဆေးသည်။ လုပ်ဆောင်ချက်များမှာ -
 
-    - compute_cluster တွင် သိမ်းထားသော အမည်ဖြင့် Azure ML workspace မှ compute instance ကို ရယူရန် ကြိုးစားသည်။ compute instance ၏ provisioning state သည် "failed" ဖြစ်ပါက ValueError ကို ထုတ်ပေးသည်။
+- Azure ML workspace သို့ compute_cluster ထဲသည့် နာမည်ဖြင့် compute instance ရယူရန် ကြိုးစားသည်။ Provisioning state ပြဿနာဖြစ်ပါက ValueError ကို ရှင့့သည်။
 
-    - computes_allow_list သည် None မဟုတ်ပါက list အတွင်းရှိ compute အရွယ်အစားများအားလုံးကို lowercase သို့ ပြောင်းပြီး လက်ရှိ compute instance ၏ အရွယ်အစားသည် list တွင် ရှိမရှိ စစ်ဆေးသည်။ မရှိပါက ValueError ကို ထုတ်ပေးသည်။
+- computes_allow_list သည် None မဟုတ်ပါက အဆိုပါ list ထဲရှိ compute size များအားလုံးကို lowercase ပြောင်းပြီး၊ လက်ရှိ compute instance ၏ size ကို စစ်ဆေး၏ list ထဲပါ/မပါ စစ်ဆေးသည်။ မပါလျှင် ValueError ကို ရှင့့သည်။
 
-    - computes_allow_list သည် None ဖြစ်ပါက လက်ရှိ compute instance ၏ အရွယ်အစားသည် မထောက်ခံသော GPU VM အရွယ်အစားများ စာရင်းတွင် ရှိမရှိ စစ်ဆေးသည်။ ရှိပါက ValueError ကို ထုတ်ပေးသည်။
+- computes_allow_list သည် None ဖြစ်ပါက လက်ရှိ compute instance size ကို unsupported GPU VM size များတွင်ရှိပါက ValueError ကို ရှင့့သည်။
 
-    - workspace တွင် ရရှိနိုင်သော compute အရွယ်အစားများ စာရင်းကို ရယူသည်။ စာရင်းအတွင်းရှိ compute အရွယ်အစားတစ်ခုချင်းစီကို လည်ပတ်ပြီး လက်ရှိ compute instance ၏ အရွယ်အစားနှင့် ကိုက်ညီပါက compute အရွယ်အစားအတွက် GPU အရေအတွက်ကို ရယူပြီး gpu_count_found ကို True သတ်မှတ်သည်။
+- Workspace တွင် ရရှိနိုင်သော compute size များအား စုစည်းပြီး၊ လည်ပတ်သည့် for loop ဖြင့် လက်ရှိ compute instance size နှင့် မ်ှတမှုရှိသည်ကို စစ်ဆေးသည်။ ရှိပါက ထို compute size ၏ GPU ကဒ် အရေအတွက်ကို ရယူ၍ gpu_count_found ကို True သတ်မှတ်သည်။
 
-    - gpu_count_found သည် True ဖြစ်ပါက compute instance တွင် GPU အရေအတွက်ကို ပုံနှိပ်ပြသသည်။ မဟုတ်ပါက ValueError ကို ထုတ်ပေးသည်။
+- gpu_count_found True ဖြစ်ပါက GPU အရေအတွက်ကို console တွင် print ပြပြီး၊ မဟုတ်ပါက ValueError ဖြင့် ရှင့့သည်။
 
-    - အကျဉ်းချုပ်အားဖြင့် Azure ML workspace တွင် compute instance တစ်ခု၏ provisioning state, အရွယ်အစား (allow list သို့မဟုတ် deny list နှင့် နှိုင်းယှဉ်ခြင်း), GPU အရေအတွက် စသည်တို့ကို စစ်ဆေးသည်။
+- နိဂုံးချုပ်အားဖြင့် Azure ML workspace အတွင်းရှိ compute instance ၏ provisioning state, size, allowance list နှင့် GPU အရေအတွက်များကို စစ်ဆေးခြင်းဖြစ်သည်။
 
     ```python
-    # Print the exception message
+    # အမွားစာချက်ကို ပုံနှိပ်ပါ
     print(e)
-    # Raise a ValueError if the compute size is not available in the workspace
+    # workspace တွင် compute size မရရှိပါက ValueError ကို ထုတ်ပေးပါ
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Retrieve the compute instance from the Azure ML workspace
+    # Azure ML workspace မှ compute instance ကို ရယူပါ
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Check if the provisioning state of the compute instance is "failed"
+    # compute instance ၏ provisioning state သည် "failed" ဖြစ်ပါက စစ်ဆေးပါ
     if compute.provisioning_state.lower() == "failed":
-        # Raise a ValueError if the provisioning state is "failed"
+        # provisioning state သည် "failed" ဖြစ်ပါက ValueError ကို ထုတ်ပေးပါ
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
         )
     
-    # Check if computes_allow_list is not None
+    # computes_allow_list သည် None မဟုတ်ကြောင်း စစ်ဆေးပါ
     if computes_allow_list is not None:
-        # Convert all compute sizes in computes_allow_list to lowercase
+        # computes_allow_list တွင်ရှိသော compute size များအားလုံးကို သေးငယ်သော အက္ခရာများသို့ ပြောင်းပါ
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # Check if the size of the compute instance is in computes_allow_list_lower_case
+        # compute instance ၏ size သည် computes_allow_list_lower_case တွင် ရှိကြောင်း စစ်ဆေးပါ
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Raise a ValueError if the size of the compute instance is not in computes_allow_list_lower_case
+            # compute instance ၏ size သည် computes_allow_list_lower_case တွင် မရှိပါက ValueError ကို ထုတ်ပေးပါ
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
     else:
-        # Define a list of unsupported GPU VM sizes
+        # မထောက်ခံသော GPU VM အရွယ်အစားများ စာရင်းကို သတ်မှတ်ပါ
         unsupported_gpu_vm_list = [
             "standard_nc6",
             "standard_nc12",
             "standard_nc24",
             "standard_nc24r",
         ]
-        # Check if the size of the compute instance is in unsupported_gpu_vm_list
+        # compute instance ၏ size သည် unsupported_gpu_vm_list တွင် ရှိကြောင်း စစ်ဆေးပါ
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Raise a ValueError if the size of the compute instance is in unsupported_gpu_vm_list
+            # compute instance ၏ size သည် unsupported_gpu_vm_list တွင် ရှိပါက ValueError ကို ထုတ်ပေးပါ
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # Initialize a flag to check if the number of GPUs in the compute instance has been found
+    # compute instance တွင် GPU အရေအတွက်ကို တွေ့ရှိမှု အားစစ်ဆေးရန် အမှတ်အသားကို စတင်သတ်မှတ်ပါ
     gpu_count_found = False
-    # Retrieve a list of all available compute sizes in the workspace
+    # workspace တွင် ရနိုင်သော compute size များ စာရင်းကို ရယူပါ
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iterate over the list of available compute sizes
+    # ရနိုင်သော compute size များ စာရင်းကို လှည့်ကြည့်ပါ
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Check if the name of the compute size matches the size of the compute instance
+        # compute size ၏ နာမည်သည် compute instance ၏ size နှင့် တူညီကြောင်း စစ်ဆေးပါ
         if compute_sku.name.lower() == compute.size.lower():
-            # If it does, retrieve the number of GPUs for that compute size and set gpu_count_found to True
+            # တူညီပါက ထို compute size ၏ GPU အရေအတွက်ကို ရယူပြီး gpu_count_found ကို True ဟုပြောင်းပါ
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # If gpu_count_found is True, print the number of GPUs in the compute instance
+    # gpu_count_found သည် True ဖြစ်ပါက compute instance ၏ GPU အရေအတွက်ကို ပုံနှိပ်ပါ
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # If gpu_count_found is False, raise a ValueError
+        # gpu_count_found သည် False ဖြစ်ပါက ValueError ကို ထုတ်ပေးပါ
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
 
-## ၄။ မော်ဒယ်အတိအကျ ပြင်ဆင်ရန် ဒေတာစုံစု ရွေးချယ်ခြင်း
+## ၄။ မော်ဒယ် fine tuning အတွက် ဒေတာစုစည်းမှု ရွေးချယ်ခြင်း
 
-1. ultrachat_200k ဒေတာစုံစုကို အသုံးပြုမည်ဖြစ်သည်။ ဒေတာစုံစုတွင် Supervised fine-tuning (sft) အတွက် သင့်တော်သော စိတ်ပိုင်းခြားထားသော စိတ်ပိုင်း ၄ ခု ပါဝင်သည်။ Generation ranking (gen) ဖြစ်သည်။ စိတ်ပိုင်းတစ်ခုလျှင် နမူနာအရေအတွက်ကို အောက်ပါအတိုင်း ပြသထားသည်-
+၁။ ultrachat_200k ဒေတာစုစည်းမှုကို သုံးသည်။ ဒေတာအပိုင်း၄ခုရှိပြီး Supervised fine-tuning (sft) အတွက် သင့်တော်သည်။
+Generation ranking (gen) ဖြစ်သည်။ split တစ်ခုချင်းစီ၏ နမူနာအရေအတွက်မှာ အောက်ပါအတိုင်း ဖြစ်သည်-
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. နောက်ထပ် cell များတွင် အတိအကျ ပြင်ဆင်ရေးအတွက် အခြေခံ ဒေတာပြင်ဆင်မှုများ ပြသထားသည်-
+၁။ အောက်ပါ few cells တွင် fine tuning အတွက် အခြေခံ ဒေတာပြင်ဆင်မှု ပြသထားသည်-
 
-### ဒေတာတန်းအချို့ကို မြင်ကွင်းပြုခြင်း
+### ဒေတာ အတန်းများကို ကြည့်ရှုခြင်း
 
-ဤနမူနာကို လျင်မြန်စွာ လည်ပတ်စေရန် train_sft, test_sft ဖိုင်များတွင် ရှင်းလင်းပြီးသား ဒေတာတန်းများ၏ ၅% ကို သိမ်းဆည်းထားသည်။ ၎င်းကြောင့် အတိအကျ ပြင်ဆင်ပြီး မော်ဒယ်၏ တိကျမှုနည်းပါးမည်ဖြစ်ပြီး အမှန်တကယ် အသုံးပြုရန် မသင့်တော်ပါ။ download-dataset.py ကို ultrachat_200k ဒေတာစုံစုကို ဒေါင်းလုပ်လုပ်ရန်နှင့် ဒေတာစုံစုကို finetune pipeline component အသုံးပြုနိုင်သော ပုံစံသို့ ပြောင်းလဲရန် အသုံးပြုသည်။ ဒေတာစုံစုသည် ကြီးမားသောကြောင့် အပိုင်းတစ်စိတ်တစ်ပိုင်းသာ ပါဝင်သည်။
+မြန်ဆန်စွာ အလုပ်လုပ်သည်အောင် train_sft နှင့် test_sft ဖိုင်များတွင် ရှင်းလင်းပြီး အလယ်ပိုင်းသတ်မှတ်ထားသော အတန်း ၅% ကို သိမ်းဆည်းပါသည်။ ၎င်းကြောင့် fine tuned မော်ဒယ်၏ တိကျမှန်ကန်မှုနည်းပါးပြီး အမှန်တကယ် အသုံးပြုရန် မသင့်တော်ပါ။
+download-dataset.py ကို အထောက်အကူပြု စာရွက်သားအနေနဲ့ ultrachat_200k dataset ကို ရယူပြီး finetune pipeline component အသုံးပြုနိုင်သည့်ပုံစံသို့ ပြောင်းလဲပေးသည်။ ဒေတာကြီးသောကြောင့် ကျွန်ုပ်တို့အား ရှင်းလင်းနိုင်သည့် ဒေတာပမာဏသည် အနည်းငယ်သာ ပါရှိသည်။
 
-1. အောက်ပါ script ကို လည်ပတ်ခြင်းဖြင့် ဒေတာ၏ ၅% ကိုသာ ဒေါင်းလုပ်လုပ်မည်ဖြစ်သည်။ dataset_split_pc parameter ကို လိုသလို ပြောင်းလဲ၍ တိုးမြှင့်နိုင်သည်။
+၁။ အောက်ပါ script တွင် အချို့ များက data ၏ ၅% ကို download ပြုလုပ်သည်။ dataset_split_pc parameter ကို ပြောင်းလဲ၍ တိုးမြှင့်နိုင်သည်။
 
-    > [!NOTE]
-    > ဘာသာစကား မော်ဒယ်အချို့တွင် ဘာသာစကားကုဒ် မတူညီမှုရှိနိုင်ပြီး ဒေတာစုံစုတွင် ကော်လံအမည်များသည် ထိုအတိုင်း ပြောင်းလဲထားသင့်သည်။
+> [!NOTE]
+> ဘာသာစကားမော်ဒယ်အချို့တွင် ဘာသာရေးCode များကွဲပြားသည်၊ ဒါကြောင့် dataset column နာမည်များမှလည်း ထိုလိုက်ဖက်မှုရှိရမည်။
 
-1. ဒေတာသည် အောက်ပါပုံစံအတိုင်း ဖြစ်ရမည်ဖြစ်သည်။
-chat-completion ဒေတာစုံစုကို parquet ပုံစံဖြင့် သိမ်းဆည်းထားပြီး အချက်အလက်တစ်ခုစီသည် အောက်ပါ schema ကို အသုံးပြုသည်-
+၁။ ဒေတာ ပုံစံ ဥပမာ-
 
-    - ၎င်းသည် JSON (JavaScript Object Notation) စာရွက်ဖြစ်ပြီး ဒေတာလဲလှယ်ရန် လူကြိုက်များသော ပုံစံဖြစ်သည်။ အကောင်အထည်မဖော်နိုင်သော်လည်း ဒေတာ သိမ်းဆည်းခြင်းနှင့် သယ်ယူပို့ဆောင်ခြင်းအတွက် အသုံးပြုသည်
-- DataFrame ရဲ့ ပထမဆုံး ၅ လိုင်းကို ပြသဖို့ head method ကို အသုံးပြုထားပါတယ်။ DataFrame ရဲ့ လိုင်းအရေအတွက် ၅ ထက်နည်းရင်တော့ အားလုံးကို ပြသပါလိမ့်မယ်။
+chat-completion dataset ကို parquet ပုံစံဖြင့် သိမ်းဆည်း၍ စာရင်းတစ်ခုစီသည် အောက်ပါ schema နဲ့ဖွဲ့စည်းထားသည်-
 
-- အကျဉ်းချုပ်အားဖြင့် ဒီ script က JSON Lines ဖိုင်ကို DataFrame ထဲသို့ load လုပ်ပြီး ပထမဆုံး ၅ လိုင်းကို ကော်လံစာသားအပြည့်အစုံနဲ့ ပြသနေပါတယ်။
+- JSON (JavaScript Object Notation) အချက်တစ်ရပ်ဖြစ်သည်။ ဒါဟာ code မဟုတ်ပေမယ့် data သယ်ဆောင်မှုနဲ့ သိမ်းဆည်းမှု အတွက် ရေပန်းစားတဲ့ ပုံစံဖြစ်သည်။ ပုံစံကို အောက်ပါအတိုင်း ခွဲခြမ်းစိတ်ဖြာထားသည်-
 
-```python
-    # Import the pandas library, which is a powerful data manipulation and analysis library
+- "prompt" - AI အကူအညီမှ တောင်းဆိုထားသည့် task သို့မဟုတ် ကိစ္စ တစ်ခုအဖြစ် စာသားတစ်ရပ်ပါရှိသည်။
+
+- "messages" - user နှင့် AI အကူအညီ တို့ကြား စကားသတင်းများ array တစ်ခုအဖြစ် ပါဝင်သည်။ message object တစ်ခုစီတွင် အောက်ပါ key နှစ်ခုပါရှိသည်-
+
+    - "content" -"message" ၏ အကြောင်းအရာစာသားဖြစ်သည်။
+
+    - "role" - message ပေးပို့သူ၏ အခန်းကဏ္ဍဖြစ်ပြီး "user" သို့မဟုတ် "assistant" ဖြစ်နိုင်သည်။
+
+- "prompt_id" - prompt တစ်ခု အတိအကျသိရှိရန် unique ဝိသေသလက္ခဏာ string တစ်ခု။
+
+၁။ ဤ JSON မှာ user နှင့် AI assistant တို့ကြား dystopian အကြောင်းအရာအတွက် ဇာတ်ကောင် တစ်ဦးဖန်တီးစေလိုခြင်း၊ အထောက်အကူပြုသူ၏တုံ့ပြန်မှုများနှင့် ပို၍အသေးစိတ် မေးမြန်းမှုတို့ပါဝင်သည်။ ပြောဆိုချိန်စကားလုံးအားလုံးသည် prompt id တစ်ခုနှင့် ဆက်စပ်သည်။
+
+    ```python
+    {
+        // The task or question posed to an AI assistant
+        "prompt": "Create a fully-developed protagonist who is challenged to survive within a dystopian society under the rule of a tyrant. ...",
+        
+        // An array of objects, each representing a message in a conversation between a user and an AI assistant
+        "messages":[
+            {
+                // The content of the user's message
+                "content": "Create a fully-developed protagonist who is challenged to survive within a dystopian society under the rule of a tyrant. ...",
+                // The role of the entity that sent the message
+                "role": "user"
+            },
+            {
+                // The content of the assistant's message
+                "content": "Name: Ava\n\n Ava was just 16 years old when the world as she knew it came crashing down. The government had collapsed, leaving behind a chaotic and lawless society. ...",
+                // The role of the entity that sent the message
+                "role": "assistant"
+            },
+            {
+                // The content of the user's message
+                "content": "Wow, Ava's story is so intense and inspiring! Can you provide me with more details.  ...",
+                // The role of the entity that sent the message
+                "role": "user"
+            }, 
+            {
+                // The content of the assistant's message
+                "content": "Certainly! ....",
+                // The role of the entity that sent the message
+                "role": "assistant"
+            }
+        ],
+        
+        // A unique identifier for the prompt
+        "prompt_id": "d938b65dfe31f05f80eb8572964c6673eddbd68eff3db6bd234d7f1e3b86c2af"
+    }
+    ```
+
+### ဒေတာဒေါင်းလုပ်လုပ်ခြင်း
+
+၁။ ဤ Python script မှ download-dataset.py helper script ကို အသုံးပြုပြီး ဒေတာ စုစည်းမှုကို ဒေါင်းလုပ်ပြုလုပ်သည်။ လုပ်ဆောင်ချက်များမှာ -
+
+- os module ကို import ပြုလုပ်သည်၊ operating system များနှင့် ဆက်ဆံမှုတွေကို လွယ်ကူစွာ လုပ်ဆောင်နိုင်စေသည်။
+
+- os.system function ကို အသုံးပြု၍ shell မှ download-dataset.py script ကို ခေါ်ပြီး command line arguments ဖြင့် သူ၏ မူရင်းဒေတာစုစည်းမှု (HuggingFaceH4/ultrachat_200k), ဒေါင်းလုပ် သိမ်းဆည်းမည့် directory (ultrachat_200k_dataset), ခုလို dataset ကောင်တာချိန်ခွဲ (5%) တို့ကို သတ်မှတ်သည်။ os.system ဟာ shell command ရဲ့ exit status များ (0 သည်အောင်မြင်မှုကို ဆိုလိုသည်) ကို ပြန်အမ်းပြီး exit_status မှာ သိမ်းဆည်းထားသည်။
+
+- exit_status 0 မဟုတ်ပါက ဒေတာဒေါင်းလုပ်တွင် ပြဿနာဖြစ်ကြောင်း Exception ကို raise ပြုလုပ်သည်။
+
+- တိုတောင်းစွာ script သည် ဒေတာဒေါင်းလုပ် helper script ကို run ပြီး အောင်မြင်/မအောင်မြင်အား စစ်ဆေးသည်။
+
+    ```python
+    # အချိန်ဆက်နွယ်မှုအတွက် လုပ်ငန်းစဉ်စနစ်မူပိုင်ခွင့် လုပ်ဆောင်ချက်များကို အသုံးပြုနိုင်ရန် os မော်ဂျူးကို ထည့်သွင်းပါ
+    import os
+    
+    # သတ်မှတ်ထားသော command-line အချက်အလက်များနဲ့ download-dataset.py script ကို shell မှာ os.system function ကို အသုံးပြုပြီး လည်ပတ်ပါ
+    # အချက်အလက်များ သတ်မှတ်ချက်မှာ ဒဏ်ဆိုဒ်ကိုဒေါင်းလုပ်လုပ်ရန် (HuggingFaceH4/ultrachat_200k)၊ ဒေါင်းလုပ်ကြောင်း သိမ်းဆည်းရန်ဆိုတဲ့ ဒါရိုက်တာ (ultrachat_200k_dataset) နှင့် ဒဏ်ဆိုဒ်ကိုခွဲစိတ်ရာရာခိုင်နှုန်း (5) ဖြစ်ပါသည်
+    # os.system function သည် လည်ပတ်ခဲ့သော command ၏ ထွက်မှုအခြေအနေကို ပြန်လည်ပေးပို့ပြီး exit_status ကိုယ်စားလှယ်တွင် သိမ်းဆည်းပါသည်
+    exit_status = os.system(
+        "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
+    )
+    
+    # exit_status က 0 မဟုတ်တာကို စစ်ဆေးပါ
+    # Unix ပုံစံ စနစ်များတွင် exit status 0 ဆိုသည်မှာ ပုံမှန်အောင်မြင်မှုကို ပြသပြီး အခြားနံပါတ်တစ်ခုဖြစ်ပါက အမှားတစ်ခု ဖြစ်ကြောင်း သီအိုရား ရှိသည်
+    # exit_status သည် 0 မဟုတ်ပါက ဒဏ်ဆိုဒ်ဒေါင်းလုပ်လုပ်ရာတွင် အမှား ဖြစ်ကြောင်း ပြသသော Exception ကို ထုတ်ပေးပါ
+    if exit_status != 0:
+        raise Exception("Error downloading dataset")
+    ```
+
+### ဒေတာကို DataFrame ထဲသို့ load ပြုလုပ်ခြင်း
+
+၁။ ဤ Python script သည် JSON Lines ဖိုင်တစ်ခုကို pandas DataFrame ထဲသို့ load ပြီး ပထမဆုံး ၅ ထိဝင်သော အတန်းများကို ပြသသည်။ လုပ်ဆောင်ချက်များမှာ -
+
+- pandas library ကို import လုပ်သည်- ဒေတာ ကို လွယ်ကူစွာ ချုပ်ဆို၊ စစ်ဆေးနှင့် ချပြရန် အသုံးပြုသော library ဖြစ်သည်။
+
+- pandas display options မှာ column data များကို ပိတ်မထားဘဲ အပြည့်အစုံကြည့်ရှုနိုင်ရန် maximum column width ကို 0 အဖြစ် သတ်မှတ်သည်။
+    - ultrachat_200k_dataset ဖိုလ်ဒါထဲက train_sft.jsonl ဖိုင်ကို pd.read_json function ကို အသုံးပြု၍ DataFrame အနေနဲ့ ဖတ်ယူသည်။ lines=True ဆိုတဲ့ argument က ဖိုင်ဟာ JSON Lines ဖော်မတ်ဖြစ်ပြီး တစ်ကြောင်းချင်းစီက JSON object တစ်ခုဖြစ်ကြောင်း ပြသည်။
+
+    - head method ကို အသုံးပြု၍ DataFrame ရဲ့ ပထမ ၅ ကြောင်းကို ပြသသည်။ DataFrame ထဲက တော်တော်နည်းရင် အားလုံးကို ပြသပါမည်။
+
+    - အကျဉ်းချုပ် အနေနဲ့ ဒီ script က JSON Lines ဖိုင်ကို DataFrame ထဲသို့ loading ပြုလုပ်ပြီး ကော်လံရှိ စာသားများ အပြည့်အစုံဖြင့် ပထမ ၅ ကြောင်းကို ပြသနေပါသည်။
+    
+    ```python
+    # အင်္ဂါရပ်ကြွယ်ဝပြီး ဒေတာကို မူကြမ်းပြုလုပ်ခြင်းနှင့် စိစစ်ခြင်းလုပ်ငန်းများအတွက် pandas ไลဘ်ရယ်ကို သွင်းပါ
     import pandas as pd
     
-    # Set the maximum column width for pandas' display options to 0
-    # This means that the full text of each column will be displayed without truncation when the DataFrame is printed
+    # pandas ပြသမှု ရွေးချယ်မှုများအတွက် အကောင်းဆုံး ကော်လံ အနံကို 0 သတ်မှတ်ပါ
+    # ဒါကတော့ DataFrame ကို ပုံနှိပ်သောအခါ ကော်လံတိုင်း၏ စာသား အပြည့်အစုံကို ဖြတ်မတောက်ဘဲ ပြသမည်ဆိုလိုသည်
     pd.set_option("display.max_colwidth", 0)
     
-    # Use the pd.read_json function to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame
-    # The lines=True argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # pd.read_json function ကို အသုံးပြု၍ ultrachat_200k_dataset ဖိုလ်ဒါမှ train_sft.jsonl ဖိုင်ကို DataFrame ထဲသို့ ထည့်ပါ
+    # lines=True အချက်မှာ ဖိုင်သည် JSON Lines ဖော်แมတ်ဖြစ်ပြီး လိုင်း တစ်ခုချင်းစီသည် JSON အရာဝတ္တုပဲ ဖြစ်ကြောင်း ပြပါသည်
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Use the head method to display the first 5 rows of the DataFrame
-    # If the DataFrame has less than 5 rows, it will display all of them
+    # head method ကို အသုံးပြု၍ DataFrame ၏ ပထမ ၅ လိုင်းကို ပြပါ
+    # DataFrame တွင် ၅ လိုင်းအောက်သာ ရှိပါက လိုင်းအားလုံးကို ပြပါလိမ့်မည်
     df.head()
     ```
 
-## ၅။ model နဲ့ data ကို input အဖြစ် အသုံးပြုပြီး fine tuning job ကို submit လုပ်ခြင်း
+## 5. fine tuning အလုပ်ကို မော်ဒယ်နဲ့ ဒေတာကို input အဖြစ် အသုံးပြု၍ တင်ပြခြင်း
 
-chat-completion pipeline component ကို အသုံးပြုတဲ့ job ကို ဖန်တီးပါ။ fine tuning အတွက် support လုပ်တဲ့ parameter တွေကို ပိုမိုလေ့လာနိုင်ပါတယ်။
+chat-completion pipeline component ကို အသုံးပြုသည့် job တစ်ခု ဖန်တီးပါ။ fine tuning အတွက် ပံ့ပိုးပေးသည့် parameter သတ်မှတ်ချက်များကို အလုပ်သင်ယူပါ။
 
 ### finetune parameters ကို သတ်မှတ်ခြင်း
 
-1. finetune parameters တွေကို training parameters နဲ့ optimization parameters ဆိုပြီး ၂ မျိုးခွဲနိုင်ပါတယ်။
+1. Finetune parameters များကို training parameters နှင့် optimization parameters ဆိုပြီး အမျိုးအစား ၂ မျိုးခွဲနိုင်သည်။
 
-1. Training parameters တွေက training ဆိုင်ရာ အချက်အလက်တွေကို သတ်မှတ်ပေးပါတယ် -
+1. Training parameters အနေနဲ့ သင်ကြားမှုနဲ့ဆိုင်သော အချက်အလက်များအား မှတ်သားသည်၊ ဥပမာ -
 
-    - အသုံးပြုမယ့် optimizer နဲ့ scheduler
-    - finetune ကို optimize လုပ်ဖို့ metric
-    - training steps အရေအတွက်၊ batch size စသဖြင့်
-    - Optimization parameters တွေက GPU memory ကို ထိရောက်စွာ အသုံးပြုနိုင်ဖို့နဲ့ compute resources တွေကို အကျိုးရှိစွာ အသုံးပြုဖို့ ကူညီပေးပါတယ်။
+    - အသုံးပြုလိုသော optimizer၊ scheduler
+    - finetune အထိထိရောက်ဆုံးနှင့်ပြုလုပ်ရန် metric
+    - သင်ကြားမှု လုပ်ဆောင်ရန် အဆင့်အရေအတွက်နှင့် batch အရွယ်အစား စသည်တို့
+    - Optimization parameters ကို GPU မေမရီ အသုံးများမှု ထိန်းသိမ်းရန် နဲ့ စွမ်းဆောင်ရည် ထိရောက်စွာ အသုံးပြုရန် ကူညီပေးသည်။
 
-1. အောက်မှာ optimization parameters အနည်းငယ်ကို ဖော်ပြထားပါတယ်။ optimization parameters တွေဟာ model အလိုက် ကွဲပြားပြီး model နဲ့အတူ package ထဲမှာ ပါဝင်ပါတယ်။
+1. အောက်ပါ parameter များသည် optimization parameters အမျိုးအစားဖြစ်ပြီး မော်ဒယ်အလိုက် မတူညီသည့် သတ်မှတ်ချက်များ ပါဝင်၍ အဆိုပါ မော်ဒယ်နှင့် ကျောမှပကိန်းထားသည်။
 
-    - deepspeed နဲ့ LoRA ကို ဖွင့်ထားခြင်း
-    - mixed precision training ကို ဖွင့်ထားခြင်း
-    - multi-node training ကို ဖွင့်ထားခြင်း
-
+    - deepspeed နဲ့ LoRA ကို ဖွင့်နိုင်ခြင်း
+    - mixed precision training ကို ဖွင့်နိုင်ခြင်း
+    - multi-node training ကို ဖွင့်နိုင်ခြင်း
 
 > [!NOTE]
-> Supervised finetuning က alignment ပျောက်ဆုံးခြင်း သို့မဟုတ် catastrophic forgetting ဖြစ်စေနိုင်ပါတယ်။ ဒီပြဿနာကို စစ်ဆေးပြီး finetune ပြီးနောက် alignment အဆင့်ကို ပြန်လည်ပြုလုပ်ဖို့ အကြံပြုပါတယ်။
+> supervised finetuning အဖြစ် alignment ကျရှုံးခြင်း သို့မဟုတ် catastrophic forgetting ဖြစ်နိုင်ပါသည်။ ဒီပြဿနာရှိမရှိ စစ်ဆေးပြီး finetuning ပြီးနောက် အလားတူ alignment အဆင့် လုပ်ဆောင်ရန် အကြံပြုပါသည်။
 
 ### Fine Tuning Parameters
 
-1. ဒီ Python script က machine learning model ကို fine-tuning လုပ်ဖို့ parameter တွေကို သတ်မှတ်နေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က machine learning မော်ဒယ် တစ်ခုကို fine-tuning အတွက် parameter များ သတ်မှတ်နေသည်။ လုပ်ဆောင်ချက်အချို့ကို ဖေါ်ပြပါ-
 
-    - training epochs အရေအတွက်၊ training နဲ့ evaluation အတွက် batch size တွေ၊ learning rate နဲ့ learning rate scheduler အမျိုးအစား စသည့် default training parameters တွေကို သတ်မှတ်ထားပါတယ်။
+    - နေရာတိုင်းသို့ သင်ကြားရန် epochs အရေအတွက်၊ training နှင့် evaluation အတွက် batch size များ၊ learning rate၊ နှင့် learning rate scheduler အမျိုးအစားများ Default အဖြစ် သတ်မှတ်ခြင်း။
 
-    - Layer-wise Relevance Propagation (LoRa) နဲ့ DeepSpeed ကို အသုံးပြုမလား၊ DeepSpeed stage ဘယ်လိုရှိမလဲ ဆိုတဲ့ default optimization parameters တွေကို သတ်မှတ်ထားပါတယ်။
+    - Layer-wise Relevance Propagation (LoRa) နှင့် DeepSpeed ကို အသုံးပြုမည်ဟုတ်မဟုတ်၊ DeepSpeed အဆင့် သတ်မှတ်ချက်များ Default အဖြစ် သတ်မှတ်ခြင်း။
 
-    - training parameters နဲ့ optimization parameters တွေကို finetune_parameters ဆိုတဲ့ dictionary တစ်ခုထဲ ပေါင်းစပ်ထားပါတယ်။
+    - training နှင့် optimization parameter များကို finetune_parameters ဆိုသော dictionary တစ်ခုအဖြစ် ပေါင်းစပ်ခြင်း။
 
-    - foundation_model မှာ model-specific default parameters ရှိမရှိ စစ်ဆေးပြီး ရှိရင် warning message တစ်ခု print ထုတ်ပြီး finetune_parameters dictionary ကို model-specific default တွေနဲ့ update လုပ်ပါတယ်။ ast.literal_eval function ကို string မှ Python dictionary သို့ ပြောင်းဖို့ အသုံးပြုပါတယ်။
+    - foundation_model တွင် မော်ဒယ်အလိုက် သတ်မှတ်ထားသော Default parameter များရှိပါက အသိပေးသတင်းပို့ပြီး finetune_parameters ကို အဆိုပါ parameter များဖြင့် update ပြုလုပ်ခြင်း၊ ast.literal_eval function ကို သုံး၍ string မှ Python dictionary အဖြစ်ပြောင်းခြင်း။
 
-    - run အတွက် အသုံးပြုမယ့် fine-tuning parameters အဆုံးသတ်ကို print ထုတ်ပြထားပါတယ်။
+    - မိမိထားလိုက်သော fine-tune parameter များကို နောက်ဆုံးအနေဖြင့် ထုတ်ပြခြင်း။
 
-    - အကျဉ်းချုပ်အားဖြင့် ဒီ script က machine learning model ကို fine-tuning လုပ်ဖို့ parameter တွေကို သတ်မှတ်ပြီး ပြသနေပြီး default parameters တွေကို model-specific parameters တွေနဲ့ override လုပ်နိုင်ပါတယ်။
+    - အကျဉ်းချုပ် အနေနဲ့ မော်ဒယ်တစ်ခုကို fine-tuning ပြုလုပ်ရာ parameter များ သတ်မှတ် သည့် script ဖြစ်ပြီး မော်ဒယ်အလိုက် Default မဟုတ်သည့် parameter များကို override လုပ်နိုင်ပါသည်။
 
-```python
-    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    ```python
+    # ပုံမှန် သင်ကြားမှု ပရာမီတာများကို သတ်မှတ်ပါ၊ ဥပမာအားဖြင့် သင်ကြားမှု epoch အရေအတွက်၊ သင်ကြားမှုနှင့် သုံးသပ်မှုအတွက် batch အရွယ်အစားများ၊ သင်ယူနှုန်းနှင့် သင်ယူနှုန်း စီမံခန့်ခွဲမှု အမျိုးအစား
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -356,28 +448,28 @@ chat-completion pipeline component ကို အသုံးပြုတဲ့ j
         lr_scheduler_type="cosine",
     )
     
-    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    # ပုံမှန် optimization ပရာမီတာများကို သတ်မှတ်ပါ၊ ဥပမာ Layer-wise Relevance Propagation (LoRa) နှင့် DeepSpeed ကို အသုံးပြုမည်ဟုတ်မဟုတ်၊ နောက် DeepSpeed အဆင့်
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    # သင်ကြားမှုနှင့် optimization ပရာမီတာများကို finetune_parameters ဟုခေါ်သော တစ်ခုတည်းသော dictionary ထဲတွင် ပေါင်းစပ်ပါ
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Check if the foundation_model has any model-specific default parameters
-    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
-    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    # foundation_model တွင် မူလပုံစံသတ်မှတ်ချက်များ ရှိမရှိ စစ်ဆေးပါ
+    # ရှိပါက သတိပေးမက်စေ့ချ် တစ်စောင်ကို ပုံနှိပ်ပြီး finetune_parameters dictionary ကို မူလပုံစံသတ်မှတ်ချက်များဖြင့် ညှိနှိုင်းပါ
+    # ast.literal_eval function ကို မူလပုံစံသတ်မှတ်ချက်များကို string မှ Python dictionary သို့ ပြောင်းရန် အသုံးပြုသည်
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # convert string to python dict
+            ast.literal_eval(  # string ကို python dict သို့ ပြောင်းသည်
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # Print the final set of fine-tuning parameters that will be used for the run
+    # သွားလုပ်မည့် fine-tuning ပရာမီတာများ၏ နောက်ဆုံးအစုကို ပုံနှိပ်ပြပါ
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
@@ -385,55 +477,55 @@ chat-completion pipeline component ကို အသုံးပြုတဲ့ j
 
 ### Training Pipeline
 
-1. ဒီ Python script က machine learning training pipeline အတွက် display name တစ်ခု generate လုပ်ဖို့ function တစ်ခု သတ်မှတ်ပြီး ထို function ကို ခေါ်ယူကာ display name ကို generate လုပ်ပြီး print ထုတ်နေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က machine learning training pipeline အတွက် display name ဖန်တီးပေးမည့် function တစ်ခု အဓိက သတ်မှတ်ပြီး ထို function ကို ဖိတ်ခေါ်၍ display name ထုတ်ပေးသည်။ လုပ်ဆောင်ချက် အချက်တွေကို ဖော်ပြပါ-
 
-1. get_pipeline_display_name function ကို သတ်မှတ်ထားပါတယ်။ ဒီ function က training pipeline နဲ့ဆိုင်တဲ့ parameter များအပေါ် မူတည်ပြီး display name တစ်ခု generate လုပ်ပါတယ်။
+1. get_pipeline_display_name function ကို သတ်မှတ်ထားသည်။ training pipeline ဆွဲဆောင်မှုနှင့်ဆိုင်သော parameter များ အပေါ် အခြေခံ၍ display name တစ်ခုကို ဖန်တီးသည်။
 
-1. function အတွင်းမှာ per-device batch size, gradient accumulation steps အရေအတွက်, GPUs per node အရေအတွက်နဲ့ fine-tuning အတွက် အသုံးပြုမယ့် nodes အရေအတွက်ကို multiply လုပ်ကာ total batch size ကိုတွက်ချက်ပါတယ်။
+1. function အတွင်းမှာ per-device batch size, gradient accumulation steps အရေအတွက်, node တစ်ခုချင်းစီတွင် GPU အရေအတွက်, fine-tuning အတွက် အသုံးပြု node အရေအတွက်တို့ကို သင့်တော်စွာ မြောက်လိုက်ကာ မျိုးစုံသော parameter များကို ရယူသည်။
 
-1. learning rate scheduler အမျိုးအစား၊ DeepSpeed အသုံးပြုမလား၊ DeepSpeed stage, Layer-wise Relevance Propagation (LoRa) အသုံးပြုမလား၊ model checkpoints ထိန်းသိမ်းမယ့် အရေအတွက် ကန့်သတ်ချက်နဲ့ maximum sequence length စသည့် parameter များကို ရယူပါတယ်။
+1. learning rate scheduler အမျိုးအစား, DeepSpeed အသုံးပြုမှုရှိမရှိ, DeepSpeed အဆင့်, LoRa အသုံးပြုမှု, model checkpoint များ သိမ်းဆည်းရန် ဟန်ချက်၊ အများဆုံး sequence ရှည်လျားမှု စတော့ parameter များကိုလည်း ရယူသည်။
 
-1. ဒီ parameter တွေကို hyphen ဖြင့် ခွဲထားတဲ့ string တစ်ခုအဖြစ် ဖန်တီးပါတယ်။ DeepSpeed သို့မဟုတ် LoRa အသုံးပြုမယ်ဆိုရင် "ds" နဲ့ DeepSpeed stage သို့မဟုတ် "lora" ကို string ထဲထည့်ပါတယ်။ မသုံးရင် "nods" သို့မဟုတ် "nolora" ပါဝင်ပါတယ်။
+1. parameter များကို ဒါတွေထဲက string တစ်ခုအနေဖြင့် hyphen ဖြင့် ခွဲခြားပြီး ဖန်တီးသည်။ DeepSpeed သို့မဟုတ် LoRa အသုံးပြုသောအခါ "ds" နှင့် အဆင့် သို့မဟုတ် "lora" ဆိုပြီး ထည့်သွင်းမည်။ မဟုတ်ရင် "nods" သို့မဟုတ် "nolora" ဟု ပါဝင်မည်။
 
-1. function က ဒီ string ကို return ပြန်ပေးပြီး training pipeline အတွက် display name အဖြစ် အသုံးပြုပါတယ်။
+1. function မှ string ကို ပြန်လည် return ပြုလုပ်ပြီး training pipeline ၏ display name အဖြစ် အသုံးပြုသည်။
 
-1. function သတ်မှတ်ပြီးနောက် display name ကို generate လုပ်ဖို့ ခေါ်ယူပြီး print ထုတ်ပါတယ်။
+1. function ကို ဖော်ပြပြီးနောက် ဖိတ်ခေါ်၍ display name ထုတ်ပေးပြီး print ထုတ်သည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က machine learning training pipeline အတွက် parameter များအပေါ် မူတည်ပြီး display name တစ်ခု generate လုပ်ကာ ထို display name ကို print ထုတ်နေပါတယ်။
+1. အကျဉ်းချုပ် - training pipeline အတွက် parameter အခြေခံပြီး display name ဖန်တီး ထုတ်ပေးတဲ့ script ဖြစ်သည်။
 
-```python
-    # Define a function to generate a display name for the training pipeline
+    ```python
+    # သင်ကြားမှု pipeline အတွက် ပြသမည့်နာမည်ကို ဖန်တီးရန် function တစ်ခု သတ်မှတ်ပါ
     def get_pipeline_display_name():
-        # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
+        # တစ် DEVICE လျှင် batch အရွယ်အစားကို gradient စုပေါင်းခြေလှမ်း အရေအတွက်၊ node တစ်ခုလျှင် GPU အရေအတွက်နှင့် fine-tuning အတွက် အသုံးပြုထားသော node အရေအတွက်ဖြင့် မြှောက်ပြီး စုစုပေါင်း batch အရွယ်အစားကိုတွက်ချက်ပါ
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Retrieve the learning rate scheduler type
+        # သင်ယူမှုနှုန်း စီစဉ်သူအမျိုးအစားကို ရယူပါ
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Retrieve whether DeepSpeed is applied
+        # DeepSpeed အသုံးပြုထားသလား ဆိုတာကို ရယူပါ
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Retrieve the DeepSpeed stage
+        # DeepSpeed အဆင့်ကို ရယူပါ
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # If DeepSpeed is applied, include "ds" followed by the DeepSpeed stage in the display name; if not, include "nods"
+        # DeepSpeed အသုံးပြုထားပါက၊ ပြသမည့်နာမည်တွင် "ds" နှင့် DeepSpeed အဆင့်ကို ပါဝင်စေရန် ပါဝင်သည်; မဟုတ်ပါက "nods" ကို ပါဝင်စေပါ
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Retrieve whether Layer-wise Relevance Propagation (LoRa) is applied
+        # Layer-wise Relevance Propagation (LoRa) ကို အသုံးပြုထားသလားဆိုတာ ရယူပါ
         lora = finetune_parameters.get("apply_lora", "false")
-        # If LoRa is applied, include "lora" in the display name; if not, include "nolora"
+        # LoRa အသုံးပြုထားပါက၊ ပြသမည့်နာမည်တွင် "lora" ပါဝင်စေရန်; မဟုတ်ပါက "nolora" ပါဝင်စေပါ
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Retrieve the limit on the number of model checkpoints to keep
+        # ထိန်းသိမ်းထားမည့် model checkpoint အရေအတွက် ဆက်တင်ကို ရယူပါ
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # Retrieve the maximum sequence length
+        # အများဆုံး စာကြောင်း အရှည်ကို ရယူပါ
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Construct the display name by concatenating all these parameters, separated by hyphens
+        # ဒီ parameter အားလုံးကို hyphen ဖြင့် ခွဲ၍ ပြသမည့်နာမည်ကို ဖန်တီးပါ
         return (
             model_name
             + "-"
@@ -450,192 +542,192 @@ chat-completion pipeline component ကို အသုံးပြုတဲ့ j
             + f"-seqlen{seq_len}"
         )
     
-    # Call the function to generate the display name
+    # ပြသမည့်နာမည်ကို ဖန်တီးရန် function ကို ခေါ်ပါ
     pipeline_display_name = get_pipeline_display_name()
-    # Print the display name
+    # ပြသမည့်နာမည်ကို ပုံနှိပ်ပါ
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### Configuring Pipeline
+### Pipeline အား configure ပြုလုပ်ခြင်း
 
-ဒီ Python script က Azure Machine Learning SDK ကို အသုံးပြုပြီး machine learning pipeline တစ်ခုကို သတ်မှတ်ပြီး configure လုပ်နေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+ဒီ Python script က Azure Machine Learning SDK အသုံးပြု၍ machine learning pipeline ကို သတ်မှတ် configure လုပ်နေသည်၊ လုပ်ဆောင်ချက် အချက်အလက်များ -
 
-1. Azure AI ML SDK မှ လိုအပ်တဲ့ module များကို import လုပ်ထားပါတယ်။
+1. Azure AI ML SDK မှ အသုံးလိုအပ်သော module များကို import ပြုလုပ်သည်။
 
-1. registry မှ "chat_completion_pipeline" ဆိုတဲ့ pipeline component ကို ရယူထားပါတယ်။
+1. registry ထဲမှ "chat_completion_pipeline" pipeline component ကို ရယူသည်။
 
-1. `@pipeline` decorator နဲ့ `create_pipeline` function ကို သတ်မှတ်ထားပြီး pipeline အမည်ကို `pipeline_display_name` အဖြစ် သတ်မှတ်ထားပါတယ်။
+1. `@pipeline` decorator နှင့် `create_pipeline` function ဖြင့် pipeline job တစ်ခုအား သတ်မှတ်သည်။ pipeline အမည်ကို `pipeline_display_name` ဟု သတ်မှတ်ထားသည်။
 
-1. `create_pipeline` function အတွင်းမှာ ရယူထားတဲ့ pipeline component ကို model path, compute clusters များ၊ training နဲ့ testing dataset splits, fine-tuning အတွက် အသုံးပြုမယ့် GPU အရေအတွက်နဲ့ အခြား fine-tuning parameters များဖြင့် initialize လုပ်ထားပါတယ်။
+1. `create_pipeline` function အတွင်း fetched pipeline component ကို model path, သီးခြားလမ်းကြောင်းသုံး cluster များ (training, testing), fine-tune အတွက် အသုံးပြု GPU အရေအတွက် နှင့် အခြား fine-tuning parameter များ ဖြင့် initialize ပြုလုပ်သည်။
 
-1. fine-tuning job ရဲ့ output ကို pipeline job ရဲ့ output နဲ့ map လုပ်ထားပါတယ်။ ဒါက fine-tuned model ကို အလွယ်တကူ register လုပ်နိုင်ဖို့အတွက်ဖြစ်ပြီး model ကို online သို့မဟုတ် batch endpoint တွင် deploy လုပ်ဖို့ လိုအပ်ပါတယ်။
+1. fine-tuning job ရလဒ်ကို pipeline job ၏ output နှင့် ပေါင်းတင်ထားသည်။ fine-tuned model ကို parameter ထည့်သုံး(Register)၍ online လုပ်ငန်းသို့ အလွယ်တကူ တင်ပို့နိုင်ရန်သည်။
 
-1. `create_pipeline` function ကို ခေါ်ယူကာ pipeline instance တစ်ခု ဖန်တီးထားပါတယ်။
+1. `create_pipeline` function ကိုခေါ်၍ pipeline instance ဖန်တီးသည်။
 
-1. pipeline ရဲ့ `force_rerun` ကို `True` သတ်မှတ်ထားပြီး ယခင် job များရဲ့ cached result များကို အသုံးမပြုပါ။
+1. pipeline ၏ `force_rerun` ကို True သတ်မှတ်ထားပြီး ယခင် အလုပ်ဖြင့် သိမ်းဆည်းထားသော cache များကို အသုံးမပြုပါ။
 
-1. pipeline ရဲ့ `continue_on_step_failure` ကို `False` သတ်မှတ်ထားပြီး step တစ်ခုခု မအောင်မြင်ပါက pipeline ကို ရပ်တန့်ပါလိမ့်မယ်။
+1. pipeline ၏ `continue_on_step_failure` ကို False သတ်မှတ်ပြီး အဆင့်တစ်ခုခု fail ဖြစ်မည်ဆို pipeline ရပ်စဲမည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က Azure Machine Learning SDK ကို အသုံးပြုပြီး chat completion task အတွက် machine learning pipeline တစ်ခုကို သတ်မှတ်ပြီး configure လုပ်နေပါတယ်။
+1. အကျဉ်းချုပ် - Azure Machine Learning SDK ကို အသုံးပြု chat completion အလုပ်လုပ်သော machine learning pipeline ကို သတ်မှတ် configure ပြုလုပ်ထားပါသည်။
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # Azure AI ML SDK မှ လိုအပ်သော မော်ဂျူးများကို တင်သွင်းသည်
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Fetch the pipeline component named "chat_completion_pipeline" from the registry
+    # registry မှ "chat_completion_pipeline" ဟု အမည်ရသော pipeline component ကို ရယူသည်
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Define the pipeline job using the @pipeline decorator and the function create_pipeline
-    # The name of the pipeline is set to pipeline_display_name
+    # @pipeline decorator နှင့် create_pipeline function ကို အသုံးပြု၍ pipeline job ကို သတ်မှတ်သည်
+    # pipeline အမည်ကို pipeline_display_name ဟု သတ်မှတ်ထားသည်
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Initialize the fetched pipeline component with various parameters
-        # These include the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters
+        # ရယူထားသော pipeline component ကို parameter များစွာဖြင့် စတင်တပ်ဆင်သည်
+        # ၎င်းတွင် မော်ဒယ်လ်လမ်းကြောင်း၊ အဆင့်အလိုက် compute cluster များ၊ လေ့ကျင့်မှုနှင့် စမ်းသပ်မှုအတွက် dataset ခွဲများ၊ fine-tuning အတွက် အသုံးပြုမည့် GPU အရေအတွက်နှင့် အခြား fine-tuning parameter များ ပါ၀င်သည်
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Map the dataset splits to parameters
+            # dataset ခွဲများကို parameter များနှင့် တွဲပြသည်
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # Training settings
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Set to the number of GPUs available in the compute
+            # လေ့ကျင့်မှု ဆက်တင်များ
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # compute တွင် ရရှိနိုင်သော GPU အရေအတွက် သတ်မှတ်သည်
             **finetune_parameters
         )
         return {
-            # Map the output of the fine tuning job to the output of pipeline job
-            # This is done so that we can easily register the fine tuned model
-            # Registering the model is required to deploy the model to an online or batch endpoint
+            # fine tuning အလုပ်၏ output ကို pipeline job ၏ output နှင့် တွဲဖက်ပြသည်
+            # ဤကိစ္စက fine tuned model ကို လွယ်ကူစွာ မှတ်ပုံတင်နိုင်ရန် ဖြစ်သည်
+            # မော်ဒယ်လ်ကို online သို့မဟုတ် batch endpoint တွင် ထည့်သွင်းရန် model မှတ်ပုံတင်ခြင်း လိုအပ်သည်
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Create an instance of the pipeline by calling the create_pipeline function
+    # create_pipeline function ကို ခေါ်၍ pipeline ၏ instance ကို ဖန်တီးသည်
     pipeline_object = create_pipeline()
     
-    # Don't use cached results from previous jobs
+    # ယခင်အလုပ်များမှ cache ရလဒ်များကို မသုံးပါနှင့်
     pipeline_object.settings.force_rerun = True
     
-    # Set continue on step failure to False
-    # This means that the pipeline will stop if any step fails
+    # စတင်မှုမအောင်မြင်ပါက ဆက်လက်လုပ်ကိုင်မှုကို False သတ်မှတ်သည်
+    # ၎င်းသည် pipeline တွင် အဆင့်တစ်ခုမှ မအောင်မြင်ပါက အလုပ်ရပ်နားမည်ဟု ဆိုလိုသည်
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Submit the Job
+### Job တင်သွင်းခြင်း
 
-1. ဒီ Python script က Azure Machine Learning workspace သို့ machine learning pipeline job တစ်ခုကို submit လုပ်ပြီး job ပြီးဆုံးရန် စောင့်ဆိုင်းနေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က Azure Machine Learning workspace သို့ machine learning pipeline job တင်သွင်းပြီး အလုပ်ပြီးဆုံးရန် စောင့်ဆိုင်းနေသည်။ လုပ်ဆောင်ချက်များ -
 
-    - workspace_ml_client ရဲ့ jobs object မှ create_or_update method ကို ခေါ်ယူကာ pipeline job ကို submit လုပ်ပါတယ်။ run မယ့် pipeline ကို pipeline_object နဲ့ သတ်မှတ်ပြီး job ကို run မယ့် experiment ကို experiment_name နဲ့ သတ်မှတ်ထားပါတယ်။
+    - workspace_ml_client ရှိ jobs object ၏ create_or_update method ကို အသုံးပြု၍ pipeline job အတွက် pipeline_object ကို သတ်မှတ်ပြီး experiment_name အောက်တွင် job ကို တင်သွင်းသည်။
 
-    - ပြီးနောက် workspace_ml_client ရဲ့ jobs object မှ stream method ကို ခေါ်ယူကာ pipeline job ပြီးဆုံးရန် စောင့်ဆိုင်းပါတယ်။ စောင့်ဆိုင်းမယ့် job ကို pipeline_job object ရဲ့ name attribute နဲ့ သတ်မှတ်ထားပါတယ်။
+    - အလုပ်ပြီးဆုံးရန် workspace_ml_client ၏ jobs object ၏ stream method ကို ခေါ်၍ pipeline_job ၏ name attribute ကို အသုံးပြုပြီး စောင့်ဆိုင်းသည်။
 
-    - အကျဉ်းချုပ်အားဖြင့် ဒီ script က Azure Machine Learning workspace သို့ machine learning pipeline job တစ်ခုကို submit လုပ်ပြီး job ပြီးဆုံးရန် စောင့်ဆိုင်းနေပါတယ်။
+    - အကျဉ်းချုပ် - Azure Machine Learning workspace သို့ machine learning pipeline job တင်သွင်းပြီး အလုပ်ပြီးဆုံးစောင့်ဆိုင်းခြင်းဖြစ်ပါသည်။
 
-```python
-    # Submit the pipeline job to the Azure Machine Learning workspace
-    # The pipeline to be run is specified by pipeline_object
-    # The experiment under which the job is run is specified by experiment_name
+    ```python
+    # Azure Machine Learning စက်ပစ္စည်းသင်ယူ workspace သို့ pipeline အလုပ်အကိုင်တင်ပို့ပါ
+    # အသုံးပြုမည့် pipeline ကို pipeline_object ဖြင့် သတ်မှတ်ထားသည်
+    # အလုပ်အကိုင်ကို လည်ပတ်မည့် experiment ကို experiment_name ဖြင့် သတ်မှတ်ထားသည်
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Wait for the pipeline job to complete
-    # The job to wait for is specified by the name attribute of the pipeline_job object
+    # pipeline အလုပ်အကိုင် ပြီးစီးမှုအတွက် စောင့်ဆိုင်းပါ
+    # စောင့်ဆိုင်းရန်အလုပ်အကိုင်မှာ pipeline_job အရာဝတ္တု၏ name attribute ဖြင့် သတ်မှတ်ထားသည်
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## ၆။ fine tuned model ကို workspace တွင် register လုပ်ခြင်း
+## 6. fine tuned မော်ဒယ်ကို workspace တွင် မှတ်ပုံတင်ခြင်း
 
-fine tuning job ရဲ့ output မှ model ကို register လုပ်မှာဖြစ်ပြီး fine tuned model နဲ့ fine tuning job အကြား lineage ကို ထိန်းသိမ်းပေးပါလိမ့်မယ်။ fine tuning job က foundation model, data နဲ့ training code အကြား lineage ကို ထပ်မံထိန်းသိမ်းပါလိမ့်မယ်။
+fine tuning job ၏ output မှ မော်ဒယ်ကို မှတ်ပုံတင်မည်။ ဒီအတိုင်း fine tuned model နှင့် fine tuning job ကြားတွင် lineage ထိန်းသိမ်းနိုင်မည်။ fine tuning job မှ foundation model, data နှင့် training code ဆီသို့ lineage အလှည့်တွဲ လိုက်ပါသွားမည်။
 
-### ML Model ကို Register လုပ်ခြင်း
+### ML Model မှတ်ပုံတင်ခြင်း
 
-1. ဒီ Python script က Azure Machine Learning pipeline မှာ training လုပ်ပြီးတဲ့ machine learning model ကို register လုပ်နေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က Azure Machine Learning pipeline ထဲမှာ သင်ကြားပြီးသား machine learning မော်ဒယ် တစ်ခုကို မှတ်ပုံတင်နေသည်။ လုပ်ဆောင်ချက်များ -
 
-    - Azure AI ML SDK မှ လိုအပ်တဲ့ module များကို import လုပ်ထားပါတယ်။
+    - Azure AI ML SDK မှ လိုအပ်သော modules ကို import ပြုလုပ်သည်။
 
-    - pipeline job မှ trained_model output ရှိမရှိ workspace_ml_client ရဲ့ jobs object မှ get method ကို ခေါ်ယူကာ outputs attribute ကို access လုပ်ပြီး စစ်ဆေးပါတယ်။
+    - pipeline job မှ trained_model output ရှိမရှိ workspace_ml_client ရှိ jobs object ၏ get method ဖြင့် စစ်ဆေးပြီး outputs attribute ထဲမှ ရယူသည်။
 
-    - pipeline job နဲ့ output အမည် ("trained_model") ကို အသုံးပြုပြီး trained model ရဲ့ path ကို ဖန်တီးထားပါတယ်။
+    - pipeline job ၏ name နှင့် output အမည် ("trained_model") ကို အသုံးပြု၍ မော်ဒယ်လမ်းကြောင်း တည်ဆောက်သည်။
 
-    - fine-tuned model အမည်ကို မူလ model အမည်နဲ့ "-ultrachat-200k" ကို ပေါင်းပြီး slash များကို hyphen ဖြင့် အစားထိုးထားပါတယ်။
+    - original model name တွင် "-"ultrachat-200k" ကို ဆက်ထပ်ပြီး slash များကို hyphen ဖြင့် အစားထိုးပြီး fine tuned model အမည်သတ်မှတ်သည်။
 
-    - Model object တစ်ခု ဖန်တီးကာ model path, model အမျိုးအစား (MLflow model), model အမည်နဲ့ version, model ဖော်ပြချက် စသည့် parameter များကို သတ်မှတ်ထားပါတယ်။
+    - Model object တစ်ခု ဖန်တီး၍ မော်ဒယ်လမ်းကြောင်း၊ type (MLflow model), မော်ဒယ်အမည်၊ ဗားရှင်းနှင့် ဖော်ပြချက် စသည်ဖြင့် အချက်အလက်များ ပြင်ဆင်၍ မှတ်ပုံတင်ရန် ပြင်ဆင်သည်။
 
-    - workspace_ml_client ရဲ့ models object မှ create_or_update method ကို ခေါ်ယူကာ Model object ဖြင့် model ကို register လုပ်ပါတယ်။
+    - workspace_ml_client ၏ models object ၏ create_or_update method ကို ခေါ်ပြီး Model object ဖြင့် မှတ်ပုံတင်သည်။
 
-    - register လုပ်ပြီးတဲ့ model ကို print ထုတ်ပြထားပါတယ်။
+    - မှတ်ပုံတင်ပြီးသော မော်ဒယ်ကို print ထုတ်သည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က Azure Machine Learning pipeline မှာ training လုပ်ပြီးတဲ့ machine learning model ကို register လုပ်နေပါတယ်။
-
-```python
-    # Import necessary modules from the Azure AI ML SDK
+1. အကျဉ်းချုပ် - Azure Machine Learning pipeline မှ သင်ကြားပြီး မော်ဒယ်ကို မှတ်ပုံတင်ခြင်းဖြစ်သည်။
+    
+    ```python
+    # Azure AI ML SDK မှ လိုအပ်သော module များကို သွင်းခြင်း
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Check if the `trained_model` output is available from the pipeline job
+    # `trained_model` output သည် pipeline job မှ ရနိုင်ကြောင်း စစ်ဆေးခြင်း
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Construct a path to the trained model by formatting a string with the name of the pipeline job and the name of the output ("trained_model")
+    # pipeline job နာမည်နှင့် output ("trained_model") နာမည်အား ဖြည့်စွက်၍ သင်ကြားပြီးသော model အတွက် လမ်းကြောင်း တည်ဆောက်ခြင်း
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Define a name for the fine-tuned model by appending "-ultrachat-200k" to the original model name and replacing any slashes with hyphens
+    # မူလ model နာမည်၏ slug များအား hyphen ဖြင့် အစားထိုးပြီး "-ultrachat-200k" ကို ထပ်ဖြည့်၍ fine-tuned model အတွက် နာမည် သတ်မှတ်ခြင်း
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Prepare to register the model by creating a Model object with various parameters
-    # These include the path to the model, the type of the model (MLflow model), the name and version of the model, and a description of the model
+    # Model object တစ်ခုကို အမျိုးမျိုးသော ပARAMETERS များဖြင့် ဖန်တီး၍ model ကို မှတ်ပုံတင်ရန် ပြင်ဆင်ခြင်း
+    # ဤ parameters များတွင် model ၏ လမ်းကြောင်း၊ model အမျိုးအစား (MLflow model), model နာမည် နှင့် ဗားရှင်း၊ model ရဲ့ ဖော်ပြချက် ပါဝင်သည်
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Use timestamp as version to avoid version conflict
+        version=timestamp,  # ဗားရှင်း မတူညီမှု မဖြစ်ဖို့အတွက် timestamp ကို ဗားရှင်းအဖြစ် အသုံးပြုခြင်း
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Register the model by calling the create_or_update method of the models object in the workspace_ml_client with the Model object as the argument
+    # workspace_ml_client ရဲ့ models object မှ create_or_update method ကို Model object ကိုအ_arguments အဖြစ် ပေးပို့၍ model ကို မှတ်ပုံတင်ခြင်း
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
     
-    # Print the registered model
+    # မှတ်ပုံတင်ပြီးသော model ကို ပရင့်ထုတ်ပြခြင်း
     print("registered model: \n", registered_model)
     ```
 
-## ၇။ fine tuned model ကို online endpoint သို့ deploy လုပ်ခြင်း
+## 7. fine tuned မော်ဒယ်ကို online endpoint သို့ တင်သွင်းခြင်း
 
-Online endpoints တွေက model ကို အသုံးပြုဖို့ လိုအပ်တဲ့ application တွေနဲ့ ပေါင်းစည်းနိုင်တဲ့ တည်တံ့သော REST API ကို ပေးစွမ်းပါတယ်။
+Online endpoint များက ခိုင်မာပြီး တည်တံ့သော REST API ဖြစ်သဖြင့် မော်ဒယ် အသုံးပြု လုပ်ဆောင်မှုများနှင့် ပေါင်းစည်းဖောင့် အဆင်ပြေစေသည်။
 
 ### Endpoint ကို စီမံခန့်ခွဲခြင်း
 
-1. ဒီ Python script က Azure Machine Learning မှာ registered model အတွက် managed online endpoint တစ်ခု ဖန်တီးနေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က Azure Machine Learning မှာ registered model အတွက် managed online endpoint တစ်ခု ဖန်တီးနေသည်။ လုပ်ဆောင်ချက်များ -
 
-    - Azure AI ML SDK မှ လိုအပ်တဲ့ module များကို import လုပ်ထားပါတယ်။
+    - Azure AI ML SDK မှလိုအပ်သော modules ကို import ပြုလုပ်သည်။
 
-    - online endpoint အတွက် unique အမည်တစ်ခုကို "ultrachat-completion-" string နဲ့ timestamp ကို ပေါင်းပြီး သတ်မှတ်ထားပါတယ်။
+    - online endpoint အမည်ကို "ultrachat-completion-" string အောက်တွင် timestamp ထပ်ဆောင်းပြီး သီးခြားစနစ်ဖြင့် သတ်မှတ်သည်။
 
-    - ManagedOnlineEndpoint object တစ်ခု ဖန်တီးကာ endpoint အမည်၊ ဖော်ပြချက်နဲ့ authentication mode ("key") စသည့် parameter များကို သတ်မှတ်ထားပါတယ်။
+    - ManagedOnlineEndpoint object တစ်ခု ဖန်တီး၍ endpoint အမည်၊ ဖော်ပြချက်နှင့် authentication mode ("key") ပါသော parameter များ ဖြည့်စွက်ပြီး online endpoint ဖန်တီးရန် ပြင်ဆင်သည်။
 
-    - workspace_ml_client ရဲ့ begin_create_or_update method ကို ခေါ်ယူကာ ManagedOnlineEndpoint object ဖြင့် online endpoint ကို ဖန်တီးပြီး wait method ကို ခေါ်ယူကာ ဖန်တီးမှု ပြီးဆုံးရန် စောင့်ဆိုင်းပါတယ်။
+    - workspace_ml_client ၏ begin_create_or_update method ကို အသုံးပြု၍ managed online endpoint ဖန်တီးပြီး wait method ဖြင့် ဖန်တီးခြင်း ပြီးဆုံးရန် စောင့်ဆိုင်းသည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က Azure Machine Learning မှာ registered model အတွက် managed online endpoint တစ်ခု ဖန်တီးနေပါတယ်။
+1. အကျဉ်းချုပ် - Azure Machine Learning မှာ registered model အတွက် managed online endpoint ဖန်တီးမှုဖြစ်သည်။
 
-```python
-    # Import necessary modules from the Azure AI ML SDK
+    ```python
+    # Azure AI ML SDK မှ လိုအပ်သော module များကို import လုပ်ပါ
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
         ManagedOnlineDeployment,
@@ -643,11 +735,11 @@ Online endpoints တွေက model ကို အသုံးပြုဖို�
         OnlineRequestSettings,
     )
     
-    # Define a unique name for the online endpoint by appending a timestamp to the string "ultrachat-completion-"
+    # "ultrachat-completion-" string အပြီးတွင် timestamp ကပ်၍ online endpoint အတွက် အထူးတစ်ခုသော အမည်ကို သတ်မှတ်ပါ
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Prepare to create the online endpoint by creating a ManagedOnlineEndpoint object with various parameters
-    # These include the name of the endpoint, a description of the endpoint, and the authentication mode ("key")
+    # နောက်တစ်ဆင့် ManagedOnlineEndpoint object ကို parameter မျိုးစုံနှင့်တကွ ဖန်တီး၍ online endpoint ဖန်တီးရန် ပြင်ဆင်ပါ
+    # ၎င်းတွင် endpoint အမည်၊ endpoint ဖော်ပြချက် နှင့် authentication mode ("key") ပါဝင်သည်
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -656,56 +748,56 @@ Online endpoints တွေက model ကို အသုံးပြုဖို�
         auth_mode="key",
     )
     
-    # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
-    # Then wait for the creation operation to complete by calling the wait method
+    # ManagedOnlineEndpoint object ကို argument အဖြစ် သုံးပြီး workspace_ml_client ၏ begin_create_or_update method ကို ခေါ်သုံးကာ online endpoint ကို ဖန်တီးပါ
+    # ထို့နောက် creation လုပ်ငန်းကို ပြီးမြောက်ရန် wait method ကို ခေါ်ပြီး စောင့်ပါ
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> deployment အတွက် support လုပ်တဲ့ SKU များစာရင်းကို ဒီနေရာမှာ ရှာဖွေနိုင်ပါတယ် - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Deploy လုပ်ရာတွင် ပံ့ပိုးပေးသည့် SKU များစာရင်းကို ဒီနေရာတွင်တွေ့နိုင်ပါသည် - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### ML Model ကို Deploy လုပ်ခြင်း
+### ML Model ကို တင်သွင်းခြင်း
 
-1. ဒီ Python script က registered machine learning model ကို Azure Machine Learning မှ managed online endpoint သို့ deploy လုပ်နေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က Azure Machine Learning မှာ registered မော်ဒယ်ကို managed online endpoint သို့ deploy လုပ်နေသည်။ လုပ်ဆောင်ချက်များ -
 
-    - Python abstract syntax grammar tree များကို process လုပ်ဖို့ ast module ကို import လုပ်ထားပါတယ်။
+    - Python abstract syntax grammar tree များ ကို ခွဲထုတ်ရန်အတွက် ast module ကို import ပြုလုပ်သည်။
 
-    - deployment အတွက် instance type ကို "Standard_NC6s_v3" အဖြစ် သတ်မှတ်ထားပါတယ်။
+    - deployment အတွက် instance type ကို "Standard_NC6s_v3" ဟု သတ်မှတ်ထားသည်။
 
-    - foundation model မှ inference_compute_allow_list tag ရှိမရှိ စစ်ဆေးပြီး ရှိရင် string မှ Python list သို့ ပြောင်းပြီး inference_computes_allow_list ကို သတ်မှတ်ထားပါတယ်။ မရှိရင် None သတ်မှတ်ထားပါတယ်။
+    - foundation model တွင် inference_compute_allow_list tag ရှိမရှိ စစ်ဆေးပြီး ရှိပါက string မှ Python list အဖြစ် ပြောင်းပြီး inference_computes_allow_list သို့ သတ်မှတ်သည်။ မရှိပါက None ထားသည်။
 
-    - သတ်မှတ်ထားတဲ့ instance type က allow list ထဲမှာ ရှိမရှိ စစ်ဆေးပြီး မရှိရင် allow list ထဲက instance type တစ်ခုကို ရွေးချယ်ဖို့ အသုံးပြုသူကို ပြောကြားပါတယ်။
+    - သတ်မှတ်ထားသော instance type သည် allow list ထဲ မပါပါက အသုံးပြုသူအား allow list ထဲမှ instance type တစ်ခုရွေးရန် ဆက်သွယ်စာ ထုတ်ပြသည်။
 
-    - ManagedOnlineDeployment object တစ်ခု ဖန်တီးကာ deployment အမည်၊ endpoint အမည်၊ model ID, instance type နဲ့ count, liveness probe settings နဲ့ request settings စသည့် parameter များကို သတ်မှတ်ထားပါတယ်။
+    - ManagedOnlineDeployment object တစ်ခု ဖန်တီး၍ deployment နာမည်၊ endpoint နာမည်၊ model ID၊ instance type/အရေအတွက်၊ liveness probe နှင့် request settings ထည့်သွင်း ပြင်ဆင်သည်။
 
-    - workspace_ml_client ရဲ့ begin_create_or_update method ကို ခေါ်ယူကာ ManagedOnlineDeployment object ဖြင့် deployment ကို ဖန်တီးပြီး wait method ကို ခေါ်ယူကာ ဖန်တီးမှု ပြီးဆုံးရန် စောင့်ဆိုင်းပါတယ်။
+    - begin_create_or_update method ဖြင့် deployment တည်ဆောက်ပြီး wait method ဖြင့် ဖန်တီးမှု ပြီးဆုံးရန် စောင့်ဆိုင်းသည်။
 
-    - endpoint traffic ကို "demo" deployment သို့ ၁၀၀% လမ်းကြောင်း သတ်မှတ်ထားပါတယ်။
+    - endpoint traffic ကို "demo" deployment သို့ ၁၀၀% တိုက်ရိုက် ဆင်းရဲချသည်။
 
-    - workspace_ml_client ရဲ့ begin_create_or_update method ကို ခေါ်ယူကာ endpoint ကို update လုပ်ပြီး result method ကို ခေါ်ယူကာ update ပြီးဆုံးရန် စောင့်ဆိုင်းပါတယ်။
+    - workspace_ml_client begin_create_or_update method ဖြင့် endpoint update ပြုလုပ်ပြီး result method ဖြင့် အတည်ပြုသည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က registered machine learning model ကို Azure Machine Learning မှ managed online endpoint သို့ deploy လုပ်နေပါတယ်။
+1. အကျဉ်းချုပ် - registered model ကို managed online endpoint သို့ deploy လုပ်ခြင်းဖြစ်သည်။
 
-```python
-    # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
+    ```python
+    # Python အဆောက်အအုံသက်ဆိုင်ရာ သဒ္ဒါသိပ္ပံဥပဒေသစ်သည် ရှေ့ပြေးနည်းစနစ်အတန်းအစားကို ဆန့်ကျင်သစ်ဖွဲ့စည်းထားသော သစ်တောများကို လုပ်ဆောင်ရန် အတတ်ပညာပေးသော ast မော်ဂျူးကို တင်သွင်းသည်
     import ast
     
-    # Set the instance type for the deployment
+    # ဖြန့်ချိမှုအတွက် အရေးအသား ပုံစံကို သတ်မှတ်ပါ
     instance_type = "Standard_NC6s_v3"
     
-    # Check if the `inference_compute_allow_list` tag is present in the foundation model
+    # အခြေခံမော်ဒယ်တွင် `inference_compute_allow_list` တံဆိပ်ထားရှိမရှိ စစ်ဆေးပါ
     if "inference_compute_allow_list" in foundation_model.tags:
-        # If it is, convert the tag value from a string to a Python list and assign it to `inference_computes_allow_list`
+        # ရှိပါက တံဆိပ်တန်ဖိုးကို string မှ Python list သို့ပြောင်းပြီး `inference_computes_allow_list` သို့ သတ်မှတ်ပါ
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # If it's not, set `inference_computes_allow_list` to `None`
+        # မရှိပါက `inference_computes_allow_list` ကို `None` သတ်မှတ်ပါ
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Check if the specified instance type is in the allow list
+    # ဖော်ပြထားသော အရေးအသားပုံစံသည် ခွင့်ပြုစာရင်းတွင် ပါဝင်နေသည်ကို စစ်ဆေးပါ
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -714,7 +806,7 @@ Online endpoints တွေက model ကို အသုံးပြုဖို�
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # Prepare to create the deployment by creating a `ManagedOnlineDeployment` object with various parameters
+    # အမျိုးမျိုးသော ပါရာမီတာများဖြင့် `ManagedOnlineDeployment` အရာဝတ္ထု တည်ဆောက်ပြီး ဖြန့်ချိမှု ပြုလုပ်ရန် ပြင်ဆင်ပါ
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -725,96 +817,156 @@ Online endpoints တွေက model ကို အသုံးပြုဖို�
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Create the deployment by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `ManagedOnlineDeployment` object as the argument
-    # Then wait for the creation operation to complete by calling the `wait` method
+    # `ManagedOnlineDeployment` အရာဝတ္ထုကို အချက်အလက်အဖြစ် အသုံးပြုကာ `workspace_ml_client` ၏ `begin_create_or_update` နည်းလမ်းနှင့် ဖြန့်ချိမှုကို ဖန်တီးပါ
+    # ထို့နောက် ဖန်တီးရေး လုပ်ငန်းစဉ်ပြီးဆုံး হওန် အခန်းနှင့် `wait` နည်းလမ်းကို ခေါ်ယူ၍ စောင့်ဆိုင်းပါ
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Set the traffic of the endpoint to direct 100% of the traffic to the "demo" deployment
+    # endpoint ၏ traffic ကို "demo" ဖြန့်ချိမှုသို့ ၁၀၀% တည်မြဲစွာ လမ်းညွှန်ထားပါ
     endpoint.traffic = {"demo": 100}
     
-    # Update the endpoint by calling the `begin_create_or_update` method of the `workspace_ml_client` with the `endpoint` object as the argument
-    # Then wait for the update operation to complete by calling the `result` method
+    # `endpoint` အရာဝတ္ထုပေါ်တွင် `workspace_ml_client` ၏ `begin_create_or_update` နည်းလမ်းကို ခေါ်ယူကာ endpoint ကို ပြန်လည်အပ်ဒိတ်လုပ်ပါ
+    # ထို့နောက် အပ်ဒိတ်လုပ်ငန်းစဉ်ပြီးဆုံးမှုအထိ `result` နည်းလမ်းအား ခေါ်ယူ၍ စောင့်ဆိုင်းပါ
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## ၈။ sample data နဲ့ endpoint ကို စမ်းသပ်ခြင်း
+## 8. sample data ဖြင့် endpoint စမ်းသပ်ခြင်း
 
-test dataset မှ sample data အနည်းငယ် ရယူပြီး online endpoint သို့ inference အတွက် submit လုပ်ပါမယ်။ ပြီးနောက် scored labels တွေကို ground truth labels တွေနဲ့အတူ ပြသပါမယ်။
+test dataset မှ စမ်းသပ်မှု data ကို ရယူ၍ online endpoint တွင် inference အတွက် တင်သွင်းမည်။ ဆုချရန် label နှင့် ground truth label များကို ပြသပေးမည်။
 
-### ရလဒ်များကို ဖတ်ရှုခြင်း
+### ရလဒ်များ ဖတ်ရှုခြင်း
 
-1. ဒီ Python script က JSON Lines ဖိုင်ကို pandas DataFrame ထဲသို့ ဖတ်ယူပြီး random sample တစ်ခုယူကာ index ကို reset လုပ်နေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က JSON Lines ဖိုင်ကို pandas DataFrame အဖြစ် ဖတ်ပြီး မျွှင့်တော် random sample စုဆောင်းပြီး index ပြန်စတင်ထားသည်။ လုပ်ဆောင်ချက်များ -
 
-    - ./ultrachat_200k_dataset/test_gen.jsonl ဖိုင်ကို pandas DataFrame ထဲသို့ ဖတ်ယူထားပါတယ်။ read_json function ကို lines=True argument နဲ့ အသုံးပြုထားတာက ဖိုင်ဟာ JSON Lines format ဖြစ်ပြီး တစ်လိုင်းစီမှာ JSON object တစ်ခုစီ ပါဝင်တာကြောင့်ပါ။
+    - ./ultrachat_200k_dataset/test_gen.jsonl ဖိုင်ကို pandas DataFrame အဖြစ် ဖတ်သည်။ JSON Lines format အနေဖြင့် lines=True argument ကို အသုံးပြုသည်။
 
-    - DataFrame မှ random sample ၁ လိုင်းကို sample function နဲ့ n=1 argument ဖြင့် ရွေးယူထားပါတယ်။
+    - DataFrame မှ random sample ၁ ကြောင်း ရယူသည်။ sample function တွင် n=1 ကို အသုံးပြုသည်။
 
-    - DataFrame ရဲ့ index ကို reset_index function နဲ့ drop=True argument ဖြင့် reset လုပ်ထားပြီး မူလ index ကို ဖယ်ရှားထားပါတယ်။
+    - DataFrame index ကို reset လုပ်စဉ် drop=True ဖြင့် မူလ index ကို ဖယ်ရှားပြီး default integer index ပြန်သတ်မှတ်သည်။
 
-    - DataFrame ရဲ့ ပထမ ၂ လိုင်းကို head function နဲ့ ပြသထားပါတယ်။ သို့သော် sample လုပ်ပြီးနောက် DataFrame မှာ လိုင်းတစ်လိုင်းသာရှိတာကြောင့် တစ်လိုင်းပဲ ပြသပါလိမ့်မယ်။
+    - head function ၂ ကြောင်း တွင် ဒေတာပြသရာတွင် sample ရပြီး လက်ရှိ DataFrame တွင် ၁ ကြောင်းသာ ပါသောကြောင့် တစ်ကြောင်းသာ ပြသည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က JSON Lines ဖိုင်ကို pandas DataFrame ထဲသို့ ဖတ်ယူပြီး random sample ၁ လိုင်းယူကာ index ကို reset လုပ်ပြီး ပထမ လိုင်းကို ပြသနေပါတယ်။
-
-```python
-    # Import pandas library
+1. အကျဉ်းချုပ် - JSON Lines ဖိုင်ကို pandas DataFrame အဖြစ် ဖတ်၍ random sample ၁ ကြောင်း ရယူပြီး index ပြန်စတင် ထားကာ ပထမကြောင်းကို ပြသခြင်း ဖြစ်သည်။
+    
+    ```python
+    # pandas စာကြည့်တိုက်ကို တင်သွင်းပါ
     import pandas as pd
     
-    # Read the JSON Lines file './ultrachat_200k_dataset/test_gen.jsonl' into a pandas DataFrame
-    # The 'lines=True' argument indicates that the file is in JSON Lines format, where each line is a separate JSON object
+    # './ultrachat_200k_dataset/test_gen.jsonl' JSON Lines ဖိုင်ကို pandas DataFrame အဖြစ် ဖတ်ပါ
+    # 'lines=True' ဆိုသည်မှာ ဖိုင်မှာ JSON Lines အမျိုးအစားဖြစ်ပြီး၊ တစ်ကြောင်းစီတိုင်းက JSON အရာဝတ္ထုတစ်ခုဖြစ်ကြောင်းကို မှတ်သားပါ
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Take a random sample of 1 row from the DataFrame
-    # The 'n=1' argument specifies the number of random rows to select
+    # DataFrame မှ စိတ်တိုင်းကျ ၁ စာကြောင်း ရွေးပါ
+    # 'n=1' ဆိုသည်မှာ ရွေးချယ်မည့် စိတ်တိုင်းကျ စာကြောင်း အရေအတွက်ကို ဖေါ်ပြသည်
     test_df = test_df.sample(n=1)
     
-    # Reset the index of the DataFrame
-    # The 'drop=True' argument indicates that the original index should be dropped and replaced with a new index of default integer values
-    # The 'inplace=True' argument indicates that the DataFrame should be modified in place (without creating a new object)
+    # DataFrame ၏ အညွှန်းတန်းကို ပြန်ဆက်တင်ပါ
+    # 'drop=True' ဆိုသည်မှာ မူလ အညွှန်းတန်းကို ဖယ်ရှားပြီး ပုံမှန် အနည်းငယ် စာရင်းအလိုက် နံပါတ်အသစ်ဖြင့် အစားထိုးမှာ ဖြစ်သည်
+    # 'inplace=True' ဆိုသည်မှာ DataFrame ကို နေရာတွင် တည်းဖြတ်မည်ဖြစ်ပြီး (အရာအသစ် ဖန်တီးခြင်းမရှိ) စနစ်ဖြစ်သည်
     test_df.reset_index(drop=True, inplace=True)
     
-    # Display the first 2 rows of the DataFrame
-    # However, since the DataFrame only contains one row after the sampling, this will only display that one row
+    # DataFrame ၏ ပထမ ၂ စာကြောင်းကို ပြသပါ
+    # သို့သော် စိတ်တိုင်းကျ ရွေးချယ်ခြင်းနောက် DataFrame မှာ စာကြောင်း ၁ စာသာ ပါသောကြောင့် တစ်ဆယ်တည်းကိုသာ ပြသမည် ဖြစ်သည်
     test_df.head(2)
     ```
 
 ### JSON Object ဖန်တီးခြင်း
 
-1. ဒီ Python script က specific parameter တွေနဲ့ JSON object တစ်ခု ဖန်တီးပြီး ဖိုင်ထဲသို့ သိမ်းဆည်းနေပါတယ်။ အောက်မှာ အကြောင်းအရာကို ဖော်ပြထားပါတယ်-
+1. ဒီ Python script က အထူးသတ်မှတ်ချက်များဖြင့် JSON object တစ်ခု ဖန်တီးပြီး ဖိုင်ထဲသို့ သိမ်းဆည်းနေသည်။ လုပ်ဆောင်ချက်များ -
 
-    - JSON data တွေနဲ့ လုပ်ဆောင်ဖို့ json module ကို import လုပ်ထားပါတယ်။
+    - JSON data ကို နှောင့်နှေးပြုလုပ်နိုင်သော ပံ့ပိုးမှုများ ပေးသည့် json module ကို import ပြုလုပ်သည်။
+- ၎င်းသည် machine learning မော်ဒယ်အတွက် parameters ကို ကိုယ်စားပြုသော key များနှင့် value များပါသော dictionary parameters ကိုဖန်တီးသည်။ key များမှာ "temperature", "top_p", "do_sample", နှင့် "max_new_tokens" ဖြစ်ပြီး အဲ့ဒီတို့နှင့် ကိုက်ညီသည့် value များမှာ 0.6, 0.9, True, နှင့် 200 ဖြစ်သည်။
 
-    - machine learning model အတွက် parameter တွေကို ကိုယ်စားပြုတဲ့ dictionary parameters ကို ဖန်တီးထားပြီး key တွေမှာ "temperature", "top_p", "do_sample", "max_new_tokens" ပါဝင်ပြီး တန်ဖိုးတွေက 0.6, 0.9, True, 200 ဖြစ်ပါတယ်။
+- ၎င်းသည် input_data နှင့် params ဆိုသော key နှစ်ခုပါသော test_json ဆိုသော အခြား dictionary ကိုဖန်တီးသည်။ "input_data" ၏ value သည် "input_string" နှင့် "parameters" ဆိုသော key များပါသော dictionary တစ်ခုဖြစ်သည်။ "input_string" ၏ value သည် test_df DataFrame ထဲမှ ပထမဆုံးသော စာတမ်းကို ပါဝင်သည့် list တစ်ခုဖြစ်သည်။ "parameters" ၏ value သည် အထက်ဖန်တီးခဲ့သော parameters dictionary ဖြစ်သည်။ "params" ၏ value သည် ဖွင့်လို့မရသော dictionary ဖြစ်သည်။
 
-    - test_json ဆိုတဲ့ dictionary တစ်ခု ဖန်တီးထားပြီး "input_data" နဲ့ "params" ဆိုတဲ့ key ၂ ခု ပါဝင်ပါတယ်။ "input_data" ရဲ့ တန်ဖိုးက input_string နဲ့ parameters ပါဝင်တဲ့ dictionary တစ်ခုဖြစ်ပြီး input_string က test_df DataFrame မှ ပထမဆုံး message ကို list အဖြစ် ထည့်ထားပါတယ်။ parameters ကတော့ အထက်ဖော်ပြထားတဲ့ parameters dictionary ဖြစ်ပါတယ်။ "params" ရဲ့ တန်ဖိုးကတော့ အလွတ် dictionary ဖြစ်ပါတယ်။
-- sample_score.json ဆိုတဲ့ဖိုင်ကိုဖွင့်တယ်
+- sample_score.json အမည်ရှိ ဖိုင်ကိုဖွင့်သည်။
 
-### Endpoint ကိုခေါ်ယူခြင်း
+    ```python
+    # JSON ဒေတာနှင့် အလုပ်လုပ်ရန် ကူညီသော function များကို ပေးသော json module ကို မိတ်ဆက်ပါ
+    import json
+    
+    # machine learning မော်ဒယ်အတွက် ပါရာမီတာများကို ကိုယ်စားပြုသော key များနှင့် value များပါသော dictionary `parameters` ကို ဖန်တီးပါ
+    # key များမှာ "temperature", "top_p", "do_sample", နှင့် "max_new_tokens" ဖြစ်ပြီး၊ ၎င်းတို့၏ သက်ဆိုင်ရာ value များမှာ 0.6, 0.9, True, နှင့် 200 ဖြစ်သည်
+    parameters = {
+        "temperature": 0.6,
+        "top_p": 0.9,
+        "do_sample": True,
+        "max_new_tokens": 200,
+    }
+    
+    # key နှစ်ခု "input_data" နှင့် "params" ပါသော dictionary တစ်ခု `test_json` ကို ဖန်တီးပါ
+    # "input_data" ၏ value သည် "input_string" နှင့် "parameters" ဆိုသော key များပါရှိသည့် dictionary တစ်ခု ဖြစ်သည်
+    # "input_string" ၏ value သည် `test_df` DataFrame မှ ပထမဆုံး message ကို ပါသည့် list တစ်ခု ဖြစ်သည်
+    # "parameters" ၏ value သည် ယခင်ဖန်တီးခဲ့သော `parameters` dictionary ဖြစ်သည်
+    # "params" ၏ value သည် အာဏာရွှေ့ထားသော dictionary အသစ်ဖြစ်သည်
+    test_json = {
+        "input_data": {
+            "input_string": [test_df["messages"][0]],
+            "parameters": parameters,
+        },
+        "params": {},
+    }
+    
+    # `./ultrachat_200k_dataset` ဖိုလ်ဒါအတွင်းရှိ `sample_score.json` ဖိုင်ကိုရေးရန် mode ဖြင့် ဖွင့်ပါ
+    with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
+        # `json.dump` function ကို အသုံးပြု၍ `test_json` dictionary ကို JSON ပုံစံဖြင့် ဖိုင်ထဲသို့ ရေးပါ
+        json.dump(test_json, f)
+    ```
 
-1. ဒီ Python script က Azure Machine Learning မှာရှိတဲ့ online endpoint ကိုခေါ်ယူပြီး JSON ဖိုင်ကို စစ်ဆေး scoring လုပ်တာဖြစ်ပါတယ်။ အလုပ်လုပ်ပုံကို အောက်ပါအတိုင်းရှင်းပြပါမယ်-
+### Endpoint ကို ခေါ်ယူခြင်း
 
-    - workspace_ml_client object ရဲ့ online_endpoints property ထဲက invoke method ကိုခေါ်သုံးပါတယ်။ ဒီ method က online endpoint ကို request ပို့ပြီး response ရယူဖို့အသုံးပြုပါတယ်။
+1. ဒီ Python script မှာ Azure Machine Learning မှာရှိတဲ့ online endpoint တစ်ခုကို JSON ဖိုင်ကို score တင်ရန် ခေါ်ယူနေသည်။ ၎င်း၏ လုပ်ဆောင်ချက်ကို အောက်ပါအတိုင်း ခွဲခြမ်းတင်ပြပါသည်။
 
-    - endpoint နဲ့ deployment အမည်တွေကို endpoint_name နဲ့ deployment_name arguments တွေနဲ့ သတ်မှတ်ပေးပါတယ်။ ဒီနေရာမှာ endpoint အမည်ကို online_endpoint_name variable ထဲမှာသိမ်းထားပြီး deployment အမည်က "demo" ဖြစ်ပါတယ်။
+    - workspace_ml_client object ၏ online_endpoints property ၏ invoke method ကို ခေါ်သုံးသည်။ ဤ method သည် online endpoint ထံမှ ပြန်တောင်းခံချက် တင်ရန်နှင့် ပြန်လာသော response ကိုရယူရန် အသုံးပြုသည်။
 
-    - scoring လုပ်မယ့် JSON ဖိုင်လမ်းကြောင်းကို request_file argument နဲ့ သတ်မှတ်ပေးပါတယ်။ ဒီနေရာမှာ ဖိုင်လမ်းကြောင်းက ./ultrachat_200k_dataset/sample_score.json ဖြစ်ပါတယ်။
+    - endpoint နှင့် deployment အမည်များအား endpoint_name နှင့် deployment_name argument များဖြင့် သတ်မှတ်သည်။ ဤကိစ္စတွင် endpoint အမည်ကို online_endpoint_name variable ထဲသို့သိမ်းဆည်းပြီး deployment အမည်ကို "demo" ဟု သတ်မှတ်ထားသည်။
 
-    - endpoint ကနေရလာတဲ့ response ကို response variable ထဲသိမ်းထားပါတယ်။
+    - request_file argument ဖြင့် score တင်မည့် JSON ဖိုင် လမ်းကြောင်းအား သတ်မှတ်သည်။ ဤကိစ္စတွင် ဖိုင်သည် ./ultrachat_200k_dataset/sample_score.json ဖြစ်သည်။
 
-    - raw response ကို print ထုတ်ပြပါတယ်။
+    - endpoint မှ ပြန်လာသော response ကို response variable ထဲသို့ သိမ်းဆည်းသည်။
 
-1. အကျဉ်းချုပ်အားဖြင့် ဒီ script က Azure Machine Learning မှာရှိတဲ့ online endpoint ကိုခေါ်ယူပြီး JSON ဖိုင်ကို scoring လုပ်ပြီး response ကို print ထုတ်တာဖြစ်ပါတယ်။
+    - raw response ကို ပေါ်ပြ ပုံစံဖြင့် ပုံနှိပ်သည်။
 
-## 9. online endpoint ကို ဖျက်ပစ်ခြင်း
+1. အကျဉ်းချုပ်အားဖြင့် ဒီ script သည် Azure Machine Learning မှ online endpoint ကို ခေါ်ယူ၍ JSON ဖိုင်ကို score တင်ပြီး ပြန်လာသော response ကို ပုံနှိပ်သည်။
 
-1. online endpoint ကို ဖျက်ပစ်ဖို့ မမေ့ပါနဲ့၊ မဟုတ်ရင် endpoint က အသုံးပြုတဲ့ compute အတွက် billing meter က ဆက်လက်လည်ပတ်နေပါလိမ့်မယ်။ ဒီ Python code တစ်ကြောင်းက Azure Machine Learning မှာရှိတဲ့ online endpoint တစ်ခုကို ဖျက်ပစ်တာဖြစ်ပါတယ်။ အလုပ်လုပ်ပုံကို အောက်ပါအတိုင်းရှင်းပြပါမယ်-
+    ```python
+    # Azure Machine Learning တွင် အွန်လိုင်း endpoint ကိုခေါ်ယူ၍ `sample_score.json` ဖိုင်ကို အမှတ်ပေးပါ
+    # `workspace_ml_client` အရာဝတ္တု၏ `online_endpoints` ပိုင်ဆိုင်မှု၏ `invoke` နည်းလမ်းကို အသုံးပြုကာ အွန်လိုင်း endpoint သို့ တောင်းဆိုမှု ပို့၍ တုံ့ပြန်ချက် ရယူသည်
+    # `endpoint_name` အချက်အလက်သည် မြှုပ်နှံ စက်တင်၏ အမည်ကို ဖော်ပြပြီး၊ ၎င်းကို `online_endpoint_name` မတိုင်မီကွဲထဲတွင် သိမ်းဆည်းထားသည်
+    # `deployment_name` အချက်အလက်သည် မြှုပ်နှံမှု၏ အမည်ကို ဖော်ပြကာ၊ ၎င်းမှာ "demo" ဖြစ်သည်
+    # `request_file` အချက်အလက်သည် အမှတ်ပေးရန် JSON ဖိုင်၏ လမ်းကြောင်းကို ဖော်ပြပြီး၊ ၎င်းမှာ `./ultrachat_200k_dataset/sample_score.json` ဖြစ်သည်
+    response = workspace_ml_client.online_endpoints.invoke(
+        endpoint_name=online_endpoint_name,
+        deployment_name="demo",
+        request_file="./ultrachat_200k_dataset/sample_score.json",
+    )
+    
+    # Endpoint မှ ရရှိသော မီးမောင်းတိကျသော တုံ့ပြန်ချက်ကို ပုံနှိပ်ပါ
+    print("raw response: \n", response, "\n")
+    ```
 
-    - workspace_ml_client object ရဲ့ online_endpoints property ထဲက begin_delete method ကိုခေါ်သုံးပါတယ်။ ဒီ method က online endpoint ဖျက်ပစ်ခြင်းကို စတင်ဖို့အသုံးပြုပါတယ်။
+## ၉။ online endpoint ကို ဖျက်ပစ်ခြင်း
 
-    - ဖျက်ပစ်မယ့် endpoint အမည်ကို name argument နဲ့ သတ်မှတ်ပေးပါတယ်။ ဒီနေရာမှာ endpoint အမည်ကို online_endpoint_name variable ထဲမှာသိမ်းထားပါတယ်။
+1. online endpoint ကို ဖျက်ပစ်ရန် မမေ့ပါနှင့်၊ မဟုတ်လျှင် endpoint အသုံးပြုသည့် စျေးနှုန်း တိုင်းတာမှု မရှိမဖြစ် ဆက်လက်ပြေးဆဲ ဖြစ်နေပါလိမ့်မည်။ ဒီ Python code တစ်ကြောင်းသည် Azure Machine Learning အတွက် online endpoint တစ်ခုကို ဖျက်ပစ်နေသည်။ ၎င်း၏ လုပ်ဆောင်ချက်ကို အောက်ပါအတိုင်း ခွဲခြမ်းထားပါသည်။
 
-    - ဖျက်ပစ်ခြင်း လုပ်ငန်းစဉ်ပြီးဆုံးရန်အတွက် wait method ကိုခေါ်သုံးပြီး စောင့်ဆိုင်းပါတယ်။ ဒီဟာက blocking operation ဖြစ်ပြီး ဖျက်ပစ်ခြင်းပြီးဆုံးမှ script က ဆက်လက်လုပ်ဆောင်နိုင်ပါမယ်။
+    - workspace_ml_client object ၏ online_endpoints property ၏ begin_delete method ကို ခေါ်သည်။ ဤ method သည် online endpoint ဖျက်ပစ်ခြင်း စတင်ရန် အသုံးပြုသည်။
 
-    - အကျဉ်းချုပ်အားဖြင့် ဒီ code တစ်ကြောင်းက Azure Machine Learning မှာရှိတဲ့ online endpoint ဖျက်ပစ်ခြင်းကို စတင်ပြီး ဖျက်ပစ်ခြင်းပြီးဆုံးရန် စောင့်ဆိုင်းနေပါတယ်။
+    - ဖျက်ပစ်မည့် endpoint အမည်ကို name argument ဖြင့် သတ်မှတ်သည်။ ဤကိစ္စတွင် endpoint အမည်ကို online_endpoint_name variable ထဲသို့ သိမ်းဆည်းထားသည်။
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+    - ဖျက်ပစ်ခြင်း လုပ်ငန်းဆောင်တာ ပြီးဆုံးရန် စောင့်ဆိုင်းရန် wait method ကို ခေါ်သည်။ ၎င်းသည် blocking operation ဖြစ်ပြီး ဖျက်ခြင်း ပြီးဆုံးသည်အထိ script မတိုးမပြေး နေပါ။
+
+    - အကျဉ်းချုပ်အားဖြင့် ဒီ code မှာ Azure Machine Learning မှာရှိတဲ့ online endpoint ဖျက်ပစ်ခြင်း စတင်ပြီး လုပ်ငန်းဆောင်တာ ပြီးဆုံးရန် စောင့်ဆိုင်းနေသည်။
+
+    ```python
+    # Azure Machine Learning တွင် အွန်လိုင်း အဆုံးအပိုင်းကို ဖျက်ပါ
+    # `workspace_ml_client` အရာဝတ္ထု၏ `online_endpoints` ပိုင်ဆိုင်မှု၏ `begin_delete` နည်းလမ်းကို အသုံးပြု၍ အွန်လိုင်း အဆုံးအပိုင်း ဖျက်ခြင်း စတင်သည်
+    # `name` အကြောင်းအရာသည် ဖျက်မည့် အဆုံးအပိုင်း၏ နာမည်ကို ဖော်ပြပြီး၊ ၎င်းသည် `online_endpoint_name` အမျိုးအစားတွင် သိမ်းဆည်းထားသည်
+    # ဖျက်ခြင်း လုပ်ငန်းစဉ်ပြီးဆုံးရန် အတွက် `wait` နည်းလမ်းကို ခေါ်သည်။ ဤသည်မှာ ခြုံငုံတားဆီးသော လုပ်ငန်းစဉ်ဖြစ်ပြီး၊ ဖျက်ခြင်း ပြီးဆုံးသည်အထိ စက္ကူ၏ ဆက်လုပ်ခြင်းကို တားမြစ်မည်ဖြစ်သည်
+    workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
+    ```
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**မှတ်ချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝဘ်ဆိုဒ် [Co-op Translator](https://github.com/Azure/co-op-translator) မှ အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်တော်တို့သည်မှန်ကန်မှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျှောက်ဘာသာပြန်မှုတွင် မှားယွင်းချက်များ သို့မဟုတ် မှန်ကန်မှုမပြည့်သည့် အချက်များပါဝင်နိုင်ကြောင်း သိရှိထားပေးကြပါရန် တိုက်တွန်းပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ ယုံကြည်စွာ ကိုးကားသင့်ပါသည်။ အရေးကြီးသည့် အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များ၏ ဘာသာပြန်ချက်ကို သင့်လျော်ပါသည်။ ဤဘာသာပြန်ချက် အသုံးပြုမှုမှ ဖြစ်ပေါ်နိုင်သည့် နားမလည်မှုများ သို့မဟုတ် မှားယွင်းဖော်ပြချက်များအတွက် ကျွန်တော်တို့ သက်ဆိုင်ချက်မရှိပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
