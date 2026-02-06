@@ -7,7 +7,6 @@
 **Infrastructure** Dis dey include the CPU and FPGA, wey dey important for the fine-tuning process. Make I show you the icons for each of these technologies.
 
 **Tools & Framework** Dis dey include ONNX Runtime and ONNX Runtime. Make I show you the icons for each of these technologies.
-[Insert icons for ONNX Runtime and ONNX Runtime]
 
 The fine-tuning process wey use Microsoft technologies get plenty components and tools. If person understand and use these technologies well, we fit fine-tune our applications better and create betta solutions. 
 
