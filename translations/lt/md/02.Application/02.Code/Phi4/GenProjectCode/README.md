@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-09-12T14:26:10+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "lt"
-}
--->
 ## **Naudojant Phi-4-mini-mm kodui generuoti**
 
 Phi-4-mini tęsia stiprias kodavimo galimybes, būdingas Phi šeimai. Galite naudoti Prompt, kad užduotumėte klausimus, susijusius su kodavimu. Žinoma, pridėjus stipresnį loginį mąstymą, jis turi dar geresnes kodavimo galimybes, pavyzdžiui, generuoti projektus pagal reikalavimus. Pavyzdžiui, generuoti projektus pagal reikalavimus, tokius kaip:

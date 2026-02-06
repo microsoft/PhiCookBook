@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:54:52+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "pa"
-}
--->
 ### ਉਦਾਹਰਨ ਸਥਿਤੀ
 
 ਕਲਪਨਾ ਕਰੋ ਕਿ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਚਿੱਤਰ (`demo.png`) ਹੈ ਅਤੇ ਤੁਸੀਂ ਐਸਾ Python ਕੋਡ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ ਜੋ ਇਸ ਚਿੱਤਰ ਨੂੰ ਪ੍ਰੋਸੈਸ ਕਰਕੇ ਇਸ ਦੀ ਇੱਕ ਨਵੀਂ ਵਰਜਨ (`phi-3-vision.jpg`) ਸੇਵ ਕਰੇ। 

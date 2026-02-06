@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-12-21T22:37:46+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "pcm"
-}
--->
 # **Make we introduce Promptflow**
 
  [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) na visual workflow automation tool wey dey allow people build automated workflows by using pre-built templates and custom connectors. E design make developers and business analysts fit quickly build automated processes for work dem like data management, collaboration, and process optimization. With Prompt Flow, people fit quickly connect different services, applications, and systems, and automate complex business processes.

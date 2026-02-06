@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-09-12T14:32:02+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "lt"
-}
--->
 # **Gairės OnnxRuntime GenAI Windows GPU**
 
 Šios gairės pateikia žingsnius, kaip nustatyti ir naudoti ONNX Runtime (ORT) su GPU Windows aplinkoje. Jos skirtos padėti jums pasinaudoti GPU pagreičiu, siekiant pagerinti modelių našumą ir efektyvumą.

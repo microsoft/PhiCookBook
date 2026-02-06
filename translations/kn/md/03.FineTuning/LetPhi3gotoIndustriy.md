@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-12-21T17:27:03+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "kn"
-}
--->
 # **Phi-3 ಅನ್ನು ਉਦಯಮ ತಜ್ಞನಾಗಿಸೋಣ**
 
 Phi-3 ಮಾದರಿಯನ್ನು ಉದ್ಯಮಕ್ಕೆ ಅನ್ವಯಿಸಲು, ನಿಮ್ಮಿಗೆ ಉದ್ಯಮ ವ್ಯವಹಾರ ಡೇಟಾವನ್ನು Phi-3 ಮಾದರಿಯಲ್ಲಿ ಸೇರಿಸಬೇಕಾಗುತ್ತದೆ. ನಮಗೆ ಎರಡು ವಿಭಿನ್ನ ಆಯ್ಕೆಗಳು ಇವೆ, ಮೊದಲನೆಯದು RAG (Retrieval Augmented Generation) ಮತ್ತು ಎರಡನೆಯದು Fine Tuning.

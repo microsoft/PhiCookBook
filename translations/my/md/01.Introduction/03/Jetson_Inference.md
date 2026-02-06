@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:46:12+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "my"
-}
--->
 # **Nvidia Jetson တွင် Phi-3 အာရုံစူးစိုက်မှု**
 
 Nvidia Jetson သည် Nvidia မှ ထုတ်လုပ်သော embedded computing board များ စီးရီးဖြစ်သည်။ Jetson TK1, TX1 နှင့် TX2 မော်ဒယ်များတွင် Nvidia ၏ Tegra processor (သို့) SoC တစ်ခုပါဝင်ပြီး ARM architecture အခြေခံ CPU ကို ထည့်သွင်းထားသည်။ Jetson သည် စွမ်းအင်သက်သာပြီး machine learning application များကို မြန်ဆန်စွာ ဆောင်ရွက်ရန် ရည်ရွယ်ထားသော စနစ်ဖြစ်သည်။ Nvidia Jetson ကို စက်မှုလုပ်ငန်းအမျိုးမျိုးတွင် ထူးခြားသော AI ထုတ်ကုန်များ ဖန်တီးရန် ပရော်ဖက်ရှင်နယ် developer များ အသုံးပြုကြပြီး ကျောင်းသားများနှင့် စိတ်ဝင်စားသူများကလည်း လက်တွေ့ AI သင်ယူမှုနှင့် စိတ်ဝင်စားဖွယ် project များ ဖန်တီးရာတွင် အသုံးပြုကြသည်။ SLM ကို Jetson ကဲ့သို့သော edge device များတွင် တပ်ဆင်ထားပြီး စက်မှုလုပ်ငန်း generative AI application များကို ပိုမိုကောင်းမွန်စွာ အကောင်အထည်ဖော်နိုင်စေသည်။

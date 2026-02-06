@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-09-12T15:00:19+00:00",
-  "source_file": "code/03.Finetuning/olive-ort-example/README.md",
-  "language_code": "lt"
-}
--->
 # Suasmenkite Phi3 naudodami Olive
 
 Šiame pavyzdyje naudosite Olive, kad:

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:57:09+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "ko"
-}
--->
 # **AI PC에서 Phi-3 추론하기**
 
 생성형 AI의 발전과 엣지 디바이스 하드웨어 성능 향상으로 인해, 점점 더 많은 생성형 AI 모델들이 사용자의 BYOD(Bring Your Own Device) 기기에 통합될 수 있게 되었습니다. AI PC도 이러한 모델 중 하나입니다. 2024년부터 Intel, AMD, Qualcomm은 PC 제조사들과 협력하여 하드웨어 개조를 통해 로컬 생성형 AI 모델 배포를 지원하는 AI PC를 선보이고 있습니다. 이번 글에서는 Intel AI PC에 초점을 맞추어 Intel AI PC에서 Phi-3를 배포하는 방법을 살펴보겠습니다.

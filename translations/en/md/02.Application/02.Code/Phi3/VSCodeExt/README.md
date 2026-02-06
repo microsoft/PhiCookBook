@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:32:02+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "en"
-}
--->
 # **Build your own Visual Studio Code GitHub Copilot Chat with Microsoft Phi-3 Family**
 
 Have you tried the workspace agent in GitHub Copilot Chat? Want to create a custom code agent for your team? This hands-on lab aims to combine open source models to build an enterprise-grade code business agent.

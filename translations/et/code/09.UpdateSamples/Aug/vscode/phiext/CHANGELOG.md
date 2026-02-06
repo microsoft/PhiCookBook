@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-10-11T11:37:13+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "et"
-}
--->
 # Muudatuste logi
 
 Kõik olulised muudatused "phiext" laienduses dokumenteeritakse selles failis.

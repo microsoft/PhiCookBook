@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:04:51+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "cs"
-}
--->
 # Doladění a integrace vlastních modelů Phi-3 s Prompt flow v Azure AI Foundry
 
 Tento kompletní (E2E) příklad vychází z průvodce „[Doladění a integrace vlastních modelů Phi-3 s Prompt flow v Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)“ z Microsoft Tech Community. Představuje procesy doladění, nasazení a integrace vlastních modelů Phi-3 s Prompt flow v Azure AI Foundry. Na rozdíl od E2E příkladu „[Doladění a integrace vlastních modelů Phi-3 s Prompt flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)“, který zahrnoval spouštění kódu lokálně, se tento tutoriál zaměřuje zcela na doladění a integraci vašeho modelu přímo v Azure AI / ML Studiu.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:14:42+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "ja"
-}
--->
 ## **Phi-4-miniでの関数呼び出し**
 
 関数呼び出しはPhi Familyで初めて登場し、現在はPhi-4-miniでも利用可能です。

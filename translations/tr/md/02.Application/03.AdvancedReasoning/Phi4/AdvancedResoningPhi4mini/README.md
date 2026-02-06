@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-07-17T04:49:54+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "tr"
-}
--->
 ## **Phi-4-mini-reasoning(3.8b) veya Phi-4-reasoning(14b) ile Akıl Yürütme Uzmanı Olarak Kullanma**
 
 Phi-4-mini-reasoning veya Phi-4-mini-reasoning aracılığıyla güçlü akıl yürütme yeteneğine bir göz atalım.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-09-12T14:43:36+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "lt"
-}
--->
 # **Leiskite Phi-3 tapti pramonės ekspertu**
 
 Norint įdiegti Phi-3 modelį pramonėje, reikia pridėti pramonės verslo duomenis prie Phi-3 modelio. Turime du skirtingus pasirinkimus: pirmasis yra RAG (Retrieval Augmented Generation), o antrasis – Fine Tuning.

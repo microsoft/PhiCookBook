@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:23:43+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "en"
-}
--->
 # Cross-platform inference with Rust
 
 This tutorial will guide you through performing inference using Rust and the [Candle ML framework](https://github.com/huggingface/candle) from HuggingFace. Using Rust for inference offers several benefits, especially compared to other programming languages. Rust is known for its high performance, comparable to C and C++. This makes it an excellent choice for inference tasks, which can be computationally demanding. This is largely due to zero-cost abstractions and efficient memory management without garbage collection overhead. Rust's cross-platform capabilities allow you to develop code that runs on various operating systems, including Windows, macOS, and Linux, as well as mobile platforms, without major changes to the codebase.

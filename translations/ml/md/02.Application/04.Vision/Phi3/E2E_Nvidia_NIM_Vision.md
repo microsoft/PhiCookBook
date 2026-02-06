@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-12-21T22:01:57+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "ml"
-}
--->
 ### ഉദാഹരണ സാഹചര്യ്യം
 
 മാനസികമായി കരുതുക നിങ്ങൾക്കൊരു ചിത്രം (`demo.png`) ഉണ്ട്, ആ ചിത്രം പ്രോസസ് ചെയ്യുകയും അതിന്റെ പുതിയ പതിപ്പ് (`phi-3-vision.jpg`) സേവ് ചെയ്യുകയും ചെയ്യാനുള്ള Python കോഡ് സൃഷ്ടിക്കണമെന്ന് നിങ്ങൾ ആഗ്രഹിക്കുന്നു. 

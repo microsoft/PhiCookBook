@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:02:11+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "da"
-}
--->
 # **Kvantisering af Phi-3.5 med Intel OpenVINO**
 
 Intel er den mest traditionelle CPU-producent med mange brugere. Med fremkomsten af maskinlæring og dyb læring har Intel også deltaget i konkurrencen om AI-acceleration. Til modelinference bruger Intel ikke kun GPU'er og CPU'er, men også NPUs.

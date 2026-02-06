@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-12-21T18:08:54+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "te"
-}
--->
 # **Azure Machine Learning సేవ పరిచయం**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ఒక క్లౌడ్ సేవ, యంత్ర అభ్యాసం (ML) ప్రాజెక్టు జీవితచక్రాన్ని వేగవంతం చేయడానికి మరియు నిర్వహించడానికి.

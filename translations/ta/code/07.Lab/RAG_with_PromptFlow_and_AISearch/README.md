@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-10-11T11:35:12+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "ta"
-}
--->
 ## PromptFlow மற்றும் AISearch உடன் RAG
 
 இந்த உதாரணத்தில், Phi3 ஐ SLM ஆகவும், AI Search ஐ vectorDB ஆகவும், Prompt Flow ஐ குறைந்த குறியீட்டு ஒருங்கிணைப்பாளராகவும் பயன்படுத்தி Retrieval Augmented Generation (RAG) பயன்பாட்டை செயல்படுத்துவோம்.

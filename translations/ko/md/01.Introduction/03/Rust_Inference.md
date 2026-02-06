@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:26:44+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "ko"
-}
--->
 # Rust를 이용한 크로스 플랫폼 추론
 
 이 튜토리얼에서는 Rust와 HuggingFace의 [Candle ML 프레임워크](https://github.com/huggingface/candle)를 사용하여 추론을 수행하는 과정을 안내합니다. Rust를 추론에 사용하는 것은 특히 다른 프로그래밍 언어와 비교했을 때 여러 가지 장점이 있습니다. Rust는 C와 C++에 필적하는 높은 성능으로 잘 알려져 있습니다. 이는 계산 집약적인 추론 작업에 매우 적합합니다. 특히, 제로 코스트 추상화와 효율적인 메모리 관리 덕분에 가비지 컬렉션 오버헤드가 없습니다. Rust의 크로스 플랫폼 기능은 Windows, macOS, Linux뿐만 아니라 모바일 운영체제에서도 코드베이스를 크게 변경하지 않고 실행할 수 있는 코드를 개발할 수 있게 해줍니다.

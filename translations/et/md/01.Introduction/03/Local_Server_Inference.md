@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-10-11T12:24:56+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "et"
-}
--->
 # **Inference Phi-3 kohalikus serveris**
 
 Me saame juurutada Phi-3 kohalikus serveris. Kasutajad võivad valida [Ollama](https://ollama.com) või [LM Studio](https://llamaedge.com) lahenduste vahel või kirjutada oma koodi. Phi-3 kohalike teenustega saab ühendust luua [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) või [Langchain](https://www.langchain.com/) kaudu, et luua Copilot rakendusi.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:32:32+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "sw"
-}
--->
 # Utabiri wa mtandao wa majukwaa mbalimbali kwa kutumia Rust
 
 Mafunzo haya yatatuongoza kupitia mchakato wa kufanya utabiri kwa kutumia Rust na [mfumo wa Candle ML](https://github.com/huggingface/candle) kutoka HuggingFace. Kutumia Rust kwa utabiri kuna faida kadhaa, hasa ikilinganishwa na lugha nyingine za programu. Rust inajulikana kwa utendaji wake wa juu, unaolingana na ule wa C na C++. Hii inafanya kuwa chaguo bora kwa kazi za utabiri, ambazo zinaweza kuwa na mzigo mkubwa wa kihesabu. Hii hasa inatokana na utofauti wa gharama sifuri na usimamizi mzuri wa kumbukumbu, ambao hauhusishi mzigo wa ukusanyaji taka. Uwezo wa Rust wa kuendeshwa kwenye majukwaa mbalimbali unaruhusu maendeleo ya msimbo unaoweza kuendeshwa kwenye mifumo mbalimbali ya uendeshaji, ikiwa ni pamoja na Windows, macOS, na Linux, pamoja na mifumo ya uendeshaji ya simu, bila mabadiliko makubwa kwenye msimbo.

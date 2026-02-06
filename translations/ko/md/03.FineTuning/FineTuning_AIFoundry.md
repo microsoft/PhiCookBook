@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T05:59:00+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "ko"
-}
--->
 # Azure AI Foundry로 Phi-3 미니 미세 조정하기
 
 Microsoft의 Phi-3 Mini 언어 모델을 Azure AI Foundry를 사용해 미세 조정하는 방법을 살펴보겠습니다. 미세 조정을 통해 Phi-3 Mini를 특정 작업에 맞게 조정하여 더욱 강력하고 상황에 맞는 모델로 만들 수 있습니다.

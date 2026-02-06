@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:09:57+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "tr"
-}
--->
 Phi-3-mini bağlamında, çıkarım, modelin giriş verilerine dayanarak tahminler yapma veya çıktı üretme sürecini ifade eder. Phi-3-mini ve çıkarım yetenekleri hakkında size daha fazla bilgi vereyim.
 
 Phi-3-mini, Microsoft tarafından yayımlanan Phi-3 serisi modellerin bir parçasıdır. Bu modeller, Küçük Dil Modelleri (SLM) ile mümkün olanı yeniden tanımlamak için tasarlanmıştır.

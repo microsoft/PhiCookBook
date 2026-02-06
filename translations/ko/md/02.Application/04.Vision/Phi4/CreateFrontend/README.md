@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:36+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "ko"
-}
--->
 ## **Phi-4-multimodal을 사용해 이미지 읽고 코드 생성하기**
 
 Phi-4-multimodal은 뛰어난 이미지 인식 능력을 가지고 있습니다. Python을 사용해 다음 기능을 구현해 봅시다. 이미지에는 ChatGPT 페이지가 나와 있습니다.

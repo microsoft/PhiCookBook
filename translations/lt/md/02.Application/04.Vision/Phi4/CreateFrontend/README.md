@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-09-12T14:37:38+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "lt"
-}
--->
 ## **Naudokite Phi-4-multimodal vaizdams skaityti ir kodui generuoti**
 
 Phi-4-multimodal turi stiprias vaizdų skaitymo galimybes. Pabandykime naudoti Python, kad įgyvendintume šias funkcijas. Vaizdas yra ChatGPT puslapis.

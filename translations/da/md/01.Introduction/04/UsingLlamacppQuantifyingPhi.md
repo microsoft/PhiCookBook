@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-07-16T22:09:52+00:00",
-  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
-  "language_code": "da"
-}
--->
 # **Kvantisering af Phi-familien ved brug af llama.cpp**
 
 ## **Hvad er llama.cpp**

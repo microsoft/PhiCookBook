@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:09:37+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "sk"
-}
--->
 ## **Použite Phi-4-multimodal na čítanie obrázkov a generovanie kódu**
 
 Phi-4-multimodal má silné schopnosti čítania obrázkov. Skúsme použiť Python na implementáciu nasledujúcich funkcií. Obrázok je stránka ChatGPT.

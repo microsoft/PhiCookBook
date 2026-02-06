@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:59:45+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "my"
-}
--->
 ### ဥပမာအခြေအနေ
 
 သင်မှာ ပုံတစ်ပုံ (`demo.png`) ရှိပြီး ဒီပုံကို ပြုပြင်ထိန်းသိမ်းပြီး အသစ်တစ်ခု (`phi-3-vision.jpg`) အဖြစ် သိမ်းဆည်းဖို့ Python ကုဒ်ကို ဖန်တီးချင်တယ်လို့ စဉ်းစားပါ။

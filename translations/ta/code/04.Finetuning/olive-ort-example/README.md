@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-10-11T11:38:53+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "ta"
-}
--->
 # Olive-ஐ பயன்படுத்தி Phi3-ஐ Fine-tune செய்யவும்
 
 இந்த எடுத்துக்காட்டில், Olive-ஐ பயன்படுத்தி நீங்கள் செய்யப்போகிறீர்கள்:

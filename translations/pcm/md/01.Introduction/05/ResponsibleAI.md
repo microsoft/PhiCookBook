@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-12-21T22:33:02+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "pcm"
-}
--->
 # **Make We Introduce Responsible AI**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) na initiative wey dey try help developers and organizations build AI systems wey transparent, trustworthy, and accountable. Di initiative dey provide guidance and resources to help develop responsible AI solutions wey dey follow moral rules like privacy, fairness, and transparency. We go also check some challenges and beta practices wey dey involved for building responsible AI systems.

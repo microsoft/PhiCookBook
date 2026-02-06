@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T12:39:01+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "no"
-}
--->
 # **Kvantifisering av Phi-familien**
 
 Modellkvantisering refererer til prosessen med å kartlegge parameterne (for eksempel vekter og aktiveringsverdier) i en nevralt nettverksmodell fra et stort verdiareale (vanligvis et kontinuerlig verdiareale) til et mindre endelig verdiareale. Denne teknologien kan redusere størrelsen og beregningskompleksiteten til modellen og forbedre driftseffektiviteten til modellen i ressursbegrensede miljøer som mobile enheter eller innebygde systemer. Modellkvantisering oppnår komprimering ved å redusere presisjonen til parametrene, men det introduserer også et visst presisjonstap. Derfor er det nødvendig å balansere modellstørrelse, beregningskompleksitet og presisjon i kvantiseringsprosessen. Vanlige kvantiseringsmetoder inkluderer fastpunktkvantisering, flytpunktkvantisering osv. Du kan velge passende kvantiseringsstrategi etter de spesifikke scenariene og behovene.

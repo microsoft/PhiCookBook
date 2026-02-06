@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-16T17:07:25+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "mr"
-}
--->
 ## RAG with PromptFlow and AISearch
 
 या उदाहरणात, आपण Retrieval Augmented Generation (RAG) अॅप्लिकेशन तयार करू ज्यामध्ये Phi3 SLM म्हणून, AI Search व्हेक्टरDB म्हणून आणि Prompt Flow लो-कोड ऑर्केस्ट्रेटर म्हणून वापरले जाईल.

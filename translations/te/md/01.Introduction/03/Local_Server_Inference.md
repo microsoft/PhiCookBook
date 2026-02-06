@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-12-22T01:02:39+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "te"
-}
--->
 # **లోకల్ సర్వర్‌లో Phi-3 ఇన్ఫెరెన్స్**
 
 మేము Phi-3 ను లోకల్ సర్వర్‌లో నియమించవచ్చు. వినియోగదారులు [Ollama](https://ollama.com) లేదా [LM Studio](https://llamaedge.com) పరిష్కారాలను ఎంచుకోవచ్చు, లేదా వారు తమ స్వంత కోడ్ రాయవచ్చు. మీరు Phi-3 యొక్క లోకల్ సర్వీసులను [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) లేదా [Langchain](https://www.langchain.com/) ద్వారా కనెక్ట్ చేసి Copilot అప్లికేషన్లను నిర్మించవచ్చు

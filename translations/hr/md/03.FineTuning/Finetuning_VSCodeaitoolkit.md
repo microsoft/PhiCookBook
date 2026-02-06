@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-07-17T09:22:55+00:00",
-  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
-  "language_code": "hr"
-}
--->
 ## Dobrodošli u AI Toolkit za VS Code
 
 [AI Toolkit za VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) okuplja različite modele iz Azure AI Studio kataloga i drugih kataloga poput Hugging Face. Toolkit pojednostavljuje uobičajene razvojne zadatke za izradu AI aplikacija s generativnim AI alatima i modelima kroz:

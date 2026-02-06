@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:33:35+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "ur"
-}
--->
 # phi3ext README
 
 یہ آپ کے ایکسٹینشن "phi3ext" کا README ہے۔ مختصر تعارف لکھنے کے بعد، ہم درج ذیل ابواب شامل کرنے کی تجویز دیتے ہیں۔

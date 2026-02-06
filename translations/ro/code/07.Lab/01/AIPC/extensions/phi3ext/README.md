@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:38:17+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "ro"
-}
--->
 # phi3ext README
 
 Acesta este README-ul extensiei tale "phi3ext". După ce ai scris o scurtă descriere, recomandăm să incluzi următoarele secțiuni.

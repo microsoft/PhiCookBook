@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df910a227098303cc392b6ad204c271",
-  "translation_date": "2026-01-06T05:10:41+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
-  "language_code": "bg"
-}
--->
 # Фина настройка и интеграция на персонализирани Phi-3 модели с Prompt flow в Azure AI Foundry
 
 Този краен до краен (E2E) пример е базиран на ръководството "[Фина настройка и интегриране на персонализирани Phi-3 модели с Prompt Flow в Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" от Microsoft Tech Community. Той въвежда процесите на фина настройка, внедряване и интегриране на персонализирани Phi-3 модели с Prompt flow в Azure AI Foundry. За разлика от E2E примера, "[Фина настройка и интегриране на персонализирани Phi-3 модели с Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", който включваше изпълнение на код локално, това ръководство се фокусира изцяло върху фината настройка и интегрирането на вашия модел в рамките на Azure AI / ML Studio.

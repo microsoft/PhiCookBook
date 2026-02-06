@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-07-16T22:30:25+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "pa"
-}
--->
 # **Azure AI Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮੁਲਾਂਕਣ ਕਰਨਾ**
 
 ![aistudo](../../../../../translated_images/pa/AIFoundry.9e0b513e999a1c5a.webp)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T16:44:01+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "mr"
-}
--->
 # कस्टम Phi-3 मॉडेल्सचे फाइन-ट्यून आणि प्रॉम्प्ट फ्लो सह एकत्रीकरण करा
 
 हे एंड-टू-एंड (E2E) नमुना Microsoft Tech Community मधील "[प्रॉम्प्ट फ्लो सह कस्टम Phi-3 मॉडेल्सचे फाइन-ट्यून आणि एकत्रीकरण: स्टेप-बाय-स्टेप मार्गदर्शक](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" या मार्गदर्शकावर आधारित आहे. हे कस्टम Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग, तैनाती आणि प्रॉम्प्ट फ्लो सह एकत्रीकरण प्रक्रियेचे परिचय देते.

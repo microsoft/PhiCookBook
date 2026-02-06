@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-12-21T16:49:02+00:00",
-  "source_file": "code/03.Finetuning/olive-ort-example/README.md",
-  "language_code": "pcm"
-}
--->
 # Fine-tune Phi3 using Olive
 
 For dis example you go use Olive to:

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:45:21+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "tr"
-}
--->
 ## **Phi-4-mini-mm ile kod oluşturma**
 
 Phi-4-mini, Phi Ailesi'nin güçlü kodlama yeteneklerini sürdürüyor. Kodlama ile ilgili sorular sormak için Prompt'u kullanabilirsiniz. Elbette, güçlü mantık yürütme yeteneği eklendikten sonra, gereksinimlere göre proje oluşturmak gibi daha güçlü kodlama yeteneklerine sahip oldu. Örneğin, gereksinimlere göre projeler oluşturmak:

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:08:33+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "bn"
-}
--->
 Phi-3-mini এর প্রসঙ্গে, inference বলতে বোঝায় মডেল ব্যবহার করে ইনপুট ডেটার ভিত্তিতে পূর্বাভাস দেওয়া বা আউটপুট তৈরি করার প্রক্রিয়া। আমি Phi-3-mini এবং এর inference ক্ষমতা সম্পর্কে আরও বিস্তারিত জানাচ্ছি।
 
 Phi-3-mini Microsoft কর্তৃক প্রকাশিত Phi-3 সিরিজের একটি অংশ। এই মডেলগুলো Small Language Models (SLMs) এর সম্ভাবনাকে নতুনভাবে সংজ্ঞায়িত করার জন্য ডিজাইন করা হয়েছে।

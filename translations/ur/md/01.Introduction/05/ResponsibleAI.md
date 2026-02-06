@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:48:06+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "ur"
-}
--->
 # **ذمہ دار AI کا تعارف**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) ایک ایسا اقدام ہے جس کا مقصد ڈویلپرز اور تنظیموں کی مدد کرنا ہے تاکہ وہ ایسے AI نظام تیار کریں جو شفاف، قابل اعتماد اور جوابدہ ہوں۔ یہ اقدام ذمہ دار AI حل تیار کرنے کے لیے رہنمائی اور وسائل فراہم کرتا ہے جو اخلاقی اصولوں جیسے کہ پرائیویسی، انصاف، اور شفافیت کے مطابق ہوں۔ ہم ذمہ دار AI نظام بنانے سے جڑے کچھ چیلنجز اور بہترین طریقوں کا بھی جائزہ لیں گے۔

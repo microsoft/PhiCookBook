@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:55:18+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "fa"
-}
--->
 # **استنتاج Phi-3 در سرور محلی**
 
 ما می‌توانیم Phi-3 را روی یک سرور محلی مستقر کنیم. کاربران می‌توانند از راه‌حل‌های [Ollama](https://ollama.com) یا [LM Studio](https://llamaedge.com) استفاده کنند، یا خودشان کد بنویسند. شما می‌توانید خدمات محلی Phi-3 را از طریق [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) یا [Langchain](https://www.langchain.com/) متصل کنید تا برنامه‌های Copilot بسازید.

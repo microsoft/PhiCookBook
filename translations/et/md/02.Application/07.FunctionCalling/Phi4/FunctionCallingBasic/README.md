@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-10-11T11:53:22+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "et"
-}
--->
 ## **Funktsiooni kutsumine Phi-4-mini-s**
 
 Funktsiooni kutsumine ilmus esmakordselt Phi Family perekonnas, ja nüüd saate seda kasutada ka Phi-4-mini kaudu.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:40:19+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "tr"
-}
--->
 # **Promptflow Tanıtımı**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo), kullanıcıların önceden hazırlanmış şablonlar ve özel bağlayıcılar kullanarak otomatik iş akışları oluşturmasına olanak tanıyan görsel bir iş akışı otomasyon aracıdır. Geliştiriciler ve iş analistlerinin veri yönetimi, iş birliği ve süreç optimizasyonu gibi görevler için hızlıca otomatik süreçler oluşturmasını sağlamak üzere tasarlanmıştır. Prompt Flow ile kullanıcılar farklı hizmetleri, uygulamaları ve sistemleri kolayca bağlayabilir ve karmaşık iş süreçlerini otomatikleştirebilir.

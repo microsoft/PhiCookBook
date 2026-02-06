@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:57:29+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "th"
-}
--->
 # **การใช้งาน Inference Phi-3 บนเซิร์ฟเวอร์ภายในเครื่อง**
 
 เราสามารถติดตั้ง Phi-3 บนเซิร์ฟเวอร์ภายในเครื่องได้ ผู้ใช้สามารถเลือกใช้โซลูชันจาก [Ollama](https://ollama.com) หรือ [LM Studio](https://llamaedge.com) หรือตัวเลือกเขียนโค้ดเองก็ได้ คุณสามารถเชื่อมต่อบริการ Phi-3 ภายในเครื่องผ่าน [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) หรือ [Langchain](https://www.langchain.com/) เพื่อสร้างแอปพลิเคชัน Copilot

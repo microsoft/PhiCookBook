@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:42:01+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "pa"
-}
--->
 # **OnnxRuntime GenAI Windows GPU ਲਈ ਮਾਰਗਦਰਸ਼ਕ**
 
 ਇਹ ਮਾਰਗਦਰਸ਼ਕ Windows 'ਤੇ GPUs ਨਾਲ ONNX Runtime (ORT) ਸੈਟਅਪ ਅਤੇ ਵਰਤੋਂ ਲਈ ਕਦਮ ਦਿੰਦਾ ਹੈ। ਇਹ ਤੁਹਾਡੇ ਮਾਡਲਾਂ ਲਈ GPU ਤੇਜ਼ੀ ਦਾ ਲਾਭ ਉਠਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਪ੍ਰਦਰਸ਼ਨ ਅਤੇ ਕੁਸ਼ਲਤਾ ਵਿੱਚ ਸੁਧਾਰ ਹੁੰਦਾ ਹੈ।

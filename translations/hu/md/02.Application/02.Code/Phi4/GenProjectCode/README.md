@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:56+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "hu"
-}
--->
 ## **Phi-4-mini-mm használata kód generálásához**
 
 A Phi-4-mini folytatja a Phi Family erős kódolási képességeit. Prompt segítségével kérdéseket tehetsz fel a kódolással kapcsolatban. Természetesen, a fejlett érvelési képesség hozzáadásával még erősebb kódolási képességekkel rendelkezik, például képes projektek generálására a követelmények alapján. Például generálhat projekteket az alábbi igények szerint:

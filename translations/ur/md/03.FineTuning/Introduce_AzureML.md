@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:35:02+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "ur"
-}
--->
 # **Azure Machine Learning سروس کا تعارف**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ایک کلاؤڈ سروس ہے جو مشین لرننگ (ML) پروجیکٹ کے پورے عمل کو تیز اور منظم کرنے کے لیے استعمال ہوتی ہے۔

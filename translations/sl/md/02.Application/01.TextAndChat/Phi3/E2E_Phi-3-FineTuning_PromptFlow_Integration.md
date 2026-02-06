@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T15:37:58+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "sl"
-}
--->
 # Dodelajte in integrirajte po meri izdelane modele Phi-3 s Prompt flow
 
 Ta celoten (E2E) primer temelji na vodiču "[Dodelajte in integrirajte po meri izdelane modele Phi-3 s Prompt Flow: vodič korak za korakom](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" iz Microsoft Tech Community. Predstavlja postopke natančnega prilagajanja, nameščanja in integracije po meri izdelanih modelov Phi-3 s Prompt flow.

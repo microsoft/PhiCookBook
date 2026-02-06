@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:11:53+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "pl"
-}
--->
 ## **Wyodrębnianie transkrypcji audio za pomocą Phi-4-multimodal**
 
 Phi-4-multimodal to model pełno-modalny, który potrafi korzystać z dźwięku oprócz tekstu i obrazów. Zobaczmy, jak go używać.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:48:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "vi"
-}
--->
 # **Tinh chỉnh Phi-3 với Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) là một công cụ tối ưu hóa mô hình nhận biết phần cứng dễ sử dụng, kết hợp các kỹ thuật hàng đầu trong ngành về nén, tối ưu và biên dịch mô hình.

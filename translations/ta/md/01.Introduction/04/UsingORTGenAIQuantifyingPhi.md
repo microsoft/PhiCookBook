@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-10-11T12:26:57+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "ta"
-}
--->
 # **Phi குடும்பத்தை Quantizing செய்வது Generative AI extensions for onnxruntime மூலம்**
 
 ## **Generative AI extensions for onnxruntime என்றால் என்ன?**

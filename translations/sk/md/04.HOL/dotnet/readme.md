@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:41:28+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "sk"
-}
--->
 ## Vitajte v Phi laboratóriách používajúcich C#
 
 K dispozícii je výber laboratórií, ktoré ukazujú, ako integrovať rôzne výkonné verzie Phi modelov v prostredí .NET.

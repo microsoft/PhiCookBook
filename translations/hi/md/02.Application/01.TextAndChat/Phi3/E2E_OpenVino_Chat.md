@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-07-16T23:02:52+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "hi"
-}
--->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 यह कोड एक मॉडल को OpenVINO फॉर्मेट में एक्सपोर्ट करता है, उसे लोड करता है, और दिए गए प्रॉम्प्ट के आधार पर प्रतिक्रिया उत्पन्न करने के लिए उपयोग करता है।

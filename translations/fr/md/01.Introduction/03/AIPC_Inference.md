@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:53:03+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "fr"
-}
--->
 # **Inférence Phi-3 sur PC AI**
 
 Avec les progrès de l’IA générative et l’amélioration des capacités matérielles des appareils edge, un nombre croissant de modèles d’IA générative peuvent désormais être intégrés aux appareils Bring Your Own Device (BYOD) des utilisateurs. Les PC AI font partie de ces modèles. À partir de 2024, Intel, AMD et Qualcomm ont collaboré avec les fabricants de PC pour lancer des PC AI facilitant le déploiement de modèles d’IA générative localisés via des modifications matérielles. Dans cette discussion, nous nous concentrerons sur les PC AI Intel et verrons comment déployer Phi-3 sur un PC AI Intel.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-09-12T14:26:05+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "lt"
-}
--->
 ## **Naudojant Phi-4-mini-reasoning(3.8b) arba Phi-4-reasoning(14b) kaip ekspertą argumentavime**
 
 Pažvelkime į stiprius argumentavimo gebėjimus, kuriuos demonstruoja Phi-4-mini-reasoning arba Phi-4-reasoning.

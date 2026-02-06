@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:50+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "sw"
-}
--->
 ## **Kutumia Phi-4-mini-mm kuunda msimbo**
 
 Phi-4-mini inaendelea na uwezo mkubwa wa kuandika msimbo wa Familia ya Phi. Unaweza kutumia Prompt kuuliza maswali yanayohusiana na uandishi wa msimbo. Bila shaka, baada ya kuongeza uwezo mkubwa wa kufikiri, ina uwezo mkubwa zaidi wa kuandika msimbo, kama vile kuunda miradi kulingana na mahitaji. Kwa mfano, kuunda miradi kulingana na mahitaji, kama:

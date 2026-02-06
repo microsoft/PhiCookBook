@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:04:55+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "my"
-}
--->
 # **Intel OpenVINO ဖြင့် Phi-3.5 ကို Quantize လုပ်ခြင်း**
 
 Intel သည် အသုံးပြုသူများစွာရှိသော အကြာကြီးတည်ရှိနေသော CPU ထုတ်လုပ်သူဖြစ်သည်။ မက်ရှင်လေ့လာမှုနှင့် နက်ရှိုင်းသောလေ့လာမှုများ တိုးတက်လာခြင်းနှင့်အမျှ Intel သည် AI အမြန်ဆောင်မှုယှဉ်ပြိုင်မှုတွင်ပါဝင်လာသည်။ မော်ဒယ် inference အတွက် Intel သည် GPU နှင့် CPU များသာမက NPU များကိုလည်း အသုံးပြုသည်။

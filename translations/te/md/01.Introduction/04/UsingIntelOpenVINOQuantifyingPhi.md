@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-12-22T02:03:34+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "te"
-}
--->
 # **Intel OpenVINO ఉపయోగించి Phi-3.5 ను క్వాంటైజ్ చేయడం**
 
 Intel అనేది అత్యంత సంప్రదాయమైన CPU తయారీదారు మరియు అనేక వినియోగదారులు కలదు. మెషీన్ లెర్నింగ్ మరియు డీప్ లెర్నింగ్ యొక్క వృద్ధితో, Intel కూడా AI ఆకసెలరేషన్ పోటీకి చేరింది. మోడల్ ఇన్ఫరెన్స్కు Intel గీసి GPUs మరియు CPUs మాత్రమే కాకుండా NPUs ను కూడా ఉపయోగిస్తుంది.

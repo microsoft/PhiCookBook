@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:15:14+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "pa"
-}
--->
 ## **Phi-4-mini ਵਿੱਚ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ**
 
 ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਸਭ ਤੋਂ ਪਹਿਲਾਂ Phi Family ਪਰਿਵਾਰ ਵਿੱਚ ਆਈ ਸੀ, ਅਤੇ ਹੁਣ ਤੁਸੀਂ ਇਸਨੂੰ Phi-4-mini ਰਾਹੀਂ ਵਰਤ ਸਕਦੇ ਹੋ।

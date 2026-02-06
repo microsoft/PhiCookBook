@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-12-22T00:17:34+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "te"
-}
--->
 # ఫైన్ట్యూన్ చేసిన మోడల్‌తో రిమోట్ ఇన్ఫరెన్సింగ్
 
 ఆడాప్టర్లు రిమోట్ పర్యావరణంలో ట్రైనింగ్ అయిన తర్వాత, మోడల్‌తో ఇന്റరాక్ట్ చేయడానికి ఒక సాదా Gradio అప్లికేషన్ ఉపయోగించండి.

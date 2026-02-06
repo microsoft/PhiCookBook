@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:20:11+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "ne"
-}
--->
 # **iOS मा Inference Phi-3**
 
 Phi-3-mini माइक्रोसफ्टको नयाँ मोडेल श्रृंखला हो जसले एज उपकरणहरू र IoT उपकरणहरूमा ठूलो भाषा मोडेलहरू (LLMs) तैनाथ गर्न सक्षम बनाउँछ। Phi-3-mini iOS, Android, र एज उपकरणहरूमा उपलब्ध छ, जसले BYOD वातावरणमा जनरेटिभ AI तैनाथ गर्न अनुमति दिन्छ। तलको उदाहरणले iOS मा Phi-3-mini कसरी तैनाथ गर्ने देखाउँछ।

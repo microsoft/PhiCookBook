@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:18:19+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "mr"
-}
--->
 ## **Phi-3.5 चे क्वांटायझेशन करण्यासाठी Model Builder कसा वापरायचा**
 
 Model Builder आता Phi-3.5 Instruct आणि Phi-3.5-Vision साठी ONNX मॉडेल क्वांटायझेशनला समर्थन देतो.

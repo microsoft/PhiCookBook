@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-07-16T16:11:04+00:00",
-  "source_file": "code/04.Finetuning/olive-lab/readme.md",
-  "language_code": "ja"
-}
--->
 # Lab. デバイス上推論向けAIモデルの最適化
 
 ## はじめに

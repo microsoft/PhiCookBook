@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-12-21T21:52:52+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "ml"
-}
--->
 ## **Phi-4-mini-ൽ ഫംഗ്ഷൻ കോൾ ചെയ്യൽ**
 
 ഫംഗ്ഷൻ കോൾ ചെയ്യൽ ആദ്യമായി Phi Family കുടുംബത്തിൽ പ്രത്യക്ഷപ്പെട്ടു, ഇപ്പോൾ നിങ്ങൾ അത് Phi-4-mini മുഖാന്തിരം ഉപയോഗിക്കാം.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:43:15+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "my"
-}
--->
 ## GitHub Models - အများပြည်သူအတွက် ကန့်သတ်ထားသော Beta
 
 [GitHub Models](https://github.com/marketplace/models) သို့ ကြိုဆိုပါသည်! Azure AI ပေါ်တွင် တင်ထားသော AI မော်ဒယ်များကို စူးစမ်းလေ့လာနိုင်ရန် အားလုံး ပြင်ဆင်ပြီး ဖြစ်ပါပြီ။

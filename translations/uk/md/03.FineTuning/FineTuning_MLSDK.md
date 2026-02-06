@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:54:36+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "uk"
-}
--->
 ## Як використовувати компоненти chat-completion із системного реєстру Azure ML для донавчання моделі
 
 У цьому прикладі ми проведемо донавчання моделі Phi-3-mini-4k-instruct для завершення розмови між двома людьми, використовуючи датасет ultrachat_200k.

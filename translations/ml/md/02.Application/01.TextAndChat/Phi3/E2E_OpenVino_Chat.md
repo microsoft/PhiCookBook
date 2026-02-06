@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-12-21T21:33:28+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "ml"
-}
--->
 [OpenVino ചാറ്റ് ഉദാഹരണം](../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 ഈ കോഡ് ഒരു മോഡൽ OpenVINO ഫോർമാറ്റിലേക്ക് എക്സ്പോർട്ട് ചെയ്യുകയും, അത് ലോഡ് ചെയ്യുകയും, നൽകിയ പ്രോംപ്റ്റിനു മറുപടി ജനറേറ്റ് ചെയ്യാൻ അതിനെ ഉപയോഗിക്കുകയും ചെയ്യുന്നു. 

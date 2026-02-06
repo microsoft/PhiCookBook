@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-07-16T21:00:55+00:00",
-  "source_file": "md/01.Introduction/03/MLX_Inference.md",
-  "language_code": "ur"
-}
--->
 # **Inference Phi-3 ایپل MLX فریم ورک کے ساتھ**
 
 ## **MLX فریم ورک کیا ہے**

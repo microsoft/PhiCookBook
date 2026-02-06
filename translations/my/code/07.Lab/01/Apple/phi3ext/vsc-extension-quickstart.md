@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-07-16T17:04:50+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
-  "language_code": "my"
-}
--->
 # သင့် VS Code Extension သို့ ကြိုဆိုပါသည်
 
 ## ဖိုလ်ဒါထဲမှာ ဘာတွေရှိလဲ

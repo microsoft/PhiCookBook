@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:49:58+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "sl"
-}
--->
 ## Kako uporabljati komponente za dokončanje pogovora iz Azure ML sistemskega registra za fino nastavitev modela
 
 V tem primeru bomo izvedli fino nastavitev modela Phi-3-mini-4k-instruct za dokončanje pogovora med dvema osebama z uporabo podatkovne zbirke ultrachat_200k.

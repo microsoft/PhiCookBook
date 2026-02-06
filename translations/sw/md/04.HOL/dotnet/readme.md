@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:40:26+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "sw"
-}
--->
 ﻿## Karibu kwenye maabara za Phi zinazotumia C#
 
 Kuna uteuzi wa maabara unaoonyesha jinsi ya kuunganisha matoleo tofauti yenye nguvu ya mifano ya Phi katika mazingira ya .NET.

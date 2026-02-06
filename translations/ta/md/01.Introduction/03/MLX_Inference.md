@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-10-11T12:19:11+00:00",
-  "source_file": "md/01.Introduction/03/MLX_Inference.md",
-  "language_code": "ta"
-}
--->
 # **Apple MLX Framework மூலம் Phi-3 inference செய்யுதல்**
 
 ## **MLX Framework என்றால் என்ன**

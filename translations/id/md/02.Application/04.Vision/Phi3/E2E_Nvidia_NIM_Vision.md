@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:57:36+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "id"
-}
--->
 ### Contoh Skenario
 
 Bayangkan Anda memiliki sebuah gambar (`demo.png`) dan ingin menghasilkan kode Python yang memproses gambar ini dan menyimpan versi barunya (`phi-3-vision.jpg`).

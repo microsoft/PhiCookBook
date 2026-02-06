@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:09:18+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "tl"
-}
--->
 ## **Gamitin ang Phi-4-multimodal para magbasa ng mga larawan at gumawa ng code**
 
 Malakas ang kakayahan ng Phi-4-multimodal sa pagbasa ng mga larawan. Subukan nating gamitin ang Python para ipatupad ang mga sumusunod na function. Ang larawan ay isang pahina ng ChatGPT.

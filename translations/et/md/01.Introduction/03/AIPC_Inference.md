@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-10-11T12:22:36+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "et"
-}
--->
 # **Inference Phi-3 AI PC-s**
 
 Generatiivse tehisintellekti areng ja servaseadmete riistvara võimekuse paranemine on võimaldanud üha rohkematel generatiivse tehisintellekti mudelitel integreeruda kasutajate isiklikesse seadmetesse (BYOD). AI PC-d kuuluvad nende mudelite hulka. Alates 2024. aastast on Intel, AMD ja Qualcomm teinud koostööd arvutitootjatega, et tuua turule AI PC-d, mis võimaldavad lokaliseeritud generatiivse tehisintellekti mudelite kasutuselevõttu riistvara muudatuste kaudu. Selles arutelus keskendume Intel AI PC-dele ja uurime, kuidas rakendada Phi-3 Intel AI PC-s.

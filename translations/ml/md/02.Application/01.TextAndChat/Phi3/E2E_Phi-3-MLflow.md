@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-12-21T20:57:13+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "ml"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) ഒരു ഒപ്പൺ-സോഴ്‌സ് പ്ലാറ്റ്ഫോമാണ്, ആൻഡ്-ടു-ആൻഡ് മെഷീൻ ലേണിങ് ലൈഫ്‌സൈക്കിള്‍ നിയന്ത്രിക്കാൻ രൂപകൽപ്പന ചെയ്തത്.

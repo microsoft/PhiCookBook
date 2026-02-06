@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T07:58:21+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "hi"
-}
--->
 # **Apple MLX Framework के साथ Phi-3 का फाइन-ट्यूनिंग**
 
 हम Apple MLX Framework के कमांड लाइन के माध्यम से Lora के साथ मिलकर फाइन-ट्यूनिंग पूरा कर सकते हैं। (यदि आप MLX Framework के संचालन के बारे में अधिक जानना चाहते हैं, तो कृपया [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) पढ़ें)

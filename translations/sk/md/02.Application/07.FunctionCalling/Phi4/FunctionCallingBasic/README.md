@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:16:55+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "sk"
-}
--->
 ## **Volanie funkcií v Phi-4-mini**
 
 Volanie funkcií sa prvýkrát objavilo v rodine Phi Family a teraz ho môžete používať aj v Phi-4-mini.

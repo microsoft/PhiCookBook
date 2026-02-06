@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:07+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "nl"
-}
--->
 ## **Gebruik van Phi-4-mini-mm om code te genereren**
 
 Phi-4-mini zet de sterke programmeermogelijkheden van de Phi Family voort. Je kunt Prompt gebruiken om vragen te stellen over programmeren. Natuurlijk, na het toevoegen van de sterke redeneervaardigheid, heeft het krachtigere programmeermogelijkheden, zoals het genereren van projecten op basis van eisen. Bijvoorbeeld, projecten genereren volgens specificaties, zoals:

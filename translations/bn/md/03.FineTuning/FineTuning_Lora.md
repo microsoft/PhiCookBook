@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:29:53+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "bn"
-}
--->
 # **Lora দিয়ে Phi-3 ফাইন-টিউনিং**
 
 Microsoft-এর Phi-3 Mini ভাষা মডেলকে [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) ব্যবহার করে একটি কাস্টম চ্যাট ইনস্ট্রাকশন ডেটাসেটে ফাইন-টিউন করা হচ্ছে।

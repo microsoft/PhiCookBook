@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:14+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "he"
-}
--->
 ## **שימוש ב-Phi-4-mini-mm ליצירת קוד**
 
 Phi-4-mini ממשיך את יכולות התכנות החזקות של משפחת Phi. ניתן להשתמש ב-Prompt כדי לשאול שאלות הקשורות לתכנות. כמובן, לאחר הוספת יכולת ההסקה החזקה, יש לו יכולות תכנות מתקדמות יותר, כמו יצירת פרויקטים בהתאם לדרישות. לדוגמה, יצירת פרויקטים לפי דרישות, כגון:

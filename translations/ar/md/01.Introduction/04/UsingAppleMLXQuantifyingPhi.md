@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:52:34+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ar"
-}
--->
 # **تكميم Phi-3.5 باستخدام إطار عمل Apple MLX**
 
 MLX هو إطار عمل للمصفوفات مخصص لأبحاث التعلم الآلي على شرائح Apple، مقدم من أبحاث التعلم الآلي في Apple.

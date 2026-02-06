@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-16T17:11:21+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "my"
-}
--->
 ## RAG နှင့် PromptFlow နှင့် AISearch
 
 ဤဥပမာတွင် Phi3 ကို SLM အဖြစ်၊ AI Search ကို vectorDB အဖြစ်နှင့် Prompt Flow ကို low-code orchestrator အဖြစ် အသုံးပြု၍ Retrieval Augmented Generation (RAG) အက်ပလီကေးရှင်းတစ်ခုကို တည်ဆောက်မည်ဖြစ်သည်။

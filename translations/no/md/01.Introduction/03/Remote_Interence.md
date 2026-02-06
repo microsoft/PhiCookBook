@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:19:54+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "no"
-}
--->
 # Fjerninferens med den finjusterte modellen
 
 Etter at adapterne er trent i det eksterne miljøet, kan du bruke en enkel Gradio-applikasjon for å samhandle med modellen.

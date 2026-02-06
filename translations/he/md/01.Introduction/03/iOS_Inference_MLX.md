@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:34:00+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "he"
-}
--->
 # הרצת Phi-3 ו-Phi-4 על iOS עם מסגרת Apple MLX
 
 מדריך זה מראה כיצד ליצור אפליקציית iOS שמריצה את מודל Phi-3 או Phi-4 במכשיר, באמצעות מסגרת Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) היא מסגרת למידת מכונה של אפל המותאמת לשבבי Apple Silicon.

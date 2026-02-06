@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:59:06+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "pa"
-}
--->
 # **AI PC ਵਿੱਚ Inference Phi-3**
 
 ਜਨਰੇਟਿਵ AI ਦੇ ਵਿਕਾਸ ਅਤੇ ਐਜ ਡਿਵਾਈਸ ਹਾਰਡਵੇਅਰ ਸਮਰੱਥਾਵਾਂ ਵਿੱਚ ਸੁਧਾਰ ਨਾਲ, ਵੱਧ ਤੋਂ ਵੱਧ ਜਨਰੇਟਿਵ AI ਮਾਡਲ ਹੁਣ ਯੂਜ਼ਰਾਂ ਦੇ Bring Your Own Device (BYOD) ਡਿਵਾਈਸਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ। AI PC ਇਨ੍ਹਾਂ ਮਾਡਲਾਂ ਵਿੱਚੋਂ ਇੱਕ ਹਨ। 2024 ਤੋਂ ਸ਼ੁਰੂ ਹੋ ਕੇ, Intel, AMD, ਅਤੇ Qualcomm ਨੇ PC ਨਿਰਮਾਤਿਆਂ ਨਾਲ ਮਿਲ ਕੇ AI PC ਲਾਂਚ ਕੀਤੇ ਹਨ ਜੋ ਹਾਰਡਵੇਅਰ ਤਬਦੀਲੀਆਂ ਰਾਹੀਂ ਸਥਾਨਕ ਜਨਰੇਟਿਵ AI ਮਾਡਲਾਂ ਦੀ ਤਾਇਨਾਤੀ ਨੂੰ ਆਸਾਨ ਬਣਾਉਂਦੇ ਹਨ। ਇਸ ਚਰਚਾ ਵਿੱਚ, ਅਸੀਂ Intel AI PC ਤੇ Phi-3 ਨੂੰ ਕਿਵੇਂ ਤਾਇਨਾਤ ਕਰਨਾ ਹੈ, ਇਸ 'ਤੇ ਧਿਆਨ ਦੇਵਾਂਗੇ।

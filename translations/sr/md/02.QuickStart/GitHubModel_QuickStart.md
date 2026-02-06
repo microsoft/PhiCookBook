@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:42:17+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "sr"
-}
--->
 ## GitHub Models - Ограничена јавна бета
 
 Добродошли у [GitHub Models](https://github.com/marketplace/models)! Све је спремно за вас да истражите AI моделе који се налазе на Azure AI.

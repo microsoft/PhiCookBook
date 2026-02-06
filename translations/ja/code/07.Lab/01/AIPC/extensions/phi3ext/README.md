@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:34:15+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "ja"
-}
--->
 # phi3ext README
 
 これはあなたの拡張機能 "phi3ext" の README です。簡単な説明を書いた後、以下のセクションを含めることをお勧めします。

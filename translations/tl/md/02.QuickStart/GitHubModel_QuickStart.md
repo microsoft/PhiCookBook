@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:40:05+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "tl"
-}
--->
 ## GitHub Models - Limitadong Pampublikong Beta
 
 Maligayang pagdating sa [GitHub Models](https://github.com/marketplace/models)! Nakaayos na ang lahat at handa ka nang tuklasin ang mga AI Models na naka-host sa Azure AI.

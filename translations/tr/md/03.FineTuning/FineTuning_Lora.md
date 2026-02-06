@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:31:51+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "tr"
-}
--->
 # **Phi-3'ü Lora ile İnce Ayar Yapma**
 
 Microsoft'un Phi-3 Mini dil modelini, özel bir sohbet talimat veri seti üzerinde [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) kullanarak ince ayar yapma.

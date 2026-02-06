@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:33:26+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ko"
-}
--->
 ﻿## C#를 사용한 Phi 실습실에 오신 것을 환영합니다
 
 .NET 환경에서 다양한 버전의 강력한 Phi 모델을 통합하는 방법을 보여주는 여러 실습실 샘플이 준비되어 있습니다.

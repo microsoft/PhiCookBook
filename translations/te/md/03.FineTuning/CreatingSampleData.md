@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-12-21T17:57:17+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "te"
-}
--->
 # హగ్గింగ్ ఫేస్ నుండి డేటాసెట్ మరియు సంబంధిత చిత్రాలను డౌన్లోడ్ చేసి ఇమేజ్ డేటా సెట్ను రూపొందించడం
 
 ### అవలోకనం

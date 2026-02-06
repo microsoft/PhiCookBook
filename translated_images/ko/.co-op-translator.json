@@ -1331,6 +1331,66 @@
     "source_file": "imgs/01/03/iOS/hf.png",
     "language_code": "ko"
   },
+  "ic_launcher.1aae6ecf948865be.webp": {
+    "original_hash": "ea180e8d1a2e8300cc998b987266b736",
+    "translation_date": "2026-01-30T01:37:06+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher.26ad844fd37c0272.webp": {
+    "original_hash": "bd087d80b70bec05a43c745f29dc3ffc",
+    "translation_date": "2026-01-30T01:37:04+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-xhdpi/ic_launcher.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher.9292c85580ab7b7d.webp": {
+    "original_hash": "39d9bb21eb48f128a71c3f01ad3cd427",
+    "translation_date": "2026-01-30T01:37:10+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher.dfd0d4d6630b2133.webp": {
+    "original_hash": "d2acce71c7b46e5e9540d23a9f7b2166",
+    "translation_date": "2026-01-30T01:37:03+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-mdpi/ic_launcher.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher.fa582b405ef98b74.webp": {
+    "original_hash": "54ab624970c86c2146e76b93f27586f7",
+    "translation_date": "2026-01-30T01:37:08+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher_round.12076c087ef3f830.webp": {
+    "original_hash": "9ee591be72fb336861a8044086054daa",
+    "translation_date": "2026-01-30T01:37:07+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher_round.2f882ba77f6bbb4d.webp": {
+    "original_hash": "6376acb48f96a855ee95c113cd7fd616",
+    "translation_date": "2026-01-30T01:37:03+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher_round.67822431913c0792.webp": {
+    "original_hash": "947842742b29eeda80ee0805e1600366",
+    "translation_date": "2026-01-30T01:37:05+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher_round.6aeeb31c0f812b0d.webp": {
+    "original_hash": "7479edd56ab712609f030054bffd7263",
+    "translation_date": "2026-01-30T01:37:04+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp",
+    "language_code": "ko"
+  },
+  "ic_launcher_round.6e81214b3fbed9ea.webp": {
+    "original_hash": "70d6f58af3c76ee221c829b1ce9daa04",
+    "translation_date": "2026-01-30T01:37:10+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/PhiChatApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp",
+    "language_code": "ko"
+  },
   "intro.46086a3f16ec48e2.webp": {
     "original_hash": "89dc9d019f1dd3da62a30546e0242a62",
     "translation_date": "2026-01-16T10:41:56+00:00",

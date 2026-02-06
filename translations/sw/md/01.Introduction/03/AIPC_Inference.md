@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:05:58+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "sw"
-}
--->
 # **Inference Phi-3 katika AI PC**
 
 Kwa maendeleo ya AI ya kizazi na kuboresha uwezo wa vifaa vya edge, idadi kubwa ya mifano ya AI ya kizazi sasa inaweza kuunganishwa kwenye vifaa vya Watumiaji wa Bring Your Own Device (BYOD). AI PCs ni miongoni mwa mifano hii. Kuanzia mwaka 2024, Intel, AMD, na Qualcomm wameungana na watengenezaji wa PC kuanzisha AI PCs zinazorahisisha uanzishaji wa mifano ya AI ya kizazi iliyoko eneo kupitia mabadiliko ya vifaa. Katika mjadala huu, tutazingatia AI PCs za Intel na kuchunguza jinsi ya kuendesha Phi-3 kwenye AI PC ya Intel.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:11:37+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "vi"
-}
--->
 Trong bối cảnh của Phi-3-mini, inference đề cập đến quá trình sử dụng mô hình để dự đoán hoặc tạo ra kết quả dựa trên dữ liệu đầu vào. Hãy để tôi cung cấp thêm thông tin chi tiết về Phi-3-mini và khả năng inference của nó.
 
 Phi-3-mini là một phần trong dòng mô hình Phi-3 được Microsoft phát hành. Những mô hình này được thiết kế để định nghĩa lại những gì có thể làm được với các Mô hình Ngôn ngữ Nhỏ (SLMs).

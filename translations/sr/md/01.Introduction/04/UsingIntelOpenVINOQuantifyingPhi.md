@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:04:28+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "sr"
-}
--->
 # **Квантизација Phi-3.5 помоћу Intel OpenVINO**
 
 Intel је најтрадиционалнији произвођач процесора са великим бројем корисника. Са порастом машинског учења и дубоког учења, Intel се такође укључио у трку за убрзање вештачке интелигенције. За извршавање модела, Intel не користи само GPU и CPU, већ и NPU.

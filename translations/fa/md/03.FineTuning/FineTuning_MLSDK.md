@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T06:59:42+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "fa"
-}
--->
 ## نحوه استفاده از کامپوننت‌های chat-completion از رجیستری سیستم Azure ML برای فاین‌تیون مدل
 
 در این مثال، فاین‌تیون مدل Phi-3-mini-4k-instruct برای تکمیل مکالمه بین دو نفر با استفاده از دیتاست ultrachat_200k انجام می‌شود.

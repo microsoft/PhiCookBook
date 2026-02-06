@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T19:53:40+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "de"
-}
--->
 # **Inference Phi-3 auf AI-PCs**
 
 Mit dem Fortschritt generativer KI und der Verbesserung der Hardwarefähigkeiten von Edge-Geräten können immer mehr generative KI-Modelle in die Bring Your Own Device (BYOD)-Geräte der Nutzer integriert werden. AI-PCs gehören zu diesen Modellen. Ab 2024 haben Intel, AMD und Qualcomm in Zusammenarbeit mit PC-Herstellern AI-PCs eingeführt, die durch Hardwareanpassungen die Bereitstellung lokaler generativer KI-Modelle ermöglichen. In dieser Diskussion konzentrieren wir uns auf Intel AI-PCs und zeigen, wie Phi-3 auf einem Intel AI-PC eingesetzt werden kann.

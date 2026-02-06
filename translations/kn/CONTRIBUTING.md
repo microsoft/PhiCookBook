@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-12-21T14:52:33+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "kn"
-}
--->
 # ಸಹಭಾಗಿತ್ವ
 
 ಈ ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಕೊಡುಗೆಗಳು ಮತ್ತು ಸೂಚನೆಗಳನ್ನು ಸ್ವಾಗತಿಸಲಾಗಿದೆ. ಹೆಚ್ಚಿನ ಕೊಡುಗೆಗಳಿಗೆ ನೀವು ನಿಮ್ಮ ಕೊಡುಗೆಯನ್ನು ಬಳಸಲು ನಮ್ಮಿಗೆ ಹಕ್ಕುಗಳನ್ನು ನೀಡಲು ನಿಮಗೆ ಹಕ್ಕುವಿದೆ ಮತ್ತು ನಿಜವಾಗಿ ನೀವು ನೀಡುತ್ತಿದ್ದೀರಿ ಎಂದು ಘೋಷಿಸುವ ಕೆಲವು Contributor License Agreement (CLA) ಒಪ್ಪಿಕೊಳ್ಳಬೇಕು. ವಿವರಗಳಿಗೆ, ಭೇಟಿ ಮಾಡಿ [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)

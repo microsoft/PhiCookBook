@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:08:13+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "ko"
-}
--->
 Phi-3-mini의 맥락에서, 추론(inference)은 입력 데이터를 기반으로 모델을 사용해 예측하거나 출력을 생성하는 과정을 의미합니다. Phi-3-mini와 그 추론 기능에 대해 좀 더 자세히 설명드리겠습니다.
 
 Phi-3-mini는 Microsoft에서 출시한 Phi-3 시리즈 모델의 일부입니다. 이 모델들은 소형 언어 모델(Small Language Models, SLM)의 가능성을 재정의하기 위해 설계되었습니다.

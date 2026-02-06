@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:52:26+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ru"
-}
--->
 # **Квантование Phi-3.5 с использованием Apple MLX Framework**
 
 MLX — это фреймворк для исследований в области машинного обучения на Apple Silicon, разработанный командой Apple по исследованию машинного обучения.

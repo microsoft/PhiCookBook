@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-12-21T21:45:47+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "pcm"
-}
--->
 # **Chop tori wit Phi-4-mini ONNX**
 
 ***ONNX*** na open format wey dem build to represent machine learning models. ONNX dey define a common set of operators - di building blocks of machine learning and deep learning models - and a common file format wey enable AI developers make dem fit use models wit different frameworks, tools, runtimes, and compilers. 

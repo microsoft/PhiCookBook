@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-17T08:53:26+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "cs"
-}
--->
 # Phi-3.5-vision recept na doladění
 
 Toto je oficiální podpora doladění Phi-3.5-vision pomocí knihoven huggingface.  

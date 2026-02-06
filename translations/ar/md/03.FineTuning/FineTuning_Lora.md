@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:27:31+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "ar"
-}
--->
 # **تخصيص نموذج Phi-3 باستخدام Lora**
 
 تخصيص نموذج اللغة Phi-3 Mini من مايكروسوفت باستخدام [LoRA (التكيف منخفض الرتبة)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) على مجموعة بيانات تعليمات دردشة مخصصة.

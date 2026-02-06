@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-12-22T00:36:48+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "kn"
-}
--->
 # **iOS ನಲ್ಲಿ Phi-3 ಇನ್‌ಫರೆನ್ಸ್**
 
 Phi-3-mini ಮೈಕ್ರೋಸಾಫ್ಟ್‌ನ ಹೊಸ ಮಾದರಿ ಸರಣಿ ಆಗಿದ್ದು, ಎಡ್ಜ್ ಸಾಧನಗಳ ಮತ್ತು IoT ಸಾಧನಗಳ ಮೇಲೆ ವಿಜ್ಞಾನೀಕೃತ ಭಾಷಾ ಮಾದರಿಗಳು (Large Language Models, LLMs) ಅನ್ನು ನಿಯೋಜಿಸಲು ಅನುಮತಿಸುತ್ತದೆ. Phi-3-mini iOS, Android ಮತ್ತು Edge Device ನಿಯೋಜನೆಗಳುಗಾಗಿ ಲಭ್ಯವಿದ್ದು, BYOD ಪರಿಸರಗಳಲ್ಲಿ ಜನರೆಟಿವ್ AI ಅನ್ನು ನಿಯೋಜಿಸುವುದಕ್ಕೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಕೆಳಗಿನ ಉದಾಹರಣೆಯೆ iOS ಮೇಲೆ Phi-3-mini ಅನ್ನು ಹೇಗೆ ನಿಯೋಜಿಸಬೇಕೆಂಬುದನ್ನು ತೋರಿಸುತ್ತದೆ.

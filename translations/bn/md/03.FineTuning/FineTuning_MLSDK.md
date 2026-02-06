@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:10:49+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "bn"
-}
--->
 ## Azure ML সিস্টেম রেজিস্ট্রি থেকে chat-completion কম্পোনেন্ট ব্যবহার করে মডেল ফাইন টিউন করার পদ্ধতি
 
 এই উদাহরণে আমরা Phi-3-mini-4k-instruct মডেলটি ultrachat_200k ডেটাসেট ব্যবহার করে দুইজনের মধ্যে কথোপকথন সম্পন্ন করার জন্য ফাইন টিউন করব।

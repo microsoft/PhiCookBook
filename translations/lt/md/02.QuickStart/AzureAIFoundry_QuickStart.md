@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-09-12T14:58:53+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "lt"
-}
--->
 # **Naudojant Phi-3 Azure AI Foundry**
 
 Plėtojant generatyvųjį dirbtinį intelektą (Generative AI), siekiame naudoti vieningą platformą, kuri leistų valdyti skirtingus LLM ir SLM modelius, integruoti įmonės duomenis, atlikti modelių pritaikymą/fine-tuning/RAG operacijas bei vertinti įvairias verslo sritis po LLM ir SLM integracijos. Tokiu būdu generatyvusis dirbtinis intelektas gali būti efektyviau pritaikytas išmaniosioms programoms. [Azure AI Foundry](https://ai.azure.com) yra įmonės lygio generatyvaus dirbtinio intelekto taikymo platforma.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-12-22T01:26:56+00:00",
-  "source_file": "md/01.Introduction/03/MLX_Inference.md",
-  "language_code": "te"
-}
--->
 # **Phi-3 ను Apple MLX Framework ఉపయోగించి ఇన్ఫరెన్స్ చేయడం**
 
 ## **MLX ఫ్రేమ్‌వర్క్ అంటే ఏమిటి**

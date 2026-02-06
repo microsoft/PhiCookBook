@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:57:24+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "sv"
-}
--->
 # **Låt Phi-3 bli en branschexpert**
 
 För att använda Phi-3-modellen inom en bransch behöver du lägga till branschspecifik affärsdata till Phi-3-modellen. Vi har två olika alternativ, det första är RAG (Retrieval Augmented Generation) och det andra är Fine Tuning.

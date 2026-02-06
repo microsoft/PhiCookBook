@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-12-21T22:12:06+00:00",
-  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
-  "language_code": "te"
-}
--->
 # **Apple MLX ఫ్రేమ్‌వర్క్‌తో Phi-3 ఇన్ఫరెన్స్**
 
 ## **MLX ఫ్రేమ్‌వర్క్ అంటే ఏమిటి**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-09-12T14:46:26+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "lt"
-}
--->
 # **Azure Machine Learning paslaugos pristatymas**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) yra debesų paslauga, skirta paspartinti ir valdyti mašininio mokymosi (ML) projektų gyvavimo ciklą.

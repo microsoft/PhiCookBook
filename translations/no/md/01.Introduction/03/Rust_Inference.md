@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:30:38+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "no"
-}
--->
 # Kryssplattform inferens med Rust
 
 Denne veiledningen tar oss gjennom prosessen med å utføre inferens ved hjelp av Rust og [Candle ML-rammeverket](https://github.com/huggingface/candle) fra HuggingFace. Å bruke Rust til inferens gir flere fordeler, spesielt sammenlignet med andre programmeringsspråk. Rust er kjent for sin høye ytelse, på nivå med C og C++. Dette gjør det til et utmerket valg for inferensoppgaver, som ofte kan være beregningsintensive. Dette skyldes særlig nullkostnadsabstraksjoner og effektiv minnehåndtering, uten overhead fra søppelrydding. Rusts kryssplattformmuligheter gjør det mulig å utvikle kode som kjører på ulike operativsystemer, inkludert Windows, macOS og Linux, samt mobile operativsystemer, uten store endringer i kodebasen.

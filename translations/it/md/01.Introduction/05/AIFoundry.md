@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-07-16T22:30:52+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "it"
-}
--->
 # **Utilizzo di Azure AI Foundry per la valutazione**
 
 ![aistudo](../../../../../translated_images/it/AIFoundry.9e0b513e999a1c5a.webp)

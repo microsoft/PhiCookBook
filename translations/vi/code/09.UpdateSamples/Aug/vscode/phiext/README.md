@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:31:16+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "vi"
-}
--->
 # phiext README
 
 Đây là README cho phần mở rộng "phiext" của bạn. Sau khi viết một mô tả ngắn gọn, chúng tôi khuyên bạn nên bao gồm các phần sau.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-16T16:50:38+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
-  "language_code": "my"
-}
--->
 # ပြောင်းလဲမှုမှတ်တမ်း
 
 "phi3ext" extension အားလုံး၏ အရေးကြီးပြောင်းလဲမှုများကို ဒီဖိုင်ထဲမှာ မှတ်တမ်းတင်ထားပါမယ်။

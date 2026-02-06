@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-10-11T12:25:15+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "et"
-}
--->
 Inference tähendab Phi-3-mini kontekstis protsessi, kus mudelit kasutatakse ennustuste tegemiseks või väljundite genereerimiseks sisendandmete põhjal. Siin on rohkem teavet Phi-3-mini ja selle järeldusvõime kohta.
 
 Phi-3-mini kuulub Microsofti poolt välja antud Phi-3 mudelite seeriasse. Need mudelid on loodud selleks, et muuta väikeste keelemudelite (SLM) võimaluste piire.

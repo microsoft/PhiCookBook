@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-09-12T14:54:13+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "lt"
-}
--->
 # Kryžminė platformų inferencija su Rust
 
 Šiame vadove sužinosime, kaip atlikti inferenciją naudojant Rust ir [Candle ML framework](https://github.com/huggingface/candle) iš HuggingFace. Rust naudojimas inferencijai suteikia keletą privalumų, ypač lyginant su kitomis programavimo kalbomis. Rust garsėja savo aukštu našumu, kuris yra panašus į C ir C++. Tai daro jį puikiu pasirinkimu inferencijos užduotims, kurios gali būti skaičiavimo intensyvios. Ypač tai pasiekiama dėl nulinių kaštų abstrakcijų ir efektyvaus atminties valdymo, kuris neturi šiukšlių surinkimo našumo sąnaudų. Rust kryžminės platformos galimybės leidžia kurti kodą, kuris veikia įvairiose operacinėse sistemose, įskaitant Windows, macOS ir Linux, taip pat mobiliose operacinėse sistemose, be reikšmingų kodo pakeitimų.

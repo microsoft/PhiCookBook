@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-12-21T16:24:22+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "kn"
-}
--->
 # ಬದಲಾವಣೆಗಳ ದಾಖಲೆ
 
 ಈ ಕಡತದಲ್ಲಿ "phiext" ವಿಸ್ತರಣೆಗೆ ಸಂಬಂಧಿಸಿದ ಎಲ್ಲಾ ಗಮನಾರ್ಹ ಬದಲಾವಣೆಗಳನ್ನು ದಾಖಲಿಸಲಾಗುತ್ತದೆ.

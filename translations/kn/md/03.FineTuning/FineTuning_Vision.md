@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-12-21T17:14:53+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "kn"
-}
--->
 # Phi-3.5-vision ಫೈನ್ಟ್ಯೂನಿಂಗ್ ರೆಸಿಪಿ
 
 ಇದು huggingface ಲೈಬ್ರರಿಗಳನ್ನು ಬಳಸಿಕೊಂಡು Phi-3.5-vision ಫೈನ್ಟ್ಯೂನಿಂಗ್‌ಗೆ ಅಧಿಕೃತ ಬೆಂಬಲವಾಗಿದೆ.

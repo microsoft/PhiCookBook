@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-12-22T01:47:20+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "kn"
-}
--->
 # **Apple MLX ಫ್ರೇಮ್‌ವರ್ಕ್ ಬಳಸಿ Phi-3.5 ಅನ್ನು ಕ್ವಾಂಟೈಸ್ ಮಾಡುವುದು**
 
 

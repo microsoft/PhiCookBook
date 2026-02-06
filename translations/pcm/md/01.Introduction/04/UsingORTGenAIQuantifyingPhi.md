@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-12-22T02:07:36+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "pcm"
-}
--->
 # **Quantizing Phi Family wit Generative AI extensions for onnxruntime**
 
 ## **Wetin be Generative AI extensions for onnxruntime**

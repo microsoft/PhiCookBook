@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T07:56:43+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ru"
-}
--->
 # **Тонкая настройка Phi-3 с помощью Apple MLX Framework**
 
 Мы можем выполнить тонкую настройку в сочетании с Lora через командную строку Apple MLX Framework. (Если вы хотите узнать больше о работе MLX Framework, пожалуйста, прочитайте [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))

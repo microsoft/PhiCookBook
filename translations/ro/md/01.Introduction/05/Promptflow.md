@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-16T22:44:34+00:00",
-  "source_file": "md/01.Introduction/05/Promptflow.md",
-  "language_code": "ro"
-}
--->
 # **Introduceți Promptflow**
 
 [Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) este un instrument vizual de automatizare a fluxurilor de lucru care permite utilizatorilor să creeze fluxuri automate folosind șabloane predefinite și conectori personalizați. Este conceput pentru a ajuta dezvoltatorii și analiștii de business să construiască rapid procese automate pentru sarcini precum gestionarea datelor, colaborarea și optimizarea proceselor. Cu Prompt Flow, utilizatorii pot conecta cu ușurință diferite servicii, aplicații și sisteme și pot automatiza procese de business complexe.

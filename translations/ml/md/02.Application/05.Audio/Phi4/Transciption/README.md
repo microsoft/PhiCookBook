@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-12-21T19:15:43+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ml"
-}
--->
 ## **Phi-4-multimodal ഉപയോഗിച്ച് ഓഡിയോ ട്രാൻസ്‌ക്രിപ്റ്റുകൾ എടുക്കൽ**
 
 Phi-4-multimodal ടെക്സ്റ്റ്, ചിത്രങ്ങൾ എന്നിവയ്ക്കൊപ്പം ഓഡിയോയും ഉപയോഗിക്കാൻ കഴിയുന്ന ഒരു ഫുൾ-മോഡൽ ആണ്. ഇത് എങ്ങനെ ഉപയോഗിക്കാമെന്ന് നോക്കാം.

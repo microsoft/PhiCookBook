@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:13:49+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "my"
-}
--->
 Phi-3-mini အတွက် inference ဆိုသည်မှာ input data အပေါ် အခြေခံပြီး မော်ဒယ်ကို အသုံးပြု၍ ခန့်မှန်းချက်များ ထုတ်ပေးခြင်း သို့မဟုတ် output များ ဖန်တီးခြင်း ဖြစ်သည်။ Phi-3-mini နှင့် ၎င်း၏ inference စွမ်းဆောင်ရည်များအကြောင်း ပိုမိုအသေးစိတ် ဖော်ပြပေးလိုပါသည်။
 
 Phi-3-mini သည် Microsoft မှ ထုတ်ပြန်သော Phi-3 စီးရီး မော်ဒယ်များထဲမှ တစ်ခုဖြစ်သည်။ ဤမော်ဒယ်များသည် Small Language Models (SLMs) အတွက် ဖြစ်နိုင်ခြေများကို ပြန်လည်သတ်မှတ်ရန် ရည်ရွယ်ထားသည်။

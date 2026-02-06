@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:05+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "fa"
-}
--->
 ## **استفاده از Phi-4-multimodal برای خواندن تصاویر و تولید کد**
 
 Phi-4-multimodal توانایی بالایی در خواندن تصاویر دارد. بیایید با استفاده از پایتون، توابع زیر را پیاده‌سازی کنیم. تصویر یک صفحه ChatGPT است.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:02:29+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "hu"
-}
--->
 # **Phi-3 finomhangolása az Apple MLX keretrendszerrel**
 
 A finomhangolást Lora-val kombinálva az Apple MLX keretrendszer parancssorán keresztül végezhetjük el. (Ha többet szeretnél megtudni az MLX keretrendszer működéséről, kérlek olvasd el a [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) dokumentumot)

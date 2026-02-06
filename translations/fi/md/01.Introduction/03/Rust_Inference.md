@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:30:53+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "fi"
-}
--->
 # Ristiinalustainen päättely Rustilla
 
 Tämä opas ohjaa meitä suorittamaan päättelyn Rustilla ja HuggingFacen [Candle ML -kehikolla](https://github.com/huggingface/candle). Rustin käyttäminen päättelyssä tarjoaa useita etuja, erityisesti verrattuna muihin ohjelmointikieliin. Rust tunnetaan korkeasta suorituskyvystään, joka on verrattavissa C:n ja C++:n tasoon. Tämä tekee siitä erinomaisen valinnan päättelytehtäviin, jotka voivat olla laskennallisesti vaativia. Erityisesti tämä perustuu nollakustannuksellisiin abstraktioihin ja tehokkaaseen muistinhallintaan, jossa ei ole roskienkeruusta aiheutuvaa ylikuormitusta. Rustin ristiinalustaiset ominaisuudet mahdollistavat koodin kehittämisen, joka toimii eri käyttöjärjestelmissä, kuten Windowsissa, macOS:ssä ja Linuxissa, sekä mobiilikäyttöjärjestelmissä ilman merkittäviä muutoksia koodipohjaan.

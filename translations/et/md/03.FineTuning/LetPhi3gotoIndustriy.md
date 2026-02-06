@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-10-11T11:45:35+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "et"
-}
--->
 # **Las Phi-3 saada tööstusekspert**
 
 Et viia Phi-3 mudel tööstusesse, tuleb mudelisse lisada tööstuse ärialaseid andmeid. Selleks on kaks erinevat võimalust: RAG (Retrieval Augmented Generation) ja Fine Tuning.

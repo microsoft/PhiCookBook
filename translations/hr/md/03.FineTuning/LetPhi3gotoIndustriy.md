@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T10:01:43+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "hr"
-}
--->
 # **Neka Phi-3 postane stručnjak za industriju**
 
 Da biste model Phi-3 primijenili u nekoj industriji, potrebno je dodati poslovne podatke te industrije u Phi-3 model. Imamo dvije različite opcije: prva je RAG (Retrieval Augmented Generation), a druga je Fine Tuning.

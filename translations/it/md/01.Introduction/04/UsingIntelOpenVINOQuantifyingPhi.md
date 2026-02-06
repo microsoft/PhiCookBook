@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:01:16+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "it"
-}
--->
 # **Quantizzazione di Phi-3.5 con Intel OpenVINO**
 
 Intel è il produttore di CPU più tradizionale con molti utenti. Con l’ascesa del machine learning e del deep learning, Intel si è unita alla competizione per l’accelerazione dell’AI. Per l’inferenza dei modelli, Intel non utilizza solo GPU e CPU, ma anche NPU.

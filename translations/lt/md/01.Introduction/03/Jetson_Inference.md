@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-09-12T14:53:56+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "lt"
-}
--->
 # **Inference Phi-3 Nvidia Jetson įrenginiuose**
 
 Nvidia Jetson – tai Nvidia sukurtų įterptinių kompiuterių plokščių serija. Jetson TK1, TX1 ir TX2 modeliai turi Tegra procesorių (arba SoC) iš Nvidia, kuris integruoja ARM architektūros centrinį procesorių (CPU). Jetson yra mažos energijos sistemos, sukurtos mašininio mokymosi programų spartinimui. Nvidia Jetson naudojamas profesionalių kūrėjų, siekiančių kurti pažangius dirbtinio intelekto produktus įvairiose pramonės šakose, taip pat studentų ir entuziastų, norinčių praktiškai mokytis dirbtinio intelekto ir kurti įspūdingus projektus. SLM diegiamas kraštiniuose įrenginiuose, tokiuose kaip Jetson, siekiant geresnio pramoninių generatyvinio dirbtinio intelekto taikymo scenarijų įgyvendinimo.
