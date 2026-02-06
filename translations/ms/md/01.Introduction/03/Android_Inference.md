@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-16T20:15:05+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "ms"
-}
--->
 # **Inferens Phi-3 di Android**
 
 Mari kita terokai bagaimana anda boleh melakukan inferens dengan Phi-3-mini pada peranti Android. Phi-3-mini adalah siri model baru dari Microsoft yang membolehkan penyebaran Large Language Models (LLMs) pada peranti edge dan peranti IoT.

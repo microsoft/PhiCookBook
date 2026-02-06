@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-09-12T14:55:55+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "lt"
-}
--->
 # **Inference Phi-3 vietiniame serveryje**
 
 Phi-3 galima įdiegti vietiniame serveryje. Vartotojai gali pasirinkti [Ollama](https://ollama.com) arba [LM Studio](https://llamaedge.com) sprendimus, arba parašyti savo kodą. Phi-3 vietines paslaugas galima prijungti per [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) arba [Langchain](https://www.langchain.com/), kad būtų kuriamos Copilot programos.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:19:26+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "ko"
-}
--->
 # **iOS에서 Phi-3 추론하기**
 
 Phi-3-mini는 Microsoft에서 새롭게 선보인 모델 시리즈로, 엣지 디바이스와 IoT 기기에서 대형 언어 모델(LLM)을 배포할 수 있게 해줍니다. Phi-3-mini는 iOS, Android, 엣지 디바이스 배포를 지원하여 BYOD 환경에서도 생성형 AI를 활용할 수 있습니다. 아래 예제는 iOS에서 Phi-3-mini를 배포하는 방법을 보여줍니다.

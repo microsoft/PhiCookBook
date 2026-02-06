@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T12:46:07+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "fi"
-}
--->
 # **Phi-perheen kvantifiointi**
 
 Mallin kvantifiointi tarkoittaa parametrien (kuten painojen ja aktivaatioarvojen) kuvaamista neuroverkon mallissa suuresta arvovälistä (yleensä jatkuvasta arvovälistä) pienempään äärelliseen arvoväliin. Tämä teknologia voi vähentää mallin kokoa ja laskennallista monimutkaisuutta sekä parantaa mallin toiminnan tehokkuutta resursseiltaan rajatuissa ympäristöissä, kuten mobiililaitteissa tai sulautetuissa järjestelmissä. Mallin kvantifiointi saavuttaa pakkauksen vähentämällä parametrien tarkkuutta, mutta se tuo mukanaan myös tiettyä tarkkuuden menetystä. Siksi kvantifiointiprosessissa on tasapainotettava mallin koko, laskennallinen monimutkaisuus ja tarkkuus. Yleisiä kvantifiointimenetelmiä ovat esimerkiksi kiinteäpistekvantifiointi, liukulukukvantifiointi jne. Voit valita sopivan kvantifiointistrategian käyttötarkoituksen ja tarpeiden mukaan.

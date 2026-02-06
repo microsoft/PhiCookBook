@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-12-21T22:00:01+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "pcm"
-}
--->
 ### Example Scenario
 
 Imagine say you get one image (`demo.png`) and you wan generate Python code wey go process dat image and save new version of am (`phi-3-vision.jpg`). 

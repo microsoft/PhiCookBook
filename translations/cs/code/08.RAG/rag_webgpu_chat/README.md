@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
-  "translation_date": "2025-07-16T17:20:56+00:00",
-  "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
-  "language_code": "cs"
-}
--->
 Phi-3-mini WebGPU RAG Chatbot
 
 ## Ukázka pro předvedení WebGPU a RAG vzoru

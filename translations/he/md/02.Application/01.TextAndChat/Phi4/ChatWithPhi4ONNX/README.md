@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:18:16+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "he"
-}
--->
 # **שיחה עם Phi-4-mini ONNX**
 
 ***ONNX*** הוא פורמט פתוח שנבנה כדי לייצג מודלים של למידת מכונה. ONNX מגדיר סט משותף של אופרטורים - אבני הבניין של מודלים ללמידת מכונה ולמידה עמוקה - ופורמט קובץ אחיד שמאפשר למפתחי AI להשתמש במודלים עם מגוון מסגרות, כלים, סביבות ריצה ומקומפיילרים.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:43:38+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "hu"
-}
--->
 # **Építsd meg saját Visual Studio Code GitHub Copilot Chat-ed a Microsoft Phi-3 családdal**
 
 Használtad már a workspace agentet a GitHub Copilot Chat-ben? Szeretnéd megalkotni a saját csapatod kódügynökét? Ez a gyakorlati labor arra törekszik, hogy az open source modellt kombinálva vállalati szintű kódüzleti ügynököt építsen.

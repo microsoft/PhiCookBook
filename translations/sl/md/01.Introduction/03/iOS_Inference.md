@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:25:19+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "sl"
-}
--->
 # **Inferenca Phi-3 na iOS**
 
 Phi-3-mini je nova serija modelov iz Microsofta, ki omogoča nameščanje velikih jezikovnih modelov (LLM) na robne naprave in IoT naprave. Phi-3-mini je na voljo za iOS, Android in Edge Device namestitve, kar omogoča uporabo generativne umetne inteligence v BYOD okoljih. Naslednji primer prikazuje, kako namestiti Phi-3-mini na iOS.

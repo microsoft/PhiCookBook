@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-07-17T04:49:49+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "pl"
-}
--->
 ## **Używanie Phi-4-mini-reasoning(3.8b) lub Phi-4-reasoning(14b) jako Eksperta ds. Rozumowania**
 
 Przyjrzyjmy się jego silnym zdolnościom rozumowania za pomocą Phi-4-mini-reasoning lub Phi-4-mini-reasoning.

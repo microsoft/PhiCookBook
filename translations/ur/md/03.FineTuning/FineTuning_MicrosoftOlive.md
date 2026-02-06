@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:39:21+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "ur"
-}
--->
 # **Microsoft Olive کے ساتھ Phi-3 کی فائن ٹیوننگ**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ایک آسان استعمال ہونے والا ہارڈویئر سے آگاہ ماڈل آپٹیمائزیشن ٹول ہے جو ماڈل کمپریشن، آپٹیمائزیشن، اور کمپائلیشن کے شعبوں میں صنعت کی بہترین تکنیکوں کو یکجا کرتا ہے۔

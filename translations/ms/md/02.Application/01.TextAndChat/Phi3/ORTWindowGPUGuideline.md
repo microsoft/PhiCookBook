@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-17T02:45:43+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-  "language_code": "ms"
-}
--->
 # **Garis Panduan untuk OnnxRuntime GenAI Windows GPU**
 
 Garis panduan ini menyediakan langkah-langkah untuk memasang dan menggunakan ONNX Runtime (ORT) dengan GPU di Windows. Ia direka untuk membantu anda memanfaatkan pecutan GPU bagi model anda, meningkatkan prestasi dan kecekapan.

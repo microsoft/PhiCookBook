@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-12-21T22:16:56+00:00",
-  "source_file": "md/03.FineTuning/olive-lab/readme.md",
-  "language_code": "pcm"
-}
--->
 # Lab. How to make AI models work well for on-device inference
 
 ## Intro 

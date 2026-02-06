@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:16:06+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "ja"
-}
--->
 # **Phi-4-mini ONNXとのチャット**
 
 ***ONNX*** は機械学習モデルを表現するために作られたオープンフォーマットです。ONNXは、機械学習や深層学習モデルの基本要素である共通の演算子セットと、さまざまなフレームワーク、ツール、ランタイム、コンパイラでモデルを利用できるようにする共通のファイル形式を定義しています。

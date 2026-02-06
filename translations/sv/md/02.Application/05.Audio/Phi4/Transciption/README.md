@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:12:11+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "sv"
-}
--->
 ## **Extrahera ljudtranskriptioner med Phi-4-multimodal**
 
 Phi-4-multimodal är en fullmodal modell som kan använda ljud utöver text och bilder. Låt oss se hur man använder den.

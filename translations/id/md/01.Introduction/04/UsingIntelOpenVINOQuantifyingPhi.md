@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:03:04+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "id"
-}
--->
 # **Mengkuantisasi Phi-3.5 menggunakan Intel OpenVINO**
 
 Intel adalah produsen CPU paling tradisional dengan banyak pengguna. Dengan berkembangnya machine learning dan deep learning, Intel juga ikut bersaing dalam akselerasi AI. Untuk inferensi model, Intel tidak hanya menggunakan GPU dan CPU, tetapi juga menggunakan NPU.

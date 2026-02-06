@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:44:04+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "cs"
-}
--->
 # **Vytvořte si vlastní Visual Studio Code GitHub Copilot Chat s Microsoft Phi-3 Family**
 
 Použili jste už workspace agenta v GitHub Copilot Chat? Chcete si vytvořit vlastního agenta pro kódování pro váš tým? Tento praktický lab si klade za cíl spojit open source model a vytvořit podnikový agent pro kódování na úrovni firmy.

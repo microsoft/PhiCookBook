@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-10-11T11:50:25+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "et"
-}
--->
 # **Phi-3 peenhäälestamine Apple MLX raamistikuga**
 
 Peenhäälestamist koos Lora-ga saab teha Apple MLX raamistiku käsurea kaudu. (Kui soovite rohkem teada MLX raamistiku toimimise kohta, lugege [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-07-16T20:07:05+00:00",
-  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
-  "language_code": "sk"
-}
--->
 # **Inference Phi-3 na AI PC**
 
 S rozvojom generatívnej AI a zlepšovaním hardvérových schopností edge zariadení je čoraz viac generatívnych AI modelov možné integrovať do používateľských zariadení typu Bring Your Own Device (BYOD). AI PC patria medzi tieto modely. Od roku 2024 spolupracujú Intel, AMD a Qualcomm s výrobcami PC na zavedení AI PC, ktoré umožňujú nasadenie lokalizovaných generatívnych AI modelov prostredníctvom hardvérových úprav. V tejto diskusii sa zameriame na Intel AI PC a preskúmame, ako nasadiť Phi-3 na Intel AI PC.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-16T17:32:09+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
-  "language_code": "cs"
-}
--->
 # phiext README
 
 Toto je README pro vaše rozšíření "phiext". Po krátkém popisu doporučujeme zahrnout následující sekce.

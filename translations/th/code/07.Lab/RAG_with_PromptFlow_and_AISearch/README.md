@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-16T17:08:40+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "th"
-}
--->
 ## RAG กับ PromptFlow และ AISearch
 
 ในตัวอย่างนี้ เราจะสร้างแอปพลิเคชัน Retrieval Augmented Generation (RAG) โดยใช้ Phi3 เป็น SLM, AI Search เป็น vectorDB และ Prompt Flow เป็นตัวจัดการแบบ low-code

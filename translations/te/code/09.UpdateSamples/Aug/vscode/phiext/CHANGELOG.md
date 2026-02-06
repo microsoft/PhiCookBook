@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-12-21T16:22:10+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "te"
-}
--->
 # మార్పుల రికార్డు
 
 "phiext" ఎక్స్‌టెన్షన్‌కు సంబంధించిన అన్ని ముఖ్యమైన మార్పులు ఈ ఫైల్‌లో నమోదు చేయబడతాయి.

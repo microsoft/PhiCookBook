@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:36:47+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "my"
-}
--->
 # **Lora ဖြင့် Phi-3 ကို အတိအကျ ပြင်ဆင်ခြင်း**
 
 Microsoft ၏ Phi-3 Mini ဘာသာစကားမော်ဒယ်ကို [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) အသုံးပြု၍ ကိုယ်ပိုင် စကားပြောညွှန်ကြားချက် ဒေတာစုံအပေါ် အတိအကျ ပြင်ဆင်ခြင်း။

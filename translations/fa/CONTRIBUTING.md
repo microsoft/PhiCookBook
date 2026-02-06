@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:36:18+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "fa"
-}
--->
 # مشارکت
 
 این پروژه از مشارکت‌ها و پیشنهادات استقبال می‌کند. بیشتر مشارکت‌ها نیازمند آن است که شما با یک توافقنامه مجوز مشارکت‌کننده (CLA) موافقت کنید که اعلام می‌کند شما حق دارید و واقعاً این حق را به ما می‌دهید که از مشارکت شما استفاده کنیم. برای جزئیات بیشتر به [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com) مراجعه کنید.

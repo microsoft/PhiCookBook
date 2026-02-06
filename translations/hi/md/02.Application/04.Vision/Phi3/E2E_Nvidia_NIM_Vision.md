@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:54:03+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "hi"
-}
--->
 ### उदाहरण परिदृश्य
 
 कल्पना करें कि आपके पास एक इमेज (`demo.png`) है और आप ऐसा Python कोड बनाना चाहते हैं जो इस इमेज को प्रोसेस करे और उसकी एक नई कॉपी (`phi-3-vision.jpg`) सेव करे।

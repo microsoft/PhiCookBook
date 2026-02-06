@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:48:51+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "sk"
-}
--->
 # **Kvantifikácia rodiny Phi**
 
 Kvantifikácia modelu znamená proces mapovania parametrov (ako sú váhy a hodnoty aktivácie) v modeli neurónovej siete z veľkého rozsahu hodnôt (zvyčajne z kontinuálneho rozsahu hodnôt) do menšieho konečného rozsahu hodnôt. Táto technológia môže zmenšiť veľkosť a výpočtovú zložitosť modelu a zlepšiť prevádzkovú efektívnosť modelu v prostrediach s obmedzenými zdrojmi, ako sú mobilné zariadenia alebo zabudované systémy. Kvantifikácia modelu dosahuje kompresiu znížením presnosti parametrov, ale zároveň prináša určitú stratu presnosti. Preto je pri procese kvantifikácie potrebné vyvážiť veľkosť modelu, výpočtovú zložitosť a presnosť. Bežné kvantifikačné metódy zahŕňajú kvantifikáciu na pevný bod, kvantifikáciu v plávajúcej desatinnej čiarke atď. Podľa špecifického scenára a potrieb môžete zvoliť vhodnú kvantifikačnú stratégiu.

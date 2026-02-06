@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:39:38+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "sw"
-}
--->
 # **Inference Phi-3-Vision kwa Ndani**
 
 Phi-3-vision-128k-instruct inaruhusu Phi-3 si tu kuelewa lugha, bali pia kuona dunia kwa njia ya kuona. Kupitia Phi-3-vision-128k-instruct, tunaweza kutatua matatizo mbalimbali ya kuona, kama vile OCR, uchambuzi wa meza, utambuzi wa vitu, kueleza picha n.k. Tunaweza kumaliza kazi ambazo awali zilihitaji mafunzo mengi ya data kwa urahisi. Hapa chini ni mbinu na matukio ya matumizi yanayohusiana yanayotajwa na Phi-3-vision-128k-instruct

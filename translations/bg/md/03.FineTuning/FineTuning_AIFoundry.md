@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T06:14:07+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "bg"
-}
--->
 # Финна настройка на Phi-3 с Azure AI Foundry
 
 Нека разгледаме как да направим финна настройка на езиковия модел Phi-3 Mini на Microsoft с помощта на Azure AI Foundry. Финната настройка ви позволява да адаптирате Phi-3 Mini към конкретни задачи, правейки го още по-мощен и контекстно осъзнат.

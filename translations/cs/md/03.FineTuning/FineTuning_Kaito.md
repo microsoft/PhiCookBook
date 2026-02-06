@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-07-17T06:24:51+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "cs"
-}
--->
 ## Doladění s Kaito
 
 [Kaito](https://github.com/Azure/kaito) je operator, který automatizuje nasazení AI/ML inferenčních modelů v Kubernetes clusteru.

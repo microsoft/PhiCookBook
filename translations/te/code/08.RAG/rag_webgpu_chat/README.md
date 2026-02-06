@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
-  "translation_date": "2025-12-21T16:55:04+00:00",
-  "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
-  "language_code": "te"
-}
--->
 Phi-3-mini WebGPU RAG చాట్‌బాట్
 
 ## WebGPU మరియు RAG ప్యాటర్న్‌ను ప్రదర్శించేందుకు డెమో

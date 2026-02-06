@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-10-11T11:50:35+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "ta"
-}
--->
 # Azure AI Foundry மூலம் Phi-3 மாடலை நன்றாக அமைத்தல்
 
 Microsoft இன் Phi-3 Mini மொழி மாடலை Azure AI Foundry மூலம் நன்றாக அமைப்பது எப்படி என்பதை ஆராய்வோம். Fine-tuning மூலம் Phi-3 Mini மாடலை குறிப்பிட்ட பணிகளுக்கு ஏற்றவாறு மாற்றி, அதை மேலும் சக்திவாய்ந்ததாகவும் சூழலுக்கு பொருத்தமாகவும் மாற்றலாம்.

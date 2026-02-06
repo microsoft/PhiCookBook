@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-07-16T16:04:47+00:00",
-  "source_file": "code/03.Finetuning/olive-ort-example/README.md",
-  "language_code": "vi"
-}
--->
 # Tinh chỉnh Phi3 bằng Olive
 
 Trong ví dụ này, bạn sẽ sử dụng Olive để:

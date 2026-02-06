@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-10-11T12:27:29+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "ta"
-}
--->
 # **Phi-3.5 ஐ Intel OpenVINO பயன்படுத்தி அளவீடு செய்வது**
 
 Intel என்பது மிகவும் பாரம்பரியமான CPU உற்பத்தியாளர், பல பயனர்களைக் கொண்டுள்ளது. இயந்திரக் கற்றல் மற்றும் ஆழமான கற்றல் வளர்ச்சியுடன், Intel AI வேகப்படுத்தலில் போட்டியில் இணைந்துள்ளது. மாடல் முடிவெடுப்புக்காக, Intel GPUக்கள் மற்றும் CPUக்களை மட்டுமல்லாமல், NPUக்களையும் பயன்படுத்துகிறது.

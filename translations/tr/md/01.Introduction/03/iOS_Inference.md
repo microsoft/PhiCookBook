@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:21:22+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "tr"
-}
--->
 # **iOS'ta Phi-3 Çıkarımı**
 
 Phi-3-mini, Microsoft’un kenar cihazlar ve IoT cihazlarında Büyük Dil Modelleri (LLM) dağıtımını mümkün kılan yeni bir model serisidir. Phi-3-mini, iOS, Android ve Kenar Cihaz dağıtımları için kullanılabilir ve BYOD ortamlarında üretken yapay zekanın dağıtılmasına olanak tanır. Aşağıdaki örnek, Phi-3-mini’nin iOS üzerinde nasıl dağıtılacağını göstermektedir.

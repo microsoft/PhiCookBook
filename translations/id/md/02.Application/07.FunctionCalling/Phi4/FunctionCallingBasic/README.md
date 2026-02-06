@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:16:25+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "id"
-}
--->
 ## **Pemanggilan fungsi di Phi-4-mini**
 
 Pemanggilan fungsi pertama kali muncul di keluarga Phi Family, dan sekarang Anda bisa menggunakannya melalui Phi-4-mini.

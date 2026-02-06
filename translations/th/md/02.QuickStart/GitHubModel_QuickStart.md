@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:37:13+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "th"
-}
--->
 ## GitHub Models - เบต้าแบบสาธารณะจำกัด
 
 ยินดีต้อนรับสู่ [GitHub Models](https://github.com/marketplace/models)! เราเตรียมทุกอย่างไว้พร้อมให้คุณสำรวจโมเดล AI ที่โฮสต์บน Azure AI

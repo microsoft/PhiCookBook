@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:58:35+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "tl"
-}
--->
 # **Inference Phi-3 sa Lokal na Server**
 
 Maaari nating i-deploy ang Phi-3 sa isang lokal na server. Puwedeng pumili ang mga user ng [Ollama](https://ollama.com) o [LM Studio](https://llamaedge.com) na mga solusyon, o kaya ay gumawa ng sarili nilang code. Maaari mong ikonekta ang mga lokal na serbisyo ng Phi-3 gamit ang [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) o [Langchain](https://www.langchain.com/) para makabuo ng mga Copilot na aplikasyon.

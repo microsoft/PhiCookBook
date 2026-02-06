@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-09-12T14:44:15+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
-  "language_code": "lt"
-}
--->
 # Phi-3.5-vision pritaikymo receptas
 
 Tai oficiali Phi-3.5-vision pritaikymo palaikymo dokumentacija, naudojant huggingface bibliotekas. Prieš vykdydami šiuos komandas, pereikite į kodų katalogą [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning).

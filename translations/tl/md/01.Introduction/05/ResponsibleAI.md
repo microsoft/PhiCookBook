@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-16T22:56:31+00:00",
-  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
-  "language_code": "tl"
-}
--->
 # **Ipakilala ang Responsible AI**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) ay isang inisyatiba na naglalayong tulungan ang mga developer at organisasyon na bumuo ng mga AI system na malinaw, mapagkakatiwalaan, at may pananagutan. Nagbibigay ang inisyatiba ng mga gabay at mga mapagkukunan para sa pagbuo ng mga responsableng solusyon sa AI na naaayon sa mga etikal na prinsipyo, tulad ng privacy, katarungan, at transparency. Tatalakayin din natin ang ilang mga hamon at pinakamahuhusay na kasanayan na kaugnay sa pagbuo ng mga responsableng AI system.

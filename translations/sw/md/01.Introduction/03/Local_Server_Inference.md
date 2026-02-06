@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:58:42+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "sw"
-}
--->
 # **Uchambuzi wa Phi-3 kwenye Seva ya Ndani**
 
 Tunaweza kupeleka Phi-3 kwenye seva ya ndani. Watumiaji wanaweza kuchagua suluhisho za [Ollama](https://ollama.com) au [LM Studio](https://llamaedge.com), au wanaweza kuandika msimbo wao wenyewe. Unaweza kuunganisha huduma za ndani za Phi-3 kupitia [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) au [Langchain](https://www.langchain.com/) kujenga programu za Copilot.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:06:39+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "de"
-}
--->
 Im Kontext von Phi-3-mini bezieht sich Inferenz auf den Prozess, bei dem das Modell verwendet wird, um Vorhersagen zu treffen oder Ausgaben basierend auf Eingabedaten zu erzeugen. Lassen Sie mich Ihnen mehr Details zu Phi-3-mini und seinen Inferenzfähigkeiten geben.
 
 Phi-3-mini ist Teil der Phi-3-Modellreihe, die von Microsoft veröffentlicht wurde. Diese Modelle sind darauf ausgelegt, die Möglichkeiten von Small Language Models (SLMs) neu zu definieren.

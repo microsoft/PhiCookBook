@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:44:50+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ro"
-}
--->
 # **Construiește-ți propriul Visual Studio Code GitHub Copilot Chat cu familia Microsoft Phi-3**
 
 Ai folosit agentul de workspace în GitHub Copilot Chat? Vrei să-ți construiești propriul agent de cod pentru echipa ta? Acest laborator practic își propune să combine modelul open source pentru a crea un agent de cod la nivel enterprise.

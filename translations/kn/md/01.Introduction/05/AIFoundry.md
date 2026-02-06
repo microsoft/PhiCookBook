@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-12-21T22:47:23+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "kn"
-}
--->
 # **Azure AI Foundry ಬಳಸಿ ಮೌಲ್ಯಮಾಪನ**
 
 ![AI ಸ್ಟುಡಿಯೋ](../../../../../translated_images/kn/AIFoundry.9e0b513e999a1c5a.webp)

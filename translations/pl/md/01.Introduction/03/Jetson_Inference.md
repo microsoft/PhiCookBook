@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:42:09+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "pl"
-}
--->
 # **Inference Phi-3 na Nvidia Jetson**
 
 Nvidia Jetson to seria wbudowanych płyt komputerowych od Nvidia. Modele Jetson TK1, TX1 i TX2 wyposażone są w procesor Tegra (lub SoC) od Nvidia, który integruje jednostkę centralną (CPU) opartą na architekturze ARM. Jetson to system o niskim zużyciu energii, zaprojektowany do przyspieszania aplikacji uczenia maszynowego. Nvidia Jetson jest wykorzystywany przez profesjonalnych deweloperów do tworzenia przełomowych produktów AI w różnych branżach, a także przez studentów i entuzjastów do praktycznej nauki AI i realizacji niesamowitych projektów. SLM jest wdrażany w urządzeniach brzegowych, takich jak Jetson, co umożliwia lepszą implementację przemysłowych scenariuszy zastosowań generatywnej AI.

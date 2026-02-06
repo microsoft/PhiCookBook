@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:18:10+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "nl"
-}
--->
 # **Chat met Phi-4-mini ONNX**
 
 ***ONNX*** is een open formaat dat is ontwikkeld om machine learning-modellen te representeren. ONNX definieert een gemeenschappelijke set operators - de bouwstenen van machine learning en deep learning modellen - en een gemeenschappelijk bestandsformaat zodat AI-ontwikkelaars modellen kunnen gebruiken met verschillende frameworks, tools, runtimes en compilers.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-10-11T12:25:27+00:00",
-  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
-  "language_code": "ta"
-}
--->
 # **llama.cpp பயன்படுத்தி Phi குடும்பத்தை குவாண்டைஸ் செய்வது**
 
 ## **llama.cpp என்றால் என்ன?**

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:55:24+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "sv"
-}
--->
 # **Kvantisering av Phi-3.5 med Apple MLX Framework**
 
 MLX är ett array-ramverk för maskininlärningsforskning på Apple silicon, utvecklat av Apple machine learning research.

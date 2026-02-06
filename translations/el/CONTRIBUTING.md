@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:41:19+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "el"
-}
--->
 # Συμβολή
 
 Αυτό το έργο καλωσορίζει τις συνεισφορές και τις προτάσεις. Οι περισσότερες συνεισφορές απαιτούν να συμφωνήσετε με μια

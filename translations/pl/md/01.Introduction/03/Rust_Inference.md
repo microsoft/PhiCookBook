@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:29:08+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "pl"
-}
--->
 # Wnioskowanie wieloplatformowe z Rust
 
 Ten samouczek przeprowadzi nas przez proces wykonywania wnioskowania za pomocą Rust i [frameworka Candle ML](https://github.com/huggingface/candle) od HuggingFace. Użycie Rust do wnioskowania niesie ze sobą kilka zalet, szczególnie w porównaniu z innymi językami programowania. Rust jest znany z wysokiej wydajności, porównywalnej do C i C++. To czyni go doskonałym wyborem do zadań wnioskowania, które mogą być obliczeniowo wymagające. Szczególnie ważne są tutaj abstrakcje bezkosztowe oraz efektywne zarządzanie pamięcią, bez narzutu garbage collectora. Wieloplatformowość Rust pozwala na tworzenie kodu działającego na różnych systemach operacyjnych, w tym Windows, macOS i Linux, a także na systemach mobilnych, bez konieczności znaczących zmian w kodzie.

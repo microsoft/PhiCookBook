@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:59:24+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "sr"
-}
--->
 # **Инференција Phi-3 на локалном серверу**
 
 Можемо да покренемо Phi-3 на локалном серверу. Корисници могу да изаберу решења као што су [Ollama](https://ollama.com) или [LM Studio](https://llamaedge.com), или могу написати свој код. Можете повезати локалне сервисе Phi-3 преко [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) или [Langchain](https://www.langchain.com/) како бисте направили Copilot апликације.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:33:30+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "ar"
-}
--->
 # **ابنِ وكيل GitHub Copilot Chat الخاص بك في Visual Studio Code باستخدام عائلة Microsoft Phi-3**
 
 هل استخدمت وكيل مساحة العمل في GitHub Copilot Chat؟ هل ترغب في بناء وكيل كود خاص بفريقك؟ تهدف هذه الورشة العملية إلى دمج النموذج مفتوح المصدر لبناء وكيل أعمال برمجي على مستوى المؤسسات.

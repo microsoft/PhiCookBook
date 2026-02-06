@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:26:34+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "tl"
-}
--->
 # **Paggamit ng Phi-3 sa Azure AI Foundry**
 
 Sa pag-unlad ng Generative AI, layunin naming gamitin ang isang pinag-isang platform upang pamahalaan ang iba't ibang LLM at SLM, integrasyon ng datos ng enterprise, fine-tuning/RAG na operasyon, at pagsusuri ng iba't ibang negosyo ng enterprise pagkatapos ng integrasyon ng LLM at SLM, atbp., upang mas mahusay na maipatupad ang mga smart application gamit ang generative AI. Ang [Azure AI Foundry](https://ai.azure.com) ay isang enterprise-level na platform para sa generative AI na aplikasyon.

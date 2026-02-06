@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-12-21T21:56:20+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "te"
-}
--->
 ఈ డెమో ఒక pretrained మోడల్‌ను ఉపయోగించి ఒక చిత్రం మరియు ఒక టెక్స్ట్ ప్రాంప్ట్ ఆధారంగా Python కోడ్‌ను ఉత్పత్తి చేయడం ఎలా చేయాలో చూపిస్తుంది. 
 
 [నమూనా కోడ్](../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

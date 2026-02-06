@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
-  "translation_date": "2026-01-05T09:11:21+00:00",
-  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
-  "language_code": "tl"
-}
--->
 # **Pagsusukat ng Pamilya ng Phi**
 
 Ang model quantization ay tumutukoy sa proseso ng pagmamapa ng mga parameter (tulad ng mga timbang at halaga ng aktibasyon) sa isang neural network model mula sa malaking hanay ng mga halaga (karaniwang isang tuloy-tuloy na hanay ng mga halaga) patungo sa mas maliit na hangganang hanay ng mga halaga. Ang teknolohiyang ito ay maaaring magpaliit ng laki at komplikasyon sa pagkalkula ng modelo at mapabuti ang kahusayan ng pagpapatakbo ng modelo sa mga kapaligirang may limitadong yaman tulad ng mga mobile device o naka-embed na mga sistema. Nakakamit ng model quantization ang compression sa pamamagitan ng pagbabawas ng precision ng mga parameter, ngunit nagdudulot din ito ng ilang pagkawala ng precision. Kaya, sa proseso ng quantization, kinakailangang balansehin ang laki ng modelo, komplikasyon sa pagkalkula, at precision. Ang mga karaniwang pamamaraan ng quantization ay kinabibilangan ng fixed-point quantization, floating-point quantization, at iba pa. Maaari kang pumili ng angkop na estratehiya ng quantization ayon sa partikular na sitwasyon at pangangailangan.

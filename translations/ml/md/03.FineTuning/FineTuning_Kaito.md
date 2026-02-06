@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-12-21T18:41:39+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "ml"
-}
--->
 ## Kaito ഉപയോഗിച്ച് ഫൈൻ-ട്യൂണിംഗ് 
 
 [Kaito](https://github.com/Azure/kaito) Kubernetes ക്ലസ്റ്ററിലുള്ള AI/ML ഇൻഫറൻസ് മോഡൽ ഡിപ്ലോയ്മെന്റ് ഓട്ടോമേറ്റുചെയ്യുന്ന ഒരു ഓപ്പറേറ്ററാണ്.

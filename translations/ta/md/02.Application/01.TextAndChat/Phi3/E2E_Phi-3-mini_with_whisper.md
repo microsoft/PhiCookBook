@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f72d7981ed3640865700f51ae407da4",
-  "translation_date": "2026-01-16T20:04:24+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
-  "language_code": "ta"
-}
--->
 # இன்டராக்டிவ் பை 3 மினி 4K இன்ஸ்ட்ரக்ட்ச் சாட்பாட் வித் விச்பர்
 
 ## மேலோட்டம்

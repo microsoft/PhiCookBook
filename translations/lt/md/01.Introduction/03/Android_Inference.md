@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-09-12T14:52:51+00:00",
-  "source_file": "md/01.Introduction/03/Android_Inference.md",
-  "language_code": "lt"
-}
--->
 # **Inference Phi-3 Android įrenginiuose**
 
 Pažvelkime, kaip galite atlikti išvestį su Phi-3-mini Android įrenginiuose. Phi-3-mini yra nauja Microsoft modelių serija, leidžianti diegti didelius kalbos modelius (LLMs) kraštiniuose įrenginiuose ir IoT įrenginiuose.

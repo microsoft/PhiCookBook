@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-07-17T10:03:41+00:00",
-  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
-  "language_code": "ar"
-}
--->
 # **استدلال Phi-3 باستخدام إطار عمل Apple MLX**
 
 ## **ما هو إطار عمل MLX**

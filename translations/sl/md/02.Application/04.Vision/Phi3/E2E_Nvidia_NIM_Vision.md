@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:59:34+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "sl"
-}
--->
 ### Primer scenarija
 
 Predstavljajte si, da imate sliko (`demo.png`) in želite ustvariti Python kodo, ki obdeluje to sliko in shrani novo različico (`phi-3-vision.jpg`).

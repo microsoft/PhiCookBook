@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-07-16T16:26:59+00:00",
-  "source_file": "code/04.Finetuning/olive-ort-example/README.md",
-  "language_code": "fi"
-}
--->
 # Hienosäädä Phi3 Olivea käyttäen
 
 Tässä esimerkissä käytät Olivea:

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:12:02+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "el"
-}
--->
 ## **Εξαγωγή απομαγνητοφωνήσεων ήχου με το Phi-4-multimodal**
 
 Το Phi-4-multimodal είναι ένα πολυμορφικό μοντέλο που μπορεί να χρησιμοποιήσει ήχο εκτός από κείμενο και εικόνες. Ας δούμε πώς να το χρησιμοποιήσουμε.

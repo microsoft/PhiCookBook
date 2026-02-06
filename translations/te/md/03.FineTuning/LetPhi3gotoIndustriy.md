@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-12-21T17:23:56+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "te"
-}
--->
 # **Phi-3 ను ఒక పరిశ్రమ నిపుణుడిగా మార్చండి**
 
 To put the Phi-3 model into an industry, you need to add industry business data to the Phi-3 model. We have two different options, the first is RAG (Retrieval Augmented Generation) and the second is ఫైన్-ట్యూనింగ్.

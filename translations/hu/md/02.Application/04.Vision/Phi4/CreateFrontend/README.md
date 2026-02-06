@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:09:28+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "hu"
-}
--->
 ## **Használd a Phi-4-multimodált képek olvasására és kód generálására**
 
 A Phi-4-multimodálnak erős képolvasó képességei vannak. Próbáljuk meg Python segítségével megvalósítani a következő funkciókat. A kép egy ChatGPT oldal.

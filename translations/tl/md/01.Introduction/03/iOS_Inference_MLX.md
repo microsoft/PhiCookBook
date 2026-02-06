@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-16T20:35:01+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "tl"
-}
--->
 # Pagpapatakbo ng Phi-3 at Phi-4 sa iOS gamit ang Apple MLX Framework
 
 Ipinapakita ng tutorial na ito kung paano gumawa ng iOS application na nagpapatakbo ng Phi-3 o Phi-4 na modelo nang direkta sa device, gamit ang Apple MLX framework. Ang [MLX](https://opensource.apple.com/projects/mlx/) ay machine learning framework ng Apple na in-optimize para sa Apple Silicon chips.

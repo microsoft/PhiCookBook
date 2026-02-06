@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:31:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "fi"
-}
--->
 ## Kuinka käyttää chat-completion-komponentteja Azure ML -järjestelmärekisteristä mallin hienosäätöön
 
 Tässä esimerkissä teemme hienosäädön Phi-3-mini-4k-instruct-mallille, jotta se osaa täydentää keskustelun kahden henkilön välillä käyttäen ultrachat_200k-datasarjaa.

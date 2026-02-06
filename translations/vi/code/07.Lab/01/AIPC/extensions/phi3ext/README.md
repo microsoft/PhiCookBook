@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:37:07+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "vi"
-}
--->
 # phi3ext README
 
 Đây là README cho phần mở rộng "phi3ext" của bạn. Sau khi viết mô tả ngắn gọn, chúng tôi khuyên bạn nên bao gồm các mục sau.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-12-21T19:18:38+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
-  "language_code": "te"
-}
--->
 # **మీ సొంత Visual Studio Code చాట్ Copilot ఏజెంట్‌ను GitHub Models ద్వారా Phi-3.5 తో తయారుచేసుకోండి**
 
 మీరు Visual Studio Code Copilot ఉపయోగిస్తున్నారా? ముఖ్యంగా చాట్‌లో, మీరు వివిధ ఏజెంట్స్‌ను ఉపయోగించి Visual Studio Codeలో ప్రాజెక్టులను సృష్టించడం, రాయడం, మరియు నిర్వహించడం సామర్థ్యాన్ని మెరుగుపరచుకోవచ్చు. Visual Studio Code ఒక APIని అందిస్తుంది ఇది కంపెనీలు మరియు వ్యక్తులు వారి బిజినెస్ ఆధారంగా వివిధ ఏజెంట్స్‌ని సృష్టించి వివిధ స్వంత రంగాల్లో వారి సామర్థ్యాలను విస్తరించడానికి అనుమతిస్తుంది. ఈ ఆర్టికల్‌లో, మేము మీ స్వంత Visual Studio Code ఏజెంట్‌ను సృష్టించడానికి GitHub Models లోని **Phi-3.5-mini-instruct (128k)** మరియు **Phi-3.5-vision-instruct (128k)** పై దృష్టి పెట్టబోతున్నాము.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-16T17:06:58+00:00",
-  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
-  "language_code": "ko"
-}
--->
 ## RAG with PromptFlow and AISearch
 
 이 예제에서는 Phi3를 SLM으로, AI Search를 vectorDB로, Prompt Flow를 로우코드 오케스트레이터로 활용한 Retrieval Augmented Generation(RAG) 애플리케이션을 구현합니다.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:54:12+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ne"
-}
--->
 # **Apple MLX Framework प्रयोग गरी Phi-3.5 को क्वान्टाइजेशन**
 
 MLX भनेको Apple सिलिकनमा मेसिन लर्निङ अनुसन्धानका लागि बनाइएको एरे फ्रेमवर्क हो, जुन Apple मेसिन लर्निङ अनुसन्धान टोलीले ल्याएको हो।

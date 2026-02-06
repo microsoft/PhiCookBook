@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T16:30:50+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "hi"
-}
--->
 # कस्टम Phi-3 मॉडल को फाइन-ट्यून करें और Prompt flow के साथ एकीकृत करें
 
 यह एंड-टू-एंड (E2E) उदाहरण Microsoft Tech Community के मार्गदर्शक "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" पर आधारित है। यह फाइन-ट्यूनिंग, तैनाती, और कस्टम Phi-3 मॉडलों को Prompt flow के साथ एकीकृत करने की प्रक्रियाओं को प्रस्तुत करता है।

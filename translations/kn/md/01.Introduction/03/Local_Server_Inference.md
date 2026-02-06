@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-12-22T01:04:44+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "kn"
-}
--->
 # **ಸ್ಥಳೀಯ ಸರ್ವರ್‌ನಲ್ಲಿ Phi-3 ಇನ್ಫರೆನ್ಸ್**
 
 ನಾವು Phi-3 ಅನ್ನು ಸ್ಥಳೀಯ ಸರ್ವರ್‌ನಲ್ಲಿ ಡಿಪ್ಲಾಯ್ ಮಾಡಬಹುದು. ಬಳಕೆದಾರರು [Ollama](https://ollama.com) ಅಥವಾ [LM Studio](https://llamaedge.com) ಪರಿಹಾರಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಬಹುದು, ಅಥವಾ ತಮ್ಮದೇ ಕೋಡ್ ಬರೆಯಬಹುದು. ನೀವು Phi-3 ನ ಸ್ಥಳೀಯ ಸೇವೆಗಳನ್ನು [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) ಅಥವಾ [Langchain](https://www.langchain.com/) ಮೂಲಕ ಸಂಪರ್ಕಿಸಿ Copilot ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ನಿರ್ಮಿಸಬಹುದು

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-10-11T11:33:28+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
-  "language_code": "ta"
-}
--->
 # மாற்றம் பதிவுகள்
 
 அனைத்து "phi3ext" நீட்டிப்புகளின் முக்கியமான மாற்றங்கள் இந்தக் கோப்பில் பதிவு செய்யப்படும்.

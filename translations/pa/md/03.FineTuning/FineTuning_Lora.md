@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-17T06:30:48+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "pa"
-}
--->
 # **ਲੋਰਾ ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ**
 
 ਮਾਈਕ੍ਰੋਸਾਫਟ ਦੇ Phi-3 ਮਿਨੀ ਭਾਸ਼ਾ ਮਾਡਲ ਨੂੰ [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇੱਕ ਕਸਟਮ ਚੈਟ ਇੰਸਟ੍ਰਕਸ਼ਨ ਡੇਟਾਸੈੱਟ 'ਤੇ ਫਾਈਨ-ਟਿਊਨ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ।

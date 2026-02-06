@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:41:48+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ro"
-}
--->
 ﻿## Bine ați venit la laboratoarele Phi folosind C#
 
 Există o selecție de laboratoare care demonstrează cum să integrați diferitele versiuni puternice ale modelelor Phi într-un mediu .NET.

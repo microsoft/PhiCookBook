@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T07:58:01+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ja"
-}
--->
 # **Apple MLXフレームワークを使ったPhi-3のファインチューニング**
 
 Apple MLXフレームワークのコマンドラインを通じて、Loraと組み合わせたファインチューニングを完了できます。（MLXフレームワークの操作について詳しく知りたい場合は、[Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)を参照してください）
@@ -184,7 +175,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:*** 
+***注記:*** 
 
 1. 現在、fp32、fp16、INT8の量子化変換をサポートしています
 
@@ -214,5 +205,4 @@ PARAMETER stop "<|end|>"
 おめでとうございます！MLXフレームワークでのファインチューニングをマスターしました
 
 **免責事項**：  
-
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

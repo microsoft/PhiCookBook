@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:12:47+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "ms"
-}
--->
 ## **Mengekstrak transkrip audio menggunakan Phi-4-multimodal**
 
 Phi-4-multimodal adalah model berbilang modal penuh yang boleh menggunakan audio selain teks dan imej. Mari kita lihat cara menggunakannya.

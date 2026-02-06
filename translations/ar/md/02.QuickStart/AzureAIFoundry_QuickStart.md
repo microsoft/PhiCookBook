@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-07-17T05:18:55+00:00",
-  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
-  "language_code": "ar"
-}
--->
 # **استخدام Phi-3 في Azure AI Foundry**
 
 مع تطور الذكاء الاصطناعي التوليدي، نأمل في استخدام منصة موحدة لإدارة نماذج اللغة الكبيرة (LLM) ونماذج اللغة الصغيرة (SLM)، ودمج بيانات المؤسسات، وعمليات الضبط الدقيق/RAG، وتقييم مختلف الأعمال بعد دمج LLM وSLM، وغيرها، بحيث يمكن لتطبيقات الذكاء الاصطناعي التوليدي أن تُنفذ بشكل أذكى. [Azure AI Foundry](https://ai.azure.com) هي منصة تطبيقات ذكاء اصطناعي توليدي على مستوى المؤسسات.

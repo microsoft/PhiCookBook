@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-16T16:38:59+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "my"
-}
--->
 # phi3ext README
 
 ဒီဟာက သင့်ရဲ့ "phi3ext" တိုးချဲ့မှုအတွက် README ဖြစ်ပါတယ်။ အကျဉ်းချုပ်ရေးပြီးနောက်မှာ အောက်ပါအခန်းတွေကို ထည့်သွင်းဖော်ပြဖို့ အကြံပြုပါတယ်။

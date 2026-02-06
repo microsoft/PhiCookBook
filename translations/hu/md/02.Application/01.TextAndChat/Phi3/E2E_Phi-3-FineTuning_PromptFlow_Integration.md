@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T09:24:51+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "hu"
-}
--->
 # Finomhangolás és egyedi Phi-3 modellek integrálása Prompt flow-val
 
 Ez az end-to-end (E2E) minta a Microsoft Tech Community „[Finomhangolás és egyedi Phi-3 modellek integrálása Prompt flow-val: lépésről lépésre útmutató](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)” című útmutatóján alapul. Bemutatja az egyedi Phi-3 modellek finomhangolásának, telepítésének és Prompt flow-val való integrálásának folyamatait.

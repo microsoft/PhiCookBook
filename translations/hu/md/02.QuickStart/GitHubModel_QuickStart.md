@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-17T05:40:40+00:00",
-  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
-  "language_code": "hu"
-}
--->
 ## GitHub Modellek – Korlátozott Nyilvános Béta
 
 Üdvözlünk a [GitHub Modellek](https://github.com/marketplace/models) oldalán! Minden készen áll, hogy felfedezd az Azure AI-n futó AI modelleket.

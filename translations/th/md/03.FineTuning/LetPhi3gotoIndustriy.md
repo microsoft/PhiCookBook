@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:57:09+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "th"
-}
--->
 # **ให้ Phi-3 กลายเป็นผู้เชี่ยวชาญในอุตสาหกรรม**
 
 เพื่อให้โมเดล Phi-3 สามารถนำไปใช้ในอุตสาหกรรมได้ คุณจำเป็นต้องเพิ่มข้อมูลธุรกิจในอุตสาหกรรมนั้นลงในโมเดล Phi-3 เรามีตัวเลือกสองแบบ คือ RAG (Retrieval Augmented Generation) และ Fine Tuning

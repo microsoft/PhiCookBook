@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:15:48+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "th"
-}
--->
 ## **การเรียกใช้ฟังก์ชันใน Phi-4-mini**
 
 การเรียกใช้ฟังก์ชันเริ่มปรากฏในตระกูล Phi Family และตอนนี้คุณสามารถใช้งานผ่าน Phi-4-mini ได้แล้ว

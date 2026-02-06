@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-17T04:57:26+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
-  "language_code": "vi"
-}
--->
 ### Kịch Bản Ví Dụ
 
 Hãy tưởng tượng bạn có một hình ảnh (`demo.png`) và bạn muốn tạo mã Python để xử lý hình ảnh này và lưu lại phiên bản mới của nó (`phi-3-vision.jpg`).

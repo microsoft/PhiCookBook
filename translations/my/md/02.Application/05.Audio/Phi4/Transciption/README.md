@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:13:38+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "my"
-}
--->
 ## **Phi-4-multimodal ကို အသုံးပြုပြီး အသံစာတမ်းများ ထုတ်ယူခြင်း**
 
 Phi-4-multimodal သည် စာသားနှင့် ပုံများအပြင် အသံကိုလည်း အသုံးပြုနိုင်သော အပြည့်အစုံ မော်ဒယ်တစ်ခုဖြစ်သည်။ ၎င်းကို ဘယ်လို အသုံးပြုရမည်ကို ကြည့်ကြရအောင်။  

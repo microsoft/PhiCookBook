@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:25:47+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "th"
-}
--->
 ## วิธีใช้ส่วนประกอบ chat-completion จาก Azure ML system registry เพื่อปรับแต่งโมเดล
 
 ในตัวอย่างนี้เราจะทำการปรับแต่งโมเดล Phi-3-mini-4k-instruct เพื่อให้สามารถสนทนาระหว่างคนสองคนได้โดยใช้ชุดข้อมูล ultrachat_200k

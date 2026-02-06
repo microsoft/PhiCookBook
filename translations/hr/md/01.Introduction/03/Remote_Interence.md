@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:22:51+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "hr"
-}
--->
 # Remote Inferencing s fino podešenim modelom
 
 Nakon što su adapteri trenirani u udaljenom okruženju, koristite jednostavnu Gradio aplikaciju za interakciju s modelom.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:43:02+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "sl"
-}
--->
 ## Dobrodošli v Phi laboratorijih z uporabo C#
 
 Na voljo je izbor laboratorijev, ki prikazujejo, kako integrirati različne zmogljive različice Phi modelov v .NET okolju.

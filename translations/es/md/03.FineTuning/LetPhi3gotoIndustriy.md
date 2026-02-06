@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:51:06+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "es"
-}
--->
 # **Deja que Phi-3 se convierta en un experto de la industria**
 
 Para aplicar el modelo Phi-3 en una industria, necesitas agregar datos empresariales específicos de esa industria al modelo Phi-3. Tenemos dos opciones diferentes: la primera es RAG (Generación Aumentada por Recuperación) y la segunda es Fine Tuning (Ajuste fino).

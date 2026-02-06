@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:14:46+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "de"
-}
--->
 # Remote-Inferenz mit dem feinabgestimmten Modell
 
 Nachdem die Adapter in der Remote-Umgebung trainiert wurden, verwenden Sie eine einfache Gradio-Anwendung, um mit dem Modell zu interagieren.

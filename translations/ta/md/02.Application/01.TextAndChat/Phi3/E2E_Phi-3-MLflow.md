@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-10-11T12:10:27+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
-  "language_code": "ta"
-}
--->
 # MLflow
 
 [MLflow](https://mlflow.org/) என்பது முழுமையான இயந்திரக் கற்றல் வாழ்க்கைச் சுழற்சியை நிர்வகிக்க வடிவமைக்கப்பட்ட திறந்த மூல தளம் ஆகும்.

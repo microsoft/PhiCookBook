@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-07-16T17:23:37+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "es"
-}
--->
 # Registro de Cambios
 
 Todos los cambios importantes en la extensión "phiext" se documentarán en este archivo.

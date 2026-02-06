@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-17T06:49:55+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
-  "language_code": "hu"
-}
--->
 # **Phi-3 finomhangolása Microsoft Olive-dal**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) egy könnyen használható, hardverhez optimalizált modelloptimalizáló eszköz, amely iparági vezető technikákat egyesít a modell tömörítés, optimalizálás és fordítás területén.

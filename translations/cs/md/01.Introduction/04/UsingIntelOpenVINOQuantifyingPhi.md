@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:03:51+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "cs"
-}
--->
 # **Kvantilace Phi-3.5 pomocí Intel OpenVINO**
 
 Intel je nejtradičnější výrobce CPU s mnoha uživateli. S nástupem strojového učení a hlubokého učení se Intel také zapojil do soutěže o akceleraci AI. Pro inferenci modelů Intel využívá nejen GPU a CPU, ale také NPU.

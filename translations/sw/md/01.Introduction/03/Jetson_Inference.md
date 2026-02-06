@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:44:30+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "sw"
-}
--->
 # **Inference Phi-3 katika Nvidia Jetson**
 
 Nvidia Jetson ni mfululizo wa bodi za kompyuta zilizojengwa kutoka Nvidia. Mifano ya Jetson TK1, TX1 na TX2 yote ina processor ya Tegra (au SoC) kutoka Nvidia inayojumuisha kitengo cha usindikaji wa kati (CPU) cha usanifu wa ARM. Jetson ni mfumo wa nguvu ndogo na umeundwa kwa ajili ya kuharakisha matumizi ya kujifunza kwa mashine. Nvidia Jetson hutumiwa na watengenezaji wa kitaalamu kuunda bidhaa za AI za kuvunja mipaka katika sekta zote, na pia na wanafunzi na wapenzi kwa ajili ya kujifunza AI kwa vitendo na kutengeneza miradi ya kushangaza. SLM inatumiwa katika vifaa vya edge kama Jetson, ambavyo vitaruhusu utekelezaji bora wa hali za matumizi ya AI ya kizazi katika viwanda.

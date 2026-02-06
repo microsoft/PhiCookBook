@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-07-16T21:16:39+00:00",
-  "source_file": "md/01.Introduction/03/Remote_Interence.md",
-  "language_code": "ko"
-}
--->
 # 미세 조정된 모델을 이용한 원격 추론
 
 어댑터가 원격 환경에서 학습된 후, 간단한 Gradio 애플리케이션을 사용하여 모델과 상호작용할 수 있습니다.

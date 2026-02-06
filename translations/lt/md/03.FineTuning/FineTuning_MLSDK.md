@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-09-12T14:41:27+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "lt"
-}
--->
 ## Kaip naudoti pokalbių užbaigimo komponentus iš Azure ML sistemos registro modelio pritaikymui
 
 Šiame pavyzdyje atliksime Phi-3-mini-4k-instruct modelio pritaikymą, kad užbaigtume pokalbį tarp dviejų žmonių, naudodami ultrachat_200k duomenų rinkinį.

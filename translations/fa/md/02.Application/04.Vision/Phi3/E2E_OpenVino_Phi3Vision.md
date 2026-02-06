@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:00:58+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "fa"
-}
--->
 این دمو نشان می‌دهد چگونه می‌توان از یک مدل از پیش آموزش‌دیده برای تولید کد پایتون بر اساس یک تصویر و یک متن راهنما استفاده کرد.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

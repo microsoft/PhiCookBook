@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-07-17T05:03:11+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
-  "language_code": "pl"
-}
--->
 Ten demo pokazuje, jak użyć wstępnie wytrenowanego modelu do generowania kodu w Pythonie na podstawie obrazu i tekstowego polecenia.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-07-17T04:48:09+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "en"
-}
--->
 ## **Using Phi-4-mini-reasoning(3.8b) or Phi-4-reasoning(14b) as Reasoning Expert**
 
 Let's explore its powerful reasoning capabilities through Phi-4-mini-reasoning or Phi-4-reasoning. 

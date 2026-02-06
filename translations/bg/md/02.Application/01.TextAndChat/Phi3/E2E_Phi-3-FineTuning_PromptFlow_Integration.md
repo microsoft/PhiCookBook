@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T09:57:58+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "bg"
-}
--->
 # Допинг и интегриране на персонализирани Phi-3 модели с Prompt flow
 
 Този изчерпателен (E2E) пример е базиран на ръководството "[Допинг и интегриране на персонализирани Phi-3 модели с Prompt Flow: Ръководство стъпка по стъпка](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" от Microsoft Tech Community. То представя процесите на допинг, внедряване и интегриране на персонализирани Phi-3 модели с Prompt flow.

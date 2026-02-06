@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-07-16T23:08:07+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
-  "language_code": "my"
-}
--->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 ဒီကုဒ်က OpenVINO ဖော်မတ်အတွက် မော်ဒယ်တစ်ခုကို export လုပ်ပြီး၊ ထိုမော်ဒယ်ကို load လုပ်ကာ ပေးထားသော prompt အပေါ် အဖြေတစ်ခု ထုတ်ပေးရန် အသုံးပြုပါတယ်။

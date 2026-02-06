@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-09-12T14:55:26+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "lt"
-}
--->
 # **Inference Phi-3-Vision vietoje**
 
 Phi-3-vision-128k-instruct leidžia Phi-3 ne tik suprasti kalbą, bet ir vizualiai matyti pasaulį. Naudodami Phi-3-vision-128k-instruct, galime spręsti įvairias vizualines problemas, tokias kaip OCR, lentelių analizė, objektų atpažinimas, paveikslėlio aprašymas ir kt. Lengvai atliekame užduotis, kurios anksčiau reikalavo daug duomenų mokymų. Toliau pateikiamos susijusios technikos ir taikymo scenarijai, kuriuos naudoja Phi-3-vision-128k-instruct.

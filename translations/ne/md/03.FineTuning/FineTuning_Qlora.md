@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:18:05+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "ne"
-}
--->
 **QLoRA सँग Phi-3 को फाइन-ट्यूनिङ**
 
 Microsoft को Phi-3 Mini भाषा मोडेललाई [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) प्रयोग गरेर फाइन-ट्यून गर्ने।

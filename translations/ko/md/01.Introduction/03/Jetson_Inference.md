@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:40:37+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "ko"
-}
--->
 # **Nvidia Jetson에서 Phi-3 추론**
 
 Nvidia Jetson은 Nvidia에서 출시한 임베디드 컴퓨팅 보드 시리즈입니다. Jetson TK1, TX1, TX2 모델은 모두 ARM 아키텍처 CPU가 통합된 Nvidia의 Tegra 프로세서(또는 SoC)를 탑재하고 있습니다. Jetson은 저전력 시스템으로 머신러닝 애플리케이션 가속화를 위해 설계되었습니다. Nvidia Jetson은 전문 개발자들이 다양한 산업 분야에서 혁신적인 AI 제품을 만들기 위해 사용하며, 학생과 AI 애호가들이 실습용 AI 학습과 멋진 프로젝트 제작에 활용합니다. SLM은 Jetson과 같은 엣지 디바이스에 배포되어 산업용 생성 AI 애플리케이션 시나리오의 구현을 더욱 향상시킵니다.

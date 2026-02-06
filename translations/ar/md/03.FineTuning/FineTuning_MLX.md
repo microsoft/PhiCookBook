@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T07:56:53+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "ar"
-}
--->
 # **تخصيص نموذج Phi-3 باستخدام إطار عمل Apple MLX**
 
 يمكننا إتمام التخصيص (Fine-tuning) مع دمج Lora من خلال سطر أوامر إطار عمل Apple MLX. (إذا كنت ترغب في معرفة المزيد عن طريقة عمل إطار MLX، يرجى قراءة [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))

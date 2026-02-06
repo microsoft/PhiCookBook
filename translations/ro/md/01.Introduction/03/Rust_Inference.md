@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:33:34+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "ro"
-}
--->
 # Inferență cross-platform cu Rust
 
 Acest tutorial ne va ghida prin procesul de realizare a inferenței folosind Rust și [Candle ML framework](https://github.com/huggingface/candle) de la HuggingFace. Utilizarea Rust pentru inferență oferă mai multe avantaje, în special în comparație cu alte limbaje de programare. Rust este cunoscut pentru performanța sa ridicată, comparabilă cu cea a limbajelor C și C++. Acest lucru îl face o alegere excelentă pentru sarcinile de inferență, care pot fi intensive din punct de vedere computațional. În mod special, acest lucru se datorează abstracțiilor fără costuri suplimentare și gestionării eficiente a memoriei, care nu implică un colector de gunoi. Capacitățile cross-platform ale Rust permit dezvoltarea de cod care rulează pe diverse sisteme de operare, inclusiv Windows, macOS și Linux, precum și pe sisteme de operare mobile, fără modificări semnificative ale codului.

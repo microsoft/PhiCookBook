@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-16T20:57:22+00:00",
-  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
-  "language_code": "el"
-}
--->
 # **Inference Phi-3 σε Τοπικό Διακομιστή**
 
 Μπορούμε να αναπτύξουμε το Phi-3 σε τοπικό διακομιστή. Οι χρήστες μπορούν να επιλέξουν λύσεις όπως [Ollama](https://ollama.com) ή [LM Studio](https://llamaedge.com), ή να γράψουν τον δικό τους κώδικα. Μπορείτε να συνδέσετε τις τοπικές υπηρεσίες του Phi-3 μέσω [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) ή [Langchain](https://www.langchain.com/) για να δημιουργήσετε εφαρμογές Copilot.

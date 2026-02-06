@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:24:23+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "de"
-}
--->
 # Plattformübergreifende Inferenz mit Rust
 
 Dieses Tutorial führt uns durch den Prozess der Inferenz mit Rust und dem [Candle ML Framework](https://github.com/huggingface/candle) von HuggingFace. Die Verwendung von Rust für Inferenz bietet mehrere Vorteile, insbesondere im Vergleich zu anderen Programmiersprachen. Rust ist bekannt für seine hohe Leistung, vergleichbar mit der von C und C++. Das macht es zu einer ausgezeichneten Wahl für Inferenzaufgaben, die oft rechenintensiv sind. Besonders hervorzuheben sind die zero-cost Abstraktionen und das effiziente Speichermanagement ohne Garbage Collection. Die plattformübergreifenden Fähigkeiten von Rust ermöglichen die Entwicklung von Code, der auf verschiedenen Betriebssystemen läuft, darunter Windows, macOS und Linux sowie mobile Betriebssysteme, ohne dass größere Änderungen am Code nötig sind.

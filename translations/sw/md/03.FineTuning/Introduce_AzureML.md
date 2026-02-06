@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-07-17T09:46:24+00:00",
-  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
-  "language_code": "sw"
-}
--->
 # **Tambulisha Huduma ya Azure Machine Learning**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ni huduma ya wingu inayolenga kuharakisha na kusimamia mzunguko wa maisha wa miradi ya kujifunza kwa mashine (ML).

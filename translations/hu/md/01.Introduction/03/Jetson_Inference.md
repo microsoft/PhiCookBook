@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:44:40+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "hu"
-}
--->
 # **Phi-3 inferencia Nvidia Jetsonon**
 
 Az Nvidia Jetson az Nvidia beágyazott számítástechnikai lapkakészleteinek sorozata. A Jetson TK1, TX1 és TX2 modellek mindegyike egy Nvidia Tegra processzort (vagy SoC-t) tartalmaz, amely ARM architektúrájú központi feldolgozó egységet (CPU) integrál. A Jetson alacsony fogyasztású rendszer, amelyet gépi tanulási alkalmazások gyorsítására terveztek. Az Nvidia Jetson professzionális fejlesztők számára kínál lehetőséget áttörő AI termékek létrehozására minden iparágban, valamint diákok és lelkes amatőrök számára is, hogy kézzelfogható AI tanulást és lenyűgöző projektek készítését tegyék lehetővé. Az SLM-t olyan élő eszközökön, mint a Jetson, telepítik, ami jobb megvalósítást tesz lehetővé az ipari generatív AI alkalmazási forgatókönyvekben.

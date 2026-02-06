@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-12-21T16:06:16+00:00",
-  "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
-  "language_code": "te"
-}
--->
 # మార్పుల చిట్టా
 
 అన్ని "phi3ext" విస్తరణల గమనించదగ్గ మార్పులు ఈ ఫైల్‌లో నమోదు చేయబడ్డాయి。

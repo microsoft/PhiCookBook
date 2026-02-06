@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:10:23+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "th"
-}
--->
 ในบริบทของ Phi-3-mini การทำ inference หมายถึงกระบวนการใช้โมเดลเพื่อทำนายหรือสร้างผลลัพธ์จากข้อมูลนำเข้า ให้ผมอธิบายรายละเอียดเพิ่มเติมเกี่ยวกับ Phi-3-mini และความสามารถในการทำ inference ของมัน
 
 Phi-3-mini เป็นส่วนหนึ่งของชุดโมเดล Phi-3 ที่พัฒนาโดย Microsoft โมเดลเหล่านี้ถูกออกแบบมาเพื่อเปลี่ยนแปลงขอบเขตความเป็นไปได้ของ Small Language Models (SLMs)

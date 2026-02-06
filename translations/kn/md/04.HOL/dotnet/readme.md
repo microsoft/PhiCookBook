@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-12-21T22:32:09+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "kn"
-}
--->
 ﻿## C# ಬಳಸಿ Phi ಪ್ರಯೋಗಾಲಯಗಳಿಗೆ ಸುಸ್ವಾಗತ
 
 ಇಲ್ಲಿ .NET ಪರಿಸರದಲ್ಲಿ Phi ಮಾದರಿಗಳ ಬಲಿಷ್ಠ ವಿಭಿನ್ನ ಆವೃತ್ತಿಗಳನ್ನು ಹೇಗೆ ಸಂಯೋಜಿಸುವುದನ್ನು ಪ್ರದರ್ಶಿಸುವ ಕೆಲವು ಪ್ರಯೋಗಾಲಯಗಳ ಆಯ್ಕೆಯಿದೆ.

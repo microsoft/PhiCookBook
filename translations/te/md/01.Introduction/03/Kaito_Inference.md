@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T15:00:05+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "te"
-}
--->
 ## కైటోతో సూచన
 
 [కైటో](https://github.com/Azure/kaito) అనేది Kubernetes క్లస్టర్‌లో AI/ML సూచన మోడల్ డిప్లాయ్‌మెంట్‌ను ఆటోమేట్ చేసే ఆపరేటర్.

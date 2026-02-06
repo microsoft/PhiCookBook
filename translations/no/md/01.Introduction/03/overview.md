@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:10:59+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "no"
-}
--->
 I sammenheng med Phi-3-mini refererer inferens til prosessen med å bruke modellen til å gjøre prediksjoner eller generere resultater basert på inndata. La meg gi deg mer informasjon om Phi-3-mini og dens inferensevner.
 
 Phi-3-mini er en del av Phi-3-serien av modeller utgitt av Microsoft. Disse modellene er designet for å redefinere hva som er mulig med små språkmodeller (SLM).

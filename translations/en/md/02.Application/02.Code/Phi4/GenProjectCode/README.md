@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:42:47+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "en"
-}
--->
 ## **Using Phi-4-mini-mm to generate code**
 
 Phi-4-mini builds on the strong coding capabilities of the Phi Family. You can use Prompts to ask coding-related questions. With its enhanced reasoning ability, it offers even stronger coding skills, such as generating projects based on requirements. For example, generating projects according to specifications like:

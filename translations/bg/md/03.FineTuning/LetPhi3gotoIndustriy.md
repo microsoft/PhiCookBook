@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T10:01:13+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "bg"
-}
--->
 # **Нека Phi-3 стане експерт в индустрията**
 
 За да внедрите модела Phi-3 в дадена индустрия, трябва да добавите бизнес данни от тази индустрия към модела Phi-3. Имаме два различни варианта – първият е RAG (Retrieval Augmented Generation), а вторият е Fine Tuning.

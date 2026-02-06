@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:03:31+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "sw"
-}
--->
 # **Kukokotoa Phi-3.5 kwa kutumia Intel OpenVINO**
 
 Intel ni mtengenezaji wa CPU wa jadi zaidi na wenye watumiaji wengi. Pamoja na kuibuka kwa ujifunzaji wa mashine na ujifunzaji wa kina, Intel pia imejiunga na ushindani wa kuharakisha AI. Kwa ajili ya utambuzi wa modeli, Intel haitumii tu GPU na CPU, bali pia hutumia NPU.

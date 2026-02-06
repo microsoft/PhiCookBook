@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:13:01+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "hu"
-}
--->
 ## **Hangfelvételek átiratainak kinyerése Phi-4-multimodal segítségével**
 
 A Phi-4-multimodal egy teljesen multimodális modell, amely a szöveg és képek mellett hanganyagot is képes feldolgozni. Nézzük meg, hogyan használhatjuk. 

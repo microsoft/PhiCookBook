@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-16T21:26:28+00:00",
-  "source_file": "md/01.Introduction/03/Rust_Inference.md",
-  "language_code": "ja"
-}
--->
 # Rustによるクロスプラットフォーム推論
 
 このチュートリアルでは、RustとHuggingFaceの[Candle MLフレームワーク](https://github.com/huggingface/candle)を使って推論を行う方法を紹介します。Rustを推論に使うことにはいくつかの利点があり、特に他のプログラミング言語と比べて優れています。RustはCやC++に匹敵する高いパフォーマンスで知られており、計算負荷の高い推論タスクに最適です。これは、ゼロコスト抽象化や効率的なメモリ管理（ガベージコレクションのオーバーヘッドがない）によって実現されています。さらに、Rustのクロスプラットフォーム対応により、Windows、macOS、LinuxだけでなくモバイルOS上でも、コードベースを大きく変えずに動作するコードを開発できます。

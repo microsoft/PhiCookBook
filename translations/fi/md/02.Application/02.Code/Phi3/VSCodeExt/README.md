@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:41:03+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "fi"
-}
--->
 # **Rakenna oma Visual Studio Code GitHub Copilot Chat Microsoft Phi-3 -perheellä**
 
 Oletko käyttänyt workspace-agenttia GitHub Copilot Chatissa? Haluatko rakentaa oman tiimisi koodiavustajan? Tämä käytännön harjoitus yhdistää avoimen lähdekoodin mallin luodakseen yritystason koodiliiketoiminta-agentin.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-07-16T20:43:41+00:00",
-  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
-  "language_code": "he"
-}
--->
 # **הסקת Phi-3 ב-Nvidia Jetson**
 
 Nvidia Jetson היא סדרת לוחות מחשוב משובצים מבית Nvidia. דגמי Jetson TK1, TX1 ו-TX2 כוללים מעבד Tegra (או SoC) מבית Nvidia שמשלב יחידת עיבוד מרכזית (CPU) בארכיטקטורת ARM. Jetson הוא מערכת צריכת-אנרגיה נמוכה ומתוכננת להאצת יישומי למידת מכונה. Nvidia Jetson משמשת מפתחים מקצועיים ליצירת מוצרי AI פורצי דרך בכל התעשיות, וכן סטודנטים וחובבים ללמידת AI מעשית וליצירת פרויקטים מרתקים. SLM מוטמעת במכשירי קצה כמו Jetson, מה שמאפשר יישום טוב יותר של תרחישי יישום AI תעשייתיים גנרטיביים.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-17T03:18:31+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
-  "language_code": "id"
-}
--->
 # **Chat dengan Phi-4-mini ONNX**
 
 ***ONNX*** adalah format terbuka yang dibuat untuk merepresentasikan model pembelajaran mesin. ONNX mendefinisikan satu set operator umum - blok bangunan dari model pembelajaran mesin dan pembelajaran mendalam - serta format file umum untuk memungkinkan pengembang AI menggunakan model dengan berbagai framework, alat, runtime, dan compiler.

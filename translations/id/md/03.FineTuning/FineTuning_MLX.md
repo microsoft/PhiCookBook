@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:01:49+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "id"
-}
--->
 # **Fine-tuning Phi-3 dengan Apple MLX Framework**
 
 Kita dapat menyelesaikan Fine-tuning yang dikombinasikan dengan Lora melalui command line Apple MLX framework. (Jika Anda ingin tahu lebih banyak tentang cara kerja MLX Framework, silakan baca [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)

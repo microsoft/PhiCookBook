@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T09:04:32+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "ms"
-}
--->
 ## Inferens dengan Kaito 
 
 [Kaito](https://github.com/Azure/kaito) adalah operator yang mengautomasikan penyebaran model inferens AI/ML dalam kluster Kubernetes.

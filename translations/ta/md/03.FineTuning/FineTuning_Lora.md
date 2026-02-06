@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-10-11T11:42:24+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
-  "language_code": "ta"
-}
--->
 # **Phi-3 ஐ Lora உடன் Fine-tuning செய்யுதல்**
 
 Microsoft இன் Phi-3 Mini மொழி மாதிரியை [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) பயன்படுத்தி தனிப்பயன் உரையாடல் வழிகாட்டல் தரவுத்தொகுப்பில் Fine-tuning செய்யுதல்.

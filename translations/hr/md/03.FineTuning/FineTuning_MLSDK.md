@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-17T07:48:55+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
-  "language_code": "hr"
-}
--->
 ## Kako koristiti chat-completion komponente iz Azure ML system registry za fino podešavanje modela
 
 U ovom primjeru ćemo izvršiti fino podešavanje modela Phi-3-mini-4k-instruct za dovršavanje razgovora između 2 osobe koristeći ultrachat_200k skup podataka.

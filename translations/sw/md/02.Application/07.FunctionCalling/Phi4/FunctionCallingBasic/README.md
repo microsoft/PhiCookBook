@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:16:39+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "sw"
-}
--->
 ## **Kupiga simu ya function katika Phi-4-mini**
 
 Kupiga simu ya function ilianza kwanza katika familia ya Phi Family, na sasa unaweza kuitumia kupitia Phi-4-mini.

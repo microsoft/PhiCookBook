@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T16:21:09+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "ja"
-}
--->
 ## Kaitoによる推論
 
 [Kaito](https://github.com/Azure/kaito) は、Kubernetesクラスタ内でのAI/ML推論モデルのデプロイメントを自動化するオペレーターです。

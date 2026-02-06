@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:36:55+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "ko"
-}
--->
 # **로컬에서 Phi-3-Vision 추론하기**
 
 Phi-3-vision-128k-instruct는 Phi-3가 언어를 이해하는 것뿐만 아니라 시각적으로 세상을 볼 수 있게 해줍니다. Phi-3-vision-128k-instruct를 통해 OCR, 표 분석, 객체 인식, 이미지 설명 등 다양한 시각 문제를 해결할 수 있습니다. 이전에는 많은 데이터 학습이 필요했던 작업들을 손쉽게 수행할 수 있습니다. 다음은 Phi-3-vision-128k-instruct에서 인용한 관련 기술과 응용 시나리오입니다.

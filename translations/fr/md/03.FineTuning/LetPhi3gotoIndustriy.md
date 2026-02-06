@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-07-17T09:50:50+00:00",
-  "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
-  "language_code": "fr"
-}
--->
 # **Faites de Phi-3 un expert de l'industrie**
 
 Pour intégrer le modèle Phi-3 dans un secteur industriel, il est nécessaire d’ajouter des données métier spécifiques à ce secteur au modèle Phi-3. Nous avons deux options différentes : la première est le RAG (Retrieval Augmented Generation) et la seconde est le Fine Tuning.

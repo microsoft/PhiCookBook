@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:53:54+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "bn"
-}
--->
 # **Apple MLX Framework ব্যবহার করে Phi-3.5 কোয়ান্টাইজেশন**
 
 MLX হলো Apple সিলিকনে মেশিন লার্নিং গবেষণার জন্য একটি অ্যারে ফ্রেমওয়ার্ক, যা Apple মেশিন লার্নিং গবেষণা থেকে এসেছে।

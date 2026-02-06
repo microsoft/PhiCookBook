@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-16T21:14:03+00:00",
-  "source_file": "md/01.Introduction/03/overview.md",
-  "language_code": "uk"
-}
--->
 У контексті Phi-3-mini, inference означає процес використання моделі для створення прогнозів або генерації результатів на основі вхідних даних. Дозвольте розповісти більше про Phi-3-mini та її можливості inference.
 
 Phi-3-mini є частиною серії моделей Phi-3, випущених Microsoft. Ці моделі створені, щоб переосмислити можливості Малих Мовних Моделей (SLM).

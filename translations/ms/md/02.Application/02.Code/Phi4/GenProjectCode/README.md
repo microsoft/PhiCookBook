@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:37+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "ms"
-}
--->
 ## **Menggunakan Phi-4-mini-mm untuk menjana kod**
 
 Phi-4-mini meneruskan keupayaan pengekodan yang hebat daripada Keluarga Phi. Anda boleh menggunakan Prompt untuk bertanya soalan berkaitan pengekodan. Sudah tentu, selepas menambah kebolehan berfikir yang kuat, ia mempunyai keupayaan pengekodan yang lebih hebat, seperti menjana projek mengikut keperluan. Contohnya, menjana projek mengikut keperluan, seperti:

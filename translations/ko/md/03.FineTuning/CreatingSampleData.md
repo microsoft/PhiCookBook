@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-07-17T05:46:19+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "ko"
-}
--->
 # Hugging Face에서 데이터셋과 관련 이미지를 다운로드하여 이미지 데이터셋 생성하기
 
 

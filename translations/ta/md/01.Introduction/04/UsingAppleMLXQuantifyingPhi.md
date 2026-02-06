@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-10-11T12:25:57+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ta"
-}
--->
 # **Apple MLX Framework-ஐ பயன்படுத்தி Phi-3.5-ஐ குவாண்டைஸ் செய்வது**
 
 MLX என்பது ஆப்பிள் சிலிகான் சாதனங்களில் இயங்கும் மெஷின் லெர்னிங் ஆராய்ச்சிக்கான ஒரு அரே பிரேம்வொர்க் ஆகும், இது ஆப்பிள் மெஷின் லெர்னிங் ஆராய்ச்சியால் உருவாக்கப்பட்டது.

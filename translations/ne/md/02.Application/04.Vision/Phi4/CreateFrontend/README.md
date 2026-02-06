@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:07:54+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "ne"
-}
--->
 ## **Phi-4-multimodal प्रयोग गरेर तस्बिरहरू पढ्ने र कोड सिर्जना गर्ने**
 
 Phi-4-multimodal सशक्त तस्बिर पढ्ने क्षमता राख्छ। आउनुहोस् Python प्रयोग गरेर तलका कार्यहरू कार्यान्वयन गर्ने प्रयास गरौं। तस्बिर एउटा ChatGPT पृष्ठ हो।

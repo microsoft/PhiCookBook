@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-07-17T05:50:40+00:00",
-  "source_file": "md/03.FineTuning/CreatingSampleData.md",
-  "language_code": "id"
-}
--->
 # Generate Image Data Set dengan mengunduh DataSet dari Hugging Face dan gambar terkait
 
 

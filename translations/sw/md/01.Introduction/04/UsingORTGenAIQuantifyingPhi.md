@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-16T22:24:40+00:00",
-  "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
-  "language_code": "sw"
-}
--->
 ## **Jinsi ya kutumia Model Builder kuquantize Phi-3.5**
 
 Model Builder sasa inaunga mkono kuquantize modeli za ONNX za Phi-3.5 Instruct na Phi-3.5-Vision

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-17T05:10:01+00:00",
-  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
-  "language_code": "sl"
-}
--->
 ## **Uporabite Phi-4-multimodal za branje slik in generiranje kode**
 
 Phi-4-multimodal ima močne zmogljivosti za branje slik. Poskusimo z uporabo Pythona uresničiti naslednje funkcije. Slika prikazuje stran ChatGPT.

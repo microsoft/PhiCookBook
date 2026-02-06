@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-10-11T12:24:29+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
-  "language_code": "et"
-}
--->
 # Phi-3 ja Phi-4 käivitamine iOS-is Apple MLX raamistikuga
 
 See juhend näitab, kuidas luua iOS-i rakendus, mis käivitab Phi-3 või Phi-4 mudeli otse seadmes, kasutades Apple MLX raamistikku. [MLX](https://opensource.apple.com/projects/mlx/) on Apple'i masinõppe raamistik, mis on optimeeritud Apple Silicon kiipidele.

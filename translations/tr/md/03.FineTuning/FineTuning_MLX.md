@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-17T08:00:00+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
-  "language_code": "tr"
-}
--->
 # **Apple MLX Framework ile Phi-3 İnce Ayarı**
 
 Apple MLX framework komut satırı üzerinden Lora ile birleştirilmiş ince ayarı tamamlayabiliriz. (MLX Framework’ün çalışma prensibini daha iyi anlamak isterseniz, lütfen [Apple MLX Framework ile Phi-3 Çıkarımı](../03.FineTuning/03.Inference/MLX_Inference.md) dosyasını okuyun)

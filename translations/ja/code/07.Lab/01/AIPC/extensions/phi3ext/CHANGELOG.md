@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-16T16:30:05+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
-  "language_code": "ja"
-}
--->
 # 変更履歴
 
 すべての "phi3ext" 拡張機能の重要な変更はこのファイルに記録されます。

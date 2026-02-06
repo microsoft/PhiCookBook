@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-12-21T16:35:26+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
-  "language_code": "ml"
-}
--->
 # നിങ്ങളുടെ VS Code എക്സ്റ്റൻഷനിലേക്ക് സ്വാഗതം
 
 ## ഫോൾഡറിലെ ഉള്ളടക്കം

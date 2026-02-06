@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:25:32+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "my"
-}
--->
 # **iOS တွင် Phi-3 အာရုံစူးစိုက်မှု**
 
 Phi-3-mini သည် Microsoft မှ ထုတ်လုပ်သော မော်ဒယ်အသစ်တစ်စီးရီးဖြစ်ပြီး Edge စက်ပစ္စည်းများနှင့် IoT စက်ပစ္စည်းများပေါ်တွင် Large Language Models (LLMs) ကို တပ်ဆင်အသုံးပြုနိုင်စေသည်။ Phi-3-mini ကို iOS, Android နှင့် Edge Device များတွင် အသုံးပြုနိုင်ပြီး BYOD ပတ်ဝန်းကျင်များတွင် generative AI ကို တပ်ဆင်နိုင်သည်။ အောက်ပါ ဥပမာတွင် iOS ပေါ်တွင် Phi-3-mini ကို မည်သို့ တပ်ဆင်ရမည်ကို ပြသထားသည်။

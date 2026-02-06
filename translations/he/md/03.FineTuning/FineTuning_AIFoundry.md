@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-07-17T06:08:48+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
-  "language_code": "he"
-}
--->
 # כיוונון עדין של Phi-3 עם Azure AI Foundry
 
 בואו נחקור כיצד לכוונן עדין את מודל השפה Phi-3 Mini של מיקרוסופט באמצעות Azure AI Foundry. כיוונון עדין מאפשר להתאים את Phi-3 Mini למשימות ספציפיות, מה שהופך אותו לעוצמתי ומודע להקשר בצורה טובה יותר.

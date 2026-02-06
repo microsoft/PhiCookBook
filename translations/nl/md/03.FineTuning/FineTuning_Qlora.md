@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:19:36+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "nl"
-}
--->
 **Fine-tunen van Phi-3 met QLoRA**
 
 Het fine-tunen van Microsoft’s Phi-3 Mini taalmodel met behulp van [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-07-17T10:04:46+00:00",
-  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
-  "language_code": "ja"
-}
--->
 # **Apple MLXフレームワークでのPhi-3推論**
 
 ## **MLXフレームワークとは**
@@ -53,7 +44,7 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** モデルはmlx_lm.convertを使って量子化でき、デフォルトの量子化はINT4です。この例ではPhi-3-miniをINT4に量子化しています。
+***注記：*** モデルはmlx_lm.convertを使って量子化でき、デフォルトの量子化はINT4です。この例ではPhi-3-miniをINT4に量子化しています。
 
 モデルはmlx_lm.convertで量子化可能で、デフォルトはINT4です。この例ではPhi-3-miniをINT4に量子化し、量子化後のモデルはデフォルトのディレクトリ ./mlx_model に保存されます。
 
@@ -76,7 +67,7 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ![Notebook](../../../../../translated_images/ja/03.b9705a3a5aaa89f9.webp)
 
-***Note:*** このサンプルは[こちらのリンク](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)からご覧ください。
+***注記:*** このサンプルは[こちらのリンク](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)からご覧ください。
 
 
 ## **リソース**

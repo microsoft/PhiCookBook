@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-16T22:00:30+00:00",
-  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
-  "language_code": "mr"
-}
--->
 # **Intel OpenVINO वापरून Phi-3.5 चे क्वांटायझेशन**
 
 Intel हा सर्वात पारंपरिक CPU निर्माता असून त्याचे अनेक वापरकर्ते आहेत. मशीन लर्निंग आणि डीप लर्निंगच्या वाढीसह, Intel ने AI अॅक्सेलरेशनच्या स्पर्धेतही प्रवेश केला आहे. मॉडेल इन्फरन्ससाठी Intel फक्त GPU आणि CPU वापरत नाही, तर NPU देखील वापरतो.

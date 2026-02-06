@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:10:17+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "en"
-}
--->
 ## **Extracting audio transcripts using Phi-4-multimodal**
 
 Phi-4-multimodal is a fully multimodal model that can process audio as well as text and images. Let's see how to use it.

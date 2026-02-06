@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-12-21T16:52:31+00:00",
-  "source_file": "code/03.Finetuning/olive-ort-example/README.md",
-  "language_code": "kn"
-}
--->
 # Olive ಬಳಸಿ Phi3 ಅನ್ನು ಸೂಕ್ಷ್ಮ-ಸಂಯೋಜನೆ (Fine-tune) ಮಾಡುವುದು
 
 In this example you'll use Olive to:

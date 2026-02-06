@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-16T21:53:31+00:00",
-  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
-  "language_code": "ja"
-}
--->
 # **Apple MLXフレームワークを使ったPhi-3.5の量子化**
 
 MLXはAppleシリコン上での機械学習研究のための配列フレームワークで、Appleの機械学習研究チームによって開発されました。

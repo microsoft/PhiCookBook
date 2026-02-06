@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "aca91084bc440431571e00bf30d96ab8",
-  "translation_date": "2026-01-05T09:55:18+00:00",
-  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
-  "language_code": "ro"
-}
--->
 ## Inferență cu Kaito 
 
 [Kaito](https://github.com/Azure/kaito) este un operator care automatizează implementarea modelelor AI/ML pentru inferență într-un cluster Kubernetes.

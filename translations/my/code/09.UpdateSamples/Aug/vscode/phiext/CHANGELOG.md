@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-07-16T17:26:47+00:00",
-  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
-  "language_code": "my"
-}
--->
 # ပြောင်းလဲမှုမှတ်တမ်း
 
 "phiext" extension တွင် ဖြစ်ပေါ်သော အရေးကြီးပြောင်းလဲမှုများအားလုံးကို ဤဖိုင်တွင် မှတ်တမ်းတင်ထားမည်ဖြစ်သည်။

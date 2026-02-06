@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-12-21T15:54:37+00:00",
-  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
-  "language_code": "te"
-}
--->
 # phi3ext README
 
 ఇది మీ విస్తరణ "phi3ext" యొక్క README. 在写完简要描述后，我们建议包含以下章节。

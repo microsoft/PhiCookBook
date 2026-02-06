@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:47:44+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "sl"
-}
--->
 ## **Uporaba Phi-4-mini-mm za generiranje kode**
 
 Phi-4-mini nadaljuje močne zmožnosti kodiranja družine Phi. Za vprašanja, povezana s kodiranjem, lahko uporabite Prompt. Seveda, po dodajanju močne sposobnosti razmišljanja, ima še močnejše zmožnosti kodiranja, kot je generiranje projektov glede na zahteve. Na primer, generiranje projektov glede na zahteve, kot so:

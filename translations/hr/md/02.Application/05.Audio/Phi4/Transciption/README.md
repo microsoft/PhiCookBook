@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-07-17T05:13:28+00:00",
-  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
-  "language_code": "hr"
-}
--->
 ## **Izvlačenje audio transkripata pomoću Phi-4-multimodal**
 
 Phi-4-multimodal je model s punim modalitetima koji može koristiti audio uz tekst i slike. Pogledajmo kako ga koristiti.

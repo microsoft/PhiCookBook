@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-17T03:43:07+00:00",
-  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
-  "language_code": "sw"
-}
--->
 # **Jenga Chat yako ya Visual Studio Code GitHub Copilot na Familia ya Microsoft Phi-3**
 
 Je, umewahi kutumia wakala wa eneo la kazi katika GitHub Copilot Chat? Unataka kujenga wakala wa msimbo wa timu yako mwenyewe? Maabara hii ya vitendo inalenga kuunganisha mfano wa chanzo wazi kujenga wakala wa biashara wa kiwango cha shirika.

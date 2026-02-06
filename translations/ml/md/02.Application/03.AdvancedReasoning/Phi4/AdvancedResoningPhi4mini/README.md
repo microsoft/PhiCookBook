@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-12-21T22:08:42+00:00",
-  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
-  "language_code": "ml"
-}
--->
 ## **Phi-4-mini-reasoning(3.8b) അല്ലെങ്കിൽ Phi-4-reasoning(14b) കാരണീയതാ വിദഗ്ധനായി ഉപയോഗിക്കൽ**
 
 അതിന്റെയായ ശക്തമായ കാരണീയതാ കഴിവ് Phi-4-mini-reasoning അല്ലെങ്കിൽ Phi-4-mini-reasoning മുഖേന നോക്കാം.

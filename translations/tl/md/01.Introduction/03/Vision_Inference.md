@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-16T21:39:30+00:00",
-  "source_file": "md/01.Introduction/03/Vision_Inference.md",
-  "language_code": "tl"
-}
--->
 # **Inference Phi-3-Vision sa Lokal**
 
 Pinapayagan ng Phi-3-vision-128k-instruct ang Phi-3 na hindi lamang maintindihan ang wika, kundi makita rin ang mundo nang biswal. Sa pamamagitan ng Phi-3-vision-128k-instruct, maaari nating lutasin ang iba't ibang visual na problema, tulad ng OCR, pagsusuri ng talahanayan, pagkilala sa mga bagay, paglalarawan ng larawan, atbp. Madali nating matatapos ang mga gawain na dati ay nangangailangan ng maraming data training. Narito ang mga kaugnay na teknik at mga senaryo ng aplikasyon na binanggit ng Phi-3-vision-128k-instruct

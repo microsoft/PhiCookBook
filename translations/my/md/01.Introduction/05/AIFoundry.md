@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-07-16T22:34:30+00:00",
-  "source_file": "md/01.Introduction/05/AIFoundry.md",
-  "language_code": "my"
-}
--->
 # **Azure AI Foundry ကို အသုံးပြုပြီး အကဲဖြတ်ခြင်း**
 
 ![aistudo](../../../../../translated_images/my/AIFoundry.9e0b513e999a1c5a.webp)

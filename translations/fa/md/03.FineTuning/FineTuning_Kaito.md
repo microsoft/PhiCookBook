@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-07-17T06:18:41+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
-  "language_code": "fa"
-}
--->
 ## تنظیم دقیق با Kaito
 
 [Kaito](https://github.com/Azure/kaito) یک اپراتور است که استقرار مدل‌های استنتاج AI/ML را در یک کلاستر Kubernetes به‌صورت خودکار انجام می‌دهد.

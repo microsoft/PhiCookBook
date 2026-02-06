@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-17T10:31:52+00:00",
-  "source_file": "md/04.HOL/dotnet/readme.md",
-  "language_code": "ur"
-}
--->
 ﻿## C# استعمال کرتے ہوئے Phi لیبز میں خوش آمدید
 
 .NET ماحول میں Phi ماڈلز کے مختلف طاقتور ورژنز کو انٹیگریٹ کرنے کے طریقے دکھانے والی چند لیبز کا انتخاب موجود ہے۔

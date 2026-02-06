@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:46:31+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "id"
-}
--->
 ## **Menggunakan Phi-4-mini-mm untuk menghasilkan kode**
 
 Phi-4-mini melanjutkan kemampuan coding kuat dari Phi Family. Anda dapat menggunakan Prompt untuk mengajukan pertanyaan terkait coding. Tentu saja, setelah menambahkan kemampuan penalaran yang kuat, kemampuan codingnya menjadi lebih hebat, seperti menghasilkan proyek sesuai kebutuhan. Misalnya, membuat proyek sesuai dengan persyaratan, seperti:

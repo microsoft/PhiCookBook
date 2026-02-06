@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7f72d7981ed3640865700f51ae407da4",
-  "translation_date": "2026-01-14T15:29:56+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
-  "language_code": "pa"
-}
--->
 # ਇੰਟਰਐਕਟਿਵ ਫਾਈ 3 ਮਿਨੀ 4K ਇੰਸਟ੍ਰਕਟ ਚੈੱਟਬੋਟ ਵਿਥ ਵਿਸਪਰ
 
 ## ਜਾਇਜ਼ਾ

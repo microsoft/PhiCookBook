@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-16T14:46:04+00:00",
-  "source_file": "CONTRIBUTING.md",
-  "language_code": "bg"
-}
--->
 # Принос
 
 Този проект приема приноси и предложения. Повечето приноси изискват да се съгласите с Contributor License Agreement (CLA), с който декларирате, че имате правото и действително ни предоставяте правата да използваме вашия принос. За подробности посетете [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)

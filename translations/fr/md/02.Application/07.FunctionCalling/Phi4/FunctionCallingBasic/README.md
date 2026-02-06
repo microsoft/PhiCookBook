@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:13:52+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "fr"
-}
--->
 ## **Appel de fonction dans Phi-4-mini**
 
 L'appel de fonction est apparu pour la première fois dans la famille Phi Family, et vous pouvez désormais l'utiliser avec Phi-4-mini.

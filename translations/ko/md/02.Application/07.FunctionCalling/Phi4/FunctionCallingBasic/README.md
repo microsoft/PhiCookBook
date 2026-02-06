@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-17T05:14:46+00:00",
-  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
-  "language_code": "ko"
-}
--->
 ## **Phi-4-mini에서 함수 호출하기**
 
 함수 호출은 Phi Family에서 처음 등장했으며, 이제 Phi-4-mini에서도 사용할 수 있습니다.

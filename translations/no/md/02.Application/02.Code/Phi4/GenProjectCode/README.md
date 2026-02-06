@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-17T04:45:55+00:00",
-  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
-  "language_code": "no"
-}
--->
 ## **Bruke Phi-4-mini-mm til å generere kode**
 
 Phi-4-mini fortsetter de sterke kodingsevnen til Phi-familien. Du kan bruke Prompt til å stille spørsmål relatert til koding. Selvfølgelig, etter å ha lagt til sterk resonnementsevne, har den enda sterkere kodingsevner, som å generere prosjekter basert på krav. For eksempel, generere prosjekter i henhold til krav, som:

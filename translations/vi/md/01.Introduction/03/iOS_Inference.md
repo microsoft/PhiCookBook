@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-16T20:23:05+00:00",
-  "source_file": "md/01.Introduction/03/iOS_Inference.md",
-  "language_code": "vi"
-}
--->
 # **Suy luận Phi-3 trên iOS**
 
 Phi-3-mini là dòng mô hình mới từ Microsoft cho phép triển khai các Mô hình Ngôn ngữ Lớn (LLMs) trên các thiết bị biên và thiết bị IoT. Phi-3-mini có sẵn cho iOS, Android và các thiết bị Edge, giúp AI tạo sinh có thể được triển khai trong môi trường BYOD. Ví dụ dưới đây minh họa cách triển khai Phi-3-mini trên iOS.

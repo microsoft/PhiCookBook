@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
-  "translation_date": "2026-01-05T09:16:47+00:00",
-  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
-  "language_code": "sw"
-}
--->
 # Rekebisha na Unganisha mifano ya Phi-3 maalum na Prompt flow
 
 Mfano huu wa mwisho-mwisho (E2E) umejikita kwenye mwongozo "[Rekebisha na Unganisha Mifano Maalum ya Phi-3 na Prompt Flow: Mwongozo wa Hatua kwa Hatua](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" kutoka kwa Jamii ya Kiufundi ya Microsoft. Unatambulisha michakato ya kurekebisha, kupeleka, na kuunganisha mifano maalum ya Phi-3 na Prompt flow.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-10-11T12:25:44+00:00",
-  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
-  "language_code": "et"
-}
--->
 # **Phi perekonna kvantiseerimine kasutades llama.cpp**
 
 ## **Mis on llama.cpp**

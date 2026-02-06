@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-07-17T08:17:30+00:00",
-  "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
-  "language_code": "ja"
-}
--->
 **QLoRAを使ったPhi-3のファインチューニング**
 
 MicrosoftのPhi-3 Mini言語モデルを[QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora)を使ってファインチューニングします。
