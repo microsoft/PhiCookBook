@@ -35,13 +35,23 @@ Follow these steps to get started using these resources:
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
 > **Prefer to Clone Locally?**
-
-> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
+>
+> This repository includes 50+ language translations which significantly increase the download size. To clone without translations, use sparse checkout:
+>
+> **Bash / macOS / Linux:**
 > ```bash
 > git clone --filter=blob:none --sparse https://github.com/microsoft/PhiCookBook.git
 > cd PhiCookBook
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
+>
+> **CMD (Windows):**
+> ```cmd
+> git clone --filter=blob:none --sparse https://github.com/microsoft/PhiCookBook.git
+> cd PhiCookBook
+> git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+> ```
+>
 > This gives you everything you need to complete the course with a much faster download.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
@@ -68,21 +78,21 @@ Follow these steps to get started using these resources:
     -  [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md)
 
 - Inference Phi Family
-    - [Inference Phi on iOS](./md/01.Introduction/03/iOS_Inference.md)
-    - [Inference Phi on Android](./md/01.Introduction/03/Android_Inference.md)
-    - [Inference Phi on Jetson](./md/01.Introduction/03/Jetson_Inference.md)
-    - [Inference Phi on AI PC](./md/01.Introduction/03/AIPC_Inference.md)
+    - [Inference Phi in iOS](./md/01.Introduction/03/iOS_Inference.md)
+    - [Inference Phi in Android](./md/01.Introduction/03/Android_Inference.md)
+    - [Inference Phi in Jetson](./md/01.Introduction/03/Jetson_Inference.md)
+    - [Inference Phi in AI PC](./md/01.Introduction/03/AIPC_Inference.md)
     - [Inference Phi with Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
-    - [Inference Phi on Local Server](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [Inference Phi on Remote Server using AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
+    - [Inference Phi in Local Server](./md/01.Introduction/03/Local_Server_Inference.md)
+    - [Inference Phi in Remote Server using AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
     - [Inference Phi with Rust](./md/01.Introduction/03/Rust_Inference.md)
-    - [Inference Phi--Vision on Local](./md/01.Introduction/03/Vision_Inference.md)
-    - [Inference Phi with Kaito AKS, Azure Containers (official support)](./md/01.Introduction/03/Kaito_Inference.md)
+    - [Inference Phi--Vision in Local](./md/01.Introduction/03/Vision_Inference.md)
+    - [Inference Phi with Kaito AKS, Azure Containers(official support)](./md/01.Introduction/03/Kaito_Inference.md)
 -  [Quantifying Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)
     - [Quantizing Phi-3.5 / 4 using llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
     - [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [Quantizing Phi-3.5 / 4 using Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [Quantizing Phi-3.5 / 4 using Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4  using Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4  using Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
 -  Evaluation Phi
     - [Responsible AI](./md/01.Introduction/05/ResponsibleAI.md)
@@ -195,9 +205,7 @@ Follow these steps to get started using these resources:
 - Hands on Lab
   - [Exploring cutting-edge models: LLMs, SLMs, local development and more](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
   - [Unlocking NLP Potential: Fine-Tuning with Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
-
 - Academic Research Papers and Publications
-
   - [Textbooks Are All You Need II: phi-1.5 technical report](https://arxiv.org/abs/2309.05463)
   - [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219)
   - [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905)
@@ -211,14 +219,14 @@ Follow these steps to get started using these resources:
 
 ### Phi on Azure AI Foundry
 
-You can learn how to use Microsoft Phi and how to build E2E solutions on your various hardware devices. To experience Phi for yourself, start by playing with the models and customizing Phi for your scenarios using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). You can learn more at Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+You can learn how to use Microsoft Phi and how to build E2E solutions on your different hardware devices. To experience Phi for yourself, start by playing with the models and customizing Phi for your scenarios using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). You can learn more at Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**
-Each model has a dedicated playground to test the model in the [Azure AI Playground](https://aka.ms/try-phi3).
+Each model has a dedicated playground to test the model [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi on GitHub Models
 
-You can learn how to use Microsoft Phi and how to build E2E solutions on your various hardware devices. To experience Phi for yourself, start by playing with the model and customizing Phi for your scenarios using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). You can learn more at Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
+You can learn how to use Microsoft Phi and how to build E2E solutions on your different hardware devices. To experience Phi for yourself, start by playing with the model and customizing Phi for your scenarios using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). You can learn more at Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
 **Playground**
 Each model has a dedicated [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
@@ -282,9 +290,9 @@ Microsoft’s approach to responsible AI is grounded in our AI principles of f
 Large-scale natural language, image, and speech models - like the ones used in this sample - can potentially behave in ways that are unfair, unreliable, or offensive, in turn causing harms. Please consult the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to be informed about risks and limitations.
 
 The recommended approach to mitigating these risks is to include a safety system in your architecture that can detect and prevent harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) provides an independent layer of protection, able to detect harmful user-generated and AI-generated content in applications and services. Azure AI Content Safety includes text and image APIs that allow you to detect material that is harmful. Within Azure AI Foundry, the Content Safety service allows you to view, explore and try out sample code for detecting harmful content across different modalities. The following [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) guides you through making requests to the service.
-Another aspect to take into account is the overall application performance. With multi-modal and multi-models applications, we consider performance to mean that the system performs as you and your users expect, including not generating harmful outputs. It's important to assess the performance of your overall application using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You also have the ability to create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+Another aspect to take into account is the overall application performance. With multi-modal and multi-model applications, we consider performance to mean that the system performs as you and your users expect, including not generating harmful outputs. It's important to assess the performance of your overall application using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You also have the ability to create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-You can evaluate your AI application in your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Given either a test dataset or a target, your generative AI application generations are quantitatively measured with built-in evaluators or custom evaluators of your choice. To get started with the Azure AI Evaluation SDK to evaluate your system, you can follow the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Once you execute an evaluation run, you can [visualize the results in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+You can evaluate your AI application in your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Given either a test dataset or a target, your generative AI application generations are quantitatively measured with built-in evaluators or custom evaluators of your choice. To get started with the azure ai evaluation sdk to evaluate your system, you can follow the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Once you execute an evaluation run, you can [visualize the results in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## Trademarks
 
