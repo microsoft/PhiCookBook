@@ -6,8 +6,7 @@
 
 **Infraestructura** Esto incluye la CPU y FPGA, que son esenciales para el proceso de fine-tuning. Permíteme mostrarte los íconos de cada una de estas tecnologías.
 
-**Herramientas y Framework** Esto incluye ONNX Runtime y ONNX Runtime. Permíteme mostrarte los íconos de cada una de estas tecnologías.  
-[Insertar íconos para ONNX Runtime y ONNX Runtime]
+**Herramientas y Framework** Esto incluye ONNX Runtime y ONNX Runtime. Permíteme mostrarte los íconos de cada una de estas tecnologías.
 
 El proceso de fine-tuning con tecnologías de Microsoft involucra varios componentes y herramientas. Al comprender y utilizar estas tecnologías, podemos ajustar eficazmente nuestras aplicaciones y crear mejores soluciones.
 

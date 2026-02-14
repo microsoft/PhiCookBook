@@ -6,8 +6,7 @@
 
 **Infrastructure** Kasama dito ang CPU at FPGA, na mahalaga para sa proseso ng fine-tuning. Ipapakita ko sa iyo ang mga icon para sa bawat isa sa mga teknolohiyang ito.
 
-**Tools & Framework** Kasama dito ang ONNX Runtime at ONNX Runtime. Ipapakita ko sa iyo ang mga icon para sa bawat isa sa mga teknolohiyang ito.  
-[Insert icons for ONNX Runtime and ONNX Runtime]
+**Tools & Framework** Kasama dito ang ONNX Runtime at ONNX Runtime. Ipapakita ko sa iyo ang mga icon para sa bawat isa sa mga teknolohiyang ito.
 
 Ang proseso ng fine-tuning gamit ang mga teknolohiyang Microsoft ay binubuo ng iba't ibang bahagi at kasangkapan. Sa pamamagitan ng pag-unawa at paggamit ng mga teknolohiyang ito, maaari nating epektibong i-fine-tune ang ating mga aplikasyon at makalikha ng mas mahusay na mga solusyon.
 
