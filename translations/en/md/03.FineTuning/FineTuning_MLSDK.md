@@ -1,4 +1,4 @@
-## How use chat-completion components from the Azure ML system registry to fine tune a model
+## How to use chat-completion components from the Azure ML system registry to fine-tune a model
 
 In this example we will undertake fine tuning of the Phi-3-mini-4k-instruct model to complete a conversation between 2 people using ultrachat_200k dataset.
 
@@ -366,12 +366,12 @@ The chat-completion dataset is stored in parquet format with each entry using th
     ```
 
 ### Loading Data into a DataFrame
-
 1. This Python script is loading a JSON Lines file into a pandas DataFrame and displaying the first 5 rows. Here's a breakdown of what it does:
 
     - It imports the pandas library, which is a powerful data manipulation and analysis library.
 
     - It sets the maximum column width for pandas' display options to 0. This means that the full text of each column will be displayed without truncation when the DataFrame is printed.
+
     - It uses the pd.read_json function to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame. The lines=True argument indicates that the file is in JSON Lines format, where each line is a separate JSON object.
 
     - It uses the head method to display the first 5 rows of the DataFrame. If the DataFrame has less than 5 rows, it will display all of them.
@@ -867,11 +867,9 @@ We will fetch some sample data from the test dataset and submit to online endpoi
     ```
 
 ### Create JSON Object
-
 1. This Python script is creating a JSON object with specific parameters and saving it to a file. Here's a breakdown of what it does:
 
     - It imports the json module, which provides functions to work with JSON data.
-
 
     - It creates a dictionary parameters with keys and values that represent parameters for a machine learning model. The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", and their corresponding values are 0.6, 0.9, True, and 200 respectively.
 
