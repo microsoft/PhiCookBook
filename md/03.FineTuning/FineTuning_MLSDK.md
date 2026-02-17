@@ -1,4 +1,4 @@
-## How use chat-completion components from the Azure ML system registry to fine tune a model
+## How to use chat-completion components from the Azure ML system registry to fine-tune a model
 
 In this example we will undertake fine tuning of the Phi-3-mini-4k-instruct model to complete a conversation between 2 people using ultrachat_200k dataset.
 
