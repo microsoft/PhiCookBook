@@ -1,44 +1,44 @@
-## Kaip naudoti pokalbių užbaigimo komponentus iš Azure ML sistemos registro modeliui tobulinti
+## Kaip naudoti pokalbio užbaigimo komponentus iš Azure ML sistemos registro modeliui tikslinti
 
-Šiame pavyzdyje atliekame Phi-3-mini-4k-instruct modelio tobulinimą, kad užbaigtume pokalbį tarp 2 žmonių, naudojant ultrachat_200k duomenų rinkinį.
+Šiame pavyzdyje mes atliksime Phi-3-mini-4k-instruct modelio tikslinimą, kad užbaigtume pokalbį tarp 2 žmonių naudojant ultrachat_200k duomenų rinkinį.
 
 ![MLFineTune](../../../../translated_images/lt/MLFineTune.928d4c6b3767dd35.webp)
 
-Pavyzdyje bus parodyta, kaip atlikti tobulinimą naudojant Azure ML SDK ir Python, o vėliau išdėstyti tobulintą modelį internetiniame taške realaus laiko spėjimams.
+Pavyzdys parodys, kaip atlikti tikslinimą naudojant Azure ML SDK ir Python, o tada įdiegti tikslintą modelį į internetinę galinę tašką realaus laiko prognozėms.
 
 ### Mokymo duomenys
 
-Naudosime ultrachat_200k duomenų rinkinį. Tai labai filtruota UltraChat duomenų rinkinio versija, kuria buvo treniruojamas Zephyr-7B-β – moderniausias 7b pokalbių modelis.
+Naudosime ultrachat_200k duomenų rinkinį. Tai smarkiai filtruota UltraChat duomenų rinkinio versija, kuri buvo naudojama mokyti Zephyr-7B-β – pažangų 7b pokalbių modelį.
 
 ### Modelis
 
-Naudosime Phi-3-mini-4k-instruct modelį, kad parodytume, kaip vartotojas gali tobulinti modelį pokalbių užbaigimo užduočiai. Jei atidarėte šį užrašų bloką iš konkretos modeliui skirtos kortelės, nepamirškite pakeisti konkretaus modelio pavadinimą.
+Naudosime Phi-3-mini-4k-instruct modelį, kad parodytume, kaip naudotojas gali atlikti modelio tikslinimą pokalbio užbaigimo užduočiai. Jei atidarėte šį bloknotą iš konkretaus modelio kortelės, nepamirškite pakeisti modelio pavadinimą.
 
 ### Užduotys
 
-- Pasirinkti modelį tobulinimui.
+- Pasirinkti modelį tikslinimui.
 - Pasirinkti ir ištirti mokymo duomenis.
-- Suorganizuoti tobulinimo užduotį.
-- Vykdyti tobulinimo užduotį.
+- Suformuoti tikslinimo užduotį.
+- Vykdyti tikslinimo užduotį.
 - Peržiūrėti mokymo ir vertinimo metrikas.
-- Užregistruoti tobulintą modelį.
-- Išdėstyti tobulintą modelį realaus laiko spėjimui.
-- Išvalyti išteklius.
+- Užregistruoti tikslintą modelį.
+- Įdiegti tikslintą modelį realaus laiko prognozėms.
+- Sutvarkyti išteklius.
 
-## 1. Paruoškite reikalavimus
+## 1. Paruošiamieji veiksmai
 
-- Įdiekite priklausomybes
-- Prisijunkite prie AzureML darbo vietos. Daugiau sužinokite apie SDK autentifikavimo nustatymą. Žemiau pakeiskite <WORKSPACE_NAME>, <RESOURCE_GROUP> ir <SUBSCRIPTION_ID>.
-- Prisijunkite prie azureml sistemos registro
-- Nustatykite pasirenkamą eksperimento pavadinimą
-- Patikrinkite arba sukurkite kompiuterį.
+- Įdiegti priklausomybes
+- Prisijungti prie AzureML darbo srities. Daugiau informacijos rasite apie SDK autentifikacijos nustatymą. Pakeiskite žemiau esančius <WORKSPACE_NAME>, <RESOURCE_GROUP> ir <SUBSCRIPTION_ID>.
+- Prisijungti prie azureml sistemos registro
+- Nustatyti pasirenkamą eksperimento pavadinimą
+- Patikrinti arba sukurti skaičiavimo resursus.
 
 > [!NOTE]
-> Reikalavimai: vienas GPU mazgas gali turėti kelias GPU korteles. Pvz., viename Standard_NC24rs_v3 mazge yra 4 NVIDIA V100 GPU, o Standard_NC12s_v3 – 2 NVIDIA V100 GPU. Informaciją žr. dokumentacijoje. GPU kortelių skaičius žygyje nustatomas pagal toliau pateiktą parametrą gpus_per_node. Teisingas šio parametro nustatymas užtikrina visų GPU mazge panaudojimą. Rekomenduojamus GPU kompiuterių SKU rasite čia ir čia.
+> Reikalavimai: vienas GPU mazgas gali turėti kelias GPU korteles. Pavyzdžiui, viename Standard_NC24rs_v3 mazge yra 4 NVIDIA V100 GPU, o Standard_NC12s_v3 – 2 NVIDIA V100 GPU. Daugiau informacijos rasite dokumentacijoje. GPU kortelių skaičius per mazgą nustatomas parametre gpus_per_node žemiau. Teisingai nustatant šią reikšmę užtikrinamas visų GPU naudingumas mazge. Rekomenduojamus GPU kompiuterio SKU rasite čia ir čia.
 
 ### Python bibliotekos
 
-Įdiekite priklausomybes paleisdami žemiau esantį bloką. Tai nėra neprivalomas žingsnis, jei dirbate naujoje aplinkoje.
+Įdiekite priklausomybes vykdydami žemiau esantį langelį. Tai nėra pasirenkamas žingsnis, jei naudojate naują aplinką.
 
 ```bash
 pip install azure-ai-ml
@@ -50,41 +50,41 @@ pip install azureml-mlflow
 
 ### Sąveika su Azure ML
 
-1. Šis Python scenarijus skirtas sąveikai su Azure Machine Learning (Azure ML) paslauga. Štai ką jis atlieka:
+1. Šis Python skriptas skirtas sąveikai su Azure Machine Learning (Azure ML) paslauga. Štai ką jis daro:
 
-    - Importuoja reikalingus modulius iš paketų azure.ai.ml, azure.identity ir azure.ai.ml.entities. Taip pat importuoja time modulį.
+    - Importuoja reikiamus modulius iš paketų azure.ai.ml, azure.identity ir azure.ai.ml.entities. Taip pat importuoja time modulį.
 
-    - Bando autentifikuotis naudodamas DefaultAzureCredential(), kuris supaprastina autentifikaciją ir leidžia greitai pradėti programų kūrimą Azure debesyje. Jei nepavyksta, pereina prie InteractiveBrowserCredential(), kuris pateikia interaktyvų prisijungimo langą.
+    - Bando autentifikuotis naudodamas DefaultAzureCredential(), kuris suteikia supaprastintą autentifikacijos patirtį, leidžiančią greitai pradėti kurti programas Azure debesyje. Jei tai nepavyksta, pereina prie InteractiveBrowserCredential(), kuris pateikia interaktyvų prisijungimo langą.
 
-    - Tada bando sukurti MLClient egzempliorių naudodamas from_config metodą, kuris skaito konfigūraciją iš numatyto konfigūracijos failo (config.json). Jei nepavyksta, sukuria MLClient egzempliorių nurodydamas subscription_id, resource_group_name ir workspace_name rankiniu būdu.
+    - Tada bando sukurti MLClient egzempliorių naudodamas from_config metodą, kuris nuskaito konfigūraciją iš numatyto konfigūracijos failo (config.json). Jei tai nepavyksta, sukuria MLClient egzempliorių rankiniu būdu pateikdamas subscription_id, resource_group_name ir workspace_name.
 
-    - Sukuria kitą MLClient egzempliorių, šį kartą Azure ML registrui pavadinimu "azureml". Šiame registre saugomi modeliai, tobulinimo vamzdynai ir aplinkos.
+    - Sukuria dar vieną MLClient egzempliorių, šį kartą Azure ML registrui pavadinimu "azureml". Šiame registre saugomi modeliai, tikslinimo vamzdynai ir aplinkos.
 
-    - Nustato experimento pavadinimą "chat_completion_Phi-3-mini-4k-instruct".
+    - Nustato eksperimento pavadinimą "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Sugeneruoja unikalų laiko žymeklį, konvertuodamas esamą laiką (sekundėmis nuo epoch pradžios, kaip slankųjį skaičių) į sveiką skaičių, o vėliau į eilutę. Šis laiko žymeklis gali būti panaudotas unikaliems pavadinimams ir versijoms kurti.
+    - Generuoja unikalų laiko žymą, paversdamas dabartinį laiką (epoch nuo sekundžių, slankiojo kablelio) į sveiką skaičių, o po to į eilutę. Ši žyma gali būti naudojama unikaliems pavadinimams ir versijoms kurti.
 
     ```python
-    # Importuokite reikalingus modulius iš Azure ML ir Azure Identity
+    # Importuoti reikalingus modulius iš Azure ML ir Azure Identity
     from azure.ai.ml import MLClient
     from azure.identity import (
         DefaultAzureCredential,
         InteractiveBrowserCredential,
     )
     from azure.ai.ml.entities import AmlCompute
-    import time  # Importuokite laiko modulį
+    import time  # Importuoti time modulį
     
-    # Bandykite autentifikuotis naudodami DefaultAzureCredential
+    # Bandyti autentifikuotis naudojant DefaultAzureCredential
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
-    except Exception as ex:  # Jei DefaultAzureCredential nepavyksta, naudokite InteractiveBrowserCredential
+    except Exception as ex:  # Jei DefaultAzureCredential nepavyksta, naudoti InteractiveBrowserCredential
         credential = InteractiveBrowserCredential()
     
-    # Bandykite sukurti MLClient egzempliorių naudodami numatytąjį konfigūracijos failą
+    # Bandyti sukurti MLClient instanciją naudojant numatytąjį konfigūracijos failą
     try:
         workspace_ml_client = MLClient.from_config(credential=credential)
-    except:  # Jei tai nepavyksta, sukurkite MLClient egzempliorių rankiniu būdu pateikdami duomenis
+    except:  # Jei tai nepavyksta, sukurti MLClient instanciją rankiniu būdu nurodant detales
         workspace_ml_client = MLClient(
             credential,
             subscription_id="<SUBSCRIPTION_ID>",
@@ -92,41 +92,41 @@ pip install azureml-mlflow
             workspace_name="<WORKSPACE_NAME>",
         )
     
-    # Sukurkite kitą MLClient egzempliorių Azure ML registre pavadinimu "azureml"
-    # Šiame registre saugomi modeliai, tikslinimo (fine-tuning) potekiai ir aplinkos
+    # Sukurti kitą MLClient instanciją Azure ML registrui pavadinimu „azureml“
+    # Šiame registre saugomi modeliai, tikslinimo (fine-tuning) duomenų srautai ir aplinkos
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
-    # Nustatykite eksperimento pavadinimą
+    # Nustatyti eksperimento pavadinimą
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Sugeneruokite unikalų laiko žymą, kuri gali būti naudojama unikaliems pavadinimams ir versijoms
+    # Sugeneruoti unikalų laiko žymeklį, kuris gali būti naudojamas vardams ir versijoms, kuriems reikia unikalumo
     timestamp = str(int(time.time()))
     ```
 
-## 2. Pasirinkite pradinį modelį tobulinimui
+## 2. Pasirinkite pagrindinį modelį tikslinimui
 
-1. Phi-3-mini-4k-instruct yra 3,8 milijardo parametrų, lengvas, pažangiausias atvirojo kodo modelis, paremtas Phi-2 naudotais duomenų rinkiniais. Modelis priklauso Phi-3 modelių šeimai, o Mini versija turi du variantus: 4K ir 128K, kurie reiškia palaikomų konteksto ilgių (simboliais) maksimalų kiekį. Norint naudoti, modelį reikia pritaikyti mūsų konkrečiam tikslui. Šiuos modelius galite peržiūrėti Modelių kataloge AzureML Studio, filtruodami pagal pokalbių užbaigimo užduotį. Šiame pavyzdyje naudojame Phi-3-mini-4k-instruct modelį. Jei atidarėte užrašų bloką kitam modeliui, atitinkamai pakeiskite modelio pavadinimą ir versiją.
+1. Phi-3-mini-4k-instruct yra 3,8 mlrd. parametrų, lengvas, pažangus atviras modelis, sukurtas remiantis Phi-2 naudojamais duomenų rinkiniais. Modelis priklauso Phi-3 modelių šeimai, o Mini versija yra dviejų variantų – 4K ir 128K – tai konteksto ilgis (žetonuose), kurį jis palaiko. Reikia tikslinti modelį mūsų specifinei paskirčiai. Šiuos modelius galite peržiūrėti Modelių kataloge AzureML Studio, filtruodami pagal pokalbio užbaigimo užduotį. Šiame pavyzdyje naudojame Phi-3-mini-4k-instruct modelį. Jei atidarėte šį bloknotą kitam modeliui, atitinkamai pakeiskite modelio pavadinimą ir versiją.
 
 > [!NOTE]
-> modelio id savybė. Ji bus perduota kaip įvestis tobulinimo užduočiai. Taip pat prieinama kaip Asset ID laukelis modelio detalių puslapyje AzureML Studio Modelių kataloge.
+> modelio id savybė. Ji bus perduota kaip įvestis tikslinimo darbui. Taip pat prieinama kaip Asset ID laukas modelio detalių puslapyje AzureML Studio Modelių kataloge.
 
-2. Šis Python scenarijus sąveikauja su Azure Machine Learning (Azure ML) paslauga. Štai ką jis atlieka:
+2. Šis Python skriptas bendrauja su Azure Machine Learning (Azure ML) paslauga. Štai ką jis daro:
 
-    - Nustato model_name reikšmę "Phi-3-mini-4k-instruct".
+    - Nustato model_name į "Phi-3-mini-4k-instruct".
 
-    - Naudoja get metodą iš registry_ml_client objektų models savybės, kad gautų naujausią nurodyto pavadinimo modelio versiją iš Azure ML registro. Metodas kviečiamas su dviem argumentais: modelio pavadinimu ir žyma, nurodančia, kad reikia gauti naujausią modelio versiją.
+    - Naudoja registry_ml_client objekto models savybės get metodą, kad gautų naujausią nurodyto modelio pavadinimo versiją iš Azure ML registro. get metodas kviečiamas su dviem argumentais: modelio pavadinimu ir etikete, nurodančia gauti naujausią modelio versiją.
 
-    - Išveda į konsolę žinutę apie modelio pavadinimą, versiją ir ID, kurį naudosime tobulinimui. Naudojama string formato metoda, kad įterptų modelio pavadinimą, versiją ir ID į žinutę. Modelio pavadinimas, versija ir ID pasiekiami kaip foundation_model objekto savybės.
+    - Išveda pranešimą konsolėje, nurodydamas modelio pavadinimą, versiją ir id, kuris bus naudojamas tikslinimui. Stringo format metodas priskiria pavadinimą, versiją ir id pranešimui. Modelio pavadinimas, versija ir id prieinami kaip foundation_model objekto savybės.
 
     ```python
     # Nustatyti modelio pavadinimą
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Gauti naujausią modelio versiją iš Azure ML registracijos
+    # Gauti naujausią modelio versiją iš Azure ML registro
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Atspausdinti modelio pavadinimą, versiją ir ID
-    # Ši informacija naudinga sekimui ir trikčių šalinimui
+    # Išspausdinti modelio pavadinimą, versiją ir ID
+    # Ši informacija naudinga sekimui ir derinimui
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
             foundation_model.name, foundation_model.version, foundation_model.id
@@ -134,78 +134,78 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Sukurkite kompiuterį, skirtą užduočiai vykdyti
+## 3. Sukurkite skaičiavimo resursus darbui
 
-Tobulinimo užduotis veikia TIK su GPU kompiuteriu. Kompiuterio dydis priklauso nuo modelio dydžio, ir dažnai sunku pasirinkti tinkamą dydį užduočiai. Šiame bloke padėsime vartotojui pasirinkti tinkamą kompiuterį užduočiai.
-
-> [!NOTE]
-> Žemiau pateikti kompiuteriai veikia su optimalia konfigūracija. Bet kokie konfigūracijos pakeitimai gali sukelti Cuda Out Of Memory klaidą. Tokiu atveju patartina pakelti kompiuterio dydį.
+Tikslinimo darbas veikia TIK su GPU skaičiavimu. Skaičiavimo resurso dydis priklauso nuo modelio dydžio ir dažnai sunku tiksliai nustatyti tinkamą skaičiavimą darbui. Šiame langelyje vartotojui pateikiama rekomendacija, kaip pasirinkti tinkamus resursus.
 
 > [!NOTE]
-> Renkantis compute_cluster_size žemiau, įsitikinkite, kad pasirinktas kompiuteris yra jūsų resursų grupėje. Jei tam tikras kompiuteris nėra pasiekiamas, galite pateikti prašymą gauti prieigą prie jo.
+> Šie žemiau išvardinti skaičiavimai veikia su optimizuotu konfigūracija. Bet kokie konfigūracijos pakeitimai gali sukelti Cuda Out Of Memory klaidą. Tokiais atvejais pabandykite pakelti kompiuterio dydį.
 
-### Modelio palaikymo tobulinimui tikrinimas
+> [!NOTE]
+> Pasirenkant compute_cluster_size, įsitikinkite, kad atitinkamas kompiuteris yra jūsų resursų grupėje. Jei tam tikro kompiuterio nėra, galite pateikti užklausą prieigos prie šių resursų gavimui.
 
-1. Šis Python scenarijus tikrina Azure Machine Learning (Azure ML) modelį. Štai ką jis atlieka:
+### Modelio tikrinimas, ar palaiko tikslinimą
 
-    - Importuoja ast modulį, kuris leidžia apdoroti Python abstrakčios sintaksės medžius.
+1. Šis Python skriptas sąveikauja su Azure Machine Learning (Azure ML) modeliu. Štai ką jis daro:
 
-    - Tikrina, ar foundation_model objektas (Azure ML modelis) turi žymę pavadinimu finetune_compute_allow_list. Azure ML žymos yra raktas-reikšmė poros, kurios leidžia filtruoti ir rūšiuoti modelius.
+    - Importuoja ast modulį, kuris suteikia funkcijas Python abstrakčios sintaksės medžių apdorojimui.
 
-    - Jei finetune_compute_allow_list žymė yra, naudoja ast.literal_eval funkciją, kad saugiai išanalizuotų žymės reikšmę (eilutę) į Python sąrašą. Šis sąrašas priskiriamas kintamajam computes_allow_list. Tada išveda pranešimą, kad reikia sukurti kompiuterį iš sąrašo.
+    - Tikrina, ar foundation_model objektas (atstovaujantis modelį Azure ML) turi žymę finetune_compute_allow_list. Žymės Azure ML yra raktas-reikšmė poros, kurias galima kurti ir naudoti modeliui filtruoti bei rūšiuoti.
 
-    - Jei žymė neegzistuoja, nustato computes_allow_list reikšmę į None ir išveda pranešimą, kad finetune_compute_allow_list žymė nėra modelio žymių dalis.
+    - Jei žymė finetune_compute_allow_list egzistuoja, ji naudoja ast.literal_eval funkciją, kad saugiai išanalizuotų žymės reikšmę (eilutę) į Python sąrašą. Šis sąrašas priskiriamas kintamajam computes_allow_list. Tada išvedamas pranešimas, kad reikia sukurti kompiuterį iš šio sąrašo.
 
-    - Apibendrinant, šis scenarijus tikrina tam tikrą žymę modelio metaduomenyse, jei žymė yra, konvertuoja jos reikšmę į sąrašą ir pateikia vartotojui atitinkamą informaciją.
+    - Jei žymė finetune_compute_allow_list neegzistuoja, nustato computes_allow_list kaip None ir išveda pranešimą, kad ši žymė nėra modelio žymių sąraše.
+
+    - Santrauka: šis skriptas tikrina specifinę žymę modelio metaduomenyse, jei ji egzistuoja, verčia jos reikšmę į sąrašą ir atitinkamai informuoja naudotoją.
 
     ```python
-    # Importuokite ast modulį, kuris teikia funkcijas Python abstraktaus sintaksės gramatikos medžių apdorojimui
+    # Importuokite ast modulį, kuris suteikia funkcijas Python abstrakčios sintaksės medžių apdorojimui
     import ast
     
-    # Patikrinkite, ar modelio žymėse yra žyma 'finetune_compute_allow_list'
+    # Patikrinkite, ar modelio žymose yra 'finetune_compute_allow_list' žyma
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # Jei žyma yra, naudokite ast.literal_eval, kad saugiai išskaitytumėte žymos reikšmę (eilutę) į Python sąrašą
+        # Jei žyma yra, naudokite ast.literal_eval saugiai išanalizuoti žymos reikšmę (eilutę) į Python sąrašą
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # konvertuoti eilutę į python sąrašą
-        # Išveskite pranešimą, nurodantį, kad turi būti sukurtas compute iš sąrašo
+        )  # konvertuoti eilutę į Python sąrašą
+        # Išveskite pranešimą, nurodantį, kad reikia sukurti compute iš sąrašo
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # Jei žyma nėra, priskirkite computes_allow_list reikšmę None
+        # Jei žyma nėra, nustatykite computes_allow_list reikšmę None
         computes_allow_list = None
-        # Išveskite pranešimą, nurodantį, kad žyma 'finetune_compute_allow_list' nėra modelio žymių dalis
+        # Išveskite pranešimą, nurodantį, kad 'finetune_compute_allow_list' žyma nėra modelio žymose
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Kompiuterio instancijos tikrinimas
+### Kompiuterio pavyzdžio tikrinimas
 
-1. Šis Python scenarijus sąveikauja su Azure Machine Learning (Azure ML) paslauga ir atlieka kelis patikrinimus apie kompiuterio instanciją. Štai ką jis daro:
+1. Šis Python skriptas sąveikauja su Azure Machine Learning (Azure ML) paslauga ir atlieka keletą patikrinimų kompiuterio pavyzdžiui. Štai ką jis daro:
 
-    - Bando gauti kompiuterio instanciją su pavadinimu, saugomu compute_cluster kintamajame, iš Azure ML darbo vietos. Jei instancijos paruošimo būsena yra "failed", sukeliama ValueError.
+    - Bando gauti kompiuterio pavyzdį su compute_cluster pavadinimu iš Azure ML darbo srities. Jei jo rezervo būsena (provisioning state) yra „failed“, iškelia ValueError klaidą.
 
-    - Tikrina, ar computes_allow_list nėra None. Jei ne, paverčia visas sąraše esančias kompiuterio dydžių reikšmes mažosiomis raidėmis ir tikrina, ar dabartinio kompiuterio dydis yra sąraše. Jei ne, sukeliama ValueError.
+    - Tikrina, ar computes_allow_list nėra None. Jei nėra, visi sąraše esantys kompiuterių dydžiai paverčiami mažosiomis raidėmis ir tikrinama, ar dabartinio kompiuterio dydis yra šiame sąraše. Jei ne, iškelia ValueError klaidą.
 
-    - Jei computes_allow_list yra None, tikrina, ar kompiuterio dydis yra tarp nepalaikomų GPU VM dydžių. Jei taip, sukeliama ValueError.
+    - Jei computes_allow_list yra None, tikrina, ar kompiuterio dydis nėra tarp nepalaikomų GPU VM dydžių sąrašo. Jei yra, iškelia ValueError klaidą.
 
-    - Gauti visų prieinamų kompiuterio dydžių sąrašą dirbtuvėse. Tada pereina per šį sąrašą, ir jei kurio nors kompiuterio dydžio pavadinimas sutampa su dabartinio kompiuterio dydžiu, gauna to dydžio GPU skaičių ir nustato gpu_count_found į True.
+    - Gaukia visų darbo srities kompiuterių dydžių sąrašą. Pereina per sąrašą ir jei jo pavadinimas sutampa su dabartinio kompiuterio dydžiu, gauna GPU skaičių tam dydžiui ir nustato gpu_count_found į True.
 
-    - Jei gpu_count_found yra True, išveda kompiuterio GPU skaičių. Jei ne, sukeliama ValueError.
+    - Jei gpu_count_found yra True, išveda GPU skaičių kompiuteryje. Jei ne, iškelia ValueError klaidą.
 
-    - Apibendrinant, scenarijus atlieka kelis patikrinimus apie Azure ML darbo vietos kompiuterio instanciją, įskaitant paruošimo būseną, dydžio atitikimą prieinamų arba draudžiamų sąrašų ir GPU skaičiaus tikrinimą.
-    
+    - Santrauka: skriptas atlieka keletą patikrinimų Azure ML darbo srities kompiuterio atžvilgiu, įskaitant jo rezervo būseną, dydžio tikrinimą pagal leistinų arba uždraustų sąrašą ir GPU skaičiaus patikrinimą.
+
     ```python
     # Atspausdinkite išimties pranešimą
     print(e)
-    # Iškelkite ValueError, jei skaičiavimo dydis nėra prieinamas darbinėje aplinkoje
+    # Iškelkite ValueError, jei kompiuterio dydis nėra prieinamas darbo vietoje
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
-    # Gaukite skaičiavimo instanciją iš Azure ML darbinės aplinkos
+    # Gaukite kompiuterio egzempliorių iš Azure ML darbo vietos
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Patikrinkite, ar skaičiavimo instancijos teikimo būsena yra „failed“
+    # Patikrinkite, ar kompiuterio egzemplioriaus tiekimo būseną yra „failed“
     if compute.provisioning_state.lower() == "failed":
-        # Iškelkite ValueError, jei teikimo būsena yra „failed“
+        # Iškelkite ValueError, jei tiekimo būsena yra „failed“
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
@@ -213,11 +213,11 @@ Tobulinimo užduotis veikia TIK su GPU kompiuteriu. Kompiuterio dydis priklauso 
     
     # Patikrinkite, ar computes_allow_list nėra None
     if computes_allow_list is not None:
-        # Paverskite visus computes_allow_list skaičiavimo dydžius į mažąsias raides
+        # Paverskite visus computes_allow_list kompiuterio dydžius į mažąsias raides
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
-        # Patikrinkite, ar skaičiavimo instancijos dydis yra computes_allow_list_lower_case sąraše
+        # Patikrinkite, ar kompiuterio egzemplioriaus dydis yra computes_allow_list_lower_case sąraše
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Iškelkite ValueError, jei skaičiavimo instancijos dydis nėra computes_allow_list_lower_case sąraše
+            # Iškelkite ValueError, jei kompiuterio egzemplioriaus dydis nėra computes_allow_list_lower_case sąraše
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
@@ -229,27 +229,27 @@ Tobulinimo užduotis veikia TIK su GPU kompiuteriu. Kompiuterio dydis priklauso 
             "standard_nc24",
             "standard_nc24r",
         ]
-        # Patikrinkite, ar skaičiavimo instancijos dydis yra unsupported_gpu_vm_list sąraše
+        # Patikrinkite, ar kompiuterio egzemplioriaus dydis yra unsupported_gpu_vm_list sąraše
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Iškelkite ValueError, jei skaičiavimo instancijos dydis yra unsupported_gpu_vm_list sąraše
+            # Iškelkite ValueError, jei kompiuterio egzemplioriaus dydis yra unsupported_gpu_vm_list sąraše
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
-    # Inicializuokite žymeklį, kad patikrintumėte, ar rasta GPU skaičiaus skaičiavimo instancijoje
+    # Inicializuokite žymeklį, kad patikrintumėte, ar GPU skaičius kompiuterio egzemplioriuje buvo rastas
     gpu_count_found = False
-    # Gaukite visų prieinamų skaičiavimo dydžių sąrašą darbinėje aplinkoje
+    # Gaukite visų prieinamų kompiuterio dydžių sąrašą darbo vietoje
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iteruokite per prieinamų skaičiavimo dydžių sąrašą
+    # Iteruokite per prieinamų kompiuterio dydžių sąrašą
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Patikrinkite, ar skaičiavimo dydžio pavadinimas atitinka skaičiavimo instancijos dydį
+        # Patikrinkite, ar kompiuterio dydžio pavadinimas atitinka kompiuterio egzemplioriaus dydį
         if compute_sku.name.lower() == compute.size.lower():
-            # Jei taip, gaukite GPU skaičių tam skaičiavimo dydžiui ir nustatykite gpu_count_found į True
+            # Jei taip, gaukite GPU skaičių šiam kompiuterio dydžiui ir nustatykite gpu_count_found į True
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
-    # Jei gpu_count_found yra True, atspausdinkite GPU skaičių skaičiavimo instancijoje
+    # Jei gpu_count_found yra True, atspausdinkite GPU skaičių kompiuterio egzemplioriuje
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
@@ -260,42 +260,42 @@ Tobulinimo užduotis veikia TIK su GPU kompiuteriu. Kompiuterio dydis priklauso 
         )
     ```
 
-## 4. Pasirinkite duomenų rinkinį modeliui tobulinti
+## 4. Pasirinkite duomenų rinkinį modeliui tikslinti
 
-1. Naudojame ultrachat_200k duomenų rinkinį. Duomenų rinkinys turi keturias dalis, tinkamas priežiūrai prižiūrėtu būdu (Supervised fine-tuning, sft).
-Kūrimo vertinimas (gen). Pavyzdžių skaičius kiekvienoje dalyje parodytas taip:
+1. Naudojame ultrachat_200k duomenų rinkinius. Duomenų rinkinys turi keturis padalijimus, tinkamus vadovaujamam tikslinimui (sft).
+Generavimo reitingas (gen). Kiekvieno padalijimo pavyzdžių skaičius pateiktas žemiau:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Tolimesnės kelios ląstelės rodo pagrindinį duomenų paruošimą tobulinimui:
+1. Kiti langeliai rodo bazinį duomenų paruošimą tikslinimui:
 
-### Kai kurių eilučių vizualizavimas
+### Kai kurių duomenų eilučių vizualizavimas
 
-Norime, kad šis pavyzdys veiktų greitai, todėl išsaugojame train_sft ir test_sft failus, kuriuose yra 5% jau atrinktų eilučių. Tai reiškia, kad tobulintas modelis turės mažesnį tikslumą, todėl jo nereikėtų naudoti realiame pasaulyje.
-download-dataset.py naudojamas ultrachat_200k duomenų rinkiniui parsisiųsti ir transformuoti duomenų rinkinį į tobulinimo vamzdyno komponentui tinkamą formatą. Kadangi duomenų rinkinys didelis, čia yra tik jo dalis.
+Norime, kad šis pavyzdys veiktų greitai, todėl išsaugokite train_sft ir test_sft failus, kuriuose yra 5% jau apkarpytų eilučių. Tai reiškia, kad tikslintas modelis turės mažesnį tikslumą, todėl neturėtų būti naudojamas realiame pasaulyje.
+download-dataset.py naudojamas atsisiųsti ultrachat_200k duomenų rinkinį ir transformuoti jį į tikslinimo vamzdyno komponentams tinkamą formatą. Kadangi duomenų rinkinys didelis, čia turime tik jo dalį.
 
-1. Paleidus žemiau esančią komandą bus atsisiųsta tik 5% duomenų. Šią reikšmę galima padidinti pakeitus dataset_split_pc parametrą į norimą procentą.
+1. Vykdant žemiau esantį skriptą atsisiunčiama tik 5% duomenų. Tai galima padidinti pakeitus dataset_split_pc parametrą į norimą procentą.
 
 > [!NOTE]
-> Kai kurie kalbos modeliai naudoja skirtingus kalbų kodus, todėl stulpelių pavadinimai duomenų rinkinyje turėtų atitikti juos.
+> Kai kuriems kalbos modeliams naudojami skirtingi kalbos kodai, todėl stulpelių pavadinimai duomenų rinkiniuose turi atitikti tuos kodus.
 
-1. Štai pavyzdys, kaip duomenys turėtų atrodyti
-Pokalbių užbaigimo duomenų rinkinys saugomas parquet formatu, kur kiekvienas įrašas naudoja šią schemą:
+1. Čia pateiktas pavyzdys, kaip turėtų atrodyti duomenys.
+Pokalbio užbaigimo duomenų rinkinys saugomas parquet formatu, kiekvienas įrašas turi šią schemą:
 
-    - Tai JSON (JavaScript objekto žymėjimo) dokumentas, populiarus duomenų mainų formatas. Tai nėra vykdomas kodas, o duomenų saugojimo ir perdavimo formatas. Štai jo struktūros paaiškinimas:
+    - Tai JSON (JavaScript Object Notation) dokumentas, populiarus duomenų mainų formatas. Tai nėra vykdomasis kodas, o duomenų saugojimo ir perdavimo būdas. Štai jo struktūros išskleidimas:
 
-    - "prompt": Raktas, turintis eilutės reikšmę, žyminčią užduotį arba klausimą AI asistentui.
+    - „prompt“: šis raktas laiko eilutės reikšmę, kuri žymi užduotį ar klausimą AI asistentui.
 
-    - "messages": Raktas, turintis objektų masyvą. Kiekvienas objektas reiškia pranešimą pokalbyje tarp vartotojo ir AI asistento. Kiekviename pranešime yra du raktai:
+    - „messages“: tai masyvas objektų. Kiekvienas objektas žymi žinutę pokalbyje tarp naudotojo ir AI asistento. Kiekviena žinutė turi du raktus:
 
-    - "content": Eilutės tipo reikšmė, reiškianti pranešimo turinį.
-    - "role": Eilutės tipo reikšmė, nurodanti, kas siuntė pranešimą – "user" arba "assistant".
-    - "prompt_id": Eilutės tipo reikšmė, unikalus užklausos identifikatorius.
+    - „content“: tekstas su žinutės turiniu.
+    - „role“: eilutės reikšmė, apibrėžianti, kas siuntė žinutę – „user“ arba „assistant“.
+    - „prompt_id“: unikalus eilutės identifikatorius, priskirtas užduočiai.
 
-1. Šiame konkrečiame JSON dokumente vaizduojamas pokalbis, kuriame vartotojas prašo AI asistento sukurti pagrindinį veikėją distopinei istorijai. Asistentas atsako, tada vartotojas prašo daugiau detalių, o asistentas sutinka jas pateikti. Visas pokalbis susietas su konkrečiu prompt_id.
+1. Šiame specifiniame JSON dokumente vaizduojamas pokalbis, kuriame naudotojas prašo AI asistento sukurti distopinės istorijos pagrindinį veikėją. Asistentas atsako, tada naudotojas prašo daugiau detalių. Asistentas sutinka pateikti daugiau detalių. Visas pokalbis yra susietas su specifiniu užduoties id.
 
     ```python
     {
@@ -337,106 +337,106 @@ Pokalbių užbaigimo duomenų rinkinys saugomas parquet formatu, kur kiekvienas 
 
 ### Duomenų atsisiuntimas
 
-1. Šis Python scenarijus naudojamas duomenų rinkiniui atsisiųsti, naudojant pagalbinį scenarijų download-dataset.py. Štai ką jis daro:
+1. Šis Python skriptas naudojamas atsisiųsti duomenų rinkinį naudojant pagalbinį skriptą download-dataset.py. Štai ką jis daro:
 
-    - Importuoja os modulį, kuris leidžia naudoti operacinės sistemos funkcijas.
+    - Importuoja os modulį, kuris suteikia nešiojamą prieigą prie operacinės sistemos funkcijų.
 
-    - Naudoja os.system funkciją paleisti download-dataset.py scenarijų su komandine eilute, nurodydamas atsisiųsti duomenų rinkinį HuggingFaceH4/ultrachat_200k, išsaugoti jį kataloge ultrachat_200k_dataset ir padalinti 5%. os.system grąžina vykdymo statusą, kuris priskiriamas exit_status.
+    - Naudoja os.system funkciją vykdyti download-dataset.py skriptą su nurodytais komandų eilutės argumentais. Argumentai nurodo atsisiųsti duomenų rinkinį HuggingFaceH4/ultrachat_200k, atsisiuntimo vietą ultrachat_200k_dataset ir duomenų rinkinio padalijimą 5 proc. os.system grąžina vykdymo statusą, kuris priskiriamas exit_status kintamajam.
 
-    - Patikrina, ar exit_status nėra 0. Unix tipo sistemose 0 reiškia sėkmingą vykdymą, bet kiti skaičiai – klaidą. Jei ne 0, kelia Exception su pranešimu apie klaidą.
+    - Tikrina, ar exit_status nėra 0. Unix tipo operacinėse sistemose 0 reiškia sėkmingą komandą, o kiti skaičiai – klaidas. Jei exit_status nėra 0, iškelia Exception su pranešimu apie klaidą atsisiunčiant duomenų rinkinį.
 
-    - Apibendrinant, scenarijus paleidžia komandą duomenų rinkiniui atsisiųsti naudojant pagalbinį scenarijų, ir jei tai nepavyksta, kelia išimtį.
-    
+    - Santrauka: skriptas vykdo komandą atsisiųsti duomenis naudojant pagalbinį skriptą ir iškelia klaidą, jei komanda nepavyko.
+
     ```python
-    # Importuoti os modulį, kuris suteikia galimybę naudoti operacinės sistemos priklausomą funkcionalumą
+    # Importuoti os modulį, kuris suteikia būdą naudoti operacinės sistemos priklausomą funkcionalumą
     import os
     
-    # Naudoti os.system funkciją vykdyti download-dataset.py skriptą shell'e su specifiniais komandų eilutės argumentais
-    # Argumentai nurodo atsisiunčiamą duomenų rinkinį (HuggingFaceH4/ultrachat_200k), katalogą, į kurį jį atsisiųsti (ultrachat_200k_dataset), ir duomenų rinkinio padalijimo procentą (5)
-    # os.system funkcija grąžina vykdytos komandos išeigos būseną; ši būsena išsaugoma exit_status kintamajame
+    # Naudoti os.system funkciją vykdyti download-dataset.py skriptą apvalkale su konkrečiais komandų eilutės argumentais
+    # Argumentai nurodo atsisiunčiamą duomenų rinkinį (HuggingFaceH4/ultrachat_200k), katalogą, į kurį jis bus atsisiųstas (ultrachat_200k_dataset), ir duomenų rinkinio padalijimo procentą (5)
+    # os.system funkcija grąžina vykdytos komandos išeities būseną; ši būsena yra saugoma kintamajame exit_status
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
-    # Patikrinti, ar exit_status nėra lygi 0
-    # Unix tipo operacinėse sistemose išeigos būsenos 0 paprastai reiškia, kad komanda buvo sėkminga, o bet koks kitas skaičius reiškia klaidą
-    # Jei exit_status nėra 0, iškelti Exception su žinute, nurodančia, kad atsisiunčiant duomenų rinkinį įvyko klaida
+    # Patikrinti, ar exit_status nėra 0
+    # Unix tipo operacinėse sistemose išeities būsena 0 paprastai reiškia, kad komanda įvykdyta sėkmingai, o bet koks kitas skaičius reiškia klaidą
+    # Jei exit_status nėra 0, iškelti Exception su pranešimu, nurodančiu, kad įvyko klaida atsisiunčiant duomenų rinkinį
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
 
 ### Duomenų įkėlimas į DataFrame
-
-1. Šis Python scenarijus įkrauna JSON Lines failą į pandas DataFrame ir parodo pirmas 5 eiles. Štai ką jis daro:
+1. Šis Python scenarijus įkelia JSON Lines failą į pandas DataFrame ir rodo pirmas 5 eilutes. Štai ką jis atlieka:
 
     - Importuoja pandas biblioteką, kuri yra galinga duomenų manipuliavimo ir analizės biblioteka.
 
-    - Nustato maksimalų stulpelio plotį pandas rodymo nustatymuose į 0. Tai reiškia, kad spausdinant DataFrame bus rodomas visas teksto turinys be sutrumpinimo.
-    - Naudoja pd.read_json funkciją, kad įkrautų train_sft.jsonl failą iš ultrachat_200k_dataset katalogo į DataFrame. Argumentas lines=True nurodo, kad failas yra JSON Lines formatu, kur kiekviena eilutė yra atskiras JSON objektas.
+    - Nustato maksimalų stulpelio plotį pandas rodymo nustatymuose į 0. Tai reiškia, kad atspausdinant DataFrame, kiekvieno stulpelio tekstas bus rodomas pilnai be sutrumpinimų.
 
-    - Naudoja head metodą, kad parodytų pirmas 5 DataFrame eilutes. Jei DataFrame turi mažiau nei 5 eilutes, bus parodytos visos.
+    - Naudoja pd.read_json funkciją įkelti train_sft.jsonl failą iš ultrachat_200k_dataset katalogo į DataFrame. Argumentas lines=True nurodo, kad failas yra JSON Lines formatu, kur kiekviena eilutė yra atskiras JSON objektas.
 
-    - Apibendrinant, šis scenarijus įkelia JSON Lines failą į DataFrame ir parodo pirmas 5 eilutes su visapusišku stulpelių tekstu.
+    - Naudoja head metodą parodyti pirmas 5 DataFrame eilutes. Jei DataFrame turi mažiau nei 5 eilutes, bus parodytos visos.
+
+    - Apibendrinant, šis scenarijus įkelia JSON Lines failą į DataFrame ir rodo pirmas 5 eilutes su pilnu stulpelio tekstu.
     
     ```python
-    # Importuoti pandas biblioteką, kuri yra galinga duomenų manipuliavimo ir analizės biblioteka
+    # Importuokite pandas biblioteką, kuri yra galinga duomenų manipuliavimo ir analizės biblioteka
     import pandas as pd
     
-    # Nustatyti maksimalų stulpelio plotį pandas rodymo parinktyse į 0
-    # Tai reiškia, kad kiekvieno stulpelio visas tekstas bus rodomas be sutrumpinimo, kai bus spausdinamas DataFrame
+    # Nustatykite maksimalų stulpelio pločio rodymo pandas parinktyse į 0
+    # Tai reiškia, kad kiekvieno stulpelio visas tekstas bus rodomas be sutrumpinimo, kai DataFrame bus atspausdintas
     pd.set_option("display.max_colwidth", 0)
     
-    # Naudoti pd.read_json funkciją, kad būtų įkeliamas train_sft.jsonl failas iš ultrachat_200k_dataset katalogo į DataFrame
+    # Naudokite pd.read_json funkciją, kad įkelti train_sft.jsonl failą iš ultrachat_200k_dataset katalogo į DataFrame
     # Argumentas lines=True nurodo, kad failas yra JSON Lines formatu, kur kiekviena eilutė yra atskiras JSON objektas
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Naudoti head metodą, kad būtų parodytos pirmos 5 DataFrame eilutės
-    # Jei DataFrame turi mažiau nei 5 eilutes, bus parodytos visos eilutės
+    # Naudokite head metodą, kad parodytumėte pirmas 5 DataFrame eilutes
+    # Jei DataFrame yra mažiau nei 5 eilučių, bus parodytos visos eilutės
     df.head()
     ```
 
-## 5. Pateikti fine tuning darbą naudojant modelį ir duomenis kaip įvestį
+## 5. Pateikite modelio tobulinimo užduotį naudodami modelį ir duomenis kaip įvestis
 
-Sukurkite darbą, kuris naudoja chat-completion pipeline komponentą. Sužinokite daugiau apie visus fine tuning palaikomus parametrus.
+Sukurkite užduotį, kuri naudoja chat-completion pipeline komponentą. Sužinokite daugiau apie visus palaikomus tobulinimo parametrus.
 
-### Apibrėžkite finetune parametrus
+### Apibrėžkite tobulinimo parametrus
 
-1. Finetune parametrai gali būti suskirstyti į 2 kategorijas - mokymo parametrai, optimizavimo parametrai
+1. Tobulinimo parametrai gali būti suskirstyti į 2 kategorijas – treniravimo parametrai ir optimizavimo parametrai
 
-1. Mokymo parametrai apibrėžia mokymo aspektus, tokius kaip -
+1. Treniruotės parametrai apibūdina treniravimosi aspektus, tokius kaip –
 
-    - Naudojamas optimizatorius, tvarkyklė (scheduler)
-    - Matavimo vienetas, kurį optimizuoti finetuning metu
-    - Mokymo žingsnių skaičius, partijų dydis ir kt.
-    - Optimizavimo parametrai padeda optimizuoti GPU atmintį ir efektyviai naudoti skaičiavimo išteklius.
+    - Optimizatorius, taikomas tvarkaraštis
+    - Metricas, pagal kurį optimizuojamas tobulinimas
+    - Treniruotės žingsnių skaičius, partijos dydis ir kt.
+    - Optimizavimo parametrai padeda optimizuoti GPU atminties naudojimą ir efektyviau panaudoti skaičiavimo išteklius.
 
-1. Žemiau pateikti keli parametrai, priklausantys šiai kategorijai. Optimizavimo parametrai skiriasi kiekvienam modeliui ir yra supakuoti su modeliu, kad būtų galima valdyti šiuos skirtumus.
+1. Žemiau yra keli parametrai, priklausantys šiai kategorijai. Optimizavimo parametrai skiriasi kiekvienam modeliui ir yra supakuoti su modeliu, kad būtų tvarkomos šios variacijos.
 
-    - Įgalinkite deepspeed ir LoRA
-    - Įgalinkite mišraus tikslumo mokymą
-    - Įgalinkite treniravimą per kelis mazgus
+    - Įgalinti deepspeed ir LoRA
+    - Įgalinti mišrios precizijos treniravimą
+    - Įgalinti daugiamaštį treniravimą
 
 > [!NOTE]
-> Prižiūrimas finetuning gali lemti derinimo praradimą arba katastrofišką pamiršimą (catastrophic forgetting). Rekomenduojame patikrinti šią problemą ir paleisti alinijavimo etapą po finetuning.
+> Prižiūrimas tobulinimas gali sukelti praradimą suderinamumo arba katastrofišką užmarštį. Rekomenduojame patikrinti šią problemą ir paleisti suderinimo etapą po tobulinimo.
 
-### Fine Tuning parametrai
+### Tobulinimo parametrai
 
-1. Šis Python skriptas nustato parametrus modeliui fine-tuning. Štai ką jis daro:
+1. Šis Python scenarijus nustato parametrus mašininio mokymosi modeliui tobulinti. Štai ką jis atlieka:
 
-    - Nustato numatytuosius mokymo parametrus, tokius kaip mokymo epochų skaičius, partijų dydžiai treniravimui ir vertinimui, mokymosi greitis ir mokymosi greičio tvarkyklės tipas.
+    - Nustato numatytuosius treniravimo parametrus, tokius kaip treniruotės epochų skaičius, mokymo ir vertinimo partijos dydžiai, mokymosi greitis, mokymosi greičio tvarkaraščio tipas.
 
-    - Nustato numatytuosius optimizavimo parametrus, kaip ar taikyti sluoksnių svarbos skverbimąsi (LoRa) ir DeepSpeed, bei DeepSpeed etapą.
+    - Nustato numatytuosius optimizavimo parametrus, pavyzdžiui, ar taikyti Layer-wise Relevance Propagation (LoRa) ir DeepSpeed, bei DeepSpeed etapą.
 
-    - Sujungia mokymo ir optimizavimo parametrus į vieną žodyną finetune_parameters.
+    - Sujungia treniravimo ir optimizavimo parametrus į vieną žodyną pavadinimu finetune_parameters.
 
-    - Tikrina, ar foundation_model turi modelio specifinius numatytuosius parametrus. Jei taip, išveda įspėjimą ir atnaujina finetune_parameters žodyną šiais modelio specifiniais numatytaisiais parametrais. ast.literal_eval funkcija naudojama modelio specifinių numatytųjų parametrų konvertavimui iš teksto į Python žodyną.
+    - Patikrina, ar foundation_model turi specifinius modelio numatytuosius parametrus. Jei taip, išveda įspėjimo pranešimą ir atnaujina finetune_parameters žodyną su šiais specifiniais parametrais. ast.literal_eval funkcija naudojama konvertuoti modelio numatytuosius parametrus iš eilutės į Python žodyną.
 
-    - Išveda galutinį fine-tuning parametrų rinkinį, kuris bus naudojamas.
+    - Išveda galutinį tobulinimo parametrų rinkinį, kuris bus naudojamas vykdymui.
 
-    - Apibendrinant, šis skriptas nustato ir parodo fine tuning parametrus mašininiam mokymui, leidžiant viršyti numatytuosius parametrus modelio specifiniais.
+    - Apibendrinant, šis scenarijus nustato ir atvaizduoja parametrus mašininio mokymosi modeliui tobulinti, su galimybe pakeisti numatytuosius parametrus konkrečiais modelio parametrais.
 
     ```python
-    # Nustatyti numatytuosius mokymo parametrus, tokius kaip mokymo epochų skaičius, partijos dydžiai mokymui ir vertinimui, mokymosi greitis ir mokymosi greičio tvarkyklės tipas
+    # Nustatykite numatytuosius mokymo parametrus, tokius kaip mokymo epochų skaičius, duomenų rinkinių dydžiai mokymui ir vertinimui, mokymosi greitis ir mokymosi greičio planuoklio tipas
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -445,19 +445,19 @@ Sukurkite darbą, kuris naudoja chat-completion pipeline komponentą. Sužinokit
         lr_scheduler_type="cosine",
     )
     
-    # Nustatyti numatytuosius optimizavimo parametrus, tokius kaip ar taikyti sluoksnių aktualumo propagaciją (LoRa) ir DeepSpeed, bei DeepSpeed sceną
+    # Nustatykite numatytuosius optimizavimo parametrus, tokius kaip ar taikyti sluoksnių svarbumo sklidimą (LoRa) ir DeepSpeed, bei DeepSpeed lygį
     optimization_parameters = dict(
         apply_lora="true",
         apply_deepspeed="true",
         deepspeed_stage=2,
     )
     
-    # Sujungti mokymo ir optimizavimo parametrus į vieną žodyną pavadinimu finetune_parameters
+    # Apjunkite mokymo ir optimizavimo parametrus į vieną žodyną, vadinamą finetune_parameters
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Patikrinti, ar bazinis modelis turi specifinių modelio numatytųjų parametrų
-    # Jei taip, atspausdinti įspėjimo pranešimą ir atnaujinti finetune_parameters žodyną šiais modelio specifiniais numatytaisiais parametrais
-    # Funkcija ast.literal_eval naudojama konvertuoti modelio specifinius numatytuosius parametrus iš eilutės į Python žodyną
+    # Patikrinkite, ar foundation_model turi kokius nors modelio specifinius numatytuosius parametrus
+    # Jei turi, spausdinkite įspėjamąją žinutę ir atnaujinkite finetune_parameters žodyną šiais modelio specifiniais numatytaisiais parametrais
+    # ast.literal_eval funkcija naudojama konvertuoti modelio specifinius numatytuosius parametrus iš eilutės į Python žodyną
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
@@ -466,63 +466,63 @@ Sukurkite darbą, kuris naudoja chat-completion pipeline komponentą. Sužinokit
             )
         )
     
-    # Atspausdinti galutinį fine-tuning parametrų rinkinį, kuris bus naudojamas paleidimui
+    # Atspausdinkite galutinį smulkiojo derinimo parametrų rinkinį, kuris bus naudojamas vykdymui
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
     ```
 
-### Mokymo pipeline
+### Treniruotės pastotė
 
-1. Šis Python skriptas apibrėžia funkciją, kuri generuoja rodomą pavadinimą mašininio mokymosi mokymo pipeline, ir tada iškviečia šią funkciją, kad sukurtų ir atspausdintų rodomą pavadinimą. Štai ką jis daro:
+1. Šis Python scenarijus apibrėžia funkciją, kuri generuoja rodinio pavadinimą mašininio mokymosi treniravimo pastotei, o tada kviečia šią funkciją sugeneruoti ir atspausdinti rodinio pavadinimą. Štai ką jis atlieka:
 
-1. Apibrėžiama get_pipeline_display_name funkcija. Ji generuoja rodomą pavadinimą pagal įvairius treniravimo pipeline parametrus.
+1. Apibrėžiama get_pipeline_display_name funkcija. Ši funkcija generuoja rodinio pavadinimą pagal įvairius su treniravimo pastote susijusius parametrus.
 
-1. Funkcijoje paskaičiuojamas bendras partijos dydis, dauginant vienos įrenginio partijos dydį, gradiento kaupimo žingsnių skaičių, GPU skaičių viename mazge ir mazgų skaičių, naudojamą fine-tuning.
+1. Funkcijos viduje apskaičiuojamas bendras partijos dydis daugindamas vieno įrenginio partijos dydį, gradientų kaupimo žingsnių skaičių, GPU skaičių viename mazge ir mazgų, naudojamų tobulinimui, skaičių.
 
-1. Gaunami kiti parametrai: mokymosi greičio tvarkyklės tipas, ar taikomas DeepSpeed, DeepSpeed etapas, ar taikomas LoRa, modelio kontrolinių taškų limitas, ir didžiausias sekos ilgis.
+1. Gaunami kiti parametrai, tokie kaip mokymosi greičio tvarkaraščio tipas, ar taikoma DeepSpeed, DeepSpeed etapas, ar taikomas Layer-wise Relevance Propagation (LoRa), limitas saugomų modelio patikrinimų skaičiui ir maksimalus sekos ilgis.
 
-1. Sukuriamas eilutės pavadinimas, kuriame yra visi šie parametrai, atskirti brūkšniais. Jei taikomas DeepSpeed arba LoRa, eilutėje yra atitinkamai „ds“ su DeepSpeed etapu arba „lora“. Jei ne, yra „nods“ arba „nolora“.
+1. Formuojama eilutė, kurioje surašyti visi šie parametrai, atskirti brūkšneliais. Jei taikomas DeepSpeed arba LoRa, eilutėje įterpiamas "ds" su DeepSpeed etapu arba "lora". Priešingu atveju, įtraukiama "nods" arba "nolora".
 
-1. Funkcija grąžina šią eilutę kaip rodomą pavadinimą mokymo pipeline.
+1. Funkcija gražina šią eilutę kaip treniravimo pastotės rodymo pavadinimą.
 
-1. Po funkcijos apibrėžimo ji iškviečiama, kad sugeneruotų ir atspausdintų rodomą pavadinimą.
+1. Po funkcijos apibrėžimo ji kviečiama sugeneruoti rodinio pavadinimą, kuris po to atspausdinamas.
 
-1. Apibendrinant, šis skriptas generuoja ir išveda rodomą pavadinimą mašininio mokymosi pipeline, remiantis įvairiais parametrais.
+1. Apibendrinant, šis scenarijus generuoja mašininio mokymosi treniravimo pastotės rodinio pavadinimą pagal įvairius parametrus ir jį atspausdina.
 
     ```python
-    # Apibrėžkite funkciją, skirtą generuoti treniravimo grandinės rodymo pavadinimą
+    # Apibrėžti funkciją, kuri sugeneruos treniravimo proceso rodymo pavadinimą
     def get_pipeline_display_name():
-        # Apskaičiuokite bendrą partijų dydį, padauginę vieno įrenginio partijos dydį, gradientų kaupimo žingsnių skaičių, kiekvieno mazgo GPU skaičių ir mazgų skaičių, naudojamą tobulinimui
+        # Apskaičiuoti bendrą partijų dydį dauginant vieno įrenginio partijos dydį, gradiento kaupimo žingsnių skaičių, GPU skaičių viename mazge ir mazgų skaičių, naudojamų perdavimui
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Gaukite mokymosi normos planuotojo tipą
+        # Gauti mokymosi greičio planuoklio tipą
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Gaukite informaciją, ar naudojamas DeepSpeed
+        # Gauti informaciją, ar taikomas DeepSpeed
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Gaukite DeepSpeed etapą
+        # Gauti DeepSpeed etapo reikšmę
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # Jeigu naudojamas DeepSpeed, pridėkite „ds“ ir DeepSpeed etapą į rodymo pavadinimą; jei ne, pridėkite „nods“
+        # Jei taikomas DeepSpeed, įtraukti „ds“ kartu su DeepSpeed etapu į rodymo pavadinimą; jei ne, įtraukti „nods“
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Gaukite informaciją, ar naudojama sluoksnių svarbos sklaida (Layer-wise Relevance Propagation, LoRa)
+        # Gauti informaciją, ar taikoma sluoksnis po sluoksnio aktualumo plitimo (LoRa) metodika
         lora = finetune_parameters.get("apply_lora", "false")
-        # Jeigu naudojama LoRa, pridėkite „lora“ į rodymo pavadinimą; jei ne, pridėkite „nolora“
+        # Jei taikoma LoRa, įtraukti „lora“ į rodymo pavadinimą; jei ne, įtraukti „nolora“
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Gaukite apribojimą saugomų modelio kontrolinių taškų skaičiui
+        # Gauti ribą, kiek modelio kontrolinių taškų išsaugoti
         save_limit = finetune_parameters.get("save_total_limit", -1)
-        # Gaukite maksimalų sekos ilgį
+        # Gauti maksimalų sekos ilgį
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Sudarykite rodymo pavadinimą, sujungdami visus šiuos parametrus, atskirtus brūkšniais
+        # Sukurti rodymo pavadinimą sujungiant visas šias reikšmes, atskirtas brūkšniais
         return (
             model_name
             + "-"
@@ -539,189 +539,189 @@ Sukurkite darbą, kuris naudoja chat-completion pipeline komponentą. Sužinokit
             + f"-seqlen{seq_len}"
         )
     
-    # Iškvieskite funkciją, skirtą generuoti rodymo pavadinimą
+    # Iškvieti funkciją, kuri generuos rodymo pavadinimą
     pipeline_display_name = get_pipeline_display_name()
-    # Atspausdinkite rodymo pavadinimą
+    # Atspausdinti rodymo pavadinimą
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### Pipeline konfigūravimas
+### Pastotės konfigūravimas
 
-Šis Python skriptas apibrėžia ir konfigūruoja mašininio mokymosi pipeline naudodamas Azure Machine Learning SDK. Štai ką jis daro:
+Šis Python scenarijus apibrėžia ir konfigūruoja mašininio mokymosi pastotę naudojant Azure Machine Learning SDK. Štai ką jis atlieka:
 
-1. Importuoja reikalingus modulius iš Azure AI ML SDK.
+1. Importuoja reikiamus modulius iš Azure AI ML SDK.
 
-1. Iš registro paima pipeline komponentą pavadinimu "chat_completion_pipeline".
+1. Gautas registruotasis pastotės komponentas pavadinimu "chat_completion_pipeline".
 
-1. Apibrėžia pipeline darbą naudodamas `@pipeline` dekoratorių ir funkciją `create_pipeline`. Pipeline pavadinimas nustatytas kaip `pipeline_display_name`.
+1. Apibrėžia pastotės užduotį naudojant `@pipeline` dekoratorių ir funkciją `create_pipeline`. Pastotės pavadinimas nustatytas kaip `pipeline_display_name`.
 
-1. Funkcijoje `create_pipeline` inicijuoja paimtą pipeline komponentą su įvairiais parametrais, įskaitant modelio kelią, skaičiavimo klasterius įvairiems etapams, duomenų rinkinių dalis treniravimui ir testavimui, GPU skaičių fine-tuning, ir kitus fine-tuning parametrus.
+1. Viduje funkcijos `create_pipeline` inicijuoja gautą pastotės komponentą su įvairiais parametrais, įskaitant modelio kelią, skaičiavimo klasterius skirtingiems etapams, duomenų rinkinių pasiskirstymą mokymui ir testavimui, GPU skaičių tobulinimui ir kitus tobulinimo parametrus.
 
-1. Susieja fine-tuning darbo išvestį su pipeline darbo išvestimi, kad fine-tuned modelį būtų lengva registruoti, kas yra būtina modelio diegimui prie online ar batch galinio taško.
+1. Susieja tobulinimo darbo išvestį su pastotės užduoties išvestimi. Tai leidžia lengvai registruoti tobulintą modelį, kas reikalinga jį diegti į internetinį ar masinio apdorojimo galinį tašką.
 
-1. Sukuria pipeline instanciją iškviesdamas `create_pipeline` funkciją.
+1. Sukuria pastotės egzempliorių kviesdamas `create_pipeline` funkciją.
 
-1. Nustato pipeline parametrą `force_rerun` kaip `True`, reiškiant, kad anksčiau išsaugoti rezultatai nebus naudojami.
+1. Nustato pastotės nustatymą `force_rerun` į `True`, tai reiškia, kad nebus naudojami anksčiau kešuoti rezultatai.
 
-1. Nustato pipeline parametrą `continue_on_step_failure` kaip `False`, reiškiant, kad pipeline nutrauks vykdymą, jei kuris nors žingsnis nepavyks.
+1. Nustato pastotės nustatymą `continue_on_step_failure` į `False`, tai reiškia, kad pastotė sustos, jei kurios nors žingsnis nepavyks.
 
-1. Apibendrinant, šis skriptas apibrėžia ir konfigūruoja mašininio mokymosi pipeline pokalbių užbaigimo užduočiai naudojant Azure Machine Learning SDK.
+1. Apibendrinant, šis scenarijus apibrėžia ir konfigūruoja mašininio mokymosi pastotę pokalbių užbaigimo užduočiai, naudodamas Azure Machine Learning SDK.
 
     ```python
-    # Importuokite reikiamus modulius iš Azure AI ML SDK
+    # Importuokite reikalingus modulius iš Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Gaukite registroje esantį "chat_completion_pipeline" pavadintą vamzdyno komponentą
+    # Gaukite registro komponentą pavadinimu „chat_completion_pipeline“
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Apibrėžkite vamzdyno užduotį naudojant @pipeline dekoratorių ir funkciją create_pipeline
-    # Vamzdyno pavadinimas nustatytas kaip pipeline_display_name
+    # Apibrėžkite pipe lino užduotį naudodami @pipeline dekoratorių ir funkciją create_pipeline
+    # Pipeline pavadinimas nustatytas į pipeline_display_name
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Inicializuokite gautą vamzdyno komponentą su įvairiais parametrais
-        # Tai apima modelio kelią, skaičiavimo klasterius skirtingiems etapams, duomenų rinkinių paskirstymą mokymui ir testavimui, GPU skaičių smulkiajam derinimui ir kitus smulkiojo derinimo parametrus
+        # Inicializuokite gautą pipeline komponentą su įvairiais parametrais
+        # Tai apima modelio kelią, skaičiavimo klasterius skirtingiems etapams, duomenų rinkinių pasiskirstymą treniruotėms ir testavimui, GPU skaičių fine-tuning tikslams ir kitus fine-tuning parametrus
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Susiekite duomenų rinkinio paskirstymus su parametrais
+            # Susiekite duomenų rinkinių pasiskirstymą su parametrais
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
             test_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
-            # Mokymo nustatymai
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Nustatyta kaip turimų GPU skaičius kompiuteryje
+            # Treniruotės nustatymai
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # Nustatytas pagal prieinamo GPU skaičių skaičiavimo sistemoje
             **finetune_parameters
         )
         return {
-            # Perkelkite smulkiojo derinimo užduoties išvestį į vamzdyno užduoties išvestį
-            # Tai daroma tam, kad būtų lengviau registruoti smulkiai derintą modelį
-            # Modelio registracija reikalinga siekiant diegti modelį į internetinę arba partijinę pabaigos tašką
+            # Susiekite fine-tuning užduoties išvestį su pipeline užduoties išvestimi
+            # Tai atliekama tam, kad galėtume lengvai užregistruoti fine-tuned modelį
+            # Modelio registracija reikalinga, norint diegti modelį į internetinį ar partijinį galinį tašką
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Sukurkite vamzdyno egzempliorių kviesdami funkciją create_pipeline
+    # Sukurkite pipeline egzempliorių kviesdami create_pipeline funkciją
     pipeline_object = create_pipeline()
     
-    # Nenaudokite ankstesnių užduočių talpyklos rezultatų
+    # Nenaudokite ankstesnių užduočių kešuotų rezultatų
     pipeline_object.settings.force_rerun = True
     
-    # Nustatykite tęsti žingsnio klaidą į False
-    # Tai reiškia, kad vamzdis sustos, jei bet kuris žingsnis nepavyks
+    # Nustatykite tolesnį vykdymą po žingsnio klaidos į False
+    # Tai reiškia, kad pipeline bus sustabdytas, jei kažkuris žingsnis nepavyks
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Pateikite darbą
+### Pateikite užduotį
 
-1. Šis Python skriptas siunčia mašininio mokymosi pipeline darbą į Azure Machine Learning darbo erdvę ir laukia, kol darbas bus baigtas. Štai ką jis daro:
+1. Šis Python scenarijus pateikia mašininio mokymosi pastotės užduotį į Azure Machine Learning darbo sritį ir laukia, kol užduotis bus baigta. Štai ką jis atlieka:
 
-    - Iškviečia workspace_ml_client objektų jobs metodo create_or_update, kad pateiktų pipeline darbą. Vykdomas pipeline nurodytas per pipeline_object, o eksperimentas, po kuriuo vykdomas darbas, - per experiment_name.
+    - Kviečia workspace_ml_client jobs objekto create_or_update metodą pateikti pastotės užduotį. Įvykdymui nurodoma pastotė pipeline_object, o eksperimentas, kurio metu vykdoma, nurodytas experiment_name.
 
-    - Tada iškviečia workspace_ml_client jobs metodo stream, kad lauktų, kol baigsis pipeline darbas. Laukiamas darbas nurodytas per pipeline_job objekto name atributą.
+    - Po to kviečia workspace_ml_client jobs objekto stream metodą laukti užduoties pabaigos. Laukiama užduotis nurodoma kaip pipeline_job objekto name atributas.
 
-    - Apibendrinant, šis skriptas pateikia mašininio mokymosi pipeline darbą į Azure ML darbo erdvę ir laukia jo užbaigimo.
+    - Apibendrinant, šis scenarijus pateikia mašininio mokymosi pastotės užduotį į Azure Machine Learning darbo sritį, tada laukia jos pabaigos.
 
     ```python
-    # Pateikite duomenų apdorojimo užduotį į Azure Machine Learning darbo aplinką
-    # Vykdyti duomenų apdorojimo procesą nurodo pipeline_object
-    # Eksperimentas, kuriame vykdoma užduotis, nurodomas per experiment_name
+    # Pateikite procesų srautų užduotį Azure Machine Learning darbo vietoje
+    # Vykdomas procesų srautas nurodomas per pipeline_object
+    # Eksperimentas, pagal kurį vykdoma užduotis, nurodomas per experiment_name
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Palaukite, kol duomenų apdorojimo užduotis bus baigta
-    # Laukima užduotis nurodoma per pipeline_job objekto name atributą
+    # Palaukite, kol procesų srauto užduotis bus baigta
+    # Laukiama užduotis nurodoma per pipeline_job objekto name atributą
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. Registruokite fine-tuned modelį darbo erdvėje
+## 6. Užregistruokite tobulintą modelį darbo srityje
 
-Registruosime modelį, gautą iš fine tuning darbo išvesties. Tai leis stebėti priklausomybę tarp fine-tuned modelio ir fine tuning darbo. Fine tuning darbas, savo ruožtu, stebi priklausomybę nuo pagrindinio modelio, duomenų ir treniravimo kodo.
+Registruosime modelį iš tobulinimo užduoties išvesties. Tai leis sekti kilmę tarp tobulinto modelio ir tobulinimo užduoties. Tobulinimo užduotis, savo ruožtu, seka kilmę iki pagrindinio modelio, duomenų ir treniravimo kodo.
 
-### ML modelio registracija
+### ML modelio registravimas
 
-1. Šis Python skriptas registruoja mašininio mokymosi modelį, kuris buvo apmokytas Azure Machine Learning pipeline. Štai ką jis daro:
+1. Šis Python scenarijus registruoja mašininio mokymosi modelį, kuris buvo apmokytas Azure Machine Learning pastotėje. Štai ką jis atlieka:
 
-    - Importuoja reikalingus modulius iš Azure AI ML SDK.
+    - Importuoja reikiamus modulius iš Azure AI ML SDK.
 
-    - Tikrina, ar pipeline darbo išvestyje yra treniruotas_modelis, kviesdamas workspace_ml_client jobs metodo get ir prie jo prisijungdamas per outputs atributą.
+    - Tikrina, ar pipeline užduoties treniruotas_modelis išvestis yra prieinama, kviesdamas workspace_ml_client jobs objekto get metodą ir pasiekdamas jo outputs atributą.
 
-    - Sudaro kelią į treniruotą modelį formatuodamas eilutę su pipeline darbo pavadinimu ir išvesties pavadinimu ("trained_model").
+    - Sudaro kelią į treniruotą modelį, formatuodamas eilutę su pipeline užduoties pavadinimu ir išvesties vardu ("trained_model").
 
-    - Apibrėžia pavadinimą fine-tuned modeliui pridedant "-ultrachat-200k" prie originalaus modelio pavadinimo ir pakeičiant visas pasvirąsias brūkšnelį į brūkšnelius.
+    - Apibrėžia tobulinto modelio pavadinimą, pridedant "-ultrachat-200k" prie pradinio modelio vardo ir pakeičiant bet kokius brūkšnelius į brūkšnelius.
 
-    - Pasiruošia modeliui registruoti kurdamas Model objektą su įvairiais parametrais, įskaitant modelio kelią, modelio tipą (MLflow modelis), modelio vardą ir versiją bei aprašymą.
+    - Pasirengia registruoti modelį, sukuriant Model objektą su įvairiais parametrais, įskaitant modelio kelią, modelio tipą (MLflow modelis), modelio vardą ir versiją bei aprašymą.
 
-    - Registruoja modelį kviesdamas workspace_ml_client models objekto create_or_update su Model objektu kaip argumentu.
+    - Registruoja modelį kviesdamas workspace_ml_client models objekto create_or_update metodą su Model objektu kaip argumentu.
 
     - Išveda registruotą modelį.
 
-1. Apibendrinant, šis skriptas registruoja Azure ML pipeline apmokytą mašininio mokymosi modelį.
+1. Apibendrinant, šis scenarijus registruoja mašininio mokymosi modelį, kuris buvo apmokytas Azure Machine Learning pastotėje.
     
     ```python
     # Importuokite reikalingus modulius iš Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Patikrinkite, ar `trained_model` išvestis yra prieinama iš vykdymo proceso
+    # Patikrinkite, ar `trained_model` išvestis yra prieinama iš pipeline darbo
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Sukurkite kelią į apmokytą modelį formatuodami eilutę su vykdymo proceso pavadinimu ir išvesties („trained_model“) pavadinimu
+    # Sukurkite kelią į apmokytą modelį suformatuodami eilutę su pipeline darbo pavadinimu ir išvesties pavadinimu ("trained_model")
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Apibrėžkite pavadinimą tobulintam modeliui pridėdami „-ultrachat-200k“ prie pradinio modelio pavadinimo ir pakeisdami bet kokius pasviruosius brūkšnius į brūkšnelius
+    # Apibrėžkite pavadinimą tobulintam modeliui, pridėdami "-ultrachat-200k" prie pradinio modelio pavadinimo ir pakeisdami visas brūkšnelius į minuso ženklus
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Pasiruoškite užregistruoti modelį sukurdami Model objekto su įvairiais parametrais
-    # Tai apima kelią iki modelio, modelio tipą (MLflow modelis), modelio pavadinimą ir versiją bei modelio aprašymą
+    # Paruoškite modelio registraciją sukurdami Model objektą su įvairiais parametrais
+    # Tai apima modelio kelią, modelio tipą (MLflow modelis), modelio pavadinimą ir versiją bei modelio aprašymą
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Naudokite laiko žymą kaip versiją, kad išvengtumėte versijų konfliktų
+        version=timestamp,  # Naudokite laiko žymę kaip versiją, kad išvengtumėte versijų konflikto
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Užregistruokite modelį kviesdami create_or_update metodą iš models objekto workspace_ml_client su Model objektu kaip argumentu
+    # Užregistruokite modelį iškviesdami create_or_update metodą iš models objekto workspace_ml_client su Model objektu kaip argumentu
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
     
-    # Atspausdinkite užregistruotą modelį
+    # Išveskite užregistruotą modelį
     print("registered model: \n", registered_model)
     ```
 
-## 7. Diekite fine-tuned modelį į online galinį tašką
+## 7. Diegti tobulintą modelį į internetinį galinį tašką
 
-Online galiniai taškai suteikia patvarų REST API, kuris gali būti naudojamas integracijai su programomis, kuriose reikia naudoti modelį.
+Internetiniai galiniai taškai suteikia pastovų REST API, kurį galima naudoti integruojant su programomis, kurioms reikia modelio.
 
 ### Galinio taško valdymas
 
-1. Šis Python skriptas kuria valdomą online galinį tašką Azure Machine Learning skirtą registruotam modeliui. Štai ką jis daro:
+1. Šis Python scenarijus sukuria valdomą internetinį galinį tašką Azure Machine Learning registruotam modeliui. Štai ką jis daro:
 
     - Importuoja reikalingus modulius iš Azure AI ML SDK.
 
-    - Apibrėžia unikalų online galinio taško pavadinimą pridėdamas laiko žymą prie eilutės "ultrachat-completion-".
+    - Apibrėžia unikalų internetinio galinio taško pavadinimą, pridėdamas laiko žymą prie eilutės "ultrachat-completion-".
 
-    - Pasiruošia sukurti online galinį tašką kurdamas ManagedOnlineEndpoint objektą su įvairiais parametrais, įskaitant pavadinimą, aprašymą ir autentifikavimo režimą ("key").
+    - Pasiruošia sukurti internetinį galinį tašką, sukuriant ManagedOnlineEndpoint objektą su įvairiais parametrais, įskaitant galinio taško pavadinimą, aprašymą ir autentifikacijos režimą ("key").
 
-    - Kuria online galinį tašką kviesdamas workspace_ml_client begin_create_or_update su ManagedOnlineEndpoint objektu, tada laukia kūrimo užbaigimo kviesdamas wait metodą.
+    - Sukuria internetinį galinį tašką kviesdamas workspace_ml_client begin_create_or_update metodą su ManagedOnlineEndpoint objektu kaip argumentu. Laukia, kol kūrimo operacija baigsis, kviesdamas wait metodą.
 
-1. Apibendrinant, šis skriptas sukuria valdomą online galinį tašką Azure ML registruotam modeliui.
+1. Apibendrinant, šis scenarijus sukuria valdomą internetinį galinį tašką Azure Machine Learning registruotam modeliui.
 
     ```python
     # Importuoti reikalingus modulius iš Azure AI ML SDK
@@ -732,11 +732,11 @@ Online galiniai taškai suteikia patvarų REST API, kuris gali būti naudojamas 
         OnlineRequestSettings,
     )
     
-    # Apibrėžti unikalų pavadinimą internetiniam galiniam taškui pridėdami laiko žymą prie "ultrachat-completion-" eilutės
+    # Apibrėžti unikalų vardą interneto galiniam taškui pridedant laiko žymę prie eilutės "ultrachat-completion-"
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Pasiruošti sukurti internetinį galinį tašką, sukuriant ManagedOnlineEndpoint objektą su įvairiais parametrais
-    # Tai apima galinio taško pavadinimą, galinio taško aprašymą ir autentifikavimo režimą ("key")
+    # Pasiruošti sukurti interneto galinį tašką sukuriant ManagedOnlineEndpoint objektą su įvairiais parametrais
+    # Tai apima galinio taško pavadinimą, aprašymą ir autentifikavimo režimą ("key")
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -745,56 +745,56 @@ Online galiniai taškai suteikia patvarų REST API, kuris gali būti naudojamas 
         auth_mode="key",
     )
     
-    # Sukurti internetinį galinį tašką kviečiant begin_create_or_update metodą iš workspace_ml_client su ManagedOnlineEndpoint objektu kaip argumentu
-    # Tada laukti, kol kūrimo operacija bus užbaigta, kviečiant wait metodą
+    # Sukurti interneto galinį tašką kviečiant workspace_ml_client begin_create_or_update metodą su ManagedOnlineEndpoint objektu kaip argumentu
+    # Tada palaukti, kol kūrimo operacija bus baigta, kviečiant wait metodą
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> Čia galite rasti sąrašą SKU, palaikomų diegimui - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Čia galite rasti palaikomų SKU sąrašą diegimui – [Valdomų internetinių galinių taškų SKU sąrašas](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### ML modelio diegimas
 
-1. Šis Python skriptas diegia registruotą mašininio mokymosi modelį į valdomą online galinį tašką Azure Machine Learning. Štai ką jis daro:
+1. Šis Python scenarijus diegia registruotą mašininio mokymosi modelį valdomame internetiniame galiniame taške Azure Machine Learning. Štai ką jis atlieka:
 
     - Importuoja ast modulį, kuris suteikia funkcijas Python abstraktinės sintaksės medžių apdorojimui.
 
-    - Nustato diegimo įrenginio tipą kaip "Standard_NC6s_v3".
+    - Nustato diegimo įrenginio tipą į "Standard_NC6s_v3".
 
-    - Tikrina, ar foundation model turi tag'ą inference_compute_allow_list. Jei taip, konvertuoja tag'o reikšmę iš teksto į Python sąrašą ir priskiria inference_computes_allow_list. Jei ne, priskiria None.
+    - Patikrina, ar foundation_model turi inference_compute_allow_list žymą. Jei taip, konvertuoja žymos reikšmę iš eilutės į Python sąrašą ir priskiria inference_computes_allow_list. Jei ne, nustato inference_computes_allow_list į None.
 
-    - Tikrina, ar nurodytas įrenginio tipas yra leidžiamų sąraše. Jei ne, išveda pranešimą vartotojui pasirinkti įrenginio tipą iš leidžiamų.
+    - Patikrina, ar nurodytas įrenginio tipas yra leistinų sąraše. Jei ne, išveda pranešimą, prašydamas pasirinkti įrenginio tipą iš leistino sąrašo.
 
-    - Pasiruošia diegimui kurdamas ManagedOnlineDeployment objektą su įvairiais parametrais, įskaitant diegimo pavadinimą, galinio taško pavadinimą, modelio ID, įrenginio tipą ir skaičių, liveness probe nustatymus ir užklausų nustatymus.
+    - Pasiruošia sukurti diegimą, sukuriant ManagedOnlineDeployment objektą su įvairiais parametrais, įskaitant diegimo pavadinimą, galinio taško pavadinimą, modelio ID, įrenginio tipą ir skaičių, liveness stebėjimo nustatymus ir užklausų nustatymus.
 
-    - Kuria diegimą kviesdamas workspace_ml_client begin_create_or_update su ManagedOnlineDeployment objektu, tada laukia operacijos užbaigimo per wait metodą.
+    - Sukuria diegimą kviesdamas workspace_ml_client begin_create_or_update metodą su ManagedOnlineDeployment objektu kaip argumentu. Laukia, kol kūrimo operacija baigsis, kviesdamas wait metodą.
 
-    - Nustato galinio taško srauto paskirstymą, nukreipiant 100% srauto į "demo" diegimą.
+    - Nustato galinio taško srautą nukreipti 100% srauto į "demo" diegimą.
 
-    - Atnaujina galinį tašką kviesdamas workspace_ml_client begin_create_or_update su galinio taško objektu, tada laukia atnaujinimo pabaigos per result metodą.
+    - Atnaujina galinį tašką kviesdamas workspace_ml_client begin_create_or_update metodą su galinio taško objektu kaip argumentu. Laukia, kol atnaujinimas baigsis, kviesdamas result metodą.
 
-1. Apibendrinant, šis skriptas diegia registruotą mašininio mokymosi modelį į valdomą online galinį tašką Azure ML.
+1. Apibendrinant, šis scenarijus diegia registruotą mašininio mokymosi modelį valdomame internetiniame galiniame taške Azure Machine Learning.
 
     ```python
-    # Importuokite ast modulį, kuris teikia funkcijas apdoroti Python abstrakčios sintaksės gramatikos medžius
+    # Importuokite ast modulį, kuris teikia funkcijas Python abstraktaus sintaksės medžių apdorojimui
     import ast
     
     # Nustatykite instancijos tipą diegimui
     instance_type = "Standard_NC6s_v3"
     
-    # Patikrinkite, ar pagrindinio modelio žymoje yra `inference_compute_allow_list`
+    # Patikrinkite, ar pagrindiniame modelyje yra `inference_compute_allow_list` žyma
     if "inference_compute_allow_list" in foundation_model.tags:
-        # Jei yra, konvertuokite žymos reikšmę iš eilutės į Python sąrašą ir priskirkite `inference_computes_allow_list`
+        # Jei taip, konvertuokite žymos reikšmę iš eilutės į Python sąrašą ir priskirkite `inference_computes_allow_list`
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # Jei nėra, nustatykite `inference_computes_allow_list` reikšmei None
+        # Jei ne, nustatykite `inference_computes_allow_list` į `None`
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Patikrinkite, ar nurodytas instancijos tipas yra leidžiamų sąraše
+    # Patikrinkite, ar nurodytas instancijos tipas yra leistinų sąraše
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -814,75 +814,75 @@ Online galiniai taškai suteikia patvarų REST API, kuris gali būti naudojamas 
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Sukurkite diegimą kviesdami `workspace_ml_client` metodo `begin_create_or_update`, perduodant `ManagedOnlineDeployment` objektą kaip argumentą
-    # Tada palaukite, kol kūrimo operacija bus baigta, kviesdami `wait` metodą
+    # Sukurkite diegimą, iškviesdami `begin_create_or_update` metodą iš `workspace_ml_client`, perduodant `ManagedOnlineDeployment` objektą kaip argumentą
+    # Tada palaukite, kol kūrimo operacija bus baigta, iškviesdami `wait` metodą
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Nustatykite galinio taško srautą nukreipti 100% srauto į "demo" diegimą
+    # Nustatykite galutinio taško srautą nukreipti 100 % srauto į "demo" diegimą
     endpoint.traffic = {"demo": 100}
     
-    # Atnaujinkite galinį tašką kviesdami `workspace_ml_client` metodo `begin_create_or_update` su `endpoint` objektu kaip argumentu
-    # Tada palaukite, kol atnaujinimo operacija bus baigta, kviesdami `result` metodą
+    # Atnaujinkite galutinį tašką, iškviesdami `begin_create_or_update` metodą iš `workspace_ml_client`, perduodant `endpoint` objektą kaip argumentą
+    # Tada palaukite, kol atnaujinimo operacija bus baigta, iškviesdami `result` metodą
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. Testuokite galinį tašką su pavyzdiniais duomenimis
+## 8. Išbandykite galinį tašką su pavyzdiniais duomenimis
 
-Paimsime pavyzdinius duomenis iš testų duomenų rinkinio ir pateiksime juos online galiniam taškui inferencijai. Tada parodysime įvertintas etiketes šalia tikrųjų etikčių.
+Paimsime keletą pavyzdinių duomenų iš testų duomenų rinkinio ir pateiksime juos internetiniam galiniam taškui prognozavimui. Tada parodysime įvertintas etiketes kartu su tikrosiomis etiketėmis.
 
 ### Rezultatų skaitymas
 
-1. Šis Python skriptas skaito JSON Lines failą į pandas DataFrame, paima atsitiktinę imtį ir atnaujina indeksą. Štai ką jis daro:
+1. Šis Python scenarijus skaito JSON Lines failą į pandas DataFrame, paima atsitiktinį pavyzdį ir atnaujina indeksus. Štai ką jis daro:
 
-    - Skaito failą ./ultrachat_200k_dataset/test_gen.jsonl į pandas DataFrame. read_json funkcija naudojama su lines=True, nes failas yra JSON Lines formatu, kuriame kiekviena eilutė yra atskiras JSON objektas.
+    - Skaito failą ./ultrachat_200k_dataset/test_gen.jsonl į pandas DataFrame. read_json funkcija naudojama su lines=True argumentu, nes failas yra JSON Lines formatu, kur kiekviena eilutė yra atskiras JSON objektas.
 
-    - Paima atsitiktinę 1 eilutės imtį iš DataFrame. sample funkcija naudojama su n=1 argumentu, kuris nurodo atsitiktinių eilučių skaičių.
+    - Paima atsitiktinį 1 eilutės pavyzdį iš DataFrame. sample funkcija naudojama su n=1 argumentu, nurodančiu atsitiktinai pasirinkti eilučių skaičių.
 
-    - Atkuria DataFrame indeksą. reset_index funkcija naudojama su drop=True argumentu, kuris pašalina originalų indeksą ir pakeičia jį nauju numatytuoju skaitiniu indeksu.
+    - Atnaujina DataFrame indeksą. reset_index funkcija naudojama su drop=True argumentu, kad būtų pašalintas originalus indeksas ir pakeistas nauju numatytu sveikuoju indeksu.
 
-    - Parodo pirmas 2 DataFrame eilutes naudodamas head funkciją su argumentu 2. Kadangi imtyje yra tik viena eilutė, bus parodyta tik ta viena eilutė.
+    - Rodo pirmas 2 DataFrame eilutes naudodama head funkciją su argumentu 2. Kadangi po ėminiavimo DataFrame turi tik vieną eilutę, bus parodyta tik ta viena eilutė.
 
-1. Apibendrinant, šis skriptas skaito JSON Lines failą į pandas DataFrame, paima vieną atsitiktinę eilutę, atnaujina indeksą ir rodo pirmą eilutę.
+1. Apibendrinant, šis scenarijus skaito JSON Lines failą į pandas DataFrame, paima atsitiktinį 1 eilutės pavyzdį, atnaujina indeksą ir rodo pirmą eilutę.
     
     ```python
     # Importuoti pandas biblioteką
     import pandas as pd
     
-    # Nuskaityti JSON Lines failą './ultrachat_200k_dataset/test_gen.jsonl' į pandas DataFrame
+    # Skaityti JSON Lines failą './ultrachat_200k_dataset/test_gen.jsonl' į pandas DataFrame
     # Argumentas 'lines=True' nurodo, kad failas yra JSON Lines formatu, kur kiekviena eilutė yra atskiras JSON objektas
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Paimti atsitiktinį 1 eilutės pavyzdį iš DataFrame
-    # Argumentas 'n=1' nurodo atsitiktinių eilučių, kurios turi būti pasirinktos, skaičių
+    # Imti atsitiktinį 1 eilutės pavyzdį iš DataFrame
+    # Argumentas 'n=1' nurodo atsitiktinai atrenkamų eilučių skaičių
     test_df = test_df.sample(n=1)
     
     # Atstatyti DataFrame indeksą
-    # Argumentas 'drop=True' nurodo, kad originalus indeksas turi būti pašalintas ir pakeistas nauju pagal numatytąjį sveikojo skaičiaus indeksą
-    # Argumentas 'inplace=True' nurodo, kad DataFrame turi būti pakeistas tiesiogiai (nesukuriant naujo objekto)
+    # Argumentas 'drop=True' nurodo originalų indeksą pašalinti ir pakeisti nauju numatytųjų sveikųjų skaičių indeksu
+    # Argumentas 'inplace=True' nurodo, kad DataFrame turėtų būti pakeistas vietoje (nesukuriant naujo objekto)
     test_df.reset_index(drop=True, inplace=True)
     
-    # Rodyti pirmas 2 DataFrame eilutes
-    # Tačiau, kadangi imtyje yra tik viena eilutė, bus parodyta tik ta viena eilutė
+    # Rodyti pirmas 2 DataFrame eiles
+    # Tačiau kadangi po mėginių ėmimo DataFrame turi tik vieną eilutę, bus rodoma tik ta viena eilutė
     test_df.head(2)
     ```
 
 ### Sukurkite JSON objektą
-
-1. Šis Python scenarijus kuria JSON objektą su specifiniais parametrais ir išsaugo jį faile. Štai ką jis daro:
+1. Šis Python scenarijus kuria JSON objektą su konkrečiais parametrais ir įrašo jį į failą. Štai ką jis daro:
 
     - Importuoja json modulį, kuris suteikia funkcijas darbui su JSON duomenimis.
-    - Sukuria žodyną parameters su raktiniais žodžiais ir reikšmėmis, kurios atitinka mašininio mokymosi modelio parametrus. Raktai yra „temperature“, „top_p“, „do_sample“ ir „max_new_tokens“, o jų atitinkamos reikšmės yra 0.6, 0.9, True ir 200.
 
-    - Sukuria kitą žodyną test_json su dviem raktais: „input_data“ ir „params“. „input_data“ reikšmė yra kitas žodynas su raktais „input_string“ ir „parameters“. „input_string“ reikšmė yra sąrašas, kuriame yra pirmoji žinutė iš test_df DataFrame. „parameters“ reikšmė yra anksčiau sukurtas parameters žodynas. „params“ reikšmė yra tuščias žodynas.
+    - Sukuria žodyną parameters su raktų ir reikšmių poromis, kurios atspindi mašininio mokymosi modelio parametrus. Raktai yra "temperature", "top_p", "do_sample" ir "max_new_tokens", o jų atitinkamos reikšmės yra 0.6, 0.9, True ir 200 atitinkamai.
+
+    - Sukuria kitą žodyną test_json su dviem raktais: "input_data" ir "params". "input_data" reikšmė yra kitas žodynas su raktais "input_string" ir "parameters". "input_string" reikšmė yra sąrašas, kuriame yra pirmoji žinia iš test_df DataFrame. "parameters" reikšmė yra anksčiau sukurtas parameters žodynas. "params" reikšmė yra tuščias žodynas.
 
     - Atidaro failą pavadinimu sample_score.json
     
     ```python
-    # Importuoti json modulį, kuris teikia funkcijas darbui su JSON duomenimis
+    # Importuokite json modulį, kuris suteikia funkcijas darbui su JSON duomenimis
     import json
     
-    # Sukurti žodyną `parameters` su raktiniais žodžiais ir reikšmėmis, kurios atspindi mašininio mokymosi modelio parametrus
-    # Raktiniai žodžiai yra "temperature", "top_p", "do_sample" ir "max_new_tokens", o jų atitinkamos reikšmės yra 0.6, 0.9, True ir 200
+    # Sukurkite žodyną `parameters` su raktais ir reikšmėmis, kurios atspindi parametrus mašininio mokymosi modeliui
+    # Raktai yra "temperature", "top_p", "do_sample" ir "max_new_tokens", o jų atitinkamos reikšmės yra 0.6, 0.9, True ir 200 atitinkamai
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -890,11 +890,11 @@ Paimsime pavyzdinius duomenis iš testų duomenų rinkinio ir pateiksime juos on
         "max_new_tokens": 200,
     }
     
-    # Sukurti kitą žodyną `test_json` su dviem raktais: "input_data" ir "params"
-    # Reikšmė "input_data" yra kitas žodynas su raktais "input_string" ir "parameters"
-    # Reikšmė "input_string" yra sąrašas, kuriame yra pirmoji žinutė iš `test_df` DataFrame
-    # Reikšmė "parameters" yra anksčiau sukurtas `parameters` žodynas
-    # Reikšmė "params" yra tuščias žodynas
+    # Sukurkite kitą žodyną `test_json` su dviem raktais: "input_data" ir "params"
+    # "input_data" reikšmė yra kitas žodynas su raktais "input_string" ir "parameters"
+    # "input_string" reikšmė yra sąrašas, kuriame yra pirmasis `test_df` duomenų rėmelio pranešimas
+    # "parameters" reikšmė yra anksčiau sukurtas `parameters` žodynas
+    # "params" reikšmė yra tuščias žodynas
     test_json = {
         "input_data": {
             "input_string": [test_df["messages"][0]],
@@ -903,67 +903,67 @@ Paimsime pavyzdinius duomenis iš testų duomenų rinkinio ir pateiksime juos on
         "params": {},
     }
     
-    # Atidaryti failą pavadinimu `sample_score.json` kataloge `./ultrachat_200k_dataset` rašymo režimu
+    # Atidarykite failą pavadinimu `sample_score.json` kataloge `./ultrachat_200k_dataset` rašymo režimu
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # Įrašyti `test_json` žodyną į failą JSON formatu naudojant funkciją `json.dump`
+        # Įrašykite `test_json` žodyną į failą JSON formatu naudodami `json.dump` funkciją
         json.dump(test_json, f)
     ```
 
-### Kreipimasis į galinį tašką
+### Endpointo kvietimas
 
-1. Šis Python skriptas kreipiasi į internetinį galinį tašką Azure Machine Learning aplinkoje, kad įvertintų JSON failą. Štai ką jis daro:
+1. Šis Python scenarijus kviečia internetinį endpointą Azure Machine Learning, kad įvertintų JSON failą. Štai ką jis daro:
 
-    - Jis kviečia invoke metodą per workspace_ml_client objekto online_endpoints savybę. Šis metodas naudojamas išsiųsti užklausą į internetinį galinį tašką ir gauti atsakymą.
+    - Kvies metodą invoke, kuris yra workspace_ml_client objekto online_endpoints savybėje. Šis metodas naudojamas siųsti užklausą į internetinį endpointą ir gauti atsakymą.
 
-    - Nurodo galinio taško pavadinimą ir diegimą per argumentus endpoint_name ir deployment_name. Šiuo atveju galinio taško pavadinimas yra saugomas kintamajame online_endpoint_name, o diegimo pavadinimas yra „demo“.
+    - Nurodo endpointo pavadinimą ir diegimą naudodamas argumentus endpoint_name ir deployment_name. Šiuo atveju, endpointo pavadinimas saugomas kintamajame online_endpoint_name, o diegimo pavadinimas yra "demo".
 
-    - Nurodo JSON failo, kurį reikia įvertinti, kelią per argumentą request_file. Šiuo atveju failas yra ./ultrachat_200k_dataset/sample_score.json.
+    - Nurodo JSON failo kelią, kuris bus įvertintas, naudojant argumentą request_file. Šiuo atveju failas yra ./ultrachat_200k_dataset/sample_score.json.
 
-    - Saugo gautą atsakymą iš galinio taško į kintamąjį response.
+    - Saugo endpointo atsakymą kintamajame response.
 
-    - Išspausdina žalią (neapdorotą) atsakymą.
+    - Išspausdina neapdorotą atsakymą.
 
-1. Apibendrinant, šis skriptas kreipiasi į internetinį galinį tašką Azure Machine Learning aplinkoje, kad įvertintų JSON failą, ir išspausdina atsakymą.
+1. Apibendrinant, šis scenarijus kviečia internetinį endpointą Azure Machine Learning įvertinti JSON failą ir išspausdina atsakymą.
 
     ```python
-    # Iškvieskite internetinį „Azure Machine Learning“ galinį tašką, kad įvertintumėte `sample_score.json` failą
-    # `workspace_ml_client` objekto savybės `online_endpoints` metodas `invoke` naudojamas užklausai siųsti į internetinį galinį tašką ir gauti atsakymą
-    # Argumentas `endpoint_name` nurodo galinio taško pavadinimą, kuris saugomas kintamajame `online_endpoint_name`
-    # Argumentas `deployment_name` nurodo diegimo pavadinimą, kuris yra "demo"
-    # Argumentas `request_file` nurodo JSON failo, kurį reikia įvertinti, kelią, kuris yra `./ultrachat_200k_dataset/sample_score.json`
+    # Iškvieskite Azure Machine Learning internetinį tašką, kad įvertintumėte `sample_score.json` failą
+    # `workspace_ml_client` objekto `online_endpoints` savybės `invoke` metodas naudojamas siųsti užklausą į internetinį tašką ir gauti atsakymą
+    # `endpoint_name` argumentas nurodo taško pavadinimą, kuris saugomas `online_endpoint_name` kintamajame
+    # `deployment_name` argumentas nurodo diegimo pavadinimą, kuris yra "demo"
+    # `request_file` argumentas nurodo kelią į JSON failą, kurį reikia įvertinti, kuris yra `./ultrachat_200k_dataset/sample_score.json`
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
         request_file="./ultrachat_200k_dataset/sample_score.json",
     )
     
-    # Atspausdinkite neapdorotą atsakymą iš galinio taško
+    # Atspausdinkite žalią atsakymą iš taško
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Ištrinti internetinį galinį tašką
+## 9. Ištrinkite internetinį endpointą
 
-1. Nepamirškite ištrinti internetinio galinio taško, kitaip mokėjimo skaitiklis veiks tol, kol galinio taško kompiuteris bus naudojamas. Šis Python kodo eilutė ištrina internetinį galinį tašką Azure Machine Learning aplinkoje. Štai ką ji daro:
+1. Nepamirškite ištrinti internetinio endpointo, kitaip jis tęsis ir liks įjungtas mokesčių skaitiklis už naudotą skaičiavimo laiką. Ši Python kodo eilutė ištrina internetinį endpointą Azure Machine Learning. Štai ką ji daro:
 
-    - Jis kviečia begin_delete metodą per workspace_ml_client objekto online_endpoints savybę. Šis metodas pradeda internetinio galinio taško trynimą.
+    - Kvies begin_delete metodą, kuris yra workspace_ml_client objekto online_endpoints savybėje. Šis metodas naudojamas pradėti internetinio endpointo ištrynimo procesą.
 
-    - Nurodo trinamą galinį tašką per argumentą name. Šiuo atveju galinio taško pavadinimas yra saugomas kintamajame online_endpoint_name.
+    - Nurodo ištrintino endpointo pavadinimą naudodamas argumentą name. Šiuo atveju endpointo pavadinimas saugomas kintamajame online_endpoint_name.
 
-    - Kviečia wait metodą, kad palauktų, kol trynimo operacija bus baigta. Tai yra blokuojanti operacija, reiškianti, kad skriptas nesitęs tol, kol trynimas nepabaigtas.
+    - Kvies wait metodą, kad palauktų, kol ištrynimo veiksmas bus užbaigtas. Tai blokuojanti operacija, reiškianti, kad scenarijus nesitęs tol, kol ištrynimas nebus baigtas.
 
-    - Apibendrinant, ši kodo eilutė pradeda internetinio galinio taško trynimą Azure Machine Learning aplinkoje ir laukia, kol operacija bus baigta.
+    - Apibendrinant, ši kodo eilutė pradeda internetinio endpointo ištrynimą Azure Machine Learning ir laukia, kol operacija bus baigta.
 
     ```python
     # Ištrinti internetinį galinį tašką Azure Machine Learning
-    # `workspace_ml_client` objekto `online_endpoints` savybės `begin_delete` metodas naudojamas pradėti internetinio galinio taško ištrynimą
-    # `name` argumentas nurodo ištrinamo galinio taško pavadinimą, kuris saugomas `online_endpoint_name` kintamajame
-    # Iškviečiamas `wait` metodas, kad būtų palaukta, kol ištrynimo operacija bus baigta. Tai blokuojanti operacija, reiškianti, kad skriptas negalės tęsti, kol ištrynimas nebus baigtas
+    # `begin_delete` metodas, kuris yra `online_endpoints` savybėje `workspace_ml_client` objekte, naudojamas pradėti internetinio galinio taško ištrynimą
+    # `name` argumentas nurodo ištrinti skirtą galinio taško pavadinimą, kuris saugomas kintamajame `online_endpoint_name`
+    # Iškviečiamas `wait` metodas, kad lauktų, kol ištrynimo operacija bus baigta. Tai blokavimo operacija, reiškianti, kad skriptas nebus tęsiamas, kol ištrynimas nebus baigtas
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Atsakomybės apribojimas**:
-Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų arba netikslumų. Pirminis dokumentas gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus vertimas. Mes neprisiimame atsakomybės už jokius nesusipratimus ar neteisingus interpretavimus, kylančius iš šio vertimo naudojimo.
+**Atsisakymas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbios informacijos atveju rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už jokius nesusipratimus ar klaidingas interpretacijas, kylančias naudojant šį vertimą.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
