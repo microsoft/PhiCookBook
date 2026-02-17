@@ -1,44 +1,44 @@
-## Kako uporabljati komponente za dokončanje pogovora iz sistemskega registra Azure ML za fino nastavljanje modela
+## Kako uporabiti komponente za dokončanje pogovora iz sistemskega registra Azure ML za natančno prilagajanje modela
 
-V tem primeru bomo izvedli fino nastavljanje modela Phi-3-mini-4k-instruct za dokončanje pogovora med 2 osebama z uporabo podatkovnega nabora ultrachat_200k.
+V tem primeru bomo izvedli natančno prilagajanje modela Phi-3-mini-4k-instruct za dokončanje pogovora med 2 osebama z uporabo podatkovnega nabora ultrachat_200k.
 
 ![MLFineTune](../../../../translated_images/sl/MLFineTune.928d4c6b3767dd35.webp)
 
-Primer vam bo pokazal, kako izvesti fino nastavljanje z uporabo Azure ML SDK in Pythona ter nato namestiti fino nastavljen model na spletno točko za realnočasovno sklepanja.
+Primer vam bo pokazal, kako izvesti natančno prilagajanje z uporabo Azure ML SDK in Pythona ter nato namestiti natančno prilagojen model na spletno točko za napovedovanje v realnem času.
 
-### Podatki za učenje
+### Učni podatki
 
-Uporabili bomo podatkovni niz ultrachat_200k. To je močno filtrirana različica podatkovnega niza UltraChat in je bila uporabljena za učenje modela Zephyr-7B-β, vrhunskega 7b klepetalnega modela.
+Uporabili bomo podatkovni niz ultrachat_200k. To je močno filtrirana različica podatkovnega nabora UltraChat, ki je bila uporabljena za učenje modela Zephyr-7B-β, vrhunskega 7b klepetalnega modela.
 
 ### Model
 
-Uporabili bomo model Phi-3-mini-4k-instruct, da pokažemo, kako uporabnik lahko fino nastavi model za nalogo dokončanja pogovora. Če ste odprli ta zvezek iz določenega modela, ne pozabite zamenjati imena modela.
+Uporabili bomo model Phi-3-mini-4k-instruct, da pokažemo, kako lahko uporabnik natančno prilagodi model za nalogo dokončanja pogovora. Če ste odprli ta zvezek iz kartice specifičnega modela, ne pozabite zamenjati imena modela.
 
 ### Naloge
 
-- Izberite model za fino nastavitev.
-- Izberite in preučite podatke za učenje.
-- Konfigurirajte nalogo fine nastavitve.
-- Zaženite nalogo fine nastavitve.
-- Preglejte meritve učenja in ocenjevanja.
-- Registrirajte fino nastavljen model.
-- Namestite fino nastavljen model za realnočasovno sklepanja.
+- Izberite model za natančno prilagajanje.
+- Izberite in preglejte učne podatke.
+- Konfigurirajte nalogo za natančno prilagajanje.
+- Zaženite nalogo natančnega prilagajanja.
+- Preglejte učne in evalvacijske metrike.
+- Registrirajte natančno prilagojen model.
+- Namestite natančno prilagojen model za napovedovanje v realnem času.
 - Očistite vire.
 
-## 1. Nastavitev predpogojev
+## 1. Nastavitev predpogojov
 
 - Namestite odvisnosti
-- Povežite se z AzureML delovnim prostorom. Več o tem na nastavitvi preverjanja pristnosti SDK. Spodaj zamenjajte <WORKSPACE_NAME>, <RESOURCE_GROUP> in <SUBSCRIPTION_ID>.
+- Povežite se z delovnim prostorom AzureML. Več informacij najdete na nastavitev overjanja SDK. Zamenjajte <WORKSPACE_NAME>, <RESOURCE_GROUP> in <SUBSCRIPTION_ID> spodaj.
 - Povežite se s sistemskim registrom azureml
-- Nastavite opcijsko ime eksperimenta
-- Preverite ali ustvarite izračun.
+- Nastavite neobvezno ime eksperimenta
+- Preverite ali ustvarite računske vire.
 
 > [!NOTE]
-> Zahteve so en vozlišče z GPU, ki lahko ima več GPU kartic. Na primer, eno vozlišče Standard_NC24rs_v3 ima 4 NVIDIA V100 GPU-je, medtem ko Standard_NC12s_v3 ima 2 NVIDIA V100 GPU-ja. Za te informacije glejte dokumentacijo. Število GPU kartic na vozlišče je nastavljeno v parametru gpus_per_node spodaj. Pravilna nastavitev te vrednosti zagotavlja uporabo vseh GPU-jev v vozlišču. Priporočene SKU-je za GPU računalnike najdete tukaj in tukaj.
+> Zahteve: en sam GPU vozel lahko ima več GPU kartic. Na primer, v enem vozlišču Standard_NC24rs_v3 so 4 NVIDIA V100 GPU, medtem ko je v Standard_NC12s_v3 2 NVIDIA V100 GPU. Za te informacije si oglejte dokumentacijo. Število GPU kartic na vozlišče je nastavljeno v parametru gpus_per_node spodaj. Pravilna nastavitev te vrednosti bo zagotovila uporabo vseh GPU-jev v vozlišču. Priporočene SKU-je za GPU račune najdete tukaj in tukaj.
 
 ### Python knjižnice
 
-Namestite odvisnosti z zagonom spodnje celice. To ni opcijski korak, če delate v novem okolju.
+Namestite odvisnosti z zagonom spodnje celice. To ni neobvezen korak, če izvajate v novem okolju.
 
 ```bash
 pip install azure-ai-ml
@@ -52,17 +52,17 @@ pip install azureml-mlflow
 
 1. Ta Python skripta se uporablja za interakcijo s storitvijo Azure Machine Learning (Azure ML). Tukaj je povzetek, kaj počne:
 
-    - Uvozi potrebne module iz paketov azure.ai.ml, azure.identity in azure.ai.ml.entities. Prav tako uvozi modul time.
+    - Uvaža potrebne module iz paketov azure.ai.ml, azure.identity in azure.ai.ml.entities. Prav tako uvaža modul time.
 
-    - Poskuša avtorizirati z DefaultAzureCredential(), ki zagotavlja poenostavljeno izkušnjo preverjanja pristnosti za hitro začetek razvoja aplikacij, ki tečejo v oblaku Azure. Če to ne uspe, preklopi na InteractiveBrowserCredential(), ki omogoča interaktivno prijavo prek brskalnika.
+    - Poskuša se overiti z DefaultAzureCredential(), ki omogoča poenostavljeno overjanje za hitro začetek razvoja aplikacij v oblaku Azure. Če to ne uspe, preide na InteractiveBrowserCredential(), ki omogoča interaktivno prijavo.
 
-    - Poskuša ustvariti instanco MLClient z metodo from_config, ki prebere konfiguracijo iz privzete datoteke config.json. Če to ne uspe, ustvari instanco MLClient z ročno podanim subscription_id, resource_group_name in workspace_name.
+    - Nato poskuša ustvariti instanco MLClient z metodo from_config, ki bere konfiguracijo iz privzete konfiguracijske datoteke (config.json). Če to ne uspe, ustvari MLClient tako, da ročno poda subscription_id, resource_group_name in workspace_name.
 
-    - Ustvari še eno instanco MLClient, tokrat za registarski sistem Azure ML z imenom "azureml". Ta register je mesto, kjer so shranjeni modeli, celični procesi za fino nastavitev in okolja.
+    - Ustvari še eno instanco MLClient, tokrat za Azure ML register z imenom "azureml". Ta register je mesto, kjer so shranjeni modeli, cevovodi za natančno prilagajanje in okolja.
 
-    - Nastavi ime eksperimenta na "chat_completion_Phi-3-mini-4k-instruct".
+    - Nastavi experiment_name na "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Ustvari unikatni časovni žig s konverzijo trenutnega časa (v sekundah od epohe, kot decimalno število) v celo število in nato v niz. Ta časovni žig se lahko uporablja za ustvarjanje unikatnih imen in različic.
+    - Generira edinstven časovni žig tako, da trenutni čas (v sekundah od epohe, kot plavajoče število) pretvori v celo število in nato v niz. Ta časovni žig se lahko uporabi za ustvarjanje edinstvenih imen in različic.
 
     ```python
     # Uvozi potrebne module iz Azure ML in Azure Identity
@@ -74,7 +74,7 @@ pip install azureml-mlflow
     from azure.ai.ml.entities import AmlCompute
     import time  # Uvozi modul time
     
-    # Poskusi se avtorizirati z uporabo DefaultAzureCredential
+    # Poskusi se avtenticirati z uporabo DefaultAzureCredential
     try:
         credential = DefaultAzureCredential()
         credential.get_token("https://management.azure.com/.default")
@@ -93,39 +93,39 @@ pip install azureml-mlflow
         )
     
     # Ustvari še eno instanco MLClient za Azure ML register z imenom "azureml"
-    # Ta register je mesto, kjer se hranijo modeli, fine-tuning cevovodi in okolja
+    # Ta register je mesto, kjer so shranjeni modeli, fine-tuning cevovodi in okolja
     registry_ml_client = MLClient(credential, registry_name="azureml")
     
     # Nastavi ime eksperimenta
     experiment_name = "chat_completion_Phi-3-mini-4k-instruct"
     
-    # Ustvari unikaten časovni žig, ki se lahko uporabi za unikatna imena in različice
+    # Ustvari edinstven časovni žig, ki se lahko uporabi za imena in različice, ki morajo biti edinstvene
     timestamp = str(int(time.time()))
     ```
 
-## 2. Izberite osnovni model za fino nastavitev
+## 2. Izberite osnovni model za natančno prilagajanje
 
-1. Phi-3-mini-4k-instruct je lahkoten, vrhunski odprt model z 3,8 milijarde parametrov, zgrajen na podatkovnih nizih, uporabljenih za Phi-2. Model pripada družini modelov Phi-3, Mini različica pa prihaja v dveh variantah, 4K in 128K, kar predstavlja dolžino konteksta (v žetonih), ki jih podpira. Potrebno je fino nastaviti model za naš specifični namen, da ga lahko uporabimo. Te modele lahko poiščete v katalogu modelov v AzureML studiu, s filtrom za nalogo dokončanja pogovora. V tem primeru uporabljamo model Phi-3-mini-4k-instruct. Če ste odprli ta zvezek za drug model, zamenjajte ime modela in različico ustrezno.
+1. Phi-3-mini-4k-instruct je model z 3.8 milijardami parametrov, lahek, vrhunski odprtokodni model, zgrajen na podatkovnih nizih, uporabljenih za Phi-2. Model spada v družino modelov Phi-3, Mini različica pa je na voljo v dveh variantah, 4K in 128K, kar predstavlja dolžino konteksta (v žetonih), ki jo podpira. Model moramo natančno prilagoditi za naš specifični namen, da ga lahko uporabimo. Te modele lahko pregledujete v katalogu modelov v AzureML Studiu, z uporabo filtra za nalogo dokončanja pogovora. V tem primeru uporabljamo model Phi-3-mini-4k-instruct. Če ste odprli ta zvezek za drug model, ustrezno zamenjajte ime in različico modela.
 
 > [!NOTE]
-> lastnost id modela. Ta se posreduje kot vhod v nalogo fine nastavitve. Prav tako je na voljo kot polje Asset ID na strani podrobnosti modela v katalogu modelov AzureML studia.
+> lastnost id modela tega modela. Ta bo posredovana kot vhod v nalogo za natančno prilagajanje. Prav tako je na voljo kot polje Asset ID na strani podrobnosti modela v katalogu modelov AzureML Studia.
 
-2. Ta Python skripta komunicira s storitvijo Azure Machine Learning (Azure ML). Tukaj je povzetek, kaj počne:
+2. Ta Python skripta sodeluje z Azure Machine Learning (Azure ML) storitvijo. Tukaj je povzetek, kaj počne:
 
-    - Nastavi spremenljivko model_name na "Phi-3-mini-4k-instruct".
+    - Nastavi model_name na "Phi-3-mini-4k-instruct".
 
-    - Uporabi metodo get lastnosti models objekta registry_ml_client, da pridobi zadnjo različico modela z navedenim imenom iz registra Azure ML. Metoda get se kliče z dvema argumentoma: imenom modela in oznako, ki določa, da naj bo pridobljena zadnja različica modela.
+    - Uporabi metodo get lastnosti models objekta registry_ml_client za pridobitev najnovejše različice modela z določenim imenom iz Azure ML registra. Metoda get se kliče z dvema argumentoma: imenom modela in oznako, ki določa, da naj se pridobi najnovejša različica modela.
 
-    - Izpiše sporočilo v konzolo, ki prikazuje ime, različico in id modela, ki bo uporabljen za fino nastavitev. Metoda format niza se uporablja za vstavljanje imena, različice in id modela v sporočilo. Ime, različica in id so dostopni kot lastnosti objekta foundation_model.
+    - Izpiše sporočilo na konzolo, ki kaže ime, različico in id modela, ki bo uporabljen za natančno prilagajanje. Metoda format niza se uporablja za vstavljanje imena, verzije in id-ja modela v sporočilo. Ime, različica in id modela so dostopni kot lastnosti objekta foundation_model.
 
     ```python
-    # Nastavi ime modela
+    # Nastavite ime modela
     model_name = "Phi-3-mini-4k-instruct"
     
-    # Pridobi najnovejšo različico modela iz Azure ML registra
+    # Pridobite najnovejšo različico modela iz Azure ML registra
     foundation_model = registry_ml_client.models.get(model_name, label="latest")
     
-    # Izpiši ime modela, različico in ID
+    # Izpišite ime modela, različico in id
     # Te informacije so uporabne za sledenje in odpravljanje napak
     print(
         "\n\nUsing model name: {0}, version: {1}, id: {2} for fine tuning".format(
@@ -134,78 +134,78 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Ustvarite izračun za uporabo v nalogi
+## 3. Ustvarite računski vir, ki bo uporabljen v nalogi
 
-Naloga fine nastavite deluje SAMO z računalniško močjo z GPU-ji. Velikost računalnika je odvisna od velikosti modela in v večini primerov je težko izbrati pravo konfiguracijo. V tej celici uporabniku pomagamo izbrati pravi izračun za nalogo.
-
-> [!NOTE]
-> Spodaj navedeni računalniki delujejo z najbolj optimizirano konfiguracijo. Vsaka sprememba konfiguracije lahko povzroči napako Cuda Out Of Memory. V takih primerih poskusite nadgraditi izračun na večjo velikost.
+Naloga natančnega prilagajanja dela IZKLJUČNO z GPU računi. Velikost računa je odvisna od velikosti modela in v večini primerov je težko izbrati pravi račun za nalogo. V tej celici vodimo uporabnika pri izbiri pravilnega računa za nalogo.
 
 > [!NOTE]
-> Pri izbiri compute_cluster_size poskrbite, da je ta računalnik na voljo v vaši skupini virov. Če določen računalnik ni na voljo, lahko zaprosite za dostop do računalniških virov.
+> Spodaj navedeni računi delujejo z najbolj optimizirano konfiguracijo. Kakršne koli spremembe konfiguracije lahko povzročijo Cuda Out Of Memory napako. V takih primerih poskusite nadgraditi račun na večjo velikost.
 
-### Preverjanje podpore modela za fino nastavitev
+> [!NOTE]
+> Pri izbiri compute_cluster_size spodaj poskrbite, da je računski vir na voljo v vaši skupini virov. Če določen račun ni na voljo, lahko zaprosite za dostop do računalniških virov.
 
-1. Ta Python skripta komunicira z modelom Azure Machine Learning (Azure ML). Tukaj je povzetek, kaj počne:
+### Preverjanje podpore modela za natančno prilagajanje
 
-    - Uvozi modul ast, ki omogoča obdelavo dreves abstraktne sintakse Pythona.
+1. Ta Python skripta sodeluje z modelom Azure Machine Learning (Azure ML). Tukaj je povzetek, kaj počne:
 
-    - Preveri, ali ima objekt foundation_model (ki predstavlja model v Azure ML) oznako z imenom finetune_compute_allow_list. Oznake v Azure ML so pari ključ-vrednost, ki jih lahko ustvarite in uporabite za filtriranje in razvrščanje modelov.
+    - Uvaža modul ast, ki omogoča obdelavo dreves abstraktne slovnice Pythona.
 
-    - Če oznaka finetune_compute_allow_list obstaja, jo z ast.literal_eval varno pretvori iz niza v Python seznam. Ta seznam se nato dodeli spremenljivki computes_allow_list. Nato izpiše sporočilo, da je treba ustvariti izračun iz seznama.
+    - Preverja, ali ima objekt foundation_model (ki predstavlja model v Azure ML) oznako z imenom finetune_compute_allow_list. Oznake v Azure ML so ključ-vrednost pari, ki jih lahko ustvarjate in uporabljate za filtriranje in razvrščanje modelov.
 
-    - Če oznaka ni prisotna, nastavi computes_allow_list na None in izpiše sporočilo, da oznaka finetune_compute_allow_list ni del oznak modela.
+    - Če oznaka finetune_compute_allow_list obstaja, uporablja funkcijo ast.literal_eval za varno pretvorbo vrednosti oznake (niz) v Python seznam. Ta seznam se nato dodeli spremenljivki computes_allow_list. Nato izpiše sporočilo, da naj se računski vir ustvari iz seznama.
 
-    - Skripta torej preverja določeno oznako v metapodatkih modela, jo pretvori v seznam, če obstaja, in ustrezno obvesti uporabnika.
+    - Če oznaka finetune_compute_allow_list ne obstaja, nastavi computes_allow_list na None in izpiše sporočilo, da oznaka ni del oznak modela.
+
+    - Skratka, ta skripta preverja specifično oznako v metapodatkih modela, pretvarja vrednost oznake v seznam, če obstaja, in o tem obvešča uporabnika.
 
     ```python
-    # Uvozi modul ast, ki nudi funkcije za obdelavo dreves abstraktne sintakse Pythona
+    # Uvozi modul ast, ki zagotavlja funkcije za obdelavo dreves abstraktne sintakse Pythona
     import ast
     
-    # Preveri, ali je oznaka 'finetune_compute_allow_list' prisotna med oznakami modela
+    # Preveri, ali je oznaka 'finetune_compute_allow_list' prisotna v oznakah modela
     if "finetune_compute_allow_list" in foundation_model.tags:
-        # Če je oznaka prisotna, uporabi ast.literal_eval za varno razčlenitev vrednosti oznake (niz) v Pythonovo listo
+        # Če je oznaka prisotna, uporabi ast.literal_eval za varno pretvorbo vrednosti oznake (niz) v Pythonovo listo
         computes_allow_list = ast.literal_eval(
             foundation_model.tags["finetune_compute_allow_list"]
-        )  # pretvori niz v pythonovo listo
-        # Izpiši sporočilo, ki kaže, da naj bi bil iz liste ustvarjen compute
+        )  # Pretvori niz v Pythonovo listo
+        # Izpiši sporočilo, ki kaže, da je treba ustvariti compute iz liste
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
         # Če oznaka ni prisotna, nastavi computes_allow_list na None
         computes_allow_list = None
-        # Izpiši sporočilo, da oznaka 'finetune_compute_allow_list' ni del oznak modela
+        # Izpiši sporočilo, ki kaže, da oznaka 'finetune_compute_allow_list' ni del oznak modela
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Preverjanje računalniškega vozlišča
+### Preverjanje računalniškega primerka
 
-1. Ta Python skripta komunicira s storitvijo Azure Machine Learning (Azure ML) in izvaja več preverjanj na računalniškem vozlišču. Tukaj je povzetek, kaj počne:
+1. Ta Python skripta sodeluje s storitvijo Azure Machine Learning (Azure ML) in izvaja več preverjanj računalniškega primerka. Tukaj je povzetek, kaj počne:
 
-    - Poskuša pridobiti računalniško vozlišče z imenom, shranjenim v compute_cluster, iz delovnega prostora Azure ML. Če je stanje zagona vozlišča "failed" (neuspešno), sproži izjemo ValueError.
+    - Poskuša pridobiti računski primerek z imenom, shranjenim v compute_cluster, iz delovnega prostora Azure ML. Če je stanje zagotavljanja računalniškega primerka "failed" (ni uspelo), sproži ValueError.
 
-    - Preveri, ali je computes_allow_list različna od None. Če je, pretvori vse velikosti računalnikov v seznamu v male črke in preveri, če je velikost trenutnega računalniškega vozlišča v seznamu. Če ni, sproži izjemo ValueError.
+    - Preveri, če je computes_allow_list različen od None. Če je, pretvori vse velikosti računalnikov na seznamu v male črke in preveri, če je velikost trenutnega računskega primerka na seznamu. Če ni, sproži ValueError.
 
-    - Če je computes_allow_list None, preveri, ali je velikost računalniškega vozlišča v seznamu nepodprtih velikosti GPU VM-jev. Če je, sproži izjemo ValueError.
+    - Če je computes_allow_list None, preveri, ali je velikost računalniškega primerka na seznamu nepodprtih velikosti GPU VM. Če je, sproži ValueError.
 
-    - Pridobi seznam vseh razpoložljivih velikosti izračunskih enot v delovnem prostoru. Nato pregleda ta seznam in za vsako velikost preveri, ali ime ustreza velikosti trenutnega vozlišča. Če da, pridobi število GPU-jev za to velikost in nastavi gpu_count_found na True.
+    - Pridobi seznam vseh razpoložljivih velikosti računalnikov v delovnem prostoru. Nato iterira po tem seznamu in za vsako velikost preveri, ali se ime ujema z velikostjo trenutnega računalniškega primerka. Če se ujema, pridobi število GPU-jev za to velikost računalnika in nastavi gpu_count_found na True.
 
-    - Če je gpu_count_found True, izpiše število GPU-jev v računalniškem vozlišču. Če False, sproži izjemo ValueError.
+    - Če je gpu_count_found True, izpiše število GPU-jev v računalniškem primerku. Če je False, sproži ValueError.
 
-    - Skripta torej izvaja več preverjanj na računalniškem vozlišču v delovnem prostoru Azure ML, vključno s stanjem zagona, velikostjo glede na dovoljen seznam ali seznam prepovedi in številom GPU-jev.
-    
+    - Skratka, ta skripta izvaja več preverjanj nad računalniškim primerkom v delovnem prostoru Azure ML, vključno s preverjanjem stanja zagotavljanja, velikosti glede na dovoljen seznam ali prepovedani seznam in številom GPU-jev.
+
     ```python
-    # Natisnite sporočilo o izjema
+    # Natisni sporočilo o izjema
     print(e)
-    # Zvrzi ValueError, če velikost računalnika ni na voljo v delovnem prostoru
+    # Sproži ValueError, če velikost računalnika ni na voljo v delovnem prostoru
     raise ValueError(
         f"WARNING! Compute size {compute_cluster_size} not available in workspace"
     )
     
     # Pridobi računalniški primerek iz Azure ML delovnega prostora
     compute = workspace_ml_client.compute.get(compute_cluster)
-    # Preveri, ali je stanje zagotavljanja računalniškega primerka "failed"
+    # Preveri, ali je stanje izvajanja računalniškega primerka "failed"
     if compute.provisioning_state.lower() == "failed":
-        # Zvrzi ValueError, če je stanje zagotavljanja "failed"
+        # Sproži ValueError, če je stanje izvajanja "failed"
         raise ValueError(
             f"Provisioning failed, Compute '{compute_cluster}' is in failed state. "
             f"please try creating a different compute"
@@ -217,7 +217,7 @@ Naloga fine nastavite deluje SAMO z računalniško močjo z GPU-ji. Velikost ra�
         computes_allow_list_lower_case = [x.lower() for x in computes_allow_list]
         # Preveri, ali je velikost računalniškega primerka v computes_allow_list_lower_case
         if compute.size.lower() not in computes_allow_list_lower_case:
-            # Zvrzi ValueError, če velikost računalniškega primerka ni v computes_allow_list_lower_case
+            # Sproži ValueError, če velikost računalniškega primerka ni v computes_allow_list_lower_case
             raise ValueError(
                 f"VM size {compute.size} is not in the allow-listed computes for finetuning"
             )
@@ -231,71 +231,71 @@ Naloga fine nastavite deluje SAMO z računalniško močjo z GPU-ji. Velikost ra�
         ]
         # Preveri, ali je velikost računalniškega primerka v unsupported_gpu_vm_list
         if compute.size.lower() in unsupported_gpu_vm_list:
-            # Zvrzi ValueError, če je velikost računalniškega primerka v unsupported_gpu_vm_list
+            # Sproži ValueError, če je velikost računalniškega primerka v unsupported_gpu_vm_list
             raise ValueError(
                 f"VM size {compute.size} is currently not supported for finetuning"
             )
     
     # Inicializiraj zastavico za preverjanje, ali je bilo število GPU v računalniškem primeru najdeno
     gpu_count_found = False
-    # Pridobi seznam vseh razpoložljivih velikosti računalnikov v delovnem prostoru
+    # Pridobi seznam vseh razpoložljivih velikosti računalnika v delovnem prostoru
     workspace_compute_sku_list = workspace_ml_client.compute.list_sizes()
     available_sku_sizes = []
-    # Iteriraj čez seznam razpoložljivih velikosti računalnikov
+    # Pojdi skozi seznam razpoložljivih velikosti računalnika
     for compute_sku in workspace_compute_sku_list:
         available_sku_sizes.append(compute_sku.name)
-        # Preveri, ali se ime velikosti računalnika ujema z velikostjo računalniškega primerka
+        # Preveri, ali ime velikosti računalnika ustreza velikosti računalniškega primerka
         if compute_sku.name.lower() == compute.size.lower():
-            # Če se ujema, pridobi število GPU za to velikost računalnika in nastavi gpu_count_found na True
+            # Če ustreza, pridobi število GPU za to velikost računalnika in nastavi gpu_count_found na True
             gpus_per_node = compute_sku.gpus
             gpu_count_found = True
     # Če je gpu_count_found True, natisni število GPU v računalniškem primeru
     if gpu_count_found:
         print(f"Number of GPU's in compute {compute.size}: {gpus_per_node}")
     else:
-        # Če je gpu_count_found False, zvrzi ValueError
+        # Če je gpu_count_found False, sproži ValueError
         raise ValueError(
             f"Number of GPU's in compute {compute.size} not found. Available skus are: {available_sku_sizes}."
             f"This should not happen. Please check the selected compute cluster: {compute_cluster} and try again."
         )
     ```
 
-## 4. Izberite podatkovni niz za fino nastavitev modela
+## 4. Izberite podatkovni niz za natančno prilagajanje modela
 
-1. Uporabljamo podatkovni niz ultrachat_200k. Podatkovni niz ima štiri dele, primerne za Supervised fine-tuning (sft).
-Generacijsko rangiranje (gen). Število primerov na delitev je prikazano takole:
+1. Uporabljamo podatkovni niz ultrachat_200k. Podatkovni niz ima štiri razdelke, primerni za nadzorovano natančno prilagajanje (sft).
+Generacijsko rangiranje (gen). Število primerov na razdelek je prikazano spodaj:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Naslednje nekaj celic prikazuje osnovno pripravo podatkov za fino nastavitev:
+1. Naslednje celice prikazujejo osnovno pripravo podatkov za natančno prilagajanje:
 
 ### Vizualizacija nekaj vrstic podatkov
 
-Želimo, da ta vzorec teče hitro, zato shranite datoteki train_sft in test_sft, ki vsebujeta 5 % že obrezanih vrstic. To pomeni, da bo fino nastavljen model manj natančen, zato ga ne smete uporabljati v resničnih primerih.
-download-dataset.py se uporablja za prenos podatkovnega niza ultrachat_200k in pretvorbo podatkovnega niza v format, ki ga lahko uporabijo komponente za fino nastavitev. Ker je podatkovni niz velik, imamo tu samo del podatkovnega niza.
+Želimo, da ta vzorec deluje hitro, zato shranite datoteki train_sft, test_sft, ki vsebujeta 5 % že obrezanih vrstic. To pomeni, da bo natančno prilagojen model manj natančen, zato ga ne bi smeli uporabljati v resničnem svetu.
+Datoteka download-dataset.py se uporablja za prenos podatkovnega sklopa ultrachat_200k in pretvorbo podatkovnega sklopa v obliko, ki jo lahko porabi komponenta cevovoda za natančno prilagajanje. Ker je podatkovni sklop velik, imamo tukaj le del podatkovnega sklopa.
 
-1. Zagon spodnjega skripta prenese samo 5 % podatkov. To lahko povečate z nastavitvijo parametra dataset_split_pc na želeni odstotek.
+1. Zagon spodnjega skripta prenese le 5 % podatkov. To je mogoče povečati z nastavitvijo parametra dataset_split_pc na željeni odstotek.
 
 > [!NOTE]
-> Nekateri jezikovni modeli imajo različne jezikovne kode, zato morajo imena stolpcev v podatkovnem nizu odražati to.
+> Nekateri jezikovni modeli imajo različne jezikovne kode, zato bi morale biti tudi imenske oznake stolpcev v podatkovnem zbiru ustrezno prilagojene.
 
-1. Tukaj je primer, kako naj bi podatki izgledali.
-Podatkovni niz za dokončanje pogovora je shranjen v formatu parquet, pri čemer ima vsak vnos sledečo shemo:
+1. Tukaj je primer, kako naj bi podatki izgledali
+Podatkovni niz za dokončanje pogovora je shranjen v formatu parquet, pri čemer ima vsak zapis naslednjo shemo:
 
-    - To je JSON (JavaScript Object Notation) dokument, ki je priljubljen format za prenos podatkov. Ni izvršljiva koda, temveč način za shranjevanje in prenos podatkov. Tukaj je razčlenitev njegove strukture:
+    - To je JSON (JavaScript Object Notation) dokument, ki je priljubljen format za izmenjavo podatkov. Ni izvršljiva koda, ampak način shranjevanja in prenosa podatkov. Tukaj je razčlenitev njegove strukture:
 
-    - "prompt": Ta ključ vsebuje niz, ki predstavlja nalogo ali vprašanje, postavljeno AI pomočniku.
+    - "prompt": Ta ključ vsebuje niz, ki predstavlja nalogo ali vprašanje, namenjeno AI pomočniku.
 
-    - "messages": Ta ključ vsebuje seznam objektov. Vsak objekt predstavlja sporočilo v pogovoru med uporabnikom in AI pomočnikom. Vsako sporočilo ima dva ključa:
+    - "messages": Ta ključ vsebuje polje objektov. Vsak objekt predstavlja sporočilo v pogovoru med uporabnikom in AI pomočnikom. Vsako sporočilo ima dva ključa:
 
     - "content": Ta ključ vsebuje niz, ki predstavlja vsebino sporočila.
-    - "role": Ta ključ vsebuje niz, ki označuje vlogo entitete, ki je sporočilo poslala. Lahko je "user" ali "assistant".
-    - "prompt_id": Ta ključ vsebuje niz, ki predstavlja enolični identifikator za prompt.
+    - "role": Ta ključ vsebuje niz, ki predstavlja vlogo entitete, ki je poslala sporočilo. Lahko je "user" ali "assistant".
+    - "prompt_id": Ta ključ vsebuje niz, ki predstavlja edinstveni identifikator poziva.
 
-1. V tem specifičnem JSON dokumentu je prikazan pogovor, kjer uporabnik prosi AI pomočnika, naj ustvari protagonistko za distopijsko zgodbo. Pomočnik odgovori, nato uporabnik zahteva več podrobnosti. Pomočnik se strinja, da bo več podrobnosti posredoval. Ves pogovor je povezan z določenim id-jem prompta.
+1. V tem specifičnem JSON dokumentu je prikazan pogovor, kjer uporabnik prosi AI pomočnika, naj ustvari glavnega junaka za distopično zgodbo. Pomočnik odgovori, nato uporabnik zahteva več podrobnosti. Pomočnik se strinja, da jih bo podal. Celoten pogovor je povezan z določenim ID poziva.
 
     ```python
     {
@@ -337,106 +337,106 @@ Podatkovni niz za dokončanje pogovora je shranjen v formatu parquet, pri čemer
 
 ### Prenos podatkov
 
-1. Ta Python skripta uporablja pomožni skript download-dataset.py za prenos podatkovnega niza. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta se uporablja za prenos podatkovnega niza z uporabo pomožne skripte z imenom download-dataset.py. Tukaj je povzetek, kaj počne:
 
-    - Uvozi modul os, ki omogoča prenosljive operacije, odvisne od operacijskega sistema.
+    - Uvaža modul os, ki omogoča prenosljiv način uporabe funkcionalnosti, odvisne od operacijskega sistema.
 
-    - Z uporabo funkcije os.system zažene skripto download-dataset.py v lupini z določenimi argumenti ukazne vrstice. Argumenti določajo, kateri podatkovni niz prenesti (HuggingFaceH4/ultrachat_200k), v kateri imenik ga shraniti (ultrachat_200k_dataset) in kateri odstotek podatkovnega niza uporabiti (5). Funkcija os.system vrne izhodno stanje ukaza, ki ga shrani v spremenljivko exit_status.
+    - Uporablja funkcijo os.system za zagon skripte download-dataset.py v lupini s specifičnimi argumenti ukazne vrstice. Argumenti določajo podatkovni niz, ki ga je treba prenesti (HuggingFaceH4/ultrachat_200k), imenik za prenos (ultrachat_200k_dataset) in odstotek razdelka podatkovnega niza (5). Funkcija os.system vrne izhodni status ukaza, ta status se shrani v spremenljivko exit_status.
 
-    - Preveri, ali exit_status ni 0. V operacijskih sistemih, podobnih Unixu, oznaka 0 pomeni uspeh, katerakoli druga številka pa napako. Če je exit_status različna od 0, sproži izjemo Exception z obvestilom o napaki pri prenosu podatkov.
+    - Preveri, ali exit_status ni 0. V operacijskih sistemih, podobnih Unixu, izhodni status 0 običajno pomeni uspeh ukaza, medtem ko katerikoli drug številka pomeni napako. Če exit_status ni 0, sproži izjemo z sporočilom o napaki med prenosom podatkovnega niza.
 
-    - Skripto torej zažene ukaz za prenos podatkovnega niza z uporabo pomožnega skripta in ob neuspehu sproži izjemo.
-    
+    - Skratka, ta skripta izvaja ukaz za prenos podatkovnega niza z uporabo pomožne skripte in sproži izjemo, če ukaz ne uspe.
+
     ```python
     # Uvozi modul os, ki omogoča uporabo funkcionalnosti, odvisne od operacijskega sistema
     import os
     
-    # Uporabi funkcijo os.system za zagon skripte download-dataset.py v shellu z določenimi argumenti ukazne vrstice
-    # Argumenti določajo nabor podatkov za prenos (HuggingFaceH4/ultrachat_200k), imenik za prenos (ultrachat_200k_dataset) in odstotek podatkov za razdelitev (5)
-    # Funkcija os.system vrne izhodni status ukaza, ki ga je izvedla; ta status je shranjen v spremenljivki exit_status
+    # Uporabi funkcijo os.system za zagon skripte download-dataset.py v ukazni vrstici z določenimi argumenti
+    # Argumenti določajo, kateri nabor podatkov prenesti (HuggingFaceH4/ultrachat_200k), v katero mapo ga prenesti (ultrachat_200k_dataset) in odstotek podatkovnega nabora za delitev (5)
+    # Funkcija os.system vrne izhodno stanje ukaza, ki ga je izvedla; to stanje se shrani v spremenljivko exit_status
     exit_status = os.system(
         "python ./download-dataset.py --dataset HuggingFaceH4/ultrachat_200k --download_dir ultrachat_200k_dataset --dataset_split_pc 5"
     )
     
     # Preveri, ali exit_status ni 0
-    # V unixu podobnih operacijskih sistemih izhodni status 0 običajno pomeni, da je ukaz uspel, medtem ko katerakoli druga številka označuje napako
+    # V Unixu in podobnih operacijskih sistemih izhodno stanje 0 običajno pomeni, da je bil ukaz uspešno izveden, medtem ko katera koli druga številka pomeni napako
     # Če exit_status ni 0, sproži izjemo z sporočilom, ki označuje, da je prišlo do napake pri prenosu nabora podatkov
     if exit_status != 0:
         raise Exception("Error downloading dataset")
     ```
 
 ### Nalaganje podatkov v DataFrame
+1. Ta Python skripta nalaga datoteko JSON Lines v pandas DataFrame in prikazuje prvih 5 vrstic. Tukaj je pregled, kaj počne:
 
-1. Ta Python skripta naloži datoteko JSON Lines v pandas DataFrame in prikaže prvih 5 vrstic. Tukaj je povzetek, kaj počne:
+    - Uvaža knjižnico pandas, ki je zmogljiva knjižnica za manipulacijo in analizo podatkov.
 
-    - Uvozi knjižnico pandas, ki je močan paket za manipulacijo in analizo podatkov.
+    - Nastavi največjo širino stolpca za prikaz v pandas na 0. To pomeni, da bo celotno besedilo vsakega stolpca prikazano brez skrajševanja, ko se DataFrame izpiše.
 
-    - Nastavi največjo širino stolpcev za prikaz pandas na 0. To pomeni, da bo celotno besedilo vsakega stolpca prikazano brez skrajševanja, ko bo DataFrame izpisan.
-- Uporablja funkcijo pd.read_json za nalaganje datoteke train_sft.jsonl iz imenika ultrachat_200k_dataset v DataFrame. Argument lines=True označuje, da je datoteka v formatu JSON Lines, kjer je vsaka vrstica ločen JSON objekt.
+    - Uporabi funkcijo pd.read_json za nalaganje datoteke train_sft.jsonl iz mape ultrachat_200k_dataset v DataFrame. Argument lines=True označuje, da je datoteka v formatu JSON Lines, kjer je vsaka vrstica ločen JSON objekt.
 
-- Uporablja metodo head za prikaz prvih 5 vrstic DataFrame-a. Če je v DataFrame-u manj kot 5 vrstic, bo prikazal vse.
+    - Uporabi metodo head za prikaz prvih 5 vrstic DataFrame. Če DataFrame vsebuje manj kot 5 vrstic, bo prikazal vse.
 
-- Povzetek: ta skripta nalaga datoteko JSON Lines v DataFrame in prikazuje prvih 5 vrstic s polnim besedilom stolpcev.
-
+    - Povzetek: ta skripta nalaga datoteko JSON Lines v DataFrame in prikazuje prvih 5 vrstic s polnim besedilom stolpcev.
+    
     ```python
     # Uvozi knjižnico pandas, ki je zmogljiva knjižnica za manipulacijo in analizo podatkov
     import pandas as pd
     
-    # Nastavi maksimalno širino stolpca za pandasove možnosti prikaza na 0
-    # To pomeni, da se bo ob tiskanju DataFramea prikazal celoten tekst vsakega stolpca brez skrajšav
+    # Nastavi največjo širino stolpca za prikazne možnosti pandas na 0
+    # To pomeni, da bo celotno besedilo vsakega stolpca prikazano brez skrajševanja, ko se DataFrame izpiše
     pd.set_option("display.max_colwidth", 0)
     
     # Uporabi funkcijo pd.read_json za nalaganje datoteke train_sft.jsonl iz imenika ultrachat_200k_dataset v DataFrame
-    # Argument lines=True pomeni, da je datoteka v formatu JSON Lines, kjer je vsak vrstica ločen JSON objekt
+    # Argument lines=True pomeni, da je datoteka v formatu JSON Lines, kjer je vsaka vrstica ločen JSON objekt
     df = pd.read_json("./ultrachat_200k_dataset/train_sft.jsonl", lines=True)
     
-    # Uporabi metodo head za prikaz prvih 5 vrstic DataFramea
-    # Če ima DataFrame manj kot 5 vrstic, bo prikazal vse
+    # Uporabi metodo head za prikaz prvih 5 vrstic DataFrame
+    # Če ima DataFrame manj kot 5 vrstic, bo prikazal vse te vrstice
     df.head()
     ```
 
-## 5. Oddajte nalogo za fino nastavljanje z uporabo modela in podatkov kot vhodov
+## 5. Oddajte nalogo za fino učenje z modelom in podatki kot vhodnimi podatki
 
-Ustvarite nalogo, ki uporablja komponento pipeline za dokončanje klepeta. Naučite se več o vseh parametrih, ki jih podpira fino nastavljanje.
+Ustvarite nalogo, ki uporablja komponento chat-completion pipepline. Več o vseh parametrih, ki jih podpira fino učenje.
 
-### Določite parametre fino nastavljanja
+### Določanje parametrov finetuninga
 
-1. Parametri fino nastavljanja se lahko združijo v 2 kategoriji - parametri učenja, parametri optimizacije
+1. Parametri finetuninga so razdeljeni v 2 kategoriji - parametri učenja, parametri optimizacije
 
-1. Parametri učenja opredeljujejo vidike učenja, kot so -
+1. Parametri učenja določajo vidike učenja, kot so -
 
-    - Optimizator, razporejevalnik, ki ga uporabljamo
-    - Merilo za optimizacijo fino nastavitev
-    - Število učnih korakov in velikost paketov itd.
-    - Parametri optimizacije pomagajo pri optimizaciji GPU pomnilnika in učinkoviti uporabi računalniških virov.
+    - Optimizer, scheduler, ki se uporabljata
+    - Metrična meritev za optimizacijo finetuninga
+    - Število učnih korakov in velikost serije itd.
+    - Optimizacijski parametri pomagajo optimizirati GPU pomnilnik in učinkovito uporabljati računske vire.
 
-1. Spodaj je nekaj parametrov, ki spadajo v to kategorijo. Parametri optimizacije se razlikujejo za vsak model in so vključeni v model, da se te razlike obravnavajo.
+1. Spodaj je nekaj parametrov, ki spadajo v to kategorijo. Optimizacijski parametri so različni za vsak model in so vključeni z modelom, da obvladajo te razlike.
 
     - Omogoči deepspeed in LoRA
-    - Omogoči učenje z mešano natančnostjo
-    - Omogoči učenje na več vozliščih
+    - Omogoči mešano natančnost učenja
+    - Omogoči večvozlično učenje
 
 > [!NOTE]
-> Nadzorovano fino nastavljanje lahko povzroči izgubo usklajenosti ali katastrofalno pozabo. Priporočamo, da preverite to težavo in izvedete fazo usklajevanja po fino nastavljanju.
+> Nadzorovano fino učenje lahko povzroči izgubo poravnave ali katastrofalno pozabo. Priporočamo, da to težavo preverite in zaženete fazo poravnave po finetuning-u.
 
-### Parametri fino nastavljanja
+### Parametri finetuninga
 
-1. Ta Python skripta nastavlja parametre za fino nastavljanje modela strojnega učenja. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta nastavi parametre za fino učenje modela strojnega učenja. Tukaj je pregled, kaj počne:
 
-    - Nastavi privzete parametre učenja, kot so število učnih epoh, velikosti paketov za učenje in ocenjevanje, hitrost učenja in vrsta razporejevalnika hitrosti učenja.
+    - Nastavi privzete parametre učenja, kot so število učnih epoh, velikosti serij za učenje in ocenjevanje, hitrost učenja in tip načrtovalca hitrosti učenja.
 
-    - Nastavi privzete parametre optimizacije, kot so uporaba Layer-wise Relevance Propagation (LoRa) in DeepSpeed ter stopnja DeepSpeed.
+    - Nastavi privzete optimizacijske parametre, kot so uporaba Layer-wise Relevance Propagation (LoRa) in DeepSpeed ter DeepSpeed fazo.
 
     - Združi parametre učenja in optimizacije v en sam slovar z imenom finetune_parameters.
 
-    - Preveri, ali ima foundation_model kakršnekoli privzete parametre, specifične za model. Če jih ima, izpiše opozorilno sporočilo in posodobi slovar finetune_parameters s temi specifičnimi privzetimi vrednostmi. Funkcija ast.literal_eval se uporablja za pretvorbo teh specifičnih privzetih vrednosti iz niza v Python slovar.
+    - Preveri, ali ima foundation_model model-specifične privzete parametre. Če jih ima, izpiše opozorilo in posodobi slovar finetune_parameters s temi model-specifičnimi privzetimi vrednostmi. Funkcija ast.literal_eval se uporabi za pretvorbo model-specifičnih privzetih vrednosti iz niza v Python slovar.
 
-    - Izpiše končni nabor parametrov za fino nastavljanje, ki bodo uporabljeni za zagon.
+    - Izpiše končni nabor parametrov za fino učenje, ki se bodo uporabljali pri izvajanju.
 
-    - Povzetek: ta skripta nastavlja in prikazuje parametre za fino nastavljanje modela strojnega učenja z možnostjo, da se privzeti parametri preglasijo z model-specifičnimi.
+    - Povzetek: ta skripta nastavlja in prikazuje parametre za fino učenje modela strojnega učenja, z možnostjo preglasitve privzetih parametrov s specifičnimi za model.
 
     ```python
-    # Nastavite privzete parametre treniranja, kot so število epoh treniranja, velikosti serij za treniranje in evalvacijo, hitrost učenja in vrsta urnika hitrosti učenja
+    # Nastavite privzete parametre usposabljanja, kot so število epoh usposabljanja, velikosti serij za usposabljanje in ocenjevanje, hitrost učenja ter tip urnika hitrosti učenja
     training_parameters = dict(
         num_train_epochs=3,
         per_device_train_batch_size=1,
@@ -452,21 +452,21 @@ Ustvarite nalogo, ki uporablja komponento pipeline za dokončanje klepeta. Nauč
         deepspeed_stage=2,
     )
     
-    # Združite parametre treniranja in optimizacije v en sam slovar z imenom finetune_parameters
+    # Združite parametre usposabljanja in optimizacije v enoten slovar z imenom finetune_parameters
     finetune_parameters = {**training_parameters, **optimization_parameters}
     
-    # Preverite, ali ima foundation_model kakšne privzete parametre, specifične za model
-    # Če jih ima, izpišite opozorilo in posodobite slovar finetune_parameters z temi modelno specifičnimi privzetimi vrednostmi
-    # Funkcija ast.literal_eval se uporablja za pretvorbo modelno specifičnih privzetih vrednosti iz niza v Python slovar
+    # Preverite, ali foundation_model vsebuje kakšne privzete parametre, specifične za model
+    # Če jih, izpišite opozorilno sporočilo in posodobite slovar finetune_parameters s temi model-specifičnimi privzetimi vrednostmi
+    # Funkcija ast.literal_eval se uporablja za pretvorbo model-specifičnih privzetih vrednosti iz niza v Python slovar
     if "model_specific_defaults" in foundation_model.tags:
         print("Warning! Model specific defaults exist. The defaults could be overridden.")
         finetune_parameters.update(
-            ast.literal_eval(  # pretvori niz v Python slovar
+            ast.literal_eval(  # pretvori niz v python slovar
                 foundation_model.tags["model_specific_defaults"]
             )
         )
     
-    # Izpišite končni nabor parametrov za fino nastavljanje, ki bodo uporabljeni za izvajanje
+    # Izpišite končni niz parametrov za fino nastavljanje, ki bodo uporabljeni za zagon
     print(
         f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
     )
@@ -474,55 +474,55 @@ Ustvarite nalogo, ki uporablja komponento pipeline za dokončanje klepeta. Nauč
 
 ### Učna cevovod
 
-1. Ta Python skripta definira funkcijo za generiranje prikaznega imena za učno cevovod strojnega učenja, nato pokliče to funkcijo, da generira in izpiše prikazno ime. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta definira funkcijo za ustvarjanje prikaznega imena za učni cevovod modela strojnega učenja in nato pokliče to funkcijo za ustvarjanje in izpis prikaznega imena. Tukaj je pregled, kaj počne:
 
-1. Definirana je funkcija get_pipeline_display_name. Ta funkcija generira prikazno ime na podlagi različnih parametrov, povezanih z učnim cevovodom.
+1. Funkcija get_pipeline_display_name je definirana. Ta funkcija ustvari prikazno ime na podlagi različnih parametrov, povezanih z učnim cevovodom.
 
-1. Znotraj funkcije izračuna skupno velikost paketa tako, da pomnoži velikost paketa na napravo, število korakov akumulacije gradienta, število GPU-jev na vozlišče in število vozlišč uporabljenih za fino nastavljanje.
+1. Znotraj funkcije izračuna skupno velikost serije tako, da pomnoži velikost serije na napravo, število korakov za akumulacijo gradienta, število GPU na vozlišče in število vozlišč, uporabljenih za fino učenje.
 
-1. Pridobi različne druge parametre, kot so vrsta razporejevalnika hitrosti učenja, ali je uporabljen DeepSpeed, stopnja DeepSpeed, ali je uporabljen Layer-wise Relevance Propagation (LoRa), omejitev števila model checkpoints za shranjevanje in največja dolžina sekvence.
+1. Pridobi različne druge parametre, kot so tip načrtovalca hitrosti učenja, ali je uporabljen DeepSpeed, DeepSpeed faza, ali je uporabljen Layer-wise Relevance Propagation (LoRa), omejitev števila kontrolnih točk modela in največja velikost zaporedja.
 
-1. Sestavi niz, ki vključuje vse te parametre, ločene s pomišljaji. Če je uporabljen DeepSpeed ali LoRa, niz vključuje "ds" zatem stopnjo DeepSpeed, oziroma "lora". Če ne, vključuje "nods" oziroma "nolora".
+1. Ustvari niz, ki vključuje vse te parametre, ločene z vezaji. Če je uporabljen DeepSpeed ali LoRa, niz vključuje "ds" sledi DeepSpeed faza oziroma "lora". Če ne, vključuje "nods" ali "nolora".
 
-1. Funkcija vrne ta niz, ki služi kot prikazno ime učnega cevovoda.
+1. Funkcija vrne ta niz, ki služi kot prikazno ime za učni cevovod.
 
-1. Po definiciji funkcije je ta klicana za generiranje prikaznega imena, ki je nato izpisano.
+1. Po definiciji funkcije se ta kliče za ustvarjanje prikaznega imena in ga nato izpiše.
 
-1. Povzetek: ta skripta generira prikazno ime za učni cevovod strojnega učenja na podlagi različnih parametrov in nato izpiše to prikazno ime.
+1. Povzetek: ta skripta ustvarja prikazno ime za učni cevovod modela strojnega učenja na podlagi različnih parametrov in nato izpiše to ime.
 
     ```python
-    # Določi funkcijo za ustvarjanje prikazanega imena za učni proces
+    # Določi funkcijo za ustvarjanje prikaznega imena za učni potek
     def get_pipeline_display_name():
-        # Izračunaj skupno velikost paketa tako, da zmnožiš velikost paketa na napravo, število korakov za akumulacijo gradienta, število GPU-jev na vozlišče in število vozlišč, uporabljenih za fino prilagajanje
+        # Izračunaj skupno velikost serije tako, da zmnožiš velikost serije na napravo, število korakov akumulacije gradienta, število GPU-jev na vozlišče in število vozlišč, uporabljenih za fino nastavitev
         batch_size = (
             int(finetune_parameters.get("per_device_train_batch_size", 1))
             * int(finetune_parameters.get("gradient_accumulation_steps", 1))
             * int(gpus_per_node)
             * int(finetune_parameters.get("num_nodes_finetune", 1))
         )
-        # Pridobi vrsto časovnika hitrosti učenja
+        # Pridobi tip urnika hitrosti učenja
         scheduler = finetune_parameters.get("lr_scheduler_type", "linear")
-        # Pridobi, ali je uporabljen DeepSpeed
+        # Pridobi, ali je aplikacija DeepSpeed uporabljena
         deepspeed = finetune_parameters.get("apply_deepspeed", "false")
-        # Pridobi DeepSpeed stopnjo
+        # Pridobi fazo DeepSpeed
         ds_stage = finetune_parameters.get("deepspeed_stage", "2")
-        # Če je DeepSpeed uporabljen, vključi "ds" skupaj z DeepSpeed stopnjo v prikazano ime; če ne, vključi "nods"
+        # Če je DeepSpeed uporabljen, dodaj "ds" in fazo DeepSpeed v prikazno ime; če ne, dodaj "nods"
         if deepspeed == "true":
             ds_string = f"ds{ds_stage}"
         else:
             ds_string = "nods"
-        # Pridobi, ali je uporabljena slojna relevantna propagacija (LoRa)
+        # Pridobi, ali je uporabljena propagacija pomembnosti po plasteh (LoRa)
         lora = finetune_parameters.get("apply_lora", "false")
-        # Če je LoRa uporabljen, vključi "lora" v prikazano ime; če ne, vključi "nolora"
+        # Če je LoRa uporabljena, dodaj "lora" v prikazno ime; če ne, dodaj "nolora"
         if lora == "true":
             lora_string = "lora"
         else:
             lora_string = "nolora"
-        # Pridobi omejitev števila shranjenih kontrolnih točk modela
+        # Pridobi omejitev števila modelnih kontrolnih točk, ki jih je treba obdržati
         save_limit = finetune_parameters.get("save_total_limit", -1)
         # Pridobi največjo dolžino zaporedja
         seq_len = finetune_parameters.get("max_seq_length", -1)
-        # Sestavi prikazano ime, tako da vse te parametre združiš, ločene z vezaji
+        # Ustvari prikazno ime s povezovanjem vseh teh parametrov, ločenih z vezaji
         return (
             model_name
             + "-"
@@ -539,57 +539,57 @@ Ustvarite nalogo, ki uporablja komponento pipeline za dokončanje klepeta. Nauč
             + f"-seqlen{seq_len}"
         )
     
-    # Pokliči funkcijo za generiranje prikazanega imena
+    # Kliči funkcijo za ustvarjanje prikaznega imena
     pipeline_display_name = get_pipeline_display_name()
-    # Izpiši prikazano ime
+    # Izpiši prikazno ime
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
 ### Konfiguracija cevovoda
 
-Ta Python skripta definira in konfigurira učni cevovod strojnega učenja z uporabo SDK za Azure Machine Learning. Tukaj je razčlenitev, kaj počne:
+Ta Python skripta definira in konfigurira učni cevovod modela strojnega učenja z uporabo Azure Machine Learning SDK. Tukaj je pregled, kaj počne:
 
 1. Uvozi potrebne module iz Azure AI ML SDK.
 
-1. Prenese komponento pipeline z imenom "chat_completion_pipeline" iz registra.
+1. Pridobi komponento cevovoda z imenom "chat_completion_pipeline" iz registra.
 
-1. Definira nalogo pipeline z dekoratorjem `@pipeline` in funkcijo `create_pipeline`. Ime pipeline je nastavljeno na `pipeline_display_name`.
+1. Definira nalogo cevovoda z dekoratorjem `@pipeline` in funkcijo `create_pipeline`. Ime cevovoda je nastavljeno na `pipeline_display_name`.
 
-1. Znotraj funkcije `create_pipeline` inicializira preneseno komponento pipeline z različnimi parametri, vključno s potjo do modela, računalniškimi skupinami za različne faze, razdelki podatkov za učenje in testiranje, številom GPU-jev za fino nastavljanje in drugimi parametri fino nastavljanja.
+1. Znotraj funkcije `create_pipeline` inicializira pridobljeno komponento cevovoda z različnimi parametri, vključno s potjo do modela, gruče računalnih enot za različne faze, razdelitvami podatkov za učenje in testiranje, številom GPU-jev za fino učenje ter drugimi parametri finetuninga.
 
-1. Preslika izhod naloge fino nastavljanja v izhod naloge pipeline. To je storjeno, da se lahko fino nastavljeni model enostavno registrira, kar je potrebno za nameščanje modela v spletni ali paketni konektor.
+1. Preslika izhod fine tuning naloge na izhod cevovoda. To je narejeno, da je finoučen model enostavno registrirati, kar je potrebno za nameščanje modela na spletno ali paketno končno postajo.
 
-1. Ustvari primer pipeline z klicem funkcije `create_pipeline`.
+1. Ustvari instanco cevovoda z klicanjem funkcije `create_pipeline`.
 
-1. Nastavi nastavitev `force_rerun` pipeline na `True`, kar pomeni, da ne bodo uporabljeni predpomnjeni rezultati prejšnjih nalog.
+1. Nastavi možnost `force_rerun` cevovoda na `True`, kar pomeni, da se ne uporabijo predpomnjeni rezultati prejšnjih nalog.
 
-1. Nastavi nastavitev `continue_on_step_failure` pipeline na `False`, kar pomeni, da bo pipeline prenehal, če kateri koli korak ne uspe.
+1. Nastavi možnost `continue_on_step_failure` cevovoda na `False`, kar pomeni, da se cevovod ustavi, če kateri koli korak ne uspe.
 
-1. Povzetek: ta skripta definira in konfigurira učni cevovod strojnega učenja za nalogo dokončanja klepeta z uporabo Azure Machine Learning SDK.
+1. Povzetek: ta skripta definira in konfigurira učni cevovod za nalogo dokončanja klepeta z uporabo Azure Machine Learning SDK.
 
     ```python
     # Uvozi potrebne module iz Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
     
-    # Pridobi komponento poteka imenovano "chat_completion_pipeline" iz registra
+    # Pridobi komponento cevovoda z imenom "chat_completion_pipeline" iz registra
     pipeline_component_func = registry_ml_client.components.get(
         name="chat_completion_pipeline", label="latest"
     )
     
-    # Določi opravilo poteka z dekoratorjem @pipeline in funkcijo create_pipeline
-    # Ime poteka je nastavljeno na pipeline_display_name
+    # Določi nalogo cevovoda z uporabo dekoraterja @pipeline in funkcije create_pipeline
+    # Ime cevovoda je nastavljeno na pipeline_display_name
     @pipeline(name=pipeline_display_name)
     def create_pipeline():
-        # Inicializiraj pridobljeno komponento poteka z različnimi parametri
-        # Ti vključujejo pot modela, računalniške gruče za različne faze, razdelke podatkovnih nizov za učenje in testiranje, število GPU-jev za fino prilagajanje in druge parametre fino prilagajanja
+        # Inicializiraj pridobljeno komponento cevovoda z različnimi parametri
+        # Ti vključujejo pot do modela, računske gruče za različne faze, razdelke podatkov za učenje in testiranje, število GPU-jev za fino nastavljanje in druge parametre fino nastavljanja
         chat_completion_pipeline = pipeline_component_func(
             mlflow_model_path=foundation_model.id,
             compute_model_import=compute_cluster,
             compute_preprocess=compute_cluster,
             compute_finetune=compute_cluster,
             compute_model_evaluation=compute_cluster,
-            # Preslikaj razdelke podatkovnih nizov na parametre
+            # Preslika razdelke podatkov na parametre
             train_file_path=Input(
                 type="uri_file", path="./ultrachat_200k_dataset/train_sft.jsonl"
             ),
@@ -597,106 +597,106 @@ Ta Python skripta definira in konfigurira učni cevovod strojnega učenja z upor
                 type="uri_file", path="./ultrachat_200k_dataset/test_sft.jsonl"
             ),
             # Nastavitve učenja
-            number_of_gpu_to_use_finetuning=gpus_per_node,  # Nastavljeno na število GPU-jev, razpoložljivih v računalniku
+            number_of_gpu_to_use_finetuning=gpus_per_node,  # Nastavljeno na število GPU-jev, ki so na voljo v računu
             **finetune_parameters
         )
         return {
-            # Preslikaj izhod fino prilagojenega opravila na izhod opravila poteka
-            # To je narejeno, da lahko zlahka registriramo fino prilagojen model
-            # Registracija modela je potrebna za uvajanje modela na spletni ali serijski točki
+            # Preslika izhod fino nastavljenega dela na izhod naloge cevovoda
+            # To se naredi, da lahko enostavno registriramo fino nastavljen model
+            # Registracija modela je potrebna za uvajanje modela na spletni ali paketni konektor
             "trained_model": chat_completion_pipeline.outputs.mlflow_model_folder
         }
     
-    # Ustvari instanco poteka s klicem funkcije create_pipeline
+    # Ustvari instanco cevovoda tako, da pokličeš funkcijo create_pipeline
     pipeline_object = create_pipeline()
     
     # Ne uporabljaj predpomnjenih rezultatov iz prejšnjih opravil
     pipeline_object.settings.force_rerun = True
     
-    # Nastavi nadaljevanje ob napaki koraka na False
-    # To pomeni, da se bo potek ustavil, če kateri koli korak spodleti
+    # Nastavi nadaljevanje ob neuspehu koraka na False
+    # To pomeni, da se bo cevovod ustavil, če kateri koli korak ne uspe
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
 ### Oddajte nalogo
 
-1. Ta Python skripta oddaja učno cevovodno nalogo za strojno učenje v Azure Machine Learning delovno okolje in nato čaka, da naloga konča. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta odda nalogo učnega cevovoda v delovno okolje Azure Machine Learning in nato čaka, da se naloga zaključi. Tukaj je pregled, kaj počne:
 
-    - Pokliče metodo create_or_update objekta jobs v workspace_ml_client za oddajo naloge pipeline. Pipeline, ki se izvaja, je določen z pipeline_object, eksperiment, pod katerim teče naloga, pa z experiment_name.
+    - Pokliče metodo create_or_update objekta jobs v workspace_ml_client za oddajo naloge cevovoda. Cevovod, ki se bo zagnal, je določen z pipeline_object, eksperiment, pod katerim se naloga izvaja, pa je določen z experiment_name.
 
-    - Nato pokliče metodo stream objekta jobs v workspace_ml_client, da počaka, da pipeline naloga konča. Naloga, na katero čaka, je določena z atributom name objekta pipeline_job.
+    - Nato pokliče metodo stream objekta jobs v workspace_ml_client, da počaka na zaključek naloge cevovoda. Naloga za čakanje je določena z atributom name objekta pipeline_job.
 
-    - Povzetek: ta skripta oddaja nalogo učnega cevovoda za strojno učenje v Azure Machine Learning in nato čaka, da naloga konča.
+    - Povzetek: ta skripta odda nalogo za učni cevovod v delovnem okolju Azure Machine Learning in nato čaka na zaključek naloge.
 
     ```python
-    # Pošljite nalogo cevovoda v Azure Machine Learning delovno okolje
-    # Cevovod, ki ga je treba zagnati, določa pipeline_object
-    # Poskus, pod katerim se opravlja naloga, določa experiment_name
+    # Pošljite nalogo pipeline v delovno okolje Azure Machine Learning
+    # Pipeline, ki se izvede, je določen s pipeline_object
+    # Poskus, pod katerim se naloga izvaja, je določen z experiment_name
     pipeline_job = workspace_ml_client.jobs.create_or_update(
         pipeline_object, experiment_name=experiment_name
     )
     
-    # Počakajte, da se naloga cevovoda dokonča
-    # Naloga, na katero je treba počakati, je določena z atributom name objekta pipeline_job
+    # Počakajte, da se naloga pipeline zaključi
+    # Naloga, na katero čakamo, je določena z atributom name objekta pipeline_job
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. Registrirajte fino nastavljeni model v delovnem okolju
+## 6. Registrirajte finoučen model v delovnem okolju
 
-Registrirali bomo model iz izhoda naloge fino nastavljanja. To bo sledilo izvoru podatkov med fino nastavljenim modelom in nalogo fino nastavljanja. Naloga fino nastavljanja nadalje sledi izvoru do osnovnega modela, podatkov in kode za učenje.
+Model bomo registrirali iz izhoda naloge fine učenja. To bo sledilo sorodstvu med finoučenim modelom in nalogo fine učenja. Naloga fine učenja lahko dodatno sledi sorodstvu do osnovnega modela, podatkov in učne kode.
 
-### Registracija modela ML
+### Registracija ML modela
 
-1. Ta Python skripta registrira model strojnega učenja, ki je bil naučen v učnem cevovodu Azure Machine Learning. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta registrira model strojnega učenja, ki je bil naučen v učnem cevovodu Azure Machine Learning. Tukaj je pregled, kaj počne:
 
     - Uvozi potrebne module iz Azure AI ML SDK.
 
-    - Preveri, ali je izhod trained_model na voljo iz naloge pipeline z metodami get objekta jobs v workspace_ml_client in dostopom do njegovega atributa outputs.
+    - Preveri, ali je izhod trained_model na voljo iz naloge cevovoda tako, da pokliče metodo get objekta jobs v workspace_ml_client in dostopa do atributa outputs.
 
-    - Sestavi pot do naučenega modela s formatiranjem niza z imenom naloge pipeline in imenom izhoda ("trained_model").
+    - Sestavi pot do naučenega modela s formatiranjem niza z imenom naloge cevovoda in imenom izhoda ("trained_model").
 
-    - Določi ime za fino nastavljeni model tako, da doda "-ultrachat-200k" k izvirnemu imenu modela in nadomesti vse poševnice z vezaji.
+    - Določi ime za finoučen model tako, da originalnemu imenu modela doda "-ultrachat-200k" in zamenja vse poševnice s pomišljaji.
 
-    - Pripravi registracijo modela z ustvarjanjem objekta Model z različnimi parametri, vključno s potjo do modela, vrsto modela (MLflow model), imenom in različico modela ter opisom modela.
+    - Pripravi registracijo modela z ustvarjanjem objekta Model z različnimi parametri, vključno s potjo do modela, tipom modela (MLflow model), imenom in različico modela ter opisom modela.
 
-    - Registrira model z metodo create_or_update objekta models v workspace_ml_client z objektom Model kot argumentom.
+    - Registrira model s klicem metode create_or_update objekta models v workspace_ml_client z objektom Model kot argumentom.
 
     - Izpiše registrirani model.
 
 1. Povzetek: ta skripta registrira model strojnega učenja, ki je bil naučen v učnem cevovodu Azure Machine Learning.
-
+    
     ```python
     # Uvozi potrebne module iz Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
     
-    # Preveri, ali je izhod `trained_model` na voljo iz pipeline opravila
+    # Preveri, ali je izhod `trained_model` na voljo iz cevovodnega opravila
     print("pipeline job outputs: ", workspace_ml_client.jobs.get(pipeline_job.name).outputs)
     
-    # Ustvari pot do izurjenega modela z oblikovanjem niza z imenom pipeline opravila in imenom izhoda ("trained_model")
+    # Ustvari pot do izurjenega modela z oblikovanjem niza z imenom cevovodnega opravila in imenom izhoda ("trained_model")
     model_path_from_job = "azureml://jobs/{0}/outputs/{1}".format(
         pipeline_job.name, "trained_model"
     )
     
-    # Določi ime za fino prilagojen model z dodajanjem "-ultrachat-200k" k originalnemu imenu modela in zamenjavo vseh poševnic s pomišljaji
+    # Določi ime za fino nastavljeni model tako, da originalno ime modela dopolni z "-ultrachat-200k" in zamenja vse poševnice s pomišljaji
     finetuned_model_name = model_name + "-ultrachat-200k"
     finetuned_model_name = finetuned_model_name.replace("/", "-")
     
     print("path to register model: ", model_path_from_job)
     
-    # Pripravi registracijo modela z ustvarjanjem Model objekta z različnimi parametri
-    # Ti vključujejo pot do modela, vrsto modela (MLflow model), ime in različico modela ter opis modela
+    # Pripravi registracijo modela z ustvarjanjem objekta Model z različnimi parametri
+    # Sem spadajo pot do modela, tip modela (MLflow model), ime in različica modela ter opis modela
     prepare_to_register_model = Model(
         path=model_path_from_job,
         type=AssetTypes.MLFLOW_MODEL,
         name=finetuned_model_name,
-        version=timestamp,  # Uporabi časovni žig kot različico, da se izogne konfliktu verzij
+        version=timestamp,  # Uporabi časovni žig kot različico, da se prepreči konflikt različic
         description=model_name + " fine tuned model for ultrachat 200k chat-completion",
     )
     
     print("prepare to register model: \n", prepare_to_register_model)
     
-    # Registriraj model z uporabo metode create_or_update objekta models v workspace_ml_client z Model objektom kot argumentom
+    # Registriraj model z klicem metode create_or_update objekta models v workspace_ml_client z objektom Model kot argumentom
     registered_model = workspace_ml_client.models.create_or_update(
         prepare_to_register_model
     )
@@ -705,23 +705,23 @@ Registrirali bomo model iz izhoda naloge fino nastavljanja. To bo sledilo izvoru
     print("registered model: \n", registered_model)
     ```
 
-## 7. Namestite fino nastavljeni model na spletni konektor
+## 7. Namestite finoučen model na spletno končno postajo
 
-Spletni konektorji zagotavljajo trajen REST API, ki ga je mogoče uporabiti za integracijo z aplikacijami, ki potrebujejo uporabo modela.
+Spletne končne postaje nudijo vzdržljiv REST API, ki je uporabna za integracijo z aplikacijami, ki morajo uporabljati model.
 
-### Upravljanje konektorja
+### Upravljanje končne postaje
 
-1. Ta Python skripta ustvarja upravljani spletni konektor v Azure Machine Learning za registriran model. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta ustvarja upravljano spletno končno postajo v Azure Machine Learning za registriran model. Tukaj je pregled, kaj počne:
 
     - Uvozi potrebne module iz Azure AI ML SDK.
 
-    - Določi edinstveno ime za spletni konektor s pripenjanjem časovnega žiga k nizu "ultrachat-completion-".
+    - Določi unikatno ime za spletno končno postajo tako, da nizu "ultrachat-completion-" doda časovni žig.
 
-    - Pripravi se za ustvarjanje spletnega konektorja z ustvarjanjem objekta ManagedOnlineEndpoint z različnimi parametri, vključno z imenom konektorja, opisom konektorja in načinom preverjanja pristnosti ("key").
+    - Pripravi ustvarjanje spletne končne postaje z ustvarjanjem objekta ManagedOnlineEndpoint z različnimi parametri, vključno z imenom končne postaje, opisom končne postaje in načinom avtentikacije ("key").
 
-    - Ustvari spletni konektor z metodo begin_create_or_update v workspace_ml_client z objektom ManagedOnlineEndpoint kot argumentom. Nato počaka, da se operacija ustvarjanja zaključi, z metodo wait.
+    - Ustvari spletno končno postajo z klicem metode begin_create_or_update v workspace_ml_client z objektom ManagedOnlineEndpoint kot argumentom. Nato počaka na dokončanje operacije s klicem metode wait.
 
-1. Povzetek: ta skripta ustvarja upravljani spletni konektor v Azure Machine Learning za registriran model.
+1. Povzetek: ta skripta ustvarja upravljano spletno končno postajo v Azure Machine Learning za registriran model.
 
     ```python
     # Uvozi potrebne module iz Azure AI ML SDK
@@ -732,11 +732,11 @@ Spletni konektorji zagotavljajo trajen REST API, ki ga je mogoče uporabiti za i
         OnlineRequestSettings,
     )
     
-    # Določi edinstveno ime za spletno končno točko z dodajanjem časovnega žiga k nizu "ultrachat-completion-"
+    # Določi edinstveno ime za spletno točko z dodajanjem časovnega žiga nizu "ultrachat-completion-"
     online_endpoint_name = "ultrachat-completion-" + timestamp
     
-    # Pripravi se na ustvarjanje spletne končne točke z ustvarjanjem objekta ManagedOnlineEndpoint z različnimi parametri
-    # Ti vključujejo ime končne točke, opis končne točke in način preverjanja pristnosti ("key")
+    # Pripravi se na ustvarjanje spletne točke z ustvarjanjem objekta ManagedOnlineEndpoint z različnimi parametri
+    # Ti vključujejo ime točke, opis točke in način preverjanja pristnosti ("key")
     endpoint = ManagedOnlineEndpoint(
         name=online_endpoint_name,
         description="Online endpoint for "
@@ -745,56 +745,56 @@ Spletni konektorji zagotavljajo trajen REST API, ki ga je mogoče uporabiti za i
         auth_mode="key",
     )
     
-    # Ustvari spletno končno točko z klicem metode begin_create_or_update objekta workspace_ml_client z objektom ManagedOnlineEndpoint kot argumentom
-    # Nato počakaj, da se ustvarjanje konča, tako da pokličeš metodo wait
+    # Ustvari spletno točko tako, da pokličeš metodo begin_create_or_update od workspace_ml_client z objektom ManagedOnlineEndpoint kot argumentom
+    # Nato počakaj, da se operacija ustvarjanja zaključi, z uporabo metode wait
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
 > [!NOTE]
-> Tukaj lahko najdete seznam podprtih SKU-jev za nameščanje - [Seznam SKU-jev upravljanih spletnih konektorjev](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Tukaj najdete seznam SKU-jev, podprtih za nameščanje - [Seznam SKU-jev upravljanih spletnih končnih postaj](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### Namestitev ML modela
 
-1. Ta Python skripta namešča registriran model strojnega učenja na upravljani spletni konektor v Azure Machine Learning. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta namešča registriran model strojnega učenja na upravljano spletno končno postajo v Azure Machine Learning. Tukaj je pregled, kaj počne:
 
-    - Uvozi modul ast, ki zagotavlja funkcije za obdelavo dreves Python abstraktne sintakse.
+    - Uvozi modul ast, ki ponuja funkcije za obdelavo dreves Pythonovega abstraktnega sintaktičnega drevesa.
 
-    - Nastavi tip instance za namestitev na "Standard_NC6s_v3".
+    - Nastavi tip primerka za nameščanje na "Standard_NC6s_v3".
 
-    - Preveri, ali oznaka inference_compute_allow_list obstaja v osnovnem modelu. Če obstaja, pretvori vrednost oznake iz niza v Python seznam in jo dodeli inference_computes_allow_list. Če ne, nastavi inference_computes_allow_list na None.
+    - Preveri, ali je oznaka inference_compute_allow_list prisotna v osnovnem modelu. Če je, pretvori vrednost oznake iz niza v Python seznam in jo dodeli spremenljivki inference_computes_allow_list. Če ni, nastavi inference_computes_allow_list na None.
 
-    - Preveri, ali je določen tip instance v seznamu dovoljenih vrednosti. Če ni, izpiše sporočilo, naj uporabnik izbere tip instance iz dovoljenega seznama.
+    - Preveri, ali je izbrani tip primerka v dovoljenem seznamu. Če ni, izpiše sporočilo, naj uporabnik izbere tip primerka iz dovoljenega seznama.
 
-    - Pripravi se za ustvarjanje namestitve z ustvarjanjem objekta ManagedOnlineDeployment z različnimi parametri, vključno z imenom namestitve, imenom konektorja, ID-jem modela, tipo in številom instanc, nastavitvami preverjanja liveness ter nastavitvami zahtevkov.
+    - Pripravi ustvarjanje nameščanja z ustvarjanjem objekta ManagedOnlineDeployment z različnimi parametri, vključno z imenom nameščanja, imenom končne postaje, ID-jem modela, tipom in številom primerkov, nastavitvami probe žive povezave in nastavitvami zahtev.
 
-    - Ustvari namestitev z metodo begin_create_or_update v workspace_ml_client z objektom ManagedOnlineDeployment kot argumentom. Nato počaka, da se operacija ustvarjanja zaključi z metodo wait.
+    - Ustvari nameščanje z klicem metode begin_create_or_update v workspace_ml_client z objektom ManagedOnlineDeployment kot argumentom. Nato počaka na dokončanje operacije s klicem metode wait.
 
-    - Nastavi promet konektorja tako, da 100 % prometa usmeri na namestitev "demo".
+    - Nastavi promet končne postaje tako, da usmeri 100% prometa na nameščanje "demo".
 
-    - Posodobi konektor z metodo begin_create_or_update v workspace_ml_client z objektom konektorja kot argumentom. Nato počaka, da se posodobitev zaključi z metodo result.
+    - Posodobi končno postajo z klicem metode begin_create_or_update v workspace_ml_client z objektom končne postaje kot argumentom. Nato počaka na dokončanje posodobitve s klicem metode result.
 
-1. Povzetek: ta skripta namešča registriran model strojnega učenja na upravljani spletni konektor v Azure Machine Learning.
+1. Povzetek: ta skripta namešča registriran model strojnega učenja na upravljano spletno končno postajo v Azure Machine Learning.
 
     ```python
-    # Uvozi modul ast, ki zagotavlja funkcije za obdelavo dreves abstraktne slovnice Pythona
+    # Uvozi modul ast, ki zagotavlja funkcije za obdelavo dreves abstraktne sintakse Python jezika
     import ast
     
-    # Nastavi tip instance za namestitev
+    # Nastavi tip instančne za nameščanje
     instance_type = "Standard_NC6s_v3"
     
-    # Preveri, ali je oznaka `inference_compute_allow_list` prisotna v osnovnem modelu
+    # Preveri, ali oznaka `inference_compute_allow_list` obstaja v osnovnem modelu
     if "inference_compute_allow_list" in foundation_model.tags:
-        # Če je, pretvori vrednost oznake iz niza v Pythonovo listo in jo dodeli spremenljivki `inference_computes_allow_list`
+        # Če obstaja, pretvori vrednost oznake iz niza v Python seznam in jo dodeli `inference_computes_allow_list`
         inference_computes_allow_list = ast.literal_eval(
             foundation_model.tags["inference_compute_allow_list"]
         )
         print(f"Please create a compute from the above list - {computes_allow_list}")
     else:
-        # Če ni, nastavi `inference_computes_allow_list` na `None`
+        # Če ne obstaja, nastavi `inference_computes_allow_list` na `None`
         inference_computes_allow_list = None
         print("`inference_compute_allow_list` is not part of model tags")
     
-    # Preveri, ali je določeni tip instance na seznamu dovoljenih
+    # Preveri, ali je določen tip instance v seznamu dovoljenih
     if (
         inference_computes_allow_list is not None
         and instance_type not in inference_computes_allow_list
@@ -803,7 +803,7 @@ Spletni konektorji zagotavljajo trajen REST API, ki ga je mogoče uporabiti za i
             f"`instance_type` is not in the allow listed compute. Please select a value from {inference_computes_allow_list}"
         )
     
-    # Pripravi se na ustvarjanje namestitve z ustvarjanjem objekta `ManagedOnlineDeployment` z različnimi parametri
+    # Pripravi se na ustvarjanje nameščanja z ustvarjanjem objekta `ManagedOnlineDeployment` z različnimi parametri
     demo_deployment = ManagedOnlineDeployment(
         name="demo",
         endpoint_name=online_endpoint_name,
@@ -814,75 +814,75 @@ Spletni konektorji zagotavljajo trajen REST API, ki ga je mogoče uporabiti za i
         request_settings=OnlineRequestSettings(request_timeout_ms=90000),
     )
     
-    # Ustvari namestitev s klicem metode `begin_create_or_update` objekta `workspace_ml_client` z objektom `ManagedOnlineDeployment` kot argumentom
-    # Nato počakaj na dokončanje operacije ustvarjanja z klicem metode `wait`
+    # Ustvari nameščanje s klicem metode `begin_create_or_update` objekta `workspace_ml_client` z objektom `ManagedOnlineDeployment` kot argument
+    # Nato počakaj, da se operacija ustvarjanja zaključi s klicem metode `wait`
     workspace_ml_client.online_deployments.begin_create_or_update(demo_deployment).wait()
     
-    # Nastavi promet končne točke tako, da 100 % prometa usmeri na namestitev "demo"
+    # Nastavi promet končnega točke, da usmeri 100 % prometa na nameščanje "demo"
     endpoint.traffic = {"demo": 100}
     
-    # Posodobi končno točko s klicem metode `begin_create_or_update` objekta `workspace_ml_client` z objektom `endpoint` kot argumentom
-    # Nato počakaj na dokončanje operacije posodobitve z klicem metode `result`
+    # Posodobi končno točko s klicem metode `begin_create_or_update` objekta `workspace_ml_client` z objektom `endpoint` kot argument
+    # Nato počakaj, da se operacija posodobitve zaključi s klicem metode `result`
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. Testirajte konektor z vzorčnimi podatki
+## 8. Preizkusite končno postajo z vzorčnimi podatki
 
-Pridobili bomo nekaj vzorčnih podatkov iz testnega nabora in jih poslali na spletni konektor za napovedovanje. Nato bomo prikazali ocenjene oznake skupaj z dejanskimi oznakami.
+Z vzorčnimi podatki iz testnega nabora bomo poslali zahtevo na spletno končno postajo za sklepanje. Nato bomo prikazali izračunane oznake skupaj z resničnimi oznakami.
 
 ### Branje rezultatov
 
-1. Ta Python skripta bere datoteko JSON Lines v pandas DataFrame, vzame naključni vzorec in ponastavi indeks. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta bere datoteko JSON Lines v pandas DataFrame, vzame naključni vzorec in ponastavi indeks. Tukaj je pregled, kaj počne:
 
-    - Prebere datoteko ./ultrachat_200k_dataset/test_gen.jsonl v pandas DataFrame. Funkcija read_json uporablja argument lines=True, ker je datoteka v formatu JSON Lines, kjer je vsaka vrstica ločen JSON objekt.
+    - Prebere datoteko ./ultrachat_200k_dataset/test_gen.jsonl v pandas DataFrame. Funkcija read_json je uporabljena z argumentom lines=True, ker je datoteka v formatu JSON Lines, kjer je vsaka vrstica ločen JSON objekt.
 
-    - Vzame naključni vzorec ene vrstice iz DataFrame-a. Funkcija sample uporablja argument n=1 za določitev števila naključnih vrstic.
+    - Vzame naključni vzorec ene vrstice iz DataFrame. Funkcija sample je uporabljena z argumentom n=1 za določitev števila naključnih vrstic.
 
-    - Ponastavi indeks DataFrame-a. Funkcija reset_index uporablja argument drop=True, da zavrže izvirni indeks in ga nadomesti z novim indeksom privzetih celih števil.
+    - Ponastavi indeks DataFrame. Funkcija reset_index je uporabljena z argumentom drop=True, da odstrani izvirni indeks in ga nadomesti z novim indeksom privzetih celih števil.
 
-    - Prikaže prvi 2 vrstici DataFrame s funkcijo head z argumentom 2. Vendar ker DataFrame po vzorčenju vsebuje samo eno vrstico, bo prikazana le ta ena vrstica.
+    - Prikaže prvih 2 vrstici DataFrame z uporabo funkcije head z argumentom 2. Ker pa DataFrame vsebuje le eno vrstico po vzorčenju, bo prikazala samo to eno vrstico.
 
 1. Povzetek: ta skripta bere datoteko JSON Lines v pandas DataFrame, vzame naključni vzorec ene vrstice, ponastavi indeks in prikaže prvo vrstico.
-
+    
     ```python
     # Uvozi knjižnico pandas
     import pandas as pd
     
-    # Preberi datoteko JSON Lines './ultrachat_200k_dataset/test_gen.jsonl' v pandas DataFrame
-    # Argument 'lines=True' označuje, da je datoteka v formatu JSON Lines, kjer je vsaka vrstica poseben JSON objekt
+    # Preberi JSON Lines datoteko './ultrachat_200k_dataset/test_gen.jsonl' v pandas DataFrame
+    # Argument 'lines=True' označuje, da je datoteka v JSON Lines formatu, kjer je vsaka vrstica ločen JSON objekt
     test_df = pd.read_json("./ultrachat_200k_dataset/test_gen.jsonl", lines=True)
     
-    # Izberi naključni vzorec 1 vrstice iz DataFrame
+    # Vzemi naključen vzorec 1 vrstice iz DataFrame
     # Argument 'n=1' določa število naključnih vrstic za izbiro
     test_df = test_df.sample(n=1)
     
     # Ponastavi indeks DataFrame
-    # Argument 'drop=True' označuje, da je treba izvirni indeks odstraniti in ga zamenjati z novim indeksom privzetih celih števil
-    # Argument 'inplace=True' označuje, da se naj DataFrame spremeni na mestu (brez ustvarjanja novega objekta)
+    # Argument 'drop=True' označuje, da je treba originalni indeks odstraniti in ga nadomestiti z novim indeksom privzetih celih števil
+    # Argument 'inplace=True' označuje, da naj se DataFrame spremeni na mestu (brez ustvarjanja novega objekta)
     test_df.reset_index(drop=True, inplace=True)
     
     # Prikaži prvih 2 vrstici DataFrame
-    # Vendar pa ker DataFrame po vzorčenju vsebuje samo eno vrstico, bo prikazana samo ta ena vrstica
+    # Ker pa DataFrame vsebuje samo eno vrstico po vzorčenju, bo to prikazalo samo to eno vrstico
     test_df.head(2)
     ```
 
 ### Ustvarite JSON objekt
-
-1. Ta Python skripta ustvarja JSON objekt s specifičnimi parametri in ga shrani v datoteko. Tukaj je razčlenitev, kaj počne:
+1. Ta Python skripta ustvarja JSON objekt s specifičnimi parametri in ga shranjuje v datoteko. Tukaj je razčlenitev, kaj počne:
 
     - Uvozi modul json, ki zagotavlja funkcije za delo z JSON podatki.
-    - Ustvari slovar parameters s ključi in vrednostmi, ki predstavljajo parametre za model strojnega učenja. Ključi so "temperature", "top_p", "do_sample" in "max_new_tokens", njihove ustrezne vrednosti pa so 0,6, 0,9, True in 200.
 
-    - Ustvari drug slovar test_json z dvema ključema: "input_data" in "params". Vrednost "input_data" je drug slovar s ključi "input_string" in "parameters". Vrednost "input_string" je seznam, ki vsebuje prvo sporočilo iz podatkovnega okvira test_df. Vrednost "parameters" je prej ustvarjeni slovar parameters. Vrednost "params" je prazen slovar.
+    - Ustvari slovar parameters s ključi in vrednostmi, ki predstavljajo parametre za model strojnega učenja. Ključi so "temperature", "top_p", "do_sample" in "max_new_tokens", njihove ustrezne vrednosti pa so 0.6, 0.9, True in 200.
+
+    - Ustvari drug slovar test_json z dvema ključema: "input_data" in "params". Vrednost "input_data" je drug slovar s ključi "input_string" in "parameters". Vrednost "input_string" je seznam, ki vsebuje prvo sporočilo iz DataFrame test_df. Vrednost "parameters" je slovar parameters, ustvarjen prej. Vrednost "params" je prazen slovar.
 
     - Odpre datoteko z imenom sample_score.json
-    
+
     ```python
     # Uvozi modul json, ki zagotavlja funkcije za delo z JSON podatki
     import json
     
-    # Ustvari slovar `parameters` s ključih in vrednostmi, ki predstavljajo parametre za strojno učenje
-    # Ključi so "temperature", "top_p", "do_sample" in "max_new_tokens", njihove pripadajoče vrednosti pa so 0.6, 0.9, True in 200
+    # Ustvari slovar `parameters` s ključi in vrednostmi, ki predstavljajo parametre za model strojnega učenja
+    # Ključi so "temperature", "top_p", "do_sample" in "max_new_tokens", njihove ustrezne vrednosti pa so 0.6, 0.9, True in 200
     parameters = {
         "temperature": 0.6,
         "top_p": 0.9,
@@ -890,10 +890,10 @@ Pridobili bomo nekaj vzorčnih podatkov iz testnega nabora in jih poslali na spl
         "max_new_tokens": 200,
     }
     
-    # Ustvari drug slovar `test_json` z dvema ključema: "input_data" in "params"
+    # Ustvari še en slovar `test_json` z dvema ključema: "input_data" in "params"
     # Vrednost "input_data" je drug slovar s ključi "input_string" in "parameters"
     # Vrednost "input_string" je seznam, ki vsebuje prvo sporočilo iz DataFrame `test_df`
-    # Vrednost "parameters" je prej ustvarjeni slovar `parameters`
+    # Vrednost "parameters" je predhodno ustvarjeni slovar `parameters`
     # Vrednost "params" je prazen slovar
     test_json = {
         "input_data": {
@@ -903,67 +903,67 @@ Pridobili bomo nekaj vzorčnih podatkov iz testnega nabora in jih poslali na spl
         "params": {},
     }
     
-    # Odpri datoteko z imenom `sample_score.json` v imeniku `./ultrachat_200k_dataset` v načinu za pisanje
+    # Odpri datoteko z imenom `sample_score.json` v mapi `./ultrachat_200k_dataset` v načinu pisanja
     with open("./ultrachat_200k_dataset/sample_score.json", "w") as f:
-        # Zapiši slovar `test_json` v datoteko v formatu JSON z uporabo funkcije `json.dump`
+        # Zapiši slovar `test_json` v datoteko v JSON formatu z uporabo funkcije `json.dump`
         json.dump(test_json, f)
     ```
 
-### Klic končne točke
+### Klicanje končne točke
 
 1. Ta Python skripta kliče spletno končno točko v Azure Machine Learning za ocenjevanje JSON datoteke. Tukaj je razčlenitev, kaj počne:
 
     - Pokliče metodo invoke lastnosti online_endpoints objekta workspace_ml_client. Ta metoda se uporablja za pošiljanje zahteve spletni končni točki in pridobivanje odgovora.
 
-    - Določi ime končne točke in implementacije z argumentoma endpoint_name in deployment_name. V tem primeru je ime končne točke shranjeno v spremenljivki online_endpoint_name, ime implementacije pa je "demo".
+    - Določi ime končne točke in namestitve z argumentoma endpoint_name in deployment_name. V tem primeru je ime končne točke shranjeno v spremenljivki online_endpoint_name, ime namestitve pa je "demo".
 
-    - Določi pot do JSON datoteke za ocenjevanje z argumentom request_file. V tem primeru je datoteka ./ultrachat_200k_dataset/sample_score.json.
+    - Določi pot do JSON datoteke, ki jo je treba oceniti, z argumentom request_file. V tem primeru je datoteka ./ultrachat_200k_dataset/sample_score.json.
 
-    - Odgovor končne točke shrani v spremenljivko response.
+    - Shrani odgovor končne točke v spremenljivko response.
 
-    - Izpiše osnovni odgovor.
+    - Izpiše surovi odgovor.
 
-1. Povzetek: ta skripta kliče spletno končno točko v Azure Machine Learning za ocenjevanje JSON datoteke in izpiše odgovor.
+1. Povzemimo, ta skripta kliče spletno končno točko v Azure Machine Learning za ocenjevanje JSON datoteke in izpiše odgovor.
 
     ```python
-    # Pokliči spletno končno točko v Azure Machine Learning za oceno datoteke `sample_score.json`
-    # Metoda `invoke` lastnosti `online_endpoints` objekta `workspace_ml_client` se uporablja za pošiljanje zahteve na spletno končno točko in pridobitev odgovora
-    # Argument `endpoint_name` določa ime končne točke, ki je shranjeno v spremenljivki `online_endpoint_name`
+    # Kličite spletni konec v Azure Machine Learning za ocenjevanje datoteke `sample_score.json`
+    # Metoda `invoke` lastnosti `online_endpoints` objekta `workspace_ml_client` se uporablja za pošiljanje zahteve spletnemu koncu in pridobitev odgovora
+    # Argument `endpoint_name` določa ime konca, ki je shranjeno v spremenljivki `online_endpoint_name`
     # Argument `deployment_name` določa ime namestitve, ki je "demo"
-    # Argument `request_file` določa pot do JSON datoteke za ocenjevanje, ki je `./ultrachat_200k_dataset/sample_score.json`
+    # Argument `request_file` določa pot do JSON datoteke za oceno, ki je `./ultrachat_200k_dataset/sample_score.json`
     response = workspace_ml_client.online_endpoints.invoke(
         endpoint_name=online_endpoint_name,
         deployment_name="demo",
         request_file="./ultrachat_200k_dataset/sample_score.json",
     )
     
-    # Izpiši surovi odgovor s končne točke
+    # Natisnite surovi odgovor od konca
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Izbrišite spletno končno točko
+## 9. Brisanje spletne končne točke
 
-1. Ne pozabite izbrisati spletne končne točke, sicer boste pustili števce stroškov vklopljene za izračune, ki jih uporablja končna točka. Ta vrstica kode v Pythonu briše spletno končno točko v Azure Machine Learning. Tukaj je razčlenitev, kaj počne:
+1. Ne pozabite izbrisati spletne končne točke, sicer boste pustili merilec stroškov v teku za računalniške vire, ki jih uporablja končna točka. Ta vrstica Python kode briše spletno končno točko v Azure Machine Learning. Tukaj je razčlenitev, kaj počne:
 
     - Pokliče metodo begin_delete lastnosti online_endpoints objekta workspace_ml_client. Ta metoda se uporablja za začetek brisanja spletne končne točke.
 
-    - Določi ime končne točke za brisanje z argumentom name. V tem primeru je ime končne točke shranjeno v spremenljivki online_endpoint_name.
+    - Določi ime končne točke, ki jo je treba izbrisati, z argumentom name. V tem primeru je ime končne točke shranjeno v spremenljivki online_endpoint_name.
 
-    - Pokliče metodo wait, da počaka, da se operacija brisanja zaključi. To je blokirajoča operacija, kar pomeni, da skripta ne bo nadaljevala, dokler brisanje ni končano.
+    - Pokliče metodo wait, da počaka, da se brisanje zaključi. To je blokirajoča operacija, kar pomeni, da prepreči, da bi skripta nadaljevala, dokler brisanje ni končano.
 
-    - Povzetek: ta vrstica kode začenja brisanje spletne končne točke v Azure Machine Learning in čaka na dokončanje operacije.
+    - Povzemimo, ta vrstica kode začne brisati spletno končno točko v Azure Machine Learning in počaka, da se operacija zaključi.
 
     ```python
-    # Izbrišite spletno končno točko v Azure Machine Learning
+    # Izbriši spletno končno točko v Azure Machine Learning
     # Metoda `begin_delete` lastnosti `online_endpoints` objekta `workspace_ml_client` se uporablja za začetek brisanja spletne končne točke
-    # Argument `name` določa ime končne točke, ki se izbriše, in je shranjen v spremenljivki `online_endpoint_name`
-    # Kliče se metoda `wait`, da se počaka, da se operacija brisanja zaključi. To je blokirajoča operacija, kar pomeni, da bo preprečila nadaljevanje skripte, dokler brisanje ni končano
+    # Argument `name` določa ime končne točke, ki bo izbrisana, shranjeno v spremenljivki `online_endpoint_name`
+    # Kliče se metoda `wait`, da počaka, da se operacija brisanja zaključi. To je blokirajoča operacija, kar pomeni, da skripta ne bo nadaljevala, dokler brisanje ni končano
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Omejitev odgovornosti**:
-Dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za točnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, prosimo, upoštevajte, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik je treba upoštevati kot avtoritativni vir. Za ključne informacije priporočamo strokovni človekov prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
