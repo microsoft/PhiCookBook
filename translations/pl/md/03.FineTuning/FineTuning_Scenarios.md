@@ -2,24 +2,28 @@
 
 ![FineTuning with MS Services](../../../../translated_images/pl/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platforma** Obejmuje różne technologie, takie jak Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito oraz ONNX Runtime.
+Ta sekcja zawiera przegląd scenariuszy fine tuningu w środowiskach Microsoft Foundry i Azure, w tym modeli wdrożeń, warstw infrastruktury oraz powszechnie stosowanych technik optymalizacji.
 
-**Infrastruktura** Obejmuje CPU i FPGA, które są niezbędne do procesu fine tuningu. Pokażę ikony dla każdej z tych technologii.
+**Platforma**  
+Obejmuje zarządzane usługi takie jak Microsoft Foundry (dawniej Azure AI Foundry) oraz Azure Machine Learning, które dostarczają zarządzanie modelami, orchestrację, śledzenie eksperymentów oraz procesy wdrożeniowe.
 
-**Narzędzia i Frameworki** Obejmuje ONNX Runtime oraz ONNX Runtime. Pokażę ikony dla każdej z tych technologii.  
-[Wstaw ikony dla ONNX Runtime i ONNX Runtime]
+**Infrastruktura**  
+Fine tuning wymaga skalowalnych zasobów obliczeniowych. W środowiskach Azure obejmuje to zwykle maszyny wirtualne oparte na GPU oraz zasoby CPU dla lekkich obciążeń, wraz ze skalowalną pamięcią masową na zestawy danych i punkty kontrolne.
 
-Proces fine tuningu z wykorzystaniem technologii Microsoft obejmuje różne komponenty i narzędzia. Dzięki zrozumieniu i wykorzystaniu tych technologii możemy skutecznie dostrajać nasze aplikacje i tworzyć lepsze rozwiązania.
+**Narzędzia i Frameworki**  
+Przepływy fine tuningu powszechnie opierają się na frameworkach i bibliotekach optymalizacyjnych takich jak Hugging Face Transformers, DeepSpeed i PEFT (Parameter-Efficient Fine-Tuning).
 
-## Model jako Usługa
+Proces fine tuningu przy użyciu technologii Microsoft obejmuje usługi platformowe, infrastrukturę obliczeniową oraz frameworki treningowe. Rozumiejąc, w jaki sposób te komponenty współpracują, deweloperzy mogą efektywnie dostosowywać modele bazowe do określonych zadań i scenariuszy produkcyjnych.
 
-Dostrój model korzystając z hostowanego fine tuningu, bez konieczności tworzenia i zarządzania zasobami obliczeniowymi.
+## Model jako usługa
+
+Dostrajanie modelu za pomocą hostowanego fine tuningu, bez konieczności tworzenia i zarządzania obliczeniami.
 
 ![MaaS Fine Tuning](../../../../translated_images/pl/MaaSfinetune.3eee4630607aff0d.webp)
 
-Serverless fine tuning jest dostępny dla modeli Phi-3-mini i Phi-3-medium, co pozwala deweloperom szybko i łatwo dostosować modele do scenariuszy chmurowych i edge bez konieczności organizowania zasobów obliczeniowych. Ogłosiliśmy również, że Phi-3-small jest teraz dostępny w ramach naszej oferty Models-as-a-Service, dzięki czemu deweloperzy mogą szybko i łatwo rozpocząć pracę z AI bez konieczności zarządzania infrastrukturą.
+Fine tuning bezserwerowy jest obecnie dostępny dla rodzin modeli Phi-3, Phi-3.5 i Phi-4, umożliwiając deweloperom szybkie i łatwe dostosowywanie modeli do scenariuszy chmurowych i edge bez konieczności organizowania zasobów obliczeniowych.
 
-## Model jako Platforma
+## Model jako platforma
 
 Użytkownicy zarządzają własnymi zasobami obliczeniowymi, aby dostroić swoje modele.
 
@@ -27,24 +31,30 @@ Użytkownicy zarządzają własnymi zasobami obliczeniowymi, aby dostroić swoje
 
 [Przykład Fine Tuningu](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Scenariusze Fine Tuningu
+## Porównanie technik Fine Tuningu
 
-| | | | | | | |
-|-|-|-|-|-|-|-|
-|Scenariusz|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Dostosowanie wstępnie wytrenowanych LLM do konkretnych zadań lub dziedzin|Tak|Tak|Tak|Tak|Tak|Tak|
-|Fine tuning dla zadań NLP, takich jak klasyfikacja tekstu, rozpoznawanie nazwanych jednostek i tłumaczenie maszynowe|Tak|Tak|Tak|Tak|Tak|Tak|
-|Fine tuning dla zadań QA|Tak|Tak|Tak|Tak|Tak|Tak|
-|Fine tuning do generowania odpowiedzi przypominających ludzkie w chatbotach|Tak|Tak|Tak|Tak|Tak|Tak|
-|Fine tuning do generowania muzyki, sztuki lub innych form kreatywności|Tak|Tak|Tak|Tak|Tak|Tak|
-|Zmniejszenie kosztów obliczeniowych i finansowych|Tak|Tak|Nie|Tak|Tak|Nie|
-|Zmniejszenie zużycia pamięci|Nie|Tak|Nie|Tak|Tak|Tak|
-|Użycie mniejszej liczby parametrów dla efektywnego fine tuningu|Nie|Tak|Tak|Nie|Nie|Tak|
-|Efektywna pamięciowo forma równoległości danych, która daje dostęp do łącznej pamięci GPU wszystkich dostępnych urządzeń GPU|Nie|Nie|Nie|Tak|Tak|Tak|
+|Scenariusz|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DoRA|
+|---|---|---|---|---|---|---|
+|Dostosowywanie wstępnie wytrenowanych LLM do konkretnych zadań lub dziedzin|Tak|Tak|Tak|Tak|Tak|Tak|
+|Fine tuning zadań NLP takich jak klasyfikacja tekstu, rozpoznawanie nazwanych jednostek i tłumaczenie maszynowe|Tak|Tak|Tak|Tak|Tak|Tak|
+|Fine tuning zadań QA|Tak|Tak|Tak|Tak|Tak|Tak|
+|Fine tuning generowania odpowiedzi przypominających ludzkie w chatbotach|Tak|Tak|Tak|Tak|Tak|Tak|
+|Fine tuning generowania muzyki, sztuki lub innych form kreatywności|Tak|Tak|Tak|Tak|Tak|Tak|
+|Redukcja kosztów obliczeniowych i finansowych|Tak|Tak|Tak|Tak|Tak|Tak|
+|Redukcja użycia pamięci|Tak|Tak|Tak|Tak|Tak|Tak|
+|Użycie mniejszej liczby parametrów dla efektywnego fine tuningu|Tak|Tak|Tak|Nie|Nie|Tak|
+|Efektywna pamięciowo forma paralelizmu danych umożliwiająca dostęp do agregowanej pamięci GPU wszystkich dostępnych urządzeń GPU|Nie|Nie|Nie|Tak|Tak|Nie|
 
-## Przykłady Wydajności Fine Tuningu
+> [!NOTE]
+> LoRA, QLoRA, PEFT i DoRA to metody efektywnego parametrów fine tuningu, natomiast DeepSpeed i ZeRO skupiają się na rozproszonym treningu i optymalizacji pamięci.
+
+## Przykłady wydajności Fine Tuningu
 
 ![Finetuning Performance](../../../../translated_images/pl/Finetuningexamples.a9a41214f8f5afc1.webp)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, należy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego, ludzkiego tłumaczenia. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
