@@ -1,50 +1,60 @@
-## Scénáře doladění
+## Scénáře jemného doladění
 
-![Doladění s MS službami](../../../../translated_images/cs/FinetuningwithMS.3d0cec8ae693e094.webp)
+![Jemné doladění se službami MS](../../../../translated_images/cs/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platforma** Zahrnuje různé technologie jako Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito a ONNX Runtime.
+Tato sekce poskytuje přehled scénářů jemného doladění v prostředích Microsoft Foundry a Azure, včetně modelů nasazení, vrstev infrastruktury a běžně používaných optimalizačních technik.
 
-**Infrastruktura** Zahrnuje CPU a FPGA, které jsou nezbytné pro proces doladění. Ukážu vám ikony pro každou z těchto technologií.
+**Platforma**  
+To zahrnuje spravované služby, jako je Microsoft Foundry (dříve Azure AI Foundry) a Azure Machine Learning, které poskytují správu modelů, orchestraci, sledování experimentů a workflow nasazení.
 
-**Nástroje a frameworky** Zahrnuje ONNX Runtime a ONNX Runtime. Ukážu vám ikony pro každou z těchto technologií.  
-[Vložte ikony pro ONNX Runtime a ONNX Runtime]
+**Infrastruktura**  
+Jemné doladění vyžaduje škálovatelné výpočetní zdroje. V prostředích Azure to obvykle zahrnuje virtuální stroje založené na GPU a CPU zdroje pro lehké pracovní zátěže, spolu se škálovatelným úložištěm pro datové sady a kontrolní body.
 
-Proces doladění s technologiemi Microsoftu zahrnuje různé komponenty a nástroje. Díky pochopení a využití těchto technologií můžeme efektivně doladit naše aplikace a vytvářet lepší řešení.
+**Nástroje a frameworky**  
+Pracovní postupy jemného doladění běžně spoléhají na frameworky a optimalizační knihovny, jako jsou Hugging Face Transformers, DeepSpeed a PEFT (Parameter-Efficient Fine-Tuning).
+
+Proces jemného doladění s technologiemi Microsoftu pokrývá služby platformy, výpočetní infrastrukturu a tréninkové frameworky. Pochopením toho, jak tyto komponenty spolupracují, mohou vývojáři efektivně přizpůsobit základní modely konkrétním úlohám a produkčním scénářům.
 
 ## Model jako služba
 
-Doladění modelu pomocí hostovaného doladění, bez nutnosti vytvářet a spravovat výpočetní prostředky.
+Doladíte model pomocí hostovaného jemného doladění, bez potřeby vytvářet a spravovat výpočetní prostředky.
 
-![MaaS doladění](../../../../translated_images/cs/MaaSfinetune.3eee4630607aff0d.webp)
+![MaaS jemné doladění](../../../../translated_images/cs/MaaSfinetune.3eee4630607aff0d.webp)
 
-Serverless doladění je dostupné pro modely Phi-3-mini a Phi-3-medium, což umožňuje vývojářům rychle a snadno přizpůsobit modely pro cloudové a edge scénáře bez nutnosti zajišťovat výpočetní kapacity. Také jsme oznámili, že Phi-3-small je nyní dostupný prostřednictvím naší nabídky Models-as-a-Service, takže vývojáři mohou rychle a jednoduše začít s vývojem AI bez nutnosti spravovat podkladovou infrastrukturu.
+Serverless jemné doladění je nyní dostupné pro rodiny modelů Phi-3, Phi-3.5 a Phi-4, což vývojářům umožňuje rychle a snadno přizpůsobit modely pro cloudové a edge scénáře, aniž by museli zajišťovat výpočetní zdroje.
 
-## Model jako platforma
+## Model jako platforma 
 
-Uživatelé spravují vlastní výpočetní prostředky, aby mohli doladit své modely.
+Uživatelé spravují svůj vlastní výpočetní výkon, aby mohli doladit své modely.
 
-![Maap doladění](../../../../translated_images/cs/MaaPFinetune.fd3829c1122f5d1c.webp)
+![Maap jemné doladění](../../../../translated_images/cs/MaaPFinetune.fd3829c1122f5d1c.webp)
 
-[Ukázka doladění](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
+[Ukázka jemného doladění](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Scénáře doladění
+## Porovnání technik jemného doladění
 
-| | | | | | | |
-|-|-|-|-|-|-|-|
-|Scénář|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Přizpůsobení předtrénovaných LLM konkrétním úkolům nebo doménám|Ano|Ano|Ano|Ano|Ano|Ano|
-|Doladění pro NLP úkoly jako klasifikace textu, rozpoznávání pojmenovaných entit a strojový překlad|Ano|Ano|Ano|Ano|Ano|Ano|
-|Doladění pro úkoly QA|Ano|Ano|Ano|Ano|Ano|Ano|
-|Doladění pro generování lidsky znějících odpovědí v chatbotech|Ano|Ano|Ano|Ano|Ano|Ano|
-|Doladění pro generování hudby, umění nebo jiných forem kreativity|Ano|Ano|Ano|Ano|Ano|Ano|
-|Snížení výpočetních a finančních nákladů|Ano|Ano|Ne|Ano|Ano|Ne|
-|Snížení využití paměti|Ne|Ano|Ne|Ano|Ano|Ano|
-|Použití méně parametrů pro efektivní doladění|Ne|Ano|Ano|Ne|Ne|Ano|
-|Paměťově efektivní forma datové paralelnosti, která umožňuje přístup k agregované GPU paměti všech dostupných GPU zařízení|Ne|Ne|Ne|Ano|Ano|Ano|
+|Scénář|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DoRA|
+|---|---|---|---|---|---|---|
+|Přizpůsobení předtrénovaných LLM modelů konkrétním úlohám nebo doménám|Ano|Ano|Ano|Ano|Ano|Ano|
+|Jemné doladění pro úlohy zpracování přirozeného jazyka, jako je klasifikace textu, rozpoznávání pojmenovaných entit a strojový překlad|Ano|Ano|Ano|Ano|Ano|Ano|
+|Jemné doladění pro úlohy otázky a odpovědi (QA)|Ano|Ano|Ano|Ano|Ano|Ano|
+|Jemné doladění pro generování lidsky podobných odpovědí v chatbotech|Ano|Ano|Ano|Ano|Ano|Ano|
+|Jemné doladění pro generování hudby, umění nebo jiných forem kreativity|Ano|Ano|Ano|Ano|Ano|Ano|
+|Snižování výpočetních a finančních nákladů|Ano|Ano|Ano|Ano|Ano|Ano|
+|Snižování využití paměti|Ano|Ano|Ano|Ano|Ano|Ano|
+|Použití menšího počtu parametrů pro efektivní jemné doladění|Ano|Ano|Ano|Ne|Ne|Ano|
+|Paměťově efektivní forma datové paralelizace, která umožňuje přístup k souhrnné GPU paměti všech dostupných GPU zařízení|Ne|Ne|Ne|Ano|Ano|Ne|
 
-## Příklady výkonu doladění
+> [!NOTE]
+> LoRA, QLoRA, PEFT a DoRA jsou metody parametricky efektivního jemného doladění, zatímco DeepSpeed a ZeRO se zaměřují na distribuovaný výcvik a optimalizaci paměti.
 
-![Výkon doladění](../../../../translated_images/cs/Finetuningexamples.a9a41214f8f5afc1.webp)
+## Příklady výkonu jemného doladění
 
-**Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+![Výkon jemného doladění](../../../../translated_images/cs/Finetuningexamples.a9a41214f8f5afc1.webp)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+Prohlášení o vyloučení odpovědnosti:
+Tento dokument byl přeložen pomocí služby strojového překladu založené na umělé inteligenci [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho originálním jazyce by měl být považován za závazný. Pro kritické informace se doporučuje využít profesionální lidský překlad. Nejsme odpovědní za žádná nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
