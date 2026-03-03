@@ -1,15 +1,19 @@
-## Scenariji fino podešavanja
+## Scenariji finog podešavanja
 
-![FineTuning with MS Services](../../../../translated_images/hr/FinetuningwithMS.3d0cec8ae693e094.webp)
+![FineTuning s MS uslugama](../../../../translated_images/hr/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platforma** Obuhvaća različite tehnologije poput Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito i ONNX Runtime.
+Ovaj odjeljak pruža pregled scenarija finog podešavanja u Microsoft Foundry i Azure okruženjima, uključujući modele implementacije, slojeve infrastrukture i često korištene tehnike optimizacije.
 
-**Infrastruktura** Uključuje CPU i FPGA, koji su ključni za proces fino podešavanja. Dopustite da vam pokažem ikone za svaku od ovih tehnologija.
+**Platforma**  
+Obuhvaća upravljane usluge poput Microsoft Foundry (ranije Azure AI Foundry) i Azure Machine Learning, koje pružaju upravljanje modelima, orkestraciju, praćenje eksperimenata i tokove rada implementacije.
 
-**Alati i okviri** Obuhvaća ONNX Runtime i ONNX Runtime. Dopustite da vam pokažem ikone za svaku od ovih tehnologija.  
-[Umetnite ikone za ONNX Runtime i ONNX Runtime]
+**Infrastruktura**  
+Fino podešavanje zahtijeva skalabilne računalne resurse. U Azure okruženjima to obično uključuje virtualne strojeve s GPU-om i CPU resurse za lakša opterećenja, zajedno sa skalabilnom pohranom za skupove podataka i točke kontrole.
 
-Proces fino podešavanja s Microsoft tehnologijama uključuje različite komponente i alate. Razumijevanjem i korištenjem ovih tehnologija možemo učinkovito fino podesiti naše aplikacije i stvoriti bolje rješenja.
+**Alati i okviri**  
+Tokovi rada finog podešavanja često se oslanjaju na okvire i biblioteke za optimizaciju kao što su Hugging Face Transformers, DeepSpeed i PEFT (Parameter-Efficient Fine-Tuning).
+
+Proces finog podešavanja s Microsoft tehnologijama obuhvaća usluge platforme, računalnu infrastrukturu i okvire za treniranje. Razumijevanjem kako ti dijelovi međusobno djeluju, programeri mogu učinkovito prilagoditi osnovne modele za specifične zadatke i proizvodne scenarije.
 
 ## Model kao usluga
 
@@ -17,34 +21,40 @@ Fino podesite model koristeći hostano fino podešavanje, bez potrebe za kreiran
 
 ![MaaS Fine Tuning](../../../../translated_images/hr/MaaSfinetune.3eee4630607aff0d.webp)
 
-Serverless fino podešavanje dostupno je za modele Phi-3-mini i Phi-3-medium, omogućujući developerima brzo i jednostavno prilagođavanje modela za cloud i edge scenarije bez potrebe za organiziranjem računalnih resursa. Također smo najavili da je Phi-3-small sada dostupan kroz našu ponudu Models-as-a-Service, pa developeri mogu brzo i lako započeti s AI razvojem bez upravljanja osnovnom infrastrukturom.
+Serverless fino podešavanje sada je dostupno za obitelji modela Phi-3, Phi-3.5 i Phi-4, omogućujući programerima brzo i lako prilagođavanje modela za cloud i edge scenarije bez potrebe za organizacijom računalnih resursa.
 
 ## Model kao platforma
 
-Korisnici sami upravljaju svojim računalnim resursima kako bi fino podesili svoje modele.
+Korisnici upravljaju vlastitim računalnim resursima kako bi fino podesili svoje modele.
 
 ![Maap Fine Tuning](../../../../translated_images/hr/MaaPFinetune.fd3829c1122f5d1c.webp)
 
-[Primjer fino podešavanja](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
+[Primjer finog podešavanja](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Scenariji fino podešavanja
+## Usporedba tehnika finog podešavanja
 
-| | | | | | | |
-|-|-|-|-|-|-|-|
-|Scenarij|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Prilagodba unaprijed treniranih LLM-ova za specifične zadatke ili domene|Da|Da|Da|Da|Da|Da|
+|Scenarij|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DoRA|
+|---|---|---|---|---|---|---|
+|Prilagodba prethodno istreniranih LLM modela specifičnim zadacima ili domenama|Da|Da|Da|Da|Da|Da|
 |Fino podešavanje za NLP zadatke poput klasifikacije teksta, prepoznavanja imenovanih entiteta i strojno prevođenje|Da|Da|Da|Da|Da|Da|
 |Fino podešavanje za QA zadatke|Da|Da|Da|Da|Da|Da|
 |Fino podešavanje za generiranje odgovora nalik ljudskim u chatbotovima|Da|Da|Da|Da|Da|Da|
 |Fino podešavanje za generiranje glazbe, umjetnosti ili drugih oblika kreativnosti|Da|Da|Da|Da|Da|Da|
-|Smanjenje računalnih i financijskih troškova|Da|Da|Ne|Da|Da|Ne|
-|Smanjenje potrošnje memorije|Ne|Da|Ne|Da|Da|Da|
-|Korištenje manjeg broja parametara za učinkovito fino podešavanje|Ne|Da|Da|Ne|Ne|Da|
-|Memorijski učinkovit oblik paralelizma podataka koji omogućuje pristup ukupnoj GPU memoriji svih dostupnih GPU uređaja|Ne|Ne|Ne|Da|Da|Da|
+|Smanjenje računalnih i financijskih troškova|Da|Da|Da|Da|Da|Da|
+|Smanjenje potrošnje memorije|Da|Da|Da|Da|Da|Da|
+|Korištenje manjeg broja parametara za učinkovito fino podešavanje|Da|Da|Da|Ne|Ne|Da|
+|Memorijski učinkovita forma paralelizma podataka koja omogućuje pristup ukupnoj GPU memoriji svih dostupnih GPU uređaja|Ne|Ne|Ne|Da|Da|Ne|
 
-## Primjeri performansi fino podešavanja
+> [!NOTE]
+> LoRA, QLoRA, PEFT i DoRA su metode finog podešavanja efikasne po parametrima, dok se DeepSpeed i ZeRO fokusiraju na distribuirano treniranje i optimizaciju memorije.
 
-![Finetuning Performance](../../../../translated_images/hr/Finetuningexamples.a9a41214f8f5afc1.webp)
+## Primjeri performansi finog podešavanja
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+![Performanse finog podešavanja](../../../../translated_images/hr/Finetuningexamples.a9a41214f8f5afc1.webp)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:
+Ovaj dokument je preveden koristeći AI uslugu za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo biti točni, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku smatra se autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili kriva tumačenja koja proizlaze iz uporabe ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

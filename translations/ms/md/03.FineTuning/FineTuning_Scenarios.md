@@ -1,50 +1,60 @@
 ## Senario Penalaan Halus
 
-![FineTuning with MS Services](../../../../translated_images/ms/FinetuningwithMS.3d0cec8ae693e094.webp)
+![FineTuning dengan Perkhidmatan MS](../../../../translated_images/ms/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platform** Ini merangkumi pelbagai teknologi seperti Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, dan ONNX Runtime.
+Bahagian ini memberikan gambaran keseluruhan mengenai senario penalaan halus dalam persekitaran Microsoft Foundry dan Azure, termasuk model penyebaran, lapisan infrastruktur, dan teknik pengoptimuman yang biasa digunakan.
 
-**Infrastruktur** Ini merangkumi CPU dan FPGA, yang penting untuk proses penalaan halus. Saya akan tunjukkan ikon untuk setiap teknologi ini.
+**Platform**  
+Ini termasuk perkhidmatan terurus seperti Microsoft Foundry (sebelumnya Azure AI Foundry) dan Azure Machine Learning, yang menyediakan pengurusan model, orkestrasi, penjejakan eksperimen, dan aliran kerja penyebaran.
 
-**Alat & Rangka Kerja** Ini merangkumi ONNX Runtime dan ONNX Runtime. Saya akan tunjukkan ikon untuk setiap teknologi ini.  
-[Masukkan ikon untuk ONNX Runtime dan ONNX Runtime]
+**Infrastruktur**  
+Penalaan halus memerlukan sumber pengkomputeran yang boleh diskalakan. Dalam persekitaran Azure, ini biasanya termasuk mesin maya berasaskan GPU dan sumber CPU untuk beban kerja ringan, bersama dengan penyimpanan skala untuk set data dan titik semak.
 
-Proses penalaan halus dengan teknologi Microsoft melibatkan pelbagai komponen dan alat. Dengan memahami dan menggunakan teknologi ini, kita dapat menala aplikasi dengan berkesan dan mencipta penyelesaian yang lebih baik.
+**Alat & Rangka Kerja**  
+Aliran kerja penalaan halus biasanya bergantung pada rangka kerja dan perpustakaan pengoptimuman seperti Hugging Face Transformers, DeepSpeed, dan PEFT (Parameter-Efficient Fine-Tuning).
+
+Proses penalaan halus dengan teknologi Microsoft meliputi perkhidmatan platform, infrastruktur pengkomputeran, dan rangka kerja latihan. Dengan memahami bagaimana komponen ini bekerja bersama, pembangun dapat menyesuaikan model asas dengan cekap untuk tugas dan senario produksi tertentu.
 
 ## Model sebagai Perkhidmatan
 
-Tala halus model menggunakan penalaan halus yang dihoskan, tanpa perlu mencipta dan menguruskan pengkomputeran.
+Lakukan penalaan halus model menggunakan penalaan halus yang dihoskan, tanpa perlu membuat dan mengurus pengkomputeran.
 
 ![MaaS Fine Tuning](../../../../translated_images/ms/MaaSfinetune.3eee4630607aff0d.webp)
 
-Penalaan halus tanpa pelayan tersedia untuk model Phi-3-mini dan Phi-3-medium, membolehkan pembangun menyesuaikan model dengan cepat dan mudah untuk senario awan dan edge tanpa perlu mengatur pengkomputeran. Kami juga telah mengumumkan bahawa Phi-3-small kini tersedia melalui tawaran Models-as-a-Service kami supaya pembangun dapat memulakan pembangunan AI dengan cepat dan mudah tanpa perlu menguruskan infrastruktur asas.
+Penalaan halus tanpa pelayan kini tersedia untuk keluarga model Phi-3, Phi-3.5, dan Phi-4, membolehkan pembangun dengan cepat dan mudah menyesuaikan model untuk senario awan dan tepi tanpa perlu mengatur pengkomputeran.
 
 ## Model sebagai Platform
 
-Pengguna menguruskan pengkomputeran mereka sendiri untuk menala halus model mereka.
+Pengguna menguruskan pengkomputeran sendiri untuk melakukan penalaan halus model mereka.
 
 ![Maap Fine Tuning](../../../../translated_images/ms/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Contoh Penalaan Halus](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Senario Penalaan Halus
+## Perbandingan Teknik Penalaan Halus
 
-| | | | | | | |
-|-|-|-|-|-|-|-|
-|Senario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Menyesuaikan LLM yang telah dilatih untuk tugasan atau domain tertentu|Ya|Ya|Ya|Ya|Ya|Ya|
-|Penalaan halus untuk tugasan NLP seperti klasifikasi teks, pengecaman entiti bernama, dan terjemahan mesin|Ya|Ya|Ya|Ya|Ya|Ya|
-|Penalaan halus untuk tugasan QA|Ya|Ya|Ya|Ya|Ya|Ya|
+|Senario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DoRA|
+|---|---|---|---|---|---|---|
+|Menyesuaikan LLM yang telah dilatih terlebih dahulu kepada tugas atau domain tertentu|Ya|Ya|Ya|Ya|Ya|Ya|
+|Penalaan halus untuk tugas NLP seperti klasifikasi teks, pengecaman entiti bernama, dan penterjemahan mesin|Ya|Ya|Ya|Ya|Ya|Ya|
+|Penalaan halus untuk tugas QA|Ya|Ya|Ya|Ya|Ya|Ya|
 |Penalaan halus untuk menghasilkan respons seperti manusia dalam chatbot|Ya|Ya|Ya|Ya|Ya|Ya|
 |Penalaan halus untuk menghasilkan muzik, seni, atau bentuk kreativiti lain|Ya|Ya|Ya|Ya|Ya|Ya|
-|Mengurangkan kos pengkomputeran dan kewangan|Ya|Ya|Tidak|Ya|Ya|Tidak|
-|Mengurangkan penggunaan memori|Tidak|Ya|Tidak|Ya|Ya|Ya|
-|Menggunakan parameter yang lebih sedikit untuk penalaan halus yang cekap|Tidak|Ya|Ya|Tidak|Tidak|Ya|
-|Bentuk paralelisme data yang cekap memori yang memberikan akses kepada jumlah memori GPU bagi semua peranti GPU yang tersedia|Tidak|Tidak|Tidak|Ya|Ya|Ya|
+|Mengurangkan kos pengkomputeran dan kewangan|Ya|Ya|Ya|Ya|Ya|Ya|
+|Mengurangkan penggunaan memori|Ya|Ya|Ya|Ya|Ya|Ya|
+|Menggunakan parameter lebih sedikit untuk penalaan halus yang cekap|Ya|Ya|Ya|Tidak|Tidak|Ya|
+|Bentuk paralelisme data yang memori-cekapt yang memberi akses kepada keseluruhan memori GPU semua peranti GPU yang tersedia|Tidak|Tidak|Tidak|Ya|Ya|Tidak|
+
+> [!NOTE]
+> LoRA, QLoRA, PEFT, dan DoRA adalah kaedah penalaan halus cekap-parameter, manakala DeepSpeed dan ZeRO memfokuskan pada latihan teragih dan pengoptimuman memori.
 
 ## Contoh Prestasi Penalaan Halus
 
-![Finetuning Performance](../../../../translated_images/ms/Finetuningexamples.a9a41214f8f5afc1.webp)
+![Prestasi Penalaan Halus](../../../../translated_images/ms/Finetuningexamples.a9a41214f8f5afc1.webp)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidakakuratan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sah. Untuk maklumat yang penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,52 +1,60 @@
-## Peenhäälestamise stsenaariumid
+## Hõrenemise stsenaariumid
 
-![Peenhäälestamine Microsofti teenustega](../../../../imgs/03/intro/FinetuningwithMS.png)
+![FineTuning with MS Services](../../../../translated_images/et/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platvorm** See hõlmab erinevaid tehnoloogiaid, nagu Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito ja ONNX Runtime.
+See jaotis annab ülevaate Microsoft Foundry ja Azure keskkondade hõrenemise stsenaariumitest, sealhulgas juurutusmudelitest, infrastruktuuri kihtidest ja sageli kasutatavatest optimeerimistehnikatest.
 
-**Infrastruktuur** See hõlmab protsessoreid (CPU) ja FPGA-sid, mis on peenhäälestamise protsessi jaoks hädavajalikud. Siin on ikoonid iga tehnoloogia jaoks.
+**Platvorm**  
+Siia kuuluvad hallatud teenused nagu Microsoft Foundry (endine Azure AI Foundry) ja Azure Machine Learning, mis pakuvad mudelite haldamist, orkestreerimist, katsete jälgimist ja juurutuse töövooge.
 
-**Tööriistad ja raamistikud** See hõlmab ONNX Runtime'i. Siin on ikoonid nende tehnoloogiate jaoks.  
-[Lisa ikoonid ONNX Runtime'i jaoks]
+**Infrastruktuur**  
+Hõrenemine nõuab skaleeritavaid arvutusressursse. Azure keskkondades hõlmab see tavaliselt GPU-põhiseid virtuaalmasinaid ja CPU ressursse kergemate töökoormuste jaoks ning skaleeritavat salvestusruumi andmekogumite ja kontrollpunktide jaoks.
 
-Microsofti tehnoloogiate abil peenhäälestamise protsess hõlmab mitmeid komponente ja tööriistu. Nende tehnoloogiate mõistmise ja kasutamise abil saame tõhusalt oma rakendusi peenhäälestada ja luua paremaid lahendusi.
+**Tööriistad ja raamistik**  
+Hõrenemise töövood tuginevad tavaliselt raamistikule ja optimeerimisteekidele nagu Hugging Face Transformers, DeepSpeed ja PEFT (Parameter-Efficient Fine-Tuning).
 
-## Mudel kui teenus
+Hõrenemisprotsess Microsofti tehnoloogiatega hõlmab platvormiteenuseid, arvutusinfrastruktuuri ja treeninguraamistikke. Mõistes, kuidas need komponendid omavahel töötavad, saavad arendajad efektiivselt kohandada baas- ja algmudelid kindlate ülesannete ja tootmistsenaariumite jaoks.
 
-Peenhäälesta mudelit, kasutades hostitud peenhäälestamist, ilma et oleks vaja arvutusressursse luua ja hallata.
+## Mudel teenusena
 
-![MaaS Peenhäälestamine](../../../../imgs/03/intro/MaaSfinetune.png)
+Hõrena mudelit hostitud hõrenemise abil, ilma arvutusvõimsust ise looma ja haldamata.
 
-Serverivaba peenhäälestamine on saadaval Phi-3-mini ja Phi-3-medium mudelite jaoks, võimaldades arendajatel kiiresti ja lihtsalt kohandada mudeleid pilve- ja servastsenaariumide jaoks, ilma et oleks vaja arvutusressursse korraldada. Samuti oleme teatanud, et Phi-3-small on nüüd saadaval meie Models-as-a-Service pakkumise kaudu, et arendajad saaksid kiiresti ja lihtsalt alustada tehisintellekti arendamist, ilma et peaksid haldama taustal olevat infrastruktuuri.
+![MaaS Fine Tuning](../../../../translated_images/et/MaaSfinetune.3eee4630607aff0d.webp)
 
-## Mudel kui platvorm
+Serverita hõrenemine on nüüd saadaval Phi-3, Phi-3.5 ja Phi-4 mudelifamiljadele, võimaldades arendajatel mudeleid kiiresti ja lihtsalt kohandada pilve- ja servatsenaariumide jaoks ilma arvutusvõimsust eraldamata.
 
-Kasutajad haldavad oma arvutusressursse, et peenhäälestada oma mudeleid.
+## Mudel platvormina
 
-![Maap Peenhäälestamine](../../../../imgs/03/intro/MaaPFinetune.png)
+Kasutajad haldavad oma arvutusressursse, et oma mudeleid hõreneda.
 
-[Peenhäälestamise näidis](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
+![Maap Fine Tuning](../../../../translated_images/et/MaaPFinetune.fd3829c1122f5d1c.webp)
 
-## Peenhäälestamise stsenaariumid
+[Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-| | | | | | | |
-|-|-|-|-|-|-|-|
-|Stsenaarium|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Eeltreenitud LLM-ide kohandamine konkreetsete ülesannete või valdkondade jaoks|Jah|Jah|Jah|Jah|Jah|Jah|
-|Peenhäälestamine NLP ülesannete jaoks, nagu teksti klassifitseerimine, nimede tuvastamine ja masintõlge|Jah|Jah|Jah|Jah|Jah|Jah|
-|Peenhäälestamine küsimuste-vastuste ülesannete jaoks|Jah|Jah|Jah|Jah|Jah|Jah|
-|Peenhäälestamine inimlaadsete vastuste genereerimiseks vestlusrobotites|Jah|Jah|Jah|Jah|Jah|Jah|
-|Peenhäälestamine muusika, kunsti või muude loominguliste väljundite genereerimiseks|Jah|Jah|Jah|Jah|Jah|Jah|
-|Arvutus- ja rahaliste kulude vähendamine|Jah|Jah|Ei|Jah|Jah|Ei|
-|Mälu kasutamise vähendamine|Ei|Jah|Ei|Jah|Jah|Jah|
-|Vähemate parameetrite kasutamine tõhusaks peenhäälestamiseks|Ei|Jah|Jah|Ei|Ei|Jah|
-|Mälu tõhus andmeparalleelsus, mis võimaldab kasutada kõigi saadaolevate GPU-seadmete kogumälu|Ei|Ei|Ei|Jah|Jah|Jah|
+## Hõrenemise tehnikate võrdlus
 
-## Peenhäälestamise jõudluse näited
+|Stsenaarium|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DoRA|
+|---|---|---|---|---|---|---|
+|Eeltrenitud LLM-ide kohandamine konkreetsete ülesannete või valdkondade jaoks|Jah|Jah|Jah|Jah|Jah|Jah|
+|Hõrenemine NLP ülesannete jaoks nagu teksti klassifitseerimine, nimetatud üksuste tuvastamine ja masintõlge|Jah|Jah|Jah|Jah|Jah|Jah|
+|Hõrenemine QA ülesannete jaoks|Jah|Jah|Jah|Jah|Jah|Jah|
+|Hõrenemine inimlaadsete vastuste genereerimiseks juturobotites|Jah|Jah|Jah|Jah|Jah|Jah|
+|Hõrenemine muusika, kunsti või muu loovuse genereerimiseks|Jah|Jah|Jah|Jah|Jah|Jah|
+|Arvutus- ja rahakulude vähendamine|Jah|Jah|Jah|Jah|Jah|Jah|
+|Mälu kasutamise vähendamine|Jah|Jah|Jah|Jah|Jah|Jah|
+|Väiksema parameetrite arvuga efektiivne hõrenemine|Jah|Jah|Jah|Ei|Ei|Jah|
+|Mäluefektiivne andmeparalleelsuse vorm, mis annab juurdepääsu kõigi olemasolevate GPU seadmete agregaatmäluressursile|Ei|Ei|Ei|Jah|Jah|Ei|
 
-![Peenhäälestamise jõudlus](../../../../imgs/03/intro/Finetuningexamples.png)
+> [!NOTE]
+> LoRA, QLoRA, PEFT ja DoRA on parameetrite-tõhusad hõrenemismeetodid, samas kui DeepSpeed ja ZeRO keskenduvad hajutatud treeningule ja mälu optimeerimisele.
+
+## Hõrenemise jõudlusnäited
+
+![Finetuning Performance](../../../../translated_images/et/Finetuningexamples.a9a41214f8f5afc1.webp)
 
 ---
 
-**Vastutusest loobumine**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta arusaamatuste või valesti tõlgenduste eest, mis võivad tuleneda selle tõlke kasutamisest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Hõivamärkus**:
+See dokument on tõlgitud kasutades tehisintellekti tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebakõlasid. Originaaldokument selle emakeeles peaks olema autoriteetne allikas. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta ühegi arusaamatuse või valesti tõlgendamise eest, mis võivad sellest tõlkest tuleneda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

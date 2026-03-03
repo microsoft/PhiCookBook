@@ -1,50 +1,60 @@
 ## Cenários de Fine Tuning
 
-![FineTuning com Serviços MS](../../../../translated_images/pt-BR/FinetuningwithMS.3d0cec8ae693e094.webp)
+![FineTuning with MS Services](../../../../translated_images/pt-BR/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Plataforma** Isso inclui várias tecnologias como Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito e ONNX Runtime.
+Esta seção fornece uma visão geral dos cenários de fine-tuning em ambientes Microsoft Foundry e Azure, incluindo modelos de implantação, camadas de infraestrutura e técnicas de otimização comumente usadas.
 
-**Infraestrutura** Isso inclui CPU e FPGA, que são essenciais para o processo de fine-tuning. Deixe-me mostrar os ícones de cada uma dessas tecnologias.
+**Plataforma**  
+Inclui serviços gerenciados como Microsoft Foundry (anteriormente Azure AI Foundry) e Azure Machine Learning, que fornecem gerenciamento de modelos, orquestração, rastreamento de experimentos e fluxos de trabalho de implantação.
 
-**Ferramentas & Framework** Isso inclui ONNX Runtime e ONNX Runtime. Deixe-me mostrar os ícones de cada uma dessas tecnologias.  
-[Inserir ícones para ONNX Runtime e ONNX Runtime]
+**Infraestrutura**  
+O fine-tuning requer recursos de computação escaláveis. Em ambientes Azure, isso normalmente inclui máquinas virtuais baseadas em GPU e recursos de CPU para cargas de trabalho leves, juntamente com armazenamento escalável para conjuntos de dados e pontos de verificação.
 
-O processo de fine-tuning com tecnologias Microsoft envolve vários componentes e ferramentas. Ao entender e utilizar essas tecnologias, podemos ajustar nossos aplicativos de forma eficaz e criar soluções melhores.
+**Ferramentas & Framework**  
+Fluxos de trabalho de fine-tuning geralmente dependem de frameworks e bibliotecas de otimização como Hugging Face Transformers, DeepSpeed e PEFT (Parameter-Efficient Fine-Tuning).
+
+O processo de fine-tuning com tecnologias Microsoft abrange serviços de plataforma, infraestrutura de computação e frameworks de treinamento. Ao entender como esses componentes trabalham juntos, os desenvolvedores podem adaptar eficientemente modelos base a tarefas específicas e cenários de produção.
 
 ## Modelo como Serviço
 
-Faça fine-tuning do modelo usando fine-tuning hospedado, sem a necessidade de criar e gerenciar computação.
+Realize fine-tuning do modelo usando fine-tuning hospedado, sem a necessidade de criar e gerenciar computação.
 
 ![MaaS Fine Tuning](../../../../translated_images/pt-BR/MaaSfinetune.3eee4630607aff0d.webp)
 
-O fine-tuning serverless está disponível para os modelos Phi-3-mini e Phi-3-medium, permitindo que desenvolvedores personalizem rapidamente os modelos para cenários em nuvem e edge sem precisar se preocupar com a computação. Também anunciamos que o Phi-3-small está agora disponível através da nossa oferta Models-as-a-Service, para que os desenvolvedores possam começar rapidamente o desenvolvimento em IA sem precisar gerenciar a infraestrutura subjacente.
+O fine-tuning serverless está agora disponível para as famílias de modelos Phi-3, Phi-3.5 e Phi-4, permitindo que desenvolvedores personalizem rápida e facilmente os modelos para cenários de nuvem e edge sem precisar organizar computação.
 
 ## Modelo como Plataforma
 
-Os usuários gerenciam sua própria computação para fazer fine-tuning dos seus modelos.
+Os usuários gerenciam sua própria computação para realizar fine-tuning dos seus modelos.
 
 ![Maap Fine Tuning](../../../../translated_images/pt-BR/MaaPFinetune.fd3829c1122f5d1c.webp)
 
 [Exemplo de Fine Tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Cenários de Fine Tuning
+## Comparação de Técnicas de Fine-Tuning
 
-| | | | | | | |
-|-|-|-|-|-|-|-|
-|Cenário|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Adaptar LLMs pré-treinados para tarefas ou domínios específicos|Sim|Sim|Sim|Sim|Sim|Sim|
-|Fine-tuning para tarefas de NLP como classificação de texto, reconhecimento de entidades nomeadas e tradução automática|Sim|Sim|Sim|Sim|Sim|Sim|
-|Fine-tuning para tarefas de QA|Sim|Sim|Sim|Sim|Sim|Sim|
-|Fine-tuning para gerar respostas humanizadas em chatbots|Sim|Sim|Sim|Sim|Sim|Sim|
-|Fine-tuning para gerar música, arte ou outras formas de criatividade|Sim|Sim|Sim|Sim|Sim|Sim|
-|Redução de custos computacionais e financeiros|Sim|Sim|Não|Sim|Sim|Não|
-|Redução do uso de memória|Não|Sim|Não|Sim|Sim|Sim|
-|Uso de menos parâmetros para fine-tuning eficiente|Não|Sim|Sim|Não|Não|Sim|
-|Forma eficiente de paralelismo de dados que permite acesso à memória agregada de todas as GPUs disponíveis|Não|Não|Não|Sim|Sim|Sim|
+|Cenário|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DoRA|
+|---|---|---|---|---|---|---|
+|Adaptação de LLMs pré-treinados para tarefas ou domínios específicos|Sim|Sim|Sim|Sim|Sim|Sim|
+|Fine-tuning para tarefas de PLN como classificação de texto, reconhecimento de entidade nomeada e tradução automática|Sim|Sim|Sim|Sim|Sim|Sim|
+|Fine-tuning para tarefas de Q&A|Sim|Sim|Sim|Sim|Sim|Sim|
+|Fine-tuning para geração de respostas humanizadas em chatbots|Sim|Sim|Sim|Sim|Sim|Sim|
+|Fine-tuning para geração de música, arte ou outras formas de criatividade|Sim|Sim|Sim|Sim|Sim|Sim|
+|Redução de custos computacionais e financeiros|Sim|Sim|Sim|Sim|Sim|Sim|
+|Redução do uso de memória|Sim|Sim|Sim|Sim|Sim|Sim|
+|Uso de menos parâmetros para fine-tuning eficiente|Sim|Sim|Sim|Não|Não|Sim|
+|Forma eficiente de paralelismo de dados que dá acesso à memória total das GPUs disponíveis|Não|Não|Não|Sim|Sim|Não|
 
-## Exemplos de Performance em Fine Tuning
+> [!NOTE]
+> LoRA, QLoRA, PEFT e DoRA são métodos de fine-tuning eficientes em parâmetros, enquanto DeepSpeed e ZeRO focam em treinamento distribuído e otimização de memória.
 
-![Performance de Fine Tuning](../../../../translated_images/pt-BR/Finetuningexamples.a9a41214f8f5afc1.webp)
+## Exemplos de Performance de Fine Tuning
 
+![Finetuning Performance](../../../../translated_images/pt-BR/Finetuningexamples.a9a41214f8f5afc1.webp)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
