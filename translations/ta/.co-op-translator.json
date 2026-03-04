@@ -491,6 +491,24 @@
     "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
     "language_code": "ta"
   },
+  "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb": {
+    "original_hash": "bb91a2bb948f4dddb0a947bb93650c9b",
+    "translation_date": "2026-03-04T19:09:51+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb",
+    "language_code": "ta"
+  },
+  "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb": {
+    "original_hash": "763d9f56f67e0a564f0d2c78bdb7b5aa",
+    "translation_date": "2026-03-04T19:10:02+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb",
+    "language_code": "ta"
+  },
+  "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb": {
+    "original_hash": "68c952d2384b008da273678aa8a25285",
+    "translation_date": "2026-03-04T19:09:40+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb",
+    "language_code": "ta"
+  },
   "md/02.QuickStart/AzureAIFoundry_QuickStart.md": {
     "original_hash": "3a1e48b628022485aac989c9f733e792",
     "translation_date": "2025-10-11T12:11:40+00:00",
