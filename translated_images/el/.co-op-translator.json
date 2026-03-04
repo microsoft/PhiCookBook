@@ -1097,6 +1097,12 @@
     "source_file": "imgs/03/AIFoundry/create-project.png",
     "language_code": "el"
   },
+  "cross-road.d4d2169ea753e7ec.webp": {
+    "original_hash": "0416d7807935b6641e574badb892cf8d",
+    "translation_date": "2026-03-04T19:34:55+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/cross-road.png",
+    "language_code": "el"
+  },
   "demo.06d5a4246f057d1b.webp": {
     "original_hash": "3045e84037b75853e8d5cbc95b674c71",
     "translation_date": "2026-01-17T02:36:36+00:00",
@@ -1457,6 +1463,12 @@
     "source_file": "imgs/03/RemoteServer/notification-deploy.png",
     "language_code": "el"
   },
+  "ocr.7bebd0c590f3edd1.webp": {
+    "original_hash": "8ee0ed5f142260c54e44ecb43a0373b3",
+    "translation_date": "2026-03-04T19:34:58+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/ocr.png",
+    "language_code": "el"
+  },
   "olive-flow.5daf97340275f8b6.webp": {
     "original_hash": "6f12ed0a4367b0c2f351f35985134d86",
     "translation_date": "2026-01-17T03:03:47+00:00",
@@ -1497,6 +1509,12 @@
     "original_hash": "72f0d50a7b64684f042a5baa3cb3120c",
     "translation_date": "2026-01-17T02:26:42+00:00",
     "source_file": "imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png",
+    "language_code": "el"
+  },
+  "pc_0c634288-11b9-498f-8fb6-582e26ea17c9.c7850531a57cfcc3.webp": {
+    "original_hash": "63bfa8caca8730cbabc49ea39bbb1531",
+    "translation_date": "2026-03-04T19:34:50+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/pc_0c634288-11b9-498f-8fb6-582e26ea17c9.png",
     "language_code": "el"
   },
   "performance-evaluation.48b3e7e01a098740.webp": {
