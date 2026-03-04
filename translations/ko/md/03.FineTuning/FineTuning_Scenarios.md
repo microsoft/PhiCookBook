@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/ko/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**플랫폼** Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, ONNX Runtime 등 다양한 기술을 포함합니다.
+**플랫폼** Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, ONNX Runtime 등 다양한 기술을 포함합니다.
 
 **인프라** 미세 조정 과정에 필수적인 CPU와 FPGA를 포함합니다. 각 기술의 아이콘을 보여드리겠습니다.
 

@@ -62,15 +62,15 @@ Adalet, şeffaflık ve hesap verebilirlik gibi etik ilkelere uymak, yapay zeka s
 
 ## Sorumlu Yapay Zeka İçin AI Foundry Kullanımı
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo), geliştiricilerin ve kuruluşların hızlıca zeki, yenilikçi, pazara hazır ve sorumlu uygulamalar oluşturmasını sağlayan güçlü bir platformdur. Azure AI Foundry’nin bazı temel özellikleri ve yetenekleri şunlardır:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo), geliştiricilerin ve kuruluşların hızlıca zeki, yenilikçi, pazara hazır ve sorumlu uygulamalar oluşturmasını sağlayan güçlü bir platformdur. Microsoft Foundry’nin bazı temel özellikleri ve yetenekleri şunlardır:
 
 **Hazır API’ler ve Modeller**
 
-Azure AI Foundry, önceden oluşturulmuş ve özelleştirilebilir API’ler ve modeller sunar. Bunlar, üretken yapay zeka, doğal dil işleme (konuşmalar için), arama, izleme, çeviri, konuşma, görme ve karar verme gibi geniş bir yapay zeka görev yelpazesini kapsar.
+Microsoft Foundry, önceden oluşturulmuş ve özelleştirilebilir API’ler ve modeller sunar. Bunlar, üretken yapay zeka, doğal dil işleme (konuşmalar için), arama, izleme, çeviri, konuşma, görme ve karar verme gibi geniş bir yapay zeka görev yelpazesini kapsar.
 
 **Prompt Flow**
 
-Azure AI Foundry’deki prompt flow, konuşma tabanlı yapay zeka deneyimleri oluşturmanızı sağlar. Konuşma akışlarını tasarlayıp yönetmenize olanak tanır; böylece sohbet botları, sanal asistanlar ve diğer etkileşimli uygulamaları daha kolay geliştirebilirsiniz.
+Microsoft Foundry’deki prompt flow, konuşma tabanlı yapay zeka deneyimleri oluşturmanızı sağlar. Konuşma akışlarını tasarlayıp yönetmenize olanak tanır; böylece sohbet botları, sanal asistanlar ve diğer etkileşimli uygulamaları daha kolay geliştirebilirsiniz.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ RAG, geri getirme tabanlı ve üretken tabanlı yaklaşımları birleştiren bir
 
 **Üretken Yapay Zeka için Değerlendirme ve İzleme Metrikleri**
 
-Azure AI Foundry, üretken yapay zeka modellerini değerlendirmek ve izlemek için araçlar sağlar. Performanslarını, adaletini ve diğer önemli metrikleri ölçerek sorumlu dağıtımı garanti altına alabilirsiniz. Ayrıca, bir gösterge tablosu oluşturduysanız, Azure Machine Learning Studio’daki kodsuz kullanıcı arayüzünü kullanarak [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Kütüphaneleri temelinde bir Sorumlu Yapay Zeka Gösterge Tablosu ve ilgili skor kartı oluşturabilirsiniz. Bu skor kartı, teknik ve teknik olmayan paydaşlarla adalet, özellik önemi ve diğer sorumlu dağıtım konularına dair önemli içgörüleri paylaşmanıza yardımcı olur.
+Microsoft Foundry, üretken yapay zeka modellerini değerlendirmek ve izlemek için araçlar sağlar. Performanslarını, adaletini ve diğer önemli metrikleri ölçerek sorumlu dağıtımı garanti altına alabilirsiniz. Ayrıca, bir gösterge tablosu oluşturduysanız, Azure Machine Learning Studio’daki kodsuz kullanıcı arayüzünü kullanarak [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Kütüphaneleri temelinde bir Sorumlu Yapay Zeka Gösterge Tablosu ve ilgili skor kartı oluşturabilirsiniz. Bu skor kartı, teknik ve teknik olmayan paydaşlarla adalet, özellik önemi ve diğer sorumlu dağıtım konularına dair önemli içgörüleri paylaşmanıza yardımcı olur.
 
 Sorumlu yapay zeka ile AI Foundry kullanmak için şu en iyi uygulamaları takip edebilirsiniz:
 
@@ -106,7 +106,7 @@ Yapay zeka sistemleri, kullanıcıların nasıl çalıştığını ve kararları
 
 Yapay zeka sistemleri, zaman içinde doğru ve etkili kalmalarını sağlamak için sürekli izlenmeli ve güncellenmelidir. Bu, modelin düzenli bakımı, test edilmesi ve yeniden eğitilmesini gerektirir.
 
-Sonuç olarak, Microsoft Responsible AI, geliştiricilerin ve kuruluşların şeffaf, güvenilir ve hesap verebilir yapay zeka sistemleri oluşturmasına yardımcı olmayı amaçlayan bir girişimdir. Sorumlu yapay zeka uygulamasının kritik olduğunu unutmayın ve Azure AI Foundry, bunu kuruluşlar için pratik hale getirmeyi hedefler. Etik ilkelere ve en iyi uygulamalara uyarak, yapay zeka sistemlerinin toplumun tamamına fayda sağlayacak şekilde sorumlu bir biçimde geliştirilip dağıtılmasını sağlayabiliriz.
+Sonuç olarak, Microsoft Responsible AI, geliştiricilerin ve kuruluşların şeffaf, güvenilir ve hesap verebilir yapay zeka sistemleri oluşturmasına yardımcı olmayı amaçlayan bir girişimdir. Sorumlu yapay zeka uygulamasının kritik olduğunu unutmayın ve Microsoft Foundry, bunu kuruluşlar için pratik hale getirmeyi hedefler. Etik ilkelere ve en iyi uygulamalara uyarak, yapay zeka sistemlerinin toplumun tamamına fayda sağlayacak şekilde sorumlu bir biçimde geliştirilip dağıtılmasını sağlayabiliriz.
 
 **Feragatname**:  
 Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.

@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/my/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platform** ဒီမှာ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, နဲ့ ONNX Runtime တို့လို နည်းပညာမျိုးစုံ ပါဝင်ပါတယ်။
+**Platform** ဒီမှာ Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, နဲ့ ONNX Runtime တို့လို နည်းပညာမျိုးစုံ ပါဝင်ပါတယ်။
 
 **Infrastructure** ဒီမှာ fine-tuning လုပ်ငန်းစဉ်အတွက် အရေးကြီးတဲ့ CPU နဲ့ FPGA ပါဝင်ပါတယ်။ ဒီနည်းပညာတွေကို ကိုယ်တိုင်ပြသပေးပါမယ်။
 

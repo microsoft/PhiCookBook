@@ -1,6 +1,6 @@
-# Phi-3 finomhangolása Azure AI Foundry-val
+# Phi-3 finomhangolása Microsoft Foundry-val
 
-Nézzük meg, hogyan lehet finomhangolni a Microsoft Phi-3 Mini nyelvi modellt az Azure AI Foundry segítségével. A finomhangolás lehetővé teszi, hogy a Phi-3 Mini-t specifikus feladatokra szabjuk, így még hatékonyabbá és kontextusérzékenyebbé válik.
+Nézzük meg, hogyan lehet finomhangolni a Microsoft Phi-3 Mini nyelvi modellt az Microsoft Foundry segítségével. A finomhangolás lehetővé teszi, hogy a Phi-3 Mini-t specifikus feladatokra szabjuk, így még hatékonyabbá és kontextusérzékenyebbé válik.
 
 ## Szempontok
 
@@ -22,7 +22,7 @@ Nézzük meg, hogyan lehet finomhangolni a Microsoft Phi-3 Mini nyelvi modellt a
 - Egy Azure előfizetés. Ha még nincs, hozz létre egy [fizetős Azure fiókot](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) a kezdéshez.
 
 - Egy [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Az Azure szerepalapú hozzáférés-vezérlés (Azure RBAC) biztosítja az Azure AI Foundry műveletekhez való hozzáférést. A cikkben leírt lépések végrehajtásához a felhasználói fiókodnak __Azure AI Developer szerepkörrel__ kell rendelkeznie az erőforráscsoporton.
+- Az Azure szerepalapú hozzáférés-vezérlés (Azure RBAC) biztosítja az Microsoft Foundry műveletekhez való hozzáférést. A cikkben leírt lépések végrehajtásához a felhasználói fiókodnak __Azure AI Developer szerepkörrel__ kell rendelkeznie az erőforráscsoporton.
 
 ### Előfizetés szolgáltató regisztrációja
 
@@ -58,17 +58,17 @@ A használt tanító és validációs adatokat **JSON Lines (JSONL)** formátumb
 
 A támogatott fájltípus a JSON Lines. A fájlokat a alapértelmezett adattárolóba töltik fel, és elérhetővé teszik a projektedben.
 
-## Phi-3 finomhangolása Azure AI Foundry-val
+## Phi-3 finomhangolása Microsoft Foundry-val
 
-Az Azure AI Foundry lehetővé teszi, hogy nagy nyelvi modelleket személyes adatkészleteidhez igazíts finomhangolás segítségével. A finomhangolás jelentős értéket ad azáltal, hogy testreszabást és optimalizálást tesz lehetővé specifikus feladatokra és alkalmazásokra. Ez jobb teljesítményt, költséghatékonyságot, csökkentett késleltetést és személyre szabott eredményeket eredményez.
+Az Microsoft Foundry lehetővé teszi, hogy nagy nyelvi modelleket személyes adatkészleteidhez igazíts finomhangolás segítségével. A finomhangolás jelentős értéket ad azáltal, hogy testreszabást és optimalizálást tesz lehetővé specifikus feladatokra és alkalmazásokra. Ez jobb teljesítményt, költséghatékonyságot, csökkentett késleltetést és személyre szabott eredményeket eredményez.
 
 ![Finetune AI Foundry](../../../../translated_images/hu/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Új projekt létrehozása
 
-1. Jelentkezz be az [Azure AI Foundry](https://ai.azure.com) oldalra.
+1. Jelentkezz be az [Microsoft Foundry](https://ai.azure.com) oldalra.
 
-1. Válaszd a **+New project** lehetőséget egy új projekt létrehozásához az Azure AI Foundry-ban.
+1. Válaszd a **+New project** lehetőséget egy új projekt létrehozásához az Microsoft Foundry-ban.
 
     ![FineTuneSelect](../../../../translated_images/hu/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Az Azure AI Foundry lehetővé teszi, hogy nagy nyelvi modelleket személyes ada
 
 A finomhangolás előtt gyűjts vagy hozz létre egy a feladatodhoz releváns adatkészletet, például chat utasításokat, kérdés-válasz párokat vagy bármilyen más releváns szöveges adatot. Tisztítsd és előfeldolgozd az adatokat zajszűréssel, hiányzó értékek kezelésével és tokenizálással.
 
-### Phi-3 modellek finomhangolása Azure AI Foundry-ban
+### Phi-3 modellek finomhangolása Microsoft Foundry-ban
 
 > [!NOTE]
 > A Phi-3 modellek finomhangolása jelenleg csak az East US 2 régióban található projektekben támogatott.
@@ -121,7 +121,7 @@ A finomhangolás előtt gyűjts vagy hozz létre egy a feladatodhoz releváns ad
 1. Végezze el a következőket:
 
     - Válaszd ki a **feladattípust**: **Chat completion**.
-    - Válaszd ki a használni kívánt **tanító adatokat**. Feltöltheted az Azure AI Foundry adatain keresztül vagy a helyi környezetedből.
+    - Válaszd ki a használni kívánt **tanító adatokat**. Feltöltheted az Microsoft Foundry adatain keresztül vagy a helyi környezetedből.
 
     ![FineTuneSelect](../../../../translated_images/hu/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ A finomhangolás előtt gyűjts vagy hozz létre egy a feladatodhoz releváns ad
 
     ![FineTuneSelect](../../../../translated_images/hu/select-submit.0a3802d581bac271.webp)
 
-1. Amint a modell finomhangolása befejeződik, az állapot **Completed** lesz, ahogy az alábbi képen látható. Ekkor telepítheted a modellt, és használhatod saját alkalmazásodban, a playground-ban vagy prompt flow-ban. További információért lásd: [Hogyan telepítsük a Phi-3 család kis nyelvi modelljeit Azure AI Foundry-val](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Amint a modell finomhangolása befejeződik, az állapot **Completed** lesz, ahogy az alábbi képen látható. Ekkor telepítheted a modellt, és használhatod saját alkalmazásodban, a playground-ban vagy prompt flow-ban. További információért lásd: [Hogyan telepítsük a Phi-3 család kis nyelvi modelljeit Microsoft Foundry-val](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/hu/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Részletesebb információkért a Phi-3 finomhangolásáról látogass el a [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) oldalra.
+> Részletesebb információkért a Phi-3 finomhangolásáról látogass el a [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) oldalra.
 
 ## Finomhangolt modellek törlése
 
-A finomhangolt modellt törölheted az [Azure AI Foundry](https://ai.azure.com) finomhangolási modell listájából vagy a modell részletező oldaláról. Válaszd ki a törölni kívánt finomhangolt modellt a Fine-tuning oldalon, majd kattints a Törlés gombra.
+A finomhangolt modellt törölheted az [Microsoft Foundry](https://ai.azure.com) finomhangolási modell listájából vagy a modell részletező oldaláról. Válaszd ki a törölni kívánt finomhangolt modellt a Fine-tuning oldalon, majd kattints a Törlés gombra.
 
 > [!NOTE]
 > Egyedi modellt nem törölhetsz, ha az már telepítve van. Először a modell telepítését kell törölnöd, mielőtt az egyedi modellt törölheted.
@@ -163,7 +163,7 @@ A finomhangolt modellt törölheted az [Azure AI Foundry](https://ai.azure.com) 
 
 ### Költség- és kvóta szempontok a Phi-3 modellek szolgáltatásként történő finomhangolásához
 
-A Phi modelleket, amelyeket szolgáltatásként finomhangolnak, a Microsoft kínálja, és integrálva vannak az Azure AI Foundry-val. Az árakat megtalálod a modellek [telepítésekor](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) vagy finomhangolásakor a telepítési varázsló Ár és feltételek fülén.
+A Phi modelleket, amelyeket szolgáltatásként finomhangolnak, a Microsoft kínálja, és integrálva vannak az Microsoft Foundry-val. Az árakat megtalálod a modellek [telepítésekor](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) vagy finomhangolásakor a telepítési varázsló Ár és feltételek fülén.
 
 ## Tartalomszűrés
 
@@ -206,7 +206,7 @@ Mentsd el a finomhangolt modell ellenőrzőpontját későbbi használatra.
 
 ## Telepítés
 
-- Webszolgáltatásként telepítés: Telepítsd a finomhangolt modellt webszolgáltatásként az Azure AI Foundry-ban.
+- Webszolgáltatásként telepítés: Telepítsd a finomhangolt modellt webszolgáltatásként az Microsoft Foundry-ban.
 - Végpont tesztelése: Küldj teszt lekérdezéseket a telepített végpontra a működés ellenőrzéséhez.
 
 ## Iterálás és fejlesztés

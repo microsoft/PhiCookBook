@@ -1,6 +1,6 @@
-# Affinage de Phi-3 avec Azure AI Foundry
+# Affinage de Phi-3 avec Microsoft Foundry
 
-Explorons comment affiner le modèle de langage Phi-3 Mini de Microsoft en utilisant Azure AI Foundry. L’affinage vous permet d’adapter Phi-3 Mini à des tâches spécifiques, le rendant ainsi plus puissant et mieux adapté au contexte.
+Explorons comment affiner le modèle de langage Phi-3 Mini de Microsoft en utilisant Microsoft Foundry. L’affinage vous permet d’adapter Phi-3 Mini à des tâches spécifiques, le rendant ainsi plus puissant et mieux adapté au contexte.
 
 ## Considérations
 
@@ -22,7 +22,7 @@ Explorons comment affiner le modèle de langage Phi-3 Mini de Microsoft en utili
 - Un abonnement Azure. Si vous n’en avez pas, créez un [compte Azure payant](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) pour commencer.
 
 - Un [projet AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Les contrôles d’accès basés sur les rôles Azure (Azure RBAC) sont utilisés pour autoriser les opérations dans Azure AI Foundry. Pour réaliser les étapes de cet article, votre compte utilisateur doit avoir le __rôle Azure AI Developer__ sur le groupe de ressources.
+- Les contrôles d’accès basés sur les rôles Azure (Azure RBAC) sont utilisés pour autoriser les opérations dans Microsoft Foundry. Pour réaliser les étapes de cet article, votre compte utilisateur doit avoir le __rôle Azure AI Developer__ sur le groupe de ressources.
 
 ### Enregistrement du fournisseur de ressources pour l’abonnement
 
@@ -58,17 +58,17 @@ Les données d’entraînement et de validation que vous utilisez **doivent** ê
 
 Le type de fichier supporté est JSON Lines. Les fichiers sont téléchargés dans le datastore par défaut et mis à disposition dans votre projet.
 
-## Affinage de Phi-3 avec Azure AI Foundry
+## Affinage de Phi-3 avec Microsoft Foundry
 
-Azure AI Foundry vous permet d’adapter les grands modèles de langage à vos propres jeux de données via un processus appelé affinage. L’affinage apporte une valeur significative en permettant la personnalisation et l’optimisation pour des tâches et applications spécifiques. Il améliore les performances, réduit les coûts, diminue la latence et produit des résultats sur mesure.
+Microsoft Foundry vous permet d’adapter les grands modèles de langage à vos propres jeux de données via un processus appelé affinage. L’affinage apporte une valeur significative en permettant la personnalisation et l’optimisation pour des tâches et applications spécifiques. Il améliore les performances, réduit les coûts, diminue la latence et produit des résultats sur mesure.
 
 ![Finetune AI Foundry](../../../../translated_images/fr/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Créer un nouveau projet
 
-1. Connectez-vous à [Azure AI Foundry](https://ai.azure.com).
+1. Connectez-vous à [Microsoft Foundry](https://ai.azure.com).
 
-1. Sélectionnez **+New project** pour créer un nouveau projet dans Azure AI Foundry.
+1. Sélectionnez **+New project** pour créer un nouveau projet dans Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/fr/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry vous permet d’adapter les grands modèles de langage à vos p
 
 Avant l’affinage, rassemblez ou créez un jeu de données pertinent pour votre tâche, comme des instructions de chat, des paires questions-réponses, ou tout autre texte pertinent. Nettoyez et prétraitez ces données en supprimant le bruit, en gérant les valeurs manquantes, et en tokenisant le texte.
 
-### Affiner les modèles Phi-3 dans Azure AI Foundry
+### Affiner les modèles Phi-3 dans Microsoft Foundry
 
 > [!NOTE]
 > L’affinage des modèles Phi-3 est actuellement pris en charge uniquement pour les projets situés dans la région East US 2.
@@ -121,7 +121,7 @@ Avant l’affinage, rassemblez ou créez un jeu de données pertinent pour votre
 1. Effectuez les opérations suivantes :
 
     - Sélectionnez le **type de tâche** : **Chat completion**.
-    - Sélectionnez les **données d’entraînement** que vous souhaitez utiliser. Vous pouvez les télécharger via les données d’Azure AI Foundry ou depuis votre environnement local.
+    - Sélectionnez les **données d’entraînement** que vous souhaitez utiliser. Vous pouvez les télécharger via les données d’Microsoft Foundry ou depuis votre environnement local.
 
     ![FineTuneSelect](../../../../translated_images/fr/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Avant l’affinage, rassemblez ou créez un jeu de données pertinent pour votre
 
     ![FineTuneSelect](../../../../translated_images/fr/select-submit.0a3802d581bac271.webp)
 
-1. Une fois votre modèle affiné, le statut s’affichera comme **Completed**, comme illustré ci-dessous. Vous pouvez alors déployer le modèle et l’utiliser dans votre propre application, dans le playground, ou dans prompt flow. Pour plus d’informations, consultez [Comment déployer la famille de petits modèles de langage Phi-3 avec Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Une fois votre modèle affiné, le statut s’affichera comme **Completed**, comme illustré ci-dessous. Vous pouvez alors déployer le modèle et l’utiliser dans votre propre application, dans le playground, ou dans prompt flow. Pour plus d’informations, consultez [Comment déployer la famille de petits modèles de langage Phi-3 avec Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/fr/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Pour plus de détails sur l’affinage de Phi-3, veuillez consulter [Affiner les modèles Phi-3 dans Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Pour plus de détails sur l’affinage de Phi-3, veuillez consulter [Affiner les modèles Phi-3 dans Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Nettoyer vos modèles affinés
 
-Vous pouvez supprimer un modèle affiné depuis la liste des modèles affinés dans [Azure AI Foundry](https://ai.azure.com) ou depuis la page des détails du modèle. Sélectionnez le modèle affiné à supprimer depuis la page Fine-tuning, puis cliquez sur le bouton Supprimer pour effacer le modèle affiné.
+Vous pouvez supprimer un modèle affiné depuis la liste des modèles affinés dans [Microsoft Foundry](https://ai.azure.com) ou depuis la page des détails du modèle. Sélectionnez le modèle affiné à supprimer depuis la page Fine-tuning, puis cliquez sur le bouton Supprimer pour effacer le modèle affiné.
 
 > [!NOTE]
 > Vous ne pouvez pas supprimer un modèle personnalisé s’il possède un déploiement actif. Vous devez d’abord supprimer le déploiement du modèle avant de pouvoir supprimer le modèle personnalisé.
@@ -163,7 +163,7 @@ Vous pouvez supprimer un modèle affiné depuis la liste des modèles affinés d
 
 ### Considérations sur les coûts et quotas pour les modèles Phi-3 affinés en tant que service
 
-Les modèles Phi affinés en tant que service sont proposés par Microsoft et intégrés à Azure AI Foundry pour utilisation. Vous pouvez consulter les tarifs lors du [déploiement](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ou de l’affinage des modèles dans l’onglet Tarification et conditions du guide de déploiement.
+Les modèles Phi affinés en tant que service sont proposés par Microsoft et intégrés à Microsoft Foundry pour utilisation. Vous pouvez consulter les tarifs lors du [déploiement](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ou de l’affinage des modèles dans l’onglet Tarification et conditions du guide de déploiement.
 
 ## Filtrage de contenu
 
@@ -204,7 +204,7 @@ Sauvegardez le checkpoint du modèle affiné pour une utilisation future.
 
 ## Déploiement
 
-- Déployez en tant que service web : Déployez votre modèle affiné comme un service web dans Azure AI Foundry.
+- Déployez en tant que service web : Déployez votre modèle affiné comme un service web dans Microsoft Foundry.
 - Testez le point de terminaison : Envoyez des requêtes de test au point de terminaison déployé pour vérifier son fonctionnement.
 
 ## Itérer et améliorer

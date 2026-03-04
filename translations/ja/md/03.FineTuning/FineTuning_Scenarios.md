@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/ja/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**プラットフォーム** には、Azure AI Foundry、Azure Machine Learning、AI Tools、Kaito、ONNX Runtimeなどのさまざまな技術が含まれます。
+**プラットフォーム** には、Microsoft Foundry、Azure Machine Learning、AI Tools、Kaito、ONNX Runtimeなどのさまざまな技術が含まれます。
 
 **インフラストラクチャ** には、ファインチューニングプロセスに不可欠なCPUやFPGAが含まれます。これらの技術のアイコンをお見せします。
 

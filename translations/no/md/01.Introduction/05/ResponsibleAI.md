@@ -62,15 +62,15 @@ Datakryptering og tilgangskontroller bidrar til å beskytte brukerens personvern
 
 ## Bruke AI Foundry for Ansvarlig AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) er en kraftfull plattform som gjør det mulig for utviklere og organisasjoner å raskt lage intelligente, banebrytende, markedsklare og ansvarlige applikasjoner. Her er noen viktige funksjoner og muligheter i Azure AI Foundry:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) er en kraftfull plattform som gjør det mulig for utviklere og organisasjoner å raskt lage intelligente, banebrytende, markedsklare og ansvarlige applikasjoner. Her er noen viktige funksjoner og muligheter i Microsoft Foundry:
 
 **Ferdige API-er og modeller**
 
-Azure AI Foundry tilbyr ferdigbygde og tilpassbare API-er og modeller. Disse dekker et bredt spekter av AI-oppgaver, inkludert generativ AI, naturlig språkbehandling for samtaler, søk, overvåking, oversettelse, tale, syn og beslutningstaking.
+Microsoft Foundry tilbyr ferdigbygde og tilpassbare API-er og modeller. Disse dekker et bredt spekter av AI-oppgaver, inkludert generativ AI, naturlig språkbehandling for samtaler, søk, overvåking, oversettelse, tale, syn og beslutningstaking.
 
 **Prompt Flow**
 
-Prompt flow i Azure AI Foundry gjør det mulig å lage samtalebaserte AI-opplevelser. Det lar deg designe og administrere samtaleflyt, noe som gjør det enklere å bygge chatboter, virtuelle assistenter og andre interaktive applikasjoner.
+Prompt flow i Microsoft Foundry gjør det mulig å lage samtalebaserte AI-opplevelser. Det lar deg designe og administrere samtaleflyt, noe som gjør det enklere å bygge chatboter, virtuelle assistenter og andre interaktive applikasjoner.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ RAG er en teknikk som kombinerer gjenfinning og generering. Den forbedrer kvalit
 
 **Evaluering og overvåking av generativ AI**
 
-Azure AI Foundry tilbyr verktøy for evaluering og overvåking av generative AI-modeller. Du kan vurdere ytelse, rettferdighet og andre viktige måleparametere for å sikre ansvarlig implementering. I tillegg, hvis du har laget et dashbord, kan du bruke den kodefrie UI-en i Azure Machine Learning Studio for å tilpasse og generere et Responsible AI Dashboard og tilhørende scorecard basert på [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python-biblioteker. Dette scorecardet hjelper deg med å dele viktige innsikter knyttet til rettferdighet, funksjonsviktighet og andre hensyn ved ansvarlig implementering med både tekniske og ikke-tekniske interessenter.
+Microsoft Foundry tilbyr verktøy for evaluering og overvåking av generative AI-modeller. Du kan vurdere ytelse, rettferdighet og andre viktige måleparametere for å sikre ansvarlig implementering. I tillegg, hvis du har laget et dashbord, kan du bruke den kodefrie UI-en i Azure Machine Learning Studio for å tilpasse og generere et Responsible AI Dashboard og tilhørende scorecard basert på [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python-biblioteker. Dette scorecardet hjelper deg med å dele viktige innsikter knyttet til rettferdighet, funksjonsviktighet og andre hensyn ved ansvarlig implementering med både tekniske og ikke-tekniske interessenter.
 
 For å bruke AI Foundry med ansvarlig AI, kan du følge disse beste praksisene:
 
@@ -106,7 +106,7 @@ AI-systemer bør være transparente og forklarbare slik at brukerne kan forstå 
 
 AI-systemer bør kontinuerlig overvåkes og oppdateres for å sikre at de forblir nøyaktige og effektive over tid. Dette krever løpende vedlikehold, testing og nytrening av modellen.
 
-Avslutningsvis er Microsoft Responsible AI et initiativ som har som mål å hjelpe utviklere og organisasjoner med å bygge AI-systemer som er transparente, pålitelige og ansvarlige. Husk at ansvarlig AI-implementering er avgjørende, og Azure AI Foundry har som mål å gjøre dette praktisk for organisasjoner. Ved å følge etiske prinsipper og beste praksis kan vi sikre at AI-systemer utvikles og tas i bruk på en ansvarlig måte som gagner samfunnet som helhet.
+Avslutningsvis er Microsoft Responsible AI et initiativ som har som mål å hjelpe utviklere og organisasjoner med å bygge AI-systemer som er transparente, pålitelige og ansvarlige. Husk at ansvarlig AI-implementering er avgjørende, og Microsoft Foundry har som mål å gjøre dette praktisk for organisasjoner. Ved å følge etiske prinsipper og beste praksis kan vi sikre at AI-systemer utvikles og tas i bruk på en ansvarlig måte som gagner samfunnet som helhet.
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

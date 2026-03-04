@@ -1,17 +1,17 @@
-# ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow ใน Azure AI Foundry
+# ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow ใน Microsoft Foundry
 
-ตัวอย่างแบบครบวงจร (E2E) นี้อ้างอิงจากคำแนะนำ "[ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt Flow ใน Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" จากชุมชนเทคโนโลยีของ Microsoft แนะนำกระบวนการปรับแต่งอย่างละเอียด การใช้งาน และการรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow ใน Azure AI Foundry  
+ตัวอย่างแบบครบวงจร (E2E) นี้อ้างอิงจากคำแนะนำ "[ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt Flow ใน Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" จากชุมชนเทคโนโลยีของ Microsoft แนะนำกระบวนการปรับแต่งอย่างละเอียด การใช้งาน และการรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow ใน Microsoft Foundry  
 แตกต่างจากตัวอย่างครบวงจร "[ปรับแต่งและรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" ที่เกี่ยวข้องกับการรันโค้ดในเครื่องนี้ คู่มือนี้เน้นไปที่การปรับแต่งและรวมโมเดลของคุณทั้งหมดภายใน Azure AI / ML Studio
 
 ## ภาพรวม
 
-ในตัวอย่างครบวงจรนี้ คุณจะได้เรียนรู้วิธีปรับแต่งโมเดล Phi-3 และรวมเข้ากับ Prompt flow ใน Azure AI Foundry โดยใช้ประโยชน์จาก Azure AI / ML Studio เพื่อสร้างเวิร์กโฟลว์สำหรับการใช้งานและปรับใช้โมเดล AI ที่กำหนดเอง ตัวอย่างนี้แบ่งออกเป็นสามสถานการณ์:
+ในตัวอย่างครบวงจรนี้ คุณจะได้เรียนรู้วิธีปรับแต่งโมเดล Phi-3 และรวมเข้ากับ Prompt flow ใน Microsoft Foundry โดยใช้ประโยชน์จาก Azure AI / ML Studio เพื่อสร้างเวิร์กโฟลว์สำหรับการใช้งานและปรับใช้โมเดล AI ที่กำหนดเอง ตัวอย่างนี้แบ่งออกเป็นสามสถานการณ์:
 
 **สถานการณ์ 1: ตั้งค่า Azure resources และเตรียมพร้อมสำหรับการปรับแต่ง**
 
 **สถานการณ์ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio**
 
-**สถานการณ์ 3: รวมเข้ากับ Prompt flow และสนทนากับโมเดลที่กำหนดเองใน Azure AI Foundry**
+**สถานการณ์ 3: รวมเข้ากับ Prompt flow และสนทนากับโมเดลที่กำหนดเองใน Microsoft Foundry**
 
 นี่คือภาพรวมของตัวอย่าง E2E นี้
 
@@ -30,7 +30,7 @@
     - [ปรับแต่งโมเดล Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [ปรับใช้โมเดล Phi-3 ที่ปรับแต่งแล้ว](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[สถานการณ์ 3: รวมเข้ากับ Prompt flow และสนทนากับโมเดลที่กำหนดเองใน Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[สถานการณ์ 3: รวมเข้ากับ Prompt flow และสนทนากับโมเดลที่กำหนดเองใน Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [รวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [สนทนากับโมเดล Phi-3 ที่กำหนดเองของคุณ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![ตั้งค่า traffic](../../../../../../translated_images/th/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และแชทกับโมเดลที่กำหนดเองใน Azure AI Foundry
+## สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และแชทกับโมเดลที่กำหนดเองใน Microsoft Foundry
 
 ### ผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow
 
@@ -552,8 +552,8 @@
 
 ในการฝึกนี้ คุณจะ:
 
-- สร้าง Azure AI Foundry Hub
-- สร้างโปรเจกต์ใน Azure AI Foundry
+- สร้าง Microsoft Foundry Hub
+- สร้างโปรเจกต์ใน Microsoft Foundry
 - สร้าง Prompt flow
 - เพิ่มการเชื่อมต่อที่กำหนดเองสำหรับโมเดล Phi-3 ที่ปรับแต่งแล้ว
 - ตั้งค่า Prompt flow เพื่อแชทกับโมเดล Phi-3 ที่กำหนดเองของคุณ
@@ -561,11 +561,11 @@
 > [!NOTE]
 > คุณยังสามารถผสานรวมกับ Promptflow ผ่านทาง Azure ML Studio กระบวนการผสานรวมเดียวกันนี้สามารถใช้กับ Azure ML Studio ได้เช่นกัน
 
-#### สร้าง Azure AI Foundry Hub
+#### สร้าง Microsoft Foundry Hub
 
-คุณต้องสร้าง Hub ก่อนสร้างโปรเจกต์ Hub ทำหน้าที่เหมือน Resource Group ช่วยให้คุณจัดระเบียบและจัดการโปรเจกต์หลายรายการภายใน Azure AI Foundry
+คุณต้องสร้าง Hub ก่อนสร้างโปรเจกต์ Hub ทำหน้าที่เหมือน Resource Group ช่วยให้คุณจัดระเบียบและจัดการโปรเจกต์หลายรายการภายใน Microsoft Foundry
 
-1. เยี่ยมชม [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
+1. เยี่ยมชม [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
 
 1. เลือก **All hubs** จากแท็บทางซ้าย
 
@@ -585,7 +585,7 @@
 
 1. เลือก **ถัดไป**
 
-#### สร้างโปรเจกต์ Azure AI Foundry
+#### สร้างโปรเจกต์ Microsoft Foundry
 
 1. ในศูนย์ข้อมูลที่คุณสร้างขึ้น เลือก **โปรเจกต์ทั้งหมด** จากแท็บด้านซ้าย
 
@@ -625,9 +625,9 @@
 
 #### เพิ่มการเชื่อมต่อแบบกำหนดเอง
 
-1. เข้าไปที่ [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
+1. เข้าไปที่ [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
 
-1. ไปที่โปรเจกต์ Azure AI Foundry ที่คุณสร้างขึ้น
+1. ไปที่โปรเจกต์ Microsoft Foundry ที่คุณสร้างขึ้น
 
 1. ในโปรเจกต์ที่คุณสร้าง เลือก **การตั้งค่า** จากแท็บด้านซ้าย
 
@@ -653,9 +653,9 @@
 
 #### สร้าง Prompt flow
 
-คุณได้เพิ่มการเชื่อมต่อแบบกำหนดเองใน Azure AI Foundry แล้ว ตอนนี้ มาสร้าง Prompt flow โดยใช้ขั้นตอนดังต่อไปนี้ หลังจากนั้น คุณจะเชื่อมต่อ Prompt flow นี้กับการเชื่อมต่อแบบกำหนดเองเพื่อให้คุณสามารถใช้โมเดลที่ปรับแต่งได้ภายใน Prompt flow
+คุณได้เพิ่มการเชื่อมต่อแบบกำหนดเองใน Microsoft Foundry แล้ว ตอนนี้ มาสร้าง Prompt flow โดยใช้ขั้นตอนดังต่อไปนี้ หลังจากนั้น คุณจะเชื่อมต่อ Prompt flow นี้กับการเชื่อมต่อแบบกำหนดเองเพื่อให้คุณสามารถใช้โมเดลที่ปรับแต่งได้ภายใน Prompt flow
 
-1. ไปที่โปรเจกต์ Azure AI Foundry ที่คุณสร้างขึ้น
+1. ไปที่โปรเจกต์ Microsoft Foundry ที่คุณสร้างขึ้น
 
 1. เลือก **Prompt flow** จากแท็บด้านซ้าย
 
@@ -774,7 +774,7 @@
     ![วางโค้ด prompt flow](../../../../../../translated_images/th/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> สำหรับข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับการใช้ Prompt flow ใน Azure AI Foundry คุณสามารถดูได้ที่ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)
+> สำหรับข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับการใช้ Prompt flow ใน Microsoft Foundry คุณสามารถดูได้ที่ [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)
 
 1. เลือก **Chat input**, **Chat output** เพื่อเปิดใช้งานการสนทนากับโมเดลของคุณ
 

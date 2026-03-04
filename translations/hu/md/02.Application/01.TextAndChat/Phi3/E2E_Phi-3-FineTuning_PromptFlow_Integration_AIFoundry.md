@@ -1,17 +1,17 @@
-# Fine-tune és integráld az egyedi Phi-3 modelleket a Prompt flow-val az Azure AI Foundry-ban
+# Fine-tune és integráld az egyedi Phi-3 modelleket a Prompt flow-val az Microsoft Foundry-ban
 
-Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul. Bemutatja az egyedi Phi-3 modellek finomhangolásának, telepítésének és a Prompt flow-val való integrálásának folyamatait az Azure AI Foundry-ban.
+Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul. Bemutatja az egyedi Phi-3 modellek finomhangolásának, telepítésének és a Prompt flow-val való integrálásának folyamatait az Microsoft Foundry-ban.
 Az E2E mintától eltérően, amely a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" futtatásával helyileg dolgozott, ez a bemutató teljes egészében az Azure AI / ML Studioban végzett model finomhangolásra és integrációra összpontosít.
 
 ## Áttekintés
 
-Ebben az E2E példában megtanulod, hogyan kell finomhangolni a Phi-3 modellt és integrálni a Prompt flow-val az Azure AI Foundry-ban. Az Azure AI / ML Studio alkalmazásával felállítasz egy munkafolyamatot egyedi MI modellek telepítésére és használatára. Ez az E2E minta három forgatókönyvre van bontva:
+Ebben az E2E példában megtanulod, hogyan kell finomhangolni a Phi-3 modellt és integrálni a Prompt flow-val az Microsoft Foundry-ban. Az Azure AI / ML Studio alkalmazásával felállítasz egy munkafolyamatot egyedi MI modellek telepítésére és használatára. Ez az E2E minta három forgatókönyvre van bontva:
 
 **1. Forgatókönyv: Azure erőforrások beállítása és a finomhangolás előkészítése**
 
 **2. Forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban**
 
-**3. Forgatókönyv: Integráció a Prompt flow-val és beszélgetés az egyedi modelleddel az Azure AI Foundry-ban**
+**3. Forgatókönyv: Integráció a Prompt flow-val és beszélgetés az egyedi modelleddel az Microsoft Foundry-ban**
 
 Itt egy áttekintés erről az E2E példáról.
 
@@ -30,7 +30,7 @@ Itt egy áttekintés erről az E2E példáról.
     - [Phi-3 modell finomhangolása](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Finomhangolt Phi-3 modell telepítése](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[3. Forgatókönyv: Integráció a Prompt flow-val és beszélgetés az egyedi modelleddel az Azure AI Foundry-ban](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[3. Forgatókönyv: Integráció a Prompt flow-val és beszélgetés az egyedi modelleddel az Microsoft Foundry-ban](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Egyedi Phi-3 modell integrálása a Prompt flow-val](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Beszélgetés az egyedi Phi-3 modelleddel](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ Ebben a gyakorlatban a következőket teszi:
 > ![Forgalom beállítása.](../../../../../../translated_images/hu/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## 3. forgatókönyv: Integráció a Prompt flow-val és beszélgetés a saját modellen az Azure AI Foundry-ban
+## 3. forgatókönyv: Integráció a Prompt flow-val és beszélgetés a saját modellen az Microsoft Foundry-ban
 
 ### Egyedi Phi-3 modell integrálása a Prompt flow-val
 
@@ -552,8 +552,8 @@ Miután sikeresen telepítette a finomhangolt modellt, most integrálhatja azt a
 
 Ebben a gyakorlatban a következőket teszi:
 
-- Létrehoz egy Azure AI Foundry Hub-ot.
-- Létrehoz egy Azure AI Foundry projektet.
+- Létrehoz egy Microsoft Foundry Hub-ot.
+- Létrehoz egy Microsoft Foundry projektet.
 - Létrehoz egy Prompt flow-t.
 - Hozzáad egy egyedi kapcsolatot a finomhangolt Phi-3 modellhez.
 - Beállítja a Prompt flow-t, hogy tudjon beszélgetni az egyedi Phi-3 modellel.
@@ -561,11 +561,11 @@ Ebben a gyakorlatban a következőket teszi:
 > [!NOTE]
 > A Promptflow-val való integráció Azure ML Studio használatával is megvalósítható. A hasonló integrációs folyamat alkalmazható Azure ML Studio esetén is.
 
-#### Azure AI Foundry Hub létrehozása
+#### Microsoft Foundry Hub létrehozása
 
-A projekt létrehozása előtt létre kell hozni egy Hub-ot. A Hub olyan, mint egy erőforráscsoport, amely lehetővé teszi több projekt szervezését és kezelését az Azure AI Foundry rendszerében.
+A projekt létrehozása előtt létre kell hozni egy Hub-ot. A Hub olyan, mint egy erőforráscsoport, amely lehetővé teszi több projekt szervezését és kezelését az Microsoft Foundry rendszerében.
 
-1. Látogasson el az [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) oldalra.
+1. Látogasson el az [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) oldalra.
 
 1. Válassza a bal oldali menüben az **All hubs** lehetőséget.
 
@@ -585,7 +585,7 @@ A projekt létrehozása előtt létre kell hozni egy Hub-ot. A Hub olyan, mint e
 
 1. Válassza a **Tovább** lehetőséget.
 
-#### Azure AI Foundry projekt létrehozása
+#### Microsoft Foundry projekt létrehozása
 
 1. A létrehozott Hub-ban válassza az oldalsó fülön az **Összes projekt** lehetőséget.
 
@@ -625,9 +625,9 @@ Ahhoz, hogy a saját, finomhangolt Phi-3 modelljét integrálhassa a Prompt flow
 
 #### Az egyedi kapcsolat hozzáadása
 
-1. Látogassa meg az [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) oldalt.
+1. Látogassa meg az [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) oldalt.
 
-1. Navigáljon a létrehozott Azure AI Foundry projekthez.
+1. Navigáljon a létrehozott Microsoft Foundry projekthez.
 
 1. A létrehozott projekten belül válassza az oldalsó fülön a **Beállítások** lehetőséget.
 
@@ -653,9 +653,9 @@ Ahhoz, hogy a saját, finomhangolt Phi-3 modelljét integrálhassa a Prompt flow
 
 #### Prompt flow létrehozása
 
-Hozzáadta az egyedi kapcsolatot az Azure AI Foundry-ban. Most hozzunk létre egy Prompt flow-t az alábbi lépések követésével. Ezután összekapcsolja ezt a Prompt flow-t az egyedi kapcsolattal, így használhatja a finomhangolt modellt a Prompt flow-ban.
+Hozzáadta az egyedi kapcsolatot az Microsoft Foundry-ban. Most hozzunk létre egy Prompt flow-t az alábbi lépések követésével. Ezután összekapcsolja ezt a Prompt flow-t az egyedi kapcsolattal, így használhatja a finomhangolt modellt a Prompt flow-ban.
 
-1. Navigáljon a létrehozott Azure AI Foundry projekthez.
+1. Navigáljon a létrehozott Microsoft Foundry projekthez.
 
 1. Az oldalsó fülön válassza a **Prompt flow** lehetőséget.
 
@@ -774,7 +774,7 @@ Integrálni kell a finomhangolt Phi-3 modellt a Prompt flow-ba. Azonban az alap�
     ![Paste prompt flow code.](../../../../../../translated_images/hu/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Az Azure AI Foundry-ban a Prompt flow használatáról bővebb információt talál a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) oldalon.
+> Az Microsoft Foundry-ban a Prompt flow használatáról bővebb információt talál a [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) oldalon.
 
 1. Válassza a **Csevegő bemenet**, **Csevegő kimenet** lehetőségeket, hogy engedélyezze a modellel való csevegést.
 

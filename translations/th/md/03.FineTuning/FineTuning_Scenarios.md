@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/th/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**แพลตฟอร์ม** ประกอบด้วยเทคโนโลยีหลากหลาย เช่น Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito และ ONNX Runtime
+**แพลตฟอร์ม** ประกอบด้วยเทคโนโลยีหลากหลาย เช่น Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito และ ONNX Runtime
 
 **โครงสร้างพื้นฐาน** ประกอบด้วย CPU และ FPGA ซึ่งเป็นสิ่งจำเป็นสำหรับกระบวนการปรับแต่งแบบละเอียด ให้ผมแสดงไอคอนของเทคโนโลยีแต่ละตัวให้ดู
 

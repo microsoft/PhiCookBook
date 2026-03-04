@@ -1,12 +1,12 @@
-# **การใช้ Phi-3 ใน Azure AI Foundry**
+# **การใช้ Phi-3 ใน Microsoft Foundry**
 
-ด้วยการพัฒนา Generative AI เราหวังว่าจะใช้แพลตฟอร์มเดียวกันในการจัดการ LLM และ SLM ต่างๆ การรวมข้อมูลขององค์กร การปรับแต่ง/Fine-tuning หรือ RAG และการประเมินผลธุรกิจองค์กรหลังจากการรวม LLM และ SLM เพื่อให้แอปพลิเคชัน AI สร้างสรรค์สามารถนำไปใช้ได้อย่างชาญฉลาดมากขึ้น [Azure AI Foundry](https://ai.azure.com) คือแพลตฟอร์มแอปพลิเคชัน Generative AI ระดับองค์กร
+ด้วยการพัฒนา Generative AI เราหวังว่าจะใช้แพลตฟอร์มเดียวกันในการจัดการ LLM และ SLM ต่างๆ การรวมข้อมูลขององค์กร การปรับแต่ง/Fine-tuning หรือ RAG และการประเมินผลธุรกิจองค์กรหลังจากการรวม LLM และ SLM เพื่อให้แอปพลิเคชัน AI สร้างสรรค์สามารถนำไปใช้ได้อย่างชาญฉลาดมากขึ้น [Microsoft Foundry](https://ai.azure.com) คือแพลตฟอร์มแอปพลิเคชัน Generative AI ระดับองค์กร
 
 ![aistudo](../../../../translated_images/th/aifoundry_home.f28a8127c96c7d93.webp)
 
-ด้วย Azure AI Foundry คุณสามารถประเมินผลการตอบสนองของโมเดลภาษาใหญ่ (LLM) และจัดการส่วนประกอบของแอปพลิเคชัน prompt ด้วย prompt flow เพื่อประสิทธิภาพที่ดียิ่งขึ้น แพลตฟอร์มนี้ช่วยให้สามารถขยายขนาดได้ง่ายสำหรับการเปลี่ยนแนวคิดต้นแบบเป็นระบบผลิตจริง พร้อมทั้งสนับสนุนการตรวจสอบและปรับปรุงอย่างต่อเนื่องเพื่อความสำเร็จในระยะยาว
+ด้วย Microsoft Foundry คุณสามารถประเมินผลการตอบสนองของโมเดลภาษาใหญ่ (LLM) และจัดการส่วนประกอบของแอปพลิเคชัน prompt ด้วย prompt flow เพื่อประสิทธิภาพที่ดียิ่งขึ้น แพลตฟอร์มนี้ช่วยให้สามารถขยายขนาดได้ง่ายสำหรับการเปลี่ยนแนวคิดต้นแบบเป็นระบบผลิตจริง พร้อมทั้งสนับสนุนการตรวจสอบและปรับปรุงอย่างต่อเนื่องเพื่อความสำเร็จในระยะยาว
 
-เราสามารถติดตั้งโมเดล Phi-3 บน Azure AI Foundry ได้อย่างรวดเร็วผ่านขั้นตอนง่ายๆ จากนั้นใช้ Azure AI Foundry ในการทำงานที่เกี่ยวข้องกับ Phi-3 เช่น Playground/Chat, Fine-tuning, การประเมินผล และงานอื่นๆ
+เราสามารถติดตั้งโมเดล Phi-3 บน Microsoft Foundry ได้อย่างรวดเร็วผ่านขั้นตอนง่ายๆ จากนั้นใช้ Microsoft Foundry ในการทำงานที่เกี่ยวข้องกับ Phi-3 เช่น Playground/Chat, Fine-tuning, การประเมินผล และงานอื่นๆ
 
 ## **1. การเตรียมตัว**
 
@@ -14,21 +14,21 @@
 
 ## การสร้างด้วยตนเอง
 
-การสร้างโปรเจกต์และฮับใน Microsoft Azure AI Foundry เป็นวิธีที่ดีในการจัดระเบียบและจัดการงาน AI ของคุณ นี่คือคำแนะนำทีละขั้นตอนเพื่อเริ่มต้น:
+การสร้างโปรเจกต์และฮับใน Microsoft Foundry เป็นวิธีที่ดีในการจัดระเบียบและจัดการงาน AI ของคุณ นี่คือคำแนะนำทีละขั้นตอนเพื่อเริ่มต้น:
 
-### การสร้างโปรเจกต์ใน Azure AI Foundry
+### การสร้างโปรเจกต์ใน Microsoft Foundry
 
-1. **ไปที่ Azure AI Foundry**: ลงชื่อเข้าใช้พอร์ทัล Azure AI Foundry
+1. **ไปที่ Microsoft Foundry**: ลงชื่อเข้าใช้พอร์ทัล Microsoft Foundry
 2. **สร้างโปรเจกต์**:
-   - หากคุณอยู่ในโปรเจกต์ ให้เลือก "Azure AI Foundry" ที่มุมบนซ้ายของหน้าเพื่อกลับไปยังหน้าโฮม
+   - หากคุณอยู่ในโปรเจกต์ ให้เลือก "Microsoft Foundry" ที่มุมบนซ้ายของหน้าเพื่อกลับไปยังหน้าโฮม
    - เลือก "+ Create project"
    - กรอกชื่อโปรเจกต์
    - หากคุณมีฮับ ระบบจะเลือกฮับนั้นโดยอัตโนมัติ หากคุณมีสิทธิ์เข้าถึงฮับมากกว่าหนึ่งฮับ คุณสามารถเลือกฮับอื่นจากเมนูดรอปดาวน์ได้ หากต้องการสร้างฮับใหม่ ให้เลือก "Create new hub" และกรอกชื่อ
    - เลือก "Create"
 
-### การสร้างฮับใน Azure AI Foundry
+### การสร้างฮับใน Microsoft Foundry
 
-1. **ไปที่ Azure AI Foundry**: ลงชื่อเข้าใช้ด้วยบัญชี Azure ของคุณ
+1. **ไปที่ Microsoft Foundry**: ลงชื่อเข้าใช้ด้วยบัญชี Azure ของคุณ
 2. **สร้างฮับ**:
    - เลือกศูนย์จัดการ (Management center) จากเมนูด้านซ้าย
    - เลือก "All resources" จากนั้นคลิกลูกศรลงข้าง "+ New project" และเลือก "+ New hub"
@@ -41,9 +41,9 @@
 
 ใน AI Foundry สามารถมีโปรเจกต์ได้หลายโปรเจกต์ สร้างโปรเจกต์ใน AI Foundry เพื่อเตรียมพร้อม
 
-สร้าง Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+สร้าง Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. การติดตั้งโมเดล Phi ใน Azure AI Foundry**
+## **2. การติดตั้งโมเดล Phi ใน Microsoft Foundry**
 
 คลิกตัวเลือก Explore ของโปรเจกต์เพื่อเข้าสู่ Model Catalog และเลือก Phi-3
 
@@ -55,16 +55,16 @@
 >
 > คุณสามารถเลือกกำลังประมวลผลเมื่อทำการติดตั้ง
 
-## **3. Playground Chat Phi ใน Azure AI Foundry**
+## **3. Playground Chat Phi ใน Microsoft Foundry**
 
-ไปที่หน้าการติดตั้ง เลือก Playground และสนทนากับ Phi-3 ของ Azure AI Foundry
+ไปที่หน้าการติดตั้ง เลือก Playground และสนทนากับ Phi-3 ของ Microsoft Foundry
 
-## **4. การติดตั้งโมเดลจาก Azure AI Foundry**
+## **4. การติดตั้งโมเดลจาก Microsoft Foundry**
 
 ในการติดตั้งโมเดลจาก Azure Model Catalog คุณสามารถทำตามขั้นตอนดังนี้:
 
-- ลงชื่อเข้าใช้ Azure AI Foundry
-- เลือกโมเดลที่ต้องการติดตั้งจากโมเดลคาตาล็อกของ Azure AI Foundry
+- ลงชื่อเข้าใช้ Microsoft Foundry
+- เลือกโมเดลที่ต้องการติดตั้งจากโมเดลคาตาล็อกของ Microsoft Foundry
 - ในหน้ารายละเอียดของโมเดล เลือก Deploy แล้วเลือก Serverless API พร้อม Azure AI Content Safety
 - เลือกโปรเจกต์ที่ต้องการติดตั้งโมเดล ในการใช้ Serverless API พื้นที่ทำงานของคุณต้องอยู่ในภูมิภาค East US 2 หรือ Sweden Central คุณสามารถตั้งชื่อ Deployment ได้ตามต้องการ
 - ในตัวช่วยติดตั้ง เลือก Pricing and terms เพื่อศึกษาราคาค่าบริการและเงื่อนไขการใช้งาน
@@ -76,7 +76,7 @@
 > [!NOTE]
 > โปรดทราบว่าบัญชีของคุณต้องมีสิทธิ์บทบาท Azure AI Developer บน Resource Group เพื่อทำขั้นตอนเหล่านี้
 
-## **5. การใช้ Phi API ใน Azure AI Foundry**
+## **5. การใช้ Phi API ใน Microsoft Foundry**
 
 คุณสามารถเข้าถึง https://{Your project name}.region.inference.ml.azure.com/swagger.json ผ่าน Postman ด้วยคำสั่ง GET และใช้ Key เพื่อเรียนรู้เกี่ยวกับอินเทอร์เฟซที่มีให้
 

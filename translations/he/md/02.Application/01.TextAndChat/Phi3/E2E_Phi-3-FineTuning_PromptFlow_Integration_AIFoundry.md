@@ -1,17 +1,17 @@
-# כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt flow ב- Azure AI Foundry
+# כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt flow ב- Microsoft Foundry
 
-דוגמת הקצה-לקצה (E2E) הזו מבוססת על המדריך "[כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt Flow ב- Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" מקהילת הטכנולוגיה של מיקרוסופט. היא מציגה את התהליכים של כוונון, פריסה, ושילוב של מודלים מותאמים אישית של Phi-3 עם Prompt flow ב- Azure AI Foundry.
+דוגמת הקצה-לקצה (E2E) הזו מבוססת על המדריך "[כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt Flow ב- Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" מקהילת הטכנולוגיה של מיקרוסופט. היא מציגה את התהליכים של כוונון, פריסה, ושילוב של מודלים מותאמים אישית של Phi-3 עם Prompt flow ב- Microsoft Foundry.
 בניגוד לדוגמת הקצה-לקצה, "[כוונון ושילוב דגמי Phi-3 מותאמים אישית עם Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", שכללה הרצת קוד באופן מקומי, הדרכה זו מתמקדת כולו בכוונון ושילוב המודל שלך בתוך Azure AI / ML Studio.
 
 ## סקירה כללית
 
-בדוגמת הקצה-לקצה הזו תלמד כיצד לכוונן את מודל Phi-3 ולשלב אותו עם Prompt flow ב- Azure AI Foundry. באמצעות Azure AI / ML Studio, תיצור זרימת עבודה לפריסה ושימוש במודלים מותאמים אישית של AI. דוגמת הקצה-לקצה הזו מחולקת לשלושה תרחישים:
+בדוגמת הקצה-לקצה הזו תלמד כיצד לכוונן את מודל Phi-3 ולשלב אותו עם Prompt flow ב- Microsoft Foundry. באמצעות Azure AI / ML Studio, תיצור זרימת עבודה לפריסה ושימוש במודלים מותאמים אישית של AI. דוגמת הקצה-לקצה הזו מחולקת לשלושה תרחישים:
 
 **תרחיש 1: הקמת משאבי Azure והכנה לכוונון**
 
 **תרחיש 2: כוונון מודל Phi-3 ופריסה ב- Azure Machine Learning Studio**
 
-**תרחיש 3: שילוב עם Prompt flow וצ'אט עם המודל המותאם שלך ב- Azure AI Foundry**
+**תרחיש 3: שילוב עם Prompt flow וצ'אט עם המודל המותאם שלך ב- Microsoft Foundry**
 
 להלן סקירה של דוגמת הקצה-לקצה הזו.
 
@@ -30,7 +30,7 @@
     - [כוונון מודל Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [פריסת מודל Phi-3 המכוונן](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[תרחיש 3: שילוב עם Prompt flow וצ'אט עם המודל המותאם שלך ב- Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[תרחיש 3: שילוב עם Prompt flow וצ'אט עם המודל המותאם שלך ב- Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [שילוב מודל Phi-3 מותאם עם Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [צ'אט עם מודל Phi-3 מותאם שלך](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![Set traffic.](../../../../../../translated_images/he/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## תרחיש 3: אינטגרציה עם Prompt flow ויצירת שיחה עם הדגם המותאם שלך ב-Azure AI Foundry
+## תרחיש 3: אינטגרציה עם Prompt flow ויצירת שיחה עם הדגם המותאם שלך ב-Microsoft Foundry
 
 ### אינטגרציה של דגם Phi-3 מותאם עם Prompt flow
 
@@ -552,8 +552,8 @@
 
 בתרגיל זה תעשה את הפעולות הבאות:
 
-- צור Azure AI Foundry Hub.
-- צור פרויקט ב-Azure AI Foundry.
+- צור Microsoft Foundry Hub.
+- צור פרויקט ב-Microsoft Foundry.
 - צור Prompt flow.
 - הוסף חיבור מותאם לדגם Phi-3 המכוון.
 - הגדר את Prompt flow לשיחה עם דגם Phi-3 המותאם שלך.
@@ -561,11 +561,11 @@
 > [!NOTE]
 > ניתן גם לשלב עם Promptflow באמצעות Azure ML Studio. אותו תהליך אינטגרציה תקף ל-Azure ML Studio.
 
-#### צור Azure AI Foundry Hub
+#### צור Microsoft Foundry Hub
 
-יש ליצור Hub לפני יצירת הפרויקט. ה-Hub פועל כמו קבוצת משאבים, ומאפשר לארגן ולנהל מספר פרויקטים בתוך Azure AI Foundry.
+יש ליצור Hub לפני יצירת הפרויקט. ה-Hub פועל כמו קבוצת משאבים, ומאפשר לארגן ולנהל מספר פרויקטים בתוך Microsoft Foundry.
 
-1. עבור ל-[Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. עבור ל-[Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. בחר **All hubs** בטאב הצדדי השמאלי.
 
@@ -585,7 +585,7 @@
 
 1. בחר **הבא**.
 
-#### צור פרויקט Azure AI Foundry
+#### צור פרויקט Microsoft Foundry
 
 1. במרכז שיצרת, בחר **כל הפרויקטים** מהכרטיסייה בצדו השמאלי.
 
@@ -625,9 +625,9 @@
 
 #### הוסף את החיבור המותאם אישית
 
-1. בקר ב-[Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. בקר ב-[Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. עבור לפרויקט Azure AI Foundry שיצרת.
+1. עבור לפרויקט Microsoft Foundry שיצרת.
 
 1. בפרויקט שיצרת, בחר **הגדרות** מהכרטיסייה בצדו השמאלי.
 
@@ -653,9 +653,9 @@
 
 #### צור Prompt flow
 
-הוספת חיבור מותאם אישית ב-Azure AI Foundry. כעת, בוא ניצור Prompt flow באמצעות השלבים הבאים. לאחר מכן, תחבר את ה-Prompt flow הזה לחיבור המותאם אישית כדי שתוכל להשתמש במודל המותאם במסגרת ה-Prompt flow.
+הוספת חיבור מותאם אישית ב-Microsoft Foundry. כעת, בוא ניצור Prompt flow באמצעות השלבים הבאים. לאחר מכן, תחבר את ה-Prompt flow הזה לחיבור המותאם אישית כדי שתוכל להשתמש במודל המותאם במסגרת ה-Prompt flow.
 
-1. עבור לפרויקט Azure AI Foundry שיצרת.
+1. עבור לפרויקט Microsoft Foundry שיצרת.
 
 1. בחר **Prompt flow** מהכרטיסייה בצדו השמאלי.
 
@@ -774,7 +774,7 @@
     ![Paste prompt flow code.](../../../../../../translated_images/he/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> לקבלת מידע מפורט יותר על השימוש ב-Prompt flow ב-Azure AI Foundry, ניתן לעיין ב-[Prompt flow ב-Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> לקבלת מידע מפורט יותר על השימוש ב-Prompt flow ב-Microsoft Foundry, ניתן לעיין ב-[Prompt flow ב-Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. בחר **קלט שיחה**, **פלט שיחה** כדי לאפשר שיחה עם המודל שלך.
 

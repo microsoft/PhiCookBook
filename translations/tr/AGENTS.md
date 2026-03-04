@@ -7,7 +7,7 @@ PhiCookBook, Microsoft'un Phi ailesine ait Küçük Dil Modelleri (SLM) ile çal
 **Anahtar Teknolojiler:**
 - **Diller:** Python, C#/.NET, JavaScript/Node.js
 - **Çerçeveler:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformlar:** Azure AI Foundry, GitHub Modelleri, Hugging Face, Ollama
+- **Platformlar:** Microsoft Foundry, GitHub Modelleri, Hugging Face, Ollama
 - **Model Türleri:** Phi-3, Phi-3.5, Phi-4 (metin, görsel, çok modlu, akıl yürütme varyantları)
 
 **Depo Yapısı:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Giriş kılavuzları, ortam kurulumu, platform kılavuzları
 - **02.Application/** - Türüne göre düzenlenmiş uygulama örnekleri (Metin, Kod, Görsel, Ses vb.)
-- **02.QuickStart/** - Azure AI Foundry ve GitHub Modelleri için hızlı başlangıç kılavuzları
+- **02.QuickStart/** - Microsoft Foundry ve GitHub Modelleri için hızlı başlangıç kılavuzları
 - **03.FineTuning/** - İnce ayar belgeleri ve eğitimler
 - **04.HOL/** - Uygulamalı laboratuvarlar (.NET örneklerini içerir)
 
@@ -241,7 +241,7 @@ PR'ler, GitHub iş akışları tarafından otomatik olarak doğrulanır:
 
 ### Platforma Özgü Notlar
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Azure aboneliği ve API anahtarları gerektirir
 - Bkz. `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ PR'ler, GitHub iş akışları tarafından otomatik olarak doğrulanır:
 
 ### Yardım Alma
 
-- **Discord:** Azure AI Foundry Community Discord'a katılın
+- **Discord:** Microsoft Foundry Community Discord'a katılın
 - **GitHub Issues:** Depodaki hataları ve sorunları bildirin
 - **GitHub Discussions:** Sorular sorun ve bilgi paylaşın
 

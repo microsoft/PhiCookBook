@@ -12,7 +12,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 A Phi egy nyílt forráskódú MI modellek sorozata, amelyet a Microsoft fejlesztett ki.
 
@@ -71,7 +71,7 @@ Kövesse az alábbi lépéseket az erőforrás használatának megkezdéséhez:
 - Phi különböző környezetekben való használata
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub Modellek](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry Model Katalógus](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry Model Katalógus](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Kövesse az alábbi lépéseket az erőforrás használatának megkezdéséhez:
 
 -  Phi értékelése
     - [Felelős MI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry értékeléshez](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry értékeléshez](./md/01.Introduction/05/AIFoundry.md)
     - [Promptflow használata értékelésre](./md/01.Introduction/05/Promptflow.md)
  
 - RAG Azure AI Kereséssel
@@ -117,8 +117,8 @@ Kövesse az alábbi lépéseket az erőforrás használatának megkezdéséhez:
       - [WinUI3 alkalmazás Phi-3 mini-4k-instruct-onnx-szal](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Többmodellű AI által támogatott jegyzetalkalmazás mintapéldája](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Egyéni Phi-3 modellek finomhangolása és integrálása Prompt flow-val](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Egyéni Phi-3 modellek finomhangolása és integrálása Prompt flow-val az Azure AI Foundryban](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Fiomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundryban, különös tekintettel a Microsoft felelős AI elveire](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Egyéni Phi-3 modellek finomhangolása és integrálása Prompt flow-val az Microsoft Foundryban](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Fiomhangolt Phi-3 / Phi-3.5 modell értékelése az Microsoft Foundryban, különös tekintettel a Microsoft felelős AI elveire](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct nyelvi előrejelzési minta (kínai/angol)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Windows GPU használata Prompt flow megoldás készítésére Phi-3.5-Instruct ONNX-szal](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Kövesse az alábbi lépéseket az erőforrás használatának megkezdéséhez:
       - [📓] [Phi-4-mini-érvelés finomhangolása Microsoft Olive-dzsel](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-érvelés finomhangolása Apple MLX-szel](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-érvelés GitHub modellekkel](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-érvelés Azure AI Foundry modellekkel](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-érvelés Microsoft Foundry modellekkel](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Bemutatók
       - [Phi-4-mini demo a Hugging Face Spaces-en](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demo a Hugging Face Spaces-en](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Kövesse az alábbi lépéseket az erőforrás használatának megkezdéséhez:
   - [Phi-3 finomhangolása Azure Machine Learning Service-szel](./md/03.FineTuning/Introduce_AzureML.md)
   - [Phi-3 finomhangolása Lora-val](./md/03.FineTuning/FineTuning_Lora.md)
   - [Phi-3 finomhangolása QLora-val](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Phi-3 finomhangolása Azure AI Foundry-val](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Phi-3 finomhangolása Microsoft Foundry-val](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Phi-3 finomhangolása Azure ML CLI/SDK-val](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Finomhangolás Microsoft Olive segítségével](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Olive kézzel fogható laboratórium](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Kövesse az alábbi lépéseket az erőforrás használatának megkezdéséhez:
 
 ## Phi modellek használata
 
-### Phi az Azure AI Foundry-ban
+### Phi az Microsoft Foundry-ban
 
-Megtanulhatod, hogyan kell használni a Microsoft Phi-t és hogyan lehet E2E megoldásokat építeni különböző hardvereszközeiden. Ahhoz, hogy megtapasztald Phi-t, kezdj el játszani a modellekkel, és testre szabhatod Phi-t a saját eseteidhez a [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) segítségével. További információkat találsz a [Getting Started with Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) dokumentumban.
+Megtanulhatod, hogyan kell használni a Microsoft Phi-t és hogyan lehet E2E megoldásokat építeni különböző hardvereszközeiden. Ahhoz, hogy megtapasztald Phi-t, kezdj el játszani a modellekkel, és testre szabhatod Phi-t a saját eseteidhez a [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) segítségével. További információkat találsz a [Getting Started with Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) dokumentumban.
 
 **Játszótér**  
 Minden modellhez tartozik egy dedikált játszótér a modell tesztelésére: [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ A Microsoft felelős AI-hoz való megközelítése az AI elveinken alapul: mélt
 
 A nagy léptékű természetes nyelvi, képi és hangmodellek - mint amilyenek ebben a mintában is használatosak - potenciálisan olyan viselkedést tanúsíthatnak, ami méltánytalan, megbízhatatlan vagy sértő lehet, ami károkat okozhat. Kérjük, tekintsd meg az [Azure OpenAI szolgáltatás transzparencia jegyzetét](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), hogy tájékozódj a kockázatokról és korlátokról.
 
-Az ajánlott megközelítés ezen kockázatok csökkentésére, hogy építs be egy biztonsági rendszert az architektúrádba, amely képes felismerni és megakadályozni a káros viselkedést. Az [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) egy független védelmi réteget nyújt, amely képes felismerni a káros, felhasználó vagy AI által generált tartalmakat alkalmazásokban és szolgáltatásokban. Az Azure AI Content Safety tartalmaz szöveg- és képi API-kat, amelyek lehetővé teszik káros anyagok észlelését. Az Azure AI Foundry-n belül a Content Safety szolgáltatás lehetővé teszi, hogy megtekintsd, felfedezd és kipróbáld a mintakódokat a különböző modalitások káros tartalmainak felismerésére. A következő [gyorstalpaló dokumentáció](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) végigvezet a szolgáltatásnak tett kérelmek elkészítésén.
+Az ajánlott megközelítés ezen kockázatok csökkentésére, hogy építs be egy biztonsági rendszert az architektúrádba, amely képes felismerni és megakadályozni a káros viselkedést. Az [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) egy független védelmi réteget nyújt, amely képes felismerni a káros, felhasználó vagy AI által generált tartalmakat alkalmazásokban és szolgáltatásokban. Az Azure AI Content Safety tartalmaz szöveg- és képi API-kat, amelyek lehetővé teszik káros anyagok észlelését. Az Microsoft Foundry-n belül a Content Safety szolgáltatás lehetővé teszi, hogy megtekintsd, felfedezd és kipróbáld a mintakódokat a különböző modalitások káros tartalmainak felismerésére. A következő [gyorstalpaló dokumentáció](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) végigvezet a szolgáltatásnak tett kérelmek elkészítésén.
 Egy másik szempont, amit figyelembe kell venni, az az alkalmazás általános teljesítménye. Többmódusú és többmodelles alkalmazások esetén a teljesítmény alatt azt értjük, hogy a rendszer úgy működik, ahogyan Ön és felhasználói elvárják, beleértve azt is, hogy nem generál káros kimeneteket. Fontos az alkalmazás általános teljesítményének értékelése a [Teljesítmény és Minőség, valamint Kockázat és Biztonság értékelők](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) segítségével. Lehetősége van továbbá egyedi értékelők létrehozására és használatára is a [saját értékelők](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) révén.
 
-Fejlesztési környezetében az [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) segítségével értékelheti AI alkalmazását. Legyen szó tesztadat-készletről vagy célpontokról, generatív AI alkalmazásának generációi mennyiségileg mérhetők beépített vagy egyedi értékelőkkel. Ha el szeretne kezdeni dolgozni az azure ai evaluation sdk-val rendszere értékeléséhez, követheti a [gyorsindító útmutatót](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Értékelés lefuttatása után [az eredményeket az Azure AI Foundry-ban megjelenítheti](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+Fejlesztési környezetében az [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) segítségével értékelheti AI alkalmazását. Legyen szó tesztadat-készletről vagy célpontokról, generatív AI alkalmazásának generációi mennyiségileg mérhetők beépített vagy egyedi értékelőkkel. Ha el szeretne kezdeni dolgozni az azure ai evaluation sdk-val rendszere értékeléséhez, követheti a [gyorsindító útmutatót](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Értékelés lefuttatása után [az eredményeket az Microsoft Foundry-ban megjelenítheti](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## Védjegyek
 
@@ -303,11 +303,11 @@ A Microsoft védjegyek vagy logók módosított változatokban történő haszn�
 
 Ha elakad vagy kérdése van az AI alkalmazások fejlesztésével kapcsolatban, csatlakozzon:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Ha termékhez kapcsolódó visszajelzése vagy hibája van fejlesztés közben, látogassa meg:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

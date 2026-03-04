@@ -2,7 +2,7 @@
 
 ![MS Hizmetleri ile İnce Ayar](../../../../translated_images/tr/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platform** Azure AI Foundry, Azure Machine Learning, AI Araçları, Kaito ve ONNX Runtime gibi çeşitli teknolojileri içerir.
+**Platform** Microsoft Foundry, Azure Machine Learning, AI Araçları, Kaito ve ONNX Runtime gibi çeşitli teknolojileri içerir.
 
 **Altyapı** İnce ayar süreci için gerekli olan CPU ve FPGA'yı kapsar. Her bir teknolojinin simgelerini göstereyim.
 

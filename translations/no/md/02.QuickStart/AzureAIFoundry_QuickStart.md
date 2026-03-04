@@ -1,12 +1,12 @@
-# **Bruke Phi-3 i Azure AI Foundry**
+# **Bruke Phi-3 i Microsoft Foundry**
 
-Med utviklingen av Generativ AI håper vi å bruke en samlet plattform for å administrere ulike LLM og SLM, integrering av bedriftsdata, finjustering/RAG-operasjoner, og evaluering av forskjellige bedriftsvirksomheter etter integrering av LLM og SLM, slik at generativ AI kan implementeres bedre i smarte applikasjoner. [Azure AI Foundry](https://ai.azure.com) er en generativ AI-applikasjonsplattform på bedriftsnivå.
+Med utviklingen av Generativ AI håper vi å bruke en samlet plattform for å administrere ulike LLM og SLM, integrering av bedriftsdata, finjustering/RAG-operasjoner, og evaluering av forskjellige bedriftsvirksomheter etter integrering av LLM og SLM, slik at generativ AI kan implementeres bedre i smarte applikasjoner. [Microsoft Foundry](https://ai.azure.com) er en generativ AI-applikasjonsplattform på bedriftsnivå.
 
 ![aistudo](../../../../translated_images/no/aifoundry_home.f28a8127c96c7d93.webp)
 
-Med Azure AI Foundry kan du evaluere svar fra store språkmodeller (LLM) og orkestrere komponenter for prompt-applikasjoner med prompt flow for bedre ytelse. Plattformen legger til rette for skalerbarhet slik at du enkelt kan gå fra proof of concept til full produksjon. Kontinuerlig overvåking og forbedring støtter langsiktig suksess.
+Med Microsoft Foundry kan du evaluere svar fra store språkmodeller (LLM) og orkestrere komponenter for prompt-applikasjoner med prompt flow for bedre ytelse. Plattformen legger til rette for skalerbarhet slik at du enkelt kan gå fra proof of concept til full produksjon. Kontinuerlig overvåking og forbedring støtter langsiktig suksess.
 
-Vi kan raskt distribuere Phi-3-modellen på Azure AI Foundry gjennom enkle steg, og deretter bruke Azure AI Foundry til å fullføre Phi-3-relatert Playground/Chat, finjustering, evaluering og annet relatert arbeid.
+Vi kan raskt distribuere Phi-3-modellen på Microsoft Foundry gjennom enkle steg, og deretter bruke Microsoft Foundry til å fullføre Phi-3-relatert Playground/Chat, finjustering, evaluering og annet relatert arbeid.
 
 ## **1. Forberedelser**
 
@@ -14,21 +14,21 @@ Hvis du allerede har [Azure Developer CLI](https://learn.microsoft.com/azure/dev
 
 ## Manuell opprettelse
 
-Å opprette et Microsoft Azure AI Foundry-prosjekt og hub er en flott måte å organisere og administrere AI-arbeidet ditt på. Her er en trinnvis veiledning for å komme i gang:
+Å opprette et Microsoft Foundry-prosjekt og hub er en flott måte å organisere og administrere AI-arbeidet ditt på. Her er en trinnvis veiledning for å komme i gang:
 
-### Opprette et prosjekt i Azure AI Foundry
+### Opprette et prosjekt i Microsoft Foundry
 
-1. **Gå til Azure AI Foundry**: Logg inn på Azure AI Foundry-portalen.
+1. **Gå til Microsoft Foundry**: Logg inn på Microsoft Foundry-portalen.
 2. **Opprett et prosjekt**:
-   - Hvis du allerede er inne i et prosjekt, velg "Azure AI Foundry" øverst til venstre på siden for å gå til startsiden.
+   - Hvis du allerede er inne i et prosjekt, velg "Microsoft Foundry" øverst til venstre på siden for å gå til startsiden.
    - Velg "+ Create project".
    - Skriv inn et navn for prosjektet.
    - Hvis du har en hub, vil denne være valgt som standard. Hvis du har tilgang til flere hubs, kan du velge en annen fra nedtrekksmenyen. Hvis du vil opprette en ny hub, velg "Create new hub" og oppgi et navn.
    - Velg "Create".
 
-### Opprette en hub i Azure AI Foundry
+### Opprette en hub i Microsoft Foundry
 
-1. **Gå til Azure AI Foundry**: Logg inn med Azure-kontoen din.
+1. **Gå til Microsoft Foundry**: Logg inn med Azure-kontoen din.
 2. **Opprett en hub**:
    - Velg Management center fra venstremenyen.
    - Velg "All resources", deretter pilen ved siden av "+ New project" og velg "+ New hub".
@@ -41,10 +41,10 @@ Etter vellykket opprettelse kan du få tilgang til studioet du har laget via [ai
 
 Det kan være flere prosjekter i én AI Foundry. Opprett et prosjekt i AI Foundry som forberedelse.
 
-Opprett Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Opprett Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
 
-## **2. Distribuer en Phi-modell i Azure AI Foundry**
+## **2. Distribuer en Phi-modell i Microsoft Foundry**
 
 Klikk på Explore-alternativet for prosjektet for å gå inn i Model Catalog og velg Phi-3
 
@@ -56,16 +56,16 @@ Klikk 'Deploy' for å distribuere Phi-3-mini-4k-instruct-modellen
 >
 > Du kan velge datakraft ved distribusjon
 
-## **3. Playground Chat Phi i Azure AI Foundry**
+## **3. Playground Chat Phi i Microsoft Foundry**
 
-Gå til distribusjonssiden, velg Playground, og chat med Phi-3 i Azure AI Foundry
+Gå til distribusjonssiden, velg Playground, og chat med Phi-3 i Microsoft Foundry
 
-## **4. Distribuere modellen fra Azure AI Foundry**
+## **4. Distribuere modellen fra Microsoft Foundry**
 
 For å distribuere en modell fra Azure Model Catalog kan du følge disse stegene:
 
-- Logg inn på Azure AI Foundry.
-- Velg modellen du vil distribuere fra Azure AI Foundry sin modellkatalog.
+- Logg inn på Microsoft Foundry.
+- Velg modellen du vil distribuere fra Microsoft Foundry sin modellkatalog.
 - På modellens detaljside velger du Deploy og deretter Serverless API med Azure AI Content Safety.
 - Velg prosjektet der du vil distribuere modellene dine. For å bruke Serverless API-tilbudet må arbeidsområdet ditt tilhøre regionene East US 2 eller Sweden Central. Du kan tilpasse navnet på distribusjonen.
 - I distribusjonsveiviseren velger du Pricing and terms for å lære om priser og bruksvilkår.
@@ -77,7 +77,7 @@ For å distribuere en modell fra Azure Model Catalog kan du følge disse stegene
 > [!NOTE]
 > Vær oppmerksom på at kontoen din må ha Azure AI Developer-rolle tillatelser på Resource Group for å utføre disse stegene.
 
-## **5. Bruke Phi API i Azure AI Foundry**
+## **5. Bruke Phi API i Microsoft Foundry**
 
 Du kan få tilgang til https://{Your project name}.region.inference.ml.azure.com/swagger.json via Postman GET og kombinere det med Key for å lære om de tilgjengelige grensesnittene
 

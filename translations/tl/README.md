@@ -12,7 +12,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Ang Phi ay isang serye ng open source AI models na binuo ng Microsoft.
 
@@ -71,7 +71,7 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
 - Pag-gamit ng Phi sa iba't ibang kapaligiran
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
 
 -  Pagsusuri ng Phi
     - [Responsableng AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry para sa Pagsusuri](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry para sa Pagsusuri](./md/01.Introduction/05/AIFoundry.md)
     - [Paggamit ng Promptflow para sa Pagsusuri](./md/01.Introduction/05/Promptflow.md)
  
 - RAG gamit ang Azure AI Search
@@ -117,8 +117,8 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
       - [WinUI3 App na may Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Multi Model AI Powered Notes App Sample](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Fine-tune at Integrate ang custom na Phi-3 models gamit ang Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Fine-tune at Integrate ang custom na Phi-3 models gamit ang Prompt flow sa Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [I-evaluate ang Fine-tuned Phi-3 / Phi-3.5 Model sa Azure AI Foundry na nakatuon sa Responsible AI Principles ng Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Fine-tune at Integrate ang custom na Phi-3 models gamit ang Prompt flow sa Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [I-evaluate ang Fine-tuned Phi-3 / Phi-3.5 Model sa Microsoft Foundry na nakatuon sa Responsible AI Principles ng Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct language prediction sample (Intsik/Ingles)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Paggamit ng Windows GPU para gumawa ng Prompt flow solution gamit ang Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
       - [📓] [Fine-tuning ng Phi-4-mini-reasoning gamit ang Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Fine-tuning ng Phi-4-mini-reasoning gamit ang Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning gamit ang GitHub Models](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning gamit ang Azure AI Foundry Models](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning gamit ang Microsoft Foundry Models](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demos
       - [Phi-4-mini demos na naka-host sa Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demos na naka-host sa Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
   - [Fine-tuning Phi-3 gamit ang Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Fine-tuning Phi-3 gamit ang Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Fine-tuning Phi-3 gamit ang QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Fine-tuning Phi-3 gamit ang Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Fine-tuning Phi-3 gamit ang Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Fine-tuning Phi-3 gamit ang Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Fine-tuning gamit ang Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Fine-tuning gamit ang Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Sundin ang mga hakbang na ito upang makapagsimula gamit ang mga resources na ito
 
 ## Paggamit ng Phi Models
 
-### Phi sa Azure AI Foundry
+### Phi sa Microsoft Foundry
 
-Maaari mong matutunan kung paano gamitin ang Microsoft Phi at kung paano bumuo ng E2E na mga solusyon sa iyong iba't ibang hardware na mga device. Upang maranasan ang Phi para sa iyong sarili, magsimula sa pamamagitan ng paglalaro sa mga modelo at pag-customize ng Phi para sa iyong mga senaryo gamit ang [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) maaari kang matuto nang higit pa sa Pagsisimula gamit ang [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Maaari mong matutunan kung paano gamitin ang Microsoft Phi at kung paano bumuo ng E2E na mga solusyon sa iyong iba't ibang hardware na mga device. Upang maranasan ang Phi para sa iyong sarili, magsimula sa pamamagitan ng paglalaro sa mga modelo at pag-customize ng Phi para sa iyong mga senaryo gamit ang [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) maaari kang matuto nang higit pa sa Pagsisimula gamit ang [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**
 Bawat modelo ay mayroong nakalaang playground upang subukan ang modelo [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Ang pananaw ng Microsoft sa responsableng AI ay nakaugat sa aming mga prinsipyo 
 
 Ang malalaking modelo ng natural na wika, imahe, at pagsasalita - tulad ng mga ginamit sa sample na ito - ay maaaring kumilos sa mga paraan na hindi patas, hindi maaasahan, o nakakasakit, na nagdudulot ng pinsala. Mangyaring sumangguni sa [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) upang magkaroon ng kaalaman tungkol sa mga panganib at limitasyon.
 
-Ang inirerekomendang paraan upang mabawasan ang mga panganib na ito ay magsama ng isang sistema ng kaligtasan sa iyong arkitektura na maaaring makakita at pumigil sa mapanirang pag-uugali. Nagbibigay ang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ng isang independiyenteng layer ng proteksyon, na kayang matukoy ang mapanirang nilalamang ginawa ng user at AI sa mga aplikasyon at serbisyo. Kasama sa Azure AI Content Safety ang mga text at image API na nagpapahintulot sa iyo na tuklasin ang mga materyal na mapanira. Sa loob ng Azure AI Foundry, pinapayagan ka ng serbisyo ng Content Safety na makita, tuklasin, at subukan ang sample na code para sa pagtuklas ng mapanirang nilalaman sa iba't ibang modality. Ang sumusunod na [quickstart dokumentasyon](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ay gagabay sa iyo sa paggawa ng mga kahilingan sa serbisyo.
+Ang inirerekomendang paraan upang mabawasan ang mga panganib na ito ay magsama ng isang sistema ng kaligtasan sa iyong arkitektura na maaaring makakita at pumigil sa mapanirang pag-uugali. Nagbibigay ang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ng isang independiyenteng layer ng proteksyon, na kayang matukoy ang mapanirang nilalamang ginawa ng user at AI sa mga aplikasyon at serbisyo. Kasama sa Azure AI Content Safety ang mga text at image API na nagpapahintulot sa iyo na tuklasin ang mga materyal na mapanira. Sa loob ng Microsoft Foundry, pinapayagan ka ng serbisyo ng Content Safety na makita, tuklasin, at subukan ang sample na code para sa pagtuklas ng mapanirang nilalaman sa iba't ibang modality. Ang sumusunod na [quickstart dokumentasyon](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ay gagabay sa iyo sa paggawa ng mga kahilingan sa serbisyo.
 Isa pang aspeto na dapat isaalang-alang ay ang pangkalahatang performance ng aplikasyon. Sa mga multi-modal at multi-model na aplikasyon, itinuturing naming ang performance ay nangangahulugan na ang sistema ay gumagana ayon sa inaasahan mo at ng iyong mga gumagamit, kabilang ang hindi pagbuo ng mga mapanganib na output. Mahalaga na suriin ang performance ng iyong pangkalahatang aplikasyon gamit ang [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). May kakayahan ka rin na gumawa at suriin gamit ang [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Maaari mong suriin ang iyong AI na aplikasyon sa iyong development environment gamit ang [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Batay sa isang test dataset o target, ang mga generative AI application generations mo ay sinusukat nang kwantitatibo gamit ang mga built-in evaluators o custom evaluators na iyong pinili. Upang makapagsimula gamit ang azure ai evaluation sdk upang suriin ang iyong sistema, maaari mong sundan ang [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kapag naisagawa mo na ang evaluation run, maaari mong [ipakita ang mga resulta sa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+Maaari mong suriin ang iyong AI na aplikasyon sa iyong development environment gamit ang [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Batay sa isang test dataset o target, ang mga generative AI application generations mo ay sinusukat nang kwantitatibo gamit ang mga built-in evaluators o custom evaluators na iyong pinili. Upang makapagsimula gamit ang azure ai evaluation sdk upang suriin ang iyong sistema, maaari mong sundan ang [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kapag naisagawa mo na ang evaluation run, maaari mong [ipakita ang mga resulta sa Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## Mga Trademark
 
@@ -303,11 +303,11 @@ Ang paggamit ng Microsoft trademarks o logo sa mga binagong bersyon ng proyekton
 
 Kung ikaw ay natigil o may mga tanong tungkol sa paggawa ng mga AI app, sumali sa:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Kung mayroon kang feedback sa produkto o mga error habang nagbuo, bisitahin ang:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

@@ -1,17 +1,17 @@
-# **Azure AI Foundry ఉపయోగించి మూల్యాంకనం**
+# **Microsoft Foundry ఉపయోగించి మూల్యాంకనం**
 
 ![aistudo](../../../../../translated_images/te/AIFoundry.9e0b513e999a1c5a.webp)
 
-మీ జనరేటివ్ AI అప్లికేషన్‌ను [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ఉపయోగించి ఎలా మూల్యాంకనం చేయాలో తెలుసుకోండి. మీరు single-turn లేదా multi-turn సంభాషణలను అంచనా వేస్తున్నా, Azure AI Foundry మోడల్ పనితనం మరియు భద్రతను మూల్యాంకనం చేయడానికి టూల్స్ అందిస్తుంది. 
+మీ జనరేటివ్ AI అప్లికేషన్‌ను [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ఉపయోగించి ఎలా మూల్యాంకనం చేయాలో తెలుసుకోండి. మీరు single-turn లేదా multi-turn సంభాషణలను అంచనా వేస్తున్నా, Microsoft Foundry మోడల్ పనితనం మరియు భద్రతను మూల్యాంకనం చేయడానికి టూల్స్ అందిస్తుంది. 
 
 ![aistudo](../../../../../translated_images/te/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Azure AI Foundryతో జనరేటివ్ AI యాప్స్‌ను ఎలా మూల్యాంకించాలి
-మరింత వివరణాత్మక సూచనల కోసం [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) చూడండి
+## Microsoft Foundryతో జనరేటివ్ AI యాప్స్‌ను ఎలా మూల్యాంకించాలి
+మరింత వివరణాత్మక సూచనల కోసం [Microsoft Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) చూడండి
 
 Here are the steps to get started:
 
-## Azure AI Foundryలో జనరేటివ్ AI మోడల్స్‌ను మూల్యాంకించడం
+## Microsoft Foundryలో జనరేటివ్ AI మోడల్స్‌ను మూల్యాంకించడం
 
 **ముందస్తు అవసరాలు**
 
@@ -21,13 +21,13 @@ Here are the steps to get started:
 
 ## బిల్ట్-ఇన్ మూల్యాంకన ప్రమాణాలు
 
-Azure AI Foundry మీకు single-turn మరియు సంక్లిష్టమైన multi-turn సంభాషణలను రెండింటినీ మూల్యాంకించడానికి అనుమతిస్తుంది.
+Microsoft Foundry మీకు single-turn మరియు సంక్లిష్టమైన multi-turn సంభాషణలను రెండింటినీ మూల్యాంకించడానికి అనుమతిస్తుంది.
 Retrieval Augmented Generation (RAG) పరిస్థితులలో, మోడల్ నిర్దిష్ట డేటా మీద ఆధారపడి ఉన్నప్పుడు, మీరు బిల్ట్-ఇన్ మూల్యాంకన ప్రమాణాలను ఉపయోగించి పనితనాన్ని అంచనా వేయవచ్చు.
 ఇంకా, మీరు సాధారణ single-turn ప్రశ్న-సమాధాన (non-RAG) పరిస్థితులను కూడా మూల్యాంకించవచ్చు.
 
 ## మూల్యాంకన రన్ సృష్టించడం
 
-Azure AI Foundry UI నుండి, Evaluate పేజీ లేదా Prompt Flow పేజీకి వెళ్లండి.
+Microsoft Foundry UI నుండి, Evaluate పేజీ లేదా Prompt Flow పేజీకి వెళ్లండి.
 మూల్యాంకన రన్ సెట్ చేయడానికి evaluation creation wizard ని అనుసరించండి. మీ మూల్యాంకనానికి ఐచ్ఛికంగా ఒక పేరు ఇవ్వండి.
 మీ అప్లికేషన్ లక్ష్యాలకు అనుగుణంగా ఉన్న సన్నివేశాన్ని ఎంచుకోండి.
 మోడల్ అవుట్‌పుట్‌ను అంచనా వేయడానికి ఒకటి లేదా ఎక్కువ మూల్యాంకన ప్రమాణాలను ఎంచుకోండి.
@@ -38,11 +38,11 @@ Azure AI Foundry UI నుండి, Evaluate పేజీ లేదా Prompt F
 
 ## ఫలితాలని వీక్షించడం
 
-మూల్యాంకనాన్ని నడిపిన తర్వాత, Azure AI Foundryలో వివరమైన మూల్యాంకన ప్రమాణాలను లాగ్ చేయండి, వీక్షించండి మరియు విశ్లేషించండి. మీ అప్లికేషన్ సామర్థ్యాలు మరియు పరిమితుల గురించి అవగాహన పొందండి。
+మూల్యాంకనాన్ని నడిపిన తర్వాత, Microsoft Foundryలో వివరమైన మూల్యాంకన ప్రమాణాలను లాగ్ చేయండి, వీక్షించండి మరియు విశ్లేషించండి. మీ అప్లికేషన్ సామర్థ్యాలు మరియు పరిమితుల గురించి అవగాహన పొందండి。
 
 
 
-**గమనిక** Azure AI Foundry ప్రస్తుతం public previewలో ఉంది, కాబట్టి దీన్ని ప్రయోగాలు మరియు డెవలప్‌మెంట్ ఉద్దేశ్యాల కోసం ఉపయోగించండి. ప్రొడక్షన్ వర్క్‌లోడ్‌ల కోసం, ఇతర ఎంపికలను పరిగణించండి. మరింత వివరాలు మరియు దశలవారీ సూచనల కోసం అధికారిక [AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) ని పరిశీలించండి.
+**గమనిక** Microsoft Foundry ప్రస్తుతం public previewలో ఉంది, కాబట్టి దీన్ని ప్రయోగాలు మరియు డెవలప్‌మెంట్ ఉద్దేశ్యాల కోసం ఉపయోగించండి. ప్రొడక్షన్ వర్క్‌లోడ్‌ల కోసం, ఇతర ఎంపికలను పరిగణించండి. మరింత వివరాలు మరియు దశలవారీ సూచనల కోసం అధికారిక [AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) ని పరిశీలించండి.
 
 ---
 

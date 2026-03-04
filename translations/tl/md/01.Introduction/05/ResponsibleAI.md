@@ -62,15 +62,15 @@ Ang pagsunod sa mga etikal na prinsipyo, tulad ng katarungan, transparency, at p
 
 ## Paggamit ng AI Foundry para sa Responsible AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ay isang makapangyarihang plataporma na nagpapahintulot sa mga developer at organisasyon na mabilis na makalikha ng matatalinong, makabago, handa sa merkado, at responsableng mga aplikasyon. Narito ang ilang mahahalagang tampok at kakayahan ng Azure AI Foundry:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ay isang makapangyarihang plataporma na nagpapahintulot sa mga developer at organisasyon na mabilis na makalikha ng matatalinong, makabago, handa sa merkado, at responsableng mga aplikasyon. Narito ang ilang mahahalagang tampok at kakayahan ng Microsoft Foundry:
 
 **Mga Out-of-the-Box na API at Modelo**
 
-Nagbibigay ang Azure AI Foundry ng mga pre-built at nako-customize na API at modelo. Saklaw nito ang malawak na hanay ng mga gawain sa AI, kabilang ang generative AI, natural language processing para sa mga pag-uusap, paghahanap, pagmamanman, pagsasalin, pagsasalita, paningin, at paggawa ng desisyon.
+Nagbibigay ang Microsoft Foundry ng mga pre-built at nako-customize na API at modelo. Saklaw nito ang malawak na hanay ng mga gawain sa AI, kabilang ang generative AI, natural language processing para sa mga pag-uusap, paghahanap, pagmamanman, pagsasalin, pagsasalita, paningin, at paggawa ng desisyon.
 
 **Prompt Flow**
 
-Pinapahintulutan ka ng prompt flow sa Azure AI Foundry na lumikha ng mga karanasan sa conversational AI. Pinapadali nito ang pagdisenyo at pamamahala ng mga daloy ng pag-uusap, kaya mas madali ang paggawa ng mga chatbot, virtual assistant, at iba pang interactive na aplikasyon.
+Pinapahintulutan ka ng prompt flow sa Microsoft Foundry na lumikha ng mga karanasan sa conversational AI. Pinapadali nito ang pagdisenyo at pamamahala ng mga daloy ng pag-uusap, kaya mas madali ang paggawa ng mga chatbot, virtual assistant, at iba pang interactive na aplikasyon.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ Ang RAG ay isang teknik na pinagsasama ang retrieval-based at generative-based n
 
 **Mga Metric para sa Pagsusuri at Pagmamanman ng Generative AI**
 
-Nagbibigay ang Azure AI Foundry ng mga kasangkapan para sa pagsusuri at pagmamanman ng mga generative AI model. Maaari mong suriin ang kanilang performance, katarungan, at iba pang mahahalagang metric upang matiyak ang responsableng paggamit. Bukod dito, kung nakagawa ka ng dashboard, maaari mong gamitin ang no-code UI sa Azure Machine Learning Studio upang i-customize at gumawa ng Responsible AI Dashboard at kaugnay na scorecard base sa [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Ang scorecard na ito ay tumutulong upang maibahagi ang mga mahahalagang insight tungkol sa katarungan, kahalagahan ng mga feature, at iba pang konsiderasyon sa responsableng paggamit sa parehong mga teknikal at hindi teknikal na stakeholder.
+Nagbibigay ang Microsoft Foundry ng mga kasangkapan para sa pagsusuri at pagmamanman ng mga generative AI model. Maaari mong suriin ang kanilang performance, katarungan, at iba pang mahahalagang metric upang matiyak ang responsableng paggamit. Bukod dito, kung nakagawa ka ng dashboard, maaari mong gamitin ang no-code UI sa Azure Machine Learning Studio upang i-customize at gumawa ng Responsible AI Dashboard at kaugnay na scorecard base sa [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Ang scorecard na ito ay tumutulong upang maibahagi ang mga mahahalagang insight tungkol sa katarungan, kahalagahan ng mga feature, at iba pang konsiderasyon sa responsableng paggamit sa parehong mga teknikal at hindi teknikal na stakeholder.
 
 Para magamit ang AI Foundry sa responsableng AI, maaari mong sundin ang mga pinakamahuhusay na kasanayan na ito:
 
@@ -106,7 +106,7 @@ Dapat maging transparent at madaling ipaliwanag ang mga AI system upang maunawaa
 
 Dapat patuloy na subaybayan at i-update ang mga AI system upang matiyak na nananatili itong tumpak at epektibo sa paglipas ng panahon. Nangangailangan ito ng tuloy-tuloy na maintenance, testing, at retraining ng modelo.
 
-Bilang pangwakas, ang Microsoft Responsible AI ay isang inisyatiba na naglalayong tulungan ang mga developer at organisasyon na bumuo ng mga AI system na malinaw, mapagkakatiwalaan, at may pananagutan. Tandaan na napakahalaga ng responsableng pagpapatupad ng AI, at layunin ng Azure AI Foundry na gawing praktikal ito para sa mga organisasyon. Sa pamamagitan ng pagsunod sa mga etikal na prinsipyo at pinakamahuhusay na kasanayan, masisiguro natin na ang mga AI system ay nade-develop at ginagamit nang responsable na nakikinabang ang buong lipunan.
+Bilang pangwakas, ang Microsoft Responsible AI ay isang inisyatiba na naglalayong tulungan ang mga developer at organisasyon na bumuo ng mga AI system na malinaw, mapagkakatiwalaan, at may pananagutan. Tandaan na napakahalaga ng responsableng pagpapatupad ng AI, at layunin ng Microsoft Foundry na gawing praktikal ito para sa mga organisasyon. Sa pamamagitan ng pagsunod sa mga etikal na prinsipyo at pinakamahuhusay na kasanayan, masisiguro natin na ang mga AI system ay nade-develop at ginagamit nang responsable na nakikinabang ang buong lipunan.
 
 **Paalala**:  
 Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

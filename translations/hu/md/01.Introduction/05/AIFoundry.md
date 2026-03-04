@@ -1,17 +1,17 @@
-# **Azure AI Foundry használata értékeléshez**
+# **Microsoft Foundry használata értékeléshez**
 
 ![aistudo](../../../../../translated_images/hu/AIFoundry.9e0b513e999a1c5a.webp)
 
-Hogyan értékelheted generatív AI alkalmazásodat az [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) segítségével. Akár egyszeri, akár többszörös körös beszélgetéseket vizsgálsz, az Azure AI Foundry eszközöket kínál a modell teljesítményének és biztonságának értékelésére.
+Hogyan értékelheted generatív AI alkalmazásodat az [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) segítségével. Akár egyszeri, akár többszörös körös beszélgetéseket vizsgálsz, az Microsoft Foundry eszközöket kínál a modell teljesítményének és biztonságának értékelésére.
 
 ![aistudo](../../../../../translated_images/hu/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Hogyan értékeljük a generatív AI alkalmazásokat az Azure AI Foundry-val
-Részletes útmutatóért lásd a [Azure AI Foundry dokumentációját](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Hogyan értékeljük a generatív AI alkalmazásokat az Microsoft Foundry-val
+Részletes útmutatóért lásd a [Microsoft Foundry dokumentációját](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Íme a kezdés lépései:
 
-## Generatív AI modellek értékelése az Azure AI Foundry-ban
+## Generatív AI modellek értékelése az Microsoft Foundry-ban
 
 **Előfeltételek**
 
@@ -21,13 +21,13 @@ Részletes útmutatóért lásd a [Azure AI Foundry dokumentációját](https://
 
 ## Beépített értékelési metrikák
 
-Az Azure AI Foundry lehetővé teszi egyszeri és összetett, többszörös körös beszélgetések értékelését is.  
+Az Microsoft Foundry lehetővé teszi egyszeri és összetett, többszörös körös beszélgetések értékelését is.  
 Retrieval Augmented Generation (RAG) esetén, amikor a modell konkrét adatokra épül, a beépített értékelési metrikák segítségével mérheted a teljesítményt.  
 Emellett általános, egyszeri kérdés-válasz helyzeteket is értékelhetsz (nem RAG).
 
 ## Értékelési futtatás létrehozása
 
-Az Azure AI Foundry felületén navigálj az Evaluate vagy a Prompt Flow oldalra.  
+Az Microsoft Foundry felületén navigálj az Evaluate vagy a Prompt Flow oldalra.  
 Kövesd az értékelés létrehozását segítő varázslót az értékelési futtatás beállításához. Adj meg opcionálisan nevet az értékelésnek.  
 Válaszd ki azt a forgatókönyvet, amely leginkább megfelel az alkalmazásod céljainak.  
 Jelölj ki egy vagy több értékelési metrikát a modell kimenetének mérésére.
@@ -38,9 +38,9 @@ Nagyobb rugalmasság érdekében létrehozhatsz egyedi értékelési folyamatot,
 
 ## Eredmények megtekintése
 
-Az értékelés lefuttatása után naplózd, tekintsd meg és elemezd az Azure AI Foundry részletes értékelési metrikáit. Így mélyebb betekintést nyerhetsz az alkalmazásod képességeibe és korlátaiba.
+Az értékelés lefuttatása után naplózd, tekintsd meg és elemezd az Microsoft Foundry részletes értékelési metrikáit. Így mélyebb betekintést nyerhetsz az alkalmazásod képességeibe és korlátaiba.
 
-**[!NOTE]** Az Azure AI Foundry jelenleg nyilvános előzetes verzióban érhető el, ezért kísérletezésre és fejlesztésre ajánlott használni. Éles környezetben más megoldásokat érdemes fontolóra venni. További részletekért és lépésről lépésre útmutatókért böngészd az hivatalos [AI Foundry dokumentációt](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
+**[!NOTE]** Az Microsoft Foundry jelenleg nyilvános előzetes verzióban érhető el, ezért kísérletezésre és fejlesztésre ajánlott használni. Éles környezetben más megoldásokat érdemes fontolóra venni. További részletekért és lépésről lépésre útmutatókért böngészd az hivatalos [AI Foundry dokumentációt](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
 
 **Jogi nyilatkozat**:  
 Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -12,7 +12,7 @@
 [![GitHub vilice](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub zvezdice](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi je serija odprtokodnih AI modelov, ki jih je razvilo Microsoft.
 
@@ -71,7 +71,7 @@ Sledite tem korakom, da začnete uporabljati ta vir:
 - Inferenca Phi v različnih okoljih
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub modeli](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry katalog modelov](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry katalog modelov](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Sledite tem korakom, da začnete uporabljati ta vir:
 
 -  Evaluacija Phi
     - [Odgovorna AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry za evalvacijo](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry za evalvacijo](./md/01.Introduction/05/AIFoundry.md)
     - [Uporaba Promptflow za evalvacijo](./md/01.Introduction/05/Promptflow.md)
  
 - RAG z Azure AI Search
@@ -117,8 +117,8 @@ Sledite tem korakom, da začnete uporabljati ta vir:
       - [WinUI3 aplikacija s Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       - [Vzorec WinUI3 aplikacije z več modeli, ki jih poganja AI](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Natančno nastavljanje in integracija prilagojenih Phi-3 modelov s Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Natančno nastavljanje in integracija prilagojenih Phi-3 modelov s Prompt flow v Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Ocena natančno nastavljenega modela Phi-3 / Phi-3.5 v Azure AI Foundry s poudarkom na Microsoftovih načelih odgovorne AI](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Natančno nastavljanje in integracija prilagojenih Phi-3 modelov s Prompt flow v Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Ocena natančno nastavljenega modela Phi-3 / Phi-3.5 v Microsoft Foundry s poudarkom na Microsoftovih načelih odgovorne AI](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Vzorec jezikovne napovedi Phi-3.5-mini-instruct (kitajski/angleški)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Uporaba Windows GPU za ustvarjanje rešitve Prompt flow s Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Sledite tem korakom, da začnete uporabljati ta vir:
       - [📓] [Natančno nastavljanje Phi-4-mini-reasoning z Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Natančno nastavljanje Phi-4-mini-reasoning z Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning z GitHub modeli](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning z Azure AI Foundry modeli](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning z Microsoft Foundry modeli](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demos
       - [Phi-4-mini demoji gostovani na Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demoji gostovani na Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Sledite tem korakom, da začnete uporabljati ta vir:
   - [Natančno nastavljanje Phi-3 z Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Natančno nastavljanje Phi-3 z Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Natančno nastavljanje Phi-3 z QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Natančno nastavljanje Phi-3 z Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Natančno nastavljanje Phi-3 z Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Natančno nastavljanje Phi-3 z Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Natančno nastavljanje z Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Natančno nastavljanje z Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Sledite tem korakom, da začnete uporabljati ta vir:
 
 ## Uporaba modelov Phi
 
-### Phi na Azure AI Foundry
+### Phi na Microsoft Foundry
 
-Lahko se naučite, kako uporabljati Microsoft Phi ter kako graditi E2E rešitve na različnih strojnih napravah. Da Phi sami preizkusite, začnite z igranjem z modeli in prilagajanjem Phi za vaše scenarije z uporabo [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Več lahko izveste v Pričetek uporabe z [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Lahko se naučite, kako uporabljati Microsoft Phi ter kako graditi E2E rešitve na različnih strojnih napravah. Da Phi sami preizkusite, začnite z igranjem z modeli in prilagajanjem Phi za vaše scenarije z uporabo [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Več lahko izveste v Pričetek uporabe z [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Igralnica**
 Vsak model ima svojo igralnico za testiranje modela [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Microsoftov pristop k odgovorni umetni inteligenci temelji na naših načelih um
 
 Veliki naravni jezikovni, slikovni in govorni modeli — kot so tisti, uporabljeni v tem vzorcu — se lahko vedenjsko kažejo na načine, ki so nepravični, nezanesljivi ali žaljivi, kar lahko povzroči škodo. Prosimo, preberite [Azure OpenAI storitve opombo o preglednosti](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), da se seznanite z tveganji in omejitvami.
 
-Priporočeni pristop za ublažitev teh tveganj je vključitev varnostnega sistema v vašo arhitekturo, ki lahko zazna in prepreči škodljivo vedenje. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) nudi neodvisno zaščitno plast, ki lahko zazna škodljivo vsebino, ustvarjeno s strani uporabnikov ali umetne inteligence, v aplikacijah in storitvah. Azure AI Content Safety vključuje API-je besedila in slik, ki vam omogočajo zaznavanje škodljivega gradiva. Znotraj Azure AI Foundry storitev Content Safety omogoča ogled, raziskovanje in preizkušanje vzorčnih kod za zaznavanje škodljive vsebine v različnih modalnostih. Naslednja [dokumentacija za hitro začetek](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) vas vodi skozi poizvedbe na storitev.
+Priporočeni pristop za ublažitev teh tveganj je vključitev varnostnega sistema v vašo arhitekturo, ki lahko zazna in prepreči škodljivo vedenje. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) nudi neodvisno zaščitno plast, ki lahko zazna škodljivo vsebino, ustvarjeno s strani uporabnikov ali umetne inteligence, v aplikacijah in storitvah. Azure AI Content Safety vključuje API-je besedila in slik, ki vam omogočajo zaznavanje škodljivega gradiva. Znotraj Microsoft Foundry storitev Content Safety omogoča ogled, raziskovanje in preizkušanje vzorčnih kod za zaznavanje škodljive vsebine v različnih modalnostih. Naslednja [dokumentacija za hitro začetek](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) vas vodi skozi poizvedbe na storitev.
 Drugi vidik, ki ga je treba upoštevati, je splošna zmogljivost aplikacije. Pri aplikacijah z večmodalnimi in večmodelnimi pristopi zmogljivost razumemo kot to, da sistem deluje tako, kot pričakujete vi in vaši uporabniki, vključno s tem, da ne generira škodljivih izhodov. Pomembno je oceniti zmogljivost vaše celotne aplikacije z uporabo [ocenjevalcev zmogljivosti, kakovosti, tveganja in varnosti](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Prav tako imate možnost ustvariti in oceniti z [lastnimi ocenjevalci](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Svoje AI aplikacije lahko ocenjujete v razvojnem okolju z uporabo [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Na podlagi testne podatkovne množice ali cilja se generacije vaše generativne AI aplikacije kvantitativno merijo z vgrajenimi ocenjevalci ali ocenjevalci po meri, ki jih izberete. Za začetek uporabe azure ai evaluation sdk za ocenjevanje vašega sistema sledite [vodniku za hitro začetek](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Ko izvedete ocenjevalno izvedbo, lahko [vizualizirate rezultate v Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Svoje AI aplikacije lahko ocenjujete v razvojnem okolju z uporabo [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Na podlagi testne podatkovne množice ali cilja se generacije vaše generativne AI aplikacije kvantitativno merijo z vgrajenimi ocenjevalci ali ocenjevalci po meri, ki jih izberete. Za začetek uporabe azure ai evaluation sdk za ocenjevanje vašega sistema sledite [vodniku za hitro začetek](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Ko izvedete ocenjevalno izvedbo, lahko [vizualizirate rezultate v Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Znamke
 
@@ -303,11 +303,11 @@ Uporaba Microsoftovih blagovnih znamk ali logotipov v spremenjenih različicah t
 
 Če se zataknete ali imate kakršnakoli vprašanja o gradnji AI aplikacij, se pridružite:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Če imate povratne informacije o izdelku ali napake med gradnjo, obiščite:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

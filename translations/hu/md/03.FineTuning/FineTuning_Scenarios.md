@@ -2,7 +2,7 @@
 
 ![Finomhangolás MS szolgáltatásokkal](../../../../translated_images/hu/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platform** Ide tartoznak különböző technológiák, mint az Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito és ONNX Runtime.
+**Platform** Ide tartoznak különböző technológiák, mint az Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito és ONNX Runtime.
 
 **Infrastruktúra** Ebbe beletartozik a CPU és az FPGA, amelyek elengedhetetlenek a finomhangolási folyamathoz. Megmutatom az egyes technológiák ikonjaikat.
 

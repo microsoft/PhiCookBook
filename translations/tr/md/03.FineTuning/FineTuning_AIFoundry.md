@@ -1,6 +1,6 @@
-# Azure AI Foundry ile Phi-3 Modelini İnce Ayarlama
+# Microsoft Foundry ile Phi-3 Modelini İnce Ayarlama
 
-Microsoft’un Phi-3 Mini dil modelini Azure AI Foundry kullanarak nasıl ince ayarlayabileceğimizi keşfedelim. İnce ayar, Phi-3 Mini’yi belirli görevlere uyarlamanıza olanak tanır ve böylece modeli daha güçlü ve bağlama duyarlı hale getirir.
+Microsoft’un Phi-3 Mini dil modelini Microsoft Foundry kullanarak nasıl ince ayarlayabileceğimizi keşfedelim. İnce ayar, Phi-3 Mini’yi belirli görevlere uyarlamanıza olanak tanır ve böylece modeli daha güçlü ve bağlama duyarlı hale getirir.
 
 ## Dikkat Edilmesi Gerekenler
 
@@ -22,7 +22,7 @@ Microsoft’un Phi-3 Mini dil modelini Azure AI Foundry kullanarak nasıl ince a
 - Bir Azure aboneliği. Azure aboneliğiniz yoksa, başlamak için bir [ücretli Azure hesabı](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) oluşturun.
 
 - Bir [AI Foundry projesi](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure rol tabanlı erişim kontrolleri (Azure RBAC), Azure AI Foundry’deki işlemlere erişim vermek için kullanılır. Bu makaledeki adımları gerçekleştirmek için kullanıcı hesabınıza kaynak grubunda __Azure AI Developer rolü__ atanmış olmalıdır.
+- Azure rol tabanlı erişim kontrolleri (Azure RBAC), Microsoft Foundry’deki işlemlere erişim vermek için kullanılır. Bu makaledeki adımları gerçekleştirmek için kullanıcı hesabınıza kaynak grubunda __Azure AI Developer rolü__ atanmış olmalıdır.
 
 ### Abonelik sağlayıcı kaydı
 
@@ -58,17 +58,17 @@ Kullandığınız eğitim ve doğrulama verileri **JSON Lines (JSONL)** formatı
 
 Desteklenen dosya türü JSON Lines’dır. Dosyalar varsayılan veri deposuna yüklenir ve projenizde kullanılabilir hale gelir.
 
-## Azure AI Foundry ile Phi-3 İnce Ayarı
+## Microsoft Foundry ile Phi-3 İnce Ayarı
 
-Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince ayarlamanıza olanak tanır. İnce ayar, belirli görevler ve uygulamalar için özelleştirme ve optimizasyon sağlayarak önemli faydalar sunar. Bu, geliştirilmiş performans, maliyet etkinliği, azalan gecikme süresi ve kişiselleştirilmiş çıktılar anlamına gelir.
+Microsoft Foundry, büyük dil modellerini kişisel veri setlerinize göre ince ayarlamanıza olanak tanır. İnce ayar, belirli görevler ve uygulamalar için özelleştirme ve optimizasyon sağlayarak önemli faydalar sunar. Bu, geliştirilmiş performans, maliyet etkinliği, azalan gecikme süresi ve kişiselleştirilmiş çıktılar anlamına gelir.
 
 ![Finetune AI Foundry](../../../../translated_images/tr/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Yeni Proje Oluşturma
 
-1. [Azure AI Foundry](https://ai.azure.com) sitesine giriş yapın.
+1. [Microsoft Foundry](https://ai.azure.com) sitesine giriş yapın.
 
-1. Azure AI Foundry’da yeni proje oluşturmak için **+New project** seçeneğini tıklayın.
+1. Microsoft Foundry’da yeni proje oluşturmak için **+New project** seçeneğini tıklayın.
 
     ![FineTuneSelect](../../../../translated_images/tr/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
 
 İnce ayar öncesinde, sohbet talimatları, soru-cevap çiftleri veya ilgili diğer metin verileri gibi görevinizle alakalı bir veri seti toplayın veya oluşturun. Bu veriyi temizleyin, eksik değerleri işleyin ve metni token’lara ayırın.
 
-### Azure AI Foundry’de Phi-3 modellerini ince ayarlama
+### Microsoft Foundry’de Phi-3 modellerini ince ayarlama
 
 > [!NOTE]
 > Phi-3 modellerinin ince ayarı şu anda yalnızca East US 2 bölgesindeki projelerde desteklenmektedir.
@@ -121,7 +121,7 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
 1. Aşağıdaki işlemleri yapın:
 
     - **Görev türü** olarak **Chat completion** seçin.
-    - Kullanmak istediğiniz **Eğitim verisini** seçin. Azure AI Foundry veri deposundan veya yerel ortamınızdan yükleyebilirsiniz.
+    - Kullanmak istediğiniz **Eğitim verisini** seçin. Microsoft Foundry veri deposundan veya yerel ortamınızdan yükleyebilirsiniz.
 
     ![FineTuneSelect](../../../../translated_images/tr/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
 
     ![FineTuneSelect](../../../../translated_images/tr/select-submit.0a3802d581bac271.webp)
 
-1. Modeliniz ince ayarlandıktan sonra durumu **Completed** olarak gösterilecektir. Artık modeli dağıtabilir ve kendi uygulamanızda, playground’da veya prompt flow’da kullanabilirsiniz. Daha fazla bilgi için bkz. [Azure AI Foundry ile Phi-3 ailesi küçük dil modellerinin dağıtımı](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Modeliniz ince ayarlandıktan sonra durumu **Completed** olarak gösterilecektir. Artık modeli dağıtabilir ve kendi uygulamanızda, playground’da veya prompt flow’da kullanabilirsiniz. Daha fazla bilgi için bkz. [Microsoft Foundry ile Phi-3 ailesi küçük dil modellerinin dağıtımı](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/tr/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Phi-3 ince ayarı hakkında daha ayrıntılı bilgi için lütfen [Azure AI Foundry’de Phi-3 modellerini ince ayarlama](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) sayfasını ziyaret edin.
+> Phi-3 ince ayarı hakkında daha ayrıntılı bilgi için lütfen [Microsoft Foundry’de Phi-3 modellerini ince ayarlama](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) sayfasını ziyaret edin.
 
 ## İnce ayarlanmış modellerinizi temizleme
 
-İnce ayarlanmış bir modeli [Azure AI Foundry](https://ai.azure.com) içindeki ince ayar model listesinden veya model detay sayfasından silebilirsiniz. İnce ayar sayfasından silmek istediğiniz modeli seçin ve ardından Sil düğmesine tıklayın.
+İnce ayarlanmış bir modeli [Microsoft Foundry](https://ai.azure.com) içindeki ince ayar model listesinden veya model detay sayfasından silebilirsiniz. İnce ayar sayfasından silmek istediğiniz modeli seçin ve ardından Sil düğmesine tıklayın.
 
 > [!NOTE]
 > Var olan bir dağıtımı olan özel modeli silemezsiniz. Önce model dağıtımınızı silmeniz gerekir.
@@ -163,7 +163,7 @@ Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince a
 
 ### Hizmet olarak ince ayarlanmış Phi-3 modelleri için maliyet ve kota
 
-Hizmet olarak ince ayarlanmış Phi modelleri Microsoft tarafından sunulur ve Azure AI Foundry ile entegredir. Modelleri [dağıtırken](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) veya ince ayar yaparken fiyatlandırmayı dağıtım sihirbazındaki Fiyatlandırma ve koşullar sekmesinde bulabilirsiniz.
+Hizmet olarak ince ayarlanmış Phi modelleri Microsoft tarafından sunulur ve Microsoft Foundry ile entegredir. Modelleri [dağıtırken](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) veya ince ayar yaparken fiyatlandırmayı dağıtım sihirbazındaki Fiyatlandırma ve koşullar sekmesinde bulabilirsiniz.
 
 ## İçerik filtreleme
 
@@ -206,7 +206,7 @@ Model performansını doğruluk, F1 skoru veya perplexity gibi metriklerle ölç
 
 ## Dağıtım
 
-- Web Hizmeti Olarak Dağıtın: İnce ayarlanmış modelinizi Azure AI Foundry’de web hizmeti olarak dağıtın.
+- Web Hizmeti Olarak Dağıtın: İnce ayarlanmış modelinizi Microsoft Foundry’de web hizmeti olarak dağıtın.
 - Uç Noktayı Test Edin: Dağıtılan uç noktaya test sorguları göndererek işlevselliğini doğrulayın.
 
 ## Tekrarlama ve İyileştirme

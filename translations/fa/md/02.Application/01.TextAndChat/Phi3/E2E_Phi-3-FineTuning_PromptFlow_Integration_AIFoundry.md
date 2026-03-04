@@ -1,16 +1,16 @@
-# ریزتنظیم و ادغام مدل‌های سفارشی Phi-3 با Prompt flow در Azure AI Foundry
+# ریزتنظیم و ادغام مدل‌های سفارشی Phi-3 با Prompt flow در Microsoft Foundry
 
-این نمونه جامع (E2E) بر اساس راهنمای "[ریزتنظیم و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow در Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" از جامعه فنی مایکروسافت تهیه شده است. این راهنما فرآیندهای ریزتنظیم، استقرار و ادغام مدل‌های سفارشی Phi-3 با Prompt flow در Azure AI Foundry را معرفی می‌کند. بر خلاف نمونه E2E "[ریزتنظیم و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" که شامل اجرای کد به صورت محلی بود، این آموزش به طور کامل بر ریزتنظیم و ادغام مدل شما در داخل Azure AI / ML Studio تمرکز دارد.
+این نمونه جامع (E2E) بر اساس راهنمای "[ریزتنظیم و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow در Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" از جامعه فنی مایکروسافت تهیه شده است. این راهنما فرآیندهای ریزتنظیم، استقرار و ادغام مدل‌های سفارشی Phi-3 با Prompt flow در Microsoft Foundry را معرفی می‌کند. بر خلاف نمونه E2E "[ریزتنظیم و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" که شامل اجرای کد به صورت محلی بود، این آموزش به طور کامل بر ریزتنظیم و ادغام مدل شما در داخل Azure AI / ML Studio تمرکز دارد.
 
 ## مرور کلی
 
-در این نمونه E2E، شما نحوه ریزتنظیم مدل Phi-3 و ادغام آن با Prompt flow در Azure AI Foundry را خواهید آموخت. با بهره‌گیری از Azure AI / ML Studio، شما یک جریان کاری برای استقرار و استفاده از مدل‌های سفارشی هوش مصنوعی ایجاد خواهید کرد. این نمونه E2E به سه سناریو تقسیم شده است:
+در این نمونه E2E، شما نحوه ریزتنظیم مدل Phi-3 و ادغام آن با Prompt flow در Microsoft Foundry را خواهید آموخت. با بهره‌گیری از Azure AI / ML Studio، شما یک جریان کاری برای استقرار و استفاده از مدل‌های سفارشی هوش مصنوعی ایجاد خواهید کرد. این نمونه E2E به سه سناریو تقسیم شده است:
 
 **سناریو ۱: راه‌اندازی منابع Azure و آماده‌سازی برای ریزتنظیم**
 
 **سناریو ۲: ریزتنظیم مدل Phi-3 و استقرار در Azure Machine Learning Studio**
 
-**سناریو ۳: ادغام با Prompt flow و گفتگو با مدل سفارشی خود در Azure AI Foundry**
+**سناریو ۳: ادغام با Prompt flow و گفتگو با مدل سفارشی خود در Microsoft Foundry**
 
 در ادامه یک مرور کلی از این نمونه E2E ارائه شده است.
 
@@ -29,7 +29,7 @@
     - [ریزتنظیم مدل Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [استقرار مدل ریزتنظیم‌شده Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[سناریو ۳: ادغام با Prompt flow و گفتگو با مدل سفارشی خود در Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[سناریو ۳: ادغام با Prompt flow و گفتگو با مدل سفارشی خود در Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [ادغام مدل سفارشی Phi-3 با Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [گفتگو با مدل سفارشی Phi-3 خود](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![تنظیم ترافیک.](../../../../../../translated_images/fa/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## سناریو ۳: ادغام با Prompt flow و چت با مدل سفارشی خود در Azure AI Foundry
+## سناریو ۳: ادغام با Prompt flow و چت با مدل سفارشی خود در Microsoft Foundry
 
 ### ادغام مدل سفارشی Phi-3 با Prompt flow
 
@@ -552,8 +552,8 @@
 
 در این تمرین، شما:
 
-- ایجاد Azure AI Foundry Hub.
-- ایجاد پروژه Azure AI Foundry.
+- ایجاد Microsoft Foundry Hub.
+- ایجاد پروژه Microsoft Foundry.
 - ایجاد Prompt flow.
 - افزودن اتصال سفارشی برای مدل Phi-3 فاین‌تیون شده.
 - تنظیم Prompt flow برای چت با مدل سفارشی Phi-3 خود.
@@ -561,11 +561,11 @@
 > [!NOTE]
 > شما همچنین می‌توانید با استفاده از Azure ML Studio ادغام با Promptflow را انجام دهید. همان فرایند ادغام را می‌توان در Azure ML Studio نیز اعمال کرد.
 
-#### ایجاد Azure AI Foundry Hub
+#### ایجاد Microsoft Foundry Hub
 
-قبل از ایجاد پروژه، باید یک Hub ایجاد کنید. یک Hub مانند Resource Group عمل می‌کند و به شما امکان می‌دهد چندین پروژه را در Azure AI Foundry سازماندهی و مدیریت کنید.
+قبل از ایجاد پروژه، باید یک Hub ایجاد کنید. یک Hub مانند Resource Group عمل می‌کند و به شما امکان می‌دهد چندین پروژه را در Microsoft Foundry سازماندهی و مدیریت کنید.
 
-1. به [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) مراجعه کنید.
+1. به [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) مراجعه کنید.
 
 1. از تب سمت چپ، گزینه **All hubs** را انتخاب کنید.
 
@@ -585,7 +585,7 @@
 
 ۱. روی **بعدی** کلیک کنید.
 
-#### ایجاد پروژه Azure AI Foundry
+#### ایجاد پروژه Microsoft Foundry
 
 ۱. در هابی که ایجاد کردید، از تب سمت چپ **تمام پروژه‌ها** را انتخاب کنید.
 
@@ -625,9 +625,9 @@
 
 #### افزودن اتصال سفارشی
 
-۱. به [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) مراجعه کنید.
+۱. به [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) مراجعه کنید.
 
-۱. به پروژه Azure AI Foundry که ایجاد کرده‌اید بروید.
+۱. به پروژه Microsoft Foundry که ایجاد کرده‌اید بروید.
 
 ۱. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ **تنظیمات** را انتخاب کنید.
 
@@ -653,9 +653,9 @@
 
 #### ایجاد Prompt flow
 
-شما یک اتصال سفارشی در Azure AI Foundry اضافه کرده‌اید. حال بیایید یک Prompt flow با مراحل زیر ایجاد کنیم. سپس این Prompt flow را به اتصال سفارشی متصل می‌کنیم تا بتوانید از مدل فاین‌تیون شده درون Prompt flow استفاده کنید.
+شما یک اتصال سفارشی در Microsoft Foundry اضافه کرده‌اید. حال بیایید یک Prompt flow با مراحل زیر ایجاد کنیم. سپس این Prompt flow را به اتصال سفارشی متصل می‌کنیم تا بتوانید از مدل فاین‌تیون شده درون Prompt flow استفاده کنید.
 
-۱. به پروژه Azure AI Foundry که ایجاد کرده‌اید بروید.
+۱. به پروژه Microsoft Foundry که ایجاد کرده‌اید بروید.
 
 ۱. از تب سمت چپ **Prompt flow** را انتخاب کنید.
 
@@ -774,7 +774,7 @@
 ![Paste prompt flow code.](../../../../../../translated_images/fa/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> برای اطلاعات دقیق‌تر در مورد استفاده از Prompt flow در Azure AI Foundry، می‌توانید به [Prompt flow در Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) مراجعه کنید.
+> برای اطلاعات دقیق‌تر در مورد استفاده از Prompt flow در Microsoft Foundry، می‌توانید به [Prompt flow در Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) مراجعه کنید.
 
 ۱. برای فعال کردن چت با مدل خود، گزینه‌های **Chat input** و **Chat output** را انتخاب کنید.
 

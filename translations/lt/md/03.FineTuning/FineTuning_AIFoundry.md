@@ -1,6 +1,6 @@
-# Phi-3 modelio pritaikymas su Azure AI Foundry
+# Phi-3 modelio pritaikymas su Microsoft Foundry
 
-Pažvelkime, kaip pritaikyti Microsoft Phi-3 Mini kalbos modelį naudojant Azure AI Foundry. Pritaikymas leidžia modelį pritaikyti specifinėms užduotims, padarant jį dar galingesnį ir kontekstualiai jautresnį.
+Pažvelkime, kaip pritaikyti Microsoft Phi-3 Mini kalbos modelį naudojant Microsoft Foundry. Pritaikymas leidžia modelį pritaikyti specifinėms užduotims, padarant jį dar galingesnį ir kontekstualiai jautresnį.
 
 ## Svarstymai
 
@@ -22,7 +22,7 @@ Pažvelkime, kaip pritaikyti Microsoft Phi-3 Mini kalbos modelį naudojant Azure
 - Azure prenumerata. Jei neturite Azure prenumeratos, sukurkite [mokamą Azure paskyrą](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), kad galėtumėte pradėti.
 
 - [AI Foundry projektas](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure vaidmenimis pagrįsta prieiga (Azure RBAC) naudojama suteikti prieigą prie operacijų Azure AI Foundry. Norint atlikti veiksmus šiame straipsnyje, jūsų vartotojo paskyrai turi būti priskirtas __Azure AI Developer role__ vaidmuo išteklių grupėje.
+- Azure vaidmenimis pagrįsta prieiga (Azure RBAC) naudojama suteikti prieigą prie operacijų Microsoft Foundry. Norint atlikti veiksmus šiame straipsnyje, jūsų vartotojo paskyrai turi būti priskirtas __Azure AI Developer role__ vaidmuo išteklių grupėje.
 
 ### Prenumeratos teikėjo registracija
 
@@ -58,17 +58,17 @@ Mokymo ir validacijos duomenys **turi** būti suformatuoti kaip JSON Lines (JSON
 
 Palaikomas failo tipas yra JSON Lines. Failai įkeliami į numatytąją duomenų saugyklą ir tampa prieinami jūsų projekte.
 
-## Phi-3 pritaikymas su Azure AI Foundry
+## Phi-3 pritaikymas su Microsoft Foundry
 
-Azure AI Foundry leidžia pritaikyti didelius kalbos modelius pagal jūsų asmeninius duomenų rinkinius naudojant procesą, vadinamą pritaikymu. Pritaikymas suteikia didelę vertę, leidžiant pritaikyti ir optimizuoti modelį specifinėms užduotims ir taikymams. Tai lemia geresnį našumą, mažesnes išlaidas, mažesnį vėlavimą ir pritaikytus rezultatus.
+Microsoft Foundry leidžia pritaikyti didelius kalbos modelius pagal jūsų asmeninius duomenų rinkinius naudojant procesą, vadinamą pritaikymu. Pritaikymas suteikia didelę vertę, leidžiant pritaikyti ir optimizuoti modelį specifinėms užduotims ir taikymams. Tai lemia geresnį našumą, mažesnes išlaidas, mažesnį vėlavimą ir pritaikytus rezultatus.
 
 ![Finetune AI Foundry](../../../../imgs/03/AIFoundry/AIFoundryfinetune.png)
 
 ### Naujo projekto kūrimas
 
-1. Prisijunkite prie [Azure AI Foundry](https://ai.azure.com).
+1. Prisijunkite prie [Microsoft Foundry](https://ai.azure.com).
 
-1. Pasirinkite **+New project**, kad sukurtumėte naują projektą Azure AI Foundry.
+1. Pasirinkite **+New project**, kad sukurtumėte naują projektą Microsoft Foundry.
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-new-project.png)
 
@@ -97,7 +97,7 @@ Azure AI Foundry leidžia pritaikyti didelius kalbos modelius pagal jūsų asmen
 
 Prieš pritaikymą surinkite arba sukurkite duomenų rinkinį, susijusį su jūsų užduotimi, pvz., pokalbių instrukcijas, klausimų-atsakymų poras ar kitus svarbius tekstinius duomenis. Išvalykite ir apdorokite šiuos duomenis, pašalindami triukšmą, tvarkydami trūkstamas reikšmes ir atlikdami teksto tokenizaciją.
 
-### Phi-3 modelių pritaikymas Azure AI Foundry
+### Phi-3 modelių pritaikymas Microsoft Foundry
 
 > [!NOTE]
 > Phi-3 modelių pritaikymas šiuo metu palaikomas projektuose, esančiuose East US 2.
@@ -121,7 +121,7 @@ Prieš pritaikymą surinkite arba sukurkite duomenų rinkinį, susijusį su jūs
 1. Atlikite šiuos veiksmus:
 
     - Pasirinkite **task type** kaip **Chat completion**.
-    - Pasirinkite **Training data**, kuriuos norite naudoti. Galite juos įkelti per Azure AI Foundry arba iš savo vietinės aplinkos.
+    - Pasirinkite **Training data**, kuriuos norite naudoti. Galite juos įkelti per Microsoft Foundry arba iš savo vietinės aplinkos.
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune2.png)
 
@@ -145,16 +145,16 @@ Prieš pritaikymą surinkite arba sukurkite duomenų rinkinį, susijusį su jūs
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-submit.png)
 
-1. Kai jūsų modelis bus pritaikytas, būsena bus rodoma kaip **Completed**, kaip parodyta paveikslėlyje žemiau. Dabar galite modelį diegti ir naudoti savo programoje, žaidimų aikštelėje arba prompt flow. Daugiau informacijos rasite [Kaip diegti Phi-3 šeimos mažus kalbos modelius su Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Kai jūsų modelis bus pritaikytas, būsena bus rodoma kaip **Completed**, kaip parodyta paveikslėlyje žemiau. Dabar galite modelį diegti ir naudoti savo programoje, žaidimų aikštelėje arba prompt flow. Daugiau informacijos rasite [Kaip diegti Phi-3 šeimos mažus kalbos modelius su Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/completed.png)
 
 > [!NOTE]
-> Daugiau informacijos apie Phi-3 pritaikymą rasite [Phi-3 modelių pritaikymas Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Daugiau informacijos apie Phi-3 pritaikymą rasite [Phi-3 modelių pritaikymas Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Pritaikytų modelių valymas
 
-Galite ištrinti pritaikytą modelį iš pritaikymo modelių sąrašo [Azure AI Foundry](https://ai.azure.com) arba iš modelio detalių puslapio. Pasirinkite pritaikytą modelį, kurį norite ištrinti, pritaikymo puslapyje, tada pasirinkite mygtuką Delete, kad ištrintumėte pritaikytą modelį.
+Galite ištrinti pritaikytą modelį iš pritaikymo modelių sąrašo [Microsoft Foundry](https://ai.azure.com) arba iš modelio detalių puslapio. Pasirinkite pritaikytą modelį, kurį norite ištrinti, pritaikymo puslapyje, tada pasirinkite mygtuką Delete, kad ištrintumėte pritaikytą modelį.
 
 > [!NOTE]
 > Negalite ištrinti pritaikyto modelio, jei jis turi esamą diegimą. Pirmiausia turite ištrinti modelio diegimą, kad galėtumėte ištrinti pritaikytą modelį.
@@ -163,7 +163,7 @@ Galite ištrinti pritaikytą modelį iš pritaikymo modelių sąrašo [Azure AI 
 
 ### Kainos ir kvotų svarstymai Phi-3 modeliams, pritaikytiems kaip paslauga
 
-Phi modeliai, pritaikyti kaip paslauga, siūlomi Microsoft ir integruoti su Azure AI Foundry naudojimui. Kainas galite rasti [diegiant](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) arba pritaikant modelius, diegimo vedlio skirtuke Pricing and terms.
+Phi modeliai, pritaikyti kaip paslauga, siūlomi Microsoft ir integruoti su Microsoft Foundry naudojimui. Kainas galite rasti [diegiant](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) arba pritaikant modelius, diegimo vedlio skirtuke Pricing and terms.
 
 ## Turinys filtravimas
 
@@ -204,7 +204,7 @@ Išsaugokite pritaikytą modelio kontrolinį tašką, kad galėtumėte jį naudo
 
 ## Diegimas
 
-- Diegimas kaip internetinė paslauga: Diegkite pritaikytą modelį kaip internetinę paslaugą Azure AI Foundry.
+- Diegimas kaip internetinė paslauga: Diegkite pritaikytą modelį kaip internetinę paslaugą Microsoft Foundry.
 - Testuokite galinį tašką: Siųskite testines užklausas į diegtą galinį tašką, kad patikrintumėte jo funkcionalumą.
 
 ## Iteracija ir tobulinimas

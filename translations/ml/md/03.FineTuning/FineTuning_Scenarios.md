@@ -2,7 +2,7 @@
 
 ![MS സർവീസുകളുമായി ഫൈൻ-ട്യൂണിംഗ്](../../../../translated_images/ml/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**പ്ലാറ്റ്ഫോം** ഇതിൽ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, ONNX Runtime തുടങ്ങിയ വിവിധ ടെക്നോളജികൾ ഉൾപ്പെടുന്നു. 
+**പ്ലാറ്റ്ഫോം** ഇതിൽ Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, ONNX Runtime തുടങ്ങിയ വിവിധ ടെക്നോളജികൾ ഉൾപ്പെടുന്നു. 
 
 **ഇൻഫ്രാസ്ട്രക്ചർ** ഇതിൽ CPUയും FPGAയും ഉൾപ്പെടുന്നു, ഫൈൻ-ട്യൂണിംഗ് പ്രക്രിയയ്ക്ക് അവ അനിവാര്യമാണ്. ഓരോ ടെക്നോളജിക്കുമായുള്ള ഐക്കണുകൾ ഞാൻ കാണിക്കാം.
 

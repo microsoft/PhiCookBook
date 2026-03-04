@@ -1,6 +1,6 @@
-# Doladění Phi-3 pomocí Azure AI Foundry
+# Doladění Phi-3 pomocí Microsoft Foundry
 
-Pojďme prozkoumat, jak doladit jazykový model Phi-3 Mini od Microsoftu pomocí Azure AI Foundry. Doladění vám umožní přizpůsobit Phi-3 Mini konkrétním úkolům, čímž se stane ještě výkonnějším a lépe kontextově uvědomělým.
+Pojďme prozkoumat, jak doladit jazykový model Phi-3 Mini od Microsoftu pomocí Microsoft Foundry. Doladění vám umožní přizpůsobit Phi-3 Mini konkrétním úkolům, čímž se stane ještě výkonnějším a lépe kontextově uvědomělým.
 
 ## Úvahy
 
@@ -22,7 +22,7 @@ Pojďme prozkoumat, jak doladit jazykový model Phi-3 Mini od Microsoftu pomocí
 - Azure předplatné. Pokud ho nemáte, vytvořte si [placený Azure účet](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) a začněte.
 
 - [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Pro přístup k operacím v Azure AI Foundry se používají role založené na přístupu (Azure RBAC). Pro provedení kroků v tomto článku musí mít váš uživatelský účet přiřazenou __roli Azure AI Developer__ v rámci skupiny prostředků.
+- Pro přístup k operacím v Microsoft Foundry se používají role založené na přístupu (Azure RBAC). Pro provedení kroků v tomto článku musí mít váš uživatelský účet přiřazenou __roli Azure AI Developer__ v rámci skupiny prostředků.
 
 ### Registrace poskytovatele předplatného
 
@@ -58,17 +58,17 @@ Tréninková a validační data musí být ve formátu JSON Lines (JSONL). Pro `
 
 Podporovaný typ souboru je JSON Lines. Soubory se nahrávají do výchozího datového úložiště a zpřístupňují se ve vašem projektu.
 
-## Doladění Phi-3 pomocí Azure AI Foundry
+## Doladění Phi-3 pomocí Microsoft Foundry
 
-Azure AI Foundry vám umožňuje přizpůsobit velké jazykové modely vašim vlastním datům pomocí procesu zvaného doladění. Doladění přináší významnou hodnotu tím, že umožňuje přizpůsobení a optimalizaci pro konkrétní úkoly a aplikace. Výsledkem je lepší výkon, úspora nákladů, nižší latence a cílené výstupy.
+Microsoft Foundry vám umožňuje přizpůsobit velké jazykové modely vašim vlastním datům pomocí procesu zvaného doladění. Doladění přináší významnou hodnotu tím, že umožňuje přizpůsobení a optimalizaci pro konkrétní úkoly a aplikace. Výsledkem je lepší výkon, úspora nákladů, nižší latence a cílené výstupy.
 
 ![Finetune AI Foundry](../../../../translated_images/cs/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Vytvoření nového projektu
 
-1. Přihlaste se do [Azure AI Foundry](https://ai.azure.com).
+1. Přihlaste se do [Microsoft Foundry](https://ai.azure.com).
 
-1. Vyberte **+New project** pro vytvoření nového projektu v Azure AI Foundry.
+1. Vyberte **+New project** pro vytvoření nového projektu v Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/cs/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry vám umožňuje přizpůsobit velké jazykové modely vašim vl
 
 Před doladěním shromážděte nebo vytvořte dataset relevantní pro váš úkol, například chatové instrukce, páry otázek a odpovědí nebo jiná textová data. Data vyčistěte a předzpracujte odstraněním šumu, řešením chybějících hodnot a tokenizací textu.
 
-### Doladění modelů Phi-3 v Azure AI Foundry
+### Doladění modelů Phi-3 v Microsoft Foundry
 
 > [!NOTE]
 > Doladění modelů Phi-3 je momentálně podporováno pouze v projektech umístěných v regionu East US 2.
@@ -121,7 +121,7 @@ Před doladěním shromážděte nebo vytvořte dataset relevantní pro váš ú
 1. Proveďte následující:
 
     - Vyberte **task type** jako **Chat completion**.
-    - Vyberte **Training data**, které chcete použít. Můžete je nahrát přes Azure AI Foundry nebo z lokálního prostředí.
+    - Vyberte **Training data**, které chcete použít. Můžete je nahrát přes Microsoft Foundry nebo z lokálního prostředí.
 
     ![FineTuneSelect](../../../../translated_images/cs/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Před doladěním shromážděte nebo vytvořte dataset relevantní pro váš ú
 
     ![FineTuneSelect](../../../../translated_images/cs/select-submit.0a3802d581bac271.webp)
 
-1. Jakmile je model doladěn, stav se zobrazí jako **Completed**, jak je vidět na obrázku níže. Nyní můžete model nasadit a používat ho ve své aplikaci, v playgroundu nebo v prompt flow. Více informací najdete v [Jak nasadit rodinu malých jazykových modelů Phi-3 pomocí Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Jakmile je model doladěn, stav se zobrazí jako **Completed**, jak je vidět na obrázku níže. Nyní můžete model nasadit a používat ho ve své aplikaci, v playgroundu nebo v prompt flow. Více informací najdete v [Jak nasadit rodinu malých jazykových modelů Phi-3 pomocí Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/cs/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Pro podrobnější informace o doladění Phi-3 navštivte [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Pro podrobnější informace o doladění Phi-3 navštivte [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Odstranění doladěných modelů
 
-Doladěný model můžete smazat ze seznamu doladěných modelů v [Azure AI Foundry](https://ai.azure.com) nebo ze stránky s detaily modelu. Vyberte model, který chcete smazat, na stránce Fine-tuning a poté klikněte na tlačítko Delete.
+Doladěný model můžete smazat ze seznamu doladěných modelů v [Microsoft Foundry](https://ai.azure.com) nebo ze stránky s detaily modelu. Vyberte model, který chcete smazat, na stránce Fine-tuning a poté klikněte na tlačítko Delete.
 
 > [!NOTE]
 > Nelze smazat vlastní model, pokud má aktivní nasazení. Nejprve musíte odstranit nasazení modelu, teprve potom můžete smazat vlastní model.
@@ -163,7 +163,7 @@ Doladěný model můžete smazat ze seznamu doladěných modelů v [Azure AI Fou
 
 ### Úvahy o nákladech a limitech pro modely Phi-3 doladěné jako služba
 
-Modely Phi doladěné jako služba nabízí Microsoft a jsou integrovány s Azure AI Foundry. Ceny najdete při [nasazení](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) nebo doladění modelů v záložce Pricing and terms v průvodci nasazením.
+Modely Phi doladěné jako služba nabízí Microsoft a jsou integrovány s Microsoft Foundry. Ceny najdete při [nasazení](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) nebo doladění modelů v záložce Pricing and terms v průvodci nasazením.
 
 ## Filtrování obsahu
 
@@ -204,7 +204,7 @@ Uložte checkpoint doladěného modelu pro budoucí použití.
 
 ## Nasazení
 
-- Nasazení jako webová služba: Nasadíte svůj doladěný model jako webovou službu v Azure AI Foundry.
+- Nasazení jako webová služba: Nasadíte svůj doladěný model jako webovou službu v Microsoft Foundry.
 - Testování endpointu: Posílejte testovací dotazy na nasazený endpoint a ověřte jeho funkčnost.
 
 ## Iterace a zlepšování

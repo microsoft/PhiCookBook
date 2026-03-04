@@ -1,16 +1,16 @@
 # Azure AI ఫౌండ్రీలో Prompt flowతో కస్టమ్ Phi-3 నమూనాలను Fine-tune చేసి ఇంటిగ్రేట్ చేయడం
 
-ఈ End-to-End (E2E) సాంపిల్ Microsoft Tech Community నుండి "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" గైడ్ ఆధారంగా రూపొందించబడింది. ఇది Azure AI ఫౌండ్రీలో Prompt flowతో కస్టమ్ Phi-3 నమూనాలను fine-tuning, డిప్లాయ్ మరియు ఇంటిగ్రేట్ చేసే ప్రక్రియలను పరిచయం చేస్తుంది. E2E సాంపిల్ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" లాంటి లోకల్ కోడ్ రన్ చేయడం కాకుండా, ఈ పాఠంలో మీరు Azure AI / ML స్టూడియోలో మీ నమూనాను fine-tune చేసి ఇంటిగ్రేట్ చేయడంపై పూర్తి దృష్టి సారిస్తారు.
+ఈ End-to-End (E2E) సాంపిల్ Microsoft Tech Community నుండి "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" గైడ్ ఆధారంగా రూపొందించబడింది. ఇది Azure AI ఫౌండ్రీలో Prompt flowతో కస్టమ్ Phi-3 నమూనాలను fine-tuning, డిప్లాయ్ మరియు ఇంటిగ్రేట్ చేసే ప్రక్రియలను పరిచయం చేస్తుంది. E2E సాంపిల్ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" లాంటి లోకల్ కోడ్ రన్ చేయడం కాకుండా, ఈ పాఠంలో మీరు Azure AI / ML స్టూడియోలో మీ నమూనాను fine-tune చేసి ఇంటిగ్రేట్ చేయడంపై పూర్తి దృష్టి సారిస్తారు.
 
 ## సమీక్ష
 
-ఈ E2E సాంపిల్‌లో మీరు Phi-3 నమూనాను fine-tune చేసి Azure AI Foundryలో Prompt flowతో కनेक్ట్ చేయడం నేర్చుకుంటారు. Azure AI / ML స్టూడియోను ఉపయోగించి, కస్టమ్ AI నమూనాలను డిప్లాయ్ చేసి వినియోగించుకునేందుకు వర్క్‌ఫ్లోని స్థాపిస్తారు. ఈ E2E సాంపిల్ మూడు సన్నివేశాలుగా విభజించబడింది:
+ఈ E2E సాంపిల్‌లో మీరు Phi-3 నమూనాను fine-tune చేసి Microsoft Foundryలో Prompt flowతో కनेक్ట్ చేయడం నేర్చుకుంటారు. Azure AI / ML స్టూడియోను ఉపయోగించి, కస్టమ్ AI నమూనాలను డిప్లాయ్ చేసి వినియోగించుకునేందుకు వర్క్‌ఫ్లోని స్థాపిస్తారు. ఈ E2E సాంపిల్ మూడు సన్నివేశాలుగా విభజించబడింది:
 
 **సన్నివేశం 1: Azure వనరులను సెట్ చేసి Fine-tuningకి సిద్ధం అవ్వడం**
 
 **సన్నివేశం 2: Phi-3 నమూనాను Fine-tune చేసి Azure Machine Learning Studioలో డిప్లాయ్ చేయడం**
 
-**సన్నివేశం 3: Prompt flowతో ఇంటిగ్రేట్ చేసి Azure AI Foundryలో మీ కస్టమ్ నమూనాతో చాట్ చేయడం**
+**సన్నివేశం 3: Prompt flowతో ఇంటిగ్రేట్ చేసి Microsoft Foundryలో మీ కస్టమ్ నమూనాతో చాట్ చేయడం**
 
 ఇది ఈ E2E సాంపిల్ యొక్క సమీక్ష.
 
@@ -29,7 +29,7 @@
     - [Phi-3 నమూనాను Fine-tune చేయండి](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Fine-tuned Phi-3 నమూనాను డిప్లాయ్ చేయండి](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[సన్నివేశం 3: Prompt flowతో ఇంటిగ్రేట్ చేసి Azure AI Foundryలో మీ కస్టమ్ నమూనాతో చాట్ చేయడం](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[సన్నివేశం 3: Prompt flowతో ఇంటిగ్రేట్ చేసి Microsoft Foundryలో మీ కస్టమ్ నమూనాతో చాట్ చేయడం](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [కస్టమ్ Phi-3 నమూనాను Prompt flowతో ఇంటిగ్రేట్ చేయండి](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [మీ కస్టమ్ Phi-3 నమూనాతో చాట్ చేయండి](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -543,7 +543,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 > ![ట్రాఫిక్ సెట్ చేయండి.](../../../../../../translated_images/te/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## సన్నివేశం 3: Prompt flow తో ఇంటిగ్రేట్ చేసి Azure AI Foundry లో మీ కస్టమ్ మోడల్‌తో చాట్ చేయండి
+## సన్నివేశం 3: Prompt flow తో ఇంటిగ్రేట్ చేసి Microsoft Foundry లో మీ కస్టమ్ మోడల్‌తో చాట్ చేయండి
 
 ### కస్టమ్ Phi-3 మోడల్‌ను Prompt flow తో ఇంటిగ్రేట్ చేయండి
 
@@ -551,8 +551,8 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 ఈ వ్యాయామంలో, మీరు:
 
-- Azure AI Foundry Hub సృష్టించండి.
-- Azure AI Foundry ప్రాజెక్ట్ సృష్టించండి.
+- Microsoft Foundry Hub సృష్టించండి.
+- Microsoft Foundry ప్రాజెక్ట్ సృష్టించండి.
 - Prompt flow సృష్టించండి.
 - ఫైన్-ట్యూన్ చేసిన Phi-3 మోడల్‌కు ఒక కస్టమ్ కనెక్షన్ జోడించండి.
 - Prompt flow ను మీ కస్టమ్ Phi-3 మోడల్‌తో చాట్ చేసేందుకు సెట్టప్స్ చేయండి.
@@ -560,11 +560,11 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 > [!NOTE]
 > మీరు Azure ML Studio ఉపయోగించి కూడా Promptflow తో ఇంటిగ్రేట్ చేయవచ్చు. అదే ఇంటిగ్రేషన్ ప్రక్రియ Azure ML Studio కు కూడా వర్తిస్తుంది.
 
-#### Azure AI Foundry Hub సృష్టించండి
+#### Microsoft Foundry Hub సృష్టించండి
 
-ప్రాజెక్ట్ సృష్టించే ముందు హబ్‌ను సృష్టించడం అవసరం. హబ్ ఒక రీసోర్స్ గ్రూప్‌లా పనిచేస్తుంది, ఇది Azure AI Foundry లో మీరు అనేక ప్రాజెక్టులను నిర్వహించడానికి మరియు ஒரడస్తు చేయడానికి అనుమతిస్తుంది.
+ప్రాజెక్ట్ సృష్టించే ముందు హబ్‌ను సృష్టించడం అవసరం. హబ్ ఒక రీసోర్స్ గ్రూప్‌లా పనిచేస్తుంది, ఇది Microsoft Foundry లో మీరు అనేక ప్రాజెక్టులను నిర్వహించడానికి మరియు ஒரడస్తు చేయడానికి అనుమతిస్తుంది.
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ను సందర్శించండి.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ను సందర్శించండి.
 
 1. ఎడమ వైపు టాబ్ నుండి **All hubs** ఎంచుకోండి.
 
@@ -584,7 +584,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 1. **తరువాత** ను ఎంచుకోండి.
 
-#### Azure AI Foundry ప్రాజెక్ట్ సృష్టించండి
+#### Microsoft Foundry ప్రాజెక్ట్ సృష్టించండి
 
 1. మీరు సృష్టించిన హబ్‌లో ఎడమ వైపు ట్యాబ్ నుండి **అన్ని ప్రాజెక్టులు** ను ఎంచుకోండి.
 
@@ -624,9 +624,9 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 #### కస్టమ్ కనెక్షన్ జోడించండి
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ను సందర్శించండి.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ను సందర్శించండి.
 
-1. మీరు సృష్టించిన Azure AI Foundry ప్రాజెక్ట్ కు వెళ్లండి.
+1. మీరు సృష్టించిన Microsoft Foundry ప్రాజెక్ట్ కు వెళ్లండి.
 
 1. మీరు సృష్టించిన ప్రాజెక్ట్ లో, ఎడమ వైపు ట్యాబ్ నుండి **సెట్టింగ్స్** ను ఎంచుకోండి.
 
@@ -652,9 +652,9 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
 
 #### Prompt flow సృష్టించండి
 
-మీరు Azure AI Foundryలో కస్టమ్ కనెక్షన్ జోడించిన తర్వాత, క్రింది దశలను పాటించి Prompt flow సృష్టించండి. ఆపై ఈ Prompt flow ని కస్టమ్ కనెక్షన్ తో కనెక్ట్ చేసి, ఫైన్-ట్యూన్ చేసిన మోడల్‌ను Prompt flowలో ఉపయోగించవచ్చు.
+మీరు Microsoft Foundryలో కస్టమ్ కనెక్షన్ జోడించిన తర్వాత, క్రింది దశలను పాటించి Prompt flow సృష్టించండి. ఆపై ఈ Prompt flow ని కస్టమ్ కనెక్షన్ తో కనెక్ట్ చేసి, ఫైన్-ట్యూన్ చేసిన మోడల్‌ను Prompt flowలో ఉపయోగించవచ్చు.
 
-1. మీరు సృష్టించిన Azure AI Foundry ప్రాజెక్ట్ కు వెళ్లండి.
+1. మీరు సృష్టించిన Microsoft Foundry ప్రాజెక్ట్ కు వెళ్లండి.
 
 1. ఎడమ వైపు ట్యాబ్ నుండి **Prompt flow** ను ఎంచుకోండి.
 
@@ -773,7 +773,7 @@ Fine-tuning కోసం అవసరమైన డేటాసెట్లను
     ![Prompt flow కోడ్ పేస్ట్ చేయండి.](../../../../../../translated_images/te/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Azure AI Foundryలో Prompt flow ఉపయోగించే సందర్భంగా మరింత వివరమైన సమాచారానికి, మీరు [Azure AI Foundry లో Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ను చూడవచ్చు.
+> Microsoft Foundryలో Prompt flow ఉపయోగించే సందర్భంగా మరింత వివరమైన సమాచారానికి, మీరు [Microsoft Foundry లో Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ను చూడవచ్చు.
 
 1. **చాట్ ఇన్‌పుట్**, **చాట్ అవుట్పుట్** ను ఎంచుకుని మీ మోడల్ తో చాట్ ప్రారంభించండి.
 

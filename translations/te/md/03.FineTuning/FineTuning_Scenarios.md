@@ -2,7 +2,7 @@
 
 ![MS సేవలతో ఫైన్-ట్యూనింగ్](../../../../translated_images/te/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platform** ఈలో Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, మరియు ONNX Runtime వంటి వివిధ సాంకేతికతలు ఉన్నాయి. 
+**Platform** ఈలో Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, మరియు ONNX Runtime వంటి వివిధ సాంకేతికతలు ఉన్నాయి. 
 
 **Infrastructure** ఇది CPU మరియు FPGAని కలిగి ఉంటుంది, ఇవి ఫైన్-ట్యూనింగ్ ప్రక్రియకు అవసరమవుతాయి. నేను ఈ ప్రతి సాంకేతికతకు సంబంధించిన చిహ్నాలను చూపిస్తాను.
 

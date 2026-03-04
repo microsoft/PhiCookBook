@@ -12,7 +12,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi ਮਾਈਕਰੋਸਾਫਟ ਵਲੋਂ ਵਿਕਸਿਤ ਇੱਕ ਖੁਲ੍ਹਾ ਸਰੋਤ AI ਮਾਡਲਾਂ ਦੀ ਸਿਰੀਜ਼ ਹੈ।
 
@@ -71,7 +71,7 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
 - ਵੱਖ-ਵੱਖ ਵਾਤਾਵਰਣ ਵਿੱਚ Phi ਇੰਫਰੰਸ
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub ਮਾਡਲ](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry ਮਾਡਲ ਕੈਟਾਲਾਗ](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry ਮਾਡਲ ਕੈਟਾਲਾਗ](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI ਟੂਲਕਿਟ VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
 
 -  Phi ਦਾ ਮੁਲਾਂਕਣ
     - [ਜਵਾਬਦੇਹ AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [ਮੁਲਾਂਕਣ ਲਈ Azure AI Foundry](./md/01.Introduction/05/AIFoundry.md)
+    - [ਮੁਲਾਂਕਣ ਲਈ Microsoft Foundry](./md/01.Introduction/05/AIFoundry.md)
     - [ਮੁਲਾਂਕਣ ਲਈ Promptflow ਦੀ ਵਰਤੋਂ](./md/01.Introduction/05/Promptflow.md)
  
 - Azure AI Search ਨਾਲ RAG
@@ -117,8 +117,8 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
       - [WinUI3 ਐਪ ਨਾਲ Phi-3 ਮਿਨੀ-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 ਮਲਟੀ ਮਾਡਲ AI Powered ਨੋਟਸ ਐਪ ਸੈਂਪਲ](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Custom Phi-3 ਮਾਡਲਾਂ ਨੂੰ Fine-tune ਅਤੇ Prompt flow ਨਾਲ ਇੰਟਿਗ੍ਰੇਟ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Azure AI Foundry ਵਿੱਚ Prompt flow ਨਾਲ Custom Phi-3 ਮਾਡਲਾਂ ਨੂੰ Fine-tune ਅਤੇ ਇੰਟਿਗ੍ਰੇਟ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Microsoft ਦੀ Responsibility AI ਨੀਤੀਆਂ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦੇ ਹੋਏ Azure AI Foundry ਵਿਚ Fine-tuned Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾਂਕਣ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Microsoft Foundry ਵਿੱਚ Prompt flow ਨਾਲ Custom Phi-3 ਮਾਡਲਾਂ ਨੂੰ Fine-tune ਅਤੇ ਇੰਟਿਗ੍ਰੇਟ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Microsoft ਦੀ Responsibility AI ਨੀਤੀਆਂ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦੇ ਹੋਏ Microsoft Foundry ਵਿਚ Fine-tuned Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾਂਕਣ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct ਭਾਸ਼ਾ ਅਨੁਮਾਨ ਸੈਂਪਲ (ਚੀਨੀ/ਅੰਗਰੇਜ਼ੀ)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Windows GPU ਵਰਤ ਕੇ Phi-3.5-Instruct ONNX ਨਾਲ Prompt flow ਹੱਲ ਬਣਾਉਣ](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
       - [📓] [Microsoft Olive ਨਾਲ Phi-4-mini-reasoning ਦਾ Fine-tuning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Apple MLX ਨਾਲ Phi-4-mini-reasoning ਦਾ Fine-tuning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [GitHub ਮਾਡਲਾਂ ਨਾਲ Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Azure AI Foundry ਮਾਡਲਾਂ ਨਾਲ Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Microsoft Foundry ਮਾਡਲਾਂ ਨਾਲ Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - ਡੈਮੋ
       - [Phi-4-mini ਡੈਮੋ Hugging Face Spaces 'ਤੇ ਹੋਸਟ ਕੀਤੇ ਗਏ](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal ਡੈਮੋ Hugginge Face Spaces 'ਤੇ ਹੋਸਟ ਕੀਤੇ ਗਏ](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
   - [Azure Machine Learning ਸਰਵਿਸ ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/Introduce_AzureML.md)
   - [Lora ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Lora.md)
   - [QLora ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Azure AI Foundry ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Microsoft Foundry ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Azure ML CLI/SDK ਨਾਲ Phi-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Microsoft Olive ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Olive Hands-On Lab ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/olive-lab/readme.md)
@@ -292,7 +292,7 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
 ਇਨ੍ਹਾਂ ਜੋਖਮਾਂ ਨੂੰ ਘਟਾਉਣ ਲਈ ਤਜਵੀਜ਼ ਕੀਤੀ ਵਿਧੀ ਇਹ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੀ ਅਰਕੀਟੈਕਚਰ ਵਿੱਚ ਇੱਕ ਸੁਰੱਖਿਆ ਪ੍ਰਣਾਲੀ ਸ਼ਾਮਿਲ ਕਰੋ ਜੋ ਨੁਕਸਾਨਦਾਇਕ ਵਰਤਾਅ ਦਾ ਪਤਾ ਲਗਾ ਸਕੇ ਅਤੇ ਰੋਕ ਸਕੇ। [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ਇੱਕ ਸੁਤੰਤਰ ਪਰਤ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ, ਜੋ ਐਪਲੀਕੇਸ਼ਨ ਅਤੇ ਸਰਵਿਸ ਵਿੱਚ ਨੁਕਸਾਨਦਾਇਕ ਉਪਭੋਗਤਾ-ਜਨਰੇਟਡ ਅਤੇ AI-ਜਨਰੇਟਡ ਸਮੱਗਰੀ ਦਾ ਪਤਾ ਲਗਾਉਣ ਯੋਗ ਹੈ। ਅਜ਼ੂਰ ਏਆਈ ਫਾਉਂਡਰੀ ਵਿੱਚ, Content Safety ਸਰਵਿਸ ਤੁਹਾਨੂੰ ਵੱਖ-ਵੱਖ ਮਾਦਾ ਦੀ ਵਰਤੋਂ ਨਾਲ ਨੁਕਸਾਨਦਾਇਕ ਸਮੱਗਰੀ ਪਤਾ ਕਰਨ ਲਈ ਨਮੂਨਾ ਕੋਡ ਨੂੰ ਵੇਖਣ, ਖੋਜਣ ਅਤੇ ਅਜ਼ਮਾਇਸ਼ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ। ਹੇਠਾਂ ਦਿੱਤੇ [ਕੁਇਕਸਟਾਰਟ ਦਸਤਾਵੇਜ਼](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ਤੁਹਾਨੂੰ ਸਰਵਿਸ ਨੂੰ ਬੇਨਤੀ ਭੇਜਣੀ ਸਿੱਖਾਉਂਦਾ ਹੈ।
 ਦੂਜਾ ਪਹلو ਜੋ ਗ੍ਰਹਿਣ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ ਉਹ ਹੈ ਕੁੱਲ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਕਾਰگزاری। ਮਲਟੀ-ਮੋਡਲ ਅਤੇ ਮਲਟੀ-ਮਾਡਲ ਐਪਲੀਕੇਸ਼ਨਾਂ ਵਿੱਚ, ਅਸੀਂ ਕਾਰگزاری ਦਾ ਅਰਥ ਲੈਂਦੇ ਹਾਂ ਕਿ ਸਿਸਟਮ ਤੁਹਾਡੇ ਅਤੇ ਤੁਹਾਡੇ ਉਪਭੋਗਤਾਵਾਂ ਦੀ ਉਮੀਦਾਂ ਅਨੁਸਾਰ ਕੰਮ ਕਰਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ ਨੁਕਸਾਨਦਾਇਕ ਨਤੀਜੇ ਪੈਦਾ ਨਾ ਕਰਨਾ ਵੀ ਸ਼ਾਮਲ ਹੈ। ਇਹ ਜ਼ਰੂਰੀ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਕੁੱਲ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਕਾਰگزاری ਦਾ ਮੁਲਾਂਕਣ [ਪ੍ਰਦਰਸ਼ਨ ਅਤੇ ਗੁਣਵੱਤਾ ਅਤੇ ਜੋਖਮ ਅਤੇ ਸੁਰੱਖਿਆ ਮੁਲਾਂਕਣਕਾਰਾਂ](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ਦੀ ਵਰਤੋਂ ਨਾਲ ਕਰੋ। ਤੁਸੀਂ [ਕਸਟਮ ਮੁਲਾਂਕਣਕਾਰਾਂ](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) ਨਾਲ ਬਣਾਉਣ ਅਤੇ ਮੁਲਾਂਕਣ ਕਰਨ ਦੀ ਸਮਰੱਥਾ ਵੀ ਰੱਖਦੇ ਹੋ।
 
-ਤੁਸੀਂ ਆਪਣੇ ਵਿਕਾਸ ਮਾਹੌਲ ਵਿੱਚ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ਦੀ ਵਰਤੋਂ ਕਰ ਕੇ ਆਪਣੀ AI ਐਪਲੀਕੇਸ਼ਨ ਦਾ ਮੁਲਾਂਕਣ ਕਰ ਸਕਦੇ ਹੋ। ਜਾਂ ਤਾਂ ਇੱਕ ਟੈਸਟ ਡੇਟਾਸੈੱਟ ਜਾਂ ਟਾਰਗੇਟ ਦਿੱਤਾ ਜਾਵੇ, ਤੁਹਾਡੇ ਜਨਰੇਟਿਵ AI ਐਪਲੀਕੇਸ਼ਨ ਦੀਆਂ ਰਚਨਾਵਾਂ ਦੀ ਗਿਣਤੀ ਗੁਣਾ ਨਾਲ ਨਪਤੀ ਜਾਂਦੀਆਂ ਹਨ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਬਿਲਟ-ਇਨ ਮੁਲਾਂਕਣਕਾਰ ਜਾਂ ਤੁਹਾਡੇ ਚੋਣ ਦੇ ਕਸਟਮ ਮੁਲਾਂਕਣਕਾਰ ਸ਼ਾਮਲ ਹਨ। ਤੁਹਾਡਾ ਸਿਸਟਮ ਮੁਲਾਂਕਣ ਕਰਵਾਉਣ ਲਈ azure ai evaluation sdk ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰਨ ਲਈ, ਤੁਸੀਂ [ਕੁਇਕਸਟਾਰਟ ਗਾਈਡ](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ਦੀ ਪਾਲਣਾ ਕਰ ਸਕਦੇ ਹੋ। ਇੱਕ ਵਾਰੀ ਤੁਸੀਂ ਮੁਲਾਂਕਣ ਦੌੜ ਚਲਾਉਂਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ [Azure AI Foundry ਵਿੱਚ ਨਤੀਜਿਆਂ ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)।
+ਤੁਸੀਂ ਆਪਣੇ ਵਿਕਾਸ ਮਾਹੌਲ ਵਿੱਚ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ਦੀ ਵਰਤੋਂ ਕਰ ਕੇ ਆਪਣੀ AI ਐਪਲੀਕੇਸ਼ਨ ਦਾ ਮੁਲਾਂਕਣ ਕਰ ਸਕਦੇ ਹੋ। ਜਾਂ ਤਾਂ ਇੱਕ ਟੈਸਟ ਡੇਟਾਸੈੱਟ ਜਾਂ ਟਾਰਗੇਟ ਦਿੱਤਾ ਜਾਵੇ, ਤੁਹਾਡੇ ਜਨਰੇਟਿਵ AI ਐਪਲੀਕੇਸ਼ਨ ਦੀਆਂ ਰਚਨਾਵਾਂ ਦੀ ਗਿਣਤੀ ਗੁਣਾ ਨਾਲ ਨਪਤੀ ਜਾਂਦੀਆਂ ਹਨ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਬਿਲਟ-ਇਨ ਮੁਲਾਂਕਣਕਾਰ ਜਾਂ ਤੁਹਾਡੇ ਚੋਣ ਦੇ ਕਸਟਮ ਮੁਲਾਂਕਣਕਾਰ ਸ਼ਾਮਲ ਹਨ। ਤੁਹਾਡਾ ਸਿਸਟਮ ਮੁਲਾਂਕਣ ਕਰਵਾਉਣ ਲਈ azure ai evaluation sdk ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰਨ ਲਈ, ਤੁਸੀਂ [ਕੁਇਕਸਟਾਰਟ ਗਾਈਡ](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ਦੀ ਪਾਲਣਾ ਕਰ ਸਕਦੇ ਹੋ। ਇੱਕ ਵਾਰੀ ਤੁਸੀਂ ਮੁਲਾਂਕਣ ਦੌੜ ਚਲਾਉਂਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ [Microsoft Foundry ਵਿੱਚ ਨਤੀਜਿਆਂ ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)।
 
 ## ਟਰੇਡਮਾਰਕ
 
@@ -303,11 +303,11 @@ Phi ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼াল
 
 ਜੇ ਤੁਸੀਂ ਫਸ ਜਾਂਦੇ ਹੋ ਜਾਂ AI ਐਪ ਬਣਾਉਣ ਬਾਰੇ ਕਿਸੇ ਵੀ ਸਵਾਲ ਹਨ, ਤਾਂ ਸ਼ਾਮਲ ਹੋਵੋ:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਉਤਪਾਦ ਫੀਡਬੈਕ ਜਾਂ ਗਲਤੀਆਂ ਹਨ ਜਦੋਂ ਤੁਸੀਂ ਬਣਾਉਂਦੇ ਹੋ ਤਾਂ ਜਾਓ:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

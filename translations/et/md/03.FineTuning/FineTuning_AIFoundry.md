@@ -1,6 +1,6 @@
-# Phi-3 Mini mudeli peenhäälestamine Azure AI Foundry abil
+# Phi-3 Mini mudeli peenhäälestamine Microsoft Foundry abil
 
-Uurime, kuidas peenhäälestada Microsofti Phi-3 Mini keelemudelit Azure AI Foundry abil. Peenhäälestamine võimaldab kohandada Phi-3 Mini konkreetsete ülesannete jaoks, muutes selle veelgi võimsamaks ja kontekstitundlikumaks.
+Uurime, kuidas peenhäälestada Microsofti Phi-3 Mini keelemudelit Microsoft Foundry abil. Peenhäälestamine võimaldab kohandada Phi-3 Mini konkreetsete ülesannete jaoks, muutes selle veelgi võimsamaks ja kontekstitundlikumaks.
 
 ## Olulised kaalutlused
 
@@ -22,7 +22,7 @@ Uurime, kuidas peenhäälestada Microsofti Phi-3 Mini keelemudelit Azure AI Foun
 - Azure'i tellimus. Kui sul pole Azure'i tellimust, loo [tasuline Azure'i konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), et alustada.
 
 - [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure'i rollipõhised juurdepääsukontrollid (Azure RBAC) võimaldavad anda juurdepääsu Azure AI Foundry toimingutele. Selle artikli samme täitmiseks peab sinu kasutajakontole olema määratud __Azure AI Developer roll__ ressursigrupis.
+- Azure'i rollipõhised juurdepääsukontrollid (Azure RBAC) võimaldavad anda juurdepääsu Microsoft Foundry toimingutele. Selle artikli samme täitmiseks peab sinu kasutajakontole olema määratud __Azure AI Developer roll__ ressursigrupis.
 
 ### Tellimuse pakkuja registreerimine
 
@@ -58,17 +58,17 @@ Treening- ja valideerimisandmed **peavad** olema vormindatud JSON Lines (JSONL) 
 
 Toetatud failitüüp on JSON Lines. Failid laaditakse üles vaikimisi andmesalvestusse ja tehakse projektis kättesaadavaks.
 
-## Phi-3 peenhäälestamine Azure AI Foundry abil
+## Phi-3 peenhäälestamine Microsoft Foundry abil
 
-Azure AI Foundry võimaldab kohandada suuri keelemudeleid isiklike andmestike järgi, kasutades protsessi, mida nimetatakse peenhäälestamiseks. Peenhäälestamine pakub märkimisväärset väärtust, võimaldades kohandamist ja optimeerimist konkreetsete ülesannete ja rakenduste jaoks. See toob kaasa parema jõudluse, kulutõhususe, väiksema latentsuse ja kohandatud väljundid.
+Microsoft Foundry võimaldab kohandada suuri keelemudeleid isiklike andmestike järgi, kasutades protsessi, mida nimetatakse peenhäälestamiseks. Peenhäälestamine pakub märkimisväärset väärtust, võimaldades kohandamist ja optimeerimist konkreetsete ülesannete ja rakenduste jaoks. See toob kaasa parema jõudluse, kulutõhususe, väiksema latentsuse ja kohandatud väljundid.
 
 ![Finetune AI Foundry](../../../../imgs/03/AIFoundry/AIFoundryfinetune.png)
 
 ### Uue projekti loomine
 
-1. Logi sisse [Azure AI Foundry](https://ai.azure.com).
+1. Logi sisse [Microsoft Foundry](https://ai.azure.com).
 
-1. Vali **+New project**, et luua uus projekt Azure AI Foundry's.
+1. Vali **+New project**, et luua uus projekt Microsoft Foundry's.
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-new-project.png)
 
@@ -97,7 +97,7 @@ Azure AI Foundry võimaldab kohandada suuri keelemudeleid isiklike andmestike j�
 
 Enne peenhäälestamist kogu või loo ülesandega seotud andmestik, näiteks vestlusjuhised, küsimuste ja vastuste paarid või muu asjakohane tekst. Puhasta ja eeltöötlusta andmed, eemaldades müra, käsitledes puuduvad väärtused ja tehes tekstist tokeniseerimise.
 
-### Phi-3 mudelite peenhäälestamine Azure AI Foundry abil
+### Phi-3 mudelite peenhäälestamine Microsoft Foundry abil
 
 > [!NOTE]
 > Phi-3 mudelite peenhäälestamine on praegu toetatud projektides, mis asuvad East US 2 piirkonnas.
@@ -121,7 +121,7 @@ Enne peenhäälestamist kogu või loo ülesandega seotud andmestik, näiteks ves
 1. Täida järgmised ülesanded:
 
     - Vali **task type** väärtuseks **Chat completion**.
-    - Vali **Training data**, mida soovid kasutada. Sa saad selle üles laadida Azure AI Foundry kaudu või oma kohalikust keskkonnast.
+    - Vali **Training data**, mida soovid kasutada. Sa saad selle üles laadida Microsoft Foundry kaudu või oma kohalikust keskkonnast.
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune2.png)
 
@@ -145,16 +145,16 @@ Enne peenhäälestamist kogu või loo ülesandega seotud andmestik, näiteks ves
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-submit.png)
 
-1. Kui mudel on peenhäälestatud, kuvatakse selle olek **Completed**, nagu näidatud alloleval pildil. Nüüd saad mudeli juurutada ja kasutada seda oma rakenduses, mänguväljakul või prompt flow's. Lisateabe saamiseks vaata [Kuidas juurutada Phi-3 väikese keelemudelite perekonda Azure AI Foundry abil](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Kui mudel on peenhäälestatud, kuvatakse selle olek **Completed**, nagu näidatud alloleval pildil. Nüüd saad mudeli juurutada ja kasutada seda oma rakenduses, mänguväljakul või prompt flow's. Lisateabe saamiseks vaata [Kuidas juurutada Phi-3 väikese keelemudelite perekonda Microsoft Foundry abil](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../imgs/03/AIFoundry/completed.png)
 
 > [!NOTE]
-> Täpsema teabe saamiseks Phi-3 peenhäälestamise kohta külastage [Phi-3 mudelite peenhäälestamine Azure AI Foundry abil](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Täpsema teabe saamiseks Phi-3 peenhäälestamise kohta külastage [Phi-3 mudelite peenhäälestamine Microsoft Foundry abil](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Peenhäälestatud mudelite kustutamine
 
-Sa saad kustutada peenhäälestatud mudeli peenhäälestamise mudelite loendist [Azure AI Foundry](https://ai.azure.com) või mudeli detailide lehelt. Vali peenhäälestatud mudel, mida soovid kustutada, ja seejärel vali kustutamise nupp, et mudel kustutada.
+Sa saad kustutada peenhäälestatud mudeli peenhäälestamise mudelite loendist [Microsoft Foundry](https://ai.azure.com) või mudeli detailide lehelt. Vali peenhäälestatud mudel, mida soovid kustutada, ja seejärel vali kustutamise nupp, et mudel kustutada.
 
 > [!NOTE]
 > Kohandatud mudelit ei saa kustutada, kui sellel on olemasolev juurutus. Enne kohandatud mudeli kustutamist pead esmalt kustutama mudeli juurutuse.
@@ -163,7 +163,7 @@ Sa saad kustutada peenhäälestatud mudeli peenhäälestamise mudelite loendist 
 
 ### Phi-3 mudelite teenusena peenhäälestamise maksumus ja kvoodid
 
-Phi mudelid, mida pakutakse teenusena, on Microsofti poolt integreeritud Azure AI Foundry'sse kasutamiseks. Hinnakujundust saab vaadata [juurutamise](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) või peenhäälestamise ajal juurutamise viisardi hinnakujunduse ja tingimuste vahekaardil.
+Phi mudelid, mida pakutakse teenusena, on Microsofti poolt integreeritud Microsoft Foundry'sse kasutamiseks. Hinnakujundust saab vaadata [juurutamise](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) või peenhäälestamise ajal juurutamise viisardi hinnakujunduse ja tingimuste vahekaardil.
 
 ## Sisufiltreerimine
 
@@ -204,7 +204,7 @@ Salvesta peenhäälestatud mudeli kontrollpunkt tulevaseks kasutamiseks.
 
 ## Juurutamine
 
-- Juuruta veebiteenusena: Juuruta oma peenhäälestatud mudel veebiteenusena Azure AI Foundry's.
+- Juuruta veebiteenusena: Juuruta oma peenhäälestatud mudel veebiteenusena Microsoft Foundry's.
 - Testi lõpp-punkti: Saada testpäringuid juurutatud lõpp-punkti, et kontrollida selle funktsionaalsust.
 
 ## Iteratsioon ja täiustamine

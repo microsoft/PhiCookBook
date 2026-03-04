@@ -2,7 +2,7 @@
 
 ![Finjustering med MS-tjenester](../../../../translated_images/no/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Plattform** Dette inkluderer ulike teknologier som Azure AI Foundry, Azure Machine Learning, AI-verktøy, Kaito og ONNX Runtime.
+**Plattform** Dette inkluderer ulike teknologier som Microsoft Foundry, Azure Machine Learning, AI-verktøy, Kaito og ONNX Runtime.
 
 **Infrastruktur** Dette inkluderer CPU og FPGA, som er essensielle for finjusteringsprosessen. La meg vise deg ikonene for hver av disse teknologiene.
 

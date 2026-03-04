@@ -1,14 +1,14 @@
-# Azure AI Foundry-তে Microsoft-এর Responsible AI নীতিমালা অনুসারে Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন
+# Microsoft Foundry-তে Microsoft-এর Responsible AI নীতিমালা অনুসারে Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন
 
-এই end-to-end (E2E) নমুনাটি Microsoft Tech Community থেকে "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" গাইডের উপর ভিত্তি করে তৈরি।
+এই end-to-end (E2E) নমুনাটি Microsoft Tech Community থেকে "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" গাইডের উপর ভিত্তি করে তৈরি।
 
 ## ওভারভিউ
 
-### Azure AI Foundry-তে Fine-tuned Phi-3 / Phi-3.5 মডেলের নিরাপত্তা এবং কর্মক্ষমতা কীভাবে মূল্যায়ন করবেন?
+### Microsoft Foundry-তে Fine-tuned Phi-3 / Phi-3.5 মডেলের নিরাপত্তা এবং কর্মক্ষমতা কীভাবে মূল্যায়ন করবেন?
 
-মডেল ফাইন-টিউনিং কখনও কখনও অনিচ্ছাকৃত বা অপ্রত্যাশিত প্রতিক্রিয়া সৃষ্টি করতে পারে। মডেলটি নিরাপদ এবং কার্যকর থাকবে তা নিশ্চিত করতে, মডেলের ক্ষতিকর বিষয়বস্তু তৈরি করার সম্ভাবনা এবং সঠিক, প্রাসঙ্গিক ও সঙ্গতিপূর্ণ প্রতিক্রিয়া প্রদানের ক্ষমতা মূল্যায়ন করা গুরুত্বপূর্ণ। এই টিউটোরিয়ালে, আপনি Azure AI Foundry-তে Prompt flow-এর সাথে সংযুক্ত Fine-tuned Phi-3 / Phi-3.5 মডেলের নিরাপত্তা এবং কর্মক্ষমতা কীভাবে মূল্যায়ন করবেন তা শিখবেন।
+মডেল ফাইন-টিউনিং কখনও কখনও অনিচ্ছাকৃত বা অপ্রত্যাশিত প্রতিক্রিয়া সৃষ্টি করতে পারে। মডেলটি নিরাপদ এবং কার্যকর থাকবে তা নিশ্চিত করতে, মডেলের ক্ষতিকর বিষয়বস্তু তৈরি করার সম্ভাবনা এবং সঠিক, প্রাসঙ্গিক ও সঙ্গতিপূর্ণ প্রতিক্রিয়া প্রদানের ক্ষমতা মূল্যায়ন করা গুরুত্বপূর্ণ। এই টিউটোরিয়ালে, আপনি Microsoft Foundry-তে Prompt flow-এর সাথে সংযুক্ত Fine-tuned Phi-3 / Phi-3.5 মডেলের নিরাপত্তা এবং কর্মক্ষমতা কীভাবে মূল্যায়ন করবেন তা শিখবেন।
 
-এখানে Azure AI Foundry-এর মূল্যায়ন প্রক্রিয়া দেওয়া হলো।
+এখানে Microsoft Foundry-এর মূল্যায়ন প্রক্রিয়া দেওয়া হলো।
 
 ![Architecture of tutorial.](../../../../../../translated_images/bn/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@
 
 ### বিষয়বস্তু সূচি
 
-1. [**সিনারিও ১: Azure AI Foundry-এর Prompt flow মূল্যায়নের পরিচিতি**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**সিনারিও ১: Microsoft Foundry-এর Prompt flow মূল্যায়নের পরিচিতি**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [নিরাপত্তা মূল্যায়নের পরিচিতি](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [কর্মক্ষমতা মূল্যায়নের পরিচিতি](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**সিনারিও ২: Azure AI Foundry-তে Phi-3 / Phi-3.5 মডেল মূল্যায়ন**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**সিনারিও ২: Microsoft Foundry-তে Phi-3 / Phi-3.5 মডেল মূল্যায়ন**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [শুরু করার আগে](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Phi-3 / Phi-3.5 মডেল মূল্যায়নের জন্য Azure OpenAI ডিপ্লয় করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Azure AI Foundry-এর Prompt flow মূল্যায়ন ব্যবহার করে Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Microsoft Foundry-এর Prompt flow মূল্যায়ন ব্যবহার করে Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [অভিনন্দন!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **সিনারিও ১: Azure AI Foundry-এর Prompt flow মূল্যায়নের পরিচিতি**
+## **সিনারিও ১: Microsoft Foundry-এর Prompt flow মূল্যায়নের পরিচিতি**
 
 ### নিরাপত্তা মূল্যায়নের পরিচিতি
 
-আপনার AI মডেল নৈতিক এবং নিরাপদ কিনা তা নিশ্চিত করতে, Microsoft-এর Responsible AI Principles-এর বিরুদ্ধে এটি মূল্যায়ন করা অত্যন্ত গুরুত্বপূর্ণ। Azure AI Foundry-তে নিরাপত্তা মূল্যায়ন আপনাকে মডেলের jailbreak আক্রমণের প্রতি দুর্বলতা এবং ক্ষতিকর বিষয়বস্তু তৈরি করার সম্ভাবনা মূল্যায়ন করতে দেয়, যা সরাসরি এই নীতিমালার সাথে সামঞ্জস্যপূর্ণ।
+আপনার AI মডেল নৈতিক এবং নিরাপদ কিনা তা নিশ্চিত করতে, Microsoft-এর Responsible AI Principles-এর বিরুদ্ধে এটি মূল্যায়ন করা অত্যন্ত গুরুত্বপূর্ণ। Microsoft Foundry-তে নিরাপত্তা মূল্যায়ন আপনাকে মডেলের jailbreak আক্রমণের প্রতি দুর্বলতা এবং ক্ষতিকর বিষয়বস্তু তৈরি করার সম্ভাবনা মূল্যায়ন করতে দেয়, যা সরাসরি এই নীতিমালার সাথে সামঞ্জস্যপূর্ণ।
 
 ![Safaty evaluation.](../../../../../../translated_images/bn/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 #### নিরাপত্তা মেট্রিক্স
 
-এই টিউটোরিয়ালে, আপনি Azure AI Foundry-এর নিরাপত্তা মেট্রিক্স ব্যবহার করে Fine-tuned Phi-3 মডেলের নিরাপত্তা মূল্যায়ন করবেন। এই মেট্রিক্সগুলো মডেলের ক্ষতিকর বিষয়বস্তু তৈরি করার সম্ভাবনা এবং jailbreak আক্রমণের প্রতি দুর্বলতা নিরূপণে সাহায্য করে। নিরাপত্তা মেট্রিক্সগুলো হলো:
+এই টিউটোরিয়ালে, আপনি Microsoft Foundry-এর নিরাপত্তা মেট্রিক্স ব্যবহার করে Fine-tuned Phi-3 মডেলের নিরাপত্তা মূল্যায়ন করবেন। এই মেট্রিক্সগুলো মডেলের ক্ষতিকর বিষয়বস্তু তৈরি করার সম্ভাবনা এবং jailbreak আক্রমণের প্রতি দুর্বলতা নিরূপণে সাহায্য করে। নিরাপত্তা মেট্রিক্সগুলো হলো:
 
 - **স্ব-ক্ষতির সাথে সম্পর্কিত বিষয়বস্তু**: মডেল কি স্ব-ক্ষতির সাথে সম্পর্কিত বিষয়বস্তু তৈরি করার প্রবণতা রাখে তা মূল্যায়ন করে।
 - **ঘৃণাস্পদ এবং অন্যায় বিষয়বস্তু**: মডেল কি ঘৃণাস্পদ বা অন্যায় বিষয়বস্তু তৈরি করার প্রবণতা রাখে তা মূল্যায়ন করে।
@@ -88,7 +88,7 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 ### কর্মক্ষমতা মূল্যায়নের পরিচিতি
 
-আপনার AI মডেল প্রত্যাশিতভাবে কাজ করছে কিনা তা নিশ্চিত করতে, কর্মক্ষমতা মেট্রিক্সের বিরুদ্ধে এর কার্যকারিতা মূল্যায়ন করা গুরুত্বপূর্ণ। Azure AI Foundry-তে কর্মক্ষমতা মূল্যায়ন আপনাকে মডেলের সঠিক, প্রাসঙ্গিক এবং সঙ্গতিপূর্ণ প্রতিক্রিয়া তৈরি করার দক্ষতা মূল্যায়ন করতে দেয়।
+আপনার AI মডেল প্রত্যাশিতভাবে কাজ করছে কিনা তা নিশ্চিত করতে, কর্মক্ষমতা মেট্রিক্সের বিরুদ্ধে এর কার্যকারিতা মূল্যায়ন করা গুরুত্বপূর্ণ। Microsoft Foundry-তে কর্মক্ষমতা মূল্যায়ন আপনাকে মডেলের সঠিক, প্রাসঙ্গিক এবং সঙ্গতিপূর্ণ প্রতিক্রিয়া তৈরি করার দক্ষতা মূল্যায়ন করতে দেয়।
 
 ![Safaty evaluation.](../../../../../../translated_images/bn/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 #### কর্মক্ষমতা মেট্রিক্স
 
-এই টিউটোরিয়ালে, আপনি Azure AI Foundry-এর কর্মক্ষমতা মেট্রিক্স ব্যবহার করে Fine-tuned Phi-3 / Phi-3.5 মডেলের কর্মক্ষমতা মূল্যায়ন করবেন। এই মেট্রিক্সগুলো মডেলের সঠিক, প্রাসঙ্গিক এবং সঙ্গতিপূর্ণ প্রতিক্রিয়া তৈরি করার দক্ষতা নিরূপণে সাহায্য করে। কর্মক্ষমতা মেট্রিক্সগুলো হলো:
+এই টিউটোরিয়ালে, আপনি Microsoft Foundry-এর কর্মক্ষমতা মেট্রিক্স ব্যবহার করে Fine-tuned Phi-3 / Phi-3.5 মডেলের কর্মক্ষমতা মূল্যায়ন করবেন। এই মেট্রিক্সগুলো মডেলের সঠিক, প্রাসঙ্গিক এবং সঙ্গতিপূর্ণ প্রতিক্রিয়া তৈরি করার দক্ষতা নিরূপণে সাহায্য করে। কর্মক্ষমতা মেট্রিক্সগুলো হলো:
 
 - **Groundedness**: তৈরি করা উত্তরগুলো ইনপুট উৎসের তথ্যের সাথে কতটা সামঞ্জস্যপূর্ণ তা মূল্যায়ন করে।
 - **Relevance**: প্রদত্ত প্রশ্নের সাথে তৈরি প্রতিক্রিয়ার প্রাসঙ্গিকতা মূল্যায়ন করে।
@@ -109,34 +109,34 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 ![Evaluate based on performance.](../../../../../../translated_images/bn/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **সিনারিও ২: Azure AI Foundry-তে Phi-3 / Phi-3.5 মডেল মূল্যায়ন**
+## **সিনারিও ২: Microsoft Foundry-তে Phi-3 / Phi-3.5 মডেল মূল্যায়ন**
 
 ### শুরু করার আগে
 
-এই টিউটোরিয়ালটি পূর্ববর্তী ব্লগ পোস্টগুলোর পরবর্তী ধাপ, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" এবং "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)"। এই পোস্টগুলোতে আমরা Azure AI Foundry-তে Phi-3 / Phi-3.5 মডেল ফাইন-টিউন এবং Prompt flow-এর সাথে সংযুক্ত করার প্রক্রিয়া দেখিয়েছি।
+এই টিউটোরিয়ালটি পূর্ববর্তী ব্লগ পোস্টগুলোর পরবর্তী ধাপ, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" এবং "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)"। এই পোস্টগুলোতে আমরা Microsoft Foundry-তে Phi-3 / Phi-3.5 মডেল ফাইন-টিউন এবং Prompt flow-এর সাথে সংযুক্ত করার প্রক্রিয়া দেখিয়েছি।
 
-এই টিউটোরিয়ালে, আপনি Azure AI Foundry-তে একটি Azure OpenAI মডেলকে মূল্যায়ক হিসেবে ডিপ্লয় করবেন এবং এটি ব্যবহার করে আপনার Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন করবেন।
+এই টিউটোরিয়ালে, আপনি Microsoft Foundry-তে একটি Azure OpenAI মডেলকে মূল্যায়ক হিসেবে ডিপ্লয় করবেন এবং এটি ব্যবহার করে আপনার Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন করবেন।
 
 এই টিউটোরিয়াল শুরু করার আগে, নিশ্চিত করুন যে আপনার কাছে নিম্নলিখিত প্রয়োজনীয়তাগুলো রয়েছে, যা পূর্ববর্তী টিউটোরিয়ালে বর্ণিত হয়েছে:
 
 1. Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়নের জন্য প্রস্তুত একটি ডেটাসেট।
 1. Phi-3 / Phi-3.5 মডেল যা ফাইন-টিউন করা হয়েছে এবং Azure Machine Learning-এ ডিপ্লয় করা হয়েছে।
-1. Azure AI Foundry-তে আপনার Fine-tuned Phi-3 / Phi-3.5 মডেলের সাথে সংযুক্ত একটি Prompt flow।
+1. Microsoft Foundry-তে আপনার Fine-tuned Phi-3 / Phi-3.5 মডেলের সাথে সংযুক্ত একটি Prompt flow।
 
 > [!NOTE]
 > আপনি পূর্ববর্তী ব্লগ পোস্ট থেকে ডাউনলোড করা **ULTRACHAT_200k** ডেটাসেটের data ফোল্ডারে থাকা *test_data.jsonl* ফাইলটি Fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়নের জন্য ডেটাসেট হিসেবে ব্যবহার করবেন।
 
-#### Azure AI Foundry-তে Prompt flow-এর সাথে কাস্টম Phi-3 / Phi-3.5 মডেল সংযুক্তকরণ (Code first পদ্ধতি)
+#### Microsoft Foundry-তে Prompt flow-এর সাথে কাস্টম Phi-3 / Phi-3.5 মডেল সংযুক্তকরণ (Code first পদ্ধতি)
 > [!NOTE]  
-> আপনি যদি "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" এ বর্ণিত লো-কোড পদ্ধতি অনুসরণ করে থাকেন, তাহলে এই অনুশীলনটি এড়িয়ে পরবর্তী ধাপে যেতে পারেন।  
+> আপনি যদি "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" এ বর্ণিত লো-কোড পদ্ধতি অনুসরণ করে থাকেন, তাহলে এই অনুশীলনটি এড়িয়ে পরবর্তী ধাপে যেতে পারেন।  
 > তবে, যদি আপনি "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" এ বর্ণিত কোড-প্রথম পদ্ধতি অনুসরণ করে আপনার Phi-3 / Phi-3.5 মডেল ফাইন-টিউন এবং ডিপ্লয় করে থাকেন, তাহলে আপনার মডেলকে Prompt flow এর সাথে সংযুক্ত করার প্রক্রিয়া কিছুটা ভিন্ন হবে। এই অনুশীলনে আপনি সেই প্রক্রিয়া শিখবেন।
-আপনার fine-tuned Phi-3 / Phi-3.5 মডেলকে Azure AI Foundry-এর Prompt flow-এ ইন্টিগ্রেট করতে হবে।
+আপনার fine-tuned Phi-3 / Phi-3.5 মডেলকে Microsoft Foundry-এর Prompt flow-এ ইন্টিগ্রেট করতে হবে।
 
-#### Azure AI Foundry Hub তৈরি করুন
+#### Microsoft Foundry Hub তৈরি করুন
 
-প্রজেক্ট তৈরি করার আগে একটি Hub তৈরি করতে হবে। Hub একটি Resource Group-এর মতো কাজ করে, যা Azure AI Foundry-এর মধ্যে একাধিক প্রজেক্টকে সংগঠিত ও পরিচালনা করতে সাহায্য করে।
+প্রজেক্ট তৈরি করার আগে একটি Hub তৈরি করতে হবে। Hub একটি Resource Group-এর মতো কাজ করে, যা Microsoft Foundry-এর মধ্যে একাধিক প্রজেক্টকে সংগঠিত ও পরিচালনা করতে সাহায্য করে।
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ সাইন ইন করুন।
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ সাইন ইন করুন।
 
 1. বাম পাশের ট্যাব থেকে **All hubs** নির্বাচন করুন।
 
@@ -157,7 +157,7 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 1. **Next** নির্বাচন করুন।
 
-#### Azure AI Foundry Project তৈরি করুন
+#### Microsoft Foundry Project তৈরি করুন
 
 1. আপনি যে Hub তৈরি করেছেন, সেখানে বাম পাশের ট্যাব থেকে **All projects** নির্বাচন করুন।
 
@@ -197,9 +197,9 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 #### কাস্টম কানেকশন যোগ করুন
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ যান।
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ যান।
 
-1. আপনি যে Azure AI Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
+1. আপনি যে Microsoft Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
 
 1. প্রজেক্টে বাম পাশের ট্যাব থেকে **Settings** নির্বাচন করুন।
 
@@ -225,9 +225,9 @@ Microsoft-এর Responsible AI Principles অন্তর্ভুক্ত:
 
 #### Prompt flow তৈরি করুন
 
-আপনি Azure AI Foundry-তে একটি কাস্টম কানেকশন যোগ করেছেন। এখন নিম্নলিখিত ধাপগুলো অনুসরণ করে একটি Prompt flow তৈরি করুন। এরপর, এই Prompt flow-কে কাস্টম কানেকশনের সাথে সংযুক্ত করবেন যাতে fine-tuned মডেলটি Prompt flow-এ ব্যবহার করা যায়।
+আপনি Microsoft Foundry-তে একটি কাস্টম কানেকশন যোগ করেছেন। এখন নিম্নলিখিত ধাপগুলো অনুসরণ করে একটি Prompt flow তৈরি করুন। এরপর, এই Prompt flow-কে কাস্টম কানেকশনের সাথে সংযুক্ত করবেন যাতে fine-tuned মডেলটি Prompt flow-এ ব্যবহার করা যায়।
 
-1. আপনি যে Azure AI Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
+1. আপনি যে Microsoft Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
 
 1. বাম পাশের ট্যাব থেকে **Prompt flow** নির্বাচন করুন।
 
@@ -344,7 +344,7 @@ fine-tuned Phi-3 / Phi-3.5 মডেলকে Prompt flow-এ ইন্টিগ
     ![Paste prompt flow code.](../../../../../../translated_images/bn/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Azure AI Foundry-তে Prompt flow ব্যবহারের বিস্তারিত তথ্যের জন্য, আপনি [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) দেখতে পারেন।
+> Microsoft Foundry-তে Prompt flow ব্যবহারের বিস্তারিত তথ্যের জন্য, আপনি [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) দেখতে পারেন।
 
 1. **Chat input**, **Chat output** নির্বাচন করুন যাতে আপনার মডেলের সাথে চ্যাট করা যায়।
 
@@ -385,13 +385,13 @@ fine-tuned Phi-3 / Phi-3.5 মডেলকে Prompt flow-এ ইন্টিগ
 
 ### Phi-3 / Phi-3.5 মডেল মূল্যায়নের জন্য Azure OpenAI ডিপ্লয় করুন
 
-Phi-3 / Phi-3.5 মডেল Azure AI Foundry-তে মূল্যায়ন করার জন্য একটি Azure OpenAI মডেল ডিপ্লয় করতে হবে। এই মডেলটি Phi-3 / Phi-3.5 মডেলের পারফরম্যান্স মূল্যায়নে ব্যবহৃত হবে।
+Phi-3 / Phi-3.5 মডেল Microsoft Foundry-তে মূল্যায়ন করার জন্য একটি Azure OpenAI মডেল ডিপ্লয় করতে হবে। এই মডেলটি Phi-3 / Phi-3.5 মডেলের পারফরম্যান্স মূল্যায়নে ব্যবহৃত হবে।
 
 #### Azure OpenAI ডিপ্লয় করুন
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ সাইন ইন করুন।
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ সাইন ইন করুন।
 
-1. আপনি যে Azure AI Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
+1. আপনি যে Microsoft Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
 
     ![Select Project.](../../../../../../translated_images/bn/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -409,13 +409,13 @@ Phi-3 / Phi-3.5 মডেল Azure AI Foundry-তে মূল্যায়ন
 
 1. **Confirm** নির্বাচন করুন।
 
-### Azure AI Foundry-এর Prompt flow evaluation ব্যবহার করে fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন করুন
+### Microsoft Foundry-এর Prompt flow evaluation ব্যবহার করে fine-tuned Phi-3 / Phi-3.5 মডেল মূল্যায়ন করুন
 
 ### নতুন একটি মূল্যায়ন শুরু করুন
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ যান।
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) এ যান।
 
-1. আপনি যে Azure AI Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
+1. আপনি যে Microsoft Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
 
     ![Select Project.](../../../../../../translated_images/bn/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -498,7 +498,7 @@ Phi-3 / Phi-3.5 মডেল Azure AI Foundry-তে মূল্যায়ন
 
 ### আপনি এই টিউটোরিয়াল সম্পন্ন করেছেন
 
-আপনি সফলভাবে Azure AI Foundry-তে Prompt flow এর সাথে সংযুক্ত fine-tuned Phi-3 মডেলটি মূল্যায়ন করেছেন। এটি একটি গুরুত্বপূর্ণ ধাপ যা নিশ্চিত করে যে আপনার AI মডেলগুলি কেবল ভাল পারফর্ম করে না, বরং Microsoft এর Responsible AI নীতিমালা মেনে চলে, যাতে আপনি বিশ্বাসযোগ্য এবং নির্ভরযোগ্য AI অ্যাপ্লিকেশন তৈরি করতে পারেন।
+আপনি সফলভাবে Microsoft Foundry-তে Prompt flow এর সাথে সংযুক্ত fine-tuned Phi-3 মডেলটি মূল্যায়ন করেছেন। এটি একটি গুরুত্বপূর্ণ ধাপ যা নিশ্চিত করে যে আপনার AI মডেলগুলি কেবল ভাল পারফর্ম করে না, বরং Microsoft এর Responsible AI নীতিমালা মেনে চলে, যাতে আপনি বিশ্বাসযোগ্য এবং নির্ভরযোগ্য AI অ্যাপ্লিকেশন তৈরি করতে পারেন।
 
 ![Architecture.](../../../../../../translated_images/bn/architecture.10bec55250f5d6a4.webp)
 
@@ -508,8 +508,8 @@ Phi-3 / Phi-3.5 মডেল Azure AI Foundry-তে মূল্যায়ন
 
 - Azure Machine learning রিসোর্স।
 - Azure Machine learning মডেল এন্ডপয়েন্ট।
-- Azure AI Foundry Project রিসোর্স।
-- Azure AI Foundry Prompt flow রিসোর্স।
+- Microsoft Foundry Project রিসোর্স।
+- Microsoft Foundry Prompt flow রিসোর্স।
 
 ### পরবর্তী ধাপ
 
@@ -517,13 +517,13 @@ Phi-3 / Phi-3.5 মডেল Azure AI Foundry-তে মূল্যায়ন
 
 - [Assess AI systems by using the Responsible AI dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Evaluation and monitoring metrics for generative AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow documentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### প্রশিক্ষণ বিষয়বস্তু
 
 - [Introduction to Microsoft's Responsible AI Approach](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Introduction to Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Introduction to Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### রেফারেন্স
 

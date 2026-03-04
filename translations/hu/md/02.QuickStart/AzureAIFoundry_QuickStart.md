@@ -1,12 +1,12 @@
-# **Phi-3 használata az Azure AI Foundry-ban**
+# **Phi-3 használata az Microsoft Foundry-ban**
 
-A generatív MI fejlődésével arra törekszünk, hogy egy egységes platformon kezeljük a különböző LLM és SLM modelleket, vállalati adatintegrációt, finomhangolást/RAG műveleteket, valamint az LLM és SLM integrálása utáni különböző vállalati üzletek értékelését, hogy a generatív MI okos alkalmazásai hatékonyabban valósulhassanak meg. Az [Azure AI Foundry](https://ai.azure.com) egy vállalati szintű generatív MI alkalmazásplatform.
+A generatív MI fejlődésével arra törekszünk, hogy egy egységes platformon kezeljük a különböző LLM és SLM modelleket, vállalati adatintegrációt, finomhangolást/RAG műveleteket, valamint az LLM és SLM integrálása utáni különböző vállalati üzletek értékelését, hogy a generatív MI okos alkalmazásai hatékonyabban valósulhassanak meg. Az [Microsoft Foundry](https://ai.azure.com) egy vállalati szintű generatív MI alkalmazásplatform.
 
 ![aistudo](../../../../translated_images/hu/aifoundry_home.f28a8127c96c7d93.webp)
 
-Az Azure AI Foundry segítségével értékelhetjük a nagy nyelvi modellek (LLM) válaszait, és prompt flow-val irányíthatjuk a prompt alkalmazás komponenseit a jobb teljesítmény érdekében. A platform támogatja a skálázhatóságot, így a koncepcióbizonyításokat könnyedén alakíthatjuk teljes értékű termelési környezetté. A folyamatos monitorozás és finomhangolás hosszú távú sikert biztosít.
+Az Microsoft Foundry segítségével értékelhetjük a nagy nyelvi modellek (LLM) válaszait, és prompt flow-val irányíthatjuk a prompt alkalmazás komponenseit a jobb teljesítmény érdekében. A platform támogatja a skálázhatóságot, így a koncepcióbizonyításokat könnyedén alakíthatjuk teljes értékű termelési környezetté. A folyamatos monitorozás és finomhangolás hosszú távú sikert biztosít.
 
-Gyorsan telepíthetjük a Phi-3 modellt az Azure AI Foundry-ban néhány egyszerű lépésben, majd az Azure AI Foundry segítségével végezhetjük el a Phi-3-hoz kapcsolódó Playground/Chat, finomhangolás, értékelés és egyéb feladatokat.
+Gyorsan telepíthetjük a Phi-3 modellt az Microsoft Foundry-ban néhány egyszerű lépésben, majd az Microsoft Foundry segítségével végezhetjük el a Phi-3-hoz kapcsolódó Playground/Chat, finomhangolás, értékelés és egyéb feladatokat.
 
 ## **1. Előkészületek**
 
@@ -14,21 +14,21 @@ Ha már telepítve van a gépeden az [Azure Developer CLI](https://learn.microso
 
 ## Kézi létrehozás
 
-Egy Microsoft Azure AI Foundry projekt és hub létrehozása nagyszerű módja annak, hogy rendszerezd és kezeld az MI munkáidat. Íme egy lépésről lépésre útmutató a kezdéshez:
+Egy Microsoft Foundry projekt és hub létrehozása nagyszerű módja annak, hogy rendszerezd és kezeld az MI munkáidat. Íme egy lépésről lépésre útmutató a kezdéshez:
 
-### Projekt létrehozása az Azure AI Foundry-ban
+### Projekt létrehozása az Microsoft Foundry-ban
 
-1. **Lépj be az Azure AI Foundry-ba**: Jelentkezz be az Azure AI Foundry portálra.
+1. **Lépj be az Microsoft Foundry-ba**: Jelentkezz be az Microsoft Foundry portálra.
 2. **Projekt létrehozása**:
-   - Ha már egy projektben vagy, válaszd a bal felső sarokban az „Azure AI Foundry” opciót a kezdőlapra való visszatéréshez.
+   - Ha már egy projektben vagy, válaszd a bal felső sarokban az „Microsoft Foundry” opciót a kezdőlapra való visszatéréshez.
    - Kattints a „+ Create project” gombra.
    - Add meg a projekt nevét.
    - Ha van hubod, az alapértelmezettként lesz kiválasztva. Ha több hubhoz is hozzáférsz, a legördülő menüből választhatsz másikat. Ha új hubot szeretnél létrehozni, válaszd a „Create new hub” opciót, és adj meg egy nevet.
    - Kattints a „Create” gombra.
 
-### Hub létrehozása az Azure AI Foundry-ban
+### Hub létrehozása az Microsoft Foundry-ban
 
-1. **Lépj be az Azure AI Foundry-ba**: Jelentkezz be az Azure fiókoddal.
+1. **Lépj be az Microsoft Foundry-ba**: Jelentkezz be az Azure fiókoddal.
 2. **Hub létrehozása**:
    - Válaszd a bal oldali menüből a Management centert.
    - Kattints az „All resources” menüpontra, majd a „+ New project” melletti lefelé mutató nyílra, és válaszd a „+ New hub” opciót.
@@ -41,10 +41,10 @@ A sikeres létrehozás után az általad létrehozott stúdiót az [ai.azure.com
 
 Egy AI Foundry-n belül több projekt is lehet. Hozz létre egy projektet az AI Foundry-ban a felkészüléshez.
 
-Hozz létre Azure AI Foundry [QuickStartokat](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Hozz létre Microsoft Foundry [QuickStartokat](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
 
-## **2. Phi modell telepítése az Azure AI Foundry-ban**
+## **2. Phi modell telepítése az Microsoft Foundry-ban**
 
 Kattints a projekt Explore opciójára, hogy belépj a Model Catalog-ba, majd válaszd ki a Phi-3 modellt.
 
@@ -56,16 +56,16 @@ Kattints a 'Deploy' gombra a Phi-3-mini-4k-instruct modell telepítéséhez.
 >
 > A telepítés során választhatsz számítási kapacitást is.
 
-## **3. Playground Chat Phi az Azure AI Foundry-ban**
+## **3. Playground Chat Phi az Microsoft Foundry-ban**
 
-Lépj a telepítési oldalra, válaszd a Playground opciót, és beszélgess az Azure AI Foundry Phi-3 modelljével.
+Lépj a telepítési oldalra, válaszd a Playground opciót, és beszélgess az Microsoft Foundry Phi-3 modelljével.
 
-## **4. Modell telepítése az Azure AI Foundry-ból**
+## **4. Modell telepítése az Microsoft Foundry-ból**
 
 Modell telepítéséhez az Azure Model Catalogból kövesd az alábbi lépéseket:
 
-- Jelentkezz be az Azure AI Foundry-ba.
-- Válaszd ki a telepíteni kívánt modellt az Azure AI Foundry modell katalógusából.
+- Jelentkezz be az Microsoft Foundry-ba.
+- Válaszd ki a telepíteni kívánt modellt az Microsoft Foundry modell katalógusából.
 - A modell Részletek oldalán válaszd a Deploy opciót, majd a Serverless API with Azure AI Content Safety-t.
 - Válaszd ki azt a projektet, amelybe telepíteni szeretnéd a modellt. A Serverless API használatához a munkaterületnek az East US 2 vagy Sweden Central régióban kell lennie. A Deployment nevet testre szabhatod.
 - A telepítési varázslóban válaszd a Pricing and terms opciót, hogy megismerd az árakat és a használati feltételeket.
@@ -77,7 +77,7 @@ Modell telepítéséhez az Azure Model Catalogból kövesd az alábbi lépéseke
 > [!NOTE]
 > Kérjük, vedd figyelembe, hogy a fenti lépések végrehajtásához az Azure AI Developer szerepkör jogosultságokkal kell rendelkezned az adott Resource Groupon.
 
-## **5. Phi API használata az Azure AI Foundry-ban**
+## **5. Phi API használata az Microsoft Foundry-ban**
 
 A https://{Your project name}.region.inference.ml.azure.com/swagger.json címet elérheted Postman GET kéréssel, és a Key kombinálásával megismerheted a rendelkezésre álló interfészeket.
 

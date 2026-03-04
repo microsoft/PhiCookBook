@@ -1,12 +1,12 @@
-# **Menggunakan Phi-3 di Azure AI Foundry**
+# **Menggunakan Phi-3 di Microsoft Foundry**
 
-Dengan perkembangan Generative AI, kami berharap dapat menggunakan platform terpadu untuk mengelola berbagai LLM dan SLM, integrasi data perusahaan, operasi fine-tuning/RAG, serta evaluasi berbagai bisnis perusahaan setelah mengintegrasikan LLM dan SLM, dan lain-lain, sehingga aplikasi generative AI dapat diimplementasikan dengan lebih cerdas. [Azure AI Foundry](https://ai.azure.com) adalah platform aplikasi generative AI tingkat perusahaan.
+Dengan perkembangan Generative AI, kami berharap dapat menggunakan platform terpadu untuk mengelola berbagai LLM dan SLM, integrasi data perusahaan, operasi fine-tuning/RAG, serta evaluasi berbagai bisnis perusahaan setelah mengintegrasikan LLM dan SLM, dan lain-lain, sehingga aplikasi generative AI dapat diimplementasikan dengan lebih cerdas. [Microsoft Foundry](https://ai.azure.com) adalah platform aplikasi generative AI tingkat perusahaan.
 
 ![aistudo](../../../../translated_images/id/aifoundry_home.f28a8127c96c7d93.webp)
 
-Dengan Azure AI Foundry, Anda dapat mengevaluasi respons model bahasa besar (LLM) dan mengorkestrasi komponen aplikasi prompt dengan prompt flow untuk kinerja yang lebih baik. Platform ini memudahkan skalabilitas untuk mengubah proof of concept menjadi produksi penuh dengan mudah. Pemantauan dan penyempurnaan berkelanjutan mendukung kesuksesan jangka panjang.
+Dengan Microsoft Foundry, Anda dapat mengevaluasi respons model bahasa besar (LLM) dan mengorkestrasi komponen aplikasi prompt dengan prompt flow untuk kinerja yang lebih baik. Platform ini memudahkan skalabilitas untuk mengubah proof of concept menjadi produksi penuh dengan mudah. Pemantauan dan penyempurnaan berkelanjutan mendukung kesuksesan jangka panjang.
 
-Kita dapat dengan cepat menerapkan model Phi-3 di Azure AI Foundry melalui langkah-langkah sederhana, lalu menggunakan Azure AI Foundry untuk menyelesaikan Playground/Chat, Fine-tuning, evaluasi, dan pekerjaan terkait Phi-3 lainnya.
+Kita dapat dengan cepat menerapkan model Phi-3 di Microsoft Foundry melalui langkah-langkah sederhana, lalu menggunakan Microsoft Foundry untuk menyelesaikan Playground/Chat, Fine-tuning, evaluasi, dan pekerjaan terkait Phi-3 lainnya.
 
 ## **1. Persiapan**
 
@@ -14,21 +14,21 @@ Jika Anda sudah menginstal [Azure Developer CLI](https://learn.microsoft.com/azu
 
 ## Pembuatan Manual
 
-Membuat proyek dan hub Microsoft Azure AI Foundry adalah cara yang bagus untuk mengatur dan mengelola pekerjaan AI Anda. Berikut panduan langkah demi langkah untuk memulai:
+Membuat proyek dan hub Microsoft Foundry adalah cara yang bagus untuk mengatur dan mengelola pekerjaan AI Anda. Berikut panduan langkah demi langkah untuk memulai:
 
-### Membuat Proyek di Azure AI Foundry
+### Membuat Proyek di Microsoft Foundry
 
-1. **Buka Azure AI Foundry**: Masuk ke portal Azure AI Foundry.
+1. **Buka Microsoft Foundry**: Masuk ke portal Microsoft Foundry.
 2. **Buat Proyek**:
-   - Jika Anda sedang berada di dalam proyek, pilih "Azure AI Foundry" di kiri atas halaman untuk kembali ke halaman Beranda.
+   - Jika Anda sedang berada di dalam proyek, pilih "Microsoft Foundry" di kiri atas halaman untuk kembali ke halaman Beranda.
    - Pilih "+ Create project".
    - Masukkan nama untuk proyek tersebut.
    - Jika Anda memiliki hub, hub tersebut akan dipilih secara default. Jika Anda memiliki akses ke lebih dari satu hub, Anda dapat memilih hub lain dari dropdown. Jika ingin membuat hub baru, pilih "Create new hub" dan berikan nama.
    - Pilih "Create".
 
-### Membuat Hub di Azure AI Foundry
+### Membuat Hub di Microsoft Foundry
 
-1. **Buka Azure AI Foundry**: Masuk dengan akun Azure Anda.
+1. **Buka Microsoft Foundry**: Masuk dengan akun Azure Anda.
 2. **Buat Hub**:
    - Pilih Management center dari menu kiri.
    - Pilih "All resources", lalu panah bawah di samping "+ New project" dan pilih "+ New hub".
@@ -41,10 +41,10 @@ Setelah berhasil dibuat, Anda dapat mengakses studio yang Anda buat melalui [ai.
 
 Satu AI Foundry dapat memiliki beberapa proyek. Buat proyek di AI Foundry sebagai persiapan.
 
-Buat Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Buat Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
 
-## **2. Menerapkan model Phi di Azure AI Foundry**
+## **2. Menerapkan model Phi di Microsoft Foundry**
 
 Klik opsi Explore pada proyek untuk masuk ke Model Catalog dan pilih Phi-3
 
@@ -56,16 +56,16 @@ Klik 'Deploy' untuk menerapkan model Phi-3-mini-4k-instruct
 >
 > Anda dapat memilih daya komputasi saat menerapkan
 
-## **3. Playground Chat Phi di Azure AI Foundry**
+## **3. Playground Chat Phi di Microsoft Foundry**
 
-Buka halaman deployment, pilih Playground, dan ajak Phi-3 dari Azure AI Foundry mengobrol
+Buka halaman deployment, pilih Playground, dan ajak Phi-3 dari Microsoft Foundry mengobrol
 
-## **4. Menerapkan Model dari Azure AI Foundry**
+## **4. Menerapkan Model dari Microsoft Foundry**
 
 Untuk menerapkan model dari Azure Model Catalog, Anda dapat mengikuti langkah-langkah berikut:
 
-- Masuk ke Azure AI Foundry.
-- Pilih model yang ingin Anda terapkan dari katalog model Azure AI Foundry.
+- Masuk ke Microsoft Foundry.
+- Pilih model yang ingin Anda terapkan dari katalog model Microsoft Foundry.
 - Pada halaman Detail model, pilih Deploy lalu pilih Serverless API dengan Azure AI Content Safety.
 - Pilih proyek tempat Anda ingin menerapkan model. Untuk menggunakan penawaran Serverless API, workspace Anda harus berada di wilayah East US 2 atau Sweden Central. Anda dapat menyesuaikan nama Deployment.
 - Pada wizard deployment, pilih Pricing and terms untuk mempelajari harga dan ketentuan penggunaan.
@@ -77,7 +77,7 @@ Untuk menerapkan model dari Azure Model Catalog, Anda dapat mengikuti langkah-la
 > [!NOTE]
 > Harap diperhatikan bahwa akun Anda harus memiliki izin peran Azure AI Developer pada Resource Group untuk melakukan langkah-langkah ini.
 
-## **5. Menggunakan Phi API di Azure AI Foundry**
+## **5. Menggunakan Phi API di Microsoft Foundry**
 
 Anda dapat mengakses https://{Your project name}.region.inference.ml.azure.com/swagger.json melalui Postman GET dan menggabungkannya dengan Key untuk mempelajari antarmuka yang disediakan
 

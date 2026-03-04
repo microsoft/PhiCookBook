@@ -1,17 +1,17 @@
-# Feinabstimmung und Integration benutzerdefinierter Phi-3-Modelle mit Prompt Flow in Azure AI Foundry
+# Feinabstimmung und Integration benutzerdefinierter Phi-3-Modelle mit Prompt Flow in Microsoft Foundry
 
-Dieses End-to-End (E2E) Beispiel basiert auf der Anleitung "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" aus der Microsoft Tech Community. Es führt in die Prozesse der Feinabstimmung, Bereitstellung und Integration benutzerdefinierter Phi-3-Modelle mit Prompt Flow in Azure AI Foundry ein.
+Dieses End-to-End (E2E) Beispiel basiert auf der Anleitung "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" aus der Microsoft Tech Community. Es führt in die Prozesse der Feinabstimmung, Bereitstellung und Integration benutzerdefinierter Phi-3-Modelle mit Prompt Flow in Microsoft Foundry ein.
 Im Gegensatz zum E2E-Beispiel "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", bei dem der Code lokal ausgeführt wurde, konzentriert sich dieses Tutorial vollständig auf die Feinabstimmung und Integration Ihres Modells innerhalb von Azure AI / ML Studio.
 
 ## Überblick
 
-In diesem E2E-Beispiel lernen Sie, wie Sie das Phi-3-Modell feinabstimmen und mit Prompt Flow in Azure AI Foundry integrieren. Durch die Nutzung von Azure AI / ML Studio richten Sie einen Workflow für die Bereitstellung und Nutzung benutzerdefinierter KI-Modelle ein. Dieses E2E-Beispiel ist in drei Szenarien unterteilt:
+In diesem E2E-Beispiel lernen Sie, wie Sie das Phi-3-Modell feinabstimmen und mit Prompt Flow in Microsoft Foundry integrieren. Durch die Nutzung von Azure AI / ML Studio richten Sie einen Workflow für die Bereitstellung und Nutzung benutzerdefinierter KI-Modelle ein. Dieses E2E-Beispiel ist in drei Szenarien unterteilt:
 
 **Szenario 1: Einrichten von Azure-Ressourcen und Vorbereitung für die Feinabstimmung**
 
 **Szenario 2: Feinabstimmung des Phi-3-Modells und Bereitstellung in Azure Machine Learning Studio**
 
-**Szenario 3: Integration mit Prompt Flow und Chatten mit Ihrem benutzerdefinierten Modell in Azure AI Foundry**
+**Szenario 3: Integration mit Prompt Flow und Chatten mit Ihrem benutzerdefinierten Modell in Microsoft Foundry**
 
 Hier ist ein Überblick über dieses E2E-Beispiel.
 
@@ -30,7 +30,7 @@ Hier ist ein Überblick über dieses E2E-Beispiel.
     - [Feinabstimmung des Phi-3-Modells](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Bereitstellung des feinabgestimmten Phi-3-Modells](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Szenario 3: Integration mit Prompt Flow und Chatten mit Ihrem benutzerdefinierten Modell in Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Szenario 3: Integration mit Prompt Flow und Chatten mit Ihrem benutzerdefinierten Modell in Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integration des benutzerdefinierten Phi-3-Modells mit Prompt Flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Chatten mit Ihrem benutzerdefinierten Phi-3-Modell](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ In dieser Übung werden Sie:
 > ![Traffic einstellen.](../../../../../../translated_images/de/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Szenario 3: Integration mit Prompt Flow und Chatten mit Ihrem benutzerdefinierten Modell in Azure AI Foundry
+## Szenario 3: Integration mit Prompt Flow und Chatten mit Ihrem benutzerdefinierten Modell in Microsoft Foundry
 
 ### Integration des benutzerdefinierten Phi-3-Modells mit Prompt Flow
 
@@ -552,8 +552,8 @@ Nach erfolgreicher Bereitstellung Ihres feinabgestimmten Modells können Sie es 
 
 In dieser Übung werden Sie:
 
-- Azure AI Foundry Hub erstellen.
-- Azure AI Foundry Projekt erstellen.
+- Microsoft Foundry Hub erstellen.
+- Microsoft Foundry Projekt erstellen.
 - Prompt Flow erstellen.
 - Eine benutzerdefinierte Verbindung für das feinabgestimmte Phi-3-Modell hinzufügen.
 - Prompt Flow einrichten, um mit Ihrem benutzerdefinierten Phi-3-Modell zu chatten.
@@ -561,11 +561,11 @@ In dieser Übung werden Sie:
 > [!NOTE]
 > Sie können die Integration mit Prompt Flow auch über Azure ML Studio durchführen. Der gleiche Integrationsprozess kann auf Azure ML Studio angewandt werden.
 
-#### Erstellen des Azure AI Foundry Hub
+#### Erstellen des Microsoft Foundry Hub
 
-Sie müssen zuerst einen Hub erstellen, bevor Sie das Projekt erstellen können. Ein Hub funktioniert wie eine Ressourcengruppe und ermöglicht es Ihnen, mehrere Projekte innerhalb von Azure AI Foundry zu organisieren und zu verwalten.
+Sie müssen zuerst einen Hub erstellen, bevor Sie das Projekt erstellen können. Ein Hub funktioniert wie eine Ressourcengruppe und ermöglicht es Ihnen, mehrere Projekte innerhalb von Microsoft Foundry zu organisieren und zu verwalten.
 
-1. Besuchen Sie [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Besuchen Sie [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Wählen Sie **Alle Hubs** im linken Seitenmenü.
 
@@ -585,7 +585,7 @@ Sie müssen zuerst einen Hub erstellen, bevor Sie das Projekt erstellen können.
 
 1. Wählen Sie **Weiter** aus.
 
-#### Azure AI Foundry-Projekt erstellen
+#### Microsoft Foundry-Projekt erstellen
 
 1. Wählen Sie im erstellten Hub im linken Seiten-Tab **Alle Projekte** aus.
 
@@ -625,9 +625,9 @@ Um Ihr benutzerdefiniertes Phi-3-Modell mit Prompt flow zu integrieren, müssen 
 
 #### Die benutzerdefinierte Verbindung hinzufügen
 
-1. Besuchen Sie [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Besuchen Sie [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Navigieren Sie zum erstellten Azure AI Foundry-Projekt.
+1. Navigieren Sie zum erstellten Microsoft Foundry-Projekt.
 
 1. Wählen Sie im erstellten Projekt den linken Seiten-Tab **Einstellungen** aus.
 
@@ -653,9 +653,9 @@ Um Ihr benutzerdefiniertes Phi-3-Modell mit Prompt flow zu integrieren, müssen 
 
 #### Prompt flow erstellen
 
-Sie haben eine benutzerdefinierte Verbindung in Azure AI Foundry hinzugefügt. Erstellen Sie nun einen Prompt flow mit den folgenden Schritten. Danach verbinden Sie den Prompt flow mit der benutzerdefinierten Verbindung, sodass Sie das feinabgestimmte Modell innerhalb des Prompt flows verwenden können.
+Sie haben eine benutzerdefinierte Verbindung in Microsoft Foundry hinzugefügt. Erstellen Sie nun einen Prompt flow mit den folgenden Schritten. Danach verbinden Sie den Prompt flow mit der benutzerdefinierten Verbindung, sodass Sie das feinabgestimmte Modell innerhalb des Prompt flows verwenden können.
 
-1. Navigieren Sie zum erstellten Azure AI Foundry-Projekt.
+1. Navigieren Sie zum erstellten Microsoft Foundry-Projekt.
 
 1. Wählen Sie im linken Seiten-Tab **Prompt flow** aus.
 
@@ -774,7 +774,7 @@ Sie müssen das feinabgestimmte Phi-3-Modell in einen Prompt flow integrieren. D
     ![Paste prompt flow code.](../../../../../../translated_images/de/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Für detailliertere Informationen zur Verwendung von Prompt flow in Azure AI Foundry können Sie [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) konsultieren.
+> Für detailliertere Informationen zur Verwendung von Prompt flow in Microsoft Foundry können Sie [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) konsultieren.
 
 1. Aktivieren Sie **Chat-Eingabe** und **Chat-Ausgabe**, um den Chat mit Ihrem Modell zu ermöglichen.
 

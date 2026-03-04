@@ -1,14 +1,14 @@
-# 在 Azure AI Foundry 中评估微调后的 Phi-3 / Phi-3.5 模型，聚焦微软的负责任 AI 原则
+# 在 Microsoft Foundry 中评估微调后的 Phi-3 / Phi-3.5 模型，聚焦微软的负责任 AI 原则
 
-本端到端（E2E）示例基于微软技术社区的指南《[在 Azure AI Foundry 中评估微调后的 Phi-3 / 3.5 模型，聚焦微软的负责任 AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)》。
+本端到端（E2E）示例基于微软技术社区的指南《[在 Microsoft Foundry 中评估微调后的 Phi-3 / 3.5 模型，聚焦微软的负责任 AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)》。
 
 ## 概述
 
-### 如何在 Azure AI Foundry 中评估微调后的 Phi-3 / Phi-3.5 模型的安全性和性能？
+### 如何在 Microsoft Foundry 中评估微调后的 Phi-3 / Phi-3.5 模型的安全性和性能？
 
-模型微调有时可能导致意外或不理想的响应。为了确保模型保持安全且有效，评估模型生成有害内容的潜力以及其产生准确、相关且连贯回答的能力非常重要。在本教程中，您将学习如何评估集成了 Prompt flow 的微调 Phi-3 / Phi-3.5 模型在 Azure AI Foundry 中的安全性和性能。
+模型微调有时可能导致意外或不理想的响应。为了确保模型保持安全且有效，评估模型生成有害内容的潜力以及其产生准确、相关且连贯回答的能力非常重要。在本教程中，您将学习如何评估集成了 Prompt flow 的微调 Phi-3 / Phi-3.5 模型在 Microsoft Foundry 中的安全性和性能。
 
-以下是 Azure AI Foundry 的评估流程。
+以下是 Microsoft Foundry 的评估流程。
 
 ![教程架构。](../../../../../../translated_images/zh-CN/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@
 
 ### 目录
 
-1. [**场景 1：Azure AI Foundry 的 Prompt flow 评估介绍**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**场景 1：Microsoft Foundry 的 Prompt flow 评估介绍**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [安全性评估介绍](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [性能评估介绍](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**场景 2：在 Azure AI Foundry 中评估 Phi-3 / Phi-3.5 模型**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**场景 2：在 Microsoft Foundry 中评估 Phi-3 / Phi-3.5 模型**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [开始之前](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [部署 Azure OpenAI 以评估 Phi-3 / Phi-3.5 模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [使用 Azure AI Foundry 的 Prompt flow 评估微调后的 Phi-3 / Phi-3.5 模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [使用 Microsoft Foundry 的 Prompt flow 评估微调后的 Phi-3 / Phi-3.5 模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [恭喜！](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **场景 1：Azure AI Foundry 的 Prompt flow 评估介绍**
+## **场景 1：Microsoft Foundry 的 Prompt flow 评估介绍**
 
 ### 安全性评估介绍
 
-为了确保您的 AI 模型符合伦理且安全，评估其是否符合微软的负责任 AI 原则至关重要。在 Azure AI Foundry 中，安全性评估可以帮助您检测模型是否容易被绕过限制（jailbreak 攻击）以及其生成有害内容的潜力，这与这些原则直接相关。
+为了确保您的 AI 模型符合伦理且安全，评估其是否符合微软的负责任 AI 原则至关重要。在 Microsoft Foundry 中，安全性评估可以帮助您检测模型是否容易被绕过限制（jailbreak 攻击）以及其生成有害内容的潜力，这与这些原则直接相关。
 
 ![安全性评估。](../../../../../../translated_images/zh-CN/safety-evaluation.083586ec88dfa950.webp)
 
@@ -68,15 +68,15 @@
 
 ![填充中心。](../
 > [!NOTE]  
-> 如果你按照“[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)”中描述的低代码方法操作，可以跳过本练习，直接进行下一个。  
+> 如果你按照“[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)”中描述的低代码方法操作，可以跳过本练习，直接进行下一个。  
 > 但是，如果你是按照“[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)”中描述的代码优先方法来微调并部署你的 Phi-3 / Phi-3.5 模型，那么将模型连接到 Prompt flow 的流程会有所不同。你将在本练习中学习这一过程。
-要继续操作，您需要将微调后的 Phi-3 / Phi-3.5 模型集成到 Azure AI Foundry 的 Prompt flow 中。
+要继续操作，您需要将微调后的 Phi-3 / Phi-3.5 模型集成到 Microsoft Foundry 的 Prompt flow 中。
 
-#### 创建 Azure AI Foundry Hub
+#### 创建 Microsoft Foundry Hub
 
-在创建项目之前，您需要先创建一个 Hub。Hub 类似于资源组，方便您在 Azure AI Foundry 中组织和管理多个项目。
+在创建项目之前，您需要先创建一个 Hub。Hub 类似于资源组，方便您在 Microsoft Foundry 中组织和管理多个项目。
 
-1. 登录 [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
+1. 登录 [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
 
 1. 从左侧标签中选择 **All hubs**。
 
@@ -97,7 +97,7 @@
 
 1. 选择 **Next**。
 
-#### 创建 Azure AI Foundry 项目
+#### 创建 Microsoft Foundry 项目
 
 1. 在您创建的 Hub 中，从左侧标签选择 **All projects**。
 
@@ -137,9 +137,9 @@
 
 #### 添加自定义连接
 
-1. 访问 [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
+1. 访问 [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
 
-1. 进入您创建的 Azure AI Foundry 项目。
+1. 进入您创建的 Microsoft Foundry 项目。
 
 1. 在项目中，从左侧标签选择 **Settings**。
 
@@ -165,9 +165,9 @@
 
 #### 创建 Prompt flow
 
-您已在 Azure AI Foundry 中添加了自定义连接。接下来，按照以下步骤创建一个 Prompt flow，然后将其连接到自定义连接，以便在 Prompt flow 中使用微调模型。
+您已在 Microsoft Foundry 中添加了自定义连接。接下来，按照以下步骤创建一个 Prompt flow，然后将其连接到自定义连接，以便在 Prompt flow 中使用微调模型。
 
-1. 进入您创建的 Azure AI Foundry 项目。
+1. 进入您创建的 Microsoft Foundry 项目。
 
 1. 从左侧标签选择 **Prompt flow**。
 
@@ -285,7 +285,7 @@
 
 > [!NOTE]
 > 
-> 有关在 Azure AI Foundry 中使用 Prompt flow 的详细信息，请参阅 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)。
+> 有关在 Microsoft Foundry 中使用 Prompt flow 的详细信息，请参阅 [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)。
 
 1. 选择 **Chat input** 和 **Chat output**，以启用与模型的聊天功能。
 
@@ -326,13 +326,13 @@
 
 ### 部署 Azure OpenAI 以评估 Phi-3 / Phi-3.5 模型
 
-要在 Azure AI Foundry 中评估 Phi-3 / Phi-3.5 模型，您需要部署一个 Azure OpenAI 模型。该模型将用于评估 Phi-3 / Phi-3.5 模型的性能。
+要在 Microsoft Foundry 中评估 Phi-3 / Phi-3.5 模型，您需要部署一个 Azure OpenAI 模型。该模型将用于评估 Phi-3 / Phi-3.5 模型的性能。
 
 #### 部署 Azure OpenAI
 
-1. 登录 [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
+1. 登录 [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
 
-1. 进入您创建的 Azure AI Foundry 项目。
+1. 进入您创建的 Microsoft Foundry 项目。
 
     ![Select Project.](../../../../../../translated_images/zh-CN/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -350,13 +350,13 @@
 
 1. 选择 **Confirm**。
 
-### 使用 Azure AI Foundry 的 Prompt flow 评估微调后的 Phi-3 / Phi-3.5 模型
+### 使用 Microsoft Foundry 的 Prompt flow 评估微调后的 Phi-3 / Phi-3.5 模型
 
 ### 开始新的评估
 
-1. 访问 [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
+1. 访问 [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723)。
 
-1. 进入您创建的 Azure AI Foundry 项目。
+1. 进入您创建的 Microsoft Foundry 项目。
 
     ![Select Project.](../../../../../../translated_images/zh-CN/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -449,8 +449,8 @@
 
 - Azure 机器学习资源。
 - Azure 机器学习模型端点。
-- Azure AI Foundry 项目资源。
-- Azure AI Foundry Prompt flow 资源。
+- Microsoft Foundry 项目资源。
+- Microsoft Foundry Prompt flow 资源。
 
 ### 后续步骤
 
@@ -458,13 +458,13 @@
 
 - [使用 Responsible AI 仪表板评估 AI 系统](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [生成式 AI 的评估和监控指标](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry 文档](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry 文档](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow 文档](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### 培训内容
 
 - [微软 Responsible AI 方法介绍](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry 介绍](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry 介绍](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### 参考资料
 

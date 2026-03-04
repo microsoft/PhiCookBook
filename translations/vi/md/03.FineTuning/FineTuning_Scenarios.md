@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/vi/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Nền tảng** Bao gồm nhiều công nghệ khác nhau như Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito và ONNX Runtime.
+**Nền tảng** Bao gồm nhiều công nghệ khác nhau như Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito và ONNX Runtime.
 
 **Hạ tầng** Bao gồm CPU và FPGA, những thành phần thiết yếu cho quá trình tinh chỉnh. Hãy để tôi giới thiệu các biểu tượng cho từng công nghệ này.
 

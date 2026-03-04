@@ -1,17 +1,17 @@
-# **Verwendung von Azure AI Foundry zur Bewertung**
+# **Verwendung von Microsoft Foundry zur Bewertung**
 
 ![aistudo](../../../../../translated_images/de/AIFoundry.9e0b513e999a1c5a.webp)
 
-Wie Sie Ihre generative KI-Anwendung mit [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) bewerten können. Egal, ob Sie Einzel- oder Mehrfachdialoge analysieren möchten, Azure AI Foundry bietet Werkzeuge zur Bewertung der Modellleistung und Sicherheit.
+Wie Sie Ihre generative KI-Anwendung mit [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) bewerten können. Egal, ob Sie Einzel- oder Mehrfachdialoge analysieren möchten, Microsoft Foundry bietet Werkzeuge zur Bewertung der Modellleistung und Sicherheit.
 
 ![aistudo](../../../../../translated_images/de/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## So bewerten Sie generative KI-Anwendungen mit Azure AI Foundry
-Detaillierte Anleitungen finden Sie in der [Azure AI Foundry Dokumentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## So bewerten Sie generative KI-Anwendungen mit Microsoft Foundry
+Detaillierte Anleitungen finden Sie in der [Microsoft Foundry Dokumentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Hier sind die Schritte für den Einstieg:
 
-## Bewertung generativer KI-Modelle in Azure AI Foundry
+## Bewertung generativer KI-Modelle in Microsoft Foundry
 
 **Voraussetzungen**
 
@@ -21,13 +21,13 @@ Hier sind die Schritte für den Einstieg:
 
 ## Eingebaute Bewertungsmetriken
 
-Azure AI Foundry ermöglicht die Bewertung sowohl von Einzel- als auch von komplexen Mehrfachdialogen.  
+Microsoft Foundry ermöglicht die Bewertung sowohl von Einzel- als auch von komplexen Mehrfachdialogen.  
 Für Retrieval Augmented Generation (RAG)-Szenarien, bei denen das Modell auf spezifischen Daten basiert, können Sie die Leistung mit integrierten Bewertungsmetriken messen.  
 Darüber hinaus können Sie allgemeine Einzel-Fragen-Antwort-Szenarien (nicht RAG) bewerten.
 
 ## Erstellen eines Bewertungsdurchlaufs
 
-Navigieren Sie in der Azure AI Foundry Benutzeroberfläche zur Seite „Evaluate“ oder „Prompt Flow“.  
+Navigieren Sie in der Microsoft Foundry Benutzeroberfläche zur Seite „Evaluate“ oder „Prompt Flow“.  
 Folgen Sie dem Assistenten zur Erstellung einer Bewertung, um einen Bewertungsdurchlauf einzurichten. Geben Sie optional einen Namen für Ihre Bewertung an.  
 Wählen Sie das Szenario aus, das den Zielen Ihrer Anwendung entspricht.  
 Wählen Sie eine oder mehrere Bewertungsmetriken aus, um die Ausgabe des Modells zu beurteilen.
@@ -38,9 +38,9 @@ Für mehr Flexibilität können Sie einen benutzerdefinierten Bewertungsablauf e
 
 ## Ergebnisse anzeigen
 
-Nach dem Durchführen der Bewertung können Sie detaillierte Bewertungsmetriken in Azure AI Foundry protokollieren, anzeigen und analysieren. Erhalten Sie Einblicke in die Stärken und Schwächen Ihrer Anwendung.
+Nach dem Durchführen der Bewertung können Sie detaillierte Bewertungsmetriken in Microsoft Foundry protokollieren, anzeigen und analysieren. Erhalten Sie Einblicke in die Stärken und Schwächen Ihrer Anwendung.
 
-**Note** Azure AI Foundry befindet sich derzeit in der öffentlichen Vorschau, daher sollte es vor allem für Experimente und Entwicklungszwecke genutzt werden. Für produktive Einsätze sollten Sie andere Optionen in Betracht ziehen. Weitere Details und Schritt-für-Schritt-Anleitungen finden Sie in der offiziellen [AI Foundry Dokumentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
+**Note** Microsoft Foundry befindet sich derzeit in der öffentlichen Vorschau, daher sollte es vor allem für Experimente und Entwicklungszwecke genutzt werden. Für produktive Einsätze sollten Sie andere Optionen in Betracht ziehen. Weitere Details und Schritt-für-Schritt-Anleitungen finden Sie in der offiziellen [AI Foundry Dokumentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

@@ -1,17 +1,17 @@
-# Dostrajanie i integracja niestandardowych modeli Phi-3 z przepływem Prompt w Azure AI Foundry
+# Dostrajanie i integracja niestandardowych modeli Phi-3 z przepływem Prompt w Microsoft Foundry
 
-Ten przykładowy, kompleksowy (E2E) poradnik bazuje na przewodniku "[Dostrajanie i integracja niestandardowych modeli Phi-3 z przepływem Prompt w Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Przedstawia procesy dostrajania, wdrażania i integracji niestandardowych modeli Phi-3 z przepływem Prompt w Azure AI Foundry.
+Ten przykładowy, kompleksowy (E2E) poradnik bazuje na przewodniku "[Dostrajanie i integracja niestandardowych modeli Phi-3 z przepływem Prompt w Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Przedstawia procesy dostrajania, wdrażania i integracji niestandardowych modeli Phi-3 z przepływem Prompt w Microsoft Foundry.
 W przeciwieństwie do przykładu E2E, "[Dostrajanie i integracja niestandardowych modeli Phi-3 z przepływem Prompt](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", który polegał na uruchamianiu kodu lokalnie, ten tutorial koncentruje się całkowicie na dostrajaniu i integracji modelu w ramach Azure AI / ML Studio.
 
 ## Przegląd
 
-W tym przykładzie E2E nauczysz się, jak dostroić model Phi-3 i zintegrować go z przepływem Prompt w Azure AI Foundry. Wykorzystując Azure AI / ML Studio, ustanowisz przepływ pracy do wdrażania i użytkowania niestandardowych modeli AI. Ten przykład E2E jest podzielony na trzy scenariusze:
+W tym przykładzie E2E nauczysz się, jak dostroić model Phi-3 i zintegrować go z przepływem Prompt w Microsoft Foundry. Wykorzystując Azure AI / ML Studio, ustanowisz przepływ pracy do wdrażania i użytkowania niestandardowych modeli AI. Ten przykład E2E jest podzielony na trzy scenariusze:
 
 **Scenariusz 1: Konfiguracja zasobów Azure i przygotowanie do dostrajania**
 
 **Scenariusz 2: Dostrajanie modelu Phi-3 i wdrożenie w Azure Machine Learning Studio**
 
-**Scenariusz 3: Integracja z przepływem Prompt i rozmowa z niestandardowym modelem w Azure AI Foundry**
+**Scenariusz 3: Integracja z przepływem Prompt i rozmowa z niestandardowym modelem w Microsoft Foundry**
 
 Oto przegląd tego przykładu E2E.
 
@@ -30,7 +30,7 @@ Oto przegląd tego przykładu E2E.
     - [Dostrój model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Wdróż dostrojony model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenariusz 3: Integracja z przepływem Prompt i rozmowa z niestandardowym modelem w Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenariusz 3: Integracja z przepływem Prompt i rozmowa z niestandardowym modelem w Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Zintegruj niestandardowy model Phi-3 z przepływem Prompt](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Rozmawiaj z niestandardowym modelem Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ W tym ćwiczeniu:
 > ![Ustaw ruch.](../../../../../../translated_images/pl/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenariusz 3: Integracja z Prompt flow i czat z własnym modelem w Azure AI Foundry
+## Scenariusz 3: Integracja z Prompt flow i czat z własnym modelem w Microsoft Foundry
 
 ### Integracja niestandardowego modelu Phi-3 z Prompt flow
 
@@ -552,8 +552,8 @@ Po pomyślnym wdrożeniu wytrenowanego modelu możesz teraz zintegrować go z Pr
 
 W tym ćwiczeniu:
 
-- Utworzysz Centrum Azure AI Foundry.
-- Utworzysz projekt w Azure AI Foundry.
+- Utworzysz Centrum Microsoft Foundry.
+- Utworzysz projekt w Microsoft Foundry.
 - Utworzysz Prompt flow.
 - Dodasz niestandardowe połączenie dla wytrenowanego modelu Phi-3.
 - Skonfigurujesz Prompt flow do czatu z Twoim niestandardowym modelem Phi-3.
@@ -561,11 +561,11 @@ W tym ćwiczeniu:
 > [!NOTE]
 > Możesz również integrować się z Promptflow za pomocą Azure ML Studio. Ten sam proces integracji można zastosować w Azure ML Studio.
 
-#### Utwórz Centrum Azure AI Foundry
+#### Utwórz Centrum Microsoft Foundry
 
-Musisz utworzyć Centrum przed utworzeniem Projektu. Centrum działa jak grupa zasobów, pozwalając na organizację i zarządzanie wieloma Projektami w Azure AI Foundry.
+Musisz utworzyć Centrum przed utworzeniem Projektu. Centrum działa jak grupa zasobów, pozwalając na organizację i zarządzanie wieloma Projektami w Microsoft Foundry.
 
-1. Odwiedź [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Odwiedź [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Wybierz **Wszystkie centra** z lewego panelu.
 
@@ -585,7 +585,7 @@ Musisz utworzyć Centrum przed utworzeniem Projektu. Centrum działa jak grupa z
 
 1. Wybierz **Dalej**.
 
-#### Utwórz projekt Azure AI Foundry
+#### Utwórz projekt Microsoft Foundry
 
 1. W hubie, który utworzyłeś, wybierz **Wszystkie projekty** z zakładki po lewej stronie.
 
@@ -625,9 +625,9 @@ Aby zintegrować swój niestandardowy model Phi-3 z Prompt flow, musisz zapisać
 
 #### Dodaj niestandardowe połączenie
 
-1. Odwiedź [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Odwiedź [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Przejdź do utworzonego projektu Azure AI Foundry.
+1. Przejdź do utworzonego projektu Microsoft Foundry.
 
 1. W projekcie, który utworzyłeś, wybierz **Ustawienia** z zakładki po lewej stronie.
 
@@ -653,9 +653,9 @@ Aby zintegrować swój niestandardowy model Phi-3 z Prompt flow, musisz zapisać
 
 #### Utwórz Prompt flow
 
-Dodałeś niestandardowe połączenie w Azure AI Foundry. Teraz utwórz Prompt flow, wykonując następujące kroki. Następnie połącz ten Prompt flow z niestandardowym połączeniem, aby móc korzystać z wytrenowanego modelu w Prompt flow.
+Dodałeś niestandardowe połączenie w Microsoft Foundry. Teraz utwórz Prompt flow, wykonując następujące kroki. Następnie połącz ten Prompt flow z niestandardowym połączeniem, aby móc korzystać z wytrenowanego modelu w Prompt flow.
 
-1. Przejdź do utworzonego projektu Azure AI Foundry.
+1. Przejdź do utworzonego projektu Microsoft Foundry.
 
 1. Wybierz **Prompt flow** z zakładki po lewej stronie.
 
@@ -774,7 +774,7 @@ Musisz zintegrować wytrenowany model Phi-3 w Prompt flow. Jednak istniejący Pr
     ![Wklej kod prompt flow.](../../../../../../translated_images/pl/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Aby uzyskać bardziej szczegółowe informacje o używaniu Prompt flow w Azure AI Foundry, możesz odwołać się do [Prompt flow w Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Aby uzyskać bardziej szczegółowe informacje o używaniu Prompt flow w Microsoft Foundry, możesz odwołać się do [Prompt flow w Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Włącz **Wejście czatu** (Chat input), **Wyjście czatu** (Chat output), aby umożliwić rozmowę z Twoim modelem.
 

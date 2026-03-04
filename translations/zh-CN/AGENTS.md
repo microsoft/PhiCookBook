@@ -7,7 +7,7 @@ PhiCookBook 是一个全面的食谱库，包含关于使用微软 Phi 系列小
 **关键技术：**
 - **语言：** Python, C#/.NET, JavaScript/Node.js
 - **框架：** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **平台：** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **平台：** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **模型类型：** Phi-3, Phi-3.5, Phi-4（文本、视觉、多模态、推理变体）
 
 **库结构：**
@@ -81,7 +81,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - 介绍指南、环境设置、平台指南
 - **02.Application/** - 按类型组织的应用示例（文本、代码、视觉、音频等）
-- **02.QuickStart/** - Azure AI Foundry 和 GitHub Models 的快速入门指南
+- **02.QuickStart/** - Microsoft Foundry 和 GitHub Models 的快速入门指南
 - **03.FineTuning/** - 微调文档和教程
 - **04.HOL/** - 实践实验室（包括 .NET 示例）
 
@@ -243,7 +243,7 @@ PR 会自动运行 GitHub 工作流以验证：
 
 ### 平台特定注意事项
 
-**Azure AI Foundry：**
+**Microsoft Foundry：**
 - 需要 Azure 订阅和 API 密钥
 - 参见 `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -287,7 +287,7 @@ PR 会自动运行 GitHub 工作流以验证：
 
 ### 获取帮助
 
-- **Discord：** 加入 Azure AI Foundry 社区 Discord
+- **Discord：** 加入 Microsoft Foundry 社区 Discord
 - **GitHub Issues：** 在仓库中报告错误和问题
 - **GitHub Discussions：** 提问并分享知识
 

@@ -1,16 +1,16 @@
-# Azure AI Foundry-ൽ Prompt flow ഉപയോഗിച്ച് കസ്റ്റം Phi-3 മോഡലുകൾ ഫൈൻ-ട്യൂൺ ചെയ്യാനും സംയോജിപ്പിക്കാനും
+# Microsoft Foundry-ൽ Prompt flow ഉപയോഗിച്ച് കസ്റ്റം Phi-3 മോഡലുകൾ ഫൈൻ-ട്യൂൺ ചെയ്യാനും സംയോജിപ്പിക്കാനും
 
-Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" എന്ന ഗൈഡിന്റെ അടിസ്ഥാനത്തിലാണ് ഈ End-to-End (E2E) സാമ്പിൾ. ഇത് Azure AI Foundry-യിൽ Prompt flow ഉപയോഗിച്ച് കസ്റ്റം Phi-3 മോഡലുകളുടെ ഫൈൻ-ട്യൂൺ, ഡിപ്ലോയ്മെന്റ്, സംയോജനം എന്നിവയുടെ പ്രക്രിയകൾ പരിചയപ്പെടുത്തുന്നു. "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" എന്ന E2E സാമ്പിളിനൊപ്പം കോഡ് ലോക്കലായി റൺ ചെയ്യുന്നതിൽ നിന്നും വ്യത്യസ്തമായി, ഈ ട്യൂട്ടോറിയൽ Azure AI / ML സ്റ്റുഡിയോളം നിങ്ങളുടെ മോഡലിന്റെ ഫൈൻ-ട്യൂണിംഗിലും സംയോജനത്തിലും മാത്രം കേന്ദ്രീകരിക്കുന്നു.
+Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" എന്ന ഗൈഡിന്റെ അടിസ്ഥാനത്തിലാണ് ഈ End-to-End (E2E) സാമ്പിൾ. ഇത് Microsoft Foundry-യിൽ Prompt flow ഉപയോഗിച്ച് കസ്റ്റം Phi-3 മോഡലുകളുടെ ഫൈൻ-ട്യൂൺ, ഡിപ്ലോയ്മെന്റ്, സംയോജനം എന്നിവയുടെ പ്രക്രിയകൾ പരിചയപ്പെടുത്തുന്നു. "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" എന്ന E2E സാമ്പിളിനൊപ്പം കോഡ് ലോക്കലായി റൺ ചെയ്യുന്നതിൽ നിന്നും വ്യത്യസ്തമായി, ഈ ട്യൂട്ടോറിയൽ Azure AI / ML സ്റ്റുഡിയോളം നിങ്ങളുടെ മോഡലിന്റെ ഫൈൻ-ട്യൂണിംഗിലും സംയോജനത്തിലും മാത്രം കേന്ദ്രീകരിക്കുന്നു.
 
 ## അവലോകനം
 
-ഈ E2E സാമ്പിളിൽ, Phi-3 മോഡൽ ഫൈൻ-ട്യൂൺ ചെയ്യാനും Azure AI Foundry-യിലെ Prompt flow-യുമായി സംയോജിപ്പിക്കാനും നിങ്ങൾക്ക് പഠിക്കാം. Azure AI / ML സ്റ്റുഡിയോ ഉപയോഗിച്ച് നിങ്ങളുടെ കസ്റ്റം AI മോഡലുകൾ ഡിപ്ലോയ് ചെയ്യാനും ഉപയോഗിക്കാനും പ്രവർത്തനന്തരം സ്ഥാപിക്കുന്നതാണ് ഇതിലൂടെ. ഈ E2E സാമ്പിൾ മൂന്ന് അവസ്ഥകളായി വിഭജിച്ചിരിക്കുന്നു:
+ഈ E2E സാമ്പിളിൽ, Phi-3 മോഡൽ ഫൈൻ-ട്യൂൺ ചെയ്യാനും Microsoft Foundry-യിലെ Prompt flow-യുമായി സംയോജിപ്പിക്കാനും നിങ്ങൾക്ക് പഠിക്കാം. Azure AI / ML സ്റ്റുഡിയോ ഉപയോഗിച്ച് നിങ്ങളുടെ കസ്റ്റം AI മോഡലുകൾ ഡിപ്ലോയ് ചെയ്യാനും ഉപയോഗിക്കാനും പ്രവർത്തനന്തരം സ്ഥാപിക്കുന്നതാണ് ഇതിലൂടെ. ഈ E2E സാമ്പിൾ മൂന്ന് അവസ്ഥകളായി വിഭജിച്ചിരിക്കുന്നു:
 
 **അവസ്ഥ 1: Azure സ്രോതസ്സുകൾ സജ്ജമാക്കുകയും ഫൈൻ-ട്യൂണിംഗിന് ഒരുക്കം നൽകുകയും ചെയ്യുക**
 
 **അവസ്ഥ 2: Phi-3 മോഡൽ ഫൈൻ-ട്യൂൺ ചെയ്യുകയും Azure Machine Learning Studioയിൽ ഡിപ്ലോയ് ചെയ്യുകയും ചെയ്യുക**
 
-**അവസ്ഥ 3: Prompt flow-യുമായി സംയോജിപ്പിക്കുകയും Azure AI Foundry-യിൽ നിങ്ങളുടെ കസ്റ്റം മോഡലുമായി ചാറ്റ് നടത്തുകയും ചെയ്യുക**
+**അവസ്ഥ 3: Prompt flow-യുമായി സംയോജിപ്പിക്കുകയും Microsoft Foundry-യിൽ നിങ്ങളുടെ കസ്റ്റം മോഡലുമായി ചാറ്റ് നടത്തുകയും ചെയ്യുക**
 
 ഇതാണ് ഈ E2E സാമ്പിളിന്റെ അവലോകനം.
 
@@ -29,7 +29,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     - [Phi-3 മോഡൽ ഫൈൻ-ട്യൂൺ ചെയ്യുക](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [ഫൈൻ-ട്യൂൺ ചെയ്ത Phi-3 മോഡൽ ഡിപ്ലോയ് ചെയ്യുക](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[അവസ്ഥ 3: Prompt flow-യുമായി സംയോജിപ്പിക്കുകയും Azure AI Foundry-യിൽ കസ്റ്റം മോഡലുമായി ചാറ്റ് നടത്തുകയും ചെയ്യുക](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[അവസ്ഥ 3: Prompt flow-യുമായി സംയോജിപ്പിക്കുകയും Microsoft Foundry-യിൽ കസ്റ്റം മോഡലുമായി ചാറ്റ് നടത്തുകയും ചെയ്യുക](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [കസ്റ്റം Phi-3 മോഡൽ Prompt flow-യുമായി സംയോജിപ്പിക്കുക](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [നിങ്ങളുടെ കസ്റ്റം Phi-3 മോഡലുമായി ചാറ്റ് ചെയ്യുക](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -543,7 +543,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 > ![ട്രാഫിക് സജ്ജമാക്കുക.](../../../../../../translated_images/ml/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## സീനാരിയോ 3: Prompt flow-യുമായി ഏകീകരിച്ച് Azure AI Foundry-യിൽ നിങ്ങളുടെ കസ്റ്റം മോഡലുമായി ചാറ്റ് ചെയ്യുക
+## സീനാരിയോ 3: Prompt flow-യുമായി ഏകീകരിച്ച് Microsoft Foundry-യിൽ നിങ്ങളുടെ കസ്റ്റം മോഡലുമായി ചാറ്റ് ചെയ്യുക
 
 ### Prompt flow-യുമായി കസ്റ്റം Phi-3 മോഡൽ ഏകീകരിക്കുക
 
@@ -551,8 +551,8 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 ഈ അഭ്യാസത്തിൽ, നിങ്ങൾ:
 
-- Azure AI Foundry Hub സൃഷ്ടിക്കുക.
-- Azure AI Foundry Project സൃഷ്ടിക്കുക.
+- Microsoft Foundry Hub സൃഷ്ടിക്കുക.
+- Microsoft Foundry Project സൃഷ്ടിക്കുക.
 - Prompt flow സൃഷ്ടിക്കുക.
 - ഫൈൻ-ട്യൂൺ ചെയ്ത Phi-3 മോഡലിനായി കസ്റ്റം കണക്ഷൻ ചേർക്കുക.
 - നിങ്ങളുടെ കസ്റ്റം Phi-3 മോഡലുമായി ചാറ്റ് നടത്താൻ Prompt flow സജ്ജമാക്കുക.
@@ -560,11 +560,11 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 > [!NOTE]
 > Azure ML Studio ഉപയോഗിച്ചും Promptflow-യുമായി ഏകീകരിക്കാം. അതേ ഏകീകരണ പ്രക്രിയ Azure ML Studio-യിലും പ്രയോഗിക്കാവുന്നതാണ്.
 
-#### Azure AI Foundry ഹബ് സൃഷ്ടിക്കുക
+#### Microsoft Foundry ഹബ് സൃഷ്ടിക്കുക
 
-പ്രോജക്ട് സൃഷ്ടിക്കുന്നതിന് മുമ്പ് ഒരു ഹബ് സൃഷ്ടിക്കേണ്ടതുണ്ട്. ഹബ് ഒരു റിസോഴ്‌സ് ഗ്രൂപ്പായി പ്രവർത്തിക്കുകയും Azure AI Foundry-യിലുള്ള പലയധികം പ്രോജക്ടുകൾ നന്നായി ഒത്തുകൂടാനും നിയന്ത്രിക്കാനും സഹായിക്കുന്നു.
+പ്രോജക്ട് സൃഷ്ടിക്കുന്നതിന് മുമ്പ് ഒരു ഹബ് സൃഷ്ടിക്കേണ്ടതുണ്ട്. ഹബ് ഒരു റിസോഴ്‌സ് ഗ്രൂപ്പായി പ്രവർത്തിക്കുകയും Microsoft Foundry-യിലുള്ള പലയധികം പ്രോജക്ടുകൾ നന്നായി ഒത്തുകൂടാനും നിയന്ത്രിക്കാനും സഹായിക്കുന്നു.
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) സന്ദർശിക്കു.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) സന്ദർശിക്കു.
 
 1. ഇടത് ടാബിൽ നിന്ന് **All hubs** തിരഞ്ഞെടുക്കുക.
 
@@ -584,7 +584,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 1. **Next** തിരഞ്ഞെടുക്കുക.
 
-#### Azure AI Foundry പ്രോജക്റ്റ് സൃഷ്ടിക്കുക
+#### Microsoft Foundry പ്രോജക്റ്റ് സൃഷ്ടിക്കുക
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച ഹബിൽ, ഇടത് പാനലിൽ നിന്നുള്ള **All projects** തിരഞ്ഞെടുക്കുക.
 
@@ -624,9 +624,9 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 #### കസ്റ്റം കണക്ഷൻ ചേർക്കുക
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) സന്ദർശിക്കുക.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) സന്ദർശിക്കുക.
 
-1. നിങ്ങൾ സൃഷ്ടിച്ച Azure AI Foundry പ്രോജക്റ്റിലേക്ക് നാനിഗേറ്റ് ചെയ്യുക.
+1. നിങ്ങൾ സൃഷ്ടിച്ച Microsoft Foundry പ്രോജക്റ്റിലേക്ക് നാനിഗേറ്റ് ചെയ്യുക.
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച പ്രോജക്റ്റിൽ, ഇടത് പാനലിൽ നിന്നുള്ള **Settings** തിരഞ്ഞെടുക്കുക.
 
@@ -652,9 +652,9 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
 
 #### Prompt flow സൃഷ്ടിക്കുക
 
-നിങ്ങൾ Azure AI Foundry-യിൽ കസ്റ്റം കണക്ഷൻ ചേർത്തിട്ടുണ്ട്. ഇപ്പോൾ താഴെ പറയുന്ന ഘട്ടങ്ങൾ പിന്തുടർന്ന് Prompt flow സൃഷ്ടിക്കാം. തുടർന്ന്, ഈ Prompt flow കസ്റ്റം കണക്ഷനുമായി കണക്ട് ചെയ്ത് ഫൈൻ-ട്യൂൺ ചെയ്ത മോഡൽ Prompt flow-ൽ ഉപയോഗിക്കാൻ കഴിയും.
+നിങ്ങൾ Microsoft Foundry-യിൽ കസ്റ്റം കണക്ഷൻ ചേർത്തിട്ടുണ്ട്. ഇപ്പോൾ താഴെ പറയുന്ന ഘട്ടങ്ങൾ പിന്തുടർന്ന് Prompt flow സൃഷ്ടിക്കാം. തുടർന്ന്, ഈ Prompt flow കസ്റ്റം കണക്ഷനുമായി കണക്ട് ചെയ്ത് ഫൈൻ-ട്യൂൺ ചെയ്ത മോഡൽ Prompt flow-ൽ ഉപയോഗിക്കാൻ കഴിയും.
 
-1. നിങ്ങൾ സൃഷ്ടിച്ച Azure AI Foundry പ്രോജക്റ്റിലേക്ക് നാനിഗേറ്റ് ചെയ്യുക.
+1. നിങ്ങൾ സൃഷ്ടിച്ച Microsoft Foundry പ്രോജക്റ്റിലേക്ക് നാനിഗേറ്റ് ചെയ്യുക.
 
 1. ഇടത് പാനലിൽ നിന്നുള്ള **Prompt flow** തിരഞ്ഞെടുക്കുക.
 
@@ -773,7 +773,7 @@ Microsoft Tech Community-യിലെ "[Fine-Tune and Integrate Custom Phi-3 Mod
     ![Prompt flow കോഡ് പേസ്റ്റ് ചെയ്യുക.](../../../../../../translated_images/ml/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Azure AI Foundry-യിൽ Prompt flow ഉപയോഗിക്കുന്നതിനെക്കുറിച്ച് കൂടുതൽ വിവരങ്ങൾക്ക്, [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) സന്ദർശിക്കുക.
+> Microsoft Foundry-യിൽ Prompt flow ഉപയോഗിക്കുന്നതിനെക്കുറിച്ച് കൂടുതൽ വിവരങ്ങൾക്ക്, [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) സന്ദർശിക്കുക.
 
 1. **Chat input**, **Chat output** തിരഞ്ഞെടുക്കുക, നിങ്ങളുടെ മോഡലുമായി ചാറ്റ് ചെയ്യാൻ.
 

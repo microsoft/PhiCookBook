@@ -1,17 +1,17 @@
-# Dorada i integracija prilagođenih Phi-3 modela s Prompt flow u Azure AI Foundry
+# Dorada i integracija prilagođenih Phi-3 modela s Prompt flow u Microsoft Foundry
 
-Ovaj end-to-end (E2E) primjer temelji se na vodiču "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" iz Microsoft Tech Communityja. Uvodi procese dorade, implementacije i integracije prilagođenih Phi-3 modela s Prompt flow u Azure AI Foundry.
+Ovaj end-to-end (E2E) primjer temelji se na vodiču "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" iz Microsoft Tech Communityja. Uvodi procese dorade, implementacije i integracije prilagođenih Phi-3 modela s Prompt flow u Microsoft Foundry.
 Za razliku od E2E primjera, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", koji je uključivao lokalno izvođenje koda, ovaj vodič u potpunosti je usmjeren na doradu i integraciju vašeg modela unutar Azure AI / ML Studia.
 
 ## Pregled
 
-U ovom E2E primjeru naučit ćete kako doraditi Phi-3 model i integrirati ga s Prompt flow u Azure AI Foundry. Korištenjem Azure AI / ML Studia uspostavit ćete tijek rada za implementaciju i korištenje prilagođenih AI modela. Ovaj E2E primjer podijeljen je u tri scenarija:
+U ovom E2E primjeru naučit ćete kako doraditi Phi-3 model i integrirati ga s Prompt flow u Microsoft Foundry. Korištenjem Azure AI / ML Studia uspostavit ćete tijek rada za implementaciju i korištenje prilagođenih AI modela. Ovaj E2E primjer podijeljen je u tri scenarija:
 
 **Scenarij 1: Postavljanje Azure resursa i priprema za doradu**
 
 **Scenarij 2: Dorada Phi-3 modela i implementacija u Azure Machine Learning Studio**
 
-**Scenarij 3: Integracija s Prompt flow i razgovor s vašim prilagođenim modelom u Azure AI Foundry**
+**Scenarij 3: Integracija s Prompt flow i razgovor s vašim prilagođenim modelom u Microsoft Foundry**
 
 Evo pregleda ovog E2E primjera.
 
@@ -30,7 +30,7 @@ Evo pregleda ovog E2E primjera.
     - [Doradite Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Implementirajte doradeni Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenarij 3: Integracija s Prompt flow i razgovor s vašim prilagođenim modelom u Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenarij 3: Integracija s Prompt flow i razgovor s vašim prilagođenim modelom u Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrirajte prilagođeni Phi-3 model s Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Razgovarajte sa svojim prilagođenim Phi-3 modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ U ovoj vježbi ćete:
 > ![Postavite promet.](../../../../../../translated_images/hr/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenarij 3: Integrirajte s Prompt flowom i razgovarajte sa svojim prilagođenim modelom u Azure AI Foundry
+## Scenarij 3: Integrirajte s Prompt flowom i razgovarajte sa svojim prilagođenim modelom u Microsoft Foundry
 
 ### Integrirajte prilagođeni Phi-3 model s Prompt flowom
 
@@ -552,8 +552,8 @@ Nakon što ste uspješno implementirali svoj fino podešeni model, sada ga može
 
 U ovoj vježbi ćete:
 
-- Kreirati Azure AI Foundry Hub.
-- Kreirati Azure AI Foundry Projekt.
+- Kreirati Microsoft Foundry Hub.
+- Kreirati Microsoft Foundry Projekt.
 - Kreirati Prompt flow.
 - Dodati prilagođenu vezu za fino podešeni Phi-3 model.
 - Postaviti Prompt flow za razgovor s vašim prilagođenim Phi-3 modelom.
@@ -561,11 +561,11 @@ U ovoj vježbi ćete:
 > [!NOTE]
 > Također se možete integrirati s Promptflowom koristeći Azure ML Studio. Isti proces integracije može se primijeniti na Azure ML Studio.
 
-#### Kreirajte Azure AI Foundry Hub
+#### Kreirajte Microsoft Foundry Hub
 
-Morate kreirati Hub prije nego što kreirate Projekt. Hub funkcionira kao grupa resursa, omogućujući vam organizaciju i upravljanje više projekata unutar Azure AI Foundry.
+Morate kreirati Hub prije nego što kreirate Projekt. Hub funkcionira kao grupa resursa, omogućujući vam organizaciju i upravljanje više projekata unutar Microsoft Foundry.
 
-1. Posjetite [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Posjetite [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Odaberite **All hubs** sa lijevog izbornika.
 
@@ -585,7 +585,7 @@ Morate kreirati Hub prije nego što kreirate Projekt. Hub funkcionira kao grupa 
 
 1. Odaberite **Dalje**.
 
-#### Kreirajte Azure AI Foundry projekt
+#### Kreirajte Microsoft Foundry projekt
 
 1. U Hubu koji ste kreirali, odaberite **Svi projekti** sa lijevog izbornika.
 
@@ -625,9 +625,9 @@ Da biste integrirali svoj prilagođeni Phi-3 model s Prompt flow, trebate spremi
 
 #### Dodajte prilagođenu vezu
 
-1. Posjetite [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Posjetite [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Idite u Azure AI Foundry projekt koji ste kreirali.
+1. Idite u Microsoft Foundry projekt koji ste kreirali.
 
 1. U projektu koji ste kreirali, odaberite **Postavke** sa lijevog izbornika.
 
@@ -653,9 +653,9 @@ Da biste integrirali svoj prilagođeni Phi-3 model s Prompt flow, trebate spremi
 
 #### Kreirajte Prompt flow
 
-Dodali ste prilagođenu vezu u Azure AI Foundry. Sada ćemo kreirati Prompt flow koristeći sljedeće korake. Nakon toga, povezat ćete ovaj Prompt flow s prilagođenom vezom kako biste mogli koristiti fino podešeni model unutar Prompt flow-a.
+Dodali ste prilagođenu vezu u Microsoft Foundry. Sada ćemo kreirati Prompt flow koristeći sljedeće korake. Nakon toga, povezat ćete ovaj Prompt flow s prilagođenom vezom kako biste mogli koristiti fino podešeni model unutar Prompt flow-a.
 
-1. Idite u Azure AI Foundry projekt koji ste kreirali.
+1. Idite u Microsoft Foundry projekt koji ste kreirali.
 
 1. Odaberite **Prompt flow** sa lijevog izbornika.
 
@@ -774,7 +774,7 @@ Trebate integrirati fino podešeni Phi-3 model u Prompt flow. Međutim, postoje�
     ![Zalijepite kod prompt flow-a.](../../../../../../translated_images/hr/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Za detaljnije informacije o korištenju Prompt flow-a u Azure AI Foundry-u, možete se obratiti dokumentaciji [Prompt flow u Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Za detaljnije informacije o korištenju Prompt flow-a u Microsoft Foundry-u, možete se obratiti dokumentaciji [Prompt flow u Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Odaberite **Chat ulaz**, **Chat izlaz** da omogućite razgovor s vašim modelom.
 

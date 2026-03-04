@@ -7,7 +7,7 @@ PhiCookBook ni hifadhi ya kina ya vitabu vya mapishi inayojumuisha mifano ya vit
 **Teknolojia Muhimu:**
 - **Lugha:** Python, C#/.NET, JavaScript/Node.js
 - **Mifumo:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Majukwaa:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Majukwaa:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Aina za Modeli:** Phi-3, Phi-3.5, Phi-4 (maandishi, maono, multimodal, lahaja za kufikiri)
 
 **Muundo wa Hifadhi:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Mwongozo wa utangulizi, usanidi wa mazingira, mwongozo wa majukwaa
 - **02.Application/** - Sampuli za programu zilizopangwa kwa aina (Maandishi, Msimbo, Maono, Sauti, nk.)
-- **02.QuickStart/** - Mwongozo wa kuanza haraka kwa Azure AI Foundry na GitHub Models
+- **02.QuickStart/** - Mwongozo wa kuanza haraka kwa Microsoft Foundry na GitHub Models
 - **03.FineTuning/** - Nyaraka na mafunzo ya kurekebisha
 - **04.HOL/** - Maabara ya vitendo (inajumuisha mifano ya .NET)
 
@@ -241,7 +241,7 @@ Mifano:
 
 ### Vidokezo Maalum vya Jukwaa
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Inahitaji usajili wa Azure na funguo za API
 - Tazama `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ Mifano:
 
 ### Kupata Msaada
 
-- **Discord:** Jiunge na Jumuiya ya Azure AI Foundry kwenye Discord
+- **Discord:** Jiunge na Jumuiya ya Microsoft Foundry kwenye Discord
 - **GitHub Issues:** Ripoti hitilafu na masuala katika hifadhi
 - **GitHub Discussions:** Uliza maswali na shiriki maarifa
 

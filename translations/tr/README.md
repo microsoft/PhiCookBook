@@ -12,7 +12,7 @@
 [![GitHub çatallar](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub yıldızlar](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi, Microsoft tarafından geliştirilen açık kaynaklı AI modelleri serisidir.
 
@@ -71,7 +71,7 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 - Farklı Ortamlarda Phi Çıkarımı
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub Modelleri](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry Model Kataloğu](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry Model Kataloğu](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 
 - Phi Değerlendirmesi
     - [Sorumlu AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Değerlendirme için Azure AI Foundry](./md/01.Introduction/05/AIFoundry.md)
+    - [Değerlendirme için Microsoft Foundry](./md/01.Introduction/05/AIFoundry.md)
     - [Değerlendirme için Promptflow Kullanımı](./md/01.Introduction/05/Promptflow.md)
  
 - Azure AI Arama ile RAG
@@ -117,8 +117,8 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
       - [Phi-3 mini-4k-instruct-onnx ile WinUI3 Uygulaması](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Çoklu Model Yapay Zeka Destekli Notlar Uygulaması Örneği](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Özel Phi-3 modellerini Prompt flow ile ince ayar yapma ve entegre etme](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Azure AI Foundry'de Prompt flow ile özel Phi-3 modellerini ince ayar yapma ve entegre etme](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Azure AI Foundry'de Microsoft'un Sorumlu Yapay Zeka İlkelerine Odaklanarak İnce Ayarlı Phi-3 / Phi-3.5 Modelinin Değerlendirilmesi](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Microsoft Foundry'de Prompt flow ile özel Phi-3 modellerini ince ayar yapma ve entegre etme](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Microsoft Foundry'de Microsoft'un Sorumlu Yapay Zeka İlkelerine Odaklanarak İnce Ayarlı Phi-3 / Phi-3.5 Modelinin Değerlendirilmesi](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct dil tahmin örneği (Çince/İngilizce)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Sohbet Botu](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Phi-3.5-Instruct ONNX ile Windows GPU kullanarak Prompt flow çözümü oluşturma](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
       - [📓] [Microsoft Olive ile Phi-4-mini-akıl yürütmeyi ince ayar yapma](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Apple MLX ile Phi-4-mini-akıl yürütmeyi ince ayar yapma](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [GitHub Modelleri ile Phi-4-mini-akıl yürütme](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Azure AI Foundry Modelleri ile Phi-4-mini-akıl yürütme](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Microsoft Foundry Modelleri ile Phi-4-mini-akıl yürütme](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demos
       - [Phi-4-mini demoları Hugging Face Spaces üzerinde barındırılıyor](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demoları Hugging Face Spaces üzerinde barındırılıyor](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
   - [Azure Machine Learning Hizmeti ile Phi-3 ince ayarı](./md/03.FineTuning/Introduce_AzureML.md)
   - [Lora ile Phi-3 ince ayarı](./md/03.FineTuning/FineTuning_Lora.md)
   - [QLora ile Phi-3 ince ayarı](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Azure AI Foundry ile Phi-3 ince ayarı](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Microsoft Foundry ile Phi-3 ince ayarı](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Azure ML CLI/SDK ile Phi-3 ince ayarı](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Microsoft Olive ile ince ayar](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Olive Pratik Laboratuvar ile ince ayar](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Bu kaynakları kullanmaya başlamak için şu adımları izleyin:
 
 ## Phi Modellerini Kullanma
 
-### Phi Azure AI Foundry Üzerinde
+### Phi Microsoft Foundry Üzerinde
 
-Microsoft Phi’yi nasıl kullanacağınızı ve farklı donanım cihazlarınızda uçtan uca çözümler nasıl oluşturacağınızı öğrenebilirsiniz. Phi’yi kendiniz deneyimlemek için modellerle oynamaya başlayabilir ve senaryolarınıza göre Phi’yi özelleştirebilirsiniz. [Azure AI Foundry Azure AI Model Kataloğu](https://aka.ms/phi3-azure-ai) üzerinden daha fazlasını öğrenebilir ve [Azure AI Foundry ile Başlarken](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) rehberine göz atabilirsiniz.
+Microsoft Phi’yi nasıl kullanacağınızı ve farklı donanım cihazlarınızda uçtan uca çözümler nasıl oluşturacağınızı öğrenebilirsiniz. Phi’yi kendiniz deneyimlemek için modellerle oynamaya başlayabilir ve senaryolarınıza göre Phi’yi özelleştirebilirsiniz. [Microsoft Foundry Azure AI Model Kataloğu](https://aka.ms/phi3-azure-ai) üzerinden daha fazlasını öğrenebilir ve [Microsoft Foundry ile Başlarken](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) rehberine göz atabilirsiniz.
 
 **Oyun Alanı**  
 Her modelin testi için özel bir oyun alanı bulunmaktadır: [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Microsoft’un sorumlu yapay zeka yaklaşımı, adalet, güvenilirlik ve güvenl
 
 Bu örnekte kullanılanlar gibi büyük ölçekli doğal dil, görüntü ve konuşma modelleri adaletsiz, güvenilmez veya rahatsız edici biçimde davranabilir ve dolayısıyla zararlara yol açabilir. Riskler ve sınırlamalar hakkında bilgi edinmek için [Azure OpenAI hizmeti Şeffaflık notunu](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) inceleyiniz.
 
-Bu riskleri azaltmak için mimarinize zararlı davranışları tespit edip engelleyebilen bir güvenlik sisteminin dahil edilmesi önerilmektedir. [Azure AI İçerik Güvenliği](https://learn.microsoft.com/azure/ai-services/content-safety/overview) uygulama ve hizmetlerde kullanıcı ve yapay zekâ tarafından üretilen zararlı içeriği tespit edebilen bağımsız bir koruma katmanı sağlar. Azure AI İçerik Güvenliği, zararlı materyali algılamanıza olanak tanıyan metin ve görüntü API’leri içerir. Azure AI Foundry içinde, İçerik Güvenliği servisi farklı modalitelerde zararlı içerik tespiti için örnek kodları görüntülemenize, keşfetmenize ve deneyimlemenize olanak tanır. Aşağıdaki [hızlı başlangıç dokümantasyonu](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) servise istek yapmayı adım adım anlatır.
+Bu riskleri azaltmak için mimarinize zararlı davranışları tespit edip engelleyebilen bir güvenlik sisteminin dahil edilmesi önerilmektedir. [Azure AI İçerik Güvenliği](https://learn.microsoft.com/azure/ai-services/content-safety/overview) uygulama ve hizmetlerde kullanıcı ve yapay zekâ tarafından üretilen zararlı içeriği tespit edebilen bağımsız bir koruma katmanı sağlar. Azure AI İçerik Güvenliği, zararlı materyali algılamanıza olanak tanıyan metin ve görüntü API’leri içerir. Microsoft Foundry içinde, İçerik Güvenliği servisi farklı modalitelerde zararlı içerik tespiti için örnek kodları görüntülemenize, keşfetmenize ve deneyimlemenize olanak tanır. Aşağıdaki [hızlı başlangıç dokümantasyonu](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) servise istek yapmayı adım adım anlatır.
 Dikkate alınması gereken bir diğer husus ise genel uygulama performansıdır. Çok modlu ve çok modellerli uygulamalarda, performansın anlamı, sistemin siz ve kullanıcılarınızın beklentileri doğrultusunda çalışması, zararlı çıktıların üretilmemesi olarak kabul edilir. Genel uygulamanızın performansını [Performans ve Kalite ile Risk ve Güvenlik değerlendiricileri](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) aracılığıyla değerlendirmeniz önemlidir. Ayrıca, [özel değerlendiriciler](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) oluşturup bunlarla değerlendirme yapma imkânınız da bulunmaktadır.
 
-Geliştirme ortamınızda AI uygulamanızı [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) kullanarak değerlendirebilirsiniz. Bir test veri seti veya hedef verilerek, üretici AI uygulamanızın çıktıları, önceden tanımlanmış veya seçtiğiniz özel değerlendiricilerle niceliksel olarak ölçülür. Sisteminizin değerlendirmesine başlamak için azure ai evaluation sdk ile ilgili [hızlı başlangıç kılavuzunu](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) takip edebilirsiniz. Bir değerlendirme çalışması gerçekleştirdikten sonra, sonuçları [Azure AI Foundry'de görüntüleyebilirsiniz](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Geliştirme ortamınızda AI uygulamanızı [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) kullanarak değerlendirebilirsiniz. Bir test veri seti veya hedef verilerek, üretici AI uygulamanızın çıktıları, önceden tanımlanmış veya seçtiğiniz özel değerlendiricilerle niceliksel olarak ölçülür. Sisteminizin değerlendirmesine başlamak için azure ai evaluation sdk ile ilgili [hızlı başlangıç kılavuzunu](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) takip edebilirsiniz. Bir değerlendirme çalışması gerçekleştirdikten sonra, sonuçları [Microsoft Foundry'de görüntüleyebilirsiniz](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Ticari Markalar
 
@@ -302,11 +302,11 @@ Bu proje, projeler, ürünler veya hizmetler için ticari marka veya logolar iç
 
 AI uygulamaları geliştirme konusunda takıldığınızda veya sorularınız olduğunda katılın:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Ürün geri bildirimi veya hatalarla ilgili olarak şurayı ziyaret edin:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

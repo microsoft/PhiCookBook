@@ -1,12 +1,12 @@
-# **Using Phi-3 in Azure AI Foundry**
+# **Using Phi-3 in Microsoft Foundry**
 
-With the rise of Generative AI, we aim to use a unified platform to manage different LLMs and SLMs, integrate enterprise data, handle fine-tuning/RAG operations, and evaluate various enterprise applications after integrating LLMs and SLMs, enabling smarter generative AI applications. [Azure AI Foundry](https://ai.azure.com) is an enterprise-grade generative AI application platform.
+With the rise of Generative AI, we aim to use a unified platform to manage different LLMs and SLMs, integrate enterprise data, handle fine-tuning/RAG operations, and evaluate various enterprise applications after integrating LLMs and SLMs, enabling smarter generative AI applications. [Microsoft Foundry](https://ai.azure.com) is an enterprise-grade generative AI application platform.
 
 ![aistudo](../../../../translated_images/en/aifoundry_home.f28a8127c96c7d93.webp)
 
-Azure AI Foundry allows you to evaluate large language model (LLM) responses and orchestrate prompt application components using prompt flow for improved performance. The platform supports scalability, making it easy to transition from proof of concepts to full production. Continuous monitoring and refinement ensure long-term success.
+Microsoft Foundry allows you to evaluate large language model (LLM) responses and orchestrate prompt application components using prompt flow for improved performance. The platform supports scalability, making it easy to transition from proof of concepts to full production. Continuous monitoring and refinement ensure long-term success.
 
-You can quickly deploy the Phi-3 model on Azure AI Foundry with simple steps, then use Azure AI Foundry to handle Phi-3 related Playground/Chat, fine-tuning, evaluation, and other tasks.
+You can quickly deploy the Phi-3 model on Microsoft Foundry with simple steps, then use Microsoft Foundry to handle Phi-3 related Playground/Chat, fine-tuning, evaluation, and other tasks.
 
 ## **1. Preparation**
 
@@ -14,21 +14,21 @@ If you already have the [Azure Developer CLI](https://learn.microsoft.com/azure/
 
 ## Manual Creation
 
-Creating a Microsoft Azure AI Foundry project and hub is a great way to organize and manage your AI work. Here’s a step-by-step guide to get started:
+Creating a Microsoft Foundry project and hub is a great way to organize and manage your AI work. Here’s a step-by-step guide to get started:
 
-### Creating a Project in Azure AI Foundry
+### Creating a Project in Microsoft Foundry
 
-1. **Go to Azure AI Foundry**: Sign in to the Azure AI Foundry portal.
+1. **Go to Microsoft Foundry**: Sign in to the Microsoft Foundry portal.
 2. **Create a Project**:
-   - If you’re inside a project, select "Azure AI Foundry" at the top left to go to the Home page.
+   - If you’re inside a project, select "Microsoft Foundry" at the top left to go to the Home page.
    - Click "+ Create project".
    - Enter a name for your project.
    - If you have a hub, it will be selected by default. If you have access to multiple hubs, you can choose a different one from the dropdown. To create a new hub, select "Create new hub" and provide a name.
    - Click "Create".
 
-### Creating a Hub in Azure AI Foundry
+### Creating a Hub in Microsoft Foundry
 
-1. **Go to Azure AI Foundry**: Sign in with your Azure account.
+1. **Go to Microsoft Foundry**: Sign in with your Azure account.
 2. **Create a Hub**:
    - Select the Management center from the left menu.
    - Click "All resources", then the down arrow next to "+ New project" and select "+ New hub".
@@ -41,9 +41,9 @@ Once created, you can access your studio through [ai.azure.com](https://ai.azure
 
 You can have multiple projects within one AI Foundry. Create a project in AI Foundry to get started.
 
-Check out Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code).
+Check out Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code).
 
-## **2. Deploy a Phi model in Azure AI Foundry**
+## **2. Deploy a Phi model in Microsoft Foundry**
 
 Click the Explore option in your project to open the Model Catalog and select Phi-3.
 
@@ -55,16 +55,16 @@ Click 'Deploy' to deploy the Phi-3-mini-4k-instruct model.
 >
 > You can select the computing power during deployment.
 
-## **3. Playground Chat Phi in Azure AI Foundry**
+## **3. Playground Chat Phi in Microsoft Foundry**
 
-Go to the deployment page, select Playground, and start chatting with Phi-3 in Azure AI Foundry.
+Go to the deployment page, select Playground, and start chatting with Phi-3 in Microsoft Foundry.
 
-## **4. Deploying the Model from Azure AI Foundry**
+## **4. Deploying the Model from Microsoft Foundry**
 
 To deploy a model from the Azure Model Catalog, follow these steps:
 
-- Sign in to Azure AI Foundry.
-- Select the model you want to deploy from the Azure AI Foundry model catalog.
+- Sign in to Microsoft Foundry.
+- Select the model you want to deploy from the Microsoft Foundry model catalog.
 - On the model’s Details page, click Deploy, then choose Serverless API with Azure AI Content Safety.
 - Select the project where you want to deploy your model. To use the Serverless API, your workspace must be in the East US 2 or Sweden Central region. You can customize the Deployment name.
 - In the deployment wizard, review Pricing and terms to understand the costs and usage policies.
@@ -76,7 +76,7 @@ To deploy a model from the Azure Model Catalog, follow these steps:
 > [!NOTE]
 > Make sure your account has the Azure AI Developer role permissions on the Resource Group to perform these steps.
 
-## **5. Using Phi API in Azure AI Foundry**
+## **5. Using Phi API in Microsoft Foundry**
 
 You can access https://{Your project name}.region.inference.ml.azure.com/swagger.json via Postman GET and combine it with your Key to explore the available interfaces.
 

@@ -1,14 +1,14 @@
-# Tathmini ya Mfano wa Phi-3 / Phi-3.5 ulioboreshwa katika Azure AI Foundry ukiangazia Kanuni za AI Zinazowajibika za Microsoft
+# Tathmini ya Mfano wa Phi-3 / Phi-3.5 ulioboreshwa katika Microsoft Foundry ukiangazia Kanuni za AI Zinazowajibika za Microsoft
 
-Mfano huu wa mwisho hadi mwisho (E2E) unategemea mwongozo "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" kutoka kwa Microsoft Tech Community.
+Mfano huu wa mwisho hadi mwisho (E2E) unategemea mwongozo "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" kutoka kwa Microsoft Tech Community.
 
 ## Muhtasari
 
-### Unawezaje kutathmini usalama na utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboreshwa katika Azure AI Foundry?
+### Unawezaje kutathmini usalama na utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboreshwa katika Microsoft Foundry?
 
-Kufanya fine-tuning kwa mfano kunaweza wakati mwingine kusababisha majibu yasiyotarajiwa au yasiyotakikana. Ili kuhakikisha kwamba mfano unabaki salama na wenye ufanisi, ni muhimu kutathmini uwezo wa mfano kutoa maudhui hatarishi na uwezo wake wa kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri. Katika mafunzo haya, utajifunza jinsi ya kutathmini usalama na utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboreshwa uliounganishwa na Prompt flow katika Azure AI Foundry.
+Kufanya fine-tuning kwa mfano kunaweza wakati mwingine kusababisha majibu yasiyotarajiwa au yasiyotakikana. Ili kuhakikisha kwamba mfano unabaki salama na wenye ufanisi, ni muhimu kutathmini uwezo wa mfano kutoa maudhui hatarishi na uwezo wake wa kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri. Katika mafunzo haya, utajifunza jinsi ya kutathmini usalama na utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboreshwa uliounganishwa na Prompt flow katika Microsoft Foundry.
 
-Hapa kuna mchakato wa tathmini wa Azure AI Foundry.
+Hapa kuna mchakato wa tathmini wa Microsoft Foundry.
 
 ![Architecture of tutorial.](../../../../../../translated_images/sw/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@ Hapa kuna mchakato wa tathmini wa Azure AI Foundry.
 
 ### Jedwali la Yaliyomo
 
-1. [**Hali ya Kwanza: Utangulizi wa tathmini ya Prompt flow ya Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Hali ya Kwanza: Utangulizi wa tathmini ya Prompt flow ya Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Utangulizi wa tathmini ya usalama](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Utangulizi wa tathmini ya utendaji](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Hali ya Pili: Kutathmini mfano wa Phi-3 / Phi-3.5 katika Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Hali ya Pili: Kutathmini mfano wa Phi-3 / Phi-3.5 katika Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Kabla hujaanza](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Tumia Azure OpenAI kutathmini mfano wa Phi-3 / Phi-3.5](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Tathmini mfano ulioboreshwa wa Phi-3 / Phi-3.5 kwa kutumia tathmini ya Prompt flow ya Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Tathmini mfano ulioboreshwa wa Phi-3 / Phi-3.5 kwa kutumia tathmini ya Prompt flow ya Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Hongera!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Hali ya Kwanza: Utangulizi wa tathmini ya Prompt flow ya Azure AI Foundry**
+## **Hali ya Kwanza: Utangulizi wa tathmini ya Prompt flow ya Microsoft Foundry**
 
 ### Utangulizi wa tathmini ya usalama
 
-Ili kuhakikisha kwamba mfano wako wa AI ni wa maadili na salama, ni muhimu kuutathmini dhidi ya Kanuni za AI Zinazowajibika za Microsoft. Katika Azure AI Foundry, tathmini za usalama zinakuwezesha kutathmini udhaifu wa mfano wako dhidi ya mashambulizi ya jailbreak na uwezo wake wa kutoa maudhui hatarishi, ambayo ni sambamba moja kwa moja na kanuni hizi.
+Ili kuhakikisha kwamba mfano wako wa AI ni wa maadili na salama, ni muhimu kuutathmini dhidi ya Kanuni za AI Zinazowajibika za Microsoft. Katika Microsoft Foundry, tathmini za usalama zinakuwezesha kutathmini udhaifu wa mfano wako dhidi ya mashambulizi ya jailbreak na uwezo wake wa kutoa maudhui hatarishi, ambayo ni sambamba moja kwa moja na kanuni hizi.
 
 ![Safaty evaluation.](../../../../../../translated_images/sw/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ Kanuni za AI Zinazowajibika za Microsoft ni pamoja na:
 
 #### Vipimo vya usalama
 
-Katika mafunzo haya, utatathmini usalama wa mfano wa Phi-3 ulioboreshwa kwa kutumia vipimo vya usalama vya Azure AI Foundry. Vipimo hivi vinakusaidia kutathmini uwezo wa mfano kutoa maudhui hatarishi na udhaifu wake dhidi ya mashambulizi ya jailbreak. Vipimo vya usalama ni pamoja na:
+Katika mafunzo haya, utatathmini usalama wa mfano wa Phi-3 ulioboreshwa kwa kutumia vipimo vya usalama vya Microsoft Foundry. Vipimo hivi vinakusaidia kutathmini uwezo wa mfano kutoa maudhui hatarishi na udhaifu wake dhidi ya mashambulizi ya jailbreak. Vipimo vya usalama ni pamoja na:
 
 - **Maudhui yanayohusiana na kujiua au kujiumiza**: Hupima kama mfano una mwelekeo wa kutoa maudhui yanayohusiana na kujiua au kujiumiza.
 - **Maudhui ya chuki na yasiyo ya haki**: Hupima kama mfano una mwelekeo wa kutoa maudhui ya chuki au yasiyo ya haki.
@@ -88,7 +88,7 @@ Kutathmini vipengele hivi kunahakikisha kwamba mfano wa AI hauzalishi maudhui ha
 
 ### Utangulizi wa tathmini ya utendaji
 
-Ili kuhakikisha kwamba mfano wako wa AI unafanya kazi kama inavyotarajiwa, ni muhimu kutathmini utendaji wake dhidi ya vipimo vya utendaji. Katika Azure AI Foundry, tathmini za utendaji zinakuwezesha kutathmini ufanisi wa mfano wako katika kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri.
+Ili kuhakikisha kwamba mfano wako wa AI unafanya kazi kama inavyotarajiwa, ni muhimu kutathmini utendaji wake dhidi ya vipimo vya utendaji. Katika Microsoft Foundry, tathmini za utendaji zinakuwezesha kutathmini ufanisi wa mfano wako katika kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri.
 
 ![Safaty evaluation.](../../../../../../translated_images/sw/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Ili kuhakikisha kwamba mfano wako wa AI unafanya kazi kama inavyotarajiwa, ni mu
 
 #### Vipimo vya utendaji
 
-Katika mafunzo haya, utatathmini utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboreshwa kwa kutumia vipimo vya utendaji vya Azure AI Foundry. Vipimo hivi vinakusaidia kutathmini ufanisi wa mfano katika kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri. Vipimo vya utendaji ni pamoja na:
+Katika mafunzo haya, utatathmini utendaji wa mfano wa Phi-3 / Phi-3.5 ulioboreshwa kwa kutumia vipimo vya utendaji vya Microsoft Foundry. Vipimo hivi vinakusaidia kutathmini ufanisi wa mfano katika kutoa majibu sahihi, yanayohusiana, na yenye muktadha mzuri. Vipimo vya utendaji ni pamoja na:
 
 - **Uthibitisho wa Msingi (Groundedness)**: Tathmini jinsi majibu yaliyotolewa yanavyolingana na taarifa kutoka chanzo cha ingizo.
 - **Uhusiano (Relevance)**: Hupima umuhimu wa majibu yaliyotolewa kwa maswali yaliyoulizwa.
@@ -109,34 +109,34 @@ Vipimo hivi vinakusaidia kutathmini ufanisi wa mfano katika kutoa majibu sahihi,
 
 ![Evaluate based on performance.](../../../../../../translated_images/sw/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **Hali ya Pili: Kutathmini mfano wa Phi-3 / Phi-3.5 katika Azure AI Foundry**
+## **Hali ya Pili: Kutathmini mfano wa Phi-3 / Phi-3.5 katika Microsoft Foundry**
 
 ### Kabla hujaanza
 
-Mafunzo haya ni muendelezo wa machapisho ya blogu yaliyopita, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" na "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Katika machapisho haya, tulipitia mchakato wa kufanya fine-tuning ya mfano wa Phi-3 / Phi-3.5 katika Azure AI Foundry na kuunganisha na Prompt flow.
+Mafunzo haya ni muendelezo wa machapisho ya blogu yaliyopita, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" na "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Katika machapisho haya, tulipitia mchakato wa kufanya fine-tuning ya mfano wa Phi-3 / Phi-3.5 katika Microsoft Foundry na kuunganisha na Prompt flow.
 
-Katika mafunzo haya, utatekeleza mfano wa Azure OpenAI kama mtathmini katika Azure AI Foundry na kuutumia kutathmini mfano wako wa Phi-3 / Phi-3.5 ulioboreshwa.
+Katika mafunzo haya, utatekeleza mfano wa Azure OpenAI kama mtathmini katika Microsoft Foundry na kuutumia kutathmini mfano wako wa Phi-3 / Phi-3.5 ulioboreshwa.
 
 Kabla hujaanza mafunzo haya, hakikisha una mahitaji yafuatayo, kama ilivyoelezwa katika mafunzo yaliyopita:
 
 1. Seti ya data iliyotayarishwa kutathmini mfano wa Phi-3 / Phi-3.5 ulioboreshwa.
 1. Mfano wa Phi-3 / Phi-3.5 ulioboreshwa na kupelekwa kwenye Azure Machine Learning.
-1. Prompt flow iliyounganishwa na mfano wako wa Phi-3 / Phi-3.5 ulioboreshwa katika Azure AI Foundry.
+1. Prompt flow iliyounganishwa na mfano wako wa Phi-3 / Phi-3.5 ulioboreshwa katika Microsoft Foundry.
 
 > [!NOTE]
 > Utatumia faili *test_data.jsonl*, iliyoko katika folda ya data kutoka kwa seti ya data ya **ULTRACHAT_200k** iliyopakuliwa katika machapisho ya blogu yaliyopita, kama seti ya data ya kutathmini mfano wa Phi-3 / Phi-3.5 ulioboreshwa.
 
-#### Unganisha mfano wa Phi-3 / Phi-3.5 uliobinafsishwa na Prompt flow katika Azure AI Foundry (Njia ya kwanza kwa kutumia msimbo)
+#### Unganisha mfano wa Phi-3 / Phi-3.5 uliobinafsishwa na Prompt flow katika Microsoft Foundry (Njia ya kwanza kwa kutumia msimbo)
 > [!NOTE]
-> Ikiwa ulifuata njia ya low-code iliyoelezwa katika "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", unaweza kuruka zoezi hili na kuendelea na lile linalofuata.
+> Ikiwa ulifuata njia ya low-code iliyoelezwa katika "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", unaweza kuruka zoezi hili na kuendelea na lile linalofuata.
 > Hata hivyo, ikiwa ulifuata njia ya code-first iliyoelezwa katika "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ili kufanyia marekebisho na kupeleka mfano wako wa Phi-3 / Phi-3.5, mchakato wa kuunganisha mfano wako na Prompt flow ni tofauti kidogo. Utajifunza mchakato huu katika zoezi hili.
-Ili kuendelea, unahitaji kuunganisha modeli yako ya Phi-3 / Phi-3.5 iliyoboreshwa ndani ya Prompt flow katika Azure AI Foundry.
+Ili kuendelea, unahitaji kuunganisha modeli yako ya Phi-3 / Phi-3.5 iliyoboreshwa ndani ya Prompt flow katika Microsoft Foundry.
 
-#### Unda Azure AI Foundry Hub
+#### Unda Microsoft Foundry Hub
 
-Unahitaji kuunda Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Resource Group, ikikuruhusu kupanga na kusimamia Miradi mingi ndani ya Azure AI Foundry.
+Unahitaji kuunda Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Resource Group, ikikuruhusu kupanga na kusimamia Miradi mingi ndani ya Microsoft Foundry.
 
-1. Ingia kwenye [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Ingia kwenye [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Chagua **All hubs** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -157,7 +157,7 @@ Unahitaji kuunda Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Resource Group
 
 1. Chagua **Next**.
 
-#### Unda Mradi wa Azure AI Foundry
+#### Unda Mradi wa Microsoft Foundry
 
 1. Katika Hub uliyounda, chagua **All projects** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -197,9 +197,9 @@ Ili kuunganisha modeli yako maalum ya Phi-3 / Phi-3.5 na Prompt flow, unahitaji 
 
 #### Ongeza Muunganisho Maalum
 
-1. Tembelea [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Tembelea [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Nenda kwenye mradi wa Azure AI Foundry ulilounda.
+1. Nenda kwenye mradi wa Microsoft Foundry ulilounda.
 
 1. Katika Mradi ulilounda, chagua **Settings** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -225,9 +225,9 @@ Ili kuunganisha modeli yako maalum ya Phi-3 / Phi-3.5 na Prompt flow, unahitaji 
 
 #### Unda Prompt flow
 
-Umeongeza muunganisho maalum katika Azure AI Foundry. Sasa, hebu tuunde Prompt flow kwa kutumia hatua zifuatazo. Kisha, utaunganisha Prompt flow hii na muunganisho maalum ili kutumia modeli iliyoboreshwa ndani ya Prompt flow.
+Umeongeza muunganisho maalum katika Microsoft Foundry. Sasa, hebu tuunde Prompt flow kwa kutumia hatua zifuatazo. Kisha, utaunganisha Prompt flow hii na muunganisho maalum ili kutumia modeli iliyoboreshwa ndani ya Prompt flow.
 
-1. Nenda kwenye mradi wa Azure AI Foundry ulilounda.
+1. Nenda kwenye mradi wa Microsoft Foundry ulilounda.
 
 1. Chagua **Prompt flow** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -344,7 +344,7 @@ Unahitaji kuunganisha modeli iliyoboreshwa ya Phi-3 / Phi-3.5 ndani ya Prompt fl
     ![Paste prompt flow code.](../../../../../../translated_images/sw/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Kwa maelezo zaidi kuhusu kutumia Prompt flow katika Azure AI Foundry, unaweza rejelea [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Kwa maelezo zaidi kuhusu kutumia Prompt flow katika Microsoft Foundry, unaweza rejelea [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Chagua **Chat input**, **Chat output** kuwezesha mazungumzo na modeli yako.
 
@@ -385,13 +385,13 @@ Unahitaji kuunganisha modeli iliyoboreshwa ya Phi-3 / Phi-3.5 ndani ya Prompt fl
 
 ### Sambaza Azure OpenAI ili kutathmini modeli ya Phi-3 / Phi-3.5
 
-Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusambaza modeli ya Azure OpenAI. Modeli hii itatumika kutathmini utendaji wa modeli ya Phi-3 / Phi-3.5.
+Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Microsoft Foundry, unahitaji kusambaza modeli ya Azure OpenAI. Modeli hii itatumika kutathmini utendaji wa modeli ya Phi-3 / Phi-3.5.
 
 #### Sambaza Azure OpenAI
 
-1. Ingia kwenye [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Ingia kwenye [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Nenda kwenye mradi wa Azure AI Foundry ulilounda.
+1. Nenda kwenye mradi wa Microsoft Foundry ulilounda.
 
     ![Select Project.](../../../../../../translated_images/sw/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -409,13 +409,13 @@ Ili kutathmini modeli ya Phi-3 / Phi-3.5 katika Azure AI Foundry, unahitaji kusa
 
 1. Chagua **Confirm**.
 
-### Tathmini modeli iliyoboreshwa ya Phi-3 / Phi-3.5 kwa kutumia tathmini ya Prompt flow ya Azure AI Foundry
+### Tathmini modeli iliyoboreshwa ya Phi-3 / Phi-3.5 kwa kutumia tathmini ya Prompt flow ya Microsoft Foundry
 
 ### Anzisha tathmini mpya
 
-1. Tembelea [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Tembelea [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Nenda kwenye mradi wa Azure AI Foundry ulilounda.
+1. Nenda kwenye mradi wa Microsoft Foundry ulilounda.
 
     ![Select Project.](../../../../../../translated_images/sw/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -498,7 +498,7 @@ Mara baada ya tathmini kukamilika, unaweza kupitia matokeo kwa vigezo vya utenda
 
 ### Umehitimisha mafunzo haya
 
-Umefanikiwa kutathmini modeli ya Phi-3 iliyoboreshwa na kuunganishwa na Prompt flow katika Azure AI Foundry. Huu ni hatua muhimu kuhakikisha kuwa modeli zako za AI si tu zinafanya kazi vizuri, bali pia zinafuata kanuni za AI Zinazowajibika za Microsoft kusaidia kujenga programu za AI zinazotegemewa na kuaminika.
+Umefanikiwa kutathmini modeli ya Phi-3 iliyoboreshwa na kuunganishwa na Prompt flow katika Microsoft Foundry. Huu ni hatua muhimu kuhakikisha kuwa modeli zako za AI si tu zinafanya kazi vizuri, bali pia zinafuata kanuni za AI Zinazowajibika za Microsoft kusaidia kujenga programu za AI zinazotegemewa na kuaminika.
 
 ![Architecture.](../../../../../../translated_images/sw/architecture.10bec55250f5d6a4.webp)
 
@@ -508,8 +508,8 @@ Safisha rasilimali zako za Azure ili kuepuka malipo ya ziada kwenye akaunti yako
 
 - Rasilimali ya Azure Machine learning.
 - Kituo cha modeli ya Azure Machine learning.
-- Rasilimali ya Mradi wa Azure AI Foundry.
-- Rasilimali ya Prompt flow ya Azure AI Foundry.
+- Rasilimali ya Mradi wa Microsoft Foundry.
+- Rasilimali ya Prompt flow ya Microsoft Foundry.
 
 ### Hatua Zifuatazo
 
@@ -517,13 +517,13 @@ Safisha rasilimali zako za Azure ili kuepuka malipo ya ziada kwenye akaunti yako
 
 - [Tathmini mifumo ya AI kwa kutumia dashibodi ya AI Zinazowajibika](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Vigezo vya tathmini na ufuatiliaji kwa AI ya kizazi](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Nyaraka za Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Nyaraka za Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Nyaraka za Prompt flow](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Maudhui ya Mafunzo
 
 - [Utangulizi wa Mbinu ya AI Zinazowajibika ya Microsoft](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Utangulizi wa Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Utangulizi wa Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Marejeleo
 

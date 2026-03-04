@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/ur/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**پلیٹ فارم** اس میں مختلف ٹیکنالوجیز شامل ہیں جیسے Azure AI Foundry، Azure Machine Learning، AI Tools، Kaito، اور ONNX Runtime۔
+**پلیٹ فارم** اس میں مختلف ٹیکنالوجیز شامل ہیں جیسے Microsoft Foundry، Azure Machine Learning، AI Tools، Kaito، اور ONNX Runtime۔
 
 **انفراسٹرکچر** اس میں CPU اور FPGA شامل ہیں، جو فائن ٹیوننگ کے عمل کے لیے ضروری ہیں۔ میں آپ کو ان ٹیکنالوجیز کے آئیکنز دکھاتا ہوں۔
 

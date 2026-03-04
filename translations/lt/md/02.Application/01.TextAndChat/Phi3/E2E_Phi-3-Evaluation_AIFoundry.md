@@ -1,14 +1,14 @@
-# Įvertinkite pritaikytą Phi-3 / Phi-3.5 modelį Azure AI Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų
+# Įvertinkite pritaikytą Phi-3 / Phi-3.5 modelį Microsoft Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų
 
-Šis nuo pradžios iki pabaigos (E2E) pavyzdys yra pagrįstas vadovu "[Įvertinkite pritaikytus Phi-3 / 3.5 modelius Azure AI Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" iš Microsoft Tech Community.
+Šis nuo pradžios iki pabaigos (E2E) pavyzdys yra pagrįstas vadovu "[Įvertinkite pritaikytus Phi-3 / 3.5 modelius Microsoft Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" iš Microsoft Tech Community.
 
 ## Apžvalga
 
-### Kaip įvertinti pritaikyto Phi-3 / Phi-3.5 modelio saugumą ir našumą Azure AI Foundry?
+### Kaip įvertinti pritaikyto Phi-3 / Phi-3.5 modelio saugumą ir našumą Microsoft Foundry?
 
-Modelio pritaikymas kartais gali sukelti netikėtus ar nepageidaujamus atsakymus. Siekiant užtikrinti, kad modelis išliktų saugus ir efektyvus, svarbu įvertinti jo potencialą generuoti žalingą turinį bei gebėjimą pateikti tikslius, aktualius ir nuoseklius atsakymus. Šiame vadove sužinosite, kaip įvertinti pritaikyto Phi-3 / Phi-3.5 modelio saugumą ir našumą, integruotą su Prompt flow Azure AI Foundry.
+Modelio pritaikymas kartais gali sukelti netikėtus ar nepageidaujamus atsakymus. Siekiant užtikrinti, kad modelis išliktų saugus ir efektyvus, svarbu įvertinti jo potencialą generuoti žalingą turinį bei gebėjimą pateikti tikslius, aktualius ir nuoseklius atsakymus. Šiame vadove sužinosite, kaip įvertinti pritaikyto Phi-3 / Phi-3.5 modelio saugumą ir našumą, integruotą su Prompt flow Microsoft Foundry.
 
-Štai Azure AI Foundry vertinimo procesas.
+Štai Microsoft Foundry vertinimo procesas.
 
 ![Pamokos architektūra.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
 
@@ -27,24 +27,24 @@ Modelio pritaikymas kartais gali sukelti netikėtus ar nepageidaujamus atsakymus
 
 ### Turinys
 
-1. [**Scenarijus 1: Azure AI Foundry Prompt flow vertinimo įvadas**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenarijus 1: Microsoft Foundry Prompt flow vertinimo įvadas**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Saugumo vertinimo įvadas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Našumo vertinimo įvadas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Prieš pradedant](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Azure OpenAI diegimas Phi-3 / Phi-3.5 modelio vertinimui](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Pritaikyto Phi-3 / Phi-3.5 modelio vertinimas naudojant Azure AI Foundry Prompt flow vertinimą](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Pritaikyto Phi-3 / Phi-3.5 modelio vertinimas naudojant Microsoft Foundry Prompt flow vertinimą](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Sveikiname!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Scenarijus 1: Azure AI Foundry Prompt flow vertinimo įvadas**
+## **Scenarijus 1: Microsoft Foundry Prompt flow vertinimo įvadas**
 
 ### Saugumo vertinimo įvadas
 
-Siekiant užtikrinti, kad jūsų AI modelis būtų etiškas ir saugus, būtina jį įvertinti pagal Microsoft atsakingo dirbtinio intelekto principus. Azure AI Foundry saugumo vertinimai leidžia įvertinti modelio pažeidžiamumą jailbreak atakoms ir jo potencialą generuoti žalingą turinį, kas tiesiogiai atitinka šiuos principus.
+Siekiant užtikrinti, kad jūsų AI modelis būtų etiškas ir saugus, būtina jį įvertinti pagal Microsoft atsakingo dirbtinio intelekto principus. Microsoft Foundry saugumo vertinimai leidžia įvertinti modelio pažeidžiamumą jailbreak atakoms ir jo potencialą generuoti žalingą turinį, kas tiesiogiai atitinka šiuos principus.
 
 ![Saugumo vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/safety-evaluation.png)
 
@@ -75,7 +75,7 @@ Microsoft atsakingo dirbtinio intelekto principai apima:
 
 #### Saugumo metrikos
 
-Šiame vadove jūs įvertinsite pritaikyto Phi-3 modelio saugumą naudodami Azure AI Foundry saugumo metrikas. Šios metrikos padeda įvertinti modelio potencialą generuoti žalingą turinį ir jo pažeidžiamumą jailbreak atakoms. Saugumo metrikos apima:
+Šiame vadove jūs įvertinsite pritaikyto Phi-3 modelio saugumą naudodami Microsoft Foundry saugumo metrikas. Šios metrikos padeda įvertinti modelio potencialą generuoti žalingą turinį ir jo pažeidžiamumą jailbreak atakoms. Saugumo metrikos apima:
 
 - **Turinys, susijęs su savęs žalojimu**: Įvertina, ar modelis turi tendenciją generuoti turinį, susijusį su savęs žalojimu.
 - **Neapykantos ir nesąžiningas turinys**: Įvertina, ar modelis turi tendenciją generuoti neapykantos ar nesąžiningą turinį.
@@ -88,7 +88,7 @@ Microsoft atsakingo dirbtinio intelekto principai apima:
 
 ### Našumo vertinimo įvadas
 
-Siekiant užtikrinti, kad jūsų AI modelis veiktų taip, kaip tikimasi, svarbu įvertinti jo našumą pagal našumo metrikas. Azure AI Foundry našumo vertinimai leidžia įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus.
+Siekiant užtikrinti, kad jūsų AI modelis veiktų taip, kaip tikimasi, svarbu įvertinti jo našumą pagal našumo metrikas. Microsoft Foundry našumo vertinimai leidžia įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus.
 
 ![Našumo vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/performance-evaluation.png)
 
@@ -96,7 +96,7 @@ Siekiant užtikrinti, kad jūsų AI modelis veiktų taip, kaip tikimasi, svarbu 
 
 #### Našumo metrikos
 
-Šiame vadove jūs įvertinsite pritaikyto Phi-3 / Phi-3.5 modelio našumą naudodami Azure AI Foundry našumo metrikas. Šios metrikos padeda įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus. Našumo metrikos apima:
+Šiame vadove jūs įvertinsite pritaikyto Phi-3 / Phi-3.5 modelio našumą naudodami Microsoft Foundry našumo metrikas. Šios metrikos padeda įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus. Našumo metrikos apima:
 
 - **Pagrįstumas**: Įvertina, kaip gerai generuoti atsakymai atitinka informaciją iš įvesties šaltinio.
 - **Aktualumas**: Įvertina generuotų atsakymų tinkamumą pateiktiems klausimams.
@@ -109,34 +109,34 @@ Siekiant užtikrinti, kad jūsų AI modelis veiktų taip, kaip tikimasi, svarbu 
 
 ![Vertinimas pagal našumą.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluate-based-on-performance.png)
 
-## **Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Azure AI Foundry**
+## **Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Microsoft Foundry**
 
 ### Prieš pradedant
 
-Šis vadovas yra tęsinys ankstesnių tinklaraščio įrašų "[Pritaikykite ir integruokite pritaikytus Phi-3 modelius su Prompt Flow: žingsnis po žingsnio vadovas](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ir "[Pritaikykite ir integruokite pritaikytus Phi-3 modelius su Prompt Flow Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Šiuose įrašuose aptarėme Phi-3 / Phi-3.5 modelio pritaikymo procesą Azure AI Foundry ir jo integravimą su Prompt flow.
+Šis vadovas yra tęsinys ankstesnių tinklaraščio įrašų "[Pritaikykite ir integruokite pritaikytus Phi-3 modelius su Prompt Flow: žingsnis po žingsnio vadovas](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ir "[Pritaikykite ir integruokite pritaikytus Phi-3 modelius su Prompt Flow Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Šiuose įrašuose aptarėme Phi-3 / Phi-3.5 modelio pritaikymo procesą Microsoft Foundry ir jo integravimą su Prompt flow.
 
-Šiame vadove jūs diegsite Azure OpenAI modelį kaip vertintoją Azure AI Foundry ir naudosite jį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
+Šiame vadove jūs diegsite Azure OpenAI modelį kaip vertintoją Microsoft Foundry ir naudosite jį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
 
 Prieš pradedant šį vadovą, įsitikinkite, kad turite šiuos reikalavimus, kaip aprašyta ankstesniuose vadovuose:
 
 1. Paruoštą duomenų rinkinį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
 1. Phi-3 / Phi-3.5 modelį, kuris buvo pritaikytas ir įdiegtas Azure Machine Learning.
-1. Prompt flow, integruotą su jūsų pritaikytu Phi-3 / Phi-3.5 modeliu Azure AI Foundry.
+1. Prompt flow, integruotą su jūsų pritaikytu Phi-3 / Phi-3.5 modeliu Microsoft Foundry.
 
 > [!NOTE]
 > Jūs naudosite *test_data.jsonl* failą, esantį duomenų aplanke iš **ULTRACHAT_200k** duomenų rinkinio, atsisiųsto ankstesniuose tinklaraščio įrašuose, kaip duomenų rinkinį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
 
-#### Integruokite pritaikytą Phi-3 / Phi-3.5 modelį su Prompt flow Azure AI Foundry (kodo pirmasis požiūris)
+#### Integruokite pritaikytą Phi-3 / Phi-3.5 modelį su Prompt flow Microsoft Foundry (kodo pirmasis požiūris)
 > [!NOTE]  
-> Jei laikėtės mažo kodo metodo, aprašyto "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", galite praleisti šią užduotį ir pereiti prie kitos.  
+> Jei laikėtės mažo kodo metodo, aprašyto "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", galite praleisti šią užduotį ir pereiti prie kitos.  
 > Tačiau, jei naudojotės kodo pirmumo metodu, aprašytu "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)", kad pritaikytumėte ir įdiegtumėte savo Phi-3 / Phi-3.5 modelį, modelio prijungimo prie Prompt Flow procesas šiek tiek skiriasi. Šioje užduotyje išmoksite šį procesą.
-### Integruokite savo pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow Azure AI Foundry platformoje.
+### Integruokite savo pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow Microsoft Foundry platformoje.
 
-#### Sukurkite Azure AI Foundry Hub
+#### Sukurkite Microsoft Foundry Hub
 
-Prieš kuriant projektą, reikia sukurti Hub. Hub veikia kaip resursų grupė, leidžianti organizuoti ir valdyti kelis projektus Azure AI Foundry platformoje.
+Prieš kuriant projektą, reikia sukurti Hub. Hub veikia kaip resursų grupė, leidžianti organizuoti ir valdyti kelis projektus Microsoft Foundry platformoje.
 
-1. Prisijunkite prie [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Prisijunkite prie [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Pasirinkite **Visi hub'ai** iš kairiojo meniu.
 
@@ -157,7 +157,7 @@ Prieš kuriant projektą, reikia sukurti Hub. Hub veikia kaip resursų grupė, l
 
 1. Pasirinkite **Toliau**.
 
-#### Sukurkite Azure AI Foundry projektą
+#### Sukurkite Microsoft Foundry projektą
 
 1. Sukurtame hub'e pasirinkite **Visi projektai** iš kairiojo meniu.
 
@@ -197,9 +197,9 @@ Norėdami integruoti savo pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow, tu
 
 #### Pridėkite pritaikytą ryšį
 
-1. Apsilankykite [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
 1. Sukurtame projekte pasirinkite **Nustatymai** iš kairiojo meniu.
 
@@ -225,9 +225,9 @@ Norėdami integruoti savo pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow, tu
 
 #### Sukurkite Prompt flow
 
-Jūs pridėjote pritaikytą ryšį Azure AI Foundry platformoje. Dabar sukurkite Prompt flow naudodami šiuos veiksmus. Tada prijunkite šį Prompt flow prie pritaikyto ryšio, kad galėtumėte naudoti pritaikytą modelį Prompt flow aplinkoje.
+Jūs pridėjote pritaikytą ryšį Microsoft Foundry platformoje. Dabar sukurkite Prompt flow naudodami šiuos veiksmus. Tada prijunkite šį Prompt flow prie pritaikyto ryšio, kad galėtumėte naudoti pritaikytą modelį Prompt flow aplinkoje.
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
 1. Pasirinkite **Prompt flow** iš kairiojo meniu.
 
@@ -344,7 +344,7 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
     ![Įklijuoti Prompt flow kodą.](../../../../../../imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png)
 
 > [!NOTE]
-> Daugiau informacijos apie Prompt flow naudojimą Azure AI Foundry platformoje rasite [Prompt flow Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Daugiau informacijos apie Prompt flow naudojimą Microsoft Foundry platformoje rasite [Prompt flow Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Pasirinkite **Pokalbio įvestis**, **Pokalbio išvestis**, kad įgalintumėte pokalbį su savo modeliu.
 
@@ -385,13 +385,13 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
 
 ### Diegti Azure OpenAI modelį Phi-3 / Phi-3.5 modelio vertinimui
 
-Norėdami įvertinti Phi-3 / Phi-3.5 modelį Azure AI Foundry platformoje, turite diegti Azure OpenAI modelį. Šis modelis bus naudojamas Phi-3 / Phi-3.5 modelio našumui įvertinti.
+Norėdami įvertinti Phi-3 / Phi-3.5 modelį Microsoft Foundry platformoje, turite diegti Azure OpenAI modelį. Šis modelis bus naudojamas Phi-3 / Phi-3.5 modelio našumui įvertinti.
 
 #### Diegti Azure OpenAI
 
-1. Prisijunkite prie [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Prisijunkite prie [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
     ![Pasirinkti projektą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
 
@@ -409,13 +409,13 @@ Norėdami įvertinti Phi-3 / Phi-3.5 modelį Azure AI Foundry platformoje, turit
 
 1. Pasirinkite **Patvirtinti**.
 
-### Įvertinti pritaikytą Phi-3 / Phi-3.5 modelį naudojant Azure AI Foundry Prompt flow vertinimą
+### Įvertinti pritaikytą Phi-3 / Phi-3.5 modelį naudojant Microsoft Foundry Prompt flow vertinimą
 
 ### Pradėti naują vertinimą
 
-1. Apsilankykite [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
     ![Pasirinkti projektą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
 
@@ -498,7 +498,7 @@ Kai vertinimas bus baigtas, galite peržiūrėti rezultatus tiek našumo, tiek s
 
 ### Jūs baigėte šį mokymą
 
-Jūs sėkmingai įvertinote pritaikytą Phi-3 modelį, integruotą su Prompt flow Azure AI Foundry platformoje. Tai svarbus žingsnis užtikrinant, kad jūsų AI modeliai ne tik veiktų gerai, bet ir laikytųsi „Microsoft“ Atsakingo AI principų, padedančių kurti patikimas ir patikimas AI programas.
+Jūs sėkmingai įvertinote pritaikytą Phi-3 modelį, integruotą su Prompt flow Microsoft Foundry platformoje. Tai svarbus žingsnis užtikrinant, kad jūsų AI modeliai ne tik veiktų gerai, bet ir laikytųsi „Microsoft“ Atsakingo AI principų, padedančių kurti patikimas ir patikimas AI programas.
 
 ![Architektūra.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
 
@@ -508,8 +508,8 @@ Išvalykite savo Azure išteklius, kad išvengtumėte papildomų mokesčių savo
 
 - Azure Machine learning išteklius.
 - Azure Machine learning modelio galinį tašką.
-- Azure AI Foundry projekto išteklius.
-- Azure AI Foundry Prompt flow išteklius.
+- Microsoft Foundry projekto išteklius.
+- Microsoft Foundry Prompt flow išteklius.
 
 ### Kiti žingsniai
 
@@ -517,13 +517,13 @@ Išvalykite savo Azure išteklius, kad išvengtumėte papildomų mokesčių savo
 
 - [AI sistemų vertinimas naudojant Atsakingo AI prietaisų skydelį](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Generatyvaus AI vertinimo ir stebėjimo metrikos](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry dokumentacija](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry dokumentacija](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow dokumentacija](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Mokymo turinys
 
 - [Įvadas į „Microsoft“ Atsakingo AI požiūrį](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Įvadas į Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Įvadas į Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Nuorodos
 

@@ -1,6 +1,6 @@
-# Azure AI Foundry ਨਾਲ Phi-3 ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨਾ
+# Microsoft Foundry ਨਾਲ Phi-3 ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨਾ
 
-ਆਓ ਵੇਖੀਏ ਕਿ Microsoft ਦੇ Phi-3 Mini ਭਾਸ਼ਾ ਮਾਡਲ ਨੂੰ Azure AI Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕਿਵੇਂ ਫਾਈਨ-ਟਿਊਨ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਫਾਈਨ-ਟਿਊਨਿੰਗ ਤੁਹਾਨੂੰ Phi-3 Mini ਨੂੰ ਖਾਸ ਕੰਮਾਂ ਲਈ ਅਨੁਕੂਲਿਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਹੋਰ ਵੀ ਸ਼ਕਤੀਸ਼ਾਲੀ ਅਤੇ ਸੰਦਰਭ-ਸੂਚਕ ਬਣ ਜਾਂਦਾ ਹੈ।
+ਆਓ ਵੇਖੀਏ ਕਿ Microsoft ਦੇ Phi-3 Mini ਭਾਸ਼ਾ ਮਾਡਲ ਨੂੰ Microsoft Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕਿਵੇਂ ਫਾਈਨ-ਟਿਊਨ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਫਾਈਨ-ਟਿਊਨਿੰਗ ਤੁਹਾਨੂੰ Phi-3 Mini ਨੂੰ ਖਾਸ ਕੰਮਾਂ ਲਈ ਅਨੁਕੂਲਿਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਹੋਰ ਵੀ ਸ਼ਕਤੀਸ਼ਾਲੀ ਅਤੇ ਸੰਦਰਭ-ਸੂਚਕ ਬਣ ਜਾਂਦਾ ਹੈ।
 
 ## ਵਿਚਾਰ ਕਰਨ ਵਾਲੀਆਂ ਗੱਲਾਂ
 
@@ -22,7 +22,7 @@
 - ਇੱਕ Azure ਸਬਸਕ੍ਰਿਪਸ਼ਨ। ਜੇ ਤੁਹਾਡੇ ਕੋਲ Azure ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਨਹੀਂ ਹੈ, ਤਾਂ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇੱਕ [ਪੇਡ Azure ਖਾਤਾ](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) ਬਣਾਓ।
 
 - ਇੱਕ [AI Foundry ਪ੍ਰੋਜੈਕਟ](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)।
-- Azure ਰੋਲ-ਆਧਾਰਿਤ ਐਕਸੈਸ ਕੰਟਰੋਲ (Azure RBAC) Azure AI Foundry ਵਿੱਚ ਓਪਰੇਸ਼ਨਾਂ ਲਈ ਪਹੁੰਚ ਦੇਣ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਹਨ। ਇਸ ਲੇਖ ਵਿੱਚ ਦਿੱਤੇ ਕਦਮ ਕਰਨ ਲਈ, ਤੁਹਾਡੇ ਯੂਜ਼ਰ ਖਾਤੇ ਨੂੰ __Azure AI Developer ਰੋਲ__ ਰਿਸੋਰਸ ਗਰੁੱਪ 'ਤੇ ਦਿੱਤਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।
+- Azure ਰੋਲ-ਆਧਾਰਿਤ ਐਕਸੈਸ ਕੰਟਰੋਲ (Azure RBAC) Microsoft Foundry ਵਿੱਚ ਓਪਰੇਸ਼ਨਾਂ ਲਈ ਪਹੁੰਚ ਦੇਣ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਹਨ। ਇਸ ਲੇਖ ਵਿੱਚ ਦਿੱਤੇ ਕਦਮ ਕਰਨ ਲਈ, ਤੁਹਾਡੇ ਯੂਜ਼ਰ ਖਾਤੇ ਨੂੰ __Azure AI Developer ਰੋਲ__ ਰਿਸੋਰਸ ਗਰੁੱਪ 'ਤੇ ਦਿੱਤਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ।
 
 ### ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਪ੍ਰੋਵਾਈਡਰ ਰਜਿਸਟ੍ਰੇਸ਼ਨ
 
@@ -58,17 +58,17 @@
 
 ਸਹਾਇਕ ਫਾਇਲ ਕਿਸਮ JSON Lines ਹੈ। ਫਾਇਲਾਂ ਡਿਫਾਲਟ ਡਾਟਾਸਟੋਰ ਵਿੱਚ ਅਪਲੋਡ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ ਅਤੇ ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਉਪਲਬਧ ਹੁੰਦੀਆਂ ਹਨ।
 
-## Azure AI Foundry ਨਾਲ Phi-3 ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨਾ
+## Microsoft Foundry ਨਾਲ Phi-3 ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨਾ
 
-Azure AI Foundry ਤੁਹਾਨੂੰ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲਾਂ ਨੂੰ ਆਪਣੇ ਨਿੱਜੀ ਡਾਟਾਸੈੱਟ ਲਈ ਅਨੁਕੂਲਿਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ, ਜਿਸਨੂੰ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਕਿਹਾ ਜਾਂਦਾ ਹੈ। ਫਾਈਨ-ਟਿਊਨਿੰਗ ਖਾਸ ਕੰਮਾਂ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਕਸਟਮਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਦੇ ਕੇ ਮਹੱਤਵਪੂਰਨ ਮੁੱਲ ਪੈਦਾ ਕਰਦਾ ਹੈ। ਇਸ ਨਾਲ ਪ੍ਰਦਰਸ਼ਨ ਵਿੱਚ ਸੁਧਾਰ, ਲਾਗਤ ਦੀ ਬਚਤ, ਘੱਟ ਲੇਟੈਂਸੀ ਅਤੇ ਨਿੱਜੀ ਨਤੀਜੇ ਮਿਲਦੇ ਹਨ।
+Microsoft Foundry ਤੁਹਾਨੂੰ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲਾਂ ਨੂੰ ਆਪਣੇ ਨਿੱਜੀ ਡਾਟਾਸੈੱਟ ਲਈ ਅਨੁਕੂਲਿਤ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ, ਜਿਸਨੂੰ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਕਿਹਾ ਜਾਂਦਾ ਹੈ। ਫਾਈਨ-ਟਿਊਨਿੰਗ ਖਾਸ ਕੰਮਾਂ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਕਸਟਮਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਦੇ ਕੇ ਮਹੱਤਵਪੂਰਨ ਮੁੱਲ ਪੈਦਾ ਕਰਦਾ ਹੈ। ਇਸ ਨਾਲ ਪ੍ਰਦਰਸ਼ਨ ਵਿੱਚ ਸੁਧਾਰ, ਲਾਗਤ ਦੀ ਬਚਤ, ਘੱਟ ਲੇਟੈਂਸੀ ਅਤੇ ਨਿੱਜੀ ਨਤੀਜੇ ਮਿਲਦੇ ਹਨ।
 
 ![Finetune AI Foundry](../../../../translated_images/pa/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### ਨਵਾਂ ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ
 
-1. [Azure AI Foundry](https://ai.azure.com) ਵਿੱਚ ਸਾਈਨ ਇਨ ਕਰੋ।
+1. [Microsoft Foundry](https://ai.azure.com) ਵਿੱਚ ਸਾਈਨ ਇਨ ਕਰੋ।
 
-2. Azure AI Foundry ਵਿੱਚ ਨਵਾਂ ਪ੍ਰੋਜੈਕਟ ਬਣਾਉਣ ਲਈ **+New project** ਚੁਣੋ।
+2. Microsoft Foundry ਵਿੱਚ ਨਵਾਂ ਪ੍ਰੋਜੈਕਟ ਬਣਾਉਣ ਲਈ **+New project** ਚੁਣੋ।
 
     ![FineTuneSelect](../../../../translated_images/pa/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry ਤੁਹਾਨੂੰ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ
 
 ਫਾਈਨ-ਟਿਊਨਿੰਗ ਤੋਂ ਪਹਿਲਾਂ, ਆਪਣੇ ਕੰਮ ਨਾਲ ਸੰਬੰਧਿਤ ਡਾਟਾ ਇਕੱਠਾ ਕਰੋ ਜਾਂ ਬਣਾਓ, ਜਿਵੇਂ ਕਿ ਚੈਟ ਨਿਰਦੇਸ਼, ਸਵਾਲ-ਜਵਾਬ ਜੋੜੇ, ਜਾਂ ਹੋਰ ਕੋਈ ਲੋੜੀਂਦਾ ਟੈਕਸਟ ਡਾਟਾ। ਇਸ ਡਾਟਾ ਨੂੰ ਸਾਫ਼ ਕਰੋ ਅਤੇ ਪ੍ਰੀ-ਪ੍ਰੋਸੈਸ ਕਰੋ, ਜਿਵੇਂ ਕਿ ਸ਼ੋਰ ਹਟਾਉਣਾ, ਗੁੰਮ ਹੋਏ ਮੁੱਲਾਂ ਨੂੰ ਸੰਭਾਲਣਾ, ਅਤੇ ਟੈਕਸਟ ਨੂੰ ਟੋਕਨਾਈਜ਼ ਕਰਨਾ।
 
-### Azure AI Foundry ਵਿੱਚ Phi-3 ਮਾਡਲਾਂ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰੋ
+### Microsoft Foundry ਵਿੱਚ Phi-3 ਮਾਡਲਾਂ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰੋ
 
 > [!NOTE]
 > Phi-3 ਮਾਡਲਾਂ ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਇਸ ਸਮੇਂ ਸਿਰਫ East US 2 ਖੇਤਰਾਂ ਵਿੱਚ ਮੌਜੂਦ ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਸਹਾਇਕ ਹੈ।
@@ -121,7 +121,7 @@ Azure AI Foundry ਤੁਹਾਨੂੰ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ
 6. ਹੇਠਾਂ ਦਿੱਤੇ ਕੰਮ ਕਰੋ:
 
     - **task type** ਲਈ **Chat completion** ਚੁਣੋ।
-    - ਵਰਤੋਂ ਲਈ **Training data** ਚੁਣੋ। ਤੁਸੀਂ ਇਸਨੂੰ Azure AI Foundry ਦੇ ਡਾਟਾ ਤੋਂ ਜਾਂ ਆਪਣੇ ਲੋਕਲ ਮਾਹੌਲ ਤੋਂ ਅਪਲੋਡ ਕਰ ਸਕਦੇ ਹੋ।
+    - ਵਰਤੋਂ ਲਈ **Training data** ਚੁਣੋ। ਤੁਸੀਂ ਇਸਨੂੰ Microsoft Foundry ਦੇ ਡਾਟਾ ਤੋਂ ਜਾਂ ਆਪਣੇ ਲੋਕਲ ਮਾਹੌਲ ਤੋਂ ਅਪਲੋਡ ਕਰ ਸਕਦੇ ਹੋ।
 
     ![FineTuneSelect](../../../../translated_images/pa/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Azure AI Foundry ਤੁਹਾਨੂੰ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ
 
     ![FineTuneSelect](../../../../translated_images/pa/select-submit.0a3802d581bac271.webp)
 
-12. ਜਦੋਂ ਤੁਹਾਡਾ ਮਾਡਲ ਫਾਈਨ-ਟਿਊਨ ਹੋ ਜਾਵੇਗਾ, ਤਾਂ ਸਥਿਤੀ **Completed** ਵਜੋਂ ਦਿਖਾਈ ਦੇਵੇਗੀ। ਹੁਣ ਤੁਸੀਂ ਮਾਡਲ ਨੂੰ ਡਿਪਲੋਇ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨ, ਪਲੇਗ੍ਰਾਊਂਡ ਜਾਂ ਪ੍ਰਾਂਪਟ ਫਲੋ ਵਿੱਚ ਵਰਤ ਸਕਦੇ ਹੋ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਵੇਖੋ [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)।
+12. ਜਦੋਂ ਤੁਹਾਡਾ ਮਾਡਲ ਫਾਈਨ-ਟਿਊਨ ਹੋ ਜਾਵੇਗਾ, ਤਾਂ ਸਥਿਤੀ **Completed** ਵਜੋਂ ਦਿਖਾਈ ਦੇਵੇਗੀ। ਹੁਣ ਤੁਸੀਂ ਮਾਡਲ ਨੂੰ ਡਿਪਲੋਇ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨ, ਪਲੇਗ੍ਰਾਊਂਡ ਜਾਂ ਪ੍ਰਾਂਪਟ ਫਲੋ ਵਿੱਚ ਵਰਤ ਸਕਦੇ ਹੋ। ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਵੇਖੋ [How to deploy Phi-3 family of small language models with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)।
 
     ![FineTuneSelect](../../../../translated_images/pa/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) ਵੇਖੋ।
+> Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) ਵੇਖੋ।
 
 ## ਆਪਣੇ ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ ਮਾਡਲਾਂ ਨੂੰ ਸਾਫ਼ ਕਰਨਾ
 
-ਤੁਸੀਂ [Azure AI Foundry](https://ai.azure.com) ਵਿੱਚ ਫਾਈਨ-ਟਿਊਨ ਮਾਡਲ ਸੂਚੀ ਜਾਂ ਮਾਡਲ ਵੇਰਵੇ ਪੰਨੇ ਤੋਂ ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ ਮਾਡਲ ਨੂੰ ਹਟਾ ਸਕਦੇ ਹੋ। ਫਾਈਨ-ਟਿਊਨ ਪੰਨੇ ਤੋਂ ਮਿਟਾਉਣ ਲਈ ਮਾਡਲ ਚੁਣੋ ਅਤੇ ਫਿਰ ਮਿਟਾਉਣ ਲਈ Delete ਬਟਨ ਦਬਾਓ।
+ਤੁਸੀਂ [Microsoft Foundry](https://ai.azure.com) ਵਿੱਚ ਫਾਈਨ-ਟਿਊਨ ਮਾਡਲ ਸੂਚੀ ਜਾਂ ਮਾਡਲ ਵੇਰਵੇ ਪੰਨੇ ਤੋਂ ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ ਮਾਡਲ ਨੂੰ ਹਟਾ ਸਕਦੇ ਹੋ। ਫਾਈਨ-ਟਿਊਨ ਪੰਨੇ ਤੋਂ ਮਿਟਾਉਣ ਲਈ ਮਾਡਲ ਚੁਣੋ ਅਤੇ ਫਿਰ ਮਿਟਾਉਣ ਲਈ Delete ਬਟਨ ਦਬਾਓ।
 
 > [!NOTE]
 > ਜੇ ਕਿਸੇ ਕਸਟਮ ਮਾਡਲ ਦੀ ਡਿਪਲੋਇਮੈਂਟ ਮੌਜੂਦ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਉਸਨੂੰ ਮਿਟਾ ਨਹੀਂ ਸਕਦੇ। ਪਹਿਲਾਂ ਆਪਣੀ ਮਾਡਲ ਡਿਪਲੋਇਮੈਂਟ ਨੂੰ ਮਿਟਾਉਣਾ ਜ਼ਰੂਰੀ ਹੈ।
@@ -163,7 +163,7 @@ Azure AI Foundry ਤੁਹਾਨੂੰ ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ
 
 ### Phi-3 ਮਾਡਲਾਂ ਦੀ ਸੇਵਾ ਵਜੋਂ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਲਈ ਲਾਗਤ ਅਤੇ ਕੋਟਾ
 
-Phi ਮਾਡਲਾਂ ਨੂੰ ਸੇਵਾ ਵਜੋਂ Microsoft ਵੱਲੋਂ ਪ੍ਰਦਾਨ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਅਤੇ Azure AI Foundry ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕੀਤਾ ਗਿਆ ਹੈ। ਤੁਸੀਂ ਮਾਡਲਾਂ ਨੂੰ [ਡਿਪਲੋਇ](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ਜਾਂ ਫਾਈਨ-ਟਿਊਨ ਕਰਨ ਸਮੇਂ ਕੀਮਤ ਵੇਖ ਸਕਦੇ ਹੋ, ਜੋ ਡਿਪਲੋਇਮੈਂਟ ਵਿਜ਼ਾਰਡ ਦੇ Pricing and terms ਟੈਬ ਵਿੱਚ ਮਿਲਦੀ ਹੈ।
+Phi ਮਾਡਲਾਂ ਨੂੰ ਸੇਵਾ ਵਜੋਂ Microsoft ਵੱਲੋਂ ਪ੍ਰਦਾਨ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਅਤੇ Microsoft Foundry ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕੀਤਾ ਗਿਆ ਹੈ। ਤੁਸੀਂ ਮਾਡਲਾਂ ਨੂੰ [ਡਿਪਲੋਇ](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ਜਾਂ ਫਾਈਨ-ਟਿਊਨ ਕਰਨ ਸਮੇਂ ਕੀਮਤ ਵੇਖ ਸਕਦੇ ਹੋ, ਜੋ ਡਿਪਲੋਇਮੈਂਟ ਵਿਜ਼ਾਰਡ ਦੇ Pricing and terms ਟੈਬ ਵਿੱਚ ਮਿਲਦੀ ਹੈ।
 
 ## ਸਮੱਗਰੀ ਫਿਲਟਰਿੰਗ
 

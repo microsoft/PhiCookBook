@@ -1,17 +1,17 @@
-# **שימוש ב-Azure AI Foundry להערכה**
+# **שימוש ב-Microsoft Foundry להערכה**
 
 ![aistudo](../../../../../translated_images/he/AIFoundry.9e0b513e999a1c5a.webp)
 
-כיצד להעריך את אפליקציית ה-AI הגנרטיבית שלך באמצעות [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). בין אם אתה מעריך שיחות חד-סיבוביות או רב-סיבוביות, Azure AI Foundry מספקת כלים להערכת ביצועי המודל והבטיחות שלו.
+כיצד להעריך את אפליקציית ה-AI הגנרטיבית שלך באמצעות [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). בין אם אתה מעריך שיחות חד-סיבוביות או רב-סיבוביות, Microsoft Foundry מספקת כלים להערכת ביצועי המודל והבטיחות שלו.
 
 ![aistudo](../../../../../translated_images/he/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## כיצד להעריך אפליקציות AI גנרטיביות עם Azure AI Foundry  
-להוראות מפורטות ראה את [תיעוד Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## כיצד להעריך אפליקציות AI גנרטיביות עם Microsoft Foundry  
+להוראות מפורטות ראה את [תיעוד Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 הנה השלבים להתחלה:
 
-## הערכת מודלים גנרטיביים ב-Azure AI Foundry
+## הערכת מודלים גנרטיביים ב-Microsoft Foundry
 
 **דרישות מוקדמות**
 
@@ -21,13 +21,13 @@
 
 ## מדדי הערכה מובנים
 
-Azure AI Foundry מאפשרת להעריך שיחות חד-סיבוביות וגם שיחות מורכבות רב-סיבוביות.  
+Microsoft Foundry מאפשרת להעריך שיחות חד-סיבוביות וגם שיחות מורכבות רב-סיבוביות.  
 לתרחישי Retrieval Augmented Generation (RAG), שבהם המודל מבוסס על נתונים ספציפיים, ניתן להעריך ביצועים באמצעות מדדי הערכה מובנים.  
 בנוסף, ניתן להעריך תרחישי שאלות ותשובות חד-סיבוביות כלליות (שאינן RAG).
 
 ## יצירת ריצת הערכה
 
-מממשק המשתמש של Azure AI Foundry, עבור לעמוד Evaluate או לעמוד Prompt Flow.  
+מממשק המשתמש של Microsoft Foundry, עבור לעמוד Evaluate או לעמוד Prompt Flow.  
 עקוב אחר אשף יצירת ההערכה כדי להגדיר ריצת הערכה. ניתן לספק שם אופציונלי להערכה שלך.  
 בחר את התרחיש שמתאים למטרות האפליקציה שלך.  
 בחר מדד או יותר להערכת פלט המודל.
@@ -38,9 +38,9 @@ Azure AI Foundry מאפשרת להעריך שיחות חד-סיבוביות וג
 
 ## צפייה בתוצאות
 
-לאחר הרצת ההערכה, תוכל לתעד, לצפות ולנתח מדדי הערכה מפורטים ב-Azure AI Foundry. קבל תובנות לגבי היכולות והמגבלות של האפליקציה שלך.
+לאחר הרצת ההערכה, תוכל לתעד, לצפות ולנתח מדדי הערכה מפורטים ב-Microsoft Foundry. קבל תובנות לגבי היכולות והמגבלות של האפליקציה שלך.
 
-**Note** Azure AI Foundry נמצא כרגע בגרסת תצוגה ציבורית, לכן מומלץ להשתמש בו לצרכי ניסוי ופיתוח. לעומסים בייצור, שקול אפשרויות נוספות.  
+**Note** Microsoft Foundry נמצא כרגע בגרסת תצוגה ציבורית, לכן מומלץ להשתמש בו לצרכי ניסוי ופיתוח. לעומסים בייצור, שקול אפשרויות נוספות.  
 עיין בתיעוד הרשמי של [AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) לפרטים נוספים והוראות שלב-אחר-שלב.
 
 **כתב ויתור**:  

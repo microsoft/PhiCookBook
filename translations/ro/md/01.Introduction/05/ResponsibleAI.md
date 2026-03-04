@@ -62,15 +62,15 @@ Respectarea principiilor etice, cum ar fi echitatea, transparența și responsab
 
 ## Utilizarea AI Foundry pentru Responsible AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) este o platformă puternică care permite dezvoltatorilor și organizațiilor să creeze rapid aplicații inteligente, de ultimă generație, gata pentru piață și responsabile. Iată câteva caracteristici și capabilități cheie ale Azure AI Foundry:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) este o platformă puternică care permite dezvoltatorilor și organizațiilor să creeze rapid aplicații inteligente, de ultimă generație, gata pentru piață și responsabile. Iată câteva caracteristici și capabilități cheie ale Microsoft Foundry:
 
 **API-uri și modele gata de utilizare**
 
-Azure AI Foundry oferă API-uri și modele predefinite și personalizabile. Acestea acoperă o gamă largă de sarcini AI, inclusiv AI generativ, procesarea limbajului natural pentru conversații, căutare, monitorizare, traducere, vorbire, viziune și luarea deciziilor.
+Microsoft Foundry oferă API-uri și modele predefinite și personalizabile. Acestea acoperă o gamă largă de sarcini AI, inclusiv AI generativ, procesarea limbajului natural pentru conversații, căutare, monitorizare, traducere, vorbire, viziune și luarea deciziilor.
 
 **Prompt Flow**
 
-Prompt flow în Azure AI Foundry îți permite să creezi experiențe AI conversaționale. Poți proiecta și gestiona fluxuri conversaționale, facilitând construirea de chatboți, asistenți virtuali și alte aplicații interactive.
+Prompt flow în Microsoft Foundry îți permite să creezi experiențe AI conversaționale. Poți proiecta și gestiona fluxuri conversaționale, facilitând construirea de chatboți, asistenți virtuali și alte aplicații interactive.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ RAG este o tehnică care combină abordările bazate pe recuperare și generare.
 
 **Metrice de evaluare și monitorizare pentru AI generativ**
 
-Azure AI Foundry oferă instrumente pentru evaluarea și monitorizarea modelelor AI generative. Poți evalua performanța, echitatea și alte metrice importante pentru a asigura o implementare responsabilă. În plus, dacă ai creat un dashboard, poți folosi interfața no-code din Azure Machine Learning Studio pentru a personaliza și genera un Responsible AI Dashboard și un scorecard asociat, bazat pe [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Acest scorecard te ajută să împărtășești informații cheie legate de echitate, importanța caracteristicilor și alte aspecte ale implementării responsabile, atât cu părțile tehnice, cât și cu cele non-tehnice.
+Microsoft Foundry oferă instrumente pentru evaluarea și monitorizarea modelelor AI generative. Poți evalua performanța, echitatea și alte metrice importante pentru a asigura o implementare responsabilă. În plus, dacă ai creat un dashboard, poți folosi interfața no-code din Azure Machine Learning Studio pentru a personaliza și genera un Responsible AI Dashboard și un scorecard asociat, bazat pe [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Acest scorecard te ajută să împărtășești informații cheie legate de echitate, importanța caracteristicilor și alte aspecte ale implementării responsabile, atât cu părțile tehnice, cât și cu cele non-tehnice.
 
 Pentru a folosi AI Foundry în contextul Responsible AI, poți urma aceste bune practici:
 
@@ -106,7 +106,7 @@ Sistemele AI trebuie să fie transparente și explicabile, astfel încât utiliz
 
 Sistemele AI trebuie monitorizate și actualizate continuu pentru a se asigura că rămân precise și eficiente în timp. Acest lucru necesită întreținere constantă, testare și reantrenare a modelului.
 
-În concluzie, Microsoft Responsible AI este o inițiativă care își propune să ajute dezvoltatorii și organizațiile să construiască sisteme AI transparente, de încredere și responsabile. Implementarea responsabilă a AI este esențială, iar Azure AI Foundry își propune să o facă practică pentru organizații. Urmând principiile etice și bunele practici, putem asigura că sistemele AI sunt dezvoltate și implementate într-un mod responsabil, care aduce beneficii întregii societăți.
+În concluzie, Microsoft Responsible AI este o inițiativă care își propune să ajute dezvoltatorii și organizațiile să construiască sisteme AI transparente, de încredere și responsabile. Implementarea responsabilă a AI este esențială, iar Microsoft Foundry își propune să o facă practică pentru organizații. Urmând principiile etice și bunele practici, putem asigura că sistemele AI sunt dezvoltate și implementate într-un mod responsabil, care aduce beneficii întregii societăți.
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

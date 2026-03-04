@@ -1,6 +1,6 @@
-# Fino podešavanje Phi-3 s Azure AI Foundry
+# Fino podešavanje Phi-3 s Microsoft Foundry
 
-Pogledajmo kako fino podesiti Microsoftov jezični model Phi-3 Mini koristeći Azure AI Foundry. Fino podešavanje omogućuje prilagodbu Phi-3 Mini modela za specifične zadatke, čineći ga još moćnijim i svjesnijim konteksta.
+Pogledajmo kako fino podesiti Microsoftov jezični model Phi-3 Mini koristeći Microsoft Foundry. Fino podešavanje omogućuje prilagodbu Phi-3 Mini modela za specifične zadatke, čineći ga još moćnijim i svjesnijim konteksta.
 
 ## Razmatranja
 
@@ -22,7 +22,7 @@ Pogledajmo kako fino podesiti Microsoftov jezični model Phi-3 Mini koristeći A
 - Azure pretplata. Ako nemate Azure pretplatu, kreirajte [plaćeni Azure račun](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) da biste započeli.
 
 - [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure kontrole pristupa temeljene na ulogama (Azure RBAC) koriste se za dodjelu pristupa operacijama u Azure AI Foundry. Da biste izvršili korake u ovom članku, vaš korisnički račun mora imati __Azure AI Developer ulogu__ na grupi resursa.
+- Azure kontrole pristupa temeljene na ulogama (Azure RBAC) koriste se za dodjelu pristupa operacijama u Microsoft Foundry. Da biste izvršili korake u ovom članku, vaš korisnički račun mora imati __Azure AI Developer ulogu__ na grupi resursa.
 
 ### Registracija pružatelja usluge pretplate
 
@@ -58,17 +58,17 @@ Podaci za treniranje i validaciju koje koristite **moraju** biti formatirani kao
 
 Podržani tip datoteke je JSON Lines. Datoteke se učitavaju u zadani datastore i postaju dostupne u vašem projektu.
 
-## Fino podešavanje Phi-3 s Azure AI Foundry
+## Fino podešavanje Phi-3 s Microsoft Foundry
 
-Azure AI Foundry omogućuje vam prilagodbu velikih jezičnih modela vašim osobnim skupovima podataka pomoću procesa poznatog kao fino podešavanje. Fino podešavanje donosi značajnu vrijednost omogućujući prilagodbu i optimizaciju za specifične zadatke i primjene. To rezultira poboljšanim performansama, učinkovitijim troškovima, smanjenjem latencije i prilagođenim rezultatima.
+Microsoft Foundry omogućuje vam prilagodbu velikih jezičnih modela vašim osobnim skupovima podataka pomoću procesa poznatog kao fino podešavanje. Fino podešavanje donosi značajnu vrijednost omogućujući prilagodbu i optimizaciju za specifične zadatke i primjene. To rezultira poboljšanim performansama, učinkovitijim troškovima, smanjenjem latencije i prilagođenim rezultatima.
 
 ![Finetune AI Foundry](../../../../translated_images/hr/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Kreiranje novog projekta
 
-1. Prijavite se u [Azure AI Foundry](https://ai.azure.com).
+1. Prijavite se u [Microsoft Foundry](https://ai.azure.com).
 
-1. Odaberite **+New project** za kreiranje novog projekta u Azure AI Foundry.
+1. Odaberite **+New project** za kreiranje novog projekta u Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/hr/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry omogućuje vam prilagodbu velikih jezičnih modela vašim osobn
 
 Prije fino podešavanja prikupite ili kreirajte skup podataka relevantan za vaš zadatak, poput uputa za chat, parova pitanja i odgovora ili bilo kojih drugih relevantnih tekstualnih podataka. Očistite i prethodno obradite te podatke uklanjanjem šuma, rješavanjem nedostajućih vrijednosti i tokenizacijom teksta.
 
-### Fino podešavanje Phi-3 modela u Azure AI Foundry
+### Fino podešavanje Phi-3 modela u Microsoft Foundry
 
 > [!NOTE]
 > Fino podešavanje Phi-3 modela trenutno je podržano samo u projektima smještenim u regiji East US 2.
@@ -121,7 +121,7 @@ Prije fino podešavanja prikupite ili kreirajte skup podataka relevantan za vaš
 1. Obavite sljedeće zadatke:
 
     - Odaberite **task type** na **Chat completion**.
-    - Odaberite **Training data** koji želite koristiti. Možete ga učitati putem Azure AI Foundry podataka ili iz lokalnog okruženja.
+    - Odaberite **Training data** koji želite koristiti. Možete ga učitati putem Microsoft Foundry podataka ili iz lokalnog okruženja.
 
     ![FineTuneSelect](../../../../translated_images/hr/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Prije fino podešavanja prikupite ili kreirajte skup podataka relevantan za vaš
 
     ![FineTuneSelect](../../../../translated_images/hr/select-submit.0a3802d581bac271.webp)
 
-1. Kada je vaš model fino podešen, status će biti prikazan kao **Completed**, kao što je prikazano na slici ispod. Sada možete implementirati model i koristiti ga u svojoj aplikaciji, u playgroundu ili u prompt flowu. Za više informacija pogledajte [Kako implementirati Phi-3 obitelj malih jezičnih modela s Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Kada je vaš model fino podešen, status će biti prikazan kao **Completed**, kao što je prikazano na slici ispod. Sada možete implementirati model i koristiti ga u svojoj aplikaciji, u playgroundu ili u prompt flowu. Za više informacija pogledajte [Kako implementirati Phi-3 obitelj malih jezičnih modela s Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/hr/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Za detaljnije informacije o fino podešavanju Phi-3, posjetite [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Za detaljnije informacije o fino podešavanju Phi-3, posjetite [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Čišćenje fino podešenih modela
 
-Možete izbrisati fino podešeni model s popisa modela za fino podešavanje u [Azure AI Foundry](https://ai.azure.com) ili s stranice s detaljima modela. Odaberite fino podešeni model za brisanje na stranici Fine-tuning, a zatim kliknite gumb Delete za brisanje modela.
+Možete izbrisati fino podešeni model s popisa modela za fino podešavanje u [Microsoft Foundry](https://ai.azure.com) ili s stranice s detaljima modela. Odaberite fino podešeni model za brisanje na stranici Fine-tuning, a zatim kliknite gumb Delete za brisanje modela.
 
 > [!NOTE]
 > Ne možete izbrisati prilagođeni model ako ima postojeću implementaciju. Prvo morate izbrisati implementaciju modela prije nego što možete izbrisati prilagođeni model.
@@ -163,7 +163,7 @@ Možete izbrisati fino podešeni model s popisa modela za fino podešavanje u [A
 
 ### Razmatranja troškova i kvota za Phi-3 modele fino podešene kao usluga
 
-Phi modeli fino podešeni kao usluga nude se od strane Microsofta i integrirani su s Azure AI Foundry za korištenje. Cijene možete pronaći prilikom [implementacije](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ili fino podešavanja modela pod karticom Pricing and terms u čarobnjaku za implementaciju.
+Phi modeli fino podešeni kao usluga nude se od strane Microsofta i integrirani su s Microsoft Foundry za korištenje. Cijene možete pronaći prilikom [implementacije](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ili fino podešavanja modela pod karticom Pricing and terms u čarobnjaku za implementaciju.
 
 ## Filtriranje sadržaja
 
@@ -204,7 +204,7 @@ Spremite checkpoint fino podešenog modela za buduću upotrebu.
 
 ## Implementacija
 
-- Implementirajte kao web uslugu: Implementirajte svoj fino podešeni model kao web uslugu u Azure AI Foundry.
+- Implementirajte kao web uslugu: Implementirajte svoj fino podešeni model kao web uslugu u Microsoft Foundry.
 - Testirajte endpoint: Pošaljite testne upite na implementirani endpoint kako biste provjerili njegovu funkcionalnost.
 
 ## Iterirajte i poboljšavajte

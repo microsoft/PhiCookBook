@@ -1,17 +1,17 @@
-# **Menggunakan Azure AI Foundry untuk penilaian**
+# **Menggunakan Microsoft Foundry untuk penilaian**
 
 ![aistudo](../../../../../translated_images/ms/AIFoundry.9e0b513e999a1c5a.webp)
 
-Cara menilai aplikasi AI generatif anda menggunakan [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Sama ada anda menilai perbualan satu pusingan atau berbilang pusingan, Azure AI Foundry menyediakan alat untuk menilai prestasi dan keselamatan model.
+Cara menilai aplikasi AI generatif anda menggunakan [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Sama ada anda menilai perbualan satu pusingan atau berbilang pusingan, Microsoft Foundry menyediakan alat untuk menilai prestasi dan keselamatan model.
 
 ![aistudo](../../../../../translated_images/ms/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Cara menilai aplikasi AI generatif dengan Azure AI Foundry
-Untuk arahan lebih terperinci, lihat [Dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Cara menilai aplikasi AI generatif dengan Microsoft Foundry
+Untuk arahan lebih terperinci, lihat [Dokumentasi Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Berikut adalah langkah-langkah untuk memulakan:
 
-## Menilai Model AI Generatif dalam Azure AI Foundry
+## Menilai Model AI Generatif dalam Microsoft Foundry
 
 **Prasyarat**
 
@@ -21,13 +21,13 @@ Berikut adalah langkah-langkah untuk memulakan:
 
 ## Metrik Penilaian Terbina Dalam
 
-Azure AI Foundry membolehkan anda menilai perbualan satu pusingan dan juga perbualan kompleks berbilang pusingan.  
+Microsoft Foundry membolehkan anda menilai perbualan satu pusingan dan juga perbualan kompleks berbilang pusingan.  
 Untuk senario Retrieval Augmented Generation (RAG), di mana model berasaskan data tertentu, anda boleh menilai prestasi menggunakan metrik penilaian terbina dalam.  
 Selain itu, anda juga boleh menilai senario menjawab soalan satu pusingan secara umum (bukan RAG).
 
 ## Membuat Larian Penilaian
 
-Dari UI Azure AI Foundry, navigasi ke halaman Evaluate atau halaman Prompt Flow.  
+Dari UI Microsoft Foundry, navigasi ke halaman Evaluate atau halaman Prompt Flow.  
 Ikuti wizard penciptaan penilaian untuk menyediakan larian penilaian. Berikan nama pilihan untuk penilaian anda.  
 Pilih senario yang selaras dengan objektif aplikasi anda.  
 Pilih satu atau lebih metrik penilaian untuk menilai output model.
@@ -38,9 +38,9 @@ Untuk fleksibiliti lebih tinggi, anda boleh membina aliran penilaian tersuai. Se
 
 ## Melihat Keputusan
 
-Selepas menjalankan penilaian, log, lihat, dan analisis metrik penilaian terperinci dalam Azure AI Foundry. Dapatkan pandangan tentang keupayaan dan had aplikasi anda.
+Selepas menjalankan penilaian, log, lihat, dan analisis metrik penilaian terperinci dalam Microsoft Foundry. Dapatkan pandangan tentang keupayaan dan had aplikasi anda.
 
-**Note** Azure AI Foundry kini dalam pratonton awam, jadi gunakan untuk tujuan eksperimen dan pembangunan. Untuk beban kerja produksi, pertimbangkan pilihan lain. Terokai [dokumentasi AI Foundry rasmi](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) untuk maklumat lanjut dan arahan langkah demi langkah.
+**Note** Microsoft Foundry kini dalam pratonton awam, jadi gunakan untuk tujuan eksperimen dan pembangunan. Untuk beban kerja produksi, pertimbangkan pilihan lain. Terokai [dokumentasi AI Foundry rasmi](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) untuk maklumat lanjut dan arahan langkah demi langkah.
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

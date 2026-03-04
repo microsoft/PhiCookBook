@@ -1,6 +1,6 @@
-# Kurekebisha Phi-3 kwa Azure AI Foundry
+# Kurekebisha Phi-3 kwa Microsoft Foundry
 
-Tuchunguze jinsi ya kurekebisha mfano wa lugha wa Microsoft Phi-3 Mini kwa kutumia Azure AI Foundry. Kurekebisha kunakuwezesha kuendana na Phi-3 Mini kwa kazi maalum, na kuufanya kuwa na nguvu zaidi na kuelewa muktadha vyema.
+Tuchunguze jinsi ya kurekebisha mfano wa lugha wa Microsoft Phi-3 Mini kwa kutumia Microsoft Foundry. Kurekebisha kunakuwezesha kuendana na Phi-3 Mini kwa kazi maalum, na kuufanya kuwa na nguvu zaidi na kuelewa muktadha vyema.
 
 ## Mambo ya Kuzingatia
 
@@ -22,7 +22,7 @@ Tuchunguze jinsi ya kurekebisha mfano wa lugha wa Microsoft Phi-3 Mini kwa kutum
 - Usajili wa Azure. Ikiwa huna usajili wa Azure, tengeneza [akaunti ya Azure yenye malipo](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) kuanza.
 
 - Mradi wa [AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Udhibiti wa ruhusa za Azure (Azure RBAC) hutumika kutoa ruhusa kwa shughuli katika Azure AI Foundry. Ili kufanya hatua katika makala hii, akaunti yako ya mtumiaji lazima ipewe __Azure AI Developer role__ kwenye kundi la rasilimali.
+- Udhibiti wa ruhusa za Azure (Azure RBAC) hutumika kutoa ruhusa kwa shughuli katika Microsoft Foundry. Ili kufanya hatua katika makala hii, akaunti yako ya mtumiaji lazima ipewe __Azure AI Developer role__ kwenye kundi la rasilimali.
 
 ### Usajili wa mtoa huduma wa usajili
 
@@ -58,17 +58,17 @@ Data za mafunzo na uthibitishaji unazotumia **zinapaswa** kuwa katika muundo wa 
 
 Aina ya faili inayoungwa mkono ni JSON Lines. Faili hupakiwa kwenye hifadhi ya kawaida na kupatikana katika mradi wako.
 
-## Kurekebisha Phi-3 kwa Azure AI Foundry
+## Kurekebisha Phi-3 kwa Microsoft Foundry
 
-Azure AI Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako binafsi za data kwa kutumia mchakato unaojulikana kama kurekebisha. Kurekebisha kunatoa thamani kubwa kwa kuwezesha ubinafsishaji na uboreshaji kwa kazi na matumizi maalum. Hii huleta utendaji bora, ufanisi wa gharama, kupunguza ucheleweshaji, na matokeo yaliyobinafsishwa.
+Microsoft Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako binafsi za data kwa kutumia mchakato unaojulikana kama kurekebisha. Kurekebisha kunatoa thamani kubwa kwa kuwezesha ubinafsishaji na uboreshaji kwa kazi na matumizi maalum. Hii huleta utendaji bora, ufanisi wa gharama, kupunguza ucheleweshaji, na matokeo yaliyobinafsishwa.
 
 ![Finetune AI Foundry](../../../../translated_images/sw/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Tengeneza Mradi Mpya
 
-1. Ingia kwenye [Azure AI Foundry](https://ai.azure.com).
+1. Ingia kwenye [Microsoft Foundry](https://ai.azure.com).
 
-1. Chagua **+New project** kuunda mradi mpya katika Azure AI Foundry.
+1. Chagua **+New project** kuunda mradi mpya katika Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/sw/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako
 
 Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yako, kama vile maelekezo ya mazungumzo, maswali na majibu, au data nyingine muhimu ya maandishi. Safisha na andaa data hii kwa kuondoa kelele, kushughulikia thamani zilizokosekana, na kugawanya maandishi vipande vidogo.
 
-### Rekebisha mifano ya Phi-3 katika Azure AI Foundry
+### Rekebisha mifano ya Phi-3 katika Microsoft Foundry
 
 > [!NOTE]
 > Kurekebisha mifano ya Phi-3 kwa sasa kunasaidiwa katika miradi iliyoko East US 2.
@@ -121,7 +121,7 @@ Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yak
 1. Fanya kazi zifuatazo:
 
     - Chagua aina ya **kazi** kuwa **Chat completion**.
-    - Chagua **Data ya Mafunzo** unayotaka kutumia. Unaweza kuipakia kupitia data ya Azure AI Foundry au kutoka mazingira yako ya ndani.
+    - Chagua **Data ya Mafunzo** unayotaka kutumia. Unaweza kuipakia kupitia data ya Microsoft Foundry au kutoka mazingira yako ya ndani.
 
     ![FineTuneSelect](../../../../translated_images/sw/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yak
 
     ![FineTuneSelect](../../../../translated_images/sw/select-submit.0a3802d581bac271.webp)
 
-1. Mara mfano wako utakaporekebishwa, hali itakuwa **Completed**, kama inavyoonyeshwa kwenye picha hapa chini. Sasa unaweza kupeleka mfano na kuutumia katika programu yako, kwenye playground, au katika prompt flow. Kwa maelezo zaidi, angalia [Jinsi ya kupeleka familia ya mifano midogo ya lugha ya Phi-3 kwa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Mara mfano wako utakaporekebishwa, hali itakuwa **Completed**, kama inavyoonyeshwa kwenye picha hapa chini. Sasa unaweza kupeleka mfano na kuutumia katika programu yako, kwenye playground, au katika prompt flow. Kwa maelezo zaidi, angalia [Jinsi ya kupeleka familia ya mifano midogo ya lugha ya Phi-3 kwa Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/sw/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Kwa maelezo zaidi kuhusu kurekebisha Phi-3, tafadhali tembelea [Kurekebisha mifano ya Phi-3 katika Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Kwa maelezo zaidi kuhusu kurekebisha Phi-3, tafadhali tembelea [Kurekebisha mifano ya Phi-3 katika Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Kusafisha mifano yako iliyorekebishwa
 
-Unaweza kufuta mfano uliorekebishwa kutoka kwenye orodha ya mifano iliyorekebishwa katika [Azure AI Foundry](https://ai.azure.com) au kutoka kwenye ukurasa wa maelezo ya mfano. Chagua mfano uliorekebishwa wa kufuta kutoka kwenye ukurasa wa Kurekebisha, kisha chagua kitufe cha Futa kufuta mfano uliorekebishwa.
+Unaweza kufuta mfano uliorekebishwa kutoka kwenye orodha ya mifano iliyorekebishwa katika [Microsoft Foundry](https://ai.azure.com) au kutoka kwenye ukurasa wa maelezo ya mfano. Chagua mfano uliorekebishwa wa kufuta kutoka kwenye ukurasa wa Kurekebisha, kisha chagua kitufe cha Futa kufuta mfano uliorekebishwa.
 
 > [!NOTE]
 > Huwezi kufuta mfano wa kawaida ikiwa una usambazaji uliopo. Lazima kwanza ufute usambazaji wa mfano wako kabla hujafuta mfano wako wa kawaida.
@@ -163,7 +163,7 @@ Unaweza kufuta mfano uliorekebishwa kutoka kwenye orodha ya mifano iliyorekebish
 
 ### Mambo ya kuzingatia gharama na vikwazo kwa mifano ya Phi-3 iliyorekebishwa kama huduma
 
-Mifano ya Phi iliyorekebishwa kama huduma hutolewa na Microsoft na kuunganishwa na Azure AI Foundry kwa matumizi. Unaweza kupata bei wakati wa [kupeleka](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) au kurekebisha mifano chini ya kichupo cha Bei na masharti kwenye mtaalamu wa kupeleka.
+Mifano ya Phi iliyorekebishwa kama huduma hutolewa na Microsoft na kuunganishwa na Microsoft Foundry kwa matumizi. Unaweza kupata bei wakati wa [kupeleka](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) au kurekebisha mifano chini ya kichupo cha Bei na masharti kwenye mtaalamu wa kupeleka.
 
 ## Kuchuja maudhui
 
@@ -204,7 +204,7 @@ Hifadhi checkpoint ya mfano uliorekebishwa kwa matumizi ya baadaye.
 
 ## Utekelezaji
 
-- Tekeleza kama Huduma ya Wavuti: Tekeleza mfano uliorekebishwa kama huduma ya wavuti katika Azure AI Foundry.
+- Tekeleza kama Huduma ya Wavuti: Tekeleza mfano uliorekebishwa kama huduma ya wavuti katika Microsoft Foundry.
 - Jaribu Kituo cha Huduma: Tuma maswali ya majaribio kwenye kituo kilichotekelezwa kuthibitisha utendaji wake.
 
 ## Rudia na Boresha

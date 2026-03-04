@@ -1,12 +1,12 @@
-# **Phi-3:n käyttäminen Azure AI Foundryssa**
+# **Phi-3:n käyttäminen Microsoft Foundryssa**
 
-Generatiivisen tekoälyn kehittyessä toivomme käyttävämme yhtenäistä alustaa erilaisten LLM- ja SLM-mallien, yritysdatan integroinnin, hienosäädön/RAG-toimintojen sekä eri yritystoimintojen arvioinnin hallintaan LLM- ja SLM-mallien yhdistämisen jälkeen, jotta generatiivisen tekoälyn älykkäät sovellukset voidaan toteuttaa entistä paremmin. [Azure AI Foundry](https://ai.azure.com) on yritystason generatiivisen tekoälyn sovellusalusta.
+Generatiivisen tekoälyn kehittyessä toivomme käyttävämme yhtenäistä alustaa erilaisten LLM- ja SLM-mallien, yritysdatan integroinnin, hienosäädön/RAG-toimintojen sekä eri yritystoimintojen arvioinnin hallintaan LLM- ja SLM-mallien yhdistämisen jälkeen, jotta generatiivisen tekoälyn älykkäät sovellukset voidaan toteuttaa entistä paremmin. [Microsoft Foundry](https://ai.azure.com) on yritystason generatiivisen tekoälyn sovellusalusta.
 
 ![aistudo](../../../../translated_images/fi/aifoundry_home.f28a8127c96c7d93.webp)
 
-Azure AI Foundryn avulla voit arvioida suurten kielimallien (LLM) vastauksia ja orkestroida kehotteiden sovelluskomponentteja prompt flow’n avulla paremman suorituskyvyn saavuttamiseksi. Alusta tukee skaalautuvuutta, mikä helpottaa konseptien muuttamista täysimittaisiksi tuotantojärjestelmiksi. Jatkuva seuranta ja hienosäätö tukevat pitkäaikaista menestystä.
+Microsoft Foundryn avulla voit arvioida suurten kielimallien (LLM) vastauksia ja orkestroida kehotteiden sovelluskomponentteja prompt flow’n avulla paremman suorituskyvyn saavuttamiseksi. Alusta tukee skaalautuvuutta, mikä helpottaa konseptien muuttamista täysimittaisiksi tuotantojärjestelmiksi. Jatkuva seuranta ja hienosäätö tukevat pitkäaikaista menestystä.
 
-Voimme nopeasti ottaa Phi-3-mallin käyttöön Azure AI Foundryssa yksinkertaisin askelin ja käyttää Azure AI Foundrya Phi-3:een liittyvien Playground/Chat-, hienosäätö-, arviointi- ja muiden tehtävien suorittamiseen.
+Voimme nopeasti ottaa Phi-3-mallin käyttöön Microsoft Foundryssa yksinkertaisin askelin ja käyttää Microsoft Foundrya Phi-3:een liittyvien Playground/Chat-, hienosäätö-, arviointi- ja muiden tehtävien suorittamiseen.
 
 ## **1. Valmistelut**
 
@@ -14,21 +14,21 @@ Jos sinulla on jo [Azure Developer CLI](https://learn.microsoft.com/azure/develo
 
 ## Manuaalinen luonti
 
-Microsoft Azure AI Foundry -projektin ja hubin luominen on erinomainen tapa järjestää ja hallita tekoälytyötäsi. Tässä vaiheittainen opas alkuun pääsemiseksi:
+Microsoft Foundry -projektin ja hubin luominen on erinomainen tapa järjestää ja hallita tekoälytyötäsi. Tässä vaiheittainen opas alkuun pääsemiseksi:
 
-### Projektin luominen Azure AI Foundryssa
+### Projektin luominen Microsoft Foundryssa
 
-1. **Siirry Azure AI Foundryyn**: Kirjaudu Azure AI Foundryn portaaliin.
+1. **Siirry Microsoft Foundryyn**: Kirjaudu Microsoft Foundryn portaaliin.
 2. **Luo projekti**:
-   - Jos olet jo projektissa, valitse sivun vasemmasta yläkulmasta "Azure AI Foundry" siirtyäksesi kotisivulle.
+   - Jos olet jo projektissa, valitse sivun vasemmasta yläkulmasta "Microsoft Foundry" siirtyäksesi kotisivulle.
    - Valitse "+ Create project".
    - Anna projektille nimi.
    - Jos sinulla on hub, se valitaan oletuksena. Jos sinulla on pääsy useampaan hubiin, voit valita toisen pudotusvalikosta. Jos haluat luoda uuden hubin, valitse "Create new hub" ja anna sille nimi.
    - Valitse "Create".
 
-### Hubin luominen Azure AI Foundryssa
+### Hubin luominen Microsoft Foundryssa
 
-1. **Siirry Azure AI Foundryyn**: Kirjaudu sisään Azure-tililläsi.
+1. **Siirry Microsoft Foundryyn**: Kirjaudu sisään Azure-tililläsi.
 2. **Luo hub**:
    - Valitse vasemman valikon Hallintakeskus (Management center).
    - Valitse "All resources", napsauta nuolta "+ New project" -kohdan vieressä ja valitse "+ New hub".
@@ -41,9 +41,9 @@ Onnistuneen luomisen jälkeen pääset luomaasi studioon osoitteessa [ai.azure.c
 
 Yhdellä AI Foundrylla voi olla useita projekteja. Luo AI Foundryyn projekti valmistautuaksesi.
 
-Luo Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Luo Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. Phi-mallin käyttöönotto Azure AI Foundryssa**
+## **2. Phi-mallin käyttöönotto Microsoft Foundryssa**
 
 Valitse projektin Explore-vaihtoehto päästäksesi Model Catalogiin ja valitse Phi-3
 
@@ -55,16 +55,16 @@ Klikkaa 'Deploy' ottaaksesi Phi-3-mini-4k-instruct -mallin käyttöön
 >
 > Voit valita laskentatehon käyttöönoton yhteydessä
 
-## **3. Playground Chat Phi Azure AI Foundryssa**
+## **3. Playground Chat Phi Microsoft Foundryssa**
 
-Siirry käyttöönotto-sivulle, valitse Playground ja keskustele Azure AI Foundryn Phi-3:n kanssa
+Siirry käyttöönotto-sivulle, valitse Playground ja keskustele Microsoft Foundryn Phi-3:n kanssa
 
-## **4. Mallin käyttöönotto Azure AI Foundrystä**
+## **4. Mallin käyttöönotto Microsoft Foundrystä**
 
 Mallin käyttöönottoon Azure Model Catalogista voit toimia seuraavasti:
 
-- Kirjaudu Azure AI Foundryyn.
-- Valitse käyttöönotettava malli Azure AI Foundryn mallikatalogista.
+- Kirjaudu Microsoft Foundryyn.
+- Valitse käyttöönotettava malli Microsoft Foundryn mallikatalogista.
 - Mallin Tiedot-sivulla valitse Deploy ja sitten Serverless API with Azure AI Content Safety.
 - Valitse projekti, johon haluat ottaa mallin käyttöön. Serverless API -palvelun käyttö edellyttää, että työtila sijaitsee East US 2- tai Sweden Central -alueella. Voit muokata käyttöönoton nimeä.
 - Käyttöönotto-velhon sivulla valitse Hinnoittelu ja ehdot tutustuaksesi hinnoitteluun ja käyttöehtoihin.
@@ -76,7 +76,7 @@ Mallin käyttöönottoon Azure Model Catalogista voit toimia seuraavasti:
 > [!NOTE]
 > Huomioithan, että tililläsi on oltava Azure AI Developer -roolipääsyt Resource Groupissa näiden toimenpiteiden suorittamiseksi.
 
-## **5. Phi API:n käyttäminen Azure AI Foundryssa**
+## **5. Phi API:n käyttäminen Microsoft Foundryssa**
 
 Voit käyttää osoitetta https://{Your project name}.region.inference.ml.azure.com/swagger.json Postmanin GET-pyynnöllä ja yhdistää sen Key-arvoon tutustuaksesi tarjottuihin rajapintoihin.
 

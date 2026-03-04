@@ -543,7 +543,7 @@
 > ![ਟ੍ਰੈਫਿਕ ਸੈੱਟ ਕਰੋ।](../../../../../../translated_images/pa/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## ਦ੍ਰਿਸ਼ 3: Prompt flow ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕਰੋ ਅਤੇ Azure AI Foundry ਵਿੱਚ ਆਪਣੇ ਕਸਟਮ ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰੋ
+## ਦ੍ਰਿਸ਼ 3: Prompt flow ਨਾਲ ਇੰਟੀਗ੍ਰੇਟ ਕਰੋ ਅਤੇ Microsoft Foundry ਵਿੱਚ ਆਪਣੇ ਕਸਟਮ ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰੋ
 
 ### ਕਸਟਮ Phi-3 ਮਾਡਲ ਨੂੰ Prompt flow ਨਾਲ ਜੋੜੋ
 
@@ -551,8 +551,8 @@
 
 ਇਸ ਅਭਿਆਸ ਵਿੱਚ, ਤੁਸੀਂ:
 
-- Azure AI Foundry Hub ਬਣਾਓਗੇ।
-- Azure AI Foundry ਪ੍ਰੋਜੈਕਟ ਬਣਾਓਗੇ।
+- Microsoft Foundry Hub ਬਣਾਓਗੇ।
+- Microsoft Foundry ਪ੍ਰੋਜੈਕਟ ਬਣਾਓਗੇ।
 - Prompt flow ਬਣਾਓਗੇ।
 - ਫਾਈਨ-ਟਿਊਨ ਕੀਤਾ Phi-3 ਮਾਡਲ ਲਈ ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਜੋੜੋਗੇ।
 - ਆਪਣੇ ਕਸਟਮ Phi-3 ਮਾਡਲ ਨਾਲ ਗੱਲਬਾਤ ਕਰਨ ਲਈ Prompt flow ਸੈੱਟ ਕਰੋਗੇ।
@@ -560,11 +560,11 @@
 > [!NOTE]
 > ਤੁਸੀਂ Azure ML Studio ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਵੀ Prompt flow ਨਾਲ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਕਰ ਸਕਦੇ ਹੋ। ਇਹੋ ਜਿਹਾ ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਪ੍ਰਕਿਰਿਆ Azure ML Studio 'ਤੇ ਵੀ ਲਾਗੂ ਹੁੰਦੀ ਹੈ।
 
-#### Azure AI Foundry Hub ਬਣਾਓ
+#### Microsoft Foundry Hub ਬਣਾਓ
 
-ਪ੍ਰੋਜੈਕਟ ਬਣਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਇੱਕ Hub ਬਣਾਉਣਾ ਪਵੇਗਾ। ਇੱਕ Hub ਇੱਕ Resource Group ਵਾਂਗ ਕਮ ਕਰਦਾ ਹੈ, ਜੋ Azure AI Foundry ਵਿੱਚ ਵੱਖ-ਵੱਖ ਪ੍ਰੋਜੈਕਟਾਂ ਨੂੰ ਵਿਵਸਥਿਤ ਅਤੇ ਪਰਬੰਧਿਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।
+ਪ੍ਰੋਜੈਕਟ ਬਣਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਇੱਕ Hub ਬਣਾਉਣਾ ਪਵੇਗਾ। ਇੱਕ Hub ਇੱਕ Resource Group ਵਾਂਗ ਕਮ ਕਰਦਾ ਹੈ, ਜੋ Microsoft Foundry ਵਿੱਚ ਵੱਖ-ਵੱਖ ਪ੍ਰੋਜੈਕਟਾਂ ਨੂੰ ਵਿਵਸਥਿਤ ਅਤੇ ਪਰਬੰਧਿਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ।
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) 'ਤੇ ਜਾਓ।
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) 'ਤੇ ਜਾਓ।
 
 1. ਖੱਬੇ ਪਾਸੇ ਵਾਲੇ ਟੈਬ ਤੋਂ **All hubs** ਚੁਣੋ।
 
@@ -584,7 +584,7 @@
 
 1. **Next** ਚੁਣੋ।
 
-#### Azure AI Foundry ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ
+#### Microsoft Foundry ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ
 
 1. ਤੁਸੀਂ ਬਣਾਇਆ ਹੋਇਆ ਹੱਬ ਵਿੱਚ, ਖੱਬੇ ਪਾਸੇ ਟੈਬ ਤੋਂ **All projects** ਚੁਣੋ।
 
@@ -624,9 +624,9 @@
 
 #### ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਜੋੜੋ
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) 'ਤੇ ਜਾਓ।
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) 'ਤੇ ਜਾਓ।
 
-1. ਆਪਣਾ ਬਣਾਇਆ ਹੋਇਆ Azure AI Foundry ਪ੍ਰੋਜੈਕਟ ਖੋਲ੍ਹੋ।
+1. ਆਪਣਾ ਬਣਾਇਆ ਹੋਇਆ Microsoft Foundry ਪ੍ਰੋਜੈਕਟ ਖੋਲ੍ਹੋ।
 
 1. ਬਣਾਇਆ ਹੋਇਆ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ, ਖੱਬੇ ਪਾਸੇ ਟੈਬ ਤੋਂ **Settings** ਚੁਣੋ।
 
@@ -652,9 +652,9 @@
 
 #### Prompt flow ਬਣਾਓ
 
-ਤੁਸੀਂ Azure AI Foundry ਵਿੱਚ ਇੱਕ ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਜੋੜ ਦਿੱਤਾ ਹੈ। ਹੁਣ, ਹੇਠਾਂ ਦਿੱਤੇ ਕਦਮਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇੱਕ Prompt flow ਬਣਾਓ। ਫਿਰ, ਤੁਸੀਂ ਇਸ Prompt flow ਨੂੰ ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਨਾਲ ਜੋੜੋਗੇ ਤਾਂ ਜੋ ਤੁਸੀਂ Prompt flow ਵਿੱਚ ਆਪਣੇ fine-tuned ਮਾਡਲ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕੋ।
+ਤੁਸੀਂ Microsoft Foundry ਵਿੱਚ ਇੱਕ ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਜੋੜ ਦਿੱਤਾ ਹੈ। ਹੁਣ, ਹੇਠਾਂ ਦਿੱਤੇ ਕਦਮਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇੱਕ Prompt flow ਬਣਾਓ। ਫਿਰ, ਤੁਸੀਂ ਇਸ Prompt flow ਨੂੰ ਕਸਟਮ ਕਨੈਕਸ਼ਨ ਨਾਲ ਜੋੜੋਗੇ ਤਾਂ ਜੋ ਤੁਸੀਂ Prompt flow ਵਿੱਚ ਆਪਣੇ fine-tuned ਮਾਡਲ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕੋ।
 
-1. ਆਪਣਾ ਬਣਾਇਆ ਹੋਇਆ Azure AI Foundry ਪ੍ਰੋਜੈਕਟ ਖੋਲ੍ਹੋ।
+1. ਆਪਣਾ ਬਣਾਇਆ ਹੋਇਆ Microsoft Foundry ਪ੍ਰੋਜੈਕਟ ਖੋਲ੍ਹੋ।
 
 1. ਖੱਬੇ ਪਾਸੇ ਟੈਬ ਤੋਂ **Prompt flow** ਚੁਣੋ।
 
@@ -773,7 +773,7 @@
     ![Prompt flow ਕੋਡ ਪੇਸਟ ਕਰੋ।](../../../../../../translated_images/pa/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Azure AI Foundry ਵਿੱਚ Prompt flow ਵਰਤਣ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਿਤ ਜਾਣਕਾਰੀ ਲਈ, ਤੁਸੀਂ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ।
+> Microsoft Foundry ਵਿੱਚ Prompt flow ਵਰਤਣ ਬਾਰੇ ਹੋਰ ਵਿਸਥਾਰਿਤ ਜਾਣਕਾਰੀ ਲਈ, ਤੁਸੀਂ [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ਨੂੰ ਵੇਖ ਸਕਦੇ ਹੋ।
 
 1. **Chat input**, **Chat output** ਚੁਣੋ ਤਾਂ ਜੋ ਆਪਣੇ ਮਾਡਲ ਨਾਲ ਚੈਟ ਆਗਿਆਕਾਰੀ ਬਣਾਈ ਜਾ ਸਕੇ।
 

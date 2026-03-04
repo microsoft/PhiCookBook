@@ -1,17 +1,17 @@
-# **Gebruik van Azure AI Foundry voor evaluatie**
+# **Gebruik van Microsoft Foundry voor evaluatie**
 
 ![aistudo](../../../../../translated_images/nl/AIFoundry.9e0b513e999a1c5a.webp)
 
-Hoe je je generatieve AI-toepassing kunt evalueren met [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Of je nu enkelvoudige of meervoudige gesprekken beoordeelt, Azure AI Foundry biedt tools om de prestaties en veiligheid van modellen te evalueren.
+Hoe je je generatieve AI-toepassing kunt evalueren met [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Of je nu enkelvoudige of meervoudige gesprekken beoordeelt, Microsoft Foundry biedt tools om de prestaties en veiligheid van modellen te evalueren.
 
 ![aistudo](../../../../../translated_images/nl/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Hoe generatieve AI-apps te evalueren met Azure AI Foundry
-Voor meer gedetailleerde instructies, zie de [Azure AI Foundry Documentatie](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Hoe generatieve AI-apps te evalueren met Microsoft Foundry
+Voor meer gedetailleerde instructies, zie de [Microsoft Foundry Documentatie](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Hier zijn de stappen om te beginnen:
 
-## Evalueren van Generatieve AI-modellen in Azure AI Foundry
+## Evalueren van Generatieve AI-modellen in Microsoft Foundry
 
 **Vereisten**
 
@@ -21,13 +21,13 @@ Hier zijn de stappen om te beginnen:
 
 ## Ingebouwde evaluatiemaatstaven
 
-Azure AI Foundry stelt je in staat om zowel enkelvoudige als complexe, meervoudige gesprekken te evalueren.  
+Microsoft Foundry stelt je in staat om zowel enkelvoudige als complexe, meervoudige gesprekken te evalueren.  
 Voor Retrieval Augmented Generation (RAG)-scenario’s, waarbij het model is gebaseerd op specifieke data, kun je de prestaties beoordelen met ingebouwde evaluatiemaatstaven.  
 Daarnaast kun je ook algemene enkelvoudige vraag-en-antwoord scenario’s (niet-RAG) evalueren.
 
 ## Een evaluatierun aanmaken
 
-Ga in de Azure AI Foundry UI naar de Evaluate-pagina of de Prompt Flow-pagina.  
+Ga in de Microsoft Foundry UI naar de Evaluate-pagina of de Prompt Flow-pagina.  
 Volg de wizard voor het aanmaken van een evaluatie om een evaluatierun op te zetten. Geef desgewenst een naam aan je evaluatie.  
 Selecteer het scenario dat aansluit bij de doelstellingen van je toepassing.  
 Kies één of meerdere evaluatiemaatstaven om de output van het model te beoordelen.
@@ -38,9 +38,9 @@ Voor meer flexibiliteit kun je een aangepaste evaluatiestroom opzetten. Pas het 
 
 ## Resultaten bekijken
 
-Na het uitvoeren van de evaluatie kun je gedetailleerde evaluatiemaatstaven loggen, bekijken en analyseren in Azure AI Foundry. Krijg inzicht in de mogelijkheden en beperkingen van je toepassing.
+Na het uitvoeren van de evaluatie kun je gedetailleerde evaluatiemaatstaven loggen, bekijken en analyseren in Microsoft Foundry. Krijg inzicht in de mogelijkheden en beperkingen van je toepassing.
 
-**Note** Azure AI Foundry bevindt zich momenteel in publieke preview, gebruik het daarom voor experimenten en ontwikkelingsdoeleinden. Voor productieomgevingen kun je beter andere opties overwegen. Bekijk de officiële [AI Foundry documentatie](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) voor meer details en stapsgewijze instructies.
+**Note** Microsoft Foundry bevindt zich momenteel in publieke preview, gebruik het daarom voor experimenten en ontwikkelingsdoeleinden. Voor productieomgevingen kun je beter andere opties overwegen. Bekijk de officiële [AI Foundry documentatie](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) voor meer details en stapsgewijze instructies.
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

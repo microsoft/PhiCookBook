@@ -62,15 +62,15 @@ Follow ethical principles like fairness, transparency, and accountability fit he
 
 ## Using AI Foundry for Responsible AI 
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) na powerful platform wey allow developers and organizations quickly create intelligent, market-ready, and responsible applications. Below na some key features and capabilities of Azure AI Foundry:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) na powerful platform wey allow developers and organizations quickly create intelligent, market-ready, and responsible applications. Below na some key features and capabilities of Microsoft Foundry:
 
 **Out-of-the-Box APIs and Models** 
 
-Azure AI Foundry get pre-built and customizable APIs and models. Dem cover plenty AI tasks, including generative AI, natural language processing for conversations, search, monitoring, translation, speech, vision, and decision-making.
+Microsoft Foundry get pre-built and customizable APIs and models. Dem cover plenty AI tasks, including generative AI, natural language processing for conversations, search, monitoring, translation, speech, vision, and decision-making.
 
 **Prompt Flow** 
 
-Prompt flow for Azure AI Foundry dey enable you create conversational AI experiences. E allow you design and manage conversational flows, make am easier to build chatbots, virtual assistants, and other interactive applications.
+Prompt flow for Microsoft Foundry dey enable you create conversational AI experiences. E allow you design and manage conversational flows, make am easier to build chatbots, virtual assistants, and other interactive applications.
 
 **Retrieval Augmented Generation (RAG)** 
 
@@ -78,7 +78,7 @@ RAG na technique wey combine retrieval-based and generative-based approaches. E 
 
 **Evaluation and Monitoring Metrics for Generative AI** 
 
-Azure AI Foundry dey give tools to evaluate and monitor generative AI models. You fit check their performance, fairness, and other important metrics to make sure say deployment dey responsible. Plus, if you don create dashboard, you fit use the no-code UI for Azure Machine Learning Studio to customize and generate a Responsible AI Dashboard and associated scorecard based on the [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. This scorecard go help you share key insights about fairness, feature importance, and other responsible deployment considerations with both technical and non-technical stakeholders.
+Microsoft Foundry dey give tools to evaluate and monitor generative AI models. You fit check their performance, fairness, and other important metrics to make sure say deployment dey responsible. Plus, if you don create dashboard, you fit use the no-code UI for Azure Machine Learning Studio to customize and generate a Responsible AI Dashboard and associated scorecard based on the [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. This scorecard go help you share key insights about fairness, feature importance, and other responsible deployment considerations with both technical and non-technical stakeholders.
 
 To use AI Foundry with responsible AI, you fit follow these best practices:
 
@@ -106,7 +106,7 @@ AI systems suppose dey transparent and explainable so that users fit understand 
 
 AI systems suppose dey continuously monitored and updated to make sure say dem remain accurate and effective over time. This one need ongoing maintenance, testing, and retraining of the model.
 
-In conclusion, Microsoft Responsible AI na initiative wey dey try help developers and organizations build AI systems wey transparent, trustworthy, and accountable. Remember say responsible AI implementation dey very important, and Azure AI Foundry dey try make am practical for organizations. If we follow ethical principles and best practices, we fit make sure say AI systems dem develop and deploy in responsible way wey go benefit society as whole.
+In conclusion, Microsoft Responsible AI na initiative wey dey try help developers and organizations build AI systems wey transparent, trustworthy, and accountable. Remember say responsible AI implementation dey very important, and Microsoft Foundry dey try make am practical for organizations. If we follow ethical principles and best practices, we fit make sure say AI systems dem develop and deploy in responsible way wey go benefit society as whole.
 
 ---
 

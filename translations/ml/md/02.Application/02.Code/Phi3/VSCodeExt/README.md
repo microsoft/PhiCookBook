@@ -95,9 +95,9 @@ GitHub Copilot എന്റർപ്രൈസുകളിലെ പ്രോഗ�
 
 4. GitHub Copilot Chat API കുറിച്ച് കൂടുതൽ അറിയാൻ [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. Azure AI Foundry കുറിച്ച് കൂടുതൽ അറിയാൻ [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. Microsoft Foundry കുറിച്ച് കൂടുതൽ അറിയാൻ [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. Azure AI Foundry യുടെ Model Catalog കുറിച്ച് കൂടുതൽ അറിയാൻ [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. Microsoft Foundry യുടെ Model Catalog കുറിച്ച് കൂടുതൽ അറിയാൻ [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
 ---
 

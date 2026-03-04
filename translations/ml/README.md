@@ -12,7 +12,7 @@
 [![GitHub ഫോർക്സ്](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub നക്ഷത്രങ്ങൾ](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Microsoft വികസിപ്പിച്ചിട്ടുള്ള Phi ഒരു പരമ്പര ഓപ്പൺ സോഴ്‌സ് AI മോഡലുകളാണ്.
 
@@ -71,7 +71,7 @@ Phi ഇപ്പോൾ ചെറിയ ഭാഷാ മോഡലുകൾ (SLM) 
 - വ്യത്യസ്ത പരിസ്ഥിതികളിൽ Phi ഇൻഫറൻസ്
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub മോഡലുകൾ](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry മോഡൽ കാറ്റലോഗ്](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry മോഡൽ കാറ്റലോഗ്](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Phi ഇപ്പോൾ ചെറിയ ഭാഷാ മോഡലുകൾ (SLM) 
 
 -  Phi മൂല്യനിർണ്ണയം
     - [Responsible AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry മൂല്യനിർണ്ണയത്തിന്](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry മൂല്യനിർണ്ണയത്തിന്](./md/01.Introduction/05/AIFoundry.md)
     - [Promptflow ഉപയോഗിച്ച് മൂല്യനിർണ്ണയം](./md/01.Introduction/05/Promptflow.md)
  
 - Azure AI Search-ഉടെ RAG
@@ -117,8 +117,8 @@ Phi ഇപ്പോൾ ചെറിയ ഭാഷാ മോഡലുകൾ (SLM) 
       - [WinUI3 ആപ്പ് Phi-3 മിനി-4k-ഇൻസ്ട്രക്റ്റ്-onnx ഉപയോഗിച്ച്](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 ബഹുസ്വര മോഡൽ AI പവേഡ് നോട്ട്സ് ആപ്പ് സാംപിൾ](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Fine-tune ചെയ്യുകയും സ്വന്തം Phi-3 മോഡലുകൾ Prompt flow ഉപയോഗിച്ച് സംയോജിപ്പിക്കുകയും ചെയ്യുക](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Fine-tune ചെയ്യുകയും സ്വന്തമായി Phi-3 മോഡലുകൾ Azure AI Foundry Prompt flow ഉപയോഗിച്ച് സംയോജിപ്പിക്കുകയും ചെയ്യുക](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Microsoft-ന്റെ ഉത്തരവാദിത്ത AI നയങ്ങൾ ശ്രദ്ധയിൽ വെച്ച് Azure AI Foundry-യിൽ Fine-tuned Phi-3 / Phi-3.5 മോഡൽ വിലയിരുത്തൽ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Fine-tune ചെയ്യുകയും സ്വന്തമായി Phi-3 മോഡലുകൾ Microsoft Foundry Prompt flow ഉപയോഗിച്ച് സംയോജിപ്പിക്കുകയും ചെയ്യുക](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Microsoft-ന്റെ ഉത്തരവാദിത്ത AI നയങ്ങൾ ശ്രദ്ധയിൽ വെച്ച് Microsoft Foundry-യിൽ Fine-tuned Phi-3 / Phi-3.5 മോഡൽ വിലയിരുത്തൽ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-മിനി-ഇൻസ്ട്രക്റ്റ് ഭാഷാ പ്രവചന സാമ്പിൾ (ചൈനീസ്/ഇംഗ്ലീഷ്)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-ഇൻസ്ട്രക്റ്റ് WebGPU RAG ചാത്ത്ബോട്ട്](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [ഫിൻഡോസ് GPU ഉപയോഗിച്ച് Phi-3.5-ഇൻസ്ട്രക്റ്റ് ONNX ഉപയോഗിച്ച് Prompt flow സൊല്യൂഷൻ സൃഷ്ടിക്കൽ](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Phi ഇപ്പോൾ ചെറിയ ഭാഷാ മോഡലുകൾ (SLM) 
       - [📓] [മെഡിക്കൽ ഡാറ്റയോട് Microsoft Olive ഉപയോഗിച്ച് Phi-4-മിനി-റീസണിംഗ് ഫൈൻ-ട്യൂൺ ചെയ്യുക](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Apple MLX ഉപയോഗിച്ച് Phi-4-മിനി-റീസണിംഗ് ഫൈൻ-ട്യൂൺ ചെയ്യുക](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [GitHub മോഡലുകൾ ഉപയോഗിച്ച് Phi-4-മിനി-റീസണിംഗ്](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Azure AI Foundry മോഡലുകൾ ഉപയോഗിച്ച് Phi-4-മിനി-റീസണിംഗ്](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Microsoft Foundry മോഡലുകൾ ഉപയോഗിച്ച് Phi-4-മിനി-റീസണിംഗ്](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - ഡെമോകൾ
       - [Phi-4-മിനി ഡെമോകൾ Hugging Face സ്പേസുകളിൽ ഹോസ്റ്റ് ചെയ്യുന്നു](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-മൾട്ടിമോഡൽ ഡെമോകൾ Hugginge Face സ്പേസുകളിൽ ഹോസ്റ്റ് ചെയ്യുന്നു](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Phi ഇപ്പോൾ ചെറിയ ഭാഷാ മോഡലുകൾ (SLM) 
   - [Azure മെഷീൻ ലേണിംഗ് സർവീസ് ഉപയോഗിച്ച് Phi-3 ഫൈൻ-ട്യൂൺ ചെയ്യുക](./md/03.FineTuning/Introduce_AzureML.md)
   - [ലോറ ഉപയോഗിച്ച് Phi-3 ഫൈൻ-ട്യൂൺ ചെയ്യുക](./md/03.FineTuning/FineTuning_Lora.md)
   - [ക്യുവിലോറ ഉപയോഗിച്ച് Phi-3 ഫൈൻ-ട്യൂൺ ചെയ്യുക](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Azure AI Foundry ഉപയോഗിച്ച് Phi-3 ഫൈൻ-ട്യൂൺ](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Microsoft Foundry ഉപയോഗിച്ച് Phi-3 ഫൈൻ-ട്യൂൺ](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Azure ML CLI/SDK ഉപയോഗിച്ച് Phi-3 ഫൈൻ-ട്യൂൺ](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Microsoft Olive ഉപയോഗിച്ച് ഫൈൻ-ട്യൂണിംഗ്](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Olive ഹാൻഡ്‌സ്-ഓൺ ഫാബ്](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Phi ഇപ്പോൾ ചെറിയ ഭാഷാ മോഡലുകൾ (SLM) 
 
 ## ഫൈ മോഡലുകൾ ഉപയോഗിക്കൽ  
 
-### Azure AI Foundry-യിൽ ഫൈ  
+### Microsoft Foundry-യിൽ ഫൈ  
 
-Microsoft Phi എങ്ങനെ ഉപയോഗിക്കാമെന്നും നിങ്ങളുടെ വിവിധ ഹാർഡ്‌വെയർ ഉപകരണങ്ങളിൽ എ2ഇ സൊലൂഷനുകൾ എങ്ങനെ നിർമ്മിക്കാമെന്നും നിങ്ങൾക്ക് പഠിക്കാം. ഫൈ നിങ്ങളൊന്നുള്ള അനുഭവം നേടാൻ, മോഡലുകൾ ഉപയോഗിച്ച് കളിയുടേം നിങ്ങളുടെ സീനാരിയോകൾക്ക് ഫൈ കസ്റ്റമൈസ് ചെയ്യുന്നതിൽ നിന്ന് തുടങ്ങാം, അതിനായി [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) ഉപയോഗിക്കാം. [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) യില്‍ ആരംഭിച്ചുകൊണ്ടുള്ള കൂടുതൽ പഠനം ചെയ്യാം.  
+Microsoft Phi എങ്ങനെ ഉപയോഗിക്കാമെന്നും നിങ്ങളുടെ വിവിധ ഹാർഡ്‌വെയർ ഉപകരണങ്ങളിൽ എ2ഇ സൊലൂഷനുകൾ എങ്ങനെ നിർമ്മിക്കാമെന്നും നിങ്ങൾക്ക് പഠിക്കാം. ഫൈ നിങ്ങളൊന്നുള്ള അനുഭവം നേടാൻ, മോഡലുകൾ ഉപയോഗിച്ച് കളിയുടേം നിങ്ങളുടെ സീനാരിയോകൾക്ക് ഫൈ കസ്റ്റമൈസ് ചെയ്യുന്നതിൽ നിന്ന് തുടങ്ങാം, അതിനായി [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) ഉപയോഗിക്കാം. [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) യില്‍ ആരംഭിച്ചുകൊണ്ടുള്ള കൂടുതൽ പഠനം ചെയ്യാം.  
 
 **പ്ലേഗ്രൗണ്ട്**  
 ഓരോ മോഡലിനും മോഡൽ പരീക്ഷിക്കാൻ സമർപ്പിച്ച പ്ലേഗ്രൗണ്ട് ഉണ്ട് [Azure AI Playground](https://aka.ms/try-phi3).  
@@ -289,10 +289,10 @@ Microsoftന്റെ ഉത്തരവാദിത്വമുള്ള AI സ
 
 ഈ സാമ്പിൾ മോഡലുകളിൽ ഉപയോഗിക്കുന്ന വലിയ തോതിലുള്ള നാച്ച്വറൽ ലാംഗ്വേജ്, ചിത്രം, സംസാര മോഡലുകൾ അനിയമിതമായ, വിശ്വസനീയമല്ലാത്ത, അപമാനകരമായ പ്രകടനം കാണിക്കുന്നത് അപകടം ഉള്ള സമസ്യകൾ ഉണ്ടാക്കാമെന്നു സാധ്യമാണ്. അപകടങ്ങളും പരിധികളും അറിയാൻ ദയവായി [Azure OpenAI സർവീസ് ട്രാൻസ്പറൻസി നോട്ട്](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) കാണുക.  
 
-ഈ അപകടങ്ങൾ കുറയ്ക്കാനുള്ള ശുപാർശ ചെയ്യുന്ന സമീപനം, നിങ്ങളുടെ ഘടനയിൽ അതിക്ഷേപകരമായ പെരുമാറ്റം കണ്ട് തടയാൻ കഴിയുന്ന സുരക്ഷാ സംവിധാനം ഉൾപ്പെടുത്തുകയാണ്. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) സ്വതന്ത്ര സംരക്ഷണ പാളി നൽകുന്നു, ഇത് അപമാനകമായ ഉപയോക്തൃ-ഉത്പാദിതവും AI-ഉത്പാദിതവുമായ ഉള്ളടക്കം സർവീസുകളിലും ആപ്പ്-കളിലും കണ്ടെത്താൻ കഴിയും. Azure AI Foundry ഉള്ളടക്കം സുരക്ഷാ സേവനം ഭിന്നഭാഗങ്ങളിലും ദോഷകരമായ ഉള്ളടക്കം കണ്ടെത്താനുള്ള സാമ്പിൾ കോഡ് പരീക്ഷിക്കാൻ സഹായിക്കുന്നു. സേവനത്തിന് അപേക്ഷ നൽകുന്നതിന് താഴെ കാണുന്ന [ക്വിക്‌സ്റ്റാർട്ട് ഡോക്യുമെന്റേഷൻ](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) വഴികാട്ടുന്നു.
+ഈ അപകടങ്ങൾ കുറയ്ക്കാനുള്ള ശുപാർശ ചെയ്യുന്ന സമീപനം, നിങ്ങളുടെ ഘടനയിൽ അതിക്ഷേപകരമായ പെരുമാറ്റം കണ്ട് തടയാൻ കഴിയുന്ന സുരക്ഷാ സംവിധാനം ഉൾപ്പെടുത്തുകയാണ്. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) സ്വതന്ത്ര സംരക്ഷണ പാളി നൽകുന്നു, ഇത് അപമാനകമായ ഉപയോക്തൃ-ഉത്പാദിതവും AI-ഉത്പാദിതവുമായ ഉള്ളടക്കം സർവീസുകളിലും ആപ്പ്-കളിലും കണ്ടെത്താൻ കഴിയും. Microsoft Foundry ഉള്ളടക്കം സുരക്ഷാ സേവനം ഭിന്നഭാഗങ്ങളിലും ദോഷകരമായ ഉള്ളടക്കം കണ്ടെത്താനുള്ള സാമ്പിൾ കോഡ് പരീക്ഷിക്കാൻ സഹായിക്കുന്നു. സേവനത്തിന് അപേക്ഷ നൽകുന്നതിന് താഴെ കാണുന്ന [ക്വിക്‌സ്റ്റാർട്ട് ഡോക്യുമെന്റേഷൻ](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) വഴികാട്ടുന്നു.
 മറ്റൊരു പരിഗണിക്കേണ്ട കാര്യം ആപ്ലിക്കേഷൻ മൊത്തത്തിലുള്ള പ്രകടനക്ഷമതയാണ്. മൾട്ടി-മോഡൽ, മൾട്ടി-മോഡൽ ആപ്ലിക്കേഷനുകളുമായി, പ്രകടനക്ഷമത എന്നത് നിങ്ങൾക്കും നിങ്ങളുടെ ഉപയോക്താക്കൾക്കും പ്രതീക്ഷിക്കപ്പെടുന്ന രീതിയിൽ സിസ്റ്റം പ്രവർത്തിക്കുന്നതാണെന്നു ഉൾക്കൊള്ളുന്നു, ഹാനികരമായ ഔട്ട്പുട്ടുകൾ ഉണ്ടാകാതെ. നിങ്ങളുടെ മൊത്തത്തിലുള്ള ആപ്ലിക്കേഷൻ പ്രകടനക്ഷമത വിലയിരുത്തുന്നതിനായി [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ഉപയോഗിക്കുക ആവശ്യമാണ്. കൂടാതെ നിങ്ങൾക്ക് [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) ഉപയോഗിച്ച് സൃഷ്ടിക്കുകയും വിലയിരുത്തുകയും ചെയ്യാനുള്ള കഴിവ് ഉണ്ട്.
 
-നിങ്ങളുടെ ഡെവലപ്പ്മെന്റ് പരിതസ്ഥിതിയിൽ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ഉപയോഗിച്ച് നിങ്ങളുടെ AI ആപ്ലിക്കേഷൻ മൂല്യനിർണ്ണയം നടത്താം. പരീക്ഷണ ഡാറ്റാസെറ്റ് അല്ലെങ്കിൽ ലക്ഷ്യം നൽകിയാൽ, നിങ്ങളുടെ ജനറേറ്റീവ് AI ആപ്ലിക്കേഷൻ സൃഷ്ടികൾ, നിർമ്മിത മൂല്യനിർണ്ണായകരുവോ അല്ലെങ്കിൽ നിങ്ങളുടെ തിരഞ്ഞെടുപ്പിലുള്ള കസ്റ്റം മൂല്യനിർണ്ണായകരുവോ ഉപയോഗിച്ച് കണക്കായി അളക്കപ്പെടും. നിങ്ങളുടെ സിസ്റ്റം മൂല്യനിർണ്ണയം നടത്താൻ azure ai evaluation sdk ഉപയോഗിച്ച് തുടങ്ങാൻ, [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) പിന്തുടരാം. ഒരു മൂല്യനിർണ്ണയം നടത്തും ക്കഴിഞ്ഞാൽ, നിങ്ങൾക്ക് [Azure AI Foundry-യിൽ ഫലങ്ങൾ ദൃശ്യമാക്കാം](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+നിങ്ങളുടെ ഡെവലപ്പ്മെന്റ് പരിതസ്ഥിതിയിൽ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ഉപയോഗിച്ച് നിങ്ങളുടെ AI ആപ്ലിക്കേഷൻ മൂല്യനിർണ്ണയം നടത്താം. പരീക്ഷണ ഡാറ്റാസെറ്റ് അല്ലെങ്കിൽ ലക്ഷ്യം നൽകിയാൽ, നിങ്ങളുടെ ജനറേറ്റീവ് AI ആപ്ലിക്കേഷൻ സൃഷ്ടികൾ, നിർമ്മിത മൂല്യനിർണ്ണായകരുവോ അല്ലെങ്കിൽ നിങ്ങളുടെ തിരഞ്ഞെടുപ്പിലുള്ള കസ്റ്റം മൂല്യനിർണ്ണായകരുവോ ഉപയോഗിച്ച് കണക്കായി അളക്കപ്പെടും. നിങ്ങളുടെ സിസ്റ്റം മൂല്യനിർണ്ണയം നടത്താൻ azure ai evaluation sdk ഉപയോഗിച്ച് തുടങ്ങാൻ, [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) പിന്തുടരാം. ഒരു മൂല്യനിർണ്ണയം നടത്തും ക്കഴിഞ്ഞാൽ, നിങ്ങൾക്ക് [Microsoft Foundry-യിൽ ഫലങ്ങൾ ദൃശ്യമാക്കാം](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## ട്രെയ്ഡ്മാർക്ക്‌സ്
 
@@ -303,11 +303,11 @@ Microsoftന്റെ ഉത്തരവാദിത്വമുള്ള AI സ
 
 AI ആപ്ലിക്കേഷനുകൾ നിർമ്മിക്കുന്നതിൽ പെട്ടെന്ന് പിശക് സംഭവിക്കുന്നുവോ നിങ്ങളുടെ ചോദ്യം ഉണ്ടോ എങ്കിൽ ചേർക്കുക:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 ഉൽപ്പന്ന പ്രതികരണങ്ങൾ അല്ലെങ്കിൽ പിശകുകൾ ഉണ്ടെങ്കിൽ സന്ദർശിക്കുക:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

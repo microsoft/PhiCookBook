@@ -1,17 +1,17 @@
-# **Použití Azure AI Foundry pro hodnocení**
+# **Použití Microsoft Foundry pro hodnocení**
 
 ![aistudo](../../../../../translated_images/cs/AIFoundry.9e0b513e999a1c5a.webp)
 
-Jak hodnotit vaši generativní AI aplikaci pomocí [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ať už posuzujete jednorázové nebo vícekrokové konverzace, Azure AI Foundry nabízí nástroje pro hodnocení výkonu a bezpečnosti modelu.
+Jak hodnotit vaši generativní AI aplikaci pomocí [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ať už posuzujete jednorázové nebo vícekrokové konverzace, Microsoft Foundry nabízí nástroje pro hodnocení výkonu a bezpečnosti modelu.
 
 ![aistudo](../../../../../translated_images/cs/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Jak hodnotit generativní AI aplikace s Azure AI Foundry
-Podrobné instrukce najdete v [dokumentaci Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Jak hodnotit generativní AI aplikace s Microsoft Foundry
+Podrobné instrukce najdete v [dokumentaci Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Zde jsou kroky, jak začít:
 
-## Hodnocení generativních AI modelů v Azure AI Foundry
+## Hodnocení generativních AI modelů v Microsoft Foundry
 
 **Požadavky**
 
@@ -21,13 +21,13 @@ Zde jsou kroky, jak začít:
 
 ## Vestavěné metriky hodnocení
 
-Azure AI Foundry umožňuje hodnotit jak jednorázové, tak složité vícekrokové konverzace.  
+Microsoft Foundry umožňuje hodnotit jak jednorázové, tak složité vícekrokové konverzace.  
 Pro scénáře Retrieval Augmented Generation (RAG), kde je model založen na konkrétních datech, můžete výkon posoudit pomocí vestavěných metrik hodnocení.  
 Navíc můžete hodnotit obecné scénáře jednorázového zodpovídání otázek (non-RAG).
 
 ## Vytvoření hodnocení
 
-V uživatelském rozhraní Azure AI Foundry přejděte na stránku Evaluate nebo Prompt Flow.  
+V uživatelském rozhraní Microsoft Foundry přejděte na stránku Evaluate nebo Prompt Flow.  
 Postupujte podle průvodce vytvořením hodnocení a nastavte běh hodnocení. Můžete zadat volitelný název hodnocení.  
 Vyberte scénář, který odpovídá cílům vaší aplikace.  
 Zvolte jednu nebo více metrik hodnocení pro posouzení výstupu modelu.
@@ -38,9 +38,9 @@ Pro větší flexibilitu můžete vytvořit vlastní hodnotící tok. Přizpůso
 
 ## Zobrazení výsledků
 
-Po dokončení hodnocení si v Azure AI Foundry prohlédněte, zaznamenejte a analyzujte podrobné metriky hodnocení. Získejte přehled o schopnostech a omezeních vaší aplikace.
+Po dokončení hodnocení si v Microsoft Foundry prohlédněte, zaznamenejte a analyzujte podrobné metriky hodnocení. Získejte přehled o schopnostech a omezeních vaší aplikace.
 
-**Note** Azure AI Foundry je momentálně ve veřejné preview, proto jej používejte pro experimentování a vývoj. Pro produkční nasazení zvažte jiné možnosti. Pro více informací a podrobné návody navštivte oficiální [dokumentaci AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
+**Note** Microsoft Foundry je momentálně ve veřejné preview, proto jej používejte pro experimentování a vývoj. Pro produkční nasazení zvažte jiné možnosti. Pro více informací a podrobné návody navštivte oficiální [dokumentaci AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
 
 **Prohlášení o vyloučení odpovědnosti**:  
 Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

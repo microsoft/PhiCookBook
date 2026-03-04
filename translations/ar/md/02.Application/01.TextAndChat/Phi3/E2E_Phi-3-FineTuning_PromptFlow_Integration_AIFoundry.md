@@ -1,17 +1,17 @@
-# ضبط النماذج المخصصة Phi-3 ودمجها مع تدفق المطالبات في Azure AI Foundry
+# ضبط النماذج المخصصة Phi-3 ودمجها مع تدفق المطالبات في Microsoft Foundry
 
-يعتمد هذا المثال الشامل (E2E) على الدليل "[ضبط ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات في Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft التقني. يقدم العمليات الخاصة بضبط النماذج، ونشرها، ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات في Azure AI Foundry.
+يعتمد هذا المثال الشامل (E2E) على الدليل "[ضبط ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات في Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft التقني. يقدم العمليات الخاصة بضبط النماذج، ونشرها، ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات في Microsoft Foundry.
 بخلاف المثال الشامل E2E، "[ضبط ودمج نماذج Phi-3 المخصصة مع تدفق المطالبات](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)"، الذي تضمن تشغيل الشيفرة محليًا، يركز هذا الدليل بالكامل على ضبط ودمج النموذج الخاص بك داخل Azure AI / ML Studio.
 
 ## نظرة عامة
 
-في هذا المثال الشامل E2E، ستتعلم كيفية ضبط نموذج Phi-3 ودمجه مع تدفق المطالبات في Azure AI Foundry. من خلال الاستفادة من Azure AI / ML Studio، ستؤسس سير عمل لنشر واستخدام نماذج الذكاء الاصطناعي المخصصة. ينقسم هذا المثال الشامل إلى ثلاثة سيناريوهات:
+في هذا المثال الشامل E2E، ستتعلم كيفية ضبط نموذج Phi-3 ودمجه مع تدفق المطالبات في Microsoft Foundry. من خلال الاستفادة من Azure AI / ML Studio، ستؤسس سير عمل لنشر واستخدام نماذج الذكاء الاصطناعي المخصصة. ينقسم هذا المثال الشامل إلى ثلاثة سيناريوهات:
 
 **السيناريو 1: إعداد موارد Azure والتحضير لعملية الضبط**
 
 **السيناريو 2: ضبط نموذج Phi-3 ونشره في Azure Machine Learning Studio**
 
-**السيناريو 3: الدمج مع تدفق المطالبات والدردشة مع نموذجك المخصص في Azure AI Foundry**
+**السيناريو 3: الدمج مع تدفق المطالبات والدردشة مع نموذجك المخصص في Microsoft Foundry**
 
 إليك نظرة عامة على هذا المثال الشامل.
 
@@ -30,7 +30,7 @@
     - [ضبط نموذج Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [نشر نموذج Phi-3 المزود بالضبط](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[السيناريو 3: الدمج مع تدفق المطالبات والدردشة مع نموذجك المخصص في Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[السيناريو 3: الدمج مع تدفق المطالبات والدردشة مع نموذجك المخصص في Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [دمج نموذج Phi-3 المخصص مع تدفق المطالبات](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [الدردشة مع نموذج Phi-3 المخصص](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![ضبط حركة المرور.](../../../../../../translated_images/ar/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## السيناريو 3: الدمج مع Prompt flow والمحادثة مع نموذجك المخصص في Azure AI Foundry
+## السيناريو 3: الدمج مع Prompt flow والمحادثة مع نموذجك المخصص في Microsoft Foundry
 
 ### دمج نموذج Phi-3 المخصص مع Prompt flow
 
@@ -552,8 +552,8 @@
 
 في هذا التمرين، ستقوم بـ:
 
-- إنشاء مركز Azure AI Foundry.
-- إنشاء مشروع Azure AI Foundry.
+- إنشاء مركز Microsoft Foundry.
+- إنشاء مشروع Microsoft Foundry.
 - إنشاء Prompt flow.
 - إضافة اتصال مخصص لنموذج Phi-3 الذي تم ضبطه.
 - إعداد Prompt flow للمحادثة مع نموذج Phi-3 المخصص الخاص بك.
@@ -561,11 +561,11 @@
 > [!NOTE]
 > يمكنك أيضًا الدمج مع Promptflow باستخدام Azure ML Studio. يمكن تطبيق نفس عملية الدمج على Azure ML Studio.
 
-#### إنشاء مركز Azure AI Foundry
+#### إنشاء مركز Microsoft Foundry
 
-تحتاج إلى إنشاء مركز قبل إنشاء المشروع. يعمل المركز كمجموعة موارد، مما يسمح لك بتنظيم وإدارة عدة مشاريع داخل Azure AI Foundry.
+تحتاج إلى إنشاء مركز قبل إنشاء المشروع. يعمل المركز كمجموعة موارد، مما يسمح لك بتنظيم وإدارة عدة مشاريع داخل Microsoft Foundry.
 
-1. زر [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. زر [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. اختر **كل المراكز** من القائمة الجانبية اليمنى.
 
@@ -585,7 +585,7 @@
 
 1. اختر **التالي**.
 
-#### إنشاء مشروع Azure AI Foundry
+#### إنشاء مشروع Microsoft Foundry
 
 1. في المحور الذي أنشأته، اختر **جميع المشاريع** من تبويب الجانب الأيسر.
 
@@ -625,9 +625,9 @@
 
 #### إضافة الاتصال المخصص
 
-1. قم بزيارة [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. قم بزيارة [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
+1. انتقل إلى مشروع Microsoft Foundry الذي أنشأته.
 
 1. في المشروع الذي أنشأته، اختر **الإعدادات** من تبويب الجانب الأيسر.
 
@@ -653,9 +653,9 @@
 
 #### إنشاء Prompt flow
 
-لقد أضفت اتصالًا مخصصًا في Azure AI Foundry. الآن، لنقم بإنشاء Prompt flow باستخدام الخطوات التالية. ثم ستقوم بربط هذا الـ Prompt flow بالاتصال المخصص حتى تتمكن من استخدام النموذج المحسن داخل Prompt flow.
+لقد أضفت اتصالًا مخصصًا في Microsoft Foundry. الآن، لنقم بإنشاء Prompt flow باستخدام الخطوات التالية. ثم ستقوم بربط هذا الـ Prompt flow بالاتصال المخصص حتى تتمكن من استخدام النموذج المحسن داخل Prompt flow.
 
-1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
+1. انتقل إلى مشروع Microsoft Foundry الذي أنشأته.
 
 1. اختر **Prompt flow** من تبويب الجانب الأيسر.
 
@@ -774,7 +774,7 @@
     ![الصق كود Prompt flow.](../../../../../../translated_images/ar/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> لمزيد من المعلومات التفصيلية حول استخدام Prompt flow في Azure AI Foundry، يمكنك الرجوع إلى [Prompt flow في Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> لمزيد من المعلومات التفصيلية حول استخدام Prompt flow في Microsoft Foundry، يمكنك الرجوع إلى [Prompt flow في Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. اختر **إدخال الدردشة**، و **إخراج الدردشة** لتمكين الدردشة مع نموذجك.
 

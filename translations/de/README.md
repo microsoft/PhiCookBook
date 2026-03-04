@@ -12,7 +12,7 @@
 [![GitHub-Forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub-Sterne](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi ist eine Reihe von Open-Source-KI-Modellen, die von Microsoft entwickelt wurden.
 
@@ -71,7 +71,7 @@ Folgen Sie diesen Schritten, um mit der Verwendung dieser Ressource zu beginnen:
 - Inferenz Phi in verschiedenen Umgebungen
     - [Hugging Face](./md/01.Introduction/02/01.HF.md)
     - [GitHub Modelle](./md/01.Introduction/02/02.GitHubModel.md)
-    - [Azure AI Foundry Modell-Katalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    - [Microsoft Foundry Modell-Katalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
     - [Ollama](./md/01.Introduction/02/04.Ollama.md)
     - [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Folgen Sie diesen Schritten, um mit der Verwendung dieser Ressource zu beginnen:
 
 - Bewertung Phi
     - [Verantwortungsvolle KI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry für Bewertung](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry für Bewertung](./md/01.Introduction/05/AIFoundry.md)
     - [Bewertung mit Promptflow](./md/01.Introduction/05/Promptflow.md)
 
 - RAG mit Azure AI Search
@@ -117,8 +117,8 @@ Folgen Sie diesen Schritten, um mit der Verwendung dieser Ressource zu beginnen:
       - [WinUI3 App mit Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Multi-Modell KI-gestützte Notizen App Beispiel](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Fine-tunen und Integrieren benutzerdefinierter Phi-3-Modelle mit Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Fine-tunen und Integrieren benutzerdefinierter Phi-3-Modelle mit Prompt flow in Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Evaluierung des finegetunten Phi-3 / Phi-3.5 Modells in Azure AI Foundry mit Fokus auf Microsofts Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Fine-tunen und Integrieren benutzerdefinierter Phi-3-Modelle mit Prompt flow in Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Evaluierung des finegetunten Phi-3 / Phi-3.5 Modells in Microsoft Foundry mit Fokus auf Microsofts Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct Sprachvorhersagebeispiel (Chinesisch/Englisch)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Verwendung der Windows-GPU zur Erstellung einer Prompt flow Lösung mit Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Folgen Sie diesen Schritten, um mit der Verwendung dieser Ressource zu beginnen:
       - [📓] [Fine-tuning Phi-4-mini-reasoning mit Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Fine-tuning Phi-4-mini-reasoning mit Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning mit GitHub-Modellen](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning mit Azure AI Foundry Modellen](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning mit Microsoft Foundry Modellen](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demos
       - [Phi-4-mini Demos gehostet auf Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal Demos gehostet auf Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Folgen Sie diesen Schritten, um mit der Verwendung dieser Ressource zu beginnen:
   - [Fine-Tuning Phi-3 mit Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Fine-Tuning Phi-3 mit Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Fine-Tuning Phi-3 mit QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Fine-Tuning Phi-3 mit Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Fine-Tuning Phi-3 mit Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Fine-Tuning Phi-3 mit Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Fine-Tuning mit Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Fine-Tuning mit Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Folgen Sie diesen Schritten, um mit der Verwendung dieser Ressource zu beginnen:
 
 ## Verwendung von Phi-Modellen
 
-### Phi auf Azure AI Foundry
+### Phi auf Microsoft Foundry
 
-Sie können lernen, wie man Microsoft Phi verwendet und wie man End-to-End-Lösungen in Ihren verschiedenen Hardwaregeräten baut. Um Phi selbst zu erleben, beginnen Sie damit, mit den Modellen zu experimentieren und Phi für Ihre Szenarien zu individualisieren, indem Sie den [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) nutzen. Weitere Informationen finden Sie unter Erste Schritte mit [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Sie können lernen, wie man Microsoft Phi verwendet und wie man End-to-End-Lösungen in Ihren verschiedenen Hardwaregeräten baut. Um Phi selbst zu erleben, beginnen Sie damit, mit den Modellen zu experimentieren und Phi für Ihre Szenarien zu individualisieren, indem Sie den [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) nutzen. Weitere Informationen finden Sie unter Erste Schritte mit [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Spielplatz**  
 Jedes Modell verfügt über einen dedizierten Spielplatz, um das Modell zu testen: [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Der Ansatz von Microsoft für verantwortungsbewusste KI basiert auf unseren KI-P
 
 Groß angelegte Modelle für natürliche Sprache, Bilder und Sprache – wie die in diesem Beispiel verwendeten – können sich potenziell unfair, unzuverlässig oder anstößig verhalten und dadurch Schaden anrichten. Bitte konsultieren Sie die [Azure OpenAI-Dienst-Transparenznotiz](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), um über Risiken und Einschränkungen informiert zu sein.
 
-Der empfohlene Ansatz zur Risikominderung besteht darin, in Ihrer Architektur ein Sicherheitssystem zu integrieren, das schädliches Verhalten erkennen und verhindern kann. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) bietet eine unabhängige Schutzschicht, die in der Lage ist, schädliche von Nutzern erzeugte und KI-generierte Inhalte in Anwendungen und Diensten zu erkennen. Azure AI Content Safety umfasst Text- und Bild-APIs, die ermöglichen, schädliches Material zu erkennen. Innerhalb von Azure AI Foundry ermöglicht der Content Safety-Dienst Ihnen, Beispielcode für die Erkennung schädlicher Inhalte über verschiedene Modalitäten anzusehen, zu erkunden und auszuprobieren. Die folgende [Schnellstart-Dokumentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) führt Sie durch die Anfragen an den Dienst.
+Der empfohlene Ansatz zur Risikominderung besteht darin, in Ihrer Architektur ein Sicherheitssystem zu integrieren, das schädliches Verhalten erkennen und verhindern kann. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) bietet eine unabhängige Schutzschicht, die in der Lage ist, schädliche von Nutzern erzeugte und KI-generierte Inhalte in Anwendungen und Diensten zu erkennen. Azure AI Content Safety umfasst Text- und Bild-APIs, die ermöglichen, schädliches Material zu erkennen. Innerhalb von Microsoft Foundry ermöglicht der Content Safety-Dienst Ihnen, Beispielcode für die Erkennung schädlicher Inhalte über verschiedene Modalitäten anzusehen, zu erkunden und auszuprobieren. Die folgende [Schnellstart-Dokumentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) führt Sie durch die Anfragen an den Dienst.
 Ein weiterer Aspekt, der berücksichtigt werden muss, ist die Gesamtleistung der Anwendung. Bei multimodalen und multimodellbasierten Anwendungen verstehen wir unter Leistung, dass das System so funktioniert, wie Sie und Ihre Benutzer es erwarten, einschließlich der Vermeidung schädlicher Ausgaben. Es ist wichtig, die Leistung Ihrer Gesamtanwendung mithilfe der [Performance- und Qualitäts- sowie Risiko- und Sicherheitsevaluator](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) zu bewerten. Sie haben auch die Möglichkeit, mit [kundenspezifischen Evaluatoren](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) zu erstellen und zu bewerten.
 
-Sie können Ihre KI-Anwendung in Ihrer Entwicklungsumgebung mit dem [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) bewerten. Basierend auf einem Testdatensatz oder einem Ziel werden die Generationen Ihrer generativen KI-Anwendung quantitativ mit integrierten Evaluatoren oder benutzerdefinierten Evaluatoren Ihrer Wahl gemessen. Um mit dem Azure AI Evaluation SDK zu starten und Ihr System zu bewerten, können Sie dem [Schnellstart-Leitfaden](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) folgen. Sobald Sie einen Evaluierungsdurchlauf ausgeführt haben, können Sie [die Ergebnisse in Azure AI Foundry visualisieren](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+Sie können Ihre KI-Anwendung in Ihrer Entwicklungsumgebung mit dem [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) bewerten. Basierend auf einem Testdatensatz oder einem Ziel werden die Generationen Ihrer generativen KI-Anwendung quantitativ mit integrierten Evaluatoren oder benutzerdefinierten Evaluatoren Ihrer Wahl gemessen. Um mit dem Azure AI Evaluation SDK zu starten und Ihr System zu bewerten, können Sie dem [Schnellstart-Leitfaden](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) folgen. Sobald Sie einen Evaluierungsdurchlauf ausgeführt haben, können Sie [die Ergebnisse in Microsoft Foundry visualisieren](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## Marken
 
@@ -302,11 +302,11 @@ Dieses Projekt kann Marken oder Logos für Projekte, Produkte oder Dienstleistun
 
 Wenn Sie nicht weiterkommen oder Fragen zum Erstellen von KI-Anwendungen haben, treten Sie bei:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Wenn Sie Produktfeedback haben oder Fehler beim Erstellen auftreten, besuchen Sie:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

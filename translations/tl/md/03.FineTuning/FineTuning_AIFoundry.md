@@ -1,6 +1,6 @@
-# Fine-tuning ng Phi-3 gamit ang Azure AI Foundry
+# Fine-tuning ng Phi-3 gamit ang Microsoft Foundry
 
-Tuklasin natin kung paano i-fine-tune ang Microsoft Phi-3 Mini language model gamit ang Azure AI Foundry. Ang fine-tuning ay nagbibigay-daan upang iakma ang Phi-3 Mini sa mga partikular na gawain, kaya mas nagiging makapangyarihan at mas nauunawaan ang konteksto nito.
+Tuklasin natin kung paano i-fine-tune ang Microsoft Phi-3 Mini language model gamit ang Microsoft Foundry. Ang fine-tuning ay nagbibigay-daan upang iakma ang Phi-3 Mini sa mga partikular na gawain, kaya mas nagiging makapangyarihan at mas nauunawaan ang konteksto nito.
 
 ## Mga Dapat Isaalang-alang
 
@@ -22,7 +22,7 @@ Tuklasin natin kung paano i-fine-tune ang Microsoft Phi-3 Mini language model ga
 - Isang Azure subscription. Kung wala ka pang Azure subscription, gumawa ng [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) upang makapagsimula.
 
 - Isang [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Ginagamit ang Azure role-based access controls (Azure RBAC) para bigyan ng access sa mga operasyon sa Azure AI Foundry. Para magawa ang mga hakbang sa artikulong ito, kailangang naka-assign ang iyong user account sa __Azure AI Developer role__ sa resource group.
+- Ginagamit ang Azure role-based access controls (Azure RBAC) para bigyan ng access sa mga operasyon sa Microsoft Foundry. Para magawa ang mga hakbang sa artikulong ito, kailangang naka-assign ang iyong user account sa __Azure AI Developer role__ sa resource group.
 
 ### Pagrehistro ng subscription provider
 
@@ -58,17 +58,17 @@ Ang training at validation data na gagamitin mo **ay dapat** naka-format bilang 
 
 Ang suportadong uri ng file ay JSON Lines. Ina-upload ang mga file sa default datastore at nagiging available sa iyong proyekto.
 
-## Fine-Tuning ng Phi-3 gamit ang Azure AI Foundry
+## Fine-Tuning ng Phi-3 gamit ang Microsoft Foundry
 
-Pinapayagan ka ng Azure AI Foundry na i-customize ang malalaking language models gamit ang iyong sariling datasets sa pamamagitan ng proseso na tinatawag na fine-tuning. Nagbibigay ang fine-tuning ng malaking halaga sa pamamagitan ng pagpapahintulot ng customisasyon at optimisasyon para sa mga partikular na gawain at aplikasyon. Nagdudulot ito ng mas mahusay na performance, mas matipid na gastos, mas mababang latency, at mga output na nakaangkop sa pangangailangan.
+Pinapayagan ka ng Microsoft Foundry na i-customize ang malalaking language models gamit ang iyong sariling datasets sa pamamagitan ng proseso na tinatawag na fine-tuning. Nagbibigay ang fine-tuning ng malaking halaga sa pamamagitan ng pagpapahintulot ng customisasyon at optimisasyon para sa mga partikular na gawain at aplikasyon. Nagdudulot ito ng mas mahusay na performance, mas matipid na gastos, mas mababang latency, at mga output na nakaangkop sa pangangailangan.
 
 ![Finetune AI Foundry](../../../../translated_images/tl/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Gumawa ng Bagong Proyekto
 
-1. Mag-sign in sa [Azure AI Foundry](https://ai.azure.com).
+1. Mag-sign in sa [Microsoft Foundry](https://ai.azure.com).
 
-1. Piliin ang **+New project** para gumawa ng bagong proyekto sa Azure AI Foundry.
+1. Piliin ang **+New project** para gumawa ng bagong proyekto sa Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/tl/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Pinapayagan ka ng Azure AI Foundry na i-customize ang malalaking language models
 
 Bago mag-fine-tune, mag-ipon o gumawa ng dataset na may kaugnayan sa iyong gawain, tulad ng mga chat instructions, question-answer pairs, o iba pang kaugnay na text data. Linisin at i-preprocess ang data sa pamamagitan ng pagtanggal ng ingay, pag-aayos ng mga nawawalang halaga, at pag-tokenize ng teksto.
 
-### Fine-tune ang Phi-3 models sa Azure AI Foundry
+### Fine-tune ang Phi-3 models sa Microsoft Foundry
 
 > [!NOTE]
 > Ang fine-tuning ng Phi-3 models ay kasalukuyang sinusuportahan lamang sa mga proyekto na nasa East US 2.
@@ -121,7 +121,7 @@ Bago mag-fine-tune, mag-ipon o gumawa ng dataset na may kaugnayan sa iyong gawai
 1. Gawin ang mga sumusunod:
 
     - Piliin ang **task type** bilang **Chat completion**.
-    - Piliin ang **Training data** na nais mong gamitin. Maaari mo itong i-upload mula sa Azure AI Foundry data o mula sa iyong lokal na kapaligiran.
+    - Piliin ang **Training data** na nais mong gamitin. Maaari mo itong i-upload mula sa Microsoft Foundry data o mula sa iyong lokal na kapaligiran.
 
     ![FineTuneSelect](../../../../translated_images/tl/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Bago mag-fine-tune, mag-ipon o gumawa ng dataset na may kaugnayan sa iyong gawai
 
     ![FineTuneSelect](../../../../translated_images/tl/select-submit.0a3802d581bac271.webp)
 
-1. Kapag na-fine-tune na ang iyong modelo, ipapakita ang status bilang **Completed**, tulad ng nasa larawan sa ibaba. Maaari mo nang i-deploy ang modelo at gamitin ito sa iyong sariling aplikasyon, sa playground, o sa prompt flow. Para sa karagdagang impormasyon, tingnan ang [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Kapag na-fine-tune na ang iyong modelo, ipapakita ang status bilang **Completed**, tulad ng nasa larawan sa ibaba. Maaari mo nang i-deploy ang modelo at gamitin ito sa iyong sariling aplikasyon, sa playground, o sa prompt flow. Para sa karagdagang impormasyon, tingnan ang [How to deploy Phi-3 family of small language models with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/tl/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Para sa mas detalyadong impormasyon tungkol sa fine-tuning ng Phi-3, bisitahin ang [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Para sa mas detalyadong impormasyon tungkol sa fine-tuning ng Phi-3, bisitahin ang [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Paglilinis ng iyong mga fine-tuned na modelo
 
-Maaari mong tanggalin ang isang fine-tuned na modelo mula sa listahan ng fine-tuning models sa [Azure AI Foundry](https://ai.azure.com) o mula sa model details page. Piliin ang fine-tuned model na nais tanggalin mula sa Fine-tuning page, pagkatapos ay piliin ang Delete button upang tanggalin ang fine-tuned model.
+Maaari mong tanggalin ang isang fine-tuned na modelo mula sa listahan ng fine-tuning models sa [Microsoft Foundry](https://ai.azure.com) o mula sa model details page. Piliin ang fine-tuned model na nais tanggalin mula sa Fine-tuning page, pagkatapos ay piliin ang Delete button upang tanggalin ang fine-tuned model.
 
 > [!NOTE]
 > Hindi mo maaaring tanggalin ang isang custom model kung ito ay may umiiral na deployment. Kailangan mo munang tanggalin ang deployment bago mo matanggal ang custom model.
@@ -163,7 +163,7 @@ Maaari mong tanggalin ang isang fine-tuned na modelo mula sa listahan ng fine-tu
 
 ### Mga konsiderasyon sa gastos at quota para sa Phi-3 models na fine-tuned bilang serbisyo
 
-Ang mga Phi models na fine-tuned bilang serbisyo ay inaalok ng Microsoft at naka-integrate sa Azure AI Foundry para magamit. Makikita mo ang pagpepresyo kapag [nagde-deploy](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o nag-fine-tune ng mga modelo sa ilalim ng Pricing and terms tab sa deployment wizard.
+Ang mga Phi models na fine-tuned bilang serbisyo ay inaalok ng Microsoft at naka-integrate sa Microsoft Foundry para magamit. Makikita mo ang pagpepresyo kapag [nagde-deploy](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o nag-fine-tune ng mga modelo sa ilalim ng Pricing and terms tab sa deployment wizard.
 
 ## Content filtering
 
@@ -204,7 +204,7 @@ I-save ang fine-tuned model checkpoint para sa hinaharap na paggamit.
 
 ## Deployment
 
-- I-deploy bilang Web Service: I-deploy ang iyong fine-tuned model bilang web service sa Azure AI Foundry.
+- I-deploy bilang Web Service: I-deploy ang iyong fine-tuned model bilang web service sa Microsoft Foundry.
 - Subukan ang Endpoint: Magpadala ng test queries sa deployed endpoint upang tiyakin ang functionality nito.
 
 ## Ulitin at Pagbutihin

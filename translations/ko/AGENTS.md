@@ -7,7 +7,7 @@ PhiCookBook는 Microsoft의 Phi 소형 언어 모델(SLM) 제품군을 활용한
 **주요 기술:**
 - **언어:** Python, C#/.NET, JavaScript/Node.js
 - **프레임워크:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **플랫폼:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **플랫폼:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **모델 유형:** Phi-3, Phi-3.5, Phi-4 (텍스트, 비전, 멀티모달, 추론 변형)
 
 **저장소 구조:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - 소개 가이드, 환경 설정, 플랫폼 가이드
 - **02.Application/** - 텍스트, 코드, 비전, 오디오 등 유형별로 정리된 애플리케이션 샘플
-- **02.QuickStart/** - Azure AI Foundry 및 GitHub Models에 대한 빠른 시작 가이드
+- **02.QuickStart/** - Microsoft Foundry 및 GitHub Models에 대한 빠른 시작 가이드
 - **03.FineTuning/** - 미세 조정 문서 및 튜토리얼
 - **04.HOL/** - 실습 랩 (.NET 예제 포함)
 
@@ -241,7 +241,7 @@ PR은 GitHub 워크플로를 통해 자동으로 검증됩니다:
 
 ### 플랫폼별 참고 사항
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Azure 구독 및 API 키 필요
 - `/md/02.QuickStart/AzureAIFoundry_QuickStart.md` 참조
 
@@ -285,7 +285,7 @@ PR은 GitHub 워크플로를 통해 자동으로 검증됩니다:
 
 ### 도움 받기
 
-- **Discord:** Azure AI Foundry 커뮤니티 Discord에 참여
+- **Discord:** Microsoft Foundry 커뮤니티 Discord에 참여
 - **GitHub Issues:** 저장소에서 버그 및 문제 보고
 - **GitHub Discussions:** 질문하고 지식 공유
 

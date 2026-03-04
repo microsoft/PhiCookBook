@@ -1,14 +1,14 @@
-# Procjena fino podešenog Phi-3 / Phi-3.5 modela u Azure AI Foundry s fokusom na Microsoftove principe odgovornog AI-a
+# Procjena fino podešenog Phi-3 / Phi-3.5 modela u Microsoft Foundry s fokusom na Microsoftove principe odgovornog AI-a
 
-Ovaj end-to-end (E2E) primjer temelji se na vodiču "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" iz Microsoft Tech Community.
+Ovaj end-to-end (E2E) primjer temelji se na vodiču "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" iz Microsoft Tech Community.
 
 ## Pregled
 
-### Kako možete procijeniti sigurnost i performanse fino podešenog Phi-3 / Phi-3.5 modela u Azure AI Foundry?
+### Kako možete procijeniti sigurnost i performanse fino podešenog Phi-3 / Phi-3.5 modela u Microsoft Foundry?
 
-Fino podešavanje modela ponekad može dovesti do neželjenih ili neočekivanih odgovora. Kako biste osigurali da model ostane siguran i učinkovit, važno je procijeniti njegov potencijal za generiranje štetnog sadržaja te sposobnost da proizvodi točne, relevantne i koherentne odgovore. U ovom vodiču naučit ćete kako procijeniti sigurnost i performanse fino podešenog Phi-3 / Phi-3.5 modela integriranog s Prompt flow u Azure AI Foundry.
+Fino podešavanje modela ponekad može dovesti do neželjenih ili neočekivanih odgovora. Kako biste osigurali da model ostane siguran i učinkovit, važno je procijeniti njegov potencijal za generiranje štetnog sadržaja te sposobnost da proizvodi točne, relevantne i koherentne odgovore. U ovom vodiču naučit ćete kako procijeniti sigurnost i performanse fino podešenog Phi-3 / Phi-3.5 modela integriranog s Prompt flow u Microsoft Foundry.
 
-Evo procesa procjene u Azure AI Foundry.
+Evo procesa procjene u Microsoft Foundry.
 
 ![Arhitektura vodiča.](../../../../../../translated_images/hr/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@ Evo procesa procjene u Azure AI Foundry.
 
 ### Sadržaj
 
-1. [**Scenarij 1: Uvod u procjenu Prompt flow u Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenarij 1: Uvod u procjenu Prompt flow u Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Uvod u procjenu sigurnosti](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Uvod u procjenu performansi](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Scenarij 2: Procjena Phi-3 / Phi-3.5 modela u Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenarij 2: Procjena Phi-3 / Phi-3.5 modela u Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Prije nego što počnete](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Postavljanje Azure OpenAI za procjenu Phi-3 / Phi-3.5 modela](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Procjena fino podešenog Phi-3 / Phi-3.5 modela korištenjem Prompt flow procjene u Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Procjena fino podešenog Phi-3 / Phi-3.5 modela korištenjem Prompt flow procjene u Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Čestitamo!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Scenarij 1: Uvod u procjenu Prompt flow u Azure AI Foundry**
+## **Scenarij 1: Uvod u procjenu Prompt flow u Microsoft Foundry**
 
 ### Uvod u procjenu sigurnosti
 
-Kako biste osigurali da je vaš AI model etičan i siguran, ključno je procijeniti ga u skladu s Microsoftovim principima odgovornog AI-a. U Azure AI Foundry, procjene sigurnosti omogućuju vam da procijenite ranjivost vašeg modela na jailbreak napade i njegov potencijal za generiranje štetnog sadržaja, što je u potpunosti usklađeno s tim principima.
+Kako biste osigurali da je vaš AI model etičan i siguran, ključno je procijeniti ga u skladu s Microsoftovim principima odgovornog AI-a. U Microsoft Foundry, procjene sigurnosti omogućuju vam da procijenite ranjivost vašeg modela na jailbreak napade i njegov potencijal za generiranje štetnog sadržaja, što je u potpunosti usklađeno s tim principima.
 
 ![Procjena sigurnosti.](../../../../../../translated_images/hr/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ Microsoftovi principi odgovornog AI-a uključuju:
 
 #### Metrike sigurnosti
 
-U ovom vodiču procijenit ćete sigurnost fino podešenog Phi-3 modela koristeći sigurnosne metrike Azure AI Foundry. Te metrike pomažu u procjeni potencijala modela za generiranje štetnog sadržaja i njegove ranjivosti na jailbreak napade. Sigurnosne metrike uključuju:
+U ovom vodiču procijenit ćete sigurnost fino podešenog Phi-3 modela koristeći sigurnosne metrike Microsoft Foundry. Te metrike pomažu u procjeni potencijala modela za generiranje štetnog sadržaja i njegove ranjivosti na jailbreak napade. Sigurnosne metrike uključuju:
 
 - **Sadržaj vezan uz samoozljeđivanje**: Procjenjuje ima li model tendenciju generiranja sadržaja vezanog uz samoozljeđivanje.
 - **Mrzilački i nepravedan sadržaj**: Procjenjuje ima li model tendenciju generiranja mrzilačkog ili nepravednog sadržaja.
@@ -88,7 +88,7 @@ Procjenom ovih aspekata osigurava se da AI model ne proizvodi štetan ili uvredl
 
 ### Uvod u procjenu performansi
 
-Kako biste osigurali da vaš AI model radi prema očekivanjima, važno je procijeniti njegove performanse prema metrikama performansi. U Azure AI Foundry, procjene performansi omogućuju vam da procijenite učinkovitost modela u generiranju točnih, relevantnih i koherentnih odgovora.
+Kako biste osigurali da vaš AI model radi prema očekivanjima, važno je procijeniti njegove performanse prema metrikama performansi. U Microsoft Foundry, procjene performansi omogućuju vam da procijenite učinkovitost modela u generiranju točnih, relevantnih i koherentnih odgovora.
 
 ![Procjena sigurnosti.](../../../../../../translated_images/hr/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Kako biste osigurali da vaš AI model radi prema očekivanjima, važno je procij
 
 #### Metrike performansi
 
-U ovom vodiču procijenit ćete performanse fino podešenog Phi-3 / Phi-3.5 modela koristeći metrike performansi Azure AI Foundry. Te metrike pomažu u procjeni učinkovitosti modela u generiranju točnih, relevantnih i koherentnih odgovora. Metrike performansi uključuju:
+U ovom vodiču procijenit ćete performanse fino podešenog Phi-3 / Phi-3.5 modela koristeći metrike performansi Microsoft Foundry. Te metrike pomažu u procjeni učinkovitosti modela u generiranju točnih, relevantnih i koherentnih odgovora. Metrike performansi uključuju:
 
 - **Utemeljenost (Groundedness)**: Procjenjuje koliko se generirani odgovori slažu s informacijama iz izvornog materijala.
 - **Relevantnost**: Procjenjuje koliko su generirani odgovori povezani s postavljenim pitanjima.
@@ -109,34 +109,34 @@ Ove metrike pomažu u procjeni učinkovitosti modela u generiranju točnih, rele
 
 ![Procjena na temelju performansi.](../../../../../../translated_images/hr/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **Scenarij 2: Procjena Phi-3 / Phi-3.5 modela u Azure AI Foundry**
+## **Scenarij 2: Procjena Phi-3 / Phi-3.5 modela u Microsoft Foundry**
 
 ### Prije nego što počnete
 
-Ovaj vodič nadovezuje se na prethodne blog postove, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" i "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." U tim postovima prošli smo kroz proces fino podešavanja Phi-3 / Phi-3.5 modela u Azure AI Foundry i njegove integracije s Prompt flow.
+Ovaj vodič nadovezuje se na prethodne blog postove, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" i "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." U tim postovima prošli smo kroz proces fino podešavanja Phi-3 / Phi-3.5 modela u Microsoft Foundry i njegove integracije s Prompt flow.
 
-U ovom vodiču postavit ćete Azure OpenAI model kao evaluatora u Azure AI Foundry i koristiti ga za procjenu vašeg fino podešenog Phi-3 / Phi-3.5 modela.
+U ovom vodiču postavit ćete Azure OpenAI model kao evaluatora u Microsoft Foundry i koristiti ga za procjenu vašeg fino podešenog Phi-3 / Phi-3.5 modela.
 
 Prije nego što započnete ovaj vodič, provjerite imate li sljedeće preduvjete, kao što je opisano u prethodnim vodičima:
 
 1. Pripremljeni skup podataka za procjenu fino podešenog Phi-3 / Phi-3.5 modela.
 1. Phi-3 / Phi-3.5 model koji je fino podešen i postavljen u Azure Machine Learning.
-1. Prompt flow integriran s vašim fino podešenim Phi-3 / Phi-3.5 modelom u Azure AI Foundry.
+1. Prompt flow integriran s vašim fino podešenim Phi-3 / Phi-3.5 modelom u Microsoft Foundry.
 
 > [!NOTE]
 > Za procjenu fino podešenog Phi-3 / Phi-3.5 modela koristit ćete datoteku *test_data.jsonl*, koja se nalazi u mapi data iz skupa podataka **ULTRACHAT_200k** preuzetog u prethodnim blog postovima.
 
-#### Integracija prilagođenog Phi-3 / Phi-3.5 modela s Prompt flow u Azure AI Foundry (pristup s kodom)
+#### Integracija prilagođenog Phi-3 / Phi-3.5 modela s Prompt flow u Microsoft Foundry (pristup s kodom)
 > [!NOTE]  
-> Ako ste slijedili low-code pristup opisan u "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", možete preskočiti ovaj zadatak i nastaviti na sljedeći.  
+> Ako ste slijedili low-code pristup opisan u "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", možete preskočiti ovaj zadatak i nastaviti na sljedeći.  
 > Međutim, ako ste koristili code-first pristup opisan u "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" za fino podešavanje i implementaciju vašeg Phi-3 / Phi-3.5 modela, proces povezivanja vašeg modela s Prompt flow-om je malo drugačiji. Taj proces ćete naučiti u ovom zadatku.
-Za nastavak, trebate integrirati svoj fino podešeni Phi-3 / Phi-3.5 model u Prompt flow u Azure AI Foundry.
+Za nastavak, trebate integrirati svoj fino podešeni Phi-3 / Phi-3.5 model u Prompt flow u Microsoft Foundry.
 
-#### Kreirajte Azure AI Foundry Hub
+#### Kreirajte Microsoft Foundry Hub
 
-Prije kreiranja Projekta, potrebno je kreirati Hub. Hub funkcionira kao Resource Group, omogućujući vam organizaciju i upravljanje više Projekata unutar Azure AI Foundry.
+Prije kreiranja Projekta, potrebno je kreirati Hub. Hub funkcionira kao Resource Group, omogućujući vam organizaciju i upravljanje više Projekata unutar Microsoft Foundry.
 
-1. Prijavite se na [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Prijavite se na [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Izaberite **All hubs** s lijevog izbornika.
 
@@ -157,7 +157,7 @@ Prije kreiranja Projekta, potrebno je kreirati Hub. Hub funkcionira kao Resource
 
 1. Kliknite **Next**.
 
-#### Kreirajte Azure AI Foundry Projekt
+#### Kreirajte Microsoft Foundry Projekt
 
 1. U Hubu koji ste kreirali, izaberite **All projects** s lijevog izbornika.
 
@@ -197,9 +197,9 @@ Da biste integrirali svoj prilagođeni Phi-3 / Phi-3.5 model s Prompt flow, potr
 
 #### Dodajte prilagođenu vezu
 
-1. Posjetite [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Posjetite [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigirajte do Azure AI Foundry projekta koji ste kreirali.
+1. Navigirajte do Microsoft Foundry projekta koji ste kreirali.
 
 1. U projektu koji ste kreirali, izaberite **Settings** s lijevog izbornika.
 
@@ -225,9 +225,9 @@ Da biste integrirali svoj prilagođeni Phi-3 / Phi-3.5 model s Prompt flow, potr
 
 #### Kreirajte Prompt flow
 
-Dodali ste prilagođenu vezu u Azure AI Foundry. Sada, kreirajmo Prompt flow slijedeći ove korake. Nakon toga, povezati ćete ovaj Prompt flow s prilagođenom vezom kako biste koristili fino podešeni model unutar Prompt flow.
+Dodali ste prilagođenu vezu u Microsoft Foundry. Sada, kreirajmo Prompt flow slijedeći ove korake. Nakon toga, povezati ćete ovaj Prompt flow s prilagođenom vezom kako biste koristili fino podešeni model unutar Prompt flow.
 
-1. Navigirajte do Azure AI Foundry projekta koji ste kreirali.
+1. Navigirajte do Microsoft Foundry projekta koji ste kreirali.
 
 1. Izaberite **Prompt flow** s lijevog izbornika.
 
@@ -344,7 +344,7 @@ Potrebno je integrirati fino podešeni Phi-3 / Phi-3.5 model u Prompt flow. Međ
     ![Paste prompt flow code.](../../../../../../translated_images/hr/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Za detaljnije informacije o korištenju Prompt flow u Azure AI Foundry, možete pogledati [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Za detaljnije informacije o korištenju Prompt flow u Microsoft Foundry, možete pogledati [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Izaberite **Chat input**, **Chat output** kako biste omogućili razgovor s vašim modelom.
 
@@ -385,13 +385,13 @@ Potrebno je integrirati fino podešeni Phi-3 / Phi-3.5 model u Prompt flow. Međ
 
 ### Deploy Azure OpenAI za evaluaciju Phi-3 / Phi-3.5 modela
 
-Za evaluaciju Phi-3 / Phi-3.5 modela u Azure AI Foundry, potrebno je implementirati Azure OpenAI model. Taj model će se koristiti za procjenu performansi Phi-3 / Phi-3.5 modela.
+Za evaluaciju Phi-3 / Phi-3.5 modela u Microsoft Foundry, potrebno je implementirati Azure OpenAI model. Taj model će se koristiti za procjenu performansi Phi-3 / Phi-3.5 modela.
 
 #### Implementirajte Azure OpenAI
 
-1. Prijavite se na [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Prijavite se na [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigirajte do Azure AI Foundry projekta koji ste kreirali.
+1. Navigirajte do Microsoft Foundry projekta koji ste kreirali.
 
     ![Select Project.](../../../../../../translated_images/hr/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -409,13 +409,13 @@ Za evaluaciju Phi-3 / Phi-3.5 modela u Azure AI Foundry, potrebno je implementir
 
 1. Kliknite **Confirm**.
 
-### Evaluirajte fino podešeni Phi-3 / Phi-3.5 model koristeći Prompt flow evaluaciju u Azure AI Foundry
+### Evaluirajte fino podešeni Phi-3 / Phi-3.5 model koristeći Prompt flow evaluaciju u Microsoft Foundry
 
 ### Pokrenite novu evaluaciju
 
-1. Posjetite [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Posjetite [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigirajte do Azure AI Foundry projekta koji ste kreirali.
+1. Navigirajte do Microsoft Foundry projekta koji ste kreirali.
 
     ![Select Project.](../../../../../../translated_images/hr/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -498,7 +498,7 @@ Nakon što je evaluacija završena, možete pregledati rezultate za metrike perf
 
 ### Završili ste ovaj vodič
 
-Uspješno ste evaluirali fino podešeni Phi-3 model integriran s Prompt flow u Azure AI Foundry. Ovo je važan korak u osiguravanju da vaši AI modeli ne samo da dobro rade, već i da se pridržavaju Microsoftovih principa Responsible AI, pomažući vam u izgradnji pouzdanih i vjerodostojnih AI aplikacija.
+Uspješno ste evaluirali fino podešeni Phi-3 model integriran s Prompt flow u Microsoft Foundry. Ovo je važan korak u osiguravanju da vaši AI modeli ne samo da dobro rade, već i da se pridržavaju Microsoftovih principa Responsible AI, pomažući vam u izgradnji pouzdanih i vjerodostojnih AI aplikacija.
 
 ![Architecture.](../../../../../../translated_images/hr/architecture.10bec55250f5d6a4.webp)
 
@@ -508,8 +508,8 @@ Očistite svoje Azure resurse kako biste izbjegli dodatne troškove na vašem ra
 
 - Azure Machine learning resurs.
 - Azure Machine learning model endpoint.
-- Azure AI Foundry Project resurs.
-- Azure AI Foundry Prompt flow resurs.
+- Microsoft Foundry Project resurs.
+- Microsoft Foundry Prompt flow resurs.
 
 ### Sljedeći koraci
 
@@ -517,13 +517,13 @@ Očistite svoje Azure resurse kako biste izbjegli dodatne troškove na vašem ra
 
 - [Procjena AI sustava korištenjem Responsible AI dashboarda](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Metrike evaluacije i nadzora za generativni AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry dokumentacija](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry dokumentacija](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow dokumentacija](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Edukativni sadržaj
 
 - [Uvod u Microsoftov pristup Responsible AI](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Uvod u Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Uvod u Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Reference
 

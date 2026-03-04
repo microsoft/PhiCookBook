@@ -12,7 +12,7 @@
 [![تفريعات GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![نجوم GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 في هي سلسلة من نماذج الذكاء الاصطناعي مفتوحة المصدر تم تطويرها من قبل مايكروسوفت.
 
@@ -71,7 +71,7 @@
 - الاستدلال على في في بيئات مختلفة
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [نماذج GitHub](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [كتالوج نماذج Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [كتالوج نماذج Microsoft Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [مجموعة أدوات AI في VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@
 
 -  تقييم في
     - [الذكاء الاصطناعي المسؤول](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry للتقييم](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry للتقييم](./md/01.Introduction/05/AIFoundry.md)
     - [استخدام Promptflow للتقييم](./md/01.Introduction/05/Promptflow.md)
  
 - RAG مع Azure AI Search
@@ -117,8 +117,8 @@
       - [تطبيق WinUI3 مع Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[عينة تطبيق ملاحظات مدعوم بالذكاء الاصطناعي متعدد النماذج لـ WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [ضبط وتحسين نماذج Phi-3 مخصصة ودمجها مع Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [ضبط وتحسين نماذج Phi-3 مخصصة ودمجها مع Prompt flow في Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [تقييم نموذج Phi-3 / Phi-3.5 المحسن في Azure AI Foundry مع التركيز على مبادئ الذكاء الاصطناعي المسؤول من مايكروسوفت](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [ضبط وتحسين نماذج Phi-3 مخصصة ودمجها مع Prompt flow في Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [تقييم نموذج Phi-3 / Phi-3.5 المحسن في Microsoft Foundry مع التركيز على مبادئ الذكاء الاصطناعي المسؤول من مايكروسوفت](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [عينة توقع اللغة Phi-3.5-mini-instruct (صينية/إنجليزية)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [روبوت دردشة Phi-3.5-Instruct WebGPU RAG](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [استخدام GPU ويندوز لإنشاء حل Prompt flow مع Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@
       - [📓] [ضبط دقيق لـ Phi-4-mini-reasoning مع Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [ضبط دقيق لـ Phi-4-mini-reasoning مع Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning مع نماذج GitHub](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning مع نماذج Azure AI Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning مع نماذج Microsoft Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - العروض التوضيحية
       - [عروض mini Phi-4 مستضافة على مساحات Hugging Face](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [عروض Phi-4-multimodal المستضافة على مساحات Hugginge Face](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@
   - [الضبط الدقيق لـ Phi-3 مع خدمة Azure Machine Learning](./md/03.FineTuning/Introduce_AzureML.md)
   - [الضبط الدقيق لـ Phi-3 بـ Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [الضبط الدقيق لـ Phi-3 بـ QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [الضبط الدقيق لـ Phi-3 مع Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [الضبط الدقيق لـ Phi-3 مع Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [الضبط الدقيق لـ Phi-3 مع Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [الضبط الدقيق مع Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [معمل تطبيقي للضبط الدقيق باستخدام Microsoft Olive](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@
 
 ## استخدام نماذج Phi
 
-### Phi على Azure AI Foundry
+### Phi على Microsoft Foundry
 
-يمكنك معرفة كيفية استخدام Microsoft Phi وكيفية بناء حلول شاملة على أجهزتك المختلفة. لتجربة Phi بنفسك، ابدأ بالتلاعب بالنماذج وتخصيص Phi لسيناريوهاتك باستخدام [كتالوج نماذج Azure AI Foundry](https://aka.ms/phi3-azure-ai) يمكنك معرفة المزيد في البدء مع [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+يمكنك معرفة كيفية استخدام Microsoft Phi وكيفية بناء حلول شاملة على أجهزتك المختلفة. لتجربة Phi بنفسك، ابدأ بالتلاعب بالنماذج وتخصيص Phi لسيناريوهاتك باستخدام [كتالوج نماذج Microsoft Foundry](https://aka.ms/phi3-azure-ai) يمكنك معرفة المزيد في البدء مع [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **ساحة اللعب**
 لكل نموذج ساحة لعب مخصصة لاختبار النموذج [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@
 
 يمكن لنماذج اللغة والصورة والصوت واسعة النطاق - مثل المستخدمة في هذا المثال - أن تتصرف بطرق قد تكون غير عادلة، غير موثوقة، أو مسيئة، مما قد يسبب أضرارًا. يرجى مراجعة [ملاحظة الشفافية لخدمة Azure OpenAI](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) للاطلاع على المخاطر والقيود.
 
-النهج الموصى به للتخفيف من هذه المخاطر هو تضمين نظام أمان في هيكلك يمكنه اكتشاف ومنع السلوك الضار. توفر [خدمة أمان المحتوى من Azure AI](https://learn.microsoft.com/azure/ai-services/content-safety/overview) طبقة حماية مستقلة، قادرة على اكتشاف المحتوى الضار المُنشأ من المستخدم أو بواسطة الذكاء الاصطناعي في التطبيقات والخدمات. تتضمن خدمة أمان المحتوى من Azure AI واجهات برمجة التطبيقات للنصوص والصور التي تسمح لك باكتشاف المواد الضارة. ضمن Azure AI Foundry، تتيح لك خدمة أمان المحتوى عرض واستكشاف وتجربة أمثلة على الشيفرات لاكتشاف المحتوى الضار عبر وسائط متعددة. ترشدك الوثائق التالية [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) خلال إرسال الطلبات إلى الخدمة.
+النهج الموصى به للتخفيف من هذه المخاطر هو تضمين نظام أمان في هيكلك يمكنه اكتشاف ومنع السلوك الضار. توفر [خدمة أمان المحتوى من Azure AI](https://learn.microsoft.com/azure/ai-services/content-safety/overview) طبقة حماية مستقلة، قادرة على اكتشاف المحتوى الضار المُنشأ من المستخدم أو بواسطة الذكاء الاصطناعي في التطبيقات والخدمات. تتضمن خدمة أمان المحتوى من Azure AI واجهات برمجة التطبيقات للنصوص والصور التي تسمح لك باكتشاف المواد الضارة. ضمن Microsoft Foundry، تتيح لك خدمة أمان المحتوى عرض واستكشاف وتجربة أمثلة على الشيفرات لاكتشاف المحتوى الضار عبر وسائط متعددة. ترشدك الوثائق التالية [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) خلال إرسال الطلبات إلى الخدمة.
 جانب آخر يجب أخذه في الاعتبار هو أداء التطبيق بشكل عام. مع التطبيقات متعددة الوسائط والنماذج المتعددة، نعتبر أن الأداء يعني أن النظام يعمل كما تتوقع أنت ومستخدموك، بما في ذلك عدم توليد مخرجات ضارة. من المهم تقييم أداء التطبيق العام الخاص بك باستخدام [مقاييس الأداء والجودة والمخاطر والسلامة](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). لديك أيضًا القدرة على الإنشاء والتقييم باستخدام [المقاييس المخصصة](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-يمكنك تقييم تطبيق الذكاء الاصطناعي الخاص بك في بيئة التطوير الخاصة بك باستخدام [مجموعة تطوير البرمجيات لتقييم الذكاء الاصطناعي من Azure](https://microsoft.github.io/promptflow/index.html). بناءً على مجموعة بيانات اختبار أو هدف معين، يتم قياس توليدات تطبيق الذكاء الاصطناعي التوليدي الخاص بك بطريقة كمية باستخدام المقاييس المدمجة أو المقاييس المخصصة التي تختارها. للبدء باستخدام مجموعة تطوير برمجيات تقييم الذكاء الاصطناعي من Azure لتقييم نظامك، يمكنك اتباع [دليل البدء السريع](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). بمجرد تنفيذ تشغيل للتقييم، يمكنك [عرض النتائج في Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+يمكنك تقييم تطبيق الذكاء الاصطناعي الخاص بك في بيئة التطوير الخاصة بك باستخدام [مجموعة تطوير البرمجيات لتقييم الذكاء الاصطناعي من Azure](https://microsoft.github.io/promptflow/index.html). بناءً على مجموعة بيانات اختبار أو هدف معين، يتم قياس توليدات تطبيق الذكاء الاصطناعي التوليدي الخاص بك بطريقة كمية باستخدام المقاييس المدمجة أو المقاييس المخصصة التي تختارها. للبدء باستخدام مجموعة تطوير برمجيات تقييم الذكاء الاصطناعي من Azure لتقييم نظامك، يمكنك اتباع [دليل البدء السريع](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). بمجرد تنفيذ تشغيل للتقييم، يمكنك [عرض النتائج في Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## العلامات التجارية
 
@@ -303,11 +303,11 @@
 
 إذا واجهت مشكلة أو كان لديك أي استفسارات حول بناء تطبيقات الذكاء الاصطناعي، انضم إلى:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 إذا كان لديك ملاحظات على المنتج أو أخطاء أثناء البناء، قم بزيارة:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

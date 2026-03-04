@@ -1,17 +1,17 @@
-# **Utilizar o Azure AI Foundry para avaliação**
+# **Utilizar o Microsoft Foundry para avaliação**
 
 ![aistudo](../../../../../translated_images/pt-PT/AIFoundry.9e0b513e999a1c5a.webp)
 
-Como avaliar a sua aplicação de IA generativa usando o [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Quer esteja a avaliar conversas de uma única interação ou de múltiplas interações, o Azure AI Foundry oferece ferramentas para avaliar o desempenho e a segurança do modelo.
+Como avaliar a sua aplicação de IA generativa usando o [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Quer esteja a avaliar conversas de uma única interação ou de múltiplas interações, o Microsoft Foundry oferece ferramentas para avaliar o desempenho e a segurança do modelo.
 
 ![aistudo](../../../../../translated_images/pt-PT/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Como avaliar aplicações de IA generativa com o Azure AI Foundry  
-Para instruções mais detalhadas, consulte a [Documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Como avaliar aplicações de IA generativa com o Microsoft Foundry  
+Para instruções mais detalhadas, consulte a [Documentação do Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Aqui estão os passos para começar:
 
-## Avaliar Modelos de IA Generativa no Azure AI Foundry
+## Avaliar Modelos de IA Generativa no Microsoft Foundry
 
 **Pré-requisitos**
 
@@ -21,13 +21,13 @@ Aqui estão os passos para começar:
 
 ## Métricas de Avaliação Integradas
 
-O Azure AI Foundry permite avaliar tanto conversas de uma única interação como conversas complexas de múltiplas interações.  
+O Microsoft Foundry permite avaliar tanto conversas de uma única interação como conversas complexas de múltiplas interações.  
 Para cenários de Retrieval Augmented Generation (RAG), onde o modelo está fundamentado em dados específicos, pode avaliar o desempenho usando métricas de avaliação integradas.  
 Além disso, pode avaliar cenários gerais de perguntas e respostas de uma única interação (não RAG).
 
 ## Criar uma Execução de Avaliação
 
-Na interface do Azure AI Foundry, navegue até à página Evaluate ou à página Prompt Flow.  
+Na interface do Microsoft Foundry, navegue até à página Evaluate ou à página Prompt Flow.  
 Siga o assistente de criação de avaliação para configurar uma execução de avaliação. Pode fornecer um nome opcional para a sua avaliação.  
 Selecione o cenário que melhor se alinha com os objetivos da sua aplicação.  
 Escolha uma ou mais métricas de avaliação para analisar a saída do modelo.
@@ -38,9 +38,9 @@ Para maior flexibilidade, pode criar um fluxo de avaliação personalizado. Pers
 
 ## Visualizar Resultados
 
-Após executar a avaliação, registe, visualize e analise métricas detalhadas no Azure AI Foundry. Obtenha insights sobre as capacidades e limitações da sua aplicação.
+Após executar a avaliação, registe, visualize e analise métricas detalhadas no Microsoft Foundry. Obtenha insights sobre as capacidades e limitações da sua aplicação.
 
-**Note** O Azure AI Foundry está atualmente em pré-visualização pública, pelo que deve ser usado para fins de experimentação e desenvolvimento. Para cargas de trabalho em produção, considere outras opções. Explore a [documentação oficial do AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) para mais detalhes e instruções passo a passo.
+**Note** O Microsoft Foundry está atualmente em pré-visualização pública, pelo que deve ser usado para fins de experimentação e desenvolvimento. Para cargas de trabalho em produção, considere outras opções. Explore a [documentação oficial do AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) para mais detalhes e instruções passo a passo.
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

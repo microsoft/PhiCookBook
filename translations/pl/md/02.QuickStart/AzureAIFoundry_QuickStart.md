@@ -1,12 +1,12 @@
-# **Korzystanie z Phi-3 w Azure AI Foundry**
+# **Korzystanie z Phi-3 w Microsoft Foundry**
 
-Wraz z rozwojem Generative AI, chcemy korzystać z zunifikowanej platformy do zarządzania różnymi LLM i SLM, integracji danych przedsiębiorstwa, operacji fine-tuningu/RAG oraz oceny różnych biznesów po integracji LLM i SLM, itp., aby generatywna AI mogła lepiej wspierać inteligentne aplikacje. [Azure AI Foundry](https://ai.azure.com) to platforma generatywnej AI na poziomie przedsiębiorstwa.
+Wraz z rozwojem Generative AI, chcemy korzystać z zunifikowanej platformy do zarządzania różnymi LLM i SLM, integracji danych przedsiębiorstwa, operacji fine-tuningu/RAG oraz oceny różnych biznesów po integracji LLM i SLM, itp., aby generatywna AI mogła lepiej wspierać inteligentne aplikacje. [Microsoft Foundry](https://ai.azure.com) to platforma generatywnej AI na poziomie przedsiębiorstwa.
 
 ![aistudo](../../../../translated_images/pl/aifoundry_home.f28a8127c96c7d93.webp)
 
-Dzięki Azure AI Foundry możesz oceniać odpowiedzi dużych modeli językowych (LLM) oraz orkiestrację komponentów aplikacji prompt za pomocą prompt flow dla lepszej wydajności. Platforma ułatwia skalowanie, umożliwiając łatwe przekształcenie proof of concept w pełnoprawną produkcję. Ciągły monitoring i udoskonalanie wspierają długoterminowy sukces.
+Dzięki Microsoft Foundry możesz oceniać odpowiedzi dużych modeli językowych (LLM) oraz orkiestrację komponentów aplikacji prompt za pomocą prompt flow dla lepszej wydajności. Platforma ułatwia skalowanie, umożliwiając łatwe przekształcenie proof of concept w pełnoprawną produkcję. Ciągły monitoring i udoskonalanie wspierają długoterminowy sukces.
 
-Możemy szybko wdrożyć model Phi-3 na Azure AI Foundry za pomocą prostych kroków, a następnie wykorzystać Azure AI Foundry do realizacji zadań związanych z Phi-3, takich jak Playground/Chat, fine-tuning, ocena i inne.
+Możemy szybko wdrożyć model Phi-3 na Microsoft Foundry za pomocą prostych kroków, a następnie wykorzystać Microsoft Foundry do realizacji zadań związanych z Phi-3, takich jak Playground/Chat, fine-tuning, ocena i inne.
 
 ## **1. Przygotowanie**
 
@@ -14,21 +14,21 @@ Jeśli masz już zainstalowany [Azure Developer CLI](https://learn.microsoft.com
 
 ## Ręczne tworzenie
 
-Utworzenie projektu i huba w Microsoft Azure AI Foundry to świetny sposób na organizację i zarządzanie pracą z AI. Oto przewodnik krok po kroku, który pomoże Ci zacząć:
+Utworzenie projektu i huba w Microsoft Foundry to świetny sposób na organizację i zarządzanie pracą z AI. Oto przewodnik krok po kroku, który pomoże Ci zacząć:
 
-### Tworzenie projektu w Azure AI Foundry
+### Tworzenie projektu w Microsoft Foundry
 
-1. **Przejdź do Azure AI Foundry**: Zaloguj się do portalu Azure AI Foundry.
+1. **Przejdź do Microsoft Foundry**: Zaloguj się do portalu Microsoft Foundry.
 2. **Utwórz projekt**:
-   - Jeśli jesteś w projekcie, wybierz „Azure AI Foundry” w lewym górnym rogu strony, aby przejść do strony głównej.
+   - Jeśli jesteś w projekcie, wybierz „Microsoft Foundry” w lewym górnym rogu strony, aby przejść do strony głównej.
    - Wybierz „+ Create project”.
    - Wprowadź nazwę projektu.
    - Jeśli masz hub, zostanie on wybrany domyślnie. Jeśli masz dostęp do więcej niż jednego huba, możesz wybrać inny z listy rozwijanej. Jeśli chcesz utworzyć nowy hub, wybierz „Create new hub” i podaj nazwę.
    - Wybierz „Create”.
 
-### Tworzenie huba w Azure AI Foundry
+### Tworzenie huba w Microsoft Foundry
 
-1. **Przejdź do Azure AI Foundry**: Zaloguj się na swoje konto Azure.
+1. **Przejdź do Microsoft Foundry**: Zaloguj się na swoje konto Azure.
 2. **Utwórz hub**:
    - Wybierz Centrum zarządzania z lewego menu.
    - Wybierz „All resources”, następnie strzałkę w dół obok „+ New project” i wybierz „+ New hub”.
@@ -41,10 +41,10 @@ Po pomyślnym utworzeniu możesz uzyskać dostęp do stworzonego studia przez [a
 
 Na jednym AI Foundry może być wiele projektów. Utwórz projekt w AI Foundry, aby się przygotować.
 
-Utwórz Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Utwórz Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
 
-## **2. Wdrożenie modelu Phi w Azure AI Foundry**
+## **2. Wdrożenie modelu Phi w Microsoft Foundry**
 
 Kliknij opcję Explore w projekcie, aby wejść do Model Catalog i wybierz Phi-3
 
@@ -56,16 +56,16 @@ Kliknij „Deploy”, aby wdrożyć model Phi-3-mini-4k-instruct
 >
 > Podczas wdrażania możesz wybrać moc obliczeniową
 
-## **3. Playground Chat Phi w Azure AI Foundry**
+## **3. Playground Chat Phi w Microsoft Foundry**
 
-Przejdź do strony wdrożenia, wybierz Playground i rozmawiaj z Phi-3 w Azure AI Foundry
+Przejdź do strony wdrożenia, wybierz Playground i rozmawiaj z Phi-3 w Microsoft Foundry
 
-## **4. Wdrażanie modelu z Azure AI Foundry**
+## **4. Wdrażanie modelu z Microsoft Foundry**
 
 Aby wdrożyć model z Azure Model Catalog, wykonaj następujące kroki:
 
-- Zaloguj się do Azure AI Foundry.
-- Wybierz model, który chcesz wdrożyć z katalogu modeli Azure AI Foundry.
+- Zaloguj się do Microsoft Foundry.
+- Wybierz model, który chcesz wdrożyć z katalogu modeli Microsoft Foundry.
 - Na stronie Szczegóły modelu wybierz Deploy, a następnie wybierz Serverless API z Azure AI Content Safety.
 - Wybierz projekt, w którym chcesz wdrożyć modele. Aby korzystać z oferty Serverless API, Twoje środowisko musi należeć do regionu East US 2 lub Sweden Central. Możesz dostosować nazwę wdrożenia.
 - W kreatorze wdrożenia wybierz Pricing and terms, aby zapoznać się z cenami i warunkami użytkowania.
@@ -77,7 +77,7 @@ Aby wdrożyć model z Azure Model Catalog, wykonaj następujące kroki:
 > [!NOTE]
 > Pamiętaj, że Twoje konto musi mieć uprawnienia roli Azure AI Developer na grupie zasobów, aby wykonać te kroki.
 
-## **5. Korzystanie z Phi API w Azure AI Foundry**
+## **5. Korzystanie z Phi API w Microsoft Foundry**
 
 Możesz uzyskać dostęp do https://{NazwaTwojegoProjektu}.region.inference.ml.azure.com/swagger.json przez Postman GET i połączyć to z kluczem, aby poznać dostępne interfejsy.
 

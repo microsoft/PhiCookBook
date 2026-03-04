@@ -2,7 +2,7 @@
 
 ![Modelio pritaikymas su MS paslaugomis](../../../../imgs/03/intro/FinetuningwithMS.png)
 
-**Platforma** Tai apima įvairias technologijas, tokias kaip Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito ir ONNX Runtime.
+**Platforma** Tai apima įvairias technologijas, tokias kaip Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito ir ONNX Runtime.
 
 **Infrastruktūra** Tai apima CPU ir FPGA, kurie yra būtini modelio pritaikymo procesui. Leiskite parodyti kiekvienos iš šių technologijų piktogramas.
 

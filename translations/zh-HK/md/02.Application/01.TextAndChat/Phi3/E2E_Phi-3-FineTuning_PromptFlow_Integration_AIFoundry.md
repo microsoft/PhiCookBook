@@ -1,17 +1,17 @@
-# 微調及整合自訂 Phi-3 模型與 Azure AI Foundry 中的 Prompt flow
+# 微調及整合自訂 Phi-3 模型與 Microsoft Foundry 中的 Prompt flow
 
-此端對端（E2E）範例基於 Microsoft Tech Community 中的指南「[微調及整合自訂 Phi-3 模型與 Azure AI Foundry 中的 Prompt flow](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)」。介紹如何微調、自訂 Phi-3 模型的部署及在 Azure AI Foundry 中整合 Prompt flow。
+此端對端（E2E）範例基於 Microsoft Tech Community 中的指南「[微調及整合自訂 Phi-3 模型與 Microsoft Foundry 中的 Prompt flow](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)」。介紹如何微調、自訂 Phi-3 模型的部署及在 Microsoft Foundry 中整合 Prompt flow。
 與需在本機執行程式碼的端對端範例「[微調及整合自訂 Phi-3 模型與 Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)」不同，此教學完全聚焦於如何在 Azure AI / ML Studio 內微調及整合模型。
 
 ## 總覽
 
-在此端對端範例中，您將學會如何微調 Phi-3 模型並將其與 Azure AI Foundry 的 Prompt flow 整合。利用 Azure AI / ML Studio，建立部署及使用自訂 AI 模型的工作流程。本端對端範例分為三個情境：
+在此端對端範例中，您將學會如何微調 Phi-3 模型並將其與 Microsoft Foundry 的 Prompt flow 整合。利用 Azure AI / ML Studio，建立部署及使用自訂 AI 模型的工作流程。本端對端範例分為三個情境：
 
 **情境 1：設定 Azure 資源並準備微調**
 
 **情境 2：微調 Phi-3 模型並在 Azure Machine Learning Studio 部署**
 
-**情境 3：與 Prompt flow 整合並在 Azure AI Foundry 與自訂模型對話**
+**情境 3：與 Prompt flow 整合並在 Microsoft Foundry 與自訂模型對話**
 
 以下為本端對端範例的總覽。
 
@@ -30,7 +30,7 @@
     - [微調 Phi-3 模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [部署微調完成的 Phi-3 模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[情境 3：與 Prompt flow 整合並在 Azure AI Foundry 與自訂模型對話](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[情境 3：與 Prompt flow 整合並在 Microsoft Foundry 與自訂模型對話](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [將自訂 Phi-3 模型整合至 Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [與您的自訂 Phi-3 模型聊天](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![設定流量。](../../../../../../translated_images/zh-HK/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## 情境 3：與 Prompt flow 整合並在 Azure AI Foundry 中與你的自訂模型對話
+## 情境 3：與 Prompt flow 整合並在 Microsoft Foundry 中與你的自訂模型對話
 
 ### 將自訂的 Phi-3 模型與 Prompt flow 整合
 
@@ -552,8 +552,8 @@
 
 在本練習中，你將會：
 
-- 建立 Azure AI Foundry Hub。
-- 建立 Azure AI Foundry 專案。
+- 建立 Microsoft Foundry Hub。
+- 建立 Microsoft Foundry 專案。
 - 建立 Prompt flow。
 - 新增微調後 Phi-3 模型的自訂連線。
 - 設定 Prompt flow 與你的自訂 Phi-3 模型進行對話。
@@ -561,11 +561,11 @@
 > [!NOTE]
 > 你也可以使用 Azure ML Studio 與 Promptflow 進行整合，整合流程與此相同。
 
-#### 建立 Azure AI Foundry Hub
+#### 建立 Microsoft Foundry Hub
 
-在建立專案之前，需先建立 Hub。Hub 類似資源群組，讓你能在 Azure AI Foundry 中組織與管理多個專案。
+在建立專案之前，需先建立 Hub。Hub 類似資源群組，讓你能在 Microsoft Foundry 中組織與管理多個專案。
 
-1. 前往 [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)。
+1. 前往 [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)。
 
 1. 從左側分頁選擇 **所有 Hub**。
 
@@ -585,7 +585,7 @@
 
 1. 選擇 **下一步**。
 
-#### 建立 Azure AI Foundry 專案
+#### 建立 Microsoft Foundry 專案
 
 1. 在你建立的 Hub 中，從左側標籤選擇 **所有專案**。
 
@@ -625,9 +625,9 @@
 
 #### 新增自訂連接
 
-1. 訪問 [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)。
+1. 訪問 [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)。
 
-1. 導航到你建立的 Azure AI Foundry 專案。
+1. 導航到你建立的 Microsoft Foundry 專案。
 
 1. 在你建立的專案中，從左側標籤選擇 **設定**。
 
@@ -653,9 +653,9 @@
 
 #### 建立 Prompt flow
 
-你已在 Azure AI Foundry 中新增了自訂連接。接下來，使用以下步驟建立一個 Prompt flow。然後，你將把此 Prompt flow 連接至自訂連接，從而在 Prompt flow 中使用精調模型。
+你已在 Microsoft Foundry 中新增了自訂連接。接下來，使用以下步驟建立一個 Prompt flow。然後，你將把此 Prompt flow 連接至自訂連接，從而在 Prompt flow 中使用精調模型。
 
-1. 導航到你建立的 Azure AI Foundry 專案。
+1. 導航到你建立的 Microsoft Foundry 專案。
 
 1. 從左側標籤選擇 **Prompt flow**。
 
@@ -774,7 +774,7 @@
     ![Paste prompt flow code.](../../../../../../translated_images/zh-HK/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> 有關在 Azure AI Foundry 中使用 Prompt flow 的更詳細資訊，請參考 [Azure AI Foundry 中的 Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)。
+> 有關在 Microsoft Foundry 中使用 Prompt flow 的更詳細資訊，請參考 [Microsoft Foundry 中的 Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)。
 
 1. 選擇 **聊天輸入**、**聊天輸出** 以啟用與模型的聊天。
 

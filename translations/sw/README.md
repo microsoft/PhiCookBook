@@ -12,7 +12,7 @@
 [![Faris za GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![Nyota za GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi ni mfululizo wa mifano ya AI chanzo wazi iliyoanzishwa na Microsoft.
 
@@ -71,7 +71,7 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
 - Kutathmini Phi katika mazingira tofauti
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [Mifano ya GitHub](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Katalogi ya Mifano ya Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Katalogi ya Mifano ya Microsoft Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [Zana ya AI VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
 
 -  Tathmini ya Phi
     - [AI ya Kuwajibika](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry kwa Tathmini](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry kwa Tathmini](./md/01.Introduction/05/AIFoundry.md)
     - [Kutumia Promptflow kwa Tathmini](./md/01.Introduction/05/Promptflow.md)
  
 - RAG na Azure AI Search
@@ -117,8 +117,8 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
       - [App ya WinUI3 na Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[Mfano wa WinUI3 Multi Model AI Powered Notes App](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Kufanya Fine-tune na Kuunganisha modeli maalum za Phi-3 na Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Kufanya Fine-tune na Kuunganisha modeli maalum za Phi-3 na Prompt flow katika Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Kutathmini modeli zilizofinyangwa Phi-3 / Phi-3.5 katika Azure AI Foundry kwa kuzingatia kanuni za AI Zinazowajibika za Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Kufanya Fine-tune na Kuunganisha modeli maalum za Phi-3 na Prompt flow katika Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Kutathmini modeli zilizofinyangwa Phi-3 / Phi-3.5 katika Microsoft Foundry kwa kuzingatia kanuni za AI Zinazowajibika za Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Mfano wa utabiri wa lugha wa Phi-3.5-mini-instruct (Kichina/Kiingereza)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Kutumia Windows GPU kuunda suluhisho la Prompt flow na Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
       - [📓] [Kufinyanga Phi-4-mini-reasoning na Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Kufinyanga Phi-4-mini-reasoning na Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning na GitHub Models](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning na Azure AI Foundry Models](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning na Microsoft Foundry Models](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demo
       - [Phi-4-mini demos zilizo hosted kwenye Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demos zilizo hosted kwenye Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
   - [Kufinyanga Phi-3 na Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Kufinyanga Phi-3 na Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Kufinyanga Phi-3 na QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Kufinyanga Phi-3 na Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Kufinyanga Phi-3 na Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Kufinyanga Phi-3 na Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Kufinyanga na Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Maabara ya Kufinyanga na Microsoft Olive](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Fuata hatua hizi kuanza kutumia rasilimali hizi:
 
 ## Kutumia Mifano ya Phi
 
-### Phi kwenye Azure AI Foundry
+### Phi kwenye Microsoft Foundry
 
-Unaweza kujifunza jinsi ya kutumia Microsoft Phi na jinsi ya kuunda suluhisho kamili kwa vifaa vyako mbalimbali vya maunzi. Ili kujaribu Phi kwa mwenyewe, anza kwa kucheza na mifano na kubinafsisha Phi kwa hali zako kupitia [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) unaweza kujifunza zaidi katika Kuanzisha na [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Unaweza kujifunza jinsi ya kutumia Microsoft Phi na jinsi ya kuunda suluhisho kamili kwa vifaa vyako mbalimbali vya maunzi. Ili kujaribu Phi kwa mwenyewe, anza kwa kucheza na mifano na kubinafsisha Phi kwa hali zako kupitia [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) unaweza kujifunza zaidi katika Kuanzisha na [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Uwanja wa Mchezo**
 Kila mfano una uwanja wake wa majaribio wa kujaribu mfano [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Mbinu ya Microsoft ya AI yenye uwajibikaji inatokana na kanuni zetu za AI za usa
 
 Mifano mikubwa ya lugha asilia, picha, na hotuba - kama ile inayotumiwa katika sampuli hii - inaweza kuonyesha mwenendo ambao si wa haki, hauaminiki, au unaovunja hisia, na kusababisha madhara. Tafadhali rejea [Kiashiria cha Uwiano cha Huduma ya Azure OpenAI](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) ili ufahamu hatari na vikwazo.
 
-Mbinu inayopendekezwa kupunguza hatari hizi ni kujumuisha mfumo wa usalama katika usanifu wako ambao unaweza kugundua na kuzuia tabia zenye madhara. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) hutoa tabaka huru la ulinzi, linaloweza kugundua maudhui yenye madhara yaliyozalishwa na mtumiaji na AI kwenye programu na huduma. Azure AI Content Safety ina API za maandishi na picha zinazokuwezesha kugundua nyenzo zenye madhara. Ndani ya Azure AI Foundry, huduma ya Usalama wa Maudhui inakuwezesha kuona, kuchambua na kujaribu mifano ya msimbo wa kugundua maudhui yenye madhara katika njia mbalimbali. Hati ifuatayo ya [kuanza haraka](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) itakuongoza jinsi ya kuomba huduma hii.
+Mbinu inayopendekezwa kupunguza hatari hizi ni kujumuisha mfumo wa usalama katika usanifu wako ambao unaweza kugundua na kuzuia tabia zenye madhara. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) hutoa tabaka huru la ulinzi, linaloweza kugundua maudhui yenye madhara yaliyozalishwa na mtumiaji na AI kwenye programu na huduma. Azure AI Content Safety ina API za maandishi na picha zinazokuwezesha kugundua nyenzo zenye madhara. Ndani ya Microsoft Foundry, huduma ya Usalama wa Maudhui inakuwezesha kuona, kuchambua na kujaribu mifano ya msimbo wa kugundua maudhui yenye madhara katika njia mbalimbali. Hati ifuatayo ya [kuanza haraka](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) itakuongoza jinsi ya kuomba huduma hii.
 Jambo lingine la kuzingatia ni utendaji wa jumla wa programu. Kwa programu za multi-modal na multi-models, tunachukulia utendaji kama mfumo unavyotenda kwa jinsi wewe na watumiaji wako mnavyotarajia, ikiwa ni pamoja na kutokuwa na uundaji wa matokeo hatarishi. Ni muhimu kutathmini utendaji wa programu yako kwa ujumla kwa kutumia [Wakaguzi wa Utendaji, Ubora, Hatari na Usalama](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Pia una uwezo wa kuunda na kutathmini kwa kutumia [wakaguzi wa desturi](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Unaweza kutathmini programu yako ya AI katika mazingira yako ya maendeleo kwa kutumia [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Ukipata dataset ya majaribio au lengo, uzazi wa programu yako ya AI wa kizazi hupimwa kwa kiasi kwa wakaguzi waliomo au wakaguzi wa desturi wa uchaguzi wako. Ili kuanza na azure ai evaluation sdk ili kutathmini mfumo wako, unaweza kufuata [mwongozo wa kuanza haraka](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Mara unapotekeleza uendeshaji wa tathmini, unaweza [kuonyesha matokeo katika Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Unaweza kutathmini programu yako ya AI katika mazingira yako ya maendeleo kwa kutumia [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Ukipata dataset ya majaribio au lengo, uzazi wa programu yako ya AI wa kizazi hupimwa kwa kiasi kwa wakaguzi waliomo au wakaguzi wa desturi wa uchaguzi wako. Ili kuanza na azure ai evaluation sdk ili kutathmini mfumo wako, unaweza kufuata [mwongozo wa kuanza haraka](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Mara unapotekeleza uendeshaji wa tathmini, unaweza [kuonyesha matokeo katika Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Vyeti vya Biashara
 
@@ -302,11 +302,11 @@ Mradi huu unaweza kuwa na alama za biashara au nembo za miradi, bidhaa, au hudum
 
 Ikiwa unakumbwa na matatizo au una maswali yoyote kuhusu kujenga programu za AI, jiunge na:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Ikiwa una maoni kuhusu bidhaa au makosa wakati wa kujenga tembelea:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

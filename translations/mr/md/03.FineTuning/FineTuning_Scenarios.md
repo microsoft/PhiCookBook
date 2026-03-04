@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/mr/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**प्लॅटफॉर्म** यात Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, आणि ONNX Runtime यांसारख्या विविध तंत्रज्ञानांचा समावेश आहे.
+**प्लॅटफॉर्म** यात Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, आणि ONNX Runtime यांसारख्या विविध तंत्रज्ञानांचा समावेश आहे.
 
 **इन्फ्रास्ट्रक्चर** यात CPU आणि FPGA यांचा समावेश आहे, जे फाइन-ट्यूनिंग प्रक्रियेसाठी आवश्यक आहेत. या तंत्रज्ञानांसाठीचे चिन्हे मी तुम्हाला दाखवतो.
 

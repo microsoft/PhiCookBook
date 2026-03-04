@@ -12,7 +12,7 @@
 [![GitHub ఫోర్క్‌లు](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub స్టార్‌లు](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry డిస్కార్డ్](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry డిస్కార్డ్](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 ఫై అనేది మైక్రోసాఫ్ట్ అభివృద్ధి చేసిన ఓపెన్ సోర్స్ AI మోడల్స్ సిరీస్.
 
@@ -71,7 +71,7 @@
 - వివిధ పరిసరాలలో ఫై ఇన్ఫరెన్స్
     - [Hugging face](./md/01.Introduction/02/01.HF.md)
     - [GitHub మోడల్స్](./md/01.Introduction/02/02.GitHubModel.md)
-    - [Azure AI Foundry మోడల్ క్యాటలాగ్](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    - [Microsoft Foundry మోడల్ క్యాటలాగ్](./md/01.Introduction/02/03.AzureAIFoundry.md)
     - [Ollama](./md/01.Introduction/02/04.Ollama.md)
     - [AI టూల్కిట్ VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@
 
 - ఫై మూల్యాంకనం
     - [ప్రతిస్పందన AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [మూల్యాంకన కోసం Azure AI Foundry](./md/01.Introduction/05/AIFoundry.md)
+    - [మూల్యాంకన కోసం Microsoft Foundry](./md/01.Introduction/05/AIFoundry.md)
     - [ప్రాంప్ట్‌ఫ్లో ఉపయోగించి మూల్యాంకనం](./md/01.Introduction/05/Promptflow.md)
  
 - Azure AI Search తో RAG
@@ -117,8 +117,8 @@
       - [Phi-3 mini-4k-instruct-onnx తో WinUI3 యాప్](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 మల్టీ మోడల్ AI పవర్డ్ నోట్స్ యాప్ నమూనా](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Fine-tune చేసి Prompt flow తో కస్టమ్ Phi-3 మోడల్స్ ను ఇంటిగ్రేట్ చేయడం](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Azure AI Foundryలో Prompt flow తో కస్టమ్ Phi-3 మోడల్స్ ను Fine-tune చేసి ఇంటిగ్రేట్ చేయడం](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Microsoft యొక్క జవాబుదారీతనం AI స 원ుసారంగా Azure AI Foundryలో Fine-tuned Phi-3 / Phi-3.5 మోడల్ ని అంచనా వేయడం](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Microsoft Foundryలో Prompt flow తో కస్టమ్ Phi-3 మోడల్స్ ను Fine-tune చేసి ఇంటిగ్రేట్ చేయడం](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Microsoft యొక్క జవాబుదారీతనం AI స 원ుసారంగా Microsoft Foundryలో Fine-tuned Phi-3 / Phi-3.5 మోడల్ ని అంచనా వేయడం](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct భాషా అంచనా నమూనా (చైనీస్/ఇంగ్లీష్)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG చాట్‌బాట్](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Windows GPU ఉపయోగించి Phi-3.5-Instruct ONNX తో Prompt flow పరిష్కారం సృష్టించడం](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@
       - [📓] [Microsoft Olive తో Phi-4-mini-reasoning ను Fine-tune చేయడం](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Apple MLX తో Phi-4-mini-reasoning ను Fine-tune చేయడం](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [GitHub మోడల్స్ తో Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Azure AI Foundry మోడల్స్ తో Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Microsoft Foundry మోడల్స్ తో Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - డెమోస్
       - [Hugging Face స్పేసెస్ లో హోస్ట్ చేయబడిన Phi-4-mini డెమోస్](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Hugginge Face స్పేసెస్ లో హోస్ట్ చేయబడిన Phi-4-multimodal డెమోస్](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@
   - [Azure మెషీన్ లెర్నింగ్ సర్వీస్ తో Phi-3ని ఫైన్-ట్యూన్ చేయడం](./md/03.FineTuning/Introduce_AzureML.md)
   - [Lora తో Phi-3ని ఫైన్-ట్యూన్ చేయడం](./md/03.FineTuning/FineTuning_Lora.md)
   - [QLora తో Phi-3ని ఫైన్-ట్యూన్ చేయడం](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Azure AI Foundry తో Phi-3ని ఫైన్-ట్యూన్ చేయడం](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Microsoft Foundry తో Phi-3ని ఫైన్-ట్యూన్ చేయడం](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Azure ML CLI/SDK తో Phi-3ని ఫైన్-ట్యూన్ చేయడం](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Microsoft Olive తో ఫైన్-ట్యూనింగ్](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Olive Hands-On Lab తో ఫైన్-ట్యూనింగ్](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@
 
 ## Phi మోడల్స్ ఉపయోగించడం  
 
-### Azure AI Foundryలో Phi  
+### Microsoft Foundryలో Phi  
 
-మీ వివిధ హార్డ్వేర్ పరికరాలలో Microsoft Phi ఎలా ఉపయోగించాలో, ఎలా E2E పరిష్కారాలు నిర్మించాలో మీరు తెలుసుకోవచ్చు. Phiను మీ కోసం అనుభవించడానికి, మొదట మోడల్స్‌తో ఆడుకొని మరియు మీ సందర్భాలకు అనుగుణంగా Phiను సవరించుట ప్రారంభించండి, [Azure AI Foundry Azure AI మోడల్ కాటలాగ్](https://aka.ms/phi3-azure-ai) ఉపయోగించండి. మీరు మరిన్ని వివరాలను [Azure AI Foundry](../../../../../../../md/02.QuickStart/AzureAIFoundry_QuickStart.md )తో ప్రారంభించడం ద్వారా తెలుసుకోవచ్చు.  
+మీ వివిధ హార్డ్వేర్ పరికరాలలో Microsoft Phi ఎలా ఉపయోగించాలో, ఎలా E2E పరిష్కారాలు నిర్మించాలో మీరు తెలుసుకోవచ్చు. Phiను మీ కోసం అనుభవించడానికి, మొదట మోడల్స్‌తో ఆడుకొని మరియు మీ సందర్భాలకు అనుగుణంగా Phiను సవరించుట ప్రారంభించండి, [Microsoft Foundry Azure AI మోడల్ కాటలాగ్](https://aka.ms/phi3-azure-ai) ఉపయోగించండి. మీరు మరిన్ని వివరాలను [Microsoft Foundry](../../../../../../../md/02.QuickStart/AzureAIFoundry_QuickStart.md )తో ప్రారంభించడం ద్వారా తెలుసుకోవచ్చు.  
 
 **ప్లేగ్రౌండ్**  
 ప్రతి మోడల్‌కు ప్రత్యేకమైన పరీక్షా వేదిక ఉంది [Azure AI Playground](https://aka.ms/try-phi3).  
@@ -289,10 +289,10 @@ Microsoft బాధ్యతాయుతమైన AIకి దారితీస
 
 ఈ నమూనాలో ఉపయోగించిన పెద్ద స్థాయి సహజ భాషా, చిత్రం, మరియు గాత్ర మోడల్స్ అన్యాయ, అనిర్వచనీయ లేదా దౌర్జన్యంగా ప్రవర్తించవచ్చు, తద్వారా నష్టాలను కలిగించవచ్చు. దయచేసి [Azure OpenAI సర్వీస్ Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) ని సలహాలు మరియు పరిమితులు తెలుసుకోవడానికి సంప్రదించండి.  
 
-ఈ ప్రమాదాలను తగ్గించడానికి సిఫారసు చేయబడిన విధానం మీ నిర్మాణంలో హానికారక ప్రవర్తనను గుర్తించి నిరోధించగల భద్రతా వ్యవస్థను చేర్చడం. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) స్వతంత్ర రక్షణ پرتంగా ఉండి, అనువర్తనాలు మరియు సేవలలో హానికరమైన వినియోగదారు-సృష్టించిన మరియు AI-సృష్టించిన కంటెంట్ను గుర్తించగలదు. Azure AI Content Safetyలో టెక్స్ట్ మరియు చిత్రం APIలు ఉన్నాయి, ఇవి హానికరమైన పదార్థాన్ని గుర్తించగలవు. Azure AI Foundryలో, Content Safety సేవ ద్వారా మీరు వివిధ శైలులలో హానికరమైన కంటెంట్ను గుర్తించడానికి నమూనా కోడ్‌ను వీక్షించవచ్చు, అన్వేషించవచ్చు మరియు ప్రయత్నించవచ్చు. ఈ క్రింది [క్విక్‌స్టార్ట్ డాక్యుమెంటేషన్](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) సేవకు అభ్యర్థనలు చేయడంలో మీకు మార్గనిర్దేశనం చేస్తుంది.
+ఈ ప్రమాదాలను తగ్గించడానికి సిఫారసు చేయబడిన విధానం మీ నిర్మాణంలో హానికారక ప్రవర్తనను గుర్తించి నిరోధించగల భద్రతా వ్యవస్థను చేర్చడం. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) స్వతంత్ర రక్షణ پرتంగా ఉండి, అనువర్తనాలు మరియు సేవలలో హానికరమైన వినియోగదారు-సృష్టించిన మరియు AI-సృష్టించిన కంటెంట్ను గుర్తించగలదు. Azure AI Content Safetyలో టెక్స్ట్ మరియు చిత్రం APIలు ఉన్నాయి, ఇవి హానికరమైన పదార్థాన్ని గుర్తించగలవు. Microsoft Foundryలో, Content Safety సేవ ద్వారా మీరు వివిధ శైలులలో హానికరమైన కంటెంట్ను గుర్తించడానికి నమూనా కోడ్‌ను వీక్షించవచ్చు, అన్వేషించవచ్చు మరియు ప్రయత్నించవచ్చు. ఈ క్రింది [క్విక్‌స్టార్ట్ డాక్యుమెంటేషన్](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) సేవకు అభ్యర్థనలు చేయడంలో మీకు మార్గనిర్దేశనం చేస్తుంది.
 మరొక దృష్టికోణం అనేది మొత్తం అనువర్తన పనితీరు. బహుళ-మోడ్ మరియు బహుళ-మోడళ్ళు ఉన్న అనువర్తనాలలో, పనితీరు అంటే మీరు మరియు మీ వినియోగదారులు అనుకున్నట్లుగా వ్యవస్థ పనిచేయడం, హానికరమైన అవుట్పుట్లను ఉత్పత్తి చేయకపోవడం అని అర్థం. మీ మొత్తం అనువర్తనం పనితీరును [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ఉపయోగించి అంచనా వెయ్యడం ముఖ్యము. మీరు కూడా [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) తో సృష్టించి అంచనా వేయగలరు.
 
-మీ AI అనువర్తనాన్ని మీ అభివృద్ధి వాతావరణంలో [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ఉపయోగించి అంచనా వేయవచ్చు. టెస్ట్ డేటాసెట్ లేదా లక్ష్యాన్ని తీసుకుని, మీ జనరేటివ్ AI అనువర్తనం జనరేషన్స్ ను నిర్మితమైన అంచనా వ్యవస్థలు లేదా మీ ఇష్టం తక్కువ చిత్తశుద్ధి అంచనా వ్యవస్థలతో అనే పరిమాణాత్మకంగా కొలవబడతాయి. Azure AI Evaluation SDK తో మీ వ్యవస్థను అంచనా వేసేందుకు ప్రారంభించడానికి మీరు [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) అనుసరించవచ్చు. ఒకసారి మీరు అంచనా నడుపుతది, [Azure AI Foundry లో ఫలితాలను ప్రతిబింబించవచ్చు](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+మీ AI అనువర్తనాన్ని మీ అభివృద్ధి వాతావరణంలో [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ఉపయోగించి అంచనా వేయవచ్చు. టెస్ట్ డేటాసెట్ లేదా లక్ష్యాన్ని తీసుకుని, మీ జనరేటివ్ AI అనువర్తనం జనరేషన్స్ ను నిర్మితమైన అంచనా వ్యవస్థలు లేదా మీ ఇష్టం తక్కువ చిత్తశుద్ధి అంచనా వ్యవస్థలతో అనే పరిమాణాత్మకంగా కొలవబడతాయి. Azure AI Evaluation SDK తో మీ వ్యవస్థను అంచనా వేసేందుకు ప్రారంభించడానికి మీరు [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) అనుసరించవచ్చు. ఒకసారి మీరు అంచనా నడుపుతది, [Microsoft Foundry లో ఫలితాలను ప్రతిబింబించవచ్చు](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## ట్రేడ్మార్కులు
 
@@ -303,11 +303,11 @@ Microsoft బాధ్యతాయుతమైన AIకి దారితీస
 
 మీరు చిక్కుకున్నట్లయితే లేదా AI అనువర్తనాలు నిర్మించడంపై ఏవైనా ప్రశ్నలు ఉంటే, చేరండి:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 ఉత్పత్తి అభిప్రాయం లేదా బిల్డింగ్ సమయంలో లోపాలు ఉంటే సందర్శించండి:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

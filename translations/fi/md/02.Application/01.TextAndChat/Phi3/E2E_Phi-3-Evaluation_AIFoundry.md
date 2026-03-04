@@ -1,14 +1,14 @@
-# Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Azure AI Foundryssa keskittyen Microsoftin vastuullisen tekoälyn periaatteisiin
+# Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Microsoft Foundryssa keskittyen Microsoftin vastuullisen tekoälyn periaatteisiin
 
-Tämä kokonaisvaltainen (E2E) esimerkki perustuu Microsoft Tech Communityn oppaaseen "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)".
+Tämä kokonaisvaltainen (E2E) esimerkki perustuu Microsoft Tech Communityn oppaaseen "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)".
 
 ## Yleiskatsaus
 
-### Miten voit arvioida hienosäädetyn Phi-3 / Phi-3.5 -mallin turvallisuutta ja suorituskykyä Azure AI Foundryssa?
+### Miten voit arvioida hienosäädetyn Phi-3 / Phi-3.5 -mallin turvallisuutta ja suorituskykyä Microsoft Foundryssa?
 
-Mallin hienosäätö voi joskus johtaa tahattomiin tai ei-toivottuihin vastauksiin. Jotta malli pysyy turvallisena ja tehokkaana, on tärkeää arvioida sen kyky tuottaa haitallista sisältöä sekä sen kyky antaa tarkkoja, asiaankuuluvia ja johdonmukaisia vastauksia. Tässä opetusohjelmassa opit, miten arvioida hienosäädetyn Phi-3 / Phi-3.5 -mallin turvallisuutta ja suorituskykyä, kun se on integroitu Prompt flow -työkaluun Azure AI Foundryssa.
+Mallin hienosäätö voi joskus johtaa tahattomiin tai ei-toivottuihin vastauksiin. Jotta malli pysyy turvallisena ja tehokkaana, on tärkeää arvioida sen kyky tuottaa haitallista sisältöä sekä sen kyky antaa tarkkoja, asiaankuuluvia ja johdonmukaisia vastauksia. Tässä opetusohjelmassa opit, miten arvioida hienosäädetyn Phi-3 / Phi-3.5 -mallin turvallisuutta ja suorituskykyä, kun se on integroitu Prompt flow -työkaluun Microsoft Foundryssa.
 
-Tässä on Azure AI Foundryn arviointiprosessi.
+Tässä on Microsoft Foundryn arviointiprosessi.
 
 ![Architecture of tutorial.](../../../../../../translated_images/fi/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@ Tässä on Azure AI Foundryn arviointiprosessi.
 
 ### Sisällysluettelo
 
-1. [**Tapaus 1: Johdatus Azure AI Foundryn Prompt flow -arviointiin**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Tapaus 1: Johdatus Microsoft Foundryn Prompt flow -arviointiin**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Johdatus turvallisuusarviointiin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Johdatus suorituskyvyn arviointiin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Tapaus 2: Phi-3 / Phi-3.5 -mallin arviointi Azure AI Foundryssa**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Tapaus 2: Phi-3 / Phi-3.5 -mallin arviointi Microsoft Foundryssa**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Ennen aloittamista](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Ota Azure OpenAI käyttöön Phi-3 / Phi-3.5 -mallin arviointia varten](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Azure AI Foundryn Prompt flow -arvioinnilla](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Microsoft Foundryn Prompt flow -arvioinnilla](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Onnittelut!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Tapaus 1: Johdatus Azure AI Foundryn Prompt flow -arviointiin**
+## **Tapaus 1: Johdatus Microsoft Foundryn Prompt flow -arviointiin**
 
 ### Johdatus turvallisuusarviointiin
 
-Jotta tekoälymallisi olisi eettinen ja turvallinen, on tärkeää arvioida sitä Microsoftin vastuullisen tekoälyn periaatteiden mukaisesti. Azure AI Foundryssa turvallisuusarvioinnit mahdollistavat mallin haavoittuvuuden arvioinnin jailbreak-hyökkäyksiä vastaan sekä sen kyvyn tuottaa haitallista sisältöä, mikä on suoraan linjassa näiden periaatteiden kanssa.
+Jotta tekoälymallisi olisi eettinen ja turvallinen, on tärkeää arvioida sitä Microsoftin vastuullisen tekoälyn periaatteiden mukaisesti. Microsoft Foundryssa turvallisuusarvioinnit mahdollistavat mallin haavoittuvuuden arvioinnin jailbreak-hyökkäyksiä vastaan sekä sen kyvyn tuottaa haitallista sisältöä, mikä on suoraan linjassa näiden periaatteiden kanssa.
 
 ![Safaty evaluation.](../../../../../../translated_images/fi/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ Microsoftin vastuullisen tekoälyn periaatteet ovat:
 
 #### Turvallisuusmittarit
 
-Tässä opetusohjelmassa arvioit hienosäädetyn Phi-3 -mallin turvallisuutta Azure AI Foundryn turvallisuusmittareilla. Nämä mittarit auttavat sinua arvioimaan mallin kykyä tuottaa haitallista sisältöä ja sen haavoittuvuutta jailbreak-hyökkäyksille. Turvallisuusmittarit sisältävät:
+Tässä opetusohjelmassa arvioit hienosäädetyn Phi-3 -mallin turvallisuutta Microsoft Foundryn turvallisuusmittareilla. Nämä mittarit auttavat sinua arvioimaan mallin kykyä tuottaa haitallista sisältöä ja sen haavoittuvuutta jailbreak-hyökkäyksille. Turvallisuusmittarit sisältävät:
 
 - **Itseä vahingoittava sisältö**: Arvioi, onko mallilla taipumusta tuottaa itseä vahingoittavaan sisältöön liittyvää materiaalia.
 - **Vihamielinen ja epäoikeudenmukainen sisältö**: Arvioi, onko mallilla taipumusta tuottaa vihamielistä tai epäoikeudenmukaista sisältöä.
@@ -88,7 +88,7 @@ Näiden osa-alueiden arviointi varmistaa, että tekoälymalli ei tuota haitallis
 
 ### Johdatus suorituskyvyn arviointiin
 
-Jotta tekoälymallisi toimisi odotetusti, on tärkeää arvioida sen suorituskykyä suorituskykymittareiden avulla. Azure AI Foundryssa suorituskyvyn arvioinnit mahdollistavat mallin tehokkuuden arvioinnin tarkkojen, asiaankuuluvien ja johdonmukaisten vastausten tuottamisessa.
+Jotta tekoälymallisi toimisi odotetusti, on tärkeää arvioida sen suorituskykyä suorituskykymittareiden avulla. Microsoft Foundryssa suorituskyvyn arvioinnit mahdollistavat mallin tehokkuuden arvioinnin tarkkojen, asiaankuuluvien ja johdonmukaisten vastausten tuottamisessa.
 
 ![Safaty evaluation.](../../../../../../translated_images/fi/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Jotta tekoälymallisi toimisi odotetusti, on tärkeää arvioida sen suorituskyk
 
 #### Suorituskykymittarit
 
-Tässä opetusohjelmassa arvioit hienosäädetyn Phi-3 / Phi-3.5 -mallin suorituskykyä Azure AI Foundryn suorituskykymittareilla. Nämä mittarit auttavat sinua arvioimaan mallin tehokkuutta tarkkojen, asiaankuuluvien ja johdonmukaisten vastausten tuottamisessa. Suorituskykymittarit sisältävät:
+Tässä opetusohjelmassa arvioit hienosäädetyn Phi-3 / Phi-3.5 -mallin suorituskykyä Microsoft Foundryn suorituskykymittareilla. Nämä mittarit auttavat sinua arvioimaan mallin tehokkuutta tarkkojen, asiaankuuluvien ja johdonmukaisten vastausten tuottamisessa. Suorituskykymittarit sisältävät:
 
 - **Perusteltavuus**: Arvioi, kuinka hyvin tuotetut vastaukset vastaavat syötteen lähdetietoa.
 - **Asiaankuuluvuus**: Arvioi tuotettujen vastausten merkityksellisyyttä annettuihin kysymyksiin nähden.
@@ -109,34 +109,34 @@ Nämä mittarit auttavat sinua arvioimaan mallin tehokkuutta tarkkojen, asiaanku
 
 ![Evaluate based on performance.](../../../../../../translated_images/fi/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **Tapaus 2: Phi-3 / Phi-3.5 -mallin arviointi Azure AI Foundryssa**
+## **Tapaus 2: Phi-3 / Phi-3.5 -mallin arviointi Microsoft Foundryssa**
 
 ### Ennen aloittamista
 
-Tämä opetusohjelma jatkaa aiempia blogikirjoituksia, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ja "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Näissä kirjoituksissa kävimme läpi Phi-3 / Phi-3.5 -mallin hienosäädön Azure AI Foundryssa ja sen integroinnin Prompt flow -työkaluun.
+Tämä opetusohjelma jatkaa aiempia blogikirjoituksia, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ja "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Näissä kirjoituksissa kävimme läpi Phi-3 / Phi-3.5 -mallin hienosäädön Microsoft Foundryssa ja sen integroinnin Prompt flow -työkaluun.
 
-Tässä opetusohjelmassa otat käyttöön Azure OpenAI -mallin arvioijana Azure AI Foundryssa ja käytät sitä hienosäädetyn Phi-3 / Phi-3.5 -mallisi arviointiin.
+Tässä opetusohjelmassa otat käyttöön Azure OpenAI -mallin arvioijana Microsoft Foundryssa ja käytät sitä hienosäädetyn Phi-3 / Phi-3.5 -mallisi arviointiin.
 
 Ennen tämän opetusohjelman aloittamista varmista, että sinulla on seuraavat esivaatimukset, kuten aiemmissa opetusohjelmissa kuvattu:
 
 1. Valmis aineisto hienosäädetyn Phi-3 / Phi-3.5 -mallin arviointiin.
 1. Phi-3 / Phi-3.5 -malli, joka on hienosäädetty ja otettu käyttöön Azure Machine Learningissä.
-1. Prompt flow, joka on integroitu hienosäädettyyn Phi-3 / Phi-3.5 -malliisi Azure AI Foundryssa.
+1. Prompt flow, joka on integroitu hienosäädettyyn Phi-3 / Phi-3.5 -malliisi Microsoft Foundryssa.
 
 > [!NOTE]
 > Käytät *test_data.jsonl* -tiedostoa, joka sijaitsee **ULTRACHAT_200k** -aineiston data-kansiossa ja joka ladattiin aiemmissa blogikirjoituksissa, aineistona hienosäädetyn Phi-3 / Phi-3.5 -mallin arviointiin.
 
-#### Integroi mukautettu Phi-3 / Phi-3.5 -malli Prompt flow -työkaluun Azure AI Foundryssa (koodipohjainen lähestymistapa)
+#### Integroi mukautettu Phi-3 / Phi-3.5 -malli Prompt flow -työkaluun Microsoft Foundryssa (koodipohjainen lähestymistapa)
 > [!NOTE]
-> Jos seurasit vähäkoodista lähestymistapaa, joka on kuvattu artikkelissa "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", voit ohittaa tämän harjoituksen ja siirtyä seuraavaan.
+> Jos seurasit vähäkoodista lähestymistapaa, joka on kuvattu artikkelissa "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", voit ohittaa tämän harjoituksen ja siirtyä seuraavaan.
 > Kuitenkin, jos seurasit koodikeskeistä lähestymistapaa, joka on kuvattu artikkelissa "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" hienosäätääksesi ja ottaaksesi käyttöön Phi-3 / Phi-3.5 -mallisi, mallin yhdistäminen Prompt Flow'hun tapahtuu hieman eri tavalla. Opit tämän prosessin tässä harjoituksessa.
-Jatkaaksesi sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -mallisi Prompt flow'hun Azure AI Foundryssa.
+Jatkaaksesi sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -mallisi Prompt flow'hun Microsoft Foundryssa.
 
-#### Luo Azure AI Foundry Hub
+#### Luo Microsoft Foundry Hub
 
-Sinun täytyy luoda Hub ennen projektin luomista. Hub toimii kuin resurssiryhmä, jonka avulla voit järjestää ja hallita useita projekteja Azure AI Foundryssa.
+Sinun täytyy luoda Hub ennen projektin luomista. Hub toimii kuin resurssiryhmä, jonka avulla voit järjestää ja hallita useita projekteja Microsoft Foundryssa.
 
-1. Kirjaudu sisään [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Kirjaudu sisään [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Valitse vasemman sivupalkin välilehdeltä **All hubs**.
 
@@ -157,7 +157,7 @@ Sinun täytyy luoda Hub ennen projektin luomista. Hub toimii kuin resurssiryhmä
 
 1. Valitse **Next**.
 
-#### Luo Azure AI Foundry -projekti
+#### Luo Microsoft Foundry -projekti
 
 1. Valitse luomassasi Hubissa vasemman sivupalkin välilehdeltä **All projects**.
 
@@ -197,9 +197,9 @@ Jotta voit integroida mukautetun Phi-3 / Phi-3.5 -mallisi Prompt flow'hun, sinun
 
 #### Lisää mukautettu yhteys
 
-1. Siirry osoitteeseen [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Siirry osoitteeseen [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Siirry luomaasi Azure AI Foundry -projektiin.
+1. Siirry luomaasi Microsoft Foundry -projektiin.
 
 1. Valitse luomassasi projektissa vasemman sivupalkin välilehdeltä **Settings**.
 
@@ -225,9 +225,9 @@ Jotta voit integroida mukautetun Phi-3 / Phi-3.5 -mallisi Prompt flow'hun, sinun
 
 #### Luo Prompt flow
 
-Olet lisännyt mukautetun yhteyden Azure AI Foundryssa. Luodaan nyt Prompt flow seuraavien ohjeiden mukaan. Tämän jälkeen yhdistät Prompt flow'n mukautettuun yhteyteen, jotta voit käyttää hienosäädettyä mallia Prompt flow'ssa.
+Olet lisännyt mukautetun yhteyden Microsoft Foundryssa. Luodaan nyt Prompt flow seuraavien ohjeiden mukaan. Tämän jälkeen yhdistät Prompt flow'n mukautettuun yhteyteen, jotta voit käyttää hienosäädettyä mallia Prompt flow'ssa.
 
-1. Siirry luomaasi Azure AI Foundry -projektiin.
+1. Siirry luomaasi Microsoft Foundry -projektiin.
 
 1. Valitse vasemman sivupalkin välilehdeltä **Prompt flow**.
 
@@ -344,7 +344,7 @@ Sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -malli Prompt flow'hun.
     ![Paste prompt flow code.](../../../../../../translated_images/fi/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Lisätietoja Prompt flow'n käytöstä Azure AI Foundryssa löydät osoitteesta [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Lisätietoja Prompt flow'n käytöstä Microsoft Foundryssa löydät osoitteesta [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Valitse **Chat input** ja **Chat output** ottaaksesi keskustelun mallisi kanssa käyttöön.
 
@@ -385,13 +385,13 @@ Sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -malli Prompt flow'hun.
 
 ### Ota käyttöön Azure OpenAI Phi-3 / Phi-3.5 -mallin arviointia varten
 
-Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa käyttöön Azure OpenAI -malli. Tätä mallia käytetään Phi-3 / Phi-3.5 -mallin suorituskyvyn arviointiin.
+Phi-3 / Phi-3.5 -mallin arvioimiseksi Microsoft Foundryssa sinun täytyy ottaa käyttöön Azure OpenAI -malli. Tätä mallia käytetään Phi-3 / Phi-3.5 -mallin suorituskyvyn arviointiin.
 
 #### Ota Azure OpenAI käyttöön
 
-1. Kirjaudu sisään [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Kirjaudu sisään [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Siirry luomaasi Azure AI Foundry -projektiin.
+1. Siirry luomaasi Microsoft Foundry -projektiin.
 
     ![Select Project.](../../../../../../translated_images/fi/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -409,13 +409,13 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
 
 1. Valitse **Confirm**.
 
-### Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Azure AI Foundryn Prompt flow -arvioinnilla
+### Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Microsoft Foundryn Prompt flow -arvioinnilla
 
 ### Aloita uusi arviointi
 
-1. Siirry osoitteeseen [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Siirry osoitteeseen [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Siirry luomaasi Azure AI Foundry -projektiin.
+1. Siirry luomaasi Microsoft Foundry -projektiin.
 
     ![Select Project.](../../../../../../translated_images/fi/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -498,7 +498,7 @@ Kun arviointi on valmis, voit tarkastella tuloksia sekä suorituskyky- että tur
 
 ### Olet suorittanut tämän opetusohjelman
 
-Olet onnistuneesti arvioinut hienosäädetyn Phi-3 -mallin, joka on integroitu Prompt flow -työkaluun Azure AI Foundryssa. Tämä on tärkeä askel varmistettaessa, että tekoälymallisi eivät ainoastaan toimi hyvin, vaan myös noudattavat Microsoftin Responsible AI -periaatteita, auttaen sinua rakentamaan luotettavia ja vastuullisia tekoälysovelluksia.
+Olet onnistuneesti arvioinut hienosäädetyn Phi-3 -mallin, joka on integroitu Prompt flow -työkaluun Microsoft Foundryssa. Tämä on tärkeä askel varmistettaessa, että tekoälymallisi eivät ainoastaan toimi hyvin, vaan myös noudattavat Microsoftin Responsible AI -periaatteita, auttaen sinua rakentamaan luotettavia ja vastuullisia tekoälysovelluksia.
 
 ![Architecture.](../../../../../../translated_images/fi/architecture.10bec55250f5d6a4.webp)
 
@@ -508,8 +508,8 @@ Siivoa Azure-resurssisi välttääksesi ylimääräiset maksut tilillesi. Mene A
 
 - Azure Machine learning -resurssi.
 - Azure Machine learning -mallin päätepiste.
-- Azure AI Foundry Project -resurssi.
-- Azure AI Foundry Prompt flow -resurssi.
+- Microsoft Foundry Project -resurssi.
+- Microsoft Foundry Prompt flow -resurssi.
 
 ### Seuraavat askeleet
 
@@ -517,13 +517,13 @@ Siivoa Azure-resurssisi välttääksesi ylimääräiset maksut tilillesi. Mene A
 
 - [Assess AI systems by using the Responsible AI dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Evaluation and monitoring metrics for generative AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow documentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Koulutusmateriaali
 
 - [Introduction to Microsoft's Responsible AI Approach](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Introduction to Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Introduction to Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Viitteet
 

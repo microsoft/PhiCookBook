@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/sw/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Jukwaa** Hii inajumuisha teknolojia mbalimbali kama Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, na ONNX Runtime.
+**Jukwaa** Hii inajumuisha teknolojia mbalimbali kama Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, na ONNX Runtime.
 
 **Miundombinu** Hii inajumuisha CPU na FPGA, ambazo ni muhimu kwa mchakato wa urekebishaji wa kina. Nikuonyeshe alama za kila moja ya teknolojia hizi.
 

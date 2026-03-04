@@ -2,7 +2,7 @@
 
 ![MS ಸೇವೆಗಳೊಂದಿಗೆ ಫೈನ್ ಟ್ಯೂನಿಂಗ್](../../../../translated_images/kn/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**ಪ್ಲ್ಯಾಟ್‌ಫಾರ್ಮ್** ಇದರಲ್ಲಿ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, ಮತ್ತು ONNX Runtime ಮುಂತಾದ ವಿವಿಧ ತಂತ್ರಜ್ಞಾನಗಳು ಸೇರಿವೆ. 
+**ಪ್ಲ್ಯಾಟ್‌ಫಾರ್ಮ್** ಇದರಲ್ಲಿ Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, ಮತ್ತು ONNX Runtime ಮುಂತಾದ ವಿವಿಧ ತಂತ್ರಜ್ಞಾನಗಳು ಸೇರಿವೆ. 
 
 **ಇನ್ಫ್ರಾಸ್ಟ್ರಕ್ಚರ್** ಇದರಲ್ಲಿ CPU ಮತ್ತು FPGA ಸೇರಿವೆ, ಇವು ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ ಪ್ರಕ್ರಿಯೆಗೆ ಅತ್ಯಾವಶ್ಯಕವಾಗಿವೆ. ಈ ತಂತ್ರಜ್ಞಾನಗಳ ಪ್ರತಿಯೊಂದರ ಐಕಾನ್‌ಗಳನ್ನು ನಾನು ತೋರಿಸುತ್ತೇನೆ.
 

@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/zh-HK/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**平台** 包括多種技術，如 Azure AI Foundry、Azure Machine Learning、AI 工具、Kaito 及 ONNX Runtime。
+**平台** 包括多種技術，如 Microsoft Foundry、Azure Machine Learning、AI 工具、Kaito 及 ONNX Runtime。
 
 **基礎設施** 包括 CPU 和 FPGA，這些都是微調過程中不可或缺的部分。讓我展示這些技術的圖示給你看。
 

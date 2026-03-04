@@ -1,17 +1,17 @@
-# Fanya Uboreshaji na Unganisha mifano ya Kibinafsi ya Phi-3 na Prompt flow katika Azure AI Foundry
+# Fanya Uboreshaji na Unganisha mifano ya Kibinafsi ya Phi-3 na Prompt flow katika Microsoft Foundry
 
-Mfano huu wa end-to-end (E2E) unategemea mwongozo "[Fanya Uboreshaji na Unganisha Mifano ya Kibinafsi ya Phi-3 na Prompt Flow katika Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" kutoka Microsoft Tech Community. Unatambulisha michakato ya uboreshaji, utumaji, na unganisho wa mifano ya Kibinafsi ya Phi-3 na Prompt flow katika Azure AI Foundry.
+Mfano huu wa end-to-end (E2E) unategemea mwongozo "[Fanya Uboreshaji na Unganisha Mifano ya Kibinafsi ya Phi-3 na Prompt Flow katika Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" kutoka Microsoft Tech Community. Unatambulisha michakato ya uboreshaji, utumaji, na unganisho wa mifano ya Kibinafsi ya Phi-3 na Prompt flow katika Microsoft Foundry.
 Tofauti na mfano wa E2E, "[Fanya Uboreshaji na Unganisha Mifano ya Kibinafsi ya Phi-3 na Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", ambao ulihusisha kuendesha msimbo kijiweni, mafunzo haya yanazingatia kabisa uboreshaji na unganisho wa mfano wako ndani ya Azure AI / ML Studio.
 
 ## Muhtasari
 
-Katika mfano huu wa E2E, utajifunza jinsi ya kufanya uboreshaji wa mfano wa Phi-3 na kuuingiza na Prompt flow katika Azure AI Foundry. Kwa kutumia Azure AI / ML Studio, utaanzisha mtiririko wa kazi wa kutuma na kutumia mifano ya AI ya kibinafsi. Mfano huu wa E2E umegawanywa katika matukio matatu:
+Katika mfano huu wa E2E, utajifunza jinsi ya kufanya uboreshaji wa mfano wa Phi-3 na kuuingiza na Prompt flow katika Microsoft Foundry. Kwa kutumia Azure AI / ML Studio, utaanzisha mtiririko wa kazi wa kutuma na kutumia mifano ya AI ya kibinafsi. Mfano huu wa E2E umegawanywa katika matukio matatu:
 
 **Hali ya 1: Tengeneza rasilimali za Azure na Jiandae kwa uboreshaji**
 
 **Hali ya 2: Fanya uboreshaji wa mfano wa Phi-3 na Utumie katika Azure Machine Learning Studio**
 
-**Hali ya 3: Unganisha na Prompt flow na Zungumza na mfano wako wa kibinafsi katika Azure AI Foundry**
+**Hali ya 3: Unganisha na Prompt flow na Zungumza na mfano wako wa kibinafsi katika Microsoft Foundry**
 
 Hapa kuna muhtasari wa mfano huu wa E2E.
 
@@ -30,7 +30,7 @@ Hapa kuna muhtasari wa mfano huu wa E2E.
     - [Fanya uboreshaji wa mfano wa Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Tumia mfano wa Phi-3 ulioboreshwa](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Hali ya 3: Unganisha na Prompt flow na Zungumza na mfano wako wa kibinafsi katika Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Hali ya 3: Unganisha na Prompt flow na Zungumza na mfano wako wa kibinafsi katika Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Unganisha mfano wa kibinafsi wa Phi-3 na Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Zungumza na mfano wako wa kibinafsi wa Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ Katika zoezi hili, utafanya:
 > ![Weka trafiki.](../../../../../../translated_images/sw/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Hali ya 3: Unganisha na Prompt flow na Zungumza na model yako maalum katika Azure AI Foundry
+## Hali ya 3: Unganisha na Prompt flow na Zungumza na model yako maalum katika Microsoft Foundry
 
 ### Unganisha model maalum ya Phi-3 na Prompt flow
 
@@ -552,8 +552,8 @@ Baada ya kufanikisha kutuma model yako iliyofine-tune, sasa unaweza kuunganisha 
 
 Katika zoezi hili, utafanya:
 
-- Tengeneza Azure AI Foundry Hub.
-- Tengeneza Mradi wa Azure AI Foundry.
+- Tengeneza Microsoft Foundry Hub.
+- Tengeneza Mradi wa Microsoft Foundry.
 - Tengeneza Prompt flow.
 - Ongeza muunganisho maalum kwa model iliyofine-tune ya Phi-3.
 - Sanidi Prompt flow kuzungumza na model yako maalum ya Phi-3.
@@ -561,11 +561,11 @@ Katika zoezi hili, utafanya:
 > [!NOTE]
 > Unaweza pia kuunganisha na Promptflow ukitumia Azure ML Studio. Mchakato huo huo wa kuunganisha unaweza kutumika katika Azure ML Studio.
 
-#### Tengeneza Azure AI Foundry Hub
+#### Tengeneza Microsoft Foundry Hub
 
-Unahitaji kutengeneza Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Kikundi cha Rasilimali, kuruhusu kupanga na kusimamia Miradi mingi ndani ya Azure AI Foundry.
+Unahitaji kutengeneza Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Kikundi cha Rasilimali, kuruhusu kupanga na kusimamia Miradi mingi ndani ya Microsoft Foundry.
 
-1. Tembelea [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Tembelea [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Chagua **All hubs** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -585,7 +585,7 @@ Unahitaji kutengeneza Hub kabla ya kuunda Mradi. Hub hufanya kazi kama Kikundi c
 
 1. Chagua **Ifuatayo**.
 
-#### Unda Mradi wa Azure AI Foundry
+#### Unda Mradi wa Microsoft Foundry
 
 1. Katika Hub uliyotengeneza, chagua **Miradi yote** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -625,9 +625,9 @@ Ili kuunganisha modeli yako maalum ya Phi-3 na mtiririko wa Prompt, unahitaji ku
 
 #### Ongeza Muunganisho Maalum
 
-1. Tembelea [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Tembelea [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Elekea kwenye mradi wa Azure AI Foundry ulilotengeneza.
+1. Elekea kwenye mradi wa Microsoft Foundry ulilotengeneza.
 
 1. Katika Mradi ulilotengeneza, chagua **Mipangilio** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -653,9 +653,9 @@ Ili kuunganisha modeli yako maalum ya Phi-3 na mtiririko wa Prompt, unahitaji ku
 
 #### Unda Mtiririko wa Prompt
 
-Umeongeza muunganisho maalum katika Azure AI Foundry. Sasa, tuunde Mtiririko wa Prompt kwa kufuata hatua zifuatazo. Kisha, utaunganisha Mtiririko huu wa Prompt na muunganisho maalum ili uweze kutumia modeli iliyosasishwa vizuri ndani ya Mtiririko wa Prompt.
+Umeongeza muunganisho maalum katika Microsoft Foundry. Sasa, tuunde Mtiririko wa Prompt kwa kufuata hatua zifuatazo. Kisha, utaunganisha Mtiririko huu wa Prompt na muunganisho maalum ili uweze kutumia modeli iliyosasishwa vizuri ndani ya Mtiririko wa Prompt.
 
-1. Elekea kwenye mradi wa Azure AI Foundry ulilotengeneza.
+1. Elekea kwenye mradi wa Microsoft Foundry ulilotengeneza.
 
 1. Chagua **Mtiririko wa Prompt** kutoka kwenye kichupo cha upande wa kushoto.
 
@@ -774,7 +774,7 @@ Unahitaji kuunganisha modeli iliyosasishwa vizuri ya Phi-3 katika Mtiririko wa P
     ![Paste prompt flow code.](../../../../../../translated_images/sw/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Kwa habari za kina zaidi kuhusu kutumia Mtiririko wa Prompt katika Azure AI Foundry, unaweza rejelea [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Kwa habari za kina zaidi kuhusu kutumia Mtiririko wa Prompt katika Microsoft Foundry, unaweza rejelea [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Chagua **Kiingilio cha mazungumzo**, **Matokeo ya mazungumzo** kuwezesha mazungumzo na modeli yako.
 

@@ -1,6 +1,6 @@
-# Fine-tuning του Phi-3 με το Azure AI Foundry
+# Fine-tuning του Phi-3 με το Microsoft Foundry
 
-Ας δούμε πώς να κάνουμε fine-tuning στο γλωσσικό μοντέλο Phi-3 Mini της Microsoft χρησιμοποιώντας το Azure AI Foundry. Το fine-tuning σας επιτρέπει να προσαρμόσετε το Phi-3 Mini σε συγκεκριμένες εργασίες, καθιστώντας το πιο ισχυρό και ευαίσθητο στο πλαίσιο.
+Ας δούμε πώς να κάνουμε fine-tuning στο γλωσσικό μοντέλο Phi-3 Mini της Microsoft χρησιμοποιώντας το Microsoft Foundry. Το fine-tuning σας επιτρέπει να προσαρμόσετε το Phi-3 Mini σε συγκεκριμένες εργασίες, καθιστώντας το πιο ισχυρό και ευαίσθητο στο πλαίσιο.
 
 ## Σκέψεις
 
@@ -22,7 +22,7 @@
 - Μια συνδρομή Azure. Αν δεν έχετε, δημιουργήστε έναν [λογαριασμό Azure με πληρωμή ανά χρήση](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) για να ξεκινήσετε.
 
 - Ένα [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Οι έλεγχοι πρόσβασης βάσει ρόλων του Azure (Azure RBAC) χρησιμοποιούνται για να δώσουν πρόσβαση σε λειτουργίες στο Azure AI Foundry. Για να εκτελέσετε τα βήματα αυτού του άρθρου, ο λογαριασμός χρήστη σας πρέπει να έχει ανατεθεί ο __ρόλος Azure AI Developer__ στην ομάδα πόρων.
+- Οι έλεγχοι πρόσβασης βάσει ρόλων του Azure (Azure RBAC) χρησιμοποιούνται για να δώσουν πρόσβαση σε λειτουργίες στο Microsoft Foundry. Για να εκτελέσετε τα βήματα αυτού του άρθρου, ο λογαριασμός χρήστη σας πρέπει να έχει ανατεθεί ο __ρόλος Azure AI Developer__ στην ομάδα πόρων.
 
 ### Εγγραφή παρόχου συνδρομής
 
@@ -58,17 +58,17 @@
 
 Ο υποστηριζόμενος τύπος αρχείου είναι JSON Lines. Τα αρχεία ανεβαίνουν στον προεπιλεγμένο αποθηκευτικό χώρο και γίνονται διαθέσιμα στο project σας.
 
-## Fine-Tuning του Phi-3 με το Azure AI Foundry
+## Fine-Tuning του Phi-3 με το Microsoft Foundry
 
-Το Azure AI Foundry σας επιτρέπει να προσαρμόσετε μεγάλα γλωσσικά μοντέλα στα δικά σας δεδομένα μέσω της διαδικασίας που ονομάζεται fine-tuning. Το fine-tuning προσφέρει σημαντική αξία επιτρέποντας την εξατομίκευση και βελτιστοποίηση για συγκεκριμένες εργασίες και εφαρμογές. Αυτό οδηγεί σε βελτιωμένη απόδοση, οικονομία κόστους, μειωμένη καθυστέρηση και προσαρμοσμένα αποτελέσματα.
+Το Microsoft Foundry σας επιτρέπει να προσαρμόσετε μεγάλα γλωσσικά μοντέλα στα δικά σας δεδομένα μέσω της διαδικασίας που ονομάζεται fine-tuning. Το fine-tuning προσφέρει σημαντική αξία επιτρέποντας την εξατομίκευση και βελτιστοποίηση για συγκεκριμένες εργασίες και εφαρμογές. Αυτό οδηγεί σε βελτιωμένη απόδοση, οικονομία κόστους, μειωμένη καθυστέρηση και προσαρμοσμένα αποτελέσματα.
 
 ![Finetune AI Foundry](../../../../translated_images/el/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Δημιουργία νέου project
 
-1. Συνδεθείτε στο [Azure AI Foundry](https://ai.azure.com).
+1. Συνδεθείτε στο [Microsoft Foundry](https://ai.azure.com).
 
-1. Επιλέξτε **+New project** για να δημιουργήσετε νέο project στο Azure AI Foundry.
+1. Επιλέξτε **+New project** για να δημιουργήσετε νέο project στο Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/el/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@
 
 Πριν το fine-tuning, συγκεντρώστε ή δημιουργήστε ένα σύνολο δεδομένων σχετικό με την εργασία σας, όπως οδηγίες συνομιλίας, ζεύγη ερωτήσεων-απαντήσεων ή οποιοδήποτε άλλο σχετικό κείμενο. Καθαρίστε και προεπεξεργαστείτε τα δεδομένα αφαιρώντας θόρυβο, διαχειριζόμενοι ελλείποντα δεδομένα και κάνοντας tokenization του κειμένου.
 
-### Fine-tuning των μοντέλων Phi-3 στο Azure AI Foundry
+### Fine-tuning των μοντέλων Phi-3 στο Microsoft Foundry
 
 > [!NOTE]
 > Το fine-tuning των μοντέλων Phi-3 υποστηρίζεται αυτή τη στιγμή μόνο σε projects που βρίσκονται στην περιοχή East US 2.
@@ -121,7 +121,7 @@
 1. Εκτελέστε τις παρακάτω ενέργειες:
 
     - Επιλέξτε τον **τύπο εργασίας** ως **Chat completion**.
-    - Επιλέξτε τα **δεδομένα εκπαίδευσης** που θέλετε να χρησιμοποιήσετε. Μπορείτε να τα ανεβάσετε μέσω του Azure AI Foundry ή από το τοπικό σας περιβάλλον.
+    - Επιλέξτε τα **δεδομένα εκπαίδευσης** που θέλετε να χρησιμοποιήσετε. Μπορείτε να τα ανεβάσετε μέσω του Microsoft Foundry ή από το τοπικό σας περιβάλλον.
 
     ![FineTuneSelect](../../../../translated_images/el/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@
 
     ![FineTuneSelect](../../../../translated_images/el/select-submit.0a3802d581bac271.webp)
 
-1. Μόλις το μοντέλο σας ολοκληρώσει το fine-tuning, η κατάσταση θα εμφανιστεί ως **Completed**, όπως φαίνεται στην εικόνα παρακάτω. Τώρα μπορείτε να αναπτύξετε το μοντέλο και να το χρησιμοποιήσετε στην εφαρμογή σας, στο playground ή στο prompt flow. Για περισσότερες πληροφορίες, δείτε [Πώς να αναπτύξετε την οικογένεια μικρών γλωσσικών μοντέλων Phi-3 με το Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Μόλις το μοντέλο σας ολοκληρώσει το fine-tuning, η κατάσταση θα εμφανιστεί ως **Completed**, όπως φαίνεται στην εικόνα παρακάτω. Τώρα μπορείτε να αναπτύξετε το μοντέλο και να το χρησιμοποιήσετε στην εφαρμογή σας, στο playground ή στο prompt flow. Για περισσότερες πληροφορίες, δείτε [Πώς να αναπτύξετε την οικογένεια μικρών γλωσσικών μοντέλων Phi-3 με το Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/el/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Για πιο αναλυτικές πληροφορίες σχετικά με το fine-tuning του Phi-3, επισκεφθείτε το [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Για πιο αναλυτικές πληροφορίες σχετικά με το fine-tuning του Phi-3, επισκεφθείτε το [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Καθαρισμός των fine-tuned μοντέλων σας
 
-Μπορείτε να διαγράψετε ένα fine-tuned μοντέλο από τη λίστα μοντέλων fine-tuning στο [Azure AI Foundry](https://ai.azure.com) ή από τη σελίδα λεπτομερειών του μοντέλου. Επιλέξτε το fine-tuned μοντέλο που θέλετε να διαγράψετε από τη σελίδα Fine-tuning και μετά πατήστε το κουμπί Delete για να το διαγράψετε.
+Μπορείτε να διαγράψετε ένα fine-tuned μοντέλο από τη λίστα μοντέλων fine-tuning στο [Microsoft Foundry](https://ai.azure.com) ή από τη σελίδα λεπτομερειών του μοντέλου. Επιλέξτε το fine-tuned μοντέλο που θέλετε να διαγράψετε από τη σελίδα Fine-tuning και μετά πατήστε το κουμπί Delete για να το διαγράψετε.
 
 > [!NOTE]
 > Δεν μπορείτε να διαγράψετε ένα προσαρμοσμένο μοντέλο αν έχει ενεργή ανάπτυξη. Πρέπει πρώτα να διαγράψετε την ανάπτυξη του μοντέλου πριν διαγράψετε το προσαρμοσμένο μοντέλο.
@@ -163,7 +163,7 @@
 
 ### Σκέψεις για κόστος και όρια στα μοντέλα Phi-3 που έχουν fine-tune ως υπηρεσία
 
-Τα μοντέλα Phi που έχουν fine-tune ως υπηρεσία προσφέρονται από τη Microsoft και είναι ενσωματωμένα στο Azure AI Foundry για χρήση. Μπορείτε να βρείτε τις τιμές κατά την [ανάπτυξη](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ή το fine-tuning των μοντέλων στην καρτέλα Τιμολόγηση και Όροι στον οδηγό ανάπτυξης.
+Τα μοντέλα Phi που έχουν fine-tune ως υπηρεσία προσφέρονται από τη Microsoft και είναι ενσωματωμένα στο Microsoft Foundry για χρήση. Μπορείτε να βρείτε τις τιμές κατά την [ανάπτυξη](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ή το fine-tuning των μοντέλων στην καρτέλα Τιμολόγηση και Όροι στον οδηγό ανάπτυξης.
 
 ## Φιλτράρισμα περιεχομένου
 
@@ -204,7 +204,7 @@
 
 ## Ανάπτυξη
 
-- Αναπτύξτε ως Web Service: Αναπτύξτε το fine-tuned μοντέλο σας ως web service στο Azure AI Foundry.
+- Αναπτύξτε ως Web Service: Αναπτύξτε το fine-tuned μοντέλο σας ως web service στο Microsoft Foundry.
 - Δοκιμάστε το Endpoint: Στείλτε δοκιμαστικά ερωτήματα στο αναπτυγμένο endpoint για να επαληθεύσετε τη λειτουργικότητά του.
 
 ## Επανάληψη και Βελτίωση

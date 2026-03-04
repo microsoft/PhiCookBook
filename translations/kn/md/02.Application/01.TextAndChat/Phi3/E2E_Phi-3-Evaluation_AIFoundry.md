@@ -1,14 +1,14 @@
-# ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಲಾದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ Microsoft's Responsible AI ತತ್ವಗಳ ಮೇಲೆ ಧ್ಯಾನದೊಂದಿಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ
+# ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಲಾದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Microsoft Foundry ನಲ್ಲಿ Microsoft's Responsible AI ತತ್ವಗಳ ಮೇಲೆ ಧ್ಯಾನದೊಂದಿಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ
 
-ಈ ಇಂದ-ಟು-ರೆಂಡ್ (E2E) ಉದಾಹರಣೆ Microsoft Tech Community ಯಲ್ಲಿರುವ "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" ಎಂಬ ಮಾರ್ಗದರ್ಶಿಯ ಮೇಲೆ ಆಧಾರಿತವಾಗಿದೆ.
+ಈ ಇಂದ-ಟು-ರೆಂಡ್ (E2E) ಉದಾಹರಣೆ Microsoft Tech Community ಯಲ್ಲಿರುವ "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" ಎಂಬ ಮಾರ್ಗದರ್ಶಿಯ ಮೇಲೆ ಆಧಾರಿತವಾಗಿದೆ.
 
 ## ಅವಲೋಕನ
 
-### ನೀವು Azure AI Foundry ನಲ್ಲಿ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯ ಸುರಕ್ಷತೆ ಮತ್ತು ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಹೇಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡಬಹುದು?
+### ನೀವು Microsoft Foundry ನಲ್ಲಿ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯ ಸುರಕ್ಷತೆ ಮತ್ತು ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಹೇಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡಬಹುದು?
 
-ಮಾದರಿಯನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡುವುದು ಕೆಲವೊಮ್ಮೆ ಉಲ್ಲೇಖವಲ್ಲದ ಅಥವಾ ಅನாகರಿಕೆ ಪ್ರತಿಕ್ರಿಯೆಗಳಿಗೆ ಕಾರಣವಾಗಬಹುದು. ಮಾದರಿ ಸುರಕ್ಷಿತ ಮತ್ತು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ಉಳಿಯಲು, ಅದು ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉಂಟುಮಾಡುವ ಸಾಧ್ಯತೆ ಮತ್ತು ಸঠিক, ಸಂಬಂಧಿತ ಮತ್ತು ಸुसಂಗತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಮುಖ್ಯವಾಗಿದೆ. ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Azure AI Foundry ನಲ್ಲಿ Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿಸಲಾದ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯ ಸುರಕ್ಷತೆ ಮತ್ತು ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಹೇಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡಬೇಕೆಂದು ಕಲಿಯೋದು.
+ಮಾದರಿಯನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡುವುದು ಕೆಲವೊಮ್ಮೆ ಉಲ್ಲೇಖವಲ್ಲದ ಅಥವಾ ಅನாகರಿಕೆ ಪ್ರತಿಕ್ರಿಯೆಗಳಿಗೆ ಕಾರಣವಾಗಬಹುದು. ಮಾದರಿ ಸುರಕ್ಷಿತ ಮತ್ತು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ಉಳಿಯಲು, ಅದು ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉಂಟುಮಾಡುವ ಸಾಧ್ಯತೆ ಮತ್ತು ಸঠিক, ಸಂಬಂಧಿತ ಮತ್ತು ಸुसಂಗತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಮುಖ್ಯವಾಗಿದೆ. ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Microsoft Foundry ನಲ್ಲಿ Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿಸಲಾದ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯ ಸುರಕ್ಷತೆ ಮತ್ತು ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಹೇಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡಬೇಕೆಂದು ಕಲಿಯೋದು.
 
-ಇತ್ತೀಚೀಗ Azure AI Foundry ನ ಮೌಲ್ಯಮಾಪನ ಪ್ರಕ್ರಿಯೆ ಇಲ್ಲಿದೆ.
+ಇತ್ತೀಚೀಗ Microsoft Foundry ನ ಮೌಲ್ಯಮಾಪನ ಪ್ರಕ್ರಿಯೆ ಇಲ್ಲಿದೆ.
 
 ![ಟ್ಯುಟೋರಿಯಲ್ ವಾಸ್ತುಶಿಲ್ಪ.](../../../../../../translated_images/kn/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@
 
 ### ವಿಷಯಗಳ ಪಟ್ಟಿಗಳು
 
-1. [**Scenario 1: Introduction to Azure AI Foundry's Prompt flow evaluation**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenario 1: Introduction to Microsoft Foundry's Prompt flow evaluation**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Introduction to safety evaluation](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Introduction to performance evaluation](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Scenario 2: Evaluating the Phi-3 / Phi-3.5 model in Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenario 2: Evaluating the Phi-3 / Phi-3.5 model in Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Before you begin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Deploy Azure OpenAI to evaluate the Phi-3 / Phi-3.5 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Evaluate the fine-tuned Phi-3 / Phi-3.5 model using Azure AI Foundry's Prompt flow evaluation](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Evaluate the fine-tuned Phi-3 / Phi-3.5 model using Microsoft Foundry's Prompt flow evaluation](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Congratulations!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Scenario 1: Introduction to Azure AI Foundry's Prompt flow evaluation**
+## **Scenario 1: Introduction to Microsoft Foundry's Prompt flow evaluation**
 
 ### ಸುರಕ್ಷತೆ ಮೌಲ್ಯಮಾಪನಕ್ಕೆ ಪರಿಚಯ
 
-ನಿಮ್ಮ AI ಮಾದರಿ ನೈತಿಕ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿರಬೇಕೆಂಬುದನ್ನು ಖಾತ್ರಿ ಪಡಿಸಲು, ಅದನ್ನು Microsoft's Responsible AI ತತ್ವಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಅತ್ಯಾಕಾಂಕ್ಷೆಯಾಗಿದೆ. Azure AI Foundry ನಲ್ಲಿ, ಸುರಕ್ಷತಾ ಮೌಲ್ಯಮಾಪನಗಳು ನಿಮ್ಮ ಮಾದರಿಯ ಜೈಲ್‌ಬ್ರೆಕ್ ಹಲ್ಲೆಗಳಿಗೆ ಅಡಕದಂತಹ ಮತು ಅಥವಾ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಅನುಮತಿಸುತ್ತವೆ, ಇದು ಈ ತತ್ವಗಳಿಗೆ ನೇರ ಸಂಯೋಜನೆಯಾಗಿದೆ.
+ನಿಮ್ಮ AI ಮಾದರಿ ನೈತಿಕ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿರಬೇಕೆಂಬುದನ್ನು ಖಾತ್ರಿ ಪಡಿಸಲು, ಅದನ್ನು Microsoft's Responsible AI ತತ್ವಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಅತ್ಯಾಕಾಂಕ್ಷೆಯಾಗಿದೆ. Microsoft Foundry ನಲ್ಲಿ, ಸುರಕ್ಷತಾ ಮೌಲ್ಯಮಾಪನಗಳು ನಿಮ್ಮ ಮಾದರಿಯ ಜೈಲ್‌ಬ್ರೆಕ್ ಹಲ್ಲೆಗಳಿಗೆ ಅಡಕದಂತಹ ಮತು ಅಥವಾ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಅನುಮತಿಸುತ್ತವೆ, ಇದು ಈ ತತ್ವಗಳಿಗೆ ನೇರ ಸಂಯೋಜನೆಯಾಗಿದೆ.
 
 ![ಸುರಕ್ಷತೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/kn/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 #### ಸುರಕ್ಷತಾ ಮಾನದಂಡಗಳು
 
-ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Azure AI Foundry ರ ಸುರಕ್ಷತಾ ಮಾನದಂಡಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 ಮಾದರಿಯ ಸುರಕ್ಷತೆಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತೀರಿ. ಈ ಮಾನದಂಡಗಳು ಮಾದರಿ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಧ್ಯತೆ ಮತ್ತು ಜೈಲ್‌ಬ್ರೆಕ್ ಹಲ್ಲೆಗಳಿಗೆ ಅಡಕದ ಪ್ರಮಾಣವನ್ನು ಅಳೆಯುವುದರಲ್ಲಿ ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತವೆ. ಸುರಕ್ಷತಾ ಮಾನದಂಡಗಳಲ್ಲಿ ಸೇರಿವೆ:
+ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Microsoft Foundry ರ ಸುರಕ್ಷತಾ ಮಾನದಂಡಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 ಮಾದರಿಯ ಸುರಕ್ಷತೆಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತೀರಿ. ಈ ಮಾನದಂಡಗಳು ಮಾದರಿ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಧ್ಯತೆ ಮತ್ತು ಜೈಲ್‌ಬ್ರೆಕ್ ಹಲ್ಲೆಗಳಿಗೆ ಅಡಕದ ಪ್ರಮಾಣವನ್ನು ಅಳೆಯುವುದರಲ್ಲಿ ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತವೆ. ಸುರಕ್ಷತಾ ಮಾನದಂಡಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 - **ಸ್ವಯಂ-ಹಾನಿ ಸಂಬಂಧಿ ವಿಷಯ**: ಮಾದರಿ ಸ್ವಯಂ-ಹಾನಿ ಸಂಬಂಧಿ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಪ್ರವೃತ್ತಿಯು ಇದ್ದೇ ಎಂಬುದನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತದೆ.
 - **ಹೇಟ್ ಅಥವಾ ಅಸಮೋಚಿತ ವಿಷಯ**: ಮಾದರಿ ಹೇಟ್ ಅಥವಾ ಅಸಮೋಚಿತ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಪ್ರವೃತ್ತಿಯು 있었ೆಯೇ ಎಂಬುದನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತದೆ.
@@ -88,7 +88,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 ### ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನಕ್ಕೆ ಪರಿಚಯ
 
-ನಿಮ್ಮ AI ಮಾದರಿ ನಿರೀಕ್ಷೆಯಂತೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಲು, ಅದನ್ನು ಕಾರ್ಯಕ್ಷಮತಾ ಮಾನದಂಡಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಮುಖ್ಯವಾಗಿದೆ. Azure AI Foundry ನಲ್ಲಿ, ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನಗಳು ನಿಮಗೆ ಮಾದರಿಯ ಸತ್ಯಸಂದર્ભ, ಪ್ರಾಸಕ್ತತೆ ಮತ್ತು ಸुसಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.
+ನಿಮ್ಮ AI ಮಾದರಿ ನಿರೀಕ್ಷೆಯಂತೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಲು, ಅದನ್ನು ಕಾರ್ಯಕ್ಷಮತಾ ಮಾನದಂಡಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಮುಖ್ಯವಾಗಿದೆ. Microsoft Foundry ನಲ್ಲಿ, ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನಗಳು ನಿಮಗೆ ಮಾದರಿಯ ಸತ್ಯಸಂದર્ભ, ಪ್ರಾಸಕ್ತತೆ ಮತ್ತು ಸुसಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.
 
 ![ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/kn/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 #### ಕಾರ್ಯಕ್ಷಮತಾ ಮಾನದಂಡಗಳು
 
-ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Azure AI Foundry ರ ಕಾರ್ಯಕ್ಷಮತಾ ಮಾನದಂಡಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತೀರಿ. ಈ ಮಾನದಂಡಗಳು ಮಾದರಿ ನಿಖರ, ಸಂಬಂಧಿತ ಮತ್ತು ಸुसಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಅಳೆಯಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ. ಕಾರ್ಯಕ್ಷಮತಾ মানದಂಡಗಳಲ್ಲಿ ಸೇರಿವೆ:
+ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Microsoft Foundry ರ ಕಾರ್ಯಕ್ಷಮತಾ ಮಾನದಂಡಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯ ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತೀರಿ. ಈ ಮಾನದಂಡಗಳು ಮಾದರಿ ನಿಖರ, ಸಂಬಂಧಿತ ಮತ್ತು ಸुसಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಅಳೆಯಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ. ಕಾರ್ಯಕ್ಷಮತಾ মানದಂಡಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 - **ಮೂಲಸಂಗತತೆ (Groundedness)**: ಉತ್ಪಾದಿತ ಉತ್ತರಗಳು ಇನ್ಪುಟ್ ಮೂಲದ ಮಾಹಿತಿಯೊಂದಿಗೆ ಎಷ್ಟು ಹೊಂದಿಕೊಂಡಿವೆ ಎಂಬುದನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ.
 - **ಪ್ರಾಸಕ್ತತೆ (Relevance)**: ನೀಡಲಾದ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ಪಾದಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳು ಎಷ್ಟು ಸಂಬಂಧಿತವಾಗಿವೆ ಎಂಬುದನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ.
@@ -109,36 +109,36 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 ![ಕಾರ್ಯಕ್ಷಮತೆಯ ಆಧಾರದ ಮೇಲೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/kn/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **Scenario 2: Evaluating the Phi-3 / Phi-3.5 model in Azure AI Foundry**
+## **Scenario 2: Evaluating the Phi-3 / Phi-3.5 model in Microsoft Foundry**
 
 ### ಪ್ರಾರಂಭಿಸುವ ಮೊದಲು
 
-ಈ ಪಾಠವು ಹಿಂದಿನ ಬ್ಲಾಗ್ ಪೋಸ್ಟ್‌ಗಳ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ಮತ್ತು "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" ಎಂಬ ಪೋಸ್ಟ್‌ಗಳ ಅನುಶೇಷವಾಗಿದೆ. ಈ ಪೋಸ್ಟ್‌ಗಳಲ್ಲಿ, ನಾವು Azure AI Foundry ನಲ್ಲಿ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡುವುದು ಮತ್ತು ಅದನ್ನು Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿಸುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಹಾದುಹೋಗಿದ್ದೇವೆ.
+ಈ ಪಾಠವು ಹಿಂದಿನ ಬ್ಲಾಗ್ ಪೋಸ್ಟ್‌ಗಳ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ಮತ್ತು "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" ಎಂಬ ಪೋಸ್ಟ್‌ಗಳ ಅನುಶೇಷವಾಗಿದೆ. ಈ ಪೋಸ್ಟ್‌ಗಳಲ್ಲಿ, ನಾವು Microsoft Foundry ನಲ್ಲಿ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡುವುದು ಮತ್ತು ಅದನ್ನು Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿಸುವ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಹಾದುಹೋಗಿದ್ದೇವೆ.
 
-ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Azure AI Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನಕಾರರಾಗಿ Azure OpenAI ಮಾದರಿಯನ್ನು ನಿಯೋಜಿಸಿ, ಅದನ್ನು ಬಳಸಿ ನಿಮ್ಮ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತೀರಿ.
+ಈ ಪಾಠದಲ್ಲಿ, ನೀವು Microsoft Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನಕಾರರಾಗಿ Azure OpenAI ಮಾದರಿಯನ್ನು ನಿಯೋಜಿಸಿ, ಅದನ್ನು ಬಳಸಿ ನಿಮ್ಮ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತೀರಿ.
 
 ಈ ಪಾಠವನ್ನು ಪ್ರಾರಂಭಿಸುವ ಮೊದಲು, ಹಿಂದಿನ ಪಾಠಗಳಲ್ಲಿ ವಿವರಿಸಿದಂತೆ ಕೆಳಗಿನ ಅಗತ್ಯಗಳನ್ನು ಹೊಂದಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ:
 
 1. ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನಗೊಳಿಸಲು ಸಿದ್ಧಪಡಿಸಿದ ಒಂದು ಡೇಟಾಸೆಟ್.
 1. Phi-3 / Phi-3.5 ಮಾದರಿ, ಯಾವನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿ Azure Machine Learning ಗೆ ನಿಯೋಜಿಸಲಾಗಿದೆ.
-1. Azure AI Foundry ನಲ್ಲಿ ನಿಮ್ಮ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯೊಂದಿಗೆ Prompt flow ಇಂಟಿಗ್ರೇಟ್ ಮಾಡಲಾಗಿದೆ.
+1. Microsoft Foundry ನಲ್ಲಿ ನಿಮ್ಮ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯೊಂದಿಗೆ Prompt flow ಇಂಟಿಗ್ರೇಟ್ ಮಾಡಲಾಗಿದೆ.
 
 > [!NOTE]
 > ನೀವು ಹಿಂದಿನ ಬ್ಲಾಗ್ ಪೋಸ್ಟ್‌ಗಳಲ್ಲಿ ಡೌನ್ಲೋಡ್ ಮಾಡಿದ **ULTRACHAT_200k** ಡೇಟಾಸೆಟ್‌ನ data ಫೋಲ್ದರಿನಲ್ಲಿ ಇರುವ *test_data.jsonl* ಫೈಲ್ ಅನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಡೇಟಾಸೆಟ್ ಆಗಿ ಬಳಸುತ್ತೀರಿ.
 
-#### Azure AI Foundry ನಲ್ಲಿ Prompt flow ಜೊತೆಗೆ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಇಂಟಿಗ್ರೇಟ್ ಮಾಡಿ (Code first approach)
+#### Microsoft Foundry ನಲ್ಲಿ Prompt flow ಜೊತೆಗೆ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಇಂಟಿಗ್ರೇಟ್ ಮಾಡಿ (Code first approach)
 
 > [!NOTE]
-> ನೀವು "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" ನಲ್ಲಿ ವರ್ಣಿಸಲಾದ low-code ವಿಧಾನವನ್ನು ಅನುಸರಿಸಿದ್ದರೆ, ಈ ಅಭ್ಯಾಸವನ್ನು ಮೀರಿ ಮುಂದಿನ ಹಂತಕ್ಕೆ ಹೋಗಬಹುದು.
+> ನೀವು "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" ನಲ್ಲಿ ವರ್ಣಿಸಲಾದ low-code ವಿಧಾನವನ್ನು ಅನುಸರಿಸಿದ್ದರೆ, ಈ ಅಭ್ಯಾಸವನ್ನು ಮೀರಿ ಮುಂದಿನ ಹಂತಕ್ಕೆ ಹೋಗಬಹುದು.
 > ಆದಾಗ್ಯೂ, ನೀವು "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ನಲ್ಲಿ ವರ್ಣಿಸಲಾದ code-first ವಿಧಾನವನ್ನು ಅನುಸರಿಸಿ ನಿಮ್ಮ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿ ನಿಯೋಜಿಸಿದಿದ್ದರೆ, ನಿಮ್ಮ ಮಾದರಿಯನ್ನು Prompt flow ಗೆ ಸಂಪರ್ಕಿಸುವ ಪ್ರಕ್ರಿಯೆ ಸ್ವಲ್ಪ ವಿಭಿನ್ನವಾಗಿರುತ್ತದೆ. ನೀವು ಈ ಅಭ್ಯಾಸದಲ್ಲಿ ಈ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಕಲಿತೀರಿ.
 
-ಮುಂದುವರೆಯಲು, ನಿಮಗೆ ನಿಮ್ಮ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನ Prompt flow ಗೆ ಸಂಯೋಜಿಸುವ ಅಗತ್ಯವಿದೆ.
+ಮುಂದುವರೆಯಲು, ನಿಮಗೆ ನಿಮ್ಮ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Microsoft Foundry ನ Prompt flow ಗೆ ಸಂಯೋಜಿಸುವ ಅಗತ್ಯವಿದೆ.
 
-#### Azure AI Foundry ಹಬ್ ರಚಿಸಿ
+#### Microsoft Foundry ಹಬ್ ರಚಿಸಿ
 
-ಪ್ರಾಜೆಕ್ಟ್ ರಚಿಸುವ ಮೊದಲು ನೀವು ಒಂದು ಹಬ್ ರಚಿಸಬೇಕಾಗುತ್ತದೆ. ಹಬ್ ಒಂದು Resource Group ಹಾಗೆಯೇ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ, ಇದು ನಿಮಗೆ Azure AI Foundry ಒಳಗೆ ಬಹು ಪ್ರಾಜೆಕ್ಟ್ಗಳನ್ನು ಕಾರ್ಯಕ್ರಮಗೊಳಿಸಲು ಮತ್ತು ನಿರ್ವಹಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.
+ಪ್ರಾಜೆಕ್ಟ್ ರಚಿಸುವ ಮೊದಲು ನೀವು ಒಂದು ಹಬ್ ರಚಿಸಬೇಕಾಗುತ್ತದೆ. ಹಬ್ ಒಂದು Resource Group ಹಾಗೆಯೇ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ, ಇದು ನಿಮಗೆ Microsoft Foundry ಒಳಗೆ ಬಹು ಪ್ರಾಜೆಕ್ಟ್ಗಳನ್ನು ಕಾರ್ಯಕ್ರಮಗೊಳಿಸಲು ಮತ್ತು ನಿರ್ವಹಿಸಲು ಅನುಮತಿಸುತ್ತದೆ.
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಸೈನ್ ಇನ್ ಆಗಿ.
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಸೈನ್ ಇನ್ ಆಗಿ.
 
 1. ಎಡ ಬದಿಯ ಟ್ಯಾಬ್ ನಲ್ಲಿ **All hubs** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -158,7 +158,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
-#### Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್ ರಚನೆ
+#### Microsoft Foundry ಪ್ರಾಜೆಕ್ಟ್ ರಚನೆ
 
 1. ನೀವು ರಚಿಸಿದ ಹಬ್‌ನಲ್ಲಿ, ಎಡದ ಟ್ಯಾಬ್‌ನಿಂದ **All projects** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -198,9 +198,9 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 #### ಕಸ್ಟಮ್ ಸಂಪರ್ಕವನ್ನು ಸೇರಿಸಿ
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಭೇಟಿ ನೀಡಿ.
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಭೇಟಿ ನೀಡಿ.
 
-1. ನೀವು ರಚಿಸಿದ Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
+1. ನೀವು ರಚಿಸಿದ Microsoft Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
 
 1. ನೀವು ರಚಿಸಿದ ಪ್ರಾಜೆಕ್ಟ್‌ನಲ್ಲಿ, ಎಡದ ಟ್ಯಾಬ್‌ನಿಂದ **Settings** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -226,9 +226,9 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 #### Prompt flow ರಚಿಸಿ
 
-ನೀವು Azure AI Foundry ನಲ್ಲಿ ಕಸ್ಟಮ್ ಸಂಪರ್ಕವನ್ನು ಸೇರಿಸಿದ್ದೀರಿ. ಈಗ, ಕೆಳಗಿನ ಕ್ರಮಗಳನ್ನು ಬಳಸಿ Prompt flow ಅನ್ನು ರಚಿಸೋಣ. ನಂತರ, ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು Prompt flow ನಲ್ಲಿ ಬಳಸಲು ಈ Prompt flow ಅನ್ನು ಕಸ್ಟಮ್ ಸಂಪರ್ಕಕ್ಕೆ ಸಂಪರ್ಕಿಸುವಿರಿ.
+ನೀವು Microsoft Foundry ನಲ್ಲಿ ಕಸ್ಟಮ್ ಸಂಪರ್ಕವನ್ನು ಸೇರಿಸಿದ್ದೀರಿ. ಈಗ, ಕೆಳಗಿನ ಕ್ರಮಗಳನ್ನು ಬಳಸಿ Prompt flow ಅನ್ನು ರಚಿಸೋಣ. ನಂತರ, ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು Prompt flow ನಲ್ಲಿ ಬಳಸಲು ಈ Prompt flow ಅನ್ನು ಕಸ್ಟಮ್ ಸಂಪರ್ಕಕ್ಕೆ ಸಂಪರ್ಕಿಸುವಿರಿ.
 
-1. ನೀವು ರಚಿಸಿದ Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
+1. ನೀವು ರಚಿಸಿದ Microsoft Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
 
 1. ಎಡದ ಟ್ಯಾಬ್‌ನಿಂದ **Prompt flow** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -345,7 +345,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
     ![Prompt flow ಕೋಡ್ ಪೇಸ್ಟ್ ಮಾಡಿ.](../../../../../../translated_images/kn/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Prompt flow ಅನ್ನು Azure AI Foundry ನಲ್ಲಿ ಬಳಸುವ ಕುರಿತು ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ, ನೀವು [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ಅನ್ನು ನೋಡಬಹುದು.
+> Prompt flow ಅನ್ನು Microsoft Foundry ನಲ್ಲಿ ಬಳಸುವ ಕುರಿತು ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ, ನೀವು [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ಅನ್ನು ನೋಡಬಹುದು.
 
 1. ನಿಮ್ಮ ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಲು **Chat input**, **Chat output** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -386,13 +386,13 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 ### Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು Azure OpenAI ಅನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಿ
 
-Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು, ನೀವು Azure OpenAI ಮಾದರಿಯನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ. ಈ ಮಾದರಿಯನ್ನು Phi-3 / Phi-3.5 ಮಾದರಿಯ ಪ್ರದರ್ಶನವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಬಳಸಲಾಗುತ್ತದೆ.
+Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Microsoft Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು, ನೀವು Azure OpenAI ಮಾದರಿಯನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ. ಈ ಮಾದರಿಯನ್ನು Phi-3 / Phi-3.5 ಮಾದರಿಯ ಪ್ರದರ್ಶನವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಬಳಸಲಾಗುತ್ತದೆ.
 
 #### Azure OpenAI ಅನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಿ
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.
 
-1. ನೀವು ರಚಿಸಿದ Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
+1. ನೀವು ರಚಿಸಿದ Microsoft Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
 
     ![ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/kn/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -410,13 +410,13 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 1. **Confirm** ಆಯ್ಕೆಮಾಡಿ.
 
-### Azure AI Foundry‌ನ Prompt flow ಮೌಲ್ಯಮಾಪನವನ್ನು ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ
+### Microsoft Foundry‌ನ Prompt flow ಮೌಲ್ಯಮಾಪನವನ್ನು ಬಳಸಿ ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ
 
 ### ಹೊಸ ಮೌಲ್ಯಮಾಪನ ಪ್ರಾರಂಭಿಸಿ
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಹೋಗಿ.
+1. [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) ಗೆ ಹೋಗಿ.
 
-1. ನೀವು ರಚಿಸಿದ Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
+1. ನೀವು ರಚಿಸಿದ Microsoft Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
 
     ![ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/kn/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -500,7 +500,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 ### ನೀವು ಈ ಟ್ಯೂಟೋರಿಯಲ್ ಅನ್ನು ಪೂರ್ಣಗೊಳಿಸಿದ್ದೀರಿ
 
-ನೀವು ಯಶಸ್ವಿಯಾಗಿ Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿತ fine-tuned Phi-3 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿದ್ದಾರೆ. ಇದು ನಿಮ್ಮ ಏಐ ಮಾದರಿಗಳು ಒಳ್ಳೆಯ ಪರಿಚಯವನ್ನು ನೀಡುವುದಕ್ಕಾಗಿ ಮಾತ್ರವಲ್ಲ, बल्कि Microsoft ನ ಜವಾಬ್ದಾರಿಯುತ ಏಐ ತತ್ತ್ವಗಳನ್ನು ಅನುಸರಿಸುವುದಾಗಿ ಖಚಿತಪಡಿಸುವ ಒಂದು ಪ್ರಮುಖ ಹೆಜ್ಜೆ, ಇದರಿಂದ ನಿಮಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಮತ್ತು ನಂಬಿಗಸ್ತ ಏಐ ಅಪ್ಲಿಕೇಶನ್ಗಳನ್ನು ನಿರ್ಮಿಸಲು ಸಹಾಯವಾಗುತ್ತದೆ.
+ನೀವು ಯಶಸ್ವಿಯಾಗಿ Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿತ fine-tuned Phi-3 ಮಾದರಿಯನ್ನು Microsoft Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿದ್ದಾರೆ. ಇದು ನಿಮ್ಮ ಏಐ ಮಾದರಿಗಳು ಒಳ್ಳೆಯ ಪರಿಚಯವನ್ನು ನೀಡುವುದಕ್ಕಾಗಿ ಮಾತ್ರವಲ್ಲ, बल्कि Microsoft ನ ಜವಾಬ್ದಾರಿಯುತ ಏಐ ತತ್ತ್ವಗಳನ್ನು ಅನುಸರಿಸುವುದಾಗಿ ಖಚಿತಪಡಿಸುವ ಒಂದು ಪ್ರಮುಖ ಹೆಜ್ಜೆ, ಇದರಿಂದ ನಿಮಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಮತ್ತು ನಂಬಿಗಸ್ತ ಏಐ ಅಪ್ಲಿಕೇಶನ್ಗಳನ್ನು ನಿರ್ಮಿಸಲು ಸಹಾಯವಾಗುತ್ತದೆ.
 
 ![ವ್ಯವಸ್ಥೆ.](../../../../../../translated_images/kn/architecture.10bec55250f5d6a4.webp)
 
@@ -510,8 +510,8 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 - ಈ Azure Machine learning ಸಂಪನ್ಮೂಲ.
 - ಈ Azure Machine learning ಮಾದರಿ ಎಂಡ್‌ಪಾಯಿಂಟ್.
-- ಈ Azure AI Foundry Project ಸಂಪನ್ಮೂಲ.
-- ಈ Azure AI Foundry Prompt flow ಸಂಪನ್ಮೂಲ.
+- ಈ Microsoft Foundry Project ಸಂಪನ್ಮೂಲ.
+- ಈ Microsoft Foundry Prompt flow ಸಂಪನ್ಮೂಲ.
 
 ### ಮುಂದಿನ ಹಂತಗಳು
 
@@ -519,13 +519,13 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 - [Responsible AI ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ಬಳಸಿ ಏಐ ವ್ಯವಸ್ಥೆಗಳ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿ](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [ಜನರೇಟಿವ್ ಏಐಗಾಗಿ ಮೌಲ್ಯಮಾಪನ ಮತ್ತು ಮೇಲ್ವಿಚಾರಣಾ ಮೀಟ್ರಿಕ್‌ಗಳು](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry ಡಾಕ್ಯುಮೆಂಟೇಶನ್](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry ಡಾಕ್ಯುಮೆಂಟೇಶನ್](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow ಡಾಕ್ಯುಮೆಂಟೇಶನ್](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### ತರಬೇತಿ ವಿಷಯ
 
 - [Microsoft ನ ಜವಾಬ್ದಾರಿಯುತ ಏಐ ದೃಷ್ಟಿಕೋನಕ್ಕೆ ಪರಿಚಯ](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry ಗೆ ಪರಿಚಯ](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry ಗೆ ಪರಿಚಯ](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### ಉಲ್ಲೇಖ
 

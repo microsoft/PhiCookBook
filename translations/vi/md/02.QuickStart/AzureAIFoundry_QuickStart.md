@@ -1,12 +1,12 @@
-# **Sử dụng Phi-3 trong Azure AI Foundry**
+# **Sử dụng Phi-3 trong Microsoft Foundry**
 
-Với sự phát triển của Generative AI, chúng ta mong muốn sử dụng một nền tảng thống nhất để quản lý các LLM và SLM khác nhau, tích hợp dữ liệu doanh nghiệp, thực hiện fine-tuning/RAG, và đánh giá các hoạt động kinh doanh sau khi tích hợp LLM và SLM, nhằm giúp các ứng dụng AI tạo sinh được triển khai thông minh hơn. [Azure AI Foundry](https://ai.azure.com) là nền tảng ứng dụng AI tạo sinh cấp doanh nghiệp.
+Với sự phát triển của Generative AI, chúng ta mong muốn sử dụng một nền tảng thống nhất để quản lý các LLM và SLM khác nhau, tích hợp dữ liệu doanh nghiệp, thực hiện fine-tuning/RAG, và đánh giá các hoạt động kinh doanh sau khi tích hợp LLM và SLM, nhằm giúp các ứng dụng AI tạo sinh được triển khai thông minh hơn. [Microsoft Foundry](https://ai.azure.com) là nền tảng ứng dụng AI tạo sinh cấp doanh nghiệp.
 
 ![aistudo](../../../../translated_images/vi/aifoundry_home.f28a8127c96c7d93.webp)
 
-Với Azure AI Foundry, bạn có thể đánh giá phản hồi của các mô hình ngôn ngữ lớn (LLM) và điều phối các thành phần ứng dụng prompt bằng prompt flow để nâng cao hiệu suất. Nền tảng này hỗ trợ mở rộng dễ dàng, giúp chuyển đổi các bằng chứng khái niệm thành sản phẩm hoàn chỉnh. Việc giám sát và tinh chỉnh liên tục giúp đảm bảo thành công lâu dài.
+Với Microsoft Foundry, bạn có thể đánh giá phản hồi của các mô hình ngôn ngữ lớn (LLM) và điều phối các thành phần ứng dụng prompt bằng prompt flow để nâng cao hiệu suất. Nền tảng này hỗ trợ mở rộng dễ dàng, giúp chuyển đổi các bằng chứng khái niệm thành sản phẩm hoàn chỉnh. Việc giám sát và tinh chỉnh liên tục giúp đảm bảo thành công lâu dài.
 
-Chúng ta có thể nhanh chóng triển khai mô hình Phi-3 trên Azure AI Foundry qua các bước đơn giản, sau đó sử dụng Azure AI Foundry để hoàn thành các công việc liên quan đến Playground/Chat, Fine-tuning, đánh giá Phi-3.
+Chúng ta có thể nhanh chóng triển khai mô hình Phi-3 trên Microsoft Foundry qua các bước đơn giản, sau đó sử dụng Microsoft Foundry để hoàn thành các công việc liên quan đến Playground/Chat, Fine-tuning, đánh giá Phi-3.
 
 ## **1. Chuẩn bị**
 
@@ -14,21 +14,21 @@ Nếu bạn đã cài đặt [Azure Developer CLI](https://learn.microsoft.com/a
 
 ## Tạo thủ công
 
-Tạo một dự án và hub trong Microsoft Azure AI Foundry là cách tuyệt vời để tổ chức và quản lý công việc AI của bạn. Dưới đây là hướng dẫn từng bước để bạn bắt đầu:
+Tạo một dự án và hub trong Microsoft Foundry là cách tuyệt vời để tổ chức và quản lý công việc AI của bạn. Dưới đây là hướng dẫn từng bước để bạn bắt đầu:
 
-### Tạo dự án trong Azure AI Foundry
+### Tạo dự án trong Microsoft Foundry
 
-1. **Truy cập Azure AI Foundry**: Đăng nhập vào cổng Azure AI Foundry.
+1. **Truy cập Microsoft Foundry**: Đăng nhập vào cổng Microsoft Foundry.
 2. **Tạo dự án**:
-   - Nếu bạn đang trong một dự án, chọn "Azure AI Foundry" ở góc trên bên trái trang để về trang Chủ.
+   - Nếu bạn đang trong một dự án, chọn "Microsoft Foundry" ở góc trên bên trái trang để về trang Chủ.
    - Chọn "+ Create project".
    - Nhập tên cho dự án.
    - Nếu bạn đã có hub, nó sẽ được chọn mặc định. Nếu bạn có quyền truy cập nhiều hub, bạn có thể chọn hub khác từ danh sách thả xuống. Nếu muốn tạo hub mới, chọn "Create new hub" và nhập tên.
    - Chọn "Create".
 
-### Tạo hub trong Azure AI Foundry
+### Tạo hub trong Microsoft Foundry
 
-1. **Truy cập Azure AI Foundry**: Đăng nhập bằng tài khoản Azure của bạn.
+1. **Truy cập Microsoft Foundry**: Đăng nhập bằng tài khoản Azure của bạn.
 2. **Tạo hub**:
    - Chọn Trung tâm Quản lý (Management center) từ menu bên trái.
    - Chọn "All resources", sau đó nhấn mũi tên xuống bên cạnh "+ New project" và chọn "+ New hub".
@@ -41,9 +41,9 @@ Sau khi tạo thành công, bạn có thể truy cập studio bạn đã tạo q
 
 Có thể có nhiều dự án trên một AI Foundry. Hãy tạo dự án trong AI Foundry để chuẩn bị.
 
-Tạo Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Tạo Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. Triển khai mô hình Phi trên Azure AI Foundry**
+## **2. Triển khai mô hình Phi trên Microsoft Foundry**
 
 Nhấn vào tùy chọn Explore của dự án để vào Model Catalog và chọn Phi-3
 
@@ -55,16 +55,16 @@ Nhấn 'Deploy' để triển khai mô hình Phi-3-mini-4k-instruct
 >
 > Bạn có thể chọn công suất tính toán khi triển khai
 
-## **3. Playground Chat Phi trong Azure AI Foundry**
+## **3. Playground Chat Phi trong Microsoft Foundry**
 
-Vào trang triển khai, chọn Playground và trò chuyện với Phi-3 của Azure AI Foundry
+Vào trang triển khai, chọn Playground và trò chuyện với Phi-3 của Microsoft Foundry
 
-## **4. Triển khai mô hình từ Azure AI Foundry**
+## **4. Triển khai mô hình từ Microsoft Foundry**
 
 Để triển khai mô hình từ Azure Model Catalog, bạn có thể làm theo các bước sau:
 
-- Đăng nhập vào Azure AI Foundry.
-- Chọn mô hình bạn muốn triển khai từ catalog mô hình của Azure AI Foundry.
+- Đăng nhập vào Microsoft Foundry.
+- Chọn mô hình bạn muốn triển khai từ catalog mô hình của Microsoft Foundry.
 - Trên trang Chi tiết mô hình, chọn Deploy rồi chọn Serverless API với Azure AI Content Safety.
 - Chọn dự án mà bạn muốn triển khai mô hình. Để sử dụng Serverless API, workspace của bạn phải thuộc khu vực East US 2 hoặc Sweden Central. Bạn có thể tùy chỉnh tên Deployment.
 - Trên trình hướng dẫn triển khai, chọn Pricing and terms để tìm hiểu về giá cả và điều khoản sử dụng.
@@ -76,7 +76,7 @@ Vào trang triển khai, chọn Playground và trò chuyện với Phi-3 của A
 > [!NOTE]
 > Lưu ý rằng tài khoản của bạn phải có quyền Azure AI Developer trên Resource Group để thực hiện các bước này.
 
-## **5. Sử dụng Phi API trong Azure AI Foundry**
+## **5. Sử dụng Phi API trong Microsoft Foundry**
 
 Bạn có thể truy cập https://{Tên dự án của bạn}.region.inference.ml.azure.com/swagger.json qua Postman GET và kết hợp với Key để tìm hiểu các giao diện được cung cấp
 

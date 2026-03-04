@@ -2,7 +2,7 @@
 
 ![Peenhäälestamine Microsofti teenustega](../../../../imgs/03/intro/FinetuningwithMS.png)
 
-**Platvorm** See hõlmab erinevaid tehnoloogiaid, nagu Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito ja ONNX Runtime.
+**Platvorm** See hõlmab erinevaid tehnoloogiaid, nagu Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito ja ONNX Runtime.
 
 **Infrastruktuur** See hõlmab protsessoreid (CPU) ja FPGA-sid, mis on peenhäälestamise protsessi jaoks hädavajalikud. Siin on ikoonid iga tehnoloogia jaoks.
 

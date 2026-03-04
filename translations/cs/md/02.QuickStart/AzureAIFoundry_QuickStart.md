@@ -1,12 +1,12 @@
-# **Použití Phi-3 v Azure AI Foundry**
+# **Použití Phi-3 v Microsoft Foundry**
 
-S rozvojem generativní AI doufáme, že využijeme jednotnou platformu pro správu různých LLM a SLM, integraci podnikových dat, operace ladění/RAG a hodnocení různých podnikových procesů po integraci LLM a SLM, atd., aby bylo možné lépe implementovat chytré aplikace založené na generativní AI. [Azure AI Foundry](https://ai.azure.com) je podniková platforma pro aplikace generativní AI.
+S rozvojem generativní AI doufáme, že využijeme jednotnou platformu pro správu různých LLM a SLM, integraci podnikových dat, operace ladění/RAG a hodnocení různých podnikových procesů po integraci LLM a SLM, atd., aby bylo možné lépe implementovat chytré aplikace založené na generativní AI. [Microsoft Foundry](https://ai.azure.com) je podniková platforma pro aplikace generativní AI.
 
 ![aistudo](../../../../translated_images/cs/aifoundry_home.f28a8127c96c7d93.webp)
 
-S Azure AI Foundry můžete hodnotit odpovědi velkých jazykových modelů (LLM) a orchestraci komponent aplikací s prompt flow pro lepší výkon. Platforma usnadňuje škálovatelnost při přechodu od konceptů k plnohodnotné produkci. Nepřetržité monitorování a vylepšování podporují dlouhodobý úspěch.
+S Microsoft Foundry můžete hodnotit odpovědi velkých jazykových modelů (LLM) a orchestraci komponent aplikací s prompt flow pro lepší výkon. Platforma usnadňuje škálovatelnost při přechodu od konceptů k plnohodnotné produkci. Nepřetržité monitorování a vylepšování podporují dlouhodobý úspěch.
 
-Model Phi-3 lze rychle nasadit na Azure AI Foundry pomocí jednoduchých kroků a poté využít Azure AI Foundry k dokončení souvisejících úloh jako Playground/Chat, ladění, hodnocení a dalších.
+Model Phi-3 lze rychle nasadit na Microsoft Foundry pomocí jednoduchých kroků a poté využít Microsoft Foundry k dokončení souvisejících úloh jako Playground/Chat, ladění, hodnocení a dalších.
 
 ## **1. Příprava**
 
@@ -14,21 +14,21 @@ Pokud již máte na svém počítači nainstalovaný [Azure Developer CLI](https
 
 ## Ruční vytvoření
 
-Vytvoření projektu a hubu v Microsoft Azure AI Foundry je skvělý způsob, jak organizovat a spravovat svou práci s AI. Zde je krok za krokem návod, jak začít:
+Vytvoření projektu a hubu v Microsoft Foundry je skvělý způsob, jak organizovat a spravovat svou práci s AI. Zde je krok za krokem návod, jak začít:
 
-### Vytvoření projektu v Azure AI Foundry
+### Vytvoření projektu v Microsoft Foundry
 
-1. **Přejděte do Azure AI Foundry**: Přihlaste se do portálu Azure AI Foundry.
+1. **Přejděte do Microsoft Foundry**: Přihlaste se do portálu Microsoft Foundry.
 2. **Vytvořte projekt**:
-   - Pokud jste již v projektu, vyberte v levém horním rohu stránky „Azure AI Foundry“ pro návrat na domovskou stránku.
+   - Pokud jste již v projektu, vyberte v levém horním rohu stránky „Microsoft Foundry“ pro návrat na domovskou stránku.
    - Klikněte na „+ Create project“.
    - Zadejte název projektu.
    - Pokud máte hub, bude vybrán automaticky. Pokud máte přístup k více hubům, můžete vybrat jiný z rozbalovací nabídky. Pokud chcete vytvořit nový hub, vyberte „Create new hub“ a zadejte jeho název.
    - Klikněte na „Create“.
 
-### Vytvoření hubu v Azure AI Foundry
+### Vytvoření hubu v Microsoft Foundry
 
-1. **Přejděte do Azure AI Foundry**: Přihlaste se pomocí svého Azure účtu.
+1. **Přejděte do Microsoft Foundry**: Přihlaste se pomocí svého Azure účtu.
 2. **Vytvořte hub**:
    - V levém menu vyberte Management center.
    - Vyberte „All resources“, poté klikněte na šipku vedle „+ New project“ a zvolte „+ New hub“.
@@ -41,9 +41,9 @@ Po úspěšném vytvoření můžete přistupovat ke studiu, které jste vytvoř
 
 Na jednom AI Foundry může být více projektů. Vytvořte projekt v AI Foundry jako přípravu.
 
-Vytvořte Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Vytvořte Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. Nasazení modelu Phi v Azure AI Foundry**
+## **2. Nasazení modelu Phi v Microsoft Foundry**
 
 Klikněte na možnost Explore u projektu, vstupte do Model Catalog a vyberte Phi-3
 
@@ -55,16 +55,16 @@ Klikněte na 'Deploy' pro nasazení modelu Phi-3-mini-4k-instruct
 >
 > Při nasazení můžete vybrat výpočetní výkon
 
-## **3. Playground Chat Phi v Azure AI Foundry**
+## **3. Playground Chat Phi v Microsoft Foundry**
 
-Přejděte na stránku nasazení, vyberte Playground a začněte chatovat s Phi-3 v Azure AI Foundry
+Přejděte na stránku nasazení, vyberte Playground a začněte chatovat s Phi-3 v Microsoft Foundry
 
-## **4. Nasazení modelu z Azure AI Foundry**
+## **4. Nasazení modelu z Microsoft Foundry**
 
 Pro nasazení modelu z Azure Model Catalog postupujte takto:
 
-- Přihlaste se do Azure AI Foundry.
-- Vyberte model, který chcete nasadit, z katalogu modelů Azure AI Foundry.
+- Přihlaste se do Microsoft Foundry.
+- Vyberte model, který chcete nasadit, z katalogu modelů Microsoft Foundry.
 - Na stránce Detail modelu klikněte na Deploy a poté vyberte Serverless API s Azure AI Content Safety.
 - Vyberte projekt, ve kterém chcete model nasadit. Pro použití Serverless API musí vaše pracovní prostředí patřit do regionu East US 2 nebo Sweden Central. Můžete si přizpůsobit název nasazení.
 - V průvodci nasazením si přečtěte informace o cenách a podmínkách použití.
@@ -76,7 +76,7 @@ Pro nasazení modelu z Azure Model Catalog postupujte takto:
 > [!NOTE]
 > Upozorňujeme, že pro provedení těchto kroků musí mít váš účet oprávnění role Azure AI Developer na Resource Group.
 
-## **5. Použití Phi API v Azure AI Foundry**
+## **5. Použití Phi API v Microsoft Foundry**
 
 Přes Postman můžete pomocí GET požadavku přistoupit na https://{Název vašeho projektu}.region.inference.ml.azure.com/swagger.json a v kombinaci s klíčem získat informace o dostupných rozhraních.
 

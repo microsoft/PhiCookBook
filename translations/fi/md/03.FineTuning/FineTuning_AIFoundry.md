@@ -1,6 +1,6 @@
-# Phi-3:n hienosäätö Azure AI Foundryn avulla
+# Phi-3:n hienosäätö Microsoft Foundryn avulla
 
-Tutustutaan, miten Microsoftin Phi-3 Mini -kielimallia voi hienosäätää Azure AI Foundryn avulla. Hienosäätö mahdollistaa Phi-3 Minin sovittamisen tiettyihin tehtäviin, tehden siitä entistä tehokkaamman ja kontekstin ymmärtävämmän.
+Tutustutaan, miten Microsoftin Phi-3 Mini -kielimallia voi hienosäätää Microsoft Foundryn avulla. Hienosäätö mahdollistaa Phi-3 Minin sovittamisen tiettyihin tehtäviin, tehden siitä entistä tehokkaamman ja kontekstin ymmärtävämmän.
 
 ## Huomioitavaa
 
@@ -22,7 +22,7 @@ Tutustutaan, miten Microsoftin Phi-3 Mini -kielimallia voi hienosäätää Azure
 - Azure-tilaus. Jos sinulla ei ole Azure-tilausta, luo [maksullinen Azure-tili](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) aloittaaksesi.
 
 - [AI Foundry -projekti](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure-roolipohjaiset käyttöoikeudet (Azure RBAC) myöntävät pääsyn Azure AI Foundryn toimintoihin. Tämän artikkelin vaiheiden suorittamiseksi käyttäjätilillesi on määritettävä __Azure AI Developer -rooli__ resurssiryhmässä.
+- Azure-roolipohjaiset käyttöoikeudet (Azure RBAC) myöntävät pääsyn Microsoft Foundryn toimintoihin. Tämän artikkelin vaiheiden suorittamiseksi käyttäjätilillesi on määritettävä __Azure AI Developer -rooli__ resurssiryhmässä.
 
 ### Tilauksen tarjoajan rekisteröinti
 
@@ -58,17 +58,17 @@ Käyttämäsi koulutus- ja validointidata **täytyy** olla JSON Lines (JSONL) -m
 
 Tuettu tiedostotyyppi on JSON Lines. Tiedostot ladataan oletustietovarastoon ja ne ovat käytettävissä projektissasi.
 
-## Phi-3:n hienosäätö Azure AI Foundryn avulla
+## Phi-3:n hienosäätö Microsoft Foundryn avulla
 
-Azure AI Foundry mahdollistaa suurten kielimallien räätälöinnin omien aineistojen pohjalta hienosäätöprosessin avulla. Hienosäätö tarjoaa merkittävää lisäarvoa mahdollistamalla mallin mukauttamisen ja optimoinnin tiettyihin tehtäviin ja sovelluksiin. Se parantaa suorituskykyä, kustannustehokkuutta, vähentää viivettä ja tuottaa räätälöityjä vastauksia.
+Microsoft Foundry mahdollistaa suurten kielimallien räätälöinnin omien aineistojen pohjalta hienosäätöprosessin avulla. Hienosäätö tarjoaa merkittävää lisäarvoa mahdollistamalla mallin mukauttamisen ja optimoinnin tiettyihin tehtäviin ja sovelluksiin. Se parantaa suorituskykyä, kustannustehokkuutta, vähentää viivettä ja tuottaa räätälöityjä vastauksia.
 
 ![Finetune AI Foundry](../../../../translated_images/fi/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Luo uusi projekti
 
-1. Kirjaudu sisään [Azure AI Foundryyn](https://ai.azure.com).
+1. Kirjaudu sisään [Microsoft Foundryyn](https://ai.azure.com).
 
-1. Valitse **+New project** luodaksesi uuden projektin Azure AI Foundryyn.
+1. Valitse **+New project** luodaksesi uuden projektin Microsoft Foundryyn.
 
     ![FineTuneSelect](../../../../translated_images/fi/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry mahdollistaa suurten kielimallien räätälöinnin omien aineis
 
 Ennen hienosäätöä kerää tai luo tehtävääsi liittyvä aineisto, kuten chat-ohjeita, kysymys-vastauspareja tai muuta asiaankuuluvaa tekstidataa. Puhdista ja esikäsittele data poistamalla häiriötekijöitä, käsittelemällä puuttuvat arvot ja tokenisoimalla teksti.
 
-### Phi-3-mallien hienosäätö Azure AI Foundryssa
+### Phi-3-mallien hienosäätö Microsoft Foundryssa
 
 > [!NOTE]
 > Phi-3-mallien hienosäätö on tällä hetkellä tuettu vain East US 2 -alueella sijaitsevissa projekteissa.
@@ -121,7 +121,7 @@ Ennen hienosäätöä kerää tai luo tehtävääsi liittyvä aineisto, kuten ch
 1. Suorita seuraavat tehtävät:
 
     - Valitse **task type** arvoksi **Chat completion**.
-    - Valitse käytettävä **Training data**. Voit ladata sen Azure AI Foundryn datan kautta tai paikallisesta ympäristöstäsi.
+    - Valitse käytettävä **Training data**. Voit ladata sen Microsoft Foundryn datan kautta tai paikallisesta ympäristöstäsi.
 
     ![FineTuneSelect](../../../../translated_images/fi/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Ennen hienosäätöä kerää tai luo tehtävääsi liittyvä aineisto, kuten ch
 
     ![FineTuneSelect](../../../../translated_images/fi/select-submit.0a3802d581bac271.webp)
 
-1. Kun mallisi on hienosäädetty, tila näkyy **Completed**-merkintänä, kuten alla olevassa kuvassa. Nyt voit ottaa mallin käyttöön ja käyttää sitä omassa sovelluksessasi, playgroundissa tai prompt flow’ssa. Lisätietoja löytyy kohdasta [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Kun mallisi on hienosäädetty, tila näkyy **Completed**-merkintänä, kuten alla olevassa kuvassa. Nyt voit ottaa mallin käyttöön ja käyttää sitä omassa sovelluksessasi, playgroundissa tai prompt flow’ssa. Lisätietoja löytyy kohdasta [How to deploy Phi-3 family of small language models with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/fi/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Tarkempia tietoja Phi-3:n hienosäädöstä löydät osoitteesta [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Tarkempia tietoja Phi-3:n hienosäädöstä löydät osoitteesta [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Hienosäädettyjen mallien siivous
 
-Voit poistaa hienosäädetyn mallin hienosäätömallien listalta [Azure AI Foundrysta](https://ai.azure.com) tai mallin tietosivulta. Valitse poistettava hienosäädetty malli Fine-tuning-sivulta ja napsauta Poista-painiketta.
+Voit poistaa hienosäädetyn mallin hienosäätömallien listalta [Microsoft Foundrysta](https://ai.azure.com) tai mallin tietosivulta. Valitse poistettava hienosäädetty malli Fine-tuning-sivulta ja napsauta Poista-painiketta.
 
 > [!NOTE]
 > Et voi poistaa mukautettua mallia, jos sillä on olemassa oleva käyttöönotto. Sinun on ensin poistettava mallin käyttöönotto ennen kuin voit poistaa mukautetun mallin.
@@ -163,7 +163,7 @@ Voit poistaa hienosäädetyn mallin hienosäätömallien listalta [Azure AI Foun
 
 ### Kustannus- ja kiintiöhuomiot Phi-3-mallien palveluna tapahtuvasta hienosäädöstä
 
-Phi-mallit, joita hienosäädetään palveluna, tarjoaa Microsoft ja ne on integroitu Azure AI Foundryyn käyttöä varten. Hinnoittelun löydät mallien [käyttöönoton](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) tai hienosäädön yhteydessä Käyttöönotto-velhon Hinnoittelu ja ehdot -välilehdeltä.
+Phi-mallit, joita hienosäädetään palveluna, tarjoaa Microsoft ja ne on integroitu Microsoft Foundryyn käyttöä varten. Hinnoittelun löydät mallien [käyttöönoton](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) tai hienosäädön yhteydessä Käyttöönotto-velhon Hinnoittelu ja ehdot -välilehdeltä.
 
 ## Sisällön suodatus
 
@@ -206,7 +206,7 @@ Tallenna hienosäädetyn mallin tarkistuspiste myöhempää käyttöä varten.
 
 ## Käyttöönotto
 
-- Ota käyttöön web-palveluna: Ota hienosäädetty mallisi käyttöön web-palveluna Azure AI Foundryssa.
+- Ota käyttöön web-palveluna: Ota hienosäädetty mallisi käyttöön web-palveluna Microsoft Foundryssa.
 - Testaa päätepistettä: Lähetä testikyselyjä käyttöönotettuun päätepisteeseen varmistaaksesi sen toimivuuden.
 
 ## Iteroi ja paranna

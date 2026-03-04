@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/fi/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Alusta** Tämä kattaa erilaisia teknologioita, kuten Azure AI Foundryn, Azure Machine Learningin, AI-työkalut, Kaiton ja ONNX Runtime -ympäristön.
+**Alusta** Tämä kattaa erilaisia teknologioita, kuten Microsoft Foundryn, Azure Machine Learningin, AI-työkalut, Kaiton ja ONNX Runtime -ympäristön.
 
 **Infrastruktuuri** Tämä sisältää CPU:n ja FPGA:n, jotka ovat olennaisia hienosäätöprosessissa. Näytän sinulle kunkin näistä teknologioista vastaavat kuvakkeet.
 

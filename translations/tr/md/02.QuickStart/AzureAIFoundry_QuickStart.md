@@ -1,12 +1,12 @@
-# **Azure AI Foundry'de Phi-3 Kullanımı**
+# **Microsoft Foundry'de Phi-3 Kullanımı**
 
-Generative AI'nin gelişimiyle birlikte, farklı LLM ve SLM'leri, kurumsal veri entegrasyonunu, ince ayar/RAG işlemlerini ve LLM ile SLM entegre edildikten sonra farklı kurumsal işlerin değerlendirilmesini tek bir platformda yönetmeyi umuyoruz. Böylece generative AI, akıllı uygulamalarda daha iyi uygulanabilir. [Azure AI Foundry](https://ai.azure.com), kurumsal düzeyde bir generative AI uygulama platformudur.
+Generative AI'nin gelişimiyle birlikte, farklı LLM ve SLM'leri, kurumsal veri entegrasyonunu, ince ayar/RAG işlemlerini ve LLM ile SLM entegre edildikten sonra farklı kurumsal işlerin değerlendirilmesini tek bir platformda yönetmeyi umuyoruz. Böylece generative AI, akıllı uygulamalarda daha iyi uygulanabilir. [Microsoft Foundry](https://ai.azure.com), kurumsal düzeyde bir generative AI uygulama platformudur.
 
 ![aistudo](../../../../translated_images/tr/aifoundry_home.f28a8127c96c7d93.webp)
 
-Azure AI Foundry ile büyük dil modeli (LLM) yanıtlarını değerlendirebilir ve daha iyi performans için prompt flow ile prompt uygulama bileşenlerini düzenleyebilirsiniz. Platform, kavram kanıtlarını tam üretime dönüştürmede ölçeklenebilirlik sağlar. Sürekli izleme ve iyileştirme uzun vadeli başarıyı destekler.
+Microsoft Foundry ile büyük dil modeli (LLM) yanıtlarını değerlendirebilir ve daha iyi performans için prompt flow ile prompt uygulama bileşenlerini düzenleyebilirsiniz. Platform, kavram kanıtlarını tam üretime dönüştürmede ölçeklenebilirlik sağlar. Sürekli izleme ve iyileştirme uzun vadeli başarıyı destekler.
 
-Phi-3 modelini Azure AI Foundry üzerinde hızlıca basit adımlarla dağıtabilir, ardından Azure AI Foundry'yi kullanarak Phi-3 ile ilgili Playground/Chat, ince ayar, değerlendirme ve diğer ilgili işleri tamamlayabilirsiniz.
+Phi-3 modelini Microsoft Foundry üzerinde hızlıca basit adımlarla dağıtabilir, ardından Microsoft Foundry'yi kullanarak Phi-3 ile ilgili Playground/Chat, ince ayar, değerlendirme ve diğer ilgili işleri tamamlayabilirsiniz.
 
 ## **1. Hazırlık**
 
@@ -14,21 +14,21 @@ Eğer makinenizde zaten [Azure Developer CLI](https://learn.microsoft.com/azure/
 
 ## Manuel Oluşturma
 
-Microsoft Azure AI Foundry projesi ve hub oluşturmak, AI çalışmalarınızı düzenlemek ve yönetmek için harika bir yoldur. İşte başlamanız için adım adım rehber:
+Microsoft Foundry projesi ve hub oluşturmak, AI çalışmalarınızı düzenlemek ve yönetmek için harika bir yoldur. İşte başlamanız için adım adım rehber:
 
-### Azure AI Foundry'de Proje Oluşturma
+### Microsoft Foundry'de Proje Oluşturma
 
-1. **Azure AI Foundry'ye gidin**: Azure AI Foundry portalına giriş yapın.
+1. **Microsoft Foundry'ye gidin**: Microsoft Foundry portalına giriş yapın.
 2. **Proje Oluşturun**:
-   - Eğer bir projedeyseniz, sayfanın sol üst köşesinden "Azure AI Foundry" seçeneğine tıklayarak Ana sayfaya gidin.
+   - Eğer bir projedeyseniz, sayfanın sol üst köşesinden "Microsoft Foundry" seçeneğine tıklayarak Ana sayfaya gidin.
    - "+ Proje oluştur" seçeneğini seçin.
    - Proje için bir isim girin.
    - Eğer bir hubınız varsa, varsayılan olarak seçili olacaktır. Birden fazla hub erişiminiz varsa, açılır menüden farklı bir hub seçebilirsiniz. Yeni bir hub oluşturmak isterseniz, "Yeni hub oluştur" seçeneğini seçip bir isim verin.
    - "Oluştur" seçeneğine tıklayın.
 
-### Azure AI Foundry'de Hub Oluşturma
+### Microsoft Foundry'de Hub Oluşturma
 
-1. **Azure AI Foundry'ye gidin**: Azure hesabınızla giriş yapın.
+1. **Microsoft Foundry'ye gidin**: Azure hesabınızla giriş yapın.
 2. **Hub Oluşturun**:
    - Sol menüden Yönetim merkezini seçin.
    - "Tüm kaynaklar" seçeneğine, ardından "+ Yeni proje" yanındaki aşağı oka ve "+ Yeni hub" seçeneğine tıklayın.
@@ -41,9 +41,9 @@ Başarıyla oluşturduktan sonra, oluşturduğunuz stüdyoya [ai.azure.com](http
 
 Bir AI Foundry üzerinde birden fazla proje olabilir. Hazırlık için AI Foundry'de bir proje oluşturun.
 
-Azure AI Foundry [Hızlı Başlangıçlar](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code) oluşturun.
+Microsoft Foundry [Hızlı Başlangıçlar](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code) oluşturun.
 
-## **2. Azure AI Foundry'de Phi Modeli Dağıtımı**
+## **2. Microsoft Foundry'de Phi Modeli Dağıtımı**
 
 Projede Explore seçeneğine tıklayarak Model Kataloğuna girin ve Phi-3'ü seçin.
 
@@ -55,16 +55,16 @@ Phi-3-mini-4k-instruct modelini dağıtmak için 'Deploy' butonuna tıklayın.
 >
 > Dağıtım sırasında hesaplama gücünü seçebilirsiniz.
 
-## **3. Azure AI Foundry'de Playground Chat Phi**
+## **3. Microsoft Foundry'de Playground Chat Phi**
 
-Dağıtım sayfasına gidin, Playground'u seçin ve Azure AI Foundry'nin Phi-3 modeli ile sohbet edin.
+Dağıtım sayfasına gidin, Playground'u seçin ve Microsoft Foundry'nin Phi-3 modeli ile sohbet edin.
 
-## **4. Azure AI Foundry'den Model Dağıtımı**
+## **4. Microsoft Foundry'den Model Dağıtımı**
 
 Azure Model Kataloğundan model dağıtmak için şu adımları izleyebilirsiniz:
 
-- Azure AI Foundry'ye giriş yapın.
-- Azure AI Foundry model kataloğundan dağıtmak istediğiniz modeli seçin.
+- Microsoft Foundry'ye giriş yapın.
+- Microsoft Foundry model kataloğundan dağıtmak istediğiniz modeli seçin.
 - Modelin Detaylar sayfasında Deploy seçeneğini seçin, ardından Azure AI Content Safety ile Serverless API'yi seçin.
 - Modellerinizi dağıtmak istediğiniz projeyi seçin. Serverless API hizmetini kullanmak için çalışma alanınızın East US 2 veya Sweden Central bölgesinde olması gerekir. Dağıtım adını özelleştirebilirsiniz.
 - Dağıtım sihirbazında, fiyatlandırma ve kullanım koşullarını öğrenmek için Pricing and terms seçeneğini seçin.
@@ -76,7 +76,7 @@ Azure Model Kataloğundan model dağıtmak için şu adımları izleyebilirsiniz
 > [!NOTE]
 > Bu adımları gerçekleştirebilmek için hesabınızın Kaynak Grubu üzerinde Azure AI Developer rol izinlerine sahip olması gerektiğini unutmayın.
 
-## **5. Azure AI Foundry'de Phi API Kullanımı**
+## **5. Microsoft Foundry'de Phi API Kullanımı**
 
 https://{Proje adınız}.region.inference.ml.azure.com/swagger.json adresine Postman ile GET isteği yaparak ve Key ile birleştirerek sunulan arayüzleri öğrenebilirsiniz.
 

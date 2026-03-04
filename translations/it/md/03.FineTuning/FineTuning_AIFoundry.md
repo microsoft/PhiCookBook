@@ -1,6 +1,6 @@
-# Fine-tuning di Phi-3 con Azure AI Foundry
+# Fine-tuning di Phi-3 con Microsoft Foundry
 
-Esploriamo come effettuare il fine-tuning del modello linguistico Phi-3 Mini di Microsoft utilizzando Azure AI Foundry. Il fine-tuning consente di adattare Phi-3 Mini a compiti specifici, rendendolo ancora più potente e consapevole del contesto.
+Esploriamo come effettuare il fine-tuning del modello linguistico Phi-3 Mini di Microsoft utilizzando Microsoft Foundry. Il fine-tuning consente di adattare Phi-3 Mini a compiti specifici, rendendolo ancora più potente e consapevole del contesto.
 
 ## Considerazioni
 
@@ -22,7 +22,7 @@ Esploriamo come effettuare il fine-tuning del modello linguistico Phi-3 Mini di 
 - Un abbonamento Azure. Se non ne hai uno, crea un [account Azure a pagamento](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) per iniziare.
 
 - Un [progetto AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- I controlli di accesso basati sui ruoli di Azure (Azure RBAC) sono utilizzati per concedere l’accesso alle operazioni in Azure AI Foundry. Per eseguire i passaggi di questo articolo, il tuo account utente deve avere il __ruolo Azure AI Developer__ sul gruppo di risorse.
+- I controlli di accesso basati sui ruoli di Azure (Azure RBAC) sono utilizzati per concedere l’accesso alle operazioni in Microsoft Foundry. Per eseguire i passaggi di questo articolo, il tuo account utente deve avere il __ruolo Azure AI Developer__ sul gruppo di risorse.
 
 ### Registrazione del provider di sottoscrizione
 
@@ -58,17 +58,17 @@ I dati di addestramento e validazione che usi **devono** essere formattati come 
 
 Il tipo di file supportato è JSON Lines. I file vengono caricati nel datastore predefinito e resi disponibili nel tuo progetto.
 
-## Fine-tuning di Phi-3 con Azure AI Foundry
+## Fine-tuning di Phi-3 con Microsoft Foundry
 
-Azure AI Foundry ti permette di personalizzare i modelli linguistici di grandi dimensioni sui tuoi dataset personali tramite un processo chiamato fine-tuning. Il fine-tuning offre un valore significativo permettendo la personalizzazione e l’ottimizzazione per compiti e applicazioni specifiche. Questo porta a prestazioni migliorate, efficienza nei costi, riduzione della latenza e output su misura.
+Microsoft Foundry ti permette di personalizzare i modelli linguistici di grandi dimensioni sui tuoi dataset personali tramite un processo chiamato fine-tuning. Il fine-tuning offre un valore significativo permettendo la personalizzazione e l’ottimizzazione per compiti e applicazioni specifiche. Questo porta a prestazioni migliorate, efficienza nei costi, riduzione della latenza e output su misura.
 
 ![Finetune AI Foundry](../../../../translated_images/it/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Creare un nuovo progetto
 
-1. Accedi a [Azure AI Foundry](https://ai.azure.com).
+1. Accedi a [Microsoft Foundry](https://ai.azure.com).
 
-1. Seleziona **+New project** per creare un nuovo progetto in Azure AI Foundry.
+1. Seleziona **+New project** per creare un nuovo progetto in Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/it/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry ti permette di personalizzare i modelli linguistici di grandi d
 
 Prima del fine-tuning, raccogli o crea un dataset rilevante per il tuo compito, come istruzioni di chat, coppie domanda-risposta o altri dati testuali pertinenti. Pulisci e pre-elabora questi dati rimuovendo rumore, gestendo valori mancanti e tokenizzando il testo.
 
-### Fine-tuning dei modelli Phi-3 in Azure AI Foundry
+### Fine-tuning dei modelli Phi-3 in Microsoft Foundry
 
 > [!NOTE]
 > Il fine-tuning dei modelli Phi-3 è attualmente supportato solo in progetti localizzati in East US 2.
@@ -121,7 +121,7 @@ Prima del fine-tuning, raccogli o crea un dataset rilevante per il tuo compito, 
 1. Esegui le seguenti operazioni:
 
     - Seleziona il **tipo di attività** su **Chat completion**.
-    - Seleziona i **dati di addestramento** che vuoi usare. Puoi caricarli tramite i dati di Azure AI Foundry o dal tuo ambiente locale.
+    - Seleziona i **dati di addestramento** che vuoi usare. Puoi caricarli tramite i dati di Microsoft Foundry o dal tuo ambiente locale.
 
     ![FineTuneSelect](../../../../translated_images/it/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Prima del fine-tuning, raccogli o crea un dataset rilevante per il tuo compito, 
 
     ![FineTuneSelect](../../../../translated_images/it/select-submit.0a3802d581bac271.webp)
 
-1. Una volta che il modello è stato fine-tuned, lo stato sarà visualizzato come **Completato**, come mostrato nell’immagine qui sotto. Ora puoi distribuire il modello e usarlo nella tua applicazione, nel playground o in prompt flow. Per maggiori informazioni, consulta [Come distribuire la famiglia di modelli linguistici piccoli Phi-3 con Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Una volta che il modello è stato fine-tuned, lo stato sarà visualizzato come **Completato**, come mostrato nell’immagine qui sotto. Ora puoi distribuire il modello e usarlo nella tua applicazione, nel playground o in prompt flow. Per maggiori informazioni, consulta [Come distribuire la famiglia di modelli linguistici piccoli Phi-3 con Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/it/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Per informazioni più dettagliate sul fine-tuning di Phi-3, visita [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Per informazioni più dettagliate sul fine-tuning di Phi-3, visita [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Pulizia dei modelli fine-tuned
 
-Puoi eliminare un modello fine-tuned dalla lista dei modelli di fine-tuning in [Azure AI Foundry](https://ai.azure.com) o dalla pagina dei dettagli del modello. Seleziona il modello fine-tuned da eliminare nella pagina Fine-tuning, quindi seleziona il pulsante Elimina per rimuoverlo.
+Puoi eliminare un modello fine-tuned dalla lista dei modelli di fine-tuning in [Microsoft Foundry](https://ai.azure.com) o dalla pagina dei dettagli del modello. Seleziona il modello fine-tuned da eliminare nella pagina Fine-tuning, quindi seleziona il pulsante Elimina per rimuoverlo.
 
 > [!NOTE]
 > Non puoi eliminare un modello personalizzato se ha una distribuzione esistente. Devi prima eliminare la distribuzione del modello prima di poter eliminare il modello personalizzato.
@@ -163,7 +163,7 @@ Puoi eliminare un modello fine-tuned dalla lista dei modelli di fine-tuning in [
 
 ### Considerazioni su costi e quote per i modelli Phi-3 fine-tuned come servizio
 
-I modelli Phi fine-tuned come servizio sono offerti da Microsoft e integrati con Azure AI Foundry per l’uso. Puoi trovare i prezzi durante la [distribuzione](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o il fine-tuning dei modelli nella scheda Prezzi e termini della procedura guidata di distribuzione.
+I modelli Phi fine-tuned come servizio sono offerti da Microsoft e integrati con Microsoft Foundry per l’uso. Puoi trovare i prezzi durante la [distribuzione](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o il fine-tuning dei modelli nella scheda Prezzi e termini della procedura guidata di distribuzione.
 
 ## Filtraggio dei contenuti
 
@@ -204,7 +204,7 @@ Salva il checkpoint del modello fine-tuned per usi futuri.
 
 ## Distribuzione
 
-- Distribuisci come servizio web: distribuisci il modello fine-tuned come servizio web in Azure AI Foundry.
+- Distribuisci come servizio web: distribuisci il modello fine-tuned come servizio web in Microsoft Foundry.
 - Testa l’endpoint: invia query di prova all’endpoint distribuito per verificarne il funzionamento.
 
 ## Itera e migliora

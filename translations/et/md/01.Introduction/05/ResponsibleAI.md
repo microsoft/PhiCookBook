@@ -62,15 +62,15 @@ Eetiliste põhimõtete, nagu õiglus, läbipaistvus ja vastutus, järgimine aita
 
 ## AI Foundry kasutamine vastutustundliku tehisintellekti jaoks
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) on võimas platvorm, mis võimaldab arendajatel ja organisatsioonidel kiiresti luua intelligentseid, tipptasemel, turule valmis ja vastutustundlikke rakendusi. Siin on mõned Azure AI Foundry peamised funktsioonid ja võimalused:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) on võimas platvorm, mis võimaldab arendajatel ja organisatsioonidel kiiresti luua intelligentseid, tipptasemel, turule valmis ja vastutustundlikke rakendusi. Siin on mõned Microsoft Foundry peamised funktsioonid ja võimalused:
 
 **Valmis API-d ja mudelid**
 
-Azure AI Foundry pakub eelvalmistatud ja kohandatavaid API-sid ja mudeleid. Need hõlmavad laia valikut tehisintellekti ülesandeid, sealhulgas generatiivne tehisintellekt, loomuliku keele töötlemine vestlusteks, otsing, jälgimine, tõlkimine, kõne, nägemine ja otsuste tegemine.
+Microsoft Foundry pakub eelvalmistatud ja kohandatavaid API-sid ja mudeleid. Need hõlmavad laia valikut tehisintellekti ülesandeid, sealhulgas generatiivne tehisintellekt, loomuliku keele töötlemine vestlusteks, otsing, jälgimine, tõlkimine, kõne, nägemine ja otsuste tegemine.
 
 **Prompt Flow**
 
-Prompt Flow Azure AI Foundry's võimaldab luua vestlusliku tehisintellekti kogemusi. See võimaldab kujundada ja hallata vestlusvooge, muutes lihtsamaks vestlusrobotite, virtuaalsete assistentide ja teiste interaktiivsete rakenduste loomise.
+Prompt Flow Microsoft Foundry's võimaldab luua vestlusliku tehisintellekti kogemusi. See võimaldab kujundada ja hallata vestlusvooge, muutes lihtsamaks vestlusrobotite, virtuaalsete assistentide ja teiste interaktiivsete rakenduste loomise.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ RAG on tehnika, mis ühendab otsingupõhised ja generatiivsed lähenemised. See 
 
 **Generatiivse tehisintellekti hindamise ja jälgimise mõõdikud**
 
-Azure AI Foundry pakub tööriistu generatiivsete tehisintellekti mudelite hindamiseks ja jälgimiseks. Saate hinnata nende jõudlust, õiglust ja muid olulisi mõõdikuid, et tagada vastutustundlik kasutuselevõtt. Lisaks, kui olete loonud armatuurlaua, saate kasutada Azure Machine Learning Studio koodivaba kasutajaliidest, et kohandada ja luua vastutustundliku tehisintellekti armatuurlauda ja sellega seotud skoorikaarti, mis põhineb [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python'i teekidel. See skoorikaart aitab jagada olulisi teadmisi, mis on seotud õigluse, tunnuste olulisuse ja teiste vastutustundliku kasutuselevõtu kaalutlustega nii tehnilistele kui ka mittetehnilistele osapooltele.
+Microsoft Foundry pakub tööriistu generatiivsete tehisintellekti mudelite hindamiseks ja jälgimiseks. Saate hinnata nende jõudlust, õiglust ja muid olulisi mõõdikuid, et tagada vastutustundlik kasutuselevõtt. Lisaks, kui olete loonud armatuurlaua, saate kasutada Azure Machine Learning Studio koodivaba kasutajaliidest, et kohandada ja luua vastutustundliku tehisintellekti armatuurlauda ja sellega seotud skoorikaarti, mis põhineb [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python'i teekidel. See skoorikaart aitab jagada olulisi teadmisi, mis on seotud õigluse, tunnuste olulisuse ja teiste vastutustundliku kasutuselevõtu kaalutlustega nii tehnilistele kui ka mittetehnilistele osapooltele.
 
 AI Foundry kasutamiseks vastutustundliku tehisintellekti jaoks saate järgida järgmisi parimaid praktikaid:
 
@@ -106,7 +106,7 @@ Tehisintellekti süsteemid peaksid olema läbipaistvad ja selgitavad, et kasutaj
 
 Tehisintellekti süsteeme tuleks pidevalt jälgida ja uuendada, et tagada nende täpsus ja tõhusus aja jooksul. See nõuab mudeli pidevat hooldust, testimist ja ümberõpet.
 
-Kokkuvõttes on Microsofti vastutustundlik tehisintellekt algatus, mille eesmärk on aidata arendajatel ja organisatsioonidel luua tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Pidage meeles, et vastutustundliku tehisintellekti rakendamine on ülioluline, ja Azure AI Foundry eesmärk on muuta see organisatsioonidele praktiliseks. Järgides eetilisi põhimõtteid ja parimaid praktikaid, saame tagada, et tehisintellekti süsteemid arendatakse ja rakendatakse vastutustundlikult, tuues kasu kogu ühiskonnale.
+Kokkuvõttes on Microsofti vastutustundlik tehisintellekt algatus, mille eesmärk on aidata arendajatel ja organisatsioonidel luua tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Pidage meeles, et vastutustundliku tehisintellekti rakendamine on ülioluline, ja Microsoft Foundry eesmärk on muuta see organisatsioonidele praktiliseks. Järgides eetilisi põhimõtteid ja parimaid praktikaid, saame tagada, et tehisintellekti süsteemid arendatakse ja rakendatakse vastutustundlikult, tuues kasu kogu ühiskonnale.
 
 ---
 

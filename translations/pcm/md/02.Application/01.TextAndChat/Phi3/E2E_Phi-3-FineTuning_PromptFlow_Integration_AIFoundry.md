@@ -1,17 +1,17 @@
-# Fine-tune and Integrate custom Phi-3 models wit Prompt flow for Azure AI Foundry
+# Fine-tune and Integrate custom Phi-3 models wit Prompt flow for Microsoft Foundry
 
-Dis end-to-end (E2E) sample na based on di guide "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" from Microsoft Tech Community. E dey show di process dem to fine-tune, deploy, and integrate custom Phi-3 models wit Prompt flow for Azure AI Foundry.  
+Dis end-to-end (E2E) sample na based on di guide "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" from Microsoft Tech Community. E dey show di process dem to fine-tune, deploy, and integrate custom Phi-3 models wit Prompt flow for Microsoft Foundry.  
 Different from di E2E sample, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", wey involve to run code for local machine, dis tutorial na totally about fine-tuning and integrating your model for inside Azure AI / ML Studio.
 
 ## Overview
 
-For dis E2E sample, you go learn how to fine-tune di Phi-3 model and integrate am wit Prompt flow for Azure AI Foundry. By to work wit Azure AI / ML Studio, you go set workflow to deploy and run your own AI models. Dis E2E sample dem divide into three scenario:
+For dis E2E sample, you go learn how to fine-tune di Phi-3 model and integrate am wit Prompt flow for Microsoft Foundry. By to work wit Azure AI / ML Studio, you go set workflow to deploy and run your own AI models. Dis E2E sample dem divide into three scenario:
 
 **Scenario 1: Set up Azure resources and Prepare for fine-tuning**
 
 **Scenario 2: Fine-tune the Phi-3 model and Deploy for Azure Machine Learning Studio**
 
-**Scenario 3: Integrate wit Prompt flow and Chat wit your custom model for Azure AI Foundry**
+**Scenario 3: Integrate wit Prompt flow and Chat wit your custom model for Microsoft Foundry**
 
 Na overview of dis E2E sample be dis one.
 
@@ -30,7 +30,7 @@ Na overview of dis E2E sample be dis one.
     - [Fine-tune the Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Deploy the fine-tuned Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Integrate with Prompt flow and Chat with your custom model in Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenario 3: Integrate with Prompt flow and Chat with your custom model in Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrate the custom Phi-3 model with Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Chat with your custom Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ For dis exercise, you go:
 > ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.pcm.png)
 >
 
-## Scenario 3: Join am with Prompt flow and Chat with your custom model inside Azure AI Foundry
+## Scenario 3: Join am with Prompt flow and Chat with your custom model inside Microsoft Foundry
 
 ### Join di custom Phi-3 model with Prompt flow
 
@@ -552,8 +552,8 @@ After you don successfully deploy your fine-tuned model, you fit now join am wit
 
 For dis exercise, you go:
 
-- Create Azure AI Foundry Hub.
-- Create Azure AI Foundry Project.
+- Create Microsoft Foundry Hub.
+- Create Microsoft Foundry Project.
 - Create Prompt flow.
 - Add custom connection for di fine-tuned Phi-3 model.
 - Set Prompt flow to chat with your custom Phi-3 model
@@ -561,11 +561,11 @@ For dis exercise, you go:
 > [!NOTE]
 > You fit also join am with Promptflow using Azure ML Studio. Di same joining process fit apply for Azure ML Studio.
 
-#### Create Azure AI Foundry Hub
+#### Create Microsoft Foundry Hub
 
-You gats create Hub before you create Project. Hub dey act like Resource Group, e help you organize and manage multiple Projects inside Azure AI Foundry.
+You gats create Hub before you create Project. Hub dey act like Resource Group, e help you organize and manage multiple Projects inside Microsoft Foundry.
 
-1. Visit [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Visit [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Select **All hubs** from di left side tab.
 
@@ -585,7 +585,7 @@ You gats create Hub before you create Project. Hub dey act like Resource Group, 
 
 1. Choose **Next**.
 
-#### Create Azure AI Foundry Project
+#### Create Microsoft Foundry Project
 
 1. For the Hub wey you create, choose **All projects** from left side tab.
 
@@ -625,9 +625,9 @@ To join your custom Phi-3 model with Prompt flow, you need save the model's endp
 
 #### Add the Custom Connection
 
-1. Visit [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Visit [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Go enter the Azure AI Foundry project wey you create.
+1. Go enter the Microsoft Foundry project wey you create.
 
 1. For the Project wey you create, choose **Settings** from left side tab.
 
@@ -653,9 +653,9 @@ To join your custom Phi-3 model with Prompt flow, you need save the model's endp
 
 #### Create Prompt flow
 
-You don add custom connection for Azure AI Foundry. Now, make we create Prompt flow with this steps. Then, you go connect this Prompt flow to the custom connection so you fit use the fine-tuned model inside the Prompt flow.
+You don add custom connection for Microsoft Foundry. Now, make we create Prompt flow with this steps. Then, you go connect this Prompt flow to the custom connection so you fit use the fine-tuned model inside the Prompt flow.
 
-1. Go the Azure AI Foundry project wey you create.
+1. Go the Microsoft Foundry project wey you create.
 
 1. Choose **Prompt flow** from left side tab.
 
@@ -774,7 +774,7 @@ You need join the fine-tuned Phi-3 model enter Prompt flow. But the Prompt flow 
     ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.pcm.png)
 
 > [!NOTE]
-> For detailed information on how to use Prompt flow inside Azure AI Foundry, you fit check [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> For detailed information on how to use Prompt flow inside Microsoft Foundry, you fit check [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Choose **Chat input**, then **Chat output** to enable chat with your model.
 

@@ -1,17 +1,17 @@
-# Fine-tune e integra modelli personalizzati Phi-3 con Prompt flow in Azure AI Foundry
+# Fine-tune e integra modelli personalizzati Phi-3 con Prompt flow in Microsoft Foundry
 
-Questo esempio end-to-end (E2E) si basa sulla guida "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" dalla Microsoft Tech Community. Introduce i processi di fine-tuning, distribuzione e integrazione di modelli personalizzati Phi-3 con Prompt flow in Azure AI Foundry.
+Questo esempio end-to-end (E2E) si basa sulla guida "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" dalla Microsoft Tech Community. Introduce i processi di fine-tuning, distribuzione e integrazione di modelli personalizzati Phi-3 con Prompt flow in Microsoft Foundry.
 A differenza dell'esempio E2E, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", che prevedeva l'esecuzione del codice localmente, questo tutorial si concentra interamente sul fine-tuning e sull'integrazione del modello all'interno di Azure AI / ML Studio.
 
 ## Panoramica
 
-In questo esempio E2E, imparerai come effettuare il fine-tuning del modello Phi-3 e integrarlo con Prompt flow in Azure AI Foundry. Sfruttando Azure AI / ML Studio, stabilirai un flusso di lavoro per distribuire e utilizzare modelli di intelligenza artificiale personalizzati. Questo esempio E2E è suddiviso in tre scenari:
+In questo esempio E2E, imparerai come effettuare il fine-tuning del modello Phi-3 e integrarlo con Prompt flow in Microsoft Foundry. Sfruttando Azure AI / ML Studio, stabilirai un flusso di lavoro per distribuire e utilizzare modelli di intelligenza artificiale personalizzati. Questo esempio E2E è suddiviso in tre scenari:
 
 **Scenario 1: Configurare le risorse Azure e prepararsi per il fine-tuning**
 
 **Scenario 2: Effettuare il fine-tuning del modello Phi-3 e distribuirlo in Azure Machine Learning Studio**
 
-**Scenario 3: Integrare con Prompt flow e chattare con il tuo modello personalizzato in Azure AI Foundry**
+**Scenario 3: Integrare con Prompt flow e chattare con il tuo modello personalizzato in Microsoft Foundry**
 
 Ecco una panoramica di questo esempio E2E.
 
@@ -30,7 +30,7 @@ Ecco una panoramica di questo esempio E2E.
     - [Effettuare il fine-tuning del modello Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Distribuire il modello Phi-3 con fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Integrare con Prompt flow e chattare con il tuo modello personalizzato in Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenario 3: Integrare con Prompt flow e chattare con il tuo modello personalizzato in Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrare il modello Phi-3 personalizzato con Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Chattare con il modello Phi-3 personalizzato](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ In questo esercizio:
 > ![Imposta traffico.](../../../../../../translated_images/it/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenario 3: Integra con Prompt flow e Chatta con il tuo modello personalizzato in Azure AI Foundry
+## Scenario 3: Integra con Prompt flow e Chatta con il tuo modello personalizzato in Microsoft Foundry
 
 ### Integra il modello Phi-3 personalizzato con Prompt flow
 
@@ -552,8 +552,8 @@ Dopo aver distribuito con successo il modello fine-tuned, puoi ora integrarlo co
 
 In questo esercizio:
 
-- Creerai Azure AI Foundry Hub.
-- Creerai un progetto Azure AI Foundry.
+- Creerai Microsoft Foundry Hub.
+- Creerai un progetto Microsoft Foundry.
 - Creerai Prompt flow.
 - Aggiungerai una connessione personalizzata per il modello Phi-3 fine-tuned.
 - Configurerai Prompt flow per chattare con il tuo modello Phi-3 personalizzato.
@@ -561,11 +561,11 @@ In questo esercizio:
 > [!NOTE]
 > Puoi anche integrare con Promptflow usando Azure ML Studio. Lo stesso processo di integrazione può essere applicato ad Azure ML Studio.
 
-#### Crea Azure AI Foundry Hub
+#### Crea Microsoft Foundry Hub
 
-Devi creare un Hub prima di creare il Progetto. Un Hub funziona come un Gruppo di risorse, permettendoti di organizzare e gestire più progetti all’interno di Azure AI Foundry.
+Devi creare un Hub prima di creare il Progetto. Un Hub funziona come un Gruppo di risorse, permettendoti di organizzare e gestire più progetti all’interno di Microsoft Foundry.
 
-1. Visita [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Visita [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Seleziona **Tutti gli hub** dal tab a sinistra.
 
@@ -585,7 +585,7 @@ Devi creare un Hub prima di creare il Progetto. Un Hub funziona come un Gruppo d
 
 1. Seleziona **Avanti**.
 
-#### Crea progetto Azure AI Foundry
+#### Crea progetto Microsoft Foundry
 
 1. Nell'Hub che hai creato, seleziona **Tutti i progetti** dalla scheda a sinistra.
 
@@ -625,9 +625,9 @@ Per integrare il tuo modello Phi-3 personalizzato con Prompt flow, devi salvare 
 
 #### Aggiungi la Connessione Personalizzata
 
-1. Visita [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Visita [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Naviga al progetto Azure AI Foundry che hai creato.
+1. Naviga al progetto Microsoft Foundry che hai creato.
 
 1. Nel Progetto che hai creato, seleziona **Impostazioni** dalla scheda a sinistra.
 
@@ -653,9 +653,9 @@ Per integrare il tuo modello Phi-3 personalizzato con Prompt flow, devi salvare 
 
 #### Crea Prompt flow
 
-Hai aggiunto una connessione personalizzata in Azure AI Foundry. Ora, creiamo un Prompt flow seguendo i passaggi seguenti. Poi, collegherai questo Prompt flow alla connessione personalizzata in modo da poter utilizzare il modello fine-tuned all'interno del Prompt flow.
+Hai aggiunto una connessione personalizzata in Microsoft Foundry. Ora, creiamo un Prompt flow seguendo i passaggi seguenti. Poi, collegherai questo Prompt flow alla connessione personalizzata in modo da poter utilizzare il modello fine-tuned all'interno del Prompt flow.
 
-1. Naviga al progetto Azure AI Foundry che hai creato.
+1. Naviga al progetto Microsoft Foundry che hai creato.
 
 1. Seleziona **Prompt flow** dalla scheda a sinistra.
 
@@ -774,7 +774,7 @@ Devi integrare il modello Phi-3 fine-tuned in un Prompt flow. Tuttavia, il Promp
     ![Incolla codice prompt flow.](../../../../../../translated_images/it/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Per informazioni più dettagliate sull'uso di Prompt flow in Azure AI Foundry, puoi fare riferimento a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Per informazioni più dettagliate sull'uso di Prompt flow in Microsoft Foundry, puoi fare riferimento a [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Seleziona **Chat input**, **Chat output** per abilitare la chat con il tuo modello.
 

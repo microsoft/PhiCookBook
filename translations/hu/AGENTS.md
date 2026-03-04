@@ -7,7 +7,7 @@ A PhiCookBook egy átfogó szakácskönyv-repozitórium, amely gyakorlati péld�
 **Kulcstechnológiák:**
 - **Nyelvek:** Python, C#/.NET, JavaScript/Node.js
 - **Keretrendszerek:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformok:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platformok:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Modelltípusok:** Phi-3, Phi-3.5, Phi-4 (szöveg, látás, multimodális, érvelési változatok)
 
 **Repozitórium felépítése:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Bevezető útmutatók, környezet beállítása, platform útmutatók
 - **02.Application/** - Alkalmazási minták típus szerint (Szöveg, Kód, Látás, Hang, stb.)
-- **02.QuickStart/** - Gyors kezdési útmutatók Azure AI Foundry és GitHub Models számára
+- **02.QuickStart/** - Gyors kezdési útmutatók Microsoft Foundry és GitHub Models számára
 - **03.FineTuning/** - Finomhangolási dokumentáció és oktatóanyagok
 - **04.HOL/** - Gyakorlati laborok (.NET példákat is tartalmaz)
 
@@ -241,7 +241,7 @@ Példák:
 
 ### Platform-specifikus megjegyzések
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Azure előfizetést és API kulcsokat igényel
 - Lásd: `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ Példák:
 
 ### Segítség kérése
 
-- **Discord:** Csatlakozzon az Azure AI Foundry Community Discordhoz
+- **Discord:** Csatlakozzon az Microsoft Foundry Community Discordhoz
 - **GitHub Issues:** Jelentsen hibákat és problémákat a repozitóriumban
 - **GitHub Discussions:** Tegyen fel kérdéseket és ossza meg tudását
 

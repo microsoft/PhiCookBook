@@ -12,7 +12,7 @@
 [![Cabang GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![Bintang GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi adalah siri model AI sumber terbuka yang dibangunkan oleh Microsoft.
 
@@ -71,7 +71,7 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
 - Inferens Phi dalam persekitaran berbeza
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [Model GitHub](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Katalog Model Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Katalog Model Microsoft Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
 
 -  Penilaian Phi
     - [AI Bertanggungjawab](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry untuk Penilaian](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry untuk Penilaian](./md/01.Introduction/05/AIFoundry.md)
     - [Menggunakan Promptflow untuk Penilaian](./md/01.Introduction/05/Promptflow.md)
  
 - RAG dengan Pencarian Azure AI
@@ -117,8 +117,8 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
       - [Aplikasi WinUI3 dengan Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[Contoh Aplikasi Nota AI Berkuasa Multi Model WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Laras Halus dan Integrasi model Phi-3 tersuai dengan Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Laras Halus dan Integrasi model Phi-3 tersuai dengan Prompt flow dalam Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Nilai Model Phi-3 / Phi-3.5 yang Dilaras Halus di Azure AI Foundry dengan Fokus pada Prinsip AI Bertanggungjawab Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Laras Halus dan Integrasi model Phi-3 tersuai dengan Prompt flow dalam Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Nilai Model Phi-3 / Phi-3.5 yang Dilaras Halus di Microsoft Foundry dengan Fokus pada Prinsip AI Bertanggungjawab Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Contoh ramalan bahasa Phi-3.5-mini-instruct (Cina/Inggeris)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Menggunakan Windows GPU untuk membuat penyelesaian Prompt flow dengan Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
       - [📓] [Laras halus Phi-4-mini-reasoning dengan Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Laras halus Phi-4-mini-reasoning dengan Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning dengan Model GitHub](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning dengan Model Azure AI Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning dengan Model Microsoft Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demonstrasi
       - [Demonstrasi Phi-4-mini dihoskan di Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Demonstrasi Phi-4-multimodal dihoskan di Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
   - [Laras Halus Phi-3 dengan Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Laras Halus Phi-3 dengan Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Laras Halus Phi-3 dengan QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Laras Halus Phi-3 dengan Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Laras Halus Phi-3 dengan Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Laras Halus Phi-3 dengan Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Laras Halus dengan Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Makmal Amali Laras Halus dengan Microsoft Olive](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Ikuti langkah-langkah ini untuk mula menggunakan sumber ini:
 
 ## Menggunakan Model Phi
 
-### Phi di Azure AI Foundry
+### Phi di Microsoft Foundry
 
-Anda boleh mempelajari cara menggunakan Microsoft Phi dan bagaimana membina penyelesaian E2E dalam pelbagai peranti perkakasan anda. Untuk mengalami Phi secara langsung, mulakan dengan bermain dengan model dan menyesuaikan Phi untuk senario anda menggunakan [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) anda boleh belajar lebih lanjut di Memulakan dengan [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Anda boleh mempelajari cara menggunakan Microsoft Phi dan bagaimana membina penyelesaian E2E dalam pelbagai peranti perkakasan anda. Untuk mengalami Phi secara langsung, mulakan dengan bermain dengan model dan menyesuaikan Phi untuk senario anda menggunakan [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) anda boleh belajar lebih lanjut di Memulakan dengan [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Padang Permainan**  
 Setiap model mempunyai padang permainan khusus untuk menguji model [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Pendekatan Microsoft terhadap AI bertanggungjawab berasaskan pada prinsip AI kam
 
 Model bahasa besar-besaran, imej, dan ucapan semula jadi - seperti yang digunakan dalam contoh ini - berpotensi bertindak dengan cara yang tidak adil, tidak boleh dipercayai, atau menyinggung, yang seterusnya boleh menyebabkan kemudaratan. Sila rujuk [nota ketelusan perkhidmatan Azure OpenAI](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) untuk dimaklumkan tentang risiko dan hadnya.
 
-Pendekatan yang disyorkan untuk mengurangkan risiko ini ialah memasukkan sistem keselamatan dalam seni bina anda yang dapat mengesan dan menghalang tingkah laku berbahaya. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) menyediakan lapisan perlindungan bebas, yang boleh mengesan kandungan yang membahayakan dihasilkan pengguna dan AI dalam aplikasi dan perkhidmatan. Azure AI Content Safety merangkumi API teks dan imej yang membolehkan anda mengesan bahan yang berbahaya. Dalam Azure AI Foundry, perkhidmatan Content Safety membolehkan anda melihat, meneroka dan mencuba kod contoh untuk mengesan kandungan berbahaya merentasi pelbagai mod. Dokumentasi [permulaan pantas berikut](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) membimbing anda melakukan permintaan ke perkhidmatan tersebut.
+Pendekatan yang disyorkan untuk mengurangkan risiko ini ialah memasukkan sistem keselamatan dalam seni bina anda yang dapat mengesan dan menghalang tingkah laku berbahaya. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) menyediakan lapisan perlindungan bebas, yang boleh mengesan kandungan yang membahayakan dihasilkan pengguna dan AI dalam aplikasi dan perkhidmatan. Azure AI Content Safety merangkumi API teks dan imej yang membolehkan anda mengesan bahan yang berbahaya. Dalam Microsoft Foundry, perkhidmatan Content Safety membolehkan anda melihat, meneroka dan mencuba kod contoh untuk mengesan kandungan berbahaya merentasi pelbagai mod. Dokumentasi [permulaan pantas berikut](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) membimbing anda melakukan permintaan ke perkhidmatan tersebut.
 Satu aspek lain yang perlu diambil kira ialah prestasi keseluruhan aplikasi. Dengan aplikasi pelbagai mod dan pelbagai model, kami menganggap prestasi bermaksud sistem berfungsi seperti yang anda dan pengguna anda jangkakan, termasuk tidak menghasilkan output yang merbahaya. Adalah penting untuk menilai prestasi aplikasi keseluruhan anda menggunakan [Penilai Prestasi dan Kualiti serta Risiko dan Keselamatan](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Anda juga mempunyai kemampuan untuk mencipta dan menilai menggunakan [penilai tersuai](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Anda boleh menilai aplikasi AI anda dalam persekitaran pembangunan anda menggunakan [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Dengan dataset ujian atau sasaran, generasi aplikasi AI generatif anda diukur secara kuantitatif dengan penilai terbina dalam atau penilai tersuai pilihan anda. Untuk bermula dengan azure ai evaluation sdk untuk menilai sistem anda, anda boleh mengikuti [panduan permulaan pantas](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Setelah anda menjalankan larian penilaian, anda boleh [memvisualisasikan keputusan dalam Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Anda boleh menilai aplikasi AI anda dalam persekitaran pembangunan anda menggunakan [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Dengan dataset ujian atau sasaran, generasi aplikasi AI generatif anda diukur secara kuantitatif dengan penilai terbina dalam atau penilai tersuai pilihan anda. Untuk bermula dengan azure ai evaluation sdk untuk menilai sistem anda, anda boleh mengikuti [panduan permulaan pantas](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Setelah anda menjalankan larian penilaian, anda boleh [memvisualisasikan keputusan dalam Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Tanda Dagangan
 
@@ -303,11 +303,11 @@ Penggunaan tanda dagangan atau logo Microsoft dalam versi projek yang diubah sua
 
 Jika anda tersekat atau mempunyai sebarang pertanyaan mengenai membina aplikasi AI, sertai:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Jika anda mempunyai maklum balas produk atau ralat semasa membina, lawati:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

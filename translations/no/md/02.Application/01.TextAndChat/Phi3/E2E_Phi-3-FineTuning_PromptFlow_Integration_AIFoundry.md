@@ -1,17 +1,17 @@
-# Finjuster og integrer tilpassede Phi-3-modeller med Prompt flow i Azure AI Foundry
+# Finjuster og integrer tilpassede Phi-3-modeller med Prompt flow i Microsoft Foundry
 
-Dette ende-til-ende (E2E) eksemplet er basert på veiledningen "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" fra Microsoft Tech Community. Den introduserer prosessene for finjustering, distribusjon og integrering av tilpassede Phi-3-modeller med Prompt flow i Azure AI Foundry.
+Dette ende-til-ende (E2E) eksemplet er basert på veiledningen "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" fra Microsoft Tech Community. Den introduserer prosessene for finjustering, distribusjon og integrering av tilpassede Phi-3-modeller med Prompt flow i Microsoft Foundry.
 I motsetning til E2E-eksemplet, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", som innebar å kjøre kode lokalt, fokuserer denne veiledningen helt og holdent på finjustering og integrering av modellen din innen Azure AI / ML Studio.
 
 ## Oversikt
 
-I dette E2E-eksemplet vil du lære hvordan du finjusterer Phi-3-modellen og integrerer den med Prompt flow i Azure AI Foundry. Ved å bruke Azure AI / ML Studio vil du etablere en arbeidsflyt for distribusjon og bruk av tilpassede AI-modeller. Dette E2E-eksemplet er delt inn i tre scenarier:
+I dette E2E-eksemplet vil du lære hvordan du finjusterer Phi-3-modellen og integrerer den med Prompt flow i Microsoft Foundry. Ved å bruke Azure AI / ML Studio vil du etablere en arbeidsflyt for distribusjon og bruk av tilpassede AI-modeller. Dette E2E-eksemplet er delt inn i tre scenarier:
 
 **Scenario 1: Sett opp Azure-ressurser og forbered for finjustering**
 
 **Scenario 2: Finjuster Phi-3-modellen og distribuer i Azure Machine Learning Studio**
 
-**Scenario 3: Integrer med Prompt flow og chat med din tilpassede modell i Azure AI Foundry**
+**Scenario 3: Integrer med Prompt flow og chat med din tilpassede modell i Microsoft Foundry**
 
 Her er en oversikt over dette E2E-eksemplet.
 
@@ -30,7 +30,7 @@ Her er en oversikt over dette E2E-eksemplet.
     - [Finjuster Phi-3-modellen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Distribuer den finjusterte Phi-3-modellen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Integrer med Prompt flow og chat med din tilpassede modell i Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenario 3: Integrer med Prompt flow og chat med din tilpassede modell i Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrer den tilpassede Phi-3-modellen med Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Chat med din tilpassede Phi-3-modell](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ I denne øvelsen skal du:
 > ![Sett trafikk.](../../../../../../translated_images/no/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenario 3: Integrer med Prompt flow og chat med din egendefinerte modell i Azure AI Foundry
+## Scenario 3: Integrer med Prompt flow og chat med din egendefinerte modell i Microsoft Foundry
 
 ### Integrer den egendefinerte Phi-3-modellen med Prompt flow
 
@@ -552,8 +552,8 @@ Etter å ha distribuert din finjusterte modell, kan du nå integrere den med Pro
 
 I denne øvelsen skal du:
 
-- Opprette Azure AI Foundry Hub.
-- Opprette Azure AI Foundry Prosjekt.
+- Opprette Microsoft Foundry Hub.
+- Opprette Microsoft Foundry Prosjekt.
 - Opprette Prompt Flow.
 - Legge til en egendefinert kobling for den finjusterte Phi-3-modellen.
 - Sette opp Prompt Flow for å chatte med din egendefinerte Phi-3-modell.
@@ -561,11 +561,11 @@ I denne øvelsen skal du:
 > [!NOTE]
 > Du kan også integrere med Promptflow ved hjelp av Azure ML Studio. Samme integrasjonsprosedyre kan brukes i Azure ML Studio.
 
-#### Opprett Azure AI Foundry Hub
+#### Opprett Microsoft Foundry Hub
 
-Du må opprette en Hub før du oppretter prosjektet. En Hub fungerer som en Resource Group som lar deg organisere og administrere flere prosjekter innen Azure AI Foundry.
+Du må opprette en Hub før du oppretter prosjektet. En Hub fungerer som en Resource Group som lar deg organisere og administrere flere prosjekter innen Microsoft Foundry.
 
-1. Besøk [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Besøk [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Velg **All hubs** fra menyfanen til venstre.
 
@@ -585,7 +585,7 @@ Du må opprette en Hub før du oppretter prosjektet. En Hub fungerer som en Reso
 
 1. Velg **Neste**.
 
-#### Opprett Azure AI Foundry-prosjekt
+#### Opprett Microsoft Foundry-prosjekt
 
 1. I huben du opprettet, velg **Alle prosjekter** fra venstremenyen.
 
@@ -625,9 +625,9 @@ For å integrere din egendefinerte Phi-3-modell med Prompt flow, må du lagre mo
 
 #### Legg til den egendefinerte tilkoblingen
 
-1. Besøk [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Besøk [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Naviger til Azure AI Foundry-prosjektet du opprettet.
+1. Naviger til Microsoft Foundry-prosjektet du opprettet.
 
 1. I prosjektet du opprettet, velg **Innstillinger** fra venstremenyen.
 
@@ -653,9 +653,9 @@ For å integrere din egendefinerte Phi-3-modell med Prompt flow, må du lagre mo
 
 #### Opprett Prompt flow
 
-Du har lagt til en egendefinert tilkobling i Azure AI Foundry. Nå la oss opprette en Prompt flow ved å følge disse trinnene. Deretter vil du koble denne Prompt flow til den egendefinerte tilkoblingen slik at du kan bruke den finjusterte modellen i Prompt flow.
+Du har lagt til en egendefinert tilkobling i Microsoft Foundry. Nå la oss opprette en Prompt flow ved å følge disse trinnene. Deretter vil du koble denne Prompt flow til den egendefinerte tilkoblingen slik at du kan bruke den finjusterte modellen i Prompt flow.
 
-1. Naviger til Azure AI Foundry-prosjektet du opprettet.
+1. Naviger til Microsoft Foundry-prosjektet du opprettet.
 
 1. Velg **Prompt flow** fra venstremenyen.
 
@@ -774,7 +774,7 @@ Du må integrere den finjusterte Phi-3-modellen i en Prompt flow. Men den eksist
     ![Lim inn prompt flow-kode.](../../../../../../translated_images/no/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> For mer detaljert informasjon om bruk av Prompt flow i Azure AI Foundry, kan du se [Prompt flow i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> For mer detaljert informasjon om bruk av Prompt flow i Microsoft Foundry, kan du se [Prompt flow i Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Velg **Chat input**, **Chat output** for å aktivere chatting med modellen din.
 

@@ -12,7 +12,7 @@
 [![GitHub forkinimas](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub žvaigždės](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi yra atviro kodo dirbtinio intelekto modelių serija, sukurta Microsoft. 
 
@@ -71,7 +71,7 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
 - Phi inferencija skirtingose aplinkose
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub modeliai](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry modelių katalogas](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry modelių katalogas](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
 
 -  Phi vertinimas
     - [Atsakingas DI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry vertinimui](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry vertinimui](./md/01.Introduction/05/AIFoundry.md)
     - [Vertinimas naudojant Promptflow](./md/01.Introduction/05/Promptflow.md)
  
 - RAG su Azure AI paieška
@@ -117,8 +117,8 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
       - [WinUI3 programa su Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Multi Model AI varoma užrašų programos pavyzdys](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Tikslinis apmokymas ir pritaikymas su individualiais Phi-3 modeliais naudojant Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Tikslinis apmokymas ir pritaikymas su individualiais Phi-3 modeliais naudojant Prompt flow Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Įvertinkite tiksliai apmokytą Phi-3 / Phi-3.5 modelį Azure AI Foundry laikantis Microsoft atsakingo AI principų](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Tikslinis apmokymas ir pritaikymas su individualiais Phi-3 modeliais naudojant Prompt flow Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Įvertinkite tiksliai apmokytą Phi-3 / Phi-3.5 modelį Microsoft Foundry laikantis Microsoft atsakingo AI principų](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct kalbos prognozės pavyzdys (Kinų/Anglų)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG pokalbių botas](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Naudojant Windows GPU kurti Prompt flow sprendimą su Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
       - [📓] [Tikslinis Phi-4-mini-samprotavimų apmokymas su Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Tikslinis Phi-4-mini-samprotavimų apmokymas su Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-samprotavimų su GitHub modeliais](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-samprotavimų su Azure AI Foundry modeliais](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-samprotavimų su Microsoft Foundry modeliais](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demonstracijos
       - [Phi-4-mini demonstracijos prieinamos Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demonstracijos prieinamos Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
   - [Tikslinis apmokymas Phi-3 su Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Tikslinis apmokymas Phi-3 su Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Tikslinis apmokymas Phi-3 su QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Tikslinis apmokymas Phi-3 su Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Tikslinis apmokymas Phi-3 su Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Tikslinis apmokymas Phi-3 su Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Tikslinis apmokymas su Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Tikslinis apmokymas su Microsoft Olive praktinis užsiėmimas](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiomis ištekliais:
 
 ## Phi modelių naudojimas
 
-### Phi su Azure AI Foundry
+### Phi su Microsoft Foundry
 
-Galite sužinoti, kaip naudoti Microsoft Phi ir kaip kurti E2E sprendimus savo skirtinguose įrenginiuose. Norėdami patirti Phi patys, pradėkite žaisti su modeliais ir pritaikyti Phi savo scenarijams naudodami [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Daugiau sužinokite apie tai pradžioje su [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Galite sužinoti, kaip naudoti Microsoft Phi ir kaip kurti E2E sprendimus savo skirtinguose įrenginiuose. Norėdami patirti Phi patys, pradėkite žaisti su modeliais ir pritaikyti Phi savo scenarijams naudodami [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Daugiau sužinokite apie tai pradžioje su [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Žaidimų aikštelė**
 Kiekvienas modelis turi skirtą žaidimų aikštelę modeliui išbandyti [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Microsoft atsakingo DI požiūris remiasi mūsų DI principais: sąžiningumo, p
 
 Didelio masto natūralios kalbos, vaizdų ir balso modeliai – tokie, kaip naudojami šiame pavyzdyje – gali elgtis neteisingai, nepatikimai ar įžeidžiančiai, o tai gali sukelti žalą. Prašome susipažinti su [Azure OpenAI paslaugos Skaidrumo pastaba](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), kad sužinotumėte apie rizikas ir apribojimus.
 
-Rekomenduojamas rizikų mažinimo būdas – į architektūrą įtraukti saugumo sistemą, galinčią aptikti ir užkirsti kelią kenksmingam elgesiui. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) suteikia nepriklausomą apsaugos sluoksnį, galintį aptikti žalingą naudotojų generuotą ir DI generuotą turinį programėlėse ir paslaugose. Azure AI Content Safety apima teksto ir vaizdų API, leidžiančias aptikti kenksmingą turinį. Azure AI Foundry, Content Safety paslauga leidžia peržiūrėti, tyrinėti ir išbandyti pavyzdinį kodą, skirtą kenksmingam turiniui aptikti įvairiose modalitetuose. Ši [greito pradžios dokumentacija](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) padės jums atlikti užklausas paslaugai.
+Rekomenduojamas rizikų mažinimo būdas – į architektūrą įtraukti saugumo sistemą, galinčią aptikti ir užkirsti kelią kenksmingam elgesiui. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) suteikia nepriklausomą apsaugos sluoksnį, galintį aptikti žalingą naudotojų generuotą ir DI generuotą turinį programėlėse ir paslaugose. Azure AI Content Safety apima teksto ir vaizdų API, leidžiančias aptikti kenksmingą turinį. Microsoft Foundry, Content Safety paslauga leidžia peržiūrėti, tyrinėti ir išbandyti pavyzdinį kodą, skirtą kenksmingam turiniui aptikti įvairiose modalitetuose. Ši [greito pradžios dokumentacija](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) padės jums atlikti užklausas paslaugai.
 Kitas aspektas, į kurį reikia atsižvelgti, yra bendra programos našumas. Multi-modalėse ir multi-modelinėse programose našumu laikome tai, kad sistema veikia taip, kaip tikitės jūs ir jūsų vartotojai, įskaitant ir kenksmingų išvesties rezultatų vengimą. Svarbu įvertinti visos jūsų programos veikimą, naudojant [Veikimo, Kokybės, Rizikos ir Saugumo vertintojus](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Taip pat turite galimybę kurti ir vertinti naudojant [individualius vertintojus](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Galite įvertinti savo AI programą kūrimo aplinkoje naudodami [Azure AI vertinimo SDK](https://microsoft.github.io/promptflow/index.html). Turint testinį duomenų rinkinį arba tikslą, jūsų generuojamos AI programos išvestys kiekybiškai matuojamos su įtaisytų vertintojų arba jūsų pasirinkimų individualių vertintojų pagalba. Norėdami pradėti naudotis azure ai vertinimo sdk, kad įvertintumėte savo sistemą, galite sekti [spartaus pradžios vadovą](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Vykdę vertinimą, galite [vizualizuoti rezultatus Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Galite įvertinti savo AI programą kūrimo aplinkoje naudodami [Azure AI vertinimo SDK](https://microsoft.github.io/promptflow/index.html). Turint testinį duomenų rinkinį arba tikslą, jūsų generuojamos AI programos išvestys kiekybiškai matuojamos su įtaisytų vertintojų arba jūsų pasirinkimų individualių vertintojų pagalba. Norėdami pradėti naudotis azure ai vertinimo sdk, kad įvertintumėte savo sistemą, galite sekti [spartaus pradžios vadovą](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Vykdę vertinimą, galite [vizualizuoti rezultatus Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Prekių ženklai
 
@@ -303,11 +303,11 @@ Modifikuotose šio projekto versijose Microsoft prekių ženklų ar logotipų na
 
 Jei įstringate arba turite klausimų apie AI programų kūrimą, prisijunkite prie:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Jei turite produktų atsiliepimų arba susiduriate su klaidomis kūrimo metu, apsilankykite:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

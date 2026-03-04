@@ -5,7 +5,7 @@
 This section provides an overview of fine-tuning scenarios in Microsoft Foundry and Azure environments, including deployment models, infrastructure layers, and commonly used optimization techniques.
 
 **Platform**  
-This includes managed services such as Microsoft Foundry (formerly Azure AI Foundry) and Azure Machine Learning, which provide model management, orchestration, experiment tracking, and deployment workflows.
+This includes managed services such as Microsoft Foundry (formerly Microsoft Foundry) and Azure Machine Learning, which provide model management, orchestration, experiment tracking, and deployment workflows.
 
 **Infrastructure**  
 Fine-tuning requires scalable compute resources. In Azure environments, this typically includes GPU-based virtual machines and CPU resources for lightweight workloads, along with scalable storage for datasets and checkpoints.

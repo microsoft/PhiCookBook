@@ -1,14 +1,14 @@
-# Avaliando o Modelo Phi-3 / Phi-3.5 Fine-tuned no Azure AI Foundry com Foco nos Princípios de IA Responsável da Microsoft
+# Avaliando o Modelo Phi-3 / Phi-3.5 Fine-tuned no Microsoft Foundry com Foco nos Princípios de IA Responsável da Microsoft
 
-Este exemplo de ponta a ponta (E2E) é baseado no guia "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" da Microsoft Tech Community.
+Este exemplo de ponta a ponta (E2E) é baseado no guia "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" da Microsoft Tech Community.
 
 ## Visão Geral
 
-### Como avaliar a segurança e o desempenho de um modelo Phi-3 / Phi-3.5 fine-tuned no Azure AI Foundry?
+### Como avaliar a segurança e o desempenho de um modelo Phi-3 / Phi-3.5 fine-tuned no Microsoft Foundry?
 
-O fine-tuning de um modelo pode, às vezes, levar a respostas indesejadas ou inesperadas. Para garantir que o modelo continue seguro e eficaz, é importante avaliar seu potencial para gerar conteúdo prejudicial e sua capacidade de produzir respostas precisas, relevantes e coerentes. Neste tutorial, você aprenderá como avaliar a segurança e o desempenho de um modelo Phi-3 / Phi-3.5 fine-tuned integrado com Prompt flow no Azure AI Foundry.
+O fine-tuning de um modelo pode, às vezes, levar a respostas indesejadas ou inesperadas. Para garantir que o modelo continue seguro e eficaz, é importante avaliar seu potencial para gerar conteúdo prejudicial e sua capacidade de produzir respostas precisas, relevantes e coerentes. Neste tutorial, você aprenderá como avaliar a segurança e o desempenho de um modelo Phi-3 / Phi-3.5 fine-tuned integrado com Prompt flow no Microsoft Foundry.
 
-Aqui está o processo de avaliação do Azure AI Foundry.
+Aqui está o processo de avaliação do Microsoft Foundry.
 
 ![Arquitetura do tutorial.](../../../../../../translated_images/pt-BR/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@ Aqui está o processo de avaliação do Azure AI Foundry.
 
 ### Sumário
 
-1. [**Cenário 1: Introdução à avaliação do Prompt flow do Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Cenário 1: Introdução à avaliação do Prompt flow do Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Introdução à avaliação de segurança](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Introdução à avaliação de desempenho](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Cenário 2: Avaliando o modelo Phi-3 / Phi-3.5 no Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Cenário 2: Avaliando o modelo Phi-3 / Phi-3.5 no Microsoft Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Antes de começar](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Implantar Azure OpenAI para avaliar o modelo Phi-3 / Phi-3.5](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Avaliar o modelo Phi-3 / Phi-3.5 fine-tuned usando a avaliação do Prompt flow do Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Avaliar o modelo Phi-3 / Phi-3.5 fine-tuned usando a avaliação do Prompt flow do Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Parabéns!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Cenário 1: Introdução à avaliação do Prompt flow do Azure AI Foundry**
+## **Cenário 1: Introdução à avaliação do Prompt flow do Microsoft Foundry**
 
 ### Introdução à avaliação de segurança
 
-Para garantir que seu modelo de IA seja ético e seguro, é fundamental avaliá-lo com base nos Princípios de IA Responsável da Microsoft. No Azure AI Foundry, as avaliações de segurança permitem analisar a vulnerabilidade do seu modelo a ataques de jailbreak e seu potencial para gerar conteúdo prejudicial, alinhando-se diretamente a esses princípios.
+Para garantir que seu modelo de IA seja ético e seguro, é fundamental avaliá-lo com base nos Princípios de IA Responsável da Microsoft. No Microsoft Foundry, as avaliações de segurança permitem analisar a vulnerabilidade do seu modelo a ataques de jailbreak e seu potencial para gerar conteúdo prejudicial, alinhando-se diretamente a esses princípios.
 
 ![Avaliação de segurança.](../../../../../../translated_images/pt-BR/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ Os Princípios de IA Responsável da Microsoft incluem:
 
 #### Métricas de segurança
 
-Neste tutorial, você avaliará a segurança do modelo Phi-3 fine-tuned usando as métricas de segurança do Azure AI Foundry. Essas métricas ajudam a analisar o potencial do modelo para gerar conteúdo prejudicial e sua vulnerabilidade a ataques de jailbreak. As métricas de segurança incluem:
+Neste tutorial, você avaliará a segurança do modelo Phi-3 fine-tuned usando as métricas de segurança do Microsoft Foundry. Essas métricas ajudam a analisar o potencial do modelo para gerar conteúdo prejudicial e sua vulnerabilidade a ataques de jailbreak. As métricas de segurança incluem:
 
 - **Conteúdo relacionado a autoagressão**: Avalia se o modelo tende a produzir conteúdo relacionado a autoagressão.
 - **Conteúdo odioso e injusto**: Avalia se o modelo tende a produzir conteúdo odioso ou injusto.
@@ -88,7 +88,7 @@ Avaliar esses aspectos garante que o modelo de IA não produza conteúdo prejudi
 
 ### Introdução à avaliação de desempenho
 
-Para garantir que seu modelo de IA esteja performando conforme esperado, é importante avaliar seu desempenho com base em métricas específicas. No Azure AI Foundry, as avaliações de desempenho permitem analisar a eficácia do seu modelo em gerar respostas precisas, relevantes e coerentes.
+Para garantir que seu modelo de IA esteja performando conforme esperado, é importante avaliar seu desempenho com base em métricas específicas. No Microsoft Foundry, as avaliações de desempenho permitem analisar a eficácia do seu modelo em gerar respostas precisas, relevantes e coerentes.
 
 ![Avaliação de segurança.](../../../../../../translated_images/pt-BR/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Para garantir que seu modelo de IA esteja performando conforme esperado, é impo
 
 #### Métricas de desempenho
 
-Neste tutorial, você avaliará o desempenho do modelo Phi-3 / Phi-3.5 fine-tuned usando as métricas de desempenho do Azure AI Foundry. Essas métricas ajudam a analisar a eficácia do modelo em gerar respostas precisas, relevantes e coerentes. As métricas de desempenho incluem:
+Neste tutorial, você avaliará o desempenho do modelo Phi-3 / Phi-3.5 fine-tuned usando as métricas de desempenho do Microsoft Foundry. Essas métricas ajudam a analisar a eficácia do modelo em gerar respostas precisas, relevantes e coerentes. As métricas de desempenho incluem:
 
 - **Fundamentação (Groundedness)**: Avalia o quanto as respostas geradas estão alinhadas com as informações da fonte de entrada.
 - **Relevância**: Avalia a pertinência das respostas geradas em relação às perguntas feitas.
@@ -109,34 +109,34 @@ Essas métricas ajudam a avaliar a eficácia do modelo em gerar respostas precis
 
 ![Avaliar com base no desempenho.](../../../../../../translated_images/pt-BR/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **Cenário 2: Avaliando o modelo Phi-3 / Phi-3.5 no Azure AI Foundry**
+## **Cenário 2: Avaliando o modelo Phi-3 / Phi-3.5 no Microsoft Foundry**
 
 ### Antes de começar
 
-Este tutorial é uma continuação dos posts anteriores, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" e "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Nesses posts, mostramos o processo de fine-tuning de um modelo Phi-3 / Phi-3.5 no Azure AI Foundry e sua integração com Prompt flow.
+Este tutorial é uma continuação dos posts anteriores, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" e "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Nesses posts, mostramos o processo de fine-tuning de um modelo Phi-3 / Phi-3.5 no Microsoft Foundry e sua integração com Prompt flow.
 
-Neste tutorial, você irá implantar um modelo Azure OpenAI como avaliador no Azure AI Foundry e usá-lo para avaliar seu modelo Phi-3 / Phi-3.5 fine-tuned.
+Neste tutorial, você irá implantar um modelo Azure OpenAI como avaliador no Microsoft Foundry e usá-lo para avaliar seu modelo Phi-3 / Phi-3.5 fine-tuned.
 
 Antes de começar este tutorial, certifique-se de ter os seguintes pré-requisitos, conforme descrito nos tutoriais anteriores:
 
 1. Um conjunto de dados preparado para avaliar o modelo Phi-3 / Phi-3.5 fine-tuned.
 1. Um modelo Phi-3 / Phi-3.5 que tenha sido fine-tuned e implantado no Azure Machine Learning.
-1. Um Prompt flow integrado com seu modelo Phi-3 / Phi-3.5 fine-tuned no Azure AI Foundry.
+1. Um Prompt flow integrado com seu modelo Phi-3 / Phi-3.5 fine-tuned no Microsoft Foundry.
 
 > [!NOTE]
 > Você usará o arquivo *test_data.jsonl*, localizado na pasta data do conjunto de dados **ULTRACHAT_200k** baixado nos posts anteriores, como o conjunto de dados para avaliar o modelo Phi-3 / Phi-3.5 fine-tuned.
 
-#### Integrar o modelo customizado Phi-3 / Phi-3.5 com Prompt flow no Azure AI Foundry (abordagem Code first)
+#### Integrar o modelo customizado Phi-3 / Phi-3.5 com Prompt flow no Microsoft Foundry (abordagem Code first)
 > [!NOTE]  
-> Se você seguiu a abordagem low-code descrita em "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", pode pular este exercício e seguir para o próximo.  
+> Se você seguiu a abordagem low-code descrita em "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", pode pular este exercício e seguir para o próximo.  
 > No entanto, se você seguiu a abordagem code-first descrita em "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" para ajustar e implantar seu modelo Phi-3 / Phi-3.5, o processo de conectar seu modelo ao Prompt flow é um pouco diferente. Você vai aprender esse processo neste exercício.
-Para prosseguir, você precisa integrar seu modelo Phi-3 / Phi-3.5 ajustado no Prompt flow no Azure AI Foundry.
+Para prosseguir, você precisa integrar seu modelo Phi-3 / Phi-3.5 ajustado no Prompt flow no Microsoft Foundry.
 
-#### Criar Azure AI Foundry Hub
+#### Criar Microsoft Foundry Hub
 
-Você precisa criar um Hub antes de criar o Projeto. Um Hub funciona como um Grupo de Recursos, permitindo que você organize e gerencie vários Projetos dentro do Azure AI Foundry.
+Você precisa criar um Hub antes de criar o Projeto. Um Hub funciona como um Grupo de Recursos, permitindo que você organize e gerencie vários Projetos dentro do Microsoft Foundry.
 
-1. Faça login no [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Faça login no [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Selecione **All hubs** na aba lateral esquerda.
 
@@ -157,7 +157,7 @@ Você precisa criar um Hub antes de criar o Projeto. Um Hub funciona como um Gru
 
 1. Selecione **Next**.
 
-#### Criar Projeto no Azure AI Foundry
+#### Criar Projeto no Microsoft Foundry
 
 1. No Hub que você criou, selecione **All projects** na aba lateral esquerda.
 
@@ -197,9 +197,9 @@ Para integrar seu modelo customizado Phi-3 / Phi-3.5 com o Prompt flow, você pr
 
 #### Adicionar a Conexão Personalizada
 
-1. Acesse o [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Acesse o [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navegue até o projeto Azure AI Foundry que você criou.
+1. Navegue até o projeto Microsoft Foundry que você criou.
 
 1. No projeto que você criou, selecione **Settings** na aba lateral esquerda.
 
@@ -225,9 +225,9 @@ Para integrar seu modelo customizado Phi-3 / Phi-3.5 com o Prompt flow, você pr
 
 #### Criar Prompt flow
 
-Você adicionou uma conexão personalizada no Azure AI Foundry. Agora, vamos criar um Prompt flow seguindo os passos abaixo. Depois, você conectará esse Prompt flow à conexão personalizada para usar o modelo ajustado dentro do Prompt flow.
+Você adicionou uma conexão personalizada no Microsoft Foundry. Agora, vamos criar um Prompt flow seguindo os passos abaixo. Depois, você conectará esse Prompt flow à conexão personalizada para usar o modelo ajustado dentro do Prompt flow.
 
-1. Navegue até o projeto Azure AI Foundry que você criou.
+1. Navegue até o projeto Microsoft Foundry que você criou.
 
 1. Selecione **Prompt flow** na aba lateral esquerda.
 
@@ -344,7 +344,7 @@ Você precisa integrar o modelo Phi-3 / Phi-3.5 ajustado em um Prompt flow. No e
     ![Paste prompt flow code.](../../../../../../translated_images/pt-BR/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Para informações mais detalhadas sobre o uso do Prompt flow no Azure AI Foundry, você pode consultar [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Para informações mais detalhadas sobre o uso do Prompt flow no Microsoft Foundry, você pode consultar [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Selecione **Chat input**, **Chat output** para habilitar a conversa com seu modelo.
 
@@ -385,13 +385,13 @@ Você precisa integrar o modelo Phi-3 / Phi-3.5 ajustado em um Prompt flow. No e
 
 ### Implantar Azure OpenAI para avaliar o modelo Phi-3 / Phi-3.5
 
-Para avaliar o modelo Phi-3 / Phi-3.5 no Azure AI Foundry, você precisa implantar um modelo Azure OpenAI. Esse modelo será usado para avaliar o desempenho do modelo Phi-3 / Phi-3.5.
+Para avaliar o modelo Phi-3 / Phi-3.5 no Microsoft Foundry, você precisa implantar um modelo Azure OpenAI. Esse modelo será usado para avaliar o desempenho do modelo Phi-3 / Phi-3.5.
 
 #### Implantar Azure OpenAI
 
-1. Faça login no [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Faça login no [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navegue até o projeto Azure AI Foundry que você criou.
+1. Navegue até o projeto Microsoft Foundry que você criou.
 
     ![Select Project.](../../../../../../translated_images/pt-BR/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -409,13 +409,13 @@ Para avaliar o modelo Phi-3 / Phi-3.5 no Azure AI Foundry, você precisa implant
 
 1. Selecione **Confirm**.
 
-### Avaliar o modelo Phi-3 / Phi-3.5 ajustado usando a avaliação do Prompt flow do Azure AI Foundry
+### Avaliar o modelo Phi-3 / Phi-3.5 ajustado usando a avaliação do Prompt flow do Microsoft Foundry
 
 ### Iniciar uma nova avaliação
 
-1. Acesse o [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Acesse o [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navegue até o projeto Azure AI Foundry que você criou.
+1. Navegue até o projeto Microsoft Foundry que você criou.
 
     ![Select Project.](../../../../../../translated_images/pt-BR/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -498,7 +498,7 @@ Após a conclusão da avaliação, você pode revisar os resultados tanto para m
 
 ### Você concluiu este tutorial
 
-Você avaliou com sucesso o modelo Phi-3 ajustado, integrado ao Prompt flow no Azure AI Foundry. Este é um passo importante para garantir que seus modelos de IA não apenas tenham bom desempenho, mas também estejam alinhados com os princípios de IA Responsável da Microsoft, ajudando você a construir aplicações de IA confiáveis e seguras.
+Você avaliou com sucesso o modelo Phi-3 ajustado, integrado ao Prompt flow no Microsoft Foundry. Este é um passo importante para garantir que seus modelos de IA não apenas tenham bom desempenho, mas também estejam alinhados com os princípios de IA Responsável da Microsoft, ajudando você a construir aplicações de IA confiáveis e seguras.
 
 ![Arquitetura.](../../../../../../translated_images/pt-BR/architecture.10bec55250f5d6a4.webp)
 
@@ -508,8 +508,8 @@ Limpe seus recursos do Azure para evitar cobranças adicionais na sua conta. Ace
 
 - O recurso Azure Machine learning.
 - O endpoint do modelo Azure Machine learning.
-- O recurso do projeto Azure AI Foundry.
-- O recurso Prompt flow do Azure AI Foundry.
+- O recurso do projeto Microsoft Foundry.
+- O recurso Prompt flow do Microsoft Foundry.
 
 ### Próximos Passos
 
@@ -517,13 +517,13 @@ Limpe seus recursos do Azure para evitar cobranças adicionais na sua conta. Ace
 
 - [Avalie sistemas de IA usando o painel Responsible AI](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Métricas de avaliação e monitoramento para IA generativa](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Documentação do Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Documentação do Prompt flow](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Conteúdo de Treinamento
 
 - [Introdução à abordagem de IA Responsável da Microsoft](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Introdução ao Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Introdução ao Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Referência
 

@@ -62,15 +62,15 @@ Kufuata kanuni za maadili, kama usawa, uwazi, na uwajibikaji, kunaweza kusaidia 
 
 ## Kutumia AI Foundry kwa AI Inayowajibika
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ni jukwaa lenye nguvu linalowezesha waendelezaji na mashirika kuunda haraka programu za akili za kisasa, zenye ubunifu, tayari kwa soko, na zinazowajibika. Hapa kuna baadhi ya vipengele na uwezo muhimu wa Azure AI Foundry:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ni jukwaa lenye nguvu linalowezesha waendelezaji na mashirika kuunda haraka programu za akili za kisasa, zenye ubunifu, tayari kwa soko, na zinazowajibika. Hapa kuna baadhi ya vipengele na uwezo muhimu wa Microsoft Foundry:
 
 **API na Mifano Tayari Kutumika**
 
-Azure AI Foundry hutoa API na mifano iliyojengwa tayari na inayoweza kubadilishwa. Hii inahusisha kazi mbalimbali za AI, ikiwa ni pamoja na AI ya kizazi, usindikaji wa lugha asilia kwa mazungumzo, utafutaji, ufuatiliaji, tafsiri, hotuba, kuona, na kufanya maamuzi.
+Microsoft Foundry hutoa API na mifano iliyojengwa tayari na inayoweza kubadilishwa. Hii inahusisha kazi mbalimbali za AI, ikiwa ni pamoja na AI ya kizazi, usindikaji wa lugha asilia kwa mazungumzo, utafutaji, ufuatiliaji, tafsiri, hotuba, kuona, na kufanya maamuzi.
 
 **Prompt Flow**
 
-Prompt flow katika Azure AI Foundry inakuwezesha kuunda uzoefu wa AI wa mazungumzo. Inakuwezesha kubuni na kusimamia mtiririko wa mazungumzo, na kufanya iwe rahisi kujenga chatbots, wasaidizi wa mtandaoni, na programu nyingine za mwingiliano.
+Prompt flow katika Microsoft Foundry inakuwezesha kuunda uzoefu wa AI wa mazungumzo. Inakuwezesha kubuni na kusimamia mtiririko wa mazungumzo, na kufanya iwe rahisi kujenga chatbots, wasaidizi wa mtandaoni, na programu nyingine za mwingiliano.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ RAG ni mbinu inayochanganya njia za kupata taarifa na njia za kizazi. Inaboresha
 
 **Vipimo vya Tathmini na Ufuatiliaji kwa AI ya Kizazi**
 
-Azure AI Foundry hutoa zana za kutathmini na kufuatilia mifano ya AI ya kizazi. Unaweza kutathmini utendaji wake, usawa, na vipimo vingine muhimu ili kuhakikisha utekelezaji unaowajibika. Zaidi ya hayo, ikiwa umeunda dashibodi, unaweza kutumia UI isiyo na msimbo katika Azure Machine Learning Studio kubadilisha na kuunda Dashibodi ya AI Inayowajibika na kadi ya alama inayohusiana kulingana na [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Kadi hii ya alama inakusaidia kushiriki maarifa muhimu yanayohusiana na usawa, umuhimu wa vipengele, na mambo mengine ya kuzingatia katika utekelezaji unaowajibika na wadau wa kiufundi na wasio wa kiufundi.
+Microsoft Foundry hutoa zana za kutathmini na kufuatilia mifano ya AI ya kizazi. Unaweza kutathmini utendaji wake, usawa, na vipimo vingine muhimu ili kuhakikisha utekelezaji unaowajibika. Zaidi ya hayo, ikiwa umeunda dashibodi, unaweza kutumia UI isiyo na msimbo katika Azure Machine Learning Studio kubadilisha na kuunda Dashibodi ya AI Inayowajibika na kadi ya alama inayohusiana kulingana na [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Kadi hii ya alama inakusaidia kushiriki maarifa muhimu yanayohusiana na usawa, umuhimu wa vipengele, na mambo mengine ya kuzingatia katika utekelezaji unaowajibika na wadau wa kiufundi na wasio wa kiufundi.
 
 Ili kutumia AI Foundry kwa AI inayowajibika, unaweza kufuata mbinu bora hizi:
 
@@ -106,7 +106,7 @@ Mifumo ya AI inapaswa kuwa wazi na iweze kueleweka ili watumiaji waweze kuelewa 
 
 Mifumo ya AI inapaswa kufuatiliwa na kusasishwa mara kwa mara ili kuhakikisha inabaki sahihi na yenye ufanisi kwa muda mrefu. Hii inahitaji matengenezo endelevu, upimaji, na mafunzo upya ya mfano.
 
-Kwa kumalizia, Microsoft Responsible AI ni mpango unaolenga kusaidia waendelezaji na mashirika kujenga mifumo ya AI ambayo ni wazi, ya kuaminika, na yenye uwajibikaji. Kumbuka kuwa utekelezaji wa AI inayowajibika ni muhimu, na Azure AI Foundry inalenga kuufanya uwe rahisi kwa mashirika. Kwa kufuata kanuni za maadili na mbinu bora, tunaweza kuhakikisha mifumo ya AI inatengenezwa na kutekelezwa kwa njia inayowajibika inayonufaisha jamii kwa ujumla.
+Kwa kumalizia, Microsoft Responsible AI ni mpango unaolenga kusaidia waendelezaji na mashirika kujenga mifumo ya AI ambayo ni wazi, ya kuaminika, na yenye uwajibikaji. Kumbuka kuwa utekelezaji wa AI inayowajibika ni muhimu, na Microsoft Foundry inalenga kuufanya uwe rahisi kwa mashirika. Kwa kufuata kanuni za maadili na mbinu bora, tunaweza kuhakikisha mifumo ya AI inatengenezwa na kutekelezwa kwa njia inayowajibika inayonufaisha jamii kwa ujumla.
 
 **Kiarifu cha Kutotegemea**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

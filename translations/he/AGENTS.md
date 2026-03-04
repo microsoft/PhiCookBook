@@ -7,7 +7,7 @@ PhiCookBook הוא מאגר מתכונים מקיף המכיל דוגמאות מ
 **טכנולוגיות מרכזיות:**
 - **שפות:** Python, C#/.NET, JavaScript/Node.js
 - **מסגרות:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **פלטפורמות:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **פלטפורמות:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **סוגי מודלים:** Phi-3, Phi-3.5, Phi-4 (טקסט, חזותי, מולטימודלי, וריאציות של הסקה)
 
 **מבנה המאגר:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - מדריכי מבוא, הגדרת סביבה, מדריכי פלטפורמה
 - **02.Application/** - דוגמאות אפליקציה מאורגנות לפי סוג (טקסט, קוד, חזותי, אודיו וכו')
-- **02.QuickStart/** - מדריכי התחלה מהירה ל-Azure AI Foundry ו-GitHub Models
+- **02.QuickStart/** - מדריכי התחלה מהירה ל-Microsoft Foundry ו-GitHub Models
 - **03.FineTuning/** - תיעוד ומדריכים לכיוונון עדין
 - **04.HOL/** - מעבדות מעשיות (כולל דוגמאות .NET)
 
@@ -241,7 +241,7 @@ PRs מריצים אוטומטית זרימות עבודה של GitHub לאימו
 
 ### הערות ספציפיות לפלטפורמה
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - דורש מנוי Azure ומפתחות API
 - ראה `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ PRs מריצים אוטומטית זרימות עבודה של GitHub לאימו
 
 ### קבלת עזרה
 
-- **Discord:** הצטרף לקהילת Azure AI Foundry ב-Discord
+- **Discord:** הצטרף לקהילת Microsoft Foundry ב-Discord
 - **GitHub Issues:** דווח על באגים ובעיות במאגר
 - **GitHub Discussions:** שאל שאלות ושתף ידע
 

@@ -62,15 +62,15 @@ Az olyan etikai elvek követése, mint a méltányosság, átláthatóság és e
 
 ## Az AI Foundry használata a felelős MI-hez
 
-Az [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) egy erőteljes platform, amely lehetővé teszi fejlesztők és szervezetek számára, hogy gyorsan hozzanak létre intelligens, élvonalbeli, piacra kész és felelős alkalmazásokat. Íme néhány kulcsfontosságú funkció és képesség az Azure AI Foundry-ban:
+Az [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) egy erőteljes platform, amely lehetővé teszi fejlesztők és szervezetek számára, hogy gyorsan hozzanak létre intelligens, élvonalbeli, piacra kész és felelős alkalmazásokat. Íme néhány kulcsfontosságú funkció és képesség az Microsoft Foundry-ban:
 
 **Kész API-k és modellek**
 
-Az Azure AI Foundry előre elkészített és testreszabható API-kat és modelleket kínál. Ezek számos MI-feladatot lefednek, beleértve a generatív MI-t, természetes nyelvfeldolgozást beszélgetésekhez, keresést, monitorozást, fordítást, beszédet, látást és döntéshozatalt.
+Az Microsoft Foundry előre elkészített és testreszabható API-kat és modelleket kínál. Ezek számos MI-feladatot lefednek, beleértve a generatív MI-t, természetes nyelvfeldolgozást beszélgetésekhez, keresést, monitorozást, fordítást, beszédet, látást és döntéshozatalt.
 
 **Prompt Flow**
 
-Az Azure AI Foundry Prompt Flow lehetővé teszi beszélgetés-alapú MI élmények létrehozását. Segít megtervezni és kezelni a beszélgetési folyamatokat, megkönnyítve chatbotok, virtuális asszisztensek és más interaktív alkalmazások fejlesztését.
+Az Microsoft Foundry Prompt Flow lehetővé teszi beszélgetés-alapú MI élmények létrehozását. Segít megtervezni és kezelni a beszélgetési folyamatokat, megkönnyítve chatbotok, virtuális asszisztensek és más interaktív alkalmazások fejlesztését.
 
 **Retrieval Augmented Generation (RAG)**
 
@@ -78,7 +78,7 @@ A RAG egy olyan technika, amely ötvözi a lekérdezés-alapú és generatív me
 
 **Generatív MI értékelési és monitorozási metrikák**
 
-Az Azure AI Foundry eszközöket biztosít generatív MI-modellek értékelésére és monitorozására. Értékelheted a teljesítményüket, méltányosságukat és más fontos mutatókat a felelős alkalmazás érdekében. Ha létrehoztál egy irányítópultot, az Azure Machine Learning Studio kód nélküli felületén testreszabhatod és generálhatod a Responsible AI Dashboardot és a hozzá tartozó scorecardot a [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python könyvtárak alapján. Ez a scorecard segít megosztani a méltányossággal, jellemző fontossággal és más felelős alkalmazási szempontokkal kapcsolatos kulcsfontosságú információkat technikai és nem technikai érintettekkel egyaránt.
+Az Microsoft Foundry eszközöket biztosít generatív MI-modellek értékelésére és monitorozására. Értékelheted a teljesítményüket, méltányosságukat és más fontos mutatókat a felelős alkalmazás érdekében. Ha létrehoztál egy irányítópultot, az Azure Machine Learning Studio kód nélküli felületén testreszabhatod és generálhatod a Responsible AI Dashboardot és a hozzá tartozó scorecardot a [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python könyvtárak alapján. Ez a scorecard segít megosztani a méltányossággal, jellemző fontossággal és más felelős alkalmazási szempontokkal kapcsolatos kulcsfontosságú információkat technikai és nem technikai érintettekkel egyaránt.
 
 A felelős MI érdekében az AI Foundry használatakor kövesd az alábbi bevált gyakorlatokat:
 
@@ -106,7 +106,7 @@ Az MI-rendszereknek átláthatónak és magyarázhatónak kell lenniük, hogy a 
 
 Az MI-rendszereket folyamatosan figyelni és frissíteni kell, hogy hosszú távon is pontosak és hatékonyak maradjanak. Ez folyamatos karbantartást, tesztelést és újraképzést igényel.
 
-Összefoglalva, a Microsoft Responsible AI egy olyan kezdeményezés, amely segíti a fejlesztőket és szervezeteket átlátható, megbízható és elszámoltatható MI-rendszerek építésében. Ne feledjük, hogy a felelős MI megvalósítása kulcsfontosságú, és az Azure AI Foundry célja, hogy ezt a gyakorlatban is megkönnyítse a szervezetek számára. Az etikai elvek és bevált gyakorlatok követésével biztosíthatjuk, hogy az MI-rendszerek felelősségteljesen, a társadalom egészének javára készüljenek és kerüljenek alkalmazásra.
+Összefoglalva, a Microsoft Responsible AI egy olyan kezdeményezés, amely segíti a fejlesztőket és szervezeteket átlátható, megbízható és elszámoltatható MI-rendszerek építésében. Ne feledjük, hogy a felelős MI megvalósítása kulcsfontosságú, és az Microsoft Foundry célja, hogy ezt a gyakorlatban is megkönnyítse a szervezetek számára. Az etikai elvek és bevált gyakorlatok követésével biztosíthatjuk, hogy az MI-rendszerek felelősségteljesen, a társadalom egészének javára készüljenek és kerüljenek alkalmazásra.
 
 **Jogi nyilatkozat**:  
 Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

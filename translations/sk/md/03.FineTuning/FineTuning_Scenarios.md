@@ -2,7 +2,7 @@
 
 ![Doladenie s MS službami](../../../../translated_images/sk/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platforma** Zahŕňa rôzne technológie ako Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito a ONNX Runtime.
+**Platforma** Zahŕňa rôzne technológie ako Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito a ONNX Runtime.
 
 **Infraštruktúra** Zahŕňa CPU a FPGA, ktoré sú nevyhnutné pre proces doladenia. Ukážem vám ikony pre každú z týchto technológií.
 

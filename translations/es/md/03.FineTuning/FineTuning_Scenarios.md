@@ -2,7 +2,7 @@
 
 ![FineTuning con Servicios MS](../../../../translated_images/es/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Plataforma** Esto incluye diversas tecnologías como Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito y ONNX Runtime.
+**Plataforma** Esto incluye diversas tecnologías como Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito y ONNX Runtime.
 
 **Infraestructura** Esto incluye la CPU y FPGA, que son esenciales para el proceso de fine-tuning. Permíteme mostrarte los íconos de cada una de estas tecnologías.
 

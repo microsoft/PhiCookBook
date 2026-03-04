@@ -12,7 +12,7 @@
 [![GitHub ಫೋರ್ಕ್‌ಗಳು](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub ತಾರಾಗಳು](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 ಫೈ ಮೈಕ್ರೋಸಾಫ್ಟ್ ಅಭಿವೃದ್ಧಿಪಡಿಸಿದ ತೆರೆದ ಮೂಲ AI ಮಾದರಿಗಳ ಸರಣಿಯಾಗಿದೆ.
 
@@ -217,9 +217,9 @@
 
 ## ಫೈ ಮಾದರಿಗಳ ಬಳಕೆ
 
-### Azure AI Foundry ನಲ್ಲಿ ಫೈ
+### Microsoft Foundry ನಲ್ಲಿ ಫೈ
 
-ನೀವು ಮೈಕ್ರೋಸಾಫ್ಟ್ ಫೈ ಅನ್ನು ಹೇಗೆ ಬಳಸುವುದು ಮತ್ತು ವಿವಿಧ ಹಾರ್ಡ್‌ವೇರ್ ಸಾಧನಗಳಲ್ಲಿ ಕೊನೆಗೆ ಅಂತಿಮ ಪರಿಹಾರಗಳನ್ನು ನಿರ್ಮಿಸುವುದನ್ನು ತಿಳಿಯಬಹುದು. ನೇರವಾಗಿ ಫೈ ಅನ್ನು ಅನುಭವಿಸಲು, ಮಾದರಿಗಳೊಂದಿಗೆ ಆಟವಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಸಂದರ್ಭಗಳಿಗೆ ಫೈಯನ್ನು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai)ಸಂದರ್ಶಿಸಿ; [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) ನಲ್ಲಿ ಪ್ರಾರಂಭಿಸಲು ಹೆಚ್ಚಾದ ತಿಳಿವಳಿಕೆ ಪಡೆಯಿರಿ.
+ನೀವು ಮೈಕ್ರೋಸಾಫ್ಟ್ ಫೈ ಅನ್ನು ಹೇಗೆ ಬಳಸುವುದು ಮತ್ತು ವಿವಿಧ ಹಾರ್ಡ್‌ವೇರ್ ಸಾಧನಗಳಲ್ಲಿ ಕೊನೆಗೆ ಅಂತಿಮ ಪರಿಹಾರಗಳನ್ನು ನಿರ್ಮಿಸುವುದನ್ನು ತಿಳಿಯಬಹುದು. ನೇರವಾಗಿ ಫೈ ಅನ್ನು ಅನುಭವಿಸಲು, ಮಾದರಿಗಳೊಂದಿಗೆ ಆಟವಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಸಂದರ್ಭಗಳಿಗೆ ಫೈಯನ್ನು ಕಸ್ಟಮೈಸ್ ಮಾಡಿ [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai)ಸಂದರ್ಶಿಸಿ; [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) ನಲ್ಲಿ ಪ್ರಾರಂಭಿಸಲು ಹೆಚ್ಚಾದ ತಿಳಿವಳಿಕೆ ಪಡೆಯಿರಿ.
 
 **ಆಟದ ಮೈದಾನ**
 ಪ್ರತಿ ಮಾದರಿಗೂ ಒಂದು ಬಿಂಧುಗೊಳಿಸುವ ಆಶ್ರಿತ ಆಟದ ಮೈದಾನವಿದೆ [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@
 
 ಮುಖ್ಯ ವ್ಯಾಪ್ತಿಯ ನೈಸರ್ಗಿಕ ಭಾಷೆ, ಚಿತ್ರ ಮತ್ತು ಮಾತು ಮಾದರಿಗಳು - ಈ ಮಾದರಿಯಲ್ಲಿ ಬಳಸಿದವುಗಳು - ಅಸಮಾನತೆ, ಅನಿರೀಕ್ಷಿತತೆ ಅಥವಾ ಅಪದ್ರವ್ಯವನ್ನು ಉಂಟುಮಾಡುವ ರೀತಿಯಲ್ಲಿ ವರ್ತಿಸಬಹುದು, ಇದರಿಂದ ಹಾನಿಯಾಗಬಹುದು. ಕೃಪಯಾ [Azure OpenAI ಸೇವೆ ಟ್ರಾನ್ಸ್‌ಪೇರೆನ್ಸಿ ನೋಟ್](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) ನೋಡಿಕೊಳ್ಳಿ, ಇದರಲ್ಲಿ ಅಪಾಯಗಳು ಮತ್ತು ಗಡಿಗಳು ವಿವರಿಸಲಾಗಿದೆ.
 
-ಈ ಅಪಾಯಗಳನ್ನು ತಡೆಹಿಡಿಯುವ ಶಿಫಾರಸ್ಸು ಮಾಡಿದ ವಿಧಾನವು ನಿಮ್ಮ ವಾಸ್ತುಶಿಲ್ಪದಲ್ಲಿ ಹಾನಿಕರ ಚಟುವಟಿಕೆಯನ್ನು ಪತ್ತೆಹಚ್ಚಿ ತಡೆಹಿಡಿಯಬಹುದಾದ ಸುರಕ್ಷತಾ ವ್ಯವಸ್ಥೆಯನ್ನು ಸೇರಿಸುವುದಾಗಿದೆ. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ಸ್ವತಂತ್ರ ರಕ್ಷಣೆ ಪದರ ಒದಗಿಸುತ್ತದೆ, ಅಪಾಯಕಾರಿ ಬಳಕೆದಾರ ಮತ್ತು AI ಉತ್ಪಾದಿತ ವಿಷಯಗಳನ್ನು ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಸೇವೆಗಳಲ್ಲಿ ಪತ್ತೆಹಚ್ಚಬಲ್ಲದು. Azure AI Foundry ಯಲ್ಲಿ, Content Safety ಸೇವೆಯು ವಿವಿಧ ಮಾದರಿಗಳಲ್ಲಿ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಪ್ರಯೋಗ ಕೋಡ್ಗಳನ್ನು ವೀಕ್ಷಿಸುವು, ಅನ್ವೇಷಿಸಲು ಮತ್ತು ಪ್ರಯತ್ನಿಸಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಕೆಳಗಿನ [ತ್ವರಿತ ಪ್ರಾರಂಭ ದಾಖಲೆ](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ಸೇವೆಗೆ ವಿನಂತಿಗಳನ್ನು ಮಾಡುವುದು ಹೇಗೆ ಎನ್ನುವುದನ್ನು ಮಾರ್ಗದರ್ಶಿಸುತ್ತವೆ.
+ಈ ಅಪಾಯಗಳನ್ನು ತಡೆಹಿಡಿಯುವ ಶಿಫಾರಸ್ಸು ಮಾಡಿದ ವಿಧಾನವು ನಿಮ್ಮ ವಾಸ್ತುಶಿಲ್ಪದಲ್ಲಿ ಹಾನಿಕರ ಚಟುವಟಿಕೆಯನ್ನು ಪತ್ತೆಹಚ್ಚಿ ತಡೆಹಿಡಿಯಬಹುದಾದ ಸುರಕ್ಷತಾ ವ್ಯವಸ್ಥೆಯನ್ನು ಸೇರಿಸುವುದಾಗಿದೆ. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ಸ್ವತಂತ್ರ ರಕ್ಷಣೆ ಪದರ ಒದಗಿಸುತ್ತದೆ, ಅಪಾಯಕಾರಿ ಬಳಕೆದಾರ ಮತ್ತು AI ಉತ್ಪಾದಿತ ವಿಷಯಗಳನ್ನು ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮತ್ತು ಸೇವೆಗಳಲ್ಲಿ ಪತ್ತೆಹಚ್ಚಬಲ್ಲದು. Microsoft Foundry ಯಲ್ಲಿ, Content Safety ಸೇವೆಯು ವಿವಿಧ ಮಾದರಿಗಳಲ್ಲಿ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಪ್ರಯೋಗ ಕೋಡ್ಗಳನ್ನು ವೀಕ್ಷಿಸುವು, ಅನ್ವೇಷಿಸಲು ಮತ್ತು ಪ್ರಯತ್ನಿಸಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ. ಕೆಳಗಿನ [ತ್ವರಿತ ಪ್ರಾರಂಭ ದಾಖಲೆ](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ಸೇವೆಗೆ ವಿನಂತಿಗಳನ್ನು ಮಾಡುವುದು ಹೇಗೆ ಎನ್ನುವುದನ್ನು ಮಾರ್ಗದರ್ಶಿಸುತ್ತವೆ.
 ಮತ್ತೊಂದು ಪರಿಗಣಿಸಬೇಕಾದ ಅಂಶವೆಂದರೆ ಒಟ್ಟು ಅಪ್ಲಿಕೇಶನ್ ಪ್ರದರ್ಶನ. ಬಹುಮಾದರಿಯ ಮತ್ತು ಬಹು ಮಾದರಿಗಳ ಅಪ್ಲಿಕೇಶನ್‌ಗಳಲ್ಲಿ, ಸಿಸ್ಟಮ್ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಬಳಕೆದಾರರು ನಿರೀಕ್ಷಿಸುವಂತೆ ಕಾರ್ಯನಿರ್ವಹಿಸುವುದು ಅರ್ಥ, ಇದರಲ್ಲಿ ಹಾನಿಕಾರಕ ಔಟ್‌ಪುಟ್‌ಗಳನ್ನು ಉತ್ಪನ್ನಗೊಳಿಸುವುದಿಲ್ಲ. ನಿಮ್ಮ ಒಟ್ಟು ಅಪ್ಲಿಕೇಶನ್ ಪ್ರದರ್ಶನವನ್ನು [ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಗುಣಮಟ್ಟ ಮತ್ತು ಅಪಾಯ ಮತ್ತು ಸುರಕ್ಷತಾ ಮೌಲ್ಯಮಾಪಕಗಳನ್ನು](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ಉಪಯೋಗಿಸಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಪ್ರಮುಖ. ನೀವು ಸ್ವಂತ [ಕಸ್ಟಮ್ ಮೌಲ್ಯಮಾಪಕಗಳನ್ನು](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) ರಚಿಸಿ ಮತ್ತು ಮೌಲ್ಯಮಾಪನ ಮಾಡಬಹುದಾಗಿದೆ.
 
-ನೀವು ನಿಮ್ಮ ಅಭಿವೃದ್ಧಿ ಪರಿಸರದಲ್ಲಿ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ಉಪಯೋಗಿಸಿ ನಿಮ್ಮ AI ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಬಹುದು. ಪರೀಕ್ಷಾ ಡೇಟಾ ಸೆಟ್ ಅಥವಾ ಗುರಿಯನ್ನು ನೀಡುವುದಾದರೆ, ನಿಮ್ಮ ಜನರೇಟಿವ್ AI ಅಪ್ಲಿಕೇಶನ್ ಜನರೇಶನ್ಗಳನ್ನು ನಿಮ್ಮ ಆಯ್ಕೆಯಲ್ಲಿರುವ ಒಳಗೊಳ್ಳಿಸಿರುವ ಮೌಲ್ಯಮಾಪಕಗಳು ಅಥವಾ ಕಸ್ಟಮ್ ಮೌಲ್ಯಮಾಪಕಗಳೊಂದಿಗೆ ಪ್ರಮాణಾತ್ಮಕವಾಗಿ ಅಳೆಯಲಾಗುತ್ತದೆ. ನಿಮ್ಮ ಸಿಸ್ಟಮ್ ಅನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು azure ai evaluation sdkರೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಲು, ನೀವು [ತ್ವರಿತ ಆರಂಭ ಮಾರ್ಗದರ್ಶಿಯನ್ನು](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ಅನುಸರಿಸಬಹುದು. ಮೌಲ್ಯಮಾಪನವನ್ನು ನಡೆಸಿದ ನಂತರ, ನೀವು [Azure AI Foundry ನಲ್ಲಿ ಫಲಿತಾಂಶಗಳನ್ನು ದೃಶ್ಯೀಕರಿಸಬಹುದು](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+ನೀವು ನಿಮ್ಮ ಅಭಿವೃದ್ಧಿ ಪರಿಸರದಲ್ಲಿ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ಉಪಯೋಗಿಸಿ ನಿಮ್ಮ AI ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಬಹುದು. ಪರೀಕ್ಷಾ ಡೇಟಾ ಸೆಟ್ ಅಥವಾ ಗುರಿಯನ್ನು ನೀಡುವುದಾದರೆ, ನಿಮ್ಮ ಜನರೇಟಿವ್ AI ಅಪ್ಲಿಕೇಶನ್ ಜನರೇಶನ್ಗಳನ್ನು ನಿಮ್ಮ ಆಯ್ಕೆಯಲ್ಲಿರುವ ಒಳಗೊಳ್ಳಿಸಿರುವ ಮೌಲ್ಯಮಾಪಕಗಳು ಅಥವಾ ಕಸ್ಟಮ್ ಮೌಲ್ಯಮಾಪಕಗಳೊಂದಿಗೆ ಪ್ರಮాణಾತ್ಮಕವಾಗಿ ಅಳೆಯಲಾಗುತ್ತದೆ. ನಿಮ್ಮ ಸಿಸ್ಟಮ್ ಅನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು azure ai evaluation sdkರೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಲು, ನೀವು [ತ್ವರಿತ ಆರಂಭ ಮಾರ್ಗದರ್ಶಿಯನ್ನು](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ಅನುಸರಿಸಬಹುದು. ಮೌಲ್ಯಮಾಪನವನ್ನು ನಡೆಸಿದ ನಂತರ, ನೀವು [Microsoft Foundry ನಲ್ಲಿ ಫಲಿತಾಂಶಗಳನ್ನು ದೃಶ್ಯೀಕರಿಸಬಹುದು](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## ಟ್ರೇಡ್‌ಮಾರ್ಕ್‌ಗಳು
 
@@ -302,11 +302,11 @@
 
 ನೀವು ಸಂಕುಚಿತವಾಗಿದ್ದರೆ ಅಥವಾ AI ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ನಿರ್ಮಿಸಲು ಯಾವುದೇ ಪ್ರಶ್ನೆಗಳಿದ್ದರೆ, ಸೇರಿ:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 ನೀವು ಉತ್ಪನ್ನ ಫೀಡ್ಬ್ಯಾಕ್ ಅಥವಾ ನಿರ್ಮಾಣದ ಸಮಯದಲ್ಲಿ ದೋಷಗಳನ್ನು ಹೊಂದಿದ್ದರೆ, ಭೇಟಿ ನೀಡಿ:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

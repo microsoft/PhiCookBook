@@ -2,7 +2,7 @@
 
 ![FineTuning cu Servicii MS](../../../../translated_images/ro/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Platformă** Aceasta include diverse tehnologii precum Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito și ONNX Runtime.
+**Platformă** Aceasta include diverse tehnologii precum Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito și ONNX Runtime.
 
 **Infrastructură** Aceasta include CPU și FPGA, care sunt esențiale pentru procesul de fine-tuning. Permiteți-mi să vă arăt pictogramele pentru fiecare dintre aceste tehnologii.
 

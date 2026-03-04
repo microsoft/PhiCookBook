@@ -7,7 +7,7 @@ PhiCookBook on põhjalik kokaraamatute hoidla, mis sisaldab praktilisi näiteid,
 **Peamised tehnoloogiad:**
 - **Keeled:** Python, C#/.NET, JavaScript/Node.js
 - **Raamistikud:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platvormid:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platvormid:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Mudelitüübid:** Phi-3, Phi-3.5, Phi-4 (tekst, visioon, multimodaalsed, põhjendusvariandid)
 
 **Hoidla struktuur:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Sissejuhatusjuhendid, keskkonna seadistamine, platvormijuhendid
 - **02.Application/** - Rakenduste näited, mis on organiseeritud tüübi järgi (Tekst, Kood, Visioon, Audio jne)
-- **02.QuickStart/** - Kiire alustamise juhendid Azure AI Foundry ja GitHub Models jaoks
+- **02.QuickStart/** - Kiire alustamise juhendid Microsoft Foundry ja GitHub Models jaoks
 - **03.FineTuning/** - Peenhäälestamise dokumentatsioon ja õpetused
 - **04.HOL/** - Praktilised laborid (sisaldab .NET näiteid)
 
@@ -241,7 +241,7 @@ Näited:
 
 ### Platvormispetsiifilised märkused
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Vajab Azure'i tellimust ja API võtmeid
 - Vaata `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ Näited:
 
 ### Abi saamine
 
-- **Discord:** Liitu Azure AI Foundry Community Discordiga
+- **Discord:** Liitu Microsoft Foundry Community Discordiga
 - **GitHub Issues:** Teata vigadest ja probleemidest hoidlas
 - **GitHub Discussions:** Esita küsimusi ja jaga teadmisi
 

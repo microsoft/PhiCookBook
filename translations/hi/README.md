@@ -12,7 +12,7 @@
 [![GitHub फोर्क्स](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub स्टार्स](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi माइक्रोसॉफ्ट द्वारा विकसित ओपन सोर्स AI मॉडल की एक श्रृंखला है।
 
@@ -71,7 +71,7 @@ Phi वर्तमान में सबसे शक्तिशाली औ
 - विभिन्न वातावरणों में Phi से निष्कर्ष निकालना
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub मॉडल](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry मॉडल कैटलॉग](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry मॉडल कैटलॉग](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI टूलकिट VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Phi वर्तमान में सबसे शक्तिशाली औ
 
 -  Phi का मूल्यांकन
     - [जिम्मेदार AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [मूल्यांकन के लिए Azure AI Foundry](./md/01.Introduction/05/AIFoundry.md)
+    - [मूल्यांकन के लिए Microsoft Foundry](./md/01.Introduction/05/AIFoundry.md)
     - [मूल्यांकन के लिए Promptflow का उपयोग](./md/01.Introduction/05/Promptflow.md)
  
 - Azure AI Search के साथ RAG
@@ -117,8 +117,8 @@ Phi वर्तमान में सबसे शक्तिशाली औ
       - [WinUI3 ऐप विथ Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 मल्टी मॉडल AI पावर्ड नोट्स ऐप सैंपल](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [कस्टम Phi-3 मॉडलों को फाइन-ट्यून और Prompt flow के साथ इंटीग्रेट करें](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Azure AI Foundry में Prompt flow के साथ कस्टम Phi-3 मॉडलों को फाइन-ट्यून और इंटीग्रेट करें](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Azure AI Foundry में Microsoft's Responsible AI Principles पर फोकस करते हुए फाइन-ट्यून किए गए Phi-3 / Phi-3.5 मॉडल का मूल्यांकन करें](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Microsoft Foundry में Prompt flow के साथ कस्टम Phi-3 मॉडलों को फाइन-ट्यून और इंटीग्रेट करें](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Microsoft Foundry में Microsoft's Responsible AI Principles पर फोकस करते हुए फाइन-ट्यून किए गए Phi-3 / Phi-3.5 मॉडल का मूल्यांकन करें](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct भाषा भविष्यवाणी सैंपल (चीनी/अंग्रेजी)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG चैटबोट](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Windows GPU का उपयोग करके Phi-3.5-Instruct ONNX के साथ Prompt flow सॉल्यूशन बनाना](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Phi वर्तमान में सबसे शक्तिशाली औ
       - [📓] [Microsoft Olive के साथ Phi-4-mini-रीजनिंग का फाइन-ट्यूनिंग](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Apple MLX के साथ Phi-4-mini-रीजनिंग का फाइन-ट्यूनिंग](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [GitHub मॉडलों के साथ Phi-4-mini-रीजनिंग](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Azure AI Foundry मॉडलों के साथ Phi-4-mini-रीजनिंग](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Microsoft Foundry मॉडलों के साथ Phi-4-mini-रीजनिंग](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - डेमो
       - [Phi-4-mini डेमो जिसका होस्टिंग Hugging Face Spaces पर है](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal डेमो जिसका होस्टिंग Hugginge Face Spaces पर है](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Phi वर्तमान में सबसे शक्तिशाली औ
   - [Azure मशीन लर्निंग सेवा के साथ Phi-3 का फाइन-ट्यूनिंग](./md/03.FineTuning/Introduce_AzureML.md)
   - [लॉरा के साथ Phi-3 का फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Lora.md)
   - [QLora के साथ Phi-3 का फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Azure AI Foundry के साथ Phi-3 का फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Microsoft Foundry के साथ Phi-3 का फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Azure ML CLI/SDK के साथ Phi-3 का फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Microsoft Olive के साथ फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Olive हैंड्स-ऑन लैब के साथ फाइन-ट्यूनिंग](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Phi वर्तमान में सबसे शक्तिशाली औ
 
 ## Phi मॉडल का उपयोग
 
-### Azure AI Foundry पर Phi
+### Microsoft Foundry पर Phi
 
-आप Microsoft Phi का उपयोग कैसे करें और अपने विभिन्न हार्डवेयर उपकरणों में E2E समाधान कैसे बनाएं, यह सीख सकते हैं। Phi का अनुभव करने के लिए, मॉडल के साथ खेलना शुरू करें और अपने परिदृश्यों के लिए Phi को अनुकूलित करें, [Azure AI Foundry Azure AI मॉडल कैटलॉग](https://aka.ms/phi3-azure-ai) का उपयोग करके। आप [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) के साथ शुरुआत करने पर अधिक जान सकते हैं।
+आप Microsoft Phi का उपयोग कैसे करें और अपने विभिन्न हार्डवेयर उपकरणों में E2E समाधान कैसे बनाएं, यह सीख सकते हैं। Phi का अनुभव करने के लिए, मॉडल के साथ खेलना शुरू करें और अपने परिदृश्यों के लिए Phi को अनुकूलित करें, [Microsoft Foundry Azure AI मॉडल कैटलॉग](https://aka.ms/phi3-azure-ai) का उपयोग करके। आप [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) के साथ शुरुआत करने पर अधिक जान सकते हैं।
 
 **प्लेटग्राउंड**  
 प्रत्येक मॉडल का परीक्षण करने के लिए एक समर्पित प्लेटग्राउंड है [Azure AI Playground](https://aka.ms/try-phi3)।
@@ -289,10 +289,10 @@ Microsoft का जिम्मेदार AI के प्रति दृष
 
 बड़े पैमाने पर प्राकृतिक भाषा, छवि, और भाषण मॉडल - जैसे कि इस नमूने में उपयोग किए गए - संभावित रूप से ऐसे व्यवहार कर सकते हैं जो अन्यायपूर्ण, अस्थिर, या आपत्तिजनक हो सकते हैं, जिससे हानि हो सकती है। कृपया जोखिमों और सीमाओं के बारे में सूचित होने के लिए [Azure OpenAI सेवा ट्रांसपेरेंसी नोट](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) देखें।  
 
-इन जोखिमों को कम करने के लिए अनुशंसित तरीका यह है कि आपकी वास्तुकला में एक सुरक्षा प्रणाली शामिल हो जो हानिकारक व्यवहार का पता लगा सके और उसे रोक सके। [Azure AI कंटेंट सेफ्टी](https://learn.microsoft.com/azure/ai-services/content-safety/overview) एक स्वतंत्र सुरक्षा परत प्रदान करता है, जो अनुप्रयोगों और सेवाओं में हानिकारक उपयोगकर्ता-जनित और AI-जनित सामग्री का पता लगाने में सक्षम है। Azure AI कंटेंट सेफ्टी में टेक्स्ट और इमेज API शामिल हैं जो हानिकारक सामग्री का पता लगाने की अनुमति देते हैं। Azure AI Foundry के भीतर, कंटेंट सेफ्टी सेवा हानिकारक सामग्री के विभिन्न रूपों का पता लगाने के लिए नमूना कोड देखने, खोजने और आज़माने की सुविधा देती है। निम्न [क्विकस्टार्ट दस्तावेज़](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) आपको सेवा को अनुरोध भेजने के माध्यम से मार्गदर्शन करता है।
+इन जोखिमों को कम करने के लिए अनुशंसित तरीका यह है कि आपकी वास्तुकला में एक सुरक्षा प्रणाली शामिल हो जो हानिकारक व्यवहार का पता लगा सके और उसे रोक सके। [Azure AI कंटेंट सेफ्टी](https://learn.microsoft.com/azure/ai-services/content-safety/overview) एक स्वतंत्र सुरक्षा परत प्रदान करता है, जो अनुप्रयोगों और सेवाओं में हानिकारक उपयोगकर्ता-जनित और AI-जनित सामग्री का पता लगाने में सक्षम है। Azure AI कंटेंट सेफ्टी में टेक्स्ट और इमेज API शामिल हैं जो हानिकारक सामग्री का पता लगाने की अनुमति देते हैं। Microsoft Foundry के भीतर, कंटेंट सेफ्टी सेवा हानिकारक सामग्री के विभिन्न रूपों का पता लगाने के लिए नमूना कोड देखने, खोजने और आज़माने की सुविधा देती है। निम्न [क्विकस्टार्ट दस्तावेज़](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) आपको सेवा को अनुरोध भेजने के माध्यम से मार्गदर्शन करता है।
 एक अन्य पहलू जिसे ध्यान में रखना आवश्यक है वह है समग्र अनुप्रयोग प्रदर्शन। मल्टी-मोडल और मल्टी-मॉडल अनुप्रयोगों के साथ, हम प्रदर्शन का अर्थ लेते हैं कि सिस्टम आपके और आपके उपयोगकर्ताओं की अपेक्षा अनुसार कार्य करता है, जिसमें हानिकारक आउटपुट न उत्पन्न करना भी शामिल है। आपके समग्र अनुप्रयोग के प्रदर्शन का मूल्यांकन करना महत्वपूर्ण है, इसके लिए आप [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) का उपयोग कर सकते हैं। आपके पास [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) के साथ सृजन और मूल्यांकन करने की क्षमता भी है।
 
-आप अपने विकास वातावरण में अपने AI अनुप्रयोग का मूल्यांकन [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) का उपयोग करके कर सकते हैं। परीक्षण डेटा सेट या लक्ष्य दिए जाने पर, आपके जनरेटिव AI अनुप्रयोग की पीढ़ियाँ बिल्ट-इन या आपकी पसंद के कस्टम मूल्यांककों के साथ मात्रात्मक रूप से मापी जाती हैं। अपने सिस्टम का मूल्यांकन करने के लिए azure ai evaluation sdk के साथ शुरुआत करने के लिए, आप [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) का पालन कर सकते हैं। एक बार जब आप एक मूल्यांकन रन निष्पादित करते हैं, तो आप [Azure AI Foundry में परिणामों को विज़ुअलाइज़ कर सकते हैं](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)।
+आप अपने विकास वातावरण में अपने AI अनुप्रयोग का मूल्यांकन [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) का उपयोग करके कर सकते हैं। परीक्षण डेटा सेट या लक्ष्य दिए जाने पर, आपके जनरेटिव AI अनुप्रयोग की पीढ़ियाँ बिल्ट-इन या आपकी पसंद के कस्टम मूल्यांककों के साथ मात्रात्मक रूप से मापी जाती हैं। अपने सिस्टम का मूल्यांकन करने के लिए azure ai evaluation sdk के साथ शुरुआत करने के लिए, आप [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) का पालन कर सकते हैं। एक बार जब आप एक मूल्यांकन रन निष्पादित करते हैं, तो आप [Microsoft Foundry में परिणामों को विज़ुअलाइज़ कर सकते हैं](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)।
 
 ## ट्रेडमार्क्स
 
@@ -302,11 +302,11 @@ Microsoft का जिम्मेदार AI के प्रति दृष
 
 यदि आप अटक जाते हैं या AI ऐप बनाने के बारे में कोई प्रश्न हैं, तो शामिल हों:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 यदि आपके पास उत्पाद प्रतिक्रिया या निर्माण के दौरान कोई त्रुटि हो तो जाएँ:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

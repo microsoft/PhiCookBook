@@ -1,14 +1,14 @@
-# Finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry-ban, a Microsoft Felelős MI elveire fókuszálva
+# Finomhangolt Phi-3 / Phi-3.5 modell értékelése az Microsoft Foundry-ban, a Microsoft Felelős MI elveire fókuszálva
 
-Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul.
+Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul.
 
 ## Áttekintés
 
-### Hogyan értékelheted a finomhangolt Phi-3 / Phi-3.5 modell biztonságát és teljesítményét az Azure AI Foundry-ban?
+### Hogyan értékelheted a finomhangolt Phi-3 / Phi-3.5 modell biztonságát és teljesítményét az Microsoft Foundry-ban?
 
-Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredményezhet. Annak érdekében, hogy a modell biztonságos és hatékony maradjon, fontos értékelni a káros tartalom generálására való hajlamát, valamint a pontos, releváns és koherens válaszok előállításának képességét. Ebben a bemutatóban megtanulod, hogyan értékelheted a finomhangolt Phi-3 / Phi-3.5 modellt, amely a Prompt flow-val integrálva működik az Azure AI Foundry-ban.
+Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredményezhet. Annak érdekében, hogy a modell biztonságos és hatékony maradjon, fontos értékelni a káros tartalom generálására való hajlamát, valamint a pontos, releváns és koherens válaszok előállításának képességét. Ebben a bemutatóban megtanulod, hogyan értékelheted a finomhangolt Phi-3 / Phi-3.5 modellt, amely a Prompt flow-val integrálva működik az Microsoft Foundry-ban.
 
-Íme az Azure AI Foundry értékelési folyamata.
+Íme az Microsoft Foundry értékelési folyamata.
 
 ![Architecture of tutorial.](../../../../../../translated_images/hu/architecture.10bec55250f5d6a4.webp)
 
@@ -27,24 +27,24 @@ Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredmé
 
 ### Tartalomjegyzék
 
-1. [**1. forgatókönyv: Bevezetés az Azure AI Foundry Prompt flow értékelésébe**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**1. forgatókönyv: Bevezetés az Microsoft Foundry Prompt flow értékelésébe**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Bevezetés a biztonsági értékelésbe](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Bevezetés a teljesítményértékelésbe](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**2. forgatókönyv: Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry-ban**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**2. forgatókönyv: Phi-3 / Phi-3.5 modell értékelése az Microsoft Foundry-ban**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Mielőtt elkezdenéd](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Azure OpenAI telepítése a Phi-3 / Phi-3.5 modell értékeléséhez](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry Prompt flow értékelésével](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Finomhangolt Phi-3 / Phi-3.5 modell értékelése az Microsoft Foundry Prompt flow értékelésével](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Gratulálunk!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **1. forgatókönyv: Bevezetés az Azure AI Foundry Prompt flow értékelésébe**
+## **1. forgatókönyv: Bevezetés az Microsoft Foundry Prompt flow értékelésébe**
 
 ### Bevezetés a biztonsági értékelésbe
 
-Annak érdekében, hogy az MI modell etikus és biztonságos legyen, elengedhetetlen, hogy a Microsoft Felelős MI elvei alapján értékeljük. Az Azure AI Foundry-ban a biztonsági értékelések lehetővé teszik, hogy felmérd a modell sebezhetőségét a jailbreak támadásokkal szemben, valamint a káros tartalom generálásának kockázatát, ami közvetlenül összhangban áll ezekkel az elvekkel.
+Annak érdekében, hogy az MI modell etikus és biztonságos legyen, elengedhetetlen, hogy a Microsoft Felelős MI elvei alapján értékeljük. Az Microsoft Foundry-ban a biztonsági értékelések lehetővé teszik, hogy felmérd a modell sebezhetőségét a jailbreak támadásokkal szemben, valamint a káros tartalom generálásának kockázatát, ami közvetlenül összhangban áll ezekkel az elvekkel.
 
 ![Safaty evaluation.](../../../../../../translated_images/hu/safety-evaluation.083586ec88dfa950.webp)
 
@@ -75,7 +75,7 @@ A Microsoft Felelős MI elvei a következők:
 
 #### Biztonsági mutatók
 
-Ebben a bemutatóban az Azure AI Foundry biztonsági mutatóit használva értékeled a finomhangolt Phi-3 modell biztonságát. Ezek a mutatók segítenek felmérni a modell káros tartalom generálására való hajlamát és a jailbreak támadásokkal szembeni sebezhetőségét. A biztonsági mutatók a következők:
+Ebben a bemutatóban az Microsoft Foundry biztonsági mutatóit használva értékeled a finomhangolt Phi-3 modell biztonságát. Ezek a mutatók segítenek felmérni a modell káros tartalom generálására való hajlamát és a jailbreak támadásokkal szembeni sebezhetőségét. A biztonsági mutatók a következők:
 
 - **Önkárosító tartalom**: Felméri, hogy a modell hajlamos-e önkárosító tartalmak előállítására.
 - **Gyűlöletkeltő és igazságtalan tartalom**: Felméri, hogy a modell hajlamos-e gyűlöletkeltő vagy igazságtalan tartalmak generálására.
@@ -88,7 +88,7 @@ Ezeknek a szempontoknak az értékelése biztosítja, hogy az MI modell ne áll�
 
 ### Bevezetés a teljesítményértékelésbe
 
-Annak érdekében, hogy az MI modell a várakozásoknak megfelelően működjön, fontos a teljesítményének értékelése a teljesítménymutatók alapján. Az Azure AI Foundry-ban a teljesítményértékelések lehetővé teszik, hogy felmérd a modell hatékonyságát a pontos, releváns és koherens válaszok generálásában.
+Annak érdekében, hogy az MI modell a várakozásoknak megfelelően működjön, fontos a teljesítményének értékelése a teljesítménymutatók alapján. Az Microsoft Foundry-ban a teljesítményértékelések lehetővé teszik, hogy felmérd a modell hatékonyságát a pontos, releváns és koherens válaszok generálásában.
 
 ![Safaty evaluation.](../../../../../../translated_images/hu/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,7 +96,7 @@ Annak érdekében, hogy az MI modell a várakozásoknak megfelelően működjön
 
 #### Teljesítménymutatók
 
-Ebben a bemutatóban az Azure AI Foundry teljesítménymutatóit használva értékeled a finomhangolt Phi-3 / Phi-3.5 modell teljesítményét. Ezek a mutatók segítenek felmérni a modell hatékonyságát a pontos, releváns és koherens válaszok előállításában. A teljesítménymutatók a következők:
+Ebben a bemutatóban az Microsoft Foundry teljesítménymutatóit használva értékeled a finomhangolt Phi-3 / Phi-3.5 modell teljesítményét. Ezek a mutatók segítenek felmérni a modell hatékonyságát a pontos, releváns és koherens válaszok előállításában. A teljesítménymutatók a következők:
 
 - **Alapozottság (Groundedness)**: Értékeli, hogy a generált válaszok mennyire illeszkednek az input forrásból származó információkhoz.
 - **Relevancia**: Értékeli a generált válaszok kérdéshez való illeszkedését.
@@ -109,34 +109,34 @@ Ezek a mutatók segítenek értékelni a modell hatékonyságát a pontos, relev
 
 ![Evaluate based on performance.](../../../../../../translated_images/hu/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **2. forgatókönyv: Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry-ban**
+## **2. forgatókönyv: Phi-3 / Phi-3.5 modell értékelése az Microsoft Foundry-ban**
 
 ### Mielőtt elkezdenéd
 
-Ez a bemutató a korábbi blogbejegyzések, a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" és a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" folytatása. Ezekben a bejegyzésekben végigvezettünk a Phi-3 / Phi-3.5 modell finomhangolásának és az Azure AI Foundry-ban a Prompt flow-val való integrálásának folyamatán.
+Ez a bemutató a korábbi blogbejegyzések, a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" és a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" folytatása. Ezekben a bejegyzésekben végigvezettünk a Phi-3 / Phi-3.5 modell finomhangolásának és az Microsoft Foundry-ban a Prompt flow-val való integrálásának folyamatán.
 
-Ebben a bemutatóban egy Azure OpenAI modellt telepítesz értékelőként az Azure AI Foundry-ban, és ezt használod a finomhangolt Phi-3 / Phi-3.5 modell értékelésére.
+Ebben a bemutatóban egy Azure OpenAI modellt telepítesz értékelőként az Microsoft Foundry-ban, és ezt használod a finomhangolt Phi-3 / Phi-3.5 modell értékelésére.
 
 A bemutató megkezdése előtt győződj meg róla, hogy rendelkezel a korábbi bemutatókban leírt következő előfeltételekkel:
 
 1. Egy előkészített adatállomány a finomhangolt Phi-3 / Phi-3.5 modell értékeléséhez.
 1. Egy finomhangolt és az Azure Machine Learning-be telepített Phi-3 / Phi-3.5 modell.
-1. Egy a finomhangolt Phi-3 / Phi-3.5 modellel integrált Prompt flow az Azure AI Foundry-ban.
+1. Egy a finomhangolt Phi-3 / Phi-3.5 modellel integrált Prompt flow az Microsoft Foundry-ban.
 
 > [!NOTE]
 > A finomhangolt Phi-3 / Phi-3.5 modell értékeléséhez a korábbi blogbejegyzésekből letöltött **ULTRACHAT_200k** adatállomány *data* mappájában található *test_data.jsonl* fájlt fogod használni.
 
-#### Egyedi Phi-3 / Phi-3.5 modell integrálása a Prompt flow-val az Azure AI Foundry-ban (kód alapú megközelítés)
+#### Egyedi Phi-3 / Phi-3.5 modell integrálása a Prompt flow-val az Microsoft Foundry-ban (kód alapú megközelítés)
 > [!NOTE]
-> Ha a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" című anyagban ismertetett alacsony kódolású megközelítést követted, ezt a feladatot kihagyhatod, és folytathatsz a következővel.
+> Ha a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" című anyagban ismertetett alacsony kódolású megközelítést követted, ezt a feladatot kihagyhatod, és folytathatsz a következővel.
 > Azonban, ha a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" című anyagban leírt kód-alapú megközelítést alkalmaztad a Phi-3 / Phi-3.5 modell finomhangolásához és telepítéséhez, a modell Prompt flow-hoz való csatlakoztatásának folyamata kissé eltér. Ezt a folyamatot ebben a feladatban fogod megtanulni.
-A folytatáshoz integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba az Azure AI Foundry-ban.
+A folytatáshoz integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba az Microsoft Foundry-ban.
 
-#### Azure AI Foundry Hub létrehozása
+#### Microsoft Foundry Hub létrehozása
 
-A Projekt létrehozása előtt létre kell hoznod egy Hub-ot. A Hub olyan, mint egy Erőforráscsoport, amely lehetővé teszi több Projekt rendszerezését és kezelését az Azure AI Foundry-n belül.
+A Projekt létrehozása előtt létre kell hoznod egy Hub-ot. A Hub olyan, mint egy Erőforráscsoport, amely lehetővé teszi több Projekt rendszerezését és kezelését az Microsoft Foundry-n belül.
 
-1. Jelentkezz be az [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
+1. Jelentkezz be az [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
 
 1. Válaszd ki a bal oldali fülön az **All hubs** lehetőséget.
 
@@ -157,7 +157,7 @@ A Projekt létrehozása előtt létre kell hoznod egy Hub-ot. A Hub olyan, mint 
 
 1. Kattints a **Next** gombra.
 
-#### Azure AI Foundry Projekt létrehozása
+#### Microsoft Foundry Projekt létrehozása
 
 1. A létrehozott Hub-ban válaszd ki a bal oldali fülön az **All projects** lehetőséget.
 
@@ -197,9 +197,9 @@ Ahhoz, hogy a finomhangolt Phi-3 / Phi-3.5 modellt integráld a Prompt flow-ba, 
 
 #### Egyedi kapcsolat hozzáadása
 
-1. Látogass el az [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
+1. Látogass el az [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
 
-1. Navigálj a létrehozott Azure AI Foundry projekthez.
+1. Navigálj a létrehozott Microsoft Foundry projekthez.
 
 1. A létrehozott Projektben válaszd ki a bal oldali fülön a **Settings** lehetőséget.
 
@@ -225,9 +225,9 @@ Ahhoz, hogy a finomhangolt Phi-3 / Phi-3.5 modellt integráld a Prompt flow-ba, 
 
 #### Prompt flow létrehozása
 
-Hozzáadtál egy egyedi kapcsolatot az Azure AI Foundry-ban. Most hozzunk létre egy Prompt flow-t a következő lépésekkel. Ezután csatlakoztatod ezt a Prompt flow-t az egyedi kapcsolathoz, hogy a finomhangolt modellt használhasd a Prompt flow-n belül.
+Hozzáadtál egy egyedi kapcsolatot az Microsoft Foundry-ban. Most hozzunk létre egy Prompt flow-t a következő lépésekkel. Ezután csatlakoztatod ezt a Prompt flow-t az egyedi kapcsolathoz, hogy a finomhangolt modellt használhasd a Prompt flow-n belül.
 
-1. Navigálj a létrehozott Azure AI Foundry projekthez.
+1. Navigálj a létrehozott Microsoft Foundry projekthez.
 
 1. Válaszd ki a bal oldali fülön a **Prompt flow** lehetőséget.
 
@@ -344,7 +344,7 @@ Integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba. Azonb
     ![Paste prompt flow code.](../../../../../../translated_images/hu/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> További részletes információkért a Prompt flow használatáról az Azure AI Foundry-ban, tekintsd meg a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) dokumentációt.
+> További részletes információkért a Prompt flow használatáról az Microsoft Foundry-ban, tekintsd meg a [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) dokumentációt.
 
 1. Válaszd ki a **Chat input** és **Chat output** opciókat, hogy engedélyezd a csevegést a modelleddel.
 
@@ -385,13 +385,13 @@ Integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba. Azonb
 
 ### Azure OpenAI telepítése a Phi-3 / Phi-3.5 modell értékeléséhez
 
-Ahhoz, hogy értékeld a Phi-3 / Phi-3.5 modellt az Azure AI Foundry-ban, telepítened kell egy Azure OpenAI modellt. Ezt a modellt fogod használni a Phi-3 / Phi-3.5 modell teljesítményének értékelésére.
+Ahhoz, hogy értékeld a Phi-3 / Phi-3.5 modellt az Microsoft Foundry-ban, telepítened kell egy Azure OpenAI modellt. Ezt a modellt fogod használni a Phi-3 / Phi-3.5 modell teljesítményének értékelésére.
 
 #### Azure OpenAI telepítése
 
-1. Jelentkezz be az [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
+1. Jelentkezz be az [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
 
-1. Navigálj a létrehozott Azure AI Foundry projekthez.
+1. Navigálj a létrehozott Microsoft Foundry projekthez.
 
     ![Select Project.](../../../../../../translated_images/hu/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -409,13 +409,13 @@ Ahhoz, hogy értékeld a Phi-3 / Phi-3.5 modellt az Azure AI Foundry-ban, telep�
 
 1. Kattints a **Confirm** gombra.
 
-### A finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry Prompt flow értékelésével
+### A finomhangolt Phi-3 / Phi-3.5 modell értékelése az Microsoft Foundry Prompt flow értékelésével
 
 ### Új értékelés indítása
 
-1. Látogass el az [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
+1. Látogass el az [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
 
-1. Navigálj a létrehozott Azure AI Foundry projekthez.
+1. Navigálj a létrehozott Microsoft Foundry projekthez.
 
     ![Select Project.](../../../../../../translated_images/hu/select-project-created.5221e0e403e2c9d6.webp)
 
@@ -498,7 +498,7 @@ Miután az értékelés befejeződött, áttekintheti az eredményeket mind a te
 
 ### Sikeresen befejezte ezt a bemutatót
 
-Sikeresen értékelte a finomhangolt Phi-3 modellt, amely integrálva van a Prompt flow-val az Azure AI Foundry-ban. Ez egy fontos lépés annak biztosításában, hogy AI modelljei ne csak jól teljesítsenek, hanem megfeleljenek a Microsoft Responsible AI elveinek, így megbízható és hiteles AI alkalmazásokat építhet.
+Sikeresen értékelte a finomhangolt Phi-3 modellt, amely integrálva van a Prompt flow-val az Microsoft Foundry-ban. Ez egy fontos lépés annak biztosításában, hogy AI modelljei ne csak jól teljesítsenek, hanem megfeleljenek a Microsoft Responsible AI elveinek, így megbízható és hiteles AI alkalmazásokat építhet.
 
 ![Architecture.](../../../../../../translated_images/hu/architecture.10bec55250f5d6a4.webp)
 
@@ -508,8 +508,8 @@ Takarítsa el az Azure erőforrásokat, hogy elkerülje a további költségeket
 
 - Az Azure Machine learning erőforrást.
 - Az Azure Machine learning modell végpontot.
-- Az Azure AI Foundry Project erőforrást.
-- Az Azure AI Foundry Prompt flow erőforrást.
+- Az Microsoft Foundry Project erőforrást.
+- Az Microsoft Foundry Prompt flow erőforrást.
 
 ### Következő lépések
 
@@ -517,13 +517,13 @@ Takarítsa el az Azure erőforrásokat, hogy elkerülje a további költségeket
 
 - [AI rendszerek értékelése a Responsible AI dashboard segítségével](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Generatív AI értékelési és monitorozási mutatók](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry dokumentáció](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry dokumentáció](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow dokumentáció](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Képzési anyagok
 
 - [Bevezetés a Microsoft Responsible AI megközelítésébe](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Bevezetés az Azure AI Foundry-ba](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Bevezetés az Microsoft Foundry-ba](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Hivatkozások
 

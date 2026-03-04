@@ -1,17 +1,17 @@
-# Doladte a integrujte vlastné modely Phi-3 s Prompt flow v Azure AI Foundry
+# Doladte a integrujte vlastné modely Phi-3 s Prompt flow v Microsoft Foundry
 
-Tento end-to-end (E2E) príklad je založený na návode "[Doladte a integrujte vlastné modely Phi-3 s Prompt Flow v Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Predstavuje procesy doladenia, nasadenia a integrácie vlastných modelov Phi-3 s Prompt flow v Azure AI Foundry.
+Tento end-to-end (E2E) príklad je založený na návode "[Doladte a integrujte vlastné modely Phi-3 s Prompt Flow v Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Predstavuje procesy doladenia, nasadenia a integrácie vlastných modelov Phi-3 s Prompt flow v Microsoft Foundry.
 Na rozdiel od E2E príkladu, "[Doladte a integrujte vlastné modely Phi-3 s Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", ktorý zahŕňal spustenie kódu lokálne, sa tento tutoriál sústreďuje kompletne na doladenie a integráciu vášho modelu v rámci Azure AI / ML Studia.
 
 ## Prehľad
 
-V tomto E2E príklade sa naučíte, ako doladiť model Phi-3 a integrovať ho s Prompt flow v Azure AI Foundry. Využitím Azure AI / ML Studia si vytvoríte pracovný postup pre nasadenie a použitie vlastných AI modelov. Tento E2E príklad je rozdelený do troch scenárov:
+V tomto E2E príklade sa naučíte, ako doladiť model Phi-3 a integrovať ho s Prompt flow v Microsoft Foundry. Využitím Azure AI / ML Studia si vytvoríte pracovný postup pre nasadenie a použitie vlastných AI modelov. Tento E2E príklad je rozdelený do troch scenárov:
 
 **Scenár 1: Nastavenie Azure zdrojov a Príprava na doladenie**
 
 **Scenár 2: Doladenie modelu Phi-3 a Nasadenie v Azure Machine Learning Studiu**
 
-**Scenár 3: Integrácia s Prompt flow a Chatovanie s vlastným modelom v Azure AI Foundry**
+**Scenár 3: Integrácia s Prompt flow a Chatovanie s vlastným modelom v Microsoft Foundry**
 
 Tu je prehľad tohto E2E príkladu.
 
@@ -30,7 +30,7 @@ Tu je prehľad tohto E2E príkladu.
     - [Doladte model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Nasadte doladený model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenár 3: Integrácia s Prompt flow a Chatovanie s vlastným modelom v Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenár 3: Integrácia s Prompt flow a Chatovanie s vlastným modelom v Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrujte vlastný model Phi-3 s Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Chatovanie s vlastným modelom Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ V tomto cvičení:
 > ![Nastaviť prevádzku.](../../../../../../translated_images/sk/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenár 3: Integrácia s Prompt flow a chatovanie s vaším vlastným modelom v Azure AI Foundry
+## Scenár 3: Integrácia s Prompt flow a chatovanie s vaším vlastným modelom v Microsoft Foundry
 
 ### Integrácia vlastného modelu Phi-3 s Prompt flow
 
@@ -552,8 +552,8 @@ Po úspešnom nasadení doladeného modelu ho teraz môžete integrovať s Promp
 
 V tomto cvičení:
 
-- Vytvoríte Azure AI Foundry Hub.
-- Vytvoríte Azure AI Foundry Projekt.
+- Vytvoríte Microsoft Foundry Hub.
+- Vytvoríte Microsoft Foundry Projekt.
 - Vytvoríte Prompt flow.
 - Pridáte vlastné pripojenie pre doladený model Phi-3.
 - Nastavíte Prompt flow na chatovanie s vaším vlastným modelom Phi-3.
@@ -561,11 +561,11 @@ V tomto cvičení:
 > [!NOTE]
 > Integráciu s Promptflow môžete tiež vykonať prostredníctvom Azure ML Studia. Rovnaký integračný proces platí pre Azure ML Studio.
 
-#### Vytvorenie Azure AI Foundry Hubu
+#### Vytvorenie Microsoft Foundry Hubu
 
-Je potrebné vytvoriť Hub pred vytvorením Projektu. Hub funguje ako skupina zdrojov, umožňujúca organizovať a spravovať viacero Projektov v Azure AI Foundry.
+Je potrebné vytvoriť Hub pred vytvorením Projektu. Hub funguje ako skupina zdrojov, umožňujúca organizovať a spravovať viacero Projektov v Microsoft Foundry.
 
-1. Navštívte [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Navštívte [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Vyberte **Všetky huby** z ľavého bočného panela.
 
@@ -585,7 +585,7 @@ Je potrebné vytvoriť Hub pred vytvorením Projektu. Hub funguje ako skupina zd
 
 1. Vyberte **Ďalej**.
 
-#### Vytvoriť projekt Azure AI Foundry
+#### Vytvoriť projekt Microsoft Foundry
 
 1. V centre, ktoré ste vytvorili, vyberte **Všetky projekty** z ponuky na ľavej strane.
 
@@ -625,9 +625,9 @@ Ak chcete integrovať svoj vlastný model Phi-3 s Prompt flow, musíte uložiť 
 
 #### Pridať vlastné pripojenie
 
-1. Navštívte [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Navštívte [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Prejdite do projektu Azure AI Foundry, ktorý ste vytvorili.
+1. Prejdite do projektu Microsoft Foundry, ktorý ste vytvorili.
 
 1. V projekte, ktorý ste vytvorili, vyberte **Nastavenia** z ľavej ponuky.
 
@@ -653,9 +653,9 @@ Ak chcete integrovať svoj vlastný model Phi-3 s Prompt flow, musíte uložiť 
 
 #### Vytvoriť Prompt flow
 
-Pridali ste vlastné pripojenie v Azure AI Foundry. Teraz vytvoríme Prompt flow pomocou nasledujúcich krokov. Následne prepojíte tento Prompt flow s vlastným pripojením, aby ste mohli použiť doladený model v Prompt flow.
+Pridali ste vlastné pripojenie v Microsoft Foundry. Teraz vytvoríme Prompt flow pomocou nasledujúcich krokov. Následne prepojíte tento Prompt flow s vlastným pripojením, aby ste mohli použiť doladený model v Prompt flow.
 
-1. Prejdite do projektu Azure AI Foundry, ktorý ste vytvorili.
+1. Prejdite do projektu Microsoft Foundry, ktorý ste vytvorili.
 
 1. Vyberte **Prompt flow** z ľavej ponuky.
 
@@ -774,7 +774,7 @@ Je potrebné integrovať doladený model Phi-3 do Prompt flow. Existujúci Promp
 ![Vložiť kód Prompt flow.](../../../../../../translated_images/sk/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Pre podrobnejšie informácie o používaní Prompt flow v Azure AI Foundry môžete navštíviť [Prompt flow v Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Pre podrobnejšie informácie o používaní Prompt flow v Microsoft Foundry môžete navštíviť [Prompt flow v Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Vyberte **Vstup chatu**, **Výstup chatu** na povolenie rozhovoru s vaším modelom.
 

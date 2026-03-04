@@ -1,6 +1,6 @@
-# Ajuste fino de Phi-3 con Azure AI Foundry
+# Ajuste fino de Phi-3 con Microsoft Foundry
 
-Exploremos cómo ajustar finamente el modelo de lenguaje Phi-3 Mini de Microsoft usando Azure AI Foundry. El ajuste fino te permite adaptar Phi-3 Mini a tareas específicas, haciéndolo aún más potente y consciente del contexto.
+Exploremos cómo ajustar finamente el modelo de lenguaje Phi-3 Mini de Microsoft usando Microsoft Foundry. El ajuste fino te permite adaptar Phi-3 Mini a tareas específicas, haciéndolo aún más potente y consciente del contexto.
 
 ## Consideraciones
 
@@ -22,7 +22,7 @@ Exploremos cómo ajustar finamente el modelo de lenguaje Phi-3 Mini de Microsoft
 - Una suscripción de Azure. Si no tienes una, crea una [cuenta de Azure de pago](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) para comenzar.
 
 - Un [proyecto AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Se utilizan controles de acceso basados en roles de Azure (Azure RBAC) para otorgar permisos en Azure AI Foundry. Para realizar los pasos de este artículo, tu cuenta debe tener asignado el __rol de Azure AI Developer__ en el grupo de recursos.
+- Se utilizan controles de acceso basados en roles de Azure (Azure RBAC) para otorgar permisos en Microsoft Foundry. Para realizar los pasos de este artículo, tu cuenta debe tener asignado el __rol de Azure AI Developer__ en el grupo de recursos.
 
 ### Registro del proveedor de suscripción
 
@@ -58,17 +58,17 @@ Los datos de entrenamiento y validación que uses **deben** estar formateados co
 
 El tipo de archivo soportado es JSON Lines. Los archivos se suben al datastore predeterminado y se ponen disponibles en tu proyecto.
 
-## Ajuste fino de Phi-3 con Azure AI Foundry
+## Ajuste fino de Phi-3 con Microsoft Foundry
 
-Azure AI Foundry te permite personalizar grandes modelos de lenguaje con tus propios conjuntos de datos mediante un proceso llamado ajuste fino. El ajuste fino aporta un gran valor al permitir la personalización y optimización para tareas y aplicaciones específicas. Esto mejora el rendimiento, la eficiencia en costos, reduce la latencia y genera resultados adaptados.
+Microsoft Foundry te permite personalizar grandes modelos de lenguaje con tus propios conjuntos de datos mediante un proceso llamado ajuste fino. El ajuste fino aporta un gran valor al permitir la personalización y optimización para tareas y aplicaciones específicas. Esto mejora el rendimiento, la eficiencia en costos, reduce la latencia y genera resultados adaptados.
 
 ![Finetune AI Foundry](../../../../translated_images/es/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Crear un nuevo proyecto
 
-1. Inicia sesión en [Azure AI Foundry](https://ai.azure.com).
+1. Inicia sesión en [Microsoft Foundry](https://ai.azure.com).
 
-1. Selecciona **+Nuevo proyecto** para crear un nuevo proyecto en Azure AI Foundry.
+1. Selecciona **+Nuevo proyecto** para crear un nuevo proyecto en Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/es/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry te permite personalizar grandes modelos de lenguaje con tus pro
 
 Antes del ajuste fino, recopila o crea un conjunto de datos relevante para tu tarea, como instrucciones de chat, pares de preguntas y respuestas, u otro texto pertinente. Limpia y preprocesa estos datos eliminando ruido, manejando valores faltantes y tokenizando el texto.
 
-### Ajustar finamente modelos Phi-3 en Azure AI Foundry
+### Ajustar finamente modelos Phi-3 en Microsoft Foundry
 
 > [!NOTE]
 > El ajuste fino de modelos Phi-3 actualmente está soportado solo en proyectos ubicados en East US 2.
@@ -121,7 +121,7 @@ Antes del ajuste fino, recopila o crea un conjunto de datos relevante para tu ta
 1. Realiza las siguientes tareas:
 
     - Selecciona el **tipo de tarea** como **Chat completion**.
-    - Selecciona los **datos de entrenamiento** que deseas usar. Puedes subirlos a través de los datos de Azure AI Foundry o desde tu entorno local.
+    - Selecciona los **datos de entrenamiento** que deseas usar. Puedes subirlos a través de los datos de Microsoft Foundry o desde tu entorno local.
 
     ![FineTuneSelect](../../../../translated_images/es/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Antes del ajuste fino, recopila o crea un conjunto de datos relevante para tu ta
 
     ![FineTuneSelect](../../../../translated_images/es/select-submit.0a3802d581bac271.webp)
 
-1. Una vez que tu modelo esté ajustado, el estado aparecerá como **Completado**, como se muestra en la imagen a continuación. Ahora puedes desplegar el modelo y usarlo en tu propia aplicación, en el playground o en prompt flow. Para más información, consulta [Cómo desplegar la familia de modelos pequeños Phi-3 con Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Una vez que tu modelo esté ajustado, el estado aparecerá como **Completado**, como se muestra en la imagen a continuación. Ahora puedes desplegar el modelo y usarlo en tu propia aplicación, en el playground o en prompt flow. Para más información, consulta [Cómo desplegar la familia de modelos pequeños Phi-3 con Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/es/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Para información más detallada sobre el ajuste fino de Phi-3, visita [Ajustar finamente modelos Phi-3 en Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Para información más detallada sobre el ajuste fino de Phi-3, visita [Ajustar finamente modelos Phi-3 en Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Limpieza de tus modelos ajustados
 
-Puedes eliminar un modelo ajustado desde la lista de modelos de ajuste fino en [Azure AI Foundry](https://ai.azure.com) o desde la página de detalles del modelo. Selecciona el modelo ajustado que deseas eliminar en la página de Ajuste fino y luego selecciona el botón Eliminar para borrarlo.
+Puedes eliminar un modelo ajustado desde la lista de modelos de ajuste fino en [Microsoft Foundry](https://ai.azure.com) o desde la página de detalles del modelo. Selecciona el modelo ajustado que deseas eliminar en la página de Ajuste fino y luego selecciona el botón Eliminar para borrarlo.
 
 > [!NOTE]
 > No puedes eliminar un modelo personalizado si tiene un despliegue activo. Primero debes eliminar el despliegue del modelo antes de poder eliminar el modelo personalizado.
@@ -163,7 +163,7 @@ Puedes eliminar un modelo ajustado desde la lista de modelos de ajuste fino en [
 
 ### Consideraciones de costos y cuotas para modelos Phi-3 ajustados como servicio
 
-Los modelos Phi ajustados como servicio son ofrecidos por Microsoft e integrados con Azure AI Foundry para su uso. Puedes consultar los precios al [desplegar](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o ajustar los modelos en la pestaña de Precios y términos del asistente de despliegue.
+Los modelos Phi ajustados como servicio son ofrecidos por Microsoft e integrados con Microsoft Foundry para su uso. Puedes consultar los precios al [desplegar](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o ajustar los modelos en la pestaña de Precios y términos del asistente de despliegue.
 
 ## Filtrado de contenido
 
@@ -204,7 +204,7 @@ Guarda el checkpoint del modelo ajustado para uso futuro.
 
 ## Despliegue
 
-- Despliega como servicio web: Despliega tu modelo ajustado como un servicio web en Azure AI Foundry.
+- Despliega como servicio web: Despliega tu modelo ajustado como un servicio web en Microsoft Foundry.
 - Prueba el endpoint: Envía consultas de prueba al endpoint desplegado para verificar su funcionamiento.
 
 ## Iterar y mejorar

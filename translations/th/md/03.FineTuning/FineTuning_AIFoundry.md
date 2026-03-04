@@ -1,6 +1,6 @@
-# การปรับแต่ง Phi-3 ด้วย Azure AI Foundry
+# การปรับแต่ง Phi-3 ด้วย Microsoft Foundry
 
-มาทำความรู้จักกับการปรับแต่งโมเดลภาษา Phi-3 Mini ของ Microsoft โดยใช้ Azure AI Foundry กัน การปรับแต่งนี้ช่วยให้คุณสามารถปรับโมเดล Phi-3 Mini ให้เหมาะกับงานเฉพาะทาง ทำให้โมเดลมีความแม่นยำและเข้าใจบริบทได้ดียิ่งขึ้น
+มาทำความรู้จักกับการปรับแต่งโมเดลภาษา Phi-3 Mini ของ Microsoft โดยใช้ Microsoft Foundry กัน การปรับแต่งนี้ช่วยให้คุณสามารถปรับโมเดล Phi-3 Mini ให้เหมาะกับงานเฉพาะทาง ทำให้โมเดลมีความแม่นยำและเข้าใจบริบทได้ดียิ่งขึ้น
 
 ## ข้อควรพิจารณา
 
@@ -22,7 +22,7 @@
 - มีบัญชี Azure Subscription หากยังไม่มี ให้สร้าง [บัญชี Azure แบบชำระเงิน](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) เพื่อเริ่มต้น
 
 - มี [โปรเจกต์ AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)
-- ใช้การควบคุมการเข้าถึงแบบบทบาทใน Azure (Azure RBAC) เพื่อให้สิทธิ์ในการดำเนินการใน Azure AI Foundry โดยบัญชีผู้ใช้ของคุณต้องได้รับมอบหมายบทบาท __Azure AI Developer__ ในกลุ่มทรัพยากร
+- ใช้การควบคุมการเข้าถึงแบบบทบาทใน Azure (Azure RBAC) เพื่อให้สิทธิ์ในการดำเนินการใน Microsoft Foundry โดยบัญชีผู้ใช้ของคุณต้องได้รับมอบหมายบทบาท __Azure AI Developer__ ในกลุ่มทรัพยากร
 
 ### การลงทะเบียนผู้ให้บริการ Subscription
 
@@ -58,17 +58,17 @@
 
 ไฟล์ที่รองรับเป็น JSON Lines ไฟล์จะถูกอัปโหลดไปยังที่เก็บข้อมูลเริ่มต้นและพร้อมใช้งานในโปรเจกต์ของคุณ
 
-## การปรับแต่ง Phi-3 ด้วย Azure AI Foundry
+## การปรับแต่ง Phi-3 ด้วย Microsoft Foundry
 
-Azure AI Foundry ช่วยให้คุณปรับแต่งโมเดลภาษาขนาดใหญ่ให้เหมาะกับชุดข้อมูลของคุณเองผ่านกระบวนการที่เรียกว่าการปรับแต่ง (fine-tuning) การปรับแต่งนี้ช่วยเพิ่มมูลค่าอย่างมากโดยเปิดโอกาสให้ปรับแต่งและเพิ่มประสิทธิภาพสำหรับงานและแอปพลิเคชันเฉพาะทาง ส่งผลให้ประสิทธิภาพดีขึ้น ประหยัดค่าใช้จ่าย ลดความหน่วงเวลา และได้ผลลัพธ์ที่เหมาะสมกับความต้องการ
+Microsoft Foundry ช่วยให้คุณปรับแต่งโมเดลภาษาขนาดใหญ่ให้เหมาะกับชุดข้อมูลของคุณเองผ่านกระบวนการที่เรียกว่าการปรับแต่ง (fine-tuning) การปรับแต่งนี้ช่วยเพิ่มมูลค่าอย่างมากโดยเปิดโอกาสให้ปรับแต่งและเพิ่มประสิทธิภาพสำหรับงานและแอปพลิเคชันเฉพาะทาง ส่งผลให้ประสิทธิภาพดีขึ้น ประหยัดค่าใช้จ่าย ลดความหน่วงเวลา และได้ผลลัพธ์ที่เหมาะสมกับความต้องการ
 
 ![Finetune AI Foundry](../../../../translated_images/th/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### สร้างโปรเจกต์ใหม่
 
-1. ลงชื่อเข้าใช้ [Azure AI Foundry](https://ai.azure.com)
+1. ลงชื่อเข้าใช้ [Microsoft Foundry](https://ai.azure.com)
 
-2. เลือก **+New project** เพื่อสร้างโปรเจกต์ใหม่ใน Azure AI Foundry
+2. เลือก **+New project** เพื่อสร้างโปรเจกต์ใหม่ใน Microsoft Foundry
 
     ![FineTuneSelect](../../../../translated_images/th/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 
 ก่อนการปรับแต่ง ให้รวบรวมหรือสร้างชุดข้อมูลที่เกี่ยวข้องกับงานของคุณ เช่น คำสั่งแชท คู่คำถาม-คำตอบ หรือข้อความอื่น ๆ ที่เกี่ยวข้อง ทำความสะอาดและเตรียมข้อมูลโดยการลบข้อมูลรบกวน จัดการค่าที่ขาดหาย และแยกคำในข้อความ
 
-### การปรับแต่งโมเดล Phi-3 ใน Azure AI Foundry
+### การปรับแต่งโมเดล Phi-3 ใน Microsoft Foundry
 
 > [!NOTE]
 > การปรับแต่งโมเดล Phi-3 รองรับเฉพาะโปรเจกต์ที่ตั้งอยู่ในภูมิภาค East US 2 เท่านั้น
@@ -121,7 +121,7 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 6. ดำเนินการดังนี้:
 
     - เลือก **task type** เป็น **Chat completion**
-    - เลือก **Training data** ที่ต้องการใช้ สามารถอัปโหลดผ่าน Azure AI Foundry หรือจากเครื่องของคุณเอง
+    - เลือก **Training data** ที่ต้องการใช้ สามารถอัปโหลดผ่าน Microsoft Foundry หรือจากเครื่องของคุณเอง
 
     ![FineTuneSelect](../../../../translated_images/th/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 
     ![FineTuneSelect](../../../../translated_images/th/select-submit.0a3802d581bac271.webp)
 
-12. เมื่อโมเดลของคุณผ่านการปรับแต่งแล้ว สถานะจะแสดงเป็น **Completed** ดังภาพด้านล่าง คุณสามารถนำโมเดลไปใช้งานในแอปพลิเคชันของคุณเอง ใน playground หรือใน prompt flow ได้ สำหรับข้อมูลเพิ่มเติม ดูที่ [วิธีการปรับใช้โมเดลภาษาเล็กในตระกูล Phi-3 ด้วย Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)
+12. เมื่อโมเดลของคุณผ่านการปรับแต่งแล้ว สถานะจะแสดงเป็น **Completed** ดังภาพด้านล่าง คุณสามารถนำโมเดลไปใช้งานในแอปพลิเคชันของคุณเอง ใน playground หรือใน prompt flow ได้ สำหรับข้อมูลเพิ่มเติม ดูที่ [วิธีการปรับใช้โมเดลภาษาเล็กในตระกูล Phi-3 ด้วย Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)
 
     ![FineTuneSelect](../../../../translated_images/th/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> สำหรับข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับการปรับแต่ง Phi-3 โปรดเยี่ยมชม [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)
+> สำหรับข้อมูลรายละเอียดเพิ่มเติมเกี่ยวกับการปรับแต่ง Phi-3 โปรดเยี่ยมชม [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)
 
 ## การลบโมเดลที่ผ่านการปรับแต่ง
 
-คุณสามารถลบโมเดลที่ผ่านการปรับแต่งได้จากรายการโมเดลในหน้า Fine-tuning ของ [Azure AI Foundry](https://ai.azure.com) หรือจากหน้ารายละเอียดโมเดล เลือกโมเดลที่ต้องการลบจากหน้า Fine-tuning แล้วกดปุ่ม Delete เพื่อลบโมเดลนั้น
+คุณสามารถลบโมเดลที่ผ่านการปรับแต่งได้จากรายการโมเดลในหน้า Fine-tuning ของ [Microsoft Foundry](https://ai.azure.com) หรือจากหน้ารายละเอียดโมเดล เลือกโมเดลที่ต้องการลบจากหน้า Fine-tuning แล้วกดปุ่ม Delete เพื่อลบโมเดลนั้น
 
 > [!NOTE]
 > คุณไม่สามารถลบโมเดลที่มีการปรับใช้แล้วได้ ต้องลบการปรับใช้โมเดลนั้นก่อนจึงจะลบโมเดลได้
@@ -163,7 +163,7 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 
 ### ข้อควรพิจารณาเรื่องค่าใช้จ่ายและโควต้าสำหรับโมเดล Phi-3 ที่ปรับแต่งเป็นบริการ
 
-โมเดล Phi ที่ปรับแต่งเป็นบริการนี้ให้บริการโดย Microsoft และผสานรวมกับ Azure AI Foundry เพื่อใช้งาน คุณสามารถดูราคาขณะ [ปรับใช้](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) หรือปรับแต่งโมเดลได้ในแท็บ Pricing and terms ของตัวช่วยปรับใช้
+โมเดล Phi ที่ปรับแต่งเป็นบริการนี้ให้บริการโดย Microsoft และผสานรวมกับ Microsoft Foundry เพื่อใช้งาน คุณสามารถดูราคาขณะ [ปรับใช้](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) หรือปรับแต่งโมเดลได้ในแท็บ Pricing and terms ของตัวช่วยปรับใช้
 
 ## การกรองเนื้อหา
 
@@ -206,7 +206,7 @@ Azure AI Foundry ช่วยให้คุณปรับแต่งโมเ
 
 ## การปรับใช้
 
-- ปรับใช้เป็นบริการเว็บ: นำโมเดลที่ผ่านการปรับแต่งไปปรับใช้เป็นบริการเว็บใน Azure AI Foundry
+- ปรับใช้เป็นบริการเว็บ: นำโมเดลที่ผ่านการปรับแต่งไปปรับใช้เป็นบริการเว็บใน Microsoft Foundry
 - ทดสอบจุดเชื่อมต่อ: ส่งคำถามทดสอบไปยังจุดเชื่อมต่อที่ปรับใช้เพื่อตรวจสอบการทำงาน
 
 ## การปรับปรุงและพัฒนา

@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/bn/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**প্ল্যাটফর্ম** এর মধ্যে রয়েছে বিভিন্ন প্রযুক্তি যেমন Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, এবং ONNX Runtime।
+**প্ল্যাটফর্ম** এর মধ্যে রয়েছে বিভিন্ন প্রযুক্তি যেমন Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, এবং ONNX Runtime।
 
 **ইনফ্রাস্ট্রাকচার** এর মধ্যে রয়েছে CPU এবং FPGA, যা ফাইন-টিউনিং প্রক্রিয়ার জন্য অপরিহার্য। আমি আপনাদের জন্য প্রতিটি প্রযুক্তির আইকন দেখাচ্ছি।
 

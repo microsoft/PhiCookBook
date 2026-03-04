@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/ar/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**المنصة** تشمل تقنيات متنوعة مثل Azure AI Foundry، Azure Machine Learning، أدوات الذكاء الاصطناعي، Kaito، و ONNX Runtime.
+**المنصة** تشمل تقنيات متنوعة مثل Microsoft Foundry، Azure Machine Learning، أدوات الذكاء الاصطناعي، Kaito، و ONNX Runtime.
 
 **البنية التحتية** تشمل المعالج المركزي (CPU) و FPGA، وهما ضروريان لعملية الضبط الدقيق. دعني أريك الرموز الخاصة بكل من هذه التقنيات.
 

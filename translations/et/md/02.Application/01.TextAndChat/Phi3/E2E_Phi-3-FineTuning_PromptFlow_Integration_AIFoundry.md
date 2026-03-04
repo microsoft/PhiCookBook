@@ -1,17 +1,17 @@
-# Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow's Azure AI Foundry's
+# Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow's Microsoft Foundry's
 
-See otsast lõpuni (E2E) näide põhineb Microsoft Tech Community juhendil "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)". See tutvustab peenhäälestuse, juurutamise ja kohandatud Phi-3 mudelite integreerimise protsesse Prompt flow’s Azure AI Foundry's.
+See otsast lõpuni (E2E) näide põhineb Microsoft Tech Community juhendil "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)". See tutvustab peenhäälestuse, juurutamise ja kohandatud Phi-3 mudelite integreerimise protsesse Prompt flow’s Microsoft Foundry's.
 Erinevalt E2E näitest, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", mis nõudis koodi käivitamist lokaalselt, keskendub see juhend täielikult mudeli peenhäälestusele ja integreerimisele Azure AI / ML Studio's.
 
 ## Ülevaade
 
-Selles E2E näites õpite, kuidas peenhäälestada Phi-3 mudelit ja integreerida seda Prompt flow's Azure AI Foundry's. Kasutades Azure AI / ML Studio't, loote töövoo kohandatud tehisintellekti mudelite juurutamiseks ja kasutamiseks. See E2E näide on jaotatud kolmeks stsenaariumiks:
+Selles E2E näites õpite, kuidas peenhäälestada Phi-3 mudelit ja integreerida seda Prompt flow's Microsoft Foundry's. Kasutades Azure AI / ML Studio't, loote töövoo kohandatud tehisintellekti mudelite juurutamiseks ja kasutamiseks. See E2E näide on jaotatud kolmeks stsenaariumiks:
 
 **Stsenaarium 1: Azure ressursside seadistamine ja peenhäälestuseks ettevalmistamine**
 
 **Stsenaarium 2: Phi-3 mudeli peenhäälestus ja juurutamine Azure Machine Learning Studio's**
 
-**Stsenaarium 3: Integreerimine Prompt flow'ga ja vestlus kohandatud mudeliga Azure AI Foundry's**
+**Stsenaarium 3: Integreerimine Prompt flow'ga ja vestlus kohandatud mudeliga Microsoft Foundry's**
 
 Siin on selle E2E näite ülevaade.
 
@@ -30,7 +30,7 @@ Siin on selle E2E näite ülevaade.
     - [Peenhäälesta Phi-3 mudel](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Juuruta peenhäälestatud Phi-3 mudel](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Stsenaarium 3: Integreerimine Prompt flow'ga ja vestlus kohandatud mudeliga Azure AI Foundry's](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Stsenaarium 3: Integreerimine Prompt flow'ga ja vestlus kohandatud mudeliga Microsoft Foundry's](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integreeri kohandatud Phi-3 mudel Prompt flow'ga](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Vestle oma kohandatud Phi-3 mudeliga](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ Selles harjutuses teete:
 > ![Seadke liiklus.](../../../../../../translated_images/et/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Stsenaarium 3: Integreerimine Prompt flowga ja vestlus oma kohandatud mudeliga Azure AI Foundry's
+## Stsenaarium 3: Integreerimine Prompt flowga ja vestlus oma kohandatud mudeliga Microsoft Foundry's
 
 ### Integreerige kohandatud Phi-3 mudel Prompt flowga
 
@@ -552,8 +552,8 @@ Pärast täiendõppinud mudeli edukat juurutamist saate nüüd integreerida sell
 
 Selles harjutuses teete:
 
-- Loote Azure AI Foundry Hubi.
-- Loote Azure AI Foundry projekti.
+- Loote Microsoft Foundry Hubi.
+- Loote Microsoft Foundry projekti.
 - Loote Prompt flow.
 - Lisate kohandatud ühenduse täiendõppinud Phi-3 mudelile.
 - Seadistate Prompt flow vestluseks oma kohandatud Phi-3 mudeliga.
@@ -561,11 +561,11 @@ Selles harjutuses teete:
 > [!NOTE]
 > Samuti saate integreerida Promptflowga kasutades Azure ML Studio. Sama integreerimisprotsessi saab rakendada Azure ML Studio puhul.
 
-#### Looge Azure AI Foundry Hub
+#### Looge Microsoft Foundry Hub
 
-Enne projekti loomist peate looma Hubi. Hub toimib nagu Ressursigrupp, võimaldades teil korraldada ja hallata mitut projekti Azure AI Foundry sees.
+Enne projekti loomist peate looma Hubi. Hub toimib nagu Ressursigrupp, võimaldades teil korraldada ja hallata mitut projekti Microsoft Foundry sees.
 
-1. Minge aadressile [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Minge aadressile [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Valige vasakult vahekaardilt **All hubs**.
 
@@ -585,7 +585,7 @@ Enne projekti loomist peate looma Hubi. Hub toimib nagu Ressursigrupp, võimalda
 
 1. Vali **Järgmine**.
 
-#### Loo Azure AI Foundry projekt
+#### Loo Microsoft Foundry projekt
 
 1. Vali loodud Keskusest vasakpoolsest paanist **Kõik projektid**.
 
@@ -625,9 +625,9 @@ Et integreerida oma kohandatud Phi-3 mudel Prompt flow’ga, pead salvestama mud
 
 #### Lisa Kohandatud Ühendus
 
-1. Külastage [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Külastage [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Liigu loodud Azure AI Foundry projekti juurde.
+1. Liigu loodud Microsoft Foundry projekti juurde.
 
 1. Vali loodud projektist vasakpoolsest paanist **Seaded**.
 
@@ -653,9 +653,9 @@ Et integreerida oma kohandatud Phi-3 mudel Prompt flow’ga, pead salvestama mud
 
 #### Loo Prompt flow
 
-Oled lisanud kohandatud ühenduse Azure AI Foundry’sse. Nüüd loo Prompt flow järgmiste sammude abil. Seejärel ühenda see Prompt flow kohandatud ühendusega, et saaksid kasutada fine-tuned mudelit Prompt flow’s sees.
+Oled lisanud kohandatud ühenduse Microsoft Foundry’sse. Nüüd loo Prompt flow järgmiste sammude abil. Seejärel ühenda see Prompt flow kohandatud ühendusega, et saaksid kasutada fine-tuned mudelit Prompt flow’s sees.
 
-1. Liigu loodud Azure AI Foundry projekti juurde.
+1. Liigu loodud Microsoft Foundry projekti juurde.
 
 1. Vali vasakpoolsest paanist **Prompt flow**.
 
@@ -774,7 +774,7 @@ Pead integreerima fine-tuned Phi-3 mudeli Prompt flow’sse. Kuid olemasolev Pro
     ![Kleebi prompt flow kood.](../../../../../../translated_images/et/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Kui soovid üksikasjalikumat teavet Prompt flow kasutamise kohta Azure AI Foundry’s, võid vaadata [Prompt flow Azure AI Foundry's](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) juhendit.
+> Kui soovid üksikasjalikumat teavet Prompt flow kasutamise kohta Microsoft Foundry’s, võid vaadata [Prompt flow Microsoft Foundry's](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) juhendit.
 
 1. Vali **Vestluse sisend**, **Vestluse väljund**, et lubada suhtlemine mudeliga.
 

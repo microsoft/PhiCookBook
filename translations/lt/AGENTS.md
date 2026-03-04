@@ -7,7 +7,7 @@ PhiCookBook yra išsamus receptų saugyklos rinkinys, kuriame pateikiami praktin
 **Pagrindinės technologijos:**
 - **Kalbos:** Python, C#/.NET, JavaScript/Node.js
 - **Sistemos:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformos:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platformos:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Modelių tipai:** Phi-3, Phi-3.5, Phi-4 (teksto, vaizdo, daugiarūšiai, loginio mąstymo variantai)
 
 **Saugyklos struktūra:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Įvadiniai vadovai, aplinkos nustatymas, platformų vadovai
 - **02.Application/** - Programų pavyzdžiai, suskirstyti pagal tipą (Tekstas, Kodas, Vaizdas, Garsas ir kt.)
-- **02.QuickStart/** - Greito starto vadovai Azure AI Foundry ir GitHub Models
+- **02.QuickStart/** - Greito starto vadovai Microsoft Foundry ir GitHub Models
 - **03.FineTuning/** - Smulkiojo derinimo dokumentacija ir mokymai
 - **04.HOL/** - Praktiniai laboratoriniai darbai (įskaitant .NET pavyzdžius)
 
@@ -241,7 +241,7 @@ Pavyzdžiai:
 
 ### Pastabos apie platformas
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Reikalinga Azure prenumerata ir API raktai
 - Žr. `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ Pavyzdžiai:
 
 ### Pagalbos gavimas
 
-- **Discord:** Prisijunkite prie Azure AI Foundry bendruomenės Discord
+- **Discord:** Prisijunkite prie Microsoft Foundry bendruomenės Discord
 - **GitHub Issues:** Praneškite apie klaidas ir problemas saugykloje
 - **GitHub Discussions:** Užduokite klausimus ir dalinkitės žiniomis
 

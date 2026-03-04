@@ -2,7 +2,7 @@
 
 ![Microsoft சேவைகளுடன் நுணுக்கமாக அமைத்தல்](../../../../imgs/03/intro/FinetuningwithMS.png)
 
-**மேடை** இது Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, மற்றும் ONNX Runtime போன்ற பல தொழில்நுட்பங்களை உள்ளடக்கியது.
+**மேடை** இது Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito, மற்றும் ONNX Runtime போன்ற பல தொழில்நுட்பங்களை உள்ளடக்கியது.
 
 **அமைப்பு** இது CPU மற்றும் FPGA ஆகியவற்றை உள்ளடக்கியது, இவை நுணுக்கமாக அமைக்கும் செயல்முறைக்கு முக்கியமானவை. இந்த தொழில்நுட்பங்களின் ஐகான்களை உங்களுக்குக் காட்டுகிறேன்.
 

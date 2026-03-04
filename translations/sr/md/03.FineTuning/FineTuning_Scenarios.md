@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/sr/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**Платформа** Ово обухвата различите технологије као што су Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito и ONNX Runtime.
+**Платформа** Ово обухвата различите технологије као што су Microsoft Foundry, Azure Machine Learning, AI Tools, Kaito и ONNX Runtime.
 
 **Инфраструктура** Ово укључује CPU и FPGA, који су кључни за процес фино подешавања. Хајде да вам покажем иконе за сваку од ових технологија.
 

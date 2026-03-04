@@ -1,6 +1,6 @@
-# Fine-tuning Phi-3 dengan Azure AI Foundry
+# Fine-tuning Phi-3 dengan Microsoft Foundry
 
-Mari kita jelajahi cara melakukan fine-tuning pada model bahasa Phi-3 Mini dari Microsoft menggunakan Azure AI Foundry. Fine-tuning memungkinkan Anda menyesuaikan Phi-3 Mini untuk tugas-tugas tertentu, sehingga model menjadi lebih kuat dan lebih paham konteks.
+Mari kita jelajahi cara melakukan fine-tuning pada model bahasa Phi-3 Mini dari Microsoft menggunakan Microsoft Foundry. Fine-tuning memungkinkan Anda menyesuaikan Phi-3 Mini untuk tugas-tugas tertentu, sehingga model menjadi lebih kuat dan lebih paham konteks.
 
 ## Pertimbangan
 
@@ -22,7 +22,7 @@ Mari kita jelajahi cara melakukan fine-tuning pada model bahasa Phi-3 Mini dari 
 - Langganan Azure. Jika Anda belum memiliki langganan Azure, buat [akun Azure berbayar](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) untuk memulai.
 
 - Sebuah [proyek AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Kontrol akses berbasis peran Azure (Azure RBAC) digunakan untuk memberikan akses ke operasi di Azure AI Foundry. Untuk melakukan langkah-langkah dalam artikel ini, akun pengguna Anda harus diberikan __peran Azure AI Developer__ pada grup sumber daya.
+- Kontrol akses berbasis peran Azure (Azure RBAC) digunakan untuk memberikan akses ke operasi di Microsoft Foundry. Untuk melakukan langkah-langkah dalam artikel ini, akun pengguna Anda harus diberikan __peran Azure AI Developer__ pada grup sumber daya.
 
 ### Pendaftaran penyedia langganan
 
@@ -58,17 +58,17 @@ Data pelatihan dan validasi yang Anda gunakan **harus** diformat sebagai dokumen
 
 Tipe file yang didukung adalah JSON Lines. File diunggah ke datastore default dan tersedia dalam proyek Anda.
 
-## Fine-Tuning Phi-3 dengan Azure AI Foundry
+## Fine-Tuning Phi-3 dengan Microsoft Foundry
 
-Azure AI Foundry memungkinkan Anda menyesuaikan model bahasa besar dengan dataset pribadi melalui proses yang dikenal sebagai fine-tuning. Fine-tuning memberikan nilai signifikan dengan memungkinkan kustomisasi dan optimasi untuk tugas dan aplikasi tertentu. Ini menghasilkan peningkatan performa, efisiensi biaya, pengurangan latensi, dan keluaran yang disesuaikan.
+Microsoft Foundry memungkinkan Anda menyesuaikan model bahasa besar dengan dataset pribadi melalui proses yang dikenal sebagai fine-tuning. Fine-tuning memberikan nilai signifikan dengan memungkinkan kustomisasi dan optimasi untuk tugas dan aplikasi tertentu. Ini menghasilkan peningkatan performa, efisiensi biaya, pengurangan latensi, dan keluaran yang disesuaikan.
 
 ![Finetune AI Foundry](../../../../translated_images/id/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Membuat Proyek Baru
 
-1. Masuk ke [Azure AI Foundry](https://ai.azure.com).
+1. Masuk ke [Microsoft Foundry](https://ai.azure.com).
 
-1. Pilih **+New project** untuk membuat proyek baru di Azure AI Foundry.
+1. Pilih **+New project** untuk membuat proyek baru di Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/id/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry memungkinkan Anda menyesuaikan model bahasa besar dengan datase
 
 Sebelum fine-tuning, kumpulkan atau buat dataset yang relevan dengan tugas Anda, seperti instruksi chat, pasangan tanya-jawab, atau data teks lain yang sesuai. Bersihkan dan pra-proses data ini dengan menghilangkan noise, menangani nilai yang hilang, dan melakukan tokenisasi teks.
 
-### Fine-tune model Phi-3 di Azure AI Foundry
+### Fine-tune model Phi-3 di Microsoft Foundry
 
 > [!NOTE]
 > Fine-tuning model Phi-3 saat ini didukung hanya untuk proyek yang berada di East US 2.
@@ -121,7 +121,7 @@ Sebelum fine-tuning, kumpulkan atau buat dataset yang relevan dengan tugas Anda,
 1. Lakukan tugas berikut:
 
     - Pilih **jenis tugas** menjadi **Chat completion**.
-    - Pilih **Data pelatihan** yang ingin digunakan. Anda bisa mengunggahnya melalui data Azure AI Foundry atau dari lingkungan lokal Anda.
+    - Pilih **Data pelatihan** yang ingin digunakan. Anda bisa mengunggahnya melalui data Microsoft Foundry atau dari lingkungan lokal Anda.
 
     ![FineTuneSelect](../../../../translated_images/id/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Sebelum fine-tuning, kumpulkan atau buat dataset yang relevan dengan tugas Anda,
 
     ![FineTuneSelect](../../../../translated_images/id/select-submit.0a3802d581bac271.webp)
 
-1. Setelah model Anda selesai di-fine-tune, status akan ditampilkan sebagai **Completed**, seperti pada gambar di bawah. Sekarang Anda bisa menerapkan model dan menggunakannya dalam aplikasi Anda sendiri, di playground, atau di prompt flow. Untuk informasi lebih lanjut, lihat [Cara menerapkan keluarga model bahasa kecil Phi-3 dengan Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Setelah model Anda selesai di-fine-tune, status akan ditampilkan sebagai **Completed**, seperti pada gambar di bawah. Sekarang Anda bisa menerapkan model dan menggunakannya dalam aplikasi Anda sendiri, di playground, atau di prompt flow. Untuk informasi lebih lanjut, lihat [Cara menerapkan keluarga model bahasa kecil Phi-3 dengan Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/id/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Untuk informasi lebih rinci tentang fine-tuning Phi-3, kunjungi [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Untuk informasi lebih rinci tentang fine-tuning Phi-3, kunjungi [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Membersihkan model yang sudah di-fine-tune
 
-Anda dapat menghapus model yang sudah di-fine-tune dari daftar model fine-tuning di [Azure AI Foundry](https://ai.azure.com) atau dari halaman detail model. Pilih model fine-tuned yang ingin dihapus dari halaman Fine-tuning, lalu pilih tombol Delete untuk menghapus model tersebut.
+Anda dapat menghapus model yang sudah di-fine-tune dari daftar model fine-tuning di [Microsoft Foundry](https://ai.azure.com) atau dari halaman detail model. Pilih model fine-tuned yang ingin dihapus dari halaman Fine-tuning, lalu pilih tombol Delete untuk menghapus model tersebut.
 
 > [!NOTE]
 > Anda tidak bisa menghapus model kustom jika masih ada deployment yang aktif. Anda harus menghapus deployment model terlebih dahulu sebelum bisa menghapus model kustom.
@@ -163,7 +163,7 @@ Anda dapat menghapus model yang sudah di-fine-tune dari daftar model fine-tuning
 
 ### Pertimbangan biaya dan kuota untuk model Phi-3 yang di-fine-tune sebagai layanan
 
-Model Phi yang di-fine-tune sebagai layanan ditawarkan oleh Microsoft dan terintegrasi dengan Azure AI Foundry untuk digunakan. Anda dapat menemukan harga saat [menerapkan](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) atau melakukan fine-tuning model di tab Pricing and terms pada wizard deployment.
+Model Phi yang di-fine-tune sebagai layanan ditawarkan oleh Microsoft dan terintegrasi dengan Microsoft Foundry untuk digunakan. Anda dapat menemukan harga saat [menerapkan](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) atau melakukan fine-tuning model di tab Pricing and terms pada wizard deployment.
 
 ## Penyaringan konten
 
@@ -204,7 +204,7 @@ Simpan checkpoint model fine-tuned untuk digunakan di masa depan.
 
 ## Deployment
 
-- Deploy sebagai Layanan Web: Terapkan model fine-tuned Anda sebagai layanan web di Azure AI Foundry.
+- Deploy sebagai Layanan Web: Terapkan model fine-tuned Anda sebagai layanan web di Microsoft Foundry.
 - Uji Endpoint: Kirim kueri uji ke endpoint yang sudah diterapkan untuk memverifikasi fungsinya.
 
 ## Iterasi dan Perbaikan

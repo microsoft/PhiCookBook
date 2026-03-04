@@ -1,14 +1,14 @@
-# Hinnake Azure AI Foundry's peenhäälestatud Phi-3 / Phi-3.5 mudelit, keskendudes Microsofti vastutustundliku AI põhimõtetele
+# Hinnake Microsoft Foundry's peenhäälestatud Phi-3 / Phi-3.5 mudelit, keskendudes Microsofti vastutustundliku AI põhimõtetele
 
-See otsast lõpuni (E2E) näidis põhineb juhendil "[Hinnake peenhäälestatud Phi-3 / 3.5 mudeleid Azure AI Foundry's, keskendudes Microsofti vastutustundlikule AI-le](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" Microsoft Tech Community'st.
+See otsast lõpuni (E2E) näidis põhineb juhendil "[Hinnake peenhäälestatud Phi-3 / 3.5 mudeleid Microsoft Foundry's, keskendudes Microsofti vastutustundlikule AI-le](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" Microsoft Tech Community'st.
 
 ## Ülevaade
 
-### Kuidas hinnata peenhäälestatud Phi-3 / Phi-3.5 mudeli ohutust ja jõudlust Azure AI Foundry's?
+### Kuidas hinnata peenhäälestatud Phi-3 / Phi-3.5 mudeli ohutust ja jõudlust Microsoft Foundry's?
 
-Mudeli peenhäälestamine võib mõnikord viia soovimatute või ootamatute vastusteni. Selleks, et mudel jääks ohutuks ja tõhusaks, on oluline hinnata mudeli potentsiaali luua kahjulikku sisu ning tema võimet toota täpseid, asjakohaseid ja sidusaid vastuseid. Selles juhendis õpid, kuidas hinnata peenhäälestatud Phi-3 / Phi-3.5 mudeli ohutust ja jõudlust, mis on integreeritud Azure AI Foundry'sse koos Prompt flow'ga.
+Mudeli peenhäälestamine võib mõnikord viia soovimatute või ootamatute vastusteni. Selleks, et mudel jääks ohutuks ja tõhusaks, on oluline hinnata mudeli potentsiaali luua kahjulikku sisu ning tema võimet toota täpseid, asjakohaseid ja sidusaid vastuseid. Selles juhendis õpid, kuidas hinnata peenhäälestatud Phi-3 / Phi-3.5 mudeli ohutust ja jõudlust, mis on integreeritud Microsoft Foundry'sse koos Prompt flow'ga.
 
-Siin on Azure AI Foundry hindamisprotsess.
+Siin on Microsoft Foundry hindamisprotsess.
 
 ![Juhendi arhitektuur.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
 
@@ -27,24 +27,24 @@ Siin on Azure AI Foundry hindamisprotsess.
 
 ### Sisukord
 
-1. [**Stsenaarium 1: Azure AI Foundry Prompt flow hindamise tutvustus**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Stsenaarium 1: Microsoft Foundry Prompt flow hindamise tutvustus**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Ohutuse hindamise tutvustus](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Jõudluse hindamise tutvustus](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**Stsenaarium 2: Phi-3 / Phi-3.5 mudeli hindamine Azure AI Foundry's**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Stsenaarium 2: Phi-3 / Phi-3.5 mudeli hindamine Microsoft Foundry's**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [Enne alustamist](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Azure OpenAI juurutamine Phi-3 / Phi-3.5 mudeli hindamiseks](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamine Azure AI Foundry Prompt flow hindamise abil](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamine Microsoft Foundry Prompt flow hindamise abil](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Palju õnne!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **Stsenaarium 1: Azure AI Foundry Prompt flow hindamise tutvustus**
+## **Stsenaarium 1: Microsoft Foundry Prompt flow hindamise tutvustus**
 
 ### Ohutuse hindamise tutvustus
 
-Selleks, et teie AI mudel oleks eetiline ja ohutu, on oluline hinnata seda Microsofti vastutustundliku AI põhimõtete alusel. Azure AI Foundry's võimaldavad ohutuse hindamised hinnata mudeli haavatavust jailbreak-rünnakute suhtes ja tema potentsiaali luua kahjulikku sisu, mis on otseselt kooskõlas nende põhimõtetega.
+Selleks, et teie AI mudel oleks eetiline ja ohutu, on oluline hinnata seda Microsofti vastutustundliku AI põhimõtete alusel. Microsoft Foundry's võimaldavad ohutuse hindamised hinnata mudeli haavatavust jailbreak-rünnakute suhtes ja tema potentsiaali luua kahjulikku sisu, mis on otseselt kooskõlas nende põhimõtetega.
 
 ![Ohutuse hindamine.](../../../../../../imgs/02/Evaluation-AIFoundry/safety-evaluation.png)
 
@@ -75,7 +75,7 @@ Microsofti vastutustundliku AI põhimõtted hõlmavad:
 
 #### Ohutuse mõõdikud
 
-Selles juhendis hindate peenhäälestatud Phi-3 mudeli ohutust, kasutades Azure AI Foundry ohutuse mõõdikuid. Need mõõdikud aitavad teil hinnata mudeli potentsiaali luua kahjulikku sisu ja tema haavatavust jailbreak-rünnakute suhtes. Ohutuse mõõdikud hõlmavad:
+Selles juhendis hindate peenhäälestatud Phi-3 mudeli ohutust, kasutades Microsoft Foundry ohutuse mõõdikuid. Need mõõdikud aitavad teil hinnata mudeli potentsiaali luua kahjulikku sisu ja tema haavatavust jailbreak-rünnakute suhtes. Ohutuse mõõdikud hõlmavad:
 
 - **Enesevigastamisega seotud sisu**: Hinnatakse, kas mudelil on kalduvus toota enesevigastamisega seotud sisu.
 - **Vihkav ja ebaõiglane sisu**: Hinnatakse, kas mudelil on kalduvus toota vihkavat või ebaõiglast sisu.
@@ -88,7 +88,7 @@ Nende aspektide hindamine tagab, et AI mudel ei tooda kahjulikku või solvavat s
 
 ### Jõudluse hindamise tutvustus
 
-Selleks, et teie AI mudel töötaks ootuspäraselt, on oluline hinnata selle jõudlust jõudluse mõõdikute alusel. Azure AI Foundry's võimaldavad jõudluse hindamised hinnata mudeli tõhusust täpsete, asjakohaste ja sidusate vastuste genereerimisel.
+Selleks, et teie AI mudel töötaks ootuspäraselt, on oluline hinnata selle jõudlust jõudluse mõõdikute alusel. Microsoft Foundry's võimaldavad jõudluse hindamised hinnata mudeli tõhusust täpsete, asjakohaste ja sidusate vastuste genereerimisel.
 
 ![Ohutuse hindamine.](../../../../../../imgs/02/Evaluation-AIFoundry/performance-evaluation.png)
 
@@ -96,7 +96,7 @@ Selleks, et teie AI mudel töötaks ootuspäraselt, on oluline hinnata selle jõ
 
 #### Jõudluse mõõdikud
 
-Selles juhendis hindate peenhäälestatud Phi-3 / Phi-3.5 mudeli jõudlust, kasutades Azure AI Foundry jõudluse mõõdikuid. Need mõõdikud aitavad teil hinnata mudeli tõhusust täpsete, asjakohaste ja sidusate vastuste genereerimisel. Jõudluse mõõdikud hõlmavad:
+Selles juhendis hindate peenhäälestatud Phi-3 / Phi-3.5 mudeli jõudlust, kasutades Microsoft Foundry jõudluse mõõdikuid. Need mõõdikud aitavad teil hinnata mudeli tõhusust täpsete, asjakohaste ja sidusate vastuste genereerimisel. Jõudluse mõõdikud hõlmavad:
 
 - **Põhjendatus**: Hinnatakse, kui hästi genereeritud vastused vastavad sisendi allikast saadud teabele.
 - **Asjakohasus**: Hinnatakse genereeritud vastuste olulisust antud küsimuste suhtes.
@@ -109,36 +109,36 @@ Need mõõdikud aitavad teil hinnata mudeli tõhusust täpsete, asjakohaste ja s
 
 ![Hinda jõudluse alusel.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluate-based-on-performance.png)
 
-## **Stsenaarium 2: Phi-3 / Phi-3.5 mudeli hindamine Azure AI Foundry's**
+## **Stsenaarium 2: Phi-3 / Phi-3.5 mudeli hindamine Microsoft Foundry's**
 
 ### Enne alustamist
 
-See juhend on jätk varasematele blogipostitustele, "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga: samm-sammuline juhend](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ja "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga Azure AI Foundry's](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Nendes postitustes käisime läbi Phi-3 / Phi-3.5 mudeli peenhäälestamise protsessi Azure AI Foundry's ja selle integreerimise Prompt flow'ga.
+See juhend on jätk varasematele blogipostitustele, "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga: samm-sammuline juhend](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ja "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga Microsoft Foundry's](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Nendes postitustes käisime läbi Phi-3 / Phi-3.5 mudeli peenhäälestamise protsessi Microsoft Foundry's ja selle integreerimise Prompt flow'ga.
 
-Selles juhendis juurutate Azure OpenAI mudeli hindajana Azure AI Foundry's ja kasutate seda oma peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamiseks.
+Selles juhendis juurutate Azure OpenAI mudeli hindajana Microsoft Foundry's ja kasutate seda oma peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamiseks.
 
 Enne selle juhendi alustamist veenduge, et teil on järgmised eeltingimused, nagu kirjeldatud varasemates juhendites:
 
 1. Valmistatud andmestik peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamiseks.
 1. Phi-3 / Phi-3.5 mudel, mis on peenhäälestatud ja juurutatud Azure Machine Learning'usse.
-1. Prompt flow, mis on integreeritud teie peenhäälestatud Phi-3 / Phi-3.5 mudeliga Azure AI Foundry's.
+1. Prompt flow, mis on integreeritud teie peenhäälestatud Phi-3 / Phi-3.5 mudeliga Microsoft Foundry's.
 
 > [!NOTE]
 > Kasutate *test_data.jsonl* faili, mis asub andmekaustas **ULTRACHAT_200k** andmestikust, mis laaditi alla varasemates blogipostitustes, peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamiseks.
 
-#### Kohandatud Phi-3 / Phi-3.5 mudeli integreerimine Prompt flow'ga Azure AI Foundry's (koodipõhine lähenemine)
+#### Kohandatud Phi-3 / Phi-3.5 mudeli integreerimine Prompt flow'ga Microsoft Foundry's (koodipõhine lähenemine)
 
 > [!NOTE]
-> Kui järgite madala koodi lähenemist, nagu kirjeldatud "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga Azure AI Foundry's](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", võite selle harjutuse vahele jätta ja liikuda järgmise juurde.
+> Kui järgite madala koodi lähenemist, nagu kirjeldatud "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga Microsoft Foundry's](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", võite selle harjutuse vahele jätta ja liikuda järgmise juurde.
 > Kui aga järgite koodipõhist lähenemist, nagu kirjeldatud "[Peenhäälesta ja integreeri kohandatud Phi-3 mudelid Prompt flow'ga: samm-sammuline juhend](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)", et peenhäälestada ja juurutada oma Phi-3 / Phi-3.5 mudel, on protsess mudeli ühendamiseks Prompt flow'ga veidi erinev. Õpite seda protsessi selles harjutuses.
 
-Jätkamiseks peate integreerima oma peenhäälestatud Phi-3 / Phi-3.5 mudeli Prompt flow'ga Azure AI Foundry's.
+Jätkamiseks peate integreerima oma peenhäälestatud Phi-3 / Phi-3.5 mudeli Prompt flow'ga Microsoft Foundry's.
 
-#### Azure AI Foundry Hubi loomine
+#### Microsoft Foundry Hubi loomine
 
-Enne projekti loomist peate looma Hubi. Hub toimib nagu ressursigrupp, võimaldades teil korraldada ja hallata mitut projekti Azure AI Foundry's.
+Enne projekti loomist peate looma Hubi. Hub toimib nagu ressursigrupp, võimaldades teil korraldada ja hallata mitut projekti Microsoft Foundry's.
 
-1. Logige sisse [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Logige sisse [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Valige vasakpoolsest menüüst **Kõik hubid**.
 
@@ -158,7 +158,7 @@ Enne projekti loomist peate looma Hubi. Hub toimib nagu ressursigrupp, võimalda
 
 1. Valige **Järgmine**.
 
-#### Azure AI Foundry projekti loomine
+#### Microsoft Foundry projekti loomine
 
 1. Hubis, mille te lõite, valige vasakult külgribalt **Kõik projektid**.
 
@@ -198,9 +198,9 @@ Et integreerida oma kohandatud Phi-3 / Phi-3.5 mudel Prompt flow'ga, peate salve
 
 #### Kohandatud ühenduse lisamine
 
-1. Külastage [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Külastage [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigeerige loodud Azure AI Foundry projekti.
+1. Navigeerige loodud Microsoft Foundry projekti.
 
 1. Projektis, mille te lõite, valige vasakult külgribalt **Seaded**.
 
@@ -226,9 +226,9 @@ Et integreerida oma kohandatud Phi-3 / Phi-3.5 mudel Prompt flow'ga, peate salve
 
 #### Prompt flow loomine
 
-Olete lisanud kohandatud ühenduse Azure AI Foundry's. Nüüd loome Prompt flow järgmiste sammude abil. Seejärel ühendate selle Prompt flow kohandatud ühendusega, et kasutada peenhäälestatud mudelit Prompt flow's.
+Olete lisanud kohandatud ühenduse Microsoft Foundry's. Nüüd loome Prompt flow järgmiste sammude abil. Seejärel ühendate selle Prompt flow kohandatud ühendusega, et kasutada peenhäälestatud mudelit Prompt flow's.
 
-1. Navigeerige loodud Azure AI Foundry projekti.
+1. Navigeerige loodud Microsoft Foundry projekti.
 
 1. Valige vasakult külgribalt **Prompt flow**.
 
@@ -345,7 +345,7 @@ Peate integreerima peenhäälestatud Phi-3 / Phi-3.5 mudeli Prompt flow'sse. Kui
     ![Kleepige Prompt flow kood.](../../../../../../imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png)
 
 > [!NOTE]
-> Täpsema teabe saamiseks Prompt flow kasutamise kohta Azure AI Foundry's, vaadake [Prompt flow Azure AI Foundry's](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Täpsema teabe saamiseks Prompt flow kasutamise kohta Microsoft Foundry's, vaadake [Prompt flow Microsoft Foundry's](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Valige **Vestluse sisend**, **Vestluse väljund**, et võimaldada vestlust oma mudeliga.
 
@@ -386,13 +386,13 @@ Peate integreerima peenhäälestatud Phi-3 / Phi-3.5 mudeli Prompt flow'sse. Kui
 
 ### Azure OpenAI juurutamine Phi-3 / Phi-3.5 mudeli hindamiseks
 
-Phi-3 / Phi-3.5 mudeli hindamiseks Azure AI Foundry's peate juurutama Azure OpenAI mudeli. Seda mudelit kasutatakse Phi-3 / Phi-3.5 mudeli jõudluse hindamiseks.
+Phi-3 / Phi-3.5 mudeli hindamiseks Microsoft Foundry's peate juurutama Azure OpenAI mudeli. Seda mudelit kasutatakse Phi-3 / Phi-3.5 mudeli jõudluse hindamiseks.
 
 #### Azure OpenAI juurutamine
 
-1. Logige sisse [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Logige sisse [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigeerige loodud Azure AI Foundry projekti.
+1. Navigeerige loodud Microsoft Foundry projekti.
 
     ![Valige projekt.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
 
@@ -410,13 +410,13 @@ Phi-3 / Phi-3.5 mudeli hindamiseks Azure AI Foundry's peate juurutama Azure Open
 
 1. Valige **Kinnita**.
 
-### Peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamine Azure AI Foundry Prompt flow hindamise abil
+### Peenhäälestatud Phi-3 / Phi-3.5 mudeli hindamine Microsoft Foundry Prompt flow hindamise abil
 
 ### Uue hindamise alustamine
 
-1. Külastage [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Külastage [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigeerige loodud Azure AI Foundry projekti.
+1. Navigeerige loodud Microsoft Foundry projekti.
 
     ![Valige projekt.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
 
@@ -500,7 +500,7 @@ Kui hindamine on lõpule viidud, saate üle vaadata tulemused nii jõudluse kui 
 
 ### Olete selle juhendi lõpetanud
 
-Olete edukalt hinnanud peenhäälestatud Phi-3 mudelit, mis on integreeritud Prompt flow'ga Azure AI Foundry's. See on oluline samm, et tagada teie tehisintellekti mudelite mitte ainult hea jõudlus, vaid ka vastavus Microsofti vastutustundliku tehisintellekti põhimõtetele, aidates teil luua usaldusväärseid ja töökindlaid tehisintellekti rakendusi.
+Olete edukalt hinnanud peenhäälestatud Phi-3 mudelit, mis on integreeritud Prompt flow'ga Microsoft Foundry's. See on oluline samm, et tagada teie tehisintellekti mudelite mitte ainult hea jõudlus, vaid ka vastavus Microsofti vastutustundliku tehisintellekti põhimõtetele, aidates teil luua usaldusväärseid ja töökindlaid tehisintellekti rakendusi.
 
 ![Arhitektuur.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
 
@@ -510,8 +510,8 @@ Puhastage oma Azure'i ressursid, et vältida täiendavaid kulusid teie kontole. 
 
 - Azure Machine Learning ressurss.
 - Azure Machine Learning mudeli lõpp-punkt.
-- Azure AI Foundry projekti ressurss.
-- Azure AI Foundry Prompt flow ressurss.
+- Microsoft Foundry projekti ressurss.
+- Microsoft Foundry Prompt flow ressurss.
 
 ### Järgmised sammud
 
@@ -519,13 +519,13 @@ Puhastage oma Azure'i ressursid, et vältida täiendavaid kulusid teie kontole. 
 
 - [Tehisintellekti süsteemide hindamine vastutustundliku tehisintellekti armatuurlaua abil](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [Generatiivse tehisintellekti hindamise ja jälgimise mõõdikud](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry dokumentatsioon](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry dokumentatsioon](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow dokumentatsioon](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Koolitusmaterjalid
 
 - [Sissejuhatus Microsofti vastutustundliku tehisintellekti lähenemisviisi](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Sissejuhatus Azure AI Foundry'sse](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Sissejuhatus Microsoft Foundry'sse](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Viited
 

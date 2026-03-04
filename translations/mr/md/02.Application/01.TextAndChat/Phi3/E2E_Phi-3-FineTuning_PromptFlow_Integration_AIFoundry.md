@@ -1,16 +1,16 @@
-# Azure AI Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण
+# Microsoft Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण
 
-हा एंड-टू-एंड (E2E) नमुना Microsoft Tech Community मधील "[Azure AI Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" मार्गदर्शकावर आधारित आहे. यात Azure AI Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग, तैनाती, आणि एकत्रीकरण प्रक्रिया सादर केली आहे. ए2ई नमुन्याच्या विरुद्ध, "[Prompt Flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" ज्यामध्ये स्थानिक कोड चालवणे होते, हा ट्युटोरियल पूर्णपणे Azure AI / ML Studio मध्ये मॉडेल फाइन-ट्यूनिंग आणि एकत्रीकरणावर केंद्रित आहे.
+हा एंड-टू-एंड (E2E) नमुना Microsoft Tech Community मधील "[Microsoft Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" मार्गदर्शकावर आधारित आहे. यात Microsoft Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग, तैनाती, आणि एकत्रीकरण प्रक्रिया सादर केली आहे. ए2ई नमुन्याच्या विरुद्ध, "[Prompt Flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" ज्यामध्ये स्थानिक कोड चालवणे होते, हा ट्युटोरियल पूर्णपणे Azure AI / ML Studio मध्ये मॉडेल फाइन-ट्यूनिंग आणि एकत्रीकरणावर केंद्रित आहे.
 
 ## अवलोकन
 
-या E2E नमुन्यात, तुम्ही Phi-3 मॉडेलचे फाइन-ट्यून कसे करायचे आणि ते Azure AI Foundry मध्ये Prompt flow सह कसे एकत्र करायचे ते शिकाल. Azure AI / ML Studio चा उपयोग करून, तुम्ही सानुकूल AI मॉडेल्सच्या तैनातीसाठी आणि वापरासाठी एक कार्यप्रवाह स्थापन कराल. हा E2E नमुना तीन स्थित्यंतरांमध्ये विभागलेला आहे:
+या E2E नमुन्यात, तुम्ही Phi-3 मॉडेलचे फाइन-ट्यून कसे करायचे आणि ते Microsoft Foundry मध्ये Prompt flow सह कसे एकत्र करायचे ते शिकाल. Azure AI / ML Studio चा उपयोग करून, तुम्ही सानुकूल AI मॉडेल्सच्या तैनातीसाठी आणि वापरासाठी एक कार्यप्रवाह स्थापन कराल. हा E2E नमुना तीन स्थित्यंतरांमध्ये विभागलेला आहे:
 
 **स्थित्यंतर 1: Azure संसाधने सेट अप करा आणि फाइन-ट्यूनिंगसाठी तयारी करा**
 
 **स्थित्यंतर 2: Phi-3 मॉडेलचे फाइन-ट्यूनिंग करा आणि Azure Machine Learning Studio मध्ये तैनात करा**
 
-**स्थित्यंतर 3: Prompt flow सह एकत्र करा आणि Azure AI Foundry मध्ये तुमच्या सानुकूल मॉडेलशी गप्पा मारा**
+**स्थित्यंतर 3: Prompt flow सह एकत्र करा आणि Microsoft Foundry मध्ये तुमच्या सानुकूल मॉडेलशी गप्पा मारा**
 
 हे या E2E नमुन्याचे एक आढावा आहे.
 
@@ -29,7 +29,7 @@
     - [Phi-3 मॉडेलचे फाइन-ट्यूनिंग करा](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [फाइन-ट्यून केलेले Phi-3 मॉडेल तैनात करा](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[स्थित्यंतर 3: Prompt flow सह एकत्र करा आणि Azure AI Foundry मध्ये तुमच्या सानुकूल मॉडेलशी गप्पा मारा](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[स्थित्यंतर 3: Prompt flow सह एकत्र करा आणि Microsoft Foundry मध्ये तुमच्या सानुकूल मॉडेलशी गप्पा मारा](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [सानुकूल Phi-3 मॉडेल Prompt flow सह एकत्र करा](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [तुमच्या सानुकूल Phi-3 मॉडेलशी गप्पा मारा](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -543,7 +543,7 @@
 > ![ट्रॅफिक सेट करा.](../../../../../../translated_images/mr/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## प्रसंग 3: Prompt flow सोबत एकत्रित करा आणि Azure AI Foundry मध्ये आपल्या कस्टम मॉडेलशी गप्पा मारा
+## प्रसंग 3: Prompt flow सोबत एकत्रित करा आणि Microsoft Foundry मध्ये आपल्या कस्टम मॉडेलशी गप्पा मारा
 
 ### कस्टम Phi-3 मॉडेल Prompt flow सोबत एकत्रित करा
 
@@ -551,8 +551,8 @@
 
 या ऍक्सरसाइजमध्ये, आपण:
 
-- Azure AI Foundry Hub तयार कराल.
-- Azure AI Foundry प्रोजेक्ट तयार कराल.
+- Microsoft Foundry Hub तयार कराल.
+- Microsoft Foundry प्रोजेक्ट तयार कराल.
 - Prompt flow तयार कराल.
 - फाईन-ट्युन केलेल्या Phi-3 मॉडेलसाठी कस्टम कनेक्शन जोडल.
 - Prompt flow सेटअप करून आपल्या कस्टम Phi-3 मॉडेलशी गप्पा मुराल.
@@ -560,11 +560,11 @@
 > [!NOTE]
 > आपण Azure ML Studio वापरून देखील Promptflow सोबत एकत्रित करू शकता. एकाच एकत्रीकरण प्रक्रियेस Azure ML Studio साठी वापरले जाऊ शकते.
 
-#### Azure AI Foundry Hub तयार करा
+#### Microsoft Foundry Hub तयार करा
 
-प्रोजेक्ट तयार करण्यापूर्वी आपण Hub तयार करावा लागेल. Hub हा Resource Group प्रमाणे काम करते, ज्यामुळे आपण Azure AI Foundry मध्ये एकापेक्षा अधिक प्रोजेक्ट व्यवस्थापित करू शकता.
+प्रोजेक्ट तयार करण्यापूर्वी आपण Hub तयार करावा लागेल. Hub हा Resource Group प्रमाणे काम करते, ज्यामुळे आपण Microsoft Foundry मध्ये एकापेक्षा अधिक प्रोजेक्ट व्यवस्थापित करू शकता.
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) येथे जा.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) येथे जा.
 
 1. डाव्या बाजूच्या टॅबमधून **All hubs** निवडा.
 
@@ -584,7 +584,7 @@
 
 1. **Next** निवडा.
 
-#### Azure AI Foundry प्रोजेक्ट तयार करा
+#### Microsoft Foundry प्रोजेक्ट तयार करा
 
 1. आपण तयार केलेल्या हब मध्ये, डाव्या बाजूच्या टॅबमधून **All projects** निवडा.
 
@@ -624,9 +624,9 @@
 
 #### कस्टम कनेक्शन जोडा
 
-1. भेट द्या [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. भेट द्या [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. आपण तयार केलेल्या Azure AI Foundry प्रोजेक्टमध्ये जा.
+1. आपण तयार केलेल्या Microsoft Foundry प्रोजेक्टमध्ये जा.
 
 1. आपण तयार केलेल्या प्रोजेक्टमध्ये, डाव्या बाजूच्या टॅबमधून **Settings** निवडा.
 
@@ -652,9 +652,9 @@
 
 #### Prompt flow तयार करा
 
-आपण Azure AI Foundry मध्ये कस्टम कनेक्शन जोडले आहे. आता, खालील चरणांच्या साहाय्याने Prompt flow तयार करू या. नंतर, आपण हे Prompt flow कस्टम कनेक्शनशी जोडाल जेणेकरून आपण फाइन-ट्यून केलेले मॉडेल Prompt flow मध्ये वापरू शकाल.
+आपण Microsoft Foundry मध्ये कस्टम कनेक्शन जोडले आहे. आता, खालील चरणांच्या साहाय्याने Prompt flow तयार करू या. नंतर, आपण हे Prompt flow कस्टम कनेक्शनशी जोडाल जेणेकरून आपण फाइन-ट्यून केलेले मॉडेल Prompt flow मध्ये वापरू शकाल.
 
-1. आपण तयार केलेल्या Azure AI Foundry प्रोजेक्टमध्ये जा.
+1. आपण तयार केलेल्या Microsoft Foundry प्रोजेक्टमध्ये जा.
 
 1. डाव्या बाजूच्या टॅबमधून **Prompt flow** निवडा.
 
@@ -773,7 +773,7 @@
     ![Prompt flow कोड पेस्ट करा.](../../../../../../translated_images/mr/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Azure AI Foundry मध्ये Prompt flow वापरण्याबाबत अधिक तपशीलवार माहिती साठी, आपण [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) पाहू शकता.
+> Microsoft Foundry मध्ये Prompt flow वापरण्याबाबत अधिक तपशीलवार माहिती साठी, आपण [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) पाहू शकता.
 
 1. **Chat input**, **Chat output** निवडा जेणेकरून आपल्या मॉडेलशी चॅट करता येईल.
 

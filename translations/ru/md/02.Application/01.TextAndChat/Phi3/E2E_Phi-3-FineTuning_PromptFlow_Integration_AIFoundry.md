@@ -1,17 +1,17 @@
-# Тонкая настройка и интеграция пользовательских моделей Phi-3 с использованием Prompt flow в Azure AI Foundry
+# Тонкая настройка и интеграция пользовательских моделей Phi-3 с использованием Prompt flow в Microsoft Foundry
 
-Этот полный пример (E2E) основан на руководстве "[Тонкая настройка и интеграция пользовательских моделей Phi-3 с Prompt Flow в Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" из сообщества Microsoft Tech Community. В нем представлены процессы тонкой настройки, развертывания и интеграции пользовательских моделей Phi-3 с Prompt flow в Azure AI Foundry.
+Этот полный пример (E2E) основан на руководстве "[Тонкая настройка и интеграция пользовательских моделей Phi-3 с Prompt Flow в Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" из сообщества Microsoft Tech Community. В нем представлены процессы тонкой настройки, развертывания и интеграции пользовательских моделей Phi-3 с Prompt flow в Microsoft Foundry.
 В отличие от примера E2E, "[Тонкая настройка и интеграция пользовательских моделей Phi-3 с Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", который предполагал запуск кода локально, этот учебник полностью сосредоточен на тонкой настройке и интеграции вашей модели в Azure AI / ML Studio.
 
 ## Обзор
 
-В этом примере E2E вы научитесь тонко настраивать модель Phi-3 и интегрировать ее с Prompt flow в Azure AI Foundry. Используя Azure AI / ML Studio, вы создадите рабочий процесс для развертывания и использования пользовательских AI-моделей. Этот пример E2E разделен на три сценария:
+В этом примере E2E вы научитесь тонко настраивать модель Phi-3 и интегрировать ее с Prompt flow в Microsoft Foundry. Используя Azure AI / ML Studio, вы создадите рабочий процесс для развертывания и использования пользовательских AI-моделей. Этот пример E2E разделен на три сценария:
 
 **Сценарий 1: Настройка ресурсов Azure и подготовка к тонкой настройке**
 
 **Сценарий 2: Тонкая настройка модели Phi-3 и развертывание в Azure Machine Learning Studio**
 
-**Сценарий 3: Интеграция с Prompt flow и общение с вашей пользовательской моделью в Azure AI Foundry**
+**Сценарий 3: Интеграция с Prompt flow и общение с вашей пользовательской моделью в Microsoft Foundry**
 
 Вот обзор этого примера E2E.
 
@@ -30,7 +30,7 @@
     - [Тонкая настройка модели Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Развертывание тонко настроенной модели Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Сценарий 3: Интеграция с Prompt flow и общение с вашей пользовательской моделью в Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Сценарий 3: Интеграция с Prompt flow и общение с вашей пользовательской моделью в Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Интеграция пользовательской модели Phi-3 с Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Общение с вашей пользовательской моделью Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![Установите трафик.](../../../../../../translated_images/ru/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Сценарий 3: Интеграция с Prompt flow и чат с вашей пользовательской моделью в Azure AI Foundry
+## Сценарий 3: Интеграция с Prompt flow и чат с вашей пользовательской моделью в Microsoft Foundry
 
 ### Интеграция пользовательской модели Phi-3 с Prompt flow
 
@@ -552,8 +552,8 @@
 
 В этом упражнении вы:
 
-- Создадите Azure AI Foundry Hub.
-- Создадите проект Azure AI Foundry.
+- Создадите Microsoft Foundry Hub.
+- Создадите проект Microsoft Foundry.
 - Создадите Prompt flow.
 - Добавите пользовательское подключение для дообученной модели Phi-3.
 - Настроите Prompt flow для общения с вашей пользовательской моделью Phi-3.
@@ -561,11 +561,11 @@
 > [!NOTE]
 > Вы также можете интегрировать с Promptflow, используя Azure ML Studio. Процесс интеграции такой же и для Azure ML Studio.
 
-#### Создание Azure AI Foundry Hub
+#### Создание Microsoft Foundry Hub
 
-Перед созданием проекта нужно создать Hub. Hub действует как группа ресурсов, позволяя организовать и управлять несколькими проектами внутри Azure AI Foundry.
+Перед созданием проекта нужно создать Hub. Hub действует как группа ресурсов, позволяя организовать и управлять несколькими проектами внутри Microsoft Foundry.
 
-1. Перейдите на [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Перейдите на [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Выберите **Все хабы (All hubs)** в левой боковой панели.
 
@@ -585,7 +585,7 @@
 
 1. Выберите **Далее**.
 
-#### Создание проекта Azure AI Foundry
+#### Создание проекта Microsoft Foundry
 
 1. В созданном Hub выберите **Все проекты** в левой вкладке.
 
@@ -625,9 +625,9 @@
 
 #### Добавление пользовательского подключения
 
-1. Перейдите на [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Перейдите на [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Перейдите в проект Azure AI Foundry, который вы создали.
+1. Перейдите в проект Microsoft Foundry, который вы создали.
 
 1. В созданном проекте выберите **Настройки** в левой вкладке.
 
@@ -653,9 +653,9 @@
 
 #### Создание Prompt flow
 
-Вы добавили пользовательское подключение в Azure AI Foundry. Теперь создадим Prompt flow, выполнив следующие шаги. Затем вы подключите этот Prompt flow к пользовательскому подключению, чтобы использовать дообученную модель в Prompt flow.
+Вы добавили пользовательское подключение в Microsoft Foundry. Теперь создадим Prompt flow, выполнив следующие шаги. Затем вы подключите этот Prompt flow к пользовательскому подключению, чтобы использовать дообученную модель в Prompt flow.
 
-1. Перейдите в проект Azure AI Foundry, который вы создали.
+1. Перейдите в проект Microsoft Foundry, который вы создали.
 
 1. Выберите **Prompt flow** в левой вкладке.
 
@@ -774,7 +774,7 @@
     ![Вставьте код prompt flow.](../../../../../../translated_images/ru/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Для более подробной информации по использованию Prompt flow в Azure AI Foundry вы можете обратиться к [Prompt flow в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Для более подробной информации по использованию Prompt flow в Microsoft Foundry вы можете обратиться к [Prompt flow в Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Выберите **Ввод чата**, **Вывод чата**, чтобы включить чат с вашей моделью.
 

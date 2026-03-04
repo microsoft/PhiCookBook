@@ -1,17 +1,17 @@
-# Tinh chỉnh và Tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow trong Azure AI Foundry
+# Tinh chỉnh và Tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow trong Microsoft Foundry
 
-Ví dụ đầu cuối (E2E) này dựa trên hướng dẫn "[Tinh chỉnh và Tích hợp các Mô hình Phi-3 Tùy chỉnh với Prompt Flow trong Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" từ Cộng đồng Kỹ thuật Microsoft. Nó giới thiệu các quy trình tinh chỉnh, triển khai, và tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow trong Azure AI Foundry.
+Ví dụ đầu cuối (E2E) này dựa trên hướng dẫn "[Tinh chỉnh và Tích hợp các Mô hình Phi-3 Tùy chỉnh với Prompt Flow trong Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" từ Cộng đồng Kỹ thuật Microsoft. Nó giới thiệu các quy trình tinh chỉnh, triển khai, và tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow trong Microsoft Foundry.
 Khác với ví dụ E2E, "[Tinh chỉnh và Tích hợp các Mô hình Phi-3 Tùy chỉnh với Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", chạy code cục bộ, hướng dẫn này tập trung hoàn toàn vào việc tinh chỉnh và tích hợp mô hình của bạn trong Azure AI / ML Studio.
 
 ## Tổng quan
 
-Trong ví dụ E2E này, bạn sẽ học cách tinh chỉnh mô hình Phi-3 và tích hợp nó với Prompt flow trong Azure AI Foundry. Bằng cách tận dụng Azure AI / ML Studio, bạn sẽ thiết lập một quy trình làm việc để triển khai và sử dụng các mô hình AI tùy chỉnh. Ví dụ E2E này được chia thành ba kịch bản:
+Trong ví dụ E2E này, bạn sẽ học cách tinh chỉnh mô hình Phi-3 và tích hợp nó với Prompt flow trong Microsoft Foundry. Bằng cách tận dụng Azure AI / ML Studio, bạn sẽ thiết lập một quy trình làm việc để triển khai và sử dụng các mô hình AI tùy chỉnh. Ví dụ E2E này được chia thành ba kịch bản:
 
 **Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho tinh chỉnh**
 
 **Kịch bản 2: Tinh chỉnh mô hình Phi-3 và Triển khai trong Azure Machine Learning Studio**
 
-**Kịch bản 3: Tích hợp với Prompt flow và Trò chuyện với mô hình tùy chỉnh của bạn trong Azure AI Foundry**
+**Kịch bản 3: Tích hợp với Prompt flow và Trò chuyện với mô hình tùy chỉnh của bạn trong Microsoft Foundry**
 
 Dưới đây là tổng quan về ví dụ E2E này.
 
@@ -30,7 +30,7 @@ Dưới đây là tổng quan về ví dụ E2E này.
     - [Tinh chỉnh mô hình Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Triển khai mô hình Phi-3 đã tinh chỉnh](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Kịch bản 3: Tích hợp với Prompt flow và Trò chuyện với mô hình tùy chỉnh trong Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Kịch bản 3: Tích hợp với Prompt flow và Trò chuyện với mô hình tùy chỉnh trong Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Tích hợp mô hình Phi-3 tùy chỉnh với Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Trò chuyện với mô hình Phi-3 tùy chỉnh của bạn](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ Trong bài tập này, bạn sẽ:
 > ![Điều chỉnh lưu lượng.](../../../../../../translated_images/vi/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Kịch bản 3: Tích hợp với Prompt flow và Hội thoại với mô hình tùy chỉnh của bạn trong Azure AI Foundry
+## Kịch bản 3: Tích hợp với Prompt flow và Hội thoại với mô hình tùy chỉnh của bạn trong Microsoft Foundry
 
 ### Tích hợp mô hình Phi-3 tùy chỉnh với Prompt flow
 
@@ -552,8 +552,8 @@ Sau khi đã triển khai thành công mô hình đã fine-tune, bạn có thể
 
 Trong bài tập này, bạn sẽ:
 
-- Tạo Azure AI Foundry Hub.
-- Tạo Azure AI Foundry Project.
+- Tạo Microsoft Foundry Hub.
+- Tạo Microsoft Foundry Project.
 - Tạo Prompt flow.
 - Thêm kết nối tùy chỉnh cho mô hình Phi-3 đã fine-tune.
 - Cấu hình Prompt flow để hội thoại với mô hình Phi-3 tùy chỉnh của bạn.
@@ -561,11 +561,11 @@ Trong bài tập này, bạn sẽ:
 > [!NOTE]
 > Bạn cũng có thể tích hợp với Promptflow sử dụng Azure ML Studio. Quy trình tích hợp tương tự có thể áp dụng cho Azure ML Studio.
 
-#### Tạo Azure AI Foundry Hub
+#### Tạo Microsoft Foundry Hub
 
-Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giống như một Resource Group, cho phép bạn tổ chức và quản lý nhiều Project trong Azure AI Foundry.
+Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giống như một Resource Group, cho phép bạn tổ chức và quản lý nhiều Project trong Microsoft Foundry.
 
-1. Truy cập [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Truy cập [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Chọn **All hubs** từ tab bên trái.
 
@@ -585,7 +585,7 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 
 1. Chọn **Tiếp theo**.
 
-#### Tạo dự án Azure AI Foundry
+#### Tạo dự án Microsoft Foundry
 
 1. Trong Hub mà bạn đã tạo, chọn **Tất cả dự án** từ tab bên trái.
 
@@ -625,9 +625,9 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 
 #### Thêm kết nối tùy chỉnh
 
-1. Truy cập [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Truy cập [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Điều hướng đến dự án Azure AI Foundry mà bạn đã tạo.
+1. Điều hướng đến dự án Microsoft Foundry mà bạn đã tạo.
 
 1. Trong Dự án mà bạn đã tạo, chọn **Cài đặt** từ tab bên trái.
 
@@ -653,9 +653,9 @@ Bạn cần tạo một Hub trước khi tạo Project. Hub hoạt động giố
 
 #### Tạo Prompt flow
 
-Bạn đã thêm một kết nối tùy chỉnh trong Azure AI Foundry. Bây giờ, hãy tạo một Prompt flow theo các bước sau. Sau đó, bạn sẽ kết nối Prompt flow này với kết nối tùy chỉnh để có thể sử dụng mô hình được tinh chỉnh trong Prompt flow.
+Bạn đã thêm một kết nối tùy chỉnh trong Microsoft Foundry. Bây giờ, hãy tạo một Prompt flow theo các bước sau. Sau đó, bạn sẽ kết nối Prompt flow này với kết nối tùy chỉnh để có thể sử dụng mô hình được tinh chỉnh trong Prompt flow.
 
-1. Điều hướng đến dự án Azure AI Foundry mà bạn đã tạo.
+1. Điều hướng đến dự án Microsoft Foundry mà bạn đã tạo.
 
 1. Chọn **Prompt flow** từ tab bên trái.
 
@@ -774,7 +774,7 @@ Bạn cần tích hợp mô hình Phi-3 được tinh chỉnh vào một Prompt 
     ![Paste prompt flow code.](../../../../../../translated_images/vi/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Để biết thêm thông tin chi tiết về cách sử dụng Prompt flow trong Azure AI Foundry, bạn có thể tham khảo [Prompt flow trong Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Để biết thêm thông tin chi tiết về cách sử dụng Prompt flow trong Microsoft Foundry, bạn có thể tham khảo [Prompt flow trong Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Chọn **Đầu vào chat**, **Đầu ra chat** để kích hoạt trò chuyện với mô hình của bạn.
 

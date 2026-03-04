@@ -7,7 +7,7 @@ PhiCookBook je komplexní úložiště kuchařek obsahující praktické příkl
 **Klíčové technologie:**
 - **Jazyky:** Python, C#/.NET, JavaScript/Node.js
 - **Rámce:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformy:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platformy:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Typy modelů:** Phi-3, Phi-3.5, Phi-4 (textové, vizuální, multimodální, varianty pro uvažování)
 
 **Struktura úložiště:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Úvodní průvodce, nastavení prostředí, průvodce platformami
 - **02.Application/** - Ukázky aplikací organizované podle typu (Text, Kód, Vize, Audio, atd.)
-- **02.QuickStart/** - Rychlé startovací průvodce pro Azure AI Foundry a GitHub Models
+- **02.QuickStart/** - Rychlé startovací průvodce pro Microsoft Foundry a GitHub Models
 - **03.FineTuning/** - Dokumentace a tutoriály k jemnému ladění
 - **04.HOL/** - Praktické laboratoře (včetně příkladů v .NET)
 
@@ -241,7 +241,7 @@ Příklady:
 
 ### Poznámky k platformám
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Vyžaduje předplatné Azure a API klíče
 - Viz `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ Příklady:
 
 ### Získání pomoci
 
-- **Discord:** Připojte se k Azure AI Foundry Community Discord
+- **Discord:** Připojte se k Microsoft Foundry Community Discord
 - **GitHub Issues:** Nahlaste chyby a problémy v úložišti
 - **GitHub Discussions:** Pokládejte otázky a sdílejte znalosti
 

@@ -12,7 +12,7 @@
 [![Forks στο GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![Αστέρια στο GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Το Phi είναι μια σειρά ανοιχτού κώδικα μοντέλων τεχνητής νοημοσύνης που αναπτύχθηκαν από τη Microsoft.
 
@@ -71,7 +71,7 @@
 - Εξαγωγή συμπερασμάτων Phi σε διαφορετικά περιβάλλοντα
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [Μοντέλα GitHub](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Κατάλογος Μοντέλων Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Κατάλογος Μοντέλων Microsoft Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [Εργαλειοθήκη AI VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@
 
 -  Αξιολόγηση Phi
     - [Υπεύθυνη AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry για Αξιολόγηση](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry για Αξιολόγηση](./md/01.Introduction/05/AIFoundry.md)
     - [Χρήση Promptflow για Αξιολόγηση](./md/01.Introduction/05/Promptflow.md)
  
 - RAG με Azure AI Search
@@ -117,8 +117,8 @@
       - [Εφαρμογή WinUI3 με Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[Παράδειγμα Εφαρμογής Σημειώσεων με Τεχνητή Νοημοσύνη πολλαπλών μοντέλων WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Ρύθμιση και Ενσωμάτωση προσαρμοσμένων μοντέλων Phi-3 με Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Ρύθμιση και Ενσωμάτωση προσαρμοσμένων μοντέλων Phi-3 με Prompt flow στο Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Αξιολόγηση του ρυθμισμένου μοντέλου Phi-3 / Phi-3.5 στο Azure AI Foundry εστιάζοντας στις Αρχές Υπεύθυνης Τεχνητής Νοημοσύνης της Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Ρύθμιση και Ενσωμάτωση προσαρμοσμένων μοντέλων Phi-3 με Prompt flow στο Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Αξιολόγηση του ρυθμισμένου μοντέλου Phi-3 / Phi-3.5 στο Microsoft Foundry εστιάζοντας στις Αρχές Υπεύθυνης Τεχνητής Νοημοσύνης της Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Παράδειγμα πρόβλεψης γλώσσας Phi-3.5-mini-instruct (Κινέζικα/Αγγλικά)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Συνομιλητής](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Χρήση GPU των Windows για δημιουργία λύσης Prompt flow με Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@
       - [📓] [Ρύθμιση Phi-4-mini-λογικής με Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Ρύθμιση Phi-4-mini-λογικής με Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-λογική με μοντέλα GitHub](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-λογική με μοντέλα Azure AI Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-λογική με μοντέλα Microsoft Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Επιδείξεις  
       - [Παρουσιάσεις Phi-4-mini φιλοξενούμενες στο Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Παρουσιάσεις Phi-4-multimodal φιλοξενούμενες στο Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@
   - [Ρύθμιση Φίνα-Τιμινγκ Phi-3 με την Υπηρεσία Μηχανικής Μάθησης Azure](./md/03.FineTuning/Introduce_AzureML.md)
   - [Ρύθμιση Φίνα-Τιμινγκ Phi-3 με Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Ρύθμιση Φίνα-Τιμινγκ Phi-3 με QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Ρύθμιση Φίνα-Τιμινγκ Phi-3 με Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Ρύθμιση Φίνα-Τιμινγκ Phi-3 με Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Ρύθμιση Φίνα-Τιμινγκ Phi-3 με Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Ρύθμιση Φίνα-Τιμινγκ με Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Ρύθμιση Φίνα-Τιμινγκ με Hands-On Lab Microsoft Olive](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@
 
 ## Χρήση των Μοντέλων Phi
 
-### Phi στο Azure AI Foundry
+### Phi στο Microsoft Foundry
 
-Μπορείτε να μάθετε πώς να χρησιμοποιείτε το Microsoft Phi και πώς να δημιουργήσετε ολοκληρωμένες λύσεις (E2E) στις διαφορετικές συσκευές υλικού σας. Για να ζήσετε την εμπειρία με το Phi, ξεκινήστε παίζοντας με τα μοντέλα και προσαρμόζοντας το Phi στις δικές σας περιπτώσεις χρήσης μέσω του [Καταλόγου Μοντέλων Azure AI Foundry](https://aka.ms/phi3-azure-ai). Περισσότερα μπορείτε να μάθετε στο Εισαγωγή στο [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Μπορείτε να μάθετε πώς να χρησιμοποιείτε το Microsoft Phi και πώς να δημιουργήσετε ολοκληρωμένες λύσεις (E2E) στις διαφορετικές συσκευές υλικού σας. Για να ζήσετε την εμπειρία με το Phi, ξεκινήστε παίζοντας με τα μοντέλα και προσαρμόζοντας το Phi στις δικές σας περιπτώσεις χρήσης μέσω του [Καταλόγου Μοντέλων Microsoft Foundry](https://aka.ms/phi3-azure-ai). Περισσότερα μπορείτε να μάθετε στο Εισαγωγή στο [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Παιδότοπος**
 Κάθε μοντέλο έχει έναν αφιερωμένο παιδότοπο για να δοκιμάσετε το μοντέλο [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@
 
 Μεγάλα μοντέλα φυσικής γλώσσας, εικόνας και ομιλίας - όπως αυτά που χρησιμοποιούνται σε αυτό το δείγμα - ενδέχεται να συμπεριφέρονται με τρόπους που είναι άδικοι, αναξιόπιστοι ή προσβλητικοί, προκαλώντας βλάβες. Παρακαλούμε ανατρέξτε στη [Σημείωση Διαφάνειας της υπηρεσίας Azure OpenAI](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) για να ενημερωθείτε σχετικά με τους κινδύνους και τους περιορισμούς.
 
-Η προτεινόμενη προσέγγιση για τον περιορισμό αυτών των κινδύνων είναι να συμπεριληφθεί ένα σύστημα ασφαλείας στην αρχιτεκτονική σας που μπορεί να ανιχνεύει και να αποτρέπει επιβλαβείς συμπεριφορές. Το [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) παρέχει ένα ανεξάρτητο επίπεδο προστασίας, ικανό να ανιχνεύει επιβλαβές περιεχόμενο που δημιουργείται από χρήστες και τεχνητή νοημοσύνη σε εφαρμογές και υπηρεσίες. Το Azure AI Content Safety περιλαμβάνει API για κείμενο και εικόνα που σας επιτρέπουν να ανιχνεύετε υλικό με βλαβερό περιεχόμενο. Μέσα στο Azure AI Foundry, η υπηρεσία Content Safety σας επιτρέπει να δείτε, να εξερευνήσετε και να δοκιμάσετε δείγματα κώδικα για ανίχνευση βλαβερού περιεχομένου σε διαφορετικές μορφές. Η ακόλουθη [τεκμηρίωση εκκίνησης](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) σας καθοδηγεί στο πώς να κάνετε αιτήματα προς την υπηρεσία.
+Η προτεινόμενη προσέγγιση για τον περιορισμό αυτών των κινδύνων είναι να συμπεριληφθεί ένα σύστημα ασφαλείας στην αρχιτεκτονική σας που μπορεί να ανιχνεύει και να αποτρέπει επιβλαβείς συμπεριφορές. Το [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) παρέχει ένα ανεξάρτητο επίπεδο προστασίας, ικανό να ανιχνεύει επιβλαβές περιεχόμενο που δημιουργείται από χρήστες και τεχνητή νοημοσύνη σε εφαρμογές και υπηρεσίες. Το Azure AI Content Safety περιλαμβάνει API για κείμενο και εικόνα που σας επιτρέπουν να ανιχνεύετε υλικό με βλαβερό περιεχόμενο. Μέσα στο Microsoft Foundry, η υπηρεσία Content Safety σας επιτρέπει να δείτε, να εξερευνήσετε και να δοκιμάσετε δείγματα κώδικα για ανίχνευση βλαβερού περιεχομένου σε διαφορετικές μορφές. Η ακόλουθη [τεκμηρίωση εκκίνησης](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) σας καθοδηγεί στο πώς να κάνετε αιτήματα προς την υπηρεσία.
 Ένας ακόμη παράγοντας που πρέπει να ληφθεί υπόψη είναι η συνολική απόδοση της εφαρμογής. Με εφαρμογές πολυτροπικών και πολυμοντέλων, θεωρούμε απόδοση ότι το σύστημα λειτουργεί όπως αναμένετε εσείς και οι χρήστες σας, συμπεριλαμβανομένου του ότι δεν παράγει επιβλαβή αποτελέσματα. Είναι σημαντικό να αξιολογήσετε την απόδοση της συνολικής σας εφαρμογής χρησιμοποιώντας τους [αξιολογητές Απόδοσης, Ποιότητας, Κινδύνου και Ασφάλειας](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Έχετε επίσης τη δυνατότητα να δημιουργήσετε και να αξιολογήσετε με [προσαρμοσμένους αξιολογητές](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Μπορείτε να αξιολογήσετε την εφαρμογή τεχνητής νοημοσύνης στο περιβάλλον ανάπτυξής σας χρησιμοποιώντας το [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Δίνοντας είτε ένα σύνολο δοκιμαστικών δεδομένων είτε έναν στόχο, οι παραγωγές της γενετικής AI εφαρμογής σας μετρώνται ποσοτικά με ενσωματωμένους αξιολογητές ή προσαρμοσμένους αξιολογητές της επιλογής σας. Για να ξεκινήσετε με το azure ai evaluation sdk για να αξιολογήσετε το σύστημά σας, μπορείτε να ακολουθήσετε τον [οδηγό γρήγορης εκκίνησης](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Αφού εκτελέσετε μια αξιολόγηση, μπορείτε να [οπτικοποιήσετε τα αποτελέσματα στο Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Μπορείτε να αξιολογήσετε την εφαρμογή τεχνητής νοημοσύνης στο περιβάλλον ανάπτυξής σας χρησιμοποιώντας το [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Δίνοντας είτε ένα σύνολο δοκιμαστικών δεδομένων είτε έναν στόχο, οι παραγωγές της γενετικής AI εφαρμογής σας μετρώνται ποσοτικά με ενσωματωμένους αξιολογητές ή προσαρμοσμένους αξιολογητές της επιλογής σας. Για να ξεκινήσετε με το azure ai evaluation sdk για να αξιολογήσετε το σύστημά σας, μπορείτε να ακολουθήσετε τον [οδηγό γρήγορης εκκίνησης](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Αφού εκτελέσετε μια αξιολόγηση, μπορείτε να [οπτικοποιήσετε τα αποτελέσματα στο Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Εμπορικά Σήματα
 
@@ -303,11 +303,11 @@
 
 Εάν αντιμετωπίσετε προβλήματα ή έχετε οποιεσδήποτε ερωτήσεις σχετικά με την κατασκευή εφαρμογών AI, συμμετάσχετε:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Εάν έχετε σχόλια προϊόντος ή σφάλματα κατά την κατασκευή, επισκεφτείτε:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

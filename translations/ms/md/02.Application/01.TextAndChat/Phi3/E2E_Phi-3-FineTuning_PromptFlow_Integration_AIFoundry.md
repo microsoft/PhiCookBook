@@ -1,16 +1,16 @@
-# Laras Halus dan Integrasi model Phi-3 tersuai dengan Aliran Prompt dalam Azure AI Foundry
+# Laras Halus dan Integrasi model Phi-3 tersuai dengan Aliran Prompt dalam Microsoft Foundry
 
-Contoh hujung-ke-hujung (E2E) ini berdasarkan panduan "[Laraskan Halus dan Integrasi Model Phi-3 Tersuai dengan Aliran Prompt dalam Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" dari Komuniti Teknologi Microsoft. Ia memperkenalkan proses melaras halus, menyebarkan, dan mengintegrasikan model Phi-3 tersuai dengan aliran Prompt dalam Azure AI Foundry. Berbeza dengan contoh E2E, "[Laraskan Halus dan Integrasi Model Phi-3 Tersuai dengan Aliran Prompt](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", yang melibatkan menjalankan kod secara tempatan, tutorial ini memfokuskan sepenuhnya pada melaras halus dan mengintegrasikan model anda dalam Azure AI / ML Studio.
+Contoh hujung-ke-hujung (E2E) ini berdasarkan panduan "[Laraskan Halus dan Integrasi Model Phi-3 Tersuai dengan Aliran Prompt dalam Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" dari Komuniti Teknologi Microsoft. Ia memperkenalkan proses melaras halus, menyebarkan, dan mengintegrasikan model Phi-3 tersuai dengan aliran Prompt dalam Microsoft Foundry. Berbeza dengan contoh E2E, "[Laraskan Halus dan Integrasi Model Phi-3 Tersuai dengan Aliran Prompt](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", yang melibatkan menjalankan kod secara tempatan, tutorial ini memfokuskan sepenuhnya pada melaras halus dan mengintegrasikan model anda dalam Azure AI / ML Studio.
 
 ## Gambaran Keseluruhan
 
-Dalam contoh E2E ini, anda akan belajar cara melaras halus model Phi-3 dan mengintegrasikannya dengan aliran Prompt dalam Azure AI Foundry. Dengan memanfaatkan Azure AI / ML Studio, anda akan membina aliran kerja untuk menyebarkan dan menggunakan model AI tersuai. Contoh E2E ini dibahagikan kepada tiga senario:
+Dalam contoh E2E ini, anda akan belajar cara melaras halus model Phi-3 dan mengintegrasikannya dengan aliran Prompt dalam Microsoft Foundry. Dengan memanfaatkan Azure AI / ML Studio, anda akan membina aliran kerja untuk menyebarkan dan menggunakan model AI tersuai. Contoh E2E ini dibahagikan kepada tiga senario:
 
 **Senario 1: Sediakan sumber Azure dan Sediakan untuk melaras halus**
 
 **Senario 2: Laras halus model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio**
 
-**Senario 3: Integrasi dengan aliran Prompt dan Berbual dengan model tersuai anda dalam Azure AI Foundry**
+**Senario 3: Integrasi dengan aliran Prompt dan Berbual dengan model tersuai anda dalam Microsoft Foundry**
 
 Berikut adalah gambaran keseluruhan contoh E2E ini.
 
@@ -29,7 +29,7 @@ Berikut adalah gambaran keseluruhan contoh E2E ini.
     - [Laras halus model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Sebarkan model Phi-3 yang telah dilaras halus](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Senario 3: Integrasi dengan aliran Prompt dan Berbual dengan model tersuai anda dalam Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Senario 3: Integrasi dengan aliran Prompt dan Berbual dengan model tersuai anda dalam Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrasi model Phi-3 tersuai dengan aliran Prompt](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Berbual dengan model Phi-3 tersuai anda](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -543,7 +543,7 @@ Dalam latihan ini, anda akan:
 > ![Tetapkan trafik.](../../../../../../translated_images/ms/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Senario 3: Integrasi dengan Prompt flow dan Berbual dengan model khusus anda dalam Azure AI Foundry
+## Senario 3: Integrasi dengan Prompt flow dan Berbual dengan model khusus anda dalam Microsoft Foundry
 
 ### Integrasi model Phi-3 khusus dengan Prompt flow
 
@@ -551,8 +551,8 @@ Setelah berjaya menghantar model yang telah di-fine-tune, anda kini boleh mengin
 
 Dalam latihan ini, anda akan:
 
-- Buat Azure AI Foundry Hub.
-- Buat Projek Azure AI Foundry.
+- Buat Microsoft Foundry Hub.
+- Buat Projek Microsoft Foundry.
 - Buat Prompt flow.
 - Tambah sambungan khusus untuk model Phi-3 yang telah di-fine-tune.
 - Sediakan Prompt flow untuk berbual dengan model Phi-3 khusus anda.
@@ -560,11 +560,11 @@ Dalam latihan ini, anda akan:
 > [!NOTE]
 > Anda juga boleh integrasi dengan Promptflow menggunakan Azure ML Studio. Proses integrasi yang sama boleh digunakan pada Azure ML Studio.
 
-#### Buat Azure AI Foundry Hub
+#### Buat Microsoft Foundry Hub
 
-Anda perlu membuat Hub sebelum membuat Projek. Hub bertindak seperti Kumpulan Sumber, membolehkan anda mengatur dan mengurus pelbagai Projek dalam Azure AI Foundry.
+Anda perlu membuat Hub sebelum membuat Projek. Hub bertindak seperti Kumpulan Sumber, membolehkan anda mengatur dan mengurus pelbagai Projek dalam Microsoft Foundry.
 
-1. Lawati [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Lawati [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Pilih **All hubs** dari tab sebelah kiri.
 
@@ -584,7 +584,7 @@ Anda perlu membuat Hub sebelum membuat Projek. Hub bertindak seperti Kumpulan Su
 
 1. Pilih **Seterusnya**.
 
-#### Buat Projek Azure AI Foundry
+#### Buat Projek Microsoft Foundry
 
 1. Dalam Hub yang anda buat, pilih **Semua projek** dari tab sebelah kiri.
 
@@ -624,9 +624,9 @@ Untuk menggabungkan model Phi-3 tersuai anda dengan aliran Prompt, anda perlu me
 
 #### Tambah Sambungan Khusus
 
-1. Lawati [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Lawati [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Navigasi ke projek Azure AI Foundry yang anda buat.
+1. Navigasi ke projek Microsoft Foundry yang anda buat.
 
 1. Dalam Projek yang anda buat, pilih **Tetapan** dari tab sebelah kiri.
 
@@ -652,9 +652,9 @@ Untuk menggabungkan model Phi-3 tersuai anda dengan aliran Prompt, anda perlu me
 
 #### Buat aliran Prompt
 
-Anda telah menambah sambungan khusus dalam Azure AI Foundry. Sekarang, mari buat aliran Prompt menggunakan langkah-langkah berikut. Kemudian, anda akan sambungkan aliran Prompt ini ke sambungan khusus supaya anda boleh menggunakan model yang dilatih halus dalam aliran Prompt.
+Anda telah menambah sambungan khusus dalam Microsoft Foundry. Sekarang, mari buat aliran Prompt menggunakan langkah-langkah berikut. Kemudian, anda akan sambungkan aliran Prompt ini ke sambungan khusus supaya anda boleh menggunakan model yang dilatih halus dalam aliran Prompt.
 
-1. Navigasi ke projek Azure AI Foundry yang anda buat.
+1. Navigasi ke projek Microsoft Foundry yang anda buat.
 
 1. Pilih **Aliran Prompt** dari tab sebelah kiri.
 
@@ -773,7 +773,7 @@ Anda perlu mengintegrasikan model Phi-3 yang dilatih halus ke dalam aliran Promp
     ![Paste prompt flow code.](../../../../../../translated_images/ms/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Untuk maklumat lebih terperinci mengenai penggunaan aliran Prompt dalam Azure AI Foundry, anda boleh merujuk kepada [Aliran prompt dalam Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Untuk maklumat lebih terperinci mengenai penggunaan aliran Prompt dalam Microsoft Foundry, anda boleh merujuk kepada [Aliran prompt dalam Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Pilih **Input sembang**, **Output sembang** untuk membolehkan sembang dengan model anda.
 

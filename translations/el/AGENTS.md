@@ -7,7 +7,7 @@
 **Κύριες Τεχνολογίες:**
 - **Γλώσσες:** Python, C#/.NET, JavaScript/Node.js
 - **Πλαίσια:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Πλατφόρμες:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Πλατφόρμες:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Τύποι Μοντέλων:** Phi-3, Phi-3.5, Phi-4 (κείμενο, όραση, πολυτροπικά, παραλλαγές λογικής)
 
 **Δομή Αποθετηρίου:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Εισαγωγικοί οδηγοί, ρύθμιση περιβάλλοντος, οδηγοί πλατφόρμας
 - **02.Application/** - Δείγματα εφαρμογών οργανωμένα ανά τύπο (Κείμενο, Κώδικας, Όραση, Ήχος, κ.λπ.)
-- **02.QuickStart/** - Οδηγοί γρήγορης εκκίνησης για Azure AI Foundry και GitHub Models
+- **02.QuickStart/** - Οδηγοί γρήγορης εκκίνησης για Microsoft Foundry και GitHub Models
 - **03.FineTuning/** - Τεκμηρίωση και οδηγοί λεπτομερούς προσαρμογής
 - **04.HOL/** - Εργαστήρια πρακτικής εξάσκησης (περιλαμβάνει παραδείγματα .NET)
 
@@ -241,7 +241,7 @@ npm run dev  # Development with hot reload
 
 ### Σημειώσεις για Πλατφόρμες
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Απαιτεί συνδρομή Azure και κλειδιά API
 - Δείτε `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ npm run dev  # Development with hot reload
 
 ### Λήψη Βοήθειας
 
-- **Discord:** Εγγραφείτε στην κοινότητα Azure AI Foundry στο Discord
+- **Discord:** Εγγραφείτε στην κοινότητα Microsoft Foundry στο Discord
 - **GitHub Issues:** Αναφέρετε σφάλματα και θέματα στο αποθετήριο
 - **GitHub Discussions:** Κάντε ερωτήσεις και μοιραστείτε γνώσεις
 

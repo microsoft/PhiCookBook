@@ -2,7 +2,7 @@
 
 ![FineTuning with MS Services](../../../../translated_images/he/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-**פלטפורמה** כוללת טכנולוגיות שונות כמו Azure AI Foundry, Azure Machine Learning, כלי AI, Kaito ו-ONNX Runtime.
+**פלטפורמה** כוללת טכנולוגיות שונות כמו Microsoft Foundry, Azure Machine Learning, כלי AI, Kaito ו-ONNX Runtime.
 
 **תשתית** כוללת את ה-CPU וה-FPGA, שהם חיוניים לתהליך הכוונון העדין. אראה לכם את האייקונים של כל אחת מהטכנולוגיות האלה.
 

@@ -1,16 +1,16 @@
-# Azure AI Foundry'de Prompt flow ile özel Phi-3 modellerini ince ayar yapma ve entegre etme
+# Microsoft Foundry'de Prompt flow ile özel Phi-3 modellerini ince ayar yapma ve entegre etme
 
-Bu uçtan uca (E2E) örnek, Microsoft Tech Community'den "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" rehberine dayanmaktadır. Azure AI Foundry'de özel Phi-3 modellerinin ince ayar yapılması, dağıtılması ve Prompt flow ile entegrasyonu süreçlerini tanıtmaktadır. Yerel olarak kod çalıştırmayı içeren "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" E2E örneğinin aksine, bu öğreticide modelinizi tamamen Azure AI / ML Studio içinde ince ayar yapmaya ve entegre etmeye odaklanılmaktadır.
+Bu uçtan uca (E2E) örnek, Microsoft Tech Community'den "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" rehberine dayanmaktadır. Microsoft Foundry'de özel Phi-3 modellerinin ince ayar yapılması, dağıtılması ve Prompt flow ile entegrasyonu süreçlerini tanıtmaktadır. Yerel olarak kod çalıştırmayı içeren "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" E2E örneğinin aksine, bu öğreticide modelinizi tamamen Azure AI / ML Studio içinde ince ayar yapmaya ve entegre etmeye odaklanılmaktadır.
 
 ## Genel Bakış
 
-Bu E2E örnekte, Phi-3 modelinin nasıl ince ayar yapılacağını ve Azure AI Foundry'de Prompt flow ile nasıl entegre edileceğini öğreneceksiniz. Azure AI / ML Studio'yu kullanarak, özel yapay zeka modellerini dağıtmak ve kullanmak için bir iş akışı oluşturacaksınız. Bu E2E örnek üç senaryoya ayrılmıştır:
+Bu E2E örnekte, Phi-3 modelinin nasıl ince ayar yapılacağını ve Microsoft Foundry'de Prompt flow ile nasıl entegre edileceğini öğreneceksiniz. Azure AI / ML Studio'yu kullanarak, özel yapay zeka modellerini dağıtmak ve kullanmak için bir iş akışı oluşturacaksınız. Bu E2E örnek üç senaryoya ayrılmıştır:
 
 **Senaryo 1: Azure kaynaklarını kurun ve ince ayar için hazırlanın**
 
 **Senaryo 2: Phi-3 modelini ince ayar yapın ve Azure Machine Learning Studio'da dağıtın**
 
-**Senaryo 3: Prompt flow ile entegre edin ve Azure AI Foundry'de özel modelinizle sohbet edin**
+**Senaryo 3: Prompt flow ile entegre edin ve Microsoft Foundry'de özel modelinizle sohbet edin**
 
 İşte bu E2E örneğin genel görünümü.
 
@@ -29,7 +29,7 @@ Bu E2E örnekte, Phi-3 modelinin nasıl ince ayar yapılacağını ve Azure AI F
     - [Phi-3 modelini ince ayar yapın](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [İnce ayar yapılmış Phi-3 modelini dağıtın](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Senaryo 3: Prompt flow ile entegre edin ve Azure AI Foundry'de özel modelinizle sohbet edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Senaryo 3: Prompt flow ile entegre edin ve Microsoft Foundry'de özel modelinizle sohbet edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Özel Phi-3 modelini Prompt flow ile entegre edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Özel Phi-3 modelinizle sohbet edin](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -543,7 +543,7 @@ Bu egzersizde yapacaklarınız:
 > ![Trafiği ayarlayın.](../../../../../../translated_images/tr/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Senaryo 3: Prompt flow ile entegrasyon ve özel modelinizle Azure AI Foundry'de sohbet
+## Senaryo 3: Prompt flow ile entegrasyon ve özel modelinizle Microsoft Foundry'de sohbet
 
 ### Özel Phi-3 modelini Prompt flow ile entegre edin
 
@@ -551,8 +551,8 @@ Bu egzersizde yapacaklarınız:
 
 Bu egzersizde yapacaklarınız:
 
-- Azure AI Foundry Hub oluşturmak.
-- Azure AI Foundry Projesi oluşturmak.
+- Microsoft Foundry Hub oluşturmak.
+- Microsoft Foundry Projesi oluşturmak.
 - Prompt flow oluşturmak.
 - İnce ayarlı Phi-3 modeli için özel bağlantı eklemek.
 - Özel Phi-3 modelinizle sohbet etmek için Prompt flow'u yapılandırmak.
@@ -560,11 +560,11 @@ Bu egzersizde yapacaklarınız:
 > [!NOTE]
 > Azure ML Studio kullanarak da Promptflow ile entegre olabilirsiniz. Aynı entegrasyon süreci Azure ML Studio için de geçerlidir.
 
-#### Azure AI Foundry Hub oluşturun
+#### Microsoft Foundry Hub oluşturun
 
-Proje oluşturmadan önce bir Hub oluşturmalısınız. Hub, kaynak grubu gibi davranarak Azure AI Foundry içinde birden fazla projeyi organize etmenize ve yönetmenize olanak tanır.
+Proje oluşturmadan önce bir Hub oluşturmalısınız. Hub, kaynak grubu gibi davranarak Microsoft Foundry içinde birden fazla projeyi organize etmenize ve yönetmenize olanak tanır.
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesini ziyaret edin.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesini ziyaret edin.
 
 1. Sol taraftaki sekmeden **All hubs**'u seçin.
 
@@ -584,7 +584,7 @@ Proje oluşturmadan önce bir Hub oluşturmalısınız. Hub, kaynak grubu gibi d
 
 1. **İleri** seçeneğini tıklayın.
 
-#### Azure AI Foundry Projesi Oluşturma
+#### Microsoft Foundry Projesi Oluşturma
 
 1. Oluşturduğunuz Hub'da, sol taraftaki sekmeden **Tüm projeler**i seçin.
 
@@ -624,9 +624,9 @@ Proje oluşturmadan önce bir Hub oluşturmalısınız. Hub, kaynak grubu gibi d
 
 #### Özel Bağlantı Ekleme
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesine gidin.
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) sitesine gidin.
 
-1. Oluşturduğunuz Azure AI Foundry projesine gidin.
+1. Oluşturduğunuz Microsoft Foundry projesine gidin.
 
 1. Oluşturduğunuz projede, sol taraftaki sekmeden **Ayarlar**ı seçin.
 
@@ -652,9 +652,9 @@ Proje oluşturmadan önce bir Hub oluşturmalısınız. Hub, kaynak grubu gibi d
 
 #### Prompt flow oluşturma
 
-Azure AI Foundry'de özel bir bağlantı eklediniz. Şimdi aşağıdaki adımları kullanarak bir Prompt flow oluşturalım. Daha sonra bu Prompt flow'u özel bağlantıya bağlayarak fine-tuning yapılmış modeli Prompt flow içerisinde kullanabileceksiniz.
+Microsoft Foundry'de özel bir bağlantı eklediniz. Şimdi aşağıdaki adımları kullanarak bir Prompt flow oluşturalım. Daha sonra bu Prompt flow'u özel bağlantıya bağlayarak fine-tuning yapılmış modeli Prompt flow içerisinde kullanabileceksiniz.
 
-1. Oluşturduğunuz Azure AI Foundry projesine gidin.
+1. Oluşturduğunuz Microsoft Foundry projesine gidin.
 
 1. Sol taraftaki sekmeden **Prompt flow** seçin.
 
@@ -773,7 +773,7 @@ Fine-tuning yapılmış Phi-3 modelini Prompt flow'a entegre etmeniz gerekiyor. 
 ![Prompt flow kodunu yapıştır.](../../../../../../translated_images/tr/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Azure AI Foundry'de Prompt flow kullanımı hakkında daha ayrıntılı bilgi için [Azure AI Foundry'de Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
+> Microsoft Foundry'de Prompt flow kullanımı hakkında daha ayrıntılı bilgi için [Microsoft Foundry'de Prompt flow](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
 
 1. Modelinizle sohbeti etkinleştirmek için **Sohbet girişi**, **Sohbet çıkışı** seçeneklerini seçin.
 

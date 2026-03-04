@@ -12,7 +12,7 @@
 [![GitHub-haarat](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub-tähdet](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi on sarja Microsoftin kehittämiä avoimen lähdekoodin tekoälymalleja.
 
@@ -71,7 +71,7 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
 - Arviointi Phi eri ympäristöissä
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub-mallit](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
 
 -  Phi:n arviointi
     - [Vastuullinen tekoäly](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry arviointia varten](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry arviointia varten](./md/01.Introduction/05/AIFoundry.md)
     - [Promptflow'n käyttö arvioinnissa](./md/01.Introduction/05/Promptflow.md)
  
 - RAG Azure AI Searchin kanssa
@@ -117,8 +117,8 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
       - [WinUI3-sovellus Phi-3 mini-4k-instruct-onnx:llä](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Monimalli AI:lla varustettu Muistio-sovellusesimerkki](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Hienosäädä ja integroi mukautetut Phi-3-mallit Prompt flown avulla](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Hienosäädä ja integroi mukautetut Phi-3-mallit Prompt flow’ssa Azure AI Foundryn kanssa](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Azure AI Foundryssa keskittyen Microsoftin vastuullisen tekoälyn periaatteisiin](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Hienosäädä ja integroi mukautetut Phi-3-mallit Prompt flow’ssa Microsoft Foundryn kanssa](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Arvioi hienosäädetty Phi-3 / Phi-3.5 -malli Microsoft Foundryssa keskittyen Microsoftin vastuullisen tekoälyn periaatteisiin](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct kieliennustusnäyte (kiina/englanti)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG -chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Windows GPU:n käyttö Prompt flow -ratkaisun luomiseksi Phi-3.5-Instruct ONNX:n avulla](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
       - [📓] [Phi-4-mini-päättelyn hienosäätö Microsoft Oliven avulla](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-päättelyn hienosäätö Apple MLX:llä](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-päättely GitHub-mallien kanssa](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-päättely Azure AI Foundry -mallien kanssa](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-päättely Microsoft Foundry -mallien kanssa](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demoja
       - [Phi-4-mini-demoja, jotka on isännöity Hugging Face Spaces -palvelussa](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodaali-demoja, jotka on isännöity Hugging Face Spaces -palvelussa](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
   - [Phi-3:n hienosäätö Azure Machine Learning Servicellä](./md/03.FineTuning/Introduce_AzureML.md)
   - [Phi-3:n hienosäätö Loran avulla](./md/03.FineTuning/FineTuning_Lora.md)
   - [Phi-3:n hienosäätö QLoran avulla](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Phi-3:n hienosäätö Azure AI Foundryn kanssa](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Phi-3:n hienosäätö Microsoft Foundryn kanssa](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Phi-3:n hienosäätö Azure ML CLI/SDK:n avulla](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Hienosäätö Microsoft Olivella](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Microsoft Oliven Hands-On Lab -kokeilu hienosäätöön](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Seuraa näitä vaiheita aloittaaksesi näiden resurssien käytön:
 
 ## Phi-mallien käyttö
 
-### Phi Azure AI Foundryssa
+### Phi Microsoft Foundryssa
 
-Voit oppia käyttämään Microsoft Phiä ja rakentamaan päästä-päähän-ratkaisuja eri laitteillasi. Kokeile Phiä itse aloittamalla mallien kanssa leikkiminen ja Phiin mukauttaminen omiin skenaarioihisi käyttämällä [Azure AI Foundry Azure AI Model Catalogia](https://aka.ms/phi3-azure-ai). Lisää tietoa löydät oppaasta Aloittaminen [Azure AI Foundrylla](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Voit oppia käyttämään Microsoft Phiä ja rakentamaan päästä-päähän-ratkaisuja eri laitteillasi. Kokeile Phiä itse aloittamalla mallien kanssa leikkiminen ja Phiin mukauttaminen omiin skenaarioihisi käyttämällä [Microsoft Foundry Azure AI Model Catalogia](https://aka.ms/phi3-azure-ai). Lisää tietoa löydät oppaasta Aloittaminen [Microsoft Foundrylla](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Testausalue**  
 Jokaisella mallilla on oma testausalueensa mallin kokeilemiseen [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Microsoftin lähestymistapa vastuulliseen tekoälyyn perustuu tekoälyn periaatt
 
 Suurikokoiset luonnollisen kielen, kuvan ja puheen mallit – kuten tässä esimerkissä käytetyt – voivat käyttäytyä epäreilusti, epäluotettavasti tai loukkaavasti, mikä voi aiheuttaa haittoja. Tutustu [Azure OpenAI -palvelun läpinäkyvyysmuistiinpanoon](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) saadaksesi tietoa riskeistä ja rajoituksista.
 
-Suositeltu tapa vähentää näitä riskejä on sisällyttää arkkitehtuuriisi turvallisuusjärjestelmä, joka havaitsee ja estää haitallisen käyttäytymisen. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) tarjoaa itsenäisen suojakerroksen, joka tunnistaa haitallisen käyttäjän ja tekoälyn tuottaman sisällön sovelluksissa ja palveluissa. Azure AI Content Safety sisältää tekstin ja kuvan API:t, joiden avulla voi havaita haitallista materiaalia. Azure AI Foundryn Content Safety -palvelu mahdollistaa haitallisen sisällön tunnistuskoodin tarkastelun, tutkimisen ja kokeilemisen eri muodoissa. Seuraava [aloitusopas](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ohjaa sinut tekemään pyyntöjä palveluun.
+Suositeltu tapa vähentää näitä riskejä on sisällyttää arkkitehtuuriisi turvallisuusjärjestelmä, joka havaitsee ja estää haitallisen käyttäytymisen. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) tarjoaa itsenäisen suojakerroksen, joka tunnistaa haitallisen käyttäjän ja tekoälyn tuottaman sisällön sovelluksissa ja palveluissa. Azure AI Content Safety sisältää tekstin ja kuvan API:t, joiden avulla voi havaita haitallista materiaalia. Microsoft Foundryn Content Safety -palvelu mahdollistaa haitallisen sisällön tunnistuskoodin tarkastelun, tutkimisen ja kokeilemisen eri muodoissa. Seuraava [aloitusopas](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ohjaa sinut tekemään pyyntöjä palveluun.
 Toinen otettava seikka huomioon on koko sovelluksen suorituskyky. Monimodaalisissa ja monimalli-sovelluksissa suorituskyvyllä tarkoitetaan sitä, että järjestelmä toimii odotustesi ja käyttäjiesi odotusten mukaisesti, mukaan lukien haitallisten tulosteiden välttäminen. On tärkeää arvioida koko sovelluksesi suorituskykyä käyttämällä [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Sinulla on myös mahdollisuus luoda ja arvioida [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) avulla.
 
-Voit arvioida tekoälysovellustasi kehitysympäristössäsi käyttämällä [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) -työkalua. Testiaineiston tai tavoitteen perusteella generatiivisen tekoälysovelluksesi tuotokset mitataan määrällisesti valmiiden arvioijien tai valintasi mukaisesti mukautettujen arvioijien avulla. Jos haluat aloittaa Azure AI Evaluation SDK:n käytön järjestelmäsi arviointiin, voit seurata [nopeaa aloitusopasta](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kun olet suorittanut arviointiajon, voit [visualisoida tulokset Azure AI Foundryssä](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+Voit arvioida tekoälysovellustasi kehitysympäristössäsi käyttämällä [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) -työkalua. Testiaineiston tai tavoitteen perusteella generatiivisen tekoälysovelluksesi tuotokset mitataan määrällisesti valmiiden arvioijien tai valintasi mukaisesti mukautettujen arvioijien avulla. Jos haluat aloittaa Azure AI Evaluation SDK:n käytön järjestelmäsi arviointiin, voit seurata [nopeaa aloitusopasta](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kun olet suorittanut arviointiajon, voit [visualisoida tulokset Microsoft Foundryssä](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## Tavaranmerkit
 
@@ -303,11 +303,11 @@ Microsoftin tavaramerkkien tai logojen käyttö muokatuissa versioissa tästä p
 
 Jos törmäät ongelmiin tai sinulla on kysymyksiä tekoälysovellusten rakentamisesta, liity:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Jos sinulla on tuotepalautetta tai virheitä kehityksen aikana, käy:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

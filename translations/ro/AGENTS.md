@@ -7,7 +7,7 @@ PhiCookBook este un depozit cuprinzător de rețete, care conține exemple pract
 **Tehnologii cheie:**
 - **Limbaje:** Python, C#/.NET, JavaScript/Node.js
 - **Cadre:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platforme:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platforme:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Tipuri de modele:** Phi-3, Phi-3.5, Phi-4 (text, viziune, multimodal, variante de raționament)
 
 **Structura depozitului:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Ghiduri introductive, configurarea mediului, ghiduri de platformă
 - **02.Application/** - Exemple de aplicații organizate pe tipuri (Text, Cod, Viziune, Audio, etc.)
-- **02.QuickStart/** - Ghiduri rapide pentru Azure AI Foundry și GitHub Models
+- **02.QuickStart/** - Ghiduri rapide pentru Microsoft Foundry și GitHub Models
 - **03.FineTuning/** - Documentație și tutoriale pentru ajustare fină
 - **04.HOL/** - Laboratoare practice (include exemple .NET)
 
@@ -241,7 +241,7 @@ Exemple:
 
 ### Note specifice platformei
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Necesită abonament Azure și chei API
 - Consultați `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
@@ -285,7 +285,7 @@ Exemple:
 
 ### Obținerea ajutorului
 
-- **Discord:** Alăturați-vă comunității Azure AI Foundry pe Discord
+- **Discord:** Alăturați-vă comunității Microsoft Foundry pe Discord
 - **GitHub Issues:** Raportați erorile și problemele în depozit
 - **GitHub Discussions:** Puneți întrebări și împărtășiți cunoștințe
 

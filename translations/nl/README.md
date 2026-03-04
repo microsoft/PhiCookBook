@@ -12,7 +12,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub sterren](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Phi is een reeks open source AI-modellen ontwikkeld door Microsoft.
 
@@ -71,7 +71,7 @@ Volg deze stappen om aan de slag te gaan met deze bron:
 - Inferentie Phi in verschillende omgevingen
     -  [Hugging Face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub Modellen](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry Model Catalogus](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Microsoft Foundry Model Catalogus](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
     -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
@@ -96,7 +96,7 @@ Volg deze stappen om aan de slag te gaan met deze bron:
 
 -  Evaluatie Phi
     - [Verantwoorde AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry voor Evaluatie](./md/01.Introduction/05/AIFoundry.md)
+    - [Microsoft Foundry voor Evaluatie](./md/01.Introduction/05/AIFoundry.md)
     - [Gebruik van Promptflow voor Evaluatie](./md/01.Introduction/05/Promptflow.md)
  
 - RAG met Azure AI Search
@@ -117,8 +117,8 @@ Volg deze stappen om aan de slag te gaan met deze bron:
       - [WinUI3 App met Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Multi Model AI aangedreven Notities App Voorbeeld](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Fijn afstemmen en integreren van aangepaste Phi-3 modellen met Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Fijn afstemmen en integreren van aangepaste Phi-3 modellen met Prompt flow in Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Evalueren van het fijn-afgestelde Phi-3 / Phi-3.5 Model in Azure AI Foundry met focus op Microsoft’s Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Fijn afstemmen en integreren van aangepaste Phi-3 modellen met Prompt flow in Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Evalueren van het fijn-afgestelde Phi-3 / Phi-3.5 Model in Microsoft Foundry met focus op Microsoft’s Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct taalvoorspellingsvoorbeeld (Chinees/Engels)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
       - [Windows GPU gebruiken om Prompt flow oplossing te maken met Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
@@ -139,7 +139,7 @@ Volg deze stappen om aan de slag te gaan met deze bron:
       - [📓] [Fijn afstemmen van Phi-4-mini-reasoning met Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Fijn afstemmen van Phi-4-mini-reasoning met Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Phi-4-mini-reasoning met GitHub Modellen](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Phi-4-mini-reasoning met Azure AI Foundry Modellen](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning met Microsoft Foundry Modellen](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demo's
       - [Phi-4-mini demo's gehost op Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
       - [Phi-4-multimodal demo's gehost op Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
@@ -192,7 +192,7 @@ Volg deze stappen om aan de slag te gaan met deze bron:
   - [Fijn afstemmen Phi-3 met Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Fijn afstemmen Phi-3 met Lora](./md/03.FineTuning/FineTuning_Lora.md)
   - [Fijn afstemmen Phi-3 met QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Fijn afstemmen Phi-3 met Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Fijn afstemmen Phi-3 met Microsoft Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
   - [Fijn afstemmen Phi-3 met Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
   - [Fijn afstemmen met Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Fijn afstemmen met Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
@@ -217,9 +217,9 @@ Volg deze stappen om aan de slag te gaan met deze bron:
 
 ## Gebruik van Phi-modellen
 
-### Phi op Azure AI Foundry
+### Phi op Microsoft Foundry
 
-Je kunt leren hoe je Microsoft Phi gebruikt en hoe je E2E-oplossingen bouwt op verschillende hardwareapparaten. Om Phi zelf te ervaren, begin met het spelen met de modellen en het aanpassen van Phi voor jouw scenario's met behulp van de [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Je kunt meer leren in Aan de slag met [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+Je kunt leren hoe je Microsoft Phi gebruikt en hoe je E2E-oplossingen bouwt op verschillende hardwareapparaten. Om Phi zelf te ervaren, begin met het spelen met de modellen en het aanpassen van Phi voor jouw scenario's met behulp van de [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Je kunt meer leren in Aan de slag met [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **Playground**
 Elk model heeft een speciale playground om het model te testen: [Azure AI Playground](https://aka.ms/try-phi3).
@@ -289,10 +289,10 @@ Microsofts benadering van verantwoorde AI is gebaseerd op onze AI-principes van 
 
 Grote taal-, beeld- en spraakmodellen - zoals de modellen die in dit voorbeeld worden gebruikt - kunnen zich potentieel op manieren gedragen die oneerlijk, onbetrouwbaar of aanstootgevend zijn, wat op zijn beurt schade kan veroorzaken. Raadpleeg de [Transparantienotitie van de Azure OpenAI-service](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) om geïnformeerd te worden over risico's en beperkingen.
 
-De aanbevolen aanpak om deze risico's te beperken is het opnemen van een veiligheidssysteem in je architectuur dat schadelijk gedrag kan detecteren en voorkomen. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) biedt een onafhankelijke beschermingslaag die schadelijke gebruikergemaakte en AI-gegenereerde inhoud in applicaties en diensten kan detecteren. Azure AI Content Safety omvat tekst- en beeld-API's die je in staat stellen schadelijk materiaal te detecteren. Binnen Azure AI Foundry stelt de Content Safety-service je in staat voorbeeldcode te bekijken, te verkennen en uit te proberen om schadelijke inhoud in verschillende modaliteiten te detecteren. De volgende [quickstart-documentatie](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) begeleidt je bij het maken van verzoeken aan de service.
+De aanbevolen aanpak om deze risico's te beperken is het opnemen van een veiligheidssysteem in je architectuur dat schadelijk gedrag kan detecteren en voorkomen. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) biedt een onafhankelijke beschermingslaag die schadelijke gebruikergemaakte en AI-gegenereerde inhoud in applicaties en diensten kan detecteren. Azure AI Content Safety omvat tekst- en beeld-API's die je in staat stellen schadelijk materiaal te detecteren. Binnen Microsoft Foundry stelt de Content Safety-service je in staat voorbeeldcode te bekijken, te verkennen en uit te proberen om schadelijke inhoud in verschillende modaliteiten te detecteren. De volgende [quickstart-documentatie](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) begeleidt je bij het maken van verzoeken aan de service.
 Een ander aspect om rekening mee te houden is de algemene prestatie van de toepassing. Bij multi-modale en multi-model toepassingen verstaan we onder prestatie dat het systeem presteert zoals u en uw gebruikers verwachten, inclusief het niet genereren van schadelijke outputs. Het is belangrijk om de prestatie van uw hele toepassing te beoordelen met behulp van [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). U heeft ook de mogelijkheid om te creëren en evalueren met [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-U kunt uw AI-toepassing evalueren in uw ontwikkelomgeving met behulp van de [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Met een testdataset of een doel worden de generaties van uw generatieve AI-toepassing kwantitatief gemeten met ingebouwde evaluators of de aangepaste evaluators van uw keuze. Om aan de slag te gaan met de azure ai evaluation sdk om uw systeem te evalueren, kunt u de [quickstart-gids](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) volgen. Zodra u een evaluatierun uitvoert, kunt u [de resultaten visualiseren in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+U kunt uw AI-toepassing evalueren in uw ontwikkelomgeving met behulp van de [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Met een testdataset of een doel worden de generaties van uw generatieve AI-toepassing kwantitatief gemeten met ingebouwde evaluators of de aangepaste evaluators van uw keuze. Om aan de slag te gaan met de azure ai evaluation sdk om uw systeem te evalueren, kunt u de [quickstart-gids](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) volgen. Zodra u een evaluatierun uitvoert, kunt u [de resultaten visualiseren in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Handelsmerken
 
@@ -302,11 +302,11 @@ Dit project kan handelsmerken of logo’s bevatten van projecten, producten of d
 
 Als u vastloopt of vragen heeft over het bouwen van AI-apps, sluit u dan aan bij:
 
-[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+[![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
 Als u productfeedback of fouten ondervindt tijdens het bouwen, bezoek dan:
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+[![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

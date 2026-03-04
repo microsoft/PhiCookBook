@@ -1,6 +1,6 @@
-# Prilagajanje Phi-3 z Azure AI Foundry
+# Prilagajanje Phi-3 z Microsoft Foundry
 
-Raziščimo, kako prilagoditi Microsoftov jezikovni model Phi-3 Mini z uporabo Azure AI Foundry. Prilagajanje omogoča, da Phi-3 Mini prilagodite specifičnim nalogam, s čimer postane še močnejši in bolj zavedajoč se konteksta.
+Raziščimo, kako prilagoditi Microsoftov jezikovni model Phi-3 Mini z uporabo Microsoft Foundry. Prilagajanje omogoča, da Phi-3 Mini prilagodite specifičnim nalogam, s čimer postane še močnejši in bolj zavedajoč se konteksta.
 
 ## Premisleki
 
@@ -22,7 +22,7 @@ Raziščimo, kako prilagoditi Microsoftov jezikovni model Phi-3 Mini z uporabo A
 - Azure naročnina. Če je še nimate, ustvarite [plačljiv Azure račun](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) za začetek.
 
 - [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Za dostop do operacij v Azure AI Foundry se uporabljajo vloge Azure RBAC. Za izvedbo korakov v tem članku mora biti vaš uporabniški račun dodeljen vlogi __Azure AI Developer__ v skupini virov.
+- Za dostop do operacij v Microsoft Foundry se uporabljajo vloge Azure RBAC. Za izvedbo korakov v tem članku mora biti vaš uporabniški račun dodeljen vlogi __Azure AI Developer__ v skupini virov.
 
 ### Registracija ponudnika naročnine
 
@@ -58,17 +58,17 @@ Podatki za učenje in validacijo **morajo** biti oblikovani kot JSON Lines (JSON
 
 Podprta vrsta datoteke je JSON Lines. Datoteke se naložijo v privzeti podatkovni prostor in so na voljo v vašem projektu.
 
-## Prilagajanje Phi-3 z Azure AI Foundry
+## Prilagajanje Phi-3 z Microsoft Foundry
 
-Azure AI Foundry vam omogoča, da prilagodite velike jezikovne modele svojim osebnim podatkom z uporabo procesa, imenovanega prilagajanje (fine-tuning). Prilagajanje prinaša veliko vrednost z omogočanjem prilagoditve in optimizacije za specifične naloge in aplikacije. To vodi do izboljšane zmogljivosti, stroškovne učinkovitosti, zmanjšane zakasnitve in prilagojenih izhodov.
+Microsoft Foundry vam omogoča, da prilagodite velike jezikovne modele svojim osebnim podatkom z uporabo procesa, imenovanega prilagajanje (fine-tuning). Prilagajanje prinaša veliko vrednost z omogočanjem prilagoditve in optimizacije za specifične naloge in aplikacije. To vodi do izboljšane zmogljivosti, stroškovne učinkovitosti, zmanjšane zakasnitve in prilagojenih izhodov.
 
 ![Finetune AI Foundry](../../../../translated_images/sl/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Ustvarjanje novega projekta
 
-1. Prijavite se v [Azure AI Foundry](https://ai.azure.com).
+1. Prijavite se v [Microsoft Foundry](https://ai.azure.com).
 
-1. Izberite **+New project** za ustvarjanje novega projekta v Azure AI Foundry.
+1. Izberite **+New project** za ustvarjanje novega projekta v Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/sl/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry vam omogoča, da prilagodite velike jezikovne modele svojim ose
 
 Pred prilagajanjem zberite ali ustvarite nabor podatkov, ki je relevanten za vašo nalogo, kot so navodila za klepet, pari vprašanje-odgovor ali kateri koli drugi ustrezni besedilni podatki. Očistite in predobdelajte te podatke z odstranjevanjem šuma, obravnavo manjkajočih vrednosti in tokenizacijo besedila.
 
-### Prilagajanje Phi-3 modelov v Azure AI Foundry
+### Prilagajanje Phi-3 modelov v Microsoft Foundry
 
 > [!NOTE]
 > Prilagajanje Phi-3 modelov je trenutno podprto samo v projektih, ki se nahajajo v regiji East US 2.
@@ -121,7 +121,7 @@ Pred prilagajanjem zberite ali ustvarite nabor podatkov, ki je relevanten za va�
 1. Izvedite naslednje korake:
 
     - Izberite **task type** kot **Chat completion**.
-    - Izberite **Training data**, ki ga želite uporabiti. Lahko ga naložite preko Azure AI Foundry ali iz lokalnega okolja.
+    - Izberite **Training data**, ki ga želite uporabiti. Lahko ga naložite preko Microsoft Foundry ali iz lokalnega okolja.
 
     ![FineTuneSelect](../../../../translated_images/sl/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Pred prilagajanjem zberite ali ustvarite nabor podatkov, ki je relevanten za va�
 
     ![FineTuneSelect](../../../../translated_images/sl/select-submit.0a3802d581bac271.webp)
 
-1. Ko je vaš model prilagojen, bo status prikazan kot **Completed**, kot je prikazano na spodnji sliki. Model lahko zdaj namestite in uporabljate v svoji aplikaciji, v playgroundu ali v prompt flow. Za več informacij glejte [Kako namestiti družino majhnih jezikovnih modelov Phi-3 z Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Ko je vaš model prilagojen, bo status prikazan kot **Completed**, kot je prikazano na spodnji sliki. Model lahko zdaj namestite in uporabljate v svoji aplikaciji, v playgroundu ali v prompt flow. Za več informacij glejte [Kako namestiti družino majhnih jezikovnih modelov Phi-3 z Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/sl/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Za podrobnejše informacije o prilagajanju Phi-3 obiščite [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Za podrobnejše informacije o prilagajanju Phi-3 obiščite [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Čiščenje prilagojenih modelov
 
-Prilagojeni model lahko izbrišete s seznama prilagojenih modelov v [Azure AI Foundry](https://ai.azure.com) ali na strani s podrobnostmi modela. Izberite model, ki ga želite izbrisati na strani Fine-tuning, nato pa kliknite gumb Delete za brisanje.
+Prilagojeni model lahko izbrišete s seznama prilagojenih modelov v [Microsoft Foundry](https://ai.azure.com) ali na strani s podrobnostmi modela. Izberite model, ki ga želite izbrisati na strani Fine-tuning, nato pa kliknite gumb Delete za brisanje.
 
 > [!NOTE]
 > Prilagojenega modela ne morete izbrisati, če ima obstoječo namestitev. Najprej morate izbrisati namestitev modela, preden lahko izbrišete prilagojeni model.
@@ -163,7 +163,7 @@ Prilagojeni model lahko izbrišete s seznama prilagojenih modelov v [Azure AI Fo
 
 ### Premisleki o stroških in kvotah za Phi-3 modele, prilagojene kot storitev
 
-Phi modeli, prilagojeni kot storitev, jih ponuja Microsoft in so integrirani z Azure AI Foundry za uporabo. Cene najdete med [namestitvijo](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ali prilagajanjem modelov pod zavihkom Pricing and terms v čarovniku za namestitev.
+Phi modeli, prilagojeni kot storitev, jih ponuja Microsoft in so integrirani z Microsoft Foundry za uporabo. Cene najdete med [namestitvijo](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ali prilagajanjem modelov pod zavihkom Pricing and terms v čarovniku za namestitev.
 
 ## Filtriranje vsebine
 
@@ -204,7 +204,7 @@ Shranjena kontrolna točka prilagojenega modela za kasnejšo uporabo.
 
 ## Namestitev
 
-- Namestitev kot spletna storitev: namestite prilagojeni model kot spletno storitev v Azure AI Foundry.
+- Namestitev kot spletna storitev: namestite prilagojeni model kot spletno storitev v Microsoft Foundry.
 - Testiranje končne točke: pošljite testne poizvedbe na nameščeno končno točko za preverjanje delovanja.
 
 ## Iteracija in izboljšave

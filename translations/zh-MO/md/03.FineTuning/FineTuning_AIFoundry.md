@@ -1,6 +1,6 @@
-# 使用 Azure AI Foundry 微調 Phi-3
+# 使用 Microsoft Foundry 微調 Phi-3
 
-讓我們來探索如何使用 Azure AI Foundry 微調 Microsoft 的 Phi-3 Mini 語言模型。微調能讓你將 Phi-3 Mini 適應特定任務，使其更強大且更具上下文感知能力。
+讓我們來探索如何使用 Microsoft Foundry 微調 Microsoft 的 Phi-3 Mini 語言模型。微調能讓你將 Phi-3 Mini 適應特定任務，使其更強大且更具上下文感知能力。
 
 ## 注意事項
 
@@ -22,7 +22,7 @@
 - 一個 Azure 訂閱。如果你還沒有 Azure 訂閱，請建立一個[付費 Azure 帳戶](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go)開始使用。
 
 - 一個 [AI Foundry 專案](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)。
-- Azure 角色型存取控制 (Azure RBAC) 用於授權 Azure AI Foundry 中的操作。要執行本文的步驟，你的使用者帳戶必須在資源群組中被指派為 __Azure AI Developer 角色__。
+- Azure 角色型存取控制 (Azure RBAC) 用於授權 Microsoft Foundry 中的操作。要執行本文的步驟，你的使用者帳戶必須在資源群組中被指派為 __Azure AI Developer 角色__。
 
 ### 訂閱提供者註冊
 
@@ -58,17 +58,17 @@
 
 支援的檔案類型為 JSON Lines。檔案會上傳至預設資料存放區，並在你的專案中可用。
 
-## 使用 Azure AI Foundry 微調 Phi-3
+## 使用 Microsoft Foundry 微調 Phi-3
 
-Azure AI Foundry 讓你能透過微調程序，將大型語言模型調整為符合個人資料集的需求。微調能帶來顯著價值，讓模型針對特定任務和應用進行客製化與優化，提升效能、降低成本、減少延遲，並產生更符合需求的輸出。
+Microsoft Foundry 讓你能透過微調程序，將大型語言模型調整為符合個人資料集的需求。微調能帶來顯著價值，讓模型針對特定任務和應用進行客製化與優化，提升效能、降低成本、減少延遲，並產生更符合需求的輸出。
 
 ![Finetune AI Foundry](../../../../translated_images/zh-MO/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### 建立新專案
 
-1. 登入 [Azure AI Foundry](https://ai.azure.com)。
+1. 登入 [Microsoft Foundry](https://ai.azure.com)。
 
-1. 選擇 **+New project** 以在 Azure AI Foundry 中建立新專案。
+1. 選擇 **+New project** 以在 Microsoft Foundry 中建立新專案。
 
     ![FineTuneSelect](../../../../translated_images/zh-MO/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry 讓你能透過微調程序，將大型語言模型調整為符
 
 在微調前，收集或建立與任務相關的資料集，例如聊天指令、問答對或其他相關文字資料。清理並預處理資料，移除雜訊、處理缺失值，並進行文字分詞。
 
-### 在 Azure AI Foundry 微調 Phi-3 模型
+### 在 Microsoft Foundry 微調 Phi-3 模型
 
 > [!NOTE]
 > Phi-3 模型的微調目前僅支援位於 East US 2 的專案。
@@ -121,7 +121,7 @@ Azure AI Foundry 讓你能透過微調程序，將大型語言模型調整為符
 1. 執行以下操作：
 
     - 選擇 **task type** 為 **Chat completion**。
-    - 選擇你想使用的 **Training data**。你可以透過 Azure AI Foundry 的資料或從本機環境上傳。
+    - 選擇你想使用的 **Training data**。你可以透過 Microsoft Foundry 的資料或從本機環境上傳。
 
     ![FineTuneSelect](../../../../translated_images/zh-MO/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Azure AI Foundry 讓你能透過微調程序，將大型語言模型調整為符
 
     ![FineTuneSelect](../../../../translated_images/zh-MO/select-submit.0a3802d581bac271.webp)
 
-1. 微調完成後，狀態會顯示為 **Completed**，如下圖所示。你現在可以部署模型，並在自己的應用程式、遊樂場或提示流程中使用。更多資訊請參考[如何使用 Azure AI Foundry 部署 Phi-3 系列小型語言模型](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)。
+1. 微調完成後，狀態會顯示為 **Completed**，如下圖所示。你現在可以部署模型，並在自己的應用程式、遊樂場或提示流程中使用。更多資訊請參考[如何使用 Microsoft Foundry 部署 Phi-3 系列小型語言模型](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)。
 
     ![FineTuneSelect](../../../../translated_images/zh-MO/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> 欲了解更詳細的 Phi-3 微調資訊，請參閱[在 Azure AI Foundry 微調 Phi-3 模型](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)。
+> 欲了解更詳細的 Phi-3 微調資訊，請參閱[在 Microsoft Foundry 微調 Phi-3 模型](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)。
 
 ## 清理你的微調模型
 
-你可以從 [Azure AI Foundry](https://ai.azure.com) 的微調模型清單或模型詳細頁面刪除微調模型。從微調頁面選擇要刪除的微調模型，然後按下刪除按鈕即可刪除。
+你可以從 [Microsoft Foundry](https://ai.azure.com) 的微調模型清單或模型詳細頁面刪除微調模型。從微調頁面選擇要刪除的微調模型，然後按下刪除按鈕即可刪除。
 
 > [!NOTE]
 > 如果自訂模型已有部署，則無法刪除。必須先刪除模型部署，才能刪除自訂模型。
@@ -163,7 +163,7 @@ Azure AI Foundry 讓你能透過微調程序，將大型語言模型調整為符
 
 ### Phi-3 模型作為服務微調的成本與配額考量
 
-Phi 模型作為服務微調由 Microsoft 提供，並整合於 Azure AI Foundry 中使用。你可以在[部署](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)或微調模型時，在部署精靈的「定價與條款」標籤中查看定價。
+Phi 模型作為服務微調由 Microsoft 提供，並整合於 Microsoft Foundry 中使用。你可以在[部署](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)或微調模型時，在部署精靈的「定價與條款」標籤中查看定價。
 
 ## 內容過濾
 
@@ -206,7 +206,7 @@ Phi 模型作為服務微調由 Microsoft 提供，並整合於 Azure AI Foundry
 
 ## 部署
 
-- 作為 Web 服務部署：將微調模型部署為 Azure AI Foundry 中的 Web 服務。
+- 作為 Web 服務部署：將微調模型部署為 Microsoft Foundry 中的 Web 服務。
 - 測試端點：向部署的端點發送測試查詢以驗證功能。
 
 ## 迭代與改進

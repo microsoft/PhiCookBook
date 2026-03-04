@@ -1,6 +1,6 @@
-# Finjustering af Phi-3 med Azure AI Foundry
+# Finjustering af Phi-3 med Microsoft Foundry
 
-Lad os udforske, hvordan man finjusterer Microsofts sprogmodel Phi-3 Mini ved hjælp af Azure AI Foundry. Finjustering gør det muligt at tilpasse Phi-3 Mini til specifikke opgaver, hvilket gør den endnu mere kraftfuld og kontekstbevidst.
+Lad os udforske, hvordan man finjusterer Microsofts sprogmodel Phi-3 Mini ved hjælp af Microsoft Foundry. Finjustering gør det muligt at tilpasse Phi-3 Mini til specifikke opgaver, hvilket gør den endnu mere kraftfuld og kontekstbevidst.
 
 ## Overvejelser
 
@@ -22,7 +22,7 @@ Lad os udforske, hvordan man finjusterer Microsofts sprogmodel Phi-3 Mini ved hj
 - Et Azure-abonnement. Hvis du ikke har et Azure-abonnement, opret en [betalt Azure-konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) for at komme i gang.
 
 - Et [AI Foundry-projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure rollebaseret adgangskontrol (Azure RBAC) bruges til at give adgang til operationer i Azure AI Foundry. For at udføre trinene i denne artikel skal din brugerrolle have __Azure AI Developer-rollen__ på ressourcegruppen.
+- Azure rollebaseret adgangskontrol (Azure RBAC) bruges til at give adgang til operationer i Microsoft Foundry. For at udføre trinene i denne artikel skal din brugerrolle have __Azure AI Developer-rollen__ på ressourcegruppen.
 
 ### Registrering af abonnementets udbyder
 
@@ -58,17 +58,17 @@ De trænings- og valideringsdata, du bruger, **skal** være formateret som et JS
 
 Den understøttede filtype er JSON Lines. Filer uploades til standarddatabutikken og gøres tilgængelige i dit projekt.
 
-## Finjustering af Phi-3 med Azure AI Foundry
+## Finjustering af Phi-3 med Microsoft Foundry
 
-Azure AI Foundry giver dig mulighed for at tilpasse store sprogmodeller til dine egne datasæt ved hjælp af en proces kaldet finjustering. Finjustering giver stor værdi ved at muliggøre tilpasning og optimering til specifikke opgaver og anvendelser. Det fører til forbedret ydeevne, omkostningseffektivitet, reduceret latenstid og skræddersyede output.
+Microsoft Foundry giver dig mulighed for at tilpasse store sprogmodeller til dine egne datasæt ved hjælp af en proces kaldet finjustering. Finjustering giver stor værdi ved at muliggøre tilpasning og optimering til specifikke opgaver og anvendelser. Det fører til forbedret ydeevne, omkostningseffektivitet, reduceret latenstid og skræddersyede output.
 
 ![Finetune AI Foundry](../../../../translated_images/da/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Opret et nyt projekt
 
-1. Log ind på [Azure AI Foundry](https://ai.azure.com).
+1. Log ind på [Microsoft Foundry](https://ai.azure.com).
 
-1. Vælg **+New project** for at oprette et nyt projekt i Azure AI Foundry.
+1. Vælg **+New project** for at oprette et nyt projekt i Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/da/select-new-project.cd31c0404088d7a3.webp)
 
@@ -97,7 +97,7 @@ Azure AI Foundry giver dig mulighed for at tilpasse store sprogmodeller til dine
 
 Inden finjustering skal du samle eller oprette et datasæt, der er relevant for din opgave, såsom chatinstruktioner, spørgsmål-svar-par eller andre relevante tekstdata. Rens og forbehandl disse data ved at fjerne støj, håndtere manglende værdier og tokenisere teksten.
 
-### Finjuster Phi-3 modeller i Azure AI Foundry
+### Finjuster Phi-3 modeller i Microsoft Foundry
 
 > [!NOTE]
 > Finjustering af Phi-3 modeller understøttes i øjeblikket kun i projekter placeret i East US 2.
@@ -121,7 +121,7 @@ Inden finjustering skal du samle eller oprette et datasæt, der er relevant for 
 1. Udfør følgende opgaver:
 
     - Vælg **task type** til **Chat completion**.
-    - Vælg de **Training data**, du vil bruge. Du kan uploade dem via Azure AI Foundrys data eller fra dit lokale miljø.
+    - Vælg de **Training data**, du vil bruge. Du kan uploade dem via Microsoft Foundrys data eller fra dit lokale miljø.
 
     ![FineTuneSelect](../../../../translated_images/da/finetune2.43cb099b1a94442d.webp)
 
@@ -145,16 +145,16 @@ Inden finjustering skal du samle eller oprette et datasæt, der er relevant for 
 
     ![FineTuneSelect](../../../../translated_images/da/select-submit.0a3802d581bac271.webp)
 
-1. Når din model er finjusteret, vises status som **Completed**, som vist på billedet nedenfor. Nu kan du implementere modellen og bruge den i din egen applikation, i playground eller i prompt flow. For mere information, se [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Når din model er finjusteret, vises status som **Completed**, som vist på billedet nedenfor. Nu kan du implementere modellen og bruge den i din egen applikation, i playground eller i prompt flow. For mere information, se [How to deploy Phi-3 family of small language models with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/da/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> For mere detaljeret information om finjustering af Phi-3, besøg venligst [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> For mere detaljeret information om finjustering af Phi-3, besøg venligst [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Ryd op i dine finjusterede modeller
 
-Du kan slette en finjusteret model fra listen over finjusterede modeller i [Azure AI Foundry](https://ai.azure.com) eller fra modeldetaljesiden. Vælg den finjusterede model, du vil slette, på finjusteringssiden, og vælg derefter knappen Slet for at fjerne modellen.
+Du kan slette en finjusteret model fra listen over finjusterede modeller i [Microsoft Foundry](https://ai.azure.com) eller fra modeldetaljesiden. Vælg den finjusterede model, du vil slette, på finjusteringssiden, og vælg derefter knappen Slet for at fjerne modellen.
 
 > [!NOTE]
 > Du kan ikke slette en brugerdefineret model, hvis den har en eksisterende implementering. Du skal først slette din modelimplementering, før du kan slette den brugerdefinerede model.
@@ -163,7 +163,7 @@ Du kan slette en finjusteret model fra listen over finjusterede modeller i [Azur
 
 ### Omkostnings- og kvotebetragtninger for Phi-3 modeller finjusteret som en service
 
-Phi-modeller finjusteret som en service tilbydes af Microsoft og er integreret med Azure AI Foundry til brug. Du kan finde priserne, når du [implementerer](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) eller finjusterer modellerne under fanen Pricing and terms i implementeringsguiden.
+Phi-modeller finjusteret som en service tilbydes af Microsoft og er integreret med Microsoft Foundry til brug. Du kan finde priserne, når du [implementerer](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) eller finjusterer modellerne under fanen Pricing and terms i implementeringsguiden.
 
 ## Indholdsfiltrering
 
@@ -204,7 +204,7 @@ Gem checkpoint for den finjusterede model til fremtidig brug.
 
 ## Implementering
 
-- Implementer som webservice: Implementer din finjusterede model som en webservice i Azure AI Foundry.
+- Implementer som webservice: Implementer din finjusterede model som en webservice i Microsoft Foundry.
 - Test endpoint: Send testforespørgsler til det implementerede endpoint for at verificere funktionaliteten.
 
 ## Iterer og forbedr

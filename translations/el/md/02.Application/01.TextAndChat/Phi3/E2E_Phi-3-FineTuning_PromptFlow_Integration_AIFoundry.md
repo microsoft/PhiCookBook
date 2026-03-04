@@ -1,17 +1,17 @@
-# Βελτιστοποίηση και Ενσωμάτωση προσαρμοσμένων μοντέλων Phi-3 με το Prompt flow στο Azure AI Foundry
+# Βελτιστοποίηση και Ενσωμάτωση προσαρμοσμένων μοντέλων Phi-3 με το Prompt flow στο Microsoft Foundry
 
-Αυτό το δείγμα από άκρο σε άκρο (E2E) βασίζεται στον οδηγό "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" από την Microsoft Tech Community. Εισάγει τις διαδικασίες βελτιστοποίησης, ανάπτυξης και ενσωμάτωσης προσαρμοσμένων μοντέλων Phi-3 με το Prompt flow στο Azure AI Foundry.
+Αυτό το δείγμα από άκρο σε άκρο (E2E) βασίζεται στον οδηγό "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" από την Microsoft Tech Community. Εισάγει τις διαδικασίες βελτιστοποίησης, ανάπτυξης και ενσωμάτωσης προσαρμοσμένων μοντέλων Phi-3 με το Prompt flow στο Microsoft Foundry.
 Σε αντίθεση με το δείγμα E2E, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", που περιελάμβανε τοπική εκτέλεση κώδικα, αυτό το σεμινάριο επικεντρώνεται εξ ολοκλήρου στη βελτιστοποίηση και ενσωμάτωση του μοντέλου σας μέσα στο Azure AI / ML Studio.
 
 ## Επισκόπηση
 
-Σε αυτό το δείγμα E2E, θα μάθετε πώς να βελτιστοποιείτε το μοντέλο Phi-3 και να το ενσωματώνετε με το Prompt flow στο Azure AI Foundry. Αξιοποιώντας το Azure AI / ML Studio, θα δημιουργήσετε μια ροή εργασίας για την ανάπτυξη και χρήση προσαρμοσμένων μοντέλων AI. Αυτό το δείγμα E2E χωρίζεται σε τρία σενάρια:
+Σε αυτό το δείγμα E2E, θα μάθετε πώς να βελτιστοποιείτε το μοντέλο Phi-3 και να το ενσωματώνετε με το Prompt flow στο Microsoft Foundry. Αξιοποιώντας το Azure AI / ML Studio, θα δημιουργήσετε μια ροή εργασίας για την ανάπτυξη και χρήση προσαρμοσμένων μοντέλων AI. Αυτό το δείγμα E2E χωρίζεται σε τρία σενάρια:
 
 **Σενάριο 1: Ρύθμιση πόρων Azure και Προετοιμασία για βελτιστοποίηση**
 
 **Σενάριο 2: Βελτιστοποίηση του μοντέλου Phi-3 και ανάπτυξη στο Azure Machine Learning Studio**
 
-**Σενάριο 3: Ενσωμάτωση με το Prompt flow και συνομιλία με το προσαρμοσμένο μοντέλο σας στο Azure AI Foundry**
+**Σενάριο 3: Ενσωμάτωση με το Prompt flow και συνομιλία με το προσαρμοσμένο μοντέλο σας στο Microsoft Foundry**
 
 Εδώ είναι μια επισκόπηση αυτού του δείγματος E2E.
 
@@ -30,7 +30,7 @@
     - [Βελτιστοποίηση του μοντέλου Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Ανάπτυξη του βελτιστοποιημένου μοντέλου Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Σενάριο 3: Ενσωμάτωση με Prompt flow και συνομιλία με το προσαρμοσμένο μοντέλο σας στο Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Σενάριο 3: Ενσωμάτωση με Prompt flow και συνομιλία με το προσαρμοσμένο μοντέλο σας στο Microsoft Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Ενσωμάτωση του προσαρμοσμένου μοντέλου Phi-3 με το Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Συνομιλία με το προσαρμοσμένο μοντέλο Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@
 > ![Ορίστε την κυκλοφορία.](../../../../../../translated_images/el/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Σενάριο 3: Ενσωμάτωση με Prompt flow και συνομιλία με το προσαρμοσμένο σας μοντέλο στο Azure AI Foundry
+## Σενάριο 3: Ενσωμάτωση με Prompt flow και συνομιλία με το προσαρμοσμένο σας μοντέλο στο Microsoft Foundry
 
 ### Ενσωμάτωση του προσαρμοσμένου μοντέλου Phi-3 με το Prompt flow
 
@@ -552,8 +552,8 @@
 
 Σε αυτή την άσκηση, θα:
 
-- Δημιουργήσετε το Azure AI Foundry Hub.
-- Δημιουργήσετε ένα Πρότζεκτ Azure AI Foundry.
+- Δημιουργήσετε το Microsoft Foundry Hub.
+- Δημιουργήσετε ένα Πρότζεκτ Microsoft Foundry.
 - Δημιουργήσετε Prompt flow.
 - Προσθέσετε μια προσαρμοσμένη σύνδεση για το fine-tuned μοντέλο Phi-3.
 - Ρυθμίσετε το Prompt flow για να συνομιλεί με το προσαρμοσμένο σας μοντέλο Phi-3.
@@ -561,11 +561,11 @@
 > [!NOTE]
 > Μπορείτε επίσης να ενσωματωθείτε με το Promptflow χρησιμοποιώντας το Azure ML Studio. Η ίδια διαδικασία ενσωμάτωσης μπορεί να εφαρμοστεί στο Azure ML Studio.
 
-#### Δημιουργία του Azure AI Foundry Hub
+#### Δημιουργία του Microsoft Foundry Hub
 
-Πρέπει να δημιουργήσετε ένα Hub πριν δημιουργήσετε το Project. Ένα Hub λειτουργεί σαν Resource Group, επιτρέποντάς σας να οργανώσετε και να διαχειριστείτε πολλαπλά Projects μέσα στο Azure AI Foundry.
+Πρέπει να δημιουργήσετε ένα Hub πριν δημιουργήσετε το Project. Ένα Hub λειτουργεί σαν Resource Group, επιτρέποντάς σας να οργανώσετε και να διαχειριστείτε πολλαπλά Projects μέσα στο Microsoft Foundry.
 
-1. Επισκεφτείτε το [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Επισκεφτείτε το [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Επιλέξτε **All hubs** από την αριστερή καρτέλα.
 
@@ -585,7 +585,7 @@
 
 1. Επιλέξτε **Επόμενο**.
 
-#### Δημιουργία έργου Azure AI Foundry
+#### Δημιουργία έργου Microsoft Foundry
 
 1. Στο Hub που δημιουργήσατε, επιλέξτε **Όλα τα έργα** από την καρτέλα αριστερά.
 
@@ -625,9 +625,9 @@
 
 #### Προσθήκη της Προσαρμοσμένης Σύνδεσης
 
-1. Επισκεφτείτε το [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Επισκεφτείτε το [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Πλοηγηθείτε στο έργο Azure AI Foundry που δημιουργήσατε.
+1. Πλοηγηθείτε στο έργο Microsoft Foundry που δημιουργήσατε.
 
 1. Στο έργο που δημιουργήσατε, επιλέξτε **Ρυθμίσεις** από την καρτέλα αριστερά.
 
@@ -653,9 +653,9 @@
 
 #### Δημιουργία Prompt flow
 
-Έχετε προσθέσει μια προσαρμοσμένη σύνδεση στο Azure AI Foundry. Τώρα, ας δημιουργήσουμε ένα Prompt flow ακολουθώντας τα παρακάτω βήματα. Στη συνέχεια, θα συνδέσετε το Prompt flow με την προσαρμοσμένη σύνδεση ώστε να μπορείτε να χρησιμοποιήσετε το προσαρμοσμένο μοντέλο μέσα στο Prompt flow.
+Έχετε προσθέσει μια προσαρμοσμένη σύνδεση στο Microsoft Foundry. Τώρα, ας δημιουργήσουμε ένα Prompt flow ακολουθώντας τα παρακάτω βήματα. Στη συνέχεια, θα συνδέσετε το Prompt flow με την προσαρμοσμένη σύνδεση ώστε να μπορείτε να χρησιμοποιήσετε το προσαρμοσμένο μοντέλο μέσα στο Prompt flow.
 
-1. Πλοηγηθείτε στο έργο Azure AI Foundry που δημιουργήσατε.
+1. Πλοηγηθείτε στο έργο Microsoft Foundry που δημιουργήσατε.
 
 1. Επιλέξτε **Prompt flow** από την καρτέλα αριστερά.
 
@@ -774,7 +774,7 @@
     ![Επικόλληση κώδικα prompt flow.](../../../../../../translated_images/el/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Για περισσότερες λεπτομέρειες σχετικά με τη χρήση του Prompt flow στο Azure AI Foundry, μπορείτε να ανατρέξετε στο [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Για περισσότερες λεπτομέρειες σχετικά με τη χρήση του Prompt flow στο Microsoft Foundry, μπορείτε να ανατρέξετε στο [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Επιλέξτε **Είσοδο συνομιλίας**, **Έξοδο συνομιλίας** για να ενεργοποιήσετε τη συνομιλία με το μοντέλο σας.
 

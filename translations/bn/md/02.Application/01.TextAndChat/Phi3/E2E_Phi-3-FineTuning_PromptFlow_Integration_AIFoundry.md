@@ -1,17 +1,17 @@
-# Fine-tune এবং কাস্টম Phi-3 মডেলগুলোকে Azure AI Foundry তে Prompt flow এর সাথে ইন্টিগ্রেট করুন
+# Fine-tune এবং কাস্টম Phi-3 মডেলগুলোকে Microsoft Foundry তে Prompt flow এর সাথে ইন্টিগ্রেট করুন
 
-Microsoft Tech Community থেকে "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" গাইড ভিত্তিক এই end-to-end (E2E) স্যাম্পলটি কাস্টম Phi-3 মডেল ফাইন-টিউনিং, ডিপ্লয়মেন্ট, এবং Azure AI Foundry তে Prompt flow এর সাথে ইন্টিগ্রেশনের প্রসেসসমূহ উপস্থাপন করে।
+Microsoft Tech Community থেকে "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" গাইড ভিত্তিক এই end-to-end (E2E) স্যাম্পলটি কাস্টম Phi-3 মডেল ফাইন-টিউনিং, ডিপ্লয়মেন্ট, এবং Microsoft Foundry তে Prompt flow এর সাথে ইন্টিগ্রেশনের প্রসেসসমূহ উপস্থাপন করে।
 E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" এর মধ্যে স্থানীয়ভাবে কোড চালানো হয়েছিল, কিন্তু এই টিউটোরিয়ালে আপনি সম্পূর্ণভাবে Azure AI / ML Studio তে আপনার মডেল ফাইন-টিউনিং এবং ইন্টিগ্রেশনে মনোনিবেশ করবেন।
 
 ## ওভারভিউ
 
-এই E2E স্যাম্পলে আপনি শিখবেন কিভাবে Phi-3 মডেল ফাইন-টিউন করে Azure AI Foundry তে Prompt flow এর সাথে ইন্টিগ্রেট করবেন। Azure AI / ML Studio ব্যবহার করে, আপনি কাস্টম AI মডেল ডিপ্লয় ও ব্যবহারের জন্য একটি ওয়ার্কফ্লো তৈরি করবেন। এই E2E স্যাম্পল তিনটি দৃশ্যপট এ ভাগ করা হয়েছে:
+এই E2E স্যাম্পলে আপনি শিখবেন কিভাবে Phi-3 মডেল ফাইন-টিউন করে Microsoft Foundry তে Prompt flow এর সাথে ইন্টিগ্রেট করবেন। Azure AI / ML Studio ব্যবহার করে, আপনি কাস্টম AI মডেল ডিপ্লয় ও ব্যবহারের জন্য একটি ওয়ার্কফ্লো তৈরি করবেন। এই E2E স্যাম্পল তিনটি দৃশ্যপট এ ভাগ করা হয়েছে:
 
 **দৃশ্যপট ১: Azure রিসোর্স সেটআপ এবং ফাইন-টিউনিং এর প্রস্তুতি**
 
 **দৃশ্যপট ২: Phi-3 মডেল ফাইন-টিউন এবং Azure Machine Learning Studio তে ডিপ্লয়**
 
-**দৃশ্যপট ৩: Prompt flow এর সাথে ইন্টিগ্রেট এবং Azure AI Foundry তে আপনার কাস্টম মডেলের সাথে চ্যাট**
+**দৃশ্যপট ৩: Prompt flow এর সাথে ইন্টিগ্রেট এবং Microsoft Foundry তে আপনার কাস্টম মডেলের সাথে চ্যাট**
 
 এখানে এই E2E স্যাম্পলের একটি ওভারভিউ দেওয়া হলো।
 
@@ -30,7 +30,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     - [Phi-3 মডেল ফাইন-টিউন করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [ফাইন-টিউন করা Phi-3 মডেল ডিপ্লয় করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[দৃশ্যপট ৩: Prompt flow এর সাথে ইন্টিগ্রেট করুন এবং Azure AI Foundry তে আপনার কাস্টম মডেলের সাথে চ্যাট করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[দৃশ্যপট ৩: Prompt flow এর সাথে ইন্টিগ্রেট করুন এবং Microsoft Foundry তে আপনার কাস্টম মডেলের সাথে চ্যাট করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [কাস্টম Phi-3 মডেল Prompt flow এর সাথে ইন্টিগ্রেট করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [আপনার কাস্টম Phi-3 মডেলের সাথে চ্যাট করুন](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -544,7 +544,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 > ![ট্র্যাফিক সেট করুন।](../../../../../../translated_images/bn/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## সিনারিও ৩: Prompt flow-এর সাথে ইন্টিগ্রেট করুন এবং Azure AI Foundry-তে আপনার কাস্টম মডেলের সাথে চ্যাট করুন
+## সিনারিও ৩: Prompt flow-এর সাথে ইন্টিগ্রেট করুন এবং Microsoft Foundry-তে আপনার কাস্টম মডেলের সাথে চ্যাট করুন
 
 ### কাস্টম Phi-3 মডেল Prompt flow-এর সাথে ইন্টিগ্রেট করুন
 
@@ -552,8 +552,8 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 এই অনুশীলনে, আপনি:
 
-- Azure AI Foundry Hub তৈরি করবেন।
-- Azure AI Foundry Project তৈরি করবেন।
+- Microsoft Foundry Hub তৈরি করবেন।
+- Microsoft Foundry Project তৈরি করবেন।
 - Prompt flow তৈরি করবেন।
 - ফাইন-টিউন করা Phi-3 মডেলের জন্য একটি কাস্টম সংযোগ যোগ করবেন।
 - আপনার কাস্টম Phi-3 মডেলের সাথে চ্যাট করার জন্য Prompt flow সেটআপ করবেন।
@@ -561,11 +561,11 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 > [!NOTE]
 > আপনি Azure ML Studio ব্যবহার করেও Promptflow-এর সাথে ইন্টিগ্রেট করতে পারেন। একই ইন্টিগ্রেশন প্রক্রিয়া Azure ML Studio-তেও প্রয়োগযোগ্য।
 
-#### Azure AI Foundry Hub তৈরি করুন
+#### Microsoft Foundry Hub তৈরি করুন
 
-প্রজেক্ট তৈরি করার আগে একটি হাব তৈরি করতে হবে। একটি হাব একটি রিসোর্স গ্রুপের মতো কাজ করে, যা আপনাকে Azure AI Foundry-র মধ্যে একাধিক প্রজেক্ট সংগঠিত ও পরিচালনা করার সুযোগ দেয়।
+প্রজেক্ট তৈরি করার আগে একটি হাব তৈরি করতে হবে। একটি হাব একটি রিসোর্স গ্রুপের মতো কাজ করে, যা আপনাকে Microsoft Foundry-র মধ্যে একাধিক প্রজেক্ট সংগঠিত ও পরিচালনা করার সুযোগ দেয়।
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ভিজিট করুন।
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ভিজিট করুন।
 
 1. বাম পাশের ট্যাব থেকে **All hubs** নির্বাচন করুন।
 
@@ -585,7 +585,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 1. **Next** নির্বাচন করুন।
 
-#### Azure AI Foundry Project তৈরি করুন
+#### Microsoft Foundry Project তৈরি করুন
 
 1. আপনি যে Hub তৈরি করেছেন, সেখানে বাম দিকের ট্যাব থেকে **All projects** নির্বাচন করুন।
 
@@ -625,9 +625,9 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 #### কাস্টম কানেকশন যোগ করুন
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ভিজিট করুন।
+1. [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo) ভিজিট করুন।
 
-1. আপনি যে Azure AI Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
+1. আপনি যে Microsoft Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
 
 1. আপনি যে প্রজেক্ট তৈরি করেছেন, সেখানে বাম পাশের ট্যাব থেকে **Settings** নির্বাচন করুন।
 
@@ -653,9 +653,9 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
 
 #### Prompt flow তৈরি করুন
 
-আপনি Azure AI Foundry-তে কাস্টম কানেকশন যোগ করেছেন। এখন, নিম্নলিখিত ধাপগুলো অনুসরণ করে একটি Prompt flow তৈরি করুন। এর পরে, আপনি এই Prompt flow-কে কাস্টম কানেকশনের সাথে সংযুক্ত করবেন যাতে আপনি অতিনির্মিত মডেলটি Prompt flow-এর ভিতরে ব্যবহার করতে পারেন।
+আপনি Microsoft Foundry-তে কাস্টম কানেকশন যোগ করেছেন। এখন, নিম্নলিখিত ধাপগুলো অনুসরণ করে একটি Prompt flow তৈরি করুন। এর পরে, আপনি এই Prompt flow-কে কাস্টম কানেকশনের সাথে সংযুক্ত করবেন যাতে আপনি অতিনির্মিত মডেলটি Prompt flow-এর ভিতরে ব্যবহার করতে পারেন।
 
-1. আপনি যে Azure AI Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
+1. আপনি যে Microsoft Foundry প্রজেক্ট তৈরি করেছেন সেখানে যান।
 
 1. বাম পাশের ট্যাব থেকে **Prompt flow** নির্বাচন করুন।
 
@@ -774,7 +774,7 @@ E2E স্যাম্পল "[Fine-Tune and Integrate Custom Phi-3 Models with 
     ![Paste prompt flow code.](../../../../../../translated_images/bn/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Azure AI Foundry-তে Prompt flow ব্যবহার সম্পর্কিত আরও বিস্তারিত তথ্যের জন্য, আপনি [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) দেখতে পারেন।
+> Microsoft Foundry-তে Prompt flow ব্যবহার সম্পর্কিত আরও বিস্তারিত তথ্যের জন্য, আপনি [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) দেখতে পারেন।
 
 1. **Chat input**, **Chat output** নির্বাচন করুন যাতে আপনার মডেলের সাথে চ্যাট সক্ষম হয়।
 

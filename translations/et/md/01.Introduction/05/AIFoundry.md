@@ -1,17 +1,17 @@
-# **Azure AI Foundry kasutamine hindamiseks**
+# **Microsoft Foundry kasutamine hindamiseks**
 
 ![aistudo](../../../../../imgs/01/05/AIFoundry/AIFoundry.png)
 
-Kuidas hinnata oma generatiivse tehisintellekti rakendust, kasutades [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Olenemata sellest, kas hindate ühe pöörde või mitme pöörde vestlusi, pakub Azure AI Foundry tööriistu mudeli jõudluse ja turvalisuse hindamiseks.
+Kuidas hinnata oma generatiivse tehisintellekti rakendust, kasutades [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Olenemata sellest, kas hindate ühe pöörde või mitme pöörde vestlusi, pakub Microsoft Foundry tööriistu mudeli jõudluse ja turvalisuse hindamiseks.
 
 ![aistudo](../../../../../imgs/01/05/AIFoundry/AIPortfolio.png)
 
-## Kuidas hinnata generatiivseid tehisintellekti rakendusi Azure AI Foundry abil
-Lisateabe saamiseks vaadake [Azure AI Foundry dokumentatsiooni](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo).
+## Kuidas hinnata generatiivseid tehisintellekti rakendusi Microsoft Foundry abil
+Lisateabe saamiseks vaadake [Microsoft Foundry dokumentatsiooni](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo).
 
 Siin on sammud alustamiseks:
 
-## Generatiivsete tehisintellekti mudelite hindamine Azure AI Foundry abil
+## Generatiivsete tehisintellekti mudelite hindamine Microsoft Foundry abil
 
 **Eeltingimused**
 
@@ -21,13 +21,13 @@ Siin on sammud alustamiseks:
 
 ## Sisseehitatud hindamismõõdikud
 
-Azure AI Foundry võimaldab hinnata nii ühe pöörde kui ka keerulisi, mitme pöörde vestlusi.  
+Microsoft Foundry võimaldab hinnata nii ühe pöörde kui ka keerulisi, mitme pöörde vestlusi.  
 Retrieval Augmented Generation (RAG) stsenaariumide puhul, kus mudel põhineb spetsiifilistel andmetel, saate jõudlust hinnata sisseehitatud hindamismõõdikute abil.  
 Lisaks saate hinnata üldisi ühe pöörde küsimuste-vastuste stsenaariume (mitte-RAG).
 
 ## Hindamisprotsessi loomine
 
-Azure AI Foundry kasutajaliideses navigeerige kas hindamise lehele või Prompt Flow lehele.  
+Microsoft Foundry kasutajaliideses navigeerige kas hindamise lehele või Prompt Flow lehele.  
 Järgige hindamise loomise viisardit, et seadistada hindamisprotsess. Andke oma hindamisele valikuline nimi.  
 Valige stsenaarium, mis vastab teie rakenduse eesmärkidele.  
 Valige üks või mitu hindamismõõdikut mudeli väljundi hindamiseks.
@@ -38,9 +38,9 @@ Suurema paindlikkuse saavutamiseks saate luua kohandatud hindamisprotsessi. Koha
 
 ## Tulemuste vaatamine
 
-Pärast hindamise läbiviimist logige, vaadake ja analüüsige üksikasjalikke hindamismõõdikuid Azure AI Foundry keskkonnas. Saage ülevaade oma rakenduse võimekusest ja piirangutest.
+Pärast hindamise läbiviimist logige, vaadake ja analüüsige üksikasjalikke hindamismõõdikuid Microsoft Foundry keskkonnas. Saage ülevaade oma rakenduse võimekusest ja piirangutest.
 
-**Märkus** Azure AI Foundry on hetkel avalikus eelvaates, seega kasutage seda katsetamiseks ja arendamiseks. Tootmiskoormuste jaoks kaaluge muid võimalusi. Lisateabe ja samm-sammuliste juhiste saamiseks uurige ametlikku [AI Foundry dokumentatsiooni](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
+**Märkus** Microsoft Foundry on hetkel avalikus eelvaates, seega kasutage seda katsetamiseks ja arendamiseks. Tootmiskoormuste jaoks kaaluge muid võimalusi. Lisateabe ja samm-sammuliste juhiste saamiseks uurige ametlikku [AI Foundry dokumentatsiooni](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
 
 ---
 

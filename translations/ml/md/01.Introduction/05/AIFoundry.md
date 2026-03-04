@@ -1,17 +1,17 @@
-# **Using Azure AI Foundry to evaluation**
+# **Using Microsoft Foundry to evaluation**
 
 ![aistudo](../../../../../translated_images/ml/AIFoundry.9e0b513e999a1c5a.webp)
 
-How to evaluate your generative AI application using [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Whether you're assessing single-turn or multi-turn conversations, Azure AI Foundry provides tools for evaluating model performance and safety. 
+How to evaluate your generative AI application using [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Whether you're assessing single-turn or multi-turn conversations, Microsoft Foundry provides tools for evaluating model performance and safety. 
 
 ![aistudo](../../../../../translated_images/ml/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## How to evaluate generative AI apps with Azure AI Foundry
-For more details instruction see the [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## How to evaluate generative AI apps with Microsoft Foundry
+For more details instruction see the [Microsoft Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Here are the steps to get started:
 
-## Evaluating Generative AI Models in Azure AI Foundry
+## Evaluating Generative AI Models in Microsoft Foundry
 
 **ആവശ്യങ്ങൾ**
 
@@ -21,11 +21,11 @@ Here are the steps to get started:
 
 ## Built-in Evaluation Metrics
 
-Azure AI Foundry നിങ്ങളെ single-turn കൂടാതെ സങ്കീർണ്ണമായ multi-turn സംഭാഷണങ്ങളിലെയും മൂല്യനിർണയം നടത്താനാവുന്നതാണ്. Retrieval Augmented Generation (RAG) സാഹചര്യങ്ങളിൽ, മോഡൽ പ്രത്യേക ഡാറ്റയിൽ ഉറപ്പിച്ചിരിക്കുന്നപ്പോൾ, നിര്‍മിച്ചിട്ടുള്ള എവല്യൂവേഷൻ മെട്രിക്‌സ് ഉപയോഗിച്ച് പ്രകടനം വിലയിരുത്താവുന്നതാണ്. പൊതു single-turn ചോദ്യോത്തരങ്ങളായ (non-RAG) senarios-കൾക്കും നിങ്ങൾ മൂല്യനിർണയം നടത്താം.
+Microsoft Foundry നിങ്ങളെ single-turn കൂടാതെ സങ്കീർണ്ണമായ multi-turn സംഭാഷണങ്ങളിലെയും മൂല്യനിർണയം നടത്താനാവുന്നതാണ്. Retrieval Augmented Generation (RAG) സാഹചര്യങ്ങളിൽ, മോഡൽ പ്രത്യേക ഡാറ്റയിൽ ഉറപ്പിച്ചിരിക്കുന്നപ്പോൾ, നിര്‍മിച്ചിട്ടുള്ള എവല്യൂവേഷൻ മെട്രിക്‌സ് ഉപയോഗിച്ച് പ്രകടനം വിലയിരുത്താവുന്നതാണ്. പൊതു single-turn ചോദ്യോത്തരങ്ങളായ (non-RAG) senarios-കൾക്കും നിങ്ങൾ മൂല്യനിർണയം നടത്താം.
 
 ## Creating an Evaluation Run
 
-Azure AI Foundry UI-യിൽ നിന്ന് Evaluate പേജ് അല്ലെങ്കിൽ Prompt Flow പേജിലേക്കു നാവിഗേറ്റ് ചെയ്യുക. എവല്യൂഷൻ റൺ സജ്ജമാക്കാൻ evaluation creation വിസാർഡ് പിന്തുടരുക. നിങ്ങളുടെ മൂല്യനിർണയത്തിന് ഐച്ഛികമായൊരു പേര് നൽകുക. നിങ്ങളുടെ ആപ്ലിക്കേഷന്റെ ലക്ഷ്യങ്ങളെ അനുയോജ്യമായ സീനാര്യോ തിരഞ്ഞെടുക്കുക. മോഡലിന്റെ ഔട്ട്പുട്ട് വിലയിരുത്തുന്നതിനായി ഒരു അല്ലെങ്കിൽ കൂടുതല്‍ എവല്യൂവേഷൻ മെട്രിക്‌സ് തിരഞ്ഞെടുക്കുക.
+Microsoft Foundry UI-യിൽ നിന്ന് Evaluate പേജ് അല്ലെങ്കിൽ Prompt Flow പേജിലേക്കു നാവിഗേറ്റ് ചെയ്യുക. എവല്യൂഷൻ റൺ സജ്ജമാക്കാൻ evaluation creation വിസാർഡ് പിന്തുടരുക. നിങ്ങളുടെ മൂല്യനിർണയത്തിന് ഐച്ഛികമായൊരു പേര് നൽകുക. നിങ്ങളുടെ ആപ്ലിക്കേഷന്റെ ലക്ഷ്യങ്ങളെ അനുയോജ്യമായ സീനാര്യോ തിരഞ്ഞെടുക്കുക. മോഡലിന്റെ ഔട്ട്പുട്ട് വിലയിരുത്തുന്നതിനായി ഒരു അല്ലെങ്കിൽ കൂടുതല്‍ എവല്യൂവേഷൻ മെട്രിക്‌സ് തിരഞ്ഞെടുക്കുക.
 
 ## Custom Evaluation Flow (Optional)
 
@@ -33,9 +33,9 @@ Azure AI Foundry UI-യിൽ നിന്ന് Evaluate പേജ് അല്
 
 ## Viewing Results
 
-എവല്യൂവേഷൻ 실행ിച്ചതിനു ശേഷം, Azure AI Foundry-യിൽ വിശദമായ എവല്യൂവേഷൻ മെട്രിക്സുകൾ ലോഗ് ചെയ്യുകയും കാണിക്കുകയും വിശകലനം ചെയ്യുകയും ചെയ്യുക. നിങ്ങളുടെ ആപ്ലിക്കേഷന്റെ ശേഷികളും പരിധികളും കുറിച്ചുള്ള洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞
+എവല്യൂവേഷൻ 실행ിച്ചതിനു ശേഷം, Microsoft Foundry-യിൽ വിശദമായ എവല്യൂവേഷൻ മെട്രിക്സുകൾ ലോഗ് ചെയ്യുകയും കാണിക്കുകയും വിശകലനം ചെയ്യുകയും ചെയ്യുക. നിങ്ങളുടെ ആപ്ലിക്കേഷന്റെ ശേഷികളും പരിധികളും കുറിച്ചുള്ള洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞洞
 
-**കുറിപ്പ്** Azure AI Foundry ഇപ്പോൾ public preview-ൽ ആണ്, അതിനാൽ പരീക്ഷണത്തിനും വികസനത്തിനും ഉപയോഗിക്കുക. പ്രൊഡക്ഷൻ വർക്‌ലോഡുകൾക്കായി മറ്റ് انتخابങ്ങൾ പരിഗണിക്കുക. കൂടുതൽ വിശദാംശങ്ങൾക്കും ഘട്ടം-ഘട്ട നിർദേശങ്ങൾക്കുമായി ഔദ്യോഗിക [AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) കാണുക.
+**കുറിപ്പ്** Microsoft Foundry ഇപ്പോൾ public preview-ൽ ആണ്, അതിനാൽ പരീക്ഷണത്തിനും വികസനത്തിനും ഉപയോഗിക്കുക. പ്രൊഡക്ഷൻ വർക്‌ലോഡുകൾക്കായി മറ്റ് انتخابങ്ങൾ പരിഗണിക്കുക. കൂടുതൽ വിശദാംശങ്ങൾക്കും ഘട്ടം-ഘട്ട നിർദേശങ്ങൾക്കുമായി ഔദ്യോഗിക [AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) കാണുക.
 
 ---
 
