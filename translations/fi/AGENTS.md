@@ -2,39 +2,39 @@
 
 ## Projektin yleiskatsaus
 
-PhiCookBook on kattava keittokirjasto, joka sisältää käytännön esimerkkejä, opetusmateriaaleja ja dokumentaatiota Microsoftin Phi-pienkielimallien (SLM) kanssa työskentelyyn. Kirjasto esittelee erilaisia käyttötapauksia, kuten päättelyä, hienosäätöä, kvantisointia, RAG-toteutuksia ja multimodaalisia sovelluksia eri alustoilla ja kehyksillä.
+PhiCookBook on kattava reseptikirjavarasto, joka sisältää käytännön esimerkkejä, tutoriaaleja ja dokumentaatiota Microsoftin Phi-pienen kielimalliperheen (SLM) käyttöön. Varasto esittelee erilaisia käyttötapauksia, kuten päättelyä, hienosäätöä, kvantisointia, RAG-toteutuksia ja multimodaalisia sovelluksia eri alustoilla ja kehyksissä.
 
 **Keskeiset teknologiat:**
 - **Kielet:** Python, C#/.NET, JavaScript/Node.js
 - **Kehykset:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Alustat:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **Mallityypit:** Phi-3, Phi-3.5, Phi-4 (teksti, visio, multimodaali, päättelyvariantit)
+- **Alustat:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Mallityypit:** Phi-3, Phi-3.5, Phi-4 (teksti-, näkö-, multimodaaliset ja päättelyvariantit)
 
-**Arkiston rakenne:**
+**Varaston rakenne:**
 - `/code/` - Toimivia koodiesimerkkejä ja näytetoteutuksia
-- `/md/` - Yksityiskohtainen dokumentaatio, opetusmateriaalit ja ohjeet  
+- `/md/` - Yksityiskohtainen dokumentaatio, tutoriaalit ja käyttöohjeet  
 - `/translations/` - Monikieliset käännökset (yli 50 kieltä automatisoidun työnkulun kautta)
-- `/.devcontainer/` - Kehityskontin konfiguraatio (Python 3.12 Ollaman kanssa)
+- `/.devcontainer/` - Kehityskonttikonfiguraatio (Python 3.12 Ollaman kanssa)
 
 ## Kehitysympäristön asennus
 
-### GitHub Codespacesin tai kehityskonttien käyttö (suositeltu)
+### GitHub Codespacesin tai dev-konttien käyttö (suositeltu)
 
-1. Avaa GitHub Codespacesissa (nopein tapa):
+1. Avaa GitHub Codespacesissa (nopein):
    - Klikkaa README-tiedoston "Open in GitHub Codespaces" -merkkiä
    - Kontti konfiguroituu automaattisesti Python 3.12:lla ja Ollamalla Phi-3:n kanssa
 
-2. Avaa VS Code Dev Containersissa:
+2. Avaa VS Code Dev Containers -ympäristössä:
    - Käytä README-tiedoston "Open in Dev Containers" -merkkiä
-   - Kontti vaatii vähintään 16GB RAM-muistia isäntäkoneelta
+   - Kontti vaatii vähintään 16 Gt isäntämuistia
 
 ### Paikallinen asennus
 
-**Edellytykset:**
+**Esivaatimukset:**
 - Python 3.12 tai uudempi
-- .NET 8.0 SDK (C#-esimerkkejä varten)
-- Node.js 18+ ja npm (JavaScript-esimerkkejä varten)
-- Suositeltu vähintään 16GB RAM-muistia
+- .NET 8.0 SDK (C#-esimerkkeihin)
+- Node.js 18+ ja npm (JavaScript-esimerkkeihin)
+- Suositus vähintään 16 Gt RAM
 
 **Asennus:**
 ```bash
@@ -42,68 +42,68 @@ git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
 ```
 
-**Python-esimerkkejä varten:**
-Siirry tiettyihin esimerkkihakemistoihin ja asenna riippuvuudet:
+**Python-esimerkeille:**
+Siirry kunkin esimerkin hakemistoon ja asenna riippuvuudet:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # jos requirements.txt on olemassa
 ```
 
-**.NET-esimerkkejä varten:**
+**.NET-esimerkeille:**
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**JavaScript/Web-esimerkkejä varten:**
+**JavaScript-/Web-esimerkeille:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Käynnistä kehityspalvelin
+npm run build  # Rakenna tuotantoon
 ```
 
-## Arkiston järjestely
+## Varaston järjestys
 
 ### Koodiesimerkit (`/code/`)
 
-- **01.Introduce/** - Perusaloitukset ja ensimmäiset esimerkit
-- **03.Finetuning/** ja **04.Finetuning/** - Hienosäätöesimerkit eri menetelmillä
-- **03.Inference/** - Päättelyesimerkit eri laitteistoilla (AIPC, MLX)
-- **06.E2E/** - Päästä päähän -sovellusesimerkit
-- **07.Lab/** - Laboratorio-/kokeelliset toteutukset
-- **08.RAG/** - Retrieval-Augmented Generation -esimerkit
-- **09.UpdateSamples/** - Viimeisimmät päivitetyt esimerkit
+- **01.Introduce/** - Perusesittelyt ja aloitusesimerkit
+- **03.Finetuning/** ja **04.Finetuning/** - Hienosäätöesimerkkejä eri menetelmillä
+- **03.Inference/** - Päättelyesimerkkejä eri laitteilla (AIPC, MLX)
+- **06.E2E/** - Päätepisteestä päähän sovellusnäytteitä
+- **07.Lab/** - Laboratorio- ja kokeelliset toteutukset
+- **08.RAG/** - Retrieval-Augmented Generation -näytteitä
+- **09.UpdateSamples/** - Viimeisimmät päivitetyt näytteet
 
 ### Dokumentaatio (`/md/`)
 
 - **01.Introduction/** - Johdanto-oppaat, ympäristön asennus, alustaoppaat
-- **02.Application/** - Sovellusesimerkit tyypin mukaan (Teksti, Koodi, Visio, Audio jne.)
-- **02.QuickStart/** - Pikakäynnistysoppaat Azure AI Foundrylle ja GitHub-malleille
-- **03.FineTuning/** - Hienosäätödokumentaatio ja opetusmateriaalit
+- **02.Application/** - Sovellusnäytteet tyypin mukaan (Teksti, Koodi, Näkö, Ääni jne.)
+- **02.QuickStart/** - Pikakäynnistysoppaat Microsoft Foundrylle ja GitHub Malleille
+- **03.FineTuning/** - Hienosäätöön liittyvä dokumentaatio ja tutoriaalit
 - **04.HOL/** - Käytännön laboratoriot (sisältää .NET-esimerkkejä)
 
 ### Tiedostomuodot
 
-- **Jupyter Notebooks (`.ipynb`)** - Interaktiiviset Python-opetusmateriaalit, merkitty 📓 README:ssa
-- **Python Scripts (`.py`)** - Itsenäiset Python-esimerkit
-- **C# Projects (`.csproj`, `.sln`)** - .NET-sovellukset ja esimerkit
-- **JavaScript (`.js`, `package.json`)** - Web-pohjaiset ja Node.js-esimerkit
+- **Jupyter-muistikirjat (`.ipynb`)** - Interaktiiviset Python-tutoriaalit, merkitty 📓 README-tiedostossa
+- **Python-skriptit (`.py`)** - Itsenäiset Python-esimerkit
+- **C#-projektit (`.csproj`, `.sln`)** - .NET-sovellukset ja näytteet
+- **JavaScript (`.js`, `package.json`)** - Web- ja Node.js-esimerkit
 - **Markdown (`.md`)** - Dokumentaatio ja oppaat
 
 ## Esimerkkien käyttö
 
-### Jupyter Notebooksin suorittaminen
+### Jupyter-muistikirjojen ajaminen
 
-Useimmat esimerkit ovat saatavilla Jupyter-notebookeina:
+Suurin osa esimerkeistä on Jupyter-muistikirjoina:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Avaa selaimen käyttöliittymän
+# Siirry haluttuun .ipynb-tiedostoon
 ```
 
-### Python-skriptien suorittaminen
+### Python-skriptien ajaminen
 
 ```bash
 cd code/<example-directory>
@@ -111,107 +111,107 @@ pip install -r requirements.txt
 python <script-name>.py
 ```
 
-### .NET-esimerkkien suorittaminen
+### .NET-esimerkkien ajaminen
 
 ```bash
 cd md/04.HOL/dotnet/src/<project-name>
 dotnet run
 ```
 
-Tai rakenna koko ratkaisu:
+Tai käännä kokonainen ratkaisu:
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### JavaScript/Web-esimerkkien suorittaminen
+### JavaScript/Web-esimerkkien ajaminen
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Kehitys kuuman uudelleenlatauksen kanssa
 ```
 
 ## Testaus
 
-Tämä arkisto sisältää esimerkkikoodia ja opetusmateriaaleja, eikä ole perinteinen ohjelmistoprojekti yksikkötesteillä. Validointi tehdään yleensä seuraavasti:
+Tämä varasto sisältää esimerkkikoodeja ja tutoriaaleja, ei perinteistä yksikkötestattua ohjelmistoprojektia. Varmennus tehdään tyypillisesti seuraavasti:
 
-1. **Esimerkkien suorittaminen** - Jokaisen esimerkin tulisi toimia ilman virheitä
-2. **Tulosten tarkistaminen** - Varmista, että mallin vastaukset ovat asianmukaisia
-3. **Opetusmateriaalien seuraaminen** - Ohjeiden tulisi toimia dokumentoidusti
+1. **Esimerkkien suoritus** - Kunkin esimerkin tulee suorittua ilman virheitä
+2. **Tulosten tarkastus** - Tarkista, että mallin vastaukset ovat asianmukaisia
+3. **Tutoriaalien seuraaminen** - Opastuksia noudattamalla tulisi toimia kuten dokumentoitu
 
-**Yleinen validointitapa:**
+**Yleinen validointimenetelmä:**
 - Testaa esimerkkien suoritus kohdeympäristössä
-- Varmista, että riippuvuudet asentuvat oikein
-- Tarkista, että mallit latautuvat onnistuneesti
-- Vahvista, että odotettu käyttäytyminen vastaa dokumentaatiota
+- Varmista riippuvuuksien asennus onnistuu
+- Tarkista, että mallit ladataan oikein
+- Vahvista odotettu käyttäytyminen dokumentaation mukaiseksi
 
 ## Koodityyli ja käytännöt
 
 ### Yleiset ohjeet
 
-- Esimerkkien tulee olla selkeitä, hyvin kommentoituja ja opettavaisia
-- Noudata kieleen liittyviä käytäntöjä (PEP 8 Pythonille, C#-standardit .NET:lle)
-- Pidä esimerkit keskittyneinä tiettyjen Phi-mallien ominaisuuksien esittelyyn
-- Sisällytä kommentteja, jotka selittävät keskeiset käsitteet ja mallikohtaiset parametrit
+- Esimerkkien tulee olla selkeitä, hyvin kommentoituja ja opettavia
+- Noudata kielen omia konventioita (PEP 8 Pythonille, C#-standardit .NET:lle)
+- Keskity näyttämään Phi-mallien ominaisuudet
+- Sisällytä kommentteja keskeisistä käsitteistä ja mallikohtaisista parametreista
 
-### Dokumentaatiostandardit
+### Dokumentaation standardit
 
 **URL-muotoilu:**
-- Käytä `[teksti](../../url)` -muotoa ilman ylimääräisiä välilyöntejä
-- Suhteelliset linkit: Käytä `./` nykyiselle hakemistolle, `../` ylemmälle
-- Älä käytä maakohtaisia kielikoodeja URL-osoitteissa (vältä `/en-us/`, `/en/`)
+- Käytä `[teksti](../../url)`-muotoa ilman ylimääräisiä välilyöntejä
+- Relatiiviset linkit: Käytä `./` nykyinen hakemisto, `../` ylempi hakemisto
+- Ei maa- tai aluekohtaisia paikallisia koodeja URL:issa (vältä esim. `/en-us/`, `/en/`)
 
 **Kuvat:**
-- Tallenna kaikki kuvat `/imgs/`-hakemistoon
-- Käytä kuvailevia nimiä englanninkielisin kirjaimin, numeroin ja viivoilla
-- Esimerkki: `phi-3-architecture.png`
+- Säilytä kaikki kuvat `/imgs/`-hakemistossa
+- Käytä kuvaavia nimiä, joissa on englanninkielisiä merkkejä, numeroita ja viivoja
+- Esim. `phi-3-architecture.png`
 
 **Markdown-tiedostot:**
 - Viittaa toimiviin esimerkkeihin `/code/`-hakemistossa
-- Pidä dokumentaatio synkronoituna koodimuutosten kanssa
-- Käytä 📓-emojia merkitsemään Jupyter-notebook-linkkejä README:ssa
+- Pidä dokumentaatio synkronoitu koodimuutosten kanssa
+- Merkitse Jupyter-muistikirja-linkit README:ssa 📓-emojilla
 
-### Tiedostojen järjestely
+### Tiedostojen järjestäminen
 
-- Koodiesimerkit `/code/`-hakemistossa järjestetty aiheen/ominaisuuden mukaan
-- Dokumentaatio `/md/`-hakemistossa peilaa koodirakennetta, kun mahdollista
-- Pidä liittyvät tiedostot (notebookit, skriptit, konfiguraatiot) yhdessä alihakemistoissa
+- Koodiesimerkit `/code/` järjestetty aiheen/ominaisuuden mukaan
+- Dokumentaatio `/md/` peilaa koodirakennetta tarvittaessa
+- Pidä liittyvät tiedostot (muistikirjat, skriptit, konfiguraatiot) yhdessä alihakemistoissa
 
-## Pull Request -ohjeet
+## Pull request -ohjeet
 
 ### Ennen lähettämistä
 
-1. **Forkkaa arkisto** omaan tiliisi
-2. **Erota PR:t tyypin mukaan:**
-   - Virhekorjaukset yhteen PR:ään
-   - Dokumentaatiopäivitykset toiseen
-   - Uudet esimerkit erillisiin PR:iin
-   - Typokorjaukset voidaan yhdistää
+1. **Forkkaa varasto** omaan tiliin
+2. **Erota PR:it tyypin mukaan:**
+   - Korjaukset yhdessä PR:ssa
+   - Dokumentaatiopäivitykset toisessa
+   - Uudet esimerkit omissa PR:issaan
+   - Kirjoitusvirheiden korjaukset voi yhdistää
 
-3. **Käsittele yhdistämiskonfliktit:**
-   - Päivitä paikallinen `main`-haara ennen muutosten tekemistä
-   - Synkronoi upstreamin kanssa usein
+3. **Sulautusristiriitojen käsittely:**
+   - Päivitä paikallinen `main`-haara ennen muutoksia
+   - Synkronoi upstreamin kanssa säännöllisesti
 
 4. **Käännös-PR:t:**
-   - Sisältää käännökset KAIKILLE tiedostoille kansiossa
-   - Säilytä alkuperäisen kielen rakenne
+   - Sisällytä käännökset KAIKILLE tiedostoille kyseisessä kansiossa
+   - Pidä rakenne yhdenmukaisena alkuperäiskielen kanssa
 
-### Vaaditut tarkistukset
+### Pakolliset tarkistukset
 
-PR:t suorittavat automaattisesti GitHub-työnkulkuja, jotka validoivat:
+PR:t ajavat automaattisesti GitHub-työnkulkuja varmistaakseen:
 
-1. **Suhteellisten polkujen validointi** - Kaikkien sisäisten linkkien tulee toimia
+1. **Relatiivisten polkujen validointi** - Kaikkien sisäisten linkkien on toimittava
    - Testaa linkit paikallisesti: Ctrl+Klikkaa VS Codessa
-   - Käytä VS Coden polkuehdotuksia (`./` tai `../`)
+   - Käytä VS Coden polkujen ehdotuksia (`./` tai `../`)
 
-2. **URL-kielikoodien tarkistus** - Web-URL-osoitteissa ei saa olla kielikoodeja
+2. **URL:n paikallisuus-tarkistus** - Verkkourleissa ei saa olla maan paikalliskoodia
    - Poista `/en-us/`, `/en/` tai muut kielikoodit
-   - Käytä yleisiä kansainvälisiä URL-osoitteita
+   - Käytä yleismaailmallisia URL-osoitteita
 
-3. **Rikkoutuneiden URL-osoitteiden tarkistus** - Kaikkien URL-osoitteiden tulee palauttaa 200-tila
-   - Varmista, että linkit ovat saavutettavissa ennen lähettämistä
-   - Huom: Jotkut virheet voivat johtua verkkorajoituksista
+3. **Rikkoutuneiden URL:ien tarkistus** - Kaikkien URL:ien on palautettava 200-statustila
+   - Varmista linkkien toimivuus ennen lähettämistä
+   - Huom: Jotkin virheet voivat johtua verkkorajoituksista
 
 ### PR-otsikon muoto
 
@@ -220,38 +220,38 @@ PR:t suorittavat automaattisesti GitHub-työnkulkuja, jotka validoivat:
 ```
 
 Esimerkkejä:
-- `[docs] Lisää Phi-4-päättelyopas`
-- `[code] Korjaa ONNX Runtime -integraatioesimerkki`
-- `[translation] Lisää japaninkielinen käännös johdanto-oppaista`
+- `[docs] Lisää Phi-4 päättelytutoriaali`
+- `[code] Korjaa ONNX Runtime -integraatio-esimerkki`
+- `[translation] Lisää japaninkielinen käännös johdanto-oppaalle`
 
-## Yleiset kehityskäytännöt
+## Yleisiä kehitysmalleja
 
-### Työskentely Phi-mallien kanssa
+### Phi-mallien käyttö
 
-**Mallin lataaminen:**
-- Esimerkit käyttävät erilaisia kehyksiä: Transformers, ONNX Runtime, MLX, OpenVINO
-- Mallit ladataan yleensä Hugging Facesta, Azuresta tai GitHub-malleista
-- Tarkista mallin yhteensopivuus laitteistosi kanssa (CPU, GPU, NPU)
+**Mallin lataus:**
+- Esimerkeissä käytetään erilaisia kehyksiä: Transformers, ONNX Runtime, MLX, OpenVINO
+- Malleja ladataan tyypillisesti Hugging Facesta, Azuren kautta tai GitHub Models -palvelusta
+- Tarkista mallin yhteensopivuus laitteesi kanssa (CPU, GPU, NPU)
 
 **Päättelymallit:**
-- Tekstintuotanto: Useimmat esimerkit käyttävät chat/instruct-variantteja
-- Visio: Phi-3-vision ja Phi-4-multimodaali kuvien ymmärtämiseen
-- Audio: Phi-4-multimodaali tukee äänisyötteitä
-- Päättely: Phi-4-reasoning-variantit edistyneisiin päättelytehtäviin
+- Tekstin generointi: Useimmissa esimerkeissä chat-/ohjeistusvariantit
+- Näkö: Phi-3-vision ja Phi-4-multimodal kuvantunnistukseen
+- Ääni: Phi-4-multimodal tukee ääniosioita
+- Päättely: Phi-4-reasoning -variantit edistyneeseen päättelyyn
 
 ### Alustakohtaiset huomiot
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Vaatii Azure-tilauksen ja API-avaimet
-- Katso `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
+- Ks. `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
 - Ilmainen taso testaukseen
-- Katso `/md/02.QuickStart/GitHubModel_QuickStart.md`
+- Ks. `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Paikallinen päättely:**
-- ONNX Runtime: Monialustainen, optimoitu päättely
-- Ollama: Helppo paikallinen mallien hallinta (esikonfiguroitu kehityskontissa)
+- ONNX Runtime: Alustariippumaton ja optimoitu päättely
+- Ollama: Helppo paikallinen mallinhallinta (esiasetettu kehityskontissa)
 - Apple MLX: Optimoitu Apple Siliconille
 
 ## Vianmääritys
@@ -259,71 +259,73 @@ Esimerkkejä:
 ### Yleiset ongelmat
 
 **Muistiongelmat:**
-- Phi-mallit vaativat paljon RAM-muistia (erityisesti visio/multimodaali-variantit)
-- Käytä kvantisoituja malleja resurssirajoitteisissa ympäristöissä
-- Katso `/md/01.Introduction/04/QuantifyingPhi.md`
+- Phi-mallit vaativat merkittävästi RAM-muistia (erityisesti näkö-/multimodaaliset variantit)
+- Käytä kvantisoituja malleja resurssirajoitteisissa tilanteissa
+- Ks. `/md/01.Introduction/04/QuantifyingPhi.md`
 
-**Riippuvuuskonfliktit:**
-- Python-esimerkeillä voi olla erityisiä versiorajoituksia
-- Käytä virtuaaliympäristöjä jokaiselle esimerkille
-- Tarkista yksittäiset `requirements.txt`-tiedostot
+**Riippuvuusristiriidat:**
+- Python-esimerkit voivat vaatia tarkkoja versioita
+- Käytä virtuaaliympäristöjä kullekin esimerkkikansioille
+- Tarkista yksittäiset `requirements.txt` -tiedostot
 
 **Mallin latausvirheet:**
-- Suuret mallit voivat aikakatkaista hitailla yhteyksillä
-- Harkitse pilviympäristöjen käyttöä (Codespaces, Azure)
+- Suuret mallit voivat aikakatketa hitaisilla yhteyksillä
+- Harkitse pilviympäristöjä (Codespaces, Azure)
 - Tarkista Hugging Face -välimuisti: `~/.cache/huggingface/`
 
 **.NET-projektien ongelmat:**
 - Varmista, että .NET 8.0 SDK on asennettu
 - Käytä `dotnet restore` ennen rakentamista
-- Jotkut projektit sisältävät CUDA-spesifisiä konfiguraatioita (Debug_Cuda)
+- Joissain projekteissa on CUDA-spesifisiä asetuksia (Debug_Cuda)
 
 **JavaScript/Web-esimerkit:**
-- Käytä Node.js 18+ yhteensopivuuden varmistamiseksi
+- Käytä Node.js 18+:aa yhteensopivuuden takia
 - Tyhjennä `node_modules` ja asenna uudelleen, jos ongelmia ilmenee
-- Tarkista selaimen konsoli WebGPU-yhteensopivuusongelmien varalta
+- Tarkista selaimen konsolista WebGPU-yhteensopivuusvirheet
 
-### Apua saatavilla
+### Apua saat:
 
-- **Discord:** Liity Azure AI Foundry Community Discordiin
-- **GitHub Issues:** Ilmoita virheistä ja ongelmista arkistossa
-- **GitHub Discussions:** Esitä kysymyksiä ja jaa tietoa
+- **Discord:** Liity Microsoft Foundry Community Discordiin
+- **GitHub Issues:** Raportoi bugit ja ongelmat
+- **GitHub Discussions:** Kysy, jaa tietoa ja keskustele
 
 ## Lisätietoa
 
 ### Vastuullinen tekoäly
 
-Kaiken Phi-mallien käytön tulee noudattaa Microsoftin vastuullisen tekoälyn periaatteita:
-- Oikeudenmukaisuus, luotettavuus, turvallisuus
-- Yksityisyys ja turvallisuus  
-- Osallistavuus, läpinäkyvyys, vastuullisuus
-- Käytä Azure AI Content Safetyä tuotantosovelluksissa
-- Katso `/md/01.Introduction/01/01.AISafety.md`
+Kaikkien Phi-mallien käytön tulee noudattaa Microsoftin vastuullisen tekoälyn periaatteita:
+- Reiluus, luotettavuus, turvallisuus
+- Yksityisyys ja tietoturva  
+- Osallisuus, läpinäkyvyys, vastuullisuus
+- Käytä Azure AI Content Safetya tuotantosovelluksissa
+- Ks. `/md/01.Introduction/01/01.AISafety.md`
 
 ### Käännökset
 
-- Yli 50 kieltä tuettuna automatisoidun GitHub Actionin kautta
+- Yli 50 kieltä tuettu automaattisella GitHub Action -prosessilla
 - Käännökset `/translations/`-hakemistossa
 - Ylläpidetään co-op-translator-työnkululla
-- Älä muokkaa käännettyjä tiedostoja manuaalisesti (automaattisesti luotu)
+- Älä muokkaa käännettyjä tiedostoja manuaalisesti (automaattisesti tuotettu)
 
 ### Osallistuminen
 
-- Noudata `CONTRIBUTING.md`-ohjeita
+- Noudata ohjeita `CONTRIBUTING.md`-tiedostossa
 - Hyväksy Contributor License Agreement (CLA)
-- Noudata Microsoft Open Source Code of Conductia
-- Älä sisällytä tietoturvaan liittyviä tietoja tai tunnuksia committeihin
+- Noudata Microsoftin avoimen lähdekoodin käytäntöjä
+- Pidä turhat tiedot, kuten salasanat ja avaimet, pois commit-teista
 
 ### Monikielinen tuki
 
-Tämä on monikielinen arkisto, joka sisältää esimerkkejä seuraavilla kielillä:
-- **Python** - ML/AI-työnkulut, Jupyter-notebookit, hienosäätö
+Tämä on polyglotti-varasto, jossa esimerkkejä näillä kielillä:
+- **Python** - ML/AI-työnkulut, Jupyter-muistikirjat, hienosäätö
 - **C#/.NET** - Yrityssovellukset, ONNX Runtime -integraatio
-- **JavaScript** - Web-pohjainen tekoäly, selaimen päättely WebGPU:lla
+- **JavaScript** - Web-pohjainen tekoäly, selaimen päättely WebGPU:n avulla
 
-Valitse kieli, joka parhaiten sopii käyttötarkoitukseesi ja käyttöympäristöösi.
+Valitse kieli, joka parhaiten sopii käyttötarkoitukseesi ja käyttöönottoympäristöösi.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttäen tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on virallinen ja päätösvaltainen lähde. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskääntäjän tekemää käännöstä. Emme ole vastuussa mahdollisista väärinymmärryksistä tai tulkintaongelmista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

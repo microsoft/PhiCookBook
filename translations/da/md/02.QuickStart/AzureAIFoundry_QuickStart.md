@@ -1,87 +1,91 @@
-# **Brug af Phi-3 i Azure AI Foundry**
+# **Brug af Phi-3 i Microsoft Foundry**
 
-Med udviklingen af Generativ AI håber vi at kunne bruge en samlet platform til at håndtere forskellige LLM og SLM, integration af virksomhedens data, finjustering/RAG-operationer samt evaluering af forskellige forretningsområder efter integration af LLM og SLM, osv., så generativ AI kan implementeres bedre i smarte applikationer. [Azure AI Foundry](https://ai.azure.com) er en generativ AI-applikationsplatform på virksomhedsniveau.
+Med udviklingen af Generativ AI håber vi at bruge en samlet platform til at håndtere forskellige LLM og SLM, virksomhedens dataintegration, finjustering/RAG-operationer og evaluering af forskellige virksomhedsområder efter integration af LLM og SLM osv., så generativ AI kan implementeres bedre i smarte applikationer. [Microsoft Foundry](https://ai.azure.com) er en virksomhedsplatform til generative AI-applikationer.
 
 ![aistudo](../../../../translated_images/da/aifoundry_home.f28a8127c96c7d93.webp)
 
-Med Azure AI Foundry kan du evaluere svar fra store sprogmodeller (LLM) og orkestrere prompt-applikationskomponenter med prompt flow for bedre ydeevne. Platformen muliggør skalerbarhed, så proof of concepts nemt kan omdannes til fuld produktion. Kontinuerlig overvågning og forbedring understøtter langsigtet succes.
+Med Microsoft Foundry kan du evaluere store sprogmodellers (LLM) svar og orkestrere promptapplikationskomponenter med prompt flow for bedre ydeevne. Platformen fremmer skalerbarhed for nemt at omdanne proof of concepts til fuld produktion. Kontinuerlig overvågning og forfining understøtter langsigtet succes.
 
-Vi kan hurtigt implementere Phi-3 modellen på Azure AI Foundry gennem enkle trin og derefter bruge Azure AI Foundry til at udføre Phi-3 relateret Playground/Chat, finjustering, evaluering og andre tilknyttede opgaver.
+Vi kan hurtigt implementere Phi-3-modellen på Microsoft Foundry gennem simple trin og derefter bruge Microsoft Foundry til at udføre Phi-3 relateret Playground/Chat, finjustering, evaluering og andet relateret arbejde.
 
 ## **1. Forberedelse**
 
-Hvis du allerede har [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) installeret på din maskine, er det lige så nemt som at køre denne kommando i en ny mappe at bruge denne skabelon.
+Hvis du allerede har [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) installeret på din maskine, er det så simpelt som at køre denne kommando i en ny mappe for at bruge denne skabelon.
 
-## Manuel oprettelse
+## Manuel Oprettelse
 
-At oprette et Microsoft Azure AI Foundry-projekt og hub er en god måde at organisere og administrere dit AI-arbejde på. Her er en trin-for-trin guide til at komme i gang:
+At oprette et Microsoft Foundry-projekt og et hub er en god måde at organisere og administrere dit AI-arbejde på. Her er en trin-for-trin guide til at komme i gang:
 
-### Oprettelse af et projekt i Azure AI Foundry
+### Oprettelse af et projekt i Microsoft Foundry
 
-1. **Gå til Azure AI Foundry**: Log ind på Azure AI Foundry-portalen.
+1. **Gå til Microsoft Foundry**: Log ind på Microsoft Foundry-portalen.
 2. **Opret et projekt**:
-   - Hvis du allerede er i et projekt, vælg "Azure AI Foundry" øverst til venstre på siden for at gå til startsiden.
-   - Vælg "+ Create project".
+   - Hvis du er i et projekt, skal du vælge "Microsoft Foundry" øverst til venstre på siden for at gå til startsiden.
+   - Vælg "+ Opret projekt".
    - Indtast et navn til projektet.
-   - Hvis du har en hub, vil den blive valgt som standard. Hvis du har adgang til flere hubs, kan du vælge en anden fra dropdown-menuen. Hvis du vil oprette en ny hub, vælg "Create new hub" og angiv et navn.
-   - Vælg "Create".
+   - Hvis du har et hub, vælges det som standard. Hvis du har adgang til flere hubs, kan du vælge et andet fra dropdown-menuen. Hvis du vil oprette et nyt hub, vælg "Opret nyt hub" og angiv et navn.
+   - Vælg "Opret".
 
-### Oprettelse af en hub i Azure AI Foundry
+### Oprettelse af et hub i Microsoft Foundry
 
-1. **Gå til Azure AI Foundry**: Log ind med din Azure-konto.
-2. **Opret en hub**:
+1. **Gå til Microsoft Foundry**: Log ind med din Azure-konto.
+2. **Opret et hub**:
    - Vælg Management center i venstremenuen.
-   - Vælg "All resources", klik på pilen ved siden af "+ New project" og vælg "+ New hub".
-   - I dialogboksen "Create a new hub" indtast et navn til din hub (f.eks. contoso-hub) og tilpas de øvrige felter efter behov.
-   - Vælg "Next", gennemgå oplysningerne, og vælg derefter "Create".
+   - Vælg "Alle ressourcer", klik derefter på pilen ned ved siden af "+ Nyt projekt" og vælg "+ Nyt hub".
+   - I dialogboksen "Opret et nyt hub" indtast et navn til dit hub (f.eks. contoso-hub) og rediger de andre felter efter ønske.
+   - Vælg "Næste", gennemgå oplysningerne, og vælg derefter "Opret".
 
-For mere detaljerede instruktioner kan du se den officielle [Microsoft-dokumentation](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
+For mere detaljerede instruktioner kan du henvise til den officielle [Microsoft dokumentation](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
 
 Efter vellykket oprettelse kan du få adgang til det studio, du har oprettet, via [ai.azure.com](https://ai.azure.com/)
 
-Der kan være flere projekter i én AI Foundry. Opret et projekt i AI Foundry som forberedelse.
+Der kan være flere projekter på en AI Foundry. Opret et projekt i AI Foundry som forberedelse.
 
-Opret Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Opret Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
 
-## **2. Implementer en Phi-model i Azure AI Foundry**
+## **2. Implementer en Phi-model i Microsoft Foundry**
 
-Klik på Explore-muligheden for projektet for at gå ind i Model Catalog og vælg Phi-3
+Klik på Explore-muligheden i projektet for at gå til Model Catalog og vælg Phi-3
 
 Vælg Phi-3-mini-4k-instruct
 
-Klik på 'Deploy' for at implementere Phi-3-mini-4k-instruct modellen
+Klik 'Deploy' for at implementere Phi-3-mini-4k-instruct-modellen
 
 > [!NOTE]
 >
-> Du kan vælge beregningskraft ved implementering
+> Du kan vælge computerkraft ved implementering
 
-## **3. Playground Chat Phi i Azure AI Foundry**
+## **3. Playground Chat Phi i Microsoft Foundry**
 
-Gå til implementeringssiden, vælg Playground, og chat med Phi-3 i Azure AI Foundry
+Gå til implementeringssiden, vælg Playground, og chat med Phi-3 i Microsoft Foundry
 
-## **4. Implementering af modellen fra Azure AI Foundry**
+## **4. Implementering af modellen fra Microsoft Foundry**
 
 For at implementere en model fra Azure Model Catalog kan du følge disse trin:
 
-- Log ind på Azure AI Foundry.
-- Vælg den model, du vil implementere, fra Azure AI Foundry modelkataloget.
-- På modellens Detaljeside vælg Deploy og derefter Serverless API med Azure AI Content Safety.
-- Vælg det projekt, hvor du vil implementere dine modeller. For at bruge Serverless API-tilbuddet skal dit workspace høre til regionen East US 2 eller Sweden Central. Du kan tilpasse navnet på implementeringen.
-- I implementeringsguiden vælg Pricing and terms for at læse om priser og brugsbetingelser.
-- Vælg Deploy. Vent, indtil implementeringen er klar, og du bliver omdirigeret til Deployments-siden.
-- Vælg Open in playground for at begynde at interagere med modellen.
-- Du kan vende tilbage til Deployments-siden, vælge implementeringen og notere endpointets Target URL og Secret Key, som du kan bruge til at kalde implementeringen og generere svar.
-- Du kan altid finde endpointets detaljer, URL og adgangsnøgler ved at gå til Build-fanen og vælge Deployments under Components-sektionen.
+- Log ind på Microsoft Foundry.
+- Vælg den model, du vil implementere, fra Microsoft Foundry's modelkatalog.
+- På modellens detaljer-side, vælg Deploy og vælg derefter Serverless API med Azure AI Content Safety.
+- Vælg det projekt, hvor du ønsker at implementere dine modeller. For at bruge Serverless API-tilbuddet, skal dit arbejdsområde tilhøre regionen East US 2 eller Sweden Central. Du kan tilpasse navnet på implementeringen.
+- På implementeringsguiden vælges Priser og vilkår for at lære om priser og brugsbetingelser.
+- Vælg Deploy. Vent til implementeringen er klar, og du bliver omdirigeret til siden Implementeringer.
+- Vælg Åbn i playground for at begynde at interagere med modellen.
+- Du kan vende tilbage til siden Implementeringer, vælge implementeringen og notere slutpunktets Target URL og Secret Key, som du kan bruge til at kalde implementeringen og generere svar.
+- Du kan altid finde slutpunktets oplysninger, URL og adgangsnøgler ved at navigere til Build-fanen og vælge Implementeringer fra komponentsektionen.
 
 > [!NOTE]
-> Bemærk, at din konto skal have Azure AI Developer-rolle tilladelser på Resource Group for at kunne udføre disse trin.
+> Bemærk venligst, at din konto skal have Azure AI Developer-rolle tilladelser på Resource Group for at udføre disse trin.
 
-## **5. Brug af Phi API i Azure AI Foundry**
+## **5. Brug af Phi API i Microsoft Foundry**
 
-Du kan tilgå https://{Your project name}.region.inference.ml.azure.com/swagger.json via Postman GET og kombinere det med Key for at lære om de tilgængelige interfaces
+Du kan tilgå https://{Dit projektnavn}.region.inference.ml.azure.com/swagger.json via Postman GET og kombinere det med nøgle for at lære om de tilgængelige grænseflader
 
-Du kan meget nemt få fat i både forespørgselsparametre og svarparametre.
+Du kan meget nemt få fat i forespørgselsparametre samt svarparametre.
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
