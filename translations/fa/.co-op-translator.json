@@ -1,7 +1,7 @@
 {
   "AGENTS.md": {
-    "original_hash": "72e00a4ddbe9d6c25907d1eb19d041b8",
-    "translation_date": "2025-10-17T10:47:34+00:00",
+    "original_hash": "0a8abf7e5b23d3dd6d59cf82a4a14514",
+    "translation_date": "2026-03-06T04:09:45+00:00",
     "source_file": "AGENTS.md",
     "language_code": "fa"
   },
@@ -12,8 +12,8 @@
     "language_code": "fa"
   },
   "README.md": {
-    "original_hash": "18b709ed9fde91c7229c1de6e6ed0c47",
-    "translation_date": "2026-02-11T11:48:09+00:00",
+    "original_hash": "f98b389efd6bb16fad3ad3c4be273e49",
+    "translation_date": "2026-03-06T04:14:38+00:00",
     "source_file": "README.md",
     "language_code": "fa"
   },
@@ -45,6 +45,12 @@
     "original_hash": "4164123a700fecd535d850f09506d72a",
     "translation_date": "2025-07-16T16:24:06+00:00",
     "source_file": "code/04.Finetuning/olive-ort-example/README.md",
+    "language_code": "fa"
+  },
+  "code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb": {
+    "original_hash": "11e3f99abd178a635084cdbe5ac07600",
+    "translation_date": "2026-03-06T04:08:38+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb",
     "language_code": "fa"
   },
   "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md": {
@@ -132,20 +138,20 @@
     "language_code": "fa"
   },
   "md/01.Introduction/01/01.Guidance.md": {
-    "original_hash": "bd049872f37c3079c87d4fe17109cea0",
-    "translation_date": "2025-07-16T18:14:29+00:00",
+    "original_hash": "50ca6463006ed7cedbd4c08e82136485",
+    "translation_date": "2026-03-06T04:22:54+00:00",
     "source_file": "md/01.Introduction/01/01.Guidance.md",
     "language_code": "fa"
   },
   "md/01.Introduction/01/01.Hardwaresupport.md": {
-    "original_hash": "8cdc17ce0f10535da30b53d23fe1a795",
-    "translation_date": "2025-07-16T18:23:10+00:00",
+    "original_hash": "0b53204571fa5ed09677a1d6a4b3d5f9",
+    "translation_date": "2026-03-06T04:23:27+00:00",
     "source_file": "md/01.Introduction/01/01.Hardwaresupport.md",
     "language_code": "fa"
   },
   "md/01.Introduction/01/01.PhiFamily.md": {
-    "original_hash": "8ef41b679d85adc42be3e0cbee97f7f1",
-    "translation_date": "2025-07-18T21:21:31+00:00",
+    "original_hash": "4db35a4c4444d43044fd2f8653f0a6fa",
+    "translation_date": "2026-03-06T04:23:17+00:00",
     "source_file": "md/01.Introduction/01/01.PhiFamily.md",
     "language_code": "fa"
   },
@@ -168,8 +174,8 @@
     "language_code": "fa"
   },
   "md/01.Introduction/02/03.AzureAIFoundry.md": {
-    "original_hash": "3ae21dc5554e888defbe57946ee995ee",
-    "translation_date": "2025-07-16T19:07:00+00:00",
+    "original_hash": "ef023b5d60f372148a47cb28078b1991",
+    "translation_date": "2026-03-06T04:24:37+00:00",
     "source_file": "md/01.Introduction/02/03.AzureAIFoundry.md",
     "language_code": "fa"
   },
@@ -180,8 +186,8 @@
     "language_code": "fa"
   },
   "md/01.Introduction/02/05.AITK.md": {
-    "original_hash": "4951d458c0b60c02cd1e751b40903877",
-    "translation_date": "2025-07-16T19:21:30+00:00",
+    "original_hash": "2544cf9df11c315e301d2f3796b63153",
+    "translation_date": "2026-03-06T04:24:24+00:00",
     "source_file": "md/01.Introduction/02/05.AITK.md",
     "language_code": "fa"
   },
@@ -192,8 +198,8 @@
     "language_code": "fa"
   },
   "md/01.Introduction/02/07.FoundryLocal.md": {
-    "original_hash": "52973a5680a65a810aa80b7036afd31f",
-    "translation_date": "2025-07-16T19:42:26+00:00",
+    "original_hash": "9baadad68fd1974324dc30cdd792f7fd",
+    "translation_date": "2026-03-06T04:23:50+00:00",
     "source_file": "md/01.Introduction/02/07.FoundryLocal.md",
     "language_code": "fa"
   },
@@ -300,8 +306,8 @@
     "language_code": "fa"
   },
   "md/01.Introduction/05/AIFoundry.md": {
-    "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-    "translation_date": "2025-07-16T22:28:46+00:00",
+    "original_hash": "474cdaf37e063a2d17ee4c7c29e5b3cf",
+    "translation_date": "2026-03-06T04:22:34+00:00",
     "source_file": "md/01.Introduction/05/AIFoundry.md",
     "language_code": "fa"
   },
@@ -312,8 +318,8 @@
     "language_code": "fa"
   },
   "md/01.Introduction/05/ResponsibleAI.md": {
-    "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-    "translation_date": "2025-07-16T22:47:48+00:00",
+    "original_hash": "29ca729feaf07a17847be1b020acba07",
+    "translation_date": "2026-03-06T04:22:19+00:00",
     "source_file": "md/01.Introduction/05/ResponsibleAI.md",
     "language_code": "fa"
   },
@@ -324,8 +330,8 @@
     "language_code": "fa"
   },
   "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md": {
-    "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-    "translation_date": "2025-07-16T23:14:04+00:00",
+    "original_hash": "651a6c85c349581d566b086f3e325424",
+    "translation_date": "2026-03-06T04:21:44+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
     "language_code": "fa"
   },
@@ -336,8 +342,8 @@
     "language_code": "fa"
   },
   "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md": {
-    "original_hash": "0df910a227098303cc392b6ad204c271",
-    "translation_date": "2026-01-06T04:12:14+00:00",
+    "original_hash": "7548b81809741c500d3e80b1c0af4847",
+    "translation_date": "2026-03-06T04:19:57+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
     "language_code": "fa"
   },
@@ -438,8 +444,8 @@
     "language_code": "fa"
   },
   "md/02.Application/02.Code/Phi3/VSCodeExt/README.md": {
-    "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-    "translation_date": "2025-07-17T03:33:46+00:00",
+    "original_hash": "f3c153720d2d14b60fe390def02a0e4b",
+    "translation_date": "2026-03-06T04:16:23+00:00",
     "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
     "language_code": "fa"
   },
@@ -510,8 +516,8 @@
     "language_code": "fa"
   },
   "md/02.QuickStart/AzureAIFoundry_QuickStart.md": {
-    "original_hash": "3a1e48b628022485aac989c9f733e792",
-    "translation_date": "2025-07-17T05:19:09+00:00",
+    "original_hash": "86a19afad410d7f03de7e864e773c737",
+    "translation_date": "2026-03-06T04:15:56+00:00",
     "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
     "language_code": "fa"
   },
@@ -534,8 +540,8 @@
     "language_code": "fa"
   },
   "md/03.FineTuning/FineTuning_AIFoundry.md": {
-    "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-    "translation_date": "2025-07-17T05:56:03+00:00",
+    "original_hash": "08b0bb5de6cba7df70cd3121a2b840a6",
+    "translation_date": "2026-03-06T04:15:17+00:00",
     "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
     "language_code": "fa"
   },
@@ -582,8 +588,8 @@
     "language_code": "fa"
   },
   "md/03.FineTuning/FineTuning_Scenarios.md": {
-    "original_hash": "09a4893f6433229a9654a2dafafeaff6",
-    "translation_date": "2026-03-02T09:09:16+00:00",
+    "original_hash": "f5977c8743deaa7c72940243f9594236",
+    "translation_date": "2026-03-06T04:15:36+00:00",
     "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
     "language_code": "fa"
   },
