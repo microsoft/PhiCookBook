@@ -1,86 +1,91 @@
-# **Using Phi-3 in Azure AI Foundry**
+# **Using Phi-3 in Microsoft Foundry**
 
-With the rise of Generative AI, we aim to use a unified platform to manage different LLMs and SLMs, integrate enterprise data, handle fine-tuning/RAG operations, and evaluate various enterprise applications after integrating LLMs and SLMs, enabling smarter generative AI applications. [Azure AI Foundry](https://ai.azure.com) is an enterprise-grade generative AI application platform.
+With the development of Generative AI, we hope to use a unified platform to manage different LLM and SLM, enterprise data integration, fine-tuning/RAG operations, and the evaluation of different enterprise businesses after integrating LLM and SLM, etc., so that generative AI can Smart applications are better implemented. [Microsoft Foundry](https://ai.azure.com) is an enterprise-level generative AI application platform.
 
 ![aistudo](../../../../translated_images/en/aifoundry_home.f28a8127c96c7d93.webp)
 
-Azure AI Foundry allows you to evaluate large language model (LLM) responses and orchestrate prompt application components using prompt flow for improved performance. The platform supports scalability, making it easy to transition from proof of concepts to full production. Continuous monitoring and refinement ensure long-term success.
+With Microsoft Foundry, you can evaluate large language model (LLM) responses and orchestrate prompt application components with prompt flow for better performance. The platform facilitates scalability for transforming proof of concepts into full-fledged production with ease. Continuous monitoring and refinement support long-term success.
 
-You can quickly deploy the Phi-3 model on Azure AI Foundry with simple steps, then use Azure AI Foundry to handle Phi-3 related Playground/Chat, fine-tuning, evaluation, and other tasks.
+We can quickly deploy the Phi-3 model on Microsoft Foundry through simple steps, and then use Microsoft Foundry to complete Phi-3 related Playground/Chat, Fine-tuning, evaluation and other related work.
 
 ## **1. Preparation**
 
-If you already have the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) installed on your machine, using this template is as easy as running this command in a new directory.
+If you already have the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) installed on your machine, using this template is as simple as running this command in a new directory.
 
 ## Manual Creation
 
-Creating a Microsoft Azure AI Foundry project and hub is a great way to organize and manage your AI work. Here’s a step-by-step guide to get started:
+Creating a Microsoft Foundry project and hub is a great way to organize and manage your AI work. Here's a step-by-step guide to get you started:
 
-### Creating a Project in Azure AI Foundry
+### Creating a Project in Microsoft Foundry
 
-1. **Go to Azure AI Foundry**: Sign in to the Azure AI Foundry portal.
+1. **Go to Microsoft Foundry**: Sign in to the Microsoft Foundry portal.
 2. **Create a Project**:
-   - If you’re inside a project, select "Azure AI Foundry" at the top left to go to the Home page.
-   - Click "+ Create project".
-   - Enter a name for your project.
-   - If you have a hub, it will be selected by default. If you have access to multiple hubs, you can choose a different one from the dropdown. To create a new hub, select "Create new hub" and provide a name.
-   - Click "Create".
+   - If you're in a project, select "Microsoft Foundry" at the top left of the page to go to the Home page.
+   - Select "+ Create project".
+   - Enter a name for the project.
+   - If you have a hub, it will be selected by default. If you have access to more than one hub, you can select a different one from the dropdown. If you want to create a new hub, select "Create new hub" and supply a name.
+   - Select "Create".
 
-### Creating a Hub in Azure AI Foundry
+### Creating a Hub in Microsoft Foundry
 
-1. **Go to Azure AI Foundry**: Sign in with your Azure account.
+1. **Go to Microsoft Foundry**: Sign in with your Azure account.
 2. **Create a Hub**:
    - Select the Management center from the left menu.
-   - Click "All resources", then the down arrow next to "+ New project" and select "+ New hub".
-   - In the "Create a new hub" dialog, enter a name for your hub (e.g., contoso-hub) and adjust other fields as needed.
-   - Click "Next", review the details, then click "Create".
+   - Select "All resources", then the down arrow next to "+ New project" and select "+ New hub".
+   - In the "Create a new hub" dialog, enter a name for your hub (e.g., contoso-hub) and modify the other fields as desired.
+   - Select "Next", review the information, and then select "Create".
 
-For more detailed instructions, refer to the official [Microsoft documentation](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
+For more detailed instructions, you can refer to the official [Microsoft documentation](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
 
-Once created, you can access your studio through [ai.azure.com](https://ai.azure.com/).
+After successful creation, you can access the studio you created through [ai.azure.com](https://ai.azure.com/)
 
-You can have multiple projects within one AI Foundry. Create a project in AI Foundry to get started.
+There can be multiple projects on one AI Foundry. Create a project in AI Foundry to prepare.
 
-Check out Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code).
+Create Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. Deploy a Phi model in Azure AI Foundry**
 
-Click the Explore option in your project to open the Model Catalog and select Phi-3.
+## **2. Deploy a Phi model in Microsoft Foundry**
 
-Choose Phi-3-mini-4k-instruct.
+Click the Explore option of the project to enter the Model Catalog and select Phi-3
 
-Click 'Deploy' to deploy the Phi-3-mini-4k-instruct model.
+Select Phi-3-mini-4k-instruct
+
+Click 'Deploy' to deploy the Phi-3-mini-4k-instruct model
 
 > [!NOTE]
 >
-> You can select the computing power during deployment.
+> You can select computing power when deploying
 
-## **3. Playground Chat Phi in Azure AI Foundry**
+## **3. Playground Chat Phi in Microsoft Foundry**
 
-Go to the deployment page, select Playground, and start chatting with Phi-3 in Azure AI Foundry.
+Go to the deployment page, select Playground, and chat with Phi-3 of Microsoft Foundry
 
-## **4. Deploying the Model from Azure AI Foundry**
+## **4. Deploying the Model from Microsoft Foundry**
 
-To deploy a model from the Azure Model Catalog, follow these steps:
+To deploy a model from the Azure Model Catalog, you can follow these steps:
 
-- Sign in to Azure AI Foundry.
-- Select the model you want to deploy from the Azure AI Foundry model catalog.
-- On the model’s Details page, click Deploy, then choose Serverless API with Azure AI Content Safety.
-- Select the project where you want to deploy your model. To use the Serverless API, your workspace must be in the East US 2 or Sweden Central region. You can customize the Deployment name.
-- In the deployment wizard, review Pricing and terms to understand the costs and usage policies.
-- Click Deploy. Wait until deployment completes and you’re redirected to the Deployments page.
-- Click Open in playground to start interacting with the model.
-- You can return to the Deployments page, select your deployment, and find the endpoint’s Target URL and Secret Key, which you’ll use to call the deployment and generate completions.
-- You can always find endpoint details, URLs, and access keys by going to the Build tab and selecting Deployments under Components.
+- Sign in to Microsoft Foundry.
+- Choose the model you want to deploy from the Microsoft Foundry model catalog.
+- On the model's Details page, select Deploy and then select Serverless API with Azure AI Content Safety.
+- Select the project in which you want to deploy your models. To use the Serverless API offering, your workspace must belong to the East US 2 or Sweden Central region. You can customize the Deployment name.
+- On the deployment wizard, select the Pricing and terms to learn about the pricing and terms of use.
+- Select Deploy. Wait until the deployment is ready and you're redirected to the Deployments page.
+- Select Open in playground to start interacting with the model.
+- You can return to the Deployments page, select the deployment, and note the endpoint's Target URL and the Secret Key, which you can use to call the deployment and generate completions.
+- You can always find the endpoint's details, URL, and access keys by navigating to the Build tab and selecting Deployments from the Components section.
 
 > [!NOTE]
-> Make sure your account has the Azure AI Developer role permissions on the Resource Group to perform these steps.
+> Please note that your account must have the Azure AI Developer role permissions on the Resource Group to perform these steps.
 
-## **5. Using Phi API in Azure AI Foundry**
+## **5. Using Phi API in Microsoft Foundry**
 
-You can access https://{Your project name}.region.inference.ml.azure.com/swagger.json via Postman GET and combine it with your Key to explore the available interfaces.
+You can access https://{Your project name}.region.inference.ml.azure.com/swagger.json through Postman GET and combine it with Key to learn about the provided interfaces
 
-This makes it easy to get request parameters as well as response parameters.
+You can get the request parameters very conveniently, as well as the response parameters.
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
