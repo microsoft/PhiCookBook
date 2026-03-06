@@ -1,46 +1,50 @@
-# **Bruke Azure AI Foundry til evaluering**
+# **Bruke Microsoft Foundry til evaluering**
 
 ![aistudo](../../../../../translated_images/no/AIFoundry.9e0b513e999a1c5a.webp)
 
-Hvordan evaluere din generative AI-applikasjon ved hjelp av [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Enten du vurderer enkle eller komplekse samtaler med flere runder, gir Azure AI Foundry verktøy for å evaluere modellens ytelse og sikkerhet.
+Hvordan evaluere din generative AI-applikasjon ved bruk av [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Enten du vurderer en-til-en eller fler-til-en samtaler, tilbyr Microsoft Foundry verktøy for å evaluere modellens ytelse og sikkerhet.
 
 ![aistudo](../../../../../translated_images/no/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Hvordan evaluere generative AI-apper med Azure AI Foundry
-For mer detaljerte instruksjoner, se [Azure AI Foundry-dokumentasjonen](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Hvordan evaluere generative AI-apper med Microsoft Foundry
+For mer detaljerte instruksjoner, se [Microsoft Foundry Dokumentasjon](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Her er stegene for å komme i gang:
 
-## Evaluering av generative AI-modeller i Azure AI Foundry
+## Evaluering av generative AI-modeller i Microsoft Foundry
 
 **Forutsetninger**
 
-- Et testdatasett i CSV- eller JSON-format.
-- En distribuert generativ AI-modell (som Phi-3, GPT 3.5, GPT 4 eller Davinci-modeller).
-- En runtime med en compute-instans for å kjøre evalueringen.
+- Et testdatasett i enten CSV- eller JSON-format.
+- En distribuert generativ AI-modell (som Phi-3, GPT 3.5, GPT 4, eller Davinci-modeller).
+- En runtime med en beregningsinstans for å kjøre evalueringen.
 
 ## Innebygde evalueringsmetrikker
 
-Azure AI Foundry lar deg evaluere både enkle og komplekse samtaler med flere runder.  
-For Retrieval Augmented Generation (RAG)-scenarier, hvor modellen er basert på spesifikk data, kan du vurdere ytelsen ved hjelp av innebygde evalueringsmetrikker.  
-I tillegg kan du evaluere generelle enkle spørsmål-og-svar-scenarier (ikke-RAG).
+Microsoft Foundry lar deg evaluere både enkle og komplekse fler-til-en samtaler.
+For Retrieval Augmented Generation (RAG) scenarier, hvor modellen er forankret i spesifikke data, kan du vurdere ytelsen ved bruk av innebygde evalueringsmetrikker.
+I tillegg kan du evaluere generelle en-til-en spørsmåls- og svarscenarier (ikke-RAG).
 
-## Opprette en evalueringskjøring
+## Opprette en evaluering
 
-Fra Azure AI Foundry UI, naviger til enten Evaluate-siden eller Prompt Flow-siden.  
-Følg veiviseren for å sette opp en evalueringskjøring. Gi et valgfritt navn til evalueringen din.  
-Velg scenariet som samsvarer med målene for applikasjonen din.  
-Velg en eller flere evalueringsmetrikker for å vurdere modellens output.
+Fra Microsoft Foundry UI, gå til enten Evalueringssiden eller Prompt Flow-siden.
+Følg veiviseren for evaluering for å sette opp en evaluering. Gi et valgfritt navn til evalueringen din.
+Velg scenarioet som samsvarer med applikasjonens mål.
+Velg en eller flere evalueringsmetrikker for å vurdere modellens resultater.
 
 ## Tilpasset evalueringsflyt (valgfritt)
 
-For større fleksibilitet kan du opprette en tilpasset evalueringsflyt. Tilpass evalueringsprosessen basert på dine spesifikke behov.
+For større fleksibilitet kan du etablere en tilpasset evalueringsflyt. Tilpass evalueringsprosessen basert på dine spesifikke krav.
 
-## Se resultater
+## Vise resultater
 
-Etter at evalueringen er kjørt, kan du logge, se og analysere detaljerte evalueringsmetrikker i Azure AI Foundry. Få innsikt i applikasjonens styrker og begrensninger.
+Etter at evalueringen er kjørt, kan du logge, se og analysere detaljerte evalueringsmetrikker i Microsoft Foundry. Få innsikt i applikasjonens evner og begrensninger.
 
-**Note** Azure AI Foundry er for øyeblikket i offentlig forhåndsvisning, så bruk det til eksperimentering og utvikling. For produksjonsarbeidsbelastninger bør du vurdere andre alternativer. Utforsk den offisielle [AI Foundry-dokumentasjonen](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) for flere detaljer og trinnvise instruksjoner.
+**Merk** Microsoft Foundry er foreløpig i offentlig forhåndsvisning, så bruk den til eksperimentering og utvikling. For produksjonsarbeidsmengder bør du vurdere andre alternativer. Utforsk den offisielle [AI Foundry-dokumentasjonen](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) for flere detaljer og steg-for-steg instruksjoner.
 
-**Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi etterstreber nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

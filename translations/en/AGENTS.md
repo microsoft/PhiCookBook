@@ -2,17 +2,17 @@
 
 ## Project Overview
 
-PhiCookBook is a comprehensive repository of cookbooks containing practical examples, tutorials, and documentation for working with Microsoft's Phi family of Small Language Models (SLMs). The repository showcases various use cases, including inference, fine-tuning, quantization, RAG implementations, and multimodal applications across different platforms and frameworks.
+PhiCookBook is a comprehensive cookbook repository containing hands-on examples, tutorials, and documentation for working with Microsoft's Phi family of Small Language Models (SLMs). The repository demonstrates various use cases including inference, fine-tuning, quantization, RAG implementations, and multimodal applications across different platforms and frameworks.
 
 **Key Technologies:**
 - **Languages:** Python, C#/.NET, JavaScript/Node.js
 - **Frameworks:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platforms:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platforms:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Model Types:** Phi-3, Phi-3.5, Phi-4 (text, vision, multimodal, reasoning variants)
 
 **Repository Structure:**
-- `/code/` - Functional code examples and sample implementations
-- `/md/` - Detailed documentation, tutorials, and guides  
+- `/code/` - Working code examples and sample implementations
+- `/md/` - Detailed documentation, tutorials, and how-to guides  
 - `/translations/` - Multi-language translations (50+ languages via automated workflow)
 - `/.devcontainer/` - Dev container configuration (Python 3.12 with Ollama)
 
@@ -22,11 +22,11 @@ PhiCookBook is a comprehensive repository of cookbooks containing practical exam
 
 1. Open in GitHub Codespaces (fastest):
    - Click the "Open in GitHub Codespaces" badge in README
-   - The container auto-configures with Python 3.12 and Ollama with Phi-3
+   - Container auto-configures with Python 3.12 and Ollama with Phi-3
 
 2. Open in VS Code Dev Containers:
    - Use the "Open in Dev Containers" badge from README
-   - The container requires a minimum of 16GB host memory
+   - Container requires 16GB host memory minimum
 
 ### Local Setup
 
@@ -34,7 +34,7 @@ PhiCookBook is a comprehensive repository of cookbooks containing practical exam
 - Python 3.12 or later
 - .NET 8.0 SDK (for C# examples)
 - Node.js 18+ and npm (for JavaScript examples)
-- Minimum recommended RAM: 16GB
+- 16GB RAM minimum recommended
 
 **Installation:**
 ```bash
@@ -69,7 +69,7 @@ npm run build  # Build for production
 ### Code Examples (`/code/`)
 
 - **01.Introduce/** - Basic introductions and getting started samples
-- **03.Finetuning/** and **04.Finetuning/** - Fine-tuning examples using various methods
+- **03.Finetuning/** and **04.Finetuning/** - Fine-tuning examples with various methods
 - **03.Inference/** - Inference examples on different hardware (AIPC, MLX)
 - **06.E2E/** - End-to-end application samples
 - **07.Lab/** - Laboratory/experimental implementations
@@ -78,9 +78,9 @@ npm run build  # Build for production
 
 ### Documentation (`/md/`)
 
-- **01.Introduction/** - Introductory guides, environment setup, platform guides
+- **01.Introduction/** - Intro guides, environment setup, platform guides
 - **02.Application/** - Application samples organized by type (Text, Code, Vision, Audio, etc.)
-- **02.QuickStart/** - Quick start guides for Azure AI Foundry and GitHub Models
+- **02.QuickStart/** - Quick start guides for Microsoft Foundry and GitHub Models
 - **03.FineTuning/** - Fine-tuning documentation and tutorials
 - **04.HOL/** - Hands-on labs (includes .NET examples)
 
@@ -118,7 +118,7 @@ cd md/04.HOL/dotnet/src/<project-name>
 dotnet run
 ```
 
-Or build the entire solution:
+Or build entire solution:
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
@@ -129,7 +129,7 @@ dotnet run --project <project-name>
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Desarrollo con recarga en caliente
 ```
 
 ## Testing
@@ -138,12 +138,12 @@ This repository contains example code and tutorials rather than a traditional so
 
 1. **Running the examples** - Each example should execute without errors
 2. **Verifying outputs** - Check that model responses are appropriate
-3. **Following tutorials** - Step-by-step guides should work as documented
+3. **Following tutorials** - Step-through guides should work as documented
 
 **Common validation approach:**
 - Test example execution in the target environment
 - Verify dependencies install correctly
-- Check that models download/load successfully
+- Check that model downloads/loads successfully
 - Confirm expected behavior matches documentation
 
 ## Code Style and Conventions
@@ -159,23 +159,23 @@ This repository contains example code and tutorials rather than a traditional so
 
 **URL Formatting:**
 - Use `[text](../../url)` format without extra spaces
-- Relative links: Use `./` for the current directory, `../` for parent
-- Avoid country-specific locales in URLs (e.g., no `/en-us/`, `/en/`)
+- Relative links: Use `./` for current directory, `../` for parent
+- No country-specific locales in URLs (avoid `/en-us/`, `/en/`)
 
 **Images:**
-- Store all images in the `/imgs/` directory
+- Store all images in `/imgs/` directory
 - Use descriptive names with English characters, numbers, and dashes
 - Example: `phi-3-architecture.png`
 
 **Markdown Files:**
-- Reference actual working examples in the `/code/` directory
+- Reference actual working examples in `/code/` directory
 - Keep documentation synchronized with code changes
-- Use the 📓 emoji to mark Jupyter notebook links in README
+- Use 📓 emoji to mark Jupyter notebook links in README
 
 ### File Organization
 
-- Code examples in `/code/` are organized by topic/feature
-- Documentation in `/md/` mirrors the code structure when applicable
+- Code examples in `/code/` organized by topic/feature
+- Documentation in `/md/` mirrors code structure when applicable
 - Keep related files (notebooks, scripts, configs) together in subdirectories
 
 ## Pull Request Guidelines
@@ -195,7 +195,7 @@ This repository contains example code and tutorials rather than a traditional so
 
 4. **Translation PRs:**
    - Must include translations for ALL files in the folder
-   - Maintain consistent structure with the original language
+   - Maintain consistent structure with original language
 
 ### Required Checks
 
@@ -209,7 +209,7 @@ PRs automatically run GitHub workflows to validate:
    - Remove `/en-us/`, `/en/`, or other language codes
    - Use generic international URLs
 
-3. **Broken URL check** - All URLs must return a 200 status
+3. **Broken URL check** - All URLs must return 200 status
    - Verify links are accessible before submitting
    - Note: Some failures may be due to network restrictions
 
@@ -241,8 +241,8 @@ Examples:
 
 ### Platform-Specific Notes
 
-**Azure AI Foundry:**
-- Requires an Azure subscription and API keys
+**Microsoft Foundry:**
+- Requires Azure subscription and API keys
 - See `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
@@ -285,7 +285,7 @@ Examples:
 
 ### Getting Help
 
-- **Discord:** Join the Azure AI Foundry Community Discord
+- **Discord:** Join the Microsoft Foundry Community Discord
 - **GitHub Issues:** Report bugs and issues in the repository
 - **GitHub Discussions:** Ask questions and share knowledge
 
@@ -325,5 +325,7 @@ Choose the language that best fits your use case and deployment target.
 
 ---
 
-**Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
