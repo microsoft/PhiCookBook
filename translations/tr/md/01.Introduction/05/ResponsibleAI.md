@@ -1,112 +1,116 @@
 # **Sorumlu Yapay Zekayı Tanıtma**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo), geliştiricilerin ve kuruluşların şeffaf, güvenilir ve hesap verebilir yapay zeka sistemleri oluşturmasına yardımcı olmayı amaçlayan bir girişimdir. Bu girişim, gizlilik, adalet ve şeffaflık gibi etik ilkelere uygun sorumlu yapay zeka çözümleri geliştirmek için rehberlik ve kaynaklar sunar. Ayrıca, sorumlu yapay zeka sistemleri oluştururken karşılaşılan bazı zorlukları ve en iyi uygulamaları da inceleyeceğiz.
+[Microsoft Sorumlu Yapay Zeka](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo), geliştiricilere ve kuruluşlara şeffaf, güvenilir ve hesap verebilir yapay zeka sistemleri geliştirmelerinde yardımcı olmayı amaçlayan bir girişimdir. Bu girişim, gizlilik, adalet ve şeffaflık gibi etik ilkelere uygun sorumlu yapay zeka çözümleri geliştirmek için rehberlik ve kaynaklar sağlar. Ayrıca sorumlu yapay zeka sistemleri oluşturmayla ilgili bazı zorlukları ve en iyi uygulamaları da inceleyeceğiz.
 
-## Microsoft Responsible AI Genel Bakış
+## Microsoft Sorumlu Yapay Zeka Genel Bakış
 
 ![RAIPrinciples](../../../../../translated_images/tr/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **Etik İlkeler**
 
-Microsoft Responsible AI, gizlilik, adalet, şeffaflık, hesap verebilirlik ve güvenlik gibi bir dizi etik ilke tarafından yönlendirilir. Bu ilkeler, yapay zeka sistemlerinin etik ve sorumlu bir şekilde geliştirilmesini sağlamak için tasarlanmıştır.
+Microsoft Sorumlu Yapay Zeka, gizlilik, adalet, şeffaflık, hesap verebilirlik ve güvenlik gibi bir dizi etik ilke tarafından yönlendirilir. Bu ilkeler, yapay zeka sistemlerinin etik ve sorumlu bir şekilde geliştirilmesini sağlamak için tasarlanmıştır.
 
 **Şeffaf Yapay Zeka**
 
-Microsoft Responsible AI, yapay zeka sistemlerinde şeffaflığın önemini vurgular. Bu, yapay zeka modellerinin nasıl çalıştığına dair net açıklamalar sunmayı ve veri kaynakları ile algoritmaların kamuya açık olmasını sağlamayı içerir.
+Microsoft Sorumlu Yapay Zeka, yapay zeka sistemlerinde şeffaflığın önemini vurgular. Bu, yapay zeka modellerinin nasıl çalıştığına dair net açıklamalar sağlamayı ve veri kaynakları ile algoritmaların kamuya açık olmasını sağlamayı içerir.
 
 **Hesap Verebilir Yapay Zeka**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo), yapay zeka modellerinin karar alma süreçlerine dair içgörüler sunabilen hesap verebilir yapay zeka sistemlerinin geliştirilmesini teşvik eder. Bu, kullanıcıların yapay zeka sistemlerinin çıktısını anlamalarına ve güvenmelerine yardımcı olabilir.
+[Microsoft Sorumlu Yapay Zeka](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo), yapay zeka modellerinin nasıl kararlar aldığını ortaya koyabilen hesap verebilir yapay zeka sistemlerinin geliştirilmesini teşvik eder. Bu, kullanıcıların yapay zeka sistemlerinin çıktısını anlamalarına ve güvenmelerine yardımcı olabilir.
 
 **Kapsayıcılık**
 
-Yapay zeka sistemleri herkesin faydasına olacak şekilde tasarlanmalıdır. Microsoft, farklı bakış açılarını dikkate alan ve önyargı veya ayrımcılıktan kaçınan kapsayıcı yapay zeka yaratmayı hedefler.
+Yapay zeka sistemleri herkesin yararına olacak şekilde tasarlanmalıdır. Microsoft, çeşitli bakış açılarını değerlendirip önyargı veya ayrımcılıktan kaçınan kapsayıcı yapay zeka oluşturmayı hedefler.
 
 **Güvenilirlik ve Güvenlik**
 
-Yapay zeka sistemlerinin güvenilir ve güvenli olması çok önemlidir. Microsoft, tutarlı performans gösteren ve zararlı sonuçlardan kaçınan sağlam modeller geliştirmeye odaklanır.
+Yapay zeka sistemlerinin güvenilir ve güvenli olmasını sağlamak çok önemlidir. Microsoft, tutarlı performans gösteren ve zararlı sonuçları önleyen sağlam modeller oluşturmayı hedefler.
 
 **Yapay Zekada Adalet**
 
-Microsoft Responsible AI, yapay zeka sistemlerinin önyargılı veri veya algoritmalarla eğitildiğinde önyargıları sürdürebileceğinin farkındadır. Girişim, ırk, cinsiyet veya yaş gibi faktörlere dayalı ayrımcılık yapmayan adil yapay zeka sistemleri geliştirmek için rehberlik sağlar.
+Microsoft Sorumlu Yapay Zeka, yapay zeka sistemlerinin önyargılı verilere veya algoritmalara dayandığında önyargıları sürdürebileceğini kabul eder. Bu girişim, ırk, cinsiyet veya yaş gibi faktörlere dayalı ayrımcılık yapmayan adil yapay zeka sistemleri geliştirmek için rehberlik sağlar.
 
 **Gizlilik ve Güvenlik**
 
-Microsoft Responsible AI, yapay zeka sistemlerinde kullanıcı gizliliği ve veri güvenliğinin korunmasının önemini vurgular. Bu, güçlü veri şifrelemesi ve erişim kontrollerinin uygulanmasını ve yapay zeka sistemlerinin düzenli olarak güvenlik açıkları açısından denetlenmesini içerir.
+Microsoft Sorumlu Yapay Zeka, yapay zeka sistemlerinde kullanıcı gizliliği ve veri güvenliğinin korunmasının önemini vurgular. Bu, güçlü veri şifreleme ve erişim kontrolleri uygulamayı ve yapay zeka sistemlerini düzenli olarak güvenlik açıkları için denetlemeyi içerir.
 
 **Hesap Verebilirlik ve Sorumluluk**
 
-Microsoft Responsible AI, yapay zeka geliştirme ve dağıtımında hesap verebilirlik ve sorumluluğu teşvik eder. Bu, geliştiricilerin ve kuruluşların yapay zeka sistemleriyle ilişkili potansiyel risklerin farkında olmalarını ve bu riskleri azaltmak için adımlar atmaları gerektiği anlamına gelir.
+Microsoft Sorumlu Yapay Zeka, yapay zeka geliştirme ve dağıtımında hesap verebilirlik ve sorumluluğu teşvik eder. Bu, geliştiricilerin ve kuruluşların yapay zeka sistemleriyle ilişkili potansiyel risklerin farkında olmalarını ve bu riskleri azaltmak için adımlar atmalarını sağlamayı içerir.
 
-## Sorumlu Yapay Zeka Sistemleri Oluşturmak İçin En İyi Uygulamalar
+## Sorumlu Yapay Zeka Sistemleri Kurmak İçin En İyi Uygulamalar
 
-**Çeşitli veri setleri kullanarak yapay zeka modelleri geliştirin**
+**Çeşitli Veri Setleri Kullanarak Yapay Zeka Modelleri Geliştirin**
 
-Yapay zeka sistemlerinde önyargıyı önlemek için, farklı bakış açılarını ve deneyimleri temsil eden çeşitli veri setleri kullanmak önemlidir.
+Yapay zeka sistemlerinde önyargıdan kaçınmak için, farklı bakış açılarını ve deneyimleri temsil eden çeşitli veri setlerinin kullanılması önemlidir.
 
-**Açıklanabilir yapay zeka teknikleri kullanın**
+**Açıklanabilir Yapay Zeka Teknikleri Kullanın**
 
-Açıklanabilir yapay zeka teknikleri, kullanıcıların yapay zeka modellerinin nasıl karar verdiğini anlamalarına yardımcı olabilir ve bu da sistemin güvenini artırır.
+Açıklanabilir yapay zeka teknikleri, kullanıcıların yapay zeka modellerinin kararları nasıl aldığını anlamalarına yardımcı olabilir ve bu da sistemde güveni artırabilir.
 
-**Yapay zeka sistemlerini düzenli olarak güvenlik açıkları açısından denetleyin**
+**Yapay Zeka Sistemlerini Düzenli Olarak Güvenlik Açıkları Açısından Denetleyin**
 
 Yapay zeka sistemlerinin düzenli denetimleri, ele alınması gereken potansiyel riskleri ve güvenlik açıklarını belirlemeye yardımcı olabilir.
 
-**Güçlü veri şifrelemesi ve erişim kontrolleri uygulayın**
+**Güçlü Veri Şifreleme ve Erişim Kontrolleri Uygulayın**
 
-Veri şifrelemesi ve erişim kontrolleri, yapay zeka sistemlerinde kullanıcı gizliliği ve güvenliğini korumaya yardımcı olur.
+Veri şifreleme ve erişim kontrolleri, yapay zeka sistemlerinde kullanıcı gizliliğini ve güvenliğini korumaya yardımcı olur.
 
-**Yapay zeka geliştirmede etik ilkelere uyun**
+**Yapay Zeka Geliştirmede Etik İlkeleri Takip Edin**
 
-Adalet, şeffaflık ve hesap verebilirlik gibi etik ilkelere uymak, yapay zeka sistemlerine güven inşa etmeye ve bunların sorumlu bir şekilde geliştirilmesini sağlamaya yardımcı olur.
+Adalet, şeffaflık ve hesap verebilirlik gibi etik ilkelere uymak, yapay zeka sistemlerinde güven oluşturabilir ve bunların sorumlu bir şekilde geliştirilmesini sağlar.
 
 ## Sorumlu Yapay Zeka İçin AI Foundry Kullanımı
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo), geliştiricilerin ve kuruluşların hızlıca zeki, yenilikçi, pazara hazır ve sorumlu uygulamalar oluşturmasını sağlayan güçlü bir platformdur. Azure AI Foundry’nin bazı temel özellikleri ve yetenekleri şunlardır:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo), geliştiricilere ve kuruluşlara hızlıca zeki, ileri teknoloji, pazara hazır ve sorumlu uygulamalar oluşturma imkanı veren güçlü bir platformdur. İşte Microsoft Foundry'nin bazı temel özellikleri ve yetenekleri:
 
-**Hazır API’ler ve Modeller**
+**Hazır API'ler ve Modeller**
 
-Azure AI Foundry, önceden oluşturulmuş ve özelleştirilebilir API’ler ve modeller sunar. Bunlar, üretken yapay zeka, doğal dil işleme (konuşmalar için), arama, izleme, çeviri, konuşma, görme ve karar verme gibi geniş bir yapay zeka görev yelpazesini kapsar.
+Microsoft Foundry, önceden oluşturulmuş ve özelleştirilebilir API'ler ve modeller sağlar. Bunlar, üretken yapay zeka, konuşmalar için doğal dil işleme, arama, izleme, çeviri, konuşma, görme ve karar verme gibi geniş bir yapay zeka görev yelpazesini kapsar.
 
 **Prompt Flow**
 
-Azure AI Foundry’deki prompt flow, konuşma tabanlı yapay zeka deneyimleri oluşturmanızı sağlar. Konuşma akışlarını tasarlayıp yönetmenize olanak tanır; böylece sohbet botları, sanal asistanlar ve diğer etkileşimli uygulamaları daha kolay geliştirebilirsiniz.
+Microsoft Foundry'deki prompt flow, konuşma tabanlı yapay zeka deneyimleri oluşturmanızı sağlar. Konuşma akışlarını tasarlamanıza ve yönetmenize olanak verir; bu da sohbet botları, sanal asistanlar ve diğer etkileşimli uygulamalar oluşturmayı kolaylaştırır.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG, geri getirme tabanlı ve üretken tabanlı yaklaşımları birleştiren bir tekniktir. Hem önceden var olan bilgiyi (geri getirme) hem de yaratıcı üretimi (üretme) kullanarak oluşturulan yanıtların kalitesini artırır.
+RAG, geri getirme tabanlı ve üretken tabanlı yaklaşımları birleştiren bir tekniktir. Önceden var olan bilgiyi (geri getirme) ve yaratıcı üretimi (üretim) kullanarak üretilen yanıtların kalitesini artırır.
 
-**Üretken Yapay Zeka için Değerlendirme ve İzleme Metrikleri**
+**Üretken Yapay Zeka İçin Değerlendirme ve İzleme Metrikleri**
 
-Azure AI Foundry, üretken yapay zeka modellerini değerlendirmek ve izlemek için araçlar sağlar. Performanslarını, adaletini ve diğer önemli metrikleri ölçerek sorumlu dağıtımı garanti altına alabilirsiniz. Ayrıca, bir gösterge tablosu oluşturduysanız, Azure Machine Learning Studio’daki kodsuz kullanıcı arayüzünü kullanarak [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Kütüphaneleri temelinde bir Sorumlu Yapay Zeka Gösterge Tablosu ve ilgili skor kartı oluşturabilirsiniz. Bu skor kartı, teknik ve teknik olmayan paydaşlarla adalet, özellik önemi ve diğer sorumlu dağıtım konularına dair önemli içgörüleri paylaşmanıza yardımcı olur.
+Microsoft Foundry, üretken yapay zeka modellerini değerlendirmek ve izlemek için araçlar sunar. Performanslarını, adaletini ve diğer önemli metriklerini değerlendirebilir ve sorumlu dağıtımı sağlayabilirsiniz. Ayrıca, bir kontrol paneli oluşturduysanız, Azure Machine Learning Studio'daki kodsuz kullanıcı arayüzü ile [Sorumlu AI Araç Kutusu](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Kütüphaneleri temelinde özelleştirilmiş bir Sorumlu AI Kontrol Paneli ve ilgili puan kartı oluşturabilirsiniz. Bu puan kartı, adalet, özellik önemi ve diğer sorumlu dağıtım hususlarıyla ilgili önemli içgörüleri teknik ve teknik olmayan paydaşlarla paylaşmanıza yardımcı olur.
 
 Sorumlu yapay zeka ile AI Foundry kullanmak için şu en iyi uygulamaları takip edebilirsiniz:
 
-**Yapay zeka sisteminizin sorununu ve hedeflerini tanımlayın**
+**Yapay Zeka Sisteminizin Sorununu ve Hedeflerini Tanımlayın**
 
 Geliştirme sürecine başlamadan önce, yapay zeka sisteminizin çözmeyi amaçladığı sorunu veya hedefi net bir şekilde tanımlamak önemlidir. Bu, etkili bir model oluşturmak için gereken veri, algoritma ve kaynakları belirlemenize yardımcı olur.
 
-**İlgili verileri toplayın ve ön işleme tabi tutun**
+**İlgili Verileri Toplayın ve Ön İşlemden Geçirin**
 
-Bir yapay zeka sisteminin eğitiminde kullanılan veri kalitesi ve miktarı performans üzerinde önemli bir etkiye sahiptir. Bu nedenle, ilgili verileri toplamak, temizlemek, ön işlemek ve çözmeye çalıştığınız nüfusu veya sorunu temsil ettiğinden emin olmak önemlidir.
+Bir AI sisteminin performansı üzerinde kullanılan verinin kalitesi ve miktarı büyük etkiye sahiptir. Bu yüzden ilgili verileri toplamak, temizlemek, ön işlemden geçirmek ve çözmeye çalıştığınız nüfusu ya da problemi temsil ettiğinden emin olmak önemlidir.
 
-**Uygun değerlendirme algoritmalarını seçin**
+**Uygun Değerlendirme Yöntemini Seçin**
 
-Çeşitli değerlendirme algoritmaları mevcuttur. Verinize ve sorununuzun doğasına göre en uygun algoritmayı seçmek önemlidir.
+Farklı değerlendirme algoritmaları mevcuttur. Verinize ve probleminize en uygun algoritmayı seçmek önemlidir.
 
-**Modeli değerlendirin ve yorumlayın**
+**Modeli Değerlendirin ve Yorumlayın**
 
-Bir yapay zeka modeli oluşturduktan sonra, performansını uygun metriklerle değerlendirmek ve sonuçları şeffaf bir şekilde yorumlamak önemlidir. Bu, modeldeki önyargıları veya sınırlamaları belirlemenize ve gerekirse iyileştirmeler yapmanıza yardımcı olur.
+Bir yapay zeka modeli oluşturduktan sonra, performansını uygun metriklerle değerlendirmek ve sonuçları şeffaf bir şekilde yorumlamak önemlidir. Bu, modeldeki herhangi bir önyargı veya sınırlamayı tespit etmeye ve gerektiğinde iyileştirmeler yapmaya yardımcı olur.
 
-**Şeffaflık ve açıklanabilirliği sağlayın**
+**Şeffaflık ve Açıklanabilirlik Sağlayın**
 
-Yapay zeka sistemleri, kullanıcıların nasıl çalıştığını ve kararların nasıl alındığını anlayabilmesi için şeffaf ve açıklanabilir olmalıdır. Bu, özellikle sağlık, finans ve hukuk gibi insan hayatı üzerinde önemli etkileri olan uygulamalar için çok önemlidir.
+Yapay zeka sistemleri, kullanıcıların nasıl çalıştıklarını ve kararların nasıl alındığını anlayabilmeleri için şeffaf ve açıklanabilir olmalıdır. Bu, sağlık, finans ve hukuk sistemleri gibi insan yaşamı üzerinde önemli etkisi olan uygulamalar için özellikle önemlidir.
 
-**Modeli izleyin ve güncelleyin**
+**Modeli İzleyin ve Güncelleyin**
 
-Yapay zeka sistemleri, zaman içinde doğru ve etkili kalmalarını sağlamak için sürekli izlenmeli ve güncellenmelidir. Bu, modelin düzenli bakımı, test edilmesi ve yeniden eğitilmesini gerektirir.
+Yapay zeka sistemleri, zamanla doğru ve etkili kalmalarını sağlamak için sürekli izlenmeli ve güncellenmelidir. Bu, modelin düzenli bakımı, testi ve yeniden eğitilmesini gerektirir.
 
-Sonuç olarak, Microsoft Responsible AI, geliştiricilerin ve kuruluşların şeffaf, güvenilir ve hesap verebilir yapay zeka sistemleri oluşturmasına yardımcı olmayı amaçlayan bir girişimdir. Sorumlu yapay zeka uygulamasının kritik olduğunu unutmayın ve Azure AI Foundry, bunu kuruluşlar için pratik hale getirmeyi hedefler. Etik ilkelere ve en iyi uygulamalara uyarak, yapay zeka sistemlerinin toplumun tamamına fayda sağlayacak şekilde sorumlu bir biçimde geliştirilip dağıtılmasını sağlayabiliriz.
+Sonuç olarak, Microsoft Sorumlu Yapay Zeka, geliştiricilere ve kuruluşlara şeffaf, güvenilir ve hesap verebilir yapay zeka sistemleri geliştirmelerinde yardımcı olmayı amaçlayan bir girişimdir. Sorumlu yapay zeka uygulamasının kritik olduğunu unutmayın ve Microsoft Foundry, bunu kuruluşlar için pratik hale getirmeyi hedefler. Etik ilkelere ve en iyi uygulamalara uyarak, yapay zeka sistemlerinin toplumun tamamına fayda sağlayacak şekilde sorumlu bir biçimde geliştirilip dağıtılmasını garanti edebiliriz.
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf edilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumdan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

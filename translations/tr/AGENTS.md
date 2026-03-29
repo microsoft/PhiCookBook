@@ -2,39 +2,39 @@
 
 ## Proje Genel Bakış
 
-PhiCookBook, Microsoft'un Phi ailesine ait Küçük Dil Modelleri (SLM) ile çalışmak için pratik örnekler, eğitimler ve belgeler içeren kapsamlı bir yemek kitabı deposudur. Depo, çıkarım, ince ayar, kuantizasyon, RAG uygulamaları ve farklı platformlar ve çerçeveler üzerinde çok modlu uygulamalar dahil olmak üzere çeşitli kullanım senaryolarını göstermektedir.
+PhiCookBook, Microsoft'un Phi ailesine ait Küçük Dil Modelleri (SLM'ler) ile çalışma için uygulamalı örnekler, öğreticiler ve dokümantasyon içeren kapsamlı bir tarif kitabı deposudur. Depo, çıkarım, ince ayar, kuantizasyon, RAG uygulamaları ve farklı platformlar ve çerçeveler aracılığıyla çok modlu uygulamalar dahil olmak üzere çeşitli kullanım senaryolarını göstermektedir.
 
-**Anahtar Teknolojiler:**
+**Ana Teknolojiler:**
 - **Diller:** Python, C#/.NET, JavaScript/Node.js
 - **Çerçeveler:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformlar:** Azure AI Foundry, GitHub Modelleri, Hugging Face, Ollama
+- **Platformlar:** Microsoft Foundry, GitHub Modelleri, Hugging Face, Ollama
 - **Model Türleri:** Phi-3, Phi-3.5, Phi-4 (metin, görsel, çok modlu, akıl yürütme varyantları)
 
 **Depo Yapısı:**
 - `/code/` - Çalışan kod örnekleri ve örnek uygulamalar
-- `/md/` - Ayrıntılı belgeler, eğitimler ve nasıl yapılır kılavuzları  
-- `/translations/` - Çok dilli çeviriler (50+ dilde otomatik iş akışı ile)
-- `/.devcontainer/` - Geliştirme konteyner yapılandırması (Python 3.12 ve Ollama ile)
+- `/md/` - Detaylı dokümantasyon, öğreticiler ve kullanım kılavuzları  
+- `/translations/` - Çok dilli çeviriler (otomatik iş akışı ile 50+ dil)
+- `/.devcontainer/` - Geliştirici konteyner yapılandırması (Python 3.12 ve Ollama ile)
 
 ## Geliştirme Ortamı Kurulumu
 
-### GitHub Codespaces veya Geliştirme Konteynerleri Kullanımı (Önerilen)
+### GitHub Codespaces veya Dev Containers Kullanımı (Tavsiye Edilir)
 
-1. GitHub Codespaces'te açın (en hızlısı):
-   - README'deki "Open in GitHub Codespaces" rozetine tıklayın
-   - Konteyner, Python 3.12 ve Phi-3 ile Ollama ile otomatik olarak yapılandırılır
+1. GitHub Codespaces’da açmak (en hızlı):
+   - README'deki "Open in GitHub Codespaces" rozeti üzerine tıklayın
+   - Konteyner Python 3.12 ve Phi-3 ile Ollama’yı otomatik yapılandırır
 
-2. VS Code Geliştirme Konteynerlerinde açın:
-   - README'deki "Open in Dev Containers" rozetini kullanın
-   - Konteyner, minimum 16GB ana bellek gerektirir
+2. VS Code Dev Containers’da açmak:
+   - README’deki "Open in Dev Containers" rozeti kullanın
+   - Konteyner için minimum 16GB ana bellek gerekir
 
 ### Yerel Kurulum
 
-**Ön Koşullar:**
-- Python 3.12 veya üstü
+**Gereksinimler:**
+- Python 3.12 veya üzeri
 - .NET 8.0 SDK (C# örnekleri için)
 - Node.js 18+ ve npm (JavaScript örnekleri için)
-- Minimum 16GB RAM önerilir
+- Minimum tavsiye edilen: 16GB RAM
 
 **Kurulum:**
 ```bash
@@ -42,26 +42,26 @@ git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
 ```
 
-**Python Örnekleri İçin:**
-Belirli örnek dizinlerine gidin ve bağımlılıkları yükleyin:
+**Python Örnekleri için:**
+Belirli örnek klasörlerine gidin ve bağımlılıkları yükleyin:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # eğer requirements.txt varsa
 ```
 
-**.NET Örnekleri İçin:**
+**.NET Örnekleri için:**
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**JavaScript/Web Örnekleri İçin:**
+**JavaScript/Web Örnekleri için:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Geliştirme sunucusunu başlat
+npm run build  # Üretim için derle
 ```
 
 ## Depo Organizasyonu
@@ -74,36 +74,36 @@ npm run build  # Build for production
 - **06.E2E/** - Uçtan uca uygulama örnekleri
 - **07.Lab/** - Laboratuvar/deneysel uygulamalar
 - **08.RAG/** - Retrieval-Augmented Generation örnekleri
-- **09.UpdateSamples/** - En son güncellenmiş örnekler
+- **09.UpdateSamples/** - En güncel örnekler
 
-### Belgeler (`/md/`)
+### Dokümantasyon (`/md/`)
 
-- **01.Introduction/** - Giriş kılavuzları, ortam kurulumu, platform kılavuzları
-- **02.Application/** - Türüne göre düzenlenmiş uygulama örnekleri (Metin, Kod, Görsel, Ses vb.)
-- **02.QuickStart/** - Azure AI Foundry ve GitHub Modelleri için hızlı başlangıç kılavuzları
-- **03.FineTuning/** - İnce ayar belgeleri ve eğitimler
-- **04.HOL/** - Uygulamalı laboratuvarlar (.NET örneklerini içerir)
+- **01.Introduction/** - Giriş rehberleri, ortam kurulumu, platform kılavuzları
+- **02.Application/** - Türlerine göre düzenlenmiş uygulama örnekleri (Metin, Kod, Görsel, Ses, vb.)
+- **02.QuickStart/** - Microsoft Foundry ve GitHub Modelleri için hızlı başlangıç kılavuzları
+- **03.FineTuning/** - İnce ayar dokümantasyonu ve öğreticiler
+- **04.HOL/** - Uygulamalı laboratuvarlar (.NET örnekleri dahil)
 
 ### Dosya Formatları
 
-- **Jupyter Notebooks (`.ipynb`)** - README'de 📓 ile işaretlenmiş etkileşimli Python eğitimleri
-- **Python Scripts (`.py`)** - Bağımsız Python örnekleri
-- **C# Projeleri (`.csproj`, `.sln`)** - .NET uygulamaları ve örnekleri
+- **Jupyter Notebooks (`.ipynb`)** - README'de 📓 ile işaretlenmiş etkileşimli Python öğreticileri
+- **Python Scriptleri (`.py`)** - Bağımsız Python örnekleri
+- **C# Projeleri (`.csproj`, `.sln`)** - .NET uygulama ve örnekleri
 - **JavaScript (`.js`, `package.json`)** - Web tabanlı ve Node.js örnekleri
-- **Markdown (`.md`)** - Belgeler ve kılavuzlar
+- **Markdown (`.md`)** - Dokümantasyon ve kılavuzlar
 
-## Örneklerle Çalışma
+## Örneklerle Çalışmak
 
-### Jupyter Notebooks Çalıştırma
+### Jupyter Notebook’ları Çalıştırmak
 
-Çoğu örnek Jupyter notebook olarak sunulmaktadır:
+Çoğu örnek Jupyter notebook olarak sağlanır:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Tarayıcı arayüzünü açar
+# İstenen .ipynb dosyasına gidin
 ```
 
-### Python Scriptleri Çalıştırma
+### Python Scriptlerini Çalıştırmak
 
 ```bash
 cd code/<example-directory>
@@ -111,107 +111,107 @@ pip install -r requirements.txt
 python <script-name>.py
 ```
 
-### .NET Örneklerini Çalıştırma
+### .NET Örneklerini Çalıştırmak
 
 ```bash
 cd md/04.HOL/dotnet/src/<project-name>
 dotnet run
 ```
 
-Veya tüm çözümü oluşturun:
+Ya da tüm çözüme derleme yapın:
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### JavaScript/Web Örneklerini Çalıştırma
+### JavaScript/Web Örneklerini Çalıştırmak
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Sıcak yeniden yükleme ile geliştirme
 ```
 
 ## Test Etme
 
-Bu depo, birim testleri olan geleneksel bir yazılım projesinden ziyade örnek kodlar ve eğitimler içermektedir. Doğrulama genellikle şu şekilde yapılır:
+Bu depo, birim testleri olan geleneksel bir yazılım projesi yerine örnek kodlar ve öğreticiler içermektedir. Doğrulama genellikle:
 
-1. **Örnekleri çalıştırmak** - Her örnek hatasız çalışmalıdır
-2. **Çıktıları doğrulamak** - Model yanıtlarının uygun olup olmadığını kontrol edin
-3. **Eğitimleri takip etmek** - Adım adım kılavuzlar belgelerde belirtildiği gibi çalışmalıdır
+1. **Örnekleri çalıştırarak** - Her örneğin hata vermeden çalışması gerekir
+2. **Çıktıları doğrulayarak** - Model yanıtlarının uygunluğunu kontrol etmek
+3. **Öğreticileri takip ederek** - Adım adım rehberlerin belgelenmiş şekilde çalışması
 
-**Yaygın doğrulama yaklaşımı:**
-- Hedef ortamda örnek çalıştırmayı test edin
-- Bağımlılıkların doğru şekilde yüklendiğini doğrulayın
-- Modelin başarıyla indirildiğini/yüklendiğini kontrol edin
-- Beklenen davranışın belgelerle uyumlu olduğunu doğrulayın
+**Yaygın doğrulama yöntemi:**
+- Hedef ortamda örnek çalıştırma testi
+- Bağımlılıkların doğru kurulup kurulmadığını kontrol etme
+- Model indirmenin/yüklemenin başarıyla tamamlanması
+- Beklenen davranışın dokümantasyonla uyumlu olduğunun teyidi
 
-## Kod Stili ve Konvansiyonlar
+## Kod Stili ve Kurallar
 
 ### Genel Yönergeler
 
 - Örnekler açık, iyi yorumlanmış ve eğitici olmalıdır
-- Dil spesifik konvansiyonlara uyun (Python için PEP 8, .NET için C# standartları)
-- Örnekleri belirli Phi model yeteneklerini göstermeye odaklı tutun
-- Anahtar kavramları ve model spesifik parametreleri açıklayan yorumlar ekleyin
+- Dil özelindeki standartlara uyun (Python için PEP 8, .NET için C# standartları)
+- Örneklerde Phi modelinin spesifik yeteneklerini göstermek hedeflenmeli
+- Anahtar kavramları ve model özel parametrelerini açıklayan yorumlar ekleyin
 
-### Belge Standartları
+### Dokümantasyon Standartları
 
 **URL Formatı:**
-- Ekstra boşluk olmadan `[metin](../../url)` formatını kullanın
-- Göreceli bağlantılar: Mevcut dizin için `./`, üst dizin için `../` kullanın
-- URL'lerde ülke spesifik yerel ayarları kullanmayın (örneğin `/en-us/`, `/en/`)
+- `[text](../../url)` formatı boşluk olmadan kullanılmalı
+- Göreceli bağlantılar: mevcut dizin için `./`, üst dizin için `../` kullanılmalı
+- URL'lerde ülkeye özgü yerel dil kodları bulunmamalı (örneğin `/en-us/`, `/en/`)
 
 **Görseller:**
-- Tüm görselleri `/imgs/` dizininde saklayın
-- İngilizce karakterler, sayılar ve tireler içeren açıklayıcı isimler kullanın
+- Tüm görseller `/imgs/` dizininde saklanmalı
+- İngilizce karakterler, sayılar ve tireler ile açıklayıcı isimler kullanılmalı
 - Örnek: `phi-3-architecture.png`
 
 **Markdown Dosyaları:**
-- `/code/` dizinindeki gerçek çalışan örneklere referans verin
-- Belgeleri kod değişiklikleriyle senkronize tutun
-- README'de Jupyter notebook bağlantılarını 📓 emojisiyle işaretleyin
+- Gerçek çalışan örneklere, `/code/` dizininden referans verilmeli
+- Dokümantasyon kod değişiklikleriyle senkronize tutulmalı
+- README içindeki Jupyter notebook bağlantıları 📓 ile işaretlenmeli
 
 ### Dosya Organizasyonu
 
-- `/code/` içindeki kod örnekleri konu/özelliklere göre düzenlenmiştir
-- `/md/` içindeki belgeler mümkün olduğunda kod yapısını yansıtır
-- İlgili dosyaları (notebooklar, scriptler, yapılandırmalar) alt dizinlerde bir arada tutun
+- Kod örnekleri `/code/` dizininde konulara/görevlere göre düzenlenmiş
+- Dokümantasyon `/md/` dizininde mümkün olduğunca kod yapısını yansıtmalı
+- İlgili dosyalar (notebooklar, scriptler, yapılandırmalar) alt dizinlerde birlikte tutulmalı
 
-## Pull Request Yönergeleri
+## Pull Request (PR) Rehberi
 
 ### Göndermeden Önce
 
-1. **Depoyu kendi hesabınıza çatallayın**
-2. **PR'leri türüne göre ayırın:**
-   - Hata düzeltmeleri için ayrı bir PR
-   - Belge güncellemeleri için başka bir PR
-   - Yeni örnekler için ayrı PR'ler
-   - Yazım hataları düzeltmeleri birleştirilebilir
+1. Depoyu kendi hesabınıza **fork** edin
+2. **PR’ları türlerine göre ayırın:**
+   - Hata düzeltmeleri ayrı PR’da
+   - Dokümantasyon güncellemeleri başka PR’da
+   - Yeni örnekler ayrı PR’larda
+   - Yazım hatası düzeltmeleri bir arada olabilir
 
-3. **Birleşme çatışmalarını ele alın:**
-   - Değişiklik yapmadan önce yerel `main` dalınızı güncelleyin
-   - Sık sık üst akışla senkronize olun
+3. **Birleştirme çatışmalarını çözün:**
+   - Değişiklik yapmadan önce yerel `main` şubenizi güncelleyin
+   - Yukarı akışla sık senkronize olun
 
-4. **Çeviri PR'leri:**
-   - Klasördeki TÜM dosyaların çevirilerini içermelidir
-   - Orijinal dil ile tutarlı yapı korunmalıdır
+4. **Çeviri PR’ları:**
+   - Klasördeki TÜM dosyalar için çeviriler içermeli
+   - Orijinal dil ile tutarlı yapıyı korumalı
 
 ### Gerekli Kontroller
 
-PR'ler, GitHub iş akışları tarafından otomatik olarak doğrulanır:
+PR’lar GitHub iş akışları ile otomatik olarak doğrulanır:
 
-1. **Göreceli yol doğrulaması** - Tüm dahili bağlantılar çalışmalıdır
-   - Bağlantıları yerel olarak test edin: VS Code'da Ctrl+Tıklayın
-   - VS Code'dan yol önerilerini kullanın (`./` veya `../`)
+1. **Göreceli yol doğrulaması** - Tüm dahili bağlantılar çalışmalı
+   - VS Code’da Ctrl+Tıklama ile test edin
+   - Yol önerilerini kullanın (`./` veya `../`)
 
-2. **URL yerel ayar kontrolü** - Web URL'lerinde ülke yerel ayarları bulunmamalıdır
-   - `/en-us/`, `/en/` veya diğer dil kodlarını kaldırın
-   - Genel uluslararası URL'ler kullanın
+2. **URL yerel kontrolü** - Web URL'lerinde ülke yerel kodları olmamalı
+   - `/en-us/`, `/en/` veya benzeri diller kaldırılmalı
+   - Genel uluslararası URL’ler tercih edilmeli
 
-3. **Bozuk URL kontrolü** - Tüm URL'ler 200 durum kodu döndürmelidir
-   - Bağlantıların gönderimden önce erişilebilir olduğunu doğrulayın
-   - Not: Bazı hatalar ağ kısıtlamalarından kaynaklanabilir
+3. **Kırık URL kontrolü** - Tüm URL’ler 200 status döndürmeli
+   - Gönderimden önce bağlantılar erişilebilir olmalı
+   - Not: Bazı başarısızlıklar ağ kısıtlamalarından kaynaklanabilir
 
 ### PR Başlık Formatı
 
@@ -220,110 +220,112 @@ PR'ler, GitHub iş akışları tarafından otomatik olarak doğrulanır:
 ```
 
 Örnekler:
-- `[docs] Phi-4 çıkarım eğitimi eklendi`
-- `[code] ONNX Runtime entegrasyon örneği düzeltildi`
-- `[translation] Giriş kılavuzları için Japonca çeviri eklendi`
+- `[docs] Phi-4 çıkarım öğreticisi ekle`
+- `[code] ONNX Runtime entegrasyon örneğini düzelt`
+- `[translation] Giriş rehberleri için Japonca çeviri ekle`
 
-## Yaygın Geliştirme Kalıpları
+## Yaygın Geliştirme Desenleri
 
 ### Phi Modelleri ile Çalışma
 
 **Model Yükleme:**
-- Örnekler çeşitli çerçeveler kullanır: Transformers, ONNX Runtime, MLX, OpenVINO
+- Örnekler Transformers, ONNX Runtime, MLX, OpenVINO gibi çerçeveleri kullanır
 - Modeller genellikle Hugging Face, Azure veya GitHub Modellerinden indirilir
-- Modelin donanımınızla uyumluluğunu kontrol edin (CPU, GPU, NPU)
+- Donanım uyumluluğunu kontrol edin (CPU, GPU, NPU)
 
-**Çıkarım Kalıpları:**
-- Metin oluşturma: Çoğu örnek sohbet/talimat varyantlarını kullanır
-- Görsel: Görüntü anlama için Phi-3-vision ve Phi-4-multimodal
+**Çıkarım Desenleri:**
+- Metin üretimi: Çoğu örnek sohbet/yönerge varyantlarını kullanır
+- Görsel: Phi-3-vision ve Phi-4-multimodal görüntü anlama için
 - Ses: Phi-4-multimodal ses girişlerini destekler
-- Akıl yürütme: Gelişmiş akıl yürütme görevleri için Phi-4-reasoning varyantları
+- Akıl yürütme: Gelişmiş akıl yürütme için Phi-4-reasoning varyantları
 
 ### Platforma Özgü Notlar
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Azure aboneliği ve API anahtarları gerektirir
-- Bkz. `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
+- `/md/02.QuickStart/AzureAIFoundry_QuickStart.md` dosyasına bakınız
 
 **GitHub Modelleri:**
-- Test için ücretsiz katman mevcuttur
-- Bkz. `/md/02.QuickStart/GitHubModel_QuickStart.md`
+- Test için ücretsiz katman sunar
+- `/md/02.QuickStart/GitHubModel_QuickStart.md` dosyasına bakınız
 
 **Yerel Çıkarım:**
-- ONNX Runtime: Çapraz platform, optimize edilmiş çıkarım
-- Ollama: Kolay yerel model yönetimi (geliştirme konteynerinde önceden yapılandırılmış)
-- Apple MLX: Apple Silicon için optimize edilmiş
+- ONNX Runtime: Çok platformlu, optimize çıkarım
+- Ollama: Kolay yerel model yönetimi (dev konteynerde ön yapılandırmalı)
+- Apple MLX: Apple Silicon için optimize edilmiştir
 
 ## Sorun Giderme
 
 ### Yaygın Sorunlar
 
 **Bellek Sorunları:**
-- Phi modelleri önemli miktarda RAM gerektirir (özellikle görsel/çok modlu varyantlar)
-- Kaynak kısıtlı ortamlar için kuantize edilmiş modelleri kullanın
-- Bkz. `/md/01.Introduction/04/QuantifyingPhi.md`
+- Phi modelleri (özellikle görsel/çok modlu varyantlar) yüksek RAM gerektirir
+- Kaynak kısıtlı ortamlar için kuantize modeller kullanılabilir
+- Bakınız: `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Bağımlılık Çakışmaları:**
-- Python örneklerinin belirli sürüm gereksinimleri olabilir
-- Her örnek için sanal ortamlar kullanın
-- Bireysel `requirements.txt` dosyalarını kontrol edin
+- Python örnekleri belirli sürüm gereksinimleri içerebilir
+- Her örnek için sanal ortam kullanın
+- Tek tek `requirements.txt` dosyalarını kontrol edin
 
 **Model İndirme Hataları:**
 - Büyük modeller yavaş bağlantılarda zaman aşımına uğrayabilir
-- Bulut ortamlarını kullanmayı düşünün (Codespaces, Azure)
+- Bulut ortamları (Codespaces, Azure) kullanmayı düşünün
 - Hugging Face önbelleğini kontrol edin: `~/.cache/huggingface/`
 
 **.NET Proje Sorunları:**
-- .NET 8.0 SDK'nın yüklü olduğundan emin olun
-- Oluşturmadan önce `dotnet restore` kullanın
-- Bazı projelerde CUDA'ya özgü yapılandırmalar bulunur (Debug_Cuda)
+- .NET 8.0 SDK kurulu olduğundan emin olun
+- Derlemeden önce `dotnet restore` komutunu kullanın
+- Bazı projeler CUDA’ya özgü yapılandırmalar içerir (Debug_Cuda)
 
 **JavaScript/Web Örnekleri:**
 - Uyumluluk için Node.js 18+ kullanın
-- `node_modules` klasörünü temizleyin ve sorun devam ederse yeniden yükleyin
-- WebGPU uyumluluk sorunları için tarayıcı konsolunu kontrol edin
+- Sorun devam ediyorsa `node_modules` klasörünü temizleyip yeniden kurun
+- WebGPU uyumluluğu için tarayıcı konsolunu kontrol edin
 
 ### Yardım Alma
 
-- **Discord:** Azure AI Foundry Community Discord'a katılın
-- **GitHub Issues:** Depodaki hataları ve sorunları bildirin
-- **GitHub Discussions:** Sorular sorun ve bilgi paylaşın
+- **Discord:** Microsoft Foundry Topluluk Discord’una katılın
+- **GitHub Issues:** Projede hata ve sorun bildirin
+- **GitHub Discussions:** Soru sorup bilgi paylaşın
 
 ## Ek Bağlam
 
-### Sorumlu AI
+### Sorumlu Yapay Zeka
 
-Tüm Phi modeli kullanımı Microsoft'un Sorumlu AI ilkelerine uygun olmalıdır:
-- Adalet, güvenilirlik, güvenlik
+Tüm Phi modeli kullanımları Microsoft’un Sorumlu Yapay Zeka ilkelerine uygun olmalıdır:
+- Adalet, güvenilirlik, emniyet
 - Gizlilik ve güvenlik  
 - Kapsayıcılık, şeffaflık, hesap verebilirlik
 - Üretim uygulamaları için Azure AI İçerik Güvenliğini kullanın
-- Bkz. `/md/01.Introduction/01/01.AISafety.md`
+- Bakınız: `/md/01.Introduction/01/01.AISafety.md`
 
 ### Çeviriler
 
-- Otomatik GitHub Action aracılığıyla 50+ dil desteklenmektedir
-- Çeviriler `/translations/` dizininde bulunmaktadır
-- Co-op-translator iş akışı tarafından yönetilmektedir
-- Çevrilmiş dosyaları manuel olarak düzenlemeyin (otomatik oluşturulmuş)
+- 50+ dil otomatik GitHub Action ile desteklenir
+- Çeviriler `/translations/` dizinindedir
+- co-op-translator iş akışı tarafından yönetilir
+- Çevrilen dosyalar manuel düzenlenmemelidir (otomatik oluşturulur)
 
 ### Katkıda Bulunma
 
-- `CONTRIBUTING.md` dosyasındaki yönergeleri takip edin
-- Katkıda Bulunan Lisans Sözleşmesi'ni (CLA) kabul edin
-- Microsoft Açık Kaynak Davranış Kurallarına uyun
-- Güvenlik ve kimlik bilgilerini commitlere dahil etmeyin
+- `CONTRIBUTING.md` içindeki rehberlere uyun
+- Katkı Sağlayıcı Lisans Sözleşmesi’ni (CLA) kabul edin
+- Microsoft Açık Kaynak Davranış Kuralları’na uyun
+- Güvenlik bilgisi ve kimlik bilgilerini commit’lerden çıkarın
 
 ### Çok Dilli Destek
 
-Bu depo, aşağıdaki dillerde örnekler içeren bir poliglot depodur:
+Bu depo çok dilli örnekler içerir:
 - **Python** - ML/AI iş akışları, Jupyter notebooklar, ince ayar
 - **C#/.NET** - Kurumsal uygulamalar, ONNX Runtime entegrasyonu
-- **JavaScript** - Web tabanlı AI, WebGPU ile tarayıcı çıkarımı
+- **JavaScript** - Web tabanlı yapay zeka, WebGPU ile tarayıcı çıkarımı
 
-Kullanım senaryonuza ve dağıtım hedefinize en uygun dili seçin.
+Kullanım ve dağıtım hedefinize en uygun dili seçin.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstermemize rağmen, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilmektedir. Bu çevirinin kullanımı sonucu oluşabilecek herhangi bir yanlış anlama veya yorumlama için sorumluluk kabul edilmemektedir.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
