@@ -2,41 +2,41 @@
 
 ## Projekto apžvalga
 
-PhiCookBook yra išsamus receptų saugyklos rinkinys, kuriame pateikiami praktiniai pavyzdžiai, mokymai ir dokumentacija, skirta dirbti su „Microsoft“ Phi mažųjų kalbos modelių (SLM) šeima. Saugykla demonstruoja įvairius naudojimo atvejus, įskaitant išvedimą, smulkiąją derinimą, kvantavimą, RAG įgyvendinimus ir daugiarūšes programas įvairiose platformose ir sistemose.
+PhiCookBook yra išsamus receptų knygos saugykla, kurioje yra praktinių pavyzdžių, pamokų ir dokumentacijos darbui su „Microsoft“ Phi šeimos mažaisiais kalbos modeliais (Small Language Models, SLM). Saugykla demonstruoja įvairius naudojimo atvejus, įskaitant spėjimą, tobulinimą (fine-tuning), kiekybinimą (quantization), RAG įgyvendinimus bei multimodalines programas įvairiose platformose ir sistemose.
 
 **Pagrindinės technologijos:**
-- **Kalbos:** Python, C#/.NET, JavaScript/Node.js
+- **Programavimo kalbos:** Python, C#/.NET, JavaScript/Node.js
 - **Sistemos:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformos:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **Modelių tipai:** Phi-3, Phi-3.5, Phi-4 (teksto, vaizdo, daugiarūšiai, loginio mąstymo variantai)
+- **Platformos:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Modelių tipai:** Phi-3, Phi-3.5, Phi-4 (teksto, vaizdo, multimodalios, samprotavimo variacijos)
 
 **Saugyklos struktūra:**
-- `/code/` - Veikiantys kodo pavyzdžiai ir pavyzdinės įgyvendinimo versijos
-- `/md/` - Išsami dokumentacija, mokymai ir vadovai  
-- `/translations/` - Daugiakalbiai vertimai (50+ kalbų per automatizuotą darbo eigą)
+- `/code/` - Veikiantys kodo pavyzdžiai ir mėginiai
+- `/md/` - Detali dokumentacija, pamokos ir vadovai  
+- `/translations/` - Daugiakalbės vertimai (daugiau nei 50 kalbų automatinio darbo eiga)
 - `/.devcontainer/` - Dev konteinerio konfigūracija (Python 3.12 su Ollama)
 
-## Kūrimo aplinkos nustatymas
+## Aplinkos diegimo instrukcijos
 
 ### Naudojant GitHub Codespaces arba Dev konteinerius (rekomenduojama)
 
-1. Atidarykite GitHub Codespaces (greičiausias būdas):
-   - Spustelėkite „Open in GitHub Codespaces“ ženkliuką README faile
-   - Konteineris automatiškai sukonfigūruojamas su Python 3.12 ir Ollama su Phi-3
+1. Atidaryti GitHub Codespaces (greičiausia):
+   - Spustelėkite „Open in GitHub Codespaces“ ženklelį README faile
+   - Konteineris automatiškai sukonfigūruojamas su Python 3.12 ir Ollama su Phi-3 modeliu
 
-2. Atidarykite VS Code Dev konteineriuose:
-   - Naudokite „Open in Dev Containers“ ženkliuką iš README
-   - Konteineriui reikalinga mažiausiai 16GB RAM
+2. Atidaryti VS Code Dev konteinerius:
+   - Naudokite „Open in Dev Containers“ ženklelį README faile
+   - Konteineriui reikia mažiausiai 16 GB atminties kompiuteryje
 
-### Vietinis nustatymas
+### Vietinis diegimas
 
 **Reikalavimai:**
 - Python 3.12 ar naujesnė versija
 - .NET 8.0 SDK (C# pavyzdžiams)
 - Node.js 18+ ir npm (JavaScript pavyzdžiams)
-- Rekomenduojama mažiausiai 16GB RAM
+- Rekomenduojama mažiausiai 16 GB RAM
 
-**Įdiegimas:**
+**Diegimas:**
 ```bash
 git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
@@ -46,7 +46,7 @@ cd PhiCookBook
 Eikite į konkrečių pavyzdžių katalogus ir įdiekite priklausomybes:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # jei yra failas requirements.txt
 ```
 
 **.NET pavyzdžiams:**
@@ -56,54 +56,54 @@ dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**JavaScript/Web pavyzdžiams:**
+**JavaScript / Web pavyzdžiams:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Paleisti kūrimo serverį
+npm run build  # Sukurti gamybai
 ```
 
-## Saugyklos organizacija
+## Saugyklos organizavimas
 
 ### Kodo pavyzdžiai (`/code/`)
 
 - **01.Introduce/** - Pagrindiniai įvado ir pradžios pavyzdžiai
-- **03.Finetuning/** ir **04.Finetuning/** - Smulkiojo derinimo pavyzdžiai su įvairiais metodais
-- **03.Inference/** - Išvedimo pavyzdžiai skirtingoje aparatinėje įrangoje (AIPC, MLX)
-- **06.E2E/** - Pilnos programos pavyzdžiai
-- **07.Lab/** - Laboratoriniai/eksperimentiniai įgyvendinimai
-- **08.RAG/** - Informacijos paieškos ir generavimo pavyzdžiai
+- **03.Finetuning/** ir **04.Finetuning/** - Tobulinimo pavyzdžiai su įvairiais metodais
+- **03.Inference/** - Spėjimo pavyzdžiai skirtingoje įrangoje (AIPC, MLX)
+- **06.E2E/** - Galo iki galo programų pavyzdžiai
+- **07.Lab/** - Laboratoriniai / eksperimentiniai įgyvendinimai
+- **08.RAG/** - Retrieval-Augmented Generation pavyzdžiai
 - **09.UpdateSamples/** - Naujausi atnaujinti pavyzdžiai
 
 ### Dokumentacija (`/md/`)
 
-- **01.Introduction/** - Įvadiniai vadovai, aplinkos nustatymas, platformų vadovai
-- **02.Application/** - Programų pavyzdžiai, suskirstyti pagal tipą (Tekstas, Kodas, Vaizdas, Garsas ir kt.)
-- **02.QuickStart/** - Greito starto vadovai Azure AI Foundry ir GitHub Models
-- **03.FineTuning/** - Smulkiojo derinimo dokumentacija ir mokymai
-- **04.HOL/** - Praktiniai laboratoriniai darbai (įskaitant .NET pavyzdžius)
+- **01.Introduction/** - Įvado vadovai, aplinkos diegimas, platformų vadovai
+- **02.Application/** - Programų pavyzdžiai pagal tipus (Tekstas, Kodas, Vaizdas, Garsas ir kt.)
+- **02.QuickStart/** - Greito starto vadovai Microsoft Foundry ir GitHub Models
+- **03.FineTuning/** - Tobulinimo dokumentacija ir pamokos
+- **04.HOL/** - Praktinės laboratorijos (įskaitant .NET pavyzdžius)
 
 ### Failų formatai
 
-- **Jupyter užrašų knygelės (`.ipynb`)** - Interaktyvūs Python mokymai, pažymėti 📓 README faile
-- **Python scenarijai (`.py`)** - Savarankiški Python pavyzdžiai
+- **Jupyter užrašų knygelės (`.ipynb`)** - Interaktyvios Python pamokos, pažymėtos 📓 README
+- **Python skriptai (`.py`)** - Atitinkami Python pavyzdžiai
 - **C# projektai (`.csproj`, `.sln`)** - .NET programos ir pavyzdžiai
-- **JavaScript (`.js`, `package.json`)** - Web pagrindu ir Node.js pavyzdžiai
+- **JavaScript (`.js`, `package.json`)** - Interneto ir Node.js pavyzdžiai
 - **Markdown (`.md`)** - Dokumentacija ir vadovai
 
 ## Darbas su pavyzdžiais
 
 ### Jupyter užrašų knygelių paleidimas
 
-Dauguma pavyzdžių pateikiami kaip Jupyter užrašų knygelės:
+Dauguma pavyzdžių pateikti kaip Jupyter užrašų knygelės:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Atidaro naršyklės sąsają
+# Pereiti prie norimo .ipynb failo
 ```
 
-### Python scenarijų paleidimas
+### Python skriptų paleidimas
 
 ```bash
 cd code/<example-directory>
@@ -124,94 +124,94 @@ cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### JavaScript/Web pavyzdžių paleidimas
+### JavaScript / Web pavyzdžių paleidimas
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Kūrimas su karštu atnaujinimu
 ```
 
 ## Testavimas
 
-Ši saugykla apima pavyzdinį kodą ir mokymus, o ne tradicinį programinės įrangos projektą su vieneto testais. Tikrinimas paprastai atliekamas:
+Šioje saugykloje yra pavyzdinis kodas ir pamokos, bet nėra įprasto programinės įrangos projekto su vienetiniais testais. Patikra paprastai atliekama:
 
-1. **Paleidžiant pavyzdžius** - Kiekvienas pavyzdys turėtų veikti be klaidų
-2. **Rezultatų tikrinimas** - Patikrinkite, ar modelio atsakymai yra tinkami
-3. **Vadovų laikymasis** - Vadovai turėtų veikti kaip dokumentuota
+1. **Paleidus pavyzdžius** - Kiekvienas pavyzdys turi veikti be klaidų
+2. **Patikrinus rezultatus** - Patikrinti, ar modelio atsakymai tinkami
+3. **Sekant pamokas** - Žingsnis po žingsnio vadovai turi veikti kaip aprašyta
 
-**Bendras tikrinimo metodas:**
-- Testuokite pavyzdžių vykdymą tikslinėje aplinkoje
-- Patikrinkite, ar priklausomybės tinkamai įdiegtos
-- Patikrinkite, ar modeliai sėkmingai atsisiunčiami/įkeliami
-- Patvirtinkite, kad tikėtinas elgesys atitinka dokumentaciją
+**Įprasta patikros strategija:**
+- Išbandyti pavyzdžių vykdymą tikslinėje aplinkoje
+- Patikrinti, ar priklausomybės sėkmingai įdiegtos
+- Patikrinti, ar modeliai atsisiunčiami / kraunami sėkmingai
+- Patvirtinti, kad elgsena atitinka dokumentaciją
 
 ## Kodo stilius ir konvencijos
 
 ### Bendros gairės
 
-- Pavyzdžiai turėtų būti aiškūs, gerai komentuoti ir edukaciniai
-- Laikykitės kalbai specifinių konvencijų (PEP 8 Python, C# standartai .NET)
-- Pavyzdžiai turėtų būti orientuoti į konkrečių Phi modelių galimybių demonstravimą
-- Įtraukite komentarus, paaiškinančius pagrindines sąvokas ir modelio specifinius parametrus
+- Pavyzdžiai turi būti aiškūs, gerai komentuoti ir mokomieji
+- Laikytis kalbų specifinių konvencijų (PEP 8 Python, C# standartai .NET)
+- Sutelkti dėmesį į specifinių Phi modelio galimybių demonstravimą
+- Įtraukti komentarus, paaiškinančius pagrindines sąvokas ir parametrus
 
 ### Dokumentacijos standartai
 
 **URL formatavimas:**
-- Naudokite `[text](../../url)` formatą be papildomų tarpų
-- Santykinės nuorodos: naudokite `./` dabartiniam katalogui, `../` tėviniam
-- URL neturėtų turėti šalių specifinių lokalizacijų (vengti `/en-us/`, `/en/`)
+- Naudoti `[tekstas](../../url)` formatą be papildomų tarpų
+- Santykiniai saitai: naudoti `./` einamam katalogui, `../` tėviniam
+- Nevartoti šalių specifinių lokalizacijų URL (vengti `/en-us/`, `/en/`)
 
-**Vaizdai:**
-- Visus vaizdus saugokite `/imgs/` kataloge
-- Naudokite aprašomuosius pavadinimus su angliškais simboliais, skaičiais ir brūkšneliais
+**Paveikslėliai:**
+- Visus paveikslėlius laikyti kataloge `/imgs/`
+- Naudoti aprašomuosius pavadinimus anglų raidėmis, skaičiais ir brūkšniais
 - Pavyzdys: `phi-3-architecture.png`
 
 **Markdown failai:**
-- Nurodykite faktinius veikiančius pavyzdžius iš `/code/` katalogo
-- Dokumentaciją sinchronizuokite su kodo pakeitimais
-- Naudokite 📓 jaustuką, kad pažymėtumėte Jupyter užrašų knygelių nuorodas README
+- Nurodyti realius veikiančius pavyzdžius kataloge `/code/`
+- Dokumentaciją sinchronizuoti su kodo pakeitimais
+- Naudoti 📓 emociją pažymėti Jupyter užrašų knygelių nuorodas README
 
 ### Failų organizavimas
 
-- Kodo pavyzdžiai `/code/` kataloge, suskirstyti pagal temą/funkciją
-- Dokumentacija `/md/` kataloge atspindi kodo struktūrą, kai tai įmanoma
-- Susijusius failus (užrašų knygeles, scenarijus, konfigūracijas) laikykite kartu poaplankiuose
+- Kodo pavyzdžiai kataloge `/code/` organizuoti pagal temą / funkciją
+- Dokumentacija kataloge `/md/` atspindi kodo struktūrą, kai taikoma
+- Susiję failai (užrašų knygos, skriptai, konfigai) laikyti kartu posistemuose
 
-## Pasiūlymų pateikimo gairės
+## Pull request gairės
 
 ### Prieš pateikiant
 
-1. **Forkinkite saugyklą** į savo paskyrą
+1. **Sukurkite saugyklos forką** savo paskyroje
 2. **Atskirkite PR pagal tipą:**
    - Klaidų taisymai viename PR
    - Dokumentacijos atnaujinimai kitame
    - Nauji pavyzdžiai atskiruose PR
-   - Rašybos klaidų taisymai gali būti sujungti
+   - Rašybos pataisymai gali būti kartu
 
-3. **Spręskite susijungimo konfliktus:**
-   - Atnaujinkite savo vietinę `main` šaką prieš atlikdami pakeitimus
-   - Dažnai sinchronizuokite su pagrindine saugykla
+3. **Tvarkykite susijungimo konfliktus:**
+   - Pirmiausia atnaujinkite vietinį `main` šaką prieš keitimus
+   - Dažnai sinchronizuokitės su viršutiniu saugyklos šaku
 
-4. **Vertimo PR:**
-   - Turi apimti visų failų vertimus aplanke
-   - Išlaikykite originalios kalbos struktūrą
+4. **Vertimų PR:**
+   - Turi apimti VISŲ katalogo failų vertimus
+   - Išlaikyti nuoseklią struktūrą su šaltinio kalba
 
-### Būtini patikrinimai
+### Privalomi patikrinimai
 
-PR automatiškai vykdo GitHub darbo eigas, kad patikrintų:
+PR automatiškai paleidžia GitHub darbo eigas, kad patikrintų:
 
-1. **Santykinių kelių patikrinimas** - Visos vidinės nuorodos turi veikti
-   - Testuokite nuorodas vietoje: Ctrl+Click VS Code
-   - Naudokite VS Code kelių pasiūlymus (`./` arba `../`)
+1. **Santykinės nuorodos validavimas** - Visos vidinės nuorodos turi veikti
+   - Testuoti nuorodas lokaliai: Ctrl + Spustelėjimas VS Code
+   - Naudoti VS Code pateikiamas kelių siūlymus (`./` arba `../`)
 
-2. **URL lokalizacijos patikrinimas** - Interneto URL neturi turėti šalių lokalizacijų
-   - Pašalinkite `/en-us/`, `/en/` ar kitus kalbos kodus
-   - Naudokite bendrus tarptautinius URL
+2. **URL lokalės patikra** - Interneto URL neturi turėti šalies lokalės
+   - Pašalinti `/en-us/`, `/en/` ar kitų kalbų kodus
+   - Naudoti bendrinius tarptautinius adresus
 
-3. **Sugedusių URL patikrinimas** - Visi URL turi grąžinti 200 statusą
-   - Patikrinkite, ar nuorodos yra pasiekiamos prieš pateikdami
-   - Pastaba: Kai kurie gedimai gali būti dėl tinklo apribojimų
+3. **Nutrūkusių URL patikra** - Visi URL turi grąžinti 200 statusą
+   - Patikrinti nuorodų pasiekiamumą prieš pateikiant
+   - Pastaba: kai kurios klaidos gali būti dėl tinklo apribojimų
 
 ### PR pavadinimo formatas
 
@@ -220,110 +220,112 @@ PR automatiškai vykdo GitHub darbo eigas, kad patikrintų:
 ```
 
 Pavyzdžiai:
-- `[docs] Pridėtas Phi-4 išvedimo vadovas`
-- `[code] Pataisytas ONNX Runtime integracijos pavyzdys`
-- `[translation] Pridėtas japonų kalbos vertimas įvadiniams vadovams`
+- `[docs] Pridėti Phi-4 spėjimo pamoką`
+- `[code] Ištaisyti ONNX Runtime integracijos pavyzdį`
+- `[translation] Pridėti japonų vertimą įvadams`
 
-## Bendri kūrimo modeliai
+## Dažni vystymo modeliai
 
 ### Darbas su Phi modeliais
 
-**Modelio įkėlimas:**
+**Modelių įkėlimas:**
 - Pavyzdžiai naudoja įvairias sistemas: Transformers, ONNX Runtime, MLX, OpenVINO
-- Modeliai paprastai atsisiunčiami iš Hugging Face, Azure arba GitHub Models
-- Patikrinkite modelio suderinamumą su savo aparatine įranga (CPU, GPU, NPU)
+- Modeliai dažniausiai atsisiunčiami iš Hugging Face, Azure ar GitHub Models
+- Patikrinkite modelio suderinamumą su jūsų įranga (CPU, GPU, NPU)
 
-**Išvedimo modeliai:**
-- Teksto generavimas: Dauguma pavyzdžių naudoja pokalbių/instrukcijų variantus
-- Vaizdas: Phi-3-vision ir Phi-4-multimodal vaizdų supratimui
+**Spėjimo modeliai:**
+- Teksto generavimas: dauguma pavyzdžių naudoja chat/instruction variantus
+- Vaizdas: Phi-3-vision ir Phi-4-multimodal vaizdo supratimui
 - Garsas: Phi-4-multimodal palaiko garso įvestis
-- Loginis mąstymas: Phi-4-reasoning variantai pažangiems loginio mąstymo užduotims
+- Samprotavimas: Phi-4-reasoning pažangiems samprotavimo uždaviniams
 
-### Pastabos apie platformas
+### Platformų specifinės pastabos
 
-**Azure AI Foundry:**
-- Reikalinga Azure prenumerata ir API raktai
+**Microsoft Foundry:**
+- Reikia Azure prenumeratos ir API raktų
 - Žr. `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- Nemokama versija testavimui
+- Yra nemokama bandomoji versija
 - Žr. `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
-**Vietinis išvedimas:**
-- ONNX Runtime: Kryžminė platforma, optimizuotas išvedimas
-- Ollama: Lengvas vietinis modelių valdymas (iš anksto sukonfigūruotas dev konteineryje)
-- Apple MLX: Optimizuotas Apple Silicon
+**Vietinis spėjimas:**
+- ONNX Runtime: tarpplatforminis optimizuotas spėjimas
+- Ollama: lengvas vietinis modelių valdymas (iš anksto konfigūruota dev konteineryje)
+- Apple MLX: optimizuotas Apple Silicio įrenginiams
 
-## Trikčių šalinimas
+## Gedimų šalinimas
 
 ### Dažnos problemos
 
 **Atminties problemos:**
-- Phi modeliams reikalinga didelė RAM (ypač vaizdo/daugiarūšiams variantams)
-- Naudokite kvantuotus modelius ribotų resursų aplinkose
+- Phi modeliai reikalauja daug RAM (ypač vaizdo / multimodalios variacijos)
+- Naudokite kiekybintus (quantized) modelius resursų apribojimams
 - Žr. `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Priklausomybių konfliktai:**
 - Python pavyzdžiai gali turėti specifinius versijų reikalavimus
 - Naudokite virtualias aplinkas kiekvienam pavyzdžiui
-- Patikrinkite individualius `requirements.txt` failus
+- Patikrinkite atskirus `requirements.txt` failus
 
-**Modelio atsisiuntimo klaidos:**
-- Dideli modeliai gali nutrūkti lėtuose ryšiuose
+**Modelių atsisiuntimo nesėkmės:**
+- Dideli modeliai gali laukti ryšio lėtumo atveju
 - Apsvarstykite debesų aplinkas (Codespaces, Azure)
-- Patikrinkite Hugging Face talpyklą: `~/.cache/huggingface/`
+- Patikrinkite Hugging Face kešą: `~/.cache/huggingface/`
 
 **.NET projekto problemos:**
-- Įsitikinkite, kad įdiegta .NET 8.0 SDK
-- Naudokite `dotnet restore` prieš kurdami
+- Įsitikinkite, kad įdiegtas .NET 8.0 SDK
+- Naudokite `dotnet restore` prieš sudarant sprendimą
 - Kai kurie projektai turi CUDA specifines konfigūracijas (Debug_Cuda)
 
 **JavaScript/Web pavyzdžiai:**
-- Naudokite Node.js 18+ suderinamumui
-- Išvalykite `node_modules` ir iš naujo įdiekite, jei kyla problemų
+- Naudokite Node.js 18+ dėl suderinamumo
+- Išvalykite `node_modules` ir perinstaliuokite, jei yra problemų
 - Patikrinkite naršyklės konsolę dėl WebGPU suderinamumo problemų
 
-### Pagalbos gavimas
+### Pagalba
 
-- **Discord:** Prisijunkite prie Azure AI Foundry bendruomenės Discord
+- **Discord:** Prisijunkite prie Microsoft Foundry bendruomenės Discord
 - **GitHub Issues:** Praneškite apie klaidas ir problemas saugykloje
 - **GitHub Discussions:** Užduokite klausimus ir dalinkitės žiniomis
 
-## Papildomas kontekstas
+## Papildoma informacija
 
-### Atsakingas AI
+### Atsakingas dirbtinis intelektas
 
-Visas Phi modelių naudojimas turėtų atitikti „Microsoft“ atsakingo AI principus:
-- Teisingumas, patikimumas, saugumas
+Visi Phi modelių panaudojimai turi atitikti „Microsoft“ atsakingo DI principus:
+- Sąžiningumas, patikimumas, saugumas
 - Privatumas ir saugumas  
 - Įtrauktis, skaidrumas, atskaitomybė
-- Naudokite Azure AI Content Safety gamybinėms programoms
+- Naudokite Azure AI Content Safety gamybos programoms
 - Žr. `/md/01.Introduction/01/01.AISafety.md`
 
 ### Vertimai
 
-- Palaikoma 50+ kalbų per automatizuotą GitHub veiksmą
-- Vertimai `/translations/` kataloge
-- Prižiūrima co-op-translator darbo eiga
-- Neredaguokite rankiniu būdu išverstų failų (automatiškai generuojami)
+- Daugiau nei 50 kalbų, palaikoma automatinė GitHub Action
+- Vertimai kataloge `/translations/`
+- Prižiūrimi pagal co-op-translator darbo eigą
+- Nesitvarkykite vertimų failų rankiniu būdu (automatiškai generuojami)
 
-### Prisidėjimas
+### Bendradarbiavimas
 
-- Laikykitės gairių `CONTRIBUTING.md`
-- Sutikite su Contributor License Agreement (CLA)
-- Laikykitės Microsoft Open Source Code of Conduct
-- Neįtraukite saugumo ir prisijungimo duomenų į commit'us
+- Laikykitės gaires faile `CONTRIBUTING.md`
+- Sutikite su Bendradarbio licencijos sutartimi (Contributor License Agreement, CLA)
+- Laikykitės Microsoft atvirojo kodo elgesio kodekso
+- Neskelbkite saugumo informacijos ar prisijungimo duomenų commit'uose
 
-### Daugiakalbė parama
+### Daugiakalbė palaikymas
 
-Tai yra daugiakalbė saugykla su pavyzdžiais:
-- **Python** - ML/AI darbo eigos, Jupyter užrašų knygelės, smulkusis derinimas
+Tai poliglotinė saugykla su pavyzdžiais:
+- **Python** - ML/AI darbo eiga, Jupyter užrašų knygelės, tobulinimas
 - **C#/.NET** - Verslo programos, ONNX Runtime integracija
-- **JavaScript** - Web pagrindu AI, naršyklės išvedimas su WebGPU
+- **JavaScript** - Interneto DI, naršyklės spėjimas su WebGPU  
 
-Pasirinkite kalbą, kuri geriausiai atitinka jūsų naudojimo atvejį ir diegimo tikslą.
+Pasirinkite kalbą, kuri geriausiai atitinka jūsų atvejį ir diegimo tikslą.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingą interpretaciją, atsiradusią naudojant šį vertimą.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatizuoti vertimai gali turėti klaidų arba netikslumų. Originalus dokumentas jo gimtąja kalba turi būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neatsakome už jokius nesusipratimus ar klaidingus aiškinimus, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

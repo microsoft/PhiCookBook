@@ -1,114 +1,116 @@
-# **Pristatykite atsakingą dirbtinį intelektą**
+# **Įvadas į Atsakingąją Dirbtinį Intelektą**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) yra iniciatyva, skirta padėti kūrėjams ir organizacijoms kurti dirbtinio intelekto sistemas, kurios būtų skaidrios, patikimos ir atsakingos. Ši iniciatyva teikia rekomendacijas ir išteklius, padedančius kurti atsakingus dirbtinio intelekto sprendimus, atitinkančius etikos principus, tokius kaip privatumas, sąžiningumas ir skaidrumas. Taip pat aptarsime kai kuriuos iššūkius ir geriausią praktiką, susijusią su atsakingo dirbtinio intelekto sistemų kūrimu.
+[Microsoft atsakingas DI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) yra iniciatyva, kurios tikslas – padėti kūrėjams ir organizacijoms kurti DI sistemas, kurios būtų skaidrios, patikimos ir atsakingos. Iniciatyva teikia gaires ir išteklius, skirtus kurti atsakingus DI sprendimus, atitinkančius etikos principus, tokius kaip privatumas, sąžiningumas ir skaidrumas. Taip pat aptarsime kai kurias iššūkius bei geriausias praktikas, susijusias su atsakingų DI sistemų kūrimu.
 
-## Microsoft Responsible AI apžvalga
+## Microsoft atsakingo DI apžvalga
 
-![RAIPrinciples](../../../../../imgs/01/05/RAI/RAIPrinciples.png)
+![RAIPrinciples](../../../../../translated_images/lt/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **Etikos principai**
 
-Microsoft Responsible AI vadovaujasi etikos principais, tokiais kaip privatumas, sąžiningumas, skaidrumas, atsakomybė ir saugumas. Šie principai skirti užtikrinti, kad dirbtinio intelekto sistemos būtų kuriamos etiškai ir atsakingai.
+Microsoft atsakingas DI vadovaujasi etikos principais, tokiais kaip privatumas, sąžiningumas, skaidrumas, atsakomybė ir saugumas. Šie principai sukurti tam, kad DI sistemos būtų vystomos etiškai ir atsakingai.
 
-**Skaidrus dirbtinis intelektas**
+**Skaidrus DI**
 
-Microsoft Responsible AI pabrėžia skaidrumo svarbą dirbtinio intelekto sistemose. Tai apima aiškių paaiškinimų pateikimą, kaip veikia dirbtinio intelekto modeliai, taip pat užtikrinimą, kad duomenų šaltiniai ir algoritmai būtų viešai prieinami.
+Microsoft atsakingas DI pabrėžia skaidrumo svarbą DI sistemose. Tai apima aiškių paaiškinimų teikimą apie tai, kaip veikia DI modeliai, taip pat užtikrinimą, kad duomenų šaltiniai ir algoritmai būtų viešai prieinami.
 
-**Atsakingas dirbtinis intelektas**
+**Atsakingas DI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) skatina kurti atsakingas dirbtinio intelekto sistemas, kurios gali pateikti įžvalgas apie tai, kaip modeliai priima sprendimus. Tai padeda vartotojams suprasti ir pasitikėti dirbtinio intelekto sistemų rezultatais.
+[Microsoft atsakingas DI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) skatina atsakingų DI sistemų kūrimą, kurios galėtų suteikti įžvalgų apie tai, kaip DI modeliai priima sprendimus. Tai gali padėti vartotojams suprasti ir pasitikėti DI sistemų rezultatais.
 
 **Įtrauktis**
 
-Dirbtinio intelekto sistemos turėtų būti kuriamos taip, kad jos būtų naudingos visiems. Microsoft siekia kurti įtraukiantį dirbtinį intelektą, kuris atsižvelgia į įvairias perspektyvas ir vengia šališkumo ar diskriminacijos.
+DI sistemos turėtų būti sukurtos taip, kad nauda atitektų visiems. Microsoft siekia kurti įtraukiantį DI, kuris atsižvelgtų į įvairias perspektyvas ir vengtų šališkumo ar diskriminacijos.
 
 **Patikimumas ir saugumas**
 
-Labai svarbu užtikrinti, kad dirbtinio intelekto sistemos būtų patikimos ir saugios. Microsoft siekia kurti tvirtus modelius, kurie veiktų nuosekliai ir išvengtų žalingų pasekmių.
+Užtikrinti, kad DI sistemos būtų patikimos ir saugios, yra itin svarbu. Microsoft koncentruojasi į tvirtų modelių kūrimą, kurie veiktų nuosekliai ir vengtų kenksmingų pasekmių.
 
-**Sąžiningumas dirbtiniame intelekte**
+**Sąžiningumas DI**
 
-Microsoft Responsible AI pripažįsta, kad dirbtinio intelekto sistemos gali tęsti šališkumą, jei jos mokomos naudojant šališkus duomenis ar algoritmus. Iniciatyva teikia rekomendacijas, kaip kurti sąžiningas dirbtinio intelekto sistemas, kurios nediskriminuotų pagal tokius veiksnius kaip rasė, lytis ar amžius.
+Microsoft atsakingas DI pripažįsta, kad DI sistemos gali išlaikyti šališkumus, jei jos treniruojamos naudojant šališkus duomenis ar algoritmus. Iniciatyva teikia gaires, kaip kurti sąžiningas DI sistemas, kurios nediskriminuotų pagal tokias savybes kaip rasė, lytis ar amžius.
 
 **Privatumas ir saugumas**
 
-Microsoft Responsible AI pabrėžia vartotojų privatumo ir duomenų saugumo apsaugos svarbą dirbtinio intelekto sistemose. Tai apima stiprių duomenų šifravimo ir prieigos kontrolės priemonių įgyvendinimą, taip pat reguliarius sistemų auditus, siekiant nustatyti pažeidžiamumus.
+Microsoft atsakingas DI pabrėžia naudotojų privatumo ir duomenų saugumo svarbą DI sistemose. Tai apima stiprią duomenų šifravimą ir prieigos kontrolės įgyvendinimą, taip pat reguliarius DI sistemų saugumo patikrinimus.
 
 **Atsakomybė ir pareiga**
 
-Microsoft Responsible AI skatina atsakomybę ir pareigą dirbtinio intelekto kūrime ir diegime. Tai apima užtikrinimą, kad kūrėjai ir organizacijos būtų informuoti apie galimus dirbtinio intelekto sistemų rizikos veiksnius ir imtųsi veiksmų jiems sumažinti.
+Microsoft atsakingas DI skatina atsakomybę ir pareigą DI kūrimo ir diegimo metu. Tai apima užtikrinimą, kad kūrėjai ir organizacijos suvoktų galimas rizikas, susijusias su DI sistemomis, ir imtųsi žingsnių toms rizikoms mažinti.
 
-## Geriausia praktika kuriant atsakingas dirbtinio intelekto sistemas
+## Geriausios praktikos atsakingų DI sistemų kūrimui
 
-**Kurkite modelius naudodami įvairius duomenų rinkinius**
+**Vystyti DI modelius naudojant įvairius duomenų rinkinius**
 
-Norint išvengti šališkumo dirbtinio intelekto sistemose, svarbu naudoti įvairius duomenų rinkinius, kurie atspindi skirtingas perspektyvas ir patirtis.
+Norint išvengti šališkumo DI sistemose, svarbu naudoti įvairius duomenų rinkinius, atspindinčius skirtingas perspektyvas ir patirtis.
 
-**Naudokite paaiškinamus dirbtinio intelekto metodus**
+**Naudoti aiškinamojo DI metodikas**
 
-Paaiškinami dirbtinio intelekto metodai gali padėti vartotojams suprasti, kaip modeliai priima sprendimus, o tai gali padidinti pasitikėjimą sistema.
+Aiškinamasis DI gali padėti vartotojams suprasti, kaip DI modeliai priima sprendimus, o tai didina pasitikėjimą sistema.
 
-**Reguliariai audituokite sistemas dėl pažeidžiamumų**
+**Reguliariai tikrinti DI sistemas dėl pažeidžiamumų**
 
-Reguliarūs dirbtinio intelekto sistemų auditai gali padėti nustatyti galimus rizikos veiksnius ir pažeidžiamumus, kuriuos reikia spręsti.
+Reguliarūs DI sistemų patikrinimai gali padėti identifikuoti galimas rizikas ir trūkumus, kuriuos reikia spręsti.
 
-**Įgyvendinkite stiprų duomenų šifravimą ir prieigos kontrolę**
+**Įgyvendinti stiprų duomenų šifravimą ir prieigos kontrolę**
 
-Duomenų šifravimas ir prieigos kontrolė gali padėti apsaugoti vartotojų privatumą ir saugumą dirbtinio intelekto sistemose.
+Duomenų šifravimas ir prieigos kontrolė padeda apsaugoti vartotojų privatumą ir saugumą DI sistemose.
 
-**Laikykitės etikos principų dirbtinio intelekto kūrime**
+**Laikytis etikos principų DI kūrime**
 
-Laikantis etikos principų, tokių kaip sąžiningumas, skaidrumas ir atsakomybė, galima padidinti pasitikėjimą dirbtinio intelekto sistemomis ir užtikrinti, kad jos būtų kuriamos atsakingai.
+Laikymasis etikos principų, tokių kaip sąžiningumas, skaidrumas ir atsakomybė, padeda kurti pasitikėjimą DI sistemomis ir užtikrina, kad jos vystomos atsakingai.
 
-## Naudojant AI Foundry atsakingam dirbtiniam intelektui
+## Atsakingas DI naudojant AI Foundry
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) yra galinga platforma, leidžianti kūrėjams ir organizacijoms greitai kurti pažangias, rinkai paruoštas ir atsakingas programas. Štai keletas pagrindinių Azure AI Foundry funkcijų ir galimybių:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) yra galinga platforma, leidžianti kūrėjams ir organizacijoms greitai kurti išmanias, pažangias, rinkai paruoštas ir atsakingas programas. Štai keletas pagrindinių Microsoft Foundry funkcijų ir galimybių:
 
-**Paruoštos API ir modeliai**
+**Iš karto veikiantys API ir modeliai**
 
-Azure AI Foundry siūlo iš anksto sukurtas ir pritaikomas API bei modelius. Jie apima įvairias dirbtinio intelekto užduotis, įskaitant generatyvų dirbtinį intelektą, natūralios kalbos apdorojimą pokalbiams, paiešką, stebėjimą, vertimą, kalbą, vaizdą ir sprendimų priėmimą.
+Microsoft Foundry suteikia paruoštas naudoti ir pritaikomus API bei modelius. Jie apima įvairias DI užduotis, įskaitant generatyvinį DI, natūralios kalbos apdorojimą pokalbiams, paiešką, stebėjimą, vertimą, kalbą, regėjimą ir sprendimų priėmimą.
 
 **Prompt Flow**
 
-Prompt Flow funkcija Azure AI Foundry leidžia kurti pokalbių dirbtinio intelekto patirtis. Ji suteikia galimybę kurti ir valdyti pokalbių srautus, palengvinant chatbotų, virtualių asistentų ir kitų interaktyvių programų kūrimą.
+Prompt flow Microsoft Foundry leidžia kurti pokalbių DI patirtis. Tai suteikia galimybę projektuoti ir valdyti pokalbių srautus, palengvinant chatbotų, virtualių asistentų ir kitų interaktyvių programų kūrimą.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG yra technika, derinanti paieškos ir generavimo metodus. Ji pagerina generuojamų atsakymų kokybę, pasitelkdama tiek esamas žinias (paieška), tiek kūrybinį generavimą (generacija).
+RAG – tai technika, derinanti paieškos ir generatyvinius metodus. Ji gerina generuotų atsakymų kokybę, naudodama tiek iš anksto žinomą informaciją (paieška), tiek kūrybinį generavimą (generavimas).
 
-**Generatyvaus dirbtinio intelekto vertinimo ir stebėjimo metrikos**
+**Generatyvinio DI vertinimo ir stebėsenos rodikliai**
 
-Azure AI Foundry teikia įrankius generatyvaus dirbtinio intelekto modelių vertinimui ir stebėjimui. Galite įvertinti jų našumą, sąžiningumą ir kitus svarbius rodiklius, kad užtikrintumėte atsakingą diegimą. Be to, jei sukūrėte ataskaitų suvestinę, galite naudoti Azure Machine Learning Studio be kodo sąsają, kad pritaikytumėte ir sukurtumėte atsakingo dirbtinio intelekto ataskaitų suvestinę ir susijusią rezultatų kortelę, pagrįstą [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python bibliotekomis. Ši rezultatų kortelė padeda dalintis svarbiausiomis įžvalgomis, susijusiomis su sąžiningumu, funkcijų svarba ir kitais atsakingo diegimo aspektais, tiek techniniams, tiek netechniniams suinteresuotiems asmenims.
+Microsoft Foundry suteikia įrankius generatyvinių DI modelių vertinimui ir stebėsenai. Galite vertinti jų našumą, sąžiningumą ir kitus svarbius rodiklius, kad užtikrintumėte atsakingą diegimą. Be to, sukūrę informacijos suvestinę, galite naudoti be kodo sąsają Azure Machine Learning Studio, kad pritaikytumėte ir sugeneruotumėte Atsakingo DI informacijos suvestinę ir susijusią vertinimo kortelę, remiantis [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python bibliotekomis. Ši vertinimo kortelė padeda dalintis svarbiomis įžvalgomis apie sąžiningumą, funkciijų svarbą ir kitus atsakingo diegimo aspektus tiek techniniams, tiek netechniniams suinteresuotiesiems asmenims.
 
-Norėdami naudoti AI Foundry atsakingam dirbtiniam intelektui, galite laikytis šios geriausios praktikos:
+Norėdami naudoti AI Foundry atsakingam DI, galite laikytis šių geriausių praktikų:
 
-**Apibrėžkite problemą ir savo sistemos tikslus**
+**Apibrėžkite savo DI sistemos problemą ir tikslus**
 
-Prieš pradedant kūrimo procesą, svarbu aiškiai apibrėžti problemą ar tikslą, kurį jūsų dirbtinio intelekto sistema siekia išspręsti. Tai padės nustatyti duomenis, algoritmus ir išteklius, reikalingus efektyviam modeliui sukurti.
+Prieš pradedant kūrimo procesą svarbu aiškiai apibrėžti problemą ar tikslą, kurį DI sistema siekia spręsti. Tai padės identifikuoti duomenis, algoritmus ir išteklius, reikalingus veiksmingam modeliui kurti.
 
-**Surinkite ir apdorokite tinkamus duomenis**
+**Surinkite ir išankstiniam apdorojimui paruoškite reikalingus duomenis**
 
-Duomenų kokybė ir kiekis, naudojami mokant dirbtinio intelekto sistemą, gali turėti didelę įtaką jos veikimui. Todėl svarbu surinkti tinkamus duomenis, juos išvalyti, apdoroti ir užtikrinti, kad jie atspindėtų populiaciją ar problemą, kurią bandote išspręsti.
+Duomenų kokybė ir kiekis, naudojami DI sistemos mokymuisi, gali stipriai paveikti jos našumą. Todėl svarbu surinkti atitinkamus duomenis, juos išvalyti, apdoroti ir užtikrinti, kad jie būtų reprezentatyvūs populiacijai ar problemai, kurią norite spręsti.
 
-**Pasirinkite tinkamą vertinimo metodą**
+**Pasirinkite tinkamus vertinimo metodus**
 
-Yra įvairių vertinimo algoritmų. Svarbu pasirinkti tinkamiausią algoritmą, atsižvelgiant į jūsų duomenis ir problemą.
+Yra įvairių vertinimo algoritmų. Svarbu pasirinkti tinkamiausią algoritmą pagal jūsų duomenis ir problemą.
 
 **Įvertinkite ir interpretuokite modelį**
 
-Sukūrus dirbtinio intelekto modelį, svarbu įvertinti jo veikimą naudojant tinkamus rodiklius ir interpretuoti rezultatus skaidriai. Tai padės nustatyti bet kokius šališkumus ar modelio apribojimus ir atlikti reikalingus patobulinimus.
+Sukūrę DI modelį, svarbu įvertinti jo našumą naudojant tinkamus rodiklius ir skaidriai interpretuoti rezultatus. Tai padės identifikuoti bet kokius šališkumus ar apribojimus modelyje bei patobulinti jį prireikus.
 
-**Užtikrinkite skaidrumą ir paaiškinamumą**
+**Užtikrinkite skaidrumą ir aiškinamumą**
 
-Dirbtinio intelekto sistemos turėtų būti skaidrios ir paaiškinamos, kad vartotojai galėtų suprasti, kaip jos veikia ir kaip priimami sprendimai. Tai ypač svarbu programoms, kurios daro reikšmingą poveikį žmonių gyvenimui, tokioms kaip sveikatos priežiūra, finansai ir teisės sistemos.
+DI sistemos turi būti skaidrios ir aiškinamos, kad vartotojai galėtų suprasti, kaip jos veikia ir kaip priimami sprendimai. Tai ypač svarbu programoms, kurios turi didelę įtaką žmonių gyvenimams, tokioms kaip sveikatos priežiūra, finansai ar teisės sistemos.
 
 **Stebėkite ir atnaujinkite modelį**
 
-Dirbtinio intelekto sistemas reikia nuolat stebėti ir atnaujinti, kad jos išliktų tikslios ir efektyvios laikui bėgant. Tai reikalauja nuolatinės priežiūros, testavimo ir modelio perkvalifikavimo.
+DI sistemų našumas turi būti nuolat stebimas ir modelis turi būti atnaujinamas, kad išlaikytų tikslumą ir efektyvumą. Tam reikalinga nuolatinė priežiūra, testavimas ir modelio perkvalifikavimas.
 
-Apibendrinant, Microsoft Responsible AI yra iniciatyva, skirta padėti kūrėjams ir organizacijoms kurti dirbtinio intelekto sistemas, kurios būtų skaidrios, patikimos ir atsakingos. Atsakingo dirbtinio intelekto įgyvendinimas yra labai svarbus, o Azure AI Foundry siekia padaryti jį praktišką organizacijoms. Laikydamiesi etikos principų ir geriausios praktikos, galime užtikrinti, kad dirbtinio intelekto sistemos būtų kuriamos ir diegiamos atsakingai, taip prisidedant prie visuomenės gerovės.
+Apibendrinant, Microsoft atsakingas DI yra iniciatyva, kurios tikslas – padėti kūrėjams ir organizacijoms kurti DI sistemas, kurios yra skaidrios, patikimos ir atsakingos. Atsakingas DI diegimas yra labai svarbus, o Microsoft Foundry suteikia priemones tai praktiškai įgyvendinti organizacijose. Laikantis etikos principų ir geriausių praktikų, užtikrinsime, kad DI sistemos būtų kuriamos ir diegiamos atsakingai, naudą teikiančios visuomenei.
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų arba netikslumų. Pradinė dokumento versija gimtąja kalba turėtų būti laikoma autoritetingu šaltiniu. Kritinei informacijai rekomenduojamas profesionalus žmogaus atliktas vertimas. Mes neprisiimame atsakomybės už bet kokius nesusipratimus ar neteisingus aiškinimus, kilusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

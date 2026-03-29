@@ -1,86 +1,90 @@
-# **Azure AI Foundry တွင် Phi-3 ကို အသုံးပြုခြင်း**
+# **Microsoft Foundry တွင် Phi-3 အသုံးပြုခြင်း**
 
-Generative AI တိုးတက်လာခြင်းနှင့်အတူ၊ LLM နှင့် SLM များ၊ စီးပွားရေးဒေတာပေါင်းစည်းခြင်း၊ fine-tuning/RAG လုပ်ငန်းစဉ်များ၊ LLM နှင့် SLM ပေါင်းစည်းပြီးနောက် စီးပွားရေးလုပ်ငန်းအမျိုးမျိုးကို အကဲဖြတ်ခြင်းတို့ကို တစ်ခုတည်းသော ပလက်ဖောင်းဖြင့် စီမံခန့်ခွဲနိုင်ရန် မျှော်လင့်ထားပါသည်။ ထို့ကြောင့် generative AI ကို Smart application များအဖြစ် ပိုမိုကောင်းမွန်စွာ အကောင်အထည်ဖော်နိုင်ပါသည်။ [Azure AI Foundry](https://ai.azure.com) သည် စီးပွားရေးအဆင့် generative AI application ပလက်ဖောင်းတစ်ခုဖြစ်သည်။
+Generative AI အဆင့်တိုးတက်လာမှုနှင့်အတူ၊ ကွဲပြားတဲ့ LLM နှင့် SLM များ၊ စီးပွားရေးဒေတာပေါင်းစည်းမှု၊ fine-tuning/RAG လုပ်ငန်းဆောင်တာများနှင့် LLM နှင့် SLM ပေါင်းစပ်ပြီးနောက် စီးပွားရေးလုပ်ငန်းများအကဲဖြတ်ခြင်းများကို စုစည်းစီမံရန် ယုံကြည်စိတ်ချရသောပလက်ဖောင်းတစ်ခုအသုံးပြုနိုင်ရန်၊ generative AI ကို Smart applications တွင် ပိုမိုကောင်းမွန်စွာ ဆောင်ရွက်နိုင်ရန်ကို မျှော်လင့်ပါတယ်။ [Microsoft Foundry](https://ai.azure.com) သည် စီးပွားရေးအဆင့် generative AI အက်ပ်ပလီကေးရှင်းပလက်ဖောင်းတစ်ခုဖြစ်သည်။
 
 ![aistudo](../../../../translated_images/my/aifoundry_home.f28a8127c96c7d93.webp)
 
-Azure AI Foundry ဖြင့် သင်သည် large language model (LLM) ၏ တုံ့ပြန်ချက်များကို အကဲဖြတ်နိုင်ပြီး prompt flow ဖြင့် prompt application အစိတ်အပိုင်းများကို စီမံခန့်ခွဲ၍ ပိုမိုကောင်းမွန်သော စွမ်းဆောင်ရည်ရရှိစေပါသည်။ ဤပလက်ဖောင်းသည် proof of concept များကို အပြည့်အဝ ထုတ်လုပ်မှုအဆင့်သို့ လွယ်ကူစွာ ပြောင်းလဲနိုင်ရန် စွမ်းဆောင်ရည်တိုးမြှင့်မှုကို အထောက်အပံ့ပေးပါသည်။ ဆက်လက်စောင့်ကြည့်ခြင်းနှင့် ပြုပြင်မွမ်းမံခြင်းများက ရေရှည်အောင်မြင်မှုအတွက် အထောက်အကူဖြစ်စေပါသည်။
+Microsoft Foundry ဖြင့် LLM အဖြေများအား အကဲဖြတ်ခြင်းနှင့် prompt flow အသုံးပြု၍ prompt application အစိတ်အပိုင်းများကို စီမံခန့်ခွဲကာ ပိုမိုကောင်းမွန်သောစွမ်းဆောင်ရည်ရရှိစေရန် အစီအစဉ်ရေးဆွဲနိုင်သည်။ ဤပလက်ဖောင်းသည် proof of concepts မှ အထူးပြည့်စုံသော ထုတ်လုပ်မှုဖြစ်လာရန် အလွယ်တကူ အဆင့်တိုးနိုင်စေပြီး၊ ဆက်လက်ကြည့်ရှုခြင်းနှင့် တိုးတက်မှုဆောင်ရွက်မှုများကို ရှေ့ဆက်အောင်လုပ်ဆောင် နိုင်သည်။
 
-Phi-3 မော်ဒယ်ကို Azure AI Foundry တွင် လွယ်ကူစွာ တပ်ဆင်နိုင်ပြီး၊ ထို့နောက် Azure AI Foundry ကို အသုံးပြု၍ Phi-3 နှင့်ဆက်စပ်သော Playground/Chat, Fine-tuning, အကဲဖြတ်ခြင်းနှင့် အခြားဆက်စပ်လုပ်ငန်းများကို ပြီးမြောက်စေပါသည်။
+Microsoft Foundry တွင် Phi-3 မော်ဒယ်ကို လွယ်ကူသောခြေလှမ်းများဖြင့် အမြန်လှုပ်ရှားတပ်ဆင်နိုင်ပြီး၊ ပြီးနောက် Microsoft Foundry ကို အသုံးပြု၍ Phi-3 နှင့်ပတ်သတ်သော Playground/Chat, Fine-tuning, အကဲဖြတ်ခြင်းနှင့် အခြားဆက်စပ်အလုပ်များ ပြီးမြောက်နိုင်သည်။
 
 ## **1. ပြင်ဆင်မှု**
 
-သင်၏စက်တွင် [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) ရှိပြီးသားဖြစ်ပါက၊ ဤ template ကို အသုံးပြုရန် သင့်အား directory အသစ်တစ်ခုတွင် ဤ command ကို ရိုက်ထည့်ခြင်းသာ လိုအပ်ပါသည်။
+သင့်ကွန်ပျူတာတွင် [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) များကို ရှိပြီးသားဖြစ်ပါက၊ ဤ template ကို အသစ် directory တစ်ခုတွင် ဒီ command ကို run ပြုလုပ်ရန်သာ လိုအပ်ပါသည်။
 
-## လက်ဖြင့် ဖန်တီးခြင်း
+## လက်ဖြင့်ဖန်တီးခြင်း
 
-Microsoft Azure AI Foundry project နှင့် hub တည်ဆောက်ခြင်းသည် သင့် AI လုပ်ငန်းများကို စနစ်တကျ စီမံခန့်ခွဲရန် အကောင်းဆုံးနည်းလမ်းဖြစ်သည်။ စတင်ရန် အဆင့်ဆင့် လမ်းညွှန်ချက်如下:
+Microsoft Foundry project နှင့် hub ဖန်တီးခြင်းသည် သင့် AI အလုပ်များကို စီစဉ်စနစ်ရှိစွာ စီမံရန်အတွက်ကောင်းမွန်သောနည်းလမ်းဖြစ်သည်။ စတင်ရန်အတွက် လမ်းညွှန်ချက်အဆင့်ဆင့်မှာ အောက်ပါအတိုင်းဖြစ်သည်-
 
-### Azure AI Foundry တွင် Project တည်ဆောက်ခြင်း
+### Microsoft Foundry တွင် Project တစ်ခု ဖန်တီးခြင်း
 
-1. **Azure AI Foundry သို့ သွားပါ**: Azure AI Foundry portal တွင် လက်မှတ်ထိုးဝင်ပါ။
-2. **Project တစ်ခု ဖန်တီးပါ**:
-   - သင်သည် project အတွင်းရှိပါက၊ စာမျက်နှာ၏ ဘယ်ဘက်အပေါ်တွင် "Azure AI Foundry" ကို ရွေးချယ်၍ Home စာမျက်နှာသို့ ပြန်သွားပါ။
-   - "+ Create project" ကို ရွေးချယ်ပါ။
-   - Project အမည်တစ်ခု ထည့်ပါ။
-   - Hub ရှိပါက အလိုအလျောက် ရွေးချယ်ထားမည်။ Hub များစွာကို အသုံးပြုခွင့်ရှိပါက dropdown မှ အခြား hub တစ်ခုကို ရွေးချယ်နိုင်သည်။ Hub အသစ်တစ်ခု ဖန်တီးလိုပါက "Create new hub" ကို ရွေးပြီး အမည်ထည့်ပါ။
-   - "Create" ကို နှိပ်ပါ။
+1. **Microsoft Foundry သို့ သွားပါ**: Microsoft Foundry portal တွင် လက်ရှိ၀င်ပါ။
+2. **Project ဖန်တီးပါ**:
+   - Project အတွင်းရှိပါက၊ စာမျက်နှာ၏ ဘယ်ဘက်ထိပ်တွင်ရှိသော "Microsoft Foundry" ကိုရွေးချယ်၍ Home စာမျက်နှာသို့ သွားပါ။
+   - "+ Create project" ကိုရွေးပါ။
+   - Project အတွက် နာမည်ထည့်ပါ။
+   - Hub ရှိပါက အလိုအလျောက် ရွေးချယ်ထားမည်။ Hub များစွာ ရရှိနိုင်ပါက dropdown မှ အခြား hub ကို ရွေးချယ်နိုင်သည်။ Hub အသစ်တစ်ခု ဖန်တီးလိုပါက "Create new hub" ကိုရွေးချယ်ပြီး နာမည်ထည့်ပါ။
+   - "Create" ကိုနှိပ်ပါ။
 
-### Azure AI Foundry တွင် Hub တည်ဆောက်ခြင်း
+### Microsoft Foundry တွင် Hub တစ်ခု ဖန်တီးခြင်း
 
-1. **Azure AI Foundry သို့ သွားပါ**: သင့် Azure အကောင့်ဖြင့် လက်မှတ်ထိုးဝင်ပါ။
+1. **Microsoft Foundry သို့ သွားပါ**: Azure အကောင့်ဖြင့် လက်ရှိ၀င်ပါ။
 2. **Hub တစ်ခု ဖန်တီးပါ**:
-   - ဘယ်ဘက် menu မှ Management center ကို ရွေးချယ်ပါ။
-   - "All resources" ကို ရွေးပြီး "+ New project" အနားရှိ အောက်ဆွဲအရိုးကို နှိပ်၍ "+ New hub" ကို ရွေးပါ။
-   - "Create a new hub" စာမျက်နှာတွင် hub အမည် (ဥပမာ contoso-hub) ထည့်ပြီး အခြားအချက်အလက်များကို လိုအပ်သလို ပြင်ဆင်ပါ။
-   - "Next" ကို နှိပ်ပြီး အချက်အလက်များကို ပြန်လည်စစ်ဆေးပြီး "Create" ကို နှိပ်ပါ။
+   - ဘယ်ဘက် menu မှ Management center ကို ရွေးပါ။
+   - "All resources" ကိုရွေးပြီး၊ "+ New project" ရှိအောက်ကျသော down arrow ကိုနှိပ်၍ "+ New hub" ကိုရွေးပါ။
+   - "Create a new hub" ပြတင်းပေါ်တွင် hub အတွက် နာမည်ကိုထည့်ပါ (ဥပမာ contoso-hub) နှင့် အခြား field များကိုလိုအပ်သလို ပြောင်းလဲပါ။
+   - "Next" ကိုနှိပ်ပြီး သတင်းအချက်အလက်များ ရှုထောင့်ကြည့်ပါ၊ ပြီးနောက် "Create" ကို နှိပ်ပါ။
 
-အသေးစိတ် လမ်းညွှန်ချက်များအတွက် တရားဝင် [Microsoft စာတမ်း](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects) ကို ကြည့်ရှုနိုင်ပါသည်။
+အသေးစိတ်အချက်အလက်များအတွက် တရားဝင် [Microsoft စာတမ်းများ](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects) ကို ရည်ညွှန်းနိုင်ပါသည်။
 
-ဖန်တီးမှုအောင်မြင်ပြီးနောက် [ai.azure.com](https://ai.azure.com/) မှတဆင့် သင်ဖန်တီးထားသော studio သို့ ဝင်ရောက်နိုင်ပါသည်။
+ဖန်တီးမှု အောင်မြင်ပြီးနောက် သင်ဖန်တီးသော studio ကို [ai.azure.com](https://ai.azure.com/) မှတဆင့် ဝင်ရောက် ကြည့်ရှုနိုင်မည်ဖြစ်သည်။
 
-AI Foundry တစ်ခုတွင် project များစွာ ရှိနိုင်ပါသည်။ AI Foundry တွင် project တစ်ခု ဖန်တီး၍ ပြင်ဆင်ပါ။
+AI Foundry တစ်ခုအတွင်း project များစွာ ရှိနိုင်သည်။ AI Foundry တွင် project တစ်ခုဖန်တီး၍ ပြင်ဆင်ပါ။
 
-Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code) များကို ဖန်တီးပါ။
+Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code) များကို ဖန်တီးပါ။
 
-## **2. Azure AI Foundry တွင် Phi မော်ဒယ် တပ်ဆင်ခြင်း**
+## **2. Microsoft Foundry တွင် Phi မော်ဒယ် တပ်ဆင်ခြင်း**
 
-Project ၏ Explore ရွေးချယ်မှုကို နှိပ်၍ Model Catalog သို့ ဝင်ပြီး Phi-3 ကို ရွေးချယ်ပါ။
+Project ၏ Explore ရွေးချယ်မှုကိုနှိပ်၍ Model Catalog ထဲသို့ ဝင်ပါ၊ Phi-3 ကို ရွေးချယ်ပါ။
 
-Phi-3-mini-4k-instruct ကို ရွေးချယ်ပါ။
+Phi-3-mini-4k-instruct ကို ရွေးပါ။
 
-Phi-3-mini-4k-instruct မော်ဒယ်ကို တပ်ဆင်ရန် 'Deploy' ကို နှိပ်ပါ။
+'Deploy' ကိုနှိပ်၍ Phi-3-mini-4k-instruct မော်ဒယ်ကို တပ်ဆင်ပါ။
 
 > [!NOTE]
 >
-> တပ်ဆင်စဉ်တွင် ကွန်ပျူတာစွမ်းအားကို ရွေးချယ်နိုင်ပါသည်။
+> တပ်ဆင်စဉ်တွင် computing power ကို ရွေးချယ်နိုင်သည်။
 
-## **3. Azure AI Foundry တွင် Playground Chat Phi အသုံးပြုခြင်း**
+## **3. Microsoft Foundry တွင် Playground Chat Phi**
 
-Deployment စာမျက်နှာသို့ သွားပြီး Playground ကို ရွေးချယ်ကာ Azure AI Foundry ၏ Phi-3 နှင့် စကားပြောပါ။
+Deployment စာမျက်နှာသို့ သွား၍ Playground ကို ရွေးချယ်ပါ၊ Microsoft Foundry ၏ Phi-3 နှင့် စကားပြောနိုင်သည်။
 
-## **4. Azure AI Foundry မှ မော်ဒယ် တပ်ဆင်ခြင်း**
+## **4. Microsoft Foundry မှ Model တပ်ဆင်ခြင်း**
 
-Azure Model Catalog မှ မော်ဒယ်တစ်ခု တပ်ဆင်ရန် အောက်ပါအဆင့်များကို လိုက်နာနိုင်ပါသည်။
+Azure Model Catalog မှ မော်ဒယ်တစ်ခုကို တက်ဆင်ရန်အတွက် အောက်ပါအဆင့်များကိုလိုက်နာပါ-
 
-- Azure AI Foundry တွင် လက်မှတ်ထိုးဝင်ပါ။
-- Azure AI Foundry model catalog မှ တပ်ဆင်လိုသော မော်ဒယ်ကို ရွေးချယ်ပါ။
-- မော်ဒယ်၏ Details စာမျက်နှာတွင် Deploy ကို နှိပ်ပြီး Serverless API with Azure AI Content Safety ကို ရွေးချယ်ပါ။
-- မော်ဒယ်များကို တပ်ဆင်လိုသော project ကို ရွေးချယ်ပါ။ Serverless API ကို အသုံးပြုရန် workspace သည် East US 2 သို့မဟုတ် Sweden Central ဒေသတွင် ရှိရမည်။ Deployment အမည်ကို စိတ်ကြိုက်ပြင်ဆင်နိုင်ပါသည်။
-- Deployment wizard တွင် Pricing နှင့် terms ကို ရွေးချယ်ကာ စျေးနှုန်းနှင့် အသုံးပြုခွင့်စည်းမျဉ်းများကို လေ့လာပါ။
-- Deploy ကို နှိပ်ပါ။ တပ်ဆင်မှု ပြီးစီးသည်အထိ စောင့်ပါ၊ ပြီးလျှင် Deployments စာမျက်နှာသို့ ပြန်လည်သွားပါမည်။
-- Open in playground ကို နှိပ်ကာ မော်ဒယ်နှင့် အပြန်အလှန် ဆက်သွယ်မှု စတင်ပါ။
-- Deployments စာမျက်နှာသို့ ပြန်သွား၍ တပ်ဆင်မှုကို ရွေးချယ်ကာ endpoint ၏ Target URL နှင့် Secret Key ကို မှတ်သားပါ၊ ၎င်းတို့ကို အသုံးပြု၍ တပ်ဆင်မှုကို ခေါ်ယူပြီး completion များ ဖန်တီးနိုင်ပါသည်။
-- Build tab တွင် Components အပိုင်းမှ Deployments ကို ရွေးချယ်ကာ endpoint ၏ အသေးစိတ်၊ URL နှင့် access keys များကို အမြဲ ရှာဖွေနိုင်ပါသည်။
+- Microsoft Foundry တွင် လက်မှတ်ထိုး၀င်ပါ။
+- Microsoft Foundry model catalog မှ တပ်ဆင်လိုသည့် မော်ဒယ်ကို ရွေးချယ်ပါ။
+- မော်ဒယ်၏ Details စာမျက်နှာတွင် Deploy ကိုရွေး၍ Azure AI Content Safety ပါသော Serverless API ကိုရွေးပါ။
+- မော်ဒယ်များ တပ်ဆင်မည့် project ကို ရွေးချယ်ပါ။ Serverless API ကို အသုံးပြုရန် workspace သင့်သည် East US 2 သို့မဟုတ် Sweden Central ဒေသတွင် တည်ရှိရမည်ဖြစ်သည်။ Deployment နာမည်ကို သင့်ကြိုက်နှစ်သက်ရာဖြင့် ပုံသွင်းနိုင်ပါသည်။
+- Deployment wizard တွင် Pricing နှင့် terms များကို လေ့လာပါ။
+- Deploy ကိုနှိပ်ပါ။ Deployment ပြီးဆုံးပြီး Deployments စာမျက်နှာသို့ ရောက်သည်အထိ ခံစားစားပါ။
+- PlayGround တွင် ဖွင့်ပြီး မော်ဒယ်နှင့် ဆက်သွယ်မှုအစပြုနိုင်သည်။
+- Deployments စာမျက်နှာသို့ ပြန်ရောက်၊ သတ်မှတ်ထားသော deployment ကို ရွေးချယ်၍ Target URL နှင့် Secret Key ကို မှတ်သားပါ၊ မတိုင်မီ deployment ကိုခေါ်ယူ၍ completions များ ဖန်တီးရန်အသုံးပြုနိုင်သည်။
+- Endpoint ၏ အသေးစိတ်များ၊ URL နှင့် access keys များကို Build tab ထဲရှိ Components အပိုင်းမှ Deployments ကိုရွေးချယ်ကာ ပြန်လည်ကြည့်ရှုနိုင်သည်။
 
 > [!NOTE]
-> ဤအဆင့်များကို လုပ်ဆောင်ရန် သင့်အကောင့်တွင် Resource Group အတွက် Azure AI Developer role ခွင့်ပြုချက် ရှိရမည်ဖြစ်ကြောင်း သတိပြုပါ။
+> ဤအဆင့်များ ဆောင်ရွက်လိုပါက သင်၏အကောင့်တွင် Resource Group အပေါ် Azure AI Developer role permissions ရှိရမည်ဖြစ်သည်။
 
-## **5. Azure AI Foundry တွင် Phi API အသုံးပြုခြင်း**
+## **5. Microsoft Foundry တွင် Phi API အသုံးပြုခြင်း**
 
-https://{Your project name}.region.inference.ml.azure.com/swagger.json ကို Postman GET ဖြင့် ဝင်ရောက်နိုင်ပြီး Key နှင့် ပေါင်းစပ်၍ ပေးထားသော interface များကို လေ့လာနိုင်ပါသည်။
+https://{Your project name}.region.inference.ml.azure.com/swagger.json သို့ Postman GET ဖြင့် ဝင်ရောက်နိုင်ပြီး Key နှင့် ပေါင်းစပ်၍ ပံ့ပိုးသော အင်တာဖေ့စ်များအကြောင်း သိရှိနိုင်ပါသည်။
 
-တောင်းဆိုမှု parameters များနှင့် တုံ့ပြန်မှု parameters များကို အလွန်လွယ်ကူစွာ ရယူနိုင်ပါသည်။
+တောင်းဆိုချက် parameters များနှင့် တုံ့ပြန်ချက် parameters များ အလွန်အဆင်ပြေစွာ ရနိုင်သည်။
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**နိဒါန်း**:  
+ဤစာတမ်းကို AI ဘာသာပြန်မှုဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်မှုများတွင် မှားယွင်းချက်များ သို့မဟုတ် မှန်ကန်မှုလျော့နည်းမှုများ ရှိနိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံပါသည်။ မူလစာတမ်းမှာ သူ့ဘာသာဖြင့်သာ ထိပ်တန်း ယုံကြည်စိတ်ချရသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော သတင်းအချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူ့ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုရာမှ ဖြစ်ပေါ်နိုင်သော မသိမှတ်ချက်များ သို့မဟုတ် မမှန်ကန်စွာအသိနားလည်မှုများအတွက် ကျွန်ုပ်တို့ တာဝန် မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

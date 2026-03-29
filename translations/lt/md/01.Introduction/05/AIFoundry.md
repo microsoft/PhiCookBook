@@ -1,48 +1,50 @@
-# **Naudojant Azure AI Foundry vertinimui**
+# **Kaip naudotis Microsoft Foundry vertinimui**
 
-![aistudo](../../../../../imgs/01/05/AIFoundry/AIFoundry.png)
+![aistudo](../../../../../translated_images/lt/AIFoundry.9e0b513e999a1c5a.webp)
 
-Kaip įvertinti savo generatyviosios AI programą naudojant [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Nesvarbu, ar vertinate vieno žingsnio, ar daugiapakopius pokalbius, Azure AI Foundry siūlo įrankius modelio našumo ir saugumo vertinimui.
+Kaip įvertinti savo generatyvios dirbtinio intelekto (DI) programą naudojant [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Nesvarbu, ar vertinate vieno apsisukimo, ar daugiaprasmius pokalbius, Microsoft Foundry suteikia įrankius modeliui vertinti pagal našumą ir saugumą.
 
-![aistudo](../../../../../imgs/01/05/AIFoundry/AIPortfolio.png)
+![aistudo](../../../../../translated_images/lt/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Kaip vertinti generatyviosios AI programas su Azure AI Foundry
-Daugiau informacijos rasite [Azure AI Foundry dokumentacijoje](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo).
+## Kaip vertinti generatyvios DI programas su Microsoft Foundry  
+Išsamesnę instrukciją rasite [Microsoft Foundry dokumentacijoje](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Štai žingsniai, kaip pradėti:
 
-## Generatyviųjų AI modelių vertinimas Azure AI Foundry
+## Generatyvių DI modelių vertinimas Microsoft Foundry
 
-**Būtinos sąlygos**
+**Išankstiniai reikalavimai**
 
-- Testavimo duomenų rinkinys CSV arba JSON formatu.
-- Įdiegtas generatyviosios AI modelis (pvz., Phi-3, GPT 3.5, GPT 4 arba Davinci modeliai).
-- Veikimo aplinka su skaičiavimo instancija vertinimui vykdyti.
+- Testavimo duomenų rinkinys CSV arba JSON formatu.  
+- Įdiegta generatyvi DI modelis (pvz., Phi-3, GPT 3.5, GPT 4 arba Davinci modeliai).  
+- Veikimo laikas su skaičiavimo įrenginiu vertinimo vykdymui.
 
-## Integruoti vertinimo rodikliai
+## Įmontuoti vertinimo rodikliai
 
-Azure AI Foundry leidžia vertinti tiek vieno žingsnio, tiek sudėtingus daugiapakopius pokalbius. 
-RAG (Retrieval Augmented Generation) scenarijams, kur modelis remiasi konkrečiais duomenimis, galite vertinti našumą naudodami integruotus vertinimo rodiklius. 
-Be to, galite vertinti bendrus vieno žingsnio klausimų ir atsakymų scenarijus (ne RAG).
+Microsoft Foundry leidžia vertinti tiek vieno apsisukimo, tiek sudėtingus daugiaprasmius pokalbius.  
+Retrieval Augmented Generation (RAG) scenarijuose, kai modelis grindžiamas specifiniais duomenimis, veiklumą galite vertinti naudodami įmontuotus vertinimo rodiklius.  
+Taip pat galima vertinti ir bendrus vieno apsisukimo klausimų-atsakymų scenarijus (ne RAG).
 
-## Vertinimo vykdymo sukūrimas
+## Vertinimo paleidimo kūrimas
 
-Azure AI Foundry sąsajoje eikite į Vertinimo puslapį arba Prompt Flow puslapį. 
-Sekite vertinimo kūrimo vedlį, kad nustatytumėte vertinimo vykdymą. Suteikite savo vertinimui pasirenkamą pavadinimą. 
-Pasirinkite scenarijų, kuris atitinka jūsų programos tikslus. 
-Pasirinkite vieną ar daugiau vertinimo rodiklių modelio rezultatų vertinimui.
+Iš Microsoft Foundry vartotojo sąsajos eikite į Evaluate puslapį arba Prompt Flow puslapį.  
+Priteikite vertinimo kūrimo vedlį, kad nustatytumėte vertinimą. Pateikite pasirenkamą vertinimo pavadinimą.  
+Pasirinkite scenarijų, atitinkantį jūsų programos tikslus.  
+Pasirinkite vieną ar kelis vertinimo rodiklius modeliui įvertinti.
 
-## Individualizuotas vertinimo procesas (pasirinktinai)
+## Pasirinktinis vertinimo srautas (neprivaloma)
 
-Norėdami didesnio lankstumo, galite sukurti individualizuotą vertinimo procesą. Pritaikykite vertinimo eigą pagal savo specifinius poreikius.
+Didesniam lankstumui galite sukurti pasirinktą vertinimo srautą. Pritaikykite vertinimo procesą pagal savo konkrečius reikalavimus.
 
 ## Rezultatų peržiūra
 
-Po vertinimo vykdymo peržiūrėkite, analizuokite ir registruokite detalius vertinimo rodiklius Azure AI Foundry. Sužinokite savo programos galimybes ir apribojimus.
+Po vertinimo paleidimo registruokite, peržiūrėkite ir analizuokite išsamius vertinimo rodiklius Microsoft Foundry. Gaukite įžvalgų apie savo programos galimybes ir ribotumus.
 
-**Pastaba** Azure AI Foundry šiuo metu yra viešojoje peržiūroje, todėl naudokite ją eksperimentavimui ir kūrimui. Produkcijos darbo krūviams apsvarstykite kitas galimybes. Daugiau informacijos ir žingsnis po žingsnio instrukcijas rasite oficialioje [AI Foundry dokumentacijoje](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
+**Pastaba** Microsoft Foundry šiuo metu yra viešas peržiūros režimas, todėl naudokite jį eksperimentams ir kūrimui. Produkciniam darbui apsvarstykite kitus sprendimus. Išsamiau žiūrėkite oficialioje [AI Foundry dokumentacijoje](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius naudojant šį vertimą.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmonių vertimas. Mes neatsakome už bet kokius nesusipratimus ar klaidingus aiškinimus, kilusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

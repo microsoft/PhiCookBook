@@ -1,52 +1,52 @@
-# Phi-3 modelio pritaikymas su Azure AI Foundry
+# Tikslinis Phi-3 pritaikymas su Microsoft Foundry
 
-Pažvelkime, kaip pritaikyti Microsoft Phi-3 Mini kalbos modelį naudojant Azure AI Foundry. Pritaikymas leidžia modelį pritaikyti specifinėms užduotims, padarant jį dar galingesnį ir kontekstualiai jautresnį.
+ Pažvelkime, kaip pritaikyti Microsoft Phi-3 Mini kalbos modelį naudojant Microsoft Foundry. Tikslinis pritaikymas leidžia pritaikyti Phi-3 Mini konkrečioms užduotims, padarant jį dar galingesniu ir jautresniu kontekstui.
 
-## Svarstymai
+## Apsvarstymai
 
-- **Galimybės:** Kokius modelius galima pritaikyti? Ką bazinis modelis gali atlikti po pritaikymo?
-- **Kaina:** Koks yra pritaikymo kainodaros modelis?
-- **Pritaikomumas:** Kiek galima modifikuoti bazinį modelį – ir kokiais būdais?
-- **Patogumas:** Kaip vyksta pritaikymas – ar reikia rašyti specialų kodą? Ar reikia turėti savo kompiuterinius resursus?
-- **Saugumas:** Pritaikyti modeliai gali kelti saugumo riziką – ar yra apsaugos priemonių, kurios padėtų išvengti netyčinės žalos?
+- **Galimybės:** Kokie modeliai yra pritaikomi tiksliniam pritaikymui? Kam bazinis modelis gali būti pritaikytas?
+- **Kaina:** Koks yra tikslinio pritaikymo kainų modelis?
+- **Priderinamumas:** Kiek galiu modifikuoti bazinį modelį – ir kokiais būdais?
+- **Patogumas:** Kaip iš tikrųjų vyksta tikslinis pritaikymas – ar reikia rašyti savą kodą? Ar reikia atsivežti savo skaičiavimo išteklius?
+- **Saugumas:** Tiksliai pritaikyti modeliai žinomi, kad turi saugumo rizikų – ar yra įdiegtos apsaugos nuo nepageidaujamos žalos?
 
-![AIFoundry Models](../../../../imgs/03/AIFoundry/AIFoundryModels.png)
+![AIFoundry Models](../../../../translated_images/lt/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
-## Pasiruošimas pritaikymui
+## Paruošimas tiksliniam pritaikymui
 
-### Būtinos sąlygos
+### Išankstiniai reikalavimai
 
 > [!NOTE]
-> Phi-3 šeimos modeliams „mokėk už naudojimą“ pritaikymo pasiūlymas galimas tik su centrais, sukurtais **East US 2** regionuose.
+> Phi-3 modelių šeimos atveju, mokėjimas pagal naudojimą siūlomas tik su "hub‘ais", sukurtais **East US 2** regionuose.
 
-- Azure prenumerata. Jei neturite Azure prenumeratos, sukurkite [mokamą Azure paskyrą](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), kad galėtumėte pradėti.
+- Azure prenumerata. Jei neturite Azure prenumeratos, sukurkite [mokamą Azure paskyrą](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) pradžiai.
 
 - [AI Foundry projektas](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure vaidmenimis pagrįsta prieiga (Azure RBAC) naudojama suteikti prieigą prie operacijų Azure AI Foundry. Norint atlikti veiksmus šiame straipsnyje, jūsų vartotojo paskyrai turi būti priskirtas __Azure AI Developer role__ vaidmuo išteklių grupėje.
+- Azure pareigybių pagrindu veikianti prieigos kontrolė (Azure RBAC) naudojama suteikti leidimus operacijoms Microsoft Foundry. Norėdami atlikti šio straipsnio veiksmus, jūsų vartotojo paskyrai turi būti priskirta __Azure AI Developer rolė__ išteklių grupėje.
 
 ### Prenumeratos teikėjo registracija
 
-Patikrinkite, ar prenumerata yra registruota `Microsoft.Network` išteklių teikėjui.
+Patikrinkite, ar prenumerata yra registruota prie `Microsoft.Network` išteklių teikėjo.
 
 1. Prisijunkite prie [Azure portalo](https://portal.azure.com).
 1. Kairiajame meniu pasirinkite **Subscriptions**.
 1. Pasirinkite prenumeratą, kurią norite naudoti.
 1. Kairiajame meniu pasirinkite **AI project settings** > **Resource providers**.
-1. Patikrinkite, ar **Microsoft.Network** yra išteklių teikėjų sąraše. Jei ne, pridėkite jį.
+1. Patikrinkite, ar sąraše yra **Microsoft.Network**. Jei ne, pridėkite jį.
 
 ### Duomenų paruošimas
 
-Paruoškite savo mokymo ir validacijos duomenis, kad galėtumėte pritaikyti modelį. Mokymo ir validacijos duomenų rinkiniai turi sudaryti įvesties ir išvesties pavyzdžius, kaip norėtumėte, kad modelis veiktų.
+Paruoškite mokymo ir validavimo duomenis, kad galėtumėte tiksliai pritaikyti modelį. Jūsų mokymo ir validavimo duomenų rinkiniai turi sudaryti įvesčių ir išvesčių pavyzdžius, kaip norite, kad modelis veiktų.
 
-Įsitikinkite, kad visi mokymo pavyzdžiai atitinka numatytą formatą prognozėms. Kad modeliai būtų efektyviai pritaikyti, užtikrinkite subalansuotą ir įvairų duomenų rinkinį.
+Įsitikinkite, kad visi mokymo pavyzdžiai atitinka numatytą spėjimo formatą. Norint efektyviai tiksliai pritaikyti modelius, užtikrinkite subalansuotą ir įvairialypį duomenų rinkinį.
 
-Tai apima duomenų balanso palaikymą, įvairių scenarijų įtraukimą ir periodišką mokymo duomenų tobulinimą, kad jie atitiktų realaus pasaulio lūkesčius, galiausiai užtikrinant tikslesnius ir subalansuotus modelio atsakymus.
+Tai reiškia duomenų pusiausvyros palaikymą, įvairių scenarijų įtraukimą ir periodišką mokymo duomenų tobulinimą, kad jie atitiktų realaus pasaulio lūkesčius, galutiniame rezultate leidžiant tiksliau ir subalansuotiau atsakyti.
 
-Skirtingų tipų modeliams reikalingas skirtingas mokymo duomenų formatas.
+Skirtingi modelių tipai reikalauja skirtingo mokymo duomenų formato.
 
 ### Pokalbių užbaigimas
 
-Mokymo ir validacijos duomenys **turi** būti suformatuoti kaip JSON Lines (JSONL) dokumentas. `Phi-3-mini-128k-instruct` pritaikymo duomenų rinkinys turi būti suformatuotas pokalbių formatu, kuris naudojamas Chat completions API.
+Naudojami mokymo ir validavimo duomenys **privalo** būti suformatuoti kaip JSON Lines (JSONL) dokumentas. `Phi-3-mini-128k-instruct` atveju tikslinio pritaikymo duomenų rinkinys turi būti suformatuotas pokalbio formatu, naudojamu Chat completions API.
 
 ### Pavyzdinis failo formatas
 
@@ -56,174 +56,177 @@ Mokymo ir validacijos duomenys **turi** būti suformatuoti kaip JSON Lines (JSON
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Palaikomas failo tipas yra JSON Lines. Failai įkeliami į numatytąją duomenų saugyklą ir tampa prieinami jūsų projekte.
+Palaikomas failo tipas yra JSON Lines. Failai įkeliami į numatytąją duomenų saugyklą ir pasiekiami jūsų projekte.
 
-## Phi-3 pritaikymas su Azure AI Foundry
+## Tikslinis Phi-3 pritaikymas su Microsoft Foundry
 
-Azure AI Foundry leidžia pritaikyti didelius kalbos modelius pagal jūsų asmeninius duomenų rinkinius naudojant procesą, vadinamą pritaikymu. Pritaikymas suteikia didelę vertę, leidžiant pritaikyti ir optimizuoti modelį specifinėms užduotims ir taikymams. Tai lemia geresnį našumą, mažesnes išlaidas, mažesnį vėlavimą ir pritaikytus rezultatus.
+Microsoft Foundry leidžia pritaikyti didelius kalbos modelius prie savo asmeninių duomenų rinkinių naudojant procesą, žinomą kaip tikslinis pritaikymas. Tikslinis pritaikymas suteikia didelę vertę, leidžiant pritaikyti ir optimizuoti modelį specifinėms užduotims ir programoms. Tai pagerina našumą, padidina kaštų efektyvumą, sumažina delsą ir leidžia gauti pritaikytą rezultatą.
 
-![Finetune AI Foundry](../../../../imgs/03/AIFoundry/AIFoundryfinetune.png)
+![Finetune AI Foundry](../../../../translated_images/lt/AIFoundryfinetune.193aaddce48d553c.webp)
 
-### Naujo projekto kūrimas
+### Sukurti naują projektą
 
-1. Prisijunkite prie [Azure AI Foundry](https://ai.azure.com).
+1. Prisijunkite prie [Microsoft Foundry](https://ai.azure.com).
 
-1. Pasirinkite **+New project**, kad sukurtumėte naują projektą Azure AI Foundry.
+1. Pasirinkite **+New project**, norėdami sukurti naują projektą Microsoft Foundry.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-new-project.png)
+    ![FineTuneSelect](../../../../translated_images/lt/select-new-project.cd31c0404088d7a3.webp)
 
 1. Atlikite šiuos veiksmus:
 
-    - Projekto **Hub name**. Jis turi būti unikalus.
-    - Pasirinkite **Hub**, kurį norite naudoti (jei reikia, sukurkite naują).
+    - Projekto **Hub pavadinimas**. Jis turi būti unikalus.
+    - Pasirinkite **Hub**, kurį norite naudoti (sukurkite naują, jei reikia).
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/create-project.png)
+    ![FineTuneSelect](../../../../translated_images/lt/create-project.ca3b71298b90e420.webp)
 
-1. Atlikite šiuos veiksmus, kad sukurtumėte naują centrą:
+1. Atlikite šiuos veiksmus, kad sukurtumėte naują hub'ą:
 
-    - Įveskite **Hub name**. Jis turi būti unikalus.
-    - Pasirinkite savo Azure **Subscription**.
-    - Pasirinkite **Resource group**, kurią norite naudoti (jei reikia, sukurkite naują).
-    - Pasirinkite **Location**, kurią norite naudoti.
-    - Pasirinkite **Connect Azure AI Services**, kurią norite naudoti (jei reikia, sukurkite naują).
-    - Pasirinkite **Connect Azure AI Search**, kad **praleistumėte prijungimą**.
+    - Įveskite **Hub pavadinimą**. Jis turi būti unikalus.
+    - Pasirinkite savo Azure **Prenumeratą**.
+    - Pasirinkite **Išteklių grupę** (Resource group), kurią norite naudoti (sukurkite naują, jei reikia).
+    - Pasirinkite **Vietovę** (Location), kurią norite naudoti.
+    - Pasirinkite **Connect Azure AI Services** (prijungti Azure AI paslaugas), jei reikia, sukurkite naują.
+    - Pasirinkite **Connect Azure AI Search** ir **Praleiskite prijungimą** (Skip connecting).
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/create-hub.png)
+    ![FineTuneSelect](../../../../translated_images/lt/create-hub.49e53d235e80779e.webp)
 
-1. Pasirinkite **Next**.
-1. Pasirinkite **Create a project**.
+1. Paspauskite **Next**.
+1. Paspauskite **Create a project**.
 
 ### Duomenų paruošimas
 
-Prieš pritaikymą surinkite arba sukurkite duomenų rinkinį, susijusį su jūsų užduotimi, pvz., pokalbių instrukcijas, klausimų-atsakymų poras ar kitus svarbius tekstinius duomenis. Išvalykite ir apdorokite šiuos duomenis, pašalindami triukšmą, tvarkydami trūkstamas reikšmes ir atlikdami teksto tokenizaciją.
+Prieš tikslinį pritaikymą, surinkite arba sukurkite duomenų rinkinį, susijusį su jūsų užduotimi, pavyzdžiui, pokalbių instrukcijas, klausimų-atsakymų poras ar kitus tekstinius duomenis. Išvalykite ir apdorokite šiuos duomenis, pašalindami triukšmą, trūkstamas reikšmes ir tokenizuodami tekstą.
 
-### Phi-3 modelių pritaikymas Azure AI Foundry
+### Tikslinis Phi-3 modelių pritaikymas Microsoft Foundry
 
 > [!NOTE]
-> Phi-3 modelių pritaikymas šiuo metu palaikomas projektuose, esančiuose East US 2.
+> Phi-3 modelių tikslinis pritaikymas šiuo metu palaikomas tik projektuose, esančiuose East US 2 regione.
 
-1. Kairiajame meniu pasirinkite **Model catalog**.
+1. Kairėje pusėje pasirinkite **Model catalog** (modelių katalogas).
 
-1. Įveskite *phi-3* į **paieškos laukelį** ir pasirinkite phi-3 modelį, kurį norite naudoti.
+1. Įveskite *phi-3* į **paieškos laukelį** ir pasirinkite norimą naudoti phi-3 modelį.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-model.png)
+    ![FineTuneSelect](../../../../translated_images/lt/select-model.60ef2d4a6a3cec57.webp)
 
-1. Pasirinkite **Fine-tune**.
+1. Paspauskite **Fine-tune**.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-finetune.png)
+    ![FineTuneSelect](../../../../translated_images/lt/select-finetune.a976213b543dd9d8.webp)
 
-1. Įveskite **Fine-tuned model name**.
+1. Įveskite **Tiksliai pritaikyto modelio pavadinimą**.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune1.png)
+    ![FineTuneSelect](../../../../translated_images/lt/finetune1.c2b39463f0d34148.webp)
 
-1. Pasirinkite **Next**.
+1. Paspauskite **Next**.
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **task type** kaip **Chat completion**.
-    - Pasirinkite **Training data**, kuriuos norite naudoti. Galite juos įkelti per Azure AI Foundry arba iš savo vietinės aplinkos.
+    - Pasirinkite **užduoties tipą** kaip **Chat completion**.
+    - Pasirinkite **mokymo duomenis**, kuriuos norite naudoti. Juos galite įkelti per Microsoft Foundry duomenų saugyklą arba iš savo vietinės aplinkos.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune2.png)
+    ![FineTuneSelect](../../../../translated_images/lt/finetune2.43cb099b1a94442d.webp)
 
-1. Pasirinkite **Next**.
+1. Paspauskite **Next**.
 
-1. Įkelkite **Validation data**, kuriuos norite naudoti, arba pasirinkite **Automatic split of training data**.
+1. Įkelkite norimus naudoti **validavimo duomenis** arba pasirinkite **Automatic split of training data** (automatinis mokymo duomenų skaidymas).
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune3.png)
+    ![FineTuneSelect](../../../../translated_images/lt/finetune3.fd96121b67dcdd92.webp)
 
-1. Pasirinkite **Next**.
+1. Paspauskite **Next**.
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **Batch size multiplier**, kurį norite naudoti.
-    - Pasirinkite **Learning rate**, kurį norite naudoti.
-    - Pasirinkite **Epochs**, kurį norite naudoti.
+    - Pasirinkite norimą **paketo dydžio daugiklį** (Batch size multiplier).
+    - Pasirinkite norimą **mokymosi greitį** (Learning rate).
+    - Pasirinkite norimą **epokų skaičių** (Epochs).
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune4.png)
+    ![FineTuneSelect](../../../../translated_images/lt/finetune4.e18b80ffccb5834a.webp)
 
-1. Pasirinkite **Submit**, kad pradėtumėte pritaikymo procesą.
+1. Paspauskite **Submit**, kad pradėtumėte tikslinį pritaikymą.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-submit.png)
+    ![FineTuneSelect](../../../../translated_images/lt/select-submit.0a3802d581bac271.webp)
 
-1. Kai jūsų modelis bus pritaikytas, būsena bus rodoma kaip **Completed**, kaip parodyta paveikslėlyje žemiau. Dabar galite modelį diegti ir naudoti savo programoje, žaidimų aikštelėje arba prompt flow. Daugiau informacijos rasite [Kaip diegti Phi-3 šeimos mažus kalbos modelius su Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/completed.png)
+1. Kai modelis bus pritaikytas, būsena bus rodoma kaip **Completed**, kaip parodyta žemiau. Dabar galite diegti modelį ir naudoti jį savo programoje, žaidimų aikštelėje ar prompt flow. Daugiau informacijos žr. [Kaip diegti Phi-3 mažus kalbos modelius su Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-> [!NOTE]
-> Daugiau informacijos apie Phi-3 pritaikymą rasite [Phi-3 modelių pritaikymas Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
-
-## Pritaikytų modelių valymas
-
-Galite ištrinti pritaikytą modelį iš pritaikymo modelių sąrašo [Azure AI Foundry](https://ai.azure.com) arba iš modelio detalių puslapio. Pasirinkite pritaikytą modelį, kurį norite ištrinti, pritaikymo puslapyje, tada pasirinkite mygtuką Delete, kad ištrintumėte pritaikytą modelį.
+    ![FineTuneSelect](../../../../translated_images/lt/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Negalite ištrinti pritaikyto modelio, jei jis turi esamą diegimą. Pirmiausia turite ištrinti modelio diegimą, kad galėtumėte ištrinti pritaikytą modelį.
+> Daugiau informacijos apie Phi-3 tikslinį pritaikymą rasite [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+
+## Ištrinkite savo tiksliai pritaikytus modelius
+
+Galite ištrinti tiksliai pritaikytą modelį iš tikslinio pritaikymo modelių sąrašo [Microsoft Foundry](https://ai.azure.com) arba iš modelio detalių puslapio. Pasirinkite tiksliai pritaikytą modelį iš Fine-tuning puslapio, tada paspauskite mygtuką Delete, kad ištrintumėte modelį.
+
+> [!NOTE]
+> Negalite ištrinti vartotojo modelio, jei jam yra esama diegimo instancija. Pirmiausia turite ištrinti modelio diegimą, tada galėsite ištrinti modelį.
 
 ## Kaina ir kvotos
 
-### Kainos ir kvotų svarstymai Phi-3 modeliams, pritaikytiems kaip paslauga
+### Phi-3 modelių tikslinio pritaikymo kaip paslaugos kaštų ir kvotų apsvarstymai
 
-Phi modeliai, pritaikyti kaip paslauga, siūlomi Microsoft ir integruoti su Azure AI Foundry naudojimui. Kainas galite rasti [diegiant](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) arba pritaikant modelius, diegimo vedlio skirtuke Pricing and terms.
+Phi modeliai, tiksliai pritaikyti kaip paslauga, yra teikiami Microsoft ir integruoti su Microsoft Foundry naudojimui. Kainodarą rasite [diegimo](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) arba tikslinio pritaikymo metu diegimo vedlio skiltyje Kainos ir sąlygos.
 
 ## Turinys filtravimas
 
-Modeliai, diegiami kaip paslauga su „mokėk už naudojimą“, yra apsaugoti Azure AI Content Safety. Kai jie diegiami realaus laiko galiniuose taškuose, galite atsisakyti šios funkcijos. Su Azure AI turinio saugumu tiek užklausa, tiek atsakymas pereina per klasifikavimo modelių rinkinį, skirtą aptikti ir užkirsti kelią kenksmingo turinio generavimui. Turinio filtravimo sistema aptinka ir imasi veiksmų dėl specifinių potencialiai kenksmingo turinio kategorijų tiek įvesties užklausose, tiek išvesties atsakymuose. Sužinokite daugiau apie [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modeliai, diegiami kaip paslauga su mokėjimu pagal naudojimą, yra apsaugoti Azure AI Content Safety. Kai juos diegiate realaus laiko galiniuose taškuose, galite pasirinkti atsisakyti šios funkcijos. Įjungus Azure AI turinio saugumą, tiek promptas, tiek atsakymai pereina per klasifikavimo modelių grupę, skirtą aptikti ir užkirsti kelią kenksmingam turiniui. Turinys yra filtruojamas ir kontroliuojamas tam tikrų kategorijų galimai kenksmingo turinio tiek įvesties promptuose, tiek išvesties atsakymuose. Sužinokite daugiau apie [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-**Pritaikymo konfigūracija**
+**Tikslinio pritaikymo konfigūracija**
 
-Hiperparametrai: Nustatykite hiperparametrus, tokius kaip mokymosi greitis, paketų dydis ir mokymo epochų skaičius.
+Hipermetrai: Apibrėžkite hipermetrus, tokius kaip mokymosi greitis, paketo dydis ir epochų skaičius.
 
 **Nuostolių funkcija**
 
-Pasirinkite tinkamą nuostolių funkciją savo užduočiai (pvz., kryžminė entropija).
+Pasirinkite užduočiai tinkamą nuostolių funkciją (pvz., kryžminę entropiją).
 
 **Optimizatorius**
 
-Pasirinkite optimizatorių (pvz., Adam) gradientų atnaujinimui mokymo metu.
+Pasirinkite optimizatorių (pvz., Adam) gradientų atnaujinimams mokymo metu.
 
-**Pritaikymo procesas**
+**Tikslinio pritaikymo procesas**
 
-- Įkelkite iš anksto apmokytą modelį: Įkelkite Phi-3 Mini kontrolinį tašką.
-- Pridėkite specialius sluoksnius: Pridėkite užduočiai skirtus sluoksnius (pvz., klasifikavimo galvą pokalbių instrukcijoms).
+- Įkelkite iš anksto apmokytą modelį: įkelkite Phi-3 Mini kontrolinį tašką.
+- Pridėkite pasirinktines sluoksnius: pridėkite užduočiai skirtus sluoksnius (pvz., klasifikavimo galvutę pokalbių instrukcijoms).
 
-**Modelio mokymas**
-Pritaikykite modelį naudodami paruoštą duomenų rinkinį. Stebėkite mokymo eigą ir prireikus koreguokite hiperparametrus.
+**Modelio apmokymas**
+Tiksliai pritaikykite modelį naudodami paruoštą duomenų rinkinį. Stebėkite mokymosi eigą ir prireikus koreguokite hipermetrus.
 
 **Vertinimas ir validacija**
 
-Validacijos rinkinys: Padalinkite savo duomenis į mokymo ir validacijos rinkinius.
+Validacijos rinkinys: Duomenis pasidalinkite į mokymo ir validacijos rinkinius.
 
-**Vertinkite našumą**
+**Našumo vertinimas**
 
-Naudokite metrikas, tokias kaip tikslumas, F1 balas ar sudėtingumas, kad įvertintumėte modelio našumą.
+Naudokite metrikas, tokias kaip tikslumas, F1 balas arba painiava, modelio našumui įvertinti.
 
-## Išsaugokite pritaikytą modelį
+## Išsaugoti tiksliai pritaikytą modelį
 
 **Kontrolinis taškas**
-Išsaugokite pritaikytą modelio kontrolinį tašką, kad galėtumėte jį naudoti ateityje.
+Išsaugokite tiksliai pritaikyto modelio kontrolinį tašką būsimam naudojimui.
 
 ## Diegimas
 
-- Diegimas kaip internetinė paslauga: Diegkite pritaikytą modelį kaip internetinę paslaugą Azure AI Foundry.
-- Testuokite galinį tašką: Siųskite testines užklausas į diegtą galinį tašką, kad patikrintumėte jo funkcionalumą.
+- Diegimas kaip žiniatinklio paslauga: Įdiekite savo tiksliai pritaikytą modelį kaip žiniatinklio paslaugą Microsoft Foundry.
+- Testuokite galinį tašką: Siųskite testinius užklausimus į diegtą galinį tašką, kad patikrintumėte jo funkcionavimą.
 
-## Iteracija ir tobulinimas
+## Kartojimas ir tobulinimas
 
-Iteracija: Jei našumas nėra patenkinamas, iteruokite koreguodami hiperparametrus, pridėdami daugiau duomenų arba pritaikydami papildomas epochas.
+Kartokite: jei našumas nėra patenkinamas, kartokite procesą koreguodami hipermetrus, pridėdami daugiau duomenų arba pratęsdami mokymą dar kelioms epokoms.
 
 ## Stebėjimas ir tobulinimas
 
-Nuolat stebėkite modelio elgesį ir prireikus tobulinkite.
+Nuolat stebėkite modelio elgesį ir tobulinkite jį, kai reikia.
 
-## Pritaikymas ir plėtra
+## Pritaikymas ir išplėtimas
 
-Specialios užduotys: Phi-3 Mini gali būti pritaikytas įvairioms užduotims, neapsiribojant pokalbių instrukcijomis. Tyrinėkite kitus naudojimo atvejus!
-Eksperimentavimas: Išbandykite skirtingas architektūras, sluoksnių derinius ir technikas, kad pagerintumėte našumą.
+Vartotojo užduotys: Phi-3 Mini gali būti tiksliai pritaikytas įvairioms užduotims, ne tik pokalbių instrukcijoms. Ištirkite kitas galimybes!
+Eksperimentai: Išbandykite skirtingas architektūras, sluoksnių derinius ir technikas našumui pagerinti.
 
 > [!NOTE]
-> Pritaikymas yra iteracinis procesas. Eksperimentuokite, mokykitės ir pritaikykite savo modelį, kad pasiektumėte geriausius rezultatus savo specifinei užduočiai!
+> Tikslinis pritaikymas yra iteratyvus procesas. Eksperimentuokite, mokykitės ir pritaikykite savo modelį, kad pasiektumėte geriausius rezultatus savo konkrečiai užduočiai!
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatizuoti vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritatyviu šaltiniu. Kritinė informacija turėtų būti verčiama profesionaliai žmogaus. Mes neatsakome už bet kokius nesusipratimus ar neteisingus aiškinimus, atsirandančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

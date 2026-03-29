@@ -1,16 +1,17 @@
-# Koreguokite ir integruokite pritaikytus Phi-3 modelius su Prompt flow Azure AI Foundry
+# Tikslinė redagavimo ir integracija su Prompt flow pritaikytais Phi-3 modeliais Microsoft Foundry
 
-Šis pavyzdys nuo pradžios iki pabaigos (E2E) paremtas „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)“ vadovu iš Microsoft Tech Community. Jis supažindina su koregavimo, diegimo ir pritaikytų Phi-3 modelių integravimo su Prompt flow Azure AI Foundry procesais. Skirtingai nuo E2E pavyzdžio „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)“, kuriame kodas vykdytas vietoje, ši pamoka visiškai skirta modelio koregavimui ir integravimui Azure AI / ML Studio aplinkoje.
+Šis end-to-end (E2E) pavyzdys yra pagrįstas vadovu „[Tikslinė redagavimo ir integracija su pritaikytais Phi-3 modeliais naudojant Prompt Flow Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)“ iš Microsoft Tech Community. Jame pristatomi procesai, kaip atlikti tikslinį modelio redagavimą, diegimą ir integraciją su pritaikytais Phi-3 modeliais naudojant Prompt flow Microsoft Foundry.
+Skirtingai nuo E2E pavyzdžio „[Tikslinė redagavimo ir integracija su pritaikytais Phi-3 modeliais naudojant Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)“, kuriame reikėjo vykdyti kodą vietoje, ši pamoka visiškai skirta tiksliniam redagavimui ir modelio integracijai Azure AI / ML studijoje.
 
 ## Apžvalga
 
-Šiame E2E pavyzdyje sužinosite, kaip koreguoti Phi-3 modelį ir integruoti jį su Prompt flow Azure AI Foundry. Naudodami Azure AI / ML Studio sukursite darbo eigą skirtą pritaikytų dirbtinio intelekto modelių diegimui ir naudojimui. Šis E2E pavyzdys suskirstytas į tris scenarijus:
+Šiame E2E pavyzdyje išmoksite, kaip tiksliai redaguoti Phi-3 modelį ir integruoti jį su Prompt flow Microsoft Foundry platformoje. Naudodamiesi Azure AI / ML studija sukursite darbo eigą, skirtą pritaikytų DI modelių diegimui ir naudojimui. Šis E2E pavyzdys padalintas į tris scenarijus:
 
-**Scenarijus 1: Azure išteklių paruošimas ir pasiruošimas koregavimui**
+**Scenarijus 1: Azure išteklių nustatymas ir pasirengimas tiksliniam redagavimui**
 
-**Scenarijus 2: Phi-3 modelio koregavimas ir diegimas Azure Machine Learning Studio**
+**Scenarijus 2: Phi-3 modelio tikslinis redagavimas ir diegimas Azure Machine Learning Studio**
 
-**Scenarijus 3: Integravimas su Prompt flow ir pokalbis su jūsų pritaikytu modeliu Azure AI Foundry**
+**Scenarijus 3: Integracija su Prompt flow ir pokalbis su pritaikytu modeliu Microsoft Foundry**
 
 Čia pateikiama šio E2E pavyzdžio apžvalga.
 
@@ -18,89 +19,89 @@
 
 ### Turinys
 
-1. **[Scenarijus 1: Azure išteklių paruošimas ir pasiruošimas koregavimui](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure Machine Learning darbalaukio kūrimas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [GPU kvotų užklausa Azure prenumeratoje](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Rolės priskyrimas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Projekto paruošimas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Duomenų rinkinio paruošimas koregavimui](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenarijus 1: Azure išteklių nustatymas ir pasiruošimas tiksliniam redagavimui](#scenarijus-1-azure-išteklių-nustatymas-ir-pasirengimas-tiksliniam-redagavimui)**
+    - [Azure Machine Learning darbo srities kūrimas](#azure-machine-learning-darbo-srities-kūrimas)
+    - [GPU kvotų prašymas Azure prenumeratoje](#gpu-kvotų-prašymas-azure-prenumeratoje)
+    - [Rolės priskyrimas](#rolės-priskyrimas)
+    - [Projekto nustatymas](#projekto-nustatymas)
+    - [Duomenų rinkinio paruošimas tiksliniam redagavimui](#paruoškite-duomenų-rinkinį-smulkiam-apmokymui)
 
-1. **[Scenarijus 2: Phi-3 modelio koregavimas ir diegimas Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Phi-3 modelio koregavimas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Pritaikyto Phi-3 modelio diegimas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenarijus 2: Phi-3 modelio tikslinis redagavimas ir diegimas Azure Machine Learning Studio](#scenarijus-2-smulkiai-apmokykite-phi-3-modelį-ir-išdiekite-azure-machine-learning-studio)**
+    - [Tikslinis Phi-3 modelio redagavimas](#smulkus-phi-3-modelio-apmokymas)
+    - [Tiksliai redaguoto Phi-3 modelio diegimas](#išdiekite-smulkiai-apmokytą-phi-3-modelį)
 
-1. **[Scenarijus 3: Integravimas su Prompt flow ir pokalbis su jūsų pritaikytu modeliu Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Pritaikyto Phi-3 modelio integravimas su Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Pokalbis su pritaikytu Phi-3 modeliu](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenarijus 3: Integracija su Prompt flow ir pokalbis su pritaikytu modeliu Microsoft Foundry](#scenario-3-integrate-with-prompt-flow-and-chat-with-your-custom-model-in-azure-ai-studio)**
+    - [Integracija su Prompt flow pritaikyto Phi-3 modelio](#integruokite-suasmenintą-phi-3-modelį-su-prompt-flow)
+    - [Pokalbis su savo pritaikytu Phi-3 modeliu](#bendraukite-su-savo-vartotojišku-phi-3-modeliu)
 
-## Scenarijus 1: Azure išteklių paruošimas ir pasiruošimas koregavimui
+## Scenarijus 1: Azure išteklių nustatymas ir pasirengimas tiksliniam redagavimui
 
-### Azure Machine Learning darbalaukio kūrimas
+### Azure Machine Learning darbo srities kūrimas
 
-1. Įveskite *azure machine learning* **paieškos juostoje** portalo puslapio viršuje ir iš pasirodžiusių parinkčių pasirinkite **Azure Machine Learning**.
+1. Įveskite *azure machine learning* į **paieškos juostą** puslapio viršuje ir pasirinkite **Azure Machine Learning** iš pasirodžiusių variantų.
 
     ![Type azure machine learning.](../../../../../../translated_images/lt/01-01-type-azml.acae6c5455e67b4b.webp)
 
-2. Navigacijos meniu pasirinkite **+ Create**.
+2. Iš naršymo meniu pasirinkite **+ Create**.
 
-3. Navigacijos meniu pasirinkite **New workspace**.
+3. Iš naršymo meniu pasirinkite **New workspace**.
 
     ![Select new workspace.](../../../../../../translated_images/lt/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Atlikite šiuos veiksmus:
 
-    - Pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite naudoti **Išteklų grupę** (jei reikia, sukurkite naują).
-    - Įveskite **Darbalaukio pavadinimą**. Jis turi būti unikalus.
-    - Pasirinkite norimą **Regioną**.
-    - Pasirinkite naudoti **Saugyklos paskyrą** (jei reikia, sukurkite naują).
-    - Pasirinkite naudoti **Raktų saugyklą** (jei reikia, sukurkite naują).
-    - Pasirinkite naudoti **Application insights** (jei reikia, sukurkite naują).
-    - Pasirinkite naudoti **Dėžutės registrą** (jei reikia, sukurkite naują).
+    - Pasirinkite savo Azure **Subscription**.
+    - Pasirinkite naudotiną **Resource group** (sukurkite naują, jei reikia).
+    - Įveskite **Workspace Name**. Tai turi būti unikalus pavadinimas.
+    - Pasirinkite norimą **Region**.
+    - Pasirinkite naudotiną **Storage account** (sukurkite naują, jei reikia).
+    - Pasirinkite naudotiną **Key vault** (sukurkite naują, jei reikia).
+    - Pasirinkite naudotiną **Application insights** (sukurkite naują, jei reikia).
+    - Pasirinkite naudotiną **Container registry** (sukurkite naują, jei reikia).
 
     ![Fill azure machine learning.](../../../../../../translated_images/lt/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
-5. Paspauskite **Review + Create**.
+5. Pasirinkite **Review + Create**.
 
-6. Paspauskite **Create**.
+6. Pasirinkite **Create**.
 
-### GPU kvotų užklausa Azure prenumeratoje
+### GPU kvotų prašymas Azure prenumeratoje
 
-Šioje pamokoje išmoksite, kaip koreguoti ir diegti Phi-3 modelį, naudojant GPU. Koregavimui naudosite *Standard_NC24ads_A100_v4* GPU, kuriam reikalingas kvotos užklausimas. Diegimui naudosite *Standard_NC6s_v3* GPU, kuriam taip pat reikalinga kvotos užklausa.
+Šioje pamokoje sužinosite, kaip tiksliai redaguoti ir diegti Phi-3 modelį naudojant GPU. Tiksliniam redagavimui naudosite *Standard_NC24ads_A100_v4* GPU, kuriam reikalingas kvotos prašymas. Diegimui naudosite *Standard_NC6s_v3* GPU, kuris taip pat reikalauja kvotos prašymo.
 
 > [!NOTE]
 >
-> Tik Pay-As-You-Go prenumeratos (standartinis prenumeratos tipas) yra tinkamos GPU paskyrimui; naudų prenumeratos šiuo metu nepalaikomos.
+> Tik Pay-As-You-Go prenumeratos (standartinis prenumeratos tipas) yra tinkamos GPU paskirstymui; naudos prenumeratos šiuo metu nepalaikomos.
 >
 
 1. Apsilankykite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Atlikite šiuos veiksmus, kad užklaustumėte *Standard NCADSA100v4 Family* kvotą:
+1. Atlikite šiuos veiksmus, kad paprašytumėte *Standard NCADSA100v4 šeimos* kvotą:
 
-    - Kairiojoje juostoje pasirinkite **Quota**.
-    - Pasirinkite norimą **Virtualių mašinų šeimą**. Pavyzdžiui, pasirinkite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, kuri apima *Standard_NC24ads_A100_v4* GPU.
-    - Navigacijos meniu pasirinkite **Request quota**.
+    - Kairėje pusėje pasirinkite **Quota**.
+    - Pasirinkite naudotiną **Virtual machine family**. Pavyzdžiui, pasirinkite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, kuri apima *Standard_NC24ads_A100_v4* GPU.
+    - Iš naršymo meniu pasirinkite **Request quota**.
 
         ![Request quota.](../../../../../../translated_images/lt/02-02-request-quota.c0428239a63ffdd5.webp)
 
-    - Kvotos užklausos puslapyje įveskite norimą **Naują branduolių ribą**. Pavyzdžiui, 24.
-    - Kvotos užklausos puslapyje spustelėkite **Submit**, kad pateiktumėte GPU kvotos užklausą.
+    - Kvotos prašymo puslapyje įveskite norimą **New cores limit** (pvz., 24).
+    - Kvotos prašymo puslapyje pasirinkite **Submit**, kad pateiktumėte GPU kvotos prašymą.
 
-1. Atlikite šiuos veiksmus, kad užklaustumėte *Standard NCSv3 Family* kvotą:
+1. Atlikite šiuos veiksmus, kad paprašytumėte *Standard NCSv3 šeimos* kvotą:
 
-    - Kairiojoje juostoje pasirinkite **Quota**.
-    - Pasirinkite norimą **Virtualių mašinų šeimą**. Pavyzdžiui, pasirinkite **Standard NCSv3 Family Cluster Dedicated vCPUs**, kuri apima *Standard_NC6s_v3* GPU.
-    - Navigacijos meniu pasirinkite **Request quota**.
-    - Kvotos užklausos puslapyje įveskite norimą **Naują branduolių ribą**. Pavyzdžiui, 24.
-    - Kvotos užklausos puslapyje spustelėkite **Submit**, kad pateiktumėte GPU kvotos užklausą.
+    - Kairėje pusėje pasirinkite **Quota**.
+    - Pasirinkite naudotiną **Virtual machine family**. Pavyzdžiui, pasirinkite **Standard NCSv3 Family Cluster Dedicated vCPUs**, kuri apima *Standard_NC6s_v3* GPU.
+    - Iš naršymo meniu pasirinkite **Request quota**.
+    - Kvotos prašymo puslapyje įveskite norimą **New cores limit** (pvz., 24).
+    - Kvotos prašymo puslapyje pasirinkite **Submit**, kad pateiktumėte GPU kvotos prašymą.
 
-### Rolės priskyrimo pridėjimas
+### Rolės priskyrimas
 
-Norėdami koreguoti ir diegti savo modelius, pirmiausia turite sukurti vartotojo priskirtą valdomą tapatybę (User Assigned Managed Identity – UAI) ir jai priskirti tinkamus leidimus. Ši UAI bus naudojama autentifikacijai diegimo metu.
+Norėdami tiksliai redaguoti ir diegti savo modelius, pirmiausia turite sukurti naudotojo priskirtą valdomą tapatybę (User Assigned Managed Identity, UAI) ir priskirti jai tinkamas teises. Ši UAI bus naudojama autentifikacijai diegimo metu.
 
-#### Sukurkite vartotojo priskirtą valdomą tapatybę (UAI)
+#### Naudotojo priskirtos valdomos tapatybės kūrimas (UAI)
 
-1. Įveskite *managed identities* **paieškos juostoje** portalo puslapio viršuje ir iš pasirodžiusių parinkčių pasirinkite **Managed Identities**.
+1. Įveskite *managed identities* į **paieškos juostą** puslapio viršuje ir pasirinkite **Managed Identities** iš pasirodžiusių variantų.
 
     ![Type managed identities.](../../../../../../translated_images/lt/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
@@ -110,113 +111,113 @@ Norėdami koreguoti ir diegti savo modelius, pirmiausia turite sukurti vartotojo
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite naudoti **Išteklų grupę** (jei reikia, sukurkite naują).
-    - Pasirinkite norimą **Regioną**.
-    - Įveskite **Pavadinimą**. Jis turi būti unikalus.
+    - Pasirinkite savo Azure **Subscription**.
+    - Pasirinkite naudotiną **Resource group** (sukurkite naują, jei reikia).
+    - Pasirinkite norimą **Region**.
+    - Įveskite **Name**. Tai turi būti unikalus pavadinimas.
 
     ![Select create.](../../../../../../translated_images/lt/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
-1. Paspauskite **Review + create**.
+1. Pasirinkite **Review + create**.
 
-1. Paspauskite **+ Create**.
+1. Pasirinkite **+ Create**.
 
-#### Pridėkite prie valdomos tapatybės vartotojo vaidmenį „Contributor“
+#### Priskirkite valdytojo (Contributor) rolę valdomajai tapatybei
 
-1. Nueikite į sukurtos valdomos tapatybės išteklių puslapį.
+1. Eikite į sukurtą valdomos tapatybės išteklių puslapį.
 
-1. Kairiojoje juostoje pasirinkite **Azure role assignments**.
+1. Kairėje pusėje pasirinkite **Azure role assignments**.
 
-1. Navigacijos meniu pasirinkite **+Add role assignment**.
+1. Naršymo meniu pasirinkite **+Add role assignment**.
 
-1. „Add role assignment“ puslapyje atlikite šiuos veiksmus:
+1. Pridėjimo rolės priskyrimo puslapyje atlikite šiuos veiksmus:
     - Pasirinkite **Scope** kaip **Resource group**.
-    - Pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite naudoti **Išteklų grupę**.
-    - Pasirinkite **Role** kaip **Contributor**.
+    - Pasirinkite savo Azure **Subscription**.
+    - Pasirinkite naudotiną **Resource group**.
+    - Pasirinkite rolę **Contributor**.
 
     ![Fill contributor role.](../../../../../../translated_images/lt/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Paspauskite **Save**.
 
-#### Pridėkite prie valdomos tapatybės „Storage Blob Data Reader“ vaidmenį
+#### Priskirkite Storage Blob Data Reader rolę valdomajai tapatybei
 
-1. Įveskite *storage accounts* **paieškos juostoje** portalo puslapio viršuje ir iš pasirodžiusių parinkčių pasirinkite **Storage accounts**.
+1. Įveskite *storage accounts* į **paieškos juostą** puslapio viršuje ir pasirinkite **Storage accounts** iš pasirodžiusių variantų.
 
     ![Type storage accounts.](../../../../../../translated_images/lt/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
-1. Pasirinkite saugyklos paskyrą, susietą su jūsų sukurtu Azure Machine Learning darbalaukiu. Pavyzdžiui, *finetunephistorage*.
+1. Pasirinkite storage paskyrą, susijusią su sukurtu Azure Machine Learning darbo srities pavadinimu. Pavyzdžiui, *finetunephistorage*.
 
-1. Atlikite šiuos veiksmus, kad pasiektumėte „Add role assignment“ puslapį:
+1. Atlikite šiuos veiksmus, kad pasiektumėte rolės priskyrimo puslapį:
 
-    - Nueikite į sukurtą Azure Storage paskyrą.
-    - Kairiojoje juostoje pasirinkite **Access Control (IAM)**.
-    - Navigacijos meniu pasirinkite **+ Add**.
+    - Eikite į sukurtą Azure Storage paskyrą.
+    - Kairėje pusėje pasirinkite **Access Control (IAM)**.
+    - Naršymo meniu pasirinkite **+ Add**.
     - Pasirinkite **Add role assignment**.
 
     ![Add role.](../../../../../../translated_images/lt/03-06-add-role.353ccbfdcf0789c2.webp)
 
-1. „Add role assignment“ puslapyje atlikite šiuos veiksmus:
+1. Rolės priskyrimo puslapyje atlikite šiuos veiksmus:
 
-    - „Role“ puslapyje įveskite *Storage Blob Data Reader* į **paieškos juostą** ir pasirinkite **Storage Blob Data Reader**.
-    - Paspauskite **Next**.
-    - „Members“ puslapyje pasirinkite **Assign access to** **Managed identity**.
-    - Paspauskite **+ Select members**.
-    - „Select managed identities“ puslapyje pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite valdomą tapatybę (**Managed identity**) kaip **Manage Identity**.
-    - Pasirinkite savo sukurtą valdomą tapatybę. Pavyzdžiui, *finetunephi-managedidentity*.
-    - Paspauskite **Select**.
+    - Rolės puslapyje įveskite *Storage Blob Data Reader* į **paieškos juostą** ir pasirinkite iš sąrašo **Storage Blob Data Reader**.
+    - Rolės puslapyje pasirinkite **Next**.
+    - Narių puslapyje pasirinkite **Assign access to** kaip **Managed identity**.
+    - Narių puslapyje pasirinkite **+ Select members**.
+    - Puslapyje „Pasirinkti valdomas tapatybes“ pasirinkite savo Azure **Subscription**.
+    - Pasirinkite valdomąją tapatybę kaip **Manage Identity**.
+    - Pasirinkite anksčiau sukurtą valdomą tapatybę, pavyzdžiui, *finetunephi-managedidentity*.
+    - Pasirinkite **Select**.
 
     ![Select managed identity.](../../../../../../translated_images/lt/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Paspauskite **Review + assign**.
 
-#### Pridėkite prie valdomos tapatybės „AcrPull“ vaidmenį
+#### Priskirkite AcrPull rolę valdomajai tapatybei
 
-1. Įveskite *container registries* **paieškos juostoje** portalo puslapio viršuje ir iš pasirodžiusių parinkčių pasirinkite **Container registries**.
+1. Įveskite *container registries* į **paieškos juostą** puslapio viršuje ir pasirinkite **Container registries** iš pasirodžiusių variantų.
 
     ![Type container registries.](../../../../../../translated_images/lt/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
-1. Pasirinkite konteinerių registrą, susietą su Azure Machine Learning darbalaukiu. Pavyzdžiui, *finetunephicontainerregistry*.
+1. Pasirinkite konteinerių registrą, susietą su Azure Machine Learning darbo sritimi. Pavyzdžiui, *finetunephicontainerregistry*.
 
-1. Atlikite šiuos veiksmus, kad pasiektumėte „Add role assignment“ puslapį:
+1. Atlikite šiuos veiksmus, kad pasiektumėte rolės priskyrimo puslapį:
 
-    - Kairiojoje juostoje pasirinkite **Access Control (IAM)**.
-    - Navigacijos meniu pasirinkite **+ Add**.
+    - Kairėje pusėje pasirinkite **Access Control (IAM)**.
+    - Naršymo meniu pasirinkite **+ Add**.
     - Pasirinkite **Add role assignment**.
 
-1. „Add role assignment“ puslapyje atlikite šiuos veiksmus:
+1. Rolės priskyrimo puslapyje atlikite šiuos veiksmus:
 
-    - „Role“ puslapyje įveskite *AcrPull* į **paieškos juostą** ir pasirinkite **AcrPull**.
-    - Paspauskite **Next**.
-    - „Members“ puslapyje pasirinkite **Assign access to** **Managed identity**.
-    - Paspauskite **+ Select members**.
-    - „Select managed identities“ puslapyje pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite valdomą tapatybę (**Managed identity**) kaip **Manage Identity**.
-    - Pasirinkite savo sukurtą valdomą tapatybę. Pavyzdžiui, *finetunephi-managedidentity*.
-    - Paspauskite **Select**.
+    - Rolės puslapyje įveskite *AcrPull* į **paieškos juostą** ir pasirinkite iš sąrašo **AcrPull**.
+    - Rolės puslapyje pasirinkite **Next**.
+    - Narių puslapyje pasirinkite **Assign access to** kaip **Managed identity**.
+    - Narių puslapyje pasirinkite **+ Select members**.
+    - Puslapyje „Pasirinkti valdomas tapatybes“ pasirinkite savo Azure **Subscription**.
+    - Pasirinkite valdomąją tapatybę kaip **Manage Identity**.
+    - Pasirinkite anksčiau sukurtą valdomą tapatybę, pvz., *finetunephi-managedidentity*.
+    - Pasirinkite **Select**.
     - Paspauskite **Review + assign**.
 
-### Projekto paruošimas
+### Projekto nustatymas
 
-Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vietinę aplinką.
+Norėdami atsisiųsti duomenų rinkinius, reikalingus tiksliniam redagavimui, nustatysite vietinę aplinką.
 
-Šiame pratime jūs
+Šiame pratime jūs:
 
-- Sukursite katalogą darbui šiame kataloge.
+- Sukursite aplanką darbui.
 - Sukursite virtualią aplinką.
-- Įdiegs reikalingas paketas.
-- Sukursite failą *download_dataset.py*, skirtą duomenų rinkiniui atsisiųsti.
+- Įdiegsite reikiamas paketas.
+- Sukursite *download_dataset.py* failą, skirtą duomenų rinkinio atsisiuntimui.
 
-#### Sukurkite katalogą darbui
+#### Sukurkite aplanką darbui
 
-1. Atidarykite terminalo langą ir įveskite šią komandą, kad numatytojoje vietoje sukurtumėte katalogą pavadinimu *finetune-phi*.
+1. Atverkite terminalo langą ir įveskite šią komandą, kad sukurtumėte aplanką pavadinimu *finetune-phi* numatytame kelyje.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. Įveskite šią komandą savo terminale, kad pereitumėte į *finetune-phi* aplanką, kurį sukūrėte.
+2. Įveskite šią komandą terminale, kad pereitumėte į ką tik sukurtą *finetune-phi* aplanką.
 
     ```console
     cd finetune-phi
@@ -224,13 +225,12 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 #### Sukurkite virtualią aplinką
 
-1. Įveskite šią komandą savo terminale, kad sukurtumėte virtualią aplinką pavadinimu *.venv*.
-
+1. Įveskite šią komandą terminale, kad sukurtumėte virtualią aplinką pavadinimu *.venv*.
     ```console
     python -m venv .venv
     ```
 
-2. Įveskite šią komandą savo terminale, kad suaktyvintumėte virtualią aplinką.
+2. Terminale įveskite šią komandą, kad suaktyvintumėte virtualią aplinką.
 
     ```console
     .venv\Scripts\activate.bat
@@ -239,9 +239,9 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 > [!NOTE]
 > Jei pavyko, prieš komandų eilutę turėtumėte matyti *(.venv)*.
 
-#### Įdiekite reikiamus paketus
+#### Įdiekite reikalingus paketus
 
-1. Įveskite šias komandas savo terminale, kad įdiegtumėte reikiamus paketus.
+1. Terminale įveskite šias komandas, kad įdiegtumėte reikalingus paketus.
 
     ```console
     pip install datasets==2.19.1
@@ -260,7 +260,7 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 1. Atidarykite **Visual Studio Code**.
 
-1. Pasirinkite **File** meniu juostoje.
+1. Meniu juostoje pasirinkite **File**.
 
 1. Pasirinkite **Open Folder**.
 
@@ -268,24 +268,24 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
     ![Pasirinkite sukurtą aplanką.](../../../../../../translated_images/lt/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
-1. Kairėje Visual Studio Code skydelio pusėje dešiniuoju pelės mygtuku spustelėkite ir pasirinkite **New File**, kad sukurtumėte naują failą pavadinimu *download_dataset.py*.
+1. Kairėje Visual Studio Code pusėje dešiniu pelės mygtuku spustelėkite ir pasirinkite **New File**, kad sukurtumėte naują failą pavadinimu *download_dataset.py*.
 
     ![Sukurkite naują failą.](../../../../../../translated_images/lt/04-02-create-new-file.cf9a330a3a9cff92.webp)
 
-### Paruoškite duomenų rinkinį tolimesniam pritaikymui
+### Paruoškite duomenų rinkinį smulkiam apmokymui
 
-Šiame pratime paleisite *download_dataset.py* failą, kad atsisiųstumėte *ultrachat_200k* duomenų rinkinius į savo vietinę aplinką. Vėliau naudosite šiuos duomenų rinkinius, kad pritaikytumėte Phi-3 modelį Azure Machine Learning aplinkoje.
+Šioje užduotyje vykdysite *download_dataset.py* failą, kad atsisiųstumėte *ultrachat_200k* duomenų rinkinius į savo vietinę aplinką. Tuomet naudosite šiuos duomenų rinkinius Phi-3 modelio smulkiam apmokymui Azure Machine Learning platformoje.
 
-Šiame pratime jūs:
+Šioje užduotyje jūs:
 
 - Pridėsite kodą į *download_dataset.py* failą, kad atsisiųstumėte duomenų rinkinius.
-- Paleisite *download_dataset.py* failą, kad atsisiųstumėte duomenų rinkinius į savo vietinę aplinką.
+- Vykdysite *download_dataset.py* failą, kad atsisiųstumėte duomenų rinkinius į savo vietinę aplinką.
 
 #### Atsisiųskite savo duomenų rinkinį naudodami *download_dataset.py*
 
 1. Atidarykite *download_dataset.py* failą Visual Studio Code.
 
-1. Įterpkite šį kodą į *download_dataset.py* failą.
+1. Įtraukite šį kodą į *download_dataset.py* failą.
 
     ```python
     import json
@@ -296,11 +296,11 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
         """
         Load and split a dataset.
         """
-        # Įkelti duomenų rinkinį su nurodytu pavadinimu, konfigūracija ir skaidymo santykiu
+        # Įkelkite duomenų rinkinį su nurodytu pavadinimu, konfigūracija ir padalijimo santykiu
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Padalinti duomenų rinkinį į mokymo ir testavimo rinkinius (80% mokymui, 20% testavimui)
+        # Padalinkite duomenų rinkinį į mokymo ir testavimo rinkinius (80% mokymo, 20% testavimo)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -311,16 +311,16 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
         """
         Save a dataset to a JSONL file.
         """
-        # Sukurti katalogą, jei jis neegzistuoja
+        # Sukurkite katalogą, jei jis neegzistuoja
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Atidaryti failą rašymo režimu
+        # Atidarykite failą rašymo režimu
         with open(filepath, 'w', encoding='utf-8') as f:
-            # Pereiti per kiekvieną įrašą duomenų rinkinyje
+            # Iteruokite per kiekvieną įrašą duomenų rinkinyje
             for record in dataset:
-                # Išsaugoti įrašą kaip JSON objektą ir įrašyti į failą
+                # Išsaugokite įrašą kaip JSON objektą ir rašykite jį į failą
                 json.dump(record, f)
-                # Įrašyti naujos eilutės simbolį, kad atskirti įrašus
+                # Parašykite naujos eilutės simbolį, kad atskirtumėte įrašus
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -329,17 +329,17 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
         """
         Main function to load, split, and save the dataset.
         """
-        # Įkelti ir padalinti ULTRACHAT_200k duomenų rinkinį su specifine konfigūracija ir skaidymo santykiu
+        # Įkelkite ir padalinkite ULTRACHAT_200k duomenų rinkinį su konkrečia konfigūracija ir padalijimo santykiu
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Išskirti mokymo ir testavimo duomenų rinkinius iš padalijimo
+        # Išskirkite mokymo ir testavimo duomenų rinkinius iš padalinimo
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
-        # Išsaugoti mokymo duomenų rinkinį į JSONL failą
+        # Išsaugokite mokymo duomenų rinkinį į JSONL failą
         save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
         
-        # Išsaugoti testavimo duomenų rinkinį į atskirą JSONL failą
+        # Išsaugokite testavimo duomenų rinkinį į atskirą JSONL failą
         save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
 
     if __name__ == "__main__":
@@ -347,7 +347,7 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
     ```
 
-1. Įveskite šią komandą savo terminale, kad paleistumėte skriptą ir atsisiųstumėte duomenų rinkinį į savo vietinę aplinką.
+1. Terminale įveskite šią komandą, kad paleistumėte skriptą ir atsisiųstumėte duomenų rinkinį į savo vietinę aplinką.
 
     ```console
     python download_dataset.py
@@ -357,24 +357,24 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 > [!NOTE]
 >
-> #### Pastaba apie duomenų rinkinio dydį ir tolimesnio pritaikymo laiką
+> #### Pastaba apie duomenų rinkinio dydį ir smulkiojo apmokymo laiką
 >
-> Šiame pamokoje naudojate tik 1% duomenų rinkinio (`split='train[:1%]'`). Tai žymiai sumažina duomenų kiekį, pagreitindama tiek įkėlimą, tiek tolimesnį pritaikymą. Galite reguliuoti procentą, kad surastumėte tinkamą balansą tarp treniruočių laiko ir modelio našumo. Naudojant mažesnę duomenų rinkinio dalį, tolimesnis pritaikymas trunka trumpiau ir yra valdomesnis, kas ypač naudinga mokymosi tikslais.
+> Šiame vadove naudojate tik 1% duomenų rinkinio (`split='train[:1%]'`). Tai ženkliai sumažina duomenų kiekį, pagreitindamas tiek įkėlimą, tiek smulkųjį apmokymą. Galite reguliuoti procentinę dalį, kad rastumėte tinkamą pusiausvyrą tarp mokymo laiko ir modelio našumo. Naudojant mažesnę duomenų rinkinio dalį, sumažėja smulkiojo apmokymo laikas, o procesas tampa valdomesnis vadovėliui.
 
-## Scenarijus 2: Pritaikyti Phi-3 modelį ir diegti Azure Machine Learning Studio
+## Scenarijus 2: Smulkiai apmokykite Phi-3 modelį ir išdiekite Azure Machine Learning Studio
 
-### Pritaikyti Phi-3 modelį
+### Smulkus Phi-3 modelio apmokymas
 
-Šiame pratime jūs pritaikysite Phi-3 modelį Azure Machine Learning Studio.
+Šioje užduotyje smulkiai apmokysite Phi-3 modelį Azure Machine Learning Studio aplinkoje.
 
-Šiame pratime jūs:
+Šioje užduotyje jūs:
 
-- Sukursite kompiuterių klasterį tolimesniam pritaikymui.
-- Pritaikysite Phi-3 modelį Azure Machine Learning Studio.
+- Sukursite kompiuterių klasterį smulkiam apmokymui.
+- Smulkiai apmokysite Phi-3 modelį Azure Machine Learning Studio aplinkoje.
 
-#### Sukurkite kompiuterių klasterį tolimesniam pritaikymui
+#### Sukurkite kompiuterių klasterį smulkiam apmokymui
 
-1. Apsilankykite adresu [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Kairėje pusėje pasirinkite **Compute**.
 
@@ -382,15 +382,15 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 1. Paspauskite **+ New**.
 
-    ![Pasirinkite Compute.](../../../../../../translated_images/lt/06-01-select-compute.a29cff290b480252.webp)
+    ![Pasirinkite compute.](../../../../../../translated_images/lt/06-01-select-compute.a29cff290b480252.webp)
 
 1. Atlikite šiuos veiksmus:
 
     - Pasirinkite norimą **Region**.
-    - Pasirinkite **Virtual machine tier** į **Dedicated**.
-    - Pasirinkite **Virtual machine type** į **GPU**.
-    - Pasirinkite **Virtual machine size** filtrą į **Select from all options**.
-    - Pasirinkite **Virtual machine size** į **Standard_NC24ads_A100_v4**.
+    - Pasirinkite **Virtual machine tier** kaip **Dedicated**.
+    - Pasirinkite **Virtual machine type** kaip **GPU**.
+    - Filtruokite **Virtual machine size** pasirinkdami **Select from all options**.
+    - Pasirinkite **Virtual machine size** *Standard_NC24ads_A100_v4*.
 
     ![Sukurkite klasterį.](../../../../../../translated_images/lt/06-02-create-cluster.f221b65ae1221d4e.webp)
 
@@ -398,18 +398,18 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 1. Atlikite šiuos veiksmus:
 
-    - Įveskite **Compute name**. Jame turi būti unikalus pavadinimas.
-    - Pasirinkite **Minimum number of nodes** į **0**.
-    - Pasirinkite **Maximum number of nodes** į **1**.
-    - Pasirinkite **Idle seconds before scale down** į **120**.
+    - Įveskite **Compute name**, kuris turi būti unikalus.
+    - Nustatykite **Minimum number of nodes** į **0**.
+    - Nustatykite **Maximum number of nodes** į **1**.
+    - Nustatykite **Idle seconds before scale down** į **120**.
 
     ![Sukurkite klasterį.](../../../../../../translated_images/lt/06-03-create-cluster.4a54ba20914f3662.webp)
 
 1. Paspauskite **Create**.
 
-#### Pritaikyti Phi-3 modelį
+#### Smulkiai apmokykite Phi-3 modelį
 
-1. Apsilankykite adresu [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Pasirinkite sukurtą Azure Machine Learning darbo sritį.
 
@@ -417,8 +417,8 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 1. Atlikite šiuos veiksmus:
 
-    - Kairėje pasirinkite **Model catalog**.
-    - Paieškos juostoje įveskite *phi-3-mini-4k* ir iš sąrašo pasirinkite **Phi-3-mini-4k-instruct**.
+    - Kairėje pusėje pasirinkite **Model catalog**.
+    - Paieškos juostoje įveskite *phi-3-mini-4k* ir pasirinkite **Phi-3-mini-4k-instruct** iš pasirodžiusių variantų.
 
     ![Įveskite phi-3-mini-4k.](../../../../../../translated_images/lt/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
@@ -428,36 +428,36 @@ Norėdami atsisiųsti koregavimui reikalingus duomenų rinkinius, paruošite vie
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **Select task type** į **Chat completion**.
-    - Paspauskite **+ Select data**, kad įkeltumėte **Treniruojamuosius duomenis**.
-    - Pasirinkite Validacijos duomenų įkėlimo tipą į **Provide different validation data**.
-    - Paspauskite **+ Select data**, kad įkeltumėte **Validacijos duomenis**.
+    - Pasirinkite **Select task type** kaip **Chat completion**.
+    - Pasirinkite **+ Select data**, kad įkeltumėte **Training data**.
+    - Validacijos duomenų įkėlimo tipą pasirinkite kaip **Provide different validation data**.
+    - Pasirinkite **+ Select data**, kad įkeltumėte **Validation data**.
 
-    ![Užpildykite tolimesnio pritaikymo puslapį.](../../../../../../translated_images/lt/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
+    ![Užpildykite smulkiojo apmokymo puslapį.](../../../../../../translated_images/lt/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
-> Galite pasirinkti **Advanced settings**, kad pritaikytumėte nustatymus, pavyzdžiui, **learning_rate** ir **lr_scheduler_type**, optimizuodami tolimesnio pritaikymo procesą pagal savo poreikius.
+> Galite pasirinkti **Advanced settings**, kad pritaikytumėte parametrus, tokius kaip **learning_rate** ir **lr_scheduler_type**, optimizuodami smulkiojo apmokymo procesą pagal savo poreikius.
 
 1. Paspauskite **Finish**.
 
-1. Šiame pratime sėkmingai pritaikėte Phi-3 modelį naudodami Azure Machine Learning. Atkreipkite dėmesį, kad toks pritaikymo procesas gali užtrukti nemažai laiko. Paleidę tolimesnio pritaikymo užduotį, turite palaukti, kol ji bus įvykdyta. Galite stebėti užduoties būseną pažymėdami Jobs skirtuką Azure Machine Learning darbo srityje kairėje pusėje. Kitoje serijoje diegsite pritaikytą modelį ir integruosite jį su Prompt flow.
+1. Šioje užduotyje sėkmingai smulkiai apmokėte Phi-3 modelį Azure Machine Learning platformoje. Atkreipkite dėmesį, kad smulkiojo apmokymo procesas gali užtrukti nemažai laiko. Paleidę smulkiojo apmokymo užduotį, turėsite palaukti, kol ji bus baigta. Galite stebėti apmokymo užduoties būseną eikite į Jobs skirtuką kairėje Azure Machine Learning darbo srityje. Sekančiame serijos etape išdėstysite smulkiai apmokytą modelį ir integruosite jį su Prompt flow.
 
-    ![Peržiūrėkite tolimesnio pritaikymo užduotį.](../../../../../../translated_images/lt/06-08-output.2bd32e59930672b1.webp)
+    ![Žiūrėkite smulkiojo apmokymo užduotį.](../../../../../../translated_images/lt/06-08-output.2bd32e59930672b1.webp)
 
-### Diegti pritaikytą Phi-3 modelį
+### Išdiekite smulkiai apmokytą Phi-3 modelį
 
-Norėdami integruoti pritaikytą Phi-3 modelį su Prompt flow, turite jį įdiegti, kad būtų pasiekiamas realaus laiko užklausoms. Šis procesas apima modelio registravimą, internetinio endpoint kūrimą ir modelio diegimą.
+Norint integruoti smulkiai apmokytą Phi-3 modelį su Prompt flow, reikia išdiegti modelį, kad būtų pasiekiamas realaus laiko prognozėms. Šis procesas apima modelio registraciją, internetinio pabaigos taško sukūrimą ir modelio išdiegimą.
 
-Šiame pratime jūs:
+Šioje užduotyje jūs:
 
-- Užregistruosite pritaikytą modelį Azure Machine Learning darbo srityje.
-- Sukursite internetinį endpoint.
-- Įdiegsite užregistruotą pritaikytą Phi-3 modelį.
+- Užregistruosite smulkiai apmokytą modelį Azure Machine Learning darbo srityje.
+- Sukursite internetinį pabaigos tašką.
+- Išdiegsite užregistruotą smulkiai apmokytą Phi-3 modelį.
 
-#### Užregistruokite pritaikytą modelį
+#### Užregistruokite smulkiai apmokytą modelį
 
-1. Apsilankykite adresu [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Pasirinkite sukurtą Azure Machine Learning darbo sritį.
 
@@ -475,118 +475,120 @@ Norėdami integruoti pritaikytą Phi-3 modelį su Prompt flow, turite jį įdieg
 
 1. Paspauskite **Next**.
 
-1. Pasirinkite **Model type** kaip **MLflow**.
+1. Pasirinkite **Model type** - **MLflow**.
 
-1. Įsitikinkite, kad pasirinktas **Job output**; jis turėtų būti pasirinktas automatiškai.
+1. Užtikrinkite, kad pasirinktas **Job output**; jis turėtų būti pasirenkamas automatiškai.
 
-    ![Pasirinkite išvestį.](../../../../../../translated_images/lt/07-03-select-output.4cf1a0e645baea1f.webp)
+    ![Pasirinkite output.](../../../../../../translated_images/lt/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Paspauskite **Next**.
 
 3. Paspauskite **Register**.
 
-    ![Pasirinkite registruoti.](../../../../../../translated_images/lt/07-04-register.fd82a3b293060bc7.webp)
+    ![Pasirinkite register.](../../../../../../translated_images/lt/07-04-register.fd82a3b293060bc7.webp)
 
-4. Užregistruotą modelį galite peržiūrėti pasirinkę **Models** meniu kairėje pusėje.
+4. Užregistruotą modelį galite peržiūrėti pasirinkę meniu punktą **Models** kairėje pusėje.
 
     ![Užregistruotas modelis.](../../../../../../translated_images/lt/07-05-registered-model.7db9775f58dfd591.webp)
 
-#### Įdiekite pritaikytą modelį
+#### Išdiekite smulkiai apmokytą modelį
 
 1. Eikite į sukurtą Azure Machine Learning darbo sritį.
 
-1. Kairėje pusėje pasirinkite **Endpoints**.
+1. Pasirinkite **Endpoints** kairėje pusėje.
 
 1. Navigacijos meniu pasirinkite **Real-time endpoints**.
 
-    ![Sukurkite endpoint.](../../../../../../translated_images/lt/07-06-create-endpoint.1ba865c606551f09.webp)
+    ![Sukurkite pabaigos tašką.](../../../../../../translated_images/lt/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Paspauskite **Create**.
 
-1. Pasirinkite užregistruotą modelį, kurį sukūrėte.
+1. Pasirinkite sukurtą užregistruotą modelį.
 
     ![Pasirinkite užregistruotą modelį.](../../../../../../translated_images/lt/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
+1. Paspauskite **Select**.
+
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **Virtual machine** į *Standard_NC6s_v3*.
+    - Pasirinkite **Virtual machine** kaip *Standard_NC6s_v3*.
     - Pasirinkite norimą **Instance count**, pavyzdžiui, *1*.
-    - Pasirinkite **Endpoint** į **New**, kad sukurtumėte naują endpoint.
-    - Įveskite **Endpoint name**. Jis turi būti unikalus.
-    - Įveskite **Deployment name**. Jis turi būti unikalus.
+    - Pasirinkite **Endpoint** kaip **New**, kad sukurtumėte naują pabaigos tašką.
+    - Įveskite **Endpoint name**, kuris turi būti unikalus.
+    - Įveskite **Deployment name**, kuris taip pat turi būti unikalus.
 
-    ![Užpildykite diegimo nustatymus.](../../../../../../translated_images/lt/07-08-deployment-setting.43ddc4209e673784.webp)
+    ![Užpildykite išdiegimo nustatymus.](../../../../../../translated_images/lt/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Paspauskite **Deploy**.
 
 > [!WARNING]
-> Kad išvengtumėte papildomų mokesčių, įsitikinkite, kad ištrynėte sukurtą endpoint Azure Machine Learning darbo srityje.
+> Kad išvengtumėte papildomų mokesčių savo paskyrai, būtinai ištrinkite sukurtą pabaigos tašką Azure Machine Learning darbo srityje.
 >
 
-#### Patikrinkite diegimo būseną Azure Machine Learning darbo srityje
+#### Patikrinkite išdiegimo būseną Azure Machine Learning darbo srityje
 
 1. Eikite į sukurtą Azure Machine Learning darbo sritį.
 
-1. Kairėje pusėje pasirinkite **Endpoints**.
+1. Pasirinkite **Endpoints** kairėje pusėje.
 
-1. Pasirinkite sukurtą endpoint.
+1. Pasirinkite sukurtą pabaigos tašką.
 
-    ![Pasirinkite endpoints](../../../../../../translated_images/lt/07-09-check-deployment.325d18cae8475ef4.webp)
+    ![Pasirinkite pabaigos taškus](../../../../../../translated_images/lt/07-09-check-deployment.325d18cae8475ef4.webp)
 
-1. Šiame puslapyje galite tvarkyti endpointus diegimo metu.
+1. Šiame puslapyje galite valdyti pabaigos taškus vykdant išdiegimo procesą.
 
 > [!NOTE]
-> Kai diegimas bus baigtas, įsitikinkite, kad **Live traffic** yra nustatytas į **100%**. Jei ne, pasirinkite **Update traffic**, kad pakoreguotumėte srauto nustatymus. Atkreipkite dėmesį, kad negalite testuoti modelio, jei srautas nustatytas 0%.
+> Kai išdiegimas bus baigtas, įsitikinkite, kad **Live traffic** nustatyta į **100%**. Jei ne, pasirinkite **Update traffic** ir sureguliuokite srauto nustatymus. Atminkite, kad negalite testuoti modelio, jei srautas nustatytas į 0%.
 >
 > ![Nustatykite srautą.](../../../../../../translated_images/lt/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenarijus 3: Integruoti su Prompt flow ir bendrauti su savo individualiu modeliu Azure AI Foundry
+## Scenarijus 3: Integracija su Prompt flow ir pokalbiai su jūsų suasmenintu modeliu Microsoft Foundry platformoje
 
-### Integruoti individualų Phi-3 modelį su Prompt flow
+### Integruokite suasmenintą Phi-3 modelį su Prompt flow
 
-Sėkmingai įdiegę savo pritaikytą modelį, dabar galite integruoti jį su Prompt Flow ir naudoti savo modelį realaus laiko programėlėse, leidžiant atlikti įvairias interaktyvias užduotis su individualiu Phi-3 modeliu.
+Sėkmingai išdiegę savo smulkiai apmokytą modelį, dabar galite jį integruoti su Prompt Flow, kad naudotumėte savo modelį realaus laiko programose, leidžiančiose atlikti įvairias sąveikių užduotis su suasmenintu Phi-3 modeliu.
 
-Šiame pratime jūs:
+Šioje užduotyje jūs:
 
-- Sukursite Azure AI Foundry Hub.
-- Sukursite Azure AI Foundry projektą.
+- Sukursite Microsoft Foundry Hub.
+- Sukursite Microsoft Foundry projektą.
 - Sukursite Prompt flow.
-- Pridėsite individualų ryšį pritaikytam Phi-3 modeliui.
-- Suveskite Prompt flow, kad galėtumėte bendrauti su savo individualiu Phi-3 modeliui.
+- Pridėsite suasmenintą ryšį su smulkiai apmokytu Phi-3 modeliu.
+- Suvesite Prompt flow, kad galėtumėte bendrauti su suasmenintu Phi-3 modeliu.
 
 > [!NOTE]
-> Taip pat galite integruoti su Promptflow naudodami Azure ML Studio. Tas pats integracijos procesas taikomas ir Azure ML Studio.
+> Taip pat galite integruotis su Promptflow naudodami Azure ML Studio. Tas pats integravimo procesas galioja Azure ML Studio aplinkoje.
 
-#### Sukurkite Azure AI Foundry Hub
+#### Sukurkite Microsoft Foundry Hub
 
-Prieš sukuriant projektą, reikia sukurti Hub'ą. Hub'as veikia kaip Resursų grupė, leidžianti jums organizuoti ir valdyti kelis projektus Azure AI Foundry aplinkoje.
+Prieš kuriant projektą, turite sukurti Hub. Hub veikia kaip Išteklių grupė, leidžianti organizuoti ir valdyti kelis projektus Microsoft Foundry platformoje.
+1. Apsilankykite [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Apsilankykite adresu [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Pasirinkite **Visi centrai** iš kairėje esančio skirtuko.
 
-1. Kairėje pusėje pasirinkite **All hubs**.
+1. Iš naršymo meniu pasirinkite **+ Naujas centras**.
 
-1. Navigacijos meniu pasirinkite **+ New hub**.
     ![Sukurti centrą.](../../../../../../translated_images/lt/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Atlikite šiuos veiksmus:
 
     - Įveskite **Centro pavadinimą**. Jis turi būti unikalus.
     - Pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite **Išteklių grupę**, kurią norite naudoti (sukurkite naują, jei reikia).
+    - Pasirinkite naudojamą **Išteklių grupę** (jei reikia, sukurkite naują).
     - Pasirinkite norimą naudoti **Vietą**.
-    - Pasirinkite **Prisijungti prie Azure AI paslaugų** (sukurkite naują, jei reikia).
+    - Pasirinkite **Prisijungti prie Azure AI paslaugų** (jei reikia, sukurkite naują).
     - Pasirinkite **Prisijungti prie Azure AI paieškos** ir pasirinkite **Praleisti prisijungimą**.
 
     ![Užpildyti centrą.](../../../../../../translated_images/lt/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
 1. Pasirinkite **Toliau**.
 
-#### Sukurti Azure AI Foundry projektą
+#### Sukurti Microsoft Foundry projektą
 
-1. Centre, kurį sukūrėte, pasirinkite **Visi projektai** kairėje puslapio skiltyje.
+1. Pasirinktame centre pasirinkite **Visi projektai** iš kairėje esančio skirtuko.
 
-1. Navigacijos meniu pasirinkite **+ Naujas projektas**.
+1. Iš naršymo meniu pasirinkite **+ Naujas projektas**.
 
     ![Pasirinkti naują projektą.](../../../../../../translated_images/lt/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
@@ -596,89 +598,89 @@ Prieš sukuriant projektą, reikia sukurti Hub'ą. Hub'as veikia kaip Resursų g
 
 1. Pasirinkite **Sukurti projektą**.
 
-#### Pridėti pasirinktą ryšį su fine-tuninguotu Phi-3 modeliu
+#### Pridėti vartotojišką ryšį prie fine-tuned Phi-3 modelio
 
-Norėdami integruoti savo pasirinktinį Phi-3 modelį su Prompt flow, turite išsaugoti modelio galinį tašką ir raktą pasirinktinio ryšio nustatyme. Šis nustatymas užtikrina prieigą prie jūsų pasirinktinio Phi-3 modelio Prompt flow aplinkoje.
+Norėdami integruoti savo vartotojišką Phi-3 modelį su Prompt flow, turite saugoti modelio galinį tašką ir raktą vartotojiškame ryšyje. Šis nustatymas užtikrina prieigą prie jūsų vartotojiško Phi-3 modelio Prompt flow aplinkoje.
 
-#### Nustatyti api raktą ir galinio taško URI fine-tuninguotam Phi-3 modeliui
+#### Nustatyti api raktą ir galinio taško uri fine-tuned Phi-3 modeliui
 
 1. Apsilankykite [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Eikite į Azure Machine learning darbo sritį, kurią sukūrėte.
+1. Eikite į savo sukurtą Azure Machine learning darbo sritį.
 
-1. Pasirinkite **Galiniai taškai (Endpoints)** kairėje puslapio skiltyje.
+1. Pasirinkite **Galiniai taškai** iš kairėje esančio skirtuko.
 
-    ![Pasirinkti galinius taškus.](../../../../../../translated_images/lt/08-06-select-endpoints.aff38d453bcf9605.webp)
+    ![Pasirinkite galinius taškus.](../../../../../../translated_images/lt/08-06-select-endpoints.aff38d453bcf9605.webp)
 
 1. Pasirinkite sukurtą galinį tašką.
 
-    ![Pasirinkti sukurtą galinį tašką.](../../../../../../translated_images/lt/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
+    ![Pasirinkite sukurtą galinį tašką.](../../../../../../translated_images/lt/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
-1. Navigacijos meniu pasirinkite **Naudoti (Consume)**.
+1. Iš naršymo meniu pasirinkite **Naudoti**.
 
 1. Nukopijuokite savo **REST galinį tašką** ir **Pagrindinį raktą**.
 
-    ![Kopijuoti api raktą ir galinio taško uri.](../../../../../../translated_images/lt/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
+    ![Nukopijuokite api raktą ir galinio taško uri.](../../../../../../translated_images/lt/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
-#### Pridėti pasirinktinį ryšį
+#### Pridėti vartotojišką ryšį
 
-1. Apsilankykite [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Apsilankykite [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
-1. Proekte, kurį sukūrėte, pasirinkite **Nustatymai** kairėje puslapio skiltyje.
+1. Projekto, kurį sukūrėte, kairiajame skirtuke pasirinkite **Nustatymai**.
 
 1. Pasirinkite **+ Naujas ryšys**.
 
-    ![Pasirinkti naują ryšį.](../../../../../../translated_images/lt/08-09-select-new-connection.02eb45deadc401fc.webp)
+    ![Pasirinkite naują ryšį.](../../../../../../translated_images/lt/08-09-select-new-connection.02eb45deadc401fc.webp)
 
-1. Navigacijos meniu pasirinkite **Pasirinktinius raktus**.
+1. Iš naršymo meniu pasirinkite **Vartotojiški raktai**.
 
-    ![Pasirinkti pasirinktinius raktus.](../../../../../../translated_images/lt/08-10-select-custom-keys.856f6b2966460551.webp)
+    ![Pasirinkite vartotojiškus raktus.](../../../../../../translated_images/lt/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **+ Pridėti rakto ir reikšmės poras**.
-    - Rakto vardui įveskite **endpoint** ir į reikšmės lauką įklijuokite galinį tašką, kurį nukopijavote iš Azure ML Studio.
-    - Vėl pasirinkite **+ Pridėti rakto ir reikšmės poras**.
-    - Rakto vardui įveskite **key** ir į reikšmės lauką įklijuokite raktą, kurį nukopijavote iš Azure ML Studio.
-    - Pridėjus raktus, pažymėkite **yra slaptas (is secret)**, kad raktas nebūtų viešai rodomas.
+    - Pasirinkite **+ Pridėti raktų ir vertės poras**.
+    - Rakto pavadinimui įveskite **endpoint** ir įklijuokite galinį tašką, nukopijuotą iš Azure ML Studio, į vertės laukelį.
+    - Dar kartą pasirinkite **+ Pridėti raktų ir vertės poras**.
+    - Rakto pavadinimui įveskite **key** ir įklijuokite raktą, nukopijuotą iš Azure ML Studio, į vertės laukelį.
+    - Pridėję raktus, pažymėkite **yra slapta** („is secret“), kad raktas nebūtų atskleistas.
 
     ![Pridėti ryšį.](../../../../../../translated_images/lt/08-11-add-connection.785486badb4d2d26.webp)
 
 1. Pasirinkite **Pridėti ryšį**.
 
-#### Sukurti Prompt flow
+#### Kurti Prompt flow
 
-Jūs pridėjote pasirinktą ryšį Azure AI Foundry. Dabar sukurkime Prompt flow naudodami šiuos veiksmus. Tada sujungsime šį Prompt flow su pasirinktu ryšiu, kad galėtumėte naudoti fine-tuninguotą modelį Prompt flow aplinkoje.
+Pridėjote vartotojišką ryšį Microsoft Foundry. Dabar sukursime Prompt flow naudodami šiuos veiksmus. Vėliau sujungsite šį Prompt flow su vartotojišku ryšiu, kad galėtumėte naudoti fine-tuned modelį Prompt flow aplinkoje.
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
-1. Pasirinkite **Prompt flow** kairėje puslapio skiltyje.
+1. Pasirinkite **Prompt flow** iš kairiojo skirtuko.
 
-1. Navigacijos meniu pasirinkite **+ Kurti**.
+1. Iš naršymo meniu pasirinkite **+ Kurti**.
 
-    ![Pasirinkti Promptflow.](../../../../../../translated_images/lt/08-12-select-promptflow.6f4b451cb9821e5b.webp)
+    ![Pasirinkite Promptflow.](../../../../../../translated_images/lt/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
-1. Navigacijos meniu pasirinkite **Pokalbio srautas (Chat flow)**.
+1. Iš naršymo meniu pasirinkite **Pokalbio srautas**.
 
-    ![Pasirinkti pokalbio srautą.](../../../../../../translated_images/lt/08-13-select-flow-type.2ec689b22da32591.webp)
+    ![Pasirinkite pokalbio srautą.](../../../../../../translated_images/lt/08-13-select-flow-type.2ec689b22da32591.webp)
 
-1. Įveskite **Aplanko pavadinimą**.
+1. Įveskite naudojamo **aplanko pavadinimą**.
 
-    ![Įvesti pavadinimą.](../../../../../../translated_images/lt/08-14-enter-name.ff9520fefd89f40d.webp)
+    ![Įveskite pavadinimą.](../../../../../../translated_images/lt/08-14-enter-name.ff9520fefd89f40d.webp)
 
 2. Pasirinkite **Sukurti**.
 
-#### Paruošti Prompt flow pokalbiui su jūsų pasirinktu Phi-3 modeliu
+#### Nustatyti Prompt flow pokalbiui su savo vartotojišku Phi-3 modeliu
 
-Reikia integruoti fine-tuninguotą Phi-3 modelį į Prompt flow. Tačiau esamas Prompt flow nėra sukurtas šiai užduočiai, todėl turite perkurti Prompt flow, kad būtų galima integruoti pasirinktą modelį.
+Reikia integruoti fine-tuned Phi-3 modelį į Prompt flow. Tačiau esamas pateiktas Prompt flow nėra sukurtas šiam tikslui. Todėl turite pertvarkyti Prompt flow, kad būtų galima integruoti vartotojišką modelį.
 
-1. Prompt flow aplinkoje atlikite šiuos veiksmus, kad rekonstruotumėte esamą srautą:
+1. Prompt flow aplinkoje atlikite šiuos veiksmus, kad perdarytumėte esamą srautą:
 
-    - Pasirinkite **Žaliavos failo režimą (Raw file mode)**.
+    - Pasirinkite **Žalio failo režimą**.
     - Ištrinkite visą esamą kodą faile *flow.dag.yml*.
-    - Įrašykite šį kodą į *flow.dag.yml* failą.
+    - Įdėkite šį kodą į *flow.dag.yml* failą.
 
         ```yml
         inputs:
@@ -701,11 +703,11 @@ Reikia integruoti fine-tuninguotą Phi-3 modelį į Prompt flow. Tačiau esamas 
             input_data: ${inputs.input_data}
         ```
 
-    - Pasirinkite **Išsaugoti (Save)**.
+    - Pasirinkite **Išsaugoti**.
 
-    ![Pasirinkti žaliavos failo režimą.](../../../../../../translated_images/lt/08-15-select-raw-file-mode.61d988b41df28985.webp)
+    ![Pasirinkite žalią failo režimą.](../../../../../../translated_images/lt/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
-1. Pridėkite šį kodą į failą *integrate_with_promptflow.py*, kad naudotumėte pasirinktą Phi-3 modelį Prompt flow.
+1. Į *integrate_with_promptflow.py* failą įdėkite šį kodą, kad naudotumėte vartotojišką Phi-3 modelį Prompt flow.
 
     ```python
     import logging
@@ -726,7 +728,7 @@ Reikia integruoti fine-tuninguotą Phi-3 modelį į Prompt flow. Tačiau esamas 
         Send a request to the Phi-3 model endpoint with the given input data using Custom Connection.
         """
 
-        # "connection" yra pasirinktinės jungties pavadinimas, "endpoint", "key" yra raktai pasirinktinėje jungtyje
+        # "connection" yra pasirinktinio ryšio pavadinimas, "endpoint", "key" yra raktai pasirinktinio ryšio nustatymuose
         endpoint_url = connection.endpoint
         api_key = connection.key
 
@@ -749,7 +751,7 @@ Reikia integruoti fine-tuninguotą Phi-3 modelį į Prompt flow. Tačiau esamas 
             response = requests.post(endpoint_url, json=data, headers=headers)
             response.raise_for_status()
             
-            # Užfiksuokite visą JSON atsakymą
+            # Užfiksuokite pilną JSON atsaką
             logger.debug(f"Full JSON response: {response.json()}")
 
             result = response.json()["output"]
@@ -768,57 +770,57 @@ Reikia integruoti fine-tuninguotą Phi-3 modelį į Prompt flow. Tačiau esamas 
 
     ```
 
-    ![Įklijuoti prompt flow kodą.](../../../../../../translated_images/lt/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
+    ![Įklijuokite prompt flow kodą.](../../../../../../translated_images/lt/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> Daugiau informacijos apie Prompt flow naudojimą Azure AI Foundry aplinkoje rasite [čia](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Daugiau detalių apie Prompt flow naudojimą Microsoft Foundry rasite čia: [Prompt flow Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Pasirinkite **Pokalbio įvestį (Chat input)** ir **Pokalbio išvestį (Chat output)**, kad būtų galima kalbėtis su modeliu.
+1. Pasirinkite **Pokalbio įvestis** ir **Pokalbio išvestis**, kad būtų įgalintas pokalbis su jūsų modeliu.
 
-    ![Įvestis ir išvestis.](../../../../../../translated_images/lt/08-17-select-input-output.64dbb39bbe59d03b.webp)
+    ![Įvesties ir išvesties pasirinkimas.](../../../../../../translated_images/lt/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
-1. Dabar galite pradėti pokalbį su savo pasirinktu Phi-3 modeliu. Kitame pratime sužinosite, kaip paleisti Prompt flow ir naudoti jį pokalbiui su fine-tuninguotu Phi-3 modeliu.
+1. Dabar esate pasiruošę bendrauti su savo vartotojišku Phi-3 modeliu. Kitoje užduotyje išmoksite, kaip paleisti Prompt flow ir naudoti jį pokalbiui su fine-tuned Phi-3 modeliu.
 
 > [!NOTE]
 >
-> Perkurta srauto schema turėtų atrodyti panašiai kaip žemiau:
+> Perdarytas srautas turėtų atrodyti kaip žemiau pateiktoje nuotraukoje:
 >
 > ![Srauto pavyzdys.](../../../../../../translated_images/lt/08-18-graph-example.d6457533952e690c.webp)
 >
 
-### Kalbėkitės su savo pasirinktu Phi-3 modeliu
+### Bendraukite su savo vartotojišku Phi-3 modeliu
 
-Dabar, kai fine-tuninote ir integravote savo pasirinktinį Phi-3 modelį į Prompt flow, esate pasiruošę pradėti sąveiką su juo. Šis pratimas nukreips jus per proceso nustatymą ir pradžią kalbėtis su modeliu naudojant Prompt flow. Sekdami šiais žingsniais galėsite pilnai išnaudoti savo fine-tuninguoto Phi-3 modelio galimybes įvairioms užduotims ir pokalbiams.
+Dabar, kai fine-tun'inote ir integravote savo vartotojišką Phi-3 modelį su Prompt flow, galite pradėti su juo bendrauti. Ši užduotis padės jums nustatyti ir pradėti pokalbį su jūsų modeliu naudojant Prompt flow. Sekdami šiuos žingsnius galėsite pilnai išnaudoti savo fine-tuned Phi-3 modelio galimybes įvairioms užduotims ir pokalbiams.
 
-- Kalbėkitės su savo pasirinktu Phi-3 modeliu naudodami Prompt flow.
+- Bendraukite su savo vartotojišku Phi-3 modeliu naudodami Prompt flow.
 
 #### Paleisti Prompt flow
 
-1. Pasirinkite **Paleisti skaičiavimo sesijas (Start compute sessions)**, kad pradėtumėte Prompt flow.
+1. Pasirinkite **Pradėti skaičiavimo sesijas** paleisti Prompt flow.
 
-    ![Paleisti skaičiavimo sesiją.](../../../../../../translated_images/lt/09-01-start-compute-session.a86fcf5be68e386b.webp)
+    ![Pradėti skaičiavimo sesiją.](../../../../../../translated_images/lt/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
-1. Pasirinkite **Patvirtinti ir analizuoti įvestį (Validate and parse input)**, kad atnaujintumėte parametrus.
+1. Pasirinkite **Patvirtinti ir apdoroti įvestį** atnaujinti parametrus.
 
     ![Patvirtinti įvestį.](../../../../../../translated_images/lt/09-02-validate-input.317c76ef766361e9.webp)
 
-1. Pasirinkite **Connection** reikšmę, kurią susiejote su savo sukurtu pasirinktu ryšiu. Pvz., *connection*.
+1. Pasirinkite jūsų sukurtam vartotojiškam ryšiui priskirtos **connection** reikšmę. Pvz., *connection*.
 
     ![Ryšys.](../../../../../../translated_images/lt/09-03-select-connection.99bdddb4b1844023.webp)
 
-#### Kalbėkitės su savo pasirinktu modeliu
+#### Bendrauti su savo vartotojišku modeliu
 
-1. Pasirinkite **Pokalbis (Chat)**.
+1. Pasirinkite **Pokalbis**.
 
-    ![Pasirinkti pokalbį.](../../../../../../translated_images/lt/09-04-select-chat.61936dce6612a1e6.webp)
+    ![Pasirinkite pokalbį.](../../../../../../translated_images/lt/09-04-select-chat.61936dce6612a1e6.webp)
 
-1. Čia pateikiamas rezultatų pavyzdys: Dabar galite kalbėtis su savo pasirinktu Phi-3 modeliu. Rekomenduojama užduoti klausimus, remiantis fine-tuning'o duomenimis.
+1. Štai pavyzdys: dabar galite bendrauti su savo vartotojišku Phi-3 modeliu. Rekomenduojama užduoti klausimus pagal duomenis, naudotus fine-tun'inimui.
 
-    ![Pokalbis su prompt flow.](../../../../../../translated_images/lt/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
+    ![Bendrauti su prompt flow.](../../../../../../translated_images/lt/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Atsakomybės apribojimas**:
-Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turi būti laikomas autoritetingu šaltiniu. Svarbios informacijos atveju rekomenduojama kreiptis į profesionalius vertėjus. Mes neprisiimame atsakomybės už bet kokius nesusipratimus ar neteisingus aiškinimus, kylantį iš šio vertimo naudojimo.
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turi būti laikomas autoritetingu šaltiniu. Esant kritinei informacijai, rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už bet kokius nesusipratimus ar neteisingus interpretavimus, kylančius dėl šio vertimo naudojimo.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

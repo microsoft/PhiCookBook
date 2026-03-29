@@ -1,258 +1,259 @@
-# Įvertinkite pritaikytą Phi-3 / Phi-3.5 modelį Azure AI Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų
+# Įvertinkite Microsoft Foundry smulkiai sureguliuotą Phi-3 / Phi-3.5 modelį, orientuotą į Microsoft atsakingo dirbtinio intelekto principus
 
-Šis nuo pradžios iki pabaigos (E2E) pavyzdys yra pagrįstas vadovu "[Įvertinkite pritaikytus Phi-3 / 3.5 modelius Azure AI Foundry, laikydamiesi Microsoft atsakingo dirbtinio intelekto principų](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" iš Microsoft Tech Community.
+Šis end-to-end (E2E) pavyzdys remiasi Microsoft Tech Community vadovu „[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)“.
 
 ## Apžvalga
 
-### Kaip įvertinti pritaikyto Phi-3 / Phi-3.5 modelio saugumą ir našumą Azure AI Foundry?
+### Kaip galite įvertinti smulkiai sureguliuoto Phi-3 / Phi-3.5 modelio saugumą ir veikimą Microsoft Foundry aplinkoje?
 
-Modelio pritaikymas kartais gali sukelti netikėtus ar nepageidaujamus atsakymus. Siekiant užtikrinti, kad modelis išliktų saugus ir efektyvus, svarbu įvertinti jo potencialą generuoti žalingą turinį bei gebėjimą pateikti tikslius, aktualius ir nuoseklius atsakymus. Šiame vadove sužinosite, kaip įvertinti pritaikyto Phi-3 / Phi-3.5 modelio saugumą ir našumą, integruotą su Prompt flow Azure AI Foundry.
+Modelio smulkus reguliavimas kartais gali sukelti nenumatytų ar nepageidaujamų atsakymų. Siekiant užtikrinti, kad modelis išliktų saugus ir veiksmingas, svarbu įvertinti modelio galimybę generuoti žalingą turinį bei gebėjimą pateikti tikslius, aktualius ir nuoseklius atsakymus. Šiame vadove sužinosite, kaip įvertinti smulkiai suregulioto Phi-3 / Phi-3.5 modelio saugumą ir veikimą, integruotą su Prompt flow Microsoft Foundry aplinkoje.
 
-Štai Azure AI Foundry vertinimo procesas.
+Čia pateikiamas Microsoft Foundry vertinimo procesas.
 
-![Pamokos architektūra.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
+![Architecture of tutorial.](../../../../../../translated_images/lt/architecture.10bec55250f5d6a4.webp)
 
-*Vaizdo šaltinis: [Generatyvaus dirbtinio intelekto programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*Vaizdo šaltinis: [Generatyviosios DI programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
 >
-> Daugiau informacijos ir papildomų išteklių apie Phi-3 / Phi-3.5 rasite [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723).
+> Daugiau išsamios informacijos ir papildomų išteklių apie Phi-3 / Phi-3.5 rasite adresu [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723).
 
-### Reikalingi įrankiai
+### Reikalavimai
 
 - [Python](https://www.python.org/downloads)
 - [Azure prenumerata](https://azure.microsoft.com/free?wt.mc_id=studentamb_279723)
 - [Visual Studio Code](https://code.visualstudio.com)
-- Pritaikytas Phi-3 / Phi-3.5 modelis
+- Smulkiai sureguliuotas Phi-3 / Phi-3.5 modelis
 
 ### Turinys
 
-1. [**Scenarijus 1: Azure AI Foundry Prompt flow vertinimo įvadas**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenarijus 1: Įvadas į Microsoft Foundry Prompt flow vertinimą**](#scenario-1-introduction-to-azure-ai-studios-prompt-flow-evaluation)
 
-    - [Saugumo vertinimo įvadas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Našumo vertinimo įvadas](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Įvadas į saugumo vertinimą](#įvadas-į-saugumo-vertinimą)
+    - [Įvadas į veikimo vertinimą](#įvadas-į-veikimo-vertinimą)
 
-1. [**Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Microsoft Foundry**](#scenario-2-evaluating-the-phi-3--phi-35-model-in-azure-ai-studio)
 
-    - [Prieš pradedant](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Azure OpenAI diegimas Phi-3 / Phi-3.5 modelio vertinimui](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Pritaikyto Phi-3 / Phi-3.5 modelio vertinimas naudojant Azure AI Foundry Prompt flow vertinimą](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Prieš pradėdami](#prieš-pradėdami)
+    - [Diegti Azure OpenAI Phi-3 / Phi-3.5 modelio vertinimui](#deploy-azure-openai-to-evaluate-the-phi-3--phi-35-model)
+    - [Įvertinkite smulkiai sureguliuotą Phi-3 / Phi-3.5 modelį naudojant Microsoft Foundry Prompt flow vertinimą](#evaluate-the-fine-tuned-phi-3--phi-35-model-using-azure-ai-studios-prompt-flow-evaluation)
 
-1. [Sveikiname!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [Sveikiname!](#sveikiname)
 
-## **Scenarijus 1: Azure AI Foundry Prompt flow vertinimo įvadas**
+## **Scenarijus 1: Įvadas į Microsoft Foundry Prompt flow vertinimą**
 
-### Saugumo vertinimo įvadas
+### Įvadas į saugumo vertinimą
 
-Siekiant užtikrinti, kad jūsų AI modelis būtų etiškas ir saugus, būtina jį įvertinti pagal Microsoft atsakingo dirbtinio intelekto principus. Azure AI Foundry saugumo vertinimai leidžia įvertinti modelio pažeidžiamumą jailbreak atakoms ir jo potencialą generuoti žalingą turinį, kas tiesiogiai atitinka šiuos principus.
+Siekiant užtikrinti, kad jūsų DI modelis būtų etiškas ir saugus, labai svarbu jį įvertinti pagal Microsoft atsakingo DI principus. Microsoft Foundry aplinkoje saugumo vertinimai leidžia įvertinti modelio atsparumą jailbreik atakoms ir jo galimą žalingo turinio kūrimo riziką, kuris tiesiogiai atitinka šiuos principus.
 
-![Saugumo vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/safety-evaluation.png)
+![Safaty evaluation.](../../../../../../translated_images/lt/safety-evaluation.083586ec88dfa950.webp)
 
-*Vaizdo šaltinis: [Generatyvaus dirbtinio intelekto programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*Vaizdo šaltinis: [Generatyviosios DI programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
-#### Microsoft atsakingo dirbtinio intelekto principai
+#### Microsoft atsakingo DI principai
 
-Prieš pradedant techninius žingsnius, svarbu suprasti Microsoft atsakingo dirbtinio intelekto principus – etinį pagrindą, skirtą atsakingam AI sistemų kūrimui, diegimui ir veikimui. Šie principai užtikrina, kad AI technologijos būtų kuriamos sąžiningai, skaidriai ir įtraukiai. Jie yra pagrindas AI modelių saugumo vertinimui.
+Prieš pradedant techninius veiksmus, svarbu suprasti Microsoft atsakingo DI principus, tai yra etinis pagrindas, skirtas atsakingam DI sistemų kūrimui, diegimui ir eksploatavimui. Šie principai nukreipia atsakingą DI sistemų dizainą, kūrimą ir diegimą, užtikrindami, kad DI technologijos būtų kuriamos sąžiningai, skaidriai ir įtraukiant visus. Šie principai yra pagrindas vertinant DI modelių saugumą.
 
-Microsoft atsakingo dirbtinio intelekto principai apima:
+Microsoft atsakingo DI principai apima:
 
-- **Sąžiningumą ir įtraukimą**: AI sistemos turėtų elgtis sąžiningai su visais ir vengti skirtingo poveikio panašiai situacijose esančioms žmonių grupėms. Pavyzdžiui, kai AI sistemos teikia rekomendacijas dėl medicininio gydymo, paskolų paraiškų ar darbo, jos turėtų pateikti tas pačias rekomendacijas visiems, turintiems panašius simptomus, finansines aplinkybes ar profesinę kvalifikaciją.
+- **Sąžiningumą ir įtrauktį**: DI sistemos turėtų elgtis sąžiningai su visais ir vengti skirtingai paveikti panašiose situacijose esančių žmonių grupių. Pavyzdžiui, kai DI sistemos teikia rekomendacijas medicininiam gydymui, paskolų suteikimui ar įdarbinimui, jos turi siūlyti tas pačias rekomendacijas visiems, kurie turi panašius simptomus, finansines aplinkybes ar profesinius įgūdžius.
 
-- **Patikimumą ir saugumą**: Siekiant sukurti pasitikėjimą, svarbu, kad AI sistemos veiktų patikimai, saugiai ir nuosekliai. Šios sistemos turėtų veikti taip, kaip buvo suprojektuotos, saugiai reaguoti į nenumatytas sąlygas ir atsispirti žalingam manipuliavimui. Jų elgesys ir sąlygų įvairovė, kurias jos gali valdyti, atspindi situacijų ir aplinkybių, kurias kūrėjai numatė projektavimo ir testavimo metu, spektrą.
+- **Patikimumą ir saugumą**: Siekiant užtikrinti pasitikėjimą, svarbu, kad DI sistemos veiktų patikimai, saugiai ir nuosekliai. Šios sistemos turi veikti taip, kaip buvo numatytos, saugiai reaguoti į netikėtas situacijas ir būti atsparios kenksmingiems manipuliavimams. Jų elgesys ir gebėjimas susidoroti su įvairiomis sąlygomis atspindi situacijų ir aplinkybių, į kurias projektuotojai atsižvelgė kurdami ir testuodami, spektrą.
 
-- **Skaidrumą**: Kai AI sistemos padeda priimti sprendimus, turinčius didelį poveikį žmonių gyvenimams, svarbu, kad žmonės suprastų, kaip tie sprendimai buvo priimti. Pavyzdžiui, bankas gali naudoti AI sistemą, kad nuspręstų, ar asmuo yra kreditingas. Įmonė gali naudoti AI sistemą, kad nustatytų tinkamiausius kandidatus į darbą.
+- **Skaidrumą**: Kai DI sistemos padeda priimti sprendimus, turinčius didelę įtaką žmonių gyvenimams, svarbu, kad žmonės suprastų, kaip šie sprendimai buvo priimti. Pavyzdžiui, bankas gali naudoti DI sistemą, kad nuspręstų, ar asmuo yra kreditingas. Įmonė gali naudoti DI sistemą atrinkti tinkamiausius kandidatus į darbą.
 
-- **Privatumą ir saugumą**: Kadangi AI tampa vis labiau paplitęs, privatumo apsauga ir asmeninės bei verslo informacijos saugumas tampa vis svarbesni ir sudėtingesni. Naudojant AI, privatumas ir duomenų saugumas reikalauja ypatingo dėmesio, nes prieiga prie duomenų yra būtina, kad AI sistemos galėtų tiksliai ir informuotai prognozuoti bei priimti sprendimus apie žmones.
+- **Privatumą ir saugumą**: DI taikymas sparčiai plečiasi, todėl vis labiau svarbu ir sudėtinga apsaugoti privatumą ir asmeninę bei verslo informaciją. DI kontekste privatumas ir duomenų saugumas reikalauja ypatingo dėmesio, nes prieiga prie duomenų reikalinga tiksliai ir informuotai prognozei bei sprendimams priimti.
 
-- **Atsakomybę**: Žmonės, kurie kuria ir diegia AI sistemas, turi būti atsakingi už tai, kaip jų sistemos veikia. Organizacijos turėtų remtis pramonės standartais, kad sukurtų atsakomybės normas. Šios normos gali užtikrinti, kad AI sistemos nebūtų galutinis autoritetas priimant sprendimus, kurie turi įtakos žmonių gyvenimams. Jos taip pat gali užtikrinti, kad žmonės išlaikytų prasmingą kontrolę prieš labai autonomines AI sistemas.
+- **Atsakomybę**: Asmenys, kurie kuria ir diegia DI sistemas, turi būti atsakingi už savo sistemų veikimą. Organizacijos turėtų naudoti industrijos standartus atsakomybės normoms kurti. Šios normos gali užtikrinti, kad DI sistemos nebūtų galutinė autoritetė priimant sprendimus, turinčius įtakos žmonių gyvenimams. Jos taip pat gali garantuoti, kad žmonės išlaikytų prasmingą kontrolę priešingai labai autonomiškoms DI sistemoms.
 
-![Atsakingo dirbtinio intelekto centras.](../../../../../../imgs/02/Evaluation-AIFoundry/responsibleai2.png)
+![Fill hub.](../../../../../../translated_images/lt/responsibleai2.c07ef430113fad8c.webp)
 
-*Vaizdo šaltinis: [Kas yra atsakingas dirbtinis intelektas?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
-
-> [!NOTE]
-> Norėdami sužinoti daugiau apie Microsoft atsakingo dirbtinio intelekto principus, apsilankykite [Kas yra atsakingas dirbtinis intelektas?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
-
-#### Saugumo metrikos
-
-Šiame vadove jūs įvertinsite pritaikyto Phi-3 modelio saugumą naudodami Azure AI Foundry saugumo metrikas. Šios metrikos padeda įvertinti modelio potencialą generuoti žalingą turinį ir jo pažeidžiamumą jailbreak atakoms. Saugumo metrikos apima:
-
-- **Turinys, susijęs su savęs žalojimu**: Įvertina, ar modelis turi tendenciją generuoti turinį, susijusį su savęs žalojimu.
-- **Neapykantos ir nesąžiningas turinys**: Įvertina, ar modelis turi tendenciją generuoti neapykantos ar nesąžiningą turinį.
-- **Smurtinis turinys**: Įvertina, ar modelis turi tendenciją generuoti smurtinį turinį.
-- **Seksualinis turinys**: Įvertina, ar modelis turi tendenciją generuoti netinkamą seksualinį turinį.
-
-Šių aspektų vertinimas užtikrina, kad AI modelis negeneruotų žalingo ar įžeidžiančio turinio, atitinkančio visuomenės vertybes ir reguliavimo standartus.
-
-![Vertinimas pagal saugumą.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluate-based-on-safety.png)
-
-### Našumo vertinimo įvadas
-
-Siekiant užtikrinti, kad jūsų AI modelis veiktų taip, kaip tikimasi, svarbu įvertinti jo našumą pagal našumo metrikas. Azure AI Foundry našumo vertinimai leidžia įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus.
-
-![Našumo vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/performance-evaluation.png)
-
-*Vaizdo šaltinis: [Generatyvaus dirbtinio intelekto programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
-
-#### Našumo metrikos
-
-Šiame vadove jūs įvertinsite pritaikyto Phi-3 / Phi-3.5 modelio našumą naudodami Azure AI Foundry našumo metrikas. Šios metrikos padeda įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus. Našumo metrikos apima:
-
-- **Pagrįstumas**: Įvertina, kaip gerai generuoti atsakymai atitinka informaciją iš įvesties šaltinio.
-- **Aktualumas**: Įvertina generuotų atsakymų tinkamumą pateiktiems klausimams.
-- **Nuoseklumas**: Įvertina, kaip sklandžiai generuotas tekstas teka, skamba natūraliai ir primena žmogaus kalbą.
-- **Sklandumas**: Įvertina generuoto teksto kalbos įgūdžius.
-- **GPT panašumas**: Palygina generuotą atsakymą su pagrindine tiesa dėl panašumo.
-- **F1 balas**: Apskaičiuoja bendrų žodžių santykį tarp generuoto atsakymo ir šaltinio duomenų.
-
-Šios metrikos padeda įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus.
-
-![Vertinimas pagal našumą.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluate-based-on-performance.png)
-
-## **Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Azure AI Foundry**
-
-### Prieš pradedant
-
-Šis vadovas yra tęsinys ankstesnių tinklaraščio įrašų "[Pritaikykite ir integruokite pritaikytus Phi-3 modelius su Prompt Flow: žingsnis po žingsnio vadovas](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ir "[Pritaikykite ir integruokite pritaikytus Phi-3 modelius su Prompt Flow Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." Šiuose įrašuose aptarėme Phi-3 / Phi-3.5 modelio pritaikymo procesą Azure AI Foundry ir jo integravimą su Prompt flow.
-
-Šiame vadove jūs diegsite Azure OpenAI modelį kaip vertintoją Azure AI Foundry ir naudosite jį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
-
-Prieš pradedant šį vadovą, įsitikinkite, kad turite šiuos reikalavimus, kaip aprašyta ankstesniuose vadovuose:
-
-1. Paruoštą duomenų rinkinį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
-1. Phi-3 / Phi-3.5 modelį, kuris buvo pritaikytas ir įdiegtas Azure Machine Learning.
-1. Prompt flow, integruotą su jūsų pritaikytu Phi-3 / Phi-3.5 modeliu Azure AI Foundry.
+*Vaizdo šaltinis: [Kas yra atsakingas DI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> Jūs naudosite *test_data.jsonl* failą, esantį duomenų aplanke iš **ULTRACHAT_200k** duomenų rinkinio, atsisiųsto ankstesniuose tinklaraščio įrašuose, kaip duomenų rinkinį pritaikyto Phi-3 / Phi-3.5 modelio vertinimui.
+> Daugiau sužinoti apie Microsoft atsakingo DI principus galite apsilankę [Kas yra atsakingas DI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
 
-#### Integruokite pritaikytą Phi-3 / Phi-3.5 modelį su Prompt flow Azure AI Foundry (kodo pirmasis požiūris)
-> [!NOTE]  
-> Jei laikėtės mažo kodo metodo, aprašyto "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", galite praleisti šią užduotį ir pereiti prie kitos.  
-> Tačiau, jei naudojotės kodo pirmumo metodu, aprašytu "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)", kad pritaikytumėte ir įdiegtumėte savo Phi-3 / Phi-3.5 modelį, modelio prijungimo prie Prompt Flow procesas šiek tiek skiriasi. Šioje užduotyje išmoksite šį procesą.
-### Integruokite savo pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow Azure AI Foundry platformoje.
+#### Saugumo rodikliai
 
-#### Sukurkite Azure AI Foundry Hub
+Šiame vadove įvertinsite smulkiai sureguliuoto Phi-3 modelio saugumą naudodami Microsoft Foundry saugumo rodiklius. Šie rodikliai padeda įvertinti modelio galimybę generuoti žalingą turinį ir jo pažeidžiamumą jailbreik atakoms. Saugumo rodikliai apima:
 
-Prieš kuriant projektą, reikia sukurti Hub. Hub veikia kaip resursų grupė, leidžianti organizuoti ir valdyti kelis projektus Azure AI Foundry platformoje.
+- **Savarankiškos žalos susijęs turinys**: įvertina, ar modelis linkęs generuoti turinį, susijusį su savęs žalojimu.
+- **Neršanti ir neteisinga informacija**: įvertina, ar modelis linkęs kurti neapykantos ar neteisingą turinį.
+- **Smurtinis turinys**: įvertina, ar modelis linkęs generuoti smurtinį turinį.
+- **Seksualinis turinys**: įvertina, ar modelis linkęs generuoti netinkamą seksualinį turinį.
 
-1. Prisijunkite prie [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+Šių aspektų vertinimas užtikrina, kad DI modelis nepateiktų žalingo ar įžeidžiančio turinio, atitinkančio visuomenės vertybes ir reglamentus.
 
-1. Pasirinkite **Visi hub'ai** iš kairiojo meniu.
+![Evaluate based on safety.](../../../../../../translated_images/lt/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
-1. Pasirinkite **+ Naujas hub'as** iš navigacijos meniu.
+### Įvadas į veikimo vertinimą
 
-    ![Sukurti hub'ą.](../../../../../../imgs/02/Evaluation-AIFoundry/create-hub.png)
+Siekiant užtikrinti, kad jūsų DI modelis veiktų kaip tikėtasi, svarbu įvertinti jo veikimą pagal veiklos rodiklius. Microsoft Foundry aplinkoje veikimo vertinimai leidžia įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus.
+
+![Safaty evaluation.](../../../../../../translated_images/lt/performance-evaluation.48b3e7e01a098740.webp)
+
+*Vaizdo šaltinis: [Generatyviosios DI programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+
+#### Veikimo rodikliai
+
+Šiame vadove įvertinsite smulkiai suregulioto Phi-3 / Phi-3.5 modelio veikimą naudodami Microsoft Foundry veikimo rodiklius. Šie rodikliai padės įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus. Veiklos rodikliai apima:
+
+- **Pagrįstumas**: vertinama, kaip gerai sugeneruoti atsakymai atitinka informaciją iš įvesties šaltinio.
+- **Aktualumas**: įvertina sugeneruotų atsakymų tinkamumą pateiktiems klausimams.
+- **Nuoseklumas**: vertina, kaip sklandžiai teksto srautas teka, skaitosi natūraliai ir panašiai į žmogaus kalbą.
+- **Sklandumas**: vertina sugeneruoto teksto kalbos įgūdžius.
+- **GPT panašumas**: lygina sugeneruotą atsakymą su teisingu atsakymu panašumo atžvilgiu.
+- **F1 balas**: apskaičiuoja bendrų žodžių dalį tarp sugeneruoto atsakymo ir šaltinio duomenų.
+
+Šie rodikliai padeda įvertinti modelio efektyvumą generuojant tikslius, aktualius ir nuoseklius atsakymus.
+
+![Evaluate based on performance.](../../../../../../translated_images/lt/evaluate-based-on-performance.3e801c647c7554e8.webp)
+
+## **Scenarijus 2: Phi-3 / Phi-3.5 modelio vertinimas Microsoft Foundry**
+
+### Prieš pradėdami
+
+Šis vadovas yra tęsinys ankstesniems tinklaraščio įrašams „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)“ ir „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)“. Šiuose įrašuose išsamiai aprašyta Phi-3 / Phi-3.5 modelio smulkiojo reguliavimo procesas Microsoft Foundry ir jo integravimas su Prompt flow.
+
+Šiame vadove diegsite Azure OpenAI modelį vertintojui Microsoft Foundry ir naudositės juo savo smulkiai sureguliuoto Phi-3 / Phi-3.5 modelio vertinimui.
+
+Prieš pradėdami vadovą, įsitikinkite, kad turite šiuos reikalavimus, aprašytus ankstesniuose vadovuose:
+
+1. Paruoštą duomenų rinkinį smulkiai sureguliuoto Phi-3 / Phi-3.5 modelio vertinimui.
+1. Smulkiai sureguliuotą Phi-3 / Phi-3.5 modelį, įdiegtą Azure Machine Learning aplinkoje.
+1. Prompt flow integruotą su jūsų smulkiai sureguliuotu Phi-3 / Phi-3.5 modeliu Microsoft Foundry aplinkoje.
+
+> [!NOTE]
+> Naudosite *test_data.jsonl* failą, esantį duomenų aplanke iš **ULTRACHAT_200k** duomenų rinkinio, atsisiųsto ankstesniuose tinklaraščio įrašuose, kaip duomenų rinkinį smulkiai sureguliuoto Phi-3 / Phi-3.5 modelio vertinimui.
+
+#### Integruokite pasirinktą Phi-3 / Phi-3.5 modelį su Prompt flow Microsoft Foundry (Kodas pirmiausia)
+
+> [!NOTE]
+> Jei vykdėte žemo kodo metodą, aprašytą „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)“, šią užduotį galite praleisti ir tęsti kitą.
+> Tačiau jei vykdėte „kodas pirmiausia“ metodą, aprašytą „[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)“ smulkiai reguliuojant ir diegiant savo Phi-3 / Phi-3.5 modelį, procesas, kaip prijungti modelį prie Prompt flow, šiek tiek skiriasi. Šią procedūrą išmoksite šioje užduotyje.
+
+Norėdami tęsti, turite integruoti savo smulkiai sureguliuotą Phi-3 / Phi-3.5 modelį į Prompt flow Microsoft Foundry.
+
+#### Sukurkite Microsoft Foundry Hub
+
+Prieš kuriant projektą, turite sukurti Hub. Hub veikia kaip Resursų Grupė, leidžianti organizuoti ir valdyti kelis projektus Microsoft Foundry aplinkoje.
+1. Prisijunkite prie [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+
+1. Kairiajame skirtuke pasirinkite **All hubs**.
+
+1. Naršymo meniu pasirinkite **+ New hub**.
+
+    ![Create hub.](../../../../../../translated_images/lt/create-hub.5be78fb1e21ffbf1.webp)
 
 1. Atlikite šiuos veiksmus:
 
-    - Įveskite **Hub'o pavadinimą**. Jis turi būti unikalus.
-    - Pasirinkite savo Azure **Prenumeratą**.
-    - Pasirinkite **Resursų grupę**, kurią norite naudoti (jei reikia, sukurkite naują).
-    - Pasirinkite **Vietą**, kurią norite naudoti.
-    - Pasirinkite **Prisijungti prie Azure AI paslaugų** (jei reikia, sukurkite naują).
-    - Pasirinkite **Prisijungti prie Azure AI paieškos** ir **Praleisti prisijungimą**.
+    - Įveskite **Hub name**. Jis turi būti unikalus.
+    - Pasirinkite savo Azure **Subscription**.
+    - Pasirinkite naudoti **Resource group** (jei reikia, sukurkite naują).
+    - Pasirinkite pageidaujamą **Location**.
+    - Pasirinkite naudoti **Connect Azure AI Services** (jei reikia, sukurkite naują).
+    - Pasirinkite **Connect Azure AI Search** ir pažymėkite **Skip connecting**.
 
-    ![Užpildyti hub'ą.](../../../../../../imgs/02/Evaluation-AIFoundry/fill-hub.png)
+    ![Fill hub.](../../../../../../translated_images/lt/fill-hub.baaa108495c71e34.webp)
 
-1. Pasirinkite **Toliau**.
+1. Paspauskite **Next**.
 
-#### Sukurkite Azure AI Foundry projektą
+#### Sukurti Microsoft Foundry projektą
 
-1. Sukurtame hub'e pasirinkite **Visi projektai** iš kairiojo meniu.
+1. Sukurtame Hub pasirinkite kairiajame skirtuke **All projects**.
 
-1. Pasirinkite **+ Naujas projektas** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **+ New project**.
 
-    ![Pasirinkti naują projektą.](../../../../../../imgs/03/AIFoundry/select-new-project.png)
+    ![Select new project.](../../../../../../translated_images/lt/select-new-project.cd31c0404088d7a3.webp)
 
-1. Įveskite **Projekto pavadinimą**. Jis turi būti unikalus.
+1. Įveskite **Project name**. Jis turi būti unikalus.
 
-    ![Sukurti projektą.](../../../../../../imgs/03/AIFoundry/create-project.png)
+    ![Create project.](../../../../../../translated_images/lt/create-project.ca3b71298b90e420.webp)
 
-1. Pasirinkite **Sukurti projektą**.
+1. Paspauskite **Create a project**.
 
-#### Pridėkite pritaikytą ryšį Phi-3 / Phi-3.5 modeliui
+#### Pridėti pasirinktą ryšį su specialiai paruoštu Phi-3 / Phi-3.5 modeliu
 
-Norėdami integruoti savo pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow, turite išsaugoti modelio galutinio taško adresą ir raktą pritaikytame ryšyje. Ši konfigūracija užtikrina prieigą prie jūsų pritaikyto modelio Prompt flow aplinkoje.
+Norėdami integruoti savo pritaikytą Phi-3 / Phi-3.5 modelį su Prompt flow, turite išsaugoti modelio galinį tašką ir raktą kaip pasirinktą ryšį. Šis nustatymas užtikrina prieigą prie jūsų pritaikyto Phi-3 / Phi-3.5 modelio Prompt flow aplinkoje.
 
-#### Nustatykite API raktą ir galutinio taško URI Phi-3 / Phi-3.5 modeliui
+#### Nustatyti api raktą ir galinio taško uri specialiai paruoštam Phi-3 / Phi-3.5 modeliui
 
 1. Apsilankykite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure Machine Learning darbo sritį.
+1. Eikite į sukurtą Azure Machine learning darbo sritį.
 
-1. Pasirinkite **Galutiniai taškai** iš kairiojo meniu.
+1. Kairiajame skirtuke pasirinkite **Endpoints**.
 
-    ![Pasirinkti galutinius taškus.](../../../../../../imgs/02/Evaluation-AIFoundry/select-endpoints.png)
+    ![Select endpoints.](../../../../../../translated_images/lt/select-endpoints.ee7387ecd68bd18d.webp)
 
-1. Pasirinkite sukurtą galutinį tašką.
+1. Pasirinkite sukurtą galinį tašką.
 
-    ![Pasirinkti sukurtą galutinį tašką.](../../../../../../imgs/02/Evaluation-AIFoundry/select-endpoint-created.png)
+    ![Select endpoints.](../../../../../../translated_images/lt/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
-1. Pasirinkite **Naudoti** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **Consume**.
 
-1. Nukopijuokite savo **REST galutinio taško adresą** ir **Pirminį raktą**.
+1. Nukopijuokite savo **REST endpoint** ir **Primary key**.
 
-    ![Nukopijuoti API raktą ir galutinio taško URI.](../../../../../../imgs/02/Evaluation-AIFoundry/copy-endpoint-key.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/lt/copy-endpoint-key.0650c3786bd646ab.webp)
 
-#### Pridėkite pritaikytą ryšį
+#### Pridėti pasirinktą ryšį
 
-1. Apsilankykite [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
-1. Sukurtame projekte pasirinkite **Nustatymai** iš kairiojo meniu.
+1. Projekto kairiajame skirtuke pasirinkite **Settings**.
 
-1. Pasirinkite **+ Naujas ryšys**.
+1. Pasirinkite **+ New connection**.
 
-    ![Pasirinkti naują ryšį.](../../../../../../imgs/02/Evaluation-AIFoundry/select-new-connection.png)
+    ![Select new connection.](../../../../../../translated_images/lt/select-new-connection.fa0f35743758a74b.webp)
 
-1. Pasirinkite **Pritaikyti raktai** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **Custom keys**.
 
-    ![Pasirinkti pritaikytus raktus.](../../../../../../imgs/02/Evaluation-AIFoundry/select-custom-keys.png)
+    ![Select custom keys.](../../../../../../translated_images/lt/select-custom-keys.5a3c6b25580a9b67.webp)
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **+ Pridėti raktų poras**.
-    - Raktų pavadinimui įveskite **endpoint** ir įklijuokite galutinio taško adresą, kurį nukopijavote iš Azure ML Studio, į vertės lauką.
-    - Pasirinkite **+ Pridėti raktų poras** dar kartą.
-    - Raktų pavadinimui įveskite **key** ir įklijuokite raktą, kurį nukopijavote iš Azure ML Studio, į vertės lauką.
-    - Po raktų pridėjimo pasirinkite **yra slapta**, kad raktas nebūtų matomas.
+    - Paspauskite **+ Add key value pairs**.
+    - Raktui įveskite **endpoint** ir įklijuokite iš Azure ML Studio nukopijuotą galinį tašką į vertės lauką.
+    - Vėl paspauskite **+ Add key value pairs**.
+    - Raktui įveskite **key** ir įklijuokite iš Azure ML Studio nukopijuotą raktą į vertės lauką.
+    - Po raktų pridėjimo pažymėkite **is secret**, kad raktas nebūtų viešai matomas.
 
-    ![Pridėti ryšį.](../../../../../../imgs/02/Evaluation-AIFoundry/add-connection.png)
+    ![Add connection.](../../../../../../translated_images/lt/add-connection.ac7f5faf8b10b0df.webp)
 
-1. Pasirinkite **Pridėti ryšį**.
+1. Paspauskite **Add connection**.
 
-#### Sukurkite Prompt flow
+#### Sukurti Prompt flow
 
-Jūs pridėjote pritaikytą ryšį Azure AI Foundry platformoje. Dabar sukurkite Prompt flow naudodami šiuos veiksmus. Tada prijunkite šį Prompt flow prie pritaikyto ryšio, kad galėtumėte naudoti pritaikytą modelį Prompt flow aplinkoje.
+Pridėjote pasirinktą ryšį Microsoft Foundry. Dabar sukurkime Prompt flow atlikdami šiuos veiksmus. Po to prijungsite šį Prompt flow prie pasirinkto ryšio norėdami naudoti specialiai paruoštą modelį Prompt flow aplinkoje.
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
-1. Pasirinkite **Prompt flow** iš kairiojo meniu.
+1. Kairiajame skirtuke pasirinkite **Prompt flow**.
 
-1. Pasirinkite **+ Kurti** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **+ Create**.
 
-    ![Pasirinkti Prompt flow.](../../../../../../imgs/02/Evaluation-AIFoundry/select-promptflow.png)
+    ![Select Promptflow.](../../../../../../translated_images/lt/select-promptflow.18ff2e61ab9173eb.webp)
 
-1. Pasirinkite **Pokalbio srautas** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **Chat flow**.
 
-    ![Pasirinkti pokalbio srautą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-flow-type.png)
+    ![Select chat flow.](../../../../../../translated_images/lt/select-flow-type.28375125ec9996d3.webp)
 
-1. Įveskite **Aplanko pavadinimą**, kurį norite naudoti.
+1. Įveskite norimą **Folder name**.
 
-    ![Pasirinkti pokalbio srautą.](../../../../../../imgs/02/Evaluation-AIFoundry/enter-name.png)
+    ![Select chat flow.](../../../../../../translated_images/lt/enter-name.02ddf8fb840ad430.webp)
 
-1. Pasirinkite **Kurti**.
+1. Paspauskite **Create**.
 
-#### Konfigūruokite Prompt flow pokalbiui su pritaikytu Phi-3 / Phi-3.5 modeliu
+#### Nustatyti Prompt flow pokalbiui su jūsų pasirinktu Phi-3 / Phi-3.5 modeliu
 
-Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tačiau esamas Prompt flow nėra pritaikytas šiam tikslui. Todėl turite pertvarkyti Prompt flow, kad galėtumėte integruoti pritaikytą modelį.
+Jums reikia integruoti specialiai paruoštą Phi-3 / Phi-3.5 modelį į Prompt flow. Tačiau esamas pateiktas Prompt flow nėra sukurtas šiam tikslui, todėl turite perdaryti Prompt flow, kad būtų galima integruoti pasirinktą modelį.
 
-1. Prompt flow aplinkoje atlikite šiuos veiksmus, kad pertvarkytumėte esamą srautą:
+1. Prompt flow atlikite šiuos veiksmus, kad pertvarkytumėte esamą srautą:
 
-    - Pasirinkite **Neapdoroto failo režimą**.
-    - Ištrinkite visą esamą kodą *flow.dag.yml* faile.
+    - Pasirinkite **Raw file mode**.
+    - Ištrinkite visą esamą kodą faile *flow.dag.yml*.
     - Pridėkite šį kodą į *flow.dag.yml*.
 
         ```yml
@@ -276,11 +277,11 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
             input_data: ${inputs.input_data}
         ```
 
-    - Pasirinkite **Išsaugoti**.
+    - Paspauskite **Save**.
 
-    ![Pasirinkti neapdoroto failo režimą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-raw-file-mode.png)
+    ![Select raw file mode.](../../../../../../translated_images/lt/select-raw-file-mode.06c1eca581ce4f53.webp)
 
-1. Pridėkite šį kodą į *integrate_with_promptflow.py*, kad galėtumėte naudoti pritaikytą Phi-3 / Phi-3.5 modelį Prompt flow aplinkoje.
+1. Pridėkite šį kodą faile *integrate_with_promptflow.py*, kad naudotumėte pasirinktą Phi-3 / Phi-3.5 modelį Prompt flow.
 
     ```python
     import logging
@@ -288,7 +289,7 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
     from promptflow import tool
     from promptflow.connections import CustomConnection
 
-    # Logging setup
+    # Žurnalo nustatymas
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -301,7 +302,7 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
         Send a request to the Phi-3 / Phi-3.5 model endpoint with the given input data using Custom Connection.
         """
 
-        # "connection" is the name of the Custom Connection, "endpoint", "key" are the keys in the Custom Connection
+        # "connection" yra individualaus ryšio pavadinimas, "endpoint", "key" yra raktai individualiame ryšyje
         endpoint_url = connection.endpoint
         api_key = connection.key
 
@@ -322,7 +323,7 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
             response = requests.post(endpoint_url, json=data, headers=headers)
             response.raise_for_status()
             
-            # Log the full JSON response
+            # Užfiksuoti visą JSON atsakymą
             logger.debug(f"Full JSON response: {response.json()}")
 
             result = response.json()["output"]
@@ -341,197 +342,200 @@ Jums reikia integruoti pritaikytą Phi-3 / Phi-3.5 modelį į Prompt flow. Tači
 
     ```
 
-    ![Įklijuoti Prompt flow kodą.](../../../../../../imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/lt/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Daugiau informacijos apie Prompt flow naudojimą Azure AI Foundry platformoje rasite [Prompt flow Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Daugiau informacijos apie Prompt flow naudojimą Microsoft Foundry rasite čia: [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Pasirinkite **Pokalbio įvestis**, **Pokalbio išvestis**, kad įgalintumėte pokalbį su savo modeliu.
+1. Pasirinkite **Chat input**, **Chat output**, kad įgalintumėte pokalbį su savo modeliu.
 
-    ![Pasirinkti įvestį ir išvestį.](../../../../../../imgs/02/Evaluation-AIFoundry/select-input-output.png)
+    ![Select Input Output.](../../../../../../translated_images/lt/select-input-output.c187fc58f25fbfc3.webp)
 
-1. Dabar galite pradėti pokalbį su savo pritaikytu Phi-3 / Phi-3.5 modeliu. Kitame pratime sužinosite, kaip pradėti Prompt flow ir naudoti jį pokalbiui su pritaikytu modeliu.
+1. Dabar esate pasiruošę bendrauti su savo specialiai paruoštu Phi-3 / Phi-3.5 modeliu. Kitame pratime išmoksite, kaip paleisti Prompt flow ir naudoti jį pokalbiui su modeliu.
 
 > [!NOTE]
 >
-> Pertvarkytas srautas turėtų atrodyti kaip paveikslėlyje žemiau:
+> Išdėstytas srautas turėtų atrodyti kaip paveikslėlyje:
 >
-> ![Srauto pavyzdys](../../../../../../imgs/02/Evaluation-AIFoundry/graph-example.png)
+> ![Flow example](../../../../../../translated_images/lt/graph-example.82fd1bcdd3fc545b.webp)
 >
 
-#### Pradėkite Prompt flow
+#### Paleisti Prompt flow
 
-1. Pasirinkite **Pradėti skaičiavimo sesijas**, kad pradėtumėte Prompt flow.
+1. Paspauskite **Start compute sessions**, kad paleistumėte Prompt flow.
 
-    ![Pradėti skaičiavimo sesiją.](../../../../../../imgs/02/Evaluation-AIFoundry/start-compute-session.png)
+    ![Start compute session.](../../../../../../translated_images/lt/start-compute-session.9acd8cbbd2c43df1.webp)
 
-1. Pasirinkite **Patvirtinti ir analizuoti įvestį**, kad atnaujintumėte parametrus.
+1. Paspauskite **Validate and parse input**, kad atnaujintumėte parametrus.
 
-    ![Patvirtinti įvestį.](../../../../../../imgs/02/Evaluation-AIFoundry/validate-input.png)
+    ![Validate input.](../../../../../../translated_images/lt/validate-input.c1adb9543c6495be.webp)
 
-1. Pasirinkite **Ryšio vertę**, kad prijungtumėte pritaikytą ryšį, kurį sukūrėte. Pavyzdžiui, *connection*.
+1. Pasirinkite **Value** lauką prie **connection** ir pasirinkite sukurtą pasirinktą ryšį, pvz., *connection*.
 
-    ![Ryšys.](../../../../../../imgs/02/Evaluation-AIFoundry/select-connection.png)
+    ![Connection.](../../../../../../translated_images/lt/select-connection.1f2b59222bcaafef.webp)
 
-#### Pokalbis su pritaikytu Phi-3 / Phi-3.5 modeliu
+#### Bendrauti su savo pasirinktu Phi-3 / Phi-3.5 modeliu
 
-1. Pasirinkite **Pokalbis**.
+1. Paspauskite **Chat**.
 
-    ![Pasirinkti pokalbį.](../../../../../../imgs/02/Evaluation-AIFoundry/select-chat.png)
+    ![Select chat.](../../../../../../translated_images/lt/select-chat.0406bd9687d0c49d.webp)
 
-1. Štai pavyzdys rezultatų: Dabar galite pradėti pokalbį su savo pritaikytu Phi-3 / Phi-3.5 modeliu. Rekomenduojama užduoti klausimus, pagrįstus duomenimis, naudotais modelio pritaikymui.
+1. Štai pavyzdys, kaip atrodo rezultatai: dabar galite bendrauti su savo pasirinktu Phi-3 / Phi-3.5 modeliu. Rekomenduojama užduoti klausimus remiantis duomenimis, naudotais modeliui tobulinti.
 
-    ![Pokalbis su Prompt flow.](../../../../../../imgs/02/Evaluation-AIFoundry/chat-with-promptflow.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/lt/chat-with-promptflow.1cf8cea112359ada.webp)
 
-### Diegti Azure OpenAI modelį Phi-3 / Phi-3.5 modelio vertinimui
+### Diegti Azure OpenAI, kad įvertintumėte Phi-3 / Phi-3.5 modelį
 
-Norėdami įvertinti Phi-3 / Phi-3.5 modelį Azure AI Foundry platformoje, turite diegti Azure OpenAI modelį. Šis modelis bus naudojamas Phi-3 / Phi-3.5 modelio našumui įvertinti.
+Norėdami įvertinti Phi-3 / Phi-3.5 modelį Microsoft Foundry, turite įdiegti Azure OpenAI modelį. Šis modelis bus naudojamas Phi-3 / Phi-3.5 modelio našumo vertinimui.
 
 #### Diegti Azure OpenAI
 
-1. Prisijunkite prie [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Prisijunkite prie [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
-    ![Pasirinkti projektą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
+    ![Select Project.](../../../../../../translated_images/lt/select-project-created.5221e0e403e2c9d6.webp)
 
-1. Sukurtame projekte pasirinkite **Diegimai** iš kairiojo meniu.
+1. Projekto kairiajame skirtuke pasirinkite **Deployments**.
 
-1. Pasirinkite **+ Diegti modelį** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **+ Deploy model**.
 
-1. Pasirinkite **Diegti bazinį modelį**.
+1. Pasirinkite **Deploy base model**.
 
-    ![Pasirinkti diegimus.](../../../../../../imgs/02/Evaluation-AIFoundry/deploy-openai-model.png)
+    ![Select Deployments.](../../../../../../translated_images/lt/deploy-openai-model.95d812346b25834b.webp)
 
-1. Pasirinkite Azure OpenAI modelį, kurį norite naudoti. Pavyzdžiui, **gpt-4o**.
+1. Pasirinkite norimą naudoti Azure OpenAI modelį, pvz., **gpt-4o**.
 
-    ![Pasirinkti Azure OpenAI modelį.](../../../../../../imgs/02/Evaluation-AIFoundry/select-openai-model.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/lt/select-openai-model.959496d7e311546d.webp)
 
-1. Pasirinkite **Patvirtinti**.
+1. Paspauskite **Confirm**.
 
-### Įvertinti pritaikytą Phi-3 / Phi-3.5 modelį naudojant Azure AI Foundry Prompt flow vertinimą
+### Įvertinti specialiai paruoštą Phi-3 / Phi-3.5 modelį naudojant Microsoft Foundry Prompt flow vertinimą
 
 ### Pradėti naują vertinimą
 
-1. Apsilankykite [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Apsilankykite [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Eikite į sukurtą Azure AI Foundry projektą.
+1. Eikite į sukurtą Microsoft Foundry projektą.
 
-    ![Pasirinkti projektą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
+    ![Select Project.](../../../../../../translated_images/lt/select-project-created.5221e0e403e2c9d6.webp)
 
-1. Sukurtame projekte pasirinkite **Vertinimas** iš kairiojo meniu.
+1. Projekto kairiajame skirtuke pasirinkite **Evaluation**.
 
-1. Pasirinkite **+ Naujas vertinimas** iš navigacijos meniu.
+1. Naršymo meniu pasirinkite **+ New evaluation**.
 
-    ![Pasirinkti vertinimą.](../../../../../../imgs/02/Evaluation-AIFoundry/select-evaluation.png)
+    ![Select evaluation.](../../../../../../translated_images/lt/select-evaluation.2846ad7aaaca7f4f.webp)
 
 1. Pasirinkite **Prompt flow** vertinimą.
 
-    ![Pasirinkti Prompt flow vertinimą.](../../../../../../imgs/02/Evaluation-AIFoundry/promptflow-evaluation.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/lt/promptflow-evaluation.cb9758cc19b4760f.webp)
 
 1. Atlikite šiuos veiksmus:
 
     - Įveskite vertinimo pavadinimą. Jis turi būti unikalus.
-    - Pasirinkite **Klausimai ir atsakymai be konteksto** kaip užduoties tipą. Kadangi **ULTRACHAT_200k** duomenų rinkinys, naudotas šiame vadove, neturi konteksto.
-    - Pasirinkite Prompt flow, kurį norite įvertinti.
+    - Pasirinkite **Question and answer without context** kaip užduoties tipą, nes **UlTRACHAT_200k** duomenų rinkinys šiame vadove neturi konteksto.
+    - Pasirinkite norimą vertinti prompt flow.
 
-    ![Prompt flow vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting1.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/lt/evaluation-setting1.4aa08259ff7a536e.webp)
 
-1. Pasirinkite **Toliau**.
+1. Paspauskite **Next**.
 
 1. Atlikite šiuos veiksmus:
 
-    - Pasirinkite **Pridėti savo duomenų rinkinį**, kad įkeltumėte duomenų rinkinį. Pavyzdžiui, galite įkelti testavimo duomenų failą, pvz., *test_data.json1*, kuris yra įtrauktas, kai atsisiunčiate **ULTRACHAT_200k** duomenų rinkinį.
-    - Pasirinkite tinkamą **Duomenų rinkinio stulpelį**, kuris atitinka jūsų duomenų rinkinį. Pavyzdžiui, jei naudojate **ULTRACHAT_200k** duomenų rinkinį, pasirinkite **${data.prompt}** kaip duomenų rinkinio stulpelį.
+    - Paspauskite **Add your dataset**, kad įkeltumėte duomenų rinkinį. Pvz., galite įkelti testavimo duomenų failą, pvz., *test_data.json1*, kuris įtrauktas atsisiunčiant **ULTRACHAT_200k** duomenų rinkinį.
+    - Pasirinkite tinkamą **Dataset column**, atitinkančią jūsų duomenis. Pvz., jei naudojate **ULTRACHAT_200k**, pasirinkite **${data.prompt}** kaip duomenų stulpelį.
 
-    ![Prompt flow vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/lt/evaluation-setting2.07036831ba58d64e.webp)
 
-1. Pasirinkite **Toliau**.
+1. Paspauskite **Next**.
 
-1. Atlikite šiuos veiksmus, kad sukonfigūruotumėte našumo ir kokybės metrikas:
+1. Atlikite šiuos veiksmus konfiguracijai pagal našumo ir kokybės matavimus:
 
     - Pasirinkite našumo ir kokybės metrikas, kurias norite naudoti.
-    - Pasirinkite Azure OpenAI modelį, kurį sukūrėte vertinimui. Pavyzdžiui, pasirinkite **gpt-4o**.
+    - Pasirinkite Azure OpenAI modelį, sukurtą vertinimui. Pvz., pasirinkite **gpt-4o**.
 
-    ![Prompt flow vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting3-1.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/lt/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
-1. Atlikite šiuos veiksmus, kad sukonfigūruotumėte rizikos ir saugumo metrikas:
+1. Atlikite šiuos veiksmus rizikos ir saugumo matavimų konfigūracijai:
 
     - Pasirinkite rizikos ir saugumo metrikas, kurias norite naudoti.
-    - Pasirinkite slenkstį, kad apskaičiuotumėte defektų rodiklį, kurį norite naudoti. Pavyzdžiui, pasirinkite **Vidutinis**.
-    - **Klausimui** pasirinkite **Duomenų šaltinis** kaip **{$data.prompt}**.
-    - **Atsakymui** pasirinkite **Duomenų šaltinis** kaip **{$run.outputs.answer}**.
-    - **Tikslui** pasirinkite **Duomenų šaltinis** kaip **{$data.message}**.
+    - Pasirinkite ribinę vertę defektų normos skaičiavimui. Pvz., pasirinkite **Medium**.
+    - Už **question** nustatykite **Data source** kaip **{$data.prompt}**.
+    - Už **answer** nustatykite **Data source** kaip **{$run.outputs.answer}**.
+    - Už **ground_truth** nustatykite **Data source** kaip **{$data.message}**.
 
-    ![Prompt flow vertinimas.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting3-2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/lt/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
-1. Pasirinkite **Toliau**.
+1. Paspauskite **Next**.
 
-1. Pasirinkite **Pateikti**, kad pradėtumėte vertinimą.
+1. Paspauskite **Submit**, kad pradėtumėte vertinimą.
 
-1. Vertinimas užtruks šiek tiek laiko. Progresą galite stebėti **Vertinimo** skiltyje.
+1. Vertinimas užtruks šiek tiek laiko. Progresą galite stebėti skirtuke **Evaluation**.
 
-### Peržiūrėkite vertinimo rezultatus
-> [!NOTE]  
-> Rezultatai, pateikti žemiau, skirti iliustruoti vertinimo procesą. Šiame vadove naudojome modelį, pritaikytą pagal palyginti mažą duomenų rinkinį, todėl rezultatai gali būti neoptimalūs. Tikrieji rezultatai gali labai skirtis priklausomai nuo naudojamo duomenų rinkinio dydžio, kokybės ir įvairovės, taip pat nuo konkrečios modelio konfigūracijos.
-Kai vertinimas bus baigtas, galite peržiūrėti rezultatus tiek našumo, tiek saugumo metrikų atžvilgiu.
+### Peržiūrėti vertinimo rezultatus
 
-1. Našumo ir kokybės metrikos:
+> [!NOTE]
+> Žemiau pateikti rezultatai yra skirti iliustruoti vertinimo procesą. Šiame vadove naudotas modelis buvo paruoštas naudojant palyginti nedidelį duomenų rinkinį, todėl rezultatai gali būti neoptimalūs. Tikrieji rezultatai gali ženkliai skirtis priklausomai nuo duomenų rinkinio dydžio, kokybės, įvairovės ir modelio specifinės konfigūracijos.
 
-    - Įvertinkite modelio efektyvumą generuojant nuoseklius, sklandžius ir aktualius atsakymus.
+Baigus vertinimą, galite peržiūrėti rezultatus tiek našumo, tiek saugumo matavimams.
+1. Veiklos ir kokybės rodikliai:
 
-    ![Vertinimo rezultatas.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-result-gpu.png)
+    - įvertinkite modelio efektyvumą generuojant nuoseklias, sklandžias ir aktualias atsakymus.
 
-1. Rizikos ir saugumo metrikos:
+    ![Įvertinimo rezultatas.](../../../../../../translated_images/lt/evaluation-result-gpu.85f48b42dfb74254.webp)
 
-    - Užtikrinkite, kad modelio rezultatai būtų saugūs ir atitiktų Atsakingo AI principus, vengiant bet kokio žalingo ar įžeidžiančio turinio.
+1. Rizikos ir saugumo rodikliai:
 
-    ![Vertinimo rezultatas.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-result-gpu-2.png)
+    - Užtikrinkite, kad modelio rezultatai būtų saugūs ir atitiktų Atsakingo AI principus, vengiant žalingo ar įžeidžiančio turinio.
 
-1. Galite slinkti žemyn, kad peržiūrėtumėte **Išsamių metrikų rezultatus**.
+    ![Įvertinimo rezultatas.](../../../../../../translated_images/lt/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
-    ![Vertinimo rezultatas.](../../../../../../imgs/02/Evaluation-AIFoundry/detailed-metrics-result.png)
+1. Galite slinkti žemyn, kad peržiūrėtumėte **Išsamių rodiklių rezultatą**.
 
-1. Vertindami savo pritaikytą Phi-3 / Phi-3.5 modelį pagal našumo ir saugumo metrikas, galite patvirtinti, kad modelis ne tik efektyvus, bet ir laikosi atsakingo AI praktikos, todėl yra pasiruošęs realiam naudojimui.
+    ![Įvertinimo rezultatas.](../../../../../../translated_images/lt/detailed-metrics-result.afa2f5c39a4f5f17.webp)
+
+1. Vertindami savo tinkintą Phi-3 / Phi-3.5 modelį pagal tiek veiklos, tiek saugumo rodiklius, galite patvirtinti, kad modelis yra ne tik efektyvus, bet ir laikosi atsakingo AI praktikų, todėl yra pasirengęs realiam naudojimui.
 
 ## Sveikiname!
 
-### Jūs baigėte šį mokymą
+### Jūs baigėte šią pamoką
 
-Jūs sėkmingai įvertinote pritaikytą Phi-3 modelį, integruotą su Prompt flow Azure AI Foundry platformoje. Tai svarbus žingsnis užtikrinant, kad jūsų AI modeliai ne tik veiktų gerai, bet ir laikytųsi „Microsoft“ Atsakingo AI principų, padedančių kurti patikimas ir patikimas AI programas.
+Sėkmingai įvertinote patobulintą Phi-3 modelį, integruotą su Prompt flow Microsoft Foundry platformoje. Tai svarbus žingsnis siekiant užtikrinti, kad jūsų AI modeliai ne tik gerai veiktų, bet ir atitiktų Microsoft Atsakingo AI principus, padedančius kurti patikimas ir patikimas AI programas.
 
-![Architektūra.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
+![Architektūra.](../../../../../../translated_images/lt/architecture.10bec55250f5d6a4.webp)
 
 ## Išvalykite Azure išteklius
 
-Išvalykite savo Azure išteklius, kad išvengtumėte papildomų mokesčių savo paskyrai. Eikite į Azure portalą ir ištrinkite šiuos išteklius:
+Išvalykite savo Azure išteklius, kad išvengtumėte papildomų sąskaitos mokesčių. Eikite į Azure portalą ir ištrinkite šiuos išteklius:
 
-- Azure Machine learning išteklius.
-- Azure Machine learning modelio galinį tašką.
-- Azure AI Foundry projekto išteklius.
-- Azure AI Foundry Prompt flow išteklius.
+- Azure Machine Learning išteklius.
+- Azure Machine Learning modelio galinį tašką.
+- Microsoft Foundry projekto išteklius.
+- Microsoft Foundry Prompt flow išteklius.
 
-### Kiti žingsniai
+### Tolimesni žingsniai
 
 #### Dokumentacija
 
-- [AI sistemų vertinimas naudojant Atsakingo AI prietaisų skydelį](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [Generatyvaus AI vertinimo ir stebėjimo metrikos](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry dokumentacija](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Įvertinkite AI sistemas naudodami Atsakingo AI informacijos suvestinę](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Generatyvaus AI vertinimo ir stebėjimo rodikliai](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry dokumentacija](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow dokumentacija](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Mokymo turinys
 
-- [Įvadas į „Microsoft“ Atsakingo AI požiūrį](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Įvadas į Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Įvadas į Microsoft Atsakingo AI požiūrį](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
+- [Įvadas į Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Nuorodos
 
 - [Kas yra Atsakingas AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [Nauji įrankiai Azure AI, padedantys kurti saugesnes ir patikimesnes generatyvaus AI programas](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [Generatyvaus AI programų vertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [Pranešimas apie naujus Azure AI įrankius, padedančius kurti saugesnes ir patikimesnes generatyvaus AI programas](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [Generatyvaus AI programų įvertinimas](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius naudojant šį vertimą.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turi būti laikomas teisėtu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už jokius nesusipratimus ar neteisingus aiškinimus, kilusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

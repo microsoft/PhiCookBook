@@ -1,109 +1,109 @@
 # AGENTS.md
 
-## ပရောဂျက်အကျဉ်းချုပ်
+## Project Overview
 
-PhiCookBook သည် Microsoft ရဲ့ Phi စာလုံးသေးသေးလေး Language Models (SLMs) များနှင့်အလုပ်လုပ်ရန်အတွက် လက်တွေ့နမူနာများ၊ သင်ခန်းစာများနှင့် အကြောင်းအရာများပါဝင်သော စုံလင်သောချက်ပြုတ်စာအုပ် repository ဖြစ်သည်။ ဤ repository သည် အမျိုးမျိုးသော အသုံးပြုမှုများကို ပြသထားပြီး အထဲတွင် အကြံပြုချက်၊ ပြုပြင်မွမ်းမံခြင်း၊ quantization၊ RAG အကောင်အထည်ဖော်မှုများနှင့် မျိုးစုံအသုံးပြုမှုများကို အခြေခံပြီး platform များနှင့် framework များအတွင်းတွင် အသုံးပြုနိုင်သည်။
+PhiCookBook သည် Microsoft ၏ Phi မိသားစု Small Language Models (SLMs) များနှင့် အလုပ်လုပ်ရာတွင် အသုံးပြုနိုင်သော လက်တွေ့ ဥပမာများ၊ သင်ခန်းစာများနှင့် စာတမ်းများ ပါဝင်သော စုစည်းထားသောချက်ပြုတ်စာအုပ်မှတ်တမ်းတစ်ခုဖြစ်သည်။ အဆိုပါသိုလှောင်မှု၌ inference, fine-tuning, quantization, RAG ကိရိယာများနှင့် ပလက်ဖောင်းနှင့် ဖရိမ်းဝတ်များ အမျိုးမျိုးအားဖြင့် multimodal အက်ပ်လီကေးရှင်းများလိုအပ်ချက်တစ်ခြားများကို ဖော်ပြထားသည်။
 
-**အဓိကနည်းပညာများ:**
-- **ဘာသာစကားများ:** Python, C#/.NET, JavaScript/Node.js
-- **Framework များ:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platform များ:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **မော်ဒယ်အမျိုးအစားများ:** Phi-3, Phi-3.5, Phi-4 (စာသား, ရှုထောင့်, မျိုးစုံ, အကြောင်းအရာဆိုင်ရာ)
+**အဓိက နည်းပညာများ:**
+- **ဘာသာစကားများ၊** Python, C#/.NET, JavaScript/Node.js
+- **ဖရိမ်းဝတ်များ၊** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
+- **ပလက်ဖောင်းများ၊** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **မော်ဒယ်အမျိုးအစားများ၊** Phi-3, Phi-3.5, Phi-4 (စာသား၊ ရုပ်မြင်၊ မူလတန်းနှင့် သေချာစဉ်းစားမှု မျိုးစုံ)
 
-**Repository ဖွဲ့စည်းမှု:**
-- `/code/` - အလုပ်လုပ်နေသော code နမူနာများနှင့် နမူနာအကောင်အထည်ဖော်မှုများ
-- `/md/` - အသေးစိတ်အကြောင်းအရာများ၊ သင်ခန်းစာများနှင့် လမ်းညွှန်ချက်များ  
-- `/translations/` - ဘာသာစကားများစွာ (50+ ဘာသာစကားများ) အတွက် အလိုအလျောက် workflow ဖြင့် ဘာသာပြန်ချက်များ
-- `/.devcontainer/` - Dev container configuration (Python 3.12 နှင့် Ollama)
+**သိုလှောင်မှု ဖော်ပြချက်:**
+- `/code/` - လက်တွေ့ကုဒ် ဥပမာများနှင့် နမူနာအကောင်အထည်ဖော်မှုများ
+- `/md/` - အသေးစိတ်စာတမ်းများ၊ သင်ခန်းစာများနှင့် လမ်းညွှန်ပုံများ  
+- `/translations/` - ဘာသာစကားစုံ ဘာသာပြန်ဆောင်းပါးများ (အလိုအလျောက်လုပ်ဆောင်မှုဖြင့် 50+ ဘာသာစကား)
+- `/.devcontainer/` - Dev container ကွန်ဖစ်ဂျာရေးရှင်း (Python 3.12 နှင့် Ollama)
 
-## ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင် Setup
+## Development Environment Setup
 
-### GitHub Codespaces သို့မဟုတ် Dev Containers အသုံးပြုခြင်း (အကြံပြုထားသည်)
+### GitHub Codespaces သို့မဟုတ် Dev Containers အသုံးပြုခြင်း (အကြံပြု)
 
-1. GitHub Codespaces တွင်ဖွင့်ရန် (အမြန်ဆုံး):
-   - README တွင် "Open in GitHub Codespaces" badge ကိုနှိပ်ပါ
-   - Container သည် Python 3.12 နှင့် Ollama နှင့် Phi-3 ကို အလိုအလျောက် configure လုပ်သည်
+1. GitHub Codespaces တွင် ဖွင့်ရန် (အမြန်ဆုံး):
+   - README မှ "Open in GitHub Codespaces" ခလုတ်ကိုနှိပ်ပါ
+   - Container သည် Python 3.12 နှင့် Ollama Phi-3 ဖြင့် အလိုအလျောက်ချိန်းညှိထားသည်
 
-2. VS Code Dev Containers တွင်ဖွင့်ရန်:
-   - README မှ "Open in Dev Containers" badge ကိုအသုံးပြုပါ
-   - Container သည် အနည်းဆုံး 16GB host memory လိုအပ်သည်
+2. VS Code Dev Containers တွင် ဖွင့်ရန်:
+   - README မှ "Open in Dev Containers" ခလုတ်ကို အသုံးပြုပါ
+   - Container အတွက် အနည်းဆုံး 16GB အမှတ်တံဆိပ် များယူထားရမည်
 
-### Local Setup
+### ဒေသဆိုင်ရာ စတင်ခြင်း
 
 **လိုအပ်ချက်များ:**
 - Python 3.12 သို့မဟုတ် အထက်
-- .NET 8.0 SDK (C# နမူနာများအတွက်)
-- Node.js 18+ နှင့် npm (JavaScript နမူနာများအတွက်)
-- အနည်းဆုံး 16GB RAM အကြံပြုထားသည်
+- .NET 8.0 SDK (C# ဥပမာများအတွက်)
+- Node.js 18+ နှင့် npm (JavaScript ဥပမာများအတွက်)
+- အနည်းဆုံး 16GB RAM အကြံပြု
 
-**Installation:**
+**တပ်ဆင်ခြင်း:**
 ```bash
 git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
 ```
 
-**Python နမူနာများအတွက်:**
-နမူနာ directory အထူးသို့သွားပြီး dependencies များကို install လုပ်ပါ:
+**Python ဥပမာများအတွက်:**
+ကြိမ်ကြိမ်အသုံးပြုပြီး ဥပမာဖိုင်များသို့ ရောက်ရှိကာ လိုအပ်သော libraries များ သွင်းပါ:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # requirements.txt ဖိုင်ရှိပါက
 ```
 
-**.NET နမူနာများအတွက်:**
+**.NET ဥပမာများအတွက်:**
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**JavaScript/Web နမူနာများအတွက်:**
+**JavaScript/Web ဥပမာများအတွက်:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # ဖွံ့ဖြိုးမှု ဆာဗာကို စတင်ပါ
+npm run build  # ထုတ်လုပ်ရေးအတွက် ဆောက်လုပ်ပါ
 ```
 
-## Repository အဖွဲ့စည်းမှု
+## Repository Organization
 
-### Code နမူနာများ (`/code/`)
+### Code Examples (`/code/`)
 
-- **01.Introduce/** - အခြေခံမိတ်ဆက်များနှင့် စတင်ရန်နမူနာများ
-- **03.Finetuning/** နှင့် **04.Finetuning/** - အမျိုးမျိုးသောနည်းလမ်းများဖြင့် ပြုပြင်မွမ်းမံခြင်းနမူနာများ
-- **03.Inference/** - အမျိုးမျိုးသော hardware (AIPC, MLX) တွင် အကြံပြုချက်နမူနာများ
-- **06.E2E/** - အဆုံးအထိ အကောင်အထည်ဖော်မှုနမူနာများ
-- **07.Lab/** - လက်တွေ့/စမ်းသပ်မှုအကောင်အထည်ဖော်မှုများ
-- **08.RAG/** - Retrieval-Augmented Generation နမူနာများ
-- **09.UpdateSamples/** - နောက်ဆုံး update လုပ်ထားသော နမူနာများ
+- **01.Introduce/** - အခြေခံမိတ်ဆက်နှင့် စတင်မှု နမူနာများ
+- **03.Finetuning/** နှင့် **04.Finetuning/** - ရှင်းလင်းမှုပုံစံများ
+- **03.Inference/** - ကိရိယာတွင် ရှိသမျှ inference နမူနာများ (AIPC, MLX)
+- **06.E2E/** - အဆုံးအစ အက်ပ်များနမူနာများ
+- **07.Lab/** - ဓာတ်ခွဲခန်း/ စမ်းသပ်ရေး အကောင်အထည်ဖော်မှုများ
+- **08.RAG/** - Retrieval-Augmented Generation ဥပမာများ
+- **09.UpdateSamples/** - နောက်ဆုံးသတင်း ရယူထားသောနမူနာများ
 
 ### Documentation (`/md/`)
 
-- **01.Introduction/** - မိတ်ဆက်လမ်းညွှန်များ၊ ပတ်ဝန်းကျင် setup၊ platform လမ်းညွှန်များ
-- **02.Application/** - အသုံးပြုမှုနမူနာများကို အမျိုးအစား (စာသား, ကုဒ်, ရှုထောင့်, အသံ, စသည်) အလိုက် စီစဉ်ထားသည်
-- **02.QuickStart/** - Azure AI Foundry နှင့် GitHub Models အတွက် အမြန်စတင်ရန်လမ်းညွှန်များ
-- **03.FineTuning/** - ပြုပြင်မွမ်းမံခြင်းအကြောင်းအရာများနှင့် သင်ခန်းစာများ
-- **04.HOL/** - လက်တွေ့အလုပ်လုပ်ရန် သင်ခန်းစာများ (.NET နမူနာများပါဝင်သည်)
+- **01.Introduction/** - မိတ်ဆက်လမ်းညွှန်များ၊ ပတ်ဝန်းကျင် တပ်ဆင်ခြင်း၊ ပလက်ဖောင်း လမ်းညွှန်များ
+- **02.Application/** - အမျိုးအစားအလိုက် စီစဉ်ထားသော အက်ပ်နမူနာများ (စာသား၊ ကုဒ်၊ ရုပ်မြင်၊ အသံ စသည်)
+- **02.QuickStart/** - Microsoft Foundry နှင့် GitHub Models အတွက် အမြန်စတင်လမ်းညွှန်များ
+- **03.FineTuning/** - ရှင်းလင်းမှုပုံစံ စာတမ်းနှင့် သင်ခန်းစာများ
+- **04.HOL/** - လက်တွေ့ စမ်းသပ်ခန်းများ (ထဲတွင် .NET ဥပမာများပါဝင်သည်)
 
-### ဖိုင် Format များ
+### ဖိုင်ပုံစံများ
 
-- **Jupyter Notebooks (`.ipynb`)** - 📓 အမှတ်အသားဖြင့် README တွင် ဖော်ပြထားသော လက်တွေ့ Python သင်ခန်းစာများ
-- **Python Scripts (`.py`)** - Standalone Python နမူနာများ
-- **C# Projects (`.csproj`, `.sln`)** - .NET အကောင်အထည်ဖော်မှုများနှင့် နမူနာများ
-- **JavaScript (`.js`, `package.json`)** - Web-based နှင့် Node.js နမူနာများ
-- **Markdown (`.md`)** - Documentation နှင့် လမ်းညွှန်ချက်များ
+- **Jupyter Notebooks (`.ipynb`)** - အကြောင်းဖတ်ရှုနိုင်သည့် Python သင်ခန်းစာများ၊ README တွင် 📓 ဖြင့် သတ်မှတ်ထားသည်
+- **Python Scripts (`.py`)** - သီးသန့် Python ဥပမာများ
+- **C# Projects (`.csproj`, `.sln`)** - .NET အက်ပ်များနှင့် နမူနာများ
+- **JavaScript (`.js`, `package.json`)** - ဝက်ဘ်နှင့် Node.js နမူနာများ
+- **Markdown (`.md`)** - စာတမ်းများနှင့် လမ်းညွှန်များ
 
-## နမူနာများနှင့်အလုပ်လုပ်ခြင်း
+## Working with Examples
 
-### Jupyter Notebooks ကို run လုပ်ခြင်း
+### Jupyter Notebooks ဖြင့် အသုံးပြုခြင်း
 
-နမူနာများအများစုသည် Jupyter notebooks အဖြစ်ပေးထားသည်:
+ဆက်လက်အသုံးပြုနိုင်သောပုံစံတွင် Jupyter notebook များပါဝင်သည်။
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # ဘရောက်ဇာ မျက်နှာပြင် ဖွင့်သည်
+# လိုချင်သော .ipynb ဖိုင်ထဲသို့ သွားပါ
 ```
 
-### Python Scripts ကို run လုပ်ခြင်း
+### Python Scripts ကို လုပ်ဆောင်ခြင်း
 
 ```bash
 cd code/<example-directory>
@@ -111,205 +111,223 @@ pip install -r requirements.txt
 python <script-name>.py
 ```
 
-### .NET နမူနာများကို run လုပ်ခြင်း
+### .NET ဥပမာများ လုပ်ဆောင်ခြင်း
 
 ```bash
 cd md/04.HOL/dotnet/src/<project-name>
 dotnet run
 ```
 
-သို့မဟုတ် အပြည့်အစုံ solution ကို build လုပ်ပါ:
+သို့မဟုတ် အစုံလုံးကို တည်ဆောက်ပါ:
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### JavaScript/Web နမူနာများကို run လုပ်ခြင်း
+### JavaScript/Web ဥပမာများ လုပ်ဆောင်ခြင်း
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # အပူပြန်လည်တင်သွင်းမှုဖြင့် ဖွံ့ဖြိုးတိုးတက်မှု
 ```
 
-## စမ်းသပ်ခြင်း
+## Testing
 
-ဤ repository သည် နမူနာ code နှင့် သင်ခန်းစာများပါဝင်ပြီး အခြား software project များလို unit tests မပါဝင်ပါ။ Validation သည် အောက်ပါနည်းလမ်းများဖြင့် အများအားဖြင့် ပြုလုပ်သည်:
+ဤသိုလှောင်မှုတွင် စံနမူနာကုဒ်များနှင့် သင်ခန်းစာများပါဝင်ပြီး တရားဝင် software project မှာ unit tests မပါဝင်ပါ။စစ်ဆေးခြင်းသည် အများအားဖြင့် အောက်ပါအတိုင်း ဖြစ်သည်-
 
-1. **နမူနာများကို run လုပ်ခြင်း** - နမူနာတစ်ခုစီသည် error မရှိဘဲ အလုပ်လုပ်သင့်သည်
-2. **output များကို စစ်ဆေးခြင်း** - မော်ဒယ်၏ အကြောင်းပြုချက်များသည် သင့်လျော်သောအဖြေများဖြစ်ရမည်
-3. **သင်ခန်းစာများကို လိုက်နာခြင်း** - လမ်းညွှန်ချက်များသည် documentation အတိုင်း အလုပ်လုပ်သင့်သည်
+1. **နမူနာများကို လည်ပတ်ခြင်း** - နမူနာတစ်ခုချင်းစီ အမှားမရှိရန်
+2. **ထွက်ရှိမှုများစစ်ဆေးခြင်း** - မော်ဒယ်တုံ့ပြန်မှုများ သင့်တင့်မှုရှိခြင်းစစ်ဆေးရန်
+3. **သင်ခန်းစာများလိုက်နာခြင်း** - လမ်းညွှန်များ အတိုင်း လုပ်ဆောင်နိုင်ရန်
 
-**အများဆုံး validation နည်းလမ်း:**
-- Target ပတ်ဝန်းကျင်တွင် နမူနာများကို စမ်းသပ် run လုပ်ပါ
-- Dependencies များကို မှန်ကန်စွာ install လုပ်နိုင်ကြောင်း စစ်ဆေးပါ
-- မော်ဒယ်များကို download/load လုပ်နိုင်ကြောင်း အတည်ပြုပါ
-- Documentation နှင့် ကိုက်ညီသော အပြုအမူကို အတည်ပြုပါ
+**ပုံမှန်စစ်ဆေးမှုနည်းလမ်း:**
+- မိတ်ဆက်ခံပတ်ဝန်းကျင်တွင် ဥပမာများ လုပ်ဆောင်စစ်ဆေးခြင်း
+- မလိုအပ်သော Dependencies များ မှန်ကန်စွာတပ်ဆင်ခြင်း
+- မော်ဒယ်များဒေါင်းလုပ်နှင့် လုပ်ဆောင်နိုင်မှုစစ်ဆေးခြင်း
+- စာတမ်းနှင့်ကိုက်ညီမှု စစ်ဆေးခြင်း
 
-## Code Style နှင့် Conventions
+## Code Style and Conventions
 
-### အထွေထွေ လမ်းညွှန်ချက်များ
+### ယေဘူယျ လမ်းညွှန်ချက်များ
 
-- နမူနာများသည် ရှင်းလင်းပြီး မှတ်ချက်များထည့်ထားသင့်သည်
-- ဘာသာစကားအထူးသတ်မှတ်ချက်များကို လိုက်နာပါ (Python အတွက် PEP 8, .NET အတွက် C# standards)
-- နမူနာများသည် Phi မော်ဒယ်၏ အထူးစွမ်းရည်များကို ပြသရန် အာရုံစိုက်ထားသင့်သည်
-- အဓိကအကြောင်းအရာများနှင့် မော်ဒယ်အထူး parameters များကို ရှင်းလင်းသော မှတ်ချက်များထည့်ပါ
+- ဥပမာများကို ရှင်းလင်းပြီး မှတ်ချက်ပြုထားစေရန်
+- ဘာသာစကားများ၏ စံချိန်စံညွှန်းများ (Python အတွက် PEP 8, .NET အတွက် C# စံချိန်စနစ်) လိုက်နာရန်
+- Phi မော်ဒယ်၏ အင်္ဂါရပ်များကို ဥပမာများမှ ဖေါ်ပြရန် အာရုံစိုက်ပါ
+- အဓိကအကြောင်းအရာများနှင့် မော်ဒယ်ဆိုင်ရာ အချက်အလက်များကို မှတ်ချက်ဖြင့်ရှင်းပြပါ
 
-### Documentation Standards
+### စာတမ်း စံချက်များ
 
-**URL Formatting:**
-- `[text](../../url)` format ကို အသုံးပြုပါ၊ အပိုနေရာများမထည့်ပါနှင့်
-- Relative links: `./` ကို လက်ရှိ directory အတွက်၊ `../` ကို parent အတွက် အသုံးပြုပါ
-- URL များတွင် နိုင်ငံအထူး locales မပါဝင်သင့်ပါ (ဥပမာ `/en-us/`, `/en/`)
+**URL ပုံစံ:**
+- `[text](../../url)` ပုံစံဖြင့် အသုံးပြုပါ၊ အပိုအကြားအကွာအဝေးမထည့်ရ
+- ပြည်နယ်မဟုတ်သောဆက်သွယ်မှုများအတွက် `./` ကို လောလောဆယ်directoryအတွက်၊ `../` ကို မိမိ directory ရဲ့ဖခင်အတွက် အသုံးပြုပါ
+- URL များတွင် နိုင်ငံအလိုက် locale မထည့်ပါနှင့် (`/en-us/`, `/en/` မပါဝင်ရ)
 
-**Images:**
-- အားလုံး images ကို `/imgs/` directory တွင် သိမ်းဆည်းပါ
-- အဓိကအမည်များကို အင်္ဂလိပ်အက္ခရာများ၊ နံပါတ်များနှင့် dashes ဖြင့် သတ်မှတ်ပါ
-- ဥပမာ: `phi-3-architecture.png`
+**ပုံများ:**
+- ပုံများအားလုံးကို `/imgs/` ဖိုလ်ဒါတွင်သိမ်းဆည်းပါ
+- အမည်မ်ားကို အင်္ဂလိပ်အက္ခရာ၊ နံပါတ် နှင့် အဝတ်အတားများဖြင့် ဖေါ်ပြပါ
+- ဥ ပမာ- `phi-3-architecture.png`
 
-**Markdown Files:**
-- `/code/` directory တွင်ရှိသော အလုပ်လုပ်နေသော နမူနာများကို ရည်ညွှန်းပါ
-- Documentation ကို code ပြောင်းလဲမှုများနှင့် အညီထားပါ
-- README တွင် Jupyter notebook links ကို 📓 emoji ဖြင့် အမှတ်အသားပြုပါ
+**Markdown ဖိုင်များ:**
+- `/code/` ဥပမာများကို တိတိကျကျ ယူဆောင်ပါ
+- စာတမ်းများကို ကုဒ် ပြောင်းလဲမှုနှင့် အညီ ပြန်လည်ညှိဆွဲပါ
+- README တွင် Jupyter notebook လင့်များကို 📓 emoji ဖြင့်အမှတ်အသားရပါ
 
-### ဖိုင်ဖွဲ့စည်းမှု
+### ဖိုင်အစီအစဉ်
 
-- `/code/` တွင် နမူနာများကို အကြောင်းအရာ/feature အလိုက် စီစဉ်ထားသည်
-- Documentation ကို `/md/` တွင် code ဖွဲ့စည်းမှုနှင့် ကိုက်ညီစွာ mirror လုပ်ထားသည်
-- ဆက်စပ်သော ဖိုင်များ (notebooks, scripts, configs) ကို subdirectories တွင် အတူတူထားပါ
+- `/code/`၊ ထုတ်လုပ်မှုအပေါ်အခြေခံပြီး ဥပမာများ စုပေါင်းထားသည်
+- `/md/` တွင်စာတမ်းများကို `/code/` နှင့်ညီအောင် စာတမ်းဖွဲ့ထားသည်
+- ဥပမာ ဖိုင်များ (notebooks၊ scripts၊ configs) ကိုတူညီသော အတွင်းဖိုလ်ဒါများတွင်ထားပါ
 
-## Pull Request လမ်းညွှန်ချက်များ
+## Pull Request Guidelines
 
-### Submit လုပ်မည့်အခါ
+### မတင်မီ
 
-1. **Repository ကို Fork လုပ်ပါ** သင့်အကောင့်သို့
-2. **PR များကို အမျိုးအစားအလိုက် ခွဲခြားပါ:**
-   - Bug fixes ကို PR တစ်ခုတွင်
-   - Documentation update များကို တစ်ခုခြား PR တွင်
-   - နမူနာအသစ်များကို ခွဲခြား PR တွင်
-   - Typo fixes များကို ပေါင်းစပ်နိုင်သည်
+1. Repository ကို account အား ဖော့်ခ်လုပ်ပါ
+2. PR များကို အမျိုးအစားအလိုက်ခွဲခြားပါ
+   - အမှားပြင်ဆင်မှုများကို တစ်ခုခြင်းတည်း PR ဖြင့်
+   - စာတမ်းပြင်ဆင်မှုများအတွက် သီးခြား PR တစ်ခု
+   - နမူနာသစ်များအတွက် သီးခြား PR များ
+   - ရိုက်နှိပ်မှားချက်များကို ပေါင်းစပ်နိုင်
 
-3. **Merge conflicts ကို ဖြေရှင်းပါ:**
-   - ပြုပြင်မှုများပြုလုပ်မီ သင့် local `main` branch ကို update လုပ်ပါ
-   - Upstream နှင့် မကြာခဏ sync လုပ်ပါ
+3. Merge conflicts ကို ကိုင်တွယ်ပါ
+   - ပြင်ဆင်ရန်အချိန် မတိုင်မီ ကိုယ့်အနီး `main` ချန်နယ်အား လတ်တလောအခြေအနေသို့ update လုပ်ပါ
+   - Upstream နှင့် မကြာခဏ Sync လုပ်ပါ
 
-4. **Translation PR များ:**
-   - Folder အတွင်းရှိ ဖိုင်အားလုံးအတွက် ဘာသာပြန်ချက်များ ပါဝင်ရမည်
-   - မူရင်းဘာသာစကားနှင့် ဖွဲ့စည်းမှုကို တူညီစွာ ထိန်းသိမ်းပါ
+4. ဘာသာပြန် PR များအား
+   - ဖိုင်အတန်းတစ်ခုလုံး၏ ဘာသာပြန်များပါဝင်ရမည်
+   - မူရင်းဘာသာနှင့် ကိုက်ညီသော ဖိုင်အစီအစဉ် ကြီးတွဲ ထိန်းသိမ်းရမည်
 
 ### လိုအပ်သော စစ်ဆေးမှုများ
 
-PR များသည် GitHub workflows ကို အလိုအလျောက် run လုပ်ပြီး အောက်ပါအချက်များကို validate လုပ်သည်:
+PR များသည် GitHub workflow များအား ဖြင့်အလိုအလျောက် စစ်ဆေးခြင်း-
 
-1. **Relative path validation** - အတွင်း link များအားလုံး အလုပ်လုပ်ရမည်
-   - VS Code တွင် Ctrl+Click ဖြင့် link များကို locally စမ်းသပ်ပါ
-   - VS Code မှ path အကြံပြုချက်များကို အသုံးပြုပါ (`./` သို့မဟုတ် `../`)
+1. နယ်ပယ်ဆိုင်ရာ လမ်းကြောင်းစစ်ဆေးခြင်း - အတွင်းလင့်များ အားလုံးသည် လုပ်ဆောင်နိုင်ရမည်
+   - VS Code တွင် Ctrl+ Click နှိပ်၍ လင့်များစစ်ဆေးပါ
+   - VS Code မှ လမ်းကြောင်း အကြံပြုချက်များကို အသုံးပြုပါ (`./` သို့မဟုတ် `../`)
 
-2. **URL locale check** - Web URLs တွင် နိုင်ငံ locales မပါဝင်ရမည်
-   - `/en-us/`, `/en/` သို့မဟုတ် အခြားဘာသာစကား code များကို ဖယ်ရှားပါ
-   - အပြည်ပြည်ဆိုင်ရာ URLs ကို အသုံးပြုပါ
+2. URL locale စစ်ဆေးခြင်း - ဝက်ဘ် URL များတွင် နိုင်ငံလိုကေး မပါရှိရ
+   - `/en-us/`, `/en/` နှင့် အခြားဘာသာစကားကုဒ်များ ဖယ်ရှားပါ
+   - အပြည်ပြည်ဆိုင်ရာ URL များ ကို အသုံးပြုပါ
 
-3. **Broken URL check** - URLs အားလုံးသည် 200 status ကို return ပြုရမည်
-   - Submit မလုပ်မီ link များကို access လုပ်နိုင်ကြောင်း စစ်ဆေးပါ
-   - မှတ်ချက်: အချို့သော failure များသည် network ကန့်သတ်ချက်များကြောင့် ဖြစ်နိုင်သည်
+3. ချိုးဖောက် URL စစ်ဆေးခြင်း- အားလုံး URL များသည် 200 status ပြန်လည်ရမည်
+   - ပေးပို့မည်မတိုင်မီ လင့်များ ရရှိနိုင်ခြင်း စစ်ဆေးပါ
+   - အသုံးပြုသူ အင်တာနက်ကန့်သတ်ချက်บางများ ကပ်လျက်ရှိသည့်အလားရှိသည်ဆိုနိုင်သည်
 
-### PR Title Format
+### PR ခေါင်းစဥ် ပုံစံ
 
 ```
 [component] Brief description
 ```
 
-ဥပမာများ:
+ဥပမာများ-
 - `[docs] Add Phi-4 inference tutorial`
 - `[code] Fix ONNX Runtime integration example`
 - `[translation] Add Japanese translation for intro guides`
 
-## အများဆုံး ဖွံ့ဖြိုးရေး Pattern များ
+## Common Development Patterns
 
 ### Phi မော်ဒယ်များနှင့်အလုပ်လုပ်ခြင်း
 
-**Model Loading:**
-- နမူနာများသည် Framework များစွာကို အသုံးပြုသည်: Transformers, ONNX Runtime, MLX, OpenVINO
-- မော်ဒယ်များကို Hugging Face, Azure, GitHub Models မှ download လုပ်သည်
-- မော်ဒယ်သည် သင့် hardware (CPU, GPU, NPU) နှင့် ကိုက်ညီမှုရှိကြောင်း စစ်ဆေးပါ
+**မော်ဒယ် ဒေါင်းလုပ်လုပ်ပုံ:**
+- Transformers, ONNX Runtime, MLX, OpenVINO စသောဖရိမ်းဝတ်များသုံးပါသည်
+- မော်ဒယ်များကို Hugging Face, Azure သို့မဟုတ် GitHub Models မှ ဒေါင်းလုပ်လုပ်ကြသည်
+- မိမိကွန်ပျူတာပစ္စည်းနှင့် ကိုက်ညီမှုရှိ/မရှိ စစ်ဆေးပါ (CPU, GPU, NPU)
 
-**Inference Patterns:**
-- စာသားထုတ်လုပ်မှု: နမူနာများအများစုသည် chat/instruct variants ကို အသုံးပြုသည်
-- ရှုထောင့်: Phi-3-vision နှင့် Phi-4-multimodal ကို ပုံနားလည်မှုအတွက် အသုံးပြုသည်
-- အသံ: Phi-4-multimodal သည် အသံ input များကို ပံ့ပိုးသည်
-- အကြောင်းအရာဆိုင်ရာ: Phi-4-reasoning variants သည် အဆင့်မြင့် reasoning အလုပ်များအတွက်
+**Inference ပုံစံများ:**
+- စာသား ထုတ်လုပ်မှု- များစွာသည် chat/instruct ဗားရှင်းများကို သုံးသည်
+- Vision- Phi-3-vision နှင့် Phi-4-multimodal များမှ ပုံရိပ်အသိအမှတ်ပြုရန်
+- အသံ- Phi-4-multimodal သည် အသံထည့်သွင်းမှုများကို ထောက်ပံ့သည်
+- ဆင်ခြင်မှု- Phi-4-reasoning ဗားရှင်းများသည် ဆင့်ကဲဆန်းစစ်ခြင်း အဖွင့်များအတွက်
 
-### Platform အထူးမှတ်ချက်များ
+### ပလက်ဖောင်းအလိုက် မှတ်ချက်များ
 
-**Azure AI Foundry:**
-- Azure subscription နှင့် API key များ လိုအပ်သည်
-- `/md/02.QuickStart/AzureAIFoundry_QuickStart.md` ကို ကြည့်ပါ
+**Microsoft Foundry:**
+- Azure subscription နှင့် API keys လိုအပ်သည်
+- `/md/02.QuickStart/AzureAIFoundry_QuickStart.md` တွင် ကြည့်ရှုပါ
 
 **GitHub Models:**
-- စမ်းသပ်ရန် အခမဲ့ tier ရရှိနိုင်သည်
-- `/md/02.QuickStart/GitHubModel_QuickStart.md` ကို ကြည့်ပါ
+- စမ်းသပ်ရန် အခမဲ့ အဆင့်ရှိသည်
+- `/md/02.QuickStart/GitHubModel_QuickStart.md` တွင် ကြည့်ရှုပါ
 
-**Local Inference:**
-- ONNX Runtime: Cross-platform, optimized inference
-- Ollama: Easy local model management (dev container တွင် pre-configured)
-- Apple MLX: Apple Silicon အတွက် optimized
+**ဒေသဆိုင်ရာ Inference:**
+- ONNX Runtime- ပလက်ဖောင်းအနောက်လွှာ များအတွက် အကောင်းဆုံး inference
+- Ollama- ဒေသတွင်း မော်ဒယ်စီမံခန့်ခွဲမှု သာလွန်သည် (dev container တွင် အလိုအလျောက်ချိတ်ဆက်ထားသည်)
+- Apple MLX- Apple Silicon ပလက်ဖောင်းများအတွက် ထိရောက်မှုရှိသည်
 
 ## Troubleshooting
 
-### အများဆုံးပြဿနာများ
+### ပုံမှန် ပြဿနာများ
 
-**Memory Issues:**
-- Phi မော်ဒယ်များသည် RAM အများကြီးလိုအပ်သည် (အထူးသဖြင့် vision/multimodal variants)
-- အရင်းအမြစ်ကန့်သတ်ထားသော ပတ်ဝန်းကျင်များအတွက် quantized မော်ဒယ်များကို အသုံးပြုပါ
-- `/md/01.Introduction/04/QuantifyingPhi.md` ကို ကြည့်ပါ
+**မှတ်ဉာဏ် ပြဿနာများ:**
+- Phi မော်ဒယ်များသည် အမှတ်တမျောက် RAM လိုအပ်သည် (vision/multimodal ဗားရှင်းတွေမှာ အထူးသဖြင့်)
+- အရင်းအမြစ်ကန့်သတ်ထားသောပတ်ဝန်းကျင်များတွင် quantized မော်ဒယ်များအသုံးပြုပါ
+- `/md/01.Introduction/04/QuantifyingPhi.md` တွင် ကြည့်ရှုနိုင်ပါသည်
 
-**Dependency Conflicts:**
-- Python နမူနာများတွင် version အထူးလိုအပ်ချက်များရှိနိုင်သည်
-- နမူနာတစ်ခုစီအတွက် virtual environment များကို အသုံးပြုပါ
-- Individual `requirements.txt` ဖိုင်များကို စစ်ဆေးပါ
+**အလိုက်နာမှုပဋိပက္ခများ:**
+- Python ဥပမာများတွင် version ထူးခြားချက်ရှိနိုင်သည်
+- သီးသန့် virtual environment များအသုံးပြုပါ
+- တစ်ခုချင်းစာ `requirements.txt` ဖိုင်များ စစ်ဆေးပါ
 
-**Model Download Failures:**
-- မော်ဒယ်များသည် ချိတ်ဆက်မှုနှေးကွေးသော connection များတွင် timeout ဖြစ်နိုင်သည်
-- Cloud ပတ်ဝန်းကျင်များ (Codespaces, Azure) ကို အသုံးပြုပါ
-- Hugging Face cache ကို စစ်ဆေးပါ: `~/.cache/huggingface/`
+**မော်ဒယ်ဒေါင်းလုပ် မအောင်မြင်ခြင်း:**
+- ကြီးမားသောမော်ဒယ်များသည် ချွတ်ချွတ်လန်းလန်း ချိတ်ဆက်မှုရှုပ်ထွေးမှုကြောင့် အချိန်မီမရနိုင်တတ်
+- ကိုယ်ပိုင် cloud ပတ်ဝန်းကျင်များ (Codespaces, Azure) အသုံးပြုရန် စဉ်းစားပါ
+- Hugging Face က cache ကို စစ်ဆေးရန် `~/.cache/huggingface/`
 
-**.NET Project Issues:**
-- .NET 8.0 SDK install လုပ်ထားကြောင်း အတည်ပြုပါ
-- `dotnet restore` ကို build မလုပ်မီ အသုံးပြုပါ
-- အချို့သော project များတွင် CUDA-specific configuration (Debug_Cuda) ရှိသည်
+**.NET Project ပြဿနာများ:**
+- .NET 8.0 SDK တပ်ဆင်ထားရန်
 
-**JavaScript/Web နမူနာများ:**
-- Compatibility အတွက် Node.js 18+ ကို အသုံးပြုပါ
-- `node_modules` ကို ရှင်းပြီး ပြန် install လုပ်ပါ
-- WebGPU compatibility issue များအတွက် browser console ကို စစ်ဆေးပါ
+- တည်ဆောက်မှုမပြုမီ `dotnet restore` လုပ်ပါ
 
-### အကူအညီရယူခြင်း
+- အချို့ project များတွင် CUDA-specific configuration များ (Debug_Cuda) ပါရှိသည်
 
-- **Discord:** Azure AI Foundry Community Discord ကို join လုပ်ပါ
-- **GitHub Issues:** Repository တွင် bug များနှင့် ပြဿနာများကို report လုပ်ပါ
-- **GitHub Discussions:** မေးခွန်းများမေးပြီး knowledge မျှဝေပါ
+**JavaScript/Web ဥပမာများ:**
+- Node.js 18+ အသုံးပြုရန်
+- ပြဿနာဖြစ်ပါက `node_modules` ဖျက်ပြီး ထပ်မံတပ်ဆင်ပါ
+- WebGPU ကို မူးယစ်မှုအတွက် browser console မှာ စစ်ဆေးပါ
 
-## အပိုဆောင်းအကြောင်းအရာ
+### အကူအညီရယူရန်
 
-### Responsible AI
+- **Discord:** Microsoft Foundry Community Discord တွင် ဝင်ရောက်ပါ
+- **GitHub Issues:** အမှားများနှင့် ပြဿနာများကို တင်ပြပါ
+- **GitHub Discussions:** မေးခွန်းများမေးရန်နှင့် အသိပညာမျှဝေမှု
 
-Phi မော်ဒယ်အသုံးပြုမှုအားလုံးသည် Microsoft ရဲ့ Responsible AI အခြေခံသဘောတရားများကို လိုက်နာရမည်:
-- တရားမျှတမှု၊ ယုံကြည်စိတ်ချရမှု၊ လုံခြုံမှု
-- ကိုယ်ရေးအချက်အလက်နှင့် လုံခြုံရေး  
-- ပါဝင်မှု၊ ထင်ရှားမှု၊ တာဝန်ယူမှု
-- ထုတ်လုပ်မှုအတွက် Azure AI Content Safety ကို အသုံးပြုပါ
-- `/md/01.Introduction/01/01.AISafety.md` ကို ကြည့်ပါ
+## Additional Context
 
-### Translations
+### တာဝန်ယူမှုရှိသော AI
 
-- GitHub Action အလိုအလျောက်ဖြင့် 50+ ဘာသာစကားများကို ပံ့ပိုးထားသည်
-- `/translations/` directory တွင် ဘာသာပြန်ချက်များရှိသည်
+Phi မော်ဒယ်အားလုံးကို Microsoft ၏ တာဝန်ယူမှုရှိသော AI သတ်မှတ်ချက်များကို လိုက်နာသုံးစွဲရမည်-
+- တရားမျှတမှု၊ ယုံကြည်မှုရှိမှု၊ ဘေးကင်းလုံခြုံမှု
+- ကိုယ်ရေးကာကွယ်မှုနှင့် လုံခြုံမှု  
+- ပါဝင်ဆောင်ရွက်မှု၊ ထင်မြင်ချက်ရှင်းလင်းမှု၊ တာဝန်ယူမှု
+- ထုတ်လုပ်မှုအတွက် Azure AI Content Safety အသုံးပြုပါ
+- `/md/01.Introduction/01/01.AISafety.md` တွင် ကြည့်ရှုနိုင်သည်
+
+### ဘာသာပြန်ခြင်းများ
+
+- 50+ ဘာသာစကားများအလိုအလျောက် GitHub Action ဖြင့် ထောက်ပံ့
+- `/translations/` ဖိုလ်ဒါ၌ အားလုံး သိမ်းဆည်းထားသည်
 - co-op-translator workflow ဖြင့် ထိန်းသိမ်းထားသည်
-- ဘာသာပြန်ထားသော ဖိုင်များကို manually edit မလုပ်ပါ (auto-generated ဖြစ်သည်)
+- ဘာသာပြန်ဖိုင်များကို လက်လီ မပြုပြင်ရ (auto-generated ဖြစ်သည်)
 
+### ဆောင်ရွက်ရန်
 
+- `CONTRIBUTING.md` သတ်မှတ်ချက်များကို လိုက်နာပါ
+- Contributor License Agreement (CLA) နှင့် သဘောတူပါ
+- Microsoft Open Source Code of Conduct ကို လိုက်နာပါ
+- commit များတွင် လုံခြုံမှုနှင့် အချက်အလက်များထည့်မထားပါနှင့်
+
+### ဘာသာစကားစုံကို ထောက်ပံ့မှု
+
+ဤသည်မှာ polyglot သိုလှောင်မှုဖြစ်ပြီး ဥပမာများကို အောက်ပါ သုံးဘာသာစကားဖြင့် ပံ့ပိုးပါသည်-
+- **Python** - ML/AI စရိတ်များ၊ Jupyter notebook များ၊ ရှင်းလင်းလုပ်ခြင်း
+- **C#/.NET** - ကုမ္ပဏီအက်ပ်များ၊ ONNX Runtime ပေါင်းစည်းမှု
+- **JavaScript** - ဝက်ဘ်အခြေပြု AI၊ browser inference WebGPU ဖြင့်
+
+သင့်ခေါင်းစဉ်နှင့် အရောင်းလက်တွေ့ အလိုက် တိကျသောဘာသာစကားကို ရွေးချယ်အသုံးပြုနိုင်ပါသည်။
 
 ---
 
-**အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအမှားများ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**အသိပေးချက်**။  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှုဖြစ်သည့် [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားဆောင်ရွက်သော်လည်း အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူလစာတမ်းကို သဘာဝဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အရင်းအမြစ်အဖြစ် ထည့်သတ်စဉ်းစားရပါမည်။ အရေးကြီးသော သတင်းအချက်အလက်များအတွက် ကောင်းမွန်သော လူ့ဘာသာပြန်ကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုပြီးဖြစ်သော မသိမှတ်ရခြင်းများ သို့မဟုတ် မှားယွင်းသဘောထားခြင်းများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
