@@ -2,105 +2,105 @@
 
 ## 專案概述
 
-PhiCookBook 是一個全面的食譜資源庫，包含了使用 Microsoft Phi 系列小型語言模型 (SLMs) 的實作範例、教學和文件。該資源庫展示了多種使用案例，包括推論、微調、量化、RAG 實作以及跨不同平台和框架的多模態應用。
+PhiCookBook 是一個綜合性的食譜存放庫，包含針對 Microsoft Phi 系列小型語言模型（SLMs）的實作範例、教學與文件。此存放庫展示多種使用案例，涵蓋推論、微調、量化、RAG 實作，以及跨不同平台和框架的多模態應用。
 
 **主要技術：**
-- **程式語言：** Python、C#/.NET、JavaScript/Node.js
+- **語言：** Python、C#/.NET、JavaScript/Node.js
 - **框架：** ONNX Runtime、PyTorch、Transformers、MLX、OpenVINO、Semantic Kernel
-- **平台：** Azure AI Foundry、GitHub Models、Hugging Face、Ollama
-- **模型類型：** Phi-3、Phi-3.5、Phi-4（文本、視覺、多模態、推理變體）
+- **平台：** Microsoft Foundry、GitHub Models、Hugging Face、Ollama
+- **模型類型：** Phi-3、Phi-3.5、Phi-4（文本、視覺、多模態、推理變種）
 
-**資源庫結構：**
-- `/code/` - 工作代碼範例和樣本實作
-- `/md/` - 詳細文件、教學和操作指南  
-- `/translations/` - 多語言翻譯（透過自動化工作流程支持超過 50 種語言）
-- `/.devcontainer/` - 開發容器配置（Python 3.12 搭配 Ollama）
+**存放庫結構：**
+- `/code/` - 可操作的程式碼範例與示範實作
+- `/md/` - 詳細文件、教學與操作指南  
+- `/translations/` - 多語言翻譯（超過50種語言透過自動化工作流程）
+- `/.devcontainer/` - 開發容器配置（Python 3.12 與 Ollama）
 
-## 開發環境設置
+## 開發環境設定
 
-### 使用 GitHub Codespaces 或開發容器（推薦）
+### 使用 GitHub Codespaces 或 Dev Containers（建議）
 
-1. 在 GitHub Codespaces 中開啟（最快速）：
-   - 點擊 README 中的 "Open in GitHub Codespaces" 徽章
-   - 容器會自動配置 Python 3.12 和 Ollama 搭配 Phi-3
+1. 在 GitHub Codespaces 開啟（最快速）：
+   - 點擊 README 中的「Open in GitHub Codespaces」徽章
+   - 容器會自動預設配置 Python 3.12 與搭載 Phi-3 的 Ollama
 
-2. 在 VS Code 開發容器中開啟：
-   - 使用 README 中的 "Open in Dev Containers" 徽章
-   - 容器需要至少 16GB 主機記憶體
+2. 在 VS Code Dev Containers 開啟：
+   - 使用 README 中的「Open in Dev Containers」徽章
+   - 容器最低需求主機記憶體為16GB
 
-### 本地設置
+### 本機設定
 
-**先決條件：**
+**前置需求：**
 - Python 3.12 或更新版本
 - .NET 8.0 SDK（用於 C# 範例）
-- Node.js 18+ 和 npm（用於 JavaScript 範例）
-- 建議至少 16GB RAM
+- Node.js 18+ 與 npm（用於 JavaScript 範例）
+- 建議記憶體至少16GB
 
-**安裝：**
+**安裝步驟：**
 ```bash
 git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
 ```
 
-**針對 Python 範例：**
-進入特定範例目錄並安裝依賴：
+**Python 範例：**
+進入特定範例目錄並安裝相依套件：
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # 如果存在 requirements.txt
 ```
 
-**針對 .NET 範例：**
+**.NET 範例：**
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**針對 JavaScript/網頁範例：**
+**JavaScript/網頁範例：**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # 啟動開發伺服器
+npm run build  # 建構生產版本
 ```
 
-## 資源庫組織
+## 存放庫組織
 
-### 代碼範例 (`/code/`)
+### 程式碼範例（`/code/`）
 
-- **01.Introduce/** - 基本介紹和入門範例
-- **03.Finetuning/** 和 **04.Finetuning/** - 使用多種方法進行微調的範例
-- **03.Inference/** - 在不同硬體（AIPC、MLX）上的推論範例
+- **01.Introduce/** - 基本入門與初學範例
+- **03.Finetuning/** 及 **04.Finetuning/** - 各式微調範例
+- **03.Inference/** - 於不同硬體（AIPC、MLX）執行推論範例
 - **06.E2E/** - 端到端應用範例
-- **07.Lab/** - 實驗性實作
+- **07.Lab/** - 實驗室/試驗性實作
 - **08.RAG/** - 檢索增強生成範例
-- **09.UpdateSamples/** - 最新更新的範例
+- **09.UpdateSamples/** - 最新更新範例
 
-### 文件 (`/md/`)
+### 文件資料（`/md/`）
 
-- **01.Introduction/** - 入門指南、環境設置、平台指南
-- **02.Application/** - 按類型組織的應用範例（文本、代碼、視覺、音頻等）
-- **02.QuickStart/** - Azure AI Foundry 和 GitHub Models 的快速入門指南
-- **03.FineTuning/** - 微調文件和教學
-- **04.HOL/** - 實作實驗室（包括 .NET 範例）
+- **01.Introduction/** - 入門指引、環境設定、平台導覽
+- **02.Application/** - 依類型組織的應用範例（文本、程式碼、視覺、音訊等）
+- **02.QuickStart/** - Microsoft Foundry 與 GitHub Models 快速入門指南
+- **03.FineTuning/** - 微調相關文件與教學
+- **04.HOL/** - 實作實驗室（含 .NET 範例）
 
-### 文件格式
+### 檔案格式
 
-- **Jupyter 筆記本 (`.ipynb`)** - README 中標記為 📓 的互動式 Python 教學
-- **Python 腳本 (`.py`)** - 獨立的 Python 範例
-- **C# 專案 (`.csproj`, `.sln`)** - .NET 應用和範例
-- **JavaScript (`.js`, `package.json`)** - 基於網頁和 Node.js 的範例
-- **Markdown (`.md`)** - 文件和指南
+- **Jupyter 筆記本（`.ipynb`）** - 互動式 Python 教學，README 中以 📓 標記
+- **Python 腳本（`.py`）** - 獨立 Python 範例
+- **C# 專案（`.csproj`, `.sln`）** - .NET 應用與範例
+- **JavaScript（`.js`, `package.json`）** - 網頁與 Node.js 範例
+- **Markdown（`.md`）** - 文件與教學指南
 
 ## 使用範例
 
 ### 執行 Jupyter 筆記本
 
-大多數範例以 Jupyter 筆記本形式提供：
+大部分範例均為 Jupyter 筆記本形式：
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # 開啟瀏覽器介面
+# 導航至目標 .ipynb 檔案
 ```
 
 ### 執行 Python 腳本
@@ -129,89 +129,89 @@ dotnet run --project <project-name>
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # 開發中使用熱重載
 ```
 
 ## 測試
 
-此資源庫包含範例代碼和教學，而非傳統的軟體專案單元測試。驗證通常通過以下方式進行：
+本存放庫提供的是範例程式碼與教學，而非傳統軟體專案單元測試。驗證通常透過：
 
-1. **執行範例** - 每個範例應無錯誤執行
-2. **驗證輸出** - 確認模型回應是否合適
-3. **遵循教學** - 按步驟操作指南應如文件所述運作
+1. <strong>執行範例程式</strong> - 各範例應無錯誤執行完成
+2. <strong>確認輸出</strong> - 檢查模型回應是否正確合理
+3. <strong>跟隨教學</strong> - 教學步驟順利並達成預期結果
 
-**常見驗證方法：**
-- 在目標環境中測試範例執行
-- 驗證依賴是否正確安裝
-- 確認模型下載/加載成功
-- 確認預期行為與文件一致
+**常見驗證方式：**
+- 在目標環境測試範例執行
+- 確認套件正確安裝
+- 驗證模型能下載/載入成功
+- 確保行為符合文件說明
 
-## 代碼風格和規範
+## 程式碼風格與慣例
 
-### 一般指南
+### 一般指引
 
-- 範例應清晰、註解充分且具教育性
-- 遵循特定語言的規範（Python 遵循 PEP 8，.NET 遵循 C# 標準）
-- 範例應專注於展示特定 Phi 模型的功能
-- 包含註解以解釋關鍵概念和模型特定參數
+- 範例應清晰、詳盡註解且具教育性
+- 遵循語言特定慣例（Python 遵循 PEP 8，.NET 遵循 C# 標準）
+- 範例重點展示特定 Phi 模型功能
+- 包含解說註解說明重要概念與模型參數
 
 ### 文件標準
 
 **URL 格式：**
-- 使用 `[文字](../../url)` 格式，避免多餘空格
-- 相對連結：使用 `./` 表示當前目錄，`../` 表示父目錄
-- 網址中避免使用國家/地區特定語言代碼（避免 `/en-us/`、`/en/`）
+- 使用 `[text](../../url)` 格式，避免多餘空白
+- 相對連結：當前目錄用 `./`，父目錄用 `../`
+- URL 不含國家特定區域設定（避免 `/en-us/`、`/en/`）
 
 **圖片：**
-- 所有圖片存放於 `/imgs/` 目錄
-- 使用描述性名稱，包含英文字符、數字和連字符
-- 範例：`phi-3-architecture.png`
+- 所有圖片皆放置於 `/imgs/` 目錄
+- 檔名採用英文半形字元、數字及連字號命名
+- 例：`phi-3-architecture.png`
 
-**Markdown 文件：**
-- 參考 `/code/` 目錄中的實際工作範例
-- 確保文件與代碼變更同步
-- 在 README 中使用 📓 表示 Jupyter 筆記本連結
+**Markdown 檔案：**
+- 指向 `/code/` 目錄中實際有效的範例
+- 文件需與程式碼版本保持同步
+- README 中以 📓 emoji 標示 Jupyter 筆記本連結
 
-### 文件組織
+### 檔案組織
 
-- `/code/` 中的代碼範例按主題/功能組織
-- `/md/` 中的文件在適用時與代碼結構一致
-- 將相關文件（筆記本、腳本、配置）集中在子目錄中
+- 程式碼範例依主題功能分類置於 `/code/`
+- 文件資料於 `/md/` 目錄結構對應程式碼時，同步排列
+- 將相關的筆記本、腳本、設定文件集中於子目錄
 
-## 拉取請求指南
+## Pull Request 指南
 
-### 提交前
+### 提交之前
 
-1. **Fork 資源庫** 到您的帳戶
-2. **按類型分開 PR：**
-   - 錯誤修復放在一個 PR
-   - 文件更新放在另一個 PR
-   - 新範例放在單獨的 PR
-   - 拼寫錯誤修正可以合併
+1. **Fork 存放庫** 至個人帳號
+2. **PR 按類型分開：**
+   - 錯誤修正一個 PR
+   - 文件更新另一個 PR
+   - 新範例獨立 PR
+   - 拼字錯誤修正可合併提交
 
 3. **處理合併衝突：**
-   - 在進行更改前更新本地 `main` 分支
-   - 經常與上游同步
+   - 在修改前先更新本機 `main` 分支
+   - 經常與 upstream 同步
 
 4. **翻譯 PR：**
-   - 必須包含文件夾中所有文件的翻譯
-   - 保持與原始語言一致的結構
+   - 必須包含該資料夾所有檔案的翻譯
+   - 保持與原始語言結構一致
 
 ### 必要檢查
 
-PR 會自動運行 GitHub 工作流程以驗證：
+PR 會自動執行 GitHub 工作流程驗證：
 
-1. **相對路徑驗證** - 所有內部連結必須有效
-   - 在本地測試連結：在 VS Code 中按 Ctrl+Click
-   - 使用 VS Code 的路徑建議（`./` 或 `../`）
+1. <strong>相對路徑驗證</strong> - 所有內部連結皆須可用
+   - 本機測試連結：VS Code 按 Ctrl+點擊
+   - 使用 VS Code 提示的路徑（`./` 或 `../`）
 
-2. **網址語言代碼檢查** - 網址中不得包含國家/地區語言代碼
+2. **URL 區域檢查** - 網頁 URL 不得含國家區域碼
    - 移除 `/en-us/`、`/en/` 或其他語言代碼
-   - 使用通用的國際網址
+   - 使用通用國際 URL
 
-3. **無效網址檢查** - 所有網址必須返回 200 狀態
-   - 在提交前驗證連結是否可訪問
-   - 注意：某些失敗可能由網絡限制引起
+3. **破損 URL 檢查** - 所有 URL 回傳必須為 200 狀態
+   - 提交前確認連結可用
+   - 注意：部分失敗可能因網路限制所致
 
 ### PR 標題格式
 
@@ -220,110 +220,112 @@ PR 會自動運行 GitHub 工作流程以驗證：
 ```
 
 範例：
-- `[docs] 新增 Phi-4 推論教學`
-- `[code] 修復 ONNX Runtime 整合範例`
-- `[translation] 新增日文翻譯的入門指南`
+- `[docs] 添加 Phi-4 推論教學`
+- `[code] 修正 ONNX Runtime 整合範例`
+- `[translation] 添加日文入門導覽翻譯`
 
-## 常見開發模式
+## 常用開發模式
 
-### 使用 Phi 模型
+### Phi 模型操作
 
-**模型加載：**
+**模型載入：**
 - 範例使用多種框架：Transformers、ONNX Runtime、MLX、OpenVINO
-- 模型通常從 Hugging Face、Azure 或 GitHub Models 下載
-- 檢查模型是否與您的硬體（CPU、GPU、NPU）相容
+- 模型多由 Hugging Face、Azure 或 GitHub Models 下載
+- 請確認模型與硬體相容（CPU、GPU、NPU）
 
 **推論模式：**
-- 文本生成：大多數範例使用聊天/指令變體
-- 視覺：Phi-3-vision 和 Phi-4-multimodal 用於圖像理解
-- 音頻：Phi-4-multimodal 支持音頻輸入
-- 推理：Phi-4-reasoning 變體用於高級推理任務
+- 文字生成：多數使用聊天/指令版本
+- 視覺：Phi-3-vision 與 Phi-4-multimodal 用於影像理解
+- 音訊：Phi-4-multimodal 支援音訊輸入
+- 推理：Phi-4-reasoning 變種用於進階推理任務
 
-### 平台特定注意事項
+### 平台特定說明
 
-**Azure AI Foundry：**
-- 需要 Azure 訂閱和 API 金鑰
-- 請參閱 `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
+**Microsoft Foundry：**
+- 需 Azure 訂閱與 API 金鑰
+- 參見 `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models：**
-- 提供免費層供測試
-- 請參閱 `/md/02.QuickStart/GitHubModel_QuickStart.md`
+- 免費方案可用於測試
+- 參見 `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **本地推論：**
 - ONNX Runtime：跨平台，優化推論
-- Ollama：簡易本地模型管理（在開發容器中預配置）
-- Apple MLX：針對 Apple Silicon 優化
+- Ollama：簡易本地模型管理（開發容器已預設配置）
+- Apple MLX：針對 Apple Silicon 最佳化
 
 ## 疑難排解
 
 ### 常見問題
 
 **記憶體問題：**
-- Phi 模型需要大量 RAM（尤其是視覺/多模態變體）
-- 在資源有限的環境中使用量化模型
-- 請參閱 `/md/01.Introduction/04/QuantifyingPhi.md`
+- Phi 模型尤其視覺/多模態版本需大量 RAM
+- 資源受限環境建議使用量化模型
+- 參見 `/md/01.Introduction/04/QuantifyingPhi.md`
 
-**依賴衝突：**
-- Python 範例可能有特定版本要求
-- 為每個範例使用虛擬環境
-- 檢查個別 `requirements.txt` 文件
+**相依性衝突：**
+- Python 範例對版本有特定要求
+- 建議各範例使用虛擬環境
+- 檢查個別 `requirements.txt`
 
 **模型下載失敗：**
-- 大型模型可能在慢速連接上超時
-- 考慮使用雲端環境（Codespaces、Azure）
-- 檢查 Hugging Face 快取：`~/.cache/huggingface/`
+- 大型模型於慢速連線可能逾時
+- 可考慮使用雲端環境（Codespaces、Azure）
+- 檢查 Hugging Face 快取位置：`~/.cache/huggingface/`
 
 **.NET 專案問題：**
 - 確保已安裝 .NET 8.0 SDK
-- 在建置前使用 `dotnet restore`
-- 某些專案有 CUDA 特定配置（Debug_Cuda）
+- 建置前執行 `dotnet restore`
+- 部分專案含 CUDA 特定設定（Debug_Cuda）
 
 **JavaScript/網頁範例：**
-- 使用 Node.js 18+ 以確保相容性
-- 清除 `node_modules` 並重新安裝以解決問題
-- 檢查瀏覽器控制台的 WebGPU 相容性問題
+- 請使用 Node.js 18+ 版以確保相容性
+- 須清除 `node_modules` 並重裝依賴以解決問題
+- 檢視瀏覽器主控台是否有 WebGPU 相容性錯誤
 
-### 獲取幫助
+### 尋求幫助
 
-- **Discord：** 加入 Azure AI Foundry 社群 Discord
-- **GitHub Issues：** 在資源庫中報告錯誤和問題
-- **GitHub Discussions：** 提問並分享知識
+- **Discord：** 加入 Microsoft Foundry 社群 Discord
+- **GitHub Issues：** 回報錯誤與問題
+- **GitHub Discussions：** 提問與分享知識
 
 ## 其他背景資訊
 
 ### 負責任的 AI
 
-所有 Phi 模型的使用應遵循 Microsoft 的負責任 AI 原則：
+使用所有 Phi 模型應遵守 Microsoft 的負責任 AI 原則：
 - 公平性、可靠性、安全性
-- 隱私和安全性  
-- 包容性、透明性、問責性
-- 生產應用中使用 Azure AI Content Safety
-- 請參閱 `/md/01.Introduction/01/01.AISafety.md`
+- 隱私與資安  
+- 包容性、透明度、問責制
+- 正式應用請使用 Azure AI Content Safety
+- 參見 `/md/01.Introduction/01/01.AISafety.md`
 
-### 翻譯
+### 翻譯資訊
 
-- 透過自動化 GitHub Action 支持超過 50 種語言
-- 翻譯存放於 `/translations/` 目錄
-- 由 co-op-translator 工作流程維護
-- 請勿手動編輯翻譯文件（自動生成）
+- 支援超過50種語言，透過自動化 GitHub Action
+- 翻譯檔置於 `/translations/` 目錄
+- 由協同翻譯工作流程維護
+- 請勿手動編輯翻譯檔（自動生成）
 
-### 貢獻
+### 貢獻指南
 
-- 遵循 `CONTRIBUTING.md` 中的指南
-- 同意貢獻者許可協議 (CLA)
+- 遵守 `CONTRIBUTING.md` 中指導原則
+- 同意貢獻者授權協議（CLA）
 - 遵守 Microsoft 開源行為準則
-- 確保提交中不包含安全性和憑證資訊
+- 請勿將安全憑證納入提交紀錄
 
-### 多語言支持
+### 多語言支援
 
-這是一個多語言資源庫，範例包括：
+此存放庫為多語言範例庫，包括：
 - **Python** - 機器學習/人工智慧工作流程、Jupyter 筆記本、微調
 - **C#/.NET** - 企業應用、ONNX Runtime 整合
-- **JavaScript** - 基於網頁的 AI、使用 WebGPU 的瀏覽器推論
+- **JavaScript** - 網頁 AI、瀏覽器 WebGPU 推論
 
-選擇最適合您的使用案例和部署目標的語言。
+請依需求與部署目標選擇最適用的語言。
 
 ---
 
-**免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，機器翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**免責聲明**：
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於準確性，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人員進行人工翻譯。因使用本翻譯所引起的任何誤解或錯誤詮釋，我們概不負責。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
