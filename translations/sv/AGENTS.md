@@ -2,23 +2,23 @@
 
 ## Projektöversikt
 
-PhiCookBook är ett omfattande receptarkiv som innehåller praktiska exempel, handledningar och dokumentation för att arbeta med Microsofts Phi-familj av små språkmodeller (SLMs). Arkivet visar olika användningsområden, inklusive inferens, finjustering, kvantisering, RAG-implementeringar och multimodala applikationer över olika plattformar och ramverk.
+PhiCookBook är ett omfattande kokboksförråd som innehåller praktiska exempel, handledningar och dokumentation för att arbeta med Microsofts Phi-familj av små språkmodeller (SLM). Förrådet demonstrerar olika användningsfall, inklusive inferens, finjustering, kvantisering, RAG-implementationer och multimodala applikationer över olika plattformar och ramverk.
 
 **Nyckelteknologier:**
 - **Språk:** Python, C#/.NET, JavaScript/Node.js
 - **Ramverk:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Plattformar:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **Modelltyper:** Phi-3, Phi-3.5, Phi-4 (text, vision, multimodal, resonemangsvarianter)
+- **Plattformar:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Modelltyper:** Phi-3, Phi-3.5, Phi-4 (text, vision, multimodala, resonemangsvarianter)
 
-**Arkivstruktur:**
-- `/code/` - Arbetskodexempel och provimplementeringar
-- `/md/` - Detaljerad dokumentation, handledningar och guider  
-- `/translations/` - Översättningar till flera språk (50+ språk via automatiserat arbetsflöde)
+**Förrådsstruktur:**
+- `/code/` - Arbetskodexempel och provimplementationer
+- `/md/` - Detaljerad dokumentation, handledningar och instruktionsguider  
+- `/translations/` - Flerspråkiga översättningar (50+ språk via automatiserat arbetsflöde)
 - `/.devcontainer/` - Konfiguration för utvecklingscontainer (Python 3.12 med Ollama)
 
-## Inställning av utvecklingsmiljö
+## Uppställning av utvecklingsmiljö
 
-### Använda GitHub Codespaces eller utvecklingscontainers (rekommenderas)
+### Använda GitHub Codespaces eller Dev Containers (Rekommenderat)
 
 1. Öppna i GitHub Codespaces (snabbast):
    - Klicka på "Open in GitHub Codespaces"-märket i README
@@ -26,9 +26,9 @@ PhiCookBook är ett omfattande receptarkiv som innehåller praktiska exempel, ha
 
 2. Öppna i VS Code Dev Containers:
    - Använd "Open in Dev Containers"-märket från README
-   - Containern kräver minst 16GB RAM på värddatorn
+   - Containern kräver minst 16 GB värdminne
 
-### Lokal installation
+### Lokalt uppställning
 
 **Förutsättningar:**
 - Python 3.12 eller senare
@@ -43,10 +43,10 @@ cd PhiCookBook
 ```
 
 **För Python-exempel:**
-Navigera till specifika exempelmappar och installera beroenden:
+Navigera till specifika exempelkataloger och installera beroenden:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # om requirements.txt finns
 ```
 
 **För .NET-exempel:**
@@ -56,38 +56,38 @@ dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**För JavaScript/webbexempel:**
+**För JavaScript/Webb-exempel:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Starta utvecklingsserver
+npm run build  # Bygg för produktion
 ```
 
-## Arkivorganisation
+## Förrådsorganisation
 
 ### Kodexempel (`/code/`)
 
-- **01.Introduce/** - Grundläggande introduktioner och kom igång-exempel
+- **01.Introduce/** - Grundläggande introduktioner och startexempel
 - **03.Finetuning/** och **04.Finetuning/** - Exempel på finjustering med olika metoder
-- **03.Inference/** - Exempel på inferens på olika hårdvara (AIPC, MLX)
-- **06.E2E/** - Exempel på helhetsapplikationer
-- **07.Lab/** - Laboratorie-/experimentella implementeringar
-- **08.RAG/** - Exempel på Retrieval-Augmented Generation
-- **09.UpdateSamples/** - Senast uppdaterade exempel
+- **03.Inference/** - Inferensexempel på olika hårdvaror (AIPC, MLX)
+- **06.E2E/** - End-to-end applikationsexempel
+- **07.Lab/** - Laboratorie-/experimentella implementationer
+- **08.RAG/** - Retrieval-Augmented Generation-exempel
+- **09.UpdateSamples/** - Senaste uppdaterade exempel
 
 ### Dokumentation (`/md/`)
 
-- **01.Introduction/** - Introduktionsguider, miljöinställningar, plattformsanvisningar
-- **02.Application/** - Applikationsexempel organiserade efter typ (Text, Code, Vision, Audio, etc.)
-- **02.QuickStart/** - Snabbstartsguider för Azure AI Foundry och GitHub Models
+- **01.Introduction/** - Introduktionsguider, miljöuppställning, plattformsanvisningar
+- **02.Application/** - Applikationsexempel organiserade per typ (Text, Kod, Syn, Ljud etc.)
+- **02.QuickStart/** - Snabbstartsguider för Microsoft Foundry och GitHub Models
 - **03.FineTuning/** - Dokumentation och handledningar för finjustering
-- **04.HOL/** - Praktiska labbar (inklusive .NET-exempel)
+- **04.HOL/** - Praktiska labb (inklusive .NET-exempel)
 
 ### Filformat
 
 - **Jupyter Notebooks (`.ipynb`)** - Interaktiva Python-handledningar markerade med 📓 i README
-- **Python-skript (`.py`)** - Fristående Python-exempel
+- **Python-skript (`.py`)** - Självständiga Python-exempel
 - **C#-projekt (`.csproj`, `.sln`)** - .NET-applikationer och exempel
 - **JavaScript (`.js`, `package.json`)** - Webb- och Node.js-exempel
 - **Markdown (`.md`)** - Dokumentation och guider
@@ -99,8 +99,8 @@ npm run build  # Build for production
 De flesta exempel tillhandahålls som Jupyter-notebooks:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Öppnar webbläsargränssnitt
+# Navigera till önskad .ipynb-fil
 ```
 
 ### Köra Python-skript
@@ -124,53 +124,53 @@ cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### Köra JavaScript/webbexempel
+### Köra JavaScript/Webb-exempel
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Utveckling med varm omladdning
 ```
 
 ## Testning
 
-Detta arkiv innehåller exempel på kod och handledningar snarare än ett traditionellt mjukvaruprojekt med enhetstester. Validering görs vanligtvis genom att:
+Detta förråd innehåller exempel på kod och handledningar snarare än ett traditionellt mjukvaruprojekt med enhetstester. Validering sker vanligtvis genom:
 
 1. **Köra exemplen** - Varje exempel ska köras utan fel
 2. **Verifiera utdata** - Kontrollera att modellens svar är lämpliga
-3. **Följa handledningar** - Steg-för-steg-guider ska fungera som dokumenterat
+3. **Följa handledningar** - Steg-för-steg-guider ska fungera enligt dokumentation
 
-**Vanlig valideringsmetod:**
-- Testa att köra exempel i målmiljön
+**Vanligt valideringssätt:**
+- Testa exekvering i målmiljön
 - Verifiera att beroenden installeras korrekt
-- Kontrollera att modeller laddas ner/laddas framgångsrikt
-- Bekräfta att förväntat beteende överensstämmer med dokumentationen
+- Kontrollera att modeller laddas och hämtas framgångsrikt
+- Bekräfta att förväntat beteende stämmer med dokumentationen
 
 ## Kodstil och konventioner
 
 ### Allmänna riktlinjer
 
-- Exempel ska vara tydliga, välkommenterade och utbildande
-- Följ språksspecifika konventioner (PEP 8 för Python, C#-standarder för .NET)
-- Håll exemplen fokuserade på att demonstrera specifika funktioner hos Phi-modeller
+- Exempel ska vara tydliga, välkommenterade och pedagogiska
+- Följ språkspecifika konventioner (PEP 8 för Python, C#-standarder för .NET)
+- Håll exemplen fokuserade på att demonstrera specifika Phi-modellfunktioner
 - Inkludera kommentarer som förklarar nyckelkoncept och modell-specifika parametrar
 
 ### Dokumentationsstandarder
 
-**URL-format:**
-- Använd `[text](../../url)`-format utan extra mellanslag
-- Relativa länkar: Använd `./` för aktuell katalog, `../` för överordnad
-- Inga landsspecifika lokaler i URL:er (undvik `/en-us/`, `/en/`)
+**URL-formattering:**
+- Använd formatet `[text](../../url)` utan extra mellanslag
+- Relativa länkar: Använd `./` för nuvarande katalog, `../` för överordnad
+- Inga landspecifika lokaler i URL:er (undvik `/en-us/`, `/en/`)
 
 **Bilder:**
-- Lagra alla bilder i `/imgs/`-katalogen
+- Spara alla bilder i `/imgs/`-katalogen
 - Använd beskrivande namn med engelska tecken, siffror och bindestreck
 - Exempel: `phi-3-architecture.png`
 
 **Markdown-filer:**
-- Referera till faktiska arbets-exempel i `/code/`-katalogen
+- Referera till faktiska fungerande exempel i `/code/`-katalogen
 - Håll dokumentationen synkroniserad med kodändringar
-- Använd 📓 emoji för att markera Jupyter-notebook-länkar i README
+- Använd 📓 emoji för att markera Jupyter-notebooklänkar i README
 
 ### Filorganisation
 
@@ -178,42 +178,42 @@ Detta arkiv innehåller exempel på kod och handledningar snarare än ett tradit
 - Dokumentation i `/md/` speglar kodstrukturen när det är tillämpligt
 - Håll relaterade filer (notebooks, skript, konfigurationer) tillsammans i undermappar
 
-## Riktlinjer för pull requests
+## Riktlinjer för Pull Requests
 
-### Innan du skickar in
+### Innan inskickning
 
-1. **Forka arkivet** till ditt konto
-2. **Separera PRs efter typ:**
-   - Bugfixar i en PR
+1. **Fork:a förrådet** till ditt konto
+2. **Separera PR:er efter typ:**
+   - Buggfixar i en PR
    - Dokumentationsuppdateringar i en annan
-   - Nya exempel i separata PRs
-   - Stavfel kan kombineras
+   - Nya exempel i separata PR:er
+   - Stavningskorrigeringar kan kombineras
 
-3. **Hantera merge-konflikter:**
-   - Uppdatera din lokala `main`-gren innan du gör ändringar
-   - Synkronisera med upstream ofta
+3. **Hantera sammanslagningskonflikter:**
+   - Uppdatera din lokala `main`-gren innan ändringar görs
+   - Synkronisera ofta med upstream
 
-4. **Översättnings-PRs:**
+4. **Översättnings-PR:er:**
    - Måste inkludera översättningar för ALLA filer i mappen
    - Behåll konsekvent struktur med originalspråket
 
 ### Obligatoriska kontroller
 
-PRs kör automatiskt GitHub-arbetsflöden för att validera:
+PR:er kör automatiskt GitHub-arbetsflöden för att validera:
 
-1. **Validering av relativa sökvägar** - Alla interna länkar måste fungera
+1. **Validering av relativa stigar** - Alla interna länkar måste fungera
    - Testa länkar lokalt: Ctrl+Klick i VS Code
-   - Använd sökvägsförslag från VS Code (`./` eller `../`)
+   - Använd vägförslag från VS Code (`./` eller `../`)
 
-2. **Kontroll av URL-lokaler** - Webbadresser får inte innehålla landskoder
+2. **Kontroll av URL-lokal** - Webbadresser får inte innehålla landslokaler
    - Ta bort `/en-us/`, `/en/` eller andra språkkoder
    - Använd generiska internationella URL:er
 
-3. **Kontroll av brutna URL:er** - Alla URL:er måste returnera status 200
-   - Verifiera att länkar är tillgängliga innan du skickar in
-   - Obs: Vissa fel kan bero på nätverksbegränsningar
+3. **Kontroll av brutna URL:er** - Alla URL:er måste ge status 200
+   - Verifiera att länkar är tillgängliga innan inskick
+   - Observera: Vissa fel kan bero på nätverksrestriktioner
 
-### Format för PR-titel
+### PR-titelformat
 
 ```
 [component] Brief description
@@ -221,37 +221,37 @@ PRs kör automatiskt GitHub-arbetsflöden för att validera:
 
 Exempel:
 - `[docs] Lägg till Phi-4 inferenshandledning`
-- `[code] Fixa ONNX Runtime-integreringsexempel`
+- `[code] Åtgärda ONNX Runtime integrations-exempel`
 - `[translation] Lägg till japansk översättning för introduktionsguider`
 
 ## Vanliga utvecklingsmönster
 
 ### Arbeta med Phi-modeller
 
-**Modellinläsning:**
+**Modellinladdning:**
 - Exempel använder olika ramverk: Transformers, ONNX Runtime, MLX, OpenVINO
-- Modeller laddas vanligtvis ner från Hugging Face, Azure eller GitHub Models
-- Kontrollera modellens kompatibilitet med din hårdvara (CPU, GPU, NPU)
+- Modeller hämtas oftast från Hugging Face, Azure eller GitHub Models
+- Kontrollera modellkompatibilitet med din hårdvara (CPU, GPU, NPU)
 
 **Inferensmönster:**
 - Textgenerering: De flesta exempel använder chat-/instruktionsvarianter
 - Vision: Phi-3-vision och Phi-4-multimodal för bildförståelse
-- Audio: Phi-4-multimodal stöder ljudinmatningar
-- Resonemang: Phi-4-reasoning-varianter för avancerade resonemangsuppgifter
+- Ljud: Phi-4-multimodal stödjer ljudinmatningar
+- Resonemang: Phi-4-resonemangsvarianter för avancerade resonemangsuppgifter
 
-### Plattformsspecifika anteckningar
+### Plattformspecifika noteringar
 
-**Azure AI Foundry:**
-- Kräver Azure-abonnemang och API-nycklar
+**Microsoft Foundry:**
+- Kräver Azure-prenumeration och API-nycklar
 - Se `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- Gratisnivå tillgänglig för testning
+- Gratis nivå tillgänglig för testning
 - Se `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Lokal inferens:**
 - ONNX Runtime: Plattformoberoende, optimerad inferens
-- Ollama: Enkel lokal modellhantering (förkonfigurerad i utvecklingscontainern)
+- Ollama: Enkel lokal modellhantering (förkonfigurerad i utvecklingscontainer)
 - Apple MLX: Optimerad för Apple Silicon
 
 ## Felsökning
@@ -259,8 +259,8 @@ Exempel:
 ### Vanliga problem
 
 **Minnesproblem:**
-- Phi-modeller kräver mycket RAM (särskilt vision/multimodal-varianter)
-- Använd kvantiserade modeller för resursbegränsade miljöer
+- Phi-modeller kräver betydande RAM (speciellt vision/multimodala varianter)
+- Använd kvantiserade modeller för resurssvaga miljöer
 - Se `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Beroendekonflikter:**
@@ -268,62 +268,64 @@ Exempel:
 - Använd virtuella miljöer för varje exempel
 - Kontrollera individuella `requirements.txt`-filer
 
-**Problem med modellnedladdning:**
-- Stora modeller kan timeouta på långsamma anslutningar
+**Misslyckade modellnedladdningar:**
+- Stora modeller kan tidsavbrytas vid långsamma anslutningar
 - Överväg att använda molnmiljöer (Codespaces, Azure)
 - Kontrollera Hugging Face-cache: `~/.cache/huggingface/`
 
-**.NET-projektproblem:**
+**Problem med .NET-projekt:**
 - Säkerställ att .NET 8.0 SDK är installerat
-- Använd `dotnet restore` innan du bygger
+- Använd `dotnet restore` innan byggning
 - Vissa projekt har CUDA-specifika konfigurationer (Debug_Cuda)
 
-**JavaScript/webbexempel:**
+**JavaScript/Webb-exempel:**
 - Använd Node.js 18+ för kompatibilitet
 - Rensa `node_modules` och installera om vid problem
 - Kontrollera webbläsarkonsolen för WebGPU-kompatibilitetsproblem
 
 ### Få hjälp
 
-- **Discord:** Gå med i Azure AI Foundry Community Discord
-- **GitHub Issues:** Rapportera buggar och problem i arkivet
+- **Discord:** Gå med i Microsoft Foundry Community Discord
+- **GitHub Issues:** Rapportera buggar och problem i förrådet
 - **GitHub Discussions:** Ställ frågor och dela kunskap
 
-## Ytterligare kontext
+## Ytterligare sammanhang
 
 ### Ansvarsfull AI
 
 All användning av Phi-modeller bör följa Microsofts principer för ansvarsfull AI:
 - Rättvisa, tillförlitlighet, säkerhet
 - Integritet och säkerhet  
-- Inkludering, transparens, ansvarighet
+- Inkludering, transparens, ansvarsskyldighet
 - Använd Azure AI Content Safety för produktionsapplikationer
 - Se `/md/01.Introduction/01/01.AISafety.md`
 
 ### Översättningar
 
 - 50+ språk stöds via automatiserad GitHub Action
-- Översättningar i `/translations/`-katalogen
-- Underhålls av co-op-translator-arbetsflöde
-- Redigera inte översatta filer manuellt (automatiskt genererade)
+- Översättningar finns i `/translations/`-katalogen
+- Underhålls av co-op-översättararbetsflöde
+- Redigera inte manuellt översatta filer (auto-genererade)
 
 ### Bidra
 
-- Följ riktlinjerna i `CONTRIBUTING.md`
-- Godkänn Contributor License Agreement (CLA)
+- Följ riktlinjer i `CONTRIBUTING.md`
+- Acceptera Contributor License Agreement (CLA)
 - Följ Microsoft Open Source Code of Conduct
 - Håll säkerhet och autentiseringsuppgifter utanför commits
 
-### Stöd för flera språk
+### Flerspråkigt stöd
 
-Detta är ett flerspråkigt arkiv med exempel i:
+Detta är ett polyglott förråd med exempel i:
 - **Python** - ML/AI-arbetsflöden, Jupyter-notebooks, finjustering
-- **C#/.NET** - Företagsapplikationer, ONNX Runtime-integrering
+- **C#/.NET** - Företagsapplikationer, ONNX Runtime-integration
 - **JavaScript** - Webbaserad AI, webbläsarinferens med WebGPU
 
-Välj det språk som bäst passar din användning och distributionsmål.
+Välj det språk som bäst passar ditt användningsfall och mål för distribution.
 
 ---
 
-**Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfriskrivning**:
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig notera att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

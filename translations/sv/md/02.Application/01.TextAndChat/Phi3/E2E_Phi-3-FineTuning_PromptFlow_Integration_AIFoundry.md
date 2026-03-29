@@ -1,17 +1,17 @@
-# Finjustera och integrera anpassade Phi-3-modeller med Prompt flow i Azure AI Foundry
+# Finjustera och integrera anpassade Phi-3-modeller med Prompt flow i Microsoft Foundry
 
-Detta end-to-end (E2E) exempel är baserat på guiden "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" från Microsoft Tech Community. Den introducerar processerna för finjustering, driftsättning och integration av anpassade Phi-3-modeller med Prompt flow i Azure AI Foundry.
-Till skillnad från E2E-exemplet, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", som involverade körning av kod lokalt, fokuserar denna handledning helt på att finjustera och integrera din modell inom Azure AI / ML Studio.
+Detta end-to-end (E2E) exempel är baserat på guiden "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" från Microsoft Tech Community. Den introducerar processerna för finjustering, distribuering och integrering av anpassade Phi-3-modeller med Prompt flow i Microsoft Foundry.
+Till skillnad från E2E-exemplet, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", som involverade att köra kod lokalt, fokuserar denna handledning helt på att finjustera och integrera din modell inom Azure AI / ML Studio.
 
 ## Översikt
 
-I detta E2E-exempel kommer du att lära dig hur du finjusterar Phi-3-modellen och integrerar den med Prompt flow i Azure AI Foundry. Genom att utnyttja Azure AI / ML Studio kommer du att skapa ett arbetsflöde för att driftsätta och använda anpassade AI-modeller. Detta E2E-exempel är uppdelat i tre scenarier:
+I detta E2E-exempel kommer du att lära dig hur man finjusterar Phi-3-modellen och integrerar den med Prompt flow i Microsoft Foundry. Genom att utnyttja Azure AI / ML Studio kommer du att etablera ett arbetsflöde för att distribuera och använda anpassade AI-modeller. Detta E2E-exempel är uppdelat i tre scenarier:
 
 **Scenario 1: Ställ in Azure-resurser och förbered för finjustering**
 
-**Scenario 2: Finjustera Phi-3-modellen och driftsätt i Azure Machine Learning Studio**
+**Scenario 2: Finjustera Phi-3-modellen och distribuera i Azure Machine Learning Studio**
 
-**Scenario 3: Integrera med Prompt flow och chatta med din anpassade modell i Azure AI Foundry**
+**Scenario 3: Integrera med Prompt flow och chatta med din anpassade modell i Microsoft Foundry**
 
 Här är en översikt av detta E2E-exempel.
 
@@ -19,45 +19,45 @@ Här är en översikt av detta E2E-exempel.
 
 ### Innehållsförteckning
 
-1. **[Scenario 1: Ställ in Azure-resurser och förbered för finjustering](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Skapa en Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Begär GPU-kvoter i Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Lägg till rolltilldelning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Ställ in projekt](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Förbered dataset för finjustering](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenario 1: Ställ in Azure-resurser och förbered för finjustering](#scenario-1-ställ-in-azure-resurser-och-förbered-för-finjustering)**
+    - [Skapa ett Azure Machine Learning-arbetsyta](#skapa-ett-azure-machine-learning-arbetsyta)
+    - [Begär GPU-kvoter i Azure-prenumerationen](#begär-gpu-kvoter-i-azure-prenumerationen)
+    - [Lägg till rolltilldelning](#lägg-till-rolltilldelning)
+    - [Ställ in projekt](#ställ-in-projektet)
+    - [Förbered dataset för finjustering](#förbered-dataset-för-finjustering)
 
-1. **[Scenario 2: Finjustera Phi-3-modellen och driftsätt i Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Finjustera Phi-3-modellen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Driftsätt den finjusterade Phi-3-modellen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenario 2: Finjustera Phi-3-modellen och distribuera i Azure Machine Learning Studio](#scenario-2-finjustera-phi-3-modellen-och-distribuera-i-azure-machine-learning-studio)**
+    - [Finjustera Phi-3-modellen](#finjustera-phi-3-modellen)
+    - [Distribuera den finjusterade Phi-3-modellen](#distribuera-den-finjusterade-phi-3-modellen)
 
-1. **[Scenario 3: Integrera med Prompt flow och chatta med din anpassade modell i Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Integrera den anpassade Phi-3-modellen med Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Chatta med din anpassade Phi-3-modell](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenario 3: Integrera med Prompt flow och chatta med din anpassade modell i Microsoft Foundry](#scenario-3-integrate-with-prompt-flow-and-chat-with-your-custom-model-in-azure-ai-studio)**
+    - [Integrera den anpassade Phi-3-modellen med Prompt flow](#integrera-den-anpassade-phi-3-modellen-med-prompt-flow)
+    - [Chatta med din anpassade Phi-3-modell](#chatta-med-din-anpassade-phi-3-modell)
 
 ## Scenario 1: Ställ in Azure-resurser och förbered för finjustering
 
-### Skapa en Azure Machine Learning Workspace
+### Skapa ett Azure Machine Learning-arbetsyta
 
-1. Skriv *azure machine learning* i **sökrutan** högst upp på portalens sida och välj **Azure Machine Learning** från alternativen som visas.
+1. Skriv *azure machine learning* i **sökfältet** högst upp på portalsidan och välj **Azure Machine Learning** från alternativen som visas.
 
     ![Type azure machine learning.](../../../../../../translated_images/sv/01-01-type-azml.acae6c5455e67b4b.webp)
 
-2. Välj **+ Skapa** från navigationsmenyn.
+2. Välj **+ Skapa** från navigeringsmenyn.
 
-3. Välj **Ny arbetsyta** från navigationsmenyn.
+3. Välj **Ny arbetsyta** från navigeringsmenyn.
 
     ![Select new workspace.](../../../../../../translated_images/sv/01-02-select-new-workspace.cd09cd0ec4a60ef2.webp)
 
 4. Utför följande uppgifter:
 
-    - Välj din Azure-**Subscription**.
-    - Välj **Resursgrupp** att använda (skapa en ny om det behövs).
-    - Ange **Arbetsyte-namn**. Det måste vara ett unikt värde.
-    - Välj **Region** du vill använda.
-    - Välj **Lagringskonto** att använda (skapa ett nytt om det behövs).
-    - Välj **Key vault** att använda (skapa ett nytt om det behövs).
-    - Välj **Application insights** att använda (skapa en ny om det behövs).
-    - Välj **Container registry** att använda (skapa en ny om det behövs).
+    - Välj din Azure **Prenumeration**.
+    - Välj den **Resursgrupp** som ska användas (skapa en ny om det behövs).
+    - Ange **Arbetsytans namn**. Det måste vara unikt.
+    - Välj den **Region** du vill använda.
+    - Välj det **Lagringskonto** som ska användas (skapa ett nytt om det behövs).
+    - Välj den **Key vault** som ska användas (skapa en ny om det behövs).
+    - Välj **Application Insights** som ska användas (skapa en ny om det behövs).
+    - Välj **Container Registry** som ska användas (skapa en ny om det behövs).
 
     ![Fill azure machine learning.](../../../../../../translated_images/sv/01-03-fill-AZML.a1b6fd944be0090f.webp)
 
@@ -65,43 +65,43 @@ Här är en översikt av detta E2E-exempel.
 
 6. Välj **Skapa**.
 
-### Begär GPU-kvoter i Azure Subscription
+### Begär GPU-kvoter i Azure-prenumerationen
 
-I denna handledning kommer du att lära dig hur du finjusterar och driftsätter en Phi-3-modell med hjälp av GPU:er. För finjustering använder du GPU:n *Standard_NC24ads_A100_v4*, vilken kräver en kvotbegäran. För driftsättning använder du GPU:n *Standard_NC6s_v3*, som också kräver en kvotbegäran.
+I denna handledning kommer du att lära dig hur man finjusterar och distribuerar en Phi-3-modell med hjälp av GPU:er. För finjustering kommer du att använda *Standard_NC24ads_A100_v4* GPU, som kräver en kvotbegäran. För distribution kommer du att använda *Standard_NC6s_v3* GPU, som också kräver en kvotbegäran.
 
 > [!NOTE]
 >
-> Endast Pay-As-You-Go-abonnemang (standard abonnemangstyp) är berättigade till GPU-tilldelning; förmånprenumerationer stöds för närvarande inte.
+> Endast Pay-As-You-Go-prenumerationer (standardtyp av prenumeration) är berättigade till GPU-allokering; förmånsprenumerationer stöds inte för närvarande.
 >
 
 1. Besök [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Utför följande för att begära *Standard NCADSA100v4 Family* kvot:
+1. Utför följande för att begära kvot för *Standard NCADSA100v4 Family*:
 
     - Välj **Kvot** från fliken till vänster.
-    - Välj den **Virtuella maskinfamilj** du vill använda. Till exempel välj **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderar GPU:n *Standard_NC24ads_A100_v4*.
-    - Välj **Begär kvot** från navigationsmenyn.
+    - Välj den **Virtuella maskinfamilj** som ska användas. Till exempel, välj **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderar *Standard_NC24ads_A100_v4* GPU:n.
+    - Välj **Begär kvot** från navigeringsmenyn.
 
         ![Request quota.](../../../../../../translated_images/sv/02-02-request-quota.c0428239a63ffdd5.webp)
 
-    - På sidan Begär kvot, ange det **Nya kärnbegränsning** du vill använda. Till exempel 24.
-    - På sidan Begär kvot, välj **Skicka** för att begära GPU-kvoten.
+    - På sidan Begär kvot anger du det **Nya kärngränsvärde** du vill använda. Till exempel 24.
+    - På sidan Begär kvot väljer du **Skicka** för att begära GPU-kvoten.
 
-1. Utför följande för att begära *Standard NCSv3 Family* kvot:
+1. Utför följande för att begära kvot för *Standard NCSv3 Family*:
 
     - Välj **Kvot** från fliken till vänster.
-    - Välj den **Virtuella maskinfamilj** du vill använda. Till exempel välj **Standard NCSv3 Family Cluster Dedicated vCPUs**, som innehåller GPU:n *Standard_NC6s_v3*.
-    - Välj **Begär kvot** från navigationsmenyn.
-    - På sidan Begär kvot, ange det **Nya kärnbegränsning** du vill använda. Till exempel 24.
-    - På sidan Begär kvot, välj **Skicka** för att begära GPU-kvoten.
+    - Välj den **Virtuella maskinfamilj** som ska användas. Till exempel, välj **Standard NCSv3 Family Cluster Dedicated vCPUs**, som inkluderar *Standard_NC6s_v3* GPU:n.
+    - Välj **Begär kvot** från navigeringsmenyn.
+    - På sidan Begär kvot anger du det **Nya kärngränsvärde** du vill använda. Till exempel 24.
+    - På sidan Begär kvot väljer du **Skicka** för att begära GPU-kvoten.
 
 ### Lägg till rolltilldelning
 
-För att finjustera och driftsätta dina modeller måste du först skapa en User Assigned Managed Identity (UAI) och tilldela den lämpliga behörigheter. Denna UAI kommer att användas för autentisering under driftsättningen.
+För att finjustera och distribuera dina modeller måste du först skapa en User Assigned Managed Identity (UAI) och tilldela den lämpliga behörigheter. Denna UAI kommer att användas för autentisering vid distribution.
 
-#### Skapa User Assigned Managed Identity(UAI)
+#### Skapa User Assigned Managed Identity (UAI)
 
-1. Skriv *managed identities* i **sökrutan** högst upp på portalens sida och välj **Managed Identities** från alternativen som visas.
+1. Skriv *managed identities* i **sökfältet** högst upp på portalsidan och välj **Managed Identities** från alternativen som visas.
 
     ![Type managed identities.](../../../../../../translated_images/sv/03-01-type-managed-identities.24de763e0f1f37e5.webp)
 
@@ -111,10 +111,10 @@ För att finjustera och driftsätta dina modeller måste du först skapa en User
 
 1. Utför följande uppgifter:
 
-    - Välj din Azure-**Subscription**.
-    - Välj **Resursgrupp** att använda (skapa en ny om det behövs).
-    - Välj **Region** du vill använda.
-    - Ange **Namn**. Det måste vara ett unikt värde.
+    - Välj din Azure **Prenumeration**.
+    - Välj den **Resursgrupp** som ska användas (skapa en ny om det behövs).
+    - Välj den **Region** du vill använda.
+    - Ange **Namn**. Det måste vara unikt.
 
     ![Select create.](../../../../../../translated_images/sv/03-03-fill-managed-identities-1.ef1d6a2261b449e0.webp)
 
@@ -122,91 +122,91 @@ För att finjustera och driftsätta dina modeller måste du först skapa en User
 
 1. Välj **+ Skapa**.
 
-#### Lägg till rolltilldelningen Contributor till Managed Identity
+#### Lägg till rolltilldelning för bidragsgivare till Managed Identity
 
-1. Navigera till Managed Identity-resursen som du skapade.
+1. Navigera till resursen Managed Identity som du skapade.
 
 1. Välj **Azure rolltilldelningar** från fliken till vänster.
 
-1. Välj **+ Lägg till rolltilldelning** från navigationsmenyn.
+1. Välj **+ Lägg till rolltilldelning** från navigeringsmenyn.
 
-1. På sidan Lägg till rolltilldelning, utför följande uppgifter:
-    - Välj **Omfång** till **Resursgrupp**.
-    - Välj din Azure-**Subscription**.
-    - Välj **Resursgrupp** att använda.
-    - Välj **Roll** till **Contributor**.
+1. På sidan Lägg till rolltilldelning utför du följande:
+    - Välj **Omfattning** till **Resursgrupp**.
+    - Välj din Azure **Prenumeration**.
+    - Välj den **Resursgrupp** som ska användas.
+    - Välj **Roll** till **Bidragsgivare**.
 
     ![Fill contributor role.](../../../../../../translated_images/sv/03-04-fill-contributor-role.73990bc6a32e140d.webp)
 
 2. Välj **Spara**.
 
-#### Lägg till rolltilldelningen Storage Blob Data Reader till Managed Identity
+#### Lägg till rolltilldelning Storage Blob Data Reader till Managed Identity
 
-1. Skriv *storage accounts* i **sökrutan** högst upp på portalens sida och välj **Lagringskonton** från alternativen som visas.
+1. Skriv *storage accounts* i **sökfältet** högst upp på portalsidan och välj **Storage accounts** från alternativen som visas.
 
     ![Type storage accounts.](../../../../../../translated_images/sv/03-05-type-storage-accounts.9303de485e65e1e5.webp)
 
-1. Välj det lagringskonto som är kopplat till Azure Machine Learning-arbetsytan du skapade. Exempelvis *finetunephistorage*.
+1. Välj det lagringskonto som är kopplat till Azure Machine Learning-arbetsytan du skapade. Till exempel, *finetunephistorage*.
 
-1. Utför följande för att navigera till sidan Lägg till rolltilldelning:
+1. Utför följande för att navigera till sidan för att lägga till rolltilldelning:
 
-    - Navigera till det Azure-lagringskonto du skapade.
+    - Navigera till det Azure Storage-konto som du skapade.
     - Välj **Access Control (IAM)** från fliken till vänster.
-    - Välj **+ Lägg till** från navigationsmenyn.
-    - Välj **Lägg till rolltilldelning** från navigationsmenyn.
+    - Välj **+ Lägg till** från navigeringsmenyn.
+    - Välj **Lägg till rolltilldelning** från navigeringsmenyn.
 
     ![Add role.](../../../../../../translated_images/sv/03-06-add-role.353ccbfdcf0789c2.webp)
 
-1. På sidan Lägg till rolltilldelning, utför följande:
+1. På sidan Lägg till rolltilldelning utför du följande:
 
-    - På Roll-sidan, skriv *Storage Blob Data Reader* i **sökrutan** och välj **Storage Blob Data Reader** från alternativen som visas.
-    - På Roll-sidan, välj **Nästa**.
-    - På Medlemmar-sidan, välj **Tilldela åtkomst till** **Hantera identitet**.
-    - På Medlemmar-sidan, välj **+ Välj medlemmar**.
-    - På sidan Välj hanterade identiteter, välj din Azure-**Subscription**.
-    - På sidan Välj hanterade identiteter, välj den **Hanterade identiteten** som **Hantera identitet**.
-    - På sidan Välj hanterade identiteter, välj den Hanterade identitet du skapade. Till exempel, *finetunephi-managedidentity*.
+    - På sidan Roll, skriv *Storage Blob Data Reader* i **sökfältet** och välj **Storage Blob Data Reader** från alternativen som visas.
+    - På sidan Roll, välj **Nästa**.
+    - På sidan Medlemmar, välj **Tilldela åtkomst till** **Managed identity**.
+    - På sidan Medlemmar, välj **+ Välj medlemmar**.
+    - På sidan Välj hanterade identiteter, välj din Azure **Prenumeration**.
+    - På sidan Välj hanterade identiteter, välj den **Managed identity** till **Manage Identity**.
+    - På sidan Välj hanterade identiteter, välj den hanterade identitet du skapade. Till exempel, *finetunephi-managedidentity*.
     - På sidan Välj hanterade identiteter, välj **Välj**.
 
     ![Select managed identity.](../../../../../../translated_images/sv/03-08-select-managed-identity.e80a2aad5247eb25.webp)
 
 1. Välj **Granska + tilldela**.
 
-#### Lägg till rolltilldelningen AcrPull till Managed Identity
+#### Lägg till AcrPull rolltilldelning till Managed Identity
 
-1. Skriv *container registries* i **sökrutan** högst upp på portalens sida och välj **Container registries** från alternativen som visas.
+1. Skriv *container registries* i **sökfältet** högst upp på portalsidan och välj **Container registries** från alternativen som visas.
 
     ![Type container registries.](../../../../../../translated_images/sv/03-09-type-container-registries.7a4180eb2110e5a6.webp)
 
-1. Välj det containerregister som är kopplat till Azure Machine Learning-arbetsytan. Till exempel, *finetunephicontainerregistry*
+1. Välj container-registret som är kopplat till Azure Machine Learning-arbetsytan. Till exempel, *finetunephicontainerregistry*
 
 1. Utför följande för att navigera till sidan Lägg till rolltilldelning:
 
     - Välj **Access Control (IAM)** från fliken till vänster.
-    - Välj **+ Lägg till** från navigationsmenyn.
-    - Välj **Lägg till rolltilldelning** från navigationsmenyn.
+    - Välj **+ Lägg till** från navigeringsmenyn.
+    - Välj **Lägg till rolltilldelning** från navigeringsmenyn.
 
-1. På sidan Lägg till rolltilldelning, utför följande:
+1. På sidan Lägg till rolltilldelning utför du följande:
 
-    - På Roll-sidan, skriv *AcrPull* i **sökrutan** och välj **AcrPull** från alternativen som visas.
-    - På Roll-sidan, välj **Nästa**.
-    - På Medlemmar-sidan, välj **Tilldela åtkomst till** **Hantera identitet**.
-    - På Medlemmar-sidan, välj **+ Välj medlemmar**.
-    - På sidan Välj hanterade identiteter, välj din Azure-**Subscription**.
-    - På sidan Välj hanterade identiteter, välj den **Hanterade identiteten** som **Hantera identitet**.
-    - På sidan Välj hanterade identiteter, välj den Hanterade identitet du skapade. Till exempel, *finetunephi-managedidentity*.
+    - På sidan Roll, skriv *AcrPull* i **sökfältet** och välj **AcrPull** från alternativen som visas.
+    - På sidan Roll, välj **Nästa**.
+    - På sidan Medlemmar, välj **Tilldela åtkomst till** **Managed identity**.
+    - På sidan Medlemmar, välj **+ Välj medlemmar**.
+    - På sidan Välj hanterade identiteter, välj din Azure **Prenumeration**.
+    - På sidan Välj hanterade identiteter, välj den **Managed identity** till **Manage Identity**.
+    - På sidan Välj hanterade identiteter, välj den hanterade identitet du skapade. Till exempel, *finetunephi-managedidentity*.
     - På sidan Välj hanterade identiteter, välj **Välj**.
     - Välj **Granska + tilldela**.
 
-### Ställ in projekt
+### Ställ in projektet
 
 För att ladda ner de dataset som behövs för finjustering kommer du att ställa in en lokal miljö.
 
-I denna övning kommer du att
+I denna övning ska du
 
 - Skapa en mapp att arbeta i.
 - Skapa en virtuell miljö.
-- Installera nödvändiga paket.
+- Installera de nödvändiga paketen.
 - Skapa en fil *download_dataset.py* för att ladda ner datasetet.
 
 #### Skapa en mapp att arbeta i
@@ -217,7 +217,7 @@ I denna övning kommer du att
     mkdir finetune-phi
     ```
 
-2. Skriv följande kommando i din terminal för att navigera till mappen *finetune-phi* som du skapade.
+2. Skriv följande kommando i terminalen för att navigera till mappen *finetune-phi* som du skapade.
 
     ```console
     cd finetune-phi
@@ -225,8 +225,7 @@ I denna övning kommer du att
 
 #### Skapa en virtuell miljö
 
-1. Skriv följande kommando i din terminal för att skapa en virtuell miljö som heter *.venv*.
-
+1. Skriv följande kommando i terminalen för att skapa en virtuell miljö med namnet *.venv*.
     ```console
     python -m venv .venv
     ```
@@ -238,9 +237,9 @@ I denna övning kommer du att
     ```
 
 > [!NOTE]
-> Om det fungerade borde du se *(.venv)* före kommandoprompten.
+> Om det fungerade ska du se *(.venv)* före kommandoprompten.
 
-#### Installera nödvändiga paket
+#### Installera de nödvändiga paketen
 
 1. Skriv följande kommandon i din terminal för att installera de nödvändiga paketen.
 
@@ -265,7 +264,7 @@ I denna övning kommer du att
 
 1. Välj **Open Folder**.
 
-1. Välj mappen *finetune-phi* som du skapade, som finns i *C:\Users\yourUserName\finetune-phi*.
+1. Välj mappen *finetune-phi* som du skapade, vilken finns på *C:\Users\dinAnvändare\finetune-phi*.
 
     ![Välj mappen som du skapade.](../../../../../../translated_images/sv/04-01-open-project-folder.f734374bcfd5f9e6.webp)
 
@@ -275,12 +274,12 @@ I denna övning kommer du att
 
 ### Förbered dataset för finjustering
 
-I denna övning kommer du köra filen *download_dataset.py* för att ladda ner *ultrachat_200k* datasets till din lokala miljö. Du kommer sedan att använda dessa dataset för att finjustera Phi-3 modellen i Azure Machine Learning.
+I denna övning kommer du att köra filen *download_dataset.py* för att ladda ner *ultrachat_200k* dataseten till din lokala miljö. Du kommer sedan att använda detta dataset för att finjustera Phi-3-modellen i Azure Machine Learning.
 
-I denna övning ska du:
+I denna övning kommer du att:
 
-- Lägga till kod i filen *download_dataset.py* för att ladda ner dataseten.
-- Köra filen *download_dataset.py* för att ladda ner dataseten till din lokala miljö.
+- Lägga till kod i filen *download_dataset.py* för att ladda ner dataset.
+- Köra filen *download_dataset.py* för att ladda ner dataset till din lokala miljö.
 
 #### Ladda ner ditt dataset med *download_dataset.py*
 
@@ -301,7 +300,7 @@ I denna övning ska du:
         dataset = load_dataset(dataset_name, config_name, split=split_ratio)
         print(f"Original dataset size: {len(dataset)}")
         
-        # Dela upp datasetet i tränings- och testuppsättningar (80 % träning, 20 % test)
+        # Dela datasetet i tränings- och testuppsättningar (80% träning, 20% test)
         split_dataset = dataset.train_test_split(test_size=0.2)
         print(f"Train dataset size: {len(split_dataset['train'])}")
         print(f"Test dataset size: {len(split_dataset['test'])}")
@@ -319,9 +318,9 @@ I denna övning ska du:
         with open(filepath, 'w', encoding='utf-8') as f:
             # Iterera över varje post i datasetet
             for record in dataset:
-                # Skriv posten som ett JSON-objekt och skriv det till filen
+                # Dumpa posten som ett JSON-objekt och skriv det till filen
                 json.dump(record, f)
-                # Skriv en radbrytning för att separera poster
+                # Skriv en ny rad för att separera poster
                 f.write('\n')
         
         print(f"Dataset saved to {filepath}")
@@ -330,10 +329,10 @@ I denna övning ska du:
         """
         Main function to load, split, and save the dataset.
         """
-        # Ladda och dela ULTRACHAT_200k datasetet med en specifik konfiguration och delningsförhållande
+        # Ladda och dela ULTRACHAT_200k-datasetet med en specifik konfiguration och delningsförhållande
         dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
         
-        # Extrahera tränings- och testdataset från delningen
+        # Extrahera tränings- och testdataseten från delningen
         train_dataset = dataset['train']
         test_dataset = dataset['test']
 
@@ -354,32 +353,32 @@ I denna övning ska du:
     python download_dataset.py
     ```
 
-1. Verifiera att dataseten har sparats framgångsrikt i din lokala mapp *finetune-phi/data*.
+1. Kontrollera att dataset har sparats framgångsrikt till din lokala *finetune-phi/data*-mapp.
 
 > [!NOTE]
 >
-> #### Notera datasetstorlek och finjusteringstid
+> #### Notera datasetets storlek och finjusteringstid
 >
-> I denna handledning använder du endast 1% av datasettet (`split='train[:1%]'`). Detta minskar mängden data avsevärt, vilket gör både uppladdnings- och finjusteringsprocesserna snabbare. Du kan justera procentsatsen för att hitta rätt balans mellan träningstid och modellprestanda. Att använda en mindre delmängd av datasettet minskar den tid som krävs för finjustering och gör processen mer hanterbar för en handledning.
+> I denna handledning använder du endast 1% av datasetet (`split='train[:1%]'`). Detta minskar mängden data avsevärt, vilket påskyndar både uppladdning och finjustering. Du kan justera procentandelen för att hitta rätt balans mellan träningstid och modellprestanda. Att använda en mindre delmängd av datasetet minskar tiden som krävs för finjustering, vilket gör processen mer hanterbar för en handledning.
 
-## Scenario 2: Finjustera Phi-3 modellen och distribuera i Azure Machine Learning Studio
+## Scenario 2: Finjustera Phi-3-modellen och distribuera i Azure Machine Learning Studio
 
-### Finjustera Phi-3 modellen
+### Finjustera Phi-3-modellen
 
-I denna övning ska du finjustera Phi-3 modellen i Azure Machine Learning Studio.
+I denna övning kommer du att finjustera Phi-3-modellen i Azure Machine Learning Studio.
 
-I denna övning ska du:
+I denna övning kommer du att:
 
-- Skapa datorcluster för finjustering.
-- Finjustera Phi-3 modellen i Azure Machine Learning Studio.
+- Skapa ett dator-kluster för finjustering.
+- Finjustera Phi-3-modellen i Azure Machine Learning Studio.
 
-#### Skapa datorcluster för finjustering
+#### Skapa dator-kluster för finjustering
 
 1. Besök [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Välj **Compute** från fliken till vänster.
 
-1. Välj **Compute clusters** från navigeringsmenyn.
+1. Välj **Compute clusters** i navigationsmenyn.
 
 1. Välj **+ New**.
 
@@ -387,7 +386,7 @@ I denna övning ska du:
 
 1. Utför följande uppgifter:
 
-    - Välj den **Region** du vill använda.
+    - Välj önskad **Region**.
     - Välj **Virtual machine tier** till **Dedicated**.
     - Välj **Virtual machine type** till **GPU**.
     - Välj filtret för **Virtual machine size** till **Select from all options**.
@@ -399,7 +398,7 @@ I denna övning ska du:
 
 1. Utför följande uppgifter:
 
-    - Ange **Compute name**. Det måste vara ett unikt värde.
+    - Ange **Compute name**. Det måste vara ett unikt namn.
     - Välj **Minimum number of nodes** till **0**.
     - Välj **Maximum number of nodes** till **1**.
     - Välj **Idle seconds before scale down** till **120**.
@@ -408,13 +407,13 @@ I denna övning ska du:
 
 1. Välj **Create**.
 
-#### Finjustera Phi-3 modellen
+#### Finjustera Phi-3-modellen
 
 1. Besök [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Välj den Azure Machine Learning workspace som du skapade.
+1. Välj den Azure Machine Learning-arbetsytan som du skapade.
 
-    ![Välj workspace som du skapade.](../../../../../../translated_images/sv/06-04-select-workspace.a92934ac04f4f181.webp)
+    ![Välj arbetsyta som du skapade.](../../../../../../translated_images/sv/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Utför följande uppgifter:
 
@@ -423,46 +422,46 @@ I denna övning ska du:
 
     ![Skriv phi-3-mini-4k.](../../../../../../translated_images/sv/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.webp)
 
-1. Välj **Fine-tune** från navigeringsmenyn.
+1. Välj **Fine-tune** i navigationsmenyn.
 
-    ![Välj finjustera.](../../../../../../translated_images/sv/06-06-select-fine-tune.2918a59be55dfeec.webp)
+    ![Välj finjustering.](../../../../../../translated_images/sv/06-06-select-fine-tune.2918a59be55dfeec.webp)
 
 1. Utför följande uppgifter:
 
     - Välj **Select task type** till **Chat completion**.
     - Välj **+ Select data** för att ladda upp **Träningsdata**.
-    - Välj typen för valideringsdatauppladdning till **Provide different validation data**.
+    - Välj valideringsdata-typ till **Provide different validation data**.
     - Välj **+ Select data** för att ladda upp **Valideringsdata**.
 
-    ![Fyll i sidan för finjustering.](../../../../../../translated_images/sv/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
+    ![Fyll i finjusteringssidan.](../../../../../../translated_images/sv/06-07-fill-finetuning.b6d14c89e7c27d0b.webp)
 
 > [!TIP]
 >
-> Du kan välja **Advanced settings** för att anpassa konfigurationer som **learning_rate** och **lr_scheduler_type** för att optimera finjusteringsprocessen efter dina specifika behov.
+> Du kan välja **Advanced settings** för att anpassa inställningar som **learning_rate** och **lr_scheduler_type** för att optimera finjusteringsprocessen efter dina specifika behov.
 
 1. Välj **Finish**.
 
-1. I denna övning har du framgångsrikt finjusterat Phi-3 modellen med hjälp av Azure Machine Learning. Observera att finjusteringsprocessen kan ta en avsevärd tid. Efter att du startat finjusteringsjobbet behöver du vänta tills det är klart. Du kan följa statusen för finjusteringsjobbet genom att navigera till fliken Jobs till vänster i din Azure Machine Learning Workspace. I nästa serie kommer du distribuera den finjusterade modellen och integrera den med Prompt flow.
+1. I denna övning finjusterade du framgångsrikt Phi-3-modellen med Azure Machine Learning. Observera att finjusteringsprocessen kan ta betydande tid. Efter att ha startat finjusteringsjobbet måste du vänta på att det ska slutföras. Du kan övervaka jobbstatus genom att gå till fliken Jobs på vänster sida i din Azure Machine Learning-arbetsyta. I nästa del kommer du att distribuera den finjusterade modellen och integrera den med Prompt flow.
 
     ![Se finjusteringsjobb.](../../../../../../translated_images/sv/06-08-output.2bd32e59930672b1.webp)
 
-### Distribuera den finjusterade Phi-3 modellen
+### Distribuera den finjusterade Phi-3-modellen
 
-För att integrera den finjusterade Phi-3 modellen med Prompt flow behöver du distribuera modellen för att göra den tillgänglig för realtidsinferens. Denna process inkluderar att registrera modellen, skapa en online-endpoint och distribuera modellen.
+För att integrera den finjusterade Phi-3-modellen med Prompt flow, måste du distribuera modellen för att göra den tillgänglig för realtidsinferenz. Denna process innefattar att registrera modellen, skapa en online-endpoint och distribuera modellen.
 
-I denna övning ska du:
+I denna övning kommer du att:
 
-- Registrera den finjusterade modellen i Azure Machine Learning workspace.
+- Registrera den finjusterade modellen i Azure Machine Learning-arbetsytan.
 - Skapa en online-endpoint.
-- Distribuera den registrerade finjusterade Phi-3 modellen.
+- Distribuera den registrerade finjusterade Phi-3-modellen.
 
 #### Registrera den finjusterade modellen
 
 1. Besök [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Välj den Azure Machine Learning workspace som du skapade.
+1. Välj den Azure Machine Learning-arbetsyta som du skapade.
 
-    ![Välj workspace som du skapade.](../../../../../../translated_images/sv/06-04-select-workspace.a92934ac04f4f181.webp)
+    ![Välj arbetsyta som du skapade.](../../../../../../translated_images/sv/06-04-select-workspace.a92934ac04f4f181.webp)
 
 1. Välj **Models** från fliken till vänster.
 1. Välj **+ Register**.
@@ -470,7 +469,7 @@ I denna övning ska du:
 
     ![Registrera modell.](../../../../../../translated_images/sv/07-01-register-model.ad1e7cc05e4b2777.webp)
 
-1. Välj jobbet som du skapade.
+1. Välj det jobb som du skapade.
 
     ![Välj jobb.](../../../../../../translated_images/sv/07-02-select-job.3e2e1144cd6cd093.webp)
 
@@ -478,9 +477,9 @@ I denna övning ska du:
 
 1. Välj **Model type** till **MLflow**.
 
-1. Säkerställ att **Job output** är valt; det bör väljas automatiskt.
+1. Säkerställ att **Job output** är valt; det ska väljas automatiskt.
 
-    ![Välj utdata.](../../../../../../translated_images/sv/07-03-select-output.4cf1a0e645baea1f.webp)
+    ![Välj output.](../../../../../../translated_images/sv/07-03-select-output.4cf1a0e645baea1f.webp)
 
 2. Välj **Next**.
 
@@ -488,23 +487,23 @@ I denna övning ska du:
 
     ![Välj registrera.](../../../../../../translated_images/sv/07-04-register.fd82a3b293060bc7.webp)
 
-4. Du kan visa dina registrerade modeller genom att navigera till menyn **Models** från fliken till vänster.
+4. Du kan se din registrerade modell genom att navigera till menyn **Models** från fliken till vänster.
 
     ![Registrerad modell.](../../../../../../translated_images/sv/07-05-registered-model.7db9775f58dfd591.webp)
 
 #### Distribuera den finjusterade modellen
 
-1. Navigera till den Azure Machine Learning workspace som du skapade.
+1. Navigera till den Azure Machine Learning-arbetsyta som du skapade.
 
 1. Välj **Endpoints** från fliken till vänster.
 
-1. Välj **Real-time endpoints** från navigeringsmenyn.
+1. Välj **Real-time endpoints** från navigationsmenyn.
 
     ![Skapa endpoint.](../../../../../../translated_images/sv/07-06-create-endpoint.1ba865c606551f09.webp)
 
 1. Välj **Create**.
 
-1. Välj den registrerade modellen som du skapade.
+1. välj den registrerade modellen som du skapade.
 
     ![Välj registrerad modell.](../../../../../../translated_images/sv/07-07-select-registered-model.29c947c37fa30cb4.webp)
 
@@ -513,22 +512,22 @@ I denna övning ska du:
 1. Utför följande uppgifter:
 
     - Välj **Virtual machine** till *Standard_NC6s_v3*.
-    - Välj det **Instance count** du vill använda. Till exempel, *1*.
+    - Välj **Instance count** som du vill använda. Till exempel *1*.
     - Välj **Endpoint** till **New** för att skapa en endpoint.
-    - Ange **Endpoint name**. Det måste vara ett unikt värde.
-    - Ange **Deployment name**. Det måste vara ett unikt värde.
+    - Ange **Endpoint name**. Det måste vara unikt.
+    - Ange **Deployment name**. Det måste vara unikt.
 
     ![Fyll i distributionsinställningarna.](../../../../../../translated_images/sv/07-08-deployment-setting.43ddc4209e673784.webp)
 
 1. Välj **Deploy**.
 
 > [!WARNING]
-> För att undvika extra kostnader på ditt konto, se till att ta bort den skapade endpointen i Azure Machine Learning workspace.
+> För att undvika extra kostnader på ditt konto, se till att ta bort den skapade endpointen i Azure Machine Learning-arbetsytan.
 >
 
 #### Kontrollera distributionsstatus i Azure Machine Learning Workspace
 
-1. Navigera till Azure Machine Learning workspace som du skapade.
+1. Navigera till Azure Machine Learning-arbetsytan som du skapade.
 
 1. Välj **Endpoints** från fliken till vänster.
 
@@ -539,149 +538,149 @@ I denna övning ska du:
 1. På denna sida kan du hantera endpoints under distributionsprocessen.
 
 > [!NOTE]
-> När distributionen är klar, se till att **Live traffic** är inställt på **100%**. Om det inte är det, välj **Update traffic** för att justera trafikinställningarna. Observera att du inte kan testa modellen om trafiken är satt till 0%.
+> När distributionen är klar, se till att **Live traffic** är satt till **100%**. Om det inte är det, välj **Update traffic** för att justera trafikinställningarna. Observera att du inte kan testa modellen om trafiken är satt till 0%.
 >
-> ![Ställ in trafik.](../../../../../../translated_images/sv/07-10-set-traffic.085b847e5751ff3d.webp)
+> ![Sätt trafik.](../../../../../../translated_images/sv/07-10-set-traffic.085b847e5751ff3d.webp)
 >
 
-## Scenario 3: Integrera med Prompt flow och chatta med din anpassade modell i Azure AI Foundry
+## Scenario 3: Integrera med Prompt flow och chatta med din anpassade modell i Microsoft Foundry
 
-### Integrera den anpassade Phi-3 modellen med Prompt flow
+### Integrera den anpassade Phi-3-modellen med Prompt flow
 
-Efter att du framgångsrikt har distribuerat din finjusterade modell kan du nu integrera den med Prompt Flow för att använda din modell i realtidsapplikationer, vilket möjliggör en rad interaktiva uppgifter med din anpassade Phi-3 modell.
+Efter att ha framgångsrikt distribuerat din finjusterade modell kan du nu integrera den med Prompt Flow för att använda din modell i realtidsapplikationer, vilket möjliggör en rad interaktiva uppgifter med din anpassade Phi-3-modell.
 
-I denna övning ska du:
+I denna övning kommer du att:
 
-- Skapa Azure AI Foundry Hub.
-- Skapa Azure AI Foundry Project.
+- Skapa Microsoft Foundry Hub.
+- Skapa Microsoft Foundry-projekt.
 - Skapa Prompt flow.
-- Lägg till en anpassad anslutning för den finjusterade Phi-3 modellen.
-- Ställ in Prompt flow för att chatta med din anpassade Phi-3 modell.
+- Lägga till en anpassad anslutning för den finjusterade Phi-3-modellen.
+- Konfigurera Prompt flow för att chatta med din anpassade Phi-3-modell.
 
 > [!NOTE]
-> Du kan också integrera med Promptflow med hjälp av Azure ML Studio. Samma integrationsprocess kan användas i Azure ML Studio.
+> Du kan också integrera med Promptflow via Azure ML Studio. Samma integrationsprocess kan användas för Azure ML Studio.
 
-#### Skapa Azure AI Foundry Hub
+#### Skapa Microsoft Foundry Hub
 
-Du måste skapa en Hub innan du skapar Project. En Hub fungerar som en Resursgrupp och gör att du kan organisera och hantera flera Projects inom Azure AI Foundry.
+Du måste skapa en Hub innan du skapar projektet. En Hub fungerar som en resursgrupp och låter dig organisera och hantera flera projekt inom Microsoft Foundry.
+1. Besök [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Besök [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Välj **All hubs** från vänstermenyn.
 
-1. Välj **All hubs** från fliken till vänster.
+1. Välj **+ New hub** från navigationsmenyn.
 
-1. Välj **+ New hub** från navigeringsmenyn.
-    ![Skapa hubb.](../../../../../../translated_images/sv/08-01-create-hub.8f7dd615bb8d9834.webp)
+    ![Create hub.](../../../../../../translated_images/sv/08-01-create-hub.8f7dd615bb8d9834.webp)
 
 1. Utför följande uppgifter:
 
-    - Ange **Hub-namn**. Det måste vara ett unikt värde.
-    - Välj din Azure-**Prenumeration**.
-    - Välj **Resursgrupp** att använda (skapa en ny om det behövs).
-    - Välj **Plats** som du vill använda.
-    - Välj **Anslut Azure AI-tjänster** att använda (skapa en ny om det behövs).
-    - Välj **Anslut Azure AI Search** till **Hoppa över anslutning**.
+    - Ange **Hub name**. Det måste vara ett unikt värde.
+    - Välj din Azure **Subscription**.
+    - Välj den **Resource group** som ska användas (skapa en ny om det behövs).
+    - Välj den **Location** du vill använda.
+    - Välj **Connect Azure AI Services** att använda (skapa en ny om det behövs).
+    - Välj **Connect Azure AI Search** och **Skip connecting**.
 
-    ![Fyll i hubben.](../../../../../../translated_images/sv/08-02-fill-hub.c2d3b505bbbdba7c.webp)
+    ![Fill hub.](../../../../../../translated_images/sv/08-02-fill-hub.c2d3b505bbbdba7c.webp)
 
-1. Välj **Nästa**.
+1. Välj **Next**.
 
-#### Skapa Azure AI Foundry-projekt
+#### Skapa Microsoft Foundry-projekt
 
-1. I hubben du skapade, välj **Alla projekt** från fliken på vänster sida.
+1. I den Hub du skapade, välj **All projects** från vänstermenyn.
 
-1. Välj **+ Nytt projekt** i navigationsmenyn.
+1. Välj **+ New project** från navigationsmenyn.
 
-    ![Välj nytt projekt.](../../../../../../translated_images/sv/08-04-select-new-project.390fadfc9c8f8f12.webp)
+    ![Select new project.](../../../../../../translated_images/sv/08-04-select-new-project.390fadfc9c8f8f12.webp)
 
-1. Ange **Projektnamn**. Det måste vara ett unikt värde.
+1. Ange **Project name**. Det måste vara ett unikt värde.
 
-    ![Skapa projekt.](../../../../../../translated_images/sv/08-05-create-project.4d97f0372f03375a.webp)
+    ![Create project.](../../../../../../translated_images/sv/08-05-create-project.4d97f0372f03375a.webp)
 
-1. Välj **Skapa ett projekt**.
+1. Välj **Create a project**.
 
 #### Lägg till en anpassad anslutning för den finjusterade Phi-3-modellen
 
-För att integrera din anpassade Phi-3-modell med Prompt flow behöver du spara modellens slutpunkt och nyckel i en anpassad anslutning. Denna inställning säkerställer åtkomst till din anpassade Phi-3-modell i Prompt flow.
+För att integrera din anpassade Phi-3-modell med Prompt flow behöver du spara modellens endpoint och nyckel i en anpassad anslutning. Denna inställning säkerställer tillgång till din anpassade Phi-3-modell i Prompt flow.
 
-#### Ställ in api-nyckel och slutpunkts-URI för den finjusterade Phi-3-modellen
+#### Ställ in api-nyckel och endpoint-URI för den finjusterade Phi-3-modellen
 
 1. Besök [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Navigera till Azure Machine learning-arbetsytan som du skapade.
+1. Navigera till den Azure Machine learning-arbetsyta som du skapade.
 
-1. Välj **Endpoints** från fliken på vänster sida.
+1. Välj **Endpoints** från vänstermenyn.
 
-    ![Välj endpoints.](../../../../../../translated_images/sv/08-06-select-endpoints.aff38d453bcf9605.webp)
+    ![Select endpoints.](../../../../../../translated_images/sv/08-06-select-endpoints.aff38d453bcf9605.webp)
 
-1. Välj endpointen som du skapade.
+1. Välj den endpoint som du skapade.
 
-    ![Välj endpoints.](../../../../../../translated_images/sv/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
+    ![Select endpoints.](../../../../../../translated_images/sv/08-07-select-endpoint-created.47f0dc09df2e275e.webp)
 
-1. Välj **Använd** från navigationsmenyn.
+1. Välj **Consume** från navigationsmenyn.
 
-1. Kopiera din **REST-slutpunkt** och **Primära nyckel**.
+1. Kopiera din **REST endpoint** och **Primary key**.
 
-    ![Kopiera api-nyckel och slutpunkts-URI.](../../../../../../translated_images/sv/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/sv/08-08-copy-endpoint-key.18f934b5953ae8cb.webp)
 
 #### Lägg till den anpassade anslutningen
 
-1. Besök [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Besök [Microsoft Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Navigera till Azure AI Foundry-projektet som du skapade.
+1. Navigera till det Microsoft Foundry-projekt som du skapade.
 
-1. I projektet som du skapade, välj **Inställningar** från fliken på vänster sida.
+1. I projektet du skapade, välj **Settings** från vänstermenyn.
 
-1. Välj **+ Ny anslutning**.
+1. Välj **+ New connection**.
 
-    ![Välj ny anslutning.](../../../../../../translated_images/sv/08-09-select-new-connection.02eb45deadc401fc.webp)
+    ![Select new connection.](../../../../../../translated_images/sv/08-09-select-new-connection.02eb45deadc401fc.webp)
 
-1. Välj **Anpassade nycklar** från navigationsmenyn.
+1. Välj **Custom keys** från navigationsmenyn.
 
-    ![Välj anpassade nycklar.](../../../../../../translated_images/sv/08-10-select-custom-keys.856f6b2966460551.webp)
+    ![Select custom keys.](../../../../../../translated_images/sv/08-10-select-custom-keys.856f6b2966460551.webp)
 
 1. Utför följande uppgifter:
 
-    - Välj **+ Lägg till nyckel-värdepar**.
-    - För nyckelnamn, skriv **endpoint** och klistra in slutpunkten du kopierade från Azure ML Studio i värdefältet.
-    - Välj **+ Lägg till nyckel-värdepar** igen.
-    - För nyckelnamn, skriv **key** och klistra in nyckeln du kopierade från Azure ML Studio i värdefältet.
-    - Efter att du lagt till nycklarna, markera **är hemlig** för att förhindra att nyckeln exponeras.
+    - Välj **+ Add key value pairs**.
+    - För nyckelnamn, ange **endpoint** och klistra in endpointen du kopierade från Azure ML Studio i värdefältet.
+    - Välj **+ Add key value pairs** igen.
+    - För nyckelnamn, ange **key** och klistra in nyckeln du kopierade från Azure ML Studio i värdefältet.
+    - Efter att ha lagt till nycklarna, välj **is secret** för att förhindra att nyckeln exponeras.
 
-    ![Lägg till anslutning.](../../../../../../translated_images/sv/08-11-add-connection.785486badb4d2d26.webp)
+    ![Add connection.](../../../../../../translated_images/sv/08-11-add-connection.785486badb4d2d26.webp)
 
-1. Välj **Lägg till anslutning**.
+1. Välj **Add connection**.
 
 #### Skapa Prompt flow
 
-Du har lagt till en anpassad anslutning i Azure AI Foundry. Låt oss nu skapa en Prompt flow med följande steg. Sedan kommer du att koppla denna Prompt flow till den anpassade anslutningen så att du kan använda den finjusterade modellen inom Prompt flow.
+Du har lagt till en anpassad anslutning i Microsoft Foundry. Nu ska vi skapa ett Prompt flow med följande steg. Sedan kommer du ansluta detta Prompt flow till den anpassade anslutningen så att du kan använda den finjusterade modellen inom Prompt flow.
 
-1. Navigera till Azure AI Foundry-projektet som du skapade.
+1. Navigera till det Microsoft Foundry-projekt som du skapade.
 
-1. Välj **Prompt flow** från fliken på vänster sida.
+1. Välj **Prompt flow** från vänstermenyn.
 
-1. Välj **+ Skapa** från navigationsmenyn.
+1. Välj **+ Create** från navigationsmenyn.
 
-    ![Välj Promptflow.](../../../../../../translated_images/sv/08-12-select-promptflow.6f4b451cb9821e5b.webp)
+    ![Select Promptflow.](../../../../../../translated_images/sv/08-12-select-promptflow.6f4b451cb9821e5b.webp)
 
-1. Välj **Chatflow** från navigationsmenyn.
+1. Välj **Chat flow** från navigationsmenyn.
 
-    ![Välj chatflow.](../../../../../../translated_images/sv/08-13-select-flow-type.2ec689b22da32591.webp)
+    ![Select chat flow.](../../../../../../translated_images/sv/08-13-select-flow-type.2ec689b22da32591.webp)
 
-1. Ange **Mappnamn** som ska användas.
+1. Ange **Folder name** att använda.
 
-    ![Ange namn.](../../../../../../translated_images/sv/08-14-enter-name.ff9520fefd89f40d.webp)
+    ![Enter name.](../../../../../../translated_images/sv/08-14-enter-name.ff9520fefd89f40d.webp)
 
-2. Välj **Skapa**.
+2. Välj **Create**.
 
-#### Ställ in Prompt flow för att chatta med din anpassade Phi-3-modell
+#### Konfigurera Prompt flow för att chatta med din anpassade Phi-3-modell
 
-Du behöver integrera den finjusterade Phi-3-modellen i en Prompt flow. Den befintliga Prompt flowen som tillhandahålls är dock inte designad för detta ändamål. Därför måste du omdesigna Prompt flowen för att möjliggöra integrationen av den anpassade modellen.
+Du behöver integrera den finjusterade Phi-3-modellen i ett Prompt flow. Den befintliga Prompt flow som tillhandahålls är dock inte designad för detta ändamål. Därför måste du designa om Prompt flow för att möjliggöra integration av den anpassade modellen.
 
-1. I Prompt flow, utför följande uppgifter för att bygga om den befintliga flowen:
+1. I Prompt flow, utför följande uppgifter för att bygga om det befintliga flödet:
 
-    - Välj **Rå filläge**.
-    - Radera all befintlig kod i filen *flow.dag.yml*.
-    - Lägg till följande kod i filen *flow.dag.yml*.
+    - Välj **Raw file mode**.
+    - Radera all befintlig kod i *flow.dag.yml*-filen.
+    - Lägg till följande kod i *flow.dag.yml*-filen.
 
         ```yml
         inputs:
@@ -704,11 +703,11 @@ Du behöver integrera den finjusterade Phi-3-modellen i en Prompt flow. Den befi
             input_data: ${inputs.input_data}
         ```
 
-    - Välj **Spara**.
+    - Välj **Save**.
 
-    ![Välj rå filläge.](../../../../../../translated_images/sv/08-15-select-raw-file-mode.61d988b41df28985.webp)
+    ![Select raw file mode.](../../../../../../translated_images/sv/08-15-select-raw-file-mode.61d988b41df28985.webp)
 
-1. Lägg till följande kod i filen *integrate_with_promptflow.py* för att använda den anpassade Phi-3-modellen i Prompt flow.
+1. Lägg till följande kod i *integrate_with_promptflow.py*-filen för att använda den anpassade Phi-3-modellen i Prompt flow.
 
     ```python
     import logging
@@ -771,57 +770,57 @@ Du behöver integrera den finjusterade Phi-3-modellen i en Prompt flow. Den befi
 
     ```
 
-    ![Klistra in prompt flow-koden.](../../../../../../translated_images/sv/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
+    ![Paste prompt flow code.](../../../../../../translated_images/sv/08-16-paste-promptflow-code.a6041b74a7d09777.webp)
 
 > [!NOTE]
-> För mer detaljerad information om att använda Prompt flow i Azure AI Foundry kan du referera till [Prompt flow i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> För mer detaljerad information om att använda Prompt flow i Microsoft Foundry kan du referera till [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Välj **Chattinmatning**, **Chattutmatning** för att aktivera chatt med din modell.
+1. Välj **Chat input**, **Chat output** för att aktivera chatt med din modell.
 
-    ![Inmatning Utmatning.](../../../../../../translated_images/sv/08-17-select-input-output.64dbb39bbe59d03b.webp)
+    ![Input Output.](../../../../../../translated_images/sv/08-17-select-input-output.64dbb39bbe59d03b.webp)
 
-1. Nu är du redo att chatta med din anpassade Phi-3-modell. I nästa övning kommer du att lära dig hur du startar Prompt flow och använder den för att chatta med din finjusterade Phi-3-modell.
+1. Nu är du redo att chatta med din anpassade Phi-3-modell. I nästa övning lär du dig hur du startar Prompt flow och använder det för att chatta med din finjusterade Phi-3-modell.
 
 > [!NOTE]
 >
-> Den ombyggda flowen bör se ut som bilden nedan:
+> Det ombyggda flödet bör se ut som bilden nedan:
 >
-> ![Exempel på flow.](../../../../../../translated_images/sv/08-18-graph-example.d6457533952e690c.webp)
+> ![Flow example.](../../../../../../translated_images/sv/08-18-graph-example.d6457533952e690c.webp)
 >
 
 ### Chatta med din anpassade Phi-3-modell
 
-Nu när du har finjusterat och integrerat din anpassade Phi-3-modell med Prompt flow är du redo att börja interagera med den. Denna övning guidar dig genom processen att ställa in och initiera en chatt med din modell med hjälp av Prompt flow. Genom att följa dessa steg kommer du kunna utnyttja kapaciteterna hos din finjusterade Phi-3-modell fullt ut för olika uppgifter och konversationer.
+Nu när du har finjusterat och integrerat din anpassade Phi-3-modell med Prompt flow är du redo att börja interagera med den. Den här övningen guidar dig genom processen att ställa in och initiera en chatt med din modell med hjälp av Prompt flow. Genom att följa dessa steg kan du fullt ut använda kapabiliteterna hos din finjusterade Phi-3-modell för olika uppgifter och samtal.
 
-- Chatta med din anpassade Phi-3-modell med Prompt flow.
+- Chatta med din anpassade Phi-3-modell med hjälp av Prompt flow.
 
 #### Starta Prompt flow
 
-1. Välj **Starta beräkningssessioner** för att starta Prompt flow.
+1. Välj **Start compute sessions** för att starta Prompt flow.
 
-    ![Starta beräkningssession.](../../../../../../translated_images/sv/09-01-start-compute-session.a86fcf5be68e386b.webp)
+    ![Start compute session.](../../../../../../translated_images/sv/09-01-start-compute-session.a86fcf5be68e386b.webp)
 
-1. Välj **Verifiera och analysera inmatning** för att förnya parametrar.
+1. Välj **Validate and parse input** för att förnya parametrar.
 
-    ![Verifiera inmatning.](../../../../../../translated_images/sv/09-02-validate-input.317c76ef766361e9.webp)
+    ![Validate input.](../../../../../../translated_images/sv/09-02-validate-input.317c76ef766361e9.webp)
 
-1. Välj **Värdet** för **anslutningen** till den anpassade anslutningen du skapade. Till exempel, *connection*.
+1. Välj **Value** för **connection** till den anpassade anslutning du skapade. Till exempel, *connection*.
 
-    ![Anslutning.](../../../../../../translated_images/sv/09-03-select-connection.99bdddb4b1844023.webp)
+    ![Connection.](../../../../../../translated_images/sv/09-03-select-connection.99bdddb4b1844023.webp)
 
 #### Chatta med din anpassade modell
 
-1. Välj **Chatt**.
+1. Välj **Chat**.
 
-    ![Välj chatt.](../../../../../../translated_images/sv/09-04-select-chat.61936dce6612a1e6.webp)
+    ![Select chat.](../../../../../../translated_images/sv/09-04-select-chat.61936dce6612a1e6.webp)
 
-1. Här är ett exempel på resultaten: Nu kan du chatta med din anpassade Phi-3-modell. Det rekommenderas att ställa frågor baserade på den data som användes för finjusteringen.
+1. Här är ett exempel på resultat: Nu kan du chatta med din anpassade Phi-3-modell. Det rekommenderas att ställa frågor baserade på den data som användes för finjusteringen.
 
-    ![Chatta med prompt flow.](../../../../../../translated_images/sv/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
+    ![Chat with prompt flow.](../../../../../../translated_images/sv/09-05-chat-with-promptflow.c8ca404c07ab126f.webp)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**Ansvarsfriskrivning**:
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+**Ansvarsfriskrivning**:  
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
