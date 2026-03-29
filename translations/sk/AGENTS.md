@@ -2,31 +2,31 @@
 
 ## Prehľad projektu
 
-PhiCookBook je komplexný repozitár kuchárskej knihy obsahujúci praktické príklady, tutoriály a dokumentáciu na prácu s rodinou malých jazykových modelov (SLM) od Microsoftu. Repozitár demonštruje rôzne použitia vrátane inferencie, jemného doladenia, kvantizácie, implementácií RAG a multimodálnych aplikácií na rôznych platformách a rámcoch.
+PhiCookBook je komplexné repozitár kuchárskych receptov obsahujúci praktické príklady, návody a dokumentáciu pre prácu s rodinou malých jazykových modelov spoločnosti Microsoft Phi (SLMs). Repozitár demonštruje rôzne použitia vrátane inferencie, doladenia, kvantizácie, implementácií RAG a multimodálnych aplikácií naprieč rôznymi platformami a rámcami.
 
 **Kľúčové technológie:**
 - **Jazyky:** Python, C#/.NET, JavaScript/Node.js
 - **Rámce:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformy:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **Typy modelov:** Phi-3, Phi-3.5, Phi-4 (textové, vizuálne, multimodálne, varianty na uvažovanie)
+- **Platformy:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Typy modelov:** Phi-3, Phi-3.5, Phi-4 (text, videnie, multimodálne, varianty pre uvažovanie)
 
 **Štruktúra repozitára:**
-- `/code/` - Pracovné príklady kódu a ukážkové implementácie
-- `/md/` - Podrobná dokumentácia, tutoriály a návody  
-- `/translations/` - Preklady do viacerých jazykov (50+ jazykov prostredníctvom automatizovaného pracovného toku)
+- `/code/` - Pracovné príklady kódu a vzorové implementácie
+- `/md/` - Podrobná dokumentácia, návody a sprievodcovia  
+- `/translations/` - Viacjazyčné preklady (viac ako 50 jazykov cez automatizovaný workflow)
 - `/.devcontainer/` - Konfigurácia vývojového kontajnera (Python 3.12 s Ollama)
 
 ## Nastavenie vývojového prostredia
 
-### Použitie GitHub Codespaces alebo vývojových kontajnerov (odporúčané)
+### Použitie GitHub Codespaces alebo Dev Containers (odporúčané)
 
 1. Otvorte v GitHub Codespaces (najrýchlejšie):
-   - Kliknite na odznak "Open in GitHub Codespaces" v README
+   - Kliknite na odznak „Open in GitHub Codespaces“ v README
    - Kontajner sa automaticky nakonfiguruje s Python 3.12 a Ollama s Phi-3
 
 2. Otvorte vo VS Code Dev Containers:
-   - Použite odznak "Open in Dev Containers" z README
-   - Kontajner vyžaduje minimálne 16GB pamäte hostiteľa
+   - Použite odznak „Open in Dev Containers“ z README
+   - Kontajner vyžaduje minimálne 16 GB pamäte hostiteľa
 
 ### Lokálne nastavenie
 
@@ -34,7 +34,7 @@ PhiCookBook je komplexný repozitár kuchárskej knihy obsahujúci praktické pr
 - Python 3.12 alebo novší
 - .NET 8.0 SDK (pre príklady v C#)
 - Node.js 18+ a npm (pre príklady v JavaScripte)
-- Odporúča sa minimálne 16GB RAM
+- Odporúča sa minimálne 16 GB RAM
 
 **Inštalácia:**
 ```bash
@@ -42,68 +42,68 @@ git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
 ```
 
-**Pre Python príklady:**
-Prejdite do konkrétnych adresárov s príkladmi a nainštalujte závislosti:
+**Pre príklady v Pythone:**
+Prejdite do konkrétnych adresárov príkladov a nainštalujte závislosti:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # ak existuje requirements.txt
 ```
 
-**Pre .NET príklady:**
+**Pre príklady v .NET:**
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**Pre JavaScript/Web príklady:**
+**Pre príklady v JavaScripte/webe:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Spustiť vývojový server
+npm run build  # Vytvoriť zostavu pre produkciu
 ```
 
 ## Organizácia repozitára
 
 ### Príklady kódu (`/code/`)
 
-- **01.Introduce/** - Základné úvody a ukážky na začiatok
-- **03.Finetuning/** a **04.Finetuning/** - Príklady jemného doladenia rôznymi metódami
+- **01.Introduce/** - Základné úvody a vzorové štarty
+- **03.Finetuning/** a **04.Finetuning/** - Príklady doladenia s rôznymi metódami
 - **03.Inference/** - Príklady inferencie na rôznom hardvéri (AIPC, MLX)
-- **06.E2E/** - Ukážky aplikácií od začiatku do konca
+- **06.E2E/** - Vzorky end-to-end aplikácií
 - **07.Lab/** - Laboratórne/experimentálne implementácie
-- **08.RAG/** - Ukážky generovania s podporou vyhľadávania
-- **09.UpdateSamples/** - Najnovšie aktualizované ukážky
+- **08.RAG/** - Príklady Retrieval-Augmented Generation
+- **09.UpdateSamples/** - Najnovšie aktualizované vzorky
 
 ### Dokumentácia (`/md/`)
 
-- **01.Introduction/** - Úvodné príručky, nastavenie prostredia, návody na platformy
-- **02.Application/** - Ukážky aplikácií organizované podľa typu (Text, Kód, Vizuál, Audio, atď.)
-- **02.QuickStart/** - Rýchle návody pre Azure AI Foundry a GitHub Models
-- **03.FineTuning/** - Dokumentácia a tutoriály k jemnému doladeniu
-- **04.HOL/** - Praktické laboratóriá (vrátane príkladov v .NET)
+- **01.Introduction/** - Úvodné návody, nastavenie prostredia, sprievodcovia platformami
+- **02.Application/** - Vzorky aplikácií organizované podľa typu (Text, Kód, Videnie, Audio, atď.)
+- **02.QuickStart/** - Rýchle štarty pre Microsoft Foundry a GitHub Models
+- **03.FineTuning/** - Dokumentácia a návody na doladenie
+- **04.HOL/** - Hands-on laboratóriá (vrátane príkladov v .NET)
 
 ### Formáty súborov
 
-- **Jupyter Notebooks (`.ipynb`)** - Interaktívne Python tutoriály označené 📓 v README
-- **Python Scripts (`.py`)** - Samostatné Python príklady
-- **C# Projects (`.csproj`, `.sln`)** - .NET aplikácie a ukážky
+- **Jupyter Notebooks (`.ipynb`)** - Interaktívne návody v Pythone označené 📓 v README
+- **Python skripty (`.py`)** - Samostatné Python príklady
+- **C# projekty (`.csproj`, `.sln`)** - .NET aplikácie a vzorky
 - **JavaScript (`.js`, `package.json`)** - Webové a Node.js príklady
 - **Markdown (`.md`)** - Dokumentácia a návody
 
 ## Práca s príkladmi
 
-### Spúšťanie Jupyter Notebooks
+### Spustenie Jupyter Notebookov
 
-Väčšina príkladov je poskytovaná ako Jupyter notebooks:
+Väčšina príkladov je dostupná ako Jupyter notebooky:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Otvára rozhranie prehliadača
+# Prejdite na požadovaný súbor .ipynb
 ```
 
-### Spúšťanie Python skriptov
+### Spustenie Python skriptov
 
 ```bash
 cd code/<example-directory>
@@ -111,7 +111,7 @@ pip install -r requirements.txt
 python <script-name>.py
 ```
 
-### Spúšťanie .NET príkladov
+### Spustenie .NET príkladov
 
 ```bash
 cd md/04.HOL/dotnet/src/<project-name>
@@ -124,93 +124,93 @@ cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### Spúšťanie JavaScript/Web príkladov
+### Spustenie JavaScript/Web príkladov
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Vývoj s automatickým obnovením
 ```
 
 ## Testovanie
 
-Tento repozitár obsahuje ukážkový kód a tutoriály, nie tradičný softvérový projekt s jednotkovými testami. Validácia sa zvyčajne vykonáva:
+Tento repozitár obsahuje príkladový kód a návody namiesto tradičného softvérového projektu s jednotkovými testami. Overovanie prebieha typicky:
 
-1. **Spúšťaním príkladov** - Každý príklad by mal byť vykonaný bez chýb
-2. **Overovaním výstupov** - Skontrolujte, či sú odpovede modelu vhodné
-3. **Nasledovaním tutoriálov** - Návody krok za krokom by mali fungovať podľa dokumentácie
+1. **Spustením príkladov** - Každý príklad by mal bežať bez chýb
+2. **Overením výsledkov** - Skontrolujte, či sú odpovede modelu primerané
+3. **Sledovaním návodov** - Sprievodcovia krok za krokom by mali fungovať podľa dokumentácie
 
-**Bežný prístup k validácii:**
-- Testujte vykonanie príkladov v cieľovom prostredí
+**Bežný prístup k overovaniu:**
+- Testujte spustenie príkladov v cieľovom prostredí
 - Overte správnu inštaláciu závislostí
-- Skontrolujte, či sa modely správne stiahnu/nahrajú
+- Skontrolujte úspešné stiahnutie/nahratie modelov
 - Potvrďte, že očakávané správanie zodpovedá dokumentácii
 
 ## Štýl kódu a konvencie
 
 ### Všeobecné pokyny
 
-- Príklady by mali byť jasné, dobre komentované a edukatívne
-- Dodržiavajte konvencie špecifické pre jazyk (PEP 8 pre Python, štandardy C# pre .NET)
-- Udržujte príklady zamerané na demonštráciu konkrétnych schopností modelov Phi
+- Príklady by mali byť jasné, dobre komentované a vzdelávacie
+- Dodržiavajte jazykovo špecifické konvencie (PEP 8 pre Python, štandardy C# pre .NET)
+- Zamerajte príklady na demonštráciu špecifických schopností modelov Phi
 - Zahrňte komentáre vysvetľujúce kľúčové koncepty a parametre špecifické pre model
 
 ### Štandardy dokumentácie
 
 **Formátovanie URL:**
-- Používajte formát `[text](../../url)` bez extra medzier
-- Relatívne odkazy: Používajte `./` pre aktuálny adresár, `../` pre nadradený
-- Nepoužívajte krajiny špecifické lokály v URL (vyhnite sa `/en-us/`, `/en/`)
+- Používajte formát `[text](../../url)` bez medzier navyše
+- Relatívne odkazy: použite `./` pre aktuálny adresár, `../` pre nadradený
+- Nepoužívajte krajinné lokály v URL (vyhnite sa `/en-us/`, `/en/`)
 
 **Obrázky:**
-- Ukladajte všetky obrázky do adresára `/imgs/`
-- Používajte popisné názvy s anglickými znakmi, číslami a pomlčkami
+- Ukladajte všetky obrázky v adresári `/imgs/`
+- Používajte popisné názvy s anglickými znakmi, číslicami a pomlčkami
 - Príklad: `phi-3-architecture.png`
 
 **Markdown súbory:**
-- Odkazujte na skutočné pracovné príklady v adresári `/code/`
-- Udržujte dokumentáciu synchronizovanú so zmenami kódu
-- Používajte emoji 📓 na označenie odkazov na Jupyter notebooks v README
+- Odkazujte na skutočné fungujúce príklady v adresári `/code/`
+- Udržiavajte dokumentáciu synchronizovanú so zmenami kódu
+- Používajte emoji 📓 na označenie odkazov na Jupyter notebooky v README
 
 ### Organizácia súborov
 
-- Príklady kódu v `/code/` organizované podľa témy/funkcie
-- Dokumentácia v `/md/` zrkadlí štruktúru kódu, ak je to možné
-- Udržujte súvisiace súbory (notebooky, skripty, konfigurácie) spolu v podadresároch
+- Príklady kódu v `/code/` usporiadané podľa témy/funkcie
+- Dokumentácia v `/md/` kopíruje štruktúru kódu, ak to je vhodné
+- Uchovávajte súvisiace súbory (notebooky, skripty, konfigurácie) spolu v podadresároch
 
-## Pokyny pre Pull Requesty
+## Pokyny pre pull requesty
 
 ### Pred odoslaním
 
-1. **Forknite repozitár** do svojho účtu
-2. **Oddelené PR podľa typu:**
+1. **Vytvorte fork** repozitára do vášho účtu
+2. **Rozdeľte PR podľa typu:**
    - Opravy chýb v jednom PR
    - Aktualizácie dokumentácie v inom
    - Nové príklady v samostatných PR
-   - Opravy preklepov môžu byť kombinované
+   - Opravy preklepov možno spojiť
 
-3. **Riešenie konfliktov pri zlúčení:**
-   - Aktualizujte svoju lokálnu vetvu `main` pred vykonaním zmien
-   - Často synchronizujte s upstream
+3. **Riešte konflikty zlúčenia:**
+   - Aktualizujte lokálnu vetvu `main` pred zmenami
+   - Často synchronizujte s upstreamom
 
-4. **Prekladové PR:**
-   - Musia obsahovať preklady pre VŠETKY súbory v priečinku
+4. **PR s prekladmi:**
+   - Musia obsahovať preklady pre VŠETKY súbory vo foldri
    - Zachovajte konzistentnú štruktúru s originálnym jazykom
 
-### Požadované kontroly
+### Povinné kontroly
 
-PR automaticky spúšťajú GitHub pracovné toky na validáciu:
+PRy automaticky spúšťajú GitHub workflow na validáciu:
 
-1. **Validácia relatívnych ciest** - Všetky interné odkazy musia fungovať
+1. **Overenie relatívnych ciest** - Všetky interné odkazy musia fungovať
    - Testujte odkazy lokálne: Ctrl+Klik vo VS Code
-   - Používajte návrhy ciest z VS Code (`./` alebo `../`)
+   - Používajte návrhy ciest od VS Code (`./` alebo `../`)
 
-2. **Kontrola lokálov URL** - Webové URL nesmú obsahovať jazykové kódy
-   - Odstráňte `/en-us/`, `/en/` alebo iné jazykové kódy
+2. **Kontrola URL lokalizácie** - Webové URL nesmú obsahovať krajinné lokály
+   - Odstraňte `/en-us/`, `/en/` alebo iné jazykové kódy
    - Používajte generické medzinárodné URL
 
-3. **Kontrola nefunkčných URL** - Všetky URL musia vrátiť stav 200
-   - Overte, že odkazy sú prístupné pred odoslaním
+3. **Kontrola nefunkčných URL** - Všetky URL musia vracať stav 200
+   - Overte prístupnosť odkazov pred odoslaním
    - Poznámka: Niektoré zlyhania môžu byť spôsobené sieťovými obmedzeniami
 
 ### Formát názvu PR
@@ -220,110 +220,112 @@ PR automaticky spúšťajú GitHub pracovné toky na validáciu:
 ```
 
 Príklady:
-- `[docs] Pridať tutoriál inferencie Phi-4`
-- `[code] Opraviť príklad integrácie ONNX Runtime`
-- `[translation] Pridať japonský preklad úvodných príručiek`
+- `[docs] Pridanie návodu na inferenciu Phi-4`
+- `[code] Oprava príkladu integrácie ONNX Runtime`
+- `[translation] Pridanie japonského prekladu úvodných návodov`
 
 ## Bežné vývojové vzory
 
-### Práca s modelmi Phi
+### Práca s Phi modelmi
 
 **Načítanie modelov:**
 - Príklady používajú rôzne rámce: Transformers, ONNX Runtime, MLX, OpenVINO
 - Modely sa zvyčajne sťahujú z Hugging Face, Azure alebo GitHub Models
-- Skontrolujte kompatibilitu modelov s vaším hardvérom (CPU, GPU, NPU)
+- Skontrolujte kompatibilitu modelu s vaším hardvérom (CPU, GPU, NPU)
 
 **Vzory inferencie:**
-- Generovanie textu: Väčšina príkladov používa chat/instruct varianty
-- Vizuálne: Phi-3-vision a Phi-4-multimodal na porozumenie obrázkov
+- Generovanie textu: väčšina príkladov používa chat/instruct varianty
+- Vízia: Phi-3-vision a Phi-4-multimodal pre pochopenie obrazu
 - Audio: Phi-4-multimodal podporuje audio vstupy
-- Uvažovanie: Phi-4-reasoning varianty na pokročilé úlohy uvažovania
+- Uvažovanie: Phi-4-reasoning varianty pre pokročilé uvažovacie úlohy
 
-### Poznámky k špecifickým platformám
+### Poznámky k platformám
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - Vyžaduje predplatné Azure a API kľúče
-- Pozrite si `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
+- Pozri `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- K dispozícii bezplatná úroveň na testovanie
-- Pozrite si `/md/02.QuickStart/GitHubModel_QuickStart.md`
+- K dispozícii bezplatná vrstva pre testovanie
+- Pozri `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Lokálna inferencia:**
-- ONNX Runtime: Cross-platform, optimalizovaná inferencia
-- Ollama: Jednoduchá lokálna správa modelov (predkonfigurované vo vývojovom kontajneri)
-- Apple MLX: Optimalizované pre Apple Silicon
+- ONNX Runtime: multiplatformová, optimalizovaná inferencia
+- Ollama: jednoduchá lokálna správa modelov (predkonfigurované v dev kontejnery)
+- Apple MLX: optimalizované pre Apple Silicon
 
 ## Riešenie problémov
 
 ### Bežné problémy
 
 **Problémy s pamäťou:**
-- Modely Phi vyžadujú značné množstvo RAM (najmä vizuálne/multimodálne varianty)
+- Phi modely vyžadujú značnú RAM (najmä varianty pre víziu a multimodálne)
 - Používajte kvantizované modely pre prostredia s obmedzenými zdrojmi
-- Pozrite si `/md/01.Introduction/04/QuantifyingPhi.md`
+- Pozri `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Konflikty závislostí:**
 - Python príklady môžu mať špecifické požiadavky na verzie
 - Používajte virtuálne prostredia pre každý príklad
-- Skontrolujte jednotlivé súbory `requirements.txt`
+- Kontrolujte individuálne súbory `requirements.txt`
 
-**Zlyhania pri sťahovaní modelov:**
-- Veľké modely môžu na pomalých pripojeniach vypršať
-- Zvážte použitie cloudových prostredí (Codespaces, Azure)
+**Zlyhanie sťahovania modelu:**
+- Veľké modely môžu vypršať na pomalých pripojeniach
+- Zvážte použitie cloud prostredí (Codespaces, Azure)
 - Skontrolujte cache Hugging Face: `~/.cache/huggingface/`
 
-**Problémy s .NET projektmi:**
-- Uistite sa, že máte nainštalovaný .NET 8.0 SDK
+**Problémy s .NET projektom:**
+- Uistite sa, že .NET 8.0 SDK je nainštalovaný
 - Použite `dotnet restore` pred zostavením
-- Niektoré projekty majú špecifické konfigurácie pre CUDA (Debug_Cuda)
+- Niektoré projekty majú konfigurácie špecifické pre CUDA (Debug_Cuda)
 
 **JavaScript/Web príklady:**
-- Použite Node.js 18+ pre kompatibilitu
-- Vymažte `node_modules` a znovu nainštalujte, ak sa vyskytnú problémy
-- Skontrolujte konzolu prehliadača pre problémy s kompatibilitou WebGPU
+- Používajte Node.js 18+ pre kompatibilitu
+- Vymažte `node_modules` a preinštalujte, ak problémy pretrvávajú
+- Skontrolujte konzolu prehliadača pre problémy s WebGPU
 
 ### Získanie pomoci
 
-- **Discord:** Pripojte sa k Azure AI Foundry Community Discord
+- **Discord:** Pripojte sa k Microsoft Foundry Community Discord
 - **GitHub Issues:** Nahláste chyby a problémy v repozitári
-- **GitHub Discussions:** Kladenie otázok a zdieľanie poznatkov
+- **GitHub Discussions:** Pýtajte sa otázky a zdieľajte vedomosti
 
 ## Dodatočný kontext
 
-### Zodpovedná AI
+### Zodpovedné AI
 
-Všetko používanie modelov Phi by malo dodržiavať princípy zodpovednej AI od Microsoftu:
+Všetko používanie modelov Phi by malo nasledovať princípy zodpovedného AI spoločnosti Microsoft:
 - Spravodlivosť, spoľahlivosť, bezpečnosť
-- Ochrana súkromia a bezpečnosť  
+- Ochrana súkromia a zabezpečenie  
 - Inkluzívnosť, transparentnosť, zodpovednosť
 - Používajte Azure AI Content Safety pre produkčné aplikácie
-- Pozrite si `/md/01.Introduction/01/01.AISafety.md`
+- Pozri `/md/01.Introduction/01/01.AISafety.md`
 
 ### Preklady
 
-- Podpora 50+ jazykov prostredníctvom automatizovanej GitHub akcie
+- Podpora viac ako 50 jazykov cez automatizovaný GitHub Action
 - Preklady v adresári `/translations/`
-- Udržiavané pracovným tokom co-op-translator
-- Manuálne neupravujte preložené súbory (automaticky generované)
+- Udržiava ich workflow co-op-translator
+- Needitujte manuálne preložené súbory (automaticky generované)
 
-### Prispievanie
+### Príspevky
 
 - Dodržiavajte pokyny v `CONTRIBUTING.md`
-- Súhlaste s Contributor License Agreement (CLA)
+- Súhlas s Contributor License Agreement (CLA)
 - Dodržiavajte Microsoft Open Source Code of Conduct
-- Uchovávajte bezpečnosť a poverenia mimo commitov
+- Neposielajte bezpečnostné údaje a prihlasovacie údaje v commitoch
 
 ### Podpora viacerých jazykov
 
 Toto je polyglot repozitár s príkladmi v:
-- **Python** - ML/AI pracovné postupy, Jupyter notebooks, jemné doladenie
+- **Python** - ML/AI workflowy, Jupyter notebooky, doladenie
 - **C#/.NET** - Podnikové aplikácie, integrácia ONNX Runtime
-- **JavaScript** - Webové AI, inferencia v prehliadači s WebGPU
+- **JavaScript** - Webové AI, inferencia prehliadača s WebGPU
 
-Vyberte jazyk, ktorý najlepšie vyhovuje vášmu použitiu a cieľu nasadenia.
+Vyberte jazyk, ktorý najlepšie vyhovuje vášmu prípadu použitia a nasadeniu.
 
 ---
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Zrieknutie sa zodpovednosti**:
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, berte prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho originálnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z používania tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,50 +1,50 @@
-# **Používanie Phi-3 v Azure AI Foundry**
+# **Používanie Phi-3 v Microsoft Foundry**
 
-S rozvojom generatívnej AI dúfame, že využijeme jednotnú platformu na správu rôznych LLM a SLM, integráciu podnikových dát, operácie doladenia/RAG a hodnotenie rôznych podnikových procesov po integrácii LLM a SLM, aby sa generatívna AI mohla lepšie uplatniť v inteligentných aplikáciách. [Azure AI Foundry](https://ai.azure.com) je podniková platforma pre generatívne AI aplikácie.
+S rozvojom Generatívnej AI dúfame, že použijeme jednotnú platformu na správu rôznych LLM a SLM, integráciu podnikových dát, operácie ladania/fine-tuning/RAG a hodnotenie rôznych podnikov po integrácii LLM a SLM, atď., aby mohli byť inteligentné aplikácie generatívnej AI lepšie implementované. [Microsoft Foundry](https://ai.azure.com) je podniková platforma pre generatívne AI aplikácie.
 
 ![aistudo](../../../../translated_images/sk/aifoundry_home.f28a8127c96c7d93.webp)
 
-S Azure AI Foundry môžete hodnotiť odpovede veľkých jazykových modelov (LLM) a orchestráciu komponentov aplikácií s prompt flow pre lepší výkon. Platforma umožňuje škálovateľnosť pri transformácii dôkazov konceptu na plnohodnotnú produkciu s ľahkosťou. Neustále monitorovanie a zdokonaľovanie podporujú dlhodobý úspech.
+S Microsoft Foundry môžete hodnotiť odpovede veľkého jazykového modelu (LLM) a orchestrovať komponenty aplikácie promptov pomocou prompt flow pre lepší výkon. Platforma uľahčuje škálovateľnosť pre transformáciu dôkazov konceptov do plnohodnotnej produkcie s ľahkosťou. Neustále monitorovanie a zdokonaľovanie podporujú dlhodobý úspech.
 
-Model Phi-3 môžeme rýchlo nasadiť na Azure AI Foundry jednoduchými krokmi a následne využiť Azure AI Foundry na dokončenie súvisiacich úloh ako Playground/Chat, doladenie, hodnotenie a ďalšie.
+Model Phi-3 môžeme rýchlo nasadiť v Microsoft Foundry pomocou jednoduchých krokov a následne využiť Microsoft Foundry na dokončenie súvisiacich prác ako Playground/Chat, fine-tuning, hodnotenie a ďalšie.
 
 ## **1. Príprava**
 
-Ak už máte na svojom zariadení nainštalovaný [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo), použitie tejto šablóny je také jednoduché ako spustenie tohto príkazu v novom adresári.
+Ak už máte na svojom počítači nainštalovaný [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo), použitie tejto šablóny je také jednoduché ako spustiť tento príkaz v novom adresári.
 
 ## Manuálne vytvorenie
 
-Vytvorenie projektu a hubu v Microsoft Azure AI Foundry je skvelý spôsob, ako organizovať a spravovať svoju AI prácu. Tu je krok za krokom návod, ako začať:
+Vytvorenie projektu a hubu v Microsoft Foundry je skvelý spôsob, ako organizovať a spravovať vašu prácu s AI. Tu je krok za krokom návod, ako začať:
 
-### Vytvorenie projektu v Azure AI Foundry
+### Vytvorenie projektu v Microsoft Foundry
 
-1. **Prejdite na Azure AI Foundry**: Prihláste sa do portálu Azure AI Foundry.
+1. **Choďte na Microsoft Foundry**: Prihláste sa do portálu Microsoft Foundry.
 2. **Vytvorte projekt**:
-   - Ak ste už v nejakom projekte, vyberte v ľavom hornom rohu stránky „Azure AI Foundry“ pre návrat na domovskú stránku.
-   - Vyberte „+ Create project“.
+   - Ak ste už v niektorom projekte, vyberte "Microsoft Foundry" v ľavom hornom rohu stránky, aby ste sa dostali na domovskú stránku.
+   - Vyberte "+ Create project".
    - Zadajte názov projektu.
-   - Ak máte hub, bude predvolene vybraný. Ak máte prístup k viacerým hubom, môžete si vybrať iný z rozbaľovacieho zoznamu. Ak chcete vytvoriť nový hub, vyberte „Create new hub“ a zadajte jeho názov.
-   - Vyberte „Create“.
+   - Ak máte hub, bude predvolene vybraný. Ak máte prístup k viacerým hubom, môžete z rozbaľovacieho zoznamu vybrať iný. Ak chcete vytvoriť nový hub, vyberte "Create new hub" a zadajte názov.
+   - Vyberte "Create".
 
-### Vytvorenie hubu v Azure AI Foundry
+### Vytvorenie hubu v Microsoft Foundry
 
-1. **Prejdite na Azure AI Foundry**: Prihláste sa pomocou svojho Azure účtu.
+1. **Choďte na Microsoft Foundry**: Prihláste sa so svojím Azure účtom.
 2. **Vytvorte hub**:
-   - Vyberte Management center v ľavom menu.
-   - Vyberte „All resources“, potom šípku vedľa „+ New project“ a zvoľte „+ New hub“.
-   - V dialógu „Create a new hub“ zadajte názov hubu (napr. contoso-hub) a upravte ostatné polia podľa potreby.
-   - Vyberte „Next“, skontrolujte informácie a potom vyberte „Create“.
+   - Vyberte Správu (Management center) z ľavého menu.
+   - Vyberte "All resources", potom šípku dolu vedľa "+ New project" a zvoľte "+ New hub".
+   - V dialógu "Create a new hub" zadajte názov pre váš hub (napr. contoso-hub) a upravte ďalšie polia podľa potreby.
+   - Vyberte "Next", skontrolujte informácie a potom vyberte "Create".
 
-Pre podrobnejšie inštrukcie môžete navštíviť oficiálnu [Microsoft dokumentáciu](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
+Pre podrobnejšie inštrukcie sa môžete odvolať na oficiálnu [Microsoft dokumentáciu](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
 
-Po úspešnom vytvorení môžete pristupovať k vytvorenému studiu cez [ai.azure.com](https://ai.azure.com/)
+Po úspešnom vytvorení môžete pristupovať do štúdia, ktoré ste vytvorili cez [ai.azure.com](https://ai.azure.com/)
 
-Na jednom AI Foundry môže byť viacero projektov. Vytvorte si projekt v AI Foundry ako prípravu.
+Na jednej platforme AI Foundry môže byť viacero projektov. Vytvorte projekt v AI Foundry ako prípravu.
 
-Vytvorte Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Vytvorte Microsoft Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
 
-## **2. Nasadenie modelu Phi v Azure AI Foundry**
+## **2. Nasadenie Phi modelu v Microsoft Foundry**
 
 Kliknite na možnosť Explore v projekte, aby ste vstúpili do Model Catalog a vyberte Phi-3
 
@@ -54,34 +54,38 @@ Kliknite na 'Deploy' pre nasadenie modelu Phi-3-mini-4k-instruct
 
 > [!NOTE]
 >
-> Pri nasadzovaní si môžete vybrať výpočtový výkon
+> Pri nasadzovaní môžete vybrať výpočtový výkon
 
-## **3. Playground Chat Phi v Azure AI Foundry**
+## **3. Playground Chat Phi v Microsoft Foundry**
 
-Prejdite na stránku nasadenia, vyberte Playground a komunikujte s Phi-3 v Azure AI Foundry
+Choďte na stránku nasadenia, vyberte Playground a chat s Phi-3 z Microsoft Foundry
 
-## **4. Nasadenie modelu z Azure AI Foundry**
+## **4. Nasadenie modelu z Microsoft Foundry**
 
 Ak chcete nasadiť model z Azure Model Catalog, postupujte podľa týchto krokov:
 
-- Prihláste sa do Azure AI Foundry.
-- Vyberte model, ktorý chcete nasadiť, z katalógu modelov Azure AI Foundry.
-- Na stránke Detail modelu vyberte Deploy a potom Serverless API s Azure AI Content Safety.
-- Vyberte projekt, v ktorom chcete model nasadiť. Pre použitie Serverless API musí vaše pracovné prostredie patriť do regiónu East US 2 alebo Sweden Central. Môžete si prispôsobiť názov nasadenia.
-- V sprievodcovi nasadením vyberte Pricing and terms, aby ste sa oboznámili s cenami a podmienkami používania.
-- Vyberte Deploy. Počkajte, kým bude nasadenie pripravené a budete presmerovaní na stránku Deployments.
+- Prihláste sa do Microsoft Foundry.
+- Vyberte model, ktorý chcete nasadiť, z katalógu modelov Microsoft Foundry.
+- Na stránke s detailmi modelu vyberte Deploy a potom Serverless API s Azure AI Content Safety.
+- Vyberte projekt, v ktorom chcete model nasadiť. Na používanie Serverless API musí vaše pracovné prostredie patriť do regiónu East US 2 alebo Sweden Central. Môžete si prispôsobiť názov nasadenia.
+- V sprievodcovi nasadením vyberte Pricing and terms pre informácie o cenách a podmienkach používania.
+- Vyberte Deploy. Počkajte, kým je nasadenie hotové a budete presmerovaný na stránku Nasadení.
 - Vyberte Open in playground, aby ste začali interagovať s modelom.
-- Môžete sa vrátiť na stránku Deployments, vybrať nasadenie a poznamenať si cieľovú URL endpointu a Secret Key, ktoré môžete použiť na volanie nasadenia a generovanie výstupov.
-- Detaily endpointu, URL a prístupové kľúče nájdete vždy v záložke Build pod sekciou Components v Deployments.
+- Môžete sa vrátiť na stránku Nasadení, vybrať konkrétne nasadenie a zaznamenať si adresu cieľového URL a Tajný kľúč, ktoré môžete použiť na volanie nasadenia a generovanie výstupov.
+- Vždy môžete získať detaily endpointu, URL a prístupové kľúče prechádzaním na záložku Build a výberom Nasadení v sekcii Components.
 
 > [!NOTE]
-> Upozorňujeme, že váš účet musí mať oprávnenia Azure AI Developer role na Resource Group, aby ste mohli tieto kroky vykonať.
+> Prosím, všimnite si, že váš účet musí mať oprávnenia Azure AI Developer roly v Resource Groupe, aby ste mohli tieto kroky vykonať.
 
-## **5. Používanie Phi API v Azure AI Foundry**
+## **5. Používanie Phi API v Microsoft Foundry**
 
-Môžete pristupovať na https://{Your project name}.region.inference.ml.azure.com/swagger.json cez Postman GET a kombinovať to s Key, aby ste sa oboznámili s dostupnými rozhraniami.
+Môžete pristupovať na https://{Your project name}.region.inference.ml.azure.com/swagger.json cez Postman GET a spojiť to s kľúčom, aby ste sa dozvedeli o poskytovaných rozhraniach
 
-Veľmi pohodlne získate parametre požiadaviek aj odpovedí.
+Môžete veľmi pohodlne získať požadované parametre a taktiež parametre odpovedí.
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne interpretácie vzniknuté použitím tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

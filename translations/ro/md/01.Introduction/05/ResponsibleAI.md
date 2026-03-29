@@ -1,6 +1,6 @@
-# **Introducere în Responsible AI**
+# **Introduceți AI Responsabil**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) este o inițiativă care își propune să ajute dezvoltatorii și organizațiile să construiască sisteme AI transparente, de încredere și responsabile. Inițiativa oferă ghiduri și resurse pentru dezvoltarea soluțiilor AI responsabile, care respectă principii etice precum confidențialitatea, echitatea și transparența. Vom explora, de asemenea, unele dintre provocările și bunele practici asociate construirii sistemelor AI responsabile.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) este o inițiativă care urmărește să ajute dezvoltatorii și organizațiile să construiască sisteme AI care sunt transparente, demne de încredere și responsabile. Inițiativa oferă îndrumări și resurse pentru dezvoltarea soluțiilor AI responsabile care se aliniază cu principii etice, cum ar fi confidențialitatea, echitatea și transparența. De asemenea, vom explora unele dintre provocările și cele mai bune practici asociate cu construirea sistemelor AI responsabile.
 
 ## Prezentare generală a Microsoft Responsible AI
 
@@ -8,105 +8,109 @@
 
 **Principii etice**
 
-Microsoft Responsible AI se bazează pe un set de principii etice, cum ar fi confidențialitatea, echitatea, transparența, responsabilitatea și siguranța. Aceste principii sunt concepute pentru a asigura că sistemele AI sunt dezvoltate într-un mod etic și responsabil.
+Microsoft Responsible AI este ghidat de un set de principii etice, cum ar fi confidențialitatea, echitatea, transparența, responsabilitatea și siguranța. Aceste principii sunt concepute pentru a asigura că sistemele AI sunt dezvoltate într-un mod etic și responsabil.
 
 **AI transparent**
 
-Microsoft Responsible AI pune accent pe importanța transparenței în sistemele AI. Aceasta include oferirea de explicații clare despre modul în care funcționează modelele AI, precum și asigurarea că sursele de date și algoritmii sunt disponibile public.
+Microsoft Responsible AI subliniază importanța transparenței în sistemele AI. Aceasta include oferirea de explicații clare despre modul în care funcționează modelele AI, precum și asigurarea că sursele de date și algoritmii sunt disponibile public.
 
-**AI responsabil**
+**AI responsabilă**
 
 [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) promovează dezvoltarea sistemelor AI responsabile, care pot oferi informații despre modul în care modelele AI iau decizii. Acest lucru poate ajuta utilizatorii să înțeleagă și să aibă încredere în rezultatele sistemelor AI.
 
 **Incluziune**
 
-Sistemele AI ar trebui să fie concepute pentru a aduce beneficii tuturor. Microsoft își propune să creeze AI incluzivă, care să ia în considerare perspective diverse și să evite prejudecățile sau discriminarea.
+Sistemele AI ar trebui să fie proiectate pentru a beneficia pe toată lumea. Microsoft își propune să creeze AI incluziv care ia în considerare perspective diverse și evită părtinirea sau discriminarea.
 
 **Fiabilitate și siguranță**
 
-Asigurarea faptului că sistemele AI sunt fiabile și sigure este esențială. Microsoft se concentrează pe construirea de modele robuste, care să funcționeze constant și să evite rezultate dăunătoare.
+Asigurarea că sistemele AI sunt fiabile și sigure este crucială. Microsoft se concentrează pe construirea de modele robuste care performează consecvent și evită rezultate dăunătoare.
 
 **Echitate în AI**
 
-Microsoft Responsible AI recunoaște că sistemele AI pot perpetua prejudecăți dacă sunt antrenate pe date sau algoritmi părtinitori. Inițiativa oferă ghiduri pentru dezvoltarea unor sisteme AI echitabile, care să nu discrimineze pe baza unor factori precum rasa, genul sau vârsta.
+Microsoft Responsible AI recunoaște că sistemele AI pot perpetua prejudecăți dacă sunt antrenate pe date sau algoritmi părtinitori. Inițiativa oferă îndrumări pentru dezvoltarea de sisteme AI echitabile care nu discriminează pe baza unor criterii precum rasa, genul sau vârsta.
 
 **Confidențialitate și securitate**
 
-Microsoft Responsible AI subliniază importanța protejării confidențialității utilizatorilor și a securității datelor în sistemele AI. Aceasta include implementarea unor metode puternice de criptare a datelor și controale de acces, precum și audituri regulate ale sistemelor AI pentru identificarea vulnerabilităților.
+Microsoft Responsible AI subliniază importanța protejării confidențialității utilizatorilor și a securității datelor în sistemele AI. Aceasta include implementarea unei criptări puternice a datelor și a controalelor de acces, precum și auditarea regulată a sistemelor AI pentru vulnerabilități.
 
 **Responsabilitate și răspundere**
 
-Microsoft Responsible AI promovează responsabilitatea și răspunderea în dezvoltarea și implementarea AI. Aceasta presupune ca dezvoltatorii și organizațiile să fie conștienți de riscurile potențiale asociate sistemelor AI și să ia măsuri pentru a le reduce.
+Microsoft Responsible AI promovează responsabilitatea și răspunderea în dezvoltarea și implementarea AI. Aceasta include asigurarea că dezvoltatorii și organizațiile sunt conștiente de riscurile potențiale asociate cu sistemele AI și iau măsuri pentru a atenua aceste riscuri.
 
-## Bune practici pentru construirea sistemelor AI responsabile
+## Cele mai bune practici pentru construirea sistemelor AI responsabile
 
-**Dezvoltă modele AI folosind seturi de date diverse**
+**Dezvoltați modele AI folosind seturi de date diverse**
 
-Pentru a evita părtinirile în sistemele AI, este important să folosești seturi de date diverse, care să reprezinte o gamă largă de perspective și experiențe.
+Pentru a evita părtinirile în sistemele AI, este important să utilizați seturi de date diverse care să reprezinte o gamă largă de perspective și experiențe.
 
-**Folosește tehnici de AI explicabilă**
+**Folosiți tehnici de AI explicabilă**
 
-Tehnicile de AI explicabilă pot ajuta utilizatorii să înțeleagă modul în care modelele AI iau decizii, ceea ce poate crește încrederea în sistem.
+Tehnicile de AI explicabilă pot ajuta utilizatorii să înțeleagă cum modelele AI iau decizii, ceea ce poate crește încrederea în sistem.
 
-**Audită regulat sistemele AI pentru vulnerabilități**
+**Auditați regulat sistemele AI pentru vulnerabilități**
 
 Auditările regulate ale sistemelor AI pot ajuta la identificarea riscurilor și vulnerabilităților care trebuie abordate.
 
-**Implementarea criptării puternice a datelor și a controalelor de acces**
+**Implementați o criptare puternică a datelor și controale de acces**
 
-Criptarea datelor și controalele de acces pot proteja confidențialitatea și securitatea utilizatorilor în sistemele AI.
+Criptarea datelor și controalele de acces pot ajuta la protejarea confidențialității și securității utilizatorilor în sistemele AI.
 
-**Respectă principiile etice în dezvoltarea AI**
+**Urmăriți principiile etice în dezvoltarea AI**
 
-Respectarea principiilor etice, cum ar fi echitatea, transparența și responsabilitatea, poate contribui la construirea încrederii în sistemele AI și la asigurarea dezvoltării lor responsabile.
+Respectarea principiilor etice, cum ar fi echitatea, transparența și responsabilitatea, poate ajuta la construirea încrederii în sistemele AI și asigură dezvoltarea lor într-un mod responsabil.
 
-## Utilizarea AI Foundry pentru Responsible AI
+## Utilizarea AI Foundry pentru AI Responsabil
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) este o platformă puternică care permite dezvoltatorilor și organizațiilor să creeze rapid aplicații inteligente, de ultimă generație, gata pentru piață și responsabile. Iată câteva caracteristici și capabilități cheie ale Azure AI Foundry:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) este o platformă puternică care permite dezvoltatorilor și organizațiilor să creeze rapid aplicații inteligente, de ultimă generație, gata pentru piață și responsabile. Iată câteva caracteristici și capabilități cheie ale Microsoft Foundry:
 
-**API-uri și modele gata de utilizare**
+**API-uri și modele pregătite și personalizabile**
 
-Azure AI Foundry oferă API-uri și modele predefinite și personalizabile. Acestea acoperă o gamă largă de sarcini AI, inclusiv AI generativ, procesarea limbajului natural pentru conversații, căutare, monitorizare, traducere, vorbire, viziune și luarea deciziilor.
+Microsoft Foundry oferă API-uri și modele preconstruite și personalizabile. Acestea acoperă o gamă largă de sarcini AI, inclusiv AI generativă, procesarea limbajului natural pentru conversații, căutare, monitorizare, traducere, vorbire, viziune și luarea deciziilor.
 
 **Prompt Flow**
 
-Prompt flow în Azure AI Foundry îți permite să creezi experiențe AI conversaționale. Poți proiecta și gestiona fluxuri conversaționale, facilitând construirea de chatboți, asistenți virtuali și alte aplicații interactive.
+Prompt flow în Microsoft Foundry vă permite să creați experiențe AI conversaționale. Vă permite să proiectați și să gestionați fluxuri conversaționale, facilitând construirea de chatboți, asistenți virtuali și alte aplicații interactive.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG este o tehnică care combină abordările bazate pe recuperare și generare. Aceasta îmbunătățește calitatea răspunsurilor generate prin valorificarea atât a cunoștințelor preexistente (recuperare), cât și a generării creative (generare).
+RAG este o tehnică care combină abordările bazate pe recuperare și pe generare. Îmbunătățește calitatea răspunsurilor generate prin valorificarea atât a cunoștințelor preexistente (recuperare), cât și a generării creative (generare).
 
-**Metrice de evaluare și monitorizare pentru AI generativ**
+**Metrice de evaluare și monitorizare pentru AI generativă**
 
-Azure AI Foundry oferă instrumente pentru evaluarea și monitorizarea modelelor AI generative. Poți evalua performanța, echitatea și alte metrice importante pentru a asigura o implementare responsabilă. În plus, dacă ai creat un dashboard, poți folosi interfața no-code din Azure Machine Learning Studio pentru a personaliza și genera un Responsible AI Dashboard și un scorecard asociat, bazat pe [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Acest scorecard te ajută să împărtășești informații cheie legate de echitate, importanța caracteristicilor și alte aspecte ale implementării responsabile, atât cu părțile tehnice, cât și cu cele non-tehnice.
+Microsoft Foundry oferă instrumente pentru evaluarea și monitorizarea modelelor AI generative. Puteți evalua performanța, echitatea și alte metrice importante pentru a asigura implementarea responsabilă. În plus, dacă ați creat un tablou de bord, puteți utiliza interfața fără cod din Azure Machine Learning Studio pentru a personaliza și genera un Panou de control Responsible AI și un raport asociat bazat pe bibliotecile Python [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo). Acest raport vă ajută să împărtășiți perspective cheie legate de echitate, importanța caracteristicilor și alte considerații privind implementarea responsabilă cu părțile interesate tehnice și non-tehnice.
 
-Pentru a folosi AI Foundry în contextul Responsible AI, poți urma aceste bune practici:
+Pentru a utiliza AI Foundry cu AI responsabil, puteți urma aceste cele mai bune practici:
 
-**Definește problema și obiectivele sistemului tău AI**
+**Definiți problema și obiectivele sistemului dvs. AI**
 
-Înainte de a începe procesul de dezvoltare, este important să definești clar problema sau obiectivul pe care sistemul tău AI îl urmărește. Acest lucru te va ajuta să identifici datele, algoritmii și resursele necesare pentru a construi un model eficient.
+Înainte de a începe procesul de dezvoltare, este important să definiți clar problema sau obiectivul pe care sistemul dvs. AI dorește să îl rezolve. Acest lucru vă va ajuta să identificați datele, algoritmii și resursele necesare pentru a construi un model eficient.
 
-**Colectează și preprocesează date relevante**
+**Colectați și preprocesați date relevante**
 
-Calitatea și cantitatea datelor folosite pentru antrenarea unui sistem AI pot influența semnificativ performanța acestuia. Prin urmare, este important să colectezi date relevante, să le cureți, să le preprocesezi și să te asiguri că acestea sunt reprezentative pentru populația sau problema pe care încerci să o rezolvi.
+Calitatea și cantitatea datelor utilizate pentru antrenarea unui sistem AI pot avea un impact semnificativ asupra performanței acestuia. Prin urmare, este important să colectați date relevante, să le curățați, să le preprocesați și să vă asigurați că acestea sunt reprezentative pentru populația sau problema pe care încercați să o rezolvați.
 
-**Alege metodele de evaluare potrivite**
+**Alegeți evaluarea adecvată**
 
-Există diverse algoritmi de evaluare disponibili. Este important să alegi algoritmul cel mai potrivit în funcție de datele și problema ta.
+Există diferiți algoritmi de evaluare disponibili. Este important să alegeți cel mai adecvat algoritm în funcție de datele și problema dvs.
 
-**Evaluează și interpretează modelul**
+**Evaluați și interpretați modelul**
 
-După ce ai construit un model AI, este esențial să îi evaluezi performanța folosind metrice adecvate și să interpretezi rezultatele într-un mod transparent. Acest lucru te va ajuta să identifici eventualele părtiniri sau limitări ale modelului și să faci îmbunătățiri acolo unde este necesar.
+Odată ce ați construit un model AI, este important să evaluați performanța lui folosind metrice adecvate și să interpretați rezultatele într-un mod transparent. Acest lucru vă va ajuta să identificați orice părtiniri sau limitări ale modelului și să faceți îmbunătățiri atunci când este necesar.
 
-**Asigură transparența și explicabilitatea**
+**Asigurați transparența și explicabilitatea**
 
-Sistemele AI trebuie să fie transparente și explicabile, astfel încât utilizatorii să poată înțelege cum funcționează și cum sunt luate deciziile. Acest aspect este deosebit de important pentru aplicațiile care au un impact semnificativ asupra vieților oamenilor, cum ar fi cele din domeniul sănătății, finanțelor sau sistemelor juridice.
+Sistemele AI trebuie să fie transparente și explicabile astfel încât utilizatorii să poată înțelege cum funcționează și cum sunt luate deciziile. Acest lucru este deosebit de important pentru aplicațiile care au un impact semnificativ asupra vieților umane, cum ar fi sănătatea, finanțele și sistemele juridice.
 
-**Monitorizează și actualizează modelul**
+**Monitorizați și actualizați modelul**
 
-Sistemele AI trebuie monitorizate și actualizate continuu pentru a se asigura că rămân precise și eficiente în timp. Acest lucru necesită întreținere constantă, testare și reantrenare a modelului.
+Sistemele AI trebuie să fie monitorizate și actualizate continuu pentru a se asigura că rămân precise și eficiente în timp. Acest lucru necesită întreținere, testare și reantrenare continuă a modelului.
 
-În concluzie, Microsoft Responsible AI este o inițiativă care își propune să ajute dezvoltatorii și organizațiile să construiască sisteme AI transparente, de încredere și responsabile. Implementarea responsabilă a AI este esențială, iar Azure AI Foundry își propune să o facă practică pentru organizații. Urmând principiile etice și bunele practici, putem asigura că sistemele AI sunt dezvoltate și implementate într-un mod responsabil, care aduce beneficii întregii societăți.
+În concluzie, Microsoft Responsible AI este o inițiativă care urmărește să ajute dezvoltatorii și organizațiile să construiască sisteme AI care sunt transparente, demne de încredere și responsabile. Amintiți-vă că implementarea AI responsabil este crucială, iar Microsoft Foundry își propune să o facă practică pentru organizații. Urmând principii etice și cele mai bune practici, putem asigura că sistemele AI sunt dezvoltate și implementate într-un mod responsabil care să beneficieze societatea în ansamblu.
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinare a responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să aveți în vedere că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

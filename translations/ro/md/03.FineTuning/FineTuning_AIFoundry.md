@@ -1,54 +1,54 @@
-# Ajustarea fină a Phi-3 cu Azure AI Foundry
+# Ajustarea fină a Phi-3 cu Microsoft Foundry
 
-Să explorăm cum să ajustăm fin modelul de limbaj Phi-3 Mini de la Microsoft folosind Azure AI Foundry. Ajustarea fină îți permite să adaptezi Phi-3 Mini pentru sarcini specifice, făcându-l și mai puternic și mai conștient de context.
+ Să explorăm cum să ajustăm fin modelul de limbaj Phi-3 Mini Microsoft folosind Microsoft Foundry. Ajustarea fină vă permite să adaptați Phi-3 Mini pentru sarcini specifice, făcându-l și mai puternic și conștient de context.
 
 ## Considerații
 
-- **Capabilități:** Care modele pot fi ajustate fin? Ce poate face modelul de bază după ajustare?
-- **Cost:** Care este modelul de tarifare pentru ajustarea fină?
-- **Personalizare:** Cât de mult pot modifica modelul de bază – și în ce moduri?
-- **Confort:** Cum se realizează efectiv ajustarea fină – trebuie să scriu cod personalizat? Trebuie să aduc propriul meu sistem de calcul?
-- **Siguranță:** Modelele ajustate fin pot prezenta riscuri de siguranță – există măsuri de protecție pentru a preveni daune neintenționate?
+- **Capabilități:** Care modele pot fi ajustate fin? La ce poate fi ajustat fin modelul de bază?
+- **Cost:** Care este modelul de preț pentru ajustarea fină
+**Personalizare:** Cât de mult pot modifica modelul de bază – și în ce moduri?
+- **Conveniență:** Cum se realizează de fapt ajustarea fină – trebuie să scriu cod personalizat? Trebuie să aduc propriile resurse de calcul?
+- **Siguranță:** Modelele ajustate fin sunt cunoscute pentru riscurile de siguranță – există vreun sistem de protecție pentru a preveni daunele neintenționate?
 
 ![AIFoundry Models](../../../../translated_images/ro/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## Pregătirea pentru ajustarea fină
 
-### Cerințe preliminare
+### Precondiții
 
 > [!NOTE]
-> Pentru modelele din familia Phi-3, oferta de ajustare fină în regim pay-as-you-go este disponibilă doar pentru hub-uri create în regiunile **East US 2**.
+> Pentru modelele din familia Phi-3, oferta de ajustare fină pay-as-you-go este disponibilă doar pentru hub-urile create în regiunile **East US 2**.
 
-- Un abonament Azure. Dacă nu ai un abonament Azure, creează un [cont Azure plătit](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) pentru a începe.
+- Un abonament Azure. Dacă nu aveți un abonament Azure, creați un [cont Azure plătit](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) pentru a începe.
 
 - Un [proiect AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Controlul accesului bazat pe roluri Azure (Azure RBAC) este folosit pentru a acorda acces la operațiuni în Azure AI Foundry. Pentru a efectua pașii din acest articol, contul tău de utilizator trebuie să aibă rolul __Azure AI Developer__ atribuit pe grupul de resurse.
+- Controlele de acces bazate pe roluri Azure (Azure RBAC) sunt utilizate pentru a acorda acces la operațiuni în Microsoft Foundry. Pentru a efectua pașii din acest articol, contul dvs. de utilizator trebuie să aibă rolul __Azure AI Developer__ alocat pe grupul de resurse.
 
 ### Înregistrarea furnizorului de abonament
 
-Verifică dacă abonamentul este înregistrat la furnizorul de resurse `Microsoft.Network`.
+Verificați dacă abonamentul este înregistrat la furnizorul de resurse `Microsoft.Network`.
 
-1. Autentifică-te în [portalul Azure](https://portal.azure.com).
-2. Selectează **Subscriptions** din meniul din stânga.
-3. Alege abonamentul pe care vrei să-l folosești.
-4. Selectează **AI project settings** > **Resource providers** din meniul din stânga.
-5. Confirmă că **Microsoft.Network** este în lista furnizorilor de resurse. Dacă nu, adaugă-l.
+1. Conectați-vă la [portalul Azure](https://portal.azure.com).
+1. Selectați **Subscriptions** din meniul din stânga.
+1. Selectați abonamentul pe care doriți să-l utilizați.
+1. Selectați **AI project settings** > **Resource providers** din meniul din stânga.
+1. Confirmați că **Microsoft.Network** se află în lista furnizorilor de resurse. Dacă nu, adăugați-l.
 
 ### Pregătirea datelor
 
-Pregătește datele de antrenament și validare pentru ajustarea fină a modelului. Seturile tale de date de antrenament și validare trebuie să conțină exemple de input și output care să reflecte modul în care dorești ca modelul să funcționeze.
+Pregătiți datele de antrenament și validare pentru a ajusta fin modelul. Seturile dvs. de date de antrenament și validare constau în exemple de intrare și ieșire pentru modul în care doriți ca modelul să funcționeze.
 
-Asigură-te că toate exemplele de antrenament respectă formatul așteptat pentru inferență. Pentru a ajusta fin modelele eficient, asigură un set de date echilibrat și divers.
+Asigurați-vă că toate exemplele dvs. de antrenament respectă formatul așteptat pentru inferență. Pentru ajustarea eficientă a modelelor, asigurați un set de date echilibrat și diversificat.
 
-Aceasta implică menținerea echilibrului datelor, includerea unor scenarii variate și rafinarea periodică a datelor de antrenament pentru a se alinia cu așteptările din lumea reală, ceea ce conduce la răspunsuri mai precise și echilibrate ale modelului.
+Aceasta implică menținerea echilibrului datelor, includerea mai multor scenarii și rafinarea periodică a datelor de antrenament pentru a alinia așteptările la lumea reală, conducând în cele din urmă la răspunsuri mai precise și echilibrate ale modelului.
 
-Diferitele tipuri de modele necesită formate diferite pentru datele de antrenament.
+Tipurile de model diferă în ceea ce privește formatul datelor de antrenament necesar.
 
-### Chat Completion
+### Completare chat
 
-Datele de antrenament și validare pe care le folosești **trebuie** să fie formatate ca un document JSON Lines (JSONL). Pentru `Phi-3-mini-128k-instruct`, setul de date pentru ajustare fină trebuie să fie în format conversațional, folosit de API-ul Chat completions.
+Datele de antrenament și validare pe care le folosiți **trebuie** să fie formate ca un document JSON Lines (JSONL). Pentru `Phi-3-mini-128k-instruct`, setul de date pentru ajustarea fină trebuie formatat în formatul conversațional folosit de API-ul Chat completions.
 
-### Exemplu de format al fișierului
+### Exemplu de format de fișier
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -56,172 +56,177 @@ Datele de antrenament și validare pe care le folosești **trebuie** să fie for
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Tipul de fișier acceptat este JSON Lines. Fișierele sunt încărcate în depozitul de date implicit și puse la dispoziție în proiectul tău.
+Tipul de fișier acceptat este JSON Lines. Fișierele sunt încărcate în depozitul de date implicit și devin disponibile în proiectul dvs.
 
-## Ajustarea fină a Phi-3 cu Azure AI Foundry
+## Ajustarea fină a Phi-3 cu Microsoft Foundry
 
-Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza propriilor seturi de date, folosind un proces numit ajustare fină. Ajustarea fină oferă valoare semnificativă prin personalizare și optimizare pentru sarcini și aplicații specifice. Aceasta conduce la performanțe îmbunătățite, eficiență a costurilor, latență redusă și rezultate adaptate.
+Microsoft Foundry vă permite să personalizați modelele mari de limbaj pe seturile dvs. de date personale folosind un proces numit ajustare fină. Ajustarea fină oferă o valoare semnificativă prin activarea personalizării și optimizării pentru sarcini și aplicații specifice. Aceasta conduce la performanță îmbunătățită, eficiență a costurilor, latență redusă și rezultate adaptate.
 
 ![Finetune AI Foundry](../../../../translated_images/ro/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Crearea unui proiect nou
 
-1. Autentifică-te în [Azure AI Foundry](https://ai.azure.com).
+1. Conectați-vă la [Microsoft Foundry](https://ai.azure.com).
 
-2. Selectează **+New project** pentru a crea un proiect nou în Azure AI Foundry.
+1. Selectați **+New project** pentru a crea un proiect nou în Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/ro/select-new-project.cd31c0404088d7a3.webp)
 
-3. Efectuează următoarele:
+1. Efectuați următoarele sarcini:
 
-    - Numele **Hub-ului** proiectului. Trebuie să fie o valoare unică.
-    - Selectează **Hub-ul** pe care vrei să-l folosești (creează unul nou dacă este necesar).
+    - Numele **Hub**-ului pentru proiect. Trebuie să fie o valoare unică.
+    - Selectați **Hub**-ul pe care doriți să-l utilizați (creați unul nou dacă este necesar).
 
     ![FineTuneSelect](../../../../translated_images/ro/create-project.ca3b71298b90e420.webp)
 
-4. Efectuează următorii pași pentru a crea un hub nou:
+1. Efectuați următoarele sarcini pentru a crea un hub nou:
 
-    - Introdu **Numele Hub-ului**. Trebuie să fie o valoare unică.
-    - Selectează **Abonamentul** Azure.
-    - Selectează **Grupul de resurse** pe care vrei să-l folosești (creează unul nou dacă este necesar).
-    - Selectează **Locația** pe care dorești să o folosești.
-    - Selectează **Connect Azure AI Services** pe care vrei să-l folosești (creează unul nou dacă este necesar).
-    - Selectează **Connect Azure AI Search** și alege **Skip connecting**.
+    - Introduceți **Hub name**. Trebuie să fie o valoare unică.
+    - Selectați **Subscription** Azure.
+    - Selectați **Resource group** pe care doriți să-l utilizați (creați unul nou dacă este necesar).
+    - Selectați **Location** pe care doriți să o utilizați.
+    - Selectați **Connect Azure AI Services** pentru a utiliza (creați unul nou dacă este necesar).
+    - Selectați **Connect Azure AI Search** la **Skip connecting**.
 
     ![FineTuneSelect](../../../../translated_images/ro/create-hub.49e53d235e80779e.webp)
 
-5. Selectează **Next**.
-6. Selectează **Create a project**.
+1. Selectați **Next**.
+1. Selectați **Create a project**.
 
 ### Pregătirea datelor
 
-Înainte de ajustarea fină, adună sau creează un set de date relevant pentru sarcina ta, cum ar fi instrucțiuni de chat, perechi întrebări-răspunsuri sau orice alt text relevant. Curăță și preprocesează aceste date eliminând zgomotul, gestionând valorile lipsă și tokenizând textul.
+Înainte de ajustarea fină, colectați sau creați un set de date relevant pentru sarcina dvs., cum ar fi instrucțiuni de chat, perechi întrebare-răspuns sau alte date text pertinente. Curățați și preprocesați aceste date eliminând zgomotul, gestionând valorile lipsă și tokenizând textul.
 
-### Ajustarea fină a modelelor Phi-3 în Azure AI Foundry
+### Ajustarea fină a modelelor Phi-3 în Microsoft Foundry
 
 > [!NOTE]
-> Ajustarea fină a modelelor Phi-3 este în prezent suportată doar în proiectele localizate în East US 2.
+> Ajustarea fină a modelelor Phi-3 este susținută în prezent doar în proiectele localizate în East US 2.
 
-1. Selectează **Model catalog** din tab-ul din stânga.
+1. Selectați **Model catalog** din fila din stânga.
 
-2. Tastează *phi-3* în **bara de căutare** și selectează modelul phi-3 pe care dorești să-l folosești.
+1. Tastați *phi-3* în **bara de căutare** și selectați modelul phi-3 pe care doriți să îl utilizați.
 
     ![FineTuneSelect](../../../../translated_images/ro/select-model.60ef2d4a6a3cec57.webp)
 
-3. Selectează **Fine-tune**.
+1. Selectați **Fine-tune**.
 
     ![FineTuneSelect](../../../../translated_images/ro/select-finetune.a976213b543dd9d8.webp)
 
-4. Introdu **Numele modelului ajustat fin**.
+1. Introduceți **Numele modelului ajustat fin**.
 
     ![FineTuneSelect](../../../../translated_images/ro/finetune1.c2b39463f0d34148.webp)
 
-5. Selectează **Next**.
+1. Selectați **Next**.
 
-6. Efectuează următoarele:
+1. Efectuați următoarele sarcini:
 
-    - Selectează **tipul sarcinii** ca **Chat completion**.
-    - Selectează **datele de antrenament** pe care dorești să le folosești. Le poți încărca prin Azure AI Foundry sau din mediul tău local.
+    - Selectați **task type** la **Chat completion**.
+    - Selectați **Training data** pe care doriți să o folosiți. O puteți încărca prin datele Microsoft Foundry sau din mediul local.
 
     ![FineTuneSelect](../../../../translated_images/ro/finetune2.43cb099b1a94442d.webp)
 
-7. Selectează **Next**.
+1. Selectați **Next**.
 
-8. Încarcă **datele de validare** pe care dorești să le folosești sau poți selecta **Automatic split of training data**.
+1. Încărcați **Validation data** pe care doriți să o folosiți sau puteți selecta **Automatic split of training data**.
 
     ![FineTuneSelect](../../../../translated_images/ro/finetune3.fd96121b67dcdd92.webp)
 
-9. Selectează **Next**.
+1. Selectați **Next**.
 
-10. Efectuează următoarele:
+1. Efectuați următoarele sarcini:
 
-    - Selectează **multiplicatorul dimensiunii batch-ului** pe care dorești să-l folosești.
-    - Selectează **rata de învățare** pe care dorești să o folosești.
-    - Selectează **numărul de epoci** pe care dorești să-l folosești.
+    - Selectați **Batch size multiplier** pe care doriți să-l utilizați.
+    - Selectați **Learning rate** pe care doriți să-l utilizați.
+    - Selectați **Epochs** pe care doriți să le utilizați.
 
     ![FineTuneSelect](../../../../translated_images/ro/finetune4.e18b80ffccb5834a.webp)
 
-11. Selectează **Submit** pentru a începe procesul de ajustare fină.
+1. Selectați **Submit** pentru a începe procesul de ajustare fină.
 
     ![FineTuneSelect](../../../../translated_images/ro/select-submit.0a3802d581bac271.webp)
 
-12. Odată ce modelul tău este ajustat fin, starea va fi afișată ca **Completed**, așa cum se vede în imaginea de mai jos. Acum poți implementa modelul și îl poți folosi în propria aplicație, în playground sau în prompt flow. Pentru mai multe informații, vezi [Cum să implementezi familia de modele mici Phi-3 cu Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+1. După ce modelul dvs. este ajustat fin, starea va fi afișată ca **Completed**, așa cum este ilustrat în imaginea de mai jos. Acum puteți implementa modelul și îl puteți utiliza în propria aplicație, în playground sau în prompt flow. Pentru mai multe informații, consultați [Cum să implementați familia de modele mici Phi-3 cu Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/ro/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Pentru informații mai detaliate despre ajustarea fină a Phi-3, vizitează [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Pentru informații mai detaliate despre ajustarea fină a Phi-3, vă rugăm să vizitați [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Curățarea modelelor ajustate fin
 
-Poți șterge un model ajustat fin din lista de modele de ajustare fină în [Azure AI Foundry](https://ai.azure.com) sau din pagina de detalii a modelului. Selectează modelul ajustat fin pe care vrei să-l ștergi din pagina Fine-tuning, apoi apasă butonul Delete pentru a-l elimina.
+Puteți șterge un model ajustat fin din lista de modele de ajustare din [Microsoft Foundry](https://ai.azure.com) sau din pagina de detalii a modelului. Selectați modelul ajustat fin pe care doriți să-l ștergeți din pagina Fine-tuning, apoi selectați butonul Delete pentru a șterge modelul ajustat fin.
 
 > [!NOTE]
-> Nu poți șterge un model personalizat dacă are o implementare activă. Trebuie mai întâi să ștergi implementarea modelului înainte de a putea șterge modelul personalizat.
+> Nu puteți șterge un model personalizat dacă are o implementare existentă. Trebuie să ștergeți mai întâi implementarea modelului înainte de a putea șterge modelul personalizat.
 
 ## Costuri și cote
 
-### Considerații privind costurile și cotele pentru modelele Phi-3 ajustate fin ca serviciu
+### Considerații privind costul și cotele pentru modelele Phi-3 ajustate fin ca serviciu
 
-Modelele Phi ajustate fin ca serviciu sunt oferite de Microsoft și integrate cu Azure AI Foundry pentru utilizare. Poți găsi prețurile atunci când [implementezi](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) sau ajustezi fin modelele, în fila Pricing and terms din expertul de implementare.
+Modelele Phi ajustate fin ca serviciu sunt oferite de Microsoft și integrate cu Microsoft Foundry pentru utilizare. Puteți găsi prețurile atunci când [implementați](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) sau ajustați fin modelele în fila Pricing and terms din expertul de implementare.
 
 ## Filtrarea conținutului
 
-Modelele implementate ca serviciu în regim pay-as-you-go sunt protejate de Azure AI Content Safety. Când sunt implementate la endpoint-uri în timp real, poți opta să dezactivezi această funcționalitate. Cu Azure AI Content Safety activat, atât promptul, cât și completarea trec printr-un ansamblu de modele de clasificare care detectează și previn generarea de conținut dăunător. Sistemul de filtrare a conținutului detectează și ia măsuri asupra anumitor categorii de conținut potențial dăunător, atât în prompturi, cât și în completări. Află mai multe despre [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modelele implementate ca serviciu cu plată pe utilizare sunt protejate de Azure AI Content Safety. Când sunt implementate la endpoint-uri în timp real, puteți opta să dezactivați această capacitate. Cu Azure AI content safety activat, atât promptul, cât și completarea trec printr-un ansamblu de modele de clasificare menite să detecteze și să împiedice generarea de conținut dăunător. Sistemul de filtrare a conținutului detectează și ia măsuri asupra categoriilor specifice de conținut potențial dăunător în ambele prompturi de intrare și completări de ieșire. Aflați mai multe despre [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-**Configurarea ajustării fine**
+**Configurația Ajustării Fine**
 
-Hyperparametri: Definește hyperparametri precum rata de învățare, dimensiunea batch-ului și numărul de epoci de antrenament.
+Hiperparametri: Definiți hiperparametri precum rata de învățare, dimensiunea batch-ului și numărul de epoci de antrenament.
 
 **Funcția de pierdere**
 
-Alege o funcție de pierdere potrivită pentru sarcina ta (de exemplu, cross-entropy).
+Alegeți o funcție de pierdere potrivită pentru sarcina dvs. (de exemplu, cross-entropy).
 
 **Optimizator**
 
-Selectează un optimizator (de exemplu, Adam) pentru actualizările gradientului în timpul antrenamentului.
+Selectați un optimizator (de exemplu, Adam) pentru actualizările gradientului în timpul antrenamentului.
 
-**Procesul de ajustare fină**
+**Procesul de Ajustare Fină**
 
-- Încarcă modelul pre-antrenat: Încarcă checkpoint-ul Phi-3 Mini.
-- Adaugă straturi personalizate: Adaugă straturi specifice sarcinii (de exemplu, un cap de clasificare pentru instrucțiuni de chat).
+- Încarcă model pre-antrenat: Încarcă checkpoint-ul Phi-3 Mini.
+- Adaugă straturi personalizate: Adaugă straturi specifice sarcinii (de exemplu, cap de clasificare pentru instrucțiuni de chat).
 
-**Antrenează modelul**  
-Ajustează fin modelul folosind setul tău de date pregătit. Monitorizează progresul antrenamentului și ajustează hyperparametrii după necesitate.
+**Antrenează Modelul**  
+Ajustați fin modelul folosind setul de date pregătit. Monitorizați progresul antrenamentului și ajustați hiperparametrii după necesitate.
 
-**Evaluare și validare**
+**Evaluare și Validare**
 
-Set de validare: Împarte datele în seturi de antrenament și validare.
+Set de validare: Împărțiți datele în seturi de antrenament și validare.
 
-**Evaluează performanța**
+**Evaluare performanță**
 
-Folosește metrici precum acuratețea, scorul F1 sau perplexitatea pentru a evalua performanța modelului.
+Folosiți metrici precum acuratețea, scorul F1 sau perplexitatea pentru a evalua performanța modelului.
 
-## Salvarea modelului ajustat fin
+## Salvează Modelul Ajustat Fin
 
 **Checkpoint**  
-Salvează checkpoint-ul modelului ajustat fin pentru utilizări viitoare.
+Salvați checkpoint-ul modelului ajustat fin pentru uz viitor.
 
 ## Implementare
 
-- Implementează ca serviciu web: Publică modelul ajustat fin ca serviciu web în Azure AI Foundry.
-- Testează endpoint-ul: Trimite interogări de test către endpoint-ul implementat pentru a verifica funcționalitatea.
+- Implementați ca serviciu web: Implementați modelul ajustat fin ca serviciu web în Microsoft Foundry.  
+- Testați Endpoint-ul: Trimiteți interogări de test către endpoint-ul implementat pentru a verifica funcționalitatea.
 
-## Iterează și îmbunătățește
+## Iterați și Îmbunătățiți
 
-Iterează: Dacă performanța nu este satisfăcătoare, ajustează hyperparametrii, adaugă mai multe date sau continuă ajustarea fină pentru epoci suplimentare.
+Iterați: Dacă performanța nu este satisfăcătoare, iterați prin ajustarea hiperparametrilor, adăugarea mai multor date sau ajustarea pentru epoci suplimentare.
 
-## Monitorizează și rafinează
+## Monitorizați și Rafinați
 
-Monitorizează continuu comportamentul modelului și rafinează-l după necesitate.
+Monitorizați continuu comportamentul modelului și rafinați-l după necesitate.
 
-## Personalizează și extinde
+## Personalizați și Extindeți
 
-Sarcini personalizate: Phi-3 Mini poate fi ajustat fin pentru diverse sarcini dincolo de instrucțiunile de chat. Explorează alte cazuri de utilizare!  
-Experimentează: Încearcă arhitecturi diferite, combinații de straturi și tehnici pentru a îmbunătăți performanța.
+Sarcini personalizate: Phi-3 Mini poate fi ajustat fin pentru diverse sarcini dincolo de instrucțiunile de chat. Explorați alte cazuri de utilizare!  
+Experimentați: Încercați diferite arhitecturi, combinații de straturi și tehnici pentru a îmbunătăți performanța.
 
 > [!NOTE]
-> Ajustarea fină este un proces iterativ. Experimentează, învață și adaptează modelul pentru a obține cele mai bune rezultate pentru sarcina ta specifică!
+> Ajustarea fină este un proces iterativ. Experimentați, învățați și adaptați modelul pentru a obține cele mai bune rezultate pentru sarcina dvs. specifică!
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinare a responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventuale neînțelegeri sau interpretări greșite rezultând din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
