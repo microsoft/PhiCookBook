@@ -1,6 +1,6 @@
-# **Ismertetés a felelős mesterséges intelligenciáról**
+# **Ismertesse a felelős mesterséges intelligenciát**
 
-A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) egy kezdeményezés, amely segíti a fejlesztőket és szervezeteket abban, hogy átlátható, megbízható és elszámoltatható MI-rendszereket építsenek. A kezdeményezés útmutatást és erőforrásokat nyújt felelős MI-megoldások fejlesztéséhez, amelyek összhangban állnak etikai elvekkel, mint például az adatvédelem, méltányosság és átláthatóság. Emellett megvizsgáljuk a felelős MI-rendszerek építésével járó kihívásokat és bevált gyakorlatokat is.
+A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) egy olyan kezdeményezés, amely arra törekszik, hogy fejlesztőknek és szervezeteknek segítséget nyújtson átlátható, megbízható és elszámoltatható MI rendszerek létrehozásában. A kezdeményezés útmutatást és erőforrásokat biztosít felelős MI-megoldások fejlesztéséhez, amelyek összhangban vannak etikai elvekkel, mint például a magánélet védelme, az igazságosság és az átláthatóság. Emellett megvizsgáljuk a felelős MI rendszerek kiépítésével kapcsolatos kihívásokat és legjobb gyakorlatokat is.
 
 ## A Microsoft Responsible AI áttekintése
 
@@ -8,105 +8,109 @@ A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_i
 
 **Etikai elvek**
 
-A Microsoft Responsible AI-t egy sor etikai elv vezérli, mint az adatvédelem, méltányosság, átláthatóság, elszámoltathatóság és biztonság. Ezek az elvek biztosítják, hogy az MI-rendszerek etikusan és felelősségteljesen készüljenek.
+A Microsoft Responsible AI-t egy sor etikai elv vezérli, például a magánélet védelme, igazságosság, átláthatóság, elszámoltathatóság és biztonság. Ezek az elvek biztosítják, hogy az MI rendszerek etikus és felelős módon kerüljenek kifejlesztésre.
 
-**Átlátható MI**
+**Átlátható MI** 
 
-A Microsoft Responsible AI hangsúlyozza az átláthatóság fontosságát az MI-rendszerekben. Ez magában foglalja az MI-modellek működésének világos magyarázatát, valamint annak biztosítását, hogy az adatforrások és algoritmusok nyilvánosan elérhetők legyenek.
+A Microsoft Responsible AI hangsúlyozza az átláthatóság fontosságát az MI rendszerekben. Ez magában foglalja annak világos magyarázatát, hogy az MI modellek hogyan működnek, valamint azt, hogy az adatforrások és algoritmusok nyilvánosan hozzáférhetőek legyenek.
 
 **Elszámoltatható MI**
 
-A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) támogatja az elszámoltatható MI-rendszerek fejlesztését, amelyek betekintést nyújtanak abba, hogyan hoznak döntéseket az MI-modellek. Ez segíti a felhasználókat abban, hogy megértsék és megbízzanak az MI-rendszerek eredményeiben.
+A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) az elszámoltatható MI rendszerek fejlesztését támogatja, amelyek betekintést nyújtanak abba, hogyan hoznak döntéseket a MI modellek. Ez segíthet a felhasználóknak megérteni és megbízni az MI rendszerek kimeneteiben.
 
-**Befogadás**
+**Befogadás** 
 
-Az MI-rendszereket úgy kell tervezni, hogy mindenki számára előnyösek legyenek. A Microsoft célja, hogy befogadó MI-t hozzon létre, amely figyelembe veszi a különböző nézőpontokat, és elkerüli az elfogultságot vagy diszkriminációt.
+Az MI rendszereket úgy kell megtervezni, hogy mindenki javát szolgálják. A Microsoft célja olyan befogadó MI létrehozása, amely figyelembe veszi a sokféle nézőpontot, és elkerüli az elfogultságot vagy diszkriminációt.
 
 **Megbízhatóság és biztonság**
 
-Az MI-rendszerek megbízhatóságának és biztonságának biztosítása kulcsfontosságú. A Microsoft olyan robusztus modellek fejlesztésére összpontosít, amelyek következetesen működnek és elkerülik a káros következményeket.
+Kritikus fontosságú, hogy az MI rendszerek megbízhatóak és biztonságosak legyenek. A Microsoft arra összpontosít, hogy robusztus modelleket építsen, amelyek következetesen teljesítenek és elkerülik a káros eredményeket.
 
-**Méltányosság az MI-ben**
+**Igazságosság az MI-ben**
 
-A Microsoft Responsible AI felismeri, hogy az MI-rendszerek fenntarthatják az elfogultságokat, ha elfogult adatokon vagy algoritmusokon tanulnak. A kezdeményezés útmutatást nyújt méltányos MI-rendszerek fejlesztéséhez, amelyek nem diszkriminálnak például faj, nem vagy életkor alapján.
+A Microsoft Responsible AI felismeri, hogy az MI rendszerek elfogultságot szülhetnek, ha elfogult adatokon vagy algoritmusokon tanulnak. A kezdeményezés útmutatást nyújt igazságos MI rendszerek fejlesztéséhez, amelyek nem diszkriminálnak például faj, nem vagy életkor alapján.
 
-**Adatvédelem és biztonság**
+**Magánélet és biztonság**
 
-A Microsoft Responsible AI hangsúlyozza a felhasználói adatvédelem és adatbiztonság fontosságát az MI-rendszerekben. Ez magában foglalja az erős adat titkosítás és hozzáférés-szabályozás bevezetését, valamint az MI-rendszerek rendszeres sebezhetőségi ellenőrzését.
+A Microsoft Responsible AI hangsúlyozza a felhasználói magánélet és adatok védelmének fontosságát az MI rendszerekben. Ez magában foglalja az erős adat titkosítás és hozzáférés-szabályozási megoldások alkalmazását, valamint az MI rendszerek rendszeres biztonsági ellenőrzését.
 
-**Elszámoltathatóság és felelősség**
+**Elszámoltathatóság és felelősségvállalás**
 
-A Microsoft Responsible AI támogatja az elszámoltathatóságot és felelősségvállalást az MI fejlesztésében és alkalmazásában. Ez magában foglalja annak biztosítását, hogy a fejlesztők és szervezetek tisztában legyenek az MI-rendszerekhez kapcsolódó kockázatokkal, és lépéseket tegyenek ezek mérséklésére.
+A Microsoft Responsible AI támogatja az elszámoltathatóságot és a felelősségvállalást az MI fejlesztésében és üzembe helyezésében. Ez magában foglalja annak biztosítását, hogy a fejlesztők és szervezetek tisztában legyenek az MI rendszerekhez kapcsolódó potenciális kockázatokkal, és lépéseket tegyenek ezek csökkentésére.
 
-## Felelős MI-rendszerek építésének bevált gyakorlatai
+## Legjobb gyakorlatok felelős MI rendszerek építéséhez
 
-**Fejlesszünk MI-modelleket sokszínű adatkészletekkel**
+**Különböző adatkészletek használata az MI modellek fejlesztéséhez**
 
-Az elfogultság elkerülése érdekében fontos, hogy sokszínű adatkészleteket használjunk, amelyek különböző nézőpontokat és tapasztalatokat tükröznek.
+Az elfogultság elkerülése érdekében fontos, hogy változatos adatkészleteket használjunk, amelyek különböző nézőpontokat és tapasztalatokat képviselnek.
 
-**Használjunk magyarázható MI technikákat**
+**Magyarázható MI technikák alkalmazása**
 
-A magyarázható MI technikák segítenek a felhasználóknak megérteni, hogyan hoznak döntéseket az MI-modellek, ami növelheti a rendszerbe vetett bizalmat.
+A magyarázható MI technikák segíthetnek a felhasználóknak megérteni, hogyan hoznak döntéseket az MI modellek, ami növelheti a rendszerbe vetett bizalmat.
 
-**Rendszeresen ellenőrizzük az MI-rendszereket sebezhetőségek szempontjából**
+**Az MI rendszerek rendszeres biztonsági ellenőrzése**
 
-Az MI-rendszerek rendszeres auditálása segíthet azonosítani a potenciális kockázatokat és sebezhetőségeket, amelyeket kezelni kell.
+Az MI rendszerek rendszeres auditálása segíthet azonosítani a kezelendő potenciális kockázatokat és sérülékenységeket.
 
-**Alkalmazzunk erős adat titkosítást és hozzáférés-szabályozást**
+**Erős adat titkosítás és hozzáférési szabályozások bevezetése**
 
-Az adat titkosítás és hozzáférés-szabályozás segít megvédeni a felhasználói adatokat és biztosítani az MI-rendszerek biztonságát.
+Az adat titkosítás és hozzáférési szabályozások védelmet nyújthatnak a felhasználói magánéletnek és biztonságnak az MI rendszerekben.
 
-**Követjük az etikai elveket az MI fejlesztésében**
+**Etikai elvek követése az MI fejlesztésében**
 
-Az olyan etikai elvek követése, mint a méltányosság, átláthatóság és elszámoltathatóság, hozzájárul a bizalom kiépítéséhez az MI-rendszerek iránt, és biztosítja, hogy azok felelősségteljesen készüljenek.
+Az olyan etikai elvek betartása, mint az igazságosság, átláthatóság és elszámoltathatóság segíthet az MI rendszerekbe vetett bizalom kialakításában és abban, hogy felelősségteljes módon fejlesztésre kerüljenek.
 
-## Az AI Foundry használata a felelős MI-hez
+## Felelős MI a Microsoft Foundry használatával
 
-Az [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) egy erőteljes platform, amely lehetővé teszi fejlesztők és szervezetek számára, hogy gyorsan hozzanak létre intelligens, élvonalbeli, piacra kész és felelős alkalmazásokat. Íme néhány kulcsfontosságú funkció és képesség az Azure AI Foundry-ban:
+A [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) egy hatékony platform, amely lehetővé teszi fejlesztőknek és szervezeteknek, hogy gyorsan hozzanak létre intelligens, élvonalbeli, piackész és felelős alkalmazásokat. Íme néhány kulcsfontosságú jellemző és lehetőség a Microsoft Foundry-ban:
 
-**Kész API-k és modellek**
+**Kész API-k és modellek** 
 
-Az Azure AI Foundry előre elkészített és testreszabható API-kat és modelleket kínál. Ezek számos MI-feladatot lefednek, beleértve a generatív MI-t, természetes nyelvfeldolgozást beszélgetésekhez, keresést, monitorozást, fordítást, beszédet, látást és döntéshozatalt.
+A Microsoft Foundry előre elkészített és testreszabható API-kat és modelleket kínál. Ezek számos MI-feladatot fednek le, beleértve a generatív MI-t, a természetes nyelvfeldolgozást beszélgetésekhez, keresést, monitorozást, fordítást, beszédet, látást és döntéshozatalt.
 
-**Prompt Flow**
+**Prompt Flow** 
 
-Az Azure AI Foundry Prompt Flow lehetővé teszi beszélgetés-alapú MI élmények létrehozását. Segít megtervezni és kezelni a beszélgetési folyamatokat, megkönnyítve chatbotok, virtuális asszisztensek és más interaktív alkalmazások fejlesztését.
+A Microsoft Foundry-ban a prompt flow lehetővé teszi beszélgetés alapú MI élmények létrehozását. Segít beszélgetési folyamatok tervezésében és kezelésében, így megkönnyíti chatbotok, virtuális asszisztensek és más interaktív alkalmazások fejlesztését.
 
-**Retrieval Augmented Generation (RAG)**
+**Retrieval Augmented Generation (RAG)** 
 
-A RAG egy olyan technika, amely ötvözi a lekérdezés-alapú és generatív megközelítéseket. Javítja a generált válaszok minőségét azáltal, hogy mind a meglévő tudást (lekérdezés), mind a kreatív generálást (generálás) kihasználja.
+A RAG egy technika, amely kombinálja a lekérdezés-alapú és a generatív megközelítéseket. Javítja a generált válaszok minőségét azáltal, hogy kihasználja a meglévő tudást (lekérdezés) és a kreatív generálást (generálás).
 
-**Generatív MI értékelési és monitorozási metrikák**
+**Értékelési és monitorozási mutatók generatív MI-hez**
 
-Az Azure AI Foundry eszközöket biztosít generatív MI-modellek értékelésére és monitorozására. Értékelheted a teljesítményüket, méltányosságukat és más fontos mutatókat a felelős alkalmazás érdekében. Ha létrehoztál egy irányítópultot, az Azure Machine Learning Studio kód nélküli felületén testreszabhatod és generálhatod a Responsible AI Dashboardot és a hozzá tartozó scorecardot a [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python könyvtárak alapján. Ez a scorecard segít megosztani a méltányossággal, jellemző fontossággal és más felelős alkalmazási szempontokkal kapcsolatos kulcsfontosságú információkat technikai és nem technikai érintettekkel egyaránt.
+A Microsoft Foundry eszközöket biztosít generatív MI modellek értékeléséhez és monitorozásához. Felmérhetjük teljesítményüket, igazságosságukat és más fontos mutatókat a felelős telepítés érdekében. Ha létrehoztunk egy irányítópultot, az Azure Machine Learning Studio no-code felületét használhatjuk a [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python könyvtárakon alapuló felelős MI irányítópult és a kapcsolódó eredménytábla testreszabására és generálására. Ez az eredménytábla segít technikai és nem technikai érdekelt felekkel megosztani a kulcsfontosságú elemzéseket az igazságosságról, jellemző fontosságról és egyéb felelős telepítési megfontolásokról.
 
-A felelős MI érdekében az AI Foundry használatakor kövesd az alábbi bevált gyakorlatokat:
+A Microsoft Foundry felelős MI-vel való használatához kövesse az alábbi legjobb gyakorlatokat:
 
-**Határozd meg az MI-rendszer problémáját és céljait**
+**Határozza meg az MI rendszer problémáját és céljait**
 
-A fejlesztés megkezdése előtt fontos egyértelműen meghatározni azt a problémát vagy célt, amelyet az MI-rendszer meg kíván oldani. Ez segít az adatok, algoritmusok és erőforrások azonosításában a hatékony modell felépítéséhez.
+A fejlesztési folyamat megkezdése előtt fontos világosan meghatározni a problémát vagy célt, amelyet az MI rendszer megoldani kíván. Ez segít azonosítani az adatokat, algoritmusokat és erőforrásokat a hatékony modell felépítéséhez.
 
-**Gyűjtsd össze és előfeldolgozd a releváns adatokat**
+**Gyűjtse össze és előfeldolgozza a releváns adatokat**
 
-Az MI-rendszer képzéséhez használt adatok minősége és mennyisége jelentős hatással van a teljesítményre. Ezért fontos a releváns adatok összegyűjtése, tisztítása, előfeldolgozása, és annak biztosítása, hogy az adatok reprezentálják a célpopulációt vagy problémát.
+Az MI rendszer képzéséhez használt adatok minősége és mennyisége jelentős hatással van a teljesítményre. Ezért fontos, hogy releváns adatokat gyűjtsünk, tisztítsunk, előfeldolgozzunk, és biztosítsuk, hogy azok reprezentálják a népességet vagy a megoldandó problémát.
 
-**Válassz megfelelő értékelési algoritmust**
+**Válassza ki a megfelelő értékelést**
 
-Számos értékelési algoritmus létezik. Fontos a legmegfelelőbb algoritmus kiválasztása az adatok és a probléma alapján.
+Számos értékelési algoritmus áll rendelkezésre. Fontos kiválasztani a legmegfelelőbbet az adott adatok és probléma alapján.
 
-**Értékeld és értelmezd a modellt**
+**Értékelje és értelmezze a modellt**
 
-Miután elkészült az MI-modell, fontos a teljesítményének értékelése megfelelő metrikákkal, és az eredmények átlátható értelmezése. Ez segít az esetleges elfogultságok vagy korlátok felismerésében és a szükséges fejlesztések elvégzésében.
+Miután létrehozott egy MI modellt, fontos a teljesítményét megfelelő mutatókkal megvizsgálni és az eredményeket átlátható módon értelmezni. Ez segít az elfogultságok vagy korlátozások felismerésében, és a szükséges fejlesztések elvégzésében.
 
-**Biztosíts átláthatóságot és magyarázhatóságot**
+**Biztosítsa az átláthatóságot és magyarázhatóságot**
 
-Az MI-rendszereknek átláthatónak és magyarázhatónak kell lenniük, hogy a felhasználók megértsék működésüket és döntéshozatali folyamataikat. Ez különösen fontos olyan alkalmazásoknál, amelyek jelentős hatással vannak az emberek életére, például az egészségügyben, pénzügyekben és jogi rendszerekben.
+Az MI rendszereknek átláthatónak és magyarázhatónak kell lenniük, hogy a felhasználók megérthessék működésüket és döntéshozatalukat. Ez különösen fontos az életre kiható alkalmazásokban, mint az egészségügy, pénzügy és jogi rendszerek.
 
-**Figyeld és frissítsd a modellt**
+**Figyelje és frissítse a modellt**
 
-Az MI-rendszereket folyamatosan figyelni és frissíteni kell, hogy hosszú távon is pontosak és hatékonyak maradjanak. Ez folyamatos karbantartást, tesztelést és újraképzést igényel.
+Az MI rendszereket folyamatosan figyelni és frissíteni kell, hogy idővel is pontosak és hatékonyak maradjanak. Ez rendszeres karbantartást, tesztelést és újraképzést igényel.
 
-Összefoglalva, a Microsoft Responsible AI egy olyan kezdeményezés, amely segíti a fejlesztőket és szervezeteket átlátható, megbízható és elszámoltatható MI-rendszerek építésében. Ne feledjük, hogy a felelős MI megvalósítása kulcsfontosságú, és az Azure AI Foundry célja, hogy ezt a gyakorlatban is megkönnyítse a szervezetek számára. Az etikai elvek és bevált gyakorlatok követésével biztosíthatjuk, hogy az MI-rendszerek felelősségteljesen, a társadalom egészének javára készüljenek és kerüljenek alkalmazásra.
+Összefoglalva, a Microsoft Responsible AI egy olyan kezdeményezés, amely segíti a fejlesztőket és szervezeteket átlátható, megbízható és elszámoltatható MI rendszerek építésében. Ne feledjük, hogy a felelős MI megvalósítása létfontosságú, és a Microsoft Foundry célja, hogy ezt gyakorlatilag is lehetővé tegye a szervezetek számára. Az etikai elvek és legjobb gyakorlatok követésével biztosíthatjuk, hogy az MI rendszerek felelősségteljes módon kerüljenek fejlesztésre és bevezetésre, amely a társadalom egészének javát szolgálja.
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősségkizárás**:
+Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum, annak eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az e fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

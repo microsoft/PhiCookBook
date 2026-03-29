@@ -2,35 +2,35 @@
 
 ## Přehled projektu
 
-PhiCookBook je komplexní úložiště kuchařek obsahující praktické příklady, tutoriály a dokumentaci pro práci s rodinou malých jazykových modelů (SLMs) od Microsoftu Phi. Úložiště demonstruje různé případy použití, včetně inferencí, jemného ladění, kvantizace, implementací RAG a multimodálních aplikací na různých platformách a v různých rámcích.
+PhiCookBook je komplexní repozitář kuchařek obsahující praktické příklady, návody a dokumentaci pro práci s rodinou malých jazykových modelů (SLM) od Microsoftu Phi. Repozitář demonstruje různé případy použití včetně inferencí, doladění, kvantizace, implementací RAG a multimodálních aplikací na různých platformách a rámcích.
 
 **Klíčové technologie:**
 - **Jazyky:** Python, C#/.NET, JavaScript/Node.js
 - **Rámce:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platformy:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platformy:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Typy modelů:** Phi-3, Phi-3.5, Phi-4 (textové, vizuální, multimodální, varianty pro uvažování)
 
-**Struktura úložiště:**
-- `/code/` - Funkční příklady kódu a ukázkové implementace
-- `/md/` - Podrobná dokumentace, tutoriály a návody  
-- `/translations/` - Překlady do více jazyků (50+ jazyků prostřednictvím automatizovaného workflow)
+**Struktura repozitáře:**
+- `/code/` - Pracovní příklady kódu a ukázkové implementace
+- `/md/` - Podrobná dokumentace, návody a průvodce  
+- `/translations/` - Překlady do více jazyků (50+ jazyků pomocí automatizovaného workflow)
 - `/.devcontainer/` - Konfigurace vývojového kontejneru (Python 3.12 s Ollama)
 
 ## Nastavení vývojového prostředí
 
-### Použití GitHub Codespaces nebo vývojových kontejnerů (doporučeno)
+### Použití GitHub Codespaces nebo Dev kontejnerů (doporučeno)
 
 1. Otevřete v GitHub Codespaces (nejrychlejší):
-   - Klikněte na odznak "Open in GitHub Codespaces" v README
-   - Kontejner se automaticky nakonfiguruje s Pythonem 3.12 a Ollama s Phi-3
+   - Klikněte na odznak „Open in GitHub Codespaces“ v README
+   - Kontejner se automaticky nakonfiguruje s Python 3.12 a Ollama s Phi-3
 
-2. Otevřete ve vývojových kontejnerech VS Code:
-   - Použijte odznak "Open in Dev Containers" z README
-   - Kontejner vyžaduje minimálně 16 GB paměti hostitele
+2. Otevřete ve VS Code Dev kontejnerech:
+   - Použijte odznak „Open in Dev Containers“ z README
+   - Kontejner vyžaduje minimálně 16 GB paměti na hostitelském počítači
 
 ### Lokální nastavení
 
-**Předpoklady:**
+**Požadavky:**
 - Python 3.12 nebo novější
 - .NET 8.0 SDK (pro příklady v C#)
 - Node.js 18+ a npm (pro příklady v JavaScriptu)
@@ -43,10 +43,10 @@ cd PhiCookBook
 ```
 
 **Pro příklady v Pythonu:**
-Přejděte do konkrétních adresářů s příklady a nainstalujte závislosti:
+Přejděte do konkrétních adresářů příkladů a nainstalujte závislosti:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # pokud existuje requirements.txt
 ```
 
 **Pro příklady v .NET:**
@@ -60,50 +60,50 @@ dotnet build LabsPhi.sln
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Spustit vývojový server
+npm run build  # Vytvořit pro produkci
 ```
 
-## Organizace úložiště
+## Organizace repozitáře
 
 ### Příklady kódu (`/code/`)
 
-- **01.Introduce/** - Základní úvod a ukázkové příklady pro začátek
-- **03.Finetuning/** a **04.Finetuning/** - Příklady jemného ladění různými metodami
-- **03.Inference/** - Příklady inferencí na různém hardwaru (AIPC, MLX)
-- **06.E2E/** - Ukázky aplikací od začátku do konce
+- **01.Introduce/** - Základní úvodní a startovací příklady
+- **03.Finetuning/** a **04.Finetuning/** - Příklady doladění s různými metodami
+- **03.Inference/** - Příklady inferencí na různém hardware (AIPC, MLX)
+- **06.E2E/** - Ukázky kompletních aplikací
 - **07.Lab/** - Laboratorní/experimentální implementace
-- **08.RAG/** - Ukázky generování s podporou vyhledávání
+- **08.RAG/** - Příklady Retrieval-Augmented Generation
 - **09.UpdateSamples/** - Nejnovější aktualizované příklady
 
 ### Dokumentace (`/md/`)
 
 - **01.Introduction/** - Úvodní průvodce, nastavení prostředí, průvodce platformami
-- **02.Application/** - Ukázky aplikací organizované podle typu (Text, Kód, Vize, Audio, atd.)
-- **02.QuickStart/** - Rychlé startovací průvodce pro Azure AI Foundry a GitHub Models
-- **03.FineTuning/** - Dokumentace a tutoriály k jemnému ladění
+- **02.Application/** - Ukázky aplikací podle typu (Text, Kód, Vize, Audio atd.)
+- **02.QuickStart/** - Rychlé startovací průvodce pro Microsoft Foundry a GitHub Models
+- **03.FineTuning/** - Dokumentace a tutoriály k doladění
 - **04.HOL/** - Praktické laboratoře (včetně příkladů v .NET)
 
 ### Formáty souborů
 
 - **Jupyter Notebooks (`.ipynb`)** - Interaktivní tutoriály v Pythonu označené 📓 v README
-- **Python Scripts (`.py`)** - Samostatné příklady v Pythonu
-- **C# Projects (`.csproj`, `.sln`)** - Aplikace a příklady v .NET
+- **Python skripty (`.py`)** - Samostatné příklady v Pythonu
+- **C# projekty (`.csproj`, `.sln`)** - .NET aplikace a příklady
 - **JavaScript (`.js`, `package.json`)** - Webové a Node.js příklady
-- **Markdown (`.md`)** - Dokumentace a průvodce
+- **Markdown (`.md`)** - Dokumentace a průvodci
 
 ## Práce s příklady
 
-### Spouštění Jupyter Notebooks
+### Spuštění Jupyter Notebooks
 
-Většina příkladů je poskytována jako Jupyter notebooks:
+Většina příkladů je poskytována jako Jupyter notebooky:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Otevře rozhraní prohlížeče
+# Přejděte na požadovaný soubor .ipynb
 ```
 
-### Spouštění Python skriptů
+### Spuštění Python skriptů
 
 ```bash
 cd code/<example-directory>
@@ -111,7 +111,7 @@ pip install -r requirements.txt
 python <script-name>.py
 ```
 
-### Spouštění příkladů v .NET
+### Spuštění .NET příkladů
 
 ```bash
 cd md/04.HOL/dotnet/src/<project-name>
@@ -124,77 +124,77 @@ cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### Spouštění příkladů v JavaScriptu/webu
+### Spuštění JavaScript/Web příkladů
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Vývoj s horkým načítáním
 ```
 
 ## Testování
 
-Toto úložiště obsahuje ukázkový kód a tutoriály, spíše než tradiční softwarový projekt s jednotkovými testy. Validace se obvykle provádí:
+Tento repozitář obsahuje ukázkový kód a návody spíše než tradiční softwarový projekt s unit testy. Validace se obvykle provádí:
 
-1. **Spouštěním příkladů** - Každý příklad by měl být spuštěn bez chyb
-2. **Ověřením výstupů** - Zkontrolujte, zda jsou odpovědi modelu vhodné
-3. **Dodržováním tutoriálů** - Průvodce krok za krokem by měl fungovat podle dokumentace
+1. **Spuštěním příkladů** - Každý příklad by měl běžet bez chyb
+2. **Ověřením výstupů** - Zkontrolujte, že odpovědi modelu jsou vhodné
+3. **Následováním tutoriálů** - Krokové návody by měly fungovat dle dokumentace
 
-**Běžný přístup k validaci:**
+**Běžný způsob ověřování:**
 - Testování spuštění příkladů v cílovém prostředí
 - Ověření správné instalace závislostí
-- Kontrola, zda se modely správně stahují/nahrávají
-- Potvrzení, že očekávané chování odpovídá dokumentaci
+- Kontrola úspěšného stažení/nahrání modelů
+- Potvrzení, že chování odpovídá dokumentaci
 
 ## Styl kódu a konvence
 
 ### Obecné pokyny
 
-- Příklady by měly být jasné, dobře komentované a vzdělávací
-- Dodržujte konvence specifické pro jazyk (PEP 8 pro Python, standardy C# pro .NET)
-- Udržujte příklady zaměřené na demonstraci konkrétních schopností modelů Phi
-- Zahrňte komentáře vysvětlující klíčové koncepty a parametry specifické pro modely
+- Příklady by měly být přehledné, dobře okomentované a vzdělávací
+- Dodržujte jazykové konvence (PEP 8 pro Python, standardy C# pro .NET)
+- Zaměřte příklady na demonstraci konkrétních schopností modelů Phi
+- Zahrňte komentáře vysvětlující klíčové koncepty a parametry modelů
 
 ### Standardy dokumentace
 
-**Formátování URL:**
-- Používejte formát `[text](../../url)` bez dalších mezer
-- Relativní odkazy: Používejte `./` pro aktuální adresář, `../` pro nadřazený
-- Nepoužívejte URL s lokalizací země (vyhněte se `/en-us/`, `/en/`)
+**Formát URL:**
+- Používejte formát `[text](../../url)` bez mezer navíc
+- Relativní odkazy: Používejte `./` pro aktuální složku, `../` pro nadřazenou
+- Vyvarujte se zeměspecifických lokalizací v URL (např. `/en-us/`, `/en/`)
 
 **Obrázky:**
 - Ukládejte všechny obrázky do adresáře `/imgs/`
-- Používejte popisné názvy s anglickými znaky, čísly a pomlčkami
+- Používejte popisná jména s anglickými znaky, čísly a pomlčkami
 - Příklad: `phi-3-architecture.png`
 
 **Markdown soubory:**
 - Odkazujte na skutečné funkční příklady v adresáři `/code/`
 - Udržujte dokumentaci synchronizovanou se změnami kódu
-- Používejte emoji 📓 k označení odkazů na Jupyter notebooks v README
+- Používejte emoji 📓 k označení odkazů na Jupyter notebooky v README
 
 ### Organizace souborů
 
-- Příklady kódu v `/code/` organizované podle tématu/funkce
-- Dokumentace v `/md/` zrcadlí strukturu kódu, pokud je to možné
-- Uchovávejte související soubory (notebooky, skripty, konfigurace) pohromadě v podadresářích
+- Příklady kódu v `/code/` uspořádané podle témat/funkcí
+- Dokumentace v `/md/` odpovídá struktuře kódu, kde je to možné
+- Uchovávejte související soubory (notebooky, skripty, konfigurace) pohromadě v podsložkách
 
-## Pokyny pro Pull Requesty
+## Pokyny k pull requestům
 
 ### Před odesláním
 
-1. **Forkněte úložiště** do svého účtu
+1. **Rozvětvěte repozitář** do svého účtu
 2. **Oddělte PR podle typu:**
    - Opravy chyb v jednom PR
    - Aktualizace dokumentace v jiném
    - Nové příklady v samostatných PR
-   - Opravy překlepů lze kombinovat
+   - Opravy překlepů lze slučovat
 
-3. **Řešení konfliktů při slučování:**
-   - Aktualizujte svou lokální větev `main` před provedením změn
-   - Často synchronizujte s upstreamem
+3. **Řešte konflikty slučování:**
+   - Nejprve aktualizujte svou lokální `main` větev
+   - Pravidelně synchronizujte s upstream
 
 4. **Překladové PR:**
-   - Musí obsahovat překlady pro VŠECHNY soubory ve složce
+   - Musí obsahovat překlady VŠECH souborů ve složce
    - Zachovejte konzistentní strukturu s původním jazykem
 
 ### Požadované kontroly
@@ -202,16 +202,16 @@ Toto úložiště obsahuje ukázkový kód a tutoriály, spíše než tradiční
 PR automaticky spouští GitHub workflow pro validaci:
 
 1. **Validace relativních cest** - Všechny interní odkazy musí fungovat
-   - Testujte odkazy lokálně: Ctrl+Klik ve VS Code
+   - Testujte odkazy lokálně: Ctrl+klik ve VS Code
    - Používejte návrhy cest z VS Code (`./` nebo `../`)
 
-2. **Kontrola lokalizace URL** - Webové URL nesmí obsahovat lokalizace zemí
-   - Odstraňte `/en-us/`, `/en/` nebo jiné jazykové kódy
+2. **Kontrola lokality URL** - Webové URL nesmí obsahovat lokality zemí
+   - Odstraňte `/en-us/`, `/en/` či jiné jazykové kódy
    - Používejte obecné mezinárodní URL
 
 3. **Kontrola nefunkčních URL** - Všechny URL musí vracet stav 200
-   - Ověřte, že odkazy jsou přístupné před odesláním
-   - Poznámka: Některé chyby mohou být způsobeny síťovými omezeními
+   - Ověřte dostupnost odkazů před odesláním
+   - Některé chyby mohou být způsobeny omezeními sítě
 
 ### Formát názvu PR
 
@@ -220,80 +220,80 @@ PR automaticky spouští GitHub workflow pro validaci:
 ```
 
 Příklady:
-- `[docs] Přidání tutoriálu pro inferenci Phi-4`
-- `[code] Oprava příkladu integrace ONNX Runtime`
-- `[translation] Přidání japonského překladu úvodních průvodců`
+- `[docs] Přidat návod na inferenci Phi-4`
+- `[code] Opravit příklad integrace ONNX Runtime`
+- `[translation] Přidat japonský překlad úvodních průvodců`
 
 ## Běžné vývojové vzory
 
 ### Práce s modely Phi
 
 **Načítání modelů:**
-- Příklady používají různé rámce: Transformers, ONNX Runtime, MLX, OpenVINO
-- Modely jsou obvykle stahovány z Hugging Face, Azure nebo GitHub Models
+- Příklady využívají různé rámce: Transformers, ONNX Runtime, MLX, OpenVINO
+- Modely se obvykle stahují z Hugging Face, Azure nebo GitHub Models
 - Zkontrolujte kompatibilitu modelu s vaším hardwarem (CPU, GPU, NPU)
 
-**Vzory inferencí:**
-- Generování textu: Většina příkladů používá varianty chat/instruct
-- Vize: Phi-3-vision a Phi-4-multimodal pro porozumění obrazu
-- Audio: Phi-4-multimodal podporuje zvukové vstupy
-- Uvažování: Varianty Phi-4-reasoning pro pokročilé úkoly uvažování
+**Vzory inference:**
+- Generování textu: Většina příkladů používá chat/instruct varianty
+- Vize: Phi-3-vision a Phi-4-multimodal pro porozumění obrázkům
+- Audio: Phi-4-multimodal podporuje audio vstupy
+- Uvažování: Phi-4-reasoning varianty pro pokročilé uvažovací úlohy
 
 ### Poznámky k platformám
 
-**Azure AI Foundry:**
-- Vyžaduje předplatné Azure a API klíče
+**Microsoft Foundry:**
+- Vyžaduje Azure předplatné a API klíče
 - Viz `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- K dispozici je bezplatná verze pro testování
+- Zdarma dostupný tier pro testování
 - Viz `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Lokální inference:**
 - ONNX Runtime: Multiplatformní, optimalizovaná inference
-- Ollama: Snadná správa lokálních modelů (předkonfigurováno ve vývojovém kontejneru)
+- Ollama: Snadná lokální správa modelů (přednastaveno ve vývojovém kontejneru)
 - Apple MLX: Optimalizováno pro Apple Silicon
 
 ## Řešení problémů
 
-### Běžné problémy
+### Nejčastější problémy
 
 **Problémy s pamětí:**
-- Modely Phi vyžadují značné množství RAM (zejména vizuální/multimodální varianty)
+- Modely Phi vyžadují značnou RAM (zejména vizuální/multimodální varianty)
 - Používejte kvantizované modely pro prostředí s omezenými zdroji
 - Viz `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Konflikty závislostí:**
-- Příklady v Pythonu mohou mít specifické požadavky na verze
+- Python příklady mohou mít specifické požadavky na verze
 - Používejte virtuální prostředí pro každý příklad
-- Zkontrolujte jednotlivé soubory `requirements.txt`
+- Zkontrolujte konkrétní soubory `requirements.txt`
 
-**Problémy se stahováním modelů:**
-- Velké modely mohou při pomalém připojení vypršet
-- Zvažte použití cloudových prostředí (Codespaces, Azure)
-- Zkontrolujte cache Hugging Face: `~/.cache/huggingface/`
+**Selhání stahování modelů:**
+- Velké modely mohou spadnout při pomalém připojení
+- Uvažujte o použití cloud prostředí (Codespaces, Azure)
+- Kontrola cache Hugging Face: `~/.cache/huggingface/`
 
-**Problémy s projekty v .NET:**
-- Ujistěte se, že máte nainstalovaný .NET 8.0 SDK
+**Problémy s projekty .NET:**
+- Ujistěte se, že máte nainstalované .NET 8.0 SDK
 - Použijte `dotnet restore` před sestavením
 - Některé projekty mají specifické konfigurace pro CUDA (Debug_Cuda)
 
-**Příklady v JavaScriptu/webu:**
-- Používejte Node.js 18+ pro kompatibilitu
-- Vymažte `node_modules` a znovu nainstalujte, pokud problémy přetrvávají
+**JavaScript/Web příklady:**
+- Používejte Node.js 18+ kvůli kompatibilitě
+- Vyčistěte `node_modules` a reinstallujte, pokud problémy přetrvávají
 - Zkontrolujte konzoli prohlížeče kvůli problémům s kompatibilitou WebGPU
 
-### Získání pomoci
+### Jak získat pomoc
 
-- **Discord:** Připojte se k Azure AI Foundry Community Discord
-- **GitHub Issues:** Nahlaste chyby a problémy v úložišti
-- **GitHub Discussions:** Pokládejte otázky a sdílejte znalosti
+- **Discord:** Připojte se do Microsoft Foundry Community Discordu
+- **GitHub Issues:** Hlaste chyby a problémy v repozitáři
+- **GitHub Discussions:** Ptejte se a sdílejte znalosti
 
 ## Další kontext
 
-### Odpovědná AI
+### Responsible AI
 
-Veškeré použití modelů Phi by mělo dodržovat principy odpovědné AI od Microsoftu:
+Veškeré používání modelů Phi by mělo dodržovat principy odpovědné AI od Microsoftu:
 - Spravedlnost, spolehlivost, bezpečnost
 - Ochrana soukromí a bezpečnost  
 - Inkluzivita, transparentnost, odpovědnost
@@ -302,28 +302,30 @@ Veškeré použití modelů Phi by mělo dodržovat principy odpovědné AI od M
 
 ### Překlady
 
-- Podpora více než 50 jazyků prostřednictvím automatizované GitHub Action
-- Překlady ve složce `/translations/`
+- Podporováno 50+ jazyků pomocí automatizovaného GitHub Action
+- Překlady v adresáři `/translations/`
 - Udržováno workflow co-op-translator
-- Nepřepisujte ručně přeložené soubory (automaticky generované)
+- Nepřepisujte ručně překládané soubory (generováno automaticky)
 
 ### Přispívání
 
-- Dodržujte pokyny v `CONTRIBUTING.md`
-- Souhlaste s Contributor License Agreement (CLA)
+- Řiďte se pokyny v `CONTRIBUTING.md`
+- Souhlaste s licenční smlouvou přispěvatele (CLA)
 - Dodržujte Microsoft Open Source Code of Conduct
-- Nezahrnujte bezpečnostní údaje a přihlašovací údaje do commitů
+- Uchovávejte bezpečnost a přihlašovací údaje mimo commity
 
 ### Podpora více jazyků
 
-Toto je polyglotní úložiště s příklady v:
-- **Python** - ML/AI workflow, Jupyter notebooks, jemné ladění
+Toto je polyglotní repozitář s příklady v:
+- **Python** - ML/AI workflow, Jupyter notebooky, doladění
 - **C#/.NET** - Podnikové aplikace, integrace ONNX Runtime
-- **JavaScript** - Webová AI, inference v prohlížeči s WebGPU
+- **JavaScript** - Webové AI, inference v prohlížeči s WebGPU
 
-Vyberte jazyk, který nejlépe odpovídá vašemu případu použití a cílovému nasazení.
+Vyberte jazyk, který nejlépe vyhovuje vašemu použití a cílové implementaci.
 
 ---
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby AI pro překlady [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Prohlášení o vyloučení odpovědnosti**:
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za žádné nedorozumění nebo nesprávné interpretace, které mohou vzniknout použitím tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
