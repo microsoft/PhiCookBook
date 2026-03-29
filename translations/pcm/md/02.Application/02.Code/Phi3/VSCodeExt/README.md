@@ -1,34 +1,34 @@
-# **Make your own Visual Studio Code GitHub Copilot Chat wit Microsoft Phi-3 Family**
+# **Build your own Visual Studio Code GitHub Copilot Chat wit Microsoft Phi-3 Family**
 
-You don don use the workspace agent for GitHub Copilot Chat? You wan build your team code agent? Dis hands-on lab dey try combine open source model make e fit build enterprise-level code business agent.
+You don use di workspace agent for GitHub Copilot Chat before? You wan build your own team code agent? Dis hands-on lab hope to join di open source model to build enterprise-level code business agent.
 
 ## **Foundation**
 
-### **Why you go choose Microsoft Phi-3**
+### **Why choose Microsoft Phi-3**
 
-Phi-3 na family series wey get phi-3-mini, phi-3-small, and phi-3-medium wey dem train with different parameters for text generation, dialogue completion, and code generation. E still get phi-3-vision wey base on Vision. E good for enterprises or different teams wey wan create offline generative AI solutions.
+Phi-3 na family series, e get phi-3-mini, phi-3-small, and phi-3-medium wey base on different training parameters for text generation, dialogue completion, and code generation. E still get phi-3-vision wey base on Vision. E good for enterprises or different teams to create offline generative AI solutions.
 
-E good make you read dis link [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
+Recommended make you read dis link [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
 
 ### **Microsoft GitHub Copilot Chat**
 
-The GitHub Copilot Chat extension dey give you chat interface wey allow you interact with GitHub Copilot and get answers to coding-related questions directly inside VS Code, no need make you dey waka through documentation or dey search forum for internet.
+GitHub Copilot Chat extension dey give you chat interface wey you fit interact wit GitHub Copilot and get answers to coding-related questions directly inside VS Code, no need to waka search documentation or online forums.
 
-Copilot Chat fit use syntax highlighting, indentation, and other formatting features make the generated response clear. Depending on the kain question wey user ask, the result fit get links to context wey Copilot use to generate the response, like source code files or documentation, or buttons wey dey access VS Code functionality.
+Copilot Chat fit use syntax highlighting, indentation, and other formatting features to make di generated response clear. Depending on di kind question wey user ask, di result fit get links to context wey Copilot use generate di response, like source code files or documentation, or buttons to access VS Code functions.
 
-- Copilot Chat dey integrate inside your developer flow and dey give you help where you need am:
+- Copilot Chat join your developer flow and dey give you help where you need am:
 
-- Start inline chat conversation directly from the editor or the terminal to get help while you dey code
+- Start inline chat conversation straight from editor or terminal if you need help while you dey do code
 
-- Use the Chat view to get AI assistant for the side to help you anytime
+- Use di Chat view get AI assistant for side to help you anytime
 
-- Launch Quick Chat to ask small question quickly and return to wetin you dey do
+- Launch Quick Chat ask quick question and quickly return to wetin you dey do
 
-You fit use GitHub Copilot Chat for different scenarios, like:
+You fit use GitHub Copilot Chat for plenty scenarios, like:
 
-- Answer coding questions on how best to solve problem
+- Answer coding questions on how to best solve problem
 
-- Explain somebody else code and suggest better ways
+- Explain another person code and suggest better way
 
 - Propose code fixes
 
@@ -36,41 +36,42 @@ You fit use GitHub Copilot Chat for different scenarios, like:
 
 - Generate code documentation
 
-Recommended to read this link [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
+Recommended make you read dis link [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
 
 ###  **Microsoft GitHub Copilot Chat @workspace**
 
-If you reference **@workspace** for Copilot Chat e dey allow you ask questions about your whole codebase. Based on the question, Copilot go sabi retrieve relevant files and symbols, wey e go then use for the answer as links and code examples. 
+If you use **@workspace** for Copilot Chat, e fit let you ask questions about your whole codebase. Based on the question, Copilot sabi find relevant files and symbols and e go use dem as links and code examples for answer.
 
-To answer your question, **@workspace** dey search through the same sources wey developer go use when dem dey navigate codebase for VS Code:
+To answer your question, **@workspace** de search all di places wey developer sabi use when e dey waka inside codebase for VS Code:
 
-- All files for the workspace, except files wey .gitignore don ignore
+- All files inside workspace, except files wey .gitignore don ignore
 
 - Directory structure with nested folders and file names
 
-- GitHub's code search index, if the workspace na GitHub repository and e don dey indexed by code search
+- GitHub code search index if workspace na GitHub repo and e dey indexed by code search
 
-- Symbols and definitions wey dey the workspace
+- Symbols and definitions for workspace
 
-- Currently selected text or visible text wey dey the active editor
+- Di text wey you select or wetin dey visible for active editor
 
-Note: .gitignore no go block am if you open the file or you get text wey you don select inside ignored file.
+Note: .gitignore no go work if you get file open or you select text inside ignored file.
 
-Recommended to read this link [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
+Recommended make you read dis link [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
 
 
-## **Know more about this Lab**
+## **Know more about dis Lab**
 
-GitHub Copilot don improve programming efficiency for enterprises wella, and every enterprise dey hope to customize relevant features of GitHub Copilot. Plenty enterprises don customize Extensions like GitHub Copilot based on their own business needs and open source models. For enterprises, customized Extensions dey easier to control, but e fit still affect user experience. After all, GitHub Copilot get strong power for general scenarios and professional work. If the experience fit remain consistent, e go better to customize the enterprise own Extension. GitHub Copilot Chat dey provide APIs wey enterprises fit use to expand the Chat experience. Maintain consistent experience plus get customized functions na beta user experience.
+GitHub Copilot don improve programming efficiency for enterprises well well, and every enterprise wan customize di relevant functions of GitHub Copilot. Plenty enterprises don customize Extensions wey resemble GitHub Copilot based on their own business cases and open source models. For enterprises, custom Extensions easier to control but e fit affect user experience too. After all, GitHub Copilot get strong functions for general cases and professional settings. If experience fit remain consistent, e go better to customize enterprise own Extension. GitHub Copilot Chat provide APIs for enterprises to expand Chat experience. To maintain consistent experience and still get customized functions go make user experience better.
 
-This lab mainly dey use the Phi-3 model combine with local NPU and Azure hybrid make dem build custom Agent for GitHub Copilot Chat ***@PHI3*** to help enterprise developers finish code generation***(@PHI3 /gen)*** and generate code based on images ***(@PHI3 /img)***.
+Dis lab mainly dey use Phi-3 model join local NPU and Azure hybrid to build custom Agent inside GitHub Copilot Chat ***@PHI3*** to help enterprise developers complete code generation***(@PHI3 /gen)*** and make code based on images ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.pcm.png)
+![PHI3](../../../../../../../translated_images/pcm/cover.1017ebc9a7c46d09.webp)
 
-### ***Note:*** 
+### ***Note:***
 
-This lab dey implemented for AIPC on Intel CPU and Apple Silicon now. We go continue to update the Qualcomm NPU version.
+Dis lab dey run now for AIPC of Intel CPU and Apple Silicon. We go continue update for Qualcomm NPU version.
+
 
 ## **Lab**
 
@@ -78,9 +79,9 @@ This lab dey implemented for AIPC on Intel CPU and Apple Silicon now. We go cont
 | Name | Description | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
 | Lab0 - Installations(✅) | Configure and install related environments and installation tools | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
-| Lab1 - Run Prompt flow with Phi-3-mini (✅) | Combined with AIPC / Apple Silicon, using local NPU to create code generation through Phi-3-mini | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
+| Lab1 - Run Prompt flow with Phi-3-mini (✅) | Join AIPC / Apple Silicon together, use local NPU to create code generation wit Phi-3-mini | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
 | Lab2 - Deploy Phi-3-vision on Azure Machine Learning Service(✅) | Generate code by deploying Azure Machine Learning Service's Model Catalog - Phi-3-vision image | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
-| Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | Create a custom Phi-3 agent in GitHub Copilot Chat to complete code generation, graph generation code, RAG, etc. | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
+| Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | Create custom Phi-3 agent inside GitHub Copilot Chat to complete code generation, graph generation code, RAG, etc. | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
 | Sample Code (✅)  | Download sample code | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
 
 
@@ -88,19 +89,19 @@ This lab dey implemented for AIPC on Intel CPU and Apple Silicon now. We go cont
 
 1. Phi-3 Cookbook [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook)
 
-2. Make you sabi more about GitHub Copilot [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
+2. Learn more about GitHub Copilot [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-3. Make you sabi more about GitHub Copilot Chat [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
+3. Learn more about GitHub Copilot Chat [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-4. Make you sabi more about GitHub Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
+4. Learn more about GitHub Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. Make you sabi more about Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. Learn more about Microsoft Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. Make you sabi more about Azure AI Foundry's Model Catalog [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. Learn more about Microsoft Foundry's Model Catalog [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Disclaimer:
-Dis document na AI (Co‑op Translator) translate am. Even though we dey try make everything correct, abeg note say automatic translation fit get errors or wrong meaning. Di original document for im own language remain di main/official source. For important matter, e better make professional human translator check am. We no dey liable for any misunderstanding or wrong interpretation wey fit come from dis translation.
+**Disclaimer**:  
+Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even tho we dey try make am correct, abeg make you sabi say automated translations fit get errors or mistakes. Di original document for im own native language na di correct one wey you suppose use. For important tin dem, na professional human translation good pass. We no go responsible for any wahala or wrong understanding wey fit happen from di use of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

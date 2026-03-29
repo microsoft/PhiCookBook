@@ -1,114 +1,116 @@
-# **Tutvustus: Vastutustundlik tehisintellekt**
+# **Tutvustus vastutustundlikule tehisintellektile**
 
-[Microsofti vastutustundlik tehisintellekt](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) on algatus, mille eesmärk on aidata arendajatel ja organisatsioonidel luua tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Algatus pakub juhiseid ja ressursse vastutustundlike tehisintellekti lahenduste arendamiseks, mis järgivad eetilisi põhimõtteid, nagu privaatsus, õiglus ja läbipaistvus. Samuti uurime mõningaid väljakutseid ja parimaid praktikaid, mis on seotud vastutustundlike tehisintellekti süsteemide loomisega.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) on algatus, mille eesmärk on aidata arendajatel ja organisatsioonidel ehitada tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Algatus pakub juhiseid ja ressursse vastutustundlike tehisintellekti lahenduste arendamiseks, mis järgivad eetilisi põhimõtteid, nagu privaatsus, võrdsus ja läbipaistvus. Samuti uurime mõningaid väljakutseid ja parimaid tavasid, mis on seotud vastutustundlike tehisintellekti süsteemide loomisega.
 
-## Microsofti vastutustundliku tehisintellekti ülevaade
+## Microsoft Responsible AI ülevaade
 
-![RAIPrinciples](../../../../../imgs/01/05/RAI/RAIPrinciples.png)
+![RAIPrinciples](../../../../../translated_images/et/RAIPrinciples.bf9c9bc6ca160d33.webp)
 
 **Eetilised põhimõtted**
 
-Microsofti vastutustundlik tehisintellekt juhindub eetilistest põhimõtetest, nagu privaatsus, õiglus, läbipaistvus, vastutus ja turvalisus. Need põhimõtted on loodud selleks, et tagada tehisintellekti süsteemide arendamine eetilisel ja vastutustundlikul viisil.
+Microsoft Responsible AI juhindub mitmest eetilisest põhimõttest, nagu privaatsus, võrdsus, läbipaistvus, vastutus ja ohutus. Need põhimõtted on loodud selleks, et tagada tehisintellekti süsteemide eetiline ja vastutustundlik arendamine.
 
 **Läbipaistev tehisintellekt**
 
-Microsofti vastutustundlik tehisintellekt rõhutab läbipaistvuse olulisust tehisintellekti süsteemides. See hõlmab selgete selgituste pakkumist selle kohta, kuidas tehisintellekti mudelid töötavad, samuti andmeallikate ja algoritmide avalikustamist.
+Microsoft Responsible AI rõhutab läbipaistvuse tähtsust tehisintellekti süsteemides. See hõlmab selgete selgituste andmist selle kohta, kuidas tehisintellekti mudelid töötavad, ning andmeallikate ja algoritmide avalikku kättesaadavust.
 
 **Vastutustundlik tehisintellekt**
 
-[Microsofti vastutustundlik tehisintellekt](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) edendab vastutustundlike tehisintellekti süsteemide arendamist, mis suudavad anda ülevaate sellest, kuidas tehisintellekti mudelid otsuseid teevad. See aitab kasutajatel mõista ja usaldada tehisintellekti süsteemide väljundeid.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) soodustab vastutustundlike tehisintellekti süsteemide arendamist, mis suudavad pakkuda teavet selle kohta, kuidas tehisintellekti mudelid otsuseid langetavad. See aitab kasutajatel mõista ja usaldada tehisintellekti süsteemide väljundeid.
 
 **Kaasaegsus**
 
-Tehisintellekti süsteemid peaksid olema loodud kõigile kasulikuks. Microsofti eesmärk on luua kaasav tehisintellekt, mis arvestab erinevaid vaatenurki ja väldib eelarvamusi või diskrimineerimist.
+Tehisintellekti süsteemid peaksid olema loodud kõigile kasulikeks. Microsofti eesmärk on luua kaasav tehisintellekt, mis arvestab mitmekesiseid vaatenurki ning väldib eelarvamusi või diskrimineerimist.
 
-**Usaldusväärsus ja turvalisus**
+**Usaldusväärsus ja ohutus**
 
-Tehisintellekti süsteemide usaldusväärsuse ja turvalisuse tagamine on ülioluline. Microsoft keskendub tugevate mudelite loomisele, mis töötavad järjepidevalt ja väldivad kahjulikke tagajärgi.
+Tehisintellekti süsteemide usaldusväärsuse ja ohutuse tagamine on ülimalt oluline. Microsoft keskendub tugevate mudelite loomisele, mis toimivad järjepidevalt ja väldivad kahjulikke tagajärgi.
 
 **Õiglus tehisintellektis**
 
-Microsofti vastutustundlik tehisintellekt tunnistab, et tehisintellekti süsteemid võivad eelarvamusi edasi kanda, kui neid treenitakse eelarvamuslikel andmetel või algoritmidel. Algatus pakub juhiseid õiglaste tehisintellekti süsteemide arendamiseks, mis ei diskrimineeri näiteks rassi, soo või vanuse alusel.
+Microsoft Responsible AI tunnistab, et tehisintellekti süsteemid võivad säilitada eelarvamusi, kui neid koolitatakse kallutatud andmete või algoritmidega. Algatus pakub juhiseid õiglasemate tehisintellekti süsteemide arendamiseks, mis ei diskrimineeri näiteks rassi, soo ega vanuse põhjal.
 
 **Privaatsus ja turvalisus**
 
-Microsofti vastutustundlik tehisintellekt rõhutab kasutajate privaatsuse ja andmeturvalisuse kaitsmise olulisust tehisintellekti süsteemides. See hõlmab tugeva andmete krüpteerimise ja juurdepääsukontrolli rakendamist ning tehisintellekti süsteemide regulaarset auditeerimist haavatavuste tuvastamiseks.
+Microsoft Responsible AI rõhutab kasutajate privaatsuse ja andmete turvalisuse tähtsust tehisintellekti süsteemides. See hõlmab tugeva andmete krüpteerimise ja juurdepääsu kontrollide rakendamist ning regulaarselt tehisintellekti süsteemide haavatavuste auditeerimist.
 
-**Vastutus ja kohusetundlikkus**
+**Vastutus ja kohustus**
 
-Microsofti vastutustundlik tehisintellekt edendab vastutust ja kohusetundlikkust tehisintellekti arendamisel ja kasutuselevõtul. See hõlmab tagamist, et arendajad ja organisatsioonid on teadlikud tehisintellekti süsteemidega seotud võimalikest riskidest ja võtavad meetmeid nende riskide vähendamiseks.
+Microsoft Responsible AI edendab vastutust ning kohustust tehisintellekti arendamisel ja rakendamisel. See tähendab, et arendajad ja organisatsioonid peaksid olema teadlikud tehisintellekti süsteemidega kaasnevatest riskidest ning astuma samme nende riskide vähendamiseks.
 
-## Parimad praktikad vastutustundlike tehisintellekti süsteemide loomiseks
+## Parimad tavad vastutustundlike tehisintellekti süsteemide loomisel
 
-**Arenda tehisintellekti mudeleid mitmekesiste andmekogumite abil**
+**Arenda tehisintellekti mudeleid, kasutades mitmekesiseid andmekogumeid**
 
-Eelarvamuste vältimiseks tehisintellekti süsteemides on oluline kasutada mitmekesiseid andmekogumeid, mis esindavad erinevaid vaatenurki ja kogemusi.
+Selleks, et vältida eelarvamuste tekkimist tehisintellekti süsteemides, on oluline kasutada mitmekesiseid andmekogumeid, mis esindavad mitmesuguseid vaatenurki ja kogemusi.
 
-**Kasuta selgitavaid tehisintellekti tehnikaid**
+**Kasuta seletatavaid tehisintellekti meetodeid**
 
-Selgitavad tehisintellekti tehnikad aitavad kasutajatel mõista, kuidas tehisintellekti mudelid otsuseid teevad, mis võib suurendada süsteemi usaldusväärsust.
+Seletatavad tehisintellekti tehnikad aitavad kasutajatel mõista, kuidas tehisintellekti mudelid otsuseid langetavad, mis võib suurendada süsteemi usaldusväärsust.
 
-**Auditeeri tehisintellekti süsteeme regulaarselt haavatavuste tuvastamiseks**
+**Regulaarselt auditeeri tehisintellekti süsteeme haavatavuste osas**
 
-Regulaarsed auditeerimised aitavad tuvastada võimalikke riske ja haavatavusi, mida tuleb lahendada.
+Tehisintellekti süsteemide regulaarne audit aitab avastada potentsiaalseid riske ja haavatavusi, mida tuleb lahendada.
 
-**Rakenda tugevat andmete krüpteerimist ja juurdepääsukontrolli**
+**Rakenda tugevat andmete krüpteerimist ja juurdepääsu kontrolli**
 
-Andmete krüpteerimine ja juurdepääsukontroll aitavad kaitsta kasutajate privaatsust ja turvalisust tehisintellekti süsteemides.
+Andmete krüpteerimine ja juurdepääsu kontrollid aitavad kaitsta kasutajate privaatsust ja turvalisust tehisintellekti süsteemides.
 
 **Järgi eetilisi põhimõtteid tehisintellekti arendamisel**
 
-Eetiliste põhimõtete, nagu õiglus, läbipaistvus ja vastutus, järgimine aitab luua usaldust tehisintellekti süsteemides ja tagada nende vastutustundlik arendamine.
+Eetiliste põhimõtete, nagu õiglus, läbipaistvus ja vastutus, järgimine aitab tugevdada usaldust tehisintellekti süsteemides ja tagada nende vastutustundliku arendamise.
 
-## AI Foundry kasutamine vastutustundliku tehisintellekti jaoks
+## Vastutustundliku tehisintellekti kasutamine AI Foundry abil
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) on võimas platvorm, mis võimaldab arendajatel ja organisatsioonidel kiiresti luua intelligentseid, tipptasemel, turule valmis ja vastutustundlikke rakendusi. Siin on mõned Azure AI Foundry peamised funktsioonid ja võimalused:
+[Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) on võimas platvorm, mis võimaldab arendajatel ja organisatsioonidel kiiresti luua intelligentseid, tipptasemel, turule valmis ja vastutustundlikke rakendusi. Siin on mõned Microsoft Foundry põhifunktsioonid ja võimalused:
 
 **Valmis API-d ja mudelid**
 
-Azure AI Foundry pakub eelvalmistatud ja kohandatavaid API-sid ja mudeleid. Need hõlmavad laia valikut tehisintellekti ülesandeid, sealhulgas generatiivne tehisintellekt, loomuliku keele töötlemine vestlusteks, otsing, jälgimine, tõlkimine, kõne, nägemine ja otsuste tegemine.
+Microsoft Foundry pakub eelpakutud ja kohandatavaid API-sid ja mudeleid. Need katavad laia valikut tehisintellekti ülesandeid, sealhulgas generatiivset tehisintellekti, loomuliku keele töötlemist vestlusteks, otsingut, monitooringut, tõlget, kõnet, nägemist ja otsuste tegemist.
 
 **Prompt Flow**
 
-Prompt Flow Azure AI Foundry's võimaldab luua vestlusliku tehisintellekti kogemusi. See võimaldab kujundada ja hallata vestlusvooge, muutes lihtsamaks vestlusrobotite, virtuaalsete assistentide ja teiste interaktiivsete rakenduste loomise.
+Prompt flow Microsoft Foundrys võimaldab luua vestluslikke tehisintellekti kogemusi. See võimaldab kujundada ja hallata vestlusvooge, muutes vestlusrobotite, virtuaalsete assistentide ja muude interaktiivsete rakenduste loomise lihtsamaks.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG on tehnika, mis ühendab otsingupõhised ja generatiivsed lähenemised. See parandab genereeritud vastuste kvaliteeti, kasutades nii olemasolevat teadmist (otsing) kui ka loovat genereerimist (generatsioon).
+RAG on tehnika, mis ühendab otsingupõhise ja generatiivse lähenemise. See parandab tekkivate vastuste kvaliteeti, kasutades nii eelnevalt olemasolevat teadmist (otsing) kui ka loomingulist genereerimist (generatsioon).
 
 **Generatiivse tehisintellekti hindamise ja jälgimise mõõdikud**
 
-Azure AI Foundry pakub tööriistu generatiivsete tehisintellekti mudelite hindamiseks ja jälgimiseks. Saate hinnata nende jõudlust, õiglust ja muid olulisi mõõdikuid, et tagada vastutustundlik kasutuselevõtt. Lisaks, kui olete loonud armatuurlaua, saate kasutada Azure Machine Learning Studio koodivaba kasutajaliidest, et kohandada ja luua vastutustundliku tehisintellekti armatuurlauda ja sellega seotud skoorikaarti, mis põhineb [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python'i teekidel. See skoorikaart aitab jagada olulisi teadmisi, mis on seotud õigluse, tunnuste olulisuse ja teiste vastutustundliku kasutuselevõtu kaalutlustega nii tehnilistele kui ka mittetehnilistele osapooltele.
+Microsoft Foundry pakub tööriistu generatiivsete tehisintellekti mudelite hindamiseks ja jälgimiseks. Saate hinnata nende jõudlust, õiglust ja muid olulisi mõõdikuid, et tagada vastutustundlik rakendamine. Lisaks, kui olete loonud juhtpaneeli, saate kasutada Azure Machine Learning Studio koduvaba kasutajaliidest, et kohandada ja genereerida vastutustundliku tehisintellekti juhtpaneeli ja sellega seotud hindekaarti, mis põhineb [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python'i teekidel. See hindekaart aitab jagada olulisi teadmisi õiglusest, tunnuste olulisusest ja muudest vastutustundliku rakendamise kaalutlustest nii tehnilistele kui ka mitte-tehnilistele sidusrühmadele.
 
-AI Foundry kasutamiseks vastutustundliku tehisintellekti jaoks saate järgida järgmisi parimaid praktikaid:
+Vastutustundlikuks tehisintellektiks AI Foundry kasutamiseks võite järgida järgmisi parimaid tavasid:
 
 **Määratle oma tehisintellekti süsteemi probleem ja eesmärgid**
 
-Enne arendusprotsessi alustamist on oluline selgelt määratleda probleem või eesmärk, mida teie tehisintellekti süsteem lahendada püüab. See aitab teil tuvastada andmed, algoritmid ja ressursid, mis on vajalikud tõhusa mudeli loomiseks.
+Enne arendustegevuse alustamist on oluline selgelt määratleda probleem või eesmärk, mida teie tehisintellekti süsteem püüab lahendada. See aitab teil kindlaks teha andmed, algoritmid ja ressursid tõhusa mudeli loomiseks.
 
-**Kogu ja eeltöötle asjakohased andmed**
+**Koguge ja eeltöödelge asjakohaseid andmeid**
 
-Andmete kvaliteet ja kogus, mida kasutatakse tehisintellekti süsteemi treenimiseks, võivad oluliselt mõjutada selle jõudlust. Seetõttu on oluline koguda asjakohaseid andmeid, neid puhastada, eeltöödelda ja tagada, et need esindavad elanikkonda või probleemi, mida püüate lahendada.
+Tehisintellekti süsteemi koolitamisel kasutatavate andmete kvaliteet ja hulk mõjutab oluliselt selle jõudlust. Seetõttu on oluline koguda asjakohaseid andmeid, puhastada, eeltöödelda ja tagada, et need esindaksid teie lahendatavat probleemi või sihtrühma.
 
-**Vali sobiv hindamisalgoritm**
+**Valige sobivad hindamismeetodid**
 
-Hindamisalgoritme on mitmeid. Oluline on valida kõige sobivam algoritm, lähtudes teie andmetest ja probleemist.
+Saadaval on erinevaid hindamisalgoritme. Oluline on valida kõige sobivam algoritm vastavalt teie andmetele ja probleemile.
 
 **Hinda ja tõlgenda mudelit**
 
-Kui olete tehisintellekti mudeli loonud, on oluline hinnata selle jõudlust sobivate mõõdikutega ja tõlgendada tulemusi läbipaistval viisil. See aitab tuvastada mudeli eelarvamusi või piiranguid ning teha vajalikke parandusi.
+Pärast tehisintellekti mudeli loomist on oluline hinnata selle jõudlust sobivate mõõdikutega ning tõlgendada tulemusi läbipaistvalt. See aitab tuvastada mudeleid mõjutavaid eelarvamusi või piiranguid ning vajadusel teha parendusi.
 
-**Tagage läbipaistvus ja selgitatavus**
+**Tagage läbipaistvus ja seletatavus**
 
-Tehisintellekti süsteemid peaksid olema läbipaistvad ja selgitavad, et kasutajad saaksid aru, kuidas need töötavad ja kuidas otsuseid tehakse. See on eriti oluline rakenduste puhul, millel on märkimisväärne mõju inimeludele, nagu tervishoid, rahandus ja õigussüsteemid.
+Tehisintellekti süsteemid peaksid olema läbipaistvad ja seletatavad, et kasutajad mõistaksid, kuidas need töötavad ja kuidas otsuseid tehakse. See on eriti oluline neis rakendustes, mis avaldavad olulist mõju inimeste elule, nagu tervishoid, finants- ja õigussüsteemid.
 
 **Jälgige ja uuendage mudelit**
 
-Tehisintellekti süsteeme tuleks pidevalt jälgida ja uuendada, et tagada nende täpsus ja tõhusus aja jooksul. See nõuab mudeli pidevat hooldust, testimist ja ümberõpet.
+Tehisintellekti süsteeme tuleb pidevalt jälgida ja uuendada, et tagada nende täpsus ja tõhusus aja jooksul. Selleks on vaja regulaarset hooldust, testimist ja mudeli ümberõpetamist.
 
-Kokkuvõttes on Microsofti vastutustundlik tehisintellekt algatus, mille eesmärk on aidata arendajatel ja organisatsioonidel luua tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Pidage meeles, et vastutustundliku tehisintellekti rakendamine on ülioluline, ja Azure AI Foundry eesmärk on muuta see organisatsioonidele praktiliseks. Järgides eetilisi põhimõtteid ja parimaid praktikaid, saame tagada, et tehisintellekti süsteemid arendatakse ja rakendatakse vastutustundlikult, tuues kasu kogu ühiskonnale.
+Kokkuvõtteks, Microsoft Responsible AI on algatus, mis aitab arendajatel ja organisatsioonidel luua tehisintellekti süsteeme, mis on läbipaistvad, usaldusväärsed ja vastutustundlikud. Pidage meeles, et vastutustundlik tehisintellekti rakendamine on kriitilise tähtsusega ning Microsoft Foundry eesmärk on muuta see organisatsioonidele praktiliseks. Järgides eetilisi põhimõtteid ja parimaid tavasid, saame tagada, et tehisintellekti süsteeme arendatakse ja rakendatakse vastutustundlikult ning ühiskonna hüvanguks.
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest loobumine**:  
+See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi me püüdleme täpsuse poole, tuleb arvestada, et automatiseeritud tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle algkeeles tuleks pidada autoriteetseks allikaks. Kriitilise teabe puhul soovitatakse professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti mõistmiste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

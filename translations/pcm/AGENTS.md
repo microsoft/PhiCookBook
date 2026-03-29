@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-PhiCookBook na full cookbook repository wey get hands-on examples, tutorials, and documentation for how to take work with Microsoft's Phi family of Small Language Models (SLMs). Di repository dey show different use cases like inference, fine-tuning, quantization, RAG implementations, and multimodal applications across different platforms and frameworks.
+PhiCookBook na one complete cookbook repo wey get beta beta practical examples, tutorials, and documentation wey show how to work with Microsoft's Phi family of Small Language Models (SLMs). Dis repo dey show different kain use case like inference, fine-tuning, quantization, RAG implementations, and multimodal applications for different platforms and frameworks.
 
 **Key Technologies:**
 - **Languages:** Python, C#/.NET, JavaScript/Node.js
 - **Frameworks:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platforms:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
+- **Platforms:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
 - **Model Types:** Phi-3, Phi-3.5, Phi-4 (text, vision, multimodal, reasoning variants)
 
 **Repository Structure:**
@@ -20,13 +20,13 @@ PhiCookBook na full cookbook repository wey get hands-on examples, tutorials, an
 
 ### Using GitHub Codespaces or Dev Containers (Recommended)
 
-1. Open in GitHub Codespaces (fastest):
-   - Click the "Open in GitHub Codespaces" badge in README
-   - Container auto-configures with Python 3.12 and Ollama with Phi-3
+1. Open for GitHub Codespaces (fastest):
+   - Click the "Open in GitHub Codespaces" badge inside README
+   - Container go auto-configure with Python 3.12 and Ollama with Phi-3
 
-2. Open in VS Code Dev Containers:
+2. Open for VS Code Dev Containers:
    - Use the "Open in Dev Containers" badge from README
-   - Container requires 16GB host memory minimum
+   - Container need 16GB host memory minimum
 
 ### Local Setup
 
@@ -43,10 +43,10 @@ cd PhiCookBook
 ```
 
 **For Python Examples:**
-Navigate to specific example directories and install dependencies:
+Go inside specific example directories and install dependencies:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt dey
+pip install -r requirements.txt  # if requirements.txt de kam
 ```
 
 **For .NET Examples:**
@@ -60,8 +60,8 @@ dotnet build LabsPhi.sln
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start di development server
-npm run build  # Build am for production
+npm run dev  # Start development server
+npm run build  # Build for production
 ```
 
 ## Repository Organization
@@ -69,7 +69,7 @@ npm run build  # Build am for production
 ### Code Examples (`/code/`)
 
 - **01.Introduce/** - Basic introductions and getting started samples
-- **03.Finetuning/** and **04.Finetuning/** - Fine-tuning examples with various methods
+- **03.Finetuning/** and **04.Finetuning/** - Fine-tuning examples with different methods
 - **03.Inference/** - Inference examples on different hardware (AIPC, MLX)
 - **06.E2E/** - End-to-end application samples
 - **07.Lab/** - Laboratory/experimental implementations
@@ -79,14 +79,14 @@ npm run build  # Build am for production
 ### Documentation (`/md/`)
 
 - **01.Introduction/** - Intro guides, environment setup, platform guides
-- **02.Application/** - Application samples organized by type (Text, Code, Vision, Audio, etc.)
-- **02.QuickStart/** - Quick start guides for Azure AI Foundry and GitHub Models
+- **02.Application/** - Application samples arranged by type (Text, Code, Vision, Audio, etc.)
+- **02.QuickStart/** - Quick start guides for Microsoft Foundry and GitHub Models
 - **03.FineTuning/** - Fine-tuning documentation and tutorials
 - **04.HOL/** - Hands-on labs (includes .NET examples)
 
 ### File Formats
 
-- **Jupyter Notebooks (`.ipynb`)** - Interactive Python tutorials marked with 📓 in README
+- **Jupyter Notebooks (`.ipynb`)** - Interactive Python tutorials wey dem mark with 📓 inside README
 - **Python Scripts (`.py`)** - Standalone Python examples
 - **C# Projects (`.csproj`, `.sln`)** - .NET applications and samples
 - **JavaScript (`.js`, `package.json`)** - Web-based and Node.js examples
@@ -96,11 +96,11 @@ npm run build  # Build am for production
 
 ### Running Jupyter Notebooks
 
-Most examples dey provided as Jupyter notebooks:
+Most examples na Jupyter notebooks:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Open di browser interface
-# Go to di .ipynb file wey you want
+jupyter notebook  # Opɛn di browser interface
+# Go enter di .ipynb file wey you want
 ```
 
 ### Running Python Scripts
@@ -118,7 +118,7 @@ cd md/04.HOL/dotnet/src/<project-name>
 dotnet run
 ```
 
-Or build entire solution:
+Or build complete solution:
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
@@ -134,17 +134,17 @@ npm run dev  # Development wit hot reload
 
 ## Testing
 
-This repository get example code and tutorials instead make e be normal software project wey get unit tests. Validation na normally like this:
+Dis repo get example code and tutorials, no be like normal software project wey get unit tests. Validation dey usually done by:
 
-1. **Running the examples** - Each example suppose run without errors
+1. **Running the examples** - Make sure each example fit run without wahala
 2. **Verifying outputs** - Check say model responses dey correct
-3. **Following tutorials** - Step-by-step guides suppose work like how dem write am
+3. **Following tutorials** - Step-by-step guides suppose work as e dey document
 
 **Common validation approach:**
-- Test example execution in the target environment
-- Verify dependencies install correctly
-- Check that model downloads/loads successfully
-- Confirm expected behavior matches documentation
+- Test execution for the example inside the correct environment
+- Verify say all dependencies install well
+- Check say model downloads and loads properly
+- Confirm say expected behavior match the documentation
 
 ## Code Style and Conventions
 
@@ -152,66 +152,66 @@ This repository get example code and tutorials instead make e be normal software
 
 - Examples suppose clear, well-commented, and educational
 - Follow language-specific conventions (PEP 8 for Python, C# standards for .NET)
-- Keep examples focused on demonstrating specific Phi model capabilities
-- Include comments wey explain key concepts and model-specific parameters
+- Make examples dey focus on showing specific Phi model capabilities
+- Put comments wey explain key concepts and model-specific parameters
 
 ### Documentation Standards
 
 **URL Formatting:**
 - Use `[text](../../url)` format without extra spaces
 - Relative links: Use `./` for current directory, `../` for parent
-- No country-specific locales in URLs (avoid `/en-us/`, `/en/`)
+- No country-specific locales inside URLs (no use `/en-us/`, `/en/`)
 
 **Images:**
-- Store all images in `/imgs/` directory
-- Use descriptive names with English characters, numbers, and dashes
+- Keep all images for `/imgs/` directory
+- Use descriptive names wey get English characters, numbers, and dashes
 - Example: `phi-3-architecture.png`
 
 **Markdown Files:**
-- Reference actual working examples in `/code/` directory
-- Keep documentation synchronized with code changes
-- Use 📓 emoji to mark Jupyter notebook links in README
+- Reference actual working examples inside `/code/` directory
+- Keep documentation sabi with code updates
+- Use 📓 emoji to show Jupyter notebook links inside README
 
 ### File Organization
 
-- Code examples in `/code/` organized by topic/feature
-- Documentation in `/md/` mirrors code structure when applicable
-- Keep related files (notebooks, scripts, configs) together in subdirectories
+- Code examples inside `/code/` arranged by topic/feature
+- Documentation for `/md/` dey mirror code structure if e apply
+- Keep related files (notebooks, scripts, configs) together inside subdirectories
 
 ## Pull Request Guidelines
 
 ### Before Submitting
 
-1. **Fork the repository** to your account
+1. **Fork the repository** go your own account
 2. **Separate PRs by type:**
-   - Bug fixes in one PR
-   - Documentation updates in another
-   - New examples in separate PRs
-   - Typo fixes fit to combine
+   - Bug fixes for one PR
+   - Documentation updates for another
+   - New examples for separate PRs
+   - Typo fixes fit combine
 
 3. **Handle merge conflicts:**
-   - Update your local `main` branch before you make changes
+   - Update your local `main` branch before you do changes
    - Sync with upstream often
 
 4. **Translation PRs:**
-   - Must include translations for ALL files in the folder
-   - Maintain consistent structure with original language
+   - Must get translations for ALL files inside the folder
+   - Keep structure same as original language
 
 ### Required Checks
 
-PRs go run GitHub workflows to validate automatically:
+PRs dey automatically run GitHub workflows to check:
 
-1. **Relative path validation** - All internal links must work
-   - Test links locally: Ctrl+Click in VS Code
+1. **Relative path validation** - All internal links suppose work well
+   - Test links local: Ctrl+Click for VS Code
    - Use path suggestions from VS Code (`./` or `../`)
 
-2. **URL locale check** - Web URLs must not contain country locales
+2. **URL locale check** - Web URLs no suppose get country locales
    - Remove `/en-us/`, `/en/`, or other language codes
    - Use generic international URLs
 
-3. **Broken URL check** - All URLs must return 200 status
-   - Verify links are accessible before submitting
-   - Note: Some failures fit be because of network restrictions
+3. **Broken URL check** - All URLs must return 200 status code
+   - Verify links dey accessible before you submit
+   - Note: Some failure fit be because network restrictions
 
 ### PR Title Format
 
@@ -230,23 +230,23 @@ Examples:
 
 **Model Loading:**
 - Examples dey use different frameworks: Transformers, ONNX Runtime, MLX, OpenVINO
-- Models dey usually download from Hugging Face, Azure, or GitHub Models
+- Models dey mostly download from Hugging Face, Azure, or GitHub Models
 - Check model compatibility with your hardware (CPU, GPU, NPU)
 
 **Inference Patterns:**
-- Text generation: Most examples use chat/instruct variants
+- Text generation: Most examples dey use chat/instruct variants
 - Vision: Phi-3-vision and Phi-4-multimodal for image understanding
-- Audio: Phi-4-multimodal fit support audio inputs
+- Audio: Phi-4-multimodal support audio inputs
 - Reasoning: Phi-4-reasoning variants for advanced reasoning tasks
 
 ### Platform-Specific Notes
 
-**Azure AI Foundry:**
+**Microsoft Foundry:**
 - You need Azure subscription and API keys
 - See `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- Free tier dey for testing
+- Get free tier for testing
 - See `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Local Inference:**
@@ -259,8 +259,8 @@ Examples:
 ### Common Issues
 
 **Memory Issues:**
-- Phi models dey require plenty RAM (specially vision/multimodal variants)
-- Use quantized models for machines wey get small resources
+- Phi models need plenty RAM (especially vision/multimodal variants)
+- Use quantized models for resource-constrained environments
 - See `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Dependency Conflicts:**
@@ -269,24 +269,24 @@ Examples:
 - Check individual `requirements.txt` files
 
 **Model Download Failures:**
-- Large models fit timeout if connection slow
-- Try use cloud environments (Codespaces, Azure)
+- Big models fit timeout on slow connections
+- Consider using cloud environments (Codespaces, Azure)
 - Check Hugging Face cache: `~/.cache/huggingface/`
 
 **.NET Project Issues:**
 - Make sure .NET 8.0 SDK dey installed
-- Use `dotnet restore` before building
+- Use `dotnet restore` before you build
 - Some projects get CUDA-specific configurations (Debug_Cuda)
 
 **JavaScript/Web Examples:**
 - Use Node.js 18+ for compatibility
-- Clear `node_modules` and reinstall if issues still dey
+- Clear `node_modules` and reinstall if yawa still dey
 - Check browser console for WebGPU compatibility issues
 
 ### Getting Help
 
-- **Discord:** Join the Azure AI Foundry Community Discord
-- **GitHub Issues:** Report bugs and issues in the repository
+- **Discord:** Join the Microsoft Foundry Community Discord
+- **GitHub Issues:** Report bugs and issues inside the repo
 - **GitHub Discussions:** Ask questions and share knowledge
 
 ## Additional Context
@@ -302,30 +302,30 @@ All Phi model usage suppose follow Microsoft's Responsible AI principles:
 
 ### Translations
 
-- 50+ languages supported via automated GitHub Action
+- 50+ languages dey supported via automated GitHub Action
 - Translations dey for `/translations/` directory
 - Maintained by co-op-translator workflow
-- No to manually edit translated files (dem auto-generated)
+- No make you edit translated files manually (auto-generated)
 
 ### Contributing
 
-- Follow guidelines inside `CONTRIBUTING.md`
+- Follow guidelines for `CONTRIBUTING.md`
 - Agree to Contributor License Agreement (CLA)
-- Adhere to Microsoft Open Source Code of Conduct
-- Keep security and credentials outside commits
+- Follow Microsoft Open Source Code of Conduct
+- Keep security and credentials outside your commits
 
 ### Multi-Language Support
 
-This na polyglot repository wey get examples for:
+Dis na polyglot repo with examples for:
 - **Python** - ML/AI workflows, Jupyter notebooks, fine-tuning
 - **C#/.NET** - Enterprise applications, ONNX Runtime integration
 - **JavaScript** - Web-based AI, browser inference with WebGPU
 
-Choose the language wey best fit your use case and deployment target.
+Choose the language wey fit your use case and deployment target well well.
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Disclaimer:
-Dis document na AI wey translate am — Co-op Translator (https://github.com/Azure/co-op-translator). We dey try make am correct, but make you sabi say automatic translation fit get errors or wrong meaning. The original document for im original language na di authoritative source. If na important information, make you use professional human translator. We no dey liable for any misunderstanding or misinterpretation wey fit come from this translation.
+**Disclaimer**:
+Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translation fit get errors or mistakes. Di original document wey dey im native language na di correct source. For important info, e better make person wey sabi translate human translation. We no go responsible for any misunderstanding or wrong interpretation wey fit come from dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

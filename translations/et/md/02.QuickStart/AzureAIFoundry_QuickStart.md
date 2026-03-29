@@ -1,88 +1,90 @@
-# **Phi-3 kasutamine Azure AI Foundry platvormil**
+# **Phi-3 kasutamine Microsoft Foundry's**
 
-Generatiivse tehisintellekti arendamisega loodame kasutada ühtset platvormi, et hallata erinevaid LLM- ja SLM-mudeleid, integreerida ettevõtte andmeid, teostada peenhäälestamist/RAG-operatsioone ning hinnata erinevate ettevõtete tegevusi pärast LLM- ja SLM-mudelite integreerimist. See võimaldab generatiivsel tehisintellektil paremini rakenduda nutikates lahendustes. [Azure AI Foundry](https://ai.azure.com) on ettevõtte tasemel generatiivse tehisintellekti rakendusplatvorm.
+Generatiivse tehisintellekti arendamisega loodame kasutada ühtset platvormi erinevate LLM-ide ja SLM-ide, ettevõtte andmete integreerimise, peenhäälestuse/RAG-operatsioonide ja integreeritud LLM-ide ning SLM-ide põhjal erinevate ettevõtete äriprotsesside hindamise juhtimiseks, et generatiivne tehisintellekt saaks nutikaid rakendusi paremini ellu viia. [Microsoft Foundry](https://ai.azure.com) on ettevõtte tasemel generatiivse AI rakendusplatvorm.
 
-![aistudo](../../../../imgs/01/02/03/aifoundry_home.png)
+![aistudo](../../../../translated_images/et/aifoundry_home.f28a8127c96c7d93.webp)
 
-Azure AI Foundry abil saate hinnata suurte keelemudelite (LLM) vastuseid ja korraldada prompt flow abil rakenduste komponente, et saavutada paremat jõudlust. Platvorm toetab mastaapsust, muutes kontseptsioonide tõestamise täisfunktsionaalseks tootmiseks lihtsaks. Pidev jälgimine ja täiustamine tagavad pikaajalise edu.
+Microsoft Foundry abil saate hinnata suure keelemudeli (LLM) vastuseid ja orkestreerida käsklusrakenduse komponente prompt flow abil parema jõudluse saavutamiseks. Platvorm soodustab skaleeritavust, võimaldades hõlpsasti muuta kontseptsioonide prototüüpe täieulatuslikeks tootearendusteks. Järjepidev jälgimine ja täiustamine toetavad pikaajalist edu.
 
-Phi-3 mudeli saab Azure AI Foundry platvormil kiiresti juurutada lihtsate sammude abil ning seejärel kasutada platvormi Phi-3 seotud Playground/Chat, peenhäälestamise, hindamise ja muude tööde teostamiseks.
+Saame Phi-3 mudeli Microsoft Foundry’s kiiresti juurutada lihtsate sammude abil ning seejärel kasutada Microsoft Foundry’d Phi-3 PlayGround/Chat, peenhäälestuse, hindamise ja muude seotud tööde tegemiseks.
 
-## **1. Ettevalmistus**
+## **1. Valmistumine**
 
-Kui teie arvutisse on juba installitud [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo), on selle malli kasutamine sama lihtne kui käivitada vastav käsk uues kataloogis.
+Kui sul on juba [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) installitud sinu masinas, on selle malliga alustamine sama lihtne kui selle käsu käivitamine uues kataloogis.
 
 ## Käsitsi loomine
 
-Microsoft Azure AI Foundry projekti ja hubi loomine on suurepärane viis oma tehisintellekti töö korraldamiseks ja haldamiseks. Siin on samm-sammuline juhend alustamiseks:
+Microsoft Foundry projektide ja keskustega organisatsiooni ja oma AI tööde haldamine on suurepärane viis. Siin on samm-sammult juhend alustamiseks:
 
-### Projekti loomine Azure AI Foundry platvormil
+### Projekti loomine Microsoft Foundry’s
 
-1. **Minge Azure AI Foundry lehele**: Logige sisse Azure AI Foundry portaalis.
-2. **Looge projekt**:
-   - Kui olete projektis, valige lehe vasakust ülanurgast "Azure AI Foundry", et minna avalehele.
-   - Valige "+ Create project".
-   - Sisestage projekti nimi.
-   - Kui teil on hub, valitakse see vaikimisi. Kui teil on juurdepääs mitmele hubile, saate valida rippmenüüst teise. Kui soovite luua uue hubi, valige "Create new hub" ja sisestage nimi.
-   - Valige "Create".
+1. **Mine Microsoft Foundry’sse**: Logi sisse Microsoft Foundry portaali.
+2. **Loo projekt**:
+   - Kui oled juba mõnes projektis, vali lehe vasakus ülanurgas "Microsoft Foundry", et minna avalehele.
+   - Vali "+ Create project".
+   - Sisesta projekti nimi.
+   - Kui sul on olemas keskuse (hub) ligipääs, valitakse see vaikimisi. Kui sul on ligipääs mitmele keskele, saad rippmenüüst valida mõne teise. Kui soovid luua uue keskuse, vali "Create new hub" ja anna sellele nimi.
+   - Vali "Create".
 
-### Hubi loomine Azure AI Foundry platvormil
+### Keskuse loomine Microsoft Foundry’s
 
-1. **Minge Azure AI Foundry lehele**: Logige sisse oma Azure kontoga.
-2. **Looge hub**:
-   - Valige vasakmenüüst "Management center".
-   - Valige "All resources", seejärel klõpsake "+ New project" kõrval olevat noolt ja valige "+ New hub".
-   - "Create a new hub" dialoogis sisestage hubi nimi (nt contoso-hub) ja muutke teisi välju vastavalt soovile.
-   - Valige "Next", vaadake teave üle ja seejärel valige "Create".
+1. **Mine Microsoft Foundry’sse**: Logi sisse Azure kontoga.
+2. **Loo keskus**:
+   - Vali vasakult menüüst Management center.
+   - Vali "All resources", seejärel noolega allapoole nupp "+ New project" juures ja vali "+ New hub".
+   - Dialoogis "Create a new hub" sisesta oma keskusele nimi (nt contoso-hub) ja vajadusel kohanda teisi välju.
+   - Vali "Next", kontrolli infot ja vali "Create".
 
-Täpsemate juhiste saamiseks vaadake ametlikku [Microsofti dokumentatsiooni](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
+Detailsemate juhiste jaoks võid vaadata ametlikku [Microsofti dokumentatsiooni](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
 
-Pärast edukat loomist pääsete loodud stuudiole ligi aadressil [ai.azure.com](https://ai.azure.com/)
+Pärast edukat loomist saad loodud stuudiot kasutada aadressil [ai.azure.com](https://ai.azure.com/)
 
-Ühel AI Foundry platvormil võib olla mitu projekti. Looge AI Foundry platvormil projekt ettevalmistuseks.
+Ühel AI Foundry’l võib olla mitu projekti. Valmista ette AI Foundry’s projekt.
 
-Looge Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Loo Microsoft Foundry [QuickStarts’id](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. Phi mudeli juurutamine Azure AI Foundry platvormil**
+## **2. Phi mudeli juurutamine Microsoft Foundry’s**
 
-Klõpsake projekti Explore valikut, et siseneda Model Catalog lehele ja valige Phi-3.
+Vali projekti alt Explore valik, et siseneda Model Catalog’i ja vali Phi-3
 
-Valige Phi-3-mini-4k-instruct.
+Vali Phi-3-mini-4k-instruct
 
-Klõpsake 'Deploy', et juurutada Phi-3-mini-4k-instruct mudel.
+Vajuta "Deploy", et juurutada Phi-3-mini-4k-instruct mudel
 
 > [!NOTE]
 >
-> Juurutamisel saate valida arvutusvõimsuse.
+> Juurutamise ajal saad valida arvutusvõimsuse
 
-## **3. Playground Chat Phi Azure AI Foundry platvormil**
+## **3. Playground Chat Phi Microsoft Foundry’s**
 
-Minge juurutamise lehele, valige Playground ja vestelge Azure AI Foundry Phi-3 mudeliga.
+Mine juurutatud mudeli lehele, vali Playground ning suhtle Microsoft Foundry Phi-3 mudeliga
 
-## **4. Mudeli juurutamine Azure AI Foundry platvormilt**
+## **4. Mudeli juurutamine Microsoft Foundry’st**
 
-Mudeli juurutamiseks Azure Model Catalog kaudu järgige neid samme:
+Azur Model Catalog’ist mudeli juurutamiseks järgi neid samme:
 
-- Logige sisse Azure AI Foundry platvormil.
-- Valige mudel, mida soovite juurutada, Azure AI Foundry mudelikataloogist.
-- Mudeli Details lehel valige Deploy ja seejärel Serverless API koos Azure AI Content Safety-ga.
-- Valige projekt, kuhu soovite mudeli juurutada. Serverless API kasutamiseks peab teie tööruum kuuluma East US 2 või Sweden Central piirkonda. Saate kohandada juurutamise nime.
-- Juurutamise viisardis valige Pricing and terms, et tutvuda hinna ja kasutustingimustega.
-- Valige Deploy. Oodake, kuni juurutamine on valmis ja teid suunatakse Deployments lehele.
-- Valige Open in playground, et alustada mudeliga suhtlemist.
-- Võite naasta Deployments lehele, valida juurutuse ja märkida üles siht-URL-i ja salajase võtme, mida saate kasutada juurutuse kutsumiseks ja tulemuste genereerimiseks.
-- Juurutuse üksikasju, URL-i ja juurdepääsuvõtmeid leiate alati Build vahekaardilt, valides Components sektsioonist Deployments.
+- Logi sisse Microsoft Foundry’sse.
+- Vali Microsoft Foundry mudelikataloogist oma juurutatav mudel.
+- Mudeli detailide lehel vali Deploy ja seejärel vali Serverless API koos Azure AI Content Safety’ga.
+- Vali projekt, kuhu soovid mudeli juurutada. Serverless API kasutamiseks peab su töökeskkond asuma East US 2 või Sweden Central regiooni all. Juurutamisnime saad kohandada.
+- Juurutamise viisardis vali hinnakujunduse ja tingimuste vaade, et tutvuda kasutustingimuste ja hinnakirjaga.
+- Vali Deploy. Oota, kuni juurutus on valmis ning sind suunatakse Deployments lehele.
+- Vali “Open in playground”, et alustada mudeliga suhtlemist.
+- Võid tagasi tulla Deployments lehele, valida juurutuse ja märgata selle lõpp-punkti Target URL-i ning Secret Key’d, mida kasutada juurutuse kutsumiseks ja tekstide genereerimiseks.
+- Lõpp-punkti detailid kui URL ja ligipääsu võtmed on alati leitavad vahekaardilt Build ja komponendi jaotisest Deployments.
 
 > [!NOTE]
-> Pange tähele, et teie kontol peab olema Azure AI Developer rolli õigused Resource Groupis, et neid samme teostada.
+> Arvesta, et konto peab omama Azure AI Developer rolliõiguseid Ressursigrupil, et neid samme sooritada.
 
-## **5. Phi API kasutamine Azure AI Foundry platvormil**
+## **5. Phi API kasutamine Microsoft Foundry’s**
 
-Saate Postman GET kaudu ligi aadressile https://{Teie projekti nimi}.region.inference.ml.azure.com/swagger.json ja kombineerida selle Key-ga, et tutvuda pakutavate liidestega.
+Saad kasutada https://{Sinu projekti nimi}.region.inference.ml.azure.com/swagger.json Postmani GET päringuga ja koos Key-ga uurida pakutavaid liideseid.
 
-Saate väga mugavalt kätte päringuparameetrid ja vastuseparameetrid.
+Päringuparameetrid ja vastusparameetrid on mugavalt kättesaadavad.
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud, kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame tagada täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algkeeles tuleks lugeda autoriteetseks allikaks. Olulise teabe puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valede tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest loobumine**:
+See dokument on tõlgitud tehisintellekti tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi me püüame täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta tõlgendamis- või mõistmisvigade eest, mis võivad sellest tõlkest tekkida.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

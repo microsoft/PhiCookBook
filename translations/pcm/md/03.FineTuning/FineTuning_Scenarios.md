@@ -2,30 +2,30 @@
 
 ![FineTuning with MS Services](../../../../translated_images/pcm/FinetuningwithMS.3d0cec8ae693e094.webp)
 
-Dis section dey provide overview of fine-tuning scenarios for Microsoft Foundry and Azure environments, including deployment models, infrastructure layers, and commonly used optimization techniques.
+Dis section dey provide overview of fine-tuning scenarios for Microsoft Foundry and Azure environments, inside dem deployment models, infrastructure layers, and common optimization techniques wey people dey use.
 
 **Platform**  
-Dis one include managed services like Microsoft Foundry (wey dem use to call Azure AI Foundry) and Azure Machine Learning, wey dey provide model management, orchestration, experiment tracking, and deployment workflows.
+Dis one include managed services like Microsoft Foundry (wey dem bin dey call am Microsoft Foundry before) and Azure Machine Learning, wey dey provide model management, orchestration, experiment tracking, and deployment workflows.
 
 **Infrastructure**  
-Fine-tuning need scalable compute resources. For Azure environments, e usually include GPU-based virtual machines and CPU resources for light workload dem, plus scalable storage for datasets and checkpoints.
+Fine-tuning need scalable compute resources. For Azure environments, e dey normally include GPU-based virtual machines and CPU resources for light workloads, plus scalable storage for datasets and checkpoints.
 
 **Tools & Framework**  
-Fine-tuning workflows dey rely on frameworks and optimization libraries like Hugging Face Transformers, DeepSpeed, and PEFT (Parameter-Efficient Fine-Tuning).
+Fine-tuning workflows dey usually depend on frameworks and optimization libraries like Hugging Face Transformers, DeepSpeed, and PEFT (Parameter-Efficient Fine-Tuning).
 
-The fine-tuning process with Microsoft technologies cover platform services, compute infrastructure, and training frameworks. If you sabi how these components dey work together, developers fit adapt foundation models to specific tasks and production scenarios well well.
+The fine-tuning process with Microsoft technology cover platform services, compute infrastructure, and training frameworks. If person understand how these parts dey work together, developers fit take correct way adapt foundation models for specific tasks and production scenarios.
 
 ## Model as Service
 
-Fine-tune the model using hosted fine-tuning, no need to create and manage compute.
+Fine-tune the model with hosted fine-tuning, without the need to create and manage compute.
 
 ![MaaS Fine Tuning](../../../../translated_images/pcm/MaaSfinetune.3eee4630607aff0d.webp)
 
-Serverless fine-tuning don dey available for Phi-3, Phi-3.5, and Phi-4 model families, wey make am easy and fast for developers to customize the models for cloud and edge scenarios without the need to arrange compute.
+Serverless fine-tuning don dey available now for Phi-3, Phi-3.5, and Phi-4 model families, wey go allow developers quickly and easily customize the models for cloud and edge scenarios without the need to arrange compute.
 
 ## Model as a Platform 
 
-Users dey manage their own compute make dem fit Fine-tune their models.
+Users dey manage their own compute so dem fit Fine-tune their models.
 
 ![Maap Fine Tuning](../../../../translated_images/pcm/MaaPFinetune.fd3829c1122f5d1c.webp)
 
@@ -56,5 +56,5 @@ Users dey manage their own compute make dem fit Fine-tune their models.
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:
-Dis document na translation wey AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) do for am. Even tho we dey try make am correct, abeg understand say machine translation fit get some mistakes or no too clear. Di original document wey dem write for im own language still be di true correct source. If na important info, e better make human professional person translate am. We no go responsible for any misunderstanding or wrong meaning wey fit come from dis translation.
+Dis document don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg sabi say automated translations fit get errors or mistakes. Di original document for e own language na di correct one. For important information, make person wey sabi human translation do am. We no go responsible for any misunderstanding or wrong meaning wey fit show because of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

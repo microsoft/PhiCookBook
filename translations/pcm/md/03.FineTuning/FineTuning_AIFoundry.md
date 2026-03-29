@@ -1,52 +1,52 @@
-# Fine-tuning Phi-3 wit Azure AI Foundry
+# Fine-tuning Phi-3 wit Microsoft Foundry
 
- Make we explore how to fine-tune Microsoft’s Phi-3 Mini language model using Azure AI Foundry. Fine-tuning dey allow you adapt Phi-3 Mini to specific tasks, make am more powerful and sabi di context.
+ Make we explore how to fine-tune Microsoft Phi-3 Mini language model using Microsoft Foundry. Fine-tuning dey allow you to adapt Phi-3 Mini to specific tasks, make am even more powerful and sabi context.
 
 ## Considerations
 
-- **Capabilities:** Which models you fit fine-tune? Wetin di base model fit do after you don fine-tune am?
+- **Capabilities:** Which models fit fine tune? Wetin the base model fit fine tune to do?
 - **Cost:** How dem dey charge for fine tuning
-**Customizability:** How much I fit change di base model – and how I fit change am?
-- **Convenience:** How fine-tuning dey really happen – I go need write custom code? I go need bring my own compute?
-- **Safety:** Fine-tuned models get safety risks – dem get any guardrails wey go protect against unintended harm?
+**Customizability:** How much I fit modify the base model – and how I fit take do am?
+- **Convenience:** How fine tuning really dey happen – I suppose write custom code? I suppose bring my own compute?
+- **Safety:** Fine tuned models dey get safety wahala – any guards for place to protect against accidental harm?
 
-![Models wey dey for AI Foundry](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.pcm.png)
+![AIFoundry Models](../../../../translated_images/pcm/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
 ## Preparation for fine-tuning
 
 ### Prerequisites
 
 > [!NOTE]
-> For Phi-3 family models, the pay-as-you-go model fine-tune offering dey only available for hubs wey dem create for **East US 2** regions.
+> For Phi-3 family models, pay-as-you-go fine-tune dey only available if your hubs dey **East US 2** regions.
 
-- An Azure subscription. If you no get Azure subscription, create a [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to start.
+- Azure subscription. If you no get Azure subscription, create [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to start.
 
-- An [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure role-based access controls (Azure RBAC) dey used to give access to operations for Azure AI Foundry. To do di steps for this article, your user account must get assigned the __Azure AI Developer role__ on the resource group.
+- [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Azure role-based access controls (Azure RBAC) dey grant access for Microsoft Foundry operations. To do these steps for this article, your user account must get __Azure AI Developer role__ for the resource group.
 
 ### Subscription provider registration
 
-Make sure the subscription don register with the `Microsoft.Network` resource provider.
+Make sure say subscription dey registered to `Microsoft.Network` resource provider.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Select **Subscriptions** from di left menu.
-1. Select di subscription wey you wan use.
-1. Select **AI project settings** > **Resource providers** from di left menu.
-1. Confirm say **Microsoft.Network** dey for di list of resource providers. If e no dey, add am.
+1. Sign in to [Azure portal](https://portal.azure.com).
+1. Choose **Subscriptions** from left menu.
+1. Choose the subscription wey you wan use.
+1. Choose **AI project settings** > **Resource providers** from left menu.
+1. Confirm say **Microsoft.Network** dey the list of resource providers. If no, add am.
 
 ### Data preparation
 
-Prepare your training and validation data to fine-tune your model. Your training data and validation data sets go contain input and output examples wey show how you wan make di model perform.
+Prepare your training and validation data wey you go use fine-tune your model. Your training and validation data dey consist of input and output examples of how you want model to perform.
 
-Make sure say all your training examples follow di expected format for inference. To fine-tune models well, ensure say your dataset balance and diverse.
+Make sure all your training examples follow the format wey dem expect for inference. To fine-tune model well, get balanced and different kind data.
 
-This one mean say you go maintain data balance, add different scenarios, and dey refine training data from time to time to match real-world expectations, so model response go dey more accurate and balanced.
+This one mean sey you go maintain data balance, include different situations, and dey always improve training data to match real-life expectations, so model go dey more correct and balanced.
 
-Different model types need different format of training data.
+Different model types need different training data format.
 
 ### Chat Completion
 
-Di training and validation data wey you go use **must** be formatted as JSON Lines (JSONL) document. For `Phi-3-mini-128k-instruct` di fine-tuning dataset must dey in di conversational format wey di Chat completions API dey use.
+The training and validation data wey you use **supposed** to be JSON Lines (JSONL) document. For `Phi-3-mini-128k-instruct` fine-tuning dataset suppose dey conversational format wey Chat completions API dey use.
 
 ### Example file format
 
@@ -56,119 +56,119 @@ Di training and validation data wey you go use **must** be formatted as JSON Lin
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Di supported file type na JSON Lines. Files dey upload to di default datastore and dem go make am available for your project.
+The kind file wey e support na JSON Lines. Files go upload go default datastore and e go available for your project.
 
-## Fine-Tuning Phi-3 with Azure AI Foundry
+## Fine-Tuning Phi-3 wit Microsoft Foundry
 
-Azure AI Foundry dey allow you tailor large language models to your own datasets by fine-tuning. Fine-tuning get plenty value because e allow customization and optimization for specific tasks and applications. E dey give better performance, save cost, reduce latency, and produce outputs wey match wetin you want.
+Microsoft Foundry dey let you customize large language models to your own datasets by doing fine-tuning. Fine-tuning dey add value by allowing customization and optimization for specific tasks and apps. E dey make performance better, cost cheaper, response time short, and output fit your needs.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.pcm.png)
+![Finetune AI Foundry](../../../../translated_images/pcm/AIFoundryfinetune.193aaddce48d553c.webp)
 
-### Create a New Project
+### Create New Project
 
-1. Sign in to [Azure AI Foundry](https://ai.azure.com).
+1. Sign in to [Microsoft Foundry](https://ai.azure.com).
 
-1. Select **+New project** to create new project for Azure AI Foundry.
+1. Click **+New project** to create new project for Microsoft Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.pcm.png)
+    ![FineTuneSelect](../../../../translated_images/pcm/select-new-project.cd31c0404088d7a3.webp)
 
-1. Do these tasks:
+1. Do these things:
 
     - Project **Hub name**. E must be unique.
-    - Select di **Hub** wey you wan use (create new one if you need).
+    - Choose **Hub** to use (if no, create new one).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.pcm.png)
+    ![FineTuneSelect](../../../../translated_images/pcm/create-project.ca3b71298b90e420.webp)
 
-1. Do these tasks to create new hub:
+1. Do these to create new hub:
 
-    - Enter **Hub name**. E must be unique.
-    - Select your Azure **Subscription**.
-    - Select di **Resource group** wey you wan use (create new one if you need).
-    - Select di **Location** wey you wan use.
-    - Select di **Connect Azure AI Services** wey you wan use (create new one if you need).
-    - Select **Connect Azure AI Search** to **Skip connecting**.
+    - Put **Hub name**. E must be unique.
+    - Choose your Azure **Subscription**.
+    - Choose **Resource group** to use (or create new one).
+    - Choose the **Location** you want use.
+    - Choose **Connect Azure AI Services** (or create new one).
+    - Choose **Connect Azure AI Search** and select **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.pcm.png)
+    ![FineTuneSelect](../../../../translated_images/pcm/create-hub.49e53d235e80779e.webp)
 
-1. Select **Next**.
-1. Select **Create a project**.
+1. Click **Next**.
+1. Click **Create a project**.
 
 ### Data Preparation
 
-Before fine-tuning, gather or create dataset weh relate to your task, like chat instructions, question-answer pairs, or any other text wey matter. Clean and preprocess the data by removing noise, handle missing values, and tokenize the text.
+Before fine-tuning, gather or build dataset wey relate to your task, like chat instructions, question-answer pairs, or other related text data. Clean and prepare am by removing noise, fixing missing values, and tokenizing the text.
 
-### Fine-tune Phi-3 models in Azure AI Foundry
-
-> [!NOTE]
-> Fine-tuning of Phi-3 models dey supported for projects wey dey located for East US 2.
-
-1. Select **Model catalog** from di left side tab.
-
-1. Type *phi-3* for di **search bar** and select di phi-3 model wey you wan use.
-
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.pcm.png)
-
-1. Select **Fine-tune**.
-
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.pcm.png)
-
-1. Enter di **Fine-tuned model name**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.pcm.png)
-
-1. Select **Next**.
-
-1. Do these tasks:
-
-    - Select **task type** to **Chat completion**.
-    - Select di **Training data** wey you wan use. You fit upload am through Azure AI Foundry data or from your local environment.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.pcm.png)
-
-1. Select **Next**.
-
-1. Upload di **Validation data** wey you wan use, or you fit select **Automatic split of training data**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.pcm.png)
-
-1. Select **Next**.
-
-1. Do these tasks:
-
-    - Select di **Batch size multiplier** wey you wan use.
-    - Select di **Learning rate** wey you wan use.
-    - Select di **Epochs** wey you wan use.
-
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.pcm.png)
-
-1. Select **Submit** to start di fine-tuning process.
-
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.pcm.png)
-
-
-1. Once your model don fine-tune, di status go show **Completed**, like di image below. Now you fit deploy di model and use am for your own application, playground, or prompt flow. For more info, see [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
-
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.pcm.png)
+### Fine-tune Phi-3 models for Microsoft Foundry
 
 > [!NOTE]
-> For more detailed info on fine-tuning Phi-3, abeg visit [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Fine-tuning Phi-3 models dey supported only for projects wey dey East US 2.
+
+1. Click **Model catalog** from the left tab.
+
+1. Type *phi-3* for **search bar** and choose the phi-3 model wey you want use.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/select-model.60ef2d4a6a3cec57.webp)
+
+1. Click **Fine-tune**.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/select-finetune.a976213b543dd9d8.webp)
+
+1. Put the **Fine-tuned model name**.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/finetune1.c2b39463f0d34148.webp)
+
+1. Click **Next**.
+
+1. Do these:
+
+    - Choose **task type** to **Chat completion**.
+    - Choose **Training data** you wan use. You fit upload am from Microsoft Foundry data or from your local machine.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/finetune2.43cb099b1a94442d.webp)
+
+1. Click **Next**.
+
+1. Upload **Validation data** you want, or choose **Automatic split of training data**.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/finetune3.fd96121b67dcdd92.webp)
+
+1. Click **Next**.
+
+1. Do these:
+
+    - Choose **Batch size multiplier** you want.
+    - Choose **Learning rate** you want.
+    - Choose **Epochs** you want.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/finetune4.e18b80ffccb5834a.webp)
+
+1. Click **Submit** to start fine-tuning.
+
+    ![FineTuneSelect](../../../../translated_images/pcm/select-submit.0a3802d581bac271.webp)
+
+
+1. When your model don finish fine-tune, e go show status as **Completed** like for image below. Now you fit deploy am and use am for your app, play ground, or prompt flow. For more info, check [How to deploy Phi-3 family of small language models with Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+    ![FineTuneSelect](../../../../translated_images/pcm/completed.4dc8d2357144cdef.webp)
+
+> [!NOTE]
+> For full info on fine-tuning Phi-3, make you visit [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Cleaning up your fine-tuned models
 
-You fit delete fine-tuned model from di fine-tuning model list for [Azure AI Foundry](https://ai.azure.com) or from di model details page. Select di fine-tuned model wey you wan delete from di Fine-tuning page, then select di Delete button to remove di fine-tuned model.
+You fit delete fine-tuned model from fine-tuning model list for [Microsoft Foundry](https://ai.azure.com) or from model details page. Choose the fine-tuned model wey you want delete for Fine-tuning page, then click Delete button to remove am.
 
 > [!NOTE]
-> You no fit delete custom model if e get existing deployment. You must first delete your model deployment before you fit delete your custom model.
+> You no fit delete custom model wey get deployment. You must first delete your model deployment before you fit delete custom model.
 
 ## Cost and quotas
 
 ### Cost and quota considerations for Phi-3 models fine-tuned as a service
 
-Phi models wey dem fine-tune as a service na Microsoft dey provide and dem integrate am with Azure AI Foundry for use. You fit find pricing when you dey [deploying](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) or fine-tuning di models under di Pricing and terms tab on deployment wizard.
+Phi models fine-tuned as service na Microsoft dey provide, and dem dey integrate am with Microsoft Foundry for use. You fit see pricing when [deploying](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) or fine-tuning models under Pricing and terms tab for deployment wizard.
 
 ## Content filtering
 
-Models wey dem deploy as a service with pay-as-you-go protected by Azure AI Content Safety. When dem deploy to real-time endpoints, you fit opt out of this feature. With Azure AI content safety enabled, both di prompt and completion go pass through some classification models wey dey try detect and prevent harmful content. Di content filtering system dey detect and take action on specific categories of potentially harmful content for both input prompts and output completions. Learn more about [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Models wey deploy as service pay-as-you-go, dem protected by Azure AI Content Safety. When you deploy am to real-time endpoints, you fit choose to opt out. If Azure AI content safety dey enabled, both prompt and completion go pass classification models weh dey detect and stop harmful content. The content filtering system dey detect and act on particular kinds of harmful content for both input prompts and output completions. Learn more about [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
 **Fine-Tuning Configuration**
 
@@ -176,19 +176,19 @@ Hyperparameters: Define hyperparameters like learning rate, batch size, and numb
 
 **Loss Function**
 
-Choose correct loss function for your task (for example, cross-entropy).
+Choose the correct loss function for your task (e.g., cross-entropy).
 
 **Optimizer**
 
-Pick optimizer (for example, Adam) for gradient updates during training.
+Select optimizer (e.g., Adam) to update gradient during training.
 
 **Fine-Tuning Process**
 
-- Load Pre-Trained Model: Load di Phi-3 Mini checkpoint.
-- Add Custom Layers: Add task-specific layers (for example, classification head for chat instructions).
+- Load Pre-Trained Model: Load Phi-3 Mini checkpoint.
+- Add Custom Layers: Add layers specific for task (e.g., classification head for chat instructions).
 
 **Train the Model**
-Fine-tune di model using your prepared dataset. Dey monitor training progress and adjust hyperparameters as needed.
+Fine-tune model using your prepared dataset. Monitor training progress and adjust hyperparameters if needed.
 
 **Evaluation and Validation**
 
@@ -196,37 +196,37 @@ Validation Set: Split your data into training and validation sets.
 
 **Evaluate Performance**
 
-Use metrics like accuracy, F1-score, or perplexity to check how di model dey perform.
+Use metrics like accuracy, F1-score, or perplexity to check model performance.
 
 ## Save Fine-Tuned Model
 
 **Checkpoint**
-Save di fine-tuned model checkpoint make you fit use am later.
+Save the fine-tuned model checkpoint so you fit use am later.
 
 ## Deployment
 
-- Deploy as a Web Service: Deploy your fine-tuned model as web service for Azure AI Foundry.
-- Test the Endpoint: Send test queries to di deployed endpoint to make sure e dey work.
+- Deploy as Web Service: Deploy your fine-tuned model as web service for Microsoft Foundry.
+- Test the Endpoint: Send test queries to the deployed endpoint to check how e work.
 
 ## Iterate and Improve
 
-Iterate: If di performance no good reach your expectation, do another round: adjust hyperparameters, add more data, or fine-tune for extra epochs.
+Iterate: If performance no good, keep adjusting hyperparameters, add more data, or fine-tune for more epochs.
 
 ## Monitor and Refine
 
-Dey monitor di model behavior continuously and refine as e dey needed.
+Always monitor the model behavior and refine if e necessary.
 
 ## Customize and Extend
 
-Custom Tasks: Phi-3 Mini fit be fine-tuned for plenty tasks beyond chat instructions. Try other use cases!
-Experiment: Try different architectures, layer combinations, and techniques to boost performance.
+Custom Tasks: Phi-3 Mini fit fine-tune for different tasks outside chat instructions. Try other use cases!
+Experiment: Test different architectures, layer combinations, and techniques to boost performance.
 
 > [!NOTE]
-> Fine-tuning na iterative process. Try, learn, and adapt your model to get di best results for your specific task!
+> Fine-tuning na iterative process. Try, learn, and adjust your model to get the best result for your specific task!
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-Disclaimer:
-Dis dokument don translate with AI translation service Co-op Translator (https://github.com/Azure/co-op-translator). Even though we dey try make am accurate, abeg note say automated translations fit get mistakes or no dey completely correct. The original dokument for im original language na the authoritative source. If na important matter, make professional human translator handle am. We no go responsible for any misunderstanding or misinterpretation wey fit happen because of this translation.
+**Disclaimer**:  
+Dis dokument don translate wit AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we dey try make am correct, abeg note say automated translation fit get some errors or wrong tins. Di original dokument for dia own language na di correct source. For important mata, na professional human translation dem suppose use. We no responsible for any confusion or wrong understanding wey fit happen from di use of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->

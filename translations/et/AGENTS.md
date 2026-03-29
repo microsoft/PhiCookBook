@@ -2,33 +2,33 @@
 
 ## Projekti ülevaade
 
-PhiCookBook on põhjalik kokaraamatute hoidla, mis sisaldab praktilisi näiteid, õpetusi ja dokumentatsiooni Microsofti Phi väikeste keelemudelite (SLM) kasutamiseks. Hoidla demonstreerib erinevaid kasutusviise, sealhulgas järeldamist, peenhäälestamist, kvantiseerimist, RAG-i rakendusi ja multimodaalseid rakendusi erinevatel platvormidel ja raamistikus.
+PhiCookBook on põhjalik retseptide hoidla, mis sisaldab praktilisi näiteid, juhendeid ja dokumentatsiooni Microsofti Phi väikeste keelemudelite (SLM-id) kasutamiseks. Hoidla demonstreerib erinevaid kasutusjuhtumeid, sealhulgas järeldamist, peenhäälestamist, kvantiseerimist, RAG-teostusi ja multimodaalseid rakendusi erinevatel platvormidel ja raamistikudel.
 
 **Peamised tehnoloogiad:**
 - **Keeled:** Python, C#/.NET, JavaScript/Node.js
 - **Raamistikud:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platvormid:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **Mudelitüübid:** Phi-3, Phi-3.5, Phi-4 (tekst, visioon, multimodaalsed, põhjendusvariandid)
+- **Platvormid:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Mudelitüübid:** Phi-3, Phi-3.5, Phi-4 (teksti-, nägemis-, multimodaalsed ja järeldusvariandid)
 
 **Hoidla struktuur:**
-- `/code/` - Töötavad koodinäited ja näidisrakendused
-- `/md/` - Üksikasjalik dokumentatsioon, õpetused ja juhendid  
-- `/translations/` - Mitmekeelsed tõlked (50+ keelt automatiseeritud töövoo kaudu)
-- `/.devcontainer/` - Arenduskonteineri konfiguratsioon (Python 3.12 koos Ollama)
+- `/code/` - Töökoodinäited ja prooviteostused
+- `/md/` - Detailne dokumentatsioon, juhendid ja kuidas teha õpetused  
+- `/translations/` - Mitmekeelsed tõlked (50+ keelt läbi automatiseeritud töövoo)
+- `/.devcontainer/` - Arenduskonteineri konfiguratsioon (Python 3.12 koos Ollamaga)
 
-## Arenduskeskkonna seadistamine
+## Arenduskeskkonna seadistus
 
-### GitHub Codespaces'i või arenduskonteinerite kasutamine (soovitatav)
+### Kasutades GitHub Codespaces või Dev konteinerid (Soovitatav)
 
 1. Ava GitHub Codespaces'is (kiireim):
-   - Klõpsa README-s "Open in GitHub Codespaces" märgisel
-   - Konteiner konfigureerib automaatselt Python 3.12 ja Ollama koos Phi-3-ga
+   - Klõpsa README failis "Open in GitHub Codespaces" märgisel
+   - Konteiner seadistub automaatselt Python 3.12 ja Phi-3 Ollama mudeliga
 
-2. Ava VS Code arenduskonteinerites:
-   - Kasuta README-s "Open in Dev Containers" märgist
-   - Konteiner vajab vähemalt 16GB hostmälu
+2. Ava VS Code Dev konteinerites:
+   - Kasuta README faili märgist "Open in Dev Containers"
+   - Konteiner vajab vähemalt 16GB mälu hostilt
 
-### Kohalik seadistamine
+### Kohalik seadistus
 
 **Eeltingimused:**
 - Python 3.12 või uuem
@@ -36,17 +36,17 @@ PhiCookBook on põhjalik kokaraamatute hoidla, mis sisaldab praktilisi näiteid,
 - Node.js 18+ ja npm (JavaScripti näidete jaoks)
 - Soovitatav vähemalt 16GB RAM
 
-**Paigaldamine:**
+**Paigaldus:**
 ```bash
 git clone https://github.com/microsoft/PhiCookBook.git
 cd PhiCookBook
 ```
 
-**Python näidete jaoks:**
-Liigu konkreetsete näidiste kataloogidesse ja paigalda sõltuvused:
+**Pythoni näidete jaoks:**
+Mine konkreetsete näidiste kataloogidesse ja paigalda sõltuvused:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # kui faili requirements.txt eksisteerib
 ```
 
 **.NET näidete jaoks:**
@@ -56,51 +56,51 @@ dotnet restore LabsPhi.sln
 dotnet build LabsPhi.sln
 ```
 
-**JavaScripti/veebi näidete jaoks:**
+**JavaScripti/veebinäidete jaoks:**
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Käivita arendusserver
+npm run build  # Ehita tootmiseks
 ```
 
 ## Hoidla korraldus
 
 ### Koodinäited (`/code/`)
 
-- **01.Introduce/** - Põhilised sissejuhatused ja alustamisnäidised
+- **01.Introduce/** - Põhilised sissejuhatused ja alustamisnäited
 - **03.Finetuning/** ja **04.Finetuning/** - Peenhäälestamise näited erinevate meetoditega
-- **03.Inference/** - Järeldamise näited erineval riistvaral (AIPC, MLX)
-- **06.E2E/** - Lõpuni viidud rakenduste näited
-- **07.Lab/** - Laboratoorsed/eksperimentaalsed rakendused
-- **08.RAG/** - Retrieval-Augmented Generation näited
-- **09.UpdateSamples/** - Viimati uuendatud näited
+- **03.Inference/** - Järeldamise näited erinevatel riistvaradel (AIPC, MLX)
+- **06.E2E/** - Otse-üles lõpprakenduste näited
+- **07.Lab/** - Laboratoorsed/katseliseksotused
+- **08.RAG/** - Väljavahtutugev genereerimine (RAG) näited
+- **09.UpdateSamples/** - Viimased uuendatud näited
 
 ### Dokumentatsioon (`/md/`)
 
-- **01.Introduction/** - Sissejuhatusjuhendid, keskkonna seadistamine, platvormijuhendid
-- **02.Application/** - Rakenduste näited, mis on organiseeritud tüübi järgi (Tekst, Kood, Visioon, Audio jne)
-- **02.QuickStart/** - Kiire alustamise juhendid Azure AI Foundry ja GitHub Models jaoks
-- **03.FineTuning/** - Peenhäälestamise dokumentatsioon ja õpetused
-- **04.HOL/** - Praktilised laborid (sisaldab .NET näiteid)
+- **01.Introduction/** - Sissejuhatus, keskkonna seadistus, platvormijuhised
+- **02.Application/** - Rakendusnäited kategooriate kaupa (tekst, kood, nägemine, heli jne)
+- **02.QuickStart/** - Kiirjuhendid Microsoft Foundry ja GitHub Mudelite jaoks
+- **03.FineTuning/** - Peenhäälestamise dokumentatsioon ja juhendid
+- **04.HOL/** - Käed-külge laborid (sisaldab .NET näiteid)
 
-### Failiformaadid
+### Failivormingud
 
-- **Jupyter Notebookid (`.ipynb`)** - Interaktiivsed Python õpetused, tähistatud 📓 README-s
-- **Python skriptid (`.py`)** - Iseseisvad Python näited
+- **Jupyter Notebook'id (`.ipynb`)** - Interaktiivsed Python juhtnöörid, märgitud 📓 README-s
+- **Pythoni skriptid (`.py`)** - Iseseisvad Pythoni näited
 - **C# projektid (`.csproj`, `.sln`)** - .NET rakendused ja näited
 - **JavaScript (`.js`, `package.json`)** - Veebipõhised ja Node.js näited
 - **Markdown (`.md`)** - Dokumentatsioon ja juhendid
 
 ## Näidete kasutamine
 
-### Jupyter Notebookide käivitamine
+### Jupyter Notebook'ide käivitamine
 
-Enamik näiteid on esitatud Jupyter Notebookidena:
+Enamik näiteid on esitatud Jupyter notebook'idena:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Avab brauseri liidese
+# Navigeeri soovitud .ipynb faili juurde
 ```
 
 ### Python skriptide käivitamine
@@ -124,206 +124,208 @@ cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
 ```
 
-### JavaScripti/veebi näidete käivitamine
+### JavaScripti/veebinäidete käivitamine
 
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Arendus koos kuuma laadimisega
 ```
 
 ## Testimine
 
-See hoidla sisaldab näidiskoodi ja õpetusi, mitte traditsioonilist tarkvaraprojekti koos ühikutestidega. Valideerimine toimub tavaliselt järgmiselt:
+See hoidla sisaldab näitekoodi ja juhendeid, mitte traditsioonilist tarkvaraprojekti koos üksustestidega. Kinnitamine toimub tavaliselt järgmiselt:
 
-1. **Näidete käivitamine** - Iga näide peaks töötama ilma vigadeta
-2. **Väljundite kontrollimine** - Kontrolli, et mudeli vastused oleksid sobivad
-3. **Õpetuste järgimine** - Juhendid peaksid töötama nagu dokumenteeritud
+1. **Näidete käivitamine** - Iga näide peaks veata jooksma
+2. **Väljundite kontroll** - Mudeli vastused peavad olema sobivad
+3. **Juhendite järgiv käivitamine** - Samm-sammult juhiste alusel töötamine peab õnnestuma
 
-**Tavaline valideerimisviis:**
-- Testi näidise käivitamist sihtkeskkonnas
-- Kontrolli, et sõltuvused paigaldatakse korrektselt
-- Veendu, et mudelid laaditakse edukalt alla ja töötavad
-- Kinnita, et oodatav käitumine vastab dokumentatsioonile
+**Tavaline valideerimise lähenemine:**
+- Testi näidete täitmist sihtkeskkonnas
+- Veendu, et sõltuvused paigaldatakse õigesti
+- Kontrolli, et mudeli allalaadimine/laadimine õnnestub
+- Kinnita, et oodatud käitumine vastab dokumentatsioonile
 
 ## Koodistiil ja konventsioonid
 
 ### Üldised juhised
 
-- Näited peaksid olema selged, hästi kommenteeritud ja harivad
-- Järgi keelespetsiifilisi konventsioone (PEP 8 Pythonile, C# standardid .NET jaoks)
-- Hoia näited keskendunud Phi mudelite konkreetsete võimete demonstreerimisele
-- Lisa kommentaare, mis selgitavad olulisi kontseptsioone ja mudelispetsiifilisi parameetreid
+- Näited peavad olema selged, hästi kommenteeritud ja harivad
+- Järgi keele spetsiifilisi konventsioone (PEP 8 Pythonile, C# standardid .NET-le)
+- Hoia näited konkreetsetele Phi mudeli võimalustele keskendunud
+- Lisa kommentaarid, mis selgitavad võtmekontsepte ja mudeli spetsiifilisi parameetreid
 
 ### Dokumentatsiooni standardid
 
-**URL-i vormindamine:**
-- Kasuta `[tekst](../../url)` vormingut ilma lisaruumideta
-- Suhtelised lingid: Kasuta `./` praeguse kataloogi jaoks, `../` vanema jaoks
-- Väldi URL-ides riigispetsiifilisi lokaale (väldi `/en-us/`, `/en/`)
+**URL-e vormindamine:**
+- Kasuta vormingut `[tekst](../../url)` ilma lisatühikuteta
+- Suhtelised viited: kasuta `./` praeguse kataloogi jaoks, `../` ülemkataloogi jaoks
+- Vältida riigipõhiseid kohalikke keeli URL-ides (väldi `/en-us/`, `/en/`)
 
 **Pildid:**
-- Salvesta kõik pildid `/imgs/` kataloogi
-- Kasuta kirjeldavaid nimesid ingliskeelsete tähemärkide, numbrite ja sidekriipsudega
+- Talleta kõik pildid kataloogi `/imgs/`
+- Kasuta kirjeldavaid nimesid ingliskeelsete tähtede, numbrite ja kriipsudega
 - Näide: `phi-3-architecture.png`
 
 **Markdown failid:**
-- Viita tegelikele töötavatele näidetele `/code/` kataloogis
-- Hoia dokumentatsioon sünkroonis koodimuudatustega
-- Kasuta 📓 emotikoni Jupyter Notebooki linkide tähistamiseks README-s
+- Viita reaalselt töötavatele näidetele kataloogis `/code/`
+- Hoia dokumentatsioon sünkroonis koodi muudatustega
+- Märgista Jupyter notebook'i lingid README-s 📓 emotikoniga
 
 ### Failide korraldus
 
-- Koodinäited `/code/` kataloogis organiseeritud teema/funktsiooni järgi
-- Dokumentatsioon `/md/` peegeldab koodistruktuuri, kui võimalik
-- Hoia seotud failid (notebookid, skriptid, konfiguratsioonid) koos alamkataloogides
+- Koodinäited kataloogis `/code/` organiseeritud teema/funktsiooni järgi
+- Dokumentatsioon kataloogis `/md/` peegeldab vajadusel koodi struktuuri
+- Hoia seotud failid (notebookid, skriptid, konfiguratsioonid) koos kaustades
 
-## Pull Request'i juhised
+## Pull requesti juhised
 
-### Enne esitamist
+### Enne esitust
 
 1. **Forki hoidla** oma kontole
 2. **Eralda PR-id tüübi järgi:**
    - Veaparandused ühes PR-is
    - Dokumentatsiooni uuendused teises
-   - Uued näited eraldi PR-is
-   - Tippvead võib kombineerida
+   - Uued näited eraldi PR-idena
+   - Kirjaveaparandused võib ühendada
 
-3. **Lahenda ühendamise konfliktid:**
-   - Uuenda oma kohalikku `main` haru enne muudatuste tegemist
-   - Sünkroniseeri sageli ülesvooluga
+3. **Lahenda ühinemis konfliktid:**
+   - Uuenda oma lokaalset `main` haru enne muudatuste tegemist
+   - Sünkrooni regulaarselt upstream'iga
 
 4. **Tõlke PR-id:**
-   - Peavad sisaldama tõlkeid KÕIGILE failidele kaustas
+   - Peavad sisaldama tõlkeid KÕIGILE kausta failidele
    - Säilita originaalkeele struktuur
 
 ### Nõutavad kontrollid
 
-PR-id käivitavad automaatselt GitHubi töövood, et valideerida:
+PR-id käivitavad automaatselt GitHub töövood valideerimiseks:
 
 1. **Suhtelise tee valideerimine** - Kõik sisemised lingid peavad töötama
-   - Testi linke lokaalselt: Ctrl+Click VS Code'is
-   - Kasuta VS Code'i tee soovitusi (`./` või `../`)
+   - Testi linke lokaalsetes tingimustes: Ctrl+klõps VS Code'is
+   - Kasuta VS Code soovitusi teedele (`./` või `../`)
 
-2. **URL-i lokaali kontroll** - Veebi URL-id ei tohi sisaldada riigikoode
+2. **URL-i keelekontroll** - Veebiaadressid ei tohi sisaldada riiklike keeli
    - Eemalda `/en-us/`, `/en/` või muud keelekoodid
-   - Kasuta üldisi rahvusvahelisi URL-e
+   - Kasuta üldist rahvusvahelist URL-i
 
-3. **Katkise URL-i kontroll** - Kõik URL-id peavad tagastama 200 staatuse
-   - Veendu, et lingid on enne esitamist ligipääsetavad
-   - Märkus: Mõned tõrked võivad olla tingitud võrgu piirangutest
+3. **Katkiste URL-ide kontroll** - Kõik URL-id peavad tagastama 200 staatuse
+   - Kontrolli linkide ligipääsetavust enne esitamist
+   - Märkus: Mõned ebaõnnestumised võivad olla võrgu piirangute tõttu
 
-### PR-i pealkirja vorming
+### PR pealkirja vorming
 
 ```
 [component] Brief description
 ```
 
 Näited:
-- `[docs] Lisa Phi-4 järeldamise õpetus`
-- `[code] Paranda ONNX Runtime integratsiooni näide`
+- `[docs] Lisa Phi-4 järeldamise juhend`
+- `[code] Paranda ONNX Runtime'i integratsiooni näide`
 - `[translation] Lisa jaapani tõlge sissejuhatuse juhenditele`
 
-## Tavalised arendusmustrid
+## Tavalised arenduse mustrid
 
 ### Phi mudelitega töötamine
 
-**Mudeli laadimine:**
+**Mudelite laadimine:**
 - Näited kasutavad erinevaid raamistikke: Transformers, ONNX Runtime, MLX, OpenVINO
-- Mudelid laaditakse tavaliselt Hugging Face'ist, Azure'ist või GitHub Models'ist
+- Mudelid allalaaditavad tavaliselt Hugging Face, Azure või GitHub Models kaudu
 - Kontrolli mudeli ühilduvust oma riistvaraga (CPU, GPU, NPU)
 
 **Järeldamise mustrid:**
-- Teksti genereerimine: Enamik näiteid kasutab vestlus-/juhendvariante
-- Visioon: Phi-3-vision ja Phi-4-multimodaalsed pilditöötluseks
-- Audio: Phi-4-multimodaalsed toetavad helisisendeid
-- Põhjendus: Phi-4-reasoning variandid keerukate põhjenduste jaoks
+- Tekstigeneratsioon: enamik näiteid kasutab vestlus- või juhendvarianti
+- Nägemine: Phi-3-nägemine ja Phi-4-multimodaalne pildi mõistmiseks
+- Heli: Phi-4-multimodaalne toetab helisisendeid
+- Järeldamine: Phi-4-järeldus variandid keerukamate ülesannete jaoks
 
 ### Platvormispetsiifilised märkused
 
-**Azure AI Foundry:**
-- Vajab Azure'i tellimust ja API võtmeid
+**Microsoft Foundry:**
+- Vajab Azure tellimust ja API-võtmeid
 - Vaata `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- Tasuta tase testimiseks saadaval
+- Testimiseks olemas tasuta kiht
 - Vaata `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Kohalik järeldamine:**
-- ONNX Runtime: Platvormideülene, optimeeritud järeldamine
-- Ollama: Lihtne kohalike mudelite haldamine (eelkonfigureeritud arenduskonteineris)
-- Apple MLX: Optimeeritud Apple Siliconi jaoks
+- ONNX Runtime: platvormideülene, optimeeritud järeldamine
+- Ollama: lihtne kohalik mudelite haldus (eelkonfigureeritud dev konteineris)
+- Apple MLX: optimeeritud Apple Siliconile
 
 ## Tõrkeotsing
 
 ### Tavalised probleemid
 
 **Mälu probleemid:**
-- Phi mudelid vajavad märkimisväärset RAM-i (eriti visiooni/multimodaalsed variandid)
-- Kasuta kvantiseeritud mudeleid ressursipiiratud keskkondades
+- Phi mudelid vajavad märkimisväärselt RAM-i (eriti nägemis- ja multimodaalsed variandid)
+- Kasuta kvantiseeritud mudeleid madalamate ressursside puhul
 - Vaata `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Sõltuvuste konfliktid:**
-- Python näidetel võivad olla spetsiifilised versiooninõuded
-- Kasuta iga näite jaoks virtuaalkeskkondi
+- Pythoni näidetel võivad olla spetsiifilised versiooninõuded
+- Kasuta iga näite jaoks virtuaalset keskkonda
 - Kontrolli individuaalseid `requirements.txt` faile
 
-**Mudeli allalaadimise tõrked:**
-- Suured mudelid võivad aeglaste ühenduste korral aeguda
-- Kaalu pilvekeskkondade kasutamist (Codespaces, Azure)
-- Kontrolli Hugging Face'i vahemikku: `~/.cache/huggingface/`
+**Mudeli allalaadimise ebaõnnestumised:**
+- Suured mudelid võivad aeglustuda aeglastel ühendustel
+- Mõtle pilvekeskkondadele (Codespaces, Azure)
+- Kontrolli Hugging Face'i vahemälu: `~/.cache/huggingface/`
 
 **.NET projekti probleemid:**
 - Veendu, et .NET 8.0 SDK on paigaldatud
 - Kasuta `dotnet restore` enne ehitamist
-- Mõned projektid sisaldavad CUDA-spetsiifilisi konfiguratsioone (Debug_Cuda)
+- Mõnel projektil CUDA-spetsiifilised konfiguratsioonid (Debug_Cuda)
 
-**JavaScripti/veebi näited:**
+**JavaScripti/veebinäited:**
 - Kasuta Node.js 18+ ühilduvuse tagamiseks
-- Tühjenda `node_modules` ja paigalda uuesti, kui probleemid püsivad
-- Kontrolli brauseri konsooli WebGPU ühilduvusprobleemide osas
+- Kui probleemid jätkuvad, kustuta `node_modules` ja paigalda uuesti
+- Kontrolli brauseri konsool WebGPU ühilduvuse vigade osas
 
 ### Abi saamine
 
-- **Discord:** Liitu Azure AI Foundry Community Discordiga
-- **GitHub Issues:** Teata vigadest ja probleemidest hoidlas
-- **GitHub Discussions:** Esita küsimusi ja jaga teadmisi
+- **Discord:** Liitu Microsoft Foundry kogukonna Discordiga
+- **GitHub Issues:** Teata vigadest ja probleemidest hoidlasse
+- **GitHub Discussions:** Küsi küsimusi ja jaga teadmisi
 
 ## Täiendav kontekst
 
-### Vastutustundlik AI
+### Vastutustundlik tehisintellekt
 
-Kõik Phi mudelite kasutused peaksid järgima Microsofti vastutustundliku AI põhimõtteid:
+Kõik Phi mudelite kasutamine peab järgima Microsofti vastutustundliku tehisintellekti põhimõtteid:
 - Õiglus, usaldusväärsus, ohutus
 - Privaatsus ja turvalisus  
-- Kaasatus, läbipaistvus, vastutus
-- Kasuta Azure AI Content Safety't tootmisrakenduste jaoks
+- Kaasatus, läbipaistvus, vastutustundlikkus
+- Kasuta Azure AI Content Safety tootmiskasutuses
 - Vaata `/md/01.Introduction/01/01.AISafety.md`
 
 ### Tõlked
 
-- 50+ keelt toetatud automatiseeritud GitHub Actioni kaudu
-- Tõlked `/translations/` kataloogis
-- Hallatud co-op-translator töövoo poolt
+- 50+ keelt toetatud automaatse GitHub Actions töövoo kaudu
+- Tõlked kataloogis `/translations/`
+- Halda ko-opia-tõlkija töövoo kaudu
 - Ära muuda käsitsi tõlgitud faile (automaatselt genereeritud)
 
-### Kaastöö
+### Panustamine
 
 - Järgi juhiseid failis `CONTRIBUTING.md`
-- Nõustu kaastöölise litsentsilepinguga (CLA)
-- Järgi Microsofti avatud lähtekoodi käitumiskoodeksit
-- Hoia turvalisus ja mandaadid commiti välistes failides
+- Luba panustajate litsentsileping (CLA)
+- Järgi Microsofti avatud lähtekoodi käitumiskoodi
+- Hoia turva- ja volituste andmed commit'idest eemal
 
 ### Mitmekeelne tugi
 
-See on polüglotne hoidla, mis sisaldab näiteid:
-- **Python** - ML/AI töövood, Jupyter Notebookid, peenhäälestamine
-- **C#/.NET** - Ettevõtterakendused, ONNX Runtime integratsioon
-- **JavaScript** - Veebipõhine AI, brauseri järeldamine WebGPU-ga
+See on mitmekeelne hoidla näidetega:
+- **Python** - ML/AI töövood, Jupyter notebook'id, peenhäälestamine
+- **C#/.NET** - Mudelintegreerimine, ettevõtte rakendused
+- **JavaScript** - Veebipõhine tehisintellekt, brauseri järeldamine WebGPU abil
 
-Vali keel, mis sobib kõige paremini sinu kasutusjuhtumi ja juurutamise sihtmärgiga.
+Vali keel, mis sobib kõige paremini sinu kasutusjuhtumi ja juurutamise sihtkohaga.
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest vabastamine**:
+See dokument on tõlgitud kasutades tehisintellektil põhinevat tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi püüame täpsust, palun arvestage, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument selles originaalkeeles tuleks pidada autoriteetseks allikaks. Kritiliste andmete puhul soovitatakse professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

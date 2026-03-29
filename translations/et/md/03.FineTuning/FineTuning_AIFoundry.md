@@ -1,54 +1,54 @@
-# Phi-3 Mini mudeli peenhäälestamine Azure AI Foundry abil
+# Phi-3 peenhäälestamine Microsoft Foundryga
 
-Uurime, kuidas peenhäälestada Microsofti Phi-3 Mini keelemudelit Azure AI Foundry abil. Peenhäälestamine võimaldab kohandada Phi-3 Mini konkreetsete ülesannete jaoks, muutes selle veelgi võimsamaks ja kontekstitundlikumaks.
+Uurime, kuidas peenhäälestada Microsofti Phi-3 Mini keelemudelit, kasutades Microsoft Foundryt. Peenhäälestamine võimaldab kohandada Phi-3 Mini spetsiifiliste ülesannete jaoks, muutes selle veelgi võimsamaks ja kontekstiteadlikumaks.
 
-## Olulised kaalutlused
+## Arvestatavad kaalutlused
 
-- **Võimekus:** Milliseid mudeleid saab peenhäälestada? Milleks saab algmudelit peenhäälestada?
-- **Maksumus:** Milline on peenhäälestamise hinnamudel?
-- **Kohandatavus:** Kui palju saab algmudelit muuta – ja millisel viisil?
-- **Mugavus:** Kuidas peenhäälestamine tegelikult toimub – kas pean kirjutama kohandatud koodi? Kas pean ise arvutusressursid hankima?
-- **Turvalisus:** Peenhäälestatud mudelitel on teadaolevalt turvariske – kas on olemas kaitsemeetmeid soovimatu kahju vältimiseks?
+- **Võimekus:** Millised mudelid on peenhäälestatavad? Mida baasmudeliga saab peenhäälestamisega teha?
+- **Kulu:** Milline on peenhäälestamise hinnamudel?
+- **Kohandatavus:** Kui palju saan baasmudelit muuta – ja millisel viisil?
+- **Mugavus:** Kuidas peenhäälestamine tegelikult toimub – kas pean kirjutama kohandatud koodi? Kas pean ise arvutusressursse juurde tooma?
+- **Ohutus:** Peenhäälestatud mudelid võivad omada ohutusriske – kas on olemas kaitsemehhanismid tahtmatu kahju vältimiseks?
 
-![AIFoundry Models](../../../../imgs/03/AIFoundry/AIFoundryModels.png)
+![AIFoundry Models](../../../../translated_images/et/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
-## Ettevalmistused peenhäälestamiseks
+## Valmistumine peenhäälestamiseks
 
-### Eeltingimused
+### Eeldused
 
 > [!NOTE]
-> Phi-3 mudelite puhul on tasulise peenhäälestamise pakkumine saadaval ainult **East US 2** piirkonnas loodud keskustes.
+> Phi-3 perekonna mudelite puhul on maksa vastavalt kasutusele põhinev peenhäälestamistarjandus saadaval ainult **East US 2** piirkonnas loodud keskustes.
 
-- Azure'i tellimus. Kui sul pole Azure'i tellimust, loo [tasuline Azure'i konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), et alustada.
+- Azure tellimus. Kui sul pole Azure tellimust, loo [tasuline Azure konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), et alustada.
 
 - [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure'i rollipõhised juurdepääsukontrollid (Azure RBAC) võimaldavad anda juurdepääsu Azure AI Foundry toimingutele. Selle artikli samme täitmiseks peab sinu kasutajakontole olema määratud __Azure AI Developer roll__ ressursigrupis.
+- Azure rollipõhine juurdepääsu kontroll (Azure RBAC) võimaldab anda õigusi Microsoft Foundrys operatsioonide tegemiseks. Selle artikli sammude tegemiseks peab sinu kasutajakontole olema antud __Azure AI Developer roll__ ressurmirühmas.
 
 ### Tellimuse pakkuja registreerimine
 
-Kontrolli, kas tellimus on registreeritud `Microsoft.Network` ressursipakkuja juures.
+Kontrolli, et tellimus on registreeritud `Microsoft.Network` ressursipakkujana.
 
-1. Logi sisse [Azure'i portaalis](https://portal.azure.com).
+1. Logi sisse [Azure portaali](https://portal.azure.com).
 1. Vali vasakult menüüst **Subscriptions**.
-1. Vali tellimus, mida soovid kasutada.
+1. Vali oma kasutatav tellimus.
 1. Vali vasakult menüüst **AI project settings** > **Resource providers**.
-1. Kinnita, et **Microsoft.Network** on ressursipakkujate loendis. Kui ei ole, lisa see.
+1. Veendu, et nimekirjas oleks **Microsoft.Network**. Kui mitte, lisa see.
 
-### Andmete ettevalmistamine
+### Andmete ettevalmistus
 
-Valmista ette oma treening- ja valideerimisandmed mudeli peenhäälestamiseks. Treening- ja valideerimisandmed koosnevad sisendi ja väljundi näidetest, mis näitavad, kuidas soovid, et mudel toimiks.
+Valmista ette treening- ja valideerimisandmed, et mudelit peenhäälestada. Sinu treening- ja valideerimisandmestik sisaldab sisendi- ja väljundnäiteid, kuidas soovid, et mudel toimiks.
 
-Veendu, et kõik treeningnäited järgiksid oodatud vormingut järelduste tegemiseks. Mudelite tõhusaks peenhäälestamiseks tagage tasakaalustatud ja mitmekesine andmestik.
+Veendu, et kõik treeningnäited järgiksid eeldatavat formaati inferentsiks. Mudelite tõhusaks peenhäälestamiseks kindlusta tasakaalustatud ja mitmekesine andmestik.
 
-See hõlmab andmete tasakaalu säilitamist, erinevate stsenaariumide kaasamist ja treeningandmete perioodilist täiendamist, et need vastaksid reaalse maailma ootustele, mis viib täpsemate ja tasakaalustatumate mudelivastusteni.
+See hõlmab andmete tasakaalu hoidmist, erinevate stsenaariumite kaasamist ning treeningandmete perioodilist korrigeerimist reaalse maailma ootustega sobitamiseks, mis viib täpsemate ja tasakaalustatud mudelivastusteni.
 
-Erinevat tüüpi mudelid nõuavad erinevat treeningandmete vormingut.
+Erinevad mudelitüübid vajavad erinevat treeningandmete formaati.
 
 ### Vestluse lõpetamine
 
-Treening- ja valideerimisandmed **peavad** olema vormindatud JSON Lines (JSONL) dokumendina. `Phi-3-mini-128k-instruct` mudeli peenhäälestamise andmestik peab olema vormindatud vestlusvormingus, mida kasutab Chat completions API.
+Kasutatav treening- ja valideerimisandmestik **peab** olema vormindatud JSON Lines (JSONL) dokumendina. `Phi-3-mini-128k-instruct` mudeli peenhäälestamise andmestik peab olema vormindatud vestlusformaadis, mida kasutab Chat completions API.
 
-### Näidisfaili vorming
+### Näidiskomplekti formaat
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -56,174 +56,177 @@ Treening- ja valideerimisandmed **peavad** olema vormindatud JSON Lines (JSONL) 
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Toetatud failitüüp on JSON Lines. Failid laaditakse üles vaikimisi andmesalvestusse ja tehakse projektis kättesaadavaks.
+Toetatav faili tüüp on JSON Lines. Failid üles laaditakse vaikeandmehoidlasse ja tehakse projektis kättesaadavaks.
 
-## Phi-3 peenhäälestamine Azure AI Foundry abil
+## Phi-3 peenhäälestamine Microsoft Foundryga
 
-Azure AI Foundry võimaldab kohandada suuri keelemudeleid isiklike andmestike järgi, kasutades protsessi, mida nimetatakse peenhäälestamiseks. Peenhäälestamine pakub märkimisväärset väärtust, võimaldades kohandamist ja optimeerimist konkreetsete ülesannete ja rakenduste jaoks. See toob kaasa parema jõudluse, kulutõhususe, väiksema latentsuse ja kohandatud väljundid.
+Microsoft Foundry võimaldab sul kohandada suuri keelemudeleid isiklike andmestike põhjal, kasutades protsessi, mida nimetatakse peenhäälestamiseks. Peenhäälestamine pakub olulist väärtust, võimaldades kohandamist ja optimeerimist spetsiifiliste ülesannete ja rakenduste jaoks. See parandab jõudlust, kulutõhusust, vähendab latentsust ja võimaldab kohandatud väljundit.
 
-![Finetune AI Foundry](../../../../imgs/03/AIFoundry/AIFoundryfinetune.png)
+![Finetune AI Foundry](../../../../translated_images/et/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Uue projekti loomine
 
-1. Logi sisse [Azure AI Foundry](https://ai.azure.com).
+1. Logi sisse [Microsoft Foundry](https://ai.azure.com).
 
-1. Vali **+New project**, et luua uus projekt Azure AI Foundry's.
+1. Vali **+New project**, et luua Microsoft Foundrys uus projekt.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-new-project.png)
+    ![FineTuneSelect](../../../../translated_images/et/select-new-project.cd31c0404088d7a3.webp)
 
-1. Täida järgmised ülesanded:
+1. Tee järgmised toimingud:
 
     - Projekti **Hub name**. See peab olema unikaalne väärtus.
-    - Vali **Hub**, mida kasutada (loo uus, kui vaja).
+    - Vali kasutatav **Hub** (loo vajadusel uus).
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/create-project.png)
+    ![FineTuneSelect](../../../../translated_images/et/create-project.ca3b71298b90e420.webp)
 
-1. Täida järgmised ülesanded uue keskuse loomiseks:
+1. Uue hubi loomiseks tee järgmised toimingud:
 
     - Sisesta **Hub name**. See peab olema unikaalne väärtus.
-    - Vali oma Azure'i **Subscription**.
-    - Vali **Resource group**, mida kasutada (loo uus, kui vaja).
-    - Vali **Location**, mida soovid kasutada.
-    - Vali **Connect Azure AI Services**, mida kasutada (loo uus, kui vaja).
-    - Vali **Connect Azure AI Search**, et **Skip connecting**.
+    - Vali oma Azure **Subscription**.
+    - Vali kasutatav **Resource group** (loo vajadusel uus).
+    - Vali soovitud **Location**.
+    - Vali kasutatav **Connect Azure AI Services** (loo vajadusel uus).
+    - Vali **Connect Azure AI Search** juures valik **Skip connecting**.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/create-hub.png)
+    ![FineTuneSelect](../../../../translated_images/et/create-hub.49e53d235e80779e.webp)
 
 1. Vali **Next**.
 1. Vali **Create a project**.
 
-### Andmete ettevalmistamine
+### Andmete ettevalmistus
 
-Enne peenhäälestamist kogu või loo ülesandega seotud andmestik, näiteks vestlusjuhised, küsimuste ja vastuste paarid või muu asjakohane tekst. Puhasta ja eeltöötlusta andmed, eemaldades müra, käsitledes puuduvad väärtused ja tehes tekstist tokeniseerimise.
+Enne peenhäälestamist koguge või looge ülesandega seotud andmestik, näiteks vestlusjuhised, küsimus-vastus paarid või muu asjakohane tekstimaterjal. Puhasta ja eeltööta andmed, eemaldades müra, käsitledes puuduvate väärtusi ja tehes teksti tokeniseerimist.
 
-### Phi-3 mudelite peenhäälestamine Azure AI Foundry abil
+### Phi-3 mudelite peenhäälestamine Microsoft Foundrys
 
 > [!NOTE]
-> Phi-3 mudelite peenhäälestamine on praegu toetatud projektides, mis asuvad East US 2 piirkonnas.
+> Phi-3 mudelite peenhäälestamine on hetkel toetatud ainult East US 2 piirkonnas asuvates projektides.
 
 1. Vali vasakult menüüst **Model catalog**.
 
-1. Sisesta otsinguribale *phi-3* ja vali phi-3 mudel, mida soovid kasutada.
+1. Otsi **otsinguribal** *phi-3* ja vali soovitud phi-3 mudel.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-model.png)
+    ![FineTuneSelect](../../../../translated_images/et/select-model.60ef2d4a6a3cec57.webp)
 
 1. Vali **Fine-tune**.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-finetune.png)
+    ![FineTuneSelect](../../../../translated_images/et/select-finetune.a976213b543dd9d8.webp)
 
 1. Sisesta **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune1.png)
+    ![FineTuneSelect](../../../../translated_images/et/finetune1.c2b39463f0d34148.webp)
 
 1. Vali **Next**.
 
-1. Täida järgmised ülesanded:
+1. Tee järgmised valikud:
 
-    - Vali **task type** väärtuseks **Chat completion**.
-    - Vali **Training data**, mida soovid kasutada. Sa saad selle üles laadida Azure AI Foundry kaudu või oma kohalikust keskkonnast.
+    - Vali **task type**: **Chat completion**.
+    - Vali kasutatav **Training data**. Võid selle üles laadida Microsoft Foundry andmete kaudu või oma lokaalsest keskkonnast.
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune2.png)
-
-1. Vali **Next**.
-
-1. Laadi üles **Validation data**, mida soovid kasutada, või vali **Automatic split of training data**.
-
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune3.png)
+    ![FineTuneSelect](../../../../translated_images/et/finetune2.43cb099b1a94442d.webp)
 
 1. Vali **Next**.
 
-1. Täida järgmised ülesanded:
+1. Laadi üles kasutatav **Validation data** või vali **Automatic split of training data**.
 
-    - Vali **Batch size multiplier**, mida soovid kasutada.
-    - Vali **Learning rate**, mida soovid kasutada.
-    - Vali **Epochs**, mida soovid kasutada.
+    ![FineTuneSelect](../../../../translated_images/et/finetune3.fd96121b67dcdd92.webp)
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/finetune4.png)
+1. Vali **Next**.
 
-1. Vali **Submit**, et alustada peenhäälestamise protsessi.
+1. Määra järgmised parameetrid:
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/select-submit.png)
+    - Vali sobiv **Batch size multiplier**.
+    - Vali **Learning rate**.
+    - Vali soovitud **Epochs**.
 
-1. Kui mudel on peenhäälestatud, kuvatakse selle olek **Completed**, nagu näidatud alloleval pildil. Nüüd saad mudeli juurutada ja kasutada seda oma rakenduses, mänguväljakul või prompt flow's. Lisateabe saamiseks vaata [Kuidas juurutada Phi-3 väikese keelemudelite perekonda Azure AI Foundry abil](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+    ![FineTuneSelect](../../../../translated_images/et/finetune4.e18b80ffccb5834a.webp)
 
-    ![FineTuneSelect](../../../../imgs/03/AIFoundry/completed.png)
+1. Vali **Submit**, et alustada peenhäälestamist.
+
+    ![FineTuneSelect](../../../../translated_images/et/select-submit.0a3802d581bac271.webp)
+
+
+1. Kui mudel on peenhäälestatud, kuvatakse olek **Completed**, nagu alloleval pildil. Nüüd saad mudelit juurutada ja kasutada seda oma rakenduses, mänguväljakul või prompt flow's. Lisateabe saamiseks vaata [Kuidas juurutada Phi-3 väikeste keelemudelite perekonda Microsoft Foundryga](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+    ![FineTuneSelect](../../../../translated_images/et/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Täpsema teabe saamiseks Phi-3 peenhäälestamise kohta külastage [Phi-3 mudelite peenhäälestamine Azure AI Foundry abil](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Täpsema info saamiseks Phi-3 peenhäälestuse kohta külasta [Fine-tune Phi-3 models in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
-## Peenhäälestatud mudelite kustutamine
+## Peenhäälestatud mudelite puhastamine
 
-Sa saad kustutada peenhäälestatud mudeli peenhäälestamise mudelite loendist [Azure AI Foundry](https://ai.azure.com) või mudeli detailide lehelt. Vali peenhäälestatud mudel, mida soovid kustutada, ja seejärel vali kustutamise nupp, et mudel kustutada.
+Saad peenhäälestatud mudeli kustutada peenhäälestatud mudelite nimekirjast Microsoft Foundrys või mudeli detailide lehelt. Vali peenhäälestatud mudel kustutamiseks Fine-tuning lehel ja seejärel vali Kustuta nupp.
 
 > [!NOTE]
-> Kohandatud mudelit ei saa kustutada, kui sellel on olemasolev juurutus. Enne kohandatud mudeli kustutamist pead esmalt kustutama mudeli juurutuse.
+> Kohandatud mudelit ei saa kustutada, kui sellel on olemasolev juurutus. Pead esmalt kustutama mudeli juurutuse, enne kui saad kustutada kohandatud mudeli.
 
-## Maksumus ja kvoodid
+## Kulu ja piirangud
 
-### Phi-3 mudelite teenusena peenhäälestamise maksumus ja kvoodid
+### Phi-3 mudelite peenhäälestamisel teenusena kehtivad kulu- ja piiranguküsimused
 
-Phi mudelid, mida pakutakse teenusena, on Microsofti poolt integreeritud Azure AI Foundry'sse kasutamiseks. Hinnakujundust saab vaadata [juurutamise](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) või peenhäälestamise ajal juurutamise viisardi hinnakujunduse ja tingimuste vahekaardil.
+Phi-3 mudelid, mis on peenhäälestatud teenusena, on Microsofti poolt pakutavad ja integreeritud Microsoft Foundryga kasutamiseks. Saad hinnainfot mudelite [juurutamisel](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) või peenhäälestamisel, kasutades juurutamise võluri "Pricing and terms" vahelehte.
 
 ## Sisufiltreerimine
 
-Teenusena juurutatud mudelid tasulise kasutuse korral on kaitstud Azure AI Content Safety abil. Reaalajas lõpp-punktides juurutamisel saab sellest funktsioonist loobuda. Azure AI sisuturvalisuse lubamisel läbivad nii sisend kui ka väljund klassifikatsioonimudelite ansambli, mille eesmärk on tuvastada ja takistada kahjuliku sisu väljundit. Sisufiltreerimissüsteem tuvastab ja tegutseb potentsiaalselt kahjuliku sisu kategooriate osas nii sisendites kui ka väljundites. Lisateavet leiate [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Pay-as-you-go teenusena juurutatud mudelid on kaitstud Azure AI Content Safety kontrolliga. Reaalajas lõpp-punktides kasutuselevõtul võid selle võimaluse välja lülitada. Azure AI sisuturbe lubamise korral läbivad nii sisendkäsud kui ka mudeli väljundid hulga klassifitseerimismudeleid, mis püüavad tuvastada ja takistada kahjuliku sisu edastamist. Sisufiltreerimissüsteem tuvastab ja rakendab meetmeid teatud kategooriates potentsiaalselt kahjuliku sisu puhul nii sisendpäringutes kui väljundites. Loe rohkem [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering) kohta.
 
 **Peenhäälestamise konfiguratsioon**
 
-Hüperparameetrid: Määra hüperparameetrid, nagu õppemäär, partii suurus ja treeningtsüklite arv.
+Hüperparameetrid: Määratle hüperparameetrid, näiteks õppimise kiirus, partiide suurus ja treeningepochide arv.
 
-**Kaotuse funktsioon**
+**Kahjufunktsioon**
 
-Vali ülesande jaoks sobiv kaotuse funktsioon (nt ristentropia).
+Vali oma ülesande jaoks sobiv kahjufunktsioon (nt rist-entropia).
 
 **Optimeerija**
 
-Vali optimeerija (nt Adam) gradientide uuendamiseks treeningu ajal.
+Vali optimeerija (nt Adam) gradientide värskendamiseks treeningu ajal.
 
 **Peenhäälestamise protsess**
 
-- Laadi eeltreenitud mudel: Laadi Phi-3 Mini kontrollpunkt.
-- Lisa kohandatud kihid: Lisa ülesandespetsiifilised kihid (nt klassifikatsioonipea vestlusjuhiste jaoks).
+- Laadi eelträenitud mudel: Laadi Phi-3 Mini kontrollpunkt.
+- Lisa kohandatud kihid: Lisa ülesandespetsiifilised kihid (näiteks klassifikatsioonipea vestlusjuhiste jaoks).
 
 **Treeni mudelit**
-Peenhäälesta mudel, kasutades ettevalmistatud andmestikku. Jälgi treeningu edenemist ja kohanda hüperparameetreid vastavalt vajadusele.
+Peenhäälesta mudelit oma ettevalmistatud andmestiku põhjal. Jälgi treeningu edenemist ja reguleeri vajadusel hüperparameetreid.
 
 **Hindamine ja valideerimine**
 
-Valideerimiskomplekt: Jaga oma andmed treening- ja valideerimiskomplektideks.
+Valideerimiskomplekt: Jaota andmed treening- ja valideerimiskomplektideks.
 
-**Hinda jõudlust**
+**Soorituse hindamine**
 
-Kasuta mõõdikuid, nagu täpsus, F1-skoor või hämmeldus, et hinnata mudeli jõudlust.
+Kasuta mõõdikuid nagu täpsus, F1-skoor või segadusmõõde mudeli soorituse hindamiseks.
 
 ## Peenhäälestatud mudeli salvestamine
 
 **Kontrollpunkt**
-Salvesta peenhäälestatud mudeli kontrollpunkt tulevaseks kasutamiseks.
+Salvesta peenhäälestatud mudeli kontrollpunkt tulevikus kasutamiseks.
 
 ## Juurutamine
 
-- Juuruta veebiteenusena: Juuruta oma peenhäälestatud mudel veebiteenusena Azure AI Foundry's.
-- Testi lõpp-punkti: Saada testpäringuid juurutatud lõpp-punkti, et kontrollida selle funktsionaalsust.
+- Juuruta veebiteenusena: Juuruta peenhäälestatud mudel Microsoft Foundrys veebiteenusena.
+- Testi lõpp-punkti: Saada testpäringud juurutatud lõpp-punktile, et kontrollida funktsionaalsust.
 
-## Iteratsioon ja täiustamine
+## Iteratsioon ja parandamine
 
-Iteratsioon: Kui jõudlus pole rahuldav, iteratsiooni tehes kohanda hüperparameetreid, lisa rohkem andmeid või peenhäälesta täiendavate tsüklite jaoks.
+Itereeri: Kui sooritus ei ole rahuldav, tee iteratsioone, muutes hüperparameetreid, lisades rohkem andmeid või peenhäälestades täiendavate epochide jooksul.
 
-## Jälgi ja täiusta
+## Jälgimine ja täiendamine
 
-Jälgi pidevalt mudeli käitumist ja täiusta vastavalt vajadusele.
+Jälgi mudeli käitumist pidevalt ja täienda vastavalt vajadusele.
 
-## Kohanda ja laienda
+## Kohandamine ja laiendamine
 
-Kohandatud ülesanded: Phi-3 Mini saab peenhäälestada erinevateks ülesanneteks peale vestlusjuhiste. Uuri teisi kasutusvõimalusi!
-Katseta: Proovi erinevaid arhitektuure, kihtide kombinatsioone ja tehnikaid, et jõudlust parandada.
+Kohandatud ülesanded: Phi-3 Mini saab peenhäälestada mitmesugusteks ülesanneteks peale vestlusjuhiste. Uuri teisi kasutusjuhtumeid!
+Katseta erinevaid arhitektuure, kihikombinatsioone ja tehnikaid parema soorituse saavutamiseks.
 
 > [!NOTE]
-> Peenhäälestamine on iteratiivne protsess. Katseta, õpi ja kohanda oma mudelit, et saavutada parimad tulemused konkreetse ülesande jaoks!
+> Peenhäälestamine on iteratiivne protsess. Katseta, õpi ja kohanda mudelit, et saavutada parim tulemus oma konkreetses ülesandes!
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastutusest loobumine**:  
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüame täpsust, palun olge teadlikud, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Originaaldokument oma emakeeles peaks olema autoriteetne allikas. Kriitilise info puhul on soovitatav kasutada professionaalset inimtõlget. Me ei vastuta ühegi arusaamatuse või valesti mõistmise eest, mis võib sellest tõlkest tingida.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
