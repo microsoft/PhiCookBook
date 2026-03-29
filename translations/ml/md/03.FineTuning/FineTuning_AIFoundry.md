@@ -1,54 +1,54 @@
-# Fine-tuning Phi-3 with Azure AI Foundry
+# Microsoft Foundry ഉപയോഗിച്ച് Phi-3 നു ഫൈന്റ്റ്യൂണിങ് ചെയ്യുക
 
- Let’s explore how to fine-tune Microsoft’s Phi-3 Mini language model using Azure AI Foundry. Fine-tuning allows you to adapt Phi-3 Mini to specific tasks, making it even more powerful and context-aware.
+Microsoft Foundry ഉപയോഗിച്ച് Microsoft-ന്റെ Phi-3 മിനി ഭാഷാ മോഡൽ എങ്ങനെ ഫൈന്റ്റ്യൂൺ ചെയ്യാമെന്ന് നമുക്ക് അന്വേഷിക്കാം. ഫൈന്റ്റ്യൂണിങ് Phi-3 മിനിയെ പ്രത്യേക ജോലികൾക്കായി അർഹമാക്കി, അത് കൂടുതൽ ശക്തിയും സാന്ദർഭിക ബുദ്ധിമുട്ടുകൾ ഉൾപ്പെടുത്തുന്നതും ആക്കാൻ സഹായിക്കുന്നു.
 
-## Considerations
+## പരിഗണനകൾ
 
-- **Capabilities:** Which models are fine tunable? What can the base model be fine tuned to do?
-- **Cost:** What’s the pricing model for fine tuning
-**Customizability:** How much can I modify the base model – and in what ways?
-- **Convenience:** How does fine tuning actually happen – do I need to write custom code? Do I need to bring my own compute?
-- **Safety:** Fine tuned models are known to have safety risks – are there any guardrails in place to protect against unintended harm?
+- **സാധ്യതകൾ:** ഏത് മോഡലുകൾ ഫൈന്റ്റ്യൂൺ ചെയ്യാനാകും? ബേസ് മോഡൽ എന്ത് ചെയ്യാൻ ഫൈന്റ്റ്യൂൺ ചെയ്യാൻ കഴിയും?
+- **വിതരണം:** ഫൈന്റ്റ്യൂണിങ്ങിനുള്ള വില നയം എന്താണ്?
+- **പ്രത്യേകീകരണം:** ബേസ് മോഡൽ എത്രമാത്രം മാറ്റം വരുത്താൻ കഴിയും – എങ്ങനെ?
+- **സൗകര്യം:** ഫൈന്റ്റ്യൂണിങ് എങ്ങനെ നടക്കുന്നു – ഞാൻ സ്വയം കോഡ് എഴുതേണ്ടതുണ്ടോ? എന്റെ കമ്പ്യൂട്ട് കൊണ്ടുവരേണ്ടതുണ്ടോ?
+- **സുരക്ഷ:** ഫൈന്റ്റ്യൂൺ ചെയ്ത മോഡലുകൾ സുരക്ഷാ അപകടങ്ങൾ ഉണ്ടാക്കാൻ സാധ്യതയുണ്ട് – അനാസ്ഥിതിക നാശകാരങ്ങൾക്ക് എതിരെ ഏതെങ്കിലും പിടിവളിസ്റ്റുകൾ ഉണ്ടോ?
 
 ![AIFoundry Models](../../../../translated_images/ml/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
-## Preparation for fine-tuning
+## ഫൈന്റ്റ്യൂണിങ്ങിനുള്ള തയ്യാറെടുപ്പ്
 
-### Prerequisites
+### മുൻകൂട്ട് യോഗ്യതകൾ
 
 > [!NOTE]
-> Phi-3 കുടുംബത്തിലെ മോഡലുകൾക്കായി, pay-as-you-go മോഡൽ ഫൈൻ-ട്യൂൺ ഓഫറിംഗ് **East US 2** പ്രദേശങ്ങളിൽ സൃഷ്ടിച്ച ഹബുകൾക്കാണ് മാത്രം ലഭ്യമായത്.
+> Phi-3 കുടുംബ മോഡലുകൾക്കായി pay-as-you-go മോഡൽ ഫൈന്റ്റ്യൂൺ ഓഫർ East US 2 മേഖലയിൽ സൃഷ്ടിച്ച ഹബ്ബുകളിൽ മാത്രമേ ലഭ്യമാകൂ.
 
-- An Azure subscription. If you don't have an Azure subscription, create a [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) to begin.
+- ഒരു Azure സബ്സ്ക്രിപ്ഷൻ. നിങ്ങള്‍ക്ക് Azure സബ്സ്ക്രിപ്ഷൻ ഇല്ലെങ്കിൽ, ആരംഭിക്കാൻ [പെയ്ഡ് Azure അക്കൗണ്ട്](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) നിർമ്മിക്കൂ.
 
-- An [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure role-based access controls (Azure RBAC) are used to grant access to operations in Azure AI Foundry. To perform the steps in this article, your user account must be assigned the __Azure AI Developer role__ on the resource group.
+- ഒരു [AI Foundry പ്രോജക്റ്റ്](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Microsoft Foundry-യിൽ പ്രവർത്തനങ്ങൾ നടത്താൻ Azure റോളിൽ അടിസ്ഥാനമാക്കിയ ആക്സസ് നിയന്ത്രണങ്ങൾ (Azure RBAC) ഉപയോഗിക്കുന്നു. ഈ ലേഖനത്തിലെ ചുവടുകൾ ചെയ്യാൻ നിങ്ങളുടെ യൂസർ അക്കൗണ്ടിന് __Azure AI Developer റോൾ__ റിസോഴ്‌സ് ഗ്രൂപ്പിൽ നൽകിയിരിക്കണം.
 
-### Subscription provider registration
+### സബ്സ്ക്രിപ്ഷൻ പ്രൊവൈഡർ രജിസ്‌ട്രേഷൻ
 
-Verify the subscription is registered to the `Microsoft.Network` resource provider.
+`Microsoft.Network` റിസോഴ്‌സ് പ്രൊവൈഡർ സബ്സ്ക്രിപ്ഷനിൽ രജിസ്റ്റർ ചെയ്തിട്ടുണ്ടോ എന്ന് പരിശോധിക്കുക.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Select **Subscriptions** from the left menu.
-1. Select the subscription you want to use.
-1. Select **AI project settings** > **Resource providers** from the left menu.
-1. Confirm that **Microsoft.Network** is in the list of resource providers. Otherwise add it.
+1. [Azure പോർട്ടലിൽ](https://portal.azure.com) സൈൻ ഇൻ ചെയ്യുക.
+1. ഇടത് മെനുവിൽ നിന്ന് **Subscriptions** തിരഞ്ഞെടുക്കുക.
+1. ഉപയോഗിക്കാൻ ഉദ്ദേശിക്കുന്ന സബ്സ്ക്രിപ്ഷൻ തിരഞ്ഞെടുക്കുക.
+1. ഇടത് മെനുവിൽ നിന്നുള്ള **AI project settings** > **Resource providers** തിരഞ്ഞെടുക്കുക.
+1. **Microsoft.Network** റിസോഴ്‌സ് പ്രൊവൈഡർമാരെ പട്ടികയിൽ കാണുന്നുണ്ടെന്ന് ഉറപ്പാക്കുക. ഇല്ലെങ്കിൽ ചേർക്കുക.
 
-### Data preparation
+### ഡാറ്റാ തയ്യാറെടുപ്പ്
 
-Prepare your training and validation data to finetune your model. Your training data and validation data sets consist of input and output examples for how you would like the model to perform.
+മോഡൽ ഫൈന്റ്റ്യൂൺ ചെയ്യാൻ, പരിശീലനവും ഡാറ്റാ പരിശോധനയും തയ്യാറാക്കുക. പരിശീലനവും പരിശോധന ഡാറ്റാ സെറ്റുകൾ നിങ്ങൾ മോഡൽ എങ്ങനെ പ്രവർത്തിക്കണമെന്ന് ആഗ്രഹിക്കുന്ന ഇൻപുട്ടും ഔട്ട്പുട്ടും ഉൾക്കൊള്ളുന്ന ഉദാഹരണങ്ങൾ ആയിരിക്കും.
 
-Make sure all your training examples follow the expected format for inference. To finetune models effectively, ensure a balanced and diverse dataset.
+എല്ലാ പരിശീലന ഉദാഹരണങ്ങളും നിർദ്ദേശിത ഫോർമാറ്റിൽ യോജിക്കുന്നുണ്ടെന്ന് ഉറപ്പാക്കുക. ഫൈന്റ്റ്യൂണിന് സംവിധാനം ചെയ്യുന്നതിന് ഒരു പൊരുത്തവുമുള്ള, വൈവിധ്യമാർന്ന ഡാറ്റാ സെറ്റ് ഉറപ്പാക്കണം.
 
-This involves maintaining data balance, including various scenarios, and periodically refining training data to align with real-world expectations, ultimately leading to more accurate and balanced model responses.
+ഇതിനായി ഡാറ്റയുടെ സമതുലനമുണ്ട് നിലനിർത്തുകയും ബഹുമുഖ സാഹചര്യങ്ങൾ ഉൾപ്പെടുത്തുകയും കാലക്രമത്തിൽ പരിശീലന ഡാറ്റ വ്യക്തവത്കരിക്കുകയും ചെയ്യണം. ഇത് മോഡലിന്റെ പ്രതികരണങ്ങൾ കൂടുതൽ കൃത്യവും സമതുലിതവും ആക്കുന്നതിന് സഹായിക്കുന്നു.
 
-Different model types require a different format of training data.
+പ്രത്യേക മോഡൽ തരം അനുസരിച്ച് വ്യത്യസ്ത ഫോർമാറ്റിലുള്ള പരിശീലന ഡാറ്റ ആവശ്യമാണ്.
 
-### Chat Completion
+### ചാറ്റ് സമാപനം
 
-The training and validation data you use **must** be formatted as a JSON Lines (JSONL) document. For `Phi-3-mini-128k-instruct` the fine-tuning dataset must be formatted in the conversational format that is used by the Chat completions API.
+നീകള് ഉപയോഗിക്കുന്ന പരിശീലനവും പരിശോധന ഡാറ്റാ ഫോർമാറ്റ് JSON Lines (JSONL) ഡോക്യുമെന്റായി **ഇരിക്കണം**. `Phi-3-mini-128k-instruct` ഫൈന്റ്റ്യൂൺ ഡാറ്റാസെറ്റ് ചാറ്റ് സമാപന API ഉപയോഗിക്കുന്ന സംഭാഷണ ഫോർമാറ്റിൽ ആയിരിക്കണം.
 
-### Example file format
+### ഉദാഹരണ ഫയൽ ഫോർമാറ്റ്
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -56,177 +56,177 @@ The training and validation data you use **must** be formatted as a JSON Lines (
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-The supported file type is JSON Lines. Files are uploaded to the default datastore and made available in your project.
 
-## Fine-Tuning Phi-3 with Azure AI Foundry
+പതിപ്പ് പിന്തുണയ്ക്കുന്ന ഫയൽ തരമാണ് JSON Lines. ഫയലുകൾ ഡീഫോൾട്ട് ഡാറ്റാസ്റ്റോറിലേക്ക് അപ്‌ലോഡ് ചെയ്ത് പ്രോജക്റ്റിൽ ലഭ്യമാക്കുന്നു.
 
-Azure AI Foundry lets you tailor large language models to your personal datasets by using a process known as fine-tuning. Fine-tuning provides significant value by enabling customization and optimization for specific tasks and applications. It leads to improved performance, cost efficiency, reduced latency, and tailored outputs.
+## Microsoft Foundry ഉപയോഗിച്ച് Phi-3 ഫൈന്റ്റ്യൂൺ ചെയ്യൽ
+
+Microsoft Foundry വലിയ ഭാഷാ മോഡലുകൾക്ക് നിങ്ങളുടെ വ്യക്തിഗത ഡാറ്റാ സെറ്റുകളെ തിരിച്ചറിയാൻ ഫൈന്റ്റ്യൂണിങ് എന്ന പ്രക്രിയ ഉപയോഗിക്കുന്നത് അനുവദിക്കുന്നു. ഫൈന്റ്റ്യൂണിങ് പ്രത്യേക ജോലികൾക്കും ആപ്ലിക്കേഷനുകൾക്കും അനുയോജ്യമായി മോടലുകൾകസ്റ്റമൈസ് ചെയ്യാനും ഒപ്റ്റിമൈസ് ചെയ്യാനുമുള്ള വലിയ മൂല്യം നൽകുന്നു. ഇത് മെച്ചപ്പെട്ട പ്രകടനവും ചെലവ് കാര്യക്ഷമതയും കുറഞ്ഞ വൈകല്യം കൂടിയും തയാറാക്കപ്പെട്ട ഔട്ട്പുട്ടുകളും വാഗ്ദാനം ചെയ്യുന്നു.
 
 ![Finetune AI Foundry](../../../../translated_images/ml/AIFoundryfinetune.193aaddce48d553c.webp)
 
-### Create a New Project
+### പുതിയ പ്രോജക്റ്റ് സൃഷ്ടിക്കുക
 
-1. Sign in to [Azure AI Foundry](https://ai.azure.com).
+1. [Microsoft Foundry](https://ai.azure.com) ലോഗിൻ ചെയ്യുക.
 
-1. Select **+New project** to create new project in Azure AI Foundry.
+1. Microsoft Foundry-യിൽ പുതിയ ഒരു പ്രോജക്റ്റ് സൃഷ്ടിക്കാൻ **+New project** തിരഞ്ഞെടുക്കുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/select-new-project.cd31c0404088d7a3.webp)
 
-1. Perform the following tasks:
+1. താഴെപ്പറയുന്ന പ്രവർത്തനങ്ങൾ ചെയ്യുക:
 
-    - Project **Hub name**. It must be a unique value.
-    - Select the **Hub** to use (create a new one if needed).
+    - പ്രോജക്റ്റിന്റെ **Hub name** നൽകുക. ഇത് ഒരു ഏകകമായ മൂല്യമായിരിക്കണം.
+    - ഉപയോഗിക്കാൻ ഉദ്ദേശിക്കുന്ന **Hub** തിരഞ്ഞടുക്കുക (ആവശ്യമായെങ്കിൽ പുതിയതായി സൃഷ്ടിക്കുക).
 
     ![FineTuneSelect](../../../../translated_images/ml/create-project.ca3b71298b90e420.webp)
 
-1. Perform the following tasks to create a new hub:
+1. പുതിയ ഹബ് സൃഷ്ടിക്കാൻ താഴെപ്പറയുന്ന കാര്യങ്ങൾ ചെയ്യുക:
 
-    - Enter **Hub name**. It must be a unique value.
-    - Select your Azure **Subscription**.
-    - Select the **Resource group** to use (create a new one if needed).
-    - Select the **Location** you'd like to use.
-    - Select the **Connect Azure AI Services** to use (create a new one if needed).
-    - Select **Connect Azure AI Search** to **Skip connecting**.
+    - **Hub name** നൽകുക. ഇത് മികവുറ്റ മൂല്യമാകണം.
+    - നിങ്ങളുടെ Azure **Subscription** തിരഞ്ഞെടുക്കുക.
+    - ഉപയോഗിക്കാനുള്ള **Resource group** തിരഞ്ഞെടുക്കുക (ആവശ്യമായാൽ പുതിയതായി സൃഷ്ടിക്കുക).
+    - **Location** തിരഞ്ഞെടുക്കുക.
+    - **Connect Azure AI Services** തിരഞ്ഞെടുക്കുക (ആവശ്യമായാൽ പുതിയതായി സൃഷ്ടിക്കുക).
+    - **Connect Azure AI Search** തിരഞ്ഞെടുക്കുമ്പോൾ **Skip connecting** തിരഞ്ഞെടുക്കുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/create-hub.49e53d235e80779e.webp)
 
-1. Select **Next**.
-1. Select **Create a project**.
+1. **Next** തിരഞ്ഞെടുക്കുക.
+1. **Create a project** തിരഞ്ഞെടുക്കുക.
 
-### Data Preparation
+### ഡാറ്റാ തയ്യാറെടുപ്പ്
 
-Before fine-tuning, gather or create a dataset relevant to your task, such as chat instructions, question-answer pairs, or any other pertinent text data. Clean and preprocess this data by removing noise, handling missing values, and tokenizing the text.
+ഫൈന്റ്റ്യൂണിങ്ങിന് മുൻപ്, നിങ്ങളുടെ ജോലിയുമായി ബന്ധപ്പെട്ട് ചാറ്റ് നിർദ്ദേശങ്ങൾ, ചോദ്യ-ഉത്തരം കൂട്ടുകൾ, അല്ലെങ്കിൽ മറ്റ് എന്തെങ്കിലും അനുയോജ്യമായ ടെക്സ്റ്റ് ഡാറ്റാ ശേഖരിക്കുക അല്ലെങ്കിൽ സൃഷ്ടിക്കുക. ഈ ഡാറ്റ നിശ്ചലമാക്കി, ശബ്ദം നീക്കം ചെയ്തു, കാണാതെ പോയ മൂല്യങ്ങൾ കൈകാര്യം ചെയ്തു, ടെക്സ്റ്റ് ടോക്കനൈസ് ചെയ്യുക.
 
-### Fine-tune Phi-3 models in Azure AI Foundry
+### Microsoft Foundry-ൽ Phi-3 മോഡലുകൾ ഫൈന്റ്റ്യൂൺ ചെയ്യുക
 
 > [!NOTE]
-> Phi-3 മോഡലുകളുടെ ഫൈന്ട്യൂണിംഗ് നിലവിൽ East US 2-ൽ സ്ഥിതിചെയ്യുന്ന പ്രോജക്ടുകളിൽ മാത്രം പിന്തുടരപ്പെടുന്നു.
+> Phi-3 മോഡലുകളുടെ ഫൈന്റ്റ്യൂണിങ്ങ് East US 2-ൽ സ്ഥിതിചെയ്യുന്ന പ്രോജക്ടുകളിൽ നിലവിൽ മാത്രമേ പിന്തുണയുള്ളൂ.
 
-1. Select **Model catalog** from the left side tab.
+1. ഇടതുവശം ടാബിൽ നിന്നുള്ള **Model catalog** തിരഞ്ഞെടുക്കുക.
 
-1. Type *phi-3* in the **search bar** and select the phi-3 model you'd like to use.
+1. **search bar** ൽ *phi-3* ടൈപ്പ് ചെയ്ത്, ഉപയോഗിക്കാൻ താത്പര്യമുള്ള phi-3 മോഡൽ തിരഞ്ഞെടുക്കുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/select-model.60ef2d4a6a3cec57.webp)
 
-1. Select **Fine-tune**.
+1. **Fine-tune** തിരഞ്ഞെടുക്കുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/select-finetune.a976213b543dd9d8.webp)
 
-1. Enter the **Fine-tuned model name**.
+1. **Fine-tuned model name** നൽകുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/finetune1.c2b39463f0d34148.webp)
 
-1. Select **Next**.
+1. **Next** തിരഞ്ഞെടുക്കുക.
 
-1. Perform the following tasks:
+1. താഴെപ്പറയുന്ന കാര്യങ്ങൾ ചെയ്യുക:
 
-    - Select **task type** to **Chat completion**.
-    - Select the **Training data** you'd like to use. You can upload it through Azure AI Foundry's data or from your local environment.
+    - **task type** ൽ **Chat completion** തിരഞ്ഞെടുക്കുക.
+    - ഉപയോഗിക്കാൻ താത്പര്യമുള്ള **Training data** തിരഞ്ഞെടുക്കുക. ഇത് Microsoft Foundry ഡാറ്റയിലും നിങ്ങളുടെ ലോക്കൽ പരിതസ്ഥിതിയിലുമുള്ള ഡാറ്റായിടാം.
 
     ![FineTuneSelect](../../../../translated_images/ml/finetune2.43cb099b1a94442d.webp)
 
-1. Select **Next**.
+1. **Next** തിരഞ്ഞെടുക്കുക.
 
-1. Upload the **Validation data** you'd like to use. or you can select **Automatic split of training data**.
+1. നിങ്ങൾ ഉപയോഗിക്കാൻ താത്പര്യമുള്ള **Validation data** അപ്‌ലോഡ് ചെയ്യുക, അല്ലെങ്കിൽ **Automatic split of training data** തിരഞ്ഞെടുക്കാം.
 
     ![FineTuneSelect](../../../../translated_images/ml/finetune3.fd96121b67dcdd92.webp)
 
-1. Select **Next**.
+1. **Next** തിരഞ്ഞെടുക്കുക.
 
-1. Perform the following tasks:
+1. താഴെപ്പറയുന്ന കാര്യങ്ങൾ ചെയ്യുക:
 
-    - Select the **Batch size multiplier** you'd like to use.
-    - Select the **Learning rate** you'd like to use.
-    - Select the **Epochs** you'd like to use.
+    - ഉപയോഗിക്കാൻ താത്പര്യമുള്ള **Batch size multiplier** തിരഞ്ഞെടുക്കുക.
+    - ഉപയോഗിക്കാൻ താത്പര്യമുള്ള **Learning rate** തിരഞ്ഞെടുക്കുക.
+    - ഉപയോഗിക്കാൻ താത്പര്യമുള്ള **Epochs** തിരഞ്ഞെടുക്കുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/finetune4.e18b80ffccb5834a.webp)
 
-1. Select **Submit** to start the fine-tuning process.
+1. ഫൈന്റ്റ്യൂണിങ് പ്രക്രിയ ആരംഭിക്കാൻ **Submit** തിരഞ്ഞെടുക്കുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/select-submit.0a3802d581bac271.webp)
 
-
-1. Once your model is fine-tuned, the status will be displayed as **Completed**, as shown in the image below. Now you can deploy the model and can use it in your own application, in the playground, or in prompt flow. For more information, see [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. നിങ്ങളുടെ മോഡൽ ഫൈന്റ്റ്യൂൺ ചെയ്യപ്പെട്ട ഉടനെ, സ്ഥിതി **Completed** ആയി കാണിക്കും, താഴെയുള്ള ചിത്രത്തിൽ കാണുന്നത് പോലെ. ഇപ്പോൾ നിങ്ങൾ മോഡൽ വിന്യസിക്കാനും നിങ്ങളുടെ സ്വന്തം ആപ്ലിക്കേഷനിലും പ്ലേയ്ഗ്രൗണ്ടിലും പ്രോമ്പ്റ്റ് ഫ്ലോയിലും ഉപയോഗിക്കാനും കഴിയും. കൂടുതൽ വിവരങ്ങൾക്ക്, [Microsoft Foundry ഉപയോഗിച്ച് Phi-3 ചെറിയ മോഡലുകൾ വിന്യസിക്കുന്നതെങ്ങനെ](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) കാണുക.
 
     ![FineTuneSelect](../../../../translated_images/ml/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Fine-tuningPhi-3 സംബന്ധിച്ച കൂടുതൽ വിശദമായ വിവരങ്ങൾക്ക്, ദയവായി [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) സന്ദർശിക്കുക.
+> Phi-3 ഫൈന്റ്റ്യൂണിങ്ങിനെക്കുറിച്ച് കൂടുതൽ വിശദമായ വിവരങ്ങൾക്ക്, ദയവായി [Microsoft Foundry-ൽ Phi-3 മോഡലുകൾ ഫൈന്റ്റ്യൂൺ ചെയ്യൽ](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) സന്ദർശിക്കുക.
 
-## Cleaning up your fine-tuned models
+## ഫൈന്റ്റ്യൂൺ ചെയ്ത മോഡലുകൾ മോശമാക്കൽ
 
-You can delete a fine-tuned model from the fine-tuning model list in [Azure AI Foundry](https://ai.azure.com) or from the model details page. Select the fine-tuned model to delete from the Fine-tuning page, and then select the Delete button to delete the fine-tuned model.
-
-> [!NOTE]
-> You can't delete a custom model if it has an existing deployment. You must first delete your model deployment before you can delete your custom model.
-
-## Cost and quotas
-
-### Cost and quota considerations for Phi-3 models fine-tuned as a service
-
-Phi models fine-tuned as a service are offered by Microsoft and integrated with Azure AI Foundry for use. You can find the pricing when [deploying](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) or fine-tuning the models under the Pricing and terms tab on deployment wizard.
-
-## Content filtering
-
-Models deployed as a service with pay-as-you-go are protected by Azure AI Content Safety. When deployed to real-time endpoints, you can opt out of this capability. With Azure AI content safety enabled, both the prompt and completion pass through an ensemble of classification models aimed at detecting and preventing the output of harmful content. The content filtering system detects and takes action on specific categories of potentially harmful content in both input prompts and output completions. Learn more about [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
-
-**Fine-Tuning Configuration**
-
-Hyperparameters: Define hyperparameters such as learning rate, batch size, and number of training epochs.
-
-**Loss Function**
-
-Choose an appropriate loss function for your task (e.g., cross-entropy).
-
-**Optimizer**
-
-Select an optimizer (e.g., Adam) for gradient updates during training.
-
-**Fine-Tuning Process**
-
-- Load Pre-Trained Model: Load the Phi-3 Mini checkpoint.
-- Add Custom Layers: Add task-specific layers (e.g., classification head for chat instructions).
-
-**Train the Model**
-Fine-tune the model using your prepared dataset. Monitor training progress and adjust hyperparameters as needed.
-
-**Evaluation and Validation**
-
-Validation Set: Split your data into training and validation sets.
-
-**Evaluate Performance**
-
-Use metrics like accuracy, F1-score, or perplexity to assess model performance.
-
-## Save Fine-Tuned Model
-
-**Checkpoint**
-Save the fine-tuned model checkpoint for future use.
-
-## Deployment
-
-- Deploy as a Web Service: Deploy your fine-tuned model as a web service in Azure AI Foundry.
-- Test the Endpoint: Send test queries to the deployed endpoint to verify its functionality.
-
-## Iterate and Improve
-
-Iterate: If the performance isn't satisfactory, iterate by adjusting hyperparameters, adding more data, or fine-tuning for additional epochs.
-
-## Monitor and Refine
-
-Continuously monitor the model's behavior and refine as needed.
-
-## Customize and Extend
-
-Custom Tasks: Phi-3 Mini can be fine-tuned for various tasks beyond chat instructions. Explore other use cases!
-Experiment: Try different architectures, layer combinations, and techniques to enhance performance.
+Microsoft Foundry-യിലെ ഫൈന്റ്റ്യൂൺ മോഡൽ ലിസ്റ്റിൽ നിന്നും അല്ലെങ്കിൽ മോഡൽ വിശദവിവര പേജിൽ നിന്നും ഫൈന്റ്റ്യൂൺ ചെയ്ത മോഡൽ നീക്കംചെയ്യാൻ സാധിക്കും. ഫൈന്റ്റ്യൂൺ പേജിൽ നിന്നുള്ള ഫൈന്റ്റ്യൂൺ മോഡൽ തെരഞ്ഞെടുക്കുക, പിന്നീട് നീക്കംചെയ്യാൻ Delete ബട്ടൺ ക്ലിക് ചെയ്യുക.
 
 > [!NOTE]
-> Fine-tuning is an iterative process. Experiment, learn, and adapt your model to achieve the best results for your specific task!
+> നിലവിലുള്ള വിന്യാസം ഉള്ള കസ്റ്റം മോഡൽ നീക്കംചെയ്യാൻ ബാഹ്യമായി അനുവദനീയമല്ല. ആദ്യം നിങ്ങളുടെ മോഡൽ വിന്യാസം നീക്കംചെയ്യണം, പിന്നെ നിങ്ങളുടെ കസ്റ്റം മോഡൽ നീക്കം ചെയ്യാം.
+
+## ചെലവുകളും അളവുകളും
+
+### Phi-3 മോഡലുകൾ സേവനമായി ഫൈന്റ്റ്യൂൺ ചെയ്യുമ്പോൾ ചെലവ്, അളവ് പരിഗണനകൾ
+
+Phi മോഡലുകൾ ഫൈന്റ്റ്യൂൺ സേവനമാർഗം Microsoft നൽകുകയും Microsoft Foundry-ൽ പോരുന്നവരാണ്. [വിന്യസിക്കുമ്പോൾ](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) അല്ലെങ്കിൽ ഫൈന്റ്റ്യൂൺ ചെയ്യുമ്പോൾ വില നിർണയവും ചട്ടങ്ങളും Deployment വിസാർഡിലെ പ്രൈസിംഗ് ആൻഡ് ടെർമ്സ്നു കീഴിൽ കാണാം.
+
+## ഉള്ളടക്കം ഫിൽറ്ററിംഗ്
+
+Pay-as-you-go സേവനമായി വിന്യസിച്ച മോഡലുകൾ Azure AI Content Safety പ്രകാരം സംരക്ഷിച്ചിരിക്കുന്നു. റിയൽ-ടെൻപ് എൻഡ്പോയിന്റുകളിൽ വിന്യസിച്ചപ്പോൾ, ഈ കഴിവ് ഒഴിവാക്കാൻ തിരഞ്ഞെടുക്കാം. Azure AI content safety സജ്ജമാക്കിയാൽ, പ്രോമ്പ്റ്റും ഫിനിഷും മെച്ചപ്പെട്ട മോഡലുകൾ വഴി നീക്കിവയ്ക്കുന്നു, അവ ഹാനികരമായ ഉള്ളടക്കം ഉണ്ടാകാതിരിക്കാൻ തടയുന്നു. ഉള്ളടക്കം ഫിൽറ്ററിംഗ് സംവിധാനം മൊത്തത്തിലുള്ള ഇൻപുട്ട് പ്രോമ്പ്റ്റുകളിലും ഔട്ട്പുട്ട് ഫിനിഷിംഗിലും ഹാനികരമായ അവസ്ഥാപകരമായ വിഭഗങ്ങളെ കണ്ടെത്തി നടപടി സ്വീകരിക്കുന്നു. Azure AI Content Safety-യുടെ കൂടുതൽ വിവരങ്ങൾക്കായി [ഇവിടെ](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering) കാണുക.
+
+**ഫൈന്റ്റ്യൂൺ കോൺഫിഗറേഷൻ**
+
+ഹൈപ്പർപാരാമീറ്ററുകൾ: ലേണിങ് റേറ്റ്, ബാച്ച് സൈസ്, പരിശീലന എപ്പോക്സുകൾ എന്നിവ നിർവ്വചിക്കുക.
+
+**ലോസ് ഫംക്ഷൻ**
+
+താങ്കളുടെ ജോലിക്ക് അനുയോജ്യമായ ലോസ് ഫംഗ്ഷന് തിരഞ്ഞെടുക്കുക (ഉദാ: ക്രോസ്സ്-എൻട്രോപി).
+
+**ഓപ്റ്റിമൈസർ**
+
+പരിശീലനത്തിൽ ഗ്രാഡിയന്റ് അപ്‌ഡേറ്റുകൾക്ക് ഓപ്റ്റിമൈസർ തിരഞ്ഞെടുക്കുക (ഉദാ: ആഡാം).
+
+**ഫൈന്റ്റ്യൂൺ പ്രക്രിയ**
+
+- മുൻകൂർ പരിശീലന മോഡൽ ലോഡ് ചെയ്യുക: Phi-3 മിനി ചക്പോയിന്റ് ലോഡ് ചെയ്യുക.
+- കസ്റ്റം ലെയറുകൾ ചേർക്കുക: ടാസ്‌ക്-നിബന്ധിത ലെയറുകൾ ചേർക്കുക (ഉദാ: ചാറ്റ് നിർദ്ദേശങ്ങൾക്കായി ക്ലാസിഫിക്കേഷൻ ഹെഡ്).
+
+**മോഡൽ പരിശീലിപ്പിക്കുക**
+തയ്യാറാക്കിയ ഡാറ്റാസെറ്റ് ഉപയോഗിച്ച് മോഡൽ ഫൈന്റ്റ്യൂൺ ചെയ്യുക. പരിശീലന പുരോഗതി നിരീക്ഷിച്ച് ആവശ്യമുള്ള ഹൈപ്പർപാരാമീറ്ററുകൾ ക്രമീകരിക്കുക.
+
+**മൂല്യനിർണ്ണയം, പരിശോധന**
+
+വാലിഡേഷൻ സെറ്റ്: ഡാറ്റ പരിശീലന സെറ്റ്, വാലിഡേഷൻ സെറ്റായി വിഭജിക്കുക.
+
+**പ്രവർത്തനം വിലയിരുത്തുക**
+
+മോഡൽ പ്രവർത്തനം അച്ചുരുതി, F1 സ്‌കോർ, പെർപ്ലെക്‌സിറ്റി തുടങ്ങിയ മീറ്റ്റിക്ക്സ് ഉപയോഗിച്ച് പരിശോധിക്കുക.
+
+## ഫൈന്റ്റ്യൂൺ മോഡൽ സംരക്ഷിക്കുക
+
+**ചക്പോയിന്റ്**
+ഭാവിയിലെ ഉപയോഗത്തിനായി ഫൈന്റ്റ്യൂൺ ചെയ്ത മോഡൽ ചക്പോയിന്റ് സേവ് ചെയ്യുക.
+
+## വിന്യാസം
+
+- വെബ് സർവിസ് എന്നാക്കി വിന്യസിക്കുക: Microsoft Foundry-യിൽ നിങ്ങളുടെ ഫൈന്റ്റ്യൂൺ ചെയ്ത മോഡൽ വെബ് സർവിസായി വിന്യസിക്കുക.
+- എൻഡ്പോയിന്റ് പരീക്ഷിക്കുക: വിന്യസിച്ച എൻഡ്പോയിന്റിലേക്ക് ടെസ്റ്റ് ക്വെറികൾ അയച്ച് പ്രവർത്തനം സ്ഥിരീകരിക്കുക.
+
+## ആവർത്തിച്ച് മെച്ചപ്പെടുത്തൽ
+
+ആവർത്തിപ്പിക്കുക: പ്രവർത്തനം തൃപ്തികരമല്ലെങ്കിൽ, ഹൈപ്പർപാരാമീറ്ററുകൾ ക്രമീകരിച്ച്, കൂടുതൽ ഡാറ്റ ചേർത്ത് അല്ലെങ്കിൽ അധിക എപ്പോക്സുകൾക്ക് ഫൈന്റ്റ്യൂൺ ചെയ്യുക.
+
+## നിരീക്ഷിക്കുക, പുനരധികരിക്കുക
+
+മോഡലിന്റെ പെരുമാറ്റം തുടർച്ചയായി നിരീക്ഷിച്ച് ആവശ്യമുള്ളപോലെ പുനരധികരിക്കുക.
+
+## കസ്റ്റമൈസ് ചെയ്യുക, വിപുലീകരിക്കുക
+
+കസ്റ്റം ജോലികൾ: Phi-3 മിനി ചാറ്റ് നിർദ്ദേശങ്ങൾക്കു പുറമേ വിവിധ ജോലികൾക്ക് ഫൈന്റ്റ്യൂൺ ചെയ്യാം. മറ്റ് ഉപയോഗ സാഹചര്യങ്ങൾ അന്വേഷിക്കുക!
+പരീക്ഷണം: പ്രകടനം ഉയർത്താൻ വ്യത്യസ്ത നിർമ്മിതികൾ, ലെയർ കോമ്പിനേഷനുകൾ, സാങ്കേതിക വിദ്യകൾ പരീക്ഷിക്കുക.
+
+> [!NOTE]
+> ഫൈന്റ്റ്യൂണിങ് ഒരു ആവർത്തനപ്രക്രിയയാണ്. പരീക്ഷണം ചെയ്യുക, പഠിക്കുക, അനുയോജ്യമായി നിങ്ങളുടെ മോഡൽ മാറ്റിസ്ഥാപിച്ച് നിങ്ങളുടെ പ്രത്യേക ജോലിക്ക് മികച്ച ഫലം നേടുക!
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-ഡിസ്ക്ലെയിമർ:
-ഈ ദസ്താവേജ് AI പരിഭാഷാ സേവനമായ [Co-op Translator](https://github.com/Azure/co-op-translator) ഉപയോഗിച്ച് വിവർത്തനം ചെയ്തതാണ്. നാം കൃത്യത ലക്ഷ്യമിടുന്നുവെങ്കിലും യാന്ത്രിക പരിഭാഷകളിൽ തെറ്റുകളും അപൂർണതകളും ഉണ്ടാകാമെന്ന് ദയവായി ശ്രദ്ധിക്കുക. മൂല രേഖ അതിന്റെ മാതൃഭാഷയിലുള്ളതാണ് അധികാരപ്പെട്ട ഉറവിടം എന്ന് കരുതുക. നിർണായകമായ വിവരങ്ങൾക്ക് പ്രൊഫഷണൽ മനുഷ്യപരിഭാഷ ശുപാർശ ചെയ്യപ്പെടുന്നു. ഈ പരിഭാഷയുടെ ഉപയോഗത്തിൽ നിന്നുണ്ടാകുന്ന任何 (ഈ വാക്ക് എങ്കിൽ 'ഏതു') തെറ്റിദ്ധാരണകൾക്കോ വ്യാഖ്യാനപിഴവുകൾക്കോ ഞങ്ങൾ ഉത്തരവാദികളല്ല.
+**പരാമർശം**:  
+ഈ ഡോക്യുമെന്റ് AI വിവർത്തന സേവനം [Co-op Translator](https://github.com/Azure/co-op-translator) ഉപയോഗിച്ചു വിവർത്തനം ചെയ്തതാണ്. നാം ധാരണയുടെ കാര്യത്തിൽ ശ്രദ്ധക്ഷമരായി പ്രവര്‍ത്തിക്കുന്നെങ്കിലും, സ്വയംപ്രവർത്തിക്കുന്ന വിവർത്തനങ്ങളില്‍ പിശകുകളോ തെറ്റുകളോ ഉണ്ടാകാമെന്ന് ദയവായി മനസ്സിലാക്കുക. സ്വതന്ത്ര ഭാഷയില്‍ തന്നയിരിക്കുന്ന പ്രാഥമിക ഡോക്യുമെന്റിനെ മാത്രമേ அதிகாரപരമായ ഉറവിടമായി കണക്കാക്കാവൂ. നിർണായക വിവരങ്ങൾക്ക് പ്രൊഫഷണൽ ಮನುಷ್ಯ വിവര്‍ത്തനം ശിപാർശ ചെയ്യുന്നു. ഈ വിവർത്തനത്തിന്റെ ഉപയോഗത്തിൽ ഉണ്ടായേക്കാവുന്ന തെറ്റിദ്ധാരണകൾക്കും തെറ്റായ വ്യാഖ്യാനങ്ങൾക്കും ഞങ്ങൾ ഉത്തരവാദികളല്ല.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
