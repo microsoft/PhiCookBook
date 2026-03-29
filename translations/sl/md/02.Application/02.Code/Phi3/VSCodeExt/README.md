@@ -1,98 +1,107 @@
-# **Zgradi svoj Visual Studio Code GitHub Copilot Chat z družino Microsoft Phi-3**
+# **Zgradite svoj lasten Visual Studio Code GitHub Copilot Chat z družino Microsoft Phi-3**
 
-Si že uporabljal agenta delovnega prostora v GitHub Copilot Chat? Želiš zgraditi svojega agenta za kodo za svojo ekipo? Ta praktični laboratorij združuje odprtokodni model za izdelavo poslovnega agenta za kodo na ravni podjetja.
+Ste že uporabili agent delovnega prostora v GitHub Copilot Chat? Želite zgraditi svojega agenta kode za svojo ekipo? Ta praktična delavnica poskuša združiti odprtokodni model za izgradnjo poslovnega agenta za generiranje kode na podjetniški ravni.
 
 ## **Osnove**
 
 ### **Zakaj izbrati Microsoft Phi-3**
 
-Phi-3 je družina modelov, ki vključuje phi-3-mini, phi-3-small in phi-3-medium, ki temeljijo na različnih parametrih učenja za generiranje besedila, dokončanje dialoga in generiranje kode. Obstaja tudi phi-3-vision, ki temelji na Vision. Primeren je za podjetja ali različne ekipe za ustvarjanje generativnih AI rešitev brez povezave.
+Phi-3 je družina modelov, ki vključuje phi-3-mini, phi-3-small in phi-3-medium, osnovane na različnih parametrih usposabljanja za generiranje besedila, dokončanje dialoga in generiranje kode. Obstaja tudi phi-3-vision, ki temelji na Vision. Primeren je za podjetja ali različne ekipe za ustvarjanje generativnih AI rešitev brez povezave.
 
-Priporočamo branje te povezave [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
+Priporočamo, da preberete ta povezava [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
 
 ### **Microsoft GitHub Copilot Chat**
 
-Razširitev GitHub Copilot Chat ti omogoča klepetalni vmesnik, s katerim lahko komuniciraš z GitHub Copilot in prejemaš odgovore na vprašanja, povezana s programiranjem, neposredno v VS Code, brez potrebe po iskanju dokumentacije ali spletnih forumov.
+Razširitev GitHub Copilot Chat vam zagotavlja klepetalni vmesnik, ki vam omogoča interakcijo z GitHub Copilotom in prejem odgovore na vprašanja glede programiranja neposredno v VS Code, brez potrebe po brskanju po dokumentaciji ali iskanju po spletnih forumih.
 
-Copilot Chat lahko uporablja označevanje sintakse, zamike in druge oblikovne elemente, da izboljša jasnost generiranih odgovorov. Glede na vrsto vprašanja uporabnika lahko rezultat vsebuje povezave do konteksta, ki ga je Copilot uporabil za generiranje odgovora, kot so datoteke izvorne kode ali dokumentacija, ali gumbe za dostop do funkcionalnosti VS Code.
+Copilot Chat lahko uporabi označevanje sintakse, zamike in druge oblikovne značilnosti, da izboljša jasnost generiranega odgovora. Glede na vrsto vprašanja uporabnika je rezultat lahko povezan z vsebinami, ki jih je Copilot uporabil pri generiranju odgovora, kot so datoteke izvorne kode ali dokumentacija, ali pa vsebuje gumbe za dostop do funkcionalnosti VS Code.
 
-- Copilot Chat se integrira v tvoj razvojni potek in ti nudi pomoč, kjer jo potrebuješ:
+- Copilot Chat se integrira v vaš razvojni tok in vam nudi pomoč, kjer jo potrebujete:
 
-- Začni klepetalni pogovor neposredno iz urejevalnika ali terminala za pomoč med kodiranjem
+- Začnite pogovor za klepet neposredno iz urejevalnika ali terminala za pomoč med kodiranjem
 
-- Uporabi pogled Chat, da imaš AI asistenta ob strani, ki ti lahko pomaga kadarkoli
+- Uporabite pogled Chat, da imate AI asistenta ob strani, ki vam pomaga kadarkoli
 
-- Zaženi Quick Chat za hitro vprašanje in se hitro vrni k delu
+- Zaženite Quick Chat, da hitro zastavite vprašanje in se vrnete k svojemu delu
 
-GitHub Copilot Chat lahko uporabljaš v različnih situacijah, kot so:
+GitHub Copilot Chat lahko uporabljate v različnih situacijah, kot so:
 
 - Odgovarjanje na vprašanja o programiranju, kako najbolje rešiti problem
 
-- Razlaga kode drugih in predlaganje izboljšav
+- Razlaga kode druge osebe in predlogi za izboljšave
 
-- Predlaganje popravkov kode
+- Predlogi popravkov kode
 
-- Generiranje enotnih testnih primerov
+- Generiranje primerov enotnih testov
 
 - Generiranje dokumentacije kode
 
-Priporočamo branje te povezave [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
+Priporočamo, da preberete ta povezava [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
-### **Microsoft GitHub Copilot Chat @workspace**
 
-Uporaba **@workspace** v Copilot Chat ti omogoča, da postaviš vprašanja o celotni kodi v tvojem delovnem prostoru. Na podlagi vprašanja Copilot inteligentno poišče ustrezne datoteke in simbole, ki jih nato v odgovoru prikaže kot povezave in primere kode.
+###  **Microsoft GitHub Copilot Chat @workspace**
 
-Za odgovor na tvoje vprašanje **@workspace** preišče iste vire, kot bi jih razvijalec uporabil pri navigaciji po kodi v VS Code:
+Reference na **@workspace** v Copilot Chat vam omogočajo, da postavite vprašanja o celotni vaši kodi. Glede na vprašanje Copilot inteligentno poišče ustrezne datoteke in simbole, ki jih nato v odgovoru navede kot povezave in primere kode.
 
-- Vse datoteke v delovnem prostoru, razen tistih, ki so izključene z datoteko .gitignore
+Za odgovor na vaše vprašanje **@workspace** išče po istih virih, kot jih uporabnik uporablja pri navigaciji po kodi v VS Code:
 
-- Strukturo imenikov z gnezdenimi mapami in imeni datotek
+- Vse datoteke v delovnem prostoru, razen tistih, ki jih prezre datoteka .gitignore
 
-- Indeks iskanja kode GitHub, če je delovni prostor GitHub repozitorij in je indeksiran z iskanjem kode
+- Struktura imenikov z vključenimi podmapami in imeni datotek
 
-- Simbole in definicije v delovnem prostoru
+- Indeks iskanja kode na GitHubu, če je delovni prostor GitHub repozitorij in indeksiran z iskanjem kode
 
-- Trenutno izbran ali viden tekst v aktivnem urejevalniku
+- Simboli in definicije v delovnem prostoru
 
-Opomba: .gitignore se prezre, če imaš odprto datoteko ali izbran tekst znotraj izključene datoteke.
+- Trenutno izbran tekst ali vidni tekst v aktivnem urejevalniku
 
-Priporočamo branje te povezave [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
+Opomba: Datoteka .gitignore je prezrta, če imate odprto datoteko ali izbran tekst znotraj prezrte datoteke.
 
-## **Več o tem laboratoriju**
+Priporočamo, da preberete ta povezava [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
 
-GitHub Copilot je močno izboljšal učinkovitost programiranja v podjetjih, vsako podjetje pa si želi prilagoditi ustrezne funkcije GitHub Copilot. Mnoga podjetja so na podlagi svojih poslovnih scenarijev in odprtokodnih modelov prilagodila razširitve, podobne GitHub Copilot. Za podjetja so prilagojene razširitve lažje za nadzor, vendar to vpliva tudi na uporabniško izkušnjo. GitHub Copilot ima namreč močnejše funkcije za splošne scenarije in strokovnost. Če je mogoče ohraniti dosledno izkušnjo, je bolje prilagoditi lastno razširitev podjetja. GitHub Copilot Chat ponuja ustrezne API-je za podjetja, da razširijo izkušnjo klepeta. Ohranjanje dosledne izkušnje in hkrati prilagojene funkcije je boljša uporabniška izkušnja.
 
-Ta laboratorij uporablja model Phi-3 v kombinaciji z lokalnim NPU in Azure hibridom za izdelavo prilagojenega agenta v GitHub Copilot Chat ***@PHI3***, ki pomaga razvijalcem v podjetju pri dokončanju generiranja kode ***(@PHI3 /gen)*** in generiranju kode na podlagi slik ***(@PHI3 /img)***.
+## **Več o tej delavnici**
+
+GitHub Copilot je močno izboljšal programersko učinkovitost podjetij, in vsako podjetje upa, da lahko prilagodi relevantne funkcije GitHub Copilota. Mnoga podjetja so prilagodila Razširitve, podobne GitHub Copilotu, na podlagi svojih poslovnih scenarijev in odprtokodnih modelov. Za podjetja so prilagojene Razširitve lažje za nadzor, vendar to vpliva tudi na uporabniško izkušnjo. Navsezadnje ima GitHub Copilot močnejše funkcije za obravnavo splošnih scenarijev in strokovnosti. Če je mogoče ohraniti dosledno izkušnjo, je bolje prilagoditi lastno Razširitev podjetja. GitHub Copilot Chat ponuja relevantna API-jev za podjetja za razširitev izkušnje klepeta. Ohranjanje dosledne izkušnje in imeti prilagojene funkcije je boljša uporabniška izkušnja.
+
+Ta delavnica večinoma uporablja model Phi-3, kombiniran z lokalnim NPU in hibridom Azure, za izdelavo prilagojenega agenta v GitHub Copilot Chat ***@PHI3***, ki pomaga podjetniškim razvijalcem dokončati generiranje kode ***(@PHI3 /gen)*** in generiranje kode na podlagi slik ***(@PHI3 /img)***.
 
 ![PHI3](../../../../../../../translated_images/sl/cover.1017ebc9a7c46d09.webp)
 
 ### ***Opomba:***
 
-Ta laboratorij je trenutno izveden na AIPC Intel CPU in Apple Silicon. Nadaljevali bomo z nadgradnjo različice Qualcomm NPU.
+Ta delavnica je trenutno izvedena na AIPC Intel CPU in Apple Silicon. Nadaljevali bomo z nadgradnjo verzije Qualcomm NPU.
 
-## **Laboratorij**
+
+## **Delavnica**
+
 
 | Ime | Opis | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
-| Lab0 - Namestitve(✅) | Konfiguracija in namestitev povezanih okolij in namestitvenih orodij | [Pojdi](./HOL/AIPC/01.Installations.md) |[Pojdi](./HOL/Apple/01.Installations.md) |
-| Lab1 - Zagon Prompt flow s Phi-3-mini (✅) | V kombinaciji z AIPC / Apple Silicon, uporaba lokalnega NPU za ustvarjanje generiranja kode preko Phi-3-mini | [Pojdi](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Pojdi](./HOL/Apple/02.PromptflowWithMLX.md) |
-| Lab2 - Namestitev Phi-3-vision na Azure Machine Learning Service(✅) | Generiranje kode z namestitvijo Model Catalog Azure Machine Learning Service - Phi-3-vision image | [Pojdi](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Pojdi](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
-| Lab3 - Ustvari @phi-3 agenta v GitHub Copilot Chat(✅)  | Ustvari prilagojenega Phi-3 agenta v GitHub Copilot Chat za dokončanje generiranja kode, generiranje grafične kode, RAG itd. | [Pojdi](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Pojdi](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
-| Vzorec kode (✅)  | Prenesi vzorec kode | [Pojdi](../../../../../../../code/07.Lab/01/AIPC) | [Pojdi](../../../../../../../code/07.Lab/01/Apple) |
+| Lab0 - Namestitve(✅) | Konfigurirajte in namestite ustrezna okolja ter orodja za namestitev | [Pojdi](./HOL/AIPC/01.Installations.md) |[Pojdi](./HOL/Apple/01.Installations.md) |
+| Lab1 - Zaženi Prompt flow s Phi-3-mini (✅) | V kombinaciji z AIPC / Apple Silicon, uporaba lokalnega NPU za ustvarjanje generiranja kode prek Phi-3-mini | [Pojdi](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Pojdi](./HOL/Apple/02.PromptflowWithMLX.md) |
+| Lab2 - Namesti Phi-3-vision na Azure Machine Learning Service(✅) | Generirajte kodo s nameščanjem kataloga modelov Azure Machine Learning Service - Phi-3-vision slike | [Pojdi](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Pojdi](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
+| Lab3 - Ustvari @phi-3 agenta v GitHub Copilot Chat(✅)  | Ustvari prilagojenega phi-3 agenta v GitHub Copilot Chat za dokončanje generiranja kode, generiranje kode grafov, RAG itd. | [Pojdi](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Pojdi](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
+| Vzorec kode (✅)  | Prenesite vzorčno kodo | [Pojdi](../../../../../../../code/07.Lab/01/AIPC) | [Pojdi](../../../../../../../code/07.Lab/01/Apple) |
+
 
 ## **Viri**
 
 1. Phi-3 Cookbook [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook)
 
-2. Več o GitHub Copilot [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
+2. Več o GitHub Copilotu [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
 3. Več o GitHub Copilot Chat [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
 4. Več o GitHub Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. Več o Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. Več o Microsoft Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. Več o Model Catalog Azure AI Foundry [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. Več o Microsoft Foundryjevem Katalogu Modelov [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne napačne interpretacije ali nesporazume, ki izhajajo iz uporabe tega prevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

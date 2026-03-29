@@ -1,52 +1,52 @@
-# Prilagajanje Phi-3 z Azure AI Foundry
+# Nastavitev Phi-3 z Microsoft Foundry
 
-Raziščimo, kako prilagoditi Microsoftov jezikovni model Phi-3 Mini z uporabo Azure AI Foundry. Prilagajanje omogoča, da Phi-3 Mini prilagodite specifičnim nalogam, s čimer postane še močnejši in bolj zavedajoč se konteksta.
+ Raziščimo, kako lahko nastavimo Microsoftov jezikovni model Phi-3 Mini z uporabo Microsoft Foundry. Nastavitev omogoča prilagoditev Phi-3 Mini za določena opravila, zaradi česar je še močnejši in bolj prilagojen kontekstu.
 
 ## Premisleki
 
-- **Zmožnosti:** Kateri modeli so prilagodljivi? Kaj lahko osnovni model naredi po prilagoditvi?
-- **Stroški:** Kakšen je cenovni model za prilagajanje?
-- **Prilagodljivost:** Koliko lahko spremenim osnovni model – in na kakšne načine?
-- **Udobje:** Kako poteka prilagajanje – ali moram pisati lastno kodo? Ali potrebujem lastne računalniške vire?
-- **Varnost:** Prilagojeni modeli lahko predstavljajo varnostna tveganja – ali so na voljo zaščitni mehanizmi za preprečevanje neželenih posledic?
+- **Zmožnosti:** Kateri modeli so nastavljivi? Kaj lahko osnovni model naredi po nastavitvi?
+- **Stroški:** Kakšen je cenovni model za nastavitev
+- **Prilagodljivost:** Koliko lahko spremenim osnovni model – in na katere načine?
+- **Udobje:** Kako poteka nastavitev – ali moram pisati lasten kodo? Ali moram prinesti lastne računske vire?
+- **Varnost:** Nastavljeni modeli so znani po varnostnih tveganjih – ali obstajajo varovalke za zaščito pred nenamernimi škodami?
 
 ![AIFoundry Models](../../../../translated_images/sl/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
-## Priprava na prilagajanje
+## Priprava za nastavitev
 
 ### Predpogoji
 
 > [!NOTE]
-> Za modele družine Phi-3 je ponudba prilagajanja po modelu plačaj-po-porabi na voljo samo za hube, ustvarjene v regijah **East US 2**.
+> Za modele družine Phi-3 je ponudba nastavitve po modelu plačaj-po-porabi na voljo le z vozlišči ustvarjenimi v regijah **East US 2**.
 
-- Azure naročnina. Če je še nimate, ustvarite [plačljiv Azure račun](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) za začetek.
+- Naročnina Azure. Če še nimate naročnine Azure, ustvarite [plačljiv Azure račun](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), da začnete.
 
 - [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Za dostop do operacij v Azure AI Foundry se uporabljajo vloge Azure RBAC. Za izvedbo korakov v tem članku mora biti vaš uporabniški račun dodeljen vlogi __Azure AI Developer__ v skupini virov.
+- Azure nadzor dostopa na podlagi vlog (Azure RBAC) se uporablja za dodeljevanje dostopa do operacij v Microsoft Foundry. Za izvedbo korakov v tem članku mora vaši uporabniški račun imeti dodeljeno vlogo __Azure AI Developer__ v skupini virov.
 
 ### Registracija ponudnika naročnine
 
 Preverite, ali je naročnina registrirana pri ponudniku virov `Microsoft.Network`.
 
 1. Prijavite se v [Azure portal](https://portal.azure.com).
-1. Izberite **Subscriptions** v levem meniju.
-1. Izberite naročnino, ki jo želite uporabiti.
-1. Izberite **AI project settings** > **Resource providers** v levem meniju.
-1. Preverite, ali je **Microsoft.Network** na seznamu ponudnikov virov. Če ni, ga dodajte.
+1. Izberite **Naročnine** v levem meniju.
+1. Izberite naročnino, ki jo želite uporabljati.
+1. Izberite **Nastavitve AI projekta** > **Ponudniki virov** v levem meniju.
+1. Potrdite, da je **Microsoft.Network** na seznamu ponudnikov virov. Če ga ni, ga dodajte.
 
 ### Priprava podatkov
 
-Pripravite podatke za učenje in validacijo za prilagoditev modela. Vaši podatki za učenje in validacijo vsebujejo primere vhodov in izhodov, ki prikazujejo, kako želite, da model deluje.
+Pripravite svoje učne in validacijske podatke za nastavitev modela. Vaši podatki za učenje in validacijo vsebujejo primere vhodov in izhodov, kako želite, da model deluje.
 
-Poskrbite, da vsi primeri učenja sledijo pričakovanemu formatu za inferenco. Za učinkovito prilagajanje modelov zagotovite uravnotežen in raznolik nabor podatkov.
+Poskrbite, da vsi vaši učni primeri sledijo pričakovani obliki za inferenco. Za učinkovito nastavitev modelov zagotovite uravnotežen in raznolik niz podatkov.
 
-To vključuje ohranjanje ravnovesja podatkov, vključevanje različnih scenarijev in občasno izboljševanje učnih podatkov, da se uskladijo z realnimi pričakovanji, kar vodi do natančnejših in bolj uravnoteženih odzivov modela.
+To vključuje ohranjanje ravnotežja podatkov, vključevanje raznih scenarijev in občasno izboljševanje učnih podatkov, da se uskladijo s pričakovanji resničnega sveta, kar vodi do natančnejših in bolj uravnoteženih odzivov modela.
 
-Različni tipi modelov zahtevajo različne formate učnih podatkov.
+Različni tipi modelov zahtevajo drugačno obliko učnih podatkov.
 
 ### Chat Completion
 
-Podatki za učenje in validacijo **morajo** biti oblikovani kot JSON Lines (JSONL) dokument. Za `Phi-3-mini-128k-instruct` mora biti nabor podatkov za prilagajanje oblikovan v pogovornem formatu, ki ga uporablja API za Chat completions.
+Učni in validacijski podatki, ki jih uporabljate, **morajo** biti formatirani kot JSON Lines (JSONL) dokument. Za `Phi-3-mini-128k-instruct` mora biti niz podatkov za nastavitev formatiran v pogovornem formatu, ki ga uporablja API za zaključevalne pogovore.
 
 ### Primer formata datoteke
 
@@ -56,55 +56,55 @@ Podatki za učenje in validacijo **morajo** biti oblikovani kot JSON Lines (JSON
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Podprta vrsta datoteke je JSON Lines. Datoteke se naložijo v privzeti podatkovni prostor in so na voljo v vašem projektu.
+Podprta vrsta datoteke je JSON Lines. Datoteke se naložijo v privzeti shrambi podatkov in so na voljo v vašem projektu.
 
-## Prilagajanje Phi-3 z Azure AI Foundry
+## Nastavitev Phi-3 z Microsoft Foundry
 
-Azure AI Foundry vam omogoča, da prilagodite velike jezikovne modele svojim osebnim podatkom z uporabo procesa, imenovanega prilagajanje (fine-tuning). Prilagajanje prinaša veliko vrednost z omogočanjem prilagoditve in optimizacije za specifične naloge in aplikacije. To vodi do izboljšane zmogljivosti, stroškovne učinkovitosti, zmanjšane zakasnitve in prilagojenih izhodov.
+Microsoft Foundry omogoča prilagajanje velikih jezikovnih modelov na osebne podatkovne množice z uporabo procesa, znanega kot nastavitev. Nastavitev prinaša veliko vrednost z omogočanjem prilagoditve in optimizacije za specifična opravila in aplikacije. To vodi do izboljšane zmogljivosti, stroškovne učinkovitosti, znižane zakasnitve in prilagojenih rezultatov.
 
 ![Finetune AI Foundry](../../../../translated_images/sl/AIFoundryfinetune.193aaddce48d553c.webp)
 
 ### Ustvarjanje novega projekta
 
-1. Prijavite se v [Azure AI Foundry](https://ai.azure.com).
+1. Prijavite se v [Microsoft Foundry](https://ai.azure.com).
 
-1. Izberite **+New project** za ustvarjanje novega projekta v Azure AI Foundry.
+1. Izberite **+New project**, da ustvarite nov projekt v Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/sl/select-new-project.cd31c0404088d7a3.webp)
 
-1. Izvedite naslednje korake:
+1. Izvedite naslednje naloge:
 
-    - Ime projekta **Hub name**. Mora biti unikatno.
-    - Izberite **Hub**, ki ga želite uporabiti (po potrebi ustvarite novega).
+    - Ime projekta (Hub name). Mora biti edinstvena vrednost.
+    - Izberite **Hub**, ki ga boste uporabljali (po potrebi ustvarite novega).
 
     ![FineTuneSelect](../../../../translated_images/sl/create-project.ca3b71298b90e420.webp)
 
-1. Izvedite naslednje korake za ustvarjanje novega huba:
+1. Izvedite naslednje korake za ustvarjanje novega vozlišča (huba):
 
-    - Vnesite **Hub name**. Mora biti unikatno.
-    - Izberite svojo Azure **Subscription**.
-    - Izberite **Resource group** za uporabo (po potrebi ustvarite novo).
-    - Izberite **Location**, ki ga želite uporabiti.
-    - Izberite **Connect Azure AI Services** za uporabo (po potrebi ustvarite novega).
-    - Izberite **Connect Azure AI Search** in izberite **Skip connecting**.
+    - Vnesite **Ime huba**. Mora biti edinstvena vrednost.
+    - Izberite svojo Azure **naročnino**.
+    - Izberite **Skupino virov**, ki jo boste uporabljali (po potrebi ustvarite novo).
+    - Izberite **Lokacijo**, ki jo želite uporabljati.
+    - Izberite **Connect Azure AI Services**, ki jih boste uporabljali (po potrebi ustvarite nove).
+    - Izberite **Connect Azure AI Search** na **Preskoči povezovanje**.
 
     ![FineTuneSelect](../../../../translated_images/sl/create-hub.49e53d235e80779e.webp)
 
-1. Izberite **Next**.
-1. Izberite **Create a project**.
+1. Izberite **Naprej (Next)**.
+1. Izberite **Ustvari projekt (Create a project)**.
 
 ### Priprava podatkov
 
-Pred prilagajanjem zberite ali ustvarite nabor podatkov, ki je relevanten za vašo nalogo, kot so navodila za klepet, pari vprašanje-odgovor ali kateri koli drugi ustrezni besedilni podatki. Očistite in predobdelajte te podatke z odstranjevanjem šuma, obravnavo manjkajočih vrednosti in tokenizacijo besedila.
+Pred nastavlatvijo zberite ali ustvarite niz podatkov, ki so povezani z nalogo, kot so navodila za klepet, pari vprašanje-odgovor ali katerikoli drug ustrezni besedilni podatki. Očistite in predobdelajte te podatke z odstranjevanjem šuma, obravnavanjem manjkajočih vrednosti in tokenizacijo besedila.
 
-### Prilagajanje Phi-3 modelov v Azure AI Foundry
+### Nastavitev Phi-3 modelov v Microsoft Foundry
 
 > [!NOTE]
-> Prilagajanje Phi-3 modelov je trenutno podprto samo v projektih, ki se nahajajo v regiji East US 2.
+> Nastavitev modelov Phi-3 je trenutno podprta le v projektih, ki so locirani v East US 2.
 
-1. Izberite **Model catalog** v levem zavihku.
+1. Izberite **Model catalog** na levi strani zavihka.
 
-1. V iskalno polje vnesite *phi-3* in izberite želeni phi-3 model.
+1. V polju za iskanje vtipkajte *phi-3* in izberite phi-3 model, ki ga želite uporabiti.
 
     ![FineTuneSelect](../../../../translated_images/sl/select-model.60ef2d4a6a3cec57.webp)
 
@@ -112,116 +112,121 @@ Pred prilagajanjem zberite ali ustvarite nabor podatkov, ki je relevanten za va�
 
     ![FineTuneSelect](../../../../translated_images/sl/select-finetune.a976213b543dd9d8.webp)
 
-1. Vnesite ime za **Fine-tuned model name**.
+1. Vnesite **Ime nastavljenega modela**.
 
     ![FineTuneSelect](../../../../translated_images/sl/finetune1.c2b39463f0d34148.webp)
 
-1. Izberite **Next**.
+1. Izberite **Naprej (Next)**.
 
-1. Izvedite naslednje korake:
+1. Izvedite naslednje naloge:
 
-    - Izberite **task type** kot **Chat completion**.
-    - Izberite **Training data**, ki ga želite uporabiti. Lahko ga naložite preko Azure AI Foundry ali iz lokalnega okolja.
+    - Izberite **vrsto naloge (task type)** na **Chat completion**.
+    - Izberite **učno podatkovno množico**, ki jo želite uporabiti. Lahko jo naložite preko Microsoft Foundry ali iz lokalnega okolja.
 
     ![FineTuneSelect](../../../../translated_images/sl/finetune2.43cb099b1a94442d.webp)
 
-1. Izberite **Next**.
+1. Izberite **Naprej (Next)**.
 
-1. Naložite **Validation data**, ki ga želite uporabiti, ali pa izberite **Automatic split of training data**.
+1. Naložite **validacijske podatke**, ki jih želite uporabiti, ali pa izberite **Samodejna razdelitev učnih podatkov (Automatic split of training data)**.
 
     ![FineTuneSelect](../../../../translated_images/sl/finetune3.fd96121b67dcdd92.webp)
 
-1. Izberite **Next**.
+1. Izberite **Naprej (Next)**.
 
 1. Izvedite naslednje korake:
 
-    - Izberite **Batch size multiplier**, ki ga želite uporabiti.
-    - Izberite **Learning rate**, ki ga želite uporabiti.
-    - Izberite **Epochs**, ki jih želite uporabiti.
+    - Izberite **množitelj velikosti paketa (Batch size multiplier)**, ki ga želite uporabiti.
+    - Izberite **učno stopnjo (Learning rate)**, ki jo želite uporabiti.
+    - Izberite **število epoher (Epochs)**, ki jih želite uporabiti.
 
     ![FineTuneSelect](../../../../translated_images/sl/finetune4.e18b80ffccb5834a.webp)
 
-1. Izberite **Submit** za začetek procesa prilagajanja.
+1. Izberite **Pošlji (Submit)**, da začnete postopek nastavitev.
 
     ![FineTuneSelect](../../../../translated_images/sl/select-submit.0a3802d581bac271.webp)
 
-1. Ko je vaš model prilagojen, bo status prikazan kot **Completed**, kot je prikazano na spodnji sliki. Model lahko zdaj namestite in uporabljate v svoji aplikaciji, v playgroundu ali v prompt flow. Za več informacij glejte [Kako namestiti družino majhnih jezikovnih modelov Phi-3 z Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+1. Ko je vaš model nastavljen, bo status prikazan kot **Completed (Zaključeno)**, kot je prikazano na spodnji sliki. Model lahko sedaj uvedete in ga uporabite v svoji aplikaciji, v igralnem polju ali v prompt flow. Za več informacij glejte [Kako uvesti Phi-3 družino majhnih jezikovnih modelov z Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/sl/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Za podrobnejše informacije o prilagajanju Phi-3 obiščite [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Za podrobnejše informacije o nastavitvi Phi-3 obiščite [Nastavitev Phi-3 modelov v Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
-## Čiščenje prilagojenih modelov
+## Čiščenje vaših nastavljenih modelov
 
-Prilagojeni model lahko izbrišete s seznama prilagojenih modelov v [Azure AI Foundry](https://ai.azure.com) ali na strani s podrobnostmi modela. Izberite model, ki ga želite izbrisati na strani Fine-tuning, nato pa kliknite gumb Delete za brisanje.
+Nastavljeni model lahko izbrišete s seznama nastavljenih modelov v [Microsoft Foundry](https://ai.azure.com) ali s strani z informacijami o modelu. Izberite nastavljen model za brisanje na strani z nastavitvami, nato izberite gumb Izbriši za odstranitev modela.
 
 > [!NOTE]
-> Prilagojenega modela ne morete izbrisati, če ima obstoječo namestitev. Najprej morate izbrisati namestitev modela, preden lahko izbrišete prilagojeni model.
+> Po meri ustvarjenega modela ne morete izbrisati, če ima obstoječo uvedbo. Najprej morate izbrisati uvedbo modela, preden lahko izbrišete po meri ustvarjeni model.
 
 ## Stroški in kvote
 
-### Premisleki o stroških in kvotah za Phi-3 modele, prilagojene kot storitev
+### Stroški in kvote za Phi-3 modele nastavljene kot storitev
 
-Phi modeli, prilagojeni kot storitev, jih ponuja Microsoft in so integrirani z Azure AI Foundry za uporabo. Cene najdete med [namestitvijo](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ali prilagajanjem modelov pod zavihkom Pricing and terms v čarovniku za namestitev.
+Phi modeli, nastavljeni kot storitev, so ponudba Microsofta in so integrirani z Microsoft Foundry za uporabo. Cena je na voljo med [uvoženjem](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ali nastavljenjem modelov pod zavihkom Cena in pogoji v čarovniku za uvedbo.
 
 ## Filtriranje vsebine
 
-Modeli, nameščeni kot storitev po modelu plačaj-po-porabi, so zaščiteni z Azure AI Content Safety. Ko so nameščeni na realnočasovne končne točke, se lahko odločite, da te funkcije ne uporabljate. Z omogočeno Azure AI Content Safety tako poziv kot izhod prehajata skozi skupek klasifikacijskih modelov, ki zaznavajo in preprečujejo izhod škodljive vsebine. Sistem filtriranja vsebine zaznava in ukrepa glede določenih kategorij potencialno škodljive vsebine tako v vhodnih pozivih kot v izhodnih odgovorih. Več o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modeli, uvedeni kot storitev s plačilom po uporabi, so zaščiteni z Azure AI Content Safety. Ko so uvedeni na končnih točkah v realnem času, se lahko odločite, da te zmožnosti ne uporabljate. S omogočeno varnostjo vsebine Azure AI prehajtata tako poziv kot odgovor skozi ansambel klasifikacijskih modelov, katerih cilj je zaznati in preprečiti izhod škodljive vsebine. Sistem filtriranja vsebine zaznava in ukrepa glede posebnih kategorij potencialno škodljive vsebine tako v vhodnih pozivih kot v izhodnih odgovorih. Preberite več o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-**Konfiguracija prilagajanja**
+**Konfiguracija nastavitve**
 
-Določite hiperparametre, kot so hitrost učenja, velikost serije in število epochov učenja.
+Hiperparametri: Določite hiperparametre, kot so učna stopnja, velikost paketa in število učnih epoh.
 
 **Funkcija izgube**
 
-Izberite ustrezno funkcijo izgube za vašo nalogo (npr. cross-entropy).
+Izberite primerno funkcijo izgube za svojo nalogo (npr. križna entropija).
 
 **Optimizator**
 
 Izberite optimizator (npr. Adam) za posodobitve gradienta med učenjem.
 
-**Proces prilagajanja**
+**Postopek nastavitev**
 
-- Naložite predhodno naučen model: naložite Phi-3 Mini kontrolno točko.
-- Dodajte lastne plasti: dodajte plasti, specifične za nalogo (npr. klasifikacijsko glavo za navodila za klepet).
+- Naložite predhodno naučen model: Naložite kontrolno točko Phi-3 Mini.
+- Dodajte lastne plasti: Dodajte nalogi specifične plasti (npr. glava za klasifikacijo za navodila klepeta).
 
 **Učenje modela**  
-Prilagodite model z uporabo pripravljenega nabora podatkov. Spremljajte napredek učenja in po potrebi prilagajajte hiperparametre.
+Nastavite model z uporabo pripravljenega nabora podatkov. Spremljajte napredek učenja in po potrebi prilagodite hiperparametre.
 
-**Evalvacija in validacija**
+**Evaluacija in validacija**
 
-Validacijski nabor: podatke razdelite na učni in validacijski nabor.
+Validacijski niz: Razdelite podatke na učni in validacijski niz.
 
-**Ocenjevanje zmogljivosti**
+**Ocenite zmogljivost**
 
-Uporabite metrike, kot so natančnost, F1-ocena ali perplexity za oceno zmogljivosti modela.
+Uporabite metrike, kot so natančnost, F1-ocena ali zapletenost (perplexity), da ocenite zmogljivost modela.
 
-## Shranjevanje prilagojenega modela
+## Shrani nastavljeni model
 
 **Kontrolna točka**  
-Shranjena kontrolna točka prilagojenega modela za kasnejšo uporabo.
+Shranjujte kontrolno točko nastavljenega modela za prihodnjo rabo.
 
-## Namestitev
+## Uvedba
 
-- Namestitev kot spletna storitev: namestite prilagojeni model kot spletno storitev v Azure AI Foundry.
-- Testiranje končne točke: pošljite testne poizvedbe na nameščeno končno točko za preverjanje delovanja.
+- Uvedite kot spletno storitev: Uvedite svoj nastavljen model kot spletno storitev v Microsoft Foundry.
+- Preizkusite končno točko: Pošljite testna vprašanja do uvedene končne točke, da preverite delovanje.
 
-## Iteracija in izboljšave
+## Iterirajte in izboljšujte
 
-Iterirajte: če zmogljivost ni zadovoljiva, prilagodite hiperparametre, dodajte več podatkov ali podaljšajte učenje za dodatne epohe.
+Iterirajte: Če zmogljivost ni zadovoljiva, iterirajte z nastavitvijo hiperparametrov, dodajanjem več podatkov ali nastavite za dodatne epohe.
 
-## Spremljanje in izboljševanje
+## Spremljajte in izpopolnjujte
 
-Nenehno spremljajte vedenje modela in ga po potrebi izboljšujte.
+Neprestano spremljajte vedenje modela in ga po potrebi izboljšujte.
 
-## Prilagajanje in razširjanje
+## Prilagodite in razširite
 
-Prilagojene naloge: Phi-3 Mini lahko prilagodite za različne naloge, ne le za navodila za klepet. Raziščite druge primere uporabe!  
-Eksperimentirajte: preizkusite različne arhitekture, kombinacije plasti in tehnike za izboljšanje zmogljivosti.
+Nastavitve za različne naloge: Phi-3 Mini lahko nastavite za različne naloge poleg navodil za klepet. Raziščite druge uporabe!  
+Eksperimentirajte: Preizkusite različne arhitekture, kombinacije plasti in tehnike za izboljšanje zmogljivosti.
 
 > [!NOTE]
-> Prilagajanje je iterativen proces. Eksperimentirajte, se učite in prilagajajte model, da dosežete najboljše rezultate za svojo specifično nalogo!
+> Nastavitev je iterativen proces. Eksperimentirajte, učite se in prilagajajte svoj model, da dosežete najboljše rezultate za svojo specifično nalogo!
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v jeziku, v katerem je bil napisan, se šteje za avtoritativni vir. Za kritične informacije priporočamo strokovni prevod s strani človeka. Za kakršne koli nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
