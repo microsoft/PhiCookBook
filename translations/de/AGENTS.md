@@ -2,31 +2,31 @@
 
 ## Projektübersicht
 
-PhiCookBook ist ein umfassendes Kochbuch-Repository mit praktischen Beispielen, Tutorials und Dokumentationen für die Arbeit mit der Phi-Familie von Small Language Models (SLMs) von Microsoft. Das Repository zeigt verschiedene Anwendungsfälle, darunter Inferenz, Feinabstimmung, Quantisierung, RAG-Implementierungen und multimodale Anwendungen auf verschiedenen Plattformen und Frameworks.
+PhiCookBook ist ein umfassendes Repository für Kochbücher mit praxisnahen Beispielen, Tutorials und Dokumentationen für die Arbeit mit der Phi-Familie von Small Language Models (SLMs) von Microsoft. Das Repository demonstriert verschiedene Anwendungsfälle, darunter Inferenz, Feinabstimmung, Quantisierung, RAG-Implementierungen und multimodale Anwendungen auf unterschiedlichen Plattformen und Frameworks.
 
 **Wichtige Technologien:**
-- **Sprachen:** Python, C#/.NET, JavaScript/Node.js
+- **Programmiersprachen:** Python, C#/.NET, JavaScript/Node.js
 - **Frameworks:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Plattformen:** Azure AI Foundry, GitHub Models, Hugging Face, Ollama
-- **Modelltypen:** Phi-3, Phi-3.5, Phi-4 (Text-, Bild-, Multimodal- und Argumentationsvarianten)
+- **Plattformen:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Modelltypen:** Phi-3, Phi-3.5, Phi-4 (Text-, Vision-, multimodale und Reasoning-Varianten)
 
 **Repository-Struktur:**
-- `/code/` - Funktionierende Code-Beispiele und Musterimplementierungen
-- `/md/` - Detaillierte Dokumentation, Tutorials und Anleitungen  
-- `/translations/` - Übersetzungen in mehrere Sprachen (über 50 Sprachen durch automatisierte Workflows)
+- `/code/` - Arbeitscode-Beispiele und Beispielimplementierungen
+- `/md/` - Ausführliche Dokumentation, Tutorials und Anleitungen  
+- `/translations/` - Mehrsprachige Übersetzungen (50+ Sprachen über automatisierten Workflow)
 - `/.devcontainer/` - Dev-Container-Konfiguration (Python 3.12 mit Ollama)
 
 ## Einrichtung der Entwicklungsumgebung
 
 ### Verwendung von GitHub Codespaces oder Dev-Containern (empfohlen)
 
-1. Öffnen in GitHub Codespaces (am schnellsten):
-   - Klicken Sie auf das "Open in GitHub Codespaces"-Badge in der README
-   - Der Container wird automatisch mit Python 3.12 und Ollama mit Phi-3 konfiguriert
+1. In GitHub Codespaces öffnen (schnellste Variante):
+   - Klicken Sie auf das "Open in GitHub Codespaces"-Abzeichen in der README
+   - Container wird automatisch mit Python 3.12 und Ollama mit Phi-3 konfiguriert
 
-2. Öffnen in VS Code Dev-Containern:
-   - Verwenden Sie das "Open in Dev Containers"-Badge aus der README
-   - Der Container benötigt mindestens 16 GB Arbeitsspeicher auf dem Host
+2. In VS Code Dev Containern öffnen:
+   - Verwenden Sie das "Open in Dev Containers"-Abzeichen in der README
+   - Container benötigt mindestens 16 GB Host-Speicher
 
 ### Lokale Einrichtung
 
@@ -43,10 +43,10 @@ cd PhiCookBook
 ```
 
 **Für Python-Beispiele:**
-Navigieren Sie zu den spezifischen Beispielverzeichnissen und installieren Sie die Abhängigkeiten:
+Navigieren Sie zu spezifischen Beispielverzeichnissen und installieren Sie Abhängigkeiten:
 ```bash
 cd code/<example-directory>
-pip install -r requirements.txt  # if requirements.txt exists
+pip install -r requirements.txt  # falls requirements.txt existiert
 ```
 
 **Für .NET-Beispiele:**
@@ -60,47 +60,47 @@ dotnet build LabsPhi.sln
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Start development server
-npm run build  # Build for production
+npm run dev  # Entwicklungsserver starten
+npm run build  # Für Produktion bauen
 ```
 
 ## Repository-Organisation
 
 ### Code-Beispiele (`/code/`)
 
-- **01.Introduce/** - Grundlegende Einführungen und Einstiegsmuster
+- **01.Introduce/** - Grundlagen und Einstiegsbeispiele
 - **03.Finetuning/** und **04.Finetuning/** - Feinabstimmungsbeispiele mit verschiedenen Methoden
-- **03.Inference/** - Inferenzbeispiele auf unterschiedlicher Hardware (AIPC, MLX)
+- **03.Inference/** - Inferenzbeispiele auf unterschiedlichen Hardwareplattformen (AIPC, MLX)
 - **06.E2E/** - End-to-End-Anwendungsbeispiele
-- **07.Lab/** - Labor-/experimentelle Implementierungen
-- **08.RAG/** - Beispiele für Retrieval-Augmented Generation
+- **07.Lab/** - Labor- und experimentelle Implementierungen
+- **08.RAG/** - Retrieval-Augmented Generation-Beispiele
 - **09.UpdateSamples/** - Neueste aktualisierte Beispiele
 
 ### Dokumentation (`/md/`)
 
-- **01.Introduction/** - Einführungshandbücher, Einrichtung der Umgebung, Plattformanleitungen
-- **02.Application/** - Anwendungsbeispiele nach Typ organisiert (Text, Code, Bild, Audio usw.)
-- **02.QuickStart/** - Schnellstartanleitungen für Azure AI Foundry und GitHub Models
-- **03.FineTuning/** - Dokumentation und Tutorials zur Feinabstimmung
-- **04.HOL/** - Praktische Übungen (einschließlich .NET-Beispiele)
+- **01.Introduction/** - Einführung, Umgebungssetup, Plattformanleitungen
+- **02.Application/** - Anwendungsbeispiele nach Typ organisiert (Text, Code, Vision, Audio etc.)
+- **02.QuickStart/** - Schnellstartanleitungen für Microsoft Foundry und GitHub Models
+- **03.FineTuning/** - Dokumentation und Tutorials zum Fein-Tuning
+- **04.HOL/** - Hands-on-Labs (inkl. .NET-Beispiele)
 
 ### Dateiformate
 
-- **Jupyter Notebooks (`.ipynb`)** - Interaktive Python-Tutorials, in README mit 📓 markiert
+- **Jupyter Notebooks (`.ipynb`)** - Interaktive Python-Tutorials, mit 📓 in README markiert
 - **Python-Skripte (`.py`)** - Eigenständige Python-Beispiele
 - **C#-Projekte (`.csproj`, `.sln`)** - .NET-Anwendungen und Beispiele
-- **JavaScript (`.js`, `package.json`)** - Webbasierte und Node.js-Beispiele
+- **JavaScript (`.js`, `package.json`)** - Web- und Node.js-Beispiele
 - **Markdown (`.md`)** - Dokumentation und Anleitungen
 
-## Arbeiten mit Beispielen
+## Arbeit mit Beispielen
 
 ### Ausführen von Jupyter Notebooks
 
 Die meisten Beispiele werden als Jupyter Notebooks bereitgestellt:
 ```bash
 pip install jupyter notebook
-jupyter notebook  # Opens browser interface
-# Navigate to desired .ipynb file
+jupyter notebook  # Öffnet die Browser-Schnittstelle
+# Navigiere zur gewünschten .ipynb-Datei
 ```
 
 ### Ausführen von Python-Skripten
@@ -118,7 +118,7 @@ cd md/04.HOL/dotnet/src/<project-name>
 dotnet run
 ```
 
-Oder die gesamte Lösung erstellen:
+Oder gesamten Lösung bauen:
 ```bash
 cd md/04.HOL/dotnet/src
 dotnet run --project <project-name>
@@ -129,89 +129,89 @@ dotnet run --project <project-name>
 ```bash
 cd code/08.RAG/rag_webgpu_chat
 npm install
-npm run dev  # Development with hot reload
+npm run dev  # Entwicklung mit Hot Reload
 ```
 
-## Tests
+## Testen
 
-Dieses Repository enthält Beispielcode und Tutorials, anstatt ein traditionelles Softwareprojekt mit Unit-Tests zu sein. Die Validierung erfolgt typischerweise durch:
+Dieses Repository enthält Beispielcode und Tutorials anstelle eines traditionellen Softwareprojekts mit Unit-Tests. Die Validierung erfolgt typischerweise durch:
 
-1. **Ausführen der Beispiele** - Jedes Beispiel sollte fehlerfrei ausgeführt werden
-2. **Überprüfen der Ausgaben** - Überprüfen Sie, ob die Modellantworten angemessen sind
-3. **Befolgen der Tutorials** - Schritt-für-Schritt-Anleitungen sollten wie dokumentiert funktionieren
+1. **Ausführen der Beispiele** – Jedes Beispiel soll fehlerfrei laufen
+2. **Überprüfen der Ausgaben** – Prüfen, ob die Modellantworten angemessen sind
+3. **Befolgen der Tutorials** – Schritt-für-Schritt-Anleitungen sollen wie dokumentiert funktionieren
 
-**Allgemeiner Validierungsansatz:**
-- Testen der Beispielausführung in der Zielumgebung
-- Überprüfen, ob Abhängigkeiten korrekt installiert werden
+**Üblicher Validierungsansatz:**
+- Testen der Ausführung der Beispiele in der Zielumgebung
+- Überprüfen, ob Abhängigkeiten richtig installiert werden
 - Sicherstellen, dass Modelle erfolgreich heruntergeladen/geladen werden
-- Bestätigen, dass das erwartete Verhalten der Dokumentation entspricht
+- Bestätigen, dass erwartetes Verhalten der Dokumentation entspricht
 
 ## Code-Stil und Konventionen
 
 ### Allgemeine Richtlinien
 
-- Beispiele sollten klar, gut kommentiert und lehrreich sein
-- Befolgen Sie sprachspezifische Konventionen (PEP 8 für Python, C#-Standards für .NET)
-- Halten Sie Beispiele darauf fokussiert, spezifische Phi-Modellfähigkeiten zu demonstrieren
-- Fügen Sie Kommentare hinzu, die wichtige Konzepte und modellbezogene Parameter erklären
+- Beispiele sollen klar, gut kommentiert und lehrreich sein
+- Sprachspezifische Konventionen einhalten (PEP 8 für Python, C#-Standards für .NET)
+- Beispiele sollen sich auf spezifische Phi-Modellfähigkeiten konzentrieren
+- Kommentare zu Schlüsselkonzepten und modell-spezifischen Parametern einfügen
 
 ### Dokumentationsstandards
 
 **URL-Formatierung:**
-- Verwenden Sie das Format `[text](../../url)` ohne zusätzliche Leerzeichen
-- Relative Links: Verwenden Sie `./` für das aktuelle Verzeichnis, `../` für das übergeordnete
-- Keine länderspezifischen Lokalisierungen in URLs (vermeiden Sie `/en-us/`, `/en/`)
+- Verwenden Sie das Format `[Text](../../URL)` ohne zusätzliche Leerzeichen
+- Relative Links: `./` für aktuelles Verzeichnis, `../` für übergeordnetes Verzeichnis
+- Keine länderspezifischen URLs (keine `/en-us/` oder `/en/`)
 
 **Bilder:**
-- Speichern Sie alle Bilder im Verzeichnis `/imgs/`
-- Verwenden Sie beschreibende Namen mit englischen Zeichen, Zahlen und Bindestrichen
+- Alle Bilder im Verzeichnis `/imgs/` speichern
+- Beschreibende Namen mit englischen Buchstaben, Zahlen und Bindestrichen verwenden
 - Beispiel: `phi-3-architecture.png`
 
 **Markdown-Dateien:**
-- Verweisen Sie auf tatsächlich funktionierende Beispiele im Verzeichnis `/code/`
-- Halten Sie die Dokumentation synchron mit Codeänderungen
-- Verwenden Sie das 📓 Emoji, um Jupyter-Notebook-Links in der README zu markieren
+- Bezug auf tatsächlich funktionierende Beispiele im Verzeichnis `/code/`
+- Dokumentation mit Änderungen im Code synchron halten
+- Verwenden Sie das 📓-Emoji, um Jupyter Notebook-Links in der README zu kennzeichnen
 
 ### Dateiorganisation
 
-- Code-Beispiele in `/code/` nach Thema/Funktion organisiert
-- Dokumentation in `/md/` spiegelt die Code-Struktur wider, wenn möglich
-- Halten Sie verwandte Dateien (Notebooks, Skripte, Konfigurationen) zusammen in Unterverzeichnissen
+- Code-Beispiele in `/code/` nach Themen/Funktionen organisiert
+- Dokumentation in `/md/` spiegelt die Code-Struktur nach Möglichkeit wider
+- Verwandte Dateien (Notebooks, Skripte, Konfigurationen) zusammen in Unterverzeichnissen halten
 
-## Richtlinien für Pull Requests
+## Pull-Request-Richtlinien
 
 ### Vor dem Einreichen
 
-1. **Forken Sie das Repository** in Ihrem Konto
-2. **Trennen Sie PRs nach Typ:**
+1. **Forken Sie das Repository** in Ihr Konto
+2. **PRs nach Typ trennen:**
    - Fehlerbehebungen in einem PR
-   - Dokumentationsaktualisierungen in einem anderen
+   - Dokumentationsupdates in einem anderen
    - Neue Beispiele in separaten PRs
-   - Tippfehler können kombiniert werden
+   - Tippfehlerkorrekturen können kombiniert werden
 
-3. **Behandeln Sie Merge-Konflikte:**
-   - Aktualisieren Sie Ihren lokalen `main`-Branch, bevor Sie Änderungen vornehmen
-   - Synchronisieren Sie häufig mit dem Upstream
+3. **Merge-Konflikte behandeln:**
+   - Aktuellen `main`-Branch lokal aktualisieren, bevor Änderungen gemacht werden
+   - Häufig mit Upstream synchronisieren
 
 4. **Übersetzungs-PRs:**
    - Müssen Übersetzungen für ALLE Dateien im Ordner enthalten
-   - Behalten Sie eine konsistente Struktur mit der Originalsprache bei
+   - Struktur sollte mit Originalsprache übereinstimmen
 
 ### Erforderliche Prüfungen
 
-PRs führen automatisch GitHub-Workflows aus, um zu validieren:
+PRs führen automatisch GitHub-Workflows zur Validierung aus:
 
-1. **Relative Pfadvalidierung** - Alle internen Links müssen funktionieren
+1. **Validierung relativer Pfade** – Alle internen Links müssen funktionieren
    - Testen Sie Links lokal: Strg+Klick in VS Code
-   - Verwenden Sie Pfadvorschläge von VS Code (`./` oder `../`)
+   - Pfadvorschläge von VS Code verwenden (`./` oder `../`)
 
-2. **URL-Lokalisierungsprüfung** - Web-URLs dürfen keine Länder-Lokalisierungen enthalten
+2. **URL-Lokalisierungsprüfun**g – Web-URLs dürfen keine länderspezifischen Codes enthalten
    - Entfernen Sie `/en-us/`, `/en/` oder andere Sprachcodes
    - Verwenden Sie generische internationale URLs
 
-3. **Defekte URL-Prüfung** - Alle URLs müssen den Status 200 zurückgeben
-   - Überprüfen Sie, ob Links vor dem Einreichen zugänglich sind
-   - Hinweis: Einige Fehler können durch Netzwerkbeschränkungen verursacht werden
+3. **Überprüfung auf defekte URLs** – Alle URLs müssen HTTP 200 zurückgeben
+   - Links vor dem Einreichen auf Erreichbarkeit prüfen
+   - Hinweis: Manchmal sind Ausfälle auf Netzwerkeinschränkungen zurückzuführen
 
 ### PR-Titelformat
 
@@ -220,38 +220,38 @@ PRs führen automatisch GitHub-Workflows aus, um zu validieren:
 ```
 
 Beispiele:
-- `[docs] Add Phi-4 inference tutorial`
-- `[code] Fix ONNX Runtime integration example`
-- `[translation] Add Japanese translation for intro guides`
+- `[docs] Anleitung für Phi-4 Inferenz hinzufügen`
+- `[code] ONNX Runtime-Integrationsbeispiel beheben`
+- `[translation] Japanische Übersetzung für Einführungsanleitungen hinzufügen`
 
-## Häufige Entwicklungsmuster
+## Häufige Entwicklungs-Muster
 
-### Arbeiten mit Phi-Modellen
+### Arbeit mit Phi-Modellen
 
-**Modellladen:**
+**Modell-Laden:**
 - Beispiele verwenden verschiedene Frameworks: Transformers, ONNX Runtime, MLX, OpenVINO
 - Modelle werden typischerweise von Hugging Face, Azure oder GitHub Models heruntergeladen
-- Überprüfen Sie die Modellkompatibilität mit Ihrer Hardware (CPU, GPU, NPU)
+- Prüfen Sie die Kompatibilität der Modelle mit Ihrer Hardware (CPU, GPU, NPU)
 
 **Inferenzmuster:**
 - Textgenerierung: Die meisten Beispiele verwenden Chat-/Instruct-Varianten
-- Bild: Phi-3-vision und Phi-4-multimodal für Bildverständnis
+- Vision: Phi-3-vision und Phi-4-multimodal für Bildverstehen
 - Audio: Phi-4-multimodal unterstützt Audioeingaben
-- Argumentation: Phi-4-reasoning-Varianten für fortgeschrittene Argumentationsaufgaben
+- Reasoning: Phi-4-reasoning-Varianten für fortgeschrittene Reasoning-Aufgaben
 
-### Plattformspezifische Hinweise
+### Plattform-spezifische Hinweise
 
-**Azure AI Foundry:**
-- Erfordert ein Azure-Abonnement und API-Schlüssel
+**Microsoft Foundry:**
+- Benötigt Azure-Abonnement und API-Schlüssel
 - Siehe `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
 **GitHub Models:**
-- Kostenloser Tarif für Tests verfügbar
+- Kostenlose Stufe verfügbar zum Testen
 - Siehe `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Lokale Inferenz:**
-- ONNX Runtime: Plattformübergreifend, optimierte Inferenz
-- Ollama: Einfaches lokales Modellmanagement (vorkonfiguriert im Dev-Container)
+- ONNX Runtime: plattformübergreifend, optimierte Inferenz
+- Ollama: Einfache lokale Modellverwaltung (vorkonfiguriert im Dev-Container)
 - Apple MLX: Optimiert für Apple Silicon
 
 ## Fehlerbehebung
@@ -259,41 +259,41 @@ Beispiele:
 ### Häufige Probleme
 
 **Speicherprobleme:**
-- Phi-Modelle benötigen erheblichen RAM (insbesondere Bild-/Multimodal-Varianten)
+- Phi-Modelle benötigen viel RAM (insbesondere Vision-/multimodale Varianten)
 - Verwenden Sie quantisierte Modelle für ressourcenbeschränkte Umgebungen
 - Siehe `/md/01.Introduction/04/QuantifyingPhi.md`
 
 **Abhängigkeitskonflikte:**
 - Python-Beispiele können spezifische Versionsanforderungen haben
 - Verwenden Sie virtuelle Umgebungen für jedes Beispiel
-- Überprüfen Sie die einzelnen `requirements.txt`-Dateien
+- Prüfen Sie die einzelnen `requirements.txt`-Dateien
 
-**Fehler beim Herunterladen von Modellen:**
-- Große Modelle können bei langsamen Verbindungen Zeitüberschreitungen verursachen
-- Ziehen Sie Cloud-Umgebungen in Betracht (Codespaces, Azure)
-- Überprüfen Sie den Hugging Face Cache: `~/.cache/huggingface/`
+**Fehler beim Modelldownload:**
+- Große Modelle können bei langsamer Verbindung Timeouts verursachen
+- Verwenden Sie ggf. Cloud-Umgebungen (Codespaces, Azure)
+- Prüfen Sie den Hugging Face Cache: `~/.cache/huggingface/`
 
-**.NET-Projektprobleme:**
+**Probleme mit .NET-Projekten:**
 - Stellen Sie sicher, dass .NET 8.0 SDK installiert ist
-- Verwenden Sie `dotnet restore`, bevor Sie die Lösung erstellen
+- Verwenden Sie `dotnet restore` vor dem Bauen
 - Einige Projekte haben CUDA-spezifische Konfigurationen (Debug_Cuda)
 
 **JavaScript/Web-Beispiele:**
-- Verwenden Sie Node.js 18+ für Kompatibilität
-- Löschen Sie `node_modules` und installieren Sie neu, wenn Probleme auftreten
-- Überprüfen Sie die Browserkonsole auf WebGPU-Kompatibilitätsprobleme
+- Node.js 18+ für Kompatibilität verwenden
+- Löschen Sie `node_modules` und installieren Sie neu bei Problemen
+- Prüfen Sie die Browserkonsole auf WebGPU-Kompatibilitätsprobleme
 
 ### Hilfe erhalten
 
-- **Discord:** Treten Sie der Azure AI Foundry Community Discord bei
+- **Discord:** Treten Sie dem Microsoft Foundry Community Discord bei
 - **GitHub Issues:** Melden Sie Fehler und Probleme im Repository
-- **GitHub Discussions:** Stellen Sie Fragen und teilen Sie Ihr Wissen
+- **GitHub Discussions:** Stellen Sie Fragen und teilen Sie Wissen
 
 ## Zusätzlicher Kontext
 
-### Verantwortungsvolle KI
+### Verantwortungsbewusstes KI-Handeln
 
-Die Nutzung von Phi-Modellen sollte den Prinzipien der verantwortungsvollen KI von Microsoft folgen:
+Alle Phi-Modellnutzungen sollten Microsofts Prinzipien für verantwortungsbewusste KI befolgen:
 - Fairness, Zuverlässigkeit, Sicherheit
 - Datenschutz und Sicherheit  
 - Inklusivität, Transparenz, Verantwortlichkeit
@@ -302,28 +302,30 @@ Die Nutzung von Phi-Modellen sollte den Prinzipien der verantwortungsvollen KI v
 
 ### Übersetzungen
 
-- Über 50 Sprachen werden durch automatisierte GitHub Action unterstützt
+- 50+ Sprachen werden über automatisierten GitHub Action Workflow unterstützt
 - Übersetzungen im Verzeichnis `/translations/`
-- Verwaltet durch den co-op-translator Workflow
-- Bearbeiten Sie übersetzte Dateien nicht manuell (automatisch generiert)
+- Werden vom co-op-translator Workflow gepflegt
+- Bitte übersetzte Dateien nicht manuell bearbeiten (automatisch generiert)
 
-### Beitrag leisten
+### Mitwirken
 
-- Befolgen Sie die Richtlinien in `CONTRIBUTING.md`
+- Folgen Sie den Richtlinien in `CONTRIBUTING.md`
 - Stimmen Sie der Contributor License Agreement (CLA) zu
-- Halten Sie sich an den Microsoft Open Source Code of Conduct
-- Halten Sie Sicherheit und Anmeldeinformationen aus Commits heraus
+- Beachten Sie den Microsoft Open Source Code of Conduct
+- Halten Sie Sicherheit und Zugangsdaten aus Commits heraus
 
 ### Mehrsprachige Unterstützung
 
 Dies ist ein mehrsprachiges Repository mit Beispielen in:
 - **Python** - ML/AI-Workflows, Jupyter Notebooks, Feinabstimmung
-- **C#/.NET** - Unternehmensanwendungen, ONNX Runtime-Integration
+- **C#/.NET** - Unternehmensanwendungen, ONNX Runtime Integration
 - **JavaScript** - Webbasierte KI, Browser-Inferenz mit WebGPU
 
-Wählen Sie die Sprache, die am besten zu Ihrem Anwendungsfall und Ziel passt.
+Wählen Sie die Sprache, die für Ihren Anwendungsfall und Ihr Deployment-Ziel am besten geeignet ist.
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

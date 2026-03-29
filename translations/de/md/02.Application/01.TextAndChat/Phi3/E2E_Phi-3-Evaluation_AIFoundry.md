@@ -1,14 +1,14 @@
-# Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells in Azure AI Foundry mit Fokus auf Microsofts Responsible AI Prinzipien
+# Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells in Microsoft Foundry mit Fokus auf Microsofts Responsible AI-Prinzipien
 
-Dieses End-to-End (E2E) Beispiel basiert auf der Anleitung "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" aus der Microsoft Tech Community.
+Dieses End-to-End (E2E)-Beispiel basiert auf der Anleitung "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Microsoft Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" aus der Microsoft Tech Community.
 
 ## Überblick
 
-### Wie können Sie die Sicherheit und Leistung eines feinabgestimmten Phi-3 / Phi-3.5 Modells in Azure AI Foundry bewerten?
+### Wie können Sie die Sicherheit und Leistung eines feinabgestimmten Phi-3 / Phi-3.5 Modells in Microsoft Foundry bewerten?
 
-Das Feinabstimmen eines Modells kann manchmal zu unbeabsichtigten oder unerwünschten Antworten führen. Um sicherzustellen, dass das Modell sicher und effektiv bleibt, ist es wichtig, das Potenzial des Modells zur Erzeugung schädlicher Inhalte sowie seine Fähigkeit, genaue, relevante und kohärente Antworten zu liefern, zu bewerten. In diesem Tutorial lernen Sie, wie Sie die Sicherheit und Leistung eines feinabgestimmten Phi-3 / Phi-3.5 Modells, das in Azure AI Foundry mit Prompt flow integriert ist, bewerten.
+Die Feinabstimmung eines Modells kann manchmal zu unbeabsichtigten oder unerwünschten Antworten führen. Um sicherzustellen, dass das Modell sicher und effektiv bleibt, ist es wichtig, das Potenzial des Modells zur Erzeugung schädlicher Inhalte sowie seine Fähigkeit, genaue, relevante und kohärente Antworten zu liefern, zu bewerten. In diesem Tutorial lernen Sie, wie Sie die Sicherheit und Leistung eines feinabgestimmten Phi-3 / Phi-3.5 Modells, integriert mit Prompt flow in Microsoft Foundry, bewerten.
 
-Hier ist der Evaluierungsprozess von Azure AI Foundry.
+Hier ist der Bewertungsprozess von Microsoft Foundry.
 
 ![Architecture of tutorial.](../../../../../../translated_images/de/architecture.10bec55250f5d6a4.webp)
 
@@ -16,7 +16,7 @@ Hier ist der Evaluierungsprozess von Azure AI Foundry.
 
 > [!NOTE]
 >
-> Für detailliertere Informationen und weitere Ressourcen zu Phi-3 / Phi-3.5 besuchen Sie bitte das [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723).
+> Für detailliertere Informationen und um zusätzliche Ressourcen zu Phi-3 / Phi-3.5 zu erkunden, besuchen Sie bitte das [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723).
 
 ### Voraussetzungen
 
@@ -27,68 +27,68 @@ Hier ist der Evaluierungsprozess von Azure AI Foundry.
 
 ### Inhaltsverzeichnis
 
-1. [**Szenario 1: Einführung in die Prompt flow Bewertung von Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Szenario 1: Einführung in die Prompt flow Bewertung von Microsoft Foundry**](#scenario-1-introduction-to-azure-ai-studios-prompt-flow-evaluation)
 
-    - [Einführung in die Sicherheitsbewertung](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Einführung in die Leistungsbewertung](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Einführung in die Sicherheitsbewertung](#einführung-in-die-sicherheitsbewertung)
+    - [Einführung in die Leistungsbewertung](#einführung-in-die-leistungsbewertung)
 
-1. [**Szenario 2: Bewertung des Phi-3 / Phi-3.5 Modells in Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**Szenario 2: Bewertung des Phi-3 / Phi-3.5 Modells in Microsoft Foundry**](#scenario-2-evaluating-the-phi-3--phi-35-model-in-azure-ai-studio)
 
-    - [Bevor Sie beginnen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Bereitstellen von Azure OpenAI zur Bewertung des Phi-3 / Phi-3.5 Modells](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells mit der Prompt flow Bewertung von Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Bevor Sie beginnen](#bevor-sie-beginnen)
+    - [Bereitstellung von Azure OpenAI zur Bewertung des Phi-3 / Phi-3.5 Modells](#deploy-azure-openai-to-evaluate-the-phi-3--phi-35-model)
+    - [Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells mit der Prompt flow Bewertung von Microsoft Foundry](#evaluate-the-fine-tuned-phi-3--phi-35-model-using-azure-ai-studios-prompt-flow-evaluation)
 
-1. [Glückwunsch!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [Herzlichen Glückwunsch!](#herzlichen-glückwunsch)
 
-## **Szenario 1: Einführung in die Prompt flow Bewertung von Azure AI Foundry**
+## **Szenario 1: Einführung in die Prompt flow Bewertung von Microsoft Foundry**
 
 ### Einführung in die Sicherheitsbewertung
 
-Um sicherzustellen, dass Ihr KI-Modell ethisch und sicher ist, ist es entscheidend, es anhand von Microsofts Responsible AI Prinzipien zu bewerten. In Azure AI Foundry ermöglichen Sicherheitsbewertungen, die Anfälligkeit Ihres Modells für Jailbreak-Angriffe sowie sein Potenzial zur Erzeugung schädlicher Inhalte zu prüfen – dies steht in direktem Einklang mit diesen Prinzipien.
+Um sicherzustellen, dass Ihr KI-Modell ethisch und sicher ist, ist es entscheidend, es anhand der Responsible AI-Prinzipien von Microsoft zu bewerten. In Microsoft Foundry ermöglichen Sicherheitsbewertungen, die Verwundbarkeit Ihres Modells gegenüber Jailbreak-Angriffen und sein Potenzial zur Erzeugung schädlicher Inhalte zu bewerten, was direkt mit diesen Prinzipien übereinstimmt.
 
 ![Safaty evaluation.](../../../../../../translated_images/de/safety-evaluation.083586ec88dfa950.webp)
 
 *Bildquelle: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
-#### Microsofts Responsible AI Prinzipien
+#### Microsofts Responsible AI-Prinzipien
 
-Bevor Sie mit den technischen Schritten beginnen, ist es wichtig, Microsofts Responsible AI Prinzipien zu verstehen – ein ethischer Rahmen, der die verantwortungsvolle Entwicklung, Bereitstellung und den Betrieb von KI-Systemen leitet. Diese Prinzipien steuern das verantwortungsvolle Design, die Entwicklung und den Einsatz von KI-Systemen und stellen sicher, dass KI-Technologien fair, transparent und inklusiv gestaltet werden. Sie bilden die Grundlage für die Bewertung der Sicherheit von KI-Modellen.
+Bevor Sie die technischen Schritte beginnen, ist es wichtig, Microsofts Responsible AI-Prinzipien zu verstehen, ein ethisches Rahmenwerk zur verantwortungsvollen Entwicklung, Implementierung und Betrieb von KI-Systemen. Diese Prinzipien leiten die verantwortungsvolle Gestaltung, Entwicklung und Implementierung von KI-Systemen, um sicherzustellen, dass KI-Technologien fair, transparent und inklusiv aufgebaut sind. Diese Prinzipien bilden die Grundlage zur Bewertung der Sicherheit von KI-Modellen.
 
-Microsofts Responsible AI Prinzipien umfassen:
+Microsofts Responsible AI-Prinzipien umfassen:
 
-- **Fairness und Inklusivität**: KI-Systeme sollten alle Menschen fair behandeln und vermeiden, ähnlich gelagerte Gruppen unterschiedlich zu beeinflussen. Zum Beispiel sollten KI-Systeme bei medizinischen Empfehlungen, Kreditanträgen oder Einstellungen allen Personen mit ähnlichen Symptomen, finanziellen Verhältnissen oder Qualifikationen dieselben Empfehlungen geben.
+- **Fairness und Inklusivität**: KI-Systeme sollten alle fair behandeln und vermeiden, ähnlich situierte Gruppen unterschiedlich zu beeinflussen. Zum Beispiel sollten KI-Systeme bei Empfehlungen zur medizinischen Behandlung, bei Kreditanträgen oder bei der Beschäftigung allen Personen mit ähnlichen Symptomen, finanziellen Verhältnissen oder beruflichen Qualifikationen dieselben Empfehlungen geben.
 
-- **Zuverlässigkeit und Sicherheit**: Um Vertrauen aufzubauen, ist es entscheidend, dass KI-Systeme zuverlässig, sicher und konsistent arbeiten. Diese Systeme sollten so funktionieren, wie sie ursprünglich entworfen wurden, sicher auf unvorhergesehene Bedingungen reagieren und schädlicher Manipulation widerstehen. Ihr Verhalten und die Vielfalt der Bedingungen, die sie bewältigen können, spiegeln die Bandbreite der Situationen wider, die Entwickler bei Design und Tests berücksichtigt haben.
+- **Zuverlässigkeit und Sicherheit**: Um Vertrauen zu schaffen, ist es entscheidend, dass KI-Systeme zuverlässig, sicher und konsistent arbeiten. Diese Systeme sollten wie ursprünglich entworfen funktionieren, sicher auf unvorhergesehene Bedingungen reagieren und schädlichen Manipulationen widerstehen. Ihr Verhalten und die Vielfalt der Bedingungen, die sie bewältigen können, spiegeln die Bandbreite von Situationen wider, die Entwickler während Design und Test antizipiert haben.
 
-- **Transparenz**: Wenn KI-Systeme Entscheidungen unterstützen, die erhebliche Auswirkungen auf das Leben von Menschen haben, ist es wichtig, dass diese verstehen, wie diese Entscheidungen zustande kommen. Beispielsweise könnte eine Bank ein KI-System nutzen, um die Kreditwürdigkeit einer Person zu beurteilen. Ein Unternehmen könnte ein KI-System verwenden, um die qualifiziertesten Bewerber auszuwählen.
+- **Transparenz**: Wenn KI-Systeme Entscheidungen informieren, die immense Auswirkungen auf das Leben der Menschen haben, ist es entscheidend, dass Menschen verstehen, wie diese Entscheidungen getroffen wurden. Zum Beispiel könnte eine Bank ein KI-System verwenden, um zu entscheiden, ob eine Person kreditwürdig ist. Ein Unternehmen könnte ein KI-System einsetzen, um die qualifiziertesten Bewerber auszuwählen.
 
-- **Datenschutz und Sicherheit**: Mit der zunehmenden Verbreitung von KI wird der Schutz der Privatsphäre und die Sicherung persönlicher und geschäftlicher Daten immer wichtiger und komplexer. Bei KI erfordern Datenschutz und Datensicherheit besondere Aufmerksamkeit, da der Zugriff auf Daten für genaue und fundierte Vorhersagen und Entscheidungen über Personen unerlässlich ist.
+- **Datenschutz und Sicherheit**: Mit zunehmender Verbreitung von KI werden Datenschutz und Sicherheit persönlicher und geschäftlicher Informationen immer wichtiger und komplexer. Mit KI erfordern Datenschutz und Datensicherheit besondere Aufmerksamkeit, da der Zugang zu Daten für KI-Systeme essenziell ist, um genaue und fundierte Vorhersagen und Entscheidungen über Personen zu treffen.
 
-- **Verantwortlichkeit**: Die Personen, die KI-Systeme entwerfen und bereitstellen, müssen für deren Betrieb verantwortlich sein. Organisationen sollten Branchenstandards nutzen, um Verantwortlichkeitsnormen zu entwickeln. Diese Normen stellen sicher, dass KI-Systeme nicht die letzte Entscheidungsinstanz bei Entscheidungen sind, die das Leben von Menschen betreffen. Sie gewährleisten auch, dass Menschen die Kontrolle über ansonsten hochgradig autonome KI-Systeme behalten.
+- **Verantwortlichkeit**: Diejenigen, die KI-Systeme entwerfen und einsetzen, müssen für deren Betrieb verantwortlich sein. Organisationen sollten auf Industriestandards zurückgreifen, um Verantwortlichkeitsnormen zu entwickeln. Diese Normen können sicherstellen, dass KI-Systeme nicht die letzte Entscheidungsinstanz bei Entscheidungen sind, die das Leben von Menschen betreffen. Sie können auch gewährleisten, dass Menschen die sinnvolle Kontrolle über ansonsten hoch autonome KI-Systeme behalten.
 
 ![Fill hub.](../../../../../../translated_images/de/responsibleai2.c07ef430113fad8c.webp)
 
 *Bildquelle: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> Um mehr über Microsofts Responsible AI Prinzipien zu erfahren, besuchen Sie die Seite [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
+> Um mehr über Microsofts Responsible AI-Prinzipien zu erfahren, besuchen Sie [Was ist Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
 
 #### Sicherheitsmetriken
 
-In diesem Tutorial bewerten Sie die Sicherheit des feinabgestimmten Phi-3 Modells anhand der Sicherheitsmetriken von Azure AI Foundry. Diese Metriken helfen Ihnen, das Potenzial des Modells zur Erzeugung schädlicher Inhalte sowie seine Anfälligkeit für Jailbreak-Angriffe einzuschätzen. Die Sicherheitsmetriken umfassen:
+In diesem Tutorial bewerten Sie die Sicherheit des feinabgestimmten Phi-3 Modells mit Hilfe der Sicherheitsmetriken von Microsoft Foundry. Diese Metriken helfen Ihnen, das Potenzial des Modells zur Erzeugung schädlicher Inhalte und dessen Verwundbarkeit gegenüber Jailbreak-Angriffen einzuschätzen. Die Sicherheitsmetriken umfassen:
 
-- **Inhalte im Zusammenhang mit Selbstverletzung**: Bewertet, ob das Modell dazu neigt, Inhalte zu erzeugen, die Selbstverletzung fördern.
+- **Selbstverletzungsbezogene Inhalte**: Bewertet, ob das Modell dazu neigt, selbstverletzende Inhalte zu erzeugen.
 - **Hasserfüllte und ungerechte Inhalte**: Bewertet, ob das Modell dazu neigt, hasserfüllte oder ungerechte Inhalte zu erzeugen.
 - **Gewalttätige Inhalte**: Bewertet, ob das Modell dazu neigt, gewalttätige Inhalte zu erzeugen.
 - **Sexuelle Inhalte**: Bewertet, ob das Modell dazu neigt, unangemessene sexuelle Inhalte zu erzeugen.
 
-Die Bewertung dieser Aspekte stellt sicher, dass das KI-Modell keine schädlichen oder anstößigen Inhalte produziert und somit mit gesellschaftlichen Werten und regulatorischen Vorgaben übereinstimmt.
+Die Bewertung dieser Aspekte stellt sicher, dass das KI-Modell keine schädlichen oder anstößigen Inhalte produziert, was mit gesellschaftlichen Werten und regulatorischen Standards übereinstimmt.
 
 ![Evaluate based on safety.](../../../../../../translated_images/de/evaluate-based-on-safety.c5df819f5b0bfc07.webp)
 
 ### Einführung in die Leistungsbewertung
 
-Um sicherzustellen, dass Ihr KI-Modell wie erwartet funktioniert, ist es wichtig, seine Leistung anhand von Leistungsmetriken zu bewerten. In Azure AI Foundry ermöglichen Leistungsbewertungen, die Effektivität Ihres Modells bei der Erzeugung genauer, relevanter und kohärenter Antworten zu prüfen.
+Um sicherzustellen, dass Ihr KI-Modell wie erwartet funktioniert, ist es wichtig, dessen Leistung anhand von Leistungskennzahlen zu bewerten. In Microsoft Foundry ermöglichen Leistungsbewertungen, die Effektivität Ihres Modells bei der Erstellung genauer, relevanter und kohärenter Antworten zu beurteilen.
 
 ![Safaty evaluation.](../../../../../../translated_images/de/performance-evaluation.48b3e7e01a098740.webp)
 
@@ -96,162 +96,163 @@ Um sicherzustellen, dass Ihr KI-Modell wie erwartet funktioniert, ist es wichtig
 
 #### Leistungsmetriken
 
-In diesem Tutorial bewerten Sie die Leistung des feinabgestimmten Phi-3 / Phi-3.5 Modells anhand der Leistungsmetriken von Azure AI Foundry. Diese Metriken helfen Ihnen, die Effektivität des Modells bei der Erzeugung genauer, relevanter und kohärenter Antworten einzuschätzen. Die Leistungsmetriken umfassen:
+In diesem Tutorial bewerten Sie die Leistung des feinabgestimmten Phi-3 / Phi-3.5 Modells mit den Leistungsmetriken von Microsoft Foundry. Diese Metriken helfen Ihnen, die Effektivität des Modells bei der Erstellung genauer, relevanter und kohärenter Antworten einzuschätzen. Die Leistungsmetriken umfassen:
 
 - **Groundedness**: Bewertet, wie gut die generierten Antworten mit den Informationen aus der Eingabequelle übereinstimmen.
-- **Relevanz**: Bewertet die Relevanz der generierten Antworten in Bezug auf die gestellten Fragen.
-- **Kohärenz**: Bewertet, wie flüssig der generierte Text ist, ob er natürlich wirkt und menschenähnliche Sprache widerspiegelt.
-- **Flüssigkeit**: Bewertet die sprachliche Qualität des generierten Textes.
-- **GPT-Ähnlichkeit**: Vergleicht die generierte Antwort mit der Ground Truth hinsichtlich der Ähnlichkeit.
-- **F1-Score**: Berechnet das Verhältnis der gemeinsamen Wörter zwischen der generierten Antwort und den Quelldaten.
+- **Relevanz**: Bewertet die Relevanz der generierten Antworten für die gestellten Fragen.
+- **Kohärenz**: Bewertet, wie flüssig der generierte Text ist, natürlich wirkt und menschenähnlicher Sprache ähnelt.
+- **Flüssigkeit**: Bewertet die Sprachkompetenz des generierten Textes.
+- **GPT Ähnlichkeit**: Vergleicht die generierte Antwort mit der Referenzantwort hinsichtlich Ähnlichkeit.
+- **F1 Score**: Berechnet das Verhältnis der gemeinsam genutzten Wörter zwischen generierter Antwort und Quelldaten.
 
-Diese Metriken helfen Ihnen, die Effektivität des Modells bei der Erzeugung genauer, relevanter und kohärenter Antworten zu bewerten.
+Diese Metriken helfen Ihnen, die Effektivität des Modells bei der Erstellung genauer, relevanter und kohärenter Antworten zu bewerten.
 
 ![Evaluate based on performance.](../../../../../../translated_images/de/evaluate-based-on-performance.3e801c647c7554e8.webp)
 
-## **Szenario 2: Bewertung des Phi-3 / Phi-3.5 Modells in Azure AI Foundry**
+## **Szenario 2: Bewertung des Phi-3 / Phi-3.5 Modells in Microsoft Foundry**
 
 ### Bevor Sie beginnen
 
-Dieses Tutorial baut auf den vorherigen Blogbeiträgen "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" und "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" auf. In diesen Beiträgen haben wir den Prozess des Feinabstimmens eines Phi-3 / Phi-3.5 Modells in Azure AI Foundry und dessen Integration mit Prompt flow durchlaufen.
+Dieses Tutorial baut auf den vorherigen Blogbeiträgen "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" und "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" auf. In diesen Beiträgen haben wir den Prozess der Feinabstimmung eines Phi-3 / Phi-3.5 Modells in Microsoft Foundry und der Integration mit Prompt flow durchlaufen.
 
-In diesem Tutorial werden Sie ein Azure OpenAI Modell als Evaluator in Azure AI Foundry bereitstellen und es verwenden, um Ihr feinabgestimmtes Phi-3 / Phi-3.5 Modell zu bewerten.
+In diesem Tutorial stellen Sie ein Azure OpenAI-Modell als Evaluator in Microsoft Foundry bereit und verwenden es zur Bewertung Ihres feinabgestimmten Phi-3 / Phi-3.5 Modells.
 
-Bevor Sie mit diesem Tutorial beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen, wie in den vorherigen Tutorials beschrieben:
+Bevor Sie mit diesem Tutorial beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen aus den vorherigen Tutorials erfüllen:
 
-1. Ein vorbereitetes Datenset zur Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells.
+1. Einen vorbereiteten Datensatz zur Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells.
 1. Ein Phi-3 / Phi-3.5 Modell, das feinabgestimmt und in Azure Machine Learning bereitgestellt wurde.
-1. Ein mit Ihrem feinabgestimmten Phi-3 / Phi-3.5 Modell in Azure AI Foundry integrierter Prompt flow.
+1. Eine mit Ihrem feinabgestimmten Phi-3 / Phi-3.5 Modell in Microsoft Foundry integrierte Prompt flow.
 
 > [!NOTE]
-> Sie verwenden die Datei *test_data.jsonl*, die sich im Datenordner des **ULTRACHAT_200k** Datensatzes befindet, der in den vorherigen Blogbeiträgen heruntergeladen wurde, als Datensatz zur Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells.
+> Sie verwenden die Datei *test_data.jsonl*, die sich im Datenordner des **ULTRACHAT_200k**-Datensatzes befindet, der in den vorherigen Blogbeiträgen heruntergeladen wurde, als Datensatz zur Bewertung des feinabgestimmten Phi-3 / Phi-3.5 Modells.
 
-#### Integration des benutzerdefinierten Phi-3 / Phi-3.5 Modells mit Prompt flow in Azure AI Foundry (Code-first-Ansatz)
-> [!NOTE]  
-> Wenn Sie dem Low-Code-Ansatz gefolgt sind, der in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" beschrieben wird, können Sie diese Übung überspringen und mit der nächsten fortfahren.  
-> Wenn Sie jedoch dem Code-First-Ansatz gefolgt sind, der in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" beschrieben wird, um Ihr Phi-3 / Phi-3.5 Modell zu fine-tunen und bereitzustellen, ist der Prozess, Ihr Modell mit Prompt Flow zu verbinden, etwas anders. Diesen Prozess lernen Sie in dieser Übung kennen.
-Um fortzufahren, müssen Sie Ihr feinabgestimmtes Phi-3 / Phi-3.5 Modell in Prompt flow in Azure AI Foundry integrieren.
+#### Integration des benutzerdefinierten Phi-3 / Phi-3.5 Modells mit Prompt flow in Microsoft Foundry (Code-first-Ansatz)
 
-#### Azure AI Foundry Hub erstellen
+> [!NOTE]
+> Falls Sie dem Low-Code-Ansatz gefolgt sind, der in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Microsoft Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" beschrieben ist, können Sie diese Übung überspringen und mit der nächsten fortfahren.
+> Wenn Sie jedoch dem Code-first-Ansatz gefolgt sind, der in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" zum Feinabstimmen und Bereitstellen Ihres Phi-3 / Phi-3.5 Modells beschrieben wird, ist der Prozess zur Verbindung Ihres Modells mit Prompt flow etwas anders. Dies lernen Sie in dieser Übung.
 
-Sie müssen einen Hub erstellen, bevor Sie ein Projekt anlegen. Ein Hub fungiert wie eine Ressourcengruppe und ermöglicht es Ihnen, mehrere Projekte innerhalb von Azure AI Foundry zu organisieren und zu verwalten.
+Um fortzufahren, müssen Sie Ihr feinabgestimmtes Phi-3 / Phi-3.5 Modell in Prompt flow in Microsoft Foundry integrieren.
 
-1. Melden Sie sich bei [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) an.
+#### Erstellen eines Microsoft Foundry Hubs
 
-1. Wählen Sie im linken Seitenmenü **All hubs** aus.
+Sie müssen zunächst einen Hub erstellen, bevor Sie ein Projekt anlegen. Ein Hub fungiert ähnlich einer Ressourcengruppe und ermöglicht es Ihnen, mehrere Projekte innerhalb von Microsoft Foundry zu organisieren und zu verwalten.
+1. Melden Sie sich bei [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) an.
 
-1. Wählen Sie im Navigationsmenü **+ New hub** aus.
+1. Wählen Sie im linken Seitenmenü **Alle Hubs** aus.
 
-    ![Create hub.](../../../../../../translated_images/de/create-hub.5be78fb1e21ffbf1.webp)
+1. Wählen Sie im Navigationsmenü **+ Neuer Hub** aus.
 
-1. Führen Sie die folgenden Schritte aus:
+    ![Hub erstellen.](../../../../../../translated_images/de/create-hub.5be78fb1e21ffbf1.webp)
 
-    - Geben Sie einen **Hub name** ein. Dieser muss eindeutig sein.
-    - Wählen Sie Ihr Azure **Subscription** aus.
-    - Wählen Sie die **Resource group** aus, die Sie verwenden möchten (erstellen Sie bei Bedarf eine neue).
-    - Wählen Sie den gewünschten **Location** aus.
-    - Wählen Sie die **Connect Azure AI Services** aus, die Sie verwenden möchten (erstellen Sie bei Bedarf eine neue).
-    - Wählen Sie bei **Connect Azure AI Search** die Option **Skip connecting**.
+1. Führen Sie die folgenden Aufgaben aus:
 
-    ![Fill hub.](../../../../../../translated_images/de/fill-hub.baaa108495c71e34.webp)
+    - Geben Sie einen **Hub-Namen** ein. Er muss ein eindeutiger Wert sein.
+    - Wählen Sie Ihr Azure-**Abonnement** aus.
+    - Wählen Sie die **Ressourcengruppe** aus, die verwendet werden soll (erstellen Sie bei Bedarf eine neue).
+    - Wählen Sie den gewünschten **Standort** aus.
+    - Wählen Sie die zu verwendenden **Azure AI Services verbinden** aus (bei Bedarf eine neue erstellen).
+    - Wählen Sie bei **Azure AI Search verbinden** die Option **Verbindung überspringen**.
 
-1. Wählen Sie **Next**.
+    ![Hub ausfüllen.](../../../../../../translated_images/de/fill-hub.baaa108495c71e34.webp)
 
-#### Azure AI Foundry Projekt erstellen
+1. Wählen Sie **Weiter**.
 
-1. Wählen Sie im erstellten Hub im linken Seitenmenü **All projects** aus.
+#### Microsoft Foundry-Projekt erstellen
 
-1. Wählen Sie im Navigationsmenü **+ New project** aus.
+1. Wählen Sie im erstellten Hub im linken Seitenmenü **Alle Projekte** aus.
 
-    ![Select new project.](../../../../../../translated_images/de/select-new-project.cd31c0404088d7a3.webp)
+1. Wählen Sie im Navigationsmenü **+ Neues Projekt** aus.
 
-1. Geben Sie einen **Project name** ein. Dieser muss eindeutig sein.
+    ![Neues Projekt auswählen.](../../../../../../translated_images/de/select-new-project.cd31c0404088d7a3.webp)
 
-    ![Create project.](../../../../../../translated_images/de/create-project.ca3b71298b90e420.webp)
+1. Geben Sie einen **Projektnamen** ein. Er muss ein eindeutiger Wert sein.
 
-1. Wählen Sie **Create a project**.
+    ![Projekt erstellen.](../../../../../../translated_images/de/create-project.ca3b71298b90e420.webp)
 
-#### Benutzerdefinierte Verbindung für das feinabgestimmte Phi-3 / Phi-3.5 Modell hinzufügen
+1. Wählen Sie **Projekt erstellen** aus.
 
-Um Ihr benutzerdefiniertes Phi-3 / Phi-3.5 Modell mit Prompt flow zu integrieren, müssen Sie den Endpunkt und den Schlüssel des Modells in einer benutzerdefinierten Verbindung speichern. Diese Einrichtung stellt sicher, dass Sie in Prompt flow auf Ihr benutzerdefiniertes Phi-3 / Phi-3.5 Modell zugreifen können.
+#### Fügen Sie eine benutzerdefinierte Verbindung für das feinabgestimmte Phi-3 / Phi-3.5 Modell hinzu
 
-#### API-Schlüssel und Endpunkt-URI des feinabgestimmten Phi-3 / Phi-3.5 Modells festlegen
+Um Ihr benutzerdefiniertes Phi-3 / Phi-3.5 Modell in Prompt flow zu integrieren, müssen Sie den Endpunkt und den Schlüssel des Modells in einer benutzerdefinierten Verbindung speichern. Diese Einrichtung stellt den Zugriff auf Ihr benutzerdefiniertes Phi-3 / Phi-3.5 Modell in Prompt flow sicher.
+
+#### API-Schlüssel und Endpunkt-URI des feinabgestimmten Phi-3 / Phi-3.5 Modells einrichten
 
 1. Besuchen Sie [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Navigieren Sie zum Azure Machine Learning Workspace, den Sie erstellt haben.
+1. Navigieren Sie zum Azure Machine Learning-Arbeitsbereich, den Sie erstellt haben.
 
 1. Wählen Sie im linken Seitenmenü **Endpoints** aus.
 
-    ![Select endpoints.](../../../../../../translated_images/de/select-endpoints.ee7387ecd68bd18d.webp)
+    ![Endpoints auswählen.](../../../../../../translated_images/de/select-endpoints.ee7387ecd68bd18d.webp)
 
 1. Wählen Sie den von Ihnen erstellten Endpunkt aus.
 
-    ![Select endpoints.](../../../../../../translated_images/de/select-endpoint-created.9f63af5e4cf98b2e.webp)
+    ![Erstellten Endpunkt auswählen.](../../../../../../translated_images/de/select-endpoint-created.9f63af5e4cf98b2e.webp)
 
-1. Wählen Sie im Navigationsmenü **Consume** aus.
+1. Wählen Sie im Navigationsmenü **Verwenden** aus.
 
-1. Kopieren Sie Ihren **REST endpoint** und den **Primary key**.
+1. Kopieren Sie Ihren **REST-Endpunkt** und den **Primärschlüssel**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/de/copy-endpoint-key.0650c3786bd646ab.webp)
+    ![API-Schlüssel und Endpunkt-URI kopieren.](../../../../../../translated_images/de/copy-endpoint-key.0650c3786bd646ab.webp)
 
-#### Benutzerdefinierte Verbindung hinzufügen
+#### Fügen Sie die benutzerdefinierte Verbindung hinzu
 
-1. Besuchen Sie [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Besuchen Sie [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigieren Sie zum Azure AI Foundry Projekt, das Sie erstellt haben.
+1. Navigieren Sie zum Microsoft Foundry-Projekt, das Sie erstellt haben.
 
-1. Wählen Sie im Projekt im linken Seitenmenü **Settings** aus.
+1. Wählen Sie im erstellten Projekt im linken Seitenmenü **Einstellungen** aus.
 
-1. Wählen Sie **+ New connection**.
+1. Wählen Sie **+ Neue Verbindung** aus.
 
-    ![Select new connection.](../../../../../../translated_images/de/select-new-connection.fa0f35743758a74b.webp)
+    ![Neue Verbindung auswählen.](../../../../../../translated_images/de/select-new-connection.fa0f35743758a74b.webp)
 
-1. Wählen Sie im Navigationsmenü **Custom keys** aus.
+1. Wählen Sie im Navigationsmenü **Benutzerdefinierte Schlüssel** aus.
 
-    ![Select custom keys.](../../../../../../translated_images/de/select-custom-keys.5a3c6b25580a9b67.webp)
+    ![Benutzerdefinierte Schlüssel auswählen.](../../../../../../translated_images/de/select-custom-keys.5a3c6b25580a9b67.webp)
 
-1. Führen Sie die folgenden Schritte aus:
+1. Führen Sie die folgenden Aufgaben aus:
 
-    - Wählen Sie **+ Add key value pairs**.
-    - Geben Sie als Schlüsselname **endpoint** ein und fügen Sie den kopierten Endpunkt aus Azure ML Studio in das Wertfeld ein.
-    - Wählen Sie erneut **+ Add key value pairs**.
-    - Geben Sie als Schlüsselname **key** ein und fügen Sie den kopierten Schlüssel aus Azure ML Studio in das Wertfeld ein.
-    - Nach dem Hinzufügen der Schlüssel aktivieren Sie **is secret**, um zu verhindern, dass der Schlüssel offengelegt wird.
+    - Wählen Sie **+ Schlüssel-Wert-Paare hinzufügen** aus.
+    - Geben Sie für den Schlüsselnamen **endpoint** ein und fügen Sie den aus Azure ML Studio kopierten Endpunkt im Wert-Feld ein.
+    - Wählen Sie erneut **+ Schlüssel-Wert-Paare hinzufügen** aus.
+    - Geben Sie für den Schlüsselnamen **key** ein und fügen Sie den aus Azure ML Studio kopierten Schlüssel im Wert-Feld ein.
+    - Nachdem Sie die Schlüssel hinzugefügt haben, wählen Sie **ist geheim**, um zu verhindern, dass der Schlüssel öffentlich sichtbar ist.
 
-    ![Add connection.](../../../../../../translated_images/de/add-connection.ac7f5faf8b10b0df.webp)
+    ![Verbindung hinzufügen.](../../../../../../translated_images/de/add-connection.ac7f5faf8b10b0df.webp)
 
-1. Wählen Sie **Add connection**.
+1. Wählen Sie **Verbindung hinzufügen**.
 
 #### Prompt flow erstellen
 
-Sie haben eine benutzerdefinierte Verbindung in Azure AI Foundry hinzugefügt. Nun erstellen wir einen Prompt flow mit den folgenden Schritten. Anschließend verbinden Sie diesen Prompt flow mit der benutzerdefinierten Verbindung, um das feinabgestimmte Modell innerhalb des Prompt flows zu verwenden.
+Sie haben eine benutzerdefinierte Verbindung in Microsoft Foundry hinzugefügt. Nun erstellen wir einen Prompt flow mit den folgenden Schritten. Anschließend verbinden Sie diesen Prompt flow mit der benutzerdefinierten Verbindung, um das feinabgestimmte Modell innerhalb von Prompt flow zu verwenden.
 
-1. Navigieren Sie zum Azure AI Foundry Projekt, das Sie erstellt haben.
+1. Navigieren Sie zum Microsoft Foundry-Projekt, das Sie erstellt haben.
 
 1. Wählen Sie im linken Seitenmenü **Prompt flow** aus.
 
-1. Wählen Sie im Navigationsmenü **+ Create** aus.
+1. Wählen Sie im Navigationsmenü **+ Erstellen** aus.
 
-    ![Select Promptflow.](../../../../../../translated_images/de/select-promptflow.18ff2e61ab9173eb.webp)
+    ![Promptflow auswählen.](../../../../../../translated_images/de/select-promptflow.18ff2e61ab9173eb.webp)
 
-1. Wählen Sie im Navigationsmenü **Chat flow** aus.
+1. Wählen Sie im Navigationsmenü **Chat-Flow** aus.
 
-    ![Select chat flow.](../../../../../../translated_images/de/select-flow-type.28375125ec9996d3.webp)
+    ![Chat-Flow auswählen.](../../../../../../translated_images/de/select-flow-type.28375125ec9996d3.webp)
 
-1. Geben Sie den **Folder name** ein, den Sie verwenden möchten.
+1. Geben Sie den zu verwendenden **Ordnernamen** ein.
 
-    ![Select chat flow.](../../../../../../translated_images/de/enter-name.02ddf8fb840ad430.webp)
+    ![Chat-Flow auswählen.](../../../../../../translated_images/de/enter-name.02ddf8fb840ad430.webp)
 
-1. Wählen Sie **Create**.
+1. Wählen Sie **Erstellen**.
 
 #### Prompt flow einrichten, um mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell zu chatten
 
-Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow integrieren. Der vorhandene Prompt flow ist jedoch nicht für diesen Zweck ausgelegt. Daher müssen Sie den Prompt flow neu gestalten, um die Integration des benutzerdefinierten Modells zu ermöglichen.
+Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow integrieren. Der bereitgestellte vorhandene Prompt flow ist dafür jedoch nicht ausgelegt. Daher müssen Sie den Prompt flow neu gestalten, um die Integration des benutzerdefinierten Modells zu ermöglichen.
 
-1. Führen Sie im Prompt flow die folgenden Schritte aus, um den bestehenden Flow neu aufzubauen:
+1. Führen Sie im Prompt flow die folgenden Aufgaben aus, um den bestehenden Flow neu zu erstellen:
 
-    - Wählen Sie **Raw file mode**.
+    - Wählen Sie **Modus für Rohdatei** aus.
     - Löschen Sie den gesamten vorhandenen Code in der Datei *flow.dag.yml*.
     - Fügen Sie den folgenden Code in *flow.dag.yml* ein.
 
@@ -276,11 +277,11 @@ Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow inte
             input_data: ${inputs.input_data}
         ```
 
-    - Wählen Sie **Save**.
+    - Wählen Sie **Speichern** aus.
 
-    ![Select raw file mode.](../../../../../../translated_images/de/select-raw-file-mode.06c1eca581ce4f53.webp)
+    ![Modus für Rohdatei auswählen.](../../../../../../translated_images/de/select-raw-file-mode.06c1eca581ce4f53.webp)
 
-1. Fügen Sie den folgenden Code in *integrate_with_promptflow.py* ein, um das benutzerdefinierte Phi-3 / Phi-3.5 Modell im Prompt flow zu verwenden.
+1. Fügen Sie den folgenden Code in *integrate_with_promptflow.py* ein, um das benutzerdefinierte Phi-3 / Phi-3.5 Modell in Prompt flow zu verwenden.
 
     ```python
     import logging
@@ -288,7 +289,7 @@ Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow inte
     from promptflow import tool
     from promptflow.connections import CustomConnection
 
-    # Logging setup
+    # Protokollierungseinrichtung
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
@@ -301,7 +302,7 @@ Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow inte
         Send a request to the Phi-3 / Phi-3.5 model endpoint with the given input data using Custom Connection.
         """
 
-        # "connection" is the name of the Custom Connection, "endpoint", "key" are the keys in the Custom Connection
+        # „connection“ ist der Name der benutzerdefinierten Verbindung, „endpoint“ und „key“ sind die Schlüssel in der benutzerdefinierten Verbindung
         endpoint_url = connection.endpoint
         api_key = connection.key
 
@@ -322,7 +323,7 @@ Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow inte
             response = requests.post(endpoint_url, json=data, headers=headers)
             response.raise_for_status()
             
-            # Log the full JSON response
+            # Die vollständige JSON-Antwort protokollieren
             logger.debug(f"Full JSON response: {response.json()}")
 
             result = response.json()["output"]
@@ -341,164 +342,165 @@ Sie müssen das feinabgestimmte Phi-3 / Phi-3.5 Modell in einen Prompt flow inte
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/de/paste-promptflow-code.cd6d95b101c0ec28.webp)
+    ![Prompt flow Code einfügen.](../../../../../../translated_images/de/paste-promptflow-code.cd6d95b101c0ec28.webp)
 
 > [!NOTE]
-> Für detailliertere Informationen zur Verwendung von Prompt flow in Azure AI Foundry können Sie [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) konsultieren.
+> Für detailliertere Informationen zur Verwendung von Prompt flow in Microsoft Foundry können Sie [Prompt flow in Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) konsultieren.
 
-1. Wählen Sie **Chat input** und **Chat output** aus, um den Chat mit Ihrem Modell zu aktivieren.
+1. Wählen Sie **Chat-Eingabe**, **Chat-Ausgabe** aus, um den Chat mit Ihrem Modell zu aktivieren.
 
-    ![Select Input Output.](../../../../../../translated_images/de/select-input-output.c187fc58f25fbfc3.webp)
+    ![Eingabe und Ausgabe auswählen.](../../../../../../translated_images/de/select-input-output.c187fc58f25fbfc3.webp)
 
-1. Nun sind Sie bereit, mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell zu chatten. Im nächsten Übungsteil lernen Sie, wie Sie Prompt flow starten und es verwenden, um mit Ihrem feinabgestimmten Phi-3 / Phi-3.5 Modell zu kommunizieren.
+1. Nun sind Sie bereit, mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell zu chatten. Im nächsten Übungsteil erfahren Sie, wie Sie Prompt flow starten und es nutzen, um mit Ihrem feinabgestimmten Phi-3 / Phi-3.5 Modell zu chatten.
 
 > [!NOTE]
 >
-> Der neu aufgebaute Flow sollte wie im folgenden Bild aussehen:
+> Der neu erstellte Flow sollte dem folgenden Bild ähneln:
 >
-> ![Flow example](../../../../../../translated_images/de/graph-example.82fd1bcdd3fc545b.webp)
+> ![Beispiel Flow](../../../../../../translated_images/de/graph-example.82fd1bcdd3fc545b.webp)
 >
 
 #### Prompt flow starten
 
-1. Wählen Sie **Start compute sessions**, um Prompt flow zu starten.
+1. Wählen Sie **Computersitzungen starten**, um Prompt flow zu starten.
 
-    ![Start compute session.](../../../../../../translated_images/de/start-compute-session.9acd8cbbd2c43df1.webp)
+    ![Computersitzung starten.](../../../../../../translated_images/de/start-compute-session.9acd8cbbd2c43df1.webp)
 
-1. Wählen Sie **Validate and parse input**, um die Parameter zu aktualisieren.
+1. Wählen Sie **Eingabe validieren und parsen**, um die Parameter zu aktualisieren.
 
-    ![Validate input.](../../../../../../translated_images/de/validate-input.c1adb9543c6495be.webp)
+    ![Eingabe validieren.](../../../../../../translated_images/de/validate-input.c1adb9543c6495be.webp)
 
-1. Wählen Sie den **Value** der **connection** aus, der Ihrer erstellten benutzerdefinierten Verbindung entspricht. Zum Beispiel *connection*.
+1. Wählen Sie den **Wert** der **Verbindung** zu der benutzerdefinierten Verbindung aus, die Sie erstellt haben. Zum Beispiel *connection*.
 
-    ![Connection.](../../../../../../translated_images/de/select-connection.1f2b59222bcaafef.webp)
+    ![Verbindung auswählen.](../../../../../../translated_images/de/select-connection.1f2b59222bcaafef.webp)
 
-#### Chatten Sie mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell
+#### Mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell chatten
 
-1. Wählen Sie **Chat**.
+1. Wählen Sie **Chat** aus.
 
-    ![Select chat.](../../../../../../translated_images/de/select-chat.0406bd9687d0c49d.webp)
+    ![Chat auswählen.](../../../../../../translated_images/de/select-chat.0406bd9687d0c49d.webp)
 
-1. Hier ein Beispiel für die Ergebnisse: Jetzt können Sie mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell chatten. Es wird empfohlen, Fragen basierend auf den Daten zu stellen, die für das Fine-Tuning verwendet wurden.
+1. Hier ein Beispiel der Ergebnisse: Nun können Sie mit Ihrem benutzerdefinierten Phi-3 / Phi-3.5 Modell chatten. Es wird empfohlen, Fragen basierend auf den Daten zu stellen, die für das Feintuning verwendet wurden.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/de/chat-with-promptflow.1cf8cea112359ada.webp)
+    ![Mit Prompt flow chatten.](../../../../../../translated_images/de/chat-with-promptflow.1cf8cea112359ada.webp)
 
 ### Azure OpenAI bereitstellen, um das Phi-3 / Phi-3.5 Modell zu bewerten
 
-Um das Phi-3 / Phi-3.5 Modell in Azure AI Foundry zu bewerten, müssen Sie ein Azure OpenAI Modell bereitstellen. Dieses Modell wird verwendet, um die Leistung des Phi-3 / Phi-3.5 Modells zu evaluieren.
+Um das Phi-3 / Phi-3.5 Modell in Microsoft Foundry zu bewerten, müssen Sie ein Azure OpenAI Modell bereitstellen. Dieses Modell wird verwendet, um die Leistung des Phi-3 / Phi-3.5 Modells zu evaluieren.
 
 #### Azure OpenAI bereitstellen
 
-1. Melden Sie sich bei [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) an.
+1. Melden Sie sich bei [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) an.
 
-1. Navigieren Sie zum Azure AI Foundry Projekt, das Sie erstellt haben.
+1. Navigieren Sie zum Microsoft Foundry-Projekt, das Sie erstellt haben.
 
-    ![Select Project.](../../../../../../translated_images/de/select-project-created.5221e0e403e2c9d6.webp)
+    ![Projekt auswählen.](../../../../../../translated_images/de/select-project-created.5221e0e403e2c9d6.webp)
 
-1. Wählen Sie im Projekt im linken Seitenmenü **Deployments** aus.
+1. Wählen Sie im erstellten Projekt im linken Seitenmenü **Bereitstellungen** aus.
 
-1. Wählen Sie im Navigationsmenü **+ Deploy model** aus.
+1. Wählen Sie im Navigationsmenü **Modell bereitstellen** aus.
 
-1. Wählen Sie **Deploy base model**.
+1. Wählen Sie **Basismodell bereitstellen** aus.
 
-    ![Select Deployments.](../../../../../../translated_images/de/deploy-openai-model.95d812346b25834b.webp)
+    ![Bereitstellungen auswählen.](../../../../../../translated_images/de/deploy-openai-model.95d812346b25834b.webp)
 
 1. Wählen Sie das Azure OpenAI Modell aus, das Sie verwenden möchten. Zum Beispiel **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/de/select-openai-model.959496d7e311546d.webp)
+    ![Azure OpenAI Modell auswählen.](../../../../../../translated_images/de/select-openai-model.959496d7e311546d.webp)
 
-1. Wählen Sie **Confirm**.
+1. Wählen Sie **Bestätigen**.
 
-### Das feinabgestimmte Phi-3 / Phi-3.5 Modell mit der Prompt flow Evaluation von Azure AI Foundry bewerten
+### Feinabgestimmtes Phi-3 / Phi-3.5 Modell mit der Prompt flow Bewertung von Microsoft Foundry evaluieren
 
-### Neue Evaluation starten
+### Neue Bewertung starten
 
-1. Besuchen Sie [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Besuchen Sie [Microsoft Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigieren Sie zum Azure AI Foundry Projekt, das Sie erstellt haben.
+1. Navigieren Sie zum Microsoft Foundry-Projekt, das Sie erstellt haben.
 
-    ![Select Project.](../../../../../../translated_images/de/select-project-created.5221e0e403e2c9d6.webp)
+    ![Projekt auswählen.](../../../../../../translated_images/de/select-project-created.5221e0e403e2c9d6.webp)
 
-1. Wählen Sie im Projekt im linken Seitenmenü **Evaluation** aus.
+1. Wählen Sie im erstellten Projekt im linken Seitenmenü **Bewertung** aus.
 
-1. Wählen Sie im Navigationsmenü **+ New evaluation** aus.
+1. Wählen Sie im Navigationsmenü **+ Neue Bewertung** aus.
 
-    ![Select evaluation.](../../../../../../translated_images/de/select-evaluation.2846ad7aaaca7f4f.webp)
+    ![Bewertung auswählen.](../../../../../../translated_images/de/select-evaluation.2846ad7aaaca7f4f.webp)
 
-1. Wählen Sie die **Prompt flow** Evaluation aus.
+1. Wählen Sie die Bewertung **Prompt flow** aus.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/de/promptflow-evaluation.cb9758cc19b4760f.webp)
+    ![Prompt flow Bewertung auswählen.](../../../../../../translated_images/de/promptflow-evaluation.cb9758cc19b4760f.webp)
 
-1. Führen Sie die folgenden Schritte aus:
+1. Führen Sie die folgenden Aufgaben aus:
 
-    - Geben Sie einen Namen für die Evaluation ein. Dieser muss eindeutig sein.
-    - Wählen Sie als Aufgabentyp **Question and answer without context** aus, da der im Tutorial verwendete Datensatz **ULTRACHAT_200k** keinen Kontext enthält.
-    - Wählen Sie den Prompt flow aus, den Sie evaluieren möchten.
+    - Geben Sie den Namen der Bewertung ein. Er muss ein eindeutiger Wert sein.
+    - Wählen Sie als Aufgabentyp **Frage und Antwort ohne Kontext** aus, da der in diesem Tutorial verwendete **ULTRACHAT_200k** Datensatz keinen Kontext enthält.
+    - Wählen Sie den Prompt flow aus, den Sie bewerten möchten.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/de/evaluation-setting1.4aa08259ff7a536e.webp)
+    ![Prompt flow Bewertung.](../../../../../../translated_images/de/evaluation-setting1.4aa08259ff7a536e.webp)
 
-1. Wählen Sie **Next**.
+1. Wählen Sie **Weiter**.
 
-1. Führen Sie die folgenden Schritte aus:
+1. Führen Sie die folgenden Aufgaben aus:
 
-    - Wählen Sie **Add your dataset**, um den Datensatz hochzuladen. Zum Beispiel können Sie die Testdatendatei *test_data.json1* hochladen, die im **ULTRACHAT_200k** Datensatz enthalten ist.
-    - Wählen Sie die passende **Dataset column** aus, die zu Ihrem Datensatz passt. Wenn Sie den **ULTRACHAT_200k** Datensatz verwenden, wählen Sie **${data.prompt}** als Dataset-Spalte.
+    - Wählen Sie **Datensatz hinzufügen** aus, um den Datensatz hochzuladen. Beispielsweise können Sie die Testdatensatz-Datei *test_data.json1* hochladen, die im **ULTRACHAT_200k** Datensatz enthalten ist.
+    - Wählen Sie die entsprechende **Datensatzspalte** aus, die zu Ihrem Datensatz passt. Wenn Sie beispielsweise den **ULTRACHAT_200k** Datensatz verwenden, wählen Sie **${data.prompt}** als Datensatzspalte.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/de/evaluation-setting2.07036831ba58d64e.webp)
+    ![Prompt flow Bewertung.](../../../../../../translated_images/de/evaluation-setting2.07036831ba58d64e.webp)
 
-1. Wählen Sie **Next**.
+1. Wählen Sie **Weiter**.
 
-1. Führen Sie die folgenden Schritte aus, um die Leistungs- und Qualitätsmetriken zu konfigurieren:
+1. Konfigurieren Sie die Leistungs- und Qualitätsmetriken mit den folgenden Aufgaben:
 
     - Wählen Sie die Leistungs- und Qualitätsmetriken aus, die Sie verwenden möchten.
-    - Wählen Sie das Azure OpenAI Modell aus, das Sie für die Evaluation erstellt haben. Zum Beispiel **gpt-4o**.
+    - Wählen Sie das Azure OpenAI-Modell aus, das Sie für die Bewertung erstellt haben. Zum Beispiel **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/de/evaluation-setting3-1.d1ae69e3bf80914e.webp)
+    ![Prompt flow Bewertung.](../../../../../../translated_images/de/evaluation-setting3-1.d1ae69e3bf80914e.webp)
 
-1. Führen Sie die folgenden Schritte aus, um die Risiko- und Sicherheitsmetriken zu konfigurieren:
+1. Konfigurieren Sie die Risiko- und Sicherheitsmetriken mit den folgenden Aufgaben:
 
     - Wählen Sie die Risiko- und Sicherheitsmetriken aus, die Sie verwenden möchten.
-    - Wählen Sie den Schwellenwert aus, der zur Berechnung der Fehlerquote verwendet werden soll. Zum Beispiel **Medium**.
-    - Für **question** wählen Sie als **Data source** **{$data.prompt}**.
-    - Für **answer** wählen Sie als **Data source** **{$run.outputs.answer}**.
-    - Für **ground_truth** wählen Sie als **Data source** **{$data.message}**.
+    - Wählen Sie den Schwellenwert aus, um die Fehlerquote zu berechnen. Zum Beispiel **Mittel**.
+    - Für **Frage** wählen Sie **Datenquelle** als **{$data.prompt}**.
+    - Für **Antwort** wählen Sie **Datenquelle** als **{$run.outputs.answer}**.
+    - Für **Ground Truth** wählen Sie **Datenquelle** als **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/de/evaluation-setting3-2.d53bd075c60a45a2.webp)
+    ![Prompt flow Bewertung.](../../../../../../translated_images/de/evaluation-setting3-2.d53bd075c60a45a2.webp)
 
-1. Wählen Sie **Next**.
+1. Wählen Sie **Weiter**.
 
-1. Wählen Sie **Submit**, um die Evaluation zu starten.
+1. Wählen Sie **Absenden**, um die Bewertung zu starten.
 
-1. Die Evaluation benötigt einige Zeit zur Durchführung. Sie können den Fortschritt im Tab **Evaluation** verfolgen.
+1. Die Bewertung benötigt einige Zeit zur Durchführung. Sie können den Fortschritt im **Bewertung**-Tab verfolgen.
 
-### Evaluationsergebnisse überprüfen
+### Bewertungsergebnisse überprüfen
+
 > [!NOTE]
-> Die unten dargestellten Ergebnisse sollen den Evaluierungsprozess veranschaulichen. In diesem Tutorial haben wir ein Modell verwendet, das auf einem relativ kleinen Datensatz feinabgestimmt wurde, was zu suboptimalen Ergebnissen führen kann. Die tatsächlichen Ergebnisse können je nach Größe, Qualität und Vielfalt des verwendeten Datensatzes sowie der spezifischen Konfiguration des Modells erheblich variieren.
-Sobald die Bewertung abgeschlossen ist, können Sie die Ergebnisse sowohl für Leistungs- als auch Sicherheitsmetriken überprüfen.
+> Die unten dargestellten Ergebnisse dienen zur Veranschaulichung des Bewertungsprozesses. In diesem Tutorial wurde ein Modell verwendet, das auf einem relativ kleinen Datensatz feinabgestimmt wurde, was zu suboptimalen Ergebnissen führen kann. Die tatsächlichen Ergebnisse können je nach Größe, Qualität und Vielfalt des verwendeten Datensatzes sowie der spezifischen Modellkonfiguration erheblich variieren.
 
+Nach Abschluss der Bewertung können Sie die Ergebnisse sowohl der Leistungs- als auch der Sicherheitsmetriken überprüfen.
 1. Leistungs- und Qualitätsmetriken:
 
-    - Bewerten Sie die Effektivität des Modells bei der Generierung kohärenter, flüssiger und relevanter Antworten.
+    - Beurteilen Sie die Effektivität des Modells bei der Erzeugung kohärenter, flüssiger und relevanter Antworten.
 
     ![Evaluation result.](../../../../../../translated_images/de/evaluation-result-gpu.85f48b42dfb74254.webp)
 
 1. Risiko- und Sicherheitsmetriken:
 
-    - Stellen Sie sicher, dass die Ausgaben des Modells sicher sind und den Responsible AI Principles entsprechen, indem schädliche oder anstößige Inhalte vermieden werden.
+    - Stellen Sie sicher, dass die Ausgaben des Modells sicher sind und den Prinzipien der verantwortungsvollen KI entsprechen, wobei schädliche oder anstößige Inhalte vermieden werden.
 
     ![Evaluation result.](../../../../../../translated_images/de/evaluation-result-gpu-2.1b74e336118f4fd0.webp)
 
-1. Sie können nach unten scrollen, um die **detaillierten Metrikergebnisse** anzusehen.
+1. Sie können nach unten scrollen, um **detaillierte Metrikergebnisse** anzuzeigen.
 
     ![Evaluation result.](../../../../../../translated_images/de/detailed-metrics-result.afa2f5c39a4f5f17.webp)
 
-1. Durch die Bewertung Ihres benutzerdefinierten Phi-3 / Phi-3.5 Modells anhand von Leistungs- und Sicherheitsmetriken können Sie bestätigen, dass das Modell nicht nur effektiv ist, sondern auch verantwortungsbewusste KI-Praktiken einhält und somit für den Einsatz in der Praxis bereit ist.
+1. Durch die Bewertung Ihres benutzerdefinierten Phi-3 / Phi-3.5-Modells anhand von Leistungs- und Sicherheitsmetriken können Sie bestätigen, dass das Modell nicht nur effektiv ist, sondern auch verantwortungsvollen KI-Praktiken entspricht und somit für den Einsatz in der Praxis bereit ist.
 
 ## Herzlichen Glückwunsch!
 
 ### Sie haben dieses Tutorial abgeschlossen
 
-Sie haben erfolgreich das feinabgestimmte Phi-3 Modell bewertet, das in Prompt flow in Azure AI Foundry integriert ist. Dies ist ein wichtiger Schritt, um sicherzustellen, dass Ihre KI-Modelle nicht nur gute Leistungen erbringen, sondern auch den Responsible AI-Prinzipien von Microsoft entsprechen, damit Sie vertrauenswürdige und zuverlässige KI-Anwendungen entwickeln können.
+Sie haben erfolgreich das feinabgestimmte Phi-3-Modell bewertet, das in Prompt flow in Microsoft Foundry integriert ist. Dies ist ein wichtiger Schritt, um sicherzustellen, dass Ihre KI-Modelle nicht nur gute Leistungen erbringen, sondern auch den Responsible AI-Prinzipien von Microsoft folgen, um vertrauenswürdige und zuverlässige KI-Anwendungen zu erstellen.
 
 ![Architecture.](../../../../../../translated_images/de/architecture.10bec55250f5d6a4.webp)
 
@@ -507,29 +509,33 @@ Sie haben erfolgreich das feinabgestimmte Phi-3 Modell bewertet, das in Prompt f
 Bereinigen Sie Ihre Azure-Ressourcen, um zusätzliche Kosten auf Ihrem Konto zu vermeiden. Gehen Sie zum Azure-Portal und löschen Sie die folgenden Ressourcen:
 
 - Die Azure Machine Learning-Ressource.
-- Den Azure Machine Learning Modell-Endpunkt.
-- Die Azure AI Foundry Projekt-Ressource.
-- Die Azure AI Foundry Prompt flow-Ressource.
+- Den Azure Machine Learning Model Endpoint.
+- Die Microsoft Foundry-Projektressource.
+- Die Microsoft Foundry Prompt flow-Ressource.
 
 ### Nächste Schritte
 
 #### Dokumentation
 
-- [Assess AI systems by using the Responsible AI dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [Evaluation and monitoring metrics for generative AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
-- [Prompt flow documentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
+- [Bewerten von KI-Systemen mit dem Responsible AI-Dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Evaluations- und Überwachungsmetriken für generative KI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [Microsoft Foundry-Dokumentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Prompt flow-Dokumentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Schulungsinhalte
 
-- [Introduction to Microsoft's Responsible AI Approach](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Introduction to Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Einführung in Microsofts Responsible AI-Ansatz](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
+- [Einführung in Microsoft Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Referenz
 
-- [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [Announcing new tools in Azure AI to help you build more secure and trustworthy generative AI applications](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [Was ist Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
+- [Ankündigung neuer Tools in Azure AI zur Unterstützung beim Aufbau sichererer und vertrauenswürdiger generativer KI-Anwendungen](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [Evaluierung generativer KI-Anwendungen](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in der Originalsprache ist als maßgebliche Quelle anzusehen. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
