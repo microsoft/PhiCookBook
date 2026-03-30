@@ -1,46 +1,52 @@
-# **Usando o Azure AI Foundry para avaliação**
+# **Usando o Microsoft Foundry para avaliação**
 
 ![aistudo](../../../../../translated_images/pt-BR/AIFoundry.9e0b513e999a1c5a.webp)
 
-Como avaliar sua aplicação de IA generativa usando o [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Seja para avaliar conversas de turno único ou múltiplos turnos, o Azure AI Foundry oferece ferramentas para medir o desempenho e a segurança do modelo.
+Como avaliar sua aplicação de IA generativa usando o [Microsoft Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Seja você avaliando conversas de uma única rodada ou multilaterais, o Microsoft Foundry fornece ferramentas para avaliar o desempenho e a segurança do modelo.
 
 ![aistudo](../../../../../translated_images/pt-BR/AIPortfolio.69da59a8e1eaa70f.webp)
 
-## Como avaliar apps de IA generativa com o Azure AI Foundry  
-Para instruções mais detalhadas, consulte a [Documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Como avaliar aplicativos de IA generativa com o Microsoft Foundry
+Para instruções mais detalhadas, veja a [Documentação do Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
 Aqui estão os passos para começar:
 
-## Avaliando Modelos de IA Generativa no Azure AI Foundry
+## Avaliando Modelos de IA Generativa no Microsoft Foundry
 
 **Pré-requisitos**
 
-- Um conjunto de dados de teste em formato CSV ou JSON.  
-- Um modelo de IA generativa implantado (como Phi-3, GPT 3.5, GPT 4 ou modelos Davinci).  
-- Um runtime com uma instância de computação para executar a avaliação.
+- Um conjunto de dados de teste no formato CSV ou JSON.
+- Um modelo de IA generativa implantado (como Phi-3, GPT 3.5, GPT 4 ou modelos Davinci).
+- Um ambiente de execução com uma instância de computação para realizar a avaliação.
 
 ## Métricas de Avaliação Integradas
 
-O Azure AI Foundry permite avaliar tanto conversas de turno único quanto conversas complexas de múltiplos turnos.  
-Para cenários de Retrieval Augmented Generation (RAG), onde o modelo é fundamentado em dados específicos, você pode avaliar o desempenho usando métricas de avaliação integradas.  
-Além disso, é possível avaliar cenários gerais de perguntas e respostas de turno único (não-RAG).
+O Microsoft Foundry permite avaliar tanto conversas de uma única rodada quanto conversas complexas e multilaterais.
+Para cenários de Geração Aumentada por Recuperação (RAG), onde o modelo está fundamentado em dados específicos, você pode avaliar o desempenho usando métricas de avaliação integradas.
+Além disso, é possível avaliar cenários gerais de perguntas e respostas de uma única rodada (não-RAG).
 
 ## Criando uma Execução de Avaliação
 
-Na interface do Azure AI Foundry, navegue até a página Evaluate ou Prompt Flow.  
-Siga o assistente de criação de avaliação para configurar uma execução de avaliação. Forneça um nome opcional para sua avaliação.  
-Selecione o cenário que melhor se alinha aos objetivos da sua aplicação.  
+No UI do Microsoft Foundry, navegue até a página Avaliar ou a página Fluxo de Prompt.
+Siga o assistente de criação de avaliação para configurar uma execução de avaliação. Forneça um nome opcional para sua avaliação.
+Selecione o cenário que esteja alinhado com os objetivos do seu aplicativo.
 Escolha uma ou mais métricas de avaliação para analisar a saída do modelo.
 
 ## Fluxo de Avaliação Personalizado (Opcional)
 
-Para maior flexibilidade, você pode criar um fluxo de avaliação personalizado. Personalize o processo de avaliação conforme suas necessidades específicas.
+Para maior flexibilidade, você pode estabelecer um fluxo de avaliação personalizado. Personalize o processo de avaliação com base em seus requisitos específicos.
 
 ## Visualizando Resultados
 
-Após executar a avaliação, registre, visualize e analise métricas detalhadas no Azure AI Foundry. Obtenha insights sobre as capacidades e limitações da sua aplicação.
+Após executar a avaliação, registre, visualize e analise métricas detalhadas de avaliação no Microsoft Foundry. Obtenha insights sobre as capacidades e limitações do seu aplicativo.
 
-**Note** O Azure AI Foundry está atualmente em prévia pública, portanto, use-o para experimentação e desenvolvimento. Para cargas de trabalho em produção, considere outras opções. Explore a [documentação oficial do AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) para mais detalhes e instruções passo a passo.
 
+
+**Nota** O Microsoft Foundry está atualmente em prévia pública, portanto use-o para experimentação e fins de desenvolvimento. Para cargas de trabalho em produção, considere outras opções. Explore a [documentação oficial do AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) para mais detalhes e instruções passo a passo.
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,14 +1,14 @@
-# Ajustando o Phi-3 com Azure AI Foundry
+# Ajuste fino do Phi-3 com Microsoft Foundry
 
-Vamos explorar como ajustar o modelo de linguagem Phi-3 Mini da Microsoft usando o Azure AI Foundry. O ajuste fino permite adaptar o Phi-3 Mini para tarefas específicas, tornando-o ainda mais poderoso e sensível ao contexto.
+Vamos explorar como ajustar finamente o modelo de linguagem Phi-3 Mini da Microsoft usando o Microsoft Foundry. O ajuste fino permite adaptar o Phi-3 Mini a tarefas específicas, tornando-o ainda mais poderoso e com maior consciência de contexto.
 
 ## Considerações
 
-- **Capacidades:** Quais modelos podem ser ajustados? Para que o modelo base pode ser ajustado?
-- **Custo:** Qual é o modelo de precificação para ajuste fino?
-- **Personalização:** Até que ponto posso modificar o modelo base – e de que formas?
-- **Conveniência:** Como o ajuste fino acontece na prática – preciso escrever código personalizado? Preciso trazer meu próprio poder computacional?
-- **Segurança:** Modelos ajustados são conhecidos por apresentar riscos de segurança – existem mecanismos de proteção para evitar danos não intencionais?
+- **Capacidades:** Quais modelos podem ser ajustados finamente? Para que o modelo base pode ser ajustado?
+- **Custo:** Qual o modelo de precificação para ajuste fino
+- **Personalização:** Até que ponto posso modificar o modelo base – e de que maneiras?
+- **Conveniência:** Como o ajuste fino realmente acontece – preciso escrever código personalizado? Preciso trazer minha própria capacidade de computação?
+- **Segurança:** Modelos ajustados finamente são conhecidos por terem riscos de segurança – existem proteções implementadas para evitar danos não intencionais?
 
 ![AIFoundry Models](../../../../translated_images/pt-BR/AIFoundryModels.0e1b16f7d0b09b73.webp)
 
@@ -17,12 +17,12 @@ Vamos explorar como ajustar o modelo de linguagem Phi-3 Mini da Microsoft usando
 ### Pré-requisitos
 
 > [!NOTE]
-> Para modelos da família Phi-3, a oferta de ajuste fino no modelo pay-as-you-go está disponível apenas para hubs criados na região **East US 2**.
+> Para modelos da família Phi-3, a oferta de ajuste fino pay-as-you-go está disponível apenas para hubs criados nas regiões **East US 2**.
 
-- Uma assinatura do Azure. Se você não tem uma assinatura, crie uma [conta Azure paga](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) para começar.
+- Uma assinatura Azure. Se você não tem uma assinatura Azure, crie uma [conta Azure paga](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) para começar.
 
 - Um [projeto AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- O controle de acesso baseado em função do Azure (Azure RBAC) é usado para conceder acesso às operações no Azure AI Foundry. Para realizar os passos deste artigo, sua conta de usuário deve ter a __função Azure AI Developer__ atribuída no grupo de recursos.
+- Os controles de acesso baseados em função do Azure (Azure RBAC) são usados para conceder acesso às operações no Microsoft Foundry. Para executar as etapas deste artigo, sua conta de usuário deve ter a __função Azure AI Developer__ atribuída ao grupo de recursos.
 
 ### Registro do provedor de assinatura
 
@@ -36,17 +36,17 @@ Verifique se a assinatura está registrada no provedor de recursos `Microsoft.Ne
 
 ### Preparação dos dados
 
-Prepare seus dados de treinamento e validação para ajustar seu modelo. Seus conjuntos de dados de treinamento e validação consistem em exemplos de entrada e saída que mostram como você deseja que o modelo se comporte.
+Prepare seus dados de treinamento e validação para ajustar seu modelo. Seus conjuntos de dados de treinamento e validação consistem em exemplos de entrada e saída para como você deseja que o modelo se comporte.
 
 Certifique-se de que todos os seus exemplos de treinamento sigam o formato esperado para inferência. Para ajustar modelos de forma eficaz, garanta um conjunto de dados equilibrado e diversificado.
 
-Isso envolve manter o equilíbrio dos dados, incluir vários cenários e refinar periodicamente os dados de treinamento para alinhar com as expectativas do mundo real, resultando em respostas mais precisas e equilibradas do modelo.
+Isso envolve manter o equilíbrio dos dados, incluir vários cenários e refinar periodicamente os dados de treinamento para alinhar com as expectativas do mundo real, levando a respostas mais precisas e equilibradas do modelo.
 
-Diferentes tipos de modelos exigem formatos diferentes para os dados de treinamento.
+Diferentes tipos de modelos exigem formatos diferentes de dados de treinamento.
 
 ### Chat Completion
 
-Os dados de treinamento e validação que você usar **devem** estar formatados como um documento JSON Lines (JSONL). Para `Phi-3-mini-128k-instruct`, o conjunto de dados para ajuste fino deve estar no formato conversacional usado pela API de Chat completions.
+Os dados de treinamento e validação que você usar **devem** estar formatados como um documento JSON Lines (JSONL). Para o `Phi-3-mini-128k-instruct`, o conjunto de dados para ajuste fino deve estar no formato conversacional usado pela API de Chat completions.
 
 ### Exemplo de formato de arquivo
 
@@ -55,60 +55,60 @@ Os dados de treinamento e validação que você usar **devem** estar formatados 
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Can I play PC games on my Xbox?"}, {"role": "assistant", "content": "While Xbox consoles don't natively support PC games, they can play an array of Xbox games, many of which are also available on PC. Can I assist you with finding games compatible with your Xbox device?"}]}
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
+  
+O tipo de arquivo suportado é JSON Lines. Os arquivos são carregados no datastore padrão e disponibilizados no seu projeto.
 
-O tipo de arquivo suportado é JSON Lines. Os arquivos são enviados para o datastore padrão e disponibilizados no seu projeto.
+## Ajustando fino o Phi-3 com Microsoft Foundry
 
-## Ajustando o Phi-3 com Azure AI Foundry
-
-O Azure AI Foundry permite personalizar grandes modelos de linguagem com seus próprios conjuntos de dados por meio de um processo conhecido como ajuste fino. O ajuste fino oferece grande valor ao possibilitar a customização e otimização para tarefas e aplicações específicas. Isso resulta em melhor desempenho, eficiência de custo, menor latência e saídas personalizadas.
+O Microsoft Foundry permite que você personalize grandes modelos de linguagem com seus próprios conjuntos de dados, usando um processo conhecido como ajuste fino. O ajuste fino oferece valor significativo ao permitir personalização e otimização para tarefas e aplicações específicas. Isso resulta em melhor desempenho, eficiência de custo, redução de latência e saídas personalizadas.
 
 ![Finetune AI Foundry](../../../../translated_images/pt-BR/AIFoundryfinetune.193aaddce48d553c.webp)
 
-### Criar um Novo Projeto
+### Criar um novo projeto
 
-1. Faça login no [Azure AI Foundry](https://ai.azure.com).
+1. Faça login no [Microsoft Foundry](https://ai.azure.com).
 
-1. Selecione **+New project** para criar um novo projeto no Azure AI Foundry.
+1. Selecione **+Novo projeto** para criar um novo projeto no Microsoft Foundry.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/select-new-project.cd31c0404088d7a3.webp)
 
-1. Realize as seguintes tarefas:
+1. Execute as seguintes tarefas:
 
-    - Nome do **Hub** do projeto. Deve ser um valor único.
-    - Selecione o **Hub** a ser usado (crie um novo, se necessário).
+    - Nome do **Hub** do projeto. Deve ser um valor exclusivo.
+    - Selecione o **Hub** a ser usado (crie um novo se necessário).
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/create-project.ca3b71298b90e420.webp)
 
-1. Realize as seguintes tarefas para criar um novo hub:
+1. Execute as seguintes tarefas para criar um novo hub:
 
-    - Insira o **Nome do Hub**. Deve ser um valor único.
-    - Selecione sua **Assinatura** do Azure.
-    - Selecione o **Grupo de recursos** a ser usado (crie um novo, se necessário).
+    - Insira o **Nome do Hub**. Deve ser um valor exclusivo.
+    - Selecione sua **Assinatura** Azure.
+    - Selecione o **Grupo de recursos** a ser usado (crie um novo se necessário).
     - Selecione a **Localização** que deseja usar.
-    - Selecione o **Connect Azure AI Services** a ser usado (crie um novo, se necessário).
-    - Selecione **Connect Azure AI Search** para **Pular conexão**.
+    - Selecione **Conectar serviços Azure AI** para usar (crie um novo se necessário).
+    - Selecione **Conectar Azure AI Search** para **Pular conexão**.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/create-hub.49e53d235e80779e.webp)
 
-1. Selecione **Next**.
-1. Selecione **Create a project**.
+1. Selecione **Avançar**.
+1. Selecione **Criar um projeto**.
 
-### Preparação dos Dados
+### Preparação dos dados
 
-Antes do ajuste fino, reúna ou crie um conjunto de dados relevante para sua tarefa, como instruções de chat, pares de perguntas e respostas ou qualquer outro dado textual pertinente. Limpe e pré-processe esses dados removendo ruídos, tratando valores ausentes e tokenizando o texto.
+Antes do ajuste fino, reúna ou crie um conjunto de dados relevante para sua tarefa, como instruções de chat, pares pergunta-resposta ou qualquer outro dado textual pertinente. Limpe e pré-processe esses dados removendo ruídos, lidando com valores ausentes e tokenizando o texto.
 
-### Ajuste fino dos modelos Phi-3 no Azure AI Foundry
+### Ajuste fino dos modelos Phi-3 no Microsoft Foundry
 
 > [!NOTE]
-> O ajuste fino dos modelos Phi-3 é atualmente suportado apenas em projetos localizados na região East US 2.
+> O ajuste fino dos modelos Phi-3 é atualmente suportado apenas em projetos localizados em East US 2.
 
-1. Selecione **Model catalog** na aba lateral esquerda.
+1. Selecione **Catálogo de modelos** na aba à esquerda.
 
-1. Digite *phi-3* na **barra de busca** e selecione o modelo phi-3 que deseja usar.
+1. Digite *phi-3* na **barra de pesquisa** e selecione o modelo phi-3 que deseja usar.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/select-model.60ef2d4a6a3cec57.webp)
 
-1. Selecione **Fine-tune**.
+1. Selecione **Ajustar fino**.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/select-finetune.a976213b543dd9d8.webp)
 
@@ -116,24 +116,24 @@ Antes do ajuste fino, reúna ou crie um conjunto de dados relevante para sua tar
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/finetune1.c2b39463f0d34148.webp)
 
-1. Selecione **Next**.
+1. Selecione **Avançar**.
 
-1. Realize as seguintes tarefas:
+1. Execute as tarefas seguintes:
 
     - Selecione o **tipo de tarefa** para **Chat completion**.
-    - Selecione os **dados de treinamento** que deseja usar. Você pode enviá-los pelo Azure AI Foundry ou do seu ambiente local.
+    - Selecione os **dados de treinamento** que deseja usar. Você pode enviá-los pelo Microsoft Foundry ou do seu ambiente local.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/finetune2.43cb099b1a94442d.webp)
 
-1. Selecione **Next**.
+1. Selecione **Avançar**.
 
-1. Envie os **dados de validação** que deseja usar ou selecione **Divisão automática dos dados de treinamento**.
+1. Faça upload dos **dados de validação** que deseja usar ou selecione **Divisão automática dos dados de treinamento**.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/finetune3.fd96121b67dcdd92.webp)
 
-1. Selecione **Next**.
+1. Selecione **Avançar**.
 
-1. Realize as seguintes tarefas:
+1. Execute as seguintes tarefas:
 
     - Selecione o **multiplicador do tamanho do lote** que deseja usar.
     - Selecione a **taxa de aprendizado** que deseja usar.
@@ -141,75 +141,76 @@ Antes do ajuste fino, reúna ou crie um conjunto de dados relevante para sua tar
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/finetune4.e18b80ffccb5834a.webp)
 
-1. Selecione **Submit** para iniciar o processo de ajuste fino.
+1. Selecione **Enviar** para iniciar o processo de ajuste fino.
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/select-submit.0a3802d581bac271.webp)
 
-1. Quando seu modelo estiver ajustado, o status será exibido como **Completed**, conforme a imagem abaixo. Agora você pode implantar o modelo e usá-lo em sua própria aplicação, no playground ou no prompt flow. Para mais informações, veja [Como implantar a família de modelos pequenos Phi-3 com Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+1. Assim que seu modelo for ajustado, o status será exibido como **Concluído**, conforme mostrado na imagem abaixo. Agora você pode implantar o modelo e usá-lo em sua própria aplicação, no playground ou no prompt flow. Para mais informações, veja [Como implantar a família Phi-3 de modelos pequenos com Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
     ![FineTuneSelect](../../../../translated_images/pt-BR/completed.4dc8d2357144cdef.webp)
 
 > [!NOTE]
-> Para informações mais detalhadas sobre ajuste fino do Phi-3, visite [Ajuste fino dos modelos Phi-3 no Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Para informações mais detalhadas sobre ajuste fino do Phi-3, visite [Ajustar Phi-3 modelos no Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Limpando seus modelos ajustados
 
-Você pode excluir um modelo ajustado da lista de modelos ajustados no [Azure AI Foundry](https://ai.azure.com) ou na página de detalhes do modelo. Selecione o modelo ajustado que deseja excluir na página de Ajuste Fino e depois selecione o botão Excluir para removê-lo.
+Você pode excluir um modelo ajustado da lista de modelos ajustados no [Microsoft Foundry](https://ai.azure.com) ou na página de detalhes do modelo. Selecione o modelo ajustado que deseja excluir na página de Ajuste fino e depois selecione o botão Excluir para remover o modelo ajustado.
 
 > [!NOTE]
-> Você não pode excluir um modelo personalizado se ele tiver uma implantação existente. Primeiro, é necessário excluir a implantação do modelo antes de poder excluir o modelo personalizado.
+> Você não pode excluir um modelo personalizado se ele tiver uma implantação existente. Primeiro, você deve excluir a implantação do modelo antes de excluir o modelo personalizado.
 
 ## Custos e cotas
 
 ### Considerações sobre custo e cota para modelos Phi-3 ajustados como serviço
 
-Modelos Phi ajustados como serviço são oferecidos pela Microsoft e integrados ao Azure AI Foundry para uso. Você pode encontrar os preços ao [implantar](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ou ajustar os modelos na aba Preços e termos do assistente de implantação.
+Modelos Phi ajustados como serviço são oferecidos pela Microsoft e integrados ao Microsoft Foundry para uso. Você pode encontrar a precificação ao [implantar](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ou ajustar os modelos na aba de Preços e termos no assistente de implantação.
 
 ## Filtragem de conteúdo
 
-Modelos implantados como serviço no modelo pay-as-you-go são protegidos pelo Azure AI Content Safety. Quando implantados em endpoints em tempo real, você pode optar por desativar essa funcionalidade. Com o Azure AI Content Safety ativado, tanto o prompt quanto a resposta passam por um conjunto de modelos de classificação que detectam e previnem a geração de conteúdo prejudicial. O sistema de filtragem detecta e age sobre categorias específicas de conteúdo potencialmente nocivo tanto nos prompts de entrada quanto nas respostas geradas. Saiba mais sobre [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modelos implantados como serviço pay-as-you-go são protegidos pelo Azure AI Content Safety. Quando implantados em endpoints em tempo real, você pode optar por desabilitar essa capacidade. Com o Azure AI Content Safety habilitado, tanto o prompt quanto a completude passam por um conjunto de modelos de classificação destinados a detectar e evitar a produção de conteúdo prejudicial. O sistema de filtragem de conteúdo detecta e atua sobre categorias específicas de conteúdo potencialmente prejudicial tanto em prompts de entrada quanto em completudes de saída. Saiba mais sobre [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
 **Configuração do Ajuste Fino**
 
-Hiperparâmetros: Defina hiperparâmetros como taxa de aprendizado, tamanho do lote e número de épocas de treinamento.
+Hiperparâmetros: Defina hiperparâmetros, como taxa de aprendizado, tamanho do lote e número de épocas de treinamento.
 
-**Função de Perda**
+**Função de perda**
 
-Escolha uma função de perda adequada para sua tarefa (ex.: entropia cruzada).
+Escolha uma função de perda adequada para sua tarefa (por exemplo, entropia cruzada).
 
 **Otimizador**
 
-Selecione um otimizador (ex.: Adam) para as atualizações de gradiente durante o treinamento.
+Selecione um otimizador (por exemplo, Adam) para atualizações de gradiente durante o treinamento.
 
 **Processo de Ajuste Fino**
 
-- Carregar Modelo Pré-Treinado: Carregue o checkpoint do Phi-3 Mini.
-- Adicionar Camadas Personalizadas: Adicione camadas específicas para a tarefa (ex.: cabeça de classificação para instruções de chat).
+- Carregar modelo pré-treinado: carregue o checkpoint do Phi-3 Mini.
+- Adicionar camadas personalizadas: adicione camadas específicas para a tarefa (por exemplo, cabeça de classificação para instruções de chat).
 
-**Treinar o Modelo**  
-Ajuste o modelo usando seu conjunto de dados preparado. Monitore o progresso do treinamento e ajuste os hiperparâmetros conforme necessário.
+**Treinar o modelo**  
+Ajuste o modelo com seu conjunto de dados preparado. Monitore o progresso do treinamento e ajuste os hiperparâmetros conforme necessário.
 
 **Avaliação e Validação**
 
-Conjunto de Validação: Separe seus dados em conjuntos de treinamento e validação.
+Conjunto de validação: separe seus dados em conjuntos de treinamento e validação.
 
-**Avaliar Desempenho**
+**Avaliar desempenho**
 
-Use métricas como acurácia, F1-score ou perplexidade para avaliar o desempenho do modelo.
+Use métricas como precisão, F1-score ou perplexidade para avaliar o desempenho do modelo.
 
-## Salvar Modelo Ajustado
+## Salvar modelo ajustado
 
 **Checkpoint**  
 Salve o checkpoint do modelo ajustado para uso futuro.
 
 ## Implantação
 
-- Implantar como Serviço Web: Implante seu modelo ajustado como um serviço web no Azure AI Foundry.
-- Testar o Endpoint: Envie consultas de teste para o endpoint implantado para verificar sua funcionalidade.
+- Implante como serviço web: implante seu modelo ajustado como serviço web no Microsoft Foundry.
+- Teste o endpoint: envie consultas de teste para o endpoint implantado para verificar sua funcionalidade.
 
 ## Iterar e Melhorar
 
-Iterar: Se o desempenho não estiver satisfatório, faça iterações ajustando hiperparâmetros, adicionando mais dados ou treinando por mais épocas.
+Iterar: Se o desempenho não estiver satisfatório, itere ajustando hiperparâmetros, adicionando mais dados ou fazendo mais épocas de ajuste fino.
 
 ## Monitorar e Refinar
 
@@ -217,11 +218,15 @@ Monitore continuamente o comportamento do modelo e refine conforme necessário.
 
 ## Personalizar e Expandir
 
-Tarefas Personalizadas: O Phi-3 Mini pode ser ajustado para várias tarefas além de instruções de chat. Explore outros casos de uso!  
-Experimente: Teste diferentes arquiteturas, combinações de camadas e técnicas para melhorar o desempenho.
+Tarefas personalizadas: o Phi-3 Mini pode ser ajustado para várias tarefas além de instruções de chat. Explore outros casos de uso!  
+Experimente: teste diferentes arquiteturas, combinações de camadas e técnicas para melhorar o desempenho.
 
 > [!NOTE]
 > O ajuste fino é um processo iterativo. Experimente, aprenda e adapte seu modelo para alcançar os melhores resultados para sua tarefa específica!
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
