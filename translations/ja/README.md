@@ -1,42 +1,42 @@
-# Phi Cookbook: MicrosoftのPhiモデルを使ったハンズオン例
+# Phi Cookbook: MicrosoftのPhiモデルを使った実践例
 
-[![Open and use the samples in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
-[![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
+[![GitHub Codespacesでサンプルを開いて使用する](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
+[![Dev Containersで開く](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHubのコントリビューター](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHubのイシュー](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHubのプルリクエスト](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
+[![PR歓迎](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHubのウォッチャー](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHubのフォーク](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHubスター](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-PhiはMicrosoftが開発したオープンソースのAIモデルシリーズです。
+PhiはMicrosoftが開発したオープンソースのAIモデルのシリーズです。
 
-Phiは現在、非常に優れた性能ベンチマークを持つ、多言語対応、推論、文章・チャット生成、コーディング、画像、音声などのシナリオで最も強力かつコスト効率の良い小型言語モデル（SLM）です。
+Phiは現在、非常に優れたベンチマークを持つ多言語、推論、テキスト/チャット生成、コーディング、画像、音声などのシナリオにおいて、最も強力でコスト効率の良い小規模言語モデル（SLM）です。
 
-Phiはクラウドやエッジデバイスに展開可能で、限られた計算リソースでも生成AIアプリケーションを簡単に構築できます。
+Phiはクラウドまたはエッジデバイスに展開可能で、限られた計算能力でも簡単に生成AIアプリケーションを構築できます。
 
-以下の手順でこれらのリソースの使用を開始してください：
-1. <strong>リポジトリをフォーク</strong>：クリック [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. <strong>リポジトリをクローン</strong>： `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Microsoft AI Discordコミュニティに参加して専門家や開発者仲間と交流**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+このリソースを使い始めるには、以下の手順に従ってください：
+1. <strong>リポジトリをフォークする</strong>: クリック [![GitHubのフォーク](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. <strong>リポジトリをクローンする</strong>:   `git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**Microsoft AI Discordコミュニティに参加して、専門家や他の開発者と交流する**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
 ![cover](../../translated_images/ja/cover.eb18d1b9605d754b.webp)
 
-### 🌐 多言語対応
+### 🌐 多言語サポート
 
 #### GitHub Actionsによるサポート（自動化＆常に最新）
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](./README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[アラビア語](../ar/README.md) | [ベンガル語](../bn/README.md) | [ブルガリア語](../bg/README.md) | [ビルマ語（ミャンマー）](../my/README.md) | [中国語（簡体字）](../zh-CN/README.md) | [中国語（繁体字、香港）](../zh-HK/README.md) | [中国語（繁体字、マカオ）](../zh-MO/README.md) | [中国語（繁体字、台湾）](../zh-TW/README.md) | [クロアチア語](../hr/README.md) | [チェコ語](../cs/README.md) | [デンマーク語](../da/README.md) | [オランダ語](../nl/README.md) | [エストニア語](../et/README.md) | [フィンランド語](../fi/README.md) | [フランス語](../fr/README.md) | [ドイツ語](../de/README.md) | [ギリシャ語](../el/README.md) | [ヘブライ語](../he/README.md) | [ヒンディー語](../hi/README.md) | [ハンガリー語](../hu/README.md) | [インドネシア語](../id/README.md) | [イタリア語](../it/README.md) | [日本語](./README.md) | [カンナダ語](../kn/README.md) | [クメール語](../km/README.md) | [韓国語](../ko/README.md) | [リトアニア語](../lt/README.md) | [マレー語](../ms/README.md) | [マラヤーラム語](../ml/README.md) | [マラーティー語](../mr/README.md) | [ネパール語](../ne/README.md) | [ナイジェリアピジン語](../pcm/README.md) | [ノルウェー語](../no/README.md) | [ペルシャ語（ファルシー）](../fa/README.md) | [ポーランド語](../pl/README.md) | [ポルトガル語（ブラジル）](../pt-BR/README.md) | [ポルトガル語（ポルトガル）](../pt-PT/README.md) | [パンジャブ語（グルムキー）](../pa/README.md) | [ルーマニア語](../ro/README.md) | [ロシア語](../ru/README.md) | [セルビア語（キリル文字）](../sr/README.md) | [スロバキア語](../sk/README.md) | [スロベニア語](../sl/README.md) | [スペイン語](../es/README.md) | [スワヒリ語](../sw/README.md) | [スウェーデン語](../sv/README.md) | [タガログ語（フィリピン語）](../tl/README.md) | [タミル語](../ta/README.md) | [テルグ語](../te/README.md) | [タイ語](../th/README.md) | [トルコ語](../tr/README.md) | [ウクライナ語](../uk/README.md) | [ウルドゥー語](../ur/README.md) | [ベトナム語](../vi/README.md)
 
-> **ローカルでクローンしたい場合は？**
+> **ローカルにクローンしたいですか？**
 >
-> このリポジトリは50以上の言語翻訳を含むため、ダウンロードサイズが大きくなります。翻訳なしでクローンするにはスパースチェックアウトを使ってください：
+> このリポジトリには50以上の言語翻訳が含まれており、ダウンロードサイズが大幅に増加します。翻訳なしでクローンするには、スパースチェックアウトを使用してください：
 >
 > **Bash / macOS / Linux:**
 > ```bash
@@ -52,52 +52,52 @@ Phiはクラウドやエッジデバイスに展開可能で、限られた計�
 > git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
 > ```
 >
-> これにより、はるかに高速なダウンロードでコースを完了するために必要なすべてが得られます。
+> これにより、必要なものをすべてより高速にダウンロードしてコースを完了できます。
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 ## 目次
-- はじめに - [Phiファミリーへようこそ](./md/01.Introduction/01/01.PhiFamily.md) - [環境設定](./md/01.Introduction/01/01.EnvironmentSetup.md) - [主要技術の理解](./md/01.Introduction/01/01.Understandingtech.md) - [PhiモデルのAI安全性](./md/01.Introduction/01/01.AISafety.md) - [Phiハードウェアサポート](./md/01.Introduction/01/01.Hardwaresupport.md) - [プラットフォーム別Phiモデルと利用可能性](./md/01.Introduction/01/01.Edgeandcloud.md) - [Guidance-aiとPhiの使用](./md/01.Introduction/01/01.Guidance.md) - [GitHubマーケットプレイスモデル](https://github.com/marketplace/models) - [Azure AIモデルカタログ](https://ai.azure.com) - 異なる環境でのPhi推論 - [Hugging face](./md/01.Introduction/02/01.HF.md) - [GitHubモデル](./md/01.Introduction/02/02.GitHubModel.md) - [Microsoft Foundryモデルカタログ](./md/01.Introduction/02/03.AzureAIFoundry.md) - [Ollama](./md/01.Introduction/02/04.Ollama.md) - [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md) - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md) - [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md) - Phiファミリーでの推論 - [iOSでのPhi推論](./md/01.Introduction/03/iOS_Inference.md) - [AndroidでのPhi推論](./md/01.Introduction/03/Android_Inference.md) - [JetsonでのPhi推論](./md/01.Introduction/03/Jetson_Inference.md) - [AI PCでのPhi推論](./md/01.Introduction/03/AIPC_Inference.md) - [Apple MLXフレームワークでのPhi推論](./md/01.Introduction/03/MLX_Inference.md) - [ローカルサーバーでのPhi推論](./md/01.Introduction/03/Local_Server_Inference.md) - [AI Toolkitを使用したリモートサーバーでのPhi推論](./md/01.Introduction/03/Remote_Interence.md) - [RustでのPhi推論](./md/01.Introduction/03/Rust_Inference.md) - [ローカルでのPhi--Vision推論](./md/01.Introduction/03/Vision_Inference.md) - [Kaito AKS、Azureコンテナ（公式サポート）でのPhi推論](./md/01.Introduction/03/Kaito_Inference.md) - [Phiファミリーの量子化](./md/01.Introduction/04/QuantifyingPhi.md) - [llama.cppでPhi-3.5 / 4を量子化](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md) - [onnxruntime用生成AI拡張でPhi-3.5 / 4を量子化](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md) - [Intel OpenVINOでPhi-3.5 / 4を量子化](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md) - [Apple MLXフレームワークでPhi-3.5 / 4を量子化](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md) - Phiの評価 - [責任あるAI](./md/01.Introduction/05/ResponsibleAI.md) - [Microsoft Foundryによる評価](./md/01.Introduction/05/AIFoundry.md) - [Promptflowを使用した評価](./md/01.Introduction/05/Promptflow.md) - Azure AI SearchによるRAG - [Azure AI SearchでのPhi-4-miniおよびPhi-4-multimodal (RAG) の使用方法](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb) - Phiアプリケーション開発サンプル - テキスト＆チャットアプリ - Phi-4サンプル - [📓] [Phi-4-mini ONNXモデルとのチャット](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md) - [Phi-4ローカルONNXモデルとのチャット .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) - [Semantic Kernelを用いたPhi-4 ONNXチャット.NETコンソールアプリ](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) - Phi-3 / 3.5 サンプル - [ブラウザでのローカルチャットボット、Phi3、ONNX Runtime Web、WebGPU使用](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat) - [OpenVinoチャット](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md) - [マルチモデル - 対話型Phi-3-miniとOpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md) - [MLFlow - ラッパー作成とPhi-3のMLFlow利用](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md) - [モデル最適化 - OliveでのONNX Runtime Web用Phi-3-minモデル最適化方法](https://github.com/microsoft/Olive/tree/main/examples/phi3) - [Phi-3 mini-4k-instruct-onnx使用のWinUI3アプリ](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/) - [WinUI3複数モデルAIパワーノートアプリサンプル](https://github.com/microsoft/ai-powered-notes-winui3-sample) - [Prompt flowを用いたカスタムPhi-3モデルのファインチューニングと統合](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md) - [Microsoft FoundryでのPrompt flowによるカスタムPhi-3モデルのファインチューニングと統合](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md) - [Microsoftの責任あるAI原則に焦点を当てたMicrosoft Foundryでのファインチューニング済Phi-3 / Phi-3.5モデルの評価](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md) - [📓] [Phi-3.5-mini-instruct言語予測サンプル（中国語/英語）](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb) - [Phi-3.5-Instruct WebGPU RAGチャットボット](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md) - [Windows GPUを使用したPhi-3.5-Instruct ONNXでのPrompt flowソリューション作成](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md) - [Microsoft Phi-3.5 tfliteを用いたAndroidアプリ作成](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md) - [Microsoft.ML.OnnxRuntimeを使ったローカルONNX Phi-3モデルによるQ&A .NET例](../../md/04.HOL/dotnet/src/LabsPhi301) - [Semantic KernelとPhi-3によるコンソールチャット.NETアプリ](../../md/04.HOL/dotnet/src/LabsPhi302) - Azure AI推論SDKコードベースサンプル - Phi-4サンプル - [📓] [Phi-4-multimodalを使ったプロジェクトコード生成](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md) - Phi-3 / 3.5 サンプル - [Microsoft Phi-3ファミリーで自分のVisual Studio Code GitHub Copilotチャットを構築](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md) - [GitHubモデルを使用してVisual Studio CodeチャットコパイロットエージェントをPhi-3.5で作成](./md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md) - 高度な推論サンプル - Phi-4サンプル - [📓] [Phi-4-mini推論またはPhi-4推論サンプル](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md) - [📓] [Microsoft OliveでのPhi-4-mini推論のファインチューニング](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb) - [📓] [Apple MLXでのPhi-4-mini推論のファインチューニング](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb) - [📓] [GitHubモデルでのPhi-4-mini推論](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb) - [📓] [Microsoft FoundryモデルでのPhi-4-mini推論](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb) - 
-デモ - [Phi-4-mini demos hosted on Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo) - [Phi-4-multimodal demos hosted on Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo) - Vision サンプル - Phi-4 サンプル - [📓] [Phi-4-multimodalを使用して画像を読み取りコードを生成する](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) - Phi-3 / 3.5 サンプル - [📓][Phi-3-vision-画像のテキスト変換](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb) - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html) - [📓][Phi-3-vision CLIP 埋め込み](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb) - [DEMO: Phi-3 Recycling](https://github.com/jennifermarsman/PhiRecycling/) - [Phi-3-vision - Phi3-VisionとOpenVINOを用いた視覚言語アシスタント](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html) - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md) - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md) - [📓][Phi-3.5 Vision 複数フレームまたは複数画像サンプル](./md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb) - [Microsoft.ML.OnnxRuntime .NET を使用した Phi-3 Vision ローカル ONNX モデル](../../md/04.HOL/dotnet/src/LabsPhi303) - [メニュー形式の Phi-3 Vision ローカル ONNX モデル Microsoft.ML.OnnxRuntime .NET 使用](../../md/04.HOL/dotnet/src/LabsPhi304) - 推論ビジョンサンプル - Phi-4-Reasoning-Vision-15B - [📓] [Phi-4-Reasoning-Vision-15B を使用した歩行者横断検出](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb) - [📓] [Phi-4-Reasoning-Vision-15B を使用した数学問題](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb) - [📓] [Phi-4-Reasoning-Vision-15B を使用したUI検出](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb) - 数学サンプル - Phi-4-Mini-Flash-Reasoning-Instruct サンプル [Phi-4-Mini-Flash-Reasoning-Instruct を用いた数学デモ](./md/02.Application/09.Math/MathDemo.ipynb) - 音声サンプル - Phi-4 サンプル - [📓] [Phi-4-multimodalを使った音声文字起こしの抽出](./md/02.Application/05.Audio/Phi4/Transciption/README.md) - [📓] [Phi-4-multimodal 音声サンプル](./md/02.Application/05.Audio/Phi4/Siri/demo.ipynb) - [📓] [Phi-4-multimodal 音声翻訳サンプル](./md/02.Application/05.Audio/Phi4/Translate/demo.ipynb) - [.NET コンソールアプリケーション Phi-4-multimodal 音声ファイル分析と文字起こし生成](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) - MOE サンプル - Phi-3 / 3.5 サンプル - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) ソーシャルメディアサンプル](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb) - [📓] [NVIDIA NIM Phi-3 MOE、Azure AI Search、および LlamaIndex を用いた Retrieval-Augmented Generation（RAG）パイプライン構築](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb) - ファンクションコーリングサンプル - Phi-4 サンプル 🆕 - [📓] [Phi-4-miniを使ったファンクションコーリング](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md) - [📓] [Phi-4-mini を使ったマルチエージェントファンクションコーリング作成](./md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb) - [📓] [Ollamaを使ったファンクションコーリング](./md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb) - [📓] [ONNXを用いたファンクションコーリング](./md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb) - マルチモーダルミキシングサンプル - Phi-4 サンプル 🆕 - [📓] [技術ジャーナリストとしてPhi-4-multimodalを使う](./md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb) - [.NET コンソールアプリケーション Phi-4-multimodalを使った画像解析](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) - ファインチューニングPhiサンプル - [ファインチューニングシナリオ](./md/03.FineTuning/FineTuning_Scenarios.md) - [ファインチューニング vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md) - [Phi-3を業界専門家に育てるファインチューニング](./md/03.FineTuning/LetPhi3gotoIndustriy.md) - [VS Code用AIツールキットを使ったPhi-3ファインチューニング](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md) - [Azure Machine Learning Serviceを使ったPhi-3ファインチューニング](./md/03.FineTuning/Introduce_AzureML.md) - [Loraを使ったPhi-3ファインチューニング](./md/03.FineTuning/FineTuning_Lora.md) - [QLoraを使ったPhi-3ファインチューニング](./md/03.FineTuning/FineTuning_Qlora.md) - [Microsoft Foundryを使ったPhi-3ファインチューニング](./md/03.FineTuning/FineTuning_AIFoundry.md) - [Azure ML CLI/SDKを使ったPhi-3ファインチューニング](./md/03.FineTuning/FineTuning_MLSDK.md) - [Microsoft Oliveを使ったファインチューニング](./md/03.FineTuning/FineTuning_MicrosoftOlive.md) - [Microsoft Olive ハンズオンラボによるファインチューニング](./md/03.FineTuning/olive-lab/readme.md) - [Weights and Bias を使った Phi-3-vision ファインチューニング](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md) - [Apple MLX フレームワークを使った Phi-3 ファインチューニング](./md/03.FineTuning/FineTuning_MLX.md) - [Phi-3-visionのファインチューニング（公式サポート）](./md/03.FineTuning/FineTuning_Vision.md) - [Kaito AKS 、Azure Containers での Phi-3 ファインチューニング（公式サポート）](./md/03.FineTuning/FineTuning_Kaito.md) - [Phi-3 と 3.5 Vision のファインチューニング](https://github.com/2U1/Phi3-Vision-Finetune) - ハンズオンラボ - [最先端モデルの探求: LLMs、SLMs、ローカル開発など](https://github.com/microsoft/aitour-exploring-cutting-edge-models) - [NLPの可能性を引き出す: Microsoft Oliveを使ったファインチューニング](https://github.com/azure/Ignite_FineTuning_workshop) - 学術研究論文および出版物 - [Textbooks Are All You Need II: phi-1.5 technical report](https://arxiv.org/abs/2309.05463) - [Phi-3 Technical Report: スマホで動く高性能言語モデル](https://arxiv.org/abs/2404.14219) - [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905) - [Phi-4-Mini Technical Report: 混合LoRAsによるコンパクトで強力なマルチモーダル言語モデル](https://arxiv.org/abs/2503.01743) - [車載用関数呼び出し向け小型言語モデルの最適化](https://arxiv.org/abs/2501.02342) - [(WhyPHI) 複数選択問題回答用PHI-3のファインチューニング: 方法論、結果、および課題](https://arxiv.org/abs/2501.01588) - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
-- [Phi-4-mini-推論技術報告書](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
-# Phi クックブック：Microsoft の Phi モデルを使ったハンズオン例
+- はじめに - [Phiファミリーへようこそ](./md/01.Introduction/01/01.PhiFamily.md) - [環境設定](./md/01.Introduction/01/01.EnvironmentSetup.md) - [主要技術の理解](./md/01.Introduction/01/01.Understandingtech.md) - [PhiモデルのAIセーフティ](./md/01.Introduction/01/01.AISafety.md) - [Phiハードウェアサポート](./md/01.Introduction/01/01.Hardwaresupport.md) - [プラットフォーム別のPhiモデルと利用可能性](./md/01.Introduction/01/01.Edgeandcloud.md) - [Guidance-aiとPhiの使用方法](./md/01.Introduction/01/01.Guidance.md) - [GitHub Marketplaceモデル](https://github.com/marketplace/models) - [Azure AIモデルカタログ](https://ai.azure.com) - 異なる環境でのPhi推論 - [Hugging face](./md/01.Introduction/02/01.HF.md) - [GitHubモデル](./md/01.Introduction/02/02.GitHubModel.md) - [Microsoft Foundryモデルカタログ](./md/01.Introduction/02/03.AzureAIFoundry.md) - [Ollama](./md/01.Introduction/02/04.Ollama.md) - [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md) - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md) - [Foundryローカル](./md/01.Introduction/02/07.FoundryLocal.md) - Phiファミリーの推論 - [iOSでのPhi推論](./md/01.Introduction/03/iOS_Inference.md) - [AndroidでのPhi推論](./md/01.Introduction/03/Android_Inference.md) - [JetsonでのPhi推論](./md/01.Introduction/03/Jetson_Inference.md) - [AI PCでのPhi推論](./md/01.Introduction/03/AIPC_Inference.md) - [Apple MLX FrameworkでのPhi推論](./md/01.Introduction/03/MLX_Inference.md) - [ローカルサーバーでのPhi推論](./md/01.Introduction/03/Local_Server_Inference.md) - [AI Toolkitを使ったリモートサーバーでのPhi推論](./md/01.Introduction/03/Remote_Interence.md) - [RustでのPhi推論](./md/01.Introduction/03/Rust_Inference.md) - [ローカルでのPhi--Vision推論](./md/01.Introduction/03/Vision_Inference.md) - [Kaito AKS、Azureコンテナ(公式サポート)でのPhi推論](./md/01.Introduction/03/Kaito_Inference.md) - [Phiファミリーの量子化](./md/01.Introduction/04/QuantifyingPhi.md) - [llama.cppを使ったPhi-3.5 / 4の量子化](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md) - [onnxruntimeの生成AI拡張を使ったPhi-3.5 / 4の量子化](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md) - [Intel OpenVINOを使ったPhi-3.5 / 4の量子化](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md) - [Apple MLX Frameworkを使ったPhi-3.5 / 4の量子化](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md) - Phiの評価 - [責任あるAI](./md/01.Introduction/05/ResponsibleAI.md) - [Microsoft Foundryによる評価](./md/01.Introduction/05/AIFoundry.md) - [Promptflowを使った評価](./md/01.Introduction/05/Promptflow.md) - Azure AI Searchを用いたRAG - [Azure AI SearchでPhi-4-miniとPhi-4-multimodal(RAG)の使い方](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb) - Phiアプリケーション開発サンプル - テキスト＆チャットアプリケーション - Phi-4サンプル - [📓] [Phi-4-mini ONNXモデルとのチャット](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md) - [Phi-4ローカルONNXモデルでのチャット .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) - [セマンティックカーネルを使ったPhi-4 ONNXのチャット .NETコンソールアプリ](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) - Phi-3 / 3.5サンプル - [Phi3、ONNX Runtime WebとWebGPUを使用したブラウザでのローカルチャットボット](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat) - [OpenVinoチャット](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md) - [複数モデル - 対話型Phi-3-miniとOpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md) - [MLFlow - ラッパー構築とPhi-3のMLFlow利用](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md) - [モデル最適化 - OliveでONNX Runtime Web向けPhi-3-miniモデルの最適化方法](https://github.com/microsoft/Olive/tree/main/examples/phi3) - [Phi-3 mini-4k-instruct-onnxを使ったWinUI3アプリ](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/) - [WinUI3のマルチモデルAI搭載ノートアプリサンプル](https://github.com/microsoft/ai-powered-notes-winui3-sample) - [カスタムPhi-3モデルをPrompt flowで微調整・統合](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md) - [Microsoft FoundryでPrompt flowを使ったカスタムPhi-3モデルの微調整・統合](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md) - [Microsoftの責任あるAI原則に焦点を当てたMicrosoft Foundryでの微調整済みPhi-3 / Phi-3.5モデルの評価](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md) - [📓] [Phi-3.5-mini-instruct言語予測サンプル（中国語/英語）](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb) - [Phi-3.5-Instruct WebGPU RAGチャットボット](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md) - [Windows GPUを使ってPhi-3.5-Instruct ONNXでPrompt flowソリューションを作成](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md) - [Microsoft Phi-3.5 tfliteを使ったAndroidアプリ作成](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md) - [ローカルONNX Phi-3モデルを用いたQ&A .NET例 Microsoft.ML.OnnxRuntime利用](../../md/04.HOL/dotnet/src/LabsPhi301) - [セマンティックカーネルとPhi-3を使ったコンソールチャット.NETアプリ](../../md/04.HOL/dotnet/src/LabsPhi302) - Azure AI推論SDKコードベースサンプル - Phi-4サンプル - [📓] [Phi-4-multimodalを使ったプロジェクトコード生成](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md) - Phi-3 / 3.5サンプル - [Microsoft Phi-3ファミリーでVSC GitHub Copilotチャット構築](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md) - [GitHubモデルでPhi-3.5のVisual Studio Codeチャットコパイロットエージェントを作成](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md) - 高度な推論サンプル - Phi-4サンプル - [📓] [Phi-4-mini推論またはPhi-4推論サンプル](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md) - [📓] [Microsoft OliveでPhi-4-mini推論の微調整](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb) - [📓] [Apple MLXでPhi-4-mini推論の微調整](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb) - [📓] [GitHubモデルを使ったPhi-4-mini推論](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb) - [📓] [Microsoft Foundryモデルを使ったPhi-4-mini推論](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb) -
+デモ - [Hugging Face SpacesでホストされているPhi-4-miniデモ](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo) - [Huggingg Face SpacesでホストされているPhi-4-multimodalデモ](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo) - ビジョンサンプル - Phi-4サンプル - [📓] [Phi-4-multimodalを使って画像を読み込みコードを生成する](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) - Phi-3 / 3.5サンプル - [📓][Phi-3-vision-画像のテキスト変換](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb) - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html) - [📓][Phi-3-vision CLIP埋め込み](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb) - [DEMO: Phi-3 リサイクリング](https://github.com/jennifermarsman/PhiRecycling/) - [Phi-3-vision - Phi3-VisionとOpenVINOを使ったビジュアル言語アシスタント](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html) - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md) - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md) - [📓][Phi-3.5 Visionマルチフレームまたはマルチイメージサンプル](./md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb) - [Microsoft.ML.OnnxRuntime .NETを使ったPhi-3 VisionローカルONNXモデル](../../md/04.HOL/dotnet/src/LabsPhi303) - [Microsoft.ML.OnnxRuntime .NETを使ったメニューベースのPhi-3 VisionローカルONNXモデル](../../md/04.HOL/dotnet/src/LabsPhi304) - 推論-ビジョンサンプル - Phi-4-Reasoning-Vision-15B - [📓] [Phi-4-Reasoning-Vision-15Bを使った歩行者信号無視の検知](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb) - [📓] [Phi-4-Reasoning-Vision-15Bを使った数学問題](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb) - [📓] [Phi-4-Reasoning-Vision-15Bを使ったUI検出](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb) - 数学サンプル - Phi-4-Mini-Flash-Reasoning-Instructサンプル [Phi-4-Mini-Flash-Reasoning-Instructを使った数学デモ](./md/02.Application/09.Math/MathDemo.ipynb) - オーディオサンプル - Phi-4サンプル - [📓] [Phi-4-multimodalを使った音声文字起こしの抽出](./md/02.Application/05.Audio/Phi4/Transciption/README.md) - [📓] [Phi-4-multimodalオーディオサンプル](./md/02.Application/05.Audio/Phi4/Siri/demo.ipynb) - [📓] [Phi-4-multimodalスピーチ翻訳サンプル](./md/02.Application/05.Audio/Phi4/Translate/demo.ipynb) - [.NETコンソールアプリケーションを使ってPhi-4-multimodalのオーディオを解析し文字起こしを生成](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) - MOEサンプル - Phi-3 / 3.5サンプル - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) ソーシャルメディアサンプル](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb) - [📓] [NVIDIA NIM Phi-3 MOE、Azure AI Search、LlamaIndexを使った検索強化生成(RAG)パイプラインの構築](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb) - - 関数呼び出しサンプル - Phi-4サンプル 🆕 - [📓] [Phi-4-miniでの関数呼び出しの使用方法](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md) - [📓] [Phi-4-miniでマルチエージェントを作成するための関数呼び出しの使用](./md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb) - [📓] [Ollamaでの関数呼び出しの使用](./md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb) - [📓] [ONNXでの関数呼び出しの使用](./md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb) - マルチモーダルミキシングサンプル - Phi-4サンプル 🆕 - [📓] [Phi-4-multimodalをテクノロジージャーナリストとして使う](./md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb) - [.NETコンソールアプリケーションを使ってPhi-4-multimodalで画像解析](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) - ファインチューニングPhiサンプル - [ファインチューニングシナリオ](./md/03.FineTuning/FineTuning_Scenarios.md) - [ファインチューニングとRAGの比較](./md/03.FineTuning/FineTuning_vs_RAG.md) - [ファインチューニング Phi-3を業界の専門家にする](./md/03.FineTuning/LetPhi3gotoIndustriy.md) - [VS Code用AIツールキットでPhi-3をファインチューニング](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md) - [Azure Machine LearningサービスでPhi-3をファインチューニング](./md/03.FineTuning/Introduce_AzureML.md) - [LoraでPhi-3をファインチューニング](./md/03.FineTuning/FineTuning_Lora.md) - [QLoraでPhi-3をファインチューニング](./md/03.FineTuning/FineTuning_Qlora.md) - [Microsoft FoundryでPhi-3をファインチューニング](./md/03.FineTuning/FineTuning_AIFoundry.md) - [Azure ML CLI/SDKでPhi-3をファインチューニング](./md/03.FineTuning/FineTuning_MLSDK.md) - [Microsoft Oliveでのファインチューニング](./md/03.FineTuning/FineTuning_MicrosoftOlive.md) - [Microsoft Olive ハンズオンラボでのファインチューニング](./md/03.FineTuning/olive-lab/readme.md) - [Weights and BiasでPhi-3-visionをファインチューニング](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md) - [Apple MLX FrameworkでPhi-3をファインチューニング](./md/03.FineTuning/FineTuning_MLX.md) - [Phi-3-visionのファインチューニング（公式サポート）](./md/03.FineTuning/FineTuning_Vision.md) - [Kaito AKS、Azure Containersを使ったPhi-3のファインチューニング（公式サポート）](./md/03.FineTuning/FineTuning_Kaito.md) - [Phi-3および3.5 Visionのファインチューニング](https://github.com/2U1/Phi3-Vision-Finetune) - ハンズオンラボ - [最先端モデルの探求：LLM、SLM、ローカル開発など](https://github.com/microsoft/aitour-exploring-cutting-edge-models) - [NLPの可能性を開く：Microsoft Oliveによるファインチューニング](https://github.com/azure/Ignite_FineTuning_workshop) - 学術研究論文と出版物 - [Textbooks Are All You Need II: phi-1.5技術報告](https://arxiv.org/abs/2309.05463) - [Phi-3技術報告：スマホ上で高性能な言語モデル](https://arxiv.org/abs/2404.14219) - [Phi-4技術報告](https://arxiv.org/abs/2412.08905) - [Phi-4-Mini技術報告：Mixture-of-LoRAsによるコンパクトでパワフルなマルチモーダル言語モデル](https://arxiv.org/abs/2503.01743) - [車載向け機能呼び出しのための小型言語モデル最適化](https://arxiv.org/abs/2501.02342) - [(WhyPHI) PHI-3の多肢選択問題応答のファインチューニング：方法論、結果、および課題](https://arxiv.org/abs/2501.01588) - [Phi-4推論技術報告](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
+- [Phi-4-mini-推論技術レポート](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+# Phi クックブック：Microsoft の Phi モデルを使った実践例
 
-[![GitHub Codespaces でサンプルを開いて使う](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
-[![Dev Containers で開く](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
+[![GitHub Codespacesでサンプルを開いて使用する](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
+[![Dev Containersで開く](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
 
-[![GitHub コントリビューター](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub 貢献者](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub イシュー](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub プルリクエスト](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
 [![PR歓迎](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![GitHub 監視者](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub ウォッチャー](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub フォーク](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub スター](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Phi は Microsoft が開発したオープンソースの AI モデル群です。
+Phi は Microsoft が開発したオープンソースの AI モデルシリーズです。
 
-Phi は現在、非常に優れたベンチマークを持つ最も強力かつコスト効率の高い小型言語モデル（SLM）であり、多言語、推論、テキスト／チャット生成、コーディング、画像、音声などさまざまなシナリオで優れています。
+Phi は現在、最も強力でコスト効率の高い小規模言語モデル（SLM）であり、多言語対応、推論、テキスト／チャット生成、コーディング、画像、音声などの多様なシナリオで非常に優れたベンチマークを持っています。
 
-Phi はクラウドやエッジデバイスに展開でき、限られた計算リソースでも生成AIアプリケーションを簡単に構築できます。
+Phi はクラウドやエッジデバイスへデプロイ可能で、限られた計算資源でもジェネレーティブ AI アプリケーションを簡単に構築できます。
 
-これらのリソースを使い始めるための手順はこちらです：
-1. <strong>リポジトリをフォークする</strong>: クリック [![GitHub フォーク](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. <strong>リポジトリをクローンする</strong>: `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Microsoft AI Discordコミュニティに参加して、エキスパートや開発者仲間と交流する**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+次の手順に従ってこれらのリソースを使い始めましょう：
+1. <strong>リポジトリをフォークする</strong>：クリック [![GitHub フォーク](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. <strong>リポジトリをクローンする</strong>：`git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**Microsoft AI Discord コミュニティに参加して、専門家や仲間の開発者と交流する**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
 ![cover](../../translated_images/ja/cover.eb18d1b9605d754b.webp)
 
-### 🌐 多言語対応
+### 🌐 多言語サポート
 
-#### GitHub Actions によるサポート（自動化＆常に最新）
+#### GitHub Actions を通じて対応（自動化＆常に最新）
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](./README.md) | [Kannada](../kn/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+[アラビア語](../ar/README.md) | [ベンガル語](../bn/README.md) | [ブルガリア語](../bg/README.md) | [ビルマ語（ミャンマー）](../my/README.md) | [中国語（簡体字）](../zh-CN/README.md) | [中国語（繁体字、香港）](../zh-HK/README.md) | [中国語（繁体字、マカオ）](../zh-MO/README.md) | [中国語（繁体字、台湾）](../zh-TW/README.md) | [クロアチア語](../hr/README.md) | [チェコ語](../cs/README.md) | [デンマーク語](../da/README.md) | [オランダ語](../nl/README.md) | [エストニア語](../et/README.md) | [フィンランド語](../fi/README.md) | [フランス語](../fr/README.md) | [ドイツ語](../de/README.md) | [ギリシャ語](../el/README.md) | [ヘブライ語](../he/README.md) | [ヒンディー語](../hi/README.md) | [ハンガリー語](../hu/README.md) | [インドネシア語](../id/README.md) | [イタリア語](../it/README.md) | [日本語](./README.md) | [カンナダ語](../kn/README.md) | [クメール語](../km/README.md) | [韓国語](../ko/README.md) | [リトアニア語](../lt/README.md) | [マレー語](../ms/README.md) | [マラヤーラム語](../ml/README.md) | [マラーティー語](../mr/README.md) | [ネパール語](../ne/README.md) | [ナイジェリア・ピジン](../pcm/README.md) | [ノルウェー語](../no/README.md) | [ペルシア語（ファルシ）](../fa/README.md) | [ポーランド語](../pl/README.md) | [ポルトガル語（ブラジル）](../pt-BR/README.md) | [ポルトガル語（ポルトガル）](../pt-PT/README.md) | [パンジャブ語（グルムキー）](../pa/README.md) | [ルーマニア語](../ro/README.md) | [ロシア語](../ru/README.md) | [セルビア語（キリル文字）](../sr/README.md) | [スロバキア語](../sk/README.md) | [スロベニア語](../sl/README.md) | [スペイン語](../es/README.md) | [スワヒリ語](../sw/README.md) | [スウェーデン語](../sv/README.md) | [タガログ語（フィリピン語）](../tl/README.md) | [タミル語](../ta/README.md) | [テルグ語](../te/README.md) | [タイ語](../th/README.md) | [トルコ語](../tr/README.md) | [ウクライナ語](../uk/README.md) | [ウルドゥー語](../ur/README.md) | [ベトナム語](../vi/README.md)
 
 > **ローカルでクローンしたいですか？**
 >
-> このリポジトリは50以上の言語の翻訳を含んでいるため、ダウンロードサイズが大きくなります。翻訳を除いてクローンしたい場合は、スパースチェックアウトを使用してください。
+> このリポジトリには50以上の言語翻訳が含まれており、ダウンロードサイズが大幅に増加します。翻訳を除いてクローンするには、スパースチェックアウトを使用してください：
 >
 > **Bash / macOS / Linux:**
 > ```bash
@@ -106,44 +106,44 @@ Phi はクラウドやエッジデバイスに展開でき、限られた計算�
 > git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
 > ```
 >
-> **CMD (Windows):**
+> **CMD（Windows）:**
 > ```cmd
 > git clone --filter=blob:none --sparse https://github.com/microsoft/PhiCookBook.git
 > cd PhiCookBook
 > git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
 > ```
 >
-> これにより、コースを完了するのに必要なすべてのものをはるかに高速なダウンロードで入手できます。
+> これにより、コースを完了するために必要なすべてを含み、より高速にダウンロードできます。
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 ## 目次
 
-## Phi モデルの使用
+## Phi モデルの使用方法
 
-### Microsoft Foundry での Phi
+### Microsoft Foundry 上の Phi
 
-Microsoft Phi の使い方、およびさまざまなハードウェアデバイスでの E2E ソリューションの構築方法を学べます。Phi を体験するには、モデルを操作してシナリオに合わせてカスタマイズし始めるところから、[Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) を利用してください。詳しくは [Microsoft Foundry の入門](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) をご覧ください。
-
-<strong>プレイグラウンド</strong>  
-各モデルには専用のプレイグラウンドがあり、モデルをテストできます。[Azure AI Playground](https://aka.ms/try-phi3)
-
-### GitHub Models での Phi
-
-Microsoft Phi の使い方、及びさまざまなハードウェアデバイスでの E2E ソリューションの構築方法を学べます。Phi を体験するには、モデルを操作してシナリオに合わせてカスタマイズし始めるところから、[GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) を利用してください。詳しくは [GitHub Model Catalog の入門](/md/02.QuickStart/GitHubModel_QuickStart.md) をご覧ください。
+Microsoft Phi の使い方や、さまざまなハードウェアデバイスでのエンドツーエンドソリューションの構築方法を学べます。実際に Phi を体験するには、モデルを触り、[Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) を利用してシナリオに合わせて Phi をカスタマイズしてください。[Microsoft Foundryのはじめ方](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) で詳細を学べます。
 
 <strong>プレイグラウンド</strong>  
-各モデルには専用の[モデルテスト用プレイグラウンド](/md/02.QuickStart/GitHubModel_QuickStart.md)があります。
+各モデルには専用のテスト用プレイグラウンドがあり、[Azure AI Playground](https://aka.ms/try-phi3) で試せます。
 
-### Hugging Face での Phi
+### GitHub モデル上の Phi
 
-モデルは [Hugging Face](https://huggingface.co/microsoft) でも見つかります。
+Microsoft Phi の使い方や異なるハードウェアデバイスでのエンドツーエンドソリューション構築方法を学べます。実際に Phi を体験するには、モデルを操作してシナリオに合わせてカスタマイズできる [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) を利用してください。[GitHub Model Catalogのはじめ方](/md/02.QuickStart/GitHubModel_QuickStart.md) で詳細を学べます。
+
+<strong>プレイグラウンド</strong>  
+各モデルには専用の [プレイグラウンド](/md/02.QuickStart/GitHubModel_QuickStart.md) があります。
+
+### Hugging Face 上の Phi
+
+モデルは [Hugging Face](https://huggingface.co/microsoft) でも入手可能です。
 
 <strong>プレイグラウンド</strong>  
 [Hugging Chat プレイグラウンド](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
 ## 🎒 その他のコース
 
-私たちのチームは他にもコースを制作しています。ぜひご覧ください：
+私たちのチームは他にもコースを制作しています！ぜひご覧ください：
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -152,23 +152,23 @@ Microsoft Phi の使い方、及びさまざまなハードウェアデバイス
 [![初心者向け LangChain](https://img.shields.io/badge/LangChain%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=0553D6)](https://github.com/microsoft/langchain-for-beginners?WT.mc_id=m365-94501-dwahlin)
 ---
 
-### Azure / Edge / MCP / エージェント
+### Azure / Edge / MCP / Agents
 [![初心者向け AZD](https://img.shields.io/badge/AZD%20for%20Beginners-0078D4?style=for-the-badge&labelColor=E5E7EB&color=0078D4)](https://github.com/microsoft/AZD-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![初心者向け Edge AI](https://img.shields.io/badge/Edge%20AI%20for%20Beginners-00B8E4?style=for-the-badge&labelColor=E5E7EB&color=00B8E4)](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 [![初心者向け MCP](https://img.shields.io/badge/MCP%20for%20Beginners-009688?style=for-the-badge&labelColor=E5E7EB&color=009688)](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![初心者向け AI エージェント](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![初心者向け AI Agents](https://img.shields.io/badge/AI%20Agents%20for%20Beginners-00C49A?style=for-the-badge&labelColor=E5E7EB&color=00C49A)](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 
 ---
 
-### 生成系 AI シリーズ
-[![初心者向け生成系 AI](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-[![生成系 AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+### ジェネレーティブ AI シリーズ
+[![初心者向け ジェネレーティブ AI](https://img.shields.io/badge/Generative%20AI%20for%20Beginners-8B5CF6?style=for-the-badge&labelColor=E5E7EB&color=8B5CF6)](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+[![ジェネレーティブ AI (.NET)](https://img.shields.io/badge/Generative%20AI%20(.NET)-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (Java)](https://img.shields.io/badge/Generative%20AI%20(Java)-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
 [![Generative AI (JavaScript)](https://img.shields.io/badge/Generative%20AI%20(JavaScript)-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 
 ---
  
-### 基礎学習
+### コアラーニング
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -179,43 +179,43 @@ Microsoft Phi の使い方、及びさまざまなハードウェアデバイス
 
 ---
  
-### Copilot シリーズ
+### コパイロットシリーズ
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## 責任あるAI 
+## 責任あるAI
 
-Microsoft は、お客様が当社のAI製品を責任を持って使用できるように支援し、学びを共有し、Transparency Notes や Impact Assessments のようなツールを通じて信頼に基づくパートナーシップを構築することに注力しています。これらのリソースの多くは [https://aka.ms/RAI](https://aka.ms/RAI) にてご覧いただけます。
-Microsoftの責任あるAIへのアプローチは、公平性、信頼性と安全性、プライバシーとセキュリティ、包括性、透明性、説明責任というAI原則に基づいています。
+マイクロソフトは、お客様が当社のAI製品を責任を持って使用できるよう支援し、学びを共有し、Transparency NotesやImpact Assessmentsのようなツールを通じて信頼に基づくパートナーシップを構築することに努めています。これらのリソースの多くは[https://aka.ms/RAI](https://aka.ms/RAI)でご覧いただけます。  
+マイクロソフトの責任あるAIへの取り組みは、公正性、信頼性と安全性、プライバシーとセキュリティ、包括性、透明性、および説明責任というAI原則に基づいています。
 
-このサンプルで使用されているような大規模な自然言語、画像、および音声モデルは、不公平、不信頼、または不快な行動をとる可能性があり、その結果、害を及ぼすことがあります。リスクおよび制限については、[Azure OpenAIサービス Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) を参照してください。
+このサンプルで使用されているような大規模な自然言語、画像、音声モデルは、不公正、不安定、または不快な振る舞いをする可能性があり、その結果として害をもたらすことがあります。リスクと制限について理解するために、[Azure OpenAIサービスのTransparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text)をご参照ください。
 
-これらのリスクを軽減する推奨アプローチは、害のある行動を検出し防止できるセーフティシステムをアーキテクチャに含めることです。[Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) は、アプリケーションやサービス内のユーザー生成およびAI生成の有害コンテンツを検出できる独立した保護層を提供します。Azure AI Content Safety には、有害な内容を検出するテキストおよび画像APIが含まれています。Microsoft Foundry では、Content Safety サービスを通じて、異なるモダリティで有害コンテンツを検出するサンプルコードを閲覧、探索、試すことができます。以下の[クイックスタートドキュメント](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest)はサービスへのリクエスト方法を案内します。
+これらのリスクを軽減する推奨アプローチは、有害行動を検出し防止できる安全システムをアーキテクチャに組み込むことです。[Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview)は、アプリケーションやサービス内の有害なユーザー生成コンテンツとAI生成コンテンツを検出できる独立した保護レイヤーを提供します。Azure AI Content Safetyには、テキストおよび画像APIが含まれており、有害な素材の検出が可能です。Microsoft Foundry内のContent Safetyサービスでは、異なるモダリティにわたる有害コンテンツの検出サンプルコードの表示、探索、試用ができます。以下の[クイックスタートドキュメント](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest)はサービスへのリクエスト方法を案内しています。
 
-考慮すべきもう一つの側面は全体的なアプリケーションパフォーマンスです。マルチモーダルおよびマルチモデルのアプリケーションでは、パフォーマンスとはシステムが利用者やユーザーの期待通りに動作し、有害な出力を生成しないことを意味します。全体アプリケーションの性能を評価するために、[Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in)をご利用ください。また、[カスタム評価者](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators)を作成し評価に使用することも可能です。
+もうひとつ考慮すべき点は、アプリケーション全体のパフォーマンスです。マルチモーダルおよびマルチモデルのアプリケーションでは、パフォーマンスとは、システムがユーザーの期待通りに動作し、有害な出力を生成しないことも含みます。[Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in)を使ってアプリケーション全体のパフォーマンス評価を行うことが重要です。また、[カスタム評価者](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators)を作成し評価に用いることもできます。
 
-開発環境でAIアプリケーションを評価するには、[Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html)を使用します。テストデータセットやターゲットがある場合、生成AIアプリケーションの生成物は組み込み評価者またはお好みのカスタム評価者によって定量的に測定されます。Azure AI Evaluation SDKを利用してシステムを評価するための[クイックスタートガイド](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk)を参考にしてください。評価実行後は、[Microsoft Foundryで結果を視覚化](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)できます。
+開発環境にてAIアプリケーションを評価するには、[Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html)をご利用ください。テストデータセットまたは目的に応じて、内蔵評価者や選択したカスタム評価者によって生成結果を定量的に測定できます。Azure AI Evaluation SDKを使用したシステム評価の開始手順は、[クイックスタートガイド](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk)をご参照ください。評価実行後は[Microsoft Foundryで結果を可視化](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)することが可能です。
 
 ## 商標
 
-本プロジェクトには、プロジェクト、製品、またはサービスの商標やロゴが含まれる場合があります。Microsoftの商標またはロゴの許可された使用は、[Microsoftの商標およびブランドガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)に従う必要があります。
-本プロジェクトの修正版でMicrosoftの商標またはロゴを使用する場合は、混乱を招かず、Microsoftのスポンサーシップを示唆しないようにしてください。第三者の商標やロゴの使用は、それら第三者のポリシーに従います。
+このプロジェクトには、プロジェクト、製品、サービスの商標やロゴが含まれている場合があります。マイクロソフトの商標やロゴの使用は、[Microsoftの商標およびブランドガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)に従う必要があります。  
+本プロジェクトの改変版でマイクロソフトの商標やロゴを使用する場合は、混乱を招くことやマイクロソフトの後援を示唆することがないようにしてください。第三者の商標やロゴの使用は、該当する第三者のポリシーに従う必要があります。
 
-## サポートを得るには
+## サポート
 
-AIアプリ開発で問題が発生した場合、または質問がある場合は、以下に参加してください:
+AIアプリの構築で行き詰まったり質問がある場合は、以下へご参加ください：
 
 [![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-製品のフィードバックやビルド中のエラーについては、以下にアクセスしてください:
+製品に関するフィードバックやエラーについては、以下をご利用ください：
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**免責事項**：  
-本書類は AI 翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性には努めていますが、自動翻訳には誤りや不正確な箇所が含まれる場合があることをご承知おきください。原文のネイティブ言語の文書が公式の情報源とみなされます。重要な情報については、専門の人力翻訳を推奨します。この翻訳の使用により生じたいかなる誤解や誤訳についても、当方は一切責任を負いません。
+**免責事項**:  
+本書類は AI 翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確さを期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご了承ください。原文のネイティブ言語版が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用に起因する誤解や誤訳については、一切の責任を負いかねます。
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
