@@ -1,0 +1,920 @@
+{
+  "AGENTS.md": {
+    "original_hash": "0a8abf7e5b23d3dd6d59cf82a4a14514",
+    "translation_date": "2026-04-20T08:17:41+00:00",
+    "source_file": "AGENTS.md",
+    "language_code": "km"
+  },
+  "CONTRIBUTING.md": {
+    "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+    "translation_date": "2026-04-20T08:13:01+00:00",
+    "source_file": "CONTRIBUTING.md",
+    "language_code": "km"
+  },
+  "README.md": {
+    "original_hash": "a49252a2706935f21c8abf8471481553",
+    "translation_date": "2026-04-20T08:16:05+00:00",
+    "source_file": "README.md",
+    "language_code": "km"
+  },
+  "SECURITY.md": {
+    "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
+    "translation_date": "2026-04-20T08:16:29+00:00",
+    "source_file": "SECURITY.md",
+    "language_code": "km"
+  },
+  "code/01.Introduce/guidance.ipynb": {
+    "original_hash": "b1016a6564e31ce413d76659b11effa8",
+    "translation_date": "2026-04-20T13:27:35+00:00",
+    "source_file": "code/01.Introduce/guidance.ipynb",
+    "language_code": "km"
+  },
+  "code/01.Introduce/ollama.ipynb": {
+    "original_hash": "6f9e40a7dbbd892aae50aff77da4b4be",
+    "translation_date": "2026-04-20T13:08:04+00:00",
+    "source_file": "code/01.Introduce/ollama.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Finetuning/Phi-3-finetune-lora-python.ipynb": {
+    "original_hash": "5c3cec025ee0330964ccd75d72b52e28",
+    "translation_date": "2026-04-20T12:39:51+00:00",
+    "source_file": "code/03.Finetuning/Phi-3-finetune-lora-python.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb": {
+    "original_hash": "d8f2abc10d053f7f7c05abc402b2e019",
+    "translation_date": "2026-04-20T13:00:48+00:00",
+    "source_file": "code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb": {
+    "original_hash": "e53d7138b821083b65a7b4f21db80de6",
+    "translation_date": "2026-04-20T12:47:40+00:00",
+    "source_file": "code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Finetuning/olive-lab/readme.md": {
+    "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+    "translation_date": "2026-04-20T08:18:49+00:00",
+    "source_file": "code/03.Finetuning/olive-lab/readme.md",
+    "language_code": "km"
+  },
+  "code/03.Finetuning/olive-ort-example/README.md": {
+    "original_hash": "4164123a700fecd535d850f09506d72a",
+    "translation_date": "2026-04-20T08:17:59+00:00",
+    "source_file": "code/03.Finetuning/olive-ort-example/README.md",
+    "language_code": "km"
+  },
+  "code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb": {
+    "original_hash": "016e5cff42352953a5e2cbb687ea247e",
+    "translation_date": "2026-04-20T14:37:51+00:00",
+    "source_file": "code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb": {
+    "original_hash": "9575230d0f7f6fd9e66c3e63eabff210",
+    "translation_date": "2026-04-20T14:36:03+00:00",
+    "source_file": "code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb": {
+    "original_hash": "931d34e00e6dac2e91d5ef1b714360b9",
+    "translation_date": "2026-04-20T14:36:34+00:00",
+    "source_file": "code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb",
+    "language_code": "km"
+  },
+  "code/03.Inference/MLX/MLX_DEMO.ipynb": {
+    "original_hash": "849ba001aede5ed6fd3b62bbc87042b7",
+    "translation_date": "2026-04-20T14:38:43+00:00",
+    "source_file": "code/03.Inference/MLX/MLX_DEMO.ipynb",
+    "language_code": "km"
+  },
+  "code/04.Finetuning/Phi-3-finetune-lora-python.ipynb": {
+    "original_hash": "5c3cec025ee0330964ccd75d72b52e28",
+    "translation_date": "2026-04-20T14:15:18+00:00",
+    "source_file": "code/04.Finetuning/Phi-3-finetune-lora-python.ipynb",
+    "language_code": "km"
+  },
+  "code/04.Finetuning/Phi-3-finetune-qlora-python.ipynb": {
+    "original_hash": "d8f2abc10d053f7f7c05abc402b2e019",
+    "translation_date": "2026-04-20T14:35:28+00:00",
+    "source_file": "code/04.Finetuning/Phi-3-finetune-qlora-python.ipynb",
+    "language_code": "km"
+  },
+  "code/04.Finetuning/Phi_3_Inference_Finetuning.ipynb": {
+    "original_hash": "e53d7138b821083b65a7b4f21db80de6",
+    "translation_date": "2026-04-20T14:22:38+00:00",
+    "source_file": "code/04.Finetuning/Phi_3_Inference_Finetuning.ipynb",
+    "language_code": "km"
+  },
+  "code/04.Finetuning/olive-lab/readme.md": {
+    "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+    "translation_date": "2026-04-20T08:20:57+00:00",
+    "source_file": "code/04.Finetuning/olive-lab/readme.md",
+    "language_code": "km"
+  },
+  "code/04.Finetuning/olive-ort-example/README.md": {
+    "original_hash": "4164123a700fecd535d850f09506d72a",
+    "translation_date": "2026-04-20T08:19:58+00:00",
+    "source_file": "code/04.Finetuning/olive-ort-example/README.md",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb": {
+    "original_hash": "6f21ae2c890f7976dba1078cb07d2fd4",
+    "translation_date": "2026-04-20T13:37:05+00:00",
+    "source_file": "code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb": {
+    "original_hash": "e92507d24bd50d3d58e1ddfe90598e54",
+    "translation_date": "2026-04-20T13:38:51+00:00",
+    "source_file": "code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb": {
+    "original_hash": "4a086f6f8eac52197836b81cdcc70d0b",
+    "translation_date": "2026-04-20T13:45:03+00:00",
+    "source_file": "code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb": {
+    "original_hash": "d821cb8bd6a7041484fa62b88482b2fc",
+    "translation_date": "2026-04-20T13:30:18+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb": {
+    "original_hash": "5b663d6ea99d8064f6f0460e72f06925",
+    "translation_date": "2026-04-20T14:00:13+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb": {
+    "original_hash": "751cbc4b70dda9c27b60003cc36ce794",
+    "translation_date": "2026-04-20T13:57:38+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb": {
+    "original_hash": "76f6538d7b70578e213a6484eb8ecdba",
+    "translation_date": "2026-04-20T13:36:24+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb",
+    "language_code": "km"
+  },
+  "code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb": {
+    "original_hash": "11e3f99abd178a635084cdbe5ac07600",
+    "translation_date": "2026-04-20T13:43:58+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb",
+    "language_code": "km"
+  },
+  "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md": {
+    "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
+    "translation_date": "2026-04-20T08:22:44+00:00",
+    "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
+    "language_code": "km"
+  },
+  "code/07.Lab/01/AIPC/extensions/phi3ext/README.md": {
+    "original_hash": "be0b2937160c486180ded27e4f14adeb",
+    "translation_date": "2026-04-20T08:22:34+00:00",
+    "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
+    "language_code": "km"
+  },
+  "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md": {
+    "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
+    "translation_date": "2026-04-20T08:23:07+00:00",
+    "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
+    "language_code": "km"
+  },
+  "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md": {
+    "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
+    "translation_date": "2026-04-20T08:21:43+00:00",
+    "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
+    "language_code": "km"
+  },
+  "code/07.Lab/01/Apple/phi3ext/README.md": {
+    "original_hash": "be0b2937160c486180ded27e4f14adeb",
+    "translation_date": "2026-04-20T08:21:33+00:00",
+    "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
+    "language_code": "km"
+  },
+  "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md": {
+    "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
+    "translation_date": "2026-04-20T08:22:09+00:00",
+    "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
+    "language_code": "km"
+  },
+  "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md": {
+    "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
+    "translation_date": "2026-04-20T08:21:14+00:00",
+    "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
+    "language_code": "km"
+  },
+  "code/08.RAG/rag_webgpu_chat/README.md": {
+    "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
+    "translation_date": "2026-04-20T08:23:50+00:00",
+    "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb": {
+    "original_hash": "c38852a39916f5605a0d115129fdf162",
+    "translation_date": "2026-04-20T14:53:00+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb": {
+    "original_hash": "5941c6c1bc4fa13e04f4a43565218986",
+    "translation_date": "2026-04-20T14:50:04+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb": {
+    "original_hash": "a7969a0a723377ed66027c205d443372",
+    "translation_date": "2026-04-20T14:47:00+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb": {
+    "original_hash": "92140c3d4ec4c67c1232c5d30f1d2b84",
+    "translation_date": "2026-04-20T14:48:53+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb": {
+    "original_hash": "175ab0a3e8be965e0e378b39b353dede",
+    "translation_date": "2026-04-20T14:42:19+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb": {
+    "original_hash": "56cf1c05848d752df163a2bf29cefba4",
+    "translation_date": "2026-04-20T14:44:37+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb": {
+    "original_hash": "34054db367984cbb33241cfebf4fddf9",
+    "translation_date": "2026-04-20T14:51:09+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb": {
+    "original_hash": "a6e4e7fe7489f0fe904123b74afc1da9",
+    "translation_date": "2026-04-20T14:46:14+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb": {
+    "original_hash": "2aa9d2378824333dc3b9cad3c266c9b7",
+    "translation_date": "2026-04-20T14:45:06+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb": {
+    "original_hash": "a227afad1987fc130247aa70c1f279da",
+    "translation_date": "2026-04-20T14:40:54+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/phi3-instruct-demo.ipynb": {
+    "original_hash": "f2c0eca890183e25633c17cf3926f0db",
+    "translation_date": "2026-04-20T14:51:52+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/phi3-instruct-demo.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/phi3-vision-demo.ipynb": {
+    "original_hash": "b5ae7034946eabf51b52b2c659a51b9b",
+    "translation_date": "2026-04-20T14:40:12+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/phi3-vision-demo.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/phi3_moe_demo.ipynb": {
+    "original_hash": "992e7aa805516d8bcb29ef241d714b5f",
+    "translation_date": "2026-04-20T14:43:27+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/phi3_moe_demo.ipynb",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md": {
+    "original_hash": "bd0afcb627d5754038537758315cbad7",
+    "translation_date": "2026-04-20T08:19:19+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/vscode/phiext/README.md": {
+    "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+    "translation_date": "2026-04-20T08:19:10+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
+    "language_code": "km"
+  },
+  "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md": {
+    "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
+    "translation_date": "2026-04-20T08:19:43+00:00",
+    "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.AISafety.md": {
+    "original_hash": "839ccc4b3886ef10cfd4e64977f5792d",
+    "translation_date": "2026-04-20T08:58:35+00:00",
+    "source_file": "md/01.Introduction/01/01.AISafety.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.Edgeandcloud.md": {
+    "original_hash": "777aa0ff38fceecc29a00834f2f7a2f0",
+    "translation_date": "2026-04-20T08:51:14+00:00",
+    "source_file": "md/01.Introduction/01/01.Edgeandcloud.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.EnvironmentSetup.md": {
+    "original_hash": "3edae6aebc3d0143037109e8af58f1ac",
+    "translation_date": "2026-04-20T08:51:55+00:00",
+    "source_file": "md/01.Introduction/01/01.EnvironmentSetup.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.Guidance.md": {
+    "original_hash": "50ca6463006ed7cedbd4c08e82136485",
+    "translation_date": "2026-04-20T08:53:01+00:00",
+    "source_file": "md/01.Introduction/01/01.Guidance.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.Hardwaresupport.md": {
+    "original_hash": "0b53204571fa5ed09677a1d6a4b3d5f9",
+    "translation_date": "2026-04-20T08:51:30+00:00",
+    "source_file": "md/01.Introduction/01/01.Hardwaresupport.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.PhiFamily.md": {
+    "original_hash": "4db35a4c4444d43044fd2f8653f0a6fa",
+    "translation_date": "2026-04-20T08:50:47+00:00",
+    "source_file": "md/01.Introduction/01/01.PhiFamily.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/01/01.Understandingtech.md": {
+    "original_hash": "9841486ba4cf2590fabe609b925b00eb",
+    "translation_date": "2026-04-20T08:52:27+00:00",
+    "source_file": "md/01.Introduction/01/01.Understandingtech.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/01.HF.md": {
+    "original_hash": "624fe133fba62773979d45f54519f7bb",
+    "translation_date": "2026-04-20T10:02:24+00:00",
+    "source_file": "md/01.Introduction/02/01.HF.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/02.GitHubModel.md": {
+    "original_hash": "fb67a08b9fc911a10ed58081fadef416",
+    "translation_date": "2026-04-20T10:05:59+00:00",
+    "source_file": "md/01.Introduction/02/02.GitHubModel.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/03.AzureAIFoundry.md": {
+    "original_hash": "ef023b5d60f372148a47cb28078b1991",
+    "translation_date": "2026-04-20T09:46:50+00:00",
+    "source_file": "md/01.Introduction/02/03.AzureAIFoundry.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/04.Ollama.md": {
+    "original_hash": "2aa35f3c8b437fd5dc9995d53909d495",
+    "translation_date": "2026-04-20T09:49:54+00:00",
+    "source_file": "md/01.Introduction/02/04.Ollama.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/05.AITK.md": {
+    "original_hash": "2544cf9df11c315e301d2f3796b63153",
+    "translation_date": "2026-04-20T09:54:42+00:00",
+    "source_file": "md/01.Introduction/02/05.AITK.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/06.NVIDIA.md": {
+    "original_hash": "7b08e277df2a9307f861ae54bc30c772",
+    "translation_date": "2026-04-20T10:09:30+00:00",
+    "source_file": "md/01.Introduction/02/06.NVIDIA.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/02/07.FoundryLocal.md": {
+    "original_hash": "9baadad68fd1974324dc30cdd792f7fd",
+    "translation_date": "2026-04-20T09:59:09+00:00",
+    "source_file": "md/01.Introduction/02/07.FoundryLocal.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/AIPC_Inference.md": {
+    "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
+    "translation_date": "2026-04-20T09:22:35+00:00",
+    "source_file": "md/01.Introduction/03/AIPC_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Android_Inference.md": {
+    "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
+    "translation_date": "2026-04-20T09:25:13+00:00",
+    "source_file": "md/01.Introduction/03/Android_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Jetson_Inference.md": {
+    "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
+    "translation_date": "2026-04-20T09:33:23+00:00",
+    "source_file": "md/01.Introduction/03/Jetson_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Kaito_Inference.md": {
+    "original_hash": "aca91084bc440431571e00bf30d96ab8",
+    "translation_date": "2026-04-20T09:13:40+00:00",
+    "source_file": "md/01.Introduction/03/Kaito_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Local_Server_Inference.md": {
+    "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
+    "translation_date": "2026-04-20T09:09:53+00:00",
+    "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/MLX_Inference.md": {
+    "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+    "translation_date": "2026-04-20T09:36:57+00:00",
+    "source_file": "md/01.Introduction/03/MLX_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Remote_Interence.md": {
+    "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
+    "translation_date": "2026-04-20T08:59:14+00:00",
+    "source_file": "md/01.Introduction/03/Remote_Interence.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Rust_Inference.md": {
+    "original_hash": "8a7ad026d880c666db9739a17a2eb400",
+    "translation_date": "2026-04-20T09:03:01+00:00",
+    "source_file": "md/01.Introduction/03/Rust_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/Vision_Inference.md": {
+    "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+    "translation_date": "2026-04-20T09:39:41+00:00",
+    "source_file": "md/01.Introduction/03/Vision_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/iOS_Inference.md": {
+    "original_hash": "82af197df38d25346a98f1f0e84d1698",
+    "translation_date": "2026-04-20T09:43:20+00:00",
+    "source_file": "md/01.Introduction/03/iOS_Inference.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/iOS_Inference_MLX.md": {
+    "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
+    "translation_date": "2026-04-20T09:07:19+00:00",
+    "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/03/overview.md": {
+    "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
+    "translation_date": "2026-04-20T09:29:20+00:00",
+    "source_file": "md/01.Introduction/03/overview.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/04/QuantifyingPhi.md": {
+    "original_hash": "f4cbbe7bf3e764de52d64a96d97b3c35",
+    "translation_date": "2026-04-20T08:46:25+00:00",
+    "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md": {
+    "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
+    "translation_date": "2026-04-20T08:44:44+00:00",
+    "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md": {
+    "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
+    "translation_date": "2026-04-20T08:44:24+00:00",
+    "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md": {
+    "original_hash": "462bddc47427d8785f3c9fd817b346fe",
+    "translation_date": "2026-04-20T08:45:12+00:00",
+    "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md": {
+    "original_hash": "3bb9f5c926673593287eddc3741226cb",
+    "translation_date": "2026-04-20T08:45:45+00:00",
+    "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/05/AIFoundry.md": {
+    "original_hash": "474cdaf37e063a2d17ee4c7c29e5b3cf",
+    "translation_date": "2026-04-20T08:50:10+00:00",
+    "source_file": "md/01.Introduction/05/AIFoundry.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/05/Promptflow.md": {
+    "original_hash": "3cbe7629d254f1043193b7fe22524d55",
+    "translation_date": "2026-04-20T08:49:47+00:00",
+    "source_file": "md/01.Introduction/05/Promptflow.md",
+    "language_code": "km"
+  },
+  "md/01.Introduction/05/ResponsibleAI.md": {
+    "original_hash": "29ca729feaf07a17847be1b020acba07",
+    "translation_date": "2026-04-20T08:48:59+00:00",
+    "source_file": "md/01.Introduction/05/ResponsibleAI.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md": {
+    "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
+    "translation_date": "2026-04-20T10:25:04+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md": {
+    "original_hash": "651a6c85c349581d566b086f3e325424",
+    "translation_date": "2026-04-20T11:16:44+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md": {
+    "original_hash": "7ca2c30fdb802664070e9cfbf92e24fe",
+    "translation_date": "2026-04-20T10:44:57+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md": {
+    "original_hash": "7548b81809741c500d3e80b1c0af4847",
+    "translation_date": "2026-04-20T11:07:04+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md": {
+    "original_hash": "f61c383bbf0c3dac97e43f833c258731",
+    "translation_date": "2026-04-20T10:49:20+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md": {
+    "original_hash": "7f72d7981ed3640865700f51ae407da4",
+    "translation_date": "2026-04-20T10:51:37+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
+    "original_hash": "b066fc29c1b2129df84e027cb75119ce",
+    "translation_date": "2026-04-20T10:21:58+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md": {
+    "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
+    "translation_date": "2026-04-20T10:53:59+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
+    "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
+    "translation_date": "2026-04-20T10:15:52+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md": {
+    "original_hash": "b62864faf628eb07f5231d4885555198",
+    "translation_date": "2026-04-20T10:18:32+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb": {
+    "original_hash": "f2c0eca890183e25633c17cf3926f0db",
+    "translation_date": "2026-04-20T15:03:20+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md": {
+    "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+    "translation_date": "2026-04-20T11:19:13+00:00",
+    "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md": {
+    "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
+    "translation_date": "2026-04-20T11:26:23+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/01.Installations.md": {
+    "original_hash": "a4ef39027902e82f2c33d568d2a2259a",
+    "translation_date": "2026-04-20T11:54:43+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/01.Installations.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/02.PromptflowWithNPU.md": {
+    "original_hash": "bc29f7fe7fc16bed6932733eac8c81b8",
+    "translation_date": "2026-04-20T11:57:49+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/02.PromptflowWithNPU.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/03.DeployPhi3VisionOnAzure.md": {
+    "original_hash": "20cb4e6ac1686248e8be913ccf6c2bc2",
+    "translation_date": "2026-04-20T12:00:14+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/03.DeployPhi3VisionOnAzure.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/04.CreatePhi3AgentInVSCode.md": {
+    "original_hash": "b267038b665ba40cfaac6c6d975ccc40",
+    "translation_date": "2026-04-20T11:52:08+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/AIPC/04.CreatePhi3AgentInVSCode.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/01.Installations.md": {
+    "original_hash": "4b16264917d9b93169745d92b8ce8c65",
+    "translation_date": "2026-04-20T11:40:29+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/01.Installations.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/02.PromptflowWithMLX.md": {
+    "original_hash": "3dbbf568625b1ee04b354c2dc81d3248",
+    "translation_date": "2026-04-20T11:48:39+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/02.PromptflowWithMLX.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/03.DeployPhi3VisionOnAzure.md": {
+    "original_hash": "20cb4e6ac1686248e8be913ccf6c2bc2",
+    "translation_date": "2026-04-20T11:43:35+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/03.DeployPhi3VisionOnAzure.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/04.CreatePhi3AgentInVSCode.md": {
+    "original_hash": "df19a4d9fe96fe7335665bede9298a62",
+    "translation_date": "2026-04-20T11:37:55+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/HOL/Apple/04.CreatePhi3AgentInVSCode.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi3/VSCodeExt/README.md": {
+    "original_hash": "f3c153720d2d14b60fe390def02a0e4b",
+    "translation_date": "2026-04-20T11:33:48+00:00",
+    "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi4/GenProjectCode/README.md": {
+    "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
+    "translation_date": "2026-04-20T11:28:59+00:00",
+    "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb": {
+    "original_hash": "fcce7b98f4caae511b99cdf0b7ce20a9",
+    "translation_date": "2026-04-20T15:51:43+00:00",
+    "source_file": "md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/02.Code/Phi4r/github_models_inference.ipynb": {
+    "original_hash": "5a80dff1e4ea06d5aa9328e96b772110",
+    "translation_date": "2026-04-20T16:04:53+00:00",
+    "source_file": "md/02.Application/02.Code/Phi4r/github_models_inference.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md": {
+    "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
+    "translation_date": "2026-04-20T12:12:35+00:00",
+    "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb": {
+    "original_hash": "47c8a02b77bdba223221fa83bce7abf5",
+    "translation_date": "2026-04-20T16:24:39+00:00",
+    "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb": {
+    "original_hash": "9fffb9d2432813be90392fbfab3de223",
+    "translation_date": "2026-04-20T16:20:39+00:00",
+    "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md": {
+    "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
+    "translation_date": "2026-04-20T12:06:51+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
+    "language_code": "km"
+  },
+  "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md": {
+    "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
+    "translation_date": "2026-04-20T12:02:45+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
+    "language_code": "km"
+  },
+  "md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb": {
+    "original_hash": "76f6538d7b70578e213a6484eb8ecdba",
+    "translation_date": "2026-04-20T16:13:44+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb": {
+    "original_hash": "b5ae7034946eabf51b52b2c659a51b9b",
+    "translation_date": "2026-04-20T16:06:16+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md": {
+    "original_hash": "83b94a515637dffaea3bae99278561a6",
+    "translation_date": "2026-04-20T12:08:37+00:00",
+    "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/05.Audio/Phi4/Siri/demo.ipynb": {
+    "original_hash": "f1f24faba4718e79654b14c217fe0f5d",
+    "translation_date": "2026-04-20T16:15:22+00:00",
+    "source_file": "md/02.Application/05.Audio/Phi4/Siri/demo.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/05.Audio/Phi4/Transciption/README.md": {
+    "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
+    "translation_date": "2026-04-20T12:10:31+00:00",
+    "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/05.Audio/Phi4/Translate/demo.ipynb": {
+    "original_hash": "012d78b4fd3058f570d2eb98f03bfd8e",
+    "translation_date": "2026-04-20T16:14:37+00:00",
+    "source_file": "md/02.Application/05.Audio/Phi4/Translate/demo.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb": {
+    "original_hash": "c023540b1eda8c0746871294979e1e5c",
+    "translation_date": "2026-04-20T15:22:49+00:00",
+    "source_file": "md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb": {
+    "original_hash": "992e7aa805516d8bcb29ef241d714b5f",
+    "translation_date": "2026-04-20T15:04:25+00:00",
+    "source_file": "md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md": {
+    "original_hash": "b7078bd9f16589c50139fbba8674de82",
+    "translation_date": "2026-04-20T11:21:22+00:00",
+    "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
+    "language_code": "km"
+  },
+  "md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb": {
+    "original_hash": "73d882fb8ca2246a0d06a4ade030d4a6",
+    "translation_date": "2026-04-20T15:25:12+00:00",
+    "source_file": "md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb": {
+    "original_hash": "8b61c907614fd2780d526c45c388d285",
+    "translation_date": "2026-04-20T15:38:43+00:00",
+    "source_file": "md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb": {
+    "original_hash": "d8ff070b0f9acbcfb591b25dc1323e75",
+    "translation_date": "2026-04-20T15:28:13+00:00",
+    "source_file": "md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb": {
+    "original_hash": "52e8c978c78aedecd824a8cc5690d1d0",
+    "translation_date": "2026-04-20T16:16:23+00:00",
+    "source_file": "md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/09.Math/MathDemo.ipynb": {
+    "original_hash": "93d4d22a7a9ec7e7e668474526477813",
+    "translation_date": "2026-04-20T14:58:59+00:00",
+    "source_file": "md/02.Application/09.Math/MathDemo.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb": {
+    "original_hash": "bb91a2bb948f4dddb0a947bb93650c9b",
+    "translation_date": "2026-04-20T15:00:18+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb": {
+    "original_hash": "763d9f56f67e0a564f0d2c78bdb7b5aa",
+    "translation_date": "2026-04-20T15:02:38+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb",
+    "language_code": "km"
+  },
+  "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb": {
+    "original_hash": "68c952d2384b008da273678aa8a25285",
+    "translation_date": "2026-04-20T15:01:30+00:00",
+    "source_file": "md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb",
+    "language_code": "km"
+  },
+  "md/02.QuickStart/AzureAIFoundry_QuickStart.md": {
+    "original_hash": "86a19afad410d7f03de7e864e773c737",
+    "translation_date": "2026-04-20T08:24:25+00:00",
+    "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
+    "language_code": "km"
+  },
+  "md/02.QuickStart/GitHubModel_QuickStart.md": {
+    "original_hash": "5113634b77370af6790f9697d5d7de90",
+    "translation_date": "2026-04-20T08:25:03+00:00",
+    "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/03.Inference/MLX_Inference.md": {
+    "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+    "translation_date": "2026-04-20T12:15:29+00:00",
+    "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/CreatingSampleData.md": {
+    "original_hash": "3cd0b727945d57998f1096763df56a84",
+    "translation_date": "2026-04-20T08:39:45+00:00",
+    "source_file": "md/03.FineTuning/CreatingSampleData.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_AIFoundry.md": {
+    "original_hash": "08b0bb5de6cba7df70cd3121a2b840a6",
+    "translation_date": "2026-04-20T08:44:01+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_Kaito.md": {
+    "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+    "translation_date": "2026-04-20T08:41:22+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_Lora.md": {
+    "original_hash": "50b6a55a0831b417835087d8b57759fe",
+    "translation_date": "2026-04-20T08:27:30+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Lora.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_MLSDK.md": {
+    "original_hash": "c0d5ccdd10f28a8347d6fbdee0f0179a",
+    "translation_date": "2026-04-20T08:37:14+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_MLX.md": {
+    "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
+    "translation_date": "2026-04-20T08:41:42+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_MLX.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_MicrosoftOlive.md": {
+    "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
+    "translation_date": "2026-04-20T08:38:17+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md": {
+    "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
+    "translation_date": "2026-04-20T08:27:05+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_Qlora.md": {
+    "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
+    "translation_date": "2026-04-20T08:37:25+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_Scenarios.md": {
+    "original_hash": "f5977c8743deaa7c72940243f9594236",
+    "translation_date": "2026-04-20T08:40:52+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_Vision.md": {
+    "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
+    "translation_date": "2026-04-20T08:42:49+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_Vision.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/FineTuning_vs_RAG.md": {
+    "original_hash": "e4e010400c2918557b36bb932a14004c",
+    "translation_date": "2026-04-20T08:25:21+00:00",
+    "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md": {
+    "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+    "translation_date": "2026-04-20T08:26:30+00:00",
+    "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/Introduce_AzureML.md": {
+    "original_hash": "7fe541373802e33568e94e13226d463c",
+    "translation_date": "2026-04-20T08:39:12+00:00",
+    "source_file": "md/03.FineTuning/Introduce_AzureML.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/LetPhi3gotoIndustriy.md": {
+    "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
+    "translation_date": "2026-04-20T08:40:21+00:00",
+    "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
+    "language_code": "km"
+  },
+  "md/03.FineTuning/olive-lab/readme.md": {
+    "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+    "translation_date": "2026-04-20T12:23:11+00:00",
+    "source_file": "md/03.FineTuning/olive-lab/readme.md",
+    "language_code": "km"
+  },
+  "md/04.HOL/dotnet/readme.md": {
+    "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
+    "translation_date": "2026-04-20T10:12:51+00:00",
+    "source_file": "md/04.HOL/dotnet/readme.md",
+    "language_code": "km"
+  }
+}
