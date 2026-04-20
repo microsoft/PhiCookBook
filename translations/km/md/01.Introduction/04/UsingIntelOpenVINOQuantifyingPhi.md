@@ -1,0 +1,103 @@
+# **ការបង្កត់ Phi-3.5 ដោយប្រើ Intel OpenVINO**
+
+Intel គឺជា អ្នកផលិត CPU បែបប្រពៃណីបំផុត ដែលមានអ្នកប្រើប្រាស់ជាច្រើន។ ជាមួយនឹងការកើនឡើងនៃការរៀនម៉ាស៊ីន និងការរៀនជ្រៅ Intel ក៏បានចូលរួមប្រកួតប្រជែងសម្រាប់ល្បឿនពង្រឹង AI ផងដែរ។ សម្រាប់ការព្យាករណ៍ម៉ូដែល Intel មិនបានប្រើ GPU និង CPU តែប៉ុណ្ណោះទេ ប៉ុន្តែបានប្រើ NPU ផងដែរ។
+
+យើងសង្ឃឹមថានឹងចាត់ចែង Phi-3.x Family នៅផ្នែកចុងក្រោម ដើម្បីក្លាយជាផ្នែកសំខាន់បំផុតនៃ AI PC និង Copilot PC។ ការលោតនៃម៉ូដែលនៅផ្នែកចុងក្រោមអាស្រ័យលើការសហការរវាងអ្នកផលិតរឹងផ្សេងៗគ្នា។ ចំណុចនេះផ្តោតសំខាន់លើសេណារីយ៉ូប្រើប្រាស់ Intel OpenVINO ជាម៉ូដែលបង្កត់។
+
+## **OpenVINO ជាអ្វី**
+
+OpenVINO គឺជាក្រុមឧបករណ៍opensource សម្រាប់បង្កើនប្រសិទ្ធភាព និងចាត់ចែងម៉ូដែលរៀនជ្រៅពីពពកទៅដល់ផ្នែកចុងក្រោម។ វាជួយល្បឿនព្យាករណ៍រៀនជ្រៅក្នុងករណីប្រើប្រាស់ជាច្រើនដូចជា AI កំណត់បង្កើត, វីដេអូ, សំលេង, និងភាសា ជាមួយម៉ូដែលពីប្រព័ន្ធដ៏ពេញនិយមដូចជា PyTorch, TensorFlow, ONNX និងផ្សេងទៀត។ បម្លែង និងបង្កើនប្រសិទ្ធភាពម៉ូដែល ហើយចាត់ចែងលើបរិក្ខារនិងបរិបទផ្សំផ្សេងៗរបស់ Intel®, ទាំងនៅកន្លែងផ្ទាល់ និងលើឧបករណ៍, ក្នុងកម្មវិធីរុករក ឬនៅលើពពក។
+
+ឥឡូវនេះជាមួយ OpenVINO អ្នកអាចបង្កត់ម៉ូដែល GenAI បានយ៉ាងលឿននៅលើរឹង Intel ហើយល្បឿនឡើងការយោងម៉ូដែល។
+
+OpenVINO ឥឡូវគាំទ្រការបម្លែងបង្កត់ម៉ូដែល Phi-3.5-Vision និង Phi-3.5 Instruct។
+
+### **ការតំឡើងបរិបទ**
+
+សូមប្រាកដថាបរិបទដើម្បីដំណើរការខាងក្រោមត្រូវបានដំឡើងហើយ នេះគឺជា requirement.txt
+
+```txt
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+optimum-intel>=1.18.2
+nncf>=2.11.0
+openvino>=2024.3.0
+transformers>=4.40
+openvino-genai>=2024.3.0.0
+
+```
+
+### **ការបង្កត់ Phi-3.5-Instruct ដោយប្រើ OpenVINO**
+
+នៅក្នុង Terminal សូមរត់ script ខាងក្រោមនេះ
+
+```bash
+
+
+export llm_model_id = "microsoft/Phi-3.5-mini-instruct"
+
+export llm_model_path = "your save quantizing Phi-3.5-instruct location"
+
+optimum-cli export openvino --model {llm_model_id} --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6  --sym  --trust-remote-code {llm_model_path}
+
+
+```
+
+### **ការបង្កត់ Phi-3.5-Vision ដោយប្រើ OpenVINO**
+
+សូមរត់ script នេះនៅក្នុង Python ឬ Jupyter lab
+
+```python
+
+import requests
+from pathlib import Path
+from ov_phi3_vision import convert_phi3_model
+import nncf
+
+if not Path("ov_phi3_vision.py").exists():
+    r = requests.get(url="https://raw.githubusercontent.com/openvinotoolkit/openvino_notebooks/latest/notebooks/phi-3-vision/ov_phi3_vision.py")
+    open("ov_phi3_vision.py", "w").write(r.text)
+
+
+if not Path("gradio_helper.py").exists():
+    r = requests.get(url="https://raw.githubusercontent.com/openvinotoolkit/openvino_notebooks/latest/notebooks/phi-3-vision/gradio_helper.py")
+    open("gradio_helper.py", "w").write(r.text)
+
+if not Path("notebook_utils.py").exists():
+    r = requests.get(url="https://raw.githubusercontent.com/openvinotoolkit/openvino_notebooks/latest/utils/notebook_utils.py")
+    open("notebook_utils.py", "w").write(r.text)
+
+
+
+model_id = "microsoft/Phi-3.5-vision-instruct"
+out_dir = Path("../model/phi-3.5-vision-128k-instruct-ov")
+compression_configuration = {
+    "mode": nncf.CompressWeightsMode.INT4_SYM,
+    "group_size": 64,
+    "ratio": 0.6,
+}
+if not out_dir.exists():
+    convert_phi3_model(model_id, out_dir, compression_configuration)
+
+```
+
+### **🤖 ឧទាហរណ៍សម្រាប់ Phi-3.5 ជាមួយ Intel OpenVINO**
+
+| Labs    | ណែនាំ | ទៅកាន់ |
+| -------- | ------- |  ------- |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | រៀនពីរបៀបប្រើ Phi-3.5 Instruct នៅលើ AI PC របស់អ្នក    |  [ទៅ](../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (រូបភាព) | រៀនពីរបៀបប្រើ Phi-3.5 Vision ដើម្បីវិភាគរូបភាពនៅលើ AI PC របស់អ្នក      |  [ទៅ](../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (វីដេអូ)   | រៀនពីរបៀបប្រើ Phi-3.5 Vision ដើម្បីវិភាគរូបភាពនៅលើ AI PC របស់អ្នក    |  [ទៅ](../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+
+## **ធនធាន**
+
+1. រីករាយរៀនបន្ថែមអំពី Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+
+2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ការ​បញ្ជាក់**៖  
+ឯកសារ​នេះ​ត្រូវបាន​ប្រែ​ប្រែ​សម្រួល​ដោយ​ប្រើ​សេវាកម្ម​ប្រែប្រែក្លែង ដោយ AI [Co-op Translator](https://github.com/Azure/co-op-translator)។ ខណៈពេល​យើង​ព្យាយាម​មាន​គុណភាព​ត្រឹម​ត្រូវ សូម​ប្រាកដ​ថា​ការ​ប្រែ​ប្រែក្លែង​ស្វ័យប្រវត្តិនោះ អាច​មាន​កំហុស ឬ​ចម្លែកខុស​ពីការពិត។ ឯកសារ​ដើម​ក្នុង​ភាសាមូលដ្ឋាន​គួរត្រូវ​បាន​ជាធនាគារដំបូង។ សម្រាប់​ព័ត៌មាន​សំខាន់ៗ អ្នកគួរតែ​ប្រើ​ការ​ប្រែ​ប្រែ​ដោយអ្នក​បញ្ញើ​មនុស្ស​ដែលមាន​ជំនាញ។ យើង​មិន​មាន​ភារកិច្ច​ចំពោះ​ការ​យល់ខុស ឬ​ការ​បំភ្លឺ​ខុស​ដែល​កើត​ឡើង​ពី​ការប្រើប្រាស់​ការ​ប្រែ​ប្រែក្លែង​នេះឡើយ។
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,0 +1,42 @@
+ក្នុងបរិបទ​នៃ Phi-3-mini, ការសន្និដ្ឋាន (inference) អនុវត្តទៅលើដំណើរការ​នៃការប្រើម៉ូដែលដើម្បីធ្វើការទាយ ឬបង្កើតលទ្ធផលអាស្រ័យលើទិន្នន័យបញ្ចូល។ សូមអនុញ្ញាតឲ្យខ្ញុំផ្ដល់ព័ត៌មានបន្ថែមអំពី Phi-3-mini និងសមត្ថភាពសន្និដ្ឋានរបស់វា។
+
+Phi-3-mini គឺជាផ្នែកមួយនៃស៊េរី Phi-3 ដែលបានចេញផ្សាយដោយ Microsoft។ ម៉ូដែលទាំងនេះបានរចនា​ដើម្បីកំណត់ឡើងវិញពីអ្វីដែលអាចធ្វើបានជាមួយ Small Language Models (SLMs)។
+
+Here are some key points about Phi-3-mini and its inference capabilities:
+
+## **Phi-3-mini Overview:**
+- Phi-3-mini មានទំហំប៉ារ៉ាម៉ែត្រ 3.8 billion។
+- វាអាចដំណើរការមិនត្រឹមតែ​នៅលើឧបករណ៍កុំព្យូទ័របែបប្រពៃណីប៉ុណ្ណោះទេ ប៉ុន្តែអាចដំណើរការលើឧបករណ៍ខ្នាតចុង (edge devices) ដូចជា ឧបករណ៍ចល័ត និងឧបករណ៍ IoT។
+- ការចេញផ្សាយ​របស់ Phi-3-mini ធ្វើឲ្យបុគ្គល និងសហគ្រាសអាចប្រើ SLMs លើឧបករណ៍ហារ্ডវែរ​ដែលខុសៗគ្នា ជាពិសេសនៅក្នុងបរិយាកាសដែលមានការកំណត់ធនធាន។
+- វាគ្របដណ្ដប់ទ្រង់ទ្រាយម៉ូដែលនានា រួមទាំងទ្រង់ទ្រាយ PyTorch ដើម, កំណែកដែលបានបរិមាណ (quantized) របស់ទ្រង់ទ្រាយ gguf, និងកំណែកបរិមាណដែលអាស្រ័យលើ ONNX។
+
+## **Accessing Phi-3-mini:**
+ដើម្បីចូលប្រើ Phi-3-mini អ្នកអាចប្រើ [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) ក្នុងកម្មវិធី Copilot។ Semantic Kernel មានភាពឆបគ្នាទូទៅជាមួយ Azure OpenAI Service, ម៉ូដែល open-source នៅលើ Hugging Face, និងម៉ូដែលក្នុងស្រុក (local models)។
+អ្នកក៏អាចប្រើ [Ollama](https://ollama.com) ឬ [LlamaEdge](https://llamaedge.com) ដើម្បីហៅម៉ូដែលដែលបានបរិមាណ។ Ollama អនុញ្ញាតឲ្យអ្នកប្រើបុគ្គលហៅម៉ូដែលបរិមាណផ្សេងៗគ្នា ខណៈដែល LlamaEdge ផ្ដល់ការ​ប្រើប្រាស់បានលើគ្រប់វេទិកាសម្រាប់ម៉ូដែល GGUF។
+
+## **Quantized Models:**
+អ្នកប្រើជាច្រើនចូលចិត្តប្រើម៉ូដែលដែលបានបរិមាណសម្រាប់ការសន្និដ្ឋានក្នុងស្រុក។ ឧទាហរណ៍ អ្នកអាចដំណើរការ Ollama run Phi-3 ដោយផ្ទាល់ ឬកំណត់វាផ្ទាល់ក្រៅបណ្តាញដោយប្រើ Modelfile។ Modelfile និយាយបញ្ជាក់ពីផ្លូវឯកសារ GGUF និងទ្រង់ទ្រាយ prompt។
+
+## **Generative AI Possibilities:**
+ការរួមបញ្ចូល SLMs ដូចជា Phi-3-mini បង្កើនឱកាសថ្មីៗសម្រាប់ Generative AI។ ការសន្និដ្ឋានគឺគ្រាន់តែជាជំហានដំបូងប៉ុណ្ណោះ; ម៉ូដែលទាំងនេះអាចត្រូវបានប្រើសម្រាប់ភារកិច្ចនានា​នៅក្នុងស្ថានភាពដែលមានការកំណត់ធនធាន, មានកំណត់អោយរង់ចាំ (latency-bound), និងមានការកំណត់ថ្លៃការចំណាយ។
+
+## **Unlocking Generative AI with Phi-3-mini: A Guide to Inference and Deployment**
+រៀនពីរបៀបប្រើ Semantic Kernel, Ollama/LlamaEdge, និង ONNX Runtime ដើម្បីចូលប្រើ និងធ្វើសន្និដ្ឋានម៉ូដែល Phi-3-mini ហើយស្វែងយល់ពីឱកាសនៃ Generative AI ក្នុងករណីប្រើប្រាស់នានា។
+
+**Features**
+Inference phi3-mini model in:
+
+- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)
+- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)
+- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)
+- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)
+
+សរុប, Phi-3-mini អនុញ្ញាតឲ្យអ្នកអភិវឌ្ឍន៍ស្វែងរកទ្រង់ទ្រាយម៉ូដែលខុសៗ និងប្រ استفاده (leverage) Generative AI ក្នុងករណីប្រៀបប្រដូចនិងបរិយាកាសប្រើប្រាស់នានា។
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ការមិនទទួលខុសត្រូវ**:
+ឯកសារនេះត្រូវបានបកប្រែដោយប្រើសេវាបកប្រែ AI [Co-op Translator](https://github.com/Azure/co-op-translator)។ ទោះយើងខិតខំសម្រាប់ភាពត្រឹមត្រូវក៏ដោយ សូមយល់ឲ្យដឹងថាការបកប្រែដោយស្វ័យប្រវត្តិអាចមានកំហុស ឬការមិនត្រឹមត្រូវ។ ឯកសារដើមនៅក្នុងភាសាដើមគួរត្រូវបានចាត់ទុកថាជាប្រភពផ្លូវការដ៏ទុកចិត្តបាន។ សម្រាប់ព័ត៌មានសំខាន់ៗ សូមពិចារណាជ្រើសរើសការបកប្រែដោយអ្នកបកប្រែវិជ្ជាជីវៈ (មនុស្ស)។ យើងមិនទទួលខុសត្រូវចំពោះការយល់ច្រឡំ ឬការបកស្រាយខុសណាដែលកើតឡើងពីការប្រើប្រាស់ការបកប្រែនេះឡើយ។
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
