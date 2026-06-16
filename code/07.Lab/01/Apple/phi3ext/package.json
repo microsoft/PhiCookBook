@@ -70,5 +70,8 @@
     "@types/node-fetch": "^2.6.11",
     "node-fetch": "^3.3.2",
     "phi3ext": "file:"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
   }
 }
