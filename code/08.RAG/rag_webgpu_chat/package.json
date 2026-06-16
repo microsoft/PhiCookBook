@@ -3,6 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8.3.0"
+  },
   "scripts": {
     "dev": "webpack serve --no-client-overlay",
     "build": "webpack",
@@ -27,6 +31,8 @@
     "webpack-dev-server": "^5.2.4"
   },
   "overrides": {
+    "protobufjs": "7.6.4",
+    "uuid": "11.1.1",
     "onnx-proto": {
       "protobufjs": "7.6.4"
     },
