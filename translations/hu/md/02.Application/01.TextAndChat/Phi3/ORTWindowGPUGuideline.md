@@ -1,16 +1,16 @@
-# **Útmutató az OnnxRuntime GenAI Windows GPU használatához**
+# **Útmutató az OnnxRuntime GenAI Windows GPU-hoz**
 
-Ez az útmutató lépéseket tartalmaz az ONNX Runtime (ORT) GPU-val történő használatának beállításához Windows rendszeren. Célja, hogy segítsen kihasználni a GPU gyorsítását a modellekhez, javítva a teljesítményt és a hatékonyságot.
+Ez az útmutató lépéseket tartalmaz az ONNX Runtime (ORT) GPU-kon Windows rendszeren történő beállításához és használatához. Azért készült, hogy segítsen a modellek GPU-gyorsításának kihasználásában, javítva ezzel a teljesítményt és a hatékonyságot.
 
-A dokumentum az alábbiakról nyújt tájékoztatást:
+A dokumentum útmutatást nyújt a következőkről:
 
-- Környezet beállítása: Útmutató a szükséges függőségek, például CUDA, cuDNN és ONNX Runtime telepítéséhez.
-- Konfiguráció: Hogyan állítsuk be a környezetet és az ONNX Runtime-ot a GPU erőforrások hatékony kihasználásához.
-- Optimalizálási tippek: Tanácsok a GPU beállítások finomhangolásához a legjobb teljesítmény érdekében.
+- Környezet beállítása: Az olyan szükséges függőségek telepítésére vonatkozó utasítások, mint a CUDA, cuDNN és az ONNX Runtime.
+- Konfiguráció: Hogyan konfiguráld a környezetet és az ONNX Runtime-ot a GPU erőforrások hatékony kihasználására.
+- Optimalizálási tippek: Tanácsok arra, hogyan hangold finomra a GPU beállításaidat a lehető legjobb teljesítmény érdekében.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Megjegyzés*** Javasolt a [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) használata Python környezetként
+   ***Megjegyzés*** Javasolt a [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) használata a Python környezetedhez
 
    ```bash
 
@@ -20,9 +20,10 @@ A dokumentum az alábbiakról nyújt tájékoztatást:
 
    ```
 
-   ***Emlékeztető*** Ha telepítettél bármilyen python ONNX könyvtárat, kérlek távolítsd el
+   ***Emlékeztető*** Ha telepítettél bármilyen Python ONNX könyvtárat, kérlek távolítsd el azokat
 
-### **2. CMake telepítése winget segítségével**
+### **2. CMake telepítése winget-pel**
+
 
    ```bash
 
@@ -30,13 +31,14 @@ A dokumentum az alábbiakról nyújt tájékoztatást:
 
    ```
 
-### **3. Visual Studio 2022 telepítése - Desktop Development with C++**
+### **3. Visual Studio 2022 telepítése - Asztali fejlesztés C++-val**
 
-   ***Megjegyzés*** Ha nem szeretnél fordítani, ezt a lépést kihagyhatod
+   ***Megjegyzés*** Ha nem szeretnéd fordítani, ezt a lépést kihagyhatod
 
 ![CPP](../../../../../../translated_images/hu/01.42f52a2b2aedff02.webp)
 
-### **4. NVIDIA Driver telepítése**
+
+### **4. NVIDIA driver telepítése**
 
 1. **NVIDIA GPU Driver**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -44,19 +46,21 @@ A dokumentum az alábbiakról nyújt tájékoztatást:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Emlékeztető*** Kérlek, az alapértelmezett beállításokat használd a telepítés során
+***Emlékeztető*** Kérlek az alapértelmezett beállításokat használd a telepítés során
 
 ### **5. NVIDIA környezet beállítása**
 
-Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 lib, bin, include mappákba
+Másold az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 lib, bin, include könyvtárakba
 
-- Másold a *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* fájlokat a *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* mappába
+- másold a *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* fájlokat a *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* könyvtárba
 
-- Másold a *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* fájlokat a *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* mappába
+- másold a *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* fájlokat a *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* könyvtárba
 
-- Másold a *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* fájlokat a *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* mappába
+- másold a *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* fájlokat a *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* könyvtárba
+
 
 ### **6. Phi-3.5-mini-instruct-onnx letöltése**
+
 
    ```bash
 
@@ -72,23 +76,28 @@ Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 
 
 ### **7. InferencePhi35Instruct.ipynb futtatása**
 
-   Nyisd meg a [Notebookot](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) és futtasd
+   Nyisd meg a [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) fájlt és futtasd le
+
 
 ![RESULT](../../../../../../translated_images/hu/02.b9b06996cf7255d5.webp)
 
+
 ### **8. ORT GenAI GPU fordítása**
+
 
    ***Megjegyzés*** 
    
-   1. Először távolíts el minden onnx, onnxruntime és onnxruntime-genai csomagot
+   1. Kérlek először távolíts el minden onnx, onnxruntime és onnxruntime-genai csomagot
 
+   
    ```bash
 
    pip list 
    
    ```
 
-   Ezután távolíts el minden onnxruntime könyvtárat, például
+   Ezután távolíts el minden onnxruntime könyvtárat, azaz
+
 
    ```bash
 
@@ -100,13 +109,17 @@ Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 
    
    ```
 
-   2. Ellenőrizd a Visual Studio kiterjesztés támogatását
+   2. Ellenőrizd a Visual Studio kiterjesztések támogatását
 
-   Nézd meg a C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras mappát, hogy megtalálható-e a C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration mappa. 
+   Ellenőrizd, hogy a C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras mappában megtalálható-e a C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration.
+   
+   Ha nincs meg, keresd meg más CUDA toolkit driver mappákban, majd másold át a visual_studio_integration mappát és tartalmát a C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration helyre
 
-   Ha nem találod, keresd meg más CUDA toolkit driver mappákban, majd másold át a visual_studio_integration mappát és tartalmát a C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration helyre
+
+
 
    - Ha nem szeretnél fordítani, ezt a lépést kihagyhatod
+
 
    ```bash
 
@@ -116,14 +129,15 @@ Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 
 
    - Töltsd le a [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) fájlt
 
-   - Csomagold ki az onnxruntime-win-x64-gpu-1.19.2.zip fájlt, nevezd át **ort**-ra, majd másold az ort mappát az onnxruntime-genai könyvtárba
+   - Csomagold ki az onnxruntime-win-x64-gpu-1.19.2.zip-et, nevezd át **ort**-ra, és másold az ort mappát az onnxruntime-genai könyvtárba
 
-   - Windows Terminalban nyisd meg a Developer Command Prompt for VS 2022-t, majd lépj be az onnxruntime-genai mappába
+   - Windows Terminal segítségével menj át a VS 2022 fejlesztői parancssorába, majd nyisd meg az onnxruntime-genai könyvtárat
 
 ![RESULT](../../../../../../translated_images/hu/03.b83ce473d5ff9b9b.webp)
 
-   - Fordítsd le a projektet a python környezeteddel
+   - Fordítsd le a projektet a Python környezeteddel
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -137,5 +151,9 @@ Másold át az NVIDIA CUDNN 9.4 lib, bin, include fájlokat az NVIDIA CUDA 12.4 
 
    ```
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi nyilatkozat**:
+Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javasolunk. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely ebből a fordításból ered.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
