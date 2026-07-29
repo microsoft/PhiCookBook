@@ -1,16 +1,16 @@
 # **Richtlijn voor OnnxRuntime GenAI Windows GPU**
 
-Deze richtlijn geeft stappen voor het opzetten en gebruiken van ONNX Runtime (ORT) met GPU's op Windows. Het is bedoeld om je te helpen GPU-versnelling voor je modellen te benutten, wat de prestaties en efficiëntie verbetert.
+Deze richtlijn biedt stappen voor het opzetten en gebruiken van de ONNX Runtime (ORT) met GPU's op Windows. Het is ontworpen om u te helpen GPU-versnelling te benutten voor uw modellen, waardoor de prestaties en efficiëntie verbeterd worden.
 
-Het document geeft advies over:
+Het document geeft richtlijnen over:
 
-- Omgevingsinstelling: Instructies voor het installeren van de benodigde afhankelijkheden zoals CUDA, cuDNN en ONNX Runtime.
-- Configuratie: Hoe je de omgeving en ONNX Runtime configureert om GPU-bronnen effectief te gebruiken.
-- Optimalisatietips: Advies over het fijn afstellen van je GPU-instellingen voor optimale prestaties.
+- Omgeving Setup: Instructies voor het installeren van de benodigde afhankelijkheden zoals CUDA, cuDNN en ONNX Runtime.
+- Configuratie: Hoe u de omgeving en ONNX Runtime configureert om GPU-bronnen effectief te gebruiken.
+- Optimalisatietips: Advies over hoe u uw GPU-instellingen kunt afstemmen voor optimale prestaties.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** Aanbevolen wordt om [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) te gebruiken als je Python-omgeving
+***Opmerking*** Aanbevolen wordt om [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) als uw Python-omgeving te gebruiken
 
    ```bash
 
@@ -20,9 +20,10 @@ Het document geeft advies over:
 
    ```
 
-   ***Reminder*** Als je een Python ONNX-bibliotheek hebt geïnstalleerd, verwijder deze dan eerst
+***Herinnering*** Als u een Python ONNX-bibliotheek hebt geïnstalleerd, verwijder deze dan eerst
 
 ### **2. Installeer CMake met winget**
+
 
    ```bash
 
@@ -32,9 +33,10 @@ Het document geeft advies over:
 
 ### **3. Installeer Visual Studio 2022 - Desktop Development met C++**
 
-   ***Note*** Als je niet wilt compileren, kun je deze stap overslaan
+***Opmerking*** Als u niet wilt compileren kunt u deze stap overslaan
 
 ![CPP](../../../../../../translated_images/nl/01.42f52a2b2aedff02.webp)
+
 
 ### **4. Installeer NVIDIA Driver**
 
@@ -44,19 +46,21 @@ Het document geeft advies over:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** Gebruik de standaardinstellingen tijdens de installatie
+***Herinnering*** Gebruik de standaardinstellingen tijdens het installatieproces 
 
 ### **5. Stel NVIDIA-omgeving in**
 
-Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, include
+Kopieer NVIDIA CUDNN 9.4 lib,bin,include naar NVIDIA CUDA 12.4 lib,bin,include
 
-- kopieer *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* bestanden naar *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
+- kopieer *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* bestanden naar  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin*
 
-- kopieer *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* bestanden naar *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
+- kopieer *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* bestanden naar  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include*
 
-- kopieer *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* bestanden naar *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- kopieer *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* bestanden naar  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+
 
 ### **6. Download Phi-3.5-mini-instruct-onnx**
+
 
    ```bash
 
@@ -70,25 +74,30 @@ Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, inclu
 
    ```
 
-### **7. Uitvoeren van InferencePhi35Instruct.ipynb**
+### **7. Uitvoeren InferencePhi35Instruct.ipynb**
 
-   Open [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) en voer uit
+Open [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) en voer uit 
+
 
 ![RESULT](../../../../../../translated_images/nl/02.b9b06996cf7255d5.webp)
 
+
 ### **8. Compileer ORT GenAI GPU**
 
-   ***Note*** 
-   
-   1. Verwijder eerst alle onnx, onnxruntime en onnxruntime-genai pakketten
 
+***Opmerking*** 
+   
+1. Verwijder eerst alle onnx, onnxruntime en onnxruntime-genai pakketten
+
+   
    ```bash
 
    pip list 
    
    ```
 
-   Verwijder daarna alle onnxruntime bibliotheken, bijvoorbeeld:
+Verwijder vervolgens alle onnxruntime bibliotheken, bijvoorbeeld 
+
 
    ```bash
 
@@ -100,13 +109,17 @@ Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, inclu
    
    ```
 
-   2. Controleer Visual Studio Extension ondersteuning
+2. Controleer of Visual Studio Extensie wordt ondersteund 
 
-   Controleer in C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras of de map C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration aanwezig is. 
+Controleer C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras om te bevestigen dat C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration aanwezig is. 
    
-   Als deze niet gevonden wordt, controleer dan andere CUDA toolkit driver mappen en kopieer de map visual_studio_integration en de inhoud naar C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+Als dit niet gevonden wordt, controleer dan andere CUDA toolkit driver mappen en kopieer de map visual_studio_integration en inhoud naar C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   - Als je niet wilt compileren, kun je deze stap overslaan
+
+
+
+- Als u niet wilt compileren kunt u deze stap overslaan
+
 
    ```bash
 
@@ -114,16 +127,17 @@ Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, inclu
 
    ```
 
-   - Download [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
+- Download [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Pak onnxruntime-win-x64-gpu-1.19.2.zip uit, hernoem de map naar **ort** en kopieer deze naar onnxruntime-genai
+- Pak onnxruntime-win-x64-gpu-1.19.2.zip uit en hernoem het naar **ort**, kopieer de map ort naar onnxruntime-genai
 
-   - Gebruik Windows Terminal, open Developer Command Prompt voor VS 2022 en ga naar onnxruntime-genai
+- Gebruik Windows Terminal, ga naar Developer Command Prompt voor VS 2022 en ga naar onnxruntime-genai 
 
 ![RESULT](../../../../../../translated_images/nl/03.b83ce473d5ff9b9b.webp)
 
-   - Compileer het met je Python-omgeving
+- Compileer het met uw python-omgeving
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -137,5 +151,9 @@ Kopieer NVIDIA CUDNN 9.4 lib, bin, include naar NVIDIA CUDA 12.4 lib, bin, inclu
 
    ```
 
-**Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+Dit document is vertaald met behulp van de AI vertaaldienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
