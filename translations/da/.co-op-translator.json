@@ -301,7 +301,7 @@
   },
   "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md": {
     "original_hash": "3bb9f5c926673593287eddc3741226cb",
-    "translation_date": "2025-07-16T22:21:43+00:00",
+    "translation_date": "2026-07-29T16:43:02+00:00",
     "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
     "language_code": "da"
   },
@@ -361,7 +361,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
     "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-    "translation_date": "2025-07-17T02:44:14+00:00",
+    "translation_date": "2026-07-29T16:43:39+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
     "language_code": "da"
   },
@@ -373,7 +373,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
     "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-    "translation_date": "2025-07-17T03:01:03+00:00",
+    "translation_date": "2026-07-29T16:43:18+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
     "language_code": "da"
   },

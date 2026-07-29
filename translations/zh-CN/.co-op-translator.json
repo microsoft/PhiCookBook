@@ -301,7 +301,7 @@
   },
   "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md": {
     "original_hash": "3bb9f5c926673593287eddc3741226cb",
-    "translation_date": "2025-07-16T22:15:54+00:00",
+    "translation_date": "2026-07-29T17:44:42+00:00",
     "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
     "language_code": "zh-CN"
   },
@@ -331,7 +331,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md": {
     "original_hash": "651a6c85c349581d566b086f3e325424",
-    "translation_date": "2026-03-06T04:51:10+00:00",
+    "translation_date": "2026-07-29T17:47:06+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
     "language_code": "zh-CN"
   },
@@ -361,7 +361,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
     "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-    "translation_date": "2025-07-17T02:39:45+00:00",
+    "translation_date": "2026-07-29T17:47:30+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
     "language_code": "zh-CN"
   },
@@ -373,7 +373,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
     "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-    "translation_date": "2025-07-17T02:57:40+00:00",
+    "translation_date": "2026-07-29T17:44:58+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
     "language_code": "zh-CN"
   },
@@ -577,7 +577,7 @@
   },
   "md/03.FineTuning/FineTuning_MLX.md": {
     "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-    "translation_date": "2025-07-17T07:57:26+00:00",
+    "translation_date": "2026-07-29T17:44:15+00:00",
     "source_file": "md/03.FineTuning/FineTuning_MLX.md",
     "language_code": "zh-CN"
   },

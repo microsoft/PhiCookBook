@@ -1,14 +1,17 @@
 # **Fine-tuning Phi-3 with Apple MLX Framework**
 
-We can perform fine-tuning combined with LoRA through the Apple MLX framework command line. (If you want to learn more about how the MLX Framework works, please read [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+We can complete Fine-tuning combined with Lora through the Apple MLX framework command line. (If you want to know more about the operation of MLX Framework, please read [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+
 
 ## **1. Data preparation**
 
-By default, the MLX Framework requires train, test, and eval data in jsonl format, and uses LoRA to complete fine-tuning tasks.
+By default, MLX Framework requires the jsonl format of train, test, and eval, and is combined with Lora to complete fine-tuning jobs.
+
 
 ### ***Note:***
 
-1. jsonl data format:
+1. jsonl data format ：
+
 
 ```json
 
@@ -19,15 +22,17 @@ By default, the MLX Framework requires train, test, and eval data in jsonl forma
 
 ```
 
-2. Our example uses [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), but the dataset is relatively small, so the fine-tuning results may not be optimal. We recommend learners use better data suited to their own scenarios.
+2. Our example uses [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) , but the amount of data is relatively insufficient, so the fine-tuning results are not necessarily the best. It is recommended that learners use better data based on their own scenarios to complete.
 
-3. The data format follows the Phi-3 template.
+3. The data format is combined with the Phi-3 template
 
-Please download the data from this [link](../../../../code/04.Finetuning/mlx), including all .jsonl files in the ***data*** folder.
+Please download data from this [link](../../../../code/04.Finetuning/mlx), please include all .jsonl in ***data*** folder
+
 
 ## **2. Fine-tuning in your terminal**
 
-Run this command in your terminal:
+Please run this command in terminal
+
 
 ```bash
 
@@ -35,11 +40,13 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
+
 ## ***Note:***
 
-1. This is LoRA fine-tuning; the MLX framework does not support QLoRA.
+1. This is LoRA fine-tuning, MLX framework  not published QLoRA
 
-2. You can modify config.yaml to change some parameters, such as:
+2. You can set config.yaml to change some arguments,such as
+
 
 ```yaml
 
@@ -109,7 +116,8 @@ lora_parameters:
 
 ```
 
-Run this command in your terminal:
+Please run this command in terminal
+
 
 ```bash
 
@@ -117,9 +125,11 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. Run fine-tuning adapter to test**
 
-You can run the fine-tuning adapter in the terminal like this:
+## **3. Run Fine-tuning adapter to test**
+
+You can run fine-tuning adapter in terminal,like this 
+
 
 ```bash
 
@@ -127,7 +137,8 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-And run the original model to compare results:
+and run original model  to compare result 
+
 
 ```bash
 
@@ -135,9 +146,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Try comparing the fine-tuned results with the original model.
+You can try to compare the results of Fine-tuning with the original model
+
 
 ## **4. Merge adapters to generate new models**
+
 
 ```bash
 
@@ -145,9 +158,10 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Running quantized fine-tuning models using ollama**
+## **5. Running quantified fine-tuning models using ollama**
 
-Before use, please set up your llama.cpp environment.
+Before use, please configure your llama.cpp environment
+
 
 ```bash
 
@@ -161,13 +175,14 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:***
+***Note:*** 
 
-1. Currently supports quantization conversion for fp32, fp16, and INT8.
+1. Now supports quantization conversion of fp32, fp16 and INT 8
 
-2. The merged model lacks tokenizer.model; please download it from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. The merged model is missing tokenizer.model, please download it from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-Set up an [Ollama Model](https://ollama.com/)
+set a [Ollma Model](https://ollama.com/)
+
 
 ```txt
 
@@ -176,7 +191,8 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Run this command in the terminal:
+run command in terminal
+
 
 ```bash
 
@@ -186,7 +202,11 @@ Run this command in the terminal:
 
 ```
 
-Congratulations! You’ve mastered fine-tuning with the MLX Framework.
+Congratulations! Master fine-tuning with the MLX Framework
 
-**Disclaimer**:  
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
 This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

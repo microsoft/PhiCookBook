@@ -1,14 +1,17 @@
 # **Dostrajanie Phi-3 za pomocą Apple MLX Framework**
 
-Możemy przeprowadzić dostrajanie w połączeniu z Lora za pomocą linii poleceń Apple MLX Framework. (Jeśli chcesz dowiedzieć się więcej o działaniu MLX Framework, przeczytaj [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+Możemy wykonać dostrajanie w połączeniu z Lora za pomocą polecenia wiersza poleceń Apple MLX framework. (Jeśli chcesz dowiedzieć się więcej o działaniu MLX Framework, przeczytaj proszę [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+
 
 ## **1. Przygotowanie danych**
 
-Domyślnie MLX Framework wymaga formatu jsonl dla zbiorów train, test i eval, a dostrajanie jest realizowane w połączeniu z Lora.
+Domyślnie MLX Framework wymaga formatu jsonl dla train, test i eval oraz łączy się z Lora, aby wykonać zadania dostrajania.
+
 
 ### ***Uwaga:***
 
 1. Format danych jsonl:
+
 
 ```json
 
@@ -19,15 +22,17 @@ Domyślnie MLX Framework wymaga formatu jsonl dla zbiorów train, test i eval, a
 
 ```
 
-2. W naszym przykładzie używamy danych z [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), jednak ilość danych jest stosunkowo niewielka, więc wyniki dostrajania nie muszą być optymalne. Zalecamy, aby użytkownicy korzystali z lepszych danych dostosowanych do własnych scenariuszy.
+2. Nasz przykład wykorzystuje [dane TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), jednak ilość danych jest stosunkowo niewystarczająca, dlatego wyniki dostrajania niekoniecznie są najlepsze. Zaleca się, aby osoby uczące się korzystały z lepszych danych dostosowanych do własnych scenariuszy.
 
-3. Format danych jest zgodny z szablonem Phi-3.
+3. Format danych jest skomponowany z szablonem Phi-3
 
-Proszę pobrać dane z tego [linku](../../../../code/04.Finetuning/mlx), uwzględniając wszystkie pliki .jsonl w folderze ***data***.
+Proszę pobrać dane z tego [linku](../../../../code/04.Finetuning/mlx), uwzględnij wszystkie pliki .jsonl w folderze ***data***
+
 
 ## **2. Dostrajanie w terminalu**
 
-Uruchom następujące polecenie w terminalu:
+Uruchom polecenie w terminalu
+
 
 ```bash
 
@@ -35,11 +40,13 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
+
 ## ***Uwaga:***
 
-1. To jest dostrajanie LoRA, MLX Framework nie obsługuje QLoRA.
+1. Jest to dostrajanie LoRA, MLX framework nie opublikował QLoRA
 
-2. Możesz zmienić niektóre argumenty w pliku config.yaml, na przykład:
+2. Możesz ustawić config.yaml, aby zmienić niektóre argumenty, takie jak
+
 
 ```yaml
 
@@ -109,7 +116,8 @@ lora_parameters:
 
 ```
 
-Uruchom to polecenie w terminalu:
+Uruchom polecenie w terminalu
+
 
 ```bash
 
@@ -117,9 +125,11 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. Testowanie adaptera dostrajania**
 
-Możesz uruchomić adapter dostrajania w terminalu, w ten sposób:
+## **3. Uruchom adapter dostrajania do testów**
+
+Możesz uruchomić adapter dostrajania w terminalu, tak jak to 
+
 
 ```bash
 
@@ -127,7 +137,8 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-oraz uruchomić oryginalny model, aby porównać wyniki:
+i uruchomić oryginalny model, aby porównać wyniki 
+
 
 ```bash
 
@@ -135,9 +146,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Możesz spróbować porównać wyniki dostrajania z oryginalnym modelem.
+Możesz spróbować porównać wyniki dostrajania z oryginalnym modelem
 
-## **4. Scalanie adapterów w celu wygenerowania nowych modeli**
+
+## **4. Scal adaptery, aby wygenerować nowe modele**
+
 
 ```bash
 
@@ -145,9 +158,10 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Uruchamianie skwantowanych modeli dostrajania za pomocą ollama**
+## **5. Uruchamianie kwantyfikowanych modeli dostrajania za pomocą ollama**
 
-Przed użyciem skonfiguruj środowisko llama.cpp.
+Przed użyciem skonfiguruj swoje środowisko llama.cpp
+
 
 ```bash
 
@@ -161,13 +175,14 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Uwaga:***
+***Uwaga:*** 
 
-1. Obecnie obsługiwane są konwersje kwantyzacji fp32, fp16 oraz INT8.
+1. Obecnie obsługuje konwersję kwantyzacji fp32, fp16 i INT 8
 
-2. Scalony model nie zawiera pliku tokenizer.model, pobierz go z https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Połączony model nie zawiera tokenizer.model, proszę pobrać go z https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-Ustaw [Ollama Model](https://ollama.com/)
+ustaw [Ollma Model](https://ollama.com/)
+
 
 ```txt
 
@@ -176,7 +191,8 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Uruchom polecenie w terminalu:
+uruchom polecenie w terminalu
+
 
 ```bash
 
@@ -186,7 +202,11 @@ Uruchom polecenie w terminalu:
 
 ```
 
-Gratulacje! Opanowałeś dostrajanie z MLX Framework.
+Gratulacje! Opanowałeś dostrajanie z MLX Framework
 
-**Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Zastrzeżenie**:
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Choć dążymy do dokładności, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w jego języku źródłowym należy uznawać za autorytatywne źródło. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

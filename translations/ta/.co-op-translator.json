@@ -361,7 +361,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
     "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-    "translation_date": "2025-10-11T12:05:39+00:00",
+    "translation_date": "2026-07-29T17:50:32+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
     "language_code": "ta"
   },
@@ -373,7 +373,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
     "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-    "translation_date": "2025-10-11T12:10:03+00:00",
+    "translation_date": "2026-07-29T17:50:05+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
     "language_code": "ta"
   },

@@ -1,10 +1,68 @@
+# **Quantification de la famille Phi utilisant les extensions d'IA générative pour onnxruntime**
+
+## **Qu'est-ce que les extensions d'IA générative pour onnxruntime**
+
+Ces extensions vous aident à exécuter de l'IA générative avec ONNX Runtime ([https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)). Elles fournissent la boucle d'IA générative pour les modèles ONNX, incluant l'inférence avec ONNX Runtime, le traitement des logits, la recherche et l'échantillonnage, ainsi que la gestion du cache KV. Les développeurs peuvent appeler une méthode generate() de haut niveau, ou exécuter chaque itération du modèle en boucle, générant un token à la fois, et mettre à jour en option les paramètres de génération à l'intérieur de la boucle. Elles supportent la recherche gloutonne/beam search et l'échantillonnage TopP, TopK pour générer des séquences de tokens, ainsi que le traitement intégré des logits comme les pénalités de répétition. Vous pouvez aussi facilement ajouter un système de notation personnalisé.
+
+Au niveau de l'application, vous pouvez utiliser les extensions d'IA générative pour onnxruntime pour construire des applications en C++/C#/Python. Au niveau du modèle, vous pouvez les utiliser pour fusionner des modèles affinés et effectuer les travaux connexes de déploiement quantitatif.
+
+
+## **Quantification de Phi-3.5 avec les extensions d'IA générative pour onnxruntime**
+
+### **Modèles supportés**
+
+Les extensions d'IA générative pour onnxruntime supportent la conversion en quantification des modèles Microsoft Phi, Google Gemma, Mistral, Meta LLaMA.
+
+
+### **Constructeur de modèle dans les extensions d'IA générative pour onnxruntime**
+
+Le constructeur de modèle accélère grandement la création de modèles ONNX optimisés et quantifiés qui fonctionnent avec l'API generate() d'ONNX Runtime.
+
+Grâce à Model Builder, vous pouvez quantifier le modèle en INT4, INT8, FP16, FP32, et combiner différentes méthodes d'accélération matérielle telles que CPU, CUDA, DirectML, Mobile, etc.
+
+Pour utiliser Model Builder, vous devez installer
+
+```bash
+
+pip install torch transformers onnx onnxruntime
+
+pip install --pre onnxruntime-genai
+
+```
+
+Après l'installation, vous pouvez exécuter le script Model Builder depuis le terminal pour effectuer la conversion du format du modèle et la quantification.
+
+
+```bash
+
+python3 -m onnxruntime_genai.models.builder -m model_name -o path_to_output_folder -p precision -e execution_provider -c cache_dir_to_save_hf_files
+
+```
+
+Comprenez les paramètres pertinents
+
+1. **model_name** C'est le modèle sur Hugging Face, comme microsoft/Phi-3.5-mini-instruct, microsoft/Phi-3.5-vision-instruct, etc. Il peut aussi être le chemin où vous stockez le modèle
+
+2. **path_to_output_folder** Chemin d'enregistrement de la conversion quantifiée
+
+3. **execution_provider** Support d'accélération matérielle différent, par exemple cpu, cuda, DirectML
+
+4. **cache_dir_to_save_hf_files** Nous téléchargeons le modèle depuis Hugging Face et le mettons en cache localement
+
+
+
+
+***Note :*** <ul>Bien que les extensions d'IA générative pour onnxruntime soient en préversion, elles ont été intégrées dans Microsoft Olive, et vous pouvez aussi appeler les fonctions du constructeur de modèle des extensions d'IA générative pour onnxruntime via Microsoft Olive.</ul>
+
 ## **Comment utiliser Model Builder pour quantifier Phi-3.5**
 
-Model Builder prend désormais en charge la quantification des modèles ONNX pour Phi-3.5 Instruct et Phi-3.5-Vision.
+Model Builder supporte désormais la quantification des modèles ONNX pour Phi-3.5 Instruct et Phi-3.5-Vision
 
 ### **Phi-3.5-Instruct**
 
-**Conversion accélérée CPU en INT4 quantifié**
+
+**Conversion accélérée CPU du quantifié INT4**
+
 
 ```bash
 
@@ -12,7 +70,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**Conversion accélérée CUDA en INT4 quantifié**
+**Conversion accélérée CUDA du quantifié INT4**
 
 ```bash
 
@@ -20,17 +78,20 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
+
+
 ```python
 
 python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  -o ./onnx-cpu -p int4 -e cuda -c ./Phi-3.5-mini-instruct
 
 ```
 
+
 ### **Phi-3.5-Vision**
 
 **Phi-3.5-vision-instruct-onnx-cpu-fp32**
 
-1. Configurez l’environnement dans le terminal
+1. Configurez l'environnement dans le terminal
 
 ```bash
 
@@ -40,7 +101,7 @@ cd models
 
 ```
 
-2. Téléchargez microsoft/Phi-3.5-vision-instruct dans le dossier models  
+2. Téléchargez microsoft/Phi-3.5-vision-instruct dans le dossier models
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
 3. Veuillez télécharger ces fichiers dans votre dossier Phi-3.5-vision-instruct
@@ -51,12 +112,14 @@ cd models
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
 
-4. Téléchargez ce fichier dans le dossier models  
+
+4. Téléchargez ce fichier dans le dossier models
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. Ouvrez le terminal
+5. Accédez au terminal
 
-    Convertissez le modèle ONNX avec support FP32
+    Convertissez le support ONNX avec FP32
+
 
 ```bash
 
@@ -64,21 +127,27 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
+
 ### **Note :**
 
-1. Model Builder prend actuellement en charge la conversion de Phi-3.5-Instruct et Phi-3.5-Vision, mais pas Phi-3.5-MoE.
+1. Model Builder supporte actuellement la conversion de Phi-3.5-Instruct et Phi-3.5-Vision, mais pas Phi-3.5-MoE
 
-2. Pour utiliser le modèle quantifié ONNX, vous pouvez le faire via le SDK Generative AI extensions for onnxruntime.
+2. Pour utiliser le modèle quantifié ONNX, vous pouvez l'utiliser via le SDK des extensions d'IA générative pour onnxruntime
 
-3. Il est important de considérer une IA plus responsable, donc après la conversion de quantification du modèle, il est recommandé de réaliser des tests de résultats plus approfondis.
+3. Nous devons considérer une IA plus responsable, donc après la conversion en quantification du modèle, il est recommandé de réaliser des tests de résultats plus efficaces
 
-4. En quantifiant le modèle CPU INT4, nous pouvons le déployer sur des appareils Edge, ce qui offre de meilleures opportunités d’application. Ainsi, nous avons finalisé Phi-3.5-Instruct autour de INT4.
+4. En quantifiant le modèle CPU INT4, nous pouvons le déployer sur des appareils Edge, ce qui offre de meilleurs scénarios d'application, ainsi nous avons terminé Phi-3.5-Instruct autour de INT4
+
 
 ## **Ressources**
 
-1. En savoir plus sur Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. En savoir plus sur les extensions d'IA générative pour onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Dépôt GitHub de Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Dépôt GitHub des extensions d'IA générative pour onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
-**Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Avertissement** :
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant autorité. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous ne saurions être tenus responsables des malentendus ou erreurs d'interprétation découlant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

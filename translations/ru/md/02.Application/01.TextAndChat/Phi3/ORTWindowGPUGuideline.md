@@ -1,16 +1,16 @@
-# **Руководство по OnnxRuntime GenAI для Windows GPU**
+# **Руководство по OnnxRuntime GenAI Windows GPU**
 
-Это руководство описывает шаги по настройке и использованию ONNX Runtime (ORT) с GPU на Windows. Оно поможет вам использовать ускорение на GPU для ваших моделей, повышая производительность и эффективность.
+Это руководство предоставляет шаги по настройке и использованию ONNX Runtime (ORT) с GPU на Windows. Оно предназначено для того, чтобы помочь вам использовать ускорение на GPU для ваших моделей, улучшая производительность и эффективность.
 
-В документе приведены рекомендации по:
+В документе содержатся рекомендации по:
 
 - Настройке окружения: инструкции по установке необходимых зависимостей, таких как CUDA, cuDNN и ONNX Runtime.
 - Конфигурации: как настроить окружение и ONNX Runtime для эффективного использования ресурсов GPU.
-- Советы по оптимизации: рекомендации по тонкой настройке параметров GPU для достижения максимальной производительности.
+- Советы по оптимизации: рекомендации по тонкой настройке параметров GPU для достижения оптимальной производительности.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Примечание*** Рекомендуется использовать [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) в качестве среды Python
+   ***Примечание*** Рекомендуется использовать [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) в качестве вашего Python окружения
 
    ```bash
 
@@ -20,9 +20,10 @@
 
    ```
 
-   ***Напоминание*** Если у вас установлены какие-либо библиотеки ONNX для Python, пожалуйста, удалите их
+   ***Напоминание*** Если у вас установлена какая-либо библиотека python ONNX, пожалуйста, удалите её
 
 ### **2. Установка CMake с помощью winget**
+
 
    ```bash
 
@@ -32,9 +33,10 @@
 
 ### **3. Установка Visual Studio 2022 - разработка для рабочего стола с C++**
 
-   ***Примечание*** Если вы не планируете компилировать, этот шаг можно пропустить
+   ***Примечание*** Если вы не хотите компилировать, этот шаг можно пропустить
 
 ![CPP](../../../../../../translated_images/ru/01.42f52a2b2aedff02.webp)
+
 
 ### **4. Установка драйвера NVIDIA**
 
@@ -44,11 +46,11 @@
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Напоминание*** Пожалуйста, используйте настройки по умолчанию при установке
+***Напоминание*** Пожалуйста, используйте стандартные настройки процесса установки 
 
 ### **5. Настройка окружения NVIDIA**
 
-Скопируйте файлы из NVIDIA CUDNN 9.4 (lib, bin, include) в соответствующие папки NVIDIA CUDA 12.4
+Скопируйте библиотеки NVIDIA CUDNN 9.4 (lib, bin, include) в NVIDIA CUDA 12.4 (lib, bin, include)
 
 - скопируйте файлы из *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* в  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
@@ -56,7 +58,9 @@
 
 - скопируйте файлы из *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* в  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-### **6. Загрузка Phi-3.5-mini-instruct-onnx**
+
+### **6. Скачайте Phi-3.5-mini-instruct-onnx**
+
 
    ```bash
 
@@ -72,23 +76,28 @@
 
 ### **7. Запуск InferencePhi35Instruct.ipynb**
 
-   Откройте [блокнот](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) и выполните
+   Откройте [Скрипт](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) и выполните 
+
 
 ![RESULT](../../../../../../translated_images/ru/02.b9b06996cf7255d5.webp)
 
+
 ### **8. Компиляция ORT GenAI GPU**
+
 
    ***Примечание*** 
    
-   1. Сначала удалите все пакеты, связанные с onnx, onnxruntime и onnxruntime-genai
+   1. Сначала удалите все, что связано с onnx, onnxruntime и onnxruntime-genai
 
+   
    ```bash
 
    pip list 
    
    ```
 
-   Затем удалите все библиотеки onnxruntime, например:
+   Затем удалите все onnxruntime библиотеки, например 
+
 
    ```bash
 
@@ -100,13 +109,17 @@
    
    ```
 
-   2. Проверьте поддержку расширения Visual Studio
+   2. Проверьте поддержку расширения Visual Studio 
 
-   Убедитесь, что в папке C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras присутствует каталог C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   Проверьте папку C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, чтобы убедиться, что найдена папка C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
    
-   Если его нет, проверьте другие папки с драйверами CUDA toolkit и скопируйте папку visual_studio_integration вместе с содержимым в C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Если не найдена, проверьте другие папки драйверов Cuda toolkit и скопируйте папку visual_studio_integration с содержимым в C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   - Если вы не планируете компилировать, этот шаг можно пропустить
+
+
+
+   - Если вы не хотите компилировать, этот шаг можно пропустить
+
 
    ```bash
 
@@ -116,14 +129,15 @@
 
    - Скачайте [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Распакуйте onnxruntime-win-x64-gpu-1.19.2.zip, переименуйте папку в **ort** и скопируйте её в onnxruntime-genai
+   - Распакуйте onnxruntime-win-x64-gpu-1.19.2.zip, переименуйте папку в **ort**, скопируйте папку ort в onnxruntime-genai
 
-   - В Windows Terminal откройте Developer Command Prompt для VS 2022 и перейдите в папку onnxruntime-genai
+   - Используя Windows Terminal, перейдите в Command Prompt for VS 2022 и зайдите в onnxruntime-genai 
 
 ![RESULT](../../../../../../translated_images/ru/03.b83ce473d5ff9b9b.webp)
 
-   - Скомпилируйте с использованием вашей среды Python
+   - Скомпилируйте его с вашим python окружением
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -137,5 +151,9 @@
 
    ```
 
-**Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Отказ от ответственности**:
+Этот документ был переведен с использованием сервиса машинного перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, имейте в виду, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обратиться к профессиональному человеческому переводу. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования этого перевода.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
