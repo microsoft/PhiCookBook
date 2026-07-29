@@ -1,16 +1,16 @@
 # **Retningslinje for OnnxRuntime GenAI Windows GPU**
 
-Denne retningslinje beskriver trin til opsætning og brug af ONNX Runtime (ORT) med GPU'er på Windows. Den er designet til at hjælpe dig med at udnytte GPU-acceleration til dine modeller, hvilket forbedrer ydeevne og effektivitet.
+Denne retningslinje giver trin til opsætning og brug af ONNX Runtime (ORT) med GPU'er på Windows. Den er designet til at hjælpe dig med at udnytte GPU-acceleration til dine modeller, hvilket forbedrer ydeevne og effektivitet.
 
 Dokumentet giver vejledning om:
 
 - Miljøopsætning: Instruktioner til installation af nødvendige afhængigheder som CUDA, cuDNN og ONNX Runtime.
-- Konfiguration: Hvordan du konfigurerer miljøet og ONNX Runtime til effektivt at bruge GPU-ressourcer.
+- Konfiguration: Hvordan man konfigurerer miljøet og ONNX Runtime til effektivt at udnytte GPU-ressourcer.
 - Optimeringstips: Råd om, hvordan du finjusterer dine GPU-indstillinger for optimal ydeevne.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** Vi anbefaler at bruge [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) som dit Python-miljø
+   ***Bemærk*** Anbefal at bruge [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) som dit Python-miljø
 
    ```bash
 
@@ -20,9 +20,10 @@ Dokumentet giver vejledning om:
 
    ```
 
-   ***Reminder*** Hvis du har installeret nogen Python ONNX-biblioteker, skal du afinstallere dem
+   ***Påmindelse*** Hvis du har installeret nogen Python ONNX-biblioteker, skal de afinstalleres
 
 ### **2. Installer CMake med winget**
+
 
    ```bash
 
@@ -30,13 +31,14 @@ Dokumentet giver vejledning om:
 
    ```
 
-### **3. Installer Visual Studio 2022 - Desktop Development med C++**
+### **3. Installer Visual Studio 2022 - Desktopudvikling med C++**
 
-   ***Note*** Hvis du ikke ønsker at kompilere, kan du springe dette trin over
+   ***Bemærk*** Hvis du ikke ønsker at kompilere, kan du springe dette trin over
 
 ![CPP](../../../../../../translated_images/da/01.42f52a2b2aedff02.webp)
 
-### **4. Installer NVIDIA Driver**
+
+### **4. Installer NVIDIA-driver**
 
 1. **NVIDIA GPU Driver**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -44,19 +46,21 @@ Dokumentet giver vejledning om:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** Brug venligst standardindstillingerne under installationen
+***Påmindelse*** Brug venligst standardindstillingerne under installationsforløbet 
 
-### **5. Sæt NVIDIA-miljø**
+### **5. Sæt NVIDIA-miljøvariabler**
 
 Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
-- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
+- Kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* filer til *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
+- Kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* filer til *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- Kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* filer til *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+
 
 ### **6. Download Phi-3.5-mini-instruct-onnx**
+
 
    ```bash
 
@@ -72,16 +76,20 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
 ### **7. Kør InferencePhi35Instruct.ipynb**
 
-   Åbn [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) og kør den
+   Åbn [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) og kør
 
-![RESULT](../../../../../../translated_images/da/02.b9b06996cf7255d5.webp)
+
+![RESULTAT](../../../../../../translated_images/da/02.b9b06996cf7255d5.webp)
+
 
 ### **8. Kompiler ORT GenAI GPU**
 
-   ***Note*** 
-   
-   1. Afinstaller venligst først alle onnx, onnxruntime og onnxruntime-genai pakker
 
+   ***Bemærk*** 
+   
+   1. Afinstaller venligst alle onnx, onnxruntime og onnxruntime-genai biblioteker først
+
+   
    ```bash
 
    pip list 
@@ -89,6 +97,7 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
    ```
 
    Derefter afinstaller alle onnxruntime biblioteker, f.eks.
+
 
    ```bash
 
@@ -100,13 +109,17 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
    
    ```
 
-   2. Tjek Visual Studio Extension support
+   2. Tjek understøttelse af Visual Studio Extension 
 
-   Kontroller i C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, at mappen C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration findes. 
+   Tjek C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras for at sikre, at C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration findes. 
    
-   Hvis den ikke findes, tjek andre CUDA toolkit driver-mapper og kopier mappen visual_studio_integration og dens indhold til C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Hvis den ikke findes, tjek andre CUDA toolkit driver-mapper og kopier visual_studio_integration-mappen og dens indhold til C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+
+
+
 
    - Hvis du ikke ønsker at kompilere, kan du springe dette trin over
+
 
    ```bash
 
@@ -116,14 +129,15 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    - Download [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Pak onnxruntime-win-x64-gpu-1.19.2.zip ud, og omdøb mappen til **ort**, kopier derefter ort-mappen til onnxruntime-genai
+   - Pak onnxruntime-win-x64-gpu-1.19.2.zip ud, omdøb den til **ort**, og kopier ort-mappen til onnxruntime-genai
 
-   - Brug Windows Terminal, åbn Developer Command Prompt for VS 2022 og gå til onnxruntime-genai
+   - Brug Windows Terminal, gå til Developer Command Prompt for VS 2022 og skift til onnxruntime-genai 
 
-![RESULT](../../../../../../translated_images/da/03.b83ce473d5ff9b9b.webp)
+![RESULTAT](../../../../../../translated_images/da/03.b83ce473d5ff9b9b.webp)
 
    - Kompiler det med dit Python-miljø
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -137,5 +151,9 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    ```
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
