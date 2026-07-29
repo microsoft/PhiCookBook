@@ -23,6 +23,19 @@
     "source_file": "SECURITY.md",
     "language_code": "tl"
   },
+  "__translation_failures__": {
+    "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md": {
+      "original_hash": "3bb9f5c926673593287eddc3741226cb",
+      "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
+      "language_code": "tl",
+      "failure_date": "2026-07-29T17:09:09+00:00",
+      "status": "failed",
+      "error_type": "TranslationIncompleteError",
+      "error_message": "Markdown translation remained incomplete for chunk 1 of 'UsingORTGenAIQuantifyingPhi.md', and the chunk could not be split further.",
+      "translator_version": "0.20.0",
+      "failure_policy_version": 1
+    }
+  },
   "code/03.Finetuning/olive-lab/readme.md": {
     "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
     "translation_date": "2025-07-16T15:56:26+00:00",
@@ -361,7 +374,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
     "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-    "translation_date": "2025-07-17T02:45:56+00:00",
+    "translation_date": "2026-07-29T17:09:50+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
     "language_code": "tl"
   },
@@ -373,7 +386,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
     "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-    "translation_date": "2025-07-17T03:02:35+00:00",
+    "translation_date": "2026-07-29T17:09:25+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
     "language_code": "tl"
   },
