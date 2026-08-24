@@ -101,6 +101,7 @@ Follow these steps to get started using these resource :
  
 - RAG with Azure AI Search
     - [How to use Phi-4-mini and Phi-4-multimodal(RAG) with Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+    - [Zero-Cloud Local Hybrid RAG with SQLite FTS5 and phi-4-mini](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb)
 
 - Phi application development samples
   - Text & Chat Applications
