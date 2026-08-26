@@ -23,19 +23,6 @@
     "source_file": "SECURITY.md",
     "language_code": "he"
   },
-  "__translation_failures__": {
-    "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
-      "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-      "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
-      "language_code": "he",
-      "failure_date": "2026-07-29T17:38:21+00:00",
-      "status": "failed",
-      "error_type": "TranslationIncompleteError",
-      "error_message": "Markdown translation remained incomplete for chunk 1 of 'ORTWindowGPUGuideline.md', and the chunk could not be split further.",
-      "translator_version": "0.20.0",
-      "failure_policy_version": 1
-    }
-  },
   "code/03.Finetuning/olive-lab/readme.md": {
     "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
     "translation_date": "2025-07-16T15:55:13+00:00",
@@ -374,7 +361,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
     "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-    "translation_date": "2025-07-17T02:45:04+00:00",
+    "translation_date": "2026-08-26T15:29:34+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
     "language_code": "he"
   },
