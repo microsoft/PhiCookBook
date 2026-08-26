@@ -1,42 +1,42 @@
-# ਫਾਈ ਕੂਕਬੁੱਕ: ਮਾਇਕਰੋਸਾਫਟ ਦੇ ਫਾਈ ਮਾਡਲਾਂ ਨਾਲ ਹੱਥੋਂ-ਹੱਥ ਉਦਾਹਰਣਾਂ
+# ਫਾਈ ਕੁਕਬੁੱਕ: ਮਾਇਕ੍ਰੋਸਾਫ਼ਟ ਦੇ ਫਾਈ ਮਾਡਲਾਂ ਨਾਲ ਹੱਥ-ਓਣ ਉਦਾਹਰਨਾਂ
 
-[![GitHub ਕੋਡਸਪੇਸ ਵਿੱਚ ਉਦਾਹਰਣਾਂ ਖੋਲ੍ਹੋ ਅਤੇ ਵਰਤੋ](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
-[![ਡੈਵ ਕੰਟੇਨਰਾਂ ਵਿੱਚ ਖੋਲ੍ਹੋ](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
+[![ਗਿੱਟਹੱਬ ਕੋਡਸਪੇਸਿਜ਼ ਵਿੱਚ ਸੈਂਪਲ ਖੋਲ੍ਹੋ ਅਤੇ ਵਰਤੋਂ ਕਰੋ](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
+[![ਡੈਵ ਕੰਟੇਨਰ ਵਿੱਚ ਖੋਲ੍ਹੋ](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
 
-[![GitHub ਯੋਗਦਾਨਕਾਰ](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub ਮੁੱਦੇ](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub ਪੁੱਲ-ਰਿਕਵੈਸਟ](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
-[![ਪੀਆਰਾਂ ਸਵਾਗਤਯੋਗ](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+[![ਗਿੱਟਹੱਬ ਯੋਗਦਾਨਕਾਰਕ](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
+[![ਗਿੱਟਹੱਬ ਮਸਲੇ](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
+[![ਗਿੱਟਹੱਬ ਪੂਲ-ਰਿਕਵੇਸਟ](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
+[![PRs ਸਵਾਗਤ ਹੈ](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![GitHub ਵਾਚਰਜ਼](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub ਫੋਰਕ](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub ਸਟਾਰ](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
+[![ਗਿੱਟਹੱਬ ਵਾਚਰਸ](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
+[![ਗਿੱਟਹੱਬ ਫੋਰਕਸ](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+[![ਗਿੱਟਹੱਬ ਸਿਤਾਰੇ](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
-[![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+[![ਮਾਇਕ੍ਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਡਿਸਕਾਰਡ](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-ਫਾਈ ਮਾਇਕਰੋਸਾਫਟ ਵੱਲੋਂ ਵਿਕਸਤ ਖੁੱਲ੍ਹਾ ਸਰੋਤ ਏਆਈ ਮਾਡਲਾਂ ਦੀ ਇੱਕ ਲੜੀ ਹੈ।
+ਫਾਈ ਮਾਇਕ੍ਰੋਸਾਫਟ ਵੱਲੋਂ ਵਿਕਸਤ ਖੁੱਲ੍ਹਾ ਸਤਰ ਦਾ ਏਆਈ ਮਾਡਲਾਂ ਦਾ ਇੱਕ ਸਿਰੀਜ਼ ਹੈ।
 
-ਫਾਈ ਇਸ ਸਮੇਂ ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼ਾਲੀ ਅਤੇ ਖਰਚਾ-ਪ੍ਰਭਾਵੀ ਛੋਟਾ ਭਾਸ਼ਾਈ ਮਾਡਲ (ਐਸਐਲਐਮ) ਹੈ, ਜੋ ਬਹੁਭਾਸ਼ੀ, ਤਰਕ, ਪਾਠ/ਚੈਟ ਤਿਆਰ ਕਰਨ, ਕੋਡਿੰਗ, ਚਿੱਤਰ, ਆਡੀਓ ਅਤੇ ਹੋਰ ਸਥਿਤੀਆਂ ਵਿੱਚ ਬਹੁਤ ਵਧੀਆ ਬੈਂਚਮਾਰਕ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਦਾ ਹੈ।
+ਫਾਈ ਵਰਤਮਾਨ ਵਿੱਚ ਸਭ ਤੋਂ ਤਾਕਤਵਰ ਅਤੇ ਕਿਫਾਇਤੀ ਛੋਟਾ ਭਾਸ਼ਾ ਮਾਡਲ (SLM) ਹੈ, ਜਿਸਦੇ ਬਹੁ-ਭਾਸ਼ਾਈ, ਤਰਕਸ਼ੀਲ, ਪਾਠ/ਚੈਟ ਜੈਨਰੇਸ਼ਨ, ਕੋਡਿੰਗ, ਚਿੱਤਰਾਂ, ਆਡੀਓ ਤੇ ਹੋਰ ਸਥਿਤੀਆਂ ਵਿੱਚ ਸੁਚੱਜੇ ਬੈਂਚਮਾਰਕ ਹਨ।
 
-ਤੁਸੀਂ ਫਾਈ ਨੂੰ ਕਲਾਉਡ ਜਾਂ ਐਜ ਡਿਵਾਇਸਾਂ 'ਤੇ ਤੈਨਾਤ ਕਰ ਸਕਦੇ ਹੋ, ਅਤੇ ਸੀਮਤ ਕੰਪਿਊਟਿੰਗ ਸ਼ਕਤੀ ਨਾਲ ਆਸਾਨੀ ਨਾਲ ਜਨਰੇਟਿਵ ਏਆਈ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾ ਸਕਦੇ ਹੋ।
+ਤੁਸੀਂ ਫਾਈ ਨੂੰ ਕਲਾਉਡ ਜਾਂ ਐਜ ਡਿਵਾਈਸਾਂ 'ਤੇ ਡਿਪਲੌਇ ਕਰ ਸਕਦੇ ਹੋ, ਅਤੇ ਸੀਮਤ ਕੰਪਿਊਟਿੰਗ ਸ਼ਕਤੀ ਨਾਲ ਆਸਾਨੀ ਨਾਲ ਜਨਰੇਟਿਵ ਏਆਈ ਐਪਲੀਕੇਸ਼ਨਾਂ ਬਣਾ ਸਕਦੇ ਹੋ।
 
-ਇਹ ਸਾਧਨਾਂ ਦੀ ਵਰਤੋਂ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇਹ ਕਦਮ ਅਪਣਾਓ:
-1. **ਰਿਪੋਜਿਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ**: ਕਲਿੱਕ ਕਰੋ [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **ਰਿਪੋਜਿਟਰੀ ਨੂੰ ਕਲੋਨ ਕਰੋ**: `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**ਮਾਇਕਰੋਸਾਫਟ ਏਆਈ ਡਿਸਕੋਰਡ ਸਮੁਦਾਇ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ ਅਤੇ ਮਾਹਿਰਾਂ ਤੇ ਹੋਰ ਵਿਕਾਸਕਾਰਾਂ ਨਾਲ ਮਿਲੋ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+ਇਹਨਾਂ ਸਰੋਤਾਂ ਦੀ ਵਰਤੋਂ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇਹ ਕਦਮ ਫਾਲੋ ਕਰੋ:
+1. **ਰਿਪੋਜ਼ਿਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ**: ਕਲਿੱਕ ਕਰੋ [![ਗਿੱਟਹੱਬ ਫੋਰਕਸ](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. **ਰਿਪੋਜ਼ਿਟਰੀ ਕਲੋਨ ਕਰੋ**: `git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**ਮਾਇਕ੍ਰੋਸਾਫਟ ਏਆਈ ਡਿਸਕਾਰਡ ਕਮਿਊਨਿਟੀ ਨਾਲ ਜੁੜੋ ਅਤੇ ਮਾਹਿਰਾਂ ਅਤੇ ਹੋਰ ਡਿਵੈਲਪਰਾਂ ਨੂੰ ਮਿਲੋ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/pa/cover.eb18d1b9605d754b.webp)
+![ਕਵਰ](../../translated_images/pa/cover.eb18d1b9605d754b.webp)
 
-### 🌐 ਬਹੁਭਾਸ਼ੀ ਸਹਾਇਤਾ
+### 🌐 ਬਹੁ-ਭਾਸ਼ਾਈ ਸਹਾਇਤਾ
 
-#### GitHub ਐਕਸ਼ਨ ਰਾਹੀਂ ਸਮਰਥਿਤ (ਸਵਚਾਲਿਤ ਅਤੇ ਸਦਾ ਅਪ-ਟੂ-ਡੇਟ)
+#### ਗਿੱਟਹੱਬ ਐਕਸ਼ਨ ਰਾਹੀਂ ਸਪੋਰਟ ਕੀਤਾ ਗਿਆ (ਆਟੋਮੇਟੇਡ ਅਤੇ ਸਦਾ-ਅਪਡੇਟ)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](../pcm/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](./README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **ਮੂਲ ਤੌਰ 'ਤੇ ਕਲੋਨ ਕਰਨਾ ਪਸੰਦ ਕਰੋ?**
+> **ਕੀ ਤੁਸੀਂ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਕਲੋਨ ਕਰਨਾ ਪਸੰਦ ਕਰਦੇ ਹੋ?**
 >
-> ਇਹ ਰਿਪੋਜਿਟਰੀ 50+ ਭਾਸ਼ਾਈ ਅਨੁਵਾਦ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ, ਜੋ ਡਾਊਨਲੋਡ ਸਾਈਜ਼ ਨੂੰ ਕਾਫੀ ਵਧਾ ਦਿੰਦਾ ਹੈ। ਬਿਨਾਂ ਅਨੁਵਾਦਾਂ ਦੇ ਕਲੋਨ ਕਰਨ ਲਈ sparse checkout ਵਰਤੋਂ ਕਰੋ:
+> ਇਹ ਰਿਪੋਜ਼ਿਟਰੀ ਵਿੱਚ 50+ ਭਾਸ਼ਾ ਅਨੁਵਾਦ ਸ਼ਾਮਲ ਹਨ ਜੋ ਡਾਉਨਲੋਡ ਆਕਾਰ ਨੂੰ ਵੱਡਾ ਕਰ ਦਿੰਦے ਹਨ। ਬਿਨਾਂ ਅਨੁਵਾਦਾਂ ਦੇ ਕਲੋਨ ਕਰਨ ਲਈ, sparse checkout ਵਰਤੋਂ ਕਰੋ:
 >
 > **Bash / macOS / Linux:**
 > ```bash
@@ -52,202 +52,205 @@
 > git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
 > ```
 >
-> ਇਹ ਤੁਹਾਨੂੰ ਕੋਰਸ ਨੂੰ ਮੂਲ ਤੌਰ 'ਤੇ ਤੇਜ਼ ਡਾਊਨਲੋਡ ਨਾਲ ਪੂਰਾ ਕਰਨ ਲਈ ਸਭ ਕੁਝ ਦਿੰਦਾ ਹੈ।
+> ਇਹ ਤੁਹਾਨੂੰ ਕੋਰਸ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ ਸਾਰਾ ਕੁਝ ਮੁਹੱਈਆ ਕਰਵਾਉਂਦਾ ਹੈ ਤੇ ਡਾਉਨਲੋਡ ਤੇਜ਼ ਹੁੰਦਾ ਹੈ।
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
-## ਸੂਚੀ ਸਿਰਲੇਖ
+## ਸਮਗਰੀ ਸੂਚੀ
 
 - ਪਰਿਚਯ
-  - [ਫਾਈ ਪਰਿਵਾਰ ਵਿੱਚ ਸਵਾਗਤ ਹੈ](./md/01.Introduction/01/01.PhiFamily.md)
-  - [ਆਪਣਾ ਵਾਤਾਵਰਣ ਸੈੱਟ ਕਰਨਾ](./md/01.Introduction/01/01.EnvironmentSetup.md)
-  - [ਮੁੱਖ ਤਕਨੀਕਾਂ ਦੀ ਸਮਝ](./md/01.Introduction/01/01.Understandingtech.md)
+  - [ਫਾਈ ਪਰਿਵਾਰ ਦਾ ਸਵਾਗਤ ਹੈ](./md/01.Introduction/01/01.PhiFamily.md)
+  - [ਆਪਣੇ ਵਾਤਾਵਰਨ ਨੂੰ ਸੈੱਟ ਕਰਨਾ](./md/01.Introduction/01/01.EnvironmentSetup.md)
+  - [ਮੁੱਖ ਪ੍ਰੌਧੋਗਿਕੀਆਂ ਨੂੰ ਸਮਝਣਾ](./md/01.Introduction/01/01.Understandingtech.md)
   - [ਫਾਈ ਮਾਡਲਾਂ ਲਈ ਏਆਈ ਸੁਰੱਖਿਆ](./md/01.Introduction/01/01.AISafety.md)
   - [ਫਾਈ ਹਾਰਡਵੇਅਰ ਸਹਾਇਤਾ](./md/01.Introduction/01/01.Hardwaresupport.md)
-  - [ਫਾਈ ਮਾਡਲਾਂ ਅਤੇ ਪਲੇਟਫਾਰਮਾਂ 'ਤੇ ਉਪਲਬਧਤਾ](./md/01.Introduction/01/01.Edgeandcloud.md)
-  - [ਗਾਈਡੈਂਸ-ਏਆਈ ਅਤੇ ਫਾਈ ਦੀ ਵਰਤੋਂ](./md/01.Introduction/01/01.Guidance.md)
-  - [GitHub ਮਾਰਕੀਟਪਲੇਸ ਮਾਡਲ](https://github.com/marketplace/models)
-  - [ਆਜ਼ੁਰ ਏਆਈ ਮਾਡਲ ਕੈਟਾਲੌਗ](https://ai.azure.com)
+  - [ਫਾਈ ਮਾਡਲਾਂ ਅਤੇ ਪਲੇਟਫਾਰਮਾਂ ਉੱਤੇ ਉਪਲਬਧਤਾ](./md/01.Introduction/01/01.Edgeandcloud.md)
+  - [ਗਾਇਡੈਂਸ-ai ਅਤੇ ਫਾਈ ਦੀ ਵਰਤੋਂ](./md/01.Introduction/01/01.Guidance.md)
+  - [ਗਿੱਟਹੱਬ ਮਾਰਕੀਟਪਲੇਸ ਮਾਡਲ](https://github.com/marketplace/models)
+  - [ਅਜ਼ਯੂਰ ਏਆਈ ਮਾਡਲ ਕੈਟਲੌਗ](https://ai.azure.com)
 
-- ਵੱਖ-ਵੱਖ ਵਾਤਾਵਰਣ ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ
+- ਵੱਖ-ਵੱਖ ਵਾਤਾਵਰਨ ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ
     -  [ਹੱਗਿੰਗ ਫੇਸ](./md/01.Introduction/02/01.HF.md)
-    -  [GitHub ਮਾਡਲ](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [ਮਾਇਕਰੋਸਾਫਟ ਫਾਉਂਡਰੀ ਮਾਡਲ ਕੈਟਾਲੌਗ](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [ਗਿੱਟਹੱਬ ਮਾਡਲ](./md/01.Introduction/02/02.GitHubModel.md)
+    -  [ਮਾਇਕ੍ਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਮਾਡਲ ਕੈਟਲੌਗ](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [ਓਲਾਮਾ](./md/01.Introduction/02/04.Ollama.md)
     -  [ਏਆਈ ਟੂਲਕਿਟ VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
-    -  [ਐਨਵੀਡੀਏ ਨਿੰਮ](./md/01.Introduction/02/06.NVIDIA.md)
-    -  [ਫਾਉਂਡਰੀ ਲੋਕਲ](./md/01.Introduction/02/07.FoundryLocal.md)
+    -  [ਐਨਵੀਆਨਵੀਡੀਆ NIM](./md/01.Introduction/02/06.NVIDIA.md)
+    -  [ਫਾਊਂਡਰੀ ਲੋਕਲ](./md/01.Introduction/02/07.FoundryLocal.md)
 
-- ਫਾਈ ਪਰਿਵਾਰ ਦਾ ਇੰਫਰਨਸ
-    - [iOS ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/iOS_Inference.md)
-    - [ਐਂਡਰੌਇਡ ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/Android_Inference.md)
-    - [ਜੇਟਸਨ ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/Jetson_Inference.md)
-    - [ਏਆਈ ਪੀਸੀ ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/AIPC_Inference.md)
-    - [ਐਪਲ MLX ਫਰੇਮਵਰਕ ਨਾਲ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/MLX_Inference.md)
-    - [ਲੋਕਲ ਸਰਵਰ ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [ਏਆਈ ਟੂਲਕਿਟ ਵਰਤ ਕੇ ਰਿਮੋਟ ਸਰਵਰ ਵਿੱਚ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/Remote_Interence.md)
-    - [ਰਸਟ ਨਾਲ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/Rust_Inference.md)
-    - [ਲੋਕਲ ਵਿੱਚ ਫਾਈ-ਵਿਜ਼ਨ ਇੰਫਰਨਸ](./md/01.Introduction/03/Vision_Inference.md)
-    - [ਕੈਇਟੋ AKS, ਆਜ਼ੁਰ ਕੰਟੇਨਰਾਂ (ਅਧਿਕਾਰਤ ਸਹਾਇਤਾ) ਨਾਲ ਫਾਈ ਇੰਫਰਨਸ](./md/01.Introduction/03/Kaito_Inference.md)
--  [ਫਾਈ ਪਰਿਵਾਰ ਦੀ ਮਾਤਰਾ](./md/01.Introduction/04/QuantifyingPhi.md)
-    - [ਲਾਮਾ.cpp ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਫਾਈ-3.5 / 4 ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰਨਾ](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
-    - [ਓਨਐਕਸਰੰਟਾਈਮ ਲਈ ਜਨਰੇਟਿਵ ਏਆਈ ਵਿਸਥਾਰਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਫਾਈ-3.5 / 4 ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰਨਾ](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [ਇੰਟਲ OpenVINO ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਫਾਈ-3.5 / 4 ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰਨਾ](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [ਐਪਲ MLX ਫਰੇਮਵਰਕ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਫਾਈ-3.5 / 4 ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰਨਾ](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+- ਫਾਈ ਪਰਿਵਾਰ ਦੀ ਇਨਫਰੈਂਸ
+    - [iOS ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/iOS_Inference.md)
+    - [ਐਂਡਰਾਇਡ ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Android_Inference.md)
+    - [ਜੇਟਸਨ ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Jetson_Inference.md)
+    - [ਏਆਈ ਪੀਸੀ ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/AIPC_Inference.md)
+    - [ਐਪਲ MLX ਫਰੇਮਵਰਕ ਨਾਲ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/MLX_Inference.md)
+    - [ਲੋਕਲ ਸਰਵਰ ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Local_Server_Inference.md)
+    - [ਏਆਈ ਟੂਲਕਿਟ ਨਾਲ ਰਿਮੋਟ ਸਰਵਰ ਵਿੱਚ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Remote_Interence.md)
+    - [ਰੱਸਟ ਨਾਲ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Rust_Inference.md)
+    - [ਲੋਕਲ ਵਿੱਚ ਫਾਈ--ਵਿਜ਼ਨ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Vision_Inference.md)
+    - [ਕੈਟੋ AKS, ਅਜ਼ਯੂਰ ਕੰਟੇਨਰਜ਼ (ਅਧਿਕਾਰਿਕ ਸਹਾਇਤਾ) ਨਾਲ ਫਾਈ ਇਨਫਰੈਂਸ](./md/01.Introduction/03/Kaito_Inference.md)
+-  [ਫਾਈ ਪਰਿਵਾਰ ਦਾ ਮਾਪ](./md/01.Introduction/04/QuantifyingPhi.md)
+    - [llama.cpp ਨਾਲ ਫਾਈ-3.5 / 4 ਕੋਅੰਟਾਈਜ਼ਿੰਗ](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
+    - [onnxruntime ਲਈ ਜਨਰੇਟਿਵ ਏਆਈ ਐਕਸਟੈਂਸ਼ਨ ਨਾਲ ਫਾਈ-3.5 / 4 ਕੋਅੰਟਾਈਜ਼ਿੰਗ](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
+    - [ਇੰਟਲ ਓਪਨਵੀਨੋ ਨਾਲ ਫਾਈ-3.5 / 4 ਕੋਅੰਟਾਈਜ਼ਿੰਗ](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
+    - [ਐਪਲ MLX ਫਰੇਮਵਰਕ ਨਾਲ ਫਾਈ-3.5 / 4 ਕੋਅੰਟਾਈਜ਼ਿੰਗ](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
--  ਫਾਈ ਮੁਲਾਂਕਣ
+-  ਫਾਈ ਜ਼ਾਂਚ
     - [ਜ਼ਿੰਮੇਵਾਰ ਏਆਈ](./md/01.Introduction/05/ResponsibleAI.md)
-    - [ਮਾਇਕਰੋਸਾਫਟ ਫਾਉਂਡਰੀ ਮੁਲਾਂਕਣ ਲਈ](./md/01.Introduction/05/AIFoundry.md)
-    - [ਪ੍ਰਾਂਪਟਫਲੋ ਦੀ ਵਰਤੋਂ ਮੁਲਾਂਕਣ ਲਈ](./md/01.Introduction/05/Promptflow.md)
+    - [ਮਾਇਕ੍ਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਖਾਤਮੇ ਲਈ](./md/01.Introduction/05/AIFoundry.md)
+    - [ਖਾਤਮੇ ਲਈ ਪ੍ਰੰਪਟਫਲੋ ਦੀ ਵਰਤੋਂ](./md/01.Introduction/05/Promptflow.md)
  
-- ਆਜ਼ੁਰ ਏਆਈ ਖੋਜ ਨਾਲ RAG
-    - [ਕਿਵੇਂ ਫਾਈ-4-ਮੀਨੀ ਅਤੇ ਫਾਈ-4-ਮਲਟੀਮੋਡਲ (RAG) ਨੂੰ ਆਜ਼ੁਰ ਏਆਈ ਖੋਜ ਨਾਲ ਵਰਤਣਾ ਹੈ](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+- ਅਜ਼ਯੂਰ ਏਆਈ ਖੋਜ ਨਾਲ RAG
+    - [ਅਜ਼ਯੂਰ ਏਆਈ ਖੋਜ ਨਾਲ ਫਾਈ-4-ਮਿਨੀ ਅਤੇ ਫਾਈ-4-ਮਲਟੀਮੋਡਲ (RAG) ਦੀ ਵਰਤੋਂ ਕਿਵੇਂ ਕਰੀਏ](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+    - [ਜ਼ੀਰੋ-ਕਲਾਉਡ ਲੋਕਲ ਹਾਈਬ੍ਰਿਡ RAG SQLite FTS5 ਅਤੇ phi-4-mini ਨਾਲ](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb)
 
-- ਫਾਈ ਐਪਲੀਕੇਸ਼ਨ ਵਿਕਾਸ ਨਮੂਨੇ
-  - ਪਾਠ ਅਤੇ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ
-    - ਫਾਈ-4 ਨਮੂਨੇ
-      - [📓] [ਫਾਈ-4-ਮੀਨੀ ONNX ਮਾਡਲ ਨਾਲ ਚੈਟ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [ਫਾਈ-4 ਲੋਕਲ ONNX ਮਾਡਲ ਨਾਲ .NET ਵਿੱਚ ਚੈਟ](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [ਸੇਮੰਟਿਕ ਕਰਨਲ ਦੀ ਵਰਤੋਂ ਨਾਲ ਫਾਈ-4 ONNX ਨਾਲ .NET ਕੰਸੋਲ ਐਪ ਚੈਟ](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
+- ਫਾਈ ਐਪਲੀਕੇਸ਼ਨ ਵਿਕਾਸ ਸੈਂਪਲ
+  - ਟੈਕਸਟ ਅਤੇ ਚੈਟ ਐਪਲੀਕੇਸ਼ਨ
+    - ਫਾਈ-4 ਸੈਂਪਲ
+      - [📓] [ਫਾਈ-4-ਮਿਨੀ ONNX ਮਾਡਲ ਨਾਲ ਚੈਟ](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
+      - [ਫਾਈ-4 ਲੋਕਲ ONNX ਮਾਡਲ .NET ਨਾਲ ਚੈਟ](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
+      - [ਸੇਂਮੈਂਟਿਕ ਕਰਨੇਲ ਦੀ ਵਰਤੋਂ ਨਾਲ ਫਾਈ-4 ONNX ਚੈਟ .NET ਕੰਸੋਲ ਐਪ](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
+
     - ਫਾਈ-3 / 3.5 ਨਮੂਨੇ
-      - [ਫਾਈ3, ONNX ਰੰਟਾਈਮ ਵੈੱਬ ਅਤੇ WebGPU ਵਰਤ ਕੇ ਬ੍ਰਾਊਜ਼ਰ ਵਿੱਚ ਲੋਕਲ ਚੈਟਬੋਟ](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
+      - [ਫਾਈ3, ONNX ਰਨਟਾਈਮ ਵੈੱਬ ਅਤੇ WebGPU ਦੀ ਵਰਤੋਂ ਕਰਦਿਆਂ ਬ੍ਰਾਉਜ਼ਰ ਵਿੱਚ ਸਥਾਨਕ ਚੈਟਬੋਟ](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
       - [OpenVino ਚੈਟ](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
-      - [ਮਲਟੀ ਮਾਡਲ - ਇੰਟਰਐਕਟਿਵ Phi-3-mini ਅਤੇ OpenAI ਵਿਸਪਰ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
-      - [MLFlow - ਵ੍ਰੈਪਰ ਬਣਾਉਣਾ ਅਤੇ Phi-3 ਨੂੰ MLFlow ਨਾਲ ਵਰਤਣਾ](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
-      - [ਮਾਡਲ ਆਪਟੀਮਾਈਜੇਸ਼ਨ - ONNX ਰਨਟਾਈਮ ਵੈੱਬ ਲਈ Phi-3-mini ਮਾਡਲ ਨੂੰ Olive ਨਾਲ ਕਿਵੇਂ ਆਪਟੀਮਾਈਜ਼ ਕਰਨਾ](https://github.com/microsoft/Olive/tree/main/examples/phi3)
-      - [WinUI3 ਐਪ ਨਾਲ Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      -[WinUI3 ਮਲਟੀ ਮਾਡਲ AI ਪਾਵਰਡ ਨੋਟਸ ਐਪ ਸੈਂਪਲ](https://github.com/microsoft/ai-powered-notes-winui3-sample)
-      - [ਫਾਈਨ-ਟਿਊਨ ਅਤੇ ਪ੍ਰੋਪਟ ਫਲੋ ਨਾਲ ਕਸਟਮ Phi-3 ਮਾਡਲ ਇਕਠੇ ਕਰਨਾ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [ਮਾਈਕ੍ਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਵਿੱਚ ਪ੍ਰੋਪਟ ਫਲੋ ਨਾਲ ਕਸਟਮ Phi-3 ਮਾਡਲ ਫਾਈਨ-ਟਿਊਨ ਅਤੇ ਇਕਠੇ ਕਰਨਾ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [ਮਾਈਕ੍ਰੋਸਾਫਟ ਦੇ ਜ਼ਿੰਮੇਵਾਰ AI ਸਿਧਾਂਤਾਂ ’ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦਿਆਂ ਮਾਈਕ੍ਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਵਿੱਚ ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ Phi-3 / Phi-3.5 ਮਾਡਲ ਦਾ ਮੁਲਾਂਕਣ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
-      - [📓] [Phi-3.5-mini-instruct ਭਾਸ਼ਾ ਅਨੁਮਾਨ ਸੈਂਪਲ (ਚੀਨੀ/ਅੰਗਰੇਜ਼ੀ)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
-      - [Phi-3.5-Instruct WebGPU RAG ਚੈਟਬੋਟ](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
-      - [ਵਿੰਡੋਜ਼ GPU ਦੀ ਵਰਤੋਂ ਕਰਕੇ Phi-3.5-Instruct ONNX ਨਾਲ ਪ੍ਰੋਪਟ ਫਲੋ ਸਮਾਧਾਨ ਬਣਾਉਣਾ](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
-      - [ਮਾਈਕ੍ਰੋਸਾਫਟ Phi-3.5 tflite ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਐਂਡਰਾਇਡ ਐਪ ਬਣਾਉਣਾ](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-      - [Q&A .NET ਉਦਾਹਰਨ ਜੋ ਸਥਾਨਕ ONNX Phi-3 ਮਾਡਲ ਅਤੇ Microsoft.ML.OnnxRuntime ਦੀ ਵਰਤੋਂ ਕਰਦੀ ਹੈ](../../md/04.HOL/dotnet/src/LabsPhi301)
-      - [ਕਨਸੋਲ ਚੈਟ .NET ਐਪ Semantic Kernel ਅਤੇ Phi-3 ਨਾਲ](../../md/04.HOL/dotnet/src/LabsPhi302)
+      - [ਮਲਟੀ ਮਾਡਲ - ਇੰਟਰਐਕਟਿਵ ਫਾਈ-3-ਮਿਨੀ ਅਤੇ OpenAI ਵਿਸਪਰ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
+      - [MLFlow - ਇੱਕ ਰੈਪਰ ਬਣਾਉਣਾ ਅਤੇ ਫਾਈ-3 ਨੂੰ MLFlow ਨਾਲ ਵਰਤਣਾ](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
+      - [ਮਾਡਲ ਆਪਟੀਮਾਈਜ਼ੇਸ਼ਨ - ONNX ਰਨਟਾਈਮ ਵੈੱਬ ਲਈ ਫਾਈ-3-ਮਿਨੀ ਮਾਡਲ ਨੂੰ Olive ਨਾਲ ਕਿਵੇਂ ਆਪਟੀਮਾਈਜ਼ ਕਰਨਾ](https://github.com/microsoft/Olive/tree/main/examples/phi3)
+      - [WinUI3 ਐਪ ਫਾਈ-3 ਮਿਨੀ-4k-instruct-onnx ਨਾਲ](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
+      -[WinUI3 ਮਲਟੀ ਮਾਡਲ ਏआई ਪਾਵਰਡ ਨੋਟਸ ਐਪ ਨਮੂਨਾ](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [ਕਸਟਮ ਫਾਈ-3 ਮਾਡਲਾਂ ਨੂੰ ਪ੍ਰੋੰਪਟ ਫਲੋ ਨਾਲ ਫਾਈਨ-ਟਿਊਨ ਅਤੇ ਇੰਟੀਗ੍ਰੇਟ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
+      - [ਮਾਈਕ੍ਰੋਸਾਫਟ Foundry ਵਿੱਚ ਪ੍ਰੋੰਪਟ ਫਲੋ ਨਾਲ ਕਸਟਮ ਫਾਈ-3 ਮਾਡਲਾਂ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਅਤੇ ਇੰਟੀਗ੍ਰੇਟ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [ਮਾਈਕ੍ਰੋਸਾਫਟ ਦੀਜ਼ ਜ਼ਿੰਮੇਵਾਰ AI ਸਿਧਾਂਤਾਂ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦਿਆਂ ਮਾਈਕ੍ਰੋਸਾਫਟ Foundry ਵਿੱਚ ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ ਗਏ ਫਾਈ-3 / ਫਾਈ-3.5 ਮਾਡਲ ਦਾ ਮੁੱਲਾਂਕਣ ਕਰੋ](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [📓] [ਫਾਈ-3.5-ਮਿਨੀ-ਇੰਸਟ੍ਰੱਕਟ ਭਾਸ਼ਾ ਭਵਿੱਖਬਾਣੀ ਨਮੂਨਾ (ਚੀਨੀ/ਅੰਗਰੇਜ਼ੀ)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
+      - [ਫਾਈ-3.5-ਇੰਸਟ੍ਰੱਕਟ WebGPU RAG ਚੈਟਬੋਟ](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
+      - [ਫਾਈ-3.5-ਇੰਸਟ੍ਰੱਕਟ ONNX ਨਾਲ ਪ੍ਰੋੰਪਟ ਫਲੋ ਸਉਲਿਊਸ਼ਨ ਬਣਾਉਣ ਲਈ Windows GPU ਦੀ ਵਰਤੋਂ](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
+      - [Android ਐਪ ਬਣਾਉਣ ਲਈ ਮਾਈਕ੍ਰੋਸਾਫਟ ਫਾਈ-3.5 tflite ਦੀ ਵਰਤੋਂ](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
+      - [Microsoft.ML.OnnxRuntime ਦੀ ਵਰਤੋਂ ਕਰਦਿਆਂ ਸਥਾਨਕ ONNX ਫਾਈ-3 ਮਾਡਲ ਨਾਲ Q&A .NET ਉਦਾਹਰਨ](../../md/04.HOL/dotnet/src/LabsPhi301)
+      - [ਸੈਮੈਂਟਿਕ ਕਰਨਲ ਅਤੇ ਫਾਈ-3 ਨਾਲ ਕੰਸੋਲ ਚੈਟ .NET ਐਪ](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-  - Azure AI ਇਨਫਰੈਂਸ SDK ਕੋਡ ਆਧਾਰਿਤ ਸੈਂਪਲ
-    - Phi-4 ਸੈਂਪਲ
-      - [📓] [Phi-4-multimodal ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਪ੍ਰੋਜੈਕਟ ਕੋਡ ਬਣਾਉਣਾ](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
-    - Phi-3 / 3.5 ਸੈਂਪਲ
-      - [ਆਪਣਾ ਆਪਣਾ Visual Studio Code GitHub Copilot ਚੈਟ Microsoft Phi-3 ਪਰਿਵਾਰ ਨਾਲ ਬਣਾਓ](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-      - [GitHub ਮਾਡਲ ਨਾਲ Phi-3.5 ਦੁਆਰਾ ਆਪਣਾ Visual Studio Code ਚੈਟ ਕੋਪਾਇਲਟ ਏਜेंट ਬਣਾਓ](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+  - ਅਜ਼ੁਰ ਏਆਈ ਇੰਫਰੈਂਸ SDK ਕੋਡ ਅਧਾਰਿਤ ਨਮੂਨੇ
+    - ਫਾਈ-4 ਨਮੂਨੇ
+      - [📓] [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਪ੍ਰੋਜੈਕਟ ਕੋਡ ਜਨਰੇਟ ਕਰੋ](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
+    - ਫਾਈ-3 / 3.5 ਨਮੂਨੇ
+      - [ਮਾਈਕ੍ਰੋਸਾਫਟ ਫਾਈ-3 ਪਰਿਵਾਰ ਨਾਲ ਆਪਣਾ ਵਿਜ਼ੂਅਲ ਸਟੂਡੀਓ ਕੋਡ GitHub ਕੋਪਾਈਲਟ ਚੈਟ ਬਣਾਓ](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
+      - [GitHub ਮਾਡਲਾਂ ਦੁਆਰਾ ਫਾਈ-3.5 ਨਾਲ ਆਪਣਾ ਵਿਜ਼ੂਅਲ ਸਟੂਡੀਓ ਕੋਡ ਚੈਟ ਕੋਪਾਈਲਟ ਏਜੰਟ ਬਣਾਓ](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
 
-  - ਉन्नਤ ਤਰਕ ਸੈਂਪਲ
-    - Phi-4 ਸੈਂਪਲ
-      - [📓] [Phi-4-mini-reasoning ਜਾਂ Phi-4-reasoning ਸੈਂਪਲ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
-      - [📓] [Microsoft Olive ਨਾਲ Phi-4-mini-reasoning ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [Apple MLX ਨਾਲ Phi-4-mini-reasoning ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [GitHub ਮਾਡਲ ਨਾਲ Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-      - [📓] [Microsoft Foundry ਮਾਡਲ ਨਾਲ Phi-4-mini-reasoning](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
-  - ਡੈਮੋਜ਼
-      - [Phi-4-mini ਡੈਮੋਜ਼ ਜੋ Hugging Face Spaces ’ਤੇ ਹੋਸਟ ਕੀਤੇ ਗਏ ਹਨ](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-      - [Phi-4-multimodal ਡੈਮੋਜ਼ ਜੋ Hugginge Face Spaces ’ਤੇ ਹੋਸਟ ਕੀਤੇ ਗਏ ਹਨ](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
-  - ਦ੍ਰਿਸ਼ ਸੈਂਪਲ
-    - Phi-4 ਸੈਂਪਲ
-      - [📓] [Phi-4-multimodal ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਤਸਵੀਰਾਂ ਪੜ੍ਹੋ ਅਤੇ ਕੋਡ ਬਣਾਓ](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md)
-    - Phi-3 / 3.5 ਸੈਂਪਲ
-      -  [📓][Phi-3-vision-ਛਬੀ ਤੋਂ ਲਿਖਤ ਤਕ ਲਿਖਤ](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
-      - [📓][Phi-3-vision CLIP ਐਮਬੇਡਿੰਗ](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [ਡੈਮੋ: Phi-3 ਰਿਸਾਇਕਲਿੰਗ](https://github.com/jennifermarsman/PhiRecycling/)
-      - [Phi-3-vision - ਵਿਜ਼ੂਅਲ ਭਾਸ਼ਾ ਸਹਾਇਕ - Phi3-Vision ਅਤੇ OpenVINO ਨਾਲ](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
-      - [Phi-3 ਵਿਜ਼ਨ Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
-      - [Phi-3 ਵਿਜ਼ਨ OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
-      - [📓][Phi-3.5 ਵਿਜ਼ਨ ਮਲਟੀ-ਫਰੇਮ ਜਾਂ ਮਲਟੀ-ਛਬੀ ਸੈਂਪਲ](./md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
-      - [Phi-3 ਵਿਜ਼ਨ ਸਥਾਨਕ ONNX ਮਾਡਲ Microsoft.ML.OnnxRuntime .NET ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ](../../md/04.HOL/dotnet/src/LabsPhi303)
-      - [ਮੇਨੂ ਅਧਾਰਿਤ Phi-3 ਵਿਜ਼ਨ ਸਥਾਨਕ ONNX ਮਾਡਲ Microsoft.ML.OnnxRuntime .NET ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ](../../md/04.HOL/dotnet/src/LabsPhi304)
+  - ਉੱਚ ਤਰ੍ਹਾਂ ਦਾ ਤਰਕਸ਼ਾਸਤਰ ਨਮੂਨੇ
+    - ਫਾਈ-4 ਨਮੂਨੇ
+      - [📓] [ਫਾਈ-4-ਮਿਨੀ-ਤਕਰਾਰ ਜਾਂ ਫਾਈ-4-ਤਕਰਾਰ ਨਮੂਨੇ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
+      - [📓] [ਮਾਈਕ੍ਰੋਸਾਫਟ Olive ਨਾਲ ਫਾਈ-4-ਮਿਨੀ-ਤਕਰਾਰ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨਾ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
+      - [📓] [Apple MLX ਨਾਲ ਫਾਈ-4-ਮਿਨੀ-ਤਕਰਾਰ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨਾ](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
+      - [📓] [GitHub ਮਾਡਲਾਂ ਨਾਲ ਫਾਈ-4-ਮਿਨੀ-ਤਕਰਾਰ](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
+      - [📓] [ਮਾਈਕ੍ਰੋਸਾਫਟ Foundry ਮਾਡਲਾਂ ਨਾਲ ਫਾਈ-4-ਮਿਨੀ-ਤਕਰਾਰ](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+  - ਡੈਮੋ
+      - [ਫਾਈ-4-ਮਿਨੀ ਡੈਮੋਜ਼ Hugging Face ਸਪੇਸز ਤੇ ਹੋਸਟ ਕੀਤੇ ਗਏ](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
+      - [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਡੈਮੋਜ਼ Hugginge Face ਸਪੇਸਜ਼ ਤੇ ਹੋਸਟ ਕੀਤੇ ਗਏ](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
+  - ਵਿਜ਼ਨ ਨਮੂਨੇ
+    - ਫਾਈ-4 ਨਮੂਨੇ
+      - [📓] [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਚਿੱਤਰ ਪੜ੍ਹੋ ਅਤੇ ਕੋਡ ਜਨਰੇਟ ਕਰੋ](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
+    - ਫਾਈ-3 / 3.5 ਨਮੂਨੇ
+      -  [📓][ਫਾਈ-3-ਵਿਜ਼ਨ-ਚਿੱਤਰ ਲਿਖਤ ਤੋਂ ਲਿਖਤ](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
+      - [ਫਾਈ-3-ਵਿਜ਼ਨ-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
+      - [📓][ਫਾਈ-3-ਵਿਜ਼ਨ CLIP ਐਂਬੈਡਿੰਗ](./md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
+      - [ਡੈਮੋ: ਫਾਈ-3 ਰੀਸਾਈਕਲਿੰਗ](https://github.com/jennifermarsman/PhiRecycling/)
+      - [ਫਾਈ-3-ਵਿਜ਼ਨ - ਦ੍ਰਿਸ਼ਟੀ ਭਾਸ਼ਾ ਸਹਾਇਕ - ਫਾਈ3-ਵਿਜ਼ਨ ਅਤੇ OpenVINO ਨਾਲ](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
+      - [ਫਾਈ-3 ਵਿਜ਼ਨ Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
+      - [ਫਾਈ-3 ਵਿਜ਼ਨ OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
+      - [📓][ਫਾਈ-3.5 ਵਿਜ਼ਨ ਮਲਟੀ-ਫ੍ਰੇਮ ਜਾਂ ਮਲਟੀ-ਚਿੱਤਰ ਨਮੂਨਾ](./md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
+      - [ਮਾਈਕ੍ਰੋਸਾਫਟ.ML.OnnxRuntime .NET ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਫਾਈ-3 ਵਿਜ਼ਨ ਸਥਾਨਕ ONNX ਮਾਡਲ](../../md/04.HOL/dotnet/src/LabsPhi303)
+      - [ਮੇਨੂ ਅਧਾਰਿਤ ਫਾਈ-3 ਵਿਜ਼ਨ ਸਥਾਨਕ ONNX ਮਾਡਲ Microsoft.ML.OnnxRuntime .NET ਦੀ ਵਰਤੋਂ ਨਾਲ](../../md/04.HOL/dotnet/src/LabsPhi304)
 
-  - ਤਰਕ-ਦ੍ਰਿਸ਼ ਸੈਂਪਲ
-    - Phi-4-ਤਰਕ-ਦ੍ਰਿਸ਼-15B
-      - [📓] [Phi-4-ਤਰਕ-ਦ੍ਰਿਸ਼-15B ਨੂੰ ਜੇਵਾਕਿੰਗ ਦਾ ਪਤਾ ਲਗਾਉਣ ਲਈ ਵਰਤਣਾ](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb)
-      - [📓] [Phi-4-ਤਰਕ-ਦ੍ਰਿਸ਼-15B ਨੂੰ ਗਣਿਤ ਲਈ ਵਰਤਣਾ](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb)
-      - [📓] [Phi-4-ਤਰਕ-ਦ੍ਰਿਸ਼-15B ਨੂੰ UI ਦਾ ਪਤਾ ਲਗਾਉਣ ਲਈ ਵਰਤਣਾ](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb)
+  - ਤਰਕਸ਼ਾਸਤਰ-ਵਿਜ਼ਨ ਨਮੂਨੇ
+    - ਫਾਈ-4-ਤਰਕਸ਼ਾਸਤਰ-ਵਿਜ਼ਨ-15B
+      - [📓] [ਫਾਈ-4-ਤਰਕਸ਼ਾਸਤਰ-ਵਿਜ਼ਨ-15B ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਜੇਵਾਕਿੰਗ ਦੀ ਪਹਿਚਾਣ](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Jaywalking.ipynb)
+      - [📓] [ਫਾਈ-4-ਤਰਕਸ਼ਾਸਤਰ-ਵਿਜ਼ਨ-15B ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਗਣਿਤ](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_Math.ipynb)
+      - [📓] [ਫਾਈ-4-ਤਰਕਸ਼ਾਸਤਰ-ਵਿਜ਼ਨ-15B ਦੀ ਵਰਤੋਂ ਕਰਕੇ UI ਦੀ ਪਹਿਚਾਣ](./md/02.Application/10.ReasoningVision/Phi_4_reasoning_vision_15b_ui.ipynb)
 
-  - ਗਣਿਤ ਸੈਂਪਲ
-    - Phi-4-ਮਿਨੀ-ਫਲੈਸ਼-ਤਰਕ-ਹਿਦਾਇਤ ਸੈਂਪਲ [Phi-4-ਮਿਨੀ-ਫਲੈਸ਼-ਤਰਕ-ਹਿਦਾਇਤ ਨਾਲ ਗਣਿਤ ਡੈਮੋ](./md/02.Application/09.Math/MathDemo.ipynb)
+  - ਗਣਿਤ ਨਮੂਨੇ
+    -  ਫਾਈ-4-ਮਿਨੀ-ਫਲੈਸ਼-ਤਰਕਸ਼ਾਸਤਰ-ਇਨਸਟ੍ਰੱਕਟ ਨਮੂਨੇ  [ਫਾਈ-4-ਮਿਨੀ-ਫਲੈਸ਼-ਤਰਕਸ਼ਾਸਤਰ-ਇਨਸਟ੍ਰੱਕਟ ਨਾਲ ਗਣਿਤ ਡੈਮੋ](./md/02.Application/09.Math/MathDemo.ipynb)
 
-  - ਆਡੀਓ ਸੈਂਪਲ
-    - Phi-4 ਸੈਂਪਲ
-      - [📓] [Phi-4-multimodal ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਡੀਓ ਟ੍ਰਾਂਸਕ੍ਰਿਪਟ ਬਾਹਰ ਕੱਢਣਾ](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
-      - [📓] [Phi-4-multimodal ਆਡੀਓ ਸੈਂਪਲ](./md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
-      - [📓] [Phi-4-multimodal ਵਆਕ ਅਨੁਵਾਦ ਸੈਂਪਲ](./md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
-      - [.NET ਕਨਸੋਲ ਐਪਲੀਕੇਸ਼ਨ ਜੋ Phi-4-multimodal ਆਡੀਓ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਡੀਓ ਫਾਈਲ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਟ੍ਰਾਂਸਕ੍ਰਿਪਟ ਬਣਾਉਂਦੀ ਹੈ](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
+  - ਆਡੀਓ ਨਮੂਨੇ
+    - ਫਾਈ-4 ਨਮੂਨੇ
+      - [📓] [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਡੀਓ ਟ੍ਰਾਂਸਕ੍ਰਿਪਟ ਨਿਕਾਲਣਾ](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
+      - [📓] [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਆਡੀਓ ਨਮੂਨਾ](./md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
+      - [📓] [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਸਪੀਚ ਅਨੁਵਾਦ ਨਮੂਨਾ](./md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
+      - [.NET ਕੰਸੋਲ ਐਪਲੀਕੇਸ਼ਨ ਜੋ ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਡੀਓ ਫਾਈਲ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਟ੍ਰਾਂਸਕ੍ਰਿਪਟ ਜਨਰੇਟ ਕਰਦਾ ਹੈ](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
 
-  - MOE ਸੈਂਪਲ
-    - Phi-3 / 3.5 ਸੈਂਪਲ
-      - [📓] [Phi-3.5 ਮਿਕਸਚਰ ਆਫ਼ ਐਕਸਪਰਟਸ ਮਾਡਲਜ਼ (MoEs) ਸੋਸ਼ਲ ਮੀਡੀਆ ਸੈਂਪਲ](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
-      - [📓] [NVIDIA NIM Phi-3 MOE, Azure AI Search ਅਤੇ LlamaIndex ਨਾਲ ਰਿਟਰੀਵਲ-ਅੱਗਮੈਂਟੈਡ ਜਨਰੇਸ਼ਨ (RAG) ਪਾਈਪਲਾਈਨ ਬਣਾਉਣਾ](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
+  - MOE ਨਮੂਨੇ
+    - ਫਾਈ-3 / 3.5 ਨਮੂਨੇ
+      - [📓] [ਫਾਈ-3.5 ਮਿਕਸਚਰ ਆਫ਼ ਐਕਸਪਟਰਟ ਮਾਡਲਜ਼ (MoEs) ਸੋਸ਼ਲ ਮੀਡੀਆ ਨਮੂਨਾ](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
+      - [📓] [NVIDIA NIM ਫਾਈ-3 MOE, ਅਜ਼ੁਰ ਏਆਈ ਸਹਾਇਕ ਅਤੇ LlamaIndex ਨਾਲ ਰੀਟਰੀਵਲ-ਆਗਮੈਂਟਡ ਜਨਰੇਸ਼ਨ (RAG) ਪਾਈਪਲਾਈਨ ਬਣਾਉਣਾ](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
       - 
-  - ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਸੈਂਪਲ
-    - Phi-4 ਸੈਂਪਲ 🆕
-      -  [📓] [Phi-4-mini ਨਾਲ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
-      -  [📓] [Phi-4-mini ਨਾਲ ਮਲਟੀ-ਏਜੰਟ ਬਣਾਉਣ ਲਈ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ](./md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
-      -  [📓] [Ollama ਨਾਲ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ ਕਰਨਾ](./md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
+  - ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਨਮੂਨੇ
+    - ਫਾਈ-4 ਨਮੂਨੇ 🆕
+      -  [📓] [ਫਾਈ-4-ਮਿਨੀ ਨਾਲ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
+      -  [📓] [ਫਾਈ-4-ਮਿਨੀ ਨਾਲ ਕਈ ਏਜੰਟ ਬਣਾਉਣ ਲਈ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ](./md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
+      -  [📓] [Ollama ਨਾਲ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ](./md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
       -  [📓] [ONNX ਨਾਲ ਫੰਕਸ਼ਨ ਕਾਲਿੰਗ ਦੀ ਵਰਤੋਂ](./md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)
-  - ਮਲਟੀਮੋਡਲ ਮਿਕਸਿੰਗ ਸੈਂਪਲ
-    - Phi-4 ਸੈਂਪਲ 🆕
-      -  [📓] [ਤਕਨਾਲੋਜੀ ਪੱਤਰਕਾਰ ਵਜੋਂ Phi-4-multimodal ਦੀ ਵਰਤੋਂ](./md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
-      - [.NET ਕਨਸੋਲ ਐਪਲੀਕੇਸ਼ਨ ਜੋ Phi-4-multimodal ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਛਬੀਆਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਦਾ ਹੈ](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
+  - ਮਲਟੀਮੋਡਲ ਮਿਕਸਿੰਗ ਨਮੂਨੇ
+    - ਫਾਈ-4 ਨਮੂਨੇ 🆕
+      -  [📓] [ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਨੂੰ ਇੱਕ ਤਕਨਾਲੋਜੀ ਪੱਤਰਕਾਰ ਵਜੋਂ ਵਰਤਣਾ](./md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
+      - [.NET ਕੰਸੋਲ ਐਪਲੀਕੇਸ਼ਨ ਜੋ ਫਾਈ-4-ਮਲਟੀਮੋਡਲ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਚਿੱਤਰਾਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਦਾ ਹੈ](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
 
-- ਫਾਈਨ-ਟਿਊਨਿੰਗ Phi ਸੈਂਪਲ
-  - [ਫਾਈਨ-ਟਿਊਨਿੰਗ ਸਿਨਾਰੀਓਜ਼](./md/03.FineTuning/FineTuning_Scenarios.md)
-  - [ਫਾਈਨ-ਟਿਊਨਿੰਗ ਬਨਾਮ RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [ਫਾਈਨ-ਟਿਊਨਿੰਗ Phi-3 ਨੂੰ ਉਦਯੋਗ ਵਿਸ਼ੇਸ਼ਜ्ञ ਬਣਾਉਣਾ](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
-  - [VS ਕੋਡ ਲਈ AI ਟੂਲਕਿੱਟ ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
-  - [Azure ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਸੇਵਾ ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/Introduce_AzureML.md)
-  - [ਲੋਰਾ ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Lora.md)
-  - [QLora ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Microsoft Foundry ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_AIFoundry.md)
-  - [Azure ML CLI/SDK ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MLSDK.md)
-  - [Microsoft Olive ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
-  - [Microsoft Olive ਦੀ ਹੈਂਡਸ-ਆਨ ਲੈਬ ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/olive-lab/readme.md)
-  - [Weights and Bias ਨਾਲ Phi-3-vision ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
-  - [Apple MLX ਫਰੇਮਵਰਕ ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MLX.md)
-  - [Phi-3-vision (ਅਧਿਕਾਰਕ ਸਮਰਥਨ) ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Vision.md)
-  - [Fine-Tuning Phi-3 with Kaito AKS , Azure Containers(official Support)](./md/03.FineTuning/FineTuning_Kaito.md)
-  - [Fine-Tuning Phi-3 and 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)
+- ਫਾਈਨ-ਟਿਊਨਿੰਗ ਫਾਈ ਨਮੂਨੇ
+  - [ਫਾਈਨ-ਟਿਊਨਿੰਗ ਸੀਨਾਰਿਓਜ਼](./md/03.FineTuning/FineTuning_Scenarios.md)
+  - [ਫਾਈਨ-ਟਿਊਨਿੰਗ ਵਿਰੁੱਧ RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
+  - [ਫਾਈਨ-ਟਿਊਨਿੰਗ ਫਾਈ-3 ਨੂੰ ਉਦਯੋਗ ਵਿਸ਼ੇਸ਼ਜ্ঞান ਬਣਾਉਣਾ](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
+  - [VS ਕੋਡ ਲਈ AI ਟੂਲਕਿੱਟ ਨਾਲ ਫਾਈ-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
+  - [ਅਜ਼ੁਰ ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਸਰਵਿਸ ਨਾਲ ਫਾਈ-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/Introduce_AzureML.md)
+  - [ਲੋਰਾ ਨਾਲ ਫਾਈ-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Lora.md)
+  - QLora ਨਾਲ ਫਾਈ-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Qlora.md)
+  - [ਮਾਈਕ੍ਰੋਸਾਫਟ Foundry ਨਾਲ ਫਾਈ-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [ਅਜ਼ੁਰ ML CLI/SDK ਨਾਲ ਫਾਈ-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MLSDK.md)
+  - [ਮਾਈਕ੍ਰੋਸਾਫਟ Olive ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
+  - [ਮਾਈਕ੍ਰੋਸਾਫਟ Olive ਹੈਂਡਜ਼-ਆਨ ਲੈਬ ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/olive-lab/readme.md)
+  - [Weights and Bias ਨਾਲ ਫਾਈ-3-ਵਿਜ਼ਨ ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
 
-- Hands on Lab
-  - [Exploring cutting-edge models: LLMs, SLMs, local development and more](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [Unlocking NLP Potential: Fine-Tuning with Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
+  - [Apple MLX Framework ਨਾਲ ਫਾਈ-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](./md/03.FineTuning/FineTuning_MLX.md)
+  - [ਫਾਈ-3-ਵਿਜ਼ਨ ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ (ਅਧਿਕਾਰਕ ਸਪੋਰਟ)](./md/03.FineTuning/FineTuning_Vision.md)
+  - [ਫਾਈ-3 ਦਾ ਕਾਈਟੋ AKS, Azure ਕਨਟੇਨਰਾਂ ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ (ਅਧਿਕਾਰਕ ਸਹਾਇਤਾ)](./md/03.FineTuning/FineTuning_Kaito.md)
+  - [ਫਾਈ-3 ਅਤੇ 3.5 ਵਿਜ਼ਨ ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ](https://github.com/2U1/Phi3-Vision-Finetune)
 
-- Academic Research Papers and Publications
-  - [Textbooks Are All You Need II: phi-1.5 technical report](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone](https://arxiv.org/abs/2404.14219)
-  - [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
-  - [Optimizing Small Language Models for In-Vehicle Function-Calling](https://arxiv.org/abs/2501.02342)
-  - [(WhyPHI) Fine-Tuning PHI-3 for Multiple-Choice Question Answering: Methodology, Results, and Challenges](https://arxiv.org/abs/2501.01588)
-  - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
-  - [Phi-4-mini-reasoning Technical Report](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+- ਹੈਂਡਸ-ਆਨ ਲੈਬ
+  - [ਅਗੇਤੁਰ ਮਾਡਲ ਦੀ ਪੜਚੋਲ: LLMs, SLMs, ਸਥਾਨਕ ਵਿਕਾਸ ਅਤੇ ਹੋਰ](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
+  - [NLP ਸਮਰੱਥਾ ਖੋਲ੍ਹਣਾ: Microsoft Olive ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ](https://github.com/azure/Ignite_FineTuning_workshop)
 
-## Using Phi Models
+- ਅਕਾਦਮਿਕ ਖੋਜ ਪੱਤਰ ਅਤੇ ਪ੍ਰਕਾਸ਼ਨ
+  - [Textbooks Are All You Need II: phi-1.5 ਤਕਨੀਕੀ ਰਿਪੋਰਟ](https://arxiv.org/abs/2309.05463)
+  - [Phi-3 ਤਕਨੀਕੀ ਰਿਪੋਰਟ: ਤੁਹਾਡੇ ਫੋਨ 'ਤੇ ਇੱਕ ਬਹੁਤ ਸਮਰੱਥ ਭਾਸ਼ਾ ਮਾਡਲ](https://arxiv.org/abs/2404.14219)
+  - [Phi-4 ਤਕਨੀਕੀ ਰਿਪੋਰਟ](https://arxiv.org/abs/2412.08905)
+  - [Phi-4-Mini ਤਕਨੀਕੀ ਰਿਪੋਰਟ: ਮਿਕਸਚਰ-ਆਫ-ਲੋRAs ਰਾਹੀਂ ਘਣਿਸ਼ਠ ਅਤੇ ਸ਼ਕਤੀਸ਼ਾਲੀ ਮਲਟੀਮੋਡਲ ਭਾਸ਼ਾ ਮਾਡਲ](https://arxiv.org/abs/2503.01743)
+  - [ਵਾਹਨ ਵਿੱਚ ਫੰਕਸ਼ਨ-ਕਾਲਿੰਗ ਲਈ ਛੋਟੇ ਭਾਸ਼ਾ ਮਾਡਲਾਂ ਦਾ ਆਪਟੀਮਾਈਜ਼ੇਸ਼ਨ](https://arxiv.org/abs/2501.02342)
+  - [(WhyPHI) ਬਹੁ-ਚੋਣ ਸਵਾਲ ਜਵਾਬ ਲਈ PHI-3 ਦਾ ਫਾਈਨ-ਟਿਊਨਿੰਗ: ਢੰਗ, ਨਤੀਜੇ ਅਤੇ ਚੁਣੌਤੀਆਂ](https://arxiv.org/abs/2501.01588)
+  - [Phi-4-ਵੀਚਾਰਧਾਰਾ ਤਕਨੀਕੀ ਰਿਪੋਰਟ](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
+  - [Phi-4-mini-ਵੀਚਾਰਧਾਰਾ ਤਕਨੀਕੀ ਰਿਪੋਰਟ](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
 
-### Phi on Microsoft Foundry
+## ਫਾਈ ਮਾਡਲਸ ਦੀ ਵਰਤੋਂ
 
-ਤੁਸੀਂ ਸਿੱਖ ਸਕਦੇ ਹੋ ਕਿ ਮਾਇਕਰੋਸੋਫਟ ਫਾਈ ਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਹੈ ਅਤੇ ਆਪਣੇ ਵੱਖ-ਵੱਖ ਹਾਰਡਵੇਅਰ ਡਿਵਾਇਸز ਵਿੱਚ E2E ਹੱਲ ਕਿਵੇਂ ਬਣਾਉਣੇ ਹਨ। ਆਪਣੇ ਲਈ ਫਾਈ ਦਾ ਅਨੁਭਵ ਕਰਨ ਲਈ, ਮਾਡਲਾਂ ਨਾਲ ਖੇਡਣ ਦੀ ਸ਼ੁਰੂਆਤ ਕਰੋ ਅਤੇ ਆਪਣੇ ਦ੍ਰਿਸ਼ਾਂ ਲਈ ਫਾਈ ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕਰੋ ਵਰਤ ਕੇ [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai)। ਤੁਸੀਂ Getting Started with [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) 'ਤੇ ਹੋਰ ਸਿੱਖ ਸਕਦੇ ਹੋ।
+### Microsoft Foundry 'ਤੇ ਫਾਈ
 
-**Playground**  
-ਹਰ ਮਾਡਲ ਲਈ ਇੱਕ ਮਖ਼ਸੂਸ ਪਲੇਗ੍ਰਾਊਂਡ ਹੁੰਦਾ ਹੈ ਮਾਡਲ ਦੀ ਜਾਂਚ ਲਈ [Azure AI Playground](https://aka.ms/try-phi3)।
+ਤੁਸੀਂ Microsoft Phi ਦੀ ਵਰਤੋਂ ਕਿਵੇਂ ਕਰਨ ਦੀ ਸਿੱਖਿਆ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਵੱਖ-ਵੱਖ ਹਾਰਡਵੇਅਰ ਡਿਵਾਈਸਾਂ ਵਿੱਚ E2E ਸੋਲਿਊਸ਼ਨ ਬਣਾਉਣ ਦੇ ਤਰੀਕੇ ਸਿੱਖ ਸਕਦੇ ਹੋ। Phi ਦਾ ਅਨੁਭਵ ਲੈਣ ਲਈ, models ਨਾਲ ਖੇਡੋ ਅਤੇ ਆਪਣੇ ਮਾਮਲਿਆਂ ਲਈ Phi ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕਰੋ, [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) ਦੇ ਜ਼ਰੀਏ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) ਦੇ ਗੈਟਿੰਗ ਸਟਾਰਟ ਪੇਜ 'ਤੇ ਜਾਓ।
 
-### Phi on GitHub Models
+**ਪਲੇਗ੍ਰਾਉਂਡ**
+ਹਰ ਮਾਡਲ ਲਈ ਇਕ ਖਾਸ ਪਲੇਗ੍ਰਾਉਂਡ ਹੈ ਜਿੱਥੇ ਮਾਡਲ ਦੀ ਟੈਸਟਿੰਗ ਕਰ ਸਕਦੇ ਹੋ [Azure AI Playground](https://aka.ms/try-phi3)।
 
-ਤੁਸੀਂ ਸਿੱਖ ਸਕਦੇ ਹੋ ਕਿ ਮਾਇਕਰੋਸੋਫਟ ਫਾਈ ਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਹੈ ਅਤੇ ਆਪਣੇ ਵੱਖ-ਵੱਖ ਹਾਰਡਵੇਅਰ ਡਿਵਾਇਸਜ਼ ਵਿੱਚ E2E ਹੱਲ ਕਿਵੇਂ ਬਣਾਉਣੇ ਹਨ। ਆਪਣੇ ਲਈ ਫਾਈ ਦਾ ਅਨੁਭਵ ਕਰਨ ਲਈ, ਮਾਡਲ ਨਾਲ ਖੇਡਣ ਅਤੇ ਆਪਣੇ ਦ੍ਰਿਸ਼ਾਂ ਲਈ ਫਾਈ ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕਰਨ ਦੀ ਸ਼ੁਰੂਆਤ ਕਰੋ ਵਰਤ ਕੇ [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo)। ਤੁਸੀਂ Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md) 'ਤੇ ਹੋਰ ਸਿੱਖ ਸਕਦੇ ਹੋ।
+### GitHub Models 'ਤੇ ਫਾਈ
 
-**Playground**  
-ਹਰ ਮਾਡਲ ਲਈ ਇੱਕ ਮਖ਼ਸੂਸ [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md) ਹੁੰਦਾ ਹੈ।
+ਤੁਸੀਂ Microsoft Phi ਦੀ ਵਰਤੋਂ ਕਿਵੇਂ ਕਰਨ ਦੀ ਸਿੱਖਿਆ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਵੱਖ-ਵੱਖ ਹਾਰਡਵੇਅਰ ਡਿਵਾਈਸਾਂ ਵਿੱਚ E2E ਸੋਲਿਊਸ਼ਨ ਬਣਾਉਣ ਦੇ ਤਰੀਕੇ ਸਿੱਖ ਸਕਦੇ ਹੋ। Phi ਦਾ ਅਨੁਭਵ ਲੈਣ ਲਈ, ਮਾਡਲ ਨਾਲ ਖੇਡੋ ਅਤੇ ਆਪਣੇ ਮਾਮਲਿਆਂ ਲਈ Phi ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕਰੋ, [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) ਦੇ ਜ਼ਰੀਏ। ਜ਼ਿਆਦਾ ਜਾਣਕਾਰੀ ਲਈ [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md) ਦੇ ਗੈਟਿੰਗ ਸਟਾਰਟ ਪੇਜ 'ਤੇ ਜਾਓ।
 
-### Phi on Hugging Face
+**ਪਲੇਗ੍ਰਾਉਂਡ**
+ਹਰ ਮਾਡਲ ਲਈ ਇਕ ਖਾਸ [ਪਲੇਗ੍ਰਾਉਂਡ ਹੈ ਜਿੱਥੇ ਮਾਡਲ ਨੂੰ ਟੈਸਟ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ](/md/02.QuickStart/GitHubModel_QuickStart.md)।
+
+### Hugging Face 'ਤੇ ਫਾਈ
 
 ਤੁਸੀਂ ਮਾਡਲ ਨੂੰ [Hugging Face](https://huggingface.co/microsoft) 'ਤੇ ਵੀ ਲੱਭ ਸਕਦੇ ਹੋ।
 
-**Playground**  
+**ਪਲੇਗ੍ਰਾਉਂਡ**
  [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
- ## 🎒 ਹੋਰ ਕੋਰਸز
+ ## 🎒 ਹੋਰ ਕੋਰਸ
 
-ਸਾਡੀ ਟੀਮ ਹੋਰ ਕੋਰਸਜ਼ ਬਣਾਉਂਦੀ ਹੈ! ਵੇਖੋ:
+ਅਸੀਂ ਹੋਰ ਕੋਰਸ ਵੀ ਬਣਾਉਂਦੇ ਹਾਂ! ਵੇਖੋ:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -272,7 +275,7 @@
 
 ---
  
-### Core Learning
+### ਕੋਰ ਸਿੱਖਿਆ
 [![ML for Beginners](https://img.shields.io/badge/ML%20for%20Beginners-22C55E?style=for-the-badge&labelColor=E5E7EB&color=22C55E)](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 [![Data Science for Beginners](https://img.shields.io/badge/Data%20Science%20for%20Beginners-84CC16?style=for-the-badge&labelColor=E5E7EB&color=84CC16)](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 [![AI for Beginners](https://img.shields.io/badge/AI%20for%20Beginners-A3E635?style=for-the-badge&labelColor=E5E7EB&color=A3E635)](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
@@ -283,41 +286,44 @@
 
 ---
  
-### Copilot Series
+### ਕੋ-ਪਾਇਲਟ ਸੀਰੀਜ਼
 [![Copilot for AI Paired Programming](https://img.shields.io/badge/Copilot%20for%20AI%20Paired%20Programming-FACC15?style=for-the-badge&labelColor=E5E7EB&color=FACC15)](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 [![Copilot for C#/.NET](https://img.shields.io/badge/Copilot%20for%20C%23/.NET-FBBF24?style=for-the-badge&labelColor=E5E7EB&color=FBBF24)](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 [![Copilot Adventure](https://img.shields.io/badge/Copilot%20Adventure-FDE68A?style=for-the-badge&labelColor=E5E7EB&color=FDE68A)](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 <!-- CO-OP TRANSLATOR OTHER COURSES END -->
 
-## Responsible AI 
+## ਜ਼ਿੰਮੇਵਾਰ AI
 
-ਮਾਇਕਰੋਸੋਫਟ ਸਾਡੇ ਗਾਹਕਾਂ ਨੂੰ ਸਾਡੇ AI ਉਤਪਾਦਾਂ ਨੂੰ ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਵਰਤਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਬੱਝਾ ਹੈ, ਸਾਡੇ ਸਿਖਿਆ ਸਾਂਝੀਆਂ ਕਰਨ ਅਤੇ ਟਰਾਂਸਪੇਰੰਸੀ ਨੋਟਸ ਅਤੇ ਇੰਪੈਕਟ ਅਸੈਸਮੈਂਟ ਜਿਹੇ ਟੂਲਸ ਰਾਹੀਂ ਭਰੋਸਾ-ਅਧਾਰਿਤ ਭਾਈਚਾਰੇ ਬਣਾਉਣ ਲਈ। ਬਹੁਤ ਸਾਰੇ ਇਹ ਸਰੋਤ [https://aka.ms/RAI](https://aka.ms/RAI) 'ਤੇ ਮਿਲ ਸਕਦੇ ਹਨ।  
-ਮਾਇਕਰੋਸੋਫਟ ਦਾ ਜ਼ਿੰਮੇਵਾਰ AI ਲਈ ਰਵੱਈਆ ਸਾਡੇ ਨਿਆਂ, ਭਰੋਸੇਯੋਗਤਾ ਅਤੇ ਸੁਰੱਖਿਆ, ਪ੍ਰਾਈਵੇਸੀ ਅਤੇ ਸੁਰੱਖਿਆ, ਸ਼ਾਮਲਤਾ, ਪਾਰਦਰਸ਼ਤਾ ਅਤੇ ਜ਼ਿੰਮੇਦਾਰੀ ਦੇ AI ਨੀਤੀਆਂ 'ਤੇ ਆਧਾਰਿਤ ਹੈ।  
+Microsoft ਆਪਣੇ ਗਾਹਕਾਂ ਨੂੰ ਸਾਡੇ AI ਉਤਪਾਦਾਂ ਦੀ ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਵਰਤੋਂ ਵਿੱਚ ਮਦਦ ਕਰਨ, ਸਾਡੇ ਸਿੱਖਿਆਵਾਂ ਸਾਂਝੇ ਕਰਨ, ਅਤੇ ਟਰਾਂਸਪੇਰੈਂਸੀ ਨੋਟਸ ਅਤੇ ਪ੍ਰਭਾਵ ਮੁਲਾਂਕਣ ਵਰਗੇ ਸੰਦਾਂ ਰਾਹੀਂ ਭਰੋਸੇਯੋਗ ਭਾਈਚਾਰੇ ਨਿਰਮਾਣ 'ਤੇ ਬਹੁਤ ਜ਼ੋਰ ਦਿੰਦਾ ਹੈ। ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਕਈ ਸਾਧਨ [https://aka.ms/RAI](https://aka.ms/RAI) 'ਤੇ ਮਿਲ ਸਕਦੇ ਹਨ।
+Microsoft ਦਾ ਜ਼ਿੰਮੇਵਾਰ AI ਦਾ ਤਰੀਕਾ ਸਾਡੇ AI ਦੇ ਅਦਾਲਤੀ, ਭਰੋਸੇਯੋਗਤਾ ਅਤੇ ਸੁਰੱਖਿਆ, ਪ੍ਰਾਈਵੇਸੀ ਅਤੇ ਸੁਰੱਖਿਆ, ਸ਼ਾਮਿਲਤਾ, ਪਾਰਦਰਸ਼ਤਾ ਅਤੇ ਜਵਾਬਦੇਹੀ ਦੇ ਸਿਧਾਂਤਾਂ ਤੇ ਆਧਾਰਿਤ ਹੈ।
 
-ਵੱਡੇ ਪੱਧਰ ਦੇ ਕੁਦਰਤੀ ਭਾਸ਼ਾ, ਚਿੱਤਰ ਅਤੇ ਬੋਲਚਾਲ ਮਾਡਲ - ਜਿਵੇਂ ਕਿ ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ ਵਰਤੇ ਗਏ ਹਨ - ਸੰਭਾਵਿਤ ਤੌਰ 'ਤੇ ਅਸਮਾਨ, ਅਭਰਾਮਕ ਜਾਂ ਅਪਮਾਨਜਨਕ ਤਰੀਕੇ ਨਾਲ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹਨ, ਜਿਸ ਨਾਲ ਨੁਕਸਾਨ ਹੋ ਸਕਦਾ ਹੈ। ਸੂਚਿਤ ਹੋਣ ਲਈ ਕ੍ਰਿਪਾ ਕਰਕੇ [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) 'ਤੇ ਜਾਓ ਅਤੇ ਜੋਖਮ ਅਤੇ ਸੀਮਾਵਾਂ ਬਾਰੇ ਜਾਣੋ।
-ਇਨ੍ਹਾਂ ਖਤਰਿਆਂ ਨੂੰ ਘਟਾਉਣ ਲਈ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਗਈ ਰਣਨੀਤੀ ਇਹ ਹੈ ਕਿ ਤੁਹਾਡੇ ਆਰਕੀਟੈਕਚਰ ਵਿੱਚ ਇੱਕ ਸੁਰੱਖਿਆ ਪ੍ਰਣਾਲੀ ਸ਼ਾਮਿਲ ਕੀਤੀ ਜਾਵੇ ਜੋ ਹਾਨੀਕਾਰਕ ਵਿਹਾਰ ਦਾ ਪਤਾ ਲਗਾ ਸਕੇ ਅਤੇ ਉਸ ਨੂੰ ਰੋਕ ਸਕੇ। [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ਇਕ ਸਵਤੰਤਰ ਸੁਰੱਖਿਆ ਪਰਤ ਮੁਹੱਈਆ ਕਰਵਾਉਂਦਾ ਹੈ, ਜੋ ਐਪਲੀਕੇਸ਼ਨਾਂ ਅਤੇ ਸੇਵਾਵਾਂ ਵਿੱਚ ਹਾਨੀਕਾਰਕ ਉਪਭੋਗਤਾ-ਜਨਰੇਟ ਅਤੇ AI-ਜਨਰੇਟ ਸਮੱਗਰੀ ਦਾ ਪਤਾ ਲਗਾਉਣ ਯੋਗ ਹੈ। Azure AI Content Safety ਵਿੱਚ ਟੈਕਸਟ ਅਤੇ ਚਿੱਤਰ API ਸ਼ਾਮਿਲ ਹਨ ਜੋ ਤੁਹਾਨੂੰ ਹਾਨੀਕਾਰਕ ਸਮੱਗਰੀ ਦਾ ਪਤਾ ਲਗਾਉਣ ਦੇ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ। Microsoft Foundry ਦੇ ਅੰਦਰ, Content Safety ਸੇਵਾ ਤੁਹਾਨੂੰ ਵੱਖ-ਵੱਖ ਮਾਡਲਿਟੀਜ਼ ਵਿੱਚ ਹਾਨੀਕਾਰਕ ਸਮੱਗਰੀ ਖੋਜਣ ਲਈ ਨਮੂਨੇ ਦੇ ਕੋਡ ਨੂੰ ਵੇਖਣ, ਖੋਜਣ ਅਤੇ ਅਜ਼ਮਾਉਣ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ। ਹੇਠਾਂ ਦਿੱਤਾ [quickstart ਦਸਤਾਵੇਜ਼](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ਤੁਹਾਨੂੰ ਸੇਵਾ ਨੂੰ ਬੇਨਤੀ ਕਰਨ ਵਿਚ ਰਾਹਨੁਮਾ ਕਰਦਾ ਹੈ।
+ਵੱਡੇ ਪੈਮانے 'ਤੇ ਨੇਚੁਰਲ ਲੈਂਗਵੇਜ਼, ਚਿੱਤਰ ਅਤੇ ਬੋਲ ਚਾਲ ਦੇ ਮਾਡਲ - ਜਿਵੇਂ ਕਿ ਇਸ ਨਮੂਨੇ ਵਿੱਚ ਵਰਤੇ ਗਏ - ਅਕਸਰ ਅਣਦੇਖਿਆਂ, ਅਣਭਰੋਸੇਯੋਗ ਜਾਂ ਅਪਮਾਨਜਨਕ ਵਿਹਾਰ ਕਰ ਸਕਦੇ ਹਨ, ਜੋ ਕਿ ਨੁਕਸਾਨ ਪਹੁੰਚਾ ਸਕਦਾ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜੋਖਮ ਅਤੇ ਸੀਮਾਵਾਂ ਬਾਰੇ ਜਾਣਕਾਰੀ ਲਈ [Azure OpenAI ਸੇਵਾ ਟਰਾਂਸਪੇਰੈਂਸੀ ਨੋਟ](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) ਨੂੰ ਵੇਖੋ।
 
-ਇੱਕ ਹੋਰ ਪਹਲੂ ਜੋ ਧਿਆਨ ਵਿੱਚ ਰੱਖਣ ਯੋਗ ਹੈ, ਉਹ ਹੈ ਸਮੁੱਚੇ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ। ਬਹੁ-ਮਾਡਲ ਅਤੇ ਬਹੁ-ਮਾਡਲ ਵਾਲੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨਾਲ, ਅਸੀਂ ਕਾਰਗੁਜ਼ਾਰੀ ਦਾ ਮਤਲਬ ਇਹ ਰੱਖਦੇ ਹਾਂ ਕਿ ਪ੍ਰਣਾਲੀ ਤੁਹਾਨੂੰ ਅਤੇ ਤੁਹਾਡੇ ਉਪਭੋਗਤਿਆਂ ਦੀ ਉਮੀਦਾਂ ਦੇ ਅਨੁਸਾਰ ਕੰਮ ਕਰੇ, ਜਿਸ ਵਿੱਚ ਹਾਨੀਕਾਰਕ ਨਤੀਜੇ ਨਾ ਬਣਾਉਣਾ ਸ਼ਾਮਿਲ ਹੈ। ਇਹ ਜਰੂਰੀ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਸਮੁੱਚੇ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ ਦੀ ਮੁਲਾਂਕਣ ਕਰੋ [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ਦੀ ਵਰਤੋਂ ਕਰਕੇ। ਤੁਹਾਡੇ ਕੋਲ [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) ਨਾਲ ਬਣਾਉਣ ਅਤੇ ਮੁਲਾਂਕਣ ਕਰਨ ਦੀ ਸਮਰੱਥਾ ਵੀ ਹੈ।
 
-ਤੁਸੀਂ ਆਪਣੇ ਵਿਕਾਸੀਲੇਵਲ.Environment ਵਿੱਚ ਆਪਣੇ AI ਐਪਲੀਕੇਸ਼ਨ ਦਾ ਮੁਲਾਂਕਣ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕਰ ਸਕਦੇ ਹੋ। ਕਿਵੇਂ ਇੱਕ ਟੈਸਟ ਡੈਟਾ ਸੈੱਟ ਜਾਂ ਟਾਰਗੇਟ ਦਿੱਤਾ ਜਾਵੇ, ਤਾਂ ਤੁਹਾਡੇ ਜਨਰੇਟਿਵ AI ਐਪਲੀਕੇਸ਼ਨ ਦੀਆਂ ਪੈਦਾਵਾਰਾਂ ਨੂੰ ਕੁਆੰਟੀਟੇਟਿਵ ਤੌਰ 'ਤੇ ਮਾਪਿਆ ਜਾਂਦਾ ਹੈ ਵਿਟ ਬਿਲਟ-ਇਨ ਜਾਂ ਕਸਟਮ ਇਵੈਲੂਏਟਰ ਜਾਂ ਤੁਹਾਡੇ ਚੋਣ ਦੇ ਮੁਤਾਬਕ। azure ai evaluation sdk ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰਨ ਲਈ ਅਤੇ ਆਪਣੀ ਪ੍ਰਣਾਲੀ ਦਾ ਮੁਲਾਂਕਣ ਕਰਨ ਲਈ ਤੁਸੀਂ [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ਦੀ ਪਾਲਣਾ ਕਰ ਸਕਦੇ ਹੋ। ਇੱਕ ਵਾਰੀ ਤੁਹਾਡੇ ਕੋਲ ਮੁਲਾਂਕਣ ਚਲਾਇਆ ਜਾਵੇ ਤਾਂ ਤੁਸੀਂ [Microsoft Foundry ਵਿੱਚ ਨਤੀਜੇ ਦਰਸਾ ਸਕਦੇ ਹੋ](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)।
+ਇਹ ਜੋਖਮਾਂ ਨੂੰ ਘਟਾਉਣ ਲਈ ਸਿਫਾਰਸ਼ੀ ਕੀਤੀ ਗਈ ਪদ্ধਤੀ ਇਹ ਹੈ ਕਿ ਤੁਹਾਡੇ ਸਾਂਰਚਨਾ ਵਿੱਚ ਇੱਕ ਸੁਰੱਖਿਆ ਪ੍ਰਣਾਲੀ ਸ਼ਾਮਲ ਕੀਤੀ ਜਾਵੇ ਜੋ ਖਤਰਨਾਕ ਵਰਤਾਰ ਨੂੰ ਪਛਾਣ ਅਤੇ ਰੋਕ ਸਕੇ। [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ਇੱਕ ਸਵਤੰਤਰ ਸੁਰੱਖਿਆ ਪਰਤ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ, ਜੋ ਐਪਲੀਕੇਸ਼ਨਾਂ ਅਤੇ ਸੇਵਾਵਾਂ ਵਿੱਚ ਖਤਰਨਾਕ ਉਪਭੋਗਤਾ-ਜਨਰੀਤ ਅਤੇ ਏਆਈ-ਜਨਰੀਤ ਸਮੱਗਰੀ ਦਾ ਪਤਾ ਲਗਾਉਣ ਦੇ ਯੋਗ ਹੈ। Azure AI Content Safety ਵਿੱਚ ਟੈਕਸਟ ਅਤੇ ਚਿੱਤਰ ਏਪੀਆਈਜ਼ ਸ਼ਾਮਲ ਹਨ ਜੋ ਤੁਹਾਨੂੰ ਖਤਰਨਾਕ ਸਮੱਗਰੀ ਦਾ ਪਤਾ ਲਾਉਣ ਦੀ ਆਗਿਆ ਦਿੰਦੇ ਹਨ। ਮਾਇਕਰੋਸਾਫਟ ਫਾਊਂਡਰੀ ਦੇ ਅੰਦਰ, Content Safety ਸੇਵਾ ਤੁਹਾਨੂੰ ਵੱਖ-ਵੱਖ ਮੋਡਾਲਿਟੀਜ਼ ਵਿੱਚ ਖਤਰਨਾਕ ਸਮੱਗਰੀ ਪਛਾਣ ਲਈ ਨਮੂਨਾ ਕੋਡ ਦੇਖਣ, ਖੰਗਾਲਣ ਅਤੇ ਕੋਸ਼ਿਸ਼ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ। ਹੇਠਾਂ ਦਿੱਤੀ ਗਈ [quickstart ਦਸਤਾਵੇਜ਼](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ਤੁਹਾਡੇ ਲਈ ਸੇਵਾ ਨੂੰ ਬੇਨਤੀਆਂ ਭੇਜਣ ਦੀ ਪ੍ਰਕਿਰਿਆ ਦਿਖਾਉਂਦੀ ਹੈ।
 
-## ਟ੍ਰੇਡਮਾਰਕ
+ਇੱਕ ਹੋਰ پهلو ਜੋ ਧਿਆਨ ਵਿੱਚ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ ਉਹ ਕੁੱਲ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਪ੍ਰਦਰਸ਼ਨਸ਼ੀਲਤਾ ਹੈ। ਬਹੁ-ਮੋਡਲ ਅਤੇ ਬਹੁ-ਮਾਡਲ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨਾਲ, ਅਸੀਂ ਪ੍ਰਦਰਸ਼ਨਸ਼ੀਲਤਾ ਦੱਸਦੇ ਹਾਂ ਕਿ ਸਿਸਟਮ ਉਸ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਦਾ ਹੈ ਜਿਵੇਂ ਤੂੰ ਅਤੇ ਤੇਰੇ ਵਰਤੋਂਕਾਰ ਉਮੀਦ ਕਰਦੇ ਹਨ, ਜਿਸ ਵਿੱਚ ਖਤਰਨਾਕ ਨਤੀਜਿਆਂ ਦਾ ਉਤਪਾਤਨ ਸ਼ਾਮਲ ਨਹੀਂ ਹੈ। ਤੁਹਾਡੇ ਲਈ ਇਹ ਜਰੂਰੀ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਕੁੱਲ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਪ੍ਰਦਰਸ਼ਨਸ਼ੀਲਤਾ ਦਾ ਮੁਲਾਂਕਣ ਕਰੋ [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) ਦੀ ਵਰਤੋਂ ਕਰਕੇ। ਤੁਹਾਡੇ ਕੋਲ [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) ਬਣਾਉਣ ਅਤੇ ਮੁਲਾਂਕਣ ਕਰਨ ਦੀ ਸਮਰੱਥਾ ਵੀ ਹੈ।
 
-ਇਹ ਪ੍ਰੋਜੈਕਟ ਪ੍ਰੋਜੈਕਟਾਂ, ਉਤਪਾਦਾਂ ਜਾਂ ਸੇਵਾਵਾਂ ਲਈ ਟ੍ਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋ ਸ਼ਾਮਿਲ ਕਰ ਸਕਦਾ ਹੈ। Microsoft ਦੇ ਟ੍ਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋ ਦਾ ਪ੍ਰਮਾਣਿਤ ਵਰਤੋਂ [Microsoft ਦੀ ਟ੍ਰੇਡਮਾਰਕ ਅਤੇ ਬ੍ਰਾਂਡ ਗਾਈਡਲਾਈਨਾਂ](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) ਦੇ ਅਧੀਨ ਹੈ ਅਤੇ ਉਹਨਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨੀ ਜਰੂਰੀ ਹੈ। ਇਸ ਪ੍ਰੋਜੈਕਟ ਦੀ ਤਬਦੀਲ ਕੀਤੀ ਗਈ ਵਰਜਨ ਵਿੱਚ Microsoft ਦੇ ਟ੍ਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋ ਦੀ ਵਰਤੋਂ ਨਾਲ ਕੋਈ ਭ੍ਰਮ ਜਾਂ Microsoft ਦੀ ਸਪਾਂਸਰਸ਼ਿਪ ਦਾ ਭਾਵ ਨਹੀਂ ਹੋਣਾ ਚਾਹੀਦਾ। ਤੀਸਰੀ-ਪੱਖ ਦੇ ਟ੍ਰੇਡਮਾਰਕਾਂ ਜਾਂ ਲੋਗੋ ਦੀ ਵਰਤੋਂ ਉਸ ਤੀਸਰੇ-ਪੱਖ ਦੀਆਂ ਨੀਤੀਆਂ ਦੇ ਅਧੀਨ ਹੈ।
+ਤੁਸੀਂ ਆਪਣੇ ਵਿਕਾਸ ਦੇ ਵਾਤਾਵਰਣ ਵਿੱਚ ਆਪਣੀ ਏਆਈ ਐਪਲੀਕੇਸ਼ਨ ਦਾ ਮੁਲਾਂਕਣ [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) ਦੀ ਵਰਤੋਂ ਨਾਲ ਕਰ ਸਕਦੇ ਹੋ। ਚਾਹੇ ਇੱਕ ਟੈਸਟ ਡੇਟਾਸੇਟ ਹੋਵੇ ਜਾਂ ਟਾਰਗੇਟ, ਤੁਹਾਡੇ ਜਨਰੇਟਿਵ ਏਆਈ ਐਪਲੀਕੇਸ਼ਨ ਦੇ ਜਨਰੇਸ਼ਨਾਂ ਦੀ ਮਾਤਰਾਤਮਕ ਮਾਪ ਪੇਸ਼ਗੀ ਤਿਆਰ ਕੀਤੇ ਇਵੈਲੂਏਟਰ ਜਾਂ ਤੁਹਾਡੇ ਚੋਣ ਦੇ ਅਨੁਕੂਲ ਇਵੈਲੂਏਟਰ ਨਾਲ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਆਪਣੇ ਸਿਸਟਮ ਦੇ ਮੁਲਾਂਕਣ ਲਈ azure ai evaluation sdk ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰਨ ਲਈ, ਤੁਸੀਂ [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) ਦੀ ਪਾਲਣਾ ਕਰ ਸਕਦੇ ਹੋ। ਇੱਕ ਵਾਰੀ ਤੁਸੀਂ ਮੁਲਾਂਕਣ ਚਲਾਉਂਦੇ ਹੋ, ਤੁਸੀਂ [Microsoft Foundry ਵਿੱਚ ਨਤੀਜਿਆਂ ਦਾ ਦਰਸ਼ਨ ਕਰ ਸਕਦੇ ਹੋ](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
-## ਮਦਦ ਪ੍ਰਾਪਤ ਕਰੋ
+## ਟਰੇਡਮਾਰਕ
 
-ਜੇ ਤੁਸੀਂ ਫੱਸ ਜਾਂਦੇ ਹੋ ਜਾਂ AI ਐਪ ਬਨਾਉਣ ਬਾਰੇ ਕੋਈ ਸਵਾਲ ਹੈ, ਤਾਂ ਜੁੜੋ:
+ਇਸ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਪ੍ਰੋਜੈਕਟਾਂ, ਉਤਪਾਦਾਂ ਜਾਂ ਸੇਵਾਵਾਂ ਲਈ ਟਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋਜ਼ ਹੋ ਸਕਦੇ ਹਨ। Microsoft ਟਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋਜ਼ ਦੀ ਮਨਜ਼ੂਰਸ਼ੁਦਾ ਵਰਤੋਂ [Microsoft ਦੇ ਟਰੇਡਮਾਰਕ ਅਤੇ ਬ੍ਰਾਂਡ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) ਦੇ ਅਧੀਨ ਹੈ ਅਤੇ ਇਸਦੀ ਪਾਲਣਾ ਕਰਨੀ ਜਰੂਰੀ ਹੈ।
+Microsoft ਟਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋਜ਼ ਦੀ ਇਹ ਪ੍ਰੋਜੈਕਟ ਦੇ ਸੰਜੋੜੇ ਸੰਸਕਰਨਾਂ ਵਿੱਚ ਵਰਤੋਂ Microsoft ਦੀ ਸਹਿਯੋਗੀਤਾ ਦਰਸਾਉਣ ਜਾਂ ਗਲਤੀ ਪੈਦਾ ਕਰਨ ਵਾਲੀ ਨਹੀਂ ਹੋਣੀ ਚਾਹੀਦੀ। ਕਿਸੇ ਵੀ ਤੀਸਰੇ ਧਿਰ ਦੇ ਟਰੇਡਮਾਰਕ ਜਾਂ ਲੋਗੋਜ਼ ਦੀ ਵਰਤੋਂ ਉਹਨਾਂ ਤੀਸਰੇ ਧਿਰ ਦੀਆਂ ਨੀਤੀਆਂ ਦੇ ਅਧੀਨ ਹੁੰਦੀ ਹੈ।
+
+## ਸਹਾਇਤਾ ਪ੍ਰਾਪਤ ਕਰਨਾ
+
+ਜੇ ਤੁਸੀਂ ਫਸ ਜਾਂਦੇ ਹੋ ਜਾਂ ਏਆਈ ਐਪ ਬਣਾਉਣ ਬਾਰੇ ਕੋਈ ਸਵਾਲ ਹੈ, ਤਦ ਸ਼ਾਮਿਲ ਹੋਵੋ:
 
 [![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਉਤਪਾਦ ਸਬੰਧੀ ਪ੍ਰਤੀਕ੍ਰਿਆ ਜਾਂ ਬਿਲਡਿੰਗ ਦੌਰਾਨ ਕੋਈ ਗਲਤੀਆਂ ਹਨ ਤਾਂ ਮਿਲੋ:
+ਜੇ ਤੁਹਾਨੂੰ ਉਤਪਾਦ ਫੀਡਬੈਕ ਜਾਂ ਤਿਆਰ ਕਰਦੇ ਸਮੇਂ ਕੋਈ ਗਲਤੀ ਮਿਲਦੀ ਹੈ, ਤਾਂ ਜਾਓ:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
-**ਦਾਇਤਵ-ਤਿਆਗ:**  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਵੇਖੋ ਕਿ ਸੁਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰੱਥਾ ਹੋ ਸਕਦੀ ਹੈ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਵਜੋਂ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਣ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫ਼ਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਭੁੱਲਾਂ ਜਾਂ ਗਲਤਫਹਮੀਆਂ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਪਣ**:
+ਇਸ ਦਸਤਾਵੇਜ਼ ਦਾ ਅਨੁਵਾਦ ਏਆਈ ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾਵਾਂ ਲਈ ਯਤਨਸ਼ੀਲ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮੱਤਿਆਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੇ ਉਪਯੋਗ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਜਵਾਬਦੇਹ ਨਹੀਂ ਹਾਂ।
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
