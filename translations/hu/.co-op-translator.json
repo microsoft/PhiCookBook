@@ -12,8 +12,8 @@
     "language_code": "hu"
   },
   "README.md": {
-    "original_hash": "a49252a2706935f21c8abf8471481553",
-    "translation_date": "2026-04-21T00:25:17+00:00",
+    "original_hash": "e1043c69855a4bf9bb560a087f3f0bff",
+    "translation_date": "2026-08-26T19:39:02+00:00",
     "source_file": "README.md",
     "language_code": "hu"
   },
@@ -51,6 +51,12 @@
     "original_hash": "11e3f99abd178a635084cdbe5ac07600",
     "translation_date": "2026-03-29T08:05:48+00:00",
     "source_file": "code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb",
+    "language_code": "hu"
+  },
+  "code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb": {
+    "original_hash": "71f9303a811084cf162acf977625cda9",
+    "translation_date": "2026-08-26T19:41:58+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb",
     "language_code": "hu"
   },
   "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md": {
