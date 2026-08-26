@@ -361,7 +361,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md": {
     "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-    "translation_date": "2025-09-12T14:32:02+00:00",
+    "translation_date": "2026-07-29T17:25:50+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
     "language_code": "lt"
   },
@@ -373,7 +373,7 @@
   },
   "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md": {
     "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-    "translation_date": "2025-09-12T14:32:20+00:00",
+    "translation_date": "2026-07-29T17:25:28+00:00",
     "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
     "language_code": "lt"
   },
@@ -577,7 +577,7 @@
   },
   "md/03.FineTuning/FineTuning_MLX.md": {
     "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-    "translation_date": "2025-09-12T14:45:38+00:00",
+    "translation_date": "2026-07-29T17:25:13+00:00",
     "source_file": "md/03.FineTuning/FineTuning_MLX.md",
     "language_code": "lt"
   },

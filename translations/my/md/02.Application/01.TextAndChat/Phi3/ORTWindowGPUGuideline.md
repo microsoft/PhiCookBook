@@ -1,16 +1,16 @@
 # **OnnxRuntime GenAI Windows GPU အတွက် လမ်းညွှန်ချက်**
 
-ဤလမ်းညွှန်ချက်သည် Windows ပေါ်တွင် GPU များနှင့် ONNX Runtime (ORT) ကို စတင်တပ်ဆင်ပြီး အသုံးပြုနည်းအဆင့်များကို ဖော်ပြထားသည်။ သင့်မော်ဒယ်များအတွက် GPU အမြန်နှုန်းမြှင့်တင်မှုကို အသုံးချနိုင်ရန်၊ စွမ်းဆောင်ရည်နှင့် ထိရောက်မှုကို တိုးတက်စေဖို့ ရည်ရွယ်ထားသည်။
+ဤလမ်းညွှန်ချက်သည် Windows ပေါ်တွင် GPU များဖြင့် ONNX Runtime (ORT) ကို တပ်ဆင်အသုံးပြုခြင်းဆိုင်ရာ အဆင့်များကို ပေးပါသည်။ သင့် မော်ဒယ်များအတွက် GPU ကြောင့် လျှင်မြန်မှုနှင့် ထိရောက်မှုတိုးတက်စေရန် ဒီလမ်းညွှန်ချက်ကို အသုံးပြုနိုင်မှာဖြစ်သည်။
 
-စာရွက်တွင် ပါဝင်သော အကြောင်းအရာများမှာ -
+စာရွက်ဖြစ်သည်မှာ အောက်ပါအချက်များကို လမ်းညွှန်ပေးသည်-
 
-- ပတ်ဝန်းကျင် တပ်ဆင်ခြင်း - CUDA, cuDNN နှင့် ONNX Runtime ကဲ့သို့ လိုအပ်သော အခြေခံပစ္စည်းများ တပ်ဆင်နည်း။
-- ဖွဲ့စည်းမှု - GPU အရင်းအမြစ်များကို ထိရောက်စွာ အသုံးပြုနိုင်ရန် ပတ်ဝန်းကျင်နှင့် ONNX Runtime ကို ပြင်ဆင်နည်း။
-- အကောင်းဆုံး စွမ်းဆောင်ရည်ရရှိစေရန် GPU ဆက်တင်များကို ပြင်ဆင်ခြင်းအကြံပြုချက်များ။
+- ပတ်ဝန်းကျင် ပြင်ဆင်ခြင်း: CUDA၊ cuDNN၊ နှင့် ONNX Runtime ကဲ့သို့ လိုအပ်သော အကူအညီပစ္စည်းများတပ်ဆင်နည်း။
+- ဆက်တင် ပြင်ဆင်ခြင်း: GPU အရင်းအမြစ်များကို ထိရောက်စွာ အသုံးပြုနိုင်ရန် ပတ်ဝန်းကျင်နှင့် ONNX Runtime ကို ပြင်ဆင်နည်း။
+- ပြုပြင်တိုးတတ်နည်းအကြံပြုချက်များ: စွမ်းဆောင်ရည်အကောင်းဆုံးရရှိစေရန် GPU ဆက်တင်များကို ညှိနှိုင်းနည်း။
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** သင့် Python ပတ်ဝန်းကျင်အဖြစ် [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) ကို အသုံးပြုရန် အကြံပြုသည်။
+   ***မှတ်ချက်*** သင့် Python ပတ်ဝန်းကျင်အဖြစ် [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) ကို အသုံးပြုရန် အကြံပြုသည်
 
    ```bash
 
@@ -20,9 +20,10 @@
 
    ```
 
-   ***Reminder*** Python ONNX library များကို တပ်ဆင်ထားပါက အရင်ဆုံး ဖယ်ရှားပစ်ပါ။
+   ***သတိပေးချက်*** Python ONNX 라이브러리를 တပ်ဆင်ပြီးသားရှိပါက အရင်ဆုံး ဖျက်ပစ်ရန်။
 
 ### **2. winget ဖြင့် CMake တပ်ဆင်ခြင်း**
+
 
    ```bash
 
@@ -32,9 +33,10 @@
 
 ### **3. Visual Studio 2022 - Desktop Development with C++ တပ်ဆင်ခြင်း**
 
-   ***Note*** သင် compile မလုပ်ချင်ပါက ဤအဆင့်ကို ကျော်လွှားနိုင်သည်။
+   ***မှတ်ချက်*** သင် compile မလုပ်ချင်ပါက ဒီအဆင့်ကို ကျော်လွှားနိုင်သည်
 
 ![CPP](../../../../../../translated_images/my/01.42f52a2b2aedff02.webp)
+
 
 ### **4. NVIDIA Driver တပ်ဆင်ခြင်း**
 
@@ -44,19 +46,21 @@
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** တပ်ဆင်ရာတွင် ပုံမှန် အဆင့်ဆင့်ကို အသုံးပြုပါ။
+***သတိပေးချက်*** တပ်ဆင်သည့်အခါ Default ဆက်တင်များကို အသုံးပြုရန်
 
-### **5. NVIDIA ပတ်ဝန်းကျင် ပြင်ဆင်ခြင်း**
+### **5. NVIDIA Env ကို သတ်မှတ်ခြင်း**
 
-NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကို NVIDIA CUDA 12.4 ရဲ့ lib, bin, include ထဲသို့ ကူးယူပါ။
+NVIDIA CUDNN 9.4 lib, bin, include များကို NVIDIA CUDA 12.4 lib, bin, include ထဲသို့ ကူးယူပါ
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* ဖိုင်များကို *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* ထဲသို့ ကူးပါ။
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* များကို *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* သို့ ကူးပါ
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* ဖိုင်များကို *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* ထဲသို့ ကူးပါ။
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* များကို *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* သို့ ကူးပါ
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* ဖိုင်များကို *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* ထဲသို့ ကူးပါ။
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* များကို *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* သို့ ကူးပါ
+
 
 ### **6. Phi-3.5-mini-instruct-onnx ကို ဒေါင်းလုပ်လုပ်ခြင်း**
+
 
    ```bash
 
@@ -70,25 +74,30 @@ NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကိ�
 
    ```
 
-### **7. InferencePhi35Instruct.ipynb ကို လည်ပတ်ခြင်း**
+### **7. InferencePhi35Instruct.ipynb ကို ပြေးခြင်း**
 
-   [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) ကို ဖွင့်ပြီး အကောင်အထည်ဖော်ပါ။
+   [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) ကို ဖွင့်၍ အောက်ပါအတိုင်း အကောင်အထည်ဖော်ပါ
+
 
 ![RESULT](../../../../../../translated_images/my/02.b9b06996cf7255d5.webp)
 
-### **8. ORT GenAI GPU ကို Compile လုပ်ခြင်း**
 
-   ***Note*** 
+### **8. ORT GenAI GPU ကို Compile ပြုလုပ်ခြင်း**
+
+
+   ***မှတ်ချက်*** 
    
-   1. onnx, onnxruntime နှင့် onnxruntime-genai အားလုံးကို အရင်ဆုံး ဖယ်ရှားပစ်ပါ။
+   1. ပထမဆုံး အထက်ပါ ONNX နှင့် ONNX Runtime နှင့် ONNX Runtime GenAI library များအားလုံးကို ဖျက်ပစ်ပါ
 
+   
    ```bash
 
    pip list 
    
    ```
 
-   ထို့နောက် onnxruntime library များအားလုံးကို ဖယ်ရှားပစ်ပါ။
+   ထို့နောက် onnxruntime library များအားလုံးကို ဖျက်ပစ်ပါ။
+
 
    ```bash
 
@@ -100,11 +109,17 @@ NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကိ�
    
    ```
 
-   2. Visual Studio Extension ကို စစ်ဆေးပါ။
+   2. Visual Studio Extension ပံ့ပိုးမှုကို စစ်ဆေးပါ
 
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras တွင် C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ဖိုင်လ်ရှိမရှိ စစ်ဆေးပါ။ မရှိပါက အခြား Cuda toolkit driver ဖိုလ်ဒါများထဲမှ visual_studio_integration ဖိုလ်ဒါနှင့် အတွင်းဖိုင်များကို ကူးယူပြီး C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ထဲသို့ ထည့်ပါ။
+   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras တွင် C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ဖိုင်လ်ကို တွေ့ရှိရမည်။
+   
+   မတွေ့လျှင် အခြား CUDA toolkit driver ဖိုလ်ဒါများအား စစ်ဆေး၍ visual_studio_integration ဖိုလ်ဒါနှင့် ထဲတွင်းပါဝင်ပစ္စည်းများကို C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ထဲသို့ ကူးပါ
 
-   - compile မလုပ်ချင်ပါက ဤအဆင့်ကို ကျော်လွှားနိုင်သည်။
+
+
+
+   - သင် compile မလုပ်ချင်ပါက ဒီအဆင့်ကို ကျော်လွှားနိုင်သည်
+
 
    ```bash
 
@@ -112,16 +127,17 @@ NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကိ�
 
    ```
 
-   - [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) ကို ဒေါင်းလုပ်လုပ်ပါ။
+   - [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) ကို ဒေါင်းလုပ်လုပ်ပါ
 
-   - onnxruntime-win-x64-gpu-1.19.2.zip ကို ဖွင့်ပြီး **ort** ဟု အမည်ပြောင်းပြီး onnxruntime-genai ထဲသို့ ကူးပါ။
+   - onnxruntime-win-x64-gpu-1.19.2.zip ကိုဖွင့်ပြီး **ort** ဟူ၍ အမည်ပြောင်းပြီး onnxruntime-genai ထဲသို့ ort ဖိုလ်ဒါကို ကူးပါ
 
-   - Windows Terminal ကို အသုံးပြု၍ Developer Command Prompt for VS 2022 သို့ ဝင်ပြီး onnxruntime-genai သို့ သွားပါ။
+   - Windows Terminal ကို အသုံးပြု၍ Developer Command Prompt for VS 2022 သို့သွားပြီး onnxruntime-genai ထဲသို့ ဝင်ပါ
 
 ![RESULT](../../../../../../translated_images/my/03.b83ce473d5ff9b9b.webp)
 
-   - သင့် Python ပတ်ဝန်းကျင်ဖြင့် compile လုပ်ပါ။
+   - သင့် Python ပတ်ဝန်းကျင်ဖြင့် compile လုပ်ပါ
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -135,5 +151,9 @@ NVIDIA CUDNN 9.4 ရဲ့ lib, bin, include ဖိုင်များကိ�
 
    ```
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ပြောကြားချက်**
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးပမ်းနေသော်လည်း၊ စက်ကိရိယာဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် လိုအပ်ပါသည်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အဖြစ် သတ်မှတ်သင့်သည်။ အရေးကြီးသည့် သတင်းအချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်သူဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုကွာခြားမှုများ သို့မဟုတ် မမှန်ကန်သော အသုံးပြုမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မခံပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

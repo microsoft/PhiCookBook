@@ -1,58 +1,58 @@
-# שימוש ב-GPU של Windows ליצירת פתרון Prompt flow עם Phi-3.5-Instruct ONNX
+# שימוש ב-GPU של Windows ליצירת פתרון Prompt flow עם Phi-3.5-Instruct ONNX 
 
-המסמך הבא הוא דוגמה לאופן השימוש ב-PromptFlow עם ONNX (Open Neural Network Exchange) לפיתוח יישומי בינה מלאכותית מבוססי מודלים מסוג Phi-3.
+המסמך הבא הוא דוגמה לאופן השימוש ב-PromptFlow עם ONNX (Open Neural Network Exchange) לפיתוח יישומי AI המבוססים על מודלים של Phi-3.
 
-PromptFlow היא חבילת כלים לפיתוח שמטרתה לייעל את מחזור הפיתוח המלא של יישומי בינה מלאכותית מבוססי LLM (Large Language Model), החל מרעיונות ופרוטוטייפינג ועד לבדיקות והערכה.
+PromptFlow היא חבילת כלים לפיתוח שנועדה לייעל את מחזור הפיתוח ממקור ליישום של יישומי AI מבוססי LLM (מודל שפה גדול), מתכנון ואבטיפוס ועד לבדיקה והערכה.
 
-באמצעות שילוב של PromptFlow עם ONNX, מפתחים יכולים:
+באמצעות שילוב PromptFlow עם ONNX, מפתחים יכולים:
 
-- לשפר את ביצועי המודל: לנצל את ONNX לאינפרנס ופריסה יעילים של המודל.
+- לשפר את ביצועי המודל: לנצל את ONNX לאינפרנציה ופריסה יעילה של מודל.
 - לפשט את הפיתוח: להשתמש ב-PromptFlow לניהול זרימת העבודה ואוטומציה של משימות חוזרות.
-- לשפר את שיתוף הפעולה: לאפשר שיתוף פעולה טוב יותר בין חברי הצוות על ידי מתן סביבת פיתוח מאוחדת.
+- לשפר את שיתוף הפעולה: להקל על שיתוף פעולה טוב יותר בין חברי הצוות בעזרת סביבת פיתוח מאוחדת.
 
-**Prompt flow** היא חבילת כלים לפיתוח שמטרתה לייעל את מחזור הפיתוח המלא של יישומי בינה מלאכותית מבוססי LLM, החל מרעיונות, פרוטוטייפינג, בדיקות, הערכה ועד לפריסה ומעקב בייצור. היא מקלה מאוד על הנדסת הפרומפט ומאפשרת לבנות אפליקציות LLM באיכות ייצור.
+**Prompt flow** היא חבילת כלים לפיתוח שנועדה לייעל את מחזור הפיתוח ממקור ליישום של יישומי AI מבוססי LLM, מתכנון, אבטיפוס, בדיקה, הערכה ועד פריסה ומעקב בייצור. היא הופכת את הנדסת הפקודות לקלה הרבה יותר ומאפשרת לך לבנות אפליקציות LLM באיכות ייצור.
 
-Prompt flow יכולה להתחבר ל-OpenAI, Azure OpenAI Service, ולמודלים מותאמים אישית (Huggingface, LLM/SLM מקומי). אנו מקווים לפרוס את מודל ONNX הכמותי של Phi-3.5 באפליקציות מקומיות. Prompt flow יכולה לעזור לנו לתכנן טוב יותר את העסק ולהשלים פתרונות מקומיים מבוססי Phi-3.5. בדוגמה זו, נשלב את ONNX Runtime GenAI Library כדי להשלים את פתרון Prompt flow מבוסס Windows GPU.
+Prompt flow יכולה להתחבר ל-OpenAI, ל-Azure OpenAI Service ולמודלים הניתנים להתאמה אישית (Huggingface, LLM/SLM מקומי). אנו מקווים לפרוס את מודל ה-ONNX הכוונטי של Phi-3.5 ליישומים מקומיים. Prompt flow יכולה לסייע לנו בתכנון עסקי טוב יותר ובהשלמת פתרונות מקומיים המבוססים על Phi-3.5. בדוגמה זו, נשולב את ONNX Runtime GenAI Library להשלים את פתרון ה-Prompt flow מבוסס GPU של Windows.
 
 ## **התקנה**
 
 ### **ONNX Runtime GenAI עבור Windows GPU**
 
-קראו את ההנחיות להגדרת ONNX Runtime GenAI עבור Windows GPU [לחצו כאן](./ORTWindowGPUGuideline.md)
+קרא את ההנחיה הזו כדי להגדיר ONNX Runtime GenAI עבור Windows GPU  [click here](./ORTWindowGPUGuideline.md)
 
 ### **הגדרת Prompt flow ב-VSCode**
 
-1. התקינו את תוסף Prompt flow ל-VS Code
+1. התקן את הרחבת Prompt flow ב-VSCode
 
 ![pfvscode](../../../../../../translated_images/he/pfvscode.eff93dfc66a42cbe.webp)
 
-2. לאחר התקנת התוסף, לחצו עליו ובחרו **Installation dependencies** ופעלו לפי ההנחיות להתקנת Prompt flow SDK בסביבת העבודה שלכם
+2. לאחר התקנת הרחבת Prompt flow ב-VSCode, לחץ על ההרחבה ובחר **תלויות התקנה** ופעל לפי ההנחיה הזו להתקנת ה-SDK של Prompt flow בסביבתך
 
 ![pfsetup](../../../../../../translated_images/he/pfsetup.b46e93096f5a254f.webp)
 
-3. הורידו את [קוד הדוגמה](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ופתחו אותו ב-VS Code
+3. הורד [קוד לדוגמה](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ופתח את הדוגמה הזו ב-VSCode
 
 ![pfsample](../../../../../../translated_images/he/pfsample.8d89e70584ffe7c4.webp)
 
-4. פתחו את הקובץ **flow.dag.yaml** כדי לבחור את סביבת הפייתון שלכם
+4. פתח **flow.dag.yaml** כדי לבחור את סביבת ה-Python שלך
 
 ![pfdag](../../../../../../translated_images/he/pfdag.264a77f7366458ff.webp)
 
-   פתחו את **chat_phi3_ort.py** כדי לשנות את מיקום מודל Phi-3.5-instruct ONNX שלכם
+   פתח את **chat_phi3_ort.py** כדי לשנות את מיקום מודל Phi-3.5-instruct ONNX שלך
 
 ![pfphi](../../../../../../translated_images/he/pfphi.72da81d74244b45f.webp)
 
-5. הריצו את ה-prompt flow שלכם לבדיקה
+5. הרץ את prompt flow שלך לבדיקה
 
-פתחו את **flow.dag.yaml** ולחצו על העורך הוויזואלי
+פתח את **flow.dag.yaml** ולחץ על עורך חזותי
 
 ![pfv](../../../../../../translated_images/he/pfv.ba8a81f34b20f603.webp)
 
-לאחר הלחיצה, הריצו את הפתרון לבדיקה
+לאחר שלחצת על זה, הרץ כדי לבדוק
 
 ![pfflow](../../../../../../translated_images/he/pfflow.4e1135a089b1ce1b.webp)
 
-1. ניתן להריץ אצווה בטרמינל כדי לבדוק תוצאות נוספות
+1. ניתן להריץ באצווה בטרמינל כדי לבדוק תוצאות נוספות
 
 
 ```bash
@@ -61,10 +61,14 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-ניתן לבדוק את התוצאות בדפדפן המוגדר כברירת מחדל
+ניתן לבדוק תוצאות בדפדפן המוגדר כברירת מחדל שלך
 
 
 ![pfresult](../../../../../../translated_images/he/pfresult.c22c826f8062d7cb.webp)
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**כתב ויתור**:
+מסמך זה תורגם באמצעות שירות תרגום אוטומטי [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להחשיב את המסמך המקורי בשפתו הטבעית כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אדם. אנו לא אחראים לכל אי-הבנה או פירוש שגוי הנובע מהשימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

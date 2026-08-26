@@ -1,16 +1,16 @@
-# **Guideline for OnnxRuntime GenAI Windows GPU**
+# **Guideline for OnnxRuntime GenAI  Windows GPU**
 
-This guideline provides steps for setting up and using ONNX Runtime (ORT) with GPUs on Windows. It’s designed to help you take advantage of GPU acceleration for your models, enhancing performance and efficiency.
+This guideline provides steps for setting up and using the ONNX Runtime (ORT) with GPUs on Windows. It's designed to help you leverage GPU acceleration for your models, improving performance and efficiency.
 
-The document covers:
+The document provides guidance on:
 
-- Environment Setup: Instructions for installing necessary dependencies like CUDA, cuDNN, and ONNX Runtime.
-- Configuration: How to configure the environment and ONNX Runtime to effectively use GPU resources.
-- Optimization Tips: Recommendations for fine-tuning your GPU settings for the best performance.
+- Environment Setup: Instructions on installing the necessary dependencies like CUDA, cuDNN, and ONNX Runtime.
+- Configuration: How to configure the environment and ONNX Runtime to utilize GPU resources effectively.
+- Optimization Tips: Advice on how to fine-tune your GPU settings for optimal performance.
 
-### **1. Python 3.10.x / 3.11.8**
+### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** It is recommended to use [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) as your Python environment
+   ***Note*** Suggest use [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) as your Python env
 
    ```bash
 
@@ -20,9 +20,10 @@ The document covers:
 
    ```
 
-   ***Reminder*** If you have installed any Python ONNX libraries, please uninstall them
+   ***Reminder*** If you have intall any about python ONNX library, please uninstall it
 
 ### **2. Install CMake with winget**
+
 
    ```bash
 
@@ -32,9 +33,10 @@ The document covers:
 
 ### **3. Install Visual Studio 2022 - Desktop Development with C++**
 
-   ***Note*** You can skip this step if you don’t need to compile
+   ***Note*** If you not want to compile you can skip this step
 
 ![CPP](../../../../../../translated_images/en/01.42f52a2b2aedff02.webp)
+
 
 ### **4. Install NVIDIA Driver**
 
@@ -44,19 +46,21 @@ The document covers:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** Please use the default settings during installation
+***Reminder*** Please use default settings with Installation flow 
 
-### **5. Set NVIDIA Environment**
+### **5. Set NVIDIA Env**
 
-Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, and include folders
+Copy NVIDIA CUDNN 9.4 lib,bin,include to NVIDIA CUDA 12.4 lib,bin,include
 
-- Copy files from *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* to *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
+- copy *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* files to  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin*
 
-- Copy files from *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* to *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
+- copy *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* files to  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include*
 
-- Copy files from *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* to *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- copy *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* files to  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+
 
 ### **6. Download Phi-3.5-mini-instruct-onnx**
+
 
    ```bash
 
@@ -70,25 +74,30 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    ```
 
-### **7. Running InferencePhi35Instruct.ipynb**
+### **7. Runing InferencePhi35Instruct.ipynb**
 
-   Open [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) and run it
+   Open [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) and execute 
+
 
 ![RESULT](../../../../../../translated_images/en/02.b9b06996cf7255d5.webp)
 
+
 ### **8. Compile ORT GenAI GPU**
+
 
    ***Note*** 
    
-   1. Please uninstall all onnx, onnxruntime, and onnxruntime-genai packages first
+   1. Please uninstall all about onnx and onnxruntime and onnxruntime-genai firstly
 
+   
    ```bash
 
    pip list 
    
    ```
 
-   Then uninstall all onnxruntime libraries, for example:
+   Then uninstall all onnxruntime libraries i.e. 
+
 
    ```bash
 
@@ -102,11 +111,15 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    2. Check Visual Studio Extension support 
 
-   Verify that the folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras contains the folder visual_studio_integration at C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   Check C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras to ensure C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration is found. 
    
-   If it’s missing, check other CUDA toolkit driver folders and copy the visual_studio_integration folder and its contents to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   If not found check other Cuda toolkit driver folders and copy the visual_studio_integration folder and contents to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   - You can skip this step if you don’t want to compile
+
+
+
+   - If you not want to compile you can skip this step
+
 
    ```bash
 
@@ -116,14 +129,15 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    - Download [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Unzip onnxruntime-win-x64-gpu-1.19.2.zip, rename the folder to **ort**, and copy the ort folder into onnxruntime-genai
+   - Unzip onnxruntime-win-x64-gpu-1.19.2.zip ,and rename it to **ort**,copy ort folder to onnxruntime-genai
 
-   - Using Windows Terminal, open the Developer Command Prompt for VS 2022 and navigate to onnxruntime-genai
+   - Using Windows Terminal,go to Deveopler Command Prompt for VS 2022 and go to onnxruntime-genai 
 
 ![RESULT](../../../../../../translated_images/en/03.b83ce473d5ff9b9b.webp)
 
-   - Compile it using your Python environment
+   - Compile it with your python env
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -137,5 +151,9 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    ```
 
-**Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,14 +1,17 @@
-# **使用 Apple MLX Framework 微調 Phi-3**
+# **使用 Apple MLX 框架微調 Phi-3**
 
-我們可以透過 Apple MLX Framework 的命令列完成結合 Lora 的微調。（如果想了解更多 MLX Framework 的操作，請參考 [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)）
+我們可以透過 Apple MLX 框架命令列完成結合 Lora 的微調。(如果您想了解更多 MLX 框架的操作，請閱讀 [使用 Apple MLX 框架推理 Phi-3](../03.FineTuning/03.Inference/MLX_Inference.md))
+
 
 ## **1. 資料準備**
 
-預設情況下，MLX Framework 需要 train、test 和 eval 的 jsonl 格式資料，並結合 Lora 來完成微調任務。
+預設 MLX 框架需要 train、test 和 eval 的 jsonl 格式資料，並結合 Lora 來完成微調任務。
+
 
 ### ***注意:***
 
-1. jsonl 資料格式：
+1. jsonl 資料格式 ：
+
 
 ```json
 
@@ -19,15 +22,17 @@
 
 ```
 
-2. 我們的範例使用的是 [TruthfulQA 的資料](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)，但資料量相對不足，因此微調結果不一定最佳。建議學習者根據自身場景使用更合適的資料來完成微調。
+2. 我們的範例使用的是 [TruthfulQA 的資料](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)，但資料量相對不足，因此微調結果不一定是最理想的。建議學習者根據自身場景使用更好的資料來完成。
 
-3. 資料格式需配合 Phi-3 範本
+3. 資料格式結合了 Phi-3 模板
 
-請從此 [連結](../../../../code/04.Finetuning/mlx) 下載資料，請包含 ***data*** 資料夾內所有 .jsonl 檔案
+請從此 [連結](../../../../code/04.Finetuning/mlx)下載資料，請包含 ***data*** 資料夾內所有 .jsonl 檔案
+
 
 ## **2. 在終端機進行微調**
 
-請在終端機執行以下指令
+請在終端機運行此命令
+
 
 ```bash
 
@@ -35,11 +40,13 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
+
 ## ***注意:***
 
-1. 這是 LoRA 微調，MLX Framework 尚未發布 QLoRA
+1. 這是 LoRA 微調，MLX 框架尚未發布 QLoRA
 
-2. 你可以透過設定 config.yaml 來更改部分參數，例如
+2. 您可以設定 config.yaml 以更改部分參數，例如
+
 
 ```yaml
 
@@ -109,7 +116,8 @@ lora_parameters:
 
 ```
 
-請在終端機執行以下指令
+請在終端機運行此命令
+
 
 ```bash
 
@@ -117,9 +125,11 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. 執行微調 adapter 進行測試**
 
-你可以在終端機執行微調 adapter，指令如下
+## **3. 運行微調適配器測試**
+
+您可以在終端機運行微調適配器，如下
+
 
 ```bash
 
@@ -127,7 +137,8 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-並執行原始模型來比較結果
+並運行原始模型進行結果比較
+
 
 ```bash
 
@@ -135,9 +146,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-你可以嘗試比較微調後與原始模型的結果差異
+您可以嘗試比較微調結果與原始模型的表現
 
-## **4. 合併 adapters 生成新模型**
+
+## **4. 合併適配器以產生新模型**
+
 
 ```bash
 
@@ -145,9 +158,10 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. 使用 ollama 執行量化微調模型**
+## **5. 使用 ollama 運行量化微調模型**
 
-使用前，請先配置你的 llama.cpp 環境
+使用前，請先配置您的 llama.cpp 環境
+
 
 ```bash
 
@@ -161,13 +175,14 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***注意:***
+***注意:*** 
 
-1. 現在支援 fp32、fp16 及 INT 8 的量化轉換
+1. 目前支援 fp32, fp16 及 INT 8 的量化轉換
 
-2. 合併後的模型缺少 tokenizer.model，請從 https://huggingface.co/microsoft/Phi-3-mini-4k-instruct 下載
+2. 合併模型缺少 tokenizer.model，請從 https://huggingface.co/microsoft/Phi-3-mini-4k-instruct 下載
 
 設定一個 [Ollma Model](https://ollama.com/)
+
 
 ```txt
 
@@ -176,7 +191,8 @@ PARAMETER stop "<|end|>"
 
 ```
 
-在終端機執行指令
+在終端機運行命令
+
 
 ```bash
 
@@ -186,7 +202,11 @@ PARAMETER stop "<|end|>"
 
 ```
 
-恭喜！你已掌握使用 MLX Framework 進行微調
+恭喜！精通使用 MLX 框架進行微調
 
-**免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**免責聲明**：
+此文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力追求準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於關鍵資訊，建議採用專業人工翻譯。我們不對因使用此翻譯所產生的任何誤解或誤譯承擔責任。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
