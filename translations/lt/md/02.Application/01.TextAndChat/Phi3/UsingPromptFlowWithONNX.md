@@ -1,58 +1,59 @@
-# Naudojant Windows GPU sukurti Prompt flow sprendimą su Phi-3.5-Instruct ONNX
+# Kaip naudoti Windows GPU kuriant Prompt flow sprendimą su Phi-3.5-Instruct ONNX 
 
-Šis dokumentas yra pavyzdys, kaip naudoti PromptFlow su ONNX (Open Neural Network Exchange) kuriant dirbtinio intelekto programas, pagrįstas Phi-3 modeliais.
+Šiame dokumente pateikiamas pavyzdys, kaip naudoti PromptFlow su ONNX (Open Neural Network Exchange) kuriant dirbtinio intelekto programas, pagrįstas Phi-3 modeliais.
 
-PromptFlow yra įrankių rinkinys, skirtas supaprastinti visą LLM (Didelių Kalbos Modelių) pagrįstų dirbtinio intelekto programų kūrimo ciklą – nuo idėjų generavimo ir prototipavimo iki testavimo ir vertinimo.
+PromptFlow yra įrankių rinkinys, skirtas supaprastinti visą kūrimo ciklą kuriant DI programas, pagrįstas LLM (dideliųjų kalbos modelių), pradedant idėjų kūrimu ir prototipų ruošimu, baigiant testavimu ir vertinimu.
 
-Integruojant PromptFlow su ONNX, kūrėjai gali:
+Integruodami PromptFlow su ONNX, kūrėjai gali:
 
-- **Optimizuoti modelio našumą**: Naudoti ONNX efektyviam modelio įvertinimui ir diegimui.
-- **Supaprastinti kūrimą**: Naudoti PromptFlow darbo eigai valdyti ir automatizuoti pasikartojančias užduotis.
-- **Pagerinti bendradarbiavimą**: Palengvinti komandos narių bendradarbiavimą, suteikiant vieningą kūrimo aplinką.
+- Optimizuoti modelio našumą: pasinaudoti ONNX efektyviam modelio prognozavimui ir diegimui.
+- Supaprastinti kūrimą: naudoti PromptFlow darbo eigai valdyti ir pasikartojančioms užduotims automatizuoti.
+- Pagerinti bendradarbiavimą: sudaryti sąlygas geresniam komandos narių bendradarbiavimui, suteikiant vieningą kūrimo aplinką.
 
-**Prompt flow** yra įrankių rinkinys, skirtas supaprastinti visą LLM pagrįstų dirbtinio intelekto programų kūrimo ciklą – nuo idėjų generavimo, prototipavimo, testavimo, vertinimo iki diegimo ir stebėjimo gamyboje. Jis palengvina promptų kūrimą ir leidžia kurti aukštos kokybės LLM programas.
+**Prompt flow** yra įrankių rinkinys, sukurtas supaprastinti visą LLM pagrįstų DI programų kūrimo ciklą — nuo idėjų generavimo, prototipų rengimo, testavimo, vertinimo iki gamybos diegimo ir stebėjimo. Tai žymiai palengvina promptų inžineriją ir leidžia kurti gamybos kokybės LLM programas.
 
-Prompt flow gali prisijungti prie OpenAI, Azure OpenAI Service ir pritaikomų modelių (Huggingface, vietiniai LLM/SLM). Tikimės diegti Phi-3.5 kvantizuotą ONNX modelį vietinėse programose. Prompt flow gali padėti geriau planuoti mūsų verslą ir įgyvendinti vietinius sprendimus, pagrįstus Phi-3.5. Šiame pavyzdyje mes sujungsime ONNX Runtime GenAI biblioteką, kad užbaigtume Prompt flow sprendimą, pagrįstą Windows GPU.
+Prompt flow gali jungtis prie OpenAI, Azure OpenAI Service ir pritaikomų modelių (Huggingface, vietiniai LLM/SLM). Tikimės diegti Phi-3.5 kiekybinį ONNX modelį vietinėse programose. Prompt flow padeda geriau planuoti verslą ir įgyvendinti vietinius sprendimus, pagrįstus Phi-3.5. Šiame pavyzdyje sujungsime ONNX Runtime GenAI biblioteką, kad sukurtume Prompt flow sprendimą, naudojant Windows GPU.
 
 ## **Įdiegimas**
 
 ### **ONNX Runtime GenAI Windows GPU**
 
-Perskaitykite šį vadovą, kaip nustatyti ONNX Runtime GenAI Windows GPU [spauskite čia](./ORTWindowGPUGuideline.md)
+Perskaitykite šią instrukciją, kaip nustatyti ONNX Runtime GenAI Windows GPU [paspauskite čia](./ORTWindowGPUGuideline.md)
 
 ### **Prompt flow nustatymas VSCode**
 
 1. Įdiekite Prompt flow VS Code plėtinį
 
-![pfvscode](../../../../../../imgs/02/pfonnx/pfvscode.png)
+![pfvscode](../../../../../../translated_images/lt/pfvscode.eff93dfc66a42cbe.webp)
 
-2. Po Prompt flow VS Code plėtinio įdiegimo, spustelėkite plėtinį ir pasirinkite **Installation dependencies**, vadovaukitės šiuo vadovu, kad įdiegtumėte Prompt flow SDK savo aplinkoje.
+2. Įdiegę Prompt flow VS Code plėtinį, spustelėkite plėtinį ir pasirinkite **Įdiegimo priklausomybės** pagal šią instrukciją įdiekite Prompt flow SDK savo aplinkoje
 
-![pfsetup](../../../../../../imgs/02/pfonnx/pfsetup.png)
+![pfsetup](../../../../../../translated_images/lt/pfsetup.b46e93096f5a254f.webp)
 
-3. Atsisiųskite [Pavyzdinį kodą](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ir atidarykite šį pavyzdį naudodami VS Code.
+3. Atsisiųskite [pavyzdinį kodą](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ir atidarykite šį pavyzdį VS Code
 
-![pfsample](../../../../../../imgs/02/pfonnx/pfsample.png)
+![pfsample](../../../../../../translated_images/lt/pfsample.8d89e70584ffe7c4.webp)
 
-4. Atidarykite **flow.dag.yaml**, kad pasirinktumėte savo Python aplinką.
+4. Atidarykite **flow.dag.yaml** ir pasirinkite savo Python aplinką
 
-![pfdag](../../../../../../imgs/02/pfonnx/pfdag.png)
+![pfdag](../../../../../../translated_images/lt/pfdag.264a77f7366458ff.webp)
 
-   Atidarykite **chat_phi3_ort.py**, kad pakeistumėte Phi-3.5-instruct ONNX modelio vietą.
+   Atidarykite **chat_phi3_ort.py**, kad pakeistumėte savo Phi-3.5-instruct ONNX modelio vietą
 
-![pfphi](../../../../../../imgs/02/pfonnx/pfphi.png)
+![pfphi](../../../../../../translated_images/lt/pfphi.72da81d74244b45f.webp)
 
-5. Paleiskite savo Prompt flow testavimui.
+5. Vykdykite savo prompt flow testavimui
 
-Atidarykite **flow.dag.yaml** ir spustelėkite vizualų redaktorių.
+Atidarykite **flow.dag.yaml** ir spustelėkite vizualų redaktorių
 
-![pfv](../../../../../../imgs/02/pfonnx/pfv.png)
+![pfv](../../../../../../translated_images/lt/pfv.ba8a81f34b20f603.webp)
 
-Po to spustelėkite ir paleiskite testavimui.
+paspauskite jį ir paleiskite testavimui
 
-![pfflow](../../../../../../imgs/02/pfonnx/pfflow.png)
+![pfflow](../../../../../../translated_images/lt/pfflow.4e1135a089b1ce1b.webp)
 
-1. Galite paleisti paketą terminale, kad patikrintumėte daugiau rezultatų.
+1. Galite vykdyti partijas terminale, kad patikrintumėte daugiau rezultatų
+
 
 ```bash
 
@@ -60,11 +61,14 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-Rezultatus galite peržiūrėti savo numatytoje naršyklėje.
+Rezultatus galite peržiūrėti savo numatytojo naršyklėje
 
-![pfresult](../../../../../../imgs/02/pfonnx/pfresult.png)
+
+![pfresult](../../../../../../translated_images/lt/pfresult.c22c826f8062d7cb.webp)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama naudoti profesionalų žmogiškąjį vertimą. Mes neatsakome už jokius nesusipratimus ar neteisingą interpretaciją, kilusią naudojantis šiuo vertimu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

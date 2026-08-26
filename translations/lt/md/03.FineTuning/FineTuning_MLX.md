@@ -1,14 +1,17 @@
-# **Phi-3 derinimas naudojant Apple MLX Framework**
+# **Phi-3 tobulinimas naudojant Apple MLX Framework**
 
-Derinimą kartu su Lora galima atlikti naudojant Apple MLX Framework komandų eilutę. (Jei norite sužinoti daugiau apie MLX Framework veikimą, perskaitykite [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Galime užbaigti tobulinimą kartu su Lora naudodami Apple MLX framework komandinėje eilutėje. (Jei norite sužinoti daugiau apie MLX Framework veikimą, perskaitykite [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+
 
 ## **1. Duomenų paruošimas**
 
-Pagal numatymą MLX Framework reikalauja, kad treniravimo, testavimo ir vertinimo duomenys būtų jsonl formato, ir kartu su Lora užbaigia derinimo užduotis.
+Pagal numatytuosius nustatymus, MLX Framework reikalauja treniruočių, testavimo ir įvertinimo duomenų jsonl formatu ir yra derinamas su Lora, kad užbaigtų tobulinimo užduotis.
+
 
 ### ***Pastaba:***
 
 1. jsonl duomenų formatas:
+
 
 ```json
 
@@ -19,15 +22,17 @@ Pagal numatymą MLX Framework reikalauja, kad treniravimo, testavimo ir vertinim
 
 ```
 
-2. Mūsų pavyzdyje naudojami [TruthfulQA duomenys](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), tačiau duomenų kiekis yra gana nepakankamas, todėl derinimo rezultatai nebūtinai bus geriausi. Rekomenduojama, kad mokiniai naudotų geresnius duomenis, atsižvelgdami į savo scenarijus.
+2. Mūsų pavyzdyje naudojami [TruthfulQA duomenys](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), tačiau duomenų kiekis yra pakankamai mažas, todėl tobulinimo rezultatai nebūtinai bus geriausi. Rekomenduojama besimokantiesiems naudotis geresniais duomenimis, atsižvelgiant į savo scenarijus.
 
-3. Duomenų formatas yra suderintas su Phi-3 šablonu.
+3. Duomenų formatas suderintas su Phi-3 šablonu
 
-Prašome atsisiųsti duomenis iš šios [nuorodos](../../../../code/04.Finetuning/mlx), įtraukite visus .jsonl į ***data*** aplanką.
+Prašome atsisiųsti duomenis iš šios [nuorodos](../../../../code/04.Finetuning/mlx), įtraukite visus .jsonl failus į ***data*** katalogą.
 
-## **2. Derinimas terminale**
 
-Paleiskite šią komandą terminale:
+## **2. Tobulinimas jūsų terminale**
+
+Prašome paleisti šią komandą terminale
+
 
 ```bash
 
@@ -35,11 +40,13 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
+
 ## ***Pastaba:***
 
-1. Tai yra LoRA derinimas, MLX Framework nepalaiko QLoRA.
+1. Tai yra LoRA tobulinimas, MLX framework nepalaiko QLoRA
 
-2. Galite pakeisti config.yaml, kad pakeistumėte kai kuriuos parametrus, pavyzdžiui:
+2. Galite nustatyti config.yaml failą, kad pakeistumėte kai kuriuos argumentus, pavyzdžiui
+
 
 ```yaml
 
@@ -109,7 +116,8 @@ lora_parameters:
 
 ```
 
-Paleiskite šią komandą terminale:
+Prašome paleisti šią komandą terminale
+
 
 ```bash
 
@@ -117,9 +125,11 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. Derinimo adapterio testavimas**
 
-Galite paleisti derinimo adapterį terminale, pavyzdžiui:
+## **3. Tobulinimo adapterio paleidimas testavimui**
+
+Galite paleisti tobulinimo adapterį terminale, kaip šitai
+
 
 ```bash
 
@@ -127,7 +137,8 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-Ir paleisti originalų modelį, kad palygintumėte rezultatus:
+ir paleisti pradinį modelį rezultatų palyginimui
+
 
 ```bash
 
@@ -135,9 +146,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Galite pabandyti palyginti derinimo rezultatus su originaliu modeliu.
+Galite pabandyti palyginti tobulinimo rezultatus su pradiniu modeliu
 
-## **4. Adapterių sujungimas naujų modelių generavimui**
+
+## **4. Adapterių sujungimas naujiems modeliams sukurti**
+
 
 ```bash
 
@@ -145,9 +158,10 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Kvantifikuotų derinimo modelių paleidimas naudojant ollama**
+## **5. Kvantinių tobulinimo modelių paleidimas naudojant ollama**
 
-Prieš naudojimą, sukonfigūruokite savo llama.cpp aplinką:
+Prieš naudodami, sukonfigūruokite savo llama.cpp aplinką
+
 
 ```bash
 
@@ -163,11 +177,12 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Pastaba:*** 
 
-1. Dabar palaikomas fp32, fp16 ir INT 8 kvantifikacijos konvertavimas.
+1. Dabar palaikoma konvertavimas į kvantinį formatą fp32, fp16 ir INT 8
 
-2. Sujungtame modelyje trūksta tokenizer.model, prašome atsisiųsti jį iš https://huggingface.co/microsoft/Phi-3-mini-4k-instruct.
+2. Sujungtame modelyje trūksta tokenizer.model, prašome jį atsisiųsti iš https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-Nustatykite [Ollma Model](https://ollama.com/).
+nustatykite [Ollma modelį](https://ollama.com/)
+
 
 ```txt
 
@@ -176,7 +191,8 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Paleiskite komandą terminale:
+paleiskite komandą terminale
+
 
 ```bash
 
@@ -186,9 +202,11 @@ Paleiskite komandą terminale:
 
 ```
 
-Sveikiname! Jūs įvaldėte derinimą su MLX Framework.
+Sveikiname! Valdote tobulinimą su MLX Framework
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama naudoti profesionalų žmogiškąjį vertimą. Mes neatsakome už jokius nesusipratimus ar neteisingą interpretaciją, kilusią naudojantis šiuo vertimu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

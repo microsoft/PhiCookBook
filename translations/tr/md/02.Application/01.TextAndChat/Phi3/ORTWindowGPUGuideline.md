@@ -1,16 +1,16 @@
-# **OnnxRuntime GenAI Windows GPU için Kılavuz**
+# **OnnxRuntime GenAI Windows GPU Kılavuzu**
 
-Bu kılavuz, Windows üzerinde GPU ile ONNX Runtime (ORT) kurulum ve kullanım adımlarını sağlar. Modelleriniz için GPU hızlandırmasını kullanarak performans ve verimliliği artırmanıza yardımcı olmak için tasarlanmıştır.
+Bu kılavuz, Windows'ta GPU'larla ONNX Runtime (ORT) kurulumunu ve kullanımını sağlamaktadır. Model performansınızı ve verimliliğinizi artırmak için GPU hızlandırmasından yararlanmanıza yardımcı olmak amacıyla tasarlanmıştır.
 
-Doküman aşağıdaki konularda rehberlik sunar:
+Belge, aşağıdaki konularda rehberlik sağlar:
 
-- Ortam Kurulumu: CUDA, cuDNN ve ONNX Runtime gibi gerekli bağımlılıkların kurulumu için talimatlar.
-- Konfigürasyon: Ortam ve ONNX Runtime'ın GPU kaynaklarını etkili şekilde kullanması için yapılandırılması.
-- Optimizasyon İpuçları: GPU ayarlarınızı en iyi performans için nasıl ince ayar yapacağınız hakkında öneriler.
+- Ortam Kurulumu: CUDA, cuDNN ve ONNX Runtime gibi gerekli bağımlılıkların yüklenmesi için talimatlar.
+- Yapılandırma: Ortam ve ONNX Runtime'ın GPU kaynaklarını verimli kullanacak şekilde nasıl yapılandırılacağı.
+- Optimizasyon İpuçları: GPU ayarlarınızı optimum performans için nasıl ince ayarlayacağınıza dair öneriler.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** Python ortamınız olarak [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) kullanmanız önerilir
+   ***Not*** Python ortamınız olarak [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) kullanmanız önerilir
 
    ```bash
 
@@ -20,9 +20,10 @@ Doküman aşağıdaki konularda rehberlik sunar:
 
    ```
 
-   ***Reminder*** Python ONNX kütüphanesi ile ilgili herhangi bir kurulum yaptıysanız, lütfen kaldırın
+   ***Hatırlatma*** Eğer python ONNX kütüphanesinden herhangi birini kurduysanız, lütfen kaldırın
 
-### **2. winget ile CMake Kurulumu**
+### **2. winget ile CMake kurulumu**
+
 
    ```bash
 
@@ -32,11 +33,12 @@ Doküman aşağıdaki konularda rehberlik sunar:
 
 ### **3. Visual Studio 2022 - C++ ile Masaüstü Geliştirme Kurulumu**
 
-   ***Note*** Derleme yapmak istemiyorsanız bu adımı atlayabilirsiniz
+   ***Not*** Derlemek istemiyorsanız bu adımı atlayabilirsiniz
 
 ![CPP](../../../../../../translated_images/tr/01.42f52a2b2aedff02.webp)
 
-### **4. NVIDIA Sürücüsünü Kurun**
+
+### **4. NVIDIA Sürücü Kurulumu**
 
 1. **NVIDIA GPU Sürücüsü**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -44,9 +46,9 @@ Doküman aşağıdaki konularda rehberlik sunar:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** Kurulum sırasında varsayılan ayarları kullanınız
+***Hatırlatma*** Kurulum akışında lütfen varsayılan ayarları kullanın
 
-### **5. NVIDIA Ortamını Ayarlayın**
+### **5. NVIDIA Ortamını Ayarlama**
 
 NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, include klasörlerine kopyalayın
 
@@ -56,7 +58,9 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
 
 - *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* dosyalarını *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* klasörüne kopyalayın
 
-### **6. Phi-3.5-mini-instruct-onnx İndirin**
+
+### **6. Phi-3.5-mini-instruct-onnx İndirme**
+
 
    ```bash
 
@@ -70,25 +74,30 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
 
    ```
 
-### **7. InferencePhi35Instruct.ipynb Dosyasını Çalıştırın**
+### **7. InferencePhi35Instruct.ipynb Çalıştırma**
 
-   [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) dosyasını açın ve çalıştırın
+   [Notebook'u](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) açın ve çalıştırın
 
-![RESULT](../../../../../../translated_images/tr/02.b9b06996cf7255d5.webp)
 
-### **8. ORT GenAI GPU Derlemesi**
+![SONUÇ](../../../../../../translated_images/tr/02.b9b06996cf7255d5.webp)
 
-   ***Note*** 
+
+### **8. ORT GenAI GPU Derleme**
+
+
+   ***Not*** 
    
-   1. Öncelikle onnx, onnxruntime ve onnxruntime-genai ile ilgili tüm kurulumları kaldırın
+   1. Öncelikle onnx, onnxruntime ve onnxruntime-genai ile ilgili tüm paketleri kaldırın
 
+   
    ```bash
 
    pip list 
    
    ```
 
-   Ardından tüm onnxruntime kütüphanelerini kaldırın, örneğin:
+   Ardından tüm onnxruntime kütüphanelerini kaldırın, örneğin 
+
 
    ```bash
 
@@ -100,13 +109,17 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
    
    ```
 
-   2. Visual Studio Eklenti desteğini kontrol edin
+   2. Visual Studio Uzantısının desteklendiğini kontrol edin
 
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras klasöründe C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration klasörünün varlığını kontrol edin. 
+   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras klasöründe C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration klasörünün var olduğunu doğrulayın.
    
-   Bulunmazsa, diğer Cuda toolkit sürücü klasörlerini kontrol edin ve visual_studio_integration klasörünü ve içeriğini C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration klasörüne kopyalayın
+   Eğer bulunamazsa, diğer CUDA toolkit sürücü klasörlerini kontrol edin ve visual_studio_integration klasörünü ve içeriğini C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration yoluna kopyalayın
 
-   - Derleme yapmak istemiyorsanız bu adımı atlayabilirsiniz
+
+
+
+   - Eğer derlemek istemiyorsanız bu adımı atlayabilirsiniz
+
 
    ```bash
 
@@ -114,16 +127,17 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
 
    ```
 
-   - [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) dosyasını indirin
+   - [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) adresinden indirin
 
-   - onnxruntime-win-x64-gpu-1.19.2.zip dosyasını açın, **ort** olarak yeniden adlandırın ve ort klasörünü onnxruntime-genai içine kopyalayın
+   - onnxruntime-win-x64-gpu-1.19.2.zip dosyasının sıkıştırmasını açın, **ort** olarak yeniden adlandırın, ort klasörünü onnxruntime-genai içine kopyalayın
 
-   - Windows Terminal kullanarak VS 2022 için Geliştirici Komut İstemi'ne gidin ve onnxruntime-genai klasörüne geçin
+   - Windows Terminal'i kullanarak VS 2022 için Geliştirici Komut İstemi'ne gidin ve onnxruntime-genai klasörüne geçin
 
-![RESULT](../../../../../../translated_images/tr/03.b83ce473d5ff9b9b.webp)
+![SONUÇ](../../../../../../translated_images/tr/03.b83ce473d5ff9b9b.webp)
 
    - Python ortamınız ile derleyin
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -137,5 +151,9 @@ NVIDIA CUDNN 9.4 lib, bin, include dosyalarını NVIDIA CUDA 12.4 lib, bin, incl
 
    ```
 
-**Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalardan veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

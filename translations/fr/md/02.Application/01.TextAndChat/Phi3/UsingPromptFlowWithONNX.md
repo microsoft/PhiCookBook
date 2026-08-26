@@ -1,58 +1,58 @@
-# Utilisation du GPU Windows pour créer une solution Prompt flow avec Phi-3.5-Instruct ONNX
+# Utilisation d'un GPU Windows pour créer une solution Prompt flow avec Phi-3.5-Instruct ONNX 
 
-Le document suivant est un exemple montrant comment utiliser PromptFlow avec ONNX (Open Neural Network Exchange) pour développer des applications IA basées sur les modèles Phi-3.
+Le document suivant est un exemple de comment utiliser PromptFlow avec ONNX (Open Neural Network Exchange) pour développer des applications d'IA basées sur les modèles Phi-3.
 
-PromptFlow est une suite d’outils de développement conçue pour simplifier le cycle complet de création d’applications IA basées sur des LLM (Large Language Model), de l’idéation et du prototypage jusqu’aux tests et à l’évaluation.
+PromptFlow est une suite d'outils de développement conçue pour simplifier le cycle de développement complet des applications IA basées sur des LLM (Large Language Model), de l'idéation et du prototypage jusqu'aux tests et à l'évaluation.
 
 En intégrant PromptFlow avec ONNX, les développeurs peuvent :
 
-- Optimiser les performances du modèle : tirer parti d’ONNX pour une inférence et un déploiement efficaces.
+- Optimiser la performance du modèle : tirer parti d'ONNX pour une inférence et un déploiement efficaces du modèle.
 - Simplifier le développement : utiliser PromptFlow pour gérer le flux de travail et automatiser les tâches répétitives.
-- Améliorer la collaboration : faciliter le travail d’équipe grâce à un environnement de développement unifié.
+- Améliorer la collaboration : faciliter une meilleure collaboration entre les membres de l'équipe en proposant un environnement de développement unifié.
 
-**Prompt flow** est une suite d’outils de développement conçue pour fluidifier le cycle complet de création d’applications IA basées sur des LLM, de l’idéation, du prototypage, des tests, de l’évaluation jusqu’au déploiement en production et à la surveillance. Il rend l’ingénierie des prompts beaucoup plus simple et vous permet de créer des applications LLM de qualité production.
+**Prompt flow** est une suite d'outils de développement conçue pour simplifier le cycle de développement complet des applications IA basées sur des LLM, de l'idéation, du prototypage, des tests, de l'évaluation jusqu'au déploiement en production et à la surveillance. Il rend l'ingénierie des prompts beaucoup plus facile et vous permet de construire des applications LLM de qualité production.
 
-Prompt flow peut se connecter à OpenAI, Azure OpenAI Service, ainsi qu’à des modèles personnalisables (Huggingface, LLM/SLM locaux). Nous espérons déployer le modèle ONNX quantifié de Phi-3.5 dans des applications locales. Prompt flow peut nous aider à mieux planifier notre activité et à réaliser des solutions locales basées sur Phi-3.5. Dans cet exemple, nous allons combiner la bibliothèque ONNX Runtime GenAI pour compléter la solution Prompt flow basée sur un GPU Windows.
+Prompt flow peut se connecter à OpenAI, au service Azure OpenAI, ainsi qu'à des modèles personnalisables (Huggingface, LLM/SLM local). Nous espérons déployer le modèle ONNX quantifié de Phi-3.5 dans des applications locales. Prompt flow peut nous aider à mieux planifier notre activité et à compléter des solutions locales basées sur Phi-3.5. Dans cet exemple, nous combinerons la bibliothèque ONNX Runtime GenAI pour réaliser la solution Prompt flow basée sur un GPU Windows.
 
 ## **Installation**
 
 ### **ONNX Runtime GenAI pour GPU Windows**
 
-Lisez ce guide pour configurer ONNX Runtime GenAI pour GPU Windows [cliquez ici](./ORTWindowGPUGuideline.md)
+Lisez cette directive pour configurer ONNX Runtime GenAI pour GPU Windows  [click here](./ORTWindowGPUGuideline.md)
 
 ### **Configurer Prompt flow dans VSCode**
 
-1. Installez l’extension Prompt flow pour VS Code
+1. Installer l'extension Prompt flow pour VS Code
 
 ![pfvscode](../../../../../../translated_images/fr/pfvscode.eff93dfc66a42cbe.webp)
 
-2. Après avoir installé l’extension Prompt flow pour VS Code, cliquez sur l’extension, puis choisissez **Installation dependencies** et suivez ce guide pour installer le SDK Prompt flow dans votre environnement
+2. Après avoir installé l'extension Prompt flow VS Code, cliquez sur l'extension, puis choisissez **Installation dependencies** et suivez cette directive pour installer le SDK Prompt flow dans votre environnement
 
 ![pfsetup](../../../../../../translated_images/fr/pfsetup.b46e93096f5a254f.webp)
 
-3. Téléchargez le [Code d’exemple](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) et ouvrez cet exemple avec VS Code
+3. Téléchargez le [Code d'exemple](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) et ouvrez cet exemple avec VS Code
 
 ![pfsample](../../../../../../translated_images/fr/pfsample.8d89e70584ffe7c4.webp)
 
-4. Ouvrez **flow.dag.yaml** pour sélectionner votre environnement Python
+4. Ouvrez **flow.dag.yaml** pour choisir votre environnement Python
 
 ![pfdag](../../../../../../translated_images/fr/pfdag.264a77f7366458ff.webp)
 
-   Ouvrez **chat_phi3_ort.py** pour modifier l’emplacement de votre modèle Phi-3.5-instruct ONNX
+   Ouvrez **chat_phi3_ort.py** pour modifier l'emplacement de votre modèle ONNX Phi-3.5-instruct
 
 ![pfphi](../../../../../../translated_images/fr/pfphi.72da81d74244b45f.webp)
 
-5. Lancez votre prompt flow pour tester
+5. Exécutez votre prompt flow pour le tester
 
-Ouvrez **flow.dag.yaml** et cliquez sur l’éditeur visuel
+Ouvrez **flow.dag.yaml** puis cliquez sur l'éditeur visuel
 
 ![pfv](../../../../../../translated_images/fr/pfv.ba8a81f34b20f603.webp)
 
-Après avoir cliqué, lancez-le pour tester
+après avoir cliqué ici, exécutez-le pour tester
 
 ![pfflow](../../../../../../translated_images/fr/pfflow.4e1135a089b1ce1b.webp)
 
-1. Vous pouvez exécuter un batch dans le terminal pour vérifier plus de résultats
+1. Vous pouvez exécuter par lots dans le terminal pour vérifier plus de résultats
 
 
 ```bash
@@ -66,5 +66,9 @@ Vous pouvez consulter les résultats dans votre navigateur par défaut
 
 ![pfresult](../../../../../../translated_images/fr/pfresult.c22c826f8062d7cb.webp)
 
-**Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Avertissement** :
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant autorité. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous ne saurions être tenus responsables des malentendus ou erreurs d'interprétation découlant de l'utilisation de cette traduction.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

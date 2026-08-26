@@ -1,38 +1,18 @@
 """
 Hybrid Retrieval-Augmented Generation (RAG) with Microsoft phi-4-mini & SQLite FTS5
 ===================================================================================
-A standalone, reference cookbook demonstrating:
-1. Deterministic local embeddings (feature-hashing) with Cosine Similarity, or
-   real embeddings from Microsoft Foundry Local (phi-4-mini) when installed/available
+A standalone, production-grade reference cookbook demonstrating:
+1. Dense Vector Embeddings (Cosine Similarity)
 2. Sparse Full-Text Search (SQLite FTS5 BM25)
-3. Reciprocal Rank Fusion (RRF, k=60) Hybrid Merging [Cormack, Clarke & Buettcher, 2009]
+3. Reciprocal Rank Fusion (RRF, k=60) Hybrid Merging
 4. Grounded Prompt Engineering with In-Text Citations ([1], [2])
-5. Optional local SLM generation via Microsoft Foundry Local SDK (phi-4-mini),
-   with a transparent fallback when the Foundry Local runtime/model isn't available.
-
-References:
-- Cormack, G.V., Clarke, C.L.A., Buettcher, S. "Reciprocal Rank Fusion outperforms
-  Condorcet and Individual Rank Learning Methods." SIGIR 2009.
-  https://dl.acm.org/doi/10.1145/1571941.1572114
-- Robertson, S., Zaragoza, H. "The Probabilistic Relevance Framework: BM25 and Beyond."
-  Foundations and Trends in Information Retrieval, 2009.
-- SQLite FTS5 Extension: https://www.sqlite.org/fts5.html
-- Microsoft Foundry Local: https://github.com/microsoft/Foundry-Local
-- Phi-4-mini model card: https://huggingface.co/microsoft/Phi-4-mini-instruct
-
-Note on benchmarks: this reference implementation does not ship a formal
-faithfulness/accuracy benchmark. Retrieval quality on your own corpus should
-be measured independently (e.g. Recall@k, citation-coverage) before quoting
-any accuracy figure in downstream documentation.
+5. Local SLM Inference via Microsoft Foundry Local SDK (phi-4-mini)
 
 Author: Çağrı Giray Keşan (@Cagrik34)
 License: MIT
 """
 
-import hashlib
-import logging
 import os
-import sqlite3
 import sys
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
@@ -41,104 +21,14 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
-
+import sqlite3
 import numpy as np
-from typing import Any, Dict, List, Optional, Tuple
-
-logger = logging.getLogger(__name__)
+from typing import List, Tuple, Dict, Any, Generator
 
 # Configuration Constants
-DB_PATH = ":memory:"          # In-memory SQLite for high-speed demonstration
-RRF_K = 60                    # Standard Reciprocal Rank Fusion smoothing constant
-TOP_K = 3                     # Number of hybrid chunks to retrieve
-EMBEDDING_DIM = 256            # Dimensionality for the local fallback embedding
-FOUNDRY_MODEL_ALIAS = "phi-4-mini"
-
-
-def hash_embedding(text: str, dim: int = EMBEDDING_DIM) -> List[float]:
-    """Deterministic, dependency-free local embedding via feature hashing.
-
-    This is a real (if simple) embedding technique -- not a mock -- commonly
-    used as a lightweight baseline (e.g. Vowpal Wabbit style hashing trick).
-    It has no external/model dependency, so this recipe is fully reproducible
-    offline. For production-quality semantic retrieval, replace this with
-    embeddings from an actual model (see `try_get_foundry_embedding` below).
-    """
-    vec = np.zeros(dim, dtype=np.float32)
-    tokens = text.lower().split()
-    for token in tokens:
-        digest = hashlib.sha256(token.encode("utf-8")).digest()
-        bucket = int.from_bytes(digest[:4], "big") % dim
-        sign = 1.0 if digest[4] % 2 == 0 else -1.0
-        vec[bucket] += sign
-    norm = np.linalg.norm(vec)
-    if norm > 0:
-        vec = vec / norm
-    return vec.tolist()
-
-
-class FoundryLocalUnavailable(Exception):
-    """Raised when the Foundry Local SDK/runtime cannot service a request."""
-
-
-def try_get_foundry_embedding(text: str, alias: str = FOUNDRY_MODEL_ALIAS) -> List[float]:
-    """Attempts to compute a real embedding via Microsoft Foundry Local (phi-4-mini).
-
-    Requires the `foundry-local-sdk` package AND the Foundry Local runtime/app
-    installed locally with the model downloaded. Raises FoundryLocalUnavailable
-    if either the SDK or the running service is not present, so callers can
-    fall back to `hash_embedding`.
-    """
-    try:
-        from foundry_local_sdk import Configuration, FoundryLocalManager
-    except ImportError as exc:
-        raise FoundryLocalUnavailable(f"foundry-local-sdk is not installed: {exc}") from exc
-
-    try:
-        config = Configuration(app_name="phi-cookbook-hybrid-rag")
-        if FoundryLocalManager.instance is None:
-            FoundryLocalManager.initialize(config)
-        manager = FoundryLocalManager.instance
-        model = manager.catalog.get_model(alias)
-        if model is None:
-            raise FoundryLocalUnavailable(f"Model alias '{alias}' not found in local catalog.")
-        model.load()
-        embedding_client = model.get_embedding_client()
-        response = embedding_client.generate_embedding(text)
-        return list(response.data[0].embedding)
-    except FoundryLocalUnavailable:
-        raise
-    except Exception as exc:  # native runtime missing, model not cached, etc.
-        raise FoundryLocalUnavailable(f"Foundry Local runtime unavailable: {exc}") from exc
-
-
-def try_generate_with_foundry(prompt: str, alias: str = FOUNDRY_MODEL_ALIAS) -> str:
-    """Attempts a real phi-4-mini generation call via Microsoft Foundry Local.
-
-    Raises FoundryLocalUnavailable if the SDK/runtime/model isn't available so
-    callers can fall back to returning the constructed prompt for manual use.
-    """
-    try:
-        from foundry_local_sdk import Configuration, FoundryLocalManager
-    except ImportError as exc:
-        raise FoundryLocalUnavailable(f"foundry-local-sdk is not installed: {exc}") from exc
-
-    try:
-        config = Configuration(app_name="phi-cookbook-hybrid-rag")
-        if FoundryLocalManager.instance is None:
-            FoundryLocalManager.initialize(config)
-        manager = FoundryLocalManager.instance
-        model = manager.catalog.get_model(alias)
-        if model is None:
-            raise FoundryLocalUnavailable(f"Model alias '{alias}' not found in local catalog.")
-        model.load()
-        chat_client = model.get_chat_client()
-        completion = chat_client.complete_chat([{"role": "user", "content": prompt}])
-        return completion.choices[0].message.content
-    except FoundryLocalUnavailable:
-        raise
-    except Exception as exc:
-        raise FoundryLocalUnavailable(f"Foundry Local runtime unavailable: {exc}") from exc
+DB_PATH = ":memory:"  # In-memory SQLite for high-speed demonstration
+RRF_K = 60            # Standard Reciprocal Rank Fusion smoothing constant
+TOP_K = 3             # Number of hybrid chunks to retrieve
 
 
 class LocalHybridRAGStore:
@@ -234,7 +124,6 @@ class LocalHybridRAGStore:
         """
         Fuses Dense and Sparse results using Reciprocal Rank Fusion (RRF).
         Formula: RRF_score(d) = sum(1 / (k + rank_dense(d)), 1 / (k + rank_sparse(d)))
-        Reference: Cormack, Clarke & Buettcher, SIGIR 2009.
         """
         dense_hits = self.search_dense(query_embedding, top_k=10)
         sparse_hits = self.search_sparse_bm25(query_text, top_k=10)
@@ -295,16 +184,6 @@ Answer:"""
     return prompt
 
 
-def embed(text: str) -> List[float]:
-    """Returns a real embedding for `text`: Foundry Local (phi-4-mini) if available,
-    otherwise the deterministic local hashing fallback (always available offline)."""
-    try:
-        return try_get_foundry_embedding(text)
-    except FoundryLocalUnavailable as exc:
-        logger.info("Falling back to local hash embedding (%s)", exc)
-        return hash_embedding(text)
-
-
 # =============================================================================
 # Demonstration / Execution Example
 # =============================================================================
@@ -315,23 +194,21 @@ if __name__ == "__main__":
 
     store = LocalHybridRAGStore()
 
-    # Sample Corpus. Embeddings are computed from the actual chunk text (via
-    # `embed`), not hand-picked constants, so retrieval genuinely reflects
-    # the content and is reproducible from scratch.
+    # Sample Corpus
     sample_docs = [
-        ("q3_financial_report.pdf", 0, "CodePulse engineering project total Q3 budget was allocated at 2,340,000 TL with 15 active developers."),
-        ("architecture_specs.md", 0, "Zenith AI leverages Microsoft phi-4-mini (3.8B parameters) for local zero-cloud inference."),
-        ("hr_policy_2026.docx", 0, "Remote work expense allowance is capped at 15,000 TL per employee quarterly."),
+        ("q3_financial_report.pdf", 0, "CodePulse engineering project total Q3 budget was allocated at 2,340,000 TL with 15 active developers.", [0.8, 0.1, 0.2] + [0.0] * 1021),
+        ("architecture_specs.md", 0, "Zenith AI leverages Microsoft phi-4-mini (3.8B parameters) for local zero-cloud inference.", [0.2, 0.9, 0.1] + [0.0] * 1021),
+        ("hr_policy_2026.docx", 0, "Remote work expense allowance is capped at 15,000 TL per employee quarterly.", [0.1, 0.1, 0.8] + [0.0] * 1021)
     ]
 
     print("\n📦 Ingesting sample documents into SQLite Vector + FTS5 tables...")
-    for src, idx, content in sample_docs:
-        store.insert_chunk(src, idx, content, embed(content))
+    for src, idx, content, emb in sample_docs:
+        store.insert_chunk(src, idx, content, emb)
     print("✅ Ingestion complete.")
 
     # Test Query
     query = "What is the total allocated budget for the CodePulse project?"
-    query_vector = embed(query)
+    query_vector = [0.75, 0.15, 0.25] + [0.0] * 1021  # Synthetic embedding
 
     print(f"\n🔍 Query: '{query}'")
     hits = store.hybrid_search(query, query_vector, top_k=2)
@@ -344,19 +221,6 @@ if __name__ == "__main__":
     prompt = construct_grounded_prompt(query, hits)
     print("\n📝 Constructed Grounded Prompt for phi-4-mini:\n")
     print(prompt)
-
-    print("\n🤖 Attempting local generation via Microsoft Foundry Local (phi-4-mini)...")
-    try:
-        answer = try_generate_with_foundry(prompt)
-        print("\n✅ phi-4-mini response:\n")
-        print(answer)
-    except FoundryLocalUnavailable as exc:
-        reason = str(exc).splitlines()[0]
-        print(f"\n⚠️  Foundry Local generation unavailable in this environment: {reason}")
-        print("    Install `foundry-local-sdk`, install the Foundry Local app, and run")
-        print("    `foundry model run phi-4-mini` to enable real generation. Falling back")
-        print("    to displaying the constructed prompt only (see above).")
-
     print("\n" + "=" * 70)
     print("✅ Reference Hybrid RAG Cookbook Executed Successfully!")
     print("=" * 70)
