@@ -39,4 +39,8 @@ If you want to use `.gguf` files in the cloud and on edge devices simultaneously
 2. Download the APK file (148MB) and install it on your device.
 3. Launch the MLC Chat app. You'll see a list of AI models, including Phi-3-mini.
 
+### Run Phi-4-mini-reasoning with LiteRT-LM
+
+[Phi-4-mini-reasoning](https://huggingface.co/litert-community/Phi-4-mini-reasoning) is available as a community-converted int4 `.litertlm` bundle for Google's [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM) on-device runtime. On Android it runs on CPU or GPU through the [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) app (import the bundle from Hugging Face inside the app) or through the LiteRT-LM Kotlin API; the same bundle also runs on iOS, macOS, Linux and Windows. The model card lists the measured speeds and the run commands.
+
 In summary, Phi-3-mini opens up exciting possibilities for generative AI on edge devices, and you can start exploring its capabilities on Android.
