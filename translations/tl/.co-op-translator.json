@@ -12,8 +12,8 @@
     "language_code": "tl"
   },
   "README.md": {
-    "original_hash": "a49252a2706935f21c8abf8471481553",
-    "translation_date": "2026-04-21T01:42:10+00:00",
+    "original_hash": "e1043c69855a4bf9bb560a087f3f0bff",
+    "translation_date": "2026-08-26T17:31:35+00:00",
     "source_file": "README.md",
     "language_code": "tl"
   },
@@ -28,7 +28,7 @@
       "original_hash": "3bb9f5c926673593287eddc3741226cb",
       "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
       "language_code": "tl",
-      "failure_date": "2026-08-26T15:33:23+00:00",
+      "failure_date": "2026-08-26T17:32:21+00:00",
       "status": "failed",
       "error_type": "TranslationIncompleteError",
       "error_message": "Markdown translation remained incomplete for chunk 1 of 'UsingORTGenAIQuantifyingPhi.md', and the chunk could not be split further.",
@@ -64,6 +64,12 @@
     "original_hash": "11e3f99abd178a635084cdbe5ac07600",
     "translation_date": "2026-03-29T10:24:20+00:00",
     "source_file": "code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb",
+    "language_code": "tl"
+  },
+  "code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb": {
+    "original_hash": "71f9303a811084cf162acf977625cda9",
+    "translation_date": "2026-08-26T17:33:16+00:00",
+    "source_file": "code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb",
     "language_code": "tl"
   },
   "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md": {
