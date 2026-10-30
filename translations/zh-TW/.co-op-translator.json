@@ -23,6 +23,19 @@
     "source_file": "SECURITY.md",
     "language_code": "zh-TW"
   },
+  "__translation_failures__": {
+    "README.md": {
+      "original_hash": "e61c0a074b5326b08d3239aa7cc559e4",
+      "source_file": "README.md",
+      "language_code": "zh-TW",
+      "failure_date": "2026-10-29T11:15:09+00:00",
+      "status": "failed",
+      "error_type": "TranslationIncompleteError",
+      "error_message": "Markdown translation remained incomplete for chunk 1.2.1.1.1.1.1.1 of 'README.md', and the chunk could not be split further.",
+      "translator_version": "0.23.2",
+      "failure_policy_version": 1
+    }
+  },
   "code/03.Finetuning/olive-lab/readme.md": {
     "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
     "translation_date": "2025-07-16T15:48:37+00:00",
