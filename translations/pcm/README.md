@@ -14,13 +14,13 @@
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Phi na one series of open source AI models wey Microsoft develop. 
+Phi na one series of open source AI models wey Microsoft develop.
 
-Phi na di most powerful and cost-effective small language model (SLM) now, wey get beta benchmarks for multi-language, reasoning, text/chat generation, coding, images, audio and oda scenarios. 
+Phi be di most powerful and cost-effective small language model (SLM) now, wey get beta benchmarks for multi-language, reasoning, text/chat generation, coding, images, audio and oda tins dem.
 
-You fit deploy Phi go cloud or to edge devices, plus you fit easily build generative AI apps wit limited compute power.
+You fit deploy Phi for cloud or edge devices, and fit easy build generative AI applications wit small computing power.
 
-Follow dis steps to start use dis resource :
+Follow dis steps to start to use dis resource dem:
 1. **Fork di Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 2. **Clone di Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Join The Microsoft AI Discord Community and meet experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
@@ -29,14 +29,14 @@ Follow dis steps to start use dis resource :
 
 ### 🌐 Multi-Language Support
 
-#### Supported via GitHub Action (Automated & Always Up-to-Date)
+#### Translations wey dem maintain wit [Co-op Translator](https://github.com/Azure/co-op-translator)
 
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
 [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh-CN/README.md) | [Chinese (Traditional, Hong Kong)](../zh-HK/README.md) | [Chinese (Traditional, Macau)](../zh-MO/README.md) | [Chinese (Traditional, Taiwan)](../zh-TW/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Estonian](../et/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Kannada](../kn/README.md) | [Khmer](../km/README.md) | [Korean](../ko/README.md) | [Lithuanian](../lt/README.md) | [Malay](../ms/README.md) | [Malayalam](../ml/README.md) | [Manipuri (Meitei Mayek)](../mni/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Nigerian Pidgin](./README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../pt-BR/README.md) | [Portuguese (Portugal)](../pt-PT/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Tamil](../ta/README.md) | [Telugu](../te/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
-> **You prefer to Clone for your own work station?**
+> **You prefer make you Clone am for your machine?**
 >
-> Dis repository get 50+ language translations weh fit make di download size beta. To clone without translations, use sparse checkout:
+> Dis repository get 50+ language translations wey go plenty increase the size wey you go download. To clone without translations, use sparse checkout:
 >
 > **Bash / macOS / Linux:**
 > ```bash
@@ -52,7 +52,7 @@ Follow dis steps to start use dis resource :
 > git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
 > ```
 >
-> Dis go give you everything wey you need to complete di course with faster download.
+> Dis one go give you everything wey you need to finish the course with beta fast download.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 ## Table of Contents
@@ -68,7 +68,7 @@ Follow dis steps to start use dis resource :
   - [GitHub Marketplace Models](https://github.com/marketplace/models)
   - [Azure AI Model Catalog](https://ai.azure.com)
 
-- Inference Phi in different environment
+- Inference Phi inside different environment
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
     -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)
     -  [Microsoft Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
@@ -78,61 +78,61 @@ Follow dis steps to start use dis resource :
     -  [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md)
 
 - Inference Phi Family
-    - [Inference Phi in iOS](./md/01.Introduction/03/iOS_Inference.md)
-    - [Inference Phi in Android](./md/01.Introduction/03/Android_Inference.md)
-    - [Inference Phi in Jetson](./md/01.Introduction/03/Jetson_Inference.md)
-    - [Inference Phi in AI PC](./md/01.Introduction/03/AIPC_Inference.md)
-    - [Inference Phi with Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
-    - [Inference Phi in Local Server](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [Inference Phi in Remote Server using AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
-    - [Inference Phi with Rust](./md/01.Introduction/03/Rust_Inference.md)
-    - [Inference Phi--Vision in Local](./md/01.Introduction/03/Vision_Inference.md)
-    - [Inference Phi with Kaito AKS, Azure Containers(official support)](./md/01.Introduction/03/Kaito_Inference.md)
+    - [Inference Phi for iOS](./md/01.Introduction/03/iOS_Inference.md)
+    - [Inference Phi for Android](./md/01.Introduction/03/Android_Inference.md)
+    - [Inference Phi for Jetson](./md/01.Introduction/03/Jetson_Inference.md)
+    - [Inference Phi for AI PC](./md/01.Introduction/03/AIPC_Inference.md)
+    - [Inference Phi wit Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
+    - [Inference Phi inside Local Server](./md/01.Introduction/03/Local_Server_Inference.md)
+    - [Inference Phi inside Remote Server using AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
+    - [Inference Phi wit Rust](./md/01.Introduction/03/Rust_Inference.md)
+    - [Inference Phi--Vision local](./md/01.Introduction/03/Vision_Inference.md)
+    - [Inference Phi wit Kaito AKS, Azure Containers(official support)](./md/01.Introduction/03/Kaito_Inference.md)
 -  [Quantifying Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)
-    - [Quantizing Phi-3.5 / 4 using llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
-    - [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [Quantizing Phi-3.5 / 4  using Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [Quantizing Phi-3.5 / 4  using Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4 wit llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4 wit Generative AI extensions for onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4  wit Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4  wit Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
 -  Evaluation Phi
     - [Response AI](./md/01.Introduction/05/ResponsibleAI.md)
     - [Microsoft Foundry for Evaluation](./md/01.Introduction/05/AIFoundry.md)
     - [Using Promptflow for Evaluation](./md/01.Introduction/05/Promptflow.md)
  
-- RAG with Azure AI Search
-    - [How to use Phi-4-mini and Phi-4-multimodal(RAG) with Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
-    - [Zero-Cloud Local Hybrid RAG with SQLite FTS5 and phi-4-mini](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb)
+- RAG wit Azure AI Search
+    - [How to use Phi-4-mini and Phi-4-multimodal(RAG) wit Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+    - [Zero-Cloud Local Hybrid RAG wit SQLite FTS5 and phi-4-mini](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-mini_Local_Hybrid_RAG_SQLite_FTS5.ipynb)
 
 - Phi application development samples
   - Text & Chat Applications
     - Phi-4 Samples 
-      - [📓] [Chat With Phi-4-mini ONNX Model](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [Chat with Phi-4 local ONNX Model .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [Chat .NET Console App with Phi-4 ONNX using Sementic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
+      - [📓] [Chat Wit Phi-4-mini ONNX Model](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
+      - [Chat wit Phi-4 local ONNX Model .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
+      - [Chat .NET Console App wit Phi-4 ONNX using Sementic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
     - Phi-3 / 3.5 Samples
-      - [Local Chatbot in the browser using Phi3, ONNX Runtime Web and WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
+      - [Local Chatbot inside browser using Phi3, ONNX Runtime Web and WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
       - [Multi Model - Interactive Phi-3-mini and OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
-      - [MLFlow - Building a wrapper and using Phi-3 with MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
-      - [Model Optimization - How to optimize Phi-3-min model for ONNX Runtime Web with Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
-      - [WinUI3 App with Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
+      - [MLFlow - Building wrapper and using Phi-3 wit MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
+      - [Model Optimization - How to optimize Phi-3-min model for ONNX Runtime Web wit Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
+      - [WinUI3 App wit Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
       -[WinUI3 Multi Model AI Powered Notes App Sample](https://github.com/microsoft/ai-powered-notes-winui3-sample)
-      - [Fine-tune and Integrate custom Phi-3 models with Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Fine-tune and Integrate custom Phi-3 models with Prompt flow in Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Evaluate the Fine-tuned Phi-3 / Phi-3.5 Model in Microsoft Foundry Focusing on Microsoft's Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+      - [Fine-tune and Integrate custom Phi-3 models wit Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
+      - [Fine-tune and Integrate custom Phi-3 models wit Prompt flow for Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+      - [Evaluate the Fine-tuned Phi-3 / Phi-3.5 Model for Microsoft Foundry Wey Focus on Microsoft's Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
       - [📓] [Phi-3.5-mini-instruct language prediction sample (Chinese/English)](./md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
       - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
-      - [Using Windows GPU to create Prompt flow solution with Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
+      - [Using Windows GPU to create Prompt flow solution wit Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
       - [Using Microsoft Phi-3.5 tflite to create Android app](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-      - [Q&A .NET Example using local ONNX Phi-3 model using the Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
-      - [Console chat .NET app with Semantic Kernel and Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
+      - [Q&A .NET Example using local ONNX Phi-3 model using Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
+      - [Console chat .NET app wit Semantic Kernel and Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
   - Azure AI Inference SDK Code Based Samples 
     - Phi-4 Samples 
       - [📓] [Generate project code using Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
     - Phi-3 / 3.5 Samples
-      - [Build your own Visual Studio Code GitHub Copilot Chat with Microsoft Phi-3 Family](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-      - [Create your own Visual Studio Code Chat Copilot Agent with Phi-3.5 by GitHub Models](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+      - [Build your own Visual Studio Code GitHub Copilot Chat wit Microsoft Phi-3 Family](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
+      - [Create your own Visual Studio Code Chat Copilot Agent wit Phi-3.5 by GitHub Models](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
 
   - Advanced Reasoning Samples
     - Phi-4 Samples 
@@ -227,17 +227,17 @@ Follow dis steps to start use dis resource :
 
 ### Phi on Microsoft Foundry
 
-You fit learn how to use Microsoft Phi and how to build E2E solutions for your different hardware devices dem. To experience Phi for yourself, start to play with the models and customize Phi for your scenarios using the [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) you fit learn more for Getting Started with [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+You fit learn how to use Microsoft Phi and how to build E2E solutions for your different hardware devices. To experience Phi by yourself, start to play with the models and customize Phi for your scenarios using the [Microsoft Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) you fit learn more at Getting Started with [Microsoft Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**
-Each model get im own playground to test the model [Azure AI Playground](https://aka.ms/try-phi3).
+Each model get dedicated playground to test the model [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi on GitHub Models
 
-You fit learn how to use Microsoft Phi and how to build E2E solutions for your different hardware devices dem. To experience Phi for yourself, start to play with the model and customize Phi for your scenarios using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) you fit learn more for Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
+You fit learn how to use Microsoft Phi and how to build E2E solutions for your different hardware devices. To experience Phi by yourself, start to play with the model and customize Phi for your scenarios using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) you fit learn more at Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
 **Playground**
-Each model get im own [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Each model get dedicated [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi on Hugging Face
 
@@ -246,9 +246,9 @@ You fit also find the model for the [Hugging Face](https://huggingface.co/micros
 **Playground**
  [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## 🎒 Other Courses
+ ## 🎒 Other Courses
 
-Our team dey produce other courses! Check am out:
+Our team dey produce other courses too! Check am out:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -292,29 +292,29 @@ Our team dey produce other courses! Check am out:
 
 ## Responsible AI 
 
-Microsoft dey committed to help our customers use our AI products responsibly, share our learnings, and build trust-based partnerships through tools like Transparency Notes and Impact Assessments. Plenty of these resources fit dey for [https://aka.ms/RAI](https://aka.ms/RAI).
+Microsoft dey committed to help our customers use our AI products responsibly, share our learnings, and build trust-based partnerships through tools like Transparency Notes and Impact Assessments. Plenty of these resources fit dey found for [https://aka.ms/RAI](https://aka.ms/RAI).
 Microsoft approach to responsible AI base for our AI principles of fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.
 
-Large-scale natural language, image, and speech models - like the ones wey dem use for this sample - fit behave for ways wey no fair, no reliable, or e fit offend, wey fit cause wahala. Abeg check the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to know about risks and limitations.
+Big-size natural language, image, and speech models - like di ones wey dem use for dis sample - fit fit dey behave for ways wey no fair, no reliable, or fit offend people, and fit cause harm. Abeg make you check di [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to sabi about risks and limitation dem.
 
-Di correct way to reduce dis kind risk na to add one kian safety system for your architecture wey fit detect and stop bad bad behavior dem. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) dey give one kain separate protection layer, wey fit detect bad user-made and AI-made content for apps and services. Azure AI Content Safety get text and image APIs wey fit help you detect bad bad material. For inside Microsoft Foundry, di Content Safety service dey let you see, explore, and try sample code for how to detect bad content for different kinds modality dem. Di following [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) go guide you on how to make request go the service.
+Di recommended way to reduce dis kain risk na to put one safety system inside your architecture wey fit detect an stop bad behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) dey give una independent level of protection, wey fit detect bad user-generated and AI-generated content for apps and services. Azure AI Content Safety get text and image APIs wey allow you detect materials wey bad. Inside Microsoft Foundry, di Content Safety service dey allow you see, explore and try sample code for detecting bad content for different modalities. Di next [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) go guide you on how to do requests to di service.
 
-Another tin wey you suppose reason be di overall app performance. With apps wey dey use multi-modal and multi-models, we dey reason performance as how di system go work as you and your users dey expect, including sey e no go produce bad bad output dem. E important to check how your whole app performance dey use [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You also fit create and test with your own [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+Another thing wey you suppose remember na di overall application performance. With multi-modal and multi-models apps dem, we mean say di system go perform like how you and your users dey expect, e.g., no go produce bad output. E important to check wetin your overall application performance be with [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You fit also create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-You fit evaluate your AI app for your development environment using [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Whether you get test data or target, your generative AI app generations go dey quantitatively measured using built-in evaluators or your own custom evaluators wey you choose. To start to use the azure ai evaluation sdk to check your system, you fit follow di [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). After you run an evaluation, you fit [visualize di results inside Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+You fit evaluate your AI app for your development environment using [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). If you get test dataset or target, your generative AI app generations fit dey quantitatively measured with built-in evaluators or custom evaluators wey you choose. To start with di azure ai evaluation sdk to evaluate your system, you fit follow di [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Once you run one evaluation, you fit [visualize di results for Microsoft Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
 
 ## Trademarks
 
-Dis project fit get trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos gats follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos for any changed version of this project gats no cause confusion or talk sey Microsoft support am. Any use of third-party trademarks or logos dey follow dem third-party own rules.
+Dis project fit get trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos go follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos for changed versions of dis project no suppose cause confusion or make people think say Microsoft dey support am. Any use of third-party trademarks or logos go follow di third-party own policies.
 
 ## Getting Help
 
-If you jam problem or get any question about how to build AI apps, join:
+If you get stuck or you get any questions about how to build AI apps, come join:
 
 [![Microsoft Foundry Discord](https://img.shields.io/badge/Discord-Microsoft_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
 
-If you get product feedback or error while building visit:
+If you get product feedback or errors while you dey build, visit:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
