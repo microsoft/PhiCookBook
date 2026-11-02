@@ -116,7 +116,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
       - [MLFlow - Création d'une enveloppe et utilisation de Phi-3 avec MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
       - [Optimisation du modèle - Comment optimiser Phi-3-mini pour ONNX Runtime Web avec Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
       - [Application WinUI3 avec Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      - [Exemple d'application Notes alimentée par IA multitudes modèles WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [Exemple d'application de prise de notes WinUI3 alimentée par une IA utilisant plusieurs modèles](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Affinage et intégration de modèles Phi-3 personnalisés avec Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
       - [Affinage et intégration de modèles Phi-3 personnalisés avec Prompt flow dans Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
       - [Évaluation du modèle Phi-3 / Phi-3.5 affiné dans Microsoft Foundry en se concentrant sur les principes d'IA responsable de Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
@@ -143,7 +143,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
       - [📓] [Phi-4-mini-raisonnement avec les modèles Microsoft Foundry](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Démonstrations
       - [Démos Phi-4-mini hébergées sur Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-      - [Démos Phi-4-multimodales hébergées sur Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
+      - [Démos Phi-4-multimodales hébergées sur Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
   - Échantillons Vision
     - Échantillons Phi-4 
       - [📓] [Utiliser Phi-4-multimodal pour lire des images et générer du code](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 

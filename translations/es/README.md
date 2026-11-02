@@ -116,7 +116,7 @@ Sigue estos pasos para comenzar a usar estos recursos:
       - [MLFlow - Creando un encapsulamiento y uso de Phi-3 con MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
       - [Optimización de modelos - Cómo optimizar el modelo Phi-3-mini para ONNX Runtime Web con Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
       - [Aplicación WinUI3 con Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      -[Ejemplo de aplicación de notas con IA multiproceso WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [Ejemplo de aplicación de notas con IA multimodelo en WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Ajuste fino e integración de modelos personalizados Phi-3 con Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
       - [Ajuste fino e integración de modelos personalizados Phi-3 con Prompt flow en Microsoft Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
       - [Evaluar el modelo Phi-3 / Phi-3.5 ajustado en Microsoft Foundry enfocándose en los principios de IA responsable de Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
