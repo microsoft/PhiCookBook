@@ -25,13 +25,24 @@
   },
   "__translation_failures__": {
     "README.md": {
-      "original_hash": "e61c0a074b5326b08d3239aa7cc559e4",
+      "original_hash": "328667544aac0d7409eba4b6aea30ecd",
       "source_file": "README.md",
       "language_code": "zh-MO",
-      "failure_date": "2026-10-29T11:07:52+00:00",
+      "failure_date": "2026-10-30T20:44:29+00:00",
       "status": "failed",
       "error_type": "TranslationIncompleteError",
-      "error_message": "Markdown translation remained incomplete for chunk 2.2.1 of 'README.md', and the chunk could not be split further.",
+      "error_message": "Markdown translation remained incomplete for chunk 1.2.1.1.1 of 'README.md', and the chunk could not be split further.",
+      "translator_version": "0.23.2",
+      "failure_policy_version": 1
+    },
+    "md/01.Introduction/03/Android_Inference.md": {
+      "original_hash": "018b5b022ac07791d4217dcd73be6e7d",
+      "source_file": "md/01.Introduction/03/Android_Inference.md",
+      "language_code": "zh-MO",
+      "failure_date": "2026-10-30T20:45:12+00:00",
+      "status": "failed",
+      "error_type": "TranslationIncompleteError",
+      "error_message": "Markdown translation remained incomplete for chunk 1.2.1.1 of 'Android_Inference.md', and the chunk could not be split further.",
       "translator_version": "0.23.2",
       "failure_policy_version": 1
     }

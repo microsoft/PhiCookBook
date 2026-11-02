@@ -1,24 +1,24 @@
-# **Inference Phi-3 Androidis**
+# **Inferents Phi-3 Androidis**
 
-Vaatame, kuidas saab Android-seadmetes teha järeldusi Phi-3-mini abil. Phi-3-mini on Microsofti uus mudeliseeria, mis võimaldab suurtel keelemudelitel (LLM) töötada servaseadmetes ja IoT-seadmetes.
+Uurime, kuidas saate Phi-3-mini abil teha inferentsi Androidi seadmetes. Phi-3-mini on Microsofti uus mudelite seeria, mis võimaldab suurte keelemudelite (LLM) juurutamist servaseadmetel ja IoT-seadmetel.
 
-## Semantic Kernel ja järeldused
+## Semantilise tuuma ja inferents
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) on rakendusraamistik, mis võimaldab luua rakendusi, mis ühilduvad Azure OpenAI Service'i, OpenAI mudelite ja isegi kohalike mudelitega. Kui oled Semantic Kerneliga uus, soovitame tutvuda [Semantic Kernel Cookbookiga](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) on rakendusraamistik, mis võimaldab teil luua rakendusi, mis on ühilduvad Azure OpenAI teenuse, OpenAI mudelite ja isegi kohalikult loodud mudelitega. Kui te pole Semantic Kerneliga tuttav, soovitame vaadata [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
 ### Phi-3-mini kasutamine Semantic Kerneliga
 
-Seda saab kombineerida Semantic Kernelis Hugging Face Connectoriga. Vaata [näidiskoodi](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
+Võite seda kombineerida Hugging Face'i ühendajaga Semantic Kernelis. Viitamiseks vaadake seda [näidiskoodi](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-Vaikimisi vastab see Hugging Face'i mudeli ID-le. Kuid võimalik on ühendada ka lokaalselt ehitatud Phi-3-mini mudeliserveriga.
+Vaikimisi vastab see Hugging Face'i mudeli ID-le. Kuid saate ühendada ka kohaliselt loodud Phi-3-mini mudeliserveriga.
 
-### Kvantiseeritud mudelite kasutamine Ollama või LlamaEdge'iga
+### Kvantiseeritud mudelite kutsumine Ollama või LlamaEdge kaudu
 
-Paljud kasutajad eelistavad kvantiseeritud mudeleid, et mudeleid lokaalselt käivitada. [Ollama](https://ollama.com/) ja [LlamaEdge](https://llamaedge.com) võimaldavad individuaalsetel kasutajatel kasutada erinevaid kvantiseeritud mudeleid:
+Paljud kasutajad eelistavad kvantiseeritud mudeleid mudelite kohalikuks käitamiseks. [Ollama](https://ollama.com/) ja [LlamaEdge](https://llamaedge.com) võimaldavad kasutajatel kutsuda erinevaid kvantiseeritud mudeleid:
 
 #### Ollama
 
-Saad otse käivitada `ollama run Phi-3` või seadistada selle võrguühenduseta, luues `Modelfile` koos viitega oma `.gguf` failile.
+Võite otse käivitada `ollama run Phi-3` või seadistada selle võrguühenduseta, luues `Modelfile` koos oma `.gguf` faili teega.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -31,17 +31,23 @@ PARAMETER num_ctx 4096
 
 #### LlamaEdge
 
-Kui soovid kasutada `.gguf` faile nii pilves kui servaseadmetes, on LlamaEdge suurepärane valik. Alustamiseks vaata [näidiskoodi](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo).
+Kui soovite kasutada `.gguf` faile pilves ja servaseadmetes samaaegselt, on LlamaEdge suurepärane valik. Alustamiseks võite vaadata seda [näidiskoodi](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo).
 
-### Installimine ja käivitamine Android-telefonides
+### Installimine ja käivitamine Androidi telefonides
 
-1. **Laadi alla MLC Chat rakendus** (tasuta) Android-telefonidele.
-2. Laadi alla APK-fail (148MB) ja installi see oma seadmesse.
-3. Käivita MLC Chat rakendus. Näed AI mudelite loendit, sealhulgas Phi-3-mini.
+1. **Laadige alla MLC Chati rakendus** (tasuta) Androidi telefonidele.
+2. Laadige alla APK-fail (148 MB) ja installige see oma seadmesse.
+3. Käivitage MLC Chati rakendus. Näete AI mudelite nimekirja, sealhulgas Phi-3-mini.
 
-Kokkuvõttes avab Phi-3-mini põnevaid võimalusi generatiivse AI jaoks servaseadmetes, ja saad alustada selle võimaluste uurimist Androidis.
+### Phi-4-mini-reasoning käivitamine LiteRT-LM-iga
+
+[Phi-4-mini-reasoning](https://huggingface.co/litert-community/Phi-4-mini-reasoning) on saadaval kogukonna konverteeritud int4 `.litertlm` pakendina Google'i [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM) seadmel töötava keskkonna jaoks. Androidis töötab see CPU või GPU kaudu [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) rakenduses (impordi pakend Hugging Face'ist rakenduse sees) või LiteRT-LM Kotlin API kaudu; sama pakend töötab ka iOS-il, macOS-il, Linuxil ja Windowsil. Mudelikaartil on loetletud mõõdetud kiirused ja käsklused.
+
+Kokkuvõttes avab Phi-3-mini põnevad võimalused generatiivsele tehisintellektile servaseadmetes ning saate alustada selle võimekuse uurimist Androidis.
 
 ---
 
-**Lahtiütlus**:  
-See dokument on tõlgitud AI tõlketeenuse [Co-op Translator](https://github.com/Azure/co-op-translator) abil. Kuigi püüame tagada täpsust, palume arvestada, et automaatsed tõlked võivad sisaldada vigu või ebatäpsusi. Algne dokument selle algses keeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitame kasutada professionaalset inimtõlget. Me ei vastuta selle tõlke kasutamisest tulenevate arusaamatuste või valesti tõlgenduste eest.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Lahtiütlus**:
+See dokument on tõlgitud kasutades AI tõlketeenust [Co-op Translator](https://github.com/Azure/co-op-translator). Kuigi me püüdleme täpsuse poole, palun pange tähele, et automatiseeritud tõlgetes võib esineda vigu või ebatäpsusi. Originaaldokument selle emakeeles tuleks pidada autoriteetseks allikaks. Olulise teabe puhul soovitatakse kasutada professionaalset inimtõlget. Me ei vastuta selle tõlkega seotud eksimustest või valesti mõistmistest.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -12,8 +12,8 @@
     "language_code": "uk"
   },
   "README.md": {
-    "original_hash": "e61c0a074b5326b08d3239aa7cc559e4",
-    "translation_date": "2026-10-29T12:33:55+00:00",
+    "original_hash": "328667544aac0d7409eba4b6aea30ecd",
+    "translation_date": "2026-10-30T20:26:27+00:00",
     "source_file": "README.md",
     "language_code": "uk"
   },
@@ -22,6 +22,19 @@
     "translation_date": "2025-07-16T15:44:48+00:00",
     "source_file": "SECURITY.md",
     "language_code": "uk"
+  },
+  "__translation_failures__": {
+    "md/01.Introduction/03/Android_Inference.md": {
+      "original_hash": "018b5b022ac07791d4217dcd73be6e7d",
+      "source_file": "md/01.Introduction/03/Android_Inference.md",
+      "language_code": "uk",
+      "failure_date": "2026-10-30T20:27:22+00:00",
+      "status": "failed",
+      "error_type": "TranslationIncompleteError",
+      "error_message": "Markdown translation remained incomplete for chunk 1.2.1.1 of 'Android_Inference.md', and the chunk could not be split further.",
+      "translator_version": "0.23.2",
+      "failure_policy_version": 1
+    }
   },
   "code/03.Finetuning/olive-lab/readme.md": {
     "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",

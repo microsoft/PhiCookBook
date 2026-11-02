@@ -1,24 +1,24 @@
 # **Inference Phi-3 Android įrenginiuose**
 
-Pažvelkime, kaip galite atlikti išvestį su Phi-3-mini Android įrenginiuose. Phi-3-mini yra nauja Microsoft modelių serija, leidžianti diegti didelius kalbos modelius (LLMs) kraštiniuose įrenginiuose ir IoT įrenginiuose.
+Pažvelkime, kaip galite atlikti spėjimą naudodami Phi-3-mini Android įrenginiuose. Phi-3-mini yra nauja Microsoft modelių serija, leidžianti diegti didelius kalbos modelius (LLM) krašto įrenginiuose ir IoT įrenginiuose.
 
-## Semantic Kernel ir išvestis
+## Semantic Kernel ir spėjimas
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) yra aplikacijų kūrimo sistema, leidžianti kurti programas, suderinamas su Azure OpenAI Service, OpenAI modeliais ir netgi vietiniais modeliais. Jei esate naujokas Semantic Kernel, rekomenduojame peržiūrėti [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) yra programų karkasas, leidžiantis kurti programas suderinamas su Azure OpenAI paslauga, OpenAI modeliais ir netgi vietiniais modeliais. Jei esate naujokas Semantic Kernel, siūlome pažvelgti į [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
 ### Kaip pasiekti Phi-3-mini naudojant Semantic Kernel
 
-Jį galite sujungti su Hugging Face Connector Semantic Kernel sistemoje. Žr. šį [Pavyzdinį kodą](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
+Jį galite derinti su Hugging Face jungtimi Semantic Kernel. Pažvelkite į šį [pavyzdinį kodą](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-Pagal numatymą jis atitinka modelio ID Hugging Face platformoje. Tačiau taip pat galite prisijungti prie vietinio Phi-3-mini modelio serverio.
+Pagal numatytuosius nustatymus jis atitinka modelio ID Hugging Face platformoje. Tačiau taip pat galite prisijungti prie vietoje sukurto Phi-3-mini modelio serverio.
 
-### Kvantizuotų modelių naudojimas su Ollama arba LlamaEdge
+### Kvantizuotų modelių kvietimas su Ollama arba LlamaEdge
 
-Daugelis vartotojų renkasi kvantizuotus modelius, kad galėtų juos paleisti vietoje. [Ollama](https://ollama.com/) ir [LlamaEdge](https://llamaedge.com) leidžia individualiems vartotojams naudoti įvairius kvantizuotus modelius:
+Daugelis naudotojų renkasi kvantizuotus modelius, kad galėtų paleisti modelius vietoje. [Ollama](https://ollama.com/) ir [LlamaEdge](https://llamaedge.com) leidžia individualiems naudotojams kviesti skirtingus kvantizuotus modelius:
 
 #### Ollama
 
-Galite tiesiogiai paleisti `ollama run Phi-3` arba konfigūruoti jį neprisijungus, sukurdami `Modelfile` su keliu į jūsų `.gguf` failą.
+Galite tiesiogiai paleisti `ollama run Phi-3` arba konfigūruoti ją neprisijungus sukurdami `Modelfile` su kelio adresu į jūsų `.gguf` failą.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -31,17 +31,23 @@ PARAMETER num_ctx 4096
 
 #### LlamaEdge
 
-Jei norite naudoti `.gguf` failus debesyje ir kraštiniuose įrenginiuose vienu metu, LlamaEdge yra puikus pasirinkimas. Pradėti galite peržiūrėję šį [pavyzdinį kodą](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo).
+Jei norite naudoti `.gguf` failus tiek debesyje, tiek krašto įrenginiuose vienu metu, LlamaEdge yra puikus pasirinkimas. Galite pasinaudoti šiuo [pavyzdiniu kodu](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) pradėti.
 
-### Diegimas ir paleidimas Android telefonuose
+### Įdiekite ir paleiskite Android telefonuose
 
-1. **Atsisiųskite MLC Chat programėlę** (nemokamai) Android telefonams.
+1. **Atsisiųskite MLC Chat programėlę** (nemokama) Android telefonams.
 2. Atsisiųskite APK failą (148MB) ir įdiekite jį savo įrenginyje.
-3. Paleiskite MLC Chat programėlę. Joje matysite AI modelių sąrašą, įskaitant Phi-3-mini.
+3. Paleiskite MLC Chat programėlę. Matysite AI modelių sąrašą, įskaitant Phi-3-mini.
 
-Apibendrinant, Phi-3-mini suteikia įdomių galimybių generatyvinei AI kraštiniuose įrenginiuose, ir jūs galite pradėti tyrinėti jo galimybes Android platformoje.
+### Paleiskite Phi-4-mini-reasoning su LiteRT-LM
+
+[Phi-4-mini-reasoning](https://huggingface.co/litert-community/Phi-4-mini-reasoning) yra prieinamas kaip bendruomenės konvertuota int4 `.litertlm` pakuotė Google [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM) įrenginio veikimo aplinkai. Android įrenginyje jis veikia CPU arba GPU per [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) programėlę (importuojant pakuotę iš Hugging Face programėlės viduje) arba per LiteRT-LM Kotlin API; ta pati pakuotė taip pat veikia iOS, macOS, Linux ir Windows. Modelio kortelėje pateikiami matuoti greičiai ir paleidimo komandos.
+
+Apibendrinant, Phi-3-mini atveria įdomias galimybes generatyviai dirbtiniam intelektui krašto įrenginiuose, ir galite pradėti tyrinėti jo galimybes Android įrenginiuose.
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Dėl svarbios informacijos rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama naudoti profesionalų žmogiškąjį vertimą. Mes neatsakome už jokius nesusipratimus ar neteisingą interpretaciją, kilusią naudojantis šiuo vertimu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

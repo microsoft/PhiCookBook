@@ -1,24 +1,24 @@
-# **एन्ड्रोइडमा Inference Phi-3**
+# **एन्ड्रोइडमा इन्फरेन्स फाई-३**
 
-आउनुहोस्, हामीले कसरी Phi-3-mini सँग एन्ड्रोइड उपकरणहरूमा inference गर्न सकिन्छ भनेर अन्वेषण गरौं। Phi-3-mini माइक्रोसफ्टको नयाँ मोडेल श्रृंखला हो जसले edge उपकरणहरू र IoT उपकरणहरूमा Large Language Models (LLMs) को तैनाती सक्षम बनाउँछ।
+आउनुहोस् हेर्नुहोस् कसरी तपाईं एन्ड्रोइड उपकरणहरूमा फाई-३-मिनीसँग इन्फरेन्स गर्न सक्नुहुन्छ। फाई-३-मिनी माइक्रोसफ्टबाट नयाँ मोडेल श्रृंखला हो जसले एज उपकरणहरू र IoT उपकरणहरूमा ठूलो भाषा मोडेलहरू (LLMs) तैनाथ गर्न सक्षम बनाउँछ।
 
-## Semantic Kernel र Inference
+## सेम्यान्टिक कर्नेल र इन्फरेन्स
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) एउटा एप्लिकेशन फ्रेमवर्क हो जसले तपाईंलाई Azure OpenAI Service, OpenAI मोडेलहरू, र स्थानीय मोडेलहरूसँग मिल्ने एप्लिकेशनहरू बनाउन अनुमति दिन्छ। यदि तपाईं Semantic Kernel मा नयाँ हुनुहुन्छ भने, हामी तपाईंलाई [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) हेर्न सल्लाह दिन्छौं।
+[सेम्यान्टिक कर्नेल](https://github.com/microsoft/semantic-kernel) एउटा अनुप्रयोग फ्रेमवर्क हो जसले तपाइँलाई Azure OpenAI सेवा, OpenAI मोडेलहरू, र यहाँसम्म कि स्थानीय मोडेलहरूसँग मेल खाने अनुप्रयोगहरू सिर्जना गर्न अनुमति दिन्छ। यदि तपाईं सेम्यान्टिक कर्नेलमा नयाँ हुनुहुन्छ भने, हामी तपाईंलाई [सेम्यान्टिक कर्नेल कुकबुक](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) हेर्न सल्लाह दिन्छौं।
 
-### Semantic Kernel प्रयोग गरी Phi-3-mini पहुँच गर्न
+### सेम्यान्टिक कर्नेल प्रयोग गरी फाई-३-मिनी पहुँच गर्न
 
-तपाईं यसलाई Semantic Kernel मा Hugging Face Connector सँग जोड्न सक्नुहुन्छ। यसका लागि यो [Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo) हेर्नुहोस्।
+तपाईं यसलाई सेम्यान्टिक कर्नेलमा Hugging Face कननेक्टरसँग संयोजन गर्न सक्नुहुन्छ। यस [नमुना कोड](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo) लाई हेर्नुहोस्।
 
-डिफल्ट रूपमा, यो Hugging Face मा मोडेल ID सँग मेल खान्छ। तर, तपाईंले स्थानीय रूपमा बनाएको Phi-3-mini मोडेल सर्भरमा पनि जडान गर्न सक्नुहुन्छ।
+डिफल्टले यो Hugging Face मा मोडेल ID सँग मेल खान्छ। यद्यपि, तपाइँले स्थानीय रूपमा निर्माण गरिएको फाई-३-मिनी मोडेल सर्भरसँग पनि जडान गर्न सक्नुहुन्छ।
 
-### Ollama वा LlamaEdge सँग Quantized मोडेलहरू कल गर्ने
+### Ollama वा LlamaEdge मार्फत क्वान्टाइज्ड मोडेलहरू कल गर्ने
 
-धेरै प्रयोगकर्ताहरू मोडेलहरू स्थानीय रूपमा चलाउन quantized मोडेलहरू प्रयोग गर्न रुचाउँछन्। [Ollama](https://ollama.com/) र [LlamaEdge](https://llamaedge.com) ले व्यक्तिगत प्रयोगकर्ताहरूलाई विभिन्न quantized मोडेलहरू कल गर्न अनुमति दिन्छन्:
+धेरै प्रयोगकर्ताहरू मोडेलहरू स्थानीय रूपमा चलाउन क्वान्टाइज्ड मोडेलहरू प्रयोग गर्नु रुचाउँछन्। [Ollama](https://ollama.com/) र [LlamaEdge](https://llamaedge.com) ले व्यक्तिगत प्रयोगकर्ताहरूलाई विभिन्न क्वान्टाइज्ड मोडेलहरू कल गर्न अनुमति दिन्छन्:
 
 #### Ollama
 
-तपाईं सिधै `ollama run Phi-3` चलाउन सक्नुहुन्छ वा आफ्नो `.gguf` फाइलको पथ सहित `Modelfile` बनाएर अफलाइन कन्फिगर गर्न सक्नुहुन्छ।
+तपाईं सिधै `ollama run Phi-3` चलाउन सक्नुहुन्छ वा तपाईंको `.gguf` फाइलको पथसहित `Modelfile` बनाएर यसलाई अफलाइनमा कन्फिगर गर्न सक्नुहुन्छ।
 
 ```gguf
 FROM {Add your gguf file path}
@@ -27,19 +27,27 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[नमुना कोड](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-यदि तपाईंले क्लाउड र edge उपकरणहरूमा एकै समयमा `.gguf` फाइलहरू प्रयोग गर्न चाहनुहुन्छ भने, LlamaEdge उत्कृष्ट विकल्प हो। सुरु गर्न यो [sample code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) हेर्न सक्नुहुन्छ।
+यदि तपाईंले क्लाउड र एज उपकरणहरूमा समान रूपमा `.gguf` फाइलहरू प्रयोग गर्न चाहनुहुन्छ भने, LlamaEdge उत्कृष्ट विकल्प हो। सुरु गर्न यस [नमुना कोड](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) लाई हेर्न सकिन्छ।
 
-### एन्ड्रोइड फोनमा इन्स्टल र चलाउने तरिका
+### एन्ड्रोइड फोनमा इन्स्टल र चलाउने
 
 1. **MLC Chat एप डाउनलोड गर्नुहोस्** (निःशुल्क) एन्ड्रोइड फोनका लागि।
-2. APK फाइल (१४८MB) डाउनलोड गरी आफ्नो उपकरणमा इन्स्टल गर्नुहोस्।
-3. MLC Chat एप खोल्नुहोस्। तपाईंले Phi-3-mini सहित विभिन्न AI मोडेलहरूको सूची देख्नुहुनेछ।
+2. APK फाइल (१४८MB) डाउनलोड गरी तपाईंको उपकरणमा इन्स्टल गर्नुहोस्।
+3. MLC Chat एप खोल्नुहोस्। तपाईंले Phi-3-मिनी सहितको विभिन्न AI मोडेलहरूको सूची देख्नुहुनेछ।
 
-संक्षेपमा, Phi-3-mini ले edge उपकरणहरूमा जनरेटिभ AI का लागि रोचक सम्भावनाहरू खोल्छ, र तपाईं यसको क्षमता एन्ड्रोइडमा अन्वेषण गर्न सुरु गर्न सक्नुहुन्छ।
+### LiteRT-LM सँग Phi-4-mini-reasoning चलाउने
 
-**अस्वीकरण**:  
-यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+[Phi-4-mini-reasoning](https://huggingface.co/litert-community/Phi-4-mini-reasoning) एउटा कम्युनिटी-परिवर्तित int4 `.litertlm` बन्डलको रूपमा उपलब्ध छ गुगलको [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM) अन-डिभाइस रनटाइममा। एन्ड्रोइडमा यो CPU वा GPU मा [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery) एपमार्फत चल्छ (एपभित्र Hugging Face बाट बन्डल आयात गर्नुहोस्) वा LiteRT-LM Kotlin API मार्फत; सोही बन्डल iOS, macOS, Linux र Windows मा पनि चल्छ। मोडेल कार्डमा मापन गरिएको गति र चलाउने आदेशहरू छन्।
+
+संक्षेपमा, फाई-३-मिनीले एज उपकरणहरूमा जेनेरेटिभ AI का लागि रोमाञ्चक सम्भावनाहरू खोल्छ, र तपाई एन्ड्रोइडमा यसको क्षमता अन्वेषण गर्न सुरु गर्न सक्नुहुन्छ।
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**अस्वीकरण**:
+यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको हो। हामी सही हुन प्रयास गर्छौं, तर कृपया जानकार हुनुस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छन्। मूल दस्तावेज़ यसको मूल भाषामा आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलत बुझाइ वा त्रुटिको लागि हामी जिम्मेवार छैनौं।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
