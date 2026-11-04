@@ -120,21 +120,26 @@ def load_abductive(per_domain: int = 50, domains=("Animal", "Person"), seed: int
 
 # ---------------------------------------------------------------------- parsing
 
-_THINK_RE = re.compile(r"<think>.*?</think>", re.S)
-
-
 def strip_thinking(text: str) -> str:
-    """Drop a closed <think>...</think> block; reasoning models put the answer after it."""
-    return _THINK_RE.sub("", text or "").strip()
+    """Return the visible answer after the reasoning block.
+
+    Some servers return the opening <think> tag and some put it in the prompt, so we
+    keep whatever follows the last </think>. Without a closing tag (the model
+    occasionally writes a malformed one such as "</roll") the whole text is kept and
+    the parsers look for the last answer line; truncation is judged by finish_reason.
+    """
+    text = text or ""
+    if "</think>" in text:
+        return text.rsplit("</think>", 1)[1].strip()
+    return text.strip()
 
 
-def parse_deductive(text: str) -> str | None:
+def parse_deductive(text: str, allow_fallback: bool = True) -> str | None:
     body = strip_thinking(text)
     m = re.findall(r"final answer\s*[:：]?\s*\**\s*(?:\\boxed\{)?\s*(true|false)", body, re.I)
     if not m:
         m = re.findall(r"\\boxed\{\s*(?:\\text\{)?\s*(true|false)", body, re.I)
-    unclosed_thinking = "<think>" in (text or "") and "</think>" not in (text or "")
-    if not m and not unclosed_thinking:
+    if not m and allow_fallback:
         # last resort: last bare True/False in the visible answer
         m = re.findall(r"\b(true|false)\b", body, re.I)
     return m[-1].capitalize() if m else None
@@ -192,7 +197,8 @@ def classify_abductive_error(ex: Example, pred: str | None, finish_reason: str |
 
 def score(ex: Example, raw: str, finish_reason: str | None, tokens: int | None) -> Result:
     if ex.task == "deductive":
-        pred = parse_deductive(raw)
+        # a response cut off at max_tokens only counts if it already gave the final line
+        pred = parse_deductive(raw, allow_fallback=finish_reason != "length")
         ok = pred == ex.answer
         err = None if ok else ("truncated" if pred is None and finish_reason == "length"
                                else "no_answer" if pred is None else

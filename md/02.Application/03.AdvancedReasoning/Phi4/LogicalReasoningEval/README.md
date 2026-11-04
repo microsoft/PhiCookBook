@@ -44,12 +44,12 @@ Full run: 200 deductive items (50 per depth, balanced True/False) and 200 abduct
 | **Abductive (all)** | 200 | **88.2 ± 3.3** | 64.0 |
 | Abductive / Animal | 100 | 87.3 ± 7.2 | 66.0 |
 | Abductive / Person | 100 | 89.0 ± 1.7 | 62.0 |
-| **Deductive (all)** | 200 | 74.0 ± 2.8 | **79.0** |
+| **Deductive (all)** | 200 | 74.0 ± 2.8 | **78.5** |
 | Deductive / depth 2 | 50 | 82.0 ± 2.0 | 80.0 |
 | Deductive / depth 3 | 50 | 78.0 ± 6.0 | 74.0 |
-| Deductive / depth 4 | 50 | 66.0 ± 4.0 | 86.0 |
+| Deductive / depth 4 | 50 | 66.0 ± 4.0 | 84.0 |
 | Deductive / depth 5 | 50 | 70.0 ± 4.0 | 76.0 |
-| Deductive / rules **with negation** | 93 | **56.3 ± 3.8** | 65.6 |
+| Deductive / rules **with negation** | 93 | **56.3 ± 3.8** | 64.5 |
 | Deductive / rules without negation | 107 | 89.4 ± 1.9 | 90.7 |
 
 These are small samples (n = 50 per depth), so treat differences of a few points as noise.
@@ -59,7 +59,8 @@ These are small samples (n = 50 per depth), so treat differences of a few points
 1. **Abduction is where the reasoning model clearly helps** (+24 points). The instruct model's main failure is not a wrong guess. In 52 of 200 cases it answers `None`, insisting the observation already follows and refusing the premise of the task. Phi-4-mini-reasoning almost never does this.
 2. **Negation is the weak spot for deduction.** Without negation, both models are near 90%. With rules like `If someone is not big then they are poor`, which must be read under the closed-world assumption (*not derivable* means *false*), Phi-4-mini-reasoning falls to 56%, close to chance. The traces show it mixing closed- and open-world reading ("the cat might be not powerful") within one chain.
 3. **More thinking is a warning sign.** Across the three runs, the median completion length of *wrong* answers is 2.6× that of correct ones on deductive items (3,912 vs 1,516 tokens) and 4.2× on abductive items (7,076 vs 1,667). A token budget is a cheap confidence signal: long traces are worth a second look or a retry.
-4. **Truncation is rare at 12k tokens** (4-8 of 400 per run). With a smaller `max_tokens` budget, it becomes a real source of errors, so check `finish_reason` before blaming the model.
+4. **Truncation is rare at 12k tokens** (4-8 of 400 per run). With a smaller `max_tokens` budget, it becomes a real source of errors, so check `finish_reason` before blaming the model. A response cut off at `max_tokens` only counts if it had already written its final answer line.
+5. **Parse defensively.** In 2-5% of responses, Phi-4-mini-reasoning closes its reasoning with a malformed tag (for example `</roll`) and then gives a normal `Final answer:` line. The parsers read the last answer line instead of relying on a well-formed `</think>`, and they work whether or not the server returns the opening `<think>` tag.
 
 ## Error types
 
