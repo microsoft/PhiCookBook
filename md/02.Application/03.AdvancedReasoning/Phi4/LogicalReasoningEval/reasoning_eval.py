@@ -150,8 +150,11 @@ def parse_abductive(text: str) -> str | None:
     m = re.findall(r"missing fact\s*[:：]\s*\**\s*(?:\\boxed\{)?(.+)", body, re.I)
     if not m:
         return None
-    ans = m[-1].strip().strip("*`\"'}").strip()
-    ans = re.sub(r"\\text\{([^}]*)\}", r"\1", ans)
+    ans = m[-1].strip()
+    # unwrap \boxed{...} / \text{...} before stripping leftover formatting
+    ans = re.sub(r"\\(?:boxed|text)\{([^{}]*)\}", r"\1", ans)
+    ans = re.sub(r"\\(?:boxed|text)\{([^{}]*)\}", r"\1", ans)
+    ans = ans.strip().strip("*`\"'{}").strip()
     return ans or None
 
 
@@ -196,6 +199,9 @@ def classify_abductive_error(ex: Example, pred: str | None, finish_reason: str |
 
 
 def score(ex: Example, raw: str, finish_reason: str | None, tokens: int | None) -> Result:
+    if finish_reason == "length" and "</think>" not in (raw or ""):
+        # cut off before the reasoning block closed: any "answer" in it is only a draft
+        return Result(ex, raw, None, False, finish_reason, tokens, "truncated")
     if ex.task == "deductive":
         # a response cut off at max_tokens only counts if it already gave the final line
         pred = parse_deductive(raw, allow_fallback=finish_reason != "length")

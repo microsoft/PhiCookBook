@@ -27,6 +27,7 @@ vllm serve microsoft/Phi-4-mini-reasoning --max-model-len 16384 --served-model-n
 
 # 2. Run the full evaluation (200 deductive + 200 abductive items)
 python reasoning_eval.py --model phi-4-mini-reasoning --base-url http://localhost:8000/v1 \
+    --per-depth 50 --per-domain 100 \
     --temperature 0.8 --top-p 0.95 --max-tokens 12288 --out results.jsonl
 ```
 
