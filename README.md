@@ -65,12 +65,11 @@ Follow these steps to get started using these resource :
   - [Phi Hardware Support](./md/01.Introduction/01/01.Hardwaresupport.md)
   - [Phi Models & Availability across platforms](./md/01.Introduction/01/01.Edgeandcloud.md)
   - [Using Guidance-ai and Phi](./md/01.Introduction/01/01.Guidance.md)
-  - [GitHub Marketplace Models](https://github.com/marketplace/models)
   - [Azure AI Model Catalog](https://ai.azure.com)
 
 - Inference Phi in different environment
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
-    -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)
+    -  [GitHub Models (retired)](./md/01.Introduction/02/02.GitHubModel.md)
     -  [Microsoft Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
@@ -127,19 +126,19 @@ Follow these steps to get started using these resource :
       - [Q&A .NET Example using local ONNX Phi-3 model using the Microsoft.ML.OnnxRuntime](./md/04.HOL/dotnet/src/LabsPhi301/)
       - [Console chat .NET app with Semantic Kernel and Phi-3](./md/04.HOL/dotnet/src/LabsPhi302/)
 
-  - Azure AI Inference SDK Code Based Samples 
+  - Code Based Samples 
     - Phi-4 Samples 
       - [📓] [Generate project code using Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
     - Phi-3 / 3.5 Samples
       - [Build your own Visual Studio Code GitHub Copilot Chat with Microsoft Phi-3 Family](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-      - [Create your own Visual Studio Code Chat Copilot Agent with Phi-3.5 by GitHub Models](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+      - [Create your own Visual Studio Code Chat Copilot Agent with Phi-3.5 by GitHub Models (retired)](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
 
   - Advanced Reasoning Samples
     - Phi-4 Samples 
       - [📓] [Phi-4-mini-reasoning or Phi-4-reasoning Samples](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
       - [📓] [Fine-tuning Phi-4-mini-reasoning with Microsoft Olive](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
       - [📓] [Fine-tuning Phi-4-mini-reasoning with Apple MLX](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [Phi-4-mini-reasoning with GitHub Models](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
+      - [📓] [Phi-4-mini-reasoning with the OpenAI SDK (formerly GitHub Models)](./md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
       - [📓] [Phi-4-mini-reasoning with Microsoft Foundry Models](./md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
   - Demos
       - [Phi-4-mini demos hosted on Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
@@ -232,12 +231,9 @@ You can learn how to use Microsoft Phi and how to build E2E solutions in your di
 **Playground**
 Each model has a dedicated playground to test the model [Azure AI Playground](https://aka.ms/try-phi3).
 
-### Phi on GitHub Models
+### Phi on GitHub Models (retired)
 
-You can learn how to use Microsoft Phi and how to build E2E solutions in your different hardware devices. To experience Phi for yourself, start by playing with the model and customizing Phi for your scenarios using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) you can learn more at Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
-
-**Playground**
-Each model has a dedicated [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
+GitHub Models was [retired on July 30, 2026](https://github.blog/changelog/2026-07-30-github-models-is-now-retired/). To try Phi models, use [Microsoft Foundry](#phi-on-microsoft-foundry) or run them on your own device with [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md). The former GitHub Models [quickstart](/md/02.QuickStart/GitHubModel_QuickStart.md) has been updated to use the OpenAI SDK with these endpoints.
 
 ### Phi on Hugging Face
 

@@ -1,5 +1,10 @@
 # **Create your own Visual Studio Code Chat Copilot Agent with Phi-3.5 by GitHub Models**
 
+> [!IMPORTANT]
+> **GitHub Models was retired on July 30, 2026** ([GitHub changelog](https://github.blog/changelog/2026-07-30-github-models-is-now-retired/)), so the `https://models.inference.ai.azure.com` endpoint and GitHub Models tokens used in this walkthrough no longer work. The Azure AI Inference beta SDK, which the extension uses through `@azure-rest/ai-inference`, was also [retired on August 26, 2026](https://learn.microsoft.com/azure/foundry-classic/foundry-models/supported-languages).
+>
+> To follow this walkthrough today, deploy a Phi model in [Microsoft Foundry](../../../01.Introduction/02/03.AzureAIFoundry.md) or run one on-device with [Foundry Local](../../../01.Introduction/02/07.FoundryLocal.md), and call it with the [OpenAI SDK](https://www.npmjs.com/package/openai) instead of `ModelClient` (see [Migrate from Azure AI Inference SDK to OpenAI SDK](https://learn.microsoft.com/azure/foundry/how-to/model-inference-to-openai-migration)). The Python demo notebooks linked below have already been updated to the OpenAI SDK; the TypeScript extension code on this page has not been updated yet.
+
 Are you using Visual Studio Code Copilot? Especially in Chat, you can use different agents to improve the ability to create, write, and maintain projects in Visual Studio Code. Visual Studio Code provides an API that allows companies and individuals to create different agents based on their business to expand their capabilities in different proprietary fields. In this article, we will focus on **Phi-3.5-mini-instruct (128k)** and **Phi-3.5-vision-instruct (128k)** of GitHub Models to create your own Visual Studio Code Agent.
 
 ## **About Phi-3.5 on GitHub Models**
@@ -12,7 +17,7 @@ The latest GitHub Models already provide access to the Phi-3.5-mini-instruct (12
 
 ![gh](../../../../imgs/02/phi35vscode/gh.png)
 
-***Note: *** It is recommended to use Azure AI Inference SDK here, because it can better switch with the Azure Model Catalog in the production environment
+***Note: *** The Azure AI Inference SDK recommended in the original version of this article has been retired. Use the OpenAI SDK with a Microsoft Foundry or Foundry Local endpoint instead (see the note at the top of this page).
 
 The following are the results of **Phi-3.5-mini-instruct (128k)** and **Phi-3.5-vision-instruct (128k)** in the code generation scenario after docking with GitHub Models, and also prepare for the following examples
 
@@ -378,7 +383,7 @@ You can download sample code :[click](../../../../code/09.UpdateSamples/Aug/vsco
 
 ## **Resources**
 
-1. Sign up GitHub Models [https://gh.io/models](https://gh.io/models)
+1. GitHub Models has been retired. Use [Microsoft Foundry](https://ai.azure.com) or [Foundry Local](https://learn.microsoft.com/azure/foundry-local/) instead
 
 2. Learn Visual Studio Code Extension Development [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 

@@ -7,7 +7,7 @@ PhiCookBook is a comprehensive cookbook repository containing hands-on examples,
 **Key Technologies:**
 - **Languages:** Python, C#/.NET, JavaScript/Node.js
 - **Frameworks:** ONNX Runtime, PyTorch, Transformers, MLX, OpenVINO, Semantic Kernel
-- **Platforms:** Microsoft Foundry, GitHub Models, Hugging Face, Ollama
+- **Platforms:** Microsoft Foundry, Foundry Local, Hugging Face, Ollama
 - **Model Types:** Phi-3, Phi-3.5, Phi-4 (text, vision, multimodal, reasoning variants)
 
 **Repository Structure:**
@@ -80,7 +80,7 @@ npm run build  # Build for production
 
 - **01.Introduction/** - Intro guides, environment setup, platform guides
 - **02.Application/** - Application samples organized by type (Text, Code, Vision, Audio, etc.)
-- **02.QuickStart/** - Quick start guides for Microsoft Foundry and GitHub Models
+- **02.QuickStart/** - Quick start guides for Microsoft Foundry and the OpenAI SDK (`GitHubModel_QuickStart.md` was migrated after GitHub Models was retired)
 - **03.FineTuning/** - Fine-tuning documentation and tutorials
 - **04.HOL/** - Hands-on labs (includes .NET examples)
 
@@ -230,7 +230,7 @@ Examples:
 
 **Model Loading:**
 - Examples use various frameworks: Transformers, ONNX Runtime, MLX, OpenVINO
-- Models are typically downloaded from Hugging Face, Azure, or GitHub Models
+- Models are typically downloaded from Hugging Face or Azure, or run locally with Foundry Local
 - Check model compatibility with your hardware (CPU, GPU, NPU)
 
 **Inference Patterns:**
@@ -245,8 +245,9 @@ Examples:
 - Requires Azure subscription and API keys
 - See `/md/02.QuickStart/AzureAIFoundry_QuickStart.md`
 
-**GitHub Models:**
-- Free tier available for testing
+**GitHub Models (retired):**
+- GitHub Models was retired on July 30, 2026, and the `azure-ai-inference` beta SDK on August 26, 2026; do not add new samples that use them
+- Use the `openai` SDK with a Microsoft Foundry (`https://<resource>.openai.azure.com/openai/v1/`) or Foundry Local endpoint instead
 - See `/md/02.QuickStart/GitHubModel_QuickStart.md`
 
 **Local Inference:**
