@@ -25,14 +25,14 @@
   },
   "__translation_failures__": {
     "README.md": {
-      "original_hash": "328667544aac0d7409eba4b6aea30ecd",
+      "original_hash": "245156dd266aaf6d51efad3d1731cb2f",
       "source_file": "README.md",
       "language_code": "kn",
-      "failure_date": "2026-11-02T19:39:10+00:00",
+      "failure_date": "2026-11-16T22:45:31+00:00",
       "status": "failed",
       "error_type": "TranslationIncompleteError",
-      "error_message": "Markdown translation remained incomplete for chunk 1.2.1.1.1 of 'README.md', and the chunk could not be split further.",
-      "translator_version": "0.23.2",
+      "error_message": "Markdown translation remained incomplete for chunk 1.1.2.1.1.1 of 'README.md', and the chunk could not be split further.",
+      "translator_version": "0.24.0",
       "failure_policy_version": 1
     }
   },
